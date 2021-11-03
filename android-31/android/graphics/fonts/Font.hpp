@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JArray;
 namespace android::graphics
 {
 	class Paint;
@@ -26,6 +27,8 @@ namespace java::io
 {
 	class File;
 }
+class JObject;
+class JString;
 namespace java::nio
 {
 	class ByteBuffer;
@@ -45,8 +48,8 @@ namespace android::graphics::fonts
 		// Constructors
 		
 		// Methods
-		jboolean equals(jobject arg0);
-		jarray getAxes();
+		jboolean equals(JObject arg0);
+		JArray getAxes();
 		java::nio::ByteBuffer getBuffer();
 		java::io::File getFile();
 		jfloat getGlyphBounds(jint arg0, android::graphics::Paint arg1, android::graphics::RectF arg2);
@@ -56,7 +59,7 @@ namespace android::graphics::fonts
 		android::graphics::fonts::FontStyle getStyle();
 		jint getTtcIndex();
 		jint hashCode();
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::graphics::fonts
 

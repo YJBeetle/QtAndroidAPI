@@ -1,10 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../view/View.hpp"
-#include "../view/ViewGroup.hpp"
-#include "./FrameLayout.hpp"
-#include "./ViewAnimator.hpp"
 #include "./ViewSwitcher.hpp"
 
 namespace android::content
@@ -19,6 +14,7 @@ namespace android::net
 {
 	class Uri;
 }
+class JString;
 
 namespace android::widget
 {
@@ -36,7 +32,7 @@ namespace android::widget
 		ImageSwitcher(android::content::Context arg0, JObject arg1);
 		
 		// Methods
-		jstring getAccessibilityClassName();
+		JString getAccessibilityClassName();
 		void setImageDrawable(android::graphics::drawable::Drawable arg0);
 		void setImageResource(jint arg0);
 		void setImageURI(android::net::Uri arg0);

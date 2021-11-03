@@ -10,6 +10,7 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
 
 namespace android::hardware::usb
 {
@@ -31,10 +32,10 @@ namespace android::hardware::usb
 		android::hardware::usb::UsbInterface getInterface(jint arg0);
 		jint getInterfaceCount();
 		jint getMaxPower();
-		jstring getName();
+		JString getName();
 		jboolean isRemoteWakeup();
 		jboolean isSelfPowered();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::hardware::usb

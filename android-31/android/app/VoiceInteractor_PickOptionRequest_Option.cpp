@@ -1,5 +1,6 @@
 #include "../os/Bundle.hpp"
 #include "../os/Parcel.hpp"
+#include "../../JString.hpp"
 #include "./VoiceInteractor_PickOptionRequest_Option.hpp"
 
 namespace android::app
@@ -18,21 +19,21 @@ namespace android::app
 	VoiceInteractor_PickOptionRequest_Option::VoiceInteractor_PickOptionRequest_Option(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	VoiceInteractor_PickOptionRequest_Option::VoiceInteractor_PickOptionRequest_Option(jstring arg0, jint arg1)
+	VoiceInteractor_PickOptionRequest_Option::VoiceInteractor_PickOptionRequest_Option(JString arg0, jint arg1)
 		: JObject(
 			"android.app.VoiceInteractor$PickOptionRequest$Option",
 			"(Ljava/lang/CharSequence;I)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		) {}
 	
 	// Methods
-	android::app::VoiceInteractor_PickOptionRequest_Option VoiceInteractor_PickOptionRequest_Option::addSynonym(jstring arg0)
+	android::app::VoiceInteractor_PickOptionRequest_Option VoiceInteractor_PickOptionRequest_Option::addSynonym(JString arg0)
 	{
 		return callObjectMethod(
 			"addSynonym",
 			"(Ljava/lang/CharSequence;)Landroid/app/VoiceInteractor$PickOptionRequest$Option;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	jint VoiceInteractor_PickOptionRequest_Option::countSynonyms()
@@ -63,20 +64,20 @@ namespace android::app
 			"()I"
 		);
 	}
-	jstring VoiceInteractor_PickOptionRequest_Option::getLabel()
+	JString VoiceInteractor_PickOptionRequest_Option::getLabel()
 	{
 		return callObjectMethod(
 			"getLabel",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
-	jstring VoiceInteractor_PickOptionRequest_Option::getSynonymAt(jint arg0)
+	JString VoiceInteractor_PickOptionRequest_Option::getSynonymAt(jint arg0)
 	{
 		return callObjectMethod(
 			"getSynonymAt",
 			"(I)Ljava/lang/CharSequence;",
 			arg0
-		).object<jstring>();
+		);
 	}
 	void VoiceInteractor_PickOptionRequest_Option::setExtras(android::os::Bundle arg0)
 	{

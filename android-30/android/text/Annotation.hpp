@@ -6,6 +6,7 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
 
 namespace android::text
 {
@@ -20,13 +21,13 @@ namespace android::text
 		
 		// Constructors
 		Annotation(android::os::Parcel arg0);
-		Annotation(jstring arg0, jstring arg1);
+		Annotation(JString arg0, JString arg1);
 		
 		// Methods
 		jint describeContents();
-		jstring getKey();
+		JString getKey();
 		jint getSpanTypeId();
-		jstring getValue();
+		JString getValue();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::text

@@ -1,4 +1,6 @@
 #include "../../os/Parcel.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./RouteSelectionDescriptor.hpp"
 
 namespace android::telephony::data
@@ -68,12 +70,12 @@ namespace android::telephony::data
 			"()I"
 		);
 	}
-	jboolean RouteSelectionDescriptor::equals(jobject arg0)
+	jboolean RouteSelectionDescriptor::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	JObject RouteSelectionDescriptor::getDataNetworkName()
@@ -118,12 +120,12 @@ namespace android::telephony::data
 			"()I"
 		);
 	}
-	jstring RouteSelectionDescriptor::toString()
+	JString RouteSelectionDescriptor::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void RouteSelectionDescriptor::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

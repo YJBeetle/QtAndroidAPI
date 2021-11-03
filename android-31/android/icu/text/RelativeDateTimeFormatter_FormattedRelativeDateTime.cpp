@@ -1,4 +1,6 @@
 #include "./ConstrainedFieldPosition.hpp"
+#include "../../../JString.hpp"
+#include "../../../JString.hpp"
 #include "./RelativeDateTimeFormatter_FormattedRelativeDateTime.hpp"
 
 namespace android::icu::text
@@ -42,14 +44,14 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	jstring RelativeDateTimeFormatter_FormattedRelativeDateTime::subSequence(jint arg0, jint arg1)
+	JString RelativeDateTimeFormatter_FormattedRelativeDateTime::subSequence(jint arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"subSequence",
 			"(II)Ljava/lang/CharSequence;",
 			arg0,
 			arg1
-		).object<jstring>();
+		);
 	}
 	JObject RelativeDateTimeFormatter_FormattedRelativeDateTime::toCharacterIterator()
 	{
@@ -58,12 +60,12 @@ namespace android::icu::text
 			"()Ljava/text/AttributedCharacterIterator;"
 		);
 	}
-	jstring RelativeDateTimeFormatter_FormattedRelativeDateTime::toString()
+	JString RelativeDateTimeFormatter_FormattedRelativeDateTime::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::icu::text
 

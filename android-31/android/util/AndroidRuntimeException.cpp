@@ -1,4 +1,6 @@
 #include "../../java/lang/Exception.hpp"
+#include "../../JString.hpp"
+#include "../../JThrowable.hpp"
 #include "./AndroidRuntimeException.hpp"
 
 namespace android::util
@@ -20,18 +22,18 @@ namespace android::util
 			"(Ljava/lang/Exception;)V",
 			arg0.object()
 		) {}
-	AndroidRuntimeException::AndroidRuntimeException(jstring arg0)
+	AndroidRuntimeException::AndroidRuntimeException(JString arg0)
 		: java::lang::RuntimeException(
 			"android.util.AndroidRuntimeException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	AndroidRuntimeException::AndroidRuntimeException(jstring arg0, jthrowable arg1)
+	AndroidRuntimeException::AndroidRuntimeException(JString arg0, JThrowable arg1)
 		: java::lang::RuntimeException(
 			"android.util.AndroidRuntimeException",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
 		) {}
 	
 	// Methods

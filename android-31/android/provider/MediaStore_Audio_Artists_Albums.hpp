@@ -6,6 +6,7 @@ namespace android::net
 {
 	class Uri;
 }
+class JString;
 
 namespace android::provider
 {
@@ -22,7 +23,7 @@ namespace android::provider
 		MediaStore_Audio_Artists_Albums();
 		
 		// Methods
-		static android::net::Uri getContentUri(jstring arg0, jlong arg1);
+		static android::net::Uri getContentUri(JString arg0, jlong arg1);
 	};
 } // namespace android::provider
 

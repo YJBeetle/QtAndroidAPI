@@ -6,6 +6,8 @@ namespace android::os
 {
 	class Parcel;
 }
+class JObject;
+class JString;
 
 namespace android::app::slice
 {
@@ -20,15 +22,15 @@ namespace android::app::slice
 		SliceSpec(QAndroidJniObject obj);
 		
 		// Constructors
-		SliceSpec(jstring arg0, jint arg1);
+		SliceSpec(JString arg0, jint arg1);
 		
 		// Methods
 		jboolean canRender(android::app::slice::SliceSpec arg0);
 		jint describeContents();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint getRevision();
-		jstring getType();
-		jstring toString();
+		JString getType();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::app::slice

@@ -1,5 +1,6 @@
 #include "./SigningInfo.hpp"
 #include "../../os/Parcel.hpp"
+#include "../../../JString.hpp"
 #include "./InstallSourceInfo.hpp"
 
 namespace android::content::pm
@@ -27,12 +28,12 @@ namespace android::content::pm
 			"()I"
 		);
 	}
-	jstring InstallSourceInfo::getInitiatingPackageName()
+	JString InstallSourceInfo::getInitiatingPackageName()
 	{
 		return callObjectMethod(
 			"getInitiatingPackageName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::content::pm::SigningInfo InstallSourceInfo::getInitiatingPackageSigningInfo()
 	{
@@ -41,19 +42,19 @@ namespace android::content::pm
 			"()Landroid/content/pm/SigningInfo;"
 		);
 	}
-	jstring InstallSourceInfo::getInstallingPackageName()
+	JString InstallSourceInfo::getInstallingPackageName()
 	{
 		return callObjectMethod(
 			"getInstallingPackageName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring InstallSourceInfo::getOriginatingPackageName()
+	JString InstallSourceInfo::getOriginatingPackageName()
 	{
 		return callObjectMethod(
 			"getOriginatingPackageName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void InstallSourceInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

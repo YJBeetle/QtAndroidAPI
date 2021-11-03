@@ -1,5 +1,6 @@
 #include "../content/Context.hpp"
 #include "./KeyPairGeneratorSpec.hpp"
+#include "../../JString.hpp"
 #include "../../java/math/BigInteger.hpp"
 #include "../../java/util/Date.hpp"
 #include "../../javax/security/auth/x500/X500Principal.hpp"
@@ -36,12 +37,12 @@ namespace android::security
 			arg0.object()
 		);
 	}
-	android::security::KeyPairGeneratorSpec_Builder KeyPairGeneratorSpec_Builder::setAlias(jstring arg0)
+	android::security::KeyPairGeneratorSpec_Builder KeyPairGeneratorSpec_Builder::setAlias(JString arg0)
 	{
 		return callObjectMethod(
 			"setAlias",
 			"(Ljava/lang/String;)Landroid/security/KeyPairGeneratorSpec$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::security::KeyPairGeneratorSpec_Builder KeyPairGeneratorSpec_Builder::setEncryptionRequired()
@@ -67,12 +68,12 @@ namespace android::security
 			arg0
 		);
 	}
-	android::security::KeyPairGeneratorSpec_Builder KeyPairGeneratorSpec_Builder::setKeyType(jstring arg0)
+	android::security::KeyPairGeneratorSpec_Builder KeyPairGeneratorSpec_Builder::setKeyType(JString arg0)
 	{
 		return callObjectMethod(
 			"setKeyType",
 			"(Ljava/lang/String;)Landroid/security/KeyPairGeneratorSpec$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::security::KeyPairGeneratorSpec_Builder KeyPairGeneratorSpec_Builder::setSerialNumber(java::math::BigInteger arg0)

@@ -1,4 +1,5 @@
 #include "../content/Intent.hpp"
+#include "../../JString.hpp"
 #include "./IntentService.hpp"
 
 namespace android::app
@@ -9,11 +10,11 @@ namespace android::app
 	IntentService::IntentService(QAndroidJniObject obj) : android::app::Service(obj) {}
 	
 	// Constructors
-	IntentService::IntentService(jstring arg0)
+	IntentService::IntentService(JString arg0)
 		: android::app::Service(
 			"android.app.IntentService",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

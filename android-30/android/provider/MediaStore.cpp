@@ -2,58 +2,59 @@
 #include "../content/ContentResolver.hpp"
 #include "../content/Context.hpp"
 #include "../net/Uri.hpp"
+#include "../../JString.hpp"
 #include "./MediaStore.hpp"
 
 namespace android::provider
 {
 	// Fields
-	jstring MediaStore::ACTION_IMAGE_CAPTURE()
+	JString MediaStore::ACTION_IMAGE_CAPTURE()
 	{
 		return getStaticObjectField(
 			"android.provider.MediaStore",
 			"ACTION_IMAGE_CAPTURE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring MediaStore::ACTION_IMAGE_CAPTURE_SECURE()
+	JString MediaStore::ACTION_IMAGE_CAPTURE_SECURE()
 	{
 		return getStaticObjectField(
 			"android.provider.MediaStore",
 			"ACTION_IMAGE_CAPTURE_SECURE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring MediaStore::ACTION_REVIEW()
+	JString MediaStore::ACTION_REVIEW()
 	{
 		return getStaticObjectField(
 			"android.provider.MediaStore",
 			"ACTION_REVIEW",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring MediaStore::ACTION_REVIEW_SECURE()
+	JString MediaStore::ACTION_REVIEW_SECURE()
 	{
 		return getStaticObjectField(
 			"android.provider.MediaStore",
 			"ACTION_REVIEW_SECURE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring MediaStore::ACTION_VIDEO_CAPTURE()
+	JString MediaStore::ACTION_VIDEO_CAPTURE()
 	{
 		return getStaticObjectField(
 			"android.provider.MediaStore",
 			"ACTION_VIDEO_CAPTURE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring MediaStore::AUTHORITY()
+	JString MediaStore::AUTHORITY()
 	{
 		return getStaticObjectField(
 			"android.provider.MediaStore",
 			"AUTHORITY",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::net::Uri MediaStore::AUTHORITY_URI()
 	{
@@ -63,197 +64,197 @@ namespace android::provider
 			"Landroid/net/Uri;"
 		);
 	}
-	jstring MediaStore::EXTRA_BRIGHTNESS()
+	JString MediaStore::EXTRA_BRIGHTNESS()
 	{
 		return getStaticObjectField(
 			"android.provider.MediaStore",
 			"EXTRA_BRIGHTNESS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring MediaStore::EXTRA_DURATION_LIMIT()
+	JString MediaStore::EXTRA_DURATION_LIMIT()
 	{
 		return getStaticObjectField(
 			"android.provider.MediaStore",
 			"EXTRA_DURATION_LIMIT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring MediaStore::EXTRA_FINISH_ON_COMPLETION()
+	JString MediaStore::EXTRA_FINISH_ON_COMPLETION()
 	{
 		return getStaticObjectField(
 			"android.provider.MediaStore",
 			"EXTRA_FINISH_ON_COMPLETION",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring MediaStore::EXTRA_FULL_SCREEN()
+	JString MediaStore::EXTRA_FULL_SCREEN()
 	{
 		return getStaticObjectField(
 			"android.provider.MediaStore",
 			"EXTRA_FULL_SCREEN",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring MediaStore::EXTRA_MEDIA_ALBUM()
+	JString MediaStore::EXTRA_MEDIA_ALBUM()
 	{
 		return getStaticObjectField(
 			"android.provider.MediaStore",
 			"EXTRA_MEDIA_ALBUM",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring MediaStore::EXTRA_MEDIA_ARTIST()
+	JString MediaStore::EXTRA_MEDIA_ARTIST()
 	{
 		return getStaticObjectField(
 			"android.provider.MediaStore",
 			"EXTRA_MEDIA_ARTIST",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring MediaStore::EXTRA_MEDIA_FOCUS()
+	JString MediaStore::EXTRA_MEDIA_FOCUS()
 	{
 		return getStaticObjectField(
 			"android.provider.MediaStore",
 			"EXTRA_MEDIA_FOCUS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring MediaStore::EXTRA_MEDIA_GENRE()
+	JString MediaStore::EXTRA_MEDIA_GENRE()
 	{
 		return getStaticObjectField(
 			"android.provider.MediaStore",
 			"EXTRA_MEDIA_GENRE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring MediaStore::EXTRA_MEDIA_PLAYLIST()
+	JString MediaStore::EXTRA_MEDIA_PLAYLIST()
 	{
 		return getStaticObjectField(
 			"android.provider.MediaStore",
 			"EXTRA_MEDIA_PLAYLIST",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring MediaStore::EXTRA_MEDIA_RADIO_CHANNEL()
+	JString MediaStore::EXTRA_MEDIA_RADIO_CHANNEL()
 	{
 		return getStaticObjectField(
 			"android.provider.MediaStore",
 			"EXTRA_MEDIA_RADIO_CHANNEL",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring MediaStore::EXTRA_MEDIA_TITLE()
+	JString MediaStore::EXTRA_MEDIA_TITLE()
 	{
 		return getStaticObjectField(
 			"android.provider.MediaStore",
 			"EXTRA_MEDIA_TITLE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring MediaStore::EXTRA_OUTPUT()
+	JString MediaStore::EXTRA_OUTPUT()
 	{
 		return getStaticObjectField(
 			"android.provider.MediaStore",
 			"EXTRA_OUTPUT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring MediaStore::EXTRA_SCREEN_ORIENTATION()
+	JString MediaStore::EXTRA_SCREEN_ORIENTATION()
 	{
 		return getStaticObjectField(
 			"android.provider.MediaStore",
 			"EXTRA_SCREEN_ORIENTATION",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring MediaStore::EXTRA_SHOW_ACTION_ICONS()
+	JString MediaStore::EXTRA_SHOW_ACTION_ICONS()
 	{
 		return getStaticObjectField(
 			"android.provider.MediaStore",
 			"EXTRA_SHOW_ACTION_ICONS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring MediaStore::EXTRA_SIZE_LIMIT()
+	JString MediaStore::EXTRA_SIZE_LIMIT()
 	{
 		return getStaticObjectField(
 			"android.provider.MediaStore",
 			"EXTRA_SIZE_LIMIT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring MediaStore::EXTRA_VIDEO_QUALITY()
+	JString MediaStore::EXTRA_VIDEO_QUALITY()
 	{
 		return getStaticObjectField(
 			"android.provider.MediaStore",
 			"EXTRA_VIDEO_QUALITY",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring MediaStore::INTENT_ACTION_MEDIA_PLAY_FROM_SEARCH()
+	JString MediaStore::INTENT_ACTION_MEDIA_PLAY_FROM_SEARCH()
 	{
 		return getStaticObjectField(
 			"android.provider.MediaStore",
 			"INTENT_ACTION_MEDIA_PLAY_FROM_SEARCH",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring MediaStore::INTENT_ACTION_MEDIA_SEARCH()
+	JString MediaStore::INTENT_ACTION_MEDIA_SEARCH()
 	{
 		return getStaticObjectField(
 			"android.provider.MediaStore",
 			"INTENT_ACTION_MEDIA_SEARCH",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring MediaStore::INTENT_ACTION_MUSIC_PLAYER()
+	JString MediaStore::INTENT_ACTION_MUSIC_PLAYER()
 	{
 		return getStaticObjectField(
 			"android.provider.MediaStore",
 			"INTENT_ACTION_MUSIC_PLAYER",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring MediaStore::INTENT_ACTION_STILL_IMAGE_CAMERA()
+	JString MediaStore::INTENT_ACTION_STILL_IMAGE_CAMERA()
 	{
 		return getStaticObjectField(
 			"android.provider.MediaStore",
 			"INTENT_ACTION_STILL_IMAGE_CAMERA",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring MediaStore::INTENT_ACTION_STILL_IMAGE_CAMERA_SECURE()
+	JString MediaStore::INTENT_ACTION_STILL_IMAGE_CAMERA_SECURE()
 	{
 		return getStaticObjectField(
 			"android.provider.MediaStore",
 			"INTENT_ACTION_STILL_IMAGE_CAMERA_SECURE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring MediaStore::INTENT_ACTION_TEXT_OPEN_FROM_SEARCH()
+	JString MediaStore::INTENT_ACTION_TEXT_OPEN_FROM_SEARCH()
 	{
 		return getStaticObjectField(
 			"android.provider.MediaStore",
 			"INTENT_ACTION_TEXT_OPEN_FROM_SEARCH",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring MediaStore::INTENT_ACTION_VIDEO_CAMERA()
+	JString MediaStore::INTENT_ACTION_VIDEO_CAMERA()
 	{
 		return getStaticObjectField(
 			"android.provider.MediaStore",
 			"INTENT_ACTION_VIDEO_CAMERA",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring MediaStore::INTENT_ACTION_VIDEO_PLAY_FROM_SEARCH()
+	JString MediaStore::INTENT_ACTION_VIDEO_PLAY_FROM_SEARCH()
 	{
 		return getStaticObjectField(
 			"android.provider.MediaStore",
 			"INTENT_ACTION_VIDEO_PLAY_FROM_SEARCH",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint MediaStore::MATCH_DEFAULT()
 	{
@@ -283,101 +284,101 @@ namespace android::provider
 			"MATCH_ONLY"
 		);
 	}
-	jstring MediaStore::MEDIA_IGNORE_FILENAME()
+	JString MediaStore::MEDIA_IGNORE_FILENAME()
 	{
 		return getStaticObjectField(
 			"android.provider.MediaStore",
 			"MEDIA_IGNORE_FILENAME",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring MediaStore::MEDIA_SCANNER_VOLUME()
+	JString MediaStore::MEDIA_SCANNER_VOLUME()
 	{
 		return getStaticObjectField(
 			"android.provider.MediaStore",
 			"MEDIA_SCANNER_VOLUME",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring MediaStore::META_DATA_REVIEW_GALLERY_PREWARM_SERVICE()
+	JString MediaStore::META_DATA_REVIEW_GALLERY_PREWARM_SERVICE()
 	{
 		return getStaticObjectField(
 			"android.provider.MediaStore",
 			"META_DATA_REVIEW_GALLERY_PREWARM_SERVICE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring MediaStore::META_DATA_STILL_IMAGE_CAMERA_PREWARM_SERVICE()
+	JString MediaStore::META_DATA_STILL_IMAGE_CAMERA_PREWARM_SERVICE()
 	{
 		return getStaticObjectField(
 			"android.provider.MediaStore",
 			"META_DATA_STILL_IMAGE_CAMERA_PREWARM_SERVICE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring MediaStore::QUERY_ARG_MATCH_FAVORITE()
+	JString MediaStore::QUERY_ARG_MATCH_FAVORITE()
 	{
 		return getStaticObjectField(
 			"android.provider.MediaStore",
 			"QUERY_ARG_MATCH_FAVORITE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring MediaStore::QUERY_ARG_MATCH_PENDING()
+	JString MediaStore::QUERY_ARG_MATCH_PENDING()
 	{
 		return getStaticObjectField(
 			"android.provider.MediaStore",
 			"QUERY_ARG_MATCH_PENDING",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring MediaStore::QUERY_ARG_MATCH_TRASHED()
+	JString MediaStore::QUERY_ARG_MATCH_TRASHED()
 	{
 		return getStaticObjectField(
 			"android.provider.MediaStore",
 			"QUERY_ARG_MATCH_TRASHED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring MediaStore::QUERY_ARG_RELATED_URI()
+	JString MediaStore::QUERY_ARG_RELATED_URI()
 	{
 		return getStaticObjectField(
 			"android.provider.MediaStore",
 			"QUERY_ARG_RELATED_URI",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring MediaStore::UNKNOWN_STRING()
+	JString MediaStore::UNKNOWN_STRING()
 	{
 		return getStaticObjectField(
 			"android.provider.MediaStore",
 			"UNKNOWN_STRING",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring MediaStore::VOLUME_EXTERNAL()
+	JString MediaStore::VOLUME_EXTERNAL()
 	{
 		return getStaticObjectField(
 			"android.provider.MediaStore",
 			"VOLUME_EXTERNAL",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring MediaStore::VOLUME_EXTERNAL_PRIMARY()
+	JString MediaStore::VOLUME_EXTERNAL_PRIMARY()
 	{
 		return getStaticObjectField(
 			"android.provider.MediaStore",
 			"VOLUME_EXTERNAL_PRIMARY",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring MediaStore::VOLUME_INTERNAL()
+	JString MediaStore::VOLUME_INTERNAL()
 	{
 		return getStaticObjectField(
 			"android.provider.MediaStore",
 			"VOLUME_INTERNAL",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QAndroidJniObject forward
@@ -452,14 +453,14 @@ namespace android::provider
 			arg0.object()
 		);
 	}
-	jlong MediaStore::getGeneration(android::content::Context arg0, jstring arg1)
+	jlong MediaStore::getGeneration(android::content::Context arg0, JString arg1)
 	{
 		return callStaticMethod<jlong>(
 			"android.provider.MediaStore",
 			"getGeneration",
 			"(Landroid/content/Context;Ljava/lang/String;)J",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
 	android::net::Uri MediaStore::getMediaScannerUri()
@@ -498,33 +499,33 @@ namespace android::provider
 			arg0.object()
 		);
 	}
-	jstring MediaStore::getVersion(android::content::Context arg0)
+	JString MediaStore::getVersion(android::content::Context arg0)
 	{
 		return callStaticObjectMethod(
 			"android.provider.MediaStore",
 			"getVersion",
 			"(Landroid/content/Context;)Ljava/lang/String;",
 			arg0.object()
-		).object<jstring>();
+		);
 	}
-	jstring MediaStore::getVersion(android::content::Context arg0, jstring arg1)
+	JString MediaStore::getVersion(android::content::Context arg0, JString arg1)
 	{
 		return callStaticObjectMethod(
 			"android.provider.MediaStore",
 			"getVersion",
 			"(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/String;",
 			arg0.object(),
-			arg1
-		).object<jstring>();
+			arg1.object<jstring>()
+		);
 	}
-	jstring MediaStore::getVolumeName(android::net::Uri arg0)
+	JString MediaStore::getVolumeName(android::net::Uri arg0)
 	{
 		return callStaticObjectMethod(
 			"android.provider.MediaStore",
 			"getVolumeName",
 			"(Landroid/net/Uri;)Ljava/lang/String;",
 			arg0.object()
-		).object<jstring>();
+		);
 	}
 	android::net::Uri MediaStore::setIncludePending(android::net::Uri arg0)
 	{

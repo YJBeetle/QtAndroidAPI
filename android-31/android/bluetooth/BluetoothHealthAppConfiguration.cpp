@@ -1,4 +1,5 @@
 #include "../os/Parcel.hpp"
+#include "../../JString.hpp"
 #include "./BluetoothHealthAppConfiguration.hpp"
 
 namespace android::bluetooth
@@ -33,12 +34,12 @@ namespace android::bluetooth
 			"()I"
 		);
 	}
-	jstring BluetoothHealthAppConfiguration::getName()
+	JString BluetoothHealthAppConfiguration::getName()
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint BluetoothHealthAppConfiguration::getRole()
 	{

@@ -2,6 +2,7 @@
 #include "../view/KeyEvent.hpp"
 #include "../view/MotionEvent.hpp"
 #include "../view/View.hpp"
+#include "../../JString.hpp"
 #include "./ZoomButton.hpp"
 
 namespace android::widget
@@ -53,12 +54,12 @@ namespace android::widget
 			arg1
 		);
 	}
-	jstring ZoomButton::getAccessibilityClassName()
+	JString ZoomButton::getAccessibilityClassName()
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	jboolean ZoomButton::onKeyUp(jint arg0, android::view::KeyEvent arg1)
 	{

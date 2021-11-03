@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JObject;
 namespace java::util::concurrent
 {
 	class AbstractExecutorService;
@@ -30,7 +31,7 @@ namespace java::util::concurrent
 		JObject poll();
 		JObject poll(jlong arg0, java::util::concurrent::TimeUnit arg1);
 		JObject submit(JObject arg0);
-		JObject submit(JObject arg0, jobject arg1);
+		JObject submit(JObject arg0, JObject arg1);
 		JObject take();
 	};
 } // namespace java::util::concurrent

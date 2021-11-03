@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JString;
 
 namespace android::media
 {
@@ -19,13 +20,13 @@ namespace android::media
 		
 		// Constructors
 		VolumeProvider(jint arg0, jint arg1, jint arg2);
-		VolumeProvider(jint arg0, jint arg1, jint arg2, jstring arg3);
+		VolumeProvider(jint arg0, jint arg1, jint arg2, JString arg3);
 		
 		// Methods
 		jint getCurrentVolume();
 		jint getMaxVolume();
 		jint getVolumeControl();
-		jstring getVolumeControlId();
+		JString getVolumeControlId();
 		void onAdjustVolume(jint arg0);
 		void onSetVolumeTo(jint arg0);
 		void setCurrentVolume(jint arg0);

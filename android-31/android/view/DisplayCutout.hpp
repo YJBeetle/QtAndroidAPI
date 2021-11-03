@@ -14,6 +14,8 @@ namespace android::graphics
 {
 	class Rect;
 }
+class JObject;
+class JString;
 
 namespace android::view
 {
@@ -32,7 +34,7 @@ namespace android::view
 		DisplayCutout(android::graphics::Insets arg0, android::graphics::Rect arg1, android::graphics::Rect arg2, android::graphics::Rect arg3, android::graphics::Rect arg4, android::graphics::Insets arg5);
 		
 		// Methods
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		android::graphics::Rect getBoundingRectBottom();
 		android::graphics::Rect getBoundingRectLeft();
 		android::graphics::Rect getBoundingRectRight();
@@ -45,7 +47,7 @@ namespace android::view
 		jint getSafeInsetTop();
 		android::graphics::Insets getWaterfallInsets();
 		jint hashCode();
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::view
 

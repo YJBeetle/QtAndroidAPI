@@ -1,4 +1,7 @@
+#include "../../../JCharArray.hpp"
 #include "./MathContext.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "../../../java/math/BigDecimal.hpp"
 #include "../../../java/math/BigInteger.hpp"
 #include "./BigDecimal.hpp"
@@ -91,11 +94,11 @@ namespace android::icu::math
 	BigDecimal::BigDecimal(QAndroidJniObject obj) : java::lang::Number(obj) {}
 	
 	// Constructors
-	BigDecimal::BigDecimal(jcharArray arg0)
+	BigDecimal::BigDecimal(JCharArray arg0)
 		: java::lang::Number(
 			"android.icu.math.BigDecimal",
 			"([C)V",
-			arg0
+			arg0.object<jcharArray>()
 		) {}
 	BigDecimal::BigDecimal(jdouble arg0)
 		: java::lang::Number(
@@ -109,11 +112,11 @@ namespace android::icu::math
 			"(I)V",
 			arg0
 		) {}
-	BigDecimal::BigDecimal(jstring arg0)
+	BigDecimal::BigDecimal(JString arg0)
 		: java::lang::Number(
 			"android.icu.math.BigDecimal",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	BigDecimal::BigDecimal(java::math::BigDecimal arg0)
 		: java::lang::Number(
@@ -140,11 +143,11 @@ namespace android::icu::math
 			arg0.object(),
 			arg1
 		) {}
-	BigDecimal::BigDecimal(jcharArray arg0, jint arg1, jint arg2)
+	BigDecimal::BigDecimal(JCharArray arg0, jint arg1, jint arg2)
 		: java::lang::Number(
 			"android.icu.math.BigDecimal",
 			"([CII)V",
-			arg0,
+			arg0.object<jcharArray>(),
 			arg1,
 			arg2
 		) {}
@@ -225,12 +228,12 @@ namespace android::icu::math
 			arg0.object()
 		);
 	}
-	jint BigDecimal::compareTo(jobject arg0)
+	jint BigDecimal::compareTo(JObject arg0)
 	{
 		return callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Object;)I",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint BigDecimal::compareTo(android::icu::math::BigDecimal arg0, android::icu::math::MathContext arg1)
@@ -302,12 +305,12 @@ namespace android::icu::math
 			"()D"
 		);
 	}
-	jboolean BigDecimal::equals(jobject arg0)
+	jboolean BigDecimal::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jfloat BigDecimal::floatValue()
@@ -317,16 +320,16 @@ namespace android::icu::math
 			"()F"
 		);
 	}
-	jstring BigDecimal::format(jint arg0, jint arg1)
+	JString BigDecimal::format(jint arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"format",
 			"(II)Ljava/lang/String;",
 			arg0,
 			arg1
-		).object<jstring>();
+		);
 	}
-	jstring BigDecimal::format(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5)
+	JString BigDecimal::format(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5)
 	{
 		return callObjectMethod(
 			"format",
@@ -337,7 +340,7 @@ namespace android::icu::math
 			arg3,
 			arg4,
 			arg5
-		).object<jstring>();
+		);
 	}
 	jint BigDecimal::hashCode()
 	{
@@ -581,19 +584,19 @@ namespace android::icu::math
 			"()Ljava/math/BigInteger;"
 		);
 	}
-	jcharArray BigDecimal::toCharArray()
+	JCharArray BigDecimal::toCharArray()
 	{
 		return callObjectMethod(
 			"toCharArray",
 			"()[C"
-		).object<jcharArray>();
+		);
 	}
-	jstring BigDecimal::toString()
+	JString BigDecimal::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	java::math::BigInteger BigDecimal::unscaledValue()
 	{

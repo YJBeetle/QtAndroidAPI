@@ -6,6 +6,7 @@ namespace android::net
 {
 	class Uri;
 }
+class JString;
 
 namespace android::provider
 {
@@ -13,16 +14,16 @@ namespace android::provider
 	{
 	public:
 		// Fields
-		static jstring CONTENT_DIRECTORY();
-		static jstring CONTENT_ITEM_TYPE();
-		static jstring CONTENT_TYPE();
+		static JString CONTENT_DIRECTORY();
+		static JString CONTENT_ITEM_TYPE();
+		static JString CONTENT_TYPE();
 		static android::net::Uri CONTENT_URI();
-		static jstring DEFAULT_SORT_ORDER();
-		static jstring GROUP_ID();
-		static jstring GROUP_SYNC_ACCOUNT();
-		static jstring GROUP_SYNC_ACCOUNT_TYPE();
-		static jstring GROUP_SYNC_ID();
-		static jstring PERSON_ID();
+		static JString DEFAULT_SORT_ORDER();
+		static JString GROUP_ID();
+		static JString GROUP_SYNC_ACCOUNT();
+		static JString GROUP_SYNC_ACCOUNT_TYPE();
+		static JString GROUP_SYNC_ID();
+		static JString PERSON_ID();
 		static android::net::Uri RAW_CONTENT_URI();
 		
 		// QAndroidJniObject forward

@@ -1,7 +1,15 @@
+#include "../../../JArray.hpp"
+#include "../../../JArray.hpp"
+#include "../../../JArray.hpp"
+#include "../../../JArray.hpp"
+#include "../../../JArray.hpp"
 #include "../../io/ObjectInputStream.hpp"
 #include "../../io/ObjectOutputStream.hpp"
+#include "../../../JClass.hpp"
 #include "../ClassLoader.hpp"
 #include "../IndexOutOfBoundsException.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "../../util/Optional.hpp"
 #include "./MethodType.hpp"
 
@@ -15,13 +23,13 @@ namespace java::lang::invoke
 	// Constructors
 	
 	// Methods
-	java::lang::invoke::MethodType MethodType::fromMethodDescriptorString(jstring arg0, java::lang::ClassLoader arg1)
+	java::lang::invoke::MethodType MethodType::fromMethodDescriptorString(JString arg0, java::lang::ClassLoader arg1)
 	{
 		return callStaticObjectMethod(
 			"java.lang.invoke.MethodType",
 			"fromMethodDescriptorString",
 			"(Ljava/lang/String;Ljava/lang/ClassLoader;)Ljava/lang/invoke/MethodType;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
@@ -44,72 +52,72 @@ namespace java::lang::invoke
 			arg1
 		);
 	}
-	java::lang::invoke::MethodType MethodType::methodType(jclass arg0)
+	java::lang::invoke::MethodType MethodType::methodType(JClass arg0)
 	{
 		return callStaticObjectMethod(
 			"java.lang.invoke.MethodType",
 			"methodType",
 			"(Ljava/lang/Class;)Ljava/lang/invoke/MethodType;",
-			arg0
+			arg0.object<jclass>()
 		);
 	}
-	java::lang::invoke::MethodType MethodType::methodType(jclass arg0, jarray arg1)
+	java::lang::invoke::MethodType MethodType::methodType(JClass arg0, JArray arg1)
 	{
 		return callStaticObjectMethod(
 			"java.lang.invoke.MethodType",
 			"methodType",
 			"(Ljava/lang/Class;[Ljava/lang/Class;)Ljava/lang/invoke/MethodType;",
-			arg0,
-			arg1
+			arg0.object<jclass>(),
+			arg1.object<jarray>()
 		);
 	}
-	java::lang::invoke::MethodType MethodType::methodType(jclass arg0, jclass arg1)
+	java::lang::invoke::MethodType MethodType::methodType(JClass arg0, JClass arg1)
 	{
 		return callStaticObjectMethod(
 			"java.lang.invoke.MethodType",
 			"methodType",
 			"(Ljava/lang/Class;Ljava/lang/Class;)Ljava/lang/invoke/MethodType;",
-			arg0,
-			arg1
+			arg0.object<jclass>(),
+			arg1.object<jclass>()
 		);
 	}
-	java::lang::invoke::MethodType MethodType::methodType(jclass arg0, java::lang::invoke::MethodType arg1)
+	java::lang::invoke::MethodType MethodType::methodType(JClass arg0, java::lang::invoke::MethodType arg1)
 	{
 		return callStaticObjectMethod(
 			"java.lang.invoke.MethodType",
 			"methodType",
 			"(Ljava/lang/Class;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/MethodType;",
-			arg0,
+			arg0.object<jclass>(),
 			arg1.object()
 		);
 	}
-	java::lang::invoke::MethodType MethodType::methodType(jclass arg0, JObject arg1)
+	java::lang::invoke::MethodType MethodType::methodType(JClass arg0, JObject arg1)
 	{
 		return callStaticObjectMethod(
 			"java.lang.invoke.MethodType",
 			"methodType",
 			"(Ljava/lang/Class;Ljava/util/List;)Ljava/lang/invoke/MethodType;",
-			arg0,
+			arg0.object<jclass>(),
 			arg1.object()
 		);
 	}
-	java::lang::invoke::MethodType MethodType::methodType(jclass arg0, jclass arg1, jarray arg2)
+	java::lang::invoke::MethodType MethodType::methodType(JClass arg0, JClass arg1, JArray arg2)
 	{
 		return callStaticObjectMethod(
 			"java.lang.invoke.MethodType",
 			"methodType",
 			"(Ljava/lang/Class;Ljava/lang/Class;[Ljava/lang/Class;)Ljava/lang/invoke/MethodType;",
-			arg0,
-			arg1,
-			arg2
+			arg0.object<jclass>(),
+			arg1.object<jclass>(),
+			arg2.object<jarray>()
 		);
 	}
-	java::lang::invoke::MethodType MethodType::appendParameterTypes(jarray arg0)
+	java::lang::invoke::MethodType MethodType::appendParameterTypes(JArray arg0)
 	{
 		return callObjectMethod(
 			"appendParameterTypes",
 			"([Ljava/lang/Class;)Ljava/lang/invoke/MethodType;",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
 	java::lang::invoke::MethodType MethodType::appendParameterTypes(JObject arg0)
@@ -120,13 +128,13 @@ namespace java::lang::invoke
 			arg0.object()
 		);
 	}
-	java::lang::invoke::MethodType MethodType::changeParameterType(jint arg0, jclass arg1)
+	java::lang::invoke::MethodType MethodType::changeParameterType(jint arg0, JClass arg1)
 	{
 		return callObjectMethod(
 			"changeParameterType",
 			"(ILjava/lang/Class;)Ljava/lang/invoke/MethodType;",
 			arg0,
-			arg1
+			arg1.object<jclass>()
 		);
 	}
 	JObject MethodType::changeParameterType(jint arg0, JObject arg1)
@@ -138,12 +146,12 @@ namespace java::lang::invoke
 			arg1.object()
 		);
 	}
-	java::lang::invoke::MethodType MethodType::changeReturnType(jclass arg0)
+	java::lang::invoke::MethodType MethodType::changeReturnType(JClass arg0)
 	{
 		return callObjectMethod(
 			"changeReturnType",
 			"(Ljava/lang/Class;)Ljava/lang/invoke/MethodType;",
-			arg0
+			arg0.object<jclass>()
 		);
 	}
 	JObject MethodType::changeReturnType(JObject arg0)
@@ -161,12 +169,12 @@ namespace java::lang::invoke
 			"()Ljava/util/Optional;"
 		);
 	}
-	jstring MethodType::descriptorString()
+	JString MethodType::descriptorString()
 	{
 		return callObjectMethod(
 			"descriptorString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	java::lang::invoke::MethodType MethodType::dropParameterTypes(jint arg0, jint arg1)
 	{
@@ -177,12 +185,12 @@ namespace java::lang::invoke
 			arg1
 		);
 	}
-	jboolean MethodType::equals(jobject arg0)
+	jboolean MethodType::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	java::lang::invoke::MethodType MethodType::erase()
@@ -220,13 +228,13 @@ namespace java::lang::invoke
 			"()I"
 		);
 	}
-	java::lang::invoke::MethodType MethodType::insertParameterTypes(jint arg0, jarray arg1)
+	java::lang::invoke::MethodType MethodType::insertParameterTypes(jint arg0, JArray arg1)
 	{
 		return callObjectMethod(
 			"insertParameterTypes",
 			"(I[Ljava/lang/Class;)Ljava/lang/invoke/MethodType;",
 			arg0,
-			arg1
+			arg1.object<jarray>()
 		);
 	}
 	java::lang::invoke::MethodType MethodType::insertParameterTypes(jint arg0, JObject arg1)
@@ -238,19 +246,19 @@ namespace java::lang::invoke
 			arg1.object()
 		);
 	}
-	jclass MethodType::lastParameterType()
+	JClass MethodType::lastParameterType()
 	{
 		return callObjectMethod(
 			"lastParameterType",
 			"()Ljava/lang/Class;"
-		).object<jclass>();
+		);
 	}
-	jarray MethodType::parameterArray()
+	JArray MethodType::parameterArray()
 	{
 		return callObjectMethod(
 			"parameterArray",
 			"()[Ljava/lang/Class;"
-		).object<jarray>();
+		);
 	}
 	jint MethodType::parameterCount()
 	{
@@ -266,34 +274,34 @@ namespace java::lang::invoke
 			"()Ljava/util/List;"
 		);
 	}
-	jclass MethodType::parameterType(jint arg0)
+	JClass MethodType::parameterType(jint arg0)
 	{
 		return callObjectMethod(
 			"parameterType",
 			"(I)Ljava/lang/Class;",
 			arg0
-		).object<jclass>();
+		);
 	}
-	jclass MethodType::returnType()
+	JClass MethodType::returnType()
 	{
 		return callObjectMethod(
 			"returnType",
 			"()Ljava/lang/Class;"
-		).object<jclass>();
+		);
 	}
-	jstring MethodType::toMethodDescriptorString()
+	JString MethodType::toMethodDescriptorString()
 	{
 		return callObjectMethod(
 			"toMethodDescriptorString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring MethodType::toString()
+	JString MethodType::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	java::lang::invoke::MethodType MethodType::unwrap()
 	{

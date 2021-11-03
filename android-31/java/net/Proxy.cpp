@@ -1,3 +1,5 @@
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./Proxy_Type.hpp"
 #include "./SocketAddress.hpp"
 #include "./Proxy.hpp"
@@ -34,12 +36,12 @@ namespace java::net
 			"()Ljava/net/SocketAddress;"
 		);
 	}
-	jboolean Proxy::equals(jobject arg0)
+	jboolean Proxy::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint Proxy::hashCode()
@@ -49,12 +51,12 @@ namespace java::net
 			"()I"
 		);
 	}
-	jstring Proxy::toString()
+	JString Proxy::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	java::net::Proxy_Type Proxy::type()
 	{

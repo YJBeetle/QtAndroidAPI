@@ -1,6 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./Notification_Style.hpp"
 
 namespace android::app
@@ -15,6 +14,7 @@ namespace android::graphics::drawable
 {
 	class Icon;
 }
+class JString;
 
 namespace android::app
 {
@@ -35,8 +35,8 @@ namespace android::app
 		android::app::Notification_BigPictureStyle bigLargeIcon(android::graphics::Bitmap arg0);
 		android::app::Notification_BigPictureStyle bigLargeIcon(android::graphics::drawable::Icon arg0);
 		android::app::Notification_BigPictureStyle bigPicture(android::graphics::Bitmap arg0);
-		android::app::Notification_BigPictureStyle setBigContentTitle(jstring arg0);
-		android::app::Notification_BigPictureStyle setSummaryText(jstring arg0);
+		android::app::Notification_BigPictureStyle setBigContentTitle(JString arg0);
+		android::app::Notification_BigPictureStyle setSummaryText(JString arg0);
 	};
 } // namespace android::app
 

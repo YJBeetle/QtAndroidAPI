@@ -6,6 +6,7 @@ namespace java::io
 {
 	class File;
 }
+class JString;
 
 namespace android::os
 {
@@ -33,14 +34,14 @@ namespace android::os
 		
 		// Constructors
 		FileObserver(java::io::File arg0);
-		FileObserver(jstring arg0);
+		FileObserver(JString arg0);
 		FileObserver(JObject arg0);
 		FileObserver(java::io::File arg0, jint arg1);
-		FileObserver(jstring arg0, jint arg1);
+		FileObserver(JString arg0, jint arg1);
 		FileObserver(JObject arg0, jint arg1);
 		
 		// Methods
-		void onEvent(jint arg0, jstring arg1);
+		void onEvent(jint arg0, JString arg1);
 		void startWatching();
 		void stopWatching();
 	};

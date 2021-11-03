@@ -1,10 +1,9 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "../../../java/text/Format.hpp"
-#include "./UFormat.hpp"
 #include "./DateFormat.hpp"
 
+class JArray;
+class JBooleanArray;
 namespace android::icu::text
 {
 	class DateFormat_Field;
@@ -33,6 +32,8 @@ namespace android::icu::util
 {
 	class ULocale;
 }
+class JObject;
+class JString;
 namespace java::lang
 {
 	class StringBuffer;
@@ -67,33 +68,33 @@ namespace android::icu::text
 		
 		// Constructors
 		SimpleDateFormat();
-		SimpleDateFormat(jstring arg0);
-		SimpleDateFormat(jstring arg0, android::icu::text::DateFormatSymbols arg1);
-		SimpleDateFormat(jstring arg0, android::icu::util::ULocale arg1);
-		SimpleDateFormat(jstring arg0, java::util::Locale arg1);
-		SimpleDateFormat(jstring arg0, jstring arg1, android::icu::util::ULocale arg2);
+		SimpleDateFormat(JString arg0);
+		SimpleDateFormat(JString arg0, android::icu::text::DateFormatSymbols arg1);
+		SimpleDateFormat(JString arg0, android::icu::util::ULocale arg1);
+		SimpleDateFormat(JString arg0, java::util::Locale arg1);
+		SimpleDateFormat(JString arg0, JString arg1, android::icu::util::ULocale arg2);
 		
 		// Methods
-		void applyLocalizedPattern(jstring arg0);
-		void applyPattern(jstring arg0);
-		jobject clone();
-		jboolean equals(jobject arg0);
+		void applyLocalizedPattern(JString arg0);
+		void applyPattern(JString arg0);
+		JObject clone();
+		jboolean equals(JObject arg0);
 		java::lang::StringBuffer format(android::icu::util::Calendar arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2);
-		JObject formatToCharacterIterator(jobject arg0);
+		JObject formatToCharacterIterator(JObject arg0);
 		java::util::Date get2DigitYearStart();
 		android::icu::text::DateFormatSymbols getDateFormatSymbols();
 		android::icu::text::NumberFormat getNumberFormat(jchar arg0);
 		android::icu::text::TimeZoneFormat getTimeZoneFormat();
 		jint hashCode();
-		void parse(jstring arg0, android::icu::util::Calendar arg1, java::text::ParsePosition arg2);
+		void parse(JString arg0, android::icu::util::Calendar arg1, java::text::ParsePosition arg2);
 		void set2DigitYearStart(java::util::Date arg0);
 		void setContext(android::icu::text::DisplayContext arg0);
 		void setDateFormatSymbols(android::icu::text::DateFormatSymbols arg0);
 		void setNumberFormat(android::icu::text::NumberFormat arg0);
-		void setNumberFormat(jstring arg0, android::icu::text::NumberFormat arg1);
+		void setNumberFormat(JString arg0, android::icu::text::NumberFormat arg1);
 		void setTimeZoneFormat(android::icu::text::TimeZoneFormat arg0);
-		jstring toLocalizedPattern();
-		jstring toPattern();
+		JString toLocalizedPattern();
+		JString toPattern();
 	};
 } // namespace android::icu::text
 

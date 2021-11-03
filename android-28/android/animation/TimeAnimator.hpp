@@ -1,9 +1,6 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "./Animator.hpp"
 #include "./ValueAnimator.hpp"
-
 
 namespace android::animation
 {

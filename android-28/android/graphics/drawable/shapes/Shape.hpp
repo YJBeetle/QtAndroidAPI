@@ -14,6 +14,7 @@ namespace android::graphics
 {
 	class Paint;
 }
+class JObject;
 
 namespace android::graphics::drawable::shapes
 {

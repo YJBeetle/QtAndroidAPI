@@ -1,5 +1,8 @@
+#include "../../JArray.hpp"
 #include "../os/Parcel.hpp"
 #include "../os/PersistableBundle.hpp"
+#include "../../JString.hpp"
+#include "../../JString.hpp"
 #include "./ClipDescription.hpp"
 
 namespace android::content
@@ -13,45 +16,45 @@ namespace android::content
 			"Landroid/os/Parcelable$Creator;"
 		);
 	}
-	jstring ClipDescription::MIMETYPE_TEXT_HTML()
+	JString ClipDescription::MIMETYPE_TEXT_HTML()
 	{
 		return getStaticObjectField(
 			"android.content.ClipDescription",
 			"MIMETYPE_TEXT_HTML",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ClipDescription::MIMETYPE_TEXT_INTENT()
+	JString ClipDescription::MIMETYPE_TEXT_INTENT()
 	{
 		return getStaticObjectField(
 			"android.content.ClipDescription",
 			"MIMETYPE_TEXT_INTENT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ClipDescription::MIMETYPE_TEXT_PLAIN()
+	JString ClipDescription::MIMETYPE_TEXT_PLAIN()
 	{
 		return getStaticObjectField(
 			"android.content.ClipDescription",
 			"MIMETYPE_TEXT_PLAIN",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ClipDescription::MIMETYPE_TEXT_URILIST()
+	JString ClipDescription::MIMETYPE_TEXT_URILIST()
 	{
 		return getStaticObjectField(
 			"android.content.ClipDescription",
 			"MIMETYPE_TEXT_URILIST",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ClipDescription::MIMETYPE_UNKNOWN()
+	JString ClipDescription::MIMETYPE_UNKNOWN()
 	{
 		return getStaticObjectField(
 			"android.content.ClipDescription",
 			"MIMETYPE_UNKNOWN",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QAndroidJniObject forward
@@ -64,23 +67,23 @@ namespace android::content
 			"(Landroid/content/ClipDescription;)V",
 			arg0.object()
 		) {}
-	ClipDescription::ClipDescription(jstring arg0, jarray arg1)
+	ClipDescription::ClipDescription(JString arg0, JArray arg1)
 		: JObject(
 			"android.content.ClipDescription",
 			"(Ljava/lang/CharSequence;[Ljava/lang/String;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jarray>()
 		) {}
 	
 	// Methods
-	jboolean ClipDescription::compareMimeTypes(jstring arg0, jstring arg1)
+	jboolean ClipDescription::compareMimeTypes(JString arg0, JString arg1)
 	{
 		return callStaticMethod<jboolean>(
 			"android.content.ClipDescription",
 			"compareMimeTypes",
 			"(Ljava/lang/String;Ljava/lang/String;)Z",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		);
 	}
 	jint ClipDescription::describeContents()
@@ -90,13 +93,13 @@ namespace android::content
 			"()I"
 		);
 	}
-	jarray ClipDescription::filterMimeTypes(jstring arg0)
+	JArray ClipDescription::filterMimeTypes(JString arg0)
 	{
 		return callObjectMethod(
 			"filterMimeTypes",
 			"(Ljava/lang/String;)[Ljava/lang/String;",
-			arg0
-		).object<jarray>();
+			arg0.object<jstring>()
+		);
 	}
 	android::os::PersistableBundle ClipDescription::getExtras()
 	{
@@ -105,20 +108,20 @@ namespace android::content
 			"()Landroid/os/PersistableBundle;"
 		);
 	}
-	jstring ClipDescription::getLabel()
+	JString ClipDescription::getLabel()
 	{
 		return callObjectMethod(
 			"getLabel",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
-	jstring ClipDescription::getMimeType(jint arg0)
+	JString ClipDescription::getMimeType(jint arg0)
 	{
 		return callObjectMethod(
 			"getMimeType",
 			"(I)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
 	jint ClipDescription::getMimeTypeCount()
 	{
@@ -134,12 +137,12 @@ namespace android::content
 			"()J"
 		);
 	}
-	jboolean ClipDescription::hasMimeType(jstring arg0)
+	jboolean ClipDescription::hasMimeType(JString arg0)
 	{
 		return callMethod<jboolean>(
 			"hasMimeType",
 			"(Ljava/lang/String;)Z",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void ClipDescription::setExtras(android::os::PersistableBundle arg0)
@@ -150,12 +153,12 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	jstring ClipDescription::toString()
+	JString ClipDescription::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void ClipDescription::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

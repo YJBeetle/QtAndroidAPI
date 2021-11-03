@@ -1,9 +1,9 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "./Error.hpp"
 #include "./VirtualMachineError.hpp"
 
+class JString;
+class JThrowable;
 
 namespace java::lang
 {
@@ -18,9 +18,9 @@ namespace java::lang
 		
 		// Constructors
 		InternalError();
-		InternalError(jstring arg0);
-		InternalError(jthrowable arg0);
-		InternalError(jstring arg0, jthrowable arg1);
+		InternalError(JString arg0);
+		InternalError(JThrowable arg0);
+		InternalError(JString arg0, JThrowable arg1);
 		
 		// Methods
 	};

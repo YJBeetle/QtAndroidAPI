@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./IpSecTransform.hpp"
 
 namespace android::net
@@ -17,12 +18,12 @@ namespace android::net
 			"()V"
 		);
 	}
-	jstring IpSecTransform::toString()
+	JString IpSecTransform::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::net
 

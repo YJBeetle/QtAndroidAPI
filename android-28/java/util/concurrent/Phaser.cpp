@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./TimeUnit.hpp"
 #include "./atomic/AtomicReference.hpp"
 #include "./Phaser.hpp"
@@ -154,12 +155,12 @@ namespace java::util::concurrent
 			"()I"
 		);
 	}
-	jstring Phaser::toString()
+	JString Phaser::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::util::concurrent
 

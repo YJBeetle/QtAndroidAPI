@@ -1,4 +1,5 @@
 #include "../os/Parcel.hpp"
+#include "../../JString.hpp"
 #include "./GnssMeasurement.hpp"
 
 namespace android::location
@@ -383,12 +384,12 @@ namespace android::location
 			"()Z"
 		);
 	}
-	jstring GnssMeasurement::toString()
+	JString GnssMeasurement::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void GnssMeasurement::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

@@ -1,3 +1,4 @@
+#include "../../JObject.hpp"
 #include "./ColorSpace_Rgb_TransferParameters.hpp"
 
 namespace android::graphics
@@ -74,12 +75,12 @@ namespace android::graphics
 		) {}
 	
 	// Methods
-	jboolean ColorSpace_Rgb_TransferParameters::equals(jobject arg0)
+	jboolean ColorSpace_Rgb_TransferParameters::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint ColorSpace_Rgb_TransferParameters::hashCode()

@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JString;
 
 namespace android::provider
 {
@@ -9,7 +10,7 @@ namespace android::provider
 	{
 	public:
 		// Fields
-		static jstring CONTENT_DIRECTORY();
+		static JString CONTENT_DIRECTORY();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ContactsContract_RawContacts_Data(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}

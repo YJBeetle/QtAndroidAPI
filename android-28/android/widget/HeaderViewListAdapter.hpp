@@ -18,6 +18,7 @@ namespace android::widget
 {
 	class Filter;
 }
+class JObject;
 namespace java::util
 {
 	class ArrayList;
@@ -43,7 +44,7 @@ namespace android::widget
 		android::widget::Filter getFilter();
 		jint getFootersCount();
 		jint getHeadersCount();
-		jobject getItem(jint arg0);
+		JObject getItem(jint arg0);
 		jlong getItemId(jint arg0);
 		jint getItemViewType(jint arg0);
 		android::view::View getView(jint arg0, android::view::View arg1, android::view::ViewGroup arg2);

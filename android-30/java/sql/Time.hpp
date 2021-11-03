@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "../util/Date.hpp"
 
+class JString;
 namespace java::time
 {
 	class Instant;
@@ -28,7 +28,7 @@ namespace java::sql
 		Time(jint arg0, jint arg1, jint arg2);
 		
 		// Methods
-		static java::sql::Time valueOf(jstring arg0);
+		static java::sql::Time valueOf(JString arg0);
 		static java::sql::Time valueOf(java::time::LocalTime arg0);
 		jint getDate();
 		jint getDay();
@@ -40,7 +40,7 @@ namespace java::sql
 		void setYear(jint arg0);
 		java::time::Instant toInstant();
 		java::time::LocalTime toLocalTime();
-		jstring toString();
+		JString toString();
 	};
 } // namespace java::sql
 

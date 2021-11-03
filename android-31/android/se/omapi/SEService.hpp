@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JArray;
 namespace android::content
 {
 	class Context;
@@ -10,6 +11,7 @@ namespace android::se::omapi
 {
 	class Reader;
 }
+class JString;
 
 namespace android::se::omapi
 {
@@ -17,9 +19,9 @@ namespace android::se::omapi
 	{
 	public:
 		// Fields
-		static jstring ACTION_SECURE_ELEMENT_STATE_CHANGED();
-		static jstring EXTRA_READER_NAME();
-		static jstring EXTRA_READER_STATE();
+		static JString ACTION_SECURE_ELEMENT_STATE_CHANGED();
+		static JString EXTRA_READER_NAME();
+		static JString EXTRA_READER_STATE();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SEService(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
@@ -29,9 +31,9 @@ namespace android::se::omapi
 		SEService(android::content::Context arg0, JObject arg1, JObject arg2);
 		
 		// Methods
-		jarray getReaders();
+		JArray getReaders();
 		android::se::omapi::Reader getUiccReader(jint arg0);
-		jstring getVersion();
+		JString getVersion();
 		jboolean isConnected();
 		void shutdown();
 	};

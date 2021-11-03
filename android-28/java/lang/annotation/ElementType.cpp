@@ -1,3 +1,5 @@
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
 #include "./ElementType.hpp"
 
 namespace java::lang::annotation
@@ -106,22 +108,22 @@ namespace java::lang::annotation
 	// Constructors
 	
 	// Methods
-	java::lang::annotation::ElementType ElementType::valueOf(jstring arg0)
+	java::lang::annotation::ElementType ElementType::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"java.lang.annotation.ElementType",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/lang/annotation/ElementType;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray ElementType::values()
+	JArray ElementType::values()
 	{
 		return callStaticObjectMethod(
 			"java.lang.annotation.ElementType",
 			"values",
 			"()[Ljava/lang/annotation/ElementType;"
-		).object<jarray>();
+		);
 	}
 } // namespace java::lang::annotation
 

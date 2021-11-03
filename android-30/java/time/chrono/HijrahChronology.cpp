@@ -1,5 +1,8 @@
+#include "../../../JIntArray.hpp"
 #include "../../io/InputStream.hpp"
 #include "../../io/ObjectInputStream.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "../../lang/Void.hpp"
 #include "../Clock.hpp"
 #include "../Instant.hpp"
@@ -124,19 +127,19 @@ namespace java::time::chrono
 			"()Ljava/util/List;"
 		);
 	}
-	jstring HijrahChronology::getCalendarType()
+	JString HijrahChronology::getCalendarType()
 	{
 		return callObjectMethod(
 			"getCalendarType",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring HijrahChronology::getId()
+	JString HijrahChronology::getId()
 	{
 		return callObjectMethod(
 			"getId",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jboolean HijrahChronology::isLeapYear(jlong arg0)
 	{

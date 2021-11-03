@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JArray;
+class JString;
 
 namespace android::webkit
 {
@@ -15,12 +17,12 @@ namespace android::webkit
 		WebMessage(QAndroidJniObject obj);
 		
 		// Constructors
-		WebMessage(jstring arg0);
-		WebMessage(jstring arg0, jarray arg1);
+		WebMessage(JString arg0);
+		WebMessage(JString arg0, JArray arg1);
 		
 		// Methods
-		jstring getData();
-		jarray getPorts();
+		JString getData();
+		JArray getPorts();
 	};
 } // namespace android::webkit
 

@@ -1,9 +1,8 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "./TtsSpan_Builder.hpp"
 #include "./TtsSpan_SemioticClassBuilder.hpp"
 
+class JString;
 
 namespace android::text::style
 {
@@ -21,11 +20,11 @@ namespace android::text::style
 		TtsSpan_FractionBuilder(jlong arg0, jlong arg1, jlong arg2);
 		
 		// Methods
-		android::text::style::TtsSpan_FractionBuilder setDenominator(jstring arg0);
+		android::text::style::TtsSpan_FractionBuilder setDenominator(JString arg0);
 		android::text::style::TtsSpan_FractionBuilder setDenominator(jlong arg0);
-		android::text::style::TtsSpan_FractionBuilder setIntegerPart(jstring arg0);
+		android::text::style::TtsSpan_FractionBuilder setIntegerPart(JString arg0);
 		android::text::style::TtsSpan_FractionBuilder setIntegerPart(jlong arg0);
-		android::text::style::TtsSpan_FractionBuilder setNumerator(jstring arg0);
+		android::text::style::TtsSpan_FractionBuilder setNumerator(JString arg0);
 		android::text::style::TtsSpan_FractionBuilder setNumerator(jlong arg0);
 	};
 } // namespace android::text::style

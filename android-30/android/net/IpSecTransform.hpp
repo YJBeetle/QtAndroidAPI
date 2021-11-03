@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JObject;
+class JString;
 
 namespace android::net
 {
@@ -18,8 +20,8 @@ namespace android::net
 		
 		// Methods
 		void close();
-		jboolean equals(jobject arg0);
-		jstring toString();
+		jboolean equals(JObject arg0);
+		JString toString();
 	};
 } // namespace android::net
 

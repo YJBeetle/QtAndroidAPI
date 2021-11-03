@@ -2,6 +2,8 @@
 
 #include "../../../JObject.hpp"
 
+class JArray;
+class JArray;
 namespace java::io
 {
 	class ObjectInputStream;
@@ -10,6 +12,8 @@ namespace java::io
 {
 	class ObjectOutputStream;
 }
+class JObject;
+class JThrowable;
 namespace java::lang::ref
 {
 	class ReferenceQueue;
@@ -43,31 +47,31 @@ namespace java::util::concurrent
 		
 		// Methods
 		static java::util::concurrent::ForkJoinTask adapt(JObject arg0);
-		static java::util::concurrent::ForkJoinTask adapt(JObject arg0, jobject arg1);
+		static java::util::concurrent::ForkJoinTask adapt(JObject arg0, JObject arg1);
 		static java::util::concurrent::ForkJoinPool getPool();
 		static jint getQueuedTaskCount();
 		static jint getSurplusQueuedTaskCount();
 		static void helpQuiesce();
 		static jboolean inForkJoinPool();
 		static JObject invokeAll(JObject arg0);
-		static void invokeAll(jarray arg0);
+		static void invokeAll(JArray arg0);
 		static void invokeAll(java::util::concurrent::ForkJoinTask arg0, java::util::concurrent::ForkJoinTask arg1);
 		jboolean cancel(jboolean arg0);
 		jboolean compareAndSetForkJoinTaskTag(jshort arg0, jshort arg1);
-		void complete(jobject arg0);
-		void completeExceptionally(jthrowable arg0);
+		void complete(JObject arg0);
+		void completeExceptionally(JThrowable arg0);
 		java::util::concurrent::ForkJoinTask fork();
-		jobject get();
-		jobject get(jlong arg0, java::util::concurrent::TimeUnit arg1);
-		jthrowable getException();
+		JObject get();
+		JObject get(jlong arg0, java::util::concurrent::TimeUnit arg1);
+		JThrowable getException();
 		jshort getForkJoinTaskTag();
-		jobject getRawResult();
-		jobject invoke();
+		JObject getRawResult();
+		JObject invoke();
 		jboolean isCancelled();
 		jboolean isCompletedAbnormally();
 		jboolean isCompletedNormally();
 		jboolean isDone();
-		jobject join();
+		JObject join();
 		void quietlyComplete();
 		void quietlyInvoke();
 		void quietlyJoin();

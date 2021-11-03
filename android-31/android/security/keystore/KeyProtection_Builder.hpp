@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JArray;
 namespace android::security::keystore
 {
 	class KeyProtection;
@@ -27,9 +28,9 @@ namespace android::security::keystore
 		
 		// Methods
 		android::security::keystore::KeyProtection build();
-		android::security::keystore::KeyProtection_Builder setBlockModes(jarray arg0);
-		android::security::keystore::KeyProtection_Builder setDigests(jarray arg0);
-		android::security::keystore::KeyProtection_Builder setEncryptionPaddings(jarray arg0);
+		android::security::keystore::KeyProtection_Builder setBlockModes(JArray arg0);
+		android::security::keystore::KeyProtection_Builder setDigests(JArray arg0);
+		android::security::keystore::KeyProtection_Builder setEncryptionPaddings(JArray arg0);
 		android::security::keystore::KeyProtection_Builder setInvalidatedByBiometricEnrollment(jboolean arg0);
 		android::security::keystore::KeyProtection_Builder setIsStrongBoxBacked(jboolean arg0);
 		android::security::keystore::KeyProtection_Builder setKeyValidityEnd(java::util::Date arg0);
@@ -38,7 +39,7 @@ namespace android::security::keystore
 		android::security::keystore::KeyProtection_Builder setKeyValidityStart(java::util::Date arg0);
 		android::security::keystore::KeyProtection_Builder setMaxUsageCount(jint arg0);
 		android::security::keystore::KeyProtection_Builder setRandomizedEncryptionRequired(jboolean arg0);
-		android::security::keystore::KeyProtection_Builder setSignaturePaddings(jarray arg0);
+		android::security::keystore::KeyProtection_Builder setSignaturePaddings(JArray arg0);
 		android::security::keystore::KeyProtection_Builder setUnlockedDeviceRequired(jboolean arg0);
 		android::security::keystore::KeyProtection_Builder setUserAuthenticationParameters(jint arg0, jint arg1);
 		android::security::keystore::KeyProtection_Builder setUserAuthenticationRequired(jboolean arg0);

@@ -6,6 +6,7 @@ namespace android::os
 {
 	class Parcel;
 }
+class JObject;
 namespace java::nio
 {
 	class ByteBuffer;
@@ -28,7 +29,7 @@ namespace android::net::wifi
 		
 		// Methods
 		jint describeContents();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		java::nio::ByteBuffer getBytes();
 		jint getId();
 		jint getIdExt();

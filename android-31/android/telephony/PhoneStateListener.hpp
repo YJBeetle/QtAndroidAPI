@@ -34,6 +34,7 @@ namespace android::telephony::ims
 {
 	class ImsReasonInfo;
 }
+class JString;
 
 namespace android::telephony
 {
@@ -75,7 +76,7 @@ namespace android::telephony
 		void onBarringInfoChanged(android::telephony::BarringInfo arg0);
 		void onCallDisconnectCauseChanged(jint arg0, jint arg1);
 		void onCallForwardingIndicatorChanged(jboolean arg0);
-		void onCallStateChanged(jint arg0, jstring arg1);
+		void onCallStateChanged(jint arg0, JString arg1);
 		void onCellInfoChanged(JObject arg0);
 		void onCellLocationChanged(android::telephony::CellLocation arg0);
 		void onDataActivity(jint arg0);
@@ -86,7 +87,7 @@ namespace android::telephony
 		void onImsCallDisconnectCauseChanged(android::telephony::ims::ImsReasonInfo arg0);
 		void onMessageWaitingIndicatorChanged(jboolean arg0);
 		void onPreciseDataConnectionStateChanged(android::telephony::PreciseDataConnectionState arg0);
-		void onRegistrationFailed(android::telephony::CellIdentity arg0, jstring arg1, jint arg2, jint arg3, jint arg4);
+		void onRegistrationFailed(android::telephony::CellIdentity arg0, JString arg1, jint arg2, jint arg3, jint arg4);
 		void onServiceStateChanged(android::telephony::ServiceState arg0);
 		void onSignalStrengthChanged(jint arg0);
 		void onSignalStrengthsChanged(android::telephony::SignalStrength arg0);

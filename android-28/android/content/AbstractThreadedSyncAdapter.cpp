@@ -3,6 +3,7 @@
 #include "./Context.hpp"
 #include "./SyncResult.hpp"
 #include "../os/Bundle.hpp"
+#include "../../JString.hpp"
 #include "../../java/lang/Thread.hpp"
 #include "./AbstractThreadedSyncAdapter.hpp"
 
@@ -52,26 +53,26 @@ namespace android::content
 			"()Landroid/os/IBinder;"
 		);
 	}
-	void AbstractThreadedSyncAdapter::onPerformSync(android::accounts::Account arg0, android::os::Bundle arg1, jstring arg2, android::content::ContentProviderClient arg3, android::content::SyncResult arg4)
+	void AbstractThreadedSyncAdapter::onPerformSync(android::accounts::Account arg0, android::os::Bundle arg1, JString arg2, android::content::ContentProviderClient arg3, android::content::SyncResult arg4)
 	{
 		callMethod<void>(
 			"onPerformSync",
 			"(Landroid/accounts/Account;Landroid/os/Bundle;Ljava/lang/String;Landroid/content/ContentProviderClient;Landroid/content/SyncResult;)V",
 			arg0.object(),
 			arg1.object(),
-			arg2,
+			arg2.object<jstring>(),
 			arg3.object(),
 			arg4.object()
 		);
 	}
-	void AbstractThreadedSyncAdapter::onSecurityException(android::accounts::Account arg0, android::os::Bundle arg1, jstring arg2, android::content::SyncResult arg3)
+	void AbstractThreadedSyncAdapter::onSecurityException(android::accounts::Account arg0, android::os::Bundle arg1, JString arg2, android::content::SyncResult arg3)
 	{
 		callMethod<void>(
 			"onSecurityException",
 			"(Landroid/accounts/Account;Landroid/os/Bundle;Ljava/lang/String;Landroid/content/SyncResult;)V",
 			arg0.object(),
 			arg1.object(),
-			arg2,
+			arg2.object<jstring>(),
 			arg3.object()
 		);
 	}

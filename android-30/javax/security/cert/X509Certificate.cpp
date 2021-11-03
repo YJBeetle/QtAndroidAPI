@@ -1,4 +1,7 @@
+#include "../../../JByteArray.hpp"
 #include "../../../java/io/InputStream.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "../../../java/math/BigInteger.hpp"
 #include "../../../java/util/Date.hpp"
 #include "./X509Certificate.hpp"
@@ -18,13 +21,13 @@ namespace javax::security::cert
 		) {}
 	
 	// Methods
-	javax::security::cert::X509Certificate X509Certificate::getInstance(jbyteArray arg0)
+	javax::security::cert::X509Certificate X509Certificate::getInstance(JByteArray arg0)
 	{
 		return callStaticObjectMethod(
 			"javax.security.cert.X509Certificate",
 			"getInstance",
 			"([B)Ljavax/security/cert/X509Certificate;",
-			arg0
+			arg0.object<jbyteArray>()
 		);
 	}
 	javax::security::cert::X509Certificate X509Certificate::getInstance(java::io::InputStream arg0)
@@ -79,26 +82,26 @@ namespace javax::security::cert
 			"()Ljava/math/BigInteger;"
 		);
 	}
-	jstring X509Certificate::getSigAlgName()
+	JString X509Certificate::getSigAlgName()
 	{
 		return callObjectMethod(
 			"getSigAlgName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring X509Certificate::getSigAlgOID()
+	JString X509Certificate::getSigAlgOID()
 	{
 		return callObjectMethod(
 			"getSigAlgOID",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jbyteArray X509Certificate::getSigAlgParams()
+	JByteArray X509Certificate::getSigAlgParams()
 	{
 		return callObjectMethod(
 			"getSigAlgParams",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
 	JObject X509Certificate::getSubjectDN()
 	{

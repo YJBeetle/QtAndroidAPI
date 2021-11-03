@@ -2,6 +2,9 @@
 
 #include "../../../JObject.hpp"
 
+class JCharArray;
+class JObject;
+class JString;
 namespace java::lang
 {
 	class StringBuffer;
@@ -22,20 +25,20 @@ namespace android::icu::text
 		// Constructors
 		
 		// Methods
-		static android::icu::text::UCharacterIterator getInstance(jcharArray arg0);
+		static android::icu::text::UCharacterIterator getInstance(JCharArray arg0);
 		static android::icu::text::UCharacterIterator getInstance(JObject arg0);
-		static android::icu::text::UCharacterIterator getInstance(jstring arg0);
+		static android::icu::text::UCharacterIterator getInstance(JString arg0);
 		static android::icu::text::UCharacterIterator getInstance(java::lang::StringBuffer arg0);
-		static android::icu::text::UCharacterIterator getInstance(jcharArray arg0, jint arg1, jint arg2);
-		jobject clone();
+		static android::icu::text::UCharacterIterator getInstance(JCharArray arg0, jint arg1, jint arg2);
+		JObject clone();
 		jint current();
 		jint currentCodePoint();
 		JObject getCharacterIterator();
 		jint getIndex();
 		jint getLength();
-		jint getText(jcharArray arg0);
-		jint getText(jcharArray arg0, jint arg1);
-		jstring getText();
+		jint getText(JCharArray arg0);
+		jint getText(JCharArray arg0, jint arg1);
+		JString getText();
 		jint moveCodePointIndex(jint arg0);
 		jint moveIndex(jint arg0);
 		jint next();

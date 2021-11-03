@@ -1,5 +1,6 @@
 #include "../../lang/ClassLoader.hpp"
 #include "../../lang/ThreadGroup.hpp"
+#include "../../../JThrowable.hpp"
 #include "../../security/AccessControlContext.hpp"
 #include "./ForkJoinPool.hpp"
 #include "./ForkJoinWorkerThread.hpp"

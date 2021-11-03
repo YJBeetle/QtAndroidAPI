@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./WebResourceError.hpp"
 
 namespace android::webkit
@@ -10,12 +11,12 @@ namespace android::webkit
 	// Constructors
 	
 	// Methods
-	jstring WebResourceError::getDescription()
+	JString WebResourceError::getDescription()
 	{
 		return callObjectMethod(
 			"getDescription",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	jint WebResourceError::getErrorCode()
 	{

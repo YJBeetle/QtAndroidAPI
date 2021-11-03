@@ -1,3 +1,5 @@
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
 #include "./Canvas_EdgeType.hpp"
 
 namespace android::graphics
@@ -26,22 +28,22 @@ namespace android::graphics
 	// Constructors
 	
 	// Methods
-	android::graphics::Canvas_EdgeType Canvas_EdgeType::valueOf(jstring arg0)
+	android::graphics::Canvas_EdgeType Canvas_EdgeType::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.graphics.Canvas$EdgeType",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/graphics/Canvas$EdgeType;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray Canvas_EdgeType::values()
+	JArray Canvas_EdgeType::values()
 	{
 		return callStaticObjectMethod(
 			"android.graphics.Canvas$EdgeType",
 			"values",
 			"()[Landroid/graphics/Canvas$EdgeType;"
-		).object<jarray>();
+		);
 	}
 } // namespace android::graphics
 

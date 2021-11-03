@@ -1,3 +1,6 @@
+#include "../../../JClass.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./CaptureResult_Key.hpp"
 
 namespace android::hardware::camera2
@@ -8,29 +11,29 @@ namespace android::hardware::camera2
 	CaptureResult_Key::CaptureResult_Key(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	CaptureResult_Key::CaptureResult_Key(jstring arg0, jclass arg1)
+	CaptureResult_Key::CaptureResult_Key(JString arg0, JClass arg1)
 		: JObject(
 			"android.hardware.camera2.CaptureResult$Key",
 			"(Ljava/lang/String;Ljava/lang/Class;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jclass>()
 		) {}
 	
 	// Methods
-	jboolean CaptureResult_Key::equals(jobject arg0)
+	jboolean CaptureResult_Key::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jstring CaptureResult_Key::getName()
+	JString CaptureResult_Key::getName()
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint CaptureResult_Key::hashCode()
 	{
@@ -39,12 +42,12 @@ namespace android::hardware::camera2
 			"()I"
 		);
 	}
-	jstring CaptureResult_Key::toString()
+	JString CaptureResult_Key::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::hardware::camera2
 

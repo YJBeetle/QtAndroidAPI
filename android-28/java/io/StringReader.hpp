@@ -1,8 +1,9 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./Reader.hpp"
 
+class JCharArray;
+class JString;
 
 namespace java::io
 {
@@ -16,14 +17,14 @@ namespace java::io
 		StringReader(QAndroidJniObject obj);
 		
 		// Constructors
-		StringReader(jstring arg0);
+		StringReader(JString arg0);
 		
 		// Methods
 		void close();
 		void mark(jint arg0);
 		jboolean markSupported();
 		jint read();
-		jint read(jcharArray arg0, jint arg1, jint arg2);
+		jint read(JCharArray arg0, jint arg1, jint arg2);
 		jboolean ready();
 		void reset();
 		jlong skip(jlong arg0);

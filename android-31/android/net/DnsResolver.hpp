@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JByteArray;
 namespace android::net
 {
 	class Network;
@@ -10,6 +11,7 @@ namespace android::os
 {
 	class CancellationSignal;
 }
+class JString;
 
 namespace android::net
 {
@@ -35,10 +37,10 @@ namespace android::net
 		
 		// Methods
 		static android::net::DnsResolver getInstance();
-		void query(android::net::Network arg0, jstring arg1, jint arg2, JObject arg3, android::os::CancellationSignal arg4, JObject arg5);
-		void query(android::net::Network arg0, jstring arg1, jint arg2, jint arg3, JObject arg4, android::os::CancellationSignal arg5, JObject arg6);
-		void rawQuery(android::net::Network arg0, jbyteArray arg1, jint arg2, JObject arg3, android::os::CancellationSignal arg4, JObject arg5);
-		void rawQuery(android::net::Network arg0, jstring arg1, jint arg2, jint arg3, jint arg4, JObject arg5, android::os::CancellationSignal arg6, JObject arg7);
+		void query(android::net::Network arg0, JString arg1, jint arg2, JObject arg3, android::os::CancellationSignal arg4, JObject arg5);
+		void query(android::net::Network arg0, JString arg1, jint arg2, jint arg3, JObject arg4, android::os::CancellationSignal arg5, JObject arg6);
+		void rawQuery(android::net::Network arg0, JByteArray arg1, jint arg2, JObject arg3, android::os::CancellationSignal arg4, JObject arg5);
+		void rawQuery(android::net::Network arg0, JString arg1, jint arg2, jint arg3, jint arg4, JObject arg5, android::os::CancellationSignal arg6, JObject arg7);
 	};
 } // namespace android::net
 

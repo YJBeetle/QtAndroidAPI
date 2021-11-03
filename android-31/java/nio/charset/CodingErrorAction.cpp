@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./CodingErrorAction.hpp"
 
 namespace java::nio::charset
@@ -34,12 +35,12 @@ namespace java::nio::charset
 	// Constructors
 	
 	// Methods
-	jstring CodingErrorAction::toString()
+	JString CodingErrorAction::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::nio::charset
 

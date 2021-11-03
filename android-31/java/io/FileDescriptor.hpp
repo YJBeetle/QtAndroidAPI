@@ -2,7 +2,6 @@
 
 #include "../../JObject.hpp"
 
-
 namespace java::io
 {
 	class FileDescriptor : public JObject

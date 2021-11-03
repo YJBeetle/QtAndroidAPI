@@ -1,3 +1,5 @@
+#include "../../JString.hpp"
+#include "../../JThrowable.hpp"
 #include "./NullPointerException.hpp"
 
 namespace java::lang
@@ -13,27 +15,27 @@ namespace java::lang
 			"java.lang.NullPointerException",
 			"()V"
 		) {}
-	NullPointerException::NullPointerException(jstring arg0)
+	NullPointerException::NullPointerException(JString arg0)
 		: java::lang::RuntimeException(
 			"java.lang.NullPointerException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods
-	jthrowable NullPointerException::fillInStackTrace()
+	JThrowable NullPointerException::fillInStackTrace()
 	{
 		return callObjectMethod(
 			"fillInStackTrace",
 			"()Ljava/lang/Throwable;"
-		).object<jthrowable>();
+		);
 	}
-	jstring NullPointerException::getMessage()
+	JString NullPointerException::getMessage()
 	{
 		return callObjectMethod(
 			"getMessage",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::lang
 

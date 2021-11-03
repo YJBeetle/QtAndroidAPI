@@ -1,9 +1,12 @@
+#include "../../../JArray.hpp"
 #include "../../content/ClipData.hpp"
 #include "../../content/ComponentName.hpp"
 #include "../../net/NetworkRequest.hpp"
 #include "../../os/Bundle.hpp"
 #include "../../os/Parcel.hpp"
 #include "../../os/PersistableBundle.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./JobInfo.hpp"
 
 namespace android::app::job
@@ -124,12 +127,12 @@ namespace android::app::job
 			"()I"
 		);
 	}
-	jboolean JobInfo::equals(jobject arg0)
+	jboolean JobInfo::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint JobInfo::getBackoffPolicy()
@@ -258,12 +261,12 @@ namespace android::app::job
 			"()J"
 		);
 	}
-	jarray JobInfo::getTriggerContentUris()
+	JArray JobInfo::getTriggerContentUris()
 	{
 		return callObjectMethod(
 			"getTriggerContentUris",
 			"()[Landroid/app/job/JobInfo$TriggerContentUri;"
-		).object<jarray>();
+		);
 	}
 	jint JobInfo::hashCode()
 	{
@@ -328,12 +331,12 @@ namespace android::app::job
 			"()Z"
 		);
 	}
-	jstring JobInfo::toString()
+	JString JobInfo::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void JobInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

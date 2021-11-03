@@ -2,6 +2,9 @@
 
 #include "../../../JObject.hpp"
 
+class JArray;
+class JObject;
+class JString;
 
 namespace android::graphics::fonts
 {
@@ -15,16 +18,16 @@ namespace android::graphics::fonts
 		FontVariationAxis(QAndroidJniObject obj);
 		
 		// Constructors
-		FontVariationAxis(jstring arg0, jfloat arg1);
+		FontVariationAxis(JString arg0, jfloat arg1);
 		
 		// Methods
-		static jarray fromFontVariationSettings(jstring arg0);
-		static jstring toFontVariationSettings(jarray arg0);
-		jboolean equals(jobject arg0);
+		static JArray fromFontVariationSettings(JString arg0);
+		static JString toFontVariationSettings(JArray arg0);
+		jboolean equals(JObject arg0);
 		jfloat getStyleValue();
-		jstring getTag();
+		JString getTag();
 		jint hashCode();
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::graphics::fonts
 

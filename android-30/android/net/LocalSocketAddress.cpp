@@ -1,4 +1,5 @@
 #include "./LocalSocketAddress_Namespace.hpp"
+#include "../../JString.hpp"
 #include "./LocalSocketAddress.hpp"
 
 namespace android::net
@@ -9,27 +10,27 @@ namespace android::net
 	LocalSocketAddress::LocalSocketAddress(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	LocalSocketAddress::LocalSocketAddress(jstring arg0)
+	LocalSocketAddress::LocalSocketAddress(JString arg0)
 		: JObject(
 			"android.net.LocalSocketAddress",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	LocalSocketAddress::LocalSocketAddress(jstring arg0, android::net::LocalSocketAddress_Namespace arg1)
+	LocalSocketAddress::LocalSocketAddress(JString arg0, android::net::LocalSocketAddress_Namespace arg1)
 		: JObject(
 			"android.net.LocalSocketAddress",
 			"(Ljava/lang/String;Landroid/net/LocalSocketAddress$Namespace;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		) {}
 	
 	// Methods
-	jstring LocalSocketAddress::getName()
+	JString LocalSocketAddress::getName()
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::net::LocalSocketAddress_Namespace LocalSocketAddress::getNamespace()
 	{

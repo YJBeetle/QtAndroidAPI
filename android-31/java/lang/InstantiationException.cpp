@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./InstantiationException.hpp"
 
 namespace java::lang
@@ -13,11 +14,11 @@ namespace java::lang
 			"java.lang.InstantiationException",
 			"()V"
 		) {}
-	InstantiationException::InstantiationException(jstring arg0)
+	InstantiationException::InstantiationException(JString arg0)
 		: java::lang::ReflectiveOperationException(
 			"java.lang.InstantiationException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

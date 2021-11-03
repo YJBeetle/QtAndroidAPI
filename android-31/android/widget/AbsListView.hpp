@@ -1,10 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../view/View.hpp"
-#include "../view/ViewGroup.hpp"
 #include "./AdapterView.hpp"
 
+class JLongArray;
 namespace android::content
 {
 	class Context;
@@ -61,6 +59,8 @@ namespace android::widget
 {
 	class AbsListView_LayoutParams;
 }
+class JString;
+class JString;
 namespace java::util
 {
 	class ArrayList;
@@ -93,7 +93,7 @@ namespace android::widget
 		// Methods
 		void addTouchables(java::util::ArrayList arg0);
 		void afterTextChanged(JObject arg0);
-		void beforeTextChanged(jstring arg0, jint arg1, jint arg2, jint arg3);
+		void beforeTextChanged(JString arg0, jint arg1, jint arg2, jint arg3);
 		jboolean canScrollList(jint arg0);
 		jboolean checkInputConnectionProxy(android::view::View arg0);
 		void clearChoices();
@@ -103,11 +103,11 @@ namespace android::widget
 		void draw(android::graphics::Canvas arg0);
 		void fling(jint arg0);
 		android::widget::AbsListView_LayoutParams generateLayoutParams(JObject arg0);
-		jstring getAccessibilityClassName();
+		JString getAccessibilityClassName();
 		jint getBottomEdgeEffectColor();
 		jint getCacheColorHint();
 		jint getCheckedItemCount();
-		jlongArray getCheckedItemIds();
+		JLongArray getCheckedItemIds();
 		jint getCheckedItemPosition();
 		android::util::SparseBooleanArray getCheckedItemPositions();
 		jint getChoiceMode();
@@ -119,7 +119,7 @@ namespace android::widget
 		android::view::View getSelectedView();
 		android::graphics::drawable::Drawable getSelector();
 		jint getSolidColor();
-		jstring getTextFilter();
+		JString getTextFilter();
 		jint getTopEdgeEffectColor();
 		jint getTranscriptMode();
 		jint getVerticalScrollbarWidth();
@@ -154,7 +154,7 @@ namespace android::widget
 		void onRtlPropertiesChanged(jint arg0);
 		JObject onSaveInstanceState();
 		jboolean onStartNestedScroll(android::view::View arg0, android::view::View arg1, jint arg2);
-		void onTextChanged(jstring arg0, jint arg1, jint arg2, jint arg3);
+		void onTextChanged(JString arg0, jint arg1, jint arg2, jint arg3);
 		jboolean onTouchEvent(android::view::MotionEvent arg0);
 		void onTouchModeChanged(jboolean arg0);
 		void onWindowFocusChanged(jboolean arg0);
@@ -174,7 +174,7 @@ namespace android::widget
 		void setFastScrollAlwaysVisible(jboolean arg0);
 		void setFastScrollEnabled(jboolean arg0);
 		void setFastScrollStyle(jint arg0);
-		void setFilterText(jstring arg0);
+		void setFilterText(JString arg0);
 		void setFriction(jfloat arg0);
 		void setItemChecked(jint arg0, jboolean arg1);
 		void setMultiChoiceModeListener(JObject arg0);

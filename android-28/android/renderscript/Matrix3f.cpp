@@ -1,3 +1,4 @@
+#include "../../JFloatArray.hpp"
 #include "./Matrix3f.hpp"
 
 namespace android::renderscript
@@ -13,11 +14,11 @@ namespace android::renderscript
 			"android.renderscript.Matrix3f",
 			"()V"
 		) {}
-	Matrix3f::Matrix3f(jfloatArray arg0)
+	Matrix3f::Matrix3f(JFloatArray arg0)
 		: JObject(
 			"android.renderscript.Matrix3f",
 			"([F)V",
-			arg0
+			arg0.object<jfloatArray>()
 		) {}
 	
 	// Methods
@@ -30,12 +31,12 @@ namespace android::renderscript
 			arg1
 		);
 	}
-	jfloatArray Matrix3f::getArray()
+	JFloatArray Matrix3f::getArray()
 	{
 		return callObjectMethod(
 			"getArray",
 			"()[F"
-		).object<jfloatArray>();
+		);
 	}
 	void Matrix3f::load(android::renderscript::Matrix3f arg0)
 	{

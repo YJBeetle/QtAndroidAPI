@@ -6,6 +6,8 @@ namespace java::io
 {
 	class ObjectInputStream;
 }
+class JObject;
+class JString;
 namespace java::time
 {
 	class Duration;
@@ -38,9 +40,9 @@ namespace java::time::zone
 		
 		// Methods
 		static java::time::zone::ZoneOffsetTransition of(java::time::LocalDateTime arg0, java::time::ZoneOffset arg1, java::time::ZoneOffset arg2);
-		jint compareTo(jobject arg0);
+		jint compareTo(JObject arg0);
 		jint compareTo(java::time::zone::ZoneOffsetTransition arg0);
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		java::time::LocalDateTime getDateTimeAfter();
 		java::time::LocalDateTime getDateTimeBefore();
 		java::time::Duration getDuration();
@@ -52,7 +54,7 @@ namespace java::time::zone
 		jboolean isOverlap();
 		jboolean isValidOffset(java::time::ZoneOffset arg0);
 		jlong toEpochSecond();
-		jstring toString();
+		JString toString();
 	};
 } // namespace java::time::zone
 

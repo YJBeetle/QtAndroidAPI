@@ -18,6 +18,8 @@ namespace android::os
 {
 	class Parcel;
 }
+class JObject;
+class JString;
 
 namespace android::app
 {
@@ -42,13 +44,13 @@ namespace android::app
 		static android::app::WallpaperColors fromBitmap(android::graphics::Bitmap arg0);
 		static android::app::WallpaperColors fromDrawable(android::graphics::drawable::Drawable arg0);
 		jint describeContents();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint getColorHints();
 		android::graphics::Color getPrimaryColor();
 		android::graphics::Color getSecondaryColor();
 		android::graphics::Color getTertiaryColor();
 		jint hashCode();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::app

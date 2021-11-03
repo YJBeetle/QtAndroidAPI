@@ -1,3 +1,5 @@
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
 #include "./WebSettings_TextSize.hpp"
 
 namespace android::webkit
@@ -50,22 +52,22 @@ namespace android::webkit
 	// Constructors
 	
 	// Methods
-	android::webkit::WebSettings_TextSize WebSettings_TextSize::valueOf(jstring arg0)
+	android::webkit::WebSettings_TextSize WebSettings_TextSize::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.webkit.WebSettings$TextSize",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/webkit/WebSettings$TextSize;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray WebSettings_TextSize::values()
+	JArray WebSettings_TextSize::values()
 	{
 		return callStaticObjectMethod(
 			"android.webkit.WebSettings$TextSize",
 			"values",
 			"()[Landroid/webkit/WebSettings$TextSize;"
-		).object<jarray>();
+		);
 	}
 } // namespace android::webkit
 

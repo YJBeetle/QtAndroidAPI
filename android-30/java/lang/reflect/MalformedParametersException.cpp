@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./MalformedParametersException.hpp"
 
 namespace java::lang::reflect
@@ -13,11 +14,11 @@ namespace java::lang::reflect
 			"java.lang.reflect.MalformedParametersException",
 			"()V"
 		) {}
-	MalformedParametersException::MalformedParametersException(jstring arg0)
+	MalformedParametersException::MalformedParametersException(JString arg0)
 		: java::lang::RuntimeException(
 			"java.lang.reflect.MalformedParametersException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

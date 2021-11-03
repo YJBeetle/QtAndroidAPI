@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JString;
 
 namespace android::view
 {
@@ -19,7 +20,7 @@ namespace android::view
 		
 		// Methods
 		JObject getAttributes();
-		jstring getTag();
+		JString getTag();
 	};
 } // namespace android::view
 

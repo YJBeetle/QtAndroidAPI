@@ -5,6 +5,7 @@
 #include "./SearchResults.hpp"
 #include "./SearchSpec.hpp"
 #include "./SetSchemaRequest.hpp"
+#include "../../../JString.hpp"
 #include "./AppSearchSession.hpp"
 
 namespace android::app::appsearch
@@ -81,12 +82,12 @@ namespace android::app::appsearch
 			arg2.object()
 		);
 	}
-	void AppSearchSession::remove(jstring arg0, android::app::appsearch::SearchSpec arg1, JObject arg2, JObject arg3)
+	void AppSearchSession::remove(JString arg0, android::app::appsearch::SearchSpec arg1, JObject arg2, JObject arg3)
 	{
 		callMethod<void>(
 			"remove",
 			"(Ljava/lang/String;Landroid/app/appsearch/SearchSpec;Ljava/util/concurrent/Executor;Ljava/util/function/Consumer;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
 			arg2.object(),
 			arg3.object()
@@ -102,12 +103,12 @@ namespace android::app::appsearch
 			arg2.object()
 		);
 	}
-	android::app::appsearch::SearchResults AppSearchSession::search(jstring arg0, android::app::appsearch::SearchSpec arg1)
+	android::app::appsearch::SearchResults AppSearchSession::search(JString arg0, android::app::appsearch::SearchSpec arg1)
 	{
 		return callObjectMethod(
 			"search",
 			"(Ljava/lang/String;Landroid/app/appsearch/SearchSpec;)Landroid/app/appsearch/SearchResults;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}

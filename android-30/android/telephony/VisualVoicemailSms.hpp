@@ -14,6 +14,7 @@ namespace android::telecom
 {
 	class PhoneAccountHandle;
 }
+class JString;
 
 namespace android::telephony
 {
@@ -32,9 +33,9 @@ namespace android::telephony
 		// Methods
 		jint describeContents();
 		android::os::Bundle getFields();
-		jstring getMessageBody();
+		JString getMessageBody();
 		android::telecom::PhoneAccountHandle getPhoneAccountHandle();
-		jstring getPrefix();
+		JString getPrefix();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::telephony

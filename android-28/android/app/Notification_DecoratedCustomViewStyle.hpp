@@ -1,8 +1,6 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./Notification_Style.hpp"
-
 
 namespace android::app
 {

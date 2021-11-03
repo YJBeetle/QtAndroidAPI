@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JIntArray;
 namespace android::view
 {
 	class View;
@@ -14,6 +15,8 @@ namespace android::view
 {
 	class ViewDebug_RecyclerTraceType;
 }
+class JObject;
+class JString;
 
 namespace android::view
 {
@@ -32,13 +35,13 @@ namespace android::view
 		ViewDebug();
 		
 		// Methods
-		static void dumpCapturedView(jstring arg0, jobject arg1);
-		static void startHierarchyTracing(jstring arg0, android::view::View arg1);
-		static void startRecyclerTracing(jstring arg0, android::view::View arg1);
+		static void dumpCapturedView(JString arg0, JObject arg1);
+		static void startHierarchyTracing(JString arg0, android::view::View arg1);
+		static void startRecyclerTracing(JString arg0, android::view::View arg1);
 		static void stopHierarchyTracing();
 		static void stopRecyclerTracing();
 		static void trace(android::view::View arg0, android::view::ViewDebug_HierarchyTraceType arg1);
-		static void trace(android::view::View arg0, android::view::ViewDebug_RecyclerTraceType arg1, jintArray arg2);
+		static void trace(android::view::View arg0, android::view::ViewDebug_RecyclerTraceType arg1, JIntArray arg2);
 	};
 } // namespace android::view
 

@@ -14,6 +14,7 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
 
 namespace android::app
 {
@@ -23,7 +24,7 @@ namespace android::app
 		// Fields
 		static JObject CREATOR();
 		android::content::ComponentName baseActivity();
-		jstring description();
+		JString description();
 		jint id();
 		jint numActivities();
 		jint numRunning();

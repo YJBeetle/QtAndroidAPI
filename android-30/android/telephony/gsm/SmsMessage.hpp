@@ -2,6 +2,8 @@
 
 #include "../../../JObject.hpp"
 
+class JByteArray;
+class JIntArray;
 namespace android::telephony::gsm
 {
 	class SmsMessage_MessageClass;
@@ -10,6 +12,8 @@ namespace android::telephony::gsm
 {
 	class SmsMessage_SubmitPdu;
 }
+class JString;
+class JString;
 
 namespace android::telephony::gsm
 {
@@ -33,27 +37,27 @@ namespace android::telephony::gsm
 		SmsMessage();
 		
 		// Methods
-		static jintArray calculateLength(jstring arg0, jboolean arg1);
-		static android::telephony::gsm::SmsMessage createFromPdu(jbyteArray arg0);
-		static android::telephony::gsm::SmsMessage_SubmitPdu getSubmitPdu(jstring arg0, jstring arg1, jstring arg2, jboolean arg3);
-		static android::telephony::gsm::SmsMessage_SubmitPdu getSubmitPdu(jstring arg0, jstring arg1, jshort arg2, jbyteArray arg3, jboolean arg4);
-		static jint getTPLayerLengthForPDU(jstring arg0);
-		jstring getDisplayMessageBody();
-		jstring getDisplayOriginatingAddress();
-		jstring getEmailBody();
-		jstring getEmailFrom();
+		static JIntArray calculateLength(JString arg0, jboolean arg1);
+		static android::telephony::gsm::SmsMessage createFromPdu(JByteArray arg0);
+		static android::telephony::gsm::SmsMessage_SubmitPdu getSubmitPdu(JString arg0, JString arg1, JString arg2, jboolean arg3);
+		static android::telephony::gsm::SmsMessage_SubmitPdu getSubmitPdu(JString arg0, JString arg1, jshort arg2, JByteArray arg3, jboolean arg4);
+		static jint getTPLayerLengthForPDU(JString arg0);
+		JString getDisplayMessageBody();
+		JString getDisplayOriginatingAddress();
+		JString getEmailBody();
+		JString getEmailFrom();
 		jint getIndexOnSim();
-		jstring getMessageBody();
+		JString getMessageBody();
 		android::telephony::gsm::SmsMessage_MessageClass getMessageClass();
-		jstring getOriginatingAddress();
-		jbyteArray getPdu();
+		JString getOriginatingAddress();
+		JByteArray getPdu();
 		jint getProtocolIdentifier();
-		jstring getPseudoSubject();
-		jstring getServiceCenterAddress();
+		JString getPseudoSubject();
+		JString getServiceCenterAddress();
 		jint getStatus();
 		jint getStatusOnSim();
 		jlong getTimestampMillis();
-		jbyteArray getUserData();
+		JByteArray getUserData();
 		jboolean isCphsMwiMessage();
 		jboolean isEmail();
 		jboolean isMWIClearMessage();

@@ -1,3 +1,4 @@
+#include "../../../JIntArray.hpp"
 #include "./Virtualizer_Settings.hpp"
 #include "./Virtualizer.hpp"
 
@@ -91,14 +92,14 @@ namespace android::media::audiofx
 			"()S"
 		);
 	}
-	jboolean Virtualizer::getSpeakerAngles(jint arg0, jint arg1, jintArray arg2)
+	jboolean Virtualizer::getSpeakerAngles(jint arg0, jint arg1, JIntArray arg2)
 	{
 		return callMethod<jboolean>(
 			"getSpeakerAngles",
 			"(II[I)Z",
 			arg0,
 			arg1,
-			arg2
+			arg2.object<jintArray>()
 		);
 	}
 	jboolean Virtualizer::getStrengthSupported()

@@ -1,3 +1,5 @@
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./EapSessionConfig_EapAkaPrimeConfig.hpp"
 
 namespace android::net::eap
@@ -17,20 +19,20 @@ namespace android::net::eap
 			"()Z"
 		);
 	}
-	jboolean EapSessionConfig_EapAkaPrimeConfig::equals(jobject arg0)
+	jboolean EapSessionConfig_EapAkaPrimeConfig::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jstring EapSessionConfig_EapAkaPrimeConfig::getNetworkName()
+	JString EapSessionConfig_EapAkaPrimeConfig::getNetworkName()
 	{
 		return callObjectMethod(
 			"getNetworkName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint EapSessionConfig_EapAkaPrimeConfig::hashCode()
 	{

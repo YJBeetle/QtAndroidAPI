@@ -2,6 +2,8 @@
 
 #include "../../../JObject.hpp"
 
+class JObject;
+class JString;
 namespace java::math
 {
 	class BigDecimal;
@@ -48,9 +50,9 @@ namespace javax::xml::datatype
 		// Methods
 		void add(javax::xml::datatype::Duration arg0);
 		void clear();
-		jobject clone();
+		JObject clone();
 		jint compare(javax::xml::datatype::XMLGregorianCalendar arg0);
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint getDay();
 		java::math::BigInteger getEon();
 		java::math::BigInteger getEonAndYear();
@@ -83,8 +85,8 @@ namespace javax::xml::datatype
 		void setYear(java::math::BigInteger arg0);
 		java::util::GregorianCalendar toGregorianCalendar();
 		java::util::GregorianCalendar toGregorianCalendar(java::util::TimeZone arg0, java::util::Locale arg1, javax::xml::datatype::XMLGregorianCalendar arg2);
-		jstring toString();
-		jstring toXMLFormat();
+		JString toString();
+		JString toXMLFormat();
 	};
 } // namespace javax::xml::datatype
 

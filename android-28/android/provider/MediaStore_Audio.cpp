@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./MediaStore_Audio.hpp"
 
 namespace android::provider
@@ -15,14 +16,14 @@ namespace android::provider
 		) {}
 	
 	// Methods
-	jstring MediaStore_Audio::keyFor(jstring arg0)
+	JString MediaStore_Audio::keyFor(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.provider.MediaStore$Audio",
 			"keyFor",
 			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
+			arg0.object<jstring>()
+		);
 	}
 } // namespace android::provider
 

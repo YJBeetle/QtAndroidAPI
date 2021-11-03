@@ -1,3 +1,4 @@
+#include "../../JByteArray.hpp"
 #include "./MediaDataSource.hpp"
 
 namespace android::media
@@ -22,13 +23,13 @@ namespace android::media
 			"()J"
 		);
 	}
-	jint MediaDataSource::readAt(jlong arg0, jbyteArray arg1, jint arg2, jint arg3)
+	jint MediaDataSource::readAt(jlong arg0, JByteArray arg1, jint arg2, jint arg3)
 	{
 		return callMethod<jint>(
 			"readAt",
 			"(J[BII)I",
 			arg0,
-			arg1,
+			arg1.object<jbyteArray>(),
 			arg2,
 			arg3
 		);

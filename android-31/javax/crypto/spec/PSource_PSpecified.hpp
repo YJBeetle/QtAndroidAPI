@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "./PSource.hpp"
 
+class JByteArray;
 
 namespace javax::crypto::spec
 {
@@ -17,10 +17,10 @@ namespace javax::crypto::spec
 		PSource_PSpecified(QAndroidJniObject obj);
 		
 		// Constructors
-		PSource_PSpecified(jbyteArray arg0);
+		PSource_PSpecified(JByteArray arg0);
 		
 		// Methods
-		jbyteArray getValue();
+		JByteArray getValue();
 	};
 } // namespace javax::crypto::spec
 

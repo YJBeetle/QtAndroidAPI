@@ -1,4 +1,5 @@
 #include "../../os/Parcel.hpp"
+#include "../../../JString.hpp"
 #include "./DisplayHash.hpp"
 
 namespace android::view::displayhash
@@ -26,12 +27,12 @@ namespace android::view::displayhash
 			"()I"
 		);
 	}
-	jstring DisplayHash::toString()
+	JString DisplayHash::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void DisplayHash::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

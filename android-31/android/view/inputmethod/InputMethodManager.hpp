@@ -2,6 +2,8 @@
 
 #include "../../../JObject.hpp"
 
+class JArray;
+class JArray;
 namespace android::os
 {
 	class Bundle;
@@ -34,6 +36,7 @@ namespace android::view::inputmethod
 {
 	class InputMethodSubtype;
 }
+class JString;
 
 namespace android::view::inputmethod
 {
@@ -58,7 +61,7 @@ namespace android::view::inputmethod
 		
 		// Methods
 		void dispatchKeyEventFromInputMethod(android::view::View arg0, android::view::KeyEvent arg1);
-		void displayCompletions(android::view::View arg0, jarray arg1);
+		void displayCompletions(android::view::View arg0, JArray arg1);
 		android::view::inputmethod::InputMethodSubtype getCurrentInputMethodSubtype();
 		JObject getEnabledInputMethodList();
 		JObject getEnabledInputMethodSubtypeList(android::view::inputmethod::InputMethodInfo arg0, jboolean arg1);
@@ -76,18 +79,18 @@ namespace android::view::inputmethod
 		jboolean isInputMethodSuppressingSpellChecker();
 		jboolean isWatchingCursor(android::view::View arg0);
 		void restartInput(android::view::View arg0);
-		void sendAppPrivateCommand(android::view::View arg0, jstring arg1, android::os::Bundle arg2);
-		void setAdditionalInputMethodSubtypes(jstring arg0, jarray arg1);
+		void sendAppPrivateCommand(android::view::View arg0, JString arg1, android::os::Bundle arg2);
+		void setAdditionalInputMethodSubtypes(JString arg0, JArray arg1);
 		jboolean setCurrentInputMethodSubtype(android::view::inputmethod::InputMethodSubtype arg0);
-		void setInputMethod(JObject arg0, jstring arg1);
-		void setInputMethodAndSubtype(JObject arg0, jstring arg1, android::view::inputmethod::InputMethodSubtype arg2);
+		void setInputMethod(JObject arg0, JString arg1);
+		void setInputMethodAndSubtype(JObject arg0, JString arg1, android::view::inputmethod::InputMethodSubtype arg2);
 		jboolean shouldOfferSwitchingToNextInputMethod(JObject arg0);
-		void showInputMethodAndSubtypeEnabler(jstring arg0);
+		void showInputMethodAndSubtypeEnabler(JString arg0);
 		void showInputMethodPicker();
 		jboolean showSoftInput(android::view::View arg0, jint arg1);
 		jboolean showSoftInput(android::view::View arg0, jint arg1, android::os::ResultReceiver arg2);
 		void showSoftInputFromInputMethod(JObject arg0, jint arg1);
-		void showStatusIcon(JObject arg0, jstring arg1, jint arg2);
+		void showStatusIcon(JObject arg0, JString arg1, jint arg2);
 		jboolean switchToLastInputMethod(JObject arg0);
 		jboolean switchToNextInputMethod(JObject arg0, jboolean arg1);
 		void toggleSoftInput(jint arg0, jint arg1);

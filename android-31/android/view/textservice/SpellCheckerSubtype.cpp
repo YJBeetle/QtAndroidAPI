@@ -1,6 +1,9 @@
 #include "../../content/Context.hpp"
 #include "../../content/pm/ApplicationInfo.hpp"
 #include "../../os/Parcel.hpp"
+#include "../../../JString.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./SpellCheckerSubtype.hpp"
 
 namespace android::view::textservice
@@ -19,22 +22,22 @@ namespace android::view::textservice
 	SpellCheckerSubtype::SpellCheckerSubtype(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	SpellCheckerSubtype::SpellCheckerSubtype(jint arg0, jstring arg1, jstring arg2)
+	SpellCheckerSubtype::SpellCheckerSubtype(jint arg0, JString arg1, JString arg2)
 		: JObject(
 			"android.view.textservice.SpellCheckerSubtype",
 			"(ILjava/lang/String;Ljava/lang/String;)V",
 			arg0,
-			arg1,
-			arg2
+			arg1.object<jstring>(),
+			arg2.object<jstring>()
 		) {}
 	
 	// Methods
-	jboolean SpellCheckerSubtype::containsExtraValueKey(jstring arg0)
+	jboolean SpellCheckerSubtype::containsExtraValueKey(JString arg0)
 	{
 		return callMethod<jboolean>(
 			"containsExtraValueKey",
 			"(Ljava/lang/String;)Z",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	jint SpellCheckerSubtype::describeContents()
@@ -44,52 +47,52 @@ namespace android::view::textservice
 			"()I"
 		);
 	}
-	jboolean SpellCheckerSubtype::equals(jobject arg0)
+	jboolean SpellCheckerSubtype::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jstring SpellCheckerSubtype::getDisplayName(android::content::Context arg0, jstring arg1, android::content::pm::ApplicationInfo arg2)
+	JString SpellCheckerSubtype::getDisplayName(android::content::Context arg0, JString arg1, android::content::pm::ApplicationInfo arg2)
 	{
 		return callObjectMethod(
 			"getDisplayName",
 			"(Landroid/content/Context;Ljava/lang/String;Landroid/content/pm/ApplicationInfo;)Ljava/lang/CharSequence;",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2.object()
-		).object<jstring>();
+		);
 	}
-	jstring SpellCheckerSubtype::getExtraValue()
+	JString SpellCheckerSubtype::getExtraValue()
 	{
 		return callObjectMethod(
 			"getExtraValue",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring SpellCheckerSubtype::getExtraValueOf(jstring arg0)
+	JString SpellCheckerSubtype::getExtraValueOf(JString arg0)
 	{
 		return callObjectMethod(
 			"getExtraValueOf",
 			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
+			arg0.object<jstring>()
+		);
 	}
-	jstring SpellCheckerSubtype::getLanguageTag()
+	JString SpellCheckerSubtype::getLanguageTag()
 	{
 		return callObjectMethod(
 			"getLanguageTag",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring SpellCheckerSubtype::getLocale()
+	JString SpellCheckerSubtype::getLocale()
 	{
 		return callObjectMethod(
 			"getLocale",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint SpellCheckerSubtype::getNameResId()
 	{

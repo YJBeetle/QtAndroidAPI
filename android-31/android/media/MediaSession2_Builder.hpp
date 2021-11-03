@@ -22,6 +22,7 @@ namespace android::os
 {
 	class Bundle;
 }
+class JString;
 
 namespace android::media
 {
@@ -40,7 +41,7 @@ namespace android::media
 		// Methods
 		android::media::MediaSession2 build();
 		android::media::MediaSession2_Builder setExtras(android::os::Bundle arg0);
-		android::media::MediaSession2_Builder setId(jstring arg0);
+		android::media::MediaSession2_Builder setId(JString arg0);
 		android::media::MediaSession2_Builder setSessionActivity(android::app::PendingIntent arg0);
 		android::media::MediaSession2_Builder setSessionCallback(JObject arg0, android::media::MediaSession2_SessionCallback arg1);
 	};

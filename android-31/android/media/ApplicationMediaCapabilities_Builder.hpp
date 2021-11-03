@@ -6,6 +6,7 @@ namespace android::media
 {
 	class ApplicationMediaCapabilities;
 }
+class JString;
 
 namespace android::media
 {
@@ -22,10 +23,10 @@ namespace android::media
 		ApplicationMediaCapabilities_Builder();
 		
 		// Methods
-		android::media::ApplicationMediaCapabilities_Builder addSupportedHdrType(jstring arg0);
-		android::media::ApplicationMediaCapabilities_Builder addSupportedVideoMimeType(jstring arg0);
-		android::media::ApplicationMediaCapabilities_Builder addUnsupportedHdrType(jstring arg0);
-		android::media::ApplicationMediaCapabilities_Builder addUnsupportedVideoMimeType(jstring arg0);
+		android::media::ApplicationMediaCapabilities_Builder addSupportedHdrType(JString arg0);
+		android::media::ApplicationMediaCapabilities_Builder addSupportedVideoMimeType(JString arg0);
+		android::media::ApplicationMediaCapabilities_Builder addUnsupportedHdrType(JString arg0);
+		android::media::ApplicationMediaCapabilities_Builder addUnsupportedVideoMimeType(JString arg0);
 		android::media::ApplicationMediaCapabilities build();
 	};
 } // namespace android::media

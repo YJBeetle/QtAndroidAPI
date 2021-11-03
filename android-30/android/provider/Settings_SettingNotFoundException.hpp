@@ -1,9 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../../java/lang/Exception.hpp"
 #include "../util/AndroidException.hpp"
 
+class JString;
 
 namespace android::provider
 {
@@ -17,7 +16,7 @@ namespace android::provider
 		Settings_SettingNotFoundException(QAndroidJniObject obj);
 		
 		// Constructors
-		Settings_SettingNotFoundException(jstring arg0);
+		Settings_SettingNotFoundException(JString arg0);
 		
 		// Methods
 	};

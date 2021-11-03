@@ -14,6 +14,7 @@ namespace android::view::textclassifier
 {
 	class TextClassification_Request;
 }
+class JString;
 namespace java::time
 {
 	class ZonedDateTime;
@@ -31,7 +32,7 @@ namespace android::view::textclassifier
 		TextClassification_Request_Builder(QAndroidJniObject obj);
 		
 		// Constructors
-		TextClassification_Request_Builder(jstring arg0, jint arg1, jint arg2);
+		TextClassification_Request_Builder(JString arg0, jint arg1, jint arg2);
 		
 		// Methods
 		android::view::textclassifier::TextClassification_Request build();

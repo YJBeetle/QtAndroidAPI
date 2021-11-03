@@ -1,3 +1,4 @@
+#include "../../JFloatArray.hpp"
 #include "./DashPathEffect.hpp"
 
 namespace android::graphics
@@ -8,11 +9,11 @@ namespace android::graphics
 	DashPathEffect::DashPathEffect(QAndroidJniObject obj) : android::graphics::PathEffect(obj) {}
 	
 	// Constructors
-	DashPathEffect::DashPathEffect(jfloatArray arg0, jfloat arg1)
+	DashPathEffect::DashPathEffect(JFloatArray arg0, jfloat arg1)
 		: android::graphics::PathEffect(
 			"android.graphics.DashPathEffect",
 			"([FF)V",
-			arg0,
+			arg0.object<jfloatArray>(),
 			arg1
 		) {}
 	

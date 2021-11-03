@@ -1,3 +1,5 @@
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./OptionalDouble.hpp"
 
 namespace java::util
@@ -27,12 +29,12 @@ namespace java::util
 			arg0
 		);
 	}
-	jboolean OptionalDouble::equals(jobject arg0)
+	jboolean OptionalDouble::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jdouble OptionalDouble::getAsDouble()
@@ -118,12 +120,12 @@ namespace java::util
 			"()Ljava/util/stream/DoubleStream;"
 		);
 	}
-	jstring OptionalDouble::toString()
+	JString OptionalDouble::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::util
 

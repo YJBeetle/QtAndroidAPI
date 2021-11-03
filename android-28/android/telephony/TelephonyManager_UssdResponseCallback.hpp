@@ -6,6 +6,8 @@ namespace android::telephony
 {
 	class TelephonyManager;
 }
+class JString;
+class JString;
 
 namespace android::telephony
 {
@@ -22,8 +24,8 @@ namespace android::telephony
 		TelephonyManager_UssdResponseCallback();
 		
 		// Methods
-		void onReceiveUssdResponse(android::telephony::TelephonyManager arg0, jstring arg1, jstring arg2);
-		void onReceiveUssdResponseFailed(android::telephony::TelephonyManager arg0, jstring arg1, jint arg2);
+		void onReceiveUssdResponse(android::telephony::TelephonyManager arg0, JString arg1, JString arg2);
+		void onReceiveUssdResponseFailed(android::telephony::TelephonyManager arg0, JString arg1, jint arg2);
 	};
 } // namespace android::telephony
 

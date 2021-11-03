@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JArray;
 namespace android::os
 {
 	class Parcel;
@@ -14,7 +15,7 @@ namespace android::content::pm
 	public:
 		// Fields
 		static JObject CREATOR();
-		jarray features();
+		JArray features();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit FeatureGroupInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}

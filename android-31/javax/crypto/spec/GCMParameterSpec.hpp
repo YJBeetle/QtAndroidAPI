@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JByteArray;
 
 namespace javax::crypto::spec
 {
@@ -15,11 +16,11 @@ namespace javax::crypto::spec
 		GCMParameterSpec(QAndroidJniObject obj);
 		
 		// Constructors
-		GCMParameterSpec(jint arg0, jbyteArray arg1);
-		GCMParameterSpec(jint arg0, jbyteArray arg1, jint arg2, jint arg3);
+		GCMParameterSpec(jint arg0, JByteArray arg1);
+		GCMParameterSpec(jint arg0, JByteArray arg1, jint arg2, jint arg3);
 		
 		// Methods
-		jbyteArray getIV();
+		JByteArray getIV();
 		jint getTLen();
 	};
 } // namespace javax::crypto::spec

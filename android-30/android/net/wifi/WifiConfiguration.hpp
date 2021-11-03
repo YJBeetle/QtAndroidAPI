@@ -2,6 +2,8 @@
 
 #include "../../../JObject.hpp"
 
+class JLongArray;
+class JArray;
 namespace android::net
 {
 	class MacAddress;
@@ -18,6 +20,7 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
 namespace java::util
 {
 	class BitSet;
@@ -29,8 +32,8 @@ namespace android::net::wifi
 	{
 	public:
 		// Fields
-		jstring BSSID();
-		jstring FQDN();
+		JString BSSID();
+		JString FQDN();
 		static jint SECURITY_TYPE_EAP();
 		static jint SECURITY_TYPE_EAP_SUITE_B();
 		static jint SECURITY_TYPE_OPEN();
@@ -40,7 +43,7 @@ namespace android::net::wifi
 		static jint SECURITY_TYPE_WAPI_CERT();
 		static jint SECURITY_TYPE_WAPI_PSK();
 		static jint SECURITY_TYPE_WEP();
-		jstring SSID();
+		JString SSID();
 		java::util::BitSet allowedAuthAlgorithms();
 		java::util::BitSet allowedGroupCiphers();
 		java::util::BitSet allowedGroupManagementCiphers();
@@ -52,12 +55,12 @@ namespace android::net::wifi
 		jboolean hiddenSSID();
 		jboolean isHomeProviderNetwork();
 		jint networkId();
-		jstring preSharedKey();
+		JString preSharedKey();
 		jint priority();
-		jstring providerFriendlyName();
-		jlongArray roamingConsortiumIds();
+		JString providerFriendlyName();
+		JLongArray roamingConsortiumIds();
 		jint status();
-		jarray wepKeys();
+		JArray wepKeys();
 		jint wepTxKeyIndex();
 		
 		// QAndroidJniObject forward
@@ -71,12 +74,12 @@ namespace android::net::wifi
 		// Methods
 		jint describeContents();
 		android::net::ProxyInfo getHttpProxy();
-		jstring getKey();
+		JString getKey();
 		android::net::MacAddress getRandomizedMacAddress();
 		jboolean isPasspoint();
 		void setHttpProxy(android::net::ProxyInfo arg0);
 		void setSecurityParams(jint arg0);
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::net::wifi

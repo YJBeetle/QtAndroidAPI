@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JFloatArray;
 namespace android::hardware
 {
 	class HardwareBuffer;
@@ -104,13 +105,13 @@ namespace android::hardware
 		
 		// Methods
 		static jfloat getAltitude(jfloat arg0, jfloat arg1);
-		static void getAngleChange(jfloatArray arg0, jfloatArray arg1, jfloatArray arg2);
-		static jfloat getInclination(jfloatArray arg0);
-		static jfloatArray getOrientation(jfloatArray arg0, jfloatArray arg1);
-		static void getQuaternionFromVector(jfloatArray arg0, jfloatArray arg1);
-		static jboolean getRotationMatrix(jfloatArray arg0, jfloatArray arg1, jfloatArray arg2, jfloatArray arg3);
-		static void getRotationMatrixFromVector(jfloatArray arg0, jfloatArray arg1);
-		static jboolean remapCoordinateSystem(jfloatArray arg0, jint arg1, jint arg2, jfloatArray arg3);
+		static void getAngleChange(JFloatArray arg0, JFloatArray arg1, JFloatArray arg2);
+		static jfloat getInclination(JFloatArray arg0);
+		static JFloatArray getOrientation(JFloatArray arg0, JFloatArray arg1);
+		static void getQuaternionFromVector(JFloatArray arg0, JFloatArray arg1);
+		static jboolean getRotationMatrix(JFloatArray arg0, JFloatArray arg1, JFloatArray arg2, JFloatArray arg3);
+		static void getRotationMatrixFromVector(JFloatArray arg0, JFloatArray arg1);
+		static jboolean remapCoordinateSystem(JFloatArray arg0, jint arg1, jint arg2, JFloatArray arg3);
 		jboolean cancelTriggerSensor(android::hardware::TriggerEventListener arg0, android::hardware::Sensor arg1);
 		android::hardware::SensorDirectChannel createDirectChannel(android::hardware::HardwareBuffer arg0);
 		android::hardware::SensorDirectChannel createDirectChannel(android::os::MemoryFile arg0);

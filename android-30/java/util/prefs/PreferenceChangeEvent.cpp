@@ -1,5 +1,6 @@
 #include "../../io/ObjectInputStream.hpp"
 #include "../../io/ObjectOutputStream.hpp"
+#include "../../../JString.hpp"
 #include "./Preferences.hpp"
 #include "./PreferenceChangeEvent.hpp"
 
@@ -11,29 +12,29 @@ namespace java::util::prefs
 	PreferenceChangeEvent::PreferenceChangeEvent(QAndroidJniObject obj) : java::util::EventObject(obj) {}
 	
 	// Constructors
-	PreferenceChangeEvent::PreferenceChangeEvent(java::util::prefs::Preferences arg0, jstring arg1, jstring arg2)
+	PreferenceChangeEvent::PreferenceChangeEvent(java::util::prefs::Preferences arg0, JString arg1, JString arg2)
 		: java::util::EventObject(
 			"java.util.prefs.PreferenceChangeEvent",
 			"(Ljava/util/prefs/Preferences;Ljava/lang/String;Ljava/lang/String;)V",
 			arg0.object(),
-			arg1,
-			arg2
+			arg1.object<jstring>(),
+			arg2.object<jstring>()
 		) {}
 	
 	// Methods
-	jstring PreferenceChangeEvent::getKey()
+	JString PreferenceChangeEvent::getKey()
 	{
 		return callObjectMethod(
 			"getKey",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PreferenceChangeEvent::getNewValue()
+	JString PreferenceChangeEvent::getNewValue()
 	{
 		return callObjectMethod(
 			"getNewValue",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	java::util::prefs::Preferences PreferenceChangeEvent::getNode()
 	{

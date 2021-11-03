@@ -1,8 +1,9 @@
 #pragma once
 
-#include "../../../../../JObject.hpp"
 #include "./AbstractVerifier.hpp"
 
+class JArray;
+class JString;
 
 namespace org::apache::http::conn::ssl
 {
@@ -19,8 +20,8 @@ namespace org::apache::http::conn::ssl
 		BrowserCompatHostnameVerifier();
 		
 		// Methods
-		jstring toString();
-		void verify(jstring arg0, jarray arg1, jarray arg2);
+		JString toString();
+		void verify(JString arg0, JArray arg1, JArray arg2);
 	};
 } // namespace org::apache::http::conn::ssl
 

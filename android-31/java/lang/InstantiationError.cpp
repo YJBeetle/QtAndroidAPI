@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./InstantiationError.hpp"
 
 namespace java::lang
@@ -13,11 +14,11 @@ namespace java::lang
 			"java.lang.InstantiationError",
 			"()V"
 		) {}
-	InstantiationError::InstantiationError(jstring arg0)
+	InstantiationError::InstantiationError(JString arg0)
 		: java::lang::IncompatibleClassChangeError(
 			"java.lang.InstantiationError",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

@@ -14,6 +14,7 @@ namespace android::view::textclassifier
 {
 	class TextSelection;
 }
+class JString;
 
 namespace android::view::textclassifier
 {
@@ -31,9 +32,9 @@ namespace android::view::textclassifier
 		
 		// Methods
 		android::view::textclassifier::TextSelection build();
-		android::view::textclassifier::TextSelection_Builder setEntityType(jstring arg0, jfloat arg1);
+		android::view::textclassifier::TextSelection_Builder setEntityType(JString arg0, jfloat arg1);
 		android::view::textclassifier::TextSelection_Builder setExtras(android::os::Bundle arg0);
-		android::view::textclassifier::TextSelection_Builder setId(jstring arg0);
+		android::view::textclassifier::TextSelection_Builder setId(JString arg0);
 		android::view::textclassifier::TextSelection_Builder setTextClassification(android::view::textclassifier::TextClassification arg0);
 	};
 } // namespace android::view::textclassifier

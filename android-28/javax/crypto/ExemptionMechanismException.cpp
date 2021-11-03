@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./ExemptionMechanismException.hpp"
 
 namespace javax::crypto
@@ -13,11 +14,11 @@ namespace javax::crypto
 			"javax.crypto.ExemptionMechanismException",
 			"()V"
 		) {}
-	ExemptionMechanismException::ExemptionMechanismException(jstring arg0)
+	ExemptionMechanismException::ExemptionMechanismException(JString arg0)
 		: java::security::GeneralSecurityException(
 			"javax.crypto.ExemptionMechanismException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

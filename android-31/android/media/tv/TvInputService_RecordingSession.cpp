@@ -1,6 +1,7 @@
 #include "../../content/Context.hpp"
 #include "../../net/Uri.hpp"
 #include "../../os/Bundle.hpp"
+#include "../../../JString.hpp"
 #include "./TvInputService_RecordingSession.hpp"
 
 namespace android::media::tv
@@ -43,12 +44,12 @@ namespace android::media::tv
 			arg0.object()
 		);
 	}
-	void TvInputService_RecordingSession::onAppPrivateCommand(jstring arg0, android::os::Bundle arg1)
+	void TvInputService_RecordingSession::onAppPrivateCommand(JString arg0, android::os::Bundle arg1)
 	{
 		callMethod<void>(
 			"onAppPrivateCommand",
 			"(Ljava/lang/String;Landroid/os/Bundle;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}

@@ -1,10 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../view/View.hpp"
-#include "../view/ViewGroup.hpp"
-#include "./AdapterView.hpp"
-#include "./AbsListView.hpp"
 #include "./ListView.hpp"
 
 namespace android::content
@@ -23,6 +18,7 @@ namespace android::view
 {
 	class View;
 }
+class JString;
 
 namespace android::widget
 {
@@ -55,7 +51,7 @@ namespace android::widget
 		jboolean collapseGroup(jint arg0);
 		jboolean expandGroup(jint arg0);
 		jboolean expandGroup(jint arg0, jboolean arg1);
-		jstring getAccessibilityClassName();
+		JString getAccessibilityClassName();
 		JObject getAdapter();
 		JObject getExpandableListAdapter();
 		jlong getExpandableListPosition(jint arg0);

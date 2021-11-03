@@ -14,6 +14,8 @@ namespace android::os
 {
 	class Parcel;
 }
+class JObject;
+class JString;
 
 namespace android::net::wifi
 {
@@ -21,8 +23,8 @@ namespace android::net::wifi
 	{
 	public:
 		// Fields
-		static jstring FREQUENCY_UNITS();
-		static jstring LINK_SPEED_UNITS();
+		static JString FREQUENCY_UNITS();
+		static JString LINK_SPEED_UNITS();
 		static jint LINK_SPEED_UNKNOWN();
 		static jint SECURITY_TYPE_EAP();
 		static jint SECURITY_TYPE_EAP_WPA3_ENTERPRISE();
@@ -48,31 +50,31 @@ namespace android::net::wifi
 		// Methods
 		static android::net::NetworkInfo_DetailedState getDetailedStateOf(android::net::wifi::SupplicantState arg0);
 		jint describeContents();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jlong getApplicableRedactions();
-		jstring getBSSID();
+		JString getBSSID();
 		jint getCurrentSecurityType();
 		jint getFrequency();
 		jboolean getHiddenSSID();
 		JObject getInformationElements();
 		jint getIpAddress();
 		jint getLinkSpeed();
-		jstring getMacAddress();
+		JString getMacAddress();
 		jint getMaxSupportedRxLinkSpeedMbps();
 		jint getMaxSupportedTxLinkSpeedMbps();
 		jint getNetworkId();
-		jstring getPasspointFqdn();
-		jstring getPasspointProviderFriendlyName();
+		JString getPasspointFqdn();
+		JString getPasspointProviderFriendlyName();
 		jint getRssi();
 		jint getRxLinkSpeedMbps();
-		jstring getSSID();
+		JString getSSID();
 		jint getSubscriptionId();
 		android::net::wifi::SupplicantState getSupplicantState();
 		jint getTxLinkSpeedMbps();
 		jint getWifiStandard();
 		jint hashCode();
 		android::net::wifi::WifiInfo makeCopy(jlong arg0);
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::net::wifi

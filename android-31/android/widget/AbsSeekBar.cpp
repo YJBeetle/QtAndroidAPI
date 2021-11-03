@@ -6,6 +6,7 @@
 #include "../graphics/drawable/Drawable.hpp"
 #include "../view/KeyEvent.hpp"
 #include "../view/MotionEvent.hpp"
+#include "../../JString.hpp"
 #include "./AbsSeekBar.hpp"
 
 namespace android::widget
@@ -57,12 +58,12 @@ namespace android::widget
 			arg1
 		);
 	}
-	jstring AbsSeekBar::getAccessibilityClassName()
+	JString AbsSeekBar::getAccessibilityClassName()
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	jint AbsSeekBar::getKeyProgressIncrement()
 	{

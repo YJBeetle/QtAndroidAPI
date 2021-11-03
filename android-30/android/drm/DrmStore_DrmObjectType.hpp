@@ -2,7 +2,6 @@
 
 #include "../../JObject.hpp"
 
-
 namespace android::drm
 {
 	class DrmStore_DrmObjectType : public JObject

@@ -1,3 +1,4 @@
+#include "../../JArray.hpp"
 #include "../../java/nio/ByteBuffer.hpp"
 #include "./MediaCodec_LinearBlock.hpp"
 
@@ -11,23 +12,23 @@ namespace android::media
 	// Constructors
 	
 	// Methods
-	jboolean MediaCodec_LinearBlock::isCodecCopyFreeCompatible(jarray arg0)
+	jboolean MediaCodec_LinearBlock::isCodecCopyFreeCompatible(JArray arg0)
 	{
 		return callStaticMethod<jboolean>(
 			"android.media.MediaCodec$LinearBlock",
 			"isCodecCopyFreeCompatible",
 			"([Ljava/lang/String;)Z",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
-	android::media::MediaCodec_LinearBlock MediaCodec_LinearBlock::obtain(jint arg0, jarray arg1)
+	android::media::MediaCodec_LinearBlock MediaCodec_LinearBlock::obtain(jint arg0, JArray arg1)
 	{
 		return callStaticObjectMethod(
 			"android.media.MediaCodec$LinearBlock",
 			"obtain",
 			"(I[Ljava/lang/String;)Landroid/media/MediaCodec$LinearBlock;",
 			arg0,
-			arg1
+			arg1.object<jarray>()
 		);
 	}
 	jboolean MediaCodec_LinearBlock::isMappable()

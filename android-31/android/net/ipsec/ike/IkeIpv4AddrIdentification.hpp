@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../../../JObject.hpp"
 #include "./IkeIdentification.hpp"
 
+class JObject;
 namespace java::net
 {
 	class Inet4Address;
@@ -24,7 +24,7 @@ namespace android::net::ipsec::ike
 		IkeIpv4AddrIdentification(java::net::Inet4Address arg0);
 		
 		// Methods
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint hashCode();
 	};
 } // namespace android::net::ipsec::ike

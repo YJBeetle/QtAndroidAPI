@@ -10,6 +10,8 @@ namespace android::view
 {
 	class View;
 }
+class JString;
+class JObject;
 
 namespace android::text::method
 {
@@ -35,16 +37,16 @@ namespace android::text::method
 		static jlong adjustMetaAfterKeypress(jlong arg0);
 		static void adjustMetaAfterKeypress(JObject arg0);
 		static void clearMetaKeyState(JObject arg0, jint arg1);
-		static jint getMetaState(jstring arg0);
+		static jint getMetaState(JString arg0);
 		static jint getMetaState(jlong arg0);
-		static jint getMetaState(jstring arg0, android::view::KeyEvent arg1);
-		static jint getMetaState(jstring arg0, jint arg1);
+		static jint getMetaState(JString arg0, android::view::KeyEvent arg1);
+		static jint getMetaState(JString arg0, jint arg1);
 		static jint getMetaState(jlong arg0, jint arg1);
-		static jint getMetaState(jstring arg0, jint arg1, android::view::KeyEvent arg2);
+		static jint getMetaState(JString arg0, jint arg1, android::view::KeyEvent arg2);
 		static jlong handleKeyDown(jlong arg0, jint arg1, android::view::KeyEvent arg2);
 		static jlong handleKeyUp(jlong arg0, jint arg1, android::view::KeyEvent arg2);
-		static jboolean isMetaTracker(jstring arg0, jobject arg1);
-		static jboolean isSelectingMetaTracker(jstring arg0, jobject arg1);
+		static jboolean isMetaTracker(JString arg0, JObject arg1);
+		static jboolean isSelectingMetaTracker(JString arg0, JObject arg1);
 		static jlong resetLockedMeta(jlong arg0);
 		static void resetMetaState(JObject arg0);
 		jlong clearMetaKeyState(jlong arg0, jint arg1);

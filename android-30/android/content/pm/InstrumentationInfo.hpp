@@ -1,12 +1,13 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "./PackageItemInfo.hpp"
 
+class JArray;
 namespace android::os
 {
 	class Parcel;
 }
+class JString;
 
 namespace android::content::pm
 {
@@ -15,16 +16,16 @@ namespace android::content::pm
 	public:
 		// Fields
 		static JObject CREATOR();
-		jstring dataDir();
+		JString dataDir();
 		jboolean functionalTest();
 		jboolean handleProfiling();
-		jstring publicSourceDir();
-		jstring sourceDir();
-		jarray splitNames();
-		jarray splitPublicSourceDirs();
-		jarray splitSourceDirs();
-		jstring targetPackage();
-		jstring targetProcesses();
+		JString publicSourceDir();
+		JString sourceDir();
+		JArray splitNames();
+		JArray splitPublicSourceDirs();
+		JArray splitSourceDirs();
+		JString targetPackage();
+		JString targetProcesses();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit InstrumentationInfo(const char *className, const char *sig, Ts...agv) : android::content::pm::PackageItemInfo(className, sig, std::forward<Ts>(agv)...) {}
@@ -36,7 +37,7 @@ namespace android::content::pm
 		
 		// Methods
 		jint describeContents();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::content::pm

@@ -1,3 +1,4 @@
+#include "../../../JClass.hpp"
 #include "./InstanceCountViolation.hpp"
 
 namespace android::os::strictmode

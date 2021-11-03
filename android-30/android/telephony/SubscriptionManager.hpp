@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JIntArray;
 namespace android::app
 {
 	class PendingIntent;
@@ -26,6 +27,7 @@ namespace android::telephony
 {
 	class SubscriptionManager_OnSubscriptionsChangedListener;
 }
+class JString;
 
 namespace android::telephony
 {
@@ -33,15 +35,15 @@ namespace android::telephony
 	{
 	public:
 		// Fields
-		static jstring ACTION_DEFAULT_SMS_SUBSCRIPTION_CHANGED();
-		static jstring ACTION_DEFAULT_SUBSCRIPTION_CHANGED();
-		static jstring ACTION_MANAGE_SUBSCRIPTION_PLANS();
-		static jstring ACTION_REFRESH_SUBSCRIPTION_PLANS();
+		static JString ACTION_DEFAULT_SMS_SUBSCRIPTION_CHANGED();
+		static JString ACTION_DEFAULT_SUBSCRIPTION_CHANGED();
+		static JString ACTION_MANAGE_SUBSCRIPTION_PLANS();
+		static JString ACTION_REFRESH_SUBSCRIPTION_PLANS();
 		static jint DATA_ROAMING_DISABLE();
 		static jint DATA_ROAMING_ENABLE();
 		static jint DEFAULT_SUBSCRIPTION_ID();
-		static jstring EXTRA_SLOT_INDEX();
-		static jstring EXTRA_SUBSCRIPTION_INDEX();
+		static JString EXTRA_SLOT_INDEX();
+		static JString EXTRA_SUBSCRIPTION_INDEX();
 		static jint INVALID_SIM_SLOT_INDEX();
 		static jint INVALID_SUBSCRIPTION_ID();
 		static jint SUBSCRIPTION_TYPE_LOCAL_SIM();
@@ -77,7 +79,7 @@ namespace android::telephony
 		JObject getActiveSubscriptionInfoList();
 		JObject getCompleteActiveSubscriptionInfoList();
 		JObject getOpportunisticSubscriptions();
-		jintArray getSubscriptionIds(jint arg0);
+		JIntArray getSubscriptionIds(jint arg0);
 		JObject getSubscriptionPlans(jint arg0);
 		JObject getSubscriptionsInGroup(android::os::ParcelUuid arg0);
 		jboolean isActiveSubscriptionId(jint arg0);

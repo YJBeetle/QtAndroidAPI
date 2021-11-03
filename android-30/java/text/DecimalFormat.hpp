@@ -1,9 +1,10 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "./Format.hpp"
 #include "./NumberFormat.hpp"
 
+class JCharArray;
+class JArray;
+class JBooleanArray;
 namespace java::io
 {
 	class ObjectInputStream;
@@ -12,6 +13,8 @@ namespace java::lang
 {
 	class Number;
 }
+class JObject;
+class JString;
 namespace java::lang
 {
 	class StringBuffer;
@@ -62,18 +65,18 @@ namespace java::text
 		
 		// Constructors
 		DecimalFormat();
-		DecimalFormat(jstring arg0);
-		DecimalFormat(jstring arg0, java::text::DecimalFormatSymbols arg1);
+		DecimalFormat(JString arg0);
+		DecimalFormat(JString arg0, java::text::DecimalFormatSymbols arg1);
 		
 		// Methods
-		void applyLocalizedPattern(jstring arg0);
-		void applyPattern(jstring arg0);
-		jobject clone();
-		jboolean equals(jobject arg0);
+		void applyLocalizedPattern(JString arg0);
+		void applyPattern(JString arg0);
+		JObject clone();
+		jboolean equals(JObject arg0);
 		java::lang::StringBuffer format(jdouble arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2);
-		java::lang::StringBuffer format(jobject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2);
+		java::lang::StringBuffer format(JObject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2);
 		java::lang::StringBuffer format(jlong arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2);
-		JObject formatToCharacterIterator(jobject arg0);
+		JObject formatToCharacterIterator(JObject arg0);
 		java::util::Currency getCurrency();
 		java::text::DecimalFormatSymbols getDecimalFormatSymbols();
 		jint getGroupingSize();
@@ -82,15 +85,15 @@ namespace java::text
 		jint getMinimumFractionDigits();
 		jint getMinimumIntegerDigits();
 		jint getMultiplier();
-		jstring getNegativePrefix();
-		jstring getNegativeSuffix();
-		jstring getPositivePrefix();
-		jstring getPositiveSuffix();
+		JString getNegativePrefix();
+		JString getNegativeSuffix();
+		JString getPositivePrefix();
+		JString getPositiveSuffix();
 		java::math::RoundingMode getRoundingMode();
 		jint hashCode();
 		jboolean isDecimalSeparatorAlwaysShown();
 		jboolean isParseBigDecimal();
-		java::lang::Number parse(jstring arg0, java::text::ParsePosition arg1);
+		java::lang::Number parse(JString arg0, java::text::ParsePosition arg1);
 		void setCurrency(java::util::Currency arg0);
 		void setDecimalFormatSymbols(java::text::DecimalFormatSymbols arg0);
 		void setDecimalSeparatorAlwaysShown(jboolean arg0);
@@ -101,14 +104,14 @@ namespace java::text
 		void setMinimumFractionDigits(jint arg0);
 		void setMinimumIntegerDigits(jint arg0);
 		void setMultiplier(jint arg0);
-		void setNegativePrefix(jstring arg0);
-		void setNegativeSuffix(jstring arg0);
+		void setNegativePrefix(JString arg0);
+		void setNegativeSuffix(JString arg0);
 		void setParseBigDecimal(jboolean arg0);
-		void setPositivePrefix(jstring arg0);
-		void setPositiveSuffix(jstring arg0);
+		void setPositivePrefix(JString arg0);
+		void setPositiveSuffix(JString arg0);
 		void setRoundingMode(java::math::RoundingMode arg0);
-		jstring toLocalizedPattern();
-		jstring toPattern();
+		JString toLocalizedPattern();
+		JString toPattern();
 	};
 } // namespace java::text
 

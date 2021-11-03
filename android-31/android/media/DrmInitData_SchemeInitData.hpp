@@ -2,6 +2,9 @@
 
 #include "../../JObject.hpp"
 
+class JByteArray;
+class JObject;
+class JString;
 namespace java::util
 {
 	class UUID;
@@ -14,8 +17,8 @@ namespace android::media
 	public:
 		// Fields
 		static java::util::UUID UUID_NIL();
-		jbyteArray data();
-		jstring mimeType();
+		JByteArray data();
+		JString mimeType();
 		java::util::UUID uuid();
 		
 		// QAndroidJniObject forward
@@ -23,10 +26,10 @@ namespace android::media
 		DrmInitData_SchemeInitData(QAndroidJniObject obj);
 		
 		// Constructors
-		DrmInitData_SchemeInitData(java::util::UUID arg0, jstring arg1, jbyteArray arg2);
+		DrmInitData_SchemeInitData(java::util::UUID arg0, JString arg1, JByteArray arg2);
 		
 		// Methods
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint hashCode();
 	};
 } // namespace android::media

@@ -4,6 +4,9 @@
 #include "../../graphics/drawable/Drawable.hpp"
 #include "../../os/Bundle.hpp"
 #include "../../os/Parcel.hpp"
+#include "../../../JString.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./TvInputInfo.hpp"
 
 namespace android::media::tv
@@ -17,13 +20,13 @@ namespace android::media::tv
 			"Landroid/os/Parcelable$Creator;"
 		);
 	}
-	jstring TvInputInfo::EXTRA_INPUT_ID()
+	JString TvInputInfo::EXTRA_INPUT_ID()
 	{
 		return getStaticObjectField(
 			"android.media.tv.TvInputInfo",
 			"EXTRA_INPUT_ID",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint TvInputInfo::TYPE_COMPONENT()
 	{
@@ -130,12 +133,12 @@ namespace android::media::tv
 			"()I"
 		);
 	}
-	jboolean TvInputInfo::equals(jobject arg0)
+	jboolean TvInputInfo::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	android::os::Bundle TvInputInfo::getExtras()
@@ -145,19 +148,19 @@ namespace android::media::tv
 			"()Landroid/os/Bundle;"
 		);
 	}
-	jstring TvInputInfo::getId()
+	JString TvInputInfo::getId()
 	{
 		return callObjectMethod(
 			"getId",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TvInputInfo::getParentId()
+	JString TvInputInfo::getParentId()
 	{
 		return callObjectMethod(
 			"getParentId",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::content::pm::ServiceInfo TvInputInfo::getServiceInfo()
 	{
@@ -202,13 +205,13 @@ namespace android::media::tv
 			"()Z"
 		);
 	}
-	jstring TvInputInfo::loadCustomLabel(android::content::Context arg0)
+	JString TvInputInfo::loadCustomLabel(android::content::Context arg0)
 	{
 		return callObjectMethod(
 			"loadCustomLabel",
 			"(Landroid/content/Context;)Ljava/lang/CharSequence;",
 			arg0.object()
-		).object<jstring>();
+		);
 	}
 	android::graphics::drawable::Drawable TvInputInfo::loadIcon(android::content::Context arg0)
 	{
@@ -218,20 +221,20 @@ namespace android::media::tv
 			arg0.object()
 		);
 	}
-	jstring TvInputInfo::loadLabel(android::content::Context arg0)
+	JString TvInputInfo::loadLabel(android::content::Context arg0)
 	{
 		return callObjectMethod(
 			"loadLabel",
 			"(Landroid/content/Context;)Ljava/lang/CharSequence;",
 			arg0.object()
-		).object<jstring>();
+		);
 	}
-	jstring TvInputInfo::toString()
+	JString TvInputInfo::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void TvInputInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

@@ -1,12 +1,13 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./Writer.hpp"
 
+class JCharArray;
 namespace java::io
 {
 	class Writer;
 }
+class JString;
 
 namespace java::io
 {
@@ -25,8 +26,8 @@ namespace java::io
 		void close();
 		void flush();
 		void write(jint arg0);
-		void write(jcharArray arg0, jint arg1, jint arg2);
-		void write(jstring arg0, jint arg1, jint arg2);
+		void write(JCharArray arg0, jint arg1, jint arg2);
+		void write(JString arg0, jint arg1, jint arg2);
 	};
 } // namespace java::io
 

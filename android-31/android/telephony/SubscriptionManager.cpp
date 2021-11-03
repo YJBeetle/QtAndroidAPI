@@ -1,45 +1,47 @@
+#include "../../JIntArray.hpp"
 #include "../app/PendingIntent.hpp"
 #include "../content/Context.hpp"
 #include "../os/ParcelUuid.hpp"
 #include "./SubscriptionInfo.hpp"
 #include "./SubscriptionManager_OnOpportunisticSubscriptionsChangedListener.hpp"
 #include "./SubscriptionManager_OnSubscriptionsChangedListener.hpp"
+#include "../../JString.hpp"
 #include "./SubscriptionManager.hpp"
 
 namespace android::telephony
 {
 	// Fields
-	jstring SubscriptionManager::ACTION_DEFAULT_SMS_SUBSCRIPTION_CHANGED()
+	JString SubscriptionManager::ACTION_DEFAULT_SMS_SUBSCRIPTION_CHANGED()
 	{
 		return getStaticObjectField(
 			"android.telephony.SubscriptionManager",
 			"ACTION_DEFAULT_SMS_SUBSCRIPTION_CHANGED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring SubscriptionManager::ACTION_DEFAULT_SUBSCRIPTION_CHANGED()
+	JString SubscriptionManager::ACTION_DEFAULT_SUBSCRIPTION_CHANGED()
 	{
 		return getStaticObjectField(
 			"android.telephony.SubscriptionManager",
 			"ACTION_DEFAULT_SUBSCRIPTION_CHANGED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring SubscriptionManager::ACTION_MANAGE_SUBSCRIPTION_PLANS()
+	JString SubscriptionManager::ACTION_MANAGE_SUBSCRIPTION_PLANS()
 	{
 		return getStaticObjectField(
 			"android.telephony.SubscriptionManager",
 			"ACTION_MANAGE_SUBSCRIPTION_PLANS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring SubscriptionManager::ACTION_REFRESH_SUBSCRIPTION_PLANS()
+	JString SubscriptionManager::ACTION_REFRESH_SUBSCRIPTION_PLANS()
 	{
 		return getStaticObjectField(
 			"android.telephony.SubscriptionManager",
 			"ACTION_REFRESH_SUBSCRIPTION_PLANS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint SubscriptionManager::D2D_SHARING_ALL()
 	{
@@ -69,21 +71,21 @@ namespace android::telephony
 			"D2D_SHARING_SELECTED_CONTACTS"
 		);
 	}
-	jstring SubscriptionManager::D2D_STATUS_SHARING()
+	JString SubscriptionManager::D2D_STATUS_SHARING()
 	{
 		return getStaticObjectField(
 			"android.telephony.SubscriptionManager",
 			"D2D_STATUS_SHARING",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring SubscriptionManager::D2D_STATUS_SHARING_SELECTED_CONTACTS()
+	JString SubscriptionManager::D2D_STATUS_SHARING_SELECTED_CONTACTS()
 	{
 		return getStaticObjectField(
 			"android.telephony.SubscriptionManager",
 			"D2D_STATUS_SHARING_SELECTED_CONTACTS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint SubscriptionManager::DATA_ROAMING_DISABLE()
 	{
@@ -106,21 +108,21 @@ namespace android::telephony
 			"DEFAULT_SUBSCRIPTION_ID"
 		);
 	}
-	jstring SubscriptionManager::EXTRA_SLOT_INDEX()
+	JString SubscriptionManager::EXTRA_SLOT_INDEX()
 	{
 		return getStaticObjectField(
 			"android.telephony.SubscriptionManager",
 			"EXTRA_SLOT_INDEX",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring SubscriptionManager::EXTRA_SUBSCRIPTION_INDEX()
+	JString SubscriptionManager::EXTRA_SUBSCRIPTION_INDEX()
 	{
 		return getStaticObjectField(
 			"android.telephony.SubscriptionManager",
 			"EXTRA_SUBSCRIPTION_INDEX",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint SubscriptionManager::INVALID_SIM_SLOT_INDEX()
 	{
@@ -358,13 +360,13 @@ namespace android::telephony
 			"()Ljava/util/List;"
 		);
 	}
-	jintArray SubscriptionManager::getSubscriptionIds(jint arg0)
+	JIntArray SubscriptionManager::getSubscriptionIds(jint arg0)
 	{
 		return callObjectMethod(
 			"getSubscriptionIds",
 			"(I)[I",
 			arg0
-		).object<jintArray>();
+		);
 	}
 	JObject SubscriptionManager::getSubscriptionPlans(jint arg0)
 	{
@@ -460,14 +462,14 @@ namespace android::telephony
 			arg2
 		);
 	}
-	void SubscriptionManager::setSubscriptionOverrideCongested(jint arg0, jboolean arg1, jintArray arg2, jlong arg3)
+	void SubscriptionManager::setSubscriptionOverrideCongested(jint arg0, jboolean arg1, JIntArray arg2, jlong arg3)
 	{
 		callMethod<void>(
 			"setSubscriptionOverrideCongested",
 			"(IZ[IJ)V",
 			arg0,
 			arg1,
-			arg2,
+			arg2.object<jintArray>(),
 			arg3
 		);
 	}
@@ -481,14 +483,14 @@ namespace android::telephony
 			arg2
 		);
 	}
-	void SubscriptionManager::setSubscriptionOverrideUnmetered(jint arg0, jboolean arg1, jintArray arg2, jlong arg3)
+	void SubscriptionManager::setSubscriptionOverrideUnmetered(jint arg0, jboolean arg1, JIntArray arg2, jlong arg3)
 	{
 		callMethod<void>(
 			"setSubscriptionOverrideUnmetered",
 			"(IZ[IJ)V",
 			arg0,
 			arg1,
-			arg2,
+			arg2.object<jintArray>(),
 			arg3
 		);
 	}

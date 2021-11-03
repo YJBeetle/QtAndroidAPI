@@ -1,4 +1,5 @@
 #include "../os/ParcelFileDescriptor.hpp"
+#include "../../JString.hpp"
 #include "./Connection_RttTextStream.hpp"
 
 namespace android::telecom
@@ -11,26 +12,26 @@ namespace android::telecom
 	// Constructors
 	
 	// Methods
-	jstring Connection_RttTextStream::read()
+	JString Connection_RttTextStream::read()
 	{
 		return callObjectMethod(
 			"read",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Connection_RttTextStream::readImmediately()
+	JString Connection_RttTextStream::readImmediately()
 	{
 		return callObjectMethod(
 			"readImmediately",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	void Connection_RttTextStream::write(jstring arg0)
+	void Connection_RttTextStream::write(JString arg0)
 	{
 		callMethod<void>(
 			"write",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 } // namespace android::telecom

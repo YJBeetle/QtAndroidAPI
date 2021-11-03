@@ -1,5 +1,6 @@
 #include "../os/Parcel.hpp"
 #include "../../java/lang/Boolean.hpp"
+#include "../../JObject.hpp"
 #include "./VerifiedKeyEvent.hpp"
 
 namespace android::view
@@ -27,12 +28,12 @@ namespace android::view
 			"()I"
 		);
 	}
-	jboolean VerifiedKeyEvent::equals(jobject arg0)
+	jboolean VerifiedKeyEvent::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint VerifiedKeyEvent::getAction()

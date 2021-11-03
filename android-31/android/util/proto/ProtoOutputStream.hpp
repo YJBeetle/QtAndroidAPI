@@ -2,10 +2,12 @@
 
 #include "../../../JObject.hpp"
 
+class JByteArray;
 namespace java::io
 {
 	class OutputStream;
 }
+class JString;
 
 namespace android::util::proto
 {
@@ -58,25 +60,25 @@ namespace android::util::proto
 		
 		// Methods
 		static jint checkFieldId(jlong arg0, jlong arg1);
-		static jstring getFieldCountString(jlong arg0);
-		static jstring getFieldIdString(jlong arg0);
-		static jstring getFieldTypeString(jlong arg0);
-		static jstring getWireTypeString(jint arg0);
+		static JString getFieldCountString(jlong arg0);
+		static JString getFieldIdString(jlong arg0);
+		static JString getFieldTypeString(jlong arg0);
+		static JString getWireTypeString(jint arg0);
 		static jlong makeFieldId(jint arg0, jlong arg1);
 		static jlong makeToken(jint arg0, jboolean arg1, jint arg2, jint arg3, jint arg4);
-		static jstring token2String(jlong arg0);
-		void dump(jstring arg0);
+		static JString token2String(jlong arg0);
+		void dump(JString arg0);
 		void end(jlong arg0);
 		void flush();
-		jbyteArray getBytes();
+		JByteArray getBytes();
 		jint getRawSize();
 		jlong start(jlong arg0);
-		void write(jlong arg0, jbyteArray arg1);
+		void write(jlong arg0, JByteArray arg1);
 		void write(jlong arg0, jboolean arg1);
 		void write(jlong arg0, jdouble arg1);
 		void write(jlong arg0, jfloat arg1);
 		void write(jlong arg0, jint arg1);
-		void write(jlong arg0, jstring arg1);
+		void write(jlong arg0, JString arg1);
 		void write(jlong arg0, jlong arg1);
 		void writeTag(jint arg0, jint arg1);
 	};

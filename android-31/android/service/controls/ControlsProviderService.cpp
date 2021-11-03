@@ -3,26 +3,27 @@
 #include "../../content/Intent.hpp"
 #include "./Control.hpp"
 #include "./actions/ControlAction.hpp"
+#include "../../../JString.hpp"
 #include "./ControlsProviderService.hpp"
 
 namespace android::service::controls
 {
 	// Fields
-	jstring ControlsProviderService::SERVICE_CONTROLS()
+	JString ControlsProviderService::SERVICE_CONTROLS()
 	{
 		return getStaticObjectField(
 			"android.service.controls.ControlsProviderService",
 			"SERVICE_CONTROLS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ControlsProviderService::TAG()
+	JString ControlsProviderService::TAG()
 	{
 		return getStaticObjectField(
 			"android.service.controls.ControlsProviderService",
 			"TAG",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QAndroidJniObject forward
@@ -85,12 +86,12 @@ namespace android::service::controls
 			arg0.object()
 		);
 	}
-	void ControlsProviderService::performControlAction(jstring arg0, android::service::controls::actions::ControlAction arg1, JObject arg2)
+	void ControlsProviderService::performControlAction(JString arg0, android::service::controls::actions::ControlAction arg1, JObject arg2)
 	{
 		callMethod<void>(
 			"performControlAction",
 			"(Ljava/lang/String;Landroid/service/controls/actions/ControlAction;Ljava/util/function/Consumer;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
 			arg2.object()
 		);

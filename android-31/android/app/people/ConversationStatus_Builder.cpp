@@ -1,5 +1,7 @@
 #include "./ConversationStatus.hpp"
 #include "../../graphics/drawable/Icon.hpp"
+#include "../../../JString.hpp"
+#include "../../../JString.hpp"
 #include "./ConversationStatus_Builder.hpp"
 
 namespace android::app::people
@@ -10,11 +12,11 @@ namespace android::app::people
 	ConversationStatus_Builder::ConversationStatus_Builder(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	ConversationStatus_Builder::ConversationStatus_Builder(jstring arg0, jint arg1)
+	ConversationStatus_Builder::ConversationStatus_Builder(JString arg0, jint arg1)
 		: JObject(
 			"android.app.people.ConversationStatus$Builder",
 			"(Ljava/lang/String;I)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		) {}
 	
@@ -34,12 +36,12 @@ namespace android::app::people
 			arg0
 		);
 	}
-	android::app::people::ConversationStatus_Builder ConversationStatus_Builder::setDescription(jstring arg0)
+	android::app::people::ConversationStatus_Builder ConversationStatus_Builder::setDescription(JString arg0)
 	{
 		return callObjectMethod(
 			"setDescription",
 			"(Ljava/lang/CharSequence;)Landroid/app/people/ConversationStatus$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::app::people::ConversationStatus_Builder ConversationStatus_Builder::setEndTimeMillis(jlong arg0)

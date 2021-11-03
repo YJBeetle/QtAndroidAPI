@@ -1,8 +1,9 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "../../../java/lang/Enum.hpp"
 
+class JArray;
+class JString;
 
 namespace android::text::method
 {
@@ -22,8 +23,8 @@ namespace android::text::method
 		// Constructors
 		
 		// Methods
-		static android::text::method::TextKeyListener_Capitalize valueOf(jstring arg0);
-		static jarray values();
+		static android::text::method::TextKeyListener_Capitalize valueOf(JString arg0);
+		static JArray values();
 	};
 } // namespace android::text::method
 

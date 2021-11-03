@@ -1,6 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./BaseExpandableListAdapter.hpp"
 
 namespace android::content
@@ -19,6 +18,9 @@ namespace android::widget
 {
 	class Filter;
 }
+class JString;
+class JObject;
+class JString;
 
 namespace android::widget
 {
@@ -37,7 +39,7 @@ namespace android::widget
 		
 		// Methods
 		void changeCursor(JObject arg0);
-		jstring convertToString(JObject arg0);
+		JString convertToString(JObject arg0);
 		JObject getChild(jint arg0, jint arg1);
 		jlong getChildId(jint arg0, jint arg1);
 		android::view::View getChildView(jint arg0, jint arg1, jboolean arg2, android::view::View arg3, android::view::ViewGroup arg4);
@@ -55,7 +57,7 @@ namespace android::widget
 		void notifyDataSetChanged(jboolean arg0);
 		void notifyDataSetInvalidated();
 		void onGroupCollapsed(jint arg0);
-		JObject runQueryOnBackgroundThread(jstring arg0);
+		JObject runQueryOnBackgroundThread(JString arg0);
 		void setChildrenCursor(jint arg0, JObject arg1);
 		void setFilterQueryProvider(JObject arg0);
 		void setGroupCursor(JObject arg0);

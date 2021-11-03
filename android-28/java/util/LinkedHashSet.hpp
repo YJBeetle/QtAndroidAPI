@@ -1,10 +1,6 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "./AbstractCollection.hpp"
-#include "./AbstractSet.hpp"
 #include "./HashSet.hpp"
-
 
 namespace java::util
 {

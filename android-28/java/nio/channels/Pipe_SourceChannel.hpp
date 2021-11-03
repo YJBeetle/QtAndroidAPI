@@ -1,8 +1,5 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "./spi/AbstractInterruptibleChannel.hpp"
-#include "./SelectableChannel.hpp"
 #include "./spi/AbstractSelectableChannel.hpp"
 
 namespace java::nio::channels::spi

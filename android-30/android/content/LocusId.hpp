@@ -6,6 +6,8 @@ namespace android::os
 {
 	class Parcel;
 }
+class JObject;
+class JString;
 
 namespace android::content
 {
@@ -20,14 +22,14 @@ namespace android::content
 		LocusId(QAndroidJniObject obj);
 		
 		// Constructors
-		LocusId(jstring arg0);
+		LocusId(JString arg0);
 		
 		// Methods
 		jint describeContents();
-		jboolean equals(jobject arg0);
-		jstring getId();
+		jboolean equals(JObject arg0);
+		JString getId();
 		jint hashCode();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::content

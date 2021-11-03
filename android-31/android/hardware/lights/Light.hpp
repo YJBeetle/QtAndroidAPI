@@ -6,6 +6,8 @@ namespace android::os
 {
 	class Parcel;
 }
+class JObject;
+class JString;
 
 namespace android::hardware::lights
 {
@@ -28,15 +30,15 @@ namespace android::hardware::lights
 		
 		// Methods
 		jint describeContents();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint getId();
-		jstring getName();
+		JString getName();
 		jint getOrdinal();
 		jint getType();
 		jboolean hasBrightnessControl();
 		jboolean hasRgbControl();
 		jint hashCode();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::hardware::lights

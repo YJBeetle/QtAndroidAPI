@@ -1,5 +1,6 @@
 #include "./WifiManager.hpp"
 #include "../../os/WorkSource.hpp"
+#include "../../../JString.hpp"
 #include "./WifiManager_WifiLock.hpp"
 
 namespace android::net::wifi
@@ -49,12 +50,12 @@ namespace android::net::wifi
 			arg0.object()
 		);
 	}
-	jstring WifiManager_WifiLock::toString()
+	JString WifiManager_WifiLock::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::net::wifi
 

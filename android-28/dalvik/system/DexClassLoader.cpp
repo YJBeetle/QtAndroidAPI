@@ -1,4 +1,5 @@
 #include "../../java/lang/ClassLoader.hpp"
+#include "../../JString.hpp"
 #include "./DexClassLoader.hpp"
 
 namespace dalvik::system
@@ -9,13 +10,13 @@ namespace dalvik::system
 	DexClassLoader::DexClassLoader(QAndroidJniObject obj) : dalvik::system::BaseDexClassLoader(obj) {}
 	
 	// Constructors
-	DexClassLoader::DexClassLoader(jstring arg0, jstring arg1, jstring arg2, java::lang::ClassLoader arg3)
+	DexClassLoader::DexClassLoader(JString arg0, JString arg1, JString arg2, java::lang::ClassLoader arg3)
 		: dalvik::system::BaseDexClassLoader(
 			"dalvik.system.DexClassLoader",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/ClassLoader;)V",
-			arg0,
-			arg1,
-			arg2,
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2.object<jstring>(),
 			arg3.object()
 		) {}
 	

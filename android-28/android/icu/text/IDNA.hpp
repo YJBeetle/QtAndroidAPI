@@ -6,6 +6,7 @@ namespace android::icu::text
 {
 	class IDNA_Info;
 }
+class JString;
 namespace java::lang
 {
 	class StringBuilder;
@@ -33,10 +34,10 @@ namespace android::icu::text
 		
 		// Methods
 		static android::icu::text::IDNA getUTS46Instance(jint arg0);
-		java::lang::StringBuilder labelToASCII(jstring arg0, java::lang::StringBuilder arg1, android::icu::text::IDNA_Info arg2);
-		java::lang::StringBuilder labelToUnicode(jstring arg0, java::lang::StringBuilder arg1, android::icu::text::IDNA_Info arg2);
-		java::lang::StringBuilder nameToASCII(jstring arg0, java::lang::StringBuilder arg1, android::icu::text::IDNA_Info arg2);
-		java::lang::StringBuilder nameToUnicode(jstring arg0, java::lang::StringBuilder arg1, android::icu::text::IDNA_Info arg2);
+		java::lang::StringBuilder labelToASCII(JString arg0, java::lang::StringBuilder arg1, android::icu::text::IDNA_Info arg2);
+		java::lang::StringBuilder labelToUnicode(JString arg0, java::lang::StringBuilder arg1, android::icu::text::IDNA_Info arg2);
+		java::lang::StringBuilder nameToASCII(JString arg0, java::lang::StringBuilder arg1, android::icu::text::IDNA_Info arg2);
+		java::lang::StringBuilder nameToUnicode(JString arg0, java::lang::StringBuilder arg1, android::icu::text::IDNA_Info arg2);
 	};
 } // namespace android::icu::text
 

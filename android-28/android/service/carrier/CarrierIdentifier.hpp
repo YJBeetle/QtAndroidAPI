@@ -2,10 +2,13 @@
 
 #include "../../../JObject.hpp"
 
+class JByteArray;
 namespace android::os
 {
 	class Parcel;
 }
+class JObject;
+class JString;
 
 namespace android::service::carrier
 {
@@ -20,20 +23,20 @@ namespace android::service::carrier
 		CarrierIdentifier(QAndroidJniObject obj);
 		
 		// Constructors
-		CarrierIdentifier(jbyteArray arg0, jstring arg1, jstring arg2);
-		CarrierIdentifier(jstring arg0, jstring arg1, jstring arg2, jstring arg3, jstring arg4, jstring arg5);
+		CarrierIdentifier(JByteArray arg0, JString arg1, JString arg2);
+		CarrierIdentifier(JString arg0, JString arg1, JString arg2, JString arg3, JString arg4, JString arg5);
 		
 		// Methods
 		jint describeContents();
-		jboolean equals(jobject arg0);
-		jstring getGid1();
-		jstring getGid2();
-		jstring getImsi();
-		jstring getMcc();
-		jstring getMnc();
-		jstring getSpn();
+		jboolean equals(JObject arg0);
+		JString getGid1();
+		JString getGid2();
+		JString getImsi();
+		JString getMcc();
+		JString getMnc();
+		JString getSpn();
 		jint hashCode();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::service::carrier

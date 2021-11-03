@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./UnknownFormatFlagsException.hpp"
 
 namespace java::util
@@ -8,27 +9,27 @@ namespace java::util
 	UnknownFormatFlagsException::UnknownFormatFlagsException(QAndroidJniObject obj) : java::util::IllegalFormatException(obj) {}
 	
 	// Constructors
-	UnknownFormatFlagsException::UnknownFormatFlagsException(jstring arg0)
+	UnknownFormatFlagsException::UnknownFormatFlagsException(JString arg0)
 		: java::util::IllegalFormatException(
 			"java.util.UnknownFormatFlagsException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods
-	jstring UnknownFormatFlagsException::getFlags()
+	JString UnknownFormatFlagsException::getFlags()
 	{
 		return callObjectMethod(
 			"getFlags",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring UnknownFormatFlagsException::getMessage()
+	JString UnknownFormatFlagsException::getMessage()
 	{
 		return callObjectMethod(
 			"getMessage",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::util
 

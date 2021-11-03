@@ -1,3 +1,5 @@
+#include "../../../JString.hpp"
+#include "../../../JThrowable.hpp"
 #include "./ExecutionException.hpp"
 
 namespace java::util::concurrent
@@ -8,18 +10,18 @@ namespace java::util::concurrent
 	ExecutionException::ExecutionException(QAndroidJniObject obj) : java::lang::Exception(obj) {}
 	
 	// Constructors
-	ExecutionException::ExecutionException(jthrowable arg0)
+	ExecutionException::ExecutionException(JThrowable arg0)
 		: java::lang::Exception(
 			"java.util.concurrent.ExecutionException",
 			"(Ljava/lang/Throwable;)V",
-			arg0
+			arg0.object<jthrowable>()
 		) {}
-	ExecutionException::ExecutionException(jstring arg0, jthrowable arg1)
+	ExecutionException::ExecutionException(JString arg0, JThrowable arg1)
 		: java::lang::Exception(
 			"java.util.concurrent.ExecutionException",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
 		) {}
 	
 	// Methods

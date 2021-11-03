@@ -6,6 +6,7 @@ namespace android::net::wifi
 {
 	class WifiManager;
 }
+class JString;
 
 namespace android::net::wifi
 {
@@ -25,7 +26,7 @@ namespace android::net::wifi
 		jboolean isHeld();
 		void release();
 		void setReferenceCounted(jboolean arg0);
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::net::wifi
 

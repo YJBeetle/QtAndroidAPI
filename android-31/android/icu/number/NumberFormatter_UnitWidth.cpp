@@ -1,3 +1,5 @@
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
 #include "./NumberFormatter_UnitWidth.hpp"
 
 namespace android::icu::number
@@ -50,22 +52,22 @@ namespace android::icu::number
 	// Constructors
 	
 	// Methods
-	android::icu::number::NumberFormatter_UnitWidth NumberFormatter_UnitWidth::valueOf(jstring arg0)
+	android::icu::number::NumberFormatter_UnitWidth NumberFormatter_UnitWidth::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.icu.number.NumberFormatter$UnitWidth",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/icu/number/NumberFormatter$UnitWidth;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray NumberFormatter_UnitWidth::values()
+	JArray NumberFormatter_UnitWidth::values()
 	{
 		return callStaticObjectMethod(
 			"android.icu.number.NumberFormatter$UnitWidth",
 			"values",
 			"()[Landroid/icu/number/NumberFormatter$UnitWidth;"
-		).object<jarray>();
+		);
 	}
 } // namespace android::icu::number
 

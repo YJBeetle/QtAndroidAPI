@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./IllegalMonitorStateException.hpp"
 
 namespace java::lang
@@ -13,11 +14,11 @@ namespace java::lang
 			"java.lang.IllegalMonitorStateException",
 			"()V"
 		) {}
-	IllegalMonitorStateException::IllegalMonitorStateException(jstring arg0)
+	IllegalMonitorStateException::IllegalMonitorStateException(JString arg0)
 		: java::lang::RuntimeException(
 			"java.lang.IllegalMonitorStateException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

@@ -1,3 +1,6 @@
+#include "../../JArray.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./format/TextStyle.hpp"
 #include "./temporal/ValueRange.hpp"
 #include "../util/Locale.hpp"
@@ -127,22 +130,22 @@ namespace java::time
 			arg0
 		);
 	}
-	java::time::Month Month::valueOf(jstring arg0)
+	java::time::Month Month::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"java.time.Month",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/time/Month;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray Month::values()
+	JArray Month::values()
 	{
 		return callStaticObjectMethod(
 			"java.time.Month",
 			"values",
 			"()[Ljava/time/Month;"
-		).object<jarray>();
+		);
 	}
 	JObject Month::adjustInto(JObject arg0)
 	{
@@ -175,14 +178,14 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	jstring Month::getDisplayName(java::time::format::TextStyle arg0, java::util::Locale arg1)
+	JString Month::getDisplayName(java::time::format::TextStyle arg0, java::util::Locale arg1)
 	{
 		return callObjectMethod(
 			"getDisplayName",
 			"(Ljava/time/format/TextStyle;Ljava/util/Locale;)Ljava/lang/String;",
 			arg0.object(),
 			arg1.object()
-		).object<jstring>();
+		);
 	}
 	jlong Month::getLong(JObject arg0)
 	{
@@ -245,13 +248,13 @@ namespace java::time
 			arg0
 		);
 	}
-	jobject Month::query(JObject arg0)
+	JObject Month::query(JObject arg0)
 	{
 		return callObjectMethod(
 			"query",
 			"(Ljava/time/temporal/TemporalQuery;)Ljava/lang/Object;",
 			arg0.object()
-		).object<jobject>();
+		);
 	}
 	java::time::temporal::ValueRange Month::range(JObject arg0)
 	{

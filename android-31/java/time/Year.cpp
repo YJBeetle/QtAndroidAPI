@@ -1,4 +1,7 @@
 #include "../io/ObjectInputStream.hpp"
+#include "../../JString.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./Clock.hpp"
 #include "./LocalDate.hpp"
 #include "./Month.hpp"
@@ -86,22 +89,22 @@ namespace java::time
 			arg0
 		);
 	}
-	java::time::Year Year::parse(jstring arg0)
+	java::time::Year Year::parse(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"java.time.Year",
 			"parse",
 			"(Ljava/lang/CharSequence;)Ljava/time/Year;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	java::time::Year Year::parse(jstring arg0, java::time::format::DateTimeFormatter arg1)
+	java::time::Year Year::parse(JString arg0, java::time::format::DateTimeFormatter arg1)
 	{
 		return callStaticObjectMethod(
 			"java.time.Year",
 			"parse",
 			"(Ljava/lang/CharSequence;Ljava/time/format/DateTimeFormatter;)Ljava/time/Year;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
@@ -145,12 +148,12 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	jint Year::compareTo(jobject arg0)
+	jint Year::compareTo(JObject arg0)
 	{
 		return callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Object;)I",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint Year::compareTo(java::time::Year arg0)
@@ -161,21 +164,21 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	jboolean Year::equals(jobject arg0)
+	jboolean Year::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jstring Year::format(java::time::format::DateTimeFormatter arg0)
+	JString Year::format(java::time::format::DateTimeFormatter arg0)
 	{
 		return callObjectMethod(
 			"format",
 			"(Ljava/time/format/DateTimeFormatter;)Ljava/lang/String;",
 			arg0.object()
-		).object<jstring>();
+		);
 	}
 	jint Year::get(JObject arg0)
 	{
@@ -303,13 +306,13 @@ namespace java::time
 			arg0
 		);
 	}
-	jobject Year::query(JObject arg0)
+	JObject Year::query(JObject arg0)
 	{
 		return callObjectMethod(
 			"query",
 			"(Ljava/time/temporal/TemporalQuery;)Ljava/lang/Object;",
 			arg0.object()
-		).object<jobject>();
+		);
 	}
 	java::time::temporal::ValueRange Year::range(JObject arg0)
 	{
@@ -319,12 +322,12 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	jstring Year::toString()
+	JString Year::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jlong Year::until(JObject arg0, JObject arg1)
 	{

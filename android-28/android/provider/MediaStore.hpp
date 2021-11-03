@@ -10,6 +10,7 @@ namespace android::net
 {
 	class Uri;
 }
+class JString;
 
 namespace android::provider
 {
@@ -17,37 +18,37 @@ namespace android::provider
 	{
 	public:
 		// Fields
-		static jstring ACTION_IMAGE_CAPTURE();
-		static jstring ACTION_IMAGE_CAPTURE_SECURE();
-		static jstring ACTION_VIDEO_CAPTURE();
-		static jstring AUTHORITY();
-		static jstring EXTRA_DURATION_LIMIT();
-		static jstring EXTRA_FINISH_ON_COMPLETION();
-		static jstring EXTRA_FULL_SCREEN();
-		static jstring EXTRA_MEDIA_ALBUM();
-		static jstring EXTRA_MEDIA_ARTIST();
-		static jstring EXTRA_MEDIA_FOCUS();
-		static jstring EXTRA_MEDIA_GENRE();
-		static jstring EXTRA_MEDIA_PLAYLIST();
-		static jstring EXTRA_MEDIA_RADIO_CHANNEL();
-		static jstring EXTRA_MEDIA_TITLE();
-		static jstring EXTRA_OUTPUT();
-		static jstring EXTRA_SCREEN_ORIENTATION();
-		static jstring EXTRA_SHOW_ACTION_ICONS();
-		static jstring EXTRA_SIZE_LIMIT();
-		static jstring EXTRA_VIDEO_QUALITY();
-		static jstring INTENT_ACTION_MEDIA_PLAY_FROM_SEARCH();
-		static jstring INTENT_ACTION_MEDIA_SEARCH();
-		static jstring INTENT_ACTION_MUSIC_PLAYER();
-		static jstring INTENT_ACTION_STILL_IMAGE_CAMERA();
-		static jstring INTENT_ACTION_STILL_IMAGE_CAMERA_SECURE();
-		static jstring INTENT_ACTION_TEXT_OPEN_FROM_SEARCH();
-		static jstring INTENT_ACTION_VIDEO_CAMERA();
-		static jstring INTENT_ACTION_VIDEO_PLAY_FROM_SEARCH();
-		static jstring MEDIA_IGNORE_FILENAME();
-		static jstring MEDIA_SCANNER_VOLUME();
-		static jstring META_DATA_STILL_IMAGE_CAMERA_PREWARM_SERVICE();
-		static jstring UNKNOWN_STRING();
+		static JString ACTION_IMAGE_CAPTURE();
+		static JString ACTION_IMAGE_CAPTURE_SECURE();
+		static JString ACTION_VIDEO_CAPTURE();
+		static JString AUTHORITY();
+		static JString EXTRA_DURATION_LIMIT();
+		static JString EXTRA_FINISH_ON_COMPLETION();
+		static JString EXTRA_FULL_SCREEN();
+		static JString EXTRA_MEDIA_ALBUM();
+		static JString EXTRA_MEDIA_ARTIST();
+		static JString EXTRA_MEDIA_FOCUS();
+		static JString EXTRA_MEDIA_GENRE();
+		static JString EXTRA_MEDIA_PLAYLIST();
+		static JString EXTRA_MEDIA_RADIO_CHANNEL();
+		static JString EXTRA_MEDIA_TITLE();
+		static JString EXTRA_OUTPUT();
+		static JString EXTRA_SCREEN_ORIENTATION();
+		static JString EXTRA_SHOW_ACTION_ICONS();
+		static JString EXTRA_SIZE_LIMIT();
+		static JString EXTRA_VIDEO_QUALITY();
+		static JString INTENT_ACTION_MEDIA_PLAY_FROM_SEARCH();
+		static JString INTENT_ACTION_MEDIA_SEARCH();
+		static JString INTENT_ACTION_MUSIC_PLAYER();
+		static JString INTENT_ACTION_STILL_IMAGE_CAMERA();
+		static JString INTENT_ACTION_STILL_IMAGE_CAMERA_SECURE();
+		static JString INTENT_ACTION_TEXT_OPEN_FROM_SEARCH();
+		static JString INTENT_ACTION_VIDEO_CAMERA();
+		static JString INTENT_ACTION_VIDEO_PLAY_FROM_SEARCH();
+		static JString MEDIA_IGNORE_FILENAME();
+		static JString MEDIA_SCANNER_VOLUME();
+		static JString META_DATA_STILL_IMAGE_CAMERA_PREWARM_SERVICE();
+		static JString UNKNOWN_STRING();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MediaStore(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
@@ -59,7 +60,7 @@ namespace android::provider
 		// Methods
 		static android::net::Uri getDocumentUri(android::content::Context arg0, android::net::Uri arg1);
 		static android::net::Uri getMediaScannerUri();
-		static jstring getVersion(android::content::Context arg0);
+		static JString getVersion(android::content::Context arg0);
 	};
 } // namespace android::provider
 

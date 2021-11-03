@@ -1,4 +1,5 @@
 #include "../os/Parcel.hpp"
+#include "../../JString.hpp"
 #include "./DhcpInfo.hpp"
 
 namespace android::net
@@ -65,12 +66,12 @@ namespace android::net
 			"()I"
 		);
 	}
-	jstring DhcpInfo::toString()
+	JString DhcpInfo::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void DhcpInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

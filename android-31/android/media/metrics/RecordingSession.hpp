@@ -6,6 +6,7 @@ namespace android::media::metrics
 {
 	class LogSessionId;
 }
+class JObject;
 
 namespace android::media::metrics
 {
@@ -22,7 +23,7 @@ namespace android::media::metrics
 		
 		// Methods
 		void close();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		android::media::metrics::LogSessionId getSessionId();
 		jint hashCode();
 	};

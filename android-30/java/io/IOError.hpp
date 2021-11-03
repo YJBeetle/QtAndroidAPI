@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "../lang/Error.hpp"
 
+class JThrowable;
 
 namespace java::io
 {
@@ -16,7 +16,7 @@ namespace java::io
 		IOError(QAndroidJniObject obj);
 		
 		// Constructors
-		IOError(jthrowable arg0);
+		IOError(JThrowable arg0);
 		
 		// Methods
 	};

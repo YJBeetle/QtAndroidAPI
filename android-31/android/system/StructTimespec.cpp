@@ -1,3 +1,5 @@
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./StructTimespec.hpp"
 
 namespace android::system
@@ -37,20 +39,20 @@ namespace android::system
 			arg0.object()
 		);
 	}
-	jint StructTimespec::compareTo(jobject arg0)
+	jint StructTimespec::compareTo(JObject arg0)
 	{
 		return callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Object;)I",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jboolean StructTimespec::equals(jobject arg0)
+	jboolean StructTimespec::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint StructTimespec::hashCode()
@@ -60,12 +62,12 @@ namespace android::system
 			"()I"
 		);
 	}
-	jstring StructTimespec::toString()
+	JString StructTimespec::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::system
 

@@ -1,27 +1,29 @@
+#include "../../JArray.hpp"
 #include "../content/ContentResolver.hpp"
 #include "../graphics/Bitmap.hpp"
 #include "../graphics/BitmapFactory_Options.hpp"
 #include "../net/Uri.hpp"
+#include "../../JString.hpp"
 #include "./MediaStore_Images_Thumbnails.hpp"
 
 namespace android::provider
 {
 	// Fields
-	jstring MediaStore_Images_Thumbnails::DATA()
+	JString MediaStore_Images_Thumbnails::DATA()
 	{
 		return getStaticObjectField(
 			"android.provider.MediaStore$Images$Thumbnails",
 			"DATA",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring MediaStore_Images_Thumbnails::DEFAULT_SORT_ORDER()
+	JString MediaStore_Images_Thumbnails::DEFAULT_SORT_ORDER()
 	{
 		return getStaticObjectField(
 			"android.provider.MediaStore$Images$Thumbnails",
 			"DEFAULT_SORT_ORDER",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::net::Uri MediaStore_Images_Thumbnails::EXTERNAL_CONTENT_URI()
 	{
@@ -38,21 +40,21 @@ namespace android::provider
 			"FULL_SCREEN_KIND"
 		);
 	}
-	jstring MediaStore_Images_Thumbnails::HEIGHT()
+	JString MediaStore_Images_Thumbnails::HEIGHT()
 	{
 		return getStaticObjectField(
 			"android.provider.MediaStore$Images$Thumbnails",
 			"HEIGHT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring MediaStore_Images_Thumbnails::IMAGE_ID()
+	JString MediaStore_Images_Thumbnails::IMAGE_ID()
 	{
 		return getStaticObjectField(
 			"android.provider.MediaStore$Images$Thumbnails",
 			"IMAGE_ID",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::net::Uri MediaStore_Images_Thumbnails::INTERNAL_CONTENT_URI()
 	{
@@ -62,13 +64,13 @@ namespace android::provider
 			"Landroid/net/Uri;"
 		);
 	}
-	jstring MediaStore_Images_Thumbnails::KIND()
+	JString MediaStore_Images_Thumbnails::KIND()
 	{
 		return getStaticObjectField(
 			"android.provider.MediaStore$Images$Thumbnails",
 			"KIND",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint MediaStore_Images_Thumbnails::MICRO_KIND()
 	{
@@ -84,21 +86,21 @@ namespace android::provider
 			"MINI_KIND"
 		);
 	}
-	jstring MediaStore_Images_Thumbnails::THUMB_DATA()
+	JString MediaStore_Images_Thumbnails::THUMB_DATA()
 	{
 		return getStaticObjectField(
 			"android.provider.MediaStore$Images$Thumbnails",
 			"THUMB_DATA",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring MediaStore_Images_Thumbnails::WIDTH()
+	JString MediaStore_Images_Thumbnails::WIDTH()
 	{
 		return getStaticObjectField(
 			"android.provider.MediaStore$Images$Thumbnails",
 			"WIDTH",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QAndroidJniObject forward
@@ -133,13 +135,13 @@ namespace android::provider
 			arg2
 		);
 	}
-	android::net::Uri MediaStore_Images_Thumbnails::getContentUri(jstring arg0)
+	android::net::Uri MediaStore_Images_Thumbnails::getContentUri(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.provider.MediaStore$Images$Thumbnails",
 			"getContentUri",
 			"(Ljava/lang/String;)Landroid/net/Uri;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::graphics::Bitmap MediaStore_Images_Thumbnails::getThumbnail(android::content::ContentResolver arg0, jlong arg1, jint arg2, android::graphics::BitmapFactory_Options arg3)
@@ -167,7 +169,7 @@ namespace android::provider
 			arg4.object()
 		);
 	}
-	JObject MediaStore_Images_Thumbnails::query(android::content::ContentResolver arg0, android::net::Uri arg1, jarray arg2)
+	JObject MediaStore_Images_Thumbnails::query(android::content::ContentResolver arg0, android::net::Uri arg1, JArray arg2)
 	{
 		return callStaticObjectMethod(
 			"android.provider.MediaStore$Images$Thumbnails",
@@ -175,10 +177,10 @@ namespace android::provider
 			"(Landroid/content/ContentResolver;Landroid/net/Uri;[Ljava/lang/String;)Landroid/database/Cursor;",
 			arg0.object(),
 			arg1.object(),
-			arg2
+			arg2.object<jarray>()
 		);
 	}
-	JObject MediaStore_Images_Thumbnails::queryMiniThumbnail(android::content::ContentResolver arg0, jlong arg1, jint arg2, jarray arg3)
+	JObject MediaStore_Images_Thumbnails::queryMiniThumbnail(android::content::ContentResolver arg0, jlong arg1, jint arg2, JArray arg3)
 	{
 		return callStaticObjectMethod(
 			"android.provider.MediaStore$Images$Thumbnails",
@@ -187,10 +189,10 @@ namespace android::provider
 			arg0.object(),
 			arg1,
 			arg2,
-			arg3
+			arg3.object<jarray>()
 		);
 	}
-	JObject MediaStore_Images_Thumbnails::queryMiniThumbnails(android::content::ContentResolver arg0, android::net::Uri arg1, jint arg2, jarray arg3)
+	JObject MediaStore_Images_Thumbnails::queryMiniThumbnails(android::content::ContentResolver arg0, android::net::Uri arg1, jint arg2, JArray arg3)
 	{
 		return callStaticObjectMethod(
 			"android.provider.MediaStore$Images$Thumbnails",
@@ -199,7 +201,7 @@ namespace android::provider
 			arg0.object(),
 			arg1.object(),
 			arg2,
-			arg3
+			arg3.object<jarray>()
 		);
 	}
 } // namespace android::provider

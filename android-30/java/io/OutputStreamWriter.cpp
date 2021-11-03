@@ -1,5 +1,8 @@
+#include "../../JCharArray.hpp"
 #include "./OutputStream.hpp"
 #include "./Writer.hpp"
+#include "../../JString.hpp"
+#include "../../JString.hpp"
 #include "../nio/charset/Charset.hpp"
 #include "../nio/charset/CharsetEncoder.hpp"
 #include "./OutputStreamWriter.hpp"
@@ -18,12 +21,12 @@ namespace java::io
 			"(Ljava/io/OutputStream;)V",
 			arg0.object()
 		) {}
-	OutputStreamWriter::OutputStreamWriter(java::io::OutputStream arg0, jstring arg1)
+	OutputStreamWriter::OutputStreamWriter(java::io::OutputStream arg0, JString arg1)
 		: java::io::Writer(
 			"java.io.OutputStreamWriter",
 			"(Ljava/io/OutputStream;Ljava/lang/String;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		) {}
 	OutputStreamWriter::OutputStreamWriter(java::io::OutputStream arg0, java::nio::charset::Charset arg1)
 		: java::io::Writer(
@@ -41,20 +44,20 @@ namespace java::io
 		) {}
 	
 	// Methods
-	java::io::Writer OutputStreamWriter::append(jstring arg0)
+	java::io::Writer OutputStreamWriter::append(JString arg0)
 	{
 		return callObjectMethod(
 			"append",
 			"(Ljava/lang/CharSequence;)Ljava/io/Writer;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	java::io::Writer OutputStreamWriter::append(jstring arg0, jint arg1, jint arg2)
+	java::io::Writer OutputStreamWriter::append(JString arg0, jint arg1, jint arg2)
 	{
 		return callObjectMethod(
 			"append",
 			"(Ljava/lang/CharSequence;II)Ljava/io/Writer;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
 			arg2
 		);
@@ -73,12 +76,12 @@ namespace java::io
 			"()V"
 		);
 	}
-	jstring OutputStreamWriter::getEncoding()
+	JString OutputStreamWriter::getEncoding()
 	{
 		return callObjectMethod(
 			"getEncoding",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void OutputStreamWriter::write(jint arg0)
 	{
@@ -88,22 +91,22 @@ namespace java::io
 			arg0
 		);
 	}
-	void OutputStreamWriter::write(jcharArray arg0, jint arg1, jint arg2)
+	void OutputStreamWriter::write(JCharArray arg0, jint arg1, jint arg2)
 	{
 		callMethod<void>(
 			"write",
 			"([CII)V",
-			arg0,
+			arg0.object<jcharArray>(),
 			arg1,
 			arg2
 		);
 	}
-	void OutputStreamWriter::write(jstring arg0, jint arg1, jint arg2)
+	void OutputStreamWriter::write(JString arg0, jint arg1, jint arg2)
 	{
 		callMethod<void>(
 			"write",
 			"(Ljava/lang/String;II)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
 			arg2
 		);

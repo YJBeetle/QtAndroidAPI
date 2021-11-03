@@ -1,3 +1,5 @@
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./AppSearchSchema.hpp"
 
 namespace android::app::appsearch
@@ -10,12 +12,12 @@ namespace android::app::appsearch
 	// Constructors
 	
 	// Methods
-	jboolean AppSearchSchema::equals(jobject arg0)
+	jboolean AppSearchSchema::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	JObject AppSearchSchema::getProperties()
@@ -25,12 +27,12 @@ namespace android::app::appsearch
 			"()Ljava/util/List;"
 		);
 	}
-	jstring AppSearchSchema::getSchemaType()
+	JString AppSearchSchema::getSchemaType()
 	{
 		return callObjectMethod(
 			"getSchemaType",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint AppSearchSchema::hashCode()
 	{
@@ -39,12 +41,12 @@ namespace android::app::appsearch
 			"()I"
 		);
 	}
-	jstring AppSearchSchema::toString()
+	JString AppSearchSchema::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::app::appsearch
 

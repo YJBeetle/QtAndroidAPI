@@ -2,6 +2,8 @@
 #include "../../content/res/ColorStateList.hpp"
 #include "../../graphics/drawable/Icon.hpp"
 #include "./Control.hpp"
+#include "../../../JString.hpp"
+#include "../../../JString.hpp"
 #include "./Control_StatelessBuilder.hpp"
 
 namespace android::service::controls
@@ -18,11 +20,11 @@ namespace android::service::controls
 			"(Landroid/service/controls/Control;)V",
 			arg0.object()
 		) {}
-	Control_StatelessBuilder::Control_StatelessBuilder(jstring arg0, android::app::PendingIntent arg1)
+	Control_StatelessBuilder::Control_StatelessBuilder(JString arg0, android::app::PendingIntent arg1)
 		: JObject(
 			"android.service.controls.Control$StatelessBuilder",
 			"(Ljava/lang/String;Landroid/app/PendingIntent;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		) {}
 	
@@ -42,12 +44,12 @@ namespace android::service::controls
 			arg0.object()
 		);
 	}
-	android::service::controls::Control_StatelessBuilder Control_StatelessBuilder::setControlId(jstring arg0)
+	android::service::controls::Control_StatelessBuilder Control_StatelessBuilder::setControlId(JString arg0)
 	{
 		return callObjectMethod(
 			"setControlId",
 			"(Ljava/lang/String;)Landroid/service/controls/Control$StatelessBuilder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::service::controls::Control_StatelessBuilder Control_StatelessBuilder::setCustomColor(android::content::res::ColorStateList arg0)
@@ -74,36 +76,36 @@ namespace android::service::controls
 			arg0
 		);
 	}
-	android::service::controls::Control_StatelessBuilder Control_StatelessBuilder::setStructure(jstring arg0)
+	android::service::controls::Control_StatelessBuilder Control_StatelessBuilder::setStructure(JString arg0)
 	{
 		return callObjectMethod(
 			"setStructure",
 			"(Ljava/lang/CharSequence;)Landroid/service/controls/Control$StatelessBuilder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	android::service::controls::Control_StatelessBuilder Control_StatelessBuilder::setSubtitle(jstring arg0)
+	android::service::controls::Control_StatelessBuilder Control_StatelessBuilder::setSubtitle(JString arg0)
 	{
 		return callObjectMethod(
 			"setSubtitle",
 			"(Ljava/lang/CharSequence;)Landroid/service/controls/Control$StatelessBuilder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	android::service::controls::Control_StatelessBuilder Control_StatelessBuilder::setTitle(jstring arg0)
+	android::service::controls::Control_StatelessBuilder Control_StatelessBuilder::setTitle(JString arg0)
 	{
 		return callObjectMethod(
 			"setTitle",
 			"(Ljava/lang/CharSequence;)Landroid/service/controls/Control$StatelessBuilder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	android::service::controls::Control_StatelessBuilder Control_StatelessBuilder::setZone(jstring arg0)
+	android::service::controls::Control_StatelessBuilder Control_StatelessBuilder::setZone(JString arg0)
 	{
 		return callObjectMethod(
 			"setZone",
 			"(Ljava/lang/CharSequence;)Landroid/service/controls/Control$StatelessBuilder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 } // namespace android::service::controls

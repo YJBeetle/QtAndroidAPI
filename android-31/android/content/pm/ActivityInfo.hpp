@@ -1,7 +1,5 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "./PackageItemInfo.hpp"
 #include "./ComponentInfo.hpp"
 
 namespace android::content::pm
@@ -12,6 +10,7 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
 
 namespace android::content::pm
 {
@@ -92,13 +91,13 @@ namespace android::content::pm
 		jint flags();
 		jint launchMode();
 		jint maxRecents();
-		jstring parentActivityName();
-		jstring permission();
+		JString parentActivityName();
+		JString permission();
 		jint persistableMode();
 		jint screenOrientation();
 		jint softInputMode();
-		jstring targetActivity();
-		jstring taskAffinity();
+		JString targetActivity();
+		JString taskAffinity();
 		jint theme();
 		jint uiOptions();
 		android::content::pm::ActivityInfo_WindowLayout windowLayout();
@@ -113,9 +112,9 @@ namespace android::content::pm
 		
 		// Methods
 		jint describeContents();
-		void dump(JObject arg0, jstring arg1);
+		void dump(JObject arg0, JString arg1);
 		jint getThemeResource();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::content::pm

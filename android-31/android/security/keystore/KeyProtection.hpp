@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JArray;
 namespace java::util
 {
 	class Date;
@@ -21,15 +22,15 @@ namespace android::security::keystore
 		// Constructors
 		
 		// Methods
-		jarray getBlockModes();
-		jarray getDigests();
-		jarray getEncryptionPaddings();
+		JArray getBlockModes();
+		JArray getDigests();
+		JArray getEncryptionPaddings();
 		java::util::Date getKeyValidityForConsumptionEnd();
 		java::util::Date getKeyValidityForOriginationEnd();
 		java::util::Date getKeyValidityStart();
 		jint getMaxUsageCount();
 		jint getPurposes();
-		jarray getSignaturePaddings();
+		JArray getSignaturePaddings();
 		jint getUserAuthenticationType();
 		jint getUserAuthenticationValidityDurationSeconds();
 		jboolean isDigestsSpecified();

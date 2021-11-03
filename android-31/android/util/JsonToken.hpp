@@ -1,8 +1,9 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "../../java/lang/Enum.hpp"
 
+class JArray;
+class JString;
 
 namespace android::util
 {
@@ -28,8 +29,8 @@ namespace android::util
 		// Constructors
 		
 		// Methods
-		static android::util::JsonToken valueOf(jstring arg0);
-		static jarray values();
+		static android::util::JsonToken valueOf(JString arg0);
+		static JArray values();
 	};
 } // namespace android::util
 

@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./Element.hpp"
 
+class JString;
 
 namespace android::sax
 {
@@ -16,8 +16,8 @@ namespace android::sax
 		RootElement(QAndroidJniObject obj);
 		
 		// Constructors
-		RootElement(jstring arg0);
-		RootElement(jstring arg0, jstring arg1);
+		RootElement(JString arg0);
+		RootElement(JString arg0, JString arg1);
 		
 		// Methods
 		JObject getContentHandler();

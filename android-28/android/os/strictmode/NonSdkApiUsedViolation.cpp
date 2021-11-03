@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./NonSdkApiUsedViolation.hpp"
 
 namespace android::os::strictmode

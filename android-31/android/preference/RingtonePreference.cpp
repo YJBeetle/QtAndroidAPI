@@ -3,6 +3,7 @@
 #include "../content/res/TypedArray.hpp"
 #include "../net/Uri.hpp"
 #include "./PreferenceManager.hpp"
+#include "../../JObject.hpp"
 #include "./RingtonePreference.hpp"
 
 namespace android::preference

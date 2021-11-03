@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JArray;
 namespace android::content
 {
 	class Context;
@@ -10,6 +11,7 @@ namespace android::se::omapi
 {
 	class Reader;
 }
+class JString;
 
 namespace android::se::omapi
 {
@@ -26,9 +28,9 @@ namespace android::se::omapi
 		SEService(android::content::Context arg0, JObject arg1, JObject arg2);
 		
 		// Methods
-		jarray getReaders();
+		JArray getReaders();
 		android::se::omapi::Reader getUiccReader(jint arg0);
-		jstring getVersion();
+		JString getVersion();
 		jboolean isConnected();
 		void shutdown();
 	};

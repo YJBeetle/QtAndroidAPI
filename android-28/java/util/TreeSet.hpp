@@ -1,7 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "./AbstractCollection.hpp"
 #include "./AbstractSet.hpp"
 
 namespace java::io
@@ -12,6 +10,7 @@ namespace java::io
 {
 	class ObjectOutputStream;
 }
+class JObject;
 
 namespace java::util
 {
@@ -29,33 +28,33 @@ namespace java::util
 		TreeSet(JObject arg0);
 		
 		// Methods
-		jboolean add(jobject arg0);
+		jboolean add(JObject arg0);
 		jboolean addAll(JObject arg0);
-		jobject ceiling(jobject arg0);
+		JObject ceiling(JObject arg0);
 		void clear();
-		jobject clone();
+		JObject clone();
 		JObject comparator();
-		jboolean contains(jobject arg0);
+		jboolean contains(JObject arg0);
 		JObject descendingIterator();
 		JObject descendingSet();
-		jobject first();
-		jobject floor(jobject arg0);
-		JObject headSet(jobject arg0, jboolean arg1);
-		JObject headSet(jobject arg0);
-		jobject higher(jobject arg0);
+		JObject first();
+		JObject floor(JObject arg0);
+		JObject headSet(JObject arg0, jboolean arg1);
+		JObject headSet(JObject arg0);
+		JObject higher(JObject arg0);
 		jboolean isEmpty();
 		JObject iterator();
-		jobject last();
-		jobject lower(jobject arg0);
-		jobject pollFirst();
-		jobject pollLast();
-		jboolean remove(jobject arg0);
+		JObject last();
+		JObject lower(JObject arg0);
+		JObject pollFirst();
+		JObject pollLast();
+		jboolean remove(JObject arg0);
 		jint size();
 		JObject spliterator();
-		JObject subSet(jobject arg0, jboolean arg1, jobject arg2, jboolean arg3);
-		JObject subSet(jobject arg0, jobject arg1);
-		JObject tailSet(jobject arg0, jboolean arg1);
-		JObject tailSet(jobject arg0);
+		JObject subSet(JObject arg0, jboolean arg1, JObject arg2, jboolean arg3);
+		JObject subSet(JObject arg0, JObject arg1);
+		JObject tailSet(JObject arg0, jboolean arg1);
+		JObject tailSet(JObject arg0);
 	};
 } // namespace java::util
 

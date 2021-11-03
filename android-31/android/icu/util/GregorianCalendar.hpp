@@ -1,6 +1,5 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "./Calendar.hpp"
 
 namespace android::icu::util
@@ -15,6 +14,7 @@ namespace android::icu::util
 {
 	class ULocale;
 }
+class JString;
 namespace java::util
 {
 	class Date;
@@ -52,7 +52,7 @@ namespace android::icu::util
 		jint getActualMaximum(jint arg0);
 		jint getActualMinimum(jint arg0);
 		java::util::Date getGregorianChange();
-		jstring getType();
+		JString getType();
 		jint hashCode();
 		jboolean isEquivalentTo(android::icu::util::Calendar arg0);
 		jboolean isLeapYear(jint arg0);

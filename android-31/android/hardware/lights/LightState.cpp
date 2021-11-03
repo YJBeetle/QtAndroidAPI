@@ -1,4 +1,5 @@
 #include "../../os/Parcel.hpp"
+#include "../../../JString.hpp"
 #include "./LightState.hpp"
 
 namespace android::hardware::lights
@@ -40,12 +41,12 @@ namespace android::hardware::lights
 			"()I"
 		);
 	}
-	jstring LightState::toString()
+	JString LightState::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void LightState::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

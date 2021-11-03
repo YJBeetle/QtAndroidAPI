@@ -11,43 +11,44 @@
 #include "./WpsInfo.hpp"
 #include "./hotspot2/PasspointConfiguration.hpp"
 #include "../../os/Handler.hpp"
+#include "../../../JString.hpp"
 #include "../../../java/net/InetAddress.hpp"
 #include "./WifiManager.hpp"
 
 namespace android::net::wifi
 {
 	// Fields
-	jstring WifiManager::ACTION_PICK_WIFI_NETWORK()
+	JString WifiManager::ACTION_PICK_WIFI_NETWORK()
 	{
 		return getStaticObjectField(
 			"android.net.wifi.WifiManager",
 			"ACTION_PICK_WIFI_NETWORK",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring WifiManager::ACTION_REQUEST_SCAN_ALWAYS_AVAILABLE()
+	JString WifiManager::ACTION_REQUEST_SCAN_ALWAYS_AVAILABLE()
 	{
 		return getStaticObjectField(
 			"android.net.wifi.WifiManager",
 			"ACTION_REQUEST_SCAN_ALWAYS_AVAILABLE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring WifiManager::ACTION_WIFI_NETWORK_SUGGESTION_POST_CONNECTION()
+	JString WifiManager::ACTION_WIFI_NETWORK_SUGGESTION_POST_CONNECTION()
 	{
 		return getStaticObjectField(
 			"android.net.wifi.WifiManager",
 			"ACTION_WIFI_NETWORK_SUGGESTION_POST_CONNECTION",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring WifiManager::ACTION_WIFI_SCAN_AVAILABILITY_CHANGED()
+	JString WifiManager::ACTION_WIFI_SCAN_AVAILABILITY_CHANGED()
 	{
 		return getStaticObjectField(
 			"android.net.wifi.WifiManager",
 			"ACTION_WIFI_SCAN_AVAILABILITY_CHANGED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint WifiManager::ERROR_AUTHENTICATING()
 	{
@@ -56,133 +57,133 @@ namespace android::net::wifi
 			"ERROR_AUTHENTICATING"
 		);
 	}
-	jstring WifiManager::EXTRA_BSSID()
+	JString WifiManager::EXTRA_BSSID()
 	{
 		return getStaticObjectField(
 			"android.net.wifi.WifiManager",
 			"EXTRA_BSSID",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring WifiManager::EXTRA_NETWORK_INFO()
+	JString WifiManager::EXTRA_NETWORK_INFO()
 	{
 		return getStaticObjectField(
 			"android.net.wifi.WifiManager",
 			"EXTRA_NETWORK_INFO",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring WifiManager::EXTRA_NETWORK_SUGGESTION()
+	JString WifiManager::EXTRA_NETWORK_SUGGESTION()
 	{
 		return getStaticObjectField(
 			"android.net.wifi.WifiManager",
 			"EXTRA_NETWORK_SUGGESTION",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring WifiManager::EXTRA_NEW_RSSI()
+	JString WifiManager::EXTRA_NEW_RSSI()
 	{
 		return getStaticObjectField(
 			"android.net.wifi.WifiManager",
 			"EXTRA_NEW_RSSI",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring WifiManager::EXTRA_NEW_STATE()
+	JString WifiManager::EXTRA_NEW_STATE()
 	{
 		return getStaticObjectField(
 			"android.net.wifi.WifiManager",
 			"EXTRA_NEW_STATE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring WifiManager::EXTRA_PREVIOUS_WIFI_STATE()
+	JString WifiManager::EXTRA_PREVIOUS_WIFI_STATE()
 	{
 		return getStaticObjectField(
 			"android.net.wifi.WifiManager",
 			"EXTRA_PREVIOUS_WIFI_STATE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring WifiManager::EXTRA_RESULTS_UPDATED()
+	JString WifiManager::EXTRA_RESULTS_UPDATED()
 	{
 		return getStaticObjectField(
 			"android.net.wifi.WifiManager",
 			"EXTRA_RESULTS_UPDATED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring WifiManager::EXTRA_SCAN_AVAILABLE()
+	JString WifiManager::EXTRA_SCAN_AVAILABLE()
 	{
 		return getStaticObjectField(
 			"android.net.wifi.WifiManager",
 			"EXTRA_SCAN_AVAILABLE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring WifiManager::EXTRA_SUPPLICANT_CONNECTED()
+	JString WifiManager::EXTRA_SUPPLICANT_CONNECTED()
 	{
 		return getStaticObjectField(
 			"android.net.wifi.WifiManager",
 			"EXTRA_SUPPLICANT_CONNECTED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring WifiManager::EXTRA_SUPPLICANT_ERROR()
+	JString WifiManager::EXTRA_SUPPLICANT_ERROR()
 	{
 		return getStaticObjectField(
 			"android.net.wifi.WifiManager",
 			"EXTRA_SUPPLICANT_ERROR",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring WifiManager::EXTRA_WIFI_INFO()
+	JString WifiManager::EXTRA_WIFI_INFO()
 	{
 		return getStaticObjectField(
 			"android.net.wifi.WifiManager",
 			"EXTRA_WIFI_INFO",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring WifiManager::EXTRA_WIFI_STATE()
+	JString WifiManager::EXTRA_WIFI_STATE()
 	{
 		return getStaticObjectField(
 			"android.net.wifi.WifiManager",
 			"EXTRA_WIFI_STATE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring WifiManager::NETWORK_IDS_CHANGED_ACTION()
+	JString WifiManager::NETWORK_IDS_CHANGED_ACTION()
 	{
 		return getStaticObjectField(
 			"android.net.wifi.WifiManager",
 			"NETWORK_IDS_CHANGED_ACTION",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring WifiManager::NETWORK_STATE_CHANGED_ACTION()
+	JString WifiManager::NETWORK_STATE_CHANGED_ACTION()
 	{
 		return getStaticObjectField(
 			"android.net.wifi.WifiManager",
 			"NETWORK_STATE_CHANGED_ACTION",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring WifiManager::RSSI_CHANGED_ACTION()
+	JString WifiManager::RSSI_CHANGED_ACTION()
 	{
 		return getStaticObjectField(
 			"android.net.wifi.WifiManager",
 			"RSSI_CHANGED_ACTION",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring WifiManager::SCAN_RESULTS_AVAILABLE_ACTION()
+	JString WifiManager::SCAN_RESULTS_AVAILABLE_ACTION()
 	{
 		return getStaticObjectField(
 			"android.net.wifi.WifiManager",
 			"SCAN_RESULTS_AVAILABLE_ACTION",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint WifiManager::STATUS_NETWORK_SUGGESTIONS_ERROR_ADD_DUPLICATE()
 	{
@@ -303,29 +304,29 @@ namespace android::net::wifi
 			"STATUS_SUGGESTION_CONNECTION_FAILURE_UNKNOWN"
 		);
 	}
-	jstring WifiManager::SUPPLICANT_CONNECTION_CHANGE_ACTION()
+	JString WifiManager::SUPPLICANT_CONNECTION_CHANGE_ACTION()
 	{
 		return getStaticObjectField(
 			"android.net.wifi.WifiManager",
 			"SUPPLICANT_CONNECTION_CHANGE_ACTION",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring WifiManager::SUPPLICANT_STATE_CHANGED_ACTION()
+	JString WifiManager::SUPPLICANT_STATE_CHANGED_ACTION()
 	{
 		return getStaticObjectField(
 			"android.net.wifi.WifiManager",
 			"SUPPLICANT_STATE_CHANGED_ACTION",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring WifiManager::UNKNOWN_SSID()
+	JString WifiManager::UNKNOWN_SSID()
 	{
 		return getStaticObjectField(
 			"android.net.wifi.WifiManager",
 			"UNKNOWN_SSID",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint WifiManager::WIFI_MODE_FULL()
 	{
@@ -355,13 +356,13 @@ namespace android::net::wifi
 			"WIFI_MODE_SCAN_ONLY"
 		);
 	}
-	jstring WifiManager::WIFI_STATE_CHANGED_ACTION()
+	JString WifiManager::WIFI_STATE_CHANGED_ACTION()
 	{
 		return getStaticObjectField(
 			"android.net.wifi.WifiManager",
 			"WIFI_STATE_CHANGED_ACTION",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint WifiManager::WIFI_STATE_DISABLED()
 	{
@@ -526,29 +527,29 @@ namespace android::net::wifi
 			arg0.object()
 		);
 	}
-	android::net::wifi::WifiManager_MulticastLock WifiManager::createMulticastLock(jstring arg0)
+	android::net::wifi::WifiManager_MulticastLock WifiManager::createMulticastLock(JString arg0)
 	{
 		return callObjectMethod(
 			"createMulticastLock",
 			"(Ljava/lang/String;)Landroid/net/wifi/WifiManager$MulticastLock;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	android::net::wifi::WifiManager_WifiLock WifiManager::createWifiLock(jstring arg0)
+	android::net::wifi::WifiManager_WifiLock WifiManager::createWifiLock(JString arg0)
 	{
 		return callObjectMethod(
 			"createWifiLock",
 			"(Ljava/lang/String;)Landroid/net/wifi/WifiManager$WifiLock;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	android::net::wifi::WifiManager_WifiLock WifiManager::createWifiLock(jint arg0, jstring arg1)
+	android::net::wifi::WifiManager_WifiLock WifiManager::createWifiLock(jint arg0, JString arg1)
 	{
 		return callObjectMethod(
 			"createWifiLock",
 			"(ILjava/lang/String;)Landroid/net/wifi/WifiManager$WifiLock;",
 			arg0,
-			arg1
+			arg1.object<jstring>()
 		);
 	}
 	jboolean WifiManager::disableNetwork(jint arg0)
@@ -934,12 +935,12 @@ namespace android::net::wifi
 			"()Z"
 		);
 	}
-	void WifiManager::removePasspointConfiguration(jstring arg0)
+	void WifiManager::removePasspointConfiguration(JString arg0)
 	{
 		callMethod<void>(
 			"removePasspointConfiguration",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void WifiManager::removeSuggestionConnectionStatusListener(JObject arg0)
@@ -974,12 +975,12 @@ namespace android::net::wifi
 			arg1
 		);
 	}
-	void WifiManager::setTdlsEnabledWithMacAddress(jstring arg0, jboolean arg1)
+	void WifiManager::setTdlsEnabledWithMacAddress(JString arg0, jboolean arg1)
 	{
 		callMethod<void>(
 			"setTdlsEnabledWithMacAddress",
 			"(Ljava/lang/String;Z)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}

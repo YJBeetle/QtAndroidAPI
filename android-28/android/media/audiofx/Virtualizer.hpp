@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "./AudioEffect.hpp"
 
+class JIntArray;
 namespace android::media::audiofx
 {
 	class Virtualizer_Settings;
@@ -33,7 +33,7 @@ namespace android::media::audiofx
 		jboolean forceVirtualizationMode(jint arg0);
 		android::media::audiofx::Virtualizer_Settings getProperties();
 		jshort getRoundedStrength();
-		jboolean getSpeakerAngles(jint arg0, jint arg1, jintArray arg2);
+		jboolean getSpeakerAngles(jint arg0, jint arg1, JIntArray arg2);
 		jboolean getStrengthSupported();
 		jint getVirtualizationMode();
 		void setParameterListener(JObject arg0);

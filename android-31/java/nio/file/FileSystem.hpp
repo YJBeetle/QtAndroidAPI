@@ -2,6 +2,8 @@
 
 #include "../../../JObject.hpp"
 
+class JArray;
+class JString;
 namespace java::nio::file::attribute
 {
 	class UserPrincipalLookupService;
@@ -27,10 +29,10 @@ namespace java::nio::file
 		// Methods
 		void close();
 		JObject getFileStores();
-		JObject getPath(jstring arg0, jarray arg1);
-		JObject getPathMatcher(jstring arg0);
+		JObject getPath(JString arg0, JArray arg1);
+		JObject getPathMatcher(JString arg0);
 		JObject getRootDirectories();
-		jstring getSeparator();
+		JString getSeparator();
 		java::nio::file::attribute::UserPrincipalLookupService getUserPrincipalLookupService();
 		jboolean isOpen();
 		jboolean isReadOnly();

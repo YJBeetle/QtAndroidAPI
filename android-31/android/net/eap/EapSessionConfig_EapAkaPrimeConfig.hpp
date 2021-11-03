@@ -1,9 +1,9 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "./EapSessionConfig_EapMethodConfig.hpp"
 #include "./EapSessionConfig_EapAkaConfig.hpp"
 
+class JObject;
+class JString;
 
 namespace android::net::eap
 {
@@ -20,8 +20,8 @@ namespace android::net::eap
 		
 		// Methods
 		jboolean allowsMismatchedNetworkNames();
-		jboolean equals(jobject arg0);
-		jstring getNetworkName();
+		jboolean equals(JObject arg0);
+		JString getNetworkName();
 		jint hashCode();
 	};
 } // namespace android::net::eap

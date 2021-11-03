@@ -22,6 +22,8 @@ namespace android::os
 {
 	class UserHandle;
 }
+class JObject;
+class JString;
 
 namespace android::content
 {
@@ -41,15 +43,15 @@ namespace android::content
 		static android::content::IntentSender readIntentSenderOrNullFromParcel(android::os::Parcel arg0);
 		static void writeIntentSenderOrNullToParcel(android::content::IntentSender arg0, android::os::Parcel arg1);
 		jint describeContents();
-		jboolean equals(jobject arg0);
-		jstring getCreatorPackage();
+		jboolean equals(JObject arg0);
+		JString getCreatorPackage();
 		jint getCreatorUid();
 		android::os::UserHandle getCreatorUserHandle();
-		jstring getTargetPackage();
+		JString getTargetPackage();
 		jint hashCode();
 		void sendIntent(android::content::Context arg0, jint arg1, android::content::Intent arg2, JObject arg3, android::os::Handler arg4);
-		void sendIntent(android::content::Context arg0, jint arg1, android::content::Intent arg2, JObject arg3, android::os::Handler arg4, jstring arg5);
-		jstring toString();
+		void sendIntent(android::content::Context arg0, jint arg1, android::content::Intent arg2, JObject arg3, android::os::Handler arg4, JString arg5);
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::content

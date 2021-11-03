@@ -1,5 +1,6 @@
 #include "../content/Context.hpp"
 #include "../view/View.hpp"
+#include "../../JString.hpp"
 #include "./Toast.hpp"
 
 namespace android::widget
@@ -43,14 +44,14 @@ namespace android::widget
 			arg2
 		);
 	}
-	android::widget::Toast Toast::makeText(android::content::Context arg0, jstring arg1, jint arg2)
+	android::widget::Toast Toast::makeText(android::content::Context arg0, JString arg1, jint arg2)
 	{
 		return callStaticObjectMethod(
 			"android.widget.Toast",
 			"makeText",
 			"(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2
 		);
 	}
@@ -145,12 +146,12 @@ namespace android::widget
 			arg0
 		);
 	}
-	void Toast::setText(jstring arg0)
+	void Toast::setText(JString arg0)
 	{
 		callMethod<void>(
 			"setText",
 			"(Ljava/lang/CharSequence;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void Toast::setView(android::view::View arg0)

@@ -2,6 +2,8 @@
 
 #include "../../../JObject.hpp"
 
+class JArray;
+class JString;
 
 namespace android::text::util
 {
@@ -18,11 +20,11 @@ namespace android::text::util
 		Rfc822Tokenizer();
 		
 		// Methods
-		static jarray tokenize(jstring arg0);
-		static void tokenize(jstring arg0, JObject arg1);
-		jint findTokenEnd(jstring arg0, jint arg1);
-		jint findTokenStart(jstring arg0, jint arg1);
-		jstring terminateToken(jstring arg0);
+		static JArray tokenize(JString arg0);
+		static void tokenize(JString arg0, JObject arg1);
+		jint findTokenEnd(JString arg0, jint arg1);
+		jint findTokenStart(JString arg0, jint arg1);
+		JString terminateToken(JString arg0);
 	};
 } // namespace android::text::util
 

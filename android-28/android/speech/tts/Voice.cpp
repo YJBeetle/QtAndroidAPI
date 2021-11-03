@@ -1,4 +1,6 @@
 #include "../../os/Parcel.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "../../../java/util/Locale.hpp"
 #include "./Voice.hpp"
 
@@ -88,11 +90,11 @@ namespace android::speech::tts
 	Voice::Voice(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	Voice::Voice(jstring arg0, java::util::Locale arg1, jint arg2, jint arg3, jboolean arg4, JObject arg5)
+	Voice::Voice(JString arg0, java::util::Locale arg1, jint arg2, jint arg3, jboolean arg4, JObject arg5)
 		: JObject(
 			"android.speech.tts.Voice",
 			"(Ljava/lang/String;Ljava/util/Locale;IIZLjava/util/Set;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
 			arg2,
 			arg3,
@@ -108,12 +110,12 @@ namespace android::speech::tts
 			"()I"
 		);
 	}
-	jboolean Voice::equals(jobject arg0)
+	jboolean Voice::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	JObject Voice::getFeatures()
@@ -137,12 +139,12 @@ namespace android::speech::tts
 			"()Ljava/util/Locale;"
 		);
 	}
-	jstring Voice::getName()
+	JString Voice::getName()
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint Voice::getQuality()
 	{
@@ -165,12 +167,12 @@ namespace android::speech::tts
 			"()Z"
 		);
 	}
-	jstring Voice::toString()
+	JString Voice::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void Voice::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

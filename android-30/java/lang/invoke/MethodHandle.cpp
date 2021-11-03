@@ -1,3 +1,7 @@
+#include "../../../JObjectArray.hpp"
+#include "../../../JClass.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./MethodType.hpp"
 #include "../../util/Optional.hpp"
 #include "./MethodHandle.hpp"
@@ -12,22 +16,22 @@ namespace java::lang::invoke
 	// Constructors
 	
 	// Methods
-	java::lang::invoke::MethodHandle MethodHandle::asCollector(jclass arg0, jint arg1)
+	java::lang::invoke::MethodHandle MethodHandle::asCollector(JClass arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"asCollector",
 			"(Ljava/lang/Class;I)Ljava/lang/invoke/MethodHandle;",
-			arg0,
+			arg0.object<jclass>(),
 			arg1
 		);
 	}
-	java::lang::invoke::MethodHandle MethodHandle::asCollector(jint arg0, jclass arg1, jint arg2)
+	java::lang::invoke::MethodHandle MethodHandle::asCollector(jint arg0, JClass arg1, jint arg2)
 	{
 		return callObjectMethod(
 			"asCollector",
 			"(ILjava/lang/Class;I)Ljava/lang/invoke/MethodHandle;",
 			arg0,
-			arg1,
+			arg1.object<jclass>(),
 			arg2
 		);
 	}
@@ -38,22 +42,22 @@ namespace java::lang::invoke
 			"()Ljava/lang/invoke/MethodHandle;"
 		);
 	}
-	java::lang::invoke::MethodHandle MethodHandle::asSpreader(jclass arg0, jint arg1)
+	java::lang::invoke::MethodHandle MethodHandle::asSpreader(JClass arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"asSpreader",
 			"(Ljava/lang/Class;I)Ljava/lang/invoke/MethodHandle;",
-			arg0,
+			arg0.object<jclass>(),
 			arg1
 		);
 	}
-	java::lang::invoke::MethodHandle MethodHandle::asSpreader(jint arg0, jclass arg1, jint arg2)
+	java::lang::invoke::MethodHandle MethodHandle::asSpreader(jint arg0, JClass arg1, jint arg2)
 	{
 		return callObjectMethod(
 			"asSpreader",
 			"(ILjava/lang/Class;I)Ljava/lang/invoke/MethodHandle;",
 			arg0,
-			arg1,
+			arg1.object<jclass>(),
 			arg2
 		);
 	}
@@ -65,20 +69,20 @@ namespace java::lang::invoke
 			arg0.object()
 		);
 	}
-	java::lang::invoke::MethodHandle MethodHandle::asVarargsCollector(jclass arg0)
+	java::lang::invoke::MethodHandle MethodHandle::asVarargsCollector(JClass arg0)
 	{
 		return callObjectMethod(
 			"asVarargsCollector",
 			"(Ljava/lang/Class;)Ljava/lang/invoke/MethodHandle;",
-			arg0
+			arg0.object<jclass>()
 		);
 	}
-	java::lang::invoke::MethodHandle MethodHandle::bindTo(jobject arg0)
+	java::lang::invoke::MethodHandle MethodHandle::bindTo(JObject arg0)
 	{
 		return callObjectMethod(
 			"bindTo",
 			"(Ljava/lang/Object;)Ljava/lang/invoke/MethodHandle;",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	java::util::Optional MethodHandle::describeConstable()
@@ -88,37 +92,37 @@ namespace java::lang::invoke
 			"()Ljava/util/Optional;"
 		);
 	}
-	jobject MethodHandle::invoke(jobjectArray arg0)
+	JObject MethodHandle::invoke(JObjectArray arg0)
 	{
 		return callObjectMethod(
 			"invoke",
 			"([Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0
-		).object<jobject>();
+			arg0.object<jobjectArray>()
+		);
 	}
-	jobject MethodHandle::invokeExact(jobjectArray arg0)
+	JObject MethodHandle::invokeExact(JObjectArray arg0)
 	{
 		return callObjectMethod(
 			"invokeExact",
 			"([Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0
-		).object<jobject>();
+			arg0.object<jobjectArray>()
+		);
 	}
-	jobject MethodHandle::invokeWithArguments(jobjectArray arg0)
+	JObject MethodHandle::invokeWithArguments(JObjectArray arg0)
 	{
 		return callObjectMethod(
 			"invokeWithArguments",
 			"([Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0
-		).object<jobject>();
+			arg0.object<jobjectArray>()
+		);
 	}
-	jobject MethodHandle::invokeWithArguments(JObject arg0)
+	JObject MethodHandle::invokeWithArguments(JObject arg0)
 	{
 		return callObjectMethod(
 			"invokeWithArguments",
 			"(Ljava/util/List;)Ljava/lang/Object;",
 			arg0.object()
-		).object<jobject>();
+		);
 	}
 	jboolean MethodHandle::isVarargsCollector()
 	{
@@ -127,12 +131,12 @@ namespace java::lang::invoke
 			"()Z"
 		);
 	}
-	jstring MethodHandle::toString()
+	JString MethodHandle::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	java::lang::invoke::MethodType MethodHandle::type()
 	{

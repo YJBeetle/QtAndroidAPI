@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JByteArray;
+class JIntArray;
 namespace android::bluetooth
 {
 	class BluetoothDevice;
@@ -40,13 +42,13 @@ namespace android::bluetooth
 		jboolean connect(android::bluetooth::BluetoothDevice arg0, jboolean arg1);
 		JObject getConnectedDevices();
 		jint getConnectionState(android::bluetooth::BluetoothDevice arg0);
-		JObject getDevicesMatchingConnectionStates(jintArray arg0);
+		JObject getDevicesMatchingConnectionStates(JIntArray arg0);
 		android::bluetooth::BluetoothGattService getService(java::util::UUID arg0);
 		JObject getServices();
 		jboolean notifyCharacteristicChanged(android::bluetooth::BluetoothDevice arg0, android::bluetooth::BluetoothGattCharacteristic arg1, jboolean arg2);
 		void readPhy(android::bluetooth::BluetoothDevice arg0);
 		jboolean removeService(android::bluetooth::BluetoothGattService arg0);
-		jboolean sendResponse(android::bluetooth::BluetoothDevice arg0, jint arg1, jint arg2, jint arg3, jbyteArray arg4);
+		jboolean sendResponse(android::bluetooth::BluetoothDevice arg0, jint arg1, jint arg2, jint arg3, JByteArray arg4);
 		void setPreferredPhy(android::bluetooth::BluetoothDevice arg0, jint arg1, jint arg2, jint arg3);
 	};
 } // namespace android::bluetooth

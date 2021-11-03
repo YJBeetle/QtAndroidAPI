@@ -1,10 +1,14 @@
+#include "../../../JArray.hpp"
 #include "../math/BigDecimal.hpp"
 #include "./DisplayContext.hpp"
 #include "./DisplayContext_Type.hpp"
 #include "../util/Currency.hpp"
 #include "../util/CurrencyAmount.hpp"
 #include "../util/ULocale.hpp"
+#include "../../../JString.hpp"
 #include "../../../java/lang/Number.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "../../../java/lang/StringBuffer.hpp"
 #include "../../../java/math/BigDecimal.hpp"
 #include "../../../java/math/BigInteger.hpp"
@@ -112,13 +116,13 @@ namespace android::icu::text
 		) {}
 	
 	// Methods
-	jarray NumberFormat::getAvailableLocales()
+	JArray NumberFormat::getAvailableLocales()
 	{
 		return callStaticObjectMethod(
 			"android.icu.text.NumberFormat",
 			"getAvailableLocales",
 			"()[Ljava/util/Locale;"
-		).object<jarray>();
+		);
 	}
 	android::icu::text::NumberFormat NumberFormat::getCurrencyInstance()
 	{
@@ -305,68 +309,68 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	jobject NumberFormat::clone()
+	JObject NumberFormat::clone()
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
-	jboolean NumberFormat::equals(jobject arg0)
+	jboolean NumberFormat::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jstring NumberFormat::format(android::icu::math::BigDecimal arg0)
+	JString NumberFormat::format(android::icu::math::BigDecimal arg0)
 	{
 		return callObjectMethod(
 			"format",
 			"(Landroid/icu/math/BigDecimal;)Ljava/lang/String;",
 			arg0.object()
-		).object<jstring>();
+		);
 	}
-	jstring NumberFormat::format(android::icu::util::CurrencyAmount arg0)
+	JString NumberFormat::format(android::icu::util::CurrencyAmount arg0)
 	{
 		return callObjectMethod(
 			"format",
 			"(Landroid/icu/util/CurrencyAmount;)Ljava/lang/String;",
 			arg0.object()
-		).object<jstring>();
+		);
 	}
-	jstring NumberFormat::format(jdouble arg0)
+	JString NumberFormat::format(jdouble arg0)
 	{
 		return callObjectMethod(
 			"format",
 			"(D)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
-	jstring NumberFormat::format(java::math::BigDecimal arg0)
+	JString NumberFormat::format(java::math::BigDecimal arg0)
 	{
 		return callObjectMethod(
 			"format",
 			"(Ljava/math/BigDecimal;)Ljava/lang/String;",
 			arg0.object()
-		).object<jstring>();
+		);
 	}
-	jstring NumberFormat::format(java::math::BigInteger arg0)
+	JString NumberFormat::format(java::math::BigInteger arg0)
 	{
 		return callObjectMethod(
 			"format",
 			"(Ljava/math/BigInteger;)Ljava/lang/String;",
 			arg0.object()
-		).object<jstring>();
+		);
 	}
-	jstring NumberFormat::format(jlong arg0)
+	JString NumberFormat::format(jlong arg0)
 	{
 		return callObjectMethod(
 			"format",
 			"(J)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
 	java::lang::StringBuffer NumberFormat::format(android::icu::math::BigDecimal arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
 	{
@@ -398,12 +402,12 @@ namespace android::icu::text
 			arg2.object()
 		);
 	}
-	java::lang::StringBuffer NumberFormat::format(jobject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
+	java::lang::StringBuffer NumberFormat::format(JObject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
 	{
 		return callObjectMethod(
 			"format",
 			"(Ljava/lang/Object;Ljava/lang/StringBuffer;Ljava/text/FieldPosition;)Ljava/lang/StringBuffer;",
-			arg0,
+			arg0.object<jobject>(),
 			arg1.object(),
 			arg2.object()
 		);
@@ -516,40 +520,40 @@ namespace android::icu::text
 			"()Z"
 		);
 	}
-	java::lang::Number NumberFormat::parse(jstring arg0)
+	java::lang::Number NumberFormat::parse(JString arg0)
 	{
 		return callObjectMethod(
 			"parse",
 			"(Ljava/lang/String;)Ljava/lang/Number;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	java::lang::Number NumberFormat::parse(jstring arg0, java::text::ParsePosition arg1)
+	java::lang::Number NumberFormat::parse(JString arg0, java::text::ParsePosition arg1)
 	{
 		return callObjectMethod(
 			"parse",
 			"(Ljava/lang/String;Ljava/text/ParsePosition;)Ljava/lang/Number;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
-	android::icu::util::CurrencyAmount NumberFormat::parseCurrency(jstring arg0, java::text::ParsePosition arg1)
+	android::icu::util::CurrencyAmount NumberFormat::parseCurrency(JString arg0, java::text::ParsePosition arg1)
 	{
 		return callObjectMethod(
 			"parseCurrency",
 			"(Ljava/lang/CharSequence;Ljava/text/ParsePosition;)Landroid/icu/util/CurrencyAmount;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
-	jobject NumberFormat::parseObject(jstring arg0, java::text::ParsePosition arg1)
+	JObject NumberFormat::parseObject(JString arg0, java::text::ParsePosition arg1)
 	{
 		return callObjectMethod(
 			"parseObject",
 			"(Ljava/lang/String;Ljava/text/ParsePosition;)Ljava/lang/Object;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
-		).object<jobject>();
+		);
 	}
 	void NumberFormat::setContext(android::icu::text::DisplayContext arg0)
 	{

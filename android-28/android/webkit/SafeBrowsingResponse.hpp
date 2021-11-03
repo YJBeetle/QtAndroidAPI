@@ -2,7 +2,6 @@
 
 #include "../../JObject.hpp"
 
-
 namespace android::webkit
 {
 	class SafeBrowsingResponse : public JObject

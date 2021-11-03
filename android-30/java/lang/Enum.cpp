@@ -1,4 +1,7 @@
 #include "../io/ObjectInputStream.hpp"
+#include "../../JClass.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "../util/Optional.hpp"
 #include "./Enum.hpp"
 
@@ -12,14 +15,14 @@ namespace java::lang
 	// Constructors
 	
 	// Methods
-	java::lang::Enum Enum::valueOf(jclass arg0, jstring arg1)
+	java::lang::Enum Enum::valueOf(JClass arg0, JString arg1)
 	{
 		return callStaticObjectMethod(
 			"java.lang.Enum",
 			"valueOf",
 			"(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;",
-			arg0,
-			arg1
+			arg0.object<jclass>(),
+			arg1.object<jstring>()
 		);
 	}
 	jint Enum::compareTo(java::lang::Enum arg0)
@@ -30,12 +33,12 @@ namespace java::lang
 			arg0.object()
 		);
 	}
-	jint Enum::compareTo(jobject arg0)
+	jint Enum::compareTo(JObject arg0)
 	{
 		return callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Object;)I",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	java::util::Optional Enum::describeConstable()
@@ -45,20 +48,20 @@ namespace java::lang
 			"()Ljava/util/Optional;"
 		);
 	}
-	jboolean Enum::equals(jobject arg0)
+	jboolean Enum::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jclass Enum::getDeclaringClass()
+	JClass Enum::getDeclaringClass()
 	{
 		return callObjectMethod(
 			"getDeclaringClass",
 			"()Ljava/lang/Class;"
-		).object<jclass>();
+		);
 	}
 	jint Enum::hashCode()
 	{
@@ -67,12 +70,12 @@ namespace java::lang
 			"()I"
 		);
 	}
-	jstring Enum::name()
+	JString Enum::name()
 	{
 		return callObjectMethod(
 			"name",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint Enum::ordinal()
 	{
@@ -81,12 +84,12 @@ namespace java::lang
 			"()I"
 		);
 	}
-	jstring Enum::toString()
+	JString Enum::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::lang
 

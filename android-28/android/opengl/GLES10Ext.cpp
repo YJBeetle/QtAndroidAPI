@@ -1,3 +1,4 @@
+#include "../../JIntArray.hpp"
 #include "../../java/nio/IntBuffer.hpp"
 #include "./GLES10Ext.hpp"
 
@@ -26,15 +27,15 @@ namespace android::opengl
 			arg1.object()
 		);
 	}
-	jint GLES10Ext::glQueryMatrixxOES(jintArray arg0, jint arg1, jintArray arg2, jint arg3)
+	jint GLES10Ext::glQueryMatrixxOES(JIntArray arg0, jint arg1, JIntArray arg2, jint arg3)
 	{
 		return callStaticMethod<jint>(
 			"android.opengl.GLES10Ext",
 			"glQueryMatrixxOES",
 			"([II[II)I",
-			arg0,
+			arg0.object<jintArray>(),
 			arg1,
-			arg2,
+			arg2.object<jintArray>(),
 			arg3
 		);
 	}

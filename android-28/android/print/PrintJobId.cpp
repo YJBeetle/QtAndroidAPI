@@ -1,4 +1,5 @@
 #include "../os/Parcel.hpp"
+#include "../../JObject.hpp"
 #include "./PrintJobId.hpp"
 
 namespace android::print
@@ -26,12 +27,12 @@ namespace android::print
 			"()I"
 		);
 	}
-	jboolean PrintJobId::equals(jobject arg0)
+	jboolean PrintJobId::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint PrintJobId::hashCode()

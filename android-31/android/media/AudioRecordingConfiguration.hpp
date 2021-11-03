@@ -14,6 +14,7 @@ namespace android::os
 {
 	class Parcel;
 }
+class JObject;
 
 namespace android::media
 {
@@ -31,7 +32,7 @@ namespace android::media
 		
 		// Methods
 		jint describeContents();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		android::media::AudioDeviceInfo getAudioDevice();
 		jint getAudioSource();
 		jint getClientAudioSessionId();

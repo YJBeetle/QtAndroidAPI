@@ -2,6 +2,8 @@
 #include "./ApplicationInfo.hpp"
 #include "../../graphics/drawable/Drawable.hpp"
 #include "../../os/UserHandle.hpp"
+#include "../../../JString.hpp"
+#include "../../../JString.hpp"
 #include "./LauncherActivityInfo.hpp"
 
 namespace android::content::pm
@@ -51,19 +53,19 @@ namespace android::content::pm
 			arg0
 		);
 	}
-	jstring LauncherActivityInfo::getLabel()
+	JString LauncherActivityInfo::getLabel()
 	{
 		return callObjectMethod(
 			"getLabel",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
-	jstring LauncherActivityInfo::getName()
+	JString LauncherActivityInfo::getName()
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::os::UserHandle LauncherActivityInfo::getUser()
 	{

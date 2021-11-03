@@ -1,14 +1,15 @@
+#include "../../JByteArray.hpp"
 #include "./StructCmsghdr.hpp"
 
 namespace android::system
 {
 	// Fields
-	jbyteArray StructCmsghdr::cmsg_data()
+	JByteArray StructCmsghdr::cmsg_data()
 	{
 		return getObjectField(
 			"cmsg_data",
 			"[B"
-		).object<jbyteArray>();
+		);
 	}
 	jint StructCmsghdr::cmsg_level()
 	{
@@ -27,13 +28,13 @@ namespace android::system
 	StructCmsghdr::StructCmsghdr(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	StructCmsghdr::StructCmsghdr(jint arg0, jint arg1, jbyteArray arg2)
+	StructCmsghdr::StructCmsghdr(jint arg0, jint arg1, JByteArray arg2)
 		: JObject(
 			"android.system.StructCmsghdr",
 			"(II[B)V",
 			arg0,
 			arg1,
-			arg2
+			arg2.object<jbyteArray>()
 		) {}
 	StructCmsghdr::StructCmsghdr(jint arg0, jint arg1, jshort arg2)
 		: JObject(

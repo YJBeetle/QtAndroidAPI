@@ -1,3 +1,5 @@
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
 #include "./WebSettings_PluginState.hpp"
 
 namespace android::webkit
@@ -34,22 +36,22 @@ namespace android::webkit
 	// Constructors
 	
 	// Methods
-	android::webkit::WebSettings_PluginState WebSettings_PluginState::valueOf(jstring arg0)
+	android::webkit::WebSettings_PluginState WebSettings_PluginState::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.webkit.WebSettings$PluginState",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/webkit/WebSettings$PluginState;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray WebSettings_PluginState::values()
+	JArray WebSettings_PluginState::values()
 	{
 		return callStaticObjectMethod(
 			"android.webkit.WebSettings$PluginState",
 			"values",
 			"()[Landroid/webkit/WebSettings$PluginState;"
-		).object<jarray>();
+		);
 	}
 } // namespace android::webkit
 

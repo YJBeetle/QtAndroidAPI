@@ -6,6 +6,7 @@ namespace android::view::textclassifier
 {
 	class TextClassificationContext;
 }
+class JString;
 
 namespace android::view::textclassifier
 {
@@ -19,11 +20,11 @@ namespace android::view::textclassifier
 		TextClassificationContext_Builder(QAndroidJniObject obj);
 		
 		// Constructors
-		TextClassificationContext_Builder(jstring arg0, jstring arg1);
+		TextClassificationContext_Builder(JString arg0, JString arg1);
 		
 		// Methods
 		android::view::textclassifier::TextClassificationContext build();
-		android::view::textclassifier::TextClassificationContext_Builder setWidgetVersion(jstring arg0);
+		android::view::textclassifier::TextClassificationContext_Builder setWidgetVersion(JString arg0);
 	};
 } // namespace android::view::textclassifier
 

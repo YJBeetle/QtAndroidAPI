@@ -1,23 +1,26 @@
+#include "../../../../JArray.hpp"
+#include "../../../../JArray.hpp"
+#include "../../../../JString.hpp"
 #include "./NamespaceSupport.hpp"
 
 namespace org::xml::sax::helpers
 {
 	// Fields
-	jstring NamespaceSupport::NSDECL()
+	JString NamespaceSupport::NSDECL()
 	{
 		return getStaticObjectField(
 			"org.xml.sax.helpers.NamespaceSupport",
 			"NSDECL",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring NamespaceSupport::XMLNS()
+	JString NamespaceSupport::XMLNS()
 	{
 		return getStaticObjectField(
 			"org.xml.sax.helpers.NamespaceSupport",
 			"XMLNS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QAndroidJniObject forward
@@ -31,13 +34,13 @@ namespace org::xml::sax::helpers
 		) {}
 	
 	// Methods
-	jboolean NamespaceSupport::declarePrefix(jstring arg0, jstring arg1)
+	jboolean NamespaceSupport::declarePrefix(JString arg0, JString arg1)
 	{
 		return callMethod<jboolean>(
 			"declarePrefix",
 			"(Ljava/lang/String;Ljava/lang/String;)Z",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		);
 	}
 	JObject NamespaceSupport::getDeclaredPrefixes()
@@ -47,13 +50,13 @@ namespace org::xml::sax::helpers
 			"()Ljava/util/Enumeration;"
 		);
 	}
-	jstring NamespaceSupport::getPrefix(jstring arg0)
+	JString NamespaceSupport::getPrefix(JString arg0)
 	{
 		return callObjectMethod(
 			"getPrefix",
 			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
+			arg0.object<jstring>()
+		);
 	}
 	JObject NamespaceSupport::getPrefixes()
 	{
@@ -62,21 +65,21 @@ namespace org::xml::sax::helpers
 			"()Ljava/util/Enumeration;"
 		);
 	}
-	JObject NamespaceSupport::getPrefixes(jstring arg0)
+	JObject NamespaceSupport::getPrefixes(JString arg0)
 	{
 		return callObjectMethod(
 			"getPrefixes",
 			"(Ljava/lang/String;)Ljava/util/Enumeration;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jstring NamespaceSupport::getURI(jstring arg0)
+	JString NamespaceSupport::getURI(JString arg0)
 	{
 		return callObjectMethod(
 			"getURI",
 			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
+			arg0.object<jstring>()
+		);
 	}
 	jboolean NamespaceSupport::isNamespaceDeclUris()
 	{
@@ -92,15 +95,15 @@ namespace org::xml::sax::helpers
 			"()V"
 		);
 	}
-	jarray NamespaceSupport::processName(jstring arg0, jarray arg1, jboolean arg2)
+	JArray NamespaceSupport::processName(JString arg0, JArray arg1, jboolean arg2)
 	{
 		return callObjectMethod(
 			"processName",
 			"(Ljava/lang/String;[Ljava/lang/String;Z)[Ljava/lang/String;",
-			arg0,
-			arg1,
+			arg0.object<jstring>(),
+			arg1.object<jarray>(),
 			arg2
-		).object<jarray>();
+		);
 	}
 	void NamespaceSupport::pushContext()
 	{

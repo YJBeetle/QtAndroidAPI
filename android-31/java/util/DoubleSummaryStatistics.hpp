@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JString;
 
 namespace java::util
 {
@@ -26,7 +27,7 @@ namespace java::util
 		jdouble getMax();
 		jdouble getMin();
 		jdouble getSum();
-		jstring toString();
+		JString toString();
 	};
 } // namespace java::util
 

@@ -1,3 +1,4 @@
+#include "../../../JByteArray.hpp"
 #include "../../nio/ByteBuffer.hpp"
 #include "./CRC32.hpp"
 
@@ -46,12 +47,12 @@ namespace java::util::zip
 			arg0.object()
 		);
 	}
-	void CRC32::update(jbyteArray arg0, jint arg1, jint arg2)
+	void CRC32::update(JByteArray arg0, jint arg1, jint arg2)
 	{
 		callMethod<void>(
 			"update",
 			"([BII)V",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1,
 			arg2
 		);

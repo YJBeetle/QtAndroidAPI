@@ -1,12 +1,14 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./ZoneId.hpp"
 
 namespace java::io
 {
 	class ObjectInputStream;
 }
+class JString;
+class JObject;
+class JString;
 namespace java::time::temporal
 {
 	class ValueRange;
@@ -34,25 +36,25 @@ namespace java::time
 		
 		// Methods
 		static java::time::ZoneOffset from(JObject arg0);
-		static java::time::ZoneOffset of(jstring arg0);
+		static java::time::ZoneOffset of(JString arg0);
 		static java::time::ZoneOffset ofHours(jint arg0);
 		static java::time::ZoneOffset ofHoursMinutes(jint arg0, jint arg1);
 		static java::time::ZoneOffset ofHoursMinutesSeconds(jint arg0, jint arg1, jint arg2);
 		static java::time::ZoneOffset ofTotalSeconds(jint arg0);
 		JObject adjustInto(JObject arg0);
-		jint compareTo(jobject arg0);
+		jint compareTo(JObject arg0);
 		jint compareTo(java::time::ZoneOffset arg0);
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint get(JObject arg0);
-		jstring getId();
+		JString getId();
 		jlong getLong(JObject arg0);
 		java::time::zone::ZoneRules getRules();
 		jint getTotalSeconds();
 		jint hashCode();
 		jboolean isSupported(JObject arg0);
-		jobject query(JObject arg0);
+		JObject query(JObject arg0);
 		java::time::temporal::ValueRange range(JObject arg0);
-		jstring toString();
+		JString toString();
 	};
 } // namespace java::time
 

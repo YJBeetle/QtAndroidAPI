@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./SQLiteAbortException.hpp"
 
 namespace android::database::sqlite
@@ -13,11 +14,11 @@ namespace android::database::sqlite
 			"android.database.sqlite.SQLiteAbortException",
 			"()V"
 		) {}
-	SQLiteAbortException::SQLiteAbortException(jstring arg0)
+	SQLiteAbortException::SQLiteAbortException(JString arg0)
 		: android::database::sqlite::SQLiteException(
 			"android.database.sqlite.SQLiteAbortException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

@@ -2,7 +2,6 @@
 
 #include "../../../JObject.hpp"
 
-
 namespace android::app::backup
 {
 	class FullBackupDataOutput : public JObject

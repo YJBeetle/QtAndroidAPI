@@ -14,6 +14,8 @@ namespace android::print
 {
 	class PrinterId;
 }
+class JObject;
+class JString;
 
 namespace android::print
 {
@@ -34,14 +36,14 @@ namespace android::print
 		
 		// Methods
 		jint describeContents();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		android::print::PrinterCapabilitiesInfo getCapabilities();
-		jstring getDescription();
+		JString getDescription();
 		android::print::PrinterId getId();
-		jstring getName();
+		JString getName();
 		jint getStatus();
 		jint hashCode();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::print

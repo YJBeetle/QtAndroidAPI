@@ -50,6 +50,7 @@ namespace java::io
 {
 	class InputStream;
 }
+class JString;
 
 namespace android::app
 {
@@ -57,16 +58,16 @@ namespace android::app
 	{
 	public:
 		// Fields
-		static jstring ACTION_CHANGE_LIVE_WALLPAPER();
-		static jstring ACTION_CROP_AND_SET_WALLPAPER();
-		static jstring ACTION_LIVE_WALLPAPER_CHOOSER();
-		static jstring COMMAND_DROP();
-		static jstring COMMAND_SECONDARY_TAP();
-		static jstring COMMAND_TAP();
-		static jstring EXTRA_LIVE_WALLPAPER_COMPONENT();
+		static JString ACTION_CHANGE_LIVE_WALLPAPER();
+		static JString ACTION_CROP_AND_SET_WALLPAPER();
+		static JString ACTION_LIVE_WALLPAPER_CHOOSER();
+		static JString COMMAND_DROP();
+		static JString COMMAND_SECONDARY_TAP();
+		static JString COMMAND_TAP();
+		static JString EXTRA_LIVE_WALLPAPER_COMPONENT();
 		static jint FLAG_LOCK();
 		static jint FLAG_SYSTEM();
-		static jstring WALLPAPER_PREVIEW_META_DATA();
+		static JString WALLPAPER_PREVIEW_META_DATA();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit WallpaperManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
@@ -101,7 +102,7 @@ namespace android::app
 		android::graphics::drawable::Drawable peekDrawable();
 		android::graphics::drawable::Drawable peekFastDrawable();
 		void removeOnColorsChangedListener(JObject arg0);
-		void sendWallpaperCommand(JObject arg0, jstring arg1, jint arg2, jint arg3, jint arg4, android::os::Bundle arg5);
+		void sendWallpaperCommand(JObject arg0, JString arg1, jint arg2, jint arg3, jint arg4, android::os::Bundle arg5);
 		jint setBitmap(android::graphics::Bitmap arg0, android::graphics::Rect arg1, jboolean arg2);
 		jint setBitmap(android::graphics::Bitmap arg0, android::graphics::Rect arg1, jboolean arg2, jint arg3);
 		void setBitmap(android::graphics::Bitmap arg0);

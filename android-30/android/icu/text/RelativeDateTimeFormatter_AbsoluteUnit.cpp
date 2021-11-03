@@ -1,3 +1,5 @@
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
 #include "./RelativeDateTimeFormatter_AbsoluteUnit.hpp"
 
 namespace android::icu::text
@@ -106,22 +108,22 @@ namespace android::icu::text
 	// Constructors
 	
 	// Methods
-	android::icu::text::RelativeDateTimeFormatter_AbsoluteUnit RelativeDateTimeFormatter_AbsoluteUnit::valueOf(jstring arg0)
+	android::icu::text::RelativeDateTimeFormatter_AbsoluteUnit RelativeDateTimeFormatter_AbsoluteUnit::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.icu.text.RelativeDateTimeFormatter$AbsoluteUnit",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/icu/text/RelativeDateTimeFormatter$AbsoluteUnit;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray RelativeDateTimeFormatter_AbsoluteUnit::values()
+	JArray RelativeDateTimeFormatter_AbsoluteUnit::values()
 	{
 		return callStaticObjectMethod(
 			"android.icu.text.RelativeDateTimeFormatter$AbsoluteUnit",
 			"values",
 			"()[Landroid/icu/text/RelativeDateTimeFormatter$AbsoluteUnit;"
-		).object<jarray>();
+		);
 	}
 } // namespace android::icu::text
 

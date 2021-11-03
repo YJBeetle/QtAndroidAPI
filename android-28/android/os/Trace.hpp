@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JString;
 
 namespace android::os
 {
@@ -17,7 +18,7 @@ namespace android::os
 		// Constructors
 		
 		// Methods
-		static void beginSection(jstring arg0);
+		static void beginSection(JString arg0);
 		static void endSection();
 	};
 } // namespace android::os

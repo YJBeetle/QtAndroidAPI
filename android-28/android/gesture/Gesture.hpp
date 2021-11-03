@@ -22,6 +22,7 @@ namespace android::os
 {
 	class Parcel;
 }
+class JObject;
 namespace java::util
 {
 	class ArrayList;
@@ -44,7 +45,7 @@ namespace android::gesture
 		
 		// Methods
 		void addStroke(android::gesture::GestureStroke arg0);
-		jobject clone();
+		JObject clone();
 		jint describeContents();
 		android::graphics::RectF getBoundingBox();
 		jlong getID();

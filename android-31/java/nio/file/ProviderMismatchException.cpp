@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./ProviderMismatchException.hpp"
 
 namespace java::nio::file
@@ -13,11 +14,11 @@ namespace java::nio::file
 			"java.nio.file.ProviderMismatchException",
 			"()V"
 		) {}
-	ProviderMismatchException::ProviderMismatchException(jstring arg0)
+	ProviderMismatchException::ProviderMismatchException(JString arg0)
 		: java::lang::IllegalArgumentException(
 			"java.nio.file.ProviderMismatchException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JByteArray;
 
 namespace javax::crypto::spec
 {
@@ -15,13 +16,13 @@ namespace javax::crypto::spec
 		PBEParameterSpec(QAndroidJniObject obj);
 		
 		// Constructors
-		PBEParameterSpec(jbyteArray arg0, jint arg1);
-		PBEParameterSpec(jbyteArray arg0, jint arg1, JObject arg2);
+		PBEParameterSpec(JByteArray arg0, jint arg1);
+		PBEParameterSpec(JByteArray arg0, jint arg1, JObject arg2);
 		
 		// Methods
 		jint getIterationCount();
 		JObject getParameterSpec();
-		jbyteArray getSalt();
+		JByteArray getSalt();
 	};
 } // namespace javax::crypto::spec
 

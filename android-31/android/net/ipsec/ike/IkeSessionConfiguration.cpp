@@ -1,4 +1,5 @@
 #include "./IkeSessionConnectionInfo.hpp"
+#include "../../../../JString.hpp"
 #include "./IkeSessionConfiguration.hpp"
 
 namespace android::net::ipsec::ike
@@ -32,12 +33,12 @@ namespace android::net::ipsec::ike
 			"()Landroid/net/ipsec/ike/IkeSessionConnectionInfo;"
 		);
 	}
-	jstring IkeSessionConfiguration::getRemoteApplicationVersion()
+	JString IkeSessionConfiguration::getRemoteApplicationVersion()
 	{
 		return callObjectMethod(
 			"getRemoteApplicationVersion",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	JObject IkeSessionConfiguration::getRemoteVendorIds()
 	{

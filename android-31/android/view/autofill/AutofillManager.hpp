@@ -30,6 +30,7 @@ namespace android::view::autofill
 {
 	class AutofillValue;
 }
+class JString;
 
 namespace android::view::autofill
 {
@@ -37,11 +38,11 @@ namespace android::view::autofill
 	{
 	public:
 		// Fields
-		static jstring EXTRA_ASSIST_STRUCTURE();
-		static jstring EXTRA_AUTHENTICATION_RESULT();
-		static jstring EXTRA_AUTHENTICATION_RESULT_EPHEMERAL_DATASET();
-		static jstring EXTRA_CLIENT_STATE();
-		static jstring EXTRA_INLINE_SUGGESTIONS_REQUEST();
+		static JString EXTRA_ASSIST_STRUCTURE();
+		static JString EXTRA_AUTHENTICATION_RESULT();
+		static JString EXTRA_AUTHENTICATION_RESULT_EPHEMERAL_DATASET();
+		static JString EXTRA_CLIENT_STATE();
+		static JString EXTRA_INLINE_SUGGESTIONS_REQUEST();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AutofillManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
@@ -55,10 +56,10 @@ namespace android::view::autofill
 		void disableAutofillServices();
 		android::content::ComponentName getAutofillServiceComponentName();
 		JObject getAvailableFieldClassificationAlgorithms();
-		jstring getDefaultFieldClassificationAlgorithm();
+		JString getDefaultFieldClassificationAlgorithm();
 		android::view::autofill::AutofillId getNextAutofillId();
 		android::service::autofill::UserData getUserData();
-		jstring getUserDataId();
+		JString getUserDataId();
 		jboolean hasEnabledAutofillServices();
 		jboolean isAutofillSupported();
 		jboolean isEnabled();

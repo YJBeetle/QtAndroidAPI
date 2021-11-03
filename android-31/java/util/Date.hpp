@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JIntArray;
+class JArray;
 namespace java::io
 {
 	class ObjectInputStream;
@@ -10,6 +12,8 @@ namespace java::io
 {
 	class ObjectOutputStream;
 }
+class JObject;
+class JString;
 namespace java::lang
 {
 	class StringBuilder;
@@ -32,7 +36,7 @@ namespace java::util
 		
 		// Constructors
 		Date();
-		Date(jstring arg0);
+		Date(JString arg0);
 		Date(jlong arg0);
 		Date(jint arg0, jint arg1, jint arg2);
 		Date(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4);
@@ -41,13 +45,13 @@ namespace java::util
 		// Methods
 		static jlong UTC(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5);
 		static java::util::Date from(java::time::Instant arg0);
-		static jlong parse(jstring arg0);
+		static jlong parse(JString arg0);
 		jboolean after(java::util::Date arg0);
 		jboolean before(java::util::Date arg0);
-		jobject clone();
-		jint compareTo(jobject arg0);
+		JObject clone();
+		jint compareTo(JObject arg0);
 		jint compareTo(java::util::Date arg0);
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint getDate();
 		jint getDay();
 		jint getHours();
@@ -65,10 +69,10 @@ namespace java::util
 		void setSeconds(jint arg0);
 		void setTime(jlong arg0);
 		void setYear(jint arg0);
-		jstring toGMTString();
+		JString toGMTString();
 		java::time::Instant toInstant();
-		jstring toLocaleString();
-		jstring toString();
+		JString toLocaleString();
+		JString toString();
 	};
 } // namespace java::util
 

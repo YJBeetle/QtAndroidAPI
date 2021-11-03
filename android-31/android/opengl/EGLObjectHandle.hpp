@@ -2,7 +2,6 @@
 
 #include "../../JObject.hpp"
 
-
 namespace android::opengl
 {
 	class EGLObjectHandle : public JObject

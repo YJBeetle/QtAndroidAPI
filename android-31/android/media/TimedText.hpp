@@ -6,6 +6,7 @@ namespace android::graphics
 {
 	class Rect;
 }
+class JString;
 
 namespace android::media
 {
@@ -22,7 +23,7 @@ namespace android::media
 		
 		// Methods
 		android::graphics::Rect getBounds();
-		jstring getText();
+		JString getText();
 	};
 } // namespace android::media
 

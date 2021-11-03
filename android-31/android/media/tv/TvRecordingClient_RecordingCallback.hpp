@@ -6,6 +6,7 @@ namespace android::net
 {
 	class Uri;
 }
+class JString;
 
 namespace android::media::tv
 {
@@ -22,8 +23,8 @@ namespace android::media::tv
 		TvRecordingClient_RecordingCallback();
 		
 		// Methods
-		void onConnectionFailed(jstring arg0);
-		void onDisconnected(jstring arg0);
+		void onConnectionFailed(JString arg0);
+		void onDisconnected(JString arg0);
 		void onError(jint arg0);
 		void onRecordingStopped(android::net::Uri arg0);
 		void onTuned(android::net::Uri arg0);

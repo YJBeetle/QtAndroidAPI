@@ -1,4 +1,5 @@
 #include "../os/Parcel.hpp"
+#include "../../JString.hpp"
 #include "./VideoProfile.hpp"
 
 namespace android::telecom
@@ -149,14 +150,14 @@ namespace android::telecom
 			arg0
 		);
 	}
-	jstring VideoProfile::videoStateToString(jint arg0)
+	JString VideoProfile::videoStateToString(jint arg0)
 	{
 		return callStaticObjectMethod(
 			"android.telecom.VideoProfile",
 			"videoStateToString",
 			"(I)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
 	jint VideoProfile::describeContents()
 	{
@@ -179,12 +180,12 @@ namespace android::telecom
 			"()I"
 		);
 	}
-	jstring VideoProfile::toString()
+	JString VideoProfile::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void VideoProfile::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

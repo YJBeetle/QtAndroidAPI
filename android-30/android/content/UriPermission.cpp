@@ -1,5 +1,6 @@
 #include "../net/Uri.hpp"
 #include "../os/Parcel.hpp"
+#include "../../JString.hpp"
 #include "./UriPermission.hpp"
 
 namespace android::content
@@ -62,12 +63,12 @@ namespace android::content
 			"()Z"
 		);
 	}
-	jstring UriPermission::toString()
+	JString UriPermission::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void UriPermission::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

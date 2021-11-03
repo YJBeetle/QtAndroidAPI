@@ -1,4 +1,6 @@
 #include "./TimeUnit.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./MeasureUnit.hpp"
 
 namespace android::icu::util
@@ -1091,13 +1093,13 @@ namespace android::icu::util
 			"()Ljava/util/Set;"
 		);
 	}
-	JObject MeasureUnit::getAvailable(jstring arg0)
+	JObject MeasureUnit::getAvailable(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.icu.util.MeasureUnit",
 			"getAvailable",
 			"(Ljava/lang/String;)Ljava/util/Set;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	JObject MeasureUnit::getAvailableTypes()
@@ -1108,27 +1110,27 @@ namespace android::icu::util
 			"()Ljava/util/Set;"
 		);
 	}
-	jboolean MeasureUnit::equals(jobject arg0)
+	jboolean MeasureUnit::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jstring MeasureUnit::getSubtype()
+	JString MeasureUnit::getSubtype()
 	{
 		return callObjectMethod(
 			"getSubtype",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring MeasureUnit::getType()
+	JString MeasureUnit::getType()
 	{
 		return callObjectMethod(
 			"getType",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint MeasureUnit::hashCode()
 	{
@@ -1137,12 +1139,12 @@ namespace android::icu::util
 			"()I"
 		);
 	}
-	jstring MeasureUnit::toString()
+	JString MeasureUnit::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::icu::util
 

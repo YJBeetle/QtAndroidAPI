@@ -10,6 +10,7 @@ namespace android::security
 {
 	class AppUriAuthenticationPolicy;
 }
+class JString;
 
 namespace android::security
 {
@@ -26,7 +27,7 @@ namespace android::security
 		AppUriAuthenticationPolicy_Builder();
 		
 		// Methods
-		android::security::AppUriAuthenticationPolicy_Builder addAppAndUriMapping(jstring arg0, android::net::Uri arg1, jstring arg2);
+		android::security::AppUriAuthenticationPolicy_Builder addAppAndUriMapping(JString arg0, android::net::Uri arg1, JString arg2);
 		android::security::AppUriAuthenticationPolicy build();
 	};
 } // namespace android::security

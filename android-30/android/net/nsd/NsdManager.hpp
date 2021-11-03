@@ -6,6 +6,7 @@ namespace android::net::nsd
 {
 	class NsdServiceInfo;
 }
+class JString;
 
 namespace android::net::nsd
 {
@@ -13,8 +14,8 @@ namespace android::net::nsd
 	{
 	public:
 		// Fields
-		static jstring ACTION_NSD_STATE_CHANGED();
-		static jstring EXTRA_NSD_STATE();
+		static JString ACTION_NSD_STATE_CHANGED();
+		static JString EXTRA_NSD_STATE();
 		static jint FAILURE_ALREADY_ACTIVE();
 		static jint FAILURE_INTERNAL_ERROR();
 		static jint FAILURE_MAX_LIMIT();
@@ -29,7 +30,7 @@ namespace android::net::nsd
 		// Constructors
 		
 		// Methods
-		void discoverServices(jstring arg0, jint arg1, JObject arg2);
+		void discoverServices(JString arg0, jint arg1, JObject arg2);
 		void registerService(android::net::nsd::NsdServiceInfo arg0, jint arg1, JObject arg2);
 		void resolveService(android::net::nsd::NsdServiceInfo arg0, JObject arg1);
 		void stopServiceDiscovery(JObject arg0);

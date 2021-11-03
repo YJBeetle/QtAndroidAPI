@@ -1,5 +1,7 @@
 #include "../content/res/Resources.hpp"
 #include "../net/Uri.hpp"
+#include "../../JString.hpp"
+#include "../../JString.hpp"
 #include "./ContactsContract_CommonDataKinds_Phone.hpp"
 
 namespace android::provider
@@ -13,21 +15,21 @@ namespace android::provider
 			"Landroid/net/Uri;"
 		);
 	}
-	jstring ContactsContract_CommonDataKinds_Phone::CONTENT_ITEM_TYPE()
+	JString ContactsContract_CommonDataKinds_Phone::CONTENT_ITEM_TYPE()
 	{
 		return getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Phone",
 			"CONTENT_ITEM_TYPE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ContactsContract_CommonDataKinds_Phone::CONTENT_TYPE()
+	JString ContactsContract_CommonDataKinds_Phone::CONTENT_TYPE()
 	{
 		return getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Phone",
 			"CONTENT_TYPE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::net::Uri ContactsContract_CommonDataKinds_Phone::CONTENT_URI()
 	{
@@ -45,61 +47,61 @@ namespace android::provider
 			"Landroid/net/Uri;"
 		);
 	}
-	jstring ContactsContract_CommonDataKinds_Phone::EXTRA_ADDRESS_BOOK_INDEX()
+	JString ContactsContract_CommonDataKinds_Phone::EXTRA_ADDRESS_BOOK_INDEX()
 	{
 		return getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Phone",
 			"EXTRA_ADDRESS_BOOK_INDEX",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ContactsContract_CommonDataKinds_Phone::EXTRA_ADDRESS_BOOK_INDEX_COUNTS()
+	JString ContactsContract_CommonDataKinds_Phone::EXTRA_ADDRESS_BOOK_INDEX_COUNTS()
 	{
 		return getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Phone",
 			"EXTRA_ADDRESS_BOOK_INDEX_COUNTS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ContactsContract_CommonDataKinds_Phone::EXTRA_ADDRESS_BOOK_INDEX_TITLES()
+	JString ContactsContract_CommonDataKinds_Phone::EXTRA_ADDRESS_BOOK_INDEX_TITLES()
 	{
 		return getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Phone",
 			"EXTRA_ADDRESS_BOOK_INDEX_TITLES",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ContactsContract_CommonDataKinds_Phone::NORMALIZED_NUMBER()
+	JString ContactsContract_CommonDataKinds_Phone::NORMALIZED_NUMBER()
 	{
 		return getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Phone",
 			"NORMALIZED_NUMBER",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ContactsContract_CommonDataKinds_Phone::NUMBER()
+	JString ContactsContract_CommonDataKinds_Phone::NUMBER()
 	{
 		return getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Phone",
 			"NUMBER",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ContactsContract_CommonDataKinds_Phone::SEARCH_DISPLAY_NAME_KEY()
+	JString ContactsContract_CommonDataKinds_Phone::SEARCH_DISPLAY_NAME_KEY()
 	{
 		return getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Phone",
 			"SEARCH_DISPLAY_NAME_KEY",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ContactsContract_CommonDataKinds_Phone::SEARCH_PHONE_NUMBER_KEY()
+	JString ContactsContract_CommonDataKinds_Phone::SEARCH_PHONE_NUMBER_KEY()
 	{
 		return getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Phone",
 			"SEARCH_PHONE_NUMBER_KEY",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint ContactsContract_CommonDataKinds_Phone::TYPE_ASSISTANT()
 	{
@@ -248,7 +250,7 @@ namespace android::provider
 	// Constructors
 	
 	// Methods
-	jstring ContactsContract_CommonDataKinds_Phone::getTypeLabel(android::content::res::Resources arg0, jint arg1, jstring arg2)
+	JString ContactsContract_CommonDataKinds_Phone::getTypeLabel(android::content::res::Resources arg0, jint arg1, JString arg2)
 	{
 		return callStaticObjectMethod(
 			"android.provider.ContactsContract$CommonDataKinds$Phone",
@@ -256,8 +258,8 @@ namespace android::provider
 			"(Landroid/content/res/Resources;ILjava/lang/CharSequence;)Ljava/lang/CharSequence;",
 			arg0.object(),
 			arg1,
-			arg2
-		).object<jstring>();
+			arg2.object<jstring>()
+		);
 	}
 	jint ContactsContract_CommonDataKinds_Phone::getTypeLabelResource(jint arg0)
 	{

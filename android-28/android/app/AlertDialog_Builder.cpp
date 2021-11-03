@@ -1,7 +1,11 @@
+#include "../../JArray.hpp"
+#include "../../JBooleanArray.hpp"
 #include "./AlertDialog.hpp"
 #include "../content/Context.hpp"
 #include "../graphics/drawable/Drawable.hpp"
 #include "../view/View.hpp"
+#include "../../JString.hpp"
+#include "../../JString.hpp"
 #include "./AlertDialog_Builder.hpp"
 
 namespace android::app
@@ -58,14 +62,14 @@ namespace android::app
 			arg0
 		);
 	}
-	android::app::AlertDialog_Builder AlertDialog_Builder::setCursor(JObject arg0, JObject arg1, jstring arg2)
+	android::app::AlertDialog_Builder AlertDialog_Builder::setCursor(JObject arg0, JObject arg1, JString arg2)
 	{
 		return callObjectMethod(
 			"setCursor",
 			"(Landroid/database/Cursor;Landroid/content/DialogInterface$OnClickListener;Ljava/lang/String;)Landroid/app/AlertDialog$Builder;",
 			arg0.object(),
 			arg1.object(),
-			arg2
+			arg2.object<jstring>()
 		);
 	}
 	android::app::AlertDialog_Builder AlertDialog_Builder::setCustomTitle(android::view::View arg0)
@@ -108,12 +112,12 @@ namespace android::app
 			arg0
 		);
 	}
-	android::app::AlertDialog_Builder AlertDialog_Builder::setItems(jarray arg0, JObject arg1)
+	android::app::AlertDialog_Builder AlertDialog_Builder::setItems(JArray arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"setItems",
 			"([Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;",
-			arg0,
+			arg0.object<jarray>(),
 			arg1.object()
 		);
 	}
@@ -134,42 +138,42 @@ namespace android::app
 			arg0
 		);
 	}
-	android::app::AlertDialog_Builder AlertDialog_Builder::setMessage(jstring arg0)
+	android::app::AlertDialog_Builder AlertDialog_Builder::setMessage(JString arg0)
 	{
 		return callObjectMethod(
 			"setMessage",
 			"(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	android::app::AlertDialog_Builder AlertDialog_Builder::setMultiChoiceItems(jarray arg0, jbooleanArray arg1, JObject arg2)
+	android::app::AlertDialog_Builder AlertDialog_Builder::setMultiChoiceItems(JArray arg0, JBooleanArray arg1, JObject arg2)
 	{
 		return callObjectMethod(
 			"setMultiChoiceItems",
 			"([Ljava/lang/CharSequence;[ZLandroid/content/DialogInterface$OnMultiChoiceClickListener;)Landroid/app/AlertDialog$Builder;",
-			arg0,
-			arg1,
+			arg0.object<jarray>(),
+			arg1.object<jbooleanArray>(),
 			arg2.object()
 		);
 	}
-	android::app::AlertDialog_Builder AlertDialog_Builder::setMultiChoiceItems(jint arg0, jbooleanArray arg1, JObject arg2)
+	android::app::AlertDialog_Builder AlertDialog_Builder::setMultiChoiceItems(jint arg0, JBooleanArray arg1, JObject arg2)
 	{
 		return callObjectMethod(
 			"setMultiChoiceItems",
 			"(I[ZLandroid/content/DialogInterface$OnMultiChoiceClickListener;)Landroid/app/AlertDialog$Builder;",
 			arg0,
-			arg1,
+			arg1.object<jbooleanArray>(),
 			arg2.object()
 		);
 	}
-	android::app::AlertDialog_Builder AlertDialog_Builder::setMultiChoiceItems(JObject arg0, jstring arg1, jstring arg2, JObject arg3)
+	android::app::AlertDialog_Builder AlertDialog_Builder::setMultiChoiceItems(JObject arg0, JString arg1, JString arg2, JObject arg3)
 	{
 		return callObjectMethod(
 			"setMultiChoiceItems",
 			"(Landroid/database/Cursor;Ljava/lang/String;Ljava/lang/String;Landroid/content/DialogInterface$OnMultiChoiceClickListener;)Landroid/app/AlertDialog$Builder;",
 			arg0.object(),
-			arg1,
-			arg2,
+			arg1.object<jstring>(),
+			arg2.object<jstring>(),
 			arg3.object()
 		);
 	}
@@ -182,12 +186,12 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	android::app::AlertDialog_Builder AlertDialog_Builder::setNegativeButton(jstring arg0, JObject arg1)
+	android::app::AlertDialog_Builder AlertDialog_Builder::setNegativeButton(JString arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"setNegativeButton",
 			"(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
@@ -200,12 +204,12 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	android::app::AlertDialog_Builder AlertDialog_Builder::setNeutralButton(jstring arg0, JObject arg1)
+	android::app::AlertDialog_Builder AlertDialog_Builder::setNeutralButton(JString arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"setNeutralButton",
 			"(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
@@ -250,21 +254,21 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	android::app::AlertDialog_Builder AlertDialog_Builder::setPositiveButton(jstring arg0, JObject arg1)
+	android::app::AlertDialog_Builder AlertDialog_Builder::setPositiveButton(JString arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"setPositiveButton",
 			"(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
-	android::app::AlertDialog_Builder AlertDialog_Builder::setSingleChoiceItems(jarray arg0, jint arg1, JObject arg2)
+	android::app::AlertDialog_Builder AlertDialog_Builder::setSingleChoiceItems(JArray arg0, jint arg1, JObject arg2)
 	{
 		return callObjectMethod(
 			"setSingleChoiceItems",
 			"([Ljava/lang/CharSequence;ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;",
-			arg0,
+			arg0.object<jarray>(),
 			arg1,
 			arg2.object()
 		);
@@ -289,14 +293,14 @@ namespace android::app
 			arg2.object()
 		);
 	}
-	android::app::AlertDialog_Builder AlertDialog_Builder::setSingleChoiceItems(JObject arg0, jint arg1, jstring arg2, JObject arg3)
+	android::app::AlertDialog_Builder AlertDialog_Builder::setSingleChoiceItems(JObject arg0, jint arg1, JString arg2, JObject arg3)
 	{
 		return callObjectMethod(
 			"setSingleChoiceItems",
 			"(Landroid/database/Cursor;ILjava/lang/String;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;",
 			arg0.object(),
 			arg1,
-			arg2,
+			arg2.object<jstring>(),
 			arg3.object()
 		);
 	}
@@ -308,12 +312,12 @@ namespace android::app
 			arg0
 		);
 	}
-	android::app::AlertDialog_Builder AlertDialog_Builder::setTitle(jstring arg0)
+	android::app::AlertDialog_Builder AlertDialog_Builder::setTitle(JString arg0)
 	{
 		return callObjectMethod(
 			"setTitle",
 			"(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::app::AlertDialog_Builder AlertDialog_Builder::setView(android::view::View arg0)

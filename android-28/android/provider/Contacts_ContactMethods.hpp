@@ -10,6 +10,9 @@ namespace android::net
 {
 	class Uri;
 }
+class JString;
+class JObject;
+class JString;
 
 namespace android::provider
 {
@@ -17,18 +20,18 @@ namespace android::provider
 	{
 	public:
 		// Fields
-		static jstring CONTENT_EMAIL_ITEM_TYPE();
-		static jstring CONTENT_EMAIL_TYPE();
+		static JString CONTENT_EMAIL_ITEM_TYPE();
+		static JString CONTENT_EMAIL_TYPE();
 		static android::net::Uri CONTENT_EMAIL_URI();
-		static jstring CONTENT_IM_ITEM_TYPE();
-		static jstring CONTENT_POSTAL_ITEM_TYPE();
-		static jstring CONTENT_POSTAL_TYPE();
-		static jstring CONTENT_TYPE();
+		static JString CONTENT_IM_ITEM_TYPE();
+		static JString CONTENT_POSTAL_ITEM_TYPE();
+		static JString CONTENT_POSTAL_TYPE();
+		static JString CONTENT_TYPE();
 		static android::net::Uri CONTENT_URI();
-		static jstring DEFAULT_SORT_ORDER();
-		static jstring PERSON_ID();
-		static jstring POSTAL_LOCATION_LATITUDE();
-		static jstring POSTAL_LOCATION_LONGITUDE();
+		static JString DEFAULT_SORT_ORDER();
+		static JString PERSON_ID();
+		static JString POSTAL_LOCATION_LATITUDE();
+		static JString POSTAL_LOCATION_LONGITUDE();
 		static jint PROTOCOL_AIM();
 		static jint PROTOCOL_GOOGLE_TALK();
 		static jint PROTOCOL_ICQ();
@@ -45,10 +48,10 @@ namespace android::provider
 		// Constructors
 		
 		// Methods
-		static jobject decodeImProtocol(jstring arg0);
-		static jstring encodeCustomImProtocol(jstring arg0);
-		static jstring encodePredefinedImProtocol(jint arg0);
-		static jstring getDisplayLabel(android::content::Context arg0, jint arg1, jint arg2, jstring arg3);
+		static JObject decodeImProtocol(JString arg0);
+		static JString encodeCustomImProtocol(JString arg0);
+		static JString encodePredefinedImProtocol(jint arg0);
+		static JString getDisplayLabel(android::content::Context arg0, jint arg1, jint arg2, JString arg3);
 		void addPostalLocation(android::content::Context arg0, jlong arg1, jdouble arg2, jdouble arg3);
 	};
 } // namespace android::provider

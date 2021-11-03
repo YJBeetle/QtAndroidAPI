@@ -1,3 +1,4 @@
+#include "../../../JArray.hpp"
 #include "../../os/Parcel.hpp"
 #include "./FeatureGroupInfo.hpp"
 
@@ -12,12 +13,12 @@ namespace android::content::pm
 			"Landroid/os/Parcelable$Creator;"
 		);
 	}
-	jarray FeatureGroupInfo::features()
+	JArray FeatureGroupInfo::features()
 	{
 		return getObjectField(
 			"features",
 			"[Landroid/content/pm/FeatureInfo;"
-		).object<jarray>();
+		);
 	}
 	
 	// QAndroidJniObject forward

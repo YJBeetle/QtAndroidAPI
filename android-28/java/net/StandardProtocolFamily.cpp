@@ -1,3 +1,5 @@
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
 #include "./StandardProtocolFamily.hpp"
 
 namespace java::net
@@ -34,22 +36,22 @@ namespace java::net
 	// Constructors
 	
 	// Methods
-	java::net::StandardProtocolFamily StandardProtocolFamily::valueOf(jstring arg0)
+	java::net::StandardProtocolFamily StandardProtocolFamily::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"java.net.StandardProtocolFamily",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/net/StandardProtocolFamily;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray StandardProtocolFamily::values()
+	JArray StandardProtocolFamily::values()
 	{
 		return callStaticObjectMethod(
 			"java.net.StandardProtocolFamily",
 			"values",
 			"()[Ljava/net/StandardProtocolFamily;"
-		).object<jarray>();
+		);
 	}
 } // namespace java::net
 

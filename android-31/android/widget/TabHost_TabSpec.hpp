@@ -18,6 +18,8 @@ namespace android::widget
 {
 	class TabHost;
 }
+class JString;
+class JString;
 
 namespace android::widget
 {
@@ -33,13 +35,13 @@ namespace android::widget
 		// Constructors
 		
 		// Methods
-		jstring getTag();
+		JString getTag();
 		android::widget::TabHost_TabSpec setContent(android::content::Intent arg0);
 		android::widget::TabHost_TabSpec setContent(JObject arg0);
 		android::widget::TabHost_TabSpec setContent(jint arg0);
 		android::widget::TabHost_TabSpec setIndicator(android::view::View arg0);
-		android::widget::TabHost_TabSpec setIndicator(jstring arg0);
-		android::widget::TabHost_TabSpec setIndicator(jstring arg0, android::graphics::drawable::Drawable arg1);
+		android::widget::TabHost_TabSpec setIndicator(JString arg0);
+		android::widget::TabHost_TabSpec setIndicator(JString arg0, android::graphics::drawable::Drawable arg1);
 	};
 } // namespace android::widget
 

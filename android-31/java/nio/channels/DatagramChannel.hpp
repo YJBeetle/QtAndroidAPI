@@ -1,10 +1,9 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "./spi/AbstractInterruptibleChannel.hpp"
-#include "./SelectableChannel.hpp"
 #include "./spi/AbstractSelectableChannel.hpp"
 
+class JArray;
+class JObject;
 namespace java::net
 {
 	class DatagramSocket;
@@ -45,16 +44,16 @@ namespace java::nio::channels
 		java::net::SocketAddress getRemoteAddress();
 		jboolean isConnected();
 		jint read(java::nio::ByteBuffer arg0);
-		jlong read(jarray arg0);
-		jlong read(jarray arg0, jint arg1, jint arg2);
+		jlong read(JArray arg0);
+		jlong read(JArray arg0, jint arg1, jint arg2);
 		java::net::SocketAddress receive(java::nio::ByteBuffer arg0);
 		jint send(java::nio::ByteBuffer arg0, java::net::SocketAddress arg1);
-		java::nio::channels::DatagramChannel setOption(JObject arg0, jobject arg1);
+		java::nio::channels::DatagramChannel setOption(JObject arg0, JObject arg1);
 		java::net::DatagramSocket socket();
 		jint validOps();
 		jint write(java::nio::ByteBuffer arg0);
-		jlong write(jarray arg0);
-		jlong write(jarray arg0, jint arg1, jint arg2);
+		jlong write(JArray arg0);
+		jlong write(JArray arg0, jint arg1, jint arg2);
 	};
 } // namespace java::nio::channels
 

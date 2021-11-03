@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JObject;
 namespace java::util
 {
 	class Vector;
@@ -28,7 +29,7 @@ namespace java::util
 		void deleteObservers();
 		jboolean hasChanged();
 		void notifyObservers();
-		void notifyObservers(jobject arg0);
+		void notifyObservers(JObject arg0);
 	};
 } // namespace java::util
 

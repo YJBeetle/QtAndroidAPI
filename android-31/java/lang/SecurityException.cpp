@@ -1,3 +1,5 @@
+#include "../../JString.hpp"
+#include "../../JThrowable.hpp"
 #include "./SecurityException.hpp"
 
 namespace java::lang
@@ -13,24 +15,24 @@ namespace java::lang
 			"java.lang.SecurityException",
 			"()V"
 		) {}
-	SecurityException::SecurityException(jstring arg0)
+	SecurityException::SecurityException(JString arg0)
 		: java::lang::RuntimeException(
 			"java.lang.SecurityException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	SecurityException::SecurityException(jthrowable arg0)
+	SecurityException::SecurityException(JThrowable arg0)
 		: java::lang::RuntimeException(
 			"java.lang.SecurityException",
 			"(Ljava/lang/Throwable;)V",
-			arg0
+			arg0.object<jthrowable>()
 		) {}
-	SecurityException::SecurityException(jstring arg0, jthrowable arg1)
+	SecurityException::SecurityException(JString arg0, JThrowable arg1)
 		: java::lang::RuntimeException(
 			"java.lang.SecurityException",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
 		) {}
 	
 	// Methods

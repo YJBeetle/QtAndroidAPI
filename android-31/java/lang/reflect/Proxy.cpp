@@ -1,4 +1,9 @@
+#include "../../../JArray.hpp"
+#include "../../../JObjectArray.hpp"
+#include "../../../JClass.hpp"
 #include "../ClassLoader.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "../invoke/MethodHandle.hpp"
 #include "../invoke/MethodHandles_Lookup.hpp"
 #include "../invoke/MethodType.hpp"
@@ -17,44 +22,44 @@ namespace java::lang::reflect
 	// Constructors
 	
 	// Methods
-	JObject Proxy::getInvocationHandler(jobject arg0)
+	JObject Proxy::getInvocationHandler(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"java.lang.reflect.Proxy",
 			"getInvocationHandler",
 			"(Ljava/lang/Object;)Ljava/lang/reflect/InvocationHandler;",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jclass Proxy::getProxyClass(java::lang::ClassLoader arg0, jarray arg1)
+	JClass Proxy::getProxyClass(java::lang::ClassLoader arg0, JArray arg1)
 	{
 		return callStaticObjectMethod(
 			"java.lang.reflect.Proxy",
 			"getProxyClass",
 			"(Ljava/lang/ClassLoader;[Ljava/lang/Class;)Ljava/lang/Class;",
 			arg0.object(),
-			arg1
-		).object<jclass>();
+			arg1.object<jarray>()
+		);
 	}
-	jboolean Proxy::isProxyClass(jclass arg0)
+	jboolean Proxy::isProxyClass(JClass arg0)
 	{
 		return callStaticMethod<jboolean>(
 			"java.lang.reflect.Proxy",
 			"isProxyClass",
 			"(Ljava/lang/Class;)Z",
-			arg0
+			arg0.object<jclass>()
 		);
 	}
-	jobject Proxy::newProxyInstance(java::lang::ClassLoader arg0, jarray arg1, JObject arg2)
+	JObject Proxy::newProxyInstance(java::lang::ClassLoader arg0, JArray arg1, JObject arg2)
 	{
 		return callStaticObjectMethod(
 			"java.lang.reflect.Proxy",
 			"newProxyInstance",
 			"(Ljava/lang/ClassLoader;[Ljava/lang/Class;Ljava/lang/reflect/InvocationHandler;)Ljava/lang/Object;",
 			arg0.object(),
-			arg1,
+			arg1.object<jarray>(),
 			arg2.object()
-		).object<jobject>();
+		);
 	}
 } // namespace java::lang::reflect
 

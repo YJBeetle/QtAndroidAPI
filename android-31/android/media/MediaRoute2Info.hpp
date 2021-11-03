@@ -14,6 +14,9 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
+class JObject;
+class JString;
 
 namespace android::media
 {
@@ -25,11 +28,11 @@ namespace android::media
 		static jint CONNECTION_STATE_CONNECTING();
 		static jint CONNECTION_STATE_DISCONNECTED();
 		static JObject CREATOR();
-		static jstring FEATURE_LIVE_AUDIO();
-		static jstring FEATURE_LIVE_VIDEO();
-		static jstring FEATURE_REMOTE_AUDIO_PLAYBACK();
-		static jstring FEATURE_REMOTE_PLAYBACK();
-		static jstring FEATURE_REMOTE_VIDEO_PLAYBACK();
+		static JString FEATURE_LIVE_AUDIO();
+		static JString FEATURE_LIVE_VIDEO();
+		static JString FEATURE_REMOTE_AUDIO_PLAYBACK();
+		static JString FEATURE_REMOTE_PLAYBACK();
+		static JString FEATURE_REMOTE_VIDEO_PLAYBACK();
 		static jint PLAYBACK_VOLUME_FIXED();
 		static jint PLAYBACK_VOLUME_VARIABLE();
 		
@@ -41,21 +44,21 @@ namespace android::media
 		
 		// Methods
 		jint describeContents();
-		jboolean equals(jobject arg0);
-		jstring getClientPackageName();
+		jboolean equals(JObject arg0);
+		JString getClientPackageName();
 		jint getConnectionState();
-		jstring getDescription();
+		JString getDescription();
 		android::os::Bundle getExtras();
 		JObject getFeatures();
 		android::net::Uri getIconUri();
-		jstring getId();
-		jstring getName();
+		JString getId();
+		JString getName();
 		jint getVolume();
 		jint getVolumeHandling();
 		jint getVolumeMax();
 		jint hashCode();
 		jboolean isSystemRoute();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::media

@@ -1,12 +1,14 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "../../../java/lang/Number.hpp"
 
+class JCharArray;
 namespace android::icu::math
 {
 	class MathContext;
 }
+class JObject;
+class JString;
 namespace java::math
 {
 	class BigDecimal;
@@ -39,15 +41,15 @@ namespace android::icu::math
 		BigDecimal(QAndroidJniObject obj);
 		
 		// Constructors
-		BigDecimal(jcharArray arg0);
+		BigDecimal(JCharArray arg0);
 		BigDecimal(jdouble arg0);
 		BigDecimal(jint arg0);
-		BigDecimal(jstring arg0);
+		BigDecimal(JString arg0);
 		BigDecimal(java::math::BigDecimal arg0);
 		BigDecimal(java::math::BigInteger arg0);
 		BigDecimal(jlong arg0);
 		BigDecimal(java::math::BigInteger arg0, jint arg1);
-		BigDecimal(jcharArray arg0, jint arg1, jint arg2);
+		BigDecimal(JCharArray arg0, jint arg1, jint arg2);
 		
 		// Methods
 		static android::icu::math::BigDecimal valueOf(jdouble arg0);
@@ -59,7 +61,7 @@ namespace android::icu::math
 		android::icu::math::BigDecimal add(android::icu::math::BigDecimal arg0, android::icu::math::MathContext arg1);
 		jbyte byteValueExact();
 		jint compareTo(android::icu::math::BigDecimal arg0);
-		jint compareTo(jobject arg0);
+		jint compareTo(JObject arg0);
 		jint compareTo(android::icu::math::BigDecimal arg0, android::icu::math::MathContext arg1);
 		android::icu::math::BigDecimal divide(android::icu::math::BigDecimal arg0);
 		android::icu::math::BigDecimal divide(android::icu::math::BigDecimal arg0, android::icu::math::MathContext arg1);
@@ -68,10 +70,10 @@ namespace android::icu::math
 		android::icu::math::BigDecimal divideInteger(android::icu::math::BigDecimal arg0);
 		android::icu::math::BigDecimal divideInteger(android::icu::math::BigDecimal arg0, android::icu::math::MathContext arg1);
 		jdouble doubleValue();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jfloat floatValue();
-		jstring format(jint arg0, jint arg1);
-		jstring format(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5);
+		JString format(jint arg0, jint arg1);
+		JString format(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5);
 		jint hashCode();
 		jint intValue();
 		jint intValueExact();
@@ -103,8 +105,8 @@ namespace android::icu::math
 		java::math::BigDecimal toBigDecimal();
 		java::math::BigInteger toBigInteger();
 		java::math::BigInteger toBigIntegerExact();
-		jcharArray toCharArray();
-		jstring toString();
+		JCharArray toCharArray();
+		JString toString();
 		java::math::BigInteger unscaledValue();
 	};
 } // namespace android::icu::math

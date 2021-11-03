@@ -1,3 +1,5 @@
+#include "../../JString.hpp"
+#include "../../JThrowable.hpp"
 #include "./IllegalArgumentException.hpp"
 
 namespace java::lang
@@ -13,24 +15,24 @@ namespace java::lang
 			"java.lang.IllegalArgumentException",
 			"()V"
 		) {}
-	IllegalArgumentException::IllegalArgumentException(jstring arg0)
+	IllegalArgumentException::IllegalArgumentException(JString arg0)
 		: java::lang::RuntimeException(
 			"java.lang.IllegalArgumentException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	IllegalArgumentException::IllegalArgumentException(jthrowable arg0)
+	IllegalArgumentException::IllegalArgumentException(JThrowable arg0)
 		: java::lang::RuntimeException(
 			"java.lang.IllegalArgumentException",
 			"(Ljava/lang/Throwable;)V",
-			arg0
+			arg0.object<jthrowable>()
 		) {}
-	IllegalArgumentException::IllegalArgumentException(jstring arg0, jthrowable arg1)
+	IllegalArgumentException::IllegalArgumentException(JString arg0, JThrowable arg1)
 		: java::lang::RuntimeException(
 			"java.lang.IllegalArgumentException",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
 		) {}
 	
 	// Methods

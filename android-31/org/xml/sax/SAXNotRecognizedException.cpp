@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./SAXNotRecognizedException.hpp"
 
 namespace org::xml::sax
@@ -13,11 +14,11 @@ namespace org::xml::sax
 			"org.xml.sax.SAXNotRecognizedException",
 			"()V"
 		) {}
-	SAXNotRecognizedException::SAXNotRecognizedException(jstring arg0)
+	SAXNotRecognizedException::SAXNotRecognizedException(JString arg0)
 		: org::xml::sax::SAXException(
 			"org.xml.sax.SAXNotRecognizedException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

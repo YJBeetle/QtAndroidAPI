@@ -2,7 +2,6 @@
 
 #include "../JObject.hpp"
 
-
 namespace android
 {
 	class R_raw : public JObject

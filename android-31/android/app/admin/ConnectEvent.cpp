@@ -1,4 +1,5 @@
 #include "../../os/Parcel.hpp"
+#include "../../../JString.hpp"
 #include "../../../java/net/InetAddress.hpp"
 #include "./ConnectEvent.hpp"
 
@@ -41,12 +42,12 @@ namespace android::app::admin
 			"()I"
 		);
 	}
-	jstring ConnectEvent::toString()
+	JString ConnectEvent::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void ConnectEvent::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

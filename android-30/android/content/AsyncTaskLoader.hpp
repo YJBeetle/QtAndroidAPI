@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./Loader.hpp"
 
+class JArray;
 namespace android::content
 {
 	class Context;
@@ -15,6 +15,8 @@ namespace java::io
 {
 	class PrintWriter;
 }
+class JObject;
+class JString;
 
 namespace android::content
 {
@@ -32,10 +34,10 @@ namespace android::content
 		
 		// Methods
 		void cancelLoadInBackground();
-		void dump(jstring arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, jarray arg3);
+		void dump(JString arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, JArray arg3);
 		jboolean isLoadInBackgroundCanceled();
-		jobject loadInBackground();
-		void onCanceled(jobject arg0);
+		JObject loadInBackground();
+		void onCanceled(JObject arg0);
 		void setUpdateThrottle(jlong arg0);
 	};
 } // namespace android::content

@@ -1,5 +1,6 @@
 #include "../content/ComponentName.hpp"
 #include "../os/Parcel.hpp"
+#include "../../JString.hpp"
 #include "./SearchableInfo.hpp"
 
 namespace android::app
@@ -69,47 +70,47 @@ namespace android::app
 			"()I"
 		);
 	}
-	jstring SearchableInfo::getSuggestAuthority()
+	JString SearchableInfo::getSuggestAuthority()
 	{
 		return callObjectMethod(
 			"getSuggestAuthority",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring SearchableInfo::getSuggestIntentAction()
+	JString SearchableInfo::getSuggestIntentAction()
 	{
 		return callObjectMethod(
 			"getSuggestIntentAction",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring SearchableInfo::getSuggestIntentData()
+	JString SearchableInfo::getSuggestIntentData()
 	{
 		return callObjectMethod(
 			"getSuggestIntentData",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring SearchableInfo::getSuggestPackage()
+	JString SearchableInfo::getSuggestPackage()
 	{
 		return callObjectMethod(
 			"getSuggestPackage",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring SearchableInfo::getSuggestPath()
+	JString SearchableInfo::getSuggestPath()
 	{
 		return callObjectMethod(
 			"getSuggestPath",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring SearchableInfo::getSuggestSelection()
+	JString SearchableInfo::getSuggestSelection()
 	{
 		return callObjectMethod(
 			"getSuggestSelection",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint SearchableInfo::getSuggestThreshold()
 	{

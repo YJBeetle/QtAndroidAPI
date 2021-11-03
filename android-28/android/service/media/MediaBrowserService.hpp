@@ -1,10 +1,8 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "../../content/Context.hpp"
-#include "../../content/ContextWrapper.hpp"
 #include "../../app/Service.hpp"
 
+class JArray;
 namespace android::content
 {
 	class Intent;
@@ -37,6 +35,7 @@ namespace java::io
 {
 	class PrintWriter;
 }
+class JString;
 
 namespace android::service::media
 {
@@ -44,7 +43,7 @@ namespace android::service::media
 	{
 	public:
 		// Fields
-		static jstring SERVICE_INTERFACE();
+		static JString SERVICE_INTERFACE();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MediaBrowserService(const char *className, const char *sig, Ts...agv) : android::app::Service(className, sig, std::forward<Ts>(agv)...) {}
@@ -54,18 +53,18 @@ namespace android::service::media
 		MediaBrowserService();
 		
 		// Methods
-		void dump(java::io::FileDescriptor arg0, java::io::PrintWriter arg1, jarray arg2);
+		void dump(java::io::FileDescriptor arg0, java::io::PrintWriter arg1, JArray arg2);
 		android::os::Bundle getBrowserRootHints();
 		android::media::session::MediaSessionManager_RemoteUserInfo getCurrentBrowserInfo();
 		android::media::session::MediaSession_Token getSessionToken();
-		void notifyChildrenChanged(jstring arg0);
-		void notifyChildrenChanged(jstring arg0, android::os::Bundle arg1);
+		void notifyChildrenChanged(JString arg0);
+		void notifyChildrenChanged(JString arg0, android::os::Bundle arg1);
 		JObject onBind(android::content::Intent arg0);
 		void onCreate();
-		android::service::media::MediaBrowserService_BrowserRoot onGetRoot(jstring arg0, jint arg1, android::os::Bundle arg2);
-		void onLoadChildren(jstring arg0, android::service::media::MediaBrowserService_Result arg1);
-		void onLoadChildren(jstring arg0, android::service::media::MediaBrowserService_Result arg1, android::os::Bundle arg2);
-		void onLoadItem(jstring arg0, android::service::media::MediaBrowserService_Result arg1);
+		android::service::media::MediaBrowserService_BrowserRoot onGetRoot(JString arg0, jint arg1, android::os::Bundle arg2);
+		void onLoadChildren(JString arg0, android::service::media::MediaBrowserService_Result arg1);
+		void onLoadChildren(JString arg0, android::service::media::MediaBrowserService_Result arg1, android::os::Bundle arg2);
+		void onLoadItem(JString arg0, android::service::media::MediaBrowserService_Result arg1);
 		void setSessionToken(android::media::session::MediaSession_Token arg0);
 	};
 } // namespace android::service::media

@@ -1,8 +1,9 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "../../java/lang/Enum.hpp"
 
+class JArray;
+class JString;
 
 namespace android::webkit
 {
@@ -22,8 +23,8 @@ namespace android::webkit
 		// Constructors
 		
 		// Methods
-		static android::webkit::WebSettings_LayoutAlgorithm valueOf(jstring arg0);
-		static jarray values();
+		static android::webkit::WebSettings_LayoutAlgorithm valueOf(JString arg0);
+		static JArray values();
 	};
 } // namespace android::webkit
 

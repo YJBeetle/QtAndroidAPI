@@ -6,6 +6,7 @@ namespace android::net
 {
 	class Uri;
 }
+class JString;
 
 namespace android::provider
 {
@@ -14,9 +15,9 @@ namespace android::provider
 	public:
 		// Fields
 		static android::net::Uri CONTENT_URI();
-		static jstring DEFAULT_SORT_ORDER();
-		static jstring MESSAGE_COUNT();
-		static jstring SNIPPET();
+		static JString DEFAULT_SORT_ORDER();
+		static JString MESSAGE_COUNT();
+		static JString SNIPPET();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Telephony_Sms_Conversations(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}

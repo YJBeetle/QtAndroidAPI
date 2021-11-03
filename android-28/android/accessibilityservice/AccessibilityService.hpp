@@ -1,8 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../content/Context.hpp"
-#include "../content/ContextWrapper.hpp"
 #include "../app/Service.hpp"
 
 namespace android::accessibilityservice
@@ -53,6 +50,8 @@ namespace android::view::accessibility
 {
 	class AccessibilityNodeInfo;
 }
+class JObject;
+class JString;
 
 namespace android::accessibilityservice
 {
@@ -85,8 +84,8 @@ namespace android::accessibilityservice
 		static jint GLOBAL_ACTION_RECENTS();
 		static jint GLOBAL_ACTION_TAKE_SCREENSHOT();
 		static jint GLOBAL_ACTION_TOGGLE_SPLIT_SCREEN();
-		static jstring SERVICE_INTERFACE();
-		static jstring SERVICE_META_DATA();
+		static JString SERVICE_INTERFACE();
+		static JString SERVICE_META_DATA();
 		static jint SHOW_MODE_AUTO();
 		static jint SHOW_MODE_HIDDEN();
 		
@@ -107,7 +106,7 @@ namespace android::accessibilityservice
 		android::view::accessibility::AccessibilityNodeInfo getRootInActiveWindow();
 		android::accessibilityservice::AccessibilityServiceInfo getServiceInfo();
 		android::accessibilityservice::AccessibilityService_SoftKeyboardController getSoftKeyboardController();
-		jobject getSystemService(jstring arg0);
+		JObject getSystemService(JString arg0);
 		JObject getWindows();
 		void onAccessibilityEvent(android::view::accessibility::AccessibilityEvent arg0);
 		JObject onBind(android::content::Intent arg0);

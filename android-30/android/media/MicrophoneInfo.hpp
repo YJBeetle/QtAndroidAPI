@@ -6,6 +6,7 @@ namespace android::media
 {
 	class MicrophoneInfo_Coordinate3F;
 }
+class JString;
 
 namespace android::media
 {
@@ -39,9 +40,9 @@ namespace android::media
 		// Constructors
 		
 		// Methods
-		jstring getAddress();
+		JString getAddress();
 		JObject getChannelMapping();
-		jstring getDescription();
+		JString getDescription();
 		jint getDirectionality();
 		JObject getFrequencyResponse();
 		jint getGroup();

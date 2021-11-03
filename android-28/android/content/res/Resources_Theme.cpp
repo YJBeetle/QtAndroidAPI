@@ -1,7 +1,9 @@
+#include "../../../JIntArray.hpp"
 #include "./Resources.hpp"
 #include "./TypedArray.hpp"
 #include "../../graphics/drawable/Drawable.hpp"
 #include "../../util/TypedValue.hpp"
+#include "../../../JString.hpp"
 #include "./Resources_Theme.hpp"
 
 namespace android::content::res
@@ -23,14 +25,14 @@ namespace android::content::res
 			arg1
 		);
 	}
-	void Resources_Theme::dump(jint arg0, jstring arg1, jstring arg2)
+	void Resources_Theme::dump(jint arg0, JString arg1, JString arg2)
 	{
 		callMethod<void>(
 			"dump",
 			"(ILjava/lang/String;Ljava/lang/String;)V",
 			arg0,
-			arg1,
-			arg2
+			arg1.object<jstring>(),
+			arg2.object<jstring>()
 		);
 	}
 	jint Resources_Theme::getChangingConfigurations()
@@ -55,30 +57,30 @@ namespace android::content::res
 			"()Landroid/content/res/Resources;"
 		);
 	}
-	android::content::res::TypedArray Resources_Theme::obtainStyledAttributes(jintArray arg0)
+	android::content::res::TypedArray Resources_Theme::obtainStyledAttributes(JIntArray arg0)
 	{
 		return callObjectMethod(
 			"obtainStyledAttributes",
 			"([I)Landroid/content/res/TypedArray;",
-			arg0
+			arg0.object<jintArray>()
 		);
 	}
-	android::content::res::TypedArray Resources_Theme::obtainStyledAttributes(jint arg0, jintArray arg1)
+	android::content::res::TypedArray Resources_Theme::obtainStyledAttributes(jint arg0, JIntArray arg1)
 	{
 		return callObjectMethod(
 			"obtainStyledAttributes",
 			"(I[I)Landroid/content/res/TypedArray;",
 			arg0,
-			arg1
+			arg1.object<jintArray>()
 		);
 	}
-	android::content::res::TypedArray Resources_Theme::obtainStyledAttributes(JObject arg0, jintArray arg1, jint arg2, jint arg3)
+	android::content::res::TypedArray Resources_Theme::obtainStyledAttributes(JObject arg0, JIntArray arg1, jint arg2, jint arg3)
 	{
 		return callObjectMethod(
 			"obtainStyledAttributes",
 			"(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;",
 			arg0.object(),
-			arg1,
+			arg1.object<jintArray>(),
 			arg2,
 			arg3
 		);

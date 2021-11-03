@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JArray;
 namespace android::content
 {
 	class ComponentName;
@@ -10,6 +11,7 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
 
 namespace android::app
 {
@@ -41,8 +43,8 @@ namespace android::app
 		jint lastTrimLevel();
 		jint lru();
 		jint pid();
-		jarray pkgList();
-		jstring processName();
+		JArray pkgList();
+		JString processName();
 		jint uid();
 		
 		// QAndroidJniObject forward
@@ -51,7 +53,7 @@ namespace android::app
 		
 		// Constructors
 		ActivityManager_RunningAppProcessInfo();
-		ActivityManager_RunningAppProcessInfo(jstring arg0, jint arg1, jarray arg2);
+		ActivityManager_RunningAppProcessInfo(JString arg0, jint arg1, JArray arg2);
 		
 		// Methods
 		jint describeContents();

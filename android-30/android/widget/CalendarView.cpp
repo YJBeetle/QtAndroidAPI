@@ -1,6 +1,7 @@
 #include "../content/Context.hpp"
 #include "../content/res/Configuration.hpp"
 #include "../graphics/drawable/Drawable.hpp"
+#include "../../JString.hpp"
 #include "./CalendarView.hpp"
 
 namespace android::widget
@@ -43,12 +44,12 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	jstring CalendarView::getAccessibilityClassName()
+	JString CalendarView::getAccessibilityClassName()
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	jlong CalendarView::getDate()
 	{

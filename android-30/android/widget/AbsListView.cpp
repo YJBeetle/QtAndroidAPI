@@ -1,3 +1,4 @@
+#include "../../JLongArray.hpp"
 #include "../content/Context.hpp"
 #include "../content/Intent.hpp"
 #include "../graphics/Canvas.hpp"
@@ -12,6 +13,8 @@
 #include "../view/accessibility/AccessibilityNodeInfo.hpp"
 #include "../view/inputmethod/EditorInfo.hpp"
 #include "./AbsListView_LayoutParams.hpp"
+#include "../../JString.hpp"
+#include "../../JString.hpp"
 #include "../../java/util/ArrayList.hpp"
 #include "./AbsListView.hpp"
 
@@ -120,12 +123,12 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void AbsListView::beforeTextChanged(jstring arg0, jint arg1, jint arg2, jint arg3)
+	void AbsListView::beforeTextChanged(JString arg0, jint arg1, jint arg2, jint arg3)
 	{
 		callMethod<void>(
 			"beforeTextChanged",
 			"(Ljava/lang/CharSequence;III)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
 			arg2,
 			arg3
@@ -201,12 +204,12 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	jstring AbsListView::getAccessibilityClassName()
+	JString AbsListView::getAccessibilityClassName()
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	jint AbsListView::getBottomEdgeEffectColor()
 	{
@@ -229,12 +232,12 @@ namespace android::widget
 			"()I"
 		);
 	}
-	jlongArray AbsListView::getCheckedItemIds()
+	JLongArray AbsListView::getCheckedItemIds()
 	{
 		return callObjectMethod(
 			"getCheckedItemIds",
 			"()[J"
-		).object<jlongArray>();
+		);
 	}
 	jint AbsListView::getCheckedItemPosition()
 	{
@@ -314,12 +317,12 @@ namespace android::widget
 			"()I"
 		);
 	}
-	jstring AbsListView::getTextFilter()
+	JString AbsListView::getTextFilter()
 	{
 		return callObjectMethod(
 			"getTextFilter",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	jint AbsListView::getTopEdgeEffectColor()
 	{
@@ -591,12 +594,12 @@ namespace android::widget
 			arg2
 		);
 	}
-	void AbsListView::onTextChanged(jstring arg0, jint arg1, jint arg2, jint arg3)
+	void AbsListView::onTextChanged(JString arg0, jint arg1, jint arg2, jint arg3)
 	{
 		callMethod<void>(
 			"onTextChanged",
 			"(Ljava/lang/CharSequence;III)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
 			arg2,
 			arg3
@@ -757,12 +760,12 @@ namespace android::widget
 			arg0
 		);
 	}
-	void AbsListView::setFilterText(jstring arg0)
+	void AbsListView::setFilterText(JString arg0)
 	{
 		callMethod<void>(
 			"setFilterText",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void AbsListView::setFriction(jfloat arg0)

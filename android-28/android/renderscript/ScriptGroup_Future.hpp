@@ -10,6 +10,7 @@ namespace android::renderscript
 {
 	class ScriptGroup_Closure;
 }
+class JObject;
 
 namespace android::renderscript
 {

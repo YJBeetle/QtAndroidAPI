@@ -1,3 +1,6 @@
+#include "../../../JByteArray.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./SecretKeySpec.hpp"
 
 namespace javax::crypto::spec
@@ -8,52 +11,52 @@ namespace javax::crypto::spec
 	SecretKeySpec::SecretKeySpec(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	SecretKeySpec::SecretKeySpec(jbyteArray arg0, jstring arg1)
+	SecretKeySpec::SecretKeySpec(JByteArray arg0, JString arg1)
 		: JObject(
 			"javax.crypto.spec.SecretKeySpec",
 			"([BLjava/lang/String;)V",
-			arg0,
-			arg1
+			arg0.object<jbyteArray>(),
+			arg1.object<jstring>()
 		) {}
-	SecretKeySpec::SecretKeySpec(jbyteArray arg0, jint arg1, jint arg2, jstring arg3)
+	SecretKeySpec::SecretKeySpec(JByteArray arg0, jint arg1, jint arg2, JString arg3)
 		: JObject(
 			"javax.crypto.spec.SecretKeySpec",
 			"([BIILjava/lang/String;)V",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1,
 			arg2,
-			arg3
+			arg3.object<jstring>()
 		) {}
 	
 	// Methods
-	jboolean SecretKeySpec::equals(jobject arg0)
+	jboolean SecretKeySpec::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jstring SecretKeySpec::getAlgorithm()
+	JString SecretKeySpec::getAlgorithm()
 	{
 		return callObjectMethod(
 			"getAlgorithm",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jbyteArray SecretKeySpec::getEncoded()
+	JByteArray SecretKeySpec::getEncoded()
 	{
 		return callObjectMethod(
 			"getEncoded",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
-	jstring SecretKeySpec::getFormat()
+	JString SecretKeySpec::getFormat()
 	{
 		return callObjectMethod(
 			"getFormat",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint SecretKeySpec::hashCode()
 	{

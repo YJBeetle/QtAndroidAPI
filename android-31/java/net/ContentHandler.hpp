@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JArray;
+class JObject;
 namespace java::net
 {
 	class URLConnection;
@@ -22,8 +24,8 @@ namespace java::net
 		ContentHandler();
 		
 		// Methods
-		jobject getContent(java::net::URLConnection arg0);
-		jobject getContent(java::net::URLConnection arg0, jarray arg1);
+		JObject getContent(java::net::URLConnection arg0);
+		JObject getContent(java::net::URLConnection arg0, JArray arg1);
 	};
 } // namespace java::net
 

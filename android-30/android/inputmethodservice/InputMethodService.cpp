@@ -1,3 +1,5 @@
+#include "../../JArray.hpp"
+#include "../../JArray.hpp"
 #include "../app/Dialog.hpp"
 #include "../content/res/Configuration.hpp"
 #include "../graphics/Rect.hpp"
@@ -19,6 +21,8 @@
 #include "../view/inputmethod/InputMethodSubtype.hpp"
 #include "../../java/io/FileDescriptor.hpp"
 #include "../../java/io/PrintWriter.hpp"
+#include "../../JString.hpp"
+#include "../../JString.hpp"
 #include "./InputMethodService.hpp"
 
 namespace android::inputmethodservice
@@ -134,13 +138,13 @@ namespace android::inputmethodservice
 			"()I"
 		);
 	}
-	jstring InputMethodService::getTextForImeAction(jint arg0)
+	JString InputMethodService::getTextForImeAction(jint arg0)
 	{
 		return callObjectMethod(
 			"getTextForImeAction",
 			"(I)Ljava/lang/CharSequence;",
 			arg0
-		).object<jstring>();
+		);
 	}
 	android::app::Dialog InputMethodService::getWindow()
 	{
@@ -191,12 +195,12 @@ namespace android::inputmethodservice
 			"()Z"
 		);
 	}
-	void InputMethodService::onAppPrivateCommand(jstring arg0, android::os::Bundle arg1)
+	void InputMethodService::onAppPrivateCommand(JString arg0, android::os::Bundle arg1)
 	{
 		callMethod<void>(
 			"onAppPrivateCommand",
 			"(Ljava/lang/String;Landroid/os/Bundle;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
@@ -290,12 +294,12 @@ namespace android::inputmethodservice
 			"()V"
 		);
 	}
-	void InputMethodService::onDisplayCompletions(jarray arg0)
+	void InputMethodService::onDisplayCompletions(JArray arg0)
 	{
 		callMethod<void>(
 			"onDisplayCompletions",
 			"([Landroid/view/inputmethod/CompletionInfo;)V",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
 	jboolean InputMethodService::onEvaluateFullscreenMode()
@@ -682,20 +686,20 @@ namespace android::inputmethodservice
 			arg0
 		);
 	}
-	void InputMethodService::switchInputMethod(jstring arg0)
+	void InputMethodService::switchInputMethod(JString arg0)
 	{
 		callMethod<void>(
 			"switchInputMethod",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	void InputMethodService::switchInputMethod(jstring arg0, android::view::inputmethod::InputMethodSubtype arg1)
+	void InputMethodService::switchInputMethod(JString arg0, android::view::inputmethod::InputMethodSubtype arg1)
 	{
 		callMethod<void>(
 			"switchInputMethod",
 			"(Ljava/lang/String;Landroid/view/inputmethod/InputMethodSubtype;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}

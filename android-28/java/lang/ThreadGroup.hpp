@@ -2,14 +2,18 @@
 
 #include "../../JObject.hpp"
 
+class JArray;
+class JArray;
 namespace java::io
 {
 	class PrintStream;
 }
+class JString;
 namespace java::lang
 {
 	class Thread;
 }
+class JThrowable;
 namespace java::lang
 {
 	class Void;
@@ -27,8 +31,8 @@ namespace java::lang
 		ThreadGroup(QAndroidJniObject obj);
 		
 		// Constructors
-		ThreadGroup(jstring arg0);
-		ThreadGroup(java::lang::ThreadGroup &arg0, jstring arg1);
+		ThreadGroup(JString arg0);
+		ThreadGroup(java::lang::ThreadGroup &arg0, JString arg1);
 		
 		// Methods
 		jint activeCount();
@@ -36,10 +40,10 @@ namespace java::lang
 		jboolean allowThreadSuspension(jboolean arg0);
 		void checkAccess();
 		void destroy();
-		jint enumerate(jarray arg0);
-		jint enumerate(jarray arg0, jboolean arg1);
+		jint enumerate(JArray arg0);
+		jint enumerate(JArray arg0, jboolean arg1);
 		jint getMaxPriority();
-		jstring getName();
+		JString getName();
 		java::lang::ThreadGroup getParent();
 		void interrupt();
 		jboolean isDaemon();
@@ -51,8 +55,8 @@ namespace java::lang
 		void setMaxPriority(jint arg0);
 		void stop();
 		void suspend();
-		jstring toString();
-		void uncaughtException(java::lang::Thread arg0, jthrowable arg1);
+		JString toString();
+		void uncaughtException(java::lang::Thread arg0, JThrowable arg1);
 	};
 } // namespace java::lang
 

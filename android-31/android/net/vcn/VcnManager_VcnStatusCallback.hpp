@@ -2,6 +2,8 @@
 
 #include "../../../JObject.hpp"
 
+class JString;
+class JThrowable;
 
 namespace android::net::vcn
 {
@@ -18,7 +20,7 @@ namespace android::net::vcn
 		VcnManager_VcnStatusCallback();
 		
 		// Methods
-		void onGatewayConnectionError(jstring arg0, jint arg1, jthrowable arg2);
+		void onGatewayConnectionError(JString arg0, jint arg1, JThrowable arg2);
 		void onStatusChanged(jint arg0);
 	};
 } // namespace android::net::vcn

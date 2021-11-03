@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JIntArray;
 namespace android::os
 {
 	class CombinedVibration;
@@ -32,7 +33,7 @@ namespace android::os
 		void cancel();
 		android::os::Vibrator getDefaultVibrator();
 		android::os::Vibrator getVibrator(jint arg0);
-		jintArray getVibratorIds();
+		JIntArray getVibratorIds();
 		void vibrate(android::os::CombinedVibration arg0);
 		void vibrate(android::os::CombinedVibration arg0, android::os::VibrationAttributes arg1);
 	};

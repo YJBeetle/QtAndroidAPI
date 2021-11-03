@@ -1,3 +1,5 @@
+#include "../../JArray.hpp"
+#include "../../JObject.hpp"
 #include "../lang/ref/ReferenceQueue.hpp"
 #include "./WeakHashMap.hpp"
 
@@ -42,20 +44,20 @@ namespace java::util
 			"()V"
 		);
 	}
-	jboolean WeakHashMap::containsKey(jobject arg0)
+	jboolean WeakHashMap::containsKey(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"containsKey",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jboolean WeakHashMap::containsValue(jobject arg0)
+	jboolean WeakHashMap::containsValue(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"containsValue",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	JObject WeakHashMap::entrySet()
@@ -73,13 +75,13 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	jobject WeakHashMap::get(jobject arg0)
+	JObject WeakHashMap::get(JObject arg0)
 	{
 		return callObjectMethod(
 			"get",
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0
-		).object<jobject>();
+			arg0.object<jobject>()
+		);
 	}
 	jboolean WeakHashMap::isEmpty()
 	{
@@ -95,14 +97,14 @@ namespace java::util
 			"()Ljava/util/Set;"
 		);
 	}
-	jobject WeakHashMap::put(jobject arg0, jobject arg1)
+	JObject WeakHashMap::put(JObject arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"put",
 			"(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0,
-			arg1
-		).object<jobject>();
+			arg0.object<jobject>(),
+			arg1.object<jobject>()
+		);
 	}
 	void WeakHashMap::putAll(JObject arg0)
 	{
@@ -112,13 +114,13 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	jobject WeakHashMap::remove(jobject arg0)
+	JObject WeakHashMap::remove(JObject arg0)
 	{
 		return callObjectMethod(
 			"remove",
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0
-		).object<jobject>();
+			arg0.object<jobject>()
+		);
 	}
 	void WeakHashMap::replaceAll(JObject arg0)
 	{

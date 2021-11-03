@@ -1,34 +1,35 @@
 #include "../../content/ComponentName.hpp"
 #include "../../content/Intent.hpp"
 #include "../../content/IntentFilter.hpp"
+#include "../../../JString.hpp"
 #include "./ChooserTargetService.hpp"
 
 namespace android::service::chooser
 {
 	// Fields
-	jstring ChooserTargetService::BIND_PERMISSION()
+	JString ChooserTargetService::BIND_PERMISSION()
 	{
 		return getStaticObjectField(
 			"android.service.chooser.ChooserTargetService",
 			"BIND_PERMISSION",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ChooserTargetService::META_DATA_NAME()
+	JString ChooserTargetService::META_DATA_NAME()
 	{
 		return getStaticObjectField(
 			"android.service.chooser.ChooserTargetService",
 			"META_DATA_NAME",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ChooserTargetService::SERVICE_INTERFACE()
+	JString ChooserTargetService::SERVICE_INTERFACE()
 	{
 		return getStaticObjectField(
 			"android.service.chooser.ChooserTargetService",
 			"SERVICE_INTERFACE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QAndroidJniObject forward

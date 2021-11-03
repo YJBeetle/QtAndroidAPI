@@ -1,6 +1,5 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "./NumberFormatterSettings.hpp"
 
 namespace android::icu::number

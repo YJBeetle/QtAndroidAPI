@@ -1,10 +1,8 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "../../lang/Exception.hpp"
-#include "../../io/IOException.hpp"
 #include "./CharacterCodingException.hpp"
 
+class JString;
 
 namespace java::nio::charset
 {
@@ -22,7 +20,7 @@ namespace java::nio::charset
 		
 		// Methods
 		jint getInputLength();
-		jstring getMessage();
+		JString getMessage();
 	};
 } // namespace java::nio::charset
 

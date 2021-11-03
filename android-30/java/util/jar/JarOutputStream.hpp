@@ -1,11 +1,8 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "../../io/OutputStream.hpp"
-#include "../../io/FilterOutputStream.hpp"
-#include "../zip/DeflaterOutputStream.hpp"
 #include "../zip/ZipOutputStream.hpp"
 
+class JByteArray;
 namespace java::io
 {
 	class OutputStream;

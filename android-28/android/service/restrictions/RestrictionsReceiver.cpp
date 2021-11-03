@@ -1,6 +1,7 @@
 #include "../../content/Context.hpp"
 #include "../../content/Intent.hpp"
 #include "../../os/PersistableBundle.hpp"
+#include "../../../JString.hpp"
 #include "./RestrictionsReceiver.hpp"
 
 namespace android::service::restrictions
@@ -27,15 +28,15 @@ namespace android::service::restrictions
 			arg1.object()
 		);
 	}
-	void RestrictionsReceiver::onRequestPermission(android::content::Context arg0, jstring arg1, jstring arg2, jstring arg3, android::os::PersistableBundle arg4)
+	void RestrictionsReceiver::onRequestPermission(android::content::Context arg0, JString arg1, JString arg2, JString arg3, android::os::PersistableBundle arg4)
 	{
 		callMethod<void>(
 			"onRequestPermission",
 			"(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/os/PersistableBundle;)V",
 			arg0.object(),
-			arg1,
-			arg2,
-			arg3,
+			arg1.object<jstring>(),
+			arg2.object<jstring>(),
+			arg3.object<jstring>(),
 			arg4.object()
 		);
 	}

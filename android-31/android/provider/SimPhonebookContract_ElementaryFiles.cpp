@@ -1,24 +1,25 @@
 #include "../net/Uri.hpp"
+#include "../../JString.hpp"
 #include "./SimPhonebookContract_ElementaryFiles.hpp"
 
 namespace android::provider
 {
 	// Fields
-	jstring SimPhonebookContract_ElementaryFiles::CONTENT_ITEM_TYPE()
+	JString SimPhonebookContract_ElementaryFiles::CONTENT_ITEM_TYPE()
 	{
 		return getStaticObjectField(
 			"android.provider.SimPhonebookContract$ElementaryFiles",
 			"CONTENT_ITEM_TYPE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring SimPhonebookContract_ElementaryFiles::CONTENT_TYPE()
+	JString SimPhonebookContract_ElementaryFiles::CONTENT_TYPE()
 	{
 		return getStaticObjectField(
 			"android.provider.SimPhonebookContract$ElementaryFiles",
 			"CONTENT_TYPE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::net::Uri SimPhonebookContract_ElementaryFiles::CONTENT_URI()
 	{
@@ -49,13 +50,13 @@ namespace android::provider
 			"EF_SDN"
 		);
 	}
-	jstring SimPhonebookContract_ElementaryFiles::EF_TYPE()
+	JString SimPhonebookContract_ElementaryFiles::EF_TYPE()
 	{
 		return getStaticObjectField(
 			"android.provider.SimPhonebookContract$ElementaryFiles",
 			"EF_TYPE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint SimPhonebookContract_ElementaryFiles::EF_UNKNOWN()
 	{
@@ -64,53 +65,53 @@ namespace android::provider
 			"EF_UNKNOWN"
 		);
 	}
-	jstring SimPhonebookContract_ElementaryFiles::MAX_RECORDS()
+	JString SimPhonebookContract_ElementaryFiles::MAX_RECORDS()
 	{
 		return getStaticObjectField(
 			"android.provider.SimPhonebookContract$ElementaryFiles",
 			"MAX_RECORDS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring SimPhonebookContract_ElementaryFiles::NAME_MAX_LENGTH()
+	JString SimPhonebookContract_ElementaryFiles::NAME_MAX_LENGTH()
 	{
 		return getStaticObjectField(
 			"android.provider.SimPhonebookContract$ElementaryFiles",
 			"NAME_MAX_LENGTH",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring SimPhonebookContract_ElementaryFiles::PHONE_NUMBER_MAX_LENGTH()
+	JString SimPhonebookContract_ElementaryFiles::PHONE_NUMBER_MAX_LENGTH()
 	{
 		return getStaticObjectField(
 			"android.provider.SimPhonebookContract$ElementaryFiles",
 			"PHONE_NUMBER_MAX_LENGTH",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring SimPhonebookContract_ElementaryFiles::RECORD_COUNT()
+	JString SimPhonebookContract_ElementaryFiles::RECORD_COUNT()
 	{
 		return getStaticObjectField(
 			"android.provider.SimPhonebookContract$ElementaryFiles",
 			"RECORD_COUNT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring SimPhonebookContract_ElementaryFiles::SLOT_INDEX()
+	JString SimPhonebookContract_ElementaryFiles::SLOT_INDEX()
 	{
 		return getStaticObjectField(
 			"android.provider.SimPhonebookContract$ElementaryFiles",
 			"SLOT_INDEX",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring SimPhonebookContract_ElementaryFiles::SUBSCRIPTION_ID()
+	JString SimPhonebookContract_ElementaryFiles::SUBSCRIPTION_ID()
 	{
 		return getStaticObjectField(
 			"android.provider.SimPhonebookContract$ElementaryFiles",
 			"SUBSCRIPTION_ID",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QAndroidJniObject forward

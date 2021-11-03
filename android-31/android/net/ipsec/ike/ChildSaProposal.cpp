@@ -1,3 +1,4 @@
+#include "../../../../JObject.hpp"
 #include "./ChildSaProposal.hpp"
 
 namespace android::net::ipsec::ike
@@ -26,12 +27,12 @@ namespace android::net::ipsec::ike
 			"()Ljava/util/Set;"
 		);
 	}
-	jboolean ChildSaProposal::equals(jobject arg0)
+	jboolean ChildSaProposal::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint ChildSaProposal::hashCode()

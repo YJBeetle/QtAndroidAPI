@@ -1,5 +1,7 @@
 #include "./DecimalFormat.hpp"
 #include "../util/ULocale.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./ScientificNumberFormatter.hpp"
 
 namespace android::icu::text
@@ -12,26 +14,26 @@ namespace android::icu::text
 	// Constructors
 	
 	// Methods
-	android::icu::text::ScientificNumberFormatter ScientificNumberFormatter::getMarkupInstance(android::icu::text::DecimalFormat arg0, jstring arg1, jstring arg2)
+	android::icu::text::ScientificNumberFormatter ScientificNumberFormatter::getMarkupInstance(android::icu::text::DecimalFormat arg0, JString arg1, JString arg2)
 	{
 		return callStaticObjectMethod(
 			"android.icu.text.ScientificNumberFormatter",
 			"getMarkupInstance",
 			"(Landroid/icu/text/DecimalFormat;Ljava/lang/String;Ljava/lang/String;)Landroid/icu/text/ScientificNumberFormatter;",
 			arg0.object(),
-			arg1,
-			arg2
+			arg1.object<jstring>(),
+			arg2.object<jstring>()
 		);
 	}
-	android::icu::text::ScientificNumberFormatter ScientificNumberFormatter::getMarkupInstance(android::icu::util::ULocale arg0, jstring arg1, jstring arg2)
+	android::icu::text::ScientificNumberFormatter ScientificNumberFormatter::getMarkupInstance(android::icu::util::ULocale arg0, JString arg1, JString arg2)
 	{
 		return callStaticObjectMethod(
 			"android.icu.text.ScientificNumberFormatter",
 			"getMarkupInstance",
 			"(Landroid/icu/util/ULocale;Ljava/lang/String;Ljava/lang/String;)Landroid/icu/text/ScientificNumberFormatter;",
 			arg0.object(),
-			arg1,
-			arg2
+			arg1.object<jstring>(),
+			arg2.object<jstring>()
 		);
 	}
 	android::icu::text::ScientificNumberFormatter ScientificNumberFormatter::getSuperscriptInstance(android::icu::text::DecimalFormat arg0)
@@ -52,13 +54,13 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	jstring ScientificNumberFormatter::format(jobject arg0)
+	JString ScientificNumberFormatter::format(JObject arg0)
 	{
 		return callObjectMethod(
 			"format",
 			"(Ljava/lang/Object;)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
+			arg0.object<jobject>()
+		);
 	}
 } // namespace android::icu::text
 

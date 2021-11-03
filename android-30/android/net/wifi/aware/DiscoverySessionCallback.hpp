@@ -2,6 +2,7 @@
 
 #include "../../../../JObject.hpp"
 
+class JByteArray;
 namespace android::net::wifi::aware
 {
 	class PeerHandle;
@@ -30,12 +31,12 @@ namespace android::net::wifi::aware
 		DiscoverySessionCallback();
 		
 		// Methods
-		void onMessageReceived(android::net::wifi::aware::PeerHandle arg0, jbyteArray arg1);
+		void onMessageReceived(android::net::wifi::aware::PeerHandle arg0, JByteArray arg1);
 		void onMessageSendFailed(jint arg0);
 		void onMessageSendSucceeded(jint arg0);
 		void onPublishStarted(android::net::wifi::aware::PublishDiscoverySession arg0);
-		void onServiceDiscovered(android::net::wifi::aware::PeerHandle arg0, jbyteArray arg1, JObject arg2);
-		void onServiceDiscoveredWithinRange(android::net::wifi::aware::PeerHandle arg0, jbyteArray arg1, JObject arg2, jint arg3);
+		void onServiceDiscovered(android::net::wifi::aware::PeerHandle arg0, JByteArray arg1, JObject arg2);
+		void onServiceDiscoveredWithinRange(android::net::wifi::aware::PeerHandle arg0, JByteArray arg1, JObject arg2, jint arg3);
 		void onSessionConfigFailed();
 		void onSessionConfigUpdated();
 		void onSessionTerminated();

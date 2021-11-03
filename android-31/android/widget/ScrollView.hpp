@@ -1,8 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../view/View.hpp"
-#include "../view/ViewGroup.hpp"
 #include "./FrameLayout.hpp"
 
 namespace android::content
@@ -33,6 +30,7 @@ namespace android::view
 {
 	class ViewGroup_LayoutParams;
 }
+class JString;
 
 namespace android::widget
 {
@@ -63,7 +61,7 @@ namespace android::widget
 		jboolean executeKeyEvent(android::view::KeyEvent arg0);
 		void fling(jint arg0);
 		jboolean fullScroll(jint arg0);
-		jstring getAccessibilityClassName();
+		JString getAccessibilityClassName();
 		jint getBottomEdgeEffectColor();
 		jint getMaxScrollAmount();
 		jint getTopEdgeEffectColor();

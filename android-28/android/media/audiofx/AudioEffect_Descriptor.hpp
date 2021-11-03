@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JString;
 namespace java::util
 {
 	class UUID;
@@ -13,9 +14,9 @@ namespace android::media::audiofx
 	{
 	public:
 		// Fields
-		jstring connectMode();
-		jstring implementor();
-		jstring name();
+		JString connectMode();
+		JString implementor();
+		JString name();
 		java::util::UUID type();
 		java::util::UUID uuid();
 		
@@ -25,7 +26,7 @@ namespace android::media::audiofx
 		
 		// Constructors
 		AudioEffect_Descriptor();
-		AudioEffect_Descriptor(jstring arg0, jstring arg1, jstring arg2, jstring arg3, jstring arg4);
+		AudioEffect_Descriptor(JString arg0, JString arg1, JString arg2, JString arg3, JString arg4);
 		
 		// Methods
 	};

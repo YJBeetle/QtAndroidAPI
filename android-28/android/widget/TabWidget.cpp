@@ -4,6 +4,7 @@
 #include "../view/MotionEvent.hpp"
 #include "../view/PointerIcon.hpp"
 #include "../view/View.hpp"
+#include "../../JString.hpp"
 #include "./TabWidget.hpp"
 
 namespace android::widget
@@ -78,12 +79,12 @@ namespace android::widget
 			arg0
 		);
 	}
-	jstring TabWidget::getAccessibilityClassName()
+	JString TabWidget::getAccessibilityClassName()
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	android::view::View TabWidget::getChildTabViewAt(jint arg0)
 	{

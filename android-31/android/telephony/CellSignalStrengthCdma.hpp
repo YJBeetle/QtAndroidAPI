@@ -1,12 +1,13 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./CellSignalStrength.hpp"
 
 namespace android::os
 {
 	class Parcel;
 }
+class JObject;
+class JString;
 
 namespace android::telephony
 {
@@ -24,7 +25,7 @@ namespace android::telephony
 		
 		// Methods
 		jint describeContents();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint getAsuLevel();
 		jint getCdmaDbm();
 		jint getCdmaEcio();
@@ -36,7 +37,7 @@ namespace android::telephony
 		jint getEvdoSnr();
 		jint getLevel();
 		jint hashCode();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::telephony

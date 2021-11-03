@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JArray;
 
 namespace android::service::autofill
 {
@@ -17,9 +18,9 @@ namespace android::service::autofill
 		// Constructors
 		
 		// Methods
-		static JObject _and(jarray arg0);
+		static JObject _and(JArray arg0);
 		static JObject _not(JObject arg0);
-		static JObject _or(jarray arg0);
+		static JObject _or(JArray arg0);
 	};
 } // namespace android::service::autofill
 

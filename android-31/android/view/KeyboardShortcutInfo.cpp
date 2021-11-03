@@ -1,4 +1,5 @@
 #include "../os/Parcel.hpp"
+#include "../../JString.hpp"
 #include "./KeyboardShortcutInfo.hpp"
 
 namespace android::view
@@ -17,19 +18,19 @@ namespace android::view
 	KeyboardShortcutInfo::KeyboardShortcutInfo(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	KeyboardShortcutInfo::KeyboardShortcutInfo(jstring arg0, jchar arg1, jint arg2)
+	KeyboardShortcutInfo::KeyboardShortcutInfo(JString arg0, jchar arg1, jint arg2)
 		: JObject(
 			"android.view.KeyboardShortcutInfo",
 			"(Ljava/lang/CharSequence;CI)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
 			arg2
 		) {}
-	KeyboardShortcutInfo::KeyboardShortcutInfo(jstring arg0, jint arg1, jint arg2)
+	KeyboardShortcutInfo::KeyboardShortcutInfo(JString arg0, jint arg1, jint arg2)
 		: JObject(
 			"android.view.KeyboardShortcutInfo",
 			"(Ljava/lang/CharSequence;II)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
 			arg2
 		) {}
@@ -56,12 +57,12 @@ namespace android::view
 			"()I"
 		);
 	}
-	jstring KeyboardShortcutInfo::getLabel()
+	JString KeyboardShortcutInfo::getLabel()
 	{
 		return callObjectMethod(
 			"getLabel",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	jint KeyboardShortcutInfo::getModifiers()
 	{

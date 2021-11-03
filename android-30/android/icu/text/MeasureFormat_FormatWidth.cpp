@@ -1,3 +1,5 @@
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
 #include "./MeasureFormat_FormatWidth.hpp"
 
 namespace android::icu::text
@@ -42,22 +44,22 @@ namespace android::icu::text
 	// Constructors
 	
 	// Methods
-	android::icu::text::MeasureFormat_FormatWidth MeasureFormat_FormatWidth::valueOf(jstring arg0)
+	android::icu::text::MeasureFormat_FormatWidth MeasureFormat_FormatWidth::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.icu.text.MeasureFormat$FormatWidth",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/icu/text/MeasureFormat$FormatWidth;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray MeasureFormat_FormatWidth::values()
+	JArray MeasureFormat_FormatWidth::values()
 	{
 		return callStaticObjectMethod(
 			"android.icu.text.MeasureFormat$FormatWidth",
 			"values",
 			"()[Landroid/icu/text/MeasureFormat$FormatWidth;"
-		).object<jarray>();
+		);
 	}
 } // namespace android::icu::text
 

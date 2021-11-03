@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JString;
 
 namespace android::mtp
 {
@@ -30,8 +31,8 @@ namespace android::mtp
 		jlong getImagePixHeightLong();
 		jint getImagePixWidth();
 		jlong getImagePixWidthLong();
-		jstring getKeywords();
-		jstring getName();
+		JString getKeywords();
+		JString getName();
 		jint getObjectHandle();
 		jint getParent();
 		jint getProtectionStatus();

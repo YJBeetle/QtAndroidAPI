@@ -1,3 +1,5 @@
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
 #include "./PKIXReason.hpp"
 
 namespace java::security::cert
@@ -74,22 +76,22 @@ namespace java::security::cert
 	// Constructors
 	
 	// Methods
-	java::security::cert::PKIXReason PKIXReason::valueOf(jstring arg0)
+	java::security::cert::PKIXReason PKIXReason::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"java.security.cert.PKIXReason",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/security/cert/PKIXReason;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray PKIXReason::values()
+	JArray PKIXReason::values()
 	{
 		return callStaticObjectMethod(
 			"java.security.cert.PKIXReason",
 			"values",
 			"()[Ljava/security/cert/PKIXReason;"
-		).object<jarray>();
+		);
 	}
 } // namespace java::security::cert
 

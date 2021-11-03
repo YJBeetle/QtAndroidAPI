@@ -1,5 +1,10 @@
+#include "../../JByteArray.hpp"
+#include "../../JLongArray.hpp"
+#include "../../JArray.hpp"
 #include "../io/ObjectInputStream.hpp"
 #include "../io/ObjectOutputStream.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "../nio/ByteBuffer.hpp"
 #include "../nio/LongBuffer.hpp"
 #include "./BitSet.hpp"
@@ -25,22 +30,22 @@ namespace java::util
 		) {}
 	
 	// Methods
-	java::util::BitSet BitSet::valueOf(jbyteArray arg0)
+	java::util::BitSet BitSet::valueOf(JByteArray arg0)
 	{
 		return callStaticObjectMethod(
 			"java.util.BitSet",
 			"valueOf",
 			"([B)Ljava/util/BitSet;",
-			arg0
+			arg0.object<jbyteArray>()
 		);
 	}
-	java::util::BitSet BitSet::valueOf(jlongArray arg0)
+	java::util::BitSet BitSet::valueOf(JLongArray arg0)
 	{
 		return callStaticObjectMethod(
 			"java.util.BitSet",
 			"valueOf",
 			"([J)Ljava/util/BitSet;",
-			arg0
+			arg0.object<jlongArray>()
 		);
 	}
 	java::util::BitSet BitSet::valueOf(java::nio::ByteBuffer arg0)
@@ -108,19 +113,19 @@ namespace java::util
 			arg1
 		);
 	}
-	jobject BitSet::clone()
+	JObject BitSet::clone()
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
-	jboolean BitSet::equals(jobject arg0)
+	jboolean BitSet::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	void BitSet::flip(jint arg0)
@@ -276,26 +281,26 @@ namespace java::util
 			"()Ljava/util/stream/IntStream;"
 		);
 	}
-	jbyteArray BitSet::toByteArray()
+	JByteArray BitSet::toByteArray()
 	{
 		return callObjectMethod(
 			"toByteArray",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
-	jlongArray BitSet::toLongArray()
+	JLongArray BitSet::toLongArray()
 	{
 		return callObjectMethod(
 			"toLongArray",
 			"()[J"
-		).object<jlongArray>();
+		);
 	}
-	jstring BitSet::toString()
+	JString BitSet::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void BitSet::_xor(java::util::BitSet arg0)
 	{

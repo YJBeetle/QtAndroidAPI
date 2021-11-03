@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./CertificateNotYetValidException.hpp"
 
 namespace javax::security::cert
@@ -13,11 +14,11 @@ namespace javax::security::cert
 			"javax.security.cert.CertificateNotYetValidException",
 			"()V"
 		) {}
-	CertificateNotYetValidException::CertificateNotYetValidException(jstring arg0)
+	CertificateNotYetValidException::CertificateNotYetValidException(JString arg0)
 		: javax::security::cert::CertificateException(
 			"javax.security.cert.CertificateNotYetValidException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

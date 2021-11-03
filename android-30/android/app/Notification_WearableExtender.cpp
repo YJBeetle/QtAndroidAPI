@@ -3,6 +3,8 @@
 #include "./Notification_Builder.hpp"
 #include "./PendingIntent.hpp"
 #include "../graphics/Bitmap.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./Notification_WearableExtender.hpp"
 
 namespace android::app
@@ -164,12 +166,12 @@ namespace android::app
 			"()Landroid/graphics/Bitmap;"
 		);
 	}
-	jstring Notification_WearableExtender::getBridgeTag()
+	JString Notification_WearableExtender::getBridgeTag()
 	{
 		return callObjectMethod(
 			"getBridgeTag",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint Notification_WearableExtender::getContentAction()
 	{
@@ -213,12 +215,12 @@ namespace android::app
 			"()I"
 		);
 	}
-	jstring Notification_WearableExtender::getDismissalId()
+	JString Notification_WearableExtender::getDismissalId()
 	{
 		return callObjectMethod(
 			"getDismissalId",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::app::PendingIntent Notification_WearableExtender::getDisplayIntent()
 	{
@@ -298,12 +300,12 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	android::app::Notification_WearableExtender Notification_WearableExtender::setBridgeTag(jstring arg0)
+	android::app::Notification_WearableExtender Notification_WearableExtender::setBridgeTag(JString arg0)
 	{
 		return callObjectMethod(
 			"setBridgeTag",
 			"(Ljava/lang/String;)Landroid/app/Notification$WearableExtender;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::app::Notification_WearableExtender Notification_WearableExtender::setContentAction(jint arg0)
@@ -354,12 +356,12 @@ namespace android::app
 			arg0
 		);
 	}
-	android::app::Notification_WearableExtender Notification_WearableExtender::setDismissalId(jstring arg0)
+	android::app::Notification_WearableExtender Notification_WearableExtender::setDismissalId(JString arg0)
 	{
 		return callObjectMethod(
 			"setDismissalId",
 			"(Ljava/lang/String;)Landroid/app/Notification$WearableExtender;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::app::Notification_WearableExtender Notification_WearableExtender::setDisplayIntent(android::app::PendingIntent arg0)

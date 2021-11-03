@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JByteArray;
 namespace android::graphics
 {
 	class Rect;
@@ -10,6 +11,7 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
 
 namespace android::view::displayhash
 {
@@ -24,15 +26,15 @@ namespace android::view::displayhash
 		VerifiedDisplayHash(QAndroidJniObject obj);
 		
 		// Constructors
-		VerifiedDisplayHash(jlong arg0, android::graphics::Rect arg1, jstring arg2, jbyteArray arg3);
+		VerifiedDisplayHash(jlong arg0, android::graphics::Rect arg1, JString arg2, JByteArray arg3);
 		
 		// Methods
 		jint describeContents();
 		android::graphics::Rect getBoundsInWindow();
-		jstring getHashAlgorithm();
-		jbyteArray getImageHash();
+		JString getHashAlgorithm();
+		JByteArray getImageHash();
 		jlong getTimeMillis();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::view::displayhash

@@ -2,26 +2,27 @@
 #include "../content/ContextParams.hpp"
 #include "../content/Intent.hpp"
 #include "./RecognitionService_Callback.hpp"
+#include "../../JString.hpp"
 #include "./RecognitionService.hpp"
 
 namespace android::speech
 {
 	// Fields
-	jstring RecognitionService::SERVICE_INTERFACE()
+	JString RecognitionService::SERVICE_INTERFACE()
 	{
 		return getStaticObjectField(
 			"android.speech.RecognitionService",
 			"SERVICE_INTERFACE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring RecognitionService::SERVICE_META_DATA()
+	JString RecognitionService::SERVICE_META_DATA()
 	{
 		return getStaticObjectField(
 			"android.speech.RecognitionService",
 			"SERVICE_META_DATA",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QAndroidJniObject forward

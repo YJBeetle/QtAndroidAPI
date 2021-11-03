@@ -1,4 +1,6 @@
 #include "../os/Parcel.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./PageRange.hpp"
 
 namespace android::print
@@ -41,12 +43,12 @@ namespace android::print
 			"()I"
 		);
 	}
-	jboolean PageRange::equals(jobject arg0)
+	jboolean PageRange::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint PageRange::getEnd()
@@ -70,12 +72,12 @@ namespace android::print
 			"()I"
 		);
 	}
-	jstring PageRange::toString()
+	JString PageRange::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void PageRange::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

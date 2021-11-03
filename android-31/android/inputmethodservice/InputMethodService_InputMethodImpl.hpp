@@ -1,6 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./AbstractInputMethodService_AbstractInputMethodImpl.hpp"
 
 namespace android::inputmethodservice

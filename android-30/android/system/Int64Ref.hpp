@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JString;
 
 namespace android::system
 {
@@ -19,7 +20,7 @@ namespace android::system
 		Int64Ref(jlong arg0);
 		
 		// Methods
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::system
 

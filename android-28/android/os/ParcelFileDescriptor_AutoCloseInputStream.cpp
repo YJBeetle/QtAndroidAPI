@@ -1,3 +1,4 @@
+#include "../../JByteArray.hpp"
 #include "./ParcelFileDescriptor.hpp"
 #include "./ParcelFileDescriptor_AutoCloseInputStream.hpp"
 
@@ -31,20 +32,20 @@ namespace android::os
 			"()I"
 		);
 	}
-	jint ParcelFileDescriptor_AutoCloseInputStream::read(jbyteArray arg0)
+	jint ParcelFileDescriptor_AutoCloseInputStream::read(JByteArray arg0)
 	{
 		return callMethod<jint>(
 			"read",
 			"([B)I",
-			arg0
+			arg0.object<jbyteArray>()
 		);
 	}
-	jint ParcelFileDescriptor_AutoCloseInputStream::read(jbyteArray arg0, jint arg1, jint arg2)
+	jint ParcelFileDescriptor_AutoCloseInputStream::read(JByteArray arg0, jint arg1, jint arg2)
 	{
 		return callMethod<jint>(
 			"read",
 			"([BII)I",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1,
 			arg2
 		);

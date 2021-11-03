@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JObject;
 
 namespace android::media
 {
@@ -221,7 +222,7 @@ namespace android::media
 		MediaCodecInfo_CodecProfileLevel();
 		
 		// Methods
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint hashCode();
 	};
 } // namespace android::media

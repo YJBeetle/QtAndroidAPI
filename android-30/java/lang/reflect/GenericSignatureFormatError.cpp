@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./GenericSignatureFormatError.hpp"
 
 namespace java::lang::reflect
@@ -13,11 +14,11 @@ namespace java::lang::reflect
 			"java.lang.reflect.GenericSignatureFormatError",
 			"()V"
 		) {}
-	GenericSignatureFormatError::GenericSignatureFormatError(jstring arg0)
+	GenericSignatureFormatError::GenericSignatureFormatError(JString arg0)
 		: java::lang::ClassFormatError(
 			"java.lang.reflect.GenericSignatureFormatError",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

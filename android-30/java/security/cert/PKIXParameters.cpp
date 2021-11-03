@@ -1,3 +1,5 @@
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "../KeyStore.hpp"
 #include "./CertStore.hpp"
 #include "./PKIXCertPathChecker.hpp"
@@ -42,12 +44,12 @@ namespace java::security::cert
 			arg0.object()
 		);
 	}
-	jobject PKIXParameters::clone()
+	JObject PKIXParameters::clone()
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
 	JObject PKIXParameters::getCertPathCheckers()
 	{
@@ -84,12 +86,12 @@ namespace java::security::cert
 			"()Z"
 		);
 	}
-	jstring PKIXParameters::getSigProvider()
+	JString PKIXParameters::getSigProvider()
 	{
 		return callObjectMethod(
 			"getSigProvider",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	JObject PKIXParameters::getTargetCertConstraints()
 	{
@@ -205,12 +207,12 @@ namespace java::security::cert
 			arg0
 		);
 	}
-	void PKIXParameters::setSigProvider(jstring arg0)
+	void PKIXParameters::setSigProvider(JString arg0)
 	{
 		callMethod<void>(
 			"setSigProvider",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void PKIXParameters::setTargetCertConstraints(JObject arg0)
@@ -229,12 +231,12 @@ namespace java::security::cert
 			arg0.object()
 		);
 	}
-	jstring PKIXParameters::toString()
+	JString PKIXParameters::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::security::cert
 

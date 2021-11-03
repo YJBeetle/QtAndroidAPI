@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JArray;
+class JArray;
 namespace java::io
 {
 	class File;
@@ -27,12 +29,12 @@ namespace java::lang
 		ProcessBuilder(QAndroidJniObject obj);
 		
 		// Constructors
-		ProcessBuilder(jarray arg0);
+		ProcessBuilder(JArray arg0);
 		ProcessBuilder(JObject arg0);
 		
 		// Methods
 		static JObject startPipeline(JObject arg0);
-		java::lang::ProcessBuilder command(jarray arg0);
+		java::lang::ProcessBuilder command(JArray arg0);
 		java::lang::ProcessBuilder command(JObject arg0);
 		JObject command();
 		java::io::File directory();

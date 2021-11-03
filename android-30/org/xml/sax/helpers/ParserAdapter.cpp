@@ -1,3 +1,7 @@
+#include "../../../../JCharArray.hpp"
+#include "../../../../JArray.hpp"
+#include "../../../../JObject.hpp"
+#include "../../../../JString.hpp"
 #include "../InputSource.hpp"
 #include "../SAXParseException.hpp"
 #include "./AttributesImpl.hpp"
@@ -25,12 +29,12 @@ namespace org::xml::sax::helpers
 		) {}
 	
 	// Methods
-	void ParserAdapter::characters(jcharArray arg0, jint arg1, jint arg2)
+	void ParserAdapter::characters(JCharArray arg0, jint arg1, jint arg2)
 	{
 		callMethod<void>(
 			"characters",
 			"([CII)V",
-			arg0,
+			arg0.object<jcharArray>(),
 			arg1,
 			arg2
 		);
@@ -42,12 +46,12 @@ namespace org::xml::sax::helpers
 			"()V"
 		);
 	}
-	void ParserAdapter::endElement(jstring arg0)
+	void ParserAdapter::endElement(JString arg0)
 	{
 		callMethod<void>(
 			"endElement",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	JObject ParserAdapter::getContentHandler()
@@ -78,38 +82,38 @@ namespace org::xml::sax::helpers
 			"()Lorg/xml/sax/ErrorHandler;"
 		);
 	}
-	jboolean ParserAdapter::getFeature(jstring arg0)
+	jboolean ParserAdapter::getFeature(JString arg0)
 	{
 		return callMethod<jboolean>(
 			"getFeature",
 			"(Ljava/lang/String;)Z",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jobject ParserAdapter::getProperty(jstring arg0)
+	JObject ParserAdapter::getProperty(JString arg0)
 	{
 		return callObjectMethod(
 			"getProperty",
 			"(Ljava/lang/String;)Ljava/lang/Object;",
-			arg0
-		).object<jobject>();
+			arg0.object<jstring>()
+		);
 	}
-	void ParserAdapter::ignorableWhitespace(jcharArray arg0, jint arg1, jint arg2)
+	void ParserAdapter::ignorableWhitespace(JCharArray arg0, jint arg1, jint arg2)
 	{
 		callMethod<void>(
 			"ignorableWhitespace",
 			"([CII)V",
-			arg0,
+			arg0.object<jcharArray>(),
 			arg1,
 			arg2
 		);
 	}
-	void ParserAdapter::parse(jstring arg0)
+	void ParserAdapter::parse(JString arg0)
 	{
 		callMethod<void>(
 			"parse",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void ParserAdapter::parse(org::xml::sax::InputSource arg0)
@@ -120,13 +124,13 @@ namespace org::xml::sax::helpers
 			arg0.object()
 		);
 	}
-	void ParserAdapter::processingInstruction(jstring arg0, jstring arg1)
+	void ParserAdapter::processingInstruction(JString arg0, JString arg1)
 	{
 		callMethod<void>(
 			"processingInstruction",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		);
 	}
 	void ParserAdapter::setContentHandler(JObject arg0)
@@ -169,22 +173,22 @@ namespace org::xml::sax::helpers
 			arg0.object()
 		);
 	}
-	void ParserAdapter::setFeature(jstring arg0, jboolean arg1)
+	void ParserAdapter::setFeature(JString arg0, jboolean arg1)
 	{
 		callMethod<void>(
 			"setFeature",
 			"(Ljava/lang/String;Z)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
-	void ParserAdapter::setProperty(jstring arg0, jobject arg1)
+	void ParserAdapter::setProperty(JString arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"setProperty",
 			"(Ljava/lang/String;Ljava/lang/Object;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jobject>()
 		);
 	}
 	void ParserAdapter::startDocument()
@@ -194,12 +198,12 @@ namespace org::xml::sax::helpers
 			"()V"
 		);
 	}
-	void ParserAdapter::startElement(jstring arg0, JObject arg1)
+	void ParserAdapter::startElement(JString arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"startElement",
 			"(Ljava/lang/String;Lorg/xml/sax/AttributeList;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}

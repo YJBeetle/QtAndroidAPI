@@ -1,3 +1,6 @@
+#include "../../../../JCharArray.hpp"
+#include "../../../../JObject.hpp"
+#include "../../../../JString.hpp"
 #include "../InputSource.hpp"
 #include "../SAXParseException.hpp"
 #include "./XMLFilterImpl.hpp"
@@ -23,12 +26,12 @@ namespace org::xml::sax::helpers
 		) {}
 	
 	// Methods
-	void XMLFilterImpl::characters(jcharArray arg0, jint arg1, jint arg2)
+	void XMLFilterImpl::characters(JCharArray arg0, jint arg1, jint arg2)
 	{
 		callMethod<void>(
 			"characters",
 			"([CII)V",
-			arg0,
+			arg0.object<jcharArray>(),
 			arg1,
 			arg2
 		);
@@ -40,22 +43,22 @@ namespace org::xml::sax::helpers
 			"()V"
 		);
 	}
-	void XMLFilterImpl::endElement(jstring arg0, jstring arg1, jstring arg2)
+	void XMLFilterImpl::endElement(JString arg0, JString arg1, JString arg2)
 	{
 		callMethod<void>(
 			"endElement",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1,
-			arg2
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2.object<jstring>()
 		);
 	}
-	void XMLFilterImpl::endPrefixMapping(jstring arg0)
+	void XMLFilterImpl::endPrefixMapping(JString arg0)
 	{
 		callMethod<void>(
 			"endPrefixMapping",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void XMLFilterImpl::error(org::xml::sax::SAXParseException arg0)
@@ -102,12 +105,12 @@ namespace org::xml::sax::helpers
 			"()Lorg/xml/sax/ErrorHandler;"
 		);
 	}
-	jboolean XMLFilterImpl::getFeature(jstring arg0)
+	jboolean XMLFilterImpl::getFeature(JString arg0)
 	{
 		return callMethod<jboolean>(
 			"getFeature",
 			"(Ljava/lang/String;)Z",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	JObject XMLFilterImpl::getParent()
@@ -117,40 +120,40 @@ namespace org::xml::sax::helpers
 			"()Lorg/xml/sax/XMLReader;"
 		);
 	}
-	jobject XMLFilterImpl::getProperty(jstring arg0)
+	JObject XMLFilterImpl::getProperty(JString arg0)
 	{
 		return callObjectMethod(
 			"getProperty",
 			"(Ljava/lang/String;)Ljava/lang/Object;",
-			arg0
-		).object<jobject>();
+			arg0.object<jstring>()
+		);
 	}
-	void XMLFilterImpl::ignorableWhitespace(jcharArray arg0, jint arg1, jint arg2)
+	void XMLFilterImpl::ignorableWhitespace(JCharArray arg0, jint arg1, jint arg2)
 	{
 		callMethod<void>(
 			"ignorableWhitespace",
 			"([CII)V",
-			arg0,
+			arg0.object<jcharArray>(),
 			arg1,
 			arg2
 		);
 	}
-	void XMLFilterImpl::notationDecl(jstring arg0, jstring arg1, jstring arg2)
+	void XMLFilterImpl::notationDecl(JString arg0, JString arg1, JString arg2)
 	{
 		callMethod<void>(
 			"notationDecl",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1,
-			arg2
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2.object<jstring>()
 		);
 	}
-	void XMLFilterImpl::parse(jstring arg0)
+	void XMLFilterImpl::parse(JString arg0)
 	{
 		callMethod<void>(
 			"parse",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void XMLFilterImpl::parse(org::xml::sax::InputSource arg0)
@@ -161,22 +164,22 @@ namespace org::xml::sax::helpers
 			arg0.object()
 		);
 	}
-	void XMLFilterImpl::processingInstruction(jstring arg0, jstring arg1)
+	void XMLFilterImpl::processingInstruction(JString arg0, JString arg1)
 	{
 		callMethod<void>(
 			"processingInstruction",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		);
 	}
-	org::xml::sax::InputSource XMLFilterImpl::resolveEntity(jstring arg0, jstring arg1)
+	org::xml::sax::InputSource XMLFilterImpl::resolveEntity(JString arg0, JString arg1)
 	{
 		return callObjectMethod(
 			"resolveEntity",
 			"(Ljava/lang/String;Ljava/lang/String;)Lorg/xml/sax/InputSource;",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		);
 	}
 	void XMLFilterImpl::setContentHandler(JObject arg0)
@@ -219,12 +222,12 @@ namespace org::xml::sax::helpers
 			arg0.object()
 		);
 	}
-	void XMLFilterImpl::setFeature(jstring arg0, jboolean arg1)
+	void XMLFilterImpl::setFeature(JString arg0, jboolean arg1)
 	{
 		callMethod<void>(
 			"setFeature",
 			"(Ljava/lang/String;Z)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
@@ -236,21 +239,21 @@ namespace org::xml::sax::helpers
 			arg0.object()
 		);
 	}
-	void XMLFilterImpl::setProperty(jstring arg0, jobject arg1)
+	void XMLFilterImpl::setProperty(JString arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"setProperty",
 			"(Ljava/lang/String;Ljava/lang/Object;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jobject>()
 		);
 	}
-	void XMLFilterImpl::skippedEntity(jstring arg0)
+	void XMLFilterImpl::skippedEntity(JString arg0)
 	{
 		callMethod<void>(
 			"skippedEntity",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void XMLFilterImpl::startDocument()
@@ -260,35 +263,35 @@ namespace org::xml::sax::helpers
 			"()V"
 		);
 	}
-	void XMLFilterImpl::startElement(jstring arg0, jstring arg1, jstring arg2, JObject arg3)
+	void XMLFilterImpl::startElement(JString arg0, JString arg1, JString arg2, JObject arg3)
 	{
 		callMethod<void>(
 			"startElement",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lorg/xml/sax/Attributes;)V",
-			arg0,
-			arg1,
-			arg2,
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2.object<jstring>(),
 			arg3.object()
 		);
 	}
-	void XMLFilterImpl::startPrefixMapping(jstring arg0, jstring arg1)
+	void XMLFilterImpl::startPrefixMapping(JString arg0, JString arg1)
 	{
 		callMethod<void>(
 			"startPrefixMapping",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		);
 	}
-	void XMLFilterImpl::unparsedEntityDecl(jstring arg0, jstring arg1, jstring arg2, jstring arg3)
+	void XMLFilterImpl::unparsedEntityDecl(JString arg0, JString arg1, JString arg2, JString arg3)
 	{
 		callMethod<void>(
 			"unparsedEntityDecl",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2.object<jstring>(),
+			arg3.object<jstring>()
 		);
 	}
 	void XMLFilterImpl::warning(org::xml::sax::SAXParseException arg0)

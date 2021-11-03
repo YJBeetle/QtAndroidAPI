@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JObject;
 namespace java::lang
 {
 	class Thread;
@@ -27,9 +28,9 @@ namespace java::lang
 		
 		// Methods
 		static java::lang::ThreadLocal withInitial(JObject arg0);
-		jobject get();
+		JObject get();
 		void remove();
-		void set(jobject arg0);
+		void set(JObject arg0);
 	};
 } // namespace java::lang
 

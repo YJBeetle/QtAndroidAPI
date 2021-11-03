@@ -1,26 +1,29 @@
+#include "../../../JLongArray.hpp"
+#include "../../../JArray.hpp"
 #include "../MacAddress.hpp"
 #include "../ProxyInfo.hpp"
 #include "./WifiEnterpriseConfig.hpp"
 #include "../../os/Parcel.hpp"
+#include "../../../JString.hpp"
 #include "../../../java/util/BitSet.hpp"
 #include "./WifiConfiguration.hpp"
 
 namespace android::net::wifi
 {
 	// Fields
-	jstring WifiConfiguration::BSSID()
+	JString WifiConfiguration::BSSID()
 	{
 		return getObjectField(
 			"BSSID",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring WifiConfiguration::FQDN()
+	JString WifiConfiguration::FQDN()
 	{
 		return getObjectField(
 			"FQDN",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint WifiConfiguration::SECURITY_TYPE_EAP()
 	{
@@ -85,12 +88,12 @@ namespace android::net::wifi
 			"SECURITY_TYPE_WEP"
 		);
 	}
-	jstring WifiConfiguration::SSID()
+	JString WifiConfiguration::SSID()
 	{
 		return getObjectField(
 			"SSID",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	java::util::BitSet WifiConfiguration::allowedAuthAlgorithms()
 	{
@@ -166,12 +169,12 @@ namespace android::net::wifi
 			"networkId"
 		);
 	}
-	jstring WifiConfiguration::preSharedKey()
+	JString WifiConfiguration::preSharedKey()
 	{
 		return getObjectField(
 			"preSharedKey",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint WifiConfiguration::priority()
 	{
@@ -179,19 +182,19 @@ namespace android::net::wifi
 			"priority"
 		);
 	}
-	jstring WifiConfiguration::providerFriendlyName()
+	JString WifiConfiguration::providerFriendlyName()
 	{
 		return getObjectField(
 			"providerFriendlyName",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jlongArray WifiConfiguration::roamingConsortiumIds()
+	JLongArray WifiConfiguration::roamingConsortiumIds()
 	{
 		return getObjectField(
 			"roamingConsortiumIds",
 			"[J"
-		).object<jlongArray>();
+		);
 	}
 	jint WifiConfiguration::status()
 	{
@@ -199,12 +202,12 @@ namespace android::net::wifi
 			"status"
 		);
 	}
-	jarray WifiConfiguration::wepKeys()
+	JArray WifiConfiguration::wepKeys()
 	{
 		return getObjectField(
 			"wepKeys",
 			"[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
 	jint WifiConfiguration::wepTxKeyIndex()
 	{
@@ -244,12 +247,12 @@ namespace android::net::wifi
 			"()Landroid/net/ProxyInfo;"
 		);
 	}
-	jstring WifiConfiguration::getKey()
+	JString WifiConfiguration::getKey()
 	{
 		return callObjectMethod(
 			"getKey",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::net::MacAddress WifiConfiguration::getRandomizedMacAddress()
 	{
@@ -281,12 +284,12 @@ namespace android::net::wifi
 			arg0
 		);
 	}
-	jstring WifiConfiguration::toString()
+	JString WifiConfiguration::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void WifiConfiguration::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

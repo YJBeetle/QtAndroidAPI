@@ -1,3 +1,4 @@
+#include "../../../../JString.hpp"
 #include "./LoginException.hpp"
 
 namespace javax::security::auth::login
@@ -13,11 +14,11 @@ namespace javax::security::auth::login
 			"javax.security.auth.login.LoginException",
 			"()V"
 		) {}
-	LoginException::LoginException(jstring arg0)
+	LoginException::LoginException(JString arg0)
 		: java::security::GeneralSecurityException(
 			"javax.security.auth.login.LoginException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

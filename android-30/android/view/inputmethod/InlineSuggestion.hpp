@@ -18,6 +18,8 @@ namespace android::view::inputmethod
 {
 	class InlineSuggestionInfo;
 }
+class JObject;
+class JString;
 
 namespace android::view::inputmethod
 {
@@ -35,11 +37,11 @@ namespace android::view::inputmethod
 		
 		// Methods
 		jint describeContents();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		android::view::inputmethod::InlineSuggestionInfo getInfo();
 		jint hashCode();
 		void inflate(android::content::Context arg0, android::util::Size arg1, JObject arg2, JObject arg3);
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::view::inputmethod

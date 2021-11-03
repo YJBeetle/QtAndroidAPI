@@ -1,6 +1,7 @@
 #include "./BiometricPrompt_AuthenticationCallback.hpp"
 #include "./BiometricPrompt_CryptoObject.hpp"
 #include "../../os/CancellationSignal.hpp"
+#include "../../../JString.hpp"
 #include "./BiometricPrompt.hpp"
 
 namespace android::hardware::biometrics
@@ -188,33 +189,33 @@ namespace android::hardware::biometrics
 			"()I"
 		);
 	}
-	jstring BiometricPrompt::getDescription()
+	JString BiometricPrompt::getDescription()
 	{
 		return callObjectMethod(
 			"getDescription",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
-	jstring BiometricPrompt::getNegativeButtonText()
+	JString BiometricPrompt::getNegativeButtonText()
 	{
 		return callObjectMethod(
 			"getNegativeButtonText",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
-	jstring BiometricPrompt::getSubtitle()
+	JString BiometricPrompt::getSubtitle()
 	{
 		return callObjectMethod(
 			"getSubtitle",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
-	jstring BiometricPrompt::getTitle()
+	JString BiometricPrompt::getTitle()
 	{
 		return callObjectMethod(
 			"getTitle",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	jboolean BiometricPrompt::isConfirmationRequired()
 	{

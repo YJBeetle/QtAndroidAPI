@@ -1,6 +1,9 @@
 #include "../net/Uri.hpp"
 #include "../os/Bundle.hpp"
 #include "../os/Parcel.hpp"
+#include "../../JString.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./MediaRoute2Info.hpp"
 
 namespace android::media
@@ -35,45 +38,45 @@ namespace android::media
 			"Landroid/os/Parcelable$Creator;"
 		);
 	}
-	jstring MediaRoute2Info::FEATURE_LIVE_AUDIO()
+	JString MediaRoute2Info::FEATURE_LIVE_AUDIO()
 	{
 		return getStaticObjectField(
 			"android.media.MediaRoute2Info",
 			"FEATURE_LIVE_AUDIO",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring MediaRoute2Info::FEATURE_LIVE_VIDEO()
+	JString MediaRoute2Info::FEATURE_LIVE_VIDEO()
 	{
 		return getStaticObjectField(
 			"android.media.MediaRoute2Info",
 			"FEATURE_LIVE_VIDEO",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring MediaRoute2Info::FEATURE_REMOTE_AUDIO_PLAYBACK()
+	JString MediaRoute2Info::FEATURE_REMOTE_AUDIO_PLAYBACK()
 	{
 		return getStaticObjectField(
 			"android.media.MediaRoute2Info",
 			"FEATURE_REMOTE_AUDIO_PLAYBACK",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring MediaRoute2Info::FEATURE_REMOTE_PLAYBACK()
+	JString MediaRoute2Info::FEATURE_REMOTE_PLAYBACK()
 	{
 		return getStaticObjectField(
 			"android.media.MediaRoute2Info",
 			"FEATURE_REMOTE_PLAYBACK",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring MediaRoute2Info::FEATURE_REMOTE_VIDEO_PLAYBACK()
+	JString MediaRoute2Info::FEATURE_REMOTE_VIDEO_PLAYBACK()
 	{
 		return getStaticObjectField(
 			"android.media.MediaRoute2Info",
 			"FEATURE_REMOTE_VIDEO_PLAYBACK",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint MediaRoute2Info::PLAYBACK_VOLUME_FIXED()
 	{
@@ -103,20 +106,20 @@ namespace android::media
 			"()I"
 		);
 	}
-	jboolean MediaRoute2Info::equals(jobject arg0)
+	jboolean MediaRoute2Info::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jstring MediaRoute2Info::getClientPackageName()
+	JString MediaRoute2Info::getClientPackageName()
 	{
 		return callObjectMethod(
 			"getClientPackageName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint MediaRoute2Info::getConnectionState()
 	{
@@ -125,12 +128,12 @@ namespace android::media
 			"()I"
 		);
 	}
-	jstring MediaRoute2Info::getDescription()
+	JString MediaRoute2Info::getDescription()
 	{
 		return callObjectMethod(
 			"getDescription",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	android::os::Bundle MediaRoute2Info::getExtras()
 	{
@@ -153,19 +156,19 @@ namespace android::media
 			"()Landroid/net/Uri;"
 		);
 	}
-	jstring MediaRoute2Info::getId()
+	JString MediaRoute2Info::getId()
 	{
 		return callObjectMethod(
 			"getId",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring MediaRoute2Info::getName()
+	JString MediaRoute2Info::getName()
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	jint MediaRoute2Info::getVolume()
 	{
@@ -202,12 +205,12 @@ namespace android::media
 			"()Z"
 		);
 	}
-	jstring MediaRoute2Info::toString()
+	JString MediaRoute2Info::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void MediaRoute2Info::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

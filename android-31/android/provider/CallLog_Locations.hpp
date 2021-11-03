@@ -6,6 +6,7 @@ namespace android::net
 {
 	class Uri;
 }
+class JString;
 
 namespace android::provider
 {
@@ -13,12 +14,12 @@ namespace android::provider
 	{
 	public:
 		// Fields
-		static jstring AUTHORITY();
-		static jstring CONTENT_ITEM_TYPE();
-		static jstring CONTENT_TYPE();
+		static JString AUTHORITY();
+		static JString CONTENT_ITEM_TYPE();
+		static JString CONTENT_TYPE();
 		static android::net::Uri CONTENT_URI();
-		static jstring LATITUDE();
-		static jstring LONGITUDE();
+		static JString LATITUDE();
+		static JString LONGITUDE();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit CallLog_Locations(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}

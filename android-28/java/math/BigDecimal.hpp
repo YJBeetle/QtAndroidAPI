@@ -1,8 +1,14 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "../lang/Number.hpp"
 
+class JCharArray;
+class JDoubleArray;
+class JFloatArray;
+class JLongArray;
+class JArray;
+class JArray;
+class JArray;
 namespace java::io
 {
 	class ObjectInputStream;
@@ -11,6 +17,8 @@ namespace java::io
 {
 	class ObjectOutputStream;
 }
+class JObject;
+class JString;
 namespace java::math
 {
 	class BigInteger;
@@ -47,22 +55,22 @@ namespace java::math
 		BigDecimal(QAndroidJniObject obj);
 		
 		// Constructors
-		BigDecimal(jcharArray arg0);
+		BigDecimal(JCharArray arg0);
 		BigDecimal(jdouble arg0);
 		BigDecimal(jint arg0);
-		BigDecimal(jstring arg0);
+		BigDecimal(JString arg0);
 		BigDecimal(java::math::BigInteger arg0);
 		BigDecimal(jlong arg0);
-		BigDecimal(jcharArray arg0, java::math::MathContext arg1);
+		BigDecimal(JCharArray arg0, java::math::MathContext arg1);
 		BigDecimal(jdouble arg0, java::math::MathContext arg1);
 		BigDecimal(jint arg0, java::math::MathContext arg1);
-		BigDecimal(jstring arg0, java::math::MathContext arg1);
+		BigDecimal(JString arg0, java::math::MathContext arg1);
 		BigDecimal(java::math::BigInteger arg0, jint arg1);
 		BigDecimal(java::math::BigInteger arg0, java::math::MathContext arg1);
 		BigDecimal(jlong arg0, java::math::MathContext arg1);
-		BigDecimal(jcharArray arg0, jint arg1, jint arg2);
+		BigDecimal(JCharArray arg0, jint arg1, jint arg2);
 		BigDecimal(java::math::BigInteger arg0, jint arg1, java::math::MathContext arg2);
-		BigDecimal(jcharArray arg0, jint arg1, jint arg2, java::math::MathContext arg3);
+		BigDecimal(JCharArray arg0, jint arg1, jint arg2, java::math::MathContext arg3);
 		
 		// Methods
 		static java::math::BigDecimal valueOf(jdouble arg0);
@@ -73,7 +81,7 @@ namespace java::math
 		java::math::BigDecimal add(java::math::BigDecimal arg0);
 		java::math::BigDecimal add(java::math::BigDecimal arg0, java::math::MathContext arg1);
 		jbyte byteValueExact();
-		jint compareTo(jobject arg0);
+		jint compareTo(JObject arg0);
 		jint compareTo(java::math::BigDecimal arg0);
 		java::math::BigDecimal divide(java::math::BigDecimal arg0);
 		java::math::BigDecimal divide(java::math::BigDecimal arg0, jint arg1);
@@ -81,12 +89,12 @@ namespace java::math
 		java::math::BigDecimal divide(java::math::BigDecimal arg0, java::math::RoundingMode arg1);
 		java::math::BigDecimal divide(java::math::BigDecimal arg0, jint arg1, jint arg2);
 		java::math::BigDecimal divide(java::math::BigDecimal arg0, jint arg1, java::math::RoundingMode arg2);
-		jarray divideAndRemainder(java::math::BigDecimal arg0);
-		jarray divideAndRemainder(java::math::BigDecimal arg0, java::math::MathContext arg1);
+		JArray divideAndRemainder(java::math::BigDecimal arg0);
+		JArray divideAndRemainder(java::math::BigDecimal arg0, java::math::MathContext arg1);
 		java::math::BigDecimal divideToIntegralValue(java::math::BigDecimal arg0);
 		java::math::BigDecimal divideToIntegralValue(java::math::BigDecimal arg0, java::math::MathContext arg1);
 		jdouble doubleValue();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jfloat floatValue();
 		jint hashCode();
 		jint intValue();
@@ -122,9 +130,9 @@ namespace java::math
 		java::math::BigDecimal subtract(java::math::BigDecimal arg0, java::math::MathContext arg1);
 		java::math::BigInteger toBigInteger();
 		java::math::BigInteger toBigIntegerExact();
-		jstring toEngineeringString();
-		jstring toPlainString();
-		jstring toString();
+		JString toEngineeringString();
+		JString toPlainString();
+		JString toString();
 		java::math::BigDecimal ulp();
 		java::math::BigInteger unscaledValue();
 	};

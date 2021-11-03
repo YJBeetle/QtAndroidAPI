@@ -1,6 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "../security/Permission.hpp"
 
 namespace java::io
@@ -11,6 +10,8 @@ namespace java::io
 {
 	class ObjectOutputStream;
 }
+class JObject;
+class JString;
 namespace java::nio::file
 {
 	class FileSystem;
@@ -36,11 +37,11 @@ namespace java::io
 		FilePermission(QAndroidJniObject obj);
 		
 		// Constructors
-		FilePermission(jstring arg0, jstring arg1);
+		FilePermission(JString arg0, JString arg1);
 		
 		// Methods
-		jboolean equals(jobject arg0);
-		jstring getActions();
+		jboolean equals(JObject arg0);
+		JString getActions();
 		jint hashCode();
 		jboolean implies(java::security::Permission arg0);
 		java::security::PermissionCollection newPermissionCollection();

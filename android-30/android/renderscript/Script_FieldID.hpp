@@ -1,8 +1,6 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./BaseObj.hpp"
-
 
 namespace android::renderscript
 {

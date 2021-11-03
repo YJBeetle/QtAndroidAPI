@@ -6,6 +6,7 @@ namespace android::media
 {
 	class EncoderProfiles;
 }
+class JString;
 
 namespace android::media
 {
@@ -72,7 +73,7 @@ namespace android::media
 		// Methods
 		static android::media::CamcorderProfile get(jint arg0);
 		static android::media::CamcorderProfile get(jint arg0, jint arg1);
-		static android::media::EncoderProfiles getAll(jstring arg0, jint arg1);
+		static android::media::EncoderProfiles getAll(JString arg0, jint arg1);
 		static jboolean hasProfile(jint arg0);
 		static jboolean hasProfile(jint arg0, jint arg1);
 	};

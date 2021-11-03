@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./Exception.hpp"
 
+class JString;
 
 namespace java::lang
 {
@@ -17,7 +17,7 @@ namespace java::lang
 		
 		// Constructors
 		InterruptedException();
-		InterruptedException(jstring arg0);
+		InterruptedException(JString arg0);
 		
 		// Methods
 	};

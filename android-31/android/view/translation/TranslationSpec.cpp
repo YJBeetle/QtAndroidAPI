@@ -1,5 +1,7 @@
 #include "../../icu/util/ULocale.hpp"
 #include "../../os/Parcel.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./TranslationSpec.hpp"
 
 namespace android::view::translation
@@ -41,12 +43,12 @@ namespace android::view::translation
 			"()I"
 		);
 	}
-	jboolean TranslationSpec::equals(jobject arg0)
+	jboolean TranslationSpec::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint TranslationSpec::getDataFormat()
@@ -70,12 +72,12 @@ namespace android::view::translation
 			"()I"
 		);
 	}
-	jstring TranslationSpec::toString()
+	JString TranslationSpec::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void TranslationSpec::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

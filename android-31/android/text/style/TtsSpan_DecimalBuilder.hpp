@@ -1,9 +1,8 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "./TtsSpan_Builder.hpp"
 #include "./TtsSpan_SemioticClassBuilder.hpp"
 
+class JString;
 
 namespace android::text::style
 {
@@ -18,13 +17,13 @@ namespace android::text::style
 		
 		// Constructors
 		TtsSpan_DecimalBuilder();
-		TtsSpan_DecimalBuilder(jstring arg0, jstring arg1);
+		TtsSpan_DecimalBuilder(JString arg0, JString arg1);
 		TtsSpan_DecimalBuilder(jdouble arg0, jint arg1, jint arg2);
 		
 		// Methods
 		android::text::style::TtsSpan_DecimalBuilder setArgumentsFromDouble(jdouble arg0, jint arg1, jint arg2);
-		android::text::style::TtsSpan_DecimalBuilder setFractionalPart(jstring arg0);
-		android::text::style::TtsSpan_DecimalBuilder setIntegerPart(jstring arg0);
+		android::text::style::TtsSpan_DecimalBuilder setFractionalPart(JString arg0);
+		android::text::style::TtsSpan_DecimalBuilder setIntegerPart(JString arg0);
 		android::text::style::TtsSpan_DecimalBuilder setIntegerPart(jlong arg0);
 	};
 } // namespace android::text::style

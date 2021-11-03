@@ -1,3 +1,5 @@
+#include "../../../JArray.hpp"
+#include "../../../JThrowable.hpp"
 #include "./Violation.hpp"
 
 namespace android::os::strictmode
@@ -5,17 +7,17 @@ namespace android::os::strictmode
 	// Fields
 	
 	// QAndroidJniObject forward
-	Violation::Violation(QAndroidJniObject obj) : JObject(obj) {}
+	Violation::Violation(QAndroidJniObject obj) : JThrowable(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	jthrowable Violation::fillInStackTrace()
+	JThrowable Violation::fillInStackTrace()
 	{
 		return callObjectMethod(
 			"fillInStackTrace",
 			"()Ljava/lang/Throwable;"
-		).object<jthrowable>();
+		);
 	}
 	jint Violation::hashCode()
 	{
@@ -24,20 +26,20 @@ namespace android::os::strictmode
 			"()I"
 		);
 	}
-	jthrowable Violation::initCause(jthrowable arg0)
+	JThrowable Violation::initCause(JThrowable arg0)
 	{
 		return callObjectMethod(
 			"initCause",
 			"(Ljava/lang/Throwable;)Ljava/lang/Throwable;",
-			arg0
-		).object<jthrowable>();
+			arg0.object<jthrowable>()
+		);
 	}
-	void Violation::setStackTrace(jarray arg0)
+	void Violation::setStackTrace(JArray arg0)
 	{
 		callMethod<void>(
 			"setStackTrace",
 			"([Ljava/lang/StackTraceElement;)V",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
 } // namespace android::os::strictmode

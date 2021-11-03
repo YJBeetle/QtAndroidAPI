@@ -2,10 +2,13 @@
 
 #include "../../../../JObject.hpp"
 
+class JObjectArray;
 namespace java::io
 {
 	class ObjectInputStream;
 }
+class JObject;
+class JString;
 namespace java::lang::reflect
 {
 	class Field;
@@ -23,35 +26,35 @@ namespace java::util::concurrent::atomic
 		AtomicReferenceArray(QAndroidJniObject obj);
 		
 		// Constructors
-		AtomicReferenceArray(jobjectArray arg0);
+		AtomicReferenceArray(JObjectArray arg0);
 		AtomicReferenceArray(jint arg0);
 		
 		// Methods
-		jobject accumulateAndGet(jint arg0, jobject arg1, JObject arg2);
-		jobject compareAndExchange(jint arg0, jobject arg1, jobject arg2);
-		jobject compareAndExchangeAcquire(jint arg0, jobject arg1, jobject arg2);
-		jobject compareAndExchangeRelease(jint arg0, jobject arg1, jobject arg2);
-		jboolean compareAndSet(jint arg0, jobject arg1, jobject arg2);
-		jobject get(jint arg0);
-		jobject getAcquire(jint arg0);
-		jobject getAndAccumulate(jint arg0, jobject arg1, JObject arg2);
-		jobject getAndSet(jint arg0, jobject arg1);
-		jobject getAndUpdate(jint arg0, JObject arg1);
-		jobject getOpaque(jint arg0);
-		jobject getPlain(jint arg0);
-		void lazySet(jint arg0, jobject arg1);
+		JObject accumulateAndGet(jint arg0, JObject arg1, JObject arg2);
+		JObject compareAndExchange(jint arg0, JObject arg1, JObject arg2);
+		JObject compareAndExchangeAcquire(jint arg0, JObject arg1, JObject arg2);
+		JObject compareAndExchangeRelease(jint arg0, JObject arg1, JObject arg2);
+		jboolean compareAndSet(jint arg0, JObject arg1, JObject arg2);
+		JObject get(jint arg0);
+		JObject getAcquire(jint arg0);
+		JObject getAndAccumulate(jint arg0, JObject arg1, JObject arg2);
+		JObject getAndSet(jint arg0, JObject arg1);
+		JObject getAndUpdate(jint arg0, JObject arg1);
+		JObject getOpaque(jint arg0);
+		JObject getPlain(jint arg0);
+		void lazySet(jint arg0, JObject arg1);
 		jint length();
-		void set(jint arg0, jobject arg1);
-		void setOpaque(jint arg0, jobject arg1);
-		void setPlain(jint arg0, jobject arg1);
-		void setRelease(jint arg0, jobject arg1);
-		jstring toString();
-		jobject updateAndGet(jint arg0, JObject arg1);
-		jboolean weakCompareAndSet(jint arg0, jobject arg1, jobject arg2);
-		jboolean weakCompareAndSetAcquire(jint arg0, jobject arg1, jobject arg2);
-		jboolean weakCompareAndSetPlain(jint arg0, jobject arg1, jobject arg2);
-		jboolean weakCompareAndSetRelease(jint arg0, jobject arg1, jobject arg2);
-		jboolean weakCompareAndSetVolatile(jint arg0, jobject arg1, jobject arg2);
+		void set(jint arg0, JObject arg1);
+		void setOpaque(jint arg0, JObject arg1);
+		void setPlain(jint arg0, JObject arg1);
+		void setRelease(jint arg0, JObject arg1);
+		JString toString();
+		JObject updateAndGet(jint arg0, JObject arg1);
+		jboolean weakCompareAndSet(jint arg0, JObject arg1, JObject arg2);
+		jboolean weakCompareAndSetAcquire(jint arg0, JObject arg1, JObject arg2);
+		jboolean weakCompareAndSetPlain(jint arg0, JObject arg1, JObject arg2);
+		jboolean weakCompareAndSetRelease(jint arg0, JObject arg1, JObject arg2);
+		jboolean weakCompareAndSetVolatile(jint arg0, JObject arg1, JObject arg2);
 	};
 } // namespace java::util::concurrent::atomic
 

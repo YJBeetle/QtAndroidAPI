@@ -1,10 +1,8 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "./Drawable.hpp"
-#include "./DrawableContainer.hpp"
 #include "./StateListDrawable.hpp"
 
+class JIntArray;
 namespace android::content::res
 {
 	class Resources;
@@ -37,7 +35,7 @@ namespace android::graphics::drawable
 		AnimatedStateListDrawable();
 		
 		// Methods
-		void addState(jintArray arg0, android::graphics::drawable::Drawable arg1, jint arg2);
+		void addState(JIntArray arg0, android::graphics::drawable::Drawable arg1, jint arg2);
 		void addTransition(jint arg0, jint arg1, android::graphics::drawable::Drawable arg2, jboolean arg3);
 		void applyTheme(android::content::res::Resources_Theme arg0);
 		void inflate(android::content::res::Resources arg0, JObject arg1, JObject arg2, android::content::res::Resources_Theme arg3);

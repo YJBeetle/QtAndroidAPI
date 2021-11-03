@@ -2,6 +2,9 @@
 
 #include "../../JObject.hpp"
 
+class JByteArray;
+class JArray;
+class JArray;
 namespace android::app
 {
 	class PendingIntent;
@@ -50,6 +53,7 @@ namespace android::os
 {
 	class Handler;
 }
+class JString;
 namespace java::net
 {
 	class InetAddress;
@@ -65,22 +69,22 @@ namespace android::net
 	{
 	public:
 		// Fields
-		static jstring ACTION_BACKGROUND_DATA_SETTING_CHANGED();
-		static jstring ACTION_CAPTIVE_PORTAL_SIGN_IN();
-		static jstring ACTION_RESTRICT_BACKGROUND_CHANGED();
-		static jstring CONNECTIVITY_ACTION();
+		static JString ACTION_BACKGROUND_DATA_SETTING_CHANGED();
+		static JString ACTION_CAPTIVE_PORTAL_SIGN_IN();
+		static JString ACTION_RESTRICT_BACKGROUND_CHANGED();
+		static JString CONNECTIVITY_ACTION();
 		static jint DEFAULT_NETWORK_PREFERENCE();
-		static jstring EXTRA_CAPTIVE_PORTAL();
-		static jstring EXTRA_CAPTIVE_PORTAL_URL();
-		static jstring EXTRA_EXTRA_INFO();
-		static jstring EXTRA_IS_FAILOVER();
-		static jstring EXTRA_NETWORK();
-		static jstring EXTRA_NETWORK_INFO();
-		static jstring EXTRA_NETWORK_REQUEST();
-		static jstring EXTRA_NETWORK_TYPE();
-		static jstring EXTRA_NO_CONNECTIVITY();
-		static jstring EXTRA_OTHER_NETWORK_INFO();
-		static jstring EXTRA_REASON();
+		static JString EXTRA_CAPTIVE_PORTAL();
+		static JString EXTRA_CAPTIVE_PORTAL_URL();
+		static JString EXTRA_EXTRA_INFO();
+		static JString EXTRA_IS_FAILOVER();
+		static JString EXTRA_NETWORK();
+		static JString EXTRA_NETWORK_INFO();
+		static JString EXTRA_NETWORK_REQUEST();
+		static JString EXTRA_NETWORK_TYPE();
+		static JString EXTRA_NO_CONNECTIVITY();
+		static JString EXTRA_OTHER_NETWORK_INFO();
+		static JString EXTRA_REASON();
 		static jint MULTIPATH_PREFERENCE_HANDOVER();
 		static jint MULTIPATH_PREFERENCE_PERFORMANCE();
 		static jint MULTIPATH_PREFERENCE_RELIABILITY();
@@ -114,8 +118,8 @@ namespace android::net
 		android::net::SocketKeepalive createSocketKeepalive(android::net::Network arg0, android::net::IpSecManager_UdpEncapsulationSocket arg1, java::net::InetAddress arg2, java::net::InetAddress arg3, JObject arg4, android::net::SocketKeepalive_Callback arg5);
 		android::net::Network getActiveNetwork();
 		android::net::NetworkInfo getActiveNetworkInfo();
-		jarray getAllNetworkInfo();
-		jarray getAllNetworks();
+		JArray getAllNetworkInfo();
+		JArray getAllNetworks();
 		jboolean getBackgroundDataSetting();
 		android::net::Network getBoundNetworkForProcess();
 		jint getConnectionOwnerUid(jint arg0, java::net::InetSocketAddress arg1, java::net::InetSocketAddress arg2);
@@ -126,7 +130,7 @@ namespace android::net
 		android::net::NetworkInfo getNetworkInfo(android::net::Network arg0);
 		android::net::NetworkInfo getNetworkInfo(jint arg0);
 		jint getNetworkPreference();
-		jbyteArray getNetworkWatchlistConfigHash();
+		JByteArray getNetworkWatchlistConfigHash();
 		jint getRestrictBackgroundStatus();
 		jboolean isActiveNetworkMetered();
 		jboolean isDefaultNetworkActive();

@@ -1,3 +1,4 @@
+#include "../../JArray.hpp"
 #include "./FontsContract_FontFamilyResult.hpp"
 
 namespace android::provider
@@ -38,12 +39,12 @@ namespace android::provider
 	// Constructors
 	
 	// Methods
-	jarray FontsContract_FontFamilyResult::getFonts()
+	JArray FontsContract_FontFamilyResult::getFonts()
 	{
 		return callObjectMethod(
 			"getFonts",
 			"()[Landroid/provider/FontsContract$FontInfo;"
-		).object<jarray>();
+		);
 	}
 	jint FontsContract_FontFamilyResult::getStatusCode()
 	{

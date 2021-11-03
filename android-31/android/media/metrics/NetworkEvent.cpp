@@ -1,5 +1,7 @@
 #include "../../os/Bundle.hpp"
 #include "../../os/Parcel.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./NetworkEvent.hpp"
 
 namespace android::media::metrics
@@ -97,12 +99,12 @@ namespace android::media::metrics
 			"()I"
 		);
 	}
-	jboolean NetworkEvent::equals(jobject arg0)
+	jboolean NetworkEvent::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	android::os::Bundle NetworkEvent::getMetricsBundle()
@@ -133,12 +135,12 @@ namespace android::media::metrics
 			"()I"
 		);
 	}
-	jstring NetworkEvent::toString()
+	JString NetworkEvent::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void NetworkEvent::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

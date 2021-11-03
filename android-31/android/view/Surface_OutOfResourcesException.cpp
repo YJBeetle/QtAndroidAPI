@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./Surface_OutOfResourcesException.hpp"
 
 namespace android::view
@@ -13,11 +14,11 @@ namespace android::view
 			"android.view.Surface$OutOfResourcesException",
 			"()V"
 		) {}
-	Surface_OutOfResourcesException::Surface_OutOfResourcesException(jstring arg0)
+	Surface_OutOfResourcesException::Surface_OutOfResourcesException(JString arg0)
 		: java::lang::RuntimeException(
 			"android.view.Surface$OutOfResourcesException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

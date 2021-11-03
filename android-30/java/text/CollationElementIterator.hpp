@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JIntArray;
+class JString;
 namespace java::lang
 {
 	class StringBuffer;
@@ -35,7 +37,7 @@ namespace java::text
 		jint previous();
 		void reset();
 		void setOffset(jint arg0);
-		void setText(jstring arg0);
+		void setText(JString arg0);
 		void setText(JObject arg0);
 	};
 } // namespace java::text

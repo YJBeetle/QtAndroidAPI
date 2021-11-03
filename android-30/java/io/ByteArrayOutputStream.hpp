@@ -1,12 +1,13 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./OutputStream.hpp"
 
+class JByteArray;
 namespace java::io
 {
 	class OutputStream;
 }
+class JString;
 namespace java::nio::charset
 {
 	class Charset;
@@ -31,14 +32,14 @@ namespace java::io
 		void close();
 		void reset();
 		jint size();
-		jbyteArray toByteArray();
-		jstring toString();
-		jstring toString(jint arg0);
-		jstring toString(jstring arg0);
-		jstring toString(java::nio::charset::Charset arg0);
+		JByteArray toByteArray();
+		JString toString();
+		JString toString(jint arg0);
+		JString toString(JString arg0);
+		JString toString(java::nio::charset::Charset arg0);
 		void write(jint arg0);
-		void write(jbyteArray arg0, jint arg1, jint arg2);
-		void writeBytes(jbyteArray arg0);
+		void write(JByteArray arg0, jint arg1, jint arg2);
+		void writeBytes(JByteArray arg0);
 		void writeTo(java::io::OutputStream arg0);
 	};
 } // namespace java::io

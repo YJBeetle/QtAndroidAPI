@@ -10,6 +10,8 @@ namespace android::os
 {
 	class Bundle;
 }
+class JString;
+class JString;
 
 namespace android::media
 {
@@ -24,24 +26,24 @@ namespace android::media
 		
 		// Constructors
 		RoutingSessionInfo_Builder(android::media::RoutingSessionInfo arg0);
-		RoutingSessionInfo_Builder(jstring arg0, jstring arg1);
+		RoutingSessionInfo_Builder(JString arg0, JString arg1);
 		
 		// Methods
-		android::media::RoutingSessionInfo_Builder addDeselectableRoute(jstring arg0);
-		android::media::RoutingSessionInfo_Builder addSelectableRoute(jstring arg0);
-		android::media::RoutingSessionInfo_Builder addSelectedRoute(jstring arg0);
-		android::media::RoutingSessionInfo_Builder addTransferableRoute(jstring arg0);
+		android::media::RoutingSessionInfo_Builder addDeselectableRoute(JString arg0);
+		android::media::RoutingSessionInfo_Builder addSelectableRoute(JString arg0);
+		android::media::RoutingSessionInfo_Builder addSelectedRoute(JString arg0);
+		android::media::RoutingSessionInfo_Builder addTransferableRoute(JString arg0);
 		android::media::RoutingSessionInfo build();
 		android::media::RoutingSessionInfo_Builder clearDeselectableRoutes();
 		android::media::RoutingSessionInfo_Builder clearSelectableRoutes();
 		android::media::RoutingSessionInfo_Builder clearSelectedRoutes();
 		android::media::RoutingSessionInfo_Builder clearTransferableRoutes();
-		android::media::RoutingSessionInfo_Builder removeDeselectableRoute(jstring arg0);
-		android::media::RoutingSessionInfo_Builder removeSelectableRoute(jstring arg0);
-		android::media::RoutingSessionInfo_Builder removeSelectedRoute(jstring arg0);
-		android::media::RoutingSessionInfo_Builder removeTransferableRoute(jstring arg0);
+		android::media::RoutingSessionInfo_Builder removeDeselectableRoute(JString arg0);
+		android::media::RoutingSessionInfo_Builder removeSelectableRoute(JString arg0);
+		android::media::RoutingSessionInfo_Builder removeSelectedRoute(JString arg0);
+		android::media::RoutingSessionInfo_Builder removeTransferableRoute(JString arg0);
 		android::media::RoutingSessionInfo_Builder setControlHints(android::os::Bundle arg0);
-		android::media::RoutingSessionInfo_Builder setName(jstring arg0);
+		android::media::RoutingSessionInfo_Builder setName(JString arg0);
 		android::media::RoutingSessionInfo_Builder setVolume(jint arg0);
 		android::media::RoutingSessionInfo_Builder setVolumeHandling(jint arg0);
 		android::media::RoutingSessionInfo_Builder setVolumeMax(jint arg0);

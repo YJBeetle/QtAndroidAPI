@@ -1,5 +1,6 @@
 #include "../../os/Parcel.hpp"
 #include "../../view/View.hpp"
+#include "../../../JString.hpp"
 #include "./URLSpan.hpp"
 
 namespace android::text::style
@@ -16,11 +17,11 @@ namespace android::text::style
 			"(Landroid/os/Parcel;)V",
 			arg0.object()
 		) {}
-	URLSpan::URLSpan(jstring arg0)
+	URLSpan::URLSpan(JString arg0)
 		: android::text::style::ClickableSpan(
 			"android.text.style.URLSpan",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods
@@ -38,12 +39,12 @@ namespace android::text::style
 			"()I"
 		);
 	}
-	jstring URLSpan::getURL()
+	JString URLSpan::getURL()
 	{
 		return callObjectMethod(
 			"getURL",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void URLSpan::onClick(android::view::View arg0)
 	{

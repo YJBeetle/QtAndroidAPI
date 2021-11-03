@@ -5,6 +5,7 @@
 #include "../view/View.hpp"
 #include "../view/ViewGroup_LayoutParams.hpp"
 #include "../view/animation/Transformation.hpp"
+#include "../../JString.hpp"
 #include "./Gallery.hpp"
 
 namespace android::widget
@@ -71,12 +72,12 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	jstring Gallery::getAccessibilityClassName()
+	JString Gallery::getAccessibilityClassName()
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	jboolean Gallery::onDown(android::view::MotionEvent arg0)
 	{

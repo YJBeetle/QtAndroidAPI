@@ -1,14 +1,12 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "../../../java/lang/Exception.hpp"
-#include "../../../java/lang/RuntimeException.hpp"
 #include "../../../java/lang/IllegalStateException.hpp"
 
 namespace android::os
 {
 	class Parcel;
 }
+class JString;
 
 namespace android::app::admin
 {
@@ -26,7 +24,7 @@ namespace android::app::admin
 		
 		// Methods
 		jint describeContents();
-		jstring getMessage();
+		JString getMessage();
 		JObject getReasons();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};

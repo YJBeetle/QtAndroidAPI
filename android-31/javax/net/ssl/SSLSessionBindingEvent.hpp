@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "../../../java/util/EventObject.hpp"
 
+class JString;
 
 namespace javax::net::ssl
 {
@@ -16,10 +16,10 @@ namespace javax::net::ssl
 		SSLSessionBindingEvent(QAndroidJniObject obj);
 		
 		// Constructors
-		SSLSessionBindingEvent(JObject arg0, jstring arg1);
+		SSLSessionBindingEvent(JObject arg0, JString arg1);
 		
 		// Methods
-		jstring getName();
+		JString getName();
 		JObject getSession();
 	};
 } // namespace javax::net::ssl

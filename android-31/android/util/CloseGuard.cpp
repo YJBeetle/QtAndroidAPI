@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./CloseGuard.hpp"
 
 namespace android::util
@@ -22,12 +23,12 @@ namespace android::util
 			"()V"
 		);
 	}
-	void CloseGuard::open(jstring arg0)
+	void CloseGuard::open(JString arg0)
 	{
 		callMethod<void>(
 			"open",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void CloseGuard::warnIfOpen()

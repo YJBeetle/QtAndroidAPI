@@ -1,7 +1,5 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "../../../java/text/Format.hpp"
 #include "./UFormat.hpp"
 
 namespace android::icu::text
@@ -24,6 +22,8 @@ namespace java::lang
 {
 	class Number;
 }
+class JObject;
+class JString;
 namespace java::lang
 {
 	class StringBuffer;
@@ -56,29 +56,29 @@ namespace android::icu::text
 		PluralFormat();
 		PluralFormat(android::icu::text::PluralRules arg0);
 		PluralFormat(android::icu::util::ULocale arg0);
-		PluralFormat(jstring arg0);
+		PluralFormat(JString arg0);
 		PluralFormat(java::util::Locale arg0);
-		PluralFormat(android::icu::text::PluralRules arg0, jstring arg1);
+		PluralFormat(android::icu::text::PluralRules arg0, JString arg1);
 		PluralFormat(android::icu::util::ULocale arg0, android::icu::text::PluralRules arg1);
 		PluralFormat(android::icu::util::ULocale arg0, android::icu::text::PluralRules_PluralType arg1);
-		PluralFormat(android::icu::util::ULocale arg0, jstring arg1);
+		PluralFormat(android::icu::util::ULocale arg0, JString arg1);
 		PluralFormat(java::util::Locale arg0, android::icu::text::PluralRules arg1);
 		PluralFormat(java::util::Locale arg0, android::icu::text::PluralRules_PluralType arg1);
-		PluralFormat(android::icu::util::ULocale arg0, android::icu::text::PluralRules arg1, jstring arg2);
-		PluralFormat(android::icu::util::ULocale arg0, android::icu::text::PluralRules_PluralType arg1, jstring arg2);
+		PluralFormat(android::icu::util::ULocale arg0, android::icu::text::PluralRules arg1, JString arg2);
+		PluralFormat(android::icu::util::ULocale arg0, android::icu::text::PluralRules_PluralType arg1, JString arg2);
 		
 		// Methods
-		void applyPattern(jstring arg0);
+		void applyPattern(JString arg0);
 		jboolean equals(android::icu::text::PluralFormat arg0);
-		jboolean equals(jobject arg0);
-		jstring format(jdouble arg0);
-		java::lang::StringBuffer format(jobject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2);
+		jboolean equals(JObject arg0);
+		JString format(jdouble arg0);
+		java::lang::StringBuffer format(JObject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2);
 		jint hashCode();
-		java::lang::Number parse(jstring arg0, java::text::ParsePosition arg1);
-		jobject parseObject(jstring arg0, java::text::ParsePosition arg1);
+		java::lang::Number parse(JString arg0, java::text::ParsePosition arg1);
+		JObject parseObject(JString arg0, java::text::ParsePosition arg1);
 		void setNumberFormat(android::icu::text::NumberFormat arg0);
-		jstring toPattern();
-		jstring toString();
+		JString toPattern();
+		JString toString();
 	};
 } // namespace android::icu::text
 

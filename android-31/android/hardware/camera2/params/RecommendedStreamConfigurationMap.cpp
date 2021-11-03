@@ -1,6 +1,7 @@
 #include "../../../util/Range.hpp"
 #include "../../../util/Size.hpp"
 #include "../../../view/Surface.hpp"
+#include "../../../../JClass.hpp"
 #include "./RecommendedStreamConfigurationMap.hpp"
 
 namespace android::hardware::camera2::params
@@ -131,12 +132,12 @@ namespace android::hardware::camera2::params
 			arg1.object()
 		);
 	}
-	jlong RecommendedStreamConfigurationMap::getOutputMinFrameDuration(jclass arg0, android::util::Size arg1)
+	jlong RecommendedStreamConfigurationMap::getOutputMinFrameDuration(JClass arg0, android::util::Size arg1)
 	{
 		return callMethod<jlong>(
 			"getOutputMinFrameDuration",
 			"(Ljava/lang/Class;Landroid/util/Size;)J",
-			arg0,
+			arg0.object<jclass>(),
 			arg1.object()
 		);
 	}
@@ -148,12 +149,12 @@ namespace android::hardware::camera2::params
 			arg0
 		);
 	}
-	JObject RecommendedStreamConfigurationMap::getOutputSizes(jclass arg0)
+	JObject RecommendedStreamConfigurationMap::getOutputSizes(JClass arg0)
 	{
 		return callObjectMethod(
 			"getOutputSizes",
 			"(Ljava/lang/Class;)Ljava/util/Set;",
-			arg0
+			arg0.object<jclass>()
 		);
 	}
 	jlong RecommendedStreamConfigurationMap::getOutputStallDuration(jint arg0, android::util::Size arg1)
@@ -165,12 +166,12 @@ namespace android::hardware::camera2::params
 			arg1.object()
 		);
 	}
-	jlong RecommendedStreamConfigurationMap::getOutputStallDuration(jclass arg0, android::util::Size arg1)
+	jlong RecommendedStreamConfigurationMap::getOutputStallDuration(JClass arg0, android::util::Size arg1)
 	{
 		return callMethod<jlong>(
 			"getOutputStallDuration",
 			"(Ljava/lang/Class;Landroid/util/Size;)J",
-			arg0,
+			arg0.object<jclass>(),
 			arg1.object()
 		);
 	}

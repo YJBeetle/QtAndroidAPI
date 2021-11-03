@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JByteArray;
 namespace android::accounts
 {
 	class Account;
@@ -22,6 +23,7 @@ namespace android::util
 {
 	class Pair;
 }
+class JString;
 
 namespace android::provider
 {
@@ -29,7 +31,7 @@ namespace android::provider
 	{
 	public:
 		// Fields
-		static jstring CONTENT_DIRECTORY();
+		static JString CONTENT_DIRECTORY();
 		static android::net::Uri CONTENT_URI();
 		
 		// QAndroidJniObject forward
@@ -39,10 +41,10 @@ namespace android::provider
 		// Constructors
 		
 		// Methods
-		static jbyteArray get(android::content::ContentProviderClient arg0, android::accounts::Account arg1);
+		static JByteArray get(android::content::ContentProviderClient arg0, android::accounts::Account arg1);
 		static android::util::Pair getWithUri(android::content::ContentProviderClient arg0, android::accounts::Account arg1);
-		static android::content::ContentProviderOperation newSetOperation(android::accounts::Account arg0, jbyteArray arg1);
-		static void set(android::content::ContentProviderClient arg0, android::accounts::Account arg1, jbyteArray arg2);
+		static android::content::ContentProviderOperation newSetOperation(android::accounts::Account arg0, JByteArray arg1);
+		static void set(android::content::ContentProviderClient arg0, android::accounts::Account arg1, JByteArray arg2);
 	};
 } // namespace android::provider
 

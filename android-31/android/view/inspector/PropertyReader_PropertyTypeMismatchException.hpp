@@ -1,9 +1,8 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "../../../java/lang/Exception.hpp"
 #include "../../../java/lang/RuntimeException.hpp"
 
+class JString;
 
 namespace android::view::inspector
 {
@@ -17,8 +16,8 @@ namespace android::view::inspector
 		PropertyReader_PropertyTypeMismatchException(QAndroidJniObject obj);
 		
 		// Constructors
-		PropertyReader_PropertyTypeMismatchException(jint arg0, jstring arg1, jstring arg2);
-		PropertyReader_PropertyTypeMismatchException(jint arg0, jstring arg1, jstring arg2, jstring arg3);
+		PropertyReader_PropertyTypeMismatchException(jint arg0, JString arg1, JString arg2);
+		PropertyReader_PropertyTypeMismatchException(jint arg0, JString arg1, JString arg2, JString arg3);
 		
 		// Methods
 	};

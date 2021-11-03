@@ -1,4 +1,7 @@
+#include "../../JFloatArray.hpp"
 #include "../os/Parcel.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./VolumeShaper_Configuration.hpp"
 
 namespace android::media
@@ -94,12 +97,12 @@ namespace android::media
 			"()I"
 		);
 	}
-	jboolean VolumeShaper_Configuration::equals(jobject arg0)
+	jboolean VolumeShaper_Configuration::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jlong VolumeShaper_Configuration::getDuration()
@@ -116,19 +119,19 @@ namespace android::media
 			"()I"
 		);
 	}
-	jfloatArray VolumeShaper_Configuration::getTimes()
+	JFloatArray VolumeShaper_Configuration::getTimes()
 	{
 		return callObjectMethod(
 			"getTimes",
 			"()[F"
-		).object<jfloatArray>();
+		);
 	}
-	jfloatArray VolumeShaper_Configuration::getVolumes()
+	JFloatArray VolumeShaper_Configuration::getVolumes()
 	{
 		return callObjectMethod(
 			"getVolumes",
 			"()[F"
-		).object<jfloatArray>();
+		);
 	}
 	jint VolumeShaper_Configuration::hashCode()
 	{
@@ -137,12 +140,12 @@ namespace android::media
 			"()I"
 		);
 	}
-	jstring VolumeShaper_Configuration::toString()
+	JString VolumeShaper_Configuration::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void VolumeShaper_Configuration::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

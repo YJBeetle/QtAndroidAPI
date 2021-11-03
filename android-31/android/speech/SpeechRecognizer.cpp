@@ -1,18 +1,19 @@
 #include "../content/ComponentName.hpp"
 #include "../content/Context.hpp"
 #include "../content/Intent.hpp"
+#include "../../JString.hpp"
 #include "./SpeechRecognizer.hpp"
 
 namespace android::speech
 {
 	// Fields
-	jstring SpeechRecognizer::CONFIDENCE_SCORES()
+	JString SpeechRecognizer::CONFIDENCE_SCORES()
 	{
 		return getStaticObjectField(
 			"android.speech.SpeechRecognizer",
 			"CONFIDENCE_SCORES",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint SpeechRecognizer::ERROR_AUDIO()
 	{
@@ -105,13 +106,13 @@ namespace android::speech
 			"ERROR_TOO_MANY_REQUESTS"
 		);
 	}
-	jstring SpeechRecognizer::RESULTS_RECOGNITION()
+	JString SpeechRecognizer::RESULTS_RECOGNITION()
 	{
 		return getStaticObjectField(
 			"android.speech.SpeechRecognizer",
 			"RESULTS_RECOGNITION",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QAndroidJniObject forward

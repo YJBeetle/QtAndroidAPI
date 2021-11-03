@@ -1,4 +1,6 @@
 #include "../../os/Bundle.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./GsmCellLocation.hpp"
 
 namespace android::telephony::gsm
@@ -22,12 +24,12 @@ namespace android::telephony::gsm
 		) {}
 	
 	// Methods
-	jboolean GsmCellLocation::equals(jobject arg0)
+	jboolean GsmCellLocation::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	void GsmCellLocation::fillInNotifierBundle(android::os::Bundle arg0)
@@ -82,12 +84,12 @@ namespace android::telephony::gsm
 			"()V"
 		);
 	}
-	jstring GsmCellLocation::toString()
+	JString GsmCellLocation::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::telephony::gsm
 

@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./RSDriverException.hpp"
 
 namespace android::renderscript
@@ -8,11 +9,11 @@ namespace android::renderscript
 	RSDriverException::RSDriverException(QAndroidJniObject obj) : android::renderscript::RSRuntimeException(obj) {}
 	
 	// Constructors
-	RSDriverException::RSDriverException(jstring arg0)
+	RSDriverException::RSDriverException(JString arg0)
 		: android::renderscript::RSRuntimeException(
 			"android.renderscript.RSDriverException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

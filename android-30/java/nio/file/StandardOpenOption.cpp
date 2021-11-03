@@ -1,3 +1,5 @@
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
 #include "./StandardOpenOption.hpp"
 
 namespace java::nio::file
@@ -90,22 +92,22 @@ namespace java::nio::file
 	// Constructors
 	
 	// Methods
-	java::nio::file::StandardOpenOption StandardOpenOption::valueOf(jstring arg0)
+	java::nio::file::StandardOpenOption StandardOpenOption::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"java.nio.file.StandardOpenOption",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/nio/file/StandardOpenOption;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray StandardOpenOption::values()
+	JArray StandardOpenOption::values()
 	{
 		return callStaticObjectMethod(
 			"java.nio.file.StandardOpenOption",
 			"values",
 			"()[Ljava/nio/file/StandardOpenOption;"
-		).object<jarray>();
+		);
 	}
 } // namespace java::nio::file
 

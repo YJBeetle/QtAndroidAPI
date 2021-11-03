@@ -1,4 +1,6 @@
 #include "../os/Parcel.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./SyncAdapterType.hpp"
 
 namespace android::content
@@ -12,19 +14,19 @@ namespace android::content
 			"Landroid/os/Parcelable$Creator;"
 		);
 	}
-	jstring SyncAdapterType::accountType()
+	JString SyncAdapterType::accountType()
 	{
 		return getObjectField(
 			"accountType",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring SyncAdapterType::authority()
+	JString SyncAdapterType::authority()
 	{
 		return getObjectField(
 			"authority",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jboolean SyncAdapterType::isKey()
 	{
@@ -43,25 +45,25 @@ namespace android::content
 			"(Landroid/os/Parcel;)V",
 			arg0.object()
 		) {}
-	SyncAdapterType::SyncAdapterType(jstring arg0, jstring arg1, jboolean arg2, jboolean arg3)
+	SyncAdapterType::SyncAdapterType(JString arg0, JString arg1, jboolean arg2, jboolean arg3)
 		: JObject(
 			"android.content.SyncAdapterType",
 			"(Ljava/lang/String;Ljava/lang/String;ZZ)V",
-			arg0,
-			arg1,
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
 			arg2,
 			arg3
 		) {}
 	
 	// Methods
-	android::content::SyncAdapterType SyncAdapterType::newKey(jstring arg0, jstring arg1)
+	android::content::SyncAdapterType SyncAdapterType::newKey(JString arg0, JString arg1)
 	{
 		return callStaticObjectMethod(
 			"android.content.SyncAdapterType",
 			"newKey",
 			"(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SyncAdapterType;",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		);
 	}
 	jboolean SyncAdapterType::allowParallelSyncs()
@@ -78,20 +80,20 @@ namespace android::content
 			"()I"
 		);
 	}
-	jboolean SyncAdapterType::equals(jobject arg0)
+	jboolean SyncAdapterType::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jstring SyncAdapterType::getSettingsActivity()
+	JString SyncAdapterType::getSettingsActivity()
 	{
 		return callObjectMethod(
 			"getSettingsActivity",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint SyncAdapterType::hashCode()
 	{
@@ -121,12 +123,12 @@ namespace android::content
 			"()Z"
 		);
 	}
-	jstring SyncAdapterType::toString()
+	JString SyncAdapterType::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void SyncAdapterType::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

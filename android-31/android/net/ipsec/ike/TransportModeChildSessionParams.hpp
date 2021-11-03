@@ -1,8 +1,6 @@
 #pragma once
 
-#include "../../../../JObject.hpp"
 #include "./ChildSessionParams.hpp"
-
 
 namespace android::net::ipsec::ike
 {

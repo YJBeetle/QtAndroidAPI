@@ -10,6 +10,7 @@ namespace android::app::appsearch
 {
 	class SearchResult_MatchRange;
 }
+class JString;
 
 namespace android::app::appsearch
 {
@@ -23,7 +24,7 @@ namespace android::app::appsearch
 		SearchResult_MatchInfo_Builder(QAndroidJniObject obj);
 		
 		// Constructors
-		SearchResult_MatchInfo_Builder(jstring arg0);
+		SearchResult_MatchInfo_Builder(JString arg0);
 		
 		// Methods
 		android::app::appsearch::SearchResult_MatchInfo build();

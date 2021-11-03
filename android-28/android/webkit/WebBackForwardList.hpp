@@ -6,6 +6,7 @@ namespace android::webkit
 {
 	class WebHistoryItem;
 }
+class JObject;
 
 namespace android::webkit
 {

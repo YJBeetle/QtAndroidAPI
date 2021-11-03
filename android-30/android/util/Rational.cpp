@@ -1,3 +1,5 @@
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./Rational.hpp"
 
 namespace android::util
@@ -49,13 +51,13 @@ namespace android::util
 		) {}
 	
 	// Methods
-	android::util::Rational Rational::parseRational(jstring arg0)
+	android::util::Rational Rational::parseRational(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.util.Rational",
 			"parseRational",
 			"(Ljava/lang/String;)Landroid/util/Rational;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	jint Rational::compareTo(android::util::Rational arg0)
@@ -66,12 +68,12 @@ namespace android::util
 			arg0.object()
 		);
 	}
-	jint Rational::compareTo(jobject arg0)
+	jint Rational::compareTo(JObject arg0)
 	{
 		return callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Object;)I",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jdouble Rational::doubleValue()
@@ -81,12 +83,12 @@ namespace android::util
 			"()D"
 		);
 	}
-	jboolean Rational::equals(jobject arg0)
+	jboolean Rational::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jfloat Rational::floatValue()
@@ -166,12 +168,12 @@ namespace android::util
 			"()S"
 		);
 	}
-	jstring Rational::toString()
+	JString Rational::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::util
 

@@ -6,6 +6,7 @@ namespace android::net
 {
 	class Uri;
 }
+class JString;
 
 namespace android::provider
 {
@@ -13,11 +14,11 @@ namespace android::provider
 	{
 	public:
 		// Fields
-		static jstring COLUMN_E164_NUMBER();
-		static jstring COLUMN_ID();
-		static jstring COLUMN_ORIGINAL_NUMBER();
-		static jstring CONTENT_ITEM_TYPE();
-		static jstring CONTENT_TYPE();
+		static JString COLUMN_E164_NUMBER();
+		static JString COLUMN_ID();
+		static JString COLUMN_ORIGINAL_NUMBER();
+		static JString CONTENT_ITEM_TYPE();
+		static JString CONTENT_TYPE();
 		static android::net::Uri CONTENT_URI();
 		
 		// QAndroidJniObject forward

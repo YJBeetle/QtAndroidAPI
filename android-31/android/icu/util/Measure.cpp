@@ -1,5 +1,7 @@
 #include "./MeasureUnit.hpp"
 #include "../../../java/lang/Number.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./Measure.hpp"
 
 namespace android::icu::util
@@ -19,12 +21,12 @@ namespace android::icu::util
 		) {}
 	
 	// Methods
-	jboolean Measure::equals(jobject arg0)
+	jboolean Measure::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	java::lang::Number Measure::getNumber()
@@ -48,12 +50,12 @@ namespace android::icu::util
 			"()I"
 		);
 	}
-	jstring Measure::toString()
+	JString Measure::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::icu::util
 

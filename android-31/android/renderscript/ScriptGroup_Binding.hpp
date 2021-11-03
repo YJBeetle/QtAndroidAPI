@@ -6,6 +6,7 @@ namespace android::renderscript
 {
 	class Script_FieldID;
 }
+class JObject;
 
 namespace android::renderscript
 {
@@ -19,7 +20,7 @@ namespace android::renderscript
 		ScriptGroup_Binding(QAndroidJniObject obj);
 		
 		// Constructors
-		ScriptGroup_Binding(android::renderscript::Script_FieldID arg0, jobject arg1);
+		ScriptGroup_Binding(android::renderscript::Script_FieldID arg0, JObject arg1);
 		
 		// Methods
 	};

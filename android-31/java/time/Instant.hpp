@@ -6,6 +6,9 @@ namespace java::io
 {
 	class ObjectInputStream;
 }
+class JString;
+class JObject;
+class JString;
 namespace java::time
 {
 	class Clock;
@@ -54,13 +57,13 @@ namespace java::time
 		static java::time::Instant ofEpochMilli(jlong arg0);
 		static java::time::Instant ofEpochSecond(jlong arg0);
 		static java::time::Instant ofEpochSecond(jlong arg0, jlong arg1);
-		static java::time::Instant parse(jstring arg0);
+		static java::time::Instant parse(JString arg0);
 		JObject adjustInto(JObject arg0);
 		java::time::OffsetDateTime atOffset(java::time::ZoneOffset arg0);
 		java::time::ZonedDateTime atZone(java::time::ZoneId arg0);
-		jint compareTo(jobject arg0);
+		jint compareTo(JObject arg0);
 		jint compareTo(java::time::Instant arg0);
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint get(JObject arg0);
 		jlong getEpochSecond();
 		jlong getLong(JObject arg0);
@@ -79,10 +82,10 @@ namespace java::time
 		java::time::Instant plusMillis(jlong arg0);
 		java::time::Instant plusNanos(jlong arg0);
 		java::time::Instant plusSeconds(jlong arg0);
-		jobject query(JObject arg0);
+		JObject query(JObject arg0);
 		java::time::temporal::ValueRange range(JObject arg0);
 		jlong toEpochMilli();
-		jstring toString();
+		JString toString();
 		java::time::Instant truncatedTo(JObject arg0);
 		jlong until(JObject arg0, JObject arg1);
 		java::time::Instant with(JObject arg0);

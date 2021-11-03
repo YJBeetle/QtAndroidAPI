@@ -2,7 +2,6 @@
 
 #include "../../../../JObject.hpp"
 
-
 namespace android::net::ipsec::ike
 {
 	class IkeIdentification : public JObject

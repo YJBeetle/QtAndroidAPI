@@ -1,3 +1,4 @@
+#include "../../../../JObject.hpp"
 #include "./IkeSaProposal.hpp"
 
 namespace android::net::ipsec::ike
@@ -34,12 +35,12 @@ namespace android::net::ipsec::ike
 			"()Ljava/util/Set;"
 		);
 	}
-	jboolean IkeSaProposal::equals(jobject arg0)
+	jboolean IkeSaProposal::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	JObject IkeSaProposal::getPseudorandomFunctions()

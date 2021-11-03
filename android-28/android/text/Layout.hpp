@@ -30,6 +30,7 @@ namespace android::text
 {
 	class TextPaint;
 }
+class JString;
 
 namespace android::text
 {
@@ -57,13 +58,13 @@ namespace android::text
 		// Constructors
 		
 		// Methods
-		static jfloat getDesiredWidth(jstring arg0, android::text::TextPaint arg1);
-		static jfloat getDesiredWidth(jstring arg0, jint arg1, jint arg2, android::text::TextPaint arg3);
+		static jfloat getDesiredWidth(JString arg0, android::text::TextPaint arg1);
+		static jfloat getDesiredWidth(JString arg0, jint arg1, jint arg2, android::text::TextPaint arg3);
 		void draw(android::graphics::Canvas arg0);
 		void draw(android::graphics::Canvas arg0, android::graphics::Path arg1, android::graphics::Paint arg2, jint arg3);
 		android::text::Layout_Alignment getAlignment();
 		jint getBottomPadding();
-		void getCursorPath(jint arg0, android::graphics::Path arg1, jstring arg2);
+		void getCursorPath(jint arg0, android::graphics::Path arg1, JString arg2);
 		jint getEllipsisCount(jint arg0);
 		jint getEllipsisStart(jint arg0);
 		jint getEllipsizedWidth();
@@ -99,7 +100,7 @@ namespace android::text
 		void getSelectionPath(jint arg0, jint arg1, android::graphics::Path arg2);
 		jfloat getSpacingAdd();
 		jfloat getSpacingMultiplier();
-		jstring getText();
+		JString getText();
 		jint getTopPadding();
 		jint getWidth();
 		void increaseWidthTo(jint arg0);

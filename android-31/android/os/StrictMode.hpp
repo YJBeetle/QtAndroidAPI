@@ -10,6 +10,7 @@ namespace android::os
 {
 	class StrictMode_VmPolicy;
 }
+class JString;
 
 namespace android::os
 {
@@ -30,7 +31,7 @@ namespace android::os
 		static void enableDefaults();
 		static android::os::StrictMode_ThreadPolicy getThreadPolicy();
 		static android::os::StrictMode_VmPolicy getVmPolicy();
-		static void noteSlowCall(jstring arg0);
+		static void noteSlowCall(JString arg0);
 		static void setThreadPolicy(android::os::StrictMode_ThreadPolicy arg0);
 		static void setVmPolicy(android::os::StrictMode_VmPolicy arg0);
 	};

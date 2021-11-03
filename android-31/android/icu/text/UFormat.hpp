@@ -1,8 +1,6 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "../../../java/text/Format.hpp"
-
 
 namespace android::icu::text
 {

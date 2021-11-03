@@ -1,12 +1,14 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./CellIdentity.hpp"
 
+class JIntArray;
 namespace android::os
 {
 	class Parcel;
 }
+class JObject;
+class JString;
 
 namespace android::telephony
 {
@@ -23,17 +25,17 @@ namespace android::telephony
 		// Constructors
 		
 		// Methods
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		JObject getAdditionalPlmns();
-		jintArray getBands();
-		jstring getMccString();
-		jstring getMncString();
+		JIntArray getBands();
+		JString getMccString();
+		JString getMncString();
 		jlong getNci();
 		jint getNrarfcn();
 		jint getPci();
 		jint getTac();
 		jint hashCode();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::telephony

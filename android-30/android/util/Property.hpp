@@ -2,6 +2,9 @@
 
 #include "../../JObject.hpp"
 
+class JClass;
+class JObject;
+class JString;
 
 namespace android::util
 {
@@ -15,15 +18,15 @@ namespace android::util
 		Property(QAndroidJniObject obj);
 		
 		// Constructors
-		Property(jclass arg0, jstring arg1);
+		Property(JClass arg0, JString arg1);
 		
 		// Methods
-		static android::util::Property of(jclass arg0, jclass arg1, jstring arg2);
-		jobject get(jobject arg0);
-		jstring getName();
-		jclass getType();
+		static android::util::Property of(JClass arg0, JClass arg1, JString arg2);
+		JObject get(JObject arg0);
+		JString getName();
+		JClass getType();
 		jboolean isReadOnly();
-		void set(jobject arg0, jobject arg1);
+		void set(JObject arg0, JObject arg1);
 	};
 } // namespace android::util
 

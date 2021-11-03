@@ -1,3 +1,4 @@
+#include "../../JArray.hpp"
 #include "../animation/Animator.hpp"
 #include "../content/Context.hpp"
 #include "./TransitionValues.hpp"
@@ -74,12 +75,12 @@ namespace android::transition
 			"()I"
 		);
 	}
-	jarray Visibility::getTransitionProperties()
+	JArray Visibility::getTransitionProperties()
 	{
 		return callObjectMethod(
 			"getTransitionProperties",
 			"()[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
 	jboolean Visibility::isTransitionRequired(android::transition::TransitionValues arg0, android::transition::TransitionValues arg1)
 	{

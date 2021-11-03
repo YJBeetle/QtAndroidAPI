@@ -1,4 +1,6 @@
 #include "../net/Uri.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./IntentFilter_AuthorityEntry.hpp"
 
 namespace android::content
@@ -9,29 +11,29 @@ namespace android::content
 	IntentFilter_AuthorityEntry::IntentFilter_AuthorityEntry(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	IntentFilter_AuthorityEntry::IntentFilter_AuthorityEntry(jstring arg0, jstring arg1)
+	IntentFilter_AuthorityEntry::IntentFilter_AuthorityEntry(JString arg0, JString arg1)
 		: JObject(
 			"android.content.IntentFilter$AuthorityEntry",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		) {}
 	
 	// Methods
-	jboolean IntentFilter_AuthorityEntry::equals(jobject arg0)
+	jboolean IntentFilter_AuthorityEntry::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jstring IntentFilter_AuthorityEntry::getHost()
+	JString IntentFilter_AuthorityEntry::getHost()
 	{
 		return callObjectMethod(
 			"getHost",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint IntentFilter_AuthorityEntry::getPort()
 	{

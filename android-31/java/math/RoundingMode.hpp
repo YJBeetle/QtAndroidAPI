@@ -1,8 +1,9 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "../lang/Enum.hpp"
 
+class JArray;
+class JString;
 
 namespace java::math
 {
@@ -27,8 +28,8 @@ namespace java::math
 		
 		// Methods
 		static java::math::RoundingMode valueOf(jint arg0);
-		static java::math::RoundingMode valueOf(jstring arg0);
-		static jarray values();
+		static java::math::RoundingMode valueOf(JString arg0);
+		static JArray values();
 	};
 } // namespace java::math
 

@@ -6,6 +6,7 @@ namespace java::lang
 {
 	class Exception;
 }
+class JString;
 
 namespace java::util::logging
 {
@@ -28,7 +29,7 @@ namespace java::util::logging
 		ErrorManager();
 		
 		// Methods
-		void error(jstring arg0, java::lang::Exception arg1, jint arg2);
+		void error(JString arg0, java::lang::Exception arg1, jint arg2);
 	};
 } // namespace java::util::logging
 

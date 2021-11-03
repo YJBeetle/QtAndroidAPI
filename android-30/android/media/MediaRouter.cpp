@@ -2,6 +2,7 @@
 #include "./MediaRouter_RouteCategory.hpp"
 #include "./MediaRouter_RouteInfo.hpp"
 #include "./MediaRouter_UserRouteInfo.hpp"
+#include "../../JString.hpp"
 #include "./MediaRouter.hpp"
 
 namespace android::media
@@ -92,12 +93,12 @@ namespace android::media
 			arg1
 		);
 	}
-	android::media::MediaRouter_RouteCategory MediaRouter::createRouteCategory(jstring arg0, jboolean arg1)
+	android::media::MediaRouter_RouteCategory MediaRouter::createRouteCategory(JString arg0, jboolean arg1)
 	{
 		return callObjectMethod(
 			"createRouteCategory",
 			"(Ljava/lang/CharSequence;Z)Landroid/media/MediaRouter$RouteCategory;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}

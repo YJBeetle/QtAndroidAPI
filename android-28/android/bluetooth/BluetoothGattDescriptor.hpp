@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JByteArray;
 namespace android::bluetooth
 {
 	class BluetoothGattCharacteristic;
@@ -22,9 +23,9 @@ namespace android::bluetooth
 	public:
 		// Fields
 		static JObject CREATOR();
-		static jbyteArray DISABLE_NOTIFICATION_VALUE();
-		static jbyteArray ENABLE_INDICATION_VALUE();
-		static jbyteArray ENABLE_NOTIFICATION_VALUE();
+		static JByteArray DISABLE_NOTIFICATION_VALUE();
+		static JByteArray ENABLE_INDICATION_VALUE();
+		static JByteArray ENABLE_NOTIFICATION_VALUE();
 		static jint PERMISSION_READ();
 		static jint PERMISSION_READ_ENCRYPTED();
 		static jint PERMISSION_READ_ENCRYPTED_MITM();
@@ -46,8 +47,8 @@ namespace android::bluetooth
 		android::bluetooth::BluetoothGattCharacteristic getCharacteristic();
 		jint getPermissions();
 		java::util::UUID getUuid();
-		jbyteArray getValue();
-		jboolean setValue(jbyteArray arg0);
+		JByteArray getValue();
+		jboolean setValue(JByteArray arg0);
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::bluetooth

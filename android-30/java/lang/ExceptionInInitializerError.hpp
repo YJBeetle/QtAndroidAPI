@@ -1,9 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "./Error.hpp"
 #include "./LinkageError.hpp"
 
+class JArray;
 namespace java::io
 {
 	class ObjectInputStream;
@@ -12,6 +11,8 @@ namespace java::io
 {
 	class ObjectOutputStream;
 }
+class JString;
+class JThrowable;
 
 namespace java::lang
 {
@@ -26,11 +27,11 @@ namespace java::lang
 		
 		// Constructors
 		ExceptionInInitializerError();
-		ExceptionInInitializerError(jstring arg0);
-		ExceptionInInitializerError(jthrowable arg0);
+		ExceptionInInitializerError(JString arg0);
+		ExceptionInInitializerError(JThrowable arg0);
 		
 		// Methods
-		jthrowable getException();
+		JThrowable getException();
 	};
 } // namespace java::lang
 

@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JString;
 namespace java::time
 {
 	class ZoneId;
@@ -46,7 +47,7 @@ namespace java::time::format
 		DateTimeFormatterBuilder();
 		
 		// Methods
-		static jstring getLocalizedDateTimePattern(java::time::format::FormatStyle arg0, java::time::format::FormatStyle arg1, JObject arg2, java::util::Locale arg3);
+		static JString getLocalizedDateTimePattern(java::time::format::FormatStyle arg0, java::time::format::FormatStyle arg1, JObject arg2, java::util::Locale arg3);
 		java::time::format::DateTimeFormatterBuilder append(java::time::format::DateTimeFormatter arg0);
 		java::time::format::DateTimeFormatterBuilder appendChronologyId();
 		java::time::format::DateTimeFormatterBuilder appendChronologyText(java::time::format::TextStyle arg0);
@@ -57,13 +58,13 @@ namespace java::time::format
 		java::time::format::DateTimeFormatterBuilder appendInstant();
 		java::time::format::DateTimeFormatterBuilder appendInstant(jint arg0);
 		java::time::format::DateTimeFormatterBuilder appendLiteral(jchar arg0);
-		java::time::format::DateTimeFormatterBuilder appendLiteral(jstring arg0);
+		java::time::format::DateTimeFormatterBuilder appendLiteral(JString arg0);
 		java::time::format::DateTimeFormatterBuilder appendLocalized(java::time::format::FormatStyle arg0, java::time::format::FormatStyle arg1);
 		java::time::format::DateTimeFormatterBuilder appendLocalizedOffset(java::time::format::TextStyle arg0);
-		java::time::format::DateTimeFormatterBuilder appendOffset(jstring arg0, jstring arg1);
+		java::time::format::DateTimeFormatterBuilder appendOffset(JString arg0, JString arg1);
 		java::time::format::DateTimeFormatterBuilder appendOffsetId();
 		java::time::format::DateTimeFormatterBuilder appendOptional(java::time::format::DateTimeFormatter arg0);
-		java::time::format::DateTimeFormatterBuilder appendPattern(jstring arg0);
+		java::time::format::DateTimeFormatterBuilder appendPattern(JString arg0);
 		java::time::format::DateTimeFormatterBuilder appendText(JObject arg0);
 		java::time::format::DateTimeFormatterBuilder appendText(JObject arg0, java::time::format::TextStyle arg1);
 		java::time::format::DateTimeFormatterBuilder appendText(JObject arg0, JObject arg1);

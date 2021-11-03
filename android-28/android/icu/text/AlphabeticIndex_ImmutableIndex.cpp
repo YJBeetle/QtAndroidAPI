@@ -1,4 +1,5 @@
 #include "./AlphabeticIndex_Bucket.hpp"
+#include "../../../JString.hpp"
 #include "./AlphabeticIndex_ImmutableIndex.hpp"
 
 namespace android::icu::text
@@ -26,12 +27,12 @@ namespace android::icu::text
 			"()I"
 		);
 	}
-	jint AlphabeticIndex_ImmutableIndex::getBucketIndex(jstring arg0)
+	jint AlphabeticIndex_ImmutableIndex::getBucketIndex(JString arg0)
 	{
 		return callMethod<jint>(
 			"getBucketIndex",
 			"(Ljava/lang/CharSequence;)I",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	JObject AlphabeticIndex_ImmutableIndex::iterator()

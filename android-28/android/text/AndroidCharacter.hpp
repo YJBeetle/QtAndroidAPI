@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JByteArray;
+class JCharArray;
 
 namespace android::text
 {
@@ -24,11 +26,11 @@ namespace android::text
 		AndroidCharacter();
 		
 		// Methods
-		static void getDirectionalities(jcharArray arg0, jbyteArray arg1, jint arg2);
+		static void getDirectionalities(JCharArray arg0, JByteArray arg1, jint arg2);
 		static jint getEastAsianWidth(jchar arg0);
-		static void getEastAsianWidths(jcharArray arg0, jint arg1, jint arg2, jbyteArray arg3);
+		static void getEastAsianWidths(JCharArray arg0, jint arg1, jint arg2, JByteArray arg3);
 		static jchar getMirror(jchar arg0);
-		static jboolean mirror(jcharArray arg0, jint arg1, jint arg2);
+		static jboolean mirror(JCharArray arg0, jint arg1, jint arg2);
 	};
 } // namespace android::text
 

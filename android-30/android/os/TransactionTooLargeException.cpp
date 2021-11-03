@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./TransactionTooLargeException.hpp"
 
 namespace android::os
@@ -13,11 +14,11 @@ namespace android::os
 			"android.os.TransactionTooLargeException",
 			"()V"
 		) {}
-	TransactionTooLargeException::TransactionTooLargeException(jstring arg0)
+	TransactionTooLargeException::TransactionTooLargeException(JString arg0)
 		: android::os::RemoteException(
 			"android.os.TransactionTooLargeException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

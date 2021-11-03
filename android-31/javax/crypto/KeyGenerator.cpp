@@ -1,3 +1,5 @@
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "../../java/security/Provider.hpp"
 #include "../../java/security/SecureRandom.hpp"
 #include "./KeyGeneratorSpi.hpp"
@@ -13,32 +15,32 @@ namespace javax::crypto
 	// Constructors
 	
 	// Methods
-	javax::crypto::KeyGenerator KeyGenerator::getInstance(jstring arg0)
+	javax::crypto::KeyGenerator KeyGenerator::getInstance(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"javax.crypto.KeyGenerator",
 			"getInstance",
 			"(Ljava/lang/String;)Ljavax/crypto/KeyGenerator;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	javax::crypto::KeyGenerator KeyGenerator::getInstance(jstring arg0, jstring arg1)
+	javax::crypto::KeyGenerator KeyGenerator::getInstance(JString arg0, JString arg1)
 	{
 		return callStaticObjectMethod(
 			"javax.crypto.KeyGenerator",
 			"getInstance",
 			"(Ljava/lang/String;Ljava/lang/String;)Ljavax/crypto/KeyGenerator;",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		);
 	}
-	javax::crypto::KeyGenerator KeyGenerator::getInstance(jstring arg0, java::security::Provider arg1)
+	javax::crypto::KeyGenerator KeyGenerator::getInstance(JString arg0, java::security::Provider arg1)
 	{
 		return callStaticObjectMethod(
 			"javax.crypto.KeyGenerator",
 			"getInstance",
 			"(Ljava/lang/String;Ljava/security/Provider;)Ljavax/crypto/KeyGenerator;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
@@ -49,12 +51,12 @@ namespace javax::crypto
 			"()Ljavax/crypto/SecretKey;"
 		);
 	}
-	jstring KeyGenerator::getAlgorithm()
+	JString KeyGenerator::getAlgorithm()
 	{
 		return callObjectMethod(
 			"getAlgorithm",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	java::security::Provider KeyGenerator::getProvider()
 	{

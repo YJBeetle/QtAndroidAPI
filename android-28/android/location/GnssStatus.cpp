@@ -1,3 +1,5 @@
+#include "../../JFloatArray.hpp"
+#include "../../JIntArray.hpp"
 #include "./GnssStatus.hpp"
 
 namespace android::location

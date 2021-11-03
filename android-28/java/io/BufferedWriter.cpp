@@ -1,4 +1,6 @@
+#include "../../JCharArray.hpp"
 #include "./Writer.hpp"
+#include "../../JString.hpp"
 #include "./BufferedWriter.hpp"
 
 namespace java::io
@@ -53,22 +55,22 @@ namespace java::io
 			arg0
 		);
 	}
-	void BufferedWriter::write(jcharArray arg0, jint arg1, jint arg2)
+	void BufferedWriter::write(JCharArray arg0, jint arg1, jint arg2)
 	{
 		callMethod<void>(
 			"write",
 			"([CII)V",
-			arg0,
+			arg0.object<jcharArray>(),
 			arg1,
 			arg2
 		);
 	}
-	void BufferedWriter::write(jstring arg0, jint arg1, jint arg2)
+	void BufferedWriter::write(JString arg0, jint arg1, jint arg2)
 	{
 		callMethod<void>(
 			"write",
 			"(Ljava/lang/String;II)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
 			arg2
 		);

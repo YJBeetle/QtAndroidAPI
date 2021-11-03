@@ -1,9 +1,11 @@
+#include "../../JByteArray.hpp"
 #include "./Bitmap.hpp"
 #include "./BitmapFactory_Options.hpp"
 #include "./Rect.hpp"
 #include "../os/ParcelFileDescriptor.hpp"
 #include "../../java/io/FileDescriptor.hpp"
 #include "../../java/io/InputStream.hpp"
+#include "../../JString.hpp"
 #include "./BitmapRegionDecoder.hpp"
 
 namespace android::graphics
@@ -34,13 +36,13 @@ namespace android::graphics
 			arg0.object()
 		);
 	}
-	android::graphics::BitmapRegionDecoder BitmapRegionDecoder::newInstance(jstring arg0)
+	android::graphics::BitmapRegionDecoder BitmapRegionDecoder::newInstance(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.graphics.BitmapRegionDecoder",
 			"newInstance",
 			"(Ljava/lang/String;)Landroid/graphics/BitmapRegionDecoder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::graphics::BitmapRegionDecoder BitmapRegionDecoder::newInstance(java::io::FileDescriptor arg0, jboolean arg1)
@@ -63,34 +65,34 @@ namespace android::graphics
 			arg1
 		);
 	}
-	android::graphics::BitmapRegionDecoder BitmapRegionDecoder::newInstance(jstring arg0, jboolean arg1)
+	android::graphics::BitmapRegionDecoder BitmapRegionDecoder::newInstance(JString arg0, jboolean arg1)
 	{
 		return callStaticObjectMethod(
 			"android.graphics.BitmapRegionDecoder",
 			"newInstance",
 			"(Ljava/lang/String;Z)Landroid/graphics/BitmapRegionDecoder;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
-	android::graphics::BitmapRegionDecoder BitmapRegionDecoder::newInstance(jbyteArray arg0, jint arg1, jint arg2)
+	android::graphics::BitmapRegionDecoder BitmapRegionDecoder::newInstance(JByteArray arg0, jint arg1, jint arg2)
 	{
 		return callStaticObjectMethod(
 			"android.graphics.BitmapRegionDecoder",
 			"newInstance",
 			"([BII)Landroid/graphics/BitmapRegionDecoder;",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1,
 			arg2
 		);
 	}
-	android::graphics::BitmapRegionDecoder BitmapRegionDecoder::newInstance(jbyteArray arg0, jint arg1, jint arg2, jboolean arg3)
+	android::graphics::BitmapRegionDecoder BitmapRegionDecoder::newInstance(JByteArray arg0, jint arg1, jint arg2, jboolean arg3)
 	{
 		return callStaticObjectMethod(
 			"android.graphics.BitmapRegionDecoder",
 			"newInstance",
 			"([BIIZ)Landroid/graphics/BitmapRegionDecoder;",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1,
 			arg2,
 			arg3

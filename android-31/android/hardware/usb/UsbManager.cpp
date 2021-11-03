@@ -1,69 +1,71 @@
+#include "../../../JArray.hpp"
 #include "../../app/PendingIntent.hpp"
 #include "./UsbAccessory.hpp"
 #include "./UsbDevice.hpp"
 #include "./UsbDeviceConnection.hpp"
 #include "../../os/ParcelFileDescriptor.hpp"
+#include "../../../JString.hpp"
 #include "../../../java/util/HashMap.hpp"
 #include "./UsbManager.hpp"
 
 namespace android::hardware::usb
 {
 	// Fields
-	jstring UsbManager::ACTION_USB_ACCESSORY_ATTACHED()
+	JString UsbManager::ACTION_USB_ACCESSORY_ATTACHED()
 	{
 		return getStaticObjectField(
 			"android.hardware.usb.UsbManager",
 			"ACTION_USB_ACCESSORY_ATTACHED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring UsbManager::ACTION_USB_ACCESSORY_DETACHED()
+	JString UsbManager::ACTION_USB_ACCESSORY_DETACHED()
 	{
 		return getStaticObjectField(
 			"android.hardware.usb.UsbManager",
 			"ACTION_USB_ACCESSORY_DETACHED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring UsbManager::ACTION_USB_DEVICE_ATTACHED()
+	JString UsbManager::ACTION_USB_DEVICE_ATTACHED()
 	{
 		return getStaticObjectField(
 			"android.hardware.usb.UsbManager",
 			"ACTION_USB_DEVICE_ATTACHED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring UsbManager::ACTION_USB_DEVICE_DETACHED()
+	JString UsbManager::ACTION_USB_DEVICE_DETACHED()
 	{
 		return getStaticObjectField(
 			"android.hardware.usb.UsbManager",
 			"ACTION_USB_DEVICE_DETACHED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring UsbManager::EXTRA_ACCESSORY()
+	JString UsbManager::EXTRA_ACCESSORY()
 	{
 		return getStaticObjectField(
 			"android.hardware.usb.UsbManager",
 			"EXTRA_ACCESSORY",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring UsbManager::EXTRA_DEVICE()
+	JString UsbManager::EXTRA_DEVICE()
 	{
 		return getStaticObjectField(
 			"android.hardware.usb.UsbManager",
 			"EXTRA_DEVICE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring UsbManager::EXTRA_PERMISSION_GRANTED()
+	JString UsbManager::EXTRA_PERMISSION_GRANTED()
 	{
 		return getStaticObjectField(
 			"android.hardware.usb.UsbManager",
 			"EXTRA_PERMISSION_GRANTED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QAndroidJniObject forward
@@ -72,12 +74,12 @@ namespace android::hardware::usb
 	// Constructors
 	
 	// Methods
-	jarray UsbManager::getAccessoryList()
+	JArray UsbManager::getAccessoryList()
 	{
 		return callObjectMethod(
 			"getAccessoryList",
 			"()[Landroid/hardware/usb/UsbAccessory;"
-		).object<jarray>();
+		);
 	}
 	java::util::HashMap UsbManager::getDeviceList()
 	{

@@ -1,9 +1,9 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../lang/Exception.hpp"
 #include "./GeneralSecurityException.hpp"
 
+class JString;
+class JThrowable;
 
 namespace java::security
 {
@@ -18,9 +18,9 @@ namespace java::security
 		
 		// Constructors
 		KeyStoreException();
-		KeyStoreException(jstring arg0);
-		KeyStoreException(jthrowable arg0);
-		KeyStoreException(jstring arg0, jthrowable arg1);
+		KeyStoreException(JString arg0);
+		KeyStoreException(JThrowable arg0);
+		KeyStoreException(JString arg0, JThrowable arg1);
 		
 		// Methods
 	};

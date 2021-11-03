@@ -1,3 +1,5 @@
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
 #include "./IDNA_Error.hpp"
 
 namespace android::icu::text
@@ -130,22 +132,22 @@ namespace android::icu::text
 	// Constructors
 	
 	// Methods
-	android::icu::text::IDNA_Error IDNA_Error::valueOf(jstring arg0)
+	android::icu::text::IDNA_Error IDNA_Error::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.icu.text.IDNA$Error",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/icu/text/IDNA$Error;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray IDNA_Error::values()
+	JArray IDNA_Error::values()
 	{
 		return callStaticObjectMethod(
 			"android.icu.text.IDNA$Error",
 			"values",
 			"()[Landroid/icu/text/IDNA$Error;"
-		).object<jarray>();
+		);
 	}
 } // namespace android::icu::text
 

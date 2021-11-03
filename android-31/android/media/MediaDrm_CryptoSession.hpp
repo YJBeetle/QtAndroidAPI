@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JByteArray;
 namespace android::media
 {
 	class MediaDrm;
@@ -21,10 +22,10 @@ namespace android::media
 		// Constructors
 		
 		// Methods
-		jbyteArray decrypt(jbyteArray arg0, jbyteArray arg1, jbyteArray arg2);
-		jbyteArray encrypt(jbyteArray arg0, jbyteArray arg1, jbyteArray arg2);
-		jbyteArray sign(jbyteArray arg0, jbyteArray arg1);
-		jboolean verify(jbyteArray arg0, jbyteArray arg1, jbyteArray arg2);
+		JByteArray decrypt(JByteArray arg0, JByteArray arg1, JByteArray arg2);
+		JByteArray encrypt(JByteArray arg0, JByteArray arg1, JByteArray arg2);
+		JByteArray sign(JByteArray arg0, JByteArray arg1);
+		jboolean verify(JByteArray arg0, JByteArray arg1, JByteArray arg2);
 	};
 } // namespace android::media
 

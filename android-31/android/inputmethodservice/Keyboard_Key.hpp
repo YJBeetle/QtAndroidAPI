@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JIntArray;
 namespace android::content::res
 {
 	class Resources;
@@ -14,6 +15,7 @@ namespace android::inputmethodservice
 {
 	class Keyboard_Row;
 }
+class JString;
 
 namespace android::inputmethodservice
 {
@@ -21,21 +23,21 @@ namespace android::inputmethodservice
 	{
 	public:
 		// Fields
-		jintArray codes();
+		JIntArray codes();
 		jint edgeFlags();
 		jint gap();
 		jint height();
 		android::graphics::drawable::Drawable icon();
 		android::graphics::drawable::Drawable iconPreview();
-		jstring label();
+		JString label();
 		jboolean modifier();
 		jboolean on();
-		jstring popupCharacters();
+		JString popupCharacters();
 		jint popupResId();
 		jboolean pressed();
 		jboolean repeatable();
 		jboolean sticky();
-		jstring text();
+		JString text();
 		jint width();
 		jint x();
 		jint y();
@@ -49,7 +51,7 @@ namespace android::inputmethodservice
 		Keyboard_Key(android::content::res::Resources arg0, android::inputmethodservice::Keyboard_Row arg1, jint arg2, jint arg3, JObject arg4);
 		
 		// Methods
-		jintArray getCurrentDrawableState();
+		JIntArray getCurrentDrawableState();
 		jboolean isInside(jint arg0, jint arg1);
 		void onPressed();
 		void onReleased(jboolean arg0);

@@ -6,90 +6,92 @@
 #include "./VersionedPackage.hpp"
 #include "../../graphics/Bitmap.hpp"
 #include "../../os/Handler.hpp"
+#include "../../../JString.hpp"
+#include "../../../JString.hpp"
 #include "./PackageInstaller.hpp"
 
 namespace android::content::pm
 {
 	// Fields
-	jstring PackageInstaller::ACTION_SESSION_COMMITTED()
+	JString PackageInstaller::ACTION_SESSION_COMMITTED()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageInstaller",
 			"ACTION_SESSION_COMMITTED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageInstaller::ACTION_SESSION_DETAILS()
+	JString PackageInstaller::ACTION_SESSION_DETAILS()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageInstaller",
 			"ACTION_SESSION_DETAILS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageInstaller::ACTION_SESSION_UPDATED()
+	JString PackageInstaller::ACTION_SESSION_UPDATED()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageInstaller",
 			"ACTION_SESSION_UPDATED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageInstaller::EXTRA_OTHER_PACKAGE_NAME()
+	JString PackageInstaller::EXTRA_OTHER_PACKAGE_NAME()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageInstaller",
 			"EXTRA_OTHER_PACKAGE_NAME",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageInstaller::EXTRA_PACKAGE_NAME()
+	JString PackageInstaller::EXTRA_PACKAGE_NAME()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageInstaller",
 			"EXTRA_PACKAGE_NAME",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageInstaller::EXTRA_SESSION()
+	JString PackageInstaller::EXTRA_SESSION()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageInstaller",
 			"EXTRA_SESSION",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageInstaller::EXTRA_SESSION_ID()
+	JString PackageInstaller::EXTRA_SESSION_ID()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageInstaller",
 			"EXTRA_SESSION_ID",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageInstaller::EXTRA_STATUS()
+	JString PackageInstaller::EXTRA_STATUS()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageInstaller",
 			"EXTRA_STATUS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageInstaller::EXTRA_STATUS_MESSAGE()
+	JString PackageInstaller::EXTRA_STATUS_MESSAGE()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageInstaller",
 			"EXTRA_STATUS_MESSAGE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageInstaller::EXTRA_STORAGE_PATH()
+	JString PackageInstaller::EXTRA_STORAGE_PATH()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageInstaller",
 			"EXTRA_STORAGE_PATH",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint PackageInstaller::STATUS_FAILURE()
 	{
@@ -220,12 +222,12 @@ namespace android::content::pm
 			"()Ljava/util/List;"
 		);
 	}
-	void PackageInstaller::installExistingPackage(jstring arg0, jint arg1, android::content::IntentSender arg2)
+	void PackageInstaller::installExistingPackage(JString arg0, jint arg1, android::content::IntentSender arg2)
 	{
 		callMethod<void>(
 			"installExistingPackage",
 			"(Ljava/lang/String;ILandroid/content/IntentSender;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
 			arg2.object()
 		);
@@ -264,21 +266,21 @@ namespace android::content::pm
 			arg1.object()
 		);
 	}
-	void PackageInstaller::uninstall(jstring arg0, android::content::IntentSender arg1)
+	void PackageInstaller::uninstall(JString arg0, android::content::IntentSender arg1)
 	{
 		callMethod<void>(
 			"uninstall",
 			"(Ljava/lang/String;Landroid/content/IntentSender;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
-	void PackageInstaller::uninstallExistingPackage(jstring arg0, android::content::IntentSender arg1)
+	void PackageInstaller::uninstallExistingPackage(JString arg0, android::content::IntentSender arg1)
 	{
 		callMethod<void>(
 			"uninstallExistingPackage",
 			"(Ljava/lang/String;Landroid/content/IntentSender;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
@@ -299,13 +301,13 @@ namespace android::content::pm
 			arg1.object()
 		);
 	}
-	void PackageInstaller::updateSessionAppLabel(jint arg0, jstring arg1)
+	void PackageInstaller::updateSessionAppLabel(jint arg0, JString arg1)
 	{
 		callMethod<void>(
 			"updateSessionAppLabel",
 			"(ILjava/lang/CharSequence;)V",
 			arg0,
-			arg1
+			arg1.object<jstring>()
 		);
 	}
 } // namespace android::content::pm

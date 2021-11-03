@@ -1,10 +1,9 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../lang/Exception.hpp"
-#include "./SQLException.hpp"
 #include "./SQLNonTransientException.hpp"
 
+class JString;
+class JThrowable;
 
 namespace java::sql
 {
@@ -19,13 +18,13 @@ namespace java::sql
 		
 		// Constructors
 		SQLInvalidAuthorizationSpecException();
-		SQLInvalidAuthorizationSpecException(jstring arg0);
-		SQLInvalidAuthorizationSpecException(jthrowable arg0);
-		SQLInvalidAuthorizationSpecException(jstring arg0, jstring arg1);
-		SQLInvalidAuthorizationSpecException(jstring arg0, jthrowable arg1);
-		SQLInvalidAuthorizationSpecException(jstring arg0, jstring arg1, jint arg2);
-		SQLInvalidAuthorizationSpecException(jstring arg0, jstring arg1, jthrowable arg2);
-		SQLInvalidAuthorizationSpecException(jstring arg0, jstring arg1, jint arg2, jthrowable arg3);
+		SQLInvalidAuthorizationSpecException(JString arg0);
+		SQLInvalidAuthorizationSpecException(JThrowable arg0);
+		SQLInvalidAuthorizationSpecException(JString arg0, JString arg1);
+		SQLInvalidAuthorizationSpecException(JString arg0, JThrowable arg1);
+		SQLInvalidAuthorizationSpecException(JString arg0, JString arg1, jint arg2);
+		SQLInvalidAuthorizationSpecException(JString arg0, JString arg1, JThrowable arg2);
+		SQLInvalidAuthorizationSpecException(JString arg0, JString arg1, jint arg2, JThrowable arg3);
 		
 		// Methods
 	};

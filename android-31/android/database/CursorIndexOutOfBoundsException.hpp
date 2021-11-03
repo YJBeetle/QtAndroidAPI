@@ -1,10 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../../java/lang/Exception.hpp"
-#include "../../java/lang/RuntimeException.hpp"
 #include "../../java/lang/IndexOutOfBoundsException.hpp"
 
+class JString;
 
 namespace android::database
 {
@@ -18,7 +16,7 @@ namespace android::database
 		CursorIndexOutOfBoundsException(QAndroidJniObject obj);
 		
 		// Constructors
-		CursorIndexOutOfBoundsException(jstring arg0);
+		CursorIndexOutOfBoundsException(JString arg0);
 		CursorIndexOutOfBoundsException(jint arg0, jint arg1);
 		
 		// Methods

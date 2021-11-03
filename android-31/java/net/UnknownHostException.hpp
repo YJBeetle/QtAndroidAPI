@@ -1,9 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../lang/Exception.hpp"
 #include "../io/IOException.hpp"
 
+class JString;
 
 namespace java::net
 {
@@ -18,7 +17,7 @@ namespace java::net
 		
 		// Constructors
 		UnknownHostException();
-		UnknownHostException(jstring arg0);
+		UnknownHostException(JString arg0);
 		
 		// Methods
 	};

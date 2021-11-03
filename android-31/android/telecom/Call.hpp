@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JArray;
 namespace android::net
 {
 	class Uri;
@@ -34,6 +35,7 @@ namespace android::telecom
 {
 	class PhoneAccountHandle;
 }
+class JString;
 
 namespace android::telecom
 {
@@ -41,14 +43,14 @@ namespace android::telecom
 	{
 	public:
 		// Fields
-		static jstring AVAILABLE_PHONE_ACCOUNTS();
-		static jstring EVENT_CLEAR_DIAGNOSTIC_MESSAGE();
-		static jstring EVENT_DISPLAY_DIAGNOSTIC_MESSAGE();
-		static jstring EXTRA_DIAGNOSTIC_MESSAGE();
-		static jstring EXTRA_DIAGNOSTIC_MESSAGE_ID();
-		static jstring EXTRA_LAST_EMERGENCY_CALLBACK_TIME_MILLIS();
-		static jstring EXTRA_SILENT_RINGING_REQUESTED();
-		static jstring EXTRA_SUGGESTED_PHONE_ACCOUNTS();
+		static JString AVAILABLE_PHONE_ACCOUNTS();
+		static JString EVENT_CLEAR_DIAGNOSTIC_MESSAGE();
+		static JString EVENT_DISPLAY_DIAGNOSTIC_MESSAGE();
+		static JString EXTRA_DIAGNOSTIC_MESSAGE();
+		static JString EXTRA_DIAGNOSTIC_MESSAGE_ID();
+		static JString EXTRA_LAST_EMERGENCY_CALLBACK_TIME_MILLIS();
+		static JString EXTRA_SILENT_RINGING_REQUESTED();
+		static JString EXTRA_SUGGESTED_PHONE_ACCOUNTS();
 		static jint REJECT_REASON_DECLINED();
 		static jint REJECT_REASON_UNWANTED();
 		static jint STATE_ACTIVE();
@@ -82,7 +84,7 @@ namespace android::telecom
 		android::telecom::Call_Details getDetails();
 		android::telecom::Call getGenericConferenceActiveChildCall();
 		android::telecom::Call getParent();
-		jstring getRemainingPostDialSequence();
+		JString getRemainingPostDialSequence();
 		android::telecom::Call_RttCall getRttCall();
 		jint getState();
 		android::telecom::InCallService_VideoCall getVideoCall();
@@ -98,17 +100,17 @@ namespace android::telecom
 		void registerCallback(android::telecom::Call_Callback arg0);
 		void registerCallback(android::telecom::Call_Callback arg0, android::os::Handler arg1);
 		void reject(jint arg0);
-		void reject(jboolean arg0, jstring arg1);
-		void removeExtras(jarray arg0);
+		void reject(jboolean arg0, JString arg1);
+		void removeExtras(JArray arg0);
 		void removeExtras(JObject arg0);
 		void respondToRttRequest(jint arg0, jboolean arg1);
-		void sendCallEvent(jstring arg0, android::os::Bundle arg1);
+		void sendCallEvent(JString arg0, android::os::Bundle arg1);
 		void sendRttRequest();
 		void splitFromConference();
 		void stopDtmfTone();
 		void stopRtt();
 		void swapConference();
-		jstring toString();
+		JString toString();
 		void unhold();
 		void unregisterCallback(android::telecom::Call_Callback arg0);
 	};

@@ -1,5 +1,6 @@
 #include "./EventLogTags_Description.hpp"
 #include "../../java/io/BufferedReader.hpp"
+#include "../../JString.hpp"
 #include "./EventLogTags.hpp"
 
 namespace android::util
@@ -31,12 +32,12 @@ namespace android::util
 			arg0
 		);
 	}
-	android::util::EventLogTags_Description EventLogTags::get(jstring arg0)
+	android::util::EventLogTags_Description EventLogTags::get(JString arg0)
 	{
 		return callObjectMethod(
 			"get",
 			"(Ljava/lang/String;)Landroid/util/EventLogTags$Description;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 } // namespace android::util

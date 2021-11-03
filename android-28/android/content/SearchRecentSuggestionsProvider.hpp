@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./ContentProvider.hpp"
 
+class JArray;
 namespace android::content
 {
 	class ContentValues;
@@ -11,6 +11,7 @@ namespace android::net
 {
 	class Uri;
 }
+class JString;
 
 namespace android::content
 {
@@ -29,12 +30,12 @@ namespace android::content
 		SearchRecentSuggestionsProvider();
 		
 		// Methods
-		jint _delete(android::net::Uri arg0, jstring arg1, jarray arg2);
-		jstring getType(android::net::Uri arg0);
+		jint _delete(android::net::Uri arg0, JString arg1, JArray arg2);
+		JString getType(android::net::Uri arg0);
 		android::net::Uri insert(android::net::Uri arg0, android::content::ContentValues arg1);
 		jboolean onCreate();
-		JObject query(android::net::Uri arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4);
-		jint update(android::net::Uri arg0, android::content::ContentValues arg1, jstring arg2, jarray arg3);
+		JObject query(android::net::Uri arg0, JArray arg1, JString arg2, JArray arg3, JString arg4);
+		jint update(android::net::Uri arg0, android::content::ContentValues arg1, JString arg2, JArray arg3);
 	};
 } // namespace android::content
 

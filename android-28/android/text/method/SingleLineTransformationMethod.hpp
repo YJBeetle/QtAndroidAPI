@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "./ReplacementTransformationMethod.hpp"
 
+class JCharArray;
 
 namespace android::text::method
 {

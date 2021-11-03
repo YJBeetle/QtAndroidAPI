@@ -1,3 +1,4 @@
+#include "../../../JObject.hpp"
 #include "../../math/BigInteger.hpp"
 #include "./ECPoint.hpp"
 
@@ -26,12 +27,12 @@ namespace java::security::spec
 		) {}
 	
 	// Methods
-	jboolean ECPoint::equals(jobject arg0)
+	jboolean ECPoint::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	java::math::BigInteger ECPoint::getAffineX()

@@ -1,7 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../view/View.hpp"
 #include "../view/ViewGroup.hpp"
 
 namespace android::app
@@ -12,6 +10,7 @@ namespace android::content
 {
 	class Context;
 }
+class JString;
 
 namespace android::app
 {
@@ -34,8 +33,8 @@ namespace android::app
 		void setActivity(android::app::Activity arg0);
 		void setMaxVisible(jint arg0);
 		void setOnBreadCrumbClickListener(JObject arg0);
-		void setParentTitle(jstring arg0, jstring arg1, JObject arg2);
-		void setTitle(jstring arg0, jstring arg1);
+		void setParentTitle(JString arg0, JString arg1, JObject arg2);
+		void setTitle(JString arg0, JString arg1);
 	};
 } // namespace android::app
 

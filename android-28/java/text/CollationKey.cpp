@@ -1,3 +1,6 @@
+#include "../../JByteArray.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./CollationKey.hpp"
 
 namespace java::text
@@ -10,12 +13,12 @@ namespace java::text
 	// Constructors
 	
 	// Methods
-	jint CollationKey::compareTo(jobject arg0)
+	jint CollationKey::compareTo(JObject arg0)
 	{
 		return callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Object;)I",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint CollationKey::compareTo(java::text::CollationKey arg0)
@@ -26,19 +29,19 @@ namespace java::text
 			arg0.object()
 		);
 	}
-	jstring CollationKey::getSourceString()
+	JString CollationKey::getSourceString()
 	{
 		return callObjectMethod(
 			"getSourceString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jbyteArray CollationKey::toByteArray()
+	JByteArray CollationKey::toByteArray()
 	{
 		return callObjectMethod(
 			"toByteArray",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
 } // namespace java::text
 

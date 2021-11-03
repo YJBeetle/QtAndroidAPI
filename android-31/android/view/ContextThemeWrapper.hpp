@@ -1,7 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../content/Context.hpp"
 #include "../content/ContextWrapper.hpp"
 
 namespace android::content
@@ -24,6 +22,8 @@ namespace android::content::res
 {
 	class Resources_Theme;
 }
+class JObject;
+class JString;
 
 namespace android::view
 {
@@ -45,7 +45,7 @@ namespace android::view
 		void applyOverrideConfiguration(android::content::res::Configuration arg0);
 		android::content::res::AssetManager getAssets();
 		android::content::res::Resources getResources();
-		jobject getSystemService(jstring arg0);
+		JObject getSystemService(JString arg0);
 		android::content::res::Resources_Theme getTheme();
 		void setTheme(android::content::res::Resources_Theme arg0);
 		void setTheme(jint arg0);

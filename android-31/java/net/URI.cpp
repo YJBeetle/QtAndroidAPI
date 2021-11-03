@@ -1,5 +1,9 @@
+#include "../../JCharArray.hpp"
+#include "../../JIntArray.hpp"
 #include "../io/ObjectInputStream.hpp"
 #include "../io/ObjectOutputStream.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "../lang/StringBuilder.hpp"
 #include "./URL.hpp"
 #include "../nio/charset/CharsetEncoder.hpp"
@@ -13,68 +17,68 @@ namespace java::net
 	URI::URI(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	URI::URI(jstring arg0)
+	URI::URI(JString arg0)
 		: JObject(
 			"java.net.URI",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	URI::URI(jstring arg0, jstring arg1, jstring arg2)
+	URI::URI(JString arg0, JString arg1, JString arg2)
 		: JObject(
 			"java.net.URI",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1,
-			arg2
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2.object<jstring>()
 		) {}
-	URI::URI(jstring arg0, jstring arg1, jstring arg2, jstring arg3)
+	URI::URI(JString arg0, JString arg1, JString arg2, JString arg3)
 		: JObject(
 			"java.net.URI",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2.object<jstring>(),
+			arg3.object<jstring>()
 		) {}
-	URI::URI(jstring arg0, jstring arg1, jstring arg2, jstring arg3, jstring arg4)
+	URI::URI(JString arg0, JString arg1, JString arg2, JString arg3, JString arg4)
 		: JObject(
 			"java.net.URI",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3,
-			arg4
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2.object<jstring>(),
+			arg3.object<jstring>(),
+			arg4.object<jstring>()
 		) {}
-	URI::URI(jstring arg0, jstring arg1, jstring arg2, jint arg3, jstring arg4, jstring arg5, jstring arg6)
+	URI::URI(JString arg0, JString arg1, JString arg2, jint arg3, JString arg4, JString arg5, JString arg6)
 		: JObject(
 			"java.net.URI",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1,
-			arg2,
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2.object<jstring>(),
 			arg3,
-			arg4,
-			arg5,
-			arg6
+			arg4.object<jstring>(),
+			arg5.object<jstring>(),
+			arg6.object<jstring>()
 		) {}
 	
 	// Methods
-	java::net::URI URI::create(jstring arg0)
+	java::net::URI URI::create(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"java.net.URI",
 			"create",
 			"(Ljava/lang/String;)Ljava/net/URI;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jint URI::compareTo(jobject arg0)
+	jint URI::compareTo(JObject arg0)
 	{
 		return callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Object;)I",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint URI::compareTo(java::net::URI arg0)
@@ -85,41 +89,41 @@ namespace java::net
 			arg0.object()
 		);
 	}
-	jboolean URI::equals(jobject arg0)
+	jboolean URI::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jstring URI::getAuthority()
+	JString URI::getAuthority()
 	{
 		return callObjectMethod(
 			"getAuthority",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring URI::getFragment()
+	JString URI::getFragment()
 	{
 		return callObjectMethod(
 			"getFragment",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring URI::getHost()
+	JString URI::getHost()
 	{
 		return callObjectMethod(
 			"getHost",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring URI::getPath()
+	JString URI::getPath()
 	{
 		return callObjectMethod(
 			"getPath",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint URI::getPort()
 	{
@@ -128,75 +132,75 @@ namespace java::net
 			"()I"
 		);
 	}
-	jstring URI::getQuery()
+	JString URI::getQuery()
 	{
 		return callObjectMethod(
 			"getQuery",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring URI::getRawAuthority()
+	JString URI::getRawAuthority()
 	{
 		return callObjectMethod(
 			"getRawAuthority",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring URI::getRawFragment()
+	JString URI::getRawFragment()
 	{
 		return callObjectMethod(
 			"getRawFragment",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring URI::getRawPath()
+	JString URI::getRawPath()
 	{
 		return callObjectMethod(
 			"getRawPath",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring URI::getRawQuery()
+	JString URI::getRawQuery()
 	{
 		return callObjectMethod(
 			"getRawQuery",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring URI::getRawSchemeSpecificPart()
+	JString URI::getRawSchemeSpecificPart()
 	{
 		return callObjectMethod(
 			"getRawSchemeSpecificPart",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring URI::getRawUserInfo()
+	JString URI::getRawUserInfo()
 	{
 		return callObjectMethod(
 			"getRawUserInfo",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring URI::getScheme()
+	JString URI::getScheme()
 	{
 		return callObjectMethod(
 			"getScheme",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring URI::getSchemeSpecificPart()
+	JString URI::getSchemeSpecificPart()
 	{
 		return callObjectMethod(
 			"getSchemeSpecificPart",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring URI::getUserInfo()
+	JString URI::getUserInfo()
 	{
 		return callObjectMethod(
 			"getUserInfo",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint URI::hashCode()
 	{
@@ -241,12 +245,12 @@ namespace java::net
 			arg0.object()
 		);
 	}
-	java::net::URI URI::resolve(jstring arg0)
+	java::net::URI URI::resolve(JString arg0)
 	{
 		return callObjectMethod(
 			"resolve",
 			"(Ljava/lang/String;)Ljava/net/URI;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	java::net::URI URI::resolve(java::net::URI arg0)
@@ -257,19 +261,19 @@ namespace java::net
 			arg0.object()
 		);
 	}
-	jstring URI::toASCIIString()
+	JString URI::toASCIIString()
 	{
 		return callObjectMethod(
 			"toASCIIString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring URI::toString()
+	JString URI::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	java::net::URL URI::toURL()
 	{

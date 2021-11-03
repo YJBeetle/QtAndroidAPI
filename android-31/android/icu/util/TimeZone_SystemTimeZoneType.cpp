@@ -1,3 +1,5 @@
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
 #include "./TimeZone_SystemTimeZoneType.hpp"
 
 namespace android::icu::util
@@ -34,22 +36,22 @@ namespace android::icu::util
 	// Constructors
 	
 	// Methods
-	android::icu::util::TimeZone_SystemTimeZoneType TimeZone_SystemTimeZoneType::valueOf(jstring arg0)
+	android::icu::util::TimeZone_SystemTimeZoneType TimeZone_SystemTimeZoneType::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.icu.util.TimeZone$SystemTimeZoneType",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/icu/util/TimeZone$SystemTimeZoneType;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray TimeZone_SystemTimeZoneType::values()
+	JArray TimeZone_SystemTimeZoneType::values()
 	{
 		return callStaticObjectMethod(
 			"android.icu.util.TimeZone$SystemTimeZoneType",
 			"values",
 			"()[Landroid/icu/util/TimeZone$SystemTimeZoneType;"
-		).object<jarray>();
+		);
 	}
 } // namespace android::icu::util
 

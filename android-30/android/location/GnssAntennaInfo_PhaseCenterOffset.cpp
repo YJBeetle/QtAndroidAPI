@@ -1,4 +1,5 @@
 #include "../os/Parcel.hpp"
+#include "../../JString.hpp"
 #include "./GnssAntennaInfo_PhaseCenterOffset.hpp"
 
 namespace android::location
@@ -79,12 +80,12 @@ namespace android::location
 			"()D"
 		);
 	}
-	jstring GnssAntennaInfo_PhaseCenterOffset::toString()
+	JString GnssAntennaInfo_PhaseCenterOffset::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void GnssAntennaInfo_PhaseCenterOffset::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

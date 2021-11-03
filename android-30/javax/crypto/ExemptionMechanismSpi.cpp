@@ -1,3 +1,4 @@
+#include "../../JByteArray.hpp"
 #include "../../java/security/AlgorithmParameters.hpp"
 #include "./ExemptionMechanismSpi.hpp"
 

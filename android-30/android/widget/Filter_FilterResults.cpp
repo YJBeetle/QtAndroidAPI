@@ -1,3 +1,4 @@
+#include "../../JObject.hpp"
 #include "./Filter_FilterResults.hpp"
 
 namespace android::widget
@@ -9,12 +10,12 @@ namespace android::widget
 			"count"
 		);
 	}
-	jobject Filter_FilterResults::values()
+	JObject Filter_FilterResults::values()
 	{
 		return getObjectField(
 			"values",
 			"Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
 	
 	// QAndroidJniObject forward

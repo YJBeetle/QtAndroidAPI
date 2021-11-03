@@ -1,3 +1,7 @@
+#include "../../../JObjectArray.hpp"
+#include "../../../JClass.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./MethodHandle.hpp"
 #include "./MethodType.hpp"
 #include "./WrongMethodTypeException.hpp"

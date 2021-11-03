@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JByteArray;
+class JCharArray;
 namespace java::io
 {
 	class InputStream;
@@ -10,6 +12,7 @@ namespace java::io
 {
 	class Reader;
 }
+class JString;
 
 namespace java::io
 {
@@ -22,7 +25,7 @@ namespace java::io
 		static jint TT_NUMBER();
 		static jint TT_WORD();
 		jdouble nval();
-		jstring sval();
+		JString sval();
 		jint ttype();
 		
 		// QAndroidJniObject forward
@@ -47,7 +50,7 @@ namespace java::io
 		void resetSyntax();
 		void slashSlashComments(jboolean arg0);
 		void slashStarComments(jboolean arg0);
-		jstring toString();
+		JString toString();
 		void whitespaceChars(jint arg0, jint arg1);
 		void wordChars(jint arg0, jint arg1);
 	};

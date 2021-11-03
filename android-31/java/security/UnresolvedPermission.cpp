@@ -1,5 +1,9 @@
+#include "../../JArray.hpp"
+#include "../../JArray.hpp"
 #include "../io/ObjectInputStream.hpp"
 #include "../io/ObjectOutputStream.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./Permission.hpp"
 #include "./PermissionCollection.hpp"
 #include "./UnresolvedPermission.hpp"
@@ -12,59 +16,59 @@ namespace java::security
 	UnresolvedPermission::UnresolvedPermission(QAndroidJniObject obj) : java::security::Permission(obj) {}
 	
 	// Constructors
-	UnresolvedPermission::UnresolvedPermission(jstring arg0, jstring arg1, jstring arg2, jarray arg3)
+	UnresolvedPermission::UnresolvedPermission(JString arg0, JString arg1, JString arg2, JArray arg3)
 		: java::security::Permission(
 			"java.security.UnresolvedPermission",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;[Ljava/security/cert/Certificate;)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2.object<jstring>(),
+			arg3.object<jarray>()
 		) {}
 	
 	// Methods
-	jboolean UnresolvedPermission::equals(jobject arg0)
+	jboolean UnresolvedPermission::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jstring UnresolvedPermission::getActions()
+	JString UnresolvedPermission::getActions()
 	{
 		return callObjectMethod(
 			"getActions",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring UnresolvedPermission::getUnresolvedActions()
+	JString UnresolvedPermission::getUnresolvedActions()
 	{
 		return callObjectMethod(
 			"getUnresolvedActions",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jarray UnresolvedPermission::getUnresolvedCerts()
+	JArray UnresolvedPermission::getUnresolvedCerts()
 	{
 		return callObjectMethod(
 			"getUnresolvedCerts",
 			"()[Ljava/security/cert/Certificate;"
-		).object<jarray>();
+		);
 	}
-	jstring UnresolvedPermission::getUnresolvedName()
+	JString UnresolvedPermission::getUnresolvedName()
 	{
 		return callObjectMethod(
 			"getUnresolvedName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring UnresolvedPermission::getUnresolvedType()
+	JString UnresolvedPermission::getUnresolvedType()
 	{
 		return callObjectMethod(
 			"getUnresolvedType",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint UnresolvedPermission::hashCode()
 	{
@@ -88,12 +92,12 @@ namespace java::security
 			"()Ljava/security/PermissionCollection;"
 		);
 	}
-	jstring UnresolvedPermission::toString()
+	JString UnresolvedPermission::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::security
 

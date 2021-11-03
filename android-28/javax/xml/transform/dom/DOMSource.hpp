@@ -2,6 +2,7 @@
 
 #include "../../../../JObject.hpp"
 
+class JString;
 
 namespace javax::xml::transform::dom
 {
@@ -9,7 +10,7 @@ namespace javax::xml::transform::dom
 	{
 	public:
 		// Fields
-		static jstring FEATURE();
+		static JString FEATURE();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit DOMSource(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
@@ -18,14 +19,14 @@ namespace javax::xml::transform::dom
 		// Constructors
 		DOMSource();
 		DOMSource(JObject arg0);
-		DOMSource(JObject arg0, jstring arg1);
+		DOMSource(JObject arg0, JString arg1);
 		
 		// Methods
 		JObject getNode();
-		jstring getSystemId();
+		JString getSystemId();
 		jboolean isEmpty();
 		void setNode(JObject arg0);
-		void setSystemId(jstring arg0);
+		void setSystemId(JString arg0);
 	};
 } // namespace javax::xml::transform::dom
 

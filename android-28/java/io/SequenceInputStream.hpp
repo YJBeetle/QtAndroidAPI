@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./InputStream.hpp"
 
+class JByteArray;
 namespace java::io
 {
 	class InputStream;
@@ -27,7 +27,7 @@ namespace java::io
 		jint available();
 		void close();
 		jint read();
-		jint read(jbyteArray arg0, jint arg1, jint arg2);
+		jint read(JByteArray arg0, jint arg1, jint arg2);
 	};
 } // namespace java::io
 

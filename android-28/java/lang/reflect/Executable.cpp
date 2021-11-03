@@ -1,3 +1,13 @@
+#include "../../../JByteArray.hpp"
+#include "../../../JArray.hpp"
+#include "../../../JArray.hpp"
+#include "../../../JArray.hpp"
+#include "../../../JArray.hpp"
+#include "../../../JArray.hpp"
+#include "../../../JArray.hpp"
+#include "../../../JArray.hpp"
+#include "../../../JClass.hpp"
+#include "../../../JString.hpp"
 #include "../StringBuilder.hpp"
 #include "./Executable.hpp"
 
@@ -11,19 +21,19 @@ namespace java::lang::reflect
 	// Constructors
 	
 	// Methods
-	jarray Executable::getAnnotatedExceptionTypes()
+	JArray Executable::getAnnotatedExceptionTypes()
 	{
 		return callObjectMethod(
 			"getAnnotatedExceptionTypes",
 			"()[Ljava/lang/reflect/AnnotatedType;"
-		).object<jarray>();
+		);
 	}
-	jarray Executable::getAnnotatedParameterTypes()
+	JArray Executable::getAnnotatedParameterTypes()
 	{
 		return callObjectMethod(
 			"getAnnotatedParameterTypes",
 			"()[Ljava/lang/reflect/AnnotatedType;"
-		).object<jarray>();
+		);
 	}
 	JObject Executable::getAnnotatedReceiverType()
 	{
@@ -39,56 +49,56 @@ namespace java::lang::reflect
 			"()Ljava/lang/reflect/AnnotatedType;"
 		);
 	}
-	JObject Executable::getAnnotation(jclass arg0)
+	JObject Executable::getAnnotation(JClass arg0)
 	{
 		return callObjectMethod(
 			"getAnnotation",
 			"(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;",
-			arg0
+			arg0.object<jclass>()
 		);
 	}
-	jarray Executable::getAnnotationsByType(jclass arg0)
+	JArray Executable::getAnnotationsByType(JClass arg0)
 	{
 		return callObjectMethod(
 			"getAnnotationsByType",
 			"(Ljava/lang/Class;)[Ljava/lang/annotation/Annotation;",
-			arg0
-		).object<jarray>();
+			arg0.object<jclass>()
+		);
 	}
-	jarray Executable::getDeclaredAnnotations()
+	JArray Executable::getDeclaredAnnotations()
 	{
 		return callObjectMethod(
 			"getDeclaredAnnotations",
 			"()[Ljava/lang/annotation/Annotation;"
-		).object<jarray>();
+		);
 	}
-	jclass Executable::getDeclaringClass()
+	JClass Executable::getDeclaringClass()
 	{
 		return callObjectMethod(
 			"getDeclaringClass",
 			"()Ljava/lang/Class;"
-		).object<jclass>();
+		);
 	}
-	jarray Executable::getExceptionTypes()
+	JArray Executable::getExceptionTypes()
 	{
 		return callObjectMethod(
 			"getExceptionTypes",
 			"()[Ljava/lang/Class;"
-		).object<jarray>();
+		);
 	}
-	jarray Executable::getGenericExceptionTypes()
+	JArray Executable::getGenericExceptionTypes()
 	{
 		return callObjectMethod(
 			"getGenericExceptionTypes",
 			"()[Ljava/lang/reflect/Type;"
-		).object<jarray>();
+		);
 	}
-	jarray Executable::getGenericParameterTypes()
+	JArray Executable::getGenericParameterTypes()
 	{
 		return callObjectMethod(
 			"getGenericParameterTypes",
 			"()[Ljava/lang/reflect/Type;"
-		).object<jarray>();
+		);
 	}
 	jint Executable::getModifiers()
 	{
@@ -97,19 +107,19 @@ namespace java::lang::reflect
 			"()I"
 		);
 	}
-	jstring Executable::getName()
+	JString Executable::getName()
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jarray Executable::getParameterAnnotations()
+	JArray Executable::getParameterAnnotations()
 	{
 		return callObjectMethod(
 			"getParameterAnnotations",
 			"()[[Ljava/lang/annotation/Annotation;"
-		).object<jarray>();
+		);
 	}
 	jint Executable::getParameterCount()
 	{
@@ -118,26 +128,26 @@ namespace java::lang::reflect
 			"()I"
 		);
 	}
-	jarray Executable::getParameterTypes()
+	JArray Executable::getParameterTypes()
 	{
 		return callObjectMethod(
 			"getParameterTypes",
 			"()[Ljava/lang/Class;"
-		).object<jarray>();
+		);
 	}
-	jarray Executable::getParameters()
+	JArray Executable::getParameters()
 	{
 		return callObjectMethod(
 			"getParameters",
 			"()[Ljava/lang/reflect/Parameter;"
-		).object<jarray>();
+		);
 	}
-	jarray Executable::getTypeParameters()
+	JArray Executable::getTypeParameters()
 	{
 		return callObjectMethod(
 			"getTypeParameters",
 			"()[Ljava/lang/reflect/TypeVariable;"
-		).object<jarray>();
+		);
 	}
 	jboolean Executable::isSynthetic()
 	{
@@ -153,12 +163,12 @@ namespace java::lang::reflect
 			"()Z"
 		);
 	}
-	jstring Executable::toGenericString()
+	JString Executable::toGenericString()
 	{
 		return callObjectMethod(
 			"toGenericString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::lang::reflect
 

@@ -2,7 +2,6 @@
 
 #include "../../../JObject.hpp"
 
-
 namespace android::hardware::display
 {
 	class VirtualDisplay_Callback : public JObject

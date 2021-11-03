@@ -30,6 +30,7 @@ namespace android::os
 {
 	class Bundle;
 }
+class JString;
 
 namespace android::media::browse
 {
@@ -37,8 +38,8 @@ namespace android::media::browse
 	{
 	public:
 		// Fields
-		static jstring EXTRA_PAGE();
-		static jstring EXTRA_PAGE_SIZE();
+		static JString EXTRA_PAGE();
+		static JString EXTRA_PAGE_SIZE();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MediaBrowser(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
@@ -51,15 +52,15 @@ namespace android::media::browse
 		void connect();
 		void disconnect();
 		android::os::Bundle getExtras();
-		void getItem(jstring arg0, android::media::browse::MediaBrowser_ItemCallback arg1);
-		jstring getRoot();
+		void getItem(JString arg0, android::media::browse::MediaBrowser_ItemCallback arg1);
+		JString getRoot();
 		android::content::ComponentName getServiceComponent();
 		android::media::session::MediaSession_Token getSessionToken();
 		jboolean isConnected();
-		void subscribe(jstring arg0, android::media::browse::MediaBrowser_SubscriptionCallback arg1);
-		void subscribe(jstring arg0, android::os::Bundle arg1, android::media::browse::MediaBrowser_SubscriptionCallback arg2);
-		void unsubscribe(jstring arg0);
-		void unsubscribe(jstring arg0, android::media::browse::MediaBrowser_SubscriptionCallback arg1);
+		void subscribe(JString arg0, android::media::browse::MediaBrowser_SubscriptionCallback arg1);
+		void subscribe(JString arg0, android::os::Bundle arg1, android::media::browse::MediaBrowser_SubscriptionCallback arg2);
+		void unsubscribe(JString arg0);
+		void unsubscribe(JString arg0, android::media::browse::MediaBrowser_SubscriptionCallback arg1);
 	};
 } // namespace android::media::browse
 

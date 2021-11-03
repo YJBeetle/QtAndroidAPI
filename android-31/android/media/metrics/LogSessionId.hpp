@@ -2,6 +2,8 @@
 
 #include "../../../JObject.hpp"
 
+class JObject;
+class JString;
 
 namespace android::media::metrics
 {
@@ -18,10 +20,10 @@ namespace android::media::metrics
 		// Constructors
 		
 		// Methods
-		jboolean equals(jobject arg0);
-		jstring getStringId();
+		jboolean equals(JObject arg0);
+		JString getStringId();
 		jint hashCode();
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::media::metrics
 

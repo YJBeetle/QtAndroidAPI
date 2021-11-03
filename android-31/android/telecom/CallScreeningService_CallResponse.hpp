@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JObject;
 
 namespace android::telecom
 {
@@ -21,7 +22,7 @@ namespace android::telecom
 		// Constructors
 		
 		// Methods
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint getCallComposerAttachmentsToShow();
 		jboolean getDisallowCall();
 		jboolean getRejectCall();

@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./RenderScript_RSErrorHandler.hpp"
 
 namespace android::renderscript

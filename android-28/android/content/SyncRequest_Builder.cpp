@@ -1,6 +1,7 @@
 #include "../accounts/Account.hpp"
 #include "./SyncRequest.hpp"
 #include "../os/Bundle.hpp"
+#include "../../JString.hpp"
 #include "./SyncRequest_Builder.hpp"
 
 namespace android::content
@@ -89,13 +90,13 @@ namespace android::content
 			arg0
 		);
 	}
-	android::content::SyncRequest_Builder SyncRequest_Builder::setSyncAdapter(android::accounts::Account arg0, jstring arg1)
+	android::content::SyncRequest_Builder SyncRequest_Builder::setSyncAdapter(android::accounts::Account arg0, JString arg1)
 	{
 		return callObjectMethod(
 			"setSyncAdapter",
 			"(Landroid/accounts/Account;Ljava/lang/String;)Landroid/content/SyncRequest$Builder;",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
 	android::content::SyncRequest_Builder SyncRequest_Builder::syncOnce()

@@ -2,6 +2,8 @@
 #include "./Handler.hpp"
 #include "./Messenger.hpp"
 #include "./Parcel.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./Message.hpp"
 
 namespace android::os
@@ -27,12 +29,12 @@ namespace android::os
 			"arg2"
 		);
 	}
-	jobject Message::obj()
+	JObject Message::obj()
 	{
 		return getObjectField(
 			"obj",
 			"Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
 	android::os::Messenger Message::replyTo()
 	{
@@ -111,7 +113,7 @@ namespace android::os
 			arg1.object()
 		);
 	}
-	android::os::Message Message::obtain(android::os::Handler arg0, jint arg1, jobject arg2)
+	android::os::Message Message::obtain(android::os::Handler arg0, jint arg1, JObject arg2)
 	{
 		return callStaticObjectMethod(
 			"android.os.Message",
@@ -119,7 +121,7 @@ namespace android::os
 			"(Landroid/os/Handler;ILjava/lang/Object;)Landroid/os/Message;",
 			arg0.object(),
 			arg1,
-			arg2
+			arg2.object<jobject>()
 		);
 	}
 	android::os::Message Message::obtain(android::os::Handler arg0, jint arg1, jint arg2, jint arg3)
@@ -134,7 +136,7 @@ namespace android::os
 			arg3
 		);
 	}
-	android::os::Message Message::obtain(android::os::Handler arg0, jint arg1, jint arg2, jint arg3, jobject arg4)
+	android::os::Message Message::obtain(android::os::Handler arg0, jint arg1, jint arg2, jint arg3, JObject arg4)
 	{
 		return callStaticObjectMethod(
 			"android.os.Message",
@@ -144,7 +146,7 @@ namespace android::os
 			arg1,
 			arg2,
 			arg3,
-			arg4
+			arg4.object<jobject>()
 		);
 	}
 	void Message::copyFrom(android::os::Message arg0)
@@ -242,12 +244,12 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	jstring Message::toString()
+	JString Message::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void Message::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

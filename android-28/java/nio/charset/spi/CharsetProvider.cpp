@@ -1,3 +1,4 @@
+#include "../../../../JString.hpp"
 #include "../../../lang/Void.hpp"
 #include "../Charset.hpp"
 #include "./CharsetProvider.hpp"
@@ -12,12 +13,12 @@ namespace java::nio::charset::spi
 	// Constructors
 	
 	// Methods
-	java::nio::charset::Charset CharsetProvider::charsetForName(jstring arg0)
+	java::nio::charset::Charset CharsetProvider::charsetForName(JString arg0)
 	{
 		return callObjectMethod(
 			"charsetForName",
 			"(Ljava/lang/String;)Ljava/nio/charset/Charset;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	JObject CharsetProvider::charsets()

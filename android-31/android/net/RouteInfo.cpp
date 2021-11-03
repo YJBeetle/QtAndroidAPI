@@ -1,5 +1,7 @@
 #include "./IpPrefix.hpp"
 #include "../os/Parcel.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "../../java/net/InetAddress.hpp"
 #include "./RouteInfo.hpp"
 
@@ -28,12 +30,12 @@ namespace android::net
 			"()I"
 		);
 	}
-	jboolean RouteInfo::equals(jobject arg0)
+	jboolean RouteInfo::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	android::net::IpPrefix RouteInfo::getDestination()
@@ -50,12 +52,12 @@ namespace android::net
 			"()Ljava/net/InetAddress;"
 		);
 	}
-	jstring RouteInfo::getInterface()
+	JString RouteInfo::getInterface()
 	{
 		return callObjectMethod(
 			"getInterface",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jboolean RouteInfo::hasGateway()
 	{
@@ -86,12 +88,12 @@ namespace android::net
 			arg0.object()
 		);
 	}
-	jstring RouteInfo::toString()
+	JString RouteInfo::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void RouteInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

@@ -1,7 +1,9 @@
+#include "../../JArray.hpp"
 #include "../app/PendingIntent.hpp"
 #include "./ProxyInfo.hpp"
 #include "./VpnService.hpp"
 #include "../os/ParcelFileDescriptor.hpp"
+#include "../../JString.hpp"
 #include "../../java/net/InetAddress.hpp"
 #include "./VpnService_Builder.hpp"
 
@@ -21,12 +23,12 @@ namespace android::net
 		) {}
 	
 	// Methods
-	android::net::VpnService_Builder VpnService_Builder::addAddress(jstring arg0, jint arg1)
+	android::net::VpnService_Builder VpnService_Builder::addAddress(JString arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"addAddress",
 			"(Ljava/lang/String;I)Landroid/net/VpnService$Builder;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
@@ -39,28 +41,28 @@ namespace android::net
 			arg1
 		);
 	}
-	android::net::VpnService_Builder VpnService_Builder::addAllowedApplication(jstring arg0)
+	android::net::VpnService_Builder VpnService_Builder::addAllowedApplication(JString arg0)
 	{
 		return callObjectMethod(
 			"addAllowedApplication",
 			"(Ljava/lang/String;)Landroid/net/VpnService$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	android::net::VpnService_Builder VpnService_Builder::addDisallowedApplication(jstring arg0)
+	android::net::VpnService_Builder VpnService_Builder::addDisallowedApplication(JString arg0)
 	{
 		return callObjectMethod(
 			"addDisallowedApplication",
 			"(Ljava/lang/String;)Landroid/net/VpnService$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	android::net::VpnService_Builder VpnService_Builder::addDnsServer(jstring arg0)
+	android::net::VpnService_Builder VpnService_Builder::addDnsServer(JString arg0)
 	{
 		return callObjectMethod(
 			"addDnsServer",
 			"(Ljava/lang/String;)Landroid/net/VpnService$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::net::VpnService_Builder VpnService_Builder::addDnsServer(java::net::InetAddress arg0)
@@ -71,12 +73,12 @@ namespace android::net
 			arg0.object()
 		);
 	}
-	android::net::VpnService_Builder VpnService_Builder::addRoute(jstring arg0, jint arg1)
+	android::net::VpnService_Builder VpnService_Builder::addRoute(JString arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"addRoute",
 			"(Ljava/lang/String;I)Landroid/net/VpnService$Builder;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
@@ -89,12 +91,12 @@ namespace android::net
 			arg1
 		);
 	}
-	android::net::VpnService_Builder VpnService_Builder::addSearchDomain(jstring arg0)
+	android::net::VpnService_Builder VpnService_Builder::addSearchDomain(JString arg0)
 	{
 		return callObjectMethod(
 			"addSearchDomain",
 			"(Ljava/lang/String;)Landroid/net/VpnService$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::net::VpnService_Builder VpnService_Builder::allowBypass()
@@ -159,20 +161,20 @@ namespace android::net
 			arg0
 		);
 	}
-	android::net::VpnService_Builder VpnService_Builder::setSession(jstring arg0)
+	android::net::VpnService_Builder VpnService_Builder::setSession(JString arg0)
 	{
 		return callObjectMethod(
 			"setSession",
 			"(Ljava/lang/String;)Landroid/net/VpnService$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	android::net::VpnService_Builder VpnService_Builder::setUnderlyingNetworks(jarray arg0)
+	android::net::VpnService_Builder VpnService_Builder::setUnderlyingNetworks(JArray arg0)
 	{
 		return callObjectMethod(
 			"setUnderlyingNetworks",
 			"([Landroid/net/Network;)Landroid/net/VpnService$Builder;",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
 } // namespace android::net

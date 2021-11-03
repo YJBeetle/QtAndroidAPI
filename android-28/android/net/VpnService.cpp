@@ -1,5 +1,7 @@
+#include "../../JArray.hpp"
 #include "../content/Context.hpp"
 #include "../content/Intent.hpp"
+#include "../../JString.hpp"
 #include "../../java/net/DatagramSocket.hpp"
 #include "../../java/net/Socket.hpp"
 #include "./VpnService.hpp"
@@ -7,21 +9,21 @@
 namespace android::net
 {
 	// Fields
-	jstring VpnService::SERVICE_INTERFACE()
+	JString VpnService::SERVICE_INTERFACE()
 	{
 		return getStaticObjectField(
 			"android.net.VpnService",
 			"SERVICE_INTERFACE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring VpnService::SERVICE_META_DATA_SUPPORTS_ALWAYS_ON()
+	JString VpnService::SERVICE_META_DATA_SUPPORTS_ALWAYS_ON()
 	{
 		return getStaticObjectField(
 			"android.net.VpnService",
 			"SERVICE_META_DATA_SUPPORTS_ALWAYS_ON",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QAndroidJniObject forward
@@ -83,12 +85,12 @@ namespace android::net
 			arg0.object()
 		);
 	}
-	jboolean VpnService::setUnderlyingNetworks(jarray arg0)
+	jboolean VpnService::setUnderlyingNetworks(JArray arg0)
 	{
 		return callMethod<jboolean>(
 			"setUnderlyingNetworks",
 			"([Landroid/net/Network;)Z",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
 } // namespace android::net

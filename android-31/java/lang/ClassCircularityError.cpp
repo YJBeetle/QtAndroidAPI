@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./ClassCircularityError.hpp"
 
 namespace java::lang
@@ -13,11 +14,11 @@ namespace java::lang
 			"java.lang.ClassCircularityError",
 			"()V"
 		) {}
-	ClassCircularityError::ClassCircularityError(jstring arg0)
+	ClassCircularityError::ClassCircularityError(JString arg0)
 		: java::lang::LinkageError(
 			"java.lang.ClassCircularityError",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

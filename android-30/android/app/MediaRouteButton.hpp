@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "../view/View.hpp"
 
+class JIntArray;
 namespace android::content
 {
 	class Context;
@@ -15,6 +15,7 @@ namespace android::graphics::drawable
 {
 	class Drawable;
 }
+class JString;
 
 namespace android::app
 {
@@ -39,7 +40,7 @@ namespace android::app
 		void onAttachedToWindow();
 		void onDetachedFromWindow();
 		jboolean performClick();
-		void setContentDescription(jstring arg0);
+		void setContentDescription(JString arg0);
 		void setExtendedSettingsClickListener(JObject arg0);
 		void setRouteTypes(jint arg0);
 		void setVisibility(jint arg0);

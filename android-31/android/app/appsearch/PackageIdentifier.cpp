@@ -1,3 +1,6 @@
+#include "../../../JByteArray.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./PackageIdentifier.hpp"
 
 namespace android::app::appsearch
@@ -8,36 +11,36 @@ namespace android::app::appsearch
 	PackageIdentifier::PackageIdentifier(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	PackageIdentifier::PackageIdentifier(jstring arg0, jbyteArray arg1)
+	PackageIdentifier::PackageIdentifier(JString arg0, JByteArray arg1)
 		: JObject(
 			"android.app.appsearch.PackageIdentifier",
 			"(Ljava/lang/String;[B)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jbyteArray>()
 		) {}
 	
 	// Methods
-	jboolean PackageIdentifier::equals(jobject arg0)
+	jboolean PackageIdentifier::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jstring PackageIdentifier::getPackageName()
+	JString PackageIdentifier::getPackageName()
 	{
 		return callObjectMethod(
 			"getPackageName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jbyteArray PackageIdentifier::getSha256Certificate()
+	JByteArray PackageIdentifier::getSha256Certificate()
 	{
 		return callObjectMethod(
 			"getSha256Certificate",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
 	jint PackageIdentifier::hashCode()
 	{

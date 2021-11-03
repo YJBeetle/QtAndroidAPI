@@ -1,11 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../lang/Exception.hpp"
-#include "../lang/RuntimeException.hpp"
-#include "../lang/IllegalArgumentException.hpp"
 #include "./IllegalFormatException.hpp"
 
+class JString;
 
 namespace java::util
 {
@@ -19,11 +16,11 @@ namespace java::util
 		MissingFormatWidthException(QAndroidJniObject obj);
 		
 		// Constructors
-		MissingFormatWidthException(jstring arg0);
+		MissingFormatWidthException(JString arg0);
 		
 		// Methods
-		jstring getFormatSpecifier();
-		jstring getMessage();
+		JString getFormatSpecifier();
+		JString getMessage();
 	};
 } // namespace java::util
 

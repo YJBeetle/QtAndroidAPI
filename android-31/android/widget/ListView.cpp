@@ -1,3 +1,4 @@
+#include "../../JLongArray.hpp"
 #include "../content/Context.hpp"
 #include "../content/Intent.hpp"
 #include "../graphics/Canvas.hpp"
@@ -6,6 +7,8 @@
 #include "../view/KeyEvent.hpp"
 #include "../view/View.hpp"
 #include "../view/accessibility/AccessibilityNodeInfo.hpp"
+#include "../../JString.hpp"
+#include "../../JObject.hpp"
 #include "./ListView.hpp"
 
 namespace android::widget
@@ -56,13 +59,13 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void ListView::addFooterView(android::view::View arg0, jobject arg1, jboolean arg2)
+	void ListView::addFooterView(android::view::View arg0, JObject arg1, jboolean arg2)
 	{
 		callMethod<void>(
 			"addFooterView",
 			"(Landroid/view/View;Ljava/lang/Object;Z)V",
 			arg0.object(),
-			arg1,
+			arg1.object<jobject>(),
 			arg2
 		);
 	}
@@ -74,13 +77,13 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void ListView::addHeaderView(android::view::View arg0, jobject arg1, jboolean arg2)
+	void ListView::addHeaderView(android::view::View arg0, JObject arg1, jboolean arg2)
 	{
 		callMethod<void>(
 			"addHeaderView",
 			"(Landroid/view/View;Ljava/lang/Object;Z)V",
 			arg0.object(),
-			arg1,
+			arg1.object<jobject>(),
 			arg2
 		);
 	}
@@ -106,12 +109,12 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	jstring ListView::getAccessibilityClassName()
+	JString ListView::getAccessibilityClassName()
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	JObject ListView::getAdapter()
 	{
@@ -120,12 +123,12 @@ namespace android::widget
 			"()Landroid/widget/ListAdapter;"
 		);
 	}
-	jlongArray ListView::getCheckItemIds()
+	JLongArray ListView::getCheckItemIds()
 	{
 		return callObjectMethod(
 			"getCheckItemIds",
 			"()[J"
-		).object<jlongArray>();
+		);
 	}
 	android::graphics::drawable::Drawable ListView::getDivider()
 	{

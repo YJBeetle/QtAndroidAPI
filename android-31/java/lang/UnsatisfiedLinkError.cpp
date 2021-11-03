@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./UnsatisfiedLinkError.hpp"
 
 namespace java::lang
@@ -13,11 +14,11 @@ namespace java::lang
 			"java.lang.UnsatisfiedLinkError",
 			"()V"
 		) {}
-	UnsatisfiedLinkError::UnsatisfiedLinkError(jstring arg0)
+	UnsatisfiedLinkError::UnsatisfiedLinkError(JString arg0)
 		: java::lang::LinkageError(
 			"java.lang.UnsatisfiedLinkError",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

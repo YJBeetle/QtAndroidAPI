@@ -1,5 +1,6 @@
 #include "./SyncStats.hpp"
 #include "../os/Parcel.hpp"
+#include "../../JString.hpp"
 #include "./SyncResult.hpp"
 
 namespace android::content
@@ -130,19 +131,19 @@ namespace android::content
 			"()Z"
 		);
 	}
-	jstring SyncResult::toDebugString()
+	JString SyncResult::toDebugString()
 	{
 		return callObjectMethod(
 			"toDebugString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring SyncResult::toString()
+	JString SyncResult::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void SyncResult::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

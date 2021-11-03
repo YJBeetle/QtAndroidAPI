@@ -14,6 +14,9 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
+class JObject;
+class JString;
 
 namespace android::view::textservice
 {
@@ -28,17 +31,17 @@ namespace android::view::textservice
 		SpellCheckerSubtype(QAndroidJniObject obj);
 		
 		// Constructors
-		SpellCheckerSubtype(jint arg0, jstring arg1, jstring arg2);
+		SpellCheckerSubtype(jint arg0, JString arg1, JString arg2);
 		
 		// Methods
-		jboolean containsExtraValueKey(jstring arg0);
+		jboolean containsExtraValueKey(JString arg0);
 		jint describeContents();
-		jboolean equals(jobject arg0);
-		jstring getDisplayName(android::content::Context arg0, jstring arg1, android::content::pm::ApplicationInfo arg2);
-		jstring getExtraValue();
-		jstring getExtraValueOf(jstring arg0);
-		jstring getLanguageTag();
-		jstring getLocale();
+		jboolean equals(JObject arg0);
+		JString getDisplayName(android::content::Context arg0, JString arg1, android::content::pm::ApplicationInfo arg2);
+		JString getExtraValue();
+		JString getExtraValueOf(JString arg0);
+		JString getLanguageTag();
+		JString getLocale();
 		jint getNameResId();
 		jint hashCode();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);

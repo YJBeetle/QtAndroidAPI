@@ -1,3 +1,4 @@
+#include "../../../../JString.hpp"
 #include "../../../lang/StringBuilder.hpp"
 #include "./PosixFilePermissions.hpp"
 
@@ -20,23 +21,23 @@ namespace java::nio::file::attribute
 			arg0.object()
 		);
 	}
-	JObject PosixFilePermissions::fromString(jstring arg0)
+	JObject PosixFilePermissions::fromString(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"java.nio.file.attribute.PosixFilePermissions",
 			"fromString",
 			"(Ljava/lang/String;)Ljava/util/Set;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jstring PosixFilePermissions::toString(JObject arg0)
+	JString PosixFilePermissions::toString(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"java.nio.file.attribute.PosixFilePermissions",
 			"toString",
 			"(Ljava/util/Set;)Ljava/lang/String;",
 			arg0.object()
-		).object<jstring>();
+		);
 	}
 } // namespace java::nio::file::attribute
 

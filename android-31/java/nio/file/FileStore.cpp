@@ -1,3 +1,6 @@
+#include "../../../JClass.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./FileStore.hpp"
 
 namespace java::nio::file
@@ -10,13 +13,13 @@ namespace java::nio::file
 	// Constructors
 	
 	// Methods
-	jobject FileStore::getAttribute(jstring arg0)
+	JObject FileStore::getAttribute(JString arg0)
 	{
 		return callObjectMethod(
 			"getAttribute",
 			"(Ljava/lang/String;)Ljava/lang/Object;",
-			arg0
-		).object<jobject>();
+			arg0.object<jstring>()
+		);
 	}
 	jlong FileStore::getBlockSize()
 	{
@@ -25,12 +28,12 @@ namespace java::nio::file
 			"()J"
 		);
 	}
-	JObject FileStore::getFileStoreAttributeView(jclass arg0)
+	JObject FileStore::getFileStoreAttributeView(JClass arg0)
 	{
 		return callObjectMethod(
 			"getFileStoreAttributeView",
 			"(Ljava/lang/Class;)Ljava/nio/file/attribute/FileStoreAttributeView;",
-			arg0
+			arg0.object<jclass>()
 		);
 	}
 	jlong FileStore::getTotalSpace()
@@ -61,35 +64,35 @@ namespace java::nio::file
 			"()Z"
 		);
 	}
-	jstring FileStore::name()
+	JString FileStore::name()
 	{
 		return callObjectMethod(
 			"name",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jboolean FileStore::supportsFileAttributeView(jclass arg0)
+	jboolean FileStore::supportsFileAttributeView(JClass arg0)
 	{
 		return callMethod<jboolean>(
 			"supportsFileAttributeView",
 			"(Ljava/lang/Class;)Z",
-			arg0
+			arg0.object<jclass>()
 		);
 	}
-	jboolean FileStore::supportsFileAttributeView(jstring arg0)
+	jboolean FileStore::supportsFileAttributeView(JString arg0)
 	{
 		return callMethod<jboolean>(
 			"supportsFileAttributeView",
 			"(Ljava/lang/String;)Z",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jstring FileStore::type()
+	JString FileStore::type()
 	{
 		return callObjectMethod(
 			"type",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::nio::file
 

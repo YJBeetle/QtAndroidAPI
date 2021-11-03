@@ -6,6 +6,7 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
 
 namespace android::telephony::ims
 {
@@ -193,14 +194,14 @@ namespace android::telephony::ims
 		ImsReasonInfo(QAndroidJniObject obj);
 		
 		// Constructors
-		ImsReasonInfo(jint arg0, jint arg1, jstring arg2);
+		ImsReasonInfo(jint arg0, jint arg1, JString arg2);
 		
 		// Methods
 		jint describeContents();
 		jint getCode();
 		jint getExtraCode();
-		jstring getExtraMessage();
-		jstring toString();
+		JString getExtraMessage();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::telephony::ims

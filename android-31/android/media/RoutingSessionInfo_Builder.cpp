@@ -1,5 +1,7 @@
 #include "./RoutingSessionInfo.hpp"
 #include "../os/Bundle.hpp"
+#include "../../JString.hpp"
+#include "../../JString.hpp"
 #include "./RoutingSessionInfo_Builder.hpp"
 
 namespace android::media
@@ -16,45 +18,45 @@ namespace android::media
 			"(Landroid/media/RoutingSessionInfo;)V",
 			arg0.object()
 		) {}
-	RoutingSessionInfo_Builder::RoutingSessionInfo_Builder(jstring arg0, jstring arg1)
+	RoutingSessionInfo_Builder::RoutingSessionInfo_Builder(JString arg0, JString arg1)
 		: JObject(
 			"android.media.RoutingSessionInfo$Builder",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		) {}
 	
 	// Methods
-	android::media::RoutingSessionInfo_Builder RoutingSessionInfo_Builder::addDeselectableRoute(jstring arg0)
+	android::media::RoutingSessionInfo_Builder RoutingSessionInfo_Builder::addDeselectableRoute(JString arg0)
 	{
 		return callObjectMethod(
 			"addDeselectableRoute",
 			"(Ljava/lang/String;)Landroid/media/RoutingSessionInfo$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	android::media::RoutingSessionInfo_Builder RoutingSessionInfo_Builder::addSelectableRoute(jstring arg0)
+	android::media::RoutingSessionInfo_Builder RoutingSessionInfo_Builder::addSelectableRoute(JString arg0)
 	{
 		return callObjectMethod(
 			"addSelectableRoute",
 			"(Ljava/lang/String;)Landroid/media/RoutingSessionInfo$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	android::media::RoutingSessionInfo_Builder RoutingSessionInfo_Builder::addSelectedRoute(jstring arg0)
+	android::media::RoutingSessionInfo_Builder RoutingSessionInfo_Builder::addSelectedRoute(JString arg0)
 	{
 		return callObjectMethod(
 			"addSelectedRoute",
 			"(Ljava/lang/String;)Landroid/media/RoutingSessionInfo$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	android::media::RoutingSessionInfo_Builder RoutingSessionInfo_Builder::addTransferableRoute(jstring arg0)
+	android::media::RoutingSessionInfo_Builder RoutingSessionInfo_Builder::addTransferableRoute(JString arg0)
 	{
 		return callObjectMethod(
 			"addTransferableRoute",
 			"(Ljava/lang/String;)Landroid/media/RoutingSessionInfo$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::media::RoutingSessionInfo RoutingSessionInfo_Builder::build()
@@ -92,36 +94,36 @@ namespace android::media
 			"()Landroid/media/RoutingSessionInfo$Builder;"
 		);
 	}
-	android::media::RoutingSessionInfo_Builder RoutingSessionInfo_Builder::removeDeselectableRoute(jstring arg0)
+	android::media::RoutingSessionInfo_Builder RoutingSessionInfo_Builder::removeDeselectableRoute(JString arg0)
 	{
 		return callObjectMethod(
 			"removeDeselectableRoute",
 			"(Ljava/lang/String;)Landroid/media/RoutingSessionInfo$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	android::media::RoutingSessionInfo_Builder RoutingSessionInfo_Builder::removeSelectableRoute(jstring arg0)
+	android::media::RoutingSessionInfo_Builder RoutingSessionInfo_Builder::removeSelectableRoute(JString arg0)
 	{
 		return callObjectMethod(
 			"removeSelectableRoute",
 			"(Ljava/lang/String;)Landroid/media/RoutingSessionInfo$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	android::media::RoutingSessionInfo_Builder RoutingSessionInfo_Builder::removeSelectedRoute(jstring arg0)
+	android::media::RoutingSessionInfo_Builder RoutingSessionInfo_Builder::removeSelectedRoute(JString arg0)
 	{
 		return callObjectMethod(
 			"removeSelectedRoute",
 			"(Ljava/lang/String;)Landroid/media/RoutingSessionInfo$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	android::media::RoutingSessionInfo_Builder RoutingSessionInfo_Builder::removeTransferableRoute(jstring arg0)
+	android::media::RoutingSessionInfo_Builder RoutingSessionInfo_Builder::removeTransferableRoute(JString arg0)
 	{
 		return callObjectMethod(
 			"removeTransferableRoute",
 			"(Ljava/lang/String;)Landroid/media/RoutingSessionInfo$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::media::RoutingSessionInfo_Builder RoutingSessionInfo_Builder::setControlHints(android::os::Bundle arg0)
@@ -132,12 +134,12 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	android::media::RoutingSessionInfo_Builder RoutingSessionInfo_Builder::setName(jstring arg0)
+	android::media::RoutingSessionInfo_Builder RoutingSessionInfo_Builder::setName(JString arg0)
 	{
 		return callObjectMethod(
 			"setName",
 			"(Ljava/lang/CharSequence;)Landroid/media/RoutingSessionInfo$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::media::RoutingSessionInfo_Builder RoutingSessionInfo_Builder::setVolume(jint arg0)

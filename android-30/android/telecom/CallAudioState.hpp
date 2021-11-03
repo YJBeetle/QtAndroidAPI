@@ -10,6 +10,8 @@ namespace android::os
 {
 	class Parcel;
 }
+class JObject;
+class JString;
 
 namespace android::telecom
 {
@@ -32,15 +34,15 @@ namespace android::telecom
 		CallAudioState(jboolean arg0, jint arg1, jint arg2);
 		
 		// Methods
-		static jstring audioRouteToString(jint arg0);
+		static JString audioRouteToString(jint arg0);
 		jint describeContents();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		android::bluetooth::BluetoothDevice getActiveBluetoothDevice();
 		jint getRoute();
 		JObject getSupportedBluetoothDevices();
 		jint getSupportedRouteMask();
 		jboolean isMuted();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::telecom

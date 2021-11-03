@@ -14,6 +14,8 @@ namespace android::os
 {
 	class Parcel;
 }
+class JObject;
+class JString;
 
 namespace android::view
 {
@@ -40,11 +42,11 @@ namespace android::view
 		jint getAction();
 		android::content::ClipData getClipData();
 		android::content::ClipDescription getClipDescription();
-		jobject getLocalState();
+		JObject getLocalState();
 		jboolean getResult();
 		jfloat getX();
 		jfloat getY();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::view

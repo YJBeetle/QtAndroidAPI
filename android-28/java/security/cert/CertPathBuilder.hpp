@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JString;
 namespace java::security
 {
 	class Provider;
@@ -25,12 +26,12 @@ namespace java::security::cert
 		// Constructors
 		
 		// Methods
-		static jstring getDefaultType();
-		static java::security::cert::CertPathBuilder getInstance(jstring arg0);
-		static java::security::cert::CertPathBuilder getInstance(jstring arg0, jstring arg1);
-		static java::security::cert::CertPathBuilder getInstance(jstring arg0, java::security::Provider arg1);
+		static JString getDefaultType();
+		static java::security::cert::CertPathBuilder getInstance(JString arg0);
+		static java::security::cert::CertPathBuilder getInstance(JString arg0, JString arg1);
+		static java::security::cert::CertPathBuilder getInstance(JString arg0, java::security::Provider arg1);
 		JObject build(JObject arg0);
-		jstring getAlgorithm();
+		JString getAlgorithm();
 		java::security::Provider getProvider();
 		JObject getRevocationChecker();
 	};

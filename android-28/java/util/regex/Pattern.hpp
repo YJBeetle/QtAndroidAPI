@@ -2,10 +2,15 @@
 
 #include "../../../JObject.hpp"
 
+class JIntArray;
+class JArray;
+class JArray;
 namespace java::io
 {
 	class ObjectInputStream;
 }
+class JString;
+class JString;
 namespace java::lang
 {
 	class StringBuilder;
@@ -42,19 +47,19 @@ namespace java::util::regex
 		// Constructors
 		
 		// Methods
-		static java::util::regex::Pattern compile(jstring arg0);
-		static java::util::regex::Pattern compile(jstring arg0, jint arg1);
-		static jboolean matches(jstring arg0, jstring arg1);
-		static jstring quote(jstring arg0);
+		static java::util::regex::Pattern compile(JString arg0);
+		static java::util::regex::Pattern compile(JString arg0, jint arg1);
+		static jboolean matches(JString arg0, JString arg1);
+		static JString quote(JString arg0);
 		JObject asMatchPredicate();
 		JObject asPredicate();
 		jint flags();
-		java::util::regex::Matcher matcher(jstring arg0);
-		jstring pattern();
-		jarray split(jstring arg0);
-		jarray split(jstring arg0, jint arg1);
-		JObject splitAsStream(jstring arg0);
-		jstring toString();
+		java::util::regex::Matcher matcher(JString arg0);
+		JString pattern();
+		JArray split(JString arg0);
+		JArray split(JString arg0, jint arg1);
+		JObject splitAsStream(JString arg0);
+		JString toString();
 	};
 } // namespace java::util::regex
 

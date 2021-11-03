@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JObject;
 
 namespace android::widget
 {
@@ -10,7 +11,7 @@ namespace android::widget
 	public:
 		// Fields
 		jint count();
-		jobject values();
+		JObject values();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Filter_FilterResults(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}

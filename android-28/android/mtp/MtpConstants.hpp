@@ -2,7 +2,6 @@
 
 #include "../../JObject.hpp"
 
-
 namespace android::mtp
 {
 	class MtpConstants : public JObject

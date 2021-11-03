@@ -1,3 +1,5 @@
+#include "../../JFloatArray.hpp"
+#include "../../JObject.hpp"
 #include "./FloatArrayEvaluator.hpp"
 
 namespace android::animation
@@ -13,33 +15,33 @@ namespace android::animation
 			"android.animation.FloatArrayEvaluator",
 			"()V"
 		) {}
-	FloatArrayEvaluator::FloatArrayEvaluator(jfloatArray arg0)
+	FloatArrayEvaluator::FloatArrayEvaluator(JFloatArray arg0)
 		: JObject(
 			"android.animation.FloatArrayEvaluator",
 			"([F)V",
-			arg0
+			arg0.object<jfloatArray>()
 		) {}
 	
 	// Methods
-	jfloatArray FloatArrayEvaluator::evaluate(jfloat arg0, jfloatArray arg1, jfloatArray arg2)
+	JFloatArray FloatArrayEvaluator::evaluate(jfloat arg0, JFloatArray arg1, JFloatArray arg2)
 	{
 		return callObjectMethod(
 			"evaluate",
 			"(F[F[F)[F",
 			arg0,
-			arg1,
-			arg2
-		).object<jfloatArray>();
+			arg1.object<jfloatArray>(),
+			arg2.object<jfloatArray>()
+		);
 	}
-	jobject FloatArrayEvaluator::evaluate(jfloat arg0, jobject arg1, jobject arg2)
+	JObject FloatArrayEvaluator::evaluate(jfloat arg0, JObject arg1, JObject arg2)
 	{
 		return callObjectMethod(
 			"evaluate",
 			"(FLjava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
 			arg0,
-			arg1,
-			arg2
-		).object<jobject>();
+			arg1.object<jobject>(),
+			arg2.object<jobject>()
+		);
 	}
 } // namespace android::animation
 

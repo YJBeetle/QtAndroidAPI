@@ -1,3 +1,5 @@
+#include "../../../JCharArray.hpp"
+#include "../../../JArray.hpp"
 #include "../../../java/security/KeyStore.hpp"
 #include "./KeyManagerFactorySpi.hpp"
 

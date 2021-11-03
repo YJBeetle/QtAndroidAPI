@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./NetPermission.hpp"
 
 namespace java::net
@@ -8,18 +9,18 @@ namespace java::net
 	NetPermission::NetPermission(QAndroidJniObject obj) : java::security::BasicPermission(obj) {}
 	
 	// Constructors
-	NetPermission::NetPermission(jstring arg0)
+	NetPermission::NetPermission(JString arg0)
 		: java::security::BasicPermission(
 			"java.net.NetPermission",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	NetPermission::NetPermission(jstring arg0, jstring arg1)
+	NetPermission::NetPermission(JString arg0, JString arg1)
 		: java::security::BasicPermission(
 			"java.net.NetPermission",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		) {}
 	
 	// Methods

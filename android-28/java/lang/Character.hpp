@@ -2,6 +2,11 @@
 
 #include "../../JObject.hpp"
 
+class JCharArray;
+class JString;
+class JClass;
+class JObject;
+class JString;
 namespace java::util
 {
 	class Optional;
@@ -80,7 +85,7 @@ namespace java::lang
 		static jbyte START_PUNCTUATION();
 		static jbyte SURROGATE();
 		static jbyte TITLECASE_LETTER();
-		static jclass TYPE();
+		static JClass TYPE();
 		static jbyte UNASSIGNED();
 		static jbyte UPPERCASE_LETTER();
 		
@@ -93,22 +98,22 @@ namespace java::lang
 		
 		// Methods
 		static jint charCount(jint arg0);
-		static jint codePointAt(jcharArray arg0, jint arg1);
-		static jint codePointAt(jstring arg0, jint arg1);
-		static jint codePointAt(jcharArray arg0, jint arg1, jint arg2);
-		static jint codePointBefore(jcharArray arg0, jint arg1);
-		static jint codePointBefore(jstring arg0, jint arg1);
-		static jint codePointBefore(jcharArray arg0, jint arg1, jint arg2);
-		static jint codePointCount(jcharArray arg0, jint arg1, jint arg2);
-		static jint codePointCount(jstring arg0, jint arg1, jint arg2);
-		static jint codePointOf(jstring arg0);
+		static jint codePointAt(JCharArray arg0, jint arg1);
+		static jint codePointAt(JString arg0, jint arg1);
+		static jint codePointAt(JCharArray arg0, jint arg1, jint arg2);
+		static jint codePointBefore(JCharArray arg0, jint arg1);
+		static jint codePointBefore(JString arg0, jint arg1);
+		static jint codePointBefore(JCharArray arg0, jint arg1, jint arg2);
+		static jint codePointCount(JCharArray arg0, jint arg1, jint arg2);
+		static jint codePointCount(JString arg0, jint arg1, jint arg2);
+		static jint codePointOf(JString arg0);
 		static jint compare(jchar arg0, jchar arg1);
 		static jint digit(jchar arg0, jint arg1);
 		static jint digit(jint arg0, jint arg1);
 		static jchar forDigit(jint arg0, jint arg1);
 		static jbyte getDirectionality(jchar arg0);
 		static jbyte getDirectionality(jint arg0);
-		static jstring getName(jint arg0);
+		static JString getName(jint arg0);
 		static jint getNumericValue(jchar arg0);
 		static jint getNumericValue(jint arg0);
 		static jint getType(jchar arg0);
@@ -160,16 +165,16 @@ namespace java::lang
 		static jboolean isWhitespace(jchar arg0);
 		static jboolean isWhitespace(jint arg0);
 		static jchar lowSurrogate(jint arg0);
-		static jint offsetByCodePoints(jstring arg0, jint arg1, jint arg2);
-		static jint offsetByCodePoints(jcharArray arg0, jint arg1, jint arg2, jint arg3, jint arg4);
+		static jint offsetByCodePoints(JString arg0, jint arg1, jint arg2);
+		static jint offsetByCodePoints(JCharArray arg0, jint arg1, jint arg2, jint arg3, jint arg4);
 		static jchar reverseBytes(jchar arg0);
-		static jcharArray toChars(jint arg0);
-		static jint toChars(jint arg0, jcharArray arg1, jint arg2);
+		static JCharArray toChars(jint arg0);
+		static jint toChars(jint arg0, JCharArray arg1, jint arg2);
 		static jint toCodePoint(jchar arg0, jchar arg1);
 		static jchar toLowerCase(jchar arg0);
 		static jint toLowerCase(jint arg0);
-		static jstring toString(jchar arg0);
-		static jstring toString(jint arg0);
+		static JString toString(jchar arg0);
+		static JString toString(jint arg0);
 		static jchar toTitleCase(jchar arg0);
 		static jint toTitleCase(jint arg0);
 		static jchar toUpperCase(jchar arg0);
@@ -177,11 +182,11 @@ namespace java::lang
 		static java::lang::Character valueOf(jchar arg0);
 		jchar charValue();
 		jint compareTo(java::lang::Character arg0);
-		jint compareTo(jobject arg0);
+		jint compareTo(JObject arg0);
 		java::util::Optional describeConstable();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint hashCode();
-		jstring toString();
+		JString toString();
 	};
 } // namespace java::lang
 

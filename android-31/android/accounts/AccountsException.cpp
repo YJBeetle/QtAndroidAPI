@@ -1,3 +1,5 @@
+#include "../../JString.hpp"
+#include "../../JThrowable.hpp"
 #include "./AccountsException.hpp"
 
 namespace android::accounts
@@ -13,24 +15,24 @@ namespace android::accounts
 			"android.accounts.AccountsException",
 			"()V"
 		) {}
-	AccountsException::AccountsException(jstring arg0)
+	AccountsException::AccountsException(JString arg0)
 		: java::lang::Exception(
 			"android.accounts.AccountsException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	AccountsException::AccountsException(jthrowable arg0)
+	AccountsException::AccountsException(JThrowable arg0)
 		: java::lang::Exception(
 			"android.accounts.AccountsException",
 			"(Ljava/lang/Throwable;)V",
-			arg0
+			arg0.object<jthrowable>()
 		) {}
-	AccountsException::AccountsException(jstring arg0, jthrowable arg1)
+	AccountsException::AccountsException(JString arg0, JThrowable arg1)
 		: java::lang::Exception(
 			"android.accounts.AccountsException",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
 		) {}
 	
 	// Methods

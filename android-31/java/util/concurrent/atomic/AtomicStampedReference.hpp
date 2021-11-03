@@ -2,6 +2,8 @@
 
 #include "../../../../JObject.hpp"
 
+class JIntArray;
+class JObject;
 
 namespace java::util::concurrent::atomic
 {
@@ -15,16 +17,16 @@ namespace java::util::concurrent::atomic
 		AtomicStampedReference(QAndroidJniObject obj);
 		
 		// Constructors
-		AtomicStampedReference(jobject arg0, jint arg1);
+		AtomicStampedReference(JObject arg0, jint arg1);
 		
 		// Methods
-		jboolean attemptStamp(jobject arg0, jint arg1);
-		jboolean compareAndSet(jobject arg0, jobject arg1, jint arg2, jint arg3);
-		jobject get(jintArray arg0);
-		jobject getReference();
+		jboolean attemptStamp(JObject arg0, jint arg1);
+		jboolean compareAndSet(JObject arg0, JObject arg1, jint arg2, jint arg3);
+		JObject get(JIntArray arg0);
+		JObject getReference();
 		jint getStamp();
-		void set(jobject arg0, jint arg1);
-		jboolean weakCompareAndSet(jobject arg0, jobject arg1, jint arg2, jint arg3);
+		void set(JObject arg0, jint arg1);
+		jboolean weakCompareAndSet(JObject arg0, JObject arg1, jint arg2, jint arg3);
 	};
 } // namespace java::util::concurrent::atomic
 

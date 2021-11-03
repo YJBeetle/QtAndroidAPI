@@ -2,7 +2,6 @@
 
 #include "../../JObject.hpp"
 
-
 namespace android::os
 {
 	class BugreportManager_BugreportCallback : public JObject

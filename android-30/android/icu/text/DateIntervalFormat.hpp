@@ -1,7 +1,5 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "../../../java/text/Format.hpp"
 #include "./UFormat.hpp"
 
 namespace android::icu::text
@@ -28,6 +26,8 @@ namespace android::icu::util
 {
 	class ULocale;
 }
+class JObject;
+class JString;
 namespace java::lang
 {
 	class StringBuffer;
@@ -59,20 +59,20 @@ namespace android::icu::text
 		// Constructors
 		
 		// Methods
-		static android::icu::text::DateIntervalFormat getInstance(jstring arg0);
-		static android::icu::text::DateIntervalFormat getInstance(jstring arg0, android::icu::text::DateIntervalInfo arg1);
-		static android::icu::text::DateIntervalFormat getInstance(jstring arg0, android::icu::util::ULocale arg1);
-		static android::icu::text::DateIntervalFormat getInstance(jstring arg0, java::util::Locale arg1);
-		static android::icu::text::DateIntervalFormat getInstance(jstring arg0, android::icu::util::ULocale arg1, android::icu::text::DateIntervalInfo arg2);
-		static android::icu::text::DateIntervalFormat getInstance(jstring arg0, java::util::Locale arg1, android::icu::text::DateIntervalInfo arg2);
-		jobject clone();
+		static android::icu::text::DateIntervalFormat getInstance(JString arg0);
+		static android::icu::text::DateIntervalFormat getInstance(JString arg0, android::icu::text::DateIntervalInfo arg1);
+		static android::icu::text::DateIntervalFormat getInstance(JString arg0, android::icu::util::ULocale arg1);
+		static android::icu::text::DateIntervalFormat getInstance(JString arg0, java::util::Locale arg1);
+		static android::icu::text::DateIntervalFormat getInstance(JString arg0, android::icu::util::ULocale arg1, android::icu::text::DateIntervalInfo arg2);
+		static android::icu::text::DateIntervalFormat getInstance(JString arg0, java::util::Locale arg1, android::icu::text::DateIntervalInfo arg2);
+		JObject clone();
 		java::lang::StringBuffer format(android::icu::util::DateInterval arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2);
-		java::lang::StringBuffer format(jobject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2);
+		java::lang::StringBuffer format(JObject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2);
 		java::lang::StringBuffer format(android::icu::util::Calendar arg0, android::icu::util::Calendar arg1, java::lang::StringBuffer arg2, java::text::FieldPosition arg3);
 		android::icu::text::DateFormat getDateFormat();
 		android::icu::text::DateIntervalInfo getDateIntervalInfo();
 		android::icu::util::TimeZone getTimeZone();
-		jobject parseObject(jstring arg0, java::text::ParsePosition arg1);
+		JObject parseObject(JString arg0, java::text::ParsePosition arg1);
 		void setDateIntervalInfo(android::icu::text::DateIntervalInfo arg0);
 		void setTimeZone(android::icu::util::TimeZone arg0);
 	};

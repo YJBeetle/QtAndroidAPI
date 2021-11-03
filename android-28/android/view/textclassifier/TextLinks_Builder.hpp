@@ -6,6 +6,7 @@ namespace android::view::textclassifier
 {
 	class TextLinks;
 }
+class JString;
 
 namespace android::view::textclassifier
 {
@@ -19,7 +20,7 @@ namespace android::view::textclassifier
 		TextLinks_Builder(QAndroidJniObject obj);
 		
 		// Constructors
-		TextLinks_Builder(jstring arg0);
+		TextLinks_Builder(JString arg0);
 		
 		// Methods
 		android::view::textclassifier::TextLinks_Builder addLink(jint arg0, jint arg1, JObject arg2);

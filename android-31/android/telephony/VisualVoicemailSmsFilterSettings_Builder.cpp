@@ -1,4 +1,5 @@
 #include "./VisualVoicemailSmsFilterSettings.hpp"
+#include "../../JString.hpp"
 #include "./VisualVoicemailSmsFilterSettings_Builder.hpp"
 
 namespace android::telephony
@@ -23,12 +24,12 @@ namespace android::telephony
 			"()Landroid/telephony/VisualVoicemailSmsFilterSettings;"
 		);
 	}
-	android::telephony::VisualVoicemailSmsFilterSettings_Builder VisualVoicemailSmsFilterSettings_Builder::setClientPrefix(jstring arg0)
+	android::telephony::VisualVoicemailSmsFilterSettings_Builder VisualVoicemailSmsFilterSettings_Builder::setClientPrefix(JString arg0)
 	{
 		return callObjectMethod(
 			"setClientPrefix",
 			"(Ljava/lang/String;)Landroid/telephony/VisualVoicemailSmsFilterSettings$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::telephony::VisualVoicemailSmsFilterSettings_Builder VisualVoicemailSmsFilterSettings_Builder::setDestinationPort(jint arg0)

@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JIntArray;
 namespace android::content
 {
 	class Intent;
@@ -22,6 +23,8 @@ namespace android::os
 {
 	class UserHandle;
 }
+class JString;
+class JString;
 
 namespace android::content::pm
 {
@@ -47,14 +50,14 @@ namespace android::content::pm
 		android::content::Intent createDetailsIntent();
 		jint describeContents();
 		android::graphics::Bitmap getAppIcon();
-		jstring getAppLabel();
-		jstring getAppPackageName();
-		jintArray getChildSessionIds();
+		JString getAppLabel();
+		JString getAppPackageName();
+		JIntArray getChildSessionIds();
 		jlong getCreatedMillis();
 		jint getInstallLocation();
 		jint getInstallReason();
-		jstring getInstallerAttributionTag();
-		jstring getInstallerPackageName();
+		JString getInstallerAttributionTag();
+		JString getInstallerPackageName();
 		jint getMode();
 		jint getOriginatingUid();
 		android::net::Uri getOriginatingUri();
@@ -65,7 +68,7 @@ namespace android::content::pm
 		jint getSessionId();
 		jlong getSize();
 		jint getStagedSessionErrorCode();
-		jstring getStagedSessionErrorMessage();
+		JString getStagedSessionErrorMessage();
 		jlong getUpdatedMillis();
 		android::os::UserHandle getUser();
 		jboolean hasParentSessionId();

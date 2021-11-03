@@ -6,6 +6,9 @@ namespace java::io
 {
 	class ObjectInputStream;
 }
+class JString;
+class JObject;
+class JString;
 namespace java::math
 {
 	class BigDecimal;
@@ -40,14 +43,14 @@ namespace java::time
 		static java::time::Duration ofNanos(jlong arg0);
 		static java::time::Duration ofSeconds(jlong arg0);
 		static java::time::Duration ofSeconds(jlong arg0, jlong arg1);
-		static java::time::Duration parse(jstring arg0);
+		static java::time::Duration parse(JString arg0);
 		java::time::Duration abs();
 		JObject addTo(JObject arg0);
-		jint compareTo(jobject arg0);
+		jint compareTo(JObject arg0);
 		jint compareTo(java::time::Duration arg0);
 		java::time::Duration dividedBy(jlong arg0);
 		jlong dividedBy(java::time::Duration arg0);
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jlong get(JObject arg0);
 		jint getNano();
 		jlong getSeconds();
@@ -86,7 +89,7 @@ namespace java::time
 		jint toNanosPart();
 		jlong toSeconds();
 		jint toSecondsPart();
-		jstring toString();
+		JString toString();
 		java::time::Duration truncatedTo(JObject arg0);
 		java::time::Duration withNanos(jint arg0);
 		java::time::Duration withSeconds(jlong arg0);

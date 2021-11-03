@@ -1,8 +1,11 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "./MeasureUnit.hpp"
 
+class JArray;
+class JArray;
+class JArray;
+class JBooleanArray;
 namespace android::icu::util
 {
 	class Currency_CurrencyUsage;
@@ -11,6 +14,7 @@ namespace android::icu::util
 {
 	class ULocale;
 }
+class JString;
 namespace java::util
 {
 	class Date;
@@ -38,31 +42,31 @@ namespace android::icu::util
 		
 		// Methods
 		static JObject getAvailableCurrencies();
-		static jarray getAvailableCurrencyCodes(android::icu::util::ULocale arg0, java::util::Date arg1);
-		static jarray getAvailableCurrencyCodes(java::util::Locale arg0, java::util::Date arg1);
-		static jarray getAvailableLocales();
-		static jarray getAvailableULocales();
+		static JArray getAvailableCurrencyCodes(android::icu::util::ULocale arg0, java::util::Date arg1);
+		static JArray getAvailableCurrencyCodes(java::util::Locale arg0, java::util::Date arg1);
+		static JArray getAvailableLocales();
+		static JArray getAvailableULocales();
 		static android::icu::util::Currency getInstance(android::icu::util::ULocale arg0);
-		static android::icu::util::Currency getInstance(jstring arg0);
+		static android::icu::util::Currency getInstance(JString arg0);
 		static android::icu::util::Currency getInstance(java::util::Locale arg0);
-		static jarray getKeywordValuesForLocale(jstring arg0, android::icu::util::ULocale arg1, jboolean arg2);
-		static jboolean isAvailable(jstring arg0, java::util::Date arg1, java::util::Date arg2);
-		jstring getCurrencyCode();
+		static JArray getKeywordValuesForLocale(JString arg0, android::icu::util::ULocale arg1, jboolean arg2);
+		static jboolean isAvailable(JString arg0, java::util::Date arg1, java::util::Date arg2);
+		JString getCurrencyCode();
 		jint getDefaultFractionDigits();
 		jint getDefaultFractionDigits(android::icu::util::Currency_CurrencyUsage arg0);
-		jstring getDisplayName();
-		jstring getDisplayName(java::util::Locale arg0);
-		jstring getName(android::icu::util::ULocale arg0, jint arg1, jbooleanArray arg2);
-		jstring getName(java::util::Locale arg0, jint arg1, jbooleanArray arg2);
-		jstring getName(android::icu::util::ULocale arg0, jint arg1, jstring arg2, jbooleanArray arg3);
-		jstring getName(java::util::Locale arg0, jint arg1, jstring arg2, jbooleanArray arg3);
+		JString getDisplayName();
+		JString getDisplayName(java::util::Locale arg0);
+		JString getName(android::icu::util::ULocale arg0, jint arg1, JBooleanArray arg2);
+		JString getName(java::util::Locale arg0, jint arg1, JBooleanArray arg2);
+		JString getName(android::icu::util::ULocale arg0, jint arg1, JString arg2, JBooleanArray arg3);
+		JString getName(java::util::Locale arg0, jint arg1, JString arg2, JBooleanArray arg3);
 		jint getNumericCode();
 		jdouble getRoundingIncrement();
 		jdouble getRoundingIncrement(android::icu::util::Currency_CurrencyUsage arg0);
-		jstring getSymbol();
-		jstring getSymbol(android::icu::util::ULocale arg0);
-		jstring getSymbol(java::util::Locale arg0);
-		jstring toString();
+		JString getSymbol();
+		JString getSymbol(android::icu::util::ULocale arg0);
+		JString getSymbol(java::util::Locale arg0);
+		JString toString();
 	};
 } // namespace android::icu::util
 

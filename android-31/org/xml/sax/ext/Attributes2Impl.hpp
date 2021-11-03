@@ -1,8 +1,9 @@
 #pragma once
 
-#include "../../../../JObject.hpp"
 #include "../helpers/AttributesImpl.hpp"
 
+class JBooleanArray;
+class JString;
 
 namespace org::xml::sax::ext
 {
@@ -20,13 +21,13 @@ namespace org::xml::sax::ext
 		Attributes2Impl(JObject arg0);
 		
 		// Methods
-		void addAttribute(jstring arg0, jstring arg1, jstring arg2, jstring arg3, jstring arg4);
+		void addAttribute(JString arg0, JString arg1, JString arg2, JString arg3, JString arg4);
 		jboolean isDeclared(jint arg0);
-		jboolean isDeclared(jstring arg0);
-		jboolean isDeclared(jstring arg0, jstring arg1);
+		jboolean isDeclared(JString arg0);
+		jboolean isDeclared(JString arg0, JString arg1);
 		jboolean isSpecified(jint arg0);
-		jboolean isSpecified(jstring arg0);
-		jboolean isSpecified(jstring arg0, jstring arg1);
+		jboolean isSpecified(JString arg0);
+		jboolean isSpecified(JString arg0, JString arg1);
 		void removeAttribute(jint arg0);
 		void setAttributes(JObject arg0);
 		void setDeclared(jint arg0, jboolean arg1);

@@ -1,3 +1,4 @@
+#include "../../../../JString.hpp"
 #include "./LSException.hpp"
 
 namespace org::w3c::dom::ls
@@ -28,12 +29,12 @@ namespace org::w3c::dom::ls
 	LSException::LSException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
 	
 	// Constructors
-	LSException::LSException(jshort arg0, jstring arg1)
+	LSException::LSException(jshort arg0, JString arg1)
 		: java::lang::RuntimeException(
 			"org.w3c.dom.ls.LSException",
 			"(SLjava/lang/String;)V",
 			arg0,
-			arg1
+			arg1.object<jstring>()
 		) {}
 	
 	// Methods

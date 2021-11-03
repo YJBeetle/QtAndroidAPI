@@ -1,8 +1,9 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "./Drawable.hpp"
 
+class JFloatArray;
+class JIntArray;
 namespace android::content::res
 {
 	class ColorStateList;
@@ -68,7 +69,7 @@ namespace android::graphics::drawable
 		
 		// Constructors
 		GradientDrawable();
-		GradientDrawable(android::graphics::drawable::GradientDrawable_Orientation arg0, jintArray arg1);
+		GradientDrawable(android::graphics::drawable::GradientDrawable_Orientation arg0, JIntArray arg1);
 		
 		// Methods
 		void applyTheme(android::content::res::Resources_Theme arg0);
@@ -78,9 +79,9 @@ namespace android::graphics::drawable
 		jint getChangingConfigurations();
 		android::content::res::ColorStateList getColor();
 		android::graphics::ColorFilter getColorFilter();
-		jintArray getColors();
+		JIntArray getColors();
 		android::graphics::drawable::Drawable_ConstantState getConstantState();
-		jfloatArray getCornerRadii();
+		JFloatArray getCornerRadii();
 		jfloat getCornerRadius();
 		jfloat getGradientCenterX();
 		jfloat getGradientCenterY();
@@ -101,8 +102,8 @@ namespace android::graphics::drawable
 		void setColor(android::content::res::ColorStateList arg0);
 		void setColor(jint arg0);
 		void setColorFilter(android::graphics::ColorFilter arg0);
-		void setColors(jintArray arg0);
-		void setCornerRadii(jfloatArray arg0);
+		void setColors(JIntArray arg0);
+		void setCornerRadii(JFloatArray arg0);
 		void setCornerRadius(jfloat arg0);
 		void setDither(jboolean arg0);
 		void setGradientCenter(jfloat arg0, jfloat arg1);

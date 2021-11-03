@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "./DynamicsProcessing_Stage.hpp"
 
+class JString;
 
 namespace android::media::audiofx
 {
@@ -32,7 +32,7 @@ namespace android::media::audiofx
 		void setRatio(jfloat arg0);
 		void setReleaseTime(jfloat arg0);
 		void setThreshold(jfloat arg0);
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::media::audiofx
 

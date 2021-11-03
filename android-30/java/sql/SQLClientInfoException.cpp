@@ -1,3 +1,5 @@
+#include "../../JString.hpp"
+#include "../../JThrowable.hpp"
 #include "./SQLClientInfoException.hpp"
 
 namespace java::sql
@@ -19,63 +21,63 @@ namespace java::sql
 			"(Ljava/util/Map;)V",
 			arg0.object()
 		) {}
-	SQLClientInfoException::SQLClientInfoException(jstring arg0, JObject arg1)
+	SQLClientInfoException::SQLClientInfoException(JString arg0, JObject arg1)
 		: java::sql::SQLException(
 			"java.sql.SQLClientInfoException",
 			"(Ljava/lang/String;Ljava/util/Map;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		) {}
-	SQLClientInfoException::SQLClientInfoException(JObject arg0, jthrowable arg1)
+	SQLClientInfoException::SQLClientInfoException(JObject arg0, JThrowable arg1)
 		: java::sql::SQLException(
 			"java.sql.SQLClientInfoException",
 			"(Ljava/util/Map;Ljava/lang/Throwable;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jthrowable>()
 		) {}
-	SQLClientInfoException::SQLClientInfoException(jstring arg0, jstring arg1, JObject arg2)
+	SQLClientInfoException::SQLClientInfoException(JString arg0, JString arg1, JObject arg2)
 		: java::sql::SQLException(
 			"java.sql.SQLClientInfoException",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;)V",
-			arg0,
-			arg1,
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
 			arg2.object()
 		) {}
-	SQLClientInfoException::SQLClientInfoException(jstring arg0, JObject arg1, jthrowable arg2)
+	SQLClientInfoException::SQLClientInfoException(JString arg0, JObject arg1, JThrowable arg2)
 		: java::sql::SQLException(
 			"java.sql.SQLClientInfoException",
 			"(Ljava/lang/String;Ljava/util/Map;Ljava/lang/Throwable;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
-			arg2
+			arg2.object<jthrowable>()
 		) {}
-	SQLClientInfoException::SQLClientInfoException(jstring arg0, jstring arg1, jint arg2, JObject arg3)
+	SQLClientInfoException::SQLClientInfoException(JString arg0, JString arg1, jint arg2, JObject arg3)
 		: java::sql::SQLException(
 			"java.sql.SQLClientInfoException",
 			"(Ljava/lang/String;Ljava/lang/String;ILjava/util/Map;)V",
-			arg0,
-			arg1,
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
 			arg2,
 			arg3.object()
 		) {}
-	SQLClientInfoException::SQLClientInfoException(jstring arg0, jstring arg1, JObject arg2, jthrowable arg3)
+	SQLClientInfoException::SQLClientInfoException(JString arg0, JString arg1, JObject arg2, JThrowable arg3)
 		: java::sql::SQLException(
 			"java.sql.SQLClientInfoException",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;Ljava/lang/Throwable;)V",
-			arg0,
-			arg1,
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
 			arg2.object(),
-			arg3
+			arg3.object<jthrowable>()
 		) {}
-	SQLClientInfoException::SQLClientInfoException(jstring arg0, jstring arg1, jint arg2, JObject arg3, jthrowable arg4)
+	SQLClientInfoException::SQLClientInfoException(JString arg0, JString arg1, jint arg2, JObject arg3, JThrowable arg4)
 		: java::sql::SQLException(
 			"java.sql.SQLClientInfoException",
 			"(Ljava/lang/String;Ljava/lang/String;ILjava/util/Map;Ljava/lang/Throwable;)V",
-			arg0,
-			arg1,
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
 			arg2,
 			arg3.object(),
-			arg4
+			arg4.object<jthrowable>()
 		) {}
 	
 	// Methods

@@ -1,8 +1,9 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "./Violation.hpp"
 
+class JString;
+class JThrowable;
 
 namespace android::os::strictmode
 {

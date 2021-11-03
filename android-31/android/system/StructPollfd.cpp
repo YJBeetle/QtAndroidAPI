@@ -1,4 +1,6 @@
 #include "../../java/io/FileDescriptor.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./StructPollfd.hpp"
 
 namespace android::system
@@ -23,12 +25,12 @@ namespace android::system
 			"revents"
 		);
 	}
-	jobject StructPollfd::userData()
+	JObject StructPollfd::userData()
 	{
 		return getObjectField(
 			"userData",
 			"Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
 	
 	// QAndroidJniObject forward
@@ -42,12 +44,12 @@ namespace android::system
 		) {}
 	
 	// Methods
-	jstring StructPollfd::toString()
+	JString StructPollfd::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::system
 

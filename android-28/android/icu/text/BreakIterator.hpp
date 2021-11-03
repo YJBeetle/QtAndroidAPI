@@ -2,10 +2,14 @@
 
 #include "../../../JObject.hpp"
 
+class JIntArray;
+class JArray;
 namespace android::icu::util
 {
 	class ULocale;
 }
+class JObject;
+class JString;
 namespace java::util
 {
 	class Locale;
@@ -41,7 +45,7 @@ namespace android::icu::text
 		// Constructors
 		
 		// Methods
-		static jarray getAvailableLocales();
+		static JArray getAvailableLocales();
 		static android::icu::text::BreakIterator getCharacterInstance();
 		static android::icu::text::BreakIterator getCharacterInstance(android::icu::util::ULocale arg0);
 		static android::icu::text::BreakIterator getCharacterInstance(java::util::Locale arg0);
@@ -57,12 +61,12 @@ namespace android::icu::text
 		static android::icu::text::BreakIterator getWordInstance();
 		static android::icu::text::BreakIterator getWordInstance(android::icu::util::ULocale arg0);
 		static android::icu::text::BreakIterator getWordInstance(java::util::Locale arg0);
-		jobject clone();
+		JObject clone();
 		jint current();
 		jint first();
 		jint following(jint arg0);
 		jint getRuleStatus();
-		jint getRuleStatusVec(jintArray arg0);
+		jint getRuleStatusVec(JIntArray arg0);
 		JObject getText();
 		jboolean isBoundary(jint arg0);
 		jint last();
@@ -70,7 +74,7 @@ namespace android::icu::text
 		jint next(jint arg0);
 		jint preceding(jint arg0);
 		jint previous();
-		void setText(jstring arg0);
+		void setText(JString arg0);
 		void setText(JObject arg0);
 	};
 } // namespace android::icu::text

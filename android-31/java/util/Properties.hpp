@@ -1,9 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "./Dictionary.hpp"
 #include "./Hashtable.hpp"
 
+class JCharArray;
 namespace java::io
 {
 	class BufferedWriter;
@@ -40,6 +39,8 @@ namespace java::io
 {
 	class Writer;
 }
+class JObject;
+class JString;
 namespace java::lang
 {
 	class StringBuilder;
@@ -71,21 +72,21 @@ namespace java::util
 		
 		// Methods
 		void clear();
-		jobject clone();
-		jobject compute(jobject arg0, JObject arg1);
-		jobject computeIfAbsent(jobject arg0, JObject arg1);
-		jobject computeIfPresent(jobject arg0, JObject arg1);
-		jboolean contains(jobject arg0);
-		jboolean containsKey(jobject arg0);
-		jboolean containsValue(jobject arg0);
+		JObject clone();
+		JObject compute(JObject arg0, JObject arg1);
+		JObject computeIfAbsent(JObject arg0, JObject arg1);
+		JObject computeIfPresent(JObject arg0, JObject arg1);
+		jboolean contains(JObject arg0);
+		jboolean containsKey(JObject arg0);
+		jboolean containsValue(JObject arg0);
 		JObject elements();
 		JObject entrySet();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		void forEach(JObject arg0);
-		jobject get(jobject arg0);
-		jobject getOrDefault(jobject arg0, jobject arg1);
-		jstring getProperty(jstring arg0);
-		jstring getProperty(jstring arg0, jstring arg1);
+		JObject get(JObject arg0);
+		JObject getOrDefault(JObject arg0, JObject arg1);
+		JString getProperty(JString arg0);
+		JString getProperty(JString arg0, JString arg1);
 		jint hashCode();
 		jboolean isEmpty();
 		JObject keySet();
@@ -95,26 +96,26 @@ namespace java::util
 		void load(java::io::InputStream arg0);
 		void load(java::io::Reader arg0);
 		void loadFromXML(java::io::InputStream arg0);
-		jobject merge(jobject arg0, jobject arg1, JObject arg2);
+		JObject merge(JObject arg0, JObject arg1, JObject arg2);
 		JObject propertyNames();
-		jobject put(jobject arg0, jobject arg1);
+		JObject put(JObject arg0, JObject arg1);
 		void putAll(JObject arg0);
-		jobject putIfAbsent(jobject arg0, jobject arg1);
-		jboolean remove(jobject arg0, jobject arg1);
-		jobject remove(jobject arg0);
-		jboolean replace(jobject arg0, jobject arg1, jobject arg2);
-		jobject replace(jobject arg0, jobject arg1);
+		JObject putIfAbsent(JObject arg0, JObject arg1);
+		jboolean remove(JObject arg0, JObject arg1);
+		JObject remove(JObject arg0);
+		jboolean replace(JObject arg0, JObject arg1, JObject arg2);
+		JObject replace(JObject arg0, JObject arg1);
 		void replaceAll(JObject arg0);
-		void save(java::io::OutputStream arg0, jstring arg1);
-		jobject setProperty(jstring arg0, jstring arg1);
+		void save(java::io::OutputStream arg0, JString arg1);
+		JObject setProperty(JString arg0, JString arg1);
 		jint size();
-		void store(java::io::OutputStream arg0, jstring arg1);
-		void store(java::io::Writer arg0, jstring arg1);
-		void storeToXML(java::io::OutputStream arg0, jstring arg1);
-		void storeToXML(java::io::OutputStream arg0, jstring arg1, jstring arg2);
-		void storeToXML(java::io::OutputStream arg0, jstring arg1, java::nio::charset::Charset arg2);
+		void store(java::io::OutputStream arg0, JString arg1);
+		void store(java::io::Writer arg0, JString arg1);
+		void storeToXML(java::io::OutputStream arg0, JString arg1);
+		void storeToXML(java::io::OutputStream arg0, JString arg1, JString arg2);
+		void storeToXML(java::io::OutputStream arg0, JString arg1, java::nio::charset::Charset arg2);
 		JObject stringPropertyNames();
-		jstring toString();
+		JString toString();
 		JObject values();
 	};
 } // namespace java::util

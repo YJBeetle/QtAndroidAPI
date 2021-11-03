@@ -4,6 +4,7 @@
 #include "./nsd/WifiP2pServiceInfo.hpp"
 #include "./nsd/WifiP2pServiceRequest.hpp"
 #include "../../../os/Looper.hpp"
+#include "../../../../JString.hpp"
 #include "./WifiP2pManager.hpp"
 
 namespace android::net::wifi::p2p
@@ -23,61 +24,61 @@ namespace android::net::wifi::p2p
 			"ERROR"
 		);
 	}
-	jstring WifiP2pManager::EXTRA_DISCOVERY_STATE()
+	JString WifiP2pManager::EXTRA_DISCOVERY_STATE()
 	{
 		return getStaticObjectField(
 			"android.net.wifi.p2p.WifiP2pManager",
 			"EXTRA_DISCOVERY_STATE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring WifiP2pManager::EXTRA_NETWORK_INFO()
+	JString WifiP2pManager::EXTRA_NETWORK_INFO()
 	{
 		return getStaticObjectField(
 			"android.net.wifi.p2p.WifiP2pManager",
 			"EXTRA_NETWORK_INFO",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring WifiP2pManager::EXTRA_P2P_DEVICE_LIST()
+	JString WifiP2pManager::EXTRA_P2P_DEVICE_LIST()
 	{
 		return getStaticObjectField(
 			"android.net.wifi.p2p.WifiP2pManager",
 			"EXTRA_P2P_DEVICE_LIST",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring WifiP2pManager::EXTRA_WIFI_P2P_DEVICE()
+	JString WifiP2pManager::EXTRA_WIFI_P2P_DEVICE()
 	{
 		return getStaticObjectField(
 			"android.net.wifi.p2p.WifiP2pManager",
 			"EXTRA_WIFI_P2P_DEVICE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring WifiP2pManager::EXTRA_WIFI_P2P_GROUP()
+	JString WifiP2pManager::EXTRA_WIFI_P2P_GROUP()
 	{
 		return getStaticObjectField(
 			"android.net.wifi.p2p.WifiP2pManager",
 			"EXTRA_WIFI_P2P_GROUP",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring WifiP2pManager::EXTRA_WIFI_P2P_INFO()
+	JString WifiP2pManager::EXTRA_WIFI_P2P_INFO()
 	{
 		return getStaticObjectField(
 			"android.net.wifi.p2p.WifiP2pManager",
 			"EXTRA_WIFI_P2P_INFO",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring WifiP2pManager::EXTRA_WIFI_STATE()
+	JString WifiP2pManager::EXTRA_WIFI_STATE()
 	{
 		return getStaticObjectField(
 			"android.net.wifi.p2p.WifiP2pManager",
 			"EXTRA_WIFI_STATE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint WifiP2pManager::NO_SERVICE_REQUESTS()
 	{
@@ -93,21 +94,21 @@ namespace android::net::wifi::p2p
 			"P2P_UNSUPPORTED"
 		);
 	}
-	jstring WifiP2pManager::WIFI_P2P_CONNECTION_CHANGED_ACTION()
+	JString WifiP2pManager::WIFI_P2P_CONNECTION_CHANGED_ACTION()
 	{
 		return getStaticObjectField(
 			"android.net.wifi.p2p.WifiP2pManager",
 			"WIFI_P2P_CONNECTION_CHANGED_ACTION",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring WifiP2pManager::WIFI_P2P_DISCOVERY_CHANGED_ACTION()
+	JString WifiP2pManager::WIFI_P2P_DISCOVERY_CHANGED_ACTION()
 	{
 		return getStaticObjectField(
 			"android.net.wifi.p2p.WifiP2pManager",
 			"WIFI_P2P_DISCOVERY_CHANGED_ACTION",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint WifiP2pManager::WIFI_P2P_DISCOVERY_STARTED()
 	{
@@ -123,21 +124,21 @@ namespace android::net::wifi::p2p
 			"WIFI_P2P_DISCOVERY_STOPPED"
 		);
 	}
-	jstring WifiP2pManager::WIFI_P2P_PEERS_CHANGED_ACTION()
+	JString WifiP2pManager::WIFI_P2P_PEERS_CHANGED_ACTION()
 	{
 		return getStaticObjectField(
 			"android.net.wifi.p2p.WifiP2pManager",
 			"WIFI_P2P_PEERS_CHANGED_ACTION",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring WifiP2pManager::WIFI_P2P_STATE_CHANGED_ACTION()
+	JString WifiP2pManager::WIFI_P2P_STATE_CHANGED_ACTION()
 	{
 		return getStaticObjectField(
 			"android.net.wifi.p2p.WifiP2pManager",
 			"WIFI_P2P_STATE_CHANGED_ACTION",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint WifiP2pManager::WIFI_P2P_STATE_DISABLED()
 	{
@@ -153,13 +154,13 @@ namespace android::net::wifi::p2p
 			"WIFI_P2P_STATE_ENABLED"
 		);
 	}
-	jstring WifiP2pManager::WIFI_P2P_THIS_DEVICE_CHANGED_ACTION()
+	JString WifiP2pManager::WIFI_P2P_THIS_DEVICE_CHANGED_ACTION()
 	{
 		return getStaticObjectField(
 			"android.net.wifi.p2p.WifiP2pManager",
 			"WIFI_P2P_THIS_DEVICE_CHANGED_ACTION",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QAndroidJniObject forward

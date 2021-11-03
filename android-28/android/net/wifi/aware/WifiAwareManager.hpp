@@ -18,6 +18,7 @@ namespace android::os
 {
 	class Handler;
 }
+class JString;
 
 namespace android::net::wifi::aware
 {
@@ -25,7 +26,7 @@ namespace android::net::wifi::aware
 	{
 	public:
 		// Fields
-		static jstring ACTION_WIFI_AWARE_STATE_CHANGED();
+		static JString ACTION_WIFI_AWARE_STATE_CHANGED();
 		static jint WIFI_AWARE_DATA_PATH_ROLE_INITIATOR();
 		static jint WIFI_AWARE_DATA_PATH_ROLE_RESPONDER();
 		

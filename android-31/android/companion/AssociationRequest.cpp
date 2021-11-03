@@ -1,4 +1,6 @@
 #include "../os/Parcel.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./AssociationRequest.hpp"
 
 namespace android::companion
@@ -12,13 +14,13 @@ namespace android::companion
 			"Landroid/os/Parcelable$Creator;"
 		);
 	}
-	jstring AssociationRequest::DEVICE_PROFILE_WATCH()
+	JString AssociationRequest::DEVICE_PROFILE_WATCH()
 	{
 		return getStaticObjectField(
 			"android.companion.AssociationRequest",
 			"DEVICE_PROFILE_WATCH",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QAndroidJniObject forward
@@ -34,12 +36,12 @@ namespace android::companion
 			"()I"
 		);
 	}
-	jboolean AssociationRequest::equals(jobject arg0)
+	jboolean AssociationRequest::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint AssociationRequest::hashCode()
@@ -49,12 +51,12 @@ namespace android::companion
 			"()I"
 		);
 	}
-	jstring AssociationRequest::toString()
+	JString AssociationRequest::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void AssociationRequest::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

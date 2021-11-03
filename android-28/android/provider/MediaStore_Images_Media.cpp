@@ -1,26 +1,28 @@
+#include "../../JArray.hpp"
 #include "../content/ContentResolver.hpp"
 #include "../graphics/Bitmap.hpp"
 #include "../net/Uri.hpp"
+#include "../../JString.hpp"
 #include "./MediaStore_Images_Media.hpp"
 
 namespace android::provider
 {
 	// Fields
-	jstring MediaStore_Images_Media::CONTENT_TYPE()
+	JString MediaStore_Images_Media::CONTENT_TYPE()
 	{
 		return getStaticObjectField(
 			"android.provider.MediaStore$Images$Media",
 			"CONTENT_TYPE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring MediaStore_Images_Media::DEFAULT_SORT_ORDER()
+	JString MediaStore_Images_Media::DEFAULT_SORT_ORDER()
 	{
 		return getStaticObjectField(
 			"android.provider.MediaStore$Images$Media",
 			"DEFAULT_SORT_ORDER",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::net::Uri MediaStore_Images_Media::EXTERNAL_CONTENT_URI()
 	{
@@ -60,16 +62,16 @@ namespace android::provider
 			arg1.object()
 		);
 	}
-	android::net::Uri MediaStore_Images_Media::getContentUri(jstring arg0)
+	android::net::Uri MediaStore_Images_Media::getContentUri(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.provider.MediaStore$Images$Media",
 			"getContentUri",
 			"(Ljava/lang/String;)Landroid/net/Uri;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jstring MediaStore_Images_Media::insertImage(android::content::ContentResolver arg0, android::graphics::Bitmap arg1, jstring arg2, jstring arg3)
+	JString MediaStore_Images_Media::insertImage(android::content::ContentResolver arg0, android::graphics::Bitmap arg1, JString arg2, JString arg3)
 	{
 		return callStaticObjectMethod(
 			"android.provider.MediaStore$Images$Media",
@@ -77,23 +79,23 @@ namespace android::provider
 			"(Landroid/content/ContentResolver;Landroid/graphics/Bitmap;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
 			arg0.object(),
 			arg1.object(),
-			arg2,
-			arg3
-		).object<jstring>();
+			arg2.object<jstring>(),
+			arg3.object<jstring>()
+		);
 	}
-	jstring MediaStore_Images_Media::insertImage(android::content::ContentResolver arg0, jstring arg1, jstring arg2, jstring arg3)
+	JString MediaStore_Images_Media::insertImage(android::content::ContentResolver arg0, JString arg1, JString arg2, JString arg3)
 	{
 		return callStaticObjectMethod(
 			"android.provider.MediaStore$Images$Media",
 			"insertImage",
 			"(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
 			arg0.object(),
-			arg1,
-			arg2,
-			arg3
-		).object<jstring>();
+			arg1.object<jstring>(),
+			arg2.object<jstring>(),
+			arg3.object<jstring>()
+		);
 	}
-	JObject MediaStore_Images_Media::query(android::content::ContentResolver arg0, android::net::Uri arg1, jarray arg2)
+	JObject MediaStore_Images_Media::query(android::content::ContentResolver arg0, android::net::Uri arg1, JArray arg2)
 	{
 		return callStaticObjectMethod(
 			"android.provider.MediaStore$Images$Media",
@@ -101,10 +103,10 @@ namespace android::provider
 			"(Landroid/content/ContentResolver;Landroid/net/Uri;[Ljava/lang/String;)Landroid/database/Cursor;",
 			arg0.object(),
 			arg1.object(),
-			arg2
+			arg2.object<jarray>()
 		);
 	}
-	JObject MediaStore_Images_Media::query(android::content::ContentResolver arg0, android::net::Uri arg1, jarray arg2, jstring arg3, jstring arg4)
+	JObject MediaStore_Images_Media::query(android::content::ContentResolver arg0, android::net::Uri arg1, JArray arg2, JString arg3, JString arg4)
 	{
 		return callStaticObjectMethod(
 			"android.provider.MediaStore$Images$Media",
@@ -112,12 +114,12 @@ namespace android::provider
 			"(Landroid/content/ContentResolver;Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;",
 			arg0.object(),
 			arg1.object(),
-			arg2,
-			arg3,
-			arg4
+			arg2.object<jarray>(),
+			arg3.object<jstring>(),
+			arg4.object<jstring>()
 		);
 	}
-	JObject MediaStore_Images_Media::query(android::content::ContentResolver arg0, android::net::Uri arg1, jarray arg2, jstring arg3, jarray arg4, jstring arg5)
+	JObject MediaStore_Images_Media::query(android::content::ContentResolver arg0, android::net::Uri arg1, JArray arg2, JString arg3, JArray arg4, JString arg5)
 	{
 		return callStaticObjectMethod(
 			"android.provider.MediaStore$Images$Media",
@@ -125,10 +127,10 @@ namespace android::provider
 			"(Landroid/content/ContentResolver;Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;",
 			arg0.object(),
 			arg1.object(),
-			arg2,
-			arg3,
-			arg4,
-			arg5
+			arg2.object<jarray>(),
+			arg3.object<jstring>(),
+			arg4.object<jarray>(),
+			arg5.object<jstring>()
 		);
 	}
 } // namespace android::provider

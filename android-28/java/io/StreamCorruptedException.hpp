@@ -1,10 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../lang/Exception.hpp"
-#include "./IOException.hpp"
 #include "./ObjectStreamException.hpp"
 
+class JString;
 
 namespace java::io
 {
@@ -19,7 +17,7 @@ namespace java::io
 		
 		// Constructors
 		StreamCorruptedException();
-		StreamCorruptedException(jstring arg0);
+		StreamCorruptedException(JString arg0);
 		
 		// Methods
 	};

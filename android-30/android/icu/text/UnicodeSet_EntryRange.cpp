@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./UnicodeSet_EntryRange.hpp"
 
 namespace android::icu::text
@@ -22,12 +23,12 @@ namespace android::icu::text
 	// Constructors
 	
 	// Methods
-	jstring UnicodeSet_EntryRange::toString()
+	JString UnicodeSet_EntryRange::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::icu::text
 

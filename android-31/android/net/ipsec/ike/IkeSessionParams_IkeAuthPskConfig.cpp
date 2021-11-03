@@ -1,3 +1,5 @@
+#include "../../../../JByteArray.hpp"
+#include "../../../../JObject.hpp"
 #include "./IkeSessionParams_IkeAuthPskConfig.hpp"
 
 namespace android::net::ipsec::ike
@@ -10,20 +12,20 @@ namespace android::net::ipsec::ike
 	// Constructors
 	
 	// Methods
-	jboolean IkeSessionParams_IkeAuthPskConfig::equals(jobject arg0)
+	jboolean IkeSessionParams_IkeAuthPskConfig::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jbyteArray IkeSessionParams_IkeAuthPskConfig::getPsk()
+	JByteArray IkeSessionParams_IkeAuthPskConfig::getPsk()
 	{
 		return callObjectMethod(
 			"getPsk",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
 	jint IkeSessionParams_IkeAuthPskConfig::hashCode()
 	{

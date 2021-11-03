@@ -10,6 +10,7 @@ namespace android::renderscript
 {
 	class RenderScript;
 }
+class JString;
 
 namespace android::renderscript
 {
@@ -26,8 +27,8 @@ namespace android::renderscript
 		Element_Builder(android::renderscript::RenderScript arg0);
 		
 		// Methods
-		android::renderscript::Element_Builder add(android::renderscript::Element arg0, jstring arg1);
-		android::renderscript::Element_Builder add(android::renderscript::Element arg0, jstring arg1, jint arg2);
+		android::renderscript::Element_Builder add(android::renderscript::Element arg0, JString arg1);
+		android::renderscript::Element_Builder add(android::renderscript::Element arg0, JString arg1, jint arg2);
 		android::renderscript::Element create();
 	};
 } // namespace android::renderscript

@@ -1,4 +1,5 @@
 #include "../../os/Parcel.hpp"
+#include "../../../JString.hpp"
 #include "./PathPermission.hpp"
 
 namespace android::content::pm
@@ -23,30 +24,30 @@ namespace android::content::pm
 			"(Landroid/os/Parcel;)V",
 			arg0.object()
 		) {}
-	PathPermission::PathPermission(jstring arg0, jint arg1, jstring arg2, jstring arg3)
+	PathPermission::PathPermission(JString arg0, jint arg1, JString arg2, JString arg3)
 		: android::os::PatternMatcher(
 			"android.content.pm.PathPermission",
 			"(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
-			arg2,
-			arg3
+			arg2.object<jstring>(),
+			arg3.object<jstring>()
 		) {}
 	
 	// Methods
-	jstring PathPermission::getReadPermission()
+	JString PathPermission::getReadPermission()
 	{
 		return callObjectMethod(
 			"getReadPermission",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PathPermission::getWritePermission()
+	JString PathPermission::getWritePermission()
 	{
 		return callObjectMethod(
 			"getWritePermission",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void PathPermission::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

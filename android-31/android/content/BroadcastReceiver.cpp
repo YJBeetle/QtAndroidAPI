@@ -2,6 +2,7 @@
 #include "./Context.hpp"
 #include "./Intent.hpp"
 #include "../os/Bundle.hpp"
+#include "../../JString.hpp"
 #include "./BroadcastReceiver.hpp"
 
 namespace android::content
@@ -54,12 +55,12 @@ namespace android::content
 			"()I"
 		);
 	}
-	jstring BroadcastReceiver::getResultData()
+	JString BroadcastReceiver::getResultData()
 	{
 		return callObjectMethod(
 			"getResultData",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::os::Bundle BroadcastReceiver::getResultExtras(jboolean arg0)
 	{
@@ -124,13 +125,13 @@ namespace android::content
 			arg0
 		);
 	}
-	void BroadcastReceiver::setResult(jint arg0, jstring arg1, android::os::Bundle arg2)
+	void BroadcastReceiver::setResult(jint arg0, JString arg1, android::os::Bundle arg2)
 	{
 		callMethod<void>(
 			"setResult",
 			"(ILjava/lang/String;Landroid/os/Bundle;)V",
 			arg0,
-			arg1,
+			arg1.object<jstring>(),
 			arg2.object()
 		);
 	}
@@ -142,12 +143,12 @@ namespace android::content
 			arg0
 		);
 	}
-	void BroadcastReceiver::setResultData(jstring arg0)
+	void BroadcastReceiver::setResultData(JString arg0)
 	{
 		callMethod<void>(
 			"setResultData",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void BroadcastReceiver::setResultExtras(android::os::Bundle arg0)

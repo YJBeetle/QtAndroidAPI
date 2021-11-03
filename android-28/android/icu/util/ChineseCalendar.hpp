@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "./Calendar.hpp"
 
+class JArray;
 namespace android::icu::text
 {
 	class DateFormat;
@@ -15,6 +15,7 @@ namespace android::icu::util
 {
 	class ULocale;
 }
+class JString;
 namespace java::util
 {
 	class Date;
@@ -50,7 +51,7 @@ namespace android::icu::util
 		
 		// Methods
 		void add(jint arg0, jint arg1);
-		jstring getType();
+		JString getType();
 		void roll(jint arg0, jint arg1);
 	};
 } // namespace android::icu::util

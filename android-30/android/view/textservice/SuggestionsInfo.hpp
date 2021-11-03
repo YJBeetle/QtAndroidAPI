@@ -2,10 +2,12 @@
 
 #include "../../../JObject.hpp"
 
+class JArray;
 namespace android::os
 {
 	class Parcel;
 }
+class JString;
 
 namespace android::view::textservice
 {
@@ -24,14 +26,14 @@ namespace android::view::textservice
 		
 		// Constructors
 		SuggestionsInfo(android::os::Parcel arg0);
-		SuggestionsInfo(jint arg0, jarray arg1);
-		SuggestionsInfo(jint arg0, jarray arg1, jint arg2, jint arg3);
+		SuggestionsInfo(jint arg0, JArray arg1);
+		SuggestionsInfo(jint arg0, JArray arg1, jint arg2, jint arg3);
 		
 		// Methods
 		jint describeContents();
 		jint getCookie();
 		jint getSequence();
-		jstring getSuggestionAt(jint arg0);
+		JString getSuggestionAt(jint arg0);
 		jint getSuggestionsAttributes();
 		jint getSuggestionsCount();
 		void setCookieAndSequence(jint arg0, jint arg1);

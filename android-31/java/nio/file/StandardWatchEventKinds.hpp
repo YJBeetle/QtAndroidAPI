@@ -2,7 +2,6 @@
 
 #include "../../../JObject.hpp"
 
-
 namespace java::nio::file
 {
 	class StandardWatchEventKinds : public JObject

@@ -1,3 +1,5 @@
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
 #include "./Collector_Characteristics.hpp"
 
 namespace java::util::stream
@@ -34,22 +36,22 @@ namespace java::util::stream
 	// Constructors
 	
 	// Methods
-	java::util::stream::Collector_Characteristics Collector_Characteristics::valueOf(jstring arg0)
+	java::util::stream::Collector_Characteristics Collector_Characteristics::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"java.util.stream.Collector$Characteristics",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/util/stream/Collector$Characteristics;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray Collector_Characteristics::values()
+	JArray Collector_Characteristics::values()
 	{
 		return callStaticObjectMethod(
 			"java.util.stream.Collector$Characteristics",
 			"values",
 			"()[Ljava/util/stream/Collector$Characteristics;"
-		).object<jarray>();
+		);
 	}
 } // namespace java::util::stream
 

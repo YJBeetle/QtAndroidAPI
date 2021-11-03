@@ -1,5 +1,7 @@
 #include "./MessagePattern_ArgType.hpp"
 #include "./MessagePattern_Part_Type.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./MessagePattern_Part.hpp"
 
 namespace android::icu::text
@@ -12,12 +14,12 @@ namespace android::icu::text
 	// Constructors
 	
 	// Methods
-	jboolean MessagePattern_Part::equals(jobject arg0)
+	jboolean MessagePattern_Part::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	android::icu::text::MessagePattern_ArgType MessagePattern_Part::getArgType()
@@ -69,12 +71,12 @@ namespace android::icu::text
 			"()I"
 		);
 	}
-	jstring MessagePattern_Part::toString()
+	JString MessagePattern_Part::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::icu::text
 

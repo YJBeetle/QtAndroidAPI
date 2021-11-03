@@ -1,3 +1,5 @@
+#include "../../../JString.hpp"
+#include "../../../JThrowable.hpp"
 #include "./InvalidReaderSignatureException.hpp"
 
 namespace android::security::identity
@@ -8,18 +10,18 @@ namespace android::security::identity
 	InvalidReaderSignatureException::InvalidReaderSignatureException(QAndroidJniObject obj) : android::security::identity::IdentityCredentialException(obj) {}
 	
 	// Constructors
-	InvalidReaderSignatureException::InvalidReaderSignatureException(jstring arg0)
+	InvalidReaderSignatureException::InvalidReaderSignatureException(JString arg0)
 		: android::security::identity::IdentityCredentialException(
 			"android.security.identity.InvalidReaderSignatureException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	InvalidReaderSignatureException::InvalidReaderSignatureException(jstring arg0, jthrowable arg1)
+	InvalidReaderSignatureException::InvalidReaderSignatureException(JString arg0, JThrowable arg1)
 		: android::security::identity::IdentityCredentialException(
 			"android.security.identity.InvalidReaderSignatureException",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
 		) {}
 	
 	// Methods

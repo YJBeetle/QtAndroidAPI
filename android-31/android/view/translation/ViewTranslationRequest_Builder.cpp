@@ -1,6 +1,7 @@
 #include "../autofill/AutofillId.hpp"
 #include "./TranslationRequestValue.hpp"
 #include "./ViewTranslationRequest.hpp"
+#include "../../../JString.hpp"
 #include "./ViewTranslationRequest_Builder.hpp"
 
 namespace android::view::translation
@@ -33,12 +34,12 @@ namespace android::view::translation
 			"()Landroid/view/translation/ViewTranslationRequest;"
 		);
 	}
-	android::view::translation::ViewTranslationRequest_Builder ViewTranslationRequest_Builder::setValue(jstring arg0, android::view::translation::TranslationRequestValue arg1)
+	android::view::translation::ViewTranslationRequest_Builder ViewTranslationRequest_Builder::setValue(JString arg0, android::view::translation::TranslationRequestValue arg1)
 	{
 		return callObjectMethod(
 			"setValue",
 			"(Ljava/lang/String;Landroid/view/translation/TranslationRequestValue;)Landroid/view/translation/ViewTranslationRequest$Builder;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}

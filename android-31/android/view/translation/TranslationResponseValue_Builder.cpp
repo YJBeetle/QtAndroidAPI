@@ -1,5 +1,6 @@
 #include "../../os/Bundle.hpp"
 #include "./TranslationResponseValue.hpp"
+#include "../../../JString.hpp"
 #include "./TranslationResponseValue_Builder.hpp"
 
 namespace android::view::translation
@@ -33,20 +34,20 @@ namespace android::view::translation
 			arg0.object()
 		);
 	}
-	android::view::translation::TranslationResponseValue_Builder TranslationResponseValue_Builder::setText(jstring arg0)
+	android::view::translation::TranslationResponseValue_Builder TranslationResponseValue_Builder::setText(JString arg0)
 	{
 		return callObjectMethod(
 			"setText",
 			"(Ljava/lang/CharSequence;)Landroid/view/translation/TranslationResponseValue$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	android::view::translation::TranslationResponseValue_Builder TranslationResponseValue_Builder::setTransliteration(jstring arg0)
+	android::view::translation::TranslationResponseValue_Builder TranslationResponseValue_Builder::setTransliteration(JString arg0)
 	{
 		return callObjectMethod(
 			"setTransliteration",
 			"(Ljava/lang/CharSequence;)Landroid/view/translation/TranslationResponseValue$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 } // namespace android::view::translation

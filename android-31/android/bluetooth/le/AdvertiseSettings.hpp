@@ -6,6 +6,7 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
 
 namespace android::bluetooth::le
 {
@@ -34,7 +35,7 @@ namespace android::bluetooth::le
 		jint getTimeout();
 		jint getTxPowerLevel();
 		jboolean isConnectable();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::bluetooth::le

@@ -1,9 +1,12 @@
+#include "../../JArray.hpp"
 #include "./ClipData_Item.hpp"
 #include "./ClipDescription.hpp"
 #include "./ContentResolver.hpp"
 #include "./Intent.hpp"
 #include "../net/Uri.hpp"
 #include "../os/Parcel.hpp"
+#include "../../JString.hpp"
+#include "../../JString.hpp"
 #include "./ClipData.hpp"
 
 namespace android::content
@@ -35,65 +38,65 @@ namespace android::content
 			arg0.object(),
 			arg1.object()
 		) {}
-	ClipData::ClipData(jstring arg0, jarray arg1, android::content::ClipData_Item arg2)
+	ClipData::ClipData(JString arg0, JArray arg1, android::content::ClipData_Item arg2)
 		: JObject(
 			"android.content.ClipData",
 			"(Ljava/lang/CharSequence;[Ljava/lang/String;Landroid/content/ClipData$Item;)V",
-			arg0,
-			arg1,
+			arg0.object<jstring>(),
+			arg1.object<jarray>(),
 			arg2.object()
 		) {}
 	
 	// Methods
-	android::content::ClipData ClipData::newHtmlText(jstring arg0, jstring arg1, jstring arg2)
+	android::content::ClipData ClipData::newHtmlText(JString arg0, JString arg1, JString arg2)
 	{
 		return callStaticObjectMethod(
 			"android.content.ClipData",
 			"newHtmlText",
 			"(Ljava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/String;)Landroid/content/ClipData;",
-			arg0,
-			arg1,
-			arg2
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2.object<jstring>()
 		);
 	}
-	android::content::ClipData ClipData::newIntent(jstring arg0, android::content::Intent arg1)
+	android::content::ClipData ClipData::newIntent(JString arg0, android::content::Intent arg1)
 	{
 		return callStaticObjectMethod(
 			"android.content.ClipData",
 			"newIntent",
 			"(Ljava/lang/CharSequence;Landroid/content/Intent;)Landroid/content/ClipData;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
-	android::content::ClipData ClipData::newPlainText(jstring arg0, jstring arg1)
+	android::content::ClipData ClipData::newPlainText(JString arg0, JString arg1)
 	{
 		return callStaticObjectMethod(
 			"android.content.ClipData",
 			"newPlainText",
 			"(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Landroid/content/ClipData;",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		);
 	}
-	android::content::ClipData ClipData::newRawUri(jstring arg0, android::net::Uri arg1)
+	android::content::ClipData ClipData::newRawUri(JString arg0, android::net::Uri arg1)
 	{
 		return callStaticObjectMethod(
 			"android.content.ClipData",
 			"newRawUri",
 			"(Ljava/lang/CharSequence;Landroid/net/Uri;)Landroid/content/ClipData;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
-	android::content::ClipData ClipData::newUri(android::content::ContentResolver arg0, jstring arg1, android::net::Uri arg2)
+	android::content::ClipData ClipData::newUri(android::content::ContentResolver arg0, JString arg1, android::net::Uri arg2)
 	{
 		return callStaticObjectMethod(
 			"android.content.ClipData",
 			"newUri",
 			"(Landroid/content/ContentResolver;Ljava/lang/CharSequence;Landroid/net/Uri;)Landroid/content/ClipData;",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2.object()
 		);
 	}
@@ -143,12 +146,12 @@ namespace android::content
 			"()I"
 		);
 	}
-	jstring ClipData::toString()
+	JString ClipData::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void ClipData::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

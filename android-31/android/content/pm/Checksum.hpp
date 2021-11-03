@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JByteArray;
 namespace android::os
 {
 	class Parcel;
@@ -27,12 +28,12 @@ namespace android::content::pm
 		Checksum(QAndroidJniObject obj);
 		
 		// Constructors
-		Checksum(jint arg0, jbyteArray arg1);
+		Checksum(jint arg0, JByteArray arg1);
 		
 		// Methods
 		jint describeContents();
 		jint getType();
-		jbyteArray getValue();
+		JByteArray getValue();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::content::pm

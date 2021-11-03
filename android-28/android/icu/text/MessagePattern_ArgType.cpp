@@ -1,3 +1,5 @@
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
 #include "./MessagePattern_ArgType.hpp"
 
 namespace android::icu::text
@@ -58,22 +60,22 @@ namespace android::icu::text
 	// Constructors
 	
 	// Methods
-	android::icu::text::MessagePattern_ArgType MessagePattern_ArgType::valueOf(jstring arg0)
+	android::icu::text::MessagePattern_ArgType MessagePattern_ArgType::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.icu.text.MessagePattern$ArgType",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/icu/text/MessagePattern$ArgType;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray MessagePattern_ArgType::values()
+	JArray MessagePattern_ArgType::values()
 	{
 		return callStaticObjectMethod(
 			"android.icu.text.MessagePattern$ArgType",
 			"values",
 			"()[Landroid/icu/text/MessagePattern$ArgType;"
-		).object<jarray>();
+		);
 	}
 	jboolean MessagePattern_ArgType::hasPluralStyle()
 	{

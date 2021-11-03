@@ -1,9 +1,11 @@
+#include "../../JArray.hpp"
 #include "./Activity.hpp"
 #include "./PendingIntent.hpp"
 #include "../content/ComponentName.hpp"
 #include "../content/Context.hpp"
 #include "../content/Intent.hpp"
 #include "../os/Bundle.hpp"
+#include "../../JClass.hpp"
 #include "./TaskStackBuilder.hpp"
 
 namespace android::app
@@ -57,12 +59,12 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	android::app::TaskStackBuilder TaskStackBuilder::addParentStack(jclass arg0)
+	android::app::TaskStackBuilder TaskStackBuilder::addParentStack(JClass arg0)
 	{
 		return callObjectMethod(
 			"addParentStack",
 			"(Ljava/lang/Class;)Landroid/app/TaskStackBuilder;",
-			arg0
+			arg0.object<jclass>()
 		);
 	}
 	android::content::Intent TaskStackBuilder::editIntentAt(jint arg0)
@@ -80,12 +82,12 @@ namespace android::app
 			"()I"
 		);
 	}
-	jarray TaskStackBuilder::getIntents()
+	JArray TaskStackBuilder::getIntents()
 	{
 		return callObjectMethod(
 			"getIntents",
 			"()[Landroid/content/Intent;"
-		).object<jarray>();
+		);
 	}
 	android::app::PendingIntent TaskStackBuilder::getPendingIntent(jint arg0, jint arg1)
 	{

@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./SQLiteConstraintException.hpp"
 
 namespace android::database::sqlite
@@ -13,11 +14,11 @@ namespace android::database::sqlite
 			"android.database.sqlite.SQLiteConstraintException",
 			"()V"
 		) {}
-	SQLiteConstraintException::SQLiteConstraintException(jstring arg0)
+	SQLiteConstraintException::SQLiteConstraintException(JString arg0)
 		: android::database::sqlite::SQLiteException(
 			"android.database.sqlite.SQLiteConstraintException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

@@ -1,6 +1,5 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "../NetworkSpecifier.hpp"
 
 namespace android::net
@@ -11,6 +10,8 @@ namespace android::os
 {
 	class Parcel;
 }
+class JObject;
+class JString;
 
 namespace android::net::wifi
 {
@@ -29,11 +30,11 @@ namespace android::net::wifi
 		// Methods
 		jboolean canBeSatisfiedBy(android::net::NetworkSpecifier arg0);
 		jint describeContents();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint getBand();
 		jint hashCode();
 		android::net::NetworkSpecifier redact();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::net::wifi

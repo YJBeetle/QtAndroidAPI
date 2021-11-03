@@ -1,6 +1,8 @@
 #include "./Normalizer_QuickCheckResult.hpp"
 #include "./Normalizer2_Mode.hpp"
 #include "../../../java/io/InputStream.hpp"
+#include "../../../JString.hpp"
+#include "../../../JString.hpp"
 #include "../../../java/lang/StringBuilder.hpp"
 #include "./Normalizer2.hpp"
 
@@ -14,14 +16,14 @@ namespace android::icu::text
 	// Constructors
 	
 	// Methods
-	android::icu::text::Normalizer2 Normalizer2::getInstance(java::io::InputStream arg0, jstring arg1, android::icu::text::Normalizer2_Mode arg2)
+	android::icu::text::Normalizer2 Normalizer2::getInstance(java::io::InputStream arg0, JString arg1, android::icu::text::Normalizer2_Mode arg2)
 	{
 		return callStaticObjectMethod(
 			"android.icu.text.Normalizer2",
 			"getInstance",
 			"(Ljava/io/InputStream;Ljava/lang/String;Landroid/icu/text/Normalizer2$Mode;)Landroid/icu/text/Normalizer2;",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2.object()
 		);
 	}
@@ -65,13 +67,13 @@ namespace android::icu::text
 			"()Landroid/icu/text/Normalizer2;"
 		);
 	}
-	java::lang::StringBuilder Normalizer2::append(java::lang::StringBuilder arg0, jstring arg1)
+	java::lang::StringBuilder Normalizer2::append(java::lang::StringBuilder arg0, JString arg1)
 	{
 		return callObjectMethod(
 			"append",
 			"(Ljava/lang/StringBuilder;Ljava/lang/CharSequence;)Ljava/lang/StringBuilder;",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
 	jint Normalizer2::composePair(jint arg0, jint arg1)
@@ -91,21 +93,21 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	jstring Normalizer2::getDecomposition(jint arg0)
+	JString Normalizer2::getDecomposition(jint arg0)
 	{
 		return callObjectMethod(
 			"getDecomposition",
 			"(I)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
-	jstring Normalizer2::getRawDecomposition(jint arg0)
+	JString Normalizer2::getRawDecomposition(jint arg0)
 	{
 		return callObjectMethod(
 			"getRawDecomposition",
 			"(I)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
 	jboolean Normalizer2::hasBoundaryAfter(jint arg0)
 	{
@@ -131,63 +133,63 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	jboolean Normalizer2::isNormalized(jstring arg0)
+	jboolean Normalizer2::isNormalized(JString arg0)
 	{
 		return callMethod<jboolean>(
 			"isNormalized",
 			"(Ljava/lang/CharSequence;)Z",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	JObject Normalizer2::normalize(jstring arg0, JObject arg1)
+	JObject Normalizer2::normalize(JString arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"normalize",
 			"(Ljava/lang/CharSequence;Ljava/lang/Appendable;)Ljava/lang/Appendable;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
-	jstring Normalizer2::normalize(jstring arg0)
+	JString Normalizer2::normalize(JString arg0)
 	{
 		return callObjectMethod(
 			"normalize",
 			"(Ljava/lang/CharSequence;)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
+			arg0.object<jstring>()
+		);
 	}
-	java::lang::StringBuilder Normalizer2::normalize(jstring arg0, java::lang::StringBuilder arg1)
+	java::lang::StringBuilder Normalizer2::normalize(JString arg0, java::lang::StringBuilder arg1)
 	{
 		return callObjectMethod(
 			"normalize",
 			"(Ljava/lang/CharSequence;Ljava/lang/StringBuilder;)Ljava/lang/StringBuilder;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
-	java::lang::StringBuilder Normalizer2::normalizeSecondAndAppend(java::lang::StringBuilder arg0, jstring arg1)
+	java::lang::StringBuilder Normalizer2::normalizeSecondAndAppend(java::lang::StringBuilder arg0, JString arg1)
 	{
 		return callObjectMethod(
 			"normalizeSecondAndAppend",
 			"(Ljava/lang/StringBuilder;Ljava/lang/CharSequence;)Ljava/lang/StringBuilder;",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
-	android::icu::text::Normalizer_QuickCheckResult Normalizer2::quickCheck(jstring arg0)
+	android::icu::text::Normalizer_QuickCheckResult Normalizer2::quickCheck(JString arg0)
 	{
 		return callObjectMethod(
 			"quickCheck",
 			"(Ljava/lang/CharSequence;)Landroid/icu/text/Normalizer$QuickCheckResult;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jint Normalizer2::spanQuickCheckYes(jstring arg0)
+	jint Normalizer2::spanQuickCheckYes(JString arg0)
 	{
 		return callMethod<jint>(
 			"spanQuickCheckYes",
 			"(Ljava/lang/CharSequence;)I",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 } // namespace android::icu::text

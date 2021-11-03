@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./IllegalCharsetNameException.hpp"
 
 namespace java::nio::charset
@@ -8,20 +9,20 @@ namespace java::nio::charset
 	IllegalCharsetNameException::IllegalCharsetNameException(QAndroidJniObject obj) : java::lang::IllegalArgumentException(obj) {}
 	
 	// Constructors
-	IllegalCharsetNameException::IllegalCharsetNameException(jstring arg0)
+	IllegalCharsetNameException::IllegalCharsetNameException(JString arg0)
 		: java::lang::IllegalArgumentException(
 			"java.nio.charset.IllegalCharsetNameException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods
-	jstring IllegalCharsetNameException::getCharsetName()
+	JString IllegalCharsetNameException::getCharsetName()
 	{
 		return callObjectMethod(
 			"getCharsetName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::nio::charset
 

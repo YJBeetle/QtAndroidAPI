@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./KeyPair.hpp"
 #include "./Provider.hpp"
 #include "./SecureRandom.hpp"
@@ -13,32 +14,32 @@ namespace java::security
 	// Constructors
 	
 	// Methods
-	java::security::KeyPairGenerator KeyPairGenerator::getInstance(jstring arg0)
+	java::security::KeyPairGenerator KeyPairGenerator::getInstance(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"java.security.KeyPairGenerator",
 			"getInstance",
 			"(Ljava/lang/String;)Ljava/security/KeyPairGenerator;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	java::security::KeyPairGenerator KeyPairGenerator::getInstance(jstring arg0, jstring arg1)
+	java::security::KeyPairGenerator KeyPairGenerator::getInstance(JString arg0, JString arg1)
 	{
 		return callStaticObjectMethod(
 			"java.security.KeyPairGenerator",
 			"getInstance",
 			"(Ljava/lang/String;Ljava/lang/String;)Ljava/security/KeyPairGenerator;",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		);
 	}
-	java::security::KeyPairGenerator KeyPairGenerator::getInstance(jstring arg0, java::security::Provider arg1)
+	java::security::KeyPairGenerator KeyPairGenerator::getInstance(JString arg0, java::security::Provider arg1)
 	{
 		return callStaticObjectMethod(
 			"java.security.KeyPairGenerator",
 			"getInstance",
 			"(Ljava/lang/String;Ljava/security/Provider;)Ljava/security/KeyPairGenerator;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
@@ -56,12 +57,12 @@ namespace java::security
 			"()Ljava/security/KeyPair;"
 		);
 	}
-	jstring KeyPairGenerator::getAlgorithm()
+	JString KeyPairGenerator::getAlgorithm()
 	{
 		return callObjectMethod(
 			"getAlgorithm",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	java::security::Provider KeyPairGenerator::getProvider()
 	{

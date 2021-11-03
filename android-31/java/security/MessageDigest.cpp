@@ -1,3 +1,6 @@
+#include "../../JByteArray.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "../nio/ByteBuffer.hpp"
 #include "./Provider.hpp"
 #include "./MessageDigest.hpp"
@@ -12,83 +15,83 @@ namespace java::security
 	// Constructors
 	
 	// Methods
-	java::security::MessageDigest MessageDigest::getInstance(jstring arg0)
+	java::security::MessageDigest MessageDigest::getInstance(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"java.security.MessageDigest",
 			"getInstance",
 			"(Ljava/lang/String;)Ljava/security/MessageDigest;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	java::security::MessageDigest MessageDigest::getInstance(jstring arg0, jstring arg1)
+	java::security::MessageDigest MessageDigest::getInstance(JString arg0, JString arg1)
 	{
 		return callStaticObjectMethod(
 			"java.security.MessageDigest",
 			"getInstance",
 			"(Ljava/lang/String;Ljava/lang/String;)Ljava/security/MessageDigest;",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		);
 	}
-	java::security::MessageDigest MessageDigest::getInstance(jstring arg0, java::security::Provider arg1)
+	java::security::MessageDigest MessageDigest::getInstance(JString arg0, java::security::Provider arg1)
 	{
 		return callStaticObjectMethod(
 			"java.security.MessageDigest",
 			"getInstance",
 			"(Ljava/lang/String;Ljava/security/Provider;)Ljava/security/MessageDigest;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
-	jboolean MessageDigest::isEqual(jbyteArray arg0, jbyteArray arg1)
+	jboolean MessageDigest::isEqual(JByteArray arg0, JByteArray arg1)
 	{
 		return callStaticMethod<jboolean>(
 			"java.security.MessageDigest",
 			"isEqual",
 			"([B[B)Z",
-			arg0,
-			arg1
+			arg0.object<jbyteArray>(),
+			arg1.object<jbyteArray>()
 		);
 	}
-	jobject MessageDigest::clone()
+	JObject MessageDigest::clone()
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
-	jbyteArray MessageDigest::digest()
+	JByteArray MessageDigest::digest()
 	{
 		return callObjectMethod(
 			"digest",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
-	jbyteArray MessageDigest::digest(jbyteArray arg0)
+	JByteArray MessageDigest::digest(JByteArray arg0)
 	{
 		return callObjectMethod(
 			"digest",
 			"([B)[B",
-			arg0
-		).object<jbyteArray>();
+			arg0.object<jbyteArray>()
+		);
 	}
-	jint MessageDigest::digest(jbyteArray arg0, jint arg1, jint arg2)
+	jint MessageDigest::digest(JByteArray arg0, jint arg1, jint arg2)
 	{
 		return callMethod<jint>(
 			"digest",
 			"([BII)I",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1,
 			arg2
 		);
 	}
-	jstring MessageDigest::getAlgorithm()
+	JString MessageDigest::getAlgorithm()
 	{
 		return callObjectMethod(
 			"getAlgorithm",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint MessageDigest::getDigestLength()
 	{
@@ -111,19 +114,19 @@ namespace java::security
 			"()V"
 		);
 	}
-	jstring MessageDigest::toString()
+	JString MessageDigest::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	void MessageDigest::update(jbyteArray arg0)
+	void MessageDigest::update(JByteArray arg0)
 	{
 		callMethod<void>(
 			"update",
 			"([B)V",
-			arg0
+			arg0.object<jbyteArray>()
 		);
 	}
 	void MessageDigest::update(jbyte arg0)
@@ -142,12 +145,12 @@ namespace java::security
 			arg0.object()
 		);
 	}
-	void MessageDigest::update(jbyteArray arg0, jint arg1, jint arg2)
+	void MessageDigest::update(JByteArray arg0, jint arg1, jint arg2)
 	{
 		callMethod<void>(
 			"update",
 			"([BII)V",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1,
 			arg2
 		);

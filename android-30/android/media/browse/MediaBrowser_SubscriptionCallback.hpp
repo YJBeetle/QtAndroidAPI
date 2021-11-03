@@ -6,6 +6,7 @@ namespace android::os
 {
 	class Bundle;
 }
+class JString;
 
 namespace android::media::browse
 {
@@ -22,10 +23,10 @@ namespace android::media::browse
 		MediaBrowser_SubscriptionCallback();
 		
 		// Methods
-		void onChildrenLoaded(jstring arg0, JObject arg1);
-		void onChildrenLoaded(jstring arg0, JObject arg1, android::os::Bundle arg2);
-		void onError(jstring arg0);
-		void onError(jstring arg0, android::os::Bundle arg1);
+		void onChildrenLoaded(JString arg0, JObject arg1);
+		void onChildrenLoaded(JString arg0, JObject arg1, android::os::Bundle arg2);
+		void onError(JString arg0);
+		void onError(JString arg0, android::os::Bundle arg1);
 	};
 } // namespace android::media::browse
 

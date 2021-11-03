@@ -6,10 +6,12 @@ namespace android::content::res
 {
 	class Resources;
 }
+class JString;
 namespace java::lang
 {
 	class Integer;
 }
+class JString;
 
 namespace android::provider
 {
@@ -17,11 +19,11 @@ namespace android::provider
 	{
 	public:
 		// Fields
-		static jstring CONTENT_ITEM_TYPE();
-		static jstring EXTRA_ADDRESS_BOOK_INDEX();
-		static jstring EXTRA_ADDRESS_BOOK_INDEX_COUNTS();
-		static jstring EXTRA_ADDRESS_BOOK_INDEX_TITLES();
-		static jstring START_DATE();
+		static JString CONTENT_ITEM_TYPE();
+		static JString EXTRA_ADDRESS_BOOK_INDEX();
+		static JString EXTRA_ADDRESS_BOOK_INDEX_COUNTS();
+		static JString EXTRA_ADDRESS_BOOK_INDEX_TITLES();
+		static JString START_DATE();
 		static jint TYPE_ANNIVERSARY();
 		static jint TYPE_BIRTHDAY();
 		static jint TYPE_OTHER();
@@ -33,7 +35,7 @@ namespace android::provider
 		// Constructors
 		
 		// Methods
-		static jstring getTypeLabel(android::content::res::Resources arg0, jint arg1, jstring arg2);
+		static JString getTypeLabel(android::content::res::Resources arg0, jint arg1, JString arg2);
 		static jint getTypeResource(java::lang::Integer arg0);
 	};
 } // namespace android::provider

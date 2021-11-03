@@ -1,4 +1,6 @@
+#include "../../JArray.hpp"
 #include "../os/Parcel.hpp"
+#include "../../JString.hpp"
 #include "./GnssAntennaInfo_SphericalCorrections.hpp"
 
 namespace android::location
@@ -17,12 +19,12 @@ namespace android::location
 	GnssAntennaInfo_SphericalCorrections::GnssAntennaInfo_SphericalCorrections(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	GnssAntennaInfo_SphericalCorrections::GnssAntennaInfo_SphericalCorrections(jarray arg0, jarray arg1)
+	GnssAntennaInfo_SphericalCorrections::GnssAntennaInfo_SphericalCorrections(JArray arg0, JArray arg1)
 		: JObject(
 			"android.location.GnssAntennaInfo$SphericalCorrections",
 			"([[D[[D)V",
-			arg0,
-			arg1
+			arg0.object<jarray>(),
+			arg1.object<jarray>()
 		) {}
 	
 	// Methods
@@ -33,19 +35,19 @@ namespace android::location
 			"()I"
 		);
 	}
-	jarray GnssAntennaInfo_SphericalCorrections::getCorrectionUncertaintiesArray()
+	JArray GnssAntennaInfo_SphericalCorrections::getCorrectionUncertaintiesArray()
 	{
 		return callObjectMethod(
 			"getCorrectionUncertaintiesArray",
 			"()[[D"
-		).object<jarray>();
+		);
 	}
-	jarray GnssAntennaInfo_SphericalCorrections::getCorrectionsArray()
+	JArray GnssAntennaInfo_SphericalCorrections::getCorrectionsArray()
 	{
 		return callObjectMethod(
 			"getCorrectionsArray",
 			"()[[D"
-		).object<jarray>();
+		);
 	}
 	jdouble GnssAntennaInfo_SphericalCorrections::getDeltaPhi()
 	{
@@ -61,12 +63,12 @@ namespace android::location
 			"()D"
 		);
 	}
-	jstring GnssAntennaInfo_SphericalCorrections::toString()
+	JString GnssAntennaInfo_SphericalCorrections::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void GnssAntennaInfo_SphericalCorrections::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

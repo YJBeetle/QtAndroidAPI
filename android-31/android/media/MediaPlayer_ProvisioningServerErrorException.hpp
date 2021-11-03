@@ -1,9 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../../java/lang/Exception.hpp"
 #include "./MediaDrmException.hpp"
 
+class JString;
 
 namespace android::media
 {
@@ -17,7 +16,7 @@ namespace android::media
 		MediaPlayer_ProvisioningServerErrorException(QAndroidJniObject obj);
 		
 		// Constructors
-		MediaPlayer_ProvisioningServerErrorException(jstring arg0);
+		MediaPlayer_ProvisioningServerErrorException(JString arg0);
 		
 		// Methods
 	};

@@ -1,8 +1,9 @@
 #pragma once
 
-#include "../../../../JObject.hpp"
 #include "./IkeSessionParams_IkeAuthConfig.hpp"
 
+class JByteArray;
+class JObject;
 
 namespace android::net::ipsec::ike
 {
@@ -18,8 +19,8 @@ namespace android::net::ipsec::ike
 		// Constructors
 		
 		// Methods
-		jboolean equals(jobject arg0);
-		jbyteArray getPsk();
+		jboolean equals(JObject arg0);
+		JByteArray getPsk();
 		jint hashCode();
 	};
 } // namespace android::net::ipsec::ike

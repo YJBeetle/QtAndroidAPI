@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JString;
 namespace java::security
 {
 	class CodeSource;
@@ -47,16 +48,16 @@ namespace java::security
 		Policy();
 		
 		// Methods
-		static java::security::Policy getInstance(jstring arg0, JObject arg1);
-		static java::security::Policy getInstance(jstring arg0, JObject arg1, jstring arg2);
-		static java::security::Policy getInstance(jstring arg0, JObject arg1, java::security::Provider arg2);
+		static java::security::Policy getInstance(JString arg0, JObject arg1);
+		static java::security::Policy getInstance(JString arg0, JObject arg1, JString arg2);
+		static java::security::Policy getInstance(JString arg0, JObject arg1, java::security::Provider arg2);
 		static java::security::Policy getPolicy();
 		static void setPolicy(java::security::Policy arg0);
 		JObject getParameters();
 		java::security::PermissionCollection getPermissions(java::security::CodeSource arg0);
 		java::security::PermissionCollection getPermissions(java::security::ProtectionDomain arg0);
 		java::security::Provider getProvider();
-		jstring getType();
+		JString getType();
 		jboolean implies(java::security::ProtectionDomain arg0, java::security::Permission arg1);
 		void refresh();
 	};

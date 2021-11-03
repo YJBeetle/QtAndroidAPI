@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JObject;
+class JString;
 namespace java::net
 {
 	class Proxy_Type;
@@ -28,9 +30,9 @@ namespace java::net
 		
 		// Methods
 		java::net::SocketAddress address();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint hashCode();
-		jstring toString();
+		JString toString();
 		java::net::Proxy_Type type();
 	};
 } // namespace java::net

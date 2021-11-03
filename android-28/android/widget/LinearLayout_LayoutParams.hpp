@@ -1,7 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../view/ViewGroup_LayoutParams.hpp"
 #include "../view/ViewGroup_MarginLayoutParams.hpp"
 
 namespace android::content
@@ -16,6 +14,7 @@ namespace android::view
 {
 	class ViewGroup_MarginLayoutParams;
 }
+class JString;
 
 namespace android::widget
 {
@@ -39,7 +38,7 @@ namespace android::widget
 		LinearLayout_LayoutParams(jint arg0, jint arg1, jfloat arg2);
 		
 		// Methods
-		jstring debug(jstring arg0);
+		JString debug(JString arg0);
 	};
 } // namespace android::widget
 

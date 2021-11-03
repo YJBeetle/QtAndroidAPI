@@ -1,4 +1,8 @@
+#include "../../JArray.hpp"
+#include "../../JArray.hpp"
+#include "../../JClass.hpp"
 #include "./ClassLoader.hpp"
+#include "../../JString.hpp"
 #include "../net/URL.hpp"
 #include "./Package.hpp"
 
@@ -12,117 +16,117 @@ namespace java::lang
 	// Constructors
 	
 	// Methods
-	java::lang::Package Package::getPackage(jstring arg0)
+	java::lang::Package Package::getPackage(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"java.lang.Package",
 			"getPackage",
 			"(Ljava/lang/String;)Ljava/lang/Package;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray Package::getPackages()
+	JArray Package::getPackages()
 	{
 		return callStaticObjectMethod(
 			"java.lang.Package",
 			"getPackages",
 			"()[Ljava/lang/Package;"
-		).object<jarray>();
+		);
 	}
-	JObject Package::getAnnotation(jclass arg0)
+	JObject Package::getAnnotation(JClass arg0)
 	{
 		return callObjectMethod(
 			"getAnnotation",
 			"(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;",
-			arg0
+			arg0.object<jclass>()
 		);
 	}
-	jarray Package::getAnnotations()
+	JArray Package::getAnnotations()
 	{
 		return callObjectMethod(
 			"getAnnotations",
 			"()[Ljava/lang/annotation/Annotation;"
-		).object<jarray>();
+		);
 	}
-	jarray Package::getAnnotationsByType(jclass arg0)
+	JArray Package::getAnnotationsByType(JClass arg0)
 	{
 		return callObjectMethod(
 			"getAnnotationsByType",
 			"(Ljava/lang/Class;)[Ljava/lang/annotation/Annotation;",
-			arg0
-		).object<jarray>();
+			arg0.object<jclass>()
+		);
 	}
-	JObject Package::getDeclaredAnnotation(jclass arg0)
+	JObject Package::getDeclaredAnnotation(JClass arg0)
 	{
 		return callObjectMethod(
 			"getDeclaredAnnotation",
 			"(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;",
-			arg0
+			arg0.object<jclass>()
 		);
 	}
-	jarray Package::getDeclaredAnnotations()
+	JArray Package::getDeclaredAnnotations()
 	{
 		return callObjectMethod(
 			"getDeclaredAnnotations",
 			"()[Ljava/lang/annotation/Annotation;"
-		).object<jarray>();
+		);
 	}
-	jarray Package::getDeclaredAnnotationsByType(jclass arg0)
+	JArray Package::getDeclaredAnnotationsByType(JClass arg0)
 	{
 		return callObjectMethod(
 			"getDeclaredAnnotationsByType",
 			"(Ljava/lang/Class;)[Ljava/lang/annotation/Annotation;",
-			arg0
-		).object<jarray>();
+			arg0.object<jclass>()
+		);
 	}
-	jstring Package::getImplementationTitle()
+	JString Package::getImplementationTitle()
 	{
 		return callObjectMethod(
 			"getImplementationTitle",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Package::getImplementationVendor()
+	JString Package::getImplementationVendor()
 	{
 		return callObjectMethod(
 			"getImplementationVendor",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Package::getImplementationVersion()
+	JString Package::getImplementationVersion()
 	{
 		return callObjectMethod(
 			"getImplementationVersion",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Package::getName()
+	JString Package::getName()
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Package::getSpecificationTitle()
+	JString Package::getSpecificationTitle()
 	{
 		return callObjectMethod(
 			"getSpecificationTitle",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Package::getSpecificationVendor()
+	JString Package::getSpecificationVendor()
 	{
 		return callObjectMethod(
 			"getSpecificationVendor",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Package::getSpecificationVersion()
+	JString Package::getSpecificationVersion()
 	{
 		return callObjectMethod(
 			"getSpecificationVersion",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint Package::hashCode()
 	{
@@ -131,20 +135,20 @@ namespace java::lang
 			"()I"
 		);
 	}
-	jboolean Package::isAnnotationPresent(jclass arg0)
+	jboolean Package::isAnnotationPresent(JClass arg0)
 	{
 		return callMethod<jboolean>(
 			"isAnnotationPresent",
 			"(Ljava/lang/Class;)Z",
-			arg0
+			arg0.object<jclass>()
 		);
 	}
-	jboolean Package::isCompatibleWith(jstring arg0)
+	jboolean Package::isCompatibleWith(JString arg0)
 	{
 		return callMethod<jboolean>(
 			"isCompatibleWith",
 			"(Ljava/lang/String;)Z",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	jboolean Package::isSealed()
@@ -162,12 +166,12 @@ namespace java::lang
 			arg0.object()
 		);
 	}
-	jstring Package::toString()
+	JString Package::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::lang
 

@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./BindException.hpp"
 
 namespace java::net
@@ -13,11 +14,11 @@ namespace java::net
 			"java.net.BindException",
 			"()V"
 		) {}
-	BindException::BindException(jstring arg0)
+	BindException::BindException(JString arg0)
 		: java::net::SocketException(
 			"java.net.BindException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

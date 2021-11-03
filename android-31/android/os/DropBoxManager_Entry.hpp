@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JByteArray;
 namespace android::os
 {
 	class Parcel;
@@ -18,6 +19,7 @@ namespace java::io
 {
 	class InputStream;
 }
+class JString;
 
 namespace android::os
 {
@@ -32,19 +34,19 @@ namespace android::os
 		DropBoxManager_Entry(QAndroidJniObject obj);
 		
 		// Constructors
-		DropBoxManager_Entry(jstring arg0, jlong arg1);
-		DropBoxManager_Entry(jstring arg0, jlong arg1, jstring arg2);
-		DropBoxManager_Entry(jstring arg0, jlong arg1, jbyteArray arg2, jint arg3);
-		DropBoxManager_Entry(jstring arg0, jlong arg1, android::os::ParcelFileDescriptor arg2, jint arg3);
-		DropBoxManager_Entry(jstring arg0, jlong arg1, java::io::File arg2, jint arg3);
+		DropBoxManager_Entry(JString arg0, jlong arg1);
+		DropBoxManager_Entry(JString arg0, jlong arg1, JString arg2);
+		DropBoxManager_Entry(JString arg0, jlong arg1, JByteArray arg2, jint arg3);
+		DropBoxManager_Entry(JString arg0, jlong arg1, android::os::ParcelFileDescriptor arg2, jint arg3);
+		DropBoxManager_Entry(JString arg0, jlong arg1, java::io::File arg2, jint arg3);
 		
 		// Methods
 		void close();
 		jint describeContents();
 		jint getFlags();
 		java::io::InputStream getInputStream();
-		jstring getTag();
-		jstring getText(jint arg0);
+		JString getTag();
+		JString getText(jint arg0);
 		jlong getTimeMillis();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};

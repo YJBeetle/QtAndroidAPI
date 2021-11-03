@@ -1,15 +1,16 @@
+#include "../../JClass.hpp"
 #include "./Void.hpp"
 
 namespace java::lang
 {
 	// Fields
-	jclass Void::TYPE()
+	JClass Void::TYPE()
 	{
 		return getStaticObjectField(
 			"java.lang.Void",
 			"TYPE",
 			"Ljava/lang/Class;"
-		).object<jclass>();
+		);
 	}
 	
 	// QAndroidJniObject forward

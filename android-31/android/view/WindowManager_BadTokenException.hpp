@@ -1,9 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../../java/lang/Exception.hpp"
 #include "../../java/lang/RuntimeException.hpp"
 
+class JString;
 
 namespace android::view
 {
@@ -18,7 +17,7 @@ namespace android::view
 		
 		// Constructors
 		WindowManager_BadTokenException();
-		WindowManager_BadTokenException(jstring arg0);
+		WindowManager_BadTokenException(JString arg0);
 		
 		// Methods
 	};

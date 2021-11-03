@@ -1,3 +1,4 @@
+#include "../../JIntArray.hpp"
 #include "../content/Context.hpp"
 #include "../content/res/ColorStateList.hpp"
 #include "../graphics/Bitmap.hpp"
@@ -9,6 +10,7 @@
 #include "../graphics/drawable/Icon.hpp"
 #include "../net/Uri.hpp"
 #include "./ImageView_ScaleType.hpp"
+#include "../../JString.hpp"
 #include "./ImageView.hpp"
 
 namespace android::widget
@@ -67,12 +69,12 @@ namespace android::widget
 			arg1
 		);
 	}
-	jstring ImageView::getAccessibilityClassName()
+	JString ImageView::getAccessibilityClassName()
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	jboolean ImageView::getAdjustViewBounds()
 	{
@@ -194,13 +196,13 @@ namespace android::widget
 			"()V"
 		);
 	}
-	jintArray ImageView::onCreateDrawableState(jint arg0)
+	JIntArray ImageView::onCreateDrawableState(jint arg0)
 	{
 		return callObjectMethod(
 			"onCreateDrawableState",
 			"(I)[I",
 			arg0
-		).object<jintArray>();
+		);
 	}
 	void ImageView::onRtlPropertiesChanged(jint arg0)
 	{
@@ -339,12 +341,12 @@ namespace android::widget
 			arg0
 		);
 	}
-	void ImageView::setImageState(jintArray arg0, jboolean arg1)
+	void ImageView::setImageState(JIntArray arg0, jboolean arg1)
 	{
 		callMethod<void>(
 			"setImageState",
 			"([IZ)V",
-			arg0,
+			arg0.object<jintArray>(),
 			arg1
 		);
 	}

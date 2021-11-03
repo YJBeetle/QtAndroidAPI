@@ -1,14 +1,15 @@
+#include "../../JCharArray.hpp"
 #include "./CharArrayBuffer.hpp"
 
 namespace android::database
 {
 	// Fields
-	jcharArray CharArrayBuffer::data()
+	JCharArray CharArrayBuffer::data()
 	{
 		return getObjectField(
 			"data",
 			"[C"
-		).object<jcharArray>();
+		);
 	}
 	jint CharArrayBuffer::sizeCopied()
 	{
@@ -21,11 +22,11 @@ namespace android::database
 	CharArrayBuffer::CharArrayBuffer(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	CharArrayBuffer::CharArrayBuffer(jcharArray arg0)
+	CharArrayBuffer::CharArrayBuffer(JCharArray arg0)
 		: JObject(
 			"android.database.CharArrayBuffer",
 			"([C)V",
-			arg0
+			arg0.object<jcharArray>()
 		) {}
 	CharArrayBuffer::CharArrayBuffer(jint arg0)
 		: JObject(

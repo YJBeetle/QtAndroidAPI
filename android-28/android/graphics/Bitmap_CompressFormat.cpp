@@ -1,3 +1,5 @@
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
 #include "./Bitmap_CompressFormat.hpp"
 
 namespace android::graphics
@@ -34,22 +36,22 @@ namespace android::graphics
 	// Constructors
 	
 	// Methods
-	android::graphics::Bitmap_CompressFormat Bitmap_CompressFormat::valueOf(jstring arg0)
+	android::graphics::Bitmap_CompressFormat Bitmap_CompressFormat::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.graphics.Bitmap$CompressFormat",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/graphics/Bitmap$CompressFormat;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray Bitmap_CompressFormat::values()
+	JArray Bitmap_CompressFormat::values()
 	{
 		return callStaticObjectMethod(
 			"android.graphics.Bitmap$CompressFormat",
 			"values",
 			"()[Landroid/graphics/Bitmap$CompressFormat;"
-		).object<jarray>();
+		);
 	}
 } // namespace android::graphics
 

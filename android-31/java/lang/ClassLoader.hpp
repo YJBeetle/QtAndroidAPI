@@ -2,6 +2,10 @@
 
 #include "../../JObject.hpp"
 
+class JByteArray;
+class JObjectArray;
+class JArray;
+class JArray;
 namespace java::io
 {
 	class File;
@@ -10,10 +14,13 @@ namespace java::io
 {
 	class InputStream;
 }
+class JClass;
+class JObject;
 namespace java::lang
 {
 	class Package;
 }
+class JString;
 namespace java::lang
 {
 	class Void;
@@ -55,24 +62,24 @@ namespace java::lang
 		// Methods
 		static java::lang::ClassLoader getPlatformClassLoader();
 		static java::lang::ClassLoader getSystemClassLoader();
-		static java::net::URL getSystemResource(jstring arg0);
-		static java::io::InputStream getSystemResourceAsStream(jstring arg0);
-		static JObject getSystemResources(jstring arg0);
+		static java::net::URL getSystemResource(JString arg0);
+		static java::io::InputStream getSystemResourceAsStream(JString arg0);
+		static JObject getSystemResources(JString arg0);
 		void clearAssertionStatus();
-		java::lang::Package getDefinedPackage(jstring arg0);
-		jarray getDefinedPackages();
-		jstring getName();
+		java::lang::Package getDefinedPackage(JString arg0);
+		JArray getDefinedPackages();
+		JString getName();
 		java::lang::ClassLoader getParent();
-		java::net::URL getResource(jstring arg0);
-		java::io::InputStream getResourceAsStream(jstring arg0);
-		JObject getResources(jstring arg0);
+		java::net::URL getResource(JString arg0);
+		java::io::InputStream getResourceAsStream(JString arg0);
+		JObject getResources(JString arg0);
 		JObject getUnnamedModule();
 		jboolean isRegisteredAsParallelCapable();
-		jclass loadClass(jstring arg0);
-		JObject resources(jstring arg0);
-		void setClassAssertionStatus(jstring arg0, jboolean arg1);
+		JClass loadClass(JString arg0);
+		JObject resources(JString arg0);
+		void setClassAssertionStatus(JString arg0, jboolean arg1);
 		void setDefaultAssertionStatus(jboolean arg0);
-		void setPackageAssertionStatus(jstring arg0, jboolean arg1);
+		void setPackageAssertionStatus(JString arg0, jboolean arg1);
 	};
 } // namespace java::lang
 

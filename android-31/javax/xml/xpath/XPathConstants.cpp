@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "../namespace/QName.hpp"
 #include "./XPathConstants.hpp"
 
@@ -12,13 +13,13 @@ namespace javax::xml::xpath
 			"Ljavax/xml/namespace/QName;"
 		);
 	}
-	jstring XPathConstants::DOM_OBJECT_MODEL()
+	JString XPathConstants::DOM_OBJECT_MODEL()
 	{
 		return getStaticObjectField(
 			"javax.xml.xpath.XPathConstants",
 			"DOM_OBJECT_MODEL",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	javax::xml::_namespace::QName XPathConstants::NODE()
 	{

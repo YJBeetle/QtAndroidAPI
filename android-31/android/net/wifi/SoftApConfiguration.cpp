@@ -1,5 +1,7 @@
 #include "../MacAddress.hpp"
 #include "../../os/Parcel.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./SoftApConfiguration.hpp"
 
 namespace android::net::wifi
@@ -55,12 +57,12 @@ namespace android::net::wifi
 			"()I"
 		);
 	}
-	jboolean SoftApConfiguration::equals(jobject arg0)
+	jboolean SoftApConfiguration::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	android::net::MacAddress SoftApConfiguration::getBssid()
@@ -70,12 +72,12 @@ namespace android::net::wifi
 			"()Landroid/net/MacAddress;"
 		);
 	}
-	jstring SoftApConfiguration::getPassphrase()
+	JString SoftApConfiguration::getPassphrase()
 	{
 		return callObjectMethod(
 			"getPassphrase",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint SoftApConfiguration::getSecurityType()
 	{
@@ -84,12 +86,12 @@ namespace android::net::wifi
 			"()I"
 		);
 	}
-	jstring SoftApConfiguration::getSsid()
+	JString SoftApConfiguration::getSsid()
 	{
 		return callObjectMethod(
 			"getSsid",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint SoftApConfiguration::hashCode()
 	{
@@ -105,12 +107,12 @@ namespace android::net::wifi
 			"()Z"
 		);
 	}
-	jstring SoftApConfiguration::toString()
+	JString SoftApConfiguration::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void SoftApConfiguration::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

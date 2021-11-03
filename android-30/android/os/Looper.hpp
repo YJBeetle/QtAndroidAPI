@@ -6,6 +6,7 @@ namespace android::os
 {
 	class MessageQueue;
 }
+class JString;
 namespace java::lang
 {
 	class Thread;
@@ -31,14 +32,14 @@ namespace android::os
 		static android::os::MessageQueue myQueue();
 		static void prepare();
 		static void prepareMainLooper();
-		void dump(JObject arg0, jstring arg1);
+		void dump(JObject arg0, JString arg1);
 		android::os::MessageQueue getQueue();
 		java::lang::Thread getThread();
 		jboolean isCurrentThread();
 		void quit();
 		void quitSafely();
 		void setMessageLogging(JObject arg0);
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::os
 

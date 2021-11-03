@@ -6,6 +6,7 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
 
 namespace android::view::inputmethod
 {
@@ -17,13 +18,13 @@ namespace android::view::inputmethod
 		static jint FLAG_SELECTING();
 		static jint FLAG_SINGLE_LINE();
 		jint flags();
-		jstring hint();
+		JString hint();
 		jint partialEndOffset();
 		jint partialStartOffset();
 		jint selectionEnd();
 		jint selectionStart();
 		jint startOffset();
-		jstring text();
+		JString text();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ExtractedText(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}

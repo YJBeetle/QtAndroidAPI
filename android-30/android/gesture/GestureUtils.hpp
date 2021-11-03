@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JFloatArray;
 namespace android::gesture
 {
 	class Gesture;
@@ -33,11 +34,11 @@ namespace android::gesture
 		// Constructors
 		
 		// Methods
-		static android::gesture::OrientedBoundingBox computeOrientedBoundingBox(jfloatArray arg0);
+		static android::gesture::OrientedBoundingBox computeOrientedBoundingBox(JFloatArray arg0);
 		static android::gesture::OrientedBoundingBox computeOrientedBoundingBox(java::util::ArrayList arg0);
-		static jfloatArray spatialSampling(android::gesture::Gesture arg0, jint arg1);
-		static jfloatArray spatialSampling(android::gesture::Gesture arg0, jint arg1, jboolean arg2);
-		static jfloatArray temporalSampling(android::gesture::GestureStroke arg0, jint arg1);
+		static JFloatArray spatialSampling(android::gesture::Gesture arg0, jint arg1);
+		static JFloatArray spatialSampling(android::gesture::Gesture arg0, jint arg1, jboolean arg2);
+		static JFloatArray temporalSampling(android::gesture::GestureStroke arg0, jint arg1);
 	};
 } // namespace android::gesture
 

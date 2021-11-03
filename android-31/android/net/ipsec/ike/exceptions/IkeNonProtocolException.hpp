@@ -1,9 +1,6 @@
 #pragma once
 
-#include "../../../../../JObject.hpp"
-#include "../../../../../java/lang/Exception.hpp"
 #include "./IkeException.hpp"
-
 
 namespace android::net::ipsec::ike::exceptions
 {

@@ -1,6 +1,10 @@
+#include "../../JLongArray.hpp"
 #include "../media/AudioAttributes.hpp"
 #include "../net/Uri.hpp"
 #include "../os/Parcel.hpp"
+#include "../../JString.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./NotificationChannel.hpp"
 
 namespace android::app
@@ -14,25 +18,25 @@ namespace android::app
 			"Landroid/os/Parcelable$Creator;"
 		);
 	}
-	jstring NotificationChannel::DEFAULT_CHANNEL_ID()
+	JString NotificationChannel::DEFAULT_CHANNEL_ID()
 	{
 		return getStaticObjectField(
 			"android.app.NotificationChannel",
 			"DEFAULT_CHANNEL_ID",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QAndroidJniObject forward
 	NotificationChannel::NotificationChannel(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	NotificationChannel::NotificationChannel(jstring arg0, jstring arg1, jint arg2)
+	NotificationChannel::NotificationChannel(JString arg0, JString arg1, jint arg2)
 		: JObject(
 			"android.app.NotificationChannel",
 			"(Ljava/lang/String;Ljava/lang/CharSequence;I)V",
-			arg0,
-			arg1,
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
 			arg2
 		) {}
 	
@@ -74,12 +78,12 @@ namespace android::app
 			arg0
 		);
 	}
-	jboolean NotificationChannel::equals(jobject arg0)
+	jboolean NotificationChannel::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	android::media::AudioAttributes NotificationChannel::getAudioAttributes()
@@ -89,26 +93,26 @@ namespace android::app
 			"()Landroid/media/AudioAttributes;"
 		);
 	}
-	jstring NotificationChannel::getDescription()
+	JString NotificationChannel::getDescription()
 	{
 		return callObjectMethod(
 			"getDescription",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring NotificationChannel::getGroup()
+	JString NotificationChannel::getGroup()
 	{
 		return callObjectMethod(
 			"getGroup",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring NotificationChannel::getId()
+	JString NotificationChannel::getId()
 	{
 		return callObjectMethod(
 			"getId",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint NotificationChannel::getImportance()
 	{
@@ -131,12 +135,12 @@ namespace android::app
 			"()I"
 		);
 	}
-	jstring NotificationChannel::getName()
+	JString NotificationChannel::getName()
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	android::net::Uri NotificationChannel::getSound()
 	{
@@ -145,12 +149,12 @@ namespace android::app
 			"()Landroid/net/Uri;"
 		);
 	}
-	jlongArray NotificationChannel::getVibrationPattern()
+	JLongArray NotificationChannel::getVibrationPattern()
 	{
 		return callObjectMethod(
 			"getVibrationPattern",
 			"()[J"
-		).object<jlongArray>();
+		);
 	}
 	jint NotificationChannel::hashCode()
 	{
@@ -167,20 +171,20 @@ namespace android::app
 			arg0
 		);
 	}
-	void NotificationChannel::setDescription(jstring arg0)
+	void NotificationChannel::setDescription(JString arg0)
 	{
 		callMethod<void>(
 			"setDescription",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	void NotificationChannel::setGroup(jstring arg0)
+	void NotificationChannel::setGroup(JString arg0)
 	{
 		callMethod<void>(
 			"setGroup",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void NotificationChannel::setImportance(jint arg0)
@@ -207,12 +211,12 @@ namespace android::app
 			arg0
 		);
 	}
-	void NotificationChannel::setName(jstring arg0)
+	void NotificationChannel::setName(JString arg0)
 	{
 		callMethod<void>(
 			"setName",
 			"(Ljava/lang/CharSequence;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void NotificationChannel::setShowBadge(jboolean arg0)
@@ -232,12 +236,12 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	void NotificationChannel::setVibrationPattern(jlongArray arg0)
+	void NotificationChannel::setVibrationPattern(JLongArray arg0)
 	{
 		callMethod<void>(
 			"setVibrationPattern",
 			"([J)V",
-			arg0
+			arg0.object<jlongArray>()
 		);
 	}
 	jboolean NotificationChannel::shouldShowLights()
@@ -254,12 +258,12 @@ namespace android::app
 			"()Z"
 		);
 	}
-	jstring NotificationChannel::toString()
+	JString NotificationChannel::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void NotificationChannel::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

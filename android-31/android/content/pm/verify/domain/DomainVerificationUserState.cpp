@@ -1,5 +1,7 @@
 #include "../../../../os/Parcel.hpp"
 #include "../../../../os/UserHandle.hpp"
+#include "../../../../../JObject.hpp"
+#include "../../../../../JString.hpp"
 #include "./DomainVerificationUserState.hpp"
 
 namespace android::content::pm::verify::domain
@@ -48,12 +50,12 @@ namespace android::content::pm::verify::domain
 			"()I"
 		);
 	}
-	jboolean DomainVerificationUserState::equals(jobject arg0)
+	jboolean DomainVerificationUserState::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	JObject DomainVerificationUserState::getHostToStateMap()
@@ -63,12 +65,12 @@ namespace android::content::pm::verify::domain
 			"()Ljava/util/Map;"
 		);
 	}
-	jstring DomainVerificationUserState::getPackageName()
+	JString DomainVerificationUserState::getPackageName()
 	{
 		return callObjectMethod(
 			"getPackageName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::os::UserHandle DomainVerificationUserState::getUser()
 	{
@@ -91,12 +93,12 @@ namespace android::content::pm::verify::domain
 			"()Z"
 		);
 	}
-	jstring DomainVerificationUserState::toString()
+	JString DomainVerificationUserState::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void DomainVerificationUserState::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

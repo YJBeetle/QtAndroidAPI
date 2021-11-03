@@ -1,9 +1,9 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "../../../java/lang/Exception.hpp"
 #include "./IdentityCredentialException.hpp"
 
+class JString;
+class JThrowable;
 
 namespace android::security::identity
 {
@@ -17,8 +17,8 @@ namespace android::security::identity
 		EphemeralPublicKeyNotFoundException(QAndroidJniObject obj);
 		
 		// Constructors
-		EphemeralPublicKeyNotFoundException(jstring arg0);
-		EphemeralPublicKeyNotFoundException(jstring arg0, jthrowable arg1);
+		EphemeralPublicKeyNotFoundException(JString arg0);
+		EphemeralPublicKeyNotFoundException(JString arg0, JThrowable arg1);
 		
 		// Methods
 	};

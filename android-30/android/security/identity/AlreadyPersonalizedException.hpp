@@ -1,9 +1,9 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "../../../java/lang/Exception.hpp"
 #include "./IdentityCredentialException.hpp"
 
+class JString;
+class JThrowable;
 
 namespace android::security::identity
 {
@@ -17,8 +17,8 @@ namespace android::security::identity
 		AlreadyPersonalizedException(QAndroidJniObject obj);
 		
 		// Constructors
-		AlreadyPersonalizedException(jstring arg0);
-		AlreadyPersonalizedException(jstring arg0, jthrowable arg1);
+		AlreadyPersonalizedException(JString arg0);
+		AlreadyPersonalizedException(JString arg0, JThrowable arg1);
 		
 		// Methods
 	};

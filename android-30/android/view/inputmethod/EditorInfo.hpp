@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JArray;
 namespace android::os
 {
 	class Bundle;
@@ -14,6 +15,8 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
+class JString;
 
 namespace android::view::inputmethod
 {
@@ -41,21 +44,21 @@ namespace android::view::inputmethod
 		static jint IME_MASK_ACTION();
 		static jint IME_NULL();
 		jint actionId();
-		jstring actionLabel();
-		jarray contentMimeTypes();
+		JString actionLabel();
+		JArray contentMimeTypes();
 		android::os::Bundle extras();
 		jint fieldId();
-		jstring fieldName();
+		JString fieldName();
 		android::os::LocaleList hintLocales();
-		jstring hintText();
+		JString hintText();
 		jint imeOptions();
 		jint initialCapsMode();
 		jint initialSelEnd();
 		jint initialSelStart();
 		jint inputType();
-		jstring label();
-		jstring packageName();
-		jstring privateImeOptions();
+		JString label();
+		JString packageName();
+		JString privateImeOptions();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit EditorInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
@@ -66,13 +69,13 @@ namespace android::view::inputmethod
 		
 		// Methods
 		jint describeContents();
-		void dump(JObject arg0, jstring arg1);
-		jstring getInitialSelectedText(jint arg0);
-		jstring getInitialTextAfterCursor(jint arg0, jint arg1);
-		jstring getInitialTextBeforeCursor(jint arg0, jint arg1);
+		void dump(JObject arg0, JString arg1);
+		JString getInitialSelectedText(jint arg0);
+		JString getInitialTextAfterCursor(jint arg0, jint arg1);
+		JString getInitialTextBeforeCursor(jint arg0, jint arg1);
 		void makeCompatible(jint arg0);
-		void setInitialSurroundingSubText(jstring arg0, jint arg1);
-		void setInitialSurroundingText(jstring arg0);
+		void setInitialSurroundingSubText(JString arg0, jint arg1);
+		void setInitialSurroundingText(JString arg0);
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::view::inputmethod

@@ -14,6 +14,7 @@ namespace android::telephony
 {
 	class SubscriptionManager_OnSubscriptionsChangedListener;
 }
+class JString;
 
 namespace android::telephony
 {
@@ -21,13 +22,13 @@ namespace android::telephony
 	{
 	public:
 		// Fields
-		static jstring ACTION_DEFAULT_SMS_SUBSCRIPTION_CHANGED();
-		static jstring ACTION_DEFAULT_SUBSCRIPTION_CHANGED();
-		static jstring ACTION_MANAGE_SUBSCRIPTION_PLANS();
-		static jstring ACTION_REFRESH_SUBSCRIPTION_PLANS();
+		static JString ACTION_DEFAULT_SMS_SUBSCRIPTION_CHANGED();
+		static JString ACTION_DEFAULT_SUBSCRIPTION_CHANGED();
+		static JString ACTION_MANAGE_SUBSCRIPTION_PLANS();
+		static JString ACTION_REFRESH_SUBSCRIPTION_PLANS();
 		static jint DATA_ROAMING_DISABLE();
 		static jint DATA_ROAMING_ENABLE();
-		static jstring EXTRA_SUBSCRIPTION_INDEX();
+		static JString EXTRA_SUBSCRIPTION_INDEX();
 		static jint INVALID_SUBSCRIPTION_ID();
 		
 		// QAndroidJniObject forward

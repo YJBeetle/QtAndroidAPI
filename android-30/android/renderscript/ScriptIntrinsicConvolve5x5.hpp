@@ -1,10 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "./BaseObj.hpp"
-#include "./Script.hpp"
 #include "./ScriptIntrinsic.hpp"
 
+class JFloatArray;
 namespace android::renderscript
 {
 	class Allocation;
@@ -49,7 +47,7 @@ namespace android::renderscript
 		void forEach(android::renderscript::Allocation arg0, android::renderscript::Script_LaunchOptions arg1);
 		android::renderscript::Script_FieldID getFieldID_Input();
 		android::renderscript::Script_KernelID getKernelID();
-		void setCoefficients(jfloatArray arg0);
+		void setCoefficients(JFloatArray arg0);
 		void setInput(android::renderscript::Allocation arg0);
 	};
 } // namespace android::renderscript

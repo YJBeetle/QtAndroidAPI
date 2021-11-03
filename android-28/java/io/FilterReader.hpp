@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./Reader.hpp"
 
+class JCharArray;
 namespace java::io
 {
 	class Reader;
@@ -26,7 +26,7 @@ namespace java::io
 		void mark(jint arg0);
 		jboolean markSupported();
 		jint read();
-		jint read(jcharArray arg0, jint arg1, jint arg2);
+		jint read(JCharArray arg0, jint arg1, jint arg2);
 		jboolean ready();
 		void reset();
 		jlong skip(jlong arg0);

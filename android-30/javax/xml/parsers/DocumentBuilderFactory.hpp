@@ -6,6 +6,8 @@ namespace java::lang
 {
 	class ClassLoader;
 }
+class JObject;
+class JString;
 namespace javax::xml::parsers
 {
 	class DocumentBuilder;
@@ -32,11 +34,11 @@ namespace javax::xml::parsers
 		static javax::xml::parsers::DocumentBuilderFactory newDefaultInstance();
 		static javax::xml::parsers::DocumentBuilderFactory newDefaultNSInstance();
 		static javax::xml::parsers::DocumentBuilderFactory newInstance();
-		static javax::xml::parsers::DocumentBuilderFactory newInstance(jstring arg0, java::lang::ClassLoader arg1);
+		static javax::xml::parsers::DocumentBuilderFactory newInstance(JString arg0, java::lang::ClassLoader arg1);
 		static javax::xml::parsers::DocumentBuilderFactory newNSInstance();
-		static javax::xml::parsers::DocumentBuilderFactory newNSInstance(jstring arg0, java::lang::ClassLoader arg1);
-		jobject getAttribute(jstring arg0);
-		jboolean getFeature(jstring arg0);
+		static javax::xml::parsers::DocumentBuilderFactory newNSInstance(JString arg0, java::lang::ClassLoader arg1);
+		JObject getAttribute(JString arg0);
+		jboolean getFeature(JString arg0);
 		javax::xml::validation::Schema getSchema();
 		jboolean isCoalescing();
 		jboolean isExpandEntityReferences();
@@ -46,10 +48,10 @@ namespace javax::xml::parsers
 		jboolean isValidating();
 		jboolean isXIncludeAware();
 		javax::xml::parsers::DocumentBuilder newDocumentBuilder();
-		void setAttribute(jstring arg0, jobject arg1);
+		void setAttribute(JString arg0, JObject arg1);
 		void setCoalescing(jboolean arg0);
 		void setExpandEntityReferences(jboolean arg0);
-		void setFeature(jstring arg0, jboolean arg1);
+		void setFeature(JString arg0, jboolean arg1);
 		void setIgnoringComments(jboolean arg0);
 		void setIgnoringElementContentWhitespace(jboolean arg0);
 		void setNamespaceAware(jboolean arg0);

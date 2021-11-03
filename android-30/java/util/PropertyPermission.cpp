@@ -1,5 +1,7 @@
 #include "../io/ObjectInputStream.hpp"
 #include "../io/ObjectOutputStream.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "../security/Permission.hpp"
 #include "../security/PermissionCollection.hpp"
 #include "./PropertyPermission.hpp"
@@ -12,29 +14,29 @@ namespace java::util
 	PropertyPermission::PropertyPermission(QAndroidJniObject obj) : java::security::BasicPermission(obj) {}
 	
 	// Constructors
-	PropertyPermission::PropertyPermission(jstring arg0, jstring arg1)
+	PropertyPermission::PropertyPermission(JString arg0, JString arg1)
 		: java::security::BasicPermission(
 			"java.util.PropertyPermission",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		) {}
 	
 	// Methods
-	jboolean PropertyPermission::equals(jobject arg0)
+	jboolean PropertyPermission::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jstring PropertyPermission::getActions()
+	JString PropertyPermission::getActions()
 	{
 		return callObjectMethod(
 			"getActions",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint PropertyPermission::hashCode()
 	{

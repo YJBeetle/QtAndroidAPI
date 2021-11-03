@@ -1,3 +1,5 @@
+#include "../../../JByteArray.hpp"
+#include "../../../JString.hpp"
 #include "./BackupDataInputStream.hpp"
 
 namespace android::app::backup
@@ -10,12 +12,12 @@ namespace android::app::backup
 	// Constructors
 	
 	// Methods
-	jstring BackupDataInputStream::getKey()
+	JString BackupDataInputStream::getKey()
 	{
 		return callObjectMethod(
 			"getKey",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint BackupDataInputStream::read()
 	{
@@ -24,20 +26,20 @@ namespace android::app::backup
 			"()I"
 		);
 	}
-	jint BackupDataInputStream::read(jbyteArray arg0)
+	jint BackupDataInputStream::read(JByteArray arg0)
 	{
 		return callMethod<jint>(
 			"read",
 			"([B)I",
-			arg0
+			arg0.object<jbyteArray>()
 		);
 	}
-	jint BackupDataInputStream::read(jbyteArray arg0, jint arg1, jint arg2)
+	jint BackupDataInputStream::read(JByteArray arg0, jint arg1, jint arg2)
 	{
 		return callMethod<jint>(
 			"read",
 			"([BII)I",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1,
 			arg2
 		);

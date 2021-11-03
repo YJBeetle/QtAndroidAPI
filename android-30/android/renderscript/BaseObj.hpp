@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JObject;
+class JString;
 
 namespace android::renderscript
 {
@@ -18,10 +20,10 @@ namespace android::renderscript
 		
 		// Methods
 		void destroy();
-		jboolean equals(jobject arg0);
-		jstring getName();
+		jboolean equals(JObject arg0);
+		JString getName();
 		jint hashCode();
-		void setName(jstring arg0);
+		void setName(JString arg0);
 	};
 } // namespace android::renderscript
 

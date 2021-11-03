@@ -1,3 +1,5 @@
+#include "../../JIntArray.hpp"
+#include "../../JArray.hpp"
 #include "../animation/StateListAnimator.hpp"
 #include "../content/ClipData.hpp"
 #include "../content/Context.hpp"
@@ -42,6 +44,9 @@
 #include "./autofill/AutofillId.hpp"
 #include "./autofill/AutofillValue.hpp"
 #include "./inputmethod/EditorInfo.hpp"
+#include "../../JString.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "../../java/util/ArrayList.hpp"
 #include "./View.hpp"
 
@@ -84,109 +89,109 @@ namespace android::view
 			"AUTOFILL_FLAG_INCLUDE_NOT_IMPORTANT_VIEWS"
 		);
 	}
-	jstring View::AUTOFILL_HINT_CREDIT_CARD_EXPIRATION_DATE()
+	JString View::AUTOFILL_HINT_CREDIT_CARD_EXPIRATION_DATE()
 	{
 		return getStaticObjectField(
 			"android.view.View",
 			"AUTOFILL_HINT_CREDIT_CARD_EXPIRATION_DATE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring View::AUTOFILL_HINT_CREDIT_CARD_EXPIRATION_DAY()
+	JString View::AUTOFILL_HINT_CREDIT_CARD_EXPIRATION_DAY()
 	{
 		return getStaticObjectField(
 			"android.view.View",
 			"AUTOFILL_HINT_CREDIT_CARD_EXPIRATION_DAY",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring View::AUTOFILL_HINT_CREDIT_CARD_EXPIRATION_MONTH()
+	JString View::AUTOFILL_HINT_CREDIT_CARD_EXPIRATION_MONTH()
 	{
 		return getStaticObjectField(
 			"android.view.View",
 			"AUTOFILL_HINT_CREDIT_CARD_EXPIRATION_MONTH",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring View::AUTOFILL_HINT_CREDIT_CARD_EXPIRATION_YEAR()
+	JString View::AUTOFILL_HINT_CREDIT_CARD_EXPIRATION_YEAR()
 	{
 		return getStaticObjectField(
 			"android.view.View",
 			"AUTOFILL_HINT_CREDIT_CARD_EXPIRATION_YEAR",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring View::AUTOFILL_HINT_CREDIT_CARD_NUMBER()
+	JString View::AUTOFILL_HINT_CREDIT_CARD_NUMBER()
 	{
 		return getStaticObjectField(
 			"android.view.View",
 			"AUTOFILL_HINT_CREDIT_CARD_NUMBER",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring View::AUTOFILL_HINT_CREDIT_CARD_SECURITY_CODE()
+	JString View::AUTOFILL_HINT_CREDIT_CARD_SECURITY_CODE()
 	{
 		return getStaticObjectField(
 			"android.view.View",
 			"AUTOFILL_HINT_CREDIT_CARD_SECURITY_CODE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring View::AUTOFILL_HINT_EMAIL_ADDRESS()
+	JString View::AUTOFILL_HINT_EMAIL_ADDRESS()
 	{
 		return getStaticObjectField(
 			"android.view.View",
 			"AUTOFILL_HINT_EMAIL_ADDRESS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring View::AUTOFILL_HINT_NAME()
+	JString View::AUTOFILL_HINT_NAME()
 	{
 		return getStaticObjectField(
 			"android.view.View",
 			"AUTOFILL_HINT_NAME",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring View::AUTOFILL_HINT_PASSWORD()
+	JString View::AUTOFILL_HINT_PASSWORD()
 	{
 		return getStaticObjectField(
 			"android.view.View",
 			"AUTOFILL_HINT_PASSWORD",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring View::AUTOFILL_HINT_PHONE()
+	JString View::AUTOFILL_HINT_PHONE()
 	{
 		return getStaticObjectField(
 			"android.view.View",
 			"AUTOFILL_HINT_PHONE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring View::AUTOFILL_HINT_POSTAL_ADDRESS()
+	JString View::AUTOFILL_HINT_POSTAL_ADDRESS()
 	{
 		return getStaticObjectField(
 			"android.view.View",
 			"AUTOFILL_HINT_POSTAL_ADDRESS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring View::AUTOFILL_HINT_POSTAL_CODE()
+	JString View::AUTOFILL_HINT_POSTAL_CODE()
 	{
 		return getStaticObjectField(
 			"android.view.View",
 			"AUTOFILL_HINT_POSTAL_CODE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring View::AUTOFILL_HINT_USERNAME()
+	JString View::AUTOFILL_HINT_USERNAME()
 	{
 		return getStaticObjectField(
 			"android.view.View",
 			"AUTOFILL_HINT_USERNAME",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint View::AUTOFILL_TYPE_DATE()
 	{
@@ -1109,13 +1114,13 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::addExtraDataToAccessibilityNodeInfo(android::view::accessibility::AccessibilityNodeInfo arg0, jstring arg1, android::os::Bundle arg2)
+	void View::addExtraDataToAccessibilityNodeInfo(android::view::accessibility::AccessibilityNodeInfo arg0, JString arg1, android::os::Bundle arg2)
 	{
 		callMethod<void>(
 			"addExtraDataToAccessibilityNodeInfo",
 			"(Landroid/view/accessibility/AccessibilityNodeInfo;Ljava/lang/String;Landroid/os/Bundle;)V",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2.object()
 		);
 	}
@@ -1186,12 +1191,12 @@ namespace android::view
 			"()Landroid/view/ViewPropertyAnimator;"
 		);
 	}
-	void View::announceForAccessibility(jstring arg0)
+	void View::announceForAccessibility(JString arg0)
 	{
 		callMethod<void>(
 			"announceForAccessibility",
 			"(Ljava/lang/CharSequence;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void View::autofill(android::util::SparseArray arg0)
@@ -1480,18 +1485,18 @@ namespace android::view
 			arg1.object()
 		);
 	}
-	jboolean View::dispatchNestedPreScroll(jint arg0, jint arg1, jintArray arg2, jintArray arg3)
+	jboolean View::dispatchNestedPreScroll(jint arg0, jint arg1, JIntArray arg2, JIntArray arg3)
 	{
 		return callMethod<jboolean>(
 			"dispatchNestedPreScroll",
 			"(II[I[I)Z",
 			arg0,
 			arg1,
-			arg2,
-			arg3
+			arg2.object<jintArray>(),
+			arg3.object<jintArray>()
 		);
 	}
-	jboolean View::dispatchNestedScroll(jint arg0, jint arg1, jint arg2, jint arg3, jintArray arg4)
+	jboolean View::dispatchNestedScroll(jint arg0, jint arg1, jint arg2, jint arg3, JIntArray arg4)
 	{
 		return callMethod<jboolean>(
 			"dispatchNestedScroll",
@@ -1500,7 +1505,7 @@ namespace android::view
 			arg1,
 			arg2,
 			arg3,
-			arg4
+			arg4.object<jintArray>()
 		);
 	}
 	void View::dispatchPointerCaptureChanged(jboolean arg0)
@@ -1632,21 +1637,21 @@ namespace android::view
 			arg0
 		);
 	}
-	android::view::View View::findViewWithTag(jobject arg0)
+	android::view::View View::findViewWithTag(JObject arg0)
 	{
 		return callObjectMethod(
 			"findViewWithTag",
 			"(Ljava/lang/Object;)Landroid/view/View;",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	void View::findViewsWithText(java::util::ArrayList arg0, jstring arg1, jint arg2)
+	void View::findViewsWithText(java::util::ArrayList arg0, JString arg1, jint arg2)
 	{
 		callMethod<void>(
 			"findViewsWithText",
 			"(Ljava/util/ArrayList;Ljava/lang/CharSequence;I)V",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2
 		);
 	}
@@ -1673,12 +1678,12 @@ namespace android::view
 			"()V"
 		);
 	}
-	jstring View::getAccessibilityClassName()
+	JString View::getAccessibilityClassName()
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	jint View::getAccessibilityLiveRegion()
 	{
@@ -1694,12 +1699,12 @@ namespace android::view
 			"()Landroid/view/accessibility/AccessibilityNodeProvider;"
 		);
 	}
-	jstring View::getAccessibilityPaneTitle()
+	JString View::getAccessibilityPaneTitle()
 	{
 		return callObjectMethod(
 			"getAccessibilityPaneTitle",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	jint View::getAccessibilityTraversalAfter()
 	{
@@ -1736,12 +1741,12 @@ namespace android::view
 			"()Landroid/os/IBinder;"
 		);
 	}
-	jarray View::getAutofillHints()
+	JArray View::getAutofillHints()
 	{
 		return callObjectMethod(
 			"getAutofillHints",
 			"()[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
 	android::view::autofill::AutofillId View::getAutofillId()
 	{
@@ -1828,12 +1833,12 @@ namespace android::view
 			"()Z"
 		);
 	}
-	jstring View::getContentDescription()
+	JString View::getContentDescription()
 	{
 		return callObjectMethod(
 			"getContentDescription",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	android::content::Context View::getContext()
 	{
@@ -1856,12 +1861,12 @@ namespace android::view
 			"()Landroid/view/Display;"
 		);
 	}
-	jintArray View::getDrawableState()
+	JIntArray View::getDrawableState()
 	{
 		return callObjectMethod(
 			"getDrawableState",
 			"()[I"
-		).object<jintArray>();
+		);
 	}
 	android::graphics::Bitmap View::getDrawingCache()
 	{
@@ -2110,20 +2115,20 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::getLocationInWindow(jintArray arg0)
+	void View::getLocationInWindow(JIntArray arg0)
 	{
 		callMethod<void>(
 			"getLocationInWindow",
 			"([I)V",
-			arg0
+			arg0.object<jintArray>()
 		);
 	}
-	void View::getLocationOnScreen(jintArray arg0)
+	void View::getLocationOnScreen(JIntArray arg0)
 	{
 		callMethod<void>(
 			"getLocationOnScreen",
 			"([I)V",
-			arg0
+			arg0.object<jintArray>()
 		);
 	}
 	android::graphics::Matrix View::getMatrix()
@@ -2483,20 +2488,20 @@ namespace android::view
 			"()I"
 		);
 	}
-	jobject View::getTag()
+	JObject View::getTag()
 	{
 		return callObjectMethod(
 			"getTag",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
-	jobject View::getTag(jint arg0)
+	JObject View::getTag(jint arg0)
 	{
 		return callObjectMethod(
 			"getTag",
 			"(I)Ljava/lang/Object;",
 			arg0
-		).object<jobject>();
+		);
 	}
 	jint View::getTextAlignment()
 	{
@@ -2512,12 +2517,12 @@ namespace android::view
 			"()I"
 		);
 	}
-	jstring View::getTooltipText()
+	JString View::getTooltipText()
 	{
 		return callObjectMethod(
 			"getTooltipText",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	jint View::getTop()
 	{
@@ -2540,12 +2545,12 @@ namespace android::view
 			"()Ljava/util/ArrayList;"
 		);
 	}
-	jstring View::getTransitionName()
+	JString View::getTransitionName()
 	{
 		return callObjectMethod(
 			"getTransitionName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jfloat View::getTranslationX()
 	{
@@ -3845,12 +3850,12 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::setAccessibilityPaneTitle(jstring arg0)
+	void View::setAccessibilityPaneTitle(JString arg0)
 	{
 		callMethod<void>(
 			"setAccessibilityPaneTitle",
 			"(Ljava/lang/CharSequence;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void View::setAccessibilityTraversalAfter(jint arg0)
@@ -3893,12 +3898,12 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::setAutofillHints(jarray arg0)
+	void View::setAutofillHints(JArray arg0)
 	{
 		callMethod<void>(
 			"setAutofillHints",
 			"([Ljava/lang/String;)V",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
 	void View::setAutofillId(android::view::autofill::AutofillId arg0)
@@ -3997,12 +4002,12 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::setContentDescription(jstring arg0)
+	void View::setContentDescription(JString arg0)
 	{
 		callMethod<void>(
 			"setContentDescription",
 			"(Ljava/lang/CharSequence;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void View::setContextClickable(jboolean arg0)
@@ -4757,21 +4762,21 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::setTag(jobject arg0)
+	void View::setTag(JObject arg0)
 	{
 		callMethod<void>(
 			"setTag",
 			"(Ljava/lang/Object;)V",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	void View::setTag(jint arg0, jobject arg1)
+	void View::setTag(jint arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"setTag",
 			"(ILjava/lang/Object;)V",
 			arg0,
-			arg1
+			arg1.object<jobject>()
 		);
 	}
 	void View::setTextAlignment(jint arg0)
@@ -4790,12 +4795,12 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::setTooltipText(jstring arg0)
+	void View::setTooltipText(JString arg0)
 	{
 		callMethod<void>(
 			"setTooltipText",
 			"(Ljava/lang/CharSequence;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void View::setTop(jint arg0)
@@ -4814,12 +4819,12 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::setTransitionName(jstring arg0)
+	void View::setTransitionName(JString arg0)
 	{
 		callMethod<void>(
 			"setTransitionName",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void View::setTranslationX(jfloat arg0)
@@ -4959,25 +4964,25 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	jboolean View::startDrag(android::content::ClipData arg0, android::view::View_DragShadowBuilder arg1, jobject arg2, jint arg3)
+	jboolean View::startDrag(android::content::ClipData arg0, android::view::View_DragShadowBuilder arg1, JObject arg2, jint arg3)
 	{
 		return callMethod<jboolean>(
 			"startDrag",
 			"(Landroid/content/ClipData;Landroid/view/View$DragShadowBuilder;Ljava/lang/Object;I)Z",
 			arg0.object(),
 			arg1.object(),
-			arg2,
+			arg2.object<jobject>(),
 			arg3
 		);
 	}
-	jboolean View::startDragAndDrop(android::content::ClipData arg0, android::view::View_DragShadowBuilder arg1, jobject arg2, jint arg3)
+	jboolean View::startDragAndDrop(android::content::ClipData arg0, android::view::View_DragShadowBuilder arg1, JObject arg2, jint arg3)
 	{
 		return callMethod<jboolean>(
 			"startDragAndDrop",
 			"(Landroid/content/ClipData;Landroid/view/View$DragShadowBuilder;Ljava/lang/Object;I)Z",
 			arg0.object(),
 			arg1.object(),
-			arg2,
+			arg2.object<jobject>(),
 			arg3
 		);
 	}
@@ -4996,12 +5001,12 @@ namespace android::view
 			"()V"
 		);
 	}
-	jstring View::toString()
+	JString View::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void View::unscheduleDrawable(android::graphics::drawable::Drawable arg0)
 	{

@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./Paint_FontMetricsInt.hpp"
 
 namespace android::graphics
@@ -45,12 +46,12 @@ namespace android::graphics
 		) {}
 	
 	// Methods
-	jstring Paint_FontMetricsInt::toString()
+	JString Paint_FontMetricsInt::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::graphics
 

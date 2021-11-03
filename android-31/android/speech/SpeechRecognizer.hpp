@@ -14,6 +14,7 @@ namespace android::content
 {
 	class Intent;
 }
+class JString;
 
 namespace android::speech
 {
@@ -21,7 +22,7 @@ namespace android::speech
 	{
 	public:
 		// Fields
-		static jstring CONFIDENCE_SCORES();
+		static JString CONFIDENCE_SCORES();
 		static jint ERROR_AUDIO();
 		static jint ERROR_CLIENT();
 		static jint ERROR_INSUFFICIENT_PERMISSIONS();
@@ -35,7 +36,7 @@ namespace android::speech
 		static jint ERROR_SERVER_DISCONNECTED();
 		static jint ERROR_SPEECH_TIMEOUT();
 		static jint ERROR_TOO_MANY_REQUESTS();
-		static jstring RESULTS_RECOGNITION();
+		static JString RESULTS_RECOGNITION();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SpeechRecognizer(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}

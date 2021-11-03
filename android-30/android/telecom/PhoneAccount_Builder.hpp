@@ -22,6 +22,8 @@ namespace android::telecom
 {
 	class PhoneAccountHandle;
 }
+class JString;
+class JString;
 
 namespace android::telecom
 {
@@ -36,17 +38,17 @@ namespace android::telecom
 		
 		// Constructors
 		PhoneAccount_Builder(android::telecom::PhoneAccount arg0);
-		PhoneAccount_Builder(android::telecom::PhoneAccountHandle arg0, jstring arg1);
+		PhoneAccount_Builder(android::telecom::PhoneAccountHandle arg0, JString arg1);
 		
 		// Methods
-		android::telecom::PhoneAccount_Builder addSupportedUriScheme(jstring arg0);
+		android::telecom::PhoneAccount_Builder addSupportedUriScheme(JString arg0);
 		android::telecom::PhoneAccount build();
 		android::telecom::PhoneAccount_Builder setAddress(android::net::Uri arg0);
 		android::telecom::PhoneAccount_Builder setCapabilities(jint arg0);
 		android::telecom::PhoneAccount_Builder setExtras(android::os::Bundle arg0);
 		android::telecom::PhoneAccount_Builder setHighlightColor(jint arg0);
 		android::telecom::PhoneAccount_Builder setIcon(android::graphics::drawable::Icon arg0);
-		android::telecom::PhoneAccount_Builder setShortDescription(jstring arg0);
+		android::telecom::PhoneAccount_Builder setShortDescription(JString arg0);
 		android::telecom::PhoneAccount_Builder setSubscriptionAddress(android::net::Uri arg0);
 		android::telecom::PhoneAccount_Builder setSupportedUriSchemes(JObject arg0);
 	};

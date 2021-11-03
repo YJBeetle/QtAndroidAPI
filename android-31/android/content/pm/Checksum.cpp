@@ -1,3 +1,4 @@
+#include "../../../JByteArray.hpp"
 #include "../../os/Parcel.hpp"
 #include "./Checksum.hpp"
 
@@ -66,12 +67,12 @@ namespace android::content::pm
 	Checksum::Checksum(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	Checksum::Checksum(jint arg0, jbyteArray arg1)
+	Checksum::Checksum(jint arg0, JByteArray arg1)
 		: JObject(
 			"android.content.pm.Checksum",
 			"(I[B)V",
 			arg0,
-			arg1
+			arg1.object<jbyteArray>()
 		) {}
 	
 	// Methods
@@ -89,12 +90,12 @@ namespace android::content::pm
 			"()I"
 		);
 	}
-	jbyteArray Checksum::getValue()
+	JByteArray Checksum::getValue()
 	{
 		return callObjectMethod(
 			"getValue",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
 	void Checksum::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./ConfirmationAlreadyPresentingException.hpp"
 
 namespace android::security
@@ -13,11 +14,11 @@ namespace android::security
 			"android.security.ConfirmationAlreadyPresentingException",
 			"()V"
 		) {}
-	ConfirmationAlreadyPresentingException::ConfirmationAlreadyPresentingException(jstring arg0)
+	ConfirmationAlreadyPresentingException::ConfirmationAlreadyPresentingException(JString arg0)
 		: java::lang::Exception(
 			"android.security.ConfirmationAlreadyPresentingException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

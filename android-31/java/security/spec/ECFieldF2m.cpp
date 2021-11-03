@@ -1,3 +1,5 @@
+#include "../../../JIntArray.hpp"
+#include "../../../JObject.hpp"
 #include "../../math/BigInteger.hpp"
 #include "./ECFieldF2m.hpp"
 
@@ -15,12 +17,12 @@ namespace java::security::spec
 			"(I)V",
 			arg0
 		) {}
-	ECFieldF2m::ECFieldF2m(jint arg0, jintArray arg1)
+	ECFieldF2m::ECFieldF2m(jint arg0, JIntArray arg1)
 		: JObject(
 			"java.security.spec.ECFieldF2m",
 			"(I[I)V",
 			arg0,
-			arg1
+			arg1.object<jintArray>()
 		) {}
 	ECFieldF2m::ECFieldF2m(jint arg0, java::math::BigInteger arg1)
 		: JObject(
@@ -31,12 +33,12 @@ namespace java::security::spec
 		) {}
 	
 	// Methods
-	jboolean ECFieldF2m::equals(jobject arg0)
+	jboolean ECFieldF2m::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint ECFieldF2m::getFieldSize()
@@ -53,12 +55,12 @@ namespace java::security::spec
 			"()I"
 		);
 	}
-	jintArray ECFieldF2m::getMidTermsOfReductionPolynomial()
+	JIntArray ECFieldF2m::getMidTermsOfReductionPolynomial()
 	{
 		return callObjectMethod(
 			"getMidTermsOfReductionPolynomial",
 			"()[I"
-		).object<jintArray>();
+		);
 	}
 	java::math::BigInteger ECFieldF2m::getReductionPolynomial()
 	{

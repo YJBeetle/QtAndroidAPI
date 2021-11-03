@@ -1,4 +1,5 @@
 #include "./AssociationRequest.hpp"
+#include "../../JString.hpp"
 #include "./AssociationRequest_Builder.hpp"
 
 namespace android::companion
@@ -31,12 +32,12 @@ namespace android::companion
 			"()Landroid/companion/AssociationRequest;"
 		);
 	}
-	android::companion::AssociationRequest_Builder AssociationRequest_Builder::setDeviceProfile(jstring arg0)
+	android::companion::AssociationRequest_Builder AssociationRequest_Builder::setDeviceProfile(JString arg0)
 	{
 		return callObjectMethod(
 			"setDeviceProfile",
 			"(Ljava/lang/String;)Landroid/companion/AssociationRequest$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::companion::AssociationRequest_Builder AssociationRequest_Builder::setSingleDevice(jboolean arg0)

@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JByteArray;
+class JIntArray;
 namespace android::telephony
 {
 	class SmsMessage_MessageClass;
@@ -10,6 +12,8 @@ namespace android::telephony
 {
 	class SmsMessage_SubmitPdu;
 }
+class JString;
+class JString;
 
 namespace android::telephony
 {
@@ -21,8 +25,8 @@ namespace android::telephony
 		static jint ENCODING_7BIT();
 		static jint ENCODING_8BIT();
 		static jint ENCODING_UNKNOWN();
-		static jstring FORMAT_3GPP();
-		static jstring FORMAT_3GPP2();
+		static JString FORMAT_3GPP();
+		static JString FORMAT_3GPP2();
 		static jint MAX_USER_DATA_BYTES();
 		static jint MAX_USER_DATA_BYTES_WITH_HEADER();
 		static jint MAX_USER_DATA_SEPTETS();
@@ -35,30 +39,30 @@ namespace android::telephony
 		// Constructors
 		
 		// Methods
-		static jintArray calculateLength(jstring arg0, jboolean arg1);
-		static android::telephony::SmsMessage createFromPdu(jbyteArray arg0);
-		static android::telephony::SmsMessage createFromPdu(jbyteArray arg0, jstring arg1);
-		static android::telephony::SmsMessage_SubmitPdu getSubmitPdu(jstring arg0, jstring arg1, jstring arg2, jboolean arg3);
-		static android::telephony::SmsMessage_SubmitPdu getSubmitPdu(jstring arg0, jstring arg1, jshort arg2, jbyteArray arg3, jboolean arg4);
-		static jint getTPLayerLengthForPDU(jstring arg0);
-		jstring getDisplayMessageBody();
-		jstring getDisplayOriginatingAddress();
-		jstring getEmailBody();
-		jstring getEmailFrom();
+		static JIntArray calculateLength(JString arg0, jboolean arg1);
+		static android::telephony::SmsMessage createFromPdu(JByteArray arg0);
+		static android::telephony::SmsMessage createFromPdu(JByteArray arg0, JString arg1);
+		static android::telephony::SmsMessage_SubmitPdu getSubmitPdu(JString arg0, JString arg1, JString arg2, jboolean arg3);
+		static android::telephony::SmsMessage_SubmitPdu getSubmitPdu(JString arg0, JString arg1, jshort arg2, JByteArray arg3, jboolean arg4);
+		static jint getTPLayerLengthForPDU(JString arg0);
+		JString getDisplayMessageBody();
+		JString getDisplayOriginatingAddress();
+		JString getEmailBody();
+		JString getEmailFrom();
 		jint getIndexOnIcc();
 		jint getIndexOnSim();
-		jstring getMessageBody();
+		JString getMessageBody();
 		android::telephony::SmsMessage_MessageClass getMessageClass();
-		jstring getOriginatingAddress();
-		jbyteArray getPdu();
+		JString getOriginatingAddress();
+		JByteArray getPdu();
 		jint getProtocolIdentifier();
-		jstring getPseudoSubject();
-		jstring getServiceCenterAddress();
+		JString getPseudoSubject();
+		JString getServiceCenterAddress();
 		jint getStatus();
 		jint getStatusOnIcc();
 		jint getStatusOnSim();
 		jlong getTimestampMillis();
-		jbyteArray getUserData();
+		JByteArray getUserData();
 		jboolean isCphsMwiMessage();
 		jboolean isEmail();
 		jboolean isMWIClearMessage();

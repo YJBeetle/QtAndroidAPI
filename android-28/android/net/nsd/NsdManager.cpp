@@ -1,24 +1,25 @@
 #include "./NsdServiceInfo.hpp"
+#include "../../../JString.hpp"
 #include "./NsdManager.hpp"
 
 namespace android::net::nsd
 {
 	// Fields
-	jstring NsdManager::ACTION_NSD_STATE_CHANGED()
+	JString NsdManager::ACTION_NSD_STATE_CHANGED()
 	{
 		return getStaticObjectField(
 			"android.net.nsd.NsdManager",
 			"ACTION_NSD_STATE_CHANGED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring NsdManager::EXTRA_NSD_STATE()
+	JString NsdManager::EXTRA_NSD_STATE()
 	{
 		return getStaticObjectField(
 			"android.net.nsd.NsdManager",
 			"EXTRA_NSD_STATE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint NsdManager::FAILURE_ALREADY_ACTIVE()
 	{
@@ -69,12 +70,12 @@ namespace android::net::nsd
 	// Constructors
 	
 	// Methods
-	void NsdManager::discoverServices(jstring arg0, jint arg1, JObject arg2)
+	void NsdManager::discoverServices(JString arg0, jint arg1, JObject arg2)
 	{
 		callMethod<void>(
 			"discoverServices",
 			"(Ljava/lang/String;ILandroid/net/nsd/NsdManager$DiscoveryListener;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
 			arg2.object()
 		);

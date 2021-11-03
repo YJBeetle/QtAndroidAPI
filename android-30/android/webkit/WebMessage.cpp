@@ -1,3 +1,5 @@
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
 #include "./WebMessage.hpp"
 
 namespace android::webkit
@@ -8,34 +10,34 @@ namespace android::webkit
 	WebMessage::WebMessage(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	WebMessage::WebMessage(jstring arg0)
+	WebMessage::WebMessage(JString arg0)
 		: JObject(
 			"android.webkit.WebMessage",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	WebMessage::WebMessage(jstring arg0, jarray arg1)
+	WebMessage::WebMessage(JString arg0, JArray arg1)
 		: JObject(
 			"android.webkit.WebMessage",
 			"(Ljava/lang/String;[Landroid/webkit/WebMessagePort;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jarray>()
 		) {}
 	
 	// Methods
-	jstring WebMessage::getData()
+	JString WebMessage::getData()
 	{
 		return callObjectMethod(
 			"getData",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jarray WebMessage::getPorts()
+	JArray WebMessage::getPorts()
 	{
 		return callObjectMethod(
 			"getPorts",
 			"()[Landroid/webkit/WebMessagePort;"
-		).object<jarray>();
+		);
 	}
 } // namespace android::webkit
 

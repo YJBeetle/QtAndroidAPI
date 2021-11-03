@@ -1,8 +1,10 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./MessageDigestSpi.hpp"
 
+class JByteArray;
+class JObject;
+class JString;
 namespace java::nio
 {
 	class ByteBuffer;
@@ -26,23 +28,23 @@ namespace java::security
 		// Constructors
 		
 		// Methods
-		static java::security::MessageDigest getInstance(jstring arg0);
-		static java::security::MessageDigest getInstance(jstring arg0, jstring arg1);
-		static java::security::MessageDigest getInstance(jstring arg0, java::security::Provider arg1);
-		static jboolean isEqual(jbyteArray arg0, jbyteArray arg1);
-		jobject clone();
-		jbyteArray digest();
-		jbyteArray digest(jbyteArray arg0);
-		jint digest(jbyteArray arg0, jint arg1, jint arg2);
-		jstring getAlgorithm();
+		static java::security::MessageDigest getInstance(JString arg0);
+		static java::security::MessageDigest getInstance(JString arg0, JString arg1);
+		static java::security::MessageDigest getInstance(JString arg0, java::security::Provider arg1);
+		static jboolean isEqual(JByteArray arg0, JByteArray arg1);
+		JObject clone();
+		JByteArray digest();
+		JByteArray digest(JByteArray arg0);
+		jint digest(JByteArray arg0, jint arg1, jint arg2);
+		JString getAlgorithm();
 		jint getDigestLength();
 		java::security::Provider getProvider();
 		void reset();
-		jstring toString();
-		void update(jbyteArray arg0);
+		JString toString();
+		void update(JByteArray arg0);
 		void update(jbyte arg0);
 		void update(java::nio::ByteBuffer arg0);
-		void update(jbyteArray arg0, jint arg1, jint arg2);
+		void update(JByteArray arg0, jint arg1, jint arg2);
 	};
 } // namespace java::security
 

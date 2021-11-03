@@ -1,3 +1,5 @@
+#include "../../../../JObject.hpp"
+#include "../../../../JString.hpp"
 #include "./AtomicReference.hpp"
 
 namespace java::util::concurrent::atomic
@@ -13,210 +15,210 @@ namespace java::util::concurrent::atomic
 			"java.util.concurrent.atomic.AtomicReference",
 			"()V"
 		) {}
-	AtomicReference::AtomicReference(jobject arg0)
+	AtomicReference::AtomicReference(JObject arg0)
 		: JObject(
 			"java.util.concurrent.atomic.AtomicReference",
 			"(Ljava/lang/Object;)V",
-			arg0
+			arg0.object<jobject>()
 		) {}
 	
 	// Methods
-	jobject AtomicReference::accumulateAndGet(jobject arg0, JObject arg1)
+	JObject AtomicReference::accumulateAndGet(JObject arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"accumulateAndGet",
 			"(Ljava/lang/Object;Ljava/util/function/BinaryOperator;)Ljava/lang/Object;",
-			arg0,
+			arg0.object<jobject>(),
 			arg1.object()
-		).object<jobject>();
+		);
 	}
-	jobject AtomicReference::compareAndExchange(jobject arg0, jobject arg1)
+	JObject AtomicReference::compareAndExchange(JObject arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"compareAndExchange",
 			"(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0,
-			arg1
-		).object<jobject>();
+			arg0.object<jobject>(),
+			arg1.object<jobject>()
+		);
 	}
-	jobject AtomicReference::compareAndExchangeAcquire(jobject arg0, jobject arg1)
+	JObject AtomicReference::compareAndExchangeAcquire(JObject arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"compareAndExchangeAcquire",
 			"(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0,
-			arg1
-		).object<jobject>();
+			arg0.object<jobject>(),
+			arg1.object<jobject>()
+		);
 	}
-	jobject AtomicReference::compareAndExchangeRelease(jobject arg0, jobject arg1)
+	JObject AtomicReference::compareAndExchangeRelease(JObject arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"compareAndExchangeRelease",
 			"(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0,
-			arg1
-		).object<jobject>();
+			arg0.object<jobject>(),
+			arg1.object<jobject>()
+		);
 	}
-	jboolean AtomicReference::compareAndSet(jobject arg0, jobject arg1)
+	jboolean AtomicReference::compareAndSet(JObject arg0, JObject arg1)
 	{
 		return callMethod<jboolean>(
 			"compareAndSet",
 			"(Ljava/lang/Object;Ljava/lang/Object;)Z",
-			arg0,
-			arg1
+			arg0.object<jobject>(),
+			arg1.object<jobject>()
 		);
 	}
-	jobject AtomicReference::get()
+	JObject AtomicReference::get()
 	{
 		return callObjectMethod(
 			"get",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
-	jobject AtomicReference::getAcquire()
+	JObject AtomicReference::getAcquire()
 	{
 		return callObjectMethod(
 			"getAcquire",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
-	jobject AtomicReference::getAndAccumulate(jobject arg0, JObject arg1)
+	JObject AtomicReference::getAndAccumulate(JObject arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"getAndAccumulate",
 			"(Ljava/lang/Object;Ljava/util/function/BinaryOperator;)Ljava/lang/Object;",
-			arg0,
+			arg0.object<jobject>(),
 			arg1.object()
-		).object<jobject>();
+		);
 	}
-	jobject AtomicReference::getAndSet(jobject arg0)
+	JObject AtomicReference::getAndSet(JObject arg0)
 	{
 		return callObjectMethod(
 			"getAndSet",
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0
-		).object<jobject>();
+			arg0.object<jobject>()
+		);
 	}
-	jobject AtomicReference::getAndUpdate(JObject arg0)
+	JObject AtomicReference::getAndUpdate(JObject arg0)
 	{
 		return callObjectMethod(
 			"getAndUpdate",
 			"(Ljava/util/function/UnaryOperator;)Ljava/lang/Object;",
 			arg0.object()
-		).object<jobject>();
+		);
 	}
-	jobject AtomicReference::getOpaque()
+	JObject AtomicReference::getOpaque()
 	{
 		return callObjectMethod(
 			"getOpaque",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
-	jobject AtomicReference::getPlain()
+	JObject AtomicReference::getPlain()
 	{
 		return callObjectMethod(
 			"getPlain",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
-	void AtomicReference::lazySet(jobject arg0)
+	void AtomicReference::lazySet(JObject arg0)
 	{
 		callMethod<void>(
 			"lazySet",
 			"(Ljava/lang/Object;)V",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	void AtomicReference::set(jobject arg0)
+	void AtomicReference::set(JObject arg0)
 	{
 		callMethod<void>(
 			"set",
 			"(Ljava/lang/Object;)V",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	void AtomicReference::setOpaque(jobject arg0)
+	void AtomicReference::setOpaque(JObject arg0)
 	{
 		callMethod<void>(
 			"setOpaque",
 			"(Ljava/lang/Object;)V",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	void AtomicReference::setPlain(jobject arg0)
+	void AtomicReference::setPlain(JObject arg0)
 	{
 		callMethod<void>(
 			"setPlain",
 			"(Ljava/lang/Object;)V",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	void AtomicReference::setRelease(jobject arg0)
+	void AtomicReference::setRelease(JObject arg0)
 	{
 		callMethod<void>(
 			"setRelease",
 			"(Ljava/lang/Object;)V",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jstring AtomicReference::toString()
+	JString AtomicReference::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jobject AtomicReference::updateAndGet(JObject arg0)
+	JObject AtomicReference::updateAndGet(JObject arg0)
 	{
 		return callObjectMethod(
 			"updateAndGet",
 			"(Ljava/util/function/UnaryOperator;)Ljava/lang/Object;",
 			arg0.object()
-		).object<jobject>();
+		);
 	}
-	jboolean AtomicReference::weakCompareAndSet(jobject arg0, jobject arg1)
+	jboolean AtomicReference::weakCompareAndSet(JObject arg0, JObject arg1)
 	{
 		return callMethod<jboolean>(
 			"weakCompareAndSet",
 			"(Ljava/lang/Object;Ljava/lang/Object;)Z",
-			arg0,
-			arg1
+			arg0.object<jobject>(),
+			arg1.object<jobject>()
 		);
 	}
-	jboolean AtomicReference::weakCompareAndSetAcquire(jobject arg0, jobject arg1)
+	jboolean AtomicReference::weakCompareAndSetAcquire(JObject arg0, JObject arg1)
 	{
 		return callMethod<jboolean>(
 			"weakCompareAndSetAcquire",
 			"(Ljava/lang/Object;Ljava/lang/Object;)Z",
-			arg0,
-			arg1
+			arg0.object<jobject>(),
+			arg1.object<jobject>()
 		);
 	}
-	jboolean AtomicReference::weakCompareAndSetPlain(jobject arg0, jobject arg1)
+	jboolean AtomicReference::weakCompareAndSetPlain(JObject arg0, JObject arg1)
 	{
 		return callMethod<jboolean>(
 			"weakCompareAndSetPlain",
 			"(Ljava/lang/Object;Ljava/lang/Object;)Z",
-			arg0,
-			arg1
+			arg0.object<jobject>(),
+			arg1.object<jobject>()
 		);
 	}
-	jboolean AtomicReference::weakCompareAndSetRelease(jobject arg0, jobject arg1)
+	jboolean AtomicReference::weakCompareAndSetRelease(JObject arg0, JObject arg1)
 	{
 		return callMethod<jboolean>(
 			"weakCompareAndSetRelease",
 			"(Ljava/lang/Object;Ljava/lang/Object;)Z",
-			arg0,
-			arg1
+			arg0.object<jobject>(),
+			arg1.object<jobject>()
 		);
 	}
-	jboolean AtomicReference::weakCompareAndSetVolatile(jobject arg0, jobject arg1)
+	jboolean AtomicReference::weakCompareAndSetVolatile(JObject arg0, JObject arg1)
 	{
 		return callMethod<jboolean>(
 			"weakCompareAndSetVolatile",
 			"(Ljava/lang/Object;Ljava/lang/Object;)Z",
-			arg0,
-			arg1
+			arg0.object<jobject>(),
+			arg1.object<jobject>()
 		);
 	}
 } // namespace java::util::concurrent::atomic

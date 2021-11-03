@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./NoSuchProviderException.hpp"
 
 namespace java::security
@@ -13,11 +14,11 @@ namespace java::security
 			"java.security.NoSuchProviderException",
 			"()V"
 		) {}
-	NoSuchProviderException::NoSuchProviderException(jstring arg0)
+	NoSuchProviderException::NoSuchProviderException(JString arg0)
 		: java::security::GeneralSecurityException(
 			"java.security.NoSuchProviderException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

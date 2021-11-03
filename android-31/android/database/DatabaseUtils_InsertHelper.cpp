@@ -1,5 +1,7 @@
+#include "../../JByteArray.hpp"
 #include "../content/ContentValues.hpp"
 #include "./sqlite/SQLiteDatabase.hpp"
+#include "../../JString.hpp"
 #include "./DatabaseUtils_InsertHelper.hpp"
 
 namespace android::database
@@ -10,22 +12,22 @@ namespace android::database
 	DatabaseUtils_InsertHelper::DatabaseUtils_InsertHelper(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	DatabaseUtils_InsertHelper::DatabaseUtils_InsertHelper(android::database::sqlite::SQLiteDatabase arg0, jstring arg1)
+	DatabaseUtils_InsertHelper::DatabaseUtils_InsertHelper(android::database::sqlite::SQLiteDatabase arg0, JString arg1)
 		: JObject(
 			"android.database.DatabaseUtils$InsertHelper",
 			"(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		) {}
 	
 	// Methods
-	void DatabaseUtils_InsertHelper::bind(jint arg0, jbyteArray arg1)
+	void DatabaseUtils_InsertHelper::bind(jint arg0, JByteArray arg1)
 	{
 		callMethod<void>(
 			"bind",
 			"(I[B)V",
 			arg0,
-			arg1
+			arg1.object<jbyteArray>()
 		);
 	}
 	void DatabaseUtils_InsertHelper::bind(jint arg0, jboolean arg1)
@@ -64,13 +66,13 @@ namespace android::database
 			arg1
 		);
 	}
-	void DatabaseUtils_InsertHelper::bind(jint arg0, jstring arg1)
+	void DatabaseUtils_InsertHelper::bind(jint arg0, JString arg1)
 	{
 		callMethod<void>(
 			"bind",
 			"(ILjava/lang/String;)V",
 			arg0,
-			arg1
+			arg1.object<jstring>()
 		);
 	}
 	void DatabaseUtils_InsertHelper::bind(jint arg0, jlong arg1)
@@ -104,12 +106,12 @@ namespace android::database
 			"()J"
 		);
 	}
-	jint DatabaseUtils_InsertHelper::getColumnIndex(jstring arg0)
+	jint DatabaseUtils_InsertHelper::getColumnIndex(JString arg0)
 	{
 		return callMethod<jint>(
 			"getColumnIndex",
 			"(Ljava/lang/String;)I",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	jlong DatabaseUtils_InsertHelper::insert(android::content::ContentValues arg0)

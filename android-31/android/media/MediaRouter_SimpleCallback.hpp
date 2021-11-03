@@ -1,6 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./MediaRouter_Callback.hpp"
 
 namespace android::media

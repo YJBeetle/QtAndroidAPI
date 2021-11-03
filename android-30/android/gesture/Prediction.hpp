@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JString;
 
 namespace android::gesture
 {
@@ -9,7 +10,7 @@ namespace android::gesture
 	{
 	public:
 		// Fields
-		jstring name();
+		JString name();
 		jdouble score();
 		
 		// QAndroidJniObject forward
@@ -19,7 +20,7 @@ namespace android::gesture
 		// Constructors
 		
 		// Methods
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::gesture
 

@@ -4,6 +4,7 @@
 #include "./GridLayout_Alignment.hpp"
 #include "./GridLayout_LayoutParams.hpp"
 #include "./GridLayout_Spec.hpp"
+#include "../../JString.hpp"
 #include "./GridLayout.hpp"
 
 namespace android::widget
@@ -245,12 +246,12 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	jstring GridLayout::getAccessibilityClassName()
+	JString GridLayout::getAccessibilityClassName()
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	jint GridLayout::getAlignmentMode()
 	{

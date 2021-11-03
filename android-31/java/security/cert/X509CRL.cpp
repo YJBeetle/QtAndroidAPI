@@ -1,3 +1,6 @@
+#include "../../../JByteArray.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "../../math/BigInteger.hpp"
 #include "../Provider.hpp"
 #include "./X509CRLEntry.hpp"
@@ -16,20 +19,20 @@ namespace java::security::cert
 	// Constructors
 	
 	// Methods
-	jboolean X509CRL::equals(jobject arg0)
+	jboolean X509CRL::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jbyteArray X509CRL::getEncoded()
+	JByteArray X509CRL::getEncoded()
 	{
 		return callObjectMethod(
 			"getEncoded",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
 	JObject X509CRL::getIssuerDN()
 	{
@@ -75,40 +78,40 @@ namespace java::security::cert
 			"()Ljava/util/Set;"
 		);
 	}
-	jstring X509CRL::getSigAlgName()
+	JString X509CRL::getSigAlgName()
 	{
 		return callObjectMethod(
 			"getSigAlgName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring X509CRL::getSigAlgOID()
+	JString X509CRL::getSigAlgOID()
 	{
 		return callObjectMethod(
 			"getSigAlgOID",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jbyteArray X509CRL::getSigAlgParams()
+	JByteArray X509CRL::getSigAlgParams()
 	{
 		return callObjectMethod(
 			"getSigAlgParams",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
-	jbyteArray X509CRL::getSignature()
+	JByteArray X509CRL::getSignature()
 	{
 		return callObjectMethod(
 			"getSignature",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
-	jbyteArray X509CRL::getTBSCertList()
+	JByteArray X509CRL::getTBSCertList()
 	{
 		return callObjectMethod(
 			"getTBSCertList",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
 	java::util::Date X509CRL::getThisUpdate()
 	{
@@ -139,13 +142,13 @@ namespace java::security::cert
 			arg0.object()
 		);
 	}
-	void X509CRL::verify(JObject arg0, jstring arg1)
+	void X509CRL::verify(JObject arg0, JString arg1)
 	{
 		callMethod<void>(
 			"verify",
 			"(Ljava/security/PublicKey;Ljava/lang/String;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
 	void X509CRL::verify(JObject arg0, java::security::Provider arg1)

@@ -1,3 +1,5 @@
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
 #include "./PKIXRevocationChecker_Option.hpp"
 
 namespace java::security::cert
@@ -42,22 +44,22 @@ namespace java::security::cert
 	// Constructors
 	
 	// Methods
-	java::security::cert::PKIXRevocationChecker_Option PKIXRevocationChecker_Option::valueOf(jstring arg0)
+	java::security::cert::PKIXRevocationChecker_Option PKIXRevocationChecker_Option::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"java.security.cert.PKIXRevocationChecker$Option",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/security/cert/PKIXRevocationChecker$Option;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray PKIXRevocationChecker_Option::values()
+	JArray PKIXRevocationChecker_Option::values()
 	{
 		return callStaticObjectMethod(
 			"java.security.cert.PKIXRevocationChecker$Option",
 			"values",
 			"()[Ljava/security/cert/PKIXRevocationChecker$Option;"
-		).object<jarray>();
+		);
 	}
 } // namespace java::security::cert
 

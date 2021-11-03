@@ -1,3 +1,4 @@
+#include "../../../JByteArray.hpp"
 #include "./MidiInputPort.hpp"
 
 namespace android::media::midi
@@ -31,12 +32,12 @@ namespace android::media::midi
 			"()V"
 		);
 	}
-	void MidiInputPort::onSend(jbyteArray arg0, jint arg1, jint arg2, jlong arg3)
+	void MidiInputPort::onSend(JByteArray arg0, jint arg1, jint arg2, jlong arg3)
 	{
 		callMethod<void>(
 			"onSend",
 			"([BIIJ)V",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1,
 			arg2,
 			arg3

@@ -22,6 +22,7 @@ namespace android::net
 {
 	class Uri;
 }
+class JString;
 
 namespace android::media
 {
@@ -29,15 +30,15 @@ namespace android::media
 	{
 	public:
 		// Fields
-		static jstring ACTION_RINGTONE_PICKER();
-		static jstring EXTRA_RINGTONE_DEFAULT_URI();
-		static jstring EXTRA_RINGTONE_EXISTING_URI();
-		static jstring EXTRA_RINGTONE_INCLUDE_DRM();
-		static jstring EXTRA_RINGTONE_PICKED_URI();
-		static jstring EXTRA_RINGTONE_SHOW_DEFAULT();
-		static jstring EXTRA_RINGTONE_SHOW_SILENT();
-		static jstring EXTRA_RINGTONE_TITLE();
-		static jstring EXTRA_RINGTONE_TYPE();
+		static JString ACTION_RINGTONE_PICKER();
+		static JString EXTRA_RINGTONE_DEFAULT_URI();
+		static JString EXTRA_RINGTONE_EXISTING_URI();
+		static JString EXTRA_RINGTONE_INCLUDE_DRM();
+		static JString EXTRA_RINGTONE_PICKED_URI();
+		static JString EXTRA_RINGTONE_SHOW_DEFAULT();
+		static JString EXTRA_RINGTONE_SHOW_SILENT();
+		static JString EXTRA_RINGTONE_TITLE();
+		static JString EXTRA_RINGTONE_TYPE();
 		static jint ID_COLUMN_INDEX();
 		static jint TITLE_COLUMN_INDEX();
 		static jint TYPE_ALARM();

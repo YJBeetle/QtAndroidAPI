@@ -2,7 +2,6 @@
 
 #include "../../../JObject.hpp"
 
-
 namespace android::app::usage
 {
 	class NetworkStats_Bucket : public JObject

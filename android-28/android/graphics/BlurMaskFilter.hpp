@@ -1,6 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./MaskFilter.hpp"
 
 namespace android::graphics

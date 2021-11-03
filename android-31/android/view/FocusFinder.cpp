@@ -1,3 +1,4 @@
+#include "../../JIntArray.hpp"
 #include "../graphics/Rect.hpp"
 #include "./View.hpp"
 #include "./ViewGroup.hpp"
@@ -21,7 +22,7 @@ namespace android::view
 			"()Landroid/view/FocusFinder;"
 		);
 	}
-	android::view::View FocusFinder::findNearestTouchable(android::view::ViewGroup arg0, jint arg1, jint arg2, jint arg3, jintArray arg4)
+	android::view::View FocusFinder::findNearestTouchable(android::view::ViewGroup arg0, jint arg1, jint arg2, jint arg3, JIntArray arg4)
 	{
 		return callObjectMethod(
 			"findNearestTouchable",
@@ -30,7 +31,7 @@ namespace android::view
 			arg1,
 			arg2,
 			arg3,
-			arg4
+			arg4.object<jintArray>()
 		);
 	}
 	android::view::View FocusFinder::findNextFocus(android::view::ViewGroup arg0, android::view::View arg1, jint arg2)

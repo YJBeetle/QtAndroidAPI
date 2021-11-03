@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./DoubleSummaryStatistics.hpp"
 
 namespace java::util
@@ -75,12 +76,12 @@ namespace java::util
 			"()D"
 		);
 	}
-	jstring DoubleSummaryStatistics::toString()
+	JString DoubleSummaryStatistics::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::util
 

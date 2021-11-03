@@ -2,6 +2,8 @@
 
 #include "../../../JObject.hpp"
 
+class JArray;
+class JString;
 
 namespace javax::net::ssl
 {
@@ -16,30 +18,30 @@ namespace javax::net::ssl
 		
 		// Constructors
 		SSLParameters();
-		SSLParameters(jarray arg0);
-		SSLParameters(jarray arg0, jarray arg1);
+		SSLParameters(JArray arg0);
+		SSLParameters(JArray arg0, JArray arg1);
 		
 		// Methods
 		JObject getAlgorithmConstraints();
-		jarray getApplicationProtocols();
-		jarray getCipherSuites();
+		JArray getApplicationProtocols();
+		JArray getCipherSuites();
 		jboolean getEnableRetransmissions();
-		jstring getEndpointIdentificationAlgorithm();
+		JString getEndpointIdentificationAlgorithm();
 		jint getMaximumPacketSize();
 		jboolean getNeedClientAuth();
-		jarray getProtocols();
+		JArray getProtocols();
 		JObject getSNIMatchers();
 		JObject getServerNames();
 		jboolean getUseCipherSuitesOrder();
 		jboolean getWantClientAuth();
 		void setAlgorithmConstraints(JObject arg0);
-		void setApplicationProtocols(jarray arg0);
-		void setCipherSuites(jarray arg0);
+		void setApplicationProtocols(JArray arg0);
+		void setCipherSuites(JArray arg0);
 		void setEnableRetransmissions(jboolean arg0);
-		void setEndpointIdentificationAlgorithm(jstring arg0);
+		void setEndpointIdentificationAlgorithm(JString arg0);
 		void setMaximumPacketSize(jint arg0);
 		void setNeedClientAuth(jboolean arg0);
-		void setProtocols(jarray arg0);
+		void setProtocols(JArray arg0);
 		void setSNIMatchers(JObject arg0);
 		void setServerNames(JObject arg0);
 		void setUseCipherSuitesOrder(jboolean arg0);

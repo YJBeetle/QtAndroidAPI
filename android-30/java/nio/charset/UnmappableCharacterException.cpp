@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./UnmappableCharacterException.hpp"
 
 namespace java::nio::charset
@@ -23,12 +24,12 @@ namespace java::nio::charset
 			"()I"
 		);
 	}
-	jstring UnmappableCharacterException::getMessage()
+	JString UnmappableCharacterException::getMessage()
 	{
 		return callObjectMethod(
 			"getMessage",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::nio::charset
 

@@ -1,4 +1,6 @@
+#include "../../JCharArray.hpp"
 #include "./Writer.hpp"
+#include "../../JString.hpp"
 #include "./FilterWriter.hpp"
 
 namespace java::io
@@ -33,22 +35,22 @@ namespace java::io
 			arg0
 		);
 	}
-	void FilterWriter::write(jcharArray arg0, jint arg1, jint arg2)
+	void FilterWriter::write(JCharArray arg0, jint arg1, jint arg2)
 	{
 		callMethod<void>(
 			"write",
 			"([CII)V",
-			arg0,
+			arg0.object<jcharArray>(),
 			arg1,
 			arg2
 		);
 	}
-	void FilterWriter::write(jstring arg0, jint arg1, jint arg2)
+	void FilterWriter::write(JString arg0, jint arg1, jint arg2)
 	{
 		callMethod<void>(
 			"write",
 			"(Ljava/lang/String;II)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
 			arg2
 		);

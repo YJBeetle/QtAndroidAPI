@@ -1,3 +1,6 @@
+#include "../../../JArray.hpp"
+#include "../../../JArray.hpp"
+#include "../../../JObject.hpp"
 #include "../ByteBuffer.hpp"
 #include "./FileLock.hpp"
 #include "./AsynchronousFileChannel.hpp"
@@ -12,17 +15,17 @@ namespace java::nio::channels
 	// Constructors
 	
 	// Methods
-	java::nio::channels::AsynchronousFileChannel AsynchronousFileChannel::open(JObject arg0, jarray arg1)
+	java::nio::channels::AsynchronousFileChannel AsynchronousFileChannel::open(JObject arg0, JArray arg1)
 	{
 		return callStaticObjectMethod(
 			"java.nio.channels.AsynchronousFileChannel",
 			"open",
 			"(Ljava/nio/file/Path;[Ljava/nio/file/OpenOption;)Ljava/nio/channels/AsynchronousFileChannel;",
 			arg0.object(),
-			arg1
+			arg1.object<jarray>()
 		);
 	}
-	java::nio::channels::AsynchronousFileChannel AsynchronousFileChannel::open(JObject arg0, JObject arg1, JObject arg2, jarray arg3)
+	java::nio::channels::AsynchronousFileChannel AsynchronousFileChannel::open(JObject arg0, JObject arg1, JObject arg2, JArray arg3)
 	{
 		return callStaticObjectMethod(
 			"java.nio.channels.AsynchronousFileChannel",
@@ -31,7 +34,7 @@ namespace java::nio::channels
 			arg0.object(),
 			arg1.object(),
 			arg2.object(),
-			arg3
+			arg3.object<jarray>()
 		);
 	}
 	void AsynchronousFileChannel::force(jboolean arg0)
@@ -59,16 +62,16 @@ namespace java::nio::channels
 			arg2
 		);
 	}
-	void AsynchronousFileChannel::lock(jobject arg0, JObject arg1)
+	void AsynchronousFileChannel::lock(JObject arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"lock",
 			"(Ljava/lang/Object;Ljava/nio/channels/CompletionHandler;)V",
-			arg0,
+			arg0.object<jobject>(),
 			arg1.object()
 		);
 	}
-	void AsynchronousFileChannel::lock(jlong arg0, jlong arg1, jboolean arg2, jobject arg3, JObject arg4)
+	void AsynchronousFileChannel::lock(jlong arg0, jlong arg1, jboolean arg2, JObject arg3, JObject arg4)
 	{
 		callMethod<void>(
 			"lock",
@@ -76,7 +79,7 @@ namespace java::nio::channels
 			arg0,
 			arg1,
 			arg2,
-			arg3,
+			arg3.object<jobject>(),
 			arg4.object()
 		);
 	}
@@ -89,14 +92,14 @@ namespace java::nio::channels
 			arg1
 		);
 	}
-	void AsynchronousFileChannel::read(java::nio::ByteBuffer arg0, jlong arg1, jobject arg2, JObject arg3)
+	void AsynchronousFileChannel::read(java::nio::ByteBuffer arg0, jlong arg1, JObject arg2, JObject arg3)
 	{
 		callMethod<void>(
 			"read",
 			"(Ljava/nio/ByteBuffer;JLjava/lang/Object;Ljava/nio/channels/CompletionHandler;)V",
 			arg0.object(),
 			arg1,
-			arg2,
+			arg2.object<jobject>(),
 			arg3.object()
 		);
 	}
@@ -141,14 +144,14 @@ namespace java::nio::channels
 			arg1
 		);
 	}
-	void AsynchronousFileChannel::write(java::nio::ByteBuffer arg0, jlong arg1, jobject arg2, JObject arg3)
+	void AsynchronousFileChannel::write(java::nio::ByteBuffer arg0, jlong arg1, JObject arg2, JObject arg3)
 	{
 		callMethod<void>(
 			"write",
 			"(Ljava/nio/ByteBuffer;JLjava/lang/Object;Ljava/nio/channels/CompletionHandler;)V",
 			arg0.object(),
 			arg1,
-			arg2,
+			arg2.object<jobject>(),
 			arg3.object()
 		);
 	}

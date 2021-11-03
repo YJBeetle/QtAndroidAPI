@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./LongSummaryStatistics.hpp"
 
 namespace java::util
@@ -83,12 +84,12 @@ namespace java::util
 			"()J"
 		);
 	}
-	jstring LongSummaryStatistics::toString()
+	JString LongSummaryStatistics::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::util
 

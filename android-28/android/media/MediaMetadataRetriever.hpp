@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JByteArray;
 namespace android::content
 {
 	class Context;
@@ -26,6 +27,7 @@ namespace java::io
 {
 	class FileDescriptor;
 }
+class JString;
 
 namespace android::media
 {
@@ -77,8 +79,8 @@ namespace android::media
 		MediaMetadataRetriever();
 		
 		// Methods
-		jstring extractMetadata(jint arg0);
-		jbyteArray getEmbeddedPicture();
+		JString extractMetadata(jint arg0);
+		JByteArray getEmbeddedPicture();
 		android::graphics::Bitmap getFrameAtIndex(jint arg0);
 		android::graphics::Bitmap getFrameAtIndex(jint arg0, android::media::MediaMetadataRetriever_BitmapParams arg1);
 		android::graphics::Bitmap getFrameAtTime();
@@ -94,9 +96,9 @@ namespace android::media
 		void release();
 		void setDataSource(android::media::MediaDataSource arg0);
 		void setDataSource(java::io::FileDescriptor arg0);
-		void setDataSource(jstring arg0);
+		void setDataSource(JString arg0);
 		void setDataSource(android::content::Context arg0, android::net::Uri arg1);
-		void setDataSource(jstring arg0, JObject arg1);
+		void setDataSource(JString arg0, JObject arg1);
 		void setDataSource(java::io::FileDescriptor arg0, jlong arg1, jlong arg2);
 	};
 } // namespace android::media

@@ -2,7 +2,6 @@
 
 #include "../../../JObject.hpp"
 
-
 namespace android::app::appsearch
 {
 	class SetSchemaRequest : public JObject

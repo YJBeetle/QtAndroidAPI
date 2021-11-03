@@ -1,3 +1,5 @@
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
 #include "./AccessMode.hpp"
 
 namespace java::nio::file
@@ -34,22 +36,22 @@ namespace java::nio::file
 	// Constructors
 	
 	// Methods
-	java::nio::file::AccessMode AccessMode::valueOf(jstring arg0)
+	java::nio::file::AccessMode AccessMode::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"java.nio.file.AccessMode",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/nio/file/AccessMode;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray AccessMode::values()
+	JArray AccessMode::values()
 	{
 		return callStaticObjectMethod(
 			"java.nio.file.AccessMode",
 			"values",
 			"()[Ljava/nio/file/AccessMode;"
-		).object<jarray>();
+		);
 	}
 } // namespace java::nio::file
 

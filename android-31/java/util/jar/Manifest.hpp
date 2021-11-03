@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JByteArray;
 namespace java::io
 {
 	class InputStream;
@@ -10,6 +11,8 @@ namespace java::io
 {
 	class OutputStream;
 }
+class JObject;
+class JString;
 namespace java::lang
 {
 	class StringBuffer;
@@ -37,9 +40,9 @@ namespace java::util::jar
 		
 		// Methods
 		void clear();
-		jobject clone();
-		jboolean equals(jobject arg0);
-		java::util::jar::Attributes getAttributes(jstring arg0);
+		JObject clone();
+		jboolean equals(JObject arg0);
+		java::util::jar::Attributes getAttributes(JString arg0);
 		JObject getEntries();
 		java::util::jar::Attributes getMainAttributes();
 		jint hashCode();

@@ -10,6 +10,8 @@ namespace android::util
 {
 	class Size;
 }
+class JObject;
+class JString;
 
 namespace android::hardware::camera2::params
 {
@@ -25,12 +27,12 @@ namespace android::hardware::camera2::params
 		// Constructors
 		
 		// Methods
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		android::util::Size getMaxStreamingSize();
 		jint getMode();
 		android::util::Range getZoomRatioRange();
 		jint hashCode();
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::hardware::camera2::params
 

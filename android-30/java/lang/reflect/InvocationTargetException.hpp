@@ -1,9 +1,9 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "../Exception.hpp"
 #include "../ReflectiveOperationException.hpp"
 
+class JString;
+class JThrowable;
 
 namespace java::lang::reflect
 {
@@ -17,12 +17,12 @@ namespace java::lang::reflect
 		InvocationTargetException(QAndroidJniObject obj);
 		
 		// Constructors
-		InvocationTargetException(jthrowable arg0);
-		InvocationTargetException(jthrowable arg0, jstring arg1);
+		InvocationTargetException(JThrowable arg0);
+		InvocationTargetException(JThrowable arg0, JString arg1);
 		
 		// Methods
-		jthrowable getCause();
-		jthrowable getTargetException();
+		JThrowable getCause();
+		JThrowable getTargetException();
 	};
 } // namespace java::lang::reflect
 

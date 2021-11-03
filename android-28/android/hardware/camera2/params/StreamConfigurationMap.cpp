@@ -1,6 +1,12 @@
+#include "../../../../JIntArray.hpp"
+#include "../../../../JArray.hpp"
+#include "../../../../JArray.hpp"
 #include "../../../util/Range.hpp"
 #include "../../../util/Size.hpp"
 #include "../../../view/Surface.hpp"
+#include "../../../../JClass.hpp"
+#include "../../../../JObject.hpp"
+#include "../../../../JString.hpp"
 #include "./StreamConfigurationMap.hpp"
 
 namespace android::hardware::camera2::params
@@ -13,82 +19,82 @@ namespace android::hardware::camera2::params
 	// Constructors
 	
 	// Methods
-	jboolean StreamConfigurationMap::isOutputSupportedFor(jclass arg0)
+	jboolean StreamConfigurationMap::isOutputSupportedFor(JClass arg0)
 	{
 		return callStaticMethod<jboolean>(
 			"android.hardware.camera2.params.StreamConfigurationMap",
 			"isOutputSupportedFor",
 			"(Ljava/lang/Class;)Z",
-			arg0
+			arg0.object<jclass>()
 		);
 	}
-	jboolean StreamConfigurationMap::equals(jobject arg0)
+	jboolean StreamConfigurationMap::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jarray StreamConfigurationMap::getHighResolutionOutputSizes(jint arg0)
+	JArray StreamConfigurationMap::getHighResolutionOutputSizes(jint arg0)
 	{
 		return callObjectMethod(
 			"getHighResolutionOutputSizes",
 			"(I)[Landroid/util/Size;",
 			arg0
-		).object<jarray>();
+		);
 	}
-	jarray StreamConfigurationMap::getHighSpeedVideoFpsRanges()
+	JArray StreamConfigurationMap::getHighSpeedVideoFpsRanges()
 	{
 		return callObjectMethod(
 			"getHighSpeedVideoFpsRanges",
 			"()[Landroid/util/Range;"
-		).object<jarray>();
+		);
 	}
-	jarray StreamConfigurationMap::getHighSpeedVideoFpsRangesFor(android::util::Size arg0)
+	JArray StreamConfigurationMap::getHighSpeedVideoFpsRangesFor(android::util::Size arg0)
 	{
 		return callObjectMethod(
 			"getHighSpeedVideoFpsRangesFor",
 			"(Landroid/util/Size;)[Landroid/util/Range;",
 			arg0.object()
-		).object<jarray>();
+		);
 	}
-	jarray StreamConfigurationMap::getHighSpeedVideoSizes()
+	JArray StreamConfigurationMap::getHighSpeedVideoSizes()
 	{
 		return callObjectMethod(
 			"getHighSpeedVideoSizes",
 			"()[Landroid/util/Size;"
-		).object<jarray>();
+		);
 	}
-	jarray StreamConfigurationMap::getHighSpeedVideoSizesFor(android::util::Range arg0)
+	JArray StreamConfigurationMap::getHighSpeedVideoSizesFor(android::util::Range arg0)
 	{
 		return callObjectMethod(
 			"getHighSpeedVideoSizesFor",
 			"(Landroid/util/Range;)[Landroid/util/Size;",
 			arg0.object()
-		).object<jarray>();
+		);
 	}
-	jintArray StreamConfigurationMap::getInputFormats()
+	JIntArray StreamConfigurationMap::getInputFormats()
 	{
 		return callObjectMethod(
 			"getInputFormats",
 			"()[I"
-		).object<jintArray>();
+		);
 	}
-	jarray StreamConfigurationMap::getInputSizes(jint arg0)
+	JArray StreamConfigurationMap::getInputSizes(jint arg0)
 	{
 		return callObjectMethod(
 			"getInputSizes",
 			"(I)[Landroid/util/Size;",
 			arg0
-		).object<jarray>();
+		);
 	}
-	jintArray StreamConfigurationMap::getOutputFormats()
+	JIntArray StreamConfigurationMap::getOutputFormats()
 	{
 		return callObjectMethod(
 			"getOutputFormats",
 			"()[I"
-		).object<jintArray>();
+		);
 	}
 	jlong StreamConfigurationMap::getOutputMinFrameDuration(jint arg0, android::util::Size arg1)
 	{
@@ -99,30 +105,30 @@ namespace android::hardware::camera2::params
 			arg1.object()
 		);
 	}
-	jlong StreamConfigurationMap::getOutputMinFrameDuration(jclass arg0, android::util::Size arg1)
+	jlong StreamConfigurationMap::getOutputMinFrameDuration(JClass arg0, android::util::Size arg1)
 	{
 		return callMethod<jlong>(
 			"getOutputMinFrameDuration",
 			"(Ljava/lang/Class;Landroid/util/Size;)J",
-			arg0,
+			arg0.object<jclass>(),
 			arg1.object()
 		);
 	}
-	jarray StreamConfigurationMap::getOutputSizes(jint arg0)
+	JArray StreamConfigurationMap::getOutputSizes(jint arg0)
 	{
 		return callObjectMethod(
 			"getOutputSizes",
 			"(I)[Landroid/util/Size;",
 			arg0
-		).object<jarray>();
+		);
 	}
-	jarray StreamConfigurationMap::getOutputSizes(jclass arg0)
+	JArray StreamConfigurationMap::getOutputSizes(JClass arg0)
 	{
 		return callObjectMethod(
 			"getOutputSizes",
 			"(Ljava/lang/Class;)[Landroid/util/Size;",
-			arg0
-		).object<jarray>();
+			arg0.object<jclass>()
+		);
 	}
 	jlong StreamConfigurationMap::getOutputStallDuration(jint arg0, android::util::Size arg1)
 	{
@@ -133,22 +139,22 @@ namespace android::hardware::camera2::params
 			arg1.object()
 		);
 	}
-	jlong StreamConfigurationMap::getOutputStallDuration(jclass arg0, android::util::Size arg1)
+	jlong StreamConfigurationMap::getOutputStallDuration(JClass arg0, android::util::Size arg1)
 	{
 		return callMethod<jlong>(
 			"getOutputStallDuration",
 			"(Ljava/lang/Class;Landroid/util/Size;)J",
-			arg0,
+			arg0.object<jclass>(),
 			arg1.object()
 		);
 	}
-	jintArray StreamConfigurationMap::getValidOutputFormatsForInput(jint arg0)
+	JIntArray StreamConfigurationMap::getValidOutputFormatsForInput(jint arg0)
 	{
 		return callObjectMethod(
 			"getValidOutputFormatsForInput",
 			"(I)[I",
 			arg0
-		).object<jintArray>();
+		);
 	}
 	jint StreamConfigurationMap::hashCode()
 	{
@@ -173,12 +179,12 @@ namespace android::hardware::camera2::params
 			arg0
 		);
 	}
-	jstring StreamConfigurationMap::toString()
+	JString StreamConfigurationMap::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::hardware::camera2::params
 

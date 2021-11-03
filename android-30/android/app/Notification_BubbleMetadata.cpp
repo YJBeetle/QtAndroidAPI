@@ -1,6 +1,7 @@
 #include "./PendingIntent.hpp"
 #include "../graphics/drawable/Icon.hpp"
 #include "../os/Parcel.hpp"
+#include "../../JString.hpp"
 #include "./Notification_BubbleMetadata.hpp"
 
 namespace android::app
@@ -70,12 +71,12 @@ namespace android::app
 			"()Landroid/app/PendingIntent;"
 		);
 	}
-	jstring Notification_BubbleMetadata::getShortcutId()
+	JString Notification_BubbleMetadata::getShortcutId()
 	{
 		return callObjectMethod(
 			"getShortcutId",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jboolean Notification_BubbleMetadata::isNotificationSuppressed()
 	{

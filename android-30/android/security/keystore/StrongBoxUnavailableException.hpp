@@ -1,10 +1,9 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "../../../java/lang/Exception.hpp"
-#include "../../../java/lang/RuntimeException.hpp"
 #include "../../../java/security/ProviderException.hpp"
 
+class JString;
+class JThrowable;
 
 namespace android::security::keystore
 {
@@ -19,9 +18,9 @@ namespace android::security::keystore
 		
 		// Constructors
 		StrongBoxUnavailableException();
-		StrongBoxUnavailableException(jstring arg0);
-		StrongBoxUnavailableException(jthrowable arg0);
-		StrongBoxUnavailableException(jstring arg0, jthrowable arg1);
+		StrongBoxUnavailableException(JString arg0);
+		StrongBoxUnavailableException(JThrowable arg0);
+		StrongBoxUnavailableException(JString arg0, JThrowable arg1);
 		
 		// Methods
 	};

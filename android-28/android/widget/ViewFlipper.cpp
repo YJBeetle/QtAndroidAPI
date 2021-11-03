@@ -1,4 +1,5 @@
 #include "../content/Context.hpp"
+#include "../../JString.hpp"
 #include "./ViewFlipper.hpp"
 
 namespace android::widget
@@ -24,12 +25,12 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	jstring ViewFlipper::getAccessibilityClassName()
+	JString ViewFlipper::getAccessibilityClassName()
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	jboolean ViewFlipper::isAutoStart()
 	{

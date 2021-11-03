@@ -6,6 +6,7 @@ namespace android::content
 {
 	class Intent;
 }
+class JString;
 
 namespace android::app::role
 {
@@ -13,14 +14,14 @@ namespace android::app::role
 	{
 	public:
 		// Fields
-		static jstring ROLE_ASSISTANT();
-		static jstring ROLE_BROWSER();
-		static jstring ROLE_CALL_REDIRECTION();
-		static jstring ROLE_CALL_SCREENING();
-		static jstring ROLE_DIALER();
-		static jstring ROLE_EMERGENCY();
-		static jstring ROLE_HOME();
-		static jstring ROLE_SMS();
+		static JString ROLE_ASSISTANT();
+		static JString ROLE_BROWSER();
+		static JString ROLE_CALL_REDIRECTION();
+		static JString ROLE_CALL_SCREENING();
+		static JString ROLE_DIALER();
+		static JString ROLE_EMERGENCY();
+		static JString ROLE_HOME();
+		static JString ROLE_SMS();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit RoleManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
@@ -29,9 +30,9 @@ namespace android::app::role
 		// Constructors
 		
 		// Methods
-		android::content::Intent createRequestRoleIntent(jstring arg0);
-		jboolean isRoleAvailable(jstring arg0);
-		jboolean isRoleHeld(jstring arg0);
+		android::content::Intent createRequestRoleIntent(JString arg0);
+		jboolean isRoleAvailable(JString arg0);
+		jboolean isRoleHeld(JString arg0);
 	};
 } // namespace android::app::role
 

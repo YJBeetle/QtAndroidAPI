@@ -1,6 +1,7 @@
 #include "../../graphics/Canvas.hpp"
 #include "../../graphics/Paint.hpp"
 #include "../../os/Parcel.hpp"
+#include "../../../JString.hpp"
 #include "./LineBackgroundSpan_Standard.hpp"
 
 namespace android::text::style
@@ -32,7 +33,7 @@ namespace android::text::style
 			"()I"
 		);
 	}
-	void LineBackgroundSpan_Standard::drawBackground(android::graphics::Canvas arg0, android::graphics::Paint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jstring arg7, jint arg8, jint arg9, jint arg10)
+	void LineBackgroundSpan_Standard::drawBackground(android::graphics::Canvas arg0, android::graphics::Paint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, JString arg7, jint arg8, jint arg9, jint arg10)
 	{
 		callMethod<void>(
 			"drawBackground",
@@ -44,7 +45,7 @@ namespace android::text::style
 			arg4,
 			arg5,
 			arg6,
-			arg7,
+			arg7.object<jstring>(),
 			arg8,
 			arg9,
 			arg10

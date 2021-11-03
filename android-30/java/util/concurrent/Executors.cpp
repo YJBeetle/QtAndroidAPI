@@ -1,3 +1,4 @@
+#include "../../../JObject.hpp"
 #include "./Executors.hpp"
 
 namespace java::util::concurrent
@@ -19,14 +20,14 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	JObject Executors::callable(JObject arg0, jobject arg1)
+	JObject Executors::callable(JObject arg0, JObject arg1)
 	{
 		return callStaticObjectMethod(
 			"java.util.concurrent.Executors",
 			"callable",
 			"(Ljava/lang/Runnable;Ljava/lang/Object;)Ljava/util/concurrent/Callable;",
 			arg0.object(),
-			arg1
+			arg1.object<jobject>()
 		);
 	}
 	JObject Executors::defaultThreadFactory()

@@ -10,6 +10,8 @@ namespace android::net
 {
 	class Uri;
 }
+class JString;
+class JString;
 
 namespace android::app
 {
@@ -32,21 +34,21 @@ namespace android::app
 		DownloadManager_Request(android::net::Uri arg0);
 		
 		// Methods
-		android::app::DownloadManager_Request addRequestHeader(jstring arg0, jstring arg1);
+		android::app::DownloadManager_Request addRequestHeader(JString arg0, JString arg1);
 		void allowScanningByMediaScanner();
 		android::app::DownloadManager_Request setAllowedNetworkTypes(jint arg0);
 		android::app::DownloadManager_Request setAllowedOverMetered(jboolean arg0);
 		android::app::DownloadManager_Request setAllowedOverRoaming(jboolean arg0);
-		android::app::DownloadManager_Request setDescription(jstring arg0);
-		android::app::DownloadManager_Request setDestinationInExternalFilesDir(android::content::Context arg0, jstring arg1, jstring arg2);
-		android::app::DownloadManager_Request setDestinationInExternalPublicDir(jstring arg0, jstring arg1);
+		android::app::DownloadManager_Request setDescription(JString arg0);
+		android::app::DownloadManager_Request setDestinationInExternalFilesDir(android::content::Context arg0, JString arg1, JString arg2);
+		android::app::DownloadManager_Request setDestinationInExternalPublicDir(JString arg0, JString arg1);
 		android::app::DownloadManager_Request setDestinationUri(android::net::Uri arg0);
-		android::app::DownloadManager_Request setMimeType(jstring arg0);
+		android::app::DownloadManager_Request setMimeType(JString arg0);
 		android::app::DownloadManager_Request setNotificationVisibility(jint arg0);
 		android::app::DownloadManager_Request setRequiresCharging(jboolean arg0);
 		android::app::DownloadManager_Request setRequiresDeviceIdle(jboolean arg0);
 		android::app::DownloadManager_Request setShowRunningNotification(jboolean arg0);
-		android::app::DownloadManager_Request setTitle(jstring arg0);
+		android::app::DownloadManager_Request setTitle(JString arg0);
 		android::app::DownloadManager_Request setVisibleInDownloadsUi(jboolean arg0);
 	};
 } // namespace android::app

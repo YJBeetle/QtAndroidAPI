@@ -1,4 +1,5 @@
 #include "../../os/Parcel.hpp"
+#include "../../../JString.hpp"
 #include "./SelectWalletCardRequest.hpp"
 
 namespace android::service::quickaccesswallet
@@ -17,11 +18,11 @@ namespace android::service::quickaccesswallet
 	SelectWalletCardRequest::SelectWalletCardRequest(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	SelectWalletCardRequest::SelectWalletCardRequest(jstring arg0)
+	SelectWalletCardRequest::SelectWalletCardRequest(JString arg0)
 		: JObject(
 			"android.service.quickaccesswallet.SelectWalletCardRequest",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods
@@ -32,12 +33,12 @@ namespace android::service::quickaccesswallet
 			"()I"
 		);
 	}
-	jstring SelectWalletCardRequest::getCardId()
+	JString SelectWalletCardRequest::getCardId()
 	{
 		return callObjectMethod(
 			"getCardId",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void SelectWalletCardRequest::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

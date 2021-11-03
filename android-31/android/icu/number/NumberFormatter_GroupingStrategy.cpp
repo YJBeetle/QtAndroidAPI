@@ -1,3 +1,5 @@
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
 #include "./NumberFormatter_GroupingStrategy.hpp"
 
 namespace android::icu::number
@@ -50,22 +52,22 @@ namespace android::icu::number
 	// Constructors
 	
 	// Methods
-	android::icu::number::NumberFormatter_GroupingStrategy NumberFormatter_GroupingStrategy::valueOf(jstring arg0)
+	android::icu::number::NumberFormatter_GroupingStrategy NumberFormatter_GroupingStrategy::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.icu.number.NumberFormatter$GroupingStrategy",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/icu/number/NumberFormatter$GroupingStrategy;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray NumberFormatter_GroupingStrategy::values()
+	JArray NumberFormatter_GroupingStrategy::values()
 	{
 		return callStaticObjectMethod(
 			"android.icu.number.NumberFormatter$GroupingStrategy",
 			"values",
 			"()[Landroid/icu/number/NumberFormatter$GroupingStrategy;"
-		).object<jarray>();
+		);
 	}
 } // namespace android::icu::number
 

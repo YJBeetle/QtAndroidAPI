@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./Format_Field.hpp"
 
 namespace java::text

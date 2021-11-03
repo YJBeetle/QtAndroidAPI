@@ -3,6 +3,8 @@
 #include "./NetworkCapabilities.hpp"
 #include "../os/Parcel.hpp"
 #include "../os/PersistableBundle.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./ConnectivityDiagnosticsManager_ConnectivityReport.hpp"
 
 namespace android::net
@@ -16,29 +18,29 @@ namespace android::net
 			"Landroid/os/Parcelable$Creator;"
 		);
 	}
-	jstring ConnectivityDiagnosticsManager_ConnectivityReport::KEY_NETWORK_PROBES_ATTEMPTED_BITMASK()
+	JString ConnectivityDiagnosticsManager_ConnectivityReport::KEY_NETWORK_PROBES_ATTEMPTED_BITMASK()
 	{
 		return getStaticObjectField(
 			"android.net.ConnectivityDiagnosticsManager$ConnectivityReport",
 			"KEY_NETWORK_PROBES_ATTEMPTED_BITMASK",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ConnectivityDiagnosticsManager_ConnectivityReport::KEY_NETWORK_PROBES_SUCCEEDED_BITMASK()
+	JString ConnectivityDiagnosticsManager_ConnectivityReport::KEY_NETWORK_PROBES_SUCCEEDED_BITMASK()
 	{
 		return getStaticObjectField(
 			"android.net.ConnectivityDiagnosticsManager$ConnectivityReport",
 			"KEY_NETWORK_PROBES_SUCCEEDED_BITMASK",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ConnectivityDiagnosticsManager_ConnectivityReport::KEY_NETWORK_VALIDATION_RESULT()
+	JString ConnectivityDiagnosticsManager_ConnectivityReport::KEY_NETWORK_VALIDATION_RESULT()
 	{
 		return getStaticObjectField(
 			"android.net.ConnectivityDiagnosticsManager$ConnectivityReport",
 			"KEY_NETWORK_VALIDATION_RESULT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint ConnectivityDiagnosticsManager_ConnectivityReport::NETWORK_PROBE_DNS()
 	{
@@ -127,12 +129,12 @@ namespace android::net
 			"()I"
 		);
 	}
-	jboolean ConnectivityDiagnosticsManager_ConnectivityReport::equals(jobject arg0)
+	jboolean ConnectivityDiagnosticsManager_ConnectivityReport::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	android::os::PersistableBundle ConnectivityDiagnosticsManager_ConnectivityReport::getAdditionalInfo()

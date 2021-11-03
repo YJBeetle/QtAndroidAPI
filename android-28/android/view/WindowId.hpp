@@ -10,6 +10,8 @@ namespace android::view
 {
 	class WindowId_FocusObserver;
 }
+class JObject;
+class JString;
 
 namespace android::view
 {
@@ -27,11 +29,11 @@ namespace android::view
 		
 		// Methods
 		jint describeContents();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint hashCode();
 		jboolean isFocused();
 		void registerFocusObserver(android::view::WindowId_FocusObserver arg0);
-		jstring toString();
+		JString toString();
 		void unregisterFocusObserver(android::view::WindowId_FocusObserver arg0);
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};

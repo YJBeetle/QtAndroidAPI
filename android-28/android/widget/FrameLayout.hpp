@@ -1,7 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../view/View.hpp"
 #include "../view/ViewGroup.hpp"
 
 namespace android::content
@@ -16,6 +14,7 @@ namespace android::widget
 {
 	class FrameLayout_LayoutParams;
 }
+class JString;
 
 namespace android::widget
 {
@@ -36,7 +35,7 @@ namespace android::widget
 		
 		// Methods
 		android::widget::FrameLayout_LayoutParams generateLayoutParams(JObject arg0);
-		jstring getAccessibilityClassName();
+		JString getAccessibilityClassName();
 		jboolean getConsiderGoneChildrenWhenMeasuring();
 		jboolean getMeasureAllChildren();
 		void setForegroundGravity(jint arg0);

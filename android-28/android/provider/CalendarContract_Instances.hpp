@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JArray;
 namespace android::content
 {
 	class ContentResolver;
@@ -10,6 +11,7 @@ namespace android::net
 {
 	class Uri;
 }
+class JString;
 
 namespace android::provider
 {
@@ -17,17 +19,17 @@ namespace android::provider
 	{
 	public:
 		// Fields
-		static jstring BEGIN();
+		static JString BEGIN();
 		static android::net::Uri CONTENT_BY_DAY_URI();
 		static android::net::Uri CONTENT_SEARCH_BY_DAY_URI();
 		static android::net::Uri CONTENT_SEARCH_URI();
 		static android::net::Uri CONTENT_URI();
-		static jstring END();
-		static jstring END_DAY();
-		static jstring END_MINUTE();
-		static jstring EVENT_ID();
-		static jstring START_DAY();
-		static jstring START_MINUTE();
+		static JString END();
+		static JString END_DAY();
+		static JString END_MINUTE();
+		static JString EVENT_ID();
+		static JString START_DAY();
+		static JString START_MINUTE();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit CalendarContract_Instances(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
@@ -36,8 +38,8 @@ namespace android::provider
 		// Constructors
 		
 		// Methods
-		static JObject query(android::content::ContentResolver arg0, jarray arg1, jlong arg2, jlong arg3);
-		static JObject query(android::content::ContentResolver arg0, jarray arg1, jlong arg2, jlong arg3, jstring arg4);
+		static JObject query(android::content::ContentResolver arg0, JArray arg1, jlong arg2, jlong arg3);
+		static JObject query(android::content::ContentResolver arg0, JArray arg1, jlong arg2, jlong arg3, JString arg4);
 	};
 } // namespace android::provider
 

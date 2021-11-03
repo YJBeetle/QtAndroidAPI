@@ -1,9 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "./BaseObj.hpp"
 #include "./Script.hpp"
 
+class JByteArray;
 namespace android::content::res
 {
 	class Resources;
@@ -12,6 +11,7 @@ namespace android::renderscript
 {
 	class RenderScript;
 }
+class JString;
 
 namespace android::renderscript
 {

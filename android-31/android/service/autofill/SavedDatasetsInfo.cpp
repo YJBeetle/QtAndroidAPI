@@ -1,44 +1,46 @@
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./SavedDatasetsInfo.hpp"
 
 namespace android::service::autofill
 {
 	// Fields
-	jstring SavedDatasetsInfo::TYPE_OTHER()
+	JString SavedDatasetsInfo::TYPE_OTHER()
 	{
 		return getStaticObjectField(
 			"android.service.autofill.SavedDatasetsInfo",
 			"TYPE_OTHER",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring SavedDatasetsInfo::TYPE_PASSWORDS()
+	JString SavedDatasetsInfo::TYPE_PASSWORDS()
 	{
 		return getStaticObjectField(
 			"android.service.autofill.SavedDatasetsInfo",
 			"TYPE_PASSWORDS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QAndroidJniObject forward
 	SavedDatasetsInfo::SavedDatasetsInfo(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	SavedDatasetsInfo::SavedDatasetsInfo(jstring arg0, jint arg1)
+	SavedDatasetsInfo::SavedDatasetsInfo(JString arg0, jint arg1)
 		: JObject(
 			"android.service.autofill.SavedDatasetsInfo",
 			"(Ljava/lang/String;I)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		) {}
 	
 	// Methods
-	jboolean SavedDatasetsInfo::equals(jobject arg0)
+	jboolean SavedDatasetsInfo::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint SavedDatasetsInfo::getCount()
@@ -48,12 +50,12 @@ namespace android::service::autofill
 			"()I"
 		);
 	}
-	jstring SavedDatasetsInfo::getType()
+	JString SavedDatasetsInfo::getType()
 	{
 		return callObjectMethod(
 			"getType",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint SavedDatasetsInfo::hashCode()
 	{
@@ -62,12 +64,12 @@ namespace android::service::autofill
 			"()I"
 		);
 	}
-	jstring SavedDatasetsInfo::toString()
+	JString SavedDatasetsInfo::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::service::autofill
 

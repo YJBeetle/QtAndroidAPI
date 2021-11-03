@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JString;
 
 namespace android::util
 {
@@ -15,13 +16,13 @@ namespace android::util
 		TimingLogger(QAndroidJniObject obj);
 		
 		// Constructors
-		TimingLogger(jstring arg0, jstring arg1);
+		TimingLogger(JString arg0, JString arg1);
 		
 		// Methods
-		void addSplit(jstring arg0);
+		void addSplit(JString arg0);
 		void dumpToLog();
 		void reset();
-		void reset(jstring arg0, jstring arg1);
+		void reset(JString arg0, JString arg1);
 	};
 } // namespace android::util
 

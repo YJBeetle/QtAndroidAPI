@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JLongArray;
 namespace android::media
 {
 	class AudioAttributes;
@@ -14,6 +15,9 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
+class JObject;
+class JString;
 
 namespace android::app
 {
@@ -22,21 +26,21 @@ namespace android::app
 	public:
 		// Fields
 		static JObject CREATOR();
-		static jstring DEFAULT_CHANNEL_ID();
-		static jstring EDIT_CONVERSATION();
-		static jstring EDIT_IMPORTANCE();
-		static jstring EDIT_LAUNCHER();
-		static jstring EDIT_LOCKED_DEVICE();
-		static jstring EDIT_SOUND();
-		static jstring EDIT_VIBRATION();
-		static jstring EDIT_ZEN();
+		static JString DEFAULT_CHANNEL_ID();
+		static JString EDIT_CONVERSATION();
+		static JString EDIT_IMPORTANCE();
+		static JString EDIT_LAUNCHER();
+		static JString EDIT_LOCKED_DEVICE();
+		static JString EDIT_SOUND();
+		static JString EDIT_VIBRATION();
+		static JString EDIT_ZEN();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit NotificationChannel(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		NotificationChannel(QAndroidJniObject obj);
 		
 		// Constructors
-		NotificationChannel(jstring arg0, jstring arg1, jint arg2);
+		NotificationChannel(JString arg0, JString arg1, jint arg2);
 		
 		// Methods
 		jboolean canBubble();
@@ -45,19 +49,19 @@ namespace android::app
 		jint describeContents();
 		void enableLights(jboolean arg0);
 		void enableVibration(jboolean arg0);
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		android::media::AudioAttributes getAudioAttributes();
-		jstring getConversationId();
-		jstring getDescription();
-		jstring getGroup();
-		jstring getId();
+		JString getConversationId();
+		JString getDescription();
+		JString getGroup();
+		JString getId();
 		jint getImportance();
 		jint getLightColor();
 		jint getLockscreenVisibility();
-		jstring getName();
-		jstring getParentChannelId();
+		JString getName();
+		JString getParentChannelId();
 		android::net::Uri getSound();
-		jlongArray getVibrationPattern();
+		JLongArray getVibrationPattern();
 		jboolean hasUserSetImportance();
 		jboolean hasUserSetSound();
 		jint hashCode();
@@ -66,19 +70,19 @@ namespace android::app
 		jboolean isImportantConversation();
 		void setAllowBubbles(jboolean arg0);
 		void setBypassDnd(jboolean arg0);
-		void setConversationId(jstring arg0, jstring arg1);
-		void setDescription(jstring arg0);
-		void setGroup(jstring arg0);
+		void setConversationId(JString arg0, JString arg1);
+		void setDescription(JString arg0);
+		void setGroup(JString arg0);
 		void setImportance(jint arg0);
 		void setLightColor(jint arg0);
 		void setLockscreenVisibility(jint arg0);
-		void setName(jstring arg0);
+		void setName(JString arg0);
 		void setShowBadge(jboolean arg0);
 		void setSound(android::net::Uri arg0, android::media::AudioAttributes arg1);
-		void setVibrationPattern(jlongArray arg0);
+		void setVibrationPattern(JLongArray arg0);
 		jboolean shouldShowLights();
 		jboolean shouldVibrate();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::app

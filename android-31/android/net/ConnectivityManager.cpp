@@ -1,3 +1,6 @@
+#include "../../JByteArray.hpp"
+#include "../../JArray.hpp"
+#include "../../JArray.hpp"
 #include "../app/PendingIntent.hpp"
 #include "./ConnectivityManager_NetworkCallback.hpp"
 #include "./IpSecManager_UdpEncapsulationSocket.hpp"
@@ -10,6 +13,7 @@
 #include "./SocketKeepalive.hpp"
 #include "./SocketKeepalive_Callback.hpp"
 #include "../os/Handler.hpp"
+#include "../../JString.hpp"
 #include "../../java/net/InetAddress.hpp"
 #include "../../java/net/InetSocketAddress.hpp"
 #include "./ConnectivityManager.hpp"
@@ -17,37 +21,37 @@
 namespace android::net
 {
 	// Fields
-	jstring ConnectivityManager::ACTION_BACKGROUND_DATA_SETTING_CHANGED()
+	JString ConnectivityManager::ACTION_BACKGROUND_DATA_SETTING_CHANGED()
 	{
 		return getStaticObjectField(
 			"android.net.ConnectivityManager",
 			"ACTION_BACKGROUND_DATA_SETTING_CHANGED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ConnectivityManager::ACTION_CAPTIVE_PORTAL_SIGN_IN()
+	JString ConnectivityManager::ACTION_CAPTIVE_PORTAL_SIGN_IN()
 	{
 		return getStaticObjectField(
 			"android.net.ConnectivityManager",
 			"ACTION_CAPTIVE_PORTAL_SIGN_IN",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ConnectivityManager::ACTION_RESTRICT_BACKGROUND_CHANGED()
+	JString ConnectivityManager::ACTION_RESTRICT_BACKGROUND_CHANGED()
 	{
 		return getStaticObjectField(
 			"android.net.ConnectivityManager",
 			"ACTION_RESTRICT_BACKGROUND_CHANGED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ConnectivityManager::CONNECTIVITY_ACTION()
+	JString ConnectivityManager::CONNECTIVITY_ACTION()
 	{
 		return getStaticObjectField(
 			"android.net.ConnectivityManager",
 			"CONNECTIVITY_ACTION",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint ConnectivityManager::DEFAULT_NETWORK_PREFERENCE()
 	{
@@ -56,93 +60,93 @@ namespace android::net
 			"DEFAULT_NETWORK_PREFERENCE"
 		);
 	}
-	jstring ConnectivityManager::EXTRA_CAPTIVE_PORTAL()
+	JString ConnectivityManager::EXTRA_CAPTIVE_PORTAL()
 	{
 		return getStaticObjectField(
 			"android.net.ConnectivityManager",
 			"EXTRA_CAPTIVE_PORTAL",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ConnectivityManager::EXTRA_CAPTIVE_PORTAL_URL()
+	JString ConnectivityManager::EXTRA_CAPTIVE_PORTAL_URL()
 	{
 		return getStaticObjectField(
 			"android.net.ConnectivityManager",
 			"EXTRA_CAPTIVE_PORTAL_URL",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ConnectivityManager::EXTRA_EXTRA_INFO()
+	JString ConnectivityManager::EXTRA_EXTRA_INFO()
 	{
 		return getStaticObjectField(
 			"android.net.ConnectivityManager",
 			"EXTRA_EXTRA_INFO",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ConnectivityManager::EXTRA_IS_FAILOVER()
+	JString ConnectivityManager::EXTRA_IS_FAILOVER()
 	{
 		return getStaticObjectField(
 			"android.net.ConnectivityManager",
 			"EXTRA_IS_FAILOVER",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ConnectivityManager::EXTRA_NETWORK()
+	JString ConnectivityManager::EXTRA_NETWORK()
 	{
 		return getStaticObjectField(
 			"android.net.ConnectivityManager",
 			"EXTRA_NETWORK",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ConnectivityManager::EXTRA_NETWORK_INFO()
+	JString ConnectivityManager::EXTRA_NETWORK_INFO()
 	{
 		return getStaticObjectField(
 			"android.net.ConnectivityManager",
 			"EXTRA_NETWORK_INFO",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ConnectivityManager::EXTRA_NETWORK_REQUEST()
+	JString ConnectivityManager::EXTRA_NETWORK_REQUEST()
 	{
 		return getStaticObjectField(
 			"android.net.ConnectivityManager",
 			"EXTRA_NETWORK_REQUEST",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ConnectivityManager::EXTRA_NETWORK_TYPE()
+	JString ConnectivityManager::EXTRA_NETWORK_TYPE()
 	{
 		return getStaticObjectField(
 			"android.net.ConnectivityManager",
 			"EXTRA_NETWORK_TYPE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ConnectivityManager::EXTRA_NO_CONNECTIVITY()
+	JString ConnectivityManager::EXTRA_NO_CONNECTIVITY()
 	{
 		return getStaticObjectField(
 			"android.net.ConnectivityManager",
 			"EXTRA_NO_CONNECTIVITY",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ConnectivityManager::EXTRA_OTHER_NETWORK_INFO()
+	JString ConnectivityManager::EXTRA_OTHER_NETWORK_INFO()
 	{
 		return getStaticObjectField(
 			"android.net.ConnectivityManager",
 			"EXTRA_OTHER_NETWORK_INFO",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ConnectivityManager::EXTRA_REASON()
+	JString ConnectivityManager::EXTRA_REASON()
 	{
 		return getStaticObjectField(
 			"android.net.ConnectivityManager",
 			"EXTRA_REASON",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint ConnectivityManager::MULTIPATH_PREFERENCE_HANDOVER()
 	{
@@ -339,19 +343,19 @@ namespace android::net
 			"()Landroid/net/NetworkInfo;"
 		);
 	}
-	jarray ConnectivityManager::getAllNetworkInfo()
+	JArray ConnectivityManager::getAllNetworkInfo()
 	{
 		return callObjectMethod(
 			"getAllNetworkInfo",
 			"()[Landroid/net/NetworkInfo;"
-		).object<jarray>();
+		);
 	}
-	jarray ConnectivityManager::getAllNetworks()
+	JArray ConnectivityManager::getAllNetworks()
 	{
 		return callObjectMethod(
 			"getAllNetworks",
 			"()[Landroid/net/Network;"
-		).object<jarray>();
+		);
 	}
 	jboolean ConnectivityManager::getBackgroundDataSetting()
 	{
@@ -431,12 +435,12 @@ namespace android::net
 			"()I"
 		);
 	}
-	jbyteArray ConnectivityManager::getNetworkWatchlistConfigHash()
+	JByteArray ConnectivityManager::getNetworkWatchlistConfigHash()
 	{
 		return callObjectMethod(
 			"getNetworkWatchlistConfigHash",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
 	jint ConnectivityManager::getRestrictBackgroundStatus()
 	{

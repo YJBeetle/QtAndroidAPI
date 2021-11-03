@@ -1,4 +1,5 @@
 #include "../os/Parcel.hpp"
+#include "../../JString.hpp"
 #include "./ApplicationMediaCapabilities.hpp"
 
 namespace android::media
@@ -63,36 +64,36 @@ namespace android::media
 			"()Ljava/util/List;"
 		);
 	}
-	jboolean ApplicationMediaCapabilities::isFormatSpecified(jstring arg0)
+	jboolean ApplicationMediaCapabilities::isFormatSpecified(JString arg0)
 	{
 		return callMethod<jboolean>(
 			"isFormatSpecified",
 			"(Ljava/lang/String;)Z",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jboolean ApplicationMediaCapabilities::isHdrTypeSupported(jstring arg0)
+	jboolean ApplicationMediaCapabilities::isHdrTypeSupported(JString arg0)
 	{
 		return callMethod<jboolean>(
 			"isHdrTypeSupported",
 			"(Ljava/lang/String;)Z",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jboolean ApplicationMediaCapabilities::isVideoMimeTypeSupported(jstring arg0)
+	jboolean ApplicationMediaCapabilities::isVideoMimeTypeSupported(JString arg0)
 	{
 		return callMethod<jboolean>(
 			"isVideoMimeTypeSupported",
 			"(Ljava/lang/String;)Z",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jstring ApplicationMediaCapabilities::toString()
+	JString ApplicationMediaCapabilities::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void ApplicationMediaCapabilities::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

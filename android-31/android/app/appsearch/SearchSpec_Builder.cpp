@@ -1,4 +1,6 @@
+#include "../../../JArray.hpp"
 #include "./SearchSpec.hpp"
+#include "../../../JString.hpp"
 #include "./SearchSpec_Builder.hpp"
 
 namespace android::app::appsearch
@@ -16,12 +18,12 @@ namespace android::app::appsearch
 		) {}
 	
 	// Methods
-	android::app::appsearch::SearchSpec_Builder SearchSpec_Builder::addFilterNamespaces(jarray arg0)
+	android::app::appsearch::SearchSpec_Builder SearchSpec_Builder::addFilterNamespaces(JArray arg0)
 	{
 		return callObjectMethod(
 			"addFilterNamespaces",
 			"([Ljava/lang/String;)Landroid/app/appsearch/SearchSpec$Builder;",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
 	android::app::appsearch::SearchSpec_Builder SearchSpec_Builder::addFilterNamespaces(JObject arg0)
@@ -32,12 +34,12 @@ namespace android::app::appsearch
 			arg0.object()
 		);
 	}
-	android::app::appsearch::SearchSpec_Builder SearchSpec_Builder::addFilterPackageNames(jarray arg0)
+	android::app::appsearch::SearchSpec_Builder SearchSpec_Builder::addFilterPackageNames(JArray arg0)
 	{
 		return callObjectMethod(
 			"addFilterPackageNames",
 			"([Ljava/lang/String;)Landroid/app/appsearch/SearchSpec$Builder;",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
 	android::app::appsearch::SearchSpec_Builder SearchSpec_Builder::addFilterPackageNames(JObject arg0)
@@ -48,12 +50,12 @@ namespace android::app::appsearch
 			arg0.object()
 		);
 	}
-	android::app::appsearch::SearchSpec_Builder SearchSpec_Builder::addFilterSchemas(jarray arg0)
+	android::app::appsearch::SearchSpec_Builder SearchSpec_Builder::addFilterSchemas(JArray arg0)
 	{
 		return callObjectMethod(
 			"addFilterSchemas",
 			"([Ljava/lang/String;)Landroid/app/appsearch/SearchSpec$Builder;",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
 	android::app::appsearch::SearchSpec_Builder SearchSpec_Builder::addFilterSchemas(JObject arg0)
@@ -64,12 +66,12 @@ namespace android::app::appsearch
 			arg0.object()
 		);
 	}
-	android::app::appsearch::SearchSpec_Builder SearchSpec_Builder::addProjection(jstring arg0, JObject arg1)
+	android::app::appsearch::SearchSpec_Builder SearchSpec_Builder::addProjection(JString arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"addProjection",
 			"(Ljava/lang/String;Ljava/util/Collection;)Landroid/app/appsearch/SearchSpec$Builder;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}

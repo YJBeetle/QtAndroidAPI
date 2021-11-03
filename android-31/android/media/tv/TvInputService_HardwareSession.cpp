@@ -1,5 +1,6 @@
 #include "../../content/Context.hpp"
 #include "../../view/Surface.hpp"
+#include "../../../JString.hpp"
 #include "./TvInputService_HardwareSession.hpp"
 
 namespace android::media::tv
@@ -18,12 +19,12 @@ namespace android::media::tv
 		) {}
 	
 	// Methods
-	jstring TvInputService_HardwareSession::getHardwareInputId()
+	JString TvInputService_HardwareSession::getHardwareInputId()
 	{
 		return callObjectMethod(
 			"getHardwareInputId",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void TvInputService_HardwareSession::onHardwareVideoAvailable()
 	{

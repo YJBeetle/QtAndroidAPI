@@ -1,3 +1,5 @@
+#include "../../JString.hpp"
+#include "../../JThrowable.hpp"
 #include "./InflateException.hpp"
 
 namespace android::view
@@ -13,24 +15,24 @@ namespace android::view
 			"android.view.InflateException",
 			"()V"
 		) {}
-	InflateException::InflateException(jstring arg0)
+	InflateException::InflateException(JString arg0)
 		: java::lang::RuntimeException(
 			"android.view.InflateException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	InflateException::InflateException(jthrowable arg0)
+	InflateException::InflateException(JThrowable arg0)
 		: java::lang::RuntimeException(
 			"android.view.InflateException",
 			"(Ljava/lang/Throwable;)V",
-			arg0
+			arg0.object<jthrowable>()
 		) {}
-	InflateException::InflateException(jstring arg0, jthrowable arg1)
+	InflateException::InflateException(JString arg0, JThrowable arg1)
 		: java::lang::RuntimeException(
 			"android.view.InflateException",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
 		) {}
 	
 	// Methods

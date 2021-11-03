@@ -1,6 +1,8 @@
 #include "../../app/PendingIntent.hpp"
 #include "../../graphics/drawable/Icon.hpp"
 #include "../../os/Parcel.hpp"
+#include "../../../JString.hpp"
+#include "../../../JString.hpp"
 #include "./WalletCard.hpp"
 
 namespace android::service::quickaccesswallet
@@ -35,12 +37,12 @@ namespace android::service::quickaccesswallet
 			"()Landroid/graphics/drawable/Icon;"
 		);
 	}
-	jstring WalletCard::getCardId()
+	JString WalletCard::getCardId()
 	{
 		return callObjectMethod(
 			"getCardId",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::graphics::drawable::Icon WalletCard::getCardImage()
 	{
@@ -49,19 +51,19 @@ namespace android::service::quickaccesswallet
 			"()Landroid/graphics/drawable/Icon;"
 		);
 	}
-	jstring WalletCard::getCardLabel()
+	JString WalletCard::getCardLabel()
 	{
 		return callObjectMethod(
 			"getCardLabel",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
-	jstring WalletCard::getContentDescription()
+	JString WalletCard::getContentDescription()
 	{
 		return callObjectMethod(
 			"getContentDescription",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	android::app::PendingIntent WalletCard::getPendingIntent()
 	{

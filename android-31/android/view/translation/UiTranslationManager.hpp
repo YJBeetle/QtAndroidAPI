@@ -2,7 +2,6 @@
 
 #include "../../../JObject.hpp"
 
-
 namespace android::view::translation
 {
 	class UiTranslationManager : public JObject

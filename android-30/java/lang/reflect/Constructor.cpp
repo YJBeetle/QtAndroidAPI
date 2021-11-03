@@ -1,3 +1,13 @@
+#include "../../../JByteArray.hpp"
+#include "../../../JArray.hpp"
+#include "../../../JObjectArray.hpp"
+#include "../../../JArray.hpp"
+#include "../../../JArray.hpp"
+#include "../../../JArray.hpp"
+#include "../../../JArray.hpp"
+#include "../../../JClass.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "../StringBuilder.hpp"
 #include "./AccessibleObject.hpp"
 #include "./Constructor.hpp"
@@ -12,12 +22,12 @@ namespace java::lang::reflect
 	// Constructors
 	
 	// Methods
-	jboolean Constructor::equals(jobject arg0)
+	jboolean Constructor::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	JObject Constructor::getAnnotatedReceiverType()
@@ -34,48 +44,48 @@ namespace java::lang::reflect
 			"()Ljava/lang/reflect/AnnotatedType;"
 		);
 	}
-	JObject Constructor::getAnnotation(jclass arg0)
+	JObject Constructor::getAnnotation(JClass arg0)
 	{
 		return callObjectMethod(
 			"getAnnotation",
 			"(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;",
-			arg0
+			arg0.object<jclass>()
 		);
 	}
-	jarray Constructor::getDeclaredAnnotations()
+	JArray Constructor::getDeclaredAnnotations()
 	{
 		return callObjectMethod(
 			"getDeclaredAnnotations",
 			"()[Ljava/lang/annotation/Annotation;"
-		).object<jarray>();
+		);
 	}
-	jclass Constructor::getDeclaringClass()
+	JClass Constructor::getDeclaringClass()
 	{
 		return callObjectMethod(
 			"getDeclaringClass",
 			"()Ljava/lang/Class;"
-		).object<jclass>();
+		);
 	}
-	jarray Constructor::getExceptionTypes()
+	JArray Constructor::getExceptionTypes()
 	{
 		return callObjectMethod(
 			"getExceptionTypes",
 			"()[Ljava/lang/Class;"
-		).object<jarray>();
+		);
 	}
-	jarray Constructor::getGenericExceptionTypes()
+	JArray Constructor::getGenericExceptionTypes()
 	{
 		return callObjectMethod(
 			"getGenericExceptionTypes",
 			"()[Ljava/lang/reflect/Type;"
-		).object<jarray>();
+		);
 	}
-	jarray Constructor::getGenericParameterTypes()
+	JArray Constructor::getGenericParameterTypes()
 	{
 		return callObjectMethod(
 			"getGenericParameterTypes",
 			"()[Ljava/lang/reflect/Type;"
-		).object<jarray>();
+		);
 	}
 	jint Constructor::getModifiers()
 	{
@@ -84,19 +94,19 @@ namespace java::lang::reflect
 			"()I"
 		);
 	}
-	jstring Constructor::getName()
+	JString Constructor::getName()
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jarray Constructor::getParameterAnnotations()
+	JArray Constructor::getParameterAnnotations()
 	{
 		return callObjectMethod(
 			"getParameterAnnotations",
 			"()[[Ljava/lang/annotation/Annotation;"
-		).object<jarray>();
+		);
 	}
 	jint Constructor::getParameterCount()
 	{
@@ -105,19 +115,19 @@ namespace java::lang::reflect
 			"()I"
 		);
 	}
-	jarray Constructor::getParameterTypes()
+	JArray Constructor::getParameterTypes()
 	{
 		return callObjectMethod(
 			"getParameterTypes",
 			"()[Ljava/lang/Class;"
-		).object<jarray>();
+		);
 	}
-	jarray Constructor::getTypeParameters()
+	JArray Constructor::getTypeParameters()
 	{
 		return callObjectMethod(
 			"getTypeParameters",
 			"()[Ljava/lang/reflect/TypeVariable;"
-		).object<jarray>();
+		);
 	}
 	jint Constructor::hashCode()
 	{
@@ -140,13 +150,13 @@ namespace java::lang::reflect
 			"()Z"
 		);
 	}
-	jobject Constructor::newInstance(jobjectArray arg0)
+	JObject Constructor::newInstance(JObjectArray arg0)
 	{
 		return callObjectMethod(
 			"newInstance",
 			"([Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0
-		).object<jobject>();
+			arg0.object<jobjectArray>()
+		);
 	}
 	void Constructor::setAccessible(jboolean arg0)
 	{
@@ -156,19 +166,19 @@ namespace java::lang::reflect
 			arg0
 		);
 	}
-	jstring Constructor::toGenericString()
+	JString Constructor::toGenericString()
 	{
 		return callObjectMethod(
 			"toGenericString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Constructor::toString()
+	JString Constructor::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::lang::reflect
 

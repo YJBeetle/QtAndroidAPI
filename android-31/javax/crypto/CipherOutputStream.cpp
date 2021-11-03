@@ -1,3 +1,4 @@
+#include "../../JByteArray.hpp"
 #include "../../java/io/OutputStream.hpp"
 #include "./Cipher.hpp"
 #include "./CipherOutputStream.hpp"
@@ -33,12 +34,12 @@ namespace javax::crypto
 			"()V"
 		);
 	}
-	void CipherOutputStream::write(jbyteArray arg0)
+	void CipherOutputStream::write(JByteArray arg0)
 	{
 		callMethod<void>(
 			"write",
 			"([B)V",
-			arg0
+			arg0.object<jbyteArray>()
 		);
 	}
 	void CipherOutputStream::write(jint arg0)
@@ -49,12 +50,12 @@ namespace javax::crypto
 			arg0
 		);
 	}
-	void CipherOutputStream::write(jbyteArray arg0, jint arg1, jint arg2)
+	void CipherOutputStream::write(JByteArray arg0, jint arg1, jint arg2)
 	{
 		callMethod<void>(
 			"write",
 			"([BII)V",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1,
 			arg2
 		);

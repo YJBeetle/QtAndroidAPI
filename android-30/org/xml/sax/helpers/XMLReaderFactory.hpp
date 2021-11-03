@@ -2,10 +2,13 @@
 
 #include "../../../../JObject.hpp"
 
+class JClass;
 namespace java::lang
 {
 	class ClassLoader;
 }
+class JObject;
+class JString;
 
 namespace org::xml::sax::helpers
 {
@@ -22,7 +25,7 @@ namespace org::xml::sax::helpers
 		
 		// Methods
 		static JObject createXMLReader();
-		static JObject createXMLReader(jstring arg0);
+		static JObject createXMLReader(JString arg0);
 	};
 } // namespace org::xml::sax::helpers
 

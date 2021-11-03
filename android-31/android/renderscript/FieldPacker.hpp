@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JByteArray;
 namespace android::renderscript
 {
 	class BaseObj;
@@ -103,7 +104,7 @@ namespace android::renderscript
 		FieldPacker(QAndroidJniObject obj);
 		
 		// Constructors
-		FieldPacker(jbyteArray arg0);
+		FieldPacker(JByteArray arg0);
 		FieldPacker(jint arg0);
 		
 		// Methods
@@ -153,7 +154,7 @@ namespace android::renderscript
 		void addU8(android::renderscript::Short4 arg0);
 		void addU8(jshort arg0);
 		void align(jint arg0);
-		jbyteArray getData();
+		JByteArray getData();
 		void reset();
 		void reset(jint arg0);
 		void skip(jint arg0);

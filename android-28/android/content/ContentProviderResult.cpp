@@ -1,6 +1,7 @@
 #include "../net/Uri.hpp"
 #include "../os/Parcel.hpp"
 #include "../../java/lang/Integer.hpp"
+#include "../../JString.hpp"
 #include "./ContentProviderResult.hpp"
 
 namespace android::content
@@ -60,12 +61,12 @@ namespace android::content
 			"()I"
 		);
 	}
-	jstring ContentProviderResult::toString()
+	JString ContentProviderResult::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void ContentProviderResult::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

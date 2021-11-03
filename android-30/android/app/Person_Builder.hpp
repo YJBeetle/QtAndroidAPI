@@ -10,6 +10,8 @@ namespace android::graphics::drawable
 {
 	class Icon;
 }
+class JString;
+class JString;
 
 namespace android::app
 {
@@ -30,9 +32,9 @@ namespace android::app
 		android::app::Person_Builder setBot(jboolean arg0);
 		android::app::Person_Builder setIcon(android::graphics::drawable::Icon arg0);
 		android::app::Person_Builder setImportant(jboolean arg0);
-		android::app::Person_Builder setKey(jstring arg0);
-		android::app::Person_Builder setName(jstring arg0);
-		android::app::Person_Builder setUri(jstring arg0);
+		android::app::Person_Builder setKey(JString arg0);
+		android::app::Person_Builder setName(JString arg0);
+		android::app::Person_Builder setUri(JString arg0);
 	};
 } // namespace android::app
 

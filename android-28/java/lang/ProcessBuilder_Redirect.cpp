@@ -1,4 +1,5 @@
 #include "../io/File.hpp"
+#include "../../JObject.hpp"
 #include "./ProcessBuilder_Redirect_Type.hpp"
 #include "./ProcessBuilder_Redirect.hpp"
 
@@ -63,12 +64,12 @@ namespace java::lang
 			arg0.object()
 		);
 	}
-	jboolean ProcessBuilder_Redirect::equals(jobject arg0)
+	jboolean ProcessBuilder_Redirect::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	java::io::File ProcessBuilder_Redirect::file()

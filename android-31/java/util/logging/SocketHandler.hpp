@@ -1,9 +1,8 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "./Handler.hpp"
 #include "./StreamHandler.hpp"
 
+class JString;
 namespace java::net
 {
 	class Socket;
@@ -26,7 +25,7 @@ namespace java::util::logging
 		
 		// Constructors
 		SocketHandler();
-		SocketHandler(jstring arg0, jint arg1);
+		SocketHandler(JString arg0, jint arg1);
 		
 		// Methods
 		void close();

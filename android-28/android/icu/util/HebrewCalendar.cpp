@@ -1,5 +1,6 @@
 #include "./TimeZone.hpp"
 #include "./ULocale.hpp"
+#include "../../../JString.hpp"
 #include "../../../java/util/Date.hpp"
 #include "../../../java/util/Locale.hpp"
 #include "./HebrewCalendar.hpp"
@@ -176,12 +177,12 @@ namespace android::icu::util
 			arg1
 		);
 	}
-	jstring HebrewCalendar::getType()
+	JString HebrewCalendar::getType()
 	{
 		return callObjectMethod(
 			"getType",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void HebrewCalendar::roll(jint arg0, jint arg1)
 	{

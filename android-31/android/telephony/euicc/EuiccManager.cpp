@@ -3,34 +3,35 @@
 #include "../../content/Intent.hpp"
 #include "./DownloadableSubscription.hpp"
 #include "./EuiccInfo.hpp"
+#include "../../../JString.hpp"
 #include "./EuiccManager.hpp"
 
 namespace android::telephony::euicc
 {
 	// Fields
-	jstring EuiccManager::ACTION_MANAGE_EMBEDDED_SUBSCRIPTIONS()
+	JString EuiccManager::ACTION_MANAGE_EMBEDDED_SUBSCRIPTIONS()
 	{
 		return getStaticObjectField(
 			"android.telephony.euicc.EuiccManager",
 			"ACTION_MANAGE_EMBEDDED_SUBSCRIPTIONS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring EuiccManager::ACTION_NOTIFY_CARRIER_SETUP_INCOMPLETE()
+	JString EuiccManager::ACTION_NOTIFY_CARRIER_SETUP_INCOMPLETE()
 	{
 		return getStaticObjectField(
 			"android.telephony.euicc.EuiccManager",
 			"ACTION_NOTIFY_CARRIER_SETUP_INCOMPLETE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring EuiccManager::ACTION_START_EUICC_ACTIVATION()
+	JString EuiccManager::ACTION_START_EUICC_ACTIVATION()
 	{
 		return getStaticObjectField(
 			"android.telephony.euicc.EuiccManager",
 			"ACTION_START_EUICC_ACTIVATION",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint EuiccManager::EMBEDDED_SUBSCRIPTION_RESULT_ERROR()
 	{
@@ -172,69 +173,69 @@ namespace android::telephony::euicc
 			"ERROR_UNSUPPORTED_VERSION"
 		);
 	}
-	jstring EuiccManager::EXTRA_EMBEDDED_SUBSCRIPTION_DETAILED_CODE()
+	JString EuiccManager::EXTRA_EMBEDDED_SUBSCRIPTION_DETAILED_CODE()
 	{
 		return getStaticObjectField(
 			"android.telephony.euicc.EuiccManager",
 			"EXTRA_EMBEDDED_SUBSCRIPTION_DETAILED_CODE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring EuiccManager::EXTRA_EMBEDDED_SUBSCRIPTION_DOWNLOADABLE_SUBSCRIPTION()
+	JString EuiccManager::EXTRA_EMBEDDED_SUBSCRIPTION_DOWNLOADABLE_SUBSCRIPTION()
 	{
 		return getStaticObjectField(
 			"android.telephony.euicc.EuiccManager",
 			"EXTRA_EMBEDDED_SUBSCRIPTION_DOWNLOADABLE_SUBSCRIPTION",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring EuiccManager::EXTRA_EMBEDDED_SUBSCRIPTION_ERROR_CODE()
+	JString EuiccManager::EXTRA_EMBEDDED_SUBSCRIPTION_ERROR_CODE()
 	{
 		return getStaticObjectField(
 			"android.telephony.euicc.EuiccManager",
 			"EXTRA_EMBEDDED_SUBSCRIPTION_ERROR_CODE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring EuiccManager::EXTRA_EMBEDDED_SUBSCRIPTION_OPERATION_CODE()
+	JString EuiccManager::EXTRA_EMBEDDED_SUBSCRIPTION_OPERATION_CODE()
 	{
 		return getStaticObjectField(
 			"android.telephony.euicc.EuiccManager",
 			"EXTRA_EMBEDDED_SUBSCRIPTION_OPERATION_CODE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring EuiccManager::EXTRA_EMBEDDED_SUBSCRIPTION_SMDX_REASON_CODE()
+	JString EuiccManager::EXTRA_EMBEDDED_SUBSCRIPTION_SMDX_REASON_CODE()
 	{
 		return getStaticObjectField(
 			"android.telephony.euicc.EuiccManager",
 			"EXTRA_EMBEDDED_SUBSCRIPTION_SMDX_REASON_CODE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring EuiccManager::EXTRA_EMBEDDED_SUBSCRIPTION_SMDX_SUBJECT_CODE()
+	JString EuiccManager::EXTRA_EMBEDDED_SUBSCRIPTION_SMDX_SUBJECT_CODE()
 	{
 		return getStaticObjectField(
 			"android.telephony.euicc.EuiccManager",
 			"EXTRA_EMBEDDED_SUBSCRIPTION_SMDX_SUBJECT_CODE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring EuiccManager::EXTRA_USE_QR_SCANNER()
+	JString EuiccManager::EXTRA_USE_QR_SCANNER()
 	{
 		return getStaticObjectField(
 			"android.telephony.euicc.EuiccManager",
 			"EXTRA_USE_QR_SCANNER",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring EuiccManager::META_DATA_CARRIER_ICON()
+	JString EuiccManager::META_DATA_CARRIER_ICON()
 	{
 		return getStaticObjectField(
 			"android.telephony.euicc.EuiccManager",
 			"META_DATA_CARRIER_ICON",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint EuiccManager::OPERATION_APDU()
 	{
@@ -347,12 +348,12 @@ namespace android::telephony::euicc
 			arg2.object()
 		);
 	}
-	jstring EuiccManager::getEid()
+	JString EuiccManager::getEid()
 	{
 		return callObjectMethod(
 			"getEid",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::telephony::euicc::EuiccInfo EuiccManager::getEuiccInfo()
 	{
@@ -388,13 +389,13 @@ namespace android::telephony::euicc
 			arg1.object()
 		);
 	}
-	void EuiccManager::updateSubscriptionNickname(jint arg0, jstring arg1, android::app::PendingIntent arg2)
+	void EuiccManager::updateSubscriptionNickname(jint arg0, JString arg1, android::app::PendingIntent arg2)
 	{
 		callMethod<void>(
 			"updateSubscriptionNickname",
 			"(ILjava/lang/String;Landroid/app/PendingIntent;)V",
 			arg0,
-			arg1,
+			arg1.object<jstring>(),
 			arg2.object()
 		);
 	}

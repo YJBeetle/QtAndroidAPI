@@ -1,6 +1,9 @@
+#include "../../JFloatArray.hpp"
 #include "./Matrix_ScaleToFit.hpp"
 #include "./RectF.hpp"
 #include "../../java/io/PrintWriter.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./Matrix.hpp"
 
 namespace android::graphics
@@ -103,20 +106,20 @@ namespace android::graphics
 			arg0.object()
 		);
 	}
-	jboolean Matrix::equals(jobject arg0)
+	jboolean Matrix::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	void Matrix::getValues(jfloatArray arg0)
+	void Matrix::getValues(JFloatArray arg0)
 	{
 		callMethod<void>(
 			"getValues",
 			"([F)V",
-			arg0
+			arg0.object<jfloatArray>()
 		);
 	}
 	jint Matrix::hashCode()
@@ -148,31 +151,31 @@ namespace android::graphics
 			"()Z"
 		);
 	}
-	void Matrix::mapPoints(jfloatArray arg0)
+	void Matrix::mapPoints(JFloatArray arg0)
 	{
 		callMethod<void>(
 			"mapPoints",
 			"([F)V",
-			arg0
+			arg0.object<jfloatArray>()
 		);
 	}
-	void Matrix::mapPoints(jfloatArray arg0, jfloatArray arg1)
+	void Matrix::mapPoints(JFloatArray arg0, JFloatArray arg1)
 	{
 		callMethod<void>(
 			"mapPoints",
 			"([F[F)V",
-			arg0,
-			arg1
+			arg0.object<jfloatArray>(),
+			arg1.object<jfloatArray>()
 		);
 	}
-	void Matrix::mapPoints(jfloatArray arg0, jint arg1, jfloatArray arg2, jint arg3, jint arg4)
+	void Matrix::mapPoints(JFloatArray arg0, jint arg1, JFloatArray arg2, jint arg3, jint arg4)
 	{
 		callMethod<void>(
 			"mapPoints",
 			"([FI[FII)V",
-			arg0,
+			arg0.object<jfloatArray>(),
 			arg1,
-			arg2,
+			arg2.object<jfloatArray>(),
 			arg3,
 			arg4
 		);
@@ -202,31 +205,31 @@ namespace android::graphics
 			arg1.object()
 		);
 	}
-	void Matrix::mapVectors(jfloatArray arg0)
+	void Matrix::mapVectors(JFloatArray arg0)
 	{
 		callMethod<void>(
 			"mapVectors",
 			"([F)V",
-			arg0
+			arg0.object<jfloatArray>()
 		);
 	}
-	void Matrix::mapVectors(jfloatArray arg0, jfloatArray arg1)
+	void Matrix::mapVectors(JFloatArray arg0, JFloatArray arg1)
 	{
 		callMethod<void>(
 			"mapVectors",
 			"([F[F)V",
-			arg0,
-			arg1
+			arg0.object<jfloatArray>(),
+			arg1.object<jfloatArray>()
 		);
 	}
-	void Matrix::mapVectors(jfloatArray arg0, jint arg1, jfloatArray arg2, jint arg3, jint arg4)
+	void Matrix::mapVectors(JFloatArray arg0, jint arg1, JFloatArray arg2, jint arg3, jint arg4)
 	{
 		callMethod<void>(
 			"mapVectors",
 			"([FI[FII)V",
-			arg0,
+			arg0.object<jfloatArray>(),
 			arg1,
-			arg2,
+			arg2.object<jfloatArray>(),
 			arg3,
 			arg4
 		);
@@ -412,14 +415,14 @@ namespace android::graphics
 			arg1.object()
 		);
 	}
-	jboolean Matrix::setPolyToPoly(jfloatArray arg0, jint arg1, jfloatArray arg2, jint arg3, jint arg4)
+	jboolean Matrix::setPolyToPoly(JFloatArray arg0, jint arg1, JFloatArray arg2, jint arg3, jint arg4)
 	{
 		return callMethod<jboolean>(
 			"setPolyToPoly",
 			"([FI[FII)Z",
-			arg0,
+			arg0.object<jfloatArray>(),
 			arg1,
-			arg2,
+			arg2.object<jfloatArray>(),
 			arg3,
 			arg4
 		);
@@ -521,27 +524,27 @@ namespace android::graphics
 			arg1
 		);
 	}
-	void Matrix::setValues(jfloatArray arg0)
+	void Matrix::setValues(JFloatArray arg0)
 	{
 		callMethod<void>(
 			"setValues",
 			"([F)V",
-			arg0
+			arg0.object<jfloatArray>()
 		);
 	}
-	jstring Matrix::toShortString()
+	JString Matrix::toShortString()
 	{
 		return callObjectMethod(
 			"toShortString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Matrix::toString()
+	JString Matrix::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::graphics
 

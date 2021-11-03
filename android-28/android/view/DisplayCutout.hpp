@@ -6,6 +6,8 @@ namespace android::graphics
 {
 	class Rect;
 }
+class JObject;
+class JString;
 
 namespace android::view
 {
@@ -22,14 +24,14 @@ namespace android::view
 		DisplayCutout(android::graphics::Rect arg0, JObject arg1);
 		
 		// Methods
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		JObject getBoundingRects();
 		jint getSafeInsetBottom();
 		jint getSafeInsetLeft();
 		jint getSafeInsetRight();
 		jint getSafeInsetTop();
 		jint hashCode();
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::view
 

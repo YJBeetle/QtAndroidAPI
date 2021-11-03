@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../../../JObject.hpp"
 #include "./SaProposal.hpp"
 
+class JObject;
 
 namespace android::net::ipsec::ike
 {
@@ -21,7 +21,7 @@ namespace android::net::ipsec::ike
 		static JObject getSupportedEncryptionAlgorithms();
 		static JObject getSupportedIntegrityAlgorithms();
 		static JObject getSupportedPseudorandomFunctions();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		JObject getPseudorandomFunctions();
 		jint hashCode();
 	};

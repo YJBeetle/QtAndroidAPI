@@ -1,6 +1,8 @@
+#include "../../../JArray.hpp"
 #include "../text/DateFormat.hpp"
 #include "./TimeZone.hpp"
 #include "./ULocale.hpp"
+#include "../../../JString.hpp"
 #include "../../../java/util/Date.hpp"
 #include "../../../java/util/Locale.hpp"
 #include "./ChineseCalendar.hpp"
@@ -111,12 +113,12 @@ namespace android::icu::util
 			arg1
 		);
 	}
-	jstring ChineseCalendar::getType()
+	JString ChineseCalendar::getType()
 	{
 		return callObjectMethod(
 			"getType",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void ChineseCalendar::roll(jint arg0, jint arg1)
 	{

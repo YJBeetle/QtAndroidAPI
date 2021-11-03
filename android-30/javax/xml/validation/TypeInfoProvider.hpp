@@ -2,7 +2,6 @@
 
 #include "../../../JObject.hpp"
 
-
 namespace javax::xml::validation
 {
 	class TypeInfoProvider : public JObject

@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./ArithmeticException.hpp"
 
 namespace java::lang
@@ -13,11 +14,11 @@ namespace java::lang
 			"java.lang.ArithmeticException",
 			"()V"
 		) {}
-	ArithmeticException::ArithmeticException(jstring arg0)
+	ArithmeticException::ArithmeticException(JString arg0)
 		: java::lang::RuntimeException(
 			"java.lang.ArithmeticException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

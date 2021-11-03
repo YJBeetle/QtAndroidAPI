@@ -1,4 +1,5 @@
 #include "../net/Uri.hpp"
+#include "../../JString.hpp"
 #include "./MediaStore_Audio_Artists_Albums.hpp"
 
 namespace android::provider
@@ -16,13 +17,13 @@ namespace android::provider
 		) {}
 	
 	// Methods
-	android::net::Uri MediaStore_Audio_Artists_Albums::getContentUri(jstring arg0, jlong arg1)
+	android::net::Uri MediaStore_Audio_Artists_Albums::getContentUri(JString arg0, jlong arg1)
 	{
 		return callStaticObjectMethod(
 			"android.provider.MediaStore$Audio$Artists$Albums",
 			"getContentUri",
 			"(Ljava/lang/String;J)Landroid/net/Uri;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}

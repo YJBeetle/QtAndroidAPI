@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./NoSuchFileException.hpp"
 
 namespace java::nio::file
@@ -8,19 +9,19 @@ namespace java::nio::file
 	NoSuchFileException::NoSuchFileException(QAndroidJniObject obj) : java::nio::file::FileSystemException(obj) {}
 	
 	// Constructors
-	NoSuchFileException::NoSuchFileException(jstring arg0)
+	NoSuchFileException::NoSuchFileException(JString arg0)
 		: java::nio::file::FileSystemException(
 			"java.nio.file.NoSuchFileException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	NoSuchFileException::NoSuchFileException(jstring arg0, jstring arg1, jstring arg2)
+	NoSuchFileException::NoSuchFileException(JString arg0, JString arg1, JString arg2)
 		: java::nio::file::FileSystemException(
 			"java.nio.file.NoSuchFileException",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1,
-			arg2
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2.object<jstring>()
 		) {}
 	
 	// Methods

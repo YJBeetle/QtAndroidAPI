@@ -1,5 +1,6 @@
 #include "../content/Context.hpp"
 #include "../view/MotionEvent.hpp"
+#include "../../JString.hpp"
 #include "./ZoomControls.hpp"
 
 namespace android::widget
@@ -25,12 +26,12 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	jstring ZoomControls::getAccessibilityClassName()
+	JString ZoomControls::getAccessibilityClassName()
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	jboolean ZoomControls::hasFocus()
 	{

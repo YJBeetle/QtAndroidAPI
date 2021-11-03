@@ -1,7 +1,10 @@
+#include "../../JCharArray.hpp"
 #include "../os/Parcel.hpp"
 #include "./KeyCharacterMap.hpp"
 #include "./KeyCharacterMap_KeyData.hpp"
 #include "./KeyEvent_DispatcherState.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./KeyEvent.hpp"
 
 namespace android::view
@@ -2316,12 +2319,12 @@ namespace android::view
 			arg1,
 			arg2
 		) {}
-	KeyEvent::KeyEvent(jlong arg0, jstring arg1, jint arg2, jint arg3)
+	KeyEvent::KeyEvent(jlong arg0, JString arg1, jint arg2, jint arg3)
 		: android::view::InputEvent(
 			"android.view.KeyEvent",
 			"(JLjava/lang/String;II)V",
 			arg0,
-			arg1,
+			arg1.object<jstring>(),
 			arg2,
 			arg3
 		) {}
@@ -2477,23 +2480,23 @@ namespace android::view
 			arg0
 		);
 	}
-	jint KeyEvent::keyCodeFromString(jstring arg0)
+	jint KeyEvent::keyCodeFromString(JString arg0)
 	{
 		return callStaticMethod<jint>(
 			"android.view.KeyEvent",
 			"keyCodeFromString",
 			"(Ljava/lang/String;)I",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jstring KeyEvent::keyCodeToString(jint arg0)
+	JString KeyEvent::keyCodeToString(jint arg0)
 	{
 		return callStaticObjectMethod(
 			"android.view.KeyEvent",
 			"keyCodeToString",
 			"(I)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
 	jboolean KeyEvent::metaStateHasModifiers(jint arg0, jint arg1)
 	{
@@ -2531,14 +2534,14 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	jboolean KeyEvent::dispatch(JObject arg0, android::view::KeyEvent_DispatcherState arg1, jobject arg2)
+	jboolean KeyEvent::dispatch(JObject arg0, android::view::KeyEvent_DispatcherState arg1, JObject arg2)
 	{
 		return callMethod<jboolean>(
 			"dispatch",
 			"(Landroid/view/KeyEvent$Callback;Landroid/view/KeyEvent$DispatcherState;Ljava/lang/Object;)Z",
 			arg0.object(),
 			arg1.object(),
-			arg2
+			arg2.object<jobject>()
 		);
 	}
 	jint KeyEvent::getAction()
@@ -2548,12 +2551,12 @@ namespace android::view
 			"()I"
 		);
 	}
-	jstring KeyEvent::getCharacters()
+	JString KeyEvent::getCharacters()
 	{
 		return callObjectMethod(
 			"getCharacters",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint KeyEvent::getDeviceId()
 	{
@@ -2612,20 +2615,20 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	jchar KeyEvent::getMatch(jcharArray arg0)
+	jchar KeyEvent::getMatch(JCharArray arg0)
 	{
 		return callMethod<jchar>(
 			"getMatch",
 			"([C)C",
-			arg0
+			arg0.object<jcharArray>()
 		);
 	}
-	jchar KeyEvent::getMatch(jcharArray arg0, jint arg1)
+	jchar KeyEvent::getMatch(JCharArray arg0, jint arg1)
 	{
 		return callMethod<jchar>(
 			"getMatch",
 			"([CI)C",
-			arg0,
+			arg0.object<jcharArray>(),
 			arg1
 		);
 	}
@@ -2814,12 +2817,12 @@ namespace android::view
 			"()V"
 		);
 	}
-	jstring KeyEvent::toString()
+	JString KeyEvent::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void KeyEvent::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

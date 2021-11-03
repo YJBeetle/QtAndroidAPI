@@ -2,6 +2,8 @@
 #include "../../graphics/Bitmap.hpp"
 #include "../../net/Uri.hpp"
 #include "../../os/Parcel.hpp"
+#include "../../../JString.hpp"
+#include "../../../JString.hpp"
 #include "./PackageInstaller_SessionInfo.hpp"
 
 namespace android::content::pm
@@ -43,19 +45,19 @@ namespace android::content::pm
 			"()Landroid/graphics/Bitmap;"
 		);
 	}
-	jstring PackageInstaller_SessionInfo::getAppLabel()
+	JString PackageInstaller_SessionInfo::getAppLabel()
 	{
 		return callObjectMethod(
 			"getAppLabel",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageInstaller_SessionInfo::getAppPackageName()
+	JString PackageInstaller_SessionInfo::getAppPackageName()
 	{
 		return callObjectMethod(
 			"getAppPackageName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint PackageInstaller_SessionInfo::getInstallLocation()
 	{
@@ -71,12 +73,12 @@ namespace android::content::pm
 			"()I"
 		);
 	}
-	jstring PackageInstaller_SessionInfo::getInstallerPackageName()
+	JString PackageInstaller_SessionInfo::getInstallerPackageName()
 	{
 		return callObjectMethod(
 			"getInstallerPackageName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint PackageInstaller_SessionInfo::getMode()
 	{

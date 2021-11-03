@@ -2,6 +2,7 @@
 #include "../CaptureRequest.hpp"
 #include "./InputConfiguration.hpp"
 #include "../../../os/Parcel.hpp"
+#include "../../../../JObject.hpp"
 #include "./SessionConfiguration.hpp"
 
 namespace android::hardware::camera2::params
@@ -52,12 +53,12 @@ namespace android::hardware::camera2::params
 			"()I"
 		);
 	}
-	jboolean SessionConfiguration::equals(jobject arg0)
+	jboolean SessionConfiguration::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	JObject SessionConfiguration::getExecutor()

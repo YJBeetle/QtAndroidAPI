@@ -6,6 +6,8 @@ namespace android::os
 {
 	class Parcel;
 }
+class JObject;
+class JString;
 
 namespace android::hardware::usb
 {
@@ -23,15 +25,15 @@ namespace android::hardware::usb
 		
 		// Methods
 		jint describeContents();
-		jboolean equals(jobject arg0);
-		jstring getDescription();
-		jstring getManufacturer();
-		jstring getModel();
-		jstring getSerial();
-		jstring getUri();
-		jstring getVersion();
+		jboolean equals(JObject arg0);
+		JString getDescription();
+		JString getManufacturer();
+		JString getModel();
+		JString getSerial();
+		JString getUri();
+		JString getVersion();
 		jint hashCode();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::hardware::usb

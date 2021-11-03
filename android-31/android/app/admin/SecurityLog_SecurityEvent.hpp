@@ -6,6 +6,7 @@ namespace android::os
 {
 	class Parcel;
 }
+class JObject;
 
 namespace android::app::admin
 {
@@ -23,8 +24,8 @@ namespace android::app::admin
 		
 		// Methods
 		jint describeContents();
-		jboolean equals(jobject arg0);
-		jobject getData();
+		jboolean equals(JObject arg0);
+		JObject getData();
 		jlong getId();
 		jint getLogLevel();
 		jint getTag();

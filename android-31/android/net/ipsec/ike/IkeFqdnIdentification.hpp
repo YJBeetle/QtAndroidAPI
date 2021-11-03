@@ -1,8 +1,9 @@
 #pragma once
 
-#include "../../../../JObject.hpp"
 #include "./IkeIdentification.hpp"
 
+class JObject;
+class JString;
 
 namespace android::net::ipsec::ike
 {
@@ -10,17 +11,17 @@ namespace android::net::ipsec::ike
 	{
 	public:
 		// Fields
-		jstring fqdn();
+		JString fqdn();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit IkeFqdnIdentification(const char *className, const char *sig, Ts...agv) : android::net::ipsec::ike::IkeIdentification(className, sig, std::forward<Ts>(agv)...) {}
 		IkeFqdnIdentification(QAndroidJniObject obj);
 		
 		// Constructors
-		IkeFqdnIdentification(jstring arg0);
+		IkeFqdnIdentification(JString arg0);
 		
 		// Methods
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint hashCode();
 	};
 } // namespace android::net::ipsec::ike

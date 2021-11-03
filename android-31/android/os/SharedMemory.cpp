@@ -1,4 +1,5 @@
 #include "./Parcel.hpp"
+#include "../../JString.hpp"
 #include "../../java/nio/ByteBuffer.hpp"
 #include "./SharedMemory.hpp"
 
@@ -20,13 +21,13 @@ namespace android::os
 	// Constructors
 	
 	// Methods
-	android::os::SharedMemory SharedMemory::create(jstring arg0, jint arg1)
+	android::os::SharedMemory SharedMemory::create(JString arg0, jint arg1)
 	{
 		return callStaticObjectMethod(
 			"android.os.SharedMemory",
 			"create",
 			"(Ljava/lang/String;I)Landroid/os/SharedMemory;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}

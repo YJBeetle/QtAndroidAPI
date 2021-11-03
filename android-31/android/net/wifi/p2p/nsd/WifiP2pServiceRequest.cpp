@@ -1,4 +1,6 @@
 #include "../../../../os/Parcel.hpp"
+#include "../../../../../JObject.hpp"
+#include "../../../../../JString.hpp"
 #include "./WifiP2pServiceRequest.hpp"
 
 namespace android::net::wifi::p2p::nsd
@@ -20,14 +22,14 @@ namespace android::net::wifi::p2p::nsd
 			arg0
 		);
 	}
-	android::net::wifi::p2p::nsd::WifiP2pServiceRequest WifiP2pServiceRequest::newInstance(jint arg0, jstring arg1)
+	android::net::wifi::p2p::nsd::WifiP2pServiceRequest WifiP2pServiceRequest::newInstance(jint arg0, JString arg1)
 	{
 		return callStaticObjectMethod(
 			"android.net.wifi.p2p.nsd.WifiP2pServiceRequest",
 			"newInstance",
 			"(ILjava/lang/String;)Landroid/net/wifi/p2p/nsd/WifiP2pServiceRequest;",
 			arg0,
-			arg1
+			arg1.object<jstring>()
 		);
 	}
 	jint WifiP2pServiceRequest::describeContents()
@@ -37,12 +39,12 @@ namespace android::net::wifi::p2p::nsd
 			"()I"
 		);
 	}
-	jboolean WifiP2pServiceRequest::equals(jobject arg0)
+	jboolean WifiP2pServiceRequest::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint WifiP2pServiceRequest::hashCode()

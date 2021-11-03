@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JString;
 
 namespace android::provider
 {
@@ -9,10 +10,10 @@ namespace android::provider
 	{
 	public:
 		// Fields
-		static jstring CONTENT_DIRECTORY();
-		static jstring DISPLAY_PHOTO();
-		static jstring PHOTO();
-		static jstring PHOTO_FILE_ID();
+		static JString CONTENT_DIRECTORY();
+		static JString DISPLAY_PHOTO();
+		static JString PHOTO();
+		static JString PHOTO_FILE_ID();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ContactsContract_Contacts_Photo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}

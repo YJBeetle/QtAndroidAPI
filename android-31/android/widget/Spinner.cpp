@@ -3,6 +3,7 @@
 #include "../graphics/drawable/Drawable.hpp"
 #include "../view/MotionEvent.hpp"
 #include "../view/PointerIcon.hpp"
+#include "../../JString.hpp"
 #include "./Spinner.hpp"
 
 namespace android::widget
@@ -87,12 +88,12 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	jstring Spinner::getAccessibilityClassName()
+	JString Spinner::getAccessibilityClassName()
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	jint Spinner::getBaseline()
 	{
@@ -143,12 +144,12 @@ namespace android::widget
 			"()Landroid/content/Context;"
 		);
 	}
-	jstring Spinner::getPrompt()
+	JString Spinner::getPrompt()
 	{
 		return callObjectMethod(
 			"getPrompt",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	void Spinner::onClick(JObject arg0, jint arg1)
 	{
@@ -270,12 +271,12 @@ namespace android::widget
 			arg0
 		);
 	}
-	void Spinner::setPrompt(jstring arg0)
+	void Spinner::setPrompt(JString arg0)
 	{
 		callMethod<void>(
 			"setPrompt",
 			"(Ljava/lang/CharSequence;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void Spinner::setPromptId(jint arg0)

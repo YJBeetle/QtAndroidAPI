@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JByteArray;
 namespace android::content
 {
 	class Intent;
@@ -35,7 +36,7 @@ namespace android::telephony::mbms
 		
 		// Methods
 		static android::telephony::mbms::DownloadRequest_Builder fromDownloadRequest(android::telephony::mbms::DownloadRequest arg0);
-		static android::telephony::mbms::DownloadRequest_Builder fromSerializedRequest(jbyteArray arg0);
+		static android::telephony::mbms::DownloadRequest_Builder fromSerializedRequest(JByteArray arg0);
 		android::telephony::mbms::DownloadRequest build();
 		android::telephony::mbms::DownloadRequest_Builder setAppIntent(android::content::Intent arg0);
 		android::telephony::mbms::DownloadRequest_Builder setServiceInfo(android::telephony::mbms::FileServiceInfo arg0);

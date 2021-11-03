@@ -1,5 +1,8 @@
+#include "../../../JByteArray.hpp"
 #include "../../io/InputStream.hpp"
 #include "../../io/OutputStream.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "../../lang/StringBuffer.hpp"
 #include "./Attributes.hpp"
 #include "./Manifest.hpp"
@@ -38,27 +41,27 @@ namespace java::util::jar
 			"()V"
 		);
 	}
-	jobject Manifest::clone()
+	JObject Manifest::clone()
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
-	jboolean Manifest::equals(jobject arg0)
+	jboolean Manifest::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	java::util::jar::Attributes Manifest::getAttributes(jstring arg0)
+	java::util::jar::Attributes Manifest::getAttributes(JString arg0)
 	{
 		return callObjectMethod(
 			"getAttributes",
 			"(Ljava/lang/String;)Ljava/util/jar/Attributes;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	JObject Manifest::getEntries()

@@ -1,16 +1,17 @@
 #include "../net/Uri.hpp"
+#include "../../JString.hpp"
 #include "./SimPhonebookContract.hpp"
 
 namespace android::provider
 {
 	// Fields
-	jstring SimPhonebookContract::AUTHORITY()
+	JString SimPhonebookContract::AUTHORITY()
 	{
 		return getStaticObjectField(
 			"android.provider.SimPhonebookContract",
 			"AUTHORITY",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::net::Uri SimPhonebookContract::AUTHORITY_URI()
 	{

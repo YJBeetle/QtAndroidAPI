@@ -2,6 +2,11 @@
 
 #include "../../../JObject.hpp"
 
+class JIntArray;
+class JArray;
+class JArray;
+class JArray;
+class JBooleanArray;
 namespace android::icu::text
 {
 	class CollationKey;
@@ -18,6 +23,8 @@ namespace android::icu::util
 {
 	class VersionInfo;
 }
+class JObject;
+class JString;
 namespace java::util
 {
 	class Locale;
@@ -45,32 +52,32 @@ namespace android::icu::text
 		// Constructors
 		
 		// Methods
-		static jarray getAvailableLocales();
-		static jarray getAvailableULocales();
-		static jstring getDisplayName(android::icu::util::ULocale arg0);
-		static jstring getDisplayName(java::util::Locale arg0);
-		static jstring getDisplayName(android::icu::util::ULocale arg0, android::icu::util::ULocale arg1);
-		static jstring getDisplayName(java::util::Locale arg0, java::util::Locale arg1);
-		static jintArray getEquivalentReorderCodes(jint arg0);
-		static android::icu::util::ULocale getFunctionalEquivalent(jstring arg0, android::icu::util::ULocale arg1);
-		static android::icu::util::ULocale getFunctionalEquivalent(jstring arg0, android::icu::util::ULocale arg1, jbooleanArray arg2);
+		static JArray getAvailableLocales();
+		static JArray getAvailableULocales();
+		static JString getDisplayName(android::icu::util::ULocale arg0);
+		static JString getDisplayName(java::util::Locale arg0);
+		static JString getDisplayName(android::icu::util::ULocale arg0, android::icu::util::ULocale arg1);
+		static JString getDisplayName(java::util::Locale arg0, java::util::Locale arg1);
+		static JIntArray getEquivalentReorderCodes(jint arg0);
+		static android::icu::util::ULocale getFunctionalEquivalent(JString arg0, android::icu::util::ULocale arg1);
+		static android::icu::util::ULocale getFunctionalEquivalent(JString arg0, android::icu::util::ULocale arg1, JBooleanArray arg2);
 		static android::icu::text::Collator getInstance();
 		static android::icu::text::Collator getInstance(android::icu::util::ULocale arg0);
 		static android::icu::text::Collator getInstance(java::util::Locale arg0);
-		static jarray getKeywordValues(jstring arg0);
-		static jarray getKeywordValuesForLocale(jstring arg0, android::icu::util::ULocale arg1, jboolean arg2);
-		static jarray getKeywords();
-		jobject clone();
+		static JArray getKeywordValues(JString arg0);
+		static JArray getKeywordValuesForLocale(JString arg0, android::icu::util::ULocale arg1, jboolean arg2);
+		static JArray getKeywords();
+		JObject clone();
 		android::icu::text::Collator cloneAsThawed();
-		jint compare(jobject arg0, jobject arg1);
-		jint compare(jstring arg0, jstring arg1);
-		jboolean equals(jobject arg0);
-		jboolean equals(jstring arg0, jstring arg1);
+		jint compare(JObject arg0, JObject arg1);
+		jint compare(JString arg0, JString arg1);
+		jboolean equals(JObject arg0);
+		jboolean equals(JString arg0, JString arg1);
 		android::icu::text::Collator freeze();
-		android::icu::text::CollationKey getCollationKey(jstring arg0);
+		android::icu::text::CollationKey getCollationKey(JString arg0);
 		jint getDecomposition();
 		jint getMaxVariable();
-		jintArray getReorderCodes();
+		JIntArray getReorderCodes();
 		jint getStrength();
 		android::icu::text::UnicodeSet getTailoredSet();
 		android::icu::util::VersionInfo getUCAVersion();
@@ -80,7 +87,7 @@ namespace android::icu::text
 		jboolean isFrozen();
 		void setDecomposition(jint arg0);
 		android::icu::text::Collator setMaxVariable(jint arg0);
-		void setReorderCodes(jintArray arg0);
+		void setReorderCodes(JIntArray arg0);
 		void setStrength(jint arg0);
 	};
 } // namespace android::icu::text

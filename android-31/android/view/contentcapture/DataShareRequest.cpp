@@ -1,5 +1,7 @@
 #include "../../content/LocusId.hpp"
 #include "../../os/Parcel.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./DataShareRequest.hpp"
 
 namespace android::view::contentcapture
@@ -18,12 +20,12 @@ namespace android::view::contentcapture
 	DataShareRequest::DataShareRequest(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	DataShareRequest::DataShareRequest(android::content::LocusId arg0, jstring arg1)
+	DataShareRequest::DataShareRequest(android::content::LocusId arg0, JString arg1)
 		: JObject(
 			"android.view.contentcapture.DataShareRequest",
 			"(Landroid/content/LocusId;Ljava/lang/String;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		) {}
 	
 	// Methods
@@ -34,12 +36,12 @@ namespace android::view::contentcapture
 			"()I"
 		);
 	}
-	jboolean DataShareRequest::equals(jobject arg0)
+	jboolean DataShareRequest::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	android::content::LocusId DataShareRequest::getLocusId()
@@ -49,19 +51,19 @@ namespace android::view::contentcapture
 			"()Landroid/content/LocusId;"
 		);
 	}
-	jstring DataShareRequest::getMimeType()
+	JString DataShareRequest::getMimeType()
 	{
 		return callObjectMethod(
 			"getMimeType",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DataShareRequest::getPackageName()
+	JString DataShareRequest::getPackageName()
 	{
 		return callObjectMethod(
 			"getPackageName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint DataShareRequest::hashCode()
 	{
@@ -70,12 +72,12 @@ namespace android::view::contentcapture
 			"()I"
 		);
 	}
-	jstring DataShareRequest::toString()
+	JString DataShareRequest::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void DataShareRequest::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

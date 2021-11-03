@@ -2,6 +2,8 @@
 
 #include "../../../../JObject.hpp"
 
+class JArray;
+class JString;
 
 namespace org::xml::sax::helpers
 {
@@ -19,28 +21,28 @@ namespace org::xml::sax::helpers
 		AttributesImpl(JObject arg0);
 		
 		// Methods
-		void addAttribute(jstring arg0, jstring arg1, jstring arg2, jstring arg3, jstring arg4);
+		void addAttribute(JString arg0, JString arg1, JString arg2, JString arg3, JString arg4);
 		void clear();
-		jint getIndex(jstring arg0);
-		jint getIndex(jstring arg0, jstring arg1);
+		jint getIndex(JString arg0);
+		jint getIndex(JString arg0, JString arg1);
 		jint getLength();
-		jstring getLocalName(jint arg0);
-		jstring getQName(jint arg0);
-		jstring getType(jint arg0);
-		jstring getType(jstring arg0);
-		jstring getType(jstring arg0, jstring arg1);
-		jstring getURI(jint arg0);
-		jstring getValue(jint arg0);
-		jstring getValue(jstring arg0);
-		jstring getValue(jstring arg0, jstring arg1);
+		JString getLocalName(jint arg0);
+		JString getQName(jint arg0);
+		JString getType(jint arg0);
+		JString getType(JString arg0);
+		JString getType(JString arg0, JString arg1);
+		JString getURI(jint arg0);
+		JString getValue(jint arg0);
+		JString getValue(JString arg0);
+		JString getValue(JString arg0, JString arg1);
 		void removeAttribute(jint arg0);
-		void setAttribute(jint arg0, jstring arg1, jstring arg2, jstring arg3, jstring arg4, jstring arg5);
+		void setAttribute(jint arg0, JString arg1, JString arg2, JString arg3, JString arg4, JString arg5);
 		void setAttributes(JObject arg0);
-		void setLocalName(jint arg0, jstring arg1);
-		void setQName(jint arg0, jstring arg1);
-		void setType(jint arg0, jstring arg1);
-		void setURI(jint arg0, jstring arg1);
-		void setValue(jint arg0, jstring arg1);
+		void setLocalName(jint arg0, JString arg1);
+		void setQName(jint arg0, JString arg1);
+		void setType(jint arg0, JString arg1);
+		void setURI(jint arg0, JString arg1);
+		void setValue(jint arg0, JString arg1);
 	};
 } // namespace org::xml::sax::helpers
 

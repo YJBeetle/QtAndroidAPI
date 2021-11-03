@@ -1,3 +1,4 @@
+#include "../../../JArray.hpp"
 #include "./Handler.hpp"
 #include "./Level.hpp"
 #include "./LogRecord.hpp"

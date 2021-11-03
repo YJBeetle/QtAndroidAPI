@@ -1,5 +1,7 @@
 #include "./IOException.hpp"
 #include "./ObjectInputStream.hpp"
+#include "../../JString.hpp"
+#include "../../JThrowable.hpp"
 #include "./UncheckedIOException.hpp"
 
 namespace java::io
@@ -16,11 +18,11 @@ namespace java::io
 			"(Ljava/io/IOException;)V",
 			arg0.object()
 		) {}
-	UncheckedIOException::UncheckedIOException(jstring arg0, java::io::IOException arg1)
+	UncheckedIOException::UncheckedIOException(JString arg0, java::io::IOException arg1)
 		: java::lang::RuntimeException(
 			"java.io.UncheckedIOException",
 			"(Ljava/lang/String;Ljava/io/IOException;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		) {}
 	

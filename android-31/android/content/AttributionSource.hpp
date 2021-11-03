@@ -10,6 +10,8 @@ namespace android::os
 {
 	class Parcel;
 }
+class JObject;
+class JString;
 
 namespace android::content
 {
@@ -29,14 +31,14 @@ namespace android::content
 		jboolean checkCallingUid();
 		jint describeContents();
 		void enforceCallingUid();
-		jboolean equals(jobject arg0);
-		jstring getAttributionTag();
+		jboolean equals(JObject arg0);
+		JString getAttributionTag();
 		android::content::AttributionSource getNext();
-		jstring getPackageName();
+		JString getPackageName();
 		jint getUid();
 		jint hashCode();
 		jboolean isTrusted(android::content::Context arg0);
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::content

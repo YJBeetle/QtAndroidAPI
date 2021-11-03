@@ -14,6 +14,8 @@ namespace android::icu::util
 {
 	class ULocale;
 }
+class JObject;
+class JString;
 namespace java::util
 {
 	class Locale;
@@ -56,28 +58,28 @@ namespace android::icu::text
 		static android::icu::text::DateTimePatternGenerator getInstance();
 		static android::icu::text::DateTimePatternGenerator getInstance(android::icu::util::ULocale arg0);
 		static android::icu::text::DateTimePatternGenerator getInstance(java::util::Locale arg0);
-		android::icu::text::DateTimePatternGenerator addPattern(jstring arg0, jboolean arg1, android::icu::text::DateTimePatternGenerator_PatternInfo arg2);
-		jobject clone();
+		android::icu::text::DateTimePatternGenerator addPattern(JString arg0, jboolean arg1, android::icu::text::DateTimePatternGenerator_PatternInfo arg2);
+		JObject clone();
 		android::icu::text::DateTimePatternGenerator cloneAsThawed();
 		android::icu::text::DateTimePatternGenerator freeze();
-		jstring getAppendItemFormat(jint arg0);
-		jstring getAppendItemName(jint arg0);
-		jstring getBaseSkeleton(jstring arg0);
+		JString getAppendItemFormat(jint arg0);
+		JString getAppendItemName(jint arg0);
+		JString getBaseSkeleton(JString arg0);
 		JObject getBaseSkeletons(JObject arg0);
-		jstring getBestPattern(jstring arg0);
-		jstring getBestPattern(jstring arg0, jint arg1);
-		jstring getDateTimeFormat();
-		jstring getDecimal();
-		jstring getFieldDisplayName(jint arg0, android::icu::text::DateTimePatternGenerator_DisplayWidth arg1);
-		jstring getSkeleton(jstring arg0);
+		JString getBestPattern(JString arg0);
+		JString getBestPattern(JString arg0, jint arg1);
+		JString getDateTimeFormat();
+		JString getDecimal();
+		JString getFieldDisplayName(jint arg0, android::icu::text::DateTimePatternGenerator_DisplayWidth arg1);
+		JString getSkeleton(JString arg0);
 		JObject getSkeletons(JObject arg0);
 		jboolean isFrozen();
-		jstring replaceFieldTypes(jstring arg0, jstring arg1);
-		jstring replaceFieldTypes(jstring arg0, jstring arg1, jint arg2);
-		void setAppendItemFormat(jint arg0, jstring arg1);
-		void setAppendItemName(jint arg0, jstring arg1);
-		void setDateTimeFormat(jstring arg0);
-		void setDecimal(jstring arg0);
+		JString replaceFieldTypes(JString arg0, JString arg1);
+		JString replaceFieldTypes(JString arg0, JString arg1, jint arg2);
+		void setAppendItemFormat(jint arg0, JString arg1);
+		void setAppendItemName(jint arg0, JString arg1);
+		void setDateTimeFormat(JString arg0);
+		void setDecimal(JString arg0);
 	};
 } // namespace android::icu::text
 

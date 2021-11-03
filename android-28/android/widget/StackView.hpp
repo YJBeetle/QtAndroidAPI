@@ -1,9 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../view/View.hpp"
-#include "../view/ViewGroup.hpp"
-#include "./AdapterView.hpp"
 #include "./AdapterViewAnimator.hpp"
 
 namespace android::content
@@ -18,6 +14,7 @@ namespace android::view
 {
 	class MotionEvent;
 }
+class JString;
 
 namespace android::widget
 {
@@ -38,7 +35,7 @@ namespace android::widget
 		
 		// Methods
 		void advance();
-		jstring getAccessibilityClassName();
+		JString getAccessibilityClassName();
 		jboolean onGenericMotionEvent(android::view::MotionEvent arg0);
 		jboolean onInterceptTouchEvent(android::view::MotionEvent arg0);
 		jboolean onTouchEvent(android::view::MotionEvent arg0);

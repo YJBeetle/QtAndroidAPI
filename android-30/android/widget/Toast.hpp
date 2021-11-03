@@ -14,6 +14,7 @@ namespace android::widget
 {
 	class Toast_Callback;
 }
+class JString;
 
 namespace android::widget
 {
@@ -33,7 +34,7 @@ namespace android::widget
 		
 		// Methods
 		static android::widget::Toast makeText(android::content::Context arg0, jint arg1, jint arg2);
-		static android::widget::Toast makeText(android::content::Context arg0, jstring arg1, jint arg2);
+		static android::widget::Toast makeText(android::content::Context arg0, JString arg1, jint arg2);
 		void addCallback(android::widget::Toast_Callback arg0);
 		void cancel();
 		jint getDuration();
@@ -48,7 +49,7 @@ namespace android::widget
 		void setGravity(jint arg0, jint arg1, jint arg2);
 		void setMargin(jfloat arg0, jfloat arg1);
 		void setText(jint arg0);
-		void setText(jstring arg0);
+		void setText(JString arg0);
 		void setView(android::view::View arg0);
 		void show();
 	};

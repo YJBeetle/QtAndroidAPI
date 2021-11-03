@@ -1,8 +1,10 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./Buffer.hpp"
 
+class JIntArray;
+class JObject;
+class JString;
 namespace java::nio
 {
 	class Buffer;
@@ -27,24 +29,24 @@ namespace java::nio
 		
 		// Methods
 		static java::nio::IntBuffer allocate(jint arg0);
-		static java::nio::IntBuffer wrap(jintArray arg0);
-		static java::nio::IntBuffer wrap(jintArray arg0, jint arg1, jint arg2);
-		jintArray array();
+		static java::nio::IntBuffer wrap(JIntArray arg0);
+		static java::nio::IntBuffer wrap(JIntArray arg0, jint arg1, jint arg2);
+		JIntArray array();
 		jint arrayOffset();
 		java::nio::IntBuffer asReadOnlyBuffer();
 		java::nio::IntBuffer clear();
 		java::nio::IntBuffer compact();
-		jint compareTo(jobject arg0);
+		jint compareTo(JObject arg0);
 		jint compareTo(java::nio::IntBuffer arg0);
 		java::nio::IntBuffer duplicate();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		java::nio::IntBuffer flip();
 		jint get();
 		jint get(jint arg0);
-		java::nio::IntBuffer get(jintArray arg0);
-		java::nio::IntBuffer get(jint arg0, jintArray arg1);
-		java::nio::IntBuffer get(jintArray arg0, jint arg1, jint arg2);
-		java::nio::IntBuffer get(jint arg0, jintArray arg1, jint arg2, jint arg3);
+		java::nio::IntBuffer get(JIntArray arg0);
+		java::nio::IntBuffer get(jint arg0, JIntArray arg1);
+		java::nio::IntBuffer get(JIntArray arg0, jint arg1, jint arg2);
+		java::nio::IntBuffer get(jint arg0, JIntArray arg1, jint arg2, jint arg3);
 		jboolean hasArray();
 		jint hashCode();
 		jboolean isDirect();
@@ -53,19 +55,19 @@ namespace java::nio
 		jint mismatch(java::nio::IntBuffer arg0);
 		java::nio::ByteOrder order();
 		java::nio::IntBuffer position(jint arg0);
-		java::nio::IntBuffer put(jintArray arg0);
+		java::nio::IntBuffer put(JIntArray arg0);
 		java::nio::IntBuffer put(jint arg0);
 		java::nio::IntBuffer put(java::nio::IntBuffer arg0);
-		java::nio::IntBuffer put(jint arg0, jintArray arg1);
+		java::nio::IntBuffer put(jint arg0, JIntArray arg1);
 		java::nio::IntBuffer put(jint arg0, jint arg1);
-		java::nio::IntBuffer put(jintArray arg0, jint arg1, jint arg2);
-		java::nio::IntBuffer put(jint arg0, jintArray arg1, jint arg2, jint arg3);
+		java::nio::IntBuffer put(JIntArray arg0, jint arg1, jint arg2);
+		java::nio::IntBuffer put(jint arg0, JIntArray arg1, jint arg2, jint arg3);
 		java::nio::IntBuffer put(jint arg0, java::nio::IntBuffer arg1, jint arg2, jint arg3);
 		java::nio::IntBuffer reset();
 		java::nio::IntBuffer rewind();
 		java::nio::IntBuffer slice();
 		java::nio::IntBuffer slice(jint arg0, jint arg1);
-		jstring toString();
+		JString toString();
 	};
 } // namespace java::nio
 

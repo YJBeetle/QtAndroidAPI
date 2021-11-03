@@ -1,3 +1,4 @@
+#include "../../JByteArray.hpp"
 #include "../content/ContentResolver.hpp"
 #include "../content/ContentValues.hpp"
 #include "../content/Context.hpp"
@@ -5,6 +6,7 @@
 #include "../graphics/BitmapFactory_Options.hpp"
 #include "../net/Uri.hpp"
 #include "../../java/io/InputStream.hpp"
+#include "../../JString.hpp"
 #include "./Contacts_People.hpp"
 
 namespace android::provider
@@ -18,21 +20,21 @@ namespace android::provider
 			"Landroid/net/Uri;"
 		);
 	}
-	jstring Contacts_People::CONTENT_ITEM_TYPE()
+	JString Contacts_People::CONTENT_ITEM_TYPE()
 	{
 		return getStaticObjectField(
 			"android.provider.Contacts$People",
 			"CONTENT_ITEM_TYPE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Contacts_People::CONTENT_TYPE()
+	JString Contacts_People::CONTENT_TYPE()
 	{
 		return getStaticObjectField(
 			"android.provider.Contacts$People",
 			"CONTENT_TYPE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::net::Uri Contacts_People::CONTENT_URI()
 	{
@@ -42,13 +44,13 @@ namespace android::provider
 			"Landroid/net/Uri;"
 		);
 	}
-	jstring Contacts_People::DEFAULT_SORT_ORDER()
+	JString Contacts_People::DEFAULT_SORT_ORDER()
 	{
 		return getStaticObjectField(
 			"android.provider.Contacts$People",
 			"DEFAULT_SORT_ORDER",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::net::Uri Contacts_People::DELETED_CONTENT_URI()
 	{
@@ -58,29 +60,29 @@ namespace android::provider
 			"Landroid/net/Uri;"
 		);
 	}
-	jstring Contacts_People::PRIMARY_EMAIL_ID()
+	JString Contacts_People::PRIMARY_EMAIL_ID()
 	{
 		return getStaticObjectField(
 			"android.provider.Contacts$People",
 			"PRIMARY_EMAIL_ID",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Contacts_People::PRIMARY_ORGANIZATION_ID()
+	JString Contacts_People::PRIMARY_ORGANIZATION_ID()
 	{
 		return getStaticObjectField(
 			"android.provider.Contacts$People",
 			"PRIMARY_ORGANIZATION_ID",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Contacts_People::PRIMARY_PHONE_ID()
+	JString Contacts_People::PRIMARY_PHONE_ID()
 	{
 		return getStaticObjectField(
 			"android.provider.Contacts$People",
 			"PRIMARY_PHONE_ID",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QAndroidJniObject forward
@@ -89,7 +91,7 @@ namespace android::provider
 	// Constructors
 	
 	// Methods
-	android::net::Uri Contacts_People::addToGroup(android::content::ContentResolver arg0, jlong arg1, jstring arg2)
+	android::net::Uri Contacts_People::addToGroup(android::content::ContentResolver arg0, jlong arg1, JString arg2)
 	{
 		return callStaticObjectMethod(
 			"android.provider.Contacts$People",
@@ -97,7 +99,7 @@ namespace android::provider
 			"(Landroid/content/ContentResolver;JLjava/lang/String;)Landroid/net/Uri;",
 			arg0.object(),
 			arg1,
-			arg2
+			arg2.object<jstring>()
 		);
 	}
 	android::net::Uri Contacts_People::addToGroup(android::content::ContentResolver arg0, jlong arg1, jlong arg2)
@@ -173,7 +175,7 @@ namespace android::provider
 			arg1
 		);
 	}
-	void Contacts_People::setPhotoData(android::content::ContentResolver arg0, android::net::Uri arg1, jbyteArray arg2)
+	void Contacts_People::setPhotoData(android::content::ContentResolver arg0, android::net::Uri arg1, JByteArray arg2)
 	{
 		callStaticMethod<void>(
 			"android.provider.Contacts$People",
@@ -181,7 +183,7 @@ namespace android::provider
 			"(Landroid/content/ContentResolver;Landroid/net/Uri;[B)V",
 			arg0.object(),
 			arg1.object(),
-			arg2
+			arg2.object<jbyteArray>()
 		);
 	}
 } // namespace android::provider

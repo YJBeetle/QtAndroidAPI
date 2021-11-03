@@ -1,8 +1,5 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "../../content/Context.hpp"
-#include "../../content/ContextWrapper.hpp"
 #include "../../app/Service.hpp"
 
 namespace android::app
@@ -25,6 +22,7 @@ namespace android::service::quicksettings
 {
 	class Tile;
 }
+class JString;
 
 namespace android::service::quicksettings
 {
@@ -32,9 +30,9 @@ namespace android::service::quicksettings
 	{
 	public:
 		// Fields
-		static jstring ACTION_QS_TILE();
-		static jstring ACTION_QS_TILE_PREFERENCES();
-		static jstring META_DATA_ACTIVE_TILE();
+		static JString ACTION_QS_TILE();
+		static JString ACTION_QS_TILE_PREFERENCES();
+		static JString META_DATA_ACTIVE_TILE();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit TileService(const char *className, const char *sig, Ts...agv) : android::app::Service(className, sig, std::forward<Ts>(agv)...) {}

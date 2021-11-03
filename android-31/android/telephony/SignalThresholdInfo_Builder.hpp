@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JIntArray;
 namespace android::telephony
 {
 	class SignalThresholdInfo;
@@ -25,7 +26,7 @@ namespace android::telephony
 		android::telephony::SignalThresholdInfo build();
 		android::telephony::SignalThresholdInfo_Builder setRadioAccessNetworkType(jint arg0);
 		android::telephony::SignalThresholdInfo_Builder setSignalMeasurementType(jint arg0);
-		android::telephony::SignalThresholdInfo_Builder setThresholds(jintArray arg0);
+		android::telephony::SignalThresholdInfo_Builder setThresholds(JIntArray arg0);
 	};
 } // namespace android::telephony
 

@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JByteArray;
+class JThrowable;
 
 namespace android::security
 {
@@ -19,9 +21,9 @@ namespace android::security
 		
 		// Methods
 		void onCanceled();
-		void onConfirmed(jbyteArray arg0);
+		void onConfirmed(JByteArray arg0);
 		void onDismissed();
-		void onError(jthrowable arg0);
+		void onError(JThrowable arg0);
 	};
 } // namespace android::security
 

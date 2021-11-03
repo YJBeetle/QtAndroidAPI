@@ -1,7 +1,9 @@
+#include "../../JByteArray.hpp"
 #include "./Parcel.hpp"
 #include "./ParcelFileDescriptor.hpp"
 #include "../../java/io/File.hpp"
 #include "../../java/io/InputStream.hpp"
+#include "../../JString.hpp"
 #include "./DropBoxManager_Entry.hpp"
 
 namespace android::os
@@ -20,44 +22,44 @@ namespace android::os
 	DropBoxManager_Entry::DropBoxManager_Entry(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	DropBoxManager_Entry::DropBoxManager_Entry(jstring arg0, jlong arg1)
+	DropBoxManager_Entry::DropBoxManager_Entry(JString arg0, jlong arg1)
 		: JObject(
 			"android.os.DropBoxManager$Entry",
 			"(Ljava/lang/String;J)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		) {}
-	DropBoxManager_Entry::DropBoxManager_Entry(jstring arg0, jlong arg1, jstring arg2)
+	DropBoxManager_Entry::DropBoxManager_Entry(JString arg0, jlong arg1, JString arg2)
 		: JObject(
 			"android.os.DropBoxManager$Entry",
 			"(Ljava/lang/String;JLjava/lang/String;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
-			arg2
+			arg2.object<jstring>()
 		) {}
-	DropBoxManager_Entry::DropBoxManager_Entry(jstring arg0, jlong arg1, jbyteArray arg2, jint arg3)
+	DropBoxManager_Entry::DropBoxManager_Entry(JString arg0, jlong arg1, JByteArray arg2, jint arg3)
 		: JObject(
 			"android.os.DropBoxManager$Entry",
 			"(Ljava/lang/String;J[BI)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
-			arg2,
+			arg2.object<jbyteArray>(),
 			arg3
 		) {}
-	DropBoxManager_Entry::DropBoxManager_Entry(jstring arg0, jlong arg1, android::os::ParcelFileDescriptor arg2, jint arg3)
+	DropBoxManager_Entry::DropBoxManager_Entry(JString arg0, jlong arg1, android::os::ParcelFileDescriptor arg2, jint arg3)
 		: JObject(
 			"android.os.DropBoxManager$Entry",
 			"(Ljava/lang/String;JLandroid/os/ParcelFileDescriptor;I)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
 			arg2.object(),
 			arg3
 		) {}
-	DropBoxManager_Entry::DropBoxManager_Entry(jstring arg0, jlong arg1, java::io::File arg2, jint arg3)
+	DropBoxManager_Entry::DropBoxManager_Entry(JString arg0, jlong arg1, java::io::File arg2, jint arg3)
 		: JObject(
 			"android.os.DropBoxManager$Entry",
 			"(Ljava/lang/String;JLjava/io/File;I)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
 			arg2.object(),
 			arg3
@@ -92,20 +94,20 @@ namespace android::os
 			"()Ljava/io/InputStream;"
 		);
 	}
-	jstring DropBoxManager_Entry::getTag()
+	JString DropBoxManager_Entry::getTag()
 	{
 		return callObjectMethod(
 			"getTag",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DropBoxManager_Entry::getText(jint arg0)
+	JString DropBoxManager_Entry::getText(jint arg0)
 	{
 		return callObjectMethod(
 			"getText",
 			"(I)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
 	jlong DropBoxManager_Entry::getTimeMillis()
 	{

@@ -2,6 +2,7 @@
 
 #include "../../../../JObject.hpp"
 
+class JString;
 
 namespace javax::xml::transform::sax
 {
@@ -9,7 +10,7 @@ namespace javax::xml::transform::sax
 	{
 	public:
 		// Fields
-		static jstring FEATURE();
+		static JString FEATURE();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SAXResult(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
@@ -22,10 +23,10 @@ namespace javax::xml::transform::sax
 		// Methods
 		JObject getHandler();
 		JObject getLexicalHandler();
-		jstring getSystemId();
+		JString getSystemId();
 		void setHandler(JObject arg0);
 		void setLexicalHandler(JObject arg0);
-		void setSystemId(jstring arg0);
+		void setSystemId(JString arg0);
 	};
 } // namespace javax::xml::transform::sax
 

@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./ReportUsageRequest.hpp"
 
 namespace android::app::appsearch
@@ -10,19 +11,19 @@ namespace android::app::appsearch
 	// Constructors
 	
 	// Methods
-	jstring ReportUsageRequest::getDocumentId()
+	JString ReportUsageRequest::getDocumentId()
 	{
 		return callObjectMethod(
 			"getDocumentId",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ReportUsageRequest::getNamespace()
+	JString ReportUsageRequest::getNamespace()
 	{
 		return callObjectMethod(
 			"getNamespace",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jlong ReportUsageRequest::getUsageTimestampMillis()
 	{

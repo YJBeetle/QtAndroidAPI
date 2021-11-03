@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JByteArray;
 namespace android::nfc
 {
 	class Tag;
@@ -14,9 +15,9 @@ namespace android::nfc::tech
 	public:
 		// Fields
 		static jint BLOCK_SIZE();
-		static jbyteArray KEY_DEFAULT();
-		static jbyteArray KEY_MIFARE_APPLICATION_DIRECTORY();
-		static jbyteArray KEY_NFC_FORUM();
+		static JByteArray KEY_DEFAULT();
+		static JByteArray KEY_MIFARE_APPLICATION_DIRECTORY();
+		static JByteArray KEY_NFC_FORUM();
 		static jint SIZE_1K();
 		static jint SIZE_2K();
 		static jint SIZE_4K();
@@ -34,8 +35,8 @@ namespace android::nfc::tech
 		
 		// Methods
 		static android::nfc::tech::MifareClassic get(android::nfc::Tag arg0);
-		jboolean authenticateSectorWithKeyA(jint arg0, jbyteArray arg1);
-		jboolean authenticateSectorWithKeyB(jint arg0, jbyteArray arg1);
+		jboolean authenticateSectorWithKeyA(jint arg0, JByteArray arg1);
+		jboolean authenticateSectorWithKeyB(jint arg0, JByteArray arg1);
 		jint blockToSector(jint arg0);
 		void close();
 		void connect();
@@ -50,13 +51,13 @@ namespace android::nfc::tech
 		jint getType();
 		void increment(jint arg0, jint arg1);
 		jboolean isConnected();
-		jbyteArray readBlock(jint arg0);
+		JByteArray readBlock(jint arg0);
 		void restore(jint arg0);
 		jint sectorToBlock(jint arg0);
 		void setTimeout(jint arg0);
-		jbyteArray transceive(jbyteArray arg0);
+		JByteArray transceive(JByteArray arg0);
 		void transfer(jint arg0);
-		void writeBlock(jint arg0, jbyteArray arg1);
+		void writeBlock(jint arg0, JByteArray arg1);
 	};
 } // namespace android::nfc::tech
 

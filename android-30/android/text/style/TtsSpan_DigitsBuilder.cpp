@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./TtsSpan_DigitsBuilder.hpp"
 
 namespace android::text::style
@@ -13,20 +14,20 @@ namespace android::text::style
 			"android.text.style.TtsSpan$DigitsBuilder",
 			"()V"
 		) {}
-	TtsSpan_DigitsBuilder::TtsSpan_DigitsBuilder(jstring arg0)
+	TtsSpan_DigitsBuilder::TtsSpan_DigitsBuilder(JString arg0)
 		: android::text::style::TtsSpan_SemioticClassBuilder(
 			"android.text.style.TtsSpan$DigitsBuilder",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods
-	android::text::style::TtsSpan_DigitsBuilder TtsSpan_DigitsBuilder::setDigits(jstring arg0)
+	android::text::style::TtsSpan_DigitsBuilder TtsSpan_DigitsBuilder::setDigits(JString arg0)
 	{
 		return callObjectMethod(
 			"setDigits",
 			"(Ljava/lang/String;)Landroid/text/style/TtsSpan$DigitsBuilder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 } // namespace android::text::style

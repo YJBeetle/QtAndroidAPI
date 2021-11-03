@@ -1,4 +1,5 @@
 #include "../../os/Parcel.hpp"
+#include "../../../JString.hpp"
 #include "./SystemUpdatePolicy.hpp"
 
 namespace android::app::admin
@@ -109,12 +110,12 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	jstring SystemUpdatePolicy::toString()
+	JString SystemUpdatePolicy::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void SystemUpdatePolicy::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

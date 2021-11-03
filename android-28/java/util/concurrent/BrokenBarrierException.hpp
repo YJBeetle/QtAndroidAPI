@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "../../lang/Exception.hpp"
 
+class JString;
 
 namespace java::util::concurrent
 {
@@ -17,7 +17,7 @@ namespace java::util::concurrent
 		
 		// Constructors
 		BrokenBarrierException();
-		BrokenBarrierException(jstring arg0);
+		BrokenBarrierException(JString arg0);
 		
 		// Methods
 	};

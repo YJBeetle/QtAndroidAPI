@@ -1,3 +1,6 @@
+#include "../../JArray.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./IdentityScope.hpp"
 #include "../util/Vector.hpp"
 #include "./Identity.hpp"
@@ -10,17 +13,17 @@ namespace java::security
 	Identity::Identity(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	Identity::Identity(jstring arg0)
+	Identity::Identity(JString arg0)
 		: JObject(
 			"java.security.Identity",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	Identity::Identity(jstring arg0, java::security::IdentityScope arg1)
+	Identity::Identity(JString arg0, java::security::IdentityScope arg1)
 		: JObject(
 			"java.security.Identity",
 			"(Ljava/lang/String;Ljava/security/IdentityScope;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		) {}
 	
@@ -33,34 +36,34 @@ namespace java::security
 			arg0.object()
 		);
 	}
-	jarray Identity::certificates()
+	JArray Identity::certificates()
 	{
 		return callObjectMethod(
 			"certificates",
 			"()[Ljava/security/Certificate;"
-		).object<jarray>();
+		);
 	}
-	jboolean Identity::equals(jobject arg0)
+	jboolean Identity::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jstring Identity::getInfo()
+	JString Identity::getInfo()
 	{
 		return callObjectMethod(
 			"getInfo",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Identity::getName()
+	JString Identity::getName()
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	JObject Identity::getPublicKey()
 	{
@@ -91,12 +94,12 @@ namespace java::security
 			arg0.object()
 		);
 	}
-	void Identity::setInfo(jstring arg0)
+	void Identity::setInfo(JString arg0)
 	{
 		callMethod<void>(
 			"setInfo",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void Identity::setPublicKey(JObject arg0)
@@ -107,20 +110,20 @@ namespace java::security
 			arg0.object()
 		);
 	}
-	jstring Identity::toString()
+	JString Identity::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Identity::toString(jboolean arg0)
+	JString Identity::toString(jboolean arg0)
 	{
 		return callObjectMethod(
 			"toString",
 			"(Z)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
 } // namespace java::security
 

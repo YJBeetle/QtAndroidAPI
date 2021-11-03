@@ -6,6 +6,7 @@ namespace android::media::browse
 {
 	class MediaBrowser_MediaItem;
 }
+class JString;
 
 namespace android::media::browse
 {
@@ -22,7 +23,7 @@ namespace android::media::browse
 		MediaBrowser_ItemCallback();
 		
 		// Methods
-		void onError(jstring arg0);
+		void onError(JString arg0);
 		void onItemLoaded(android::media::browse::MediaBrowser_MediaItem arg0);
 	};
 } // namespace android::media::browse

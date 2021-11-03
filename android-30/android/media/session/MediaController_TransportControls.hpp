@@ -22,6 +22,7 @@ namespace android::os
 {
 	class Bundle;
 }
+class JString;
 
 namespace android::media::session
 {
@@ -40,17 +41,17 @@ namespace android::media::session
 		void fastForward();
 		void pause();
 		void play();
-		void playFromMediaId(jstring arg0, android::os::Bundle arg1);
-		void playFromSearch(jstring arg0, android::os::Bundle arg1);
+		void playFromMediaId(JString arg0, android::os::Bundle arg1);
+		void playFromSearch(JString arg0, android::os::Bundle arg1);
 		void playFromUri(android::net::Uri arg0, android::os::Bundle arg1);
 		void prepare();
-		void prepareFromMediaId(jstring arg0, android::os::Bundle arg1);
-		void prepareFromSearch(jstring arg0, android::os::Bundle arg1);
+		void prepareFromMediaId(JString arg0, android::os::Bundle arg1);
+		void prepareFromSearch(JString arg0, android::os::Bundle arg1);
 		void prepareFromUri(android::net::Uri arg0, android::os::Bundle arg1);
 		void rewind();
 		void seekTo(jlong arg0);
 		void sendCustomAction(android::media::session::PlaybackState_CustomAction arg0, android::os::Bundle arg1);
-		void sendCustomAction(jstring arg0, android::os::Bundle arg1);
+		void sendCustomAction(JString arg0, android::os::Bundle arg1);
 		void setPlaybackSpeed(jfloat arg0);
 		void setRating(android::media::Rating arg0);
 		void skipToNext();

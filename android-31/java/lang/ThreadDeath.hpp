@@ -1,8 +1,6 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./Error.hpp"
-
 
 namespace java::lang
 {

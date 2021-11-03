@@ -1,8 +1,9 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./TimeZone.hpp"
 
+class JByteArray;
+class JIntArray;
 namespace java::io
 {
 	class ObjectInputStream;
@@ -11,6 +12,8 @@ namespace java::io
 {
 	class ObjectOutputStream;
 }
+class JObject;
+class JString;
 namespace java::util
 {
 	class Date;
@@ -35,14 +38,14 @@ namespace java::util
 		SimpleTimeZone(QAndroidJniObject obj);
 		
 		// Constructors
-		SimpleTimeZone(jint arg0, jstring arg1);
-		SimpleTimeZone(jint arg0, jstring arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8, jint arg9);
-		SimpleTimeZone(jint arg0, jstring arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8, jint arg9, jint arg10);
-		SimpleTimeZone(jint arg0, jstring arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8, jint arg9, jint arg10, jint arg11, jint arg12);
+		SimpleTimeZone(jint arg0, JString arg1);
+		SimpleTimeZone(jint arg0, JString arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8, jint arg9);
+		SimpleTimeZone(jint arg0, JString arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8, jint arg9, jint arg10);
+		SimpleTimeZone(jint arg0, JString arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8, jint arg9, jint arg10, jint arg11, jint arg12);
 		
 		// Methods
-		jobject clone();
-		jboolean equals(jobject arg0);
+		JObject clone();
+		jboolean equals(JObject arg0);
 		jint getDSTSavings();
 		jint getOffset(jlong arg0);
 		jint getOffset(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5);
@@ -60,7 +63,7 @@ namespace java::util
 		void setStartRule(jint arg0, jint arg1, jint arg2, jint arg3);
 		void setStartRule(jint arg0, jint arg1, jint arg2, jint arg3, jboolean arg4);
 		void setStartYear(jint arg0);
-		jstring toString();
+		JString toString();
 		jboolean useDaylightTime();
 	};
 } // namespace java::util

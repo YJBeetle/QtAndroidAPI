@@ -1,3 +1,5 @@
+#include "../../../JByteArray.hpp"
+#include "../../../JIntArray.hpp"
 #include "./PersonalizationData.hpp"
 #include "./ResultData.hpp"
 #include "../../../java/security/KeyPair.hpp"
@@ -22,29 +24,29 @@ namespace android::security::identity
 			"()Ljava/security/KeyPair;"
 		);
 	}
-	jbyteArray IdentityCredential::decryptMessageFromReader(jbyteArray arg0)
+	JByteArray IdentityCredential::decryptMessageFromReader(JByteArray arg0)
 	{
 		return callObjectMethod(
 			"decryptMessageFromReader",
 			"([B)[B",
-			arg0
-		).object<jbyteArray>();
+			arg0.object<jbyteArray>()
+		);
 	}
-	jbyteArray IdentityCredential::_delete(jbyteArray arg0)
+	JByteArray IdentityCredential::_delete(JByteArray arg0)
 	{
 		return callObjectMethod(
 			"delete",
 			"([B)[B",
-			arg0
-		).object<jbyteArray>();
+			arg0.object<jbyteArray>()
+		);
 	}
-	jbyteArray IdentityCredential::encryptMessageToReader(jbyteArray arg0)
+	JByteArray IdentityCredential::encryptMessageToReader(JByteArray arg0)
 	{
 		return callObjectMethod(
 			"encryptMessageToReader",
 			"([B)[B",
-			arg0
-		).object<jbyteArray>();
+			arg0.object<jbyteArray>()
+		);
 	}
 	JObject IdentityCredential::getAuthKeysNeedingCertification()
 	{
@@ -53,12 +55,12 @@ namespace android::security::identity
 			"()Ljava/util/Collection;"
 		);
 	}
-	jintArray IdentityCredential::getAuthenticationDataUsageCount()
+	JIntArray IdentityCredential::getAuthenticationDataUsageCount()
 	{
 		return callObjectMethod(
 			"getAuthenticationDataUsageCount",
 			"()[I"
-		).object<jintArray>();
+		);
 	}
 	JObject IdentityCredential::getCredentialKeyCertificateChain()
 	{
@@ -67,24 +69,24 @@ namespace android::security::identity
 			"()Ljava/util/Collection;"
 		);
 	}
-	android::security::identity::ResultData IdentityCredential::getEntries(jbyteArray arg0, JObject arg1, jbyteArray arg2, jbyteArray arg3)
+	android::security::identity::ResultData IdentityCredential::getEntries(JByteArray arg0, JObject arg1, JByteArray arg2, JByteArray arg3)
 	{
 		return callObjectMethod(
 			"getEntries",
 			"([BLjava/util/Map;[B[B)Landroid/security/identity/ResultData;",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1.object(),
-			arg2,
-			arg3
+			arg2.object<jbyteArray>(),
+			arg3.object<jbyteArray>()
 		);
 	}
-	jbyteArray IdentityCredential::proveOwnership(jbyteArray arg0)
+	JByteArray IdentityCredential::proveOwnership(JByteArray arg0)
 	{
 		return callObjectMethod(
 			"proveOwnership",
 			"([B)[B",
-			arg0
-		).object<jbyteArray>();
+			arg0.object<jbyteArray>()
+		);
 	}
 	void IdentityCredential::setAllowUsingExhaustedKeys(jboolean arg0)
 	{
@@ -119,32 +121,32 @@ namespace android::security::identity
 			arg0.object()
 		);
 	}
-	void IdentityCredential::storeStaticAuthenticationData(java::security::cert::X509Certificate arg0, jbyteArray arg1)
+	void IdentityCredential::storeStaticAuthenticationData(java::security::cert::X509Certificate arg0, JByteArray arg1)
 	{
 		callMethod<void>(
 			"storeStaticAuthenticationData",
 			"(Ljava/security/cert/X509Certificate;[B)V",
 			arg0.object(),
-			arg1
+			arg1.object<jbyteArray>()
 		);
 	}
-	void IdentityCredential::storeStaticAuthenticationData(java::security::cert::X509Certificate arg0, java::time::Instant arg1, jbyteArray arg2)
+	void IdentityCredential::storeStaticAuthenticationData(java::security::cert::X509Certificate arg0, java::time::Instant arg1, JByteArray arg2)
 	{
 		callMethod<void>(
 			"storeStaticAuthenticationData",
 			"(Ljava/security/cert/X509Certificate;Ljava/time/Instant;[B)V",
 			arg0.object(),
 			arg1.object(),
-			arg2
+			arg2.object<jbyteArray>()
 		);
 	}
-	jbyteArray IdentityCredential::update(android::security::identity::PersonalizationData arg0)
+	JByteArray IdentityCredential::update(android::security::identity::PersonalizationData arg0)
 	{
 		return callObjectMethod(
 			"update",
 			"(Landroid/security/identity/PersonalizationData;)[B",
 			arg0.object()
-		).object<jbyteArray>();
+		);
 	}
 } // namespace android::security::identity
 

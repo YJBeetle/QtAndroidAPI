@@ -2,6 +2,7 @@
 
 #include "../../../../JObject.hpp"
 
+class JObject;
 namespace java::lang
 {
 	class Thread;

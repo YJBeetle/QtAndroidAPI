@@ -10,6 +10,8 @@ namespace android::os
 {
 	class Bundle;
 }
+class JString;
+class JString;
 
 namespace android::media::session
 {
@@ -23,7 +25,7 @@ namespace android::media::session
 		PlaybackState_CustomAction_Builder(QAndroidJniObject obj);
 		
 		// Constructors
-		PlaybackState_CustomAction_Builder(jstring arg0, jstring arg1, jint arg2);
+		PlaybackState_CustomAction_Builder(JString arg0, JString arg1, jint arg2);
 		
 		// Methods
 		android::media::session::PlaybackState_CustomAction build();

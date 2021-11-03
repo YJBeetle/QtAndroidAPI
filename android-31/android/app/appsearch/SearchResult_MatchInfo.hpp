@@ -6,6 +6,8 @@ namespace android::app::appsearch
 {
 	class SearchResult_MatchRange;
 }
+class JString;
+class JString;
 
 namespace android::app::appsearch
 {
@@ -21,11 +23,11 @@ namespace android::app::appsearch
 		// Constructors
 		
 		// Methods
-		jstring getExactMatch();
+		JString getExactMatch();
 		android::app::appsearch::SearchResult_MatchRange getExactMatchRange();
-		jstring getFullText();
-		jstring getPropertyPath();
-		jstring getSnippet();
+		JString getFullText();
+		JString getPropertyPath();
+		JString getSnippet();
 		android::app::appsearch::SearchResult_MatchRange getSnippetRange();
 	};
 } // namespace android::app::appsearch

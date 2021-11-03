@@ -2,6 +2,7 @@
 
 #include "../../../../JObject.hpp"
 
+class JByteArray;
 
 namespace android::net::wifi::aware
 {
@@ -18,7 +19,7 @@ namespace android::net::wifi::aware
 		IdentityChangedListener();
 		
 		// Methods
-		void onIdentityChanged(jbyteArray arg0);
+		void onIdentityChanged(JByteArray arg0);
 	};
 } // namespace android::net::wifi::aware
 

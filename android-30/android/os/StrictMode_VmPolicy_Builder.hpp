@@ -6,6 +6,7 @@ namespace android::os
 {
 	class StrictMode_VmPolicy;
 }
+class JClass;
 
 namespace android::os
 {
@@ -43,7 +44,7 @@ namespace android::os
 		android::os::StrictMode_VmPolicy_Builder penaltyListener(JObject arg0, JObject arg1);
 		android::os::StrictMode_VmPolicy_Builder penaltyLog();
 		android::os::StrictMode_VmPolicy_Builder permitNonSdkApiUsage();
-		android::os::StrictMode_VmPolicy_Builder setClassInstanceLimit(jclass arg0, jint arg1);
+		android::os::StrictMode_VmPolicy_Builder setClassInstanceLimit(JClass arg0, jint arg1);
 	};
 } // namespace android::os
 

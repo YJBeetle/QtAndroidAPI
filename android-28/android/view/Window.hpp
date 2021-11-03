@@ -74,6 +74,8 @@ namespace android::view
 {
 	class WindowManager_LayoutParams;
 }
+class JString;
+class JString;
 
 namespace android::view
 {
@@ -99,7 +101,7 @@ namespace android::view
 		static jint FEATURE_RIGHT_ICON();
 		static jint FEATURE_SWIPE_TO_DISMISS();
 		static jint ID_ANDROID_CONTENT();
-		static jstring NAVIGATION_BAR_BACKGROUND_TRANSITION_NAME();
+		static JString NAVIGATION_BAR_BACKGROUND_TRANSITION_NAME();
 		static jint PROGRESS_END();
 		static jint PROGRESS_INDETERMINATE_OFF();
 		static jint PROGRESS_INDETERMINATE_ON();
@@ -108,7 +110,7 @@ namespace android::view
 		static jint PROGRESS_START();
 		static jint PROGRESS_VISIBILITY_OFF();
 		static jint PROGRESS_VISIBILITY_ON();
-		static jstring STATUS_BAR_BACKGROUND_TRANSITION_NAME();
+		static JString STATUS_BAR_BACKGROUND_TRANSITION_NAME();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Window(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
@@ -221,7 +223,7 @@ namespace android::view
 		void setSoftInputMode(jint arg0);
 		void setStatusBarColor(jint arg0);
 		void setSustainedPerformanceMode(jboolean arg0);
-		void setTitle(jstring arg0);
+		void setTitle(JString arg0);
 		void setTitleColor(jint arg0);
 		void setTransitionBackgroundFadeDuration(jlong arg0);
 		void setTransitionManager(android::transition::TransitionManager arg0);
@@ -230,8 +232,8 @@ namespace android::view
 		void setUiOptions(jint arg0, jint arg1);
 		void setVolumeControlStream(jint arg0);
 		void setWindowAnimations(jint arg0);
-		void setWindowManager(JObject arg0, JObject arg1, jstring arg2);
-		void setWindowManager(JObject arg0, JObject arg1, jstring arg2, jboolean arg3);
+		void setWindowManager(JObject arg0, JObject arg1, JString arg2);
+		void setWindowManager(JObject arg0, JObject arg1, JString arg2, jboolean arg3);
 		jboolean superDispatchGenericMotionEvent(android::view::MotionEvent arg0);
 		jboolean superDispatchKeyEvent(android::view::KeyEvent arg0);
 		jboolean superDispatchKeyShortcutEvent(android::view::KeyEvent arg0);

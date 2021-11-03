@@ -2,7 +2,6 @@
 
 #include "../../../JObject.hpp"
 
-
 namespace android::hardware::lights
 {
 	class LightsRequest : public JObject

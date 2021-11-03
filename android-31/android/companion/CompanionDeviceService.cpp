@@ -1,16 +1,17 @@
 #include "../content/Intent.hpp"
+#include "../../JString.hpp"
 #include "./CompanionDeviceService.hpp"
 
 namespace android::companion
 {
 	// Fields
-	jstring CompanionDeviceService::SERVICE_INTERFACE()
+	JString CompanionDeviceService::SERVICE_INTERFACE()
 	{
 		return getStaticObjectField(
 			"android.companion.CompanionDeviceService",
 			"SERVICE_INTERFACE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QAndroidJniObject forward
@@ -32,20 +33,20 @@ namespace android::companion
 			arg0.object()
 		);
 	}
-	void CompanionDeviceService::onDeviceAppeared(jstring arg0)
+	void CompanionDeviceService::onDeviceAppeared(JString arg0)
 	{
 		callMethod<void>(
 			"onDeviceAppeared",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	void CompanionDeviceService::onDeviceDisappeared(jstring arg0)
+	void CompanionDeviceService::onDeviceDisappeared(JString arg0)
 	{
 		callMethod<void>(
 			"onDeviceDisappeared",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 } // namespace android::companion

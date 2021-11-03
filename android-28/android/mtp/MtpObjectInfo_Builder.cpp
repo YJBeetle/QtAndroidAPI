@@ -1,4 +1,5 @@
 #include "./MtpObjectInfo.hpp"
+#include "../../JString.hpp"
 #include "./MtpObjectInfo_Builder.hpp"
 
 namespace android::mtp
@@ -101,20 +102,20 @@ namespace android::mtp
 			arg0
 		);
 	}
-	android::mtp::MtpObjectInfo_Builder MtpObjectInfo_Builder::setKeywords(jstring arg0)
+	android::mtp::MtpObjectInfo_Builder MtpObjectInfo_Builder::setKeywords(JString arg0)
 	{
 		return callObjectMethod(
 			"setKeywords",
 			"(Ljava/lang/String;)Landroid/mtp/MtpObjectInfo$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	android::mtp::MtpObjectInfo_Builder MtpObjectInfo_Builder::setName(jstring arg0)
+	android::mtp::MtpObjectInfo_Builder MtpObjectInfo_Builder::setName(JString arg0)
 	{
 		return callObjectMethod(
 			"setName",
 			"(Ljava/lang/String;)Landroid/mtp/MtpObjectInfo$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::mtp::MtpObjectInfo_Builder MtpObjectInfo_Builder::setObjectHandle(jint arg0)

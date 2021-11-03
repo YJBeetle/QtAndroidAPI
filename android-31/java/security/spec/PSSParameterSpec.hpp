@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JString;
 
 namespace java::security::spec
 {
@@ -18,15 +19,15 @@ namespace java::security::spec
 		
 		// Constructors
 		PSSParameterSpec(jint arg0);
-		PSSParameterSpec(jstring arg0, jstring arg1, JObject arg2, jint arg3, jint arg4);
+		PSSParameterSpec(JString arg0, JString arg1, JObject arg2, jint arg3, jint arg4);
 		
 		// Methods
-		jstring getDigestAlgorithm();
-		jstring getMGFAlgorithm();
+		JString getDigestAlgorithm();
+		JString getMGFAlgorithm();
 		JObject getMGFParameters();
 		jint getSaltLength();
 		jint getTrailerField();
-		jstring toString();
+		JString toString();
 	};
 } // namespace java::security::spec
 

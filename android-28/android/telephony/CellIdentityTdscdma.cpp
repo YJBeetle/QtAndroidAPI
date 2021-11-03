@@ -1,4 +1,6 @@
 #include "../os/Parcel.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./CellIdentityTdscdma.hpp"
 
 namespace android::telephony
@@ -19,12 +21,12 @@ namespace android::telephony
 	// Constructors
 	
 	// Methods
-	jboolean CellIdentityTdscdma::equals(jobject arg0)
+	jboolean CellIdentityTdscdma::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint CellIdentityTdscdma::getCid()
@@ -48,19 +50,19 @@ namespace android::telephony
 			"()I"
 		);
 	}
-	jstring CellIdentityTdscdma::getMccString()
+	JString CellIdentityTdscdma::getMccString()
 	{
 		return callObjectMethod(
 			"getMccString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring CellIdentityTdscdma::getMncString()
+	JString CellIdentityTdscdma::getMncString()
 	{
 		return callObjectMethod(
 			"getMncString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint CellIdentityTdscdma::hashCode()
 	{
@@ -69,12 +71,12 @@ namespace android::telephony
 			"()I"
 		);
 	}
-	jstring CellIdentityTdscdma::toString()
+	JString CellIdentityTdscdma::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void CellIdentityTdscdma::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

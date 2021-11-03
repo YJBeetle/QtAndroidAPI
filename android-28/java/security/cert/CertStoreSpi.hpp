@@ -2,7 +2,6 @@
 
 #include "../../../JObject.hpp"
 
-
 namespace java::security::cert
 {
 	class CertStoreSpi : public JObject

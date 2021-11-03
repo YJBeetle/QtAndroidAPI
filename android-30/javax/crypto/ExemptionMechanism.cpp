@@ -1,3 +1,5 @@
+#include "../../JByteArray.hpp"
+#include "../../JString.hpp"
 #include "../../java/security/AlgorithmParameters.hpp"
 #include "../../java/security/Provider.hpp"
 #include "./ExemptionMechanismSpi.hpp"
@@ -13,65 +15,65 @@ namespace javax::crypto
 	// Constructors
 	
 	// Methods
-	javax::crypto::ExemptionMechanism ExemptionMechanism::getInstance(jstring arg0)
+	javax::crypto::ExemptionMechanism ExemptionMechanism::getInstance(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"javax.crypto.ExemptionMechanism",
 			"getInstance",
 			"(Ljava/lang/String;)Ljavax/crypto/ExemptionMechanism;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	javax::crypto::ExemptionMechanism ExemptionMechanism::getInstance(jstring arg0, jstring arg1)
+	javax::crypto::ExemptionMechanism ExemptionMechanism::getInstance(JString arg0, JString arg1)
 	{
 		return callStaticObjectMethod(
 			"javax.crypto.ExemptionMechanism",
 			"getInstance",
 			"(Ljava/lang/String;Ljava/lang/String;)Ljavax/crypto/ExemptionMechanism;",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		);
 	}
-	javax::crypto::ExemptionMechanism ExemptionMechanism::getInstance(jstring arg0, java::security::Provider arg1)
+	javax::crypto::ExemptionMechanism ExemptionMechanism::getInstance(JString arg0, java::security::Provider arg1)
 	{
 		return callStaticObjectMethod(
 			"javax.crypto.ExemptionMechanism",
 			"getInstance",
 			"(Ljava/lang/String;Ljava/security/Provider;)Ljavax/crypto/ExemptionMechanism;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
-	jbyteArray ExemptionMechanism::genExemptionBlob()
+	JByteArray ExemptionMechanism::genExemptionBlob()
 	{
 		return callObjectMethod(
 			"genExemptionBlob",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
-	jint ExemptionMechanism::genExemptionBlob(jbyteArray arg0)
+	jint ExemptionMechanism::genExemptionBlob(JByteArray arg0)
 	{
 		return callMethod<jint>(
 			"genExemptionBlob",
 			"([B)I",
-			arg0
+			arg0.object<jbyteArray>()
 		);
 	}
-	jint ExemptionMechanism::genExemptionBlob(jbyteArray arg0, jint arg1)
+	jint ExemptionMechanism::genExemptionBlob(JByteArray arg0, jint arg1)
 	{
 		return callMethod<jint>(
 			"genExemptionBlob",
 			"([BI)I",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1
 		);
 	}
-	jstring ExemptionMechanism::getName()
+	JString ExemptionMechanism::getName()
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint ExemptionMechanism::getOutputSize(jint arg0)
 	{

@@ -1,8 +1,9 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./Error.hpp"
 
+class JString;
+class JThrowable;
 
 namespace java::lang
 {
@@ -17,8 +18,8 @@ namespace java::lang
 		
 		// Constructors
 		LinkageError();
-		LinkageError(jstring arg0);
-		LinkageError(jstring arg0, jthrowable arg1);
+		LinkageError(JString arg0);
+		LinkageError(JString arg0, JThrowable arg1);
 		
 		// Methods
 	};

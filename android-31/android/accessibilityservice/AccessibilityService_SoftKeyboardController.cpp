@@ -1,4 +1,5 @@
 #include "../os/Handler.hpp"
+#include "../../JString.hpp"
 #include "./AccessibilityService_SoftKeyboardController.hpp"
 
 namespace android::accessibilityservice
@@ -51,12 +52,12 @@ namespace android::accessibilityservice
 			arg0
 		);
 	}
-	jboolean AccessibilityService_SoftKeyboardController::switchToInputMethod(jstring arg0)
+	jboolean AccessibilityService_SoftKeyboardController::switchToInputMethod(JString arg0)
 	{
 		return callMethod<jboolean>(
 			"switchToInputMethod",
 			"(Ljava/lang/String;)Z",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 } // namespace android::accessibilityservice

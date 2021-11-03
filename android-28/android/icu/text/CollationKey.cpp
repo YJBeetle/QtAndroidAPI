@@ -1,3 +1,6 @@
+#include "../../../JByteArray.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./CollationKey.hpp"
 
 namespace android::icu::text
@@ -8,12 +11,12 @@ namespace android::icu::text
 	CollationKey::CollationKey(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	CollationKey::CollationKey(jstring arg0, jbyteArray arg1)
+	CollationKey::CollationKey(JString arg0, JByteArray arg1)
 		: JObject(
 			"android.icu.text.CollationKey",
 			"(Ljava/lang/String;[B)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jbyteArray>()
 		) {}
 	
 	// Methods
@@ -25,12 +28,12 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	jint CollationKey::compareTo(jobject arg0)
+	jint CollationKey::compareTo(JObject arg0)
 	{
 		return callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Object;)I",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jboolean CollationKey::equals(android::icu::text::CollationKey arg0)
@@ -41,12 +44,12 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	jboolean CollationKey::equals(jobject arg0)
+	jboolean CollationKey::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	android::icu::text::CollationKey CollationKey::getBound(jint arg0, jint arg1)
@@ -58,12 +61,12 @@ namespace android::icu::text
 			arg1
 		);
 	}
-	jstring CollationKey::getSourceString()
+	JString CollationKey::getSourceString()
 	{
 		return callObjectMethod(
 			"getSourceString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint CollationKey::hashCode()
 	{
@@ -80,12 +83,12 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	jbyteArray CollationKey::toByteArray()
+	JByteArray CollationKey::toByteArray()
 	{
 		return callObjectMethod(
 			"toByteArray",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
 } // namespace android::icu::text
 

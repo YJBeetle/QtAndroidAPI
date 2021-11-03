@@ -1,15 +1,16 @@
 #include "../../os/Parcel.hpp"
+#include "../../../JString.hpp"
 #include "./WpsInfo.hpp"
 
 namespace android::net::wifi
 {
 	// Fields
-	jstring WpsInfo::BSSID()
+	JString WpsInfo::BSSID()
 	{
 		return getObjectField(
 			"BSSID",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	JObject WpsInfo::CREATOR()
 	{
@@ -54,12 +55,12 @@ namespace android::net::wifi
 			"PBC"
 		);
 	}
-	jstring WpsInfo::pin()
+	JString WpsInfo::pin()
 	{
 		return getObjectField(
 			"pin",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint WpsInfo::setup()
 	{
@@ -92,12 +93,12 @@ namespace android::net::wifi
 			"()I"
 		);
 	}
-	jstring WpsInfo::toString()
+	JString WpsInfo::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void WpsInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

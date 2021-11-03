@@ -1,3 +1,5 @@
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./EventObject.hpp"
 
 namespace java::util
@@ -8,27 +10,27 @@ namespace java::util
 	EventObject::EventObject(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	EventObject::EventObject(jobject arg0)
+	EventObject::EventObject(JObject arg0)
 		: JObject(
 			"java.util.EventObject",
 			"(Ljava/lang/Object;)V",
-			arg0
+			arg0.object<jobject>()
 		) {}
 	
 	// Methods
-	jobject EventObject::getSource()
+	JObject EventObject::getSource()
 	{
 		return callObjectMethod(
 			"getSource",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
-	jstring EventObject::toString()
+	JString EventObject::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::util
 

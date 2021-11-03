@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JArray;
+class JString;
 
 namespace java::sql
 {
@@ -9,18 +11,18 @@ namespace java::sql
 	{
 	public:
 		// Fields
-		jarray choices();
-		jstring description();
-		jstring name();
+		JArray choices();
+		JString description();
+		JString name();
 		jboolean required();
-		jstring value();
+		JString value();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit DriverPropertyInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		DriverPropertyInfo(QAndroidJniObject obj);
 		
 		// Constructors
-		DriverPropertyInfo(jstring arg0, jstring arg1);
+		DriverPropertyInfo(JString arg0, JString arg1);
 		
 		// Methods
 	};

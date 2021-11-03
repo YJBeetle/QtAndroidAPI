@@ -6,6 +6,8 @@ namespace android::os
 {
 	class Parcel;
 }
+class JObject;
+class JString;
 
 namespace android::content::pm
 {
@@ -22,7 +24,7 @@ namespace android::content::pm
 		jlong externalDataSize();
 		jlong externalMediaSize();
 		jlong externalObbSize();
-		jstring packageName();
+		JString packageName();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit PackageStats(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
@@ -31,13 +33,13 @@ namespace android::content::pm
 		// Constructors
 		PackageStats(android::content::pm::PackageStats &arg0);
 		PackageStats(android::os::Parcel arg0);
-		PackageStats(jstring arg0);
+		PackageStats(JString arg0);
 		
 		// Methods
 		jint describeContents();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint hashCode();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::content::pm

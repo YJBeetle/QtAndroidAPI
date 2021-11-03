@@ -6,6 +6,7 @@ namespace java::io
 {
 	class ObjectInputStream;
 }
+class JString;
 namespace java::util::concurrent
 {
 	class TimeUnit;
@@ -38,7 +39,7 @@ namespace java::util::concurrent::locks
 		jboolean isWriteLocked();
 		jlong readLock();
 		jlong readLockInterruptibly();
-		jstring toString();
+		JString toString();
 		jlong tryConvertToOptimisticRead(jlong arg0);
 		jlong tryConvertToReadLock(jlong arg0);
 		jlong tryConvertToWriteLock(jlong arg0);

@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./StreamingServiceCallback.hpp"
 
 namespace android::telephony::mbms
@@ -30,13 +31,13 @@ namespace android::telephony::mbms
 			arg0
 		);
 	}
-	void StreamingServiceCallback::onError(jint arg0, jstring arg1)
+	void StreamingServiceCallback::onError(jint arg0, JString arg1)
 	{
 		callMethod<void>(
 			"onError",
 			"(ILjava/lang/String;)V",
 			arg0,
-			arg1
+			arg1.object<jstring>()
 		);
 	}
 	void StreamingServiceCallback::onMediaDescriptionUpdated()

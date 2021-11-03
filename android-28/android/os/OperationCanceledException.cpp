@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./OperationCanceledException.hpp"
 
 namespace android::os
@@ -13,11 +14,11 @@ namespace android::os
 			"android.os.OperationCanceledException",
 			"()V"
 		) {}
-	OperationCanceledException::OperationCanceledException(jstring arg0)
+	OperationCanceledException::OperationCanceledException(JString arg0)
 		: java::lang::RuntimeException(
 			"android.os.OperationCanceledException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

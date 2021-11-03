@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./SQLiteDatabaseCorruptException.hpp"
 
 namespace android::database::sqlite
@@ -13,11 +14,11 @@ namespace android::database::sqlite
 			"android.database.sqlite.SQLiteDatabaseCorruptException",
 			"()V"
 		) {}
-	SQLiteDatabaseCorruptException::SQLiteDatabaseCorruptException(jstring arg0)
+	SQLiteDatabaseCorruptException::SQLiteDatabaseCorruptException(JString arg0)
 		: android::database::sqlite::SQLiteException(
 			"android.database.sqlite.SQLiteDatabaseCorruptException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

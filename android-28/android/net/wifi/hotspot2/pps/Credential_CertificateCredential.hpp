@@ -2,10 +2,13 @@
 
 #include "../../../../../JObject.hpp"
 
+class JByteArray;
 namespace android::os
 {
 	class Parcel;
 }
+class JObject;
+class JString;
 
 namespace android::net::wifi::hotspot2::pps
 {
@@ -25,13 +28,13 @@ namespace android::net::wifi::hotspot2::pps
 		
 		// Methods
 		jint describeContents();
-		jboolean equals(jobject arg0);
-		jbyteArray getCertSha256Fingerprint();
-		jstring getCertType();
+		jboolean equals(JObject arg0);
+		JByteArray getCertSha256Fingerprint();
+		JString getCertType();
 		jint hashCode();
-		void setCertSha256Fingerprint(jbyteArray arg0);
-		void setCertType(jstring arg0);
-		jstring toString();
+		void setCertSha256Fingerprint(JByteArray arg0);
+		void setCertType(JString arg0);
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::net::wifi::hotspot2::pps

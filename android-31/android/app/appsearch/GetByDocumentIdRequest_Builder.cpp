@@ -1,4 +1,6 @@
+#include "../../../JArray.hpp"
 #include "./GetByDocumentIdRequest.hpp"
+#include "../../../JString.hpp"
 #include "./GetByDocumentIdRequest_Builder.hpp"
 
 namespace android::app::appsearch
@@ -9,20 +11,20 @@ namespace android::app::appsearch
 	GetByDocumentIdRequest_Builder::GetByDocumentIdRequest_Builder(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	GetByDocumentIdRequest_Builder::GetByDocumentIdRequest_Builder(jstring arg0)
+	GetByDocumentIdRequest_Builder::GetByDocumentIdRequest_Builder(JString arg0)
 		: JObject(
 			"android.app.appsearch.GetByDocumentIdRequest$Builder",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods
-	android::app::appsearch::GetByDocumentIdRequest_Builder GetByDocumentIdRequest_Builder::addIds(jarray arg0)
+	android::app::appsearch::GetByDocumentIdRequest_Builder GetByDocumentIdRequest_Builder::addIds(JArray arg0)
 	{
 		return callObjectMethod(
 			"addIds",
 			"([Ljava/lang/String;)Landroid/app/appsearch/GetByDocumentIdRequest$Builder;",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
 	android::app::appsearch::GetByDocumentIdRequest_Builder GetByDocumentIdRequest_Builder::addIds(JObject arg0)
@@ -33,12 +35,12 @@ namespace android::app::appsearch
 			arg0.object()
 		);
 	}
-	android::app::appsearch::GetByDocumentIdRequest_Builder GetByDocumentIdRequest_Builder::addProjection(jstring arg0, JObject arg1)
+	android::app::appsearch::GetByDocumentIdRequest_Builder GetByDocumentIdRequest_Builder::addProjection(JString arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"addProjection",
 			"(Ljava/lang/String;Ljava/util/Collection;)Landroid/app/appsearch/GetByDocumentIdRequest$Builder;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}

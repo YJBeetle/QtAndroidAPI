@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./EncoderProfiles_VideoProfile.hpp"
 
 namespace android::media
@@ -38,12 +39,12 @@ namespace android::media
 			"()I"
 		);
 	}
-	jstring EncoderProfiles_VideoProfile::getMediaType()
+	JString EncoderProfiles_VideoProfile::getMediaType()
 	{
 		return callObjectMethod(
 			"getMediaType",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint EncoderProfiles_VideoProfile::getProfile()
 	{

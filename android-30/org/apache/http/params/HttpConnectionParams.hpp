@@ -2,7 +2,6 @@
 
 #include "../../../../JObject.hpp"
 
-
 namespace org::apache::http::params
 {
 	class HttpConnectionParams : public JObject

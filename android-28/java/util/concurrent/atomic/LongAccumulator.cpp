@@ -1,4 +1,6 @@
 #include "../../../io/ObjectInputStream.hpp"
+#include "../../../../JObject.hpp"
+#include "../../../../JString.hpp"
 #include "./LongAccumulator.hpp"
 
 namespace java::util::concurrent::atomic
@@ -75,12 +77,12 @@ namespace java::util::concurrent::atomic
 			"()V"
 		);
 	}
-	jstring LongAccumulator::toString()
+	JString LongAccumulator::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::util::concurrent::atomic
 

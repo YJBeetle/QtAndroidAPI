@@ -10,6 +10,8 @@ namespace android::os
 {
 	class Message;
 }
+class JObject;
+class JString;
 
 namespace android::os
 {
@@ -32,28 +34,28 @@ namespace android::os
 		static android::os::Handler createAsync(android::os::Looper arg0);
 		static android::os::Handler createAsync(android::os::Looper arg0, JObject arg1);
 		void dispatchMessage(android::os::Message arg0);
-		void dump(JObject arg0, jstring arg1);
+		void dump(JObject arg0, JString arg1);
 		android::os::Looper getLooper();
-		jstring getMessageName(android::os::Message arg0);
+		JString getMessageName(android::os::Message arg0);
 		void handleMessage(android::os::Message arg0);
 		jboolean hasMessages(jint arg0);
-		jboolean hasMessages(jint arg0, jobject arg1);
+		jboolean hasMessages(jint arg0, JObject arg1);
 		android::os::Message obtainMessage();
 		android::os::Message obtainMessage(jint arg0);
-		android::os::Message obtainMessage(jint arg0, jobject arg1);
+		android::os::Message obtainMessage(jint arg0, JObject arg1);
 		android::os::Message obtainMessage(jint arg0, jint arg1, jint arg2);
-		android::os::Message obtainMessage(jint arg0, jint arg1, jint arg2, jobject arg3);
+		android::os::Message obtainMessage(jint arg0, jint arg1, jint arg2, JObject arg3);
 		jboolean post(JObject arg0);
 		jboolean postAtFrontOfQueue(JObject arg0);
 		jboolean postAtTime(JObject arg0, jlong arg1);
-		jboolean postAtTime(JObject arg0, jobject arg1, jlong arg2);
+		jboolean postAtTime(JObject arg0, JObject arg1, jlong arg2);
 		jboolean postDelayed(JObject arg0, jlong arg1);
-		jboolean postDelayed(JObject arg0, jobject arg1, jlong arg2);
+		jboolean postDelayed(JObject arg0, JObject arg1, jlong arg2);
 		void removeCallbacks(JObject arg0);
-		void removeCallbacks(JObject arg0, jobject arg1);
-		void removeCallbacksAndMessages(jobject arg0);
+		void removeCallbacks(JObject arg0, JObject arg1);
+		void removeCallbacksAndMessages(JObject arg0);
 		void removeMessages(jint arg0);
-		void removeMessages(jint arg0, jobject arg1);
+		void removeMessages(jint arg0, JObject arg1);
 		jboolean sendEmptyMessage(jint arg0);
 		jboolean sendEmptyMessageAtTime(jint arg0, jlong arg1);
 		jboolean sendEmptyMessageDelayed(jint arg0, jlong arg1);
@@ -61,7 +63,7 @@ namespace android::os
 		jboolean sendMessageAtFrontOfQueue(android::os::Message arg0);
 		jboolean sendMessageAtTime(android::os::Message arg0, jlong arg1);
 		jboolean sendMessageDelayed(android::os::Message arg0, jlong arg1);
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::os
 

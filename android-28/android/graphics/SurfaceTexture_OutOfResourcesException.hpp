@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "../../java/lang/Exception.hpp"
 
+class JString;
 
 namespace android::graphics
 {
@@ -17,7 +17,7 @@ namespace android::graphics
 		
 		// Constructors
 		SurfaceTexture_OutOfResourcesException();
-		SurfaceTexture_OutOfResourcesException(jstring arg0);
+		SurfaceTexture_OutOfResourcesException(JString arg0);
 		
 		// Methods
 	};

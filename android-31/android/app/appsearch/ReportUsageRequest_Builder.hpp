@@ -6,6 +6,7 @@ namespace android::app::appsearch
 {
 	class ReportUsageRequest;
 }
+class JString;
 
 namespace android::app::appsearch
 {
@@ -19,7 +20,7 @@ namespace android::app::appsearch
 		ReportUsageRequest_Builder(QAndroidJniObject obj);
 		
 		// Constructors
-		ReportUsageRequest_Builder(jstring arg0, jstring arg1);
+		ReportUsageRequest_Builder(JString arg0, JString arg1);
 		
 		// Methods
 		android::app::appsearch::ReportUsageRequest build();

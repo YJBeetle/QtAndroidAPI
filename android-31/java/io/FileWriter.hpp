@@ -1,7 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "./Writer.hpp"
 #include "./OutputStreamWriter.hpp"
 
 namespace java::io
@@ -12,6 +10,7 @@ namespace java::io
 {
 	class FileDescriptor;
 }
+class JString;
 namespace java::nio::charset
 {
 	class Charset;
@@ -31,13 +30,13 @@ namespace java::io
 		// Constructors
 		FileWriter(java::io::File arg0);
 		FileWriter(java::io::FileDescriptor arg0);
-		FileWriter(jstring arg0);
+		FileWriter(JString arg0);
 		FileWriter(java::io::File arg0, jboolean arg1);
 		FileWriter(java::io::File arg0, java::nio::charset::Charset arg1);
-		FileWriter(jstring arg0, jboolean arg1);
-		FileWriter(jstring arg0, java::nio::charset::Charset arg1);
+		FileWriter(JString arg0, jboolean arg1);
+		FileWriter(JString arg0, java::nio::charset::Charset arg1);
 		FileWriter(java::io::File arg0, java::nio::charset::Charset arg1, jboolean arg2);
-		FileWriter(jstring arg0, java::nio::charset::Charset arg1, jboolean arg2);
+		FileWriter(JString arg0, java::nio::charset::Charset arg1, jboolean arg2);
 		
 		// Methods
 	};

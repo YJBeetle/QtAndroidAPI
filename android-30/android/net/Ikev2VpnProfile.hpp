@@ -1,12 +1,14 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./PlatformVpnProfile.hpp"
 
+class JByteArray;
 namespace android::net
 {
 	class ProxyInfo;
 }
+class JObject;
+class JString;
 namespace java::security::cert
 {
 	class X509Certificate;
@@ -26,18 +28,18 @@ namespace android::net
 		// Constructors
 		
 		// Methods
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		JObject getAllowedAlgorithms();
 		jint getMaxMtu();
-		jstring getPassword();
-		jbyteArray getPresharedKey();
+		JString getPassword();
+		JByteArray getPresharedKey();
 		android::net::ProxyInfo getProxyInfo();
 		JObject getRsaPrivateKey();
-		jstring getServerAddr();
+		JString getServerAddr();
 		java::security::cert::X509Certificate getServerRootCaCert();
 		java::security::cert::X509Certificate getUserCert();
-		jstring getUserIdentity();
-		jstring getUsername();
+		JString getUserIdentity();
+		JString getUsername();
 		jint hashCode();
 		jboolean isBypassable();
 		jboolean isMetered();

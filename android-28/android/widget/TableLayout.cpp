@@ -3,6 +3,7 @@
 #include "../view/ViewGroup_LayoutParams.hpp"
 #include "./LinearLayout_LayoutParams.hpp"
 #include "./TableLayout_LayoutParams.hpp"
+#include "../../JString.hpp"
 #include "./TableLayout.hpp"
 
 namespace android::widget
@@ -72,12 +73,12 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	jstring TableLayout::getAccessibilityClassName()
+	JString TableLayout::getAccessibilityClassName()
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	jboolean TableLayout::isColumnCollapsed(jint arg0)
 	{

@@ -1,18 +1,19 @@
 #include "../content/Context.hpp"
 #include "../content/Intent.hpp"
 #include "../view/View.hpp"
+#include "../../JString.hpp"
 #include "./ShareActionProvider.hpp"
 
 namespace android::widget
 {
 	// Fields
-	jstring ShareActionProvider::DEFAULT_SHARE_HISTORY_FILE_NAME()
+	JString ShareActionProvider::DEFAULT_SHARE_HISTORY_FILE_NAME()
 	{
 		return getStaticObjectField(
 			"android.widget.ShareActionProvider",
 			"DEFAULT_SHARE_HISTORY_FILE_NAME",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QAndroidJniObject forward
@@ -57,12 +58,12 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void ShareActionProvider::setShareHistoryFileName(jstring arg0)
+	void ShareActionProvider::setShareHistoryFileName(JString arg0)
 	{
 		callMethod<void>(
 			"setShareHistoryFileName",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void ShareActionProvider::setShareIntent(android::content::Intent arg0)

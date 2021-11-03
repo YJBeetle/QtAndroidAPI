@@ -2,6 +2,10 @@
 
 #include "../../../JObject.hpp"
 
+class JIntArray;
+class JLongArray;
+class JObject;
+class JString;
 
 namespace android::net::vcn
 {
@@ -17,11 +21,11 @@ namespace android::net::vcn
 		// Constructors
 		
 		// Methods
-		jboolean equals(jobject arg0);
-		jintArray getExposedCapabilities();
-		jstring getGatewayConnectionName();
+		jboolean equals(JObject arg0);
+		JIntArray getExposedCapabilities();
+		JString getGatewayConnectionName();
 		jint getMaxMtu();
-		jlongArray getRetryIntervalsMillis();
+		JLongArray getRetryIntervalsMillis();
 		jint hashCode();
 	};
 } // namespace android::net::vcn

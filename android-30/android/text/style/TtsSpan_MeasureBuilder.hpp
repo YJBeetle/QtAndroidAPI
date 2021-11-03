@@ -1,9 +1,8 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "./TtsSpan_Builder.hpp"
 #include "./TtsSpan_SemioticClassBuilder.hpp"
 
+class JString;
 
 namespace android::text::style
 {
@@ -20,16 +19,16 @@ namespace android::text::style
 		TtsSpan_MeasureBuilder();
 		
 		// Methods
-		android::text::style::TtsSpan_MeasureBuilder setDenominator(jstring arg0);
+		android::text::style::TtsSpan_MeasureBuilder setDenominator(JString arg0);
 		android::text::style::TtsSpan_MeasureBuilder setDenominator(jlong arg0);
-		android::text::style::TtsSpan_MeasureBuilder setFractionalPart(jstring arg0);
-		android::text::style::TtsSpan_MeasureBuilder setIntegerPart(jstring arg0);
+		android::text::style::TtsSpan_MeasureBuilder setFractionalPart(JString arg0);
+		android::text::style::TtsSpan_MeasureBuilder setIntegerPart(JString arg0);
 		android::text::style::TtsSpan_MeasureBuilder setIntegerPart(jlong arg0);
-		android::text::style::TtsSpan_MeasureBuilder setNumber(jstring arg0);
+		android::text::style::TtsSpan_MeasureBuilder setNumber(JString arg0);
 		android::text::style::TtsSpan_MeasureBuilder setNumber(jlong arg0);
-		android::text::style::TtsSpan_MeasureBuilder setNumerator(jstring arg0);
+		android::text::style::TtsSpan_MeasureBuilder setNumerator(JString arg0);
 		android::text::style::TtsSpan_MeasureBuilder setNumerator(jlong arg0);
-		android::text::style::TtsSpan_MeasureBuilder setUnit(jstring arg0);
+		android::text::style::TtsSpan_MeasureBuilder setUnit(JString arg0);
 	};
 } // namespace android::text::style
 

@@ -1,33 +1,34 @@
 #include "./ImsMmTelManager.hpp"
 #include "./ImsRcsManager.hpp"
+#include "../../../JString.hpp"
 #include "./ImsManager.hpp"
 
 namespace android::telephony::ims
 {
 	// Fields
-	jstring ImsManager::ACTION_WFC_IMS_REGISTRATION_ERROR()
+	JString ImsManager::ACTION_WFC_IMS_REGISTRATION_ERROR()
 	{
 		return getStaticObjectField(
 			"android.telephony.ims.ImsManager",
 			"ACTION_WFC_IMS_REGISTRATION_ERROR",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ImsManager::EXTRA_WFC_REGISTRATION_FAILURE_MESSAGE()
+	JString ImsManager::EXTRA_WFC_REGISTRATION_FAILURE_MESSAGE()
 	{
 		return getStaticObjectField(
 			"android.telephony.ims.ImsManager",
 			"EXTRA_WFC_REGISTRATION_FAILURE_MESSAGE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ImsManager::EXTRA_WFC_REGISTRATION_FAILURE_TITLE()
+	JString ImsManager::EXTRA_WFC_REGISTRATION_FAILURE_TITLE()
 	{
 		return getStaticObjectField(
 			"android.telephony.ims.ImsManager",
 			"EXTRA_WFC_REGISTRATION_FAILURE_TITLE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QAndroidJniObject forward

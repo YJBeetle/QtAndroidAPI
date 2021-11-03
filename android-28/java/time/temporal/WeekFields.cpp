@@ -1,4 +1,6 @@
 #include "../../io/ObjectInputStream.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "../DayOfWeek.hpp"
 #include "../../util/Locale.hpp"
 #include "./WeekFields.hpp"
@@ -63,12 +65,12 @@ namespace java::time::temporal
 			"()Ljava/time/temporal/TemporalField;"
 		);
 	}
-	jboolean WeekFields::equals(jobject arg0)
+	jboolean WeekFields::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	java::time::DayOfWeek WeekFields::getFirstDayOfWeek()
@@ -92,12 +94,12 @@ namespace java::time::temporal
 			"()I"
 		);
 	}
-	jstring WeekFields::toString()
+	JString WeekFields::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	JObject WeekFields::weekBasedYear()
 	{

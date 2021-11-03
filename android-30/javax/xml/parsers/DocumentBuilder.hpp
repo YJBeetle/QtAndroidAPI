@@ -10,6 +10,7 @@ namespace java::io
 {
 	class InputStream;
 }
+class JString;
 namespace javax::xml::validation
 {
 	class Schema;
@@ -41,9 +42,9 @@ namespace javax::xml::parsers
 		JObject newDocument();
 		JObject parse(java::io::File arg0);
 		JObject parse(java::io::InputStream arg0);
-		JObject parse(jstring arg0);
+		JObject parse(JString arg0);
 		JObject parse(org::xml::sax::InputSource arg0);
-		JObject parse(java::io::InputStream arg0, jstring arg1);
+		JObject parse(java::io::InputStream arg0, JString arg1);
 		void reset();
 		void setEntityResolver(JObject arg0);
 		void setErrorHandler(JObject arg0);

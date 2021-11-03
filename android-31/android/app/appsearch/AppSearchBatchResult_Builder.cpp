@@ -1,5 +1,7 @@
 #include "./AppSearchBatchResult.hpp"
 #include "./AppSearchResult.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./AppSearchBatchResult_Builder.hpp"
 
 namespace android::app::appsearch
@@ -24,32 +26,32 @@ namespace android::app::appsearch
 			"()Landroid/app/appsearch/AppSearchBatchResult;"
 		);
 	}
-	android::app::appsearch::AppSearchBatchResult_Builder AppSearchBatchResult_Builder::setFailure(jobject arg0, jint arg1, jstring arg2)
+	android::app::appsearch::AppSearchBatchResult_Builder AppSearchBatchResult_Builder::setFailure(JObject arg0, jint arg1, JString arg2)
 	{
 		return callObjectMethod(
 			"setFailure",
 			"(Ljava/lang/Object;ILjava/lang/String;)Landroid/app/appsearch/AppSearchBatchResult$Builder;",
-			arg0,
+			arg0.object<jobject>(),
 			arg1,
-			arg2
+			arg2.object<jstring>()
 		);
 	}
-	android::app::appsearch::AppSearchBatchResult_Builder AppSearchBatchResult_Builder::setResult(jobject arg0, android::app::appsearch::AppSearchResult arg1)
+	android::app::appsearch::AppSearchBatchResult_Builder AppSearchBatchResult_Builder::setResult(JObject arg0, android::app::appsearch::AppSearchResult arg1)
 	{
 		return callObjectMethod(
 			"setResult",
 			"(Ljava/lang/Object;Landroid/app/appsearch/AppSearchResult;)Landroid/app/appsearch/AppSearchBatchResult$Builder;",
-			arg0,
+			arg0.object<jobject>(),
 			arg1.object()
 		);
 	}
-	android::app::appsearch::AppSearchBatchResult_Builder AppSearchBatchResult_Builder::setSuccess(jobject arg0, jobject arg1)
+	android::app::appsearch::AppSearchBatchResult_Builder AppSearchBatchResult_Builder::setSuccess(JObject arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"setSuccess",
 			"(Ljava/lang/Object;Ljava/lang/Object;)Landroid/app/appsearch/AppSearchBatchResult$Builder;",
-			arg0,
-			arg1
+			arg0.object<jobject>(),
+			arg1.object<jobject>()
 		);
 	}
 } // namespace android::app::appsearch

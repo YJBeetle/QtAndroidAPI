@@ -1,3 +1,5 @@
+#include "../../../JString.hpp"
+#include "../../../JThrowable.hpp"
 #include "./XmlPullParserException.hpp"
 
 namespace org::xmlpull::v1
@@ -8,19 +10,19 @@ namespace org::xmlpull::v1
 	XmlPullParserException::XmlPullParserException(QAndroidJniObject obj) : java::lang::Exception(obj) {}
 	
 	// Constructors
-	XmlPullParserException::XmlPullParserException(jstring arg0)
+	XmlPullParserException::XmlPullParserException(JString arg0)
 		: java::lang::Exception(
 			"org.xmlpull.v1.XmlPullParserException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	XmlPullParserException::XmlPullParserException(jstring arg0, JObject arg1, jthrowable arg2)
+	XmlPullParserException::XmlPullParserException(JString arg0, JObject arg1, JThrowable arg2)
 		: java::lang::Exception(
 			"org.xmlpull.v1.XmlPullParserException",
 			"(Ljava/lang/String;Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/Throwable;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
-			arg2
+			arg2.object<jthrowable>()
 		) {}
 	
 	// Methods
@@ -31,12 +33,12 @@ namespace org::xmlpull::v1
 			"()I"
 		);
 	}
-	jthrowable XmlPullParserException::getDetail()
+	JThrowable XmlPullParserException::getDetail()
 	{
 		return callObjectMethod(
 			"getDetail",
 			"()Ljava/lang/Throwable;"
-		).object<jthrowable>();
+		);
 	}
 	jint XmlPullParserException::getLineNumber()
 	{

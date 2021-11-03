@@ -1,3 +1,6 @@
+#include "../../JArray.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./ListResourceBundle.hpp"
 
 namespace java::util
@@ -22,13 +25,13 @@ namespace java::util
 			"()Ljava/util/Enumeration;"
 		);
 	}
-	jobject ListResourceBundle::handleGetObject(jstring arg0)
+	JObject ListResourceBundle::handleGetObject(JString arg0)
 	{
 		return callObjectMethod(
 			"handleGetObject",
 			"(Ljava/lang/String;)Ljava/lang/Object;",
-			arg0
-		).object<jobject>();
+			arg0.object<jstring>()
+		);
 	}
 } // namespace java::util
 

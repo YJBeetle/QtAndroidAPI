@@ -1,3 +1,4 @@
+#include "../../../JArray.hpp"
 #include "./WifiConfiguration_Status.hpp"
 
 namespace android::net::wifi
@@ -24,13 +25,13 @@ namespace android::net::wifi
 			"ENABLED"
 		);
 	}
-	jarray WifiConfiguration_Status::strings()
+	JArray WifiConfiguration_Status::strings()
 	{
 		return getStaticObjectField(
 			"android.net.wifi.WifiConfiguration$Status",
 			"strings",
 			"[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
 	
 	// QAndroidJniObject forward

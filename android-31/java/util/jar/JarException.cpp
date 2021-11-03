@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./JarException.hpp"
 
 namespace java::util::jar
@@ -13,11 +14,11 @@ namespace java::util::jar
 			"java.util.jar.JarException",
 			"()V"
 		) {}
-	JarException::JarException(jstring arg0)
+	JarException::JarException(JString arg0)
 		: java::util::zip::ZipException(
 			"java.util.jar.JarException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

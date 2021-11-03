@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JByteArray;
 namespace android::os
 {
 	class Bundle;
@@ -26,7 +27,7 @@ namespace android::speech
 		
 		// Methods
 		void beginningOfSpeech();
-		void bufferReceived(jbyteArray arg0);
+		void bufferReceived(JByteArray arg0);
 		void endOfSpeech();
 		void error(jint arg0);
 		jint getCallingUid();

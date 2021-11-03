@@ -2,6 +2,9 @@
 #include "../graphics/drawable/Icon.hpp"
 #include "../os/Parcel.hpp"
 #include "../../java/io/PrintWriter.hpp"
+#include "../../JString.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./RemoteAction.hpp"
 
 namespace android::app
@@ -20,13 +23,13 @@ namespace android::app
 	RemoteAction::RemoteAction(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	RemoteAction::RemoteAction(android::graphics::drawable::Icon arg0, jstring arg1, jstring arg2, android::app::PendingIntent arg3)
+	RemoteAction::RemoteAction(android::graphics::drawable::Icon arg0, JString arg1, JString arg2, android::app::PendingIntent arg3)
 		: JObject(
 			"android.app.RemoteAction",
 			"(Landroid/graphics/drawable/Icon;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Landroid/app/PendingIntent;)V",
 			arg0.object(),
-			arg1,
-			arg2,
+			arg1.object<jstring>(),
+			arg2.object<jstring>(),
 			arg3.object()
 		) {}
 	
@@ -45,21 +48,21 @@ namespace android::app
 			"()I"
 		);
 	}
-	void RemoteAction::dump(jstring arg0, java::io::PrintWriter arg1)
+	void RemoteAction::dump(JString arg0, java::io::PrintWriter arg1)
 	{
 		callMethod<void>(
 			"dump",
 			"(Ljava/lang/String;Ljava/io/PrintWriter;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
-	jboolean RemoteAction::equals(jobject arg0)
+	jboolean RemoteAction::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	android::app::PendingIntent RemoteAction::getActionIntent()
@@ -69,12 +72,12 @@ namespace android::app
 			"()Landroid/app/PendingIntent;"
 		);
 	}
-	jstring RemoteAction::getContentDescription()
+	JString RemoteAction::getContentDescription()
 	{
 		return callObjectMethod(
 			"getContentDescription",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	android::graphics::drawable::Icon RemoteAction::getIcon()
 	{
@@ -83,12 +86,12 @@ namespace android::app
 			"()Landroid/graphics/drawable/Icon;"
 		);
 	}
-	jstring RemoteAction::getTitle()
+	JString RemoteAction::getTitle()
 	{
 		return callObjectMethod(
 			"getTitle",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	jint RemoteAction::hashCode()
 	{

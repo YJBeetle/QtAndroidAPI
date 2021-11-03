@@ -1,4 +1,5 @@
 #include "./ApplicationMediaCapabilities.hpp"
+#include "../../JString.hpp"
 #include "./ApplicationMediaCapabilities_Builder.hpp"
 
 namespace android::media
@@ -16,36 +17,36 @@ namespace android::media
 		) {}
 	
 	// Methods
-	android::media::ApplicationMediaCapabilities_Builder ApplicationMediaCapabilities_Builder::addSupportedHdrType(jstring arg0)
+	android::media::ApplicationMediaCapabilities_Builder ApplicationMediaCapabilities_Builder::addSupportedHdrType(JString arg0)
 	{
 		return callObjectMethod(
 			"addSupportedHdrType",
 			"(Ljava/lang/String;)Landroid/media/ApplicationMediaCapabilities$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	android::media::ApplicationMediaCapabilities_Builder ApplicationMediaCapabilities_Builder::addSupportedVideoMimeType(jstring arg0)
+	android::media::ApplicationMediaCapabilities_Builder ApplicationMediaCapabilities_Builder::addSupportedVideoMimeType(JString arg0)
 	{
 		return callObjectMethod(
 			"addSupportedVideoMimeType",
 			"(Ljava/lang/String;)Landroid/media/ApplicationMediaCapabilities$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	android::media::ApplicationMediaCapabilities_Builder ApplicationMediaCapabilities_Builder::addUnsupportedHdrType(jstring arg0)
+	android::media::ApplicationMediaCapabilities_Builder ApplicationMediaCapabilities_Builder::addUnsupportedHdrType(JString arg0)
 	{
 		return callObjectMethod(
 			"addUnsupportedHdrType",
 			"(Ljava/lang/String;)Landroid/media/ApplicationMediaCapabilities$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	android::media::ApplicationMediaCapabilities_Builder ApplicationMediaCapabilities_Builder::addUnsupportedVideoMimeType(jstring arg0)
+	android::media::ApplicationMediaCapabilities_Builder ApplicationMediaCapabilities_Builder::addUnsupportedVideoMimeType(JString arg0)
 	{
 		return callObjectMethod(
 			"addUnsupportedVideoMimeType",
 			"(Ljava/lang/String;)Landroid/media/ApplicationMediaCapabilities$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::media::ApplicationMediaCapabilities ApplicationMediaCapabilities_Builder::build()

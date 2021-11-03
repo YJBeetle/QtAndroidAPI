@@ -1,6 +1,5 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "./Event.hpp"
 
 namespace android::os
@@ -11,6 +10,8 @@ namespace android::os
 {
 	class Parcel;
 }
+class JObject;
+class JString;
 
 namespace android::media::metrics
 {
@@ -38,17 +39,17 @@ namespace android::media::metrics
 		
 		// Methods
 		jint describeContents();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint getAudioSampleRate();
 		jint getBitrate();
 		jint getChannelCount();
-		jstring getCodecName();
-		jstring getContainerMimeType();
+		JString getCodecName();
+		JString getContainerMimeType();
 		jint getHeight();
-		jstring getLanguage();
-		jstring getLanguageRegion();
+		JString getLanguage();
+		JString getLanguageRegion();
 		android::os::Bundle getMetricsBundle();
-		jstring getSampleMimeType();
+		JString getSampleMimeType();
 		jlong getTimeSinceCreatedMillis();
 		jint getTrackChangeReason();
 		jint getTrackState();
@@ -56,7 +57,7 @@ namespace android::media::metrics
 		jfloat getVideoFrameRate();
 		jint getWidth();
 		jint hashCode();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::media::metrics

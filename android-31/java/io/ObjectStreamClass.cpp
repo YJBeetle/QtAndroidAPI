@@ -1,8 +1,18 @@
+#include "../../JByteArray.hpp"
+#include "../../JArray.hpp"
+#include "../../JArray.hpp"
+#include "../../JArray.hpp"
+#include "../../JObjectArray.hpp"
+#include "../../JArray.hpp"
 #include "./ObjectInputStream.hpp"
 #include "./ObjectOutputStream.hpp"
 #include "./ObjectStreamField.hpp"
+#include "../../JClass.hpp"
 #include "../lang/ClassNotFoundException.hpp"
 #include "../lang/Long.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
+#include "../../JThrowable.hpp"
 #include "../lang/invoke/MethodHandle.hpp"
 #include "../lang/ref/ReferenceQueue.hpp"
 #include "../lang/reflect/Constructor.hpp"
@@ -13,13 +23,13 @@
 namespace java::io
 {
 	// Fields
-	jarray ObjectStreamClass::NO_FIELDS()
+	JArray ObjectStreamClass::NO_FIELDS()
 	{
 		return getStaticObjectField(
 			"java.io.ObjectStreamClass",
 			"NO_FIELDS",
 			"[Ljava/io/ObjectStreamField;"
-		).object<jarray>();
+		);
 	}
 	
 	// QAndroidJniObject forward
@@ -28,52 +38,52 @@ namespace java::io
 	// Constructors
 	
 	// Methods
-	java::io::ObjectStreamClass ObjectStreamClass::lookup(jclass arg0)
+	java::io::ObjectStreamClass ObjectStreamClass::lookup(JClass arg0)
 	{
 		return callStaticObjectMethod(
 			"java.io.ObjectStreamClass",
 			"lookup",
 			"(Ljava/lang/Class;)Ljava/io/ObjectStreamClass;",
-			arg0
+			arg0.object<jclass>()
 		);
 	}
-	java::io::ObjectStreamClass ObjectStreamClass::lookupAny(jclass arg0)
+	java::io::ObjectStreamClass ObjectStreamClass::lookupAny(JClass arg0)
 	{
 		return callStaticObjectMethod(
 			"java.io.ObjectStreamClass",
 			"lookupAny",
 			"(Ljava/lang/Class;)Ljava/io/ObjectStreamClass;",
-			arg0
+			arg0.object<jclass>()
 		);
 	}
-	jclass ObjectStreamClass::forClass()
+	JClass ObjectStreamClass::forClass()
 	{
 		return callObjectMethod(
 			"forClass",
 			"()Ljava/lang/Class;"
-		).object<jclass>();
+		);
 	}
-	java::io::ObjectStreamField ObjectStreamClass::getField(jstring arg0)
+	java::io::ObjectStreamField ObjectStreamClass::getField(JString arg0)
 	{
 		return callObjectMethod(
 			"getField",
 			"(Ljava/lang/String;)Ljava/io/ObjectStreamField;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray ObjectStreamClass::getFields()
+	JArray ObjectStreamClass::getFields()
 	{
 		return callObjectMethod(
 			"getFields",
 			"()[Ljava/io/ObjectStreamField;"
-		).object<jarray>();
+		);
 	}
-	jstring ObjectStreamClass::getName()
+	JString ObjectStreamClass::getName()
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jlong ObjectStreamClass::getSerialVersionUID()
 	{
@@ -82,12 +92,12 @@ namespace java::io
 			"()J"
 		);
 	}
-	jstring ObjectStreamClass::toString()
+	JString ObjectStreamClass::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::io
 

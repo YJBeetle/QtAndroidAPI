@@ -1,8 +1,10 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./Buffer.hpp"
 
+class JByteArray;
+class JObject;
+class JString;
 namespace java::nio
 {
 	class Buffer;
@@ -52,11 +54,11 @@ namespace java::nio
 		// Methods
 		static java::nio::ByteBuffer allocate(jint arg0);
 		static java::nio::ByteBuffer allocateDirect(jint arg0);
-		static java::nio::ByteBuffer wrap(jbyteArray arg0);
-		static java::nio::ByteBuffer wrap(jbyteArray arg0, jint arg1, jint arg2);
+		static java::nio::ByteBuffer wrap(JByteArray arg0);
+		static java::nio::ByteBuffer wrap(JByteArray arg0, jint arg1, jint arg2);
 		java::nio::ByteBuffer alignedSlice(jint arg0);
 		jint alignmentOffset(jint arg0, jint arg1);
-		jbyteArray array();
+		JByteArray array();
 		jint arrayOffset();
 		java::nio::CharBuffer asCharBuffer();
 		java::nio::DoubleBuffer asDoubleBuffer();
@@ -67,17 +69,17 @@ namespace java::nio
 		java::nio::ShortBuffer asShortBuffer();
 		java::nio::ByteBuffer clear();
 		java::nio::ByteBuffer compact();
-		jint compareTo(jobject arg0);
+		jint compareTo(JObject arg0);
 		jint compareTo(java::nio::ByteBuffer arg0);
 		java::nio::ByteBuffer duplicate();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		java::nio::ByteBuffer flip();
 		jbyte get();
 		jbyte get(jint arg0);
-		java::nio::ByteBuffer get(jbyteArray arg0);
-		java::nio::ByteBuffer get(jint arg0, jbyteArray arg1);
-		java::nio::ByteBuffer get(jbyteArray arg0, jint arg1, jint arg2);
-		java::nio::ByteBuffer get(jint arg0, jbyteArray arg1, jint arg2, jint arg3);
+		java::nio::ByteBuffer get(JByteArray arg0);
+		java::nio::ByteBuffer get(jint arg0, JByteArray arg1);
+		java::nio::ByteBuffer get(JByteArray arg0, jint arg1, jint arg2);
+		java::nio::ByteBuffer get(jint arg0, JByteArray arg1, jint arg2, jint arg3);
 		jchar getChar();
 		jchar getChar(jint arg0);
 		jdouble getDouble();
@@ -99,13 +101,13 @@ namespace java::nio
 		java::nio::ByteBuffer order(java::nio::ByteOrder arg0);
 		java::nio::ByteOrder order();
 		java::nio::ByteBuffer position(jint arg0);
-		java::nio::ByteBuffer put(jbyteArray arg0);
+		java::nio::ByteBuffer put(JByteArray arg0);
 		java::nio::ByteBuffer put(jbyte arg0);
 		java::nio::ByteBuffer put(java::nio::ByteBuffer arg0);
-		java::nio::ByteBuffer put(jint arg0, jbyteArray arg1);
+		java::nio::ByteBuffer put(jint arg0, JByteArray arg1);
 		java::nio::ByteBuffer put(jint arg0, jbyte arg1);
-		java::nio::ByteBuffer put(jbyteArray arg0, jint arg1, jint arg2);
-		java::nio::ByteBuffer put(jint arg0, jbyteArray arg1, jint arg2, jint arg3);
+		java::nio::ByteBuffer put(JByteArray arg0, jint arg1, jint arg2);
+		java::nio::ByteBuffer put(jint arg0, JByteArray arg1, jint arg2, jint arg3);
 		java::nio::ByteBuffer put(jint arg0, java::nio::ByteBuffer arg1, jint arg2, jint arg3);
 		java::nio::ByteBuffer putChar(jchar arg0);
 		java::nio::ByteBuffer putChar(jint arg0, jchar arg1);
@@ -123,7 +125,7 @@ namespace java::nio
 		java::nio::ByteBuffer rewind();
 		java::nio::ByteBuffer slice();
 		java::nio::ByteBuffer slice(jint arg0, jint arg1);
-		jstring toString();
+		JString toString();
 	};
 } // namespace java::nio
 

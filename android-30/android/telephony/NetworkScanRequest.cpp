@@ -1,4 +1,6 @@
+#include "../../JArray.hpp"
 #include "../os/Parcel.hpp"
+#include "../../JObject.hpp"
 #include "../../java/util/ArrayList.hpp"
 #include "./NetworkScanRequest.hpp"
 
@@ -32,12 +34,12 @@ namespace android::telephony
 	NetworkScanRequest::NetworkScanRequest(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	NetworkScanRequest::NetworkScanRequest(jint arg0, jarray arg1, jint arg2, jint arg3, jboolean arg4, jint arg5, java::util::ArrayList arg6)
+	NetworkScanRequest::NetworkScanRequest(jint arg0, JArray arg1, jint arg2, jint arg3, jboolean arg4, jint arg5, java::util::ArrayList arg6)
 		: JObject(
 			"android.telephony.NetworkScanRequest",
 			"(I[Landroid/telephony/RadioAccessSpecifier;IIZILjava/util/ArrayList;)V",
 			arg0,
-			arg1,
+			arg1.object<jarray>(),
 			arg2,
 			arg3,
 			arg4,
@@ -53,12 +55,12 @@ namespace android::telephony
 			"()I"
 		);
 	}
-	jboolean NetworkScanRequest::equals(jobject arg0)
+	jboolean NetworkScanRequest::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jboolean NetworkScanRequest::getIncrementalResults()
@@ -103,12 +105,12 @@ namespace android::telephony
 			"()I"
 		);
 	}
-	jarray NetworkScanRequest::getSpecifiers()
+	JArray NetworkScanRequest::getSpecifiers()
 	{
 		return callObjectMethod(
 			"getSpecifiers",
 			"()[Landroid/telephony/RadioAccessSpecifier;"
-		).object<jarray>();
+		);
 	}
 	jint NetworkScanRequest::hashCode()
 	{

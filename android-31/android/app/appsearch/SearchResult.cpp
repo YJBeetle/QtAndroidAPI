@@ -1,4 +1,5 @@
 #include "./GenericDocument.hpp"
+#include "../../../JString.hpp"
 #include "./SearchResult.hpp"
 
 namespace android::app::appsearch
@@ -11,12 +12,12 @@ namespace android::app::appsearch
 	// Constructors
 	
 	// Methods
-	jstring SearchResult::getDatabaseName()
+	JString SearchResult::getDatabaseName()
 	{
 		return callObjectMethod(
 			"getDatabaseName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::app::appsearch::GenericDocument SearchResult::getGenericDocument()
 	{
@@ -32,12 +33,12 @@ namespace android::app::appsearch
 			"()Ljava/util/List;"
 		);
 	}
-	jstring SearchResult::getPackageName()
+	JString SearchResult::getPackageName()
 	{
 		return callObjectMethod(
 			"getPackageName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jdouble SearchResult::getRankingSignal()
 	{

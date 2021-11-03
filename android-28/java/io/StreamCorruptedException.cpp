@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./StreamCorruptedException.hpp"
 
 namespace java::io
@@ -13,11 +14,11 @@ namespace java::io
 			"java.io.StreamCorruptedException",
 			"()V"
 		) {}
-	StreamCorruptedException::StreamCorruptedException(jstring arg0)
+	StreamCorruptedException::StreamCorruptedException(JString arg0)
 		: java::io::ObjectStreamException(
 			"java.io.StreamCorruptedException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

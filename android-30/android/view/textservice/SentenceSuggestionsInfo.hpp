@@ -2,6 +2,8 @@
 
 #include "../../../JObject.hpp"
 
+class JIntArray;
+class JArray;
 namespace android::os
 {
 	class Parcel;
@@ -25,7 +27,7 @@ namespace android::view::textservice
 		
 		// Constructors
 		SentenceSuggestionsInfo(android::os::Parcel arg0);
-		SentenceSuggestionsInfo(jarray arg0, jintArray arg1, jintArray arg2);
+		SentenceSuggestionsInfo(JArray arg0, JIntArray arg1, JIntArray arg2);
 		
 		// Methods
 		jint describeContents();

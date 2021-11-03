@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JByteArray;
+class JString;
 
 namespace android::util
 {
@@ -23,13 +25,13 @@ namespace android::util
 		// Constructors
 		
 		// Methods
-		static jbyteArray decode(jbyteArray arg0, jint arg1);
-		static jbyteArray decode(jstring arg0, jint arg1);
-		static jbyteArray decode(jbyteArray arg0, jint arg1, jint arg2, jint arg3);
-		static jbyteArray encode(jbyteArray arg0, jint arg1);
-		static jbyteArray encode(jbyteArray arg0, jint arg1, jint arg2, jint arg3);
-		static jstring encodeToString(jbyteArray arg0, jint arg1);
-		static jstring encodeToString(jbyteArray arg0, jint arg1, jint arg2, jint arg3);
+		static JByteArray decode(JByteArray arg0, jint arg1);
+		static JByteArray decode(JString arg0, jint arg1);
+		static JByteArray decode(JByteArray arg0, jint arg1, jint arg2, jint arg3);
+		static JByteArray encode(JByteArray arg0, jint arg1);
+		static JByteArray encode(JByteArray arg0, jint arg1, jint arg2, jint arg3);
+		static JString encodeToString(JByteArray arg0, jint arg1);
+		static JString encodeToString(JByteArray arg0, jint arg1, jint arg2, jint arg3);
 	};
 } // namespace android::util
 

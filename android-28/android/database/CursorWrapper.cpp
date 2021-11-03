@@ -1,9 +1,12 @@
+#include "../../JByteArray.hpp"
+#include "../../JArray.hpp"
 #include "../content/ContentResolver.hpp"
 #include "./CharArrayBuffer.hpp"
 #include "./ContentObserver.hpp"
 #include "./DataSetObserver.hpp"
 #include "../net/Uri.hpp"
 #include "../os/Bundle.hpp"
+#include "../../JString.hpp"
 #include "./CursorWrapper.hpp"
 
 namespace android::database
@@ -45,13 +48,13 @@ namespace android::database
 			"()V"
 		);
 	}
-	jbyteArray CursorWrapper::getBlob(jint arg0)
+	JByteArray CursorWrapper::getBlob(jint arg0)
 	{
 		return callObjectMethod(
 			"getBlob",
 			"(I)[B",
 			arg0
-		).object<jbyteArray>();
+		);
 	}
 	jint CursorWrapper::getColumnCount()
 	{
@@ -60,36 +63,36 @@ namespace android::database
 			"()I"
 		);
 	}
-	jint CursorWrapper::getColumnIndex(jstring arg0)
+	jint CursorWrapper::getColumnIndex(JString arg0)
 	{
 		return callMethod<jint>(
 			"getColumnIndex",
 			"(Ljava/lang/String;)I",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jint CursorWrapper::getColumnIndexOrThrow(jstring arg0)
+	jint CursorWrapper::getColumnIndexOrThrow(JString arg0)
 	{
 		return callMethod<jint>(
 			"getColumnIndexOrThrow",
 			"(Ljava/lang/String;)I",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jstring CursorWrapper::getColumnName(jint arg0)
+	JString CursorWrapper::getColumnName(jint arg0)
 	{
 		return callObjectMethod(
 			"getColumnName",
 			"(I)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
-	jarray CursorWrapper::getColumnNames()
+	JArray CursorWrapper::getColumnNames()
 	{
 		return callObjectMethod(
 			"getColumnNames",
 			"()[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
 	jint CursorWrapper::getCount()
 	{
@@ -159,13 +162,13 @@ namespace android::database
 			arg0
 		);
 	}
-	jstring CursorWrapper::getString(jint arg0)
+	JString CursorWrapper::getString(jint arg0)
 	{
 		return callObjectMethod(
 			"getString",
 			"(I)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
 	jint CursorWrapper::getType(jint arg0)
 	{

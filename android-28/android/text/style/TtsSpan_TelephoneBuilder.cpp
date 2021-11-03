@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./TtsSpan_TelephoneBuilder.hpp"
 
 namespace android::text::style
@@ -13,36 +14,36 @@ namespace android::text::style
 			"android.text.style.TtsSpan$TelephoneBuilder",
 			"()V"
 		) {}
-	TtsSpan_TelephoneBuilder::TtsSpan_TelephoneBuilder(jstring arg0)
+	TtsSpan_TelephoneBuilder::TtsSpan_TelephoneBuilder(JString arg0)
 		: android::text::style::TtsSpan_SemioticClassBuilder(
 			"android.text.style.TtsSpan$TelephoneBuilder",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods
-	android::text::style::TtsSpan_TelephoneBuilder TtsSpan_TelephoneBuilder::setCountryCode(jstring arg0)
+	android::text::style::TtsSpan_TelephoneBuilder TtsSpan_TelephoneBuilder::setCountryCode(JString arg0)
 	{
 		return callObjectMethod(
 			"setCountryCode",
 			"(Ljava/lang/String;)Landroid/text/style/TtsSpan$TelephoneBuilder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	android::text::style::TtsSpan_TelephoneBuilder TtsSpan_TelephoneBuilder::setExtension(jstring arg0)
+	android::text::style::TtsSpan_TelephoneBuilder TtsSpan_TelephoneBuilder::setExtension(JString arg0)
 	{
 		return callObjectMethod(
 			"setExtension",
 			"(Ljava/lang/String;)Landroid/text/style/TtsSpan$TelephoneBuilder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	android::text::style::TtsSpan_TelephoneBuilder TtsSpan_TelephoneBuilder::setNumberParts(jstring arg0)
+	android::text::style::TtsSpan_TelephoneBuilder TtsSpan_TelephoneBuilder::setNumberParts(JString arg0)
 	{
 		return callObjectMethod(
 			"setNumberParts",
 			"(Ljava/lang/String;)Landroid/text/style/TtsSpan$TelephoneBuilder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 } // namespace android::text::style

@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JArray;
 namespace android::database::sqlite
 {
 	class SQLiteDatabase;
@@ -10,6 +11,8 @@ namespace android::os
 {
 	class CancellationSignal;
 }
+class JString;
+class JString;
 namespace java::lang
 {
 	class StringBuilder;
@@ -30,24 +33,24 @@ namespace android::database::sqlite
 		SQLiteQueryBuilder();
 		
 		// Methods
-		static void appendColumns(java::lang::StringBuilder arg0, jarray arg1);
-		static jstring buildQueryString(jboolean arg0, jstring arg1, jarray arg2, jstring arg3, jstring arg4, jstring arg5, jstring arg6, jstring arg7);
-		void appendWhere(jstring arg0);
-		void appendWhereEscapeString(jstring arg0);
-		jstring buildQuery(jarray arg0, jstring arg1, jstring arg2, jstring arg3, jstring arg4, jstring arg5);
-		jstring buildQuery(jarray arg0, jstring arg1, jarray arg2, jstring arg3, jstring arg4, jstring arg5, jstring arg6);
-		jstring buildUnionQuery(jarray arg0, jstring arg1, jstring arg2);
-		jstring buildUnionSubQuery(jstring arg0, jarray arg1, JObject arg2, jint arg3, jstring arg4, jstring arg5, jstring arg6, jstring arg7);
-		jstring buildUnionSubQuery(jstring arg0, jarray arg1, JObject arg2, jint arg3, jstring arg4, jstring arg5, jarray arg6, jstring arg7, jstring arg8);
-		jstring getTables();
-		JObject query(android::database::sqlite::SQLiteDatabase arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4, jstring arg5, jstring arg6);
-		JObject query(android::database::sqlite::SQLiteDatabase arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4, jstring arg5, jstring arg6, jstring arg7);
-		JObject query(android::database::sqlite::SQLiteDatabase arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4, jstring arg5, jstring arg6, jstring arg7, android::os::CancellationSignal arg8);
+		static void appendColumns(java::lang::StringBuilder arg0, JArray arg1);
+		static JString buildQueryString(jboolean arg0, JString arg1, JArray arg2, JString arg3, JString arg4, JString arg5, JString arg6, JString arg7);
+		void appendWhere(JString arg0);
+		void appendWhereEscapeString(JString arg0);
+		JString buildQuery(JArray arg0, JString arg1, JString arg2, JString arg3, JString arg4, JString arg5);
+		JString buildQuery(JArray arg0, JString arg1, JArray arg2, JString arg3, JString arg4, JString arg5, JString arg6);
+		JString buildUnionQuery(JArray arg0, JString arg1, JString arg2);
+		JString buildUnionSubQuery(JString arg0, JArray arg1, JObject arg2, jint arg3, JString arg4, JString arg5, JString arg6, JString arg7);
+		JString buildUnionSubQuery(JString arg0, JArray arg1, JObject arg2, jint arg3, JString arg4, JString arg5, JArray arg6, JString arg7, JString arg8);
+		JString getTables();
+		JObject query(android::database::sqlite::SQLiteDatabase arg0, JArray arg1, JString arg2, JArray arg3, JString arg4, JString arg5, JString arg6);
+		JObject query(android::database::sqlite::SQLiteDatabase arg0, JArray arg1, JString arg2, JArray arg3, JString arg4, JString arg5, JString arg6, JString arg7);
+		JObject query(android::database::sqlite::SQLiteDatabase arg0, JArray arg1, JString arg2, JArray arg3, JString arg4, JString arg5, JString arg6, JString arg7, android::os::CancellationSignal arg8);
 		void setCursorFactory(JObject arg0);
 		void setDistinct(jboolean arg0);
 		void setProjectionMap(JObject arg0);
 		void setStrict(jboolean arg0);
-		void setTables(jstring arg0);
+		void setTables(JString arg0);
 	};
 } // namespace android::database::sqlite
 

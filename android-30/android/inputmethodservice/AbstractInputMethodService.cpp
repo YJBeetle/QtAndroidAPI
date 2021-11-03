@@ -1,3 +1,4 @@
+#include "../../JArray.hpp"
 #include "../content/Intent.hpp"
 #include "./AbstractInputMethodService_AbstractInputMethodImpl.hpp"
 #include "./AbstractInputMethodService_AbstractInputMethodSessionImpl.hpp"

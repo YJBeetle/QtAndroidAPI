@@ -1,4 +1,6 @@
 #include "../os/Parcel.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./PrintDocumentInfo.hpp"
 
 namespace android::print
@@ -54,12 +56,12 @@ namespace android::print
 			"()I"
 		);
 	}
-	jboolean PrintDocumentInfo::equals(jobject arg0)
+	jboolean PrintDocumentInfo::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint PrintDocumentInfo::getContentType()
@@ -76,12 +78,12 @@ namespace android::print
 			"()J"
 		);
 	}
-	jstring PrintDocumentInfo::getName()
+	JString PrintDocumentInfo::getName()
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint PrintDocumentInfo::getPageCount()
 	{
@@ -97,12 +99,12 @@ namespace android::print
 			"()I"
 		);
 	}
-	jstring PrintDocumentInfo::toString()
+	JString PrintDocumentInfo::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void PrintDocumentInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

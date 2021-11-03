@@ -1,10 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "./Exception.hpp"
-#include "./RuntimeException.hpp"
 #include "./IllegalArgumentException.hpp"
 
+class JString;
 
 namespace java::lang
 {
@@ -19,7 +17,7 @@ namespace java::lang
 		
 		// Constructors
 		IllegalThreadStateException();
-		IllegalThreadStateException(jstring arg0);
+		IllegalThreadStateException(JString arg0);
 		
 		// Methods
 	};

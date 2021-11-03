@@ -1,6 +1,8 @@
 #include "../../app/slice/Slice.hpp"
 #include "../../os/Parcel.hpp"
 #include "../../widget/inline/InlinePresentationSpec.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./InlinePresentation.hpp"
 
 namespace android::service::autofill
@@ -46,12 +48,12 @@ namespace android::service::autofill
 			"()I"
 		);
 	}
-	jboolean InlinePresentation::equals(jobject arg0)
+	jboolean InlinePresentation::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	android::widget::inline::InlinePresentationSpec InlinePresentation::getInlinePresentationSpec()
@@ -82,12 +84,12 @@ namespace android::service::autofill
 			"()Z"
 		);
 	}
-	jstring InlinePresentation::toString()
+	JString InlinePresentation::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void InlinePresentation::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

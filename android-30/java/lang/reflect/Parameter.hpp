@@ -2,6 +2,10 @@
 
 #include "../../../JObject.hpp"
 
+class JArray;
+class JClass;
+class JObject;
+class JString;
 namespace java::lang::reflect
 {
 	class Executable;
@@ -21,25 +25,25 @@ namespace java::lang::reflect
 		// Constructors
 		
 		// Methods
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		JObject getAnnotatedType();
-		JObject getAnnotation(jclass arg0);
-		jarray getAnnotations();
-		jarray getAnnotationsByType(jclass arg0);
-		JObject getDeclaredAnnotation(jclass arg0);
-		jarray getDeclaredAnnotations();
-		jarray getDeclaredAnnotationsByType(jclass arg0);
+		JObject getAnnotation(JClass arg0);
+		JArray getAnnotations();
+		JArray getAnnotationsByType(JClass arg0);
+		JObject getDeclaredAnnotation(JClass arg0);
+		JArray getDeclaredAnnotations();
+		JArray getDeclaredAnnotationsByType(JClass arg0);
 		java::lang::reflect::Executable getDeclaringExecutable();
 		jint getModifiers();
-		jstring getName();
+		JString getName();
 		JObject getParameterizedType();
-		jclass getType();
+		JClass getType();
 		jint hashCode();
 		jboolean isImplicit();
 		jboolean isNamePresent();
 		jboolean isSynthetic();
 		jboolean isVarArgs();
-		jstring toString();
+		JString toString();
 	};
 } // namespace java::lang::reflect
 

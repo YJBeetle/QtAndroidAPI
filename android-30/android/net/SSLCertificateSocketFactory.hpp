@@ -1,13 +1,17 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../../javax/net/SocketFactory.hpp"
 #include "../../javax/net/ssl/SSLSocketFactory.hpp"
 
+class JByteArray;
+class JArray;
+class JArray;
+class JArray;
+class JArray;
 namespace android::net
 {
 	class SSLSessionCache;
 }
+class JString;
 namespace java::net
 {
 	class InetAddress;
@@ -44,18 +48,18 @@ namespace android::net
 		static javax::net::ssl::SSLSocketFactory getDefault(jint arg0, android::net::SSLSessionCache arg1);
 		static javax::net::ssl::SSLSocketFactory getInsecure(jint arg0, android::net::SSLSessionCache arg1);
 		java::net::Socket createSocket();
-		java::net::Socket createSocket(jstring arg0, jint arg1);
+		java::net::Socket createSocket(JString arg0, jint arg1);
 		java::net::Socket createSocket(java::net::InetAddress arg0, jint arg1);
-		java::net::Socket createSocket(jstring arg0, jint arg1, java::net::InetAddress arg2, jint arg3);
+		java::net::Socket createSocket(JString arg0, jint arg1, java::net::InetAddress arg2, jint arg3);
 		java::net::Socket createSocket(java::net::InetAddress arg0, jint arg1, java::net::InetAddress arg2, jint arg3);
-		java::net::Socket createSocket(java::net::Socket arg0, jstring arg1, jint arg2, jboolean arg3);
-		jarray getDefaultCipherSuites();
-		jbyteArray getNpnSelectedProtocol(java::net::Socket arg0);
-		jarray getSupportedCipherSuites();
-		void setHostname(java::net::Socket arg0, jstring arg1);
-		void setKeyManagers(jarray arg0);
-		void setNpnProtocols(jarray arg0);
-		void setTrustManagers(jarray arg0);
+		java::net::Socket createSocket(java::net::Socket arg0, JString arg1, jint arg2, jboolean arg3);
+		JArray getDefaultCipherSuites();
+		JByteArray getNpnSelectedProtocol(java::net::Socket arg0);
+		JArray getSupportedCipherSuites();
+		void setHostname(java::net::Socket arg0, JString arg1);
+		void setKeyManagers(JArray arg0);
+		void setNpnProtocols(JArray arg0);
+		void setTrustManagers(JArray arg0);
 		void setUseSessionTickets(java::net::Socket arg0, jboolean arg1);
 	};
 } // namespace android::net

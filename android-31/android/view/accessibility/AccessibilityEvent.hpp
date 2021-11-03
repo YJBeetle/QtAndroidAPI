@@ -1,6 +1,5 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "./AccessibilityRecord.hpp"
 
 namespace android::os
@@ -11,6 +10,8 @@ namespace android::view::accessibility
 {
 	class AccessibilityRecord;
 }
+class JString;
+class JString;
 
 namespace android::view::accessibility
 {
@@ -77,7 +78,7 @@ namespace android::view::accessibility
 		AccessibilityEvent(jint arg0);
 		
 		// Methods
-		static jstring eventTypeToString(jint arg0);
+		static JString eventTypeToString(jint arg0);
 		static android::view::accessibility::AccessibilityEvent obtain();
 		static android::view::accessibility::AccessibilityEvent obtain(android::view::accessibility::AccessibilityEvent arg0);
 		static android::view::accessibility::AccessibilityEvent obtain(jint arg0);
@@ -88,7 +89,7 @@ namespace android::view::accessibility
 		jlong getEventTime();
 		jint getEventType();
 		jint getMovementGranularity();
-		jstring getPackageName();
+		JString getPackageName();
 		android::view::accessibility::AccessibilityRecord getRecord(jint arg0);
 		jint getRecordCount();
 		jint getWindowChanges();
@@ -99,8 +100,8 @@ namespace android::view::accessibility
 		void setEventTime(jlong arg0);
 		void setEventType(jint arg0);
 		void setMovementGranularity(jint arg0);
-		void setPackageName(jstring arg0);
-		jstring toString();
+		void setPackageName(JString arg0);
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::view::accessibility

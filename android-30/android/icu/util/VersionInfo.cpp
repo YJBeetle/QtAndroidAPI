@@ -1,3 +1,5 @@
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./VersionInfo.hpp"
 
 namespace android::icu::util
@@ -299,13 +301,13 @@ namespace android::icu::util
 			arg0
 		);
 	}
-	android::icu::util::VersionInfo VersionInfo::getInstance(jstring arg0)
+	android::icu::util::VersionInfo VersionInfo::getInstance(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.icu.util.VersionInfo",
 			"getInstance",
 			"(Ljava/lang/String;)Landroid/icu/util/VersionInfo;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::icu::util::VersionInfo VersionInfo::getInstance(jint arg0, jint arg1)
@@ -349,20 +351,20 @@ namespace android::icu::util
 			arg0.object()
 		);
 	}
-	jint VersionInfo::compareTo(jobject arg0)
+	jint VersionInfo::compareTo(JObject arg0)
 	{
 		return callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Object;)I",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jboolean VersionInfo::equals(jobject arg0)
+	jboolean VersionInfo::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint VersionInfo::getMajor()
@@ -400,12 +402,12 @@ namespace android::icu::util
 			"()I"
 		);
 	}
-	jstring VersionInfo::toString()
+	JString VersionInfo::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::icu::util
 

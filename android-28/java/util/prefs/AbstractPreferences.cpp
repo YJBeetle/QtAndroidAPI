@@ -1,4 +1,11 @@
+#include "../../../JByteArray.hpp"
+#include "../../../JArray.hpp"
+#include "../../../JArray.hpp"
+#include "../../../JArray.hpp"
+#include "../../../JArray.hpp"
 #include "../../io/OutputStream.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "../../lang/Thread.hpp"
 #include "../StringTokenizer.hpp"
 #include "./Preferences.hpp"
@@ -14,12 +21,12 @@ namespace java::util::prefs
 	// Constructors
 	
 	// Methods
-	jstring AbstractPreferences::absolutePath()
+	JString AbstractPreferences::absolutePath()
 	{
 		return callObjectMethod(
 			"absolutePath",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void AbstractPreferences::addNodeChangeListener(JObject arg0)
 	{
@@ -37,12 +44,12 @@ namespace java::util::prefs
 			arg0.object()
 		);
 	}
-	jarray AbstractPreferences::childrenNames()
+	JArray AbstractPreferences::childrenNames()
 	{
 		return callObjectMethod(
 			"childrenNames",
 			"()[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
 	void AbstractPreferences::clear()
 	{
@@ -74,66 +81,66 @@ namespace java::util::prefs
 			"()V"
 		);
 	}
-	jstring AbstractPreferences::get(jstring arg0, jstring arg1)
+	JString AbstractPreferences::get(JString arg0, JString arg1)
 	{
 		return callObjectMethod(
 			"get",
 			"(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
-			arg0,
-			arg1
-		).object<jstring>();
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
+		);
 	}
-	jboolean AbstractPreferences::getBoolean(jstring arg0, jboolean arg1)
+	jboolean AbstractPreferences::getBoolean(JString arg0, jboolean arg1)
 	{
 		return callMethod<jboolean>(
 			"getBoolean",
 			"(Ljava/lang/String;Z)Z",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
-	jbyteArray AbstractPreferences::getByteArray(jstring arg0, jbyteArray arg1)
+	JByteArray AbstractPreferences::getByteArray(JString arg0, JByteArray arg1)
 	{
 		return callObjectMethod(
 			"getByteArray",
 			"(Ljava/lang/String;[B)[B",
-			arg0,
-			arg1
-		).object<jbyteArray>();
+			arg0.object<jstring>(),
+			arg1.object<jbyteArray>()
+		);
 	}
-	jdouble AbstractPreferences::getDouble(jstring arg0, jdouble arg1)
+	jdouble AbstractPreferences::getDouble(JString arg0, jdouble arg1)
 	{
 		return callMethod<jdouble>(
 			"getDouble",
 			"(Ljava/lang/String;D)D",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
-	jfloat AbstractPreferences::getFloat(jstring arg0, jfloat arg1)
+	jfloat AbstractPreferences::getFloat(JString arg0, jfloat arg1)
 	{
 		return callMethod<jfloat>(
 			"getFloat",
 			"(Ljava/lang/String;F)F",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
-	jint AbstractPreferences::getInt(jstring arg0, jint arg1)
+	jint AbstractPreferences::getInt(JString arg0, jint arg1)
 	{
 		return callMethod<jint>(
 			"getInt",
 			"(Ljava/lang/String;I)I",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
-	jlong AbstractPreferences::getLong(jstring arg0, jlong arg1)
+	jlong AbstractPreferences::getLong(JString arg0, jlong arg1)
 	{
 		return callMethod<jlong>(
 			"getLong",
 			"(Ljava/lang/String;J)J",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
@@ -144,34 +151,34 @@ namespace java::util::prefs
 			"()Z"
 		);
 	}
-	jarray AbstractPreferences::keys()
+	JArray AbstractPreferences::keys()
 	{
 		return callObjectMethod(
 			"keys",
 			"()[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
-	jstring AbstractPreferences::name()
+	JString AbstractPreferences::name()
 	{
 		return callObjectMethod(
 			"name",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	java::util::prefs::Preferences AbstractPreferences::node(jstring arg0)
+	java::util::prefs::Preferences AbstractPreferences::node(JString arg0)
 	{
 		return callObjectMethod(
 			"node",
 			"(Ljava/lang/String;)Ljava/util/prefs/Preferences;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jboolean AbstractPreferences::nodeExists(jstring arg0)
+	jboolean AbstractPreferences::nodeExists(JString arg0)
 	{
 		return callMethod<jboolean>(
 			"nodeExists",
 			"(Ljava/lang/String;)Z",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	java::util::prefs::Preferences AbstractPreferences::parent()
@@ -181,75 +188,75 @@ namespace java::util::prefs
 			"()Ljava/util/prefs/Preferences;"
 		);
 	}
-	void AbstractPreferences::put(jstring arg0, jstring arg1)
+	void AbstractPreferences::put(JString arg0, JString arg1)
 	{
 		callMethod<void>(
 			"put",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		);
 	}
-	void AbstractPreferences::putBoolean(jstring arg0, jboolean arg1)
+	void AbstractPreferences::putBoolean(JString arg0, jboolean arg1)
 	{
 		callMethod<void>(
 			"putBoolean",
 			"(Ljava/lang/String;Z)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
-	void AbstractPreferences::putByteArray(jstring arg0, jbyteArray arg1)
+	void AbstractPreferences::putByteArray(JString arg0, JByteArray arg1)
 	{
 		callMethod<void>(
 			"putByteArray",
 			"(Ljava/lang/String;[B)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jbyteArray>()
 		);
 	}
-	void AbstractPreferences::putDouble(jstring arg0, jdouble arg1)
+	void AbstractPreferences::putDouble(JString arg0, jdouble arg1)
 	{
 		callMethod<void>(
 			"putDouble",
 			"(Ljava/lang/String;D)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
-	void AbstractPreferences::putFloat(jstring arg0, jfloat arg1)
+	void AbstractPreferences::putFloat(JString arg0, jfloat arg1)
 	{
 		callMethod<void>(
 			"putFloat",
 			"(Ljava/lang/String;F)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
-	void AbstractPreferences::putInt(jstring arg0, jint arg1)
+	void AbstractPreferences::putInt(JString arg0, jint arg1)
 	{
 		callMethod<void>(
 			"putInt",
 			"(Ljava/lang/String;I)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
-	void AbstractPreferences::putLong(jstring arg0, jlong arg1)
+	void AbstractPreferences::putLong(JString arg0, jlong arg1)
 	{
 		callMethod<void>(
 			"putLong",
 			"(Ljava/lang/String;J)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
-	void AbstractPreferences::remove(jstring arg0)
+	void AbstractPreferences::remove(JString arg0)
 	{
 		callMethod<void>(
 			"remove",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void AbstractPreferences::removeNode()
@@ -282,12 +289,12 @@ namespace java::util::prefs
 			"()V"
 		);
 	}
-	jstring AbstractPreferences::toString()
+	JString AbstractPreferences::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::util::prefs
 

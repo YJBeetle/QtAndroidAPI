@@ -14,6 +14,7 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
 
 namespace android::location
 {
@@ -35,7 +36,7 @@ namespace android::location
 		android::location::GnssAntennaInfo_PhaseCenterOffset getPhaseCenterOffset();
 		android::location::GnssAntennaInfo_SphericalCorrections getPhaseCenterVariationCorrections();
 		android::location::GnssAntennaInfo_SphericalCorrections getSignalGainCorrections();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::location

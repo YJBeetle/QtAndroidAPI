@@ -1,4 +1,5 @@
 #include "../../os/Parcel.hpp"
+#include "../../../JString.hpp"
 #include "./VersionedPackage.hpp"
 
 namespace android::content::pm
@@ -17,18 +18,18 @@ namespace android::content::pm
 	VersionedPackage::VersionedPackage(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	VersionedPackage::VersionedPackage(jstring arg0, jint arg1)
+	VersionedPackage::VersionedPackage(JString arg0, jint arg1)
 		: JObject(
 			"android.content.pm.VersionedPackage",
 			"(Ljava/lang/String;I)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		) {}
-	VersionedPackage::VersionedPackage(jstring arg0, jlong arg1)
+	VersionedPackage::VersionedPackage(JString arg0, jlong arg1)
 		: JObject(
 			"android.content.pm.VersionedPackage",
 			"(Ljava/lang/String;J)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		) {}
 	
@@ -47,12 +48,12 @@ namespace android::content::pm
 			"()J"
 		);
 	}
-	jstring VersionedPackage::getPackageName()
+	JString VersionedPackage::getPackageName()
 	{
 		return callObjectMethod(
 			"getPackageName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint VersionedPackage::getVersionCode()
 	{
@@ -61,12 +62,12 @@ namespace android::content::pm
 			"()I"
 		);
 	}
-	jstring VersionedPackage::toString()
+	JString VersionedPackage::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void VersionedPackage::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

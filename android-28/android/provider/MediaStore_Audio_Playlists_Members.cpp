@@ -1,57 +1,58 @@
 #include "../content/ContentResolver.hpp"
 #include "../net/Uri.hpp"
+#include "../../JString.hpp"
 #include "./MediaStore_Audio_Playlists_Members.hpp"
 
 namespace android::provider
 {
 	// Fields
-	jstring MediaStore_Audio_Playlists_Members::AUDIO_ID()
+	JString MediaStore_Audio_Playlists_Members::AUDIO_ID()
 	{
 		return getStaticObjectField(
 			"android.provider.MediaStore$Audio$Playlists$Members",
 			"AUDIO_ID",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring MediaStore_Audio_Playlists_Members::CONTENT_DIRECTORY()
+	JString MediaStore_Audio_Playlists_Members::CONTENT_DIRECTORY()
 	{
 		return getStaticObjectField(
 			"android.provider.MediaStore$Audio$Playlists$Members",
 			"CONTENT_DIRECTORY",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring MediaStore_Audio_Playlists_Members::DEFAULT_SORT_ORDER()
+	JString MediaStore_Audio_Playlists_Members::DEFAULT_SORT_ORDER()
 	{
 		return getStaticObjectField(
 			"android.provider.MediaStore$Audio$Playlists$Members",
 			"DEFAULT_SORT_ORDER",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring MediaStore_Audio_Playlists_Members::PLAYLIST_ID()
+	JString MediaStore_Audio_Playlists_Members::PLAYLIST_ID()
 	{
 		return getStaticObjectField(
 			"android.provider.MediaStore$Audio$Playlists$Members",
 			"PLAYLIST_ID",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring MediaStore_Audio_Playlists_Members::PLAY_ORDER()
+	JString MediaStore_Audio_Playlists_Members::PLAY_ORDER()
 	{
 		return getStaticObjectField(
 			"android.provider.MediaStore$Audio$Playlists$Members",
 			"PLAY_ORDER",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring MediaStore_Audio_Playlists_Members::_ID()
+	JString MediaStore_Audio_Playlists_Members::_ID()
 	{
 		return getStaticObjectField(
 			"android.provider.MediaStore$Audio$Playlists$Members",
 			"_ID",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QAndroidJniObject forward
@@ -65,13 +66,13 @@ namespace android::provider
 		) {}
 	
 	// Methods
-	android::net::Uri MediaStore_Audio_Playlists_Members::getContentUri(jstring arg0, jlong arg1)
+	android::net::Uri MediaStore_Audio_Playlists_Members::getContentUri(JString arg0, jlong arg1)
 	{
 		return callStaticObjectMethod(
 			"android.provider.MediaStore$Audio$Playlists$Members",
 			"getContentUri",
 			"(Ljava/lang/String;J)Landroid/net/Uri;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}

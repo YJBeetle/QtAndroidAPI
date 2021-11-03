@@ -1,3 +1,5 @@
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./LDAPCertStoreParameters.hpp"
 
 namespace java::security::cert
@@ -13,27 +15,27 @@ namespace java::security::cert
 			"java.security.cert.LDAPCertStoreParameters",
 			"()V"
 		) {}
-	LDAPCertStoreParameters::LDAPCertStoreParameters(jstring arg0)
+	LDAPCertStoreParameters::LDAPCertStoreParameters(JString arg0)
 		: JObject(
 			"java.security.cert.LDAPCertStoreParameters",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	LDAPCertStoreParameters::LDAPCertStoreParameters(jstring arg0, jint arg1)
+	LDAPCertStoreParameters::LDAPCertStoreParameters(JString arg0, jint arg1)
 		: JObject(
 			"java.security.cert.LDAPCertStoreParameters",
 			"(Ljava/lang/String;I)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		) {}
 	
 	// Methods
-	jobject LDAPCertStoreParameters::clone()
+	JObject LDAPCertStoreParameters::clone()
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
 	jint LDAPCertStoreParameters::getPort()
 	{
@@ -42,19 +44,19 @@ namespace java::security::cert
 			"()I"
 		);
 	}
-	jstring LDAPCertStoreParameters::getServerName()
+	JString LDAPCertStoreParameters::getServerName()
 	{
 		return callObjectMethod(
 			"getServerName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring LDAPCertStoreParameters::toString()
+	JString LDAPCertStoreParameters::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::security::cert
 

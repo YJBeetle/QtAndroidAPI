@@ -1,3 +1,5 @@
+#include "../../JString.hpp"
+#include "../../JThrowable.hpp"
 #include "./KeyStoreException.hpp"
 
 namespace java::security
@@ -13,24 +15,24 @@ namespace java::security
 			"java.security.KeyStoreException",
 			"()V"
 		) {}
-	KeyStoreException::KeyStoreException(jstring arg0)
+	KeyStoreException::KeyStoreException(JString arg0)
 		: java::security::GeneralSecurityException(
 			"java.security.KeyStoreException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	KeyStoreException::KeyStoreException(jthrowable arg0)
+	KeyStoreException::KeyStoreException(JThrowable arg0)
 		: java::security::GeneralSecurityException(
 			"java.security.KeyStoreException",
 			"(Ljava/lang/Throwable;)V",
-			arg0
+			arg0.object<jthrowable>()
 		) {}
-	KeyStoreException::KeyStoreException(jstring arg0, jthrowable arg1)
+	KeyStoreException::KeyStoreException(JString arg0, JThrowable arg1)
 		: java::security::GeneralSecurityException(
 			"java.security.KeyStoreException",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
 		) {}
 	
 	// Methods

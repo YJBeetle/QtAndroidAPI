@@ -1,4 +1,5 @@
 #include "./AppSearchResult.hpp"
+#include "../../../JString.hpp"
 #include "./SetSchemaResponse_MigrationFailure.hpp"
 
 namespace android::app::appsearch
@@ -9,13 +10,13 @@ namespace android::app::appsearch
 	SetSchemaResponse_MigrationFailure::SetSchemaResponse_MigrationFailure(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	SetSchemaResponse_MigrationFailure::SetSchemaResponse_MigrationFailure(jstring arg0, jstring arg1, jstring arg2, android::app::appsearch::AppSearchResult arg3)
+	SetSchemaResponse_MigrationFailure::SetSchemaResponse_MigrationFailure(JString arg0, JString arg1, JString arg2, android::app::appsearch::AppSearchResult arg3)
 		: JObject(
 			"android.app.appsearch.SetSchemaResponse$MigrationFailure",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/app/appsearch/AppSearchResult;)V",
-			arg0,
-			arg1,
-			arg2,
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2.object<jstring>(),
 			arg3.object()
 		) {}
 	
@@ -27,33 +28,33 @@ namespace android::app::appsearch
 			"()Landroid/app/appsearch/AppSearchResult;"
 		);
 	}
-	jstring SetSchemaResponse_MigrationFailure::getDocumentId()
+	JString SetSchemaResponse_MigrationFailure::getDocumentId()
 	{
 		return callObjectMethod(
 			"getDocumentId",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring SetSchemaResponse_MigrationFailure::getNamespace()
+	JString SetSchemaResponse_MigrationFailure::getNamespace()
 	{
 		return callObjectMethod(
 			"getNamespace",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring SetSchemaResponse_MigrationFailure::getSchemaType()
+	JString SetSchemaResponse_MigrationFailure::getSchemaType()
 	{
 		return callObjectMethod(
 			"getSchemaType",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring SetSchemaResponse_MigrationFailure::toString()
+	JString SetSchemaResponse_MigrationFailure::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::app::appsearch
 

@@ -2,6 +2,9 @@
 
 #include "../../../JObject.hpp"
 
+class JIntArray;
+class JArray;
+class JArray;
 namespace android::graphics
 {
 	class Matrix;
@@ -26,6 +29,8 @@ namespace android::view::autofill
 {
 	class AutofillValue;
 }
+class JString;
+class JString;
 
 namespace android::app::assist
 {
@@ -47,25 +52,25 @@ namespace android::app::assist
 		
 		// Methods
 		jfloat getAlpha();
-		jarray getAutofillHints();
+		JArray getAutofillHints();
 		android::view::autofill::AutofillId getAutofillId();
-		jarray getAutofillOptions();
+		JArray getAutofillOptions();
 		jint getAutofillType();
 		android::view::autofill::AutofillValue getAutofillValue();
 		android::app::assist::AssistStructure_ViewNode getChildAt(jint arg0);
 		jint getChildCount();
-		jstring getClassName();
-		jstring getContentDescription();
+		JString getClassName();
+		JString getContentDescription();
 		jfloat getElevation();
 		android::os::Bundle getExtras();
 		jint getHeight();
-		jstring getHint();
-		jstring getHintIdEntry();
+		JString getHint();
+		JString getHintIdEntry();
 		android::view::ViewStructure_HtmlInfo getHtmlInfo();
 		jint getId();
-		jstring getIdEntry();
-		jstring getIdPackage();
-		jstring getIdType();
+		JString getIdEntry();
+		JString getIdPackage();
+		JString getIdType();
 		jint getImportantForAutofill();
 		jint getInputType();
 		jint getLeft();
@@ -75,12 +80,12 @@ namespace android::app::assist
 		jint getMinTextEms();
 		jint getScrollX();
 		jint getScrollY();
-		jstring getText();
+		JString getText();
 		jint getTextBackgroundColor();
 		jint getTextColor();
-		jstring getTextIdEntry();
-		jintArray getTextLineBaselines();
-		jintArray getTextLineCharOffsets();
+		JString getTextIdEntry();
+		JIntArray getTextLineBaselines();
+		JIntArray getTextLineCharOffsets();
 		jint getTextSelectionEnd();
 		jint getTextSelectionStart();
 		jfloat getTextSize();
@@ -88,8 +93,8 @@ namespace android::app::assist
 		jint getTop();
 		android::graphics::Matrix getTransformation();
 		jint getVisibility();
-		jstring getWebDomain();
-		jstring getWebScheme();
+		JString getWebDomain();
+		JString getWebScheme();
 		jint getWidth();
 		jboolean isAccessibilityFocused();
 		jboolean isActivated();

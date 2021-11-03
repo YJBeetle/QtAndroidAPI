@@ -1,9 +1,9 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../lang/Exception.hpp"
 #include "../lang/RuntimeException.hpp"
 
+class JString;
+class JThrowable;
 
 namespace java::util
 {
@@ -17,11 +17,11 @@ namespace java::util
 		MissingResourceException(QAndroidJniObject obj);
 		
 		// Constructors
-		MissingResourceException(jstring arg0, jstring arg1, jstring arg2);
+		MissingResourceException(JString arg0, JString arg1, JString arg2);
 		
 		// Methods
-		jstring getClassName();
-		jstring getKey();
+		JString getClassName();
+		JString getKey();
 	};
 } // namespace java::util
 

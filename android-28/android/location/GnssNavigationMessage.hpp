@@ -2,10 +2,12 @@
 
 #include "../../JObject.hpp"
 
+class JByteArray;
 namespace android::os
 {
 	class Parcel;
 }
+class JString;
 
 namespace android::location
 {
@@ -36,13 +38,13 @@ namespace android::location
 		
 		// Methods
 		jint describeContents();
-		jbyteArray getData();
+		JByteArray getData();
 		jint getMessageId();
 		jint getStatus();
 		jint getSubmessageId();
 		jint getSvid();
 		jint getType();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::location

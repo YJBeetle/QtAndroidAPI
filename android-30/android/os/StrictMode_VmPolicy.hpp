@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JString;
 
 namespace android::os
 {
@@ -18,7 +19,7 @@ namespace android::os
 		// Constructors
 		
 		// Methods
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::os
 

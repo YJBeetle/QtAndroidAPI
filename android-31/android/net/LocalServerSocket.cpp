@@ -1,6 +1,7 @@
 #include "./LocalSocket.hpp"
 #include "./LocalSocketAddress.hpp"
 #include "../../java/io/FileDescriptor.hpp"
+#include "../../JString.hpp"
 #include "./LocalServerSocket.hpp"
 
 namespace android::net
@@ -17,11 +18,11 @@ namespace android::net
 			"(Ljava/io/FileDescriptor;)V",
 			arg0.object()
 		) {}
-	LocalServerSocket::LocalServerSocket(jstring arg0)
+	LocalServerSocket::LocalServerSocket(JString arg0)
 		: JObject(
 			"android.net.LocalServerSocket",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

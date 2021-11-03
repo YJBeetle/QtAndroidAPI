@@ -22,6 +22,8 @@ namespace android::graphics
 {
 	class Bitmap;
 }
+class JObject;
+class JString;
 
 namespace android::app
 {
@@ -58,14 +60,14 @@ namespace android::app
 		android::app::Notification_Builder extend(android::app::Notification_Builder arg0);
 		JObject getActions();
 		android::graphics::Bitmap getBackground();
-		jstring getBridgeTag();
+		JString getBridgeTag();
 		jint getContentAction();
 		jint getContentIcon();
 		jint getContentIconGravity();
 		jboolean getContentIntentAvailableOffline();
 		jint getCustomContentHeight();
 		jint getCustomSizePreset();
-		jstring getDismissalId();
+		JString getDismissalId();
 		android::app::PendingIntent getDisplayIntent();
 		jint getGravity();
 		jboolean getHintAmbientBigPicture();
@@ -77,14 +79,14 @@ namespace android::app
 		JObject getPages();
 		jboolean getStartScrollBottom();
 		android::app::Notification_WearableExtender setBackground(android::graphics::Bitmap arg0);
-		android::app::Notification_WearableExtender setBridgeTag(jstring arg0);
+		android::app::Notification_WearableExtender setBridgeTag(JString arg0);
 		android::app::Notification_WearableExtender setContentAction(jint arg0);
 		android::app::Notification_WearableExtender setContentIcon(jint arg0);
 		android::app::Notification_WearableExtender setContentIconGravity(jint arg0);
 		android::app::Notification_WearableExtender setContentIntentAvailableOffline(jboolean arg0);
 		android::app::Notification_WearableExtender setCustomContentHeight(jint arg0);
 		android::app::Notification_WearableExtender setCustomSizePreset(jint arg0);
-		android::app::Notification_WearableExtender setDismissalId(jstring arg0);
+		android::app::Notification_WearableExtender setDismissalId(JString arg0);
 		android::app::Notification_WearableExtender setDisplayIntent(android::app::PendingIntent arg0);
 		android::app::Notification_WearableExtender setGravity(jint arg0);
 		android::app::Notification_WearableExtender setHintAmbientBigPicture(jboolean arg0);

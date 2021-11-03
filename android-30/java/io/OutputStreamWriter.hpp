@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./Writer.hpp"
 
+class JCharArray;
 namespace java::io
 {
 	class OutputStream;
@@ -11,6 +11,8 @@ namespace java::io
 {
 	class Writer;
 }
+class JString;
+class JString;
 namespace java::nio::charset
 {
 	class Charset;
@@ -33,19 +35,19 @@ namespace java::io
 		
 		// Constructors
 		OutputStreamWriter(java::io::OutputStream arg0);
-		OutputStreamWriter(java::io::OutputStream arg0, jstring arg1);
+		OutputStreamWriter(java::io::OutputStream arg0, JString arg1);
 		OutputStreamWriter(java::io::OutputStream arg0, java::nio::charset::Charset arg1);
 		OutputStreamWriter(java::io::OutputStream arg0, java::nio::charset::CharsetEncoder arg1);
 		
 		// Methods
-		java::io::Writer append(jstring arg0);
-		java::io::Writer append(jstring arg0, jint arg1, jint arg2);
+		java::io::Writer append(JString arg0);
+		java::io::Writer append(JString arg0, jint arg1, jint arg2);
 		void close();
 		void flush();
-		jstring getEncoding();
+		JString getEncoding();
 		void write(jint arg0);
-		void write(jcharArray arg0, jint arg1, jint arg2);
-		void write(jstring arg0, jint arg1, jint arg2);
+		void write(JCharArray arg0, jint arg1, jint arg2);
+		void write(JString arg0, jint arg1, jint arg2);
 	};
 } // namespace java::io
 

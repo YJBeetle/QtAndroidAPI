@@ -1,6 +1,7 @@
 #include "../content/Context.hpp"
 #include "../view/View.hpp"
 #include "../view/ViewGroup_LayoutParams.hpp"
+#include "../../JString.hpp"
 #include "./TextSwitcher.hpp"
 
 namespace android::widget
@@ -36,27 +37,27 @@ namespace android::widget
 			arg2.object()
 		);
 	}
-	jstring TextSwitcher::getAccessibilityClassName()
+	JString TextSwitcher::getAccessibilityClassName()
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
-	void TextSwitcher::setCurrentText(jstring arg0)
+	void TextSwitcher::setCurrentText(JString arg0)
 	{
 		callMethod<void>(
 			"setCurrentText",
 			"(Ljava/lang/CharSequence;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	void TextSwitcher::setText(jstring arg0)
+	void TextSwitcher::setText(JString arg0)
 	{
 		callMethod<void>(
 			"setText",
 			"(Ljava/lang/CharSequence;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 } // namespace android::widget

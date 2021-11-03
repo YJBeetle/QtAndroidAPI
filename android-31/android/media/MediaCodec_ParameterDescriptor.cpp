@@ -1,3 +1,5 @@
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./MediaCodec_ParameterDescriptor.hpp"
 
 namespace android::media
@@ -10,20 +12,20 @@ namespace android::media
 	// Constructors
 	
 	// Methods
-	jboolean MediaCodec_ParameterDescriptor::equals(jobject arg0)
+	jboolean MediaCodec_ParameterDescriptor::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jstring MediaCodec_ParameterDescriptor::getName()
+	JString MediaCodec_ParameterDescriptor::getName()
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint MediaCodec_ParameterDescriptor::getType()
 	{

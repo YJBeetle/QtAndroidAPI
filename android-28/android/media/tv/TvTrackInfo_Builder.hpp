@@ -10,6 +10,8 @@ namespace android::os
 {
 	class Bundle;
 }
+class JString;
+class JString;
 
 namespace android::media::tv
 {
@@ -23,15 +25,15 @@ namespace android::media::tv
 		TvTrackInfo_Builder(QAndroidJniObject obj);
 		
 		// Constructors
-		TvTrackInfo_Builder(jint arg0, jstring arg1);
+		TvTrackInfo_Builder(jint arg0, JString arg1);
 		
 		// Methods
 		android::media::tv::TvTrackInfo build();
 		android::media::tv::TvTrackInfo_Builder setAudioChannelCount(jint arg0);
 		android::media::tv::TvTrackInfo_Builder setAudioSampleRate(jint arg0);
-		android::media::tv::TvTrackInfo_Builder setDescription(jstring arg0);
+		android::media::tv::TvTrackInfo_Builder setDescription(JString arg0);
 		android::media::tv::TvTrackInfo_Builder setExtra(android::os::Bundle arg0);
-		android::media::tv::TvTrackInfo_Builder setLanguage(jstring arg0);
+		android::media::tv::TvTrackInfo_Builder setLanguage(JString arg0);
 		android::media::tv::TvTrackInfo_Builder setVideoActiveFormatDescription(jbyte arg0);
 		android::media::tv::TvTrackInfo_Builder setVideoFrameRate(jfloat arg0);
 		android::media::tv::TvTrackInfo_Builder setVideoHeight(jint arg0);

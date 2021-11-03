@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "../../../java/lang/Exception.hpp"
 
+class JString;
 
 namespace javax::xml::parsers
 {
@@ -17,7 +17,7 @@ namespace javax::xml::parsers
 		
 		// Constructors
 		ParserConfigurationException();
-		ParserConfigurationException(jstring arg0);
+		ParserConfigurationException(JString arg0);
 		
 		// Methods
 	};

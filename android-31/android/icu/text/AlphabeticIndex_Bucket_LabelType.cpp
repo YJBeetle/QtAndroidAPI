@@ -1,3 +1,5 @@
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
 #include "./AlphabeticIndex_Bucket_LabelType.hpp"
 
 namespace android::icu::text
@@ -42,22 +44,22 @@ namespace android::icu::text
 	// Constructors
 	
 	// Methods
-	android::icu::text::AlphabeticIndex_Bucket_LabelType AlphabeticIndex_Bucket_LabelType::valueOf(jstring arg0)
+	android::icu::text::AlphabeticIndex_Bucket_LabelType AlphabeticIndex_Bucket_LabelType::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.icu.text.AlphabeticIndex$Bucket$LabelType",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/icu/text/AlphabeticIndex$Bucket$LabelType;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray AlphabeticIndex_Bucket_LabelType::values()
+	JArray AlphabeticIndex_Bucket_LabelType::values()
 	{
 		return callStaticObjectMethod(
 			"android.icu.text.AlphabeticIndex$Bucket$LabelType",
 			"values",
 			"()[Landroid/icu/text/AlphabeticIndex$Bucket$LabelType;"
-		).object<jarray>();
+		);
 	}
 } // namespace android::icu::text
 

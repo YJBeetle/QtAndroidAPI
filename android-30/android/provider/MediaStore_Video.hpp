@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JArray;
 namespace android::content
 {
 	class ContentResolver;
@@ -10,6 +11,7 @@ namespace android::net
 {
 	class Uri;
 }
+class JString;
 
 namespace android::provider
 {
@@ -17,7 +19,7 @@ namespace android::provider
 	{
 	public:
 		// Fields
-		static jstring DEFAULT_SORT_ORDER();
+		static JString DEFAULT_SORT_ORDER();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MediaStore_Video(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
@@ -27,7 +29,7 @@ namespace android::provider
 		MediaStore_Video();
 		
 		// Methods
-		static JObject query(android::content::ContentResolver arg0, android::net::Uri arg1, jarray arg2);
+		static JObject query(android::content::ContentResolver arg0, android::net::Uri arg1, JArray arg2);
 	};
 } // namespace android::provider
 

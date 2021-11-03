@@ -22,6 +22,8 @@ namespace android::util
 {
 	class SparseArray;
 }
+class JObject;
+class JString;
 
 namespace android::net::wifi::rtt
 {
@@ -51,7 +53,7 @@ namespace android::net::wifi::rtt
 		
 		// Methods
 		jint describeContents();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jdouble getAltitude();
 		jint getAltitudeType();
 		jdouble getAltitudeUncertainty();
@@ -66,7 +68,7 @@ namespace android::net::wifi::rtt
 		jint getLciVersion();
 		jdouble getLongitude();
 		jdouble getLongitudeUncertainty();
-		jstring getMapImageMimeType();
+		JString getMapImageMimeType();
 		android::net::Uri getMapImageUri();
 		jboolean getRegisteredLocationAgreementIndication();
 		jint hashCode();

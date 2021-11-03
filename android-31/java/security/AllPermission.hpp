@@ -1,8 +1,9 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./Permission.hpp"
 
+class JObject;
+class JString;
 namespace java::security
 {
 	class Permission;
@@ -25,11 +26,11 @@ namespace java::security
 		
 		// Constructors
 		AllPermission();
-		AllPermission(jstring arg0, jstring arg1);
+		AllPermission(JString arg0, JString arg1);
 		
 		// Methods
-		jboolean equals(jobject arg0);
-		jstring getActions();
+		jboolean equals(JObject arg0);
+		JString getActions();
 		jint hashCode();
 		jboolean implies(java::security::Permission arg0);
 		java::security::PermissionCollection newPermissionCollection();

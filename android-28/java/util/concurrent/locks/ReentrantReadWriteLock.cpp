@@ -1,3 +1,4 @@
+#include "../../../../JString.hpp"
 #include "../../../lang/Thread.hpp"
 #include "./ReentrantReadWriteLock_ReadLock.hpp"
 #include "./ReentrantReadWriteLock_WriteLock.hpp"
@@ -111,12 +112,12 @@ namespace java::util::concurrent::locks
 			"()Ljava/util/concurrent/locks/ReentrantReadWriteLock$ReadLock;"
 		);
 	}
-	jstring ReentrantReadWriteLock::toString()
+	JString ReentrantReadWriteLock::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	java::util::concurrent::locks::ReentrantReadWriteLock_WriteLock ReentrantReadWriteLock::writeLock()
 	{

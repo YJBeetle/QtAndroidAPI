@@ -1,9 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "./Exception.hpp"
 #include "./RuntimeException.hpp"
 
+class JString;
 
 namespace java::lang
 {
@@ -18,7 +17,7 @@ namespace java::lang
 		
 		// Constructors
 		ArrayStoreException();
-		ArrayStoreException(jstring arg0);
+		ArrayStoreException(JString arg0);
 		
 		// Methods
 	};

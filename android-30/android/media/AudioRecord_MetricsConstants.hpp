@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JString;
 
 namespace android::media
 {
@@ -9,11 +10,11 @@ namespace android::media
 	{
 	public:
 		// Fields
-		static jstring CHANNELS();
-		static jstring ENCODING();
-		static jstring LATENCY();
-		static jstring SAMPLERATE();
-		static jstring SOURCE();
+		static JString CHANNELS();
+		static JString ENCODING();
+		static JString LATENCY();
+		static JString SAMPLERATE();
+		static JString SOURCE();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AudioRecord_MetricsConstants(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}

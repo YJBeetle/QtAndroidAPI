@@ -1,24 +1,25 @@
 #include "../content/Context.hpp"
+#include "../../JString.hpp"
 #include "./Proxy.hpp"
 
 namespace android::net
 {
 	// Fields
-	jstring Proxy::EXTRA_PROXY_INFO()
+	JString Proxy::EXTRA_PROXY_INFO()
 	{
 		return getStaticObjectField(
 			"android.net.Proxy",
 			"EXTRA_PROXY_INFO",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Proxy::PROXY_CHANGE_ACTION()
+	JString Proxy::PROXY_CHANGE_ACTION()
 	{
 		return getStaticObjectField(
 			"android.net.Proxy",
 			"PROXY_CHANGE_ACTION",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QAndroidJniObject forward
@@ -32,13 +33,13 @@ namespace android::net
 		) {}
 	
 	// Methods
-	jstring Proxy::getDefaultHost()
+	JString Proxy::getDefaultHost()
 	{
 		return callStaticObjectMethod(
 			"android.net.Proxy",
 			"getDefaultHost",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint Proxy::getDefaultPort()
 	{
@@ -48,14 +49,14 @@ namespace android::net
 			"()I"
 		);
 	}
-	jstring Proxy::getHost(android::content::Context arg0)
+	JString Proxy::getHost(android::content::Context arg0)
 	{
 		return callStaticObjectMethod(
 			"android.net.Proxy",
 			"getHost",
 			"(Landroid/content/Context;)Ljava/lang/String;",
 			arg0.object()
-		).object<jstring>();
+		);
 	}
 	jint Proxy::getPort(android::content::Context arg0)
 	{

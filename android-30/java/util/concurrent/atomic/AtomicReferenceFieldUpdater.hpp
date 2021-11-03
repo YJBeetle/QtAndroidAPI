@@ -2,6 +2,9 @@
 
 #include "../../../../JObject.hpp"
 
+class JClass;
+class JObject;
+class JString;
 
 namespace java::util::concurrent::atomic
 {
@@ -17,17 +20,17 @@ namespace java::util::concurrent::atomic
 		// Constructors
 		
 		// Methods
-		static java::util::concurrent::atomic::AtomicReferenceFieldUpdater newUpdater(jclass arg0, jclass arg1, jstring arg2);
-		jobject accumulateAndGet(jobject arg0, jobject arg1, JObject arg2);
-		jboolean compareAndSet(jobject arg0, jobject arg1, jobject arg2);
-		jobject get(jobject arg0);
-		jobject getAndAccumulate(jobject arg0, jobject arg1, JObject arg2);
-		jobject getAndSet(jobject arg0, jobject arg1);
-		jobject getAndUpdate(jobject arg0, JObject arg1);
-		void lazySet(jobject arg0, jobject arg1);
-		void set(jobject arg0, jobject arg1);
-		jobject updateAndGet(jobject arg0, JObject arg1);
-		jboolean weakCompareAndSet(jobject arg0, jobject arg1, jobject arg2);
+		static java::util::concurrent::atomic::AtomicReferenceFieldUpdater newUpdater(JClass arg0, JClass arg1, JString arg2);
+		JObject accumulateAndGet(JObject arg0, JObject arg1, JObject arg2);
+		jboolean compareAndSet(JObject arg0, JObject arg1, JObject arg2);
+		JObject get(JObject arg0);
+		JObject getAndAccumulate(JObject arg0, JObject arg1, JObject arg2);
+		JObject getAndSet(JObject arg0, JObject arg1);
+		JObject getAndUpdate(JObject arg0, JObject arg1);
+		void lazySet(JObject arg0, JObject arg1);
+		void set(JObject arg0, JObject arg1);
+		JObject updateAndGet(JObject arg0, JObject arg1);
+		jboolean weakCompareAndSet(JObject arg0, JObject arg1, JObject arg2);
 	};
 } // namespace java::util::concurrent::atomic
 

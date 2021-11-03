@@ -1,7 +1,5 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "./CharacterStyle.hpp"
 #include "./ClickableSpan.hpp"
 
 namespace android::os
@@ -12,6 +10,7 @@ namespace android::view
 {
 	class View;
 }
+class JString;
 
 namespace android::text::style
 {
@@ -26,12 +25,12 @@ namespace android::text::style
 		
 		// Constructors
 		URLSpan(android::os::Parcel arg0);
-		URLSpan(jstring arg0);
+		URLSpan(JString arg0);
 		
 		// Methods
 		jint describeContents();
 		jint getSpanTypeId();
-		jstring getURL();
+		JString getURL();
 		void onClick(android::view::View arg0);
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};

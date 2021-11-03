@@ -1,11 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../lang/Exception.hpp"
-#include "../lang/RuntimeException.hpp"
-#include "../lang/IllegalArgumentException.hpp"
 #include "./IllegalFormatException.hpp"
 
+class JString;
 
 namespace java::util
 {
@@ -19,11 +16,11 @@ namespace java::util
 		UnknownFormatConversionException(QAndroidJniObject obj);
 		
 		// Constructors
-		UnknownFormatConversionException(jstring arg0);
+		UnknownFormatConversionException(JString arg0);
 		
 		// Methods
-		jstring getConversion();
-		jstring getMessage();
+		JString getConversion();
+		JString getMessage();
 	};
 } // namespace java::util
 

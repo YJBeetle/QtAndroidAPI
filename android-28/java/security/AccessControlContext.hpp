@@ -2,6 +2,9 @@
 
 #include "../../JObject.hpp"
 
+class JArray;
+class JArray;
+class JObject;
 namespace java::security
 {
 	class Permission;
@@ -23,12 +26,12 @@ namespace java::security
 		AccessControlContext(QAndroidJniObject obj);
 		
 		// Constructors
-		AccessControlContext(jarray arg0);
+		AccessControlContext(JArray arg0);
 		AccessControlContext(java::security::AccessControlContext &arg0, JObject arg1);
 		
 		// Methods
 		void checkPermission(java::security::Permission arg0);
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		JObject getDomainCombiner();
 		jint hashCode();
 	};

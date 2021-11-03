@@ -1,3 +1,5 @@
+#include "../../../JString.hpp"
+#include "../../../JThrowable.hpp"
 #include "./CertStoreException.hpp"
 
 namespace java::security::cert
@@ -13,24 +15,24 @@ namespace java::security::cert
 			"java.security.cert.CertStoreException",
 			"()V"
 		) {}
-	CertStoreException::CertStoreException(jstring arg0)
+	CertStoreException::CertStoreException(JString arg0)
 		: java::security::GeneralSecurityException(
 			"java.security.cert.CertStoreException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	CertStoreException::CertStoreException(jthrowable arg0)
+	CertStoreException::CertStoreException(JThrowable arg0)
 		: java::security::GeneralSecurityException(
 			"java.security.cert.CertStoreException",
 			"(Ljava/lang/Throwable;)V",
-			arg0
+			arg0.object<jthrowable>()
 		) {}
-	CertStoreException::CertStoreException(jstring arg0, jthrowable arg1)
+	CertStoreException::CertStoreException(JString arg0, JThrowable arg1)
 		: java::security::GeneralSecurityException(
 			"java.security.cert.CertStoreException",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
 		) {}
 	
 	// Methods

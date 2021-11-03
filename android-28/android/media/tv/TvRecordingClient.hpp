@@ -22,6 +22,7 @@ namespace android::os
 {
 	class Handler;
 }
+class JString;
 
 namespace android::media::tv
 {
@@ -35,15 +36,15 @@ namespace android::media::tv
 		TvRecordingClient(QAndroidJniObject obj);
 		
 		// Constructors
-		TvRecordingClient(android::content::Context arg0, jstring arg1, android::media::tv::TvRecordingClient_RecordingCallback arg2, android::os::Handler arg3);
+		TvRecordingClient(android::content::Context arg0, JString arg1, android::media::tv::TvRecordingClient_RecordingCallback arg2, android::os::Handler arg3);
 		
 		// Methods
 		void release();
-		void sendAppPrivateCommand(jstring arg0, android::os::Bundle arg1);
+		void sendAppPrivateCommand(JString arg0, android::os::Bundle arg1);
 		void startRecording(android::net::Uri arg0);
 		void stopRecording();
-		void tune(jstring arg0, android::net::Uri arg1);
-		void tune(jstring arg0, android::net::Uri arg1, android::os::Bundle arg2);
+		void tune(JString arg0, android::net::Uri arg1);
+		void tune(JString arg0, android::net::Uri arg1, android::os::Bundle arg2);
 	};
 } // namespace android::media::tv
 

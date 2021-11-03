@@ -1,4 +1,5 @@
 #include "../graphics/Insets.hpp"
+#include "../../JString.hpp"
 #include "./WindowInsetsAnimation_Bounds.hpp"
 
 namespace android::view
@@ -40,12 +41,12 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	jstring WindowInsetsAnimation_Bounds::toString()
+	JString WindowInsetsAnimation_Bounds::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::view
 

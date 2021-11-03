@@ -1,3 +1,4 @@
+#include "../../JThrowable.hpp"
 #include "./TelephonyManager_CellInfoCallback.hpp"
 
 namespace android::telephony
@@ -37,13 +38,13 @@ namespace android::telephony
 			arg0.object()
 		);
 	}
-	void TelephonyManager_CellInfoCallback::onError(jint arg0, jthrowable arg1)
+	void TelephonyManager_CellInfoCallback::onError(jint arg0, JThrowable arg1)
 	{
 		callMethod<void>(
 			"onError",
 			"(ILjava/lang/Throwable;)V",
 			arg0,
-			arg1
+			arg1.object<jthrowable>()
 		);
 	}
 } // namespace android::telephony

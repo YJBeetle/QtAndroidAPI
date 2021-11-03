@@ -2,6 +2,7 @@
 #include "../net/Uri.hpp"
 #include "../os/Bundle.hpp"
 #include "../os/Parcel.hpp"
+#include "../../JString.hpp"
 #include "./ContentInfo.hpp"
 
 namespace android::view
@@ -113,12 +114,12 @@ namespace android::view
 			"()I"
 		);
 	}
-	jstring ContentInfo::toString()
+	JString ContentInfo::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void ContentInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

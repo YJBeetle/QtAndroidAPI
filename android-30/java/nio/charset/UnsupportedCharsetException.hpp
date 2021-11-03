@@ -1,10 +1,8 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "../../lang/Exception.hpp"
-#include "../../lang/RuntimeException.hpp"
 #include "../../lang/IllegalArgumentException.hpp"
 
+class JString;
 
 namespace java::nio::charset
 {
@@ -18,10 +16,10 @@ namespace java::nio::charset
 		UnsupportedCharsetException(QAndroidJniObject obj);
 		
 		// Constructors
-		UnsupportedCharsetException(jstring arg0);
+		UnsupportedCharsetException(JString arg0);
 		
 		// Methods
-		jstring getCharsetName();
+		JString getCharsetName();
 	};
 } // namespace java::nio::charset
 

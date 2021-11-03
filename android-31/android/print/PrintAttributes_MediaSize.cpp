@@ -1,4 +1,6 @@
 #include "../content/pm/PackageManager.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./PrintAttributes_MediaSize.hpp"
 
 namespace android::print
@@ -769,12 +771,12 @@ namespace android::print
 	PrintAttributes_MediaSize::PrintAttributes_MediaSize(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	PrintAttributes_MediaSize::PrintAttributes_MediaSize(jstring arg0, jstring arg1, jint arg2, jint arg3)
+	PrintAttributes_MediaSize::PrintAttributes_MediaSize(JString arg0, JString arg1, jint arg2, jint arg3)
 		: JObject(
 			"android.print.PrintAttributes$MediaSize",
 			"(Ljava/lang/String;Ljava/lang/String;II)V",
-			arg0,
-			arg1,
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
 			arg2,
 			arg3
 		) {}
@@ -794,12 +796,12 @@ namespace android::print
 			"()Landroid/print/PrintAttributes$MediaSize;"
 		);
 	}
-	jboolean PrintAttributes_MediaSize::equals(jobject arg0)
+	jboolean PrintAttributes_MediaSize::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint PrintAttributes_MediaSize::getHeightMils()
@@ -809,20 +811,20 @@ namespace android::print
 			"()I"
 		);
 	}
-	jstring PrintAttributes_MediaSize::getId()
+	JString PrintAttributes_MediaSize::getId()
 	{
 		return callObjectMethod(
 			"getId",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PrintAttributes_MediaSize::getLabel(android::content::pm::PackageManager arg0)
+	JString PrintAttributes_MediaSize::getLabel(android::content::pm::PackageManager arg0)
 	{
 		return callObjectMethod(
 			"getLabel",
 			"(Landroid/content/pm/PackageManager;)Ljava/lang/String;",
 			arg0.object()
-		).object<jstring>();
+		);
 	}
 	jint PrintAttributes_MediaSize::getWidthMils()
 	{
@@ -845,12 +847,12 @@ namespace android::print
 			"()Z"
 		);
 	}
-	jstring PrintAttributes_MediaSize::toString()
+	JString PrintAttributes_MediaSize::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::print
 

@@ -10,6 +10,7 @@ namespace android::os
 {
 	class Bundle;
 }
+class JString;
 
 namespace android::media::metrics
 {
@@ -30,13 +31,13 @@ namespace android::media::metrics
 		android::media::metrics::TrackChangeEvent_Builder setAudioSampleRate(jint arg0);
 		android::media::metrics::TrackChangeEvent_Builder setBitrate(jint arg0);
 		android::media::metrics::TrackChangeEvent_Builder setChannelCount(jint arg0);
-		android::media::metrics::TrackChangeEvent_Builder setCodecName(jstring arg0);
-		android::media::metrics::TrackChangeEvent_Builder setContainerMimeType(jstring arg0);
+		android::media::metrics::TrackChangeEvent_Builder setCodecName(JString arg0);
+		android::media::metrics::TrackChangeEvent_Builder setContainerMimeType(JString arg0);
 		android::media::metrics::TrackChangeEvent_Builder setHeight(jint arg0);
-		android::media::metrics::TrackChangeEvent_Builder setLanguage(jstring arg0);
-		android::media::metrics::TrackChangeEvent_Builder setLanguageRegion(jstring arg0);
+		android::media::metrics::TrackChangeEvent_Builder setLanguage(JString arg0);
+		android::media::metrics::TrackChangeEvent_Builder setLanguageRegion(JString arg0);
 		android::media::metrics::TrackChangeEvent_Builder setMetricsBundle(android::os::Bundle arg0);
-		android::media::metrics::TrackChangeEvent_Builder setSampleMimeType(jstring arg0);
+		android::media::metrics::TrackChangeEvent_Builder setSampleMimeType(JString arg0);
 		android::media::metrics::TrackChangeEvent_Builder setTimeSinceCreatedMillis(jlong arg0);
 		android::media::metrics::TrackChangeEvent_Builder setTrackChangeReason(jint arg0);
 		android::media::metrics::TrackChangeEvent_Builder setTrackState(jint arg0);

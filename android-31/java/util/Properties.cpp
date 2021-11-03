@@ -1,3 +1,4 @@
+#include "../../JCharArray.hpp"
 #include "../io/BufferedWriter.hpp"
 #include "../io/InputStream.hpp"
 #include "../io/ObjectInputStream.hpp"
@@ -7,6 +8,8 @@
 #include "../io/PrintWriter.hpp"
 #include "../io/Reader.hpp"
 #include "../io/Writer.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "../lang/StringBuilder.hpp"
 #include "../nio/charset/Charset.hpp"
 #include "./concurrent/ConcurrentHashMap.hpp"
@@ -46,62 +49,62 @@ namespace java::util
 			"()V"
 		);
 	}
-	jobject Properties::clone()
+	JObject Properties::clone()
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
-	jobject Properties::compute(jobject arg0, JObject arg1)
+	JObject Properties::compute(JObject arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"compute",
 			"(Ljava/lang/Object;Ljava/util/function/BiFunction;)Ljava/lang/Object;",
-			arg0,
+			arg0.object<jobject>(),
 			arg1.object()
-		).object<jobject>();
+		);
 	}
-	jobject Properties::computeIfAbsent(jobject arg0, JObject arg1)
+	JObject Properties::computeIfAbsent(JObject arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"computeIfAbsent",
 			"(Ljava/lang/Object;Ljava/util/function/Function;)Ljava/lang/Object;",
-			arg0,
+			arg0.object<jobject>(),
 			arg1.object()
-		).object<jobject>();
+		);
 	}
-	jobject Properties::computeIfPresent(jobject arg0, JObject arg1)
+	JObject Properties::computeIfPresent(JObject arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"computeIfPresent",
 			"(Ljava/lang/Object;Ljava/util/function/BiFunction;)Ljava/lang/Object;",
-			arg0,
+			arg0.object<jobject>(),
 			arg1.object()
-		).object<jobject>();
+		);
 	}
-	jboolean Properties::contains(jobject arg0)
+	jboolean Properties::contains(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"contains",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jboolean Properties::containsKey(jobject arg0)
+	jboolean Properties::containsKey(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"containsKey",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jboolean Properties::containsValue(jobject arg0)
+	jboolean Properties::containsValue(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"containsValue",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	JObject Properties::elements()
@@ -118,12 +121,12 @@ namespace java::util
 			"()Ljava/util/Set;"
 		);
 	}
-	jboolean Properties::equals(jobject arg0)
+	jboolean Properties::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	void Properties::forEach(JObject arg0)
@@ -134,39 +137,39 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	jobject Properties::get(jobject arg0)
+	JObject Properties::get(JObject arg0)
 	{
 		return callObjectMethod(
 			"get",
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0
-		).object<jobject>();
+			arg0.object<jobject>()
+		);
 	}
-	jobject Properties::getOrDefault(jobject arg0, jobject arg1)
+	JObject Properties::getOrDefault(JObject arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"getOrDefault",
 			"(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0,
-			arg1
-		).object<jobject>();
+			arg0.object<jobject>(),
+			arg1.object<jobject>()
+		);
 	}
-	jstring Properties::getProperty(jstring arg0)
+	JString Properties::getProperty(JString arg0)
 	{
 		return callObjectMethod(
 			"getProperty",
 			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
+			arg0.object<jstring>()
+		);
 	}
-	jstring Properties::getProperty(jstring arg0, jstring arg1)
+	JString Properties::getProperty(JString arg0, JString arg1)
 	{
 		return callObjectMethod(
 			"getProperty",
 			"(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
-			arg0,
-			arg1
-		).object<jstring>();
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
+		);
 	}
 	jint Properties::hashCode()
 	{
@@ -236,15 +239,15 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	jobject Properties::merge(jobject arg0, jobject arg1, JObject arg2)
+	JObject Properties::merge(JObject arg0, JObject arg1, JObject arg2)
 	{
 		return callObjectMethod(
 			"merge",
 			"(Ljava/lang/Object;Ljava/lang/Object;Ljava/util/function/BiFunction;)Ljava/lang/Object;",
-			arg0,
-			arg1,
+			arg0.object<jobject>(),
+			arg1.object<jobject>(),
 			arg2.object()
-		).object<jobject>();
+		);
 	}
 	JObject Properties::propertyNames()
 	{
@@ -253,14 +256,14 @@ namespace java::util
 			"()Ljava/util/Enumeration;"
 		);
 	}
-	jobject Properties::put(jobject arg0, jobject arg1)
+	JObject Properties::put(JObject arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"put",
 			"(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0,
-			arg1
-		).object<jobject>();
+			arg0.object<jobject>(),
+			arg1.object<jobject>()
+		);
 	}
 	void Properties::putAll(JObject arg0)
 	{
@@ -270,50 +273,50 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	jobject Properties::putIfAbsent(jobject arg0, jobject arg1)
+	JObject Properties::putIfAbsent(JObject arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"putIfAbsent",
 			"(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0,
-			arg1
-		).object<jobject>();
+			arg0.object<jobject>(),
+			arg1.object<jobject>()
+		);
 	}
-	jboolean Properties::remove(jobject arg0, jobject arg1)
+	jboolean Properties::remove(JObject arg0, JObject arg1)
 	{
 		return callMethod<jboolean>(
 			"remove",
 			"(Ljava/lang/Object;Ljava/lang/Object;)Z",
-			arg0,
-			arg1
+			arg0.object<jobject>(),
+			arg1.object<jobject>()
 		);
 	}
-	jobject Properties::remove(jobject arg0)
+	JObject Properties::remove(JObject arg0)
 	{
 		return callObjectMethod(
 			"remove",
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0
-		).object<jobject>();
+			arg0.object<jobject>()
+		);
 	}
-	jboolean Properties::replace(jobject arg0, jobject arg1, jobject arg2)
+	jboolean Properties::replace(JObject arg0, JObject arg1, JObject arg2)
 	{
 		return callMethod<jboolean>(
 			"replace",
 			"(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Z",
-			arg0,
-			arg1,
-			arg2
+			arg0.object<jobject>(),
+			arg1.object<jobject>(),
+			arg2.object<jobject>()
 		);
 	}
-	jobject Properties::replace(jobject arg0, jobject arg1)
+	JObject Properties::replace(JObject arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"replace",
 			"(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0,
-			arg1
-		).object<jobject>();
+			arg0.object<jobject>(),
+			arg1.object<jobject>()
+		);
 	}
 	void Properties::replaceAll(JObject arg0)
 	{
@@ -323,23 +326,23 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	void Properties::save(java::io::OutputStream arg0, jstring arg1)
+	void Properties::save(java::io::OutputStream arg0, JString arg1)
 	{
 		callMethod<void>(
 			"save",
 			"(Ljava/io/OutputStream;Ljava/lang/String;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
-	jobject Properties::setProperty(jstring arg0, jstring arg1)
+	JObject Properties::setProperty(JString arg0, JString arg1)
 	{
 		return callObjectMethod(
 			"setProperty",
 			"(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/Object;",
-			arg0,
-			arg1
-		).object<jobject>();
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
+		);
 	}
 	jint Properties::size()
 	{
@@ -348,50 +351,50 @@ namespace java::util
 			"()I"
 		);
 	}
-	void Properties::store(java::io::OutputStream arg0, jstring arg1)
+	void Properties::store(java::io::OutputStream arg0, JString arg1)
 	{
 		callMethod<void>(
 			"store",
 			"(Ljava/io/OutputStream;Ljava/lang/String;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
-	void Properties::store(java::io::Writer arg0, jstring arg1)
+	void Properties::store(java::io::Writer arg0, JString arg1)
 	{
 		callMethod<void>(
 			"store",
 			"(Ljava/io/Writer;Ljava/lang/String;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
-	void Properties::storeToXML(java::io::OutputStream arg0, jstring arg1)
+	void Properties::storeToXML(java::io::OutputStream arg0, JString arg1)
 	{
 		callMethod<void>(
 			"storeToXML",
 			"(Ljava/io/OutputStream;Ljava/lang/String;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
-	void Properties::storeToXML(java::io::OutputStream arg0, jstring arg1, jstring arg2)
+	void Properties::storeToXML(java::io::OutputStream arg0, JString arg1, JString arg2)
 	{
 		callMethod<void>(
 			"storeToXML",
 			"(Ljava/io/OutputStream;Ljava/lang/String;Ljava/lang/String;)V",
 			arg0.object(),
-			arg1,
-			arg2
+			arg1.object<jstring>(),
+			arg2.object<jstring>()
 		);
 	}
-	void Properties::storeToXML(java::io::OutputStream arg0, jstring arg1, java::nio::charset::Charset arg2)
+	void Properties::storeToXML(java::io::OutputStream arg0, JString arg1, java::nio::charset::Charset arg2)
 	{
 		callMethod<void>(
 			"storeToXML",
 			"(Ljava/io/OutputStream;Ljava/lang/String;Ljava/nio/charset/Charset;)V",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2.object()
 		);
 	}
@@ -402,12 +405,12 @@ namespace java::util
 			"()Ljava/util/Set;"
 		);
 	}
-	jstring Properties::toString()
+	JString Properties::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	JObject Properties::values()
 	{

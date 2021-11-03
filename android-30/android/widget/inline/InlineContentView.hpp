@@ -1,7 +1,5 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "../../view/View.hpp"
 #include "../../view/ViewGroup.hpp"
 
 namespace android::view

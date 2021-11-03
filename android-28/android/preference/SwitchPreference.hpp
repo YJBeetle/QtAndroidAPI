@@ -1,7 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "./Preference.hpp"
 #include "./TwoStatePreference.hpp"
 
 namespace android::content
@@ -12,6 +10,7 @@ namespace android::view
 {
 	class View;
 }
+class JString;
 
 namespace android::preference
 {
@@ -31,12 +30,12 @@ namespace android::preference
 		SwitchPreference(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
-		jstring getSwitchTextOff();
-		jstring getSwitchTextOn();
+		JString getSwitchTextOff();
+		JString getSwitchTextOn();
 		void setSwitchTextOff(jint arg0);
-		void setSwitchTextOff(jstring arg0);
+		void setSwitchTextOff(JString arg0);
 		void setSwitchTextOn(jint arg0);
-		void setSwitchTextOn(jstring arg0);
+		void setSwitchTextOn(JString arg0);
 	};
 } // namespace android::preference
 

@@ -1,6 +1,5 @@
 #pragma once
 
-#include "../../../../JObject.hpp"
 #include "./PeerHandle.hpp"
 
 namespace android::net::wifi::aware

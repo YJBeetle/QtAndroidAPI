@@ -6,6 +6,9 @@ namespace java::io
 {
 	class ObjectInputStream;
 }
+class JString;
+class JObject;
+class JString;
 namespace java::time
 {
 	class Clock;
@@ -51,15 +54,15 @@ namespace java::time
 		static java::time::YearMonth now(java::time::ZoneId arg0);
 		static java::time::YearMonth of(jint arg0, jint arg1);
 		static java::time::YearMonth of(jint arg0, java::time::Month arg1);
-		static java::time::YearMonth parse(jstring arg0);
-		static java::time::YearMonth parse(jstring arg0, java::time::format::DateTimeFormatter arg1);
+		static java::time::YearMonth parse(JString arg0);
+		static java::time::YearMonth parse(JString arg0, java::time::format::DateTimeFormatter arg1);
 		JObject adjustInto(JObject arg0);
 		java::time::LocalDate atDay(jint arg0);
 		java::time::LocalDate atEndOfMonth();
-		jint compareTo(jobject arg0);
+		jint compareTo(JObject arg0);
 		jint compareTo(java::time::YearMonth arg0);
-		jboolean equals(jobject arg0);
-		jstring format(java::time::format::DateTimeFormatter arg0);
+		jboolean equals(JObject arg0);
+		JString format(java::time::format::DateTimeFormatter arg0);
 		jint get(JObject arg0);
 		jlong getLong(JObject arg0);
 		java::time::Month getMonth();
@@ -81,9 +84,9 @@ namespace java::time
 		java::time::YearMonth plus(jlong arg0, JObject arg1);
 		java::time::YearMonth plusMonths(jlong arg0);
 		java::time::YearMonth plusYears(jlong arg0);
-		jobject query(JObject arg0);
+		JObject query(JObject arg0);
 		java::time::temporal::ValueRange range(JObject arg0);
-		jstring toString();
+		JString toString();
 		jlong until(JObject arg0, JObject arg1);
 		java::time::YearMonth with(JObject arg0);
 		java::time::YearMonth with(JObject arg0, jlong arg1);

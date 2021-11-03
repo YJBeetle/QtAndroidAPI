@@ -1,3 +1,6 @@
+#include "../../JArray.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./CollationKey.hpp"
 #include "../util/Locale.hpp"
 #include "./Collator.hpp"
@@ -61,13 +64,13 @@ namespace java::text
 	// Constructors
 	
 	// Methods
-	jarray Collator::getAvailableLocales()
+	JArray Collator::getAvailableLocales()
 	{
 		return callStaticObjectMethod(
 			"java.text.Collator",
 			"getAvailableLocales",
 			"()[Ljava/util/Locale;"
-		).object<jarray>();
+		);
 	}
 	java::text::Collator Collator::getInstance()
 	{
@@ -86,54 +89,54 @@ namespace java::text
 			arg0.object()
 		);
 	}
-	jobject Collator::clone()
+	JObject Collator::clone()
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
-	jint Collator::compare(jobject arg0, jobject arg1)
+	jint Collator::compare(JObject arg0, JObject arg1)
 	{
 		return callMethod<jint>(
 			"compare",
 			"(Ljava/lang/Object;Ljava/lang/Object;)I",
-			arg0,
-			arg1
+			arg0.object<jobject>(),
+			arg1.object<jobject>()
 		);
 	}
-	jint Collator::compare(jstring arg0, jstring arg1)
+	jint Collator::compare(JString arg0, JString arg1)
 	{
 		return callMethod<jint>(
 			"compare",
 			"(Ljava/lang/String;Ljava/lang/String;)I",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		);
 	}
-	jboolean Collator::equals(jobject arg0)
+	jboolean Collator::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jboolean Collator::equals(jstring arg0, jstring arg1)
+	jboolean Collator::equals(JString arg0, JString arg1)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/String;Ljava/lang/String;)Z",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		);
 	}
-	java::text::CollationKey Collator::getCollationKey(jstring arg0)
+	java::text::CollationKey Collator::getCollationKey(JString arg0)
 	{
 		return callObjectMethod(
 			"getCollationKey",
 			"(Ljava/lang/String;)Ljava/text/CollationKey;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	jint Collator::getDecomposition()

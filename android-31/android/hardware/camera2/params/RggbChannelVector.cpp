@@ -1,3 +1,6 @@
+#include "../../../../JFloatArray.hpp"
+#include "../../../../JObject.hpp"
+#include "../../../../JString.hpp"
 #include "./RggbChannelVector.hpp"
 
 namespace android::hardware::camera2::params
@@ -54,21 +57,21 @@ namespace android::hardware::camera2::params
 		) {}
 	
 	// Methods
-	void RggbChannelVector::copyTo(jfloatArray arg0, jint arg1)
+	void RggbChannelVector::copyTo(JFloatArray arg0, jint arg1)
 	{
 		callMethod<void>(
 			"copyTo",
 			"([FI)V",
-			arg0,
+			arg0.object<jfloatArray>(),
 			arg1
 		);
 	}
-	jboolean RggbChannelVector::equals(jobject arg0)
+	jboolean RggbChannelVector::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jfloat RggbChannelVector::getBlue()
@@ -114,12 +117,12 @@ namespace android::hardware::camera2::params
 			"()I"
 		);
 	}
-	jstring RggbChannelVector::toString()
+	JString RggbChannelVector::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::hardware::camera2::params
 

@@ -6,4 +6,5 @@ public:
     template<typename ...Ts>
     explicit JObjectArray(const char *className, const char *sig, Ts...agv) : JArray(className, sig, std::forward<Ts>(agv)...) {}
     JObjectArray(QAndroidJniObject obj);
+    
 };

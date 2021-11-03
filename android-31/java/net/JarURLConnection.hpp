@@ -1,8 +1,9 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./URLConnection.hpp"
 
+class JArray;
+class JString;
 namespace java::net
 {
 	class URL;
@@ -43,8 +44,8 @@ namespace java::net
 		
 		// Methods
 		java::util::jar::Attributes getAttributes();
-		jarray getCertificates();
-		jstring getEntryName();
+		JArray getCertificates();
+		JString getEntryName();
 		java::util::jar::JarEntry getJarEntry();
 		java::util::jar::JarFile getJarFile();
 		java::net::URL getJarFileURL();

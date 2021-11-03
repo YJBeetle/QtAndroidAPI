@@ -1,6 +1,9 @@
+#include "../../../JByteArray.hpp"
 #include "./ScanResult.hpp"
 #include "../../os/Parcel.hpp"
 #include "../../os/ParcelUuid.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./ScanFilter.hpp"
 
 namespace android::bluetooth::le
@@ -28,41 +31,41 @@ namespace android::bluetooth::le
 			"()I"
 		);
 	}
-	jboolean ScanFilter::equals(jobject arg0)
+	jboolean ScanFilter::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jstring ScanFilter::getDeviceAddress()
+	JString ScanFilter::getDeviceAddress()
 	{
 		return callObjectMethod(
 			"getDeviceAddress",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ScanFilter::getDeviceName()
+	JString ScanFilter::getDeviceName()
 	{
 		return callObjectMethod(
 			"getDeviceName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jbyteArray ScanFilter::getManufacturerData()
+	JByteArray ScanFilter::getManufacturerData()
 	{
 		return callObjectMethod(
 			"getManufacturerData",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
-	jbyteArray ScanFilter::getManufacturerDataMask()
+	JByteArray ScanFilter::getManufacturerDataMask()
 	{
 		return callObjectMethod(
 			"getManufacturerDataMask",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
 	jint ScanFilter::getManufacturerId()
 	{
@@ -71,19 +74,19 @@ namespace android::bluetooth::le
 			"()I"
 		);
 	}
-	jbyteArray ScanFilter::getServiceData()
+	JByteArray ScanFilter::getServiceData()
 	{
 		return callObjectMethod(
 			"getServiceData",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
-	jbyteArray ScanFilter::getServiceDataMask()
+	JByteArray ScanFilter::getServiceDataMask()
 	{
 		return callObjectMethod(
 			"getServiceDataMask",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
 	android::os::ParcelUuid ScanFilter::getServiceDataUuid()
 	{
@@ -121,12 +124,12 @@ namespace android::bluetooth::le
 			arg0.object()
 		);
 	}
-	jstring ScanFilter::toString()
+	JString ScanFilter::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void ScanFilter::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

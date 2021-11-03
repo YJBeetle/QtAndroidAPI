@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./RemoveByDocumentIdRequest.hpp"
 
 namespace android::app::appsearch
@@ -17,12 +18,12 @@ namespace android::app::appsearch
 			"()Ljava/util/Set;"
 		);
 	}
-	jstring RemoveByDocumentIdRequest::getNamespace()
+	JString RemoveByDocumentIdRequest::getNamespace()
 	{
 		return callObjectMethod(
 			"getNamespace",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::app::appsearch
 

@@ -1,8 +1,6 @@
 #pragma once
 
-#include "../../../../JObject.hpp"
 #include "../SelectionKey.hpp"
-
 
 namespace java::nio::channels::spi
 {

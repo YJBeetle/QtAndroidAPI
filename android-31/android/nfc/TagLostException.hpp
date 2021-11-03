@@ -1,9 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../../java/lang/Exception.hpp"
 #include "../../java/io/IOException.hpp"
 
+class JString;
 
 namespace android::nfc
 {
@@ -18,7 +17,7 @@ namespace android::nfc
 		
 		// Constructors
 		TagLostException();
-		TagLostException(jstring arg0);
+		TagLostException(JString arg0);
 		
 		// Methods
 	};

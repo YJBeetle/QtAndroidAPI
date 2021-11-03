@@ -1,4 +1,11 @@
+#include "../../../JLongArray.hpp"
+#include "../../../JArray.hpp"
+#include "../../../JArray.hpp"
+#include "../../../JArray.hpp"
+#include "../../../JArray.hpp"
 #include "../../io/ObjectInputStream.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "../Duration.hpp"
 #include "../Instant.hpp"
 #include "../LocalDateTime.hpp"
@@ -38,12 +45,12 @@ namespace java::time::zone
 			arg4.object()
 		);
 	}
-	jboolean ZoneRules::equals(jobject arg0)
+	jboolean ZoneRules::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	java::time::Duration ZoneRules::getDaylightSavings(java::time::Instant arg0)
@@ -155,12 +162,12 @@ namespace java::time::zone
 			arg0.object()
 		);
 	}
-	jstring ZoneRules::toString()
+	JString ZoneRules::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::time::zone
 

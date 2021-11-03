@@ -2,6 +2,12 @@
 
 #include "../../JObject.hpp"
 
+class JIntArray;
+class JArray;
+class JArray;
+class JArray;
+class JObject;
+class JString;
 namespace java::lang
 {
 	class StringBuffer;
@@ -23,19 +29,19 @@ namespace java::text
 		AttributedString(QAndroidJniObject obj);
 		
 		// Constructors
-		AttributedString(jstring arg0);
+		AttributedString(JString arg0);
 		AttributedString(JObject arg0);
-		AttributedString(jstring arg0, JObject arg1);
+		AttributedString(JString arg0, JObject arg1);
 		AttributedString(JObject arg0, jint arg1, jint arg2);
-		AttributedString(JObject arg0, jint arg1, jint arg2, jarray arg3);
+		AttributedString(JObject arg0, jint arg1, jint arg2, JArray arg3);
 		
 		// Methods
-		void addAttribute(java::text::AttributedCharacterIterator_Attribute arg0, jobject arg1);
-		void addAttribute(java::text::AttributedCharacterIterator_Attribute arg0, jobject arg1, jint arg2, jint arg3);
+		void addAttribute(java::text::AttributedCharacterIterator_Attribute arg0, JObject arg1);
+		void addAttribute(java::text::AttributedCharacterIterator_Attribute arg0, JObject arg1, jint arg2, jint arg3);
 		void addAttributes(JObject arg0, jint arg1, jint arg2);
 		JObject getIterator();
-		JObject getIterator(jarray arg0);
-		JObject getIterator(jarray arg0, jint arg1, jint arg2);
+		JObject getIterator(JArray arg0);
+		JObject getIterator(JArray arg0, jint arg1, jint arg2);
 	};
 } // namespace java::text
 

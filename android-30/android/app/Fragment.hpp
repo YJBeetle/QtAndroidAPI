@@ -2,6 +2,9 @@
 
 #include "../../JObject.hpp"
 
+class JIntArray;
+class JObjectArray;
+class JArray;
 namespace android::animation
 {
 	class Animator;
@@ -78,6 +81,9 @@ namespace java::io
 {
 	class PrintWriter;
 }
+class JString;
+class JObject;
+class JString;
 
 namespace android::app
 {
@@ -94,10 +100,10 @@ namespace android::app
 		Fragment();
 		
 		// Methods
-		static android::app::Fragment instantiate(android::content::Context arg0, jstring arg1);
-		static android::app::Fragment instantiate(android::content::Context arg0, jstring arg1, android::os::Bundle arg2);
-		void dump(jstring arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, jarray arg3);
-		jboolean equals(jobject arg0);
+		static android::app::Fragment instantiate(android::content::Context arg0, JString arg1);
+		static android::app::Fragment instantiate(android::content::Context arg0, JString arg1, android::os::Bundle arg2);
+		void dump(JString arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, JArray arg3);
+		jboolean equals(JObject arg0);
 		android::app::Activity getActivity();
 		jboolean getAllowEnterTransitionOverlap();
 		jboolean getAllowReturnTransitionOverlap();
@@ -107,7 +113,7 @@ namespace android::app
 		android::transition::Transition getEnterTransition();
 		android::transition::Transition getExitTransition();
 		android::app::FragmentManager getFragmentManager();
-		jobject getHost();
+		JObject getHost();
 		jint getId();
 		android::view::LayoutInflater getLayoutInflater();
 		android::app::LoaderManager getLoaderManager();
@@ -118,12 +124,12 @@ namespace android::app
 		android::transition::Transition getReturnTransition();
 		android::transition::Transition getSharedElementEnterTransition();
 		android::transition::Transition getSharedElementReturnTransition();
-		jstring getString(jint arg0);
-		jstring getString(jint arg0, jobjectArray arg1);
-		jstring getTag();
+		JString getString(jint arg0);
+		JString getString(jint arg0, JObjectArray arg1);
+		JString getTag();
 		android::app::Fragment getTargetFragment();
 		jint getTargetRequestCode();
-		jstring getText(jint arg0);
+		JString getText(jint arg0);
 		jboolean getUserVisibleHint();
 		android::view::View getView();
 		jint hashCode();
@@ -165,7 +171,7 @@ namespace android::app
 		void onPictureInPictureModeChanged(jboolean arg0);
 		void onPictureInPictureModeChanged(jboolean arg0, android::content::res::Configuration arg1);
 		void onPrepareOptionsMenu(JObject arg0);
-		void onRequestPermissionsResult(jint arg0, jarray arg1, jintArray arg2);
+		void onRequestPermissionsResult(jint arg0, JArray arg1, JIntArray arg2);
 		void onResume();
 		void onSaveInstanceState(android::os::Bundle arg0);
 		void onStart();
@@ -175,7 +181,7 @@ namespace android::app
 		void onViewStateRestored(android::os::Bundle arg0);
 		void postponeEnterTransition();
 		void registerForContextMenu(android::view::View arg0);
-		void requestPermissions(jarray arg0, jint arg1);
+		void requestPermissions(JArray arg0, jint arg1);
 		void setAllowEnterTransitionOverlap(jboolean arg0);
 		void setAllowReturnTransitionOverlap(jboolean arg0);
 		void setArguments(android::os::Bundle arg0);
@@ -193,14 +199,14 @@ namespace android::app
 		void setSharedElementReturnTransition(android::transition::Transition arg0);
 		void setTargetFragment(android::app::Fragment arg0, jint arg1);
 		void setUserVisibleHint(jboolean arg0);
-		jboolean shouldShowRequestPermissionRationale(jstring arg0);
+		jboolean shouldShowRequestPermissionRationale(JString arg0);
 		void startActivity(android::content::Intent arg0);
 		void startActivity(android::content::Intent arg0, android::os::Bundle arg1);
 		void startActivityForResult(android::content::Intent arg0, jint arg1);
 		void startActivityForResult(android::content::Intent arg0, jint arg1, android::os::Bundle arg2);
 		void startIntentSenderForResult(android::content::IntentSender arg0, jint arg1, android::content::Intent arg2, jint arg3, jint arg4, jint arg5, android::os::Bundle arg6);
 		void startPostponedEnterTransition();
-		jstring toString();
+		JString toString();
 		void unregisterForContextMenu(android::view::View arg0);
 	};
 } // namespace android::app

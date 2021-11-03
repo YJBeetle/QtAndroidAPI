@@ -1,3 +1,5 @@
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
 #include "../format/TextStyle.hpp"
 #include "../../util/Locale.hpp"
 #include "./ThaiBuddhistEra.hpp"
@@ -37,31 +39,31 @@ namespace java::time::chrono
 			arg0
 		);
 	}
-	java::time::chrono::ThaiBuddhistEra ThaiBuddhistEra::valueOf(jstring arg0)
+	java::time::chrono::ThaiBuddhistEra ThaiBuddhistEra::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"java.time.chrono.ThaiBuddhistEra",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/time/chrono/ThaiBuddhistEra;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray ThaiBuddhistEra::values()
+	JArray ThaiBuddhistEra::values()
 	{
 		return callStaticObjectMethod(
 			"java.time.chrono.ThaiBuddhistEra",
 			"values",
 			"()[Ljava/time/chrono/ThaiBuddhistEra;"
-		).object<jarray>();
+		);
 	}
-	jstring ThaiBuddhistEra::getDisplayName(java::time::format::TextStyle arg0, java::util::Locale arg1)
+	JString ThaiBuddhistEra::getDisplayName(java::time::format::TextStyle arg0, java::util::Locale arg1)
 	{
 		return callObjectMethod(
 			"getDisplayName",
 			"(Ljava/time/format/TextStyle;Ljava/util/Locale;)Ljava/lang/String;",
 			arg0.object(),
 			arg1.object()
-		).object<jstring>();
+		);
 	}
 	jint ThaiBuddhistEra::getValue()
 	{

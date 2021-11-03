@@ -1,3 +1,6 @@
+#include "../../JIntArray.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./Buffer.hpp"
 #include "./ByteOrder.hpp"
 #include "./IntBuffer.hpp"
@@ -21,32 +24,32 @@ namespace java::nio
 			arg0
 		);
 	}
-	java::nio::IntBuffer IntBuffer::wrap(jintArray arg0)
+	java::nio::IntBuffer IntBuffer::wrap(JIntArray arg0)
 	{
 		return callStaticObjectMethod(
 			"java.nio.IntBuffer",
 			"wrap",
 			"([I)Ljava/nio/IntBuffer;",
-			arg0
+			arg0.object<jintArray>()
 		);
 	}
-	java::nio::IntBuffer IntBuffer::wrap(jintArray arg0, jint arg1, jint arg2)
+	java::nio::IntBuffer IntBuffer::wrap(JIntArray arg0, jint arg1, jint arg2)
 	{
 		return callStaticObjectMethod(
 			"java.nio.IntBuffer",
 			"wrap",
 			"([III)Ljava/nio/IntBuffer;",
-			arg0,
+			arg0.object<jintArray>(),
 			arg1,
 			arg2
 		);
 	}
-	jintArray IntBuffer::array()
+	JIntArray IntBuffer::array()
 	{
 		return callObjectMethod(
 			"array",
 			"()[I"
-		).object<jintArray>();
+		);
 	}
 	jint IntBuffer::arrayOffset()
 	{
@@ -76,12 +79,12 @@ namespace java::nio
 			"()Ljava/nio/IntBuffer;"
 		);
 	}
-	jint IntBuffer::compareTo(jobject arg0)
+	jint IntBuffer::compareTo(JObject arg0)
 	{
 		return callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Object;)I",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint IntBuffer::compareTo(java::nio::IntBuffer arg0)
@@ -99,12 +102,12 @@ namespace java::nio
 			"()Ljava/nio/IntBuffer;"
 		);
 	}
-	jboolean IntBuffer::equals(jobject arg0)
+	jboolean IntBuffer::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	java::nio::IntBuffer IntBuffer::flip()
@@ -129,40 +132,40 @@ namespace java::nio
 			arg0
 		);
 	}
-	java::nio::IntBuffer IntBuffer::get(jintArray arg0)
+	java::nio::IntBuffer IntBuffer::get(JIntArray arg0)
 	{
 		return callObjectMethod(
 			"get",
 			"([I)Ljava/nio/IntBuffer;",
-			arg0
+			arg0.object<jintArray>()
 		);
 	}
-	java::nio::IntBuffer IntBuffer::get(jint arg0, jintArray arg1)
+	java::nio::IntBuffer IntBuffer::get(jint arg0, JIntArray arg1)
 	{
 		return callObjectMethod(
 			"get",
 			"(I[I)Ljava/nio/IntBuffer;",
 			arg0,
-			arg1
+			arg1.object<jintArray>()
 		);
 	}
-	java::nio::IntBuffer IntBuffer::get(jintArray arg0, jint arg1, jint arg2)
+	java::nio::IntBuffer IntBuffer::get(JIntArray arg0, jint arg1, jint arg2)
 	{
 		return callObjectMethod(
 			"get",
 			"([III)Ljava/nio/IntBuffer;",
-			arg0,
+			arg0.object<jintArray>(),
 			arg1,
 			arg2
 		);
 	}
-	java::nio::IntBuffer IntBuffer::get(jint arg0, jintArray arg1, jint arg2, jint arg3)
+	java::nio::IntBuffer IntBuffer::get(jint arg0, JIntArray arg1, jint arg2, jint arg3)
 	{
 		return callObjectMethod(
 			"get",
 			"(I[III)Ljava/nio/IntBuffer;",
 			arg0,
-			arg1,
+			arg1.object<jintArray>(),
 			arg2,
 			arg3
 		);
@@ -226,12 +229,12 @@ namespace java::nio
 			arg0
 		);
 	}
-	java::nio::IntBuffer IntBuffer::put(jintArray arg0)
+	java::nio::IntBuffer IntBuffer::put(JIntArray arg0)
 	{
 		return callObjectMethod(
 			"put",
 			"([I)Ljava/nio/IntBuffer;",
-			arg0
+			arg0.object<jintArray>()
 		);
 	}
 	java::nio::IntBuffer IntBuffer::put(jint arg0)
@@ -250,13 +253,13 @@ namespace java::nio
 			arg0.object()
 		);
 	}
-	java::nio::IntBuffer IntBuffer::put(jint arg0, jintArray arg1)
+	java::nio::IntBuffer IntBuffer::put(jint arg0, JIntArray arg1)
 	{
 		return callObjectMethod(
 			"put",
 			"(I[I)Ljava/nio/IntBuffer;",
 			arg0,
-			arg1
+			arg1.object<jintArray>()
 		);
 	}
 	java::nio::IntBuffer IntBuffer::put(jint arg0, jint arg1)
@@ -268,23 +271,23 @@ namespace java::nio
 			arg1
 		);
 	}
-	java::nio::IntBuffer IntBuffer::put(jintArray arg0, jint arg1, jint arg2)
+	java::nio::IntBuffer IntBuffer::put(JIntArray arg0, jint arg1, jint arg2)
 	{
 		return callObjectMethod(
 			"put",
 			"([III)Ljava/nio/IntBuffer;",
-			arg0,
+			arg0.object<jintArray>(),
 			arg1,
 			arg2
 		);
 	}
-	java::nio::IntBuffer IntBuffer::put(jint arg0, jintArray arg1, jint arg2, jint arg3)
+	java::nio::IntBuffer IntBuffer::put(jint arg0, JIntArray arg1, jint arg2, jint arg3)
 	{
 		return callObjectMethod(
 			"put",
 			"(I[III)Ljava/nio/IntBuffer;",
 			arg0,
-			arg1,
+			arg1.object<jintArray>(),
 			arg2,
 			arg3
 		);
@@ -330,12 +333,12 @@ namespace java::nio
 			arg1
 		);
 	}
-	jstring IntBuffer::toString()
+	JString IntBuffer::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::nio
 

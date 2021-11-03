@@ -1,7 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../view/View.hpp"
 #include "./ImageView.hpp"
 
 namespace android::content
@@ -16,6 +14,7 @@ namespace android::view
 {
 	class PointerIcon;
 }
+class JString;
 
 namespace android::widget
 {
@@ -35,7 +34,7 @@ namespace android::widget
 		ImageButton(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
-		jstring getAccessibilityClassName();
+		JString getAccessibilityClassName();
 		android::view::PointerIcon onResolvePointerIcon(android::view::MotionEvent arg0, jint arg1);
 	};
 } // namespace android::widget

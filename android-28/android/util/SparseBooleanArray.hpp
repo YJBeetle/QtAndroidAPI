@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JObject;
+class JString;
 
 namespace android::util
 {
@@ -23,7 +25,7 @@ namespace android::util
 		void clear();
 		android::util::SparseBooleanArray clone();
 		void _delete(jint arg0);
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jboolean get(jint arg0);
 		jboolean get(jint arg0, jboolean arg1);
 		jint hashCode();
@@ -33,7 +35,7 @@ namespace android::util
 		void put(jint arg0, jboolean arg1);
 		void removeAt(jint arg0);
 		jint size();
-		jstring toString();
+		JString toString();
 		jboolean valueAt(jint arg0);
 	};
 } // namespace android::util

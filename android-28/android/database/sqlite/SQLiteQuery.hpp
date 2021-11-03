@@ -1,7 +1,5 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "./SQLiteClosable.hpp"
 #include "./SQLiteProgram.hpp"
 
 namespace android::database::sqlite
@@ -12,6 +10,7 @@ namespace android::os
 {
 	class CancellationSignal;
 }
+class JString;
 
 namespace android::database::sqlite
 {
@@ -27,7 +26,7 @@ namespace android::database::sqlite
 		// Constructors
 		
 		// Methods
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::database::sqlite
 

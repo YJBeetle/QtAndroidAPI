@@ -2,6 +2,9 @@
 
 #include "../../JObject.hpp"
 
+class JArray;
+class JObject;
+class JString;
 namespace java::text
 {
 	class CollationKey;
@@ -32,15 +35,15 @@ namespace java::text
 		// Constructors
 		
 		// Methods
-		static jarray getAvailableLocales();
+		static JArray getAvailableLocales();
 		static java::text::Collator getInstance();
 		static java::text::Collator getInstance(java::util::Locale arg0);
-		jobject clone();
-		jint compare(jobject arg0, jobject arg1);
-		jint compare(jstring arg0, jstring arg1);
-		jboolean equals(jobject arg0);
-		jboolean equals(jstring arg0, jstring arg1);
-		java::text::CollationKey getCollationKey(jstring arg0);
+		JObject clone();
+		jint compare(JObject arg0, JObject arg1);
+		jint compare(JString arg0, JString arg1);
+		jboolean equals(JObject arg0);
+		jboolean equals(JString arg0, JString arg1);
+		java::text::CollationKey getCollationKey(JString arg0);
 		jint getDecomposition();
 		jint getStrength();
 		jint hashCode();

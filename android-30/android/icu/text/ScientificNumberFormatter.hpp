@@ -10,6 +10,8 @@ namespace android::icu::util
 {
 	class ULocale;
 }
+class JObject;
+class JString;
 
 namespace android::icu::text
 {
@@ -25,11 +27,11 @@ namespace android::icu::text
 		// Constructors
 		
 		// Methods
-		static android::icu::text::ScientificNumberFormatter getMarkupInstance(android::icu::text::DecimalFormat arg0, jstring arg1, jstring arg2);
-		static android::icu::text::ScientificNumberFormatter getMarkupInstance(android::icu::util::ULocale arg0, jstring arg1, jstring arg2);
+		static android::icu::text::ScientificNumberFormatter getMarkupInstance(android::icu::text::DecimalFormat arg0, JString arg1, JString arg2);
+		static android::icu::text::ScientificNumberFormatter getMarkupInstance(android::icu::util::ULocale arg0, JString arg1, JString arg2);
 		static android::icu::text::ScientificNumberFormatter getSuperscriptInstance(android::icu::text::DecimalFormat arg0);
 		static android::icu::text::ScientificNumberFormatter getSuperscriptInstance(android::icu::util::ULocale arg0);
-		jstring format(jobject arg0);
+		JString format(JObject arg0);
 	};
 } // namespace android::icu::text
 

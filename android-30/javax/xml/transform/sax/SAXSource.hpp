@@ -2,6 +2,7 @@
 
 #include "../../../../JObject.hpp"
 
+class JString;
 namespace org::xml::sax
 {
 	class InputSource;
@@ -13,7 +14,7 @@ namespace javax::xml::transform::sax
 	{
 	public:
 		// Fields
-		static jstring FEATURE();
+		static JString FEATURE();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SAXSource(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
@@ -27,11 +28,11 @@ namespace javax::xml::transform::sax
 		// Methods
 		static org::xml::sax::InputSource sourceToInputSource(JObject arg0);
 		org::xml::sax::InputSource getInputSource();
-		jstring getSystemId();
+		JString getSystemId();
 		JObject getXMLReader();
 		jboolean isEmpty();
 		void setInputSource(org::xml::sax::InputSource arg0);
-		void setSystemId(jstring arg0);
+		void setSystemId(JString arg0);
 		void setXMLReader(JObject arg0);
 	};
 } // namespace javax::xml::transform::sax

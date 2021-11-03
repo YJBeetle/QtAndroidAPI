@@ -1,4 +1,5 @@
 #include "../../os/Parcel.hpp"
+#include "../../../JString.hpp"
 #include "./FeatureInfo.hpp"
 
 namespace android::content::pm
@@ -32,12 +33,12 @@ namespace android::content::pm
 			"flags"
 		);
 	}
-	jstring FeatureInfo::name()
+	JString FeatureInfo::name()
 	{
 		return getObjectField(
 			"name",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint FeatureInfo::reqGlEsVersion()
 	{
@@ -76,19 +77,19 @@ namespace android::content::pm
 			"()I"
 		);
 	}
-	jstring FeatureInfo::getGlEsVersion()
+	JString FeatureInfo::getGlEsVersion()
 	{
 		return callObjectMethod(
 			"getGlEsVersion",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring FeatureInfo::toString()
+	JString FeatureInfo::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void FeatureInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

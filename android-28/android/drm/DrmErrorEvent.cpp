@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "../../java/util/HashMap.hpp"
 #include "./DrmErrorEvent.hpp"
 
@@ -65,21 +66,21 @@ namespace android::drm
 	DrmErrorEvent::DrmErrorEvent(QAndroidJniObject obj) : android::drm::DrmEvent(obj) {}
 	
 	// Constructors
-	DrmErrorEvent::DrmErrorEvent(jint arg0, jint arg1, jstring arg2)
+	DrmErrorEvent::DrmErrorEvent(jint arg0, jint arg1, JString arg2)
 		: android::drm::DrmEvent(
 			"android.drm.DrmErrorEvent",
 			"(IILjava/lang/String;)V",
 			arg0,
 			arg1,
-			arg2
+			arg2.object<jstring>()
 		) {}
-	DrmErrorEvent::DrmErrorEvent(jint arg0, jint arg1, jstring arg2, java::util::HashMap arg3)
+	DrmErrorEvent::DrmErrorEvent(jint arg0, jint arg1, JString arg2, java::util::HashMap arg3)
 		: android::drm::DrmEvent(
 			"android.drm.DrmErrorEvent",
 			"(IILjava/lang/String;Ljava/util/HashMap;)V",
 			arg0,
 			arg1,
-			arg2,
+			arg2.object<jstring>(),
 			arg3.object()
 		) {}
 	

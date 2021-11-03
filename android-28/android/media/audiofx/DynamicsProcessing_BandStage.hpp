@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "./DynamicsProcessing_Stage.hpp"
 
+class JString;
 
 namespace android::media::audiofx
 {
@@ -20,7 +20,7 @@ namespace android::media::audiofx
 		
 		// Methods
 		jint getBandCount();
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::media::audiofx
 

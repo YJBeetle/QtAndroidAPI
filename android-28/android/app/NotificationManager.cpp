@@ -1,3 +1,4 @@
+#include "../../JArray.hpp"
 #include "./AutomaticZenRule.hpp"
 #include "./Notification.hpp"
 #include "./NotificationChannel.hpp"
@@ -6,82 +7,83 @@
 #include "../content/ComponentName.hpp"
 #include "../content/Context.hpp"
 #include "../os/Handler.hpp"
+#include "../../JString.hpp"
 #include "./NotificationManager.hpp"
 
 namespace android::app
 {
 	// Fields
-	jstring NotificationManager::ACTION_APP_BLOCK_STATE_CHANGED()
+	JString NotificationManager::ACTION_APP_BLOCK_STATE_CHANGED()
 	{
 		return getStaticObjectField(
 			"android.app.NotificationManager",
 			"ACTION_APP_BLOCK_STATE_CHANGED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring NotificationManager::ACTION_INTERRUPTION_FILTER_CHANGED()
+	JString NotificationManager::ACTION_INTERRUPTION_FILTER_CHANGED()
 	{
 		return getStaticObjectField(
 			"android.app.NotificationManager",
 			"ACTION_INTERRUPTION_FILTER_CHANGED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring NotificationManager::ACTION_NOTIFICATION_CHANNEL_BLOCK_STATE_CHANGED()
+	JString NotificationManager::ACTION_NOTIFICATION_CHANNEL_BLOCK_STATE_CHANGED()
 	{
 		return getStaticObjectField(
 			"android.app.NotificationManager",
 			"ACTION_NOTIFICATION_CHANNEL_BLOCK_STATE_CHANGED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring NotificationManager::ACTION_NOTIFICATION_CHANNEL_GROUP_BLOCK_STATE_CHANGED()
+	JString NotificationManager::ACTION_NOTIFICATION_CHANNEL_GROUP_BLOCK_STATE_CHANGED()
 	{
 		return getStaticObjectField(
 			"android.app.NotificationManager",
 			"ACTION_NOTIFICATION_CHANNEL_GROUP_BLOCK_STATE_CHANGED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring NotificationManager::ACTION_NOTIFICATION_POLICY_ACCESS_GRANTED_CHANGED()
+	JString NotificationManager::ACTION_NOTIFICATION_POLICY_ACCESS_GRANTED_CHANGED()
 	{
 		return getStaticObjectField(
 			"android.app.NotificationManager",
 			"ACTION_NOTIFICATION_POLICY_ACCESS_GRANTED_CHANGED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring NotificationManager::ACTION_NOTIFICATION_POLICY_CHANGED()
+	JString NotificationManager::ACTION_NOTIFICATION_POLICY_CHANGED()
 	{
 		return getStaticObjectField(
 			"android.app.NotificationManager",
 			"ACTION_NOTIFICATION_POLICY_CHANGED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring NotificationManager::EXTRA_BLOCKED_STATE()
+	JString NotificationManager::EXTRA_BLOCKED_STATE()
 	{
 		return getStaticObjectField(
 			"android.app.NotificationManager",
 			"EXTRA_BLOCKED_STATE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring NotificationManager::EXTRA_NOTIFICATION_CHANNEL_GROUP_ID()
+	JString NotificationManager::EXTRA_NOTIFICATION_CHANNEL_GROUP_ID()
 	{
 		return getStaticObjectField(
 			"android.app.NotificationManager",
 			"EXTRA_NOTIFICATION_CHANNEL_GROUP_ID",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring NotificationManager::EXTRA_NOTIFICATION_CHANNEL_ID()
+	JString NotificationManager::EXTRA_NOTIFICATION_CHANNEL_ID()
 	{
 		return getStaticObjectField(
 			"android.app.NotificationManager",
 			"EXTRA_NOTIFICATION_CHANNEL_ID",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint NotificationManager::IMPORTANCE_DEFAULT()
 	{
@@ -174,13 +176,13 @@ namespace android::app
 	// Constructors
 	
 	// Methods
-	jstring NotificationManager::addAutomaticZenRule(android::app::AutomaticZenRule arg0)
+	JString NotificationManager::addAutomaticZenRule(android::app::AutomaticZenRule arg0)
 	{
 		return callObjectMethod(
 			"addAutomaticZenRule",
 			"(Landroid/app/AutomaticZenRule;)Ljava/lang/String;",
 			arg0.object()
-		).object<jstring>();
+		);
 	}
 	jboolean NotificationManager::areNotificationsEnabled()
 	{
@@ -197,12 +199,12 @@ namespace android::app
 			arg0
 		);
 	}
-	void NotificationManager::cancel(jstring arg0, jint arg1)
+	void NotificationManager::cancel(JString arg0, jint arg1)
 	{
 		callMethod<void>(
 			"cancel",
 			"(Ljava/lang/String;I)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
@@ -245,35 +247,35 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void NotificationManager::deleteNotificationChannel(jstring arg0)
+	void NotificationManager::deleteNotificationChannel(JString arg0)
 	{
 		callMethod<void>(
 			"deleteNotificationChannel",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	void NotificationManager::deleteNotificationChannelGroup(jstring arg0)
+	void NotificationManager::deleteNotificationChannelGroup(JString arg0)
 	{
 		callMethod<void>(
 			"deleteNotificationChannelGroup",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray NotificationManager::getActiveNotifications()
+	JArray NotificationManager::getActiveNotifications()
 	{
 		return callObjectMethod(
 			"getActiveNotifications",
 			"()[Landroid/service/notification/StatusBarNotification;"
-		).object<jarray>();
+		);
 	}
-	android::app::AutomaticZenRule NotificationManager::getAutomaticZenRule(jstring arg0)
+	android::app::AutomaticZenRule NotificationManager::getAutomaticZenRule(JString arg0)
 	{
 		return callObjectMethod(
 			"getAutomaticZenRule",
 			"(Ljava/lang/String;)Landroid/app/AutomaticZenRule;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	JObject NotificationManager::getAutomaticZenRules()
@@ -297,20 +299,20 @@ namespace android::app
 			"()I"
 		);
 	}
-	android::app::NotificationChannel NotificationManager::getNotificationChannel(jstring arg0)
+	android::app::NotificationChannel NotificationManager::getNotificationChannel(JString arg0)
 	{
 		return callObjectMethod(
 			"getNotificationChannel",
 			"(Ljava/lang/String;)Landroid/app/NotificationChannel;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	android::app::NotificationChannelGroup NotificationManager::getNotificationChannelGroup(jstring arg0)
+	android::app::NotificationChannelGroup NotificationManager::getNotificationChannelGroup(JString arg0)
 	{
 		return callObjectMethod(
 			"getNotificationChannelGroup",
 			"(Ljava/lang/String;)Landroid/app/NotificationChannelGroup;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	JObject NotificationManager::getNotificationChannelGroups()
@@ -358,22 +360,22 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	void NotificationManager::notify(jstring arg0, jint arg1, android::app::Notification arg2)
+	void NotificationManager::notify(JString arg0, jint arg1, android::app::Notification arg2)
 	{
 		callMethod<void>(
 			"notify",
 			"(Ljava/lang/String;ILandroid/app/Notification;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
 			arg2.object()
 		);
 	}
-	jboolean NotificationManager::removeAutomaticZenRule(jstring arg0)
+	jboolean NotificationManager::removeAutomaticZenRule(JString arg0)
 	{
 		return callMethod<jboolean>(
 			"removeAutomaticZenRule",
 			"(Ljava/lang/String;)Z",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void NotificationManager::setInterruptionFilter(jint arg0)
@@ -392,12 +394,12 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	jboolean NotificationManager::updateAutomaticZenRule(jstring arg0, android::app::AutomaticZenRule arg1)
+	jboolean NotificationManager::updateAutomaticZenRule(JString arg0, android::app::AutomaticZenRule arg1)
 	{
 		return callMethod<jboolean>(
 			"updateAutomaticZenRule",
 			"(Ljava/lang/String;Landroid/app/AutomaticZenRule;)Z",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}

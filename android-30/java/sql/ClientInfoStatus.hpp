@@ -1,8 +1,9 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "../lang/Enum.hpp"
 
+class JArray;
+class JString;
 
 namespace java::sql
 {
@@ -22,8 +23,8 @@ namespace java::sql
 		// Constructors
 		
 		// Methods
-		static java::sql::ClientInfoStatus valueOf(jstring arg0);
-		static jarray values();
+		static java::sql::ClientInfoStatus valueOf(JString arg0);
+		static JArray values();
 	};
 } // namespace java::sql
 

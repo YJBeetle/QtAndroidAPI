@@ -1,42 +1,43 @@
 #include "../content/Context.hpp"
 #include "./SubscriptionInfo.hpp"
 #include "./SubscriptionManager_OnSubscriptionsChangedListener.hpp"
+#include "../../JString.hpp"
 #include "./SubscriptionManager.hpp"
 
 namespace android::telephony
 {
 	// Fields
-	jstring SubscriptionManager::ACTION_DEFAULT_SMS_SUBSCRIPTION_CHANGED()
+	JString SubscriptionManager::ACTION_DEFAULT_SMS_SUBSCRIPTION_CHANGED()
 	{
 		return getStaticObjectField(
 			"android.telephony.SubscriptionManager",
 			"ACTION_DEFAULT_SMS_SUBSCRIPTION_CHANGED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring SubscriptionManager::ACTION_DEFAULT_SUBSCRIPTION_CHANGED()
+	JString SubscriptionManager::ACTION_DEFAULT_SUBSCRIPTION_CHANGED()
 	{
 		return getStaticObjectField(
 			"android.telephony.SubscriptionManager",
 			"ACTION_DEFAULT_SUBSCRIPTION_CHANGED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring SubscriptionManager::ACTION_MANAGE_SUBSCRIPTION_PLANS()
+	JString SubscriptionManager::ACTION_MANAGE_SUBSCRIPTION_PLANS()
 	{
 		return getStaticObjectField(
 			"android.telephony.SubscriptionManager",
 			"ACTION_MANAGE_SUBSCRIPTION_PLANS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring SubscriptionManager::ACTION_REFRESH_SUBSCRIPTION_PLANS()
+	JString SubscriptionManager::ACTION_REFRESH_SUBSCRIPTION_PLANS()
 	{
 		return getStaticObjectField(
 			"android.telephony.SubscriptionManager",
 			"ACTION_REFRESH_SUBSCRIPTION_PLANS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint SubscriptionManager::DATA_ROAMING_DISABLE()
 	{
@@ -52,13 +53,13 @@ namespace android::telephony
 			"DATA_ROAMING_ENABLE"
 		);
 	}
-	jstring SubscriptionManager::EXTRA_SUBSCRIPTION_INDEX()
+	JString SubscriptionManager::EXTRA_SUBSCRIPTION_INDEX()
 	{
 		return getStaticObjectField(
 			"android.telephony.SubscriptionManager",
 			"EXTRA_SUBSCRIPTION_INDEX",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint SubscriptionManager::INVALID_SUBSCRIPTION_ID()
 	{

@@ -1,4 +1,6 @@
 #include "./Parcel.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./VibrationAttributes.hpp"
 
 namespace android::os
@@ -117,12 +119,12 @@ namespace android::os
 			"()I"
 		);
 	}
-	jboolean VibrationAttributes::equals(jobject arg0)
+	jboolean VibrationAttributes::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint VibrationAttributes::getFlags()
@@ -161,12 +163,12 @@ namespace android::os
 			arg0
 		);
 	}
-	jstring VibrationAttributes::toString()
+	JString VibrationAttributes::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void VibrationAttributes::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

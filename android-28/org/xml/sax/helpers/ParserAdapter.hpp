@@ -2,6 +2,10 @@
 
 #include "../../../../JObject.hpp"
 
+class JCharArray;
+class JArray;
+class JObject;
+class JString;
 namespace org::xml::sax
 {
 	class InputSource;
@@ -35,28 +39,28 @@ namespace org::xml::sax::helpers
 		ParserAdapter(JObject arg0);
 		
 		// Methods
-		void characters(jcharArray arg0, jint arg1, jint arg2);
+		void characters(JCharArray arg0, jint arg1, jint arg2);
 		void endDocument();
-		void endElement(jstring arg0);
+		void endElement(JString arg0);
 		JObject getContentHandler();
 		JObject getDTDHandler();
 		JObject getEntityResolver();
 		JObject getErrorHandler();
-		jboolean getFeature(jstring arg0);
-		jobject getProperty(jstring arg0);
-		void ignorableWhitespace(jcharArray arg0, jint arg1, jint arg2);
-		void parse(jstring arg0);
+		jboolean getFeature(JString arg0);
+		JObject getProperty(JString arg0);
+		void ignorableWhitespace(JCharArray arg0, jint arg1, jint arg2);
+		void parse(JString arg0);
 		void parse(org::xml::sax::InputSource arg0);
-		void processingInstruction(jstring arg0, jstring arg1);
+		void processingInstruction(JString arg0, JString arg1);
 		void setContentHandler(JObject arg0);
 		void setDTDHandler(JObject arg0);
 		void setDocumentLocator(JObject arg0);
 		void setEntityResolver(JObject arg0);
 		void setErrorHandler(JObject arg0);
-		void setFeature(jstring arg0, jboolean arg1);
-		void setProperty(jstring arg0, jobject arg1);
+		void setFeature(JString arg0, jboolean arg1);
+		void setProperty(JString arg0, JObject arg1);
 		void startDocument();
-		void startElement(jstring arg0, JObject arg1);
+		void startElement(JString arg0, JObject arg1);
 	};
 } // namespace org::xml::sax::helpers
 

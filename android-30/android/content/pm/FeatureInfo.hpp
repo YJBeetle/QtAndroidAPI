@@ -6,6 +6,7 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
 
 namespace android::content::pm
 {
@@ -17,7 +18,7 @@ namespace android::content::pm
 		static jint FLAG_REQUIRED();
 		static jint GL_ES_VERSION_UNDEFINED();
 		jint flags();
-		jstring name();
+		JString name();
 		jint reqGlEsVersion();
 		jint version();
 		
@@ -31,8 +32,8 @@ namespace android::content::pm
 		
 		// Methods
 		jint describeContents();
-		jstring getGlEsVersion();
-		jstring toString();
+		JString getGlEsVersion();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::content::pm

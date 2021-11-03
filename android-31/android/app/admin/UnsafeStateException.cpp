@@ -1,4 +1,5 @@
 #include "../../os/Parcel.hpp"
+#include "../../../JString.hpp"
 #include "./UnsafeStateException.hpp"
 
 namespace android::app::admin
@@ -26,12 +27,12 @@ namespace android::app::admin
 			"()I"
 		);
 	}
-	jstring UnsafeStateException::getMessage()
+	JString UnsafeStateException::getMessage()
 	{
 		return callObjectMethod(
 			"getMessage",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	JObject UnsafeStateException::getReasons()
 	{

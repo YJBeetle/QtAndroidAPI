@@ -1,8 +1,9 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "./EncodedKeySpec.hpp"
 
+class JByteArray;
+class JString;
 
 namespace java::security::spec
 {
@@ -16,12 +17,12 @@ namespace java::security::spec
 		X509EncodedKeySpec(QAndroidJniObject obj);
 		
 		// Constructors
-		X509EncodedKeySpec(jbyteArray arg0);
-		X509EncodedKeySpec(jbyteArray arg0, jstring arg1);
+		X509EncodedKeySpec(JByteArray arg0);
+		X509EncodedKeySpec(JByteArray arg0, JString arg1);
 		
 		// Methods
-		jbyteArray getEncoded();
-		jstring getFormat();
+		JByteArray getEncoded();
+		JString getFormat();
 	};
 } // namespace java::security::spec
 

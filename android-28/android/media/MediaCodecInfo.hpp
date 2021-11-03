@@ -2,10 +2,13 @@
 
 #include "../../JObject.hpp"
 
+class JArray;
+class JArray;
 namespace android::media
 {
 	class MediaCodecInfo_CodecCapabilities;
 }
+class JString;
 
 namespace android::media
 {
@@ -21,9 +24,9 @@ namespace android::media
 		// Constructors
 		
 		// Methods
-		android::media::MediaCodecInfo_CodecCapabilities getCapabilitiesForType(jstring arg0);
-		jstring getName();
-		jarray getSupportedTypes();
+		android::media::MediaCodecInfo_CodecCapabilities getCapabilitiesForType(JString arg0);
+		JString getName();
+		JArray getSupportedTypes();
 		jboolean isEncoder();
 	};
 } // namespace android::media

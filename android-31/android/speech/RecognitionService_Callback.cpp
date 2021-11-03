@@ -1,3 +1,4 @@
+#include "../../JByteArray.hpp"
 #include "../content/AttributionSource.hpp"
 #include "../os/Bundle.hpp"
 #include "./RecognitionService.hpp"
@@ -20,12 +21,12 @@ namespace android::speech
 			"()V"
 		);
 	}
-	void RecognitionService_Callback::bufferReceived(jbyteArray arg0)
+	void RecognitionService_Callback::bufferReceived(JByteArray arg0)
 	{
 		callMethod<void>(
 			"bufferReceived",
 			"([B)V",
-			arg0
+			arg0.object<jbyteArray>()
 		);
 	}
 	void RecognitionService_Callback::endOfSpeech()

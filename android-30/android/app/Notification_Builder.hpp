@@ -2,6 +2,9 @@
 
 #include "../../JObject.hpp"
 
+class JLongArray;
+class JArray;
+class JArray;
 namespace android::app
 {
 	class Notification;
@@ -58,6 +61,8 @@ namespace android::widget
 {
 	class RemoteViews;
 }
+class JString;
+class JString;
 
 namespace android::app
 {
@@ -72,15 +77,15 @@ namespace android::app
 		
 		// Constructors
 		Notification_Builder(android::content::Context arg0);
-		Notification_Builder(android::content::Context arg0, jstring arg1);
+		Notification_Builder(android::content::Context arg0, JString arg1);
 		
 		// Methods
 		static android::app::Notification_Builder recoverBuilder(android::content::Context arg0, android::app::Notification arg1);
 		android::app::Notification_Builder addAction(android::app::Notification_Action arg0);
-		android::app::Notification_Builder addAction(jint arg0, jstring arg1, android::app::PendingIntent arg2);
+		android::app::Notification_Builder addAction(jint arg0, JString arg1, android::app::PendingIntent arg2);
 		android::app::Notification_Builder addExtras(android::os::Bundle arg0);
 		android::app::Notification_Builder addPerson(android::app::Person arg0);
-		android::app::Notification_Builder addPerson(jstring arg0);
+		android::app::Notification_Builder addPerson(JString arg0);
 		android::app::Notification build();
 		android::widget::RemoteViews createBigContentView();
 		android::widget::RemoteViews createContentView();
@@ -89,21 +94,21 @@ namespace android::app
 		android::os::Bundle getExtras();
 		android::app::Notification getNotification();
 		android::app::Notification_Style getStyle();
-		android::app::Notification_Builder setActions(jarray arg0);
+		android::app::Notification_Builder setActions(JArray arg0);
 		android::app::Notification_Builder setAllowSystemGeneratedContextualActions(jboolean arg0);
 		android::app::Notification_Builder setAutoCancel(jboolean arg0);
 		android::app::Notification_Builder setBadgeIconType(jint arg0);
 		android::app::Notification_Builder setBubbleMetadata(android::app::Notification_BubbleMetadata arg0);
-		android::app::Notification_Builder setCategory(jstring arg0);
-		android::app::Notification_Builder setChannelId(jstring arg0);
+		android::app::Notification_Builder setCategory(JString arg0);
+		android::app::Notification_Builder setChannelId(JString arg0);
 		android::app::Notification_Builder setChronometerCountDown(jboolean arg0);
 		android::app::Notification_Builder setColor(jint arg0);
 		android::app::Notification_Builder setColorized(jboolean arg0);
 		android::app::Notification_Builder setContent(android::widget::RemoteViews arg0);
-		android::app::Notification_Builder setContentInfo(jstring arg0);
+		android::app::Notification_Builder setContentInfo(JString arg0);
 		android::app::Notification_Builder setContentIntent(android::app::PendingIntent arg0);
-		android::app::Notification_Builder setContentText(jstring arg0);
-		android::app::Notification_Builder setContentTitle(jstring arg0);
+		android::app::Notification_Builder setContentText(JString arg0);
+		android::app::Notification_Builder setContentTitle(JString arg0);
 		android::app::Notification_Builder setCustomBigContentView(android::widget::RemoteViews arg0);
 		android::app::Notification_Builder setCustomContentView(android::widget::RemoteViews arg0);
 		android::app::Notification_Builder setCustomHeadsUpContentView(android::widget::RemoteViews arg0);
@@ -112,7 +117,7 @@ namespace android::app
 		android::app::Notification_Builder setExtras(android::os::Bundle arg0);
 		android::app::Notification_Builder setFlag(jint arg0, jboolean arg1);
 		android::app::Notification_Builder setFullScreenIntent(android::app::PendingIntent arg0, jboolean arg1);
-		android::app::Notification_Builder setGroup(jstring arg0);
+		android::app::Notification_Builder setGroup(JString arg0);
 		android::app::Notification_Builder setGroupAlertBehavior(jint arg0);
 		android::app::Notification_Builder setGroupSummary(jboolean arg0);
 		android::app::Notification_Builder setLargeIcon(android::graphics::Bitmap arg0);
@@ -126,24 +131,24 @@ namespace android::app
 		android::app::Notification_Builder setPriority(jint arg0);
 		android::app::Notification_Builder setProgress(jint arg0, jint arg1, jboolean arg2);
 		android::app::Notification_Builder setPublicVersion(android::app::Notification arg0);
-		android::app::Notification_Builder setRemoteInputHistory(jarray arg0);
-		android::app::Notification_Builder setSettingsText(jstring arg0);
-		android::app::Notification_Builder setShortcutId(jstring arg0);
+		android::app::Notification_Builder setRemoteInputHistory(JArray arg0);
+		android::app::Notification_Builder setSettingsText(JString arg0);
+		android::app::Notification_Builder setShortcutId(JString arg0);
 		android::app::Notification_Builder setShowWhen(jboolean arg0);
 		android::app::Notification_Builder setSmallIcon(android::graphics::drawable::Icon arg0);
 		android::app::Notification_Builder setSmallIcon(jint arg0);
 		android::app::Notification_Builder setSmallIcon(jint arg0, jint arg1);
-		android::app::Notification_Builder setSortKey(jstring arg0);
+		android::app::Notification_Builder setSortKey(JString arg0);
 		android::app::Notification_Builder setSound(android::net::Uri arg0);
 		android::app::Notification_Builder setSound(android::net::Uri arg0, android::media::AudioAttributes arg1);
 		android::app::Notification_Builder setSound(android::net::Uri arg0, jint arg1);
 		android::app::Notification_Builder setStyle(android::app::Notification_Style arg0);
-		android::app::Notification_Builder setSubText(jstring arg0);
-		android::app::Notification_Builder setTicker(jstring arg0);
-		android::app::Notification_Builder setTicker(jstring arg0, android::widget::RemoteViews arg1);
+		android::app::Notification_Builder setSubText(JString arg0);
+		android::app::Notification_Builder setTicker(JString arg0);
+		android::app::Notification_Builder setTicker(JString arg0, android::widget::RemoteViews arg1);
 		android::app::Notification_Builder setTimeoutAfter(jlong arg0);
 		android::app::Notification_Builder setUsesChronometer(jboolean arg0);
-		android::app::Notification_Builder setVibrate(jlongArray arg0);
+		android::app::Notification_Builder setVibrate(JLongArray arg0);
 		android::app::Notification_Builder setVisibility(jint arg0);
 		android::app::Notification_Builder setWhen(jlong arg0);
 	};

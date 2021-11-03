@@ -6,6 +6,7 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
 
 namespace android::bluetooth::le
 {
@@ -43,7 +44,7 @@ namespace android::bluetooth::le
 		jboolean isConnectable();
 		jboolean isLegacy();
 		jboolean isScannable();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::bluetooth::le

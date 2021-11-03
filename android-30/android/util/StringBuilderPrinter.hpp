@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JString;
 namespace java::lang
 {
 	class StringBuilder;
@@ -22,7 +23,7 @@ namespace android::util
 		StringBuilderPrinter(java::lang::StringBuilder arg0);
 		
 		// Methods
-		void println(jstring arg0);
+		void println(JString arg0);
 	};
 } // namespace android::util
 

@@ -26,6 +26,7 @@ namespace java::io
 {
 	class FileOutputStream;
 }
+class JString;
 
 namespace android::content::res
 {
@@ -55,7 +56,7 @@ namespace android::content::res
 		jlong getLength();
 		android::os::ParcelFileDescriptor getParcelFileDescriptor();
 		jlong getStartOffset();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::content::res

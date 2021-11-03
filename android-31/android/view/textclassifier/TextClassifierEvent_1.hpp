@@ -2,7 +2,6 @@
 
 #include "../../../JObject.hpp"
 
-
 namespace android::view::textclassifier
 {
 	class TextClassifierEvent_1 : public JObject

@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JObject;
+class JString;
 namespace org::json
 {
 	class JSONObject;
@@ -24,26 +26,25 @@ namespace org::json
 		
 		// Constructors
 		JSONArray();
-		JSONArray(jobject arg0);
-		JSONArray(jstring arg0);
 		JSONArray(JObject arg0);
+		JSONArray(JString arg0);
 		JSONArray(org::json::JSONTokener arg0);
 		
 		// Methods
-		jboolean equals(jobject arg0);
-		jobject get(jint arg0);
+		jboolean equals(JObject arg0);
+		JObject get(jint arg0);
 		jboolean getBoolean(jint arg0);
 		jdouble getDouble(jint arg0);
 		jint getInt(jint arg0);
 		org::json::JSONArray getJSONArray(jint arg0);
 		org::json::JSONObject getJSONObject(jint arg0);
 		jlong getLong(jint arg0);
-		jstring getString(jint arg0);
+		JString getString(jint arg0);
 		jint hashCode();
 		jboolean isNull(jint arg0);
-		jstring join(jstring arg0);
+		JString join(JString arg0);
 		jint length();
-		jobject opt(jint arg0);
+		JObject opt(jint arg0);
 		jboolean optBoolean(jint arg0);
 		jboolean optBoolean(jint arg0, jboolean arg1);
 		jdouble optDouble(jint arg0);
@@ -54,22 +55,22 @@ namespace org::json
 		org::json::JSONObject optJSONObject(jint arg0);
 		jlong optLong(jint arg0);
 		jlong optLong(jint arg0, jlong arg1);
-		jstring optString(jint arg0);
-		jstring optString(jint arg0, jstring arg1);
+		JString optString(jint arg0);
+		JString optString(jint arg0, JString arg1);
 		org::json::JSONArray put(jboolean arg0);
 		org::json::JSONArray put(jdouble arg0);
 		org::json::JSONArray put(jint arg0);
-		org::json::JSONArray put(jobject arg0);
+		org::json::JSONArray put(JObject arg0);
 		org::json::JSONArray put(jlong arg0);
 		org::json::JSONArray put(jint arg0, jboolean arg1);
 		org::json::JSONArray put(jint arg0, jdouble arg1);
 		org::json::JSONArray put(jint arg0, jint arg1);
-		org::json::JSONArray put(jint arg0, jobject arg1);
+		org::json::JSONArray put(jint arg0, JObject arg1);
 		org::json::JSONArray put(jint arg0, jlong arg1);
-		jobject remove(jint arg0);
+		JObject remove(jint arg0);
 		org::json::JSONObject toJSONObject(org::json::JSONArray arg0);
-		jstring toString();
-		jstring toString(jint arg0);
+		JString toString();
+		JString toString(jint arg0);
 	};
 } // namespace org::json
 

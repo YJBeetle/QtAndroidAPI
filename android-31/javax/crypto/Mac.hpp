@@ -2,6 +2,9 @@
 
 #include "../../JObject.hpp"
 
+class JByteArray;
+class JObject;
+class JString;
 namespace java::nio
 {
 	class ByteBuffer;
@@ -33,23 +36,23 @@ namespace javax::crypto
 		// Constructors
 		
 		// Methods
-		static javax::crypto::Mac getInstance(jstring arg0);
-		static javax::crypto::Mac getInstance(jstring arg0, jstring arg1);
-		static javax::crypto::Mac getInstance(jstring arg0, java::security::Provider arg1);
-		jobject clone();
-		jbyteArray doFinal();
-		jbyteArray doFinal(jbyteArray arg0);
-		void doFinal(jbyteArray arg0, jint arg1);
-		jstring getAlgorithm();
+		static javax::crypto::Mac getInstance(JString arg0);
+		static javax::crypto::Mac getInstance(JString arg0, JString arg1);
+		static javax::crypto::Mac getInstance(JString arg0, java::security::Provider arg1);
+		JObject clone();
+		JByteArray doFinal();
+		JByteArray doFinal(JByteArray arg0);
+		void doFinal(JByteArray arg0, jint arg1);
+		JString getAlgorithm();
 		jint getMacLength();
 		java::security::Provider getProvider();
 		void init(JObject arg0);
 		void init(JObject arg0, JObject arg1);
 		void reset();
-		void update(jbyteArray arg0);
+		void update(JByteArray arg0);
 		void update(jbyte arg0);
 		void update(java::nio::ByteBuffer arg0);
-		void update(jbyteArray arg0, jint arg1, jint arg2);
+		void update(JByteArray arg0, jint arg1, jint arg2);
 	};
 } // namespace javax::crypto
 

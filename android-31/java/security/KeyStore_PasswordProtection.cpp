@@ -1,3 +1,5 @@
+#include "../../JCharArray.hpp"
+#include "../../JString.hpp"
 #include "./KeyStore_PasswordProtection.hpp"
 
 namespace java::security
@@ -8,18 +10,18 @@ namespace java::security
 	KeyStore_PasswordProtection::KeyStore_PasswordProtection(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	KeyStore_PasswordProtection::KeyStore_PasswordProtection(jcharArray arg0)
+	KeyStore_PasswordProtection::KeyStore_PasswordProtection(JCharArray arg0)
 		: JObject(
 			"java.security.KeyStore$PasswordProtection",
 			"([C)V",
-			arg0
+			arg0.object<jcharArray>()
 		) {}
-	KeyStore_PasswordProtection::KeyStore_PasswordProtection(jcharArray arg0, jstring arg1, JObject arg2)
+	KeyStore_PasswordProtection::KeyStore_PasswordProtection(JCharArray arg0, JString arg1, JObject arg2)
 		: JObject(
 			"java.security.KeyStore$PasswordProtection",
 			"([CLjava/lang/String;Ljava/security/spec/AlgorithmParameterSpec;)V",
-			arg0,
-			arg1,
+			arg0.object<jcharArray>(),
+			arg1.object<jstring>(),
 			arg2.object()
 		) {}
 	
@@ -31,19 +33,19 @@ namespace java::security
 			"()V"
 		);
 	}
-	jcharArray KeyStore_PasswordProtection::getPassword()
+	JCharArray KeyStore_PasswordProtection::getPassword()
 	{
 		return callObjectMethod(
 			"getPassword",
 			"()[C"
-		).object<jcharArray>();
+		);
 	}
-	jstring KeyStore_PasswordProtection::getProtectionAlgorithm()
+	JString KeyStore_PasswordProtection::getProtectionAlgorithm()
 	{
 		return callObjectMethod(
 			"getProtectionAlgorithm",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	JObject KeyStore_PasswordProtection::getProtectionParameters()
 	{

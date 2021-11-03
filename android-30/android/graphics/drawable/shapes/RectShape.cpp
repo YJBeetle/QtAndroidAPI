@@ -3,6 +3,7 @@
 #include "../../Paint.hpp"
 #include "../../RectF.hpp"
 #include "./Shape.hpp"
+#include "../../../../JObject.hpp"
 #include "./RectShape.hpp"
 
 namespace android::graphics::drawable::shapes
@@ -36,12 +37,12 @@ namespace android::graphics::drawable::shapes
 			arg1.object()
 		);
 	}
-	jboolean RectShape::equals(jobject arg0)
+	jboolean RectShape::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	void RectShape::getOutline(android::graphics::Outline arg0)

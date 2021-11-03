@@ -1,4 +1,6 @@
 #include "../os/Parcel.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./AssociationRequest.hpp"
 
 namespace android::companion
@@ -26,12 +28,12 @@ namespace android::companion
 			"()I"
 		);
 	}
-	jboolean AssociationRequest::equals(jobject arg0)
+	jboolean AssociationRequest::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint AssociationRequest::hashCode()
@@ -41,12 +43,12 @@ namespace android::companion
 			"()I"
 		);
 	}
-	jstring AssociationRequest::toString()
+	JString AssociationRequest::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void AssociationRequest::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

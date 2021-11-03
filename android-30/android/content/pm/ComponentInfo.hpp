@@ -1,6 +1,5 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "./PackageItemInfo.hpp"
 
 namespace android::content::pm
@@ -11,6 +10,7 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
 
 namespace android::content::pm
 {
@@ -23,8 +23,8 @@ namespace android::content::pm
 		jboolean directBootAware();
 		jboolean enabled();
 		jboolean exported();
-		jstring processName();
-		jstring splitName();
+		JString processName();
+		JString splitName();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ComponentInfo(const char *className, const char *sig, Ts...agv) : android::content::pm::PackageItemInfo(className, sig, std::forward<Ts>(agv)...) {}

@@ -2,6 +2,8 @@
 
 #include "../../../../JObject.hpp"
 
+class JObject;
+class JString;
 
 namespace android::hardware::camera2::params
 {
@@ -15,12 +17,12 @@ namespace android::hardware::camera2::params
 		MultiResolutionStreamInfo(QAndroidJniObject obj);
 		
 		// Constructors
-		MultiResolutionStreamInfo(jint arg0, jint arg1, jstring arg2);
+		MultiResolutionStreamInfo(jint arg0, jint arg1, JString arg2);
 		
 		// Methods
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint getHeight();
-		jstring getPhysicalCameraId();
+		JString getPhysicalCameraId();
 		jint getWidth();
 		jint hashCode();
 	};

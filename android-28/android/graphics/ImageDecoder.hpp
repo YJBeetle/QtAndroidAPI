@@ -42,6 +42,7 @@ namespace java::io
 {
 	class File;
 }
+class JString;
 namespace java::nio
 {
 	class ByteBuffer;
@@ -70,7 +71,7 @@ namespace android::graphics
 		static android::graphics::ImageDecoder_Source createSource(java::io::File arg0);
 		static android::graphics::ImageDecoder_Source createSource(java::nio::ByteBuffer arg0);
 		static android::graphics::ImageDecoder_Source createSource(android::content::ContentResolver arg0, android::net::Uri arg1);
-		static android::graphics::ImageDecoder_Source createSource(android::content::res::AssetManager arg0, jstring arg1);
+		static android::graphics::ImageDecoder_Source createSource(android::content::res::AssetManager arg0, JString arg1);
 		static android::graphics::ImageDecoder_Source createSource(android::content::res::Resources arg0, jint arg1);
 		static android::graphics::Bitmap decodeBitmap(android::graphics::ImageDecoder_Source arg0);
 		static android::graphics::Bitmap decodeBitmap(android::graphics::ImageDecoder_Source arg0, JObject arg1);

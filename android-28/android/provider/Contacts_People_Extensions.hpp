@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JString;
 
 namespace android::provider
 {
@@ -9,9 +10,9 @@ namespace android::provider
 	{
 	public:
 		// Fields
-		static jstring CONTENT_DIRECTORY();
-		static jstring DEFAULT_SORT_ORDER();
-		static jstring PERSON_ID();
+		static JString CONTENT_DIRECTORY();
+		static JString DEFAULT_SORT_ORDER();
+		static JString PERSON_ID();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Contacts_People_Extensions(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}

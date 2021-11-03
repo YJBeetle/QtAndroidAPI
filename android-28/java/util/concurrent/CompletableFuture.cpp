@@ -1,3 +1,7 @@
+#include "../../../JArray.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
+#include "../../../JThrowable.hpp"
 #include "./TimeUnit.hpp"
 #include "./CompletableFuture.hpp"
 
@@ -16,40 +20,40 @@ namespace java::util::concurrent
 		) {}
 	
 	// Methods
-	java::util::concurrent::CompletableFuture CompletableFuture::allOf(jarray arg0)
+	java::util::concurrent::CompletableFuture CompletableFuture::allOf(JArray arg0)
 	{
 		return callStaticObjectMethod(
 			"java.util.concurrent.CompletableFuture",
 			"allOf",
 			"([Ljava/util/concurrent/CompletableFuture;)Ljava/util/concurrent/CompletableFuture;",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
-	java::util::concurrent::CompletableFuture CompletableFuture::anyOf(jarray arg0)
+	java::util::concurrent::CompletableFuture CompletableFuture::anyOf(JArray arg0)
 	{
 		return callStaticObjectMethod(
 			"java.util.concurrent.CompletableFuture",
 			"anyOf",
 			"([Ljava/util/concurrent/CompletableFuture;)Ljava/util/concurrent/CompletableFuture;",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
-	java::util::concurrent::CompletableFuture CompletableFuture::completedFuture(jobject arg0)
+	java::util::concurrent::CompletableFuture CompletableFuture::completedFuture(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"java.util.concurrent.CompletableFuture",
 			"completedFuture",
 			"(Ljava/lang/Object;)Ljava/util/concurrent/CompletableFuture;",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	JObject CompletableFuture::completedStage(jobject arg0)
+	JObject CompletableFuture::completedStage(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"java.util.concurrent.CompletableFuture",
 			"completedStage",
 			"(Ljava/lang/Object;)Ljava/util/concurrent/CompletionStage;",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	JObject CompletableFuture::delayedExecutor(jlong arg0, java::util::concurrent::TimeUnit arg1)
@@ -73,22 +77,22 @@ namespace java::util::concurrent
 			arg2.object()
 		);
 	}
-	java::util::concurrent::CompletableFuture CompletableFuture::failedFuture(jthrowable arg0)
+	java::util::concurrent::CompletableFuture CompletableFuture::failedFuture(JThrowable arg0)
 	{
 		return callStaticObjectMethod(
 			"java.util.concurrent.CompletableFuture",
 			"failedFuture",
 			"(Ljava/lang/Throwable;)Ljava/util/concurrent/CompletableFuture;",
-			arg0
+			arg0.object<jthrowable>()
 		);
 	}
-	JObject CompletableFuture::failedStage(jthrowable arg0)
+	JObject CompletableFuture::failedStage(JThrowable arg0)
 	{
 		return callStaticObjectMethod(
 			"java.util.concurrent.CompletableFuture",
 			"failedStage",
 			"(Ljava/lang/Throwable;)Ljava/util/concurrent/CompletionStage;",
-			arg0
+			arg0.object<jthrowable>()
 		);
 	}
 	java::util::concurrent::CompletableFuture CompletableFuture::runAsync(JObject arg0)
@@ -193,12 +197,12 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	jboolean CompletableFuture::complete(jobject arg0)
+	jboolean CompletableFuture::complete(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"complete",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	java::util::concurrent::CompletableFuture CompletableFuture::completeAsync(JObject arg0)
@@ -218,20 +222,20 @@ namespace java::util::concurrent
 			arg1.object()
 		);
 	}
-	jboolean CompletableFuture::completeExceptionally(jthrowable arg0)
+	jboolean CompletableFuture::completeExceptionally(JThrowable arg0)
 	{
 		return callMethod<jboolean>(
 			"completeExceptionally",
 			"(Ljava/lang/Throwable;)Z",
-			arg0
+			arg0.object<jthrowable>()
 		);
 	}
-	java::util::concurrent::CompletableFuture CompletableFuture::completeOnTimeout(jobject arg0, jlong arg1, java::util::concurrent::TimeUnit arg2)
+	java::util::concurrent::CompletableFuture CompletableFuture::completeOnTimeout(JObject arg0, jlong arg1, java::util::concurrent::TimeUnit arg2)
 	{
 		return callObjectMethod(
 			"completeOnTimeout",
 			"(Ljava/lang/Object;JLjava/util/concurrent/TimeUnit;)Ljava/util/concurrent/CompletableFuture;",
-			arg0,
+			arg0.object<jobject>(),
 			arg1,
 			arg2.object()
 		);
@@ -300,29 +304,29 @@ namespace java::util::concurrent
 			arg1.object()
 		);
 	}
-	jobject CompletableFuture::get()
+	JObject CompletableFuture::get()
 	{
 		return callObjectMethod(
 			"get",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
-	jobject CompletableFuture::get(jlong arg0, java::util::concurrent::TimeUnit arg1)
+	JObject CompletableFuture::get(jlong arg0, java::util::concurrent::TimeUnit arg1)
 	{
 		return callObjectMethod(
 			"get",
 			"(JLjava/util/concurrent/TimeUnit;)Ljava/lang/Object;",
 			arg0,
 			arg1.object()
-		).object<jobject>();
+		);
 	}
-	jobject CompletableFuture::getNow(jobject arg0)
+	JObject CompletableFuture::getNow(JObject arg0)
 	{
 		return callObjectMethod(
 			"getNow",
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0
-		).object<jobject>();
+			arg0.object<jobject>()
+		);
 	}
 	jint CompletableFuture::getNumberOfDependents()
 	{
@@ -377,12 +381,12 @@ namespace java::util::concurrent
 			"()Z"
 		);
 	}
-	jobject CompletableFuture::join()
+	JObject CompletableFuture::join()
 	{
 		return callObjectMethod(
 			"join",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
 	JObject CompletableFuture::minimalCompletionStage()
 	{
@@ -398,20 +402,20 @@ namespace java::util::concurrent
 			"()Ljava/util/concurrent/CompletableFuture;"
 		);
 	}
-	void CompletableFuture::obtrudeException(jthrowable arg0)
+	void CompletableFuture::obtrudeException(JThrowable arg0)
 	{
 		callMethod<void>(
 			"obtrudeException",
 			"(Ljava/lang/Throwable;)V",
-			arg0
+			arg0.object<jthrowable>()
 		);
 	}
-	void CompletableFuture::obtrudeValue(jobject arg0)
+	void CompletableFuture::obtrudeValue(JObject arg0)
 	{
 		callMethod<void>(
 			"obtrudeValue",
 			"(Ljava/lang/Object;)V",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	java::util::concurrent::CompletableFuture CompletableFuture::orTimeout(jlong arg0, java::util::concurrent::TimeUnit arg1)
@@ -642,12 +646,12 @@ namespace java::util::concurrent
 			"()Ljava/util/concurrent/CompletableFuture;"
 		);
 	}
-	jstring CompletableFuture::toString()
+	JString CompletableFuture::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	java::util::concurrent::CompletableFuture CompletableFuture::whenComplete(JObject arg0)
 	{

@@ -1,3 +1,5 @@
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./JSONObject.hpp"
 #include "./JSONTokener.hpp"
 #include "./JSONArray.hpp"
@@ -15,23 +17,17 @@ namespace org::json
 			"org.json.JSONArray",
 			"()V"
 		) {}
-	JSONArray::JSONArray(jobject arg0)
-		: JObject(
-			"org.json.JSONArray",
-			"(Ljava/lang/Object;)V",
-			arg0
-		) {}
-	JSONArray::JSONArray(jstring arg0)
-		: JObject(
-			"org.json.JSONArray",
-			"(Ljava/lang/String;)V",
-			arg0
-		) {}
 	JSONArray::JSONArray(JObject arg0)
 		: JObject(
 			"org.json.JSONArray",
-			"(Ljava/util/Collection;)V",
-			arg0.object()
+			"(Ljava/lang/Object;)V",
+			arg0.object<jobject>()
+		) {}
+	JSONArray::JSONArray(JString arg0)
+		: JObject(
+			"org.json.JSONArray",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
 		) {}
 	JSONArray::JSONArray(org::json::JSONTokener arg0)
 		: JObject(
@@ -41,21 +37,21 @@ namespace org::json
 		) {}
 	
 	// Methods
-	jboolean JSONArray::equals(jobject arg0)
+	jboolean JSONArray::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jobject JSONArray::get(jint arg0)
+	JObject JSONArray::get(jint arg0)
 	{
 		return callObjectMethod(
 			"get",
 			"(I)Ljava/lang/Object;",
 			arg0
-		).object<jobject>();
+		);
 	}
 	jboolean JSONArray::getBoolean(jint arg0)
 	{
@@ -105,13 +101,13 @@ namespace org::json
 			arg0
 		);
 	}
-	jstring JSONArray::getString(jint arg0)
+	JString JSONArray::getString(jint arg0)
 	{
 		return callObjectMethod(
 			"getString",
 			"(I)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
 	jint JSONArray::hashCode()
 	{
@@ -128,13 +124,13 @@ namespace org::json
 			arg0
 		);
 	}
-	jstring JSONArray::join(jstring arg0)
+	JString JSONArray::join(JString arg0)
 	{
 		return callObjectMethod(
 			"join",
 			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
+			arg0.object<jstring>()
+		);
 	}
 	jint JSONArray::length()
 	{
@@ -143,13 +139,13 @@ namespace org::json
 			"()I"
 		);
 	}
-	jobject JSONArray::opt(jint arg0)
+	JObject JSONArray::opt(jint arg0)
 	{
 		return callObjectMethod(
 			"opt",
 			"(I)Ljava/lang/Object;",
 			arg0
-		).object<jobject>();
+		);
 	}
 	jboolean JSONArray::optBoolean(jint arg0)
 	{
@@ -235,22 +231,22 @@ namespace org::json
 			arg1
 		);
 	}
-	jstring JSONArray::optString(jint arg0)
+	JString JSONArray::optString(jint arg0)
 	{
 		return callObjectMethod(
 			"optString",
 			"(I)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
-	jstring JSONArray::optString(jint arg0, jstring arg1)
+	JString JSONArray::optString(jint arg0, JString arg1)
 	{
 		return callObjectMethod(
 			"optString",
 			"(ILjava/lang/String;)Ljava/lang/String;",
 			arg0,
-			arg1
-		).object<jstring>();
+			arg1.object<jstring>()
+		);
 	}
 	org::json::JSONArray JSONArray::put(jboolean arg0)
 	{
@@ -276,12 +272,12 @@ namespace org::json
 			arg0
 		);
 	}
-	org::json::JSONArray JSONArray::put(jobject arg0)
+	org::json::JSONArray JSONArray::put(JObject arg0)
 	{
 		return callObjectMethod(
 			"put",
 			"(Ljava/lang/Object;)Lorg/json/JSONArray;",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	org::json::JSONArray JSONArray::put(jlong arg0)
@@ -319,13 +315,13 @@ namespace org::json
 			arg1
 		);
 	}
-	org::json::JSONArray JSONArray::put(jint arg0, jobject arg1)
+	org::json::JSONArray JSONArray::put(jint arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"put",
 			"(ILjava/lang/Object;)Lorg/json/JSONArray;",
 			arg0,
-			arg1
+			arg1.object<jobject>()
 		);
 	}
 	org::json::JSONArray JSONArray::put(jint arg0, jlong arg1)
@@ -337,13 +333,13 @@ namespace org::json
 			arg1
 		);
 	}
-	jobject JSONArray::remove(jint arg0)
+	JObject JSONArray::remove(jint arg0)
 	{
 		return callObjectMethod(
 			"remove",
 			"(I)Ljava/lang/Object;",
 			arg0
-		).object<jobject>();
+		);
 	}
 	org::json::JSONObject JSONArray::toJSONObject(org::json::JSONArray arg0)
 	{
@@ -353,20 +349,20 @@ namespace org::json
 			arg0.object()
 		);
 	}
-	jstring JSONArray::toString()
+	JString JSONArray::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring JSONArray::toString(jint arg0)
+	JString JSONArray::toString(jint arg0)
 	{
 		return callObjectMethod(
 			"toString",
 			"(I)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
 } // namespace org::json
 

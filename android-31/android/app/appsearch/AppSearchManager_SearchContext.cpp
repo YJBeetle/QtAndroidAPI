@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./AppSearchManager_SearchContext.hpp"
 
 namespace android::app::appsearch
@@ -10,12 +11,12 @@ namespace android::app::appsearch
 	// Constructors
 	
 	// Methods
-	jstring AppSearchManager_SearchContext::getDatabaseName()
+	JString AppSearchManager_SearchContext::getDatabaseName()
 	{
 		return callObjectMethod(
 			"getDatabaseName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::app::appsearch
 

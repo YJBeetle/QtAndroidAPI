@@ -1,9 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "./AbstractCollection.hpp"
 #include "./AbstractSet.hpp"
 
+class JObjectArray;
 namespace java::io
 {
 	class ObjectInputStream;
@@ -12,6 +11,7 @@ namespace java::io
 {
 	class ObjectOutputStream;
 }
+class JObject;
 namespace java::util
 {
 	class HashMap;
@@ -35,17 +35,17 @@ namespace java::util
 		HashSet(jint arg0, jfloat arg1);
 		
 		// Methods
-		jboolean add(jobject arg0);
+		jboolean add(JObject arg0);
 		void clear();
-		jobject clone();
-		jboolean contains(jobject arg0);
+		JObject clone();
+		jboolean contains(JObject arg0);
 		jboolean isEmpty();
 		JObject iterator();
-		jboolean remove(jobject arg0);
+		jboolean remove(JObject arg0);
 		jint size();
 		JObject spliterator();
-		jobjectArray toArray();
-		jobjectArray toArray(jobjectArray arg0);
+		JObjectArray toArray();
+		JObjectArray toArray(JObjectArray arg0);
 	};
 } // namespace java::util
 

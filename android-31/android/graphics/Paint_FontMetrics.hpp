@@ -2,7 +2,6 @@
 
 #include "../../JObject.hpp"
 
-
 namespace android::graphics
 {
 	class Paint_FontMetrics : public JObject

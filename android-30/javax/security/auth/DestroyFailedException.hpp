@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "../../../java/lang/Exception.hpp"
 
+class JString;
 
 namespace javax::security::auth
 {
@@ -17,7 +17,7 @@ namespace javax::security::auth
 		
 		// Constructors
 		DestroyFailedException();
-		DestroyFailedException(jstring arg0);
+		DestroyFailedException(JString arg0);
 		
 		// Methods
 	};

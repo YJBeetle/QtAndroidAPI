@@ -1,3 +1,5 @@
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
 #include "./WebSettings_ZoomDensity.hpp"
 
 namespace android::webkit
@@ -34,22 +36,22 @@ namespace android::webkit
 	// Constructors
 	
 	// Methods
-	android::webkit::WebSettings_ZoomDensity WebSettings_ZoomDensity::valueOf(jstring arg0)
+	android::webkit::WebSettings_ZoomDensity WebSettings_ZoomDensity::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.webkit.WebSettings$ZoomDensity",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/webkit/WebSettings$ZoomDensity;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray WebSettings_ZoomDensity::values()
+	JArray WebSettings_ZoomDensity::values()
 	{
 		return callStaticObjectMethod(
 			"android.webkit.WebSettings$ZoomDensity",
 			"values",
 			"()[Landroid/webkit/WebSettings$ZoomDensity;"
-		).object<jarray>();
+		);
 	}
 } // namespace android::webkit
 

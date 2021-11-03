@@ -1,10 +1,10 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../content/Context.hpp"
-#include "../content/ContextWrapper.hpp"
 #include "../view/ContextThemeWrapper.hpp"
 
+class JIntArray;
+class JArray;
+class JArray;
 namespace android::app
 {
 	class ActionBar;
@@ -189,6 +189,9 @@ namespace java::io
 {
 	class PrintWriter;
 }
+class JString;
+class JObject;
+class JString;
 
 namespace android::app
 {
@@ -225,7 +228,7 @@ namespace android::app
 		jboolean dispatchPopulateAccessibilityEvent(android::view::accessibility::AccessibilityEvent arg0);
 		jboolean dispatchTouchEvent(android::view::MotionEvent arg0);
 		jboolean dispatchTrackballEvent(android::view::MotionEvent arg0);
-		void dump(jstring arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, jarray arg3);
+		void dump(JString arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, JArray arg3);
 		jboolean enterPictureInPictureMode(android::app::PictureInPictureParams arg0);
 		void enterPictureInPictureMode();
 		android::view::View findViewById(jint arg0);
@@ -239,7 +242,7 @@ namespace android::app
 		android::app::ActionBar getActionBar();
 		android::app::Application getApplication();
 		android::content::ComponentName getCallingActivity();
-		jstring getCallingPackage();
+		JString getCallingPackage();
 		jint getChangingConfigurations();
 		android::content::ComponentName getComponentName();
 		android::transition::Scene getContentScene();
@@ -247,10 +250,10 @@ namespace android::app
 		android::view::View getCurrentFocus();
 		android::app::FragmentManager getFragmentManager();
 		android::content::Intent getIntent();
-		jobject getLastNonConfigurationInstance();
+		JObject getLastNonConfigurationInstance();
 		android::view::LayoutInflater getLayoutInflater();
 		android::app::LoaderManager getLoaderManager();
-		jstring getLocalClassName();
+		JString getLocalClassName();
 		jint getMaxNumPictureInPictureActions();
 		android::media::session::MediaController getMediaController();
 		android::view::MenuInflater getMenuInflater();
@@ -260,9 +263,9 @@ namespace android::app
 		android::net::Uri getReferrer();
 		jint getRequestedOrientation();
 		android::view::SearchEvent getSearchEvent();
-		jobject getSystemService(jstring arg0);
+		JObject getSystemService(JString arg0);
 		jint getTaskId();
-		jstring getTitle();
+		JString getTitle();
 		jint getTitleColor();
 		android::app::VoiceInteractor getVoiceInteractor();
 		jint getVolumeControlStream();
@@ -282,7 +285,7 @@ namespace android::app
 		jboolean isTaskRoot();
 		jboolean isVoiceInteraction();
 		jboolean isVoiceInteractionRoot();
-		JObject managedQuery(android::net::Uri arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4);
+		JObject managedQuery(android::net::Uri arg0, JArray arg1, JString arg2, JArray arg3, JString arg4);
 		jboolean moveTaskToBack(jboolean arg0);
 		jboolean navigateUpTo(android::content::Intent arg0);
 		jboolean navigateUpToFromChild(android::app::Activity arg0, android::content::Intent arg1);
@@ -298,14 +301,14 @@ namespace android::app
 		void onContextMenuClosed(JObject arg0);
 		void onCreate(android::os::Bundle arg0, android::os::PersistableBundle arg1);
 		void onCreateContextMenu(JObject arg0, android::view::View arg1, JObject arg2);
-		jstring onCreateDescription();
+		JString onCreateDescription();
 		void onCreateNavigateUpTaskStack(android::app::TaskStackBuilder arg0);
 		jboolean onCreateOptionsMenu(JObject arg0);
 		jboolean onCreatePanelMenu(jint arg0, JObject arg1);
 		android::view::View onCreatePanelView(jint arg0);
 		jboolean onCreateThumbnail(android::graphics::Bitmap arg0, android::graphics::Canvas arg1);
-		android::view::View onCreateView(jstring arg0, android::content::Context arg1, JObject arg2);
-		android::view::View onCreateView(android::view::View arg0, jstring arg1, android::content::Context arg2, JObject arg3);
+		android::view::View onCreateView(JString arg0, android::content::Context arg1, JObject arg2);
+		android::view::View onCreateView(android::view::View arg0, JString arg1, android::content::Context arg2, JObject arg3);
 		void onDetachedFromWindow();
 		void onEnterAnimationComplete();
 		jboolean onGenericMotionEvent(android::view::MotionEvent arg0);
@@ -327,7 +330,7 @@ namespace android::app
 		jboolean onOptionsItemSelected(JObject arg0);
 		void onOptionsMenuClosed(JObject arg0);
 		void onPanelClosed(jint arg0, JObject arg1);
-		void onPerformDirectAction(jstring arg0, android::os::Bundle arg1, android::os::CancellationSignal arg2, JObject arg3);
+		void onPerformDirectAction(JString arg0, android::os::Bundle arg1, android::os::CancellationSignal arg2, JObject arg3);
 		void onPictureInPictureModeChanged(jboolean arg0);
 		void onPictureInPictureModeChanged(jboolean arg0, android::content::res::Configuration arg1);
 		jboolean onPictureInPictureRequested();
@@ -339,9 +342,9 @@ namespace android::app
 		void onProvideAssistData(android::os::Bundle arg0);
 		void onProvideKeyboardShortcuts(JObject arg0, JObject arg1, jint arg2);
 		android::net::Uri onProvideReferrer();
-		void onRequestPermissionsResult(jint arg0, jarray arg1, jintArray arg2);
+		void onRequestPermissionsResult(jint arg0, JArray arg1, JIntArray arg2);
 		void onRestoreInstanceState(android::os::Bundle arg0, android::os::PersistableBundle arg1);
-		jobject onRetainNonConfigurationInstance();
+		JObject onRetainNonConfigurationInstance();
 		void onSaveInstanceState(android::os::Bundle arg0, android::os::PersistableBundle arg1);
 		jboolean onSearchRequested();
 		jboolean onSearchRequested(android::view::SearchEvent arg0);
@@ -367,7 +370,7 @@ namespace android::app
 		void removeDialog(jint arg0);
 		void reportFullyDrawn();
 		android::view::DragAndDropPermissions requestDragAndDropPermissions(android::view::DragEvent arg0);
-		void requestPermissions(jarray arg0, jint arg1);
+		void requestPermissions(JArray arg0, jint arg1);
 		void requestShowKeyboardShortcuts();
 		jboolean requestVisibleBehind(jboolean arg0);
 		jboolean requestWindowFeature(jint arg0);
@@ -404,14 +407,14 @@ namespace android::app
 		void setTaskDescription(android::app::ActivityManager_TaskDescription arg0);
 		void setTheme(jint arg0);
 		void setTitle(jint arg0);
-		void setTitle(jstring arg0);
+		void setTitle(JString arg0);
 		void setTitleColor(jint arg0);
 		jboolean setTranslucent(jboolean arg0);
 		void setTurnScreenOn(jboolean arg0);
 		void setVisible(jboolean arg0);
 		void setVolumeControlStream(jint arg0);
 		void setVrModeEnabled(jboolean arg0, android::content::ComponentName arg1);
-		jboolean shouldShowRequestPermissionRationale(jstring arg0);
+		jboolean shouldShowRequestPermissionRationale(JString arg0);
 		jboolean shouldUpRecreateTask(android::content::Intent arg0);
 		jboolean showAssist(android::os::Bundle arg0);
 		jboolean showDialog(jint arg0, android::os::Bundle arg1);
@@ -419,8 +422,8 @@ namespace android::app
 		void showLockTaskEscapeMessage();
 		android::view::ActionMode startActionMode(JObject arg0);
 		android::view::ActionMode startActionMode(JObject arg0, jint arg1);
-		void startActivities(jarray arg0);
-		void startActivities(jarray arg0, android::os::Bundle arg1);
+		void startActivities(JArray arg0);
+		void startActivities(JArray arg0, android::os::Bundle arg1);
 		void startActivity(android::content::Intent arg0);
 		void startActivity(android::content::Intent arg0, android::os::Bundle arg1);
 		void startActivityForResult(android::content::Intent arg0, jint arg1);
@@ -443,12 +446,12 @@ namespace android::app
 		jboolean startNextMatchingActivity(android::content::Intent arg0);
 		jboolean startNextMatchingActivity(android::content::Intent arg0, android::os::Bundle arg1);
 		void startPostponedEnterTransition();
-		void startSearch(jstring arg0, jboolean arg1, android::os::Bundle arg2, jboolean arg3);
+		void startSearch(JString arg0, jboolean arg1, android::os::Bundle arg2, jboolean arg3);
 		void stopLocalVoiceInteraction();
 		void stopLockTask();
 		void stopManagingCursor(JObject arg0);
 		void takeKeyEvents(jboolean arg0);
-		void triggerSearch(jstring arg0, android::os::Bundle arg1);
+		void triggerSearch(JString arg0, android::os::Bundle arg1);
 		void unregisterActivityLifecycleCallbacks(JObject arg0);
 		void unregisterForContextMenu(android::view::View arg0);
 	};

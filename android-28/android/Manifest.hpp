@@ -2,7 +2,6 @@
 
 #include "../JObject.hpp"
 
-
 namespace android
 {
 	class Manifest : public JObject

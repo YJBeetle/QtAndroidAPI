@@ -1,48 +1,49 @@
 #include "../net/Uri.hpp"
+#include "../../JString.hpp"
 #include "./CalendarContract_CalendarCache.hpp"
 
 namespace android::provider
 {
 	// Fields
-	jstring CalendarContract_CalendarCache::KEY_TIMEZONE_INSTANCES()
+	JString CalendarContract_CalendarCache::KEY_TIMEZONE_INSTANCES()
 	{
 		return getStaticObjectField(
 			"android.provider.CalendarContract$CalendarCache",
 			"KEY_TIMEZONE_INSTANCES",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring CalendarContract_CalendarCache::KEY_TIMEZONE_INSTANCES_PREVIOUS()
+	JString CalendarContract_CalendarCache::KEY_TIMEZONE_INSTANCES_PREVIOUS()
 	{
 		return getStaticObjectField(
 			"android.provider.CalendarContract$CalendarCache",
 			"KEY_TIMEZONE_INSTANCES_PREVIOUS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring CalendarContract_CalendarCache::KEY_TIMEZONE_TYPE()
+	JString CalendarContract_CalendarCache::KEY_TIMEZONE_TYPE()
 	{
 		return getStaticObjectField(
 			"android.provider.CalendarContract$CalendarCache",
 			"KEY_TIMEZONE_TYPE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring CalendarContract_CalendarCache::TIMEZONE_TYPE_AUTO()
+	JString CalendarContract_CalendarCache::TIMEZONE_TYPE_AUTO()
 	{
 		return getStaticObjectField(
 			"android.provider.CalendarContract$CalendarCache",
 			"TIMEZONE_TYPE_AUTO",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring CalendarContract_CalendarCache::TIMEZONE_TYPE_HOME()
+	JString CalendarContract_CalendarCache::TIMEZONE_TYPE_HOME()
 	{
 		return getStaticObjectField(
 			"android.provider.CalendarContract$CalendarCache",
 			"TIMEZONE_TYPE_HOME",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::net::Uri CalendarContract_CalendarCache::URI()
 	{

@@ -1,5 +1,7 @@
 #include "../../os/Parcel.hpp"
 #include "../../util/SparseArray.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./AdvertiseData.hpp"
 
 namespace android::bluetooth::le
@@ -27,12 +29,12 @@ namespace android::bluetooth::le
 			"()I"
 		);
 	}
-	jboolean AdvertiseData::equals(jobject arg0)
+	jboolean AdvertiseData::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jboolean AdvertiseData::getIncludeDeviceName()
@@ -84,12 +86,12 @@ namespace android::bluetooth::le
 			"()I"
 		);
 	}
-	jstring AdvertiseData::toString()
+	JString AdvertiseData::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void AdvertiseData::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

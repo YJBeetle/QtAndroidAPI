@@ -1,8 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../view/View.hpp"
-#include "../view/ViewGroup.hpp"
 #include "./LinearLayout.hpp"
 
 namespace android::content
@@ -25,6 +22,7 @@ namespace android::widget
 {
 	class TableRow_LayoutParams;
 }
+class JString;
 
 namespace android::widget
 {
@@ -43,7 +41,7 @@ namespace android::widget
 		
 		// Methods
 		android::widget::TableRow_LayoutParams generateLayoutParams(JObject arg0);
-		jstring getAccessibilityClassName();
+		JString getAccessibilityClassName();
 		android::view::View getVirtualChildAt(jint arg0);
 		jint getVirtualChildCount();
 		void setOnHierarchyChangeListener(JObject arg0);

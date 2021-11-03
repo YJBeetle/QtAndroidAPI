@@ -6,6 +6,7 @@ namespace android::content
 {
 	class AttributionSource;
 }
+class JString;
 
 namespace android::content
 {
@@ -21,7 +22,7 @@ namespace android::content
 		// Constructors
 		
 		// Methods
-		jstring getAttributionTag();
+		JString getAttributionTag();
 		android::content::AttributionSource getNextAttributionSource();
 	};
 } // namespace android::content

@@ -1,3 +1,4 @@
+#include "../../../../../JByteArray.hpp"
 #include "./InvalidSelectorsException.hpp"
 
 namespace android::net::ipsec::ike::exceptions
@@ -8,21 +9,21 @@ namespace android::net::ipsec::ike::exceptions
 	InvalidSelectorsException::InvalidSelectorsException(QAndroidJniObject obj) : android::net::ipsec::ike::exceptions::IkeProtocolException(obj) {}
 	
 	// Constructors
-	InvalidSelectorsException::InvalidSelectorsException(jint arg0, jbyteArray arg1)
+	InvalidSelectorsException::InvalidSelectorsException(jint arg0, JByteArray arg1)
 		: android::net::ipsec::ike::exceptions::IkeProtocolException(
 			"android.net.ipsec.ike.exceptions.InvalidSelectorsException",
 			"(I[B)V",
 			arg0,
-			arg1
+			arg1.object<jbyteArray>()
 		) {}
 	
 	// Methods
-	jbyteArray InvalidSelectorsException::getIpSecPacketInfo()
+	JByteArray InvalidSelectorsException::getIpSecPacketInfo()
 	{
 		return callObjectMethod(
 			"getIpSecPacketInfo",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
 	jint InvalidSelectorsException::getIpSecSpi()
 	{

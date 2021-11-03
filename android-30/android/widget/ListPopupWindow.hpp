@@ -26,6 +26,7 @@ namespace android::widget
 {
 	class ListView;
 }
+class JObject;
 
 namespace android::widget
 {
@@ -64,7 +65,7 @@ namespace android::widget
 		jint getInputMethodMode();
 		android::widget::ListView getListView();
 		jint getPromptPosition();
-		jobject getSelectedItem();
+		JObject getSelectedItem();
 		jlong getSelectedItemId();
 		jint getSelectedItemPosition();
 		android::view::View getSelectedView();

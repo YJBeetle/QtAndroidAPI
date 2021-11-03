@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./ProviderNotFoundException.hpp"
 
 namespace java::nio::file
@@ -13,11 +14,11 @@ namespace java::nio::file
 			"java.nio.file.ProviderNotFoundException",
 			"()V"
 		) {}
-	ProviderNotFoundException::ProviderNotFoundException(jstring arg0)
+	ProviderNotFoundException::ProviderNotFoundException(JString arg0)
 		: java::lang::RuntimeException(
 			"java.nio.file.ProviderNotFoundException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

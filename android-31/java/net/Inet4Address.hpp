@@ -1,8 +1,10 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./InetAddress.hpp"
 
+class JByteArray;
+class JObject;
+class JString;
 
 namespace java::net
 {
@@ -18,9 +20,9 @@ namespace java::net
 		// Constructors
 		
 		// Methods
-		jboolean equals(jobject arg0);
-		jbyteArray getAddress();
-		jstring getHostAddress();
+		jboolean equals(JObject arg0);
+		JByteArray getAddress();
+		JString getHostAddress();
 		jint hashCode();
 		jboolean isAnyLocalAddress();
 		jboolean isLinkLocalAddress();

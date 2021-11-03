@@ -6,6 +6,8 @@ namespace android::os
 {
 	class Parcel;
 }
+class JObject;
+class JString;
 
 namespace android::companion
 {
@@ -14,7 +16,7 @@ namespace android::companion
 	public:
 		// Fields
 		static JObject CREATOR();
-		static jstring DEVICE_PROFILE_WATCH();
+		static JString DEVICE_PROFILE_WATCH();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AssociationRequest(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
@@ -24,9 +26,9 @@ namespace android::companion
 		
 		// Methods
 		jint describeContents();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint hashCode();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::companion

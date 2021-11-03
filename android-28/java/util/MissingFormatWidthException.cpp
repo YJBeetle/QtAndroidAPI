@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./MissingFormatWidthException.hpp"
 
 namespace java::util
@@ -8,27 +9,27 @@ namespace java::util
 	MissingFormatWidthException::MissingFormatWidthException(QAndroidJniObject obj) : java::util::IllegalFormatException(obj) {}
 	
 	// Constructors
-	MissingFormatWidthException::MissingFormatWidthException(jstring arg0)
+	MissingFormatWidthException::MissingFormatWidthException(JString arg0)
 		: java::util::IllegalFormatException(
 			"java.util.MissingFormatWidthException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods
-	jstring MissingFormatWidthException::getFormatSpecifier()
+	JString MissingFormatWidthException::getFormatSpecifier()
 	{
 		return callObjectMethod(
 			"getFormatSpecifier",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring MissingFormatWidthException::getMessage()
+	JString MissingFormatWidthException::getMessage()
 	{
 		return callObjectMethod(
 			"getMessage",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::util
 

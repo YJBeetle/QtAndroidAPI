@@ -1,3 +1,4 @@
+#include "../../JCharArray.hpp"
 #include "./CharArrayReader.hpp"
 
 namespace java::io
@@ -8,17 +9,17 @@ namespace java::io
 	CharArrayReader::CharArrayReader(QAndroidJniObject obj) : java::io::Reader(obj) {}
 	
 	// Constructors
-	CharArrayReader::CharArrayReader(jcharArray arg0)
+	CharArrayReader::CharArrayReader(JCharArray arg0)
 		: java::io::Reader(
 			"java.io.CharArrayReader",
 			"([C)V",
-			arg0
+			arg0.object<jcharArray>()
 		) {}
-	CharArrayReader::CharArrayReader(jcharArray arg0, jint arg1, jint arg2)
+	CharArrayReader::CharArrayReader(JCharArray arg0, jint arg1, jint arg2)
 		: java::io::Reader(
 			"java.io.CharArrayReader",
 			"([CII)V",
-			arg0,
+			arg0.object<jcharArray>(),
 			arg1,
 			arg2
 		) {}
@@ -53,12 +54,12 @@ namespace java::io
 			"()I"
 		);
 	}
-	jint CharArrayReader::read(jcharArray arg0, jint arg1, jint arg2)
+	jint CharArrayReader::read(JCharArray arg0, jint arg1, jint arg2)
 	{
 		return callMethod<jint>(
 			"read",
 			"([CII)I",
-			arg0,
+			arg0.object<jcharArray>(),
 			arg1,
 			arg2
 		);

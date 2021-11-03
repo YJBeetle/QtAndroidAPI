@@ -18,6 +18,9 @@ namespace android::icu::text
 {
 	class UnicodeSetSpanner_TrimOption;
 }
+class JString;
+class JObject;
+class JString;
 
 namespace android::icu::text
 {
@@ -34,20 +37,20 @@ namespace android::icu::text
 		UnicodeSetSpanner(android::icu::text::UnicodeSet arg0);
 		
 		// Methods
-		jint countIn(jstring arg0);
-		jint countIn(jstring arg0, android::icu::text::UnicodeSetSpanner_CountMethod arg1);
-		jint countIn(jstring arg0, android::icu::text::UnicodeSetSpanner_CountMethod arg1, android::icu::text::UnicodeSet_SpanCondition arg2);
-		jstring deleteFrom(jstring arg0);
-		jstring deleteFrom(jstring arg0, android::icu::text::UnicodeSet_SpanCondition arg1);
-		jboolean equals(jobject arg0);
+		jint countIn(JString arg0);
+		jint countIn(JString arg0, android::icu::text::UnicodeSetSpanner_CountMethod arg1);
+		jint countIn(JString arg0, android::icu::text::UnicodeSetSpanner_CountMethod arg1, android::icu::text::UnicodeSet_SpanCondition arg2);
+		JString deleteFrom(JString arg0);
+		JString deleteFrom(JString arg0, android::icu::text::UnicodeSet_SpanCondition arg1);
+		jboolean equals(JObject arg0);
 		android::icu::text::UnicodeSet getUnicodeSet();
 		jint hashCode();
-		jstring replaceFrom(jstring arg0, jstring arg1);
-		jstring replaceFrom(jstring arg0, jstring arg1, android::icu::text::UnicodeSetSpanner_CountMethod arg2);
-		jstring replaceFrom(jstring arg0, jstring arg1, android::icu::text::UnicodeSetSpanner_CountMethod arg2, android::icu::text::UnicodeSet_SpanCondition arg3);
-		jstring trim(jstring arg0);
-		jstring trim(jstring arg0, android::icu::text::UnicodeSetSpanner_TrimOption arg1);
-		jstring trim(jstring arg0, android::icu::text::UnicodeSetSpanner_TrimOption arg1, android::icu::text::UnicodeSet_SpanCondition arg2);
+		JString replaceFrom(JString arg0, JString arg1);
+		JString replaceFrom(JString arg0, JString arg1, android::icu::text::UnicodeSetSpanner_CountMethod arg2);
+		JString replaceFrom(JString arg0, JString arg1, android::icu::text::UnicodeSetSpanner_CountMethod arg2, android::icu::text::UnicodeSet_SpanCondition arg3);
+		JString trim(JString arg0);
+		JString trim(JString arg0, android::icu::text::UnicodeSetSpanner_TrimOption arg1);
+		JString trim(JString arg0, android::icu::text::UnicodeSetSpanner_TrimOption arg1, android::icu::text::UnicodeSet_SpanCondition arg2);
 	};
 } // namespace android::icu::text
 

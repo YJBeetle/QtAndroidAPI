@@ -18,6 +18,8 @@ namespace android::os
 {
 	class Parcel;
 }
+class JObject;
+class JString;
 
 namespace android::graphics
 {
@@ -40,7 +42,7 @@ namespace android::graphics
 		// Methods
 		jboolean contains(jint arg0, jint arg1);
 		jint describeContents();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		android::graphics::Path getBoundaryPath();
 		jboolean getBoundaryPath(android::graphics::Path arg0);
 		android::graphics::Rect getBounds();
@@ -63,7 +65,7 @@ namespace android::graphics
 		jboolean set(jint arg0, jint arg1, jint arg2, jint arg3);
 		void setEmpty();
 		jboolean setPath(android::graphics::Path arg0, android::graphics::Region arg1);
-		jstring toString();
+		JString toString();
 		void translate(jint arg0, jint arg1);
 		void translate(jint arg0, jint arg1, android::graphics::Region arg2);
 		jboolean _union(android::graphics::Rect arg0);

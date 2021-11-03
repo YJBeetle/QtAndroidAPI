@@ -1,4 +1,6 @@
 #include "../../os/Parcel.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./NetworkSlicingConfig.hpp"
 
 namespace android::telephony::data
@@ -31,12 +33,12 @@ namespace android::telephony::data
 			"()I"
 		);
 	}
-	jboolean NetworkSlicingConfig::equals(jobject arg0)
+	jboolean NetworkSlicingConfig::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	JObject NetworkSlicingConfig::getSliceInfo()
@@ -60,12 +62,12 @@ namespace android::telephony::data
 			"()I"
 		);
 	}
-	jstring NetworkSlicingConfig::toString()
+	JString NetworkSlicingConfig::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void NetworkSlicingConfig::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

@@ -2,10 +2,12 @@
 
 #include "../../../JObject.hpp"
 
+class JArray;
 namespace android::app::appsearch
 {
 	class GetByDocumentIdRequest;
 }
+class JString;
 
 namespace android::app::appsearch
 {
@@ -19,12 +21,12 @@ namespace android::app::appsearch
 		GetByDocumentIdRequest_Builder(QAndroidJniObject obj);
 		
 		// Constructors
-		GetByDocumentIdRequest_Builder(jstring arg0);
+		GetByDocumentIdRequest_Builder(JString arg0);
 		
 		// Methods
-		android::app::appsearch::GetByDocumentIdRequest_Builder addIds(jarray arg0);
+		android::app::appsearch::GetByDocumentIdRequest_Builder addIds(JArray arg0);
 		android::app::appsearch::GetByDocumentIdRequest_Builder addIds(JObject arg0);
-		android::app::appsearch::GetByDocumentIdRequest_Builder addProjection(jstring arg0, JObject arg1);
+		android::app::appsearch::GetByDocumentIdRequest_Builder addProjection(JString arg0, JObject arg1);
 		android::app::appsearch::GetByDocumentIdRequest build();
 	};
 } // namespace android::app::appsearch

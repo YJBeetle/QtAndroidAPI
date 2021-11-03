@@ -1,3 +1,4 @@
+#include "../../../../JObject.hpp"
 #include "../../../../javax/security/auth/x500/X500Principal.hpp"
 #include "./IkeDerAsn1DnIdentification.hpp"
 
@@ -24,12 +25,12 @@ namespace android::net::ipsec::ike
 		) {}
 	
 	// Methods
-	jboolean IkeDerAsn1DnIdentification::equals(jobject arg0)
+	jboolean IkeDerAsn1DnIdentification::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint IkeDerAsn1DnIdentification::hashCode()

@@ -1,3 +1,5 @@
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
 #include "./JsonToken.hpp"
 
 namespace android::util
@@ -90,22 +92,22 @@ namespace android::util
 	// Constructors
 	
 	// Methods
-	android::util::JsonToken JsonToken::valueOf(jstring arg0)
+	android::util::JsonToken JsonToken::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.util.JsonToken",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/util/JsonToken;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray JsonToken::values()
+	JArray JsonToken::values()
 	{
 		return callStaticObjectMethod(
 			"android.util.JsonToken",
 			"values",
 			"()[Landroid/util/JsonToken;"
-		).object<jarray>();
+		);
 	}
 } // namespace android::util
 

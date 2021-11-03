@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../../../JObject.hpp"
 #include "./ControlAction.hpp"
 
+class JString;
 
 namespace android::service::controls::actions
 {
@@ -16,8 +16,8 @@ namespace android::service::controls::actions
 		CommandAction(QAndroidJniObject obj);
 		
 		// Constructors
-		CommandAction(jstring arg0);
-		CommandAction(jstring arg0, jstring arg1);
+		CommandAction(JString arg0);
+		CommandAction(JString arg0, JString arg1);
 		
 		// Methods
 		jint getActionType();

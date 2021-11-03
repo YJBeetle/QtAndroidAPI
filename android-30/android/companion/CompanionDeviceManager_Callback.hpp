@@ -6,6 +6,7 @@ namespace android::content
 {
 	class IntentSender;
 }
+class JString;
 
 namespace android::companion
 {
@@ -23,7 +24,7 @@ namespace android::companion
 		
 		// Methods
 		void onDeviceFound(android::content::IntentSender arg0);
-		void onFailure(jstring arg0);
+		void onFailure(JString arg0);
 	};
 } // namespace android::companion
 

@@ -1,4 +1,6 @@
 #include "../os/Parcel.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./AudioFormat.hpp"
 
 namespace android::media
@@ -453,12 +455,12 @@ namespace android::media
 			"()I"
 		);
 	}
-	jboolean AudioFormat::equals(jobject arg0)
+	jboolean AudioFormat::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint AudioFormat::getChannelCount()
@@ -503,12 +505,12 @@ namespace android::media
 			"()I"
 		);
 	}
-	jstring AudioFormat::toString()
+	JString AudioFormat::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void AudioFormat::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

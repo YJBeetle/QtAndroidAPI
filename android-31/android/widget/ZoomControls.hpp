@@ -1,8 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../view/View.hpp"
-#include "../view/ViewGroup.hpp"
 #include "./LinearLayout.hpp"
 
 namespace android::content
@@ -13,6 +10,7 @@ namespace android::view
 {
 	class MotionEvent;
 }
+class JString;
 
 namespace android::widget
 {
@@ -30,7 +28,7 @@ namespace android::widget
 		ZoomControls(android::content::Context arg0, JObject arg1);
 		
 		// Methods
-		jstring getAccessibilityClassName();
+		JString getAccessibilityClassName();
 		jboolean hasFocus();
 		void hide();
 		jboolean onTouchEvent(android::view::MotionEvent arg0);

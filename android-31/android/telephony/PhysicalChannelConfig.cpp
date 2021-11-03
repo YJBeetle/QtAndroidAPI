@@ -1,4 +1,6 @@
 #include "../os/Parcel.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./PhysicalChannelConfig.hpp"
 
 namespace android::telephony
@@ -89,12 +91,12 @@ namespace android::telephony
 			"()I"
 		);
 	}
-	jboolean PhysicalChannelConfig::equals(jobject arg0)
+	jboolean PhysicalChannelConfig::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint PhysicalChannelConfig::getBand()
@@ -174,12 +176,12 @@ namespace android::telephony
 			"()I"
 		);
 	}
-	jstring PhysicalChannelConfig::toString()
+	JString PhysicalChannelConfig::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void PhysicalChannelConfig::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

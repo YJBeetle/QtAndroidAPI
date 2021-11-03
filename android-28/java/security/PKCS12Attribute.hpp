@@ -2,6 +2,10 @@
 
 #include "../../JObject.hpp"
 
+class JByteArray;
+class JArray;
+class JObject;
+class JString;
 namespace java::util::regex
 {
 	class Pattern;
@@ -19,16 +23,16 @@ namespace java::security
 		PKCS12Attribute(QAndroidJniObject obj);
 		
 		// Constructors
-		PKCS12Attribute(jbyteArray arg0);
-		PKCS12Attribute(jstring arg0, jstring arg1);
+		PKCS12Attribute(JByteArray arg0);
+		PKCS12Attribute(JString arg0, JString arg1);
 		
 		// Methods
-		jboolean equals(jobject arg0);
-		jbyteArray getEncoded();
-		jstring getName();
-		jstring getValue();
+		jboolean equals(JObject arg0);
+		JByteArray getEncoded();
+		JString getName();
+		JString getValue();
 		jint hashCode();
-		jstring toString();
+		JString toString();
 	};
 } // namespace java::security
 

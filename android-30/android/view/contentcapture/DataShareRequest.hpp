@@ -10,6 +10,8 @@ namespace android::os
 {
 	class Parcel;
 }
+class JObject;
+class JString;
 
 namespace android::view::contentcapture
 {
@@ -24,16 +26,16 @@ namespace android::view::contentcapture
 		DataShareRequest(QAndroidJniObject obj);
 		
 		// Constructors
-		DataShareRequest(android::content::LocusId arg0, jstring arg1);
+		DataShareRequest(android::content::LocusId arg0, JString arg1);
 		
 		// Methods
 		jint describeContents();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		android::content::LocusId getLocusId();
-		jstring getMimeType();
-		jstring getPackageName();
+		JString getMimeType();
+		JString getPackageName();
 		jint hashCode();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::view::contentcapture

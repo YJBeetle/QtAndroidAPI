@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JObject;
+class JString;
 
 namespace android::print
 {
@@ -15,16 +17,16 @@ namespace android::print
 		PrintAttributes_Resolution(QAndroidJniObject obj);
 		
 		// Constructors
-		PrintAttributes_Resolution(jstring arg0, jstring arg1, jint arg2, jint arg3);
+		PrintAttributes_Resolution(JString arg0, JString arg1, jint arg2, jint arg3);
 		
 		// Methods
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint getHorizontalDpi();
-		jstring getId();
-		jstring getLabel();
+		JString getId();
+		JString getLabel();
 		jint getVerticalDpi();
 		jint hashCode();
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::print
 

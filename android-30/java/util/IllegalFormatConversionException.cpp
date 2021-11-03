@@ -1,3 +1,5 @@
+#include "../../JClass.hpp"
+#include "../../JString.hpp"
 #include "./IllegalFormatConversionException.hpp"
 
 namespace java::util
@@ -8,21 +10,21 @@ namespace java::util
 	IllegalFormatConversionException::IllegalFormatConversionException(QAndroidJniObject obj) : java::util::IllegalFormatException(obj) {}
 	
 	// Constructors
-	IllegalFormatConversionException::IllegalFormatConversionException(jchar arg0, jclass arg1)
+	IllegalFormatConversionException::IllegalFormatConversionException(jchar arg0, JClass arg1)
 		: java::util::IllegalFormatException(
 			"java.util.IllegalFormatConversionException",
 			"(CLjava/lang/Class;)V",
 			arg0,
-			arg1
+			arg1.object<jclass>()
 		) {}
 	
 	// Methods
-	jclass IllegalFormatConversionException::getArgumentClass()
+	JClass IllegalFormatConversionException::getArgumentClass()
 	{
 		return callObjectMethod(
 			"getArgumentClass",
 			"()Ljava/lang/Class;"
-		).object<jclass>();
+		);
 	}
 	jchar IllegalFormatConversionException::getConversion()
 	{
@@ -31,12 +33,12 @@ namespace java::util
 			"()C"
 		);
 	}
-	jstring IllegalFormatConversionException::getMessage()
+	JString IllegalFormatConversionException::getMessage()
 	{
 		return callObjectMethod(
 			"getMessage",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::util
 

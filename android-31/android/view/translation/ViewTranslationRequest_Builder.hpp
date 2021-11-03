@@ -14,6 +14,7 @@ namespace android::view::translation
 {
 	class ViewTranslationRequest;
 }
+class JString;
 
 namespace android::view::translation
 {
@@ -32,7 +33,7 @@ namespace android::view::translation
 		
 		// Methods
 		android::view::translation::ViewTranslationRequest build();
-		android::view::translation::ViewTranslationRequest_Builder setValue(jstring arg0, android::view::translation::TranslationRequestValue arg1);
+		android::view::translation::ViewTranslationRequest_Builder setValue(JString arg0, android::view::translation::TranslationRequestValue arg1);
 	};
 } // namespace android::view::translation
 

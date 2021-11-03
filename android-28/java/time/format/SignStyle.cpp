@@ -1,3 +1,5 @@
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
 #include "./SignStyle.hpp"
 
 namespace java::time::format
@@ -50,22 +52,22 @@ namespace java::time::format
 	// Constructors
 	
 	// Methods
-	java::time::format::SignStyle SignStyle::valueOf(jstring arg0)
+	java::time::format::SignStyle SignStyle::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"java.time.format.SignStyle",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/time/format/SignStyle;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray SignStyle::values()
+	JArray SignStyle::values()
 	{
 		return callStaticObjectMethod(
 			"java.time.format.SignStyle",
 			"values",
 			"()[Ljava/time/format/SignStyle;"
-		).object<jarray>();
+		);
 	}
 } // namespace java::time::format
 

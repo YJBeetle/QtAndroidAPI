@@ -1,4 +1,6 @@
 #include "../../os/Parcel.hpp"
+#include "../../../JString.hpp"
+#include "../../../JString.hpp"
 #include "./CorrectionInfo.hpp"
 
 namespace android::view::inputmethod
@@ -17,13 +19,13 @@ namespace android::view::inputmethod
 	CorrectionInfo::CorrectionInfo(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	CorrectionInfo::CorrectionInfo(jint arg0, jstring arg1, jstring arg2)
+	CorrectionInfo::CorrectionInfo(jint arg0, JString arg1, JString arg2)
 		: JObject(
 			"android.view.inputmethod.CorrectionInfo",
 			"(ILjava/lang/CharSequence;Ljava/lang/CharSequence;)V",
 			arg0,
-			arg1,
-			arg2
+			arg1.object<jstring>(),
+			arg2.object<jstring>()
 		) {}
 	
 	// Methods
@@ -34,12 +36,12 @@ namespace android::view::inputmethod
 			"()I"
 		);
 	}
-	jstring CorrectionInfo::getNewText()
+	JString CorrectionInfo::getNewText()
 	{
 		return callObjectMethod(
 			"getNewText",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	jint CorrectionInfo::getOffset()
 	{
@@ -48,19 +50,19 @@ namespace android::view::inputmethod
 			"()I"
 		);
 	}
-	jstring CorrectionInfo::getOldText()
+	JString CorrectionInfo::getOldText()
 	{
 		return callObjectMethod(
 			"getOldText",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
-	jstring CorrectionInfo::toString()
+	JString CorrectionInfo::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void CorrectionInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

@@ -1,3 +1,4 @@
+#include "../../../../JString.hpp"
 #include "./ConnectTimeoutException.hpp"
 
 namespace org::apache::http::conn
@@ -13,11 +14,11 @@ namespace org::apache::http::conn
 			"org.apache.http.conn.ConnectTimeoutException",
 			"()V"
 		) {}
-	ConnectTimeoutException::ConnectTimeoutException(jstring arg0)
+	ConnectTimeoutException::ConnectTimeoutException(JString arg0)
 		: java::io::InterruptedIOException(
 			"org.apache.http.conn.ConnectTimeoutException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

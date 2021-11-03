@@ -1,7 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../lang/Exception.hpp"
 #include "../io/IOException.hpp"
 
 namespace java::io
@@ -12,6 +10,8 @@ namespace java::io
 {
 	class ObjectOutputStream;
 }
+class JString;
+class JThrowable;
 
 namespace java::util
 {
@@ -25,8 +25,8 @@ namespace java::util
 		InvalidPropertiesFormatException(QAndroidJniObject obj);
 		
 		// Constructors
-		InvalidPropertiesFormatException(jstring arg0);
-		InvalidPropertiesFormatException(jthrowable arg0);
+		InvalidPropertiesFormatException(JString arg0);
+		InvalidPropertiesFormatException(JThrowable arg0);
 		
 		// Methods
 	};

@@ -2,10 +2,13 @@
 
 #include "../../JObject.hpp"
 
+class JArray;
+class JClass;
 namespace java::lang
 {
 	class Exception;
 }
+class JObject;
 namespace java::security
 {
 	class AccessControlContext;
@@ -38,11 +41,11 @@ namespace java::security
 		
 		// Methods
 		static void checkPermission(java::security::Permission arg0);
-		static jobject doPrivileged(JObject arg0);
-		static jobject doPrivileged(JObject arg0, java::security::AccessControlContext arg1);
-		static jobject doPrivileged(JObject arg0, java::security::AccessControlContext arg1, jarray arg2);
-		static jobject doPrivilegedWithCombiner(JObject arg0);
-		static jobject doPrivilegedWithCombiner(JObject arg0, java::security::AccessControlContext arg1, jarray arg2);
+		static JObject doPrivileged(JObject arg0);
+		static JObject doPrivileged(JObject arg0, java::security::AccessControlContext arg1);
+		static JObject doPrivileged(JObject arg0, java::security::AccessControlContext arg1, JArray arg2);
+		static JObject doPrivilegedWithCombiner(JObject arg0);
+		static JObject doPrivilegedWithCombiner(JObject arg0, java::security::AccessControlContext arg1, JArray arg2);
 		static java::security::AccessControlContext getContext();
 	};
 } // namespace java::security

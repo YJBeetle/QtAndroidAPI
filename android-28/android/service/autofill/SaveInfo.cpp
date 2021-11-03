@@ -1,5 +1,6 @@
 #include "../../os/Parcel.hpp"
 #include "./SaveInfo_Builder.hpp"
+#include "../../../JString.hpp"
 #include "./SaveInfo.hpp"
 
 namespace android::service::autofill
@@ -97,12 +98,12 @@ namespace android::service::autofill
 			"()I"
 		);
 	}
-	jstring SaveInfo::toString()
+	JString SaveInfo::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void SaveInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

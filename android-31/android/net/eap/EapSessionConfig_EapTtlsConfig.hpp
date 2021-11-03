@@ -1,12 +1,12 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "./EapSessionConfig_EapMethodConfig.hpp"
 
 namespace android::net::eap
 {
 	class EapSessionConfig;
 }
+class JObject;
 namespace java::security::cert
 {
 	class X509Certificate;
@@ -26,7 +26,7 @@ namespace android::net::eap
 		// Constructors
 		
 		// Methods
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		android::net::eap::EapSessionConfig getInnerEapSessionConfig();
 		java::security::cert::X509Certificate getServerCaCert();
 		jint hashCode();

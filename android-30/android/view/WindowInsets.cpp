@@ -1,6 +1,8 @@
 #include "../graphics/Insets.hpp"
 #include "../graphics/Rect.hpp"
 #include "./DisplayCutout.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./WindowInsets.hpp"
 
 namespace android::view
@@ -48,12 +50,12 @@ namespace android::view
 			"()Landroid/view/WindowInsets;"
 		);
 	}
-	jboolean WindowInsets::equals(jobject arg0)
+	jboolean WindowInsets::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	android::view::DisplayCutout WindowInsets::getDisplayCutout()
@@ -258,12 +260,12 @@ namespace android::view
 			arg3
 		);
 	}
-	jstring WindowInsets::toString()
+	JString WindowInsets::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::view
 

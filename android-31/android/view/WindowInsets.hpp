@@ -18,6 +18,8 @@ namespace android::view
 {
 	class RoundedCorner;
 }
+class JObject;
+class JString;
 
 namespace android::view
 {
@@ -38,7 +40,7 @@ namespace android::view
 		android::view::WindowInsets consumeDisplayCutout();
 		android::view::WindowInsets consumeStableInsets();
 		android::view::WindowInsets consumeSystemWindowInsets();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		android::view::DisplayCutout getDisplayCutout();
 		android::graphics::Insets getInsets(jint arg0);
 		android::graphics::Insets getInsetsIgnoringVisibility(jint arg0);
@@ -68,7 +70,7 @@ namespace android::view
 		jboolean isVisible(jint arg0);
 		android::view::WindowInsets replaceSystemWindowInsets(android::graphics::Rect arg0);
 		android::view::WindowInsets replaceSystemWindowInsets(jint arg0, jint arg1, jint arg2, jint arg3);
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::view
 

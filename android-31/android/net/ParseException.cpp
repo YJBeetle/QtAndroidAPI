@@ -1,32 +1,34 @@
+#include "../../JString.hpp"
+#include "../../JThrowable.hpp"
 #include "./ParseException.hpp"
 
 namespace android::net
 {
 	// Fields
-	jstring ParseException::response()
+	JString ParseException::response()
 	{
 		return getObjectField(
 			"response",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QAndroidJniObject forward
 	ParseException::ParseException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
 	
 	// Constructors
-	ParseException::ParseException(jstring arg0)
+	ParseException::ParseException(JString arg0)
 		: java::lang::RuntimeException(
 			"android.net.ParseException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	ParseException::ParseException(jstring arg0, jthrowable arg1)
+	ParseException::ParseException(JString arg0, JThrowable arg1)
 		: java::lang::RuntimeException(
 			"android.net.ParseException",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
 		) {}
 	
 	// Methods

@@ -1,3 +1,4 @@
+#include "../../JLongArray.hpp"
 #include "./DownloadManager_Query.hpp"
 
 namespace android::app
@@ -15,12 +16,12 @@ namespace android::app
 		) {}
 	
 	// Methods
-	android::app::DownloadManager_Query DownloadManager_Query::setFilterById(jlongArray arg0)
+	android::app::DownloadManager_Query DownloadManager_Query::setFilterById(JLongArray arg0)
 	{
 		return callObjectMethod(
 			"setFilterById",
 			"([J)Landroid/app/DownloadManager$Query;",
-			arg0
+			arg0.object<jlongArray>()
 		);
 	}
 	android::app::DownloadManager_Query DownloadManager_Query::setFilterByStatus(jint arg0)

@@ -1,3 +1,5 @@
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./EapSessionConfig_EapMsChapV2Config.hpp"
 
 namespace android::net::eap
@@ -10,27 +12,27 @@ namespace android::net::eap
 	// Constructors
 	
 	// Methods
-	jboolean EapSessionConfig_EapMsChapV2Config::equals(jobject arg0)
+	jboolean EapSessionConfig_EapMsChapV2Config::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jstring EapSessionConfig_EapMsChapV2Config::getPassword()
+	JString EapSessionConfig_EapMsChapV2Config::getPassword()
 	{
 		return callObjectMethod(
 			"getPassword",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring EapSessionConfig_EapMsChapV2Config::getUsername()
+	JString EapSessionConfig_EapMsChapV2Config::getUsername()
 	{
 		return callObjectMethod(
 			"getUsername",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint EapSessionConfig_EapMsChapV2Config::hashCode()
 	{

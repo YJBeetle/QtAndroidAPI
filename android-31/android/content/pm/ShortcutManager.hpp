@@ -14,6 +14,8 @@ namespace android::content::pm
 {
 	class ShortcutInfo;
 }
+class JString;
+class JString;
 
 namespace android::content::pm
 {
@@ -36,7 +38,7 @@ namespace android::content::pm
 		jboolean addDynamicShortcuts(JObject arg0);
 		android::content::Intent createShortcutResultIntent(android::content::pm::ShortcutInfo arg0);
 		void disableShortcuts(JObject arg0);
-		void disableShortcuts(JObject arg0, jstring arg1);
+		void disableShortcuts(JObject arg0, JString arg1);
 		void enableShortcuts(JObject arg0);
 		JObject getDynamicShortcuts();
 		jint getIconMaxHeight();
@@ -51,7 +53,7 @@ namespace android::content::pm
 		void removeAllDynamicShortcuts();
 		void removeDynamicShortcuts(JObject arg0);
 		void removeLongLivedShortcuts(JObject arg0);
-		void reportShortcutUsed(jstring arg0);
+		void reportShortcutUsed(JString arg0);
 		jboolean requestPinShortcut(android::content::pm::ShortcutInfo arg0, android::content::IntentSender arg1);
 		jboolean setDynamicShortcuts(JObject arg0);
 		jboolean updateShortcuts(JObject arg0);

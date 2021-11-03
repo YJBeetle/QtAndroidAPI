@@ -1,9 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../lang/Exception.hpp"
 #include "./GeneralSecurityException.hpp"
 
+class JString;
 
 namespace java::security
 {
@@ -18,7 +17,7 @@ namespace java::security
 		
 		// Constructors
 		NoSuchProviderException();
-		NoSuchProviderException(jstring arg0);
+		NoSuchProviderException(JString arg0);
 		
 		// Methods
 	};

@@ -1,4 +1,6 @@
 #include "../os/Parcel.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./SizeF.hpp"
 
 namespace android::util
@@ -26,13 +28,13 @@ namespace android::util
 		) {}
 	
 	// Methods
-	android::util::SizeF SizeF::parseSizeF(jstring arg0)
+	android::util::SizeF SizeF::parseSizeF(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.util.SizeF",
 			"parseSizeF",
 			"(Ljava/lang/String;)Landroid/util/SizeF;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	jint SizeF::describeContents()
@@ -42,12 +44,12 @@ namespace android::util
 			"()I"
 		);
 	}
-	jboolean SizeF::equals(jobject arg0)
+	jboolean SizeF::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jfloat SizeF::getHeight()
@@ -71,12 +73,12 @@ namespace android::util
 			"()I"
 		);
 	}
-	jstring SizeF::toString()
+	JString SizeF::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void SizeF::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

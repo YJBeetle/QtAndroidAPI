@@ -2,6 +2,8 @@
 
 #include "../../../../JObject.hpp"
 
+class JObject;
+class JString;
 
 namespace android::hardware::camera2::params
 {
@@ -19,13 +21,13 @@ namespace android::hardware::camera2::params
 		InputConfiguration(jint arg0, jint arg1, jint arg2);
 		
 		// Methods
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint getFormat();
 		jint getHeight();
 		jint getWidth();
 		jint hashCode();
 		jboolean isMultiResolution();
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::hardware::camera2::params
 

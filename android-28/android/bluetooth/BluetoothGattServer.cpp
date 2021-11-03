@@ -1,3 +1,5 @@
+#include "../../JByteArray.hpp"
+#include "../../JIntArray.hpp"
 #include "./BluetoothDevice.hpp"
 #include "./BluetoothGattCharacteristic.hpp"
 #include "./BluetoothGattService.hpp"
@@ -68,12 +70,12 @@ namespace android::bluetooth
 			arg0.object()
 		);
 	}
-	JObject BluetoothGattServer::getDevicesMatchingConnectionStates(jintArray arg0)
+	JObject BluetoothGattServer::getDevicesMatchingConnectionStates(JIntArray arg0)
 	{
 		return callObjectMethod(
 			"getDevicesMatchingConnectionStates",
 			"([I)Ljava/util/List;",
-			arg0
+			arg0.object<jintArray>()
 		);
 	}
 	android::bluetooth::BluetoothGattService BluetoothGattServer::getService(java::util::UUID arg0)
@@ -117,7 +119,7 @@ namespace android::bluetooth
 			arg0.object()
 		);
 	}
-	jboolean BluetoothGattServer::sendResponse(android::bluetooth::BluetoothDevice arg0, jint arg1, jint arg2, jint arg3, jbyteArray arg4)
+	jboolean BluetoothGattServer::sendResponse(android::bluetooth::BluetoothDevice arg0, jint arg1, jint arg2, jint arg3, JByteArray arg4)
 	{
 		return callMethod<jboolean>(
 			"sendResponse",
@@ -126,7 +128,7 @@ namespace android::bluetooth
 			arg1,
 			arg2,
 			arg3,
-			arg4
+			arg4.object<jbyteArray>()
 		);
 	}
 	void BluetoothGattServer::setPreferredPhy(android::bluetooth::BluetoothDevice arg0, jint arg1, jint arg2, jint arg3)

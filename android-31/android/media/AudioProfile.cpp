@@ -1,3 +1,5 @@
+#include "../../JIntArray.hpp"
+#include "../../JString.hpp"
 #include "./AudioProfile.hpp"
 
 namespace android::media
@@ -24,19 +26,19 @@ namespace android::media
 	// Constructors
 	
 	// Methods
-	jintArray AudioProfile::getChannelIndexMasks()
+	JIntArray AudioProfile::getChannelIndexMasks()
 	{
 		return callObjectMethod(
 			"getChannelIndexMasks",
 			"()[I"
-		).object<jintArray>();
+		);
 	}
-	jintArray AudioProfile::getChannelMasks()
+	JIntArray AudioProfile::getChannelMasks()
 	{
 		return callObjectMethod(
 			"getChannelMasks",
 			"()[I"
-		).object<jintArray>();
+		);
 	}
 	jint AudioProfile::getEncapsulationType()
 	{
@@ -52,19 +54,19 @@ namespace android::media
 			"()I"
 		);
 	}
-	jintArray AudioProfile::getSampleRates()
+	JIntArray AudioProfile::getSampleRates()
 	{
 		return callObjectMethod(
 			"getSampleRates",
 			"()[I"
-		).object<jintArray>();
+		);
 	}
-	jstring AudioProfile::toString()
+	JString AudioProfile::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::media
 

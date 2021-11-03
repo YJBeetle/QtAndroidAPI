@@ -1,4 +1,5 @@
 #include "./ObbInfo.hpp"
+#include "../../../JString.hpp"
 #include "./ObbScanner.hpp"
 
 namespace android::content::res
@@ -11,13 +12,13 @@ namespace android::content::res
 	// Constructors
 	
 	// Methods
-	android::content::res::ObbInfo ObbScanner::getObbInfo(jstring arg0)
+	android::content::res::ObbInfo ObbScanner::getObbInfo(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.content.res.ObbScanner",
 			"getObbInfo",
 			"(Ljava/lang/String;)Landroid/content/res/ObbInfo;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 } // namespace android::content::res

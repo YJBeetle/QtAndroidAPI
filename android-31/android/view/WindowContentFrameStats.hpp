@@ -1,12 +1,12 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./FrameStats.hpp"
 
 namespace android::os
 {
 	class Parcel;
 }
+class JString;
 
 namespace android::view
 {
@@ -26,7 +26,7 @@ namespace android::view
 		jint describeContents();
 		jlong getFramePostedTimeNano(jint arg0);
 		jlong getFrameReadyTimeNano(jint arg0);
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::view

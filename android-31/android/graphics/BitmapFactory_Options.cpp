@@ -1,6 +1,8 @@
+#include "../../JByteArray.hpp"
 #include "./Bitmap.hpp"
 #include "./Bitmap_Config.hpp"
 #include "./ColorSpace.hpp"
+#include "../../JString.hpp"
 #include "./BitmapFactory_Options.hpp"
 
 namespace android::graphics
@@ -99,12 +101,12 @@ namespace android::graphics
 			"inTargetDensity"
 		);
 	}
-	jbyteArray BitmapFactory_Options::inTempStorage()
+	JByteArray BitmapFactory_Options::inTempStorage()
 	{
 		return getObjectField(
 			"inTempStorage",
 			"[B"
-		).object<jbyteArray>();
+		);
 	}
 	jboolean BitmapFactory_Options::mCancel()
 	{
@@ -132,12 +134,12 @@ namespace android::graphics
 			"outHeight"
 		);
 	}
-	jstring BitmapFactory_Options::outMimeType()
+	JString BitmapFactory_Options::outMimeType()
 	{
 		return getObjectField(
 			"outMimeType",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint BitmapFactory_Options::outWidth()
 	{

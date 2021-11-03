@@ -10,6 +10,9 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
+class JObject;
+class JString;
 
 namespace android::app::people
 {
@@ -40,16 +43,16 @@ namespace android::app::people
 		
 		// Methods
 		jint describeContents();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint getActivity();
 		jint getAvailability();
-		jstring getDescription();
+		JString getDescription();
 		jlong getEndTimeMillis();
 		android::graphics::drawable::Icon getIcon();
-		jstring getId();
+		JString getId();
 		jlong getStartTimeMillis();
 		jint hashCode();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::app::people

@@ -1,9 +1,12 @@
+#include "../../JArray.hpp"
 #include "../content/Context.hpp"
 #include "../graphics/Canvas.hpp"
 #include "../graphics/drawable/Drawable.hpp"
 #include "../net/Uri.hpp"
 #include "../os/Bundle.hpp"
 #include "../view/View.hpp"
+#include "../../JString.hpp"
+#include "../../JString.hpp"
 #include "./QuickContactBadge.hpp"
 
 namespace android::widget
@@ -46,40 +49,40 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	void QuickContactBadge::assignContactFromEmail(jstring arg0, jboolean arg1)
+	void QuickContactBadge::assignContactFromEmail(JString arg0, jboolean arg1)
 	{
 		callMethod<void>(
 			"assignContactFromEmail",
 			"(Ljava/lang/String;Z)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
-	void QuickContactBadge::assignContactFromEmail(jstring arg0, jboolean arg1, android::os::Bundle arg2)
+	void QuickContactBadge::assignContactFromEmail(JString arg0, jboolean arg1, android::os::Bundle arg2)
 	{
 		callMethod<void>(
 			"assignContactFromEmail",
 			"(Ljava/lang/String;ZLandroid/os/Bundle;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
 			arg2.object()
 		);
 	}
-	void QuickContactBadge::assignContactFromPhone(jstring arg0, jboolean arg1)
+	void QuickContactBadge::assignContactFromPhone(JString arg0, jboolean arg1)
 	{
 		callMethod<void>(
 			"assignContactFromPhone",
 			"(Ljava/lang/String;Z)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
-	void QuickContactBadge::assignContactFromPhone(jstring arg0, jboolean arg1, android::os::Bundle arg2)
+	void QuickContactBadge::assignContactFromPhone(JString arg0, jboolean arg1, android::os::Bundle arg2)
 	{
 		callMethod<void>(
 			"assignContactFromPhone",
 			"(Ljava/lang/String;ZLandroid/os/Bundle;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
 			arg2.object()
 		);
@@ -101,12 +104,12 @@ namespace android::widget
 			arg1
 		);
 	}
-	jstring QuickContactBadge::getAccessibilityClassName()
+	JString QuickContactBadge::getAccessibilityClassName()
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	void QuickContactBadge::onClick(android::view::View arg0)
 	{
@@ -116,12 +119,12 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void QuickContactBadge::setExcludeMimes(jarray arg0)
+	void QuickContactBadge::setExcludeMimes(JArray arg0)
 	{
 		callMethod<void>(
 			"setExcludeMimes",
 			"([Ljava/lang/String;)V",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
 	void QuickContactBadge::setImageToDefault()
@@ -147,12 +150,12 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void QuickContactBadge::setPrioritizedMimeType(jstring arg0)
+	void QuickContactBadge::setPrioritizedMimeType(JString arg0)
 	{
 		callMethod<void>(
 			"setPrioritizedMimeType",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 } // namespace android::widget

@@ -1,5 +1,6 @@
 #include "../../net/Uri.hpp"
 #include "../../os/Parcel.hpp"
+#include "../../../JObject.hpp"
 #include "./JobInfo_TriggerContentUri.hpp"
 
 namespace android::app::job
@@ -41,12 +42,12 @@ namespace android::app::job
 			"()I"
 		);
 	}
-	jboolean JobInfo_TriggerContentUri::equals(jobject arg0)
+	jboolean JobInfo_TriggerContentUri::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint JobInfo_TriggerContentUri::getFlags()

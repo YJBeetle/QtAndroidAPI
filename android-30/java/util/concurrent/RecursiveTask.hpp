@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "./ForkJoinTask.hpp"
 
+class JObject;
 
 namespace java::util::concurrent
 {
@@ -19,7 +19,7 @@ namespace java::util::concurrent
 		RecursiveTask();
 		
 		// Methods
-		jobject getRawResult();
+		JObject getRawResult();
 	};
 } // namespace java::util::concurrent
 

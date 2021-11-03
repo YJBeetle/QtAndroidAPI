@@ -14,6 +14,7 @@ namespace java::io
 {
 	class FileDescriptor;
 }
+class JString;
 
 namespace android::net
 {
@@ -28,7 +29,7 @@ namespace android::net
 		
 		// Constructors
 		LocalServerSocket(java::io::FileDescriptor arg0);
-		LocalServerSocket(jstring arg0);
+		LocalServerSocket(JString arg0);
 		
 		// Methods
 		android::net::LocalSocket accept();

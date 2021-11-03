@@ -1,6 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./ViewOverlay.hpp"
 
 namespace android::view

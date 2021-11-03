@@ -1,3 +1,4 @@
+#include "../../../JObject.hpp"
 #include "./Certificate.hpp"
 #include "./PKIXCertPathChecker.hpp"
 
@@ -28,12 +29,12 @@ namespace java::security::cert
 			arg1.object()
 		);
 	}
-	jobject PKIXCertPathChecker::clone()
+	JObject PKIXCertPathChecker::clone()
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
 	JObject PKIXCertPathChecker::getSupportedExtensions()
 	{

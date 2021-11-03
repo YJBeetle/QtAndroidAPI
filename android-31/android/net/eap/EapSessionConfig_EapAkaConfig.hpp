@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "./EapSessionConfig_EapMethodConfig.hpp"
 
+class JObject;
 
 namespace android::net::eap
 {
@@ -18,7 +18,7 @@ namespace android::net::eap
 		// Constructors
 		
 		// Methods
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint getAppType();
 		jint getSubId();
 		jint hashCode();

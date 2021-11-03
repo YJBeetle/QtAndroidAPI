@@ -1,13 +1,13 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../lang/ClassLoader.hpp"
 #include "../security/SecureClassLoader.hpp"
 
+class JArray;
 namespace java::io
 {
 	class InputStream;
 }
+class JClass;
 namespace java::lang
 {
 	class ClassLoader;
@@ -16,6 +16,7 @@ namespace java::lang
 {
 	class Package;
 }
+class JString;
 namespace java::net
 {
 	class URL;
@@ -53,20 +54,20 @@ namespace java::net
 		URLClassLoader(QAndroidJniObject obj);
 		
 		// Constructors
-		URLClassLoader(jarray arg0);
-		URLClassLoader(jarray arg0, java::lang::ClassLoader arg1);
-		URLClassLoader(jarray arg0, java::lang::ClassLoader arg1, JObject arg2);
-		URLClassLoader(jstring arg0, jarray arg1, java::lang::ClassLoader arg2);
-		URLClassLoader(jstring arg0, jarray arg1, java::lang::ClassLoader arg2, JObject arg3);
+		URLClassLoader(JArray arg0);
+		URLClassLoader(JArray arg0, java::lang::ClassLoader arg1);
+		URLClassLoader(JArray arg0, java::lang::ClassLoader arg1, JObject arg2);
+		URLClassLoader(JString arg0, JArray arg1, java::lang::ClassLoader arg2);
+		URLClassLoader(JString arg0, JArray arg1, java::lang::ClassLoader arg2, JObject arg3);
 		
 		// Methods
-		static java::net::URLClassLoader newInstance(jarray arg0);
-		static java::net::URLClassLoader newInstance(jarray arg0, java::lang::ClassLoader arg1);
+		static java::net::URLClassLoader newInstance(JArray arg0);
+		static java::net::URLClassLoader newInstance(JArray arg0, java::lang::ClassLoader arg1);
 		void close();
-		java::net::URL findResource(jstring arg0);
-		JObject findResources(jstring arg0);
-		java::io::InputStream getResourceAsStream(jstring arg0);
-		jarray getURLs();
+		java::net::URL findResource(JString arg0);
+		JObject findResources(JString arg0);
+		java::io::InputStream getResourceAsStream(JString arg0);
+		JArray getURLs();
 	};
 } // namespace java::net
 

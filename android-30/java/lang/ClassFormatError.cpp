@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./ClassFormatError.hpp"
 
 namespace java::lang
@@ -13,11 +14,11 @@ namespace java::lang
 			"java.lang.ClassFormatError",
 			"()V"
 		) {}
-	ClassFormatError::ClassFormatError(jstring arg0)
+	ClassFormatError::ClassFormatError(JString arg0)
 		: java::lang::LinkageError(
 			"java.lang.ClassFormatError",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

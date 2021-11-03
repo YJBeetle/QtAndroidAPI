@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./NotProvisionedException.hpp"
 
 namespace android::media
@@ -8,11 +9,11 @@ namespace android::media
 	NotProvisionedException::NotProvisionedException(QAndroidJniObject obj) : android::media::MediaDrmException(obj) {}
 	
 	// Constructors
-	NotProvisionedException::NotProvisionedException(jstring arg0)
+	NotProvisionedException::NotProvisionedException(JString arg0)
 		: android::media::MediaDrmException(
 			"android.media.NotProvisionedException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

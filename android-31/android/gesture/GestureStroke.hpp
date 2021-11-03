@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JFloatArray;
 namespace android::gesture
 {
 	class OrientedBoundingBox;
@@ -14,6 +15,7 @@ namespace android::graphics
 {
 	class RectF;
 }
+class JObject;
 namespace java::util
 {
 	class ArrayList;
@@ -27,7 +29,7 @@ namespace android::gesture
 		// Fields
 		android::graphics::RectF boundingBox();
 		jfloat length();
-		jfloatArray points();
+		JFloatArray points();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit GestureStroke(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
@@ -38,7 +40,7 @@ namespace android::gesture
 		
 		// Methods
 		void clearPath();
-		jobject clone();
+		JObject clone();
 		android::gesture::OrientedBoundingBox computeOrientedBoundingBox();
 		android::graphics::Path getPath();
 		android::graphics::Path toPath(jfloat arg0, jfloat arg1, jint arg2);

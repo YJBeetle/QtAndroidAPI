@@ -1,5 +1,7 @@
 #include "../os/Parcel.hpp"
 #include "./WindowId_FocusObserver.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./WindowId.hpp"
 
 namespace android::view
@@ -27,12 +29,12 @@ namespace android::view
 			"()I"
 		);
 	}
-	jboolean WindowId::equals(jobject arg0)
+	jboolean WindowId::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint WindowId::hashCode()
@@ -57,12 +59,12 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	jstring WindowId::toString()
+	JString WindowId::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void WindowId::unregisterFocusObserver(android::view::WindowId_FocusObserver arg0)
 	{

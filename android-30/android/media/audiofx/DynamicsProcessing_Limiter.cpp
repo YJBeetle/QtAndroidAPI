@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./DynamicsProcessing_Limiter.hpp"
 
 namespace android::media::audiofx
@@ -119,12 +120,12 @@ namespace android::media::audiofx
 			arg0
 		);
 	}
-	jstring DynamicsProcessing_Limiter::toString()
+	JString DynamicsProcessing_Limiter::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::media::audiofx
 

@@ -14,6 +14,7 @@ namespace android::os
 {
 	class MessageQueue;
 }
+class JObject;
 
 namespace android::os
 {
@@ -31,8 +32,8 @@ namespace android::os
 		// Methods
 		void execute(android::os::Message arg0);
 		android::os::MessageQueue getMessageQueue();
-		jboolean hasMessages(android::os::Handler arg0, jobject arg1, jint arg2);
-		jboolean hasMessages(android::os::Handler arg0, jobject arg1, JObject arg2);
+		jboolean hasMessages(android::os::Handler arg0, JObject arg1, jint arg2);
+		jboolean hasMessages(android::os::Handler arg0, JObject arg1, JObject arg2);
 		android::os::Message next();
 		void recycle(android::os::Message arg0);
 		void release();

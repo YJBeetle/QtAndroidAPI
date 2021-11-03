@@ -6,6 +6,7 @@ namespace android::os::health
 {
 	class TimerStat;
 }
+class JString;
 
 namespace android::os::health
 {
@@ -21,7 +22,7 @@ namespace android::os::health
 		// Constructors
 		
 		// Methods
-		jstring getDataType();
+		JString getDataType();
 		jlong getMeasurement(jint arg0);
 		jint getMeasurementKeyAt(jint arg0);
 		jint getMeasurementKeyCount();

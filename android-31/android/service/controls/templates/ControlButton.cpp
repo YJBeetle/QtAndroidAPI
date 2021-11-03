@@ -1,4 +1,5 @@
 #include "../../../os/Parcel.hpp"
+#include "../../../../JString.hpp"
 #include "./ControlButton.hpp"
 
 namespace android::service::controls::templates
@@ -17,12 +18,12 @@ namespace android::service::controls::templates
 	ControlButton::ControlButton(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	ControlButton::ControlButton(jboolean arg0, jstring arg1)
+	ControlButton::ControlButton(jboolean arg0, JString arg1)
 		: JObject(
 			"android.service.controls.templates.ControlButton",
 			"(ZLjava/lang/CharSequence;)V",
 			arg0,
-			arg1
+			arg1.object<jstring>()
 		) {}
 	
 	// Methods
@@ -33,12 +34,12 @@ namespace android::service::controls::templates
 			"()I"
 		);
 	}
-	jstring ControlButton::getActionDescription()
+	JString ControlButton::getActionDescription()
 	{
 		return callObjectMethod(
 			"getActionDescription",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	jboolean ControlButton::isChecked()
 	{

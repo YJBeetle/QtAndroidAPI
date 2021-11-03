@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JString;
 
 namespace android::view
 {
@@ -24,7 +25,7 @@ namespace android::view
 		static jint getMode(jint arg0);
 		static jint getSize(jint arg0);
 		static jint makeMeasureSpec(jint arg0, jint arg1);
-		static jstring toString(jint arg0);
+		static JString toString(jint arg0);
 	};
 } // namespace android::view
 

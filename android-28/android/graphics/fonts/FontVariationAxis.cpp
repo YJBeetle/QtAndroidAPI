@@ -1,3 +1,5 @@
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
 #include "./FontVariationAxis.hpp"
 
 namespace android::graphics::fonts
@@ -8,32 +10,32 @@ namespace android::graphics::fonts
 	FontVariationAxis::FontVariationAxis(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	FontVariationAxis::FontVariationAxis(jstring arg0, jfloat arg1)
+	FontVariationAxis::FontVariationAxis(JString arg0, jfloat arg1)
 		: JObject(
 			"android.graphics.fonts.FontVariationAxis",
 			"(Ljava/lang/String;F)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		) {}
 	
 	// Methods
-	jarray FontVariationAxis::fromFontVariationSettings(jstring arg0)
+	JArray FontVariationAxis::fromFontVariationSettings(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.graphics.fonts.FontVariationAxis",
 			"fromFontVariationSettings",
 			"(Ljava/lang/String;)[Landroid/graphics/fonts/FontVariationAxis;",
-			arg0
-		).object<jarray>();
+			arg0.object<jstring>()
+		);
 	}
-	jstring FontVariationAxis::toFontVariationSettings(jarray arg0)
+	JString FontVariationAxis::toFontVariationSettings(JArray arg0)
 	{
 		return callStaticObjectMethod(
 			"android.graphics.fonts.FontVariationAxis",
 			"toFontVariationSettings",
 			"([Landroid/graphics/fonts/FontVariationAxis;)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
+			arg0.object<jarray>()
+		);
 	}
 	jfloat FontVariationAxis::getStyleValue()
 	{
@@ -42,19 +44,19 @@ namespace android::graphics::fonts
 			"()F"
 		);
 	}
-	jstring FontVariationAxis::getTag()
+	JString FontVariationAxis::getTag()
 	{
 		return callObjectMethod(
 			"getTag",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring FontVariationAxis::toString()
+	JString FontVariationAxis::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::graphics::fonts
 

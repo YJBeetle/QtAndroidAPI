@@ -1,4 +1,6 @@
 #include "../../os/Parcel.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./UrspRule.hpp"
 
 namespace android::telephony::data
@@ -26,12 +28,12 @@ namespace android::telephony::data
 			"()I"
 		);
 	}
-	jboolean UrspRule::equals(jobject arg0)
+	jboolean UrspRule::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint UrspRule::getPrecedence()
@@ -62,12 +64,12 @@ namespace android::telephony::data
 			"()I"
 		);
 	}
-	jstring UrspRule::toString()
+	JString UrspRule::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void UrspRule::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

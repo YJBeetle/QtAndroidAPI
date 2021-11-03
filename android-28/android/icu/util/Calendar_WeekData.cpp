@@ -1,3 +1,5 @@
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./Calendar_WeekData.hpp"
 
 namespace android::icu::util
@@ -57,12 +59,12 @@ namespace android::icu::util
 		) {}
 	
 	// Methods
-	jboolean Calendar_WeekData::equals(jobject arg0)
+	jboolean Calendar_WeekData::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint Calendar_WeekData::hashCode()
@@ -72,12 +74,12 @@ namespace android::icu::util
 			"()I"
 		);
 	}
-	jstring Calendar_WeekData::toString()
+	JString Calendar_WeekData::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::icu::util
 

@@ -6,6 +6,8 @@ namespace android::os
 {
 	class Parcel;
 }
+class JObject;
+class JString;
 
 namespace android::location::provider
 {
@@ -28,7 +30,7 @@ namespace android::location::provider
 		
 		// Methods
 		jint describeContents();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint getAccuracy();
 		jint getPowerUsage();
 		jboolean hasAltitudeSupport();
@@ -39,7 +41,7 @@ namespace android::location::provider
 		jboolean hasSatelliteRequirement();
 		jboolean hasSpeedSupport();
 		jint hashCode();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::location::provider

@@ -1,12 +1,13 @@
 #pragma once
 
-#include "../../../../JObject.hpp"
 #include "./ControlTemplate.hpp"
 
 namespace android::service::controls::templates
 {
 	class ControlButton;
 }
+class JString;
+class JString;
 
 namespace android::service::controls::templates
 {
@@ -20,10 +21,10 @@ namespace android::service::controls::templates
 		ToggleTemplate(QAndroidJniObject obj);
 		
 		// Constructors
-		ToggleTemplate(jstring arg0, android::service::controls::templates::ControlButton arg1);
+		ToggleTemplate(JString arg0, android::service::controls::templates::ControlButton arg1);
 		
 		// Methods
-		jstring getContentDescription();
+		JString getContentDescription();
 		jint getTemplateType();
 		jboolean isChecked();
 	};

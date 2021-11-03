@@ -1,16 +1,17 @@
 #include "../net/Uri.hpp"
+#include "../../JString.hpp"
 #include "./Contacts.hpp"
 
 namespace android::provider
 {
 	// Fields
-	jstring Contacts::AUTHORITY()
+	JString Contacts::AUTHORITY()
 	{
 		return getStaticObjectField(
 			"android.provider.Contacts",
 			"AUTHORITY",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::net::Uri Contacts::CONTENT_URI()
 	{

@@ -6,6 +6,7 @@ namespace java::io
 {
 	class InputStream;
 }
+class JString;
 namespace java::security::cert
 {
 	class CRL;
@@ -38,7 +39,7 @@ namespace java::security::cert
 		JObject engineGenerateCRLs(java::io::InputStream arg0);
 		java::security::cert::CertPath engineGenerateCertPath(java::io::InputStream arg0);
 		java::security::cert::CertPath engineGenerateCertPath(JObject arg0);
-		java::security::cert::CertPath engineGenerateCertPath(java::io::InputStream arg0, jstring arg1);
+		java::security::cert::CertPath engineGenerateCertPath(java::io::InputStream arg0, JString arg1);
 		java::security::cert::Certificate engineGenerateCertificate(java::io::InputStream arg0);
 		JObject engineGenerateCertificates(java::io::InputStream arg0);
 		JObject engineGetCertPathEncodings();

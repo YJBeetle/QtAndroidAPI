@@ -3,6 +3,8 @@
 #include "./CellIdentityTdscdma.hpp"
 #include "./CellSignalStrength.hpp"
 #include "./CellSignalStrengthTdscdma.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./CellInfoTdscdma.hpp"
 
 namespace android::telephony
@@ -30,12 +32,12 @@ namespace android::telephony
 			"()I"
 		);
 	}
-	jboolean CellInfoTdscdma::equals(jobject arg0)
+	jboolean CellInfoTdscdma::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	android::telephony::CellIdentityTdscdma CellInfoTdscdma::getCellIdentity()
@@ -59,12 +61,12 @@ namespace android::telephony
 			"()I"
 		);
 	}
-	jstring CellInfoTdscdma::toString()
+	JString CellInfoTdscdma::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void CellInfoTdscdma::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

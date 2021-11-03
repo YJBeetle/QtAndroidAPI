@@ -1,7 +1,10 @@
+#include "../../../../../JArray.hpp"
 #include "./Credential_CertificateCredential.hpp"
 #include "./Credential_SimCredential.hpp"
 #include "./Credential_UserCredential.hpp"
 #include "../../../../os/Parcel.hpp"
+#include "../../../../../JObject.hpp"
+#include "../../../../../JString.hpp"
 #include "../../../../../java/security/cert/X509Certificate.hpp"
 #include "./Credential.hpp"
 
@@ -41,12 +44,12 @@ namespace android::net::wifi::hotspot2::pps
 			"()I"
 		);
 	}
-	jboolean Credential::equals(jobject arg0)
+	jboolean Credential::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	java::security::cert::X509Certificate Credential::getCaCertificate()
@@ -63,12 +66,12 @@ namespace android::net::wifi::hotspot2::pps
 			"()Landroid/net/wifi/hotspot2/pps/Credential$CertificateCredential;"
 		);
 	}
-	jarray Credential::getClientCertificateChain()
+	JArray Credential::getClientCertificateChain()
 	{
 		return callObjectMethod(
 			"getClientCertificateChain",
 			"()[Ljava/security/cert/X509Certificate;"
-		).object<jarray>();
+		);
 	}
 	JObject Credential::getClientPrivateKey()
 	{
@@ -77,12 +80,12 @@ namespace android::net::wifi::hotspot2::pps
 			"()Ljava/security/PrivateKey;"
 		);
 	}
-	jstring Credential::getRealm()
+	JString Credential::getRealm()
 	{
 		return callObjectMethod(
 			"getRealm",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::net::wifi::hotspot2::pps::Credential_SimCredential Credential::getSimCredential()
 	{
@@ -121,12 +124,12 @@ namespace android::net::wifi::hotspot2::pps
 			arg0.object()
 		);
 	}
-	void Credential::setClientCertificateChain(jarray arg0)
+	void Credential::setClientCertificateChain(JArray arg0)
 	{
 		callMethod<void>(
 			"setClientCertificateChain",
 			"([Ljava/security/cert/X509Certificate;)V",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
 	void Credential::setClientPrivateKey(JObject arg0)
@@ -137,12 +140,12 @@ namespace android::net::wifi::hotspot2::pps
 			arg0.object()
 		);
 	}
-	void Credential::setRealm(jstring arg0)
+	void Credential::setRealm(JString arg0)
 	{
 		callMethod<void>(
 			"setRealm",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void Credential::setSimCredential(android::net::wifi::hotspot2::pps::Credential_SimCredential arg0)
@@ -161,12 +164,12 @@ namespace android::net::wifi::hotspot2::pps
 			arg0.object()
 		);
 	}
-	jstring Credential::toString()
+	JString Credential::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void Credential::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

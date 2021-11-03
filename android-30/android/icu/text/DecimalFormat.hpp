@@ -1,8 +1,5 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "../../../java/text/Format.hpp"
-#include "./UFormat.hpp"
 #include "./NumberFormat.hpp"
 
 namespace android::icu::math
@@ -33,10 +30,13 @@ namespace android::icu::util
 {
 	class CurrencyAmount;
 }
+class JString;
 namespace java::lang
 {
 	class Number;
 }
+class JObject;
+class JString;
 namespace java::lang
 {
 	class StringBuffer;
@@ -79,23 +79,23 @@ namespace android::icu::text
 		
 		// Constructors
 		DecimalFormat();
-		DecimalFormat(jstring arg0);
-		DecimalFormat(jstring arg0, android::icu::text::DecimalFormatSymbols arg1);
-		DecimalFormat(jstring arg0, android::icu::text::DecimalFormatSymbols arg1, android::icu::text::CurrencyPluralInfo arg2, jint arg3);
+		DecimalFormat(JString arg0);
+		DecimalFormat(JString arg0, android::icu::text::DecimalFormatSymbols arg1);
+		DecimalFormat(JString arg0, android::icu::text::DecimalFormatSymbols arg1, android::icu::text::CurrencyPluralInfo arg2, jint arg3);
 		
 		// Methods
-		void applyLocalizedPattern(jstring arg0);
-		void applyPattern(jstring arg0);
+		void applyLocalizedPattern(JString arg0);
+		void applyPattern(JString arg0);
 		jboolean areSignificantDigitsUsed();
-		jobject clone();
-		jboolean equals(jobject arg0);
+		JObject clone();
+		jboolean equals(JObject arg0);
 		java::lang::StringBuffer format(android::icu::math::BigDecimal arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2);
 		java::lang::StringBuffer format(android::icu::util::CurrencyAmount arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2);
 		java::lang::StringBuffer format(jdouble arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2);
 		java::lang::StringBuffer format(java::math::BigDecimal arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2);
 		java::lang::StringBuffer format(java::math::BigInteger arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2);
 		java::lang::StringBuffer format(jlong arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2);
-		JObject formatToCharacterIterator(jobject arg0);
+		JObject formatToCharacterIterator(JObject arg0);
 		android::icu::util::Currency getCurrency();
 		android::icu::text::CurrencyPluralInfo getCurrencyPluralInfo();
 		android::icu::util::Currency_CurrencyUsage getCurrencyUsage();
@@ -112,13 +112,13 @@ namespace android::icu::text
 		jint getMinimumIntegerDigits();
 		jint getMinimumSignificantDigits();
 		jint getMultiplier();
-		jstring getNegativePrefix();
-		jstring getNegativeSuffix();
+		JString getNegativePrefix();
+		JString getNegativeSuffix();
 		jchar getPadCharacter();
 		jint getPadPosition();
 		jint getParseMaxDigits();
-		jstring getPositivePrefix();
-		jstring getPositiveSuffix();
+		JString getPositivePrefix();
+		JString getPositiveSuffix();
 		java::math::BigDecimal getRoundingIncrement();
 		jint getRoundingMode();
 		jint getSecondaryGroupingSize();
@@ -131,8 +131,8 @@ namespace android::icu::text
 		jboolean isParseIntegerOnly();
 		jboolean isParseStrict();
 		jboolean isScientificNotation();
-		java::lang::Number parse(jstring arg0, java::text::ParsePosition arg1);
-		android::icu::util::CurrencyAmount parseCurrency(jstring arg0, java::text::ParsePosition arg1);
+		java::lang::Number parse(JString arg0, java::text::ParsePosition arg1);
+		android::icu::util::CurrencyAmount parseCurrency(JString arg0, java::text::ParsePosition arg1);
 		void setCurrency(android::icu::util::Currency arg0);
 		void setCurrencyPluralInfo(android::icu::text::CurrencyPluralInfo arg0);
 		void setCurrencyUsage(android::icu::util::Currency_CurrencyUsage arg0);
@@ -153,16 +153,16 @@ namespace android::icu::text
 		void setMinimumIntegerDigits(jint arg0);
 		void setMinimumSignificantDigits(jint arg0);
 		void setMultiplier(jint arg0);
-		void setNegativePrefix(jstring arg0);
-		void setNegativeSuffix(jstring arg0);
+		void setNegativePrefix(JString arg0);
+		void setNegativeSuffix(JString arg0);
 		void setPadCharacter(jchar arg0);
 		void setPadPosition(jint arg0);
 		void setParseBigDecimal(jboolean arg0);
 		void setParseIntegerOnly(jboolean arg0);
 		void setParseMaxDigits(jint arg0);
 		void setParseStrict(jboolean arg0);
-		void setPositivePrefix(jstring arg0);
-		void setPositiveSuffix(jstring arg0);
+		void setPositivePrefix(JString arg0);
+		void setPositiveSuffix(JString arg0);
 		void setRoundingIncrement(android::icu::math::BigDecimal arg0);
 		void setRoundingIncrement(jdouble arg0);
 		void setRoundingIncrement(java::math::BigDecimal arg0);
@@ -170,9 +170,9 @@ namespace android::icu::text
 		void setScientificNotation(jboolean arg0);
 		void setSecondaryGroupingSize(jint arg0);
 		void setSignificantDigitsUsed(jboolean arg0);
-		jstring toLocalizedPattern();
-		jstring toPattern();
-		jstring toString();
+		JString toLocalizedPattern();
+		JString toPattern();
+		JString toString();
 	};
 } // namespace android::icu::text
 

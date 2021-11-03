@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JArray;
+class JString;
 
 namespace android::net
 {
@@ -16,7 +18,7 @@ namespace android::net
 		
 		// Constructors
 		UrlQuerySanitizer();
-		UrlQuerySanitizer(jstring arg0);
+		UrlQuerySanitizer(JString arg0);
 		
 		// Methods
 		static JObject getAllButNulAndAngleBracketsLegal();
@@ -29,22 +31,22 @@ namespace android::net
 		static JObject getUrlAndSpaceLegal();
 		static JObject getUrlLegal();
 		jboolean getAllowUnregisteredParamaters();
-		JObject getEffectiveValueSanitizer(jstring arg0);
+		JObject getEffectiveValueSanitizer(JString arg0);
 		JObject getParameterList();
 		JObject getParameterSet();
 		jboolean getPreferFirstRepeatedParameter();
 		JObject getUnregisteredParameterValueSanitizer();
-		jstring getValue(jstring arg0);
-		JObject getValueSanitizer(jstring arg0);
-		jboolean hasParameter(jstring arg0);
-		void parseQuery(jstring arg0);
-		void parseUrl(jstring arg0);
-		void registerParameter(jstring arg0, JObject arg1);
-		void registerParameters(jarray arg0, JObject arg1);
+		JString getValue(JString arg0);
+		JObject getValueSanitizer(JString arg0);
+		jboolean hasParameter(JString arg0);
+		void parseQuery(JString arg0);
+		void parseUrl(JString arg0);
+		void registerParameter(JString arg0, JObject arg1);
+		void registerParameters(JArray arg0, JObject arg1);
 		void setAllowUnregisteredParamaters(jboolean arg0);
 		void setPreferFirstRepeatedParameter(jboolean arg0);
 		void setUnregisteredParameterValueSanitizer(JObject arg0);
-		jstring unescape(jstring arg0);
+		JString unescape(JString arg0);
 	};
 } // namespace android::net
 

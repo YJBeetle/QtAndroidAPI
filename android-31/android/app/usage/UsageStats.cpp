@@ -1,4 +1,5 @@
 #include "../../os/Parcel.hpp"
+#include "../../../JString.hpp"
 #include "./UsageStats.hpp"
 
 namespace android::app::usage
@@ -75,12 +76,12 @@ namespace android::app::usage
 			"()J"
 		);
 	}
-	jstring UsageStats::getPackageName()
+	JString UsageStats::getPackageName()
 	{
 		return callObjectMethod(
 			"getPackageName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jlong UsageStats::getTotalTimeForegroundServiceUsed()
 	{

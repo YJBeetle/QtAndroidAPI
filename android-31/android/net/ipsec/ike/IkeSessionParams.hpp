@@ -2,6 +2,7 @@
 
 #include "../../../../JObject.hpp"
 
+class JIntArray;
 namespace android::net
 {
 	class Network;
@@ -14,6 +15,8 @@ namespace android::net::ipsec::ike
 {
 	class IkeSessionParams_IkeAuthConfig;
 }
+class JObject;
+class JString;
 
 namespace android::net::ipsec::ike
 {
@@ -33,7 +36,7 @@ namespace android::net::ipsec::ike
 		// Constructors
 		
 		// Methods
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint getDpdDelaySeconds();
 		jint getHardLifetimeSeconds();
 		JObject getIkeSaProposals();
@@ -43,8 +46,8 @@ namespace android::net::ipsec::ike
 		android::net::Network getNetwork();
 		android::net::ipsec::ike::IkeSessionParams_IkeAuthConfig getRemoteAuthConfig();
 		android::net::ipsec::ike::IkeIdentification getRemoteIdentification();
-		jintArray getRetransmissionTimeoutsMillis();
-		jstring getServerHostname();
+		JIntArray getRetransmissionTimeoutsMillis();
+		JString getServerHostname();
 		jint getSoftLifetimeSeconds();
 		jboolean hasIkeOption(jint arg0);
 		jint hashCode();

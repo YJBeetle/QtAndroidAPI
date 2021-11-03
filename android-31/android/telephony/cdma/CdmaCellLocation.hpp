@@ -1,12 +1,13 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "../CellLocation.hpp"
 
 namespace android::os
 {
 	class Bundle;
 }
+class JObject;
+class JString;
 
 namespace android::telephony::cdma
 {
@@ -25,7 +26,7 @@ namespace android::telephony::cdma
 		
 		// Methods
 		static jdouble convertQuartSecToDecDegrees(jint arg0);
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		void fillInNotifierBundle(android::os::Bundle arg0);
 		jint getBaseStationId();
 		jint getBaseStationLatitude();
@@ -36,7 +37,7 @@ namespace android::telephony::cdma
 		void setCellLocationData(jint arg0, jint arg1, jint arg2);
 		void setCellLocationData(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4);
 		void setStateInvalid();
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::telephony::cdma
 

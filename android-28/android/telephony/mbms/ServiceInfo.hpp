@@ -6,6 +6,9 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
+class JObject;
+class JString;
 namespace java::util
 {
 	class Date;
@@ -29,12 +32,12 @@ namespace android::telephony::mbms
 		// Constructors
 		
 		// Methods
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		JObject getLocales();
-		jstring getNameForLocale(java::util::Locale arg0);
+		JString getNameForLocale(java::util::Locale arg0);
 		JObject getNamedContentLocales();
-		jstring getServiceClassName();
-		jstring getServiceId();
+		JString getServiceClassName();
+		JString getServiceId();
 		java::util::Date getSessionEndTime();
 		java::util::Date getSessionStartTime();
 		jint hashCode();

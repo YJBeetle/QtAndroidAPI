@@ -2,6 +2,7 @@
 
 #include "../../../../JObject.hpp"
 
+class JString;
 
 namespace org::xml::sax::helpers
 {
@@ -21,12 +22,12 @@ namespace org::xml::sax::helpers
 		// Methods
 		jint getColumnNumber();
 		jint getLineNumber();
-		jstring getPublicId();
-		jstring getSystemId();
+		JString getPublicId();
+		JString getSystemId();
 		void setColumnNumber(jint arg0);
 		void setLineNumber(jint arg0);
-		void setPublicId(jstring arg0);
-		void setSystemId(jstring arg0);
+		void setPublicId(JString arg0);
+		void setSystemId(JString arg0);
 	};
 } // namespace org::xml::sax::helpers
 

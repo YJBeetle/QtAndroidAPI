@@ -1,6 +1,7 @@
 #include "./ReportSystemUsageRequest.hpp"
 #include "./SearchResults.hpp"
 #include "./SearchSpec.hpp"
+#include "../../../JString.hpp"
 #include "./GlobalSearchSession.hpp"
 
 namespace android::app::appsearch
@@ -30,12 +31,12 @@ namespace android::app::appsearch
 			arg2.object()
 		);
 	}
-	android::app::appsearch::SearchResults GlobalSearchSession::search(jstring arg0, android::app::appsearch::SearchSpec arg1)
+	android::app::appsearch::SearchResults GlobalSearchSession::search(JString arg0, android::app::appsearch::SearchSpec arg1)
 	{
 		return callObjectMethod(
 			"search",
 			"(Ljava/lang/String;Landroid/app/appsearch/SearchSpec;)Landroid/app/appsearch/SearchResults;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}

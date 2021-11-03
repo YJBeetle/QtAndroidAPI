@@ -1,4 +1,5 @@
 #include "./WebHistoryItem.hpp"
+#include "../../JObject.hpp"
 #include "./WebBackForwardList.hpp"
 
 namespace android::webkit

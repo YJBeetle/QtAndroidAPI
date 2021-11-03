@@ -14,6 +14,8 @@ namespace android::view::translation
 {
 	class TranslationRequestValue;
 }
+class JObject;
+class JString;
 
 namespace android::view::translation
 {
@@ -22,7 +24,7 @@ namespace android::view::translation
 	public:
 		// Fields
 		static JObject CREATOR();
-		static jstring ID_TEXT();
+		static JString ID_TEXT();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ViewTranslationRequest(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
@@ -32,12 +34,12 @@ namespace android::view::translation
 		
 		// Methods
 		jint describeContents();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		android::view::autofill::AutofillId getAutofillId();
 		JObject getKeys();
-		android::view::translation::TranslationRequestValue getValue(jstring arg0);
+		android::view::translation::TranslationRequestValue getValue(JString arg0);
 		jint hashCode();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::view::translation

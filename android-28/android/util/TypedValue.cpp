@@ -1,4 +1,6 @@
 #include "./DisplayMetrics.hpp"
+#include "../../JString.hpp"
+#include "../../JString.hpp"
 #include "./TypedValue.hpp"
 
 namespace android::util
@@ -314,12 +316,12 @@ namespace android::util
 			"resourceId"
 		);
 	}
-	jstring TypedValue::string()
+	JString TypedValue::string()
 	{
 		return getObjectField(
 			"string",
 			"Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	jint TypedValue::type()
 	{
@@ -350,7 +352,7 @@ namespace android::util
 			arg2.object()
 		);
 	}
-	jstring TypedValue::coerceToString(jint arg0, jint arg1)
+	JString TypedValue::coerceToString(jint arg0, jint arg1)
 	{
 		return callStaticObjectMethod(
 			"android.util.TypedValue",
@@ -358,7 +360,7 @@ namespace android::util
 			"(II)Ljava/lang/String;",
 			arg0,
 			arg1
-		).object<jstring>();
+		);
 	}
 	jfloat TypedValue::complexToDimension(jint arg0, android::util::DisplayMetrics arg1)
 	{
@@ -410,12 +412,12 @@ namespace android::util
 			arg2
 		);
 	}
-	jstring TypedValue::coerceToString()
+	JString TypedValue::coerceToString()
 	{
 		return callObjectMethod(
 			"coerceToString",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	jint TypedValue::getComplexUnit()
 	{
@@ -456,12 +458,12 @@ namespace android::util
 			arg0.object()
 		);
 	}
-	jstring TypedValue::toString()
+	JString TypedValue::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::util
 

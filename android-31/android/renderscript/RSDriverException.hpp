@@ -1,10 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../../java/lang/Exception.hpp"
-#include "../../java/lang/RuntimeException.hpp"
 #include "./RSRuntimeException.hpp"
 
+class JString;
 
 namespace android::renderscript
 {
@@ -18,7 +16,7 @@ namespace android::renderscript
 		RSDriverException(QAndroidJniObject obj);
 		
 		// Constructors
-		RSDriverException(jstring arg0);
+		RSDriverException(JString arg0);
 		
 		// Methods
 	};

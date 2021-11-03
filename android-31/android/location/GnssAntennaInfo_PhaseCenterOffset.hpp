@@ -6,6 +6,8 @@ namespace android::os
 {
 	class Parcel;
 }
+class JObject;
+class JString;
 
 namespace android::location
 {
@@ -24,7 +26,7 @@ namespace android::location
 		
 		// Methods
 		jint describeContents();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jdouble getXOffsetMm();
 		jdouble getXOffsetUncertaintyMm();
 		jdouble getYOffsetMm();
@@ -32,7 +34,7 @@ namespace android::location
 		jdouble getZOffsetMm();
 		jdouble getZOffsetUncertaintyMm();
 		jint hashCode();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::location

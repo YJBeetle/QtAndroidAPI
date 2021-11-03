@@ -1,10 +1,8 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "../../../java/lang/Exception.hpp"
-#include "../../../java/io/IOException.hpp"
 #include "./SSLException.hpp"
 
+class JString;
 
 namespace javax::net::ssl
 {
@@ -18,7 +16,7 @@ namespace javax::net::ssl
 		SSLProtocolException(QAndroidJniObject obj);
 		
 		// Constructors
-		SSLProtocolException(jstring arg0);
+		SSLProtocolException(JString arg0);
 		
 		// Methods
 	};

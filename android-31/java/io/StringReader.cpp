@@ -1,3 +1,5 @@
+#include "../../JCharArray.hpp"
+#include "../../JString.hpp"
 #include "./StringReader.hpp"
 
 namespace java::io
@@ -8,11 +10,11 @@ namespace java::io
 	StringReader::StringReader(QAndroidJniObject obj) : java::io::Reader(obj) {}
 	
 	// Constructors
-	StringReader::StringReader(jstring arg0)
+	StringReader::StringReader(JString arg0)
 		: java::io::Reader(
 			"java.io.StringReader",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods
@@ -45,12 +47,12 @@ namespace java::io
 			"()I"
 		);
 	}
-	jint StringReader::read(jcharArray arg0, jint arg1, jint arg2)
+	jint StringReader::read(JCharArray arg0, jint arg1, jint arg2)
 	{
 		return callMethod<jint>(
 			"read",
 			"([CII)I",
-			arg0,
+			arg0.object<jcharArray>(),
 			arg1,
 			arg2
 		);

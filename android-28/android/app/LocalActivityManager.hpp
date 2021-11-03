@@ -18,6 +18,7 @@ namespace android::view
 {
 	class Window;
 }
+class JString;
 
 namespace android::app
 {
@@ -34,18 +35,18 @@ namespace android::app
 		LocalActivityManager(android::app::Activity arg0, jboolean arg1);
 		
 		// Methods
-		android::view::Window destroyActivity(jstring arg0, jboolean arg1);
+		android::view::Window destroyActivity(JString arg0, jboolean arg1);
 		void dispatchCreate(android::os::Bundle arg0);
 		void dispatchDestroy(jboolean arg0);
 		void dispatchPause(jboolean arg0);
 		void dispatchResume();
 		void dispatchStop();
-		android::app::Activity getActivity(jstring arg0);
+		android::app::Activity getActivity(JString arg0);
 		android::app::Activity getCurrentActivity();
-		jstring getCurrentId();
+		JString getCurrentId();
 		void removeAllActivities();
 		android::os::Bundle saveInstanceState();
-		android::view::Window startActivity(jstring arg0, android::content::Intent arg1);
+		android::view::Window startActivity(JString arg0, android::content::Intent arg1);
 	};
 } // namespace android::app
 

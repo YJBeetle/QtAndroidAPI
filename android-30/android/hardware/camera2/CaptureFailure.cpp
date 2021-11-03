@@ -1,4 +1,5 @@
 #include "./CaptureRequest.hpp"
+#include "../../../JString.hpp"
 #include "./CaptureFailure.hpp"
 
 namespace android::hardware::camera2
@@ -32,12 +33,12 @@ namespace android::hardware::camera2
 			"()J"
 		);
 	}
-	jstring CaptureFailure::getPhysicalCameraId()
+	JString CaptureFailure::getPhysicalCameraId()
 	{
 		return callObjectMethod(
 			"getPhysicalCameraId",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint CaptureFailure::getReason()
 	{

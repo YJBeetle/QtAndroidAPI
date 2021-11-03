@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JCharArray;
+class JString;
 
 namespace java::security
 {
@@ -15,13 +17,13 @@ namespace java::security
 		KeyStore_PasswordProtection(QAndroidJniObject obj);
 		
 		// Constructors
-		KeyStore_PasswordProtection(jcharArray arg0);
-		KeyStore_PasswordProtection(jcharArray arg0, jstring arg1, JObject arg2);
+		KeyStore_PasswordProtection(JCharArray arg0);
+		KeyStore_PasswordProtection(JCharArray arg0, JString arg1, JObject arg2);
 		
 		// Methods
 		void destroy();
-		jcharArray getPassword();
-		jstring getProtectionAlgorithm();
+		JCharArray getPassword();
+		JString getProtectionAlgorithm();
 		JObject getProtectionParameters();
 		jboolean isDestroyed();
 	};

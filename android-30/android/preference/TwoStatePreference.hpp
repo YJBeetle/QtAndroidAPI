@@ -1,6 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./Preference.hpp"
 
 namespace android::content
@@ -11,6 +10,8 @@ namespace android::content::res
 {
 	class TypedArray;
 }
+class JString;
+class JObject;
 
 namespace android::preference
 {
@@ -31,15 +32,15 @@ namespace android::preference
 		
 		// Methods
 		jboolean getDisableDependentsState();
-		jstring getSummaryOff();
-		jstring getSummaryOn();
+		JString getSummaryOff();
+		JString getSummaryOn();
 		jboolean isChecked();
 		void setChecked(jboolean arg0);
 		void setDisableDependentsState(jboolean arg0);
 		void setSummaryOff(jint arg0);
-		void setSummaryOff(jstring arg0);
+		void setSummaryOff(JString arg0);
 		void setSummaryOn(jint arg0);
-		void setSummaryOn(jstring arg0);
+		void setSummaryOn(JString arg0);
 		jboolean shouldDisableDependents();
 	};
 } // namespace android::preference

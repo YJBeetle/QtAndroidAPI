@@ -1,9 +1,9 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "./Exception.hpp"
 #include "./RuntimeException.hpp"
 
+class JClass;
+class JString;
 
 namespace java::lang
 {
@@ -17,11 +17,11 @@ namespace java::lang
 		EnumConstantNotPresentException(QAndroidJniObject obj);
 		
 		// Constructors
-		EnumConstantNotPresentException(jclass arg0, jstring arg1);
+		EnumConstantNotPresentException(JClass arg0, JString arg1);
 		
 		// Methods
-		jstring constantName();
-		jclass enumType();
+		JString constantName();
+		JClass enumType();
 	};
 } // namespace java::lang
 

@@ -6,6 +6,7 @@ namespace android::os
 {
 	class Parcel;
 }
+class JObject;
 
 namespace android::location
 {
@@ -31,7 +32,7 @@ namespace android::location
 		
 		// Methods
 		jint describeContents();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jfloat getAzimuthDegrees(jint arg0);
 		jfloat getBasebandCn0DbHz(jint arg0);
 		jfloat getCarrierFrequencyHz(jint arg0);

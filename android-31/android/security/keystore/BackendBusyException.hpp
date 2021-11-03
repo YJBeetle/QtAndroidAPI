@@ -1,10 +1,9 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "../../../java/lang/Exception.hpp"
-#include "../../../java/lang/RuntimeException.hpp"
 #include "../../../java/security/ProviderException.hpp"
 
+class JString;
+class JThrowable;
 
 namespace android::security::keystore
 {
@@ -19,8 +18,8 @@ namespace android::security::keystore
 		
 		// Constructors
 		BackendBusyException(jlong arg0);
-		BackendBusyException(jlong arg0, jstring arg1);
-		BackendBusyException(jlong arg0, jstring arg1, jthrowable arg2);
+		BackendBusyException(jlong arg0, JString arg1);
+		BackendBusyException(jlong arg0, JString arg1, JThrowable arg2);
 		
 		// Methods
 		jlong getBackOffHintMillis();

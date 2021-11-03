@@ -6,6 +6,7 @@ namespace android::icu::text
 {
 	class UnicodeSet;
 }
+class JString;
 
 namespace android::icu::text
 {
@@ -16,7 +17,7 @@ namespace android::icu::text
 		static jint IS_STRING();
 		jint codepoint();
 		jint codepointEnd();
-		jstring string();
+		JString string();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit UnicodeSetIterator(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
@@ -27,7 +28,7 @@ namespace android::icu::text
 		UnicodeSetIterator(android::icu::text::UnicodeSet arg0);
 		
 		// Methods
-		jstring getString();
+		JString getString();
 		jboolean next();
 		jboolean nextRange();
 		void reset();

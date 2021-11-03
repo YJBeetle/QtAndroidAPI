@@ -1,3 +1,5 @@
+#include "../../../JByteArray.hpp"
+#include "../../../JString.hpp"
 #include "./X509EncodedKeySpec.hpp"
 
 namespace java::security::spec
@@ -8,34 +10,34 @@ namespace java::security::spec
 	X509EncodedKeySpec::X509EncodedKeySpec(QAndroidJniObject obj) : java::security::spec::EncodedKeySpec(obj) {}
 	
 	// Constructors
-	X509EncodedKeySpec::X509EncodedKeySpec(jbyteArray arg0)
+	X509EncodedKeySpec::X509EncodedKeySpec(JByteArray arg0)
 		: java::security::spec::EncodedKeySpec(
 			"java.security.spec.X509EncodedKeySpec",
 			"([B)V",
-			arg0
+			arg0.object<jbyteArray>()
 		) {}
-	X509EncodedKeySpec::X509EncodedKeySpec(jbyteArray arg0, jstring arg1)
+	X509EncodedKeySpec::X509EncodedKeySpec(JByteArray arg0, JString arg1)
 		: java::security::spec::EncodedKeySpec(
 			"java.security.spec.X509EncodedKeySpec",
 			"([BLjava/lang/String;)V",
-			arg0,
-			arg1
+			arg0.object<jbyteArray>(),
+			arg1.object<jstring>()
 		) {}
 	
 	// Methods
-	jbyteArray X509EncodedKeySpec::getEncoded()
+	JByteArray X509EncodedKeySpec::getEncoded()
 	{
 		return callObjectMethod(
 			"getEncoded",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
-	jstring X509EncodedKeySpec::getFormat()
+	JString X509EncodedKeySpec::getFormat()
 	{
 		return callObjectMethod(
 			"getFormat",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::security::spec
 

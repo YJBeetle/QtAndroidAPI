@@ -7,6 +7,9 @@
 #include "./PreferenceManager.hpp"
 #include "../view/View.hpp"
 #include "../view/ViewGroup.hpp"
+#include "../../JString.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./Preference.hpp"
 
 namespace android::preference
@@ -64,12 +67,12 @@ namespace android::preference
 			arg0.object()
 		);
 	}
-	jint Preference::compareTo(jobject arg0)
+	jint Preference::compareTo(JObject arg0)
 	{
 		return callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Object;)I",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	android::content::Context Preference::getContext()
@@ -79,12 +82,12 @@ namespace android::preference
 			"()Landroid/content/Context;"
 		);
 	}
-	jstring Preference::getDependency()
+	JString Preference::getDependency()
 	{
 		return callObjectMethod(
 			"getDependency",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	JObject Preference::getEditor()
 	{
@@ -100,12 +103,12 @@ namespace android::preference
 			"()Landroid/os/Bundle;"
 		);
 	}
-	jstring Preference::getFragment()
+	JString Preference::getFragment()
 	{
 		return callObjectMethod(
 			"getFragment",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::graphics::drawable::Drawable Preference::getIcon()
 	{
@@ -121,12 +124,12 @@ namespace android::preference
 			"()Landroid/content/Intent;"
 		);
 	}
-	jstring Preference::getKey()
+	JString Preference::getKey()
 	{
 		return callObjectMethod(
 			"getKey",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint Preference::getLayoutResource()
 	{
@@ -199,19 +202,19 @@ namespace android::preference
 			"()Z"
 		);
 	}
-	jstring Preference::getSummary()
+	JString Preference::getSummary()
 	{
 		return callObjectMethod(
 			"getSummary",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
-	jstring Preference::getTitle()
+	JString Preference::getTitle()
 	{
 		return callObjectMethod(
 			"getTitle",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	jint Preference::getTitleRes()
 	{
@@ -342,20 +345,20 @@ namespace android::preference
 			arg0.object()
 		);
 	}
-	void Preference::setDefaultValue(jobject arg0)
+	void Preference::setDefaultValue(JObject arg0)
 	{
 		callMethod<void>(
 			"setDefaultValue",
 			"(Ljava/lang/Object;)V",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	void Preference::setDependency(jstring arg0)
+	void Preference::setDependency(JString arg0)
 	{
 		callMethod<void>(
 			"setDependency",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void Preference::setEnabled(jboolean arg0)
@@ -366,12 +369,12 @@ namespace android::preference
 			arg0
 		);
 	}
-	void Preference::setFragment(jstring arg0)
+	void Preference::setFragment(JString arg0)
 	{
 		callMethod<void>(
 			"setFragment",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void Preference::setIcon(android::graphics::drawable::Drawable arg0)
@@ -406,12 +409,12 @@ namespace android::preference
 			arg0.object()
 		);
 	}
-	void Preference::setKey(jstring arg0)
+	void Preference::setKey(JString arg0)
 	{
 		callMethod<void>(
 			"setKey",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void Preference::setLayoutResource(jint arg0)
@@ -502,12 +505,12 @@ namespace android::preference
 			arg0
 		);
 	}
-	void Preference::setSummary(jstring arg0)
+	void Preference::setSummary(JString arg0)
 	{
 		callMethod<void>(
 			"setSummary",
 			"(Ljava/lang/CharSequence;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void Preference::setTitle(jint arg0)
@@ -518,12 +521,12 @@ namespace android::preference
 			arg0
 		);
 	}
-	void Preference::setTitle(jstring arg0)
+	void Preference::setTitle(JString arg0)
 	{
 		callMethod<void>(
 			"setTitle",
 			"(Ljava/lang/CharSequence;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void Preference::setWidgetLayoutResource(jint arg0)
@@ -548,12 +551,12 @@ namespace android::preference
 			"()Z"
 		);
 	}
-	jstring Preference::toString()
+	JString Preference::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::preference
 

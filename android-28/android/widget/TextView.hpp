@@ -1,8 +1,12 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "../view/View.hpp"
 
+class JCharArray;
+class JIntArray;
+class JArray;
+class JArray;
+class JArray;
 namespace android::content
 {
 	class Context;
@@ -131,6 +135,8 @@ namespace android::widget
 {
 	class TextView_BufferType;
 }
+class JString;
+class JString;
 namespace java::util
 {
 	class ArrayList;
@@ -160,10 +166,10 @@ namespace android::widget
 		TextView(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
-		void addExtraDataToAccessibilityNodeInfo(android::view::accessibility::AccessibilityNodeInfo arg0, jstring arg1, android::os::Bundle arg2);
+		void addExtraDataToAccessibilityNodeInfo(android::view::accessibility::AccessibilityNodeInfo arg0, JString arg1, android::os::Bundle arg2);
 		void addTextChangedListener(JObject arg0);
-		void append(jstring arg0);
-		void append(jstring arg0, jint arg1, jint arg2);
+		void append(JString arg0);
+		void append(JString arg0, jint arg1, jint arg2);
 		void autofill(android::view::autofill::AutofillValue arg0);
 		void beginBatchEdit();
 		jboolean bringPointIntoView(jint arg0);
@@ -175,13 +181,13 @@ namespace android::widget
 		void drawableHotspotChanged(jfloat arg0, jfloat arg1);
 		void endBatchEdit();
 		jboolean extractText(android::view::inputmethod::ExtractedTextRequest arg0, android::view::inputmethod::ExtractedText arg1);
-		void findViewsWithText(java::util::ArrayList arg0, jstring arg1, jint arg2);
-		jstring getAccessibilityClassName();
+		void findViewsWithText(java::util::ArrayList arg0, JString arg1, jint arg2);
+		JString getAccessibilityClassName();
 		jint getAutoLinkMask();
 		jint getAutoSizeMaxTextSize();
 		jint getAutoSizeMinTextSize();
 		jint getAutoSizeStepGranularity();
-		jintArray getAutoSizeTextAvailableSizes();
+		JIntArray getAutoSizeTextAvailableSizes();
 		jint getAutoSizeTextType();
 		jint getAutofillType();
 		android::view::autofill::AutofillValue getAutofillValue();
@@ -190,8 +196,8 @@ namespace android::widget
 		jint getCompoundDrawablePadding();
 		android::content::res::ColorStateList getCompoundDrawableTintList();
 		android::graphics::PorterDuff_Mode getCompoundDrawableTintMode();
-		jarray getCompoundDrawables();
-		jarray getCompoundDrawablesRelative();
+		JArray getCompoundDrawables();
+		JArray getCompoundDrawablesRelative();
 		jint getCompoundPaddingBottom();
 		jint getCompoundPaddingEnd();
 		jint getCompoundPaddingLeft();
@@ -204,22 +210,22 @@ namespace android::widget
 		JObject getCustomSelectionActionModeCallback();
 		JObject getEditableText();
 		android::text::TextUtils_TruncateAt getEllipsize();
-		jstring getError();
+		JString getError();
 		jint getExtendedPaddingBottom();
 		jint getExtendedPaddingTop();
-		jarray getFilters();
+		JArray getFilters();
 		jint getFirstBaselineToTopHeight();
 		void getFocusedRect(android::graphics::Rect arg0);
-		jstring getFontFeatureSettings();
-		jstring getFontVariationSettings();
+		JString getFontFeatureSettings();
+		JString getFontVariationSettings();
 		jboolean getFreezesText();
 		jint getGravity();
 		jint getHighlightColor();
-		jstring getHint();
+		JString getHint();
 		android::content::res::ColorStateList getHintTextColors();
 		jint getHyphenationFrequency();
 		jint getImeActionId();
-		jstring getImeActionLabel();
+		JString getImeActionLabel();
 		android::os::LocaleList getImeHintLocales();
 		jint getImeOptions();
 		jboolean getIncludeFontPadding();
@@ -250,7 +256,7 @@ namespace android::widget
 		jint getOffsetForPosition(jfloat arg0, jfloat arg1);
 		android::text::TextPaint getPaint();
 		jint getPaintFlags();
-		jstring getPrivateImeOptions();
+		JString getPrivateImeOptions();
 		jint getSelectionEnd();
 		jint getSelectionStart();
 		jint getShadowColor();
@@ -258,7 +264,7 @@ namespace android::widget
 		jfloat getShadowDy();
 		jfloat getShadowRadius();
 		jboolean getShowSoftInputOnFocus();
-		jstring getText();
+		JString getText();
 		JObject getTextClassifier();
 		android::content::res::ColorStateList getTextColors();
 		java::util::Locale getTextLocale();
@@ -274,7 +280,7 @@ namespace android::widget
 		jint getTotalPaddingTop();
 		JObject getTransformationMethod();
 		android::graphics::Typeface getTypeface();
-		jarray getUrls();
+		JArray getUrls();
 		jboolean hasOverlappingRendering();
 		jboolean hasSelection();
 		void invalidateDrawable(android::graphics::drawable::Drawable arg0);
@@ -303,7 +309,7 @@ namespace android::widget
 		jboolean onKeyShortcut(jint arg0, android::view::KeyEvent arg1);
 		jboolean onKeyUp(jint arg0, android::view::KeyEvent arg1);
 		jboolean onPreDraw();
-		jboolean onPrivateIMECommand(jstring arg0, android::os::Bundle arg1);
+		jboolean onPrivateIMECommand(JString arg0, android::os::Bundle arg1);
 		void onProvideAutofillStructure(android::view::ViewStructure arg0, jint arg1);
 		void onProvideStructure(android::view::ViewStructure arg0);
 		android::view::PointerIcon onResolvePointerIcon(android::view::MotionEvent arg0, jint arg1);
@@ -321,7 +327,7 @@ namespace android::widget
 		void setAllCaps(jboolean arg0);
 		void setAutoLinkMask(jint arg0);
 		void setAutoSizeTextTypeUniformWithConfiguration(jint arg0, jint arg1, jint arg2, jint arg3);
-		void setAutoSizeTextTypeUniformWithPresetSizes(jintArray arg0, jint arg1);
+		void setAutoSizeTextTypeUniformWithPresetSizes(JIntArray arg0, jint arg1);
 		void setAutoSizeTextTypeWithDefaults(jint arg0);
 		void setBreakStrategy(jint arg0);
 		void setCompoundDrawablePadding(jint arg0);
@@ -341,25 +347,25 @@ namespace android::widget
 		void setEllipsize(android::text::TextUtils_TruncateAt arg0);
 		void setEms(jint arg0);
 		void setEnabled(jboolean arg0);
-		void setError(jstring arg0);
-		void setError(jstring arg0, android::graphics::drawable::Drawable arg1);
+		void setError(JString arg0);
+		void setError(JString arg0, android::graphics::drawable::Drawable arg1);
 		void setExtractedText(android::view::inputmethod::ExtractedText arg0);
 		void setFallbackLineSpacing(jboolean arg0);
-		void setFilters(jarray arg0);
+		void setFilters(JArray arg0);
 		void setFirstBaselineToTopHeight(jint arg0);
-		void setFontFeatureSettings(jstring arg0);
-		jboolean setFontVariationSettings(jstring arg0);
+		void setFontFeatureSettings(JString arg0);
+		jboolean setFontVariationSettings(JString arg0);
 		void setFreezesText(jboolean arg0);
 		void setGravity(jint arg0);
 		void setHeight(jint arg0);
 		void setHighlightColor(jint arg0);
 		void setHint(jint arg0);
-		void setHint(jstring arg0);
+		void setHint(JString arg0);
 		void setHintTextColor(android::content::res::ColorStateList arg0);
 		void setHintTextColor(jint arg0);
 		void setHorizontallyScrolling(jboolean arg0);
 		void setHyphenationFrequency(jint arg0);
-		void setImeActionLabel(jstring arg0, jint arg1);
+		void setImeActionLabel(JString arg0, jint arg1);
 		void setImeHintLocales(android::os::LocaleList arg0);
 		void setImeOptions(jint arg0);
 		void setIncludeFontPadding(jboolean arg0);
@@ -389,7 +395,7 @@ namespace android::widget
 		void setPadding(jint arg0, jint arg1, jint arg2, jint arg3);
 		void setPaddingRelative(jint arg0, jint arg1, jint arg2, jint arg3);
 		void setPaintFlags(jint arg0);
-		void setPrivateImeOptions(jstring arg0);
+		void setPrivateImeOptions(JString arg0);
 		void setRawInputType(jint arg0);
 		void setScroller(android::widget::Scroller arg0);
 		void setSelectAllOnFocus(jboolean arg0);
@@ -400,18 +406,18 @@ namespace android::widget
 		void setSingleLine(jboolean arg0);
 		void setSpannableFactory(android::text::Spannable_Factory arg0);
 		void setText(jint arg0);
-		void setText(jstring arg0);
+		void setText(JString arg0);
 		void setText(jint arg0, android::widget::TextView_BufferType arg1);
-		void setText(jstring arg0, android::widget::TextView_BufferType arg1);
-		void setText(jcharArray arg0, jint arg1, jint arg2);
+		void setText(JString arg0, android::widget::TextView_BufferType arg1);
+		void setText(JCharArray arg0, jint arg1, jint arg2);
 		void setTextAppearance(jint arg0);
 		void setTextAppearance(android::content::Context arg0, jint arg1);
 		void setTextClassifier(JObject arg0);
 		void setTextColor(android::content::res::ColorStateList arg0);
 		void setTextColor(jint arg0);
 		void setTextIsSelectable(jboolean arg0);
-		void setTextKeepState(jstring arg0);
-		void setTextKeepState(jstring arg0, android::widget::TextView_BufferType arg1);
+		void setTextKeepState(JString arg0);
+		void setTextKeepState(JString arg0, android::widget::TextView_BufferType arg1);
 		void setTextLocale(java::util::Locale arg0);
 		void setTextLocales(android::os::LocaleList arg0);
 		void setTextMetricsParams(android::text::PrecomputedText_Params arg0);

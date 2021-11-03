@@ -1,3 +1,5 @@
+#include "../../../JString.hpp"
+#include "../../../JThrowable.hpp"
 #include "./InvalidRequestMessageException.hpp"
 
 namespace android::security::identity
@@ -8,18 +10,18 @@ namespace android::security::identity
 	InvalidRequestMessageException::InvalidRequestMessageException(QAndroidJniObject obj) : android::security::identity::IdentityCredentialException(obj) {}
 	
 	// Constructors
-	InvalidRequestMessageException::InvalidRequestMessageException(jstring arg0)
+	InvalidRequestMessageException::InvalidRequestMessageException(JString arg0)
 		: android::security::identity::IdentityCredentialException(
 			"android.security.identity.InvalidRequestMessageException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	InvalidRequestMessageException::InvalidRequestMessageException(jstring arg0, jthrowable arg1)
+	InvalidRequestMessageException::InvalidRequestMessageException(JString arg0, JThrowable arg1)
 		: android::security::identity::IdentityCredentialException(
 			"android.security.identity.InvalidRequestMessageException",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
 		) {}
 	
 	// Methods

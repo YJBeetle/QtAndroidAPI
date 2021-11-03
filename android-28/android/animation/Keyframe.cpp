@@ -1,3 +1,5 @@
+#include "../../JClass.hpp"
+#include "../../JObject.hpp"
 #include "./Keyframe.hpp"
 
 namespace android::animation
@@ -62,14 +64,14 @@ namespace android::animation
 			arg0
 		);
 	}
-	android::animation::Keyframe Keyframe::ofObject(jfloat arg0, jobject arg1)
+	android::animation::Keyframe Keyframe::ofObject(jfloat arg0, JObject arg1)
 	{
 		return callStaticObjectMethod(
 			"android.animation.Keyframe",
 			"ofObject",
 			"(FLjava/lang/Object;)Landroid/animation/Keyframe;",
 			arg0,
-			arg1
+			arg1.object<jobject>()
 		);
 	}
 	android::animation::Keyframe Keyframe::clone()
@@ -93,19 +95,19 @@ namespace android::animation
 			"()Landroid/animation/TimeInterpolator;"
 		);
 	}
-	jclass Keyframe::getType()
+	JClass Keyframe::getType()
 	{
 		return callObjectMethod(
 			"getType",
 			"()Ljava/lang/Class;"
-		).object<jclass>();
+		);
 	}
-	jobject Keyframe::getValue()
+	JObject Keyframe::getValue()
 	{
 		return callObjectMethod(
 			"getValue",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
 	jboolean Keyframe::hasValue()
 	{
@@ -130,12 +132,12 @@ namespace android::animation
 			arg0.object()
 		);
 	}
-	void Keyframe::setValue(jobject arg0)
+	void Keyframe::setValue(JObject arg0)
 	{
 		callMethod<void>(
 			"setValue",
 			"(Ljava/lang/Object;)V",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 } // namespace android::animation

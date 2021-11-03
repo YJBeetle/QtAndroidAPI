@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./UnsupportedSchemeException.hpp"
 
 namespace android::media
@@ -8,11 +9,11 @@ namespace android::media
 	UnsupportedSchemeException::UnsupportedSchemeException(QAndroidJniObject obj) : android::media::MediaDrmException(obj) {}
 	
 	// Constructors
-	UnsupportedSchemeException::UnsupportedSchemeException(jstring arg0)
+	UnsupportedSchemeException::UnsupportedSchemeException(JString arg0)
 		: android::media::MediaDrmException(
 			"android.media.UnsupportedSchemeException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

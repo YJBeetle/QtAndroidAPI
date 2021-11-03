@@ -1,26 +1,27 @@
 #include "./AlarmManager_AlarmClockInfo.hpp"
 #include "./PendingIntent.hpp"
 #include "../os/Handler.hpp"
+#include "../../JString.hpp"
 #include "./AlarmManager.hpp"
 
 namespace android::app
 {
 	// Fields
-	jstring AlarmManager::ACTION_NEXT_ALARM_CLOCK_CHANGED()
+	JString AlarmManager::ACTION_NEXT_ALARM_CLOCK_CHANGED()
 	{
 		return getStaticObjectField(
 			"android.app.AlarmManager",
 			"ACTION_NEXT_ALARM_CLOCK_CHANGED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring AlarmManager::ACTION_SCHEDULE_EXACT_ALARM_PERMISSION_STATE_CHANGED()
+	JString AlarmManager::ACTION_SCHEDULE_EXACT_ALARM_PERMISSION_STATE_CHANGED()
 	{
 		return getStaticObjectField(
 			"android.app.AlarmManager",
 			"ACTION_SCHEDULE_EXACT_ALARM_PERMISSION_STATE_CHANGED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint AlarmManager::ELAPSED_REALTIME()
 	{
@@ -132,14 +133,14 @@ namespace android::app
 			arg2.object()
 		);
 	}
-	void AlarmManager::set(jint arg0, jlong arg1, jstring arg2, JObject arg3, android::os::Handler arg4)
+	void AlarmManager::set(jint arg0, jlong arg1, JString arg2, JObject arg3, android::os::Handler arg4)
 	{
 		callMethod<void>(
 			"set",
 			"(IJLjava/lang/String;Landroid/app/AlarmManager$OnAlarmListener;Landroid/os/Handler;)V",
 			arg0,
 			arg1,
-			arg2,
+			arg2.object<jstring>(),
 			arg3.object(),
 			arg4.object()
 		);
@@ -173,14 +174,14 @@ namespace android::app
 			arg2.object()
 		);
 	}
-	void AlarmManager::setExact(jint arg0, jlong arg1, jstring arg2, JObject arg3, android::os::Handler arg4)
+	void AlarmManager::setExact(jint arg0, jlong arg1, JString arg2, JObject arg3, android::os::Handler arg4)
 	{
 		callMethod<void>(
 			"setExact",
 			"(IJLjava/lang/String;Landroid/app/AlarmManager$OnAlarmListener;Landroid/os/Handler;)V",
 			arg0,
 			arg1,
-			arg2,
+			arg2.object<jstring>(),
 			arg3.object(),
 			arg4.object()
 		);
@@ -225,12 +226,12 @@ namespace android::app
 			arg0
 		);
 	}
-	void AlarmManager::setTimeZone(jstring arg0)
+	void AlarmManager::setTimeZone(JString arg0)
 	{
 		callMethod<void>(
 			"setTimeZone",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void AlarmManager::setWindow(jint arg0, jlong arg1, jlong arg2, android::app::PendingIntent arg3)
@@ -244,7 +245,7 @@ namespace android::app
 			arg3.object()
 		);
 	}
-	void AlarmManager::setWindow(jint arg0, jlong arg1, jlong arg2, jstring arg3, JObject arg4, android::os::Handler arg5)
+	void AlarmManager::setWindow(jint arg0, jlong arg1, jlong arg2, JString arg3, JObject arg4, android::os::Handler arg5)
 	{
 		callMethod<void>(
 			"setWindow",
@@ -252,7 +253,7 @@ namespace android::app
 			arg0,
 			arg1,
 			arg2,
-			arg3,
+			arg3.object<jstring>(),
 			arg4.object(),
 			arg5.object()
 		);

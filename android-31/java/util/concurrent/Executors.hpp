@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JObject;
 
 namespace java::util::concurrent
 {
@@ -18,7 +19,7 @@ namespace java::util::concurrent
 		
 		// Methods
 		static JObject callable(JObject arg0);
-		static JObject callable(JObject arg0, jobject arg1);
+		static JObject callable(JObject arg0, JObject arg1);
 		static JObject defaultThreadFactory();
 		static JObject newCachedThreadPool();
 		static JObject newCachedThreadPool(JObject arg0);

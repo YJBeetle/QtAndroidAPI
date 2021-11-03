@@ -1,4 +1,5 @@
 #include "../../../java/lang/ClassLoader.hpp"
+#include "../../../JString.hpp"
 #include "./SAXParser.hpp"
 #include "../validation/Schema.hpp"
 #include "./SAXParserFactory.hpp"
@@ -37,13 +38,13 @@ namespace javax::xml::parsers
 			"()Ljavax/xml/parsers/SAXParserFactory;"
 		);
 	}
-	javax::xml::parsers::SAXParserFactory SAXParserFactory::newInstance(jstring arg0, java::lang::ClassLoader arg1)
+	javax::xml::parsers::SAXParserFactory SAXParserFactory::newInstance(JString arg0, java::lang::ClassLoader arg1)
 	{
 		return callStaticObjectMethod(
 			"javax.xml.parsers.SAXParserFactory",
 			"newInstance",
 			"(Ljava/lang/String;Ljava/lang/ClassLoader;)Ljavax/xml/parsers/SAXParserFactory;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
@@ -55,22 +56,22 @@ namespace javax::xml::parsers
 			"()Ljavax/xml/parsers/SAXParserFactory;"
 		);
 	}
-	javax::xml::parsers::SAXParserFactory SAXParserFactory::newNSInstance(jstring arg0, java::lang::ClassLoader arg1)
+	javax::xml::parsers::SAXParserFactory SAXParserFactory::newNSInstance(JString arg0, java::lang::ClassLoader arg1)
 	{
 		return callStaticObjectMethod(
 			"javax.xml.parsers.SAXParserFactory",
 			"newNSInstance",
 			"(Ljava/lang/String;Ljava/lang/ClassLoader;)Ljavax/xml/parsers/SAXParserFactory;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
-	jboolean SAXParserFactory::getFeature(jstring arg0)
+	jboolean SAXParserFactory::getFeature(JString arg0)
 	{
 		return callMethod<jboolean>(
 			"getFeature",
 			"(Ljava/lang/String;)Z",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	javax::xml::validation::Schema SAXParserFactory::getSchema()
@@ -108,12 +109,12 @@ namespace javax::xml::parsers
 			"()Ljavax/xml/parsers/SAXParser;"
 		);
 	}
-	void SAXParserFactory::setFeature(jstring arg0, jboolean arg1)
+	void SAXParserFactory::setFeature(JString arg0, jboolean arg1)
 	{
 		callMethod<void>(
 			"setFeature",
 			"(Ljava/lang/String;Z)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}

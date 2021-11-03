@@ -1,5 +1,6 @@
 #include "./MediaFormat.hpp"
 #include "../os/Parcel.hpp"
+#include "../../JString.hpp"
 #include "./MediaPlayer_TrackInfo.hpp"
 
 namespace android::media
@@ -68,12 +69,12 @@ namespace android::media
 			"()Landroid/media/MediaFormat;"
 		);
 	}
-	jstring MediaPlayer_TrackInfo::getLanguage()
+	JString MediaPlayer_TrackInfo::getLanguage()
 	{
 		return callObjectMethod(
 			"getLanguage",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint MediaPlayer_TrackInfo::getTrackType()
 	{
@@ -82,12 +83,12 @@ namespace android::media
 			"()I"
 		);
 	}
-	jstring MediaPlayer_TrackInfo::toString()
+	JString MediaPlayer_TrackInfo::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void MediaPlayer_TrackInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

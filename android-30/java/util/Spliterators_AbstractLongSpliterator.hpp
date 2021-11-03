@@ -2,7 +2,6 @@
 
 #include "../../JObject.hpp"
 
-
 namespace java::util
 {
 	class Spliterators_AbstractLongSpliterator : public JObject

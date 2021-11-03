@@ -1,8 +1,9 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "../../../java/lang/Enum.hpp"
 
+class JArray;
+class JString;
 
 namespace android::icu::lang
 {
@@ -24,8 +25,8 @@ namespace android::icu::lang
 		// Constructors
 		
 		// Methods
-		static android::icu::lang::UScript_ScriptUsage valueOf(jstring arg0);
-		static jarray values();
+		static android::icu::lang::UScript_ScriptUsage valueOf(JString arg0);
+		static JArray values();
 	};
 } // namespace android::icu::lang
 

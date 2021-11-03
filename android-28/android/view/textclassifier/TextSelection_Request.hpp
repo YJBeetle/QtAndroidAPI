@@ -10,6 +10,7 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
 
 namespace android::view::textclassifier
 {
@@ -30,7 +31,7 @@ namespace android::view::textclassifier
 		android::os::LocaleList getDefaultLocales();
 		jint getEndIndex();
 		jint getStartIndex();
-		jstring getText();
+		JString getText();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::view::textclassifier

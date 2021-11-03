@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./InterruptedIOException.hpp"
 
 namespace java::io
@@ -19,11 +20,11 @@ namespace java::io
 			"java.io.InterruptedIOException",
 			"()V"
 		) {}
-	InterruptedIOException::InterruptedIOException(jstring arg0)
+	InterruptedIOException::InterruptedIOException(JString arg0)
 		: java::io::IOException(
 			"java.io.InterruptedIOException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

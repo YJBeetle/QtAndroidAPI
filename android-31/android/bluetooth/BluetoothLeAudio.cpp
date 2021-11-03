@@ -1,16 +1,18 @@
+#include "../../JIntArray.hpp"
 #include "./BluetoothDevice.hpp"
+#include "../../JString.hpp"
 #include "./BluetoothLeAudio.hpp"
 
 namespace android::bluetooth
 {
 	// Fields
-	jstring BluetoothLeAudio::ACTION_LE_AUDIO_CONNECTION_STATE_CHANGED()
+	JString BluetoothLeAudio::ACTION_LE_AUDIO_CONNECTION_STATE_CHANGED()
 	{
 		return getStaticObjectField(
 			"android.bluetooth.BluetoothLeAudio",
 			"ACTION_LE_AUDIO_CONNECTION_STATE_CHANGED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QAndroidJniObject forward
@@ -41,12 +43,12 @@ namespace android::bluetooth
 			arg0.object()
 		);
 	}
-	JObject BluetoothLeAudio::getDevicesMatchingConnectionStates(jintArray arg0)
+	JObject BluetoothLeAudio::getDevicesMatchingConnectionStates(JIntArray arg0)
 	{
 		return callObjectMethod(
 			"getDevicesMatchingConnectionStates",
 			"([I)Ljava/util/List;",
-			arg0
+			arg0.object<jintArray>()
 		);
 	}
 } // namespace android::bluetooth

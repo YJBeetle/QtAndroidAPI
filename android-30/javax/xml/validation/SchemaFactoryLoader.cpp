@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./SchemaFactory.hpp"
 #include "./SchemaFactoryLoader.hpp"
 
@@ -11,12 +12,12 @@ namespace javax::xml::validation
 	// Constructors
 	
 	// Methods
-	javax::xml::validation::SchemaFactory SchemaFactoryLoader::newFactory(jstring arg0)
+	javax::xml::validation::SchemaFactory SchemaFactoryLoader::newFactory(JString arg0)
 	{
 		return callObjectMethod(
 			"newFactory",
 			"(Ljava/lang/String;)Ljavax/xml/validation/SchemaFactory;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 } // namespace javax::xml::validation

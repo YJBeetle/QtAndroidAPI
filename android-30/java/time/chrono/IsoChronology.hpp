@@ -1,12 +1,13 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "./AbstractChronology.hpp"
 
 namespace java::io
 {
 	class ObjectInputStream;
 }
+class JObject;
+class JString;
 namespace java::time
 {
 	class Clock;
@@ -83,8 +84,8 @@ namespace java::time::chrono
 		jlong epochSecond(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, java::time::ZoneOffset arg6);
 		java::time::chrono::IsoEra eraOf(jint arg0);
 		JObject eras();
-		jstring getCalendarType();
-		jstring getId();
+		JString getCalendarType();
+		JString getId();
 		jboolean isLeapYear(jlong arg0);
 		java::time::LocalDateTime localDateTime(JObject arg0);
 		java::time::Period period(jint arg0, jint arg1, jint arg2);

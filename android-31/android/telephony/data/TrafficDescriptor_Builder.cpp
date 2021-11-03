@@ -1,4 +1,6 @@
+#include "../../../JByteArray.hpp"
 #include "./TrafficDescriptor.hpp"
+#include "../../../JString.hpp"
 #include "./TrafficDescriptor_Builder.hpp"
 
 namespace android::telephony::data
@@ -23,20 +25,20 @@ namespace android::telephony::data
 			"()Landroid/telephony/data/TrafficDescriptor;"
 		);
 	}
-	android::telephony::data::TrafficDescriptor_Builder TrafficDescriptor_Builder::setDataNetworkName(jstring arg0)
+	android::telephony::data::TrafficDescriptor_Builder TrafficDescriptor_Builder::setDataNetworkName(JString arg0)
 	{
 		return callObjectMethod(
 			"setDataNetworkName",
 			"(Ljava/lang/String;)Landroid/telephony/data/TrafficDescriptor$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	android::telephony::data::TrafficDescriptor_Builder TrafficDescriptor_Builder::setOsAppId(jbyteArray arg0)
+	android::telephony::data::TrafficDescriptor_Builder TrafficDescriptor_Builder::setOsAppId(JByteArray arg0)
 	{
 		return callObjectMethod(
 			"setOsAppId",
 			"([B)Landroid/telephony/data/TrafficDescriptor$Builder;",
-			arg0
+			arg0.object<jbyteArray>()
 		);
 	}
 } // namespace android::telephony::data

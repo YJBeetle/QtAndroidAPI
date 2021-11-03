@@ -1,7 +1,5 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "./BaseMovementMethod.hpp"
 #include "./ScrollingMovementMethod.hpp"
 
 namespace android::view

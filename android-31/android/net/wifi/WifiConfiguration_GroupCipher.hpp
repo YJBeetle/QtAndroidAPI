@@ -2,6 +2,8 @@
 
 #include "../../../JObject.hpp"
 
+class JArray;
+class JString;
 
 namespace android::net::wifi
 {
@@ -16,8 +18,8 @@ namespace android::net::wifi
 		static jint TKIP();
 		static jint WEP104();
 		static jint WEP40();
-		static jarray strings();
-		static jstring varName();
+		static JArray strings();
+		static JString varName();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit WifiConfiguration_GroupCipher(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}

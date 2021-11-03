@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./AbstractCollection.hpp"
 
+class JObject;
 
 namespace java::util
 {
@@ -18,11 +18,11 @@ namespace java::util
 		// Constructors
 		
 		// Methods
-		jboolean add(jobject arg0);
+		jboolean add(JObject arg0);
 		jboolean addAll(JObject arg0);
 		void clear();
-		jobject element();
-		jobject remove();
+		JObject element();
+		JObject remove();
 	};
 } // namespace java::util
 

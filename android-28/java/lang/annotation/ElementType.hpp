@@ -1,8 +1,9 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "../Enum.hpp"
 
+class JArray;
+class JString;
 
 namespace java::lang::annotation
 {
@@ -30,8 +31,8 @@ namespace java::lang::annotation
 		// Constructors
 		
 		// Methods
-		static java::lang::annotation::ElementType valueOf(jstring arg0);
-		static jarray values();
+		static java::lang::annotation::ElementType valueOf(JString arg0);
+		static JArray values();
 	};
 } // namespace java::lang::annotation
 

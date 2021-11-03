@@ -1,3 +1,4 @@
+#include "../../JFloatArray.hpp"
 #include "./ColorSpace.hpp"
 #include "./ColorSpace_RenderIntent.hpp"
 #include "./ColorSpace_Connector.hpp"
@@ -33,15 +34,15 @@ namespace android::graphics
 			"()Landroid/graphics/ColorSpace;"
 		);
 	}
-	jfloatArray ColorSpace_Connector::transform(jfloatArray arg0)
+	JFloatArray ColorSpace_Connector::transform(JFloatArray arg0)
 	{
 		return callObjectMethod(
 			"transform",
 			"([F)[F",
-			arg0
-		).object<jfloatArray>();
+			arg0.object<jfloatArray>()
+		);
 	}
-	jfloatArray ColorSpace_Connector::transform(jfloat arg0, jfloat arg1, jfloat arg2)
+	JFloatArray ColorSpace_Connector::transform(jfloat arg0, jfloat arg1, jfloat arg2)
 	{
 		return callObjectMethod(
 			"transform",
@@ -49,7 +50,7 @@ namespace android::graphics
 			arg0,
 			arg1,
 			arg2
-		).object<jfloatArray>();
+		);
 	}
 } // namespace android::graphics
 

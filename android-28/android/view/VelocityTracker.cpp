@@ -1,4 +1,5 @@
 #include "./MotionEvent.hpp"
+#include "../../JString.hpp"
 #include "./VelocityTracker.hpp"
 
 namespace android::view

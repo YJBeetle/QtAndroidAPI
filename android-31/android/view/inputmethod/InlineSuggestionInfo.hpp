@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JArray;
 namespace android::os
 {
 	class Parcel;
@@ -10,6 +11,8 @@ namespace android::widget::inline
 {
 	class InlinePresentationSpec;
 }
+class JObject;
+class JString;
 
 namespace android::view::inputmethod
 {
@@ -18,10 +21,10 @@ namespace android::view::inputmethod
 	public:
 		// Fields
 		static JObject CREATOR();
-		static jstring SOURCE_AUTOFILL();
-		static jstring SOURCE_PLATFORM();
-		static jstring TYPE_ACTION();
-		static jstring TYPE_SUGGESTION();
+		static JString SOURCE_AUTOFILL();
+		static JString SOURCE_PLATFORM();
+		static JString TYPE_ACTION();
+		static JString TYPE_SUGGESTION();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit InlineSuggestionInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
@@ -31,14 +34,14 @@ namespace android::view::inputmethod
 		
 		// Methods
 		jint describeContents();
-		jboolean equals(jobject arg0);
-		jarray getAutofillHints();
+		jboolean equals(JObject arg0);
+		JArray getAutofillHints();
 		android::widget::inline::InlinePresentationSpec getInlinePresentationSpec();
-		jstring getSource();
-		jstring getType();
+		JString getSource();
+		JString getType();
 		jint hashCode();
 		jboolean isPinned();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::view::inputmethod

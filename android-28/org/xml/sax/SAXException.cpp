@@ -1,6 +1,9 @@
+#include "../../../JArray.hpp"
 #include "../../../java/io/ObjectInputStream.hpp"
 #include "../../../java/io/ObjectOutputStream.hpp"
 #include "../../../java/lang/Exception.hpp"
+#include "../../../JString.hpp"
+#include "../../../JThrowable.hpp"
 #include "./SAXException.hpp"
 
 namespace org::xml::sax
@@ -22,27 +25,27 @@ namespace org::xml::sax
 			"(Ljava/lang/Exception;)V",
 			arg0.object()
 		) {}
-	SAXException::SAXException(jstring arg0)
+	SAXException::SAXException(JString arg0)
 		: java::lang::Exception(
 			"org.xml.sax.SAXException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	SAXException::SAXException(jstring arg0, java::lang::Exception arg1)
+	SAXException::SAXException(JString arg0, java::lang::Exception arg1)
 		: java::lang::Exception(
 			"org.xml.sax.SAXException",
 			"(Ljava/lang/String;Ljava/lang/Exception;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		) {}
 	
 	// Methods
-	jthrowable SAXException::getCause()
+	JThrowable SAXException::getCause()
 	{
 		return callObjectMethod(
 			"getCause",
 			"()Ljava/lang/Throwable;"
-		).object<jthrowable>();
+		);
 	}
 	java::lang::Exception SAXException::getException()
 	{
@@ -51,19 +54,19 @@ namespace org::xml::sax
 			"()Ljava/lang/Exception;"
 		);
 	}
-	jstring SAXException::getMessage()
+	JString SAXException::getMessage()
 	{
 		return callObjectMethod(
 			"getMessage",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring SAXException::toString()
+	JString SAXException::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace org::xml::sax
 

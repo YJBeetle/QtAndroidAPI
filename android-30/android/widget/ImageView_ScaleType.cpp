@@ -1,3 +1,5 @@
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
 #include "./ImageView_ScaleType.hpp"
 
 namespace android::widget
@@ -74,22 +76,22 @@ namespace android::widget
 	// Constructors
 	
 	// Methods
-	android::widget::ImageView_ScaleType ImageView_ScaleType::valueOf(jstring arg0)
+	android::widget::ImageView_ScaleType ImageView_ScaleType::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.widget.ImageView$ScaleType",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/widget/ImageView$ScaleType;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray ImageView_ScaleType::values()
+	JArray ImageView_ScaleType::values()
 	{
 		return callStaticObjectMethod(
 			"android.widget.ImageView$ScaleType",
 			"values",
 			"()[Landroid/widget/ImageView$ScaleType;"
-		).object<jarray>();
+		);
 	}
 } // namespace android::widget
 

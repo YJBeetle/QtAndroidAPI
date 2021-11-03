@@ -1,3 +1,5 @@
+#include "../../../JString.hpp"
+#include "../../../JThrowable.hpp"
 #include "./KeyNotYetValidException.hpp"
 
 namespace android::security::keystore
@@ -13,18 +15,18 @@ namespace android::security::keystore
 			"android.security.keystore.KeyNotYetValidException",
 			"()V"
 		) {}
-	KeyNotYetValidException::KeyNotYetValidException(jstring arg0)
+	KeyNotYetValidException::KeyNotYetValidException(JString arg0)
 		: java::security::InvalidKeyException(
 			"android.security.keystore.KeyNotYetValidException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	KeyNotYetValidException::KeyNotYetValidException(jstring arg0, jthrowable arg1)
+	KeyNotYetValidException::KeyNotYetValidException(JString arg0, JThrowable arg1)
 		: java::security::InvalidKeyException(
 			"android.security.keystore.KeyNotYetValidException",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
 		) {}
 	
 	// Methods

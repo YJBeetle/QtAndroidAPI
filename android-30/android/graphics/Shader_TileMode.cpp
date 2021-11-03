@@ -1,3 +1,5 @@
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
 #include "./Shader_TileMode.hpp"
 
 namespace android::graphics
@@ -34,22 +36,22 @@ namespace android::graphics
 	// Constructors
 	
 	// Methods
-	android::graphics::Shader_TileMode Shader_TileMode::valueOf(jstring arg0)
+	android::graphics::Shader_TileMode Shader_TileMode::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.graphics.Shader$TileMode",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/graphics/Shader$TileMode;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray Shader_TileMode::values()
+	JArray Shader_TileMode::values()
 	{
 		return callStaticObjectMethod(
 			"android.graphics.Shader$TileMode",
 			"values",
 			"()[Landroid/graphics/Shader$TileMode;"
-		).object<jarray>();
+		);
 	}
 } // namespace android::graphics
 

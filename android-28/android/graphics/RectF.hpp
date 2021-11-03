@@ -10,6 +10,8 @@ namespace android::os
 {
 	class Parcel;
 }
+class JObject;
+class JString;
 
 namespace android::graphics
 {
@@ -41,7 +43,7 @@ namespace android::graphics
 		jboolean contains(jfloat arg0, jfloat arg1);
 		jboolean contains(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3);
 		jint describeContents();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint hashCode();
 		jfloat height();
 		void inset(jfloat arg0, jfloat arg1);
@@ -60,8 +62,8 @@ namespace android::graphics
 		void setEmpty();
 		jboolean setIntersect(android::graphics::RectF arg0, android::graphics::RectF arg1);
 		void sort();
-		jstring toShortString();
-		jstring toString();
+		JString toShortString();
+		JString toString();
 		void _union(android::graphics::RectF arg0);
 		void _union(jfloat arg0, jfloat arg1);
 		void _union(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3);

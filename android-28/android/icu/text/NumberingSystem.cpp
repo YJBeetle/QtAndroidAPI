@@ -1,4 +1,6 @@
+#include "../../../JArray.hpp"
 #include "../util/ULocale.hpp"
+#include "../../../JString.hpp"
 #include "../../../java/util/Locale.hpp"
 #include "./NumberingSystem.hpp"
 
@@ -17,13 +19,13 @@ namespace android::icu::text
 		) {}
 	
 	// Methods
-	jarray NumberingSystem::getAvailableNames()
+	JArray NumberingSystem::getAvailableNames()
 	{
 		return callStaticObjectMethod(
 			"android.icu.text.NumberingSystem",
 			"getAvailableNames",
 			"()[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
 	android::icu::text::NumberingSystem NumberingSystem::getInstance()
 	{
@@ -51,7 +53,7 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	android::icu::text::NumberingSystem NumberingSystem::getInstance(jint arg0, jboolean arg1, jstring arg2)
+	android::icu::text::NumberingSystem NumberingSystem::getInstance(jint arg0, jboolean arg1, JString arg2)
 	{
 		return callStaticObjectMethod(
 			"android.icu.text.NumberingSystem",
@@ -59,40 +61,40 @@ namespace android::icu::text
 			"(IZLjava/lang/String;)Landroid/icu/text/NumberingSystem;",
 			arg0,
 			arg1,
-			arg2
+			arg2.object<jstring>()
 		);
 	}
-	android::icu::text::NumberingSystem NumberingSystem::getInstanceByName(jstring arg0)
+	android::icu::text::NumberingSystem NumberingSystem::getInstanceByName(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.icu.text.NumberingSystem",
 			"getInstanceByName",
 			"(Ljava/lang/String;)Landroid/icu/text/NumberingSystem;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jboolean NumberingSystem::isValidDigitString(jstring arg0)
+	jboolean NumberingSystem::isValidDigitString(JString arg0)
 	{
 		return callStaticMethod<jboolean>(
 			"android.icu.text.NumberingSystem",
 			"isValidDigitString",
 			"(Ljava/lang/String;)Z",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jstring NumberingSystem::getDescription()
+	JString NumberingSystem::getDescription()
 	{
 		return callObjectMethod(
 			"getDescription",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring NumberingSystem::getName()
+	JString NumberingSystem::getName()
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint NumberingSystem::getRadix()
 	{

@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JArray;
 namespace android::content
 {
 	class ContentResolver;
@@ -26,7 +27,7 @@ namespace android::provider
 		// Constructors
 		
 		// Methods
-		static JObject query(android::content::ContentResolver arg0, jint arg1, jint arg2, jarray arg3);
+		static JObject query(android::content::ContentResolver arg0, jint arg1, jint arg2, JArray arg3);
 	};
 } // namespace android::provider
 

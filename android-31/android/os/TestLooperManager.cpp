@@ -1,6 +1,7 @@
 #include "./Handler.hpp"
 #include "./Message.hpp"
 #include "./MessageQueue.hpp"
+#include "../../JObject.hpp"
 #include "./TestLooperManager.hpp"
 
 namespace android::os
@@ -28,23 +29,23 @@ namespace android::os
 			"()Landroid/os/MessageQueue;"
 		);
 	}
-	jboolean TestLooperManager::hasMessages(android::os::Handler arg0, jobject arg1, jint arg2)
+	jboolean TestLooperManager::hasMessages(android::os::Handler arg0, JObject arg1, jint arg2)
 	{
 		return callMethod<jboolean>(
 			"hasMessages",
 			"(Landroid/os/Handler;Ljava/lang/Object;I)Z",
 			arg0.object(),
-			arg1,
+			arg1.object<jobject>(),
 			arg2
 		);
 	}
-	jboolean TestLooperManager::hasMessages(android::os::Handler arg0, jobject arg1, JObject arg2)
+	jboolean TestLooperManager::hasMessages(android::os::Handler arg0, JObject arg1, JObject arg2)
 	{
 		return callMethod<jboolean>(
 			"hasMessages",
 			"(Landroid/os/Handler;Ljava/lang/Object;Ljava/lang/Runnable;)Z",
 			arg0.object(),
-			arg1,
+			arg1.object<jobject>(),
 			arg2.object()
 		);
 	}

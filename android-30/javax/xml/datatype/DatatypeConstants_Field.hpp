@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JString;
 
 namespace javax::xml::datatype
 {
@@ -18,7 +19,7 @@ namespace javax::xml::datatype
 		
 		// Methods
 		jint getId();
-		jstring toString();
+		JString toString();
 	};
 } // namespace javax::xml::datatype
 

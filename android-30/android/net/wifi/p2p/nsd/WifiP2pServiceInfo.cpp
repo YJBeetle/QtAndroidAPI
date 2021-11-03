@@ -1,4 +1,5 @@
 #include "../../../../os/Parcel.hpp"
+#include "../../../../../JObject.hpp"
 #include "./WifiP2pServiceInfo.hpp"
 
 namespace android::net::wifi::p2p::nsd
@@ -46,12 +47,12 @@ namespace android::net::wifi::p2p::nsd
 			"()I"
 		);
 	}
-	jboolean WifiP2pServiceInfo::equals(jobject arg0)
+	jboolean WifiP2pServiceInfo::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint WifiP2pServiceInfo::hashCode()

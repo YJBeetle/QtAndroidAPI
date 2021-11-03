@@ -1,4 +1,6 @@
 #include "./TextPaint.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./PrecomputedText_Params.hpp"
 
 namespace android::text
@@ -11,12 +13,12 @@ namespace android::text
 	// Constructors
 	
 	// Methods
-	jboolean PrecomputedText_Params::equals(jobject arg0)
+	jboolean PrecomputedText_Params::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint PrecomputedText_Params::getBreakStrategy()
@@ -54,12 +56,12 @@ namespace android::text
 			"()I"
 		);
 	}
-	jstring PrecomputedText_Params::toString()
+	JString PrecomputedText_Params::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::text
 

@@ -1,8 +1,10 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "../AbstractMap.hpp"
 
+class JArray;
+class JArray;
+class JArray;
 namespace java::io
 {
 	class ObjectInputStream;
@@ -11,6 +13,9 @@ namespace java::io
 {
 	class ObjectOutputStream;
 }
+class JClass;
+class JObject;
+class JString;
 namespace java::util::concurrent
 {
 	class ConcurrentHashMap_KeySetView;
@@ -38,15 +43,15 @@ namespace java::util::concurrent
 		static java::util::concurrent::ConcurrentHashMap_KeySetView newKeySet();
 		static java::util::concurrent::ConcurrentHashMap_KeySetView newKeySet(jint arg0);
 		void clear();
-		jobject compute(jobject arg0, JObject arg1);
-		jobject computeIfAbsent(jobject arg0, JObject arg1);
-		jobject computeIfPresent(jobject arg0, JObject arg1);
-		jboolean contains(jobject arg0);
-		jboolean containsKey(jobject arg0);
-		jboolean containsValue(jobject arg0);
+		JObject compute(JObject arg0, JObject arg1);
+		JObject computeIfAbsent(JObject arg0, JObject arg1);
+		JObject computeIfPresent(JObject arg0, JObject arg1);
+		jboolean contains(JObject arg0);
+		jboolean containsKey(JObject arg0);
+		jboolean containsValue(JObject arg0);
 		JObject elements();
 		JObject entrySet();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		void forEach(JObject arg0);
 		void forEach(jlong arg0, JObject arg1);
 		void forEach(jlong arg0, JObject arg1, JObject arg2);
@@ -56,48 +61,48 @@ namespace java::util::concurrent
 		void forEachKey(jlong arg0, JObject arg1, JObject arg2);
 		void forEachValue(jlong arg0, JObject arg1);
 		void forEachValue(jlong arg0, JObject arg1, JObject arg2);
-		jobject get(jobject arg0);
-		jobject getOrDefault(jobject arg0, jobject arg1);
+		JObject get(JObject arg0);
+		JObject getOrDefault(JObject arg0, JObject arg1);
 		jint hashCode();
 		jboolean isEmpty();
 		java::util::concurrent::ConcurrentHashMap_KeySetView keySet();
-		java::util::concurrent::ConcurrentHashMap_KeySetView keySet(jobject arg0);
+		java::util::concurrent::ConcurrentHashMap_KeySetView keySet(JObject arg0);
 		JObject keys();
 		jlong mappingCount();
-		jobject merge(jobject arg0, jobject arg1, JObject arg2);
-		jobject put(jobject arg0, jobject arg1);
+		JObject merge(JObject arg0, JObject arg1, JObject arg2);
+		JObject put(JObject arg0, JObject arg1);
 		void putAll(JObject arg0);
-		jobject putIfAbsent(jobject arg0, jobject arg1);
-		jobject reduce(jlong arg0, JObject arg1, JObject arg2);
-		jobject reduceEntries(jlong arg0, JObject arg1, JObject arg2);
+		JObject putIfAbsent(JObject arg0, JObject arg1);
+		JObject reduce(jlong arg0, JObject arg1, JObject arg2);
+		JObject reduceEntries(jlong arg0, JObject arg1, JObject arg2);
 		JObject reduceEntries(jlong arg0, JObject arg1);
 		jdouble reduceEntriesToDouble(jlong arg0, JObject arg1, jdouble arg2, JObject arg3);
 		jint reduceEntriesToInt(jlong arg0, JObject arg1, jint arg2, JObject arg3);
 		jlong reduceEntriesToLong(jlong arg0, JObject arg1, jlong arg2, JObject arg3);
-		jobject reduceKeys(jlong arg0, JObject arg1);
-		jobject reduceKeys(jlong arg0, JObject arg1, JObject arg2);
+		JObject reduceKeys(jlong arg0, JObject arg1);
+		JObject reduceKeys(jlong arg0, JObject arg1, JObject arg2);
 		jdouble reduceKeysToDouble(jlong arg0, JObject arg1, jdouble arg2, JObject arg3);
 		jint reduceKeysToInt(jlong arg0, JObject arg1, jint arg2, JObject arg3);
 		jlong reduceKeysToLong(jlong arg0, JObject arg1, jlong arg2, JObject arg3);
 		jdouble reduceToDouble(jlong arg0, JObject arg1, jdouble arg2, JObject arg3);
 		jint reduceToInt(jlong arg0, JObject arg1, jint arg2, JObject arg3);
 		jlong reduceToLong(jlong arg0, JObject arg1, jlong arg2, JObject arg3);
-		jobject reduceValues(jlong arg0, JObject arg1);
-		jobject reduceValues(jlong arg0, JObject arg1, JObject arg2);
+		JObject reduceValues(jlong arg0, JObject arg1);
+		JObject reduceValues(jlong arg0, JObject arg1, JObject arg2);
 		jdouble reduceValuesToDouble(jlong arg0, JObject arg1, jdouble arg2, JObject arg3);
 		jint reduceValuesToInt(jlong arg0, JObject arg1, jint arg2, JObject arg3);
 		jlong reduceValuesToLong(jlong arg0, JObject arg1, jlong arg2, JObject arg3);
-		jboolean remove(jobject arg0, jobject arg1);
-		jobject remove(jobject arg0);
-		jboolean replace(jobject arg0, jobject arg1, jobject arg2);
-		jobject replace(jobject arg0, jobject arg1);
+		jboolean remove(JObject arg0, JObject arg1);
+		JObject remove(JObject arg0);
+		jboolean replace(JObject arg0, JObject arg1, JObject arg2);
+		JObject replace(JObject arg0, JObject arg1);
 		void replaceAll(JObject arg0);
-		jobject search(jlong arg0, JObject arg1);
-		jobject searchEntries(jlong arg0, JObject arg1);
-		jobject searchKeys(jlong arg0, JObject arg1);
-		jobject searchValues(jlong arg0, JObject arg1);
+		JObject search(jlong arg0, JObject arg1);
+		JObject searchEntries(jlong arg0, JObject arg1);
+		JObject searchKeys(jlong arg0, JObject arg1);
+		JObject searchValues(jlong arg0, JObject arg1);
 		jint size();
-		jstring toString();
+		JString toString();
 		JObject values();
 	};
 } // namespace java::util::concurrent

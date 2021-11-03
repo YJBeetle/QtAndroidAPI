@@ -2,10 +2,14 @@
 
 #include "../../../../JObject.hpp"
 
+class JIntArray;
+class JArray;
 namespace android::util
 {
 	class Rational;
 }
+class JObject;
+class JString;
 
 namespace android::hardware::camera2::params
 {
@@ -19,16 +23,16 @@ namespace android::hardware::camera2::params
 		ColorSpaceTransform(QAndroidJniObject obj);
 		
 		// Constructors
-		ColorSpaceTransform(jintArray arg0);
-		ColorSpaceTransform(jarray arg0);
+		ColorSpaceTransform(JIntArray arg0);
+		ColorSpaceTransform(JArray arg0);
 		
 		// Methods
-		void copyElements(jintArray arg0, jint arg1);
-		void copyElements(jarray arg0, jint arg1);
-		jboolean equals(jobject arg0);
+		void copyElements(JIntArray arg0, jint arg1);
+		void copyElements(JArray arg0, jint arg1);
+		jboolean equals(JObject arg0);
 		android::util::Rational getElement(jint arg0, jint arg1);
 		jint hashCode();
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::hardware::camera2::params
 

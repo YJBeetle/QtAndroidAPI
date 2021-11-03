@@ -6,6 +6,7 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
 
 namespace android::app::usage
 {
@@ -30,7 +31,7 @@ namespace android::app::usage
 		jlong getLastTimeStamp();
 		jlong getLastTimeUsed();
 		jlong getLastTimeVisible();
-		jstring getPackageName();
+		JString getPackageName();
 		jlong getTotalTimeForegroundServiceUsed();
 		jlong getTotalTimeInForeground();
 		jlong getTotalTimeVisible();

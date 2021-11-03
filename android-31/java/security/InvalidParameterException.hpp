@@ -1,10 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../lang/Exception.hpp"
-#include "../lang/RuntimeException.hpp"
 #include "../lang/IllegalArgumentException.hpp"
 
+class JString;
 
 namespace java::security
 {
@@ -19,7 +17,7 @@ namespace java::security
 		
 		// Constructors
 		InvalidParameterException();
-		InvalidParameterException(jstring arg0);
+		InvalidParameterException(JString arg0);
 		
 		// Methods
 	};

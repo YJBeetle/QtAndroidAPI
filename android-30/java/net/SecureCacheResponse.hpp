@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./CacheResponse.hpp"
 
+class JString;
 namespace java::util
 {
 	class Optional;
@@ -23,7 +23,7 @@ namespace java::net
 		SecureCacheResponse();
 		
 		// Methods
-		jstring getCipherSuite();
+		JString getCipherSuite();
 		JObject getLocalCertificateChain();
 		JObject getLocalPrincipal();
 		JObject getPeerPrincipal();

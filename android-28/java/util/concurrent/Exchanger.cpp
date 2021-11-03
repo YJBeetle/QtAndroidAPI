@@ -1,3 +1,5 @@
+#include "../../../JArray.hpp"
+#include "../../../JObject.hpp"
 #include "./TimeUnit.hpp"
 #include "./Exchanger.hpp"
 
@@ -16,23 +18,23 @@ namespace java::util::concurrent
 		) {}
 	
 	// Methods
-	jobject Exchanger::exchange(jobject arg0)
+	JObject Exchanger::exchange(JObject arg0)
 	{
 		return callObjectMethod(
 			"exchange",
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0
-		).object<jobject>();
+			arg0.object<jobject>()
+		);
 	}
-	jobject Exchanger::exchange(jobject arg0, jlong arg1, java::util::concurrent::TimeUnit arg2)
+	JObject Exchanger::exchange(JObject arg0, jlong arg1, java::util::concurrent::TimeUnit arg2)
 	{
 		return callObjectMethod(
 			"exchange",
 			"(Ljava/lang/Object;JLjava/util/concurrent/TimeUnit;)Ljava/lang/Object;",
-			arg0,
+			arg0.object<jobject>(),
 			arg1,
 			arg2.object()
-		).object<jobject>();
+		);
 	}
 } // namespace java::util::concurrent
 

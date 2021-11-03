@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./IllegalAccessException.hpp"
 
 namespace java::lang
@@ -13,11 +14,11 @@ namespace java::lang
 			"java.lang.IllegalAccessException",
 			"()V"
 		) {}
-	IllegalAccessException::IllegalAccessException(jstring arg0)
+	IllegalAccessException::IllegalAccessException(JString arg0)
 		: java::lang::ReflectiveOperationException(
 			"java.lang.IllegalAccessException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

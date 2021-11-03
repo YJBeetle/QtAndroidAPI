@@ -2,10 +2,16 @@
 
 #include "../../JObject.hpp"
 
+class JArray;
+class JArray;
+class JArray;
+class JClass;
 namespace java::lang
 {
 	class ClassLoader;
 }
+class JObject;
+class JString;
 namespace java::lang
 {
 	class Thread_State;
@@ -14,6 +20,7 @@ namespace java::lang
 {
 	class ThreadGroup;
 }
+class JThrowable;
 namespace java::lang::ref
 {
 	class ReferenceQueue;
@@ -40,22 +47,22 @@ namespace java::lang
 		// Constructors
 		Thread();
 		Thread(JObject arg0);
-		Thread(jstring arg0);
-		Thread(JObject arg0, jstring arg1);
+		Thread(JString arg0);
+		Thread(JObject arg0, JString arg1);
 		Thread(java::lang::ThreadGroup arg0, JObject arg1);
-		Thread(java::lang::ThreadGroup arg0, jstring arg1);
-		Thread(java::lang::ThreadGroup arg0, JObject arg1, jstring arg2);
-		Thread(java::lang::ThreadGroup arg0, JObject arg1, jstring arg2, jlong arg3);
-		Thread(java::lang::ThreadGroup arg0, JObject arg1, jstring arg2, jlong arg3, jboolean arg4);
+		Thread(java::lang::ThreadGroup arg0, JString arg1);
+		Thread(java::lang::ThreadGroup arg0, JObject arg1, JString arg2);
+		Thread(java::lang::ThreadGroup arg0, JObject arg1, JString arg2, jlong arg3);
+		Thread(java::lang::ThreadGroup arg0, JObject arg1, JString arg2, jlong arg3, jboolean arg4);
 		
 		// Methods
 		static jint activeCount();
 		static java::lang::Thread currentThread();
 		static void dumpStack();
-		static jint enumerate(jarray arg0);
+		static jint enumerate(JArray arg0);
 		static JObject getAllStackTraces();
 		static JObject getDefaultUncaughtExceptionHandler();
-		static jboolean holdsLock(jobject arg0);
+		static jboolean holdsLock(JObject arg0);
 		static jboolean interrupted();
 		static void onSpinWait();
 		static void setDefaultUncaughtExceptionHandler(JObject arg0);
@@ -66,9 +73,9 @@ namespace java::lang
 		jint countStackFrames();
 		java::lang::ClassLoader getContextClassLoader();
 		jlong getId();
-		jstring getName();
+		JString getName();
 		jint getPriority();
-		jarray getStackTrace();
+		JArray getStackTrace();
 		java::lang::Thread_State getState();
 		java::lang::ThreadGroup getThreadGroup();
 		JObject getUncaughtExceptionHandler();
@@ -83,13 +90,13 @@ namespace java::lang
 		void run();
 		void setContextClassLoader(java::lang::ClassLoader arg0);
 		void setDaemon(jboolean arg0);
-		void setName(jstring arg0);
+		void setName(JString arg0);
 		void setPriority(jint arg0);
 		void setUncaughtExceptionHandler(JObject arg0);
 		void start();
 		void stop();
 		void suspend();
-		jstring toString();
+		JString toString();
 	};
 } // namespace java::lang
 

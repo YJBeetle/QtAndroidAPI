@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JString;
 
 namespace android::provider
 {
@@ -9,7 +10,7 @@ namespace android::provider
 	{
 	public:
 		// Fields
-		static jstring ENTRY_CONTENT_TYPE();
+		static JString ENTRY_CONTENT_TYPE();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MediaStore_Audio_Radio(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}

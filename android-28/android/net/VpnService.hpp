@@ -1,10 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../content/Context.hpp"
-#include "../content/ContextWrapper.hpp"
 #include "../app/Service.hpp"
 
+class JArray;
 namespace android::content
 {
 	class Context;
@@ -13,6 +11,7 @@ namespace android::content
 {
 	class Intent;
 }
+class JString;
 namespace java::net
 {
 	class DatagramSocket;
@@ -28,8 +27,8 @@ namespace android::net
 	{
 	public:
 		// Fields
-		static jstring SERVICE_INTERFACE();
-		static jstring SERVICE_META_DATA_SUPPORTS_ALWAYS_ON();
+		static JString SERVICE_INTERFACE();
+		static JString SERVICE_META_DATA_SUPPORTS_ALWAYS_ON();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit VpnService(const char *className, const char *sig, Ts...agv) : android::app::Service(className, sig, std::forward<Ts>(agv)...) {}
@@ -45,7 +44,7 @@ namespace android::net
 		jboolean protect(jint arg0);
 		jboolean protect(java::net::DatagramSocket arg0);
 		jboolean protect(java::net::Socket arg0);
-		jboolean setUnderlyingNetworks(jarray arg0);
+		jboolean setUnderlyingNetworks(JArray arg0);
 	};
 } // namespace android::net
 

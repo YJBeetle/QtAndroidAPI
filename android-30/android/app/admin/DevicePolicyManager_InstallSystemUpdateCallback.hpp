@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JString;
 
 namespace android::app::admin
 {
@@ -23,7 +24,7 @@ namespace android::app::admin
 		DevicePolicyManager_InstallSystemUpdateCallback();
 		
 		// Methods
-		void onInstallUpdateError(jint arg0, jstring arg1);
+		void onInstallUpdateError(jint arg0, JString arg1);
 	};
 } // namespace android::app::admin
 

@@ -1,3 +1,7 @@
+#include "../../JCharArray.hpp"
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
+#include "../../JString.hpp"
 #include "./StringJoiner.hpp"
 
 namespace java::util
@@ -8,28 +12,28 @@ namespace java::util
 	StringJoiner::StringJoiner(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	StringJoiner::StringJoiner(jstring arg0)
+	StringJoiner::StringJoiner(JString arg0)
 		: JObject(
 			"java.util.StringJoiner",
 			"(Ljava/lang/CharSequence;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	StringJoiner::StringJoiner(jstring arg0, jstring arg1, jstring arg2)
+	StringJoiner::StringJoiner(JString arg0, JString arg1, JString arg2)
 		: JObject(
 			"java.util.StringJoiner",
 			"(Ljava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/CharSequence;)V",
-			arg0,
-			arg1,
-			arg2
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2.object<jstring>()
 		) {}
 	
 	// Methods
-	java::util::StringJoiner StringJoiner::add(jstring arg0)
+	java::util::StringJoiner StringJoiner::add(JString arg0)
 	{
 		return callObjectMethod(
 			"add",
 			"(Ljava/lang/CharSequence;)Ljava/util/StringJoiner;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	jint StringJoiner::length()
@@ -47,20 +51,20 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	java::util::StringJoiner StringJoiner::setEmptyValue(jstring arg0)
+	java::util::StringJoiner StringJoiner::setEmptyValue(JString arg0)
 	{
 		return callObjectMethod(
 			"setEmptyValue",
 			"(Ljava/lang/CharSequence;)Ljava/util/StringJoiner;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jstring StringJoiner::toString()
+	JString StringJoiner::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::util
 

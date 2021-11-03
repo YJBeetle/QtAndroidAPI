@@ -1,9 +1,8 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "./Drawable.hpp"
 #include "./LayerDrawable.hpp"
 
+class JArray;
 namespace android::graphics
 {
 	class Canvas;
@@ -21,7 +20,7 @@ namespace android::graphics::drawable
 		TransitionDrawable(QAndroidJniObject obj);
 		
 		// Constructors
-		TransitionDrawable(jarray arg0);
+		TransitionDrawable(JArray arg0);
 		
 		// Methods
 		void draw(android::graphics::Canvas arg0);

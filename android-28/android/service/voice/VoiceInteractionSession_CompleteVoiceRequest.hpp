@@ -1,6 +1,5 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "./VoiceInteractionSession_Request.hpp"
 
 namespace android::app
@@ -11,6 +10,7 @@ namespace android::os
 {
 	class Bundle;
 }
+class JString;
 
 namespace android::service::voice
 {
@@ -26,7 +26,7 @@ namespace android::service::voice
 		// Constructors
 		
 		// Methods
-		jstring getMessage();
+		JString getMessage();
 		android::app::VoiceInteractor_Prompt getVoicePrompt();
 		void sendCompleteResult(android::os::Bundle arg0);
 	};

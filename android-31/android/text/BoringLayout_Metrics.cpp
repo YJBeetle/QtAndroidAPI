@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./BoringLayout_Metrics.hpp"
 
 namespace android::text
@@ -21,12 +22,12 @@ namespace android::text
 		) {}
 	
 	// Methods
-	jstring BoringLayout_Metrics::toString()
+	JString BoringLayout_Metrics::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::text
 

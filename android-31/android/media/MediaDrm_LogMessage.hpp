@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JString;
 
 namespace android::media
 {
@@ -17,10 +18,10 @@ namespace android::media
 		// Constructors
 		
 		// Methods
-		jstring getMessage();
+		JString getMessage();
 		jint getPriority();
 		jlong getTimestampMillis();
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::media
 

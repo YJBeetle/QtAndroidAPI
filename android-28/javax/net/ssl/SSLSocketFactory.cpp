@@ -1,4 +1,6 @@
+#include "../../../JArray.hpp"
 #include "../../../java/io/InputStream.hpp"
+#include "../../../JString.hpp"
 #include "../../../java/net/Socket.hpp"
 #include "../SocketFactory.hpp"
 #include "./SSLSocketFactory.hpp"
@@ -36,30 +38,30 @@ namespace javax::net::ssl
 			arg2
 		);
 	}
-	java::net::Socket SSLSocketFactory::createSocket(java::net::Socket arg0, jstring arg1, jint arg2, jboolean arg3)
+	java::net::Socket SSLSocketFactory::createSocket(java::net::Socket arg0, JString arg1, jint arg2, jboolean arg3)
 	{
 		return callObjectMethod(
 			"createSocket",
 			"(Ljava/net/Socket;Ljava/lang/String;IZ)Ljava/net/Socket;",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2,
 			arg3
 		);
 	}
-	jarray SSLSocketFactory::getDefaultCipherSuites()
+	JArray SSLSocketFactory::getDefaultCipherSuites()
 	{
 		return callObjectMethod(
 			"getDefaultCipherSuites",
 			"()[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
-	jarray SSLSocketFactory::getSupportedCipherSuites()
+	JArray SSLSocketFactory::getSupportedCipherSuites()
 	{
 		return callObjectMethod(
 			"getSupportedCipherSuites",
 			"()[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
 } // namespace javax::net::ssl
 

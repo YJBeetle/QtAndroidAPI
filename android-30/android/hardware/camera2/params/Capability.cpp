@@ -1,5 +1,7 @@
 #include "../../../util/Range.hpp"
 #include "../../../util/Size.hpp"
+#include "../../../../JObject.hpp"
+#include "../../../../JString.hpp"
 #include "./Capability.hpp"
 
 namespace android::hardware::camera2::params
@@ -12,12 +14,12 @@ namespace android::hardware::camera2::params
 	// Constructors
 	
 	// Methods
-	jboolean Capability::equals(jobject arg0)
+	jboolean Capability::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	android::util::Size Capability::getMaxStreamingSize()
@@ -48,12 +50,12 @@ namespace android::hardware::camera2::params
 			"()I"
 		);
 	}
-	jstring Capability::toString()
+	JString Capability::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::hardware::camera2::params
 

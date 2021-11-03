@@ -10,6 +10,8 @@ namespace android::graphics::drawable
 {
 	class Icon;
 }
+class JString;
+class JString;
 
 namespace android::app::people
 {
@@ -23,12 +25,12 @@ namespace android::app::people
 		ConversationStatus_Builder(QAndroidJniObject obj);
 		
 		// Constructors
-		ConversationStatus_Builder(jstring arg0, jint arg1);
+		ConversationStatus_Builder(JString arg0, jint arg1);
 		
 		// Methods
 		android::app::people::ConversationStatus build();
 		android::app::people::ConversationStatus_Builder setAvailability(jint arg0);
-		android::app::people::ConversationStatus_Builder setDescription(jstring arg0);
+		android::app::people::ConversationStatus_Builder setDescription(JString arg0);
 		android::app::people::ConversationStatus_Builder setEndTimeMillis(jlong arg0);
 		android::app::people::ConversationStatus_Builder setIcon(android::graphics::drawable::Icon arg0);
 		android::app::people::ConversationStatus_Builder setStartTimeMillis(jlong arg0);

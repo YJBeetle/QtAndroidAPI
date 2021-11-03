@@ -1,3 +1,4 @@
+#include "../../JIntArray.hpp"
 #include "../content/Context.hpp"
 #include "./RenderScript_ContextType.hpp"
 #include "./RenderScript_Priority.hpp"
@@ -136,13 +137,13 @@ namespace android::renderscript
 			"()Landroid/renderscript/RenderScript$RSMessageHandler;"
 		);
 	}
-	void RenderScript::sendMessage(jint arg0, jintArray arg1)
+	void RenderScript::sendMessage(jint arg0, JIntArray arg1)
 	{
 		callMethod<void>(
 			"sendMessage",
 			"(I[I)V",
 			arg0,
-			arg1
+			arg1.object<jintArray>()
 		);
 	}
 	void RenderScript::setErrorHandler(android::renderscript::RenderScript_RSErrorHandler arg0)

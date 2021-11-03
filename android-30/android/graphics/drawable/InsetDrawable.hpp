@@ -1,7 +1,5 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "./Drawable.hpp"
 #include "./DrawableWrapper.hpp"
 
 namespace android::content::res

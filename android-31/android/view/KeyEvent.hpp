@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./InputEvent.hpp"
 
+class JCharArray;
 namespace android::os
 {
 	class Parcel;
@@ -19,6 +19,8 @@ namespace android::view
 {
 	class KeyEvent_DispatcherState;
 }
+class JObject;
+class JString;
 
 namespace android::view
 {
@@ -361,7 +363,7 @@ namespace android::view
 		KeyEvent(android::view::KeyEvent &arg0);
 		KeyEvent(jint arg0, jint arg1);
 		KeyEvent(android::view::KeyEvent &arg0, jlong arg1, jint arg2);
-		KeyEvent(jlong arg0, jstring arg1, jint arg2, jint arg3);
+		KeyEvent(jlong arg0, JString arg1, jint arg2, jint arg3);
 		KeyEvent(jlong arg0, jlong arg1, jint arg2, jint arg3, jint arg4);
 		KeyEvent(jlong arg0, jlong arg1, jint arg2, jint arg3, jint arg4, jint arg5);
 		KeyEvent(jlong arg0, jlong arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7);
@@ -379,15 +381,15 @@ namespace android::view
 		static jboolean isGamepadButton(jint arg0);
 		static jboolean isMediaSessionKey(jint arg0);
 		static jboolean isModifierKey(jint arg0);
-		static jint keyCodeFromString(jstring arg0);
-		static jstring keyCodeToString(jint arg0);
+		static jint keyCodeFromString(JString arg0);
+		static JString keyCodeToString(jint arg0);
 		static jboolean metaStateHasModifiers(jint arg0, jint arg1);
 		static jboolean metaStateHasNoModifiers(jint arg0);
 		static jint normalizeMetaState(jint arg0);
 		jboolean dispatch(JObject arg0);
-		jboolean dispatch(JObject arg0, android::view::KeyEvent_DispatcherState arg1, jobject arg2);
+		jboolean dispatch(JObject arg0, android::view::KeyEvent_DispatcherState arg1, JObject arg2);
 		jint getAction();
-		jstring getCharacters();
+		JString getCharacters();
 		jint getDeviceId();
 		jchar getDisplayLabel();
 		jlong getDownTime();
@@ -396,8 +398,8 @@ namespace android::view
 		android::view::KeyCharacterMap getKeyCharacterMap();
 		jint getKeyCode();
 		jboolean getKeyData(android::view::KeyCharacterMap_KeyData arg0);
-		jchar getMatch(jcharArray arg0);
-		jchar getMatch(jcharArray arg0, jint arg1);
+		jchar getMatch(JCharArray arg0);
+		jchar getMatch(JCharArray arg0, jint arg1);
 		jint getMetaState();
 		jint getModifiers();
 		jchar getNumber();
@@ -424,7 +426,7 @@ namespace android::view
 		jboolean isTracking();
 		void setSource(jint arg0);
 		void startTracking();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::view

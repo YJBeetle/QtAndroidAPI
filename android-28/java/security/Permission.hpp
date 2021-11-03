@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JObject;
+class JString;
 namespace java::security
 {
 	class PermissionCollection;
@@ -19,17 +21,17 @@ namespace java::security
 		Permission(QAndroidJniObject obj);
 		
 		// Constructors
-		Permission(jstring arg0);
+		Permission(JString arg0);
 		
 		// Methods
-		void checkGuard(jobject arg0);
-		jboolean equals(jobject arg0);
-		jstring getActions();
-		jstring getName();
+		void checkGuard(JObject arg0);
+		jboolean equals(JObject arg0);
+		JString getActions();
+		JString getName();
 		jint hashCode();
 		jboolean implies(java::security::Permission arg0);
 		java::security::PermissionCollection newPermissionCollection();
-		jstring toString();
+		JString toString();
 	};
 } // namespace java::security
 

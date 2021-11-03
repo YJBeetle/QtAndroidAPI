@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JByteArray;
 namespace android::os
 {
 	class Parcel;
@@ -21,7 +22,7 @@ namespace android::media
 		// Constructors
 		
 		// Methods
-		jbyteArray getMetaData();
+		JByteArray getMetaData();
 		jlong getTimestamp();
 	};
 } // namespace android::media

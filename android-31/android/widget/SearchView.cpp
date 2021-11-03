@@ -3,6 +3,7 @@
 #include "../graphics/Rect.hpp"
 #include "../view/KeyEvent.hpp"
 #include "./CursorAdapter.hpp"
+#include "../../JString.hpp"
 #include "./SearchView.hpp"
 
 namespace android::widget
@@ -52,12 +53,12 @@ namespace android::widget
 			"()V"
 		);
 	}
-	jstring SearchView::getAccessibilityClassName()
+	JString SearchView::getAccessibilityClassName()
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	jint SearchView::getImeOptions()
 	{
@@ -80,19 +81,19 @@ namespace android::widget
 			"()I"
 		);
 	}
-	jstring SearchView::getQuery()
+	JString SearchView::getQuery()
 	{
 		return callObjectMethod(
 			"getQuery",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
-	jstring SearchView::getQueryHint()
+	JString SearchView::getQueryHint()
 	{
 		return callObjectMethod(
 			"getQueryHint",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	android::widget::CursorAdapter SearchView::getSuggestionsAdapter()
 	{
@@ -256,21 +257,21 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void SearchView::setQuery(jstring arg0, jboolean arg1)
+	void SearchView::setQuery(JString arg0, jboolean arg1)
 	{
 		callMethod<void>(
 			"setQuery",
 			"(Ljava/lang/CharSequence;Z)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
-	void SearchView::setQueryHint(jstring arg0)
+	void SearchView::setQueryHint(JString arg0)
 	{
 		callMethod<void>(
 			"setQueryHint",
 			"(Ljava/lang/CharSequence;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void SearchView::setQueryRefinementEnabled(jboolean arg0)

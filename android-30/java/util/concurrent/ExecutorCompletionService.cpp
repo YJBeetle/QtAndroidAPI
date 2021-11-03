@@ -1,3 +1,4 @@
+#include "../../../JObject.hpp"
 #include "./AbstractExecutorService.hpp"
 #include "./TimeUnit.hpp"
 #include "./ExecutorCompletionService.hpp"
@@ -49,13 +50,13 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	JObject ExecutorCompletionService::submit(JObject arg0, jobject arg1)
+	JObject ExecutorCompletionService::submit(JObject arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"submit",
 			"(Ljava/lang/Runnable;Ljava/lang/Object;)Ljava/util/concurrent/Future;",
 			arg0.object(),
-			arg1
+			arg1.object<jobject>()
 		);
 	}
 	JObject ExecutorCompletionService::take()

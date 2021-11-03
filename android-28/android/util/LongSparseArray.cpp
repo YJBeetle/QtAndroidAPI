@@ -1,3 +1,5 @@
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./LongSparseArray.hpp"
 
 namespace android::util
@@ -21,13 +23,13 @@ namespace android::util
 		) {}
 	
 	// Methods
-	void LongSparseArray::append(jlong arg0, jobject arg1)
+	void LongSparseArray::append(jlong arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"append",
 			"(JLjava/lang/Object;)V",
 			arg0,
-			arg1
+			arg1.object<jobject>()
 		);
 	}
 	void LongSparseArray::clear()
@@ -52,22 +54,22 @@ namespace android::util
 			arg0
 		);
 	}
-	jobject LongSparseArray::get(jlong arg0)
+	JObject LongSparseArray::get(jlong arg0)
 	{
 		return callObjectMethod(
 			"get",
 			"(J)Ljava/lang/Object;",
 			arg0
-		).object<jobject>();
+		);
 	}
-	jobject LongSparseArray::get(jlong arg0, jobject arg1)
+	JObject LongSparseArray::get(jlong arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"get",
 			"(JLjava/lang/Object;)Ljava/lang/Object;",
 			arg0,
-			arg1
-		).object<jobject>();
+			arg1.object<jobject>()
+		);
 	}
 	jint LongSparseArray::indexOfKey(jlong arg0)
 	{
@@ -77,12 +79,12 @@ namespace android::util
 			arg0
 		);
 	}
-	jint LongSparseArray::indexOfValue(jobject arg0)
+	jint LongSparseArray::indexOfValue(JObject arg0)
 	{
 		return callMethod<jint>(
 			"indexOfValue",
 			"(Ljava/lang/Object;)I",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jlong LongSparseArray::keyAt(jint arg0)
@@ -93,13 +95,13 @@ namespace android::util
 			arg0
 		);
 	}
-	void LongSparseArray::put(jlong arg0, jobject arg1)
+	void LongSparseArray::put(jlong arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"put",
 			"(JLjava/lang/Object;)V",
 			arg0,
-			arg1
+			arg1.object<jobject>()
 		);
 	}
 	void LongSparseArray::remove(jlong arg0)
@@ -118,13 +120,13 @@ namespace android::util
 			arg0
 		);
 	}
-	void LongSparseArray::setValueAt(jint arg0, jobject arg1)
+	void LongSparseArray::setValueAt(jint arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"setValueAt",
 			"(ILjava/lang/Object;)V",
 			arg0,
-			arg1
+			arg1.object<jobject>()
 		);
 	}
 	jint LongSparseArray::size()
@@ -134,20 +136,20 @@ namespace android::util
 			"()I"
 		);
 	}
-	jstring LongSparseArray::toString()
+	JString LongSparseArray::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jobject LongSparseArray::valueAt(jint arg0)
+	JObject LongSparseArray::valueAt(jint arg0)
 	{
 		return callObjectMethod(
 			"valueAt",
 			"(I)Ljava/lang/Object;",
 			arg0
-		).object<jobject>();
+		);
 	}
 } // namespace android::util
 

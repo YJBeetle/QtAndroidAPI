@@ -2,6 +2,8 @@
 
 #include "../../../JObject.hpp"
 
+class JByteArray;
+class JString;
 
 namespace android::security::identity
 {
@@ -24,14 +26,14 @@ namespace android::security::identity
 		// Constructors
 		
 		// Methods
-		jbyteArray getAuthenticatedData();
-		jbyteArray getEntry(jstring arg0, jstring arg1);
-		JObject getEntryNames(jstring arg0);
-		jbyteArray getMessageAuthenticationCode();
+		JByteArray getAuthenticatedData();
+		JByteArray getEntry(JString arg0, JString arg1);
+		JObject getEntryNames(JString arg0);
+		JByteArray getMessageAuthenticationCode();
 		JObject getNamespaces();
-		JObject getRetrievedEntryNames(jstring arg0);
-		jbyteArray getStaticAuthenticationData();
-		jint getStatus(jstring arg0, jstring arg1);
+		JObject getRetrievedEntryNames(JString arg0);
+		JByteArray getStaticAuthenticationData();
+		jint getStatus(JString arg0, JString arg1);
 	};
 } // namespace android::security::identity
 

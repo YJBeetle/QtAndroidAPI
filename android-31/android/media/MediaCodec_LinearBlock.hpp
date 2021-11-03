@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JArray;
 namespace java::nio
 {
 	class ByteBuffer;
@@ -21,8 +22,8 @@ namespace android::media
 		// Constructors
 		
 		// Methods
-		static jboolean isCodecCopyFreeCompatible(jarray arg0);
-		static android::media::MediaCodec_LinearBlock obtain(jint arg0, jarray arg1);
+		static jboolean isCodecCopyFreeCompatible(JArray arg0);
+		static android::media::MediaCodec_LinearBlock obtain(jint arg0, JArray arg1);
 		jboolean isMappable();
 		java::nio::ByteBuffer map();
 		void recycle();

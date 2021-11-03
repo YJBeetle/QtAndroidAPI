@@ -1,34 +1,36 @@
+#include "../../../../JByteArray.hpp"
+#include "../../../../JObject.hpp"
 #include "./IkeKeyIdIdentification.hpp"
 
 namespace android::net::ipsec::ike
 {
 	// Fields
-	jbyteArray IkeKeyIdIdentification::keyId()
+	JByteArray IkeKeyIdIdentification::keyId()
 	{
 		return getObjectField(
 			"keyId",
 			"[B"
-		).object<jbyteArray>();
+		);
 	}
 	
 	// QAndroidJniObject forward
 	IkeKeyIdIdentification::IkeKeyIdIdentification(QAndroidJniObject obj) : android::net::ipsec::ike::IkeIdentification(obj) {}
 	
 	// Constructors
-	IkeKeyIdIdentification::IkeKeyIdIdentification(jbyteArray arg0)
+	IkeKeyIdIdentification::IkeKeyIdIdentification(JByteArray arg0)
 		: android::net::ipsec::ike::IkeIdentification(
 			"android.net.ipsec.ike.IkeKeyIdIdentification",
 			"([B)V",
-			arg0
+			arg0.object<jbyteArray>()
 		) {}
 	
 	// Methods
-	jboolean IkeKeyIdIdentification::equals(jobject arg0)
+	jboolean IkeKeyIdIdentification::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint IkeKeyIdIdentification::hashCode()

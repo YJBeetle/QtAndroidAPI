@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./FontRequest.hpp"
 
 namespace android::provider
@@ -8,21 +9,21 @@ namespace android::provider
 	FontRequest::FontRequest(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	FontRequest::FontRequest(jstring arg0, jstring arg1, jstring arg2)
+	FontRequest::FontRequest(JString arg0, JString arg1, JString arg2)
 		: JObject(
 			"android.provider.FontRequest",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1,
-			arg2
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2.object<jstring>()
 		) {}
-	FontRequest::FontRequest(jstring arg0, jstring arg1, jstring arg2, JObject arg3)
+	FontRequest::FontRequest(JString arg0, JString arg1, JString arg2, JObject arg3)
 		: JObject(
 			"android.provider.FontRequest",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;)V",
-			arg0,
-			arg1,
-			arg2,
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2.object<jstring>(),
 			arg3.object()
 		) {}
 	
@@ -34,33 +35,33 @@ namespace android::provider
 			"()Ljava/util/List;"
 		);
 	}
-	jstring FontRequest::getProviderAuthority()
+	JString FontRequest::getProviderAuthority()
 	{
 		return callObjectMethod(
 			"getProviderAuthority",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring FontRequest::getProviderPackage()
+	JString FontRequest::getProviderPackage()
 	{
 		return callObjectMethod(
 			"getProviderPackage",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring FontRequest::getQuery()
+	JString FontRequest::getQuery()
 	{
 		return callObjectMethod(
 			"getQuery",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring FontRequest::toString()
+	JString FontRequest::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::provider
 

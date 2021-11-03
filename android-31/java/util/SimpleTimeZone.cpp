@@ -1,5 +1,9 @@
+#include "../../JByteArray.hpp"
+#include "../../JIntArray.hpp"
 #include "../io/ObjectInputStream.hpp"
 #include "../io/ObjectOutputStream.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./Date.hpp"
 #include "./TimeZone.hpp"
 #include "./SimpleTimeZone.hpp"
@@ -33,19 +37,19 @@ namespace java::util
 	SimpleTimeZone::SimpleTimeZone(QAndroidJniObject obj) : java::util::TimeZone(obj) {}
 	
 	// Constructors
-	SimpleTimeZone::SimpleTimeZone(jint arg0, jstring arg1)
+	SimpleTimeZone::SimpleTimeZone(jint arg0, JString arg1)
 		: java::util::TimeZone(
 			"java.util.SimpleTimeZone",
 			"(ILjava/lang/String;)V",
 			arg0,
-			arg1
+			arg1.object<jstring>()
 		) {}
-	SimpleTimeZone::SimpleTimeZone(jint arg0, jstring arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8, jint arg9)
+	SimpleTimeZone::SimpleTimeZone(jint arg0, JString arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8, jint arg9)
 		: java::util::TimeZone(
 			"java.util.SimpleTimeZone",
 			"(ILjava/lang/String;IIIIIIII)V",
 			arg0,
-			arg1,
+			arg1.object<jstring>(),
 			arg2,
 			arg3,
 			arg4,
@@ -55,12 +59,12 @@ namespace java::util
 			arg8,
 			arg9
 		) {}
-	SimpleTimeZone::SimpleTimeZone(jint arg0, jstring arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8, jint arg9, jint arg10)
+	SimpleTimeZone::SimpleTimeZone(jint arg0, JString arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8, jint arg9, jint arg10)
 		: java::util::TimeZone(
 			"java.util.SimpleTimeZone",
 			"(ILjava/lang/String;IIIIIIIII)V",
 			arg0,
-			arg1,
+			arg1.object<jstring>(),
 			arg2,
 			arg3,
 			arg4,
@@ -71,12 +75,12 @@ namespace java::util
 			arg9,
 			arg10
 		) {}
-	SimpleTimeZone::SimpleTimeZone(jint arg0, jstring arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8, jint arg9, jint arg10, jint arg11, jint arg12)
+	SimpleTimeZone::SimpleTimeZone(jint arg0, JString arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8, jint arg9, jint arg10, jint arg11, jint arg12)
 		: java::util::TimeZone(
 			"java.util.SimpleTimeZone",
 			"(ILjava/lang/String;IIIIIIIIIII)V",
 			arg0,
-			arg1,
+			arg1.object<jstring>(),
 			arg2,
 			arg3,
 			arg4,
@@ -91,19 +95,19 @@ namespace java::util
 		) {}
 	
 	// Methods
-	jobject SimpleTimeZone::clone()
+	JObject SimpleTimeZone::clone()
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
-	jboolean SimpleTimeZone::equals(jobject arg0)
+	jboolean SimpleTimeZone::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint SimpleTimeZone::getDSTSavings()
@@ -261,12 +265,12 @@ namespace java::util
 			arg0
 		);
 	}
-	jstring SimpleTimeZone::toString()
+	JString SimpleTimeZone::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jboolean SimpleTimeZone::useDaylightTime()
 	{

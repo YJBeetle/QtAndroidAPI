@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./DeadObjectException.hpp"
 
 namespace android::os
@@ -13,11 +14,11 @@ namespace android::os
 			"android.os.DeadObjectException",
 			"()V"
 		) {}
-	DeadObjectException::DeadObjectException(jstring arg0)
+	DeadObjectException::DeadObjectException(JString arg0)
 		: android::os::RemoteException(
 			"android.os.DeadObjectException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

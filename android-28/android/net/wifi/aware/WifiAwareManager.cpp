@@ -2,18 +2,19 @@
 #include "./Characteristics.hpp"
 #include "./IdentityChangedListener.hpp"
 #include "../../../os/Handler.hpp"
+#include "../../../../JString.hpp"
 #include "./WifiAwareManager.hpp"
 
 namespace android::net::wifi::aware
 {
 	// Fields
-	jstring WifiAwareManager::ACTION_WIFI_AWARE_STATE_CHANGED()
+	JString WifiAwareManager::ACTION_WIFI_AWARE_STATE_CHANGED()
 	{
 		return getStaticObjectField(
 			"android.net.wifi.aware.WifiAwareManager",
 			"ACTION_WIFI_AWARE_STATE_CHANGED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint WifiAwareManager::WIFI_AWARE_DATA_PATH_ROLE_INITIATOR()
 	{

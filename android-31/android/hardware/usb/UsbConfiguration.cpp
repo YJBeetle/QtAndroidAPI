@@ -1,5 +1,6 @@
 #include "./UsbInterface.hpp"
 #include "../../os/Parcel.hpp"
+#include "../../../JString.hpp"
 #include "./UsbConfiguration.hpp"
 
 namespace android::hardware::usb
@@ -56,12 +57,12 @@ namespace android::hardware::usb
 			"()I"
 		);
 	}
-	jstring UsbConfiguration::getName()
+	JString UsbConfiguration::getName()
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jboolean UsbConfiguration::isRemoteWakeup()
 	{
@@ -77,12 +78,12 @@ namespace android::hardware::usb
 			"()Z"
 		);
 	}
-	jstring UsbConfiguration::toString()
+	JString UsbConfiguration::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void UsbConfiguration::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

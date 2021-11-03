@@ -1,7 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "./Context.hpp"
 #include "./ContextWrapper.hpp"
 
 namespace android::content

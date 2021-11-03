@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JString;
 
 namespace android::net
 {
@@ -9,7 +10,7 @@ namespace android::net
 	{
 	public:
 		// Fields
-		static jstring MAILTO_SCHEME();
+		static JString MAILTO_SCHEME();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MailTo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
@@ -18,14 +19,14 @@ namespace android::net
 		// Constructors
 		
 		// Methods
-		static jboolean isMailTo(jstring arg0);
-		static android::net::MailTo parse(jstring arg0);
-		jstring getBody();
-		jstring getCc();
+		static jboolean isMailTo(JString arg0);
+		static android::net::MailTo parse(JString arg0);
+		JString getBody();
+		JString getCc();
 		JObject getHeaders();
-		jstring getSubject();
-		jstring getTo();
-		jstring toString();
+		JString getSubject();
+		JString getTo();
+		JString toString();
 	};
 } // namespace android::net
 

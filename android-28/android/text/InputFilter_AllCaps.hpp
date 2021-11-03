@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JString;
 namespace java::util
 {
 	class Locale;
@@ -23,7 +24,7 @@ namespace android::text
 		InputFilter_AllCaps(java::util::Locale arg0);
 		
 		// Methods
-		jstring filter(jstring arg0, jint arg1, jint arg2, JObject arg3, jint arg4, jint arg5);
+		JString filter(JString arg0, jint arg1, jint arg2, JObject arg3, jint arg4, jint arg5);
 	};
 } // namespace android::text
 

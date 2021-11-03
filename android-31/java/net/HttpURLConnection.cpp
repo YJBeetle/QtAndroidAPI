@@ -1,4 +1,6 @@
+#include "../../JArray.hpp"
 #include "../io/InputStream.hpp"
+#include "../../JString.hpp"
 #include "./Authenticator.hpp"
 #include "./URL.hpp"
 #include "../security/Permission.hpp"
@@ -297,30 +299,30 @@ namespace java::net
 			"()Ljava/io/InputStream;"
 		);
 	}
-	jstring HttpURLConnection::getHeaderField(jint arg0)
+	JString HttpURLConnection::getHeaderField(jint arg0)
 	{
 		return callObjectMethod(
 			"getHeaderField",
 			"(I)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
-	jlong HttpURLConnection::getHeaderFieldDate(jstring arg0, jlong arg1)
+	jlong HttpURLConnection::getHeaderFieldDate(JString arg0, jlong arg1)
 	{
 		return callMethod<jlong>(
 			"getHeaderFieldDate",
 			"(Ljava/lang/String;J)J",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
-	jstring HttpURLConnection::getHeaderFieldKey(jint arg0)
+	JString HttpURLConnection::getHeaderFieldKey(jint arg0)
 	{
 		return callObjectMethod(
 			"getHeaderFieldKey",
 			"(I)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
 	jboolean HttpURLConnection::getInstanceFollowRedirects()
 	{
@@ -336,12 +338,12 @@ namespace java::net
 			"()Ljava/security/Permission;"
 		);
 	}
-	jstring HttpURLConnection::getRequestMethod()
+	JString HttpURLConnection::getRequestMethod()
 	{
 		return callObjectMethod(
 			"getRequestMethod",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint HttpURLConnection::getResponseCode()
 	{
@@ -350,12 +352,12 @@ namespace java::net
 			"()I"
 		);
 	}
-	jstring HttpURLConnection::getResponseMessage()
+	JString HttpURLConnection::getResponseMessage()
 	{
 		return callObjectMethod(
 			"getResponseMessage",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void HttpURLConnection::setAuthenticator(java::net::Authenticator arg0)
 	{
@@ -397,12 +399,12 @@ namespace java::net
 			arg0
 		);
 	}
-	void HttpURLConnection::setRequestMethod(jstring arg0)
+	void HttpURLConnection::setRequestMethod(JString arg0)
 	{
 		callMethod<void>(
 			"setRequestMethod",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	jboolean HttpURLConnection::usingProxy()

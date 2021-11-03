@@ -1,3 +1,4 @@
+#include "../../JIntArray.hpp"
 #include "./SignalThresholdInfo.hpp"
 #include "./SignalThresholdInfo_Builder.hpp"
 
@@ -39,12 +40,12 @@ namespace android::telephony
 			arg0
 		);
 	}
-	android::telephony::SignalThresholdInfo_Builder SignalThresholdInfo_Builder::setThresholds(jintArray arg0)
+	android::telephony::SignalThresholdInfo_Builder SignalThresholdInfo_Builder::setThresholds(JIntArray arg0)
 	{
 		return callObjectMethod(
 			"setThresholds",
 			"([I)Landroid/telephony/SignalThresholdInfo$Builder;",
-			arg0
+			arg0.object<jintArray>()
 		);
 	}
 } // namespace android::telephony

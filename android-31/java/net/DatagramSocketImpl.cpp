@@ -1,4 +1,5 @@
 #include "../io/FileDescriptor.hpp"
+#include "../../JObject.hpp"
 #include "./DatagramPacket.hpp"
 #include "./InetAddress.hpp"
 #include "./NetworkInterface.hpp"

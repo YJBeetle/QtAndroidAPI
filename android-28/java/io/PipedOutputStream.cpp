@@ -1,3 +1,4 @@
+#include "../../JByteArray.hpp"
 #include "./PipedInputStream.hpp"
 #include "./PipedOutputStream.hpp"
 
@@ -52,12 +53,12 @@ namespace java::io
 			arg0
 		);
 	}
-	void PipedOutputStream::write(jbyteArray arg0, jint arg1, jint arg2)
+	void PipedOutputStream::write(JByteArray arg0, jint arg1, jint arg2)
 	{
 		callMethod<void>(
 			"write",
 			"([BII)V",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1,
 			arg2
 		);

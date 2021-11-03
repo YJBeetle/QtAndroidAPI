@@ -1,4 +1,5 @@
 #include "./UsageEvents.hpp"
+#include "../../../JString.hpp"
 #include "./UsageStatsManager.hpp"
 
 namespace android::app::usage
@@ -88,12 +89,12 @@ namespace android::app::usage
 			"()I"
 		);
 	}
-	jboolean UsageStatsManager::isAppInactive(jstring arg0)
+	jboolean UsageStatsManager::isAppInactive(JString arg0)
 	{
 		return callMethod<jboolean>(
 			"isAppInactive",
 			"(Ljava/lang/String;)Z",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	JObject UsageStatsManager::queryAndAggregateUsageStats(jlong arg0, jlong arg1)

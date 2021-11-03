@@ -1,4 +1,6 @@
 #include "../../os/Parcel.hpp"
+#include "../../../JString.hpp"
+#include "../../../JString.hpp"
 #include "./TextInfo.hpp"
 
 namespace android::view::textservice
@@ -23,25 +25,25 @@ namespace android::view::textservice
 			"(Landroid/os/Parcel;)V",
 			arg0.object()
 		) {}
-	TextInfo::TextInfo(jstring arg0)
+	TextInfo::TextInfo(JString arg0)
 		: JObject(
 			"android.view.textservice.TextInfo",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	TextInfo::TextInfo(jstring arg0, jint arg1, jint arg2)
+	TextInfo::TextInfo(JString arg0, jint arg1, jint arg2)
 		: JObject(
 			"android.view.textservice.TextInfo",
 			"(Ljava/lang/String;II)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
 			arg2
 		) {}
-	TextInfo::TextInfo(jstring arg0, jint arg1, jint arg2, jint arg3, jint arg4)
+	TextInfo::TextInfo(JString arg0, jint arg1, jint arg2, jint arg3, jint arg4)
 		: JObject(
 			"android.view.textservice.TextInfo",
 			"(Ljava/lang/CharSequence;IIII)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
 			arg2,
 			arg3,
@@ -56,12 +58,12 @@ namespace android::view::textservice
 			"()I"
 		);
 	}
-	jstring TextInfo::getCharSequence()
+	JString TextInfo::getCharSequence()
 	{
 		return callObjectMethod(
 			"getCharSequence",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	jint TextInfo::getCookie()
 	{
@@ -77,12 +79,12 @@ namespace android::view::textservice
 			"()I"
 		);
 	}
-	jstring TextInfo::getText()
+	JString TextInfo::getText()
 	{
 		return callObjectMethod(
 			"getText",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void TextInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

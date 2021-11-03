@@ -1,4 +1,6 @@
 #include "../../io/ObjectInputStream.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "../Clock.hpp"
 #include "../Instant.hpp"
 #include "../LocalDate.hpp"
@@ -139,19 +141,19 @@ namespace java::time::chrono
 			"()Ljava/util/List;"
 		);
 	}
-	jstring IsoChronology::getCalendarType()
+	JString IsoChronology::getCalendarType()
 	{
 		return callObjectMethod(
 			"getCalendarType",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring IsoChronology::getId()
+	JString IsoChronology::getId()
 	{
 		return callObjectMethod(
 			"getId",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jboolean IsoChronology::isLeapYear(jlong arg0)
 	{

@@ -1,3 +1,4 @@
+#include "../../JIntArray.hpp"
 #include "../app/PendingIntent.hpp"
 #include "./AppWidgetProviderInfo.hpp"
 #include "../content/ComponentName.hpp"
@@ -5,170 +6,171 @@
 #include "../os/Bundle.hpp"
 #include "../os/UserHandle.hpp"
 #include "../widget/RemoteViews.hpp"
+#include "../../JString.hpp"
 #include "./AppWidgetManager.hpp"
 
 namespace android::appwidget
 {
 	// Fields
-	jstring AppWidgetManager::ACTION_APPWIDGET_BIND()
+	JString AppWidgetManager::ACTION_APPWIDGET_BIND()
 	{
 		return getStaticObjectField(
 			"android.appwidget.AppWidgetManager",
 			"ACTION_APPWIDGET_BIND",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring AppWidgetManager::ACTION_APPWIDGET_CONFIGURE()
+	JString AppWidgetManager::ACTION_APPWIDGET_CONFIGURE()
 	{
 		return getStaticObjectField(
 			"android.appwidget.AppWidgetManager",
 			"ACTION_APPWIDGET_CONFIGURE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring AppWidgetManager::ACTION_APPWIDGET_DELETED()
+	JString AppWidgetManager::ACTION_APPWIDGET_DELETED()
 	{
 		return getStaticObjectField(
 			"android.appwidget.AppWidgetManager",
 			"ACTION_APPWIDGET_DELETED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring AppWidgetManager::ACTION_APPWIDGET_DISABLED()
+	JString AppWidgetManager::ACTION_APPWIDGET_DISABLED()
 	{
 		return getStaticObjectField(
 			"android.appwidget.AppWidgetManager",
 			"ACTION_APPWIDGET_DISABLED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring AppWidgetManager::ACTION_APPWIDGET_ENABLED()
+	JString AppWidgetManager::ACTION_APPWIDGET_ENABLED()
 	{
 		return getStaticObjectField(
 			"android.appwidget.AppWidgetManager",
 			"ACTION_APPWIDGET_ENABLED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring AppWidgetManager::ACTION_APPWIDGET_HOST_RESTORED()
+	JString AppWidgetManager::ACTION_APPWIDGET_HOST_RESTORED()
 	{
 		return getStaticObjectField(
 			"android.appwidget.AppWidgetManager",
 			"ACTION_APPWIDGET_HOST_RESTORED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring AppWidgetManager::ACTION_APPWIDGET_OPTIONS_CHANGED()
+	JString AppWidgetManager::ACTION_APPWIDGET_OPTIONS_CHANGED()
 	{
 		return getStaticObjectField(
 			"android.appwidget.AppWidgetManager",
 			"ACTION_APPWIDGET_OPTIONS_CHANGED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring AppWidgetManager::ACTION_APPWIDGET_PICK()
+	JString AppWidgetManager::ACTION_APPWIDGET_PICK()
 	{
 		return getStaticObjectField(
 			"android.appwidget.AppWidgetManager",
 			"ACTION_APPWIDGET_PICK",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring AppWidgetManager::ACTION_APPWIDGET_RESTORED()
+	JString AppWidgetManager::ACTION_APPWIDGET_RESTORED()
 	{
 		return getStaticObjectField(
 			"android.appwidget.AppWidgetManager",
 			"ACTION_APPWIDGET_RESTORED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring AppWidgetManager::ACTION_APPWIDGET_UPDATE()
+	JString AppWidgetManager::ACTION_APPWIDGET_UPDATE()
 	{
 		return getStaticObjectField(
 			"android.appwidget.AppWidgetManager",
 			"ACTION_APPWIDGET_UPDATE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring AppWidgetManager::EXTRA_APPWIDGET_ID()
+	JString AppWidgetManager::EXTRA_APPWIDGET_ID()
 	{
 		return getStaticObjectField(
 			"android.appwidget.AppWidgetManager",
 			"EXTRA_APPWIDGET_ID",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring AppWidgetManager::EXTRA_APPWIDGET_IDS()
+	JString AppWidgetManager::EXTRA_APPWIDGET_IDS()
 	{
 		return getStaticObjectField(
 			"android.appwidget.AppWidgetManager",
 			"EXTRA_APPWIDGET_IDS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring AppWidgetManager::EXTRA_APPWIDGET_OLD_IDS()
+	JString AppWidgetManager::EXTRA_APPWIDGET_OLD_IDS()
 	{
 		return getStaticObjectField(
 			"android.appwidget.AppWidgetManager",
 			"EXTRA_APPWIDGET_OLD_IDS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring AppWidgetManager::EXTRA_APPWIDGET_OPTIONS()
+	JString AppWidgetManager::EXTRA_APPWIDGET_OPTIONS()
 	{
 		return getStaticObjectField(
 			"android.appwidget.AppWidgetManager",
 			"EXTRA_APPWIDGET_OPTIONS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring AppWidgetManager::EXTRA_APPWIDGET_PREVIEW()
+	JString AppWidgetManager::EXTRA_APPWIDGET_PREVIEW()
 	{
 		return getStaticObjectField(
 			"android.appwidget.AppWidgetManager",
 			"EXTRA_APPWIDGET_PREVIEW",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring AppWidgetManager::EXTRA_APPWIDGET_PROVIDER()
+	JString AppWidgetManager::EXTRA_APPWIDGET_PROVIDER()
 	{
 		return getStaticObjectField(
 			"android.appwidget.AppWidgetManager",
 			"EXTRA_APPWIDGET_PROVIDER",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring AppWidgetManager::EXTRA_APPWIDGET_PROVIDER_PROFILE()
+	JString AppWidgetManager::EXTRA_APPWIDGET_PROVIDER_PROFILE()
 	{
 		return getStaticObjectField(
 			"android.appwidget.AppWidgetManager",
 			"EXTRA_APPWIDGET_PROVIDER_PROFILE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring AppWidgetManager::EXTRA_CUSTOM_EXTRAS()
+	JString AppWidgetManager::EXTRA_CUSTOM_EXTRAS()
 	{
 		return getStaticObjectField(
 			"android.appwidget.AppWidgetManager",
 			"EXTRA_CUSTOM_EXTRAS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring AppWidgetManager::EXTRA_CUSTOM_INFO()
+	JString AppWidgetManager::EXTRA_CUSTOM_INFO()
 	{
 		return getStaticObjectField(
 			"android.appwidget.AppWidgetManager",
 			"EXTRA_CUSTOM_INFO",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring AppWidgetManager::EXTRA_HOST_ID()
+	JString AppWidgetManager::EXTRA_HOST_ID()
 	{
 		return getStaticObjectField(
 			"android.appwidget.AppWidgetManager",
 			"EXTRA_HOST_ID",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint AppWidgetManager::INVALID_APPWIDGET_ID()
 	{
@@ -177,69 +179,69 @@ namespace android::appwidget
 			"INVALID_APPWIDGET_ID"
 		);
 	}
-	jstring AppWidgetManager::META_DATA_APPWIDGET_PROVIDER()
+	JString AppWidgetManager::META_DATA_APPWIDGET_PROVIDER()
 	{
 		return getStaticObjectField(
 			"android.appwidget.AppWidgetManager",
 			"META_DATA_APPWIDGET_PROVIDER",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring AppWidgetManager::OPTION_APPWIDGET_HOST_CATEGORY()
+	JString AppWidgetManager::OPTION_APPWIDGET_HOST_CATEGORY()
 	{
 		return getStaticObjectField(
 			"android.appwidget.AppWidgetManager",
 			"OPTION_APPWIDGET_HOST_CATEGORY",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring AppWidgetManager::OPTION_APPWIDGET_MAX_HEIGHT()
+	JString AppWidgetManager::OPTION_APPWIDGET_MAX_HEIGHT()
 	{
 		return getStaticObjectField(
 			"android.appwidget.AppWidgetManager",
 			"OPTION_APPWIDGET_MAX_HEIGHT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring AppWidgetManager::OPTION_APPWIDGET_MAX_WIDTH()
+	JString AppWidgetManager::OPTION_APPWIDGET_MAX_WIDTH()
 	{
 		return getStaticObjectField(
 			"android.appwidget.AppWidgetManager",
 			"OPTION_APPWIDGET_MAX_WIDTH",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring AppWidgetManager::OPTION_APPWIDGET_MIN_HEIGHT()
+	JString AppWidgetManager::OPTION_APPWIDGET_MIN_HEIGHT()
 	{
 		return getStaticObjectField(
 			"android.appwidget.AppWidgetManager",
 			"OPTION_APPWIDGET_MIN_HEIGHT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring AppWidgetManager::OPTION_APPWIDGET_MIN_WIDTH()
+	JString AppWidgetManager::OPTION_APPWIDGET_MIN_WIDTH()
 	{
 		return getStaticObjectField(
 			"android.appwidget.AppWidgetManager",
 			"OPTION_APPWIDGET_MIN_WIDTH",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring AppWidgetManager::OPTION_APPWIDGET_RESTORE_COMPLETED()
+	JString AppWidgetManager::OPTION_APPWIDGET_RESTORE_COMPLETED()
 	{
 		return getStaticObjectField(
 			"android.appwidget.AppWidgetManager",
 			"OPTION_APPWIDGET_RESTORE_COMPLETED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring AppWidgetManager::OPTION_APPWIDGET_SIZES()
+	JString AppWidgetManager::OPTION_APPWIDGET_SIZES()
 	{
 		return getStaticObjectField(
 			"android.appwidget.AppWidgetManager",
 			"OPTION_APPWIDGET_SIZES",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QAndroidJniObject forward
@@ -287,13 +289,13 @@ namespace android::appwidget
 			arg3.object()
 		);
 	}
-	jintArray AppWidgetManager::getAppWidgetIds(android::content::ComponentName arg0)
+	JIntArray AppWidgetManager::getAppWidgetIds(android::content::ComponentName arg0)
 	{
 		return callObjectMethod(
 			"getAppWidgetIds",
 			"(Landroid/content/ComponentName;)[I",
 			arg0.object()
-		).object<jintArray>();
+		);
 	}
 	android::appwidget::AppWidgetProviderInfo AppWidgetManager::getAppWidgetInfo(jint arg0)
 	{
@@ -318,12 +320,12 @@ namespace android::appwidget
 			"()Ljava/util/List;"
 		);
 	}
-	JObject AppWidgetManager::getInstalledProvidersForPackage(jstring arg0, android::os::UserHandle arg1)
+	JObject AppWidgetManager::getInstalledProvidersForPackage(JString arg0, android::os::UserHandle arg1)
 	{
 		return callObjectMethod(
 			"getInstalledProvidersForPackage",
 			"(Ljava/lang/String;Landroid/os/UserHandle;)Ljava/util/List;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
@@ -342,12 +344,12 @@ namespace android::appwidget
 			"()Z"
 		);
 	}
-	void AppWidgetManager::notifyAppWidgetViewDataChanged(jintArray arg0, jint arg1)
+	void AppWidgetManager::notifyAppWidgetViewDataChanged(JIntArray arg0, jint arg1)
 	{
 		callMethod<void>(
 			"notifyAppWidgetViewDataChanged",
 			"([II)V",
-			arg0,
+			arg0.object<jintArray>(),
 			arg1
 		);
 	}
@@ -360,12 +362,12 @@ namespace android::appwidget
 			arg1
 		);
 	}
-	void AppWidgetManager::partiallyUpdateAppWidget(jintArray arg0, android::widget::RemoteViews arg1)
+	void AppWidgetManager::partiallyUpdateAppWidget(JIntArray arg0, android::widget::RemoteViews arg1)
 	{
 		callMethod<void>(
 			"partiallyUpdateAppWidget",
 			"([ILandroid/widget/RemoteViews;)V",
-			arg0,
+			arg0.object<jintArray>(),
 			arg1.object()
 		);
 	}
@@ -388,12 +390,12 @@ namespace android::appwidget
 			arg2.object()
 		);
 	}
-	void AppWidgetManager::updateAppWidget(jintArray arg0, android::widget::RemoteViews arg1)
+	void AppWidgetManager::updateAppWidget(JIntArray arg0, android::widget::RemoteViews arg1)
 	{
 		callMethod<void>(
 			"updateAppWidget",
 			"([ILandroid/widget/RemoteViews;)V",
-			arg0,
+			arg0.object<jintArray>(),
 			arg1.object()
 		);
 	}
@@ -424,13 +426,13 @@ namespace android::appwidget
 			arg1.object()
 		);
 	}
-	void AppWidgetManager::updateAppWidgetProviderInfo(android::content::ComponentName arg0, jstring arg1)
+	void AppWidgetManager::updateAppWidgetProviderInfo(android::content::ComponentName arg0, JString arg1)
 	{
 		callMethod<void>(
 			"updateAppWidgetProviderInfo",
 			"(Landroid/content/ComponentName;Ljava/lang/String;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
 } // namespace android::appwidget

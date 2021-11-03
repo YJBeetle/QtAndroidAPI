@@ -2,6 +2,8 @@
 
 #include "../../../JObject.hpp"
 
+class JObject;
+class JString;
 
 namespace java::security::cert
 {
@@ -19,9 +21,9 @@ namespace java::security::cert
 		CollectionCertStoreParameters(JObject arg0);
 		
 		// Methods
-		jobject clone();
+		JObject clone();
 		JObject getCollection();
-		jstring toString();
+		JString toString();
 	};
 } // namespace java::security::cert
 

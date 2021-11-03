@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JFloatArray;
 namespace android::graphics
 {
 	class Interpolator_Result;
@@ -27,11 +28,11 @@ namespace android::graphics
 		jint getValueCount();
 		void reset(jint arg0);
 		void reset(jint arg0, jint arg1);
-		void setKeyFrame(jint arg0, jint arg1, jfloatArray arg2);
-		void setKeyFrame(jint arg0, jint arg1, jfloatArray arg2, jfloatArray arg3);
+		void setKeyFrame(jint arg0, jint arg1, JFloatArray arg2);
+		void setKeyFrame(jint arg0, jint arg1, JFloatArray arg2, JFloatArray arg3);
 		void setRepeatMirror(jfloat arg0, jboolean arg1);
-		android::graphics::Interpolator_Result timeToValues(jfloatArray arg0);
-		android::graphics::Interpolator_Result timeToValues(jint arg0, jfloatArray arg1);
+		android::graphics::Interpolator_Result timeToValues(JFloatArray arg0);
+		android::graphics::Interpolator_Result timeToValues(jint arg0, JFloatArray arg1);
 	};
 } // namespace android::graphics
 

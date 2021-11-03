@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./BadPaddingException.hpp"
 
 namespace javax::crypto
@@ -13,11 +14,11 @@ namespace javax::crypto
 			"javax.crypto.BadPaddingException",
 			"()V"
 		) {}
-	BadPaddingException::BadPaddingException(jstring arg0)
+	BadPaddingException::BadPaddingException(JString arg0)
 		: java::security::GeneralSecurityException(
 			"javax.crypto.BadPaddingException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

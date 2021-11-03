@@ -1,3 +1,5 @@
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
 #include "./CRLReason.hpp"
 
 namespace java::security::cert
@@ -98,22 +100,22 @@ namespace java::security::cert
 	// Constructors
 	
 	// Methods
-	java::security::cert::CRLReason CRLReason::valueOf(jstring arg0)
+	java::security::cert::CRLReason CRLReason::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"java.security.cert.CRLReason",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/security/cert/CRLReason;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray CRLReason::values()
+	JArray CRLReason::values()
 	{
 		return callStaticObjectMethod(
 			"java.security.cert.CRLReason",
 			"values",
 			"()[Ljava/security/cert/CRLReason;"
-		).object<jarray>();
+		);
 	}
 } // namespace java::security::cert
 

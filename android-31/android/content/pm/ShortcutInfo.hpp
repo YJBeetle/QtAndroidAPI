@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JArray;
 namespace android::content
 {
 	class ComponentName;
@@ -26,6 +27,8 @@ namespace android::os
 {
 	class UserHandle;
 }
+class JString;
+class JString;
 
 namespace android::content::pm
 {
@@ -42,7 +45,7 @@ namespace android::content::pm
 		static jint DISABLED_REASON_SIGNATURE_MISMATCH();
 		static jint DISABLED_REASON_UNKNOWN();
 		static jint DISABLED_REASON_VERSION_LOWER();
-		static jstring SHORTCUT_CATEGORY_CONVERSATION();
+		static JString SHORTCUT_CATEGORY_CONVERSATION();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ShortcutInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
@@ -54,18 +57,18 @@ namespace android::content::pm
 		jint describeContents();
 		android::content::ComponentName getActivity();
 		JObject getCategories();
-		jstring getDisabledMessage();
+		JString getDisabledMessage();
 		jint getDisabledReason();
 		android::os::PersistableBundle getExtras();
-		jstring getId();
+		JString getId();
 		android::content::Intent getIntent();
-		jarray getIntents();
+		JArray getIntents();
 		jlong getLastChangedTimestamp();
 		android::content::LocusId getLocusId();
-		jstring getLongLabel();
-		jstring getPackage();
+		JString getLongLabel();
+		JString getPackage();
 		jint getRank();
-		jstring getShortLabel();
+		JString getShortLabel();
 		android::os::UserHandle getUserHandle();
 		jboolean hasKeyFieldsOnly();
 		jboolean isCached();
@@ -74,7 +77,7 @@ namespace android::content::pm
 		jboolean isEnabled();
 		jboolean isImmutable();
 		jboolean isPinned();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::content::pm

@@ -1,3 +1,4 @@
+#include "../../JByteArray.hpp"
 #include "./OutputStream.hpp"
 #include "./InputStream.hpp"
 
@@ -60,45 +61,45 @@ namespace java::io
 			"()I"
 		);
 	}
-	jint InputStream::read(jbyteArray arg0)
+	jint InputStream::read(JByteArray arg0)
 	{
 		return callMethod<jint>(
 			"read",
 			"([B)I",
-			arg0
+			arg0.object<jbyteArray>()
 		);
 	}
-	jint InputStream::read(jbyteArray arg0, jint arg1, jint arg2)
+	jint InputStream::read(JByteArray arg0, jint arg1, jint arg2)
 	{
 		return callMethod<jint>(
 			"read",
 			"([BII)I",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1,
 			arg2
 		);
 	}
-	jbyteArray InputStream::readAllBytes()
+	JByteArray InputStream::readAllBytes()
 	{
 		return callObjectMethod(
 			"readAllBytes",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
-	jbyteArray InputStream::readNBytes(jint arg0)
+	JByteArray InputStream::readNBytes(jint arg0)
 	{
 		return callObjectMethod(
 			"readNBytes",
 			"(I)[B",
 			arg0
-		).object<jbyteArray>();
+		);
 	}
-	jint InputStream::readNBytes(jbyteArray arg0, jint arg1, jint arg2)
+	jint InputStream::readNBytes(JByteArray arg0, jint arg1, jint arg2)
 	{
 		return callMethod<jint>(
 			"readNBytes",
 			"([BII)I",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1,
 			arg2
 		);

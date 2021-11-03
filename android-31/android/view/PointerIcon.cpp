@@ -2,6 +2,7 @@
 #include "../content/res/Resources.hpp"
 #include "../graphics/Bitmap.hpp"
 #include "../os/Parcel.hpp"
+#include "../../JObject.hpp"
 #include "./PointerIcon.hpp"
 
 namespace android::view
@@ -221,12 +222,12 @@ namespace android::view
 			"()I"
 		);
 	}
-	jboolean PointerIcon::equals(jobject arg0)
+	jboolean PointerIcon::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	void PointerIcon::writeToParcel(android::os::Parcel arg0, jint arg1)

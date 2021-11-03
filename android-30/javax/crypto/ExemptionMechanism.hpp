@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JByteArray;
+class JString;
 namespace java::security
 {
 	class AlgorithmParameters;
@@ -29,13 +31,13 @@ namespace javax::crypto
 		// Constructors
 		
 		// Methods
-		static javax::crypto::ExemptionMechanism getInstance(jstring arg0);
-		static javax::crypto::ExemptionMechanism getInstance(jstring arg0, jstring arg1);
-		static javax::crypto::ExemptionMechanism getInstance(jstring arg0, java::security::Provider arg1);
-		jbyteArray genExemptionBlob();
-		jint genExemptionBlob(jbyteArray arg0);
-		jint genExemptionBlob(jbyteArray arg0, jint arg1);
-		jstring getName();
+		static javax::crypto::ExemptionMechanism getInstance(JString arg0);
+		static javax::crypto::ExemptionMechanism getInstance(JString arg0, JString arg1);
+		static javax::crypto::ExemptionMechanism getInstance(JString arg0, java::security::Provider arg1);
+		JByteArray genExemptionBlob();
+		jint genExemptionBlob(JByteArray arg0);
+		jint genExemptionBlob(JByteArray arg0, jint arg1);
+		JString getName();
 		jint getOutputSize(jint arg0);
 		java::security::Provider getProvider();
 		void init(JObject arg0);

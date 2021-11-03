@@ -1,10 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../view/View.hpp"
-#include "../view/ViewGroup.hpp"
 #include "./LinearLayout.hpp"
 
+class JArray;
 namespace android::content
 {
 	class Context;
@@ -49,7 +47,7 @@ namespace android::widget
 		jboolean dispatchTouchEvent(android::view::MotionEvent arg0);
 		jboolean dispatchTrackballEvent(android::view::MotionEvent arg0);
 		android::view::accessibility::AccessibilityNodeProvider getAccessibilityNodeProvider();
-		jarray getDisplayedValues();
+		JArray getDisplayedValues();
 		jint getMaxValue();
 		jint getMinValue();
 		jint getSelectionDividerHeight();
@@ -64,7 +62,7 @@ namespace android::widget
 		jboolean performClick();
 		jboolean performLongClick();
 		void scrollBy(jint arg0, jint arg1);
-		void setDisplayedValues(jarray arg0);
+		void setDisplayedValues(JArray arg0);
 		void setEnabled(jboolean arg0);
 		void setFormatter(JObject arg0);
 		void setMaxValue(jint arg0);

@@ -22,6 +22,7 @@ namespace android::os
 {
 	class Message;
 }
+class JString;
 
 namespace android::net::sip
 {
@@ -39,7 +40,7 @@ namespace android::net::sip
 		
 		// Methods
 		void answerCall(jint arg0);
-		void attachCall(android::net::sip::SipSession arg0, jstring arg1);
+		void attachCall(android::net::sip::SipSession arg0, JString arg1);
 		void close();
 		void continueCall(jint arg0);
 		void endCall();

@@ -2,7 +2,6 @@
 
 #include "../../JObject.hpp"
 
-
 namespace android::text
 {
 	class Layout_Directions : public JObject

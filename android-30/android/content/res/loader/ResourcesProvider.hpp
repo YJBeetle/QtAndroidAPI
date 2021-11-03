@@ -10,6 +10,7 @@ namespace android::os
 {
 	class ParcelFileDescriptor;
 }
+class JString;
 
 namespace android::content::res::loader
 {
@@ -28,8 +29,8 @@ namespace android::content::res::loader
 		static android::content::res::loader::ResourcesProvider empty(JObject arg0);
 		static android::content::res::loader::ResourcesProvider loadFromApk(android::os::ParcelFileDescriptor arg0);
 		static android::content::res::loader::ResourcesProvider loadFromApk(android::os::ParcelFileDescriptor arg0, JObject arg1);
-		static android::content::res::loader::ResourcesProvider loadFromDirectory(jstring arg0, JObject arg1);
-		static android::content::res::loader::ResourcesProvider loadFromSplit(android::content::Context arg0, jstring arg1);
+		static android::content::res::loader::ResourcesProvider loadFromDirectory(JString arg0, JObject arg1);
+		static android::content::res::loader::ResourcesProvider loadFromSplit(android::content::Context arg0, JString arg1);
 		static android::content::res::loader::ResourcesProvider loadFromTable(android::os::ParcelFileDescriptor arg0, JObject arg1);
 		void close();
 	};

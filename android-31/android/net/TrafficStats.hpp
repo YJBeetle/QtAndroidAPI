@@ -6,6 +6,7 @@ namespace java::io
 {
 	class FileDescriptor;
 }
+class JString;
 namespace java::net
 {
 	class DatagramSocket;
@@ -38,16 +39,16 @@ namespace android::net
 		static jlong getMobileRxPackets();
 		static jlong getMobileTxBytes();
 		static jlong getMobileTxPackets();
-		static jlong getRxBytes(jstring arg0);
-		static jlong getRxPackets(jstring arg0);
+		static jlong getRxBytes(JString arg0);
+		static jlong getRxPackets(JString arg0);
 		static jint getThreadStatsTag();
 		static jint getThreadStatsUid();
 		static jlong getTotalRxBytes();
 		static jlong getTotalRxPackets();
 		static jlong getTotalTxBytes();
 		static jlong getTotalTxPackets();
-		static jlong getTxBytes(jstring arg0);
-		static jlong getTxPackets(jstring arg0);
+		static jlong getTxBytes(JString arg0);
+		static jlong getTxPackets(JString arg0);
 		static jlong getUidRxBytes(jint arg0);
 		static jlong getUidRxPackets(jint arg0);
 		static jlong getUidTcpRxBytes(jint arg0);

@@ -1,3 +1,5 @@
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
 #include "./WifiConfiguration_KeyMgmt.hpp"
 
 namespace android::net::wifi
@@ -52,21 +54,21 @@ namespace android::net::wifi
 			"WPA_PSK"
 		);
 	}
-	jarray WifiConfiguration_KeyMgmt::strings()
+	JArray WifiConfiguration_KeyMgmt::strings()
 	{
 		return getStaticObjectField(
 			"android.net.wifi.WifiConfiguration$KeyMgmt",
 			"strings",
 			"[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
-	jstring WifiConfiguration_KeyMgmt::varName()
+	JString WifiConfiguration_KeyMgmt::varName()
 	{
 		return getStaticObjectField(
 			"android.net.wifi.WifiConfiguration$KeyMgmt",
 			"varName",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QAndroidJniObject forward

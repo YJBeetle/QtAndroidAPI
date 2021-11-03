@@ -14,6 +14,8 @@ namespace android::print
 {
 	class PrintAttributes_Margins;
 }
+class JObject;
+class JString;
 
 namespace android::print
 {
@@ -31,7 +33,7 @@ namespace android::print
 		
 		// Methods
 		jint describeContents();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint getColorModes();
 		android::print::PrintAttributes getDefaults();
 		jint getDuplexModes();
@@ -39,7 +41,7 @@ namespace android::print
 		android::print::PrintAttributes_Margins getMinMargins();
 		JObject getResolutions();
 		jint hashCode();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::print

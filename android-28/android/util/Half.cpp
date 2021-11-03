@@ -1,3 +1,5 @@
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./Half.hpp"
 
 namespace android::util
@@ -111,11 +113,11 @@ namespace android::util
 			"(F)V",
 			arg0
 		) {}
-	Half::Half(jstring arg0)
+	Half::Half(JString arg0)
 		: java::lang::Number(
 			"android.util.Half",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	Half::Half(jshort arg0)
 		: java::lang::Number(
@@ -341,13 +343,13 @@ namespace android::util
 			arg1
 		);
 	}
-	jshort Half::parseHalf(jstring arg0)
+	jshort Half::parseHalf(JString arg0)
 	{
 		return callStaticMethod<jshort>(
 			"android.util.Half",
 			"parseHalf",
 			"(Ljava/lang/String;)S",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	jshort Half::round(jshort arg0)
@@ -377,23 +379,23 @@ namespace android::util
 			arg0
 		);
 	}
-	jstring Half::toHexString(jshort arg0)
+	JString Half::toHexString(jshort arg0)
 	{
 		return callStaticObjectMethod(
 			"android.util.Half",
 			"toHexString",
 			"(S)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
-	jstring Half::toString(jshort arg0)
+	JString Half::toString(jshort arg0)
 	{
 		return callStaticObjectMethod(
 			"android.util.Half",
 			"toString",
 			"(S)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
 	jshort Half::trunc(jshort arg0)
 	{
@@ -413,13 +415,13 @@ namespace android::util
 			arg0
 		);
 	}
-	android::util::Half Half::valueOf(jstring arg0)
+	android::util::Half Half::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.util.Half",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/util/Half;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::util::Half Half::valueOf(jshort arg0)
@@ -446,12 +448,12 @@ namespace android::util
 			arg0.object()
 		);
 	}
-	jint Half::compareTo(jobject arg0)
+	jint Half::compareTo(JObject arg0)
 	{
 		return callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Object;)I",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jdouble Half::doubleValue()
@@ -461,12 +463,12 @@ namespace android::util
 			"()D"
 		);
 	}
-	jboolean Half::equals(jobject arg0)
+	jboolean Half::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jfloat Half::floatValue()
@@ -518,12 +520,12 @@ namespace android::util
 			"()S"
 		);
 	}
-	jstring Half::toString()
+	JString Half::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::util
 

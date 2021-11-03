@@ -1,3 +1,5 @@
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
 #include "../../../java/net/InetAddress.hpp"
 #include "./SSLParameters.hpp"
 #include "./SSLSocket.hpp"
@@ -20,12 +22,12 @@ namespace javax::net::ssl
 			arg0.object()
 		);
 	}
-	jstring SSLSocket::getApplicationProtocol()
+	JString SSLSocket::getApplicationProtocol()
 	{
 		return callObjectMethod(
 			"getApplicationProtocol",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jboolean SSLSocket::getEnableSessionCreation()
 	{
@@ -34,26 +36,26 @@ namespace javax::net::ssl
 			"()Z"
 		);
 	}
-	jarray SSLSocket::getEnabledCipherSuites()
+	JArray SSLSocket::getEnabledCipherSuites()
 	{
 		return callObjectMethod(
 			"getEnabledCipherSuites",
 			"()[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
-	jarray SSLSocket::getEnabledProtocols()
+	JArray SSLSocket::getEnabledProtocols()
 	{
 		return callObjectMethod(
 			"getEnabledProtocols",
 			"()[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
-	jstring SSLSocket::getHandshakeApplicationProtocol()
+	JString SSLSocket::getHandshakeApplicationProtocol()
 	{
 		return callObjectMethod(
 			"getHandshakeApplicationProtocol",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	JObject SSLSocket::getHandshakeApplicationProtocolSelector()
 	{
@@ -90,19 +92,19 @@ namespace javax::net::ssl
 			"()Ljavax/net/ssl/SSLSession;"
 		);
 	}
-	jarray SSLSocket::getSupportedCipherSuites()
+	JArray SSLSocket::getSupportedCipherSuites()
 	{
 		return callObjectMethod(
 			"getSupportedCipherSuites",
 			"()[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
-	jarray SSLSocket::getSupportedProtocols()
+	JArray SSLSocket::getSupportedProtocols()
 	{
 		return callObjectMethod(
 			"getSupportedProtocols",
 			"()[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
 	jboolean SSLSocket::getUseClientMode()
 	{
@@ -134,20 +136,20 @@ namespace javax::net::ssl
 			arg0
 		);
 	}
-	void SSLSocket::setEnabledCipherSuites(jarray arg0)
+	void SSLSocket::setEnabledCipherSuites(JArray arg0)
 	{
 		callMethod<void>(
 			"setEnabledCipherSuites",
 			"([Ljava/lang/String;)V",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
-	void SSLSocket::setEnabledProtocols(jarray arg0)
+	void SSLSocket::setEnabledProtocols(JArray arg0)
 	{
 		callMethod<void>(
 			"setEnabledProtocols",
 			"([Ljava/lang/String;)V",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
 	void SSLSocket::setHandshakeApplicationProtocolSelector(JObject arg0)

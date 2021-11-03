@@ -1,5 +1,7 @@
 #include "../graphics/drawable/Drawable.hpp"
 #include "../view/View.hpp"
+#include "../../JString.hpp"
+#include "../../JObject.hpp"
 #include "./ActionBar_Tab.hpp"
 
 namespace android::app
@@ -24,12 +26,12 @@ namespace android::app
 		) {}
 	
 	// Methods
-	jstring ActionBar_Tab::getContentDescription()
+	JString ActionBar_Tab::getContentDescription()
 	{
 		return callObjectMethod(
 			"getContentDescription",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	android::view::View ActionBar_Tab::getCustomView()
 	{
@@ -52,19 +54,19 @@ namespace android::app
 			"()I"
 		);
 	}
-	jobject ActionBar_Tab::getTag()
+	JObject ActionBar_Tab::getTag()
 	{
 		return callObjectMethod(
 			"getTag",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
-	jstring ActionBar_Tab::getText()
+	JString ActionBar_Tab::getText()
 	{
 		return callObjectMethod(
 			"getText",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	void ActionBar_Tab::select()
 	{
@@ -81,12 +83,12 @@ namespace android::app
 			arg0
 		);
 	}
-	android::app::ActionBar_Tab ActionBar_Tab::setContentDescription(jstring arg0)
+	android::app::ActionBar_Tab ActionBar_Tab::setContentDescription(JString arg0)
 	{
 		return callObjectMethod(
 			"setContentDescription",
 			"(Ljava/lang/CharSequence;)Landroid/app/ActionBar$Tab;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::app::ActionBar_Tab ActionBar_Tab::setCustomView(android::view::View arg0)
@@ -129,12 +131,12 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	android::app::ActionBar_Tab ActionBar_Tab::setTag(jobject arg0)
+	android::app::ActionBar_Tab ActionBar_Tab::setTag(JObject arg0)
 	{
 		return callObjectMethod(
 			"setTag",
 			"(Ljava/lang/Object;)Landroid/app/ActionBar$Tab;",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	android::app::ActionBar_Tab ActionBar_Tab::setText(jint arg0)
@@ -145,12 +147,12 @@ namespace android::app
 			arg0
 		);
 	}
-	android::app::ActionBar_Tab ActionBar_Tab::setText(jstring arg0)
+	android::app::ActionBar_Tab ActionBar_Tab::setText(JString arg0)
 	{
 		return callObjectMethod(
 			"setText",
 			"(Ljava/lang/CharSequence;)Landroid/app/ActionBar$Tab;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 } // namespace android::app

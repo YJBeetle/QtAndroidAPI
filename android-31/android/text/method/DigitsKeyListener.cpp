@@ -1,3 +1,6 @@
+#include "../../../JCharArray.hpp"
+#include "../../../JString.hpp"
+#include "../../../JString.hpp"
 #include "../../../java/util/Locale.hpp"
 #include "./DigitsKeyListener.hpp"
 
@@ -45,13 +48,13 @@ namespace android::text::method
 			"()Landroid/text/method/DigitsKeyListener;"
 		);
 	}
-	android::text::method::DigitsKeyListener DigitsKeyListener::getInstance(jstring arg0)
+	android::text::method::DigitsKeyListener DigitsKeyListener::getInstance(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.text.method.DigitsKeyListener",
 			"getInstance",
 			"(Ljava/lang/String;)Landroid/text/method/DigitsKeyListener;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::text::method::DigitsKeyListener DigitsKeyListener::getInstance(java::util::Locale arg0)
@@ -84,18 +87,18 @@ namespace android::text::method
 			arg2
 		);
 	}
-	jstring DigitsKeyListener::filter(jstring arg0, jint arg1, jint arg2, JObject arg3, jint arg4, jint arg5)
+	JString DigitsKeyListener::filter(JString arg0, jint arg1, jint arg2, JObject arg3, jint arg4, jint arg5)
 	{
 		return callObjectMethod(
 			"filter",
 			"(Ljava/lang/CharSequence;IILandroid/text/Spanned;II)Ljava/lang/CharSequence;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
 			arg2,
 			arg3.object(),
 			arg4,
 			arg5
-		).object<jstring>();
+		);
 	}
 	jint DigitsKeyListener::getInputType()
 	{

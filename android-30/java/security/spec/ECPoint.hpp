@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JObject;
 namespace java::math
 {
 	class BigInteger;
@@ -23,7 +24,7 @@ namespace java::security::spec
 		ECPoint(java::math::BigInteger arg0, java::math::BigInteger arg1);
 		
 		// Methods
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		java::math::BigInteger getAffineX();
 		java::math::BigInteger getAffineY();
 		jint hashCode();

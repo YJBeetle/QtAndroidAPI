@@ -1,5 +1,8 @@
+#include "../../JFloatArray.hpp"
 #include "../os/Bundle.hpp"
 #include "../os/Parcel.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./Location.hpp"
 
 namespace android::location
@@ -45,24 +48,24 @@ namespace android::location
 			"(Landroid/location/Location;)V",
 			arg0.object()
 		) {}
-	Location::Location(jstring arg0)
+	Location::Location(JString arg0)
 		: JObject(
 			"android.location.Location",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods
-	jdouble Location::convert(jstring arg0)
+	jdouble Location::convert(JString arg0)
 	{
 		return callStaticMethod<jdouble>(
 			"android.location.Location",
 			"convert",
 			"(Ljava/lang/String;)D",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jstring Location::convert(jdouble arg0, jint arg1)
+	JString Location::convert(jdouble arg0, jint arg1)
 	{
 		return callStaticObjectMethod(
 			"android.location.Location",
@@ -70,9 +73,9 @@ namespace android::location
 			"(DI)Ljava/lang/String;",
 			arg0,
 			arg1
-		).object<jstring>();
+		);
 	}
-	void Location::distanceBetween(jdouble arg0, jdouble arg1, jdouble arg2, jdouble arg3, jfloatArray arg4)
+	void Location::distanceBetween(jdouble arg0, jdouble arg1, jdouble arg2, jdouble arg3, JFloatArray arg4)
 	{
 		callStaticMethod<void>(
 			"android.location.Location",
@@ -82,7 +85,7 @@ namespace android::location
 			arg1,
 			arg2,
 			arg3,
-			arg4
+			arg4.object<jfloatArray>()
 		);
 	}
 	jfloat Location::bearingTo(android::location::Location arg0)
@@ -108,21 +111,21 @@ namespace android::location
 			arg0.object()
 		);
 	}
-	void Location::dump(JObject arg0, jstring arg1)
+	void Location::dump(JObject arg0, JString arg1)
 	{
 		callMethod<void>(
 			"dump",
 			"(Landroid/util/Printer;Ljava/lang/String;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
-	jboolean Location::equals(jobject arg0)
+	jboolean Location::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jfloat Location::getAccuracy()
@@ -188,12 +191,12 @@ namespace android::location
 			"()D"
 		);
 	}
-	jstring Location::getProvider()
+	JString Location::getProvider()
 	{
 		return callObjectMethod(
 			"getProvider",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jfloat Location::getSpeed()
 	{
@@ -423,12 +426,12 @@ namespace android::location
 			arg0
 		);
 	}
-	void Location::setProvider(jstring arg0)
+	void Location::setProvider(JString arg0)
 	{
 		callMethod<void>(
 			"setProvider",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void Location::setSpeed(jfloat arg0)
@@ -463,12 +466,12 @@ namespace android::location
 			arg0
 		);
 	}
-	jstring Location::toString()
+	JString Location::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void Location::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./AccessDeniedException.hpp"
 
 namespace java::nio::file
@@ -8,19 +9,19 @@ namespace java::nio::file
 	AccessDeniedException::AccessDeniedException(QAndroidJniObject obj) : java::nio::file::FileSystemException(obj) {}
 	
 	// Constructors
-	AccessDeniedException::AccessDeniedException(jstring arg0)
+	AccessDeniedException::AccessDeniedException(JString arg0)
 		: java::nio::file::FileSystemException(
 			"java.nio.file.AccessDeniedException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	AccessDeniedException::AccessDeniedException(jstring arg0, jstring arg1, jstring arg2)
+	AccessDeniedException::AccessDeniedException(JString arg0, JString arg1, JString arg2)
 		: java::nio::file::FileSystemException(
 			"java.nio.file.AccessDeniedException",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1,
-			arg2
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2.object<jstring>()
 		) {}
 	
 	// Methods

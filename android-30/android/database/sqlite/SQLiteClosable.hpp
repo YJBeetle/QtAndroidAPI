@@ -2,7 +2,6 @@
 
 #include "../../../JObject.hpp"
 
-
 namespace android::database::sqlite
 {
 	class SQLiteClosable : public JObject

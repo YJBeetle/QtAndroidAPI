@@ -1,3 +1,5 @@
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
 #include "./WifiConfiguration_AuthAlgorithm.hpp"
 
 namespace android::net::wifi
@@ -31,21 +33,21 @@ namespace android::net::wifi
 			"SHARED"
 		);
 	}
-	jarray WifiConfiguration_AuthAlgorithm::strings()
+	JArray WifiConfiguration_AuthAlgorithm::strings()
 	{
 		return getStaticObjectField(
 			"android.net.wifi.WifiConfiguration$AuthAlgorithm",
 			"strings",
 			"[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
-	jstring WifiConfiguration_AuthAlgorithm::varName()
+	JString WifiConfiguration_AuthAlgorithm::varName()
 	{
 		return getStaticObjectField(
 			"android.net.wifi.WifiConfiguration$AuthAlgorithm",
 			"varName",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QAndroidJniObject forward

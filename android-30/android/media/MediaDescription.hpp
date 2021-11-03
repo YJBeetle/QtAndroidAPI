@@ -18,6 +18,9 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
+class JObject;
+class JString;
 
 namespace android::media
 {
@@ -33,7 +36,7 @@ namespace android::media
 		static jlong BT_FOLDER_TYPE_TITLES();
 		static jlong BT_FOLDER_TYPE_YEARS();
 		static JObject CREATOR();
-		static jstring EXTRA_BT_FOLDER_TYPE();
+		static JString EXTRA_BT_FOLDER_TYPE();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MediaDescription(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
@@ -43,16 +46,16 @@ namespace android::media
 		
 		// Methods
 		jint describeContents();
-		jboolean equals(jobject arg0);
-		jstring getDescription();
+		jboolean equals(JObject arg0);
+		JString getDescription();
 		android::os::Bundle getExtras();
 		android::graphics::Bitmap getIconBitmap();
 		android::net::Uri getIconUri();
-		jstring getMediaId();
+		JString getMediaId();
 		android::net::Uri getMediaUri();
-		jstring getSubtitle();
-		jstring getTitle();
-		jstring toString();
+		JString getSubtitle();
+		JString getTitle();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::media

@@ -6,6 +6,7 @@ namespace android::print
 {
 	class PrintDocumentInfo;
 }
+class JString;
 
 namespace android::print
 {
@@ -19,7 +20,7 @@ namespace android::print
 		PrintDocumentInfo_Builder(QAndroidJniObject obj);
 		
 		// Constructors
-		PrintDocumentInfo_Builder(jstring arg0);
+		PrintDocumentInfo_Builder(JString arg0);
 		
 		// Methods
 		android::print::PrintDocumentInfo build();

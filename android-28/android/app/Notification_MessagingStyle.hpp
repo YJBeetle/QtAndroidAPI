@@ -1,6 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./Notification_Style.hpp"
 
 namespace android::app
@@ -11,6 +10,7 @@ namespace android::app
 {
 	class Person;
 }
+class JString;
 
 namespace android::app
 {
@@ -26,20 +26,20 @@ namespace android::app
 		
 		// Constructors
 		Notification_MessagingStyle(android::app::Person arg0);
-		Notification_MessagingStyle(jstring arg0);
+		Notification_MessagingStyle(JString arg0);
 		
 		// Methods
 		android::app::Notification_MessagingStyle addHistoricMessage(android::app::Notification_MessagingStyle_Message arg0);
 		android::app::Notification_MessagingStyle addMessage(android::app::Notification_MessagingStyle_Message arg0);
-		android::app::Notification_MessagingStyle addMessage(jstring arg0, jlong arg1, android::app::Person arg2);
-		android::app::Notification_MessagingStyle addMessage(jstring arg0, jlong arg1, jstring arg2);
-		jstring getConversationTitle();
+		android::app::Notification_MessagingStyle addMessage(JString arg0, jlong arg1, android::app::Person arg2);
+		android::app::Notification_MessagingStyle addMessage(JString arg0, jlong arg1, JString arg2);
+		JString getConversationTitle();
 		JObject getHistoricMessages();
 		JObject getMessages();
 		android::app::Person getUser();
-		jstring getUserDisplayName();
+		JString getUserDisplayName();
 		jboolean isGroupConversation();
-		android::app::Notification_MessagingStyle setConversationTitle(jstring arg0);
+		android::app::Notification_MessagingStyle setConversationTitle(JString arg0);
 		android::app::Notification_MessagingStyle setGroupConversation(jboolean arg0);
 	};
 } // namespace android::app

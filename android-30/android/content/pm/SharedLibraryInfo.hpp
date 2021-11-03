@@ -10,6 +10,7 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
 
 namespace android::content::pm
 {
@@ -34,10 +35,10 @@ namespace android::content::pm
 		android::content::pm::VersionedPackage getDeclaringPackage();
 		JObject getDependentPackages();
 		jlong getLongVersion();
-		jstring getName();
+		JString getName();
 		jint getType();
 		jint getVersion();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::content::pm

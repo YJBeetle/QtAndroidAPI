@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./Permission.hpp"
 #include "./PermissionCollection.hpp"
 
@@ -60,12 +61,12 @@ namespace java::security
 			"()V"
 		);
 	}
-	jstring PermissionCollection::toString()
+	JString PermissionCollection::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::security
 

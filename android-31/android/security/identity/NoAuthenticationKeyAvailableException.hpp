@@ -1,9 +1,9 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "../../../java/lang/Exception.hpp"
 #include "./IdentityCredentialException.hpp"
 
+class JString;
+class JThrowable;
 
 namespace android::security::identity
 {
@@ -17,8 +17,8 @@ namespace android::security::identity
 		NoAuthenticationKeyAvailableException(QAndroidJniObject obj);
 		
 		// Constructors
-		NoAuthenticationKeyAvailableException(jstring arg0);
-		NoAuthenticationKeyAvailableException(jstring arg0, jthrowable arg1);
+		NoAuthenticationKeyAvailableException(JString arg0);
+		NoAuthenticationKeyAvailableException(JString arg0, JThrowable arg1);
 		
 		// Methods
 	};

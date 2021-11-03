@@ -1,4 +1,5 @@
 #include "../../os/Parcel.hpp"
+#include "../../../JString.hpp"
 #include "../../../java/util/regex/Pattern.hpp"
 #include "./TextValueSanitizer.hpp"
 
@@ -18,12 +19,12 @@ namespace android::service::autofill
 	TextValueSanitizer::TextValueSanitizer(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	TextValueSanitizer::TextValueSanitizer(java::util::regex::Pattern arg0, jstring arg1)
+	TextValueSanitizer::TextValueSanitizer(java::util::regex::Pattern arg0, JString arg1)
 		: JObject(
 			"android.service.autofill.TextValueSanitizer",
 			"(Ljava/util/regex/Pattern;Ljava/lang/String;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		) {}
 	
 	// Methods
@@ -34,12 +35,12 @@ namespace android::service::autofill
 			"()I"
 		);
 	}
-	jstring TextValueSanitizer::toString()
+	JString TextValueSanitizer::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void TextValueSanitizer::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

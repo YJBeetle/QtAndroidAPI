@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./HttpCookie.hpp"
 #include "./URI.hpp"
 #include "./CookieManager.hpp"

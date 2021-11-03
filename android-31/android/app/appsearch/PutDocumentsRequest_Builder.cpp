@@ -1,3 +1,4 @@
+#include "../../../JArray.hpp"
 #include "./PutDocumentsRequest.hpp"
 #include "./PutDocumentsRequest_Builder.hpp"
 
@@ -16,12 +17,12 @@ namespace android::app::appsearch
 		) {}
 	
 	// Methods
-	android::app::appsearch::PutDocumentsRequest_Builder PutDocumentsRequest_Builder::addGenericDocuments(jarray arg0)
+	android::app::appsearch::PutDocumentsRequest_Builder PutDocumentsRequest_Builder::addGenericDocuments(JArray arg0)
 	{
 		return callObjectMethod(
 			"addGenericDocuments",
 			"([Landroid/app/appsearch/GenericDocument;)Landroid/app/appsearch/PutDocumentsRequest$Builder;",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
 	android::app::appsearch::PutDocumentsRequest_Builder PutDocumentsRequest_Builder::addGenericDocuments(JObject arg0)

@@ -6,6 +6,8 @@ namespace android::os
 {
 	class Parcel;
 }
+class JObject;
+class JString;
 
 namespace android::content::pm
 {
@@ -20,17 +22,17 @@ namespace android::content::pm
 		VersionedPackage(QAndroidJniObject obj);
 		
 		// Constructors
-		VersionedPackage(jstring arg0, jint arg1);
-		VersionedPackage(jstring arg0, jlong arg1);
+		VersionedPackage(JString arg0, jint arg1);
+		VersionedPackage(JString arg0, jlong arg1);
 		
 		// Methods
 		jint describeContents();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jlong getLongVersionCode();
-		jstring getPackageName();
+		JString getPackageName();
 		jint getVersionCode();
 		jint hashCode();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::content::pm

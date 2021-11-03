@@ -1,3 +1,5 @@
+#include "../../../JObjectArray.hpp"
+#include "../../../JObject.hpp"
 #include "../../lang/Thread.hpp"
 #include "../PriorityQueue.hpp"
 #include "./TimeUnit.hpp"
@@ -25,20 +27,12 @@ namespace java::util::concurrent
 		) {}
 	
 	// Methods
-	jboolean DelayQueue::add(jobject arg0)
-	{
-		return callMethod<jboolean>(
-			"add",
-			"(Ljava/lang/Object;)Z",
-			arg0
-		);
-	}
 	jboolean DelayQueue::add(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"add",
-			"(Ljava/util/concurrent/Delayed;)Z",
-			arg0.object()
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
 		);
 	}
 	void DelayQueue::clear()
@@ -72,38 +66,20 @@ namespace java::util::concurrent
 			"()Ljava/util/Iterator;"
 		);
 	}
-	jboolean DelayQueue::offer(jobject arg0)
-	{
-		return callMethod<jboolean>(
-			"offer",
-			"(Ljava/lang/Object;)Z",
-			arg0
-		);
-	}
 	jboolean DelayQueue::offer(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"offer",
-			"(Ljava/util/concurrent/Delayed;)Z",
-			arg0.object()
-		);
-	}
-	jboolean DelayQueue::offer(jobject arg0, jlong arg1, java::util::concurrent::TimeUnit arg2)
-	{
-		return callMethod<jboolean>(
-			"offer",
-			"(Ljava/lang/Object;JLjava/util/concurrent/TimeUnit;)Z",
-			arg0,
-			arg1,
-			arg2.object()
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
 		);
 	}
 	jboolean DelayQueue::offer(JObject arg0, jlong arg1, java::util::concurrent::TimeUnit arg2)
 	{
 		return callMethod<jboolean>(
 			"offer",
-			"(Ljava/util/concurrent/Delayed;JLjava/util/concurrent/TimeUnit;)Z",
-			arg0.object(),
+			"(Ljava/lang/Object;JLjava/util/concurrent/TimeUnit;)Z",
+			arg0.object<jobject>(),
 			arg1,
 			arg2.object()
 		);
@@ -131,20 +107,12 @@ namespace java::util::concurrent
 			arg1.object()
 		);
 	}
-	void DelayQueue::put(jobject arg0)
-	{
-		callMethod<void>(
-			"put",
-			"(Ljava/lang/Object;)V",
-			arg0
-		);
-	}
 	void DelayQueue::put(JObject arg0)
 	{
 		callMethod<void>(
 			"put",
-			"(Ljava/util/concurrent/Delayed;)V",
-			arg0.object()
+			"(Ljava/lang/Object;)V",
+			arg0.object<jobject>()
 		);
 	}
 	jint DelayQueue::remainingCapacity()
@@ -154,12 +122,12 @@ namespace java::util::concurrent
 			"()I"
 		);
 	}
-	jboolean DelayQueue::remove(jobject arg0)
+	jboolean DelayQueue::remove(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"remove",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint DelayQueue::size()
@@ -176,20 +144,20 @@ namespace java::util::concurrent
 			"()Ljava/util/concurrent/Delayed;"
 		);
 	}
-	jobjectArray DelayQueue::toArray()
+	JObjectArray DelayQueue::toArray()
 	{
 		return callObjectMethod(
 			"toArray",
 			"()[Ljava/lang/Object;"
-		).object<jobjectArray>();
+		);
 	}
-	jobjectArray DelayQueue::toArray(jobjectArray arg0)
+	JObjectArray DelayQueue::toArray(JObjectArray arg0)
 	{
 		return callObjectMethod(
 			"toArray",
 			"([Ljava/lang/Object;)[Ljava/lang/Object;",
-			arg0
-		).object<jobjectArray>();
+			arg0.object<jobjectArray>()
+		);
 	}
 } // namespace java::util::concurrent
 

@@ -2,6 +2,9 @@
 
 #include "../../JObject.hpp"
 
+class JByteArray;
+class JObject;
+class JString;
 namespace java::security
 {
 	class Provider;
@@ -33,14 +36,14 @@ namespace javax::crypto
 		// Constructors
 		
 		// Methods
-		static javax::crypto::KeyAgreement getInstance(jstring arg0);
-		static javax::crypto::KeyAgreement getInstance(jstring arg0, jstring arg1);
-		static javax::crypto::KeyAgreement getInstance(jstring arg0, java::security::Provider arg1);
+		static javax::crypto::KeyAgreement getInstance(JString arg0);
+		static javax::crypto::KeyAgreement getInstance(JString arg0, JString arg1);
+		static javax::crypto::KeyAgreement getInstance(JString arg0, java::security::Provider arg1);
 		JObject doPhase(JObject arg0, jboolean arg1);
-		jbyteArray generateSecret();
-		jint generateSecret(jbyteArray arg0, jint arg1);
-		JObject generateSecret(jstring arg0);
-		jstring getAlgorithm();
+		JByteArray generateSecret();
+		jint generateSecret(JByteArray arg0, jint arg1);
+		JObject generateSecret(JString arg0);
+		JString getAlgorithm();
 		java::security::Provider getProvider();
 		void init(JObject arg0);
 		void init(JObject arg0, java::security::SecureRandom arg1);

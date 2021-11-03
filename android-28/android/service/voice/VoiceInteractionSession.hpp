@@ -2,6 +2,8 @@
 
 #include "../../../JObject.hpp"
 
+class JArray;
+class JBooleanArray;
 namespace android::app
 {
 	class Dialog;
@@ -86,6 +88,8 @@ namespace java::io
 {
 	class PrintWriter;
 }
+class JString;
+class JThrowable;
 
 namespace android::service::voice
 {
@@ -109,7 +113,7 @@ namespace android::service::voice
 		
 		// Methods
 		void closeSystemDialogs();
-		void dump(jstring arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, jarray arg3);
+		void dump(JString arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, JArray arg3);
 		void finish();
 		android::content::Context getContext();
 		jint getDisabledShowContext();
@@ -117,7 +121,7 @@ namespace android::service::voice
 		jint getUserDisabledShowContext();
 		android::app::Dialog getWindow();
 		void hide();
-		void onAssistStructureFailure(jthrowable arg0);
+		void onAssistStructureFailure(JThrowable arg0);
 		void onBackPressed();
 		void onCancelRequest(android::service::voice::VoiceInteractionSession_Request arg0);
 		void onCloseSystemDialogs();
@@ -126,7 +130,7 @@ namespace android::service::voice
 		void onCreate();
 		android::view::View onCreateContentView();
 		void onDestroy();
-		jbooleanArray onGetSupportedCommands(jarray arg0);
+		JBooleanArray onGetSupportedCommands(JArray arg0);
 		void onHandleAssist(android::os::Bundle arg0, android::app::assist::AssistStructure arg1, android::app::assist::AssistContent arg2);
 		void onHandleAssistSecondary(android::os::Bundle arg0, android::app::assist::AssistStructure arg1, android::app::assist::AssistContent arg2, jint arg3, jint arg4);
 		void onHandleScreenshot(android::graphics::Bitmap arg0);

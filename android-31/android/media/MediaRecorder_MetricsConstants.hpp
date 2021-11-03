@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JString;
 
 namespace android::media
 {
@@ -9,22 +10,22 @@ namespace android::media
 	{
 	public:
 		// Fields
-		static jstring AUDIO_BITRATE();
-		static jstring AUDIO_CHANNELS();
-		static jstring AUDIO_SAMPLERATE();
-		static jstring AUDIO_TIMESCALE();
-		static jstring CAPTURE_FPS();
-		static jstring CAPTURE_FPS_ENABLE();
-		static jstring FRAMERATE();
-		static jstring HEIGHT();
-		static jstring MOVIE_TIMESCALE();
-		static jstring ROTATION();
-		static jstring VIDEO_BITRATE();
-		static jstring VIDEO_IFRAME_INTERVAL();
-		static jstring VIDEO_LEVEL();
-		static jstring VIDEO_PROFILE();
-		static jstring VIDEO_TIMESCALE();
-		static jstring WIDTH();
+		static JString AUDIO_BITRATE();
+		static JString AUDIO_CHANNELS();
+		static JString AUDIO_SAMPLERATE();
+		static JString AUDIO_TIMESCALE();
+		static JString CAPTURE_FPS();
+		static JString CAPTURE_FPS_ENABLE();
+		static JString FRAMERATE();
+		static JString HEIGHT();
+		static JString MOVIE_TIMESCALE();
+		static JString ROTATION();
+		static JString VIDEO_BITRATE();
+		static JString VIDEO_IFRAME_INTERVAL();
+		static JString VIDEO_LEVEL();
+		static JString VIDEO_PROFILE();
+		static JString VIDEO_TIMESCALE();
+		static JString WIDTH();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MediaRecorder_MetricsConstants(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}

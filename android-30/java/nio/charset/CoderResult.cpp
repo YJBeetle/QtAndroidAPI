@@ -1,4 +1,7 @@
+#include "../../../JArray.hpp"
+#include "../../../JArray.hpp"
 #include "../../lang/Integer.hpp"
+#include "../../../JString.hpp"
 #include "./CoderResult.hpp"
 
 namespace java::nio::charset
@@ -94,12 +97,12 @@ namespace java::nio::charset
 			"()V"
 		);
 	}
-	jstring CoderResult::toString()
+	JString CoderResult::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::nio::charset
 

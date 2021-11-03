@@ -1,8 +1,11 @@
+#include "../../../../JByteArray.hpp"
+#include "../../../../JIntArray.hpp"
 #include "../../Network.hpp"
 #include "../../eap/EapSessionConfig.hpp"
 #include "./IkeIdentification.hpp"
 #include "./IkeSaProposal.hpp"
 #include "./IkeSessionParams.hpp"
+#include "../../../../JString.hpp"
 #include "../../../../java/security/cert/X509Certificate.hpp"
 #include "./IkeSessionParams_Builder.hpp"
 
@@ -88,12 +91,12 @@ namespace android::net::ipsec::ike
 			arg1.object()
 		);
 	}
-	android::net::ipsec::ike::IkeSessionParams_Builder IkeSessionParams_Builder::setAuthPsk(jbyteArray arg0)
+	android::net::ipsec::ike::IkeSessionParams_Builder IkeSessionParams_Builder::setAuthPsk(JByteArray arg0)
 	{
 		return callObjectMethod(
 			"setAuthPsk",
 			"([B)Landroid/net/ipsec/ike/IkeSessionParams$Builder;",
-			arg0
+			arg0.object<jbyteArray>()
 		);
 	}
 	android::net::ipsec::ike::IkeSessionParams_Builder IkeSessionParams_Builder::setDpdDelaySeconds(jint arg0)
@@ -145,20 +148,20 @@ namespace android::net::ipsec::ike
 			arg0.object()
 		);
 	}
-	android::net::ipsec::ike::IkeSessionParams_Builder IkeSessionParams_Builder::setRetransmissionTimeoutsMillis(jintArray arg0)
+	android::net::ipsec::ike::IkeSessionParams_Builder IkeSessionParams_Builder::setRetransmissionTimeoutsMillis(JIntArray arg0)
 	{
 		return callObjectMethod(
 			"setRetransmissionTimeoutsMillis",
 			"([I)Landroid/net/ipsec/ike/IkeSessionParams$Builder;",
-			arg0
+			arg0.object<jintArray>()
 		);
 	}
-	android::net::ipsec::ike::IkeSessionParams_Builder IkeSessionParams_Builder::setServerHostname(jstring arg0)
+	android::net::ipsec::ike::IkeSessionParams_Builder IkeSessionParams_Builder::setServerHostname(JString arg0)
 	{
 		return callObjectMethod(
 			"setServerHostname",
 			"(Ljava/lang/String;)Landroid/net/ipsec/ike/IkeSessionParams$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 } // namespace android::net::ipsec::ike

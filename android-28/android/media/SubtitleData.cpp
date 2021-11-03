@@ -1,3 +1,4 @@
+#include "../../JByteArray.hpp"
 #include "../os/Parcel.hpp"
 #include "./SubtitleData.hpp"
 
@@ -11,12 +12,12 @@ namespace android::media
 	// Constructors
 	
 	// Methods
-	jbyteArray SubtitleData::getData()
+	JByteArray SubtitleData::getData()
 	{
 		return callObjectMethod(
 			"getData",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
 	jlong SubtitleData::getDurationUs()
 	{

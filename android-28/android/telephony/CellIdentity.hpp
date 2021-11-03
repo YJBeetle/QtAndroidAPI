@@ -6,6 +6,9 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
+class JObject;
+class JString;
 
 namespace android::telephony
 {
@@ -23,9 +26,9 @@ namespace android::telephony
 		
 		// Methods
 		jint describeContents();
-		jboolean equals(jobject arg0);
-		jstring getOperatorAlphaLong();
-		jstring getOperatorAlphaShort();
+		jboolean equals(JObject arg0);
+		JString getOperatorAlphaLong();
+		JString getOperatorAlphaShort();
 		jint hashCode();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};

@@ -1,7 +1,5 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "./Handler.hpp"
 #include "./StreamHandler.hpp"
 
 namespace java::util::logging

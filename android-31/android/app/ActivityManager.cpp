@@ -1,3 +1,6 @@
+#include "../../JByteArray.hpp"
+#include "../../JIntArray.hpp"
+#include "../../JArray.hpp"
 #include "./Activity.hpp"
 #include "./ActivityManager_MemoryInfo.hpp"
 #include "./ActivityManager_RunningAppProcessInfo.hpp"
@@ -11,18 +14,19 @@
 #include "../os/Bundle.hpp"
 #include "../util/Size.hpp"
 #include "../../java/io/FileDescriptor.hpp"
+#include "../../JString.hpp"
 #include "./ActivityManager.hpp"
 
 namespace android::app
 {
 	// Fields
-	jstring ActivityManager::ACTION_REPORT_HEAP_LIMIT()
+	JString ActivityManager::ACTION_REPORT_HEAP_LIMIT()
 	{
 		return getStaticObjectField(
 			"android.app.ActivityManager",
 			"ACTION_REPORT_HEAP_LIMIT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint ActivityManager::LOCK_TASK_MODE_LOCKED()
 	{
@@ -45,13 +49,13 @@ namespace android::app
 			"LOCK_TASK_MODE_PINNED"
 		);
 	}
-	jstring ActivityManager::META_HOME_ALTERNATE()
+	JString ActivityManager::META_HOME_ALTERNATE()
 	{
 		return getStaticObjectField(
 			"android.app.ActivityManager",
 			"META_HOME_ALTERNATE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint ActivityManager::MOVE_TASK_NO_USER_ACTION()
 	{
@@ -149,12 +153,12 @@ namespace android::app
 			arg3.object()
 		);
 	}
-	void ActivityManager::appNotResponding(jstring arg0)
+	void ActivityManager::appNotResponding(JString arg0)
 	{
 		callMethod<void>(
 			"appNotResponding",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	jboolean ActivityManager::clearApplicationUserData()
@@ -171,13 +175,13 @@ namespace android::app
 			"()V"
 		);
 	}
-	void ActivityManager::dumpPackageState(java::io::FileDescriptor arg0, jstring arg1)
+	void ActivityManager::dumpPackageState(java::io::FileDescriptor arg0, JString arg1)
 	{
 		callMethod<void>(
 			"dumpPackageState",
 			"(Ljava/io/FileDescriptor;Ljava/lang/String;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
 	android::util::Size ActivityManager::getAppTaskThumbnailSize()
@@ -201,12 +205,12 @@ namespace android::app
 			"()Landroid/content/pm/ConfigurationInfo;"
 		);
 	}
-	JObject ActivityManager::getHistoricalProcessExitReasons(jstring arg0, jint arg1, jint arg2)
+	JObject ActivityManager::getHistoricalProcessExitReasons(JString arg0, jint arg1, jint arg2)
 	{
 		return callObjectMethod(
 			"getHistoricalProcessExitReasons",
 			"(Ljava/lang/String;II)Ljava/util/List;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
 			arg2
 		);
@@ -254,13 +258,13 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	jarray ActivityManager::getProcessMemoryInfo(jintArray arg0)
+	JArray ActivityManager::getProcessMemoryInfo(JIntArray arg0)
 	{
 		return callObjectMethod(
 			"getProcessMemoryInfo",
 			"([I)[Landroid/os/Debug$MemoryInfo;",
-			arg0
-		).object<jarray>();
+			arg0.object<jintArray>()
+		);
 	}
 	JObject ActivityManager::getProcessesInErrorState()
 	{
@@ -340,12 +344,12 @@ namespace android::app
 			"()Z"
 		);
 	}
-	void ActivityManager::killBackgroundProcesses(jstring arg0)
+	void ActivityManager::killBackgroundProcesses(JString arg0)
 	{
 		callMethod<void>(
 			"killBackgroundProcesses",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void ActivityManager::moveTaskToFront(jint arg0, jint arg1)
@@ -367,20 +371,20 @@ namespace android::app
 			arg2.object()
 		);
 	}
-	void ActivityManager::restartPackage(jstring arg0)
+	void ActivityManager::restartPackage(JString arg0)
 	{
 		callMethod<void>(
 			"restartPackage",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	void ActivityManager::setProcessStateSummary(jbyteArray arg0)
+	void ActivityManager::setProcessStateSummary(JByteArray arg0)
 	{
 		callMethod<void>(
 			"setProcessStateSummary",
 			"([B)V",
-			arg0
+			arg0.object<jbyteArray>()
 		);
 	}
 	void ActivityManager::setWatchHeapLimit(jlong arg0)

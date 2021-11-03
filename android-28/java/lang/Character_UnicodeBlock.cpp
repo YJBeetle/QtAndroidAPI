@@ -1,3 +1,7 @@
+#include "../../JIntArray.hpp"
+#include "../../JArray.hpp"
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
 #include "./Character_UnicodeBlock.hpp"
 
 namespace java::lang
@@ -2482,13 +2486,13 @@ namespace java::lang
 	// Constructors
 	
 	// Methods
-	java::lang::Character_UnicodeBlock Character_UnicodeBlock::forName(jstring arg0)
+	java::lang::Character_UnicodeBlock Character_UnicodeBlock::forName(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"java.lang.Character$UnicodeBlock",
 			"forName",
 			"(Ljava/lang/String;)Ljava/lang/Character$UnicodeBlock;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	java::lang::Character_UnicodeBlock Character_UnicodeBlock::of(jchar arg0)

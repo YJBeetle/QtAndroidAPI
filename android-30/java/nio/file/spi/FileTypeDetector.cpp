@@ -1,3 +1,4 @@
+#include "../../../../JString.hpp"
 #include "../../../lang/Void.hpp"
 #include "./FileTypeDetector.hpp"
 
@@ -11,13 +12,13 @@ namespace java::nio::file::spi
 	// Constructors
 	
 	// Methods
-	jstring FileTypeDetector::probeContentType(JObject arg0)
+	JString FileTypeDetector::probeContentType(JObject arg0)
 	{
 		return callObjectMethod(
 			"probeContentType",
 			"(Ljava/nio/file/Path;)Ljava/lang/String;",
 			arg0.object()
-		).object<jstring>();
+		);
 	}
 } // namespace java::nio::file::spi
 

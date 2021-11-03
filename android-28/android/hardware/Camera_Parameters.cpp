@@ -1,153 +1,156 @@
+#include "../../JFloatArray.hpp"
+#include "../../JIntArray.hpp"
 #include "./Camera.hpp"
 #include "./Camera_Size.hpp"
+#include "../../JString.hpp"
 #include "./Camera_Parameters.hpp"
 
 namespace android::hardware
 {
 	// Fields
-	jstring Camera_Parameters::ANTIBANDING_50HZ()
+	JString Camera_Parameters::ANTIBANDING_50HZ()
 	{
 		return getStaticObjectField(
 			"android.hardware.Camera$Parameters",
 			"ANTIBANDING_50HZ",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Camera_Parameters::ANTIBANDING_60HZ()
+	JString Camera_Parameters::ANTIBANDING_60HZ()
 	{
 		return getStaticObjectField(
 			"android.hardware.Camera$Parameters",
 			"ANTIBANDING_60HZ",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Camera_Parameters::ANTIBANDING_AUTO()
+	JString Camera_Parameters::ANTIBANDING_AUTO()
 	{
 		return getStaticObjectField(
 			"android.hardware.Camera$Parameters",
 			"ANTIBANDING_AUTO",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Camera_Parameters::ANTIBANDING_OFF()
+	JString Camera_Parameters::ANTIBANDING_OFF()
 	{
 		return getStaticObjectField(
 			"android.hardware.Camera$Parameters",
 			"ANTIBANDING_OFF",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Camera_Parameters::EFFECT_AQUA()
+	JString Camera_Parameters::EFFECT_AQUA()
 	{
 		return getStaticObjectField(
 			"android.hardware.Camera$Parameters",
 			"EFFECT_AQUA",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Camera_Parameters::EFFECT_BLACKBOARD()
+	JString Camera_Parameters::EFFECT_BLACKBOARD()
 	{
 		return getStaticObjectField(
 			"android.hardware.Camera$Parameters",
 			"EFFECT_BLACKBOARD",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Camera_Parameters::EFFECT_MONO()
+	JString Camera_Parameters::EFFECT_MONO()
 	{
 		return getStaticObjectField(
 			"android.hardware.Camera$Parameters",
 			"EFFECT_MONO",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Camera_Parameters::EFFECT_NEGATIVE()
+	JString Camera_Parameters::EFFECT_NEGATIVE()
 	{
 		return getStaticObjectField(
 			"android.hardware.Camera$Parameters",
 			"EFFECT_NEGATIVE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Camera_Parameters::EFFECT_NONE()
+	JString Camera_Parameters::EFFECT_NONE()
 	{
 		return getStaticObjectField(
 			"android.hardware.Camera$Parameters",
 			"EFFECT_NONE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Camera_Parameters::EFFECT_POSTERIZE()
+	JString Camera_Parameters::EFFECT_POSTERIZE()
 	{
 		return getStaticObjectField(
 			"android.hardware.Camera$Parameters",
 			"EFFECT_POSTERIZE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Camera_Parameters::EFFECT_SEPIA()
+	JString Camera_Parameters::EFFECT_SEPIA()
 	{
 		return getStaticObjectField(
 			"android.hardware.Camera$Parameters",
 			"EFFECT_SEPIA",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Camera_Parameters::EFFECT_SOLARIZE()
+	JString Camera_Parameters::EFFECT_SOLARIZE()
 	{
 		return getStaticObjectField(
 			"android.hardware.Camera$Parameters",
 			"EFFECT_SOLARIZE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Camera_Parameters::EFFECT_WHITEBOARD()
+	JString Camera_Parameters::EFFECT_WHITEBOARD()
 	{
 		return getStaticObjectField(
 			"android.hardware.Camera$Parameters",
 			"EFFECT_WHITEBOARD",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Camera_Parameters::FLASH_MODE_AUTO()
+	JString Camera_Parameters::FLASH_MODE_AUTO()
 	{
 		return getStaticObjectField(
 			"android.hardware.Camera$Parameters",
 			"FLASH_MODE_AUTO",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Camera_Parameters::FLASH_MODE_OFF()
+	JString Camera_Parameters::FLASH_MODE_OFF()
 	{
 		return getStaticObjectField(
 			"android.hardware.Camera$Parameters",
 			"FLASH_MODE_OFF",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Camera_Parameters::FLASH_MODE_ON()
+	JString Camera_Parameters::FLASH_MODE_ON()
 	{
 		return getStaticObjectField(
 			"android.hardware.Camera$Parameters",
 			"FLASH_MODE_ON",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Camera_Parameters::FLASH_MODE_RED_EYE()
+	JString Camera_Parameters::FLASH_MODE_RED_EYE()
 	{
 		return getStaticObjectField(
 			"android.hardware.Camera$Parameters",
 			"FLASH_MODE_RED_EYE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Camera_Parameters::FLASH_MODE_TORCH()
+	JString Camera_Parameters::FLASH_MODE_TORCH()
 	{
 		return getStaticObjectField(
 			"android.hardware.Camera$Parameters",
 			"FLASH_MODE_TORCH",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint Camera_Parameters::FOCUS_DISTANCE_FAR_INDEX()
 	{
@@ -170,61 +173,61 @@ namespace android::hardware
 			"FOCUS_DISTANCE_OPTIMAL_INDEX"
 		);
 	}
-	jstring Camera_Parameters::FOCUS_MODE_AUTO()
+	JString Camera_Parameters::FOCUS_MODE_AUTO()
 	{
 		return getStaticObjectField(
 			"android.hardware.Camera$Parameters",
 			"FOCUS_MODE_AUTO",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Camera_Parameters::FOCUS_MODE_CONTINUOUS_PICTURE()
+	JString Camera_Parameters::FOCUS_MODE_CONTINUOUS_PICTURE()
 	{
 		return getStaticObjectField(
 			"android.hardware.Camera$Parameters",
 			"FOCUS_MODE_CONTINUOUS_PICTURE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Camera_Parameters::FOCUS_MODE_CONTINUOUS_VIDEO()
+	JString Camera_Parameters::FOCUS_MODE_CONTINUOUS_VIDEO()
 	{
 		return getStaticObjectField(
 			"android.hardware.Camera$Parameters",
 			"FOCUS_MODE_CONTINUOUS_VIDEO",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Camera_Parameters::FOCUS_MODE_EDOF()
+	JString Camera_Parameters::FOCUS_MODE_EDOF()
 	{
 		return getStaticObjectField(
 			"android.hardware.Camera$Parameters",
 			"FOCUS_MODE_EDOF",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Camera_Parameters::FOCUS_MODE_FIXED()
+	JString Camera_Parameters::FOCUS_MODE_FIXED()
 	{
 		return getStaticObjectField(
 			"android.hardware.Camera$Parameters",
 			"FOCUS_MODE_FIXED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Camera_Parameters::FOCUS_MODE_INFINITY()
+	JString Camera_Parameters::FOCUS_MODE_INFINITY()
 	{
 		return getStaticObjectField(
 			"android.hardware.Camera$Parameters",
 			"FOCUS_MODE_INFINITY",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Camera_Parameters::FOCUS_MODE_MACRO()
+	JString Camera_Parameters::FOCUS_MODE_MACRO()
 	{
 		return getStaticObjectField(
 			"android.hardware.Camera$Parameters",
 			"FOCUS_MODE_MACRO",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint Camera_Parameters::PREVIEW_FPS_MAX_INDEX()
 	{
@@ -240,205 +243,205 @@ namespace android::hardware
 			"PREVIEW_FPS_MIN_INDEX"
 		);
 	}
-	jstring Camera_Parameters::SCENE_MODE_ACTION()
+	JString Camera_Parameters::SCENE_MODE_ACTION()
 	{
 		return getStaticObjectField(
 			"android.hardware.Camera$Parameters",
 			"SCENE_MODE_ACTION",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Camera_Parameters::SCENE_MODE_AUTO()
+	JString Camera_Parameters::SCENE_MODE_AUTO()
 	{
 		return getStaticObjectField(
 			"android.hardware.Camera$Parameters",
 			"SCENE_MODE_AUTO",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Camera_Parameters::SCENE_MODE_BARCODE()
+	JString Camera_Parameters::SCENE_MODE_BARCODE()
 	{
 		return getStaticObjectField(
 			"android.hardware.Camera$Parameters",
 			"SCENE_MODE_BARCODE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Camera_Parameters::SCENE_MODE_BEACH()
+	JString Camera_Parameters::SCENE_MODE_BEACH()
 	{
 		return getStaticObjectField(
 			"android.hardware.Camera$Parameters",
 			"SCENE_MODE_BEACH",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Camera_Parameters::SCENE_MODE_CANDLELIGHT()
+	JString Camera_Parameters::SCENE_MODE_CANDLELIGHT()
 	{
 		return getStaticObjectField(
 			"android.hardware.Camera$Parameters",
 			"SCENE_MODE_CANDLELIGHT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Camera_Parameters::SCENE_MODE_FIREWORKS()
+	JString Camera_Parameters::SCENE_MODE_FIREWORKS()
 	{
 		return getStaticObjectField(
 			"android.hardware.Camera$Parameters",
 			"SCENE_MODE_FIREWORKS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Camera_Parameters::SCENE_MODE_HDR()
+	JString Camera_Parameters::SCENE_MODE_HDR()
 	{
 		return getStaticObjectField(
 			"android.hardware.Camera$Parameters",
 			"SCENE_MODE_HDR",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Camera_Parameters::SCENE_MODE_LANDSCAPE()
+	JString Camera_Parameters::SCENE_MODE_LANDSCAPE()
 	{
 		return getStaticObjectField(
 			"android.hardware.Camera$Parameters",
 			"SCENE_MODE_LANDSCAPE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Camera_Parameters::SCENE_MODE_NIGHT()
+	JString Camera_Parameters::SCENE_MODE_NIGHT()
 	{
 		return getStaticObjectField(
 			"android.hardware.Camera$Parameters",
 			"SCENE_MODE_NIGHT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Camera_Parameters::SCENE_MODE_NIGHT_PORTRAIT()
+	JString Camera_Parameters::SCENE_MODE_NIGHT_PORTRAIT()
 	{
 		return getStaticObjectField(
 			"android.hardware.Camera$Parameters",
 			"SCENE_MODE_NIGHT_PORTRAIT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Camera_Parameters::SCENE_MODE_PARTY()
+	JString Camera_Parameters::SCENE_MODE_PARTY()
 	{
 		return getStaticObjectField(
 			"android.hardware.Camera$Parameters",
 			"SCENE_MODE_PARTY",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Camera_Parameters::SCENE_MODE_PORTRAIT()
+	JString Camera_Parameters::SCENE_MODE_PORTRAIT()
 	{
 		return getStaticObjectField(
 			"android.hardware.Camera$Parameters",
 			"SCENE_MODE_PORTRAIT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Camera_Parameters::SCENE_MODE_SNOW()
+	JString Camera_Parameters::SCENE_MODE_SNOW()
 	{
 		return getStaticObjectField(
 			"android.hardware.Camera$Parameters",
 			"SCENE_MODE_SNOW",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Camera_Parameters::SCENE_MODE_SPORTS()
+	JString Camera_Parameters::SCENE_MODE_SPORTS()
 	{
 		return getStaticObjectField(
 			"android.hardware.Camera$Parameters",
 			"SCENE_MODE_SPORTS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Camera_Parameters::SCENE_MODE_STEADYPHOTO()
+	JString Camera_Parameters::SCENE_MODE_STEADYPHOTO()
 	{
 		return getStaticObjectField(
 			"android.hardware.Camera$Parameters",
 			"SCENE_MODE_STEADYPHOTO",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Camera_Parameters::SCENE_MODE_SUNSET()
+	JString Camera_Parameters::SCENE_MODE_SUNSET()
 	{
 		return getStaticObjectField(
 			"android.hardware.Camera$Parameters",
 			"SCENE_MODE_SUNSET",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Camera_Parameters::SCENE_MODE_THEATRE()
+	JString Camera_Parameters::SCENE_MODE_THEATRE()
 	{
 		return getStaticObjectField(
 			"android.hardware.Camera$Parameters",
 			"SCENE_MODE_THEATRE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Camera_Parameters::WHITE_BALANCE_AUTO()
+	JString Camera_Parameters::WHITE_BALANCE_AUTO()
 	{
 		return getStaticObjectField(
 			"android.hardware.Camera$Parameters",
 			"WHITE_BALANCE_AUTO",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Camera_Parameters::WHITE_BALANCE_CLOUDY_DAYLIGHT()
+	JString Camera_Parameters::WHITE_BALANCE_CLOUDY_DAYLIGHT()
 	{
 		return getStaticObjectField(
 			"android.hardware.Camera$Parameters",
 			"WHITE_BALANCE_CLOUDY_DAYLIGHT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Camera_Parameters::WHITE_BALANCE_DAYLIGHT()
+	JString Camera_Parameters::WHITE_BALANCE_DAYLIGHT()
 	{
 		return getStaticObjectField(
 			"android.hardware.Camera$Parameters",
 			"WHITE_BALANCE_DAYLIGHT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Camera_Parameters::WHITE_BALANCE_FLUORESCENT()
+	JString Camera_Parameters::WHITE_BALANCE_FLUORESCENT()
 	{
 		return getStaticObjectField(
 			"android.hardware.Camera$Parameters",
 			"WHITE_BALANCE_FLUORESCENT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Camera_Parameters::WHITE_BALANCE_INCANDESCENT()
+	JString Camera_Parameters::WHITE_BALANCE_INCANDESCENT()
 	{
 		return getStaticObjectField(
 			"android.hardware.Camera$Parameters",
 			"WHITE_BALANCE_INCANDESCENT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Camera_Parameters::WHITE_BALANCE_SHADE()
+	JString Camera_Parameters::WHITE_BALANCE_SHADE()
 	{
 		return getStaticObjectField(
 			"android.hardware.Camera$Parameters",
 			"WHITE_BALANCE_SHADE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Camera_Parameters::WHITE_BALANCE_TWILIGHT()
+	JString Camera_Parameters::WHITE_BALANCE_TWILIGHT()
 	{
 		return getStaticObjectField(
 			"android.hardware.Camera$Parameters",
 			"WHITE_BALANCE_TWILIGHT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Camera_Parameters::WHITE_BALANCE_WARM_FLUORESCENT()
+	JString Camera_Parameters::WHITE_BALANCE_WARM_FLUORESCENT()
 	{
 		return getStaticObjectField(
 			"android.hardware.Camera$Parameters",
 			"WHITE_BALANCE_WARM_FLUORESCENT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QAndroidJniObject forward
@@ -447,27 +450,27 @@ namespace android::hardware
 	// Constructors
 	
 	// Methods
-	jstring Camera_Parameters::flatten()
+	JString Camera_Parameters::flatten()
 	{
 		return callObjectMethod(
 			"flatten",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Camera_Parameters::get(jstring arg0)
+	JString Camera_Parameters::get(JString arg0)
 	{
 		return callObjectMethod(
 			"get",
 			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
+			arg0.object<jstring>()
+		);
 	}
-	jstring Camera_Parameters::getAntibanding()
+	JString Camera_Parameters::getAntibanding()
 	{
 		return callObjectMethod(
 			"getAntibanding",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jboolean Camera_Parameters::getAutoExposureLock()
 	{
@@ -483,12 +486,12 @@ namespace android::hardware
 			"()Z"
 		);
 	}
-	jstring Camera_Parameters::getColorEffect()
+	JString Camera_Parameters::getColorEffect()
 	{
 		return callObjectMethod(
 			"getColorEffect",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint Camera_Parameters::getExposureCompensation()
 	{
@@ -504,12 +507,12 @@ namespace android::hardware
 			"()F"
 		);
 	}
-	jstring Camera_Parameters::getFlashMode()
+	JString Camera_Parameters::getFlashMode()
 	{
 		return callObjectMethod(
 			"getFlashMode",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jfloat Camera_Parameters::getFocalLength()
 	{
@@ -525,20 +528,20 @@ namespace android::hardware
 			"()Ljava/util/List;"
 		);
 	}
-	void Camera_Parameters::getFocusDistances(jfloatArray arg0)
+	void Camera_Parameters::getFocusDistances(JFloatArray arg0)
 	{
 		callMethod<void>(
 			"getFocusDistances",
 			"([F)V",
-			arg0
+			arg0.object<jfloatArray>()
 		);
 	}
-	jstring Camera_Parameters::getFocusMode()
+	JString Camera_Parameters::getFocusMode()
 	{
 		return callObjectMethod(
 			"getFocusMode",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jfloat Camera_Parameters::getHorizontalViewAngle()
 	{
@@ -547,12 +550,12 @@ namespace android::hardware
 			"()F"
 		);
 	}
-	jint Camera_Parameters::getInt(jstring arg0)
+	jint Camera_Parameters::getInt(JString arg0)
 	{
 		return callMethod<jint>(
 			"getInt",
 			"(Ljava/lang/String;)I",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	jint Camera_Parameters::getJpegQuality()
@@ -653,12 +656,12 @@ namespace android::hardware
 			"()I"
 		);
 	}
-	void Camera_Parameters::getPreviewFpsRange(jintArray arg0)
+	void Camera_Parameters::getPreviewFpsRange(JIntArray arg0)
 	{
 		callMethod<void>(
 			"getPreviewFpsRange",
 			"([I)V",
-			arg0
+			arg0.object<jintArray>()
 		);
 	}
 	jint Camera_Parameters::getPreviewFrameRate()
@@ -675,12 +678,12 @@ namespace android::hardware
 			"()Landroid/hardware/Camera$Size;"
 		);
 	}
-	jstring Camera_Parameters::getSceneMode()
+	JString Camera_Parameters::getSceneMode()
 	{
 		return callObjectMethod(
 			"getSceneMode",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	JObject Camera_Parameters::getSupportedAntibanding()
 	{
@@ -794,12 +797,12 @@ namespace android::hardware
 			"()Z"
 		);
 	}
-	jstring Camera_Parameters::getWhiteBalance()
+	JString Camera_Parameters::getWhiteBalance()
 	{
 		return callObjectMethod(
 			"getWhiteBalance",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint Camera_Parameters::getZoom()
 	{
@@ -857,12 +860,12 @@ namespace android::hardware
 			"()Z"
 		);
 	}
-	void Camera_Parameters::remove(jstring arg0)
+	void Camera_Parameters::remove(JString arg0)
 	{
 		callMethod<void>(
 			"remove",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void Camera_Parameters::removeGpsData()
@@ -872,30 +875,30 @@ namespace android::hardware
 			"()V"
 		);
 	}
-	void Camera_Parameters::set(jstring arg0, jint arg1)
+	void Camera_Parameters::set(JString arg0, jint arg1)
 	{
 		callMethod<void>(
 			"set",
 			"(Ljava/lang/String;I)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
-	void Camera_Parameters::set(jstring arg0, jstring arg1)
+	void Camera_Parameters::set(JString arg0, JString arg1)
 	{
 		callMethod<void>(
 			"set",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		);
 	}
-	void Camera_Parameters::setAntibanding(jstring arg0)
+	void Camera_Parameters::setAntibanding(JString arg0)
 	{
 		callMethod<void>(
 			"setAntibanding",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void Camera_Parameters::setAutoExposureLock(jboolean arg0)
@@ -914,12 +917,12 @@ namespace android::hardware
 			arg0
 		);
 	}
-	void Camera_Parameters::setColorEffect(jstring arg0)
+	void Camera_Parameters::setColorEffect(JString arg0)
 	{
 		callMethod<void>(
 			"setColorEffect",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void Camera_Parameters::setExposureCompensation(jint arg0)
@@ -930,12 +933,12 @@ namespace android::hardware
 			arg0
 		);
 	}
-	void Camera_Parameters::setFlashMode(jstring arg0)
+	void Camera_Parameters::setFlashMode(JString arg0)
 	{
 		callMethod<void>(
 			"setFlashMode",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void Camera_Parameters::setFocusAreas(JObject arg0)
@@ -946,12 +949,12 @@ namespace android::hardware
 			arg0.object()
 		);
 	}
-	void Camera_Parameters::setFocusMode(jstring arg0)
+	void Camera_Parameters::setFocusMode(JString arg0)
 	{
 		callMethod<void>(
 			"setFocusMode",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void Camera_Parameters::setGpsAltitude(jdouble arg0)
@@ -978,12 +981,12 @@ namespace android::hardware
 			arg0
 		);
 	}
-	void Camera_Parameters::setGpsProcessingMethod(jstring arg0)
+	void Camera_Parameters::setGpsProcessingMethod(JString arg0)
 	{
 		callMethod<void>(
 			"setGpsProcessingMethod",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void Camera_Parameters::setGpsTimestamp(jlong arg0)
@@ -1094,12 +1097,12 @@ namespace android::hardware
 			arg0
 		);
 	}
-	void Camera_Parameters::setSceneMode(jstring arg0)
+	void Camera_Parameters::setSceneMode(JString arg0)
 	{
 		callMethod<void>(
 			"setSceneMode",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void Camera_Parameters::setVideoStabilization(jboolean arg0)
@@ -1110,12 +1113,12 @@ namespace android::hardware
 			arg0
 		);
 	}
-	void Camera_Parameters::setWhiteBalance(jstring arg0)
+	void Camera_Parameters::setWhiteBalance(JString arg0)
 	{
 		callMethod<void>(
 			"setWhiteBalance",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void Camera_Parameters::setZoom(jint arg0)
@@ -1126,12 +1129,12 @@ namespace android::hardware
 			arg0
 		);
 	}
-	void Camera_Parameters::unflatten(jstring arg0)
+	void Camera_Parameters::unflatten(JString arg0)
 	{
 		callMethod<void>(
 			"unflatten",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 } // namespace android::hardware

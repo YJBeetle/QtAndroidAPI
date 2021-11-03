@@ -1,4 +1,5 @@
 #include "./Looper.hpp"
+#include "../../JString.hpp"
 #include "./HandlerThread.hpp"
 
 namespace android::os
@@ -9,17 +10,17 @@ namespace android::os
 	HandlerThread::HandlerThread(QAndroidJniObject obj) : java::lang::Thread(obj) {}
 	
 	// Constructors
-	HandlerThread::HandlerThread(jstring arg0)
+	HandlerThread::HandlerThread(JString arg0)
 		: java::lang::Thread(
 			"android.os.HandlerThread",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	HandlerThread::HandlerThread(jstring arg0, jint arg1)
+	HandlerThread::HandlerThread(JString arg0, jint arg1)
 		: java::lang::Thread(
 			"android.os.HandlerThread",
 			"(Ljava/lang/String;I)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		) {}
 	

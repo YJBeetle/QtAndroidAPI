@@ -2,10 +2,12 @@
 
 #include "../../JObject.hpp"
 
+class JByteArray;
 namespace android::media
 {
 	class MediaCas;
 }
+class JObject;
 
 namespace android::media
 {
@@ -22,12 +24,12 @@ namespace android::media
 		
 		// Methods
 		void close();
-		jboolean equals(jobject arg0);
-		jbyteArray getSessionId();
-		void processEcm(jbyteArray arg0);
-		void processEcm(jbyteArray arg0, jint arg1, jint arg2);
-		void sendSessionEvent(jint arg0, jint arg1, jbyteArray arg2);
-		void setPrivateData(jbyteArray arg0);
+		jboolean equals(JObject arg0);
+		JByteArray getSessionId();
+		void processEcm(JByteArray arg0);
+		void processEcm(JByteArray arg0, jint arg1, jint arg2);
+		void sendSessionEvent(jint arg0, jint arg1, JByteArray arg2);
+		void setPrivateData(JByteArray arg0);
 	};
 } // namespace android::media
 

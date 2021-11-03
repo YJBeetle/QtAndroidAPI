@@ -6,6 +6,7 @@ namespace android::net
 {
 	class Uri;
 }
+class JString;
 
 namespace android::provider
 {
@@ -13,8 +14,8 @@ namespace android::provider
 	{
 	public:
 		// Fields
-		static jstring CONTENT_TYPE();
-		static jstring DEFAULT_SORT_ORDER();
+		static JString CONTENT_TYPE();
+		static JString DEFAULT_SORT_ORDER();
 		static android::net::Uri EXTERNAL_CONTENT_URI();
 		static android::net::Uri INTERNAL_CONTENT_URI();
 		
@@ -26,8 +27,8 @@ namespace android::provider
 		MediaStore_Video_Media();
 		
 		// Methods
-		static android::net::Uri getContentUri(jstring arg0);
-		static android::net::Uri getContentUri(jstring arg0, jlong arg1);
+		static android::net::Uri getContentUri(JString arg0);
+		static android::net::Uri getContentUri(JString arg0, jlong arg1);
 	};
 } // namespace android::provider
 

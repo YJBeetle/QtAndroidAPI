@@ -1,3 +1,5 @@
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./MediaParser_SeekPoint.hpp"
 
 namespace android::media
@@ -30,12 +32,12 @@ namespace android::media
 	// Constructors
 	
 	// Methods
-	jboolean MediaParser_SeekPoint::equals(jobject arg0)
+	jboolean MediaParser_SeekPoint::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint MediaParser_SeekPoint::hashCode()
@@ -45,12 +47,12 @@ namespace android::media
 			"()I"
 		);
 	}
-	jstring MediaParser_SeekPoint::toString()
+	JString MediaParser_SeekPoint::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::media
 

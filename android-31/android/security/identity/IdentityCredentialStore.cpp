@@ -1,6 +1,9 @@
+#include "../../../JByteArray.hpp"
+#include "../../../JArray.hpp"
 #include "../../content/Context.hpp"
 #include "./IdentityCredential.hpp"
 #include "./WritableIdentityCredential.hpp"
+#include "../../../JString.hpp"
 #include "./IdentityCredentialStore.hpp"
 
 namespace android::security::identity
@@ -38,38 +41,38 @@ namespace android::security::identity
 			arg0.object()
 		);
 	}
-	android::security::identity::WritableIdentityCredential IdentityCredentialStore::createCredential(jstring arg0, jstring arg1)
+	android::security::identity::WritableIdentityCredential IdentityCredentialStore::createCredential(JString arg0, JString arg1)
 	{
 		return callObjectMethod(
 			"createCredential",
 			"(Ljava/lang/String;Ljava/lang/String;)Landroid/security/identity/WritableIdentityCredential;",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		);
 	}
-	jbyteArray IdentityCredentialStore::deleteCredentialByName(jstring arg0)
+	JByteArray IdentityCredentialStore::deleteCredentialByName(JString arg0)
 	{
 		return callObjectMethod(
 			"deleteCredentialByName",
 			"(Ljava/lang/String;)[B",
-			arg0
-		).object<jbyteArray>();
+			arg0.object<jstring>()
+		);
 	}
-	android::security::identity::IdentityCredential IdentityCredentialStore::getCredentialByName(jstring arg0, jint arg1)
+	android::security::identity::IdentityCredential IdentityCredentialStore::getCredentialByName(JString arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"getCredentialByName",
 			"(Ljava/lang/String;I)Landroid/security/identity/IdentityCredential;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
-	jarray IdentityCredentialStore::getSupportedDocTypes()
+	JArray IdentityCredentialStore::getSupportedDocTypes()
 	{
 		return callObjectMethod(
 			"getSupportedDocTypes",
 			"()[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
 } // namespace android::security::identity
 

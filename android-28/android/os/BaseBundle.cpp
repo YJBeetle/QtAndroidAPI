@@ -1,4 +1,11 @@
+#include "../../JDoubleArray.hpp"
+#include "../../JIntArray.hpp"
+#include "../../JLongArray.hpp"
+#include "../../JArray.hpp"
+#include "../../JBooleanArray.hpp"
 #include "./PersistableBundle.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./BaseBundle.hpp"
 
 namespace android::os
@@ -18,146 +25,146 @@ namespace android::os
 			"()V"
 		);
 	}
-	jboolean BaseBundle::containsKey(jstring arg0)
+	jboolean BaseBundle::containsKey(JString arg0)
 	{
 		return callMethod<jboolean>(
 			"containsKey",
 			"(Ljava/lang/String;)Z",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jobject BaseBundle::get(jstring arg0)
+	JObject BaseBundle::get(JString arg0)
 	{
 		return callObjectMethod(
 			"get",
 			"(Ljava/lang/String;)Ljava/lang/Object;",
-			arg0
-		).object<jobject>();
+			arg0.object<jstring>()
+		);
 	}
-	jboolean BaseBundle::getBoolean(jstring arg0)
+	jboolean BaseBundle::getBoolean(JString arg0)
 	{
 		return callMethod<jboolean>(
 			"getBoolean",
 			"(Ljava/lang/String;)Z",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jboolean BaseBundle::getBoolean(jstring arg0, jboolean arg1)
+	jboolean BaseBundle::getBoolean(JString arg0, jboolean arg1)
 	{
 		return callMethod<jboolean>(
 			"getBoolean",
 			"(Ljava/lang/String;Z)Z",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
-	jbooleanArray BaseBundle::getBooleanArray(jstring arg0)
+	JBooleanArray BaseBundle::getBooleanArray(JString arg0)
 	{
 		return callObjectMethod(
 			"getBooleanArray",
 			"(Ljava/lang/String;)[Z",
-			arg0
-		).object<jbooleanArray>();
+			arg0.object<jstring>()
+		);
 	}
-	jdouble BaseBundle::getDouble(jstring arg0)
+	jdouble BaseBundle::getDouble(JString arg0)
 	{
 		return callMethod<jdouble>(
 			"getDouble",
 			"(Ljava/lang/String;)D",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jdouble BaseBundle::getDouble(jstring arg0, jdouble arg1)
+	jdouble BaseBundle::getDouble(JString arg0, jdouble arg1)
 	{
 		return callMethod<jdouble>(
 			"getDouble",
 			"(Ljava/lang/String;D)D",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
-	jdoubleArray BaseBundle::getDoubleArray(jstring arg0)
+	JDoubleArray BaseBundle::getDoubleArray(JString arg0)
 	{
 		return callObjectMethod(
 			"getDoubleArray",
 			"(Ljava/lang/String;)[D",
-			arg0
-		).object<jdoubleArray>();
+			arg0.object<jstring>()
+		);
 	}
-	jint BaseBundle::getInt(jstring arg0)
+	jint BaseBundle::getInt(JString arg0)
 	{
 		return callMethod<jint>(
 			"getInt",
 			"(Ljava/lang/String;)I",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jint BaseBundle::getInt(jstring arg0, jint arg1)
+	jint BaseBundle::getInt(JString arg0, jint arg1)
 	{
 		return callMethod<jint>(
 			"getInt",
 			"(Ljava/lang/String;I)I",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
-	jintArray BaseBundle::getIntArray(jstring arg0)
+	JIntArray BaseBundle::getIntArray(JString arg0)
 	{
 		return callObjectMethod(
 			"getIntArray",
 			"(Ljava/lang/String;)[I",
-			arg0
-		).object<jintArray>();
+			arg0.object<jstring>()
+		);
 	}
-	jlong BaseBundle::getLong(jstring arg0)
+	jlong BaseBundle::getLong(JString arg0)
 	{
 		return callMethod<jlong>(
 			"getLong",
 			"(Ljava/lang/String;)J",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jlong BaseBundle::getLong(jstring arg0, jlong arg1)
+	jlong BaseBundle::getLong(JString arg0, jlong arg1)
 	{
 		return callMethod<jlong>(
 			"getLong",
 			"(Ljava/lang/String;J)J",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
-	jlongArray BaseBundle::getLongArray(jstring arg0)
+	JLongArray BaseBundle::getLongArray(JString arg0)
 	{
 		return callObjectMethod(
 			"getLongArray",
 			"(Ljava/lang/String;)[J",
-			arg0
-		).object<jlongArray>();
+			arg0.object<jstring>()
+		);
 	}
-	jstring BaseBundle::getString(jstring arg0)
+	JString BaseBundle::getString(JString arg0)
 	{
 		return callObjectMethod(
 			"getString",
 			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
+			arg0.object<jstring>()
+		);
 	}
-	jstring BaseBundle::getString(jstring arg0, jstring arg1)
+	JString BaseBundle::getString(JString arg0, JString arg1)
 	{
 		return callObjectMethod(
 			"getString",
 			"(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
-			arg0,
-			arg1
-		).object<jstring>();
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
+		);
 	}
-	jarray BaseBundle::getStringArray(jstring arg0)
+	JArray BaseBundle::getStringArray(JString arg0)
 	{
 		return callObjectMethod(
 			"getStringArray",
 			"(Ljava/lang/String;)[Ljava/lang/String;",
-			arg0
-		).object<jarray>();
+			arg0.object<jstring>()
+		);
 	}
 	jboolean BaseBundle::isEmpty()
 	{
@@ -181,102 +188,102 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	void BaseBundle::putBoolean(jstring arg0, jboolean arg1)
+	void BaseBundle::putBoolean(JString arg0, jboolean arg1)
 	{
 		callMethod<void>(
 			"putBoolean",
 			"(Ljava/lang/String;Z)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
-	void BaseBundle::putBooleanArray(jstring arg0, jbooleanArray arg1)
+	void BaseBundle::putBooleanArray(JString arg0, JBooleanArray arg1)
 	{
 		callMethod<void>(
 			"putBooleanArray",
 			"(Ljava/lang/String;[Z)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jbooleanArray>()
 		);
 	}
-	void BaseBundle::putDouble(jstring arg0, jdouble arg1)
+	void BaseBundle::putDouble(JString arg0, jdouble arg1)
 	{
 		callMethod<void>(
 			"putDouble",
 			"(Ljava/lang/String;D)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
-	void BaseBundle::putDoubleArray(jstring arg0, jdoubleArray arg1)
+	void BaseBundle::putDoubleArray(JString arg0, JDoubleArray arg1)
 	{
 		callMethod<void>(
 			"putDoubleArray",
 			"(Ljava/lang/String;[D)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jdoubleArray>()
 		);
 	}
-	void BaseBundle::putInt(jstring arg0, jint arg1)
+	void BaseBundle::putInt(JString arg0, jint arg1)
 	{
 		callMethod<void>(
 			"putInt",
 			"(Ljava/lang/String;I)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
-	void BaseBundle::putIntArray(jstring arg0, jintArray arg1)
+	void BaseBundle::putIntArray(JString arg0, JIntArray arg1)
 	{
 		callMethod<void>(
 			"putIntArray",
 			"(Ljava/lang/String;[I)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jintArray>()
 		);
 	}
-	void BaseBundle::putLong(jstring arg0, jlong arg1)
+	void BaseBundle::putLong(JString arg0, jlong arg1)
 	{
 		callMethod<void>(
 			"putLong",
 			"(Ljava/lang/String;J)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
-	void BaseBundle::putLongArray(jstring arg0, jlongArray arg1)
+	void BaseBundle::putLongArray(JString arg0, JLongArray arg1)
 	{
 		callMethod<void>(
 			"putLongArray",
 			"(Ljava/lang/String;[J)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jlongArray>()
 		);
 	}
-	void BaseBundle::putString(jstring arg0, jstring arg1)
+	void BaseBundle::putString(JString arg0, JString arg1)
 	{
 		callMethod<void>(
 			"putString",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		);
 	}
-	void BaseBundle::putStringArray(jstring arg0, jarray arg1)
+	void BaseBundle::putStringArray(JString arg0, JArray arg1)
 	{
 		callMethod<void>(
 			"putStringArray",
 			"(Ljava/lang/String;[Ljava/lang/String;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jarray>()
 		);
 	}
-	void BaseBundle::remove(jstring arg0)
+	void BaseBundle::remove(JString arg0)
 	{
 		callMethod<void>(
 			"remove",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	jint BaseBundle::size()

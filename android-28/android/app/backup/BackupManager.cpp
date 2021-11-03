@@ -1,5 +1,6 @@
 #include "./RestoreObserver.hpp"
 #include "../../content/Context.hpp"
+#include "../../../JString.hpp"
 #include "./BackupManager.hpp"
 
 namespace android::app::backup
@@ -18,13 +19,13 @@ namespace android::app::backup
 		) {}
 	
 	// Methods
-	void BackupManager::dataChanged(jstring arg0)
+	void BackupManager::dataChanged(JString arg0)
 	{
 		callStaticMethod<void>(
 			"android.app.backup.BackupManager",
 			"dataChanged",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void BackupManager::dataChanged()

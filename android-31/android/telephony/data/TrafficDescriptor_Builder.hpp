@@ -2,10 +2,12 @@
 
 #include "../../../JObject.hpp"
 
+class JByteArray;
 namespace android::telephony::data
 {
 	class TrafficDescriptor;
 }
+class JString;
 
 namespace android::telephony::data
 {
@@ -23,8 +25,8 @@ namespace android::telephony::data
 		
 		// Methods
 		android::telephony::data::TrafficDescriptor build();
-		android::telephony::data::TrafficDescriptor_Builder setDataNetworkName(jstring arg0);
-		android::telephony::data::TrafficDescriptor_Builder setOsAppId(jbyteArray arg0);
+		android::telephony::data::TrafficDescriptor_Builder setDataNetworkName(JString arg0);
+		android::telephony::data::TrafficDescriptor_Builder setOsAppId(JByteArray arg0);
 	};
 } // namespace android::telephony::data
 

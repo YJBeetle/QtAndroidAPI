@@ -6,6 +6,7 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
 
 namespace android::location
 {
@@ -39,7 +40,7 @@ namespace android::location
 		jboolean hasFullBiasNanos();
 		jboolean hasLeapSecond();
 		jboolean hasTimeUncertaintyNanos();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::location

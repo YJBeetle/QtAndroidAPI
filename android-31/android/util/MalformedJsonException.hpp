@@ -1,9 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../../java/lang/Exception.hpp"
 #include "../../java/io/IOException.hpp"
 
+class JString;
 
 namespace android::util
 {
@@ -17,7 +16,7 @@ namespace android::util
 		MalformedJsonException(QAndroidJniObject obj);
 		
 		// Constructors
-		MalformedJsonException(jstring arg0);
+		MalformedJsonException(JString arg0);
 		
 		// Methods
 	};

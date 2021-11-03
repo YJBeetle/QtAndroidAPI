@@ -1,3 +1,5 @@
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
 #include "./SmsMessage_MessageClass.hpp"
 
 namespace android::telephony
@@ -50,22 +52,22 @@ namespace android::telephony
 	// Constructors
 	
 	// Methods
-	android::telephony::SmsMessage_MessageClass SmsMessage_MessageClass::valueOf(jstring arg0)
+	android::telephony::SmsMessage_MessageClass SmsMessage_MessageClass::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.telephony.SmsMessage$MessageClass",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/telephony/SmsMessage$MessageClass;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray SmsMessage_MessageClass::values()
+	JArray SmsMessage_MessageClass::values()
 	{
 		return callStaticObjectMethod(
 			"android.telephony.SmsMessage$MessageClass",
 			"values",
 			"()[Landroid/telephony/SmsMessage$MessageClass;"
-		).object<jarray>();
+		);
 	}
 } // namespace android::telephony
 

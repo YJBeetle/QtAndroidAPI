@@ -6,6 +6,7 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
 
 namespace android::telephony
 {
@@ -25,7 +26,7 @@ namespace android::telephony
 		NeighboringCellInfo();
 		NeighboringCellInfo(android::os::Parcel arg0);
 		NeighboringCellInfo(jint arg0, jint arg1);
-		NeighboringCellInfo(jint arg0, jstring arg1, jint arg2);
+		NeighboringCellInfo(jint arg0, JString arg1, jint arg2);
 		
 		// Methods
 		jint describeContents();
@@ -36,7 +37,7 @@ namespace android::telephony
 		jint getRssi();
 		void setCid(jint arg0);
 		void setRssi(jint arg0);
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::telephony

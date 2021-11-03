@@ -1,3 +1,4 @@
+#include "../../JByteArray.hpp"
 #include "./DrmConvertedStatus.hpp"
 
 namespace android::drm
@@ -24,12 +25,12 @@ namespace android::drm
 			"STATUS_OK"
 		);
 	}
-	jbyteArray DrmConvertedStatus::convertedData()
+	JByteArray DrmConvertedStatus::convertedData()
 	{
 		return getObjectField(
 			"convertedData",
 			"[B"
-		).object<jbyteArray>();
+		);
 	}
 	jint DrmConvertedStatus::offset()
 	{
@@ -48,12 +49,12 @@ namespace android::drm
 	DrmConvertedStatus::DrmConvertedStatus(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	DrmConvertedStatus::DrmConvertedStatus(jint arg0, jbyteArray arg1, jint arg2)
+	DrmConvertedStatus::DrmConvertedStatus(jint arg0, JByteArray arg1, jint arg2)
 		: JObject(
 			"android.drm.DrmConvertedStatus",
 			"(I[BI)V",
 			arg0,
-			arg1,
+			arg1.object<jbyteArray>(),
 			arg2
 		) {}
 	

@@ -1,3 +1,4 @@
+#include "../../JFloatArray.hpp"
 #include "./Interpolator_Result.hpp"
 #include "./Interpolator.hpp"
 
@@ -55,25 +56,25 @@ namespace android::graphics
 			arg1
 		);
 	}
-	void Interpolator::setKeyFrame(jint arg0, jint arg1, jfloatArray arg2)
+	void Interpolator::setKeyFrame(jint arg0, jint arg1, JFloatArray arg2)
 	{
 		callMethod<void>(
 			"setKeyFrame",
 			"(II[F)V",
 			arg0,
 			arg1,
-			arg2
+			arg2.object<jfloatArray>()
 		);
 	}
-	void Interpolator::setKeyFrame(jint arg0, jint arg1, jfloatArray arg2, jfloatArray arg3)
+	void Interpolator::setKeyFrame(jint arg0, jint arg1, JFloatArray arg2, JFloatArray arg3)
 	{
 		callMethod<void>(
 			"setKeyFrame",
 			"(II[F[F)V",
 			arg0,
 			arg1,
-			arg2,
-			arg3
+			arg2.object<jfloatArray>(),
+			arg3.object<jfloatArray>()
 		);
 	}
 	void Interpolator::setRepeatMirror(jfloat arg0, jboolean arg1)
@@ -85,21 +86,21 @@ namespace android::graphics
 			arg1
 		);
 	}
-	android::graphics::Interpolator_Result Interpolator::timeToValues(jfloatArray arg0)
+	android::graphics::Interpolator_Result Interpolator::timeToValues(JFloatArray arg0)
 	{
 		return callObjectMethod(
 			"timeToValues",
 			"([F)Landroid/graphics/Interpolator$Result;",
-			arg0
+			arg0.object<jfloatArray>()
 		);
 	}
-	android::graphics::Interpolator_Result Interpolator::timeToValues(jint arg0, jfloatArray arg1)
+	android::graphics::Interpolator_Result Interpolator::timeToValues(jint arg0, JFloatArray arg1)
 	{
 		return callObjectMethod(
 			"timeToValues",
 			"(I[F)Landroid/graphics/Interpolator$Result;",
 			arg0,
-			arg1
+			arg1.object<jfloatArray>()
 		);
 	}
 } // namespace android::graphics

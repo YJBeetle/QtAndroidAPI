@@ -1,6 +1,9 @@
+#include "../../../JArray.hpp"
 #include "../Context.hpp"
 #include "./PackageManager.hpp"
 #include "../../os/Parcel.hpp"
+#include "../../../JString.hpp"
+#include "../../../JString.hpp"
 #include "../../../java/util/UUID.hpp"
 #include "./ApplicationInfo.hpp"
 
@@ -400,19 +403,19 @@ namespace android::content::pm
 			"ZEROINIT_ENABLED"
 		);
 	}
-	jstring ApplicationInfo::appComponentFactory()
+	JString ApplicationInfo::appComponentFactory()
 	{
 		return getObjectField(
 			"appComponentFactory",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ApplicationInfo::backupAgentName()
+	JString ApplicationInfo::backupAgentName()
 	{
 		return getObjectField(
 			"backupAgentName",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint ApplicationInfo::category()
 	{
@@ -420,12 +423,12 @@ namespace android::content::pm
 			"category"
 		);
 	}
-	jstring ApplicationInfo::className()
+	JString ApplicationInfo::className()
 	{
 		return getObjectField(
 			"className",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint ApplicationInfo::compatibleWidthLimitDp()
 	{
@@ -439,19 +442,19 @@ namespace android::content::pm
 			"compileSdkVersion"
 		);
 	}
-	jstring ApplicationInfo::compileSdkVersionCodename()
+	JString ApplicationInfo::compileSdkVersionCodename()
 	{
 		return getObjectField(
 			"compileSdkVersionCodename",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ApplicationInfo::dataDir()
+	JString ApplicationInfo::dataDir()
 	{
 		return getObjectField(
 			"dataDir",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint ApplicationInfo::descriptionRes()
 	{
@@ -459,12 +462,12 @@ namespace android::content::pm
 			"descriptionRes"
 		);
 	}
-	jstring ApplicationInfo::deviceProtectedDataDir()
+	JString ApplicationInfo::deviceProtectedDataDir()
 	{
 		return getObjectField(
 			"deviceProtectedDataDir",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jboolean ApplicationInfo::enabled()
 	{
@@ -484,12 +487,12 @@ namespace android::content::pm
 			"largestWidthLimitDp"
 		);
 	}
-	jstring ApplicationInfo::manageSpaceActivityName()
+	JString ApplicationInfo::manageSpaceActivityName()
 	{
 		return getObjectField(
 			"manageSpaceActivityName",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint ApplicationInfo::minSdkVersion()
 	{
@@ -497,33 +500,33 @@ namespace android::content::pm
 			"minSdkVersion"
 		);
 	}
-	jstring ApplicationInfo::nativeLibraryDir()
+	JString ApplicationInfo::nativeLibraryDir()
 	{
 		return getObjectField(
 			"nativeLibraryDir",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ApplicationInfo::permission()
+	JString ApplicationInfo::permission()
 	{
 		return getObjectField(
 			"permission",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ApplicationInfo::processName()
+	JString ApplicationInfo::processName()
 	{
 		return getObjectField(
 			"processName",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ApplicationInfo::publicSourceDir()
+	JString ApplicationInfo::publicSourceDir()
 	{
 		return getObjectField(
 			"publicSourceDir",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint ApplicationInfo::requiresSmallestWidthDp()
 	{
@@ -531,40 +534,40 @@ namespace android::content::pm
 			"requiresSmallestWidthDp"
 		);
 	}
-	jarray ApplicationInfo::sharedLibraryFiles()
+	JArray ApplicationInfo::sharedLibraryFiles()
 	{
 		return getObjectField(
 			"sharedLibraryFiles",
 			"[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
-	jstring ApplicationInfo::sourceDir()
+	JString ApplicationInfo::sourceDir()
 	{
 		return getObjectField(
 			"sourceDir",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jarray ApplicationInfo::splitNames()
+	JArray ApplicationInfo::splitNames()
 	{
 		return getObjectField(
 			"splitNames",
 			"[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
-	jarray ApplicationInfo::splitPublicSourceDirs()
+	JArray ApplicationInfo::splitPublicSourceDirs()
 	{
 		return getObjectField(
 			"splitPublicSourceDirs",
 			"[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
-	jarray ApplicationInfo::splitSourceDirs()
+	JArray ApplicationInfo::splitSourceDirs()
 	{
 		return getObjectField(
 			"splitSourceDirs",
 			"[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
 	java::util::UUID ApplicationInfo::storageUuid()
 	{
@@ -579,12 +582,12 @@ namespace android::content::pm
 			"targetSdkVersion"
 		);
 	}
-	jstring ApplicationInfo::taskAffinity()
+	JString ApplicationInfo::taskAffinity()
 	{
 		return getObjectField(
 			"taskAffinity",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint ApplicationInfo::theme()
 	{
@@ -622,7 +625,7 @@ namespace android::content::pm
 		) {}
 	
 	// Methods
-	jstring ApplicationInfo::getCategoryTitle(android::content::Context arg0, jint arg1)
+	JString ApplicationInfo::getCategoryTitle(android::content::Context arg0, jint arg1)
 	{
 		return callStaticObjectMethod(
 			"android.content.pm.ApplicationInfo",
@@ -630,7 +633,7 @@ namespace android::content::pm
 			"(Landroid/content/Context;I)Ljava/lang/CharSequence;",
 			arg0.object(),
 			arg1
-		).object<jstring>();
+		);
 	}
 	jboolean ApplicationInfo::areAttributionsUserVisible()
 	{
@@ -646,13 +649,13 @@ namespace android::content::pm
 			"()I"
 		);
 	}
-	void ApplicationInfo::dump(JObject arg0, jstring arg1)
+	void ApplicationInfo::dump(JObject arg0, JString arg1)
 	{
 		callMethod<void>(
 			"dump",
 			"(Landroid/util/Printer;Ljava/lang/String;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
 	jint ApplicationInfo::getGwpAsanMode()
@@ -711,20 +714,20 @@ namespace android::content::pm
 			"()Z"
 		);
 	}
-	jstring ApplicationInfo::loadDescription(android::content::pm::PackageManager arg0)
+	JString ApplicationInfo::loadDescription(android::content::pm::PackageManager arg0)
 	{
 		return callObjectMethod(
 			"loadDescription",
 			"(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;",
 			arg0.object()
-		).object<jstring>();
+		);
 	}
-	jstring ApplicationInfo::toString()
+	JString ApplicationInfo::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void ApplicationInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

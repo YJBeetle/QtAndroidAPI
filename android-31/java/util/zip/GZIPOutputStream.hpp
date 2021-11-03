@@ -1,10 +1,8 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "../../io/OutputStream.hpp"
-#include "../../io/FilterOutputStream.hpp"
 #include "./DeflaterOutputStream.hpp"
 
+class JByteArray;
 namespace java::io
 {
 	class OutputStream;
@@ -33,7 +31,7 @@ namespace java::util::zip
 		
 		// Methods
 		void finish();
-		void write(jbyteArray arg0, jint arg1, jint arg2);
+		void write(JByteArray arg0, jint arg1, jint arg2);
 	};
 } // namespace java::util::zip
 

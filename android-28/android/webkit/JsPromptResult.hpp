@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./JsResult.hpp"
 
+class JString;
 
 namespace android::webkit
 {
@@ -18,7 +18,7 @@ namespace android::webkit
 		// Constructors
 		
 		// Methods
-		void confirm(jstring arg0);
+		void confirm(JString arg0);
 	};
 } // namespace android::webkit
 

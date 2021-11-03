@@ -14,6 +14,7 @@ namespace android::view::textclassifier
 {
 	class TextSelection_Request;
 }
+class JString;
 
 namespace android::view::textclassifier
 {
@@ -27,7 +28,7 @@ namespace android::view::textclassifier
 		TextSelection_Request_Builder(QAndroidJniObject obj);
 		
 		// Constructors
-		TextSelection_Request_Builder(jstring arg0, jint arg1, jint arg2);
+		TextSelection_Request_Builder(JString arg0, jint arg1, jint arg2);
 		
 		// Methods
 		android::view::textclassifier::TextSelection_Request build();

@@ -1,4 +1,5 @@
 #include "../../os/Parcel.hpp"
+#include "../../../JString.hpp"
 #include "./ConversationActions.hpp"
 
 namespace android::view::textclassifier
@@ -17,12 +18,12 @@ namespace android::view::textclassifier
 	ConversationActions::ConversationActions(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	ConversationActions::ConversationActions(JObject arg0, jstring arg1)
+	ConversationActions::ConversationActions(JObject arg0, JString arg1)
 		: JObject(
 			"android.view.textclassifier.ConversationActions",
 			"(Ljava/util/List;Ljava/lang/String;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		) {}
 	
 	// Methods
@@ -40,12 +41,12 @@ namespace android::view::textclassifier
 			"()Ljava/util/List;"
 		);
 	}
-	jstring ConversationActions::getId()
+	JString ConversationActions::getId()
 	{
 		return callObjectMethod(
 			"getId",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void ConversationActions::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

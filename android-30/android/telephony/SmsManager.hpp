@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JByteArray;
 namespace android::app
 {
 	class PendingIntent;
@@ -22,6 +23,7 @@ namespace android::telephony
 {
 	class SmsManager_FinancialSmsCallback;
 }
+class JString;
 namespace java::util
 {
 	class ArrayList;
@@ -33,39 +35,39 @@ namespace android::telephony
 	{
 	public:
 		// Fields
-		static jstring EXTRA_MMS_DATA();
-		static jstring EXTRA_MMS_HTTP_STATUS();
-		static jstring MMS_CONFIG_ALIAS_ENABLED();
-		static jstring MMS_CONFIG_ALIAS_MAX_CHARS();
-		static jstring MMS_CONFIG_ALIAS_MIN_CHARS();
-		static jstring MMS_CONFIG_ALLOW_ATTACH_AUDIO();
-		static jstring MMS_CONFIG_APPEND_TRANSACTION_ID();
-		static jstring MMS_CONFIG_EMAIL_GATEWAY_NUMBER();
-		static jstring MMS_CONFIG_GROUP_MMS_ENABLED();
-		static jstring MMS_CONFIG_HTTP_PARAMS();
-		static jstring MMS_CONFIG_HTTP_SOCKET_TIMEOUT();
-		static jstring MMS_CONFIG_MAX_IMAGE_HEIGHT();
-		static jstring MMS_CONFIG_MAX_IMAGE_WIDTH();
-		static jstring MMS_CONFIG_MAX_MESSAGE_SIZE();
-		static jstring MMS_CONFIG_MESSAGE_TEXT_MAX_SIZE();
-		static jstring MMS_CONFIG_MMS_DELIVERY_REPORT_ENABLED();
-		static jstring MMS_CONFIG_MMS_ENABLED();
-		static jstring MMS_CONFIG_MMS_READ_REPORT_ENABLED();
-		static jstring MMS_CONFIG_MULTIPART_SMS_ENABLED();
-		static jstring MMS_CONFIG_NAI_SUFFIX();
-		static jstring MMS_CONFIG_NOTIFY_WAP_MMSC_ENABLED();
-		static jstring MMS_CONFIG_RECIPIENT_LIMIT();
-		static jstring MMS_CONFIG_SEND_MULTIPART_SMS_AS_SEPARATE_MESSAGES();
-		static jstring MMS_CONFIG_SHOW_CELL_BROADCAST_APP_LINKS();
-		static jstring MMS_CONFIG_SMS_DELIVERY_REPORT_ENABLED();
-		static jstring MMS_CONFIG_SMS_TO_MMS_TEXT_LENGTH_THRESHOLD();
-		static jstring MMS_CONFIG_SMS_TO_MMS_TEXT_THRESHOLD();
-		static jstring MMS_CONFIG_SUBJECT_MAX_LENGTH();
-		static jstring MMS_CONFIG_SUPPORT_HTTP_CHARSET_HEADER();
-		static jstring MMS_CONFIG_SUPPORT_MMS_CONTENT_DISPOSITION();
-		static jstring MMS_CONFIG_UA_PROF_TAG_NAME();
-		static jstring MMS_CONFIG_UA_PROF_URL();
-		static jstring MMS_CONFIG_USER_AGENT();
+		static JString EXTRA_MMS_DATA();
+		static JString EXTRA_MMS_HTTP_STATUS();
+		static JString MMS_CONFIG_ALIAS_ENABLED();
+		static JString MMS_CONFIG_ALIAS_MAX_CHARS();
+		static JString MMS_CONFIG_ALIAS_MIN_CHARS();
+		static JString MMS_CONFIG_ALLOW_ATTACH_AUDIO();
+		static JString MMS_CONFIG_APPEND_TRANSACTION_ID();
+		static JString MMS_CONFIG_EMAIL_GATEWAY_NUMBER();
+		static JString MMS_CONFIG_GROUP_MMS_ENABLED();
+		static JString MMS_CONFIG_HTTP_PARAMS();
+		static JString MMS_CONFIG_HTTP_SOCKET_TIMEOUT();
+		static JString MMS_CONFIG_MAX_IMAGE_HEIGHT();
+		static JString MMS_CONFIG_MAX_IMAGE_WIDTH();
+		static JString MMS_CONFIG_MAX_MESSAGE_SIZE();
+		static JString MMS_CONFIG_MESSAGE_TEXT_MAX_SIZE();
+		static JString MMS_CONFIG_MMS_DELIVERY_REPORT_ENABLED();
+		static JString MMS_CONFIG_MMS_ENABLED();
+		static JString MMS_CONFIG_MMS_READ_REPORT_ENABLED();
+		static JString MMS_CONFIG_MULTIPART_SMS_ENABLED();
+		static JString MMS_CONFIG_NAI_SUFFIX();
+		static JString MMS_CONFIG_NOTIFY_WAP_MMSC_ENABLED();
+		static JString MMS_CONFIG_RECIPIENT_LIMIT();
+		static JString MMS_CONFIG_SEND_MULTIPART_SMS_AS_SEPARATE_MESSAGES();
+		static JString MMS_CONFIG_SHOW_CELL_BROADCAST_APP_LINKS();
+		static JString MMS_CONFIG_SMS_DELIVERY_REPORT_ENABLED();
+		static JString MMS_CONFIG_SMS_TO_MMS_TEXT_LENGTH_THRESHOLD();
+		static JString MMS_CONFIG_SMS_TO_MMS_TEXT_THRESHOLD();
+		static JString MMS_CONFIG_SUBJECT_MAX_LENGTH();
+		static JString MMS_CONFIG_SUPPORT_HTTP_CHARSET_HEADER();
+		static JString MMS_CONFIG_SUPPORT_MMS_CONTENT_DISPOSITION();
+		static JString MMS_CONFIG_UA_PROF_TAG_NAME();
+		static JString MMS_CONFIG_UA_PROF_URL();
+		static JString MMS_CONFIG_USER_AGENT();
 		static jint MMS_ERROR_CONFIGURATION_ERROR();
 		static jint MMS_ERROR_HTTP_FAILURE();
 		static jint MMS_ERROR_INVALID_APN();
@@ -151,24 +153,24 @@ namespace android::telephony
 		static android::telephony::SmsManager getDefault();
 		static jint getDefaultSmsSubscriptionId();
 		static android::telephony::SmsManager getSmsManagerForSubscriptionId(jint arg0);
-		jstring createAppSpecificSmsToken(android::app::PendingIntent arg0);
-		jstring createAppSpecificSmsTokenWithPackageInfo(jstring arg0, android::app::PendingIntent arg1);
-		java::util::ArrayList divideMessage(jstring arg0);
-		void downloadMultimediaMessage(android::content::Context arg0, jstring arg1, android::net::Uri arg2, android::os::Bundle arg3, android::app::PendingIntent arg4);
+		JString createAppSpecificSmsToken(android::app::PendingIntent arg0);
+		JString createAppSpecificSmsTokenWithPackageInfo(JString arg0, android::app::PendingIntent arg1);
+		java::util::ArrayList divideMessage(JString arg0);
+		void downloadMultimediaMessage(android::content::Context arg0, JString arg1, android::net::Uri arg2, android::os::Bundle arg3, android::app::PendingIntent arg4);
 		android::os::Bundle getCarrierConfigValues();
 		void getSmsMessagesForFinancialApp(android::os::Bundle arg0, JObject arg1, android::telephony::SmsManager_FinancialSmsCallback arg2);
-		jstring getSmscAddress();
+		JString getSmscAddress();
 		jint getSubscriptionId();
-		void injectSmsPdu(jbyteArray arg0, jstring arg1, android::app::PendingIntent arg2);
-		void sendDataMessage(jstring arg0, jstring arg1, jshort arg2, jbyteArray arg3, android::app::PendingIntent arg4, android::app::PendingIntent arg5);
-		void sendMultimediaMessage(android::content::Context arg0, android::net::Uri arg1, jstring arg2, android::os::Bundle arg3, android::app::PendingIntent arg4);
-		void sendMultipartTextMessage(jstring arg0, jstring arg1, java::util::ArrayList arg2, java::util::ArrayList arg3, java::util::ArrayList arg4);
-		void sendMultipartTextMessage(jstring arg0, jstring arg1, JObject arg2, JObject arg3, JObject arg4, jlong arg5);
-		void sendMultipartTextMessage(jstring arg0, jstring arg1, JObject arg2, JObject arg3, JObject arg4, jstring arg5, jstring arg6);
-		void sendTextMessage(jstring arg0, jstring arg1, jstring arg2, android::app::PendingIntent arg3, android::app::PendingIntent arg4);
-		void sendTextMessage(jstring arg0, jstring arg1, jstring arg2, android::app::PendingIntent arg3, android::app::PendingIntent arg4, jlong arg5);
-		void sendTextMessageWithoutPersisting(jstring arg0, jstring arg1, jstring arg2, android::app::PendingIntent arg3, android::app::PendingIntent arg4);
-		jboolean setSmscAddress(jstring arg0);
+		void injectSmsPdu(JByteArray arg0, JString arg1, android::app::PendingIntent arg2);
+		void sendDataMessage(JString arg0, JString arg1, jshort arg2, JByteArray arg3, android::app::PendingIntent arg4, android::app::PendingIntent arg5);
+		void sendMultimediaMessage(android::content::Context arg0, android::net::Uri arg1, JString arg2, android::os::Bundle arg3, android::app::PendingIntent arg4);
+		void sendMultipartTextMessage(JString arg0, JString arg1, java::util::ArrayList arg2, java::util::ArrayList arg3, java::util::ArrayList arg4);
+		void sendMultipartTextMessage(JString arg0, JString arg1, JObject arg2, JObject arg3, JObject arg4, jlong arg5);
+		void sendMultipartTextMessage(JString arg0, JString arg1, JObject arg2, JObject arg3, JObject arg4, JString arg5, JString arg6);
+		void sendTextMessage(JString arg0, JString arg1, JString arg2, android::app::PendingIntent arg3, android::app::PendingIntent arg4);
+		void sendTextMessage(JString arg0, JString arg1, JString arg2, android::app::PendingIntent arg3, android::app::PendingIntent arg4, jlong arg5);
+		void sendTextMessageWithoutPersisting(JString arg0, JString arg1, JString arg2, android::app::PendingIntent arg3, android::app::PendingIntent arg4);
+		jboolean setSmscAddress(JString arg0);
 	};
 } // namespace android::telephony
 

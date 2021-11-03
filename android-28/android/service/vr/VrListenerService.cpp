@@ -1,18 +1,19 @@
 #include "../../content/ComponentName.hpp"
 #include "../../content/Context.hpp"
 #include "../../content/Intent.hpp"
+#include "../../../JString.hpp"
 #include "./VrListenerService.hpp"
 
 namespace android::service::vr
 {
 	// Fields
-	jstring VrListenerService::SERVICE_INTERFACE()
+	JString VrListenerService::SERVICE_INTERFACE()
 	{
 		return getStaticObjectField(
 			"android.service.vr.VrListenerService",
 			"SERVICE_INTERFACE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QAndroidJniObject forward

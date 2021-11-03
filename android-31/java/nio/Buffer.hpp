@@ -6,6 +6,7 @@ namespace java::lang
 {
 	class IllegalArgumentException;
 }
+class JObject;
 
 namespace java::nio
 {
@@ -21,7 +22,7 @@ namespace java::nio
 		// Constructors
 		
 		// Methods
-		jobject array();
+		JObject array();
 		jint arrayOffset();
 		jint capacity();
 		java::nio::Buffer clear();

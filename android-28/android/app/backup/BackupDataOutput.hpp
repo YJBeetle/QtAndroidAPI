@@ -2,10 +2,12 @@
 
 #include "../../../JObject.hpp"
 
+class JByteArray;
 namespace java::io
 {
 	class FileDescriptor;
 }
+class JString;
 
 namespace android::app::backup
 {
@@ -23,8 +25,8 @@ namespace android::app::backup
 		// Methods
 		jlong getQuota();
 		jint getTransportFlags();
-		jint writeEntityData(jbyteArray arg0, jint arg1);
-		jint writeEntityHeader(jstring arg0, jint arg1);
+		jint writeEntityData(JByteArray arg0, jint arg1);
+		jint writeEntityHeader(JString arg0, jint arg1);
 	};
 } // namespace android::app::backup
 

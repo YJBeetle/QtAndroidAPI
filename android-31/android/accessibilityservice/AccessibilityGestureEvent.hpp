@@ -6,6 +6,7 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
 
 namespace android::accessibilityservice
 {
@@ -22,12 +23,12 @@ namespace android::accessibilityservice
 		// Constructors
 		
 		// Methods
-		static jstring gestureIdToString(jint arg0);
+		static JString gestureIdToString(jint arg0);
 		jint describeContents();
 		jint getDisplayId();
 		jint getGestureId();
 		JObject getMotionEvents();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::accessibilityservice

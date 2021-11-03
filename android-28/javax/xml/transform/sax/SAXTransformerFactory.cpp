@@ -1,23 +1,24 @@
+#include "../../../../JString.hpp"
 #include "./SAXTransformerFactory.hpp"
 
 namespace javax::xml::transform::sax
 {
 	// Fields
-	jstring SAXTransformerFactory::FEATURE()
+	JString SAXTransformerFactory::FEATURE()
 	{
 		return getStaticObjectField(
 			"javax.xml.transform.sax.SAXTransformerFactory",
 			"FEATURE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring SAXTransformerFactory::FEATURE_XMLFILTER()
+	JString SAXTransformerFactory::FEATURE_XMLFILTER()
 	{
 		return getStaticObjectField(
 			"javax.xml.transform.sax.SAXTransformerFactory",
 			"FEATURE_XMLFILTER",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QAndroidJniObject forward

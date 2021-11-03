@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JString;
 namespace java::util::concurrent
 {
 	class TimeUnit;
@@ -26,7 +27,7 @@ namespace java::util::concurrent
 		void await();
 		void countDown();
 		jlong getCount();
-		jstring toString();
+		JString toString();
 	};
 } // namespace java::util::concurrent
 

@@ -1,3 +1,6 @@
+#include "../../../JCharArray.hpp"
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
 #include "../../../java/security/KeyStore.hpp"
 #include "../../../java/security/Provider.hpp"
 #include "./KeyManagerFactorySpi.hpp"
@@ -13,56 +16,56 @@ namespace javax::net::ssl
 	// Constructors
 	
 	// Methods
-	jstring KeyManagerFactory::getDefaultAlgorithm()
+	JString KeyManagerFactory::getDefaultAlgorithm()
 	{
 		return callStaticObjectMethod(
 			"javax.net.ssl.KeyManagerFactory",
 			"getDefaultAlgorithm",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	javax::net::ssl::KeyManagerFactory KeyManagerFactory::getInstance(jstring arg0)
+	javax::net::ssl::KeyManagerFactory KeyManagerFactory::getInstance(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"javax.net.ssl.KeyManagerFactory",
 			"getInstance",
 			"(Ljava/lang/String;)Ljavax/net/ssl/KeyManagerFactory;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	javax::net::ssl::KeyManagerFactory KeyManagerFactory::getInstance(jstring arg0, jstring arg1)
+	javax::net::ssl::KeyManagerFactory KeyManagerFactory::getInstance(JString arg0, JString arg1)
 	{
 		return callStaticObjectMethod(
 			"javax.net.ssl.KeyManagerFactory",
 			"getInstance",
 			"(Ljava/lang/String;Ljava/lang/String;)Ljavax/net/ssl/KeyManagerFactory;",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		);
 	}
-	javax::net::ssl::KeyManagerFactory KeyManagerFactory::getInstance(jstring arg0, java::security::Provider arg1)
+	javax::net::ssl::KeyManagerFactory KeyManagerFactory::getInstance(JString arg0, java::security::Provider arg1)
 	{
 		return callStaticObjectMethod(
 			"javax.net.ssl.KeyManagerFactory",
 			"getInstance",
 			"(Ljava/lang/String;Ljava/security/Provider;)Ljavax/net/ssl/KeyManagerFactory;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
-	jstring KeyManagerFactory::getAlgorithm()
+	JString KeyManagerFactory::getAlgorithm()
 	{
 		return callObjectMethod(
 			"getAlgorithm",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jarray KeyManagerFactory::getKeyManagers()
+	JArray KeyManagerFactory::getKeyManagers()
 	{
 		return callObjectMethod(
 			"getKeyManagers",
 			"()[Ljavax/net/ssl/KeyManager;"
-		).object<jarray>();
+		);
 	}
 	java::security::Provider KeyManagerFactory::getProvider()
 	{
@@ -79,13 +82,13 @@ namespace javax::net::ssl
 			arg0.object()
 		);
 	}
-	void KeyManagerFactory::init(java::security::KeyStore arg0, jcharArray arg1)
+	void KeyManagerFactory::init(java::security::KeyStore arg0, JCharArray arg1)
 	{
 		callMethod<void>(
 			"init",
 			"(Ljava/security/KeyStore;[C)V",
 			arg0.object(),
-			arg1
+			arg1.object<jcharArray>()
 		);
 	}
 } // namespace javax::net::ssl

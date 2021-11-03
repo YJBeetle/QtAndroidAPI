@@ -1,3 +1,5 @@
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
 #include "./ValueRange.hpp"
 #include "../../util/Locale.hpp"
 #include "./ChronoField.hpp"
@@ -252,22 +254,22 @@ namespace java::time::temporal
 	// Constructors
 	
 	// Methods
-	java::time::temporal::ChronoField ChronoField::valueOf(jstring arg0)
+	java::time::temporal::ChronoField ChronoField::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"java.time.temporal.ChronoField",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/time/temporal/ChronoField;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray ChronoField::values()
+	JArray ChronoField::values()
 	{
 		return callStaticObjectMethod(
 			"java.time.temporal.ChronoField",
 			"values",
 			"()[Ljava/time/temporal/ChronoField;"
-		).object<jarray>();
+		);
 	}
 	JObject ChronoField::adjustInto(JObject arg0, jlong arg1)
 	{
@@ -301,13 +303,13 @@ namespace java::time::temporal
 			"()Ljava/time/temporal/TemporalUnit;"
 		);
 	}
-	jstring ChronoField::getDisplayName(java::util::Locale arg0)
+	JString ChronoField::getDisplayName(java::util::Locale arg0)
 	{
 		return callObjectMethod(
 			"getDisplayName",
 			"(Ljava/util/Locale;)Ljava/lang/String;",
 			arg0.object()
-		).object<jstring>();
+		);
 	}
 	jlong ChronoField::getFrom(JObject arg0)
 	{
@@ -361,12 +363,12 @@ namespace java::time::temporal
 			arg0.object()
 		);
 	}
-	jstring ChronoField::toString()
+	JString ChronoField::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::time::temporal
 

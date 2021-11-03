@@ -18,6 +18,7 @@ namespace android::os
 {
 	class Parcel;
 }
+class JObject;
 
 namespace android::hardware::camera2::params
 {
@@ -38,7 +39,7 @@ namespace android::hardware::camera2::params
 		
 		// Methods
 		jint describeContents();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		JObject getExecutor();
 		android::hardware::camera2::params::InputConfiguration getInputConfiguration();
 		JObject getOutputConfigurations();

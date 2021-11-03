@@ -1,3 +1,4 @@
+#include "../../../../JString.hpp"
 #include "./UserPrincipalNotFoundException.hpp"
 
 namespace java::nio::file::attribute
@@ -8,20 +9,20 @@ namespace java::nio::file::attribute
 	UserPrincipalNotFoundException::UserPrincipalNotFoundException(QAndroidJniObject obj) : java::io::IOException(obj) {}
 	
 	// Constructors
-	UserPrincipalNotFoundException::UserPrincipalNotFoundException(jstring arg0)
+	UserPrincipalNotFoundException::UserPrincipalNotFoundException(JString arg0)
 		: java::io::IOException(
 			"java.nio.file.attribute.UserPrincipalNotFoundException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods
-	jstring UserPrincipalNotFoundException::getName()
+	JString UserPrincipalNotFoundException::getName()
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::nio::file::attribute
 

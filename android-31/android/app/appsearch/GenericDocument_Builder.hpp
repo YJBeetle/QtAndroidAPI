@@ -2,10 +2,17 @@
 
 #include "../../../JObject.hpp"
 
+class JDoubleArray;
+class JLongArray;
+class JArray;
+class JArray;
+class JBooleanArray;
+class JArray;
 namespace android::app::appsearch
 {
 	class GenericDocument;
 }
+class JString;
 
 namespace android::app::appsearch
 {
@@ -19,17 +26,17 @@ namespace android::app::appsearch
 		GenericDocument_Builder(QAndroidJniObject obj);
 		
 		// Constructors
-		GenericDocument_Builder(jstring arg0, jstring arg1, jstring arg2);
+		GenericDocument_Builder(JString arg0, JString arg1, JString arg2);
 		
 		// Methods
 		android::app::appsearch::GenericDocument build();
 		android::app::appsearch::GenericDocument_Builder setCreationTimestampMillis(jlong arg0);
-		android::app::appsearch::GenericDocument_Builder setPropertyBoolean(jstring arg0, jbooleanArray arg1);
-		android::app::appsearch::GenericDocument_Builder setPropertyBytes(jstring arg0, jarray arg1);
-		android::app::appsearch::GenericDocument_Builder setPropertyDocument(jstring arg0, jarray arg1);
-		android::app::appsearch::GenericDocument_Builder setPropertyDouble(jstring arg0, jdoubleArray arg1);
-		android::app::appsearch::GenericDocument_Builder setPropertyLong(jstring arg0, jlongArray arg1);
-		android::app::appsearch::GenericDocument_Builder setPropertyString(jstring arg0, jarray arg1);
+		android::app::appsearch::GenericDocument_Builder setPropertyBoolean(JString arg0, JBooleanArray arg1);
+		android::app::appsearch::GenericDocument_Builder setPropertyBytes(JString arg0, JArray arg1);
+		android::app::appsearch::GenericDocument_Builder setPropertyDocument(JString arg0, JArray arg1);
+		android::app::appsearch::GenericDocument_Builder setPropertyDouble(JString arg0, JDoubleArray arg1);
+		android::app::appsearch::GenericDocument_Builder setPropertyLong(JString arg0, JLongArray arg1);
+		android::app::appsearch::GenericDocument_Builder setPropertyString(JString arg0, JArray arg1);
 		android::app::appsearch::GenericDocument_Builder setScore(jint arg0);
 		android::app::appsearch::GenericDocument_Builder setTtlMillis(jlong arg0);
 	};

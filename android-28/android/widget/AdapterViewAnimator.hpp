@@ -1,8 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../view/View.hpp"
-#include "../view/ViewGroup.hpp"
 #include "./AdapterView.hpp"
 
 namespace android::animation
@@ -25,6 +22,7 @@ namespace android::view
 {
 	class View;
 }
+class JString;
 
 namespace android::widget
 {
@@ -47,7 +45,7 @@ namespace android::widget
 		void advance();
 		void deferNotifyDataSetChanged();
 		void fyiWillBeAdvancedByHostKThx();
-		jstring getAccessibilityClassName();
+		JString getAccessibilityClassName();
 		JObject getAdapter();
 		jint getBaseline();
 		android::view::View getCurrentView();

@@ -1,5 +1,8 @@
+#include "../../../JArray.hpp"
+#include "../../../JArray.hpp"
 #include "../../os/Bundle.hpp"
 #include "../../util/ArraySet.hpp"
+#include "../../../JString.hpp"
 #include "../../../java/util/ArrayList.hpp"
 #include "./FillEventHistory_Event.hpp"
 
@@ -62,12 +65,12 @@ namespace android::service::autofill
 			"()Landroid/os/Bundle;"
 		);
 	}
-	jstring FillEventHistory_Event::getDatasetId()
+	JString FillEventHistory_Event::getDatasetId()
 	{
 		return callObjectMethod(
 			"getDatasetId",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	JObject FillEventHistory_Event::getFieldsClassification()
 	{
@@ -104,12 +107,12 @@ namespace android::service::autofill
 			"()I"
 		);
 	}
-	jstring FillEventHistory_Event::toString()
+	JString FillEventHistory_Event::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::service::autofill
 

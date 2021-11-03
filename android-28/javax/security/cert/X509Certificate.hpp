@@ -1,12 +1,14 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "./Certificate.hpp"
 
+class JByteArray;
 namespace java::io
 {
 	class InputStream;
 }
+class JObject;
+class JString;
 namespace java::math
 {
 	class BigInteger;
@@ -31,7 +33,7 @@ namespace javax::security::cert
 		X509Certificate();
 		
 		// Methods
-		static javax::security::cert::X509Certificate getInstance(jbyteArray arg0);
+		static javax::security::cert::X509Certificate getInstance(JByteArray arg0);
 		static javax::security::cert::X509Certificate getInstance(java::io::InputStream arg0);
 		void checkValidity();
 		void checkValidity(java::util::Date arg0);
@@ -39,9 +41,9 @@ namespace javax::security::cert
 		java::util::Date getNotAfter();
 		java::util::Date getNotBefore();
 		java::math::BigInteger getSerialNumber();
-		jstring getSigAlgName();
-		jstring getSigAlgOID();
-		jbyteArray getSigAlgParams();
+		JString getSigAlgName();
+		JString getSigAlgOID();
+		JByteArray getSigAlgParams();
 		JObject getSubjectDN();
 		jint getVersion();
 	};

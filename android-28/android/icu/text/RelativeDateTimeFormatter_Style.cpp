@@ -1,3 +1,5 @@
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
 #include "./RelativeDateTimeFormatter_Style.hpp"
 
 namespace android::icu::text
@@ -34,22 +36,22 @@ namespace android::icu::text
 	// Constructors
 	
 	// Methods
-	android::icu::text::RelativeDateTimeFormatter_Style RelativeDateTimeFormatter_Style::valueOf(jstring arg0)
+	android::icu::text::RelativeDateTimeFormatter_Style RelativeDateTimeFormatter_Style::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.icu.text.RelativeDateTimeFormatter$Style",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/icu/text/RelativeDateTimeFormatter$Style;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray RelativeDateTimeFormatter_Style::values()
+	JArray RelativeDateTimeFormatter_Style::values()
 	{
 		return callStaticObjectMethod(
 			"android.icu.text.RelativeDateTimeFormatter$Style",
 			"values",
 			"()[Landroid/icu/text/RelativeDateTimeFormatter$Style;"
-		).object<jarray>();
+		);
 	}
 } // namespace android::icu::text
 

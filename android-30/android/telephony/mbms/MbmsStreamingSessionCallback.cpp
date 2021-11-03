@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./MbmsStreamingSessionCallback.hpp"
 
 namespace android::telephony::mbms
@@ -15,13 +16,13 @@ namespace android::telephony::mbms
 		) {}
 	
 	// Methods
-	void MbmsStreamingSessionCallback::onError(jint arg0, jstring arg1)
+	void MbmsStreamingSessionCallback::onError(jint arg0, JString arg1)
 	{
 		callMethod<void>(
 			"onError",
 			"(ILjava/lang/String;)V",
 			arg0,
-			arg1
+			arg1.object<jstring>()
 		);
 	}
 	void MbmsStreamingSessionCallback::onMiddlewareReady()

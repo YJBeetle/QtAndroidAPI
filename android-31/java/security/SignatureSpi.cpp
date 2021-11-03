@@ -1,3 +1,6 @@
+#include "../../JByteArray.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "../nio/ByteBuffer.hpp"
 #include "./AlgorithmParameters.hpp"
 #include "./SecureRandom.hpp"
@@ -18,12 +21,12 @@ namespace java::security
 		) {}
 	
 	// Methods
-	jobject SignatureSpi::clone()
+	JObject SignatureSpi::clone()
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
 } // namespace java::security
 

@@ -2,6 +2,8 @@
 #include "../os/Bundle.hpp"
 #include "../os/Parcel.hpp"
 #include "../../java/lang/Integer.hpp"
+#include "../../JString.hpp"
+#include "../../JThrowable.hpp"
 #include "./ContentProviderResult.hpp"
 
 namespace android::content
@@ -22,12 +24,12 @@ namespace android::content
 			"Ljava/lang/Integer;"
 		);
 	}
-	jthrowable ContentProviderResult::exception()
+	JThrowable ContentProviderResult::exception()
 	{
 		return getObjectField(
 			"exception",
 			"Ljava/lang/Throwable;"
-		).object<jthrowable>();
+		);
 	}
 	android::os::Bundle ContentProviderResult::extras()
 	{
@@ -72,11 +74,11 @@ namespace android::content
 			"(I)V",
 			arg0
 		) {}
-	ContentProviderResult::ContentProviderResult(jthrowable arg0)
+	ContentProviderResult::ContentProviderResult(JThrowable arg0)
 		: JObject(
 			"android.content.ContentProviderResult",
 			"(Ljava/lang/Throwable;)V",
-			arg0
+			arg0.object<jthrowable>()
 		) {}
 	
 	// Methods
@@ -87,12 +89,12 @@ namespace android::content
 			"()I"
 		);
 	}
-	jstring ContentProviderResult::toString()
+	JString ContentProviderResult::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void ContentProviderResult::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

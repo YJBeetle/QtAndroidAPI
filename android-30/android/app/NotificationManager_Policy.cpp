@@ -1,4 +1,6 @@
 #include "../os/Parcel.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./NotificationManager_Policy.hpp"
 
 namespace android::app
@@ -244,32 +246,32 @@ namespace android::app
 		) {}
 	
 	// Methods
-	jstring NotificationManager_Policy::priorityCategoriesToString(jint arg0)
+	JString NotificationManager_Policy::priorityCategoriesToString(jint arg0)
 	{
 		return callStaticObjectMethod(
 			"android.app.NotificationManager$Policy",
 			"priorityCategoriesToString",
 			"(I)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
-	jstring NotificationManager_Policy::prioritySendersToString(jint arg0)
+	JString NotificationManager_Policy::prioritySendersToString(jint arg0)
 	{
 		return callStaticObjectMethod(
 			"android.app.NotificationManager$Policy",
 			"prioritySendersToString",
 			"(I)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
-	jstring NotificationManager_Policy::suppressedEffectsToString(jint arg0)
+	JString NotificationManager_Policy::suppressedEffectsToString(jint arg0)
 	{
 		return callStaticObjectMethod(
 			"android.app.NotificationManager$Policy",
 			"suppressedEffectsToString",
 			"(I)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
 	jint NotificationManager_Policy::describeContents()
 	{
@@ -278,12 +280,12 @@ namespace android::app
 			"()I"
 		);
 	}
-	jboolean NotificationManager_Policy::equals(jobject arg0)
+	jboolean NotificationManager_Policy::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint NotificationManager_Policy::hashCode()
@@ -293,12 +295,12 @@ namespace android::app
 			"()I"
 		);
 	}
-	jstring NotificationManager_Policy::toString()
+	JString NotificationManager_Policy::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void NotificationManager_Policy::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

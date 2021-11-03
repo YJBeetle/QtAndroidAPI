@@ -1,3 +1,5 @@
+#include "../../../JString.hpp"
+#include "../../../JThrowable.hpp"
 #include "./RejectedExecutionException.hpp"
 
 namespace java::util::concurrent
@@ -13,24 +15,24 @@ namespace java::util::concurrent
 			"java.util.concurrent.RejectedExecutionException",
 			"()V"
 		) {}
-	RejectedExecutionException::RejectedExecutionException(jstring arg0)
+	RejectedExecutionException::RejectedExecutionException(JString arg0)
 		: java::lang::RuntimeException(
 			"java.util.concurrent.RejectedExecutionException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	RejectedExecutionException::RejectedExecutionException(jthrowable arg0)
+	RejectedExecutionException::RejectedExecutionException(JThrowable arg0)
 		: java::lang::RuntimeException(
 			"java.util.concurrent.RejectedExecutionException",
 			"(Ljava/lang/Throwable;)V",
-			arg0
+			arg0.object<jthrowable>()
 		) {}
-	RejectedExecutionException::RejectedExecutionException(jstring arg0, jthrowable arg1)
+	RejectedExecutionException::RejectedExecutionException(JString arg0, JThrowable arg1)
 		: java::lang::RuntimeException(
 			"java.util.concurrent.RejectedExecutionException",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
 		) {}
 	
 	// Methods

@@ -2,6 +2,9 @@
 
 #include "../../../JObject.hpp"
 
+class JArray;
+class JArray;
+class JString;
 namespace java::security
 {
 	class ProtectionDomain;
@@ -26,7 +29,7 @@ namespace javax::security::auth
 		SubjectDomainCombiner(javax::security::auth::Subject arg0);
 		
 		// Methods
-		jarray combine(jarray arg0, jarray arg1);
+		JArray combine(JArray arg0, JArray arg1);
 		javax::security::auth::Subject getSubject();
 	};
 } // namespace javax::security::auth

@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JLongArray;
 
 namespace android::app
 {
@@ -18,7 +19,7 @@ namespace android::app
 		DownloadManager_Query();
 		
 		// Methods
-		android::app::DownloadManager_Query setFilterById(jlongArray arg0);
+		android::app::DownloadManager_Query setFilterById(JLongArray arg0);
 		android::app::DownloadManager_Query setFilterByStatus(jint arg0);
 	};
 } // namespace android::app

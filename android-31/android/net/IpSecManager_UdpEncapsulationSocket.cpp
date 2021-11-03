@@ -1,4 +1,5 @@
 #include "../../java/io/FileDescriptor.hpp"
+#include "../../JString.hpp"
 #include "./IpSecManager_UdpEncapsulationSocket.hpp"
 
 namespace android::net
@@ -32,12 +33,12 @@ namespace android::net
 			"()I"
 		);
 	}
-	jstring IpSecManager_UdpEncapsulationSocket::toString()
+	JString IpSecManager_UdpEncapsulationSocket::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::net
 

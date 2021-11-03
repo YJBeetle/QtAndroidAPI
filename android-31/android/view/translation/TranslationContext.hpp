@@ -10,6 +10,7 @@ namespace android::view::translation
 {
 	class TranslationSpec;
 }
+class JString;
 
 namespace android::view::translation
 {
@@ -33,7 +34,7 @@ namespace android::view::translation
 		android::view::translation::TranslationSpec getSourceSpec();
 		android::view::translation::TranslationSpec getTargetSpec();
 		jint getTranslationFlags();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::view::translation

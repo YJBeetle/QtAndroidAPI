@@ -6,6 +6,8 @@ namespace android::view
 {
 	class View;
 }
+class JObject;
+class JString;
 
 namespace android::transition
 {
@@ -24,9 +26,9 @@ namespace android::transition
 		TransitionValues();
 		
 		// Methods
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint hashCode();
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::transition
 

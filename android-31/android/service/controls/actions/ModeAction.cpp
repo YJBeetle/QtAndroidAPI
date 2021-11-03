@@ -1,3 +1,4 @@
+#include "../../../../JString.hpp"
 #include "./ModeAction.hpp"
 
 namespace android::service::controls::actions
@@ -8,20 +9,20 @@ namespace android::service::controls::actions
 	ModeAction::ModeAction(QAndroidJniObject obj) : android::service::controls::actions::ControlAction(obj) {}
 	
 	// Constructors
-	ModeAction::ModeAction(jstring arg0, jint arg1)
+	ModeAction::ModeAction(JString arg0, jint arg1)
 		: android::service::controls::actions::ControlAction(
 			"android.service.controls.actions.ModeAction",
 			"(Ljava/lang/String;I)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		) {}
-	ModeAction::ModeAction(jstring arg0, jint arg1, jstring arg2)
+	ModeAction::ModeAction(JString arg0, jint arg1, JString arg2)
 		: android::service::controls::actions::ControlAction(
 			"android.service.controls.actions.ModeAction",
 			"(Ljava/lang/String;ILjava/lang/String;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
-			arg2
+			arg2.object<jstring>()
 		) {}
 	
 	// Methods

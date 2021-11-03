@@ -1,4 +1,5 @@
 #include "../../os/Parcel.hpp"
+#include "../../../JString.hpp"
 #include "./FactoryResetProtectionPolicy.hpp"
 
 namespace android::app::admin
@@ -40,12 +41,12 @@ namespace android::app::admin
 			"()Z"
 		);
 	}
-	jstring FactoryResetProtectionPolicy::toString()
+	JString FactoryResetProtectionPolicy::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void FactoryResetProtectionPolicy::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JString;
 
 namespace android::media::audiofx
 {
@@ -22,7 +23,7 @@ namespace android::media::audiofx
 		jboolean isEnabled();
 		void setCutoffFrequency(jfloat arg0);
 		void setEnabled(jboolean arg0);
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::media::audiofx
 

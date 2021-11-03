@@ -5,6 +5,9 @@
 #include "./TransitionPropagation.hpp"
 #include "./TransitionValues.hpp"
 #include "../view/View.hpp"
+#include "../../JClass.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./TransitionSet.hpp"
 
 namespace android::transition
@@ -67,20 +70,20 @@ namespace android::transition
 			arg0
 		);
 	}
-	android::transition::TransitionSet TransitionSet::addTarget(jclass arg0)
+	android::transition::TransitionSet TransitionSet::addTarget(JClass arg0)
 	{
 		return callObjectMethod(
 			"addTarget",
 			"(Ljava/lang/Class;)Landroid/transition/TransitionSet;",
-			arg0
+			arg0.object<jclass>()
 		);
 	}
-	android::transition::TransitionSet TransitionSet::addTarget(jstring arg0)
+	android::transition::TransitionSet TransitionSet::addTarget(JString arg0)
 	{
 		return callObjectMethod(
 			"addTarget",
 			"(Ljava/lang/String;)Landroid/transition/TransitionSet;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::transition::TransitionSet TransitionSet::addTransition(android::transition::Transition arg0)
@@ -132,21 +135,21 @@ namespace android::transition
 			arg1
 		);
 	}
-	android::transition::Transition TransitionSet::excludeTarget(jclass arg0, jboolean arg1)
+	android::transition::Transition TransitionSet::excludeTarget(JClass arg0, jboolean arg1)
 	{
 		return callObjectMethod(
 			"excludeTarget",
 			"(Ljava/lang/Class;Z)Landroid/transition/Transition;",
-			arg0,
+			arg0.object<jclass>(),
 			arg1
 		);
 	}
-	android::transition::Transition TransitionSet::excludeTarget(jstring arg0, jboolean arg1)
+	android::transition::Transition TransitionSet::excludeTarget(JString arg0, jboolean arg1)
 	{
 		return callObjectMethod(
 			"excludeTarget",
 			"(Ljava/lang/String;Z)Landroid/transition/Transition;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
@@ -196,20 +199,20 @@ namespace android::transition
 			arg0
 		);
 	}
-	android::transition::TransitionSet TransitionSet::removeTarget(jclass arg0)
+	android::transition::TransitionSet TransitionSet::removeTarget(JClass arg0)
 	{
 		return callObjectMethod(
 			"removeTarget",
 			"(Ljava/lang/Class;)Landroid/transition/TransitionSet;",
-			arg0
+			arg0.object<jclass>()
 		);
 	}
-	android::transition::TransitionSet TransitionSet::removeTarget(jstring arg0)
+	android::transition::TransitionSet TransitionSet::removeTarget(JString arg0)
 	{
 		return callObjectMethod(
 			"removeTarget",
 			"(Ljava/lang/String;)Landroid/transition/TransitionSet;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::transition::TransitionSet TransitionSet::removeTransition(android::transition::Transition arg0)

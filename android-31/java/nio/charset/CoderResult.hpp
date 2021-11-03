@@ -2,10 +2,13 @@
 
 #include "../../../JObject.hpp"
 
+class JArray;
+class JArray;
 namespace java::lang
 {
 	class Integer;
 }
+class JString;
 
 namespace java::nio::charset
 {
@@ -32,7 +35,7 @@ namespace java::nio::charset
 		jboolean isUnmappable();
 		jint length();
 		void throwException();
-		jstring toString();
+		JString toString();
 	};
 } // namespace java::nio::charset
 

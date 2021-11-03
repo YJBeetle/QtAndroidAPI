@@ -1,4 +1,6 @@
+#include "../../../JArray.hpp"
 #include "../../widget/TextView.hpp"
+#include "../../../JString.hpp"
 #include "../../../java/util/regex/Pattern.hpp"
 #include "./Linkify.hpp"
 
@@ -96,7 +98,7 @@ namespace android::text::util
 			arg1
 		);
 	}
-	jboolean Linkify::addLinks(JObject arg0, java::util::regex::Pattern arg1, jstring arg2)
+	jboolean Linkify::addLinks(JObject arg0, java::util::regex::Pattern arg1, JString arg2)
 	{
 		return callStaticMethod<jboolean>(
 			"android.text.util.Linkify",
@@ -104,10 +106,10 @@ namespace android::text::util
 			"(Landroid/text/Spannable;Ljava/util/regex/Pattern;Ljava/lang/String;)Z",
 			arg0.object(),
 			arg1.object(),
-			arg2
+			arg2.object<jstring>()
 		);
 	}
-	jboolean Linkify::addLinks(JObject arg0, java::util::regex::Pattern arg1, jstring arg2, JObject arg3, JObject arg4)
+	jboolean Linkify::addLinks(JObject arg0, java::util::regex::Pattern arg1, JString arg2, JObject arg3, JObject arg4)
 	{
 		return callStaticMethod<jboolean>(
 			"android.text.util.Linkify",
@@ -115,12 +117,12 @@ namespace android::text::util
 			"(Landroid/text/Spannable;Ljava/util/regex/Pattern;Ljava/lang/String;Landroid/text/util/Linkify$MatchFilter;Landroid/text/util/Linkify$TransformFilter;)Z",
 			arg0.object(),
 			arg1.object(),
-			arg2,
+			arg2.object<jstring>(),
 			arg3.object(),
 			arg4.object()
 		);
 	}
-	jboolean Linkify::addLinks(JObject arg0, java::util::regex::Pattern arg1, jstring arg2, jarray arg3, JObject arg4, JObject arg5)
+	jboolean Linkify::addLinks(JObject arg0, java::util::regex::Pattern arg1, JString arg2, JArray arg3, JObject arg4, JObject arg5)
 	{
 		return callStaticMethod<jboolean>(
 			"android.text.util.Linkify",
@@ -128,13 +130,13 @@ namespace android::text::util
 			"(Landroid/text/Spannable;Ljava/util/regex/Pattern;Ljava/lang/String;[Ljava/lang/String;Landroid/text/util/Linkify$MatchFilter;Landroid/text/util/Linkify$TransformFilter;)Z",
 			arg0.object(),
 			arg1.object(),
-			arg2,
-			arg3,
+			arg2.object<jstring>(),
+			arg3.object<jarray>(),
 			arg4.object(),
 			arg5.object()
 		);
 	}
-	void Linkify::addLinks(android::widget::TextView arg0, java::util::regex::Pattern arg1, jstring arg2)
+	void Linkify::addLinks(android::widget::TextView arg0, java::util::regex::Pattern arg1, JString arg2)
 	{
 		callStaticMethod<void>(
 			"android.text.util.Linkify",
@@ -142,10 +144,10 @@ namespace android::text::util
 			"(Landroid/widget/TextView;Ljava/util/regex/Pattern;Ljava/lang/String;)V",
 			arg0.object(),
 			arg1.object(),
-			arg2
+			arg2.object<jstring>()
 		);
 	}
-	void Linkify::addLinks(android::widget::TextView arg0, java::util::regex::Pattern arg1, jstring arg2, JObject arg3, JObject arg4)
+	void Linkify::addLinks(android::widget::TextView arg0, java::util::regex::Pattern arg1, JString arg2, JObject arg3, JObject arg4)
 	{
 		callStaticMethod<void>(
 			"android.text.util.Linkify",
@@ -153,12 +155,12 @@ namespace android::text::util
 			"(Landroid/widget/TextView;Ljava/util/regex/Pattern;Ljava/lang/String;Landroid/text/util/Linkify$MatchFilter;Landroid/text/util/Linkify$TransformFilter;)V",
 			arg0.object(),
 			arg1.object(),
-			arg2,
+			arg2.object<jstring>(),
 			arg3.object(),
 			arg4.object()
 		);
 	}
-	void Linkify::addLinks(android::widget::TextView arg0, java::util::regex::Pattern arg1, jstring arg2, jarray arg3, JObject arg4, JObject arg5)
+	void Linkify::addLinks(android::widget::TextView arg0, java::util::regex::Pattern arg1, JString arg2, JArray arg3, JObject arg4, JObject arg5)
 	{
 		callStaticMethod<void>(
 			"android.text.util.Linkify",
@@ -166,8 +168,8 @@ namespace android::text::util
 			"(Landroid/widget/TextView;Ljava/util/regex/Pattern;Ljava/lang/String;[Ljava/lang/String;Landroid/text/util/Linkify$MatchFilter;Landroid/text/util/Linkify$TransformFilter;)V",
 			arg0.object(),
 			arg1.object(),
-			arg2,
-			arg3,
+			arg2.object<jstring>(),
+			arg3.object<jarray>(),
 			arg4.object(),
 			arg5.object()
 		);

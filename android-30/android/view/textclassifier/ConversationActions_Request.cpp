@@ -1,6 +1,7 @@
 #include "../../os/Bundle.hpp"
 #include "../../os/Parcel.hpp"
 #include "./TextClassifier_EntityConfig.hpp"
+#include "../../../JString.hpp"
 #include "./ConversationActions_Request.hpp"
 
 namespace android::view::textclassifier
@@ -14,21 +15,21 @@ namespace android::view::textclassifier
 			"Landroid/os/Parcelable$Creator;"
 		);
 	}
-	jstring ConversationActions_Request::HINT_FOR_IN_APP()
+	JString ConversationActions_Request::HINT_FOR_IN_APP()
 	{
 		return getStaticObjectField(
 			"android.view.textclassifier.ConversationActions$Request",
 			"HINT_FOR_IN_APP",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ConversationActions_Request::HINT_FOR_NOTIFICATION()
+	JString ConversationActions_Request::HINT_FOR_NOTIFICATION()
 	{
 		return getStaticObjectField(
 			"android.view.textclassifier.ConversationActions$Request",
 			"HINT_FOR_NOTIFICATION",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QAndroidJniObject forward
@@ -44,12 +45,12 @@ namespace android::view::textclassifier
 			"()I"
 		);
 	}
-	jstring ConversationActions_Request::getCallingPackageName()
+	JString ConversationActions_Request::getCallingPackageName()
 	{
 		return callObjectMethod(
 			"getCallingPackageName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	JObject ConversationActions_Request::getConversation()
 	{

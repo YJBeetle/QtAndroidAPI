@@ -1,10 +1,9 @@
 #pragma once
 
-#include "../../../../../JObject.hpp"
-#include "../../../../../java/lang/Exception.hpp"
-#include "./IkeException.hpp"
 #include "./IkeNonProtocolException.hpp"
 
+class JString;
+class JThrowable;
 
 namespace android::net::ipsec::ike::exceptions
 {
@@ -18,8 +17,8 @@ namespace android::net::ipsec::ike::exceptions
 		IkeInternalException(QAndroidJniObject obj);
 		
 		// Constructors
-		IkeInternalException(jthrowable arg0);
-		IkeInternalException(jstring arg0, jthrowable arg1);
+		IkeInternalException(JThrowable arg0);
+		IkeInternalException(JString arg0, JThrowable arg1);
 		
 		// Methods
 	};

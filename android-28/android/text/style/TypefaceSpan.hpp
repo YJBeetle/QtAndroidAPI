@@ -1,7 +1,5 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "./CharacterStyle.hpp"
 #include "./MetricAffectingSpan.hpp"
 
 namespace android::graphics
@@ -16,6 +14,7 @@ namespace android::text
 {
 	class TextPaint;
 }
+class JString;
 
 namespace android::text::style
 {
@@ -31,11 +30,11 @@ namespace android::text::style
 		// Constructors
 		TypefaceSpan(android::graphics::Typeface arg0);
 		TypefaceSpan(android::os::Parcel arg0);
-		TypefaceSpan(jstring arg0);
+		TypefaceSpan(JString arg0);
 		
 		// Methods
 		jint describeContents();
-		jstring getFamily();
+		JString getFamily();
 		jint getSpanTypeId();
 		android::graphics::Typeface getTypeface();
 		void updateDrawState(android::text::TextPaint arg0);

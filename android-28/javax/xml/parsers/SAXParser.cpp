@@ -1,5 +1,7 @@
 #include "../../../java/io/File.hpp"
 #include "../../../java/io/InputStream.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "../validation/Schema.hpp"
 #include "../../../org/xml/sax/HandlerBase.hpp"
 #include "../../../org/xml/sax/InputSource.hpp"
@@ -23,13 +25,13 @@ namespace javax::xml::parsers
 			"()Lorg/xml/sax/Parser;"
 		);
 	}
-	jobject SAXParser::getProperty(jstring arg0)
+	JObject SAXParser::getProperty(JString arg0)
 	{
 		return callObjectMethod(
 			"getProperty",
 			"(Ljava/lang/String;)Ljava/lang/Object;",
-			arg0
-		).object<jobject>();
+			arg0.object<jstring>()
+		);
 	}
 	javax::xml::validation::Schema SAXParser::getSchema()
 	{
@@ -102,21 +104,21 @@ namespace javax::xml::parsers
 			arg1.object()
 		);
 	}
-	void SAXParser::parse(jstring arg0, org::xml::sax::HandlerBase arg1)
+	void SAXParser::parse(JString arg0, org::xml::sax::HandlerBase arg1)
 	{
 		callMethod<void>(
 			"parse",
 			"(Ljava/lang/String;Lorg/xml/sax/HandlerBase;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
-	void SAXParser::parse(jstring arg0, org::xml::sax::helpers::DefaultHandler arg1)
+	void SAXParser::parse(JString arg0, org::xml::sax::helpers::DefaultHandler arg1)
 	{
 		callMethod<void>(
 			"parse",
 			"(Ljava/lang/String;Lorg/xml/sax/helpers/DefaultHandler;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
@@ -138,24 +140,24 @@ namespace javax::xml::parsers
 			arg1.object()
 		);
 	}
-	void SAXParser::parse(java::io::InputStream arg0, org::xml::sax::HandlerBase arg1, jstring arg2)
+	void SAXParser::parse(java::io::InputStream arg0, org::xml::sax::HandlerBase arg1, JString arg2)
 	{
 		callMethod<void>(
 			"parse",
 			"(Ljava/io/InputStream;Lorg/xml/sax/HandlerBase;Ljava/lang/String;)V",
 			arg0.object(),
 			arg1.object(),
-			arg2
+			arg2.object<jstring>()
 		);
 	}
-	void SAXParser::parse(java::io::InputStream arg0, org::xml::sax::helpers::DefaultHandler arg1, jstring arg2)
+	void SAXParser::parse(java::io::InputStream arg0, org::xml::sax::helpers::DefaultHandler arg1, JString arg2)
 	{
 		callMethod<void>(
 			"parse",
 			"(Ljava/io/InputStream;Lorg/xml/sax/helpers/DefaultHandler;Ljava/lang/String;)V",
 			arg0.object(),
 			arg1.object(),
-			arg2
+			arg2.object<jstring>()
 		);
 	}
 	void SAXParser::reset()
@@ -165,13 +167,13 @@ namespace javax::xml::parsers
 			"()V"
 		);
 	}
-	void SAXParser::setProperty(jstring arg0, jobject arg1)
+	void SAXParser::setProperty(JString arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"setProperty",
 			"(Ljava/lang/String;Ljava/lang/Object;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jobject>()
 		);
 	}
 } // namespace javax::xml::parsers

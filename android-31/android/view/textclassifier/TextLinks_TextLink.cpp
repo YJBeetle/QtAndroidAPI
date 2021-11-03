@@ -1,5 +1,6 @@
 #include "../../os/Bundle.hpp"
 #include "../../os/Parcel.hpp"
+#include "../../../JString.hpp"
 #include "./TextLinks_TextLink.hpp"
 
 namespace android::view::textclassifier
@@ -27,12 +28,12 @@ namespace android::view::textclassifier
 			"()I"
 		);
 	}
-	jfloat TextLinks_TextLink::getConfidenceScore(jstring arg0)
+	jfloat TextLinks_TextLink::getConfidenceScore(JString arg0)
 	{
 		return callMethod<jfloat>(
 			"getConfidenceScore",
 			"(Ljava/lang/String;)F",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	jint TextLinks_TextLink::getEnd()
@@ -42,13 +43,13 @@ namespace android::view::textclassifier
 			"()I"
 		);
 	}
-	jstring TextLinks_TextLink::getEntity(jint arg0)
+	JString TextLinks_TextLink::getEntity(jint arg0)
 	{
 		return callObjectMethod(
 			"getEntity",
 			"(I)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
 	jint TextLinks_TextLink::getEntityCount()
 	{
@@ -71,12 +72,12 @@ namespace android::view::textclassifier
 			"()I"
 		);
 	}
-	jstring TextLinks_TextLink::toString()
+	JString TextLinks_TextLink::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void TextLinks_TextLink::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

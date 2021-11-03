@@ -1,3 +1,6 @@
+#include "../../JIntArray.hpp"
+#include "../../JArray.hpp"
+#include "../../JArray.hpp"
 #include "../graphics/Matrix.hpp"
 #include "../os/Bundle.hpp"
 #include "../os/LocaleList.hpp"
@@ -5,6 +8,8 @@
 #include "./ViewStructure_HtmlInfo_Builder.hpp"
 #include "./autofill/AutofillId.hpp"
 #include "./autofill/AutofillValue.hpp"
+#include "../../JString.hpp"
+#include "../../JString.hpp"
 #include "./ViewStructure.hpp"
 
 namespace android::view
@@ -66,19 +71,19 @@ namespace android::view
 			"()Landroid/os/Bundle;"
 		);
 	}
-	jstring ViewStructure::getHint()
+	JString ViewStructure::getHint()
 	{
 		return callObjectMethod(
 			"getHint",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
-	jstring ViewStructure::getText()
+	JString ViewStructure::getText()
 	{
 		return callObjectMethod(
 			"getText",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	jint ViewStructure::getTextSelectionEnd()
 	{
@@ -109,12 +114,12 @@ namespace android::view
 			arg0
 		);
 	}
-	android::view::ViewStructure_HtmlInfo_Builder ViewStructure::newHtmlInfoBuilder(jstring arg0)
+	android::view::ViewStructure_HtmlInfo_Builder ViewStructure::newHtmlInfoBuilder(JString arg0)
 	{
 		return callObjectMethod(
 			"newHtmlInfoBuilder",
 			"(Ljava/lang/String;)Landroid/view/ViewStructure$HtmlInfo$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void ViewStructure::setAccessibilityFocused(jboolean arg0)
@@ -141,12 +146,12 @@ namespace android::view
 			arg0
 		);
 	}
-	void ViewStructure::setAutofillHints(jarray arg0)
+	void ViewStructure::setAutofillHints(JArray arg0)
 	{
 		callMethod<void>(
 			"setAutofillHints",
 			"([Ljava/lang/String;)V",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
 	void ViewStructure::setAutofillId(android::view::autofill::AutofillId arg0)
@@ -166,12 +171,12 @@ namespace android::view
 			arg1
 		);
 	}
-	void ViewStructure::setAutofillOptions(jarray arg0)
+	void ViewStructure::setAutofillOptions(JArray arg0)
 	{
 		callMethod<void>(
 			"setAutofillOptions",
 			"([Ljava/lang/CharSequence;)V",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
 	void ViewStructure::setAutofillType(jint arg0)
@@ -214,12 +219,12 @@ namespace android::view
 			arg0
 		);
 	}
-	void ViewStructure::setClassName(jstring arg0)
+	void ViewStructure::setClassName(JString arg0)
 	{
 		callMethod<void>(
 			"setClassName",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void ViewStructure::setClickable(jboolean arg0)
@@ -230,12 +235,12 @@ namespace android::view
 			arg0
 		);
 	}
-	void ViewStructure::setContentDescription(jstring arg0)
+	void ViewStructure::setContentDescription(JString arg0)
 	{
 		callMethod<void>(
 			"setContentDescription",
 			"(Ljava/lang/CharSequence;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void ViewStructure::setContextClickable(jboolean arg0)
@@ -299,20 +304,20 @@ namespace android::view
 			arg0
 		);
 	}
-	void ViewStructure::setHint(jstring arg0)
+	void ViewStructure::setHint(JString arg0)
 	{
 		callMethod<void>(
 			"setHint",
 			"(Ljava/lang/CharSequence;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	void ViewStructure::setHintIdEntry(jstring arg0)
+	void ViewStructure::setHintIdEntry(JString arg0)
 	{
 		callMethod<void>(
 			"setHintIdEntry",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void ViewStructure::setHtmlInfo(android::view::ViewStructure_HtmlInfo arg0)
@@ -323,15 +328,15 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void ViewStructure::setId(jint arg0, jstring arg1, jstring arg2, jstring arg3)
+	void ViewStructure::setId(jint arg0, JString arg1, JString arg2, JString arg3)
 	{
 		callMethod<void>(
 			"setId",
 			"(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
-			arg1,
-			arg2,
-			arg3
+			arg1.object<jstring>(),
+			arg2.object<jstring>(),
+			arg3.object<jstring>()
 		);
 	}
 	void ViewStructure::setImportantForAutofill(jint arg0)
@@ -406,39 +411,39 @@ namespace android::view
 			arg0
 		);
 	}
-	void ViewStructure::setText(jstring arg0)
+	void ViewStructure::setText(JString arg0)
 	{
 		callMethod<void>(
 			"setText",
 			"(Ljava/lang/CharSequence;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	void ViewStructure::setText(jstring arg0, jint arg1, jint arg2)
+	void ViewStructure::setText(JString arg0, jint arg1, jint arg2)
 	{
 		callMethod<void>(
 			"setText",
 			"(Ljava/lang/CharSequence;II)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
 			arg2
 		);
 	}
-	void ViewStructure::setTextIdEntry(jstring arg0)
+	void ViewStructure::setTextIdEntry(JString arg0)
 	{
 		callMethod<void>(
 			"setTextIdEntry",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	void ViewStructure::setTextLines(jintArray arg0, jintArray arg1)
+	void ViewStructure::setTextLines(JIntArray arg0, JIntArray arg1)
 	{
 		callMethod<void>(
 			"setTextLines",
 			"([I[I)V",
-			arg0,
-			arg1
+			arg0.object<jintArray>(),
+			arg1.object<jintArray>()
 		);
 	}
 	void ViewStructure::setTextStyle(jfloat arg0, jint arg1, jint arg2, jint arg3)
@@ -468,12 +473,12 @@ namespace android::view
 			arg0
 		);
 	}
-	void ViewStructure::setWebDomain(jstring arg0)
+	void ViewStructure::setWebDomain(JString arg0)
 	{
 		callMethod<void>(
 			"setWebDomain",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 } // namespace android::view

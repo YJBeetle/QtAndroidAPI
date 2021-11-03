@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./UCharacterCategory.hpp"
 
 namespace android::icu::lang
@@ -10,14 +11,14 @@ namespace android::icu::lang
 	// Constructors
 	
 	// Methods
-	jstring UCharacterCategory::toString(jint arg0)
+	JString UCharacterCategory::toString(jint arg0)
 	{
 		return callStaticObjectMethod(
 			"android.icu.lang.UCharacterCategory",
 			"toString",
 			"(I)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
 } // namespace android::icu::lang
 

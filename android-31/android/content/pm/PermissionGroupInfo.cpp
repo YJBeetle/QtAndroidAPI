@@ -1,5 +1,7 @@
 #include "./PackageManager.hpp"
 #include "../../os/Parcel.hpp"
+#include "../../../JString.hpp"
+#include "../../../JString.hpp"
 #include "./PermissionGroupInfo.hpp"
 
 namespace android::content::pm
@@ -32,12 +34,12 @@ namespace android::content::pm
 			"flags"
 		);
 	}
-	jstring PermissionGroupInfo::nonLocalizedDescription()
+	JString PermissionGroupInfo::nonLocalizedDescription()
 	{
 		return getObjectField(
 			"nonLocalizedDescription",
 			"Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	jint PermissionGroupInfo::priority()
 	{
@@ -70,20 +72,20 @@ namespace android::content::pm
 			"()I"
 		);
 	}
-	jstring PermissionGroupInfo::loadDescription(android::content::pm::PackageManager arg0)
+	JString PermissionGroupInfo::loadDescription(android::content::pm::PackageManager arg0)
 	{
 		return callObjectMethod(
 			"loadDescription",
 			"(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;",
 			arg0.object()
-		).object<jstring>();
+		);
 	}
-	jstring PermissionGroupInfo::toString()
+	JString PermissionGroupInfo::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void PermissionGroupInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JByteArray;
 
 namespace android::os
 {
@@ -20,9 +21,9 @@ namespace android::os
 		// Methods
 		void onFsync();
 		jlong onGetSize();
-		jint onRead(jlong arg0, jint arg1, jbyteArray arg2);
+		jint onRead(jlong arg0, jint arg1, JByteArray arg2);
 		void onRelease();
-		jint onWrite(jlong arg0, jint arg1, jbyteArray arg2);
+		jint onWrite(jlong arg0, jint arg1, JByteArray arg2);
 	};
 } // namespace android::os
 

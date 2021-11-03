@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JArray;
 namespace android::content
 {
 	class Context;
@@ -45,7 +46,7 @@ namespace android::provider
 		// Constructors
 		
 		// Methods
-		static android::graphics::Typeface buildTypeface(android::content::Context arg0, android::os::CancellationSignal arg1, jarray arg2);
+		static android::graphics::Typeface buildTypeface(android::content::Context arg0, android::os::CancellationSignal arg1, JArray arg2);
 		static android::provider::FontsContract_FontFamilyResult fetchFonts(android::content::Context arg0, android::os::CancellationSignal arg1, android::provider::FontRequest arg2);
 		static void requestFonts(android::content::Context arg0, android::provider::FontRequest arg1, android::os::Handler arg2, android::os::CancellationSignal arg3, android::provider::FontsContract_FontRequestCallback arg4);
 	};

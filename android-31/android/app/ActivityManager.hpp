@@ -2,6 +2,9 @@
 
 #include "../../JObject.hpp"
 
+class JByteArray;
+class JIntArray;
+class JArray;
 namespace android::app
 {
 	class Activity;
@@ -54,6 +57,7 @@ namespace java::io
 {
 	class FileDescriptor;
 }
+class JString;
 
 namespace android::app
 {
@@ -61,11 +65,11 @@ namespace android::app
 	{
 	public:
 		// Fields
-		static jstring ACTION_REPORT_HEAP_LIMIT();
+		static JString ACTION_REPORT_HEAP_LIMIT();
 		static jint LOCK_TASK_MODE_LOCKED();
 		static jint LOCK_TASK_MODE_NONE();
 		static jint LOCK_TASK_MODE_PINNED();
-		static jstring META_HOME_ALTERNATE();
+		static JString META_HOME_ALTERNATE();
 		static jint MOVE_TASK_NO_USER_ACTION();
 		static jint MOVE_TASK_WITH_HOME();
 		static jint RECENT_IGNORE_UNAVAILABLE();
@@ -85,21 +89,21 @@ namespace android::app
 		static jboolean isUserAMonkey();
 		static void setVrThread(jint arg0);
 		jint addAppTask(android::app::Activity arg0, android::content::Intent arg1, android::app::ActivityManager_TaskDescription arg2, android::graphics::Bitmap arg3);
-		void appNotResponding(jstring arg0);
+		void appNotResponding(JString arg0);
 		jboolean clearApplicationUserData();
 		void clearWatchHeapLimit();
-		void dumpPackageState(java::io::FileDescriptor arg0, jstring arg1);
+		void dumpPackageState(java::io::FileDescriptor arg0, JString arg1);
 		android::util::Size getAppTaskThumbnailSize();
 		JObject getAppTasks();
 		android::content::pm::ConfigurationInfo getDeviceConfigurationInfo();
-		JObject getHistoricalProcessExitReasons(jstring arg0, jint arg1, jint arg2);
+		JObject getHistoricalProcessExitReasons(JString arg0, jint arg1, jint arg2);
 		jint getLargeMemoryClass();
 		jint getLauncherLargeIconDensity();
 		jint getLauncherLargeIconSize();
 		jint getLockTaskModeState();
 		jint getMemoryClass();
 		void getMemoryInfo(android::app::ActivityManager_MemoryInfo arg0);
-		jarray getProcessMemoryInfo(jintArray arg0);
+		JArray getProcessMemoryInfo(JIntArray arg0);
 		JObject getProcessesInErrorState();
 		JObject getRecentTasks(jint arg0, jint arg1);
 		JObject getRunningAppProcesses();
@@ -110,11 +114,11 @@ namespace android::app
 		jboolean isBackgroundRestricted();
 		jboolean isInLockTaskMode();
 		jboolean isLowRamDevice();
-		void killBackgroundProcesses(jstring arg0);
+		void killBackgroundProcesses(JString arg0);
 		void moveTaskToFront(jint arg0, jint arg1);
 		void moveTaskToFront(jint arg0, jint arg1, android::os::Bundle arg2);
-		void restartPackage(jstring arg0);
-		void setProcessStateSummary(jbyteArray arg0);
+		void restartPackage(JString arg0);
+		void setProcessStateSummary(JByteArray arg0);
 		void setWatchHeapLimit(jlong arg0);
 	};
 } // namespace android::app

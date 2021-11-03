@@ -1,4 +1,5 @@
 #include "./SurfaceControl.hpp"
+#include "../../JString.hpp"
 #include "./SurfaceControl_Builder.hpp"
 
 namespace android::view
@@ -40,12 +41,12 @@ namespace android::view
 			arg0
 		);
 	}
-	android::view::SurfaceControl_Builder SurfaceControl_Builder::setName(jstring arg0)
+	android::view::SurfaceControl_Builder SurfaceControl_Builder::setName(JString arg0)
 	{
 		return callObjectMethod(
 			"setName",
 			"(Ljava/lang/String;)Landroid/view/SurfaceControl$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::view::SurfaceControl_Builder SurfaceControl_Builder::setOpaque(jboolean arg0)

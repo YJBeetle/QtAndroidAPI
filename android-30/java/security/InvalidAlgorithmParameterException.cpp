@@ -1,3 +1,5 @@
+#include "../../JString.hpp"
+#include "../../JThrowable.hpp"
 #include "./InvalidAlgorithmParameterException.hpp"
 
 namespace java::security
@@ -13,24 +15,24 @@ namespace java::security
 			"java.security.InvalidAlgorithmParameterException",
 			"()V"
 		) {}
-	InvalidAlgorithmParameterException::InvalidAlgorithmParameterException(jstring arg0)
+	InvalidAlgorithmParameterException::InvalidAlgorithmParameterException(JString arg0)
 		: java::security::GeneralSecurityException(
 			"java.security.InvalidAlgorithmParameterException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	InvalidAlgorithmParameterException::InvalidAlgorithmParameterException(jthrowable arg0)
+	InvalidAlgorithmParameterException::InvalidAlgorithmParameterException(JThrowable arg0)
 		: java::security::GeneralSecurityException(
 			"java.security.InvalidAlgorithmParameterException",
 			"(Ljava/lang/Throwable;)V",
-			arg0
+			arg0.object<jthrowable>()
 		) {}
-	InvalidAlgorithmParameterException::InvalidAlgorithmParameterException(jstring arg0, jthrowable arg1)
+	InvalidAlgorithmParameterException::InvalidAlgorithmParameterException(JString arg0, JThrowable arg1)
 		: java::security::GeneralSecurityException(
 			"java.security.InvalidAlgorithmParameterException",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
 		) {}
 	
 	// Methods

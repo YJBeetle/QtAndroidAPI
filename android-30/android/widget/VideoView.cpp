@@ -7,6 +7,8 @@
 #include "../view/MotionEvent.hpp"
 #include "./MediaController.hpp"
 #include "../../java/io/InputStream.hpp"
+#include "../../JString.hpp"
+#include "../../JString.hpp"
 #include "./VideoView.hpp"
 
 namespace android::widget
@@ -87,12 +89,12 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	jstring VideoView::getAccessibilityClassName()
+	JString VideoView::getAccessibilityClassName()
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	jint VideoView::getAudioSessionId()
 	{
@@ -241,12 +243,12 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void VideoView::setVideoPath(jstring arg0)
+	void VideoView::setVideoPath(JString arg0)
 	{
 		callMethod<void>(
 			"setVideoPath",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void VideoView::setVideoURI(android::net::Uri arg0)

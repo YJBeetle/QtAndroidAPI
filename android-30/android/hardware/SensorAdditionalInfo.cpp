@@ -1,3 +1,5 @@
+#include "../../JFloatArray.hpp"
+#include "../../JIntArray.hpp"
 #include "./Sensor.hpp"
 #include "./SensorAdditionalInfo.hpp"
 
@@ -53,19 +55,19 @@ namespace android::hardware
 			"TYPE_VEC3_CALIBRATION"
 		);
 	}
-	jfloatArray SensorAdditionalInfo::floatValues()
+	JFloatArray SensorAdditionalInfo::floatValues()
 	{
 		return getObjectField(
 			"floatValues",
 			"[F"
-		).object<jfloatArray>();
+		);
 	}
-	jintArray SensorAdditionalInfo::intValues()
+	JIntArray SensorAdditionalInfo::intValues()
 	{
 		return getObjectField(
 			"intValues",
 			"[I"
-		).object<jintArray>();
+		);
 	}
 	android::hardware::Sensor SensorAdditionalInfo::sensor()
 	{

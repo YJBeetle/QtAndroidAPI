@@ -1,3 +1,5 @@
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
 #include "./UnicodeSetSpanner_TrimOption.hpp"
 
 namespace android::icu::text
@@ -34,22 +36,22 @@ namespace android::icu::text
 	// Constructors
 	
 	// Methods
-	android::icu::text::UnicodeSetSpanner_TrimOption UnicodeSetSpanner_TrimOption::valueOf(jstring arg0)
+	android::icu::text::UnicodeSetSpanner_TrimOption UnicodeSetSpanner_TrimOption::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.icu.text.UnicodeSetSpanner$TrimOption",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/icu/text/UnicodeSetSpanner$TrimOption;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray UnicodeSetSpanner_TrimOption::values()
+	JArray UnicodeSetSpanner_TrimOption::values()
 	{
 		return callStaticObjectMethod(
 			"android.icu.text.UnicodeSetSpanner$TrimOption",
 			"values",
 			"()[Landroid/icu/text/UnicodeSetSpanner$TrimOption;"
-		).object<jarray>();
+		);
 	}
 } // namespace android::icu::text
 

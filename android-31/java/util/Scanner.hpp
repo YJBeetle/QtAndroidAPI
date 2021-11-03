@@ -14,6 +14,8 @@ namespace java::io
 {
 	class InputStream;
 }
+class JObject;
+class JString;
 namespace java::math
 {
 	class BigDecimal;
@@ -62,25 +64,25 @@ namespace java::util
 		Scanner(java::io::File arg0);
 		Scanner(java::io::InputStream arg0);
 		Scanner(JObject arg0);
-		Scanner(jstring arg0);
-		Scanner(java::io::File arg0, jstring arg1);
+		Scanner(JString arg0);
+		Scanner(java::io::File arg0, JString arg1);
 		Scanner(java::io::File arg0, java::nio::charset::Charset arg1);
-		Scanner(java::io::InputStream arg0, jstring arg1);
+		Scanner(java::io::InputStream arg0, JString arg1);
 		Scanner(java::io::InputStream arg0, java::nio::charset::Charset arg1);
-		Scanner(JObject arg0, jstring arg1);
+		Scanner(JObject arg0, JString arg1);
 		Scanner(JObject arg0, java::nio::charset::Charset arg1);
 		
 		// Methods
 		void close();
 		java::util::regex::Pattern delimiter();
-		JObject findAll(jstring arg0);
+		JObject findAll(JString arg0);
 		JObject findAll(java::util::regex::Pattern arg0);
-		jstring findInLine(jstring arg0);
-		jstring findInLine(java::util::regex::Pattern arg0);
-		jstring findWithinHorizon(jstring arg0, jint arg1);
-		jstring findWithinHorizon(java::util::regex::Pattern arg0, jint arg1);
+		JString findInLine(JString arg0);
+		JString findInLine(java::util::regex::Pattern arg0);
+		JString findWithinHorizon(JString arg0, jint arg1);
+		JString findWithinHorizon(java::util::regex::Pattern arg0, jint arg1);
 		jboolean hasNext();
-		jboolean hasNext(jstring arg0);
+		jboolean hasNext(JString arg0);
 		jboolean hasNext(java::util::regex::Pattern arg0);
 		jboolean hasNextBigDecimal();
 		jboolean hasNextBigInteger();
@@ -100,9 +102,9 @@ namespace java::util
 		java::io::IOException ioException();
 		java::util::Locale locale();
 		JObject match();
-		jstring next();
-		jstring next(jstring arg0);
-		jstring next(java::util::regex::Pattern arg0);
+		JString next();
+		JString next(JString arg0);
+		JString next(java::util::regex::Pattern arg0);
 		java::math::BigDecimal nextBigDecimal();
 		java::math::BigInteger nextBigInteger();
 		java::math::BigInteger nextBigInteger(jint arg0);
@@ -113,7 +115,7 @@ namespace java::util
 		jfloat nextFloat();
 		jint nextInt();
 		jint nextInt(jint arg0);
-		jstring nextLine();
+		JString nextLine();
 		jlong nextLong();
 		jlong nextLong(jint arg0);
 		jshort nextShort();
@@ -121,11 +123,11 @@ namespace java::util
 		jint radix();
 		void remove();
 		java::util::Scanner reset();
-		java::util::Scanner skip(jstring arg0);
+		java::util::Scanner skip(JString arg0);
 		java::util::Scanner skip(java::util::regex::Pattern arg0);
-		jstring toString();
+		JString toString();
 		JObject tokens();
-		java::util::Scanner useDelimiter(jstring arg0);
+		java::util::Scanner useDelimiter(JString arg0);
 		java::util::Scanner useDelimiter(java::util::regex::Pattern arg0);
 		java::util::Scanner useLocale(java::util::Locale arg0);
 		java::util::Scanner useRadix(jint arg0);

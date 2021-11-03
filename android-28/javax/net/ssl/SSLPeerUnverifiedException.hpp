@@ -1,10 +1,8 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "../../../java/lang/Exception.hpp"
-#include "../../../java/io/IOException.hpp"
 #include "./SSLException.hpp"
 
+class JString;
 
 namespace javax::net::ssl
 {
@@ -18,7 +16,7 @@ namespace javax::net::ssl
 		SSLPeerUnverifiedException(QAndroidJniObject obj);
 		
 		// Constructors
-		SSLPeerUnverifiedException(jstring arg0);
+		SSLPeerUnverifiedException(JString arg0);
 		
 		// Methods
 	};

@@ -1,3 +1,4 @@
+#include "../../../JObject.hpp"
 #include "./ReferenceQueue.hpp"
 #include "./Reference.hpp"
 
@@ -11,13 +12,13 @@ namespace java::lang::ref
 	// Constructors
 	
 	// Methods
-	void Reference::reachabilityFence(jobject arg0)
+	void Reference::reachabilityFence(JObject arg0)
 	{
 		callStaticMethod<void>(
 			"java.lang.ref.Reference",
 			"reachabilityFence",
 			"(Ljava/lang/Object;)V",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	void Reference::clear()
@@ -34,12 +35,12 @@ namespace java::lang::ref
 			"()Z"
 		);
 	}
-	jobject Reference::get()
+	JObject Reference::get()
 	{
 		return callObjectMethod(
 			"get",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
 	jboolean Reference::isEnqueued()
 	{
@@ -48,12 +49,12 @@ namespace java::lang::ref
 			"()Z"
 		);
 	}
-	jboolean Reference::refersTo(jobject arg0)
+	jboolean Reference::refersTo(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"refersTo",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 } // namespace java::lang::ref

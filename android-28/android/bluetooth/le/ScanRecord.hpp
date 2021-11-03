@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JByteArray;
 namespace android::os
 {
 	class ParcelUuid;
@@ -10,6 +11,7 @@ namespace android::util
 {
 	class SparseArray;
 }
+class JString;
 
 namespace android::bluetooth::le
 {
@@ -26,15 +28,15 @@ namespace android::bluetooth::le
 		
 		// Methods
 		jint getAdvertiseFlags();
-		jbyteArray getBytes();
-		jstring getDeviceName();
-		jbyteArray getManufacturerSpecificData(jint arg0);
+		JByteArray getBytes();
+		JString getDeviceName();
+		JByteArray getManufacturerSpecificData(jint arg0);
 		android::util::SparseArray getManufacturerSpecificData();
-		jbyteArray getServiceData(android::os::ParcelUuid arg0);
+		JByteArray getServiceData(android::os::ParcelUuid arg0);
 		JObject getServiceData();
 		JObject getServiceUuids();
 		jint getTxPowerLevel();
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::bluetooth::le
 

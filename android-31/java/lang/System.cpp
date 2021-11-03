@@ -2,7 +2,11 @@
 #include "../io/FileOutputStream.hpp"
 #include "../io/InputStream.hpp"
 #include "../io/PrintStream.hpp"
+#include "../../JClass.hpp"
+#include "../../JObject.hpp"
 #include "./SecurityManager.hpp"
+#include "../../JString.hpp"
+#include "../../JThrowable.hpp"
 #include "../util/Properties.hpp"
 #include "../util/ResourceBundle.hpp"
 #include "./System.hpp"
@@ -41,27 +45,27 @@ namespace java::lang
 	// Constructors
 	
 	// Methods
-	void System::arraycopy(jobject arg0, jint arg1, jobject arg2, jint arg3, jint arg4)
+	void System::arraycopy(JObject arg0, jint arg1, JObject arg2, jint arg3, jint arg4)
 	{
 		callStaticMethod<void>(
 			"java.lang.System",
 			"arraycopy",
 			"(Ljava/lang/Object;ILjava/lang/Object;II)V",
-			arg0,
+			arg0.object<jobject>(),
 			arg1,
-			arg2,
+			arg2.object<jobject>(),
 			arg3,
 			arg4
 		);
 	}
-	jstring System::clearProperty(jstring arg0)
+	JString System::clearProperty(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"java.lang.System",
 			"clearProperty",
 			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
+			arg0.object<jstring>()
+		);
 	}
 	java::io::Console System::console()
 	{
@@ -96,22 +100,22 @@ namespace java::lang
 			"()V"
 		);
 	}
-	JObject System::getLogger(jstring arg0)
+	JObject System::getLogger(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"java.lang.System",
 			"getLogger",
 			"(Ljava/lang/String;)Ljava/lang/System$Logger;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	JObject System::getLogger(jstring arg0, java::util::ResourceBundle arg1)
+	JObject System::getLogger(JString arg0, java::util::ResourceBundle arg1)
 	{
 		return callStaticObjectMethod(
 			"java.lang.System",
 			"getLogger",
 			"(Ljava/lang/String;Ljava/util/ResourceBundle;)Ljava/lang/System$Logger;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
@@ -123,24 +127,24 @@ namespace java::lang
 			"()Ljava/util/Properties;"
 		);
 	}
-	jstring System::getProperty(jstring arg0)
+	JString System::getProperty(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"java.lang.System",
 			"getProperty",
 			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
+			arg0.object<jstring>()
+		);
 	}
-	jstring System::getProperty(jstring arg0, jstring arg1)
+	JString System::getProperty(JString arg0, JString arg1)
 	{
 		return callStaticObjectMethod(
 			"java.lang.System",
 			"getProperty",
 			"(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
-			arg0,
-			arg1
-		).object<jstring>();
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
+		);
 	}
 	java::lang::SecurityManager System::getSecurityManager()
 	{
@@ -150,14 +154,14 @@ namespace java::lang
 			"()Ljava/lang/SecurityManager;"
 		);
 	}
-	jstring System::getenv(jstring arg0)
+	JString System::getenv(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"java.lang.System",
 			"getenv",
 			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
+			arg0.object<jstring>()
+		);
 	}
 	JObject System::getenv()
 	{
@@ -167,13 +171,13 @@ namespace java::lang
 			"()Ljava/util/Map;"
 		);
 	}
-	jint System::identityHashCode(jobject arg0)
+	jint System::identityHashCode(JObject arg0)
 	{
 		return callStaticMethod<jint>(
 			"java.lang.System",
 			"identityHashCode",
 			"(Ljava/lang/Object;)I",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	JObject System::inheritedChannel()
@@ -184,40 +188,40 @@ namespace java::lang
 			"()Ljava/nio/channels/Channel;"
 		);
 	}
-	jstring System::lineSeparator()
+	JString System::lineSeparator()
 	{
 		return callStaticObjectMethod(
 			"java.lang.System",
 			"lineSeparator",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	void System::load(jstring arg0)
+	void System::load(JString arg0)
 	{
 		callStaticMethod<void>(
 			"java.lang.System",
 			"load",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	void System::loadLibrary(jstring arg0)
+	void System::loadLibrary(JString arg0)
 	{
 		callStaticMethod<void>(
 			"java.lang.System",
 			"loadLibrary",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jstring System::mapLibraryName(jstring arg0)
+	JString System::mapLibraryName(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"java.lang.System",
 			"mapLibraryName",
 			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
+			arg0.object<jstring>()
+		);
 	}
 	jlong System::nanoTime()
 	{
@@ -271,15 +275,15 @@ namespace java::lang
 			arg0.object()
 		);
 	}
-	jstring System::setProperty(jstring arg0, jstring arg1)
+	JString System::setProperty(JString arg0, JString arg1)
 	{
 		return callStaticObjectMethod(
 			"java.lang.System",
 			"setProperty",
 			"(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
-			arg0,
-			arg1
-		).object<jstring>();
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
+		);
 	}
 	void System::setSecurityManager(java::lang::SecurityManager arg0)
 	{

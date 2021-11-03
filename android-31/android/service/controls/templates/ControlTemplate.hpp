@@ -2,6 +2,7 @@
 
 #include "../../../../JObject.hpp"
 
+class JString;
 
 namespace android::service::controls::templates
 {
@@ -27,7 +28,7 @@ namespace android::service::controls::templates
 		// Methods
 		static android::service::controls::templates::ControlTemplate getErrorTemplate();
 		static android::service::controls::templates::ControlTemplate getNoTemplateObject();
-		jstring getTemplateId();
+		JString getTemplateId();
 		jint getTemplateType();
 	};
 } // namespace android::service::controls::templates

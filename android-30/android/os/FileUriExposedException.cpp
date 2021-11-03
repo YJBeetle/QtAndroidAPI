@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./FileUriExposedException.hpp"
 
 namespace android::os
@@ -8,11 +9,11 @@ namespace android::os
 	FileUriExposedException::FileUriExposedException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
 	
 	// Constructors
-	FileUriExposedException::FileUriExposedException(jstring arg0)
+	FileUriExposedException::FileUriExposedException(JString arg0)
 		: java::lang::RuntimeException(
 			"android.os.FileUriExposedException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

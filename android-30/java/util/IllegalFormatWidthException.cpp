@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./IllegalFormatWidthException.hpp"
 
 namespace java::util
@@ -16,12 +17,12 @@ namespace java::util
 		) {}
 	
 	// Methods
-	jstring IllegalFormatWidthException::getMessage()
+	JString IllegalFormatWidthException::getMessage()
 	{
 		return callObjectMethod(
 			"getMessage",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint IllegalFormatWidthException::getWidth()
 	{

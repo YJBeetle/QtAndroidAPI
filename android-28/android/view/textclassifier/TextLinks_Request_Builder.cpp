@@ -1,6 +1,7 @@
 #include "../../os/LocaleList.hpp"
 #include "./TextClassifier_EntityConfig.hpp"
 #include "./TextLinks_Request.hpp"
+#include "../../../JString.hpp"
 #include "./TextLinks_Request_Builder.hpp"
 
 namespace android::view::textclassifier
@@ -11,11 +12,11 @@ namespace android::view::textclassifier
 	TextLinks_Request_Builder::TextLinks_Request_Builder(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	TextLinks_Request_Builder::TextLinks_Request_Builder(jstring arg0)
+	TextLinks_Request_Builder::TextLinks_Request_Builder(JString arg0)
 		: JObject(
 			"android.view.textclassifier.TextLinks$Request$Builder",
 			"(Ljava/lang/CharSequence;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

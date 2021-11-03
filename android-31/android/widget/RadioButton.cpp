@@ -1,5 +1,6 @@
 #include "../content/Context.hpp"
 #include "../view/accessibility/AccessibilityNodeInfo.hpp"
+#include "../../JString.hpp"
 #include "./RadioButton.hpp"
 
 namespace android::widget
@@ -42,12 +43,12 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	jstring RadioButton::getAccessibilityClassName()
+	JString RadioButton::getAccessibilityClassName()
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	void RadioButton::onInitializeAccessibilityNodeInfo(android::view::accessibility::AccessibilityNodeInfo arg0)
 	{

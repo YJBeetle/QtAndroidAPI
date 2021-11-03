@@ -1,6 +1,8 @@
+#include "../../JArray.hpp"
 #include "../io/ObjectInputStream.hpp"
 #include "../io/ObjectOutputStream.hpp"
 #include "../lang/Exception.hpp"
+#include "../../JString.hpp"
 #include "./PrivilegedActionException.hpp"
 
 namespace java::security
@@ -26,12 +28,12 @@ namespace java::security
 			"()Ljava/lang/Exception;"
 		);
 	}
-	jstring PrivilegedActionException::toString()
+	JString PrivilegedActionException::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::security
 

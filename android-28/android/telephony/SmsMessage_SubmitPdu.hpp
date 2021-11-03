@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JByteArray;
+class JString;
 
 namespace android::telephony
 {
@@ -9,8 +11,8 @@ namespace android::telephony
 	{
 	public:
 		// Fields
-		jbyteArray encodedMessage();
-		jbyteArray encodedScAddress();
+		JByteArray encodedMessage();
+		JByteArray encodedScAddress();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SmsMessage_SubmitPdu(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
@@ -19,7 +21,7 @@ namespace android::telephony
 		// Constructors
 		
 		// Methods
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::telephony
 

@@ -2,6 +2,9 @@
 
 #include "../../../JObject.hpp"
 
+class JString;
+class JObject;
+class JString;
 
 namespace android::view::accessibility
 {
@@ -48,14 +51,14 @@ namespace android::view::accessibility
 		AccessibilityNodeInfo_AccessibilityAction(QAndroidJniObject obj);
 		
 		// Constructors
-		AccessibilityNodeInfo_AccessibilityAction(jint arg0, jstring arg1);
+		AccessibilityNodeInfo_AccessibilityAction(jint arg0, JString arg1);
 		
 		// Methods
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint getId();
-		jstring getLabel();
+		JString getLabel();
 		jint hashCode();
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::view::accessibility
 

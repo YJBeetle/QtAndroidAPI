@@ -18,6 +18,7 @@ namespace android::content
 {
 	class IntentFilter;
 }
+class JString;
 
 namespace android::app
 {
@@ -33,7 +34,7 @@ namespace android::app
 		// Constructors
 		Instrumentation_ActivityMonitor();
 		Instrumentation_ActivityMonitor(android::content::IntentFilter arg0, android::app::Instrumentation_ActivityResult arg1, jboolean arg2);
-		Instrumentation_ActivityMonitor(jstring arg0, android::app::Instrumentation_ActivityResult arg1, jboolean arg2);
+		Instrumentation_ActivityMonitor(JString arg0, android::app::Instrumentation_ActivityResult arg1, jboolean arg2);
 		
 		// Methods
 		android::content::IntentFilter getFilter();

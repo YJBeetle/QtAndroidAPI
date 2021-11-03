@@ -1,4 +1,5 @@
 #include "../../../java/io/File.hpp"
+#include "../../../JString.hpp"
 #include "../../../java/net/CacheRequest.hpp"
 #include "../../../java/net/CacheResponse.hpp"
 #include "../../../java/net/URI.hpp"
@@ -54,13 +55,13 @@ namespace android::net::http
 			"()V"
 		);
 	}
-	java::net::CacheResponse HttpResponseCache::get(java::net::URI arg0, jstring arg1, JObject arg2)
+	java::net::CacheResponse HttpResponseCache::get(java::net::URI arg0, JString arg1, JObject arg2)
 	{
 		return callObjectMethod(
 			"get",
 			"(Ljava/net/URI;Ljava/lang/String;Ljava/util/Map;)Ljava/net/CacheResponse;",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2.object()
 		);
 	}

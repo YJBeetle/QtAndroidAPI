@@ -1,6 +1,7 @@
 #include "./Notification_BubbleMetadata.hpp"
 #include "./PendingIntent.hpp"
 #include "../graphics/drawable/Icon.hpp"
+#include "../../JString.hpp"
 #include "./Notification_BubbleMetadata_Builder.hpp"
 
 namespace android::app
@@ -16,11 +17,11 @@ namespace android::app
 			"android.app.Notification$BubbleMetadata$Builder",
 			"()V"
 		) {}
-	Notification_BubbleMetadata_Builder::Notification_BubbleMetadata_Builder(jstring arg0)
+	Notification_BubbleMetadata_Builder::Notification_BubbleMetadata_Builder(JString arg0)
 		: JObject(
 			"android.app.Notification$BubbleMetadata$Builder",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	Notification_BubbleMetadata_Builder::Notification_BubbleMetadata_Builder(android::app::PendingIntent arg0, android::graphics::drawable::Icon arg1)
 		: JObject(

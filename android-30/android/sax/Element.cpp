@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./Element.hpp"
 
 namespace android::sax
@@ -10,38 +11,38 @@ namespace android::sax
 	// Constructors
 	
 	// Methods
-	android::sax::Element Element::getChild(jstring arg0)
+	android::sax::Element Element::getChild(JString arg0)
 	{
 		return callObjectMethod(
 			"getChild",
 			"(Ljava/lang/String;)Landroid/sax/Element;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	android::sax::Element Element::getChild(jstring arg0, jstring arg1)
+	android::sax::Element Element::getChild(JString arg0, JString arg1)
 	{
 		return callObjectMethod(
 			"getChild",
 			"(Ljava/lang/String;Ljava/lang/String;)Landroid/sax/Element;",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		);
 	}
-	android::sax::Element Element::requireChild(jstring arg0)
+	android::sax::Element Element::requireChild(JString arg0)
 	{
 		return callObjectMethod(
 			"requireChild",
 			"(Ljava/lang/String;)Landroid/sax/Element;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	android::sax::Element Element::requireChild(jstring arg0, jstring arg1)
+	android::sax::Element Element::requireChild(JString arg0, JString arg1)
 	{
 		return callObjectMethod(
 			"requireChild",
 			"(Ljava/lang/String;Ljava/lang/String;)Landroid/sax/Element;",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		);
 	}
 	void Element::setElementListener(JObject arg0)
@@ -84,12 +85,12 @@ namespace android::sax
 			arg0.object()
 		);
 	}
-	jstring Element::toString()
+	JString Element::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::sax
 

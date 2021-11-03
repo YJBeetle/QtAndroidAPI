@@ -10,6 +10,7 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
 
 namespace android::content
 {
@@ -18,8 +19,8 @@ namespace android::content
 	public:
 		// Fields
 		static JObject CREATOR();
-		jstring packageName();
-		jstring resourceName();
+		JString packageName();
+		JString resourceName();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Intent_ShortcutIconResource(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
@@ -31,7 +32,7 @@ namespace android::content
 		// Methods
 		static android::content::Intent_ShortcutIconResource fromContext(android::content::Context arg0, jint arg1);
 		jint describeContents();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::content

@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JObject;
+class JString;
 
 namespace java::text
 {
@@ -15,11 +17,11 @@ namespace java::text
 		Annotation(QAndroidJniObject obj);
 		
 		// Constructors
-		Annotation(jobject arg0);
+		Annotation(JObject arg0);
 		
 		// Methods
-		jobject getValue();
-		jstring toString();
+		JObject getValue();
+		JString toString();
 	};
 } // namespace java::text
 

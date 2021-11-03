@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./SQLiteCantOpenDatabaseException.hpp"
 
 namespace android::database::sqlite
@@ -13,11 +14,11 @@ namespace android::database::sqlite
 			"android.database.sqlite.SQLiteCantOpenDatabaseException",
 			"()V"
 		) {}
-	SQLiteCantOpenDatabaseException::SQLiteCantOpenDatabaseException(jstring arg0)
+	SQLiteCantOpenDatabaseException::SQLiteCantOpenDatabaseException(JString arg0)
 		: android::database::sqlite::SQLiteException(
 			"android.database.sqlite.SQLiteCantOpenDatabaseException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

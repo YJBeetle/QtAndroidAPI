@@ -1,3 +1,4 @@
+#include "../../../JObject.hpp"
 #include "./BidiClassifier.hpp"
 
 namespace android::icu::text
@@ -8,11 +9,11 @@ namespace android::icu::text
 	BidiClassifier::BidiClassifier(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	BidiClassifier::BidiClassifier(jobject arg0)
+	BidiClassifier::BidiClassifier(JObject arg0)
 		: JObject(
 			"android.icu.text.BidiClassifier",
 			"(Ljava/lang/Object;)V",
-			arg0
+			arg0.object<jobject>()
 		) {}
 	
 	// Methods
@@ -24,19 +25,19 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	jobject BidiClassifier::getContext()
+	JObject BidiClassifier::getContext()
 	{
 		return callObjectMethod(
 			"getContext",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
-	void BidiClassifier::setContext(jobject arg0)
+	void BidiClassifier::setContext(JObject arg0)
 	{
 		callMethod<void>(
 			"setContext",
 			"(Ljava/lang/Object;)V",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 } // namespace android::icu::text

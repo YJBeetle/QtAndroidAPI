@@ -4,6 +4,7 @@
 #include "../view/ViewStructure.hpp"
 #include "../view/autofill/AutofillValue.hpp"
 #include "./CalendarView.hpp"
+#include "../../JString.hpp"
 #include "./DatePicker.hpp"
 
 namespace android::widget
@@ -63,12 +64,12 @@ namespace android::widget
 			arg1
 		);
 	}
-	jstring DatePicker::getAccessibilityClassName()
+	JString DatePicker::getAccessibilityClassName()
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	jint DatePicker::getAutofillType()
 	{

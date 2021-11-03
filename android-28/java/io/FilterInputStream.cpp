@@ -1,3 +1,4 @@
+#include "../../JByteArray.hpp"
 #include "./InputStream.hpp"
 #include "./FilterInputStream.hpp"
 
@@ -47,20 +48,20 @@ namespace java::io
 			"()I"
 		);
 	}
-	jint FilterInputStream::read(jbyteArray arg0)
+	jint FilterInputStream::read(JByteArray arg0)
 	{
 		return callMethod<jint>(
 			"read",
 			"([B)I",
-			arg0
+			arg0.object<jbyteArray>()
 		);
 	}
-	jint FilterInputStream::read(jbyteArray arg0, jint arg1, jint arg2)
+	jint FilterInputStream::read(JByteArray arg0, jint arg1, jint arg2)
 	{
 		return callMethod<jint>(
 			"read",
 			"([BII)I",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1,
 			arg2
 		);

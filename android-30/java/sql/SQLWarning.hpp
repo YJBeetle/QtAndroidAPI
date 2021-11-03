@@ -1,9 +1,9 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../lang/Exception.hpp"
 #include "./SQLException.hpp"
 
+class JString;
+class JThrowable;
 
 namespace java::sql
 {
@@ -18,13 +18,13 @@ namespace java::sql
 		
 		// Constructors
 		SQLWarning();
-		SQLWarning(jstring arg0);
-		SQLWarning(jthrowable arg0);
-		SQLWarning(jstring arg0, jstring arg1);
-		SQLWarning(jstring arg0, jthrowable arg1);
-		SQLWarning(jstring arg0, jstring arg1, jint arg2);
-		SQLWarning(jstring arg0, jstring arg1, jthrowable arg2);
-		SQLWarning(jstring arg0, jstring arg1, jint arg2, jthrowable arg3);
+		SQLWarning(JString arg0);
+		SQLWarning(JThrowable arg0);
+		SQLWarning(JString arg0, JString arg1);
+		SQLWarning(JString arg0, JThrowable arg1);
+		SQLWarning(JString arg0, JString arg1, jint arg2);
+		SQLWarning(JString arg0, JString arg1, JThrowable arg2);
+		SQLWarning(JString arg0, JString arg1, jint arg2, JThrowable arg3);
 		
 		// Methods
 		java::sql::SQLWarning getNextWarning();

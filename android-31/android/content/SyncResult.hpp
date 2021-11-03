@@ -10,6 +10,7 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
 
 namespace android::content
 {
@@ -43,8 +44,8 @@ namespace android::content
 		jboolean hasHardError();
 		jboolean hasSoftError();
 		jboolean madeSomeProgress();
-		jstring toDebugString();
-		jstring toString();
+		JString toDebugString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::content

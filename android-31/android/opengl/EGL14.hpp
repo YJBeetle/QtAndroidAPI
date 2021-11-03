@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JIntArray;
+class JArray;
 namespace android::opengl
 {
 	class EGLConfig;
@@ -18,6 +20,8 @@ namespace android::opengl
 {
 	class EGLSurface;
 }
+class JObject;
+class JString;
 
 namespace android::opengl
 {
@@ -150,28 +154,28 @@ namespace android::opengl
 		// Methods
 		static jboolean eglBindAPI(jint arg0);
 		static jboolean eglBindTexImage(android::opengl::EGLDisplay arg0, android::opengl::EGLSurface arg1, jint arg2);
-		static jboolean eglChooseConfig(android::opengl::EGLDisplay arg0, jintArray arg1, jint arg2, jarray arg3, jint arg4, jint arg5, jintArray arg6, jint arg7);
+		static jboolean eglChooseConfig(android::opengl::EGLDisplay arg0, JIntArray arg1, jint arg2, JArray arg3, jint arg4, jint arg5, JIntArray arg6, jint arg7);
 		static jboolean eglCopyBuffers(android::opengl::EGLDisplay arg0, android::opengl::EGLSurface arg1, jint arg2);
-		static android::opengl::EGLContext eglCreateContext(android::opengl::EGLDisplay arg0, android::opengl::EGLConfig arg1, android::opengl::EGLContext arg2, jintArray arg3, jint arg4);
-		static android::opengl::EGLSurface eglCreatePbufferFromClientBuffer(android::opengl::EGLDisplay arg0, jint arg1, jint arg2, android::opengl::EGLConfig arg3, jintArray arg4, jint arg5);
-		static android::opengl::EGLSurface eglCreatePbufferSurface(android::opengl::EGLDisplay arg0, android::opengl::EGLConfig arg1, jintArray arg2, jint arg3);
-		static android::opengl::EGLSurface eglCreatePixmapSurface(android::opengl::EGLDisplay arg0, android::opengl::EGLConfig arg1, jint arg2, jintArray arg3, jint arg4);
-		static android::opengl::EGLSurface eglCreateWindowSurface(android::opengl::EGLDisplay arg0, android::opengl::EGLConfig arg1, jobject arg2, jintArray arg3, jint arg4);
+		static android::opengl::EGLContext eglCreateContext(android::opengl::EGLDisplay arg0, android::opengl::EGLConfig arg1, android::opengl::EGLContext arg2, JIntArray arg3, jint arg4);
+		static android::opengl::EGLSurface eglCreatePbufferFromClientBuffer(android::opengl::EGLDisplay arg0, jint arg1, jint arg2, android::opengl::EGLConfig arg3, JIntArray arg4, jint arg5);
+		static android::opengl::EGLSurface eglCreatePbufferSurface(android::opengl::EGLDisplay arg0, android::opengl::EGLConfig arg1, JIntArray arg2, jint arg3);
+		static android::opengl::EGLSurface eglCreatePixmapSurface(android::opengl::EGLDisplay arg0, android::opengl::EGLConfig arg1, jint arg2, JIntArray arg3, jint arg4);
+		static android::opengl::EGLSurface eglCreateWindowSurface(android::opengl::EGLDisplay arg0, android::opengl::EGLConfig arg1, JObject arg2, JIntArray arg3, jint arg4);
 		static jboolean eglDestroyContext(android::opengl::EGLDisplay arg0, android::opengl::EGLContext arg1);
 		static jboolean eglDestroySurface(android::opengl::EGLDisplay arg0, android::opengl::EGLSurface arg1);
-		static jboolean eglGetConfigAttrib(android::opengl::EGLDisplay arg0, android::opengl::EGLConfig arg1, jint arg2, jintArray arg3, jint arg4);
-		static jboolean eglGetConfigs(android::opengl::EGLDisplay arg0, jarray arg1, jint arg2, jint arg3, jintArray arg4, jint arg5);
+		static jboolean eglGetConfigAttrib(android::opengl::EGLDisplay arg0, android::opengl::EGLConfig arg1, jint arg2, JIntArray arg3, jint arg4);
+		static jboolean eglGetConfigs(android::opengl::EGLDisplay arg0, JArray arg1, jint arg2, jint arg3, JIntArray arg4, jint arg5);
 		static android::opengl::EGLContext eglGetCurrentContext();
 		static android::opengl::EGLDisplay eglGetCurrentDisplay();
 		static android::opengl::EGLSurface eglGetCurrentSurface(jint arg0);
 		static android::opengl::EGLDisplay eglGetDisplay(jint arg0);
 		static jint eglGetError();
-		static jboolean eglInitialize(android::opengl::EGLDisplay arg0, jintArray arg1, jint arg2, jintArray arg3, jint arg4);
+		static jboolean eglInitialize(android::opengl::EGLDisplay arg0, JIntArray arg1, jint arg2, JIntArray arg3, jint arg4);
 		static jboolean eglMakeCurrent(android::opengl::EGLDisplay arg0, android::opengl::EGLSurface arg1, android::opengl::EGLSurface arg2, android::opengl::EGLContext arg3);
 		static jint eglQueryAPI();
-		static jboolean eglQueryContext(android::opengl::EGLDisplay arg0, android::opengl::EGLContext arg1, jint arg2, jintArray arg3, jint arg4);
-		static jstring eglQueryString(android::opengl::EGLDisplay arg0, jint arg1);
-		static jboolean eglQuerySurface(android::opengl::EGLDisplay arg0, android::opengl::EGLSurface arg1, jint arg2, jintArray arg3, jint arg4);
+		static jboolean eglQueryContext(android::opengl::EGLDisplay arg0, android::opengl::EGLContext arg1, jint arg2, JIntArray arg3, jint arg4);
+		static JString eglQueryString(android::opengl::EGLDisplay arg0, jint arg1);
+		static jboolean eglQuerySurface(android::opengl::EGLDisplay arg0, android::opengl::EGLSurface arg1, jint arg2, JIntArray arg3, jint arg4);
 		static jboolean eglReleaseTexImage(android::opengl::EGLDisplay arg0, android::opengl::EGLSurface arg1, jint arg2);
 		static jboolean eglReleaseThread();
 		static jboolean eglSurfaceAttrib(android::opengl::EGLDisplay arg0, android::opengl::EGLSurface arg1, jint arg2, jint arg3);

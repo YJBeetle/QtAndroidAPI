@@ -7,6 +7,8 @@
 #include "./ExtractedText.hpp"
 #include "./ExtractedTextRequest.hpp"
 #include "./InputContentInfo.hpp"
+#include "../../../JString.hpp"
+#include "../../../JString.hpp"
 #include "./BaseInputConnection.hpp"
 
 namespace android::view::inputmethod
@@ -110,12 +112,12 @@ namespace android::view::inputmethod
 			arg0.object()
 		);
 	}
-	jboolean BaseInputConnection::commitText(jstring arg0, jint arg1)
+	jboolean BaseInputConnection::commitText(JString arg0, jint arg1)
 	{
 		return callMethod<jboolean>(
 			"commitText",
 			"(Ljava/lang/CharSequence;I)Z",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
@@ -182,31 +184,31 @@ namespace android::view::inputmethod
 			"()Landroid/os/Handler;"
 		);
 	}
-	jstring BaseInputConnection::getSelectedText(jint arg0)
+	JString BaseInputConnection::getSelectedText(jint arg0)
 	{
 		return callObjectMethod(
 			"getSelectedText",
 			"(I)Ljava/lang/CharSequence;",
 			arg0
-		).object<jstring>();
+		);
 	}
-	jstring BaseInputConnection::getTextAfterCursor(jint arg0, jint arg1)
+	JString BaseInputConnection::getTextAfterCursor(jint arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"getTextAfterCursor",
 			"(II)Ljava/lang/CharSequence;",
 			arg0,
 			arg1
-		).object<jstring>();
+		);
 	}
-	jstring BaseInputConnection::getTextBeforeCursor(jint arg0, jint arg1)
+	JString BaseInputConnection::getTextBeforeCursor(jint arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"getTextBeforeCursor",
 			"(II)Ljava/lang/CharSequence;",
 			arg0,
 			arg1
-		).object<jstring>();
+		);
 	}
 	jboolean BaseInputConnection::performContextMenuAction(jint arg0)
 	{
@@ -224,12 +226,12 @@ namespace android::view::inputmethod
 			arg0
 		);
 	}
-	jboolean BaseInputConnection::performPrivateCommand(jstring arg0, android::os::Bundle arg1)
+	jboolean BaseInputConnection::performPrivateCommand(JString arg0, android::os::Bundle arg1)
 	{
 		return callMethod<jboolean>(
 			"performPrivateCommand",
 			"(Ljava/lang/String;Landroid/os/Bundle;)Z",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
@@ -266,12 +268,12 @@ namespace android::view::inputmethod
 			arg1
 		);
 	}
-	jboolean BaseInputConnection::setComposingText(jstring arg0, jint arg1)
+	jboolean BaseInputConnection::setComposingText(JString arg0, jint arg1)
 	{
 		return callMethod<jboolean>(
 			"setComposingText",
 			"(Ljava/lang/CharSequence;I)Z",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}

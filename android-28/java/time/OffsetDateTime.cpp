@@ -1,4 +1,7 @@
 #include "../io/ObjectInputStream.hpp"
+#include "../../JString.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./Clock.hpp"
 #include "./DayOfWeek.hpp"
 #include "./Instant.hpp"
@@ -122,22 +125,22 @@ namespace java::time
 			arg1.object()
 		);
 	}
-	java::time::OffsetDateTime OffsetDateTime::parse(jstring arg0)
+	java::time::OffsetDateTime OffsetDateTime::parse(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"java.time.OffsetDateTime",
 			"parse",
 			"(Ljava/lang/CharSequence;)Ljava/time/OffsetDateTime;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	java::time::OffsetDateTime OffsetDateTime::parse(jstring arg0, java::time::format::DateTimeFormatter arg1)
+	java::time::OffsetDateTime OffsetDateTime::parse(JString arg0, java::time::format::DateTimeFormatter arg1)
 	{
 		return callStaticObjectMethod(
 			"java.time.OffsetDateTime",
 			"parse",
 			"(Ljava/lang/CharSequence;Ljava/time/format/DateTimeFormatter;)Ljava/time/OffsetDateTime;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
@@ -173,12 +176,12 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	jint OffsetDateTime::compareTo(jobject arg0)
+	jint OffsetDateTime::compareTo(JObject arg0)
 	{
 		return callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Object;)I",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint OffsetDateTime::compareTo(java::time::OffsetDateTime arg0)
@@ -189,21 +192,21 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	jboolean OffsetDateTime::equals(jobject arg0)
+	jboolean OffsetDateTime::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jstring OffsetDateTime::format(java::time::format::DateTimeFormatter arg0)
+	JString OffsetDateTime::format(java::time::format::DateTimeFormatter arg0)
 	{
 		return callObjectMethod(
 			"format",
 			"(Ljava/time/format/DateTimeFormatter;)Ljava/lang/String;",
 			arg0.object()
-		).object<jstring>();
+		);
 	}
 	jint OffsetDateTime::get(JObject arg0)
 	{
@@ -499,13 +502,13 @@ namespace java::time
 			arg0
 		);
 	}
-	jobject OffsetDateTime::query(JObject arg0)
+	JObject OffsetDateTime::query(JObject arg0)
 	{
 		return callObjectMethod(
 			"query",
 			"(Ljava/time/temporal/TemporalQuery;)Ljava/lang/Object;",
 			arg0.object()
-		).object<jobject>();
+		);
 	}
 	java::time::temporal::ValueRange OffsetDateTime::range(JObject arg0)
 	{
@@ -557,12 +560,12 @@ namespace java::time
 			"()Ljava/time/OffsetTime;"
 		);
 	}
-	jstring OffsetDateTime::toString()
+	JString OffsetDateTime::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	java::time::ZonedDateTime OffsetDateTime::toZonedDateTime()
 	{

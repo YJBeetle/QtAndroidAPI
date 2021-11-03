@@ -1,4 +1,5 @@
 #include "../../os/Parcel.hpp"
+#include "../../../JString.hpp"
 #include "./DownloadableSubscription.hpp"
 
 namespace android::telephony::euicc
@@ -19,13 +20,13 @@ namespace android::telephony::euicc
 	// Constructors
 	
 	// Methods
-	android::telephony::euicc::DownloadableSubscription DownloadableSubscription::forActivationCode(jstring arg0)
+	android::telephony::euicc::DownloadableSubscription DownloadableSubscription::forActivationCode(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.telephony.euicc.DownloadableSubscription",
 			"forActivationCode",
 			"(Ljava/lang/String;)Landroid/telephony/euicc/DownloadableSubscription;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	jint DownloadableSubscription::describeContents()
@@ -35,19 +36,19 @@ namespace android::telephony::euicc
 			"()I"
 		);
 	}
-	jstring DownloadableSubscription::getConfirmationCode()
+	JString DownloadableSubscription::getConfirmationCode()
 	{
 		return callObjectMethod(
 			"getConfirmationCode",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DownloadableSubscription::getEncodedActivationCode()
+	JString DownloadableSubscription::getEncodedActivationCode()
 	{
 		return callObjectMethod(
 			"getEncodedActivationCode",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void DownloadableSubscription::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

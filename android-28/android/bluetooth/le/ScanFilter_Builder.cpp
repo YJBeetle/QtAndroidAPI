@@ -1,5 +1,7 @@
+#include "../../../JByteArray.hpp"
 #include "./ScanFilter.hpp"
 #include "../../os/ParcelUuid.hpp"
+#include "../../../JString.hpp"
 #include "./ScanFilter_Builder.hpp"
 
 namespace android::bluetooth::le
@@ -24,58 +26,58 @@ namespace android::bluetooth::le
 			"()Landroid/bluetooth/le/ScanFilter;"
 		);
 	}
-	android::bluetooth::le::ScanFilter_Builder ScanFilter_Builder::setDeviceAddress(jstring arg0)
+	android::bluetooth::le::ScanFilter_Builder ScanFilter_Builder::setDeviceAddress(JString arg0)
 	{
 		return callObjectMethod(
 			"setDeviceAddress",
 			"(Ljava/lang/String;)Landroid/bluetooth/le/ScanFilter$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	android::bluetooth::le::ScanFilter_Builder ScanFilter_Builder::setDeviceName(jstring arg0)
+	android::bluetooth::le::ScanFilter_Builder ScanFilter_Builder::setDeviceName(JString arg0)
 	{
 		return callObjectMethod(
 			"setDeviceName",
 			"(Ljava/lang/String;)Landroid/bluetooth/le/ScanFilter$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	android::bluetooth::le::ScanFilter_Builder ScanFilter_Builder::setManufacturerData(jint arg0, jbyteArray arg1)
+	android::bluetooth::le::ScanFilter_Builder ScanFilter_Builder::setManufacturerData(jint arg0, JByteArray arg1)
 	{
 		return callObjectMethod(
 			"setManufacturerData",
 			"(I[B)Landroid/bluetooth/le/ScanFilter$Builder;",
 			arg0,
-			arg1
+			arg1.object<jbyteArray>()
 		);
 	}
-	android::bluetooth::le::ScanFilter_Builder ScanFilter_Builder::setManufacturerData(jint arg0, jbyteArray arg1, jbyteArray arg2)
+	android::bluetooth::le::ScanFilter_Builder ScanFilter_Builder::setManufacturerData(jint arg0, JByteArray arg1, JByteArray arg2)
 	{
 		return callObjectMethod(
 			"setManufacturerData",
 			"(I[B[B)Landroid/bluetooth/le/ScanFilter$Builder;",
 			arg0,
-			arg1,
-			arg2
+			arg1.object<jbyteArray>(),
+			arg2.object<jbyteArray>()
 		);
 	}
-	android::bluetooth::le::ScanFilter_Builder ScanFilter_Builder::setServiceData(android::os::ParcelUuid arg0, jbyteArray arg1)
+	android::bluetooth::le::ScanFilter_Builder ScanFilter_Builder::setServiceData(android::os::ParcelUuid arg0, JByteArray arg1)
 	{
 		return callObjectMethod(
 			"setServiceData",
 			"(Landroid/os/ParcelUuid;[B)Landroid/bluetooth/le/ScanFilter$Builder;",
 			arg0.object(),
-			arg1
+			arg1.object<jbyteArray>()
 		);
 	}
-	android::bluetooth::le::ScanFilter_Builder ScanFilter_Builder::setServiceData(android::os::ParcelUuid arg0, jbyteArray arg1, jbyteArray arg2)
+	android::bluetooth::le::ScanFilter_Builder ScanFilter_Builder::setServiceData(android::os::ParcelUuid arg0, JByteArray arg1, JByteArray arg2)
 	{
 		return callObjectMethod(
 			"setServiceData",
 			"(Landroid/os/ParcelUuid;[B[B)Landroid/bluetooth/le/ScanFilter$Builder;",
 			arg0.object(),
-			arg1,
-			arg2
+			arg1.object<jbyteArray>(),
+			arg2.object<jbyteArray>()
 		);
 	}
 	android::bluetooth::le::ScanFilter_Builder ScanFilter_Builder::setServiceUuid(android::os::ParcelUuid arg0)

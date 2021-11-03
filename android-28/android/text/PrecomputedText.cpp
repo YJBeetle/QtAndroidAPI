@@ -1,5 +1,10 @@
+#include "../../JObjectArray.hpp"
 #include "../graphics/Rect.hpp"
 #include "./PrecomputedText_Params.hpp"
+#include "../../JString.hpp"
+#include "../../JClass.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./PrecomputedText.hpp"
 
 namespace android::text
@@ -12,13 +17,13 @@ namespace android::text
 	// Constructors
 	
 	// Methods
-	android::text::PrecomputedText PrecomputedText::create(jstring arg0, android::text::PrecomputedText_Params arg1)
+	android::text::PrecomputedText PrecomputedText::create(JString arg0, android::text::PrecomputedText_Params arg1)
 	{
 		return callStaticObjectMethod(
 			"android.text.PrecomputedText",
 			"create",
 			"(Ljava/lang/CharSequence;Landroid/text/PrecomputedText$Params;)Landroid/text/PrecomputedText;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
@@ -70,39 +75,39 @@ namespace android::text
 			"()Landroid/text/PrecomputedText$Params;"
 		);
 	}
-	jint PrecomputedText::getSpanEnd(jobject arg0)
+	jint PrecomputedText::getSpanEnd(JObject arg0)
 	{
 		return callMethod<jint>(
 			"getSpanEnd",
 			"(Ljava/lang/Object;)I",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jint PrecomputedText::getSpanFlags(jobject arg0)
+	jint PrecomputedText::getSpanFlags(JObject arg0)
 	{
 		return callMethod<jint>(
 			"getSpanFlags",
 			"(Ljava/lang/Object;)I",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jint PrecomputedText::getSpanStart(jobject arg0)
+	jint PrecomputedText::getSpanStart(JObject arg0)
 	{
 		return callMethod<jint>(
 			"getSpanStart",
 			"(Ljava/lang/Object;)I",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jobjectArray PrecomputedText::getSpans(jint arg0, jint arg1, jclass arg2)
+	JObjectArray PrecomputedText::getSpans(jint arg0, jint arg1, JClass arg2)
 	{
 		return callObjectMethod(
 			"getSpans",
 			"(IILjava/lang/Class;)[Ljava/lang/Object;",
 			arg0,
 			arg1,
-			arg2
-		).object<jobjectArray>();
+			arg2.object<jclass>()
+		);
 	}
 	jfloat PrecomputedText::getWidth(jint arg0, jint arg1)
 	{
@@ -120,50 +125,50 @@ namespace android::text
 			"()I"
 		);
 	}
-	jint PrecomputedText::nextSpanTransition(jint arg0, jint arg1, jclass arg2)
+	jint PrecomputedText::nextSpanTransition(jint arg0, jint arg1, JClass arg2)
 	{
 		return callMethod<jint>(
 			"nextSpanTransition",
 			"(IILjava/lang/Class;)I",
 			arg0,
 			arg1,
-			arg2
+			arg2.object<jclass>()
 		);
 	}
-	void PrecomputedText::removeSpan(jobject arg0)
+	void PrecomputedText::removeSpan(JObject arg0)
 	{
 		callMethod<void>(
 			"removeSpan",
 			"(Ljava/lang/Object;)V",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	void PrecomputedText::setSpan(jobject arg0, jint arg1, jint arg2, jint arg3)
+	void PrecomputedText::setSpan(JObject arg0, jint arg1, jint arg2, jint arg3)
 	{
 		callMethod<void>(
 			"setSpan",
 			"(Ljava/lang/Object;III)V",
-			arg0,
+			arg0.object<jobject>(),
 			arg1,
 			arg2,
 			arg3
 		);
 	}
-	jstring PrecomputedText::subSequence(jint arg0, jint arg1)
+	JString PrecomputedText::subSequence(jint arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"subSequence",
 			"(II)Ljava/lang/CharSequence;",
 			arg0,
 			arg1
-		).object<jstring>();
+		);
 	}
-	jstring PrecomputedText::toString()
+	JString PrecomputedText::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::text
 

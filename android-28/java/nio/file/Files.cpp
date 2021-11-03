@@ -1,7 +1,18 @@
+#include "../../../JByteArray.hpp"
+#include "../../../JArray.hpp"
+#include "../../../JArray.hpp"
+#include "../../../JArray.hpp"
+#include "../../../JArray.hpp"
+#include "../../../JArray.hpp"
+#include "../../../JArray.hpp"
 #include "../../io/BufferedReader.hpp"
 #include "../../io/BufferedWriter.hpp"
 #include "../../io/InputStream.hpp"
 #include "../../io/OutputStream.hpp"
+#include "../../../JString.hpp"
+#include "../../../JClass.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "../channels/FileChannel.hpp"
 #include "../charset/Charset.hpp"
 #include "./FileStore.hpp"
@@ -19,7 +30,7 @@ namespace java::nio::file
 	// Constructors
 	
 	// Methods
-	JObject Files::copy(JObject arg0, JObject arg1, jarray arg2)
+	JObject Files::copy(JObject arg0, JObject arg1, JArray arg2)
 	{
 		return callStaticObjectMethod(
 			"java.nio.file.Files",
@@ -27,7 +38,7 @@ namespace java::nio::file
 			"(Ljava/nio/file/Path;Ljava/nio/file/Path;[Ljava/nio/file/CopyOption;)Ljava/nio/file/Path;",
 			arg0.object(),
 			arg1.object(),
-			arg2
+			arg2.object<jarray>()
 		);
 	}
 	jlong Files::copy(JObject arg0, java::io::OutputStream arg1)
@@ -40,7 +51,7 @@ namespace java::nio::file
 			arg1.object()
 		);
 	}
-	jlong Files::copy(java::io::InputStream arg0, JObject arg1, jarray arg2)
+	jlong Files::copy(java::io::InputStream arg0, JObject arg1, JArray arg2)
 	{
 		return callStaticMethod<jlong>(
 			"java.nio.file.Files",
@@ -48,37 +59,37 @@ namespace java::nio::file
 			"(Ljava/io/InputStream;Ljava/nio/file/Path;[Ljava/nio/file/CopyOption;)J",
 			arg0.object(),
 			arg1.object(),
-			arg2
+			arg2.object<jarray>()
 		);
 	}
-	JObject Files::createDirectories(JObject arg0, jarray arg1)
+	JObject Files::createDirectories(JObject arg0, JArray arg1)
 	{
 		return callStaticObjectMethod(
 			"java.nio.file.Files",
 			"createDirectories",
 			"(Ljava/nio/file/Path;[Ljava/nio/file/attribute/FileAttribute;)Ljava/nio/file/Path;",
 			arg0.object(),
-			arg1
+			arg1.object<jarray>()
 		);
 	}
-	JObject Files::createDirectory(JObject arg0, jarray arg1)
+	JObject Files::createDirectory(JObject arg0, JArray arg1)
 	{
 		return callStaticObjectMethod(
 			"java.nio.file.Files",
 			"createDirectory",
 			"(Ljava/nio/file/Path;[Ljava/nio/file/attribute/FileAttribute;)Ljava/nio/file/Path;",
 			arg0.object(),
-			arg1
+			arg1.object<jarray>()
 		);
 	}
-	JObject Files::createFile(JObject arg0, jarray arg1)
+	JObject Files::createFile(JObject arg0, JArray arg1)
 	{
 		return callStaticObjectMethod(
 			"java.nio.file.Files",
 			"createFile",
 			"(Ljava/nio/file/Path;[Ljava/nio/file/attribute/FileAttribute;)Ljava/nio/file/Path;",
 			arg0.object(),
-			arg1
+			arg1.object<jarray>()
 		);
 	}
 	JObject Files::createLink(JObject arg0, JObject arg1)
@@ -91,7 +102,7 @@ namespace java::nio::file
 			arg1.object()
 		);
 	}
-	JObject Files::createSymbolicLink(JObject arg0, JObject arg1, jarray arg2)
+	JObject Files::createSymbolicLink(JObject arg0, JObject arg1, JArray arg2)
 	{
 		return callStaticObjectMethod(
 			"java.nio.file.Files",
@@ -99,51 +110,51 @@ namespace java::nio::file
 			"(Ljava/nio/file/Path;Ljava/nio/file/Path;[Ljava/nio/file/attribute/FileAttribute;)Ljava/nio/file/Path;",
 			arg0.object(),
 			arg1.object(),
-			arg2
+			arg2.object<jarray>()
 		);
 	}
-	JObject Files::createTempDirectory(jstring arg0, jarray arg1)
+	JObject Files::createTempDirectory(JString arg0, JArray arg1)
 	{
 		return callStaticObjectMethod(
 			"java.nio.file.Files",
 			"createTempDirectory",
 			"(Ljava/lang/String;[Ljava/nio/file/attribute/FileAttribute;)Ljava/nio/file/Path;",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jarray>()
 		);
 	}
-	JObject Files::createTempDirectory(JObject arg0, jstring arg1, jarray arg2)
+	JObject Files::createTempDirectory(JObject arg0, JString arg1, JArray arg2)
 	{
 		return callStaticObjectMethod(
 			"java.nio.file.Files",
 			"createTempDirectory",
 			"(Ljava/nio/file/Path;Ljava/lang/String;[Ljava/nio/file/attribute/FileAttribute;)Ljava/nio/file/Path;",
 			arg0.object(),
-			arg1,
-			arg2
+			arg1.object<jstring>(),
+			arg2.object<jarray>()
 		);
 	}
-	JObject Files::createTempFile(jstring arg0, jstring arg1, jarray arg2)
+	JObject Files::createTempFile(JString arg0, JString arg1, JArray arg2)
 	{
 		return callStaticObjectMethod(
 			"java.nio.file.Files",
 			"createTempFile",
 			"(Ljava/lang/String;Ljava/lang/String;[Ljava/nio/file/attribute/FileAttribute;)Ljava/nio/file/Path;",
-			arg0,
-			arg1,
-			arg2
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2.object<jarray>()
 		);
 	}
-	JObject Files::createTempFile(JObject arg0, jstring arg1, jstring arg2, jarray arg3)
+	JObject Files::createTempFile(JObject arg0, JString arg1, JString arg2, JArray arg3)
 	{
 		return callStaticObjectMethod(
 			"java.nio.file.Files",
 			"createTempFile",
 			"(Ljava/nio/file/Path;Ljava/lang/String;Ljava/lang/String;[Ljava/nio/file/attribute/FileAttribute;)Ljava/nio/file/Path;",
 			arg0.object(),
-			arg1,
-			arg2,
-			arg3
+			arg1.object<jstring>(),
+			arg2.object<jstring>(),
+			arg3.object<jarray>()
 		);
 	}
 	void Files::_delete(JObject arg0)
@@ -164,17 +175,17 @@ namespace java::nio::file
 			arg0.object()
 		);
 	}
-	jboolean Files::exists(JObject arg0, jarray arg1)
+	jboolean Files::exists(JObject arg0, JArray arg1)
 	{
 		return callStaticMethod<jboolean>(
 			"java.nio.file.Files",
 			"exists",
 			"(Ljava/nio/file/Path;[Ljava/nio/file/LinkOption;)Z",
 			arg0.object(),
-			arg1
+			arg1.object<jarray>()
 		);
 	}
-	JObject Files::find(JObject arg0, jint arg1, JObject arg2, jarray arg3)
+	JObject Files::find(JObject arg0, jint arg1, JObject arg2, JArray arg3)
 	{
 		return callStaticObjectMethod(
 			"java.nio.file.Files",
@@ -183,29 +194,29 @@ namespace java::nio::file
 			arg0.object(),
 			arg1,
 			arg2.object(),
-			arg3
+			arg3.object<jarray>()
 		);
 	}
-	jobject Files::getAttribute(JObject arg0, jstring arg1, jarray arg2)
+	JObject Files::getAttribute(JObject arg0, JString arg1, JArray arg2)
 	{
 		return callStaticObjectMethod(
 			"java.nio.file.Files",
 			"getAttribute",
 			"(Ljava/nio/file/Path;Ljava/lang/String;[Ljava/nio/file/LinkOption;)Ljava/lang/Object;",
 			arg0.object(),
-			arg1,
-			arg2
-		).object<jobject>();
+			arg1.object<jstring>(),
+			arg2.object<jarray>()
+		);
 	}
-	JObject Files::getFileAttributeView(JObject arg0, jclass arg1, jarray arg2)
+	JObject Files::getFileAttributeView(JObject arg0, JClass arg1, JArray arg2)
 	{
 		return callStaticObjectMethod(
 			"java.nio.file.Files",
 			"getFileAttributeView",
 			"(Ljava/nio/file/Path;Ljava/lang/Class;[Ljava/nio/file/LinkOption;)Ljava/nio/file/attribute/FileAttributeView;",
 			arg0.object(),
-			arg1,
-			arg2
+			arg1.object<jclass>(),
+			arg2.object<jarray>()
 		);
 	}
 	java::nio::file::FileStore Files::getFileStore(JObject arg0)
@@ -217,44 +228,44 @@ namespace java::nio::file
 			arg0.object()
 		);
 	}
-	java::nio::file::attribute::FileTime Files::getLastModifiedTime(JObject arg0, jarray arg1)
+	java::nio::file::attribute::FileTime Files::getLastModifiedTime(JObject arg0, JArray arg1)
 	{
 		return callStaticObjectMethod(
 			"java.nio.file.Files",
 			"getLastModifiedTime",
 			"(Ljava/nio/file/Path;[Ljava/nio/file/LinkOption;)Ljava/nio/file/attribute/FileTime;",
 			arg0.object(),
-			arg1
+			arg1.object<jarray>()
 		);
 	}
-	JObject Files::getOwner(JObject arg0, jarray arg1)
+	JObject Files::getOwner(JObject arg0, JArray arg1)
 	{
 		return callStaticObjectMethod(
 			"java.nio.file.Files",
 			"getOwner",
 			"(Ljava/nio/file/Path;[Ljava/nio/file/LinkOption;)Ljava/nio/file/attribute/UserPrincipal;",
 			arg0.object(),
-			arg1
+			arg1.object<jarray>()
 		);
 	}
-	JObject Files::getPosixFilePermissions(JObject arg0, jarray arg1)
+	JObject Files::getPosixFilePermissions(JObject arg0, JArray arg1)
 	{
 		return callStaticObjectMethod(
 			"java.nio.file.Files",
 			"getPosixFilePermissions",
 			"(Ljava/nio/file/Path;[Ljava/nio/file/LinkOption;)Ljava/util/Set;",
 			arg0.object(),
-			arg1
+			arg1.object<jarray>()
 		);
 	}
-	jboolean Files::isDirectory(JObject arg0, jarray arg1)
+	jboolean Files::isDirectory(JObject arg0, JArray arg1)
 	{
 		return callStaticMethod<jboolean>(
 			"java.nio.file.Files",
 			"isDirectory",
 			"(Ljava/nio/file/Path;[Ljava/nio/file/LinkOption;)Z",
 			arg0.object(),
-			arg1
+			arg1.object<jarray>()
 		);
 	}
 	jboolean Files::isExecutable(JObject arg0)
@@ -284,14 +295,14 @@ namespace java::nio::file
 			arg0.object()
 		);
 	}
-	jboolean Files::isRegularFile(JObject arg0, jarray arg1)
+	jboolean Files::isRegularFile(JObject arg0, JArray arg1)
 	{
 		return callStaticMethod<jboolean>(
 			"java.nio.file.Files",
 			"isRegularFile",
 			"(Ljava/nio/file/Path;[Ljava/nio/file/LinkOption;)Z",
 			arg0.object(),
-			arg1
+			arg1.object<jarray>()
 		);
 	}
 	jboolean Files::isSameFile(JObject arg0, JObject arg1)
@@ -360,7 +371,7 @@ namespace java::nio::file
 			arg1.object()
 		);
 	}
-	JObject Files::move(JObject arg0, JObject arg1, jarray arg2)
+	JObject Files::move(JObject arg0, JObject arg1, JArray arg2)
 	{
 		return callStaticObjectMethod(
 			"java.nio.file.Files",
@@ -368,7 +379,7 @@ namespace java::nio::file
 			"(Ljava/nio/file/Path;Ljava/nio/file/Path;[Ljava/nio/file/CopyOption;)Ljava/nio/file/Path;",
 			arg0.object(),
 			arg1.object(),
-			arg2
+			arg2.object<jarray>()
 		);
 	}
 	java::io::BufferedReader Files::newBufferedReader(JObject arg0)
@@ -390,17 +401,17 @@ namespace java::nio::file
 			arg1.object()
 		);
 	}
-	java::io::BufferedWriter Files::newBufferedWriter(JObject arg0, jarray arg1)
+	java::io::BufferedWriter Files::newBufferedWriter(JObject arg0, JArray arg1)
 	{
 		return callStaticObjectMethod(
 			"java.nio.file.Files",
 			"newBufferedWriter",
 			"(Ljava/nio/file/Path;[Ljava/nio/file/OpenOption;)Ljava/io/BufferedWriter;",
 			arg0.object(),
-			arg1
+			arg1.object<jarray>()
 		);
 	}
-	java::io::BufferedWriter Files::newBufferedWriter(JObject arg0, java::nio::charset::Charset arg1, jarray arg2)
+	java::io::BufferedWriter Files::newBufferedWriter(JObject arg0, java::nio::charset::Charset arg1, JArray arg2)
 	{
 		return callStaticObjectMethod(
 			"java.nio.file.Files",
@@ -408,20 +419,20 @@ namespace java::nio::file
 			"(Ljava/nio/file/Path;Ljava/nio/charset/Charset;[Ljava/nio/file/OpenOption;)Ljava/io/BufferedWriter;",
 			arg0.object(),
 			arg1.object(),
-			arg2
+			arg2.object<jarray>()
 		);
 	}
-	JObject Files::newByteChannel(JObject arg0, jarray arg1)
+	JObject Files::newByteChannel(JObject arg0, JArray arg1)
 	{
 		return callStaticObjectMethod(
 			"java.nio.file.Files",
 			"newByteChannel",
 			"(Ljava/nio/file/Path;[Ljava/nio/file/OpenOption;)Ljava/nio/channels/SeekableByteChannel;",
 			arg0.object(),
-			arg1
+			arg1.object<jarray>()
 		);
 	}
-	JObject Files::newByteChannel(JObject arg0, JObject arg1, jarray arg2)
+	JObject Files::newByteChannel(JObject arg0, JObject arg1, JArray arg2)
 	{
 		return callStaticObjectMethod(
 			"java.nio.file.Files",
@@ -429,7 +440,7 @@ namespace java::nio::file
 			"(Ljava/nio/file/Path;Ljava/util/Set;[Ljava/nio/file/attribute/FileAttribute;)Ljava/nio/channels/SeekableByteChannel;",
 			arg0.object(),
 			arg1.object(),
-			arg2
+			arg2.object<jarray>()
 		);
 	}
 	JObject Files::newDirectoryStream(JObject arg0)
@@ -441,14 +452,14 @@ namespace java::nio::file
 			arg0.object()
 		);
 	}
-	JObject Files::newDirectoryStream(JObject arg0, jstring arg1)
+	JObject Files::newDirectoryStream(JObject arg0, JString arg1)
 	{
 		return callStaticObjectMethod(
 			"java.nio.file.Files",
 			"newDirectoryStream",
 			"(Ljava/nio/file/Path;Ljava/lang/String;)Ljava/nio/file/DirectoryStream;",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
 	JObject Files::newDirectoryStream(JObject arg0, JObject arg1)
@@ -461,53 +472,53 @@ namespace java::nio::file
 			arg1.object()
 		);
 	}
-	java::io::InputStream Files::newInputStream(JObject arg0, jarray arg1)
+	java::io::InputStream Files::newInputStream(JObject arg0, JArray arg1)
 	{
 		return callStaticObjectMethod(
 			"java.nio.file.Files",
 			"newInputStream",
 			"(Ljava/nio/file/Path;[Ljava/nio/file/OpenOption;)Ljava/io/InputStream;",
 			arg0.object(),
-			arg1
+			arg1.object<jarray>()
 		);
 	}
-	java::io::OutputStream Files::newOutputStream(JObject arg0, jarray arg1)
+	java::io::OutputStream Files::newOutputStream(JObject arg0, JArray arg1)
 	{
 		return callStaticObjectMethod(
 			"java.nio.file.Files",
 			"newOutputStream",
 			"(Ljava/nio/file/Path;[Ljava/nio/file/OpenOption;)Ljava/io/OutputStream;",
 			arg0.object(),
-			arg1
+			arg1.object<jarray>()
 		);
 	}
-	jboolean Files::notExists(JObject arg0, jarray arg1)
+	jboolean Files::notExists(JObject arg0, JArray arg1)
 	{
 		return callStaticMethod<jboolean>(
 			"java.nio.file.Files",
 			"notExists",
 			"(Ljava/nio/file/Path;[Ljava/nio/file/LinkOption;)Z",
 			arg0.object(),
-			arg1
+			arg1.object<jarray>()
 		);
 	}
-	jstring Files::probeContentType(JObject arg0)
+	JString Files::probeContentType(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"java.nio.file.Files",
 			"probeContentType",
 			"(Ljava/nio/file/Path;)Ljava/lang/String;",
 			arg0.object()
-		).object<jstring>();
+		);
 	}
-	jbyteArray Files::readAllBytes(JObject arg0)
+	JByteArray Files::readAllBytes(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"java.nio.file.Files",
 			"readAllBytes",
 			"(Ljava/nio/file/Path;)[B",
 			arg0.object()
-		).object<jbyteArray>();
+		);
 	}
 	JObject Files::readAllLines(JObject arg0)
 	{
@@ -528,38 +539,38 @@ namespace java::nio::file
 			arg1.object()
 		);
 	}
-	JObject Files::readAttributes(JObject arg0, jclass arg1, jarray arg2)
+	JObject Files::readAttributes(JObject arg0, JClass arg1, JArray arg2)
 	{
 		return callStaticObjectMethod(
 			"java.nio.file.Files",
 			"readAttributes",
 			"(Ljava/nio/file/Path;Ljava/lang/Class;[Ljava/nio/file/LinkOption;)Ljava/nio/file/attribute/BasicFileAttributes;",
 			arg0.object(),
-			arg1,
-			arg2
+			arg1.object<jclass>(),
+			arg2.object<jarray>()
 		);
 	}
-	JObject Files::readAttributes(JObject arg0, jstring arg1, jarray arg2)
+	JObject Files::readAttributes(JObject arg0, JString arg1, JArray arg2)
 	{
 		return callStaticObjectMethod(
 			"java.nio.file.Files",
 			"readAttributes",
 			"(Ljava/nio/file/Path;Ljava/lang/String;[Ljava/nio/file/LinkOption;)Ljava/util/Map;",
 			arg0.object(),
-			arg1,
-			arg2
+			arg1.object<jstring>(),
+			arg2.object<jarray>()
 		);
 	}
-	jstring Files::readString(JObject arg0)
+	JString Files::readString(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"java.nio.file.Files",
 			"readString",
 			"(Ljava/nio/file/Path;)Ljava/lang/String;",
 			arg0.object()
-		).object<jstring>();
+		);
 	}
-	jstring Files::readString(JObject arg0, java::nio::charset::Charset arg1)
+	JString Files::readString(JObject arg0, java::nio::charset::Charset arg1)
 	{
 		return callStaticObjectMethod(
 			"java.nio.file.Files",
@@ -567,7 +578,7 @@ namespace java::nio::file
 			"(Ljava/nio/file/Path;Ljava/nio/charset/Charset;)Ljava/lang/String;",
 			arg0.object(),
 			arg1.object()
-		).object<jstring>();
+		);
 	}
 	JObject Files::readSymbolicLink(JObject arg0)
 	{
@@ -578,16 +589,16 @@ namespace java::nio::file
 			arg0.object()
 		);
 	}
-	JObject Files::setAttribute(JObject arg0, jstring arg1, jobject arg2, jarray arg3)
+	JObject Files::setAttribute(JObject arg0, JString arg1, JObject arg2, JArray arg3)
 	{
 		return callStaticObjectMethod(
 			"java.nio.file.Files",
 			"setAttribute",
 			"(Ljava/nio/file/Path;Ljava/lang/String;Ljava/lang/Object;[Ljava/nio/file/LinkOption;)Ljava/nio/file/Path;",
 			arg0.object(),
-			arg1,
-			arg2,
-			arg3
+			arg1.object<jstring>(),
+			arg2.object<jobject>(),
+			arg3.object<jarray>()
 		);
 	}
 	JObject Files::setLastModifiedTime(JObject arg0, java::nio::file::attribute::FileTime arg1)
@@ -629,17 +640,17 @@ namespace java::nio::file
 			arg0.object()
 		);
 	}
-	JObject Files::walk(JObject arg0, jarray arg1)
+	JObject Files::walk(JObject arg0, JArray arg1)
 	{
 		return callStaticObjectMethod(
 			"java.nio.file.Files",
 			"walk",
 			"(Ljava/nio/file/Path;[Ljava/nio/file/FileVisitOption;)Ljava/util/stream/Stream;",
 			arg0.object(),
-			arg1
+			arg1.object<jarray>()
 		);
 	}
-	JObject Files::walk(JObject arg0, jint arg1, jarray arg2)
+	JObject Files::walk(JObject arg0, jint arg1, JArray arg2)
 	{
 		return callStaticObjectMethod(
 			"java.nio.file.Files",
@@ -647,7 +658,7 @@ namespace java::nio::file
 			"(Ljava/nio/file/Path;I[Ljava/nio/file/FileVisitOption;)Ljava/util/stream/Stream;",
 			arg0.object(),
 			arg1,
-			arg2
+			arg2.object<jarray>()
 		);
 	}
 	JObject Files::walkFileTree(JObject arg0, JObject arg1)
@@ -672,18 +683,18 @@ namespace java::nio::file
 			arg3.object()
 		);
 	}
-	JObject Files::write(JObject arg0, jbyteArray arg1, jarray arg2)
+	JObject Files::write(JObject arg0, JByteArray arg1, JArray arg2)
 	{
 		return callStaticObjectMethod(
 			"java.nio.file.Files",
 			"write",
 			"(Ljava/nio/file/Path;[B[Ljava/nio/file/OpenOption;)Ljava/nio/file/Path;",
 			arg0.object(),
-			arg1,
-			arg2
+			arg1.object<jbyteArray>(),
+			arg2.object<jarray>()
 		);
 	}
-	JObject Files::write(JObject arg0, JObject arg1, jarray arg2)
+	JObject Files::write(JObject arg0, JObject arg1, JArray arg2)
 	{
 		return callStaticObjectMethod(
 			"java.nio.file.Files",
@@ -691,10 +702,10 @@ namespace java::nio::file
 			"(Ljava/nio/file/Path;Ljava/lang/Iterable;[Ljava/nio/file/OpenOption;)Ljava/nio/file/Path;",
 			arg0.object(),
 			arg1.object(),
-			arg2
+			arg2.object<jarray>()
 		);
 	}
-	JObject Files::write(JObject arg0, JObject arg1, java::nio::charset::Charset arg2, jarray arg3)
+	JObject Files::write(JObject arg0, JObject arg1, java::nio::charset::Charset arg2, JArray arg3)
 	{
 		return callStaticObjectMethod(
 			"java.nio.file.Files",
@@ -703,30 +714,30 @@ namespace java::nio::file
 			arg0.object(),
 			arg1.object(),
 			arg2.object(),
-			arg3
+			arg3.object<jarray>()
 		);
 	}
-	JObject Files::writeString(JObject arg0, jstring arg1, jarray arg2)
+	JObject Files::writeString(JObject arg0, JString arg1, JArray arg2)
 	{
 		return callStaticObjectMethod(
 			"java.nio.file.Files",
 			"writeString",
 			"(Ljava/nio/file/Path;Ljava/lang/CharSequence;[Ljava/nio/file/OpenOption;)Ljava/nio/file/Path;",
 			arg0.object(),
-			arg1,
-			arg2
+			arg1.object<jstring>(),
+			arg2.object<jarray>()
 		);
 	}
-	JObject Files::writeString(JObject arg0, jstring arg1, java::nio::charset::Charset arg2, jarray arg3)
+	JObject Files::writeString(JObject arg0, JString arg1, java::nio::charset::Charset arg2, JArray arg3)
 	{
 		return callStaticObjectMethod(
 			"java.nio.file.Files",
 			"writeString",
 			"(Ljava/nio/file/Path;Ljava/lang/CharSequence;Ljava/nio/charset/Charset;[Ljava/nio/file/OpenOption;)Ljava/nio/file/Path;",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2.object(),
-			arg3
+			arg3.object<jarray>()
 		);
 	}
 } // namespace java::nio::file

@@ -6,6 +6,8 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
+class JString;
 
 namespace android::view::textservice
 {
@@ -21,16 +23,16 @@ namespace android::view::textservice
 		
 		// Constructors
 		TextInfo(android::os::Parcel arg0);
-		TextInfo(jstring arg0);
-		TextInfo(jstring arg0, jint arg1, jint arg2);
-		TextInfo(jstring arg0, jint arg1, jint arg2, jint arg3, jint arg4);
+		TextInfo(JString arg0);
+		TextInfo(JString arg0, jint arg1, jint arg2);
+		TextInfo(JString arg0, jint arg1, jint arg2, jint arg3, jint arg4);
 		
 		// Methods
 		jint describeContents();
-		jstring getCharSequence();
+		JString getCharSequence();
 		jint getCookie();
 		jint getSequence();
-		jstring getText();
+		JString getText();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::view::textservice

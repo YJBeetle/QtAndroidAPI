@@ -1,16 +1,17 @@
+#include "../../../JCharArray.hpp"
 #include "../../../java/util/Locale.hpp"
 #include "./DateKeyListener.hpp"
 
 namespace android::text::method
 {
 	// Fields
-	jcharArray DateKeyListener::CHARACTERS()
+	JCharArray DateKeyListener::CHARACTERS()
 	{
 		return getStaticObjectField(
 			"android.text.method.DateKeyListener",
 			"CHARACTERS",
 			"[C"
-		).object<jcharArray>();
+		);
 	}
 	
 	// QAndroidJniObject forward

@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JArray;
+class JArray;
 namespace java::io
 {
 	class InputStream;
@@ -14,10 +16,12 @@ namespace java::io
 {
 	class ObjectOutputStream;
 }
+class JObject;
 namespace java::lang
 {
 	class SecurityManager;
 }
+class JString;
 namespace java::lang
 {
 	class ThreadLocal;
@@ -59,35 +63,35 @@ namespace java::net
 		URL(QAndroidJniObject obj);
 		
 		// Constructors
-		URL(jstring arg0);
-		URL(java::net::URL &arg0, jstring arg1);
-		URL(jstring arg0, jstring arg1, jstring arg2);
-		URL(java::net::URL &arg0, jstring arg1, java::net::URLStreamHandler arg2);
-		URL(jstring arg0, jstring arg1, jint arg2, jstring arg3);
-		URL(jstring arg0, jstring arg1, jint arg2, jstring arg3, java::net::URLStreamHandler arg4);
+		URL(JString arg0);
+		URL(java::net::URL &arg0, JString arg1);
+		URL(JString arg0, JString arg1, JString arg2);
+		URL(java::net::URL &arg0, JString arg1, java::net::URLStreamHandler arg2);
+		URL(JString arg0, JString arg1, jint arg2, JString arg3);
+		URL(JString arg0, JString arg1, jint arg2, JString arg3, java::net::URLStreamHandler arg4);
 		
 		// Methods
 		static void setURLStreamHandlerFactory(JObject arg0);
-		jboolean equals(jobject arg0);
-		jstring getAuthority();
-		jobject getContent();
-		jobject getContent(jarray arg0);
+		jboolean equals(JObject arg0);
+		JString getAuthority();
+		JObject getContent();
+		JObject getContent(JArray arg0);
 		jint getDefaultPort();
-		jstring getFile();
-		jstring getHost();
-		jstring getPath();
+		JString getFile();
+		JString getHost();
+		JString getPath();
 		jint getPort();
-		jstring getProtocol();
-		jstring getQuery();
-		jstring getRef();
-		jstring getUserInfo();
+		JString getProtocol();
+		JString getQuery();
+		JString getRef();
+		JString getUserInfo();
 		jint hashCode();
 		java::net::URLConnection openConnection();
 		java::net::URLConnection openConnection(java::net::Proxy arg0);
 		java::io::InputStream openStream();
 		jboolean sameFile(java::net::URL arg0);
-		jstring toExternalForm();
-		jstring toString();
+		JString toExternalForm();
+		JString toString();
 		java::net::URI toURI();
 	};
 } // namespace java::net

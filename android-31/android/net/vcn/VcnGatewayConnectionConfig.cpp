@@ -1,3 +1,7 @@
+#include "../../../JIntArray.hpp"
+#include "../../../JLongArray.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./VcnGatewayConnectionConfig.hpp"
 
 namespace android::net::vcn
@@ -10,27 +14,27 @@ namespace android::net::vcn
 	// Constructors
 	
 	// Methods
-	jboolean VcnGatewayConnectionConfig::equals(jobject arg0)
+	jboolean VcnGatewayConnectionConfig::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jintArray VcnGatewayConnectionConfig::getExposedCapabilities()
+	JIntArray VcnGatewayConnectionConfig::getExposedCapabilities()
 	{
 		return callObjectMethod(
 			"getExposedCapabilities",
 			"()[I"
-		).object<jintArray>();
+		);
 	}
-	jstring VcnGatewayConnectionConfig::getGatewayConnectionName()
+	JString VcnGatewayConnectionConfig::getGatewayConnectionName()
 	{
 		return callObjectMethod(
 			"getGatewayConnectionName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint VcnGatewayConnectionConfig::getMaxMtu()
 	{
@@ -39,12 +43,12 @@ namespace android::net::vcn
 			"()I"
 		);
 	}
-	jlongArray VcnGatewayConnectionConfig::getRetryIntervalsMillis()
+	JLongArray VcnGatewayConnectionConfig::getRetryIntervalsMillis()
 	{
 		return callObjectMethod(
 			"getRetryIntervalsMillis",
 			"()[J"
-		).object<jlongArray>();
+		);
 	}
 	jint VcnGatewayConnectionConfig::hashCode()
 	{

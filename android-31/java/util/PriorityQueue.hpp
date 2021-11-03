@@ -1,9 +1,9 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "./AbstractCollection.hpp"
 #include "./AbstractQueue.hpp"
 
+class JLongArray;
+class JObjectArray;
 namespace java::io
 {
 	class ObjectInputStream;
@@ -12,6 +12,7 @@ namespace java::io
 {
 	class ObjectOutputStream;
 }
+class JObject;
 
 namespace java::util
 {
@@ -32,23 +33,23 @@ namespace java::util
 		PriorityQueue(jint arg0, JObject arg1);
 		
 		// Methods
-		jboolean add(jobject arg0);
+		jboolean add(JObject arg0);
 		void clear();
 		JObject comparator();
-		jboolean contains(jobject arg0);
+		jboolean contains(JObject arg0);
 		void forEach(JObject arg0);
 		JObject iterator();
-		jboolean offer(jobject arg0);
-		jobject peek();
-		jobject poll();
-		jboolean remove(jobject arg0);
+		jboolean offer(JObject arg0);
+		JObject peek();
+		JObject poll();
+		jboolean remove(JObject arg0);
 		jboolean removeAll(JObject arg0);
 		jboolean removeIf(JObject arg0);
 		jboolean retainAll(JObject arg0);
 		jint size();
 		JObject spliterator();
-		jobjectArray toArray();
-		jobjectArray toArray(jobjectArray arg0);
+		JObjectArray toArray();
+		JObjectArray toArray(JObjectArray arg0);
 	};
 } // namespace java::util
 

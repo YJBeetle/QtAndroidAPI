@@ -1,4 +1,5 @@
 #include "../../os/Parcel.hpp"
+#include "../../../JString.hpp"
 #include "./TranslationRequest.hpp"
 
 namespace android::view::translation
@@ -75,12 +76,12 @@ namespace android::view::translation
 			"()Ljava/util/List;"
 		);
 	}
-	jstring TranslationRequest::toString()
+	JString TranslationRequest::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void TranslationRequest::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

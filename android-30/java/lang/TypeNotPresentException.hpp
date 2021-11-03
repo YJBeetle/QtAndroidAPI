@@ -1,9 +1,9 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "./Exception.hpp"
 #include "./RuntimeException.hpp"
 
+class JString;
+class JThrowable;
 
 namespace java::lang
 {
@@ -17,10 +17,10 @@ namespace java::lang
 		TypeNotPresentException(QAndroidJniObject obj);
 		
 		// Constructors
-		TypeNotPresentException(jstring arg0, jthrowable arg1);
+		TypeNotPresentException(JString arg0, JThrowable arg1);
 		
 		// Methods
-		jstring typeName();
+		JString typeName();
 	};
 } // namespace java::lang
 

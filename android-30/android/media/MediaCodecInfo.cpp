@@ -1,4 +1,6 @@
+#include "../../JArray.hpp"
 #include "./MediaCodecInfo_CodecCapabilities.hpp"
+#include "../../JString.hpp"
 #include "./MediaCodecInfo.hpp"
 
 namespace android::media
@@ -11,34 +13,34 @@ namespace android::media
 	// Constructors
 	
 	// Methods
-	jstring MediaCodecInfo::getCanonicalName()
+	JString MediaCodecInfo::getCanonicalName()
 	{
 		return callObjectMethod(
 			"getCanonicalName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	android::media::MediaCodecInfo_CodecCapabilities MediaCodecInfo::getCapabilitiesForType(jstring arg0)
+	android::media::MediaCodecInfo_CodecCapabilities MediaCodecInfo::getCapabilitiesForType(JString arg0)
 	{
 		return callObjectMethod(
 			"getCapabilitiesForType",
 			"(Ljava/lang/String;)Landroid/media/MediaCodecInfo$CodecCapabilities;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jstring MediaCodecInfo::getName()
+	JString MediaCodecInfo::getName()
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jarray MediaCodecInfo::getSupportedTypes()
+	JArray MediaCodecInfo::getSupportedTypes()
 	{
 		return callObjectMethod(
 			"getSupportedTypes",
 			"()[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
 	jboolean MediaCodecInfo::isAlias()
 	{

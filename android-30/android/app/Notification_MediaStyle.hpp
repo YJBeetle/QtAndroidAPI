@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./Notification_Style.hpp"
 
+class JIntArray;
 namespace android::app
 {
 	class Notification_Builder;
@@ -29,7 +29,7 @@ namespace android::app
 		
 		// Methods
 		android::app::Notification_MediaStyle setMediaSession(android::media::session::MediaSession_Token arg0);
-		android::app::Notification_MediaStyle setShowActionsInCompactView(jintArray arg0);
+		android::app::Notification_MediaStyle setShowActionsInCompactView(JIntArray arg0);
 	};
 } // namespace android::app
 

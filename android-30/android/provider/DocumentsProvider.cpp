@@ -1,3 +1,4 @@
+#include "../../JArray.hpp"
 #include "../content/ContentValues.hpp"
 #include "../content/Context.hpp"
 #include "../content/IntentSender.hpp"
@@ -9,6 +10,7 @@
 #include "../os/CancellationSignal.hpp"
 #include "../os/ParcelFileDescriptor.hpp"
 #include "./DocumentsContract_Path.hpp"
+#include "../../JString.hpp"
 #include "./DocumentsProvider.hpp"
 
 namespace android::provider
@@ -35,13 +37,13 @@ namespace android::provider
 			arg1.object()
 		);
 	}
-	android::os::Bundle DocumentsProvider::call(jstring arg0, jstring arg1, android::os::Bundle arg2)
+	android::os::Bundle DocumentsProvider::call(JString arg0, JString arg1, android::os::Bundle arg2)
 	{
 		return callObjectMethod(
 			"call",
 			"(Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;)Landroid/os/Bundle;",
-			arg0,
-			arg1,
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
 			arg2.object()
 		);
 	}
@@ -53,110 +55,110 @@ namespace android::provider
 			arg0.object()
 		);
 	}
-	jstring DocumentsProvider::copyDocument(jstring arg0, jstring arg1)
+	JString DocumentsProvider::copyDocument(JString arg0, JString arg1)
 	{
 		return callObjectMethod(
 			"copyDocument",
 			"(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
-			arg0,
-			arg1
-		).object<jstring>();
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
+		);
 	}
-	jstring DocumentsProvider::createDocument(jstring arg0, jstring arg1, jstring arg2)
+	JString DocumentsProvider::createDocument(JString arg0, JString arg1, JString arg2)
 	{
 		return callObjectMethod(
 			"createDocument",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
-			arg0,
-			arg1,
-			arg2
-		).object<jstring>();
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2.object<jstring>()
+		);
 	}
-	android::content::IntentSender DocumentsProvider::createWebLinkIntent(jstring arg0, android::os::Bundle arg1)
+	android::content::IntentSender DocumentsProvider::createWebLinkIntent(JString arg0, android::os::Bundle arg1)
 	{
 		return callObjectMethod(
 			"createWebLinkIntent",
 			"(Ljava/lang/String;Landroid/os/Bundle;)Landroid/content/IntentSender;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
-	jint DocumentsProvider::_delete(android::net::Uri arg0, jstring arg1, jarray arg2)
+	jint DocumentsProvider::_delete(android::net::Uri arg0, JString arg1, JArray arg2)
 	{
 		return callMethod<jint>(
 			"delete",
 			"(Landroid/net/Uri;Ljava/lang/String;[Ljava/lang/String;)I",
 			arg0.object(),
-			arg1,
-			arg2
+			arg1.object<jstring>(),
+			arg2.object<jarray>()
 		);
 	}
-	void DocumentsProvider::deleteDocument(jstring arg0)
+	void DocumentsProvider::deleteDocument(JString arg0)
 	{
 		callMethod<void>(
 			"deleteDocument",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	void DocumentsProvider::ejectRoot(jstring arg0)
+	void DocumentsProvider::ejectRoot(JString arg0)
 	{
 		callMethod<void>(
 			"ejectRoot",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	android::provider::DocumentsContract_Path DocumentsProvider::findDocumentPath(jstring arg0, jstring arg1)
+	android::provider::DocumentsContract_Path DocumentsProvider::findDocumentPath(JString arg0, JString arg1)
 	{
 		return callObjectMethod(
 			"findDocumentPath",
 			"(Ljava/lang/String;Ljava/lang/String;)Landroid/provider/DocumentsContract$Path;",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		);
 	}
-	android::os::Bundle DocumentsProvider::getDocumentMetadata(jstring arg0)
+	android::os::Bundle DocumentsProvider::getDocumentMetadata(JString arg0)
 	{
 		return callObjectMethod(
 			"getDocumentMetadata",
 			"(Ljava/lang/String;)Landroid/os/Bundle;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray DocumentsProvider::getDocumentStreamTypes(jstring arg0, jstring arg1)
+	JArray DocumentsProvider::getDocumentStreamTypes(JString arg0, JString arg1)
 	{
 		return callObjectMethod(
 			"getDocumentStreamTypes",
 			"(Ljava/lang/String;Ljava/lang/String;)[Ljava/lang/String;",
-			arg0,
-			arg1
-		).object<jarray>();
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
+		);
 	}
-	jstring DocumentsProvider::getDocumentType(jstring arg0)
+	JString DocumentsProvider::getDocumentType(JString arg0)
 	{
 		return callObjectMethod(
 			"getDocumentType",
 			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
+			arg0.object<jstring>()
+		);
 	}
-	jarray DocumentsProvider::getStreamTypes(android::net::Uri arg0, jstring arg1)
+	JArray DocumentsProvider::getStreamTypes(android::net::Uri arg0, JString arg1)
 	{
 		return callObjectMethod(
 			"getStreamTypes",
 			"(Landroid/net/Uri;Ljava/lang/String;)[Ljava/lang/String;",
 			arg0.object(),
-			arg1
-		).object<jarray>();
+			arg1.object<jstring>()
+		);
 	}
-	jstring DocumentsProvider::getType(android::net::Uri arg0)
+	JString DocumentsProvider::getType(android::net::Uri arg0)
 	{
 		return callObjectMethod(
 			"getType",
 			"(Landroid/net/Uri;)Ljava/lang/String;",
 			arg0.object()
-		).object<jstring>();
+		);
 	}
 	android::net::Uri DocumentsProvider::insert(android::net::Uri arg0, android::content::ContentValues arg1)
 	{
@@ -167,263 +169,263 @@ namespace android::provider
 			arg1.object()
 		);
 	}
-	jboolean DocumentsProvider::isChildDocument(jstring arg0, jstring arg1)
+	jboolean DocumentsProvider::isChildDocument(JString arg0, JString arg1)
 	{
 		return callMethod<jboolean>(
 			"isChildDocument",
 			"(Ljava/lang/String;Ljava/lang/String;)Z",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		);
 	}
-	jstring DocumentsProvider::moveDocument(jstring arg0, jstring arg1, jstring arg2)
+	JString DocumentsProvider::moveDocument(JString arg0, JString arg1, JString arg2)
 	{
 		return callObjectMethod(
 			"moveDocument",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
-			arg0,
-			arg1,
-			arg2
-		).object<jstring>();
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2.object<jstring>()
+		);
 	}
-	android::content::res::AssetFileDescriptor DocumentsProvider::openAssetFile(android::net::Uri arg0, jstring arg1)
+	android::content::res::AssetFileDescriptor DocumentsProvider::openAssetFile(android::net::Uri arg0, JString arg1)
 	{
 		return callObjectMethod(
 			"openAssetFile",
 			"(Landroid/net/Uri;Ljava/lang/String;)Landroid/content/res/AssetFileDescriptor;",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
-	android::content::res::AssetFileDescriptor DocumentsProvider::openAssetFile(android::net::Uri arg0, jstring arg1, android::os::CancellationSignal arg2)
+	android::content::res::AssetFileDescriptor DocumentsProvider::openAssetFile(android::net::Uri arg0, JString arg1, android::os::CancellationSignal arg2)
 	{
 		return callObjectMethod(
 			"openAssetFile",
 			"(Landroid/net/Uri;Ljava/lang/String;Landroid/os/CancellationSignal;)Landroid/content/res/AssetFileDescriptor;",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2.object()
 		);
 	}
-	android::os::ParcelFileDescriptor DocumentsProvider::openDocument(jstring arg0, jstring arg1, android::os::CancellationSignal arg2)
+	android::os::ParcelFileDescriptor DocumentsProvider::openDocument(JString arg0, JString arg1, android::os::CancellationSignal arg2)
 	{
 		return callObjectMethod(
 			"openDocument",
 			"(Ljava/lang/String;Ljava/lang/String;Landroid/os/CancellationSignal;)Landroid/os/ParcelFileDescriptor;",
-			arg0,
-			arg1,
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
 			arg2.object()
 		);
 	}
-	android::content::res::AssetFileDescriptor DocumentsProvider::openDocumentThumbnail(jstring arg0, android::graphics::Point arg1, android::os::CancellationSignal arg2)
+	android::content::res::AssetFileDescriptor DocumentsProvider::openDocumentThumbnail(JString arg0, android::graphics::Point arg1, android::os::CancellationSignal arg2)
 	{
 		return callObjectMethod(
 			"openDocumentThumbnail",
 			"(Ljava/lang/String;Landroid/graphics/Point;Landroid/os/CancellationSignal;)Landroid/content/res/AssetFileDescriptor;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
 			arg2.object()
 		);
 	}
-	android::os::ParcelFileDescriptor DocumentsProvider::openFile(android::net::Uri arg0, jstring arg1)
+	android::os::ParcelFileDescriptor DocumentsProvider::openFile(android::net::Uri arg0, JString arg1)
 	{
 		return callObjectMethod(
 			"openFile",
 			"(Landroid/net/Uri;Ljava/lang/String;)Landroid/os/ParcelFileDescriptor;",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
-	android::os::ParcelFileDescriptor DocumentsProvider::openFile(android::net::Uri arg0, jstring arg1, android::os::CancellationSignal arg2)
+	android::os::ParcelFileDescriptor DocumentsProvider::openFile(android::net::Uri arg0, JString arg1, android::os::CancellationSignal arg2)
 	{
 		return callObjectMethod(
 			"openFile",
 			"(Landroid/net/Uri;Ljava/lang/String;Landroid/os/CancellationSignal;)Landroid/os/ParcelFileDescriptor;",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2.object()
 		);
 	}
-	android::content::res::AssetFileDescriptor DocumentsProvider::openTypedAssetFile(android::net::Uri arg0, jstring arg1, android::os::Bundle arg2)
+	android::content::res::AssetFileDescriptor DocumentsProvider::openTypedAssetFile(android::net::Uri arg0, JString arg1, android::os::Bundle arg2)
 	{
 		return callObjectMethod(
 			"openTypedAssetFile",
 			"(Landroid/net/Uri;Ljava/lang/String;Landroid/os/Bundle;)Landroid/content/res/AssetFileDescriptor;",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2.object()
 		);
 	}
-	android::content::res::AssetFileDescriptor DocumentsProvider::openTypedAssetFile(android::net::Uri arg0, jstring arg1, android::os::Bundle arg2, android::os::CancellationSignal arg3)
+	android::content::res::AssetFileDescriptor DocumentsProvider::openTypedAssetFile(android::net::Uri arg0, JString arg1, android::os::Bundle arg2, android::os::CancellationSignal arg3)
 	{
 		return callObjectMethod(
 			"openTypedAssetFile",
 			"(Landroid/net/Uri;Ljava/lang/String;Landroid/os/Bundle;Landroid/os/CancellationSignal;)Landroid/content/res/AssetFileDescriptor;",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2.object(),
 			arg3.object()
 		);
 	}
-	android::content::res::AssetFileDescriptor DocumentsProvider::openTypedDocument(jstring arg0, jstring arg1, android::os::Bundle arg2, android::os::CancellationSignal arg3)
+	android::content::res::AssetFileDescriptor DocumentsProvider::openTypedDocument(JString arg0, JString arg1, android::os::Bundle arg2, android::os::CancellationSignal arg3)
 	{
 		return callObjectMethod(
 			"openTypedDocument",
 			"(Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;Landroid/os/CancellationSignal;)Landroid/content/res/AssetFileDescriptor;",
-			arg0,
-			arg1,
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
 			arg2.object(),
 			arg3.object()
 		);
 	}
-	JObject DocumentsProvider::query(android::net::Uri arg0, jarray arg1, android::os::Bundle arg2, android::os::CancellationSignal arg3)
+	JObject DocumentsProvider::query(android::net::Uri arg0, JArray arg1, android::os::Bundle arg2, android::os::CancellationSignal arg3)
 	{
 		return callObjectMethod(
 			"query",
 			"(Landroid/net/Uri;[Ljava/lang/String;Landroid/os/Bundle;Landroid/os/CancellationSignal;)Landroid/database/Cursor;",
 			arg0.object(),
-			arg1,
+			arg1.object<jarray>(),
 			arg2.object(),
 			arg3.object()
 		);
 	}
-	JObject DocumentsProvider::query(android::net::Uri arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4)
+	JObject DocumentsProvider::query(android::net::Uri arg0, JArray arg1, JString arg2, JArray arg3, JString arg4)
 	{
 		return callObjectMethod(
 			"query",
 			"(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;",
 			arg0.object(),
-			arg1,
-			arg2,
-			arg3,
-			arg4
+			arg1.object<jarray>(),
+			arg2.object<jstring>(),
+			arg3.object<jarray>(),
+			arg4.object<jstring>()
 		);
 	}
-	JObject DocumentsProvider::query(android::net::Uri arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4, android::os::CancellationSignal arg5)
+	JObject DocumentsProvider::query(android::net::Uri arg0, JArray arg1, JString arg2, JArray arg3, JString arg4, android::os::CancellationSignal arg5)
 	{
 		return callObjectMethod(
 			"query",
 			"(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;Landroid/os/CancellationSignal;)Landroid/database/Cursor;",
 			arg0.object(),
-			arg1,
-			arg2,
-			arg3,
-			arg4,
+			arg1.object<jarray>(),
+			arg2.object<jstring>(),
+			arg3.object<jarray>(),
+			arg4.object<jstring>(),
 			arg5.object()
 		);
 	}
-	JObject DocumentsProvider::queryChildDocuments(jstring arg0, jarray arg1, android::os::Bundle arg2)
+	JObject DocumentsProvider::queryChildDocuments(JString arg0, JArray arg1, android::os::Bundle arg2)
 	{
 		return callObjectMethod(
 			"queryChildDocuments",
 			"(Ljava/lang/String;[Ljava/lang/String;Landroid/os/Bundle;)Landroid/database/Cursor;",
-			arg0,
-			arg1,
+			arg0.object<jstring>(),
+			arg1.object<jarray>(),
 			arg2.object()
 		);
 	}
-	JObject DocumentsProvider::queryChildDocuments(jstring arg0, jarray arg1, jstring arg2)
+	JObject DocumentsProvider::queryChildDocuments(JString arg0, JArray arg1, JString arg2)
 	{
 		return callObjectMethod(
 			"queryChildDocuments",
 			"(Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;",
-			arg0,
-			arg1,
-			arg2
+			arg0.object<jstring>(),
+			arg1.object<jarray>(),
+			arg2.object<jstring>()
 		);
 	}
-	JObject DocumentsProvider::queryDocument(jstring arg0, jarray arg1)
+	JObject DocumentsProvider::queryDocument(JString arg0, JArray arg1)
 	{
 		return callObjectMethod(
 			"queryDocument",
 			"(Ljava/lang/String;[Ljava/lang/String;)Landroid/database/Cursor;",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jarray>()
 		);
 	}
-	JObject DocumentsProvider::queryRecentDocuments(jstring arg0, jarray arg1)
+	JObject DocumentsProvider::queryRecentDocuments(JString arg0, JArray arg1)
 	{
 		return callObjectMethod(
 			"queryRecentDocuments",
 			"(Ljava/lang/String;[Ljava/lang/String;)Landroid/database/Cursor;",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jarray>()
 		);
 	}
-	JObject DocumentsProvider::queryRecentDocuments(jstring arg0, jarray arg1, android::os::Bundle arg2, android::os::CancellationSignal arg3)
+	JObject DocumentsProvider::queryRecentDocuments(JString arg0, JArray arg1, android::os::Bundle arg2, android::os::CancellationSignal arg3)
 	{
 		return callObjectMethod(
 			"queryRecentDocuments",
 			"(Ljava/lang/String;[Ljava/lang/String;Landroid/os/Bundle;Landroid/os/CancellationSignal;)Landroid/database/Cursor;",
-			arg0,
-			arg1,
+			arg0.object<jstring>(),
+			arg1.object<jarray>(),
 			arg2.object(),
 			arg3.object()
 		);
 	}
-	JObject DocumentsProvider::queryRoots(jarray arg0)
+	JObject DocumentsProvider::queryRoots(JArray arg0)
 	{
 		return callObjectMethod(
 			"queryRoots",
 			"([Ljava/lang/String;)Landroid/database/Cursor;",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
-	JObject DocumentsProvider::querySearchDocuments(jstring arg0, jarray arg1, android::os::Bundle arg2)
+	JObject DocumentsProvider::querySearchDocuments(JString arg0, JArray arg1, android::os::Bundle arg2)
 	{
 		return callObjectMethod(
 			"querySearchDocuments",
 			"(Ljava/lang/String;[Ljava/lang/String;Landroid/os/Bundle;)Landroid/database/Cursor;",
-			arg0,
-			arg1,
+			arg0.object<jstring>(),
+			arg1.object<jarray>(),
 			arg2.object()
 		);
 	}
-	JObject DocumentsProvider::querySearchDocuments(jstring arg0, jstring arg1, jarray arg2)
+	JObject DocumentsProvider::querySearchDocuments(JString arg0, JString arg1, JArray arg2)
 	{
 		return callObjectMethod(
 			"querySearchDocuments",
 			"(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)Landroid/database/Cursor;",
-			arg0,
-			arg1,
-			arg2
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2.object<jarray>()
 		);
 	}
-	void DocumentsProvider::removeDocument(jstring arg0, jstring arg1)
+	void DocumentsProvider::removeDocument(JString arg0, JString arg1)
 	{
 		callMethod<void>(
 			"removeDocument",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		);
 	}
-	jstring DocumentsProvider::renameDocument(jstring arg0, jstring arg1)
+	JString DocumentsProvider::renameDocument(JString arg0, JString arg1)
 	{
 		return callObjectMethod(
 			"renameDocument",
 			"(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
-			arg0,
-			arg1
-		).object<jstring>();
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
+		);
 	}
-	void DocumentsProvider::revokeDocumentPermission(jstring arg0)
+	void DocumentsProvider::revokeDocumentPermission(JString arg0)
 	{
 		callMethod<void>(
 			"revokeDocumentPermission",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jint DocumentsProvider::update(android::net::Uri arg0, android::content::ContentValues arg1, jstring arg2, jarray arg3)
+	jint DocumentsProvider::update(android::net::Uri arg0, android::content::ContentValues arg1, JString arg2, JArray arg3)
 	{
 		return callMethod<jint>(
 			"update",
 			"(Landroid/net/Uri;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I",
 			arg0.object(),
 			arg1.object(),
-			arg2,
-			arg3
+			arg2.object<jstring>(),
+			arg3.object<jarray>()
 		);
 	}
 } // namespace android::provider

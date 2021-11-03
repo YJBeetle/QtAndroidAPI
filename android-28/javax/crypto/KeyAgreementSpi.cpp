@@ -1,3 +1,5 @@
+#include "../../JByteArray.hpp"
+#include "../../JString.hpp"
 #include "../../java/security/SecureRandom.hpp"
 #include "./KeyAgreementSpi.hpp"
 

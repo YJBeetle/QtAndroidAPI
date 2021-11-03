@@ -1,3 +1,4 @@
+#include "../../JArray.hpp"
 #include "../os/Parcel.hpp"
 #include "./MediaPlayer_DrmInfo.hpp"
 
@@ -18,12 +19,12 @@ namespace android::media
 			"()Ljava/util/Map;"
 		);
 	}
-	jarray MediaPlayer_DrmInfo::getSupportedSchemes()
+	JArray MediaPlayer_DrmInfo::getSupportedSchemes()
 	{
 		return callObjectMethod(
 			"getSupportedSchemes",
 			"()[Ljava/util/UUID;"
-		).object<jarray>();
+		);
 	}
 } // namespace android::media
 

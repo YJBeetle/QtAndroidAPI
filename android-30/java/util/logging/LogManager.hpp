@@ -2,10 +2,13 @@
 
 #include "../../../JObject.hpp"
 
+class JArray;
 namespace java::io
 {
 	class InputStream;
 }
+class JClass;
+class JString;
 namespace java::lang
 {
 	class Void;
@@ -57,7 +60,7 @@ namespace java::util::logging
 	{
 	public:
 		// Fields
-		static jstring LOGGING_MXBEAN_NAME();
+		static JString LOGGING_MXBEAN_NAME();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit LogManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
@@ -71,9 +74,9 @@ namespace java::util::logging
 		java::util::logging::LogManager addConfigurationListener(JObject arg0);
 		jboolean addLogger(java::util::logging::Logger arg0);
 		void checkAccess();
-		java::util::logging::Logger getLogger(jstring arg0);
+		java::util::logging::Logger getLogger(JString arg0);
 		JObject getLoggerNames();
-		jstring getProperty(jstring arg0);
+		JString getProperty(JString arg0);
 		void readConfiguration();
 		void readConfiguration(java::io::InputStream arg0);
 		void removeConfigurationListener(JObject arg0);

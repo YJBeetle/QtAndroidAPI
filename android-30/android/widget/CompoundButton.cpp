@@ -1,3 +1,4 @@
+#include "../../JIntArray.hpp"
 #include "../content/Context.hpp"
 #include "../content/res/ColorStateList.hpp"
 #include "../graphics/BlendMode.hpp"
@@ -5,6 +6,7 @@
 #include "../graphics/PorterDuff_Mode.hpp"
 #include "../graphics/drawable/Drawable.hpp"
 #include "../view/autofill/AutofillValue.hpp"
+#include "../../JString.hpp"
 #include "./CompoundButton.hpp"
 
 namespace android::widget
@@ -64,12 +66,12 @@ namespace android::widget
 			arg1
 		);
 	}
-	jstring CompoundButton::getAccessibilityClassName()
+	JString CompoundButton::getAccessibilityClassName()
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	jint CompoundButton::getAutofillType()
 	{
@@ -219,12 +221,12 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void CompoundButton::setStateDescription(jstring arg0)
+	void CompoundButton::setStateDescription(JString arg0)
 	{
 		callMethod<void>(
 			"setStateDescription",
 			"(Ljava/lang/CharSequence;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void CompoundButton::toggle()

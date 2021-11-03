@@ -1,3 +1,4 @@
+#include "../../../JArray.hpp"
 #include "../../bluetooth/BluetoothDevice.hpp"
 #include "./MidiDeviceInfo.hpp"
 #include "./MidiManager_DeviceCallback.hpp"
@@ -14,12 +15,12 @@ namespace android::media::midi
 	// Constructors
 	
 	// Methods
-	jarray MidiManager::getDevices()
+	JArray MidiManager::getDevices()
 	{
 		return callObjectMethod(
 			"getDevices",
 			"()[Landroid/media/midi/MidiDeviceInfo;"
-		).object<jarray>();
+		);
 	}
 	void MidiManager::openBluetoothDevice(android::bluetooth::BluetoothDevice arg0, JObject arg1, android::os::Handler arg2)
 	{

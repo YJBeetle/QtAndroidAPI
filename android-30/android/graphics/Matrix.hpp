@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JFloatArray;
 namespace android::graphics
 {
 	class Matrix_ScaleToFit;
@@ -10,6 +11,8 @@ namespace android::graphics
 {
 	class RectF;
 }
+class JObject;
+class JString;
 
 namespace android::graphics
 {
@@ -36,21 +39,21 @@ namespace android::graphics
 		Matrix(android::graphics::Matrix &arg0);
 		
 		// Methods
-		jboolean equals(jobject arg0);
-		void getValues(jfloatArray arg0);
+		jboolean equals(JObject arg0);
+		void getValues(JFloatArray arg0);
 		jint hashCode();
 		jboolean invert(android::graphics::Matrix arg0);
 		jboolean isAffine();
 		jboolean isIdentity();
-		void mapPoints(jfloatArray arg0);
-		void mapPoints(jfloatArray arg0, jfloatArray arg1);
-		void mapPoints(jfloatArray arg0, jint arg1, jfloatArray arg2, jint arg3, jint arg4);
+		void mapPoints(JFloatArray arg0);
+		void mapPoints(JFloatArray arg0, JFloatArray arg1);
+		void mapPoints(JFloatArray arg0, jint arg1, JFloatArray arg2, jint arg3, jint arg4);
 		jfloat mapRadius(jfloat arg0);
 		jboolean mapRect(android::graphics::RectF arg0);
 		jboolean mapRect(android::graphics::RectF arg0, android::graphics::RectF arg1);
-		void mapVectors(jfloatArray arg0);
-		void mapVectors(jfloatArray arg0, jfloatArray arg1);
-		void mapVectors(jfloatArray arg0, jint arg1, jfloatArray arg2, jint arg3, jint arg4);
+		void mapVectors(JFloatArray arg0);
+		void mapVectors(JFloatArray arg0, JFloatArray arg1);
+		void mapVectors(JFloatArray arg0, jint arg1, JFloatArray arg2, jint arg3, jint arg4);
 		jboolean postConcat(android::graphics::Matrix arg0);
 		jboolean postRotate(jfloat arg0);
 		jboolean postRotate(jfloat arg0, jfloat arg1, jfloat arg2);
@@ -71,7 +74,7 @@ namespace android::graphics
 		void reset();
 		void set(android::graphics::Matrix arg0);
 		jboolean setConcat(android::graphics::Matrix arg0, android::graphics::Matrix arg1);
-		jboolean setPolyToPoly(jfloatArray arg0, jint arg1, jfloatArray arg2, jint arg3, jint arg4);
+		jboolean setPolyToPoly(JFloatArray arg0, jint arg1, JFloatArray arg2, jint arg3, jint arg4);
 		jboolean setRectToRect(android::graphics::RectF arg0, android::graphics::RectF arg1, android::graphics::Matrix_ScaleToFit arg2);
 		void setRotate(jfloat arg0);
 		void setRotate(jfloat arg0, jfloat arg1, jfloat arg2);
@@ -82,9 +85,9 @@ namespace android::graphics
 		void setSkew(jfloat arg0, jfloat arg1);
 		void setSkew(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3);
 		void setTranslate(jfloat arg0, jfloat arg1);
-		void setValues(jfloatArray arg0);
-		jstring toShortString();
-		jstring toString();
+		void setValues(JFloatArray arg0);
+		JString toShortString();
+		JString toString();
 	};
 } // namespace android::graphics
 

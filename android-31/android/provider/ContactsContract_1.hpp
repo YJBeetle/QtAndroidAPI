@@ -2,7 +2,6 @@
 
 #include "../../JObject.hpp"
 
-
 namespace android::provider
 {
 	class ContactsContract_1 : public JObject

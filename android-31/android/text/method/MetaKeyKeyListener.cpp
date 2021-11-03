@@ -1,5 +1,7 @@
 #include "../../view/KeyEvent.hpp"
 #include "../../view/View.hpp"
+#include "../../../JString.hpp"
+#include "../../../JObject.hpp"
 #include "./MetaKeyKeyListener.hpp"
 
 namespace android::text::method
@@ -87,13 +89,13 @@ namespace android::text::method
 			arg1
 		);
 	}
-	jint MetaKeyKeyListener::getMetaState(jstring arg0)
+	jint MetaKeyKeyListener::getMetaState(JString arg0)
 	{
 		return callStaticMethod<jint>(
 			"android.text.method.MetaKeyKeyListener",
 			"getMetaState",
 			"(Ljava/lang/CharSequence;)I",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	jint MetaKeyKeyListener::getMetaState(jlong arg0)
@@ -105,23 +107,23 @@ namespace android::text::method
 			arg0
 		);
 	}
-	jint MetaKeyKeyListener::getMetaState(jstring arg0, android::view::KeyEvent arg1)
+	jint MetaKeyKeyListener::getMetaState(JString arg0, android::view::KeyEvent arg1)
 	{
 		return callStaticMethod<jint>(
 			"android.text.method.MetaKeyKeyListener",
 			"getMetaState",
 			"(Ljava/lang/CharSequence;Landroid/view/KeyEvent;)I",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
-	jint MetaKeyKeyListener::getMetaState(jstring arg0, jint arg1)
+	jint MetaKeyKeyListener::getMetaState(JString arg0, jint arg1)
 	{
 		return callStaticMethod<jint>(
 			"android.text.method.MetaKeyKeyListener",
 			"getMetaState",
 			"(Ljava/lang/CharSequence;I)I",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
@@ -135,13 +137,13 @@ namespace android::text::method
 			arg1
 		);
 	}
-	jint MetaKeyKeyListener::getMetaState(jstring arg0, jint arg1, android::view::KeyEvent arg2)
+	jint MetaKeyKeyListener::getMetaState(JString arg0, jint arg1, android::view::KeyEvent arg2)
 	{
 		return callStaticMethod<jint>(
 			"android.text.method.MetaKeyKeyListener",
 			"getMetaState",
 			"(Ljava/lang/CharSequence;ILandroid/view/KeyEvent;)I",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
 			arg2.object()
 		);
@@ -168,24 +170,24 @@ namespace android::text::method
 			arg2.object()
 		);
 	}
-	jboolean MetaKeyKeyListener::isMetaTracker(jstring arg0, jobject arg1)
+	jboolean MetaKeyKeyListener::isMetaTracker(JString arg0, JObject arg1)
 	{
 		return callStaticMethod<jboolean>(
 			"android.text.method.MetaKeyKeyListener",
 			"isMetaTracker",
 			"(Ljava/lang/CharSequence;Ljava/lang/Object;)Z",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jobject>()
 		);
 	}
-	jboolean MetaKeyKeyListener::isSelectingMetaTracker(jstring arg0, jobject arg1)
+	jboolean MetaKeyKeyListener::isSelectingMetaTracker(JString arg0, JObject arg1)
 	{
 		return callStaticMethod<jboolean>(
 			"android.text.method.MetaKeyKeyListener",
 			"isSelectingMetaTracker",
 			"(Ljava/lang/CharSequence;Ljava/lang/Object;)Z",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jobject>()
 		);
 	}
 	jlong MetaKeyKeyListener::resetLockedMeta(jlong arg0)

@@ -1,9 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../../java/lang/Exception.hpp"
 #include "../../java/lang/RuntimeException.hpp"
 
+class JString;
 
 namespace android::content
 {
@@ -18,7 +17,7 @@ namespace android::content
 		
 		// Constructors
 		ActivityNotFoundException();
-		ActivityNotFoundException(jstring arg0);
+		ActivityNotFoundException(JString arg0);
 		
 		// Methods
 	};

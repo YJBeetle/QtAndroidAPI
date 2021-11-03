@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JFloatArray;
 namespace android::graphics
 {
 	class Matrix;
@@ -31,7 +32,7 @@ namespace android::graphics
 		// Methods
 		jfloat getLength();
 		jboolean getMatrix(jfloat arg0, android::graphics::Matrix arg1, jint arg2);
-		jboolean getPosTan(jfloat arg0, jfloatArray arg1, jfloatArray arg2);
+		jboolean getPosTan(jfloat arg0, JFloatArray arg1, JFloatArray arg2);
 		jboolean getSegment(jfloat arg0, jfloat arg1, android::graphics::Path arg2, jboolean arg3);
 		jboolean isClosed();
 		jboolean nextContour();

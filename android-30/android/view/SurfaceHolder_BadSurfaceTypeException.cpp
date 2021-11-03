@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./SurfaceHolder_BadSurfaceTypeException.hpp"
 
 namespace android::view
@@ -13,11 +14,11 @@ namespace android::view
 			"android.view.SurfaceHolder$BadSurfaceTypeException",
 			"()V"
 		) {}
-	SurfaceHolder_BadSurfaceTypeException::SurfaceHolder_BadSurfaceTypeException(jstring arg0)
+	SurfaceHolder_BadSurfaceTypeException::SurfaceHolder_BadSurfaceTypeException(JString arg0)
 		: java::lang::RuntimeException(
 			"android.view.SurfaceHolder$BadSurfaceTypeException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

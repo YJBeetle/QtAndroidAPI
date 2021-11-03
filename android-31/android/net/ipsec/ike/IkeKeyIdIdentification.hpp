@@ -1,8 +1,9 @@
 #pragma once
 
-#include "../../../../JObject.hpp"
 #include "./IkeIdentification.hpp"
 
+class JByteArray;
+class JObject;
 
 namespace android::net::ipsec::ike
 {
@@ -10,17 +11,17 @@ namespace android::net::ipsec::ike
 	{
 	public:
 		// Fields
-		jbyteArray keyId();
+		JByteArray keyId();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit IkeKeyIdIdentification(const char *className, const char *sig, Ts...agv) : android::net::ipsec::ike::IkeIdentification(className, sig, std::forward<Ts>(agv)...) {}
 		IkeKeyIdIdentification(QAndroidJniObject obj);
 		
 		// Constructors
-		IkeKeyIdIdentification(jbyteArray arg0);
+		IkeKeyIdIdentification(JByteArray arg0);
 		
 		// Methods
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint hashCode();
 	};
 } // namespace android::net::ipsec::ike

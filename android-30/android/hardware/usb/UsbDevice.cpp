@@ -1,6 +1,8 @@
 #include "./UsbConfiguration.hpp"
 #include "./UsbInterface.hpp"
 #include "../../os/Parcel.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./UsbDevice.hpp"
 
 namespace android::hardware::usb
@@ -21,23 +23,23 @@ namespace android::hardware::usb
 	// Constructors
 	
 	// Methods
-	jint UsbDevice::getDeviceId(jstring arg0)
+	jint UsbDevice::getDeviceId(JString arg0)
 	{
 		return callStaticMethod<jint>(
 			"android.hardware.usb.UsbDevice",
 			"getDeviceId",
 			"(Ljava/lang/String;)I",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jstring UsbDevice::getDeviceName(jint arg0)
+	JString UsbDevice::getDeviceName(jint arg0)
 	{
 		return callStaticObjectMethod(
 			"android.hardware.usb.UsbDevice",
 			"getDeviceName",
 			"(I)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
 	jint UsbDevice::describeContents()
 	{
@@ -46,12 +48,12 @@ namespace android::hardware::usb
 			"()I"
 		);
 	}
-	jboolean UsbDevice::equals(jobject arg0)
+	jboolean UsbDevice::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	android::hardware::usb::UsbConfiguration UsbDevice::getConfiguration(jint arg0)
@@ -83,12 +85,12 @@ namespace android::hardware::usb
 			"()I"
 		);
 	}
-	jstring UsbDevice::getDeviceName()
+	JString UsbDevice::getDeviceName()
 	{
 		return callObjectMethod(
 			"getDeviceName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint UsbDevice::getDeviceProtocol()
 	{
@@ -119,12 +121,12 @@ namespace android::hardware::usb
 			"()I"
 		);
 	}
-	jstring UsbDevice::getManufacturerName()
+	JString UsbDevice::getManufacturerName()
 	{
 		return callObjectMethod(
 			"getManufacturerName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint UsbDevice::getProductId()
 	{
@@ -133,19 +135,19 @@ namespace android::hardware::usb
 			"()I"
 		);
 	}
-	jstring UsbDevice::getProductName()
+	JString UsbDevice::getProductName()
 	{
 		return callObjectMethod(
 			"getProductName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring UsbDevice::getSerialNumber()
+	JString UsbDevice::getSerialNumber()
 	{
 		return callObjectMethod(
 			"getSerialNumber",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint UsbDevice::getVendorId()
 	{
@@ -154,12 +156,12 @@ namespace android::hardware::usb
 			"()I"
 		);
 	}
-	jstring UsbDevice::getVersion()
+	JString UsbDevice::getVersion()
 	{
 		return callObjectMethod(
 			"getVersion",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint UsbDevice::hashCode()
 	{
@@ -168,12 +170,12 @@ namespace android::hardware::usb
 			"()I"
 		);
 	}
-	jstring UsbDevice::toString()
+	JString UsbDevice::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void UsbDevice::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

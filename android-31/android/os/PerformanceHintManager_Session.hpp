@@ -2,7 +2,6 @@
 
 #include "../../JObject.hpp"
 
-
 namespace android::os
 {
 	class PerformanceHintManager_Session : public JObject

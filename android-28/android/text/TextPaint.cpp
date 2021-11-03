@@ -1,3 +1,4 @@
+#include "../../JIntArray.hpp"
 #include "../graphics/Paint.hpp"
 #include "./TextPaint.hpp"
 
@@ -22,12 +23,12 @@ namespace android::text
 			"density"
 		);
 	}
-	jintArray TextPaint::drawableState()
+	JIntArray TextPaint::drawableState()
 	{
 		return getObjectField(
 			"drawableState",
 			"[I"
-		).object<jintArray>();
+		);
 	}
 	jint TextPaint::linkColor()
 	{

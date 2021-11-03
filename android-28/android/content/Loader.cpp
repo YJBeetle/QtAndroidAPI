@@ -1,6 +1,9 @@
+#include "../../JArray.hpp"
 #include "./Context.hpp"
 #include "../../java/io/FileDescriptor.hpp"
 #include "../../java/io/PrintWriter.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./Loader.hpp"
 
 namespace android::content
@@ -40,13 +43,13 @@ namespace android::content
 			"()V"
 		);
 	}
-	jstring Loader::dataToString(jobject arg0)
+	JString Loader::dataToString(JObject arg0)
 	{
 		return callObjectMethod(
 			"dataToString",
 			"(Ljava/lang/Object;)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
+			arg0.object<jobject>()
+		);
 	}
 	void Loader::deliverCancellation()
 	{
@@ -55,23 +58,23 @@ namespace android::content
 			"()V"
 		);
 	}
-	void Loader::deliverResult(jobject arg0)
+	void Loader::deliverResult(JObject arg0)
 	{
 		callMethod<void>(
 			"deliverResult",
 			"(Ljava/lang/Object;)V",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	void Loader::dump(jstring arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, jarray arg3)
+	void Loader::dump(JString arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, JArray arg3)
 	{
 		callMethod<void>(
 			"dump",
 			"(Ljava/lang/String;Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
 			arg2.object(),
-			arg3
+			arg3.object<jarray>()
 		);
 	}
 	void Loader::forceLoad()
@@ -175,12 +178,12 @@ namespace android::content
 			"()Z"
 		);
 	}
-	jstring Loader::toString()
+	JString Loader::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void Loader::unregisterListener(JObject arg0)
 	{

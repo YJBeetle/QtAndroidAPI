@@ -1,4 +1,5 @@
 #include "../graphics/drawable/Icon.hpp"
+#include "../../JString.hpp"
 #include "./ContentResolver_MimeTypeInfo.hpp"
 
 namespace android::content
@@ -11,12 +12,12 @@ namespace android::content
 	// Constructors
 	
 	// Methods
-	jstring ContentResolver_MimeTypeInfo::getContentDescription()
+	JString ContentResolver_MimeTypeInfo::getContentDescription()
 	{
 		return callObjectMethod(
 			"getContentDescription",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	android::graphics::drawable::Icon ContentResolver_MimeTypeInfo::getIcon()
 	{
@@ -25,12 +26,12 @@ namespace android::content
 			"()Landroid/graphics/drawable/Icon;"
 		);
 	}
-	jstring ContentResolver_MimeTypeInfo::getLabel()
+	JString ContentResolver_MimeTypeInfo::getLabel()
 	{
 		return callObjectMethod(
 			"getLabel",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::content
 

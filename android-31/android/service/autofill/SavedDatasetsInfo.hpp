@@ -2,6 +2,8 @@
 
 #include "../../../JObject.hpp"
 
+class JObject;
+class JString;
 
 namespace android::service::autofill
 {
@@ -9,22 +11,22 @@ namespace android::service::autofill
 	{
 	public:
 		// Fields
-		static jstring TYPE_OTHER();
-		static jstring TYPE_PASSWORDS();
+		static JString TYPE_OTHER();
+		static JString TYPE_PASSWORDS();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SavedDatasetsInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		SavedDatasetsInfo(QAndroidJniObject obj);
 		
 		// Constructors
-		SavedDatasetsInfo(jstring arg0, jint arg1);
+		SavedDatasetsInfo(JString arg0, jint arg1);
 		
 		// Methods
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint getCount();
-		jstring getType();
+		JString getType();
 		jint hashCode();
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::service::autofill
 

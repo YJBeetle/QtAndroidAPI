@@ -1,4 +1,6 @@
 #include "../../io/ObjectInputStream.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "../Clock.hpp"
 #include "../LocalDate.hpp"
 #include "../LocalTime.hpp"
@@ -84,12 +86,12 @@ namespace java::time::chrono
 			arg0.object()
 		);
 	}
-	jboolean JapaneseDate::equals(jobject arg0)
+	jboolean JapaneseDate::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	java::time::chrono::JapaneseChronology JapaneseDate::getChronology()
@@ -192,12 +194,12 @@ namespace java::time::chrono
 			"()J"
 		);
 	}
-	jstring JapaneseDate::toString()
+	JString JapaneseDate::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	JObject JapaneseDate::until(JObject arg0)
 	{

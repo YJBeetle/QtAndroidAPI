@@ -6,6 +6,7 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
 
 namespace android::hardware::usb
 {
@@ -30,7 +31,7 @@ namespace android::hardware::usb
 		jint getInterval();
 		jint getMaxPacketSize();
 		jint getType();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::hardware::usb

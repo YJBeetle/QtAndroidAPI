@@ -1,72 +1,73 @@
 #include "../../content/Intent.hpp"
+#include "../../../JString.hpp"
 #include "./RoleManager.hpp"
 
 namespace android::app::role
 {
 	// Fields
-	jstring RoleManager::ROLE_ASSISTANT()
+	JString RoleManager::ROLE_ASSISTANT()
 	{
 		return getStaticObjectField(
 			"android.app.role.RoleManager",
 			"ROLE_ASSISTANT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring RoleManager::ROLE_BROWSER()
+	JString RoleManager::ROLE_BROWSER()
 	{
 		return getStaticObjectField(
 			"android.app.role.RoleManager",
 			"ROLE_BROWSER",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring RoleManager::ROLE_CALL_REDIRECTION()
+	JString RoleManager::ROLE_CALL_REDIRECTION()
 	{
 		return getStaticObjectField(
 			"android.app.role.RoleManager",
 			"ROLE_CALL_REDIRECTION",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring RoleManager::ROLE_CALL_SCREENING()
+	JString RoleManager::ROLE_CALL_SCREENING()
 	{
 		return getStaticObjectField(
 			"android.app.role.RoleManager",
 			"ROLE_CALL_SCREENING",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring RoleManager::ROLE_DIALER()
+	JString RoleManager::ROLE_DIALER()
 	{
 		return getStaticObjectField(
 			"android.app.role.RoleManager",
 			"ROLE_DIALER",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring RoleManager::ROLE_EMERGENCY()
+	JString RoleManager::ROLE_EMERGENCY()
 	{
 		return getStaticObjectField(
 			"android.app.role.RoleManager",
 			"ROLE_EMERGENCY",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring RoleManager::ROLE_HOME()
+	JString RoleManager::ROLE_HOME()
 	{
 		return getStaticObjectField(
 			"android.app.role.RoleManager",
 			"ROLE_HOME",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring RoleManager::ROLE_SMS()
+	JString RoleManager::ROLE_SMS()
 	{
 		return getStaticObjectField(
 			"android.app.role.RoleManager",
 			"ROLE_SMS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QAndroidJniObject forward
@@ -75,28 +76,28 @@ namespace android::app::role
 	// Constructors
 	
 	// Methods
-	android::content::Intent RoleManager::createRequestRoleIntent(jstring arg0)
+	android::content::Intent RoleManager::createRequestRoleIntent(JString arg0)
 	{
 		return callObjectMethod(
 			"createRequestRoleIntent",
 			"(Ljava/lang/String;)Landroid/content/Intent;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jboolean RoleManager::isRoleAvailable(jstring arg0)
+	jboolean RoleManager::isRoleAvailable(JString arg0)
 	{
 		return callMethod<jboolean>(
 			"isRoleAvailable",
 			"(Ljava/lang/String;)Z",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jboolean RoleManager::isRoleHeld(jstring arg0)
+	jboolean RoleManager::isRoleHeld(JString arg0)
 	{
 		return callMethod<jboolean>(
 			"isRoleHeld",
 			"(Ljava/lang/String;)Z",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 } // namespace android::app::role

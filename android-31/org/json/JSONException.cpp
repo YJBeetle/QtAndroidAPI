@@ -1,3 +1,5 @@
+#include "../../JString.hpp"
+#include "../../JThrowable.hpp"
 #include "./JSONException.hpp"
 
 namespace org::json
@@ -8,24 +10,24 @@ namespace org::json
 	JSONException::JSONException(QAndroidJniObject obj) : java::lang::Exception(obj) {}
 	
 	// Constructors
-	JSONException::JSONException(jstring arg0)
+	JSONException::JSONException(JString arg0)
 		: java::lang::Exception(
 			"org.json.JSONException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	JSONException::JSONException(jthrowable arg0)
+	JSONException::JSONException(JThrowable arg0)
 		: java::lang::Exception(
 			"org.json.JSONException",
 			"(Ljava/lang/Throwable;)V",
-			arg0
+			arg0.object<jthrowable>()
 		) {}
-	JSONException::JSONException(jstring arg0, jthrowable arg1)
+	JSONException::JSONException(JString arg0, JThrowable arg1)
 		: java::lang::Exception(
 			"org.json.JSONException",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
 		) {}
 	
 	// Methods

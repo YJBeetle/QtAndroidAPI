@@ -1,3 +1,5 @@
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
 #include "./PorterDuff_Mode.hpp"
 
 namespace android::graphics
@@ -154,22 +156,22 @@ namespace android::graphics
 	// Constructors
 	
 	// Methods
-	android::graphics::PorterDuff_Mode PorterDuff_Mode::valueOf(jstring arg0)
+	android::graphics::PorterDuff_Mode PorterDuff_Mode::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.graphics.PorterDuff$Mode",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/graphics/PorterDuff$Mode;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray PorterDuff_Mode::values()
+	JArray PorterDuff_Mode::values()
 	{
 		return callStaticObjectMethod(
 			"android.graphics.PorterDuff$Mode",
 			"values",
 			"()[Landroid/graphics/PorterDuff$Mode;"
-		).object<jarray>();
+		);
 	}
 } // namespace android::graphics
 

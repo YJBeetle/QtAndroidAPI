@@ -2,7 +2,6 @@
 
 #include "../../../JObject.hpp"
 
-
 namespace java::time::temporal
 {
 	class JulianFields : public JObject

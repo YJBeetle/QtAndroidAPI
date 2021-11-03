@@ -1,3 +1,5 @@
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
 #include "./Type_CubemapFace.hpp"
 
 namespace android::renderscript
@@ -82,22 +84,22 @@ namespace android::renderscript
 	// Constructors
 	
 	// Methods
-	android::renderscript::Type_CubemapFace Type_CubemapFace::valueOf(jstring arg0)
+	android::renderscript::Type_CubemapFace Type_CubemapFace::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.renderscript.Type$CubemapFace",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/renderscript/Type$CubemapFace;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray Type_CubemapFace::values()
+	JArray Type_CubemapFace::values()
 	{
 		return callStaticObjectMethod(
 			"android.renderscript.Type$CubemapFace",
 			"values",
 			"()[Landroid/renderscript/Type$CubemapFace;"
-		).object<jarray>();
+		);
 	}
 } // namespace android::renderscript
 

@@ -3,6 +3,8 @@
 #include "../../graphics/drawable/Icon.hpp"
 #include "./Control.hpp"
 #include "./templates/ControlTemplate.hpp"
+#include "../../../JString.hpp"
+#include "../../../JString.hpp"
 #include "./Control_StatefulBuilder.hpp"
 
 namespace android::service::controls
@@ -19,11 +21,11 @@ namespace android::service::controls
 			"(Landroid/service/controls/Control;)V",
 			arg0.object()
 		) {}
-	Control_StatefulBuilder::Control_StatefulBuilder(jstring arg0, android::app::PendingIntent arg1)
+	Control_StatefulBuilder::Control_StatefulBuilder(JString arg0, android::app::PendingIntent arg1)
 		: JObject(
 			"android.service.controls.Control$StatefulBuilder",
 			"(Ljava/lang/String;Landroid/app/PendingIntent;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		) {}
 	
@@ -43,12 +45,12 @@ namespace android::service::controls
 			arg0.object()
 		);
 	}
-	android::service::controls::Control_StatefulBuilder Control_StatefulBuilder::setControlId(jstring arg0)
+	android::service::controls::Control_StatefulBuilder Control_StatefulBuilder::setControlId(JString arg0)
 	{
 		return callObjectMethod(
 			"setControlId",
 			"(Ljava/lang/String;)Landroid/service/controls/Control$StatefulBuilder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::service::controls::Control_StatefulBuilder Control_StatefulBuilder::setControlTemplate(android::service::controls::templates::ControlTemplate arg0)
@@ -91,44 +93,44 @@ namespace android::service::controls
 			arg0
 		);
 	}
-	android::service::controls::Control_StatefulBuilder Control_StatefulBuilder::setStatusText(jstring arg0)
+	android::service::controls::Control_StatefulBuilder Control_StatefulBuilder::setStatusText(JString arg0)
 	{
 		return callObjectMethod(
 			"setStatusText",
 			"(Ljava/lang/CharSequence;)Landroid/service/controls/Control$StatefulBuilder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	android::service::controls::Control_StatefulBuilder Control_StatefulBuilder::setStructure(jstring arg0)
+	android::service::controls::Control_StatefulBuilder Control_StatefulBuilder::setStructure(JString arg0)
 	{
 		return callObjectMethod(
 			"setStructure",
 			"(Ljava/lang/CharSequence;)Landroid/service/controls/Control$StatefulBuilder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	android::service::controls::Control_StatefulBuilder Control_StatefulBuilder::setSubtitle(jstring arg0)
+	android::service::controls::Control_StatefulBuilder Control_StatefulBuilder::setSubtitle(JString arg0)
 	{
 		return callObjectMethod(
 			"setSubtitle",
 			"(Ljava/lang/CharSequence;)Landroid/service/controls/Control$StatefulBuilder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	android::service::controls::Control_StatefulBuilder Control_StatefulBuilder::setTitle(jstring arg0)
+	android::service::controls::Control_StatefulBuilder Control_StatefulBuilder::setTitle(JString arg0)
 	{
 		return callObjectMethod(
 			"setTitle",
 			"(Ljava/lang/CharSequence;)Landroid/service/controls/Control$StatefulBuilder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	android::service::controls::Control_StatefulBuilder Control_StatefulBuilder::setZone(jstring arg0)
+	android::service::controls::Control_StatefulBuilder Control_StatefulBuilder::setZone(JString arg0)
 	{
 		return callObjectMethod(
 			"setZone",
 			"(Ljava/lang/CharSequence;)Landroid/service/controls/Control$StatefulBuilder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 } // namespace android::service::controls

@@ -1,6 +1,5 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "./Calendar.hpp"
 
 namespace android::icu::util
@@ -15,6 +14,7 @@ namespace android::icu::util
 {
 	class ULocale;
 }
+class JString;
 namespace java::util
 {
 	class Date;
@@ -60,7 +60,7 @@ namespace android::icu::util
 		
 		// Methods
 		android::icu::util::IslamicCalendar_CalculationType getCalculationType();
-		jstring getType();
+		JString getType();
 		void setCalculationType(android::icu::util::IslamicCalendar_CalculationType arg0);
 	};
 } // namespace android::icu::util

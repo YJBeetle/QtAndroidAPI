@@ -1,4 +1,6 @@
+#include "../../JArray.hpp"
 #include "../lang/ClassLoader.hpp"
+#include "../../JString.hpp"
 #include "./CodeSource.hpp"
 #include "./Permission.hpp"
 #include "./PermissionCollection.hpp"
@@ -19,14 +21,14 @@ namespace java::security
 			arg0.object(),
 			arg1.object()
 		) {}
-	ProtectionDomain::ProtectionDomain(java::security::CodeSource arg0, java::security::PermissionCollection arg1, java::lang::ClassLoader arg2, jarray arg3)
+	ProtectionDomain::ProtectionDomain(java::security::CodeSource arg0, java::security::PermissionCollection arg1, java::lang::ClassLoader arg2, JArray arg3)
 		: JObject(
 			"java.security.ProtectionDomain",
 			"(Ljava/security/CodeSource;Ljava/security/PermissionCollection;Ljava/lang/ClassLoader;[Ljava/security/Principal;)V",
 			arg0.object(),
 			arg1.object(),
 			arg2.object(),
-			arg3
+			arg3.object<jarray>()
 		) {}
 	
 	// Methods
@@ -51,12 +53,12 @@ namespace java::security
 			"()Ljava/security/PermissionCollection;"
 		);
 	}
-	jarray ProtectionDomain::getPrincipals()
+	JArray ProtectionDomain::getPrincipals()
 	{
 		return callObjectMethod(
 			"getPrincipals",
 			"()[Ljava/security/Principal;"
-		).object<jarray>();
+		);
 	}
 	jboolean ProtectionDomain::implies(java::security::Permission arg0)
 	{
@@ -73,12 +75,12 @@ namespace java::security
 			"()Z"
 		);
 	}
-	jstring ProtectionDomain::toString()
+	JString ProtectionDomain::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::security
 

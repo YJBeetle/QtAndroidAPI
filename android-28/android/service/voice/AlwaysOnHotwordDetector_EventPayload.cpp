@@ -1,3 +1,4 @@
+#include "../../../JByteArray.hpp"
 #include "../../media/AudioFormat.hpp"
 #include "./AlwaysOnHotwordDetector_EventPayload.hpp"
 
@@ -18,12 +19,12 @@ namespace android::service::voice
 			"()Landroid/media/AudioFormat;"
 		);
 	}
-	jbyteArray AlwaysOnHotwordDetector_EventPayload::getTriggerAudio()
+	JByteArray AlwaysOnHotwordDetector_EventPayload::getTriggerAudio()
 	{
 		return callObjectMethod(
 			"getTriggerAudio",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
 } // namespace android::service::voice
 

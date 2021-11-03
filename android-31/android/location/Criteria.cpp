@@ -1,4 +1,5 @@
 #include "../os/Parcel.hpp"
+#include "../../JString.hpp"
 #include "./Criteria.hpp"
 
 namespace android::location
@@ -250,12 +251,12 @@ namespace android::location
 			arg0
 		);
 	}
-	jstring Criteria::toString()
+	JString Criteria::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void Criteria::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

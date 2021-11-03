@@ -1,8 +1,10 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./Buffer.hpp"
 
+class JShortArray;
+class JObject;
+class JString;
 namespace java::nio
 {
 	class Buffer;
@@ -27,22 +29,22 @@ namespace java::nio
 		
 		// Methods
 		static java::nio::ShortBuffer allocate(jint arg0);
-		static java::nio::ShortBuffer wrap(jshortArray arg0);
-		static java::nio::ShortBuffer wrap(jshortArray arg0, jint arg1, jint arg2);
-		jshortArray array();
+		static java::nio::ShortBuffer wrap(JShortArray arg0);
+		static java::nio::ShortBuffer wrap(JShortArray arg0, jint arg1, jint arg2);
+		JShortArray array();
 		jint arrayOffset();
 		java::nio::ShortBuffer asReadOnlyBuffer();
 		java::nio::ShortBuffer clear();
 		java::nio::ShortBuffer compact();
-		jint compareTo(jobject arg0);
+		jint compareTo(JObject arg0);
 		jint compareTo(java::nio::ShortBuffer arg0);
 		java::nio::ShortBuffer duplicate();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		java::nio::ShortBuffer flip();
-		java::nio::ShortBuffer get(jshortArray arg0);
-		java::nio::ShortBuffer get(jint arg0, jshortArray arg1);
-		java::nio::ShortBuffer get(jshortArray arg0, jint arg1, jint arg2);
-		java::nio::ShortBuffer get(jint arg0, jshortArray arg1, jint arg2, jint arg3);
+		java::nio::ShortBuffer get(JShortArray arg0);
+		java::nio::ShortBuffer get(jint arg0, JShortArray arg1);
+		java::nio::ShortBuffer get(JShortArray arg0, jint arg1, jint arg2);
+		java::nio::ShortBuffer get(jint arg0, JShortArray arg1, jint arg2, jint arg3);
 		jshort get();
 		jshort get(jint arg0);
 		jboolean hasArray();
@@ -53,19 +55,19 @@ namespace java::nio
 		jint mismatch(java::nio::ShortBuffer arg0);
 		java::nio::ByteOrder order();
 		java::nio::ShortBuffer position(jint arg0);
-		java::nio::ShortBuffer put(jshortArray arg0);
+		java::nio::ShortBuffer put(JShortArray arg0);
 		java::nio::ShortBuffer put(java::nio::ShortBuffer arg0);
 		java::nio::ShortBuffer put(jshort arg0);
-		java::nio::ShortBuffer put(jint arg0, jshortArray arg1);
+		java::nio::ShortBuffer put(jint arg0, JShortArray arg1);
 		java::nio::ShortBuffer put(jint arg0, jshort arg1);
-		java::nio::ShortBuffer put(jshortArray arg0, jint arg1, jint arg2);
-		java::nio::ShortBuffer put(jint arg0, jshortArray arg1, jint arg2, jint arg3);
+		java::nio::ShortBuffer put(JShortArray arg0, jint arg1, jint arg2);
+		java::nio::ShortBuffer put(jint arg0, JShortArray arg1, jint arg2, jint arg3);
 		java::nio::ShortBuffer put(jint arg0, java::nio::ShortBuffer arg1, jint arg2, jint arg3);
 		java::nio::ShortBuffer reset();
 		java::nio::ShortBuffer rewind();
 		java::nio::ShortBuffer slice();
 		java::nio::ShortBuffer slice(jint arg0, jint arg1);
-		jstring toString();
+		JString toString();
 	};
 } // namespace java::nio
 

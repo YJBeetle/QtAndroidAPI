@@ -1,3 +1,4 @@
+#include "../../../JObject.hpp"
 #include "./RecursiveTask.hpp"
 
 namespace java::util::concurrent
@@ -15,12 +16,12 @@ namespace java::util::concurrent
 		) {}
 	
 	// Methods
-	jobject RecursiveTask::getRawResult()
+	JObject RecursiveTask::getRawResult()
 	{
 		return callObjectMethod(
 			"getRawResult",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
 } // namespace java::util::concurrent
 

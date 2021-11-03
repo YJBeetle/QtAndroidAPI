@@ -1,8 +1,9 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "../../../java/lang/Enum.hpp"
 
+class JArray;
+class JString;
 
 namespace android::icu::number
 {
@@ -21,8 +22,8 @@ namespace android::icu::number
 		// Constructors
 		
 		// Methods
-		static android::icu::number::NumberRangeFormatter_RangeIdentityResult valueOf(jstring arg0);
-		static jarray values();
+		static android::icu::number::NumberRangeFormatter_RangeIdentityResult valueOf(JString arg0);
+		static JArray values();
 	};
 } // namespace android::icu::number
 

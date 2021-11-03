@@ -1,6 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "../app/Fragment.hpp"
 
 namespace android::content
@@ -35,6 +34,7 @@ namespace android::view
 {
 	class ViewGroup;
 }
+class JString;
 
 namespace android::preference
 {
@@ -53,7 +53,7 @@ namespace android::preference
 		// Methods
 		void addPreferencesFromIntent(android::content::Intent arg0);
 		void addPreferencesFromResource(jint arg0);
-		android::preference::Preference findPreference(jstring arg0);
+		android::preference::Preference findPreference(JString arg0);
 		android::preference::PreferenceManager getPreferenceManager();
 		android::preference::PreferenceScreen getPreferenceScreen();
 		void onActivityCreated(android::os::Bundle arg0);

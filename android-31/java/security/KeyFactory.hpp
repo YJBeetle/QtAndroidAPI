@@ -2,6 +2,9 @@
 
 #include "../../JObject.hpp"
 
+class JClass;
+class JObject;
+class JString;
 namespace java::security
 {
 	class KeyFactorySpi;
@@ -25,13 +28,13 @@ namespace java::security
 		// Constructors
 		
 		// Methods
-		static java::security::KeyFactory getInstance(jstring arg0);
-		static java::security::KeyFactory getInstance(jstring arg0, jstring arg1);
-		static java::security::KeyFactory getInstance(jstring arg0, java::security::Provider arg1);
+		static java::security::KeyFactory getInstance(JString arg0);
+		static java::security::KeyFactory getInstance(JString arg0, JString arg1);
+		static java::security::KeyFactory getInstance(JString arg0, java::security::Provider arg1);
 		JObject generatePrivate(JObject arg0);
 		JObject generatePublic(JObject arg0);
-		jstring getAlgorithm();
-		JObject getKeySpec(JObject arg0, jclass arg1);
+		JString getAlgorithm();
+		JObject getKeySpec(JObject arg0, JClass arg1);
 		java::security::Provider getProvider();
 		JObject translateKey(JObject arg0);
 	};

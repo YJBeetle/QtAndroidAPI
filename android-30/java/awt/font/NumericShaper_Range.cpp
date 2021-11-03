@@ -1,3 +1,5 @@
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
 #include "./NumericShaper_Range.hpp"
 
 namespace java::awt::font
@@ -306,22 +308,22 @@ namespace java::awt::font
 	// Constructors
 	
 	// Methods
-	java::awt::font::NumericShaper_Range NumericShaper_Range::valueOf(jstring arg0)
+	java::awt::font::NumericShaper_Range NumericShaper_Range::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"java.awt.font.NumericShaper$Range",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/awt/font/NumericShaper$Range;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray NumericShaper_Range::values()
+	JArray NumericShaper_Range::values()
 	{
 		return callStaticObjectMethod(
 			"java.awt.font.NumericShaper$Range",
 			"values",
 			"()[Ljava/awt/font/NumericShaper$Range;"
-		).object<jarray>();
+		);
 	}
 } // namespace java::awt::font
 

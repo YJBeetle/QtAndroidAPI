@@ -1,6 +1,5 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "./CameraMetadata.hpp"
 
 namespace android::hardware::camera2
@@ -11,6 +10,7 @@ namespace android::os
 {
 	class Parcel;
 }
+class JObject;
 
 namespace android::hardware::camera2
 {
@@ -86,10 +86,10 @@ namespace android::hardware::camera2
 		
 		// Methods
 		jint describeContents();
-		jboolean equals(jobject arg0);
-		jobject get(android::hardware::camera2::CaptureRequest_Key arg0);
+		jboolean equals(JObject arg0);
+		JObject get(android::hardware::camera2::CaptureRequest_Key arg0);
 		JObject getKeys();
-		jobject getTag();
+		JObject getTag();
 		jint hashCode();
 		jboolean isReprocess();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);

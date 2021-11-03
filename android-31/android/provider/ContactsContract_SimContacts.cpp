@@ -1,16 +1,17 @@
 #include "../content/ContentResolver.hpp"
+#include "../../JString.hpp"
 #include "./ContactsContract_SimContacts.hpp"
 
 namespace android::provider
 {
 	// Fields
-	jstring ContactsContract_SimContacts::ACTION_SIM_ACCOUNTS_CHANGED()
+	JString ContactsContract_SimContacts::ACTION_SIM_ACCOUNTS_CHANGED()
 	{
 		return getStaticObjectField(
 			"android.provider.ContactsContract$SimContacts",
 			"ACTION_SIM_ACCOUNTS_CHANGED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QAndroidJniObject forward

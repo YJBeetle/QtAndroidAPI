@@ -14,6 +14,7 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
 namespace java::time
 {
 	class ZonedDateTime;
@@ -40,7 +41,7 @@ namespace android::view::textclassifier
 		android::app::Person getAuthor();
 		android::os::Bundle getExtras();
 		java::time::ZonedDateTime getReferenceTime();
-		jstring getText();
+		JString getText();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::view::textclassifier

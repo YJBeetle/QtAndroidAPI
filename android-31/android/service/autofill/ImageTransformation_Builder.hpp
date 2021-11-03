@@ -10,6 +10,7 @@ namespace android::view::autofill
 {
 	class AutofillId;
 }
+class JString;
 namespace java::util::regex
 {
 	class Pattern;
@@ -28,11 +29,11 @@ namespace android::service::autofill
 		
 		// Constructors
 		ImageTransformation_Builder(android::view::autofill::AutofillId arg0, java::util::regex::Pattern arg1, jint arg2);
-		ImageTransformation_Builder(android::view::autofill::AutofillId arg0, java::util::regex::Pattern arg1, jint arg2, jstring arg3);
+		ImageTransformation_Builder(android::view::autofill::AutofillId arg0, java::util::regex::Pattern arg1, jint arg2, JString arg3);
 		
 		// Methods
 		android::service::autofill::ImageTransformation_Builder addOption(java::util::regex::Pattern arg0, jint arg1);
-		android::service::autofill::ImageTransformation_Builder addOption(java::util::regex::Pattern arg0, jint arg1, jstring arg2);
+		android::service::autofill::ImageTransformation_Builder addOption(java::util::regex::Pattern arg0, jint arg1, JString arg2);
 		android::service::autofill::ImageTransformation build();
 	};
 } // namespace android::service::autofill

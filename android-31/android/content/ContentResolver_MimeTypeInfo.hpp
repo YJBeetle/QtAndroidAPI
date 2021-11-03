@@ -6,6 +6,7 @@ namespace android::graphics::drawable
 {
 	class Icon;
 }
+class JString;
 
 namespace android::content
 {
@@ -21,9 +22,9 @@ namespace android::content
 		// Constructors
 		
 		// Methods
-		jstring getContentDescription();
+		JString getContentDescription();
 		android::graphics::drawable::Icon getIcon();
-		jstring getLabel();
+		JString getLabel();
 	};
 } // namespace android::content
 

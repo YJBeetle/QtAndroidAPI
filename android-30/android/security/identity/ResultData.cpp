@@ -1,3 +1,5 @@
+#include "../../../JByteArray.hpp"
+#include "../../../JString.hpp"
 #include "./ResultData.hpp"
 
 namespace android::security::identity
@@ -59,36 +61,36 @@ namespace android::security::identity
 	// Constructors
 	
 	// Methods
-	jbyteArray ResultData::getAuthenticatedData()
+	JByteArray ResultData::getAuthenticatedData()
 	{
 		return callObjectMethod(
 			"getAuthenticatedData",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
-	jbyteArray ResultData::getEntry(jstring arg0, jstring arg1)
+	JByteArray ResultData::getEntry(JString arg0, JString arg1)
 	{
 		return callObjectMethod(
 			"getEntry",
 			"(Ljava/lang/String;Ljava/lang/String;)[B",
-			arg0,
-			arg1
-		).object<jbyteArray>();
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
+		);
 	}
-	JObject ResultData::getEntryNames(jstring arg0)
+	JObject ResultData::getEntryNames(JString arg0)
 	{
 		return callObjectMethod(
 			"getEntryNames",
 			"(Ljava/lang/String;)Ljava/util/Collection;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jbyteArray ResultData::getMessageAuthenticationCode()
+	JByteArray ResultData::getMessageAuthenticationCode()
 	{
 		return callObjectMethod(
 			"getMessageAuthenticationCode",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
 	JObject ResultData::getNamespaces()
 	{
@@ -97,28 +99,28 @@ namespace android::security::identity
 			"()Ljava/util/Collection;"
 		);
 	}
-	JObject ResultData::getRetrievedEntryNames(jstring arg0)
+	JObject ResultData::getRetrievedEntryNames(JString arg0)
 	{
 		return callObjectMethod(
 			"getRetrievedEntryNames",
 			"(Ljava/lang/String;)Ljava/util/Collection;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jbyteArray ResultData::getStaticAuthenticationData()
+	JByteArray ResultData::getStaticAuthenticationData()
 	{
 		return callObjectMethod(
 			"getStaticAuthenticationData",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
-	jint ResultData::getStatus(jstring arg0, jstring arg1)
+	jint ResultData::getStatus(JString arg0, JString arg1)
 	{
 		return callMethod<jint>(
 			"getStatus",
 			"(Ljava/lang/String;Ljava/lang/String;)I",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		);
 	}
 } // namespace android::security::identity

@@ -1,6 +1,10 @@
+#include "../../../JArray.hpp"
+#include "../../../JArray.hpp"
+#include "../../../JArray.hpp"
 #include "../../os/Bundle.hpp"
 #include "../../view/textservice/SuggestionsInfo.hpp"
 #include "../../view/textservice/TextInfo.hpp"
+#include "../../../JString.hpp"
 #include "./SpellCheckerService_Session.hpp"
 
 namespace android::service::textservice
@@ -25,12 +29,12 @@ namespace android::service::textservice
 			"()Landroid/os/Bundle;"
 		);
 	}
-	jstring SpellCheckerService_Session::getLocale()
+	JString SpellCheckerService_Session::getLocale()
 	{
 		return callObjectMethod(
 			"getLocale",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint SpellCheckerService_Session::getSupportedAttributes()
 	{
@@ -60,14 +64,14 @@ namespace android::service::textservice
 			"()V"
 		);
 	}
-	jarray SpellCheckerService_Session::onGetSentenceSuggestionsMultiple(jarray arg0, jint arg1)
+	JArray SpellCheckerService_Session::onGetSentenceSuggestionsMultiple(JArray arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"onGetSentenceSuggestionsMultiple",
 			"([Landroid/view/textservice/TextInfo;I)[Landroid/view/textservice/SentenceSuggestionsInfo;",
-			arg0,
+			arg0.object<jarray>(),
 			arg1
-		).object<jarray>();
+		);
 	}
 	android::view::textservice::SuggestionsInfo SpellCheckerService_Session::onGetSuggestions(android::view::textservice::TextInfo arg0, jint arg1)
 	{
@@ -78,15 +82,15 @@ namespace android::service::textservice
 			arg1
 		);
 	}
-	jarray SpellCheckerService_Session::onGetSuggestionsMultiple(jarray arg0, jint arg1, jboolean arg2)
+	JArray SpellCheckerService_Session::onGetSuggestionsMultiple(JArray arg0, jint arg1, jboolean arg2)
 	{
 		return callObjectMethod(
 			"onGetSuggestionsMultiple",
 			"([Landroid/view/textservice/TextInfo;IZ)[Landroid/view/textservice/SuggestionsInfo;",
-			arg0,
+			arg0.object<jarray>(),
 			arg1,
 			arg2
-		).object<jarray>();
+		);
 	}
 } // namespace android::service::textservice
 

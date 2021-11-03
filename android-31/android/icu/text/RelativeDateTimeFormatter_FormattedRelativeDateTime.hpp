@@ -6,6 +6,8 @@ namespace android::icu::text
 {
 	class ConstrainedFieldPosition;
 }
+class JString;
+class JString;
 
 namespace android::icu::text
 {
@@ -25,9 +27,9 @@ namespace android::icu::text
 		jchar charAt(jint arg0);
 		jint length();
 		jboolean nextPosition(android::icu::text::ConstrainedFieldPosition arg0);
-		jstring subSequence(jint arg0, jint arg1);
+		JString subSequence(jint arg0, jint arg1);
 		JObject toCharacterIterator();
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::icu::text
 

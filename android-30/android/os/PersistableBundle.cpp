@@ -1,6 +1,8 @@
 #include "./Parcel.hpp"
 #include "../../java/io/InputStream.hpp"
 #include "../../java/io/OutputStream.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./PersistableBundle.hpp"
 
 namespace android::os
@@ -55,12 +57,12 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	jobject PersistableBundle::clone()
+	JObject PersistableBundle::clone()
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
 	android::os::PersistableBundle PersistableBundle::deepCopy()
 	{
@@ -76,29 +78,29 @@ namespace android::os
 			"()I"
 		);
 	}
-	android::os::PersistableBundle PersistableBundle::getPersistableBundle(jstring arg0)
+	android::os::PersistableBundle PersistableBundle::getPersistableBundle(JString arg0)
 	{
 		return callObjectMethod(
 			"getPersistableBundle",
 			"(Ljava/lang/String;)Landroid/os/PersistableBundle;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	void PersistableBundle::putPersistableBundle(jstring arg0, android::os::PersistableBundle arg1)
+	void PersistableBundle::putPersistableBundle(JString arg0, android::os::PersistableBundle arg1)
 	{
 		callMethod<void>(
 			"putPersistableBundle",
 			"(Ljava/lang/String;Landroid/os/PersistableBundle;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
-	jstring PersistableBundle::toString()
+	JString PersistableBundle::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void PersistableBundle::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

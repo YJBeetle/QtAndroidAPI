@@ -1,6 +1,7 @@
 #include "../content/Context.hpp"
 #include "../text/TextUtils_TruncateAt.hpp"
 #include "./TextView_BufferType.hpp"
+#include "../../JString.hpp"
 #include "./EditText.hpp"
 
 namespace android::widget
@@ -51,12 +52,12 @@ namespace android::widget
 			arg0
 		);
 	}
-	jstring EditText::getAccessibilityClassName()
+	JString EditText::getAccessibilityClassName()
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	jboolean EditText::getFreezesText()
 	{
@@ -104,12 +105,12 @@ namespace android::widget
 			arg1
 		);
 	}
-	void EditText::setText(jstring arg0, android::widget::TextView_BufferType arg1)
+	void EditText::setText(JString arg0, android::widget::TextView_BufferType arg1)
 	{
 		callMethod<void>(
 			"setText",
 			"(Ljava/lang/CharSequence;Landroid/widget/TextView$BufferType;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}

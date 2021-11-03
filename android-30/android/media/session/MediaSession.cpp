@@ -10,6 +10,8 @@
 #include "./PlaybackState.hpp"
 #include "../../os/Bundle.hpp"
 #include "../../os/Handler.hpp"
+#include "../../../JString.hpp"
+#include "../../../JString.hpp"
 #include "./MediaSession.hpp"
 
 namespace android::media::session
@@ -34,19 +36,19 @@ namespace android::media::session
 	MediaSession::MediaSession(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	MediaSession::MediaSession(android::content::Context arg0, jstring arg1)
+	MediaSession::MediaSession(android::content::Context arg0, JString arg1)
 		: JObject(
 			"android.media.session.MediaSession",
 			"(Landroid/content/Context;Ljava/lang/String;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		) {}
-	MediaSession::MediaSession(android::content::Context arg0, jstring arg1, android::os::Bundle arg2)
+	MediaSession::MediaSession(android::content::Context arg0, JString arg1, android::os::Bundle arg2)
 		: JObject(
 			"android.media.session.MediaSession",
 			"(Landroid/content/Context;Ljava/lang/String;Landroid/os/Bundle;)V",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2.object()
 		) {}
 	
@@ -86,12 +88,12 @@ namespace android::media::session
 			"()V"
 		);
 	}
-	void MediaSession::sendSessionEvent(jstring arg0, android::os::Bundle arg1)
+	void MediaSession::sendSessionEvent(JString arg0, android::os::Bundle arg1)
 	{
 		callMethod<void>(
 			"sendSessionEvent",
 			"(Ljava/lang/String;Landroid/os/Bundle;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
@@ -184,12 +186,12 @@ namespace android::media::session
 			arg0.object()
 		);
 	}
-	void MediaSession::setQueueTitle(jstring arg0)
+	void MediaSession::setQueueTitle(JString arg0)
 	{
 		callMethod<void>(
 			"setQueueTitle",
 			"(Ljava/lang/CharSequence;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void MediaSession::setRatingType(jint arg0)

@@ -1,3 +1,5 @@
+#include "../../../JArray.hpp"
+#include "../../../JArray.hpp"
 #include "../../os/Bundle.hpp"
 #include "../../os/ResultReceiver.hpp"
 #include "../KeyEvent.hpp"
@@ -6,6 +8,7 @@
 #include "./ExtractedText.hpp"
 #include "./InputMethodInfo.hpp"
 #include "./InputMethodSubtype.hpp"
+#include "../../../JString.hpp"
 #include "./InputMethodManager.hpp"
 
 namespace android::view::inputmethod
@@ -83,13 +86,13 @@ namespace android::view::inputmethod
 			arg1.object()
 		);
 	}
-	void InputMethodManager::displayCompletions(android::view::View arg0, jarray arg1)
+	void InputMethodManager::displayCompletions(android::view::View arg0, JArray arg1)
 	{
 		callMethod<void>(
 			"displayCompletions",
 			"(Landroid/view/View;[Landroid/view/inputmethod/CompletionInfo;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jarray>()
 		);
 	}
 	android::view::inputmethod::InputMethodSubtype InputMethodManager::getCurrentInputMethodSubtype()
@@ -224,23 +227,23 @@ namespace android::view::inputmethod
 			arg0.object()
 		);
 	}
-	void InputMethodManager::sendAppPrivateCommand(android::view::View arg0, jstring arg1, android::os::Bundle arg2)
+	void InputMethodManager::sendAppPrivateCommand(android::view::View arg0, JString arg1, android::os::Bundle arg2)
 	{
 		callMethod<void>(
 			"sendAppPrivateCommand",
 			"(Landroid/view/View;Ljava/lang/String;Landroid/os/Bundle;)V",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2.object()
 		);
 	}
-	void InputMethodManager::setAdditionalInputMethodSubtypes(jstring arg0, jarray arg1)
+	void InputMethodManager::setAdditionalInputMethodSubtypes(JString arg0, JArray arg1)
 	{
 		callMethod<void>(
 			"setAdditionalInputMethodSubtypes",
 			"(Ljava/lang/String;[Landroid/view/inputmethod/InputMethodSubtype;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jarray>()
 		);
 	}
 	jboolean InputMethodManager::setCurrentInputMethodSubtype(android::view::inputmethod::InputMethodSubtype arg0)
@@ -251,22 +254,22 @@ namespace android::view::inputmethod
 			arg0.object()
 		);
 	}
-	void InputMethodManager::setInputMethod(JObject arg0, jstring arg1)
+	void InputMethodManager::setInputMethod(JObject arg0, JString arg1)
 	{
 		callMethod<void>(
 			"setInputMethod",
 			"(Landroid/os/IBinder;Ljava/lang/String;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
-	void InputMethodManager::setInputMethodAndSubtype(JObject arg0, jstring arg1, android::view::inputmethod::InputMethodSubtype arg2)
+	void InputMethodManager::setInputMethodAndSubtype(JObject arg0, JString arg1, android::view::inputmethod::InputMethodSubtype arg2)
 	{
 		callMethod<void>(
 			"setInputMethodAndSubtype",
 			"(Landroid/os/IBinder;Ljava/lang/String;Landroid/view/inputmethod/InputMethodSubtype;)V",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2.object()
 		);
 	}
@@ -278,12 +281,12 @@ namespace android::view::inputmethod
 			arg0.object()
 		);
 	}
-	void InputMethodManager::showInputMethodAndSubtypeEnabler(jstring arg0)
+	void InputMethodManager::showInputMethodAndSubtypeEnabler(JString arg0)
 	{
 		callMethod<void>(
 			"showInputMethodAndSubtypeEnabler",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void InputMethodManager::showInputMethodPicker()
@@ -321,13 +324,13 @@ namespace android::view::inputmethod
 			arg1
 		);
 	}
-	void InputMethodManager::showStatusIcon(JObject arg0, jstring arg1, jint arg2)
+	void InputMethodManager::showStatusIcon(JObject arg0, JString arg1, jint arg2)
 	{
 		callMethod<void>(
 			"showStatusIcon",
 			"(Landroid/os/IBinder;Ljava/lang/String;I)V",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2
 		);
 	}

@@ -1,15 +1,17 @@
 #include "../../os/Parcel.hpp"
+#include "../../../JString.hpp"
+#include "../../../JString.hpp"
 #include "./ScanResult.hpp"
 
 namespace android::net::wifi
 {
 	// Fields
-	jstring ScanResult::BSSID()
+	JString ScanResult::BSSID()
 	{
 		return getObjectField(
 			"BSSID",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint ScanResult::CHANNEL_WIDTH_160MHZ()
 	{
@@ -46,19 +48,19 @@ namespace android::net::wifi
 			"CHANNEL_WIDTH_80MHZ_PLUS_MHZ"
 		);
 	}
-	jstring ScanResult::SSID()
+	JString ScanResult::SSID()
 	{
 		return getObjectField(
 			"SSID",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ScanResult::capabilities()
+	JString ScanResult::capabilities()
 	{
 		return getObjectField(
 			"capabilities",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint ScanResult::centerFreq0()
 	{
@@ -90,12 +92,12 @@ namespace android::net::wifi
 			"level"
 		);
 	}
-	jstring ScanResult::operatorFriendlyName()
+	JString ScanResult::operatorFriendlyName()
 	{
 		return getObjectField(
 			"operatorFriendlyName",
 			"Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	jlong ScanResult::timestamp()
 	{
@@ -103,12 +105,12 @@ namespace android::net::wifi
 			"timestamp"
 		);
 	}
-	jstring ScanResult::venueName()
+	JString ScanResult::venueName()
 	{
 		return getObjectField(
 			"venueName",
 			"Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	
 	// QAndroidJniObject forward
@@ -138,12 +140,12 @@ namespace android::net::wifi
 			"()Z"
 		);
 	}
-	jstring ScanResult::toString()
+	JString ScanResult::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void ScanResult::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

@@ -4,6 +4,8 @@
 #include "../../graphics/drawable/Icon.hpp"
 #include "../../os/Bundle.hpp"
 #include "../../os/Parcel.hpp"
+#include "../../../JString.hpp"
+#include "../../../JString.hpp"
 #include "./SliceItem.hpp"
 
 namespace android::app::slice
@@ -17,69 +19,69 @@ namespace android::app::slice
 			"Landroid/os/Parcelable$Creator;"
 		);
 	}
-	jstring SliceItem::FORMAT_ACTION()
+	JString SliceItem::FORMAT_ACTION()
 	{
 		return getStaticObjectField(
 			"android.app.slice.SliceItem",
 			"FORMAT_ACTION",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring SliceItem::FORMAT_BUNDLE()
+	JString SliceItem::FORMAT_BUNDLE()
 	{
 		return getStaticObjectField(
 			"android.app.slice.SliceItem",
 			"FORMAT_BUNDLE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring SliceItem::FORMAT_IMAGE()
+	JString SliceItem::FORMAT_IMAGE()
 	{
 		return getStaticObjectField(
 			"android.app.slice.SliceItem",
 			"FORMAT_IMAGE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring SliceItem::FORMAT_INT()
+	JString SliceItem::FORMAT_INT()
 	{
 		return getStaticObjectField(
 			"android.app.slice.SliceItem",
 			"FORMAT_INT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring SliceItem::FORMAT_LONG()
+	JString SliceItem::FORMAT_LONG()
 	{
 		return getStaticObjectField(
 			"android.app.slice.SliceItem",
 			"FORMAT_LONG",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring SliceItem::FORMAT_REMOTE_INPUT()
+	JString SliceItem::FORMAT_REMOTE_INPUT()
 	{
 		return getStaticObjectField(
 			"android.app.slice.SliceItem",
 			"FORMAT_REMOTE_INPUT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring SliceItem::FORMAT_SLICE()
+	JString SliceItem::FORMAT_SLICE()
 	{
 		return getStaticObjectField(
 			"android.app.slice.SliceItem",
 			"FORMAT_SLICE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring SliceItem::FORMAT_TEXT()
+	JString SliceItem::FORMAT_TEXT()
 	{
 		return getStaticObjectField(
 			"android.app.slice.SliceItem",
 			"FORMAT_TEXT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QAndroidJniObject forward
@@ -109,12 +111,12 @@ namespace android::app::slice
 			"()Landroid/os/Bundle;"
 		);
 	}
-	jstring SliceItem::getFormat()
+	JString SliceItem::getFormat()
 	{
 		return callObjectMethod(
 			"getFormat",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	JObject SliceItem::getHints()
 	{
@@ -158,26 +160,26 @@ namespace android::app::slice
 			"()Landroid/app/slice/Slice;"
 		);
 	}
-	jstring SliceItem::getSubType()
+	JString SliceItem::getSubType()
 	{
 		return callObjectMethod(
 			"getSubType",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring SliceItem::getText()
+	JString SliceItem::getText()
 	{
 		return callObjectMethod(
 			"getText",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
-	jboolean SliceItem::hasHint(jstring arg0)
+	jboolean SliceItem::hasHint(JString arg0)
 	{
 		return callMethod<jboolean>(
 			"hasHint",
 			"(Ljava/lang/String;)Z",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void SliceItem::writeToParcel(android::os::Parcel arg0, jint arg1)

@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../../../JObject.hpp"
 #include "../TransformerFactory.hpp"
 
+class JString;
 
 namespace javax::xml::transform::sax
 {
@@ -10,8 +10,8 @@ namespace javax::xml::transform::sax
 	{
 	public:
 		// Fields
-		static jstring FEATURE();
-		static jstring FEATURE_XMLFILTER();
+		static JString FEATURE();
+		static JString FEATURE_XMLFILTER();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SAXTransformerFactory(const char *className, const char *sig, Ts...agv) : javax::xml::transform::TransformerFactory(className, sig, std::forward<Ts>(agv)...) {}

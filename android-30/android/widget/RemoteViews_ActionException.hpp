@@ -1,13 +1,12 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../../java/lang/Exception.hpp"
 #include "../../java/lang/RuntimeException.hpp"
 
 namespace java::lang
 {
 	class Exception;
 }
+class JString;
 
 namespace android::widget
 {
@@ -22,7 +21,7 @@ namespace android::widget
 		
 		// Constructors
 		RemoteViews_ActionException(java::lang::Exception arg0);
-		RemoteViews_ActionException(jstring arg0);
+		RemoteViews_ActionException(JString arg0);
 		
 		// Methods
 	};

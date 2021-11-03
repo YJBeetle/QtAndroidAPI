@@ -1,18 +1,19 @@
 #include "../../../../java/io/File.hpp"
 #include "../../../../java/io/InputStream.hpp"
 #include "../../../../java/io/Reader.hpp"
+#include "../../../../JString.hpp"
 #include "./StreamSource.hpp"
 
 namespace javax::xml::transform::stream
 {
 	// Fields
-	jstring StreamSource::FEATURE()
+	JString StreamSource::FEATURE()
 	{
 		return getStaticObjectField(
 			"javax.xml.transform.stream.StreamSource",
 			"FEATURE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QAndroidJniObject forward
@@ -42,25 +43,25 @@ namespace javax::xml::transform::stream
 			"(Ljava/io/Reader;)V",
 			arg0.object()
 		) {}
-	StreamSource::StreamSource(jstring arg0)
+	StreamSource::StreamSource(JString arg0)
 		: JObject(
 			"javax.xml.transform.stream.StreamSource",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	StreamSource::StreamSource(java::io::InputStream arg0, jstring arg1)
+	StreamSource::StreamSource(java::io::InputStream arg0, JString arg1)
 		: JObject(
 			"javax.xml.transform.stream.StreamSource",
 			"(Ljava/io/InputStream;Ljava/lang/String;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		) {}
-	StreamSource::StreamSource(java::io::Reader arg0, jstring arg1)
+	StreamSource::StreamSource(java::io::Reader arg0, JString arg1)
 		: JObject(
 			"javax.xml.transform.stream.StreamSource",
 			"(Ljava/io/Reader;Ljava/lang/String;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		) {}
 	
 	// Methods
@@ -71,12 +72,12 @@ namespace javax::xml::transform::stream
 			"()Ljava/io/InputStream;"
 		);
 	}
-	jstring StreamSource::getPublicId()
+	JString StreamSource::getPublicId()
 	{
 		return callObjectMethod(
 			"getPublicId",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	java::io::Reader StreamSource::getReader()
 	{
@@ -85,12 +86,12 @@ namespace javax::xml::transform::stream
 			"()Ljava/io/Reader;"
 		);
 	}
-	jstring StreamSource::getSystemId()
+	JString StreamSource::getSystemId()
 	{
 		return callObjectMethod(
 			"getSystemId",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jboolean StreamSource::isEmpty()
 	{
@@ -107,12 +108,12 @@ namespace javax::xml::transform::stream
 			arg0.object()
 		);
 	}
-	void StreamSource::setPublicId(jstring arg0)
+	void StreamSource::setPublicId(JString arg0)
 	{
 		callMethod<void>(
 			"setPublicId",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void StreamSource::setReader(java::io::Reader arg0)
@@ -131,12 +132,12 @@ namespace javax::xml::transform::stream
 			arg0.object()
 		);
 	}
-	void StreamSource::setSystemId(jstring arg0)
+	void StreamSource::setSystemId(JString arg0)
 	{
 		callMethod<void>(
 			"setSystemId",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 } // namespace javax::xml::transform::stream

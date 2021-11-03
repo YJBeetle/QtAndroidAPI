@@ -6,6 +6,7 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
 
 namespace android::content::res
 {
@@ -15,9 +16,9 @@ namespace android::content::res
 		// Fields
 		static JObject CREATOR();
 		static jint OBB_OVERLAY();
-		jstring filename();
+		JString filename();
 		jint flags();
-		jstring packageName();
+		JString packageName();
 		jint version();
 		
 		// QAndroidJniObject forward
@@ -28,7 +29,7 @@ namespace android::content::res
 		
 		// Methods
 		jint describeContents();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::content::res

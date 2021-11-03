@@ -1,5 +1,8 @@
 #include "../../os/Bundle.hpp"
 #include "../../os/Parcel.hpp"
+#include "../../../JString.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./TranslationResponseValue.hpp"
 
 namespace android::view::translation
@@ -13,13 +16,13 @@ namespace android::view::translation
 			"Landroid/os/Parcelable$Creator;"
 		);
 	}
-	jstring TranslationResponseValue::EXTRA_DEFINITIONS()
+	JString TranslationResponseValue::EXTRA_DEFINITIONS()
 	{
 		return getStaticObjectField(
 			"android.view.translation.TranslationResponseValue",
 			"EXTRA_DEFINITIONS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint TranslationResponseValue::STATUS_ERROR()
 	{
@@ -57,12 +60,12 @@ namespace android::view::translation
 			"()I"
 		);
 	}
-	jboolean TranslationResponseValue::equals(jobject arg0)
+	jboolean TranslationResponseValue::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	android::os::Bundle TranslationResponseValue::getExtras()
@@ -79,19 +82,19 @@ namespace android::view::translation
 			"()I"
 		);
 	}
-	jstring TranslationResponseValue::getText()
+	JString TranslationResponseValue::getText()
 	{
 		return callObjectMethod(
 			"getText",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
-	jstring TranslationResponseValue::getTransliteration()
+	JString TranslationResponseValue::getTransliteration()
 	{
 		return callObjectMethod(
 			"getTransliteration",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	jint TranslationResponseValue::hashCode()
 	{
@@ -100,12 +103,12 @@ namespace android::view::translation
 			"()I"
 		);
 	}
-	jstring TranslationResponseValue::toString()
+	JString TranslationResponseValue::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void TranslationResponseValue::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JIntArray;
+class JString;
 
 namespace android::media
 {
@@ -19,12 +21,12 @@ namespace android::media
 		// Constructors
 		
 		// Methods
-		jintArray getChannelIndexMasks();
-		jintArray getChannelMasks();
+		JIntArray getChannelIndexMasks();
+		JIntArray getChannelMasks();
 		jint getEncapsulationType();
 		jint getFormat();
-		jintArray getSampleRates();
-		jstring toString();
+		JIntArray getSampleRates();
+		JString toString();
 	};
 } // namespace android::media
 

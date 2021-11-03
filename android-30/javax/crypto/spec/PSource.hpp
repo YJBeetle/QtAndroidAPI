@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JString;
 
 namespace javax::crypto::spec
 {
@@ -17,7 +18,7 @@ namespace javax::crypto::spec
 		// Constructors
 		
 		// Methods
-		jstring getAlgorithm();
+		JString getAlgorithm();
 	};
 } // namespace javax::crypto::spec
 

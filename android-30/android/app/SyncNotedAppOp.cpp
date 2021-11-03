@@ -1,4 +1,6 @@
 #include "../os/Parcel.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./SyncNotedAppOp.hpp"
 
 namespace android::app
@@ -17,12 +19,12 @@ namespace android::app
 	SyncNotedAppOp::SyncNotedAppOp(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	SyncNotedAppOp::SyncNotedAppOp(jint arg0, jstring arg1)
+	SyncNotedAppOp::SyncNotedAppOp(jint arg0, JString arg1)
 		: JObject(
 			"android.app.SyncNotedAppOp",
 			"(ILjava/lang/String;)V",
 			arg0,
-			arg1
+			arg1.object<jstring>()
 		) {}
 	
 	// Methods
@@ -33,27 +35,27 @@ namespace android::app
 			"()I"
 		);
 	}
-	jboolean SyncNotedAppOp::equals(jobject arg0)
+	jboolean SyncNotedAppOp::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jstring SyncNotedAppOp::getAttributionTag()
+	JString SyncNotedAppOp::getAttributionTag()
 	{
 		return callObjectMethod(
 			"getAttributionTag",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring SyncNotedAppOp::getOp()
+	JString SyncNotedAppOp::getOp()
 	{
 		return callObjectMethod(
 			"getOp",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint SyncNotedAppOp::hashCode()
 	{

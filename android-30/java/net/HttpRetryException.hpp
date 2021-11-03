@@ -1,9 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../lang/Exception.hpp"
 #include "../io/IOException.hpp"
 
+class JString;
 
 namespace java::net
 {
@@ -17,12 +16,12 @@ namespace java::net
 		HttpRetryException(QAndroidJniObject obj);
 		
 		// Constructors
-		HttpRetryException(jstring arg0, jint arg1);
-		HttpRetryException(jstring arg0, jint arg1, jstring arg2);
+		HttpRetryException(JString arg0, jint arg1);
+		HttpRetryException(JString arg0, jint arg1, JString arg2);
 		
 		// Methods
-		jstring getLocation();
-		jstring getReason();
+		JString getLocation();
+		JString getReason();
 		jint responseCode();
 	};
 } // namespace java::net

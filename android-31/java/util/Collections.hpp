@@ -2,6 +2,9 @@
 
 #include "../../JObject.hpp"
 
+class JObjectArray;
+class JClass;
+class JObject;
 namespace java::util
 {
 	class ArrayList;
@@ -28,19 +31,19 @@ namespace java::util
 		// Constructors
 		
 		// Methods
-		static jboolean addAll(JObject arg0, jobjectArray arg1);
+		static jboolean addAll(JObject arg0, JObjectArray arg1);
 		static JObject asLifoQueue(JObject arg0);
-		static jint binarySearch(JObject arg0, jobject arg1);
-		static jint binarySearch(JObject arg0, jobject arg1, JObject arg2);
-		static JObject checkedCollection(JObject arg0, jclass arg1);
-		static JObject checkedList(JObject arg0, jclass arg1);
-		static JObject checkedMap(JObject arg0, jclass arg1, jclass arg2);
-		static JObject checkedNavigableMap(JObject arg0, jclass arg1, jclass arg2);
-		static JObject checkedNavigableSet(JObject arg0, jclass arg1);
-		static JObject checkedQueue(JObject arg0, jclass arg1);
-		static JObject checkedSet(JObject arg0, jclass arg1);
-		static JObject checkedSortedMap(JObject arg0, jclass arg1, jclass arg2);
-		static JObject checkedSortedSet(JObject arg0, jclass arg1);
+		static jint binarySearch(JObject arg0, JObject arg1);
+		static jint binarySearch(JObject arg0, JObject arg1, JObject arg2);
+		static JObject checkedCollection(JObject arg0, JClass arg1);
+		static JObject checkedList(JObject arg0, JClass arg1);
+		static JObject checkedMap(JObject arg0, JClass arg1, JClass arg2);
+		static JObject checkedNavigableMap(JObject arg0, JClass arg1, JClass arg2);
+		static JObject checkedNavigableSet(JObject arg0, JClass arg1);
+		static JObject checkedQueue(JObject arg0, JClass arg1);
+		static JObject checkedSet(JObject arg0, JClass arg1);
+		static JObject checkedSortedMap(JObject arg0, JClass arg1, JClass arg2);
+		static JObject checkedSortedSet(JObject arg0, JClass arg1);
 		static void copy(JObject arg0, JObject arg1);
 		static jboolean disjoint(JObject arg0, JObject arg1);
 		static JObject emptyEnumeration();
@@ -54,27 +57,27 @@ namespace java::util
 		static JObject emptySortedMap();
 		static JObject emptySortedSet();
 		static JObject enumeration(JObject arg0);
-		static void fill(JObject arg0, jobject arg1);
-		static jint frequency(JObject arg0, jobject arg1);
+		static void fill(JObject arg0, JObject arg1);
+		static jint frequency(JObject arg0, JObject arg1);
 		static jint indexOfSubList(JObject arg0, JObject arg1);
 		static jint lastIndexOfSubList(JObject arg0, JObject arg1);
 		static java::util::ArrayList list(JObject arg0);
-		static jobject max(JObject arg0);
-		static jobject max(JObject arg0, JObject arg1);
-		static jobject min(JObject arg0);
-		static jobject min(JObject arg0, JObject arg1);
-		static JObject nCopies(jint arg0, jobject arg1);
+		static JObject max(JObject arg0);
+		static JObject max(JObject arg0, JObject arg1);
+		static JObject min(JObject arg0);
+		static JObject min(JObject arg0, JObject arg1);
+		static JObject nCopies(jint arg0, JObject arg1);
 		static JObject newSetFromMap(JObject arg0);
-		static jboolean replaceAll(JObject arg0, jobject arg1, jobject arg2);
+		static jboolean replaceAll(JObject arg0, JObject arg1, JObject arg2);
 		static void reverse(JObject arg0);
 		static JObject reverseOrder();
 		static JObject reverseOrder(JObject arg0);
 		static void rotate(JObject arg0, jint arg1);
 		static void shuffle(JObject arg0);
 		static void shuffle(JObject arg0, java::util::Random arg1);
-		static JObject singleton(jobject arg0);
-		static JObject singletonList(jobject arg0);
-		static JObject singletonMap(jobject arg0, jobject arg1);
+		static JObject singleton(JObject arg0);
+		static JObject singletonList(JObject arg0);
+		static JObject singletonMap(JObject arg0, JObject arg1);
 		static void sort(JObject arg0);
 		static void sort(JObject arg0, JObject arg1);
 		static void swap(JObject arg0, jint arg1, jint arg2);

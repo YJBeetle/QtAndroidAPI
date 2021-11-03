@@ -1,6 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./BaseObj.hpp"
 
 namespace android::renderscript
@@ -15,6 +14,7 @@ namespace android::renderscript
 {
 	class RenderScript;
 }
+class JString;
 
 namespace android::renderscript
 {
@@ -105,7 +105,7 @@ namespace android::renderscript
 		android::renderscript::Element getSubElement(jint arg0);
 		jint getSubElementArraySize(jint arg0);
 		jint getSubElementCount();
-		jstring getSubElementName(jint arg0);
+		JString getSubElementName(jint arg0);
 		jint getSubElementOffsetBytes(jint arg0);
 		jint getVectorSize();
 		jboolean isCompatible(android::renderscript::Element arg0);

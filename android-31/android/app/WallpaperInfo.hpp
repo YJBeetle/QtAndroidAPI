@@ -34,6 +34,8 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
+class JString;
 
 namespace android::app
 {
@@ -52,23 +54,23 @@ namespace android::app
 		
 		// Methods
 		jint describeContents();
-		void dump(JObject arg0, jstring arg1);
+		void dump(JObject arg0, JString arg1);
 		android::content::ComponentName getComponent();
-		jstring getPackageName();
+		JString getPackageName();
 		android::content::pm::ServiceInfo getServiceInfo();
-		jstring getServiceName();
-		jstring getSettingsActivity();
+		JString getServiceName();
+		JString getSettingsActivity();
 		android::net::Uri getSettingsSliceUri();
 		jboolean getShowMetadataInPreview();
-		jstring loadAuthor(android::content::pm::PackageManager arg0);
-		jstring loadContextDescription(android::content::pm::PackageManager arg0);
+		JString loadAuthor(android::content::pm::PackageManager arg0);
+		JString loadContextDescription(android::content::pm::PackageManager arg0);
 		android::net::Uri loadContextUri(android::content::pm::PackageManager arg0);
-		jstring loadDescription(android::content::pm::PackageManager arg0);
+		JString loadDescription(android::content::pm::PackageManager arg0);
 		android::graphics::drawable::Drawable loadIcon(android::content::pm::PackageManager arg0);
-		jstring loadLabel(android::content::pm::PackageManager arg0);
+		JString loadLabel(android::content::pm::PackageManager arg0);
 		android::graphics::drawable::Drawable loadThumbnail(android::content::pm::PackageManager arg0);
 		jboolean supportsMultipleDisplays();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::app

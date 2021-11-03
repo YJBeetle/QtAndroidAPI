@@ -1,10 +1,8 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "../../lang/Exception.hpp"
-#include "../../io/IOException.hpp"
 #include "./FileSystemException.hpp"
 
+class JString;
 
 namespace java::nio::file
 {
@@ -18,7 +16,7 @@ namespace java::nio::file
 		DirectoryNotEmptyException(QAndroidJniObject obj);
 		
 		// Constructors
-		DirectoryNotEmptyException(jstring arg0);
+		DirectoryNotEmptyException(JString arg0);
 		
 		// Methods
 	};

@@ -18,6 +18,7 @@ namespace android::media
 {
 	class MediaRouter_UserRouteInfo;
 }
+class JString;
 
 namespace android::media
 {
@@ -43,7 +44,7 @@ namespace android::media
 		void addUserRoute(android::media::MediaRouter_UserRouteInfo arg0);
 		void clearUserRoutes();
 		android::media::MediaRouter_RouteCategory createRouteCategory(jint arg0, jboolean arg1);
-		android::media::MediaRouter_RouteCategory createRouteCategory(jstring arg0, jboolean arg1);
+		android::media::MediaRouter_RouteCategory createRouteCategory(JString arg0, jboolean arg1);
 		android::media::MediaRouter_UserRouteInfo createUserRoute(android::media::MediaRouter_RouteCategory arg0);
 		android::media::MediaRouter_RouteCategory getCategoryAt(jint arg0);
 		jint getCategoryCount();

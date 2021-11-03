@@ -6,6 +6,7 @@ namespace android::icu::text
 {
 	class AlphabeticIndex_Bucket;
 }
+class JString;
 
 namespace android::icu::text
 {
@@ -23,7 +24,7 @@ namespace android::icu::text
 		// Methods
 		android::icu::text::AlphabeticIndex_Bucket getBucket(jint arg0);
 		jint getBucketCount();
-		jint getBucketIndex(jstring arg0);
+		jint getBucketIndex(JString arg0);
 		JObject iterator();
 	};
 } // namespace android::icu::text

@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JObject;
+class JString;
 
 namespace android::util
 {
@@ -9,21 +11,21 @@ namespace android::util
 	{
 	public:
 		// Fields
-		jobject first();
-		jobject second();
+		JObject first();
+		JObject second();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Pair(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Pair(QAndroidJniObject obj);
 		
 		// Constructors
-		Pair(jobject arg0, jobject arg1);
+		Pair(JObject arg0, JObject arg1);
 		
 		// Methods
-		static android::util::Pair create(jobject arg0, jobject arg1);
-		jboolean equals(jobject arg0);
+		static android::util::Pair create(JObject arg0, JObject arg1);
+		jboolean equals(JObject arg0);
 		jint hashCode();
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::util
 

@@ -1,6 +1,10 @@
+#include "../../JArray.hpp"
 #include "../content/pm/PackageManager.hpp"
 #include "../content/pm/ResolveInfo.hpp"
 #include "../os/Parcel.hpp"
+#include "../../JString.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./AccessibilityServiceInfo.hpp"
 
 namespace android::accessibilityservice
@@ -234,12 +238,12 @@ namespace android::accessibilityservice
 			"notificationTimeout"
 		);
 	}
-	jarray AccessibilityServiceInfo::packageNames()
+	JArray AccessibilityServiceInfo::packageNames()
 	{
 		return getObjectField(
 			"packageNames",
 			"[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
 	
 	// QAndroidJniObject forward
@@ -253,32 +257,32 @@ namespace android::accessibilityservice
 		) {}
 	
 	// Methods
-	jstring AccessibilityServiceInfo::capabilityToString(jint arg0)
+	JString AccessibilityServiceInfo::capabilityToString(jint arg0)
 	{
 		return callStaticObjectMethod(
 			"android.accessibilityservice.AccessibilityServiceInfo",
 			"capabilityToString",
 			"(I)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
-	jstring AccessibilityServiceInfo::feedbackTypeToString(jint arg0)
+	JString AccessibilityServiceInfo::feedbackTypeToString(jint arg0)
 	{
 		return callStaticObjectMethod(
 			"android.accessibilityservice.AccessibilityServiceInfo",
 			"feedbackTypeToString",
 			"(I)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
-	jstring AccessibilityServiceInfo::flagToString(jint arg0)
+	JString AccessibilityServiceInfo::flagToString(jint arg0)
 	{
 		return callStaticObjectMethod(
 			"android.accessibilityservice.AccessibilityServiceInfo",
 			"flagToString",
 			"(I)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
 	jint AccessibilityServiceInfo::describeContents()
 	{
@@ -287,12 +291,12 @@ namespace android::accessibilityservice
 			"()I"
 		);
 	}
-	jboolean AccessibilityServiceInfo::equals(jobject arg0)
+	jboolean AccessibilityServiceInfo::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jboolean AccessibilityServiceInfo::getCanRetrieveWindowContent()
@@ -309,19 +313,19 @@ namespace android::accessibilityservice
 			"()I"
 		);
 	}
-	jstring AccessibilityServiceInfo::getDescription()
+	JString AccessibilityServiceInfo::getDescription()
 	{
 		return callObjectMethod(
 			"getDescription",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring AccessibilityServiceInfo::getId()
+	JString AccessibilityServiceInfo::getId()
 	{
 		return callObjectMethod(
 			"getId",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint AccessibilityServiceInfo::getInteractiveUiTimeoutMillis()
 	{
@@ -344,12 +348,12 @@ namespace android::accessibilityservice
 			"()Landroid/content/pm/ResolveInfo;"
 		);
 	}
-	jstring AccessibilityServiceInfo::getSettingsActivityName()
+	JString AccessibilityServiceInfo::getSettingsActivityName()
 	{
 		return callObjectMethod(
 			"getSettingsActivityName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint AccessibilityServiceInfo::hashCode()
 	{
@@ -358,21 +362,21 @@ namespace android::accessibilityservice
 			"()I"
 		);
 	}
-	jstring AccessibilityServiceInfo::loadDescription(android::content::pm::PackageManager arg0)
+	JString AccessibilityServiceInfo::loadDescription(android::content::pm::PackageManager arg0)
 	{
 		return callObjectMethod(
 			"loadDescription",
 			"(Landroid/content/pm/PackageManager;)Ljava/lang/String;",
 			arg0.object()
-		).object<jstring>();
+		);
 	}
-	jstring AccessibilityServiceInfo::loadSummary(android::content::pm::PackageManager arg0)
+	JString AccessibilityServiceInfo::loadSummary(android::content::pm::PackageManager arg0)
 	{
 		return callObjectMethod(
 			"loadSummary",
 			"(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;",
 			arg0.object()
-		).object<jstring>();
+		);
 	}
 	void AccessibilityServiceInfo::setInteractiveUiTimeoutMillis(jint arg0)
 	{
@@ -390,12 +394,12 @@ namespace android::accessibilityservice
 			arg0
 		);
 	}
-	jstring AccessibilityServiceInfo::toString()
+	JString AccessibilityServiceInfo::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void AccessibilityServiceInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

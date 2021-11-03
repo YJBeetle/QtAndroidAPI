@@ -1,4 +1,5 @@
 #include "../../java/lang/Integer.hpp"
+#include "../../JObject.hpp"
 #include "./IntEvaluator.hpp"
 
 namespace android::animation
@@ -26,15 +27,15 @@ namespace android::animation
 			arg2.object()
 		);
 	}
-	jobject IntEvaluator::evaluate(jfloat arg0, jobject arg1, jobject arg2)
+	JObject IntEvaluator::evaluate(jfloat arg0, JObject arg1, JObject arg2)
 	{
 		return callObjectMethod(
 			"evaluate",
 			"(FLjava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
 			arg0,
-			arg1,
-			arg2
-		).object<jobject>();
+			arg1.object<jobject>(),
+			arg2.object<jobject>()
+		);
 	}
 } // namespace android::animation
 

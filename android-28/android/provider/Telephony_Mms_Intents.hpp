@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JString;
 
 namespace android::provider
 {
@@ -9,8 +10,8 @@ namespace android::provider
 	{
 	public:
 		// Fields
-		static jstring CONTENT_CHANGED_ACTION();
-		static jstring DELETED_CONTENTS();
+		static JString CONTENT_CHANGED_ACTION();
+		static JString DELETED_CONTENTS();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Telephony_Mms_Intents(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}

@@ -10,6 +10,7 @@ namespace android::os
 {
 	class PersistableBundle;
 }
+class JString;
 
 namespace android::text::style
 {
@@ -17,51 +18,51 @@ namespace android::text::style
 	{
 	public:
 		// Fields
-		static jstring ANIMACY_ANIMATE();
-		static jstring ANIMACY_INANIMATE();
-		static jstring ARG_ANIMACY();
-		static jstring ARG_CASE();
-		static jstring ARG_COUNTRY_CODE();
-		static jstring ARG_CURRENCY();
-		static jstring ARG_DAY();
-		static jstring ARG_DENOMINATOR();
-		static jstring ARG_DIGITS();
-		static jstring ARG_DOMAIN();
-		static jstring ARG_EXTENSION();
-		static jstring ARG_FRACTIONAL_PART();
-		static jstring ARG_FRAGMENT_ID();
-		static jstring ARG_GENDER();
-		static jstring ARG_HOURS();
-		static jstring ARG_INTEGER_PART();
-		static jstring ARG_MINUTES();
-		static jstring ARG_MONTH();
-		static jstring ARG_MULTIPLICITY();
-		static jstring ARG_NUMBER();
-		static jstring ARG_NUMBER_PARTS();
-		static jstring ARG_NUMERATOR();
-		static jstring ARG_PASSWORD();
-		static jstring ARG_PATH();
-		static jstring ARG_PORT();
-		static jstring ARG_PROTOCOL();
-		static jstring ARG_QUANTITY();
-		static jstring ARG_QUERY_STRING();
-		static jstring ARG_TEXT();
-		static jstring ARG_UNIT();
-		static jstring ARG_USERNAME();
-		static jstring ARG_VERBATIM();
-		static jstring ARG_WEEKDAY();
-		static jstring ARG_YEAR();
-		static jstring CASE_ABLATIVE();
-		static jstring CASE_ACCUSATIVE();
-		static jstring CASE_DATIVE();
-		static jstring CASE_GENITIVE();
-		static jstring CASE_INSTRUMENTAL();
-		static jstring CASE_LOCATIVE();
-		static jstring CASE_NOMINATIVE();
-		static jstring CASE_VOCATIVE();
-		static jstring GENDER_FEMALE();
-		static jstring GENDER_MALE();
-		static jstring GENDER_NEUTRAL();
+		static JString ANIMACY_ANIMATE();
+		static JString ANIMACY_INANIMATE();
+		static JString ARG_ANIMACY();
+		static JString ARG_CASE();
+		static JString ARG_COUNTRY_CODE();
+		static JString ARG_CURRENCY();
+		static JString ARG_DAY();
+		static JString ARG_DENOMINATOR();
+		static JString ARG_DIGITS();
+		static JString ARG_DOMAIN();
+		static JString ARG_EXTENSION();
+		static JString ARG_FRACTIONAL_PART();
+		static JString ARG_FRAGMENT_ID();
+		static JString ARG_GENDER();
+		static JString ARG_HOURS();
+		static JString ARG_INTEGER_PART();
+		static JString ARG_MINUTES();
+		static JString ARG_MONTH();
+		static JString ARG_MULTIPLICITY();
+		static JString ARG_NUMBER();
+		static JString ARG_NUMBER_PARTS();
+		static JString ARG_NUMERATOR();
+		static JString ARG_PASSWORD();
+		static JString ARG_PATH();
+		static JString ARG_PORT();
+		static JString ARG_PROTOCOL();
+		static JString ARG_QUANTITY();
+		static JString ARG_QUERY_STRING();
+		static JString ARG_TEXT();
+		static JString ARG_UNIT();
+		static JString ARG_USERNAME();
+		static JString ARG_VERBATIM();
+		static JString ARG_WEEKDAY();
+		static JString ARG_YEAR();
+		static JString CASE_ABLATIVE();
+		static JString CASE_ACCUSATIVE();
+		static JString CASE_DATIVE();
+		static JString CASE_GENITIVE();
+		static JString CASE_INSTRUMENTAL();
+		static JString CASE_LOCATIVE();
+		static JString CASE_NOMINATIVE();
+		static JString CASE_VOCATIVE();
+		static JString GENDER_FEMALE();
+		static JString GENDER_MALE();
+		static JString GENDER_NEUTRAL();
 		static jint MONTH_APRIL();
 		static jint MONTH_AUGUST();
 		static jint MONTH_DECEMBER();
@@ -74,22 +75,22 @@ namespace android::text::style
 		static jint MONTH_NOVEMBER();
 		static jint MONTH_OCTOBER();
 		static jint MONTH_SEPTEMBER();
-		static jstring MULTIPLICITY_DUAL();
-		static jstring MULTIPLICITY_PLURAL();
-		static jstring MULTIPLICITY_SINGLE();
-		static jstring TYPE_CARDINAL();
-		static jstring TYPE_DATE();
-		static jstring TYPE_DECIMAL();
-		static jstring TYPE_DIGITS();
-		static jstring TYPE_ELECTRONIC();
-		static jstring TYPE_FRACTION();
-		static jstring TYPE_MEASURE();
-		static jstring TYPE_MONEY();
-		static jstring TYPE_ORDINAL();
-		static jstring TYPE_TELEPHONE();
-		static jstring TYPE_TEXT();
-		static jstring TYPE_TIME();
-		static jstring TYPE_VERBATIM();
+		static JString MULTIPLICITY_DUAL();
+		static JString MULTIPLICITY_PLURAL();
+		static JString MULTIPLICITY_SINGLE();
+		static JString TYPE_CARDINAL();
+		static JString TYPE_DATE();
+		static JString TYPE_DECIMAL();
+		static JString TYPE_DIGITS();
+		static JString TYPE_ELECTRONIC();
+		static JString TYPE_FRACTION();
+		static JString TYPE_MEASURE();
+		static JString TYPE_MONEY();
+		static JString TYPE_ORDINAL();
+		static JString TYPE_TELEPHONE();
+		static JString TYPE_TEXT();
+		static JString TYPE_TIME();
+		static JString TYPE_VERBATIM();
 		static jint WEEKDAY_FRIDAY();
 		static jint WEEKDAY_MONDAY();
 		static jint WEEKDAY_SATURDAY();
@@ -104,13 +105,13 @@ namespace android::text::style
 		
 		// Constructors
 		TtsSpan(android::os::Parcel arg0);
-		TtsSpan(jstring arg0, android::os::PersistableBundle arg1);
+		TtsSpan(JString arg0, android::os::PersistableBundle arg1);
 		
 		// Methods
 		jint describeContents();
 		android::os::PersistableBundle getArgs();
 		jint getSpanTypeId();
-		jstring getType();
+		JString getType();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::text::style

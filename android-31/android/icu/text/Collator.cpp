@@ -1,7 +1,14 @@
+#include "../../../JIntArray.hpp"
+#include "../../../JArray.hpp"
+#include "../../../JArray.hpp"
+#include "../../../JArray.hpp"
+#include "../../../JBooleanArray.hpp"
 #include "./CollationKey.hpp"
 #include "./UnicodeSet.hpp"
 #include "../util/ULocale.hpp"
 #include "../util/VersionInfo.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "../../../java/util/Locale.hpp"
 #include "./Collator.hpp"
 
@@ -71,41 +78,41 @@ namespace android::icu::text
 	// Constructors
 	
 	// Methods
-	jarray Collator::getAvailableLocales()
+	JArray Collator::getAvailableLocales()
 	{
 		return callStaticObjectMethod(
 			"android.icu.text.Collator",
 			"getAvailableLocales",
 			"()[Ljava/util/Locale;"
-		).object<jarray>();
+		);
 	}
-	jarray Collator::getAvailableULocales()
+	JArray Collator::getAvailableULocales()
 	{
 		return callStaticObjectMethod(
 			"android.icu.text.Collator",
 			"getAvailableULocales",
 			"()[Landroid/icu/util/ULocale;"
-		).object<jarray>();
+		);
 	}
-	jstring Collator::getDisplayName(android::icu::util::ULocale arg0)
+	JString Collator::getDisplayName(android::icu::util::ULocale arg0)
 	{
 		return callStaticObjectMethod(
 			"android.icu.text.Collator",
 			"getDisplayName",
 			"(Landroid/icu/util/ULocale;)Ljava/lang/String;",
 			arg0.object()
-		).object<jstring>();
+		);
 	}
-	jstring Collator::getDisplayName(java::util::Locale arg0)
+	JString Collator::getDisplayName(java::util::Locale arg0)
 	{
 		return callStaticObjectMethod(
 			"android.icu.text.Collator",
 			"getDisplayName",
 			"(Ljava/util/Locale;)Ljava/lang/String;",
 			arg0.object()
-		).object<jstring>();
+		);
 	}
-	jstring Collator::getDisplayName(android::icu::util::ULocale arg0, android::icu::util::ULocale arg1)
+	JString Collator::getDisplayName(android::icu::util::ULocale arg0, android::icu::util::ULocale arg1)
 	{
 		return callStaticObjectMethod(
 			"android.icu.text.Collator",
@@ -113,9 +120,9 @@ namespace android::icu::text
 			"(Landroid/icu/util/ULocale;Landroid/icu/util/ULocale;)Ljava/lang/String;",
 			arg0.object(),
 			arg1.object()
-		).object<jstring>();
+		);
 	}
-	jstring Collator::getDisplayName(java::util::Locale arg0, java::util::Locale arg1)
+	JString Collator::getDisplayName(java::util::Locale arg0, java::util::Locale arg1)
 	{
 		return callStaticObjectMethod(
 			"android.icu.text.Collator",
@@ -123,36 +130,36 @@ namespace android::icu::text
 			"(Ljava/util/Locale;Ljava/util/Locale;)Ljava/lang/String;",
 			arg0.object(),
 			arg1.object()
-		).object<jstring>();
+		);
 	}
-	jintArray Collator::getEquivalentReorderCodes(jint arg0)
+	JIntArray Collator::getEquivalentReorderCodes(jint arg0)
 	{
 		return callStaticObjectMethod(
 			"android.icu.text.Collator",
 			"getEquivalentReorderCodes",
 			"(I)[I",
 			arg0
-		).object<jintArray>();
+		);
 	}
-	android::icu::util::ULocale Collator::getFunctionalEquivalent(jstring arg0, android::icu::util::ULocale arg1)
+	android::icu::util::ULocale Collator::getFunctionalEquivalent(JString arg0, android::icu::util::ULocale arg1)
 	{
 		return callStaticObjectMethod(
 			"android.icu.text.Collator",
 			"getFunctionalEquivalent",
 			"(Ljava/lang/String;Landroid/icu/util/ULocale;)Landroid/icu/util/ULocale;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
-	android::icu::util::ULocale Collator::getFunctionalEquivalent(jstring arg0, android::icu::util::ULocale arg1, jbooleanArray arg2)
+	android::icu::util::ULocale Collator::getFunctionalEquivalent(JString arg0, android::icu::util::ULocale arg1, JBooleanArray arg2)
 	{
 		return callStaticObjectMethod(
 			"android.icu.text.Collator",
 			"getFunctionalEquivalent",
 			"(Ljava/lang/String;Landroid/icu/util/ULocale;[Z)Landroid/icu/util/ULocale;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
-			arg2
+			arg2.object<jbooleanArray>()
 		);
 	}
 	android::icu::text::Collator Collator::getInstance()
@@ -181,40 +188,40 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	jarray Collator::getKeywordValues(jstring arg0)
+	JArray Collator::getKeywordValues(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.icu.text.Collator",
 			"getKeywordValues",
 			"(Ljava/lang/String;)[Ljava/lang/String;",
-			arg0
-		).object<jarray>();
+			arg0.object<jstring>()
+		);
 	}
-	jarray Collator::getKeywordValuesForLocale(jstring arg0, android::icu::util::ULocale arg1, jboolean arg2)
+	JArray Collator::getKeywordValuesForLocale(JString arg0, android::icu::util::ULocale arg1, jboolean arg2)
 	{
 		return callStaticObjectMethod(
 			"android.icu.text.Collator",
 			"getKeywordValuesForLocale",
 			"(Ljava/lang/String;Landroid/icu/util/ULocale;Z)[Ljava/lang/String;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
 			arg2
-		).object<jarray>();
+		);
 	}
-	jarray Collator::getKeywords()
+	JArray Collator::getKeywords()
 	{
 		return callStaticObjectMethod(
 			"android.icu.text.Collator",
 			"getKeywords",
 			"()[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
-	jobject Collator::clone()
+	JObject Collator::clone()
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
 	android::icu::text::Collator Collator::cloneAsThawed()
 	{
@@ -223,39 +230,39 @@ namespace android::icu::text
 			"()Landroid/icu/text/Collator;"
 		);
 	}
-	jint Collator::compare(jobject arg0, jobject arg1)
+	jint Collator::compare(JObject arg0, JObject arg1)
 	{
 		return callMethod<jint>(
 			"compare",
 			"(Ljava/lang/Object;Ljava/lang/Object;)I",
-			arg0,
-			arg1
+			arg0.object<jobject>(),
+			arg1.object<jobject>()
 		);
 	}
-	jint Collator::compare(jstring arg0, jstring arg1)
+	jint Collator::compare(JString arg0, JString arg1)
 	{
 		return callMethod<jint>(
 			"compare",
 			"(Ljava/lang/String;Ljava/lang/String;)I",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		);
 	}
-	jboolean Collator::equals(jobject arg0)
+	jboolean Collator::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jboolean Collator::equals(jstring arg0, jstring arg1)
+	jboolean Collator::equals(JString arg0, JString arg1)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/String;Ljava/lang/String;)Z",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		);
 	}
 	android::icu::text::Collator Collator::freeze()
@@ -265,12 +272,12 @@ namespace android::icu::text
 			"()Landroid/icu/text/Collator;"
 		);
 	}
-	android::icu::text::CollationKey Collator::getCollationKey(jstring arg0)
+	android::icu::text::CollationKey Collator::getCollationKey(JString arg0)
 	{
 		return callObjectMethod(
 			"getCollationKey",
 			"(Ljava/lang/String;)Landroid/icu/text/CollationKey;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	jint Collator::getDecomposition()
@@ -287,12 +294,12 @@ namespace android::icu::text
 			"()I"
 		);
 	}
-	jintArray Collator::getReorderCodes()
+	JIntArray Collator::getReorderCodes()
 	{
 		return callObjectMethod(
 			"getReorderCodes",
 			"()[I"
-		).object<jintArray>();
+		);
 	}
 	jint Collator::getStrength()
 	{
@@ -359,12 +366,12 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	void Collator::setReorderCodes(jintArray arg0)
+	void Collator::setReorderCodes(JIntArray arg0)
 	{
 		callMethod<void>(
 			"setReorderCodes",
 			"([I)V",
-			arg0
+			arg0.object<jintArray>()
 		);
 	}
 	void Collator::setStrength(jint arg0)

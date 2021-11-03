@@ -1,4 +1,5 @@
 #include "../net/Uri.hpp"
+#include "../../JString.hpp"
 #include "./Telephony_Mms_Rate.hpp"
 
 namespace android::provider
@@ -12,13 +13,13 @@ namespace android::provider
 			"Landroid/net/Uri;"
 		);
 	}
-	jstring Telephony_Mms_Rate::SENT_TIME()
+	JString Telephony_Mms_Rate::SENT_TIME()
 	{
 		return getStaticObjectField(
 			"android.provider.Telephony$Mms$Rate",
 			"SENT_TIME",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QAndroidJniObject forward

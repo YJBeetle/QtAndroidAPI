@@ -1,4 +1,6 @@
 #include "../os/Parcel.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./CellSignalStrengthNr.hpp"
 
 namespace android::telephony
@@ -26,12 +28,12 @@ namespace android::telephony
 			"()I"
 		);
 	}
-	jboolean CellSignalStrengthNr::equals(jobject arg0)
+	jboolean CellSignalStrengthNr::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint CellSignalStrengthNr::getAsuLevel()
@@ -118,12 +120,12 @@ namespace android::telephony
 			"()I"
 		);
 	}
-	jstring CellSignalStrengthNr::toString()
+	JString CellSignalStrengthNr::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void CellSignalStrengthNr::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

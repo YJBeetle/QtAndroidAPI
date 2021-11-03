@@ -6,6 +6,8 @@ namespace android::os
 {
 	class Parcel;
 }
+class JObject;
+class JString;
 
 namespace android::hardware::display
 {
@@ -24,20 +26,20 @@ namespace android::hardware::display
 		DeviceProductInfo(QAndroidJniObject obj);
 		
 		// Constructors
-		DeviceProductInfo(jstring arg0, jstring arg1, jstring arg2, jint arg3, jint arg4);
+		DeviceProductInfo(JString arg0, JString arg1, JString arg2, jint arg3, jint arg4);
 		
 		// Methods
 		jint describeContents();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint getConnectionToSinkType();
 		jint getManufactureWeek();
 		jint getManufactureYear();
-		jstring getManufacturerPnpId();
+		JString getManufacturerPnpId();
 		jint getModelYear();
-		jstring getName();
-		jstring getProductId();
+		JString getName();
+		JString getProductId();
 		jint hashCode();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::hardware::display

@@ -1,3 +1,5 @@
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
 #include "./ColorSpace_RenderIntent.hpp"
 
 namespace android::graphics
@@ -42,22 +44,22 @@ namespace android::graphics
 	// Constructors
 	
 	// Methods
-	android::graphics::ColorSpace_RenderIntent ColorSpace_RenderIntent::valueOf(jstring arg0)
+	android::graphics::ColorSpace_RenderIntent ColorSpace_RenderIntent::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.graphics.ColorSpace$RenderIntent",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/graphics/ColorSpace$RenderIntent;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray ColorSpace_RenderIntent::values()
+	JArray ColorSpace_RenderIntent::values()
 	{
 		return callStaticObjectMethod(
 			"android.graphics.ColorSpace$RenderIntent",
 			"values",
 			"()[Landroid/graphics/ColorSpace$RenderIntent;"
-		).object<jarray>();
+		);
 	}
 } // namespace android::graphics
 

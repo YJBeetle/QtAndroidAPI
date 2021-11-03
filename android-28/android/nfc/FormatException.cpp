@@ -1,3 +1,5 @@
+#include "../../JString.hpp"
+#include "../../JThrowable.hpp"
 #include "./FormatException.hpp"
 
 namespace android::nfc
@@ -13,18 +15,18 @@ namespace android::nfc
 			"android.nfc.FormatException",
 			"()V"
 		) {}
-	FormatException::FormatException(jstring arg0)
+	FormatException::FormatException(JString arg0)
 		: java::lang::Exception(
 			"android.nfc.FormatException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	FormatException::FormatException(jstring arg0, jthrowable arg1)
+	FormatException::FormatException(JString arg0, JThrowable arg1)
 		: java::lang::Exception(
 			"android.nfc.FormatException",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
 		) {}
 	
 	// Methods

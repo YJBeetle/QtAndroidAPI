@@ -6,6 +6,8 @@ namespace android::os
 {
 	class Parcel;
 }
+class JObject;
+class JString;
 
 namespace android::app
 {
@@ -20,13 +22,13 @@ namespace android::app
 		SyncNotedAppOp(QAndroidJniObject obj);
 		
 		// Constructors
-		SyncNotedAppOp(jint arg0, jstring arg1);
+		SyncNotedAppOp(jint arg0, JString arg1);
 		
 		// Methods
 		jint describeContents();
-		jboolean equals(jobject arg0);
-		jstring getAttributionTag();
-		jstring getOp();
+		jboolean equals(JObject arg0);
+		JString getAttributionTag();
+		JString getOp();
 		jint hashCode();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};

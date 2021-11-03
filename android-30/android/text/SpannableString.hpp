@@ -2,6 +2,12 @@
 
 #include "../../JObject.hpp"
 
+class JCharArray;
+class JObjectArray;
+class JString;
+class JClass;
+class JObject;
+class JString;
 
 namespace android::text
 {
@@ -15,24 +21,24 @@ namespace android::text
 		SpannableString(QAndroidJniObject obj);
 		
 		// Constructors
-		SpannableString(jstring arg0);
+		SpannableString(JString arg0);
 		
 		// Methods
-		static android::text::SpannableString valueOf(jstring arg0);
+		static android::text::SpannableString valueOf(JString arg0);
 		jchar charAt(jint arg0);
-		jboolean equals(jobject arg0);
-		void getChars(jint arg0, jint arg1, jcharArray arg2, jint arg3);
-		jint getSpanEnd(jobject arg0);
-		jint getSpanFlags(jobject arg0);
-		jint getSpanStart(jobject arg0);
-		jobjectArray getSpans(jint arg0, jint arg1, jclass arg2);
+		jboolean equals(JObject arg0);
+		void getChars(jint arg0, jint arg1, JCharArray arg2, jint arg3);
+		jint getSpanEnd(JObject arg0);
+		jint getSpanFlags(JObject arg0);
+		jint getSpanStart(JObject arg0);
+		JObjectArray getSpans(jint arg0, jint arg1, JClass arg2);
 		jint hashCode();
 		jint length();
-		jint nextSpanTransition(jint arg0, jint arg1, jclass arg2);
-		void removeSpan(jobject arg0);
-		void setSpan(jobject arg0, jint arg1, jint arg2, jint arg3);
-		jstring subSequence(jint arg0, jint arg1);
-		jstring toString();
+		jint nextSpanTransition(jint arg0, jint arg1, JClass arg2);
+		void removeSpan(JObject arg0);
+		void setSpan(JObject arg0, jint arg1, jint arg2, jint arg3);
+		JString subSequence(jint arg0, jint arg1);
+		JString toString();
 	};
 } // namespace android::text
 

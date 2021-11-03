@@ -1,5 +1,8 @@
+#include "../../JArray.hpp"
 #include "./Uri.hpp"
 #include "../os/Parcel.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./ProxyInfo.hpp"
 
 namespace android::net
@@ -26,23 +29,23 @@ namespace android::net
 		) {}
 	
 	// Methods
-	android::net::ProxyInfo ProxyInfo::buildDirectProxy(jstring arg0, jint arg1)
+	android::net::ProxyInfo ProxyInfo::buildDirectProxy(JString arg0, jint arg1)
 	{
 		return callStaticObjectMethod(
 			"android.net.ProxyInfo",
 			"buildDirectProxy",
 			"(Ljava/lang/String;I)Landroid/net/ProxyInfo;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
-	android::net::ProxyInfo ProxyInfo::buildDirectProxy(jstring arg0, jint arg1, JObject arg2)
+	android::net::ProxyInfo ProxyInfo::buildDirectProxy(JString arg0, jint arg1, JObject arg2)
 	{
 		return callStaticObjectMethod(
 			"android.net.ProxyInfo",
 			"buildDirectProxy",
 			"(Ljava/lang/String;ILjava/util/List;)Landroid/net/ProxyInfo;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
 			arg2.object()
 		);
@@ -73,27 +76,27 @@ namespace android::net
 			"()I"
 		);
 	}
-	jboolean ProxyInfo::equals(jobject arg0)
+	jboolean ProxyInfo::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jarray ProxyInfo::getExclusionList()
+	JArray ProxyInfo::getExclusionList()
 	{
 		return callObjectMethod(
 			"getExclusionList",
 			"()[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
-	jstring ProxyInfo::getHost()
+	JString ProxyInfo::getHost()
 	{
 		return callObjectMethod(
 			"getHost",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::net::Uri ProxyInfo::getPacFileUrl()
 	{
@@ -123,12 +126,12 @@ namespace android::net
 			"()Z"
 		);
 	}
-	jstring ProxyInfo::toString()
+	JString ProxyInfo::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void ProxyInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

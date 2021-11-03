@@ -14,6 +14,8 @@ namespace android::os
 {
 	class Parcel;
 }
+class JObject;
+class JString;
 
 namespace android::content
 {
@@ -23,7 +25,7 @@ namespace android::content
 		// Fields
 		static JObject CREATOR();
 		android::accounts::Account account();
-		jstring authority();
+		JString authority();
 		android::os::Bundle extras();
 		jlong period();
 		
@@ -32,12 +34,12 @@ namespace android::content
 		PeriodicSync(QAndroidJniObject obj);
 		
 		// Constructors
-		PeriodicSync(android::accounts::Account arg0, jstring arg1, android::os::Bundle arg2, jlong arg3);
+		PeriodicSync(android::accounts::Account arg0, JString arg1, android::os::Bundle arg2, jlong arg3);
 		
 		// Methods
 		jint describeContents();
-		jboolean equals(jobject arg0);
-		jstring toString();
+		jboolean equals(JObject arg0);
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::content

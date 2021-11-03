@@ -2,10 +2,13 @@
 
 #include "../../../JObject.hpp"
 
+class JCharArray;
 namespace android::icu::text
 {
 	class Normalizer_QuickCheckResult;
 }
+class JObject;
+class JString;
 
 namespace android::icu::text
 {
@@ -29,12 +32,12 @@ namespace android::icu::text
 		// Constructors
 		
 		// Methods
-		static jint compare(jcharArray arg0, jcharArray arg1, jint arg2);
+		static jint compare(JCharArray arg0, JCharArray arg1, jint arg2);
 		static jint compare(jint arg0, jint arg1, jint arg2);
-		static jint compare(jint arg0, jstring arg1, jint arg2);
-		static jint compare(jstring arg0, jstring arg1, jint arg2);
-		static jint compare(jcharArray arg0, jint arg1, jint arg2, jcharArray arg3, jint arg4, jint arg5, jint arg6);
-		jobject clone();
+		static jint compare(jint arg0, JString arg1, jint arg2);
+		static jint compare(JString arg0, JString arg1, jint arg2);
+		static jint compare(JCharArray arg0, jint arg1, jint arg2, JCharArray arg3, jint arg4, jint arg5, jint arg6);
+		JObject clone();
 	};
 } // namespace android::icu::text
 

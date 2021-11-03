@@ -1,3 +1,6 @@
+#include "../../JArray.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "../lang/StringBuffer.hpp"
 #include "./AttributedCharacterIterator_Attribute.hpp"
 #include "./FieldPosition.hpp"
@@ -14,55 +17,55 @@ namespace java::text
 	// Constructors
 	
 	// Methods
-	jobject Format::clone()
+	JObject Format::clone()
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
-	jstring Format::format(jobject arg0)
+	JString Format::format(JObject arg0)
 	{
 		return callObjectMethod(
 			"format",
 			"(Ljava/lang/Object;)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
+			arg0.object<jobject>()
+		);
 	}
-	java::lang::StringBuffer Format::format(jobject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
+	java::lang::StringBuffer Format::format(JObject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
 	{
 		return callObjectMethod(
 			"format",
 			"(Ljava/lang/Object;Ljava/lang/StringBuffer;Ljava/text/FieldPosition;)Ljava/lang/StringBuffer;",
-			arg0,
+			arg0.object<jobject>(),
 			arg1.object(),
 			arg2.object()
 		);
 	}
-	JObject Format::formatToCharacterIterator(jobject arg0)
+	JObject Format::formatToCharacterIterator(JObject arg0)
 	{
 		return callObjectMethod(
 			"formatToCharacterIterator",
 			"(Ljava/lang/Object;)Ljava/text/AttributedCharacterIterator;",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jobject Format::parseObject(jstring arg0)
+	JObject Format::parseObject(JString arg0)
 	{
 		return callObjectMethod(
 			"parseObject",
 			"(Ljava/lang/String;)Ljava/lang/Object;",
-			arg0
-		).object<jobject>();
+			arg0.object<jstring>()
+		);
 	}
-	jobject Format::parseObject(jstring arg0, java::text::ParsePosition arg1)
+	JObject Format::parseObject(JString arg0, java::text::ParsePosition arg1)
 	{
 		return callObjectMethod(
 			"parseObject",
 			"(Ljava/lang/String;Ljava/text/ParsePosition;)Ljava/lang/Object;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
-		).object<jobject>();
+		);
 	}
 } // namespace java::text
 

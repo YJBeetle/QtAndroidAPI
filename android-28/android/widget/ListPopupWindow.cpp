@@ -3,6 +3,7 @@
 #include "../view/KeyEvent.hpp"
 #include "../view/View.hpp"
 #include "./ListView.hpp"
+#include "../../JObject.hpp"
 #include "./ListPopupWindow.hpp"
 
 namespace android::widget
@@ -172,12 +173,12 @@ namespace android::widget
 			"()I"
 		);
 	}
-	jobject ListPopupWindow::getSelectedItem()
+	JObject ListPopupWindow::getSelectedItem()
 	{
 		return callObjectMethod(
 			"getSelectedItem",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
 	jlong ListPopupWindow::getSelectedItemId()
 	{

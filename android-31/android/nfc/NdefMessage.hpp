@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JByteArray;
+class JArray;
 namespace android::nfc
 {
 	class NdefRecord;
@@ -10,6 +12,8 @@ namespace android::os
 {
 	class Parcel;
 }
+class JObject;
+class JString;
 
 namespace android::nfc
 {
@@ -24,18 +28,18 @@ namespace android::nfc
 		NdefMessage(QAndroidJniObject obj);
 		
 		// Constructors
-		NdefMessage(jbyteArray arg0);
-		NdefMessage(jarray arg0);
-		NdefMessage(android::nfc::NdefRecord arg0, jarray arg1);
+		NdefMessage(JByteArray arg0);
+		NdefMessage(JArray arg0);
+		NdefMessage(android::nfc::NdefRecord arg0, JArray arg1);
 		
 		// Methods
 		jint describeContents();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint getByteArrayLength();
-		jarray getRecords();
+		JArray getRecords();
 		jint hashCode();
-		jbyteArray toByteArray();
-		jstring toString();
+		JByteArray toByteArray();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::nfc

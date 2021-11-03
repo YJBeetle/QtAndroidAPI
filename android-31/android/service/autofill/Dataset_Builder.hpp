@@ -26,6 +26,7 @@ namespace android::widget
 {
 	class RemoteViews;
 }
+class JString;
 namespace java::util::regex
 {
 	class Pattern;
@@ -49,7 +50,7 @@ namespace android::service::autofill
 		// Methods
 		android::service::autofill::Dataset build();
 		android::service::autofill::Dataset_Builder setAuthentication(android::content::IntentSender arg0);
-		android::service::autofill::Dataset_Builder setId(jstring arg0);
+		android::service::autofill::Dataset_Builder setId(JString arg0);
 		android::service::autofill::Dataset_Builder setInlinePresentation(android::service::autofill::InlinePresentation arg0);
 		android::service::autofill::Dataset_Builder setInlinePresentation(android::service::autofill::InlinePresentation arg0, android::service::autofill::InlinePresentation arg1);
 		android::service::autofill::Dataset_Builder setValue(android::view::autofill::AutofillId arg0, android::view::autofill::AutofillValue arg1);

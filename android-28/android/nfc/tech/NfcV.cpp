@@ -1,3 +1,4 @@
+#include "../../../JByteArray.hpp"
 #include "../Tag.hpp"
 #include "./NfcV.hpp"
 
@@ -69,13 +70,13 @@ namespace android::nfc::tech
 			"()Z"
 		);
 	}
-	jbyteArray NfcV::transceive(jbyteArray arg0)
+	JByteArray NfcV::transceive(JByteArray arg0)
 	{
 		return callObjectMethod(
 			"transceive",
 			"([B)[B",
-			arg0
-		).object<jbyteArray>();
+			arg0.object<jbyteArray>()
+		);
 	}
 } // namespace android::nfc::tech
 

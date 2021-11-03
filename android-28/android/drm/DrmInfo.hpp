@@ -2,6 +2,9 @@
 
 #include "../../JObject.hpp"
 
+class JByteArray;
+class JObject;
+class JString;
 
 namespace android::drm
 {
@@ -15,17 +18,17 @@ namespace android::drm
 		DrmInfo(QAndroidJniObject obj);
 		
 		// Constructors
-		DrmInfo(jint arg0, jbyteArray arg1, jstring arg2);
-		DrmInfo(jint arg0, jstring arg1, jstring arg2);
+		DrmInfo(jint arg0, JByteArray arg1, JString arg2);
+		DrmInfo(jint arg0, JString arg1, JString arg2);
 		
 		// Methods
-		jobject get(jstring arg0);
-		jbyteArray getData();
+		JObject get(JString arg0);
+		JByteArray getData();
 		jint getInfoType();
-		jstring getMimeType();
+		JString getMimeType();
 		JObject iterator();
 		JObject keyIterator();
-		void put(jstring arg0, jobject arg1);
+		void put(JString arg0, JObject arg1);
 	};
 } // namespace android::drm
 

@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./LinkPermission.hpp"
 
 namespace java::nio::file
@@ -8,18 +9,18 @@ namespace java::nio::file
 	LinkPermission::LinkPermission(QAndroidJniObject obj) : java::security::BasicPermission(obj) {}
 	
 	// Constructors
-	LinkPermission::LinkPermission(jstring arg0)
+	LinkPermission::LinkPermission(JString arg0)
 		: java::security::BasicPermission(
 			"java.nio.file.LinkPermission",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	LinkPermission::LinkPermission(jstring arg0, jstring arg1)
+	LinkPermission::LinkPermission(JString arg0, JString arg1)
 		: java::security::BasicPermission(
 			"java.nio.file.LinkPermission",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		) {}
 	
 	// Methods

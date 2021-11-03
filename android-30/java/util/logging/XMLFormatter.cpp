@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "../../lang/StringBuilder.hpp"
 #include "./Handler.hpp"
 #include "./LogManager.hpp"
@@ -19,29 +20,29 @@ namespace java::util::logging
 		) {}
 	
 	// Methods
-	jstring XMLFormatter::format(java::util::logging::LogRecord arg0)
+	JString XMLFormatter::format(java::util::logging::LogRecord arg0)
 	{
 		return callObjectMethod(
 			"format",
 			"(Ljava/util/logging/LogRecord;)Ljava/lang/String;",
 			arg0.object()
-		).object<jstring>();
+		);
 	}
-	jstring XMLFormatter::getHead(java::util::logging::Handler arg0)
+	JString XMLFormatter::getHead(java::util::logging::Handler arg0)
 	{
 		return callObjectMethod(
 			"getHead",
 			"(Ljava/util/logging/Handler;)Ljava/lang/String;",
 			arg0.object()
-		).object<jstring>();
+		);
 	}
-	jstring XMLFormatter::getTail(java::util::logging::Handler arg0)
+	JString XMLFormatter::getTail(java::util::logging::Handler arg0)
 	{
 		return callObjectMethod(
 			"getTail",
 			"(Ljava/util/logging/Handler;)Ljava/lang/String;",
 			arg0.object()
-		).object<jstring>();
+		);
 	}
 } // namespace java::util::logging
 

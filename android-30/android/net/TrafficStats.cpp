@@ -1,4 +1,5 @@
 #include "../../java/io/FileDescriptor.hpp"
+#include "../../JString.hpp"
 #include "../../java/net/DatagramSocket.hpp"
 #include "../../java/net/Socket.hpp"
 #include "./TrafficStats.hpp"
@@ -82,13 +83,13 @@ namespace android::net
 			"()J"
 		);
 	}
-	jlong TrafficStats::getRxPackets(jstring arg0)
+	jlong TrafficStats::getRxPackets(JString arg0)
 	{
 		return callStaticMethod<jlong>(
 			"android.net.TrafficStats",
 			"getRxPackets",
 			"(Ljava/lang/String;)J",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	jint TrafficStats::getThreadStatsTag()
@@ -139,13 +140,13 @@ namespace android::net
 			"()J"
 		);
 	}
-	jlong TrafficStats::getTxPackets(jstring arg0)
+	jlong TrafficStats::getTxPackets(JString arg0)
 	{
 		return callStaticMethod<jlong>(
 			"android.net.TrafficStats",
 			"getTxPackets",
 			"(Ljava/lang/String;)J",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	jlong TrafficStats::getUidRxBytes(jint arg0)

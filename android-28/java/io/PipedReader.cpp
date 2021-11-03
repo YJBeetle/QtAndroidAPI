@@ -1,3 +1,4 @@
+#include "../../JCharArray.hpp"
 #include "./PipedWriter.hpp"
 #include "../lang/Thread.hpp"
 #include "./PipedReader.hpp"
@@ -58,12 +59,12 @@ namespace java::io
 			"()I"
 		);
 	}
-	jint PipedReader::read(jcharArray arg0, jint arg1, jint arg2)
+	jint PipedReader::read(JCharArray arg0, jint arg1, jint arg2)
 	{
 		return callMethod<jint>(
 			"read",
 			"([CII)I",
-			arg0,
+			arg0.object<jcharArray>(),
 			arg1,
 			arg2
 		);

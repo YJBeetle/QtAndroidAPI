@@ -1,9 +1,9 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "../../../java/net/URLConnection.hpp"
 #include "../../../java/net/HttpURLConnection.hpp"
 
+class JArray;
+class JString;
 namespace java::net
 {
 	class URL;
@@ -35,14 +35,14 @@ namespace javax::net::ssl
 		static javax::net::ssl::SSLSocketFactory getDefaultSSLSocketFactory();
 		static void setDefaultHostnameVerifier(JObject arg0);
 		static void setDefaultSSLSocketFactory(javax::net::ssl::SSLSocketFactory arg0);
-		jstring getCipherSuite();
+		JString getCipherSuite();
 		JObject getHostnameVerifier();
-		jarray getLocalCertificates();
+		JArray getLocalCertificates();
 		JObject getLocalPrincipal();
 		JObject getPeerPrincipal();
 		java::util::Optional getSSLSession();
 		javax::net::ssl::SSLSocketFactory getSSLSocketFactory();
-		jarray getServerCertificates();
+		JArray getServerCertificates();
 		void setHostnameVerifier(JObject arg0);
 		void setSSLSocketFactory(javax::net::ssl::SSLSocketFactory arg0);
 	};

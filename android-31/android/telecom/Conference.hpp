@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./Conferenceable.hpp"
 
+class JArray;
 namespace android::os
 {
 	class Bundle;
@@ -31,6 +31,7 @@ namespace android::telecom
 {
 	class StatusHints;
 }
+class JString;
 
 namespace android::telecom
 {
@@ -83,9 +84,9 @@ namespace android::telecom
 		void onUnhold();
 		void putExtras(android::os::Bundle arg0);
 		void removeConnection(android::telecom::Connection arg0);
-		void removeExtras(jarray arg0);
+		void removeExtras(JArray arg0);
 		void removeExtras(JObject arg0);
-		void sendConferenceEvent(jstring arg0, android::os::Bundle arg1);
+		void sendConferenceEvent(JString arg0, android::os::Bundle arg1);
 		void setActive();
 		void setConferenceableConnections(JObject arg0);
 		void setConnectionCapabilities(jint arg0);
@@ -102,7 +103,7 @@ namespace android::telecom
 		void setStatusHints(android::telecom::StatusHints arg0);
 		void setVideoProvider(android::telecom::Connection arg0, android::telecom::Connection_VideoProvider arg1);
 		void setVideoState(android::telecom::Connection arg0, jint arg1);
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::telecom
 

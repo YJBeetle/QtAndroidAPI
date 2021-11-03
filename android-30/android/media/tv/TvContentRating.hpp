@@ -2,6 +2,9 @@
 
 #include "../../../JObject.hpp"
 
+class JArray;
+class JObject;
+class JString;
 
 namespace android::media::tv
 {
@@ -18,14 +21,14 @@ namespace android::media::tv
 		// Constructors
 		
 		// Methods
-		static android::media::tv::TvContentRating createRating(jstring arg0, jstring arg1, jstring arg2, jarray arg3);
-		static android::media::tv::TvContentRating unflattenFromString(jstring arg0);
+		static android::media::tv::TvContentRating createRating(JString arg0, JString arg1, JString arg2, JArray arg3);
+		static android::media::tv::TvContentRating unflattenFromString(JString arg0);
 		jboolean contains(android::media::tv::TvContentRating arg0);
-		jboolean equals(jobject arg0);
-		jstring flattenToString();
-		jstring getDomain();
-		jstring getMainRating();
-		jstring getRatingSystem();
+		jboolean equals(JObject arg0);
+		JString flattenToString();
+		JString getDomain();
+		JString getMainRating();
+		JString getRatingSystem();
 		JObject getSubRatings();
 		jint hashCode();
 	};

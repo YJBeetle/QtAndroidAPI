@@ -38,6 +38,7 @@ namespace android::view::accessibility
 {
 	class AccessibilityNodeInfo;
 }
+class JString;
 
 namespace android::app
 {
@@ -63,19 +64,19 @@ namespace android::app
 		void clearWindowAnimationFrameStats();
 		jboolean clearWindowContentFrameStats(jint arg0);
 		android::view::accessibility::AccessibilityEvent executeAndWaitForEvent(JObject arg0, JObject arg1, jlong arg2);
-		android::os::ParcelFileDescriptor executeShellCommand(jstring arg0);
+		android::os::ParcelFileDescriptor executeShellCommand(JString arg0);
 		android::view::accessibility::AccessibilityNodeInfo findFocus(jint arg0);
 		android::view::accessibility::AccessibilityNodeInfo getRootInActiveWindow();
 		android::accessibilityservice::AccessibilityServiceInfo getServiceInfo();
 		android::view::WindowAnimationFrameStats getWindowAnimationFrameStats();
 		android::view::WindowContentFrameStats getWindowContentFrameStats(jint arg0);
 		JObject getWindows();
-		void grantRuntimePermission(jstring arg0, jstring arg1);
-		void grantRuntimePermissionAsUser(jstring arg0, jstring arg1, android::os::UserHandle arg2);
+		void grantRuntimePermission(JString arg0, JString arg1);
+		void grantRuntimePermissionAsUser(JString arg0, JString arg1, android::os::UserHandle arg2);
 		jboolean injectInputEvent(android::view::InputEvent arg0, jboolean arg1);
 		jboolean performGlobalAction(jint arg0);
-		void revokeRuntimePermission(jstring arg0, jstring arg1);
-		void revokeRuntimePermissionAsUser(jstring arg0, jstring arg1, android::os::UserHandle arg2);
+		void revokeRuntimePermission(JString arg0, JString arg1);
+		void revokeRuntimePermissionAsUser(JString arg0, JString arg1, android::os::UserHandle arg2);
 		void setOnAccessibilityEventListener(JObject arg0);
 		jboolean setRotation(jint arg0);
 		void setRunAsMonkey(jboolean arg0);

@@ -1,3 +1,6 @@
+#include "../../../JByteArray.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "../../math/BigInteger.hpp"
 #include "./CRL.hpp"
 #include "./X509Certificate.hpp"
@@ -29,28 +32,28 @@ namespace java::security::cert
 			arg0.object()
 		);
 	}
-	void X509CRLSelector::addIssuerName(jbyteArray arg0)
+	void X509CRLSelector::addIssuerName(JByteArray arg0)
 	{
 		callMethod<void>(
 			"addIssuerName",
 			"([B)V",
-			arg0
+			arg0.object<jbyteArray>()
 		);
 	}
-	void X509CRLSelector::addIssuerName(jstring arg0)
+	void X509CRLSelector::addIssuerName(JString arg0)
 	{
 		callMethod<void>(
 			"addIssuerName",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jobject X509CRLSelector::clone()
+	JObject X509CRLSelector::clone()
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
 	java::security::cert::X509Certificate X509CRLSelector::getCertificateChecking()
 	{
@@ -150,12 +153,12 @@ namespace java::security::cert
 			arg0.object()
 		);
 	}
-	jstring X509CRLSelector::toString()
+	JString X509CRLSelector::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::security::cert
 

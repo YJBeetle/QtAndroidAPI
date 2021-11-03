@@ -1,9 +1,8 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "../AbstractCollection.hpp"
 #include "../AbstractQueue.hpp"
 
+class JObjectArray;
 namespace java::io
 {
 	class ObjectInputStream;
@@ -12,6 +11,8 @@ namespace java::io
 {
 	class ObjectOutputStream;
 }
+class JObject;
+class JString;
 namespace java::util::concurrent
 {
 	class TimeUnit;
@@ -33,9 +34,9 @@ namespace java::util::concurrent
 		LinkedTransferQueue(JObject arg0);
 		
 		// Methods
-		jboolean add(jobject arg0);
+		jboolean add(JObject arg0);
 		void clear();
-		jboolean contains(jobject arg0);
+		jboolean contains(JObject arg0);
 		jint drainTo(JObject arg0);
 		jint drainTo(JObject arg0, jint arg1);
 		void forEach(JObject arg0);
@@ -43,26 +44,26 @@ namespace java::util::concurrent
 		jboolean hasWaitingConsumer();
 		jboolean isEmpty();
 		JObject iterator();
-		jboolean offer(jobject arg0);
-		jboolean offer(jobject arg0, jlong arg1, java::util::concurrent::TimeUnit arg2);
-		jobject peek();
-		jobject poll();
-		jobject poll(jlong arg0, java::util::concurrent::TimeUnit arg1);
-		void put(jobject arg0);
+		jboolean offer(JObject arg0);
+		jboolean offer(JObject arg0, jlong arg1, java::util::concurrent::TimeUnit arg2);
+		JObject peek();
+		JObject poll();
+		JObject poll(jlong arg0, java::util::concurrent::TimeUnit arg1);
+		void put(JObject arg0);
 		jint remainingCapacity();
-		jboolean remove(jobject arg0);
+		jboolean remove(JObject arg0);
 		jboolean removeAll(JObject arg0);
 		jboolean removeIf(JObject arg0);
 		jboolean retainAll(JObject arg0);
 		jint size();
 		JObject spliterator();
-		jobject take();
-		jobjectArray toArray();
-		jobjectArray toArray(jobjectArray arg0);
-		jstring toString();
-		void transfer(jobject arg0);
-		jboolean tryTransfer(jobject arg0);
-		jboolean tryTransfer(jobject arg0, jlong arg1, java::util::concurrent::TimeUnit arg2);
+		JObject take();
+		JObjectArray toArray();
+		JObjectArray toArray(JObjectArray arg0);
+		JString toString();
+		void transfer(JObject arg0);
+		jboolean tryTransfer(JObject arg0);
+		jboolean tryTransfer(JObject arg0, jlong arg1, java::util::concurrent::TimeUnit arg2);
 	};
 } // namespace java::util::concurrent
 

@@ -10,6 +10,7 @@ namespace java::lang
 {
 	class Number;
 }
+class JString;
 
 namespace android::util
 {
@@ -33,14 +34,14 @@ namespace android::util
 		android::util::JsonWriter endObject();
 		void flush();
 		jboolean isLenient();
-		android::util::JsonWriter name(jstring arg0);
+		android::util::JsonWriter name(JString arg0);
 		android::util::JsonWriter nullValue();
-		void setIndent(jstring arg0);
+		void setIndent(JString arg0);
 		void setLenient(jboolean arg0);
 		android::util::JsonWriter value(jboolean arg0);
 		android::util::JsonWriter value(jdouble arg0);
 		android::util::JsonWriter value(java::lang::Number arg0);
-		android::util::JsonWriter value(jstring arg0);
+		android::util::JsonWriter value(JString arg0);
 		android::util::JsonWriter value(jlong arg0);
 	};
 } // namespace android::util

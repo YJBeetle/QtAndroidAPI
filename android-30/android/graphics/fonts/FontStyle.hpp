@@ -2,6 +2,8 @@
 
 #include "../../../JObject.hpp"
 
+class JObject;
+class JString;
 
 namespace android::graphics::fonts
 {
@@ -32,11 +34,11 @@ namespace android::graphics::fonts
 		FontStyle(jint arg0, jint arg1);
 		
 		// Methods
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint getSlant();
 		jint getWeight();
 		jint hashCode();
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::graphics::fonts
 

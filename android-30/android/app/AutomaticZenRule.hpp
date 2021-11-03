@@ -18,6 +18,8 @@ namespace android::service::notification
 {
 	class ZenPolicy;
 }
+class JObject;
+class JString;
 
 namespace android::app
 {
@@ -33,17 +35,17 @@ namespace android::app
 		
 		// Constructors
 		AutomaticZenRule(android::os::Parcel arg0);
-		AutomaticZenRule(jstring arg0, android::content::ComponentName arg1, android::net::Uri arg2, jint arg3, jboolean arg4);
-		AutomaticZenRule(jstring arg0, android::content::ComponentName arg1, android::content::ComponentName arg2, android::net::Uri arg3, android::service::notification::ZenPolicy arg4, jint arg5, jboolean arg6);
+		AutomaticZenRule(JString arg0, android::content::ComponentName arg1, android::net::Uri arg2, jint arg3, jboolean arg4);
+		AutomaticZenRule(JString arg0, android::content::ComponentName arg1, android::content::ComponentName arg2, android::net::Uri arg3, android::service::notification::ZenPolicy arg4, jint arg5, jboolean arg6);
 		
 		// Methods
 		jint describeContents();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		android::net::Uri getConditionId();
 		android::content::ComponentName getConfigurationActivity();
 		jlong getCreationTime();
 		jint getInterruptionFilter();
-		jstring getName();
+		JString getName();
 		android::content::ComponentName getOwner();
 		android::service::notification::ZenPolicy getZenPolicy();
 		jint hashCode();
@@ -52,9 +54,9 @@ namespace android::app
 		void setConfigurationActivity(android::content::ComponentName arg0);
 		void setEnabled(jboolean arg0);
 		void setInterruptionFilter(jint arg0);
-		void setName(jstring arg0);
+		void setName(JString arg0);
 		void setZenPolicy(android::service::notification::ZenPolicy arg0);
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::app

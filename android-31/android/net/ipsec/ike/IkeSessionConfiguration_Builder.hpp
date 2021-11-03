@@ -2,6 +2,7 @@
 
 #include "../../../../JObject.hpp"
 
+class JByteArray;
 namespace android::net::ipsec::ike
 {
 	class IkeSessionConfiguration;
@@ -10,6 +11,7 @@ namespace android::net::ipsec::ike
 {
 	class IkeSessionConnectionInfo;
 }
+class JString;
 
 namespace android::net::ipsec::ike
 {
@@ -27,12 +29,12 @@ namespace android::net::ipsec::ike
 		
 		// Methods
 		android::net::ipsec::ike::IkeSessionConfiguration_Builder addIkeExtension(jint arg0);
-		android::net::ipsec::ike::IkeSessionConfiguration_Builder addRemoteVendorId(jbyteArray arg0);
+		android::net::ipsec::ike::IkeSessionConfiguration_Builder addRemoteVendorId(JByteArray arg0);
 		android::net::ipsec::ike::IkeSessionConfiguration build();
 		android::net::ipsec::ike::IkeSessionConfiguration_Builder clearIkeExtensions();
 		android::net::ipsec::ike::IkeSessionConfiguration_Builder clearRemoteApplicationVersion();
 		android::net::ipsec::ike::IkeSessionConfiguration_Builder clearRemoteVendorIds();
-		android::net::ipsec::ike::IkeSessionConfiguration_Builder setRemoteApplicationVersion(jstring arg0);
+		android::net::ipsec::ike::IkeSessionConfiguration_Builder setRemoteApplicationVersion(JString arg0);
 	};
 } // namespace android::net::ipsec::ike
 

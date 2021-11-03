@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JCharArray;
 
 namespace android::database
 {
@@ -9,7 +10,7 @@ namespace android::database
 	{
 	public:
 		// Fields
-		jcharArray data();
+		JCharArray data();
 		jint sizeCopied();
 		
 		// QAndroidJniObject forward
@@ -17,7 +18,7 @@ namespace android::database
 		CharArrayBuffer(QAndroidJniObject obj);
 		
 		// Constructors
-		CharArrayBuffer(jcharArray arg0);
+		CharArrayBuffer(JCharArray arg0);
 		CharArrayBuffer(jint arg0);
 		
 		// Methods

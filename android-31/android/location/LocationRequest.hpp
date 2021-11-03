@@ -6,6 +6,8 @@ namespace android::os
 {
 	class Parcel;
 }
+class JObject;
+class JString;
 
 namespace android::location
 {
@@ -27,7 +29,7 @@ namespace android::location
 		
 		// Methods
 		jint describeContents();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jlong getDurationMillis();
 		jlong getIntervalMillis();
 		jlong getMaxUpdateDelayMillis();
@@ -36,7 +38,7 @@ namespace android::location
 		jlong getMinUpdateIntervalMillis();
 		jint getQuality();
 		jint hashCode();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::location

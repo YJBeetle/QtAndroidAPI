@@ -1,32 +1,33 @@
 #include "../net/Uri.hpp"
+#include "../../JString.hpp"
 #include "./MediaStore_Audio_Playlists.hpp"
 
 namespace android::provider
 {
 	// Fields
-	jstring MediaStore_Audio_Playlists::CONTENT_TYPE()
+	JString MediaStore_Audio_Playlists::CONTENT_TYPE()
 	{
 		return getStaticObjectField(
 			"android.provider.MediaStore$Audio$Playlists",
 			"CONTENT_TYPE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring MediaStore_Audio_Playlists::DEFAULT_SORT_ORDER()
+	JString MediaStore_Audio_Playlists::DEFAULT_SORT_ORDER()
 	{
 		return getStaticObjectField(
 			"android.provider.MediaStore$Audio$Playlists",
 			"DEFAULT_SORT_ORDER",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring MediaStore_Audio_Playlists::ENTRY_CONTENT_TYPE()
+	JString MediaStore_Audio_Playlists::ENTRY_CONTENT_TYPE()
 	{
 		return getStaticObjectField(
 			"android.provider.MediaStore$Audio$Playlists",
 			"ENTRY_CONTENT_TYPE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::net::Uri MediaStore_Audio_Playlists::EXTERNAL_CONTENT_URI()
 	{
@@ -56,13 +57,13 @@ namespace android::provider
 		) {}
 	
 	// Methods
-	android::net::Uri MediaStore_Audio_Playlists::getContentUri(jstring arg0)
+	android::net::Uri MediaStore_Audio_Playlists::getContentUri(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.provider.MediaStore$Audio$Playlists",
 			"getContentUri",
 			"(Ljava/lang/String;)Landroid/net/Uri;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 } // namespace android::provider

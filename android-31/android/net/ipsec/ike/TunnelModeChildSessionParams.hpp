@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../../../JObject.hpp"
 #include "./ChildSessionParams.hpp"
 
+class JObject;
 
 namespace android::net::ipsec::ike
 {
@@ -18,7 +18,7 @@ namespace android::net::ipsec::ike
 		// Constructors
 		
 		// Methods
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		JObject getConfigurationRequests();
 		jint hashCode();
 	};

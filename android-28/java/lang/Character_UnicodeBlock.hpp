@@ -1,8 +1,11 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./Character_Subset.hpp"
 
+class JIntArray;
+class JArray;
+class JArray;
+class JString;
 
 namespace java::lang
 {
@@ -327,7 +330,7 @@ namespace java::lang
 		// Constructors
 		
 		// Methods
-		static java::lang::Character_UnicodeBlock forName(jstring arg0);
+		static java::lang::Character_UnicodeBlock forName(JString arg0);
 		static java::lang::Character_UnicodeBlock of(jchar arg0);
 		static java::lang::Character_UnicodeBlock of(jint arg0);
 	};

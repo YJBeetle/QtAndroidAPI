@@ -2,10 +2,12 @@
 
 #include "../../../JObject.hpp"
 
+class JByteArray;
 namespace android::os
 {
 	class Parcel;
 }
+class JString;
 namespace java::security::cert
 {
 	class Certificate;
@@ -28,10 +30,10 @@ namespace android::content::pm
 		// Methods
 		jint describeContents();
 		java::security::cert::Certificate getInstallerCertificate();
-		jstring getInstallerPackageName();
-		jstring getSplitName();
+		JString getInstallerPackageName();
+		JString getSplitName();
 		jint getType();
-		jbyteArray getValue();
+		JByteArray getValue();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::content::pm

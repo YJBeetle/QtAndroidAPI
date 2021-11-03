@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JByteArray;
 namespace android::drm
 {
 	class DrmUtils_ExtendedMetadataParser;
@@ -22,7 +23,7 @@ namespace android::drm
 		DrmUtils();
 		
 		// Methods
-		static android::drm::DrmUtils_ExtendedMetadataParser getExtendedMetadataParser(jbyteArray arg0);
+		static android::drm::DrmUtils_ExtendedMetadataParser getExtendedMetadataParser(JByteArray arg0);
 	};
 } // namespace android::drm
 

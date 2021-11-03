@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JLongArray;
+class JString;
 
 namespace android::util
 {
@@ -17,7 +19,7 @@ namespace android::util
 		// Constructors
 		
 		// Methods
-		static jboolean logBinaryPushStateChanged(jstring arg0, jlong arg1, jint arg2, jint arg3, jlongArray arg4);
+		static jboolean logBinaryPushStateChanged(JString arg0, jlong arg1, jint arg2, jint arg3, JLongArray arg4);
 		static jboolean logEvent(jint arg0);
 		static jboolean logStart(jint arg0);
 		static jboolean logStop(jint arg0);

@@ -10,6 +10,7 @@ namespace android::provider
 {
 	class ContactsContract_1;
 }
+class JString;
 
 namespace android::provider
 {
@@ -17,8 +18,8 @@ namespace android::provider
 	{
 	public:
 		// Fields
-		static jstring CONTENT_ITEM_TYPE();
-		static jstring CONTENT_TYPE();
+		static JString CONTENT_ITEM_TYPE();
+		static JString CONTENT_TYPE();
 		static android::net::Uri CONTENT_URI();
 		static android::net::Uri PROFILE_CONTENT_URI();
 		

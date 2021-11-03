@@ -2,6 +2,7 @@
 #include "../../Paint.hpp"
 #include "../../Path.hpp"
 #include "./Shape.hpp"
+#include "../../../../JObject.hpp"
 #include "./PathShape.hpp"
 
 namespace android::graphics::drawable::shapes
@@ -38,12 +39,12 @@ namespace android::graphics::drawable::shapes
 			arg1.object()
 		);
 	}
-	jboolean PathShape::equals(jobject arg0)
+	jboolean PathShape::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint PathShape::hashCode()

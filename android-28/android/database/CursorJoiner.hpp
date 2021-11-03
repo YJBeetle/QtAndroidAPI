@@ -2,10 +2,12 @@
 
 #include "../../JObject.hpp"
 
+class JArray;
 namespace android::database
 {
 	class CursorJoiner_Result;
 }
+class JObject;
 
 namespace android::database
 {
@@ -19,7 +21,7 @@ namespace android::database
 		CursorJoiner(QAndroidJniObject obj);
 		
 		// Constructors
-		CursorJoiner(JObject arg0, jarray arg1, JObject arg2, jarray arg3);
+		CursorJoiner(JObject arg0, JArray arg1, JObject arg2, JArray arg3);
 		
 		// Methods
 		jboolean hasNext();

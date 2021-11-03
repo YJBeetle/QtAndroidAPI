@@ -6,6 +6,7 @@ namespace android::hardware::fingerprint
 {
 	class FingerprintManager_AuthenticationResult;
 }
+class JString;
 
 namespace android::hardware::fingerprint
 {
@@ -22,9 +23,9 @@ namespace android::hardware::fingerprint
 		FingerprintManager_AuthenticationCallback();
 		
 		// Methods
-		void onAuthenticationError(jint arg0, jstring arg1);
+		void onAuthenticationError(jint arg0, JString arg1);
 		void onAuthenticationFailed();
-		void onAuthenticationHelp(jint arg0, jstring arg1);
+		void onAuthenticationHelp(jint arg0, JString arg1);
 		void onAuthenticationSucceeded(android::hardware::fingerprint::FingerprintManager_AuthenticationResult arg0);
 	};
 } // namespace android::hardware::fingerprint

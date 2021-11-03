@@ -1,6 +1,5 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "./Event.hpp"
 
 namespace android::os
@@ -11,6 +10,7 @@ namespace android::os
 {
 	class Parcel;
 }
+class JObject;
 
 namespace android::media::metrics
 {
@@ -43,7 +43,7 @@ namespace android::media::metrics
 		
 		// Methods
 		jint describeContents();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		android::os::Bundle getMetricsBundle();
 		jint getState();
 		jlong getTimeSinceCreatedMillis();

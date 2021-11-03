@@ -1,3 +1,5 @@
+#include "../../JIntArray.hpp"
+#include "../../JArray.hpp"
 #include "./Allocation.hpp"
 #include "./BaseObj.hpp"
 #include "./Element.hpp"
@@ -6,6 +8,7 @@
 #include "./Script_InvokeID.hpp"
 #include "./Script_KernelID.hpp"
 #include "./Script_LaunchOptions.hpp"
+#include "../../JString.hpp"
 #include "./Script.hpp"
 
 namespace android::renderscript
@@ -76,12 +79,12 @@ namespace android::renderscript
 			arg1.object()
 		);
 	}
-	void Script::setTimeZone(jstring arg0)
+	void Script::setTimeZone(JString arg0)
 	{
 		callMethod<void>(
 			"setTimeZone",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void Script::setVar(jint arg0, android::renderscript::BaseObj arg1)
@@ -147,7 +150,7 @@ namespace android::renderscript
 			arg1
 		);
 	}
-	void Script::setVar(jint arg0, android::renderscript::FieldPacker arg1, android::renderscript::Element arg2, jintArray arg3)
+	void Script::setVar(jint arg0, android::renderscript::FieldPacker arg1, android::renderscript::Element arg2, JIntArray arg3)
 	{
 		callMethod<void>(
 			"setVar",
@@ -155,7 +158,7 @@ namespace android::renderscript
 			arg0,
 			arg1.object(),
 			arg2.object(),
-			arg3
+			arg3.object<jintArray>()
 		);
 	}
 } // namespace android::renderscript

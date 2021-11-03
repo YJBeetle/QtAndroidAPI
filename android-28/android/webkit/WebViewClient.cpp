@@ -10,6 +10,7 @@
 #include "./WebResourceError.hpp"
 #include "./WebResourceResponse.hpp"
 #include "./WebView.hpp"
+#include "../../JString.hpp"
 #include "./WebViewClient.hpp"
 
 namespace android::webkit
@@ -167,13 +168,13 @@ namespace android::webkit
 		) {}
 	
 	// Methods
-	void WebViewClient::doUpdateVisitedHistory(android::webkit::WebView arg0, jstring arg1, jboolean arg2)
+	void WebViewClient::doUpdateVisitedHistory(android::webkit::WebView arg0, JString arg1, jboolean arg2)
 	{
 		callMethod<void>(
 			"doUpdateVisitedHistory",
 			"(Landroid/webkit/WebView;Ljava/lang/String;Z)V",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2
 		);
 	}
@@ -187,40 +188,40 @@ namespace android::webkit
 			arg2.object()
 		);
 	}
-	void WebViewClient::onLoadResource(android::webkit::WebView arg0, jstring arg1)
+	void WebViewClient::onLoadResource(android::webkit::WebView arg0, JString arg1)
 	{
 		callMethod<void>(
 			"onLoadResource",
 			"(Landroid/webkit/WebView;Ljava/lang/String;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
-	void WebViewClient::onPageCommitVisible(android::webkit::WebView arg0, jstring arg1)
+	void WebViewClient::onPageCommitVisible(android::webkit::WebView arg0, JString arg1)
 	{
 		callMethod<void>(
 			"onPageCommitVisible",
 			"(Landroid/webkit/WebView;Ljava/lang/String;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
-	void WebViewClient::onPageFinished(android::webkit::WebView arg0, jstring arg1)
+	void WebViewClient::onPageFinished(android::webkit::WebView arg0, JString arg1)
 	{
 		callMethod<void>(
 			"onPageFinished",
 			"(Landroid/webkit/WebView;Ljava/lang/String;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
-	void WebViewClient::onPageStarted(android::webkit::WebView arg0, jstring arg1, android::graphics::Bitmap arg2)
+	void WebViewClient::onPageStarted(android::webkit::WebView arg0, JString arg1, android::graphics::Bitmap arg2)
 	{
 		callMethod<void>(
 			"onPageStarted",
 			"(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2.object()
 		);
 	}
@@ -243,26 +244,26 @@ namespace android::webkit
 			arg2.object()
 		);
 	}
-	void WebViewClient::onReceivedError(android::webkit::WebView arg0, jint arg1, jstring arg2, jstring arg3)
+	void WebViewClient::onReceivedError(android::webkit::WebView arg0, jint arg1, JString arg2, JString arg3)
 	{
 		callMethod<void>(
 			"onReceivedError",
 			"(Landroid/webkit/WebView;ILjava/lang/String;Ljava/lang/String;)V",
 			arg0.object(),
 			arg1,
-			arg2,
-			arg3
+			arg2.object<jstring>(),
+			arg3.object<jstring>()
 		);
 	}
-	void WebViewClient::onReceivedHttpAuthRequest(android::webkit::WebView arg0, android::webkit::HttpAuthHandler arg1, jstring arg2, jstring arg3)
+	void WebViewClient::onReceivedHttpAuthRequest(android::webkit::WebView arg0, android::webkit::HttpAuthHandler arg1, JString arg2, JString arg3)
 	{
 		callMethod<void>(
 			"onReceivedHttpAuthRequest",
 			"(Landroid/webkit/WebView;Landroid/webkit/HttpAuthHandler;Ljava/lang/String;Ljava/lang/String;)V",
 			arg0.object(),
 			arg1.object(),
-			arg2,
-			arg3
+			arg2.object<jstring>(),
+			arg3.object<jstring>()
 		);
 	}
 	void WebViewClient::onReceivedHttpError(android::webkit::WebView arg0, JObject arg1, android::webkit::WebResourceResponse arg2)
@@ -275,15 +276,15 @@ namespace android::webkit
 			arg2.object()
 		);
 	}
-	void WebViewClient::onReceivedLoginRequest(android::webkit::WebView arg0, jstring arg1, jstring arg2, jstring arg3)
+	void WebViewClient::onReceivedLoginRequest(android::webkit::WebView arg0, JString arg1, JString arg2, JString arg3)
 	{
 		callMethod<void>(
 			"onReceivedLoginRequest",
 			"(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
 			arg0.object(),
-			arg1,
-			arg2,
-			arg3
+			arg1.object<jstring>(),
+			arg2.object<jstring>(),
+			arg3.object<jstring>()
 		);
 	}
 	void WebViewClient::onReceivedSslError(android::webkit::WebView arg0, android::webkit::SslErrorHandler arg1, android::net::http::SslError arg2)
@@ -354,13 +355,13 @@ namespace android::webkit
 			arg1.object()
 		);
 	}
-	android::webkit::WebResourceResponse WebViewClient::shouldInterceptRequest(android::webkit::WebView arg0, jstring arg1)
+	android::webkit::WebResourceResponse WebViewClient::shouldInterceptRequest(android::webkit::WebView arg0, JString arg1)
 	{
 		return callObjectMethod(
 			"shouldInterceptRequest",
 			"(Landroid/webkit/WebView;Ljava/lang/String;)Landroid/webkit/WebResourceResponse;",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
 	jboolean WebViewClient::shouldOverrideKeyEvent(android::webkit::WebView arg0, android::view::KeyEvent arg1)
@@ -381,13 +382,13 @@ namespace android::webkit
 			arg1.object()
 		);
 	}
-	jboolean WebViewClient::shouldOverrideUrlLoading(android::webkit::WebView arg0, jstring arg1)
+	jboolean WebViewClient::shouldOverrideUrlLoading(android::webkit::WebView arg0, JString arg1)
 	{
 		return callMethod<jboolean>(
 			"shouldOverrideUrlLoading",
 			"(Landroid/webkit/WebView;Ljava/lang/String;)Z",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
 } // namespace android::webkit

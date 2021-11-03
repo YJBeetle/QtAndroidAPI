@@ -1,9 +1,8 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "./Drawable.hpp"
 #include "./DrawableContainer.hpp"
 
+class JIntArray;
 namespace android::content::res
 {
 	class Resources;
@@ -36,12 +35,12 @@ namespace android::graphics::drawable
 		StateListDrawable();
 		
 		// Methods
-		void addState(jintArray arg0, android::graphics::drawable::Drawable arg1);
+		void addState(JIntArray arg0, android::graphics::drawable::Drawable arg1);
 		void applyTheme(android::content::res::Resources_Theme arg0);
-		jint findStateDrawableIndex(jintArray arg0);
+		jint findStateDrawableIndex(JIntArray arg0);
 		jint getStateCount();
 		android::graphics::drawable::Drawable getStateDrawable(jint arg0);
-		jintArray getStateSet(jint arg0);
+		JIntArray getStateSet(jint arg0);
 		jboolean hasFocusStateSpecified();
 		void inflate(android::content::res::Resources arg0, JObject arg1, JObject arg2, android::content::res::Resources_Theme arg3);
 		jboolean isStateful();

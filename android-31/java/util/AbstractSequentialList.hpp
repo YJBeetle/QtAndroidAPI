@@ -1,9 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "./AbstractCollection.hpp"
 #include "./AbstractList.hpp"
 
+class JObject;
 
 namespace java::util
 {
@@ -19,13 +18,13 @@ namespace java::util
 		// Constructors
 		
 		// Methods
-		void add(jint arg0, jobject arg1);
+		void add(jint arg0, JObject arg1);
 		jboolean addAll(jint arg0, JObject arg1);
-		jobject get(jint arg0);
+		JObject get(jint arg0);
 		JObject iterator();
 		JObject listIterator(jint arg0);
-		jobject remove(jint arg0);
-		jobject set(jint arg0, jobject arg1);
+		JObject remove(jint arg0);
+		JObject set(jint arg0, JObject arg1);
 	};
 } // namespace java::util
 

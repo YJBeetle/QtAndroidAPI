@@ -6,6 +6,7 @@ namespace android::app::appsearch
 {
 	class GenericDocument;
 }
+class JString;
 
 namespace android::app::appsearch
 {
@@ -21,10 +22,10 @@ namespace android::app::appsearch
 		// Constructors
 		
 		// Methods
-		jstring getDatabaseName();
+		JString getDatabaseName();
 		android::app::appsearch::GenericDocument getGenericDocument();
 		JObject getMatchInfos();
-		jstring getPackageName();
+		JString getPackageName();
 		jdouble getRankingSignal();
 	};
 } // namespace android::app::appsearch

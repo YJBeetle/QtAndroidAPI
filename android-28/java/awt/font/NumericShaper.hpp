@@ -2,6 +2,9 @@
 
 #include "../../../JObject.hpp"
 
+class JCharArray;
+class JIntArray;
+class JArray;
 namespace java::awt::font
 {
 	class NumericShaper_Range;
@@ -10,6 +13,8 @@ namespace java::io
 {
 	class ObjectOutputStream;
 }
+class JObject;
+class JString;
 
 namespace java::awt::font
 {
@@ -51,15 +56,15 @@ namespace java::awt::font
 		static java::awt::font::NumericShaper getContextualShaper(JObject arg0, java::awt::font::NumericShaper_Range arg1);
 		static java::awt::font::NumericShaper getShaper(jint arg0);
 		static java::awt::font::NumericShaper getShaper(java::awt::font::NumericShaper_Range arg0);
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		JObject getRangeSet();
 		jint getRanges();
 		jint hashCode();
 		jboolean isContextual();
-		void shape(jcharArray arg0, jint arg1, jint arg2);
-		void shape(jcharArray arg0, jint arg1, jint arg2, jint arg3);
-		void shape(jcharArray arg0, jint arg1, jint arg2, java::awt::font::NumericShaper_Range arg3);
-		jstring toString();
+		void shape(JCharArray arg0, jint arg1, jint arg2);
+		void shape(JCharArray arg0, jint arg1, jint arg2, jint arg3);
+		void shape(JCharArray arg0, jint arg1, jint arg2, java::awt::font::NumericShaper_Range arg3);
+		JString toString();
 	};
 } // namespace java::awt::font
 

@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./NegativeArraySizeException.hpp"
 
 namespace java::lang
@@ -13,11 +14,11 @@ namespace java::lang
 			"java.lang.NegativeArraySizeException",
 			"()V"
 		) {}
-	NegativeArraySizeException::NegativeArraySizeException(jstring arg0)
+	NegativeArraySizeException::NegativeArraySizeException(JString arg0)
 		: java::lang::RuntimeException(
 			"java.lang.NegativeArraySizeException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

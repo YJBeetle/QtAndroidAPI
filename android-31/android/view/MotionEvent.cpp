@@ -1,7 +1,11 @@
+#include "../../JIntArray.hpp"
+#include "../../JArray.hpp"
+#include "../../JArray.hpp"
 #include "../graphics/Matrix.hpp"
 #include "../os/Parcel.hpp"
 #include "./MotionEvent_PointerCoords.hpp"
 #include "./MotionEvent_PointerProperties.hpp"
+#include "../../JString.hpp"
 #include "./MotionEvent.hpp"
 
 namespace android::view
@@ -659,32 +663,32 @@ namespace android::view
 	// Constructors
 	
 	// Methods
-	jstring MotionEvent::actionToString(jint arg0)
+	JString MotionEvent::actionToString(jint arg0)
 	{
 		return callStaticObjectMethod(
 			"android.view.MotionEvent",
 			"actionToString",
 			"(I)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
-	jint MotionEvent::axisFromString(jstring arg0)
+	jint MotionEvent::axisFromString(JString arg0)
 	{
 		return callStaticMethod<jint>(
 			"android.view.MotionEvent",
 			"axisFromString",
 			"(Ljava/lang/String;)I",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jstring MotionEvent::axisToString(jint arg0)
+	JString MotionEvent::axisToString(jint arg0)
 	{
 		return callStaticObjectMethod(
 			"android.view.MotionEvent",
 			"axisToString",
 			"(I)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
 	android::view::MotionEvent MotionEvent::obtain(android::view::MotionEvent arg0)
 	{
@@ -729,7 +733,7 @@ namespace android::view
 			arg11
 		);
 	}
-	android::view::MotionEvent MotionEvent::obtain(jlong arg0, jlong arg1, jint arg2, jint arg3, jintArray arg4, jarray arg5, jint arg6, jfloat arg7, jfloat arg8, jint arg9, jint arg10, jint arg11, jint arg12)
+	android::view::MotionEvent MotionEvent::obtain(jlong arg0, jlong arg1, jint arg2, jint arg3, JIntArray arg4, JArray arg5, jint arg6, jfloat arg7, jfloat arg8, jint arg9, jint arg10, jint arg11, jint arg12)
 	{
 		return callStaticObjectMethod(
 			"android.view.MotionEvent",
@@ -739,8 +743,8 @@ namespace android::view
 			arg1,
 			arg2,
 			arg3,
-			arg4,
-			arg5,
+			arg4.object<jintArray>(),
+			arg5.object<jarray>(),
 			arg6,
 			arg7,
 			arg8,
@@ -771,7 +775,7 @@ namespace android::view
 			arg12
 		);
 	}
-	android::view::MotionEvent MotionEvent::obtain(jlong arg0, jlong arg1, jint arg2, jint arg3, jarray arg4, jarray arg5, jint arg6, jint arg7, jfloat arg8, jfloat arg9, jint arg10, jint arg11, jint arg12, jint arg13)
+	android::view::MotionEvent MotionEvent::obtain(jlong arg0, jlong arg1, jint arg2, jint arg3, JArray arg4, JArray arg5, jint arg6, jint arg7, jfloat arg8, jfloat arg9, jint arg10, jint arg11, jint arg12, jint arg13)
 	{
 		return callStaticObjectMethod(
 			"android.view.MotionEvent",
@@ -781,8 +785,8 @@ namespace android::view
 			arg1,
 			arg2,
 			arg3,
-			arg4,
-			arg5,
+			arg4.object<jarray>(),
+			arg5.object<jarray>(),
 			arg6,
 			arg7,
 			arg8,
@@ -802,13 +806,13 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void MotionEvent::addBatch(jlong arg0, jarray arg1, jint arg2)
+	void MotionEvent::addBatch(jlong arg0, JArray arg1, jint arg2)
 	{
 		callMethod<void>(
 			"addBatch",
 			"(J[Landroid/view/MotionEvent$PointerCoords;I)V",
 			arg0,
-			arg1,
+			arg1.object<jarray>(),
 			arg2
 		);
 	}
@@ -1415,12 +1419,12 @@ namespace android::view
 			arg0
 		);
 	}
-	jstring MotionEvent::toString()
+	JString MotionEvent::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void MotionEvent::transform(android::graphics::Matrix arg0)
 	{

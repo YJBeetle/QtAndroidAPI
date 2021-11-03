@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./SQLiteOutOfMemoryException.hpp"
 
 namespace android::database::sqlite
@@ -13,11 +14,11 @@ namespace android::database::sqlite
 			"android.database.sqlite.SQLiteOutOfMemoryException",
 			"()V"
 		) {}
-	SQLiteOutOfMemoryException::SQLiteOutOfMemoryException(jstring arg0)
+	SQLiteOutOfMemoryException::SQLiteOutOfMemoryException(JString arg0)
 		: android::database::sqlite::SQLiteException(
 			"android.database.sqlite.SQLiteOutOfMemoryException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

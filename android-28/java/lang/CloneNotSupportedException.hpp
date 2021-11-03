@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./Exception.hpp"
 
+class JString;
 
 namespace java::lang
 {
@@ -17,7 +17,7 @@ namespace java::lang
 		
 		// Constructors
 		CloneNotSupportedException();
-		CloneNotSupportedException(jstring arg0);
+		CloneNotSupportedException(JString arg0);
 		
 		// Methods
 	};

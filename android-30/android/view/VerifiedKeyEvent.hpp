@@ -1,6 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./VerifiedInputEvent.hpp"
 
 namespace android::os
@@ -11,6 +10,7 @@ namespace java::lang
 {
 	class Boolean;
 }
+class JObject;
 
 namespace android::view
 {
@@ -28,7 +28,7 @@ namespace android::view
 		
 		// Methods
 		jint describeContents();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint getAction();
 		jlong getDownTimeNanos();
 		java::lang::Boolean getFlag(jint arg0);

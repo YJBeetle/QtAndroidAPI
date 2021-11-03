@@ -1,3 +1,4 @@
+#include "../../JFloatArray.hpp"
 #include "./Gesture.hpp"
 #include "./GestureStroke.hpp"
 #include "./OrientedBoundingBox.hpp"
@@ -14,13 +15,13 @@ namespace android::gesture
 	// Constructors
 	
 	// Methods
-	android::gesture::OrientedBoundingBox GestureUtils::computeOrientedBoundingBox(jfloatArray arg0)
+	android::gesture::OrientedBoundingBox GestureUtils::computeOrientedBoundingBox(JFloatArray arg0)
 	{
 		return callStaticObjectMethod(
 			"android.gesture.GestureUtils",
 			"computeOrientedBoundingBox",
 			"([F)Landroid/gesture/OrientedBoundingBox;",
-			arg0
+			arg0.object<jfloatArray>()
 		);
 	}
 	android::gesture::OrientedBoundingBox GestureUtils::computeOrientedBoundingBox(java::util::ArrayList arg0)
@@ -32,7 +33,7 @@ namespace android::gesture
 			arg0.object()
 		);
 	}
-	jfloatArray GestureUtils::spatialSampling(android::gesture::Gesture arg0, jint arg1)
+	JFloatArray GestureUtils::spatialSampling(android::gesture::Gesture arg0, jint arg1)
 	{
 		return callStaticObjectMethod(
 			"android.gesture.GestureUtils",
@@ -40,9 +41,9 @@ namespace android::gesture
 			"(Landroid/gesture/Gesture;I)[F",
 			arg0.object(),
 			arg1
-		).object<jfloatArray>();
+		);
 	}
-	jfloatArray GestureUtils::spatialSampling(android::gesture::Gesture arg0, jint arg1, jboolean arg2)
+	JFloatArray GestureUtils::spatialSampling(android::gesture::Gesture arg0, jint arg1, jboolean arg2)
 	{
 		return callStaticObjectMethod(
 			"android.gesture.GestureUtils",
@@ -51,9 +52,9 @@ namespace android::gesture
 			arg0.object(),
 			arg1,
 			arg2
-		).object<jfloatArray>();
+		);
 	}
-	jfloatArray GestureUtils::temporalSampling(android::gesture::GestureStroke arg0, jint arg1)
+	JFloatArray GestureUtils::temporalSampling(android::gesture::GestureStroke arg0, jint arg1)
 	{
 		return callStaticObjectMethod(
 			"android.gesture.GestureUtils",
@@ -61,7 +62,7 @@ namespace android::gesture
 			"(Landroid/gesture/GestureStroke;I)[F",
 			arg0.object(),
 			arg1
-		).object<jfloatArray>();
+		);
 	}
 } // namespace android::gesture
 

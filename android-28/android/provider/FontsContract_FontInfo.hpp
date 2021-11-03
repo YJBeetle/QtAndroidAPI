@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JArray;
 namespace android::net
 {
 	class Uri;
@@ -21,7 +22,7 @@ namespace android::provider
 		// Constructors
 		
 		// Methods
-		jarray getAxes();
+		JArray getAxes();
 		jint getResultCode();
 		jint getTtcIndex();
 		android::net::Uri getUri();

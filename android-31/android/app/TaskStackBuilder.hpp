@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JArray;
 namespace android::app
 {
 	class Activity;
@@ -26,6 +27,7 @@ namespace android::os
 {
 	class Bundle;
 }
+class JClass;
 
 namespace android::app
 {
@@ -46,10 +48,10 @@ namespace android::app
 		android::app::TaskStackBuilder addNextIntentWithParentStack(android::content::Intent arg0);
 		android::app::TaskStackBuilder addParentStack(android::app::Activity arg0);
 		android::app::TaskStackBuilder addParentStack(android::content::ComponentName arg0);
-		android::app::TaskStackBuilder addParentStack(jclass arg0);
+		android::app::TaskStackBuilder addParentStack(JClass arg0);
 		android::content::Intent editIntentAt(jint arg0);
 		jint getIntentCount();
-		jarray getIntents();
+		JArray getIntents();
 		android::app::PendingIntent getPendingIntent(jint arg0, jint arg1);
 		android::app::PendingIntent getPendingIntent(jint arg0, jint arg1, android::os::Bundle arg2);
 		void startActivities();

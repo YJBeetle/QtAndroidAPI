@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JIntArray;
 namespace android::bluetooth
 {
 	class BluetoothDevice;
@@ -10,6 +11,7 @@ namespace android::content
 {
 	class Context;
 }
+class JString;
 
 namespace android::bluetooth
 {
@@ -17,8 +19,8 @@ namespace android::bluetooth
 	{
 	public:
 		// Fields
-		static jstring ACTION_CONNECTION_STATE_CHANGED();
-		static jstring ACTION_PLAYING_STATE_CHANGED();
+		static JString ACTION_CONNECTION_STATE_CHANGED();
+		static JString ACTION_PLAYING_STATE_CHANGED();
 		static jint STATE_NOT_PLAYING();
 		static jint STATE_PLAYING();
 		
@@ -32,7 +34,7 @@ namespace android::bluetooth
 		void finalize();
 		JObject getConnectedDevices();
 		jint getConnectionState(android::bluetooth::BluetoothDevice arg0);
-		JObject getDevicesMatchingConnectionStates(jintArray arg0);
+		JObject getDevicesMatchingConnectionStates(JIntArray arg0);
 		jboolean isA2dpPlaying(android::bluetooth::BluetoothDevice arg0);
 	};
 } // namespace android::bluetooth

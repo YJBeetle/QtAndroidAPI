@@ -2,7 +2,6 @@
 
 #include "../../JObject.hpp"
 
-
 namespace java::sql
 {
 	class Types : public JObject

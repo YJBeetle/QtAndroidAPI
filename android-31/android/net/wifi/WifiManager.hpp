@@ -54,6 +54,7 @@ namespace android::os
 {
 	class Handler;
 }
+class JString;
 namespace java::net
 {
 	class InetAddress;
@@ -65,27 +66,27 @@ namespace android::net::wifi
 	{
 	public:
 		// Fields
-		static jstring ACTION_PICK_WIFI_NETWORK();
-		static jstring ACTION_REQUEST_SCAN_ALWAYS_AVAILABLE();
-		static jstring ACTION_WIFI_NETWORK_SUGGESTION_POST_CONNECTION();
-		static jstring ACTION_WIFI_SCAN_AVAILABILITY_CHANGED();
+		static JString ACTION_PICK_WIFI_NETWORK();
+		static JString ACTION_REQUEST_SCAN_ALWAYS_AVAILABLE();
+		static JString ACTION_WIFI_NETWORK_SUGGESTION_POST_CONNECTION();
+		static JString ACTION_WIFI_SCAN_AVAILABILITY_CHANGED();
 		static jint ERROR_AUTHENTICATING();
-		static jstring EXTRA_BSSID();
-		static jstring EXTRA_NETWORK_INFO();
-		static jstring EXTRA_NETWORK_SUGGESTION();
-		static jstring EXTRA_NEW_RSSI();
-		static jstring EXTRA_NEW_STATE();
-		static jstring EXTRA_PREVIOUS_WIFI_STATE();
-		static jstring EXTRA_RESULTS_UPDATED();
-		static jstring EXTRA_SCAN_AVAILABLE();
-		static jstring EXTRA_SUPPLICANT_CONNECTED();
-		static jstring EXTRA_SUPPLICANT_ERROR();
-		static jstring EXTRA_WIFI_INFO();
-		static jstring EXTRA_WIFI_STATE();
-		static jstring NETWORK_IDS_CHANGED_ACTION();
-		static jstring NETWORK_STATE_CHANGED_ACTION();
-		static jstring RSSI_CHANGED_ACTION();
-		static jstring SCAN_RESULTS_AVAILABLE_ACTION();
+		static JString EXTRA_BSSID();
+		static JString EXTRA_NETWORK_INFO();
+		static JString EXTRA_NETWORK_SUGGESTION();
+		static JString EXTRA_NEW_RSSI();
+		static JString EXTRA_NEW_STATE();
+		static JString EXTRA_PREVIOUS_WIFI_STATE();
+		static JString EXTRA_RESULTS_UPDATED();
+		static JString EXTRA_SCAN_AVAILABLE();
+		static JString EXTRA_SUPPLICANT_CONNECTED();
+		static JString EXTRA_SUPPLICANT_ERROR();
+		static JString EXTRA_WIFI_INFO();
+		static JString EXTRA_WIFI_STATE();
+		static JString NETWORK_IDS_CHANGED_ACTION();
+		static JString NETWORK_STATE_CHANGED_ACTION();
+		static JString RSSI_CHANGED_ACTION();
+		static JString SCAN_RESULTS_AVAILABLE_ACTION();
 		static jint STATUS_NETWORK_SUGGESTIONS_ERROR_ADD_DUPLICATE();
 		static jint STATUS_NETWORK_SUGGESTIONS_ERROR_ADD_EXCEEDS_MAX_PER_APP();
 		static jint STATUS_NETWORK_SUGGESTIONS_ERROR_ADD_INVALID();
@@ -103,14 +104,14 @@ namespace android::net::wifi
 		static jint STATUS_SUGGESTION_CONNECTION_FAILURE_AUTHENTICATION();
 		static jint STATUS_SUGGESTION_CONNECTION_FAILURE_IP_PROVISIONING();
 		static jint STATUS_SUGGESTION_CONNECTION_FAILURE_UNKNOWN();
-		static jstring SUPPLICANT_CONNECTION_CHANGE_ACTION();
-		static jstring SUPPLICANT_STATE_CHANGED_ACTION();
-		static jstring UNKNOWN_SSID();
+		static JString SUPPLICANT_CONNECTION_CHANGE_ACTION();
+		static JString SUPPLICANT_STATE_CHANGED_ACTION();
+		static JString UNKNOWN_SSID();
 		static jint WIFI_MODE_FULL();
 		static jint WIFI_MODE_FULL_HIGH_PERF();
 		static jint WIFI_MODE_FULL_LOW_LATENCY();
 		static jint WIFI_MODE_SCAN_ONLY();
-		static jstring WIFI_STATE_CHANGED_ACTION();
+		static JString WIFI_STATE_CHANGED_ACTION();
 		static jint WIFI_STATE_DISABLED();
 		static jint WIFI_STATE_DISABLING();
 		static jint WIFI_STATE_ENABLED();
@@ -139,9 +140,9 @@ namespace android::net::wifi
 		void addSuggestionUserApprovalStatusListener(JObject arg0, JObject arg1);
 		jint calculateSignalLevel(jint arg0);
 		void cancelWps(android::net::wifi::WifiManager_WpsCallback arg0);
-		android::net::wifi::WifiManager_MulticastLock createMulticastLock(jstring arg0);
-		android::net::wifi::WifiManager_WifiLock createWifiLock(jstring arg0);
-		android::net::wifi::WifiManager_WifiLock createWifiLock(jint arg0, jstring arg1);
+		android::net::wifi::WifiManager_MulticastLock createMulticastLock(JString arg0);
+		android::net::wifi::WifiManager_WifiLock createWifiLock(JString arg0);
+		android::net::wifi::WifiManager_WifiLock createWifiLock(jint arg0, JString arg1);
 		jboolean disableNetwork(jint arg0);
 		jboolean disconnect();
 		jboolean enableNetwork(jint arg0, jboolean arg1);
@@ -195,12 +196,12 @@ namespace android::net::wifi
 		jboolean removeNetwork(jint arg0);
 		jint removeNetworkSuggestions(JObject arg0);
 		jboolean removeNonCallerConfiguredNetworks();
-		void removePasspointConfiguration(jstring arg0);
+		void removePasspointConfiguration(JString arg0);
 		void removeSuggestionConnectionStatusListener(JObject arg0);
 		void removeSuggestionUserApprovalStatusListener(JObject arg0);
 		jboolean saveConfiguration();
 		void setTdlsEnabled(java::net::InetAddress arg0, jboolean arg1);
-		void setTdlsEnabledWithMacAddress(jstring arg0, jboolean arg1);
+		void setTdlsEnabledWithMacAddress(JString arg0, jboolean arg1);
 		jboolean setWifiEnabled(jboolean arg0);
 		void startLocalOnlyHotspot(android::net::wifi::WifiManager_LocalOnlyHotspotCallback arg0, android::os::Handler arg1);
 		jboolean startScan();

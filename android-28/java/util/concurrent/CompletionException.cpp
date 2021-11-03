@@ -1,3 +1,5 @@
+#include "../../../JString.hpp"
+#include "../../../JThrowable.hpp"
 #include "./CompletionException.hpp"
 
 namespace java::util::concurrent
@@ -8,18 +10,18 @@ namespace java::util::concurrent
 	CompletionException::CompletionException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
 	
 	// Constructors
-	CompletionException::CompletionException(jthrowable arg0)
+	CompletionException::CompletionException(JThrowable arg0)
 		: java::lang::RuntimeException(
 			"java.util.concurrent.CompletionException",
 			"(Ljava/lang/Throwable;)V",
-			arg0
+			arg0.object<jthrowable>()
 		) {}
-	CompletionException::CompletionException(jstring arg0, jthrowable arg1)
+	CompletionException::CompletionException(JString arg0, JThrowable arg1)
 		: java::lang::RuntimeException(
 			"java.util.concurrent.CompletionException",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
 		) {}
 	
 	// Methods

@@ -22,6 +22,8 @@ namespace android::service::controls::templates
 {
 	class ControlTemplate;
 }
+class JString;
+class JString;
 
 namespace android::service::controls
 {
@@ -45,17 +47,17 @@ namespace android::service::controls
 		// Methods
 		jint describeContents();
 		android::app::PendingIntent getAppIntent();
-		jstring getControlId();
+		JString getControlId();
 		android::service::controls::templates::ControlTemplate getControlTemplate();
 		android::content::res::ColorStateList getCustomColor();
 		android::graphics::drawable::Icon getCustomIcon();
 		jint getDeviceType();
 		jint getStatus();
-		jstring getStatusText();
-		jstring getStructure();
-		jstring getSubtitle();
-		jstring getTitle();
-		jstring getZone();
+		JString getStatusText();
+		JString getStructure();
+		JString getSubtitle();
+		JString getTitle();
+		JString getZone();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::service::controls

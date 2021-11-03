@@ -1,5 +1,7 @@
 #include "../io/InputStream.hpp"
 #include "../io/OutputStream.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "../lang/Void.hpp"
 #include "./InetAddress.hpp"
 #include "./Proxy.hpp"
@@ -27,11 +29,11 @@ namespace java::net
 			"(Ljava/net/Proxy;)V",
 			arg0.object()
 		) {}
-	Socket::Socket(jstring arg0, jint arg1)
+	Socket::Socket(JString arg0, jint arg1)
 		: JObject(
 			"java.net.Socket",
 			"(Ljava/lang/String;I)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		) {}
 	Socket::Socket(java::net::InetAddress arg0, jint arg1)
@@ -41,11 +43,11 @@ namespace java::net
 			arg0.object(),
 			arg1
 		) {}
-	Socket::Socket(jstring arg0, jint arg1, jboolean arg2)
+	Socket::Socket(JString arg0, jint arg1, jboolean arg2)
 		: JObject(
 			"java.net.Socket",
 			"(Ljava/lang/String;IZ)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
 			arg2
 		) {}
@@ -57,11 +59,11 @@ namespace java::net
 			arg1,
 			arg2
 		) {}
-	Socket::Socket(jstring arg0, jint arg1, java::net::InetAddress arg2, jint arg3)
+	Socket::Socket(JString arg0, jint arg1, java::net::InetAddress arg2, jint arg3)
 		: JObject(
 			"java.net.Socket",
 			"(Ljava/lang/String;ILjava/net/InetAddress;I)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
 			arg2.object(),
 			arg3
@@ -174,13 +176,13 @@ namespace java::net
 			"()Z"
 		);
 	}
-	jobject Socket::getOption(JObject arg0)
+	JObject Socket::getOption(JObject arg0)
 	{
 		return callObjectMethod(
 			"getOption",
 			"(Ljava/net/SocketOption;)Ljava/lang/Object;",
 			arg0.object()
-		).object<jobject>();
+		);
 	}
 	java::io::OutputStream Socket::getOutputStream()
 	{
@@ -311,13 +313,13 @@ namespace java::net
 			arg0
 		);
 	}
-	java::net::Socket Socket::setOption(JObject arg0, jobject arg1)
+	java::net::Socket Socket::setOption(JObject arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"setOption",
 			"(Ljava/net/SocketOption;Ljava/lang/Object;)Ljava/net/Socket;",
 			arg0.object(),
-			arg1
+			arg1.object<jobject>()
 		);
 	}
 	void Socket::setPerformancePreferences(jint arg0, jint arg1, jint arg2)
@@ -408,12 +410,12 @@ namespace java::net
 			"()Ljava/util/Set;"
 		);
 	}
-	jstring Socket::toString()
+	JString Socket::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::net
 

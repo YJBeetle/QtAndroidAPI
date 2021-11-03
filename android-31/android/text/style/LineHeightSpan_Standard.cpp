@@ -1,5 +1,6 @@
 #include "../../graphics/Paint_FontMetricsInt.hpp"
 #include "../../os/Parcel.hpp"
+#include "../../../JString.hpp"
 #include "./LineHeightSpan_Standard.hpp"
 
 namespace android::text::style
@@ -24,12 +25,12 @@ namespace android::text::style
 		) {}
 	
 	// Methods
-	void LineHeightSpan_Standard::chooseHeight(jstring arg0, jint arg1, jint arg2, jint arg3, jint arg4, android::graphics::Paint_FontMetricsInt arg5)
+	void LineHeightSpan_Standard::chooseHeight(JString arg0, jint arg1, jint arg2, jint arg3, jint arg4, android::graphics::Paint_FontMetricsInt arg5)
 	{
 		callMethod<void>(
 			"chooseHeight",
 			"(Ljava/lang/CharSequence;IIIILandroid/graphics/Paint$FontMetricsInt;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
 			arg2,
 			arg3,

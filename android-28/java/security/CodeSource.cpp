@@ -1,5 +1,9 @@
+#include "../../JArray.hpp"
+#include "../../JArray.hpp"
 #include "../io/ObjectInputStream.hpp"
 #include "../io/ObjectOutputStream.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "../net/SocketPermission.hpp"
 #include "../net/URL.hpp"
 #include "./cert/CertificateFactory.hpp"
@@ -13,36 +17,36 @@ namespace java::security
 	CodeSource::CodeSource(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	CodeSource::CodeSource(java::net::URL arg0, jarray arg1)
+	CodeSource::CodeSource(java::net::URL arg0, JArray arg1)
 		: JObject(
 			"java.security.CodeSource",
 			"(Ljava/net/URL;[Ljava/security/CodeSigner;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jarray>()
 		) {}
 	
 	// Methods
-	jboolean CodeSource::equals(jobject arg0)
+	jboolean CodeSource::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jarray CodeSource::getCertificates()
+	JArray CodeSource::getCertificates()
 	{
 		return callObjectMethod(
 			"getCertificates",
 			"()[Ljava/security/cert/Certificate;"
-		).object<jarray>();
+		);
 	}
-	jarray CodeSource::getCodeSigners()
+	JArray CodeSource::getCodeSigners()
 	{
 		return callObjectMethod(
 			"getCodeSigners",
 			"()[Ljava/security/CodeSigner;"
-		).object<jarray>();
+		);
 	}
 	java::net::URL CodeSource::getLocation()
 	{
@@ -66,12 +70,12 @@ namespace java::security
 			arg0.object()
 		);
 	}
-	jstring CodeSource::toString()
+	JString CodeSource::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::security
 

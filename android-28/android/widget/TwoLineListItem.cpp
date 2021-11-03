@@ -1,5 +1,6 @@
 #include "../content/Context.hpp"
 #include "./TextView.hpp"
+#include "../../JString.hpp"
 #include "./TwoLineListItem.hpp"
 
 namespace android::widget
@@ -42,12 +43,12 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	jstring TwoLineListItem::getAccessibilityClassName()
+	JString TwoLineListItem::getAccessibilityClassName()
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	android::widget::TextView TwoLineListItem::getText1()
 	{

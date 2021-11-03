@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./TtsSpan_TextBuilder.hpp"
 
 namespace android::text::style
@@ -13,20 +14,20 @@ namespace android::text::style
 			"android.text.style.TtsSpan$TextBuilder",
 			"()V"
 		) {}
-	TtsSpan_TextBuilder::TtsSpan_TextBuilder(jstring arg0)
+	TtsSpan_TextBuilder::TtsSpan_TextBuilder(JString arg0)
 		: android::text::style::TtsSpan_SemioticClassBuilder(
 			"android.text.style.TtsSpan$TextBuilder",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods
-	android::text::style::TtsSpan_TextBuilder TtsSpan_TextBuilder::setText(jstring arg0)
+	android::text::style::TtsSpan_TextBuilder TtsSpan_TextBuilder::setText(JString arg0)
 	{
 		return callObjectMethod(
 			"setText",
 			"(Ljava/lang/String;)Landroid/text/style/TtsSpan$TextBuilder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 } // namespace android::text::style

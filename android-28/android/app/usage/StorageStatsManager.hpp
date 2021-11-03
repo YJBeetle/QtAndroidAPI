@@ -14,6 +14,7 @@ namespace android::os
 {
 	class UserHandle;
 }
+class JString;
 namespace java::util
 {
 	class UUID;
@@ -36,7 +37,7 @@ namespace android::app::usage
 		jlong getFreeBytes(java::util::UUID arg0);
 		jlong getTotalBytes(java::util::UUID arg0);
 		android::app::usage::ExternalStorageStats queryExternalStatsForUser(java::util::UUID arg0, android::os::UserHandle arg1);
-		android::app::usage::StorageStats queryStatsForPackage(java::util::UUID arg0, jstring arg1, android::os::UserHandle arg2);
+		android::app::usage::StorageStats queryStatsForPackage(java::util::UUID arg0, JString arg1, android::os::UserHandle arg2);
 		android::app::usage::StorageStats queryStatsForUid(java::util::UUID arg0, jint arg1);
 		android::app::usage::StorageStats queryStatsForUser(java::util::UUID arg0, android::os::UserHandle arg1);
 	};

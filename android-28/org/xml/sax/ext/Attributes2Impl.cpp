@@ -1,3 +1,5 @@
+#include "../../../../JBooleanArray.hpp"
+#include "../../../../JString.hpp"
 #include "./Attributes2Impl.hpp"
 
 namespace org::xml::sax::ext
@@ -21,16 +23,16 @@ namespace org::xml::sax::ext
 		) {}
 	
 	// Methods
-	void Attributes2Impl::addAttribute(jstring arg0, jstring arg1, jstring arg2, jstring arg3, jstring arg4)
+	void Attributes2Impl::addAttribute(JString arg0, JString arg1, JString arg2, JString arg3, JString arg4)
 	{
 		callMethod<void>(
 			"addAttribute",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3,
-			arg4
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2.object<jstring>(),
+			arg3.object<jstring>(),
+			arg4.object<jstring>()
 		);
 	}
 	jboolean Attributes2Impl::isDeclared(jint arg0)
@@ -41,21 +43,21 @@ namespace org::xml::sax::ext
 			arg0
 		);
 	}
-	jboolean Attributes2Impl::isDeclared(jstring arg0)
+	jboolean Attributes2Impl::isDeclared(JString arg0)
 	{
 		return callMethod<jboolean>(
 			"isDeclared",
 			"(Ljava/lang/String;)Z",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jboolean Attributes2Impl::isDeclared(jstring arg0, jstring arg1)
+	jboolean Attributes2Impl::isDeclared(JString arg0, JString arg1)
 	{
 		return callMethod<jboolean>(
 			"isDeclared",
 			"(Ljava/lang/String;Ljava/lang/String;)Z",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		);
 	}
 	jboolean Attributes2Impl::isSpecified(jint arg0)
@@ -66,21 +68,21 @@ namespace org::xml::sax::ext
 			arg0
 		);
 	}
-	jboolean Attributes2Impl::isSpecified(jstring arg0)
+	jboolean Attributes2Impl::isSpecified(JString arg0)
 	{
 		return callMethod<jboolean>(
 			"isSpecified",
 			"(Ljava/lang/String;)Z",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jboolean Attributes2Impl::isSpecified(jstring arg0, jstring arg1)
+	jboolean Attributes2Impl::isSpecified(JString arg0, JString arg1)
 	{
 		return callMethod<jboolean>(
 			"isSpecified",
 			"(Ljava/lang/String;Ljava/lang/String;)Z",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		);
 	}
 	void Attributes2Impl::removeAttribute(jint arg0)

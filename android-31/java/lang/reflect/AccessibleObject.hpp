@@ -2,6 +2,11 @@
 
 #include "../../../JObject.hpp"
 
+class JArray;
+class JArray;
+class JClass;
+class JObject;
+class JString;
 
 namespace java::lang::reflect
 {
@@ -17,16 +22,16 @@ namespace java::lang::reflect
 		// Constructors
 		
 		// Methods
-		static void setAccessible(jarray arg0, jboolean arg1);
-		jboolean canAccess(jobject arg0);
-		JObject getAnnotation(jclass arg0);
-		jarray getAnnotations();
-		jarray getAnnotationsByType(jclass arg0);
-		JObject getDeclaredAnnotation(jclass arg0);
-		jarray getDeclaredAnnotations();
-		jarray getDeclaredAnnotationsByType(jclass arg0);
+		static void setAccessible(JArray arg0, jboolean arg1);
+		jboolean canAccess(JObject arg0);
+		JObject getAnnotation(JClass arg0);
+		JArray getAnnotations();
+		JArray getAnnotationsByType(JClass arg0);
+		JObject getDeclaredAnnotation(JClass arg0);
+		JArray getDeclaredAnnotations();
+		JArray getDeclaredAnnotationsByType(JClass arg0);
 		jboolean isAccessible();
-		jboolean isAnnotationPresent(jclass arg0);
+		jboolean isAnnotationPresent(JClass arg0);
 		void setAccessible(jboolean arg0);
 		jboolean trySetAccessible();
 	};

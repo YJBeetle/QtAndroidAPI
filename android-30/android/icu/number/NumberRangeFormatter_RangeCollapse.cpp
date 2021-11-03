@@ -1,3 +1,5 @@
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
 #include "./NumberRangeFormatter_RangeCollapse.hpp"
 
 namespace android::icu::number
@@ -42,22 +44,22 @@ namespace android::icu::number
 	// Constructors
 	
 	// Methods
-	android::icu::number::NumberRangeFormatter_RangeCollapse NumberRangeFormatter_RangeCollapse::valueOf(jstring arg0)
+	android::icu::number::NumberRangeFormatter_RangeCollapse NumberRangeFormatter_RangeCollapse::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.icu.number.NumberRangeFormatter$RangeCollapse",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/icu/number/NumberRangeFormatter$RangeCollapse;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray NumberRangeFormatter_RangeCollapse::values()
+	JArray NumberRangeFormatter_RangeCollapse::values()
 	{
 		return callStaticObjectMethod(
 			"android.icu.number.NumberRangeFormatter$RangeCollapse",
 			"values",
 			"()[Landroid/icu/number/NumberRangeFormatter$RangeCollapse;"
-		).object<jarray>();
+		);
 	}
 } // namespace android::icu::number
 

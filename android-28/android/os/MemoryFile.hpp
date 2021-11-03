@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JByteArray;
 namespace java::io
 {
 	class InputStream;
@@ -10,6 +11,7 @@ namespace java::io
 {
 	class OutputStream;
 }
+class JString;
 
 namespace android::os
 {
@@ -23,7 +25,7 @@ namespace android::os
 		MemoryFile(QAndroidJniObject obj);
 		
 		// Constructors
-		MemoryFile(jstring arg0, jint arg1);
+		MemoryFile(JString arg0, jint arg1);
 		
 		// Methods
 		jboolean allowPurging(jboolean arg0);
@@ -32,8 +34,8 @@ namespace android::os
 		java::io::OutputStream getOutputStream();
 		jboolean isPurgingAllowed();
 		jint length();
-		jint readBytes(jbyteArray arg0, jint arg1, jint arg2, jint arg3);
-		void writeBytes(jbyteArray arg0, jint arg1, jint arg2, jint arg3);
+		jint readBytes(JByteArray arg0, jint arg1, jint arg2, jint arg3);
+		void writeBytes(JByteArray arg0, jint arg1, jint arg2, jint arg3);
 	};
 } // namespace android::os
 

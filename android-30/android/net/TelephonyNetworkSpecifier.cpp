@@ -1,4 +1,6 @@
 #include "../os/Parcel.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./TelephonyNetworkSpecifier.hpp"
 
 namespace android::net
@@ -26,12 +28,12 @@ namespace android::net
 			"()I"
 		);
 	}
-	jboolean TelephonyNetworkSpecifier::equals(jobject arg0)
+	jboolean TelephonyNetworkSpecifier::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint TelephonyNetworkSpecifier::getSubscriptionId()
@@ -48,12 +50,12 @@ namespace android::net
 			"()I"
 		);
 	}
-	jstring TelephonyNetworkSpecifier::toString()
+	JString TelephonyNetworkSpecifier::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void TelephonyNetworkSpecifier::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

@@ -1,3 +1,5 @@
+#include "../../../../JObject.hpp"
+#include "../../../../JString.hpp"
 #include "../../../lang/StringBuilder.hpp"
 #include "../../../time/Instant.hpp"
 #include "../../../util/concurrent/TimeUnit.hpp"
@@ -41,12 +43,12 @@ namespace java::nio::file::attribute
 			arg0
 		);
 	}
-	jint FileTime::compareTo(jobject arg0)
+	jint FileTime::compareTo(JObject arg0)
 	{
 		return callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Object;)I",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint FileTime::compareTo(java::nio::file::attribute::FileTime arg0)
@@ -57,12 +59,12 @@ namespace java::nio::file::attribute
 			arg0.object()
 		);
 	}
-	jboolean FileTime::equals(jobject arg0)
+	jboolean FileTime::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint FileTime::hashCode()
@@ -94,12 +96,12 @@ namespace java::nio::file::attribute
 			"()J"
 		);
 	}
-	jstring FileTime::toString()
+	JString FileTime::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::nio::file::attribute
 

@@ -2,6 +2,10 @@
 
 #include "../../../JObject.hpp"
 
+class JByteArray;
+class JCharArray;
+class JIntArray;
+class JObjectArray;
 namespace android::icu::text
 {
 	class BidiClassifier;
@@ -10,6 +14,8 @@ namespace android::icu::text
 {
 	class BidiRun;
 }
+class JString;
+class JString;
 
 namespace android::icu::text
 {
@@ -55,17 +61,17 @@ namespace android::icu::text
 		Bidi();
 		Bidi(JObject arg0);
 		Bidi(jint arg0, jint arg1);
-		Bidi(jstring arg0, jint arg1);
-		Bidi(jcharArray arg0, jint arg1, jbyteArray arg2, jint arg3, jint arg4, jint arg5);
+		Bidi(JString arg0, jint arg1);
+		Bidi(JCharArray arg0, jint arg1, JByteArray arg2, jint arg3, jint arg4, jint arg5);
 		
 		// Methods
-		static jbyte getBaseDirection(jstring arg0);
-		static jintArray invertMap(jintArray arg0);
-		static jintArray reorderLogical(jbyteArray arg0);
-		static jintArray reorderVisual(jbyteArray arg0);
-		static void reorderVisually(jbyteArray arg0, jint arg1, jobjectArray arg2, jint arg3, jint arg4);
-		static jboolean requiresBidi(jcharArray arg0, jint arg1, jint arg2);
-		static jstring writeReverse(jstring arg0, jint arg1);
+		static jbyte getBaseDirection(JString arg0);
+		static JIntArray invertMap(JIntArray arg0);
+		static JIntArray reorderLogical(JByteArray arg0);
+		static JIntArray reorderVisual(JByteArray arg0);
+		static void reorderVisually(JByteArray arg0, jint arg1, JObjectArray arg2, jint arg3, jint arg4);
+		static jboolean requiresBidi(JCharArray arg0, jint arg1, jint arg2);
+		static JString writeReverse(JString arg0, jint arg1);
 		jboolean baseIsLeftToRight();
 		jint countParagraphs();
 		jint countRuns();
@@ -76,9 +82,9 @@ namespace android::icu::text
 		jbyte getDirection();
 		jint getLength();
 		jbyte getLevelAt(jint arg0);
-		jbyteArray getLevels();
+		JByteArray getLevels();
 		jint getLogicalIndex(jint arg0);
-		jintArray getLogicalMap();
+		JIntArray getLogicalMap();
 		android::icu::text::BidiRun getLogicalRun(jint arg0);
 		jbyte getParaLevel();
 		android::icu::text::BidiRun getParagraph(jint arg0);
@@ -92,10 +98,10 @@ namespace android::icu::text
 		jint getRunLevel(jint arg0);
 		jint getRunLimit(jint arg0);
 		jint getRunStart(jint arg0);
-		jcharArray getText();
-		jstring getTextAsString();
+		JCharArray getText();
+		JString getTextAsString();
 		jint getVisualIndex(jint arg0);
-		jintArray getVisualMap();
+		JIntArray getVisualMap();
 		android::icu::text::BidiRun getVisualRun(jint arg0);
 		jboolean isInverse();
 		jboolean isLeftToRight();
@@ -103,16 +109,16 @@ namespace android::icu::text
 		jboolean isOrderParagraphsLTR();
 		jboolean isRightToLeft();
 		void orderParagraphsLTR(jboolean arg0);
-		void setContext(jstring arg0, jstring arg1);
+		void setContext(JString arg0, JString arg1);
 		void setCustomClassifier(android::icu::text::BidiClassifier arg0);
 		void setInverse(jboolean arg0);
 		android::icu::text::Bidi setLine(jint arg0, jint arg1);
 		void setPara(JObject arg0);
-		void setPara(jcharArray arg0, jbyte arg1, jbyteArray arg2);
-		void setPara(jstring arg0, jbyte arg1, jbyteArray arg2);
+		void setPara(JCharArray arg0, jbyte arg1, JByteArray arg2);
+		void setPara(JString arg0, jbyte arg1, JByteArray arg2);
 		void setReorderingMode(jint arg0);
 		void setReorderingOptions(jint arg0);
-		jstring writeReordered(jint arg0);
+		JString writeReordered(jint arg0);
 	};
 } // namespace android::icu::text
 

@@ -1,11 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../lang/Exception.hpp"
-#include "../lang/RuntimeException.hpp"
-#include "../lang/IllegalArgumentException.hpp"
 #include "./IllegalFormatException.hpp"
 
+class JString;
 
 namespace java::util
 {
@@ -23,7 +20,7 @@ namespace java::util
 		
 		// Methods
 		jint getCodePoint();
-		jstring getMessage();
+		JString getMessage();
 	};
 } // namespace java::util
 

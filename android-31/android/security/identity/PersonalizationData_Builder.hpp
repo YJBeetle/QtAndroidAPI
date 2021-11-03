@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JByteArray;
 namespace android::security::identity
 {
 	class AccessControlProfile;
@@ -10,6 +11,7 @@ namespace android::security::identity
 {
 	class PersonalizationData;
 }
+class JString;
 
 namespace android::security::identity
 {
@@ -28,7 +30,7 @@ namespace android::security::identity
 		// Methods
 		android::security::identity::PersonalizationData_Builder addAccessControlProfile(android::security::identity::AccessControlProfile arg0);
 		android::security::identity::PersonalizationData build();
-		android::security::identity::PersonalizationData_Builder putEntry(jstring arg0, jstring arg1, JObject arg2, jbyteArray arg3);
+		android::security::identity::PersonalizationData_Builder putEntry(JString arg0, JString arg1, JObject arg2, JByteArray arg3);
 	};
 } // namespace android::security::identity
 

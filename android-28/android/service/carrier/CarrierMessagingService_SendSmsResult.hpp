@@ -2,7 +2,6 @@
 
 #include "../../../JObject.hpp"
 
-
 namespace android::service::carrier
 {
 	class CarrierMessagingService_SendSmsResult : public JObject

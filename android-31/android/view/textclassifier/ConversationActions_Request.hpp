@@ -14,6 +14,7 @@ namespace android::view::textclassifier
 {
 	class TextClassifier_EntityConfig;
 }
+class JString;
 
 namespace android::view::textclassifier
 {
@@ -22,8 +23,8 @@ namespace android::view::textclassifier
 	public:
 		// Fields
 		static JObject CREATOR();
-		static jstring HINT_FOR_IN_APP();
-		static jstring HINT_FOR_NOTIFICATION();
+		static JString HINT_FOR_IN_APP();
+		static JString HINT_FOR_NOTIFICATION();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ConversationActions_Request(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
@@ -33,7 +34,7 @@ namespace android::view::textclassifier
 		
 		// Methods
 		jint describeContents();
-		jstring getCallingPackageName();
+		JString getCallingPackageName();
 		JObject getConversation();
 		android::os::Bundle getExtras();
 		JObject getHints();

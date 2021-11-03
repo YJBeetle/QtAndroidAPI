@@ -1,4 +1,5 @@
 #include "../../os/Parcel.hpp"
+#include "../../../JString.hpp"
 #include "./Attribution.hpp"
 
 namespace android::content::pm
@@ -33,12 +34,12 @@ namespace android::content::pm
 			"()I"
 		);
 	}
-	jstring Attribution::getTag()
+	JString Attribution::getTag()
 	{
 		return callObjectMethod(
 			"getTag",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void Attribution::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

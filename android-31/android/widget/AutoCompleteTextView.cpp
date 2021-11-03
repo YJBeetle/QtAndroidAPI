@@ -5,6 +5,8 @@
 #include "../view/KeyEvent.hpp"
 #include "../view/inputmethod/CompletionInfo.hpp"
 #include "./Filter.hpp"
+#include "../../JString.hpp"
+#include "../../JObject.hpp"
 #include "./AutoCompleteTextView.hpp"
 
 namespace android::widget
@@ -78,12 +80,12 @@ namespace android::widget
 			"()Z"
 		);
 	}
-	jstring AutoCompleteTextView::getAccessibilityClassName()
+	JString AutoCompleteTextView::getAccessibilityClassName()
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	JObject AutoCompleteTextView::getAdapter()
 	{
@@ -92,12 +94,12 @@ namespace android::widget
 			"()Landroid/widget/ListAdapter;"
 		);
 	}
-	jstring AutoCompleteTextView::getCompletionHint()
+	JString AutoCompleteTextView::getCompletionHint()
 	{
 		return callObjectMethod(
 			"getCompletionHint",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	jint AutoCompleteTextView::getDropDownAnchor()
 	{
@@ -291,12 +293,12 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void AutoCompleteTextView::setCompletionHint(jstring arg0)
+	void AutoCompleteTextView::setCompletionHint(JString arg0)
 	{
 		callMethod<void>(
 			"setCompletionHint",
 			"(Ljava/lang/CharSequence;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void AutoCompleteTextView::setDropDownAnchor(jint arg0)
@@ -403,12 +405,12 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void AutoCompleteTextView::setText(jstring arg0, jboolean arg1)
+	void AutoCompleteTextView::setText(JString arg0, jboolean arg1)
 	{
 		callMethod<void>(
 			"setText",
 			"(Ljava/lang/CharSequence;Z)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}

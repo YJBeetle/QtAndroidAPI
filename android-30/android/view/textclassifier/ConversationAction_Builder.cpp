@@ -1,6 +1,8 @@
 #include "../../app/RemoteAction.hpp"
 #include "../../os/Bundle.hpp"
 #include "./ConversationAction.hpp"
+#include "../../../JString.hpp"
+#include "../../../JString.hpp"
 #include "./ConversationAction_Builder.hpp"
 
 namespace android::view::textclassifier
@@ -11,11 +13,11 @@ namespace android::view::textclassifier
 	ConversationAction_Builder::ConversationAction_Builder(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	ConversationAction_Builder::ConversationAction_Builder(jstring arg0)
+	ConversationAction_Builder::ConversationAction_Builder(JString arg0)
 		: JObject(
 			"android.view.textclassifier.ConversationAction$Builder",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods
@@ -50,12 +52,12 @@ namespace android::view::textclassifier
 			arg0.object()
 		);
 	}
-	android::view::textclassifier::ConversationAction_Builder ConversationAction_Builder::setTextReply(jstring arg0)
+	android::view::textclassifier::ConversationAction_Builder ConversationAction_Builder::setTextReply(JString arg0)
 	{
 		return callObjectMethod(
 			"setTextReply",
 			"(Ljava/lang/CharSequence;)Landroid/view/textclassifier/ConversationAction$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 } // namespace android::view::textclassifier

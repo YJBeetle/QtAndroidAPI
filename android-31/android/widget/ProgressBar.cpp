@@ -4,6 +4,7 @@
 #include "../graphics/Canvas.hpp"
 #include "../graphics/PorterDuff_Mode.hpp"
 #include "../graphics/drawable/Drawable.hpp"
+#include "../../JString.hpp"
 #include "./ProgressBar.hpp"
 
 namespace android::widget
@@ -55,12 +56,12 @@ namespace android::widget
 			arg1
 		);
 	}
-	jstring ProgressBar::getAccessibilityClassName()
+	JString ProgressBar::getAccessibilityClassName()
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	android::graphics::drawable::Drawable ProgressBar::getCurrentDrawable()
 	{
@@ -531,12 +532,12 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void ProgressBar::setStateDescription(jstring arg0)
+	void ProgressBar::setStateDescription(JString arg0)
 	{
 		callMethod<void>(
 			"setStateDescription",
 			"(Ljava/lang/CharSequence;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 } // namespace android::widget

@@ -1,5 +1,6 @@
 #include "../graphics/Rect.hpp"
 #include "../os/Parcel.hpp"
+#include "../../JString.hpp"
 #include "./TimedText.hpp"
 
 namespace android::media
@@ -19,12 +20,12 @@ namespace android::media
 			"()Landroid/graphics/Rect;"
 		);
 	}
-	jstring TimedText::getText()
+	JString TimedText::getText()
 	{
 		return callObjectMethod(
 			"getText",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::media
 

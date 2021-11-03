@@ -6,6 +6,9 @@
 #include "../../graphics/drawable/Drawable.hpp"
 #include "../../os/Parcel.hpp"
 #include "./InputMethodSubtype.hpp"
+#include "../../../JString.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./InputMethodInfo.hpp"
 
 namespace android::view::inputmethod
@@ -31,14 +34,14 @@ namespace android::view::inputmethod
 			arg0.object(),
 			arg1.object()
 		) {}
-	InputMethodInfo::InputMethodInfo(jstring arg0, jstring arg1, jstring arg2, jstring arg3)
+	InputMethodInfo::InputMethodInfo(JString arg0, JString arg1, JString arg2, JString arg3)
 		: JObject(
 			"android.view.inputmethod.InputMethodInfo",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/CharSequence;Ljava/lang/String;)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2.object<jstring>(),
+			arg3.object<jstring>()
 		) {}
 	
 	// Methods
@@ -49,21 +52,21 @@ namespace android::view::inputmethod
 			"()I"
 		);
 	}
-	void InputMethodInfo::dump(JObject arg0, jstring arg1)
+	void InputMethodInfo::dump(JObject arg0, JString arg1)
 	{
 		callMethod<void>(
 			"dump",
 			"(Landroid/util/Printer;Ljava/lang/String;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
-	jboolean InputMethodInfo::equals(jobject arg0)
+	jboolean InputMethodInfo::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	android::content::ComponentName InputMethodInfo::getComponent()
@@ -80,12 +83,12 @@ namespace android::view::inputmethod
 			"()I"
 		);
 	}
-	jstring InputMethodInfo::getId()
+	JString InputMethodInfo::getId()
 	{
 		return callObjectMethod(
 			"getId",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint InputMethodInfo::getIsDefaultResourceId()
 	{
@@ -94,12 +97,12 @@ namespace android::view::inputmethod
 			"()I"
 		);
 	}
-	jstring InputMethodInfo::getPackageName()
+	JString InputMethodInfo::getPackageName()
 	{
 		return callObjectMethod(
 			"getPackageName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::content::pm::ServiceInfo InputMethodInfo::getServiceInfo()
 	{
@@ -108,19 +111,19 @@ namespace android::view::inputmethod
 			"()Landroid/content/pm/ServiceInfo;"
 		);
 	}
-	jstring InputMethodInfo::getServiceName()
+	JString InputMethodInfo::getServiceName()
 	{
 		return callObjectMethod(
 			"getServiceName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring InputMethodInfo::getSettingsActivity()
+	JString InputMethodInfo::getSettingsActivity()
 	{
 		return callObjectMethod(
 			"getSettingsActivity",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::view::inputmethod::InputMethodSubtype InputMethodInfo::getSubtypeAt(jint arg0)
 	{
@@ -152,13 +155,13 @@ namespace android::view::inputmethod
 			arg0.object()
 		);
 	}
-	jstring InputMethodInfo::loadLabel(android::content::pm::PackageManager arg0)
+	JString InputMethodInfo::loadLabel(android::content::pm::PackageManager arg0)
 	{
 		return callObjectMethod(
 			"loadLabel",
 			"(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;",
 			arg0.object()
-		).object<jstring>();
+		);
 	}
 	jboolean InputMethodInfo::shouldShowInInputMethodPicker()
 	{
@@ -174,12 +177,12 @@ namespace android::view::inputmethod
 			"()Z"
 		);
 	}
-	jstring InputMethodInfo::toString()
+	JString InputMethodInfo::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void InputMethodInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

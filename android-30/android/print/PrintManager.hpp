@@ -14,6 +14,7 @@ namespace android::print
 {
 	class PrintJob;
 }
+class JString;
 
 namespace android::print
 {
@@ -30,7 +31,7 @@ namespace android::print
 		
 		// Methods
 		JObject getPrintJobs();
-		android::print::PrintJob print(jstring arg0, android::print::PrintDocumentAdapter arg1, android::print::PrintAttributes arg2);
+		android::print::PrintJob print(JString arg0, android::print::PrintDocumentAdapter arg1, android::print::PrintAttributes arg2);
 	};
 } // namespace android::print
 

@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JIntArray;
+class JArray;
 namespace android::util
 {
 	class Range;
@@ -22,11 +24,11 @@ namespace android::media
 		
 		// Methods
 		android::util::Range getBitrateRange();
-		jarray getInputChannelCountRanges();
+		JArray getInputChannelCountRanges();
 		jint getMaxInputChannelCount();
 		jint getMinInputChannelCount();
-		jarray getSupportedSampleRateRanges();
-		jintArray getSupportedSampleRates();
+		JArray getSupportedSampleRateRanges();
+		JIntArray getSupportedSampleRates();
 		jboolean isSampleRateSupported(jint arg0);
 	};
 } // namespace android::media

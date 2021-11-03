@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JObject;
+class JString;
 
 namespace java::util
 {
@@ -17,18 +19,18 @@ namespace java::util
 		Locale_LanguageRange(QAndroidJniObject obj);
 		
 		// Constructors
-		Locale_LanguageRange(jstring arg0);
-		Locale_LanguageRange(jstring arg0, jdouble arg1);
+		Locale_LanguageRange(JString arg0);
+		Locale_LanguageRange(JString arg0, jdouble arg1);
 		
 		// Methods
 		static JObject mapEquivalents(JObject arg0, JObject arg1);
-		static JObject parse(jstring arg0);
-		static JObject parse(jstring arg0, JObject arg1);
-		jboolean equals(jobject arg0);
-		jstring getRange();
+		static JObject parse(JString arg0);
+		static JObject parse(JString arg0, JObject arg1);
+		jboolean equals(JObject arg0);
+		JString getRange();
 		jdouble getWeight();
 		jint hashCode();
-		jstring toString();
+		JString toString();
 	};
 } // namespace java::util
 

@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./ReportSystemUsageRequest.hpp"
 
 namespace android::app::appsearch
@@ -10,33 +11,33 @@ namespace android::app::appsearch
 	// Constructors
 	
 	// Methods
-	jstring ReportSystemUsageRequest::getDatabaseName()
+	JString ReportSystemUsageRequest::getDatabaseName()
 	{
 		return callObjectMethod(
 			"getDatabaseName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ReportSystemUsageRequest::getDocumentId()
+	JString ReportSystemUsageRequest::getDocumentId()
 	{
 		return callObjectMethod(
 			"getDocumentId",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ReportSystemUsageRequest::getNamespace()
+	JString ReportSystemUsageRequest::getNamespace()
 	{
 		return callObjectMethod(
 			"getNamespace",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ReportSystemUsageRequest::getPackageName()
+	JString ReportSystemUsageRequest::getPackageName()
 	{
 		return callObjectMethod(
 			"getPackageName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jlong ReportSystemUsageRequest::getUsageTimestampMillis()
 	{

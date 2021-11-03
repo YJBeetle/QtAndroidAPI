@@ -6,6 +6,7 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
 
 namespace android::app::usage
 {
@@ -28,7 +29,7 @@ namespace android::app::usage
 		jlong getFirstTimeStamp();
 		jlong getLastTimeStamp();
 		jlong getLastTimeUsed();
-		jstring getPackageName();
+		JString getPackageName();
 		jlong getTotalTimeInForeground();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};

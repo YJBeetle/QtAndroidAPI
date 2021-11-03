@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./SipSession_State.hpp"
 
 namespace android::net::sip
@@ -87,14 +88,14 @@ namespace android::net::sip
 	// Constructors
 	
 	// Methods
-	jstring SipSession_State::toString(jint arg0)
+	JString SipSession_State::toString(jint arg0)
 	{
 		return callStaticObjectMethod(
 			"android.net.sip.SipSession$State",
 			"toString",
 			"(I)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
 } // namespace android::net::sip
 

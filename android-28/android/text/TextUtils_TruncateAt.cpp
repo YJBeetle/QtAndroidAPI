@@ -1,3 +1,5 @@
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
 #include "./TextUtils_TruncateAt.hpp"
 
 namespace android::text
@@ -50,22 +52,22 @@ namespace android::text
 	// Constructors
 	
 	// Methods
-	android::text::TextUtils_TruncateAt TextUtils_TruncateAt::valueOf(jstring arg0)
+	android::text::TextUtils_TruncateAt TextUtils_TruncateAt::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.text.TextUtils$TruncateAt",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/text/TextUtils$TruncateAt;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray TextUtils_TruncateAt::values()
+	JArray TextUtils_TruncateAt::values()
 	{
 		return callStaticObjectMethod(
 			"android.text.TextUtils$TruncateAt",
 			"values",
 			"()[Landroid/text/TextUtils$TruncateAt;"
-		).object<jarray>();
+		);
 	}
 } // namespace android::text
 

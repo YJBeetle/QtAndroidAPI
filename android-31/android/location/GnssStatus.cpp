@@ -1,4 +1,5 @@
 #include "../os/Parcel.hpp"
+#include "../../JObject.hpp"
 #include "./GnssStatus.hpp"
 
 namespace android::location
@@ -82,12 +83,12 @@ namespace android::location
 			"()I"
 		);
 	}
-	jboolean GnssStatus::equals(jobject arg0)
+	jboolean GnssStatus::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jfloat GnssStatus::getAzimuthDegrees(jint arg0)

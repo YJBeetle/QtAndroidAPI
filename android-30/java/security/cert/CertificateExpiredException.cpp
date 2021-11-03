@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./CertificateExpiredException.hpp"
 
 namespace java::security::cert
@@ -13,11 +14,11 @@ namespace java::security::cert
 			"java.security.cert.CertificateExpiredException",
 			"()V"
 		) {}
-	CertificateExpiredException::CertificateExpiredException(jstring arg0)
+	CertificateExpiredException::CertificateExpiredException(JString arg0)
 		: java::security::cert::CertificateException(
 			"java.security.cert.CertificateExpiredException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

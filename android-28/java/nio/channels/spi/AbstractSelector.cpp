@@ -1,3 +1,4 @@
+#include "../../../../JObject.hpp"
 #include "../SelectionKey.hpp"
 #include "./AbstractSelectableChannel.hpp"
 #include "./AbstractSelectionKey.hpp"

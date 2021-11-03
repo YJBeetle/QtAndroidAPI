@@ -18,6 +18,8 @@ namespace java::lang
 {
 	class Integer;
 }
+class JString;
+class JThrowable;
 
 namespace android::content
 {
@@ -27,7 +29,7 @@ namespace android::content
 		// Fields
 		static JObject CREATOR();
 		java::lang::Integer count();
-		jthrowable exception();
+		JThrowable exception();
 		android::os::Bundle extras();
 		android::net::Uri uri();
 		
@@ -40,11 +42,11 @@ namespace android::content
 		ContentProviderResult(android::os::Bundle arg0);
 		ContentProviderResult(android::os::Parcel arg0);
 		ContentProviderResult(jint arg0);
-		ContentProviderResult(jthrowable arg0);
+		ContentProviderResult(JThrowable arg0);
 		
 		// Methods
 		jint describeContents();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::content

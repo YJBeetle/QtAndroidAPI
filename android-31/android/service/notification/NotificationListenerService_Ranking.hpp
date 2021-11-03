@@ -10,6 +10,9 @@ namespace android::content::pm
 {
 	class ShortcutInfo;
 }
+class JString;
+class JObject;
+class JString;
 
 namespace android::service::notification
 {
@@ -32,15 +35,15 @@ namespace android::service::notification
 		// Methods
 		jboolean canBubble();
 		jboolean canShowBadge();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		android::app::NotificationChannel getChannel();
 		android::content::pm::ShortcutInfo getConversationShortcutInfo();
 		jint getImportance();
-		jstring getImportanceExplanation();
-		jstring getKey();
+		JString getImportanceExplanation();
+		JString getKey();
 		jlong getLastAudiblyAlertedMillis();
 		jint getLockscreenVisibilityOverride();
-		jstring getOverrideGroupKey();
+		JString getOverrideGroupKey();
 		jint getRank();
 		JObject getSmartActions();
 		JObject getSmartReplies();

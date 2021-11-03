@@ -1,9 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "./Preference.hpp"
 #include "./DialogPreference.hpp"
 
+class JArray;
 namespace android::app
 {
 	class AlertDialog_Builder;
@@ -16,6 +15,8 @@ namespace android::content::res
 {
 	class TypedArray;
 }
+class JObject;
+class JString;
 
 namespace android::preference
 {
@@ -35,13 +36,13 @@ namespace android::preference
 		MultiSelectListPreference(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
-		jint findIndexOfValue(jstring arg0);
-		jarray getEntries();
-		jarray getEntryValues();
+		jint findIndexOfValue(JString arg0);
+		JArray getEntries();
+		JArray getEntryValues();
 		JObject getValues();
-		void setEntries(jarray arg0);
+		void setEntries(JArray arg0);
 		void setEntries(jint arg0);
-		void setEntryValues(jarray arg0);
+		void setEntryValues(JArray arg0);
 		void setEntryValues(jint arg0);
 		void setValues(JObject arg0);
 	};

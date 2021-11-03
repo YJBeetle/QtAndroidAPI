@@ -1,3 +1,5 @@
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
 #include "./TimeZoneNames_NameType.hpp"
 
 namespace android::icu::text
@@ -66,22 +68,22 @@ namespace android::icu::text
 	// Constructors
 	
 	// Methods
-	android::icu::text::TimeZoneNames_NameType TimeZoneNames_NameType::valueOf(jstring arg0)
+	android::icu::text::TimeZoneNames_NameType TimeZoneNames_NameType::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.icu.text.TimeZoneNames$NameType",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/icu/text/TimeZoneNames$NameType;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray TimeZoneNames_NameType::values()
+	JArray TimeZoneNames_NameType::values()
 	{
 		return callStaticObjectMethod(
 			"android.icu.text.TimeZoneNames$NameType",
 			"values",
 			"()[Landroid/icu/text/TimeZoneNames$NameType;"
-		).object<jarray>();
+		);
 	}
 } // namespace android::icu::text
 

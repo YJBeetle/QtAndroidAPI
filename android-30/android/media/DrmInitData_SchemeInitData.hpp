@@ -2,6 +2,9 @@
 
 #include "../../JObject.hpp"
 
+class JByteArray;
+class JObject;
+class JString;
 namespace java::util
 {
 	class UUID;
@@ -14,8 +17,8 @@ namespace android::media
 	public:
 		// Fields
 		static java::util::UUID UUID_NIL();
-		jbyteArray data();
-		jstring mimeType();
+		JByteArray data();
+		JString mimeType();
 		java::util::UUID uuid();
 		
 		// QAndroidJniObject forward
@@ -25,7 +28,7 @@ namespace android::media
 		// Constructors
 		
 		// Methods
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint hashCode();
 	};
 } // namespace android::media

@@ -26,6 +26,8 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
+class JString;
 
 namespace android::app::slice
 {
@@ -34,14 +36,14 @@ namespace android::app::slice
 	public:
 		// Fields
 		static JObject CREATOR();
-		static jstring FORMAT_ACTION();
-		static jstring FORMAT_BUNDLE();
-		static jstring FORMAT_IMAGE();
-		static jstring FORMAT_INT();
-		static jstring FORMAT_LONG();
-		static jstring FORMAT_REMOTE_INPUT();
-		static jstring FORMAT_SLICE();
-		static jstring FORMAT_TEXT();
+		static JString FORMAT_ACTION();
+		static JString FORMAT_BUNDLE();
+		static JString FORMAT_IMAGE();
+		static JString FORMAT_INT();
+		static JString FORMAT_LONG();
+		static JString FORMAT_REMOTE_INPUT();
+		static JString FORMAT_SLICE();
+		static JString FORMAT_TEXT();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SliceItem(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
@@ -53,16 +55,16 @@ namespace android::app::slice
 		jint describeContents();
 		android::app::PendingIntent getAction();
 		android::os::Bundle getBundle();
-		jstring getFormat();
+		JString getFormat();
 		JObject getHints();
 		android::graphics::drawable::Icon getIcon();
 		jint getInt();
 		jlong getLong();
 		android::app::RemoteInput getRemoteInput();
 		android::app::slice::Slice getSlice();
-		jstring getSubType();
-		jstring getText();
-		jboolean hasHint(jstring arg0);
+		JString getSubType();
+		JString getText();
+		jboolean hasHint(JString arg0);
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::app::slice

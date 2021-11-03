@@ -1,6 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "../view/ViewGroup_LayoutParams.hpp"
 
 namespace android::content

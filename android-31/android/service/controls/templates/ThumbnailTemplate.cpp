@@ -1,4 +1,6 @@
 #include "../../../graphics/drawable/Icon.hpp"
+#include "../../../../JString.hpp"
+#include "../../../../JString.hpp"
 #include "./ThumbnailTemplate.hpp"
 
 namespace android::service::controls::templates
@@ -9,23 +11,23 @@ namespace android::service::controls::templates
 	ThumbnailTemplate::ThumbnailTemplate(QAndroidJniObject obj) : android::service::controls::templates::ControlTemplate(obj) {}
 	
 	// Constructors
-	ThumbnailTemplate::ThumbnailTemplate(jstring arg0, jboolean arg1, android::graphics::drawable::Icon arg2, jstring arg3)
+	ThumbnailTemplate::ThumbnailTemplate(JString arg0, jboolean arg1, android::graphics::drawable::Icon arg2, JString arg3)
 		: android::service::controls::templates::ControlTemplate(
 			"android.service.controls.templates.ThumbnailTemplate",
 			"(Ljava/lang/String;ZLandroid/graphics/drawable/Icon;Ljava/lang/CharSequence;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
 			arg2.object(),
-			arg3
+			arg3.object<jstring>()
 		) {}
 	
 	// Methods
-	jstring ThumbnailTemplate::getContentDescription()
+	JString ThumbnailTemplate::getContentDescription()
 	{
 		return callObjectMethod(
 			"getContentDescription",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	jint ThumbnailTemplate::getTemplateType()
 	{

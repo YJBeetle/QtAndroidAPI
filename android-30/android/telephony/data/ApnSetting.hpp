@@ -10,6 +10,8 @@ namespace android::os
 {
 	class Parcel;
 }
+class JObject;
+class JString;
 namespace java::net
 {
 	class InetAddress;
@@ -57,29 +59,29 @@ namespace android::telephony::data
 		
 		// Methods
 		jint describeContents();
-		jboolean equals(jobject arg0);
-		jstring getApnName();
+		jboolean equals(JObject arg0);
+		JString getApnName();
 		jint getApnTypeBitmask();
 		jint getAuthType();
 		jint getCarrierId();
-		jstring getEntryName();
+		JString getEntryName();
 		jint getId();
 		java::net::InetAddress getMmsProxyAddress();
-		jstring getMmsProxyAddressAsString();
+		JString getMmsProxyAddressAsString();
 		jint getMmsProxyPort();
 		android::net::Uri getMmsc();
 		jint getMvnoType();
 		jint getNetworkTypeBitmask();
-		jstring getOperatorNumeric();
-		jstring getPassword();
+		JString getOperatorNumeric();
+		JString getPassword();
 		jint getProtocol();
 		java::net::InetAddress getProxyAddress();
-		jstring getProxyAddressAsString();
+		JString getProxyAddressAsString();
 		jint getProxyPort();
 		jint getRoamingProtocol();
-		jstring getUser();
+		JString getUser();
 		jboolean isEnabled();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::telephony::data

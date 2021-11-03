@@ -1,4 +1,5 @@
 #include "./AssistStructure_ViewNode.hpp"
+#include "../../../JString.hpp"
 #include "./AssistStructure_WindowNode.hpp"
 
 namespace android::app::assist
@@ -39,12 +40,12 @@ namespace android::app::assist
 			"()Landroid/app/assist/AssistStructure$ViewNode;"
 		);
 	}
-	jstring AssistStructure_WindowNode::getTitle()
+	JString AssistStructure_WindowNode::getTitle()
 	{
 		return callObjectMethod(
 			"getTitle",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	jint AssistStructure_WindowNode::getTop()
 	{

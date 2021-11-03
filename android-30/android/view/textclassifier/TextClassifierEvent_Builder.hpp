@@ -2,6 +2,9 @@
 
 #include "../../../JObject.hpp"
 
+class JFloatArray;
+class JIntArray;
+class JArray;
 namespace android::icu::util
 {
 	class ULocale;
@@ -18,6 +21,7 @@ namespace android::view::textclassifier
 {
 	class TextClassifierEvent_1;
 }
+class JString;
 
 namespace android::view::textclassifier
 {
@@ -33,15 +37,15 @@ namespace android::view::textclassifier
 		// Constructors
 		
 		// Methods
-		android::view::textclassifier::TextClassifierEvent_Builder setActionIndices(jintArray arg0);
-		android::view::textclassifier::TextClassifierEvent_Builder setEntityTypes(jarray arg0);
+		android::view::textclassifier::TextClassifierEvent_Builder setActionIndices(JIntArray arg0);
+		android::view::textclassifier::TextClassifierEvent_Builder setEntityTypes(JArray arg0);
 		android::view::textclassifier::TextClassifierEvent_Builder setEventContext(android::view::textclassifier::TextClassificationContext arg0);
 		android::view::textclassifier::TextClassifierEvent_Builder setEventIndex(jint arg0);
 		android::view::textclassifier::TextClassifierEvent_Builder setExtras(android::os::Bundle arg0);
 		android::view::textclassifier::TextClassifierEvent_Builder setLocale(android::icu::util::ULocale arg0);
-		android::view::textclassifier::TextClassifierEvent_Builder setModelName(jstring arg0);
-		android::view::textclassifier::TextClassifierEvent_Builder setResultId(jstring arg0);
-		android::view::textclassifier::TextClassifierEvent_Builder setScores(jfloatArray arg0);
+		android::view::textclassifier::TextClassifierEvent_Builder setModelName(JString arg0);
+		android::view::textclassifier::TextClassifierEvent_Builder setResultId(JString arg0);
+		android::view::textclassifier::TextClassifierEvent_Builder setScores(JFloatArray arg0);
 	};
 } // namespace android::view::textclassifier
 

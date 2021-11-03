@@ -1,9 +1,9 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../../java/lang/Exception.hpp"
 #include "../../java/lang/RuntimeException.hpp"
 
+class JString;
+class JThrowable;
 
 namespace android::database
 {
@@ -18,8 +18,8 @@ namespace android::database
 		
 		// Constructors
 		SQLException();
-		SQLException(jstring arg0);
-		SQLException(jstring arg0, jthrowable arg1);
+		SQLException(JString arg0);
+		SQLException(JString arg0, JThrowable arg1);
 		
 		// Methods
 	};

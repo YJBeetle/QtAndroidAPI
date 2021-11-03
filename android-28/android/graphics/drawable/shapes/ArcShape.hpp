@@ -1,7 +1,5 @@
 #pragma once
 
-#include "../../../../JObject.hpp"
-#include "./Shape.hpp"
 #include "./RectShape.hpp"
 
 namespace android::graphics
@@ -24,6 +22,7 @@ namespace android::graphics::drawable::shapes
 {
 	class Shape;
 }
+class JObject;
 
 namespace android::graphics::drawable::shapes
 {

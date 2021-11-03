@@ -1,4 +1,6 @@
+#include "../../../JByteArray.hpp"
 #include "../../io/InputStream.hpp"
+#include "../../../JString.hpp"
 #include "./JarEntry.hpp"
 #include "./Manifest.hpp"
 #include "../zip/ZipEntry.hpp"
@@ -48,12 +50,12 @@ namespace java::util::jar
 			"()Ljava/util/jar/JarEntry;"
 		);
 	}
-	jint JarInputStream::read(jbyteArray arg0, jint arg1, jint arg2)
+	jint JarInputStream::read(JByteArray arg0, jint arg1, jint arg2)
 	{
 		return callMethod<jint>(
 			"read",
 			"([BII)I",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1,
 			arg2
 		);

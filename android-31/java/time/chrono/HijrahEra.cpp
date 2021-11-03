@@ -1,3 +1,5 @@
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
 #include "../format/TextStyle.hpp"
 #include "../temporal/ValueRange.hpp"
 #include "../../util/Locale.hpp"
@@ -30,31 +32,31 @@ namespace java::time::chrono
 			arg0
 		);
 	}
-	java::time::chrono::HijrahEra HijrahEra::valueOf(jstring arg0)
+	java::time::chrono::HijrahEra HijrahEra::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"java.time.chrono.HijrahEra",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/time/chrono/HijrahEra;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray HijrahEra::values()
+	JArray HijrahEra::values()
 	{
 		return callStaticObjectMethod(
 			"java.time.chrono.HijrahEra",
 			"values",
 			"()[Ljava/time/chrono/HijrahEra;"
-		).object<jarray>();
+		);
 	}
-	jstring HijrahEra::getDisplayName(java::time::format::TextStyle arg0, java::util::Locale arg1)
+	JString HijrahEra::getDisplayName(java::time::format::TextStyle arg0, java::util::Locale arg1)
 	{
 		return callObjectMethod(
 			"getDisplayName",
 			"(Ljava/time/format/TextStyle;Ljava/util/Locale;)Ljava/lang/String;",
 			arg0.object(),
 			arg1.object()
-		).object<jstring>();
+		);
 	}
 	jint HijrahEra::getValue()
 	{

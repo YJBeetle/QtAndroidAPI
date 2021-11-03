@@ -14,6 +14,7 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
 
 namespace android::net
 {
@@ -28,25 +29,25 @@ namespace android::net
 		NetworkInfo(QAndroidJniObject obj);
 		
 		// Constructors
-		NetworkInfo(jint arg0, jint arg1, jstring arg2, jstring arg3);
+		NetworkInfo(jint arg0, jint arg1, JString arg2, JString arg3);
 		
 		// Methods
 		jint describeContents();
 		android::net::NetworkInfo_DetailedState getDetailedState();
-		jstring getExtraInfo();
-		jstring getReason();
+		JString getExtraInfo();
+		JString getReason();
 		android::net::NetworkInfo_State getState();
 		jint getSubtype();
-		jstring getSubtypeName();
+		JString getSubtypeName();
 		jint getType();
-		jstring getTypeName();
+		JString getTypeName();
 		jboolean isAvailable();
 		jboolean isConnected();
 		jboolean isConnectedOrConnecting();
 		jboolean isFailover();
 		jboolean isRoaming();
-		void setDetailedState(android::net::NetworkInfo_DetailedState arg0, jstring arg1, jstring arg2);
-		jstring toString();
+		void setDetailedState(android::net::NetworkInfo_DetailedState arg0, JString arg1, JString arg2);
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::net

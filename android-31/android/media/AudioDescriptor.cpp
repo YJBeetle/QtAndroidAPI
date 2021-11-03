@@ -1,3 +1,4 @@
+#include "../../JByteArray.hpp"
 #include "./AudioDescriptor.hpp"
 
 namespace android::media
@@ -24,12 +25,12 @@ namespace android::media
 	// Constructors
 	
 	// Methods
-	jbyteArray AudioDescriptor::getDescriptor()
+	JByteArray AudioDescriptor::getDescriptor()
 	{
 		return callObjectMethod(
 			"getDescriptor",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
 	jint AudioDescriptor::getEncapsulationType()
 	{

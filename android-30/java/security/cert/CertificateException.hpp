@@ -1,9 +1,9 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "../../lang/Exception.hpp"
 #include "../GeneralSecurityException.hpp"
 
+class JString;
+class JThrowable;
 
 namespace java::security::cert
 {
@@ -18,9 +18,9 @@ namespace java::security::cert
 		
 		// Constructors
 		CertificateException();
-		CertificateException(jstring arg0);
-		CertificateException(jthrowable arg0);
-		CertificateException(jstring arg0, jthrowable arg1);
+		CertificateException(JString arg0);
+		CertificateException(JThrowable arg0);
+		CertificateException(JString arg0, JThrowable arg1);
 		
 		// Methods
 	};

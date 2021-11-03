@@ -1,5 +1,6 @@
 #include "../../os/Bundle.hpp"
 #include "./TextSelection.hpp"
+#include "../../../JString.hpp"
 #include "./TextSelection_Builder.hpp"
 
 namespace android::view::textclassifier
@@ -26,12 +27,12 @@ namespace android::view::textclassifier
 			"()Landroid/view/textclassifier/TextSelection;"
 		);
 	}
-	android::view::textclassifier::TextSelection_Builder TextSelection_Builder::setEntityType(jstring arg0, jfloat arg1)
+	android::view::textclassifier::TextSelection_Builder TextSelection_Builder::setEntityType(JString arg0, jfloat arg1)
 	{
 		return callObjectMethod(
 			"setEntityType",
 			"(Ljava/lang/String;F)Landroid/view/textclassifier/TextSelection$Builder;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
@@ -43,12 +44,12 @@ namespace android::view::textclassifier
 			arg0.object()
 		);
 	}
-	android::view::textclassifier::TextSelection_Builder TextSelection_Builder::setId(jstring arg0)
+	android::view::textclassifier::TextSelection_Builder TextSelection_Builder::setId(JString arg0)
 	{
 		return callObjectMethod(
 			"setId",
 			"(Ljava/lang/String;)Landroid/view/textclassifier/TextSelection$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 } // namespace android::view::textclassifier

@@ -1,5 +1,9 @@
+#include "../../JByteArray.hpp"
+#include "../../JArray.hpp"
 #include "../io/ObjectInputStream.hpp"
 #include "../io/ObjectOutputStream.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./NetworkInterface.hpp"
 #include "./Inet6Address.hpp"
 
@@ -13,49 +17,49 @@ namespace java::net
 	// Constructors
 	
 	// Methods
-	java::net::Inet6Address Inet6Address::getByAddress(jstring arg0, jbyteArray arg1, jint arg2)
+	java::net::Inet6Address Inet6Address::getByAddress(JString arg0, JByteArray arg1, jint arg2)
 	{
 		return callStaticObjectMethod(
 			"java.net.Inet6Address",
 			"getByAddress",
 			"(Ljava/lang/String;[BI)Ljava/net/Inet6Address;",
-			arg0,
-			arg1,
+			arg0.object<jstring>(),
+			arg1.object<jbyteArray>(),
 			arg2
 		);
 	}
-	java::net::Inet6Address Inet6Address::getByAddress(jstring arg0, jbyteArray arg1, java::net::NetworkInterface arg2)
+	java::net::Inet6Address Inet6Address::getByAddress(JString arg0, JByteArray arg1, java::net::NetworkInterface arg2)
 	{
 		return callStaticObjectMethod(
 			"java.net.Inet6Address",
 			"getByAddress",
 			"(Ljava/lang/String;[BLjava/net/NetworkInterface;)Ljava/net/Inet6Address;",
-			arg0,
-			arg1,
+			arg0.object<jstring>(),
+			arg1.object<jbyteArray>(),
 			arg2.object()
 		);
 	}
-	jboolean Inet6Address::equals(jobject arg0)
+	jboolean Inet6Address::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jbyteArray Inet6Address::getAddress()
+	JByteArray Inet6Address::getAddress()
 	{
 		return callObjectMethod(
 			"getAddress",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
-	jstring Inet6Address::getHostAddress()
+	JString Inet6Address::getHostAddress()
 	{
 		return callObjectMethod(
 			"getHostAddress",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint Inet6Address::getScopeId()
 	{

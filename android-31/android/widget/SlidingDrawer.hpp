@@ -1,7 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../view/View.hpp"
 #include "../view/ViewGroup.hpp"
 
 namespace android::content
@@ -20,6 +18,7 @@ namespace android::view
 {
 	class View;
 }
+class JString;
 
 namespace android::widget
 {
@@ -44,7 +43,7 @@ namespace android::widget
 		void animateOpen();
 		void animateToggle();
 		void close();
-		jstring getAccessibilityClassName();
+		JString getAccessibilityClassName();
 		android::view::View getContent();
 		android::view::View getHandle();
 		jboolean isMoving();

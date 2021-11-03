@@ -10,6 +10,8 @@ namespace android::app::appsearch
 {
 	class AppSearchResult;
 }
+class JObject;
+class JString;
 
 namespace android::app::appsearch
 {
@@ -27,9 +29,9 @@ namespace android::app::appsearch
 		
 		// Methods
 		android::app::appsearch::AppSearchBatchResult build();
-		android::app::appsearch::AppSearchBatchResult_Builder setFailure(jobject arg0, jint arg1, jstring arg2);
-		android::app::appsearch::AppSearchBatchResult_Builder setResult(jobject arg0, android::app::appsearch::AppSearchResult arg1);
-		android::app::appsearch::AppSearchBatchResult_Builder setSuccess(jobject arg0, jobject arg1);
+		android::app::appsearch::AppSearchBatchResult_Builder setFailure(JObject arg0, jint arg1, JString arg2);
+		android::app::appsearch::AppSearchBatchResult_Builder setResult(JObject arg0, android::app::appsearch::AppSearchResult arg1);
+		android::app::appsearch::AppSearchBatchResult_Builder setSuccess(JObject arg0, JObject arg1);
 	};
 } // namespace android::app::appsearch
 

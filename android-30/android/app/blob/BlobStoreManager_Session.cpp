@@ -1,4 +1,6 @@
+#include "../../../JByteArray.hpp"
 #include "../../os/ParcelFileDescriptor.hpp"
+#include "../../../JString.hpp"
 #include "./BlobStoreManager_Session.hpp"
 
 namespace android::app::blob
@@ -18,13 +20,13 @@ namespace android::app::blob
 			"()V"
 		);
 	}
-	void BlobStoreManager_Session::allowPackageAccess(jstring arg0, jbyteArray arg1)
+	void BlobStoreManager_Session::allowPackageAccess(JString arg0, JByteArray arg1)
 	{
 		callMethod<void>(
 			"allowPackageAccess",
 			"(Ljava/lang/String;[B)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jbyteArray>()
 		);
 	}
 	void BlobStoreManager_Session::allowPublicAccess()
@@ -64,13 +66,13 @@ namespace android::app::blob
 			"()J"
 		);
 	}
-	jboolean BlobStoreManager_Session::isPackageAccessAllowed(jstring arg0, jbyteArray arg1)
+	jboolean BlobStoreManager_Session::isPackageAccessAllowed(JString arg0, JByteArray arg1)
 	{
 		return callMethod<jboolean>(
 			"isPackageAccessAllowed",
 			"(Ljava/lang/String;[B)Z",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jbyteArray>()
 		);
 	}
 	jboolean BlobStoreManager_Session::isPublicAccessAllowed()

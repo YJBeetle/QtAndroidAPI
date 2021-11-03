@@ -1,9 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../lang/Exception.hpp"
 #include "./IOException.hpp"
 
+class JString;
 
 namespace java::io
 {

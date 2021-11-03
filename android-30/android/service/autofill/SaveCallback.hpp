@@ -6,6 +6,7 @@ namespace android::content
 {
 	class IntentSender;
 }
+class JString;
 
 namespace android::service::autofill
 {
@@ -21,7 +22,7 @@ namespace android::service::autofill
 		// Constructors
 		
 		// Methods
-		void onFailure(jstring arg0);
+		void onFailure(JString arg0);
 		void onSuccess();
 		void onSuccess(android::content::IntentSender arg0);
 	};

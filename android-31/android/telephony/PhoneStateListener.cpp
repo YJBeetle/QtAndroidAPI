@@ -6,6 +6,7 @@
 #include "./SignalStrength.hpp"
 #include "./TelephonyDisplayInfo.hpp"
 #include "./ims/ImsReasonInfo.hpp"
+#include "../../JString.hpp"
 #include "./PhoneStateListener.hpp"
 
 namespace android::telephony
@@ -202,13 +203,13 @@ namespace android::telephony
 			arg0
 		);
 	}
-	void PhoneStateListener::onCallStateChanged(jint arg0, jstring arg1)
+	void PhoneStateListener::onCallStateChanged(jint arg0, JString arg1)
 	{
 		callMethod<void>(
 			"onCallStateChanged",
 			"(ILjava/lang/String;)V",
 			arg0,
-			arg1
+			arg1.object<jstring>()
 		);
 	}
 	void PhoneStateListener::onCellInfoChanged(JObject arg0)
@@ -292,13 +293,13 @@ namespace android::telephony
 			arg0.object()
 		);
 	}
-	void PhoneStateListener::onRegistrationFailed(android::telephony::CellIdentity arg0, jstring arg1, jint arg2, jint arg3, jint arg4)
+	void PhoneStateListener::onRegistrationFailed(android::telephony::CellIdentity arg0, JString arg1, jint arg2, jint arg3, jint arg4)
 	{
 		callMethod<void>(
 			"onRegistrationFailed",
 			"(Landroid/telephony/CellIdentity;Ljava/lang/String;III)V",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2,
 			arg3,
 			arg4

@@ -1,4 +1,5 @@
 #include "./AppSearchManager_SearchContext.hpp"
+#include "../../../JString.hpp"
 #include "./AppSearchManager_SearchContext_Builder.hpp"
 
 namespace android::app::appsearch
@@ -9,11 +10,11 @@ namespace android::app::appsearch
 	AppSearchManager_SearchContext_Builder::AppSearchManager_SearchContext_Builder(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	AppSearchManager_SearchContext_Builder::AppSearchManager_SearchContext_Builder(jstring arg0)
+	AppSearchManager_SearchContext_Builder::AppSearchManager_SearchContext_Builder(JString arg0)
 		: JObject(
 			"android.app.appsearch.AppSearchManager$SearchContext$Builder",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

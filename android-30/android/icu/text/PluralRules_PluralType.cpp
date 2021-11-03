@@ -1,3 +1,5 @@
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
 #include "./PluralRules_PluralType.hpp"
 
 namespace android::icu::text
@@ -26,22 +28,22 @@ namespace android::icu::text
 	// Constructors
 	
 	// Methods
-	android::icu::text::PluralRules_PluralType PluralRules_PluralType::valueOf(jstring arg0)
+	android::icu::text::PluralRules_PluralType PluralRules_PluralType::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.icu.text.PluralRules$PluralType",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/icu/text/PluralRules$PluralType;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray PluralRules_PluralType::values()
+	JArray PluralRules_PluralType::values()
 	{
 		return callStaticObjectMethod(
 			"android.icu.text.PluralRules$PluralType",
 			"values",
 			"()[Landroid/icu/text/PluralRules$PluralType;"
-		).object<jarray>();
+		);
 	}
 } // namespace android::icu::text
 

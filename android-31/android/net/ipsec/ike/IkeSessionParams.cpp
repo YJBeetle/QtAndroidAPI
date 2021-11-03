@@ -1,6 +1,9 @@
+#include "../../../../JIntArray.hpp"
 #include "../../Network.hpp"
 #include "./IkeIdentification.hpp"
 #include "./IkeSessionParams_IkeAuthConfig.hpp"
+#include "../../../../JObject.hpp"
+#include "../../../../JString.hpp"
 #include "./IkeSessionParams.hpp"
 
 namespace android::net::ipsec::ike
@@ -41,12 +44,12 @@ namespace android::net::ipsec::ike
 	// Constructors
 	
 	// Methods
-	jboolean IkeSessionParams::equals(jobject arg0)
+	jboolean IkeSessionParams::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint IkeSessionParams::getDpdDelaySeconds()
@@ -112,19 +115,19 @@ namespace android::net::ipsec::ike
 			"()Landroid/net/ipsec/ike/IkeIdentification;"
 		);
 	}
-	jintArray IkeSessionParams::getRetransmissionTimeoutsMillis()
+	JIntArray IkeSessionParams::getRetransmissionTimeoutsMillis()
 	{
 		return callObjectMethod(
 			"getRetransmissionTimeoutsMillis",
 			"()[I"
-		).object<jintArray>();
+		);
 	}
-	jstring IkeSessionParams::getServerHostname()
+	JString IkeSessionParams::getServerHostname()
 	{
 		return callObjectMethod(
 			"getServerHostname",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint IkeSessionParams::getSoftLifetimeSeconds()
 	{

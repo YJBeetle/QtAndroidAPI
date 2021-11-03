@@ -1,3 +1,4 @@
+#include "../../../JByteArray.hpp"
 #include "./DESedeKeySpec.hpp"
 
 namespace javax::crypto::spec
@@ -15,37 +16,37 @@ namespace javax::crypto::spec
 	DESedeKeySpec::DESedeKeySpec(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	DESedeKeySpec::DESedeKeySpec(jbyteArray arg0)
+	DESedeKeySpec::DESedeKeySpec(JByteArray arg0)
 		: JObject(
 			"javax.crypto.spec.DESedeKeySpec",
 			"([B)V",
-			arg0
+			arg0.object<jbyteArray>()
 		) {}
-	DESedeKeySpec::DESedeKeySpec(jbyteArray arg0, jint arg1)
+	DESedeKeySpec::DESedeKeySpec(JByteArray arg0, jint arg1)
 		: JObject(
 			"javax.crypto.spec.DESedeKeySpec",
 			"([BI)V",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1
 		) {}
 	
 	// Methods
-	jboolean DESedeKeySpec::isParityAdjusted(jbyteArray arg0, jint arg1)
+	jboolean DESedeKeySpec::isParityAdjusted(JByteArray arg0, jint arg1)
 	{
 		return callStaticMethod<jboolean>(
 			"javax.crypto.spec.DESedeKeySpec",
 			"isParityAdjusted",
 			"([BI)Z",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1
 		);
 	}
-	jbyteArray DESedeKeySpec::getKey()
+	JByteArray DESedeKeySpec::getKey()
 	{
 		return callObjectMethod(
 			"getKey",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
 } // namespace javax::crypto::spec
 

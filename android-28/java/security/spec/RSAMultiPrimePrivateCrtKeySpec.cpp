@@ -1,3 +1,4 @@
+#include "../../../JArray.hpp"
 #include "../../math/BigInteger.hpp"
 #include "./RSAMultiPrimePrivateCrtKeySpec.hpp"
 
@@ -9,7 +10,7 @@ namespace java::security::spec
 	RSAMultiPrimePrivateCrtKeySpec::RSAMultiPrimePrivateCrtKeySpec(QAndroidJniObject obj) : java::security::spec::RSAPrivateKeySpec(obj) {}
 	
 	// Constructors
-	RSAMultiPrimePrivateCrtKeySpec::RSAMultiPrimePrivateCrtKeySpec(java::math::BigInteger arg0, java::math::BigInteger arg1, java::math::BigInteger arg2, java::math::BigInteger arg3, java::math::BigInteger arg4, java::math::BigInteger arg5, java::math::BigInteger arg6, java::math::BigInteger arg7, jarray arg8)
+	RSAMultiPrimePrivateCrtKeySpec::RSAMultiPrimePrivateCrtKeySpec(java::math::BigInteger arg0, java::math::BigInteger arg1, java::math::BigInteger arg2, java::math::BigInteger arg3, java::math::BigInteger arg4, java::math::BigInteger arg5, java::math::BigInteger arg6, java::math::BigInteger arg7, JArray arg8)
 		: java::security::spec::RSAPrivateKeySpec(
 			"java.security.spec.RSAMultiPrimePrivateCrtKeySpec",
 			"(Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/math/BigInteger;[Ljava/security/spec/RSAOtherPrimeInfo;)V",
@@ -21,9 +22,9 @@ namespace java::security::spec
 			arg5.object(),
 			arg6.object(),
 			arg7.object(),
-			arg8
+			arg8.object<jarray>()
 		) {}
-	RSAMultiPrimePrivateCrtKeySpec::RSAMultiPrimePrivateCrtKeySpec(java::math::BigInteger arg0, java::math::BigInteger arg1, java::math::BigInteger arg2, java::math::BigInteger arg3, java::math::BigInteger arg4, java::math::BigInteger arg5, java::math::BigInteger arg6, java::math::BigInteger arg7, jarray arg8, JObject arg9)
+	RSAMultiPrimePrivateCrtKeySpec::RSAMultiPrimePrivateCrtKeySpec(java::math::BigInteger arg0, java::math::BigInteger arg1, java::math::BigInteger arg2, java::math::BigInteger arg3, java::math::BigInteger arg4, java::math::BigInteger arg5, java::math::BigInteger arg6, java::math::BigInteger arg7, JArray arg8, JObject arg9)
 		: java::security::spec::RSAPrivateKeySpec(
 			"java.security.spec.RSAMultiPrimePrivateCrtKeySpec",
 			"(Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/math/BigInteger;[Ljava/security/spec/RSAOtherPrimeInfo;Ljava/security/spec/AlgorithmParameterSpec;)V",
@@ -35,7 +36,7 @@ namespace java::security::spec
 			arg5.object(),
 			arg6.object(),
 			arg7.object(),
-			arg8,
+			arg8.object<jarray>(),
 			arg9.object()
 		) {}
 	
@@ -47,12 +48,12 @@ namespace java::security::spec
 			"()Ljava/math/BigInteger;"
 		);
 	}
-	jarray RSAMultiPrimePrivateCrtKeySpec::getOtherPrimeInfo()
+	JArray RSAMultiPrimePrivateCrtKeySpec::getOtherPrimeInfo()
 	{
 		return callObjectMethod(
 			"getOtherPrimeInfo",
 			"()[Ljava/security/spec/RSAOtherPrimeInfo;"
-		).object<jarray>();
+		);
 	}
 	java::math::BigInteger RSAMultiPrimePrivateCrtKeySpec::getPrimeExponentP()
 	{

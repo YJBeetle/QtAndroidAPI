@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./DeniedByServerException.hpp"
 
 namespace android::media
@@ -8,11 +9,11 @@ namespace android::media
 	DeniedByServerException::DeniedByServerException(QAndroidJniObject obj) : android::media::MediaDrmException(obj) {}
 	
 	// Constructors
-	DeniedByServerException::DeniedByServerException(jstring arg0)
+	DeniedByServerException::DeniedByServerException(JString arg0)
 		: android::media::MediaDrmException(
 			"android.media.DeniedByServerException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

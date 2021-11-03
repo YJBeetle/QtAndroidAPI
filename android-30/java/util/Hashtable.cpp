@@ -1,5 +1,8 @@
+#include "../../JArray.hpp"
 #include "../io/ObjectInputStream.hpp"
 #include "../io/ObjectOutputStream.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "../lang/Void.hpp"
 #include "./Hashtable.hpp"
 
@@ -44,62 +47,62 @@ namespace java::util
 			"()V"
 		);
 	}
-	jobject Hashtable::clone()
+	JObject Hashtable::clone()
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
-	jobject Hashtable::compute(jobject arg0, JObject arg1)
+	JObject Hashtable::compute(JObject arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"compute",
 			"(Ljava/lang/Object;Ljava/util/function/BiFunction;)Ljava/lang/Object;",
-			arg0,
+			arg0.object<jobject>(),
 			arg1.object()
-		).object<jobject>();
+		);
 	}
-	jobject Hashtable::computeIfAbsent(jobject arg0, JObject arg1)
+	JObject Hashtable::computeIfAbsent(JObject arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"computeIfAbsent",
 			"(Ljava/lang/Object;Ljava/util/function/Function;)Ljava/lang/Object;",
-			arg0,
+			arg0.object<jobject>(),
 			arg1.object()
-		).object<jobject>();
+		);
 	}
-	jobject Hashtable::computeIfPresent(jobject arg0, JObject arg1)
+	JObject Hashtable::computeIfPresent(JObject arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"computeIfPresent",
 			"(Ljava/lang/Object;Ljava/util/function/BiFunction;)Ljava/lang/Object;",
-			arg0,
+			arg0.object<jobject>(),
 			arg1.object()
-		).object<jobject>();
+		);
 	}
-	jboolean Hashtable::contains(jobject arg0)
+	jboolean Hashtable::contains(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"contains",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jboolean Hashtable::containsKey(jobject arg0)
+	jboolean Hashtable::containsKey(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"containsKey",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jboolean Hashtable::containsValue(jobject arg0)
+	jboolean Hashtable::containsValue(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"containsValue",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	JObject Hashtable::elements()
@@ -116,12 +119,12 @@ namespace java::util
 			"()Ljava/util/Set;"
 		);
 	}
-	jboolean Hashtable::equals(jobject arg0)
+	jboolean Hashtable::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	void Hashtable::forEach(JObject arg0)
@@ -132,22 +135,22 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	jobject Hashtable::get(jobject arg0)
+	JObject Hashtable::get(JObject arg0)
 	{
 		return callObjectMethod(
 			"get",
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0
-		).object<jobject>();
+			arg0.object<jobject>()
+		);
 	}
-	jobject Hashtable::getOrDefault(jobject arg0, jobject arg1)
+	JObject Hashtable::getOrDefault(JObject arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"getOrDefault",
 			"(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0,
-			arg1
-		).object<jobject>();
+			arg0.object<jobject>(),
+			arg1.object<jobject>()
+		);
 	}
 	jint Hashtable::hashCode()
 	{
@@ -177,24 +180,24 @@ namespace java::util
 			"()Ljava/util/Enumeration;"
 		);
 	}
-	jobject Hashtable::merge(jobject arg0, jobject arg1, JObject arg2)
+	JObject Hashtable::merge(JObject arg0, JObject arg1, JObject arg2)
 	{
 		return callObjectMethod(
 			"merge",
 			"(Ljava/lang/Object;Ljava/lang/Object;Ljava/util/function/BiFunction;)Ljava/lang/Object;",
-			arg0,
-			arg1,
+			arg0.object<jobject>(),
+			arg1.object<jobject>(),
 			arg2.object()
-		).object<jobject>();
+		);
 	}
-	jobject Hashtable::put(jobject arg0, jobject arg1)
+	JObject Hashtable::put(JObject arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"put",
 			"(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0,
-			arg1
-		).object<jobject>();
+			arg0.object<jobject>(),
+			arg1.object<jobject>()
+		);
 	}
 	void Hashtable::putAll(JObject arg0)
 	{
@@ -204,50 +207,50 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	jobject Hashtable::putIfAbsent(jobject arg0, jobject arg1)
+	JObject Hashtable::putIfAbsent(JObject arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"putIfAbsent",
 			"(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0,
-			arg1
-		).object<jobject>();
+			arg0.object<jobject>(),
+			arg1.object<jobject>()
+		);
 	}
-	jboolean Hashtable::remove(jobject arg0, jobject arg1)
+	jboolean Hashtable::remove(JObject arg0, JObject arg1)
 	{
 		return callMethod<jboolean>(
 			"remove",
 			"(Ljava/lang/Object;Ljava/lang/Object;)Z",
-			arg0,
-			arg1
+			arg0.object<jobject>(),
+			arg1.object<jobject>()
 		);
 	}
-	jobject Hashtable::remove(jobject arg0)
+	JObject Hashtable::remove(JObject arg0)
 	{
 		return callObjectMethod(
 			"remove",
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0
-		).object<jobject>();
+			arg0.object<jobject>()
+		);
 	}
-	jboolean Hashtable::replace(jobject arg0, jobject arg1, jobject arg2)
+	jboolean Hashtable::replace(JObject arg0, JObject arg1, JObject arg2)
 	{
 		return callMethod<jboolean>(
 			"replace",
 			"(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Z",
-			arg0,
-			arg1,
-			arg2
+			arg0.object<jobject>(),
+			arg1.object<jobject>(),
+			arg2.object<jobject>()
 		);
 	}
-	jobject Hashtable::replace(jobject arg0, jobject arg1)
+	JObject Hashtable::replace(JObject arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"replace",
 			"(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0,
-			arg1
-		).object<jobject>();
+			arg0.object<jobject>(),
+			arg1.object<jobject>()
+		);
 	}
 	void Hashtable::replaceAll(JObject arg0)
 	{
@@ -264,12 +267,12 @@ namespace java::util
 			"()I"
 		);
 	}
-	jstring Hashtable::toString()
+	JString Hashtable::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	JObject Hashtable::values()
 	{

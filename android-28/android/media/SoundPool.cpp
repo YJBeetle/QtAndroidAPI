@@ -1,6 +1,7 @@
 #include "../content/Context.hpp"
 #include "../content/res/AssetFileDescriptor.hpp"
 #include "../../java/io/FileDescriptor.hpp"
+#include "../../JString.hpp"
 #include "./SoundPool.hpp"
 
 namespace android::media
@@ -44,12 +45,12 @@ namespace android::media
 			arg1
 		);
 	}
-	jint SoundPool::load(jstring arg0, jint arg1)
+	jint SoundPool::load(JString arg0, jint arg1)
 	{
 		return callMethod<jint>(
 			"load",
 			"(Ljava/lang/String;I)I",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}

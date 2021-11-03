@@ -18,6 +18,7 @@ namespace android::media::midi
 {
 	class MidiOutputPort;
 }
+class JString;
 
 namespace android::media::midi
 {
@@ -38,7 +39,7 @@ namespace android::media::midi
 		android::media::midi::MidiDeviceInfo getInfo();
 		android::media::midi::MidiInputPort openInputPort(jint arg0);
 		android::media::midi::MidiOutputPort openOutputPort(jint arg0);
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::media::midi
 

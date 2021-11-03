@@ -2,6 +2,7 @@
 #include "../content/ComponentName.hpp"
 #include "../content/Intent.hpp"
 #include "../os/Parcel.hpp"
+#include "../../JString.hpp"
 #include "./ActivityManager_RecentTaskInfo.hpp"
 
 namespace android::app
@@ -35,12 +36,12 @@ namespace android::app
 			"Landroid/content/Intent;"
 		);
 	}
-	jstring ActivityManager_RecentTaskInfo::description()
+	JString ActivityManager_RecentTaskInfo::description()
 	{
 		return getObjectField(
 			"description",
 			"Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	jint ActivityManager_RecentTaskInfo::id()
 	{

@@ -1,8 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../view/View.hpp"
-#include "../view/ViewGroup.hpp"
 #include "./AdapterView.hpp"
 
 namespace android::content
@@ -25,6 +22,7 @@ namespace android::view::autofill
 {
 	class AutofillValue;
 }
+class JString;
 
 namespace android::widget
 {
@@ -45,7 +43,7 @@ namespace android::widget
 		
 		// Methods
 		void autofill(android::view::autofill::AutofillValue arg0);
-		jstring getAccessibilityClassName();
+		JString getAccessibilityClassName();
 		JObject getAdapter();
 		jint getAutofillType();
 		android::view::autofill::AutofillValue getAutofillValue();

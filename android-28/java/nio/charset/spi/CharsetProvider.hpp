@@ -2,6 +2,7 @@
 
 #include "../../../../JObject.hpp"
 
+class JString;
 namespace java::lang
 {
 	class Void;
@@ -25,7 +26,7 @@ namespace java::nio::charset::spi
 		// Constructors
 		
 		// Methods
-		java::nio::charset::Charset charsetForName(jstring arg0);
+		java::nio::charset::Charset charsetForName(JString arg0);
 		JObject charsets();
 	};
 } // namespace java::nio::charset::spi

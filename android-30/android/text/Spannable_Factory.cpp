@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./Spannable_Factory.hpp"
 
 namespace android::text
@@ -23,12 +24,12 @@ namespace android::text
 			"()Landroid/text/Spannable$Factory;"
 		);
 	}
-	JObject Spannable_Factory::newSpannable(jstring arg0)
+	JObject Spannable_Factory::newSpannable(JString arg0)
 	{
 		return callObjectMethod(
 			"newSpannable",
 			"(Ljava/lang/CharSequence;)Landroid/text/Spannable;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 } // namespace android::text

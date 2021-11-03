@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JIntArray;
+class JBooleanArray;
 namespace android::hardware
 {
 	class BatteryState;
@@ -34,6 +36,7 @@ namespace android::view
 {
 	class KeyCharacterMap;
 }
+class JString;
 
 namespace android::view
 {
@@ -87,11 +90,11 @@ namespace android::view
 		
 		// Methods
 		static android::view::InputDevice getDevice(jint arg0);
-		static jintArray getDeviceIds();
+		static JIntArray getDeviceIds();
 		jint describeContents();
 		android::hardware::BatteryState getBatteryState();
 		jint getControllerNumber();
-		jstring getDescriptor();
+		JString getDescriptor();
 		jint getId();
 		android::view::KeyCharacterMap getKeyCharacterMap();
 		jint getKeyboardType();
@@ -99,20 +102,20 @@ namespace android::view
 		android::view::InputDevice_MotionRange getMotionRange(jint arg0);
 		android::view::InputDevice_MotionRange getMotionRange(jint arg0, jint arg1);
 		JObject getMotionRanges();
-		jstring getName();
+		JString getName();
 		jint getProductId();
 		android::hardware::SensorManager getSensorManager();
 		jint getSources();
 		jint getVendorId();
 		android::os::Vibrator getVibrator();
 		android::os::VibratorManager getVibratorManager();
-		jbooleanArray hasKeys(jintArray arg0);
+		JBooleanArray hasKeys(JIntArray arg0);
 		jboolean hasMicrophone();
 		jboolean isEnabled();
 		jboolean isExternal();
 		jboolean isVirtual();
 		jboolean supportsSource(jint arg0);
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::view

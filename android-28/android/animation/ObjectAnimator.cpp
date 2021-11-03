@@ -1,8 +1,16 @@
+#include "../../JFloatArray.hpp"
+#include "../../JIntArray.hpp"
+#include "../../JArray.hpp"
+#include "../../JObjectArray.hpp"
+#include "../../JArray.hpp"
+#include "../../JArray.hpp"
 #include "./Animator.hpp"
 #include "./TypeConverter.hpp"
 #include "./ValueAnimator.hpp"
 #include "../graphics/Path.hpp"
 #include "../util/Property.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./ObjectAnimator.hpp"
 
 namespace android::animation
@@ -20,259 +28,259 @@ namespace android::animation
 		) {}
 	
 	// Methods
-	android::animation::ObjectAnimator ObjectAnimator::ofArgb(jobject arg0, android::util::Property arg1, jintArray arg2)
+	android::animation::ObjectAnimator ObjectAnimator::ofArgb(JObject arg0, android::util::Property arg1, JIntArray arg2)
 	{
 		return callStaticObjectMethod(
 			"android.animation.ObjectAnimator",
 			"ofArgb",
 			"(Ljava/lang/Object;Landroid/util/Property;[I)Landroid/animation/ObjectAnimator;",
-			arg0,
+			arg0.object<jobject>(),
 			arg1.object(),
-			arg2
+			arg2.object<jintArray>()
 		);
 	}
-	android::animation::ObjectAnimator ObjectAnimator::ofArgb(jobject arg0, jstring arg1, jintArray arg2)
+	android::animation::ObjectAnimator ObjectAnimator::ofArgb(JObject arg0, JString arg1, JIntArray arg2)
 	{
 		return callStaticObjectMethod(
 			"android.animation.ObjectAnimator",
 			"ofArgb",
 			"(Ljava/lang/Object;Ljava/lang/String;[I)Landroid/animation/ObjectAnimator;",
-			arg0,
-			arg1,
-			arg2
+			arg0.object<jobject>(),
+			arg1.object<jstring>(),
+			arg2.object<jintArray>()
 		);
 	}
-	android::animation::ObjectAnimator ObjectAnimator::ofFloat(jobject arg0, android::util::Property arg1, jfloatArray arg2)
+	android::animation::ObjectAnimator ObjectAnimator::ofFloat(JObject arg0, android::util::Property arg1, JFloatArray arg2)
 	{
 		return callStaticObjectMethod(
 			"android.animation.ObjectAnimator",
 			"ofFloat",
 			"(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;",
-			arg0,
+			arg0.object<jobject>(),
 			arg1.object(),
-			arg2
+			arg2.object<jfloatArray>()
 		);
 	}
-	android::animation::ObjectAnimator ObjectAnimator::ofFloat(jobject arg0, jstring arg1, jfloatArray arg2)
+	android::animation::ObjectAnimator ObjectAnimator::ofFloat(JObject arg0, JString arg1, JFloatArray arg2)
 	{
 		return callStaticObjectMethod(
 			"android.animation.ObjectAnimator",
 			"ofFloat",
 			"(Ljava/lang/Object;Ljava/lang/String;[F)Landroid/animation/ObjectAnimator;",
-			arg0,
-			arg1,
-			arg2
+			arg0.object<jobject>(),
+			arg1.object<jstring>(),
+			arg2.object<jfloatArray>()
 		);
 	}
-	android::animation::ObjectAnimator ObjectAnimator::ofFloat(jobject arg0, android::util::Property arg1, android::util::Property arg2, android::graphics::Path arg3)
+	android::animation::ObjectAnimator ObjectAnimator::ofFloat(JObject arg0, android::util::Property arg1, android::util::Property arg2, android::graphics::Path arg3)
 	{
 		return callStaticObjectMethod(
 			"android.animation.ObjectAnimator",
 			"ofFloat",
 			"(Ljava/lang/Object;Landroid/util/Property;Landroid/util/Property;Landroid/graphics/Path;)Landroid/animation/ObjectAnimator;",
-			arg0,
+			arg0.object<jobject>(),
 			arg1.object(),
 			arg2.object(),
 			arg3.object()
 		);
 	}
-	android::animation::ObjectAnimator ObjectAnimator::ofFloat(jobject arg0, jstring arg1, jstring arg2, android::graphics::Path arg3)
+	android::animation::ObjectAnimator ObjectAnimator::ofFloat(JObject arg0, JString arg1, JString arg2, android::graphics::Path arg3)
 	{
 		return callStaticObjectMethod(
 			"android.animation.ObjectAnimator",
 			"ofFloat",
 			"(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;Landroid/graphics/Path;)Landroid/animation/ObjectAnimator;",
-			arg0,
-			arg1,
-			arg2,
+			arg0.object<jobject>(),
+			arg1.object<jstring>(),
+			arg2.object<jstring>(),
 			arg3.object()
 		);
 	}
-	android::animation::ObjectAnimator ObjectAnimator::ofInt(jobject arg0, android::util::Property arg1, jintArray arg2)
+	android::animation::ObjectAnimator ObjectAnimator::ofInt(JObject arg0, android::util::Property arg1, JIntArray arg2)
 	{
 		return callStaticObjectMethod(
 			"android.animation.ObjectAnimator",
 			"ofInt",
 			"(Ljava/lang/Object;Landroid/util/Property;[I)Landroid/animation/ObjectAnimator;",
-			arg0,
+			arg0.object<jobject>(),
 			arg1.object(),
-			arg2
+			arg2.object<jintArray>()
 		);
 	}
-	android::animation::ObjectAnimator ObjectAnimator::ofInt(jobject arg0, jstring arg1, jintArray arg2)
+	android::animation::ObjectAnimator ObjectAnimator::ofInt(JObject arg0, JString arg1, JIntArray arg2)
 	{
 		return callStaticObjectMethod(
 			"android.animation.ObjectAnimator",
 			"ofInt",
 			"(Ljava/lang/Object;Ljava/lang/String;[I)Landroid/animation/ObjectAnimator;",
-			arg0,
-			arg1,
-			arg2
+			arg0.object<jobject>(),
+			arg1.object<jstring>(),
+			arg2.object<jintArray>()
 		);
 	}
-	android::animation::ObjectAnimator ObjectAnimator::ofInt(jobject arg0, android::util::Property arg1, android::util::Property arg2, android::graphics::Path arg3)
+	android::animation::ObjectAnimator ObjectAnimator::ofInt(JObject arg0, android::util::Property arg1, android::util::Property arg2, android::graphics::Path arg3)
 	{
 		return callStaticObjectMethod(
 			"android.animation.ObjectAnimator",
 			"ofInt",
 			"(Ljava/lang/Object;Landroid/util/Property;Landroid/util/Property;Landroid/graphics/Path;)Landroid/animation/ObjectAnimator;",
-			arg0,
+			arg0.object<jobject>(),
 			arg1.object(),
 			arg2.object(),
 			arg3.object()
 		);
 	}
-	android::animation::ObjectAnimator ObjectAnimator::ofInt(jobject arg0, jstring arg1, jstring arg2, android::graphics::Path arg3)
+	android::animation::ObjectAnimator ObjectAnimator::ofInt(JObject arg0, JString arg1, JString arg2, android::graphics::Path arg3)
 	{
 		return callStaticObjectMethod(
 			"android.animation.ObjectAnimator",
 			"ofInt",
 			"(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;Landroid/graphics/Path;)Landroid/animation/ObjectAnimator;",
-			arg0,
-			arg1,
-			arg2,
+			arg0.object<jobject>(),
+			arg1.object<jstring>(),
+			arg2.object<jstring>(),
 			arg3.object()
 		);
 	}
-	android::animation::ObjectAnimator ObjectAnimator::ofMultiFloat(jobject arg0, jstring arg1, jarray arg2)
+	android::animation::ObjectAnimator ObjectAnimator::ofMultiFloat(JObject arg0, JString arg1, JArray arg2)
 	{
 		return callStaticObjectMethod(
 			"android.animation.ObjectAnimator",
 			"ofMultiFloat",
 			"(Ljava/lang/Object;Ljava/lang/String;[[F)Landroid/animation/ObjectAnimator;",
-			arg0,
-			arg1,
-			arg2
+			arg0.object<jobject>(),
+			arg1.object<jstring>(),
+			arg2.object<jarray>()
 		);
 	}
-	android::animation::ObjectAnimator ObjectAnimator::ofMultiFloat(jobject arg0, jstring arg1, android::graphics::Path arg2)
+	android::animation::ObjectAnimator ObjectAnimator::ofMultiFloat(JObject arg0, JString arg1, android::graphics::Path arg2)
 	{
 		return callStaticObjectMethod(
 			"android.animation.ObjectAnimator",
 			"ofMultiFloat",
 			"(Ljava/lang/Object;Ljava/lang/String;Landroid/graphics/Path;)Landroid/animation/ObjectAnimator;",
-			arg0,
-			arg1,
+			arg0.object<jobject>(),
+			arg1.object<jstring>(),
 			arg2.object()
 		);
 	}
-	android::animation::ObjectAnimator ObjectAnimator::ofMultiFloat(jobject arg0, jstring arg1, android::animation::TypeConverter arg2, JObject arg3, jobjectArray arg4)
+	android::animation::ObjectAnimator ObjectAnimator::ofMultiFloat(JObject arg0, JString arg1, android::animation::TypeConverter arg2, JObject arg3, JObjectArray arg4)
 	{
 		return callStaticObjectMethod(
 			"android.animation.ObjectAnimator",
 			"ofMultiFloat",
 			"(Ljava/lang/Object;Ljava/lang/String;Landroid/animation/TypeConverter;Landroid/animation/TypeEvaluator;[Ljava/lang/Object;)Landroid/animation/ObjectAnimator;",
-			arg0,
-			arg1,
+			arg0.object<jobject>(),
+			arg1.object<jstring>(),
 			arg2.object(),
 			arg3.object(),
-			arg4
+			arg4.object<jobjectArray>()
 		);
 	}
-	android::animation::ObjectAnimator ObjectAnimator::ofMultiInt(jobject arg0, jstring arg1, jarray arg2)
+	android::animation::ObjectAnimator ObjectAnimator::ofMultiInt(JObject arg0, JString arg1, JArray arg2)
 	{
 		return callStaticObjectMethod(
 			"android.animation.ObjectAnimator",
 			"ofMultiInt",
 			"(Ljava/lang/Object;Ljava/lang/String;[[I)Landroid/animation/ObjectAnimator;",
-			arg0,
-			arg1,
-			arg2
+			arg0.object<jobject>(),
+			arg1.object<jstring>(),
+			arg2.object<jarray>()
 		);
 	}
-	android::animation::ObjectAnimator ObjectAnimator::ofMultiInt(jobject arg0, jstring arg1, android::graphics::Path arg2)
+	android::animation::ObjectAnimator ObjectAnimator::ofMultiInt(JObject arg0, JString arg1, android::graphics::Path arg2)
 	{
 		return callStaticObjectMethod(
 			"android.animation.ObjectAnimator",
 			"ofMultiInt",
 			"(Ljava/lang/Object;Ljava/lang/String;Landroid/graphics/Path;)Landroid/animation/ObjectAnimator;",
-			arg0,
-			arg1,
+			arg0.object<jobject>(),
+			arg1.object<jstring>(),
 			arg2.object()
 		);
 	}
-	android::animation::ObjectAnimator ObjectAnimator::ofMultiInt(jobject arg0, jstring arg1, android::animation::TypeConverter arg2, JObject arg3, jobjectArray arg4)
+	android::animation::ObjectAnimator ObjectAnimator::ofMultiInt(JObject arg0, JString arg1, android::animation::TypeConverter arg2, JObject arg3, JObjectArray arg4)
 	{
 		return callStaticObjectMethod(
 			"android.animation.ObjectAnimator",
 			"ofMultiInt",
 			"(Ljava/lang/Object;Ljava/lang/String;Landroid/animation/TypeConverter;Landroid/animation/TypeEvaluator;[Ljava/lang/Object;)Landroid/animation/ObjectAnimator;",
-			arg0,
-			arg1,
+			arg0.object<jobject>(),
+			arg1.object<jstring>(),
 			arg2.object(),
 			arg3.object(),
-			arg4
+			arg4.object<jobjectArray>()
 		);
 	}
-	android::animation::ObjectAnimator ObjectAnimator::ofObject(jobject arg0, android::util::Property arg1, android::animation::TypeConverter arg2, android::graphics::Path arg3)
+	android::animation::ObjectAnimator ObjectAnimator::ofObject(JObject arg0, android::util::Property arg1, android::animation::TypeConverter arg2, android::graphics::Path arg3)
 	{
 		return callStaticObjectMethod(
 			"android.animation.ObjectAnimator",
 			"ofObject",
 			"(Ljava/lang/Object;Landroid/util/Property;Landroid/animation/TypeConverter;Landroid/graphics/Path;)Landroid/animation/ObjectAnimator;",
-			arg0,
+			arg0.object<jobject>(),
 			arg1.object(),
 			arg2.object(),
 			arg3.object()
 		);
 	}
-	android::animation::ObjectAnimator ObjectAnimator::ofObject(jobject arg0, android::util::Property arg1, JObject arg2, jobjectArray arg3)
+	android::animation::ObjectAnimator ObjectAnimator::ofObject(JObject arg0, android::util::Property arg1, JObject arg2, JObjectArray arg3)
 	{
 		return callStaticObjectMethod(
 			"android.animation.ObjectAnimator",
 			"ofObject",
 			"(Ljava/lang/Object;Landroid/util/Property;Landroid/animation/TypeEvaluator;[Ljava/lang/Object;)Landroid/animation/ObjectAnimator;",
-			arg0,
+			arg0.object<jobject>(),
 			arg1.object(),
 			arg2.object(),
-			arg3
+			arg3.object<jobjectArray>()
 		);
 	}
-	android::animation::ObjectAnimator ObjectAnimator::ofObject(jobject arg0, jstring arg1, android::animation::TypeConverter arg2, android::graphics::Path arg3)
+	android::animation::ObjectAnimator ObjectAnimator::ofObject(JObject arg0, JString arg1, android::animation::TypeConverter arg2, android::graphics::Path arg3)
 	{
 		return callStaticObjectMethod(
 			"android.animation.ObjectAnimator",
 			"ofObject",
 			"(Ljava/lang/Object;Ljava/lang/String;Landroid/animation/TypeConverter;Landroid/graphics/Path;)Landroid/animation/ObjectAnimator;",
-			arg0,
-			arg1,
+			arg0.object<jobject>(),
+			arg1.object<jstring>(),
 			arg2.object(),
 			arg3.object()
 		);
 	}
-	android::animation::ObjectAnimator ObjectAnimator::ofObject(jobject arg0, jstring arg1, JObject arg2, jobjectArray arg3)
+	android::animation::ObjectAnimator ObjectAnimator::ofObject(JObject arg0, JString arg1, JObject arg2, JObjectArray arg3)
 	{
 		return callStaticObjectMethod(
 			"android.animation.ObjectAnimator",
 			"ofObject",
 			"(Ljava/lang/Object;Ljava/lang/String;Landroid/animation/TypeEvaluator;[Ljava/lang/Object;)Landroid/animation/ObjectAnimator;",
-			arg0,
-			arg1,
+			arg0.object<jobject>(),
+			arg1.object<jstring>(),
 			arg2.object(),
-			arg3
+			arg3.object<jobjectArray>()
 		);
 	}
-	android::animation::ObjectAnimator ObjectAnimator::ofObject(jobject arg0, android::util::Property arg1, android::animation::TypeConverter arg2, JObject arg3, jobjectArray arg4)
+	android::animation::ObjectAnimator ObjectAnimator::ofObject(JObject arg0, android::util::Property arg1, android::animation::TypeConverter arg2, JObject arg3, JObjectArray arg4)
 	{
 		return callStaticObjectMethod(
 			"android.animation.ObjectAnimator",
 			"ofObject",
 			"(Ljava/lang/Object;Landroid/util/Property;Landroid/animation/TypeConverter;Landroid/animation/TypeEvaluator;[Ljava/lang/Object;)Landroid/animation/ObjectAnimator;",
-			arg0,
+			arg0.object<jobject>(),
 			arg1.object(),
 			arg2.object(),
 			arg3.object(),
-			arg4
+			arg4.object<jobjectArray>()
 		);
 	}
-	android::animation::ObjectAnimator ObjectAnimator::ofPropertyValuesHolder(jobject arg0, jarray arg1)
+	android::animation::ObjectAnimator ObjectAnimator::ofPropertyValuesHolder(JObject arg0, JArray arg1)
 	{
 		return callStaticObjectMethod(
 			"android.animation.ObjectAnimator",
 			"ofPropertyValuesHolder",
 			"(Ljava/lang/Object;[Landroid/animation/PropertyValuesHolder;)Landroid/animation/ObjectAnimator;",
-			arg0,
-			arg1
+			arg0.object<jobject>(),
+			arg1.object<jarray>()
 		);
 	}
 	android::animation::ObjectAnimator ObjectAnimator::clone()
@@ -282,19 +290,19 @@ namespace android::animation
 			"()Landroid/animation/ObjectAnimator;"
 		);
 	}
-	jstring ObjectAnimator::getPropertyName()
+	JString ObjectAnimator::getPropertyName()
 	{
 		return callObjectMethod(
 			"getPropertyName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jobject ObjectAnimator::getTarget()
+	JObject ObjectAnimator::getTarget()
 	{
 		return callObjectMethod(
 			"getTarget",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
 	void ObjectAnimator::setAutoCancel(jboolean arg0)
 	{
@@ -312,28 +320,28 @@ namespace android::animation
 			arg0
 		);
 	}
-	void ObjectAnimator::setFloatValues(jfloatArray arg0)
+	void ObjectAnimator::setFloatValues(JFloatArray arg0)
 	{
 		callMethod<void>(
 			"setFloatValues",
 			"([F)V",
-			arg0
+			arg0.object<jfloatArray>()
 		);
 	}
-	void ObjectAnimator::setIntValues(jintArray arg0)
+	void ObjectAnimator::setIntValues(JIntArray arg0)
 	{
 		callMethod<void>(
 			"setIntValues",
 			"([I)V",
-			arg0
+			arg0.object<jintArray>()
 		);
 	}
-	void ObjectAnimator::setObjectValues(jobjectArray arg0)
+	void ObjectAnimator::setObjectValues(JObjectArray arg0)
 	{
 		callMethod<void>(
 			"setObjectValues",
 			"([Ljava/lang/Object;)V",
-			arg0
+			arg0.object<jobjectArray>()
 		);
 	}
 	void ObjectAnimator::setProperty(android::util::Property arg0)
@@ -344,20 +352,20 @@ namespace android::animation
 			arg0.object()
 		);
 	}
-	void ObjectAnimator::setPropertyName(jstring arg0)
+	void ObjectAnimator::setPropertyName(JString arg0)
 	{
 		callMethod<void>(
 			"setPropertyName",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	void ObjectAnimator::setTarget(jobject arg0)
+	void ObjectAnimator::setTarget(JObject arg0)
 	{
 		callMethod<void>(
 			"setTarget",
 			"(Ljava/lang/Object;)V",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	void ObjectAnimator::setupEndValues()
@@ -381,12 +389,12 @@ namespace android::animation
 			"()V"
 		);
 	}
-	jstring ObjectAnimator::toString()
+	JString ObjectAnimator::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::animation
 

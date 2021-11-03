@@ -1,8 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../content/Context.hpp"
-#include "../content/ContextWrapper.hpp"
 #include "../app/Service.hpp"
 
 namespace android::content
@@ -13,6 +10,7 @@ namespace android::speech
 {
 	class RecognitionService_Callback;
 }
+class JString;
 
 namespace android::speech
 {
@@ -20,8 +18,8 @@ namespace android::speech
 	{
 	public:
 		// Fields
-		static jstring SERVICE_INTERFACE();
-		static jstring SERVICE_META_DATA();
+		static JString SERVICE_INTERFACE();
+		static JString SERVICE_META_DATA();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit RecognitionService(const char *className, const char *sig, Ts...agv) : android::app::Service(className, sig, std::forward<Ts>(agv)...) {}

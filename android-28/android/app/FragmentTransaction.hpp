@@ -10,6 +10,8 @@ namespace android::view
 {
 	class View;
 }
+class JString;
+class JString;
 
 namespace android::app
 {
@@ -33,11 +35,11 @@ namespace android::app
 		FragmentTransaction();
 		
 		// Methods
-		android::app::FragmentTransaction add(android::app::Fragment arg0, jstring arg1);
+		android::app::FragmentTransaction add(android::app::Fragment arg0, JString arg1);
 		android::app::FragmentTransaction add(jint arg0, android::app::Fragment arg1);
-		android::app::FragmentTransaction add(jint arg0, android::app::Fragment arg1, jstring arg2);
-		android::app::FragmentTransaction addSharedElement(android::view::View arg0, jstring arg1);
-		android::app::FragmentTransaction addToBackStack(jstring arg0);
+		android::app::FragmentTransaction add(jint arg0, android::app::Fragment arg1, JString arg2);
+		android::app::FragmentTransaction addSharedElement(android::view::View arg0, JString arg1);
+		android::app::FragmentTransaction addToBackStack(JString arg0);
 		android::app::FragmentTransaction attach(android::app::Fragment arg0);
 		jint commit();
 		jint commitAllowingStateLoss();
@@ -50,12 +52,12 @@ namespace android::app
 		jboolean isEmpty();
 		android::app::FragmentTransaction remove(android::app::Fragment arg0);
 		android::app::FragmentTransaction replace(jint arg0, android::app::Fragment arg1);
-		android::app::FragmentTransaction replace(jint arg0, android::app::Fragment arg1, jstring arg2);
+		android::app::FragmentTransaction replace(jint arg0, android::app::Fragment arg1, JString arg2);
 		android::app::FragmentTransaction runOnCommit(JObject arg0);
 		android::app::FragmentTransaction setBreadCrumbShortTitle(jint arg0);
-		android::app::FragmentTransaction setBreadCrumbShortTitle(jstring arg0);
+		android::app::FragmentTransaction setBreadCrumbShortTitle(JString arg0);
 		android::app::FragmentTransaction setBreadCrumbTitle(jint arg0);
-		android::app::FragmentTransaction setBreadCrumbTitle(jstring arg0);
+		android::app::FragmentTransaction setBreadCrumbTitle(JString arg0);
 		android::app::FragmentTransaction setCustomAnimations(jint arg0, jint arg1);
 		android::app::FragmentTransaction setCustomAnimations(jint arg0, jint arg1, jint arg2, jint arg3);
 		android::app::FragmentTransaction setPrimaryNavigationFragment(android::app::Fragment arg0);

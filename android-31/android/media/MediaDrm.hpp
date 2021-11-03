@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JByteArray;
 namespace android::media
 {
 	class MediaDrm_CryptoSession;
@@ -26,6 +27,7 @@ namespace android::os
 {
 	class PersistableBundle;
 }
+class JString;
 namespace java::util
 {
 	class HashMap;
@@ -60,11 +62,11 @@ namespace android::media
 		static jint OFFLINE_LICENSE_STATE_RELEASED();
 		static jint OFFLINE_LICENSE_STATE_UNKNOWN();
 		static jint OFFLINE_LICENSE_STATE_USABLE();
-		static jstring PROPERTY_ALGORITHMS();
-		static jstring PROPERTY_DESCRIPTION();
-		static jstring PROPERTY_DEVICE_UNIQUE_ID();
-		static jstring PROPERTY_VENDOR();
-		static jstring PROPERTY_VERSION();
+		static JString PROPERTY_ALGORITHMS();
+		static JString PROPERTY_DESCRIPTION();
+		static JString PROPERTY_DEVICE_UNIQUE_ID();
+		static JString PROPERTY_VENDOR();
+		static JString PROPERTY_VERSION();
 		static jint SECURITY_LEVEL_HW_SECURE_ALL();
 		static jint SECURITY_LEVEL_HW_SECURE_CRYPTO();
 		static jint SECURITY_LEVEL_HW_SECURE_DECODE();
@@ -83,47 +85,47 @@ namespace android::media
 		static jint getMaxSecurityLevel();
 		static JObject getSupportedCryptoSchemes();
 		static jboolean isCryptoSchemeSupported(java::util::UUID arg0);
-		static jboolean isCryptoSchemeSupported(java::util::UUID arg0, jstring arg1);
-		static jboolean isCryptoSchemeSupported(java::util::UUID arg0, jstring arg1, jint arg2);
+		static jboolean isCryptoSchemeSupported(java::util::UUID arg0, JString arg1);
+		static jboolean isCryptoSchemeSupported(java::util::UUID arg0, JString arg1, jint arg2);
 		void clearOnEventListener();
 		void clearOnExpirationUpdateListener();
 		void clearOnKeyStatusChangeListener();
 		void clearOnSessionLostStateListener();
 		void close();
-		void closeSession(jbyteArray arg0);
+		void closeSession(JByteArray arg0);
 		jint getConnectedHdcpLevel();
-		android::media::MediaDrm_CryptoSession getCryptoSession(jbyteArray arg0, jstring arg1, jstring arg2);
-		android::media::MediaDrm_KeyRequest getKeyRequest(jbyteArray arg0, jbyteArray arg1, jstring arg2, jint arg3, java::util::HashMap arg4);
+		android::media::MediaDrm_CryptoSession getCryptoSession(JByteArray arg0, JString arg1, JString arg2);
+		android::media::MediaDrm_KeyRequest getKeyRequest(JByteArray arg0, JByteArray arg1, JString arg2, jint arg3, java::util::HashMap arg4);
 		JObject getLogMessages();
 		jint getMaxHdcpLevel();
 		jint getMaxSessionCount();
 		android::os::PersistableBundle getMetrics();
 		JObject getOfflineLicenseKeySetIds();
-		jint getOfflineLicenseState(jbyteArray arg0);
+		jint getOfflineLicenseState(JByteArray arg0);
 		jint getOpenSessionCount();
-		android::media::MediaDrm_PlaybackComponent getPlaybackComponent(jbyteArray arg0);
-		jbyteArray getPropertyByteArray(jstring arg0);
-		jstring getPropertyString(jstring arg0);
+		android::media::MediaDrm_PlaybackComponent getPlaybackComponent(JByteArray arg0);
+		JByteArray getPropertyByteArray(JString arg0);
+		JString getPropertyString(JString arg0);
 		android::media::MediaDrm_ProvisionRequest getProvisionRequest();
-		jbyteArray getSecureStop(jbyteArray arg0);
+		JByteArray getSecureStop(JByteArray arg0);
 		JObject getSecureStopIds();
 		JObject getSecureStops();
-		jint getSecurityLevel(jbyteArray arg0);
-		jbyteArray openSession();
-		jbyteArray openSession(jint arg0);
-		jbyteArray provideKeyResponse(jbyteArray arg0, jbyteArray arg1);
-		void provideProvisionResponse(jbyteArray arg0);
-		java::util::HashMap queryKeyStatus(jbyteArray arg0);
+		jint getSecurityLevel(JByteArray arg0);
+		JByteArray openSession();
+		JByteArray openSession(jint arg0);
+		JByteArray provideKeyResponse(JByteArray arg0, JByteArray arg1);
+		void provideProvisionResponse(JByteArray arg0);
+		java::util::HashMap queryKeyStatus(JByteArray arg0);
 		void release();
 		void releaseAllSecureStops();
-		void releaseSecureStops(jbyteArray arg0);
+		void releaseSecureStops(JByteArray arg0);
 		void removeAllSecureStops();
-		void removeKeys(jbyteArray arg0);
-		void removeOfflineLicense(jbyteArray arg0);
-		void removeSecureStop(jbyteArray arg0);
-		jboolean requiresSecureDecoder(jstring arg0);
-		jboolean requiresSecureDecoder(jstring arg0, jint arg1);
-		void restoreKeys(jbyteArray arg0, jbyteArray arg1);
+		void removeKeys(JByteArray arg0);
+		void removeOfflineLicense(JByteArray arg0);
+		void removeSecureStop(JByteArray arg0);
+		jboolean requiresSecureDecoder(JString arg0);
+		jboolean requiresSecureDecoder(JString arg0, jint arg1);
+		void restoreKeys(JByteArray arg0, JByteArray arg1);
 		void setOnEventListener(JObject arg0);
 		void setOnEventListener(JObject arg0, android::os::Handler arg1);
 		void setOnEventListener(JObject arg0, JObject arg1);
@@ -133,8 +135,8 @@ namespace android::media
 		void setOnKeyStatusChangeListener(JObject arg0, JObject arg1);
 		void setOnSessionLostStateListener(JObject arg0, android::os::Handler arg1);
 		void setOnSessionLostStateListener(JObject arg0, JObject arg1);
-		void setPropertyByteArray(jstring arg0, jbyteArray arg1);
-		void setPropertyString(jstring arg0, jstring arg1);
+		void setPropertyByteArray(JString arg0, JByteArray arg1);
+		void setPropertyString(JString arg0, JString arg1);
 	};
 } // namespace android::media
 

@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./SocketException.hpp"
 
 namespace java::net
@@ -13,11 +14,11 @@ namespace java::net
 			"java.net.SocketException",
 			"()V"
 		) {}
-	SocketException::SocketException(jstring arg0)
+	SocketException::SocketException(JString arg0)
 		: java::io::IOException(
 			"java.net.SocketException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

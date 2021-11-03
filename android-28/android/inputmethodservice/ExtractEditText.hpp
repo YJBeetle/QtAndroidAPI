@@ -1,8 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../view/View.hpp"
-#include "../widget/TextView.hpp"
 #include "../widget/EditText.hpp"
 
 namespace android::content

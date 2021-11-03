@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JArray;
 
 namespace javax::net::ssl
 {
@@ -18,8 +19,8 @@ namespace javax::net::ssl
 		ExtendedSSLSession();
 		
 		// Methods
-		jarray getLocalSupportedSignatureAlgorithms();
-		jarray getPeerSupportedSignatureAlgorithms();
+		JArray getLocalSupportedSignatureAlgorithms();
+		JArray getPeerSupportedSignatureAlgorithms();
 		JObject getRequestedServerNames();
 		JObject getStatusResponses();
 	};

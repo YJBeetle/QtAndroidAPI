@@ -1,3 +1,5 @@
+#include "../../JIntArray.hpp"
+#include "../../JArray.hpp"
 #include "./ConsumerIrManager.hpp"
 
 namespace android::hardware
@@ -10,12 +12,12 @@ namespace android::hardware
 	// Constructors
 	
 	// Methods
-	jarray ConsumerIrManager::getCarrierFrequencies()
+	JArray ConsumerIrManager::getCarrierFrequencies()
 	{
 		return callObjectMethod(
 			"getCarrierFrequencies",
 			"()[Landroid/hardware/ConsumerIrManager$CarrierFrequencyRange;"
-		).object<jarray>();
+		);
 	}
 	jboolean ConsumerIrManager::hasIrEmitter()
 	{
@@ -24,13 +26,13 @@ namespace android::hardware
 			"()Z"
 		);
 	}
-	void ConsumerIrManager::transmit(jint arg0, jintArray arg1)
+	void ConsumerIrManager::transmit(jint arg0, JIntArray arg1)
 	{
 		callMethod<void>(
 			"transmit",
 			"(I[I)V",
 			arg0,
-			arg1
+			arg1.object<jintArray>()
 		);
 	}
 } // namespace android::hardware

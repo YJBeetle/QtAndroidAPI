@@ -5,6 +5,8 @@
 #include "../../content/pm/ResolveInfo.hpp"
 #include "../../graphics/drawable/Drawable.hpp"
 #include "../../os/Parcel.hpp"
+#include "../../../JString.hpp"
+#include "../../../JString.hpp"
 #include "./DeviceAdminInfo.hpp"
 
 namespace android::app::admin
@@ -102,13 +104,13 @@ namespace android::app::admin
 			"()I"
 		);
 	}
-	void DeviceAdminInfo::dump(JObject arg0, jstring arg1)
+	void DeviceAdminInfo::dump(JObject arg0, JString arg1)
 	{
 		callMethod<void>(
 			"dump",
 			"(Landroid/util/Printer;Ljava/lang/String;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
 	android::content::pm::ActivityInfo DeviceAdminInfo::getActivityInfo()
@@ -125,27 +127,27 @@ namespace android::app::admin
 			"()Landroid/content/ComponentName;"
 		);
 	}
-	jstring DeviceAdminInfo::getPackageName()
+	JString DeviceAdminInfo::getPackageName()
 	{
 		return callObjectMethod(
 			"getPackageName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DeviceAdminInfo::getReceiverName()
+	JString DeviceAdminInfo::getReceiverName()
 	{
 		return callObjectMethod(
 			"getReceiverName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DeviceAdminInfo::getTagForPolicy(jint arg0)
+	JString DeviceAdminInfo::getTagForPolicy(jint arg0)
 	{
 		return callObjectMethod(
 			"getTagForPolicy",
 			"(I)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
 	jboolean DeviceAdminInfo::isVisible()
 	{
@@ -154,13 +156,13 @@ namespace android::app::admin
 			"()Z"
 		);
 	}
-	jstring DeviceAdminInfo::loadDescription(android::content::pm::PackageManager arg0)
+	JString DeviceAdminInfo::loadDescription(android::content::pm::PackageManager arg0)
 	{
 		return callObjectMethod(
 			"loadDescription",
 			"(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;",
 			arg0.object()
-		).object<jstring>();
+		);
 	}
 	android::graphics::drawable::Drawable DeviceAdminInfo::loadIcon(android::content::pm::PackageManager arg0)
 	{
@@ -170,13 +172,13 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	jstring DeviceAdminInfo::loadLabel(android::content::pm::PackageManager arg0)
+	JString DeviceAdminInfo::loadLabel(android::content::pm::PackageManager arg0)
 	{
 		return callObjectMethod(
 			"loadLabel",
 			"(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;",
 			arg0.object()
-		).object<jstring>();
+		);
 	}
 	jboolean DeviceAdminInfo::supportsTransferOwnership()
 	{
@@ -185,12 +187,12 @@ namespace android::app::admin
 			"()Z"
 		);
 	}
-	jstring DeviceAdminInfo::toString()
+	JString DeviceAdminInfo::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jboolean DeviceAdminInfo::usesPolicy(jint arg0)
 	{

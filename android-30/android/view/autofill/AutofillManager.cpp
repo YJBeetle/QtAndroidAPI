@@ -5,34 +5,35 @@
 #include "./AutofillId.hpp"
 #include "./AutofillManager_AutofillCallback.hpp"
 #include "./AutofillValue.hpp"
+#include "../../../JString.hpp"
 #include "./AutofillManager.hpp"
 
 namespace android::view::autofill
 {
 	// Fields
-	jstring AutofillManager::EXTRA_ASSIST_STRUCTURE()
+	JString AutofillManager::EXTRA_ASSIST_STRUCTURE()
 	{
 		return getStaticObjectField(
 			"android.view.autofill.AutofillManager",
 			"EXTRA_ASSIST_STRUCTURE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring AutofillManager::EXTRA_AUTHENTICATION_RESULT()
+	JString AutofillManager::EXTRA_AUTHENTICATION_RESULT()
 	{
 		return getStaticObjectField(
 			"android.view.autofill.AutofillManager",
 			"EXTRA_AUTHENTICATION_RESULT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring AutofillManager::EXTRA_CLIENT_STATE()
+	JString AutofillManager::EXTRA_CLIENT_STATE()
 	{
 		return getStaticObjectField(
 			"android.view.autofill.AutofillManager",
 			"EXTRA_CLIENT_STATE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QAndroidJniObject forward
@@ -76,12 +77,12 @@ namespace android::view::autofill
 			"()Ljava/util/List;"
 		);
 	}
-	jstring AutofillManager::getDefaultFieldClassificationAlgorithm()
+	JString AutofillManager::getDefaultFieldClassificationAlgorithm()
 	{
 		return callObjectMethod(
 			"getDefaultFieldClassificationAlgorithm",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::view::autofill::AutofillId AutofillManager::getNextAutofillId()
 	{
@@ -97,12 +98,12 @@ namespace android::view::autofill
 			"()Landroid/service/autofill/UserData;"
 		);
 	}
-	jstring AutofillManager::getUserDataId()
+	JString AutofillManager::getUserDataId()
 	{
 		return callObjectMethod(
 			"getUserDataId",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jboolean AutofillManager::hasEnabledAutofillServices()
 	{

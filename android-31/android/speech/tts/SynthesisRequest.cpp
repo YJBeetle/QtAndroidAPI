@@ -1,4 +1,6 @@
 #include "../../os/Bundle.hpp"
+#include "../../../JString.hpp"
+#include "../../../JString.hpp"
 #include "./SynthesisRequest.hpp"
 
 namespace android::speech::tts
@@ -9,11 +11,11 @@ namespace android::speech::tts
 	SynthesisRequest::SynthesisRequest(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	SynthesisRequest::SynthesisRequest(jstring arg0, android::os::Bundle arg1)
+	SynthesisRequest::SynthesisRequest(JString arg0, android::os::Bundle arg1)
 		: JObject(
 			"android.speech.tts.SynthesisRequest",
 			"(Ljava/lang/CharSequence;Landroid/os/Bundle;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		) {}
 	
@@ -25,26 +27,26 @@ namespace android::speech::tts
 			"()I"
 		);
 	}
-	jstring SynthesisRequest::getCharSequenceText()
+	JString SynthesisRequest::getCharSequenceText()
 	{
 		return callObjectMethod(
 			"getCharSequenceText",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
-	jstring SynthesisRequest::getCountry()
+	JString SynthesisRequest::getCountry()
 	{
 		return callObjectMethod(
 			"getCountry",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring SynthesisRequest::getLanguage()
+	JString SynthesisRequest::getLanguage()
 	{
 		return callObjectMethod(
 			"getLanguage",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::os::Bundle SynthesisRequest::getParams()
 	{
@@ -67,26 +69,26 @@ namespace android::speech::tts
 			"()I"
 		);
 	}
-	jstring SynthesisRequest::getText()
+	JString SynthesisRequest::getText()
 	{
 		return callObjectMethod(
 			"getText",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring SynthesisRequest::getVariant()
+	JString SynthesisRequest::getVariant()
 	{
 		return callObjectMethod(
 			"getVariant",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring SynthesisRequest::getVoiceName()
+	JString SynthesisRequest::getVoiceName()
 	{
 		return callObjectMethod(
 			"getVoiceName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::speech::tts
 

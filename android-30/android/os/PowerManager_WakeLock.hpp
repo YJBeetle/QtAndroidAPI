@@ -10,6 +10,7 @@ namespace android::os
 {
 	class WorkSource;
 }
+class JString;
 
 namespace android::os
 {
@@ -32,7 +33,7 @@ namespace android::os
 		void release(jint arg0);
 		void setReferenceCounted(jboolean arg0);
 		void setWorkSource(android::os::WorkSource arg0);
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::os
 

@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JArray;
 namespace android::app
 {
 	class PendingIntent;
@@ -22,6 +23,7 @@ namespace android::os
 {
 	class ParcelFileDescriptor;
 }
+class JString;
 namespace java::util
 {
 	class HashMap;
@@ -33,13 +35,13 @@ namespace android::hardware::usb
 	{
 	public:
 		// Fields
-		static jstring ACTION_USB_ACCESSORY_ATTACHED();
-		static jstring ACTION_USB_ACCESSORY_DETACHED();
-		static jstring ACTION_USB_DEVICE_ATTACHED();
-		static jstring ACTION_USB_DEVICE_DETACHED();
-		static jstring EXTRA_ACCESSORY();
-		static jstring EXTRA_DEVICE();
-		static jstring EXTRA_PERMISSION_GRANTED();
+		static JString ACTION_USB_ACCESSORY_ATTACHED();
+		static JString ACTION_USB_ACCESSORY_DETACHED();
+		static JString ACTION_USB_DEVICE_ATTACHED();
+		static JString ACTION_USB_DEVICE_DETACHED();
+		static JString EXTRA_ACCESSORY();
+		static JString EXTRA_DEVICE();
+		static JString EXTRA_PERMISSION_GRANTED();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit UsbManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
@@ -48,7 +50,7 @@ namespace android::hardware::usb
 		// Constructors
 		
 		// Methods
-		jarray getAccessoryList();
+		JArray getAccessoryList();
 		java::util::HashMap getDeviceList();
 		jboolean hasPermission(android::hardware::usb::UsbAccessory arg0);
 		jboolean hasPermission(android::hardware::usb::UsbDevice arg0);

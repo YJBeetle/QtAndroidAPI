@@ -1,5 +1,6 @@
 #include "./Activity.hpp"
 #include "../content/Context.hpp"
+#include "../../JString.hpp"
 #include "./FragmentBreadCrumbs.hpp"
 
 namespace android::app
@@ -64,23 +65,23 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void FragmentBreadCrumbs::setParentTitle(jstring arg0, jstring arg1, JObject arg2)
+	void FragmentBreadCrumbs::setParentTitle(JString arg0, JString arg1, JObject arg2)
 	{
 		callMethod<void>(
 			"setParentTitle",
 			"(Ljava/lang/CharSequence;Ljava/lang/CharSequence;Landroid/view/View$OnClickListener;)V",
-			arg0,
-			arg1,
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
 			arg2.object()
 		);
 	}
-	void FragmentBreadCrumbs::setTitle(jstring arg0, jstring arg1)
+	void FragmentBreadCrumbs::setTitle(JString arg0, JString arg1)
 	{
 		callMethod<void>(
 			"setTitle",
 			"(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		);
 	}
 } // namespace android::app

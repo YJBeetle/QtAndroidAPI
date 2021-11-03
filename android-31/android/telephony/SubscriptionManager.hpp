@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JIntArray;
 namespace android::app
 {
 	class PendingIntent;
@@ -26,6 +27,7 @@ namespace android::telephony
 {
 	class SubscriptionManager_OnSubscriptionsChangedListener;
 }
+class JString;
 
 namespace android::telephony
 {
@@ -33,21 +35,21 @@ namespace android::telephony
 	{
 	public:
 		// Fields
-		static jstring ACTION_DEFAULT_SMS_SUBSCRIPTION_CHANGED();
-		static jstring ACTION_DEFAULT_SUBSCRIPTION_CHANGED();
-		static jstring ACTION_MANAGE_SUBSCRIPTION_PLANS();
-		static jstring ACTION_REFRESH_SUBSCRIPTION_PLANS();
+		static JString ACTION_DEFAULT_SMS_SUBSCRIPTION_CHANGED();
+		static JString ACTION_DEFAULT_SUBSCRIPTION_CHANGED();
+		static JString ACTION_MANAGE_SUBSCRIPTION_PLANS();
+		static JString ACTION_REFRESH_SUBSCRIPTION_PLANS();
 		static jint D2D_SHARING_ALL();
 		static jint D2D_SHARING_ALL_CONTACTS();
 		static jint D2D_SHARING_DISABLED();
 		static jint D2D_SHARING_SELECTED_CONTACTS();
-		static jstring D2D_STATUS_SHARING();
-		static jstring D2D_STATUS_SHARING_SELECTED_CONTACTS();
+		static JString D2D_STATUS_SHARING();
+		static JString D2D_STATUS_SHARING_SELECTED_CONTACTS();
 		static jint DATA_ROAMING_DISABLE();
 		static jint DATA_ROAMING_ENABLE();
 		static jint DEFAULT_SUBSCRIPTION_ID();
-		static jstring EXTRA_SLOT_INDEX();
-		static jstring EXTRA_SUBSCRIPTION_INDEX();
+		static JString EXTRA_SLOT_INDEX();
+		static JString EXTRA_SUBSCRIPTION_INDEX();
 		static jint INVALID_SIM_SLOT_INDEX();
 		static jint INVALID_SUBSCRIPTION_ID();
 		static jint SUBSCRIPTION_TYPE_LOCAL_SIM();
@@ -85,7 +87,7 @@ namespace android::telephony
 		JObject getDeviceToDeviceStatusSharingContacts(jint arg0);
 		jint getDeviceToDeviceStatusSharingPreference(jint arg0);
 		JObject getOpportunisticSubscriptions();
-		jintArray getSubscriptionIds(jint arg0);
+		JIntArray getSubscriptionIds(jint arg0);
 		JObject getSubscriptionPlans(jint arg0);
 		JObject getSubscriptionsInGroup(android::os::ParcelUuid arg0);
 		jboolean isActiveSubscriptionId(jint arg0);
@@ -97,9 +99,9 @@ namespace android::telephony
 		void setDeviceToDeviceStatusSharingPreference(jint arg0, jint arg1);
 		jboolean setOpportunistic(jboolean arg0, jint arg1);
 		void setSubscriptionOverrideCongested(jint arg0, jboolean arg1, jlong arg2);
-		void setSubscriptionOverrideCongested(jint arg0, jboolean arg1, jintArray arg2, jlong arg3);
+		void setSubscriptionOverrideCongested(jint arg0, jboolean arg1, JIntArray arg2, jlong arg3);
 		void setSubscriptionOverrideUnmetered(jint arg0, jboolean arg1, jlong arg2);
-		void setSubscriptionOverrideUnmetered(jint arg0, jboolean arg1, jintArray arg2, jlong arg3);
+		void setSubscriptionOverrideUnmetered(jint arg0, jboolean arg1, JIntArray arg2, jlong arg3);
 		void setSubscriptionPlans(jint arg0, JObject arg1);
 		void switchToSubscription(jint arg0, android::app::PendingIntent arg1);
 	};

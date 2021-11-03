@@ -1,4 +1,6 @@
+#include "../../../JByteArray.hpp"
 #include "./WifiInfo.hpp"
+#include "../../../JString.hpp"
 #include "./WifiInfo_Builder.hpp"
 
 namespace android::net::wifi
@@ -23,12 +25,12 @@ namespace android::net::wifi
 			"()Landroid/net/wifi/WifiInfo;"
 		);
 	}
-	android::net::wifi::WifiInfo_Builder WifiInfo_Builder::setBssid(jstring arg0)
+	android::net::wifi::WifiInfo_Builder WifiInfo_Builder::setBssid(JString arg0)
 	{
 		return callObjectMethod(
 			"setBssid",
 			"(Ljava/lang/String;)Landroid/net/wifi/WifiInfo$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::net::wifi::WifiInfo_Builder WifiInfo_Builder::setNetworkId(jint arg0)
@@ -47,12 +49,12 @@ namespace android::net::wifi
 			arg0
 		);
 	}
-	android::net::wifi::WifiInfo_Builder WifiInfo_Builder::setSsid(jbyteArray arg0)
+	android::net::wifi::WifiInfo_Builder WifiInfo_Builder::setSsid(JByteArray arg0)
 	{
 		return callObjectMethod(
 			"setSsid",
 			"([B)Landroid/net/wifi/WifiInfo$Builder;",
-			arg0
+			arg0.object<jbyteArray>()
 		);
 	}
 } // namespace android::net::wifi

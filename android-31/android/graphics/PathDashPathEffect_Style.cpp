@@ -1,3 +1,5 @@
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
 #include "./PathDashPathEffect_Style.hpp"
 
 namespace android::graphics
@@ -34,22 +36,22 @@ namespace android::graphics
 	// Constructors
 	
 	// Methods
-	android::graphics::PathDashPathEffect_Style PathDashPathEffect_Style::valueOf(jstring arg0)
+	android::graphics::PathDashPathEffect_Style PathDashPathEffect_Style::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.graphics.PathDashPathEffect$Style",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/graphics/PathDashPathEffect$Style;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray PathDashPathEffect_Style::values()
+	JArray PathDashPathEffect_Style::values()
 	{
 		return callStaticObjectMethod(
 			"android.graphics.PathDashPathEffect$Style",
 			"values",
 			"()[Landroid/graphics/PathDashPathEffect$Style;"
-		).object<jarray>();
+		);
 	}
 } // namespace android::graphics
 

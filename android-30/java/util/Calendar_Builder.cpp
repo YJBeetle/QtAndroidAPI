@@ -1,3 +1,5 @@
+#include "../../JIntArray.hpp"
+#include "../../JString.hpp"
 #include "./Calendar.hpp"
 #include "./Date.hpp"
 #include "./Locale.hpp"
@@ -35,12 +37,12 @@ namespace java::util
 			arg1
 		);
 	}
-	java::util::Calendar_Builder Calendar_Builder::setCalendarType(jstring arg0)
+	java::util::Calendar_Builder Calendar_Builder::setCalendarType(JString arg0)
 	{
 		return callObjectMethod(
 			"setCalendarType",
 			"(Ljava/lang/String;)Ljava/util/Calendar$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	java::util::Calendar_Builder Calendar_Builder::setDate(jint arg0, jint arg1, jint arg2)
@@ -53,12 +55,12 @@ namespace java::util
 			arg2
 		);
 	}
-	java::util::Calendar_Builder Calendar_Builder::setFields(jintArray arg0)
+	java::util::Calendar_Builder Calendar_Builder::setFields(JIntArray arg0)
 	{
 		return callObjectMethod(
 			"setFields",
 			"([I)Ljava/util/Calendar$Builder;",
-			arg0
+			arg0.object<jintArray>()
 		);
 	}
 	java::util::Calendar_Builder Calendar_Builder::setInstant(java::util::Date arg0)

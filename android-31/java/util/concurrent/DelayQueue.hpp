@@ -1,9 +1,9 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "../AbstractCollection.hpp"
 #include "../AbstractQueue.hpp"
 
+class JObjectArray;
+class JObject;
 namespace java::lang
 {
 	class Thread;
@@ -37,27 +37,23 @@ namespace java::util::concurrent
 		DelayQueue(JObject arg0);
 		
 		// Methods
-		jboolean add(jobject arg0);
 		jboolean add(JObject arg0);
 		void clear();
 		jint drainTo(JObject arg0);
 		jint drainTo(JObject arg0, jint arg1);
 		JObject iterator();
-		jboolean offer(jobject arg0);
 		jboolean offer(JObject arg0);
-		jboolean offer(jobject arg0, jlong arg1, java::util::concurrent::TimeUnit arg2);
 		jboolean offer(JObject arg0, jlong arg1, java::util::concurrent::TimeUnit arg2);
 		JObject peek();
 		JObject poll();
 		JObject poll(jlong arg0, java::util::concurrent::TimeUnit arg1);
-		void put(jobject arg0);
 		void put(JObject arg0);
 		jint remainingCapacity();
-		jboolean remove(jobject arg0);
+		jboolean remove(JObject arg0);
 		jint size();
 		JObject take();
-		jobjectArray toArray();
-		jobjectArray toArray(jobjectArray arg0);
+		JObjectArray toArray();
+		JObjectArray toArray(JObjectArray arg0);
 	};
 } // namespace java::util::concurrent
 

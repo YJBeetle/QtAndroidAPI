@@ -1,5 +1,6 @@
 #include "../../app/assist/AssistStructure.hpp"
 #include "../../os/Parcel.hpp"
+#include "../../../JString.hpp"
 #include "./FillContext.hpp"
 
 namespace android::service::autofill
@@ -41,12 +42,12 @@ namespace android::service::autofill
 			"()Landroid/app/assist/AssistStructure;"
 		);
 	}
-	jstring FillContext::toString()
+	JString FillContext::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void FillContext::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

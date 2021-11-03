@@ -2,6 +2,8 @@
 #include "./ProxyInfo.hpp"
 #include "./RouteInfo.hpp"
 #include "../os/Parcel.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "../../java/net/Inet4Address.hpp"
 #include "./LinkProperties.hpp"
 
@@ -50,12 +52,12 @@ namespace android::net
 			"()I"
 		);
 	}
-	jboolean LinkProperties::equals(jobject arg0)
+	jboolean LinkProperties::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	java::net::Inet4Address LinkProperties::getDhcpServerAddress()
@@ -72,12 +74,12 @@ namespace android::net
 			"()Ljava/util/List;"
 		);
 	}
-	jstring LinkProperties::getDomains()
+	JString LinkProperties::getDomains()
 	{
 		return callObjectMethod(
 			"getDomains",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::net::ProxyInfo LinkProperties::getHttpProxy()
 	{
@@ -86,12 +88,12 @@ namespace android::net
 			"()Landroid/net/ProxyInfo;"
 		);
 	}
-	jstring LinkProperties::getInterfaceName()
+	JString LinkProperties::getInterfaceName()
 	{
 		return callObjectMethod(
 			"getInterfaceName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	JObject LinkProperties::getLinkAddresses()
 	{
@@ -114,12 +116,12 @@ namespace android::net
 			"()Landroid/net/IpPrefix;"
 		);
 	}
-	jstring LinkProperties::getPrivateDnsServerName()
+	JString LinkProperties::getPrivateDnsServerName()
 	{
 		return callObjectMethod(
 			"getPrivateDnsServerName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	JObject LinkProperties::getRoutes()
 	{
@@ -165,12 +167,12 @@ namespace android::net
 			arg0.object()
 		);
 	}
-	void LinkProperties::setDomains(jstring arg0)
+	void LinkProperties::setDomains(JString arg0)
 	{
 		callMethod<void>(
 			"setDomains",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void LinkProperties::setHttpProxy(android::net::ProxyInfo arg0)
@@ -181,12 +183,12 @@ namespace android::net
 			arg0.object()
 		);
 	}
-	void LinkProperties::setInterfaceName(jstring arg0)
+	void LinkProperties::setInterfaceName(JString arg0)
 	{
 		callMethod<void>(
 			"setInterfaceName",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void LinkProperties::setLinkAddresses(JObject arg0)
@@ -213,12 +215,12 @@ namespace android::net
 			arg0.object()
 		);
 	}
-	jstring LinkProperties::toString()
+	JString LinkProperties::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void LinkProperties::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JObject;
+class JString;
 
 namespace android::util
 {
@@ -32,7 +34,7 @@ namespace android::util
 		void removeAt(jint arg0);
 		void setValueAt(jint arg0, jint arg1);
 		jint size();
-		jstring toString();
+		JString toString();
 		jint valueAt(jint arg0);
 	};
 } // namespace android::util

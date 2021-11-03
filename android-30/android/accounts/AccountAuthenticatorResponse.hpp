@@ -10,6 +10,7 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
 
 namespace android::accounts
 {
@@ -28,7 +29,7 @@ namespace android::accounts
 		
 		// Methods
 		jint describeContents();
-		void onError(jint arg0, jstring arg1);
+		void onError(jint arg0, JString arg1);
 		void onRequestContinued();
 		void onResult(android::os::Bundle arg0);
 		void writeToParcel(android::os::Parcel arg0, jint arg1);

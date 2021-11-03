@@ -1,3 +1,5 @@
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
 #include "./Path_FillType.hpp"
 
 namespace android::graphics
@@ -42,22 +44,22 @@ namespace android::graphics
 	// Constructors
 	
 	// Methods
-	android::graphics::Path_FillType Path_FillType::valueOf(jstring arg0)
+	android::graphics::Path_FillType Path_FillType::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.graphics.Path$FillType",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/graphics/Path$FillType;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray Path_FillType::values()
+	JArray Path_FillType::values()
 	{
 		return callStaticObjectMethod(
 			"android.graphics.Path$FillType",
 			"values",
 			"()[Landroid/graphics/Path$FillType;"
-		).object<jarray>();
+		);
 	}
 } // namespace android::graphics
 

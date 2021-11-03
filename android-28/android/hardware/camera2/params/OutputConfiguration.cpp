@@ -1,6 +1,9 @@
 #include "../../../os/Parcel.hpp"
 #include "../../../util/Size.hpp"
 #include "../../../view/Surface.hpp"
+#include "../../../../JClass.hpp"
+#include "../../../../JObject.hpp"
+#include "../../../../JString.hpp"
 #include "./OutputConfiguration.hpp"
 
 namespace android::hardware::camera2::params
@@ -32,12 +35,12 @@ namespace android::hardware::camera2::params
 			"(Landroid/view/Surface;)V",
 			arg0.object()
 		) {}
-	OutputConfiguration::OutputConfiguration(android::util::Size arg0, jclass arg1)
+	OutputConfiguration::OutputConfiguration(android::util::Size arg0, JClass arg1)
 		: JObject(
 			"android.hardware.camera2.params.OutputConfiguration",
 			"(Landroid/util/Size;Ljava/lang/Class;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jclass>()
 		) {}
 	OutputConfiguration::OutputConfiguration(jint arg0, android::view::Surface arg1)
 		: JObject(
@@ -70,12 +73,12 @@ namespace android::hardware::camera2::params
 			"()V"
 		);
 	}
-	jboolean OutputConfiguration::equals(jobject arg0)
+	jboolean OutputConfiguration::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint OutputConfiguration::getMaxSharedSurfaceCount()
@@ -121,12 +124,12 @@ namespace android::hardware::camera2::params
 			arg0.object()
 		);
 	}
-	void OutputConfiguration::setPhysicalCameraId(jstring arg0)
+	void OutputConfiguration::setPhysicalCameraId(JString arg0)
 	{
 		callMethod<void>(
 			"setPhysicalCameraId",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void OutputConfiguration::writeToParcel(android::os::Parcel arg0, jint arg1)

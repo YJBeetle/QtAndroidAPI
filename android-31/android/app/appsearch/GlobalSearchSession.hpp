@@ -14,6 +14,7 @@ namespace android::app::appsearch
 {
 	class SearchSpec;
 }
+class JString;
 
 namespace android::app::appsearch
 {
@@ -31,7 +32,7 @@ namespace android::app::appsearch
 		// Methods
 		void close();
 		void reportSystemUsage(android::app::appsearch::ReportSystemUsageRequest arg0, JObject arg1, JObject arg2);
-		android::app::appsearch::SearchResults search(jstring arg0, android::app::appsearch::SearchSpec arg1);
+		android::app::appsearch::SearchResults search(JString arg0, android::app::appsearch::SearchSpec arg1);
 	};
 } // namespace android::app::appsearch
 

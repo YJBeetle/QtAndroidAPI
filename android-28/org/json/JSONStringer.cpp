@@ -1,3 +1,5 @@
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./JSONStringer.hpp"
 
 namespace org::json
@@ -36,12 +38,12 @@ namespace org::json
 			"()Lorg/json/JSONStringer;"
 		);
 	}
-	org::json::JSONStringer JSONStringer::key(jstring arg0)
+	org::json::JSONStringer JSONStringer::key(JString arg0)
 	{
 		return callObjectMethod(
 			"key",
 			"(Ljava/lang/String;)Lorg/json/JSONStringer;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	org::json::JSONStringer JSONStringer::object()
@@ -51,12 +53,12 @@ namespace org::json
 			"()Lorg/json/JSONStringer;"
 		);
 	}
-	jstring JSONStringer::toString()
+	JString JSONStringer::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	org::json::JSONStringer JSONStringer::value(jboolean arg0)
 	{
@@ -74,12 +76,12 @@ namespace org::json
 			arg0
 		);
 	}
-	org::json::JSONStringer JSONStringer::value(jobject arg0)
+	org::json::JSONStringer JSONStringer::value(JObject arg0)
 	{
 		return callObjectMethod(
 			"value",
 			"(Ljava/lang/Object;)Lorg/json/JSONStringer;",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	org::json::JSONStringer JSONStringer::value(jlong arg0)

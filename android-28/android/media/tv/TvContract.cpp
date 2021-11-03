@@ -1,82 +1,83 @@
 #include "../../content/ComponentName.hpp"
 #include "../../content/Context.hpp"
 #include "../../net/Uri.hpp"
+#include "../../../JString.hpp"
 #include "./TvContract.hpp"
 
 namespace android::media::tv
 {
 	// Fields
-	jstring TvContract::ACTION_INITIALIZE_PROGRAMS()
+	JString TvContract::ACTION_INITIALIZE_PROGRAMS()
 	{
 		return getStaticObjectField(
 			"android.media.tv.TvContract",
 			"ACTION_INITIALIZE_PROGRAMS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TvContract::ACTION_PREVIEW_PROGRAM_ADDED_TO_WATCH_NEXT()
+	JString TvContract::ACTION_PREVIEW_PROGRAM_ADDED_TO_WATCH_NEXT()
 	{
 		return getStaticObjectField(
 			"android.media.tv.TvContract",
 			"ACTION_PREVIEW_PROGRAM_ADDED_TO_WATCH_NEXT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TvContract::ACTION_PREVIEW_PROGRAM_BROWSABLE_DISABLED()
+	JString TvContract::ACTION_PREVIEW_PROGRAM_BROWSABLE_DISABLED()
 	{
 		return getStaticObjectField(
 			"android.media.tv.TvContract",
 			"ACTION_PREVIEW_PROGRAM_BROWSABLE_DISABLED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TvContract::ACTION_REQUEST_CHANNEL_BROWSABLE()
+	JString TvContract::ACTION_REQUEST_CHANNEL_BROWSABLE()
 	{
 		return getStaticObjectField(
 			"android.media.tv.TvContract",
 			"ACTION_REQUEST_CHANNEL_BROWSABLE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TvContract::ACTION_WATCH_NEXT_PROGRAM_BROWSABLE_DISABLED()
+	JString TvContract::ACTION_WATCH_NEXT_PROGRAM_BROWSABLE_DISABLED()
 	{
 		return getStaticObjectField(
 			"android.media.tv.TvContract",
 			"ACTION_WATCH_NEXT_PROGRAM_BROWSABLE_DISABLED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TvContract::AUTHORITY()
+	JString TvContract::AUTHORITY()
 	{
 		return getStaticObjectField(
 			"android.media.tv.TvContract",
 			"AUTHORITY",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TvContract::EXTRA_CHANNEL_ID()
+	JString TvContract::EXTRA_CHANNEL_ID()
 	{
 		return getStaticObjectField(
 			"android.media.tv.TvContract",
 			"EXTRA_CHANNEL_ID",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TvContract::EXTRA_PREVIEW_PROGRAM_ID()
+	JString TvContract::EXTRA_PREVIEW_PROGRAM_ID()
 	{
 		return getStaticObjectField(
 			"android.media.tv.TvContract",
 			"EXTRA_PREVIEW_PROGRAM_ID",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TvContract::EXTRA_WATCH_NEXT_PROGRAM_ID()
+	JString TvContract::EXTRA_WATCH_NEXT_PROGRAM_ID()
 	{
 		return getStaticObjectField(
 			"android.media.tv.TvContract",
 			"EXTRA_WATCH_NEXT_PROGRAM_ID",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QAndroidJniObject forward
@@ -112,32 +113,32 @@ namespace android::media::tv
 			arg0
 		);
 	}
-	android::net::Uri TvContract::buildChannelUriForPassthroughInput(jstring arg0)
+	android::net::Uri TvContract::buildChannelUriForPassthroughInput(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.media.tv.TvContract",
 			"buildChannelUriForPassthroughInput",
 			"(Ljava/lang/String;)Landroid/net/Uri;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	android::net::Uri TvContract::buildChannelsUriForInput(jstring arg0)
+	android::net::Uri TvContract::buildChannelsUriForInput(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.media.tv.TvContract",
 			"buildChannelsUriForInput",
 			"(Ljava/lang/String;)Landroid/net/Uri;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jstring TvContract::buildInputId(android::content::ComponentName arg0)
+	JString TvContract::buildInputId(android::content::ComponentName arg0)
 	{
 		return callStaticObjectMethod(
 			"android.media.tv.TvContract",
 			"buildInputId",
 			"(Landroid/content/ComponentName;)Ljava/lang/String;",
 			arg0.object()
-		).object<jstring>();
+		);
 	}
 	android::net::Uri TvContract::buildPreviewProgramUri(jlong arg0)
 	{

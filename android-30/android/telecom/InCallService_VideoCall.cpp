@@ -3,6 +3,7 @@
 #include "./InCallService_VideoCall_Callback.hpp"
 #include "./VideoProfile.hpp"
 #include "../view/Surface.hpp"
+#include "../../JString.hpp"
 #include "./InCallService_VideoCall.hpp"
 
 namespace android::telecom
@@ -67,12 +68,12 @@ namespace android::telecom
 			arg0.object()
 		);
 	}
-	void InCallService_VideoCall::setCamera(jstring arg0)
+	void InCallService_VideoCall::setCamera(JString arg0)
 	{
 		callMethod<void>(
 			"setCamera",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void InCallService_VideoCall::setDeviceOrientation(jint arg0)

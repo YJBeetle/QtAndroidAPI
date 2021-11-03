@@ -6,6 +6,7 @@ namespace android::database::sqlite
 {
 	class SQLiteDatabase_OpenParams;
 }
+class JString;
 
 namespace android::database::sqlite
 {
@@ -29,10 +30,10 @@ namespace android::database::sqlite
 		android::database::sqlite::SQLiteDatabase_OpenParams_Builder setCursorFactory(JObject arg0);
 		android::database::sqlite::SQLiteDatabase_OpenParams_Builder setErrorHandler(JObject arg0);
 		android::database::sqlite::SQLiteDatabase_OpenParams_Builder setIdleConnectionTimeout(jlong arg0);
-		android::database::sqlite::SQLiteDatabase_OpenParams_Builder setJournalMode(jstring arg0);
+		android::database::sqlite::SQLiteDatabase_OpenParams_Builder setJournalMode(JString arg0);
 		android::database::sqlite::SQLiteDatabase_OpenParams_Builder setLookasideConfig(jint arg0, jint arg1);
 		android::database::sqlite::SQLiteDatabase_OpenParams_Builder setOpenFlags(jint arg0);
-		android::database::sqlite::SQLiteDatabase_OpenParams_Builder setSynchronousMode(jstring arg0);
+		android::database::sqlite::SQLiteDatabase_OpenParams_Builder setSynchronousMode(JString arg0);
 	};
 } // namespace android::database::sqlite
 

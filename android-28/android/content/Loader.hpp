@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JArray;
 namespace android::content
 {
 	class Context;
@@ -14,6 +15,8 @@ namespace java::io
 {
 	class PrintWriter;
 }
+class JObject;
+class JString;
 
 namespace android::content
 {
@@ -33,10 +36,10 @@ namespace android::content
 		void abandon();
 		jboolean cancelLoad();
 		void commitContentChanged();
-		jstring dataToString(jobject arg0);
+		JString dataToString(JObject arg0);
 		void deliverCancellation();
-		void deliverResult(jobject arg0);
-		void dump(jstring arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, jarray arg3);
+		void deliverResult(JObject arg0);
+		void dump(JString arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, JArray arg3);
 		void forceLoad();
 		android::content::Context getContext();
 		jint getId();
@@ -51,7 +54,7 @@ namespace android::content
 		void startLoading();
 		void stopLoading();
 		jboolean takeContentChanged();
-		jstring toString();
+		JString toString();
 		void unregisterListener(JObject arg0);
 		void unregisterOnLoadCanceledListener(JObject arg0);
 	};

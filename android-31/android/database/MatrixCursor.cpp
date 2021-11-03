@@ -1,4 +1,8 @@
+#include "../../JByteArray.hpp"
+#include "../../JObjectArray.hpp"
+#include "../../JArray.hpp"
 #include "./MatrixCursor_RowBuilder.hpp"
+#include "../../JString.hpp"
 #include "./MatrixCursor.hpp"
 
 namespace android::database
@@ -9,27 +13,27 @@ namespace android::database
 	MatrixCursor::MatrixCursor(QAndroidJniObject obj) : android::database::AbstractCursor(obj) {}
 	
 	// Constructors
-	MatrixCursor::MatrixCursor(jarray arg0)
+	MatrixCursor::MatrixCursor(JArray arg0)
 		: android::database::AbstractCursor(
 			"android.database.MatrixCursor",
 			"([Ljava/lang/String;)V",
-			arg0
+			arg0.object<jarray>()
 		) {}
-	MatrixCursor::MatrixCursor(jarray arg0, jint arg1)
+	MatrixCursor::MatrixCursor(JArray arg0, jint arg1)
 		: android::database::AbstractCursor(
 			"android.database.MatrixCursor",
 			"([Ljava/lang/String;I)V",
-			arg0,
+			arg0.object<jarray>(),
 			arg1
 		) {}
 	
 	// Methods
-	void MatrixCursor::addRow(jobjectArray arg0)
+	void MatrixCursor::addRow(JObjectArray arg0)
 	{
 		callMethod<void>(
 			"addRow",
 			"([Ljava/lang/Object;)V",
-			arg0
+			arg0.object<jobjectArray>()
 		);
 	}
 	void MatrixCursor::addRow(JObject arg0)
@@ -40,20 +44,20 @@ namespace android::database
 			arg0.object()
 		);
 	}
-	jbyteArray MatrixCursor::getBlob(jint arg0)
+	JByteArray MatrixCursor::getBlob(jint arg0)
 	{
 		return callObjectMethod(
 			"getBlob",
 			"(I)[B",
 			arg0
-		).object<jbyteArray>();
+		);
 	}
-	jarray MatrixCursor::getColumnNames()
+	JArray MatrixCursor::getColumnNames()
 	{
 		return callObjectMethod(
 			"getColumnNames",
 			"()[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
 	jint MatrixCursor::getCount()
 	{
@@ -102,13 +106,13 @@ namespace android::database
 			arg0
 		);
 	}
-	jstring MatrixCursor::getString(jint arg0)
+	JString MatrixCursor::getString(jint arg0)
 	{
 		return callObjectMethod(
 			"getString",
 			"(I)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
 	jint MatrixCursor::getType(jint arg0)
 	{

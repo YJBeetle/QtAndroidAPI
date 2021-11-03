@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./UnknownServiceException.hpp"
 
 namespace java::net
@@ -13,11 +14,11 @@ namespace java::net
 			"java.net.UnknownServiceException",
 			"()V"
 		) {}
-	UnknownServiceException::UnknownServiceException(jstring arg0)
+	UnknownServiceException::UnknownServiceException(JString arg0)
 		: java::io::IOException(
 			"java.net.UnknownServiceException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

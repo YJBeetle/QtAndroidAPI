@@ -1,5 +1,6 @@
 #include "../os/Parcel.hpp"
 #include "./PhoneAccountHandle.hpp"
+#include "../../JObject.hpp"
 #include "./PhoneAccountSuggestion.hpp"
 
 namespace android::telecom
@@ -70,12 +71,12 @@ namespace android::telecom
 			"()I"
 		);
 	}
-	jboolean PhoneAccountSuggestion::equals(jobject arg0)
+	jboolean PhoneAccountSuggestion::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	android::telecom::PhoneAccountHandle PhoneAccountSuggestion::getPhoneAccountHandle()

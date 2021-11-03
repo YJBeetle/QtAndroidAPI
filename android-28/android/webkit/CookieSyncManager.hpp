@@ -6,6 +6,7 @@ namespace android::content
 {
 	class Context;
 }
+class JObject;
 
 namespace android::webkit
 {

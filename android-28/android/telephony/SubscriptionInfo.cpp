@@ -1,6 +1,8 @@
 #include "../content/Context.hpp"
 #include "../graphics/Bitmap.hpp"
 #include "../os/Parcel.hpp"
+#include "../../JString.hpp"
+#include "../../JString.hpp"
 #include "./SubscriptionInfo.hpp"
 
 namespace android::telephony
@@ -36,19 +38,19 @@ namespace android::telephony
 			"()I"
 		);
 	}
-	jstring SubscriptionInfo::getCarrierName()
+	JString SubscriptionInfo::getCarrierName()
 	{
 		return callObjectMethod(
 			"getCarrierName",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
-	jstring SubscriptionInfo::getCountryIso()
+	JString SubscriptionInfo::getCountryIso()
 	{
 		return callObjectMethod(
 			"getCountryIso",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint SubscriptionInfo::getDataRoaming()
 	{
@@ -57,19 +59,19 @@ namespace android::telephony
 			"()I"
 		);
 	}
-	jstring SubscriptionInfo::getDisplayName()
+	JString SubscriptionInfo::getDisplayName()
 	{
 		return callObjectMethod(
 			"getDisplayName",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
-	jstring SubscriptionInfo::getIccId()
+	JString SubscriptionInfo::getIccId()
 	{
 		return callObjectMethod(
 			"getIccId",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint SubscriptionInfo::getIconTint()
 	{
@@ -92,12 +94,12 @@ namespace android::telephony
 			"()I"
 		);
 	}
-	jstring SubscriptionInfo::getNumber()
+	JString SubscriptionInfo::getNumber()
 	{
 		return callObjectMethod(
 			"getNumber",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint SubscriptionInfo::getSimSlotIndex()
 	{
@@ -120,12 +122,12 @@ namespace android::telephony
 			"()Z"
 		);
 	}
-	jstring SubscriptionInfo::toString()
+	JString SubscriptionInfo::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void SubscriptionInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

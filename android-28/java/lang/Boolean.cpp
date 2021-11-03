@@ -1,3 +1,6 @@
+#include "../../JClass.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "../util/Optional.hpp"
 #include "./Boolean.hpp"
 
@@ -20,13 +23,13 @@ namespace java::lang
 			"Ljava/lang/Boolean;"
 		);
 	}
-	jclass Boolean::TYPE()
+	JClass Boolean::TYPE()
 	{
 		return getStaticObjectField(
 			"java.lang.Boolean",
 			"TYPE",
 			"Ljava/lang/Class;"
-		).object<jclass>();
+		);
 	}
 	
 	// QAndroidJniObject forward
@@ -39,11 +42,11 @@ namespace java::lang
 			"(Z)V",
 			arg0
 		) {}
-	Boolean::Boolean(jstring arg0)
+	Boolean::Boolean(JString arg0)
 		: JObject(
 			"java.lang.Boolean",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods
@@ -57,13 +60,13 @@ namespace java::lang
 			arg1
 		);
 	}
-	jboolean Boolean::getBoolean(jstring arg0)
+	jboolean Boolean::getBoolean(JString arg0)
 	{
 		return callStaticMethod<jboolean>(
 			"java.lang.Boolean",
 			"getBoolean",
 			"(Ljava/lang/String;)Z",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	jint Boolean::hashCode(jboolean arg0)
@@ -105,23 +108,23 @@ namespace java::lang
 			arg1
 		);
 	}
-	jboolean Boolean::parseBoolean(jstring arg0)
+	jboolean Boolean::parseBoolean(JString arg0)
 	{
 		return callStaticMethod<jboolean>(
 			"java.lang.Boolean",
 			"parseBoolean",
 			"(Ljava/lang/String;)Z",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jstring Boolean::toString(jboolean arg0)
+	JString Boolean::toString(jboolean arg0)
 	{
 		return callStaticObjectMethod(
 			"java.lang.Boolean",
 			"toString",
 			"(Z)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
 	java::lang::Boolean Boolean::valueOf(jboolean arg0)
 	{
@@ -132,13 +135,13 @@ namespace java::lang
 			arg0
 		);
 	}
-	java::lang::Boolean Boolean::valueOf(jstring arg0)
+	java::lang::Boolean Boolean::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"java.lang.Boolean",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/lang/Boolean;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	jboolean Boolean::booleanValue()
@@ -156,12 +159,12 @@ namespace java::lang
 			arg0.object()
 		);
 	}
-	jint Boolean::compareTo(jobject arg0)
+	jint Boolean::compareTo(JObject arg0)
 	{
 		return callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Object;)I",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	java::util::Optional Boolean::describeConstable()
@@ -171,12 +174,12 @@ namespace java::lang
 			"()Ljava/util/Optional;"
 		);
 	}
-	jboolean Boolean::equals(jobject arg0)
+	jboolean Boolean::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint Boolean::hashCode()
@@ -186,12 +189,12 @@ namespace java::lang
 			"()I"
 		);
 	}
-	jstring Boolean::toString()
+	JString Boolean::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::lang
 

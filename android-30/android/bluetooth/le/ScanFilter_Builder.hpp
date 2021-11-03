@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JByteArray;
 namespace android::bluetooth::le
 {
 	class ScanFilter;
@@ -10,6 +11,7 @@ namespace android::os
 {
 	class ParcelUuid;
 }
+class JString;
 
 namespace android::bluetooth::le
 {
@@ -27,12 +29,12 @@ namespace android::bluetooth::le
 		
 		// Methods
 		android::bluetooth::le::ScanFilter build();
-		android::bluetooth::le::ScanFilter_Builder setDeviceAddress(jstring arg0);
-		android::bluetooth::le::ScanFilter_Builder setDeviceName(jstring arg0);
-		android::bluetooth::le::ScanFilter_Builder setManufacturerData(jint arg0, jbyteArray arg1);
-		android::bluetooth::le::ScanFilter_Builder setManufacturerData(jint arg0, jbyteArray arg1, jbyteArray arg2);
-		android::bluetooth::le::ScanFilter_Builder setServiceData(android::os::ParcelUuid arg0, jbyteArray arg1);
-		android::bluetooth::le::ScanFilter_Builder setServiceData(android::os::ParcelUuid arg0, jbyteArray arg1, jbyteArray arg2);
+		android::bluetooth::le::ScanFilter_Builder setDeviceAddress(JString arg0);
+		android::bluetooth::le::ScanFilter_Builder setDeviceName(JString arg0);
+		android::bluetooth::le::ScanFilter_Builder setManufacturerData(jint arg0, JByteArray arg1);
+		android::bluetooth::le::ScanFilter_Builder setManufacturerData(jint arg0, JByteArray arg1, JByteArray arg2);
+		android::bluetooth::le::ScanFilter_Builder setServiceData(android::os::ParcelUuid arg0, JByteArray arg1);
+		android::bluetooth::le::ScanFilter_Builder setServiceData(android::os::ParcelUuid arg0, JByteArray arg1, JByteArray arg2);
 		android::bluetooth::le::ScanFilter_Builder setServiceSolicitationUuid(android::os::ParcelUuid arg0);
 		android::bluetooth::le::ScanFilter_Builder setServiceSolicitationUuid(android::os::ParcelUuid arg0, android::os::ParcelUuid arg1);
 		android::bluetooth::le::ScanFilter_Builder setServiceUuid(android::os::ParcelUuid arg0);

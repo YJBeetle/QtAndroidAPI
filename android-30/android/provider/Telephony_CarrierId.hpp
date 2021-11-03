@@ -6,6 +6,7 @@ namespace android::net
 {
 	class Uri;
 }
+class JString;
 
 namespace android::provider
 {
@@ -13,11 +14,11 @@ namespace android::provider
 	{
 	public:
 		// Fields
-		static jstring CARRIER_ID();
-		static jstring CARRIER_NAME();
+		static JString CARRIER_ID();
+		static JString CARRIER_NAME();
 		static android::net::Uri CONTENT_URI();
-		static jstring SPECIFIC_CARRIER_ID();
-		static jstring SPECIFIC_CARRIER_ID_NAME();
+		static JString SPECIFIC_CARRIER_ID();
+		static JString SPECIFIC_CARRIER_ID_NAME();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Telephony_CarrierId(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}

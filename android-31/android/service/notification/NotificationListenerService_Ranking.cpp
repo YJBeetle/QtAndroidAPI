@@ -1,5 +1,8 @@
 #include "../../app/NotificationChannel.hpp"
 #include "../../content/pm/ShortcutInfo.hpp"
+#include "../../../JString.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./NotificationListenerService_Ranking.hpp"
 
 namespace android::service::notification
@@ -59,12 +62,12 @@ namespace android::service::notification
 			"()Z"
 		);
 	}
-	jboolean NotificationListenerService_Ranking::equals(jobject arg0)
+	jboolean NotificationListenerService_Ranking::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	android::app::NotificationChannel NotificationListenerService_Ranking::getChannel()
@@ -88,19 +91,19 @@ namespace android::service::notification
 			"()I"
 		);
 	}
-	jstring NotificationListenerService_Ranking::getImportanceExplanation()
+	JString NotificationListenerService_Ranking::getImportanceExplanation()
 	{
 		return callObjectMethod(
 			"getImportanceExplanation",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
-	jstring NotificationListenerService_Ranking::getKey()
+	JString NotificationListenerService_Ranking::getKey()
 	{
 		return callObjectMethod(
 			"getKey",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jlong NotificationListenerService_Ranking::getLastAudiblyAlertedMillis()
 	{
@@ -116,12 +119,12 @@ namespace android::service::notification
 			"()I"
 		);
 	}
-	jstring NotificationListenerService_Ranking::getOverrideGroupKey()
+	JString NotificationListenerService_Ranking::getOverrideGroupKey()
 	{
 		return callObjectMethod(
 			"getOverrideGroupKey",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint NotificationListenerService_Ranking::getRank()
 	{

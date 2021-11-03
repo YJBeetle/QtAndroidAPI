@@ -1,3 +1,14 @@
+#include "../../JByteArray.hpp"
+#include "../../JCharArray.hpp"
+#include "../../JDoubleArray.hpp"
+#include "../../JFloatArray.hpp"
+#include "../../JIntArray.hpp"
+#include "../../JLongArray.hpp"
+#include "../../JArray.hpp"
+#include "../../JArray.hpp"
+#include "../../JObjectArray.hpp"
+#include "../../JArray.hpp"
+#include "../../JBooleanArray.hpp"
 #include "./Bundle.hpp"
 #include "./ParcelFileDescriptor.hpp"
 #include "./PersistableBundle.hpp"
@@ -8,6 +19,8 @@
 #include "../../java/io/FileDescriptor.hpp"
 #include "../../java/lang/ClassLoader.hpp"
 #include "../../java/lang/Exception.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "../../java/util/ArrayList.hpp"
 #include "../../java/util/HashMap.hpp"
 #include "./Parcel.hpp"
@@ -48,12 +61,12 @@ namespace android::os
 			arg2
 		);
 	}
-	jarray Parcel::createBinderArray()
+	JArray Parcel::createBinderArray()
 	{
 		return callObjectMethod(
 			"createBinderArray",
 			"()[Landroid/os/IBinder;"
-		).object<jarray>();
+		);
 	}
 	java::util::ArrayList Parcel::createBinderArrayList()
 	{
@@ -62,61 +75,61 @@ namespace android::os
 			"()Ljava/util/ArrayList;"
 		);
 	}
-	jbooleanArray Parcel::createBooleanArray()
+	JBooleanArray Parcel::createBooleanArray()
 	{
 		return callObjectMethod(
 			"createBooleanArray",
 			"()[Z"
-		).object<jbooleanArray>();
+		);
 	}
-	jbyteArray Parcel::createByteArray()
+	JByteArray Parcel::createByteArray()
 	{
 		return callObjectMethod(
 			"createByteArray",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
-	jcharArray Parcel::createCharArray()
+	JCharArray Parcel::createCharArray()
 	{
 		return callObjectMethod(
 			"createCharArray",
 			"()[C"
-		).object<jcharArray>();
+		);
 	}
-	jdoubleArray Parcel::createDoubleArray()
+	JDoubleArray Parcel::createDoubleArray()
 	{
 		return callObjectMethod(
 			"createDoubleArray",
 			"()[D"
-		).object<jdoubleArray>();
+		);
 	}
-	jfloatArray Parcel::createFloatArray()
+	JFloatArray Parcel::createFloatArray()
 	{
 		return callObjectMethod(
 			"createFloatArray",
 			"()[F"
-		).object<jfloatArray>();
+		);
 	}
-	jintArray Parcel::createIntArray()
+	JIntArray Parcel::createIntArray()
 	{
 		return callObjectMethod(
 			"createIntArray",
 			"()[I"
-		).object<jintArray>();
+		);
 	}
-	jlongArray Parcel::createLongArray()
+	JLongArray Parcel::createLongArray()
 	{
 		return callObjectMethod(
 			"createLongArray",
 			"()[J"
-		).object<jlongArray>();
+		);
 	}
-	jarray Parcel::createStringArray()
+	JArray Parcel::createStringArray()
 	{
 		return callObjectMethod(
 			"createStringArray",
 			"()[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
 	java::util::ArrayList Parcel::createStringArrayList()
 	{
@@ -125,13 +138,13 @@ namespace android::os
 			"()Ljava/util/ArrayList;"
 		);
 	}
-	jobjectArray Parcel::createTypedArray(JObject arg0)
+	JObjectArray Parcel::createTypedArray(JObject arg0)
 	{
 		return callObjectMethod(
 			"createTypedArray",
 			"(Landroid/os/Parcelable$Creator;)[Ljava/lang/Object;",
 			arg0.object()
-		).object<jobjectArray>();
+		);
 	}
 	java::util::ArrayList Parcel::createTypedArrayList(JObject arg0)
 	{
@@ -169,12 +182,12 @@ namespace android::os
 			"()I"
 		);
 	}
-	void Parcel::enforceInterface(jstring arg0)
+	void Parcel::enforceInterface(JString arg0)
 	{
 		callMethod<void>(
 			"enforceInterface",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	jboolean Parcel::hasFileDescriptors()
@@ -184,20 +197,20 @@ namespace android::os
 			"()Z"
 		);
 	}
-	jbyteArray Parcel::marshall()
+	JByteArray Parcel::marshall()
 	{
 		return callObjectMethod(
 			"marshall",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
-	jobjectArray Parcel::readArray(java::lang::ClassLoader arg0)
+	JObjectArray Parcel::readArray(java::lang::ClassLoader arg0)
 	{
 		return callObjectMethod(
 			"readArray",
 			"(Ljava/lang/ClassLoader;)[Ljava/lang/Object;",
 			arg0.object()
-		).object<jobjectArray>();
+		);
 	}
 	java::util::ArrayList Parcel::readArrayList(java::lang::ClassLoader arg0)
 	{
@@ -207,12 +220,12 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	void Parcel::readBinderArray(jarray arg0)
+	void Parcel::readBinderArray(JArray arg0)
 	{
 		callMethod<void>(
 			"readBinderArray",
 			"([Landroid/os/IBinder;)V",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
 	void Parcel::readBinderList(JObject arg0)
@@ -223,12 +236,12 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	void Parcel::readBooleanArray(jbooleanArray arg0)
+	void Parcel::readBooleanArray(JBooleanArray arg0)
 	{
 		callMethod<void>(
 			"readBooleanArray",
 			"([Z)V",
-			arg0
+			arg0.object<jbooleanArray>()
 		);
 	}
 	android::os::Bundle Parcel::readBundle()
@@ -253,20 +266,20 @@ namespace android::os
 			"()B"
 		);
 	}
-	void Parcel::readByteArray(jbyteArray arg0)
+	void Parcel::readByteArray(JByteArray arg0)
 	{
 		callMethod<void>(
 			"readByteArray",
 			"([B)V",
-			arg0
+			arg0.object<jbyteArray>()
 		);
 	}
-	void Parcel::readCharArray(jcharArray arg0)
+	void Parcel::readCharArray(JCharArray arg0)
 	{
 		callMethod<void>(
 			"readCharArray",
 			"([C)V",
-			arg0
+			arg0.object<jcharArray>()
 		);
 	}
 	jdouble Parcel::readDouble()
@@ -276,12 +289,12 @@ namespace android::os
 			"()D"
 		);
 	}
-	void Parcel::readDoubleArray(jdoubleArray arg0)
+	void Parcel::readDoubleArray(JDoubleArray arg0)
 	{
 		callMethod<void>(
 			"readDoubleArray",
 			"([D)V",
-			arg0
+			arg0.object<jdoubleArray>()
 		);
 	}
 	void Parcel::readException()
@@ -291,13 +304,13 @@ namespace android::os
 			"()V"
 		);
 	}
-	void Parcel::readException(jint arg0, jstring arg1)
+	void Parcel::readException(jint arg0, JString arg1)
 	{
 		callMethod<void>(
 			"readException",
 			"(ILjava/lang/String;)V",
 			arg0,
-			arg1
+			arg1.object<jstring>()
 		);
 	}
 	android::os::ParcelFileDescriptor Parcel::readFileDescriptor()
@@ -314,12 +327,12 @@ namespace android::os
 			"()F"
 		);
 	}
-	void Parcel::readFloatArray(jfloatArray arg0)
+	void Parcel::readFloatArray(JFloatArray arg0)
 	{
 		callMethod<void>(
 			"readFloatArray",
 			"([F)V",
-			arg0
+			arg0.object<jfloatArray>()
 		);
 	}
 	java::util::HashMap Parcel::readHashMap(java::lang::ClassLoader arg0)
@@ -337,12 +350,12 @@ namespace android::os
 			"()I"
 		);
 	}
-	void Parcel::readIntArray(jintArray arg0)
+	void Parcel::readIntArray(JIntArray arg0)
 	{
 		callMethod<void>(
 			"readIntArray",
 			"([I)V",
-			arg0
+			arg0.object<jintArray>()
 		);
 	}
 	void Parcel::readList(JObject arg0, java::lang::ClassLoader arg1)
@@ -361,12 +374,12 @@ namespace android::os
 			"()J"
 		);
 	}
-	void Parcel::readLongArray(jlongArray arg0)
+	void Parcel::readLongArray(JLongArray arg0)
 	{
 		callMethod<void>(
 			"readLongArray",
 			"([J)V",
-			arg0
+			arg0.object<jlongArray>()
 		);
 	}
 	void Parcel::readMap(JObject arg0, java::lang::ClassLoader arg1)
@@ -386,13 +399,13 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	jarray Parcel::readParcelableArray(java::lang::ClassLoader arg0)
+	JArray Parcel::readParcelableArray(java::lang::ClassLoader arg0)
 	{
 		return callObjectMethod(
 			"readParcelableArray",
 			"(Ljava/lang/ClassLoader;)[Landroid/os/Parcelable;",
 			arg0.object()
-		).object<jarray>();
+		);
 	}
 	android::os::PersistableBundle Parcel::readPersistableBundle()
 	{
@@ -445,19 +458,19 @@ namespace android::os
 			"()Landroid/util/SparseBooleanArray;"
 		);
 	}
-	jstring Parcel::readString()
+	JString Parcel::readString()
 	{
 		return callObjectMethod(
 			"readString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	void Parcel::readStringArray(jarray arg0)
+	void Parcel::readStringArray(JArray arg0)
 	{
 		callMethod<void>(
 			"readStringArray",
 			"([Ljava/lang/String;)V",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
 	void Parcel::readStringList(JObject arg0)
@@ -475,12 +488,12 @@ namespace android::os
 			"()Landroid/os/IBinder;"
 		);
 	}
-	void Parcel::readTypedArray(jobjectArray arg0, JObject arg1)
+	void Parcel::readTypedArray(JObjectArray arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"readTypedArray",
 			"([Ljava/lang/Object;Landroid/os/Parcelable$Creator;)V",
-			arg0,
+			arg0.object<jobjectArray>(),
 			arg1.object()
 		);
 	}
@@ -493,21 +506,21 @@ namespace android::os
 			arg1.object()
 		);
 	}
-	jobject Parcel::readTypedObject(JObject arg0)
+	JObject Parcel::readTypedObject(JObject arg0)
 	{
 		return callObjectMethod(
 			"readTypedObject",
 			"(Landroid/os/Parcelable$Creator;)Ljava/lang/Object;",
 			arg0.object()
-		).object<jobject>();
+		);
 	}
-	jobject Parcel::readValue(java::lang::ClassLoader arg0)
+	JObject Parcel::readValue(java::lang::ClassLoader arg0)
 	{
 		return callObjectMethod(
 			"readValue",
 			"(Ljava/lang/ClassLoader;)Ljava/lang/Object;",
 			arg0.object()
-		).object<jobject>();
+		);
 	}
 	void Parcel::recycle()
 	{
@@ -540,30 +553,30 @@ namespace android::os
 			arg0
 		);
 	}
-	void Parcel::unmarshall(jbyteArray arg0, jint arg1, jint arg2)
+	void Parcel::unmarshall(JByteArray arg0, jint arg1, jint arg2)
 	{
 		callMethod<void>(
 			"unmarshall",
 			"([BII)V",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1,
 			arg2
 		);
 	}
-	void Parcel::writeArray(jobjectArray arg0)
+	void Parcel::writeArray(JObjectArray arg0)
 	{
 		callMethod<void>(
 			"writeArray",
 			"([Ljava/lang/Object;)V",
-			arg0
+			arg0.object<jobjectArray>()
 		);
 	}
-	void Parcel::writeBinderArray(jarray arg0)
+	void Parcel::writeBinderArray(JArray arg0)
 	{
 		callMethod<void>(
 			"writeBinderArray",
 			"([Landroid/os/IBinder;)V",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
 	void Parcel::writeBinderList(JObject arg0)
@@ -574,12 +587,12 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	void Parcel::writeBooleanArray(jbooleanArray arg0)
+	void Parcel::writeBooleanArray(JBooleanArray arg0)
 	{
 		callMethod<void>(
 			"writeBooleanArray",
 			"([Z)V",
-			arg0
+			arg0.object<jbooleanArray>()
 		);
 	}
 	void Parcel::writeBundle(android::os::Bundle arg0)
@@ -598,30 +611,30 @@ namespace android::os
 			arg0
 		);
 	}
-	void Parcel::writeByteArray(jbyteArray arg0)
+	void Parcel::writeByteArray(JByteArray arg0)
 	{
 		callMethod<void>(
 			"writeByteArray",
 			"([B)V",
-			arg0
+			arg0.object<jbyteArray>()
 		);
 	}
-	void Parcel::writeByteArray(jbyteArray arg0, jint arg1, jint arg2)
+	void Parcel::writeByteArray(JByteArray arg0, jint arg1, jint arg2)
 	{
 		callMethod<void>(
 			"writeByteArray",
 			"([BII)V",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1,
 			arg2
 		);
 	}
-	void Parcel::writeCharArray(jcharArray arg0)
+	void Parcel::writeCharArray(JCharArray arg0)
 	{
 		callMethod<void>(
 			"writeCharArray",
 			"([C)V",
-			arg0
+			arg0.object<jcharArray>()
 		);
 	}
 	void Parcel::writeDouble(jdouble arg0)
@@ -632,12 +645,12 @@ namespace android::os
 			arg0
 		);
 	}
-	void Parcel::writeDoubleArray(jdoubleArray arg0)
+	void Parcel::writeDoubleArray(JDoubleArray arg0)
 	{
 		callMethod<void>(
 			"writeDoubleArray",
 			"([D)V",
-			arg0
+			arg0.object<jdoubleArray>()
 		);
 	}
 	void Parcel::writeException(java::lang::Exception arg0)
@@ -664,12 +677,12 @@ namespace android::os
 			arg0
 		);
 	}
-	void Parcel::writeFloatArray(jfloatArray arg0)
+	void Parcel::writeFloatArray(JFloatArray arg0)
 	{
 		callMethod<void>(
 			"writeFloatArray",
 			"([F)V",
-			arg0
+			arg0.object<jfloatArray>()
 		);
 	}
 	void Parcel::writeInt(jint arg0)
@@ -680,20 +693,20 @@ namespace android::os
 			arg0
 		);
 	}
-	void Parcel::writeIntArray(jintArray arg0)
+	void Parcel::writeIntArray(JIntArray arg0)
 	{
 		callMethod<void>(
 			"writeIntArray",
 			"([I)V",
-			arg0
+			arg0.object<jintArray>()
 		);
 	}
-	void Parcel::writeInterfaceToken(jstring arg0)
+	void Parcel::writeInterfaceToken(JString arg0)
 	{
 		callMethod<void>(
 			"writeInterfaceToken",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void Parcel::writeList(JObject arg0)
@@ -712,12 +725,12 @@ namespace android::os
 			arg0
 		);
 	}
-	void Parcel::writeLongArray(jlongArray arg0)
+	void Parcel::writeLongArray(JLongArray arg0)
 	{
 		callMethod<void>(
 			"writeLongArray",
 			"([J)V",
-			arg0
+			arg0.object<jlongArray>()
 		);
 	}
 	void Parcel::writeMap(JObject arg0)
@@ -744,12 +757,12 @@ namespace android::os
 			arg1
 		);
 	}
-	void Parcel::writeParcelableArray(jarray arg0, jint arg1)
+	void Parcel::writeParcelableArray(JArray arg0, jint arg1)
 	{
 		callMethod<void>(
 			"writeParcelableArray",
 			"([Landroid/os/Parcelable;I)V",
-			arg0,
+			arg0.object<jarray>(),
 			arg1
 		);
 	}
@@ -801,20 +814,20 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	void Parcel::writeString(jstring arg0)
+	void Parcel::writeString(JString arg0)
 	{
 		callMethod<void>(
 			"writeString",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	void Parcel::writeStringArray(jarray arg0)
+	void Parcel::writeStringArray(JArray arg0)
 	{
 		callMethod<void>(
 			"writeStringArray",
 			"([Ljava/lang/String;)V",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
 	void Parcel::writeStringList(JObject arg0)
@@ -841,12 +854,12 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	void Parcel::writeTypedArray(jarray arg0, jint arg1)
+	void Parcel::writeTypedArray(JArray arg0, jint arg1)
 	{
 		callMethod<void>(
 			"writeTypedArray",
 			"([Landroid/os/Parcelable;I)V",
-			arg0,
+			arg0.object<jarray>(),
 			arg1
 		);
 	}
@@ -867,12 +880,12 @@ namespace android::os
 			arg1
 		);
 	}
-	void Parcel::writeValue(jobject arg0)
+	void Parcel::writeValue(JObject arg0)
 	{
 		callMethod<void>(
 			"writeValue",
 			"(Ljava/lang/Object;)V",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 } // namespace android::os

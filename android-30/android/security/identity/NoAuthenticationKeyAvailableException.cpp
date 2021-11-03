@@ -1,3 +1,5 @@
+#include "../../../JString.hpp"
+#include "../../../JThrowable.hpp"
 #include "./NoAuthenticationKeyAvailableException.hpp"
 
 namespace android::security::identity
@@ -8,18 +10,18 @@ namespace android::security::identity
 	NoAuthenticationKeyAvailableException::NoAuthenticationKeyAvailableException(QAndroidJniObject obj) : android::security::identity::IdentityCredentialException(obj) {}
 	
 	// Constructors
-	NoAuthenticationKeyAvailableException::NoAuthenticationKeyAvailableException(jstring arg0)
+	NoAuthenticationKeyAvailableException::NoAuthenticationKeyAvailableException(JString arg0)
 		: android::security::identity::IdentityCredentialException(
 			"android.security.identity.NoAuthenticationKeyAvailableException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	NoAuthenticationKeyAvailableException::NoAuthenticationKeyAvailableException(jstring arg0, jthrowable arg1)
+	NoAuthenticationKeyAvailableException::NoAuthenticationKeyAvailableException(JString arg0, JThrowable arg1)
 		: android::security::identity::IdentityCredentialException(
 			"android.security.identity.NoAuthenticationKeyAvailableException",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
 		) {}
 	
 	// Methods

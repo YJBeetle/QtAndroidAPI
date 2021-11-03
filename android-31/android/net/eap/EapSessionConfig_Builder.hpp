@@ -2,10 +2,12 @@
 
 #include "../../../JObject.hpp"
 
+class JByteArray;
 namespace android::net::eap
 {
 	class EapSessionConfig;
 }
+class JString;
 namespace java::security::cert
 {
 	class X509Certificate;
@@ -28,9 +30,9 @@ namespace android::net::eap
 		// Methods
 		android::net::eap::EapSessionConfig build();
 		android::net::eap::EapSessionConfig_Builder setEapAkaConfig(jint arg0, jint arg1);
-		android::net::eap::EapSessionConfig_Builder setEapAkaPrimeConfig(jint arg0, jint arg1, jstring arg2, jboolean arg3);
-		android::net::eap::EapSessionConfig_Builder setEapIdentity(jbyteArray arg0);
-		android::net::eap::EapSessionConfig_Builder setEapMsChapV2Config(jstring arg0, jstring arg1);
+		android::net::eap::EapSessionConfig_Builder setEapAkaPrimeConfig(jint arg0, jint arg1, JString arg2, jboolean arg3);
+		android::net::eap::EapSessionConfig_Builder setEapIdentity(JByteArray arg0);
+		android::net::eap::EapSessionConfig_Builder setEapMsChapV2Config(JString arg0, JString arg1);
 		android::net::eap::EapSessionConfig_Builder setEapSimConfig(jint arg0, jint arg1);
 		android::net::eap::EapSessionConfig_Builder setEapTtlsConfig(java::security::cert::X509Certificate arg0, android::net::eap::EapSessionConfig arg1);
 	};

@@ -1,5 +1,6 @@
 #include "./UsbEndpoint.hpp"
 #include "../../os/Parcel.hpp"
+#include "../../../JString.hpp"
 #include "./UsbInterface.hpp"
 
 namespace android::hardware::usb
@@ -77,19 +78,19 @@ namespace android::hardware::usb
 			"()I"
 		);
 	}
-	jstring UsbInterface::getName()
+	JString UsbInterface::getName()
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring UsbInterface::toString()
+	JString UsbInterface::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void UsbInterface::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

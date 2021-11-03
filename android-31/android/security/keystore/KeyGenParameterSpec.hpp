@@ -2,6 +2,9 @@
 
 #include "../../../JObject.hpp"
 
+class JByteArray;
+class JArray;
+class JString;
 namespace java::math
 {
 	class BigInteger;
@@ -30,23 +33,23 @@ namespace android::security::keystore
 		
 		// Methods
 		JObject getAlgorithmParameterSpec();
-		jstring getAttestKeyAlias();
-		jbyteArray getAttestationChallenge();
-		jarray getBlockModes();
+		JString getAttestKeyAlias();
+		JByteArray getAttestationChallenge();
+		JArray getBlockModes();
 		java::util::Date getCertificateNotAfter();
 		java::util::Date getCertificateNotBefore();
 		java::math::BigInteger getCertificateSerialNumber();
 		javax::security::auth::x500::X500Principal getCertificateSubject();
-		jarray getDigests();
-		jarray getEncryptionPaddings();
+		JArray getDigests();
+		JArray getEncryptionPaddings();
 		jint getKeySize();
 		java::util::Date getKeyValidityForConsumptionEnd();
 		java::util::Date getKeyValidityForOriginationEnd();
 		java::util::Date getKeyValidityStart();
-		jstring getKeystoreAlias();
+		JString getKeystoreAlias();
 		jint getMaxUsageCount();
 		jint getPurposes();
-		jarray getSignaturePaddings();
+		JArray getSignaturePaddings();
 		jint getUserAuthenticationType();
 		jint getUserAuthenticationValidityDurationSeconds();
 		jboolean isDevicePropertiesAttestationIncluded();

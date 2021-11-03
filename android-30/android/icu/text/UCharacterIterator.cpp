@@ -1,3 +1,6 @@
+#include "../../../JCharArray.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "../../../java/lang/StringBuffer.hpp"
 #include "./UCharacterIterator.hpp"
 
@@ -18,13 +21,13 @@ namespace android::icu::text
 	// Constructors
 	
 	// Methods
-	android::icu::text::UCharacterIterator UCharacterIterator::getInstance(jcharArray arg0)
+	android::icu::text::UCharacterIterator UCharacterIterator::getInstance(JCharArray arg0)
 	{
 		return callStaticObjectMethod(
 			"android.icu.text.UCharacterIterator",
 			"getInstance",
 			"([C)Landroid/icu/text/UCharacterIterator;",
-			arg0
+			arg0.object<jcharArray>()
 		);
 	}
 	android::icu::text::UCharacterIterator UCharacterIterator::getInstance(JObject arg0)
@@ -36,13 +39,13 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	android::icu::text::UCharacterIterator UCharacterIterator::getInstance(jstring arg0)
+	android::icu::text::UCharacterIterator UCharacterIterator::getInstance(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.icu.text.UCharacterIterator",
 			"getInstance",
 			"(Ljava/lang/String;)Landroid/icu/text/UCharacterIterator;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::icu::text::UCharacterIterator UCharacterIterator::getInstance(java::lang::StringBuffer arg0)
@@ -54,23 +57,23 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	android::icu::text::UCharacterIterator UCharacterIterator::getInstance(jcharArray arg0, jint arg1, jint arg2)
+	android::icu::text::UCharacterIterator UCharacterIterator::getInstance(JCharArray arg0, jint arg1, jint arg2)
 	{
 		return callStaticObjectMethod(
 			"android.icu.text.UCharacterIterator",
 			"getInstance",
 			"([CII)Landroid/icu/text/UCharacterIterator;",
-			arg0,
+			arg0.object<jcharArray>(),
 			arg1,
 			arg2
 		);
 	}
-	jobject UCharacterIterator::clone()
+	JObject UCharacterIterator::clone()
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
 	jint UCharacterIterator::current()
 	{
@@ -107,29 +110,29 @@ namespace android::icu::text
 			"()I"
 		);
 	}
-	jint UCharacterIterator::getText(jcharArray arg0)
+	jint UCharacterIterator::getText(JCharArray arg0)
 	{
 		return callMethod<jint>(
 			"getText",
 			"([C)I",
-			arg0
+			arg0.object<jcharArray>()
 		);
 	}
-	jint UCharacterIterator::getText(jcharArray arg0, jint arg1)
+	jint UCharacterIterator::getText(JCharArray arg0, jint arg1)
 	{
 		return callMethod<jint>(
 			"getText",
 			"([CI)I",
-			arg0,
+			arg0.object<jcharArray>(),
 			arg1
 		);
 	}
-	jstring UCharacterIterator::getText()
+	JString UCharacterIterator::getText()
 	{
 		return callObjectMethod(
 			"getText",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint UCharacterIterator::moveCodePointIndex(jint arg0)
 	{

@@ -1,4 +1,6 @@
 #include "../os/Parcel.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./AuthenticatorDescription.hpp"
 
 namespace android::accounts
@@ -36,12 +38,12 @@ namespace android::accounts
 			"labelId"
 		);
 	}
-	jstring AuthenticatorDescription::packageName()
+	JString AuthenticatorDescription::packageName()
 	{
 		return getObjectField(
 			"packageName",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint AuthenticatorDescription::smallIconId()
 	{
@@ -49,35 +51,35 @@ namespace android::accounts
 			"smallIconId"
 		);
 	}
-	jstring AuthenticatorDescription::type()
+	JString AuthenticatorDescription::type()
 	{
 		return getObjectField(
 			"type",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QAndroidJniObject forward
 	AuthenticatorDescription::AuthenticatorDescription(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	AuthenticatorDescription::AuthenticatorDescription(jstring arg0, jstring arg1, jint arg2, jint arg3, jint arg4, jint arg5)
+	AuthenticatorDescription::AuthenticatorDescription(JString arg0, JString arg1, jint arg2, jint arg3, jint arg4, jint arg5)
 		: JObject(
 			"android.accounts.AuthenticatorDescription",
 			"(Ljava/lang/String;Ljava/lang/String;IIII)V",
-			arg0,
-			arg1,
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
 			arg2,
 			arg3,
 			arg4,
 			arg5
 		) {}
-	AuthenticatorDescription::AuthenticatorDescription(jstring arg0, jstring arg1, jint arg2, jint arg3, jint arg4, jint arg5, jboolean arg6)
+	AuthenticatorDescription::AuthenticatorDescription(JString arg0, JString arg1, jint arg2, jint arg3, jint arg4, jint arg5, jboolean arg6)
 		: JObject(
 			"android.accounts.AuthenticatorDescription",
 			"(Ljava/lang/String;Ljava/lang/String;IIIIZ)V",
-			arg0,
-			arg1,
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
 			arg2,
 			arg3,
 			arg4,
@@ -86,13 +88,13 @@ namespace android::accounts
 		) {}
 	
 	// Methods
-	android::accounts::AuthenticatorDescription AuthenticatorDescription::newKey(jstring arg0)
+	android::accounts::AuthenticatorDescription AuthenticatorDescription::newKey(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.accounts.AuthenticatorDescription",
 			"newKey",
 			"(Ljava/lang/String;)Landroid/accounts/AuthenticatorDescription;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	jint AuthenticatorDescription::describeContents()
@@ -102,12 +104,12 @@ namespace android::accounts
 			"()I"
 		);
 	}
-	jboolean AuthenticatorDescription::equals(jobject arg0)
+	jboolean AuthenticatorDescription::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint AuthenticatorDescription::hashCode()
@@ -117,12 +119,12 @@ namespace android::accounts
 			"()I"
 		);
 	}
-	jstring AuthenticatorDescription::toString()
+	JString AuthenticatorDescription::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void AuthenticatorDescription::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

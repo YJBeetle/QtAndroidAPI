@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JObject;
+class JString;
 
 namespace java::util
 {
@@ -18,19 +20,19 @@ namespace java::util
 		
 		// Methods
 		void clear();
-		jboolean containsKey(jobject arg0);
-		jboolean containsValue(jobject arg0);
+		jboolean containsKey(JObject arg0);
+		jboolean containsValue(JObject arg0);
 		JObject entrySet();
-		jboolean equals(jobject arg0);
-		jobject get(jobject arg0);
+		jboolean equals(JObject arg0);
+		JObject get(JObject arg0);
 		jint hashCode();
 		jboolean isEmpty();
 		JObject keySet();
-		jobject put(jobject arg0, jobject arg1);
+		JObject put(JObject arg0, JObject arg1);
 		void putAll(JObject arg0);
-		jobject remove(jobject arg0);
+		JObject remove(JObject arg0);
 		jint size();
-		jstring toString();
+		JString toString();
 		JObject values();
 	};
 } // namespace java::util

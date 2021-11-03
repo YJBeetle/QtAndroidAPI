@@ -1,3 +1,5 @@
+#include "../../../../JObject.hpp"
+#include "../../../../JString.hpp"
 #include "./AclEntry_Builder.hpp"
 #include "./AclEntryType.hpp"
 #include "./AclEntry.hpp"
@@ -29,12 +31,12 @@ namespace java::nio::file::attribute
 			arg0.object()
 		);
 	}
-	jboolean AclEntry::equals(jobject arg0)
+	jboolean AclEntry::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	JObject AclEntry::flags()
@@ -65,12 +67,12 @@ namespace java::nio::file::attribute
 			"()Ljava/nio/file/attribute/UserPrincipal;"
 		);
 	}
-	jstring AclEntry::toString()
+	JString AclEntry::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	java::nio::file::attribute::AclEntryType AclEntry::type()
 	{

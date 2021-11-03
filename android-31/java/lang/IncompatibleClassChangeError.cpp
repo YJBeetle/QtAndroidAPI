@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./IncompatibleClassChangeError.hpp"
 
 namespace java::lang
@@ -13,11 +14,11 @@ namespace java::lang
 			"java.lang.IncompatibleClassChangeError",
 			"()V"
 		) {}
-	IncompatibleClassChangeError::IncompatibleClassChangeError(jstring arg0)
+	IncompatibleClassChangeError::IncompatibleClassChangeError(JString arg0)
 		: java::lang::LinkageError(
 			"java.lang.IncompatibleClassChangeError",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

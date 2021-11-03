@@ -1,3 +1,5 @@
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
 #include "./NumberFormatter_DecimalSeparatorDisplay.hpp"
 
 namespace android::icu::number
@@ -26,22 +28,22 @@ namespace android::icu::number
 	// Constructors
 	
 	// Methods
-	android::icu::number::NumberFormatter_DecimalSeparatorDisplay NumberFormatter_DecimalSeparatorDisplay::valueOf(jstring arg0)
+	android::icu::number::NumberFormatter_DecimalSeparatorDisplay NumberFormatter_DecimalSeparatorDisplay::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.icu.number.NumberFormatter$DecimalSeparatorDisplay",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/icu/number/NumberFormatter$DecimalSeparatorDisplay;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray NumberFormatter_DecimalSeparatorDisplay::values()
+	JArray NumberFormatter_DecimalSeparatorDisplay::values()
 	{
 		return callStaticObjectMethod(
 			"android.icu.number.NumberFormatter$DecimalSeparatorDisplay",
 			"values",
 			"()[Landroid/icu/number/NumberFormatter$DecimalSeparatorDisplay;"
-		).object<jarray>();
+		);
 	}
 } // namespace android::icu::number
 

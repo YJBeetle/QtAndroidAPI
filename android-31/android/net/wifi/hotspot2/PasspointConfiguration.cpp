@@ -1,6 +1,8 @@
 #include "./pps/Credential.hpp"
 #include "./pps/HomeSp.hpp"
 #include "../../../os/Parcel.hpp"
+#include "../../../../JObject.hpp"
+#include "../../../../JString.hpp"
 #include "./PasspointConfiguration.hpp"
 
 namespace android::net::wifi::hotspot2
@@ -39,12 +41,12 @@ namespace android::net::wifi::hotspot2
 			"()I"
 		);
 	}
-	jboolean PasspointConfiguration::equals(jobject arg0)
+	jboolean PasspointConfiguration::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	android::net::wifi::hotspot2::pps::Credential PasspointConfiguration::getCredential()
@@ -54,12 +56,12 @@ namespace android::net::wifi::hotspot2
 			"()Landroid/net/wifi/hotspot2/pps/Credential;"
 		);
 	}
-	jstring PasspointConfiguration::getDecoratedIdentityPrefix()
+	JString PasspointConfiguration::getDecoratedIdentityPrefix()
 	{
 		return callObjectMethod(
 			"getDecoratedIdentityPrefix",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::net::wifi::hotspot2::pps::HomeSp PasspointConfiguration::getHomeSp()
 	{
@@ -75,12 +77,12 @@ namespace android::net::wifi::hotspot2
 			"()J"
 		);
 	}
-	jstring PasspointConfiguration::getUniqueId()
+	JString PasspointConfiguration::getUniqueId()
 	{
 		return callObjectMethod(
 			"getUniqueId",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint PasspointConfiguration::hashCode()
 	{
@@ -104,12 +106,12 @@ namespace android::net::wifi::hotspot2
 			arg0.object()
 		);
 	}
-	void PasspointConfiguration::setDecoratedIdentityPrefix(jstring arg0)
+	void PasspointConfiguration::setDecoratedIdentityPrefix(JString arg0)
 	{
 		callMethod<void>(
 			"setDecoratedIdentityPrefix",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void PasspointConfiguration::setHomeSp(android::net::wifi::hotspot2::pps::HomeSp arg0)
@@ -120,12 +122,12 @@ namespace android::net::wifi::hotspot2
 			arg0.object()
 		);
 	}
-	jstring PasspointConfiguration::toString()
+	JString PasspointConfiguration::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void PasspointConfiguration::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

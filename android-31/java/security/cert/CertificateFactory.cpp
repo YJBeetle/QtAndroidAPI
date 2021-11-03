@@ -1,4 +1,5 @@
 #include "../../io/InputStream.hpp"
+#include "../../../JString.hpp"
 #include "../Provider.hpp"
 #include "./CRL.hpp"
 #include "./CertPath.hpp"
@@ -16,32 +17,32 @@ namespace java::security::cert
 	// Constructors
 	
 	// Methods
-	java::security::cert::CertificateFactory CertificateFactory::getInstance(jstring arg0)
+	java::security::cert::CertificateFactory CertificateFactory::getInstance(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"java.security.cert.CertificateFactory",
 			"getInstance",
 			"(Ljava/lang/String;)Ljava/security/cert/CertificateFactory;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	java::security::cert::CertificateFactory CertificateFactory::getInstance(jstring arg0, jstring arg1)
+	java::security::cert::CertificateFactory CertificateFactory::getInstance(JString arg0, JString arg1)
 	{
 		return callStaticObjectMethod(
 			"java.security.cert.CertificateFactory",
 			"getInstance",
 			"(Ljava/lang/String;Ljava/lang/String;)Ljava/security/cert/CertificateFactory;",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		);
 	}
-	java::security::cert::CertificateFactory CertificateFactory::getInstance(jstring arg0, java::security::Provider arg1)
+	java::security::cert::CertificateFactory CertificateFactory::getInstance(JString arg0, java::security::Provider arg1)
 	{
 		return callStaticObjectMethod(
 			"java.security.cert.CertificateFactory",
 			"getInstance",
 			"(Ljava/lang/String;Ljava/security/Provider;)Ljava/security/cert/CertificateFactory;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
@@ -77,13 +78,13 @@ namespace java::security::cert
 			arg0.object()
 		);
 	}
-	java::security::cert::CertPath CertificateFactory::generateCertPath(java::io::InputStream arg0, jstring arg1)
+	java::security::cert::CertPath CertificateFactory::generateCertPath(java::io::InputStream arg0, JString arg1)
 	{
 		return callObjectMethod(
 			"generateCertPath",
 			"(Ljava/io/InputStream;Ljava/lang/String;)Ljava/security/cert/CertPath;",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
 	java::security::cert::Certificate CertificateFactory::generateCertificate(java::io::InputStream arg0)
@@ -116,12 +117,12 @@ namespace java::security::cert
 			"()Ljava/security/Provider;"
 		);
 	}
-	jstring CertificateFactory::getType()
+	JString CertificateFactory::getType()
 	{
 		return callObjectMethod(
 			"getType",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::security::cert
 

@@ -1,8 +1,6 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "./CameraCaptureSession.hpp"
-
 
 namespace android::hardware::camera2
 {

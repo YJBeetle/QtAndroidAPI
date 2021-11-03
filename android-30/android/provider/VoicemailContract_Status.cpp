@@ -1,16 +1,17 @@
 #include "../net/Uri.hpp"
+#include "../../JString.hpp"
 #include "./VoicemailContract_Status.hpp"
 
 namespace android::provider
 {
 	// Fields
-	jstring VoicemailContract_Status::CONFIGURATION_STATE()
+	JString VoicemailContract_Status::CONFIGURATION_STATE()
 	{
 		return getStaticObjectField(
 			"android.provider.VoicemailContract$Status",
 			"CONFIGURATION_STATE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint VoicemailContract_Status::CONFIGURATION_STATE_CAN_BE_CONFIGURED()
 	{
@@ -62,13 +63,13 @@ namespace android::provider
 			"Landroid/net/Uri;"
 		);
 	}
-	jstring VoicemailContract_Status::DATA_CHANNEL_STATE()
+	JString VoicemailContract_Status::DATA_CHANNEL_STATE()
 	{
 		return getStaticObjectField(
 			"android.provider.VoicemailContract$Status",
 			"DATA_CHANNEL_STATE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint VoicemailContract_Status::DATA_CHANNEL_STATE_BAD_CONFIGURATION()
 	{
@@ -119,29 +120,29 @@ namespace android::provider
 			"DATA_CHANNEL_STATE_SERVER_ERROR"
 		);
 	}
-	jstring VoicemailContract_Status::DIR_TYPE()
+	JString VoicemailContract_Status::DIR_TYPE()
 	{
 		return getStaticObjectField(
 			"android.provider.VoicemailContract$Status",
 			"DIR_TYPE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring VoicemailContract_Status::ITEM_TYPE()
+	JString VoicemailContract_Status::ITEM_TYPE()
 	{
 		return getStaticObjectField(
 			"android.provider.VoicemailContract$Status",
 			"ITEM_TYPE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring VoicemailContract_Status::NOTIFICATION_CHANNEL_STATE()
+	JString VoicemailContract_Status::NOTIFICATION_CHANNEL_STATE()
 	{
 		return getStaticObjectField(
 			"android.provider.VoicemailContract$Status",
 			"NOTIFICATION_CHANNEL_STATE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint VoicemailContract_Status::NOTIFICATION_CHANNEL_STATE_MESSAGE_WAITING()
 	{
@@ -164,37 +165,37 @@ namespace android::provider
 			"NOTIFICATION_CHANNEL_STATE_OK"
 		);
 	}
-	jstring VoicemailContract_Status::PHONE_ACCOUNT_COMPONENT_NAME()
+	JString VoicemailContract_Status::PHONE_ACCOUNT_COMPONENT_NAME()
 	{
 		return getStaticObjectField(
 			"android.provider.VoicemailContract$Status",
 			"PHONE_ACCOUNT_COMPONENT_NAME",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring VoicemailContract_Status::PHONE_ACCOUNT_ID()
+	JString VoicemailContract_Status::PHONE_ACCOUNT_ID()
 	{
 		return getStaticObjectField(
 			"android.provider.VoicemailContract$Status",
 			"PHONE_ACCOUNT_ID",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring VoicemailContract_Status::QUOTA_OCCUPIED()
+	JString VoicemailContract_Status::QUOTA_OCCUPIED()
 	{
 		return getStaticObjectField(
 			"android.provider.VoicemailContract$Status",
 			"QUOTA_OCCUPIED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring VoicemailContract_Status::QUOTA_TOTAL()
+	JString VoicemailContract_Status::QUOTA_TOTAL()
 	{
 		return getStaticObjectField(
 			"android.provider.VoicemailContract$Status",
 			"QUOTA_TOTAL",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint VoicemailContract_Status::QUOTA_UNAVAILABLE()
 	{
@@ -203,37 +204,37 @@ namespace android::provider
 			"QUOTA_UNAVAILABLE"
 		);
 	}
-	jstring VoicemailContract_Status::SETTINGS_URI()
+	JString VoicemailContract_Status::SETTINGS_URI()
 	{
 		return getStaticObjectField(
 			"android.provider.VoicemailContract$Status",
 			"SETTINGS_URI",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring VoicemailContract_Status::SOURCE_PACKAGE()
+	JString VoicemailContract_Status::SOURCE_PACKAGE()
 	{
 		return getStaticObjectField(
 			"android.provider.VoicemailContract$Status",
 			"SOURCE_PACKAGE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring VoicemailContract_Status::SOURCE_TYPE()
+	JString VoicemailContract_Status::SOURCE_TYPE()
 	{
 		return getStaticObjectField(
 			"android.provider.VoicemailContract$Status",
 			"SOURCE_TYPE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring VoicemailContract_Status::VOICEMAIL_ACCESS_URI()
+	JString VoicemailContract_Status::VOICEMAIL_ACCESS_URI()
 	{
 		return getStaticObjectField(
 			"android.provider.VoicemailContract$Status",
 			"VOICEMAIL_ACCESS_URI",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QAndroidJniObject forward
@@ -242,13 +243,13 @@ namespace android::provider
 	// Constructors
 	
 	// Methods
-	android::net::Uri VoicemailContract_Status::buildSourceUri(jstring arg0)
+	android::net::Uri VoicemailContract_Status::buildSourceUri(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.provider.VoicemailContract$Status",
 			"buildSourceUri",
 			"(Ljava/lang/String;)Landroid/net/Uri;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 } // namespace android::provider

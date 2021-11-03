@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JString;
 
 namespace java::nio
 {
@@ -20,7 +21,7 @@ namespace java::nio
 		
 		// Methods
 		static java::nio::ByteOrder nativeOrder();
-		jstring toString();
+		JString toString();
 	};
 } // namespace java::nio
 

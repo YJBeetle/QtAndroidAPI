@@ -1,9 +1,17 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "./AccessibleObject.hpp"
 #include "./Executable.hpp"
 
+class JByteArray;
+class JArray;
+class JObjectArray;
+class JArray;
+class JArray;
+class JArray;
+class JArray;
+class JClass;
+class JObject;
+class JString;
 namespace java::lang
 {
 	class StringBuilder;
@@ -27,28 +35,28 @@ namespace java::lang::reflect
 		// Constructors
 		
 		// Methods
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		JObject getAnnotatedReceiverType();
 		JObject getAnnotatedReturnType();
-		JObject getAnnotation(jclass arg0);
-		jarray getDeclaredAnnotations();
-		jclass getDeclaringClass();
-		jarray getExceptionTypes();
-		jarray getGenericExceptionTypes();
-		jarray getGenericParameterTypes();
+		JObject getAnnotation(JClass arg0);
+		JArray getDeclaredAnnotations();
+		JClass getDeclaringClass();
+		JArray getExceptionTypes();
+		JArray getGenericExceptionTypes();
+		JArray getGenericParameterTypes();
 		jint getModifiers();
-		jstring getName();
-		jarray getParameterAnnotations();
+		JString getName();
+		JArray getParameterAnnotations();
 		jint getParameterCount();
-		jarray getParameterTypes();
-		jarray getTypeParameters();
+		JArray getParameterTypes();
+		JArray getTypeParameters();
 		jint hashCode();
 		jboolean isSynthetic();
 		jboolean isVarArgs();
-		jobject newInstance(jobjectArray arg0);
+		JObject newInstance(JObjectArray arg0);
 		void setAccessible(jboolean arg0);
-		jstring toGenericString();
-		jstring toString();
+		JString toGenericString();
+		JString toString();
 	};
 } // namespace java::lang::reflect
 

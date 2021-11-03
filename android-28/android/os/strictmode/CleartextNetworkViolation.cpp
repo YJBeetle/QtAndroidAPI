@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./CleartextNetworkViolation.hpp"
 
 namespace android::os::strictmode

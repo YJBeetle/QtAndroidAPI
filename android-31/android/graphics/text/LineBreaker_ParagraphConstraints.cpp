@@ -1,3 +1,4 @@
+#include "../../../JFloatArray.hpp"
 #include "./LineBreaker_ParagraphConstraints.hpp"
 
 namespace android::graphics::text
@@ -36,12 +37,12 @@ namespace android::graphics::text
 			"()I"
 		);
 	}
-	jfloatArray LineBreaker_ParagraphConstraints::getTabStops()
+	JFloatArray LineBreaker_ParagraphConstraints::getTabStops()
 	{
 		return callObjectMethod(
 			"getTabStops",
 			"()[F"
-		).object<jfloatArray>();
+		);
 	}
 	jfloat LineBreaker_ParagraphConstraints::getWidth()
 	{
@@ -59,12 +60,12 @@ namespace android::graphics::text
 			arg1
 		);
 	}
-	void LineBreaker_ParagraphConstraints::setTabStops(jfloatArray arg0, jfloat arg1)
+	void LineBreaker_ParagraphConstraints::setTabStops(JFloatArray arg0, jfloat arg1)
 	{
 		callMethod<void>(
 			"setTabStops",
 			"([FF)V",
-			arg0,
+			arg0.object<jfloatArray>(),
 			arg1
 		);
 	}

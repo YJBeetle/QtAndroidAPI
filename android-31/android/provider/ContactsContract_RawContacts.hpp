@@ -14,6 +14,7 @@ namespace android::net
 {
 	class Uri;
 }
+class JString;
 
 namespace android::provider
 {
@@ -25,8 +26,8 @@ namespace android::provider
 		static jint AGGREGATION_MODE_DISABLED();
 		static jint AGGREGATION_MODE_IMMEDIATE();
 		static jint AGGREGATION_MODE_SUSPENDED();
-		static jstring CONTENT_ITEM_TYPE();
-		static jstring CONTENT_TYPE();
+		static JString CONTENT_ITEM_TYPE();
+		static JString CONTENT_TYPE();
 		static android::net::Uri CONTENT_URI();
 		
 		// QAndroidJniObject forward
@@ -37,8 +38,8 @@ namespace android::provider
 		
 		// Methods
 		static android::net::Uri getContactLookupUri(android::content::ContentResolver arg0, android::net::Uri arg1);
-		static jstring getLocalAccountName(android::content::Context arg0);
-		static jstring getLocalAccountType(android::content::Context arg0);
+		static JString getLocalAccountName(android::content::Context arg0);
+		static JString getLocalAccountType(android::content::Context arg0);
 		static JObject newEntityIterator(JObject arg0);
 	};
 } // namespace android::provider

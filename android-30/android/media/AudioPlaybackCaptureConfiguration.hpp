@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JIntArray;
 namespace android::media::projection
 {
 	class MediaProjection;
@@ -21,10 +22,10 @@ namespace android::media
 		// Constructors
 		
 		// Methods
-		jintArray getExcludeUids();
-		jintArray getExcludeUsages();
-		jintArray getMatchingUids();
-		jintArray getMatchingUsages();
+		JIntArray getExcludeUids();
+		JIntArray getExcludeUsages();
+		JIntArray getMatchingUids();
+		JIntArray getMatchingUsages();
 		android::media::projection::MediaProjection getMediaProjection();
 	};
 } // namespace android::media

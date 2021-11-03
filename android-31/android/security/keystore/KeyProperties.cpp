@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./KeyProperties.hpp"
 
 namespace android::security::keystore
@@ -17,197 +18,197 @@ namespace android::security::keystore
 			"AUTH_DEVICE_CREDENTIAL"
 		);
 	}
-	jstring KeyProperties::BLOCK_MODE_CBC()
+	JString KeyProperties::BLOCK_MODE_CBC()
 	{
 		return getStaticObjectField(
 			"android.security.keystore.KeyProperties",
 			"BLOCK_MODE_CBC",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring KeyProperties::BLOCK_MODE_CTR()
+	JString KeyProperties::BLOCK_MODE_CTR()
 	{
 		return getStaticObjectField(
 			"android.security.keystore.KeyProperties",
 			"BLOCK_MODE_CTR",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring KeyProperties::BLOCK_MODE_ECB()
+	JString KeyProperties::BLOCK_MODE_ECB()
 	{
 		return getStaticObjectField(
 			"android.security.keystore.KeyProperties",
 			"BLOCK_MODE_ECB",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring KeyProperties::BLOCK_MODE_GCM()
+	JString KeyProperties::BLOCK_MODE_GCM()
 	{
 		return getStaticObjectField(
 			"android.security.keystore.KeyProperties",
 			"BLOCK_MODE_GCM",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring KeyProperties::DIGEST_MD5()
+	JString KeyProperties::DIGEST_MD5()
 	{
 		return getStaticObjectField(
 			"android.security.keystore.KeyProperties",
 			"DIGEST_MD5",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring KeyProperties::DIGEST_NONE()
+	JString KeyProperties::DIGEST_NONE()
 	{
 		return getStaticObjectField(
 			"android.security.keystore.KeyProperties",
 			"DIGEST_NONE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring KeyProperties::DIGEST_SHA1()
+	JString KeyProperties::DIGEST_SHA1()
 	{
 		return getStaticObjectField(
 			"android.security.keystore.KeyProperties",
 			"DIGEST_SHA1",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring KeyProperties::DIGEST_SHA224()
+	JString KeyProperties::DIGEST_SHA224()
 	{
 		return getStaticObjectField(
 			"android.security.keystore.KeyProperties",
 			"DIGEST_SHA224",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring KeyProperties::DIGEST_SHA256()
+	JString KeyProperties::DIGEST_SHA256()
 	{
 		return getStaticObjectField(
 			"android.security.keystore.KeyProperties",
 			"DIGEST_SHA256",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring KeyProperties::DIGEST_SHA384()
+	JString KeyProperties::DIGEST_SHA384()
 	{
 		return getStaticObjectField(
 			"android.security.keystore.KeyProperties",
 			"DIGEST_SHA384",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring KeyProperties::DIGEST_SHA512()
+	JString KeyProperties::DIGEST_SHA512()
 	{
 		return getStaticObjectField(
 			"android.security.keystore.KeyProperties",
 			"DIGEST_SHA512",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring KeyProperties::ENCRYPTION_PADDING_NONE()
+	JString KeyProperties::ENCRYPTION_PADDING_NONE()
 	{
 		return getStaticObjectField(
 			"android.security.keystore.KeyProperties",
 			"ENCRYPTION_PADDING_NONE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring KeyProperties::ENCRYPTION_PADDING_PKCS7()
+	JString KeyProperties::ENCRYPTION_PADDING_PKCS7()
 	{
 		return getStaticObjectField(
 			"android.security.keystore.KeyProperties",
 			"ENCRYPTION_PADDING_PKCS7",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring KeyProperties::ENCRYPTION_PADDING_RSA_OAEP()
+	JString KeyProperties::ENCRYPTION_PADDING_RSA_OAEP()
 	{
 		return getStaticObjectField(
 			"android.security.keystore.KeyProperties",
 			"ENCRYPTION_PADDING_RSA_OAEP",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring KeyProperties::ENCRYPTION_PADDING_RSA_PKCS1()
+	JString KeyProperties::ENCRYPTION_PADDING_RSA_PKCS1()
 	{
 		return getStaticObjectField(
 			"android.security.keystore.KeyProperties",
 			"ENCRYPTION_PADDING_RSA_PKCS1",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring KeyProperties::KEY_ALGORITHM_3DES()
+	JString KeyProperties::KEY_ALGORITHM_3DES()
 	{
 		return getStaticObjectField(
 			"android.security.keystore.KeyProperties",
 			"KEY_ALGORITHM_3DES",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring KeyProperties::KEY_ALGORITHM_AES()
+	JString KeyProperties::KEY_ALGORITHM_AES()
 	{
 		return getStaticObjectField(
 			"android.security.keystore.KeyProperties",
 			"KEY_ALGORITHM_AES",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring KeyProperties::KEY_ALGORITHM_EC()
+	JString KeyProperties::KEY_ALGORITHM_EC()
 	{
 		return getStaticObjectField(
 			"android.security.keystore.KeyProperties",
 			"KEY_ALGORITHM_EC",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring KeyProperties::KEY_ALGORITHM_HMAC_SHA1()
+	JString KeyProperties::KEY_ALGORITHM_HMAC_SHA1()
 	{
 		return getStaticObjectField(
 			"android.security.keystore.KeyProperties",
 			"KEY_ALGORITHM_HMAC_SHA1",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring KeyProperties::KEY_ALGORITHM_HMAC_SHA224()
+	JString KeyProperties::KEY_ALGORITHM_HMAC_SHA224()
 	{
 		return getStaticObjectField(
 			"android.security.keystore.KeyProperties",
 			"KEY_ALGORITHM_HMAC_SHA224",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring KeyProperties::KEY_ALGORITHM_HMAC_SHA256()
+	JString KeyProperties::KEY_ALGORITHM_HMAC_SHA256()
 	{
 		return getStaticObjectField(
 			"android.security.keystore.KeyProperties",
 			"KEY_ALGORITHM_HMAC_SHA256",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring KeyProperties::KEY_ALGORITHM_HMAC_SHA384()
+	JString KeyProperties::KEY_ALGORITHM_HMAC_SHA384()
 	{
 		return getStaticObjectField(
 			"android.security.keystore.KeyProperties",
 			"KEY_ALGORITHM_HMAC_SHA384",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring KeyProperties::KEY_ALGORITHM_HMAC_SHA512()
+	JString KeyProperties::KEY_ALGORITHM_HMAC_SHA512()
 	{
 		return getStaticObjectField(
 			"android.security.keystore.KeyProperties",
 			"KEY_ALGORITHM_HMAC_SHA512",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring KeyProperties::KEY_ALGORITHM_RSA()
+	JString KeyProperties::KEY_ALGORITHM_RSA()
 	{
 		return getStaticObjectField(
 			"android.security.keystore.KeyProperties",
 			"KEY_ALGORITHM_RSA",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint KeyProperties::ORIGIN_GENERATED()
 	{
@@ -321,21 +322,21 @@ namespace android::security::keystore
 			"SECURITY_LEVEL_UNKNOWN_SECURE"
 		);
 	}
-	jstring KeyProperties::SIGNATURE_PADDING_RSA_PKCS1()
+	JString KeyProperties::SIGNATURE_PADDING_RSA_PKCS1()
 	{
 		return getStaticObjectField(
 			"android.security.keystore.KeyProperties",
 			"SIGNATURE_PADDING_RSA_PKCS1",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring KeyProperties::SIGNATURE_PADDING_RSA_PSS()
+	JString KeyProperties::SIGNATURE_PADDING_RSA_PSS()
 	{
 		return getStaticObjectField(
 			"android.security.keystore.KeyProperties",
 			"SIGNATURE_PADDING_RSA_PSS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint KeyProperties::UNRESTRICTED_USAGE_COUNT()
 	{

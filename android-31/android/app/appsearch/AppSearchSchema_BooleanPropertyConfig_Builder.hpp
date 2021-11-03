@@ -6,6 +6,7 @@ namespace android::app::appsearch
 {
 	class AppSearchSchema_BooleanPropertyConfig;
 }
+class JString;
 
 namespace android::app::appsearch
 {
@@ -19,7 +20,7 @@ namespace android::app::appsearch
 		AppSearchSchema_BooleanPropertyConfig_Builder(QAndroidJniObject obj);
 		
 		// Constructors
-		AppSearchSchema_BooleanPropertyConfig_Builder(jstring arg0);
+		AppSearchSchema_BooleanPropertyConfig_Builder(JString arg0);
 		
 		// Methods
 		android::app::appsearch::AppSearchSchema_BooleanPropertyConfig build();

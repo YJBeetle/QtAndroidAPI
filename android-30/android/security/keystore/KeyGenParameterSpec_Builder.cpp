@@ -1,4 +1,7 @@
+#include "../../../JByteArray.hpp"
+#include "../../../JArray.hpp"
 #include "./KeyGenParameterSpec.hpp"
+#include "../../../JString.hpp"
 #include "../../../java/math/BigInteger.hpp"
 #include "../../../java/util/Date.hpp"
 #include "../../../javax/security/auth/x500/X500Principal.hpp"
@@ -12,11 +15,11 @@ namespace android::security::keystore
 	KeyGenParameterSpec_Builder::KeyGenParameterSpec_Builder(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	KeyGenParameterSpec_Builder::KeyGenParameterSpec_Builder(jstring arg0, jint arg1)
+	KeyGenParameterSpec_Builder::KeyGenParameterSpec_Builder(JString arg0, jint arg1)
 		: JObject(
 			"android.security.keystore.KeyGenParameterSpec$Builder",
 			"(Ljava/lang/String;I)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		) {}
 	
@@ -36,20 +39,20 @@ namespace android::security::keystore
 			arg0.object()
 		);
 	}
-	android::security::keystore::KeyGenParameterSpec_Builder KeyGenParameterSpec_Builder::setAttestationChallenge(jbyteArray arg0)
+	android::security::keystore::KeyGenParameterSpec_Builder KeyGenParameterSpec_Builder::setAttestationChallenge(JByteArray arg0)
 	{
 		return callObjectMethod(
 			"setAttestationChallenge",
 			"([B)Landroid/security/keystore/KeyGenParameterSpec$Builder;",
-			arg0
+			arg0.object<jbyteArray>()
 		);
 	}
-	android::security::keystore::KeyGenParameterSpec_Builder KeyGenParameterSpec_Builder::setBlockModes(jarray arg0)
+	android::security::keystore::KeyGenParameterSpec_Builder KeyGenParameterSpec_Builder::setBlockModes(JArray arg0)
 	{
 		return callObjectMethod(
 			"setBlockModes",
 			"([Ljava/lang/String;)Landroid/security/keystore/KeyGenParameterSpec$Builder;",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
 	android::security::keystore::KeyGenParameterSpec_Builder KeyGenParameterSpec_Builder::setCertificateNotAfter(java::util::Date arg0)
@@ -84,20 +87,20 @@ namespace android::security::keystore
 			arg0.object()
 		);
 	}
-	android::security::keystore::KeyGenParameterSpec_Builder KeyGenParameterSpec_Builder::setDigests(jarray arg0)
+	android::security::keystore::KeyGenParameterSpec_Builder KeyGenParameterSpec_Builder::setDigests(JArray arg0)
 	{
 		return callObjectMethod(
 			"setDigests",
 			"([Ljava/lang/String;)Landroid/security/keystore/KeyGenParameterSpec$Builder;",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
-	android::security::keystore::KeyGenParameterSpec_Builder KeyGenParameterSpec_Builder::setEncryptionPaddings(jarray arg0)
+	android::security::keystore::KeyGenParameterSpec_Builder KeyGenParameterSpec_Builder::setEncryptionPaddings(JArray arg0)
 	{
 		return callObjectMethod(
 			"setEncryptionPaddings",
 			"([Ljava/lang/String;)Landroid/security/keystore/KeyGenParameterSpec$Builder;",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
 	android::security::keystore::KeyGenParameterSpec_Builder KeyGenParameterSpec_Builder::setInvalidatedByBiometricEnrollment(jboolean arg0)
@@ -164,12 +167,12 @@ namespace android::security::keystore
 			arg0
 		);
 	}
-	android::security::keystore::KeyGenParameterSpec_Builder KeyGenParameterSpec_Builder::setSignaturePaddings(jarray arg0)
+	android::security::keystore::KeyGenParameterSpec_Builder KeyGenParameterSpec_Builder::setSignaturePaddings(JArray arg0)
 	{
 		return callObjectMethod(
 			"setSignaturePaddings",
 			"([Ljava/lang/String;)Landroid/security/keystore/KeyGenParameterSpec$Builder;",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
 	android::security::keystore::KeyGenParameterSpec_Builder KeyGenParameterSpec_Builder::setUnlockedDeviceRequired(jboolean arg0)

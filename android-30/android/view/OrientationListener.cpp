@@ -1,3 +1,4 @@
+#include "../../JFloatArray.hpp"
 #include "../content/Context.hpp"
 #include "./OrientationListener.hpp"
 
@@ -62,13 +63,13 @@ namespace android::view
 			arg0
 		);
 	}
-	void OrientationListener::onSensorChanged(jint arg0, jfloatArray arg1)
+	void OrientationListener::onSensorChanged(jint arg0, JFloatArray arg1)
 	{
 		callMethod<void>(
 			"onSensorChanged",
 			"(I[F)V",
 			arg0,
-			arg1
+			arg1.object<jfloatArray>()
 		);
 	}
 } // namespace android::view

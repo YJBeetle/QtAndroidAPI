@@ -1,3 +1,6 @@
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
+#include "../../JThrowable.hpp"
 #include "./AssertionError.hpp"
 
 namespace java::lang
@@ -43,11 +46,11 @@ namespace java::lang
 			"(I)V",
 			arg0
 		) {}
-	AssertionError::AssertionError(jobject arg0)
+	AssertionError::AssertionError(JObject arg0)
 		: java::lang::Error(
 			"java.lang.AssertionError",
 			"(Ljava/lang/Object;)V",
-			arg0
+			arg0.object<jobject>()
 		) {}
 	AssertionError::AssertionError(jlong arg0)
 		: java::lang::Error(
@@ -55,12 +58,12 @@ namespace java::lang
 			"(J)V",
 			arg0
 		) {}
-	AssertionError::AssertionError(jstring arg0, jthrowable arg1)
+	AssertionError::AssertionError(JString arg0, JThrowable arg1)
 		: java::lang::Error(
 			"java.lang.AssertionError",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
 		) {}
 	
 	// Methods

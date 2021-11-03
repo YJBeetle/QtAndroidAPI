@@ -1,3 +1,4 @@
+#include "../../JArray.hpp"
 #include "../bluetooth/BluetoothDevice.hpp"
 #include "../net/Uri.hpp"
 #include "../os/Bundle.hpp"
@@ -7,6 +8,7 @@
 #include "./Connection_VideoProvider.hpp"
 #include "./DisconnectCause.hpp"
 #include "./StatusHints.hpp"
+#include "../../JString.hpp"
 #include "./Connection.hpp"
 
 namespace android::telecom
@@ -306,157 +308,157 @@ namespace android::telecom
 			"CAPABILITY_SWAP_CONFERENCE"
 		);
 	}
-	jstring Connection::EVENT_CALL_HOLD_FAILED()
+	JString Connection::EVENT_CALL_HOLD_FAILED()
 	{
 		return getStaticObjectField(
 			"android.telecom.Connection",
 			"EVENT_CALL_HOLD_FAILED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Connection::EVENT_CALL_MERGE_FAILED()
+	JString Connection::EVENT_CALL_MERGE_FAILED()
 	{
 		return getStaticObjectField(
 			"android.telecom.Connection",
 			"EVENT_CALL_MERGE_FAILED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Connection::EVENT_CALL_PULL_FAILED()
+	JString Connection::EVENT_CALL_PULL_FAILED()
 	{
 		return getStaticObjectField(
 			"android.telecom.Connection",
 			"EVENT_CALL_PULL_FAILED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Connection::EVENT_CALL_REMOTELY_HELD()
+	JString Connection::EVENT_CALL_REMOTELY_HELD()
 	{
 		return getStaticObjectField(
 			"android.telecom.Connection",
 			"EVENT_CALL_REMOTELY_HELD",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Connection::EVENT_CALL_REMOTELY_UNHELD()
+	JString Connection::EVENT_CALL_REMOTELY_UNHELD()
 	{
 		return getStaticObjectField(
 			"android.telecom.Connection",
 			"EVENT_CALL_REMOTELY_UNHELD",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Connection::EVENT_CALL_SWITCH_FAILED()
+	JString Connection::EVENT_CALL_SWITCH_FAILED()
 	{
 		return getStaticObjectField(
 			"android.telecom.Connection",
 			"EVENT_CALL_SWITCH_FAILED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Connection::EVENT_MERGE_COMPLETE()
+	JString Connection::EVENT_MERGE_COMPLETE()
 	{
 		return getStaticObjectField(
 			"android.telecom.Connection",
 			"EVENT_MERGE_COMPLETE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Connection::EVENT_MERGE_START()
+	JString Connection::EVENT_MERGE_START()
 	{
 		return getStaticObjectField(
 			"android.telecom.Connection",
 			"EVENT_MERGE_START",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Connection::EVENT_ON_HOLD_TONE_END()
+	JString Connection::EVENT_ON_HOLD_TONE_END()
 	{
 		return getStaticObjectField(
 			"android.telecom.Connection",
 			"EVENT_ON_HOLD_TONE_END",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Connection::EVENT_ON_HOLD_TONE_START()
+	JString Connection::EVENT_ON_HOLD_TONE_START()
 	{
 		return getStaticObjectField(
 			"android.telecom.Connection",
 			"EVENT_ON_HOLD_TONE_START",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Connection::EVENT_RTT_AUDIO_INDICATION_CHANGED()
+	JString Connection::EVENT_RTT_AUDIO_INDICATION_CHANGED()
 	{
 		return getStaticObjectField(
 			"android.telecom.Connection",
 			"EVENT_RTT_AUDIO_INDICATION_CHANGED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Connection::EXTRA_ANSWERING_DROPS_FG_CALL()
+	JString Connection::EXTRA_ANSWERING_DROPS_FG_CALL()
 	{
 		return getStaticObjectField(
 			"android.telecom.Connection",
 			"EXTRA_ANSWERING_DROPS_FG_CALL",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Connection::EXTRA_ANSWERING_DROPS_FG_CALL_APP_NAME()
+	JString Connection::EXTRA_ANSWERING_DROPS_FG_CALL_APP_NAME()
 	{
 		return getStaticObjectField(
 			"android.telecom.Connection",
 			"EXTRA_ANSWERING_DROPS_FG_CALL_APP_NAME",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Connection::EXTRA_AUDIO_CODEC()
+	JString Connection::EXTRA_AUDIO_CODEC()
 	{
 		return getStaticObjectField(
 			"android.telecom.Connection",
 			"EXTRA_AUDIO_CODEC",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Connection::EXTRA_CALL_SUBJECT()
+	JString Connection::EXTRA_CALL_SUBJECT()
 	{
 		return getStaticObjectField(
 			"android.telecom.Connection",
 			"EXTRA_CALL_SUBJECT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Connection::EXTRA_CHILD_ADDRESS()
+	JString Connection::EXTRA_CHILD_ADDRESS()
 	{
 		return getStaticObjectField(
 			"android.telecom.Connection",
 			"EXTRA_CHILD_ADDRESS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Connection::EXTRA_IS_RTT_AUDIO_PRESENT()
+	JString Connection::EXTRA_IS_RTT_AUDIO_PRESENT()
 	{
 		return getStaticObjectField(
 			"android.telecom.Connection",
 			"EXTRA_IS_RTT_AUDIO_PRESENT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Connection::EXTRA_LAST_FORWARDED_NUMBER()
+	JString Connection::EXTRA_LAST_FORWARDED_NUMBER()
 	{
 		return getStaticObjectField(
 			"android.telecom.Connection",
 			"EXTRA_LAST_FORWARDED_NUMBER",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Connection::EXTRA_SIP_INVITE()
+	JString Connection::EXTRA_SIP_INVITE()
 	{
 		return getStaticObjectField(
 			"android.telecom.Connection",
 			"EXTRA_SIP_INVITE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint Connection::PROPERTY_ASSISTED_DIALING()
 	{
@@ -603,14 +605,14 @@ namespace android::telecom
 		) {}
 	
 	// Methods
-	jstring Connection::capabilitiesToString(jint arg0)
+	JString Connection::capabilitiesToString(jint arg0)
 	{
 		return callStaticObjectMethod(
 			"android.telecom.Connection",
 			"capabilitiesToString",
 			"(I)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
 	android::telecom::Connection Connection::createCanceledConnection()
 	{
@@ -629,23 +631,23 @@ namespace android::telecom
 			arg0.object()
 		);
 	}
-	jstring Connection::propertiesToString(jint arg0)
+	JString Connection::propertiesToString(jint arg0)
 	{
 		return callStaticObjectMethod(
 			"android.telecom.Connection",
 			"propertiesToString",
 			"(I)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
-	jstring Connection::stateToString(jint arg0)
+	JString Connection::stateToString(jint arg0)
 	{
 		return callStaticObjectMethod(
 			"android.telecom.Connection",
 			"stateToString",
 			"(I)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
 	void Connection::destroy()
 	{
@@ -682,12 +684,12 @@ namespace android::telecom
 			"()Landroid/telecom/CallAudioState;"
 		);
 	}
-	jstring Connection::getCallerDisplayName()
+	JString Connection::getCallerDisplayName()
 	{
 		return callObjectMethod(
 			"getCallerDisplayName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint Connection::getCallerDisplayNamePresentation()
 	{
@@ -825,12 +827,12 @@ namespace android::telecom
 			arg0.object()
 		);
 	}
-	void Connection::onCallEvent(jstring arg0, android::os::Bundle arg1)
+	void Connection::onCallEvent(JString arg0, android::os::Bundle arg1)
 	{
 		callMethod<void>(
 			"onCallEvent",
 			"(Ljava/lang/String;Landroid/os/Bundle;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
@@ -909,12 +911,12 @@ namespace android::telecom
 			arg0
 		);
 	}
-	void Connection::onReject(jstring arg0)
+	void Connection::onReject(JString arg0)
 	{
 		callMethod<void>(
 			"onReject",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void Connection::onSeparate()
@@ -983,12 +985,12 @@ namespace android::telecom
 			arg0.object()
 		);
 	}
-	void Connection::removeExtras(jarray arg0)
+	void Connection::removeExtras(JArray arg0)
 	{
 		callMethod<void>(
 			"removeExtras",
 			"([Ljava/lang/String;)V",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
 	void Connection::removeExtras(JObject arg0)
@@ -1007,12 +1009,12 @@ namespace android::telecom
 			arg0.object()
 		);
 	}
-	void Connection::sendConnectionEvent(jstring arg0, android::os::Bundle arg1)
+	void Connection::sendConnectionEvent(JString arg0, android::os::Bundle arg1)
 	{
 		callMethod<void>(
 			"sendConnectionEvent",
 			"(Ljava/lang/String;Landroid/os/Bundle;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
@@ -1077,12 +1079,12 @@ namespace android::telecom
 			arg0
 		);
 	}
-	void Connection::setCallerDisplayName(jstring arg0, jint arg1)
+	void Connection::setCallerDisplayName(JString arg0, jint arg1)
 	{
 		callMethod<void>(
 			"setCallerDisplayName",
 			"(Ljava/lang/String;I)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
@@ -1178,12 +1180,12 @@ namespace android::telecom
 			"()V"
 		);
 	}
-	void Connection::setPostDialWait(jstring arg0)
+	void Connection::setPostDialWait(JString arg0)
 	{
 		callMethod<void>(
 			"setPostDialWait",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void Connection::setPulling()

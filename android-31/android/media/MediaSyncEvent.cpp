@@ -1,4 +1,6 @@
 #include "../os/Parcel.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./MediaSyncEvent.hpp"
 
 namespace android::media
@@ -49,12 +51,12 @@ namespace android::media
 			"()I"
 		);
 	}
-	jboolean MediaSyncEvent::equals(jobject arg0)
+	jboolean MediaSyncEvent::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint MediaSyncEvent::getAudioSessionId()
@@ -86,12 +88,12 @@ namespace android::media
 			arg0
 		);
 	}
-	jstring MediaSyncEvent::toString()
+	JString MediaSyncEvent::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void MediaSyncEvent::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

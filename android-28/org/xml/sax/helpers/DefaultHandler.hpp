@@ -2,6 +2,8 @@
 
 #include "../../../../JObject.hpp"
 
+class JCharArray;
+class JString;
 namespace org::xml::sax
 {
 	class InputSource;
@@ -26,22 +28,22 @@ namespace org::xml::sax::helpers
 		DefaultHandler();
 		
 		// Methods
-		void characters(jcharArray arg0, jint arg1, jint arg2);
+		void characters(JCharArray arg0, jint arg1, jint arg2);
 		void endDocument();
-		void endElement(jstring arg0, jstring arg1, jstring arg2);
-		void endPrefixMapping(jstring arg0);
+		void endElement(JString arg0, JString arg1, JString arg2);
+		void endPrefixMapping(JString arg0);
 		void error(org::xml::sax::SAXParseException arg0);
 		void fatalError(org::xml::sax::SAXParseException arg0);
-		void ignorableWhitespace(jcharArray arg0, jint arg1, jint arg2);
-		void notationDecl(jstring arg0, jstring arg1, jstring arg2);
-		void processingInstruction(jstring arg0, jstring arg1);
-		org::xml::sax::InputSource resolveEntity(jstring arg0, jstring arg1);
+		void ignorableWhitespace(JCharArray arg0, jint arg1, jint arg2);
+		void notationDecl(JString arg0, JString arg1, JString arg2);
+		void processingInstruction(JString arg0, JString arg1);
+		org::xml::sax::InputSource resolveEntity(JString arg0, JString arg1);
 		void setDocumentLocator(JObject arg0);
-		void skippedEntity(jstring arg0);
+		void skippedEntity(JString arg0);
 		void startDocument();
-		void startElement(jstring arg0, jstring arg1, jstring arg2, JObject arg3);
-		void startPrefixMapping(jstring arg0, jstring arg1);
-		void unparsedEntityDecl(jstring arg0, jstring arg1, jstring arg2, jstring arg3);
+		void startElement(JString arg0, JString arg1, JString arg2, JObject arg3);
+		void startPrefixMapping(JString arg0, JString arg1);
+		void unparsedEntityDecl(JString arg0, JString arg1, JString arg2, JString arg3);
 		void warning(org::xml::sax::SAXParseException arg0);
 	};
 } // namespace org::xml::sax::helpers

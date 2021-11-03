@@ -1,3 +1,4 @@
+#include "../../../JIntArray.hpp"
 #include "../../content/res/ColorStateList.hpp"
 #include "../../content/res/Resources.hpp"
 #include "../../content/res/Resources_Theme.hpp"
@@ -13,6 +14,7 @@
 #include "./Drawable_ConstantState.hpp"
 #include "../../util/DisplayMetrics.hpp"
 #include "../../../java/io/InputStream.hpp"
+#include "../../../JString.hpp"
 #include "./BitmapDrawable.hpp"
 
 namespace android::graphics::drawable
@@ -46,11 +48,11 @@ namespace android::graphics::drawable
 			"(Ljava/io/InputStream;)V",
 			arg0.object()
 		) {}
-	BitmapDrawable::BitmapDrawable(jstring arg0)
+	BitmapDrawable::BitmapDrawable(JString arg0)
 		: android::graphics::drawable::Drawable(
 			"android.graphics.drawable.BitmapDrawable",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	BitmapDrawable::BitmapDrawable(android::content::res::Resources arg0, android::graphics::Bitmap arg1)
 		: android::graphics::drawable::Drawable(
@@ -66,12 +68,12 @@ namespace android::graphics::drawable
 			arg0.object(),
 			arg1.object()
 		) {}
-	BitmapDrawable::BitmapDrawable(android::content::res::Resources arg0, jstring arg1)
+	BitmapDrawable::BitmapDrawable(android::content::res::Resources arg0, JString arg1)
 		: android::graphics::drawable::Drawable(
 			"android.graphics.drawable.BitmapDrawable",
 			"(Landroid/content/res/Resources;Ljava/lang/String;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		) {}
 	
 	// Methods

@@ -2,6 +2,9 @@
 
 #include "../../JObject.hpp"
 
+class JCharArray;
+class JString;
+class JString;
 
 namespace android::text
 {
@@ -17,12 +20,12 @@ namespace android::text
 		// Constructors
 		
 		// Methods
-		static android::text::AlteredCharSequence make(jstring arg0, jcharArray arg1, jint arg2, jint arg3);
+		static android::text::AlteredCharSequence make(JString arg0, JCharArray arg1, jint arg2, jint arg3);
 		jchar charAt(jint arg0);
-		void getChars(jint arg0, jint arg1, jcharArray arg2, jint arg3);
+		void getChars(jint arg0, jint arg1, JCharArray arg2, jint arg3);
 		jint length();
-		jstring subSequence(jint arg0, jint arg1);
-		jstring toString();
+		JString subSequence(jint arg0, jint arg1);
+		JString toString();
 	};
 } // namespace android::text
 

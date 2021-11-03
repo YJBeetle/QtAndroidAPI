@@ -10,6 +10,7 @@ namespace android::hardware::biometrics
 {
 	class BiometricPrompt;
 }
+class JString;
 
 namespace android::hardware::biometrics
 {
@@ -29,11 +30,11 @@ namespace android::hardware::biometrics
 		android::hardware::biometrics::BiometricPrompt build();
 		android::hardware::biometrics::BiometricPrompt_Builder setAllowedAuthenticators(jint arg0);
 		android::hardware::biometrics::BiometricPrompt_Builder setConfirmationRequired(jboolean arg0);
-		android::hardware::biometrics::BiometricPrompt_Builder setDescription(jstring arg0);
+		android::hardware::biometrics::BiometricPrompt_Builder setDescription(JString arg0);
 		android::hardware::biometrics::BiometricPrompt_Builder setDeviceCredentialAllowed(jboolean arg0);
-		android::hardware::biometrics::BiometricPrompt_Builder setNegativeButton(jstring arg0, JObject arg1, JObject arg2);
-		android::hardware::biometrics::BiometricPrompt_Builder setSubtitle(jstring arg0);
-		android::hardware::biometrics::BiometricPrompt_Builder setTitle(jstring arg0);
+		android::hardware::biometrics::BiometricPrompt_Builder setNegativeButton(JString arg0, JObject arg1, JObject arg2);
+		android::hardware::biometrics::BiometricPrompt_Builder setSubtitle(JString arg0);
+		android::hardware::biometrics::BiometricPrompt_Builder setTitle(JString arg0);
 	};
 } // namespace android::hardware::biometrics
 

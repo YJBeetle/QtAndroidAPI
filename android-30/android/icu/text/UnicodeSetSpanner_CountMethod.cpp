@@ -1,3 +1,5 @@
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
 #include "./UnicodeSetSpanner_CountMethod.hpp"
 
 namespace android::icu::text
@@ -26,22 +28,22 @@ namespace android::icu::text
 	// Constructors
 	
 	// Methods
-	android::icu::text::UnicodeSetSpanner_CountMethod UnicodeSetSpanner_CountMethod::valueOf(jstring arg0)
+	android::icu::text::UnicodeSetSpanner_CountMethod UnicodeSetSpanner_CountMethod::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.icu.text.UnicodeSetSpanner$CountMethod",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/icu/text/UnicodeSetSpanner$CountMethod;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray UnicodeSetSpanner_CountMethod::values()
+	JArray UnicodeSetSpanner_CountMethod::values()
 	{
 		return callStaticObjectMethod(
 			"android.icu.text.UnicodeSetSpanner$CountMethod",
 			"values",
 			"()[Landroid/icu/text/UnicodeSetSpanner$CountMethod;"
-		).object<jarray>();
+		);
 	}
 } // namespace android::icu::text
 

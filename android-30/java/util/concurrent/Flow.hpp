@@ -2,7 +2,6 @@
 
 #include "../../../JObject.hpp"
 
-
 namespace java::util::concurrent
 {
 	class Flow : public JObject

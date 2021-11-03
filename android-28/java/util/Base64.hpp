@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JByteArray;
 namespace java::util
 {
 	class Base64_Decoder;
@@ -29,7 +30,7 @@ namespace java::util
 		static java::util::Base64_Encoder getEncoder();
 		static java::util::Base64_Decoder getMimeDecoder();
 		static java::util::Base64_Encoder getMimeEncoder();
-		static java::util::Base64_Encoder getMimeEncoder(jint arg0, jbyteArray arg1);
+		static java::util::Base64_Encoder getMimeEncoder(jint arg0, JByteArray arg1);
 		static java::util::Base64_Decoder getUrlDecoder();
 		static java::util::Base64_Encoder getUrlEncoder();
 	};

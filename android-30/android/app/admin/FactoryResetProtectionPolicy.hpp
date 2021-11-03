@@ -6,6 +6,7 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
 
 namespace android::app::admin
 {
@@ -25,7 +26,7 @@ namespace android::app::admin
 		jint describeContents();
 		JObject getFactoryResetProtectionAccounts();
 		jboolean isFactoryResetProtectionEnabled();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::app::admin

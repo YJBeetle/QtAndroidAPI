@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JObject;
 
 namespace android::icu::util
 {
@@ -10,7 +11,7 @@ namespace android::icu::util
 	public:
 		// Fields
 		jint integer();
-		jobject value();
+		JObject value();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ValueIterator_Element(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}

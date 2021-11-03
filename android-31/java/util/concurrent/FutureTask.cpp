@@ -1,4 +1,7 @@
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "../../lang/Thread.hpp"
+#include "../../../JThrowable.hpp"
 #include "./TimeUnit.hpp"
 #include "./FutureTask.hpp"
 
@@ -16,12 +19,12 @@ namespace java::util::concurrent
 			"(Ljava/util/concurrent/Callable;)V",
 			arg0.object()
 		) {}
-	FutureTask::FutureTask(JObject arg0, jobject arg1)
+	FutureTask::FutureTask(JObject arg0, JObject arg1)
 		: JObject(
 			"java.util.concurrent.FutureTask",
 			"(Ljava/lang/Runnable;Ljava/lang/Object;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jobject>()
 		) {}
 	
 	// Methods
@@ -33,21 +36,21 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	jobject FutureTask::get()
+	JObject FutureTask::get()
 	{
 		return callObjectMethod(
 			"get",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
-	jobject FutureTask::get(jlong arg0, java::util::concurrent::TimeUnit arg1)
+	JObject FutureTask::get(jlong arg0, java::util::concurrent::TimeUnit arg1)
 	{
 		return callObjectMethod(
 			"get",
 			"(JLjava/util/concurrent/TimeUnit;)Ljava/lang/Object;",
 			arg0,
 			arg1.object()
-		).object<jobject>();
+		);
 	}
 	jboolean FutureTask::isCancelled()
 	{
@@ -70,12 +73,12 @@ namespace java::util::concurrent
 			"()V"
 		);
 	}
-	jstring FutureTask::toString()
+	JString FutureTask::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::util::concurrent
 

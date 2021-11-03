@@ -1,4 +1,5 @@
 #include "./FillResponse.hpp"
+#include "../../../JString.hpp"
 #include "./FillCallback.hpp"
 
 namespace android::service::autofill
@@ -11,12 +12,12 @@ namespace android::service::autofill
 	// Constructors
 	
 	// Methods
-	void FillCallback::onFailure(jstring arg0)
+	void FillCallback::onFailure(JString arg0)
 	{
 		callMethod<void>(
 			"onFailure",
 			"(Ljava/lang/CharSequence;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void FillCallback::onSuccess(android::service::autofill::FillResponse arg0)

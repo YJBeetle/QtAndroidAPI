@@ -2,6 +2,8 @@
 
 #include "../../../JObject.hpp"
 
+class JByteArray;
+class JString;
 
 namespace android::security::keystore
 {
@@ -15,13 +17,13 @@ namespace android::security::keystore
 		WrappedKeyEntry(QAndroidJniObject obj);
 		
 		// Constructors
-		WrappedKeyEntry(jbyteArray arg0, jstring arg1, jstring arg2, JObject arg3);
+		WrappedKeyEntry(JByteArray arg0, JString arg1, JString arg2, JObject arg3);
 		
 		// Methods
 		JObject getAlgorithmParameterSpec();
-		jstring getTransformation();
-		jbyteArray getWrappedKeyBytes();
-		jstring getWrappingKeyAlias();
+		JString getTransformation();
+		JByteArray getWrappedKeyBytes();
+		JString getWrappingKeyAlias();
 	};
 } // namespace android::security::keystore
 

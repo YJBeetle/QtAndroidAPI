@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./IllegalBlockSizeException.hpp"
 
 namespace javax::crypto
@@ -13,11 +14,11 @@ namespace javax::crypto
 			"javax.crypto.IllegalBlockSizeException",
 			"()V"
 		) {}
-	IllegalBlockSizeException::IllegalBlockSizeException(jstring arg0)
+	IllegalBlockSizeException::IllegalBlockSizeException(JString arg0)
 		: java::security::GeneralSecurityException(
 			"javax.crypto.IllegalBlockSizeException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

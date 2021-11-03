@@ -1,5 +1,7 @@
 #include "./session/MediaSessionManager_RemoteUserInfo.hpp"
 #include "../os/Bundle.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./MediaSession2_ControllerInfo.hpp"
 
 namespace android::media
@@ -12,12 +14,12 @@ namespace android::media
 	// Constructors
 	
 	// Methods
-	jboolean MediaSession2_ControllerInfo::equals(jobject arg0)
+	jboolean MediaSession2_ControllerInfo::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	android::os::Bundle MediaSession2_ControllerInfo::getConnectionHints()
@@ -27,12 +29,12 @@ namespace android::media
 			"()Landroid/os/Bundle;"
 		);
 	}
-	jstring MediaSession2_ControllerInfo::getPackageName()
+	JString MediaSession2_ControllerInfo::getPackageName()
 	{
 		return callObjectMethod(
 			"getPackageName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::media::session::MediaSessionManager_RemoteUserInfo MediaSession2_ControllerInfo::getRemoteUserInfo()
 	{
@@ -55,12 +57,12 @@ namespace android::media
 			"()I"
 		);
 	}
-	jstring MediaSession2_ControllerInfo::toString()
+	JString MediaSession2_ControllerInfo::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::media
 

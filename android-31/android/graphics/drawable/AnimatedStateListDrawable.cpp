@@ -1,3 +1,4 @@
+#include "../../../JIntArray.hpp"
 #include "../../content/res/Resources.hpp"
 #include "../../content/res/Resources_Theme.hpp"
 #include "./Drawable.hpp"
@@ -19,12 +20,12 @@ namespace android::graphics::drawable
 		) {}
 	
 	// Methods
-	void AnimatedStateListDrawable::addState(jintArray arg0, android::graphics::drawable::Drawable arg1, jint arg2)
+	void AnimatedStateListDrawable::addState(JIntArray arg0, android::graphics::drawable::Drawable arg1, jint arg2)
 	{
 		callMethod<void>(
 			"addState",
 			"([ILandroid/graphics/drawable/Drawable;I)V",
-			arg0,
+			arg0.object<jintArray>(),
 			arg1.object(),
 			arg2
 		);

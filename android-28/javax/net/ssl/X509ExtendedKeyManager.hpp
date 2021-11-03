@@ -2,6 +2,9 @@
 
 #include "../../../JObject.hpp"
 
+class JArray;
+class JArray;
+class JString;
 namespace javax::net::ssl
 {
 	class SSLEngine;
@@ -21,8 +24,8 @@ namespace javax::net::ssl
 		// Constructors
 		
 		// Methods
-		jstring chooseEngineClientAlias(jarray arg0, jarray arg1, javax::net::ssl::SSLEngine arg2);
-		jstring chooseEngineServerAlias(jstring arg0, jarray arg1, javax::net::ssl::SSLEngine arg2);
+		JString chooseEngineClientAlias(JArray arg0, JArray arg1, javax::net::ssl::SSLEngine arg2);
+		JString chooseEngineServerAlias(JString arg0, JArray arg1, javax::net::ssl::SSLEngine arg2);
 	};
 } // namespace javax::net::ssl
 

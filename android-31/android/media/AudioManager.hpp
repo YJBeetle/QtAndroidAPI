@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JArray;
 namespace android::app
 {
 	class PendingIntent;
@@ -54,6 +55,7 @@ namespace android::view
 {
 	class KeyEvent;
 }
+class JString;
 
 namespace android::media
 {
@@ -61,13 +63,13 @@ namespace android::media
 	{
 	public:
 		// Fields
-		static jstring ACTION_AUDIO_BECOMING_NOISY();
-		static jstring ACTION_HDMI_AUDIO_PLUG();
-		static jstring ACTION_HEADSET_PLUG();
-		static jstring ACTION_MICROPHONE_MUTE_CHANGED();
-		static jstring ACTION_SCO_AUDIO_STATE_CHANGED();
-		static jstring ACTION_SCO_AUDIO_STATE_UPDATED();
-		static jstring ACTION_SPEAKERPHONE_STATE_CHANGED();
+		static JString ACTION_AUDIO_BECOMING_NOISY();
+		static JString ACTION_HDMI_AUDIO_PLUG();
+		static JString ACTION_HEADSET_PLUG();
+		static JString ACTION_MICROPHONE_MUTE_CHANGED();
+		static JString ACTION_SCO_AUDIO_STATE_CHANGED();
+		static JString ACTION_SCO_AUDIO_STATE_UPDATED();
+		static JString ACTION_SPEAKERPHONE_STATE_CHANGED();
 		static jint ADJUST_LOWER();
 		static jint ADJUST_MUTE();
 		static jint ADJUST_RAISE();
@@ -93,14 +95,14 @@ namespace android::media
 		static jint ENCODED_SURROUND_OUTPUT_UNKNOWN();
 		static jint ERROR();
 		static jint ERROR_DEAD_OBJECT();
-		static jstring EXTRA_AUDIO_PLUG_STATE();
-		static jstring EXTRA_ENCODINGS();
-		static jstring EXTRA_MAX_CHANNEL_COUNT();
-		static jstring EXTRA_RINGER_MODE();
-		static jstring EXTRA_SCO_AUDIO_PREVIOUS_STATE();
-		static jstring EXTRA_SCO_AUDIO_STATE();
-		static jstring EXTRA_VIBRATE_SETTING();
-		static jstring EXTRA_VIBRATE_TYPE();
+		static JString EXTRA_AUDIO_PLUG_STATE();
+		static JString EXTRA_ENCODINGS();
+		static JString EXTRA_MAX_CHANNEL_COUNT();
+		static JString EXTRA_RINGER_MODE();
+		static JString EXTRA_SCO_AUDIO_PREVIOUS_STATE();
+		static JString EXTRA_SCO_AUDIO_STATE();
+		static JString EXTRA_VIBRATE_SETTING();
+		static JString EXTRA_VIBRATE_TYPE();
 		static jint FLAG_ALLOW_RINGER_MODES();
 		static jint FLAG_PLAY_SOUND();
 		static jint FLAG_REMOVE_SOUND_AND_VIBRATE();
@@ -131,12 +133,12 @@ namespace android::media
 		static jint PLAYBACK_OFFLOAD_GAPLESS_SUPPORTED();
 		static jint PLAYBACK_OFFLOAD_NOT_SUPPORTED();
 		static jint PLAYBACK_OFFLOAD_SUPPORTED();
-		static jstring PROPERTY_OUTPUT_FRAMES_PER_BUFFER();
-		static jstring PROPERTY_OUTPUT_SAMPLE_RATE();
-		static jstring PROPERTY_SUPPORT_AUDIO_SOURCE_UNPROCESSED();
-		static jstring PROPERTY_SUPPORT_MIC_NEAR_ULTRASOUND();
-		static jstring PROPERTY_SUPPORT_SPEAKER_NEAR_ULTRASOUND();
-		static jstring RINGER_MODE_CHANGED_ACTION();
+		static JString PROPERTY_OUTPUT_FRAMES_PER_BUFFER();
+		static JString PROPERTY_OUTPUT_SAMPLE_RATE();
+		static JString PROPERTY_SUPPORT_AUDIO_SOURCE_UNPROCESSED();
+		static JString PROPERTY_SUPPORT_MIC_NEAR_ULTRASOUND();
+		static JString PROPERTY_SUPPORT_SPEAKER_NEAR_ULTRASOUND();
+		static JString RINGER_MODE_CHANGED_ACTION();
 		static jint RINGER_MODE_NORMAL();
 		static jint RINGER_MODE_SILENT();
 		static jint RINGER_MODE_VIBRATE();
@@ -160,7 +162,7 @@ namespace android::media
 		static jint STREAM_SYSTEM();
 		static jint STREAM_VOICE_CALL();
 		static jint USE_DEFAULT_STREAM_TYPE();
-		static jstring VIBRATE_SETTING_CHANGED_ACTION();
+		static JString VIBRATE_SETTING_CHANGED_ACTION();
 		static jint VIBRATE_SETTING_OFF();
 		static jint VIBRATE_SETTING_ON();
 		static jint VIBRATE_SETTING_ONLY_SILENT();
@@ -193,12 +195,12 @@ namespace android::media
 		jint getAudioHwSyncForSession(jint arg0);
 		JObject getAvailableCommunicationDevices();
 		android::media::AudioDeviceInfo getCommunicationDevice();
-		jarray getDevices(jint arg0);
+		JArray getDevices(jint arg0);
 		jint getEncodedSurroundMode();
 		JObject getMicrophones();
 		jint getMode();
-		jstring getParameters(jstring arg0);
-		jstring getProperty(jstring arg0);
+		JString getParameters(JString arg0);
+		JString getProperty(JString arg0);
 		jint getRingerMode();
 		jint getRouting(jint arg0);
 		jint getStreamMaxVolume(jint arg0);
@@ -238,7 +240,7 @@ namespace android::media
 		jboolean setEncodedSurroundMode(jint arg0);
 		void setMicrophoneMute(jboolean arg0);
 		void setMode(jint arg0);
-		void setParameters(jstring arg0);
+		void setParameters(JString arg0);
 		void setRingerMode(jint arg0);
 		void setRouting(jint arg0, jint arg1, jint arg2);
 		void setSpeakerphoneOn(jboolean arg0);

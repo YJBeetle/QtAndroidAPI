@@ -1,5 +1,7 @@
 #include "../os/Parcel.hpp"
 #include "./CellIdentity.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./NetworkRegistrationInfo.hpp"
 
 namespace android::telephony
@@ -125,12 +127,12 @@ namespace android::telephony
 			"()I"
 		);
 	}
-	jboolean NetworkRegistrationInfo::equals(jobject arg0)
+	jboolean NetworkRegistrationInfo::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint NetworkRegistrationInfo::getAccessNetworkTechnology()
@@ -161,12 +163,12 @@ namespace android::telephony
 			"()I"
 		);
 	}
-	jstring NetworkRegistrationInfo::getRegisteredPlmn()
+	JString NetworkRegistrationInfo::getRegisteredPlmn()
 	{
 		return callObjectMethod(
 			"getRegisteredPlmn",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint NetworkRegistrationInfo::getTransportType()
 	{
@@ -203,12 +205,12 @@ namespace android::telephony
 			"()Z"
 		);
 	}
-	jstring NetworkRegistrationInfo::toString()
+	JString NetworkRegistrationInfo::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void NetworkRegistrationInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

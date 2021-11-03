@@ -1,3 +1,5 @@
+#include "../../JCharArray.hpp"
+#include "../../JString.hpp"
 #include "../time/Instant.hpp"
 #include "../time/LocalDate.hpp"
 #include "./Date.hpp"
@@ -26,13 +28,13 @@ namespace java::sql
 		) {}
 	
 	// Methods
-	java::sql::Date Date::valueOf(jstring arg0)
+	java::sql::Date Date::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"java.sql.Date",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/sql/Date;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	java::sql::Date Date::valueOf(java::time::LocalDate arg0)
@@ -111,12 +113,12 @@ namespace java::sql
 			"()Ljava/time/LocalDate;"
 		);
 	}
-	jstring Date::toString()
+	JString Date::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::sql
 

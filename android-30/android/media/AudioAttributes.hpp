@@ -6,6 +6,8 @@ namespace android::os
 {
 	class Parcel;
 }
+class JObject;
+class JString;
 
 namespace android::media
 {
@@ -51,14 +53,14 @@ namespace android::media
 		// Methods
 		jboolean areHapticChannelsMuted();
 		jint describeContents();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint getAllowedCapturePolicy();
 		jint getContentType();
 		jint getFlags();
 		jint getUsage();
 		jint getVolumeControlStream();
 		jint hashCode();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::media

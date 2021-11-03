@@ -1,7 +1,11 @@
+#include "../../JIntArray.hpp"
+#include "../../JArray.hpp"
 #include "./EGLConfig.hpp"
 #include "./EGLContext.hpp"
 #include "./EGLDisplay.hpp"
 #include "./EGLSurface.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./EGL14.hpp"
 
 namespace android::opengl
@@ -840,19 +844,19 @@ namespace android::opengl
 			arg2
 		);
 	}
-	jboolean EGL14::eglChooseConfig(android::opengl::EGLDisplay arg0, jintArray arg1, jint arg2, jarray arg3, jint arg4, jint arg5, jintArray arg6, jint arg7)
+	jboolean EGL14::eglChooseConfig(android::opengl::EGLDisplay arg0, JIntArray arg1, jint arg2, JArray arg3, jint arg4, jint arg5, JIntArray arg6, jint arg7)
 	{
 		return callStaticMethod<jboolean>(
 			"android.opengl.EGL14",
 			"eglChooseConfig",
 			"(Landroid/opengl/EGLDisplay;[II[Landroid/opengl/EGLConfig;II[II)Z",
 			arg0.object(),
-			arg1,
+			arg1.object<jintArray>(),
 			arg2,
-			arg3,
+			arg3.object<jarray>(),
 			arg4,
 			arg5,
-			arg6,
+			arg6.object<jintArray>(),
 			arg7
 		);
 	}
@@ -867,7 +871,7 @@ namespace android::opengl
 			arg2
 		);
 	}
-	android::opengl::EGLContext EGL14::eglCreateContext(android::opengl::EGLDisplay arg0, android::opengl::EGLConfig arg1, android::opengl::EGLContext arg2, jintArray arg3, jint arg4)
+	android::opengl::EGLContext EGL14::eglCreateContext(android::opengl::EGLDisplay arg0, android::opengl::EGLConfig arg1, android::opengl::EGLContext arg2, JIntArray arg3, jint arg4)
 	{
 		return callStaticObjectMethod(
 			"android.opengl.EGL14",
@@ -876,11 +880,11 @@ namespace android::opengl
 			arg0.object(),
 			arg1.object(),
 			arg2.object(),
-			arg3,
+			arg3.object<jintArray>(),
 			arg4
 		);
 	}
-	android::opengl::EGLSurface EGL14::eglCreatePbufferFromClientBuffer(android::opengl::EGLDisplay arg0, jint arg1, jint arg2, android::opengl::EGLConfig arg3, jintArray arg4, jint arg5)
+	android::opengl::EGLSurface EGL14::eglCreatePbufferFromClientBuffer(android::opengl::EGLDisplay arg0, jint arg1, jint arg2, android::opengl::EGLConfig arg3, JIntArray arg4, jint arg5)
 	{
 		return callStaticObjectMethod(
 			"android.opengl.EGL14",
@@ -890,11 +894,11 @@ namespace android::opengl
 			arg1,
 			arg2,
 			arg3.object(),
-			arg4,
+			arg4.object<jintArray>(),
 			arg5
 		);
 	}
-	android::opengl::EGLSurface EGL14::eglCreatePbufferSurface(android::opengl::EGLDisplay arg0, android::opengl::EGLConfig arg1, jintArray arg2, jint arg3)
+	android::opengl::EGLSurface EGL14::eglCreatePbufferSurface(android::opengl::EGLDisplay arg0, android::opengl::EGLConfig arg1, JIntArray arg2, jint arg3)
 	{
 		return callStaticObjectMethod(
 			"android.opengl.EGL14",
@@ -902,11 +906,11 @@ namespace android::opengl
 			"(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLConfig;[II)Landroid/opengl/EGLSurface;",
 			arg0.object(),
 			arg1.object(),
-			arg2,
+			arg2.object<jintArray>(),
 			arg3
 		);
 	}
-	android::opengl::EGLSurface EGL14::eglCreatePixmapSurface(android::opengl::EGLDisplay arg0, android::opengl::EGLConfig arg1, jint arg2, jintArray arg3, jint arg4)
+	android::opengl::EGLSurface EGL14::eglCreatePixmapSurface(android::opengl::EGLDisplay arg0, android::opengl::EGLConfig arg1, jint arg2, JIntArray arg3, jint arg4)
 	{
 		return callStaticObjectMethod(
 			"android.opengl.EGL14",
@@ -915,11 +919,11 @@ namespace android::opengl
 			arg0.object(),
 			arg1.object(),
 			arg2,
-			arg3,
+			arg3.object<jintArray>(),
 			arg4
 		);
 	}
-	android::opengl::EGLSurface EGL14::eglCreateWindowSurface(android::opengl::EGLDisplay arg0, android::opengl::EGLConfig arg1, jobject arg2, jintArray arg3, jint arg4)
+	android::opengl::EGLSurface EGL14::eglCreateWindowSurface(android::opengl::EGLDisplay arg0, android::opengl::EGLConfig arg1, JObject arg2, JIntArray arg3, jint arg4)
 	{
 		return callStaticObjectMethod(
 			"android.opengl.EGL14",
@@ -927,8 +931,8 @@ namespace android::opengl
 			"(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLConfig;Ljava/lang/Object;[II)Landroid/opengl/EGLSurface;",
 			arg0.object(),
 			arg1.object(),
-			arg2,
-			arg3,
+			arg2.object<jobject>(),
+			arg3.object<jintArray>(),
 			arg4
 		);
 	}
@@ -952,7 +956,7 @@ namespace android::opengl
 			arg1.object()
 		);
 	}
-	jboolean EGL14::eglGetConfigAttrib(android::opengl::EGLDisplay arg0, android::opengl::EGLConfig arg1, jint arg2, jintArray arg3, jint arg4)
+	jboolean EGL14::eglGetConfigAttrib(android::opengl::EGLDisplay arg0, android::opengl::EGLConfig arg1, jint arg2, JIntArray arg3, jint arg4)
 	{
 		return callStaticMethod<jboolean>(
 			"android.opengl.EGL14",
@@ -961,21 +965,21 @@ namespace android::opengl
 			arg0.object(),
 			arg1.object(),
 			arg2,
-			arg3,
+			arg3.object<jintArray>(),
 			arg4
 		);
 	}
-	jboolean EGL14::eglGetConfigs(android::opengl::EGLDisplay arg0, jarray arg1, jint arg2, jint arg3, jintArray arg4, jint arg5)
+	jboolean EGL14::eglGetConfigs(android::opengl::EGLDisplay arg0, JArray arg1, jint arg2, jint arg3, JIntArray arg4, jint arg5)
 	{
 		return callStaticMethod<jboolean>(
 			"android.opengl.EGL14",
 			"eglGetConfigs",
 			"(Landroid/opengl/EGLDisplay;[Landroid/opengl/EGLConfig;II[II)Z",
 			arg0.object(),
-			arg1,
+			arg1.object<jarray>(),
 			arg2,
 			arg3,
-			arg4,
+			arg4.object<jintArray>(),
 			arg5
 		);
 	}
@@ -1021,16 +1025,16 @@ namespace android::opengl
 			"()I"
 		);
 	}
-	jboolean EGL14::eglInitialize(android::opengl::EGLDisplay arg0, jintArray arg1, jint arg2, jintArray arg3, jint arg4)
+	jboolean EGL14::eglInitialize(android::opengl::EGLDisplay arg0, JIntArray arg1, jint arg2, JIntArray arg3, jint arg4)
 	{
 		return callStaticMethod<jboolean>(
 			"android.opengl.EGL14",
 			"eglInitialize",
 			"(Landroid/opengl/EGLDisplay;[II[II)Z",
 			arg0.object(),
-			arg1,
+			arg1.object<jintArray>(),
 			arg2,
-			arg3,
+			arg3.object<jintArray>(),
 			arg4
 		);
 	}
@@ -1054,7 +1058,7 @@ namespace android::opengl
 			"()I"
 		);
 	}
-	jboolean EGL14::eglQueryContext(android::opengl::EGLDisplay arg0, android::opengl::EGLContext arg1, jint arg2, jintArray arg3, jint arg4)
+	jboolean EGL14::eglQueryContext(android::opengl::EGLDisplay arg0, android::opengl::EGLContext arg1, jint arg2, JIntArray arg3, jint arg4)
 	{
 		return callStaticMethod<jboolean>(
 			"android.opengl.EGL14",
@@ -1063,11 +1067,11 @@ namespace android::opengl
 			arg0.object(),
 			arg1.object(),
 			arg2,
-			arg3,
+			arg3.object<jintArray>(),
 			arg4
 		);
 	}
-	jstring EGL14::eglQueryString(android::opengl::EGLDisplay arg0, jint arg1)
+	JString EGL14::eglQueryString(android::opengl::EGLDisplay arg0, jint arg1)
 	{
 		return callStaticObjectMethod(
 			"android.opengl.EGL14",
@@ -1075,9 +1079,9 @@ namespace android::opengl
 			"(Landroid/opengl/EGLDisplay;I)Ljava/lang/String;",
 			arg0.object(),
 			arg1
-		).object<jstring>();
+		);
 	}
-	jboolean EGL14::eglQuerySurface(android::opengl::EGLDisplay arg0, android::opengl::EGLSurface arg1, jint arg2, jintArray arg3, jint arg4)
+	jboolean EGL14::eglQuerySurface(android::opengl::EGLDisplay arg0, android::opengl::EGLSurface arg1, jint arg2, JIntArray arg3, jint arg4)
 	{
 		return callStaticMethod<jboolean>(
 			"android.opengl.EGL14",
@@ -1086,7 +1090,7 @@ namespace android::opengl
 			arg0.object(),
 			arg1.object(),
 			arg2,
-			arg3,
+			arg3.object<jintArray>(),
 			arg4
 		);
 	}

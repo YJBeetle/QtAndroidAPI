@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JString;
 
 namespace java::lang::reflect
 {
@@ -47,7 +48,7 @@ namespace java::lang::reflect
 		static jboolean isVolatile(jint arg0);
 		static jint methodModifiers();
 		static jint parameterModifiers();
-		static jstring toString(jint arg0);
+		static JString toString(jint arg0);
 	};
 } // namespace java::lang::reflect
 

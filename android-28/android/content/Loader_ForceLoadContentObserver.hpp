@@ -1,6 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "../database/ContentObserver.hpp"
 
 namespace android::content

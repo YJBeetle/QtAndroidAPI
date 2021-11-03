@@ -1,3 +1,5 @@
+#include "../../JString.hpp"
+#include "../../JThrowable.hpp"
 #include "./SQLNonTransientConnectionException.hpp"
 
 namespace java::sql
@@ -13,56 +15,56 @@ namespace java::sql
 			"java.sql.SQLNonTransientConnectionException",
 			"()V"
 		) {}
-	SQLNonTransientConnectionException::SQLNonTransientConnectionException(jstring arg0)
+	SQLNonTransientConnectionException::SQLNonTransientConnectionException(JString arg0)
 		: java::sql::SQLNonTransientException(
 			"java.sql.SQLNonTransientConnectionException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	SQLNonTransientConnectionException::SQLNonTransientConnectionException(jthrowable arg0)
+	SQLNonTransientConnectionException::SQLNonTransientConnectionException(JThrowable arg0)
 		: java::sql::SQLNonTransientException(
 			"java.sql.SQLNonTransientConnectionException",
 			"(Ljava/lang/Throwable;)V",
-			arg0
+			arg0.object<jthrowable>()
 		) {}
-	SQLNonTransientConnectionException::SQLNonTransientConnectionException(jstring arg0, jstring arg1)
+	SQLNonTransientConnectionException::SQLNonTransientConnectionException(JString arg0, JString arg1)
 		: java::sql::SQLNonTransientException(
 			"java.sql.SQLNonTransientConnectionException",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		) {}
-	SQLNonTransientConnectionException::SQLNonTransientConnectionException(jstring arg0, jthrowable arg1)
+	SQLNonTransientConnectionException::SQLNonTransientConnectionException(JString arg0, JThrowable arg1)
 		: java::sql::SQLNonTransientException(
 			"java.sql.SQLNonTransientConnectionException",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
 		) {}
-	SQLNonTransientConnectionException::SQLNonTransientConnectionException(jstring arg0, jstring arg1, jint arg2)
+	SQLNonTransientConnectionException::SQLNonTransientConnectionException(JString arg0, JString arg1, jint arg2)
 		: java::sql::SQLNonTransientException(
 			"java.sql.SQLNonTransientConnectionException",
 			"(Ljava/lang/String;Ljava/lang/String;I)V",
-			arg0,
-			arg1,
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
 			arg2
 		) {}
-	SQLNonTransientConnectionException::SQLNonTransientConnectionException(jstring arg0, jstring arg1, jthrowable arg2)
+	SQLNonTransientConnectionException::SQLNonTransientConnectionException(JString arg0, JString arg1, JThrowable arg2)
 		: java::sql::SQLNonTransientException(
 			"java.sql.SQLNonTransientConnectionException",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V",
-			arg0,
-			arg1,
-			arg2
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2.object<jthrowable>()
 		) {}
-	SQLNonTransientConnectionException::SQLNonTransientConnectionException(jstring arg0, jstring arg1, jint arg2, jthrowable arg3)
+	SQLNonTransientConnectionException::SQLNonTransientConnectionException(JString arg0, JString arg1, jint arg2, JThrowable arg3)
 		: java::sql::SQLNonTransientException(
 			"java.sql.SQLNonTransientConnectionException",
 			"(Ljava/lang/String;Ljava/lang/String;ILjava/lang/Throwable;)V",
-			arg0,
-			arg1,
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
 			arg2,
-			arg3
+			arg3.object<jthrowable>()
 		) {}
 	
 	// Methods

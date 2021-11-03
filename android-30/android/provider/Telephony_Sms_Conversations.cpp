@@ -1,4 +1,5 @@
 #include "../net/Uri.hpp"
+#include "../../JString.hpp"
 #include "./Telephony_Sms_Conversations.hpp"
 
 namespace android::provider
@@ -12,29 +13,29 @@ namespace android::provider
 			"Landroid/net/Uri;"
 		);
 	}
-	jstring Telephony_Sms_Conversations::DEFAULT_SORT_ORDER()
+	JString Telephony_Sms_Conversations::DEFAULT_SORT_ORDER()
 	{
 		return getStaticObjectField(
 			"android.provider.Telephony$Sms$Conversations",
 			"DEFAULT_SORT_ORDER",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Telephony_Sms_Conversations::MESSAGE_COUNT()
+	JString Telephony_Sms_Conversations::MESSAGE_COUNT()
 	{
 		return getStaticObjectField(
 			"android.provider.Telephony$Sms$Conversations",
 			"MESSAGE_COUNT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Telephony_Sms_Conversations::SNIPPET()
+	JString Telephony_Sms_Conversations::SNIPPET()
 	{
 		return getStaticObjectField(
 			"android.provider.Telephony$Sms$Conversations",
 			"SNIPPET",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QAndroidJniObject forward

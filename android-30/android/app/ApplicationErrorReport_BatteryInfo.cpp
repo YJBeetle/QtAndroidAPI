@@ -1,15 +1,16 @@
 #include "../os/Parcel.hpp"
+#include "../../JString.hpp"
 #include "./ApplicationErrorReport_BatteryInfo.hpp"
 
 namespace android::app
 {
 	// Fields
-	jstring ApplicationErrorReport_BatteryInfo::checkinDetails()
+	JString ApplicationErrorReport_BatteryInfo::checkinDetails()
 	{
 		return getObjectField(
 			"checkinDetails",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jlong ApplicationErrorReport_BatteryInfo::durationMicros()
 	{
@@ -17,12 +18,12 @@ namespace android::app
 			"durationMicros"
 		);
 	}
-	jstring ApplicationErrorReport_BatteryInfo::usageDetails()
+	JString ApplicationErrorReport_BatteryInfo::usageDetails()
 	{
 		return getObjectField(
 			"usageDetails",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint ApplicationErrorReport_BatteryInfo::usagePercent()
 	{
@@ -48,13 +49,13 @@ namespace android::app
 		) {}
 	
 	// Methods
-	void ApplicationErrorReport_BatteryInfo::dump(JObject arg0, jstring arg1)
+	void ApplicationErrorReport_BatteryInfo::dump(JObject arg0, JString arg1)
 	{
 		callMethod<void>(
 			"dump",
 			"(Landroid/util/Printer;Ljava/lang/String;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
 	void ApplicationErrorReport_BatteryInfo::writeToParcel(android::os::Parcel arg0, jint arg1)

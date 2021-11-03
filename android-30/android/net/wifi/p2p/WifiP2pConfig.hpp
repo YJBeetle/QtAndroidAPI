@@ -10,6 +10,7 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
 
 namespace android::net::wifi::p2p
 {
@@ -24,7 +25,7 @@ namespace android::net::wifi::p2p
 		static jint GROUP_OWNER_INTENT_AUTO();
 		static jint GROUP_OWNER_INTENT_MAX();
 		static jint GROUP_OWNER_INTENT_MIN();
-		jstring deviceAddress();
+		JString deviceAddress();
 		jint groupOwnerIntent();
 		android::net::wifi::WpsInfo wps();
 		
@@ -40,9 +41,9 @@ namespace android::net::wifi::p2p
 		jint describeContents();
 		jint getGroupOwnerBand();
 		jint getNetworkId();
-		jstring getNetworkName();
-		jstring getPassphrase();
-		jstring toString();
+		JString getNetworkName();
+		JString getPassphrase();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::net::wifi::p2p

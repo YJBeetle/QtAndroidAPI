@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "../ServerSocketFactory.hpp"
 
+class JArray;
 namespace javax::net
 {
 	class ServerSocketFactory;
@@ -23,8 +23,8 @@ namespace javax::net::ssl
 		
 		// Methods
 		static javax::net::ServerSocketFactory getDefault();
-		jarray getDefaultCipherSuites();
-		jarray getSupportedCipherSuites();
+		JArray getDefaultCipherSuites();
+		JArray getSupportedCipherSuites();
 	};
 } // namespace javax::net::ssl
 

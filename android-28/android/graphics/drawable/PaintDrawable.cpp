@@ -1,4 +1,6 @@
+#include "../../../JFloatArray.hpp"
 #include "../../content/res/Resources.hpp"
+#include "../../../JString.hpp"
 #include "./PaintDrawable.hpp"
 
 namespace android::graphics::drawable
@@ -22,12 +24,12 @@ namespace android::graphics::drawable
 		) {}
 	
 	// Methods
-	void PaintDrawable::setCornerRadii(jfloatArray arg0)
+	void PaintDrawable::setCornerRadii(JFloatArray arg0)
 	{
 		callMethod<void>(
 			"setCornerRadii",
 			"([F)V",
-			arg0
+			arg0.object<jfloatArray>()
 		);
 	}
 	void PaintDrawable::setCornerRadius(jfloat arg0)

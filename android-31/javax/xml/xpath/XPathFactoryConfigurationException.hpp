@@ -1,9 +1,9 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "../../../java/lang/Exception.hpp"
 #include "./XPathException.hpp"
 
+class JString;
+class JThrowable;
 
 namespace javax::xml::xpath
 {
@@ -17,8 +17,8 @@ namespace javax::xml::xpath
 		XPathFactoryConfigurationException(QAndroidJniObject obj);
 		
 		// Constructors
-		XPathFactoryConfigurationException(jstring arg0);
-		XPathFactoryConfigurationException(jthrowable arg0);
+		XPathFactoryConfigurationException(JString arg0);
+		XPathFactoryConfigurationException(JThrowable arg0);
 		
 		// Methods
 	};

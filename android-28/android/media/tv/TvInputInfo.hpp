@@ -26,6 +26,9 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
+class JObject;
+class JString;
 
 namespace android::media::tv
 {
@@ -34,7 +37,7 @@ namespace android::media::tv
 	public:
 		// Fields
 		static JObject CREATOR();
-		static jstring EXTRA_INPUT_ID();
+		static JString EXTRA_INPUT_ID();
 		static jint TYPE_COMPONENT();
 		static jint TYPE_COMPOSITE();
 		static jint TYPE_DISPLAY_PORT();
@@ -57,20 +60,20 @@ namespace android::media::tv
 		android::content::Intent createSettingsIntent();
 		android::content::Intent createSetupIntent();
 		jint describeContents();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		android::os::Bundle getExtras();
-		jstring getId();
-		jstring getParentId();
+		JString getId();
+		JString getParentId();
 		android::content::pm::ServiceInfo getServiceInfo();
 		jint getTunerCount();
 		jint getType();
 		jint hashCode();
 		jboolean isHidden(android::content::Context arg0);
 		jboolean isPassthroughInput();
-		jstring loadCustomLabel(android::content::Context arg0);
+		JString loadCustomLabel(android::content::Context arg0);
 		android::graphics::drawable::Drawable loadIcon(android::content::Context arg0);
-		jstring loadLabel(android::content::Context arg0);
-		jstring toString();
+		JString loadLabel(android::content::Context arg0);
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::media::tv

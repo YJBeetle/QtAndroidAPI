@@ -6,6 +6,7 @@ namespace android::os
 {
 	class Handler;
 }
+class JString;
 
 namespace android::accessibilityservice
 {
@@ -26,7 +27,7 @@ namespace android::accessibilityservice
 		jint getShowMode();
 		jboolean removeOnShowModeChangedListener(JObject arg0);
 		jboolean setShowMode(jint arg0);
-		jboolean switchToInputMethod(jstring arg0);
+		jboolean switchToInputMethod(JString arg0);
 	};
 } // namespace android::accessibilityservice
 

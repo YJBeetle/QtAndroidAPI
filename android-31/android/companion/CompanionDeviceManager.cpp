@@ -2,18 +2,19 @@
 #include "./CompanionDeviceManager_Callback.hpp"
 #include "../content/ComponentName.hpp"
 #include "../os/Handler.hpp"
+#include "../../JString.hpp"
 #include "./CompanionDeviceManager.hpp"
 
 namespace android::companion
 {
 	// Fields
-	jstring CompanionDeviceManager::EXTRA_DEVICE()
+	JString CompanionDeviceManager::EXTRA_DEVICE()
 	{
 		return getStaticObjectField(
 			"android.companion.CompanionDeviceManager",
 			"EXTRA_DEVICE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QAndroidJniObject forward
@@ -32,12 +33,12 @@ namespace android::companion
 			arg2.object()
 		);
 	}
-	void CompanionDeviceManager::disassociate(jstring arg0)
+	void CompanionDeviceManager::disassociate(JString arg0)
 	{
 		callMethod<void>(
 			"disassociate",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	JObject CompanionDeviceManager::getAssociations()
@@ -63,20 +64,20 @@ namespace android::companion
 			arg0.object()
 		);
 	}
-	void CompanionDeviceManager::startObservingDevicePresence(jstring arg0)
+	void CompanionDeviceManager::startObservingDevicePresence(JString arg0)
 	{
 		callMethod<void>(
 			"startObservingDevicePresence",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	void CompanionDeviceManager::stopObservingDevicePresence(jstring arg0)
+	void CompanionDeviceManager::stopObservingDevicePresence(JString arg0)
 	{
 		callMethod<void>(
 			"stopObservingDevicePresence",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 } // namespace android::companion

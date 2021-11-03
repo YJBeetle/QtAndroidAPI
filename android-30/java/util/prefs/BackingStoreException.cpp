@@ -1,3 +1,5 @@
+#include "../../../JString.hpp"
+#include "../../../JThrowable.hpp"
 #include "./BackingStoreException.hpp"
 
 namespace java::util::prefs
@@ -8,17 +10,17 @@ namespace java::util::prefs
 	BackingStoreException::BackingStoreException(QAndroidJniObject obj) : java::lang::Exception(obj) {}
 	
 	// Constructors
-	BackingStoreException::BackingStoreException(jstring arg0)
+	BackingStoreException::BackingStoreException(JString arg0)
 		: java::lang::Exception(
 			"java.util.prefs.BackingStoreException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	BackingStoreException::BackingStoreException(jthrowable arg0)
+	BackingStoreException::BackingStoreException(JThrowable arg0)
 		: java::lang::Exception(
 			"java.util.prefs.BackingStoreException",
 			"(Ljava/lang/Throwable;)V",
-			arg0
+			arg0.object<jthrowable>()
 		) {}
 	
 	// Methods

@@ -1,4 +1,5 @@
 #include "./AppSearchSchema_DoublePropertyConfig.hpp"
+#include "../../../JString.hpp"
 #include "./AppSearchSchema_DoublePropertyConfig_Builder.hpp"
 
 namespace android::app::appsearch
@@ -9,11 +10,11 @@ namespace android::app::appsearch
 	AppSearchSchema_DoublePropertyConfig_Builder::AppSearchSchema_DoublePropertyConfig_Builder(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	AppSearchSchema_DoublePropertyConfig_Builder::AppSearchSchema_DoublePropertyConfig_Builder(jstring arg0)
+	AppSearchSchema_DoublePropertyConfig_Builder::AppSearchSchema_DoublePropertyConfig_Builder(JString arg0)
 		: JObject(
 			"android.app.appsearch.AppSearchSchema$DoublePropertyConfig$Builder",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

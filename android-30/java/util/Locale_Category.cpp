@@ -1,3 +1,5 @@
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
 #include "./Locale_Category.hpp"
 
 namespace java::util
@@ -26,22 +28,22 @@ namespace java::util
 	// Constructors
 	
 	// Methods
-	java::util::Locale_Category Locale_Category::valueOf(jstring arg0)
+	java::util::Locale_Category Locale_Category::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"java.util.Locale$Category",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/util/Locale$Category;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray Locale_Category::values()
+	JArray Locale_Category::values()
 	{
 		return callStaticObjectMethod(
 			"java.util.Locale$Category",
 			"values",
 			"()[Ljava/util/Locale$Category;"
-		).object<jarray>();
+		);
 	}
 } // namespace java::util
 

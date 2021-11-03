@@ -1,5 +1,6 @@
 #include "./ContentValues.hpp"
 #include "../net/Uri.hpp"
+#include "../../JString.hpp"
 #include "../../java/util/ArrayList.hpp"
 #include "./Entity.hpp"
 
@@ -42,12 +43,12 @@ namespace android::content
 			"()Ljava/util/ArrayList;"
 		);
 	}
-	jstring Entity::toString()
+	JString Entity::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::content
 

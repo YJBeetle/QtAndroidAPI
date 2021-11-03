@@ -1,12 +1,13 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "../../../java/lang/Error.hpp"
 
 namespace java::lang
 {
 	class Exception;
 }
+class JString;
+class JThrowable;
 
 namespace javax::xml::transform
 {
@@ -22,13 +23,13 @@ namespace javax::xml::transform
 		// Constructors
 		TransformerFactoryConfigurationError();
 		TransformerFactoryConfigurationError(java::lang::Exception arg0);
-		TransformerFactoryConfigurationError(jstring arg0);
-		TransformerFactoryConfigurationError(java::lang::Exception arg0, jstring arg1);
+		TransformerFactoryConfigurationError(JString arg0);
+		TransformerFactoryConfigurationError(java::lang::Exception arg0, JString arg1);
 		
 		// Methods
-		jthrowable getCause();
+		JThrowable getCause();
 		java::lang::Exception getException();
-		jstring getMessage();
+		JString getMessage();
 	};
 } // namespace javax::xml::transform
 

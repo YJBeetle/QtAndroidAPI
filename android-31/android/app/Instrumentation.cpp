@@ -14,27 +14,32 @@
 #include "../os/TestLooperManager.hpp"
 #include "../view/KeyEvent.hpp"
 #include "../view/MotionEvent.hpp"
+#include "../../JString.hpp"
+#include "../../JClass.hpp"
 #include "../../java/lang/ClassLoader.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
+#include "../../JThrowable.hpp"
 #include "./Instrumentation.hpp"
 
 namespace android::app
 {
 	// Fields
-	jstring Instrumentation::REPORT_KEY_IDENTIFIER()
+	JString Instrumentation::REPORT_KEY_IDENTIFIER()
 	{
 		return getStaticObjectField(
 			"android.app.Instrumentation",
 			"REPORT_KEY_IDENTIFIER",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Instrumentation::REPORT_KEY_STREAMRESULT()
+	JString Instrumentation::REPORT_KEY_STREAMRESULT()
 	{
 		return getStaticObjectField(
 			"android.app.Instrumentation",
 			"REPORT_KEY_STREAMRESULT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QAndroidJniObject forward
@@ -48,13 +53,13 @@ namespace android::app
 		) {}
 	
 	// Methods
-	android::app::Application Instrumentation::newApplication(jclass arg0, android::content::Context arg1)
+	android::app::Application Instrumentation::newApplication(JClass arg0, android::content::Context arg1)
 	{
 		return callStaticObjectMethod(
 			"android.app.Instrumentation",
 			"newApplication",
 			"(Ljava/lang/Class;Landroid/content/Context;)Landroid/app/Application;",
-			arg0,
+			arg0.object<jclass>(),
 			arg1.object()
 		);
 	}
@@ -76,12 +81,12 @@ namespace android::app
 			arg2
 		);
 	}
-	android::app::Instrumentation_ActivityMonitor Instrumentation::addMonitor(jstring arg0, android::app::Instrumentation_ActivityResult arg1, jboolean arg2)
+	android::app::Instrumentation_ActivityMonitor Instrumentation::addMonitor(JString arg0, android::app::Instrumentation_ActivityResult arg1, jboolean arg2)
 	{
 		return callObjectMethod(
 			"addMonitor",
 			"(Ljava/lang/String;Landroid/app/Instrumentation$ActivityResult;Z)Landroid/app/Instrumentation$ActivityMonitor;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
 			arg2
 		);
@@ -312,12 +317,12 @@ namespace android::app
 			"()Landroid/content/Context;"
 		);
 	}
-	jstring Instrumentation::getProcessName()
+	JString Instrumentation::getProcessName()
 	{
 		return callObjectMethod(
 			"getProcessName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::content::Context Instrumentation::getTargetContext()
 	{
@@ -368,40 +373,40 @@ namespace android::app
 			"()Z"
 		);
 	}
-	android::app::Activity Instrumentation::newActivity(java::lang::ClassLoader arg0, jstring arg1, android::content::Intent arg2)
+	android::app::Activity Instrumentation::newActivity(java::lang::ClassLoader arg0, JString arg1, android::content::Intent arg2)
 	{
 		return callObjectMethod(
 			"newActivity",
 			"(Ljava/lang/ClassLoader;Ljava/lang/String;Landroid/content/Intent;)Landroid/app/Activity;",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2.object()
 		);
 	}
-	android::app::Activity Instrumentation::newActivity(jclass arg0, android::content::Context arg1, JObject arg2, android::app::Application arg3, android::content::Intent arg4, android::content::pm::ActivityInfo arg5, jstring arg6, android::app::Activity arg7, jstring arg8, jobject arg9)
+	android::app::Activity Instrumentation::newActivity(JClass arg0, android::content::Context arg1, JObject arg2, android::app::Application arg3, android::content::Intent arg4, android::content::pm::ActivityInfo arg5, JString arg6, android::app::Activity arg7, JString arg8, JObject arg9)
 	{
 		return callObjectMethod(
 			"newActivity",
 			"(Ljava/lang/Class;Landroid/content/Context;Landroid/os/IBinder;Landroid/app/Application;Landroid/content/Intent;Landroid/content/pm/ActivityInfo;Ljava/lang/CharSequence;Landroid/app/Activity;Ljava/lang/String;Ljava/lang/Object;)Landroid/app/Activity;",
-			arg0,
+			arg0.object<jclass>(),
 			arg1.object(),
 			arg2.object(),
 			arg3.object(),
 			arg4.object(),
 			arg5.object(),
-			arg6,
+			arg6.object<jstring>(),
 			arg7.object(),
-			arg8,
-			arg9
+			arg8.object<jstring>(),
+			arg9.object<jobject>()
 		);
 	}
-	android::app::Application Instrumentation::newApplication(java::lang::ClassLoader arg0, jstring arg1, android::content::Context arg2)
+	android::app::Application Instrumentation::newApplication(java::lang::ClassLoader arg0, JString arg1, android::content::Context arg2)
 	{
 		return callObjectMethod(
 			"newApplication",
 			"(Ljava/lang/ClassLoader;Ljava/lang/String;Landroid/content/Context;)Landroid/app/Application;",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2.object()
 		);
 	}
@@ -420,13 +425,13 @@ namespace android::app
 			"()V"
 		);
 	}
-	jboolean Instrumentation::onException(jobject arg0, jthrowable arg1)
+	jboolean Instrumentation::onException(JObject arg0, JThrowable arg1)
 	{
 		return callMethod<jboolean>(
 			"onException",
 			"(Ljava/lang/Object;Ljava/lang/Throwable;)Z",
-			arg0,
-			arg1
+			arg0.object<jobject>(),
+			arg1.object<jthrowable>()
 		);
 	}
 	void Instrumentation::onStart()
@@ -493,12 +498,12 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	void Instrumentation::sendStringSync(jstring arg0)
+	void Instrumentation::sendStringSync(JString arg0)
 	{
 		callMethod<void>(
 			"sendStringSync",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void Instrumentation::sendTrackballEventSync(android::view::MotionEvent arg0)

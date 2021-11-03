@@ -22,6 +22,7 @@ namespace android::os
 {
 	class Bundle;
 }
+class JString;
 namespace java::lang
 {
 	class Thread;
@@ -46,8 +47,8 @@ namespace android::content
 		// Methods
 		android::content::Context getContext();
 		JObject getSyncAdapterBinder();
-		void onPerformSync(android::accounts::Account arg0, android::os::Bundle arg1, jstring arg2, android::content::ContentProviderClient arg3, android::content::SyncResult arg4);
-		void onSecurityException(android::accounts::Account arg0, android::os::Bundle arg1, jstring arg2, android::content::SyncResult arg3);
+		void onPerformSync(android::accounts::Account arg0, android::os::Bundle arg1, JString arg2, android::content::ContentProviderClient arg3, android::content::SyncResult arg4);
+		void onSecurityException(android::accounts::Account arg0, android::os::Bundle arg1, JString arg2, android::content::SyncResult arg3);
 		void onSyncCanceled();
 		void onSyncCanceled(java::lang::Thread arg0);
 		jboolean onUnsyncableAccount();

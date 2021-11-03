@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./NotDirectoryException.hpp"
 
 namespace java::nio::file
@@ -8,11 +9,11 @@ namespace java::nio::file
 	NotDirectoryException::NotDirectoryException(QAndroidJniObject obj) : java::nio::file::FileSystemException(obj) {}
 	
 	// Constructors
-	NotDirectoryException::NotDirectoryException(jstring arg0)
+	NotDirectoryException::NotDirectoryException(JString arg0)
 		: java::nio::file::FileSystemException(
 			"java.nio.file.NotDirectoryException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

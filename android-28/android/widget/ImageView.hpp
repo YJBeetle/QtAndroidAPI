@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "../view/View.hpp"
 
+class JIntArray;
 namespace android::content
 {
 	class Context;
@@ -47,6 +47,7 @@ namespace android::widget
 {
 	class ImageView_ScaleType;
 }
+class JString;
 
 namespace android::widget
 {
@@ -68,7 +69,7 @@ namespace android::widget
 		// Methods
 		void clearColorFilter();
 		void drawableHotspotChanged(jfloat arg0, jfloat arg1);
-		jstring getAccessibilityClassName();
+		JString getAccessibilityClassName();
 		jboolean getAdjustViewBounds();
 		jint getBaseline();
 		jboolean getBaselineAlignBottom();
@@ -86,7 +87,7 @@ namespace android::widget
 		void invalidateDrawable(android::graphics::drawable::Drawable arg0);
 		jboolean isOpaque();
 		void jumpDrawablesToCurrentState();
-		jintArray onCreateDrawableState(jint arg0);
+		JIntArray onCreateDrawableState(jint arg0);
 		void onRtlPropertiesChanged(jint arg0);
 		void onVisibilityAggregated(jboolean arg0);
 		void setAdjustViewBounds(jboolean arg0);
@@ -104,7 +105,7 @@ namespace android::widget
 		void setImageLevel(jint arg0);
 		void setImageMatrix(android::graphics::Matrix arg0);
 		void setImageResource(jint arg0);
-		void setImageState(jintArray arg0, jboolean arg1);
+		void setImageState(JIntArray arg0, jboolean arg1);
 		void setImageTintList(android::content::res::ColorStateList arg0);
 		void setImageTintMode(android::graphics::PorterDuff_Mode arg0);
 		void setImageURI(android::net::Uri arg0);

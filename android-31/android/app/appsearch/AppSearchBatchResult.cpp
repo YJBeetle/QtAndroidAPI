@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./AppSearchBatchResult.hpp"
 
 namespace android::app::appsearch
@@ -38,12 +39,12 @@ namespace android::app::appsearch
 			"()Z"
 		);
 	}
-	jstring AppSearchBatchResult::toString()
+	JString AppSearchBatchResult::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::app::appsearch
 

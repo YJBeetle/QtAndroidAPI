@@ -1,3 +1,4 @@
+#include "../../JByteArray.hpp"
 #include "../os/Parcel.hpp"
 #include "./TimedMetaData.hpp"
 
@@ -11,12 +12,12 @@ namespace android::media
 	// Constructors
 	
 	// Methods
-	jbyteArray TimedMetaData::getMetaData()
+	JByteArray TimedMetaData::getMetaData()
 	{
 		return callObjectMethod(
 			"getMetaData",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
 	jlong TimedMetaData::getTimestamp()
 	{

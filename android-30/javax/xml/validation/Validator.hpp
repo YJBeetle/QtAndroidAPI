@@ -2,6 +2,8 @@
 
 #include "../../../JObject.hpp"
 
+class JObject;
+class JString;
 
 namespace javax::xml::validation
 {
@@ -18,13 +20,13 @@ namespace javax::xml::validation
 		
 		// Methods
 		JObject getErrorHandler();
-		jboolean getFeature(jstring arg0);
-		jobject getProperty(jstring arg0);
+		jboolean getFeature(JString arg0);
+		JObject getProperty(JString arg0);
 		JObject getResourceResolver();
 		void reset();
 		void setErrorHandler(JObject arg0);
-		void setFeature(jstring arg0, jboolean arg1);
-		void setProperty(jstring arg0, jobject arg1);
+		void setFeature(JString arg0, jboolean arg1);
+		void setProperty(JString arg0, JObject arg1);
 		void setResourceResolver(JObject arg0);
 		void validate(JObject arg0);
 		void validate(JObject arg0, JObject arg1);

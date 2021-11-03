@@ -1,8 +1,9 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "../util/EventObject.hpp"
 
+class JObject;
+class JString;
 namespace java::lang
 {
 	class StringBuilder;
@@ -20,15 +21,15 @@ namespace java::beans
 		PropertyChangeEvent(QAndroidJniObject obj);
 		
 		// Constructors
-		PropertyChangeEvent(jobject arg0, jstring arg1, jobject arg2, jobject arg3);
+		PropertyChangeEvent(JObject arg0, JString arg1, JObject arg2, JObject arg3);
 		
 		// Methods
-		jobject getNewValue();
-		jobject getOldValue();
-		jobject getPropagationId();
-		jstring getPropertyName();
-		void setPropagationId(jobject arg0);
-		jstring toString();
+		JObject getNewValue();
+		JObject getOldValue();
+		JObject getPropagationId();
+		JString getPropertyName();
+		void setPropagationId(JObject arg0);
+		JString toString();
 	};
 } // namespace java::beans
 

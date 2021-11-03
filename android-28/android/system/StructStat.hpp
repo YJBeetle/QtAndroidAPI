@@ -6,6 +6,7 @@ namespace android::system
 {
 	class StructTimespec;
 }
+class JString;
 
 namespace android::system
 {
@@ -39,7 +40,7 @@ namespace android::system
 		StructStat(jlong arg0, jlong arg1, jint arg2, jlong arg3, jint arg4, jint arg5, jlong arg6, jlong arg7, jlong arg8, jlong arg9, jlong arg10, jlong arg11, jlong arg12);
 		
 		// Methods
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::system
 

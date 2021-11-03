@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./TtsSpan_ElectronicBuilder.hpp"
 
 namespace android::text::style
@@ -15,45 +16,45 @@ namespace android::text::style
 		) {}
 	
 	// Methods
-	android::text::style::TtsSpan_ElectronicBuilder TtsSpan_ElectronicBuilder::setDomain(jstring arg0)
+	android::text::style::TtsSpan_ElectronicBuilder TtsSpan_ElectronicBuilder::setDomain(JString arg0)
 	{
 		return callObjectMethod(
 			"setDomain",
 			"(Ljava/lang/String;)Landroid/text/style/TtsSpan$ElectronicBuilder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	android::text::style::TtsSpan_ElectronicBuilder TtsSpan_ElectronicBuilder::setEmailArguments(jstring arg0, jstring arg1)
+	android::text::style::TtsSpan_ElectronicBuilder TtsSpan_ElectronicBuilder::setEmailArguments(JString arg0, JString arg1)
 	{
 		return callObjectMethod(
 			"setEmailArguments",
 			"(Ljava/lang/String;Ljava/lang/String;)Landroid/text/style/TtsSpan$ElectronicBuilder;",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		);
 	}
-	android::text::style::TtsSpan_ElectronicBuilder TtsSpan_ElectronicBuilder::setFragmentId(jstring arg0)
+	android::text::style::TtsSpan_ElectronicBuilder TtsSpan_ElectronicBuilder::setFragmentId(JString arg0)
 	{
 		return callObjectMethod(
 			"setFragmentId",
 			"(Ljava/lang/String;)Landroid/text/style/TtsSpan$ElectronicBuilder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	android::text::style::TtsSpan_ElectronicBuilder TtsSpan_ElectronicBuilder::setPassword(jstring arg0)
+	android::text::style::TtsSpan_ElectronicBuilder TtsSpan_ElectronicBuilder::setPassword(JString arg0)
 	{
 		return callObjectMethod(
 			"setPassword",
 			"(Ljava/lang/String;)Landroid/text/style/TtsSpan$ElectronicBuilder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	android::text::style::TtsSpan_ElectronicBuilder TtsSpan_ElectronicBuilder::setPath(jstring arg0)
+	android::text::style::TtsSpan_ElectronicBuilder TtsSpan_ElectronicBuilder::setPath(JString arg0)
 	{
 		return callObjectMethod(
 			"setPath",
 			"(Ljava/lang/String;)Landroid/text/style/TtsSpan$ElectronicBuilder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::text::style::TtsSpan_ElectronicBuilder TtsSpan_ElectronicBuilder::setPort(jint arg0)
@@ -64,28 +65,28 @@ namespace android::text::style
 			arg0
 		);
 	}
-	android::text::style::TtsSpan_ElectronicBuilder TtsSpan_ElectronicBuilder::setProtocol(jstring arg0)
+	android::text::style::TtsSpan_ElectronicBuilder TtsSpan_ElectronicBuilder::setProtocol(JString arg0)
 	{
 		return callObjectMethod(
 			"setProtocol",
 			"(Ljava/lang/String;)Landroid/text/style/TtsSpan$ElectronicBuilder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	android::text::style::TtsSpan_ElectronicBuilder TtsSpan_ElectronicBuilder::setQueryString(jstring arg0)
+	android::text::style::TtsSpan_ElectronicBuilder TtsSpan_ElectronicBuilder::setQueryString(JString arg0)
 	{
 		return callObjectMethod(
 			"setQueryString",
 			"(Ljava/lang/String;)Landroid/text/style/TtsSpan$ElectronicBuilder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	android::text::style::TtsSpan_ElectronicBuilder TtsSpan_ElectronicBuilder::setUsername(jstring arg0)
+	android::text::style::TtsSpan_ElectronicBuilder TtsSpan_ElectronicBuilder::setUsername(JString arg0)
 	{
 		return callObjectMethod(
 			"setUsername",
 			"(Ljava/lang/String;)Landroid/text/style/TtsSpan$ElectronicBuilder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 } // namespace android::text::style

@@ -1,4 +1,6 @@
 #include "../os/Parcel.hpp"
+#include "../../JString.hpp"
+#include "../../JString.hpp"
 #include "./WindowManager_LayoutParams.hpp"
 
 namespace android::view
@@ -793,12 +795,12 @@ namespace android::view
 			"memoryType"
 		);
 	}
-	jstring WindowManager_LayoutParams::packageName()
+	JString WindowManager_LayoutParams::packageName()
 	{
 		return getObjectField(
 			"packageName",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jboolean WindowManager_LayoutParams::preferMinimalPostProcessing()
 	{
@@ -969,13 +971,13 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	jstring WindowManager_LayoutParams::debug(jstring arg0)
+	JString WindowManager_LayoutParams::debug(JString arg0)
 	{
 		return callObjectMethod(
 			"debug",
 			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
+			arg0.object<jstring>()
+		);
 	}
 	jint WindowManager_LayoutParams::describeContents()
 	{
@@ -1005,12 +1007,12 @@ namespace android::view
 			"()I"
 		);
 	}
-	jstring WindowManager_LayoutParams::getTitle()
+	JString WindowManager_LayoutParams::getTitle()
 	{
 		return callObjectMethod(
 			"getTitle",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	jboolean WindowManager_LayoutParams::isFitInsetsIgnoringVisibility()
 	{
@@ -1051,20 +1053,20 @@ namespace android::view
 			arg0
 		);
 	}
-	void WindowManager_LayoutParams::setTitle(jstring arg0)
+	void WindowManager_LayoutParams::setTitle(JString arg0)
 	{
 		callMethod<void>(
 			"setTitle",
 			"(Ljava/lang/CharSequence;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jstring WindowManager_LayoutParams::toString()
+	JString WindowManager_LayoutParams::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void WindowManager_LayoutParams::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

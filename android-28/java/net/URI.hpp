@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JCharArray;
+class JIntArray;
 namespace java::io
 {
 	class ObjectInputStream;
@@ -10,6 +12,8 @@ namespace java::io
 {
 	class ObjectOutputStream;
 }
+class JObject;
+class JString;
 namespace java::lang
 {
 	class StringBuilder;
@@ -35,42 +39,42 @@ namespace java::net
 		URI(QAndroidJniObject obj);
 		
 		// Constructors
-		URI(jstring arg0);
-		URI(jstring arg0, jstring arg1, jstring arg2);
-		URI(jstring arg0, jstring arg1, jstring arg2, jstring arg3);
-		URI(jstring arg0, jstring arg1, jstring arg2, jstring arg3, jstring arg4);
-		URI(jstring arg0, jstring arg1, jstring arg2, jint arg3, jstring arg4, jstring arg5, jstring arg6);
+		URI(JString arg0);
+		URI(JString arg0, JString arg1, JString arg2);
+		URI(JString arg0, JString arg1, JString arg2, JString arg3);
+		URI(JString arg0, JString arg1, JString arg2, JString arg3, JString arg4);
+		URI(JString arg0, JString arg1, JString arg2, jint arg3, JString arg4, JString arg5, JString arg6);
 		
 		// Methods
-		static java::net::URI create(jstring arg0);
-		jint compareTo(jobject arg0);
+		static java::net::URI create(JString arg0);
+		jint compareTo(JObject arg0);
 		jint compareTo(java::net::URI arg0);
-		jboolean equals(jobject arg0);
-		jstring getAuthority();
-		jstring getFragment();
-		jstring getHost();
-		jstring getPath();
+		jboolean equals(JObject arg0);
+		JString getAuthority();
+		JString getFragment();
+		JString getHost();
+		JString getPath();
 		jint getPort();
-		jstring getQuery();
-		jstring getRawAuthority();
-		jstring getRawFragment();
-		jstring getRawPath();
-		jstring getRawQuery();
-		jstring getRawSchemeSpecificPart();
-		jstring getRawUserInfo();
-		jstring getScheme();
-		jstring getSchemeSpecificPart();
-		jstring getUserInfo();
+		JString getQuery();
+		JString getRawAuthority();
+		JString getRawFragment();
+		JString getRawPath();
+		JString getRawQuery();
+		JString getRawSchemeSpecificPart();
+		JString getRawUserInfo();
+		JString getScheme();
+		JString getSchemeSpecificPart();
+		JString getUserInfo();
 		jint hashCode();
 		jboolean isAbsolute();
 		jboolean isOpaque();
 		java::net::URI normalize();
 		java::net::URI parseServerAuthority();
 		java::net::URI relativize(java::net::URI arg0);
-		java::net::URI resolve(jstring arg0);
+		java::net::URI resolve(JString arg0);
 		java::net::URI resolve(java::net::URI arg0);
-		jstring toASCIIString();
-		jstring toString();
+		JString toASCIIString();
+		JString toString();
 		java::net::URL toURL();
 	};
 } // namespace java::net

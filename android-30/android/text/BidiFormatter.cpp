@@ -1,3 +1,5 @@
+#include "../../JString.hpp"
+#include "../../JString.hpp"
 #include "../../java/util/Locale.hpp"
 #include "./BidiFormatter.hpp"
 
@@ -44,12 +46,12 @@ namespace android::text
 			"()Z"
 		);
 	}
-	jboolean BidiFormatter::isRtl(jstring arg0)
+	jboolean BidiFormatter::isRtl(JString arg0)
 	{
 		return callMethod<jboolean>(
 			"isRtl",
 			"(Ljava/lang/CharSequence;)Z",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	jboolean BidiFormatter::isRtlContext()
@@ -59,41 +61,41 @@ namespace android::text
 			"()Z"
 		);
 	}
-	jstring BidiFormatter::unicodeWrap(jstring arg0)
+	JString BidiFormatter::unicodeWrap(JString arg0)
 	{
 		return callObjectMethod(
 			"unicodeWrap",
 			"(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;",
-			arg0
-		).object<jstring>();
+			arg0.object<jstring>()
+		);
 	}
-	jstring BidiFormatter::unicodeWrap(jstring arg0, JObject arg1)
+	JString BidiFormatter::unicodeWrap(JString arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"unicodeWrap",
 			"(Ljava/lang/CharSequence;Landroid/text/TextDirectionHeuristic;)Ljava/lang/CharSequence;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
-		).object<jstring>();
+		);
 	}
-	jstring BidiFormatter::unicodeWrap(jstring arg0, jboolean arg1)
+	JString BidiFormatter::unicodeWrap(JString arg0, jboolean arg1)
 	{
 		return callObjectMethod(
 			"unicodeWrap",
 			"(Ljava/lang/CharSequence;Z)Ljava/lang/CharSequence;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
-		).object<jstring>();
+		);
 	}
-	jstring BidiFormatter::unicodeWrap(jstring arg0, JObject arg1, jboolean arg2)
+	JString BidiFormatter::unicodeWrap(JString arg0, JObject arg1, jboolean arg2)
 	{
 		return callObjectMethod(
 			"unicodeWrap",
 			"(Ljava/lang/CharSequence;Landroid/text/TextDirectionHeuristic;Z)Ljava/lang/CharSequence;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
 			arg2
-		).object<jstring>();
+		);
 	}
 } // namespace android::text
 

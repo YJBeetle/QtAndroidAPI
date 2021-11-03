@@ -1,3 +1,4 @@
+#include "../../../JByteArray.hpp"
 #include "./AssetFileDescriptor.hpp"
 #include "./AssetFileDescriptor_AutoCloseInputStream.hpp"
 
@@ -46,20 +47,20 @@ namespace android::content::res
 			"()I"
 		);
 	}
-	jint AssetFileDescriptor_AutoCloseInputStream::read(jbyteArray arg0)
+	jint AssetFileDescriptor_AutoCloseInputStream::read(JByteArray arg0)
 	{
 		return callMethod<jint>(
 			"read",
 			"([B)I",
-			arg0
+			arg0.object<jbyteArray>()
 		);
 	}
-	jint AssetFileDescriptor_AutoCloseInputStream::read(jbyteArray arg0, jint arg1, jint arg2)
+	jint AssetFileDescriptor_AutoCloseInputStream::read(JByteArray arg0, jint arg1, jint arg2)
 	{
 		return callMethod<jint>(
 			"read",
 			"([BII)I",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1,
 			arg2
 		);

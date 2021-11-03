@@ -1,29 +1,31 @@
+#include "../../../JArray.hpp"
 #include "../../content/ComponentName.hpp"
 #include "../../content/Context.hpp"
 #include "../../content/Intent.hpp"
 #include "../../os/Bundle.hpp"
 #include "../../../java/io/FileDescriptor.hpp"
 #include "../../../java/io/PrintWriter.hpp"
+#include "../../../JString.hpp"
 #include "./VoiceInteractionService.hpp"
 
 namespace android::service::voice
 {
 	// Fields
-	jstring VoiceInteractionService::SERVICE_INTERFACE()
+	JString VoiceInteractionService::SERVICE_INTERFACE()
 	{
 		return getStaticObjectField(
 			"android.service.voice.VoiceInteractionService",
 			"SERVICE_INTERFACE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring VoiceInteractionService::SERVICE_META_DATA()
+	JString VoiceInteractionService::SERVICE_META_DATA()
 	{
 		return getStaticObjectField(
 			"android.service.voice.VoiceInteractionService",
 			"SERVICE_META_DATA",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QAndroidJniObject forward

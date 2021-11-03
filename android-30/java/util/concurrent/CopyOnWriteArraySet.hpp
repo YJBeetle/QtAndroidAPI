@@ -1,9 +1,9 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "../AbstractCollection.hpp"
 #include "../AbstractSet.hpp"
 
+class JObjectArray;
+class JObject;
 namespace java::util::concurrent
 {
 	class CopyOnWriteArrayList;
@@ -25,23 +25,23 @@ namespace java::util::concurrent
 		CopyOnWriteArraySet(JObject arg0);
 		
 		// Methods
-		jboolean add(jobject arg0);
+		jboolean add(JObject arg0);
 		jboolean addAll(JObject arg0);
 		void clear();
-		jboolean contains(jobject arg0);
+		jboolean contains(JObject arg0);
 		jboolean containsAll(JObject arg0);
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		void forEach(JObject arg0);
 		jboolean isEmpty();
 		JObject iterator();
-		jboolean remove(jobject arg0);
+		jboolean remove(JObject arg0);
 		jboolean removeAll(JObject arg0);
 		jboolean removeIf(JObject arg0);
 		jboolean retainAll(JObject arg0);
 		jint size();
 		JObject spliterator();
-		jobjectArray toArray();
-		jobjectArray toArray(jobjectArray arg0);
+		JObjectArray toArray();
+		JObjectArray toArray(JObjectArray arg0);
 	};
 } // namespace java::util::concurrent
 

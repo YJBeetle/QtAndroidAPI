@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JString;
 
 namespace android::hardware
 {
@@ -13,33 +14,33 @@ namespace android::hardware
 		static jint REPORTING_MODE_ONE_SHOT();
 		static jint REPORTING_MODE_ON_CHANGE();
 		static jint REPORTING_MODE_SPECIAL_TRIGGER();
-		static jstring STRING_TYPE_ACCELEROMETER();
-		static jstring STRING_TYPE_ACCELEROMETER_UNCALIBRATED();
-		static jstring STRING_TYPE_AMBIENT_TEMPERATURE();
-		static jstring STRING_TYPE_GAME_ROTATION_VECTOR();
-		static jstring STRING_TYPE_GEOMAGNETIC_ROTATION_VECTOR();
-		static jstring STRING_TYPE_GRAVITY();
-		static jstring STRING_TYPE_GYROSCOPE();
-		static jstring STRING_TYPE_GYROSCOPE_UNCALIBRATED();
-		static jstring STRING_TYPE_HEART_BEAT();
-		static jstring STRING_TYPE_HEART_RATE();
-		static jstring STRING_TYPE_LIGHT();
-		static jstring STRING_TYPE_LINEAR_ACCELERATION();
-		static jstring STRING_TYPE_LOW_LATENCY_OFFBODY_DETECT();
-		static jstring STRING_TYPE_MAGNETIC_FIELD();
-		static jstring STRING_TYPE_MAGNETIC_FIELD_UNCALIBRATED();
-		static jstring STRING_TYPE_MOTION_DETECT();
-		static jstring STRING_TYPE_ORIENTATION();
-		static jstring STRING_TYPE_POSE_6DOF();
-		static jstring STRING_TYPE_PRESSURE();
-		static jstring STRING_TYPE_PROXIMITY();
-		static jstring STRING_TYPE_RELATIVE_HUMIDITY();
-		static jstring STRING_TYPE_ROTATION_VECTOR();
-		static jstring STRING_TYPE_SIGNIFICANT_MOTION();
-		static jstring STRING_TYPE_STATIONARY_DETECT();
-		static jstring STRING_TYPE_STEP_COUNTER();
-		static jstring STRING_TYPE_STEP_DETECTOR();
-		static jstring STRING_TYPE_TEMPERATURE();
+		static JString STRING_TYPE_ACCELEROMETER();
+		static JString STRING_TYPE_ACCELEROMETER_UNCALIBRATED();
+		static JString STRING_TYPE_AMBIENT_TEMPERATURE();
+		static JString STRING_TYPE_GAME_ROTATION_VECTOR();
+		static JString STRING_TYPE_GEOMAGNETIC_ROTATION_VECTOR();
+		static JString STRING_TYPE_GRAVITY();
+		static JString STRING_TYPE_GYROSCOPE();
+		static JString STRING_TYPE_GYROSCOPE_UNCALIBRATED();
+		static JString STRING_TYPE_HEART_BEAT();
+		static JString STRING_TYPE_HEART_RATE();
+		static JString STRING_TYPE_LIGHT();
+		static JString STRING_TYPE_LINEAR_ACCELERATION();
+		static JString STRING_TYPE_LOW_LATENCY_OFFBODY_DETECT();
+		static JString STRING_TYPE_MAGNETIC_FIELD();
+		static JString STRING_TYPE_MAGNETIC_FIELD_UNCALIBRATED();
+		static JString STRING_TYPE_MOTION_DETECT();
+		static JString STRING_TYPE_ORIENTATION();
+		static JString STRING_TYPE_POSE_6DOF();
+		static JString STRING_TYPE_PRESSURE();
+		static JString STRING_TYPE_PROXIMITY();
+		static JString STRING_TYPE_RELATIVE_HUMIDITY();
+		static JString STRING_TYPE_ROTATION_VECTOR();
+		static JString STRING_TYPE_SIGNIFICANT_MOTION();
+		static JString STRING_TYPE_STATIONARY_DETECT();
+		static JString STRING_TYPE_STEP_COUNTER();
+		static JString STRING_TYPE_STEP_DETECTOR();
+		static JString STRING_TYPE_TEMPERATURE();
 		static jint TYPE_ACCELEROMETER();
 		static jint TYPE_ACCELEROMETER_UNCALIBRATED();
 		static jint TYPE_ALL();
@@ -84,19 +85,19 @@ namespace android::hardware
 		jint getMaxDelay();
 		jfloat getMaximumRange();
 		jint getMinDelay();
-		jstring getName();
+		JString getName();
 		jfloat getPower();
 		jint getReportingMode();
 		jfloat getResolution();
-		jstring getStringType();
+		JString getStringType();
 		jint getType();
-		jstring getVendor();
+		JString getVendor();
 		jint getVersion();
 		jboolean isAdditionalInfoSupported();
 		jboolean isDirectChannelTypeSupported(jint arg0);
 		jboolean isDynamicSensor();
 		jboolean isWakeUpSensor();
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::hardware
 

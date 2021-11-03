@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./Fragment.hpp"
 
+class JArray;
 namespace android::app
 {
 	class Dialog;
@@ -35,6 +35,7 @@ namespace java::io
 {
 	class PrintWriter;
 }
+class JString;
 
 namespace android::app
 {
@@ -57,7 +58,7 @@ namespace android::app
 		// Methods
 		void dismiss();
 		void dismissAllowingStateLoss();
-		void dump(jstring arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, jarray arg3);
+		void dump(JString arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, JArray arg3);
 		android::app::Dialog getDialog();
 		jboolean getShowsDialog();
 		jint getTheme();
@@ -77,8 +78,8 @@ namespace android::app
 		void setCancelable(jboolean arg0);
 		void setShowsDialog(jboolean arg0);
 		void setStyle(jint arg0, jint arg1);
-		jint show(android::app::FragmentTransaction arg0, jstring arg1);
-		void show(android::app::FragmentManager arg0, jstring arg1);
+		jint show(android::app::FragmentTransaction arg0, JString arg1);
+		void show(android::app::FragmentManager arg0, JString arg1);
 	};
 } // namespace android::app
 

@@ -2,6 +2,8 @@
 
 #include "../../../JObject.hpp"
 
+class JArray;
+class JObject;
 namespace java::net
 {
 	class SocketAddress;
@@ -41,21 +43,21 @@ namespace java::nio::channels
 		static java::nio::channels::AsynchronousSocketChannel open(java::nio::channels::AsynchronousChannelGroup arg0);
 		java::nio::channels::AsynchronousSocketChannel bind(java::net::SocketAddress arg0);
 		JObject connect(java::net::SocketAddress arg0);
-		void connect(java::net::SocketAddress arg0, jobject arg1, JObject arg2);
+		void connect(java::net::SocketAddress arg0, JObject arg1, JObject arg2);
 		java::net::SocketAddress getLocalAddress();
 		java::net::SocketAddress getRemoteAddress();
 		java::nio::channels::spi::AsynchronousChannelProvider provider();
 		JObject read(java::nio::ByteBuffer arg0);
-		void read(java::nio::ByteBuffer arg0, jobject arg1, JObject arg2);
-		void read(java::nio::ByteBuffer arg0, jlong arg1, java::util::concurrent::TimeUnit arg2, jobject arg3, JObject arg4);
-		void read(jarray arg0, jint arg1, jint arg2, jlong arg3, java::util::concurrent::TimeUnit arg4, jobject arg5, JObject arg6);
-		java::nio::channels::AsynchronousSocketChannel setOption(JObject arg0, jobject arg1);
+		void read(java::nio::ByteBuffer arg0, JObject arg1, JObject arg2);
+		void read(java::nio::ByteBuffer arg0, jlong arg1, java::util::concurrent::TimeUnit arg2, JObject arg3, JObject arg4);
+		void read(JArray arg0, jint arg1, jint arg2, jlong arg3, java::util::concurrent::TimeUnit arg4, JObject arg5, JObject arg6);
+		java::nio::channels::AsynchronousSocketChannel setOption(JObject arg0, JObject arg1);
 		java::nio::channels::AsynchronousSocketChannel shutdownInput();
 		java::nio::channels::AsynchronousSocketChannel shutdownOutput();
 		JObject write(java::nio::ByteBuffer arg0);
-		void write(java::nio::ByteBuffer arg0, jobject arg1, JObject arg2);
-		void write(java::nio::ByteBuffer arg0, jlong arg1, java::util::concurrent::TimeUnit arg2, jobject arg3, JObject arg4);
-		void write(jarray arg0, jint arg1, jint arg2, jlong arg3, java::util::concurrent::TimeUnit arg4, jobject arg5, JObject arg6);
+		void write(java::nio::ByteBuffer arg0, JObject arg1, JObject arg2);
+		void write(java::nio::ByteBuffer arg0, jlong arg1, java::util::concurrent::TimeUnit arg2, JObject arg3, JObject arg4);
+		void write(JArray arg0, jint arg1, jint arg2, jlong arg3, java::util::concurrent::TimeUnit arg4, JObject arg5, JObject arg6);
 	};
 } // namespace java::nio::channels
 

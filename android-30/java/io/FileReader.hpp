@@ -1,7 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "./Reader.hpp"
 #include "./InputStreamReader.hpp"
 
 namespace java::io
@@ -12,6 +10,7 @@ namespace java::io
 {
 	class FileDescriptor;
 }
+class JString;
 namespace java::nio::charset
 {
 	class Charset;
@@ -31,9 +30,9 @@ namespace java::io
 		// Constructors
 		FileReader(java::io::File arg0);
 		FileReader(java::io::FileDescriptor arg0);
-		FileReader(jstring arg0);
+		FileReader(JString arg0);
 		FileReader(java::io::File arg0, java::nio::charset::Charset arg1);
-		FileReader(jstring arg0, java::nio::charset::Charset arg1);
+		FileReader(JString arg0, java::nio::charset::Charset arg1);
 		
 		// Methods
 	};

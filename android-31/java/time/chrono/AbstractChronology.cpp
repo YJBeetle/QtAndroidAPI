@@ -1,4 +1,6 @@
 #include "../../io/ObjectInputStream.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "../format/ResolverStyle.hpp"
 #include "../temporal/ChronoField.hpp"
 #include "../../util/Locale.hpp"
@@ -15,28 +17,20 @@ namespace java::time::chrono
 	// Constructors
 	
 	// Methods
-	jint AbstractChronology::compareTo(jobject arg0)
-	{
-		return callMethod<jint>(
-			"compareTo",
-			"(Ljava/lang/Object;)I",
-			arg0
-		);
-	}
 	jint AbstractChronology::compareTo(JObject arg0)
 	{
 		return callMethod<jint>(
 			"compareTo",
-			"(Ljava/time/chrono/Chronology;)I",
-			arg0.object()
+			"(Ljava/lang/Object;)I",
+			arg0.object<jobject>()
 		);
 	}
-	jboolean AbstractChronology::equals(jobject arg0)
+	jboolean AbstractChronology::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint AbstractChronology::hashCode()
@@ -55,12 +49,12 @@ namespace java::time::chrono
 			arg1.object()
 		);
 	}
-	jstring AbstractChronology::toString()
+	JString AbstractChronology::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::time::chrono
 

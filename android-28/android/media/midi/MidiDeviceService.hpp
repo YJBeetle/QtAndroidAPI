@@ -1,10 +1,8 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "../../content/Context.hpp"
-#include "../../content/ContextWrapper.hpp"
 #include "../../app/Service.hpp"
 
+class JArray;
 namespace android::content
 {
 	class Intent;
@@ -17,6 +15,7 @@ namespace android::media::midi
 {
 	class MidiDeviceStatus;
 }
+class JString;
 
 namespace android::media::midi
 {
@@ -24,7 +23,7 @@ namespace android::media::midi
 	{
 	public:
 		// Fields
-		static jstring SERVICE_INTERFACE();
+		static JString SERVICE_INTERFACE();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MidiDeviceService(const char *className, const char *sig, Ts...agv) : android::app::Service(className, sig, std::forward<Ts>(agv)...) {}
@@ -35,12 +34,12 @@ namespace android::media::midi
 		
 		// Methods
 		android::media::midi::MidiDeviceInfo getDeviceInfo();
-		jarray getOutputPortReceivers();
+		JArray getOutputPortReceivers();
 		JObject onBind(android::content::Intent arg0);
 		void onClose();
 		void onCreate();
 		void onDeviceStatusChanged(android::media::midi::MidiDeviceStatus arg0);
-		jarray onGetInputPortReceivers();
+		JArray onGetInputPortReceivers();
 	};
 } // namespace android::media::midi
 

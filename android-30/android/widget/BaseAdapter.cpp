@@ -1,3 +1,4 @@
+#include "../../JArray.hpp"
 #include "../database/DataSetObserver.hpp"
 #include "../view/View.hpp"
 #include "../view/ViewGroup.hpp"
@@ -25,12 +26,12 @@ namespace android::widget
 			"()Z"
 		);
 	}
-	jarray BaseAdapter::getAutofillOptions()
+	JArray BaseAdapter::getAutofillOptions()
 	{
 		return callObjectMethod(
 			"getAutofillOptions",
 			"()[Ljava/lang/CharSequence;"
-		).object<jarray>();
+		);
 	}
 	android::view::View BaseAdapter::getDropDownView(jint arg0, android::view::View arg1, android::view::ViewGroup arg2)
 	{
@@ -101,12 +102,12 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void BaseAdapter::setAutofillOptions(jarray arg0)
+	void BaseAdapter::setAutofillOptions(JArray arg0)
 	{
 		callMethod<void>(
 			"setAutofillOptions",
 			"([Ljava/lang/CharSequence;)V",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
 	void BaseAdapter::unregisterDataSetObserver(android::database::DataSetObserver arg0)

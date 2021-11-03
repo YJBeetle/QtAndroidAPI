@@ -6,6 +6,7 @@ namespace android::bluetooth
 {
 	class BluetoothSocket;
 }
+class JString;
 
 namespace android::bluetooth
 {
@@ -24,7 +25,7 @@ namespace android::bluetooth
 		android::bluetooth::BluetoothSocket accept();
 		android::bluetooth::BluetoothSocket accept(jint arg0);
 		void close();
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::bluetooth
 

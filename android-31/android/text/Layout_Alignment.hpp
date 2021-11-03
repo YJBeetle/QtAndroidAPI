@@ -1,8 +1,9 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "../../java/lang/Enum.hpp"
 
+class JArray;
+class JString;
 
 namespace android::text
 {
@@ -21,8 +22,8 @@ namespace android::text
 		// Constructors
 		
 		// Methods
-		static android::text::Layout_Alignment valueOf(jstring arg0);
-		static jarray values();
+		static android::text::Layout_Alignment valueOf(JString arg0);
+		static JArray values();
 	};
 } // namespace android::text
 

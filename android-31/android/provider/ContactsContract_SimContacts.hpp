@@ -6,6 +6,7 @@ namespace android::content
 {
 	class ContentResolver;
 }
+class JString;
 
 namespace android::provider
 {
@@ -13,7 +14,7 @@ namespace android::provider
 	{
 	public:
 		// Fields
-		static jstring ACTION_SIM_ACCOUNTS_CHANGED();
+		static JString ACTION_SIM_ACCOUNTS_CHANGED();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ContactsContract_SimContacts(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}

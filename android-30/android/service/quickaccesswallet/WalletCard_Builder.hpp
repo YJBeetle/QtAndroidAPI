@@ -14,6 +14,8 @@ namespace android::service::quickaccesswallet
 {
 	class WalletCard;
 }
+class JString;
+class JString;
 
 namespace android::service::quickaccesswallet
 {
@@ -27,12 +29,12 @@ namespace android::service::quickaccesswallet
 		WalletCard_Builder(QAndroidJniObject obj);
 		
 		// Constructors
-		WalletCard_Builder(jstring arg0, android::graphics::drawable::Icon arg1, jstring arg2, android::app::PendingIntent arg3);
+		WalletCard_Builder(JString arg0, android::graphics::drawable::Icon arg1, JString arg2, android::app::PendingIntent arg3);
 		
 		// Methods
 		android::service::quickaccesswallet::WalletCard build();
 		android::service::quickaccesswallet::WalletCard_Builder setCardIcon(android::graphics::drawable::Icon arg0);
-		android::service::quickaccesswallet::WalletCard_Builder setCardLabel(jstring arg0);
+		android::service::quickaccesswallet::WalletCard_Builder setCardLabel(JString arg0);
 	};
 } // namespace android::service::quickaccesswallet
 

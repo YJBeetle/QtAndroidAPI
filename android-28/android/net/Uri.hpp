@@ -14,6 +14,8 @@ namespace java::io
 {
 	class File;
 }
+class JObject;
+class JString;
 
 namespace android::net
 {
@@ -31,46 +33,46 @@ namespace android::net
 		// Constructors
 		
 		// Methods
-		static jstring decode(jstring arg0);
-		static jstring encode(jstring arg0);
-		static jstring encode(jstring arg0, jstring arg1);
+		static JString decode(JString arg0);
+		static JString encode(JString arg0);
+		static JString encode(JString arg0, JString arg1);
 		static android::net::Uri fromFile(java::io::File arg0);
-		static android::net::Uri fromParts(jstring arg0, jstring arg1, jstring arg2);
-		static android::net::Uri parse(jstring arg0);
-		static android::net::Uri withAppendedPath(android::net::Uri arg0, jstring arg1);
+		static android::net::Uri fromParts(JString arg0, JString arg1, JString arg2);
+		static android::net::Uri parse(JString arg0);
+		static android::net::Uri withAppendedPath(android::net::Uri arg0, JString arg1);
 		static void writeToParcel(android::os::Parcel arg0, android::net::Uri arg1);
 		android::net::Uri_Builder buildUpon();
 		jint compareTo(android::net::Uri arg0);
-		jint compareTo(jobject arg0);
-		jboolean equals(jobject arg0);
-		jstring getAuthority();
-		jboolean getBooleanQueryParameter(jstring arg0, jboolean arg1);
-		jstring getEncodedAuthority();
-		jstring getEncodedFragment();
-		jstring getEncodedPath();
-		jstring getEncodedQuery();
-		jstring getEncodedSchemeSpecificPart();
-		jstring getEncodedUserInfo();
-		jstring getFragment();
-		jstring getHost();
-		jstring getLastPathSegment();
-		jstring getPath();
+		jint compareTo(JObject arg0);
+		jboolean equals(JObject arg0);
+		JString getAuthority();
+		jboolean getBooleanQueryParameter(JString arg0, jboolean arg1);
+		JString getEncodedAuthority();
+		JString getEncodedFragment();
+		JString getEncodedPath();
+		JString getEncodedQuery();
+		JString getEncodedSchemeSpecificPart();
+		JString getEncodedUserInfo();
+		JString getFragment();
+		JString getHost();
+		JString getLastPathSegment();
+		JString getPath();
 		JObject getPathSegments();
 		jint getPort();
-		jstring getQuery();
-		jstring getQueryParameter(jstring arg0);
+		JString getQuery();
+		JString getQueryParameter(JString arg0);
 		JObject getQueryParameterNames();
-		JObject getQueryParameters(jstring arg0);
-		jstring getScheme();
-		jstring getSchemeSpecificPart();
-		jstring getUserInfo();
+		JObject getQueryParameters(JString arg0);
+		JString getScheme();
+		JString getSchemeSpecificPart();
+		JString getUserInfo();
 		jint hashCode();
 		jboolean isAbsolute();
 		jboolean isHierarchical();
 		jboolean isOpaque();
 		jboolean isRelative();
 		android::net::Uri normalizeScheme();
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::net
 

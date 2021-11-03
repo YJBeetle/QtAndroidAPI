@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JString;
 
 namespace android::webkit
 {
@@ -20,11 +21,11 @@ namespace android::webkit
 		// Methods
 		static android::webkit::WebIconDatabase getInstance();
 		void close();
-		void open(jstring arg0);
-		void releaseIconForPageUrl(jstring arg0);
+		void open(JString arg0);
+		void releaseIconForPageUrl(JString arg0);
 		void removeAllIcons();
-		void requestIconForPageUrl(jstring arg0, JObject arg1);
-		void retainIconForPageUrl(jstring arg0);
+		void requestIconForPageUrl(JString arg0, JObject arg1);
+		void retainIconForPageUrl(JString arg0);
 	};
 } // namespace android::webkit
 

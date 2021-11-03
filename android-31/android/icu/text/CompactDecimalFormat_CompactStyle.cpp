@@ -1,3 +1,5 @@
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
 #include "./CompactDecimalFormat_CompactStyle.hpp"
 
 namespace android::icu::text
@@ -26,22 +28,22 @@ namespace android::icu::text
 	// Constructors
 	
 	// Methods
-	android::icu::text::CompactDecimalFormat_CompactStyle CompactDecimalFormat_CompactStyle::valueOf(jstring arg0)
+	android::icu::text::CompactDecimalFormat_CompactStyle CompactDecimalFormat_CompactStyle::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.icu.text.CompactDecimalFormat$CompactStyle",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/icu/text/CompactDecimalFormat$CompactStyle;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray CompactDecimalFormat_CompactStyle::values()
+	JArray CompactDecimalFormat_CompactStyle::values()
 	{
 		return callStaticObjectMethod(
 			"android.icu.text.CompactDecimalFormat$CompactStyle",
 			"values",
 			"()[Landroid/icu/text/CompactDecimalFormat$CompactStyle;"
-		).object<jarray>();
+		);
 	}
 } // namespace android::icu::text
 

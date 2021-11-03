@@ -1,3 +1,4 @@
+#include "../../JObject.hpp"
 #include "./Thread.hpp"
 #include "../util/concurrent/atomic/AtomicInteger.hpp"
 #include "./ThreadLocal.hpp"
@@ -26,12 +27,12 @@ namespace java::lang
 			arg0.object()
 		);
 	}
-	jobject ThreadLocal::get()
+	JObject ThreadLocal::get()
 	{
 		return callObjectMethod(
 			"get",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
 	void ThreadLocal::remove()
 	{
@@ -40,12 +41,12 @@ namespace java::lang
 			"()V"
 		);
 	}
-	void ThreadLocal::set(jobject arg0)
+	void ThreadLocal::set(JObject arg0)
 	{
 		callMethod<void>(
 			"set",
 			"(Ljava/lang/Object;)V",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 } // namespace java::lang

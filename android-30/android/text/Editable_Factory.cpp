@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./Editable_Factory.hpp"
 
 namespace android::text
@@ -23,12 +24,12 @@ namespace android::text
 			"()Landroid/text/Editable$Factory;"
 		);
 	}
-	JObject Editable_Factory::newEditable(jstring arg0)
+	JObject Editable_Factory::newEditable(JString arg0)
 	{
 		return callObjectMethod(
 			"newEditable",
 			"(Ljava/lang/CharSequence;)Landroid/text/Editable;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 } // namespace android::text

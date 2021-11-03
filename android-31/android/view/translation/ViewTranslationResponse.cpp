@@ -1,6 +1,8 @@
 #include "../../os/Parcel.hpp"
 #include "../autofill/AutofillId.hpp"
 #include "./TranslationResponseValue.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./ViewTranslationResponse.hpp"
 
 namespace android::view::translation
@@ -28,12 +30,12 @@ namespace android::view::translation
 			"()I"
 		);
 	}
-	jboolean ViewTranslationResponse::equals(jobject arg0)
+	jboolean ViewTranslationResponse::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	android::view::autofill::AutofillId ViewTranslationResponse::getAutofillId()
@@ -50,12 +52,12 @@ namespace android::view::translation
 			"()Ljava/util/Set;"
 		);
 	}
-	android::view::translation::TranslationResponseValue ViewTranslationResponse::getValue(jstring arg0)
+	android::view::translation::TranslationResponseValue ViewTranslationResponse::getValue(JString arg0)
 	{
 		return callObjectMethod(
 			"getValue",
 			"(Ljava/lang/String;)Landroid/view/translation/TranslationResponseValue;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	jint ViewTranslationResponse::hashCode()
@@ -65,12 +67,12 @@ namespace android::view::translation
 			"()I"
 		);
 	}
-	jstring ViewTranslationResponse::toString()
+	JString ViewTranslationResponse::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void ViewTranslationResponse::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

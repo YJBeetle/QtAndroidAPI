@@ -1,8 +1,9 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "../../../java/lang/Enum.hpp"
 
+class JArray;
+class JString;
 
 namespace android::icu::util
 {
@@ -21,8 +22,8 @@ namespace android::icu::util
 		// Constructors
 		
 		// Methods
-		static android::icu::util::ULocale_AvailableType valueOf(jstring arg0);
-		static jarray values();
+		static android::icu::util::ULocale_AvailableType valueOf(JString arg0);
+		static JArray values();
 	};
 } // namespace android::icu::util
 

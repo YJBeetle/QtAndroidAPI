@@ -5,26 +5,27 @@
 #include "./FillRequest.hpp"
 #include "./SaveCallback.hpp"
 #include "./SaveRequest.hpp"
+#include "../../../JString.hpp"
 #include "./AutofillService.hpp"
 
 namespace android::service::autofill
 {
 	// Fields
-	jstring AutofillService::SERVICE_INTERFACE()
+	JString AutofillService::SERVICE_INTERFACE()
 	{
 		return getStaticObjectField(
 			"android.service.autofill.AutofillService",
 			"SERVICE_INTERFACE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring AutofillService::SERVICE_META_DATA()
+	JString AutofillService::SERVICE_META_DATA()
 	{
 		return getStaticObjectField(
 			"android.service.autofill.AutofillService",
 			"SERVICE_META_DATA",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QAndroidJniObject forward

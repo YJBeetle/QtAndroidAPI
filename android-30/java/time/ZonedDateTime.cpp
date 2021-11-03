@@ -1,4 +1,7 @@
 #include "../io/ObjectInputStream.hpp"
+#include "../../JString.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./Clock.hpp"
 #include "./DayOfWeek.hpp"
 #include "./Instant.hpp"
@@ -138,40 +141,40 @@ namespace java::time
 			arg2.object()
 		);
 	}
-	java::time::ZonedDateTime ZonedDateTime::parse(jstring arg0)
+	java::time::ZonedDateTime ZonedDateTime::parse(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"java.time.ZonedDateTime",
 			"parse",
 			"(Ljava/lang/CharSequence;)Ljava/time/ZonedDateTime;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	java::time::ZonedDateTime ZonedDateTime::parse(jstring arg0, java::time::format::DateTimeFormatter arg1)
+	java::time::ZonedDateTime ZonedDateTime::parse(JString arg0, java::time::format::DateTimeFormatter arg1)
 	{
 		return callStaticObjectMethod(
 			"java.time.ZonedDateTime",
 			"parse",
 			"(Ljava/lang/CharSequence;Ljava/time/format/DateTimeFormatter;)Ljava/time/ZonedDateTime;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
-	jboolean ZonedDateTime::equals(jobject arg0)
+	jboolean ZonedDateTime::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jstring ZonedDateTime::format(java::time::format::DateTimeFormatter arg0)
+	JString ZonedDateTime::format(java::time::format::DateTimeFormatter arg0)
 	{
 		return callObjectMethod(
 			"format",
 			"(Ljava/time/format/DateTimeFormatter;)Ljava/lang/String;",
 			arg0.object()
-		).object<jstring>();
+		);
 	}
 	jint ZonedDateTime::get(JObject arg0)
 	{
@@ -450,13 +453,13 @@ namespace java::time
 			arg0
 		);
 	}
-	jobject ZonedDateTime::query(JObject arg0)
+	JObject ZonedDateTime::query(JObject arg0)
 	{
 		return callObjectMethod(
 			"query",
 			"(Ljava/time/temporal/TemporalQuery;)Ljava/lang/Object;",
 			arg0.object()
-		).object<jobject>();
+		);
 	}
 	java::time::temporal::ValueRange ZonedDateTime::range(JObject arg0)
 	{
@@ -494,12 +497,12 @@ namespace java::time
 			"()Ljava/time/OffsetDateTime;"
 		);
 	}
-	jstring ZonedDateTime::toString()
+	JString ZonedDateTime::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	java::time::ZonedDateTime ZonedDateTime::truncatedTo(JObject arg0)
 	{

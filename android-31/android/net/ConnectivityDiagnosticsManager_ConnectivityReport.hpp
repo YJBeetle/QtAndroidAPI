@@ -22,6 +22,8 @@ namespace android::os
 {
 	class PersistableBundle;
 }
+class JObject;
+class JString;
 
 namespace android::net
 {
@@ -30,9 +32,9 @@ namespace android::net
 	public:
 		// Fields
 		static JObject CREATOR();
-		static jstring KEY_NETWORK_PROBES_ATTEMPTED_BITMASK();
-		static jstring KEY_NETWORK_PROBES_SUCCEEDED_BITMASK();
-		static jstring KEY_NETWORK_VALIDATION_RESULT();
+		static JString KEY_NETWORK_PROBES_ATTEMPTED_BITMASK();
+		static JString KEY_NETWORK_PROBES_SUCCEEDED_BITMASK();
+		static JString KEY_NETWORK_VALIDATION_RESULT();
 		static jint NETWORK_PROBE_DNS();
 		static jint NETWORK_PROBE_FALLBACK();
 		static jint NETWORK_PROBE_HTTP();
@@ -52,7 +54,7 @@ namespace android::net
 		
 		// Methods
 		jint describeContents();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		android::os::PersistableBundle getAdditionalInfo();
 		android::net::LinkProperties getLinkProperties();
 		android::net::Network getNetwork();

@@ -1,24 +1,25 @@
 #include "../net/Uri.hpp"
+#include "../../JString.hpp"
 #include "./ContactsContract_AggregationExceptions.hpp"
 
 namespace android::provider
 {
 	// Fields
-	jstring ContactsContract_AggregationExceptions::CONTENT_ITEM_TYPE()
+	JString ContactsContract_AggregationExceptions::CONTENT_ITEM_TYPE()
 	{
 		return getStaticObjectField(
 			"android.provider.ContactsContract$AggregationExceptions",
 			"CONTENT_ITEM_TYPE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ContactsContract_AggregationExceptions::CONTENT_TYPE()
+	JString ContactsContract_AggregationExceptions::CONTENT_TYPE()
 	{
 		return getStaticObjectField(
 			"android.provider.ContactsContract$AggregationExceptions",
 			"CONTENT_TYPE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::net::Uri ContactsContract_AggregationExceptions::CONTENT_URI()
 	{
@@ -28,29 +29,29 @@ namespace android::provider
 			"Landroid/net/Uri;"
 		);
 	}
-	jstring ContactsContract_AggregationExceptions::RAW_CONTACT_ID1()
+	JString ContactsContract_AggregationExceptions::RAW_CONTACT_ID1()
 	{
 		return getStaticObjectField(
 			"android.provider.ContactsContract$AggregationExceptions",
 			"RAW_CONTACT_ID1",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ContactsContract_AggregationExceptions::RAW_CONTACT_ID2()
+	JString ContactsContract_AggregationExceptions::RAW_CONTACT_ID2()
 	{
 		return getStaticObjectField(
 			"android.provider.ContactsContract$AggregationExceptions",
 			"RAW_CONTACT_ID2",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ContactsContract_AggregationExceptions::TYPE()
+	JString ContactsContract_AggregationExceptions::TYPE()
 	{
 		return getStaticObjectField(
 			"android.provider.ContactsContract$AggregationExceptions",
 			"TYPE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint ContactsContract_AggregationExceptions::TYPE_AUTOMATIC()
 	{

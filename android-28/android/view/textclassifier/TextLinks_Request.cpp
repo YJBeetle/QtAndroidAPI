@@ -1,6 +1,7 @@
 #include "../../os/LocaleList.hpp"
 #include "../../os/Parcel.hpp"
 #include "./TextClassifier_EntityConfig.hpp"
+#include "../../../JString.hpp"
 #include "./TextLinks_Request.hpp"
 
 namespace android::view::textclassifier
@@ -42,12 +43,12 @@ namespace android::view::textclassifier
 			"()Landroid/view/textclassifier/TextClassifier$EntityConfig;"
 		);
 	}
-	jstring TextLinks_Request::getText()
+	JString TextLinks_Request::getText()
 	{
 		return callObjectMethod(
 			"getText",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	void TextLinks_Request::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

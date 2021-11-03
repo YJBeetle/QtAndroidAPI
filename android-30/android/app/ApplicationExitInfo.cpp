@@ -1,6 +1,9 @@
+#include "../../JByteArray.hpp"
 #include "../os/Parcel.hpp"
 #include "../os/UserHandle.hpp"
 #include "../../java/io/InputStream.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./ApplicationExitInfo.hpp"
 
 namespace android::app
@@ -126,12 +129,12 @@ namespace android::app
 			"()I"
 		);
 	}
-	jboolean ApplicationExitInfo::equals(jobject arg0)
+	jboolean ApplicationExitInfo::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint ApplicationExitInfo::getDefiningUid()
@@ -141,12 +144,12 @@ namespace android::app
 			"()I"
 		);
 	}
-	jstring ApplicationExitInfo::getDescription()
+	JString ApplicationExitInfo::getDescription()
 	{
 		return callObjectMethod(
 			"getDescription",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint ApplicationExitInfo::getImportance()
 	{
@@ -169,19 +172,19 @@ namespace android::app
 			"()I"
 		);
 	}
-	jstring ApplicationExitInfo::getProcessName()
+	JString ApplicationExitInfo::getProcessName()
 	{
 		return callObjectMethod(
 			"getProcessName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jbyteArray ApplicationExitInfo::getProcessStateSummary()
+	JByteArray ApplicationExitInfo::getProcessStateSummary()
 	{
 		return callObjectMethod(
 			"getProcessStateSummary",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
 	jlong ApplicationExitInfo::getPss()
 	{
@@ -246,12 +249,12 @@ namespace android::app
 			"()I"
 		);
 	}
-	jstring ApplicationExitInfo::toString()
+	JString ApplicationExitInfo::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void ApplicationExitInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

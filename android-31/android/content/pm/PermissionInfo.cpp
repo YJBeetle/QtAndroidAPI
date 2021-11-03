@@ -1,5 +1,7 @@
 #include "./PackageManager.hpp"
 #include "../../os/Parcel.hpp"
+#include "../../../JString.hpp"
+#include "../../../JString.hpp"
 #include "./PermissionInfo.hpp"
 
 namespace android::content::pm
@@ -186,19 +188,19 @@ namespace android::content::pm
 			"flags"
 		);
 	}
-	jstring PermissionInfo::group()
+	JString PermissionInfo::group()
 	{
 		return getObjectField(
 			"group",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PermissionInfo::nonLocalizedDescription()
+	JString PermissionInfo::nonLocalizedDescription()
 	{
 		return getObjectField(
 			"nonLocalizedDescription",
 			"Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	jint PermissionInfo::protectionLevel()
 	{
@@ -245,20 +247,20 @@ namespace android::content::pm
 			"()I"
 		);
 	}
-	jstring PermissionInfo::loadDescription(android::content::pm::PackageManager arg0)
+	JString PermissionInfo::loadDescription(android::content::pm::PackageManager arg0)
 	{
 		return callObjectMethod(
 			"loadDescription",
 			"(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;",
 			arg0.object()
-		).object<jstring>();
+		);
 	}
-	jstring PermissionInfo::toString()
+	JString PermissionInfo::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void PermissionInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

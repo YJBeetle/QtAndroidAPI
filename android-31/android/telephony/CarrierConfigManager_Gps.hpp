@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JString;
 
 namespace android::telephony
 {
@@ -9,8 +10,8 @@ namespace android::telephony
 	{
 	public:
 		// Fields
-		static jstring KEY_PERSIST_LPP_MODE_BOOL();
-		static jstring KEY_PREFIX();
+		static JString KEY_PERSIST_LPP_MODE_BOOL();
+		static JString KEY_PREFIX();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit CarrierConfigManager_Gps(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}

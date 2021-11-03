@@ -1,12 +1,12 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "./CameraMetadata.hpp"
 
 namespace android::hardware::camera2
 {
 	class CameraCharacteristics_Key;
 }
+class JObject;
 
 namespace android::hardware::camera2
 {
@@ -108,7 +108,7 @@ namespace android::hardware::camera2
 		// Constructors
 		
 		// Methods
-		jobject get(android::hardware::camera2::CameraCharacteristics_Key arg0);
+		JObject get(android::hardware::camera2::CameraCharacteristics_Key arg0);
 		JObject getAvailableCaptureRequestKeys();
 		JObject getAvailableCaptureResultKeys();
 		JObject getAvailablePhysicalCameraRequestKeys();

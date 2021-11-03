@@ -1,3 +1,4 @@
+#include "../../JByteArray.hpp"
 #include "../../java/io/OutputStream.hpp"
 #include "./Base64OutputStream.hpp"
 
@@ -33,12 +34,12 @@ namespace android::util
 			arg0
 		);
 	}
-	void Base64OutputStream::write(jbyteArray arg0, jint arg1, jint arg2)
+	void Base64OutputStream::write(JByteArray arg0, jint arg1, jint arg2)
 	{
 		callMethod<void>(
 			"write",
 			"([BII)V",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1,
 			arg2
 		);

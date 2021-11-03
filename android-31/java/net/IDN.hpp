@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JString;
 namespace java::lang
 {
 	class StringBuffer;
@@ -23,10 +24,10 @@ namespace java::net
 		// Constructors
 		
 		// Methods
-		static jstring toASCII(jstring arg0);
-		static jstring toASCII(jstring arg0, jint arg1);
-		static jstring toUnicode(jstring arg0);
-		static jstring toUnicode(jstring arg0, jint arg1);
+		static JString toASCII(JString arg0);
+		static JString toASCII(JString arg0, jint arg1);
+		static JString toUnicode(JString arg0);
+		static JString toUnicode(JString arg0, jint arg1);
 	};
 } // namespace java::net
 

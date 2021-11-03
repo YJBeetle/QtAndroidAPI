@@ -14,6 +14,7 @@ namespace android::os
 {
 	class Bundle;
 }
+class JString;
 
 namespace android::media::tv
 {
@@ -33,7 +34,7 @@ namespace android::media::tv
 		void notifyError(jint arg0);
 		void notifyRecordingStopped(android::net::Uri arg0);
 		void notifyTuned(android::net::Uri arg0);
-		void onAppPrivateCommand(jstring arg0, android::os::Bundle arg1);
+		void onAppPrivateCommand(JString arg0, android::os::Bundle arg1);
 		void onRelease();
 		void onStartRecording(android::net::Uri arg0);
 		void onStopRecording();

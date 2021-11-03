@@ -1,24 +1,25 @@
 #include "../../content/Intent.hpp"
+#include "../../../JString.hpp"
 #include "./OffHostApduService.hpp"
 
 namespace android::nfc::cardemulation
 {
 	// Fields
-	jstring OffHostApduService::SERVICE_INTERFACE()
+	JString OffHostApduService::SERVICE_INTERFACE()
 	{
 		return getStaticObjectField(
 			"android.nfc.cardemulation.OffHostApduService",
 			"SERVICE_INTERFACE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring OffHostApduService::SERVICE_META_DATA()
+	JString OffHostApduService::SERVICE_META_DATA()
 	{
 		return getStaticObjectField(
 			"android.nfc.cardemulation.OffHostApduService",
 			"SERVICE_META_DATA",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QAndroidJniObject forward

@@ -2,10 +2,13 @@
 
 #include "../../../../JObject.hpp"
 
+class JFloatArray;
 namespace android::hardware::camera2::params
 {
 	class RggbChannelVector;
 }
+class JObject;
+class JString;
 
 namespace android::hardware::camera2::params
 {
@@ -22,15 +25,15 @@ namespace android::hardware::camera2::params
 		// Constructors
 		
 		// Methods
-		void copyGainFactors(jfloatArray arg0, jint arg1);
-		jboolean equals(jobject arg0);
+		void copyGainFactors(JFloatArray arg0, jint arg1);
+		jboolean equals(JObject arg0);
 		jint getColumnCount();
 		jfloat getGainFactor(jint arg0, jint arg1, jint arg2);
 		jint getGainFactorCount();
 		android::hardware::camera2::params::RggbChannelVector getGainFactorVector(jint arg0, jint arg1);
 		jint getRowCount();
 		jint hashCode();
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::hardware::camera2::params
 

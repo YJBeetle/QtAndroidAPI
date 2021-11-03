@@ -2,6 +2,8 @@
 
 #include "../../../JObject.hpp"
 
+class JObject;
+class JString;
 
 namespace android::app::appsearch
 {
@@ -20,11 +22,11 @@ namespace android::app::appsearch
 		// Constructors
 		
 		// Methods
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint getCardinality();
-		jstring getName();
+		JString getName();
 		jint hashCode();
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::app::appsearch
 

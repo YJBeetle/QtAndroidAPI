@@ -26,6 +26,7 @@ namespace android::webkit
 {
 	class WebSettings_ZoomDensity;
 }
+class JString;
 
 namespace android::webkit
 {
@@ -54,7 +55,7 @@ namespace android::webkit
 		WebSettings();
 		
 		// Methods
-		static jstring getDefaultUserAgent(android::content::Context arg0);
+		static JString getDefaultUserAgent(android::content::Context arg0);
 		jboolean enableSmoothTransition();
 		jboolean getAllowContentAccess();
 		jboolean getAllowFileAccess();
@@ -64,18 +65,18 @@ namespace android::webkit
 		jboolean getBlockNetworkLoads();
 		jboolean getBuiltInZoomControls();
 		jint getCacheMode();
-		jstring getCursiveFontFamily();
+		JString getCursiveFontFamily();
 		jboolean getDatabaseEnabled();
-		jstring getDatabasePath();
+		JString getDatabasePath();
 		jint getDefaultFixedFontSize();
 		jint getDefaultFontSize();
-		jstring getDefaultTextEncodingName();
+		JString getDefaultTextEncodingName();
 		android::webkit::WebSettings_ZoomDensity getDefaultZoom();
 		jint getDisabledActionModeMenuItems();
 		jboolean getDisplayZoomControls();
 		jboolean getDomStorageEnabled();
-		jstring getFantasyFontFamily();
-		jstring getFixedFontFamily();
+		JString getFantasyFontFamily();
+		JString getFixedFontFamily();
 		jboolean getJavaScriptCanOpenWindowsAutomatically();
 		jboolean getJavaScriptEnabled();
 		android::webkit::WebSettings_LayoutAlgorithm getLayoutAlgorithm();
@@ -89,40 +90,40 @@ namespace android::webkit
 		jboolean getOffscreenPreRaster();
 		android::webkit::WebSettings_PluginState getPluginState();
 		jboolean getSafeBrowsingEnabled();
-		jstring getSansSerifFontFamily();
+		JString getSansSerifFontFamily();
 		jboolean getSaveFormData();
 		jboolean getSavePassword();
-		jstring getSerifFontFamily();
-		jstring getStandardFontFamily();
+		JString getSerifFontFamily();
+		JString getStandardFontFamily();
 		android::webkit::WebSettings_TextSize getTextSize();
 		jint getTextZoom();
 		jboolean getUseWideViewPort();
-		jstring getUserAgentString();
+		JString getUserAgentString();
 		void setAllowContentAccess(jboolean arg0);
 		void setAllowFileAccess(jboolean arg0);
 		void setAllowFileAccessFromFileURLs(jboolean arg0);
 		void setAllowUniversalAccessFromFileURLs(jboolean arg0);
 		void setAppCacheEnabled(jboolean arg0);
 		void setAppCacheMaxSize(jlong arg0);
-		void setAppCachePath(jstring arg0);
+		void setAppCachePath(JString arg0);
 		void setBlockNetworkImage(jboolean arg0);
 		void setBlockNetworkLoads(jboolean arg0);
 		void setBuiltInZoomControls(jboolean arg0);
 		void setCacheMode(jint arg0);
-		void setCursiveFontFamily(jstring arg0);
+		void setCursiveFontFamily(JString arg0);
 		void setDatabaseEnabled(jboolean arg0);
-		void setDatabasePath(jstring arg0);
+		void setDatabasePath(JString arg0);
 		void setDefaultFixedFontSize(jint arg0);
 		void setDefaultFontSize(jint arg0);
-		void setDefaultTextEncodingName(jstring arg0);
+		void setDefaultTextEncodingName(JString arg0);
 		void setDefaultZoom(android::webkit::WebSettings_ZoomDensity arg0);
 		void setDisabledActionModeMenuItems(jint arg0);
 		void setDisplayZoomControls(jboolean arg0);
 		void setDomStorageEnabled(jboolean arg0);
 		void setEnableSmoothTransition(jboolean arg0);
-		void setFantasyFontFamily(jstring arg0);
-		void setFixedFontFamily(jstring arg0);
-		void setGeolocationDatabasePath(jstring arg0);
+		void setFantasyFontFamily(JString arg0);
+		void setFixedFontFamily(JString arg0);
+		void setGeolocationDatabasePath(JString arg0);
 		void setGeolocationEnabled(jboolean arg0);
 		void setJavaScriptCanOpenWindowsAutomatically(jboolean arg0);
 		void setJavaScriptEnabled(jboolean arg0);
@@ -139,17 +140,17 @@ namespace android::webkit
 		void setPluginState(android::webkit::WebSettings_PluginState arg0);
 		void setRenderPriority(android::webkit::WebSettings_RenderPriority arg0);
 		void setSafeBrowsingEnabled(jboolean arg0);
-		void setSansSerifFontFamily(jstring arg0);
+		void setSansSerifFontFamily(JString arg0);
 		void setSaveFormData(jboolean arg0);
 		void setSavePassword(jboolean arg0);
-		void setSerifFontFamily(jstring arg0);
-		void setStandardFontFamily(jstring arg0);
+		void setSerifFontFamily(JString arg0);
+		void setStandardFontFamily(JString arg0);
 		void setSupportMultipleWindows(jboolean arg0);
 		void setSupportZoom(jboolean arg0);
 		void setTextSize(android::webkit::WebSettings_TextSize arg0);
 		void setTextZoom(jint arg0);
 		void setUseWideViewPort(jboolean arg0);
-		void setUserAgentString(jstring arg0);
+		void setUserAgentString(JString arg0);
 		jboolean supportMultipleWindows();
 		jboolean supportZoom();
 	};

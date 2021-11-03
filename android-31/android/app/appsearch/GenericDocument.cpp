@@ -1,3 +1,12 @@
+#include "../../../JByteArray.hpp"
+#include "../../../JDoubleArray.hpp"
+#include "../../../JLongArray.hpp"
+#include "../../../JArray.hpp"
+#include "../../../JArray.hpp"
+#include "../../../JBooleanArray.hpp"
+#include "../../../JArray.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./GenericDocument.hpp"
 
 namespace android::app::appsearch
@@ -18,12 +27,12 @@ namespace android::app::appsearch
 			"()I"
 		);
 	}
-	jboolean GenericDocument::equals(jobject arg0)
+	jboolean GenericDocument::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jlong GenericDocument::getCreationTimestampMillis()
@@ -33,107 +42,107 @@ namespace android::app::appsearch
 			"()J"
 		);
 	}
-	jstring GenericDocument::getId()
+	JString GenericDocument::getId()
 	{
 		return callObjectMethod(
 			"getId",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring GenericDocument::getNamespace()
+	JString GenericDocument::getNamespace()
 	{
 		return callObjectMethod(
 			"getNamespace",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jobject GenericDocument::getProperty(jstring arg0)
+	JObject GenericDocument::getProperty(JString arg0)
 	{
 		return callObjectMethod(
 			"getProperty",
 			"(Ljava/lang/String;)Ljava/lang/Object;",
-			arg0
-		).object<jobject>();
+			arg0.object<jstring>()
+		);
 	}
-	jboolean GenericDocument::getPropertyBoolean(jstring arg0)
+	jboolean GenericDocument::getPropertyBoolean(JString arg0)
 	{
 		return callMethod<jboolean>(
 			"getPropertyBoolean",
 			"(Ljava/lang/String;)Z",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jbooleanArray GenericDocument::getPropertyBooleanArray(jstring arg0)
+	JBooleanArray GenericDocument::getPropertyBooleanArray(JString arg0)
 	{
 		return callObjectMethod(
 			"getPropertyBooleanArray",
 			"(Ljava/lang/String;)[Z",
-			arg0
-		).object<jbooleanArray>();
+			arg0.object<jstring>()
+		);
 	}
-	jbyteArray GenericDocument::getPropertyBytes(jstring arg0)
+	JByteArray GenericDocument::getPropertyBytes(JString arg0)
 	{
 		return callObjectMethod(
 			"getPropertyBytes",
 			"(Ljava/lang/String;)[B",
-			arg0
-		).object<jbyteArray>();
+			arg0.object<jstring>()
+		);
 	}
-	jarray GenericDocument::getPropertyBytesArray(jstring arg0)
+	JArray GenericDocument::getPropertyBytesArray(JString arg0)
 	{
 		return callObjectMethod(
 			"getPropertyBytesArray",
 			"(Ljava/lang/String;)[[B",
-			arg0
-		).object<jarray>();
+			arg0.object<jstring>()
+		);
 	}
-	android::app::appsearch::GenericDocument GenericDocument::getPropertyDocument(jstring arg0)
+	android::app::appsearch::GenericDocument GenericDocument::getPropertyDocument(JString arg0)
 	{
 		return callObjectMethod(
 			"getPropertyDocument",
 			"(Ljava/lang/String;)Landroid/app/appsearch/GenericDocument;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray GenericDocument::getPropertyDocumentArray(jstring arg0)
+	JArray GenericDocument::getPropertyDocumentArray(JString arg0)
 	{
 		return callObjectMethod(
 			"getPropertyDocumentArray",
 			"(Ljava/lang/String;)[Landroid/app/appsearch/GenericDocument;",
-			arg0
-		).object<jarray>();
+			arg0.object<jstring>()
+		);
 	}
-	jdouble GenericDocument::getPropertyDouble(jstring arg0)
+	jdouble GenericDocument::getPropertyDouble(JString arg0)
 	{
 		return callMethod<jdouble>(
 			"getPropertyDouble",
 			"(Ljava/lang/String;)D",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jdoubleArray GenericDocument::getPropertyDoubleArray(jstring arg0)
+	JDoubleArray GenericDocument::getPropertyDoubleArray(JString arg0)
 	{
 		return callObjectMethod(
 			"getPropertyDoubleArray",
 			"(Ljava/lang/String;)[D",
-			arg0
-		).object<jdoubleArray>();
+			arg0.object<jstring>()
+		);
 	}
-	jlong GenericDocument::getPropertyLong(jstring arg0)
+	jlong GenericDocument::getPropertyLong(JString arg0)
 	{
 		return callMethod<jlong>(
 			"getPropertyLong",
 			"(Ljava/lang/String;)J",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jlongArray GenericDocument::getPropertyLongArray(jstring arg0)
+	JLongArray GenericDocument::getPropertyLongArray(JString arg0)
 	{
 		return callObjectMethod(
 			"getPropertyLongArray",
 			"(Ljava/lang/String;)[J",
-			arg0
-		).object<jlongArray>();
+			arg0.object<jstring>()
+		);
 	}
 	JObject GenericDocument::getPropertyNames()
 	{
@@ -142,28 +151,28 @@ namespace android::app::appsearch
 			"()Ljava/util/Set;"
 		);
 	}
-	jstring GenericDocument::getPropertyString(jstring arg0)
+	JString GenericDocument::getPropertyString(JString arg0)
 	{
 		return callObjectMethod(
 			"getPropertyString",
 			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
+			arg0.object<jstring>()
+		);
 	}
-	jarray GenericDocument::getPropertyStringArray(jstring arg0)
+	JArray GenericDocument::getPropertyStringArray(JString arg0)
 	{
 		return callObjectMethod(
 			"getPropertyStringArray",
 			"(Ljava/lang/String;)[Ljava/lang/String;",
-			arg0
-		).object<jarray>();
+			arg0.object<jstring>()
+		);
 	}
-	jstring GenericDocument::getSchemaType()
+	JString GenericDocument::getSchemaType()
 	{
 		return callObjectMethod(
 			"getSchemaType",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint GenericDocument::getScore()
 	{
@@ -186,12 +195,12 @@ namespace android::app::appsearch
 			"()I"
 		);
 	}
-	jstring GenericDocument::toString()
+	JString GenericDocument::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::app::appsearch
 

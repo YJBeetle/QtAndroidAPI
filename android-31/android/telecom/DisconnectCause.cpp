@@ -1,4 +1,7 @@
 #include "../os/Parcel.hpp"
+#include "../../JString.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./DisconnectCause.hpp"
 
 namespace android::telecom
@@ -75,37 +78,37 @@ namespace android::telecom
 			"OTHER"
 		);
 	}
-	jstring DisconnectCause::REASON_EMERGENCY_CALL_PLACED()
+	JString DisconnectCause::REASON_EMERGENCY_CALL_PLACED()
 	{
 		return getStaticObjectField(
 			"android.telecom.DisconnectCause",
 			"REASON_EMERGENCY_CALL_PLACED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DisconnectCause::REASON_EMULATING_SINGLE_CALL()
+	JString DisconnectCause::REASON_EMULATING_SINGLE_CALL()
 	{
 		return getStaticObjectField(
 			"android.telecom.DisconnectCause",
 			"REASON_EMULATING_SINGLE_CALL",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DisconnectCause::REASON_IMS_ACCESS_BLOCKED()
+	JString DisconnectCause::REASON_IMS_ACCESS_BLOCKED()
 	{
 		return getStaticObjectField(
 			"android.telecom.DisconnectCause",
 			"REASON_IMS_ACCESS_BLOCKED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DisconnectCause::REASON_WIFI_ON_BUT_WFC_OFF()
+	JString DisconnectCause::REASON_WIFI_ON_BUT_WFC_OFF()
 	{
 		return getStaticObjectField(
 			"android.telecom.DisconnectCause",
 			"REASON_WIFI_ON_BUT_WFC_OFF",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint DisconnectCause::REJECTED()
 	{
@@ -146,30 +149,30 @@ namespace android::telecom
 			"(I)V",
 			arg0
 		) {}
-	DisconnectCause::DisconnectCause(jint arg0, jstring arg1)
+	DisconnectCause::DisconnectCause(jint arg0, JString arg1)
 		: JObject(
 			"android.telecom.DisconnectCause",
 			"(ILjava/lang/String;)V",
 			arg0,
-			arg1
+			arg1.object<jstring>()
 		) {}
-	DisconnectCause::DisconnectCause(jint arg0, jstring arg1, jstring arg2, jstring arg3)
+	DisconnectCause::DisconnectCause(jint arg0, JString arg1, JString arg2, JString arg3)
 		: JObject(
 			"android.telecom.DisconnectCause",
 			"(ILjava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/String;)V",
 			arg0,
-			arg1,
-			arg2,
-			arg3
+			arg1.object<jstring>(),
+			arg2.object<jstring>(),
+			arg3.object<jstring>()
 		) {}
-	DisconnectCause::DisconnectCause(jint arg0, jstring arg1, jstring arg2, jstring arg3, jint arg4)
+	DisconnectCause::DisconnectCause(jint arg0, JString arg1, JString arg2, JString arg3, jint arg4)
 		: JObject(
 			"android.telecom.DisconnectCause",
 			"(ILjava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/String;I)V",
 			arg0,
-			arg1,
-			arg2,
-			arg3,
+			arg1.object<jstring>(),
+			arg2.object<jstring>(),
+			arg3.object<jstring>(),
 			arg4
 		) {}
 	
@@ -181,12 +184,12 @@ namespace android::telecom
 			"()I"
 		);
 	}
-	jboolean DisconnectCause::equals(jobject arg0)
+	jboolean DisconnectCause::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint DisconnectCause::getCode()
@@ -196,26 +199,26 @@ namespace android::telecom
 			"()I"
 		);
 	}
-	jstring DisconnectCause::getDescription()
+	JString DisconnectCause::getDescription()
 	{
 		return callObjectMethod(
 			"getDescription",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
-	jstring DisconnectCause::getLabel()
+	JString DisconnectCause::getLabel()
 	{
 		return callObjectMethod(
 			"getLabel",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
-	jstring DisconnectCause::getReason()
+	JString DisconnectCause::getReason()
 	{
 		return callObjectMethod(
 			"getReason",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint DisconnectCause::getTone()
 	{
@@ -231,12 +234,12 @@ namespace android::telecom
 			"()I"
 		);
 	}
-	jstring DisconnectCause::toString()
+	JString DisconnectCause::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void DisconnectCause::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

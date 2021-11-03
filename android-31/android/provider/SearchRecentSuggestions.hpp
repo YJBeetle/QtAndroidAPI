@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JArray;
 namespace android::content
 {
 	class ContentResolver;
@@ -10,6 +11,7 @@ namespace android::content
 {
 	class Context;
 }
+class JString;
 
 namespace android::provider
 {
@@ -17,8 +19,8 @@ namespace android::provider
 	{
 	public:
 		// Fields
-		static jarray QUERIES_PROJECTION_1LINE();
-		static jarray QUERIES_PROJECTION_2LINE();
+		static JArray QUERIES_PROJECTION_1LINE();
+		static JArray QUERIES_PROJECTION_2LINE();
 		static jint QUERIES_PROJECTION_DATE_INDEX();
 		static jint QUERIES_PROJECTION_DISPLAY1_INDEX();
 		static jint QUERIES_PROJECTION_DISPLAY2_INDEX();
@@ -29,11 +31,11 @@ namespace android::provider
 		SearchRecentSuggestions(QAndroidJniObject obj);
 		
 		// Constructors
-		SearchRecentSuggestions(android::content::Context arg0, jstring arg1, jint arg2);
+		SearchRecentSuggestions(android::content::Context arg0, JString arg1, jint arg2);
 		
 		// Methods
 		void clearHistory();
-		void saveRecentQuery(jstring arg0, jstring arg1);
+		void saveRecentQuery(JString arg0, JString arg1);
 	};
 } // namespace android::provider
 

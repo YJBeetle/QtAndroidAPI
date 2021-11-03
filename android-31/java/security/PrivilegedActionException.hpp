@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "../lang/Exception.hpp"
 
+class JArray;
 namespace java::io
 {
 	class ObjectInputStream;
@@ -15,6 +15,7 @@ namespace java::lang
 {
 	class Exception;
 }
+class JString;
 
 namespace java::security
 {
@@ -32,7 +33,7 @@ namespace java::security
 		
 		// Methods
 		java::lang::Exception getException();
-		jstring toString();
+		JString toString();
 	};
 } // namespace java::security
 

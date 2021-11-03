@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JIntArray;
 namespace android::content
 {
 	class Context;
@@ -18,6 +19,7 @@ namespace android::inputmethodservice
 {
 	class Keyboard_Row;
 }
+class JString;
 
 namespace android::inputmethodservice
 {
@@ -44,14 +46,14 @@ namespace android::inputmethodservice
 		Keyboard(android::content::Context arg0, jint arg1);
 		Keyboard(android::content::Context arg0, jint arg1, jint arg2);
 		Keyboard(android::content::Context arg0, jint arg1, jint arg2, jint arg3, jint arg4);
-		Keyboard(android::content::Context arg0, jint arg1, jstring arg2, jint arg3, jint arg4);
+		Keyboard(android::content::Context arg0, jint arg1, JString arg2, jint arg3, jint arg4);
 		
 		// Methods
 		jint getHeight();
 		JObject getKeys();
 		jint getMinWidth();
 		JObject getModifierKeys();
-		jintArray getNearestKeys(jint arg0, jint arg1);
+		JIntArray getNearestKeys(jint arg0, jint arg1);
 		jint getShiftKeyIndex();
 		jboolean isShifted();
 		jboolean setShifted(jboolean arg0);

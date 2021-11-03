@@ -1,10 +1,8 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "../../lang/Exception.hpp"
-#include "../../lang/RuntimeException.hpp"
 #include "../../lang/IllegalArgumentException.hpp"
 
+class JString;
 
 namespace java::nio::file
 {
@@ -18,14 +16,14 @@ namespace java::nio::file
 		InvalidPathException(QAndroidJniObject obj);
 		
 		// Constructors
-		InvalidPathException(jstring arg0, jstring arg1);
-		InvalidPathException(jstring arg0, jstring arg1, jint arg2);
+		InvalidPathException(JString arg0, JString arg1);
+		InvalidPathException(JString arg0, JString arg1, jint arg2);
 		
 		// Methods
 		jint getIndex();
-		jstring getInput();
-		jstring getMessage();
-		jstring getReason();
+		JString getInput();
+		JString getMessage();
+		JString getReason();
 	};
 } // namespace java::nio::file
 

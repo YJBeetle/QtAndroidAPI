@@ -1,4 +1,8 @@
+#include "../../JIntArray.hpp"
 #include "../os/Parcel.hpp"
+#include "../../JString.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./SubscriptionPlan.hpp"
 
 namespace android::telephony
@@ -82,12 +86,12 @@ namespace android::telephony
 			"()I"
 		);
 	}
-	jboolean SubscriptionPlan::equals(jobject arg0)
+	jboolean SubscriptionPlan::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint SubscriptionPlan::getDataLimitBehavior()
@@ -118,26 +122,26 @@ namespace android::telephony
 			"()J"
 		);
 	}
-	jintArray SubscriptionPlan::getNetworkTypes()
+	JIntArray SubscriptionPlan::getNetworkTypes()
 	{
 		return callObjectMethod(
 			"getNetworkTypes",
 			"()[I"
-		).object<jintArray>();
+		);
 	}
-	jstring SubscriptionPlan::getSummary()
+	JString SubscriptionPlan::getSummary()
 	{
 		return callObjectMethod(
 			"getSummary",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
-	jstring SubscriptionPlan::getTitle()
+	JString SubscriptionPlan::getTitle()
 	{
 		return callObjectMethod(
 			"getTitle",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	jint SubscriptionPlan::hashCode()
 	{
@@ -146,12 +150,12 @@ namespace android::telephony
 			"()I"
 		);
 	}
-	jstring SubscriptionPlan::toString()
+	JString SubscriptionPlan::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void SubscriptionPlan::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

@@ -2,7 +2,6 @@
 
 #include "../../../JObject.hpp"
 
-
 namespace android::graphics::text
 {
 	class LineBreaker_Result : public JObject

@@ -7,6 +7,7 @@
 #include "../view/WindowContentFrameStats.hpp"
 #include "../view/accessibility/AccessibilityEvent.hpp"
 #include "../view/accessibility/AccessibilityNodeInfo.hpp"
+#include "../../JString.hpp"
 #include "./UiAutomation.hpp"
 
 namespace android::app
@@ -93,12 +94,12 @@ namespace android::app
 			arg2
 		);
 	}
-	android::os::ParcelFileDescriptor UiAutomation::executeShellCommand(jstring arg0)
+	android::os::ParcelFileDescriptor UiAutomation::executeShellCommand(JString arg0)
 	{
 		return callObjectMethod(
 			"executeShellCommand",
 			"(Ljava/lang/String;)Landroid/os/ParcelFileDescriptor;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::view::accessibility::AccessibilityNodeInfo UiAutomation::findFocus(jint arg0)
@@ -145,22 +146,22 @@ namespace android::app
 			"()Ljava/util/List;"
 		);
 	}
-	void UiAutomation::grantRuntimePermission(jstring arg0, jstring arg1)
+	void UiAutomation::grantRuntimePermission(JString arg0, JString arg1)
 	{
 		callMethod<void>(
 			"grantRuntimePermission",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		);
 	}
-	void UiAutomation::grantRuntimePermissionAsUser(jstring arg0, jstring arg1, android::os::UserHandle arg2)
+	void UiAutomation::grantRuntimePermissionAsUser(JString arg0, JString arg1, android::os::UserHandle arg2)
 	{
 		callMethod<void>(
 			"grantRuntimePermissionAsUser",
 			"(Ljava/lang/String;Ljava/lang/String;Landroid/os/UserHandle;)V",
-			arg0,
-			arg1,
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
 			arg2.object()
 		);
 	}
@@ -181,22 +182,22 @@ namespace android::app
 			arg0
 		);
 	}
-	void UiAutomation::revokeRuntimePermission(jstring arg0, jstring arg1)
+	void UiAutomation::revokeRuntimePermission(JString arg0, JString arg1)
 	{
 		callMethod<void>(
 			"revokeRuntimePermission",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		);
 	}
-	void UiAutomation::revokeRuntimePermissionAsUser(jstring arg0, jstring arg1, android::os::UserHandle arg2)
+	void UiAutomation::revokeRuntimePermissionAsUser(JString arg0, JString arg1, android::os::UserHandle arg2)
 	{
 		callMethod<void>(
 			"revokeRuntimePermissionAsUser",
 			"(Ljava/lang/String;Ljava/lang/String;Landroid/os/UserHandle;)V",
-			arg0,
-			arg1,
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
 			arg2.object()
 		);
 	}

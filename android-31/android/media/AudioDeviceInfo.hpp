@@ -2,6 +2,10 @@
 
 #include "../../JObject.hpp"
 
+class JIntArray;
+class JString;
+class JObject;
+class JString;
 
 namespace android::media
 {
@@ -46,19 +50,19 @@ namespace android::media
 		// Constructors
 		
 		// Methods
-		jboolean equals(jobject arg0);
-		jstring getAddress();
+		jboolean equals(JObject arg0);
+		JString getAddress();
 		JObject getAudioDescriptors();
 		JObject getAudioProfiles();
-		jintArray getChannelCounts();
-		jintArray getChannelIndexMasks();
-		jintArray getChannelMasks();
-		jintArray getEncapsulationMetadataTypes();
-		jintArray getEncapsulationModes();
-		jintArray getEncodings();
+		JIntArray getChannelCounts();
+		JIntArray getChannelIndexMasks();
+		JIntArray getChannelMasks();
+		JIntArray getEncapsulationMetadataTypes();
+		JIntArray getEncapsulationModes();
+		JIntArray getEncodings();
 		jint getId();
-		jstring getProductName();
-		jintArray getSampleRates();
+		JString getProductName();
+		JIntArray getSampleRates();
 		jint getType();
 		jint hashCode();
 		jboolean isSink();

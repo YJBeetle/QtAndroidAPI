@@ -1,10 +1,8 @@
 #pragma once
 
-#include "../../../../../JObject.hpp"
-#include "../../../../../java/lang/Exception.hpp"
-#include "./IkeException.hpp"
 #include "./IkeProtocolException.hpp"
 
+class JByteArray;
 
 namespace android::net::ipsec::ike::exceptions
 {
@@ -18,10 +16,10 @@ namespace android::net::ipsec::ike::exceptions
 		InvalidSelectorsException(QAndroidJniObject obj);
 		
 		// Constructors
-		InvalidSelectorsException(jint arg0, jbyteArray arg1);
+		InvalidSelectorsException(jint arg0, JByteArray arg1);
 		
 		// Methods
-		jbyteArray getIpSecPacketInfo();
+		JByteArray getIpSecPacketInfo();
 		jint getIpSecSpi();
 	};
 } // namespace android::net::ipsec::ike::exceptions

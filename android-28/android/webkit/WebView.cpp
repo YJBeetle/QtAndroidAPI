@@ -1,3 +1,6 @@
+#include "../../JByteArray.hpp"
+#include "../../JArray.hpp"
+#include "../../JArray.hpp"
 #include "../content/Context.hpp"
 #include "../content/pm/PackageInfo.hpp"
 #include "../content/res/Configuration.hpp"
@@ -29,7 +32,10 @@
 #include "./WebView_HitTestResult.hpp"
 #include "./WebView_VisualStateCallback.hpp"
 #include "./WebViewClient.hpp"
+#include "../../JString.hpp"
 #include "../../java/lang/ClassLoader.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./WebView.hpp"
 
 namespace android::webkit
@@ -56,29 +62,29 @@ namespace android::webkit
 			"RENDERER_PRIORITY_WAIVED"
 		);
 	}
-	jstring WebView::SCHEME_GEO()
+	JString WebView::SCHEME_GEO()
 	{
 		return getStaticObjectField(
 			"android.webkit.WebView",
 			"SCHEME_GEO",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring WebView::SCHEME_MAILTO()
+	JString WebView::SCHEME_MAILTO()
 	{
 		return getStaticObjectField(
 			"android.webkit.WebView",
 			"SCHEME_MAILTO",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring WebView::SCHEME_TEL()
+	JString WebView::SCHEME_TEL()
 	{
 		return getStaticObjectField(
 			"android.webkit.WebView",
 			"SCHEME_TEL",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QAndroidJniObject forward
@@ -151,14 +157,14 @@ namespace android::webkit
 			"()V"
 		);
 	}
-	jstring WebView::findAddress(jstring arg0)
+	JString WebView::findAddress(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.webkit.WebView",
 			"findAddress",
 			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
+			arg0.object<jstring>()
+		);
 	}
 	android::content::pm::PackageInfo WebView::getCurrentWebViewPackage()
 	{
@@ -184,13 +190,13 @@ namespace android::webkit
 			"()Ljava/lang/ClassLoader;"
 		);
 	}
-	void WebView::setDataDirectorySuffix(jstring arg0)
+	void WebView::setDataDirectorySuffix(JString arg0)
 	{
 		callStaticMethod<void>(
 			"android.webkit.WebView",
 			"setDataDirectorySuffix",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void WebView::setSafeBrowsingWhitelist(JObject arg0, JObject arg1)
@@ -222,13 +228,13 @@ namespace android::webkit
 			arg1.object()
 		);
 	}
-	void WebView::addJavascriptInterface(jobject arg0, jstring arg1)
+	void WebView::addJavascriptInterface(JObject arg0, JString arg1)
 	{
 		callMethod<void>(
 			"addJavascriptInterface",
 			"(Ljava/lang/Object;Ljava/lang/String;)V",
-			arg0,
-			arg1
+			arg0.object<jobject>(),
+			arg1.object<jstring>()
 		);
 	}
 	void WebView::autofill(android::util::SparseArray arg0)
@@ -346,20 +352,20 @@ namespace android::webkit
 			"()Landroid/print/PrintDocumentAdapter;"
 		);
 	}
-	android::print::PrintDocumentAdapter WebView::createPrintDocumentAdapter(jstring arg0)
+	android::print::PrintDocumentAdapter WebView::createPrintDocumentAdapter(JString arg0)
 	{
 		return callObjectMethod(
 			"createPrintDocumentAdapter",
 			"(Ljava/lang/String;)Landroid/print/PrintDocumentAdapter;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray WebView::createWebMessageChannel()
+	JArray WebView::createWebMessageChannel()
 	{
 		return callObjectMethod(
 			"createWebMessageChannel",
 			"()[Landroid/webkit/WebMessagePort;"
-		).object<jarray>();
+		);
 	}
 	void WebView::destroy()
 	{
@@ -384,29 +390,29 @@ namespace android::webkit
 			arg0.object()
 		);
 	}
-	void WebView::evaluateJavascript(jstring arg0, JObject arg1)
+	void WebView::evaluateJavascript(JString arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"evaluateJavascript",
 			"(Ljava/lang/String;Landroid/webkit/ValueCallback;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
-	jint WebView::findAll(jstring arg0)
+	jint WebView::findAll(JString arg0)
 	{
 		return callMethod<jint>(
 			"findAll",
 			"(Ljava/lang/String;)I",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	void WebView::findAllAsync(jstring arg0)
+	void WebView::findAllAsync(JString arg0)
 	{
 		callMethod<void>(
 			"findAllAsync",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::view::View WebView::findFocus()
@@ -440,12 +446,12 @@ namespace android::webkit
 			"()V"
 		);
 	}
-	jstring WebView::getAccessibilityClassName()
+	JString WebView::getAccessibilityClassName()
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	android::view::accessibility::AccessibilityNodeProvider WebView::getAccessibilityNodeProvider()
 	{
@@ -489,21 +495,21 @@ namespace android::webkit
 			"()Landroid/webkit/WebView$HitTestResult;"
 		);
 	}
-	jarray WebView::getHttpAuthUsernamePassword(jstring arg0, jstring arg1)
+	JArray WebView::getHttpAuthUsernamePassword(JString arg0, JString arg1)
 	{
 		return callObjectMethod(
 			"getHttpAuthUsernamePassword",
 			"(Ljava/lang/String;Ljava/lang/String;)[Ljava/lang/String;",
-			arg0,
-			arg1
-		).object<jarray>();
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
+		);
 	}
-	jstring WebView::getOriginalUrl()
+	JString WebView::getOriginalUrl()
 	{
 		return callObjectMethod(
 			"getOriginalUrl",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint WebView::getProgress()
 	{
@@ -547,19 +553,19 @@ namespace android::webkit
 			"()Landroid/view/textclassifier/TextClassifier;"
 		);
 	}
-	jstring WebView::getTitle()
+	JString WebView::getTitle()
 	{
 		return callObjectMethod(
 			"getTitle",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring WebView::getUrl()
+	JString WebView::getUrl()
 	{
 		return callObjectMethod(
 			"getUrl",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::webkit::WebChromeClient WebView::getWebChromeClient()
 	{
@@ -626,42 +632,42 @@ namespace android::webkit
 			arg0
 		);
 	}
-	void WebView::loadData(jstring arg0, jstring arg1, jstring arg2)
+	void WebView::loadData(JString arg0, JString arg1, JString arg2)
 	{
 		callMethod<void>(
 			"loadData",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1,
-			arg2
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2.object<jstring>()
 		);
 	}
-	void WebView::loadDataWithBaseURL(jstring arg0, jstring arg1, jstring arg2, jstring arg3, jstring arg4)
+	void WebView::loadDataWithBaseURL(JString arg0, JString arg1, JString arg2, JString arg3, JString arg4)
 	{
 		callMethod<void>(
 			"loadDataWithBaseURL",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3,
-			arg4
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2.object<jstring>(),
+			arg3.object<jstring>(),
+			arg4.object<jstring>()
 		);
 	}
-	void WebView::loadUrl(jstring arg0)
+	void WebView::loadUrl(JString arg0)
 	{
 		callMethod<void>(
 			"loadUrl",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	void WebView::loadUrl(jstring arg0, JObject arg1)
+	void WebView::loadUrl(JString arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"loadUrl",
 			"(Ljava/lang/String;Ljava/util/Map;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
@@ -872,13 +878,13 @@ namespace android::webkit
 			"()Z"
 		);
 	}
-	void WebView::postUrl(jstring arg0, jbyteArray arg1)
+	void WebView::postUrl(JString arg0, JByteArray arg1)
 	{
 		callMethod<void>(
 			"postUrl",
 			"(Ljava/lang/String;[B)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jbyteArray>()
 		);
 	}
 	void WebView::postVisualStateCallback(jlong arg0, android::webkit::WebView_VisualStateCallback arg1)
@@ -906,12 +912,12 @@ namespace android::webkit
 			"()V"
 		);
 	}
-	void WebView::removeJavascriptInterface(jstring arg0)
+	void WebView::removeJavascriptInterface(JString arg0)
 	{
 		callMethod<void>(
 			"removeJavascriptInterface",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	jboolean WebView::requestChildRectangleOnScreen(android::view::View arg0, android::graphics::Rect arg1, jboolean arg2)
@@ -964,14 +970,14 @@ namespace android::webkit
 			"()V"
 		);
 	}
-	void WebView::savePassword(jstring arg0, jstring arg1, jstring arg2)
+	void WebView::savePassword(JString arg0, JString arg1, JString arg2)
 	{
 		callMethod<void>(
 			"savePassword",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1,
-			arg2
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2.object<jstring>()
 		);
 	}
 	android::webkit::WebBackForwardList WebView::saveState(android::os::Bundle arg0)
@@ -982,20 +988,20 @@ namespace android::webkit
 			arg0.object()
 		);
 	}
-	void WebView::saveWebArchive(jstring arg0)
+	void WebView::saveWebArchive(JString arg0)
 	{
 		callMethod<void>(
 			"saveWebArchive",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	void WebView::saveWebArchive(jstring arg0, jboolean arg1, JObject arg2)
+	void WebView::saveWebArchive(JString arg0, jboolean arg1, JObject arg2)
 	{
 		callMethod<void>(
 			"saveWebArchive",
 			"(Ljava/lang/String;ZLandroid/webkit/ValueCallback;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
 			arg2.object()
 		);
@@ -1040,15 +1046,15 @@ namespace android::webkit
 			arg0
 		);
 	}
-	void WebView::setHttpAuthUsernamePassword(jstring arg0, jstring arg1, jstring arg2, jstring arg3)
+	void WebView::setHttpAuthUsernamePassword(JString arg0, JString arg1, JString arg2, JString arg3)
 	{
 		callMethod<void>(
 			"setHttpAuthUsernamePassword",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2.object<jstring>(),
+			arg3.object<jstring>()
 		);
 	}
 	void WebView::setInitialScale(jint arg0)
@@ -1164,12 +1170,12 @@ namespace android::webkit
 			"()Z"
 		);
 	}
-	jboolean WebView::showFindDialog(jstring arg0, jboolean arg1)
+	jboolean WebView::showFindDialog(JString arg0, jboolean arg1)
 	{
 		return callMethod<jboolean>(
 			"showFindDialog",
 			"(Ljava/lang/String;Z)Z",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}

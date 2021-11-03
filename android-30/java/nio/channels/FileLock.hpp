@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JString;
 namespace java::nio::channels
 {
 	class AsynchronousFileChannel;
@@ -34,7 +35,7 @@ namespace java::nio::channels
 		jlong position();
 		void release();
 		jlong size();
-		jstring toString();
+		JString toString();
 	};
 } // namespace java::nio::channels
 

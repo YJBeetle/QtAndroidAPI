@@ -14,6 +14,7 @@ namespace android::os
 {
 	class PersistableBundle;
 }
+class JString;
 
 namespace android::content
 {
@@ -21,28 +22,28 @@ namespace android::content
 	{
 	public:
 		// Fields
-		static jstring ACTION_PERMISSION_RESPONSE_RECEIVED();
-		static jstring ACTION_REQUEST_LOCAL_APPROVAL();
-		static jstring ACTION_REQUEST_PERMISSION();
-		static jstring EXTRA_PACKAGE_NAME();
-		static jstring EXTRA_REQUEST_BUNDLE();
-		static jstring EXTRA_REQUEST_ID();
-		static jstring EXTRA_REQUEST_TYPE();
-		static jstring EXTRA_RESPONSE_BUNDLE();
-		static jstring META_DATA_APP_RESTRICTIONS();
-		static jstring REQUEST_KEY_APPROVE_LABEL();
-		static jstring REQUEST_KEY_DATA();
-		static jstring REQUEST_KEY_DENY_LABEL();
-		static jstring REQUEST_KEY_ICON();
-		static jstring REQUEST_KEY_ID();
-		static jstring REQUEST_KEY_MESSAGE();
-		static jstring REQUEST_KEY_NEW_REQUEST();
-		static jstring REQUEST_KEY_TITLE();
-		static jstring REQUEST_TYPE_APPROVAL();
-		static jstring RESPONSE_KEY_ERROR_CODE();
-		static jstring RESPONSE_KEY_MESSAGE();
-		static jstring RESPONSE_KEY_RESPONSE_TIMESTAMP();
-		static jstring RESPONSE_KEY_RESULT();
+		static JString ACTION_PERMISSION_RESPONSE_RECEIVED();
+		static JString ACTION_REQUEST_LOCAL_APPROVAL();
+		static JString ACTION_REQUEST_PERMISSION();
+		static JString EXTRA_PACKAGE_NAME();
+		static JString EXTRA_REQUEST_BUNDLE();
+		static JString EXTRA_REQUEST_ID();
+		static JString EXTRA_REQUEST_TYPE();
+		static JString EXTRA_RESPONSE_BUNDLE();
+		static JString META_DATA_APP_RESTRICTIONS();
+		static JString REQUEST_KEY_APPROVE_LABEL();
+		static JString REQUEST_KEY_DATA();
+		static JString REQUEST_KEY_DENY_LABEL();
+		static JString REQUEST_KEY_ICON();
+		static JString REQUEST_KEY_ID();
+		static JString REQUEST_KEY_MESSAGE();
+		static JString REQUEST_KEY_NEW_REQUEST();
+		static JString REQUEST_KEY_TITLE();
+		static JString REQUEST_TYPE_APPROVAL();
+		static JString RESPONSE_KEY_ERROR_CODE();
+		static JString RESPONSE_KEY_MESSAGE();
+		static JString RESPONSE_KEY_RESPONSE_TIMESTAMP();
+		static JString RESPONSE_KEY_RESULT();
 		static jint RESULT_APPROVED();
 		static jint RESULT_DENIED();
 		static jint RESULT_ERROR();
@@ -62,10 +63,10 @@ namespace android::content
 		static android::os::Bundle convertRestrictionsToBundle(JObject arg0);
 		android::content::Intent createLocalApprovalIntent();
 		android::os::Bundle getApplicationRestrictions();
-		JObject getManifestRestrictions(jstring arg0);
+		JObject getManifestRestrictions(JString arg0);
 		jboolean hasRestrictionsProvider();
-		void notifyPermissionResponse(jstring arg0, android::os::PersistableBundle arg1);
-		void requestPermission(jstring arg0, jstring arg1, android::os::PersistableBundle arg2);
+		void notifyPermissionResponse(JString arg0, android::os::PersistableBundle arg1);
+		void requestPermission(JString arg0, JString arg1, android::os::PersistableBundle arg2);
 	};
 } // namespace android::content
 

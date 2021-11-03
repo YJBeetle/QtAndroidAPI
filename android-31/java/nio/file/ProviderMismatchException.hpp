@@ -1,10 +1,8 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "../../lang/Exception.hpp"
-#include "../../lang/RuntimeException.hpp"
 #include "../../lang/IllegalArgumentException.hpp"
 
+class JString;
 
 namespace java::nio::file
 {
@@ -19,7 +17,7 @@ namespace java::nio::file
 		
 		// Constructors
 		ProviderMismatchException();
-		ProviderMismatchException(jstring arg0);
+		ProviderMismatchException(JString arg0);
 		
 		// Methods
 	};

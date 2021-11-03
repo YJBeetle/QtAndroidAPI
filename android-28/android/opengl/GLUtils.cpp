@@ -1,4 +1,5 @@
 #include "../graphics/Bitmap.hpp"
+#include "../../JString.hpp"
 #include "./GLUtils.hpp"
 
 namespace android::opengl
@@ -11,14 +12,14 @@ namespace android::opengl
 	// Constructors
 	
 	// Methods
-	jstring GLUtils::getEGLErrorString(jint arg0)
+	JString GLUtils::getEGLErrorString(jint arg0)
 	{
 		return callStaticObjectMethod(
 			"android.opengl.GLUtils",
 			"getEGLErrorString",
 			"(I)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
 	jint GLUtils::getInternalFormat(android::graphics::Bitmap arg0)
 	{

@@ -2,6 +2,8 @@
 
 #include "../../../../JObject.hpp"
 
+class JObject;
+class JString;
 
 namespace android::hardware::camera2::params
 {
@@ -18,12 +20,12 @@ namespace android::hardware::camera2::params
 		OisSample(jlong arg0, jfloat arg1, jfloat arg2);
 		
 		// Methods
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jlong getTimestamp();
 		jfloat getXshift();
 		jfloat getYshift();
 		jint hashCode();
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::hardware::camera2::params
 

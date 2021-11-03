@@ -2,6 +2,7 @@
 #include "../graphics/Canvas.hpp"
 #include "../view/MotionEvent.hpp"
 #include "../view/View.hpp"
+#include "../../JString.hpp"
 #include "./SlidingDrawer.hpp"
 
 namespace android::widget
@@ -80,12 +81,12 @@ namespace android::widget
 			"()V"
 		);
 	}
-	jstring SlidingDrawer::getAccessibilityClassName()
+	JString SlidingDrawer::getAccessibilityClassName()
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	android::view::View SlidingDrawer::getContent()
 	{

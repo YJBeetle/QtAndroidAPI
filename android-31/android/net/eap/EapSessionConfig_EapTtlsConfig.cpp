@@ -1,4 +1,5 @@
 #include "./EapSessionConfig.hpp"
+#include "../../../JObject.hpp"
 #include "../../../java/security/cert/X509Certificate.hpp"
 #include "./EapSessionConfig_EapTtlsConfig.hpp"
 
@@ -12,12 +13,12 @@ namespace android::net::eap
 	// Constructors
 	
 	// Methods
-	jboolean EapSessionConfig_EapTtlsConfig::equals(jobject arg0)
+	jboolean EapSessionConfig_EapTtlsConfig::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	android::net::eap::EapSessionConfig EapSessionConfig_EapTtlsConfig::getInnerEapSessionConfig()

@@ -18,6 +18,8 @@ namespace android::os
 {
 	class Bundle;
 }
+class JString;
+class JString;
 
 namespace android::media::session
 {
@@ -39,9 +41,9 @@ namespace android::media::session
 		void onMetadataChanged(android::media::MediaMetadata arg0);
 		void onPlaybackStateChanged(android::media::session::PlaybackState arg0);
 		void onQueueChanged(JObject arg0);
-		void onQueueTitleChanged(jstring arg0);
+		void onQueueTitleChanged(JString arg0);
 		void onSessionDestroyed();
-		void onSessionEvent(jstring arg0, android::os::Bundle arg1);
+		void onSessionEvent(JString arg0, android::os::Bundle arg1);
 	};
 } // namespace android::media::session
 

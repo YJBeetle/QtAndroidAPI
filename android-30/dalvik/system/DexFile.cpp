@@ -1,5 +1,7 @@
 #include "../../java/io/File.hpp"
+#include "../../JClass.hpp"
 #include "../../java/lang/ClassLoader.hpp"
+#include "../../JString.hpp"
 #include "./DexFile.hpp"
 
 namespace dalvik::system
@@ -16,31 +18,31 @@ namespace dalvik::system
 			"(Ljava/io/File;)V",
 			arg0.object()
 		) {}
-	DexFile::DexFile(jstring arg0)
+	DexFile::DexFile(JString arg0)
 		: JObject(
 			"dalvik.system.DexFile",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods
-	jboolean DexFile::isDexOptNeeded(jstring arg0)
+	jboolean DexFile::isDexOptNeeded(JString arg0)
 	{
 		return callStaticMethod<jboolean>(
 			"dalvik.system.DexFile",
 			"isDexOptNeeded",
 			"(Ljava/lang/String;)Z",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	dalvik::system::DexFile DexFile::loadDex(jstring arg0, jstring arg1, jint arg2)
+	dalvik::system::DexFile DexFile::loadDex(JString arg0, JString arg1, jint arg2)
 	{
 		return callStaticObjectMethod(
 			"dalvik.system.DexFile",
 			"loadDex",
 			"(Ljava/lang/String;Ljava/lang/String;I)Ldalvik/system/DexFile;",
-			arg0,
-			arg1,
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
 			arg2
 		);
 	}
@@ -58,28 +60,28 @@ namespace dalvik::system
 			"()Ljava/util/Enumeration;"
 		);
 	}
-	jstring DexFile::getName()
+	JString DexFile::getName()
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jclass DexFile::loadClass(jstring arg0, java::lang::ClassLoader arg1)
+	JClass DexFile::loadClass(JString arg0, java::lang::ClassLoader arg1)
 	{
 		return callObjectMethod(
 			"loadClass",
 			"(Ljava/lang/String;Ljava/lang/ClassLoader;)Ljava/lang/Class;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
-		).object<jclass>();
+		);
 	}
-	jstring DexFile::toString()
+	JString DexFile::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace dalvik::system
 

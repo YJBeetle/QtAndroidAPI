@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./AppSearchSchema_DocumentPropertyConfig.hpp"
 
 namespace android::app::appsearch
@@ -10,12 +11,12 @@ namespace android::app::appsearch
 	// Constructors
 	
 	// Methods
-	jstring AppSearchSchema_DocumentPropertyConfig::getSchemaType()
+	JString AppSearchSchema_DocumentPropertyConfig::getSchemaType()
 	{
 		return callObjectMethod(
 			"getSchemaType",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jboolean AppSearchSchema_DocumentPropertyConfig::shouldIndexNestedProperties()
 	{

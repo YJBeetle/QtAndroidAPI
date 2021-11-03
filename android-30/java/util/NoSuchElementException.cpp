@@ -1,3 +1,5 @@
+#include "../../JString.hpp"
+#include "../../JThrowable.hpp"
 #include "./NoSuchElementException.hpp"
 
 namespace java::util
@@ -13,24 +15,24 @@ namespace java::util
 			"java.util.NoSuchElementException",
 			"()V"
 		) {}
-	NoSuchElementException::NoSuchElementException(jstring arg0)
+	NoSuchElementException::NoSuchElementException(JString arg0)
 		: java::lang::RuntimeException(
 			"java.util.NoSuchElementException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	NoSuchElementException::NoSuchElementException(jthrowable arg0)
+	NoSuchElementException::NoSuchElementException(JThrowable arg0)
 		: java::lang::RuntimeException(
 			"java.util.NoSuchElementException",
 			"(Ljava/lang/Throwable;)V",
-			arg0
+			arg0.object<jthrowable>()
 		) {}
-	NoSuchElementException::NoSuchElementException(jstring arg0, jthrowable arg1)
+	NoSuchElementException::NoSuchElementException(JString arg0, JThrowable arg1)
 		: java::lang::RuntimeException(
 			"java.util.NoSuchElementException",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
 		) {}
 	
 	// Methods

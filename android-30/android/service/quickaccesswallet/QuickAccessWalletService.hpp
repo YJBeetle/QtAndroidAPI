@@ -1,8 +1,5 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "../../content/Context.hpp"
-#include "../../content/ContextWrapper.hpp"
 #include "../../app/Service.hpp"
 
 namespace android::content
@@ -21,6 +18,7 @@ namespace android::service::quickaccesswallet
 {
 	class WalletServiceEvent;
 }
+class JString;
 
 namespace android::service::quickaccesswallet
 {
@@ -28,10 +26,10 @@ namespace android::service::quickaccesswallet
 	{
 	public:
 		// Fields
-		static jstring ACTION_VIEW_WALLET();
-		static jstring ACTION_VIEW_WALLET_SETTINGS();
-		static jstring SERVICE_INTERFACE();
-		static jstring SERVICE_META_DATA();
+		static JString ACTION_VIEW_WALLET();
+		static JString ACTION_VIEW_WALLET_SETTINGS();
+		static JString SERVICE_INTERFACE();
+		static JString SERVICE_META_DATA();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit QuickAccessWalletService(const char *className, const char *sig, Ts...agv) : android::app::Service(className, sig, std::forward<Ts>(agv)...) {}

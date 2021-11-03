@@ -2,474 +2,475 @@
 #include "./Bundle.hpp"
 #include "./PersistableBundle.hpp"
 #include "./UserHandle.hpp"
+#include "../../JString.hpp"
 #include "./UserManager.hpp"
 
 namespace android::os
 {
 	// Fields
-	jstring UserManager::ALLOW_PARENT_PROFILE_APP_LINKING()
+	JString UserManager::ALLOW_PARENT_PROFILE_APP_LINKING()
 	{
 		return getStaticObjectField(
 			"android.os.UserManager",
 			"ALLOW_PARENT_PROFILE_APP_LINKING",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring UserManager::DISALLOW_ADD_MANAGED_PROFILE()
+	JString UserManager::DISALLOW_ADD_MANAGED_PROFILE()
 	{
 		return getStaticObjectField(
 			"android.os.UserManager",
 			"DISALLOW_ADD_MANAGED_PROFILE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring UserManager::DISALLOW_ADD_USER()
+	JString UserManager::DISALLOW_ADD_USER()
 	{
 		return getStaticObjectField(
 			"android.os.UserManager",
 			"DISALLOW_ADD_USER",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring UserManager::DISALLOW_ADJUST_VOLUME()
+	JString UserManager::DISALLOW_ADJUST_VOLUME()
 	{
 		return getStaticObjectField(
 			"android.os.UserManager",
 			"DISALLOW_ADJUST_VOLUME",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring UserManager::DISALLOW_AIRPLANE_MODE()
+	JString UserManager::DISALLOW_AIRPLANE_MODE()
 	{
 		return getStaticObjectField(
 			"android.os.UserManager",
 			"DISALLOW_AIRPLANE_MODE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring UserManager::DISALLOW_AMBIENT_DISPLAY()
+	JString UserManager::DISALLOW_AMBIENT_DISPLAY()
 	{
 		return getStaticObjectField(
 			"android.os.UserManager",
 			"DISALLOW_AMBIENT_DISPLAY",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring UserManager::DISALLOW_APPS_CONTROL()
+	JString UserManager::DISALLOW_APPS_CONTROL()
 	{
 		return getStaticObjectField(
 			"android.os.UserManager",
 			"DISALLOW_APPS_CONTROL",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring UserManager::DISALLOW_AUTOFILL()
+	JString UserManager::DISALLOW_AUTOFILL()
 	{
 		return getStaticObjectField(
 			"android.os.UserManager",
 			"DISALLOW_AUTOFILL",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring UserManager::DISALLOW_BLUETOOTH()
+	JString UserManager::DISALLOW_BLUETOOTH()
 	{
 		return getStaticObjectField(
 			"android.os.UserManager",
 			"DISALLOW_BLUETOOTH",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring UserManager::DISALLOW_BLUETOOTH_SHARING()
+	JString UserManager::DISALLOW_BLUETOOTH_SHARING()
 	{
 		return getStaticObjectField(
 			"android.os.UserManager",
 			"DISALLOW_BLUETOOTH_SHARING",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring UserManager::DISALLOW_CAMERA_TOGGLE()
+	JString UserManager::DISALLOW_CAMERA_TOGGLE()
 	{
 		return getStaticObjectField(
 			"android.os.UserManager",
 			"DISALLOW_CAMERA_TOGGLE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring UserManager::DISALLOW_CONFIG_BLUETOOTH()
+	JString UserManager::DISALLOW_CONFIG_BLUETOOTH()
 	{
 		return getStaticObjectField(
 			"android.os.UserManager",
 			"DISALLOW_CONFIG_BLUETOOTH",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring UserManager::DISALLOW_CONFIG_BRIGHTNESS()
+	JString UserManager::DISALLOW_CONFIG_BRIGHTNESS()
 	{
 		return getStaticObjectField(
 			"android.os.UserManager",
 			"DISALLOW_CONFIG_BRIGHTNESS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring UserManager::DISALLOW_CONFIG_CELL_BROADCASTS()
+	JString UserManager::DISALLOW_CONFIG_CELL_BROADCASTS()
 	{
 		return getStaticObjectField(
 			"android.os.UserManager",
 			"DISALLOW_CONFIG_CELL_BROADCASTS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring UserManager::DISALLOW_CONFIG_CREDENTIALS()
+	JString UserManager::DISALLOW_CONFIG_CREDENTIALS()
 	{
 		return getStaticObjectField(
 			"android.os.UserManager",
 			"DISALLOW_CONFIG_CREDENTIALS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring UserManager::DISALLOW_CONFIG_DATE_TIME()
+	JString UserManager::DISALLOW_CONFIG_DATE_TIME()
 	{
 		return getStaticObjectField(
 			"android.os.UserManager",
 			"DISALLOW_CONFIG_DATE_TIME",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring UserManager::DISALLOW_CONFIG_LOCALE()
+	JString UserManager::DISALLOW_CONFIG_LOCALE()
 	{
 		return getStaticObjectField(
 			"android.os.UserManager",
 			"DISALLOW_CONFIG_LOCALE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring UserManager::DISALLOW_CONFIG_LOCATION()
+	JString UserManager::DISALLOW_CONFIG_LOCATION()
 	{
 		return getStaticObjectField(
 			"android.os.UserManager",
 			"DISALLOW_CONFIG_LOCATION",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring UserManager::DISALLOW_CONFIG_MOBILE_NETWORKS()
+	JString UserManager::DISALLOW_CONFIG_MOBILE_NETWORKS()
 	{
 		return getStaticObjectField(
 			"android.os.UserManager",
 			"DISALLOW_CONFIG_MOBILE_NETWORKS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring UserManager::DISALLOW_CONFIG_PRIVATE_DNS()
+	JString UserManager::DISALLOW_CONFIG_PRIVATE_DNS()
 	{
 		return getStaticObjectField(
 			"android.os.UserManager",
 			"DISALLOW_CONFIG_PRIVATE_DNS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring UserManager::DISALLOW_CONFIG_SCREEN_TIMEOUT()
+	JString UserManager::DISALLOW_CONFIG_SCREEN_TIMEOUT()
 	{
 		return getStaticObjectField(
 			"android.os.UserManager",
 			"DISALLOW_CONFIG_SCREEN_TIMEOUT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring UserManager::DISALLOW_CONFIG_TETHERING()
+	JString UserManager::DISALLOW_CONFIG_TETHERING()
 	{
 		return getStaticObjectField(
 			"android.os.UserManager",
 			"DISALLOW_CONFIG_TETHERING",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring UserManager::DISALLOW_CONFIG_VPN()
+	JString UserManager::DISALLOW_CONFIG_VPN()
 	{
 		return getStaticObjectField(
 			"android.os.UserManager",
 			"DISALLOW_CONFIG_VPN",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring UserManager::DISALLOW_CONFIG_WIFI()
+	JString UserManager::DISALLOW_CONFIG_WIFI()
 	{
 		return getStaticObjectField(
 			"android.os.UserManager",
 			"DISALLOW_CONFIG_WIFI",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring UserManager::DISALLOW_CONTENT_CAPTURE()
+	JString UserManager::DISALLOW_CONTENT_CAPTURE()
 	{
 		return getStaticObjectField(
 			"android.os.UserManager",
 			"DISALLOW_CONTENT_CAPTURE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring UserManager::DISALLOW_CONTENT_SUGGESTIONS()
+	JString UserManager::DISALLOW_CONTENT_SUGGESTIONS()
 	{
 		return getStaticObjectField(
 			"android.os.UserManager",
 			"DISALLOW_CONTENT_SUGGESTIONS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring UserManager::DISALLOW_CREATE_WINDOWS()
+	JString UserManager::DISALLOW_CREATE_WINDOWS()
 	{
 		return getStaticObjectField(
 			"android.os.UserManager",
 			"DISALLOW_CREATE_WINDOWS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring UserManager::DISALLOW_CROSS_PROFILE_COPY_PASTE()
+	JString UserManager::DISALLOW_CROSS_PROFILE_COPY_PASTE()
 	{
 		return getStaticObjectField(
 			"android.os.UserManager",
 			"DISALLOW_CROSS_PROFILE_COPY_PASTE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring UserManager::DISALLOW_DATA_ROAMING()
+	JString UserManager::DISALLOW_DATA_ROAMING()
 	{
 		return getStaticObjectField(
 			"android.os.UserManager",
 			"DISALLOW_DATA_ROAMING",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring UserManager::DISALLOW_DEBUGGING_FEATURES()
+	JString UserManager::DISALLOW_DEBUGGING_FEATURES()
 	{
 		return getStaticObjectField(
 			"android.os.UserManager",
 			"DISALLOW_DEBUGGING_FEATURES",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring UserManager::DISALLOW_FACTORY_RESET()
+	JString UserManager::DISALLOW_FACTORY_RESET()
 	{
 		return getStaticObjectField(
 			"android.os.UserManager",
 			"DISALLOW_FACTORY_RESET",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring UserManager::DISALLOW_FUN()
+	JString UserManager::DISALLOW_FUN()
 	{
 		return getStaticObjectField(
 			"android.os.UserManager",
 			"DISALLOW_FUN",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring UserManager::DISALLOW_INSTALL_APPS()
+	JString UserManager::DISALLOW_INSTALL_APPS()
 	{
 		return getStaticObjectField(
 			"android.os.UserManager",
 			"DISALLOW_INSTALL_APPS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring UserManager::DISALLOW_INSTALL_UNKNOWN_SOURCES()
+	JString UserManager::DISALLOW_INSTALL_UNKNOWN_SOURCES()
 	{
 		return getStaticObjectField(
 			"android.os.UserManager",
 			"DISALLOW_INSTALL_UNKNOWN_SOURCES",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring UserManager::DISALLOW_INSTALL_UNKNOWN_SOURCES_GLOBALLY()
+	JString UserManager::DISALLOW_INSTALL_UNKNOWN_SOURCES_GLOBALLY()
 	{
 		return getStaticObjectField(
 			"android.os.UserManager",
 			"DISALLOW_INSTALL_UNKNOWN_SOURCES_GLOBALLY",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring UserManager::DISALLOW_MICROPHONE_TOGGLE()
+	JString UserManager::DISALLOW_MICROPHONE_TOGGLE()
 	{
 		return getStaticObjectField(
 			"android.os.UserManager",
 			"DISALLOW_MICROPHONE_TOGGLE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring UserManager::DISALLOW_MODIFY_ACCOUNTS()
+	JString UserManager::DISALLOW_MODIFY_ACCOUNTS()
 	{
 		return getStaticObjectField(
 			"android.os.UserManager",
 			"DISALLOW_MODIFY_ACCOUNTS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring UserManager::DISALLOW_MOUNT_PHYSICAL_MEDIA()
+	JString UserManager::DISALLOW_MOUNT_PHYSICAL_MEDIA()
 	{
 		return getStaticObjectField(
 			"android.os.UserManager",
 			"DISALLOW_MOUNT_PHYSICAL_MEDIA",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring UserManager::DISALLOW_NETWORK_RESET()
+	JString UserManager::DISALLOW_NETWORK_RESET()
 	{
 		return getStaticObjectField(
 			"android.os.UserManager",
 			"DISALLOW_NETWORK_RESET",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring UserManager::DISALLOW_OUTGOING_BEAM()
+	JString UserManager::DISALLOW_OUTGOING_BEAM()
 	{
 		return getStaticObjectField(
 			"android.os.UserManager",
 			"DISALLOW_OUTGOING_BEAM",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring UserManager::DISALLOW_OUTGOING_CALLS()
+	JString UserManager::DISALLOW_OUTGOING_CALLS()
 	{
 		return getStaticObjectField(
 			"android.os.UserManager",
 			"DISALLOW_OUTGOING_CALLS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring UserManager::DISALLOW_PRINTING()
+	JString UserManager::DISALLOW_PRINTING()
 	{
 		return getStaticObjectField(
 			"android.os.UserManager",
 			"DISALLOW_PRINTING",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring UserManager::DISALLOW_REMOVE_MANAGED_PROFILE()
+	JString UserManager::DISALLOW_REMOVE_MANAGED_PROFILE()
 	{
 		return getStaticObjectField(
 			"android.os.UserManager",
 			"DISALLOW_REMOVE_MANAGED_PROFILE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring UserManager::DISALLOW_REMOVE_USER()
+	JString UserManager::DISALLOW_REMOVE_USER()
 	{
 		return getStaticObjectField(
 			"android.os.UserManager",
 			"DISALLOW_REMOVE_USER",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring UserManager::DISALLOW_SAFE_BOOT()
+	JString UserManager::DISALLOW_SAFE_BOOT()
 	{
 		return getStaticObjectField(
 			"android.os.UserManager",
 			"DISALLOW_SAFE_BOOT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring UserManager::DISALLOW_SET_USER_ICON()
+	JString UserManager::DISALLOW_SET_USER_ICON()
 	{
 		return getStaticObjectField(
 			"android.os.UserManager",
 			"DISALLOW_SET_USER_ICON",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring UserManager::DISALLOW_SET_WALLPAPER()
+	JString UserManager::DISALLOW_SET_WALLPAPER()
 	{
 		return getStaticObjectField(
 			"android.os.UserManager",
 			"DISALLOW_SET_WALLPAPER",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring UserManager::DISALLOW_SHARE_INTO_MANAGED_PROFILE()
+	JString UserManager::DISALLOW_SHARE_INTO_MANAGED_PROFILE()
 	{
 		return getStaticObjectField(
 			"android.os.UserManager",
 			"DISALLOW_SHARE_INTO_MANAGED_PROFILE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring UserManager::DISALLOW_SHARE_LOCATION()
+	JString UserManager::DISALLOW_SHARE_LOCATION()
 	{
 		return getStaticObjectField(
 			"android.os.UserManager",
 			"DISALLOW_SHARE_LOCATION",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring UserManager::DISALLOW_SMS()
+	JString UserManager::DISALLOW_SMS()
 	{
 		return getStaticObjectField(
 			"android.os.UserManager",
 			"DISALLOW_SMS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring UserManager::DISALLOW_SYSTEM_ERROR_DIALOGS()
+	JString UserManager::DISALLOW_SYSTEM_ERROR_DIALOGS()
 	{
 		return getStaticObjectField(
 			"android.os.UserManager",
 			"DISALLOW_SYSTEM_ERROR_DIALOGS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring UserManager::DISALLOW_UNIFIED_PASSWORD()
+	JString UserManager::DISALLOW_UNIFIED_PASSWORD()
 	{
 		return getStaticObjectField(
 			"android.os.UserManager",
 			"DISALLOW_UNIFIED_PASSWORD",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring UserManager::DISALLOW_UNINSTALL_APPS()
+	JString UserManager::DISALLOW_UNINSTALL_APPS()
 	{
 		return getStaticObjectField(
 			"android.os.UserManager",
 			"DISALLOW_UNINSTALL_APPS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring UserManager::DISALLOW_UNMUTE_MICROPHONE()
+	JString UserManager::DISALLOW_UNMUTE_MICROPHONE()
 	{
 		return getStaticObjectField(
 			"android.os.UserManager",
 			"DISALLOW_UNMUTE_MICROPHONE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring UserManager::DISALLOW_USB_FILE_TRANSFER()
+	JString UserManager::DISALLOW_USB_FILE_TRANSFER()
 	{
 		return getStaticObjectField(
 			"android.os.UserManager",
 			"DISALLOW_USB_FILE_TRANSFER",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring UserManager::DISALLOW_USER_SWITCH()
+	JString UserManager::DISALLOW_USER_SWITCH()
 	{
 		return getStaticObjectField(
 			"android.os.UserManager",
 			"DISALLOW_USER_SWITCH",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring UserManager::ENSURE_VERIFY_APPS()
+	JString UserManager::ENSURE_VERIFY_APPS()
 	{
 		return getStaticObjectField(
 			"android.os.UserManager",
 			"ENSURE_VERIFY_APPS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring UserManager::KEY_RESTRICTIONS_PENDING()
+	JString UserManager::KEY_RESTRICTIONS_PENDING()
 	{
 		return getStaticObjectField(
 			"android.os.UserManager",
 			"KEY_RESTRICTIONS_PENDING",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint UserManager::QUIET_MODE_DISABLE_ONLY_IF_CREDENTIAL_NOT_REQUIRED()
 	{
@@ -548,15 +549,15 @@ namespace android::os
 	// Constructors
 	
 	// Methods
-	android::content::Intent UserManager::createUserCreationIntent(jstring arg0, jstring arg1, jstring arg2, android::os::PersistableBundle arg3)
+	android::content::Intent UserManager::createUserCreationIntent(JString arg0, JString arg1, JString arg2, android::os::PersistableBundle arg3)
 	{
 		return callStaticObjectMethod(
 			"android.os.UserManager",
 			"createUserCreationIntent",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/os/PersistableBundle;)Landroid/content/Intent;",
-			arg0,
-			arg1,
-			arg2,
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2.object<jstring>(),
 			arg3.object()
 		);
 	}
@@ -576,12 +577,12 @@ namespace android::os
 			"()Z"
 		);
 	}
-	android::os::Bundle UserManager::getApplicationRestrictions(jstring arg0)
+	android::os::Bundle UserManager::getApplicationRestrictions(JString arg0)
 	{
 		return callObjectMethod(
 			"getApplicationRestrictions",
 			"(Ljava/lang/String;)Landroid/os/Bundle;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	jlong UserManager::getSerialNumberForUser(android::os::UserHandle arg0)
@@ -615,12 +616,12 @@ namespace android::os
 			arg0
 		);
 	}
-	jstring UserManager::getUserName()
+	JString UserManager::getUserName()
 	{
 		return callObjectMethod(
 			"getUserName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	JObject UserManager::getUserProfiles()
 	{
@@ -644,12 +645,12 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	jboolean UserManager::hasUserRestriction(jstring arg0)
+	jboolean UserManager::hasUserRestriction(JString arg0)
 	{
 		return callMethod<jboolean>(
 			"hasUserRestriction",
 			"(Ljava/lang/String;)Z",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	jboolean UserManager::isDemoUser()
@@ -745,20 +746,20 @@ namespace android::os
 			arg2
 		);
 	}
-	jboolean UserManager::setRestrictionsChallenge(jstring arg0)
+	jboolean UserManager::setRestrictionsChallenge(JString arg0)
 	{
 		return callMethod<jboolean>(
 			"setRestrictionsChallenge",
 			"(Ljava/lang/String;)Z",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	void UserManager::setUserRestriction(jstring arg0, jboolean arg1)
+	void UserManager::setUserRestriction(JString arg0, jboolean arg1)
 	{
 		callMethod<void>(
 			"setUserRestriction",
 			"(Ljava/lang/String;Z)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}

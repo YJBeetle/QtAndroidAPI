@@ -1,5 +1,7 @@
 #include "./Notification_Action.hpp"
 #include "./Notification_Action_Builder.hpp"
+#include "../../JString.hpp"
+#include "../../JObject.hpp"
 #include "./Notification_Action_WearableExtender.hpp"
 
 namespace android::app
@@ -38,19 +40,19 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	jstring Notification_Action_WearableExtender::getCancelLabel()
+	JString Notification_Action_WearableExtender::getCancelLabel()
 	{
 		return callObjectMethod(
 			"getCancelLabel",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
-	jstring Notification_Action_WearableExtender::getConfirmLabel()
+	JString Notification_Action_WearableExtender::getConfirmLabel()
 	{
 		return callObjectMethod(
 			"getConfirmLabel",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	jboolean Notification_Action_WearableExtender::getHintDisplayActionInline()
 	{
@@ -66,12 +68,12 @@ namespace android::app
 			"()Z"
 		);
 	}
-	jstring Notification_Action_WearableExtender::getInProgressLabel()
+	JString Notification_Action_WearableExtender::getInProgressLabel()
 	{
 		return callObjectMethod(
 			"getInProgressLabel",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	jboolean Notification_Action_WearableExtender::isAvailableOffline()
 	{
@@ -88,20 +90,20 @@ namespace android::app
 			arg0
 		);
 	}
-	android::app::Notification_Action_WearableExtender Notification_Action_WearableExtender::setCancelLabel(jstring arg0)
+	android::app::Notification_Action_WearableExtender Notification_Action_WearableExtender::setCancelLabel(JString arg0)
 	{
 		return callObjectMethod(
 			"setCancelLabel",
 			"(Ljava/lang/CharSequence;)Landroid/app/Notification$Action$WearableExtender;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	android::app::Notification_Action_WearableExtender Notification_Action_WearableExtender::setConfirmLabel(jstring arg0)
+	android::app::Notification_Action_WearableExtender Notification_Action_WearableExtender::setConfirmLabel(JString arg0)
 	{
 		return callObjectMethod(
 			"setConfirmLabel",
 			"(Ljava/lang/CharSequence;)Landroid/app/Notification$Action$WearableExtender;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::app::Notification_Action_WearableExtender Notification_Action_WearableExtender::setHintDisplayActionInline(jboolean arg0)
@@ -120,12 +122,12 @@ namespace android::app
 			arg0
 		);
 	}
-	android::app::Notification_Action_WearableExtender Notification_Action_WearableExtender::setInProgressLabel(jstring arg0)
+	android::app::Notification_Action_WearableExtender Notification_Action_WearableExtender::setInProgressLabel(JString arg0)
 	{
 		return callObjectMethod(
 			"setInProgressLabel",
 			"(Ljava/lang/CharSequence;)Landroid/app/Notification$Action$WearableExtender;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 } // namespace android::app

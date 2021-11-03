@@ -1,3 +1,6 @@
+#include "../../../JClass.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./CaptureRequest_Key.hpp"
 
 namespace android::hardware::camera2
@@ -10,20 +13,20 @@ namespace android::hardware::camera2
 	// Constructors
 	
 	// Methods
-	jboolean CaptureRequest_Key::equals(jobject arg0)
+	jboolean CaptureRequest_Key::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jstring CaptureRequest_Key::getName()
+	JString CaptureRequest_Key::getName()
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint CaptureRequest_Key::hashCode()
 	{
@@ -32,12 +35,12 @@ namespace android::hardware::camera2
 			"()I"
 		);
 	}
-	jstring CaptureRequest_Key::toString()
+	JString CaptureRequest_Key::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::hardware::camera2
 

@@ -1,3 +1,4 @@
+#include "../../../JObject.hpp"
 #include "./ReferenceQueue.hpp"
 #include "./WeakReference.hpp"
 
@@ -9,17 +10,17 @@ namespace java::lang::ref
 	WeakReference::WeakReference(QAndroidJniObject obj) : java::lang::ref::Reference(obj) {}
 	
 	// Constructors
-	WeakReference::WeakReference(jobject arg0)
+	WeakReference::WeakReference(JObject arg0)
 		: java::lang::ref::Reference(
 			"java.lang.ref.WeakReference",
 			"(Ljava/lang/Object;)V",
-			arg0
+			arg0.object<jobject>()
 		) {}
-	WeakReference::WeakReference(jobject arg0, java::lang::ref::ReferenceQueue arg1)
+	WeakReference::WeakReference(JObject arg0, java::lang::ref::ReferenceQueue arg1)
 		: java::lang::ref::Reference(
 			"java.lang.ref.WeakReference",
 			"(Ljava/lang/Object;Ljava/lang/ref/ReferenceQueue;)V",
-			arg0,
+			arg0.object<jobject>(),
 			arg1.object()
 		) {}
 	

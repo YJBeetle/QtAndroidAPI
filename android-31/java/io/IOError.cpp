@@ -1,3 +1,4 @@
+#include "../../JThrowable.hpp"
 #include "./IOError.hpp"
 
 namespace java::io
@@ -8,11 +9,11 @@ namespace java::io
 	IOError::IOError(QAndroidJniObject obj) : java::lang::Error(obj) {}
 	
 	// Constructors
-	IOError::IOError(jthrowable arg0)
+	IOError::IOError(JThrowable arg0)
 		: java::lang::Error(
 			"java.io.IOError",
 			"(Ljava/lang/Throwable;)V",
-			arg0
+			arg0.object<jthrowable>()
 		) {}
 	
 	// Methods

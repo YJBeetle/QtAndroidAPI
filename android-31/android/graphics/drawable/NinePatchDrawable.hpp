@@ -1,8 +1,9 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "./Drawable.hpp"
 
+class JByteArray;
+class JIntArray;
 namespace android::content::res
 {
 	class ColorStateList;
@@ -67,6 +68,7 @@ namespace android::util
 {
 	class DisplayMetrics;
 }
+class JString;
 
 namespace android::graphics::drawable
 {
@@ -82,8 +84,8 @@ namespace android::graphics::drawable
 		// Constructors
 		NinePatchDrawable(android::graphics::NinePatch arg0);
 		NinePatchDrawable(android::content::res::Resources arg0, android::graphics::NinePatch arg1);
-		NinePatchDrawable(android::graphics::Bitmap arg0, jbyteArray arg1, android::graphics::Rect arg2, jstring arg3);
-		NinePatchDrawable(android::content::res::Resources arg0, android::graphics::Bitmap arg1, jbyteArray arg2, android::graphics::Rect arg3, jstring arg4);
+		NinePatchDrawable(android::graphics::Bitmap arg0, JByteArray arg1, android::graphics::Rect arg2, JString arg3);
+		NinePatchDrawable(android::content::res::Resources arg0, android::graphics::Bitmap arg1, JByteArray arg2, android::graphics::Rect arg3, JString arg4);
 		
 		// Methods
 		void applyTheme(android::content::res::Resources_Theme arg0);

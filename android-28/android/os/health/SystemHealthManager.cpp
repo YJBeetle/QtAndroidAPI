@@ -1,3 +1,5 @@
+#include "../../../JIntArray.hpp"
+#include "../../../JArray.hpp"
 #include "./HealthStats.hpp"
 #include "./SystemHealthManager.hpp"
 
@@ -26,13 +28,13 @@ namespace android::os::health
 			arg0
 		);
 	}
-	jarray SystemHealthManager::takeUidSnapshots(jintArray arg0)
+	JArray SystemHealthManager::takeUidSnapshots(JIntArray arg0)
 	{
 		return callObjectMethod(
 			"takeUidSnapshots",
 			"([I)[Landroid/os/health/HealthStats;",
-			arg0
-		).object<jarray>();
+			arg0.object<jintArray>()
+		);
 	}
 } // namespace android::os::health
 

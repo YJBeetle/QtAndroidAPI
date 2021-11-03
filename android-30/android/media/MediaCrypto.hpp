@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JByteArray;
+class JString;
 namespace java::util
 {
 	class UUID;
@@ -19,13 +21,13 @@ namespace android::media
 		MediaCrypto(QAndroidJniObject obj);
 		
 		// Constructors
-		MediaCrypto(java::util::UUID arg0, jbyteArray arg1);
+		MediaCrypto(java::util::UUID arg0, JByteArray arg1);
 		
 		// Methods
 		static jboolean isCryptoSchemeSupported(java::util::UUID arg0);
 		void release();
-		jboolean requiresSecureDecoderComponent(jstring arg0);
-		void setMediaDrmSession(jbyteArray arg0);
+		jboolean requiresSecureDecoderComponent(JString arg0);
+		void setMediaDrmSession(JByteArray arg0);
 	};
 } // namespace android::media
 

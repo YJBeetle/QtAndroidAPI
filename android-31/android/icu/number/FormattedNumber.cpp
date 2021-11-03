@@ -1,4 +1,6 @@
 #include "../text/ConstrainedFieldPosition.hpp"
+#include "../../../JString.hpp"
+#include "../../../JString.hpp"
 #include "../../../java/math/BigDecimal.hpp"
 #include "./FormattedNumber.hpp"
 
@@ -43,14 +45,14 @@ namespace android::icu::number
 			arg0.object()
 		);
 	}
-	jstring FormattedNumber::subSequence(jint arg0, jint arg1)
+	JString FormattedNumber::subSequence(jint arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"subSequence",
 			"(II)Ljava/lang/CharSequence;",
 			arg0,
 			arg1
-		).object<jstring>();
+		);
 	}
 	java::math::BigDecimal FormattedNumber::toBigDecimal()
 	{
@@ -66,12 +68,12 @@ namespace android::icu::number
 			"()Ljava/text/AttributedCharacterIterator;"
 		);
 	}
-	jstring FormattedNumber::toString()
+	JString FormattedNumber::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::icu::number
 

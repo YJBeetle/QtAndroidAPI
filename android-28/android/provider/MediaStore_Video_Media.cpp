@@ -1,24 +1,25 @@
 #include "../net/Uri.hpp"
+#include "../../JString.hpp"
 #include "./MediaStore_Video_Media.hpp"
 
 namespace android::provider
 {
 	// Fields
-	jstring MediaStore_Video_Media::CONTENT_TYPE()
+	JString MediaStore_Video_Media::CONTENT_TYPE()
 	{
 		return getStaticObjectField(
 			"android.provider.MediaStore$Video$Media",
 			"CONTENT_TYPE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring MediaStore_Video_Media::DEFAULT_SORT_ORDER()
+	JString MediaStore_Video_Media::DEFAULT_SORT_ORDER()
 	{
 		return getStaticObjectField(
 			"android.provider.MediaStore$Video$Media",
 			"DEFAULT_SORT_ORDER",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::net::Uri MediaStore_Video_Media::EXTERNAL_CONTENT_URI()
 	{
@@ -48,13 +49,13 @@ namespace android::provider
 		) {}
 	
 	// Methods
-	android::net::Uri MediaStore_Video_Media::getContentUri(jstring arg0)
+	android::net::Uri MediaStore_Video_Media::getContentUri(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.provider.MediaStore$Video$Media",
 			"getContentUri",
 			"(Ljava/lang/String;)Landroid/net/Uri;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 } // namespace android::provider

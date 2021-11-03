@@ -2,6 +2,8 @@
 
 #include "../../../JObject.hpp"
 
+class JShortArray;
+class JString;
 
 namespace android::media::audiofx
 {
@@ -9,7 +11,7 @@ namespace android::media::audiofx
 	{
 	public:
 		// Fields
-		jshortArray bandLevels();
+		JShortArray bandLevels();
 		jshort curPreset();
 		jshort numBands();
 		
@@ -19,10 +21,10 @@ namespace android::media::audiofx
 		
 		// Constructors
 		Equalizer_Settings();
-		Equalizer_Settings(jstring arg0);
+		Equalizer_Settings(JString arg0);
 		
 		// Methods
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::media::audiofx
 

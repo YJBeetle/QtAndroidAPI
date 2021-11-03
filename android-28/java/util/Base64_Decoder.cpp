@@ -1,4 +1,7 @@
+#include "../../JByteArray.hpp"
+#include "../../JIntArray.hpp"
 #include "../io/InputStream.hpp"
+#include "../../JString.hpp"
 #include "../nio/ByteBuffer.hpp"
 #include "./Base64_Decoder.hpp"
 
@@ -12,29 +15,29 @@ namespace java::util
 	// Constructors
 	
 	// Methods
-	jbyteArray Base64_Decoder::decode(jbyteArray arg0)
+	JByteArray Base64_Decoder::decode(JByteArray arg0)
 	{
 		return callObjectMethod(
 			"decode",
 			"([B)[B",
-			arg0
-		).object<jbyteArray>();
+			arg0.object<jbyteArray>()
+		);
 	}
-	jbyteArray Base64_Decoder::decode(jstring arg0)
+	JByteArray Base64_Decoder::decode(JString arg0)
 	{
 		return callObjectMethod(
 			"decode",
 			"(Ljava/lang/String;)[B",
-			arg0
-		).object<jbyteArray>();
+			arg0.object<jstring>()
+		);
 	}
-	jint Base64_Decoder::decode(jbyteArray arg0, jbyteArray arg1)
+	jint Base64_Decoder::decode(JByteArray arg0, JByteArray arg1)
 	{
 		return callMethod<jint>(
 			"decode",
 			"([B[B)I",
-			arg0,
-			arg1
+			arg0.object<jbyteArray>(),
+			arg1.object<jbyteArray>()
 		);
 	}
 	java::nio::ByteBuffer Base64_Decoder::decode(java::nio::ByteBuffer arg0)

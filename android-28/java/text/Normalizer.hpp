@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JString;
+class JString;
 namespace java::text
 {
 	class Normalizer_Form;
@@ -21,8 +23,8 @@ namespace java::text
 		// Constructors
 		
 		// Methods
-		static jboolean isNormalized(jstring arg0, java::text::Normalizer_Form arg1);
-		static jstring normalize(jstring arg0, java::text::Normalizer_Form arg1);
+		static jboolean isNormalized(JString arg0, java::text::Normalizer_Form arg1);
+		static JString normalize(JString arg0, java::text::Normalizer_Form arg1);
 	};
 } // namespace java::text
 

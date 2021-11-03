@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "../NoSuchAlgorithmException.hpp"
 #include "../Provider.hpp"
 #include "./CertStoreSpi.hpp"
@@ -13,42 +14,42 @@ namespace java::security::cert
 	// Constructors
 	
 	// Methods
-	jstring CertStore::getDefaultType()
+	JString CertStore::getDefaultType()
 	{
 		return callStaticObjectMethod(
 			"java.security.cert.CertStore",
 			"getDefaultType",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	java::security::cert::CertStore CertStore::getInstance(jstring arg0, JObject arg1)
+	java::security::cert::CertStore CertStore::getInstance(JString arg0, JObject arg1)
 	{
 		return callStaticObjectMethod(
 			"java.security.cert.CertStore",
 			"getInstance",
 			"(Ljava/lang/String;Ljava/security/cert/CertStoreParameters;)Ljava/security/cert/CertStore;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
-	java::security::cert::CertStore CertStore::getInstance(jstring arg0, JObject arg1, jstring arg2)
+	java::security::cert::CertStore CertStore::getInstance(JString arg0, JObject arg1, JString arg2)
 	{
 		return callStaticObjectMethod(
 			"java.security.cert.CertStore",
 			"getInstance",
 			"(Ljava/lang/String;Ljava/security/cert/CertStoreParameters;Ljava/lang/String;)Ljava/security/cert/CertStore;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
-			arg2
+			arg2.object<jstring>()
 		);
 	}
-	java::security::cert::CertStore CertStore::getInstance(jstring arg0, JObject arg1, java::security::Provider arg2)
+	java::security::cert::CertStore CertStore::getInstance(JString arg0, JObject arg1, java::security::Provider arg2)
 	{
 		return callStaticObjectMethod(
 			"java.security.cert.CertStore",
 			"getInstance",
 			"(Ljava/lang/String;Ljava/security/cert/CertStoreParameters;Ljava/security/Provider;)Ljava/security/cert/CertStore;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
 			arg2.object()
 		);
@@ -83,12 +84,12 @@ namespace java::security::cert
 			"()Ljava/security/Provider;"
 		);
 	}
-	jstring CertStore::getType()
+	JString CertStore::getType()
 	{
 		return callObjectMethod(
 			"getType",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::security::cert
 

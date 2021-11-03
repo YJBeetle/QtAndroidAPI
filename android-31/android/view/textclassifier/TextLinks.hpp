@@ -10,6 +10,8 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
+class JString;
 
 namespace android::view::textclassifier
 {
@@ -37,8 +39,8 @@ namespace android::view::textclassifier
 		jint describeContents();
 		android::os::Bundle getExtras();
 		JObject getLinks();
-		jstring getText();
-		jstring toString();
+		JString getText();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::view::textclassifier

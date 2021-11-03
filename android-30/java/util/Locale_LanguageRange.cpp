@@ -1,3 +1,5 @@
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./Locale_LanguageRange.hpp"
 
 namespace java::util
@@ -22,17 +24,17 @@ namespace java::util
 	Locale_LanguageRange::Locale_LanguageRange(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	Locale_LanguageRange::Locale_LanguageRange(jstring arg0)
+	Locale_LanguageRange::Locale_LanguageRange(JString arg0)
 		: JObject(
 			"java.util.Locale$LanguageRange",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	Locale_LanguageRange::Locale_LanguageRange(jstring arg0, jdouble arg1)
+	Locale_LanguageRange::Locale_LanguageRange(JString arg0, jdouble arg1)
 		: JObject(
 			"java.util.Locale$LanguageRange",
 			"(Ljava/lang/String;D)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		) {}
 	
@@ -47,39 +49,39 @@ namespace java::util
 			arg1.object()
 		);
 	}
-	JObject Locale_LanguageRange::parse(jstring arg0)
+	JObject Locale_LanguageRange::parse(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"java.util.Locale$LanguageRange",
 			"parse",
 			"(Ljava/lang/String;)Ljava/util/List;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	JObject Locale_LanguageRange::parse(jstring arg0, JObject arg1)
+	JObject Locale_LanguageRange::parse(JString arg0, JObject arg1)
 	{
 		return callStaticObjectMethod(
 			"java.util.Locale$LanguageRange",
 			"parse",
 			"(Ljava/lang/String;Ljava/util/Map;)Ljava/util/List;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
-	jboolean Locale_LanguageRange::equals(jobject arg0)
+	jboolean Locale_LanguageRange::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jstring Locale_LanguageRange::getRange()
+	JString Locale_LanguageRange::getRange()
 	{
 		return callObjectMethod(
 			"getRange",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jdouble Locale_LanguageRange::getWeight()
 	{
@@ -95,12 +97,12 @@ namespace java::util
 			"()I"
 		);
 	}
-	jstring Locale_LanguageRange::toString()
+	JString Locale_LanguageRange::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::util
 

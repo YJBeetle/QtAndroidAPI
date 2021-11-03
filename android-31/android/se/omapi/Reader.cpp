@@ -1,5 +1,6 @@
 #include "./SEService.hpp"
 #include "./Session.hpp"
+#include "../../../JString.hpp"
 #include "./Reader.hpp"
 
 namespace android::se::omapi
@@ -19,12 +20,12 @@ namespace android::se::omapi
 			"()V"
 		);
 	}
-	jstring Reader::getName()
+	JString Reader::getName()
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::se::omapi::SEService Reader::getSEService()
 	{

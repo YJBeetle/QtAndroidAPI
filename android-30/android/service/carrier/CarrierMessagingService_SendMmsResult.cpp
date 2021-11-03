@@ -1,3 +1,4 @@
+#include "../../../JByteArray.hpp"
 #include "./CarrierMessagingService_SendMmsResult.hpp"
 
 namespace android::service::carrier
@@ -8,21 +9,21 @@ namespace android::service::carrier
 	CarrierMessagingService_SendMmsResult::CarrierMessagingService_SendMmsResult(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	CarrierMessagingService_SendMmsResult::CarrierMessagingService_SendMmsResult(jint arg0, jbyteArray arg1)
+	CarrierMessagingService_SendMmsResult::CarrierMessagingService_SendMmsResult(jint arg0, JByteArray arg1)
 		: JObject(
 			"android.service.carrier.CarrierMessagingService$SendMmsResult",
 			"(I[B)V",
 			arg0,
-			arg1
+			arg1.object<jbyteArray>()
 		) {}
 	
 	// Methods
-	jbyteArray CarrierMessagingService_SendMmsResult::getSendConfPdu()
+	JByteArray CarrierMessagingService_SendMmsResult::getSendConfPdu()
 	{
 		return callObjectMethod(
 			"getSendConfPdu",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
 	jint CarrierMessagingService_SendMmsResult::getSendStatus()
 	{

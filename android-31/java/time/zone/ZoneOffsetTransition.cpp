@@ -1,4 +1,6 @@
 #include "../../io/ObjectInputStream.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "../Duration.hpp"
 #include "../Instant.hpp"
 #include "../LocalDateTime.hpp"
@@ -26,12 +28,12 @@ namespace java::time::zone
 			arg2.object()
 		);
 	}
-	jint ZoneOffsetTransition::compareTo(jobject arg0)
+	jint ZoneOffsetTransition::compareTo(JObject arg0)
 	{
 		return callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Object;)I",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint ZoneOffsetTransition::compareTo(java::time::zone::ZoneOffsetTransition arg0)
@@ -42,12 +44,12 @@ namespace java::time::zone
 			arg0.object()
 		);
 	}
-	jboolean ZoneOffsetTransition::equals(jobject arg0)
+	jboolean ZoneOffsetTransition::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	java::time::LocalDateTime ZoneOffsetTransition::getDateTimeAfter()
@@ -128,12 +130,12 @@ namespace java::time::zone
 			"()J"
 		);
 	}
-	jstring ZoneOffsetTransition::toString()
+	JString ZoneOffsetTransition::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::time::zone
 

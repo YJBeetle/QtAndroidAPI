@@ -3,114 +3,115 @@
 #include "../os/Bundle.hpp"
 #include "./PhoneAccount.hpp"
 #include "./PhoneAccountHandle.hpp"
+#include "../../JString.hpp"
 #include "./TelecomManager.hpp"
 
 namespace android::telecom
 {
 	// Fields
-	jstring TelecomManager::ACTION_CHANGE_DEFAULT_DIALER()
+	JString TelecomManager::ACTION_CHANGE_DEFAULT_DIALER()
 	{
 		return getStaticObjectField(
 			"android.telecom.TelecomManager",
 			"ACTION_CHANGE_DEFAULT_DIALER",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TelecomManager::ACTION_CHANGE_PHONE_ACCOUNTS()
+	JString TelecomManager::ACTION_CHANGE_PHONE_ACCOUNTS()
 	{
 		return getStaticObjectField(
 			"android.telecom.TelecomManager",
 			"ACTION_CHANGE_PHONE_ACCOUNTS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TelecomManager::ACTION_CONFIGURE_PHONE_ACCOUNT()
+	JString TelecomManager::ACTION_CONFIGURE_PHONE_ACCOUNT()
 	{
 		return getStaticObjectField(
 			"android.telecom.TelecomManager",
 			"ACTION_CONFIGURE_PHONE_ACCOUNT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TelecomManager::ACTION_DEFAULT_CALL_SCREENING_APP_CHANGED()
+	JString TelecomManager::ACTION_DEFAULT_CALL_SCREENING_APP_CHANGED()
 	{
 		return getStaticObjectField(
 			"android.telecom.TelecomManager",
 			"ACTION_DEFAULT_CALL_SCREENING_APP_CHANGED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TelecomManager::ACTION_DEFAULT_DIALER_CHANGED()
+	JString TelecomManager::ACTION_DEFAULT_DIALER_CHANGED()
 	{
 		return getStaticObjectField(
 			"android.telecom.TelecomManager",
 			"ACTION_DEFAULT_DIALER_CHANGED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TelecomManager::ACTION_INCOMING_CALL()
+	JString TelecomManager::ACTION_INCOMING_CALL()
 	{
 		return getStaticObjectField(
 			"android.telecom.TelecomManager",
 			"ACTION_INCOMING_CALL",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TelecomManager::ACTION_PHONE_ACCOUNT_REGISTERED()
+	JString TelecomManager::ACTION_PHONE_ACCOUNT_REGISTERED()
 	{
 		return getStaticObjectField(
 			"android.telecom.TelecomManager",
 			"ACTION_PHONE_ACCOUNT_REGISTERED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TelecomManager::ACTION_PHONE_ACCOUNT_UNREGISTERED()
+	JString TelecomManager::ACTION_PHONE_ACCOUNT_UNREGISTERED()
 	{
 		return getStaticObjectField(
 			"android.telecom.TelecomManager",
 			"ACTION_PHONE_ACCOUNT_UNREGISTERED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TelecomManager::ACTION_POST_CALL()
+	JString TelecomManager::ACTION_POST_CALL()
 	{
 		return getStaticObjectField(
 			"android.telecom.TelecomManager",
 			"ACTION_POST_CALL",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TelecomManager::ACTION_SHOW_CALL_ACCESSIBILITY_SETTINGS()
+	JString TelecomManager::ACTION_SHOW_CALL_ACCESSIBILITY_SETTINGS()
 	{
 		return getStaticObjectField(
 			"android.telecom.TelecomManager",
 			"ACTION_SHOW_CALL_ACCESSIBILITY_SETTINGS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TelecomManager::ACTION_SHOW_CALL_SETTINGS()
+	JString TelecomManager::ACTION_SHOW_CALL_SETTINGS()
 	{
 		return getStaticObjectField(
 			"android.telecom.TelecomManager",
 			"ACTION_SHOW_CALL_SETTINGS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TelecomManager::ACTION_SHOW_MISSED_CALLS_NOTIFICATION()
+	JString TelecomManager::ACTION_SHOW_MISSED_CALLS_NOTIFICATION()
 	{
 		return getStaticObjectField(
 			"android.telecom.TelecomManager",
 			"ACTION_SHOW_MISSED_CALLS_NOTIFICATION",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TelecomManager::ACTION_SHOW_RESPOND_VIA_SMS_SETTINGS()
+	JString TelecomManager::ACTION_SHOW_RESPOND_VIA_SMS_SETTINGS()
 	{
 		return getStaticObjectField(
 			"android.telecom.TelecomManager",
 			"ACTION_SHOW_RESPOND_VIA_SMS_SETTINGS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jchar TelecomManager::DTMF_CHARACTER_PAUSE()
 	{
@@ -154,277 +155,277 @@ namespace android::telecom
 			"DURATION_VERY_SHORT"
 		);
 	}
-	jstring TelecomManager::EXTRA_CALL_BACK_NUMBER()
+	JString TelecomManager::EXTRA_CALL_BACK_NUMBER()
 	{
 		return getStaticObjectField(
 			"android.telecom.TelecomManager",
 			"EXTRA_CALL_BACK_NUMBER",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TelecomManager::EXTRA_CALL_DISCONNECT_CAUSE()
+	JString TelecomManager::EXTRA_CALL_DISCONNECT_CAUSE()
 	{
 		return getStaticObjectField(
 			"android.telecom.TelecomManager",
 			"EXTRA_CALL_DISCONNECT_CAUSE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TelecomManager::EXTRA_CALL_DISCONNECT_MESSAGE()
+	JString TelecomManager::EXTRA_CALL_DISCONNECT_MESSAGE()
 	{
 		return getStaticObjectField(
 			"android.telecom.TelecomManager",
 			"EXTRA_CALL_DISCONNECT_MESSAGE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TelecomManager::EXTRA_CALL_DURATION()
+	JString TelecomManager::EXTRA_CALL_DURATION()
 	{
 		return getStaticObjectField(
 			"android.telecom.TelecomManager",
 			"EXTRA_CALL_DURATION",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TelecomManager::EXTRA_CALL_NETWORK_TYPE()
+	JString TelecomManager::EXTRA_CALL_NETWORK_TYPE()
 	{
 		return getStaticObjectField(
 			"android.telecom.TelecomManager",
 			"EXTRA_CALL_NETWORK_TYPE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TelecomManager::EXTRA_CALL_SUBJECT()
+	JString TelecomManager::EXTRA_CALL_SUBJECT()
 	{
 		return getStaticObjectField(
 			"android.telecom.TelecomManager",
 			"EXTRA_CALL_SUBJECT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TelecomManager::EXTRA_CHANGE_DEFAULT_DIALER_PACKAGE_NAME()
+	JString TelecomManager::EXTRA_CHANGE_DEFAULT_DIALER_PACKAGE_NAME()
 	{
 		return getStaticObjectField(
 			"android.telecom.TelecomManager",
 			"EXTRA_CHANGE_DEFAULT_DIALER_PACKAGE_NAME",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TelecomManager::EXTRA_DEFAULT_CALL_SCREENING_APP_COMPONENT_NAME()
+	JString TelecomManager::EXTRA_DEFAULT_CALL_SCREENING_APP_COMPONENT_NAME()
 	{
 		return getStaticObjectField(
 			"android.telecom.TelecomManager",
 			"EXTRA_DEFAULT_CALL_SCREENING_APP_COMPONENT_NAME",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TelecomManager::EXTRA_DISCONNECT_CAUSE()
+	JString TelecomManager::EXTRA_DISCONNECT_CAUSE()
 	{
 		return getStaticObjectField(
 			"android.telecom.TelecomManager",
 			"EXTRA_DISCONNECT_CAUSE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TelecomManager::EXTRA_HANDLE()
+	JString TelecomManager::EXTRA_HANDLE()
 	{
 		return getStaticObjectField(
 			"android.telecom.TelecomManager",
 			"EXTRA_HANDLE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TelecomManager::EXTRA_HAS_PICTURE()
+	JString TelecomManager::EXTRA_HAS_PICTURE()
 	{
 		return getStaticObjectField(
 			"android.telecom.TelecomManager",
 			"EXTRA_HAS_PICTURE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TelecomManager::EXTRA_INCOMING_CALL_ADDRESS()
+	JString TelecomManager::EXTRA_INCOMING_CALL_ADDRESS()
 	{
 		return getStaticObjectField(
 			"android.telecom.TelecomManager",
 			"EXTRA_INCOMING_CALL_ADDRESS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TelecomManager::EXTRA_INCOMING_CALL_EXTRAS()
+	JString TelecomManager::EXTRA_INCOMING_CALL_EXTRAS()
 	{
 		return getStaticObjectField(
 			"android.telecom.TelecomManager",
 			"EXTRA_INCOMING_CALL_EXTRAS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TelecomManager::EXTRA_INCOMING_VIDEO_STATE()
+	JString TelecomManager::EXTRA_INCOMING_VIDEO_STATE()
 	{
 		return getStaticObjectField(
 			"android.telecom.TelecomManager",
 			"EXTRA_INCOMING_VIDEO_STATE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TelecomManager::EXTRA_IS_DEFAULT_CALL_SCREENING_APP()
+	JString TelecomManager::EXTRA_IS_DEFAULT_CALL_SCREENING_APP()
 	{
 		return getStaticObjectField(
 			"android.telecom.TelecomManager",
 			"EXTRA_IS_DEFAULT_CALL_SCREENING_APP",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TelecomManager::EXTRA_LOCATION()
+	JString TelecomManager::EXTRA_LOCATION()
 	{
 		return getStaticObjectField(
 			"android.telecom.TelecomManager",
 			"EXTRA_LOCATION",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TelecomManager::EXTRA_NOTIFICATION_COUNT()
+	JString TelecomManager::EXTRA_NOTIFICATION_COUNT()
 	{
 		return getStaticObjectField(
 			"android.telecom.TelecomManager",
 			"EXTRA_NOTIFICATION_COUNT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TelecomManager::EXTRA_NOTIFICATION_PHONE_NUMBER()
+	JString TelecomManager::EXTRA_NOTIFICATION_PHONE_NUMBER()
 	{
 		return getStaticObjectField(
 			"android.telecom.TelecomManager",
 			"EXTRA_NOTIFICATION_PHONE_NUMBER",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TelecomManager::EXTRA_OUTGOING_CALL_EXTRAS()
+	JString TelecomManager::EXTRA_OUTGOING_CALL_EXTRAS()
 	{
 		return getStaticObjectField(
 			"android.telecom.TelecomManager",
 			"EXTRA_OUTGOING_CALL_EXTRAS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TelecomManager::EXTRA_OUTGOING_PICTURE()
+	JString TelecomManager::EXTRA_OUTGOING_PICTURE()
 	{
 		return getStaticObjectField(
 			"android.telecom.TelecomManager",
 			"EXTRA_OUTGOING_PICTURE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TelecomManager::EXTRA_PHONE_ACCOUNT_HANDLE()
+	JString TelecomManager::EXTRA_PHONE_ACCOUNT_HANDLE()
 	{
 		return getStaticObjectField(
 			"android.telecom.TelecomManager",
 			"EXTRA_PHONE_ACCOUNT_HANDLE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TelecomManager::EXTRA_PICTURE_URI()
+	JString TelecomManager::EXTRA_PICTURE_URI()
 	{
 		return getStaticObjectField(
 			"android.telecom.TelecomManager",
 			"EXTRA_PICTURE_URI",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TelecomManager::EXTRA_PRIORITY()
+	JString TelecomManager::EXTRA_PRIORITY()
 	{
 		return getStaticObjectField(
 			"android.telecom.TelecomManager",
 			"EXTRA_PRIORITY",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TelecomManager::EXTRA_START_CALL_WITH_RTT()
+	JString TelecomManager::EXTRA_START_CALL_WITH_RTT()
 	{
 		return getStaticObjectField(
 			"android.telecom.TelecomManager",
 			"EXTRA_START_CALL_WITH_RTT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TelecomManager::EXTRA_START_CALL_WITH_SPEAKERPHONE()
+	JString TelecomManager::EXTRA_START_CALL_WITH_SPEAKERPHONE()
 	{
 		return getStaticObjectField(
 			"android.telecom.TelecomManager",
 			"EXTRA_START_CALL_WITH_SPEAKERPHONE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TelecomManager::EXTRA_START_CALL_WITH_VIDEO_STATE()
+	JString TelecomManager::EXTRA_START_CALL_WITH_VIDEO_STATE()
 	{
 		return getStaticObjectField(
 			"android.telecom.TelecomManager",
 			"EXTRA_START_CALL_WITH_VIDEO_STATE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TelecomManager::EXTRA_USE_ASSISTED_DIALING()
+	JString TelecomManager::EXTRA_USE_ASSISTED_DIALING()
 	{
 		return getStaticObjectField(
 			"android.telecom.TelecomManager",
 			"EXTRA_USE_ASSISTED_DIALING",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TelecomManager::GATEWAY_ORIGINAL_ADDRESS()
+	JString TelecomManager::GATEWAY_ORIGINAL_ADDRESS()
 	{
 		return getStaticObjectField(
 			"android.telecom.TelecomManager",
 			"GATEWAY_ORIGINAL_ADDRESS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TelecomManager::GATEWAY_PROVIDER_PACKAGE()
+	JString TelecomManager::GATEWAY_PROVIDER_PACKAGE()
 	{
 		return getStaticObjectField(
 			"android.telecom.TelecomManager",
 			"GATEWAY_PROVIDER_PACKAGE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TelecomManager::METADATA_INCLUDE_EXTERNAL_CALLS()
+	JString TelecomManager::METADATA_INCLUDE_EXTERNAL_CALLS()
 	{
 		return getStaticObjectField(
 			"android.telecom.TelecomManager",
 			"METADATA_INCLUDE_EXTERNAL_CALLS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TelecomManager::METADATA_INCLUDE_SELF_MANAGED_CALLS()
+	JString TelecomManager::METADATA_INCLUDE_SELF_MANAGED_CALLS()
 	{
 		return getStaticObjectField(
 			"android.telecom.TelecomManager",
 			"METADATA_INCLUDE_SELF_MANAGED_CALLS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TelecomManager::METADATA_IN_CALL_SERVICE_CAR_MODE_UI()
+	JString TelecomManager::METADATA_IN_CALL_SERVICE_CAR_MODE_UI()
 	{
 		return getStaticObjectField(
 			"android.telecom.TelecomManager",
 			"METADATA_IN_CALL_SERVICE_CAR_MODE_UI",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TelecomManager::METADATA_IN_CALL_SERVICE_RINGING()
+	JString TelecomManager::METADATA_IN_CALL_SERVICE_RINGING()
 	{
 		return getStaticObjectField(
 			"android.telecom.TelecomManager",
 			"METADATA_IN_CALL_SERVICE_RINGING",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TelecomManager::METADATA_IN_CALL_SERVICE_UI()
+	JString TelecomManager::METADATA_IN_CALL_SERVICE_UI()
 	{
 		return getStaticObjectField(
 			"android.telecom.TelecomManager",
 			"METADATA_IN_CALL_SERVICE_UI",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint TelecomManager::PRESENTATION_ALLOWED()
 	{
@@ -554,28 +555,28 @@ namespace android::telecom
 			"()Ljava/util/List;"
 		);
 	}
-	jstring TelecomManager::getDefaultDialerPackage()
+	JString TelecomManager::getDefaultDialerPackage()
 	{
 		return callObjectMethod(
 			"getDefaultDialerPackage",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	android::telecom::PhoneAccountHandle TelecomManager::getDefaultOutgoingPhoneAccount(jstring arg0)
+	android::telecom::PhoneAccountHandle TelecomManager::getDefaultOutgoingPhoneAccount(JString arg0)
 	{
 		return callObjectMethod(
 			"getDefaultOutgoingPhoneAccount",
 			"(Ljava/lang/String;)Landroid/telecom/PhoneAccountHandle;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jstring TelecomManager::getLine1Number(android::telecom::PhoneAccountHandle arg0)
+	JString TelecomManager::getLine1Number(android::telecom::PhoneAccountHandle arg0)
 	{
 		return callObjectMethod(
 			"getLine1Number",
 			"(Landroid/telecom/PhoneAccountHandle;)Ljava/lang/String;",
 			arg0.object()
-		).object<jstring>();
+		);
 	}
 	android::telecom::PhoneAccount TelecomManager::getPhoneAccount(android::telecom::PhoneAccountHandle arg0)
 	{
@@ -607,12 +608,12 @@ namespace android::telecom
 			arg0
 		);
 	}
-	jstring TelecomManager::getSystemDialerPackage()
+	JString TelecomManager::getSystemDialerPackage()
 	{
 		return callObjectMethod(
 			"getSystemDialerPackage",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::telecom::PhoneAccountHandle TelecomManager::getUserSelectedOutgoingPhoneAccount()
 	{
@@ -621,28 +622,28 @@ namespace android::telecom
 			"()Landroid/telecom/PhoneAccountHandle;"
 		);
 	}
-	jstring TelecomManager::getVoiceMailNumber(android::telecom::PhoneAccountHandle arg0)
+	JString TelecomManager::getVoiceMailNumber(android::telecom::PhoneAccountHandle arg0)
 	{
 		return callObjectMethod(
 			"getVoiceMailNumber",
 			"(Landroid/telecom/PhoneAccountHandle;)Ljava/lang/String;",
 			arg0.object()
-		).object<jstring>();
+		);
 	}
-	jboolean TelecomManager::handleMmi(jstring arg0)
+	jboolean TelecomManager::handleMmi(JString arg0)
 	{
 		return callMethod<jboolean>(
 			"handleMmi",
 			"(Ljava/lang/String;)Z",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jboolean TelecomManager::handleMmi(jstring arg0, android::telecom::PhoneAccountHandle arg1)
+	jboolean TelecomManager::handleMmi(JString arg0, android::telecom::PhoneAccountHandle arg1)
 	{
 		return callMethod<jboolean>(
 			"handleMmi",
 			"(Ljava/lang/String;Landroid/telecom/PhoneAccountHandle;)Z",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
@@ -690,13 +691,13 @@ namespace android::telecom
 			"()Z"
 		);
 	}
-	jboolean TelecomManager::isVoiceMailNumber(android::telecom::PhoneAccountHandle arg0, jstring arg1)
+	jboolean TelecomManager::isVoiceMailNumber(android::telecom::PhoneAccountHandle arg0, JString arg1)
 	{
 		return callMethod<jboolean>(
 			"isVoiceMailNumber",
 			"(Landroid/telecom/PhoneAccountHandle;Ljava/lang/String;)Z",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
 	void TelecomManager::placeCall(android::net::Uri arg0, android::os::Bundle arg1)

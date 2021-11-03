@@ -6,6 +6,8 @@ namespace android::content
 {
 	class Context;
 }
+class JString;
+class JString;
 
 namespace android::media
 {
@@ -21,12 +23,12 @@ namespace android::media
 		// Constructors
 		
 		// Methods
-		jstring getName();
-		jstring getName(android::content::Context arg0);
+		JString getName();
+		JString getName(android::content::Context arg0);
 		JObject getRoutes(JObject arg0);
 		jint getSupportedTypes();
 		jboolean isGroupable();
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::media
 

@@ -1,8 +1,9 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "../../java/lang/Exception.hpp"
 
+class JString;
+class JThrowable;
 
 namespace org::json
 {
@@ -16,9 +17,9 @@ namespace org::json
 		JSONException(QAndroidJniObject obj);
 		
 		// Constructors
-		JSONException(jstring arg0);
-		JSONException(jthrowable arg0);
-		JSONException(jstring arg0, jthrowable arg1);
+		JSONException(JString arg0);
+		JSONException(JThrowable arg0);
+		JSONException(JString arg0, JThrowable arg1);
 		
 		// Methods
 	};

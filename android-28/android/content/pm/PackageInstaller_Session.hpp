@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JArray;
 namespace android::content
 {
 	class IntentSender;
@@ -14,6 +15,7 @@ namespace java::io
 {
 	class OutputStream;
 }
+class JString;
 
 namespace android::content::pm
 {
@@ -33,12 +35,12 @@ namespace android::content::pm
 		void close();
 		void commit(android::content::IntentSender arg0);
 		void fsync(java::io::OutputStream arg0);
-		jarray getNames();
-		java::io::InputStream openRead(jstring arg0);
-		java::io::OutputStream openWrite(jstring arg0, jlong arg1, jlong arg2);
-		void removeSplit(jstring arg0);
+		JArray getNames();
+		java::io::InputStream openRead(JString arg0);
+		java::io::OutputStream openWrite(JString arg0, jlong arg1, jlong arg2);
+		void removeSplit(JString arg0);
 		void setStagingProgress(jfloat arg0);
-		void transfer(jstring arg0);
+		void transfer(JString arg0);
 	};
 } // namespace android::content::pm
 

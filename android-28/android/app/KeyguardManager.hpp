@@ -18,6 +18,8 @@ namespace android::content
 {
 	class Intent;
 }
+class JString;
+class JString;
 
 namespace android::app
 {
@@ -33,14 +35,14 @@ namespace android::app
 		// Constructors
 		
 		// Methods
-		android::content::Intent createConfirmDeviceCredentialIntent(jstring arg0, jstring arg1);
+		android::content::Intent createConfirmDeviceCredentialIntent(JString arg0, JString arg1);
 		void exitKeyguardSecurely(JObject arg0);
 		jboolean inKeyguardRestrictedInputMode();
 		jboolean isDeviceLocked();
 		jboolean isDeviceSecure();
 		jboolean isKeyguardLocked();
 		jboolean isKeyguardSecure();
-		android::app::KeyguardManager_KeyguardLock newKeyguardLock(jstring arg0);
+		android::app::KeyguardManager_KeyguardLock newKeyguardLock(JString arg0);
 		void requestDismissKeyguard(android::app::Activity arg0, android::app::KeyguardManager_KeyguardDismissCallback arg1);
 	};
 } // namespace android::app

@@ -2,6 +2,8 @@
 
 #include "../../../JObject.hpp"
 
+class JObject;
+class JString;
 
 namespace android::media::effect
 {
@@ -19,9 +21,9 @@ namespace android::media::effect
 		
 		// Methods
 		void apply(jint arg0, jint arg1, jint arg2, jint arg3);
-		jstring getName();
+		JString getName();
 		void release();
-		void setParameter(jstring arg0, jobject arg1);
+		void setParameter(JString arg0, JObject arg1);
 		void setUpdateListener(JObject arg0);
 	};
 } // namespace android::media::effect

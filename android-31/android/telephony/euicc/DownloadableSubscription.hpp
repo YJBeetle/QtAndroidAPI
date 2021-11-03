@@ -6,6 +6,7 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
 
 namespace android::telephony::euicc
 {
@@ -22,10 +23,10 @@ namespace android::telephony::euicc
 		// Constructors
 		
 		// Methods
-		static android::telephony::euicc::DownloadableSubscription forActivationCode(jstring arg0);
+		static android::telephony::euicc::DownloadableSubscription forActivationCode(JString arg0);
 		jint describeContents();
-		jstring getConfirmationCode();
-		jstring getEncodedActivationCode();
+		JString getConfirmationCode();
+		JString getEncodedActivationCode();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::telephony::euicc

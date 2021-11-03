@@ -1,4 +1,5 @@
 #include "./KeyEvent.hpp"
+#include "../../JObject.hpp"
 #include "./KeyEvent_DispatcherState.hpp"
 
 namespace android::view
@@ -47,21 +48,21 @@ namespace android::view
 			"()V"
 		);
 	}
-	void KeyEvent_DispatcherState::reset(jobject arg0)
+	void KeyEvent_DispatcherState::reset(JObject arg0)
 	{
 		callMethod<void>(
 			"reset",
 			"(Ljava/lang/Object;)V",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	void KeyEvent_DispatcherState::startTracking(android::view::KeyEvent arg0, jobject arg1)
+	void KeyEvent_DispatcherState::startTracking(android::view::KeyEvent arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"startTracking",
 			"(Landroid/view/KeyEvent;Ljava/lang/Object;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jobject>()
 		);
 	}
 } // namespace android::view

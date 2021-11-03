@@ -1,4 +1,5 @@
 #include "./ProcessedData.hpp"
+#include "../../JString.hpp"
 #include "./DrmInfoStatus.hpp"
 
 namespace android::drm
@@ -31,12 +32,12 @@ namespace android::drm
 			"infoType"
 		);
 	}
-	jstring DrmInfoStatus::mimeType()
+	JString DrmInfoStatus::mimeType()
 	{
 		return getObjectField(
 			"mimeType",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint DrmInfoStatus::statusCode()
 	{
@@ -49,14 +50,14 @@ namespace android::drm
 	DrmInfoStatus::DrmInfoStatus(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	DrmInfoStatus::DrmInfoStatus(jint arg0, jint arg1, android::drm::ProcessedData arg2, jstring arg3)
+	DrmInfoStatus::DrmInfoStatus(jint arg0, jint arg1, android::drm::ProcessedData arg2, JString arg3)
 		: JObject(
 			"android.drm.DrmInfoStatus",
 			"(IILandroid/drm/ProcessedData;Ljava/lang/String;)V",
 			arg0,
 			arg1,
 			arg2.object(),
-			arg3
+			arg3.object<jstring>()
 		) {}
 	
 	// Methods

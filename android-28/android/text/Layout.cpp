@@ -5,6 +5,7 @@
 #include "./Layout_Alignment.hpp"
 #include "./Layout_Directions.hpp"
 #include "./TextPaint.hpp"
+#include "../../JString.hpp"
 #include "./Layout.hpp"
 
 namespace android::text
@@ -101,23 +102,23 @@ namespace android::text
 	// Constructors
 	
 	// Methods
-	jfloat Layout::getDesiredWidth(jstring arg0, android::text::TextPaint arg1)
+	jfloat Layout::getDesiredWidth(JString arg0, android::text::TextPaint arg1)
 	{
 		return callStaticMethod<jfloat>(
 			"android.text.Layout",
 			"getDesiredWidth",
 			"(Ljava/lang/CharSequence;Landroid/text/TextPaint;)F",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
-	jfloat Layout::getDesiredWidth(jstring arg0, jint arg1, jint arg2, android::text::TextPaint arg3)
+	jfloat Layout::getDesiredWidth(JString arg0, jint arg1, jint arg2, android::text::TextPaint arg3)
 	{
 		return callStaticMethod<jfloat>(
 			"android.text.Layout",
 			"getDesiredWidth",
 			"(Ljava/lang/CharSequence;IILandroid/text/TextPaint;)F",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
 			arg2,
 			arg3.object()
@@ -156,14 +157,14 @@ namespace android::text
 			"()I"
 		);
 	}
-	void Layout::getCursorPath(jint arg0, android::graphics::Path arg1, jstring arg2)
+	void Layout::getCursorPath(jint arg0, android::graphics::Path arg1, JString arg2)
 	{
 		callMethod<void>(
 			"getCursorPath",
 			"(ILandroid/graphics/Path;Ljava/lang/CharSequence;)V",
 			arg0,
 			arg1.object(),
-			arg2
+			arg2.object<jstring>()
 		);
 	}
 	jint Layout::getEllipsisCount(jint arg0)
@@ -444,12 +445,12 @@ namespace android::text
 			"()F"
 		);
 	}
-	jstring Layout::getText()
+	JString Layout::getText()
 	{
 		return callObjectMethod(
 			"getText",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	jint Layout::getTopPadding()
 	{

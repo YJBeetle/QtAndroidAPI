@@ -2,6 +2,8 @@
 #include "../../content/Intent.hpp"
 #include "../Parcel.hpp"
 #include "../../../java/io/File.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "../../../java/util/UUID.hpp"
 #include "./StorageVolume.hpp"
 
@@ -16,13 +18,13 @@ namespace android::os::storage
 			"Landroid/os/Parcelable$Creator;"
 		);
 	}
-	jstring StorageVolume::EXTRA_STORAGE_VOLUME()
+	JString StorageVolume::EXTRA_STORAGE_VOLUME()
 	{
 		return getStaticObjectField(
 			"android.os.storage.StorageVolume",
 			"EXTRA_STORAGE_VOLUME",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QAndroidJniObject forward
@@ -31,12 +33,12 @@ namespace android::os::storage
 	// Constructors
 	
 	// Methods
-	android::content::Intent StorageVolume::createAccessIntent(jstring arg0)
+	android::content::Intent StorageVolume::createAccessIntent(JString arg0)
 	{
 		return callObjectMethod(
 			"createAccessIntent",
 			"(Ljava/lang/String;)Landroid/content/Intent;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::content::Intent StorageVolume::createOpenDocumentTreeIntent()
@@ -53,21 +55,21 @@ namespace android::os::storage
 			"()I"
 		);
 	}
-	jboolean StorageVolume::equals(jobject arg0)
+	jboolean StorageVolume::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jstring StorageVolume::getDescription(android::content::Context arg0)
+	JString StorageVolume::getDescription(android::content::Context arg0)
 	{
 		return callObjectMethod(
 			"getDescription",
 			"(Landroid/content/Context;)Ljava/lang/String;",
 			arg0.object()
-		).object<jstring>();
+		);
 	}
 	java::io::File StorageVolume::getDirectory()
 	{
@@ -76,19 +78,19 @@ namespace android::os::storage
 			"()Ljava/io/File;"
 		);
 	}
-	jstring StorageVolume::getMediaStoreVolumeName()
+	JString StorageVolume::getMediaStoreVolumeName()
 	{
 		return callObjectMethod(
 			"getMediaStoreVolumeName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring StorageVolume::getState()
+	JString StorageVolume::getState()
 	{
 		return callObjectMethod(
 			"getState",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	java::util::UUID StorageVolume::getStorageUuid()
 	{
@@ -97,12 +99,12 @@ namespace android::os::storage
 			"()Ljava/util/UUID;"
 		);
 	}
-	jstring StorageVolume::getUuid()
+	JString StorageVolume::getUuid()
 	{
 		return callObjectMethod(
 			"getUuid",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint StorageVolume::hashCode()
 	{
@@ -132,12 +134,12 @@ namespace android::os::storage
 			"()Z"
 		);
 	}
-	jstring StorageVolume::toString()
+	JString StorageVolume::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void StorageVolume::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

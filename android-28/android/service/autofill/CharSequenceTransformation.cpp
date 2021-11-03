@@ -1,5 +1,6 @@
 #include "../../os/Parcel.hpp"
 #include "./CharSequenceTransformation_Builder.hpp"
+#include "../../../JString.hpp"
 #include "./CharSequenceTransformation.hpp"
 
 namespace android::service::autofill
@@ -27,12 +28,12 @@ namespace android::service::autofill
 			"()I"
 		);
 	}
-	jstring CharSequenceTransformation::toString()
+	JString CharSequenceTransformation::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void CharSequenceTransformation::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

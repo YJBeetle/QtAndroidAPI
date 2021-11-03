@@ -1,3 +1,5 @@
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./MessageFormat_Field.hpp"
 
 namespace android::icu::text

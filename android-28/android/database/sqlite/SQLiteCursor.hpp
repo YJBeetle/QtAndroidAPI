@@ -1,9 +1,8 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "../AbstractCursor.hpp"
 #include "../AbstractWindowedCursor.hpp"
 
+class JArray;
 namespace android::database
 {
 	class CursorWindow;
@@ -16,6 +15,7 @@ namespace android::database::sqlite
 {
 	class SQLiteQuery;
 }
+class JString;
 
 namespace android::database::sqlite
 {
@@ -29,20 +29,20 @@ namespace android::database::sqlite
 		SQLiteCursor(QAndroidJniObject obj);
 		
 		// Constructors
-		SQLiteCursor(JObject arg0, jstring arg1, android::database::sqlite::SQLiteQuery arg2);
-		SQLiteCursor(android::database::sqlite::SQLiteDatabase arg0, JObject arg1, jstring arg2, android::database::sqlite::SQLiteQuery arg3);
+		SQLiteCursor(JObject arg0, JString arg1, android::database::sqlite::SQLiteQuery arg2);
+		SQLiteCursor(android::database::sqlite::SQLiteDatabase arg0, JObject arg1, JString arg2, android::database::sqlite::SQLiteQuery arg3);
 		
 		// Methods
 		void close();
 		void deactivate();
-		jint getColumnIndex(jstring arg0);
-		jarray getColumnNames();
+		jint getColumnIndex(JString arg0);
+		JArray getColumnNames();
 		jint getCount();
 		android::database::sqlite::SQLiteDatabase getDatabase();
 		jboolean onMove(jint arg0, jint arg1);
 		jboolean requery();
 		void setFillWindowForwardOnly(jboolean arg0);
-		void setSelectionArguments(jarray arg0);
+		void setSelectionArguments(JArray arg0);
 		void setWindow(android::database::CursorWindow arg0);
 	};
 } // namespace android::database::sqlite

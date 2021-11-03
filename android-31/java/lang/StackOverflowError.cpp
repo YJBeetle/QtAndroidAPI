@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./StackOverflowError.hpp"
 
 namespace java::lang
@@ -13,11 +14,11 @@ namespace java::lang
 			"java.lang.StackOverflowError",
 			"()V"
 		) {}
-	StackOverflowError::StackOverflowError(jstring arg0)
+	StackOverflowError::StackOverflowError(JString arg0)
 		: java::lang::VirtualMachineError(
 			"java.lang.StackOverflowError",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

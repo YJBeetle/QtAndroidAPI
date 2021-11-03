@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../../../JObject.hpp"
 #include "./IkeSessionParams_IkeAuthConfig.hpp"
 
+class JObject;
 namespace java::security::cert
 {
 	class X509Certificate;
@@ -22,7 +22,7 @@ namespace android::net::ipsec::ike
 		// Constructors
 		
 		// Methods
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		java::security::cert::X509Certificate getClientEndCertificate();
 		JObject getIntermediateCertificates();
 		JObject getPrivateKey();

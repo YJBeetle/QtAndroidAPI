@@ -1,4 +1,5 @@
 #include "../os/Parcel.hpp"
+#include "../../JString.hpp"
 #include "./NeighboringCellInfo.hpp"
 
 namespace android::telephony
@@ -49,12 +50,12 @@ namespace android::telephony
 			arg0,
 			arg1
 		) {}
-	NeighboringCellInfo::NeighboringCellInfo(jint arg0, jstring arg1, jint arg2)
+	NeighboringCellInfo::NeighboringCellInfo(jint arg0, JString arg1, jint arg2)
 		: JObject(
 			"android.telephony.NeighboringCellInfo",
 			"(ILjava/lang/String;I)V",
 			arg0,
-			arg1,
+			arg1.object<jstring>(),
 			arg2
 		) {}
 	
@@ -117,12 +118,12 @@ namespace android::telephony
 			arg0
 		);
 	}
-	jstring NeighboringCellInfo::toString()
+	JString NeighboringCellInfo::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void NeighboringCellInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

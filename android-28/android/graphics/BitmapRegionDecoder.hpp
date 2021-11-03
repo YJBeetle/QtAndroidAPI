@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JByteArray;
 namespace android::graphics
 {
 	class Bitmap;
@@ -22,6 +23,7 @@ namespace java::io
 {
 	class InputStream;
 }
+class JString;
 
 namespace android::graphics
 {
@@ -39,8 +41,8 @@ namespace android::graphics
 		// Methods
 		static android::graphics::BitmapRegionDecoder newInstance(java::io::FileDescriptor arg0, jboolean arg1);
 		static android::graphics::BitmapRegionDecoder newInstance(java::io::InputStream arg0, jboolean arg1);
-		static android::graphics::BitmapRegionDecoder newInstance(jstring arg0, jboolean arg1);
-		static android::graphics::BitmapRegionDecoder newInstance(jbyteArray arg0, jint arg1, jint arg2, jboolean arg3);
+		static android::graphics::BitmapRegionDecoder newInstance(JString arg0, jboolean arg1);
+		static android::graphics::BitmapRegionDecoder newInstance(JByteArray arg0, jint arg1, jint arg2, jboolean arg3);
 		android::graphics::Bitmap decodeRegion(android::graphics::Rect arg0, android::graphics::BitmapFactory_Options arg1);
 		jint getHeight();
 		jint getWidth();

@@ -14,6 +14,8 @@ namespace android::telephony
 {
 	class CellSignalStrength;
 }
+class JObject;
+class JString;
 
 namespace android::telephony
 {
@@ -37,7 +39,7 @@ namespace android::telephony
 		
 		// Methods
 		jint describeContents();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint getCellConnectionStatus();
 		android::telephony::CellIdentity getCellIdentity();
 		android::telephony::CellSignalStrength getCellSignalStrength();
@@ -45,7 +47,7 @@ namespace android::telephony
 		jlong getTimestampMillis();
 		jint hashCode();
 		jboolean isRegistered();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::telephony

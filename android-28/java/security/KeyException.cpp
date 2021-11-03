@@ -1,3 +1,5 @@
+#include "../../JString.hpp"
+#include "../../JThrowable.hpp"
 #include "./KeyException.hpp"
 
 namespace java::security
@@ -13,24 +15,24 @@ namespace java::security
 			"java.security.KeyException",
 			"()V"
 		) {}
-	KeyException::KeyException(jstring arg0)
+	KeyException::KeyException(JString arg0)
 		: java::security::GeneralSecurityException(
 			"java.security.KeyException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	KeyException::KeyException(jthrowable arg0)
+	KeyException::KeyException(JThrowable arg0)
 		: java::security::GeneralSecurityException(
 			"java.security.KeyException",
 			"(Ljava/lang/Throwable;)V",
-			arg0
+			arg0.object<jthrowable>()
 		) {}
-	KeyException::KeyException(jstring arg0, jthrowable arg1)
+	KeyException::KeyException(JString arg0, JThrowable arg1)
 		: java::security::GeneralSecurityException(
 			"java.security.KeyException",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
 		) {}
 	
 	// Methods

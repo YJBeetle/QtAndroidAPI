@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JIntArray;
+class JString;
 
 namespace android::util
 {
@@ -9,8 +11,8 @@ namespace android::util
 	{
 	public:
 		// Fields
-		static jintArray NOTHING();
-		static jintArray WILD_CARD();
+		static JIntArray NOTHING();
+		static JIntArray WILD_CARD();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit StateSet(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
@@ -19,11 +21,11 @@ namespace android::util
 		// Constructors
 		
 		// Methods
-		static jstring dump(jintArray arg0);
-		static jboolean isWildCard(jintArray arg0);
-		static jboolean stateSetMatches(jintArray arg0, jintArray arg1);
-		static jboolean stateSetMatches(jintArray arg0, jint arg1);
-		static jintArray trimStateSet(jintArray arg0, jint arg1);
+		static JString dump(JIntArray arg0);
+		static jboolean isWildCard(JIntArray arg0);
+		static jboolean stateSetMatches(JIntArray arg0, JIntArray arg1);
+		static jboolean stateSetMatches(JIntArray arg0, jint arg1);
+		static JIntArray trimStateSet(JIntArray arg0, jint arg1);
 	};
 } // namespace android::util
 

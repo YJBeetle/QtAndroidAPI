@@ -10,6 +10,7 @@ namespace android::content
 {
 	class Context;
 }
+class JString;
 
 namespace android::app
 {
@@ -28,11 +29,11 @@ namespace android::app
 		void cancel();
 		android::app::Activity getActivity();
 		android::content::Context getContext();
-		jstring getName();
+		JString getName();
 		void onAttached(android::app::Activity arg0);
 		void onCancel();
 		void onDetached();
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::app
 

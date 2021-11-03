@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JFloatArray;
 namespace android::media
 {
 	class VolumeShaper_Configuration;
@@ -28,7 +29,7 @@ namespace android::media
 		android::media::VolumeShaper_Configuration_Builder reflectTimes();
 		android::media::VolumeShaper_Configuration_Builder scaleToEndVolume(jfloat arg0);
 		android::media::VolumeShaper_Configuration_Builder scaleToStartVolume(jfloat arg0);
-		android::media::VolumeShaper_Configuration_Builder setCurve(jfloatArray arg0, jfloatArray arg1);
+		android::media::VolumeShaper_Configuration_Builder setCurve(JFloatArray arg0, JFloatArray arg1);
 		android::media::VolumeShaper_Configuration_Builder setDuration(jlong arg0);
 		android::media::VolumeShaper_Configuration_Builder setInterpolatorType(jint arg0);
 	};

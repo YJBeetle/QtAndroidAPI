@@ -14,6 +14,7 @@ namespace android::view
 {
 	class View;
 }
+class JString;
 
 namespace android::view::accessibility
 {
@@ -32,7 +33,7 @@ namespace android::view::accessibility
 		
 		// Methods
 		android::view::View getView();
-		void onPrepareExtraData(jint arg0, jstring arg1, android::os::Bundle arg2, android::os::Message arg3);
+		void onPrepareExtraData(jint arg0, JString arg1, android::os::Bundle arg2, android::os::Message arg3);
 	};
 } // namespace android::view::accessibility
 

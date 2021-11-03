@@ -2,6 +2,8 @@
 
 #include "../../../JObject.hpp"
 
+class JByteArray;
+class JString;
 
 namespace android::app::backup
 {
@@ -18,8 +20,8 @@ namespace android::app::backup
 		
 		// Methods
 		jint getDataSize();
-		jstring getKey();
-		jint readEntityData(jbyteArray arg0, jint arg1, jint arg2);
+		JString getKey();
+		jint readEntityData(JByteArray arg0, jint arg1, jint arg2);
 		jboolean readNextHeader();
 		void skipEntityData();
 	};

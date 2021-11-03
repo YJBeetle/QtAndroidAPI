@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JByteArray;
 
 namespace android::media::midi
 {
@@ -22,9 +23,9 @@ namespace android::media::midi
 		void flush();
 		jint getMaxMessageSize();
 		void onFlush();
-		void onSend(jbyteArray arg0, jint arg1, jint arg2, jlong arg3);
-		void send(jbyteArray arg0, jint arg1, jint arg2);
-		void send(jbyteArray arg0, jint arg1, jint arg2, jlong arg3);
+		void onSend(JByteArray arg0, jint arg1, jint arg2, jlong arg3);
+		void send(JByteArray arg0, jint arg1, jint arg2);
+		void send(JByteArray arg0, jint arg1, jint arg2, jlong arg3);
 	};
 } // namespace android::media::midi
 

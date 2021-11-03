@@ -1,8 +1,9 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "../../java/lang/Enum.hpp"
 
+class JArray;
+class JString;
 
 namespace android::graphics
 {
@@ -20,8 +21,8 @@ namespace android::graphics
 		// Constructors
 		
 		// Methods
-		static android::graphics::Path_Direction valueOf(jstring arg0);
-		static jarray values();
+		static android::graphics::Path_Direction valueOf(JString arg0);
+		static JArray values();
 	};
 } // namespace android::graphics
 

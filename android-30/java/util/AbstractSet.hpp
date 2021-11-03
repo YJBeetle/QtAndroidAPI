@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./AbstractCollection.hpp"
 
+class JObject;
 
 namespace java::util
 {
@@ -18,7 +18,7 @@ namespace java::util
 		// Constructors
 		
 		// Methods
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint hashCode();
 		jboolean removeAll(JObject arg0);
 	};

@@ -1,3 +1,5 @@
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
 #include "./GradientDrawable_Orientation.hpp"
 
 namespace android::graphics::drawable
@@ -74,22 +76,22 @@ namespace android::graphics::drawable
 	// Constructors
 	
 	// Methods
-	android::graphics::drawable::GradientDrawable_Orientation GradientDrawable_Orientation::valueOf(jstring arg0)
+	android::graphics::drawable::GradientDrawable_Orientation GradientDrawable_Orientation::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.graphics.drawable.GradientDrawable$Orientation",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/graphics/drawable/GradientDrawable$Orientation;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray GradientDrawable_Orientation::values()
+	JArray GradientDrawable_Orientation::values()
 	{
 		return callStaticObjectMethod(
 			"android.graphics.drawable.GradientDrawable$Orientation",
 			"values",
 			"()[Landroid/graphics/drawable/GradientDrawable$Orientation;"
-		).object<jarray>();
+		);
 	}
 } // namespace android::graphics::drawable
 

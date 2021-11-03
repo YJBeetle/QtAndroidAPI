@@ -3,18 +3,19 @@
 #include "../os/Bundle.hpp"
 #include "./Call.hpp"
 #include "./CallAudioState.hpp"
+#include "../../JString.hpp"
 #include "./InCallService.hpp"
 
 namespace android::telecom
 {
 	// Fields
-	jstring InCallService::SERVICE_INTERFACE()
+	JString InCallService::SERVICE_INTERFACE()
 	{
 		return getStaticObjectField(
 			"android.telecom.InCallService",
 			"SERVICE_INTERFACE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QAndroidJniObject forward
@@ -97,13 +98,13 @@ namespace android::telecom
 			arg0
 		);
 	}
-	void InCallService::onConnectionEvent(android::telecom::Call arg0, jstring arg1, android::os::Bundle arg2)
+	void InCallService::onConnectionEvent(android::telecom::Call arg0, JString arg1, android::os::Bundle arg2)
 	{
 		callMethod<void>(
 			"onConnectionEvent",
 			"(Landroid/telecom/Call;Ljava/lang/String;Landroid/os/Bundle;)V",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2.object()
 		);
 	}

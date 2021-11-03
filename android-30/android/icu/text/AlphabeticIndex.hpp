@@ -2,6 +2,8 @@
 
 #include "../../../JObject.hpp"
 
+class JArray;
+class JArray;
 namespace android::icu::text
 {
 	class AlphabeticIndex_ImmutableIndex;
@@ -18,6 +20,9 @@ namespace android::icu::util
 {
 	class ULocale;
 }
+class JString;
+class JObject;
+class JString;
 namespace java::util
 {
 	class Locale;
@@ -40,25 +45,25 @@ namespace android::icu::text
 		AlphabeticIndex(java::util::Locale arg0);
 		
 		// Methods
-		android::icu::text::AlphabeticIndex addLabels(jarray arg0);
+		android::icu::text::AlphabeticIndex addLabels(JArray arg0);
 		android::icu::text::AlphabeticIndex addLabels(android::icu::text::UnicodeSet arg0);
-		android::icu::text::AlphabeticIndex addRecord(jstring arg0, jobject arg1);
+		android::icu::text::AlphabeticIndex addRecord(JString arg0, JObject arg1);
 		android::icu::text::AlphabeticIndex_ImmutableIndex buildImmutableIndex();
 		android::icu::text::AlphabeticIndex clearRecords();
 		jint getBucketCount();
-		jint getBucketIndex(jstring arg0);
+		jint getBucketIndex(JString arg0);
 		JObject getBucketLabels();
 		android::icu::text::RuleBasedCollator getCollator();
-		jstring getInflowLabel();
+		JString getInflowLabel();
 		jint getMaxLabelCount();
-		jstring getOverflowLabel();
+		JString getOverflowLabel();
 		jint getRecordCount();
-		jstring getUnderflowLabel();
+		JString getUnderflowLabel();
 		JObject iterator();
-		android::icu::text::AlphabeticIndex setInflowLabel(jstring arg0);
+		android::icu::text::AlphabeticIndex setInflowLabel(JString arg0);
 		android::icu::text::AlphabeticIndex setMaxLabelCount(jint arg0);
-		android::icu::text::AlphabeticIndex setOverflowLabel(jstring arg0);
-		android::icu::text::AlphabeticIndex setUnderflowLabel(jstring arg0);
+		android::icu::text::AlphabeticIndex setOverflowLabel(JString arg0);
+		android::icu::text::AlphabeticIndex setUnderflowLabel(JString arg0);
 	};
 } // namespace android::icu::text
 

@@ -1,3 +1,5 @@
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
 #include "./Locale_FilteringMode.hpp"
 
 namespace java::util
@@ -50,22 +52,22 @@ namespace java::util
 	// Constructors
 	
 	// Methods
-	java::util::Locale_FilteringMode Locale_FilteringMode::valueOf(jstring arg0)
+	java::util::Locale_FilteringMode Locale_FilteringMode::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"java.util.Locale$FilteringMode",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/util/Locale$FilteringMode;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray Locale_FilteringMode::values()
+	JArray Locale_FilteringMode::values()
 	{
 		return callStaticObjectMethod(
 			"java.util.Locale$FilteringMode",
 			"values",
 			"()[Ljava/util/Locale$FilteringMode;"
-		).object<jarray>();
+		);
 	}
 } // namespace java::util
 

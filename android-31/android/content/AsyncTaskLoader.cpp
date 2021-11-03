@@ -1,6 +1,9 @@
+#include "../../JArray.hpp"
 #include "./Context.hpp"
 #include "../../java/io/FileDescriptor.hpp"
 #include "../../java/io/PrintWriter.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./AsyncTaskLoader.hpp"
 
 namespace android::content
@@ -26,15 +29,15 @@ namespace android::content
 			"()V"
 		);
 	}
-	void AsyncTaskLoader::dump(jstring arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, jarray arg3)
+	void AsyncTaskLoader::dump(JString arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, JArray arg3)
 	{
 		callMethod<void>(
 			"dump",
 			"(Ljava/lang/String;Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
 			arg2.object(),
-			arg3
+			arg3.object<jarray>()
 		);
 	}
 	jboolean AsyncTaskLoader::isLoadInBackgroundCanceled()
@@ -44,19 +47,19 @@ namespace android::content
 			"()Z"
 		);
 	}
-	jobject AsyncTaskLoader::loadInBackground()
+	JObject AsyncTaskLoader::loadInBackground()
 	{
 		return callObjectMethod(
 			"loadInBackground",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
-	void AsyncTaskLoader::onCanceled(jobject arg0)
+	void AsyncTaskLoader::onCanceled(JObject arg0)
 	{
 		callMethod<void>(
 			"onCanceled",
 			"(Ljava/lang/Object;)V",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	void AsyncTaskLoader::setUpdateThrottle(jlong arg0)

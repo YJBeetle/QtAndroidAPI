@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./NoRouteToHostException.hpp"
 
 namespace java::net
@@ -13,11 +14,11 @@ namespace java::net
 			"java.net.NoRouteToHostException",
 			"()V"
 		) {}
-	NoRouteToHostException::NoRouteToHostException(jstring arg0)
+	NoRouteToHostException::NoRouteToHostException(JString arg0)
 		: java::net::SocketException(
 			"java.net.NoRouteToHostException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JObject;
 namespace java::lang::ref
 {
 	class ReferenceQueue;
@@ -21,12 +22,12 @@ namespace java::lang::ref
 		// Constructors
 		
 		// Methods
-		static void reachabilityFence(jobject arg0);
+		static void reachabilityFence(JObject arg0);
 		void clear();
 		jboolean enqueue();
-		jobject get();
+		JObject get();
 		jboolean isEnqueued();
-		jboolean refersTo(jobject arg0);
+		jboolean refersTo(JObject arg0);
 	};
 } // namespace java::lang::ref
 

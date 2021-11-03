@@ -1,6 +1,5 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "./Measure.hpp"
 
 namespace android::icu::util

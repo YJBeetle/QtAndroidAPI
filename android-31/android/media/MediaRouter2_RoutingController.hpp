@@ -14,6 +14,7 @@ namespace android::os
 {
 	class Bundle;
 }
+class JString;
 
 namespace android::media
 {
@@ -32,7 +33,7 @@ namespace android::media
 		void deselectRoute(android::media::MediaRoute2Info arg0);
 		android::os::Bundle getControlHints();
 		JObject getDeselectableRoutes();
-		jstring getId();
+		JString getId();
 		JObject getSelectableRoutes();
 		JObject getSelectedRoutes();
 		jint getVolume();
@@ -42,7 +43,7 @@ namespace android::media
 		void release();
 		void selectRoute(android::media::MediaRoute2Info arg0);
 		void setVolume(jint arg0);
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::media
 

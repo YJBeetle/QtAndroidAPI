@@ -1,3 +1,6 @@
+#include "../../JByteArray.hpp"
+#include "../../JFloatArray.hpp"
+#include "../../JShortArray.hpp"
 #include "./AudioDeviceInfo.hpp"
 #include "./AudioFormat.hpp"
 #include "./AudioTimestamp.hpp"
@@ -254,22 +257,22 @@ namespace android::media
 			arg1
 		);
 	}
-	jint AudioRecord::read(jbyteArray arg0, jint arg1, jint arg2)
+	jint AudioRecord::read(JByteArray arg0, jint arg1, jint arg2)
 	{
 		return callMethod<jint>(
 			"read",
 			"([BII)I",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1,
 			arg2
 		);
 	}
-	jint AudioRecord::read(jshortArray arg0, jint arg1, jint arg2)
+	jint AudioRecord::read(JShortArray arg0, jint arg1, jint arg2)
 	{
 		return callMethod<jint>(
 			"read",
 			"([SII)I",
-			arg0,
+			arg0.object<jshortArray>(),
 			arg1,
 			arg2
 		);
@@ -284,34 +287,34 @@ namespace android::media
 			arg2
 		);
 	}
-	jint AudioRecord::read(jbyteArray arg0, jint arg1, jint arg2, jint arg3)
+	jint AudioRecord::read(JByteArray arg0, jint arg1, jint arg2, jint arg3)
 	{
 		return callMethod<jint>(
 			"read",
 			"([BIII)I",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1,
 			arg2,
 			arg3
 		);
 	}
-	jint AudioRecord::read(jfloatArray arg0, jint arg1, jint arg2, jint arg3)
+	jint AudioRecord::read(JFloatArray arg0, jint arg1, jint arg2, jint arg3)
 	{
 		return callMethod<jint>(
 			"read",
 			"([FIII)I",
-			arg0,
+			arg0.object<jfloatArray>(),
 			arg1,
 			arg2,
 			arg3
 		);
 	}
-	jint AudioRecord::read(jshortArray arg0, jint arg1, jint arg2, jint arg3)
+	jint AudioRecord::read(JShortArray arg0, jint arg1, jint arg2, jint arg3)
 	{
 		return callMethod<jint>(
 			"read",
 			"([SIII)I",
-			arg0,
+			arg0.object<jshortArray>(),
 			arg1,
 			arg2,
 			arg3

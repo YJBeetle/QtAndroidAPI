@@ -1,9 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../view/ViewGroup_LayoutParams.hpp"
 #include "../view/ViewGroup_MarginLayoutParams.hpp"
 
+class JIntArray;
 namespace android::content
 {
 	class Context;
@@ -16,6 +15,7 @@ namespace android::view
 {
 	class ViewGroup_MarginLayoutParams;
 }
+class JString;
 
 namespace android::widget
 {
@@ -39,9 +39,9 @@ namespace android::widget
 		// Methods
 		void addRule(jint arg0);
 		void addRule(jint arg0, jint arg1);
-		jstring debug(jstring arg0);
+		JString debug(JString arg0);
 		jint getRule(jint arg0);
-		jintArray getRules();
+		JIntArray getRules();
 		void removeRule(jint arg0);
 		void resolveLayoutDirection(jint arg0);
 	};

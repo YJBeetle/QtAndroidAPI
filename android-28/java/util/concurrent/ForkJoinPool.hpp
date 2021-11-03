@@ -1,12 +1,16 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "./AbstractExecutorService.hpp"
 
+class JArray;
+class JArray;
+class JObject;
 namespace java::lang
 {
 	class RuntimePermission;
 }
+class JString;
+class JThrowable;
 namespace java::security
 {
 	class AccessControlContext;
@@ -65,7 +69,7 @@ namespace java::util::concurrent
 		jlong getStealCount();
 		JObject getUncaughtExceptionHandler();
 		jboolean hasQueuedSubmissions();
-		jobject invoke(java::util::concurrent::ForkJoinTask arg0);
+		JObject invoke(java::util::concurrent::ForkJoinTask arg0);
 		JObject invokeAll(JObject arg0);
 		jboolean isQuiescent();
 		jboolean isShutdown();
@@ -75,8 +79,8 @@ namespace java::util::concurrent
 		JObject shutdownNow();
 		java::util::concurrent::ForkJoinTask submit(JObject arg0);
 		java::util::concurrent::ForkJoinTask submit(java::util::concurrent::ForkJoinTask arg0);
-		java::util::concurrent::ForkJoinTask submit(JObject arg0, jobject arg1);
-		jstring toString();
+		java::util::concurrent::ForkJoinTask submit(JObject arg0, JObject arg1);
+		JString toString();
 	};
 } // namespace java::util::concurrent
 

@@ -6,6 +6,7 @@ namespace android::content::res
 {
 	class ObbInfo;
 }
+class JString;
 
 namespace android::content::res
 {
@@ -21,7 +22,7 @@ namespace android::content::res
 		// Constructors
 		
 		// Methods
-		static android::content::res::ObbInfo getObbInfo(jstring arg0);
+		static android::content::res::ObbInfo getObbInfo(JString arg0);
 	};
 } // namespace android::content::res
 

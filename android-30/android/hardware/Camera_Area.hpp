@@ -6,6 +6,7 @@ namespace android::graphics
 {
 	class Rect;
 }
+class JObject;
 
 namespace android::hardware
 {
@@ -24,7 +25,7 @@ namespace android::hardware
 		Camera_Area(android::graphics::Rect arg0, jint arg1);
 		
 		// Methods
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 	};
 } // namespace android::hardware
 

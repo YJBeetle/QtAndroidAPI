@@ -1,8 +1,6 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "./TextClassifierEvent.hpp"
-
 
 namespace android::view::textclassifier
 {

@@ -70,6 +70,7 @@ namespace android::view::accessibility
 {
 	class AccessibilityEvent;
 }
+class JString;
 
 namespace android::app
 {
@@ -167,7 +168,7 @@ namespace android::app
 		void setOnShowListener(JObject arg0);
 		void setOwnerActivity(android::app::Activity arg0);
 		void setTitle(jint arg0);
-		void setTitle(jstring arg0);
+		void setTitle(JString arg0);
 		void setVolumeControlStream(jint arg0);
 		void show();
 		void takeKeyEvents(jboolean arg0);

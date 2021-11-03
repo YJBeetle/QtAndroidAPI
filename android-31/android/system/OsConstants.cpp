@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./OsConstants.hpp"
 
 namespace android::system
@@ -3650,23 +3651,23 @@ namespace android::system
 			arg0
 		);
 	}
-	jstring OsConstants::errnoName(jint arg0)
+	JString OsConstants::errnoName(jint arg0)
 	{
 		return callStaticObjectMethod(
 			"android.system.OsConstants",
 			"errnoName",
 			"(I)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
-	jstring OsConstants::gaiName(jint arg0)
+	JString OsConstants::gaiName(jint arg0)
 	{
 		return callStaticObjectMethod(
 			"android.system.OsConstants",
 			"gaiName",
 			"(I)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
 } // namespace android::system
 

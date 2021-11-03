@@ -1,3 +1,5 @@
+#include "../../../JString.hpp"
+#include "../../../JThrowable.hpp"
 #include "./InvalidKeySpecException.hpp"
 
 namespace java::security::spec
@@ -13,24 +15,24 @@ namespace java::security::spec
 			"java.security.spec.InvalidKeySpecException",
 			"()V"
 		) {}
-	InvalidKeySpecException::InvalidKeySpecException(jstring arg0)
+	InvalidKeySpecException::InvalidKeySpecException(JString arg0)
 		: java::security::GeneralSecurityException(
 			"java.security.spec.InvalidKeySpecException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	InvalidKeySpecException::InvalidKeySpecException(jthrowable arg0)
+	InvalidKeySpecException::InvalidKeySpecException(JThrowable arg0)
 		: java::security::GeneralSecurityException(
 			"java.security.spec.InvalidKeySpecException",
 			"(Ljava/lang/Throwable;)V",
-			arg0
+			arg0.object<jthrowable>()
 		) {}
-	InvalidKeySpecException::InvalidKeySpecException(jstring arg0, jthrowable arg1)
+	InvalidKeySpecException::InvalidKeySpecException(JString arg0, JThrowable arg1)
 		: java::security::GeneralSecurityException(
 			"java.security.spec.InvalidKeySpecException",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
 		) {}
 	
 	// Methods

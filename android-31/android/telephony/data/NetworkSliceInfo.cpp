@@ -1,4 +1,6 @@
 #include "../../os/Parcel.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./NetworkSliceInfo.hpp"
 
 namespace android::telephony::data
@@ -103,12 +105,12 @@ namespace android::telephony::data
 			"()I"
 		);
 	}
-	jboolean NetworkSliceInfo::equals(jobject arg0)
+	jboolean NetworkSliceInfo::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint NetworkSliceInfo::getMappedHplmnSliceDifferentiator()
@@ -153,12 +155,12 @@ namespace android::telephony::data
 			"()I"
 		);
 	}
-	jstring NetworkSliceInfo::toString()
+	JString NetworkSliceInfo::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void NetworkSliceInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

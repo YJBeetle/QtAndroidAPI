@@ -6,6 +6,7 @@ namespace android::net
 {
 	class Uri;
 }
+class JString;
 
 namespace android::provider
 {
@@ -13,7 +14,7 @@ namespace android::provider
 	{
 	public:
 		// Fields
-		static jstring AUTHORITY();
+		static JString AUTHORITY();
 		static android::net::Uri CONTENT_URI();
 		static jint KIND_EMAIL();
 		static jint KIND_IM();

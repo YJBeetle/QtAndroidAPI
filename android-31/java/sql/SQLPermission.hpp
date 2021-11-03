@@ -1,9 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../security/Permission.hpp"
 #include "../security/BasicPermission.hpp"
 
+class JString;
 
 namespace java::sql
 {
@@ -17,8 +16,8 @@ namespace java::sql
 		SQLPermission(QAndroidJniObject obj);
 		
 		// Constructors
-		SQLPermission(jstring arg0);
-		SQLPermission(jstring arg0, jstring arg1);
+		SQLPermission(JString arg0);
+		SQLPermission(JString arg0, JString arg1);
 		
 		// Methods
 	};

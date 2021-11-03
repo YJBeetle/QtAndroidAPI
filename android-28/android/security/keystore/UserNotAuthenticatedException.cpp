@@ -1,3 +1,5 @@
+#include "../../../JString.hpp"
+#include "../../../JThrowable.hpp"
 #include "./UserNotAuthenticatedException.hpp"
 
 namespace android::security::keystore
@@ -13,18 +15,18 @@ namespace android::security::keystore
 			"android.security.keystore.UserNotAuthenticatedException",
 			"()V"
 		) {}
-	UserNotAuthenticatedException::UserNotAuthenticatedException(jstring arg0)
+	UserNotAuthenticatedException::UserNotAuthenticatedException(JString arg0)
 		: java::security::InvalidKeyException(
 			"android.security.keystore.UserNotAuthenticatedException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	UserNotAuthenticatedException::UserNotAuthenticatedException(jstring arg0, jthrowable arg1)
+	UserNotAuthenticatedException::UserNotAuthenticatedException(JString arg0, JThrowable arg1)
 		: java::security::InvalidKeyException(
 			"android.security.keystore.UserNotAuthenticatedException",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
 		) {}
 	
 	// Methods

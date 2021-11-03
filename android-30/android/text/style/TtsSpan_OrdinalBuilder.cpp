@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./TtsSpan_OrdinalBuilder.hpp"
 
 namespace android::text::style
@@ -13,11 +14,11 @@ namespace android::text::style
 			"android.text.style.TtsSpan$OrdinalBuilder",
 			"()V"
 		) {}
-	TtsSpan_OrdinalBuilder::TtsSpan_OrdinalBuilder(jstring arg0)
+	TtsSpan_OrdinalBuilder::TtsSpan_OrdinalBuilder(JString arg0)
 		: android::text::style::TtsSpan_SemioticClassBuilder(
 			"android.text.style.TtsSpan$OrdinalBuilder",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	TtsSpan_OrdinalBuilder::TtsSpan_OrdinalBuilder(jlong arg0)
 		: android::text::style::TtsSpan_SemioticClassBuilder(
@@ -27,12 +28,12 @@ namespace android::text::style
 		) {}
 	
 	// Methods
-	android::text::style::TtsSpan_OrdinalBuilder TtsSpan_OrdinalBuilder::setNumber(jstring arg0)
+	android::text::style::TtsSpan_OrdinalBuilder TtsSpan_OrdinalBuilder::setNumber(JString arg0)
 	{
 		return callObjectMethod(
 			"setNumber",
 			"(Ljava/lang/String;)Landroid/text/style/TtsSpan$OrdinalBuilder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::text::style::TtsSpan_OrdinalBuilder TtsSpan_OrdinalBuilder::setNumber(jlong arg0)

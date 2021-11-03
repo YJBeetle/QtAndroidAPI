@@ -22,6 +22,8 @@ namespace android::os
 {
 	class PersistableBundle;
 }
+class JObject;
+class JString;
 
 namespace android::net
 {
@@ -32,9 +34,9 @@ namespace android::net
 		static JObject CREATOR();
 		static jint DETECTION_METHOD_DNS_EVENTS();
 		static jint DETECTION_METHOD_TCP_METRICS();
-		static jstring KEY_DNS_CONSECUTIVE_TIMEOUTS();
-		static jstring KEY_TCP_METRICS_COLLECTION_PERIOD_MILLIS();
-		static jstring KEY_TCP_PACKET_FAIL_RATE();
+		static JString KEY_DNS_CONSECUTIVE_TIMEOUTS();
+		static JString KEY_TCP_METRICS_COLLECTION_PERIOD_MILLIS();
+		static JString KEY_TCP_PACKET_FAIL_RATE();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ConnectivityDiagnosticsManager_DataStallReport(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
@@ -45,7 +47,7 @@ namespace android::net
 		
 		// Methods
 		jint describeContents();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint getDetectionMethod();
 		android::net::LinkProperties getLinkProperties();
 		android::net::Network getNetwork();

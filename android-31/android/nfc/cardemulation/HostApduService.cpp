@@ -1,5 +1,7 @@
+#include "../../../JByteArray.hpp"
 #include "../../content/Intent.hpp"
 #include "../../os/Bundle.hpp"
+#include "../../../JString.hpp"
 #include "./HostApduService.hpp"
 
 namespace android::nfc::cardemulation
@@ -19,21 +21,21 @@ namespace android::nfc::cardemulation
 			"DEACTIVATION_LINK_LOSS"
 		);
 	}
-	jstring HostApduService::SERVICE_INTERFACE()
+	JString HostApduService::SERVICE_INTERFACE()
 	{
 		return getStaticObjectField(
 			"android.nfc.cardemulation.HostApduService",
 			"SERVICE_INTERFACE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring HostApduService::SERVICE_META_DATA()
+	JString HostApduService::SERVICE_META_DATA()
 	{
 		return getStaticObjectField(
 			"android.nfc.cardemulation.HostApduService",
 			"SERVICE_META_DATA",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QAndroidJniObject forward
@@ -70,21 +72,21 @@ namespace android::nfc::cardemulation
 			arg0
 		);
 	}
-	jbyteArray HostApduService::processCommandApdu(jbyteArray arg0, android::os::Bundle arg1)
+	JByteArray HostApduService::processCommandApdu(JByteArray arg0, android::os::Bundle arg1)
 	{
 		return callObjectMethod(
 			"processCommandApdu",
 			"([BLandroid/os/Bundle;)[B",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1.object()
-		).object<jbyteArray>();
+		);
 	}
-	void HostApduService::sendResponseApdu(jbyteArray arg0)
+	void HostApduService::sendResponseApdu(JByteArray arg0)
 	{
 		callMethod<void>(
 			"sendResponseApdu",
 			"([B)V",
-			arg0
+			arg0.object<jbyteArray>()
 		);
 	}
 } // namespace android::nfc::cardemulation

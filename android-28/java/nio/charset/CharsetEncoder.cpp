@@ -1,3 +1,6 @@
+#include "../../../JByteArray.hpp"
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
 #include "../../lang/ref/WeakReference.hpp"
 #include "../ByteBuffer.hpp"
 #include "../CharBuffer.hpp"
@@ -31,12 +34,12 @@ namespace java::nio::charset
 			arg0
 		);
 	}
-	jboolean CharsetEncoder::canEncode(jstring arg0)
+	jboolean CharsetEncoder::canEncode(JString arg0)
 	{
 		return callMethod<jboolean>(
 			"canEncode",
 			"(Ljava/lang/CharSequence;)Z",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	java::nio::charset::Charset CharsetEncoder::charset()
@@ -72,12 +75,12 @@ namespace java::nio::charset
 			arg0.object()
 		);
 	}
-	jboolean CharsetEncoder::isLegalReplacement(jbyteArray arg0)
+	jboolean CharsetEncoder::isLegalReplacement(JByteArray arg0)
 	{
 		return callMethod<jboolean>(
 			"isLegalReplacement",
 			"([B)Z",
-			arg0
+			arg0.object<jbyteArray>()
 		);
 	}
 	java::nio::charset::CodingErrorAction CharsetEncoder::malformedInputAction()
@@ -110,20 +113,20 @@ namespace java::nio::charset
 			arg0.object()
 		);
 	}
-	java::nio::charset::CharsetEncoder CharsetEncoder::replaceWith(jbyteArray arg0)
+	java::nio::charset::CharsetEncoder CharsetEncoder::replaceWith(JByteArray arg0)
 	{
 		return callObjectMethod(
 			"replaceWith",
 			"([B)Ljava/nio/charset/CharsetEncoder;",
-			arg0
+			arg0.object<jbyteArray>()
 		);
 	}
-	jbyteArray CharsetEncoder::replacement()
+	JByteArray CharsetEncoder::replacement()
 	{
 		return callObjectMethod(
 			"replacement",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
 	java::nio::charset::CharsetEncoder CharsetEncoder::reset()
 	{

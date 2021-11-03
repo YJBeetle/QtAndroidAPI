@@ -1,5 +1,6 @@
 #include "./ColorSpace.hpp"
 #include "../util/Size.hpp"
+#include "../../JString.hpp"
 #include "./ImageDecoder_ImageInfo.hpp"
 
 namespace android::graphics
@@ -19,12 +20,12 @@ namespace android::graphics
 			"()Landroid/graphics/ColorSpace;"
 		);
 	}
-	jstring ImageDecoder_ImageInfo::getMimeType()
+	JString ImageDecoder_ImageInfo::getMimeType()
 	{
 		return callObjectMethod(
 			"getMimeType",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::util::Size ImageDecoder_ImageInfo::getSize()
 	{

@@ -1,8 +1,9 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "../../../java/lang/Exception.hpp"
 
+class JString;
+class JThrowable;
 
 namespace android::net::sip
 {
@@ -17,8 +18,8 @@ namespace android::net::sip
 		
 		// Constructors
 		SipException();
-		SipException(jstring arg0);
-		SipException(jstring arg0, jthrowable arg1);
+		SipException(JString arg0);
+		SipException(JString arg0, JThrowable arg1);
 		
 		// Methods
 	};

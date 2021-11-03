@@ -1,3 +1,6 @@
+#include "../../JIntArray.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./StringTokenizer.hpp"
 
 namespace java::util
@@ -8,25 +11,25 @@ namespace java::util
 	StringTokenizer::StringTokenizer(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	StringTokenizer::StringTokenizer(jstring arg0)
+	StringTokenizer::StringTokenizer(JString arg0)
 		: JObject(
 			"java.util.StringTokenizer",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	StringTokenizer::StringTokenizer(jstring arg0, jstring arg1)
+	StringTokenizer::StringTokenizer(JString arg0, JString arg1)
 		: JObject(
 			"java.util.StringTokenizer",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		) {}
-	StringTokenizer::StringTokenizer(jstring arg0, jstring arg1, jboolean arg2)
+	StringTokenizer::StringTokenizer(JString arg0, JString arg1, jboolean arg2)
 		: JObject(
 			"java.util.StringTokenizer",
 			"(Ljava/lang/String;Ljava/lang/String;Z)V",
-			arg0,
-			arg1,
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
 			arg2
 		) {}
 	
@@ -52,27 +55,27 @@ namespace java::util
 			"()Z"
 		);
 	}
-	jobject StringTokenizer::nextElement()
+	JObject StringTokenizer::nextElement()
 	{
 		return callObjectMethod(
 			"nextElement",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
-	jstring StringTokenizer::nextToken()
+	JString StringTokenizer::nextToken()
 	{
 		return callObjectMethod(
 			"nextToken",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring StringTokenizer::nextToken(jstring arg0)
+	JString StringTokenizer::nextToken(JString arg0)
 	{
 		return callObjectMethod(
 			"nextToken",
 			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
+			arg0.object<jstring>()
+		);
 	}
 } // namespace java::util
 

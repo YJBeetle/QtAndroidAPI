@@ -1,3 +1,4 @@
+#include "../../JFloatArray.hpp"
 #include "./Sensor.hpp"
 #include "./SensorEvent.hpp"
 
@@ -23,12 +24,12 @@ namespace android::hardware
 			"timestamp"
 		);
 	}
-	jfloatArray SensorEvent::values()
+	JFloatArray SensorEvent::values()
 	{
 		return getObjectField(
 			"values",
 			"[F"
-		).object<jfloatArray>();
+		);
 	}
 	
 	// QAndroidJniObject forward

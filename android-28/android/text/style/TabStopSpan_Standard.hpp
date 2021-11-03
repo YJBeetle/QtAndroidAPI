@@ -2,7 +2,6 @@
 
 #include "../../../JObject.hpp"
 
-
 namespace android::text::style
 {
 	class TabStopSpan_Standard : public JObject

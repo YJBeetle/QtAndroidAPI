@@ -1,3 +1,7 @@
+#include "../../JIntArray.hpp"
+#include "../../JString.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./AudioDeviceInfo.hpp"
 
 namespace android::media
@@ -178,48 +182,48 @@ namespace android::media
 	// Constructors
 	
 	// Methods
-	jboolean AudioDeviceInfo::equals(jobject arg0)
+	jboolean AudioDeviceInfo::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jstring AudioDeviceInfo::getAddress()
+	JString AudioDeviceInfo::getAddress()
 	{
 		return callObjectMethod(
 			"getAddress",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jintArray AudioDeviceInfo::getChannelCounts()
+	JIntArray AudioDeviceInfo::getChannelCounts()
 	{
 		return callObjectMethod(
 			"getChannelCounts",
 			"()[I"
-		).object<jintArray>();
+		);
 	}
-	jintArray AudioDeviceInfo::getChannelIndexMasks()
+	JIntArray AudioDeviceInfo::getChannelIndexMasks()
 	{
 		return callObjectMethod(
 			"getChannelIndexMasks",
 			"()[I"
-		).object<jintArray>();
+		);
 	}
-	jintArray AudioDeviceInfo::getChannelMasks()
+	JIntArray AudioDeviceInfo::getChannelMasks()
 	{
 		return callObjectMethod(
 			"getChannelMasks",
 			"()[I"
-		).object<jintArray>();
+		);
 	}
-	jintArray AudioDeviceInfo::getEncodings()
+	JIntArray AudioDeviceInfo::getEncodings()
 	{
 		return callObjectMethod(
 			"getEncodings",
 			"()[I"
-		).object<jintArray>();
+		);
 	}
 	jint AudioDeviceInfo::getId()
 	{
@@ -228,19 +232,19 @@ namespace android::media
 			"()I"
 		);
 	}
-	jstring AudioDeviceInfo::getProductName()
+	JString AudioDeviceInfo::getProductName()
 	{
 		return callObjectMethod(
 			"getProductName",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
-	jintArray AudioDeviceInfo::getSampleRates()
+	JIntArray AudioDeviceInfo::getSampleRates()
 	{
 		return callObjectMethod(
 			"getSampleRates",
 			"()[I"
-		).object<jintArray>();
+		);
 	}
 	jint AudioDeviceInfo::getType()
 	{

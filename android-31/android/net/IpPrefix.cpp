@@ -1,4 +1,7 @@
+#include "../../JByteArray.hpp"
 #include "../os/Parcel.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "../../java/net/InetAddress.hpp"
 #include "./IpPrefix.hpp"
 
@@ -35,12 +38,12 @@ namespace android::net
 			"()I"
 		);
 	}
-	jboolean IpPrefix::equals(jobject arg0)
+	jboolean IpPrefix::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	java::net::InetAddress IpPrefix::getAddress()
@@ -57,12 +60,12 @@ namespace android::net
 			"()I"
 		);
 	}
-	jbyteArray IpPrefix::getRawAddress()
+	JByteArray IpPrefix::getRawAddress()
 	{
 		return callObjectMethod(
 			"getRawAddress",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
 	jint IpPrefix::hashCode()
 	{
@@ -71,12 +74,12 @@ namespace android::net
 			"()I"
 		);
 	}
-	jstring IpPrefix::toString()
+	JString IpPrefix::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void IpPrefix::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

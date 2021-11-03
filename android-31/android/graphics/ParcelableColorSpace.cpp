@@ -1,5 +1,6 @@
 #include "./ColorSpace.hpp"
 #include "../os/Parcel.hpp"
+#include "../../JObject.hpp"
 #include "./ParcelableColorSpace.hpp"
 
 namespace android::graphics
@@ -42,12 +43,12 @@ namespace android::graphics
 			"()I"
 		);
 	}
-	jboolean ParcelableColorSpace::equals(jobject arg0)
+	jboolean ParcelableColorSpace::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	android::graphics::ColorSpace ParcelableColorSpace::getColorSpace()

@@ -54,6 +54,8 @@ namespace android::os
 {
 	class Handler;
 }
+class JString;
+class JString;
 
 namespace android::media::session
 {
@@ -69,8 +71,8 @@ namespace android::media::session
 		MediaSession(QAndroidJniObject obj);
 		
 		// Constructors
-		MediaSession(android::content::Context arg0, jstring arg1);
-		MediaSession(android::content::Context arg0, jstring arg1, android::os::Bundle arg2);
+		MediaSession(android::content::Context arg0, JString arg1);
+		MediaSession(android::content::Context arg0, JString arg1, android::os::Bundle arg2);
 		
 		// Methods
 		android::media::session::MediaController getController();
@@ -78,7 +80,7 @@ namespace android::media::session
 		android::media::session::MediaSession_Token getSessionToken();
 		jboolean isActive();
 		void release();
-		void sendSessionEvent(jstring arg0, android::os::Bundle arg1);
+		void sendSessionEvent(JString arg0, android::os::Bundle arg1);
 		void setActive(jboolean arg0);
 		void setCallback(android::media::session::MediaSession_Callback arg0);
 		void setCallback(android::media::session::MediaSession_Callback arg0, android::os::Handler arg1);
@@ -91,7 +93,7 @@ namespace android::media::session
 		void setPlaybackToLocal(android::media::AudioAttributes arg0);
 		void setPlaybackToRemote(android::media::VolumeProvider arg0);
 		void setQueue(JObject arg0);
-		void setQueueTitle(jstring arg0);
+		void setQueueTitle(JString arg0);
 		void setRatingType(jint arg0);
 		void setSessionActivity(android::app::PendingIntent arg0);
 	};

@@ -1,3 +1,5 @@
+#include "../../../../JArray.hpp"
+#include "../../../../JString.hpp"
 #include "./AclEntryType.hpp"
 
 namespace java::nio::file::attribute
@@ -42,22 +44,22 @@ namespace java::nio::file::attribute
 	// Constructors
 	
 	// Methods
-	java::nio::file::attribute::AclEntryType AclEntryType::valueOf(jstring arg0)
+	java::nio::file::attribute::AclEntryType AclEntryType::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"java.nio.file.attribute.AclEntryType",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/nio/file/attribute/AclEntryType;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray AclEntryType::values()
+	JArray AclEntryType::values()
 	{
 		return callStaticObjectMethod(
 			"java.nio.file.attribute.AclEntryType",
 			"values",
 			"()[Ljava/nio/file/attribute/AclEntryType;"
-		).object<jarray>();
+		);
 	}
 } // namespace java::nio::file::attribute
 

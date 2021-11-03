@@ -10,6 +10,7 @@ namespace android::view::translation
 {
 	class TranslationResponseValue;
 }
+class JString;
 
 namespace android::view::translation
 {
@@ -28,8 +29,8 @@ namespace android::view::translation
 		// Methods
 		android::view::translation::TranslationResponseValue build();
 		android::view::translation::TranslationResponseValue_Builder setExtras(android::os::Bundle arg0);
-		android::view::translation::TranslationResponseValue_Builder setText(jstring arg0);
-		android::view::translation::TranslationResponseValue_Builder setTransliteration(jstring arg0);
+		android::view::translation::TranslationResponseValue_Builder setText(JString arg0);
+		android::view::translation::TranslationResponseValue_Builder setTransliteration(JString arg0);
 	};
 } // namespace android::view::translation
 

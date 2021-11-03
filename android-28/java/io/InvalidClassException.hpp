@@ -1,10 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../lang/Exception.hpp"
-#include "./IOException.hpp"
 #include "./ObjectStreamException.hpp"
 
+class JString;
 
 namespace java::io
 {
@@ -12,18 +10,18 @@ namespace java::io
 	{
 	public:
 		// Fields
-		jstring classname();
+		JString classname();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit InvalidClassException(const char *className, const char *sig, Ts...agv) : java::io::ObjectStreamException(className, sig, std::forward<Ts>(agv)...) {}
 		InvalidClassException(QAndroidJniObject obj);
 		
 		// Constructors
-		InvalidClassException(jstring arg0);
-		InvalidClassException(jstring arg0, jstring arg1);
+		InvalidClassException(JString arg0);
+		InvalidClassException(JString arg0, JString arg1);
 		
 		// Methods
-		jstring getMessage();
+		JString getMessage();
 	};
 } // namespace java::io
 

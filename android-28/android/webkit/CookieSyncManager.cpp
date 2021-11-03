@@ -1,4 +1,5 @@
 #include "../content/Context.hpp"
+#include "../../JObject.hpp"
 #include "./CookieSyncManager.hpp"
 
 namespace android::webkit

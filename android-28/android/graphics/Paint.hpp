@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JCharArray;
+class JFloatArray;
 namespace android::graphics
 {
 	class ColorFilter;
@@ -62,6 +64,8 @@ namespace android::os
 {
 	class LocaleList;
 }
+class JString;
+class JString;
 namespace java::util
 {
 	class Locale;
@@ -97,9 +101,9 @@ namespace android::graphics
 		
 		// Methods
 		jfloat ascent();
-		jint breakText(jstring arg0, jboolean arg1, jfloat arg2, jfloatArray arg3);
-		jint breakText(jcharArray arg0, jint arg1, jint arg2, jfloat arg3, jfloatArray arg4);
-		jint breakText(jstring arg0, jint arg1, jint arg2, jboolean arg3, jfloat arg4, jfloatArray arg5);
+		jint breakText(JString arg0, jboolean arg1, jfloat arg2, JFloatArray arg3);
+		jint breakText(JCharArray arg0, jint arg1, jint arg2, jfloat arg3, JFloatArray arg4);
+		jint breakText(JString arg0, jint arg1, jint arg2, jboolean arg3, jfloat arg4, JFloatArray arg5);
 		void clearShadowLayer();
 		jfloat descent();
 		jboolean equalsForTextMeasurement(android::graphics::Paint arg0);
@@ -108,21 +112,21 @@ namespace android::graphics
 		android::graphics::ColorFilter getColorFilter();
 		jboolean getFillPath(android::graphics::Path arg0, android::graphics::Path arg1);
 		jint getFlags();
-		jstring getFontFeatureSettings();
+		JString getFontFeatureSettings();
 		android::graphics::Paint_FontMetrics getFontMetrics();
 		jfloat getFontMetrics(android::graphics::Paint_FontMetrics arg0);
 		android::graphics::Paint_FontMetricsInt getFontMetricsInt();
 		jint getFontMetricsInt(android::graphics::Paint_FontMetricsInt arg0);
 		jfloat getFontSpacing();
-		jstring getFontVariationSettings();
+		JString getFontVariationSettings();
 		jint getHinting();
 		jfloat getLetterSpacing();
 		android::graphics::MaskFilter getMaskFilter();
-		jint getOffsetForAdvance(jcharArray arg0, jint arg1, jint arg2, jint arg3, jint arg4, jboolean arg5, jfloat arg6);
-		jint getOffsetForAdvance(jstring arg0, jint arg1, jint arg2, jint arg3, jint arg4, jboolean arg5, jfloat arg6);
+		jint getOffsetForAdvance(JCharArray arg0, jint arg1, jint arg2, jint arg3, jint arg4, jboolean arg5, jfloat arg6);
+		jint getOffsetForAdvance(JString arg0, jint arg1, jint arg2, jint arg3, jint arg4, jboolean arg5, jfloat arg6);
 		android::graphics::PathEffect getPathEffect();
-		jfloat getRunAdvance(jcharArray arg0, jint arg1, jint arg2, jint arg3, jint arg4, jboolean arg5, jint arg6);
-		jfloat getRunAdvance(jstring arg0, jint arg1, jint arg2, jint arg3, jint arg4, jboolean arg5, jint arg6);
+		jfloat getRunAdvance(JCharArray arg0, jint arg1, jint arg2, jint arg3, jint arg4, jboolean arg5, jint arg6);
+		jfloat getRunAdvance(JString arg0, jint arg1, jint arg2, jint arg3, jint arg4, jboolean arg5, jint arg6);
 		android::graphics::Shader getShader();
 		android::graphics::Paint_Cap getStrokeCap();
 		android::graphics::Paint_Join getStrokeJoin();
@@ -130,21 +134,21 @@ namespace android::graphics
 		jfloat getStrokeWidth();
 		android::graphics::Paint_Style getStyle();
 		android::graphics::Paint_Align getTextAlign();
-		void getTextBounds(jcharArray arg0, jint arg1, jint arg2, android::graphics::Rect arg3);
-		void getTextBounds(jstring arg0, jint arg1, jint arg2, android::graphics::Rect arg3);
+		void getTextBounds(JCharArray arg0, jint arg1, jint arg2, android::graphics::Rect arg3);
+		void getTextBounds(JString arg0, jint arg1, jint arg2, android::graphics::Rect arg3);
 		java::util::Locale getTextLocale();
 		android::os::LocaleList getTextLocales();
-		void getTextPath(jcharArray arg0, jint arg1, jint arg2, jfloat arg3, jfloat arg4, android::graphics::Path arg5);
-		void getTextPath(jstring arg0, jint arg1, jint arg2, jfloat arg3, jfloat arg4, android::graphics::Path arg5);
+		void getTextPath(JCharArray arg0, jint arg1, jint arg2, jfloat arg3, jfloat arg4, android::graphics::Path arg5);
+		void getTextPath(JString arg0, jint arg1, jint arg2, jfloat arg3, jfloat arg4, android::graphics::Path arg5);
 		jfloat getTextScaleX();
 		jfloat getTextSize();
 		jfloat getTextSkewX();
-		jint getTextWidths(jstring arg0, jfloatArray arg1);
-		jint getTextWidths(jcharArray arg0, jint arg1, jint arg2, jfloatArray arg3);
-		jint getTextWidths(jstring arg0, jint arg1, jint arg2, jfloatArray arg3);
+		jint getTextWidths(JString arg0, JFloatArray arg1);
+		jint getTextWidths(JCharArray arg0, jint arg1, jint arg2, JFloatArray arg3);
+		jint getTextWidths(JString arg0, jint arg1, jint arg2, JFloatArray arg3);
 		android::graphics::Typeface getTypeface();
 		android::graphics::Xfermode getXfermode();
-		jboolean hasGlyph(jstring arg0);
+		jboolean hasGlyph(JString arg0);
 		jboolean isAntiAlias();
 		jboolean isDither();
 		jboolean isElegantTextHeight();
@@ -154,9 +158,9 @@ namespace android::graphics
 		jboolean isStrikeThruText();
 		jboolean isSubpixelText();
 		jboolean isUnderlineText();
-		jfloat measureText(jstring arg0);
-		jfloat measureText(jcharArray arg0, jint arg1, jint arg2);
-		jfloat measureText(jstring arg0, jint arg1, jint arg2);
+		jfloat measureText(JString arg0);
+		jfloat measureText(JCharArray arg0, jint arg1, jint arg2);
+		jfloat measureText(JString arg0, jint arg1, jint arg2);
 		void reset();
 		void set(android::graphics::Paint arg0);
 		void setARGB(jint arg0, jint arg1, jint arg2, jint arg3);
@@ -169,8 +173,8 @@ namespace android::graphics
 		void setFakeBoldText(jboolean arg0);
 		void setFilterBitmap(jboolean arg0);
 		void setFlags(jint arg0);
-		void setFontFeatureSettings(jstring arg0);
-		jboolean setFontVariationSettings(jstring arg0);
+		void setFontFeatureSettings(JString arg0);
+		jboolean setFontVariationSettings(JString arg0);
 		void setHinting(jint arg0);
 		void setLetterSpacing(jfloat arg0);
 		void setLinearText(jboolean arg0);

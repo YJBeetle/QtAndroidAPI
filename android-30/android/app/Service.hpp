@@ -1,9 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../content/Context.hpp"
 #include "../content/ContextWrapper.hpp"
 
+class JArray;
 namespace android::app
 {
 	class Application;

@@ -1,5 +1,6 @@
 #include "./CameraCharacteristics_Key.hpp"
 #include "./params/RecommendedStreamConfigurationMap.hpp"
+#include "../../../JObject.hpp"
 #include "./CameraCharacteristics.hpp"
 
 namespace android::hardware::camera2
@@ -820,13 +821,13 @@ namespace android::hardware::camera2
 	// Constructors
 	
 	// Methods
-	jobject CameraCharacteristics::get(android::hardware::camera2::CameraCharacteristics_Key arg0)
+	JObject CameraCharacteristics::get(android::hardware::camera2::CameraCharacteristics_Key arg0)
 	{
 		return callObjectMethod(
 			"get",
 			"(Landroid/hardware/camera2/CameraCharacteristics$Key;)Ljava/lang/Object;",
 			arg0.object()
-		).object<jobject>();
+		);
 	}
 	JObject CameraCharacteristics::getAvailableCaptureRequestKeys()
 	{

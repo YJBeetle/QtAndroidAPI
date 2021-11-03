@@ -2,6 +2,8 @@
 
 #include "../../../JObject.hpp"
 
+class JObject;
+class JString;
 
 namespace android::text::util
 {
@@ -15,21 +17,21 @@ namespace android::text::util
 		Rfc822Token(QAndroidJniObject obj);
 		
 		// Constructors
-		Rfc822Token(jstring arg0, jstring arg1, jstring arg2);
+		Rfc822Token(JString arg0, JString arg1, JString arg2);
 		
 		// Methods
-		static jstring quoteComment(jstring arg0);
-		static jstring quoteName(jstring arg0);
-		static jstring quoteNameIfNecessary(jstring arg0);
-		jboolean equals(jobject arg0);
-		jstring getAddress();
-		jstring getComment();
-		jstring getName();
+		static JString quoteComment(JString arg0);
+		static JString quoteName(JString arg0);
+		static JString quoteNameIfNecessary(JString arg0);
+		jboolean equals(JObject arg0);
+		JString getAddress();
+		JString getComment();
+		JString getName();
 		jint hashCode();
-		void setAddress(jstring arg0);
-		void setComment(jstring arg0);
-		void setName(jstring arg0);
-		jstring toString();
+		void setAddress(JString arg0);
+		void setComment(JString arg0);
+		void setName(JString arg0);
+		JString toString();
 	};
 } // namespace android::text::util
 

@@ -1,5 +1,6 @@
 #include "./File.hpp"
 #include "./FileDescriptor.hpp"
+#include "../../JString.hpp"
 #include "../nio/charset/Charset.hpp"
 #include "./FileReader.hpp"
 
@@ -23,11 +24,11 @@ namespace java::io
 			"(Ljava/io/FileDescriptor;)V",
 			arg0.object()
 		) {}
-	FileReader::FileReader(jstring arg0)
+	FileReader::FileReader(JString arg0)
 		: java::io::InputStreamReader(
 			"java.io.FileReader",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	FileReader::FileReader(java::io::File arg0, java::nio::charset::Charset arg1)
 		: java::io::InputStreamReader(
@@ -36,11 +37,11 @@ namespace java::io
 			arg0.object(),
 			arg1.object()
 		) {}
-	FileReader::FileReader(jstring arg0, java::nio::charset::Charset arg1)
+	FileReader::FileReader(JString arg0, java::nio::charset::Charset arg1)
 		: java::io::InputStreamReader(
 			"java.io.FileReader",
 			"(Ljava/lang/String;Ljava/nio/charset/Charset;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		) {}
 	

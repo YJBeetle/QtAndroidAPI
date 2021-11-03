@@ -1,10 +1,8 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "./spi/AbstractInterruptibleChannel.hpp"
-#include "./SelectableChannel.hpp"
 #include "./spi/AbstractSelectableChannel.hpp"
 
+class JObject;
 namespace java::net
 {
 	class ServerSocket;
@@ -42,7 +40,7 @@ namespace java::nio::channels
 		java::nio::channels::ServerSocketChannel bind(java::net::SocketAddress arg0);
 		java::nio::channels::ServerSocketChannel bind(java::net::SocketAddress arg0, jint arg1);
 		java::net::SocketAddress getLocalAddress();
-		java::nio::channels::ServerSocketChannel setOption(JObject arg0, jobject arg1);
+		java::nio::channels::ServerSocketChannel setOption(JObject arg0, JObject arg1);
 		java::net::ServerSocket socket();
 		jint validOps();
 	};

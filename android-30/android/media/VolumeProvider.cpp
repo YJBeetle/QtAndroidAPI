@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./VolumeProvider.hpp"
 
 namespace android::media
@@ -37,14 +38,14 @@ namespace android::media
 			arg1,
 			arg2
 		) {}
-	VolumeProvider::VolumeProvider(jint arg0, jint arg1, jint arg2, jstring arg3)
+	VolumeProvider::VolumeProvider(jint arg0, jint arg1, jint arg2, JString arg3)
 		: JObject(
 			"android.media.VolumeProvider",
 			"(IIILjava/lang/String;)V",
 			arg0,
 			arg1,
 			arg2,
-			arg3
+			arg3.object<jstring>()
 		) {}
 	
 	// Methods
@@ -69,12 +70,12 @@ namespace android::media
 			"()I"
 		);
 	}
-	jstring VolumeProvider::getVolumeControlId()
+	JString VolumeProvider::getVolumeControlId()
 	{
 		return callObjectMethod(
 			"getVolumeControlId",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void VolumeProvider::onAdjustVolume(jint arg0)
 	{

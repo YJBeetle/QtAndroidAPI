@@ -2,7 +2,6 @@
 
 #include "../../JObject.hpp"
 
-
 namespace java::net
 {
 	class StandardSocketOptions : public JObject

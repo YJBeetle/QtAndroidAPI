@@ -6,6 +6,8 @@ namespace android::os
 {
 	class Parcel;
 }
+class JObject;
+class JString;
 
 namespace android::net::wifi::p2p::nsd
 {
@@ -22,9 +24,9 @@ namespace android::net::wifi::p2p::nsd
 		
 		// Methods
 		static android::net::wifi::p2p::nsd::WifiP2pServiceRequest newInstance(jint arg0);
-		static android::net::wifi::p2p::nsd::WifiP2pServiceRequest newInstance(jint arg0, jstring arg1);
+		static android::net::wifi::p2p::nsd::WifiP2pServiceRequest newInstance(jint arg0, JString arg1);
 		jint describeContents();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint hashCode();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};

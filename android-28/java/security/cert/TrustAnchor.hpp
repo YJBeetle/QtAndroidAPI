@@ -2,6 +2,8 @@
 
 #include "../../../JObject.hpp"
 
+class JByteArray;
+class JString;
 namespace java::security::cert
 {
 	class X509Certificate;
@@ -23,17 +25,17 @@ namespace java::security::cert
 		TrustAnchor(QAndroidJniObject obj);
 		
 		// Constructors
-		TrustAnchor(java::security::cert::X509Certificate arg0, jbyteArray arg1);
-		TrustAnchor(jstring arg0, JObject arg1, jbyteArray arg2);
-		TrustAnchor(javax::security::auth::x500::X500Principal arg0, JObject arg1, jbyteArray arg2);
+		TrustAnchor(java::security::cert::X509Certificate arg0, JByteArray arg1);
+		TrustAnchor(JString arg0, JObject arg1, JByteArray arg2);
+		TrustAnchor(javax::security::auth::x500::X500Principal arg0, JObject arg1, JByteArray arg2);
 		
 		// Methods
 		javax::security::auth::x500::X500Principal getCA();
-		jstring getCAName();
+		JString getCAName();
 		JObject getCAPublicKey();
-		jbyteArray getNameConstraints();
+		JByteArray getNameConstraints();
 		java::security::cert::X509Certificate getTrustedCert();
-		jstring toString();
+		JString toString();
 	};
 } // namespace java::security::cert
 

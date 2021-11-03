@@ -14,6 +14,7 @@ namespace android::os
 {
 	class ParcelFileDescriptor;
 }
+class JString;
 
 namespace android::app::blob
 {
@@ -31,9 +32,9 @@ namespace android::app::blob
 		// Methods
 		void abandonSession(jlong arg0);
 		void acquireLease(android::app::blob::BlobHandle arg0, jint arg1);
-		void acquireLease(android::app::blob::BlobHandle arg0, jstring arg1);
+		void acquireLease(android::app::blob::BlobHandle arg0, JString arg1);
 		void acquireLease(android::app::blob::BlobHandle arg0, jint arg1, jlong arg2);
-		void acquireLease(android::app::blob::BlobHandle arg0, jstring arg1, jlong arg2);
+		void acquireLease(android::app::blob::BlobHandle arg0, JString arg1, jlong arg2);
 		jlong createSession(android::app::blob::BlobHandle arg0);
 		JObject getLeasedBlobs();
 		jlong getRemainingLeaseQuotaBytes();

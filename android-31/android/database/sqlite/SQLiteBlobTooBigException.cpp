@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./SQLiteBlobTooBigException.hpp"
 
 namespace android::database::sqlite
@@ -13,11 +14,11 @@ namespace android::database::sqlite
 			"android.database.sqlite.SQLiteBlobTooBigException",
 			"()V"
 		) {}
-	SQLiteBlobTooBigException::SQLiteBlobTooBigException(jstring arg0)
+	SQLiteBlobTooBigException::SQLiteBlobTooBigException(JString arg0)
 		: android::database::sqlite::SQLiteException(
 			"android.database.sqlite.SQLiteBlobTooBigException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

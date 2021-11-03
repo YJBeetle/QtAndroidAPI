@@ -1,3 +1,4 @@
+#include "../../../../JString.hpp"
 #include "./AtomicInteger.hpp"
 
 namespace java::util::concurrent::atomic
@@ -231,12 +232,12 @@ namespace java::util::concurrent::atomic
 			arg0
 		);
 	}
-	jstring AtomicInteger::toString()
+	JString AtomicInteger::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint AtomicInteger::updateAndGet(JObject arg0)
 	{

@@ -1,6 +1,7 @@
 #include "../../app/Person.hpp"
 #include "../../os/Bundle.hpp"
 #include "./ConversationActions_Message.hpp"
+#include "../../../JString.hpp"
 #include "../../../java/time/ZonedDateTime.hpp"
 #include "./ConversationActions_Message_Builder.hpp"
 
@@ -43,12 +44,12 @@ namespace android::view::textclassifier
 			arg0.object()
 		);
 	}
-	android::view::textclassifier::ConversationActions_Message_Builder ConversationActions_Message_Builder::setText(jstring arg0)
+	android::view::textclassifier::ConversationActions_Message_Builder ConversationActions_Message_Builder::setText(JString arg0)
 	{
 		return callObjectMethod(
 			"setText",
 			"(Ljava/lang/CharSequence;)Landroid/view/textclassifier/ConversationActions$Message$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 } // namespace android::view::textclassifier

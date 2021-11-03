@@ -1,3 +1,7 @@
+#include "../../../JArray.hpp"
+#include "../../../JClass.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./Executable.hpp"
 #include "./Parameter.hpp"
 
@@ -11,12 +15,12 @@ namespace java::lang::reflect
 	// Constructors
 	
 	// Methods
-	jboolean Parameter::equals(jobject arg0)
+	jboolean Parameter::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	JObject Parameter::getAnnotatedType()
@@ -26,51 +30,51 @@ namespace java::lang::reflect
 			"()Ljava/lang/reflect/AnnotatedType;"
 		);
 	}
-	JObject Parameter::getAnnotation(jclass arg0)
+	JObject Parameter::getAnnotation(JClass arg0)
 	{
 		return callObjectMethod(
 			"getAnnotation",
 			"(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;",
-			arg0
+			arg0.object<jclass>()
 		);
 	}
-	jarray Parameter::getAnnotations()
+	JArray Parameter::getAnnotations()
 	{
 		return callObjectMethod(
 			"getAnnotations",
 			"()[Ljava/lang/annotation/Annotation;"
-		).object<jarray>();
+		);
 	}
-	jarray Parameter::getAnnotationsByType(jclass arg0)
+	JArray Parameter::getAnnotationsByType(JClass arg0)
 	{
 		return callObjectMethod(
 			"getAnnotationsByType",
 			"(Ljava/lang/Class;)[Ljava/lang/annotation/Annotation;",
-			arg0
-		).object<jarray>();
+			arg0.object<jclass>()
+		);
 	}
-	JObject Parameter::getDeclaredAnnotation(jclass arg0)
+	JObject Parameter::getDeclaredAnnotation(JClass arg0)
 	{
 		return callObjectMethod(
 			"getDeclaredAnnotation",
 			"(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;",
-			arg0
+			arg0.object<jclass>()
 		);
 	}
-	jarray Parameter::getDeclaredAnnotations()
+	JArray Parameter::getDeclaredAnnotations()
 	{
 		return callObjectMethod(
 			"getDeclaredAnnotations",
 			"()[Ljava/lang/annotation/Annotation;"
-		).object<jarray>();
+		);
 	}
-	jarray Parameter::getDeclaredAnnotationsByType(jclass arg0)
+	JArray Parameter::getDeclaredAnnotationsByType(JClass arg0)
 	{
 		return callObjectMethod(
 			"getDeclaredAnnotationsByType",
 			"(Ljava/lang/Class;)[Ljava/lang/annotation/Annotation;",
-			arg0
-		).object<jarray>();
+			arg0.object<jclass>()
+		);
 	}
 	java::lang::reflect::Executable Parameter::getDeclaringExecutable()
 	{
@@ -86,12 +90,12 @@ namespace java::lang::reflect
 			"()I"
 		);
 	}
-	jstring Parameter::getName()
+	JString Parameter::getName()
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	JObject Parameter::getParameterizedType()
 	{
@@ -100,12 +104,12 @@ namespace java::lang::reflect
 			"()Ljava/lang/reflect/Type;"
 		);
 	}
-	jclass Parameter::getType()
+	JClass Parameter::getType()
 	{
 		return callObjectMethod(
 			"getType",
 			"()Ljava/lang/Class;"
-		).object<jclass>();
+		);
 	}
 	jint Parameter::hashCode()
 	{
@@ -142,12 +146,12 @@ namespace java::lang::reflect
 			"()Z"
 		);
 	}
-	jstring Parameter::toString()
+	JString Parameter::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::lang::reflect
 

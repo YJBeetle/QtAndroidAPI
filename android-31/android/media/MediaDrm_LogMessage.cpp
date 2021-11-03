@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./MediaDrm_LogMessage.hpp"
 
 namespace android::media
@@ -10,12 +11,12 @@ namespace android::media
 	// Constructors
 	
 	// Methods
-	jstring MediaDrm_LogMessage::getMessage()
+	JString MediaDrm_LogMessage::getMessage()
 	{
 		return callObjectMethod(
 			"getMessage",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint MediaDrm_LogMessage::getPriority()
 	{
@@ -31,12 +32,12 @@ namespace android::media
 			"()J"
 		);
 	}
-	jstring MediaDrm_LogMessage::toString()
+	JString MediaDrm_LogMessage::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::media
 

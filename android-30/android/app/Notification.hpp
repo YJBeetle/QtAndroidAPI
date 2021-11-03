@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JLongArray;
+class JArray;
 namespace android::app
 {
 	class Notification_BubbleMetadata;
@@ -46,6 +48,9 @@ namespace android::widget
 {
 	class RemoteViews;
 }
+class JString;
+class JObject;
+class JString;
 
 namespace android::app
 {
@@ -57,66 +62,66 @@ namespace android::app
 		static jint BADGE_ICON_LARGE();
 		static jint BADGE_ICON_NONE();
 		static jint BADGE_ICON_SMALL();
-		static jstring CATEGORY_ALARM();
-		static jstring CATEGORY_CALL();
-		static jstring CATEGORY_EMAIL();
-		static jstring CATEGORY_ERROR();
-		static jstring CATEGORY_EVENT();
-		static jstring CATEGORY_MESSAGE();
-		static jstring CATEGORY_NAVIGATION();
-		static jstring CATEGORY_PROGRESS();
-		static jstring CATEGORY_PROMO();
-		static jstring CATEGORY_RECOMMENDATION();
-		static jstring CATEGORY_REMINDER();
-		static jstring CATEGORY_SERVICE();
-		static jstring CATEGORY_SOCIAL();
-		static jstring CATEGORY_STATUS();
-		static jstring CATEGORY_SYSTEM();
-		static jstring CATEGORY_TRANSPORT();
+		static JString CATEGORY_ALARM();
+		static JString CATEGORY_CALL();
+		static JString CATEGORY_EMAIL();
+		static JString CATEGORY_ERROR();
+		static JString CATEGORY_EVENT();
+		static JString CATEGORY_MESSAGE();
+		static JString CATEGORY_NAVIGATION();
+		static JString CATEGORY_PROGRESS();
+		static JString CATEGORY_PROMO();
+		static JString CATEGORY_RECOMMENDATION();
+		static JString CATEGORY_REMINDER();
+		static JString CATEGORY_SERVICE();
+		static JString CATEGORY_SOCIAL();
+		static JString CATEGORY_STATUS();
+		static JString CATEGORY_SYSTEM();
+		static JString CATEGORY_TRANSPORT();
 		static jint COLOR_DEFAULT();
 		static JObject CREATOR();
 		static jint DEFAULT_ALL();
 		static jint DEFAULT_LIGHTS();
 		static jint DEFAULT_SOUND();
 		static jint DEFAULT_VIBRATE();
-		static jstring EXTRA_AUDIO_CONTENTS_URI();
-		static jstring EXTRA_BACKGROUND_IMAGE_URI();
-		static jstring EXTRA_BIG_TEXT();
-		static jstring EXTRA_CHANNEL_GROUP_ID();
-		static jstring EXTRA_CHANNEL_ID();
-		static jstring EXTRA_CHRONOMETER_COUNT_DOWN();
-		static jstring EXTRA_COLORIZED();
-		static jstring EXTRA_COMPACT_ACTIONS();
-		static jstring EXTRA_CONVERSATION_TITLE();
-		static jstring EXTRA_HISTORIC_MESSAGES();
-		static jstring EXTRA_INFO_TEXT();
-		static jstring EXTRA_IS_GROUP_CONVERSATION();
-		static jstring EXTRA_LARGE_ICON();
-		static jstring EXTRA_LARGE_ICON_BIG();
-		static jstring EXTRA_MEDIA_SESSION();
-		static jstring EXTRA_MESSAGES();
-		static jstring EXTRA_MESSAGING_PERSON();
-		static jstring EXTRA_NOTIFICATION_ID();
-		static jstring EXTRA_NOTIFICATION_TAG();
-		static jstring EXTRA_PEOPLE();
-		static jstring EXTRA_PEOPLE_LIST();
-		static jstring EXTRA_PICTURE();
-		static jstring EXTRA_PROGRESS();
-		static jstring EXTRA_PROGRESS_INDETERMINATE();
-		static jstring EXTRA_PROGRESS_MAX();
-		static jstring EXTRA_REMOTE_INPUT_DRAFT();
-		static jstring EXTRA_REMOTE_INPUT_HISTORY();
-		static jstring EXTRA_SELF_DISPLAY_NAME();
-		static jstring EXTRA_SHOW_CHRONOMETER();
-		static jstring EXTRA_SHOW_WHEN();
-		static jstring EXTRA_SMALL_ICON();
-		static jstring EXTRA_SUB_TEXT();
-		static jstring EXTRA_SUMMARY_TEXT();
-		static jstring EXTRA_TEMPLATE();
-		static jstring EXTRA_TEXT();
-		static jstring EXTRA_TEXT_LINES();
-		static jstring EXTRA_TITLE();
-		static jstring EXTRA_TITLE_BIG();
+		static JString EXTRA_AUDIO_CONTENTS_URI();
+		static JString EXTRA_BACKGROUND_IMAGE_URI();
+		static JString EXTRA_BIG_TEXT();
+		static JString EXTRA_CHANNEL_GROUP_ID();
+		static JString EXTRA_CHANNEL_ID();
+		static JString EXTRA_CHRONOMETER_COUNT_DOWN();
+		static JString EXTRA_COLORIZED();
+		static JString EXTRA_COMPACT_ACTIONS();
+		static JString EXTRA_CONVERSATION_TITLE();
+		static JString EXTRA_HISTORIC_MESSAGES();
+		static JString EXTRA_INFO_TEXT();
+		static JString EXTRA_IS_GROUP_CONVERSATION();
+		static JString EXTRA_LARGE_ICON();
+		static JString EXTRA_LARGE_ICON_BIG();
+		static JString EXTRA_MEDIA_SESSION();
+		static JString EXTRA_MESSAGES();
+		static JString EXTRA_MESSAGING_PERSON();
+		static JString EXTRA_NOTIFICATION_ID();
+		static JString EXTRA_NOTIFICATION_TAG();
+		static JString EXTRA_PEOPLE();
+		static JString EXTRA_PEOPLE_LIST();
+		static JString EXTRA_PICTURE();
+		static JString EXTRA_PROGRESS();
+		static JString EXTRA_PROGRESS_INDETERMINATE();
+		static JString EXTRA_PROGRESS_MAX();
+		static JString EXTRA_REMOTE_INPUT_DRAFT();
+		static JString EXTRA_REMOTE_INPUT_HISTORY();
+		static JString EXTRA_SELF_DISPLAY_NAME();
+		static JString EXTRA_SHOW_CHRONOMETER();
+		static JString EXTRA_SHOW_WHEN();
+		static JString EXTRA_SMALL_ICON();
+		static JString EXTRA_SUB_TEXT();
+		static JString EXTRA_SUMMARY_TEXT();
+		static JString EXTRA_TEMPLATE();
+		static JString EXTRA_TEXT();
+		static JString EXTRA_TEXT_LINES();
+		static JString EXTRA_TITLE();
+		static JString EXTRA_TITLE_BIG();
 		static jint FLAG_AUTO_CANCEL();
 		static jint FLAG_BUBBLE();
 		static jint FLAG_FOREGROUND_SERVICE();
@@ -131,7 +136,7 @@ namespace android::app
 		static jint GROUP_ALERT_ALL();
 		static jint GROUP_ALERT_CHILDREN();
 		static jint GROUP_ALERT_SUMMARY();
-		static jstring INTENT_CATEGORY_NOTIFICATION_PREFERENCES();
+		static JString INTENT_CATEGORY_NOTIFICATION_PREFERENCES();
 		static jint PRIORITY_DEFAULT();
 		static jint PRIORITY_HIGH();
 		static jint PRIORITY_LOW();
@@ -141,11 +146,11 @@ namespace android::app
 		static jint VISIBILITY_PRIVATE();
 		static jint VISIBILITY_PUBLIC();
 		static jint VISIBILITY_SECRET();
-		jarray actions();
+		JArray actions();
 		android::media::AudioAttributes audioAttributes();
 		jint audioStreamType();
 		android::widget::RemoteViews bigContentView();
-		jstring category();
+		JString category();
 		jint color();
 		android::app::PendingIntent contentIntent();
 		android::widget::RemoteViews contentView();
@@ -165,9 +170,9 @@ namespace android::app
 		jint priority();
 		android::app::Notification publicVersion();
 		android::net::Uri sound();
-		jstring tickerText();
+		JString tickerText();
 		android::widget::RemoteViews tickerView();
-		jlongArray vibrate();
+		JLongArray vibrate();
 		jint visibility();
 		jlong when();
 		
@@ -178,7 +183,7 @@ namespace android::app
 		// Constructors
 		Notification();
 		Notification(android::os::Parcel arg0);
-		Notification(jint arg0, jstring arg1, jlong arg2);
+		Notification(jint arg0, JString arg1, jlong arg2);
 		
 		// Methods
 		android::app::Notification clone();
@@ -187,18 +192,18 @@ namespace android::app
 		jboolean getAllowSystemGeneratedContextualActions();
 		jint getBadgeIconType();
 		android::app::Notification_BubbleMetadata getBubbleMetadata();
-		jstring getChannelId();
+		JString getChannelId();
 		JObject getContextualActions();
-		jstring getGroup();
+		JString getGroup();
 		jint getGroupAlertBehavior();
 		android::graphics::drawable::Icon getLargeIcon();
 		android::content::LocusId getLocusId();
-		jstring getSettingsText();
-		jstring getShortcutId();
+		JString getSettingsText();
+		JString getShortcutId();
 		android::graphics::drawable::Icon getSmallIcon();
-		jstring getSortKey();
+		JString getSortKey();
 		jlong getTimeoutAfter();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::app

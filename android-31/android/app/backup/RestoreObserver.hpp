@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JString;
 
 namespace android::app::backup
 {
@@ -18,7 +19,7 @@ namespace android::app::backup
 		RestoreObserver();
 		
 		// Methods
-		void onUpdate(jint arg0, jstring arg1);
+		void onUpdate(jint arg0, JString arg1);
 		void restoreFinished(jint arg0);
 		void restoreStarting(jint arg0);
 	};

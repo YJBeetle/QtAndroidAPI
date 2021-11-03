@@ -10,6 +10,7 @@ namespace android::app::appsearch
 {
 	class SetSchemaResponse_MigrationFailure;
 }
+class JString;
 
 namespace android::app::appsearch
 {
@@ -26,11 +27,11 @@ namespace android::app::appsearch
 		SetSchemaResponse_Builder();
 		
 		// Methods
-		android::app::appsearch::SetSchemaResponse_Builder addDeletedType(jstring arg0);
+		android::app::appsearch::SetSchemaResponse_Builder addDeletedType(JString arg0);
 		android::app::appsearch::SetSchemaResponse_Builder addDeletedTypes(JObject arg0);
-		android::app::appsearch::SetSchemaResponse_Builder addIncompatibleType(jstring arg0);
+		android::app::appsearch::SetSchemaResponse_Builder addIncompatibleType(JString arg0);
 		android::app::appsearch::SetSchemaResponse_Builder addIncompatibleTypes(JObject arg0);
-		android::app::appsearch::SetSchemaResponse_Builder addMigratedType(jstring arg0);
+		android::app::appsearch::SetSchemaResponse_Builder addMigratedType(JString arg0);
 		android::app::appsearch::SetSchemaResponse_Builder addMigratedTypes(JObject arg0);
 		android::app::appsearch::SetSchemaResponse_Builder addMigrationFailure(android::app::appsearch::SetSchemaResponse_MigrationFailure arg0);
 		android::app::appsearch::SetSchemaResponse_Builder addMigrationFailures(JObject arg0);

@@ -1,5 +1,6 @@
 #include "../app/PendingIntent.hpp"
 #include "../content/Intent.hpp"
+#include "../../JString.hpp"
 #include "./RemoteViews_RemoteResponse.hpp"
 
 namespace android::widget
@@ -35,13 +36,13 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	android::widget::RemoteViews_RemoteResponse RemoteViews_RemoteResponse::addSharedElement(jint arg0, jstring arg1)
+	android::widget::RemoteViews_RemoteResponse RemoteViews_RemoteResponse::addSharedElement(jint arg0, JString arg1)
 	{
 		return callObjectMethod(
 			"addSharedElement",
 			"(ILjava/lang/String;)Landroid/widget/RemoteViews$RemoteResponse;",
 			arg0,
-			arg1
+			arg1.object<jstring>()
 		);
 	}
 } // namespace android::widget

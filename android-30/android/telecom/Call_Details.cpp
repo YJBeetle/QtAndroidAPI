@@ -4,6 +4,8 @@
 #include "./GatewayInfo.hpp"
 #include "./PhoneAccountHandle.hpp"
 #include "./StatusHints.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./Call_Details.hpp"
 
 namespace android::telecom
@@ -271,14 +273,14 @@ namespace android::telecom
 			arg1
 		);
 	}
-	jstring Call_Details::capabilitiesToString(jint arg0)
+	JString Call_Details::capabilitiesToString(jint arg0)
 	{
 		return callStaticObjectMethod(
 			"android.telecom.Call$Details",
 			"capabilitiesToString",
 			"(I)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
 	jboolean Call_Details::hasProperty(jint arg0, jint arg1)
 	{
@@ -290,14 +292,14 @@ namespace android::telecom
 			arg1
 		);
 	}
-	jstring Call_Details::propertiesToString(jint arg0)
+	JString Call_Details::propertiesToString(jint arg0)
 	{
 		return callStaticObjectMethod(
 			"android.telecom.Call$Details",
 			"propertiesToString",
 			"(I)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
 	jboolean Call_Details::can(jint arg0)
 	{
@@ -307,12 +309,12 @@ namespace android::telecom
 			arg0
 		);
 	}
-	jboolean Call_Details::equals(jobject arg0)
+	jboolean Call_Details::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	android::telecom::PhoneAccountHandle Call_Details::getAccountHandle()
@@ -343,12 +345,12 @@ namespace android::telecom
 			"()I"
 		);
 	}
-	jstring Call_Details::getCallerDisplayName()
+	JString Call_Details::getCallerDisplayName()
 	{
 		return callObjectMethod(
 			"getCallerDisplayName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint Call_Details::getCallerDisplayNamePresentation()
 	{
@@ -371,12 +373,12 @@ namespace android::telecom
 			"()J"
 		);
 	}
-	jstring Call_Details::getContactDisplayName()
+	JString Call_Details::getContactDisplayName()
 	{
 		return callObjectMethod(
 			"getContactDisplayName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jlong Call_Details::getCreationTimeMillis()
 	{
@@ -456,12 +458,12 @@ namespace android::telecom
 			"()I"
 		);
 	}
-	jstring Call_Details::toString()
+	JString Call_Details::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::telecom
 

@@ -14,146 +14,147 @@
 #include "../os/CancellationSignal.hpp"
 #include "../os/Handler.hpp"
 #include "../os/Looper.hpp"
+#include "../../JString.hpp"
 #include "./LocationManager.hpp"
 
 namespace android::location
 {
 	// Fields
-	jstring LocationManager::ACTION_GNSS_CAPABILITIES_CHANGED()
+	JString LocationManager::ACTION_GNSS_CAPABILITIES_CHANGED()
 	{
 		return getStaticObjectField(
 			"android.location.LocationManager",
 			"ACTION_GNSS_CAPABILITIES_CHANGED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring LocationManager::EXTRA_GNSS_CAPABILITIES()
+	JString LocationManager::EXTRA_GNSS_CAPABILITIES()
 	{
 		return getStaticObjectField(
 			"android.location.LocationManager",
 			"EXTRA_GNSS_CAPABILITIES",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring LocationManager::EXTRA_LOCATION_ENABLED()
+	JString LocationManager::EXTRA_LOCATION_ENABLED()
 	{
 		return getStaticObjectField(
 			"android.location.LocationManager",
 			"EXTRA_LOCATION_ENABLED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring LocationManager::EXTRA_PROVIDER_ENABLED()
+	JString LocationManager::EXTRA_PROVIDER_ENABLED()
 	{
 		return getStaticObjectField(
 			"android.location.LocationManager",
 			"EXTRA_PROVIDER_ENABLED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring LocationManager::EXTRA_PROVIDER_NAME()
+	JString LocationManager::EXTRA_PROVIDER_NAME()
 	{
 		return getStaticObjectField(
 			"android.location.LocationManager",
 			"EXTRA_PROVIDER_NAME",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring LocationManager::FUSED_PROVIDER()
+	JString LocationManager::FUSED_PROVIDER()
 	{
 		return getStaticObjectField(
 			"android.location.LocationManager",
 			"FUSED_PROVIDER",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring LocationManager::GPS_PROVIDER()
+	JString LocationManager::GPS_PROVIDER()
 	{
 		return getStaticObjectField(
 			"android.location.LocationManager",
 			"GPS_PROVIDER",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring LocationManager::KEY_FLUSH_COMPLETE()
+	JString LocationManager::KEY_FLUSH_COMPLETE()
 	{
 		return getStaticObjectField(
 			"android.location.LocationManager",
 			"KEY_FLUSH_COMPLETE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring LocationManager::KEY_LOCATIONS()
+	JString LocationManager::KEY_LOCATIONS()
 	{
 		return getStaticObjectField(
 			"android.location.LocationManager",
 			"KEY_LOCATIONS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring LocationManager::KEY_LOCATION_CHANGED()
+	JString LocationManager::KEY_LOCATION_CHANGED()
 	{
 		return getStaticObjectField(
 			"android.location.LocationManager",
 			"KEY_LOCATION_CHANGED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring LocationManager::KEY_PROVIDER_ENABLED()
+	JString LocationManager::KEY_PROVIDER_ENABLED()
 	{
 		return getStaticObjectField(
 			"android.location.LocationManager",
 			"KEY_PROVIDER_ENABLED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring LocationManager::KEY_PROXIMITY_ENTERING()
+	JString LocationManager::KEY_PROXIMITY_ENTERING()
 	{
 		return getStaticObjectField(
 			"android.location.LocationManager",
 			"KEY_PROXIMITY_ENTERING",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring LocationManager::KEY_STATUS_CHANGED()
+	JString LocationManager::KEY_STATUS_CHANGED()
 	{
 		return getStaticObjectField(
 			"android.location.LocationManager",
 			"KEY_STATUS_CHANGED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring LocationManager::MODE_CHANGED_ACTION()
+	JString LocationManager::MODE_CHANGED_ACTION()
 	{
 		return getStaticObjectField(
 			"android.location.LocationManager",
 			"MODE_CHANGED_ACTION",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring LocationManager::NETWORK_PROVIDER()
+	JString LocationManager::NETWORK_PROVIDER()
 	{
 		return getStaticObjectField(
 			"android.location.LocationManager",
 			"NETWORK_PROVIDER",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring LocationManager::PASSIVE_PROVIDER()
+	JString LocationManager::PASSIVE_PROVIDER()
 	{
 		return getStaticObjectField(
 			"android.location.LocationManager",
 			"PASSIVE_PROVIDER",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring LocationManager::PROVIDERS_CHANGED_ACTION()
+	JString LocationManager::PROVIDERS_CHANGED_ACTION()
 	{
 		return getStaticObjectField(
 			"android.location.LocationManager",
 			"PROVIDERS_CHANGED_ACTION",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QAndroidJniObject forward
@@ -208,31 +209,31 @@ namespace android::location
 			arg4.object()
 		);
 	}
-	void LocationManager::addTestProvider(jstring arg0, android::location::provider::ProviderProperties arg1)
+	void LocationManager::addTestProvider(JString arg0, android::location::provider::ProviderProperties arg1)
 	{
 		callMethod<void>(
 			"addTestProvider",
 			"(Ljava/lang/String;Landroid/location/provider/ProviderProperties;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
-	void LocationManager::addTestProvider(jstring arg0, android::location::provider::ProviderProperties arg1, JObject arg2)
+	void LocationManager::addTestProvider(JString arg0, android::location::provider::ProviderProperties arg1, JObject arg2)
 	{
 		callMethod<void>(
 			"addTestProvider",
 			"(Ljava/lang/String;Landroid/location/provider/ProviderProperties;Ljava/util/Set;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
 			arg2.object()
 		);
 	}
-	void LocationManager::addTestProvider(jstring arg0, jboolean arg1, jboolean arg2, jboolean arg3, jboolean arg4, jboolean arg5, jboolean arg6, jboolean arg7, jint arg8, jint arg9)
+	void LocationManager::addTestProvider(JString arg0, jboolean arg1, jboolean arg2, jboolean arg3, jboolean arg4, jboolean arg5, jboolean arg6, jboolean arg7, jint arg8, jint arg9)
 	{
 		callMethod<void>(
 			"addTestProvider",
 			"(Ljava/lang/String;ZZZZZZZII)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
 			arg2,
 			arg3,
@@ -244,28 +245,28 @@ namespace android::location
 			arg9
 		);
 	}
-	void LocationManager::clearTestProviderEnabled(jstring arg0)
+	void LocationManager::clearTestProviderEnabled(JString arg0)
 	{
 		callMethod<void>(
 			"clearTestProviderEnabled",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	void LocationManager::clearTestProviderLocation(jstring arg0)
+	void LocationManager::clearTestProviderLocation(JString arg0)
 	{
 		callMethod<void>(
 			"clearTestProviderLocation",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	void LocationManager::clearTestProviderStatus(jstring arg0)
+	void LocationManager::clearTestProviderStatus(JString arg0)
 	{
 		callMethod<void>(
 			"clearTestProviderStatus",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	JObject LocationManager::getAllProviders()
@@ -275,32 +276,32 @@ namespace android::location
 			"()Ljava/util/List;"
 		);
 	}
-	jstring LocationManager::getBestProvider(android::location::Criteria arg0, jboolean arg1)
+	JString LocationManager::getBestProvider(android::location::Criteria arg0, jboolean arg1)
 	{
 		return callObjectMethod(
 			"getBestProvider",
 			"(Landroid/location/Criteria;Z)Ljava/lang/String;",
 			arg0.object(),
 			arg1
-		).object<jstring>();
+		);
 	}
-	void LocationManager::getCurrentLocation(jstring arg0, android::os::CancellationSignal arg1, JObject arg2, JObject arg3)
+	void LocationManager::getCurrentLocation(JString arg0, android::os::CancellationSignal arg1, JObject arg2, JObject arg3)
 	{
 		callMethod<void>(
 			"getCurrentLocation",
 			"(Ljava/lang/String;Landroid/os/CancellationSignal;Ljava/util/concurrent/Executor;Ljava/util/function/Consumer;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
 			arg2.object(),
 			arg3.object()
 		);
 	}
-	void LocationManager::getCurrentLocation(jstring arg0, android::location::LocationRequest arg1, android::os::CancellationSignal arg2, JObject arg3, JObject arg4)
+	void LocationManager::getCurrentLocation(JString arg0, android::location::LocationRequest arg1, android::os::CancellationSignal arg2, JObject arg3, JObject arg4)
 	{
 		callMethod<void>(
 			"getCurrentLocation",
 			"(Ljava/lang/String;Landroid/location/LocationRequest;Landroid/os/CancellationSignal;Ljava/util/concurrent/Executor;Ljava/util/function/Consumer;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
 			arg2.object(),
 			arg3.object(),
@@ -321,12 +322,12 @@ namespace android::location
 			"()Landroid/location/GnssCapabilities;"
 		);
 	}
-	jstring LocationManager::getGnssHardwareModelName()
+	JString LocationManager::getGnssHardwareModelName()
 	{
 		return callObjectMethod(
 			"getGnssHardwareModelName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint LocationManager::getGnssYearOfHardware()
 	{
@@ -343,28 +344,28 @@ namespace android::location
 			arg0.object()
 		);
 	}
-	android::location::Location LocationManager::getLastKnownLocation(jstring arg0)
+	android::location::Location LocationManager::getLastKnownLocation(JString arg0)
 	{
 		return callObjectMethod(
 			"getLastKnownLocation",
 			"(Ljava/lang/String;)Landroid/location/Location;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	android::location::LocationProvider LocationManager::getProvider(jstring arg0)
+	android::location::LocationProvider LocationManager::getProvider(JString arg0)
 	{
 		return callObjectMethod(
 			"getProvider",
 			"(Ljava/lang/String;)Landroid/location/LocationProvider;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	android::location::provider::ProviderProperties LocationManager::getProviderProperties(jstring arg0)
+	android::location::provider::ProviderProperties LocationManager::getProviderProperties(JString arg0)
 	{
 		return callObjectMethod(
 			"getProviderProperties",
 			"(Ljava/lang/String;)Landroid/location/provider/ProviderProperties;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	JObject LocationManager::getProviders(jboolean arg0)
@@ -384,12 +385,12 @@ namespace android::location
 			arg1
 		);
 	}
-	jboolean LocationManager::hasProvider(jstring arg0)
+	jboolean LocationManager::hasProvider(JString arg0)
 	{
 		return callMethod<jboolean>(
 			"hasProvider",
 			"(Ljava/lang/String;)Z",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	jboolean LocationManager::isLocationEnabled()
@@ -399,12 +400,12 @@ namespace android::location
 			"()Z"
 		);
 	}
-	jboolean LocationManager::isProviderEnabled(jstring arg0)
+	jboolean LocationManager::isProviderEnabled(JString arg0)
 	{
 		return callMethod<jboolean>(
 			"isProviderEnabled",
 			"(Ljava/lang/String;)Z",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	jboolean LocationManager::registerAntennaInfoListener(JObject arg0, JObject arg1)
@@ -528,12 +529,12 @@ namespace android::location
 			arg0.object()
 		);
 	}
-	void LocationManager::removeTestProvider(jstring arg0)
+	void LocationManager::removeTestProvider(JString arg0)
 	{
 		callMethod<void>(
 			"removeTestProvider",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void LocationManager::removeUpdates(android::app::PendingIntent arg0)
@@ -552,64 +553,64 @@ namespace android::location
 			arg0.object()
 		);
 	}
-	void LocationManager::requestFlush(jstring arg0, android::app::PendingIntent arg1, jint arg2)
+	void LocationManager::requestFlush(JString arg0, android::app::PendingIntent arg1, jint arg2)
 	{
 		callMethod<void>(
 			"requestFlush",
 			"(Ljava/lang/String;Landroid/app/PendingIntent;I)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
 			arg2
 		);
 	}
-	void LocationManager::requestFlush(jstring arg0, JObject arg1, jint arg2)
+	void LocationManager::requestFlush(JString arg0, JObject arg1, jint arg2)
 	{
 		callMethod<void>(
 			"requestFlush",
 			"(Ljava/lang/String;Landroid/location/LocationListener;I)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
 			arg2
 		);
 	}
-	void LocationManager::requestLocationUpdates(jstring arg0, android::location::LocationRequest arg1, android::app::PendingIntent arg2)
+	void LocationManager::requestLocationUpdates(JString arg0, android::location::LocationRequest arg1, android::app::PendingIntent arg2)
 	{
 		callMethod<void>(
 			"requestLocationUpdates",
 			"(Ljava/lang/String;Landroid/location/LocationRequest;Landroid/app/PendingIntent;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
 			arg2.object()
 		);
 	}
-	void LocationManager::requestLocationUpdates(jstring arg0, android::location::LocationRequest arg1, JObject arg2, JObject arg3)
+	void LocationManager::requestLocationUpdates(JString arg0, android::location::LocationRequest arg1, JObject arg2, JObject arg3)
 	{
 		callMethod<void>(
 			"requestLocationUpdates",
 			"(Ljava/lang/String;Landroid/location/LocationRequest;Ljava/util/concurrent/Executor;Landroid/location/LocationListener;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
 			arg2.object(),
 			arg3.object()
 		);
 	}
-	void LocationManager::requestLocationUpdates(jstring arg0, jlong arg1, jfloat arg2, android::app::PendingIntent arg3)
+	void LocationManager::requestLocationUpdates(JString arg0, jlong arg1, jfloat arg2, android::app::PendingIntent arg3)
 	{
 		callMethod<void>(
 			"requestLocationUpdates",
 			"(Ljava/lang/String;JFLandroid/app/PendingIntent;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
 			arg2,
 			arg3.object()
 		);
 	}
-	void LocationManager::requestLocationUpdates(jstring arg0, jlong arg1, jfloat arg2, JObject arg3)
+	void LocationManager::requestLocationUpdates(JString arg0, jlong arg1, jfloat arg2, JObject arg3)
 	{
 		callMethod<void>(
 			"requestLocationUpdates",
 			"(Ljava/lang/String;JFLandroid/location/LocationListener;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
 			arg2,
 			arg3.object()
@@ -626,24 +627,24 @@ namespace android::location
 			arg3.object()
 		);
 	}
-	void LocationManager::requestLocationUpdates(jstring arg0, jlong arg1, jfloat arg2, JObject arg3, android::os::Looper arg4)
+	void LocationManager::requestLocationUpdates(JString arg0, jlong arg1, jfloat arg2, JObject arg3, android::os::Looper arg4)
 	{
 		callMethod<void>(
 			"requestLocationUpdates",
 			"(Ljava/lang/String;JFLandroid/location/LocationListener;Landroid/os/Looper;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
 			arg2,
 			arg3.object(),
 			arg4.object()
 		);
 	}
-	void LocationManager::requestLocationUpdates(jstring arg0, jlong arg1, jfloat arg2, JObject arg3, JObject arg4)
+	void LocationManager::requestLocationUpdates(JString arg0, jlong arg1, jfloat arg2, JObject arg3, JObject arg4)
 	{
 		callMethod<void>(
 			"requestLocationUpdates",
 			"(Ljava/lang/String;JFLjava/util/concurrent/Executor;Landroid/location/LocationListener;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
 			arg2,
 			arg3.object(),
@@ -683,12 +684,12 @@ namespace android::location
 			arg1.object()
 		);
 	}
-	void LocationManager::requestSingleUpdate(jstring arg0, android::app::PendingIntent arg1)
+	void LocationManager::requestSingleUpdate(JString arg0, android::app::PendingIntent arg1)
 	{
 		callMethod<void>(
 			"requestSingleUpdate",
 			"(Ljava/lang/String;Landroid/app/PendingIntent;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
@@ -702,50 +703,50 @@ namespace android::location
 			arg2.object()
 		);
 	}
-	void LocationManager::requestSingleUpdate(jstring arg0, JObject arg1, android::os::Looper arg2)
+	void LocationManager::requestSingleUpdate(JString arg0, JObject arg1, android::os::Looper arg2)
 	{
 		callMethod<void>(
 			"requestSingleUpdate",
 			"(Ljava/lang/String;Landroid/location/LocationListener;Landroid/os/Looper;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
 			arg2.object()
 		);
 	}
-	jboolean LocationManager::sendExtraCommand(jstring arg0, jstring arg1, android::os::Bundle arg2)
+	jboolean LocationManager::sendExtraCommand(JString arg0, JString arg1, android::os::Bundle arg2)
 	{
 		return callMethod<jboolean>(
 			"sendExtraCommand",
 			"(Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;)Z",
-			arg0,
-			arg1,
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
 			arg2.object()
 		);
 	}
-	void LocationManager::setTestProviderEnabled(jstring arg0, jboolean arg1)
+	void LocationManager::setTestProviderEnabled(JString arg0, jboolean arg1)
 	{
 		callMethod<void>(
 			"setTestProviderEnabled",
 			"(Ljava/lang/String;Z)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
-	void LocationManager::setTestProviderLocation(jstring arg0, android::location::Location arg1)
+	void LocationManager::setTestProviderLocation(JString arg0, android::location::Location arg1)
 	{
 		callMethod<void>(
 			"setTestProviderLocation",
 			"(Ljava/lang/String;Landroid/location/Location;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
-	void LocationManager::setTestProviderStatus(jstring arg0, jint arg1, android::os::Bundle arg2, jlong arg3)
+	void LocationManager::setTestProviderStatus(JString arg0, jint arg1, android::os::Bundle arg2, jlong arg3)
 	{
 		callMethod<void>(
 			"setTestProviderStatus",
 			"(Ljava/lang/String;ILandroid/os/Bundle;J)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
 			arg2.object(),
 			arg3

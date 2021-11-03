@@ -1,3 +1,5 @@
+#include "../../../JByteArray.hpp"
+#include "../../../JString.hpp"
 #include "./WrappedKeyEntry.hpp"
 
 namespace android::security::keystore
@@ -8,13 +10,13 @@ namespace android::security::keystore
 	WrappedKeyEntry::WrappedKeyEntry(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	WrappedKeyEntry::WrappedKeyEntry(jbyteArray arg0, jstring arg1, jstring arg2, JObject arg3)
+	WrappedKeyEntry::WrappedKeyEntry(JByteArray arg0, JString arg1, JString arg2, JObject arg3)
 		: JObject(
 			"android.security.keystore.WrappedKeyEntry",
 			"([BLjava/lang/String;Ljava/lang/String;Ljava/security/spec/AlgorithmParameterSpec;)V",
-			arg0,
-			arg1,
-			arg2,
+			arg0.object<jbyteArray>(),
+			arg1.object<jstring>(),
+			arg2.object<jstring>(),
 			arg3.object()
 		) {}
 	
@@ -26,26 +28,26 @@ namespace android::security::keystore
 			"()Ljava/security/spec/AlgorithmParameterSpec;"
 		);
 	}
-	jstring WrappedKeyEntry::getTransformation()
+	JString WrappedKeyEntry::getTransformation()
 	{
 		return callObjectMethod(
 			"getTransformation",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jbyteArray WrappedKeyEntry::getWrappedKeyBytes()
+	JByteArray WrappedKeyEntry::getWrappedKeyBytes()
 	{
 		return callObjectMethod(
 			"getWrappedKeyBytes",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
-	jstring WrappedKeyEntry::getWrappingKeyAlias()
+	JString WrappedKeyEntry::getWrappingKeyAlias()
 	{
 		return callObjectMethod(
 			"getWrappingKeyAlias",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::security::keystore
 

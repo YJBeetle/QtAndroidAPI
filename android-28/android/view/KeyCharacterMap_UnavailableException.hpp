@@ -1,10 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../../java/lang/Exception.hpp"
-#include "../../java/lang/RuntimeException.hpp"
 #include "../util/AndroidRuntimeException.hpp"
 
+class JString;
 
 namespace android::view
 {
@@ -18,7 +16,7 @@ namespace android::view
 		KeyCharacterMap_UnavailableException(QAndroidJniObject obj);
 		
 		// Constructors
-		KeyCharacterMap_UnavailableException(jstring arg0);
+		KeyCharacterMap_UnavailableException(JString arg0);
 		
 		// Methods
 	};

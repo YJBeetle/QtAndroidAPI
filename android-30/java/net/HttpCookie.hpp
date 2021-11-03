@@ -2,6 +2,9 @@
 
 #include "../../JObject.hpp"
 
+class JArray;
+class JObject;
+class JString;
 namespace java::util
 {
 	class TimeZone;
@@ -19,39 +22,39 @@ namespace java::net
 		HttpCookie(QAndroidJniObject obj);
 		
 		// Constructors
-		HttpCookie(jstring arg0, jstring arg1);
+		HttpCookie(JString arg0, JString arg1);
 		
 		// Methods
-		static jboolean domainMatches(jstring arg0, jstring arg1);
-		static JObject parse(jstring arg0);
-		jobject clone();
-		jboolean equals(jobject arg0);
-		jstring getComment();
-		jstring getCommentURL();
+		static jboolean domainMatches(JString arg0, JString arg1);
+		static JObject parse(JString arg0);
+		JObject clone();
+		jboolean equals(JObject arg0);
+		JString getComment();
+		JString getCommentURL();
 		jboolean getDiscard();
-		jstring getDomain();
+		JString getDomain();
 		jlong getMaxAge();
-		jstring getName();
-		jstring getPath();
-		jstring getPortlist();
+		JString getName();
+		JString getPath();
+		JString getPortlist();
 		jboolean getSecure();
-		jstring getValue();
+		JString getValue();
 		jint getVersion();
 		jboolean hasExpired();
 		jint hashCode();
 		jboolean isHttpOnly();
-		void setComment(jstring arg0);
-		void setCommentURL(jstring arg0);
+		void setComment(JString arg0);
+		void setCommentURL(JString arg0);
 		void setDiscard(jboolean arg0);
-		void setDomain(jstring arg0);
+		void setDomain(JString arg0);
 		void setHttpOnly(jboolean arg0);
 		void setMaxAge(jlong arg0);
-		void setPath(jstring arg0);
-		void setPortlist(jstring arg0);
+		void setPath(JString arg0);
+		void setPortlist(JString arg0);
 		void setSecure(jboolean arg0);
-		void setValue(jstring arg0);
+		void setValue(JString arg0);
 		void setVersion(jint arg0);
-		jstring toString();
+		JString toString();
 	};
 } // namespace java::net
 

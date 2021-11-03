@@ -2,6 +2,8 @@
 
 #include "../../../JObject.hpp"
 
+class JObject;
+class JString;
 
 namespace android::app::appsearch
 {
@@ -26,15 +28,15 @@ namespace android::app::appsearch
 		// Constructors
 		
 		// Methods
-		static android::app::appsearch::AppSearchResult newFailedResult(jint arg0, jstring arg1);
-		static android::app::appsearch::AppSearchResult newSuccessfulResult(jobject arg0);
-		jboolean equals(jobject arg0);
-		jstring getErrorMessage();
+		static android::app::appsearch::AppSearchResult newFailedResult(jint arg0, JString arg1);
+		static android::app::appsearch::AppSearchResult newSuccessfulResult(JObject arg0);
+		jboolean equals(JObject arg0);
+		JString getErrorMessage();
 		jint getResultCode();
-		jobject getResultValue();
+		JObject getResultValue();
 		jint hashCode();
 		jboolean isSuccess();
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::app::appsearch
 

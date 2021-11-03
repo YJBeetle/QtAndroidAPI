@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JString;
 
 namespace android::provider
 {
@@ -9,13 +10,13 @@ namespace android::provider
 	{
 	public:
 		// Fields
-		static jstring ACTION_FETCH_VOICEMAIL();
-		static jstring ACTION_NEW_VOICEMAIL();
-		static jstring ACTION_SYNC_VOICEMAIL();
-		static jstring AUTHORITY();
-		static jstring EXTRA_PHONE_ACCOUNT_HANDLE();
-		static jstring EXTRA_SELF_CHANGE();
-		static jstring PARAM_KEY_SOURCE_PACKAGE();
+		static JString ACTION_FETCH_VOICEMAIL();
+		static JString ACTION_NEW_VOICEMAIL();
+		static JString ACTION_SYNC_VOICEMAIL();
+		static JString AUTHORITY();
+		static JString EXTRA_PHONE_ACCOUNT_HANDLE();
+		static JString EXTRA_SELF_CHANGE();
+		static JString PARAM_KEY_SOURCE_PACKAGE();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit VoicemailContract(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}

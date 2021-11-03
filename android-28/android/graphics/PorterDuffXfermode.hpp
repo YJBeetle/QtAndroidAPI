@@ -1,6 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./Xfermode.hpp"
 
 namespace android::graphics

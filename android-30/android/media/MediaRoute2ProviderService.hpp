@@ -1,8 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../content/Context.hpp"
-#include "../content/ContextWrapper.hpp"
 #include "../app/Service.hpp"
 
 namespace android::content
@@ -21,6 +18,7 @@ namespace android::os
 {
 	class Bundle;
 }
+class JString;
 
 namespace android::media
 {
@@ -34,7 +32,7 @@ namespace android::media
 		static jint REASON_ROUTE_NOT_AVAILABLE();
 		static jint REASON_UNKNOWN_ERROR();
 		static jlong REQUEST_ID_NONE();
-		static jstring SERVICE_INTERFACE();
+		static JString SERVICE_INTERFACE();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MediaRoute2ProviderService(const char *className, const char *sig, Ts...agv) : android::app::Service(className, sig, std::forward<Ts>(agv)...) {}
@@ -45,21 +43,21 @@ namespace android::media
 		
 		// Methods
 		JObject getAllSessionInfo();
-		android::media::RoutingSessionInfo getSessionInfo(jstring arg0);
+		android::media::RoutingSessionInfo getSessionInfo(JString arg0);
 		void notifyRequestFailed(jlong arg0, jint arg1);
 		void notifyRoutes(JObject arg0);
 		void notifySessionCreated(jlong arg0, android::media::RoutingSessionInfo arg1);
-		void notifySessionReleased(jstring arg0);
+		void notifySessionReleased(JString arg0);
 		void notifySessionUpdated(android::media::RoutingSessionInfo arg0);
 		JObject onBind(android::content::Intent arg0);
-		void onCreateSession(jlong arg0, jstring arg1, jstring arg2, android::os::Bundle arg3);
-		void onDeselectRoute(jlong arg0, jstring arg1, jstring arg2);
+		void onCreateSession(jlong arg0, JString arg1, JString arg2, android::os::Bundle arg3);
+		void onDeselectRoute(jlong arg0, JString arg1, JString arg2);
 		void onDiscoveryPreferenceChanged(android::media::RouteDiscoveryPreference arg0);
-		void onReleaseSession(jlong arg0, jstring arg1);
-		void onSelectRoute(jlong arg0, jstring arg1, jstring arg2);
-		void onSetRouteVolume(jlong arg0, jstring arg1, jint arg2);
-		void onSetSessionVolume(jlong arg0, jstring arg1, jint arg2);
-		void onTransferToRoute(jlong arg0, jstring arg1, jstring arg2);
+		void onReleaseSession(jlong arg0, JString arg1);
+		void onSelectRoute(jlong arg0, JString arg1, JString arg2);
+		void onSetRouteVolume(jlong arg0, JString arg1, jint arg2);
+		void onSetSessionVolume(jlong arg0, JString arg1, jint arg2);
+		void onTransferToRoute(jlong arg0, JString arg1, JString arg2);
 	};
 } // namespace android::media
 

@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../../../JObject.hpp"
 #include "../Selector.hpp"
 
+class JObject;
 namespace java::nio::channels
 {
 	class SelectionKey;

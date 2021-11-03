@@ -2,7 +2,6 @@
 
 #include "../../../../JObject.hpp"
 
-
 namespace javax::microedition::khronos::egl
 {
 	class EGLDisplay : public JObject

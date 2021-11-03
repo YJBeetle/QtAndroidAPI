@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JArray;
 namespace android::app
 {
 	class WallpaperColors;
@@ -34,6 +35,7 @@ namespace java::io
 {
 	class PrintWriter;
 }
+class JString;
 
 namespace android::service::wallpaper
 {
@@ -58,7 +60,7 @@ namespace android::service::wallpaper
 		jboolean isVisible();
 		void notifyColorsChanged();
 		void onApplyWindowInsets(android::view::WindowInsets arg0);
-		android::os::Bundle onCommand(jstring arg0, jint arg1, jint arg2, jint arg3, android::os::Bundle arg4, jboolean arg5);
+		android::os::Bundle onCommand(JString arg0, jint arg1, jint arg2, jint arg3, android::os::Bundle arg4, jboolean arg5);
 		android::app::WallpaperColors onComputeColors();
 		void onCreate(JObject arg0);
 		void onDesiredSizeChanged(jint arg0, jint arg1);

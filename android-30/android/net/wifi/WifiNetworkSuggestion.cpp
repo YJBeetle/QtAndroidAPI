@@ -2,6 +2,8 @@
 #include "./WifiEnterpriseConfig.hpp"
 #include "./hotspot2/PasspointConfiguration.hpp"
 #include "../../os/Parcel.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./WifiNetworkSuggestion.hpp"
 
 namespace android::net::wifi
@@ -29,12 +31,12 @@ namespace android::net::wifi
 			"()I"
 		);
 	}
-	jboolean WifiNetworkSuggestion::equals(jobject arg0)
+	jboolean WifiNetworkSuggestion::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	android::net::MacAddress WifiNetworkSuggestion::getBssid()
@@ -51,12 +53,12 @@ namespace android::net::wifi
 			"()Landroid/net/wifi/WifiEnterpriseConfig;"
 		);
 	}
-	jstring WifiNetworkSuggestion::getPassphrase()
+	JString WifiNetworkSuggestion::getPassphrase()
 	{
 		return callObjectMethod(
 			"getPassphrase",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::net::wifi::hotspot2::PasspointConfiguration WifiNetworkSuggestion::getPasspointConfig()
 	{
@@ -72,12 +74,12 @@ namespace android::net::wifi
 			"()I"
 		);
 	}
-	jstring WifiNetworkSuggestion::getSsid()
+	JString WifiNetworkSuggestion::getSsid()
 	{
 		return callObjectMethod(
 			"getSsid",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint WifiNetworkSuggestion::hashCode()
 	{
@@ -142,12 +144,12 @@ namespace android::net::wifi
 			"()Z"
 		);
 	}
-	jstring WifiNetworkSuggestion::toString()
+	JString WifiNetworkSuggestion::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void WifiNetworkSuggestion::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

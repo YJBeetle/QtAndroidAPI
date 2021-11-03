@@ -1,5 +1,14 @@
+#include "../../JCharArray.hpp"
+#include "../../JDoubleArray.hpp"
+#include "../../JFloatArray.hpp"
+#include "../../JLongArray.hpp"
+#include "../../JArray.hpp"
+#include "../../JArray.hpp"
+#include "../../JArray.hpp"
 #include "../io/ObjectInputStream.hpp"
 #include "../io/ObjectOutputStream.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./BigInteger.hpp"
 #include "./MathContext.hpp"
 #include "./RoundingMode.hpp"
@@ -93,11 +102,11 @@ namespace java::math
 	BigDecimal::BigDecimal(QAndroidJniObject obj) : java::lang::Number(obj) {}
 	
 	// Constructors
-	BigDecimal::BigDecimal(jcharArray arg0)
+	BigDecimal::BigDecimal(JCharArray arg0)
 		: java::lang::Number(
 			"java.math.BigDecimal",
 			"([C)V",
-			arg0
+			arg0.object<jcharArray>()
 		) {}
 	BigDecimal::BigDecimal(jdouble arg0)
 		: java::lang::Number(
@@ -111,11 +120,11 @@ namespace java::math
 			"(I)V",
 			arg0
 		) {}
-	BigDecimal::BigDecimal(jstring arg0)
+	BigDecimal::BigDecimal(JString arg0)
 		: java::lang::Number(
 			"java.math.BigDecimal",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	BigDecimal::BigDecimal(java::math::BigInteger arg0)
 		: java::lang::Number(
@@ -129,11 +138,11 @@ namespace java::math
 			"(J)V",
 			arg0
 		) {}
-	BigDecimal::BigDecimal(jcharArray arg0, java::math::MathContext arg1)
+	BigDecimal::BigDecimal(JCharArray arg0, java::math::MathContext arg1)
 		: java::lang::Number(
 			"java.math.BigDecimal",
 			"([CLjava/math/MathContext;)V",
-			arg0,
+			arg0.object<jcharArray>(),
 			arg1.object()
 		) {}
 	BigDecimal::BigDecimal(jdouble arg0, java::math::MathContext arg1)
@@ -150,11 +159,11 @@ namespace java::math
 			arg0,
 			arg1.object()
 		) {}
-	BigDecimal::BigDecimal(jstring arg0, java::math::MathContext arg1)
+	BigDecimal::BigDecimal(JString arg0, java::math::MathContext arg1)
 		: java::lang::Number(
 			"java.math.BigDecimal",
 			"(Ljava/lang/String;Ljava/math/MathContext;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		) {}
 	BigDecimal::BigDecimal(java::math::BigInteger arg0, jint arg1)
@@ -178,11 +187,11 @@ namespace java::math
 			arg0,
 			arg1.object()
 		) {}
-	BigDecimal::BigDecimal(jcharArray arg0, jint arg1, jint arg2)
+	BigDecimal::BigDecimal(JCharArray arg0, jint arg1, jint arg2)
 		: java::lang::Number(
 			"java.math.BigDecimal",
 			"([CII)V",
-			arg0,
+			arg0.object<jcharArray>(),
 			arg1,
 			arg2
 		) {}
@@ -194,11 +203,11 @@ namespace java::math
 			arg1,
 			arg2.object()
 		) {}
-	BigDecimal::BigDecimal(jcharArray arg0, jint arg1, jint arg2, java::math::MathContext arg3)
+	BigDecimal::BigDecimal(JCharArray arg0, jint arg1, jint arg2, java::math::MathContext arg3)
 		: java::lang::Number(
 			"java.math.BigDecimal",
 			"([CIILjava/math/MathContext;)V",
-			arg0,
+			arg0.object<jcharArray>(),
 			arg1,
 			arg2,
 			arg3.object()
@@ -272,12 +281,12 @@ namespace java::math
 			"()B"
 		);
 	}
-	jint BigDecimal::compareTo(jobject arg0)
+	jint BigDecimal::compareTo(JObject arg0)
 	{
 		return callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Object;)I",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint BigDecimal::compareTo(java::math::BigDecimal arg0)
@@ -343,22 +352,22 @@ namespace java::math
 			arg2.object()
 		);
 	}
-	jarray BigDecimal::divideAndRemainder(java::math::BigDecimal arg0)
+	JArray BigDecimal::divideAndRemainder(java::math::BigDecimal arg0)
 	{
 		return callObjectMethod(
 			"divideAndRemainder",
 			"(Ljava/math/BigDecimal;)[Ljava/math/BigDecimal;",
 			arg0.object()
-		).object<jarray>();
+		);
 	}
-	jarray BigDecimal::divideAndRemainder(java::math::BigDecimal arg0, java::math::MathContext arg1)
+	JArray BigDecimal::divideAndRemainder(java::math::BigDecimal arg0, java::math::MathContext arg1)
 	{
 		return callObjectMethod(
 			"divideAndRemainder",
 			"(Ljava/math/BigDecimal;Ljava/math/MathContext;)[Ljava/math/BigDecimal;",
 			arg0.object(),
 			arg1.object()
-		).object<jarray>();
+		);
 	}
 	java::math::BigDecimal BigDecimal::divideToIntegralValue(java::math::BigDecimal arg0)
 	{
@@ -384,12 +393,12 @@ namespace java::math
 			"()D"
 		);
 	}
-	jboolean BigDecimal::equals(jobject arg0)
+	jboolean BigDecimal::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jfloat BigDecimal::floatValue()
@@ -663,26 +672,26 @@ namespace java::math
 			"()Ljava/math/BigInteger;"
 		);
 	}
-	jstring BigDecimal::toEngineeringString()
+	JString BigDecimal::toEngineeringString()
 	{
 		return callObjectMethod(
 			"toEngineeringString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring BigDecimal::toPlainString()
+	JString BigDecimal::toPlainString()
 	{
 		return callObjectMethod(
 			"toPlainString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring BigDecimal::toString()
+	JString BigDecimal::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	java::math::BigDecimal BigDecimal::ulp()
 	{

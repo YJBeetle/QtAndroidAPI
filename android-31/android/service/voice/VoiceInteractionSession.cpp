@@ -1,3 +1,5 @@
+#include "../../../JArray.hpp"
+#include "../../../JBooleanArray.hpp"
 #include "../../app/Dialog.hpp"
 #include "../../app/DirectAction.hpp"
 #include "../../app/assist/AssistContent.hpp"
@@ -23,6 +25,8 @@
 #include "../../view/View.hpp"
 #include "../../../java/io/FileDescriptor.hpp"
 #include "../../../java/io/PrintWriter.hpp"
+#include "../../../JString.hpp"
+#include "../../../JThrowable.hpp"
 #include "./VoiceInteractionSession.hpp"
 
 namespace android::service::voice
@@ -111,15 +115,15 @@ namespace android::service::voice
 			"()V"
 		);
 	}
-	void VoiceInteractionSession::dump(jstring arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, jarray arg3)
+	void VoiceInteractionSession::dump(JString arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, JArray arg3)
 	{
 		callMethod<void>(
 			"dump",
 			"(Ljava/lang/String;Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
 			arg2.object(),
-			arg3
+			arg3.object<jarray>()
 		);
 	}
 	void VoiceInteractionSession::finish()
@@ -171,12 +175,12 @@ namespace android::service::voice
 			"()V"
 		);
 	}
-	void VoiceInteractionSession::onAssistStructureFailure(jthrowable arg0)
+	void VoiceInteractionSession::onAssistStructureFailure(JThrowable arg0)
 	{
 		callMethod<void>(
 			"onAssistStructureFailure",
 			"(Ljava/lang/Throwable;)V",
-			arg0
+			arg0.object<jthrowable>()
 		);
 	}
 	void VoiceInteractionSession::onBackPressed()
@@ -246,13 +250,13 @@ namespace android::service::voice
 			arg0.object()
 		);
 	}
-	jbooleanArray VoiceInteractionSession::onGetSupportedCommands(jarray arg0)
+	JBooleanArray VoiceInteractionSession::onGetSupportedCommands(JArray arg0)
 	{
 		return callObjectMethod(
 			"onGetSupportedCommands",
 			"([Ljava/lang/String;)[Z",
-			arg0
-		).object<jbooleanArray>();
+			arg0.object<jarray>()
+		);
 	}
 	void VoiceInteractionSession::onHandleAssist(android::service::voice::VoiceInteractionSession_AssistState arg0)
 	{

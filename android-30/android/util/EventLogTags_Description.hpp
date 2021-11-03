@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JString;
 
 namespace android::util
 {
@@ -9,7 +10,7 @@ namespace android::util
 	{
 	public:
 		// Fields
-		jstring mName();
+		JString mName();
 		jint mTag();
 		
 		// QAndroidJniObject forward

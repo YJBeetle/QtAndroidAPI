@@ -1,4 +1,6 @@
+#include "../../../JByteArray.hpp"
 #include "../../os/Parcel.hpp"
+#include "../../../JString.hpp"
 #include "../../../java/security/cert/Certificate.hpp"
 #include "./ApkChecksum.hpp"
 
@@ -34,19 +36,19 @@ namespace android::content::pm
 			"()Ljava/security/cert/Certificate;"
 		);
 	}
-	jstring ApkChecksum::getInstallerPackageName()
+	JString ApkChecksum::getInstallerPackageName()
 	{
 		return callObjectMethod(
 			"getInstallerPackageName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ApkChecksum::getSplitName()
+	JString ApkChecksum::getSplitName()
 	{
 		return callObjectMethod(
 			"getSplitName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint ApkChecksum::getType()
 	{
@@ -55,12 +57,12 @@ namespace android::content::pm
 			"()I"
 		);
 	}
-	jbyteArray ApkChecksum::getValue()
+	JByteArray ApkChecksum::getValue()
 	{
 		return callObjectMethod(
 			"getValue",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
 	void ApkChecksum::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

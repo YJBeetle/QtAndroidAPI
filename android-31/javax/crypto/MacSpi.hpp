@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JByteArray;
+class JObject;
 namespace java::nio
 {
 	class ByteBuffer;
@@ -22,7 +24,7 @@ namespace javax::crypto
 		MacSpi();
 		
 		// Methods
-		jobject clone();
+		JObject clone();
 	};
 } // namespace javax::crypto
 

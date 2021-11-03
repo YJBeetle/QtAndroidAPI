@@ -1,9 +1,12 @@
+#include "../../../JLongArray.hpp"
 #include "../../graphics/Insets.hpp"
 #include "../View.hpp"
 #include "../ViewStructure.hpp"
 #include "../autofill/AutofillId.hpp"
 #include "./ContentCaptureContext.hpp"
 #include "./ContentCaptureSessionId.hpp"
+#include "../../../JString.hpp"
+#include "../../../JString.hpp"
 #include "./ContentCaptureSession.hpp"
 
 namespace android::view::contentcapture
@@ -116,22 +119,22 @@ namespace android::view::contentcapture
 			arg0.object()
 		);
 	}
-	void ContentCaptureSession::notifyViewTextChanged(android::view::autofill::AutofillId arg0, jstring arg1)
+	void ContentCaptureSession::notifyViewTextChanged(android::view::autofill::AutofillId arg0, JString arg1)
 	{
 		callMethod<void>(
 			"notifyViewTextChanged",
 			"(Landroid/view/autofill/AutofillId;Ljava/lang/CharSequence;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
-	void ContentCaptureSession::notifyViewsDisappeared(android::view::autofill::AutofillId arg0, jlongArray arg1)
+	void ContentCaptureSession::notifyViewsDisappeared(android::view::autofill::AutofillId arg0, JLongArray arg1)
 	{
 		callMethod<void>(
 			"notifyViewsDisappeared",
 			"(Landroid/view/autofill/AutofillId;[J)V",
 			arg0.object(),
-			arg1
+			arg1.object<jlongArray>()
 		);
 	}
 	void ContentCaptureSession::setContentCaptureContext(android::view::contentcapture::ContentCaptureContext arg0)
@@ -142,12 +145,12 @@ namespace android::view::contentcapture
 			arg0.object()
 		);
 	}
-	jstring ContentCaptureSession::toString()
+	JString ContentCaptureSession::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::view::contentcapture
 

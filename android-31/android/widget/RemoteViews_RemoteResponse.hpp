@@ -10,6 +10,7 @@ namespace android::content
 {
 	class Intent;
 }
+class JString;
 
 namespace android::widget
 {
@@ -28,7 +29,7 @@ namespace android::widget
 		// Methods
 		static android::widget::RemoteViews_RemoteResponse fromFillInIntent(android::content::Intent arg0);
 		static android::widget::RemoteViews_RemoteResponse fromPendingIntent(android::app::PendingIntent arg0);
-		android::widget::RemoteViews_RemoteResponse addSharedElement(jint arg0, jstring arg1);
+		android::widget::RemoteViews_RemoteResponse addSharedElement(jint arg0, JString arg1);
 	};
 } // namespace android::widget
 

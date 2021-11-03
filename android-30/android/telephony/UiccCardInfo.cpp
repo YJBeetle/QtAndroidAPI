@@ -1,4 +1,6 @@
 #include "../os/Parcel.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./UiccCardInfo.hpp"
 
 namespace android::telephony
@@ -26,12 +28,12 @@ namespace android::telephony
 			"()I"
 		);
 	}
-	jboolean UiccCardInfo::equals(jobject arg0)
+	jboolean UiccCardInfo::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint UiccCardInfo::getCardId()
@@ -41,19 +43,19 @@ namespace android::telephony
 			"()I"
 		);
 	}
-	jstring UiccCardInfo::getEid()
+	JString UiccCardInfo::getEid()
 	{
 		return callObjectMethod(
 			"getEid",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring UiccCardInfo::getIccId()
+	JString UiccCardInfo::getIccId()
 	{
 		return callObjectMethod(
 			"getIccId",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint UiccCardInfo::getSlotIndex()
 	{
@@ -83,12 +85,12 @@ namespace android::telephony
 			"()Z"
 		);
 	}
-	jstring UiccCardInfo::toString()
+	JString UiccCardInfo::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void UiccCardInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

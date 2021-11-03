@@ -18,6 +18,7 @@ namespace android::text
 {
 	class TextUtils_TruncateAt;
 }
+class JString;
 
 namespace android::text
 {
@@ -33,11 +34,11 @@ namespace android::text
 		// Constructors
 		
 		// Methods
-		static android::text::DynamicLayout_Builder obtain(jstring arg0, android::text::TextPaint arg1, jint arg2);
+		static android::text::DynamicLayout_Builder obtain(JString arg0, android::text::TextPaint arg1, jint arg2);
 		android::text::DynamicLayout build();
 		android::text::DynamicLayout_Builder setAlignment(android::text::Layout_Alignment arg0);
 		android::text::DynamicLayout_Builder setBreakStrategy(jint arg0);
-		android::text::DynamicLayout_Builder setDisplayText(jstring arg0);
+		android::text::DynamicLayout_Builder setDisplayText(JString arg0);
 		android::text::DynamicLayout_Builder setEllipsize(android::text::TextUtils_TruncateAt arg0);
 		android::text::DynamicLayout_Builder setEllipsizedWidth(jint arg0);
 		android::text::DynamicLayout_Builder setHyphenationFrequency(jint arg0);

@@ -14,6 +14,8 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
+class JString;
 
 namespace android::service::quickaccesswallet
 {
@@ -32,10 +34,10 @@ namespace android::service::quickaccesswallet
 		// Methods
 		jint describeContents();
 		android::graphics::drawable::Icon getCardIcon();
-		jstring getCardId();
+		JString getCardId();
 		android::graphics::drawable::Icon getCardImage();
-		jstring getCardLabel();
-		jstring getContentDescription();
+		JString getCardLabel();
+		JString getContentDescription();
 		android::app::PendingIntent getPendingIntent();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};

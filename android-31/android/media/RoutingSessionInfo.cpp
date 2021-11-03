@@ -1,5 +1,8 @@
 #include "../os/Bundle.hpp"
 #include "../os/Parcel.hpp"
+#include "../../JString.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./RoutingSessionInfo.hpp"
 
 namespace android::media
@@ -27,20 +30,20 @@ namespace android::media
 			"()I"
 		);
 	}
-	jboolean RoutingSessionInfo::equals(jobject arg0)
+	jboolean RoutingSessionInfo::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jstring RoutingSessionInfo::getClientPackageName()
+	JString RoutingSessionInfo::getClientPackageName()
 	{
 		return callObjectMethod(
 			"getClientPackageName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::os::Bundle RoutingSessionInfo::getControlHints()
 	{
@@ -56,19 +59,19 @@ namespace android::media
 			"()Ljava/util/List;"
 		);
 	}
-	jstring RoutingSessionInfo::getId()
+	JString RoutingSessionInfo::getId()
 	{
 		return callObjectMethod(
 			"getId",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring RoutingSessionInfo::getName()
+	JString RoutingSessionInfo::getName()
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	JObject RoutingSessionInfo::getSelectableRoutes()
 	{
@@ -119,12 +122,12 @@ namespace android::media
 			"()I"
 		);
 	}
-	jstring RoutingSessionInfo::toString()
+	JString RoutingSessionInfo::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void RoutingSessionInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

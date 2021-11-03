@@ -1,8 +1,9 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "../../lang/Enum.hpp"
 
+class JArray;
+class JString;
 
 namespace java::time::chrono
 {
@@ -21,8 +22,8 @@ namespace java::time::chrono
 		
 		// Methods
 		static java::time::chrono::IsoEra of(jint arg0);
-		static java::time::chrono::IsoEra valueOf(jstring arg0);
-		static jarray values();
+		static java::time::chrono::IsoEra valueOf(JString arg0);
+		static JArray values();
 		jint getValue();
 	};
 } // namespace java::time::chrono

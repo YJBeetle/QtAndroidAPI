@@ -1,3 +1,5 @@
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
 #include "./ColorSpace_Named.hpp"
 
 namespace android::graphics
@@ -138,22 +140,22 @@ namespace android::graphics
 	// Constructors
 	
 	// Methods
-	android::graphics::ColorSpace_Named ColorSpace_Named::valueOf(jstring arg0)
+	android::graphics::ColorSpace_Named ColorSpace_Named::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.graphics.ColorSpace$Named",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/graphics/ColorSpace$Named;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray ColorSpace_Named::values()
+	JArray ColorSpace_Named::values()
 	{
 		return callStaticObjectMethod(
 			"android.graphics.ColorSpace$Named",
 			"values",
 			"()[Landroid/graphics/ColorSpace$Named;"
-		).object<jarray>();
+		);
 	}
 } // namespace android::graphics
 

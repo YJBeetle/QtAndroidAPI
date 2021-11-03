@@ -6,6 +6,7 @@
 #include "../../util/Size.hpp"
 #include "../../../java/io/InputStream.hpp"
 #include "../../../java/io/OutputStream.hpp"
+#include "../../../JString.hpp"
 #include "../../../java/nio/ByteBuffer.hpp"
 #include "./DngCreator.hpp"
 
@@ -40,12 +41,12 @@ namespace android::hardware::camera2
 			"()V"
 		);
 	}
-	android::hardware::camera2::DngCreator DngCreator::setDescription(jstring arg0)
+	android::hardware::camera2::DngCreator DngCreator::setDescription(JString arg0)
 	{
 		return callObjectMethod(
 			"setDescription",
 			"(Ljava/lang/String;)Landroid/hardware/camera2/DngCreator;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::hardware::camera2::DngCreator DngCreator::setLocation(android::location::Location arg0)

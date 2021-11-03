@@ -1,10 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "./Error.hpp"
-#include "./LinkageError.hpp"
 #include "./IncompatibleClassChangeError.hpp"
 
+class JString;
 
 namespace java::lang
 {
@@ -19,7 +17,7 @@ namespace java::lang
 		
 		// Constructors
 		InstantiationError();
-		InstantiationError(jstring arg0);
+		InstantiationError(JString arg0);
 		
 		// Methods
 	};

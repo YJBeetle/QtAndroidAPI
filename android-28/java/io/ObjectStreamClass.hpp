@@ -2,6 +2,12 @@
 
 #include "../../JObject.hpp"
 
+class JByteArray;
+class JArray;
+class JArray;
+class JArray;
+class JObjectArray;
+class JArray;
 namespace java::io
 {
 	class ObjectInputStream;
@@ -14,6 +20,7 @@ namespace java::io
 {
 	class ObjectStreamField;
 }
+class JClass;
 namespace java::lang
 {
 	class ClassNotFoundException;
@@ -22,6 +29,9 @@ namespace java::lang
 {
 	class Long;
 }
+class JObject;
+class JString;
+class JThrowable;
 namespace java::lang::invoke
 {
 	class MethodHandle;
@@ -49,7 +59,7 @@ namespace java::io
 	{
 	public:
 		// Fields
-		static jarray NO_FIELDS();
+		static JArray NO_FIELDS();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ObjectStreamClass(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
@@ -58,14 +68,14 @@ namespace java::io
 		// Constructors
 		
 		// Methods
-		static java::io::ObjectStreamClass lookup(jclass arg0);
-		static java::io::ObjectStreamClass lookupAny(jclass arg0);
-		jclass forClass();
-		java::io::ObjectStreamField getField(jstring arg0);
-		jarray getFields();
-		jstring getName();
+		static java::io::ObjectStreamClass lookup(JClass arg0);
+		static java::io::ObjectStreamClass lookupAny(JClass arg0);
+		JClass forClass();
+		java::io::ObjectStreamField getField(JString arg0);
+		JArray getFields();
+		JString getName();
 		jlong getSerialVersionUID();
-		jstring toString();
+		JString toString();
 	};
 } // namespace java::io
 

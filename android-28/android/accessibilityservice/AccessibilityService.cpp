@@ -10,6 +10,8 @@
 #include "../view/KeyEvent.hpp"
 #include "../view/accessibility/AccessibilityEvent.hpp"
 #include "../view/accessibility/AccessibilityNodeInfo.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./AccessibilityService.hpp"
 
 namespace android::accessibilityservice
@@ -190,21 +192,21 @@ namespace android::accessibilityservice
 			"GLOBAL_ACTION_TOGGLE_SPLIT_SCREEN"
 		);
 	}
-	jstring AccessibilityService::SERVICE_INTERFACE()
+	JString AccessibilityService::SERVICE_INTERFACE()
 	{
 		return getStaticObjectField(
 			"android.accessibilityservice.AccessibilityService",
 			"SERVICE_INTERFACE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring AccessibilityService::SERVICE_META_DATA()
+	JString AccessibilityService::SERVICE_META_DATA()
 	{
 		return getStaticObjectField(
 			"android.accessibilityservice.AccessibilityService",
 			"SERVICE_META_DATA",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint AccessibilityService::SHOW_MODE_AUTO()
 	{
@@ -299,13 +301,13 @@ namespace android::accessibilityservice
 			"()Landroid/accessibilityservice/AccessibilityService$SoftKeyboardController;"
 		);
 	}
-	jobject AccessibilityService::getSystemService(jstring arg0)
+	JObject AccessibilityService::getSystemService(JString arg0)
 	{
 		return callObjectMethod(
 			"getSystemService",
 			"(Ljava/lang/String;)Ljava/lang/Object;",
-			arg0
-		).object<jobject>();
+			arg0.object<jstring>()
+		);
 	}
 	JObject AccessibilityService::getWindows()
 	{

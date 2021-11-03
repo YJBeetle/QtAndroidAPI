@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./Trace.hpp"
 
 namespace android::os
@@ -10,32 +11,32 @@ namespace android::os
 	// Constructors
 	
 	// Methods
-	void Trace::beginAsyncSection(jstring arg0, jint arg1)
+	void Trace::beginAsyncSection(JString arg0, jint arg1)
 	{
 		callStaticMethod<void>(
 			"android.os.Trace",
 			"beginAsyncSection",
 			"(Ljava/lang/String;I)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
-	void Trace::beginSection(jstring arg0)
+	void Trace::beginSection(JString arg0)
 	{
 		callStaticMethod<void>(
 			"android.os.Trace",
 			"beginSection",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	void Trace::endAsyncSection(jstring arg0, jint arg1)
+	void Trace::endAsyncSection(JString arg0, jint arg1)
 	{
 		callStaticMethod<void>(
 			"android.os.Trace",
 			"endAsyncSection",
 			"(Ljava/lang/String;I)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
@@ -55,13 +56,13 @@ namespace android::os
 			"()Z"
 		);
 	}
-	void Trace::setCounter(jstring arg0, jlong arg1)
+	void Trace::setCounter(JString arg0, jlong arg1)
 	{
 		callStaticMethod<void>(
 			"android.os.Trace",
 			"setCounter",
 			"(Ljava/lang/String;J)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}

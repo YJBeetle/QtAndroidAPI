@@ -14,6 +14,7 @@ namespace android::bluetooth::le
 {
 	class ScanSettings;
 }
+class JString;
 
 namespace android::bluetooth::le
 {
@@ -21,9 +22,9 @@ namespace android::bluetooth::le
 	{
 	public:
 		// Fields
-		static jstring EXTRA_CALLBACK_TYPE();
-		static jstring EXTRA_ERROR_CODE();
-		static jstring EXTRA_LIST_SCAN_RESULT();
+		static JString EXTRA_CALLBACK_TYPE();
+		static JString EXTRA_ERROR_CODE();
+		static JString EXTRA_LIST_SCAN_RESULT();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit BluetoothLeScanner(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}

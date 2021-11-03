@@ -1,51 +1,52 @@
 #include "../content/Intent.hpp"
+#include "../../JString.hpp"
 #include "./SettingInjectorService.hpp"
 
 namespace android::location
 {
 	// Fields
-	jstring SettingInjectorService::ACTION_INJECTED_SETTING_CHANGED()
+	JString SettingInjectorService::ACTION_INJECTED_SETTING_CHANGED()
 	{
 		return getStaticObjectField(
 			"android.location.SettingInjectorService",
 			"ACTION_INJECTED_SETTING_CHANGED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring SettingInjectorService::ACTION_SERVICE_INTENT()
+	JString SettingInjectorService::ACTION_SERVICE_INTENT()
 	{
 		return getStaticObjectField(
 			"android.location.SettingInjectorService",
 			"ACTION_SERVICE_INTENT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring SettingInjectorService::ATTRIBUTES_NAME()
+	JString SettingInjectorService::ATTRIBUTES_NAME()
 	{
 		return getStaticObjectField(
 			"android.location.SettingInjectorService",
 			"ATTRIBUTES_NAME",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring SettingInjectorService::META_DATA_NAME()
+	JString SettingInjectorService::META_DATA_NAME()
 	{
 		return getStaticObjectField(
 			"android.location.SettingInjectorService",
 			"META_DATA_NAME",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QAndroidJniObject forward
 	SettingInjectorService::SettingInjectorService(QAndroidJniObject obj) : android::app::Service(obj) {}
 	
 	// Constructors
-	SettingInjectorService::SettingInjectorService(jstring arg0)
+	SettingInjectorService::SettingInjectorService(JString arg0)
 		: android::app::Service(
 			"android.location.SettingInjectorService",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

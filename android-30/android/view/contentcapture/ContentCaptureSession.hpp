@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JLongArray;
 namespace android::graphics
 {
 	class Insets;
@@ -26,6 +27,8 @@ namespace android::view::contentcapture
 {
 	class ContentCaptureSessionId;
 }
+class JString;
+class JString;
 
 namespace android::view::contentcapture
 {
@@ -54,10 +57,10 @@ namespace android::view::contentcapture
 		void notifyViewAppeared(android::view::ViewStructure arg0);
 		void notifyViewDisappeared(android::view::autofill::AutofillId arg0);
 		void notifyViewInsetsChanged(android::graphics::Insets arg0);
-		void notifyViewTextChanged(android::view::autofill::AutofillId arg0, jstring arg1);
-		void notifyViewsDisappeared(android::view::autofill::AutofillId arg0, jlongArray arg1);
+		void notifyViewTextChanged(android::view::autofill::AutofillId arg0, JString arg1);
+		void notifyViewsDisappeared(android::view::autofill::AutofillId arg0, JLongArray arg1);
 		void setContentCaptureContext(android::view::contentcapture::ContentCaptureContext arg0);
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::view::contentcapture
 

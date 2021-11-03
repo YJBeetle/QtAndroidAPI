@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JObject;
 namespace java::security::cert
 {
 	class Certificate;
@@ -23,7 +24,7 @@ namespace java::security::cert
 		// Methods
 		void check(java::security::cert::Certificate arg0);
 		void check(java::security::cert::Certificate arg0, JObject arg1);
-		jobject clone();
+		JObject clone();
 		JObject getSupportedExtensions();
 		void init(jboolean arg0);
 		jboolean isForwardCheckingSupported();

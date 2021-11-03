@@ -1,3 +1,4 @@
+#include "../../../JByteArray.hpp"
 #include "../../io/OutputStream.hpp"
 #include "./Manifest.hpp"
 #include "../zip/ZipEntry.hpp"

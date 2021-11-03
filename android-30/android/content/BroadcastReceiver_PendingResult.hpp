@@ -6,6 +6,7 @@ namespace android::os
 {
 	class Bundle;
 }
+class JString;
 
 namespace android::content
 {
@@ -26,11 +27,11 @@ namespace android::content
 		void finish();
 		jboolean getAbortBroadcast();
 		jint getResultCode();
-		jstring getResultData();
+		JString getResultData();
 		android::os::Bundle getResultExtras(jboolean arg0);
-		void setResult(jint arg0, jstring arg1, android::os::Bundle arg2);
+		void setResult(jint arg0, JString arg1, android::os::Bundle arg2);
 		void setResultCode(jint arg0);
-		void setResultData(jstring arg0);
+		void setResultData(JString arg0);
 		void setResultExtras(android::os::Bundle arg0);
 	};
 } // namespace android::content

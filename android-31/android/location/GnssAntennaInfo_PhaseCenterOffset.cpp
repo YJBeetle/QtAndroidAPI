@@ -1,4 +1,6 @@
 #include "../os/Parcel.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./GnssAntennaInfo_PhaseCenterOffset.hpp"
 
 namespace android::location
@@ -37,12 +39,12 @@ namespace android::location
 			"()I"
 		);
 	}
-	jboolean GnssAntennaInfo_PhaseCenterOffset::equals(jobject arg0)
+	jboolean GnssAntennaInfo_PhaseCenterOffset::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jdouble GnssAntennaInfo_PhaseCenterOffset::getXOffsetMm()
@@ -94,12 +96,12 @@ namespace android::location
 			"()I"
 		);
 	}
-	jstring GnssAntennaInfo_PhaseCenterOffset::toString()
+	JString GnssAntennaInfo_PhaseCenterOffset::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void GnssAntennaInfo_PhaseCenterOffset::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

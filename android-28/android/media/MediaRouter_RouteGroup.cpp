@@ -1,6 +1,7 @@
 #include "../graphics/drawable/Drawable.hpp"
 #include "./MediaRouter_RouteCategory.hpp"
 #include "./MediaRouter_RouteInfo.hpp"
+#include "../../JString.hpp"
 #include "./MediaRouter_RouteGroup.hpp"
 
 namespace android::media
@@ -93,12 +94,12 @@ namespace android::media
 			arg0
 		);
 	}
-	jstring MediaRouter_RouteGroup::toString()
+	JString MediaRouter_RouteGroup::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::media
 

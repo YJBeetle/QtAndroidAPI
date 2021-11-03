@@ -1,3 +1,4 @@
+#include "../../JIntArray.hpp"
 #include "../content/Context.hpp"
 #include "../content/res/ColorStateList.hpp"
 #include "../graphics/BlendMode.hpp"
@@ -7,6 +8,7 @@
 #include "../graphics/drawable/Drawable.hpp"
 #include "../graphics/drawable/Icon.hpp"
 #include "../view/MotionEvent.hpp"
+#include "../../JString.hpp"
 #include "./Switch.hpp"
 
 namespace android::widget
@@ -66,12 +68,12 @@ namespace android::widget
 			arg1
 		);
 	}
-	jstring Switch::getAccessibilityClassName()
+	JString Switch::getAccessibilityClassName()
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	jint Switch::getCompoundPaddingLeft()
 	{
@@ -115,19 +117,19 @@ namespace android::widget
 			"()I"
 		);
 	}
-	jstring Switch::getTextOff()
+	JString Switch::getTextOff()
 	{
 		return callObjectMethod(
 			"getTextOff",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
-	jstring Switch::getTextOn()
+	JString Switch::getTextOn()
 	{
 		return callObjectMethod(
 			"getTextOn",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	android::graphics::drawable::Drawable Switch::getThumbDrawable()
 	{
@@ -282,20 +284,20 @@ namespace android::widget
 			arg1
 		);
 	}
-	void Switch::setTextOff(jstring arg0)
+	void Switch::setTextOff(JString arg0)
 	{
 		callMethod<void>(
 			"setTextOff",
 			"(Ljava/lang/CharSequence;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	void Switch::setTextOn(jstring arg0)
+	void Switch::setTextOn(JString arg0)
 	{
 		callMethod<void>(
 			"setTextOn",
 			"(Ljava/lang/CharSequence;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void Switch::setThumbDrawable(android::graphics::drawable::Drawable arg0)

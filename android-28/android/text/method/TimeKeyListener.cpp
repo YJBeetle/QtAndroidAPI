@@ -1,16 +1,17 @@
+#include "../../../JCharArray.hpp"
 #include "../../../java/util/Locale.hpp"
 #include "./TimeKeyListener.hpp"
 
 namespace android::text::method
 {
 	// Fields
-	jcharArray TimeKeyListener::CHARACTERS()
+	JCharArray TimeKeyListener::CHARACTERS()
 	{
 		return getStaticObjectField(
 			"android.text.method.TimeKeyListener",
 			"CHARACTERS",
 			"[C"
-		).object<jcharArray>();
+		);
 	}
 	
 	// QAndroidJniObject forward

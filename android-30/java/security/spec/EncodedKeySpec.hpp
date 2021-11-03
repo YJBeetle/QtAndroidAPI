@@ -2,6 +2,8 @@
 
 #include "../../../JObject.hpp"
 
+class JByteArray;
+class JString;
 
 namespace java::security::spec
 {
@@ -15,12 +17,12 @@ namespace java::security::spec
 		EncodedKeySpec(QAndroidJniObject obj);
 		
 		// Constructors
-		EncodedKeySpec(jbyteArray arg0);
+		EncodedKeySpec(JByteArray arg0);
 		
 		// Methods
-		jstring getAlgorithm();
-		jbyteArray getEncoded();
-		jstring getFormat();
+		JString getAlgorithm();
+		JByteArray getEncoded();
+		JString getFormat();
 	};
 } // namespace java::security::spec
 

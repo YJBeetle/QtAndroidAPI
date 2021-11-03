@@ -2,10 +2,12 @@
 
 #include "../../../JObject.hpp"
 
+class JObjectArray;
 namespace android::icu::util
 {
 	class ULocale;
 }
+class JString;
 namespace java::util
 {
 	class Locale;
@@ -28,9 +30,9 @@ namespace android::icu::text
 		static android::icu::text::ListFormatter getInstance();
 		static android::icu::text::ListFormatter getInstance(android::icu::util::ULocale arg0);
 		static android::icu::text::ListFormatter getInstance(java::util::Locale arg0);
-		jstring format(jobjectArray arg0);
-		jstring format(JObject arg0);
-		jstring getPatternForNumItems(jint arg0);
+		JString format(JObjectArray arg0);
+		JString format(JObject arg0);
+		JString getPatternForNumItems(jint arg0);
 	};
 } // namespace android::icu::text
 

@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./SerializablePermission.hpp"
 
 namespace java::io
@@ -8,18 +9,18 @@ namespace java::io
 	SerializablePermission::SerializablePermission(QAndroidJniObject obj) : java::security::BasicPermission(obj) {}
 	
 	// Constructors
-	SerializablePermission::SerializablePermission(jstring arg0)
+	SerializablePermission::SerializablePermission(JString arg0)
 		: java::security::BasicPermission(
 			"java.io.SerializablePermission",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	SerializablePermission::SerializablePermission(jstring arg0, jstring arg1)
+	SerializablePermission::SerializablePermission(JString arg0, JString arg1)
 		: java::security::BasicPermission(
 			"java.io.SerializablePermission",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		) {}
 	
 	// Methods

@@ -1,3 +1,5 @@
+#include "../../JString.hpp"
+#include "../../JThrowable.hpp"
 #include "./SignatureException.hpp"
 
 namespace java::security
@@ -13,24 +15,24 @@ namespace java::security
 			"java.security.SignatureException",
 			"()V"
 		) {}
-	SignatureException::SignatureException(jstring arg0)
+	SignatureException::SignatureException(JString arg0)
 		: java::security::GeneralSecurityException(
 			"java.security.SignatureException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	SignatureException::SignatureException(jthrowable arg0)
+	SignatureException::SignatureException(JThrowable arg0)
 		: java::security::GeneralSecurityException(
 			"java.security.SignatureException",
 			"(Ljava/lang/Throwable;)V",
-			arg0
+			arg0.object<jthrowable>()
 		) {}
-	SignatureException::SignatureException(jstring arg0, jthrowable arg1)
+	SignatureException::SignatureException(JString arg0, JThrowable arg1)
 		: java::security::GeneralSecurityException(
 			"java.security.SignatureException",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
 		) {}
 	
 	// Methods

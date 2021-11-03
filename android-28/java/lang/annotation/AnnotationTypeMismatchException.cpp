@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "../reflect/Method.hpp"
 #include "./AnnotationTypeMismatchException.hpp"
 
@@ -9,12 +10,12 @@ namespace java::lang::annotation
 	AnnotationTypeMismatchException::AnnotationTypeMismatchException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
 	
 	// Constructors
-	AnnotationTypeMismatchException::AnnotationTypeMismatchException(java::lang::reflect::Method arg0, jstring arg1)
+	AnnotationTypeMismatchException::AnnotationTypeMismatchException(java::lang::reflect::Method arg0, JString arg1)
 		: java::lang::RuntimeException(
 			"java.lang.annotation.AnnotationTypeMismatchException",
 			"(Ljava/lang/reflect/Method;Ljava/lang/String;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		) {}
 	
 	// Methods
@@ -25,12 +26,12 @@ namespace java::lang::annotation
 			"()Ljava/lang/reflect/Method;"
 		);
 	}
-	jstring AnnotationTypeMismatchException::foundType()
+	JString AnnotationTypeMismatchException::foundType()
 	{
 		return callObjectMethod(
 			"foundType",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::lang::annotation
 

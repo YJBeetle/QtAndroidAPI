@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./SyncFailedException.hpp"
 
 namespace java::io
@@ -8,11 +9,11 @@ namespace java::io
 	SyncFailedException::SyncFailedException(QAndroidJniObject obj) : java::io::IOException(obj) {}
 	
 	// Constructors
-	SyncFailedException::SyncFailedException(jstring arg0)
+	SyncFailedException::SyncFailedException(JString arg0)
 		: java::io::IOException(
 			"java.io.SyncFailedException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

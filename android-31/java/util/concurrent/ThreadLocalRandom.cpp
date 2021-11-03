@@ -1,4 +1,7 @@
+#include "../../../JArray.hpp"
 #include "../../io/ObjectOutputStream.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "../../lang/Thread.hpp"
 #include "../../lang/ThreadLocal.hpp"
 #include "../../security/AccessControlContext.hpp"

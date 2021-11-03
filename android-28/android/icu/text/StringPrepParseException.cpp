@@ -1,3 +1,5 @@
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./StringPrepParseException.hpp"
 
 namespace android::icu::text
@@ -92,40 +94,40 @@ namespace android::icu::text
 	StringPrepParseException::StringPrepParseException(QAndroidJniObject obj) : java::text::ParseException(obj) {}
 	
 	// Constructors
-	StringPrepParseException::StringPrepParseException(jstring arg0, jint arg1)
+	StringPrepParseException::StringPrepParseException(JString arg0, jint arg1)
 		: java::text::ParseException(
 			"android.icu.text.StringPrepParseException",
 			"(Ljava/lang/String;I)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		) {}
-	StringPrepParseException::StringPrepParseException(jstring arg0, jint arg1, jstring arg2, jint arg3)
+	StringPrepParseException::StringPrepParseException(JString arg0, jint arg1, JString arg2, jint arg3)
 		: java::text::ParseException(
 			"android.icu.text.StringPrepParseException",
 			"(Ljava/lang/String;ILjava/lang/String;I)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
-			arg2,
+			arg2.object<jstring>(),
 			arg3
 		) {}
-	StringPrepParseException::StringPrepParseException(jstring arg0, jint arg1, jstring arg2, jint arg3, jint arg4)
+	StringPrepParseException::StringPrepParseException(JString arg0, jint arg1, JString arg2, jint arg3, jint arg4)
 		: java::text::ParseException(
 			"android.icu.text.StringPrepParseException",
 			"(Ljava/lang/String;ILjava/lang/String;II)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
-			arg2,
+			arg2.object<jstring>(),
 			arg3,
 			arg4
 		) {}
 	
 	// Methods
-	jboolean StringPrepParseException::equals(jobject arg0)
+	jboolean StringPrepParseException::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint StringPrepParseException::getError()
@@ -142,12 +144,12 @@ namespace android::icu::text
 			"()I"
 		);
 	}
-	jstring StringPrepParseException::toString()
+	JString StringPrepParseException::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::icu::text
 

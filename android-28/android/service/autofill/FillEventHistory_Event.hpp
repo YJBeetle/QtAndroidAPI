@@ -2,6 +2,8 @@
 
 #include "../../../JObject.hpp"
 
+class JArray;
+class JArray;
 namespace android::os
 {
 	class Bundle;
@@ -10,6 +12,7 @@ namespace android::util
 {
 	class ArraySet;
 }
+class JString;
 namespace java::util
 {
 	class ArrayList;
@@ -36,13 +39,13 @@ namespace android::service::autofill
 		// Methods
 		JObject getChangedFields();
 		android::os::Bundle getClientState();
-		jstring getDatasetId();
+		JString getDatasetId();
 		JObject getFieldsClassification();
 		JObject getIgnoredDatasetIds();
 		JObject getManuallyEnteredField();
 		JObject getSelectedDatasetIds();
 		jint getType();
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::service::autofill
 

@@ -6,6 +6,7 @@ namespace java::io
 {
 	class File;
 }
+class JString;
 namespace java::security
 {
 	class KeyStore;
@@ -31,10 +32,10 @@ namespace java::security
 		// Methods
 		static java::security::KeyStore_Builder newInstance(java::io::File arg0, JObject arg1);
 		static java::security::KeyStore_Builder newInstance(java::security::KeyStore arg0, JObject arg1);
-		static java::security::KeyStore_Builder newInstance(jstring arg0, java::security::Provider arg1, JObject arg2);
-		static java::security::KeyStore_Builder newInstance(jstring arg0, java::security::Provider arg1, java::io::File arg2, JObject arg3);
+		static java::security::KeyStore_Builder newInstance(JString arg0, java::security::Provider arg1, JObject arg2);
+		static java::security::KeyStore_Builder newInstance(JString arg0, java::security::Provider arg1, java::io::File arg2, JObject arg3);
 		java::security::KeyStore getKeyStore();
-		JObject getProtectionParameter(jstring arg0);
+		JObject getProtectionParameter(JString arg0);
 	};
 } // namespace java::security
 

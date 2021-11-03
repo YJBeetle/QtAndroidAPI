@@ -6,6 +6,7 @@ namespace android::content
 {
 	class ComponentName;
 }
+class JString;
 
 namespace android::content::pm
 {
@@ -31,7 +32,7 @@ namespace android::content::pm
 		android::content::pm::LauncherApps_ShortcutQuery setActivity(android::content::ComponentName arg0);
 		android::content::pm::LauncherApps_ShortcutQuery setChangedSince(jlong arg0);
 		android::content::pm::LauncherApps_ShortcutQuery setLocusIds(JObject arg0);
-		android::content::pm::LauncherApps_ShortcutQuery setPackage(jstring arg0);
+		android::content::pm::LauncherApps_ShortcutQuery setPackage(JString arg0);
 		android::content::pm::LauncherApps_ShortcutQuery setQueryFlags(jint arg0);
 		android::content::pm::LauncherApps_ShortcutQuery setShortcutIds(JObject arg0);
 	};

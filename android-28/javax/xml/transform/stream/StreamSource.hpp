@@ -14,6 +14,7 @@ namespace java::io
 {
 	class Reader;
 }
+class JString;
 
 namespace javax::xml::transform::stream
 {
@@ -21,7 +22,7 @@ namespace javax::xml::transform::stream
 	{
 	public:
 		// Fields
-		static jstring FEATURE();
+		static JString FEATURE();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit StreamSource(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
@@ -32,21 +33,21 @@ namespace javax::xml::transform::stream
 		StreamSource(java::io::File arg0);
 		StreamSource(java::io::InputStream arg0);
 		StreamSource(java::io::Reader arg0);
-		StreamSource(jstring arg0);
-		StreamSource(java::io::InputStream arg0, jstring arg1);
-		StreamSource(java::io::Reader arg0, jstring arg1);
+		StreamSource(JString arg0);
+		StreamSource(java::io::InputStream arg0, JString arg1);
+		StreamSource(java::io::Reader arg0, JString arg1);
 		
 		// Methods
 		java::io::InputStream getInputStream();
-		jstring getPublicId();
+		JString getPublicId();
 		java::io::Reader getReader();
-		jstring getSystemId();
+		JString getSystemId();
 		jboolean isEmpty();
 		void setInputStream(java::io::InputStream arg0);
-		void setPublicId(jstring arg0);
+		void setPublicId(JString arg0);
 		void setReader(java::io::Reader arg0);
 		void setSystemId(java::io::File arg0);
-		void setSystemId(jstring arg0);
+		void setSystemId(JString arg0);
 	};
 } // namespace javax::xml::transform::stream
 

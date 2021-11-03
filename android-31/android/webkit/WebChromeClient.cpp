@@ -7,6 +7,7 @@
 #include "./PermissionRequest.hpp"
 #include "./WebChromeClient_FileChooserParams.hpp"
 #include "./WebView.hpp"
+#include "../../JString.hpp"
 #include "./WebChromeClient.hpp"
 
 namespace android::webkit
@@ -62,14 +63,14 @@ namespace android::webkit
 			arg0.object()
 		);
 	}
-	void WebChromeClient::onConsoleMessage(jstring arg0, jint arg1, jstring arg2)
+	void WebChromeClient::onConsoleMessage(JString arg0, jint arg1, JString arg2)
 	{
 		callMethod<void>(
 			"onConsoleMessage",
 			"(Ljava/lang/String;ILjava/lang/String;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
-			arg2
+			arg2.object<jstring>()
 		);
 	}
 	jboolean WebChromeClient::onCreateWindow(android::webkit::WebView arg0, jboolean arg1, jboolean arg2, android::os::Message arg3)
@@ -83,13 +84,13 @@ namespace android::webkit
 			arg3.object()
 		);
 	}
-	void WebChromeClient::onExceededDatabaseQuota(jstring arg0, jstring arg1, jlong arg2, jlong arg3, jlong arg4, JObject arg5)
+	void WebChromeClient::onExceededDatabaseQuota(JString arg0, JString arg1, jlong arg2, jlong arg3, jlong arg4, JObject arg5)
 	{
 		callMethod<void>(
 			"onExceededDatabaseQuota",
 			"(Ljava/lang/String;Ljava/lang/String;JJJLandroid/webkit/WebStorage$QuotaUpdater;)V",
-			arg0,
-			arg1,
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
 			arg2,
 			arg3,
 			arg4,
@@ -103,12 +104,12 @@ namespace android::webkit
 			"()V"
 		);
 	}
-	void WebChromeClient::onGeolocationPermissionsShowPrompt(jstring arg0, JObject arg1)
+	void WebChromeClient::onGeolocationPermissionsShowPrompt(JString arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"onGeolocationPermissionsShowPrompt",
 			"(Ljava/lang/String;Landroid/webkit/GeolocationPermissions$Callback;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
@@ -119,48 +120,48 @@ namespace android::webkit
 			"()V"
 		);
 	}
-	jboolean WebChromeClient::onJsAlert(android::webkit::WebView arg0, jstring arg1, jstring arg2, android::webkit::JsResult arg3)
+	jboolean WebChromeClient::onJsAlert(android::webkit::WebView arg0, JString arg1, JString arg2, android::webkit::JsResult arg3)
 	{
 		return callMethod<jboolean>(
 			"onJsAlert",
 			"(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsResult;)Z",
 			arg0.object(),
-			arg1,
-			arg2,
+			arg1.object<jstring>(),
+			arg2.object<jstring>(),
 			arg3.object()
 		);
 	}
-	jboolean WebChromeClient::onJsBeforeUnload(android::webkit::WebView arg0, jstring arg1, jstring arg2, android::webkit::JsResult arg3)
+	jboolean WebChromeClient::onJsBeforeUnload(android::webkit::WebView arg0, JString arg1, JString arg2, android::webkit::JsResult arg3)
 	{
 		return callMethod<jboolean>(
 			"onJsBeforeUnload",
 			"(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsResult;)Z",
 			arg0.object(),
-			arg1,
-			arg2,
+			arg1.object<jstring>(),
+			arg2.object<jstring>(),
 			arg3.object()
 		);
 	}
-	jboolean WebChromeClient::onJsConfirm(android::webkit::WebView arg0, jstring arg1, jstring arg2, android::webkit::JsResult arg3)
+	jboolean WebChromeClient::onJsConfirm(android::webkit::WebView arg0, JString arg1, JString arg2, android::webkit::JsResult arg3)
 	{
 		return callMethod<jboolean>(
 			"onJsConfirm",
 			"(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsResult;)Z",
 			arg0.object(),
-			arg1,
-			arg2,
+			arg1.object<jstring>(),
+			arg2.object<jstring>(),
 			arg3.object()
 		);
 	}
-	jboolean WebChromeClient::onJsPrompt(android::webkit::WebView arg0, jstring arg1, jstring arg2, jstring arg3, android::webkit::JsPromptResult arg4)
+	jboolean WebChromeClient::onJsPrompt(android::webkit::WebView arg0, JString arg1, JString arg2, JString arg3, android::webkit::JsPromptResult arg4)
 	{
 		return callMethod<jboolean>(
 			"onJsPrompt",
 			"(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsPromptResult;)Z",
 			arg0.object(),
-			arg1,
-			arg2,
-			arg3,
+			arg1.object<jstring>(),
+			arg2.object<jstring>(),
+			arg3.object<jstring>(),
 			arg4.object()
 		);
 	}
@@ -215,22 +216,22 @@ namespace android::webkit
 			arg1.object()
 		);
 	}
-	void WebChromeClient::onReceivedTitle(android::webkit::WebView arg0, jstring arg1)
+	void WebChromeClient::onReceivedTitle(android::webkit::WebView arg0, JString arg1)
 	{
 		callMethod<void>(
 			"onReceivedTitle",
 			"(Landroid/webkit/WebView;Ljava/lang/String;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
-	void WebChromeClient::onReceivedTouchIconUrl(android::webkit::WebView arg0, jstring arg1, jboolean arg2)
+	void WebChromeClient::onReceivedTouchIconUrl(android::webkit::WebView arg0, JString arg1, jboolean arg2)
 	{
 		callMethod<void>(
 			"onReceivedTouchIconUrl",
 			"(Landroid/webkit/WebView;Ljava/lang/String;Z)V",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2
 		);
 	}

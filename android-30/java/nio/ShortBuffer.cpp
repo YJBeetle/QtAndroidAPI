@@ -1,3 +1,6 @@
+#include "../../JShortArray.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./Buffer.hpp"
 #include "./ByteOrder.hpp"
 #include "./ShortBuffer.hpp"
@@ -21,32 +24,32 @@ namespace java::nio
 			arg0
 		);
 	}
-	java::nio::ShortBuffer ShortBuffer::wrap(jshortArray arg0)
+	java::nio::ShortBuffer ShortBuffer::wrap(JShortArray arg0)
 	{
 		return callStaticObjectMethod(
 			"java.nio.ShortBuffer",
 			"wrap",
 			"([S)Ljava/nio/ShortBuffer;",
-			arg0
+			arg0.object<jshortArray>()
 		);
 	}
-	java::nio::ShortBuffer ShortBuffer::wrap(jshortArray arg0, jint arg1, jint arg2)
+	java::nio::ShortBuffer ShortBuffer::wrap(JShortArray arg0, jint arg1, jint arg2)
 	{
 		return callStaticObjectMethod(
 			"java.nio.ShortBuffer",
 			"wrap",
 			"([SII)Ljava/nio/ShortBuffer;",
-			arg0,
+			arg0.object<jshortArray>(),
 			arg1,
 			arg2
 		);
 	}
-	jshortArray ShortBuffer::array()
+	JShortArray ShortBuffer::array()
 	{
 		return callObjectMethod(
 			"array",
 			"()[S"
-		).object<jshortArray>();
+		);
 	}
 	jint ShortBuffer::arrayOffset()
 	{
@@ -76,12 +79,12 @@ namespace java::nio
 			"()Ljava/nio/ShortBuffer;"
 		);
 	}
-	jint ShortBuffer::compareTo(jobject arg0)
+	jint ShortBuffer::compareTo(JObject arg0)
 	{
 		return callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Object;)I",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint ShortBuffer::compareTo(java::nio::ShortBuffer arg0)
@@ -99,12 +102,12 @@ namespace java::nio
 			"()Ljava/nio/ShortBuffer;"
 		);
 	}
-	jboolean ShortBuffer::equals(jobject arg0)
+	jboolean ShortBuffer::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	java::nio::ShortBuffer ShortBuffer::flip()
@@ -114,40 +117,40 @@ namespace java::nio
 			"()Ljava/nio/ShortBuffer;"
 		);
 	}
-	java::nio::ShortBuffer ShortBuffer::get(jshortArray arg0)
+	java::nio::ShortBuffer ShortBuffer::get(JShortArray arg0)
 	{
 		return callObjectMethod(
 			"get",
 			"([S)Ljava/nio/ShortBuffer;",
-			arg0
+			arg0.object<jshortArray>()
 		);
 	}
-	java::nio::ShortBuffer ShortBuffer::get(jint arg0, jshortArray arg1)
+	java::nio::ShortBuffer ShortBuffer::get(jint arg0, JShortArray arg1)
 	{
 		return callObjectMethod(
 			"get",
 			"(I[S)Ljava/nio/ShortBuffer;",
 			arg0,
-			arg1
+			arg1.object<jshortArray>()
 		);
 	}
-	java::nio::ShortBuffer ShortBuffer::get(jshortArray arg0, jint arg1, jint arg2)
+	java::nio::ShortBuffer ShortBuffer::get(JShortArray arg0, jint arg1, jint arg2)
 	{
 		return callObjectMethod(
 			"get",
 			"([SII)Ljava/nio/ShortBuffer;",
-			arg0,
+			arg0.object<jshortArray>(),
 			arg1,
 			arg2
 		);
 	}
-	java::nio::ShortBuffer ShortBuffer::get(jint arg0, jshortArray arg1, jint arg2, jint arg3)
+	java::nio::ShortBuffer ShortBuffer::get(jint arg0, JShortArray arg1, jint arg2, jint arg3)
 	{
 		return callObjectMethod(
 			"get",
 			"(I[SII)Ljava/nio/ShortBuffer;",
 			arg0,
-			arg1,
+			arg1.object<jshortArray>(),
 			arg2,
 			arg3
 		);
@@ -226,12 +229,12 @@ namespace java::nio
 			arg0
 		);
 	}
-	java::nio::ShortBuffer ShortBuffer::put(jshortArray arg0)
+	java::nio::ShortBuffer ShortBuffer::put(JShortArray arg0)
 	{
 		return callObjectMethod(
 			"put",
 			"([S)Ljava/nio/ShortBuffer;",
-			arg0
+			arg0.object<jshortArray>()
 		);
 	}
 	java::nio::ShortBuffer ShortBuffer::put(java::nio::ShortBuffer arg0)
@@ -250,13 +253,13 @@ namespace java::nio
 			arg0
 		);
 	}
-	java::nio::ShortBuffer ShortBuffer::put(jint arg0, jshortArray arg1)
+	java::nio::ShortBuffer ShortBuffer::put(jint arg0, JShortArray arg1)
 	{
 		return callObjectMethod(
 			"put",
 			"(I[S)Ljava/nio/ShortBuffer;",
 			arg0,
-			arg1
+			arg1.object<jshortArray>()
 		);
 	}
 	java::nio::ShortBuffer ShortBuffer::put(jint arg0, jshort arg1)
@@ -268,23 +271,23 @@ namespace java::nio
 			arg1
 		);
 	}
-	java::nio::ShortBuffer ShortBuffer::put(jshortArray arg0, jint arg1, jint arg2)
+	java::nio::ShortBuffer ShortBuffer::put(JShortArray arg0, jint arg1, jint arg2)
 	{
 		return callObjectMethod(
 			"put",
 			"([SII)Ljava/nio/ShortBuffer;",
-			arg0,
+			arg0.object<jshortArray>(),
 			arg1,
 			arg2
 		);
 	}
-	java::nio::ShortBuffer ShortBuffer::put(jint arg0, jshortArray arg1, jint arg2, jint arg3)
+	java::nio::ShortBuffer ShortBuffer::put(jint arg0, JShortArray arg1, jint arg2, jint arg3)
 	{
 		return callObjectMethod(
 			"put",
 			"(I[SII)Ljava/nio/ShortBuffer;",
 			arg0,
-			arg1,
+			arg1.object<jshortArray>(),
 			arg2,
 			arg3
 		);
@@ -330,12 +333,12 @@ namespace java::nio
 			arg1
 		);
 	}
-	jstring ShortBuffer::toString()
+	JString ShortBuffer::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::nio
 

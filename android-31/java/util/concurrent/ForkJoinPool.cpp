@@ -1,4 +1,9 @@
+#include "../../../JArray.hpp"
+#include "../../../JArray.hpp"
+#include "../../../JObject.hpp"
 #include "../../lang/RuntimePermission.hpp"
+#include "../../../JString.hpp"
+#include "../../../JThrowable.hpp"
 #include "../../security/AccessControlContext.hpp"
 #include "./CountedCompleter.hpp"
 #include "./ForkJoinTask.hpp"
@@ -195,13 +200,13 @@ namespace java::util::concurrent
 			"()Z"
 		);
 	}
-	jobject ForkJoinPool::invoke(java::util::concurrent::ForkJoinTask arg0)
+	JObject ForkJoinPool::invoke(java::util::concurrent::ForkJoinTask arg0)
 	{
 		return callObjectMethod(
 			"invoke",
 			"(Ljava/util/concurrent/ForkJoinTask;)Ljava/lang/Object;",
 			arg0.object()
-		).object<jobject>();
+		);
 	}
 	JObject ForkJoinPool::invokeAll(JObject arg0)
 	{
@@ -269,21 +274,21 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	java::util::concurrent::ForkJoinTask ForkJoinPool::submit(JObject arg0, jobject arg1)
+	java::util::concurrent::ForkJoinTask ForkJoinPool::submit(JObject arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"submit",
 			"(Ljava/lang/Runnable;Ljava/lang/Object;)Ljava/util/concurrent/ForkJoinTask;",
 			arg0.object(),
-			arg1
+			arg1.object<jobject>()
 		);
 	}
-	jstring ForkJoinPool::toString()
+	JString ForkJoinPool::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::util::concurrent
 

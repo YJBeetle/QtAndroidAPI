@@ -1,5 +1,7 @@
 #include "../View.hpp"
 #include "./AccessibilityNodeInfo.hpp"
+#include "../../../JString.hpp"
+#include "../../../JString.hpp"
 #include "./AccessibilityRecord.hpp"
 
 namespace android::view::accessibility
@@ -47,26 +49,26 @@ namespace android::view::accessibility
 			"()I"
 		);
 	}
-	jstring AccessibilityRecord::getBeforeText()
+	JString AccessibilityRecord::getBeforeText()
 	{
 		return callObjectMethod(
 			"getBeforeText",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
-	jstring AccessibilityRecord::getClassName()
+	JString AccessibilityRecord::getClassName()
 	{
 		return callObjectMethod(
 			"getClassName",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
-	jstring AccessibilityRecord::getContentDescription()
+	JString AccessibilityRecord::getContentDescription()
 	{
 		return callObjectMethod(
 			"getContentDescription",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	jint AccessibilityRecord::getCurrentItemIndex()
 	{
@@ -223,12 +225,12 @@ namespace android::view::accessibility
 			arg0
 		);
 	}
-	void AccessibilityRecord::setBeforeText(jstring arg0)
+	void AccessibilityRecord::setBeforeText(JString arg0)
 	{
 		callMethod<void>(
 			"setBeforeText",
 			"(Ljava/lang/CharSequence;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void AccessibilityRecord::setChecked(jboolean arg0)
@@ -239,20 +241,20 @@ namespace android::view::accessibility
 			arg0
 		);
 	}
-	void AccessibilityRecord::setClassName(jstring arg0)
+	void AccessibilityRecord::setClassName(JString arg0)
 	{
 		callMethod<void>(
 			"setClassName",
 			"(Ljava/lang/CharSequence;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	void AccessibilityRecord::setContentDescription(jstring arg0)
+	void AccessibilityRecord::setContentDescription(JString arg0)
 	{
 		callMethod<void>(
 			"setContentDescription",
 			"(Ljava/lang/CharSequence;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void AccessibilityRecord::setCurrentItemIndex(jint arg0)
@@ -400,12 +402,12 @@ namespace android::view::accessibility
 			arg0
 		);
 	}
-	jstring AccessibilityRecord::toString()
+	JString AccessibilityRecord::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::view::accessibility
 

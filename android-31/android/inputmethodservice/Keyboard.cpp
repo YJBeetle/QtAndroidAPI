@@ -1,7 +1,9 @@
+#include "../../JIntArray.hpp"
 #include "../content/Context.hpp"
 #include "../content/res/Resources.hpp"
 #include "./Keyboard_Key.hpp"
 #include "./Keyboard_Row.hpp"
+#include "../../JString.hpp"
 #include "./Keyboard.hpp"
 
 namespace android::inputmethodservice
@@ -107,13 +109,13 @@ namespace android::inputmethodservice
 			arg3,
 			arg4
 		) {}
-	Keyboard::Keyboard(android::content::Context arg0, jint arg1, jstring arg2, jint arg3, jint arg4)
+	Keyboard::Keyboard(android::content::Context arg0, jint arg1, JString arg2, jint arg3, jint arg4)
 		: JObject(
 			"android.inputmethodservice.Keyboard",
 			"(Landroid/content/Context;ILjava/lang/CharSequence;II)V",
 			arg0.object(),
 			arg1,
-			arg2,
+			arg2.object<jstring>(),
 			arg3,
 			arg4
 		) {}
@@ -147,14 +149,14 @@ namespace android::inputmethodservice
 			"()Ljava/util/List;"
 		);
 	}
-	jintArray Keyboard::getNearestKeys(jint arg0, jint arg1)
+	JIntArray Keyboard::getNearestKeys(jint arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"getNearestKeys",
 			"(II)[I",
 			arg0,
 			arg1
-		).object<jintArray>();
+		);
 	}
 	jint Keyboard::getShiftKeyIndex()
 	{

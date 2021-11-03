@@ -1,4 +1,6 @@
 #include "../io/ObjectInputStream.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./RoundingMode.hpp"
 #include "./MathContext.hpp"
 
@@ -48,11 +50,11 @@ namespace java::math
 			"(I)V",
 			arg0
 		) {}
-	MathContext::MathContext(jstring arg0)
+	MathContext::MathContext(JString arg0)
 		: JObject(
 			"java.math.MathContext",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	MathContext::MathContext(jint arg0, java::math::RoundingMode arg1)
 		: JObject(
@@ -63,12 +65,12 @@ namespace java::math
 		) {}
 	
 	// Methods
-	jboolean MathContext::equals(jobject arg0)
+	jboolean MathContext::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint MathContext::getPrecision()
@@ -92,12 +94,12 @@ namespace java::math
 			"()I"
 		);
 	}
-	jstring MathContext::toString()
+	JString MathContext::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::math
 

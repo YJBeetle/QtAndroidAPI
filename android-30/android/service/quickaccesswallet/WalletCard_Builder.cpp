@@ -1,6 +1,8 @@
 #include "../../app/PendingIntent.hpp"
 #include "../../graphics/drawable/Icon.hpp"
 #include "./WalletCard.hpp"
+#include "../../../JString.hpp"
+#include "../../../JString.hpp"
 #include "./WalletCard_Builder.hpp"
 
 namespace android::service::quickaccesswallet
@@ -11,13 +13,13 @@ namespace android::service::quickaccesswallet
 	WalletCard_Builder::WalletCard_Builder(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	WalletCard_Builder::WalletCard_Builder(jstring arg0, android::graphics::drawable::Icon arg1, jstring arg2, android::app::PendingIntent arg3)
+	WalletCard_Builder::WalletCard_Builder(JString arg0, android::graphics::drawable::Icon arg1, JString arg2, android::app::PendingIntent arg3)
 		: JObject(
 			"android.service.quickaccesswallet.WalletCard$Builder",
 			"(Ljava/lang/String;Landroid/graphics/drawable/Icon;Ljava/lang/CharSequence;Landroid/app/PendingIntent;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
-			arg2,
+			arg2.object<jstring>(),
 			arg3.object()
 		) {}
 	
@@ -37,12 +39,12 @@ namespace android::service::quickaccesswallet
 			arg0.object()
 		);
 	}
-	android::service::quickaccesswallet::WalletCard_Builder WalletCard_Builder::setCardLabel(jstring arg0)
+	android::service::quickaccesswallet::WalletCard_Builder WalletCard_Builder::setCardLabel(JString arg0)
 	{
 		return callObjectMethod(
 			"setCardLabel",
 			"(Ljava/lang/CharSequence;)Landroid/service/quickaccesswallet/WalletCard$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 } // namespace android::service::quickaccesswallet

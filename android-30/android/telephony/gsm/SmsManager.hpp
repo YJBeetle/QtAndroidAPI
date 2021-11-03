@@ -2,10 +2,12 @@
 
 #include "../../../JObject.hpp"
 
+class JByteArray;
 namespace android::app
 {
 	class PendingIntent;
 }
+class JString;
 namespace java::util
 {
 	class ArrayList;
@@ -35,10 +37,10 @@ namespace android::telephony::gsm
 		
 		// Methods
 		static android::telephony::gsm::SmsManager getDefault();
-		java::util::ArrayList divideMessage(jstring arg0);
-		void sendDataMessage(jstring arg0, jstring arg1, jshort arg2, jbyteArray arg3, android::app::PendingIntent arg4, android::app::PendingIntent arg5);
-		void sendMultipartTextMessage(jstring arg0, jstring arg1, java::util::ArrayList arg2, java::util::ArrayList arg3, java::util::ArrayList arg4);
-		void sendTextMessage(jstring arg0, jstring arg1, jstring arg2, android::app::PendingIntent arg3, android::app::PendingIntent arg4);
+		java::util::ArrayList divideMessage(JString arg0);
+		void sendDataMessage(JString arg0, JString arg1, jshort arg2, JByteArray arg3, android::app::PendingIntent arg4, android::app::PendingIntent arg5);
+		void sendMultipartTextMessage(JString arg0, JString arg1, java::util::ArrayList arg2, java::util::ArrayList arg3, java::util::ArrayList arg4);
+		void sendTextMessage(JString arg0, JString arg1, JString arg2, android::app::PendingIntent arg3, android::app::PendingIntent arg4);
 	};
 } // namespace android::telephony::gsm
 

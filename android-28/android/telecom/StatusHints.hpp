@@ -14,6 +14,8 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
+class JObject;
 
 namespace android::telecom
 {
@@ -28,14 +30,14 @@ namespace android::telecom
 		StatusHints(QAndroidJniObject obj);
 		
 		// Constructors
-		StatusHints(jstring arg0, android::graphics::drawable::Icon arg1, android::os::Bundle arg2);
+		StatusHints(JString arg0, android::graphics::drawable::Icon arg1, android::os::Bundle arg2);
 		
 		// Methods
 		jint describeContents();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		android::os::Bundle getExtras();
 		android::graphics::drawable::Icon getIcon();
-		jstring getLabel();
+		JString getLabel();
 		jint hashCode();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};

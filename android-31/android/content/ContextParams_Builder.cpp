@@ -1,5 +1,6 @@
 #include "./AttributionSource.hpp"
 #include "./ContextParams.hpp"
+#include "../../JString.hpp"
 #include "./ContextParams_Builder.hpp"
 
 namespace android::content
@@ -30,12 +31,12 @@ namespace android::content
 			"()Landroid/content/ContextParams;"
 		);
 	}
-	android::content::ContextParams_Builder ContextParams_Builder::setAttributionTag(jstring arg0)
+	android::content::ContextParams_Builder ContextParams_Builder::setAttributionTag(JString arg0)
 	{
 		return callObjectMethod(
 			"setAttributionTag",
 			"(Ljava/lang/String;)Landroid/content/ContextParams$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::content::ContextParams_Builder ContextParams_Builder::setNextAttributionSource(android::content::AttributionSource arg0)

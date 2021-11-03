@@ -1,16 +1,17 @@
+#include "../../../JCharArray.hpp"
 #include "../../view/KeyEvent.hpp"
 #include "./DialerKeyListener.hpp"
 
 namespace android::text::method
 {
 	// Fields
-	jcharArray DialerKeyListener::CHARACTERS()
+	JCharArray DialerKeyListener::CHARACTERS()
 	{
 		return getStaticObjectField(
 			"android.text.method.DialerKeyListener",
 			"CHARACTERS",
 			"[C"
-		).object<jcharArray>();
+		);
 	}
 	
 	// QAndroidJniObject forward

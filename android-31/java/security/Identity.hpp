@@ -2,6 +2,9 @@
 
 #include "../../JObject.hpp"
 
+class JArray;
+class JObject;
+class JString;
 namespace java::security
 {
 	class IdentityScope;
@@ -23,23 +26,23 @@ namespace java::security
 		Identity(QAndroidJniObject obj);
 		
 		// Constructors
-		Identity(jstring arg0);
-		Identity(jstring arg0, java::security::IdentityScope arg1);
+		Identity(JString arg0);
+		Identity(JString arg0, java::security::IdentityScope arg1);
 		
 		// Methods
 		void addCertificate(JObject arg0);
-		jarray certificates();
-		jboolean equals(jobject arg0);
-		jstring getInfo();
-		jstring getName();
+		JArray certificates();
+		jboolean equals(JObject arg0);
+		JString getInfo();
+		JString getName();
 		JObject getPublicKey();
 		java::security::IdentityScope getScope();
 		jint hashCode();
 		void removeCertificate(JObject arg0);
-		void setInfo(jstring arg0);
+		void setInfo(JString arg0);
 		void setPublicKey(JObject arg0);
-		jstring toString();
-		jstring toString(jboolean arg0);
+		JString toString();
+		JString toString(jboolean arg0);
 	};
 } // namespace java::security
 

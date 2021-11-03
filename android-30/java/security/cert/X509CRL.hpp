@@ -1,8 +1,10 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "./CRL.hpp"
 
+class JByteArray;
+class JObject;
+class JString;
 namespace java::math
 {
 	class BigInteger;
@@ -42,24 +44,24 @@ namespace java::security::cert
 		// Constructors
 		
 		// Methods
-		jboolean equals(jobject arg0);
-		jbyteArray getEncoded();
+		jboolean equals(JObject arg0);
+		JByteArray getEncoded();
 		JObject getIssuerDN();
 		javax::security::auth::x500::X500Principal getIssuerX500Principal();
 		java::util::Date getNextUpdate();
 		java::security::cert::X509CRLEntry getRevokedCertificate(java::math::BigInteger arg0);
 		java::security::cert::X509CRLEntry getRevokedCertificate(java::security::cert::X509Certificate arg0);
 		JObject getRevokedCertificates();
-		jstring getSigAlgName();
-		jstring getSigAlgOID();
-		jbyteArray getSigAlgParams();
-		jbyteArray getSignature();
-		jbyteArray getTBSCertList();
+		JString getSigAlgName();
+		JString getSigAlgOID();
+		JByteArray getSigAlgParams();
+		JByteArray getSignature();
+		JByteArray getTBSCertList();
 		java::util::Date getThisUpdate();
 		jint getVersion();
 		jint hashCode();
 		void verify(JObject arg0);
-		void verify(JObject arg0, jstring arg1);
+		void verify(JObject arg0, JString arg1);
 		void verify(JObject arg0, java::security::Provider arg1);
 	};
 } // namespace java::security::cert

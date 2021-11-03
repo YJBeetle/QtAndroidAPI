@@ -2,10 +2,16 @@
 
 #include "../../JObject.hpp"
 
+class JObjectArray;
+class JArray;
+class JClass;
 namespace java::lang
 {
 	class ClassLoader;
 }
+class JObject;
+class JString;
+class JThrowable;
 namespace java::lang::ref
 {
 	class ReferenceQueue;
@@ -40,21 +46,21 @@ namespace java::util
 		// Methods
 		static void clearCache();
 		static void clearCache(java::lang::ClassLoader arg0);
-		static java::util::ResourceBundle getBundle(jstring arg0);
-		static java::util::ResourceBundle getBundle(jstring arg0, JObject arg1);
-		static java::util::ResourceBundle getBundle(jstring arg0, java::util::Locale arg1);
-		static java::util::ResourceBundle getBundle(jstring arg0, java::util::ResourceBundle_Control arg1);
-		static java::util::ResourceBundle getBundle(jstring arg0, java::util::Locale arg1, java::lang::ClassLoader arg2);
-		static java::util::ResourceBundle getBundle(jstring arg0, java::util::Locale arg1, JObject arg2);
-		static java::util::ResourceBundle getBundle(jstring arg0, java::util::Locale arg1, java::util::ResourceBundle_Control arg2);
-		static java::util::ResourceBundle getBundle(jstring arg0, java::util::Locale arg1, java::lang::ClassLoader arg2, java::util::ResourceBundle_Control arg3);
-		jboolean containsKey(jstring arg0);
-		jstring getBaseBundleName();
+		static java::util::ResourceBundle getBundle(JString arg0);
+		static java::util::ResourceBundle getBundle(JString arg0, JObject arg1);
+		static java::util::ResourceBundle getBundle(JString arg0, java::util::Locale arg1);
+		static java::util::ResourceBundle getBundle(JString arg0, java::util::ResourceBundle_Control arg1);
+		static java::util::ResourceBundle getBundle(JString arg0, java::util::Locale arg1, java::lang::ClassLoader arg2);
+		static java::util::ResourceBundle getBundle(JString arg0, java::util::Locale arg1, JObject arg2);
+		static java::util::ResourceBundle getBundle(JString arg0, java::util::Locale arg1, java::util::ResourceBundle_Control arg2);
+		static java::util::ResourceBundle getBundle(JString arg0, java::util::Locale arg1, java::lang::ClassLoader arg2, java::util::ResourceBundle_Control arg3);
+		jboolean containsKey(JString arg0);
+		JString getBaseBundleName();
 		JObject getKeys();
 		java::util::Locale getLocale();
-		jobject getObject(jstring arg0);
-		jstring getString(jstring arg0);
-		jarray getStringArray(jstring arg0);
+		JObject getObject(JString arg0);
+		JString getString(JString arg0);
+		JArray getStringArray(JString arg0);
 		JObject keySet();
 	};
 } // namespace java::util

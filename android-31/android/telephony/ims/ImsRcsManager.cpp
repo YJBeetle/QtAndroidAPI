@@ -1,17 +1,18 @@
 #include "./RcsUceAdapter.hpp"
 #include "./RegistrationManager_RegistrationCallback.hpp"
+#include "../../../JString.hpp"
 #include "./ImsRcsManager.hpp"
 
 namespace android::telephony::ims
 {
 	// Fields
-	jstring ImsRcsManager::ACTION_SHOW_CAPABILITY_DISCOVERY_OPT_IN()
+	JString ImsRcsManager::ACTION_SHOW_CAPABILITY_DISCOVERY_OPT_IN()
 	{
 		return getStaticObjectField(
 			"android.telephony.ims.ImsRcsManager",
 			"ACTION_SHOW_CAPABILITY_DISCOVERY_OPT_IN",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QAndroidJniObject forward

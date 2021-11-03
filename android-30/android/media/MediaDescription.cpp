@@ -2,6 +2,9 @@
 #include "../net/Uri.hpp"
 #include "../os/Bundle.hpp"
 #include "../os/Parcel.hpp"
+#include "../../JString.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./MediaDescription.hpp"
 
 namespace android::media
@@ -64,13 +67,13 @@ namespace android::media
 			"Landroid/os/Parcelable$Creator;"
 		);
 	}
-	jstring MediaDescription::EXTRA_BT_FOLDER_TYPE()
+	JString MediaDescription::EXTRA_BT_FOLDER_TYPE()
 	{
 		return getStaticObjectField(
 			"android.media.MediaDescription",
 			"EXTRA_BT_FOLDER_TYPE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QAndroidJniObject forward
@@ -86,20 +89,20 @@ namespace android::media
 			"()I"
 		);
 	}
-	jboolean MediaDescription::equals(jobject arg0)
+	jboolean MediaDescription::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jstring MediaDescription::getDescription()
+	JString MediaDescription::getDescription()
 	{
 		return callObjectMethod(
 			"getDescription",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	android::os::Bundle MediaDescription::getExtras()
 	{
@@ -122,12 +125,12 @@ namespace android::media
 			"()Landroid/net/Uri;"
 		);
 	}
-	jstring MediaDescription::getMediaId()
+	JString MediaDescription::getMediaId()
 	{
 		return callObjectMethod(
 			"getMediaId",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::net::Uri MediaDescription::getMediaUri()
 	{
@@ -136,26 +139,26 @@ namespace android::media
 			"()Landroid/net/Uri;"
 		);
 	}
-	jstring MediaDescription::getSubtitle()
+	JString MediaDescription::getSubtitle()
 	{
 		return callObjectMethod(
 			"getSubtitle",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
-	jstring MediaDescription::getTitle()
+	JString MediaDescription::getTitle()
 	{
 		return callObjectMethod(
 			"getTitle",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
-	jstring MediaDescription::toString()
+	JString MediaDescription::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void MediaDescription::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

@@ -1,8 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../../java/lang/Exception.hpp"
-#include "../../java/lang/RuntimeException.hpp"
 #include "../../java/lang/SecurityException.hpp"
 
 namespace android::app
@@ -13,6 +10,7 @@ namespace android::os
 {
 	class Parcel;
 }
+class JThrowable;
 
 namespace android::app
 {
@@ -27,7 +25,7 @@ namespace android::app
 		AuthenticationRequiredException(QAndroidJniObject obj);
 		
 		// Constructors
-		AuthenticationRequiredException(jthrowable arg0, android::app::PendingIntent arg1);
+		AuthenticationRequiredException(JThrowable arg0, android::app::PendingIntent arg1);
 		
 		// Methods
 		jint describeContents();

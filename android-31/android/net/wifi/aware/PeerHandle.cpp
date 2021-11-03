@@ -1,3 +1,4 @@
+#include "../../../../JObject.hpp"
 #include "./PeerHandle.hpp"
 
 namespace android::net::wifi::aware
@@ -10,12 +11,12 @@ namespace android::net::wifi::aware
 	// Constructors
 	
 	// Methods
-	jboolean PeerHandle::equals(jobject arg0)
+	jboolean PeerHandle::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint PeerHandle::hashCode()

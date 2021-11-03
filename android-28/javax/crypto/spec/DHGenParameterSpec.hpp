@@ -2,7 +2,6 @@
 
 #include "../../../JObject.hpp"
 
-
 namespace javax::crypto::spec
 {
 	class DHGenParameterSpec : public JObject

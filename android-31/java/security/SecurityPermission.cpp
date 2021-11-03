@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./SecurityPermission.hpp"
 
 namespace java::security
@@ -8,18 +9,18 @@ namespace java::security
 	SecurityPermission::SecurityPermission(QAndroidJniObject obj) : java::security::BasicPermission(obj) {}
 	
 	// Constructors
-	SecurityPermission::SecurityPermission(jstring arg0)
+	SecurityPermission::SecurityPermission(JString arg0)
 		: java::security::BasicPermission(
 			"java.security.SecurityPermission",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	SecurityPermission::SecurityPermission(jstring arg0, jstring arg1)
+	SecurityPermission::SecurityPermission(JString arg0, JString arg1)
 		: java::security::BasicPermission(
 			"java.security.SecurityPermission",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		) {}
 	
 	// Methods

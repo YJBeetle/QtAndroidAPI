@@ -26,6 +26,8 @@ namespace android::telecom
 {
 	class StatusHints;
 }
+class JObject;
+class JString;
 
 namespace android::telecom
 {
@@ -77,20 +79,20 @@ namespace android::telecom
 		
 		// Methods
 		static jboolean can(jint arg0, jint arg1);
-		static jstring capabilitiesToString(jint arg0);
+		static JString capabilitiesToString(jint arg0);
 		static jboolean hasProperty(jint arg0, jint arg1);
-		static jstring propertiesToString(jint arg0);
+		static JString propertiesToString(jint arg0);
 		jboolean can(jint arg0);
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		android::telecom::PhoneAccountHandle getAccountHandle();
 		jint getCallCapabilities();
 		jint getCallDirection();
 		jint getCallProperties();
-		jstring getCallerDisplayName();
+		JString getCallerDisplayName();
 		jint getCallerDisplayNamePresentation();
 		jint getCallerNumberVerificationStatus();
 		jlong getConnectTimeMillis();
-		jstring getContactDisplayName();
+		JString getContactDisplayName();
 		jlong getCreationTimeMillis();
 		android::telecom::DisconnectCause getDisconnectCause();
 		android::os::Bundle getExtras();
@@ -102,7 +104,7 @@ namespace android::telecom
 		jint getVideoState();
 		jboolean hasProperty(jint arg0);
 		jint hashCode();
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::telecom
 

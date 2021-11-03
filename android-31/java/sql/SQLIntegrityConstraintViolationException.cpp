@@ -1,3 +1,5 @@
+#include "../../JString.hpp"
+#include "../../JThrowable.hpp"
 #include "./SQLIntegrityConstraintViolationException.hpp"
 
 namespace java::sql
@@ -13,56 +15,56 @@ namespace java::sql
 			"java.sql.SQLIntegrityConstraintViolationException",
 			"()V"
 		) {}
-	SQLIntegrityConstraintViolationException::SQLIntegrityConstraintViolationException(jstring arg0)
+	SQLIntegrityConstraintViolationException::SQLIntegrityConstraintViolationException(JString arg0)
 		: java::sql::SQLNonTransientException(
 			"java.sql.SQLIntegrityConstraintViolationException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	SQLIntegrityConstraintViolationException::SQLIntegrityConstraintViolationException(jthrowable arg0)
+	SQLIntegrityConstraintViolationException::SQLIntegrityConstraintViolationException(JThrowable arg0)
 		: java::sql::SQLNonTransientException(
 			"java.sql.SQLIntegrityConstraintViolationException",
 			"(Ljava/lang/Throwable;)V",
-			arg0
+			arg0.object<jthrowable>()
 		) {}
-	SQLIntegrityConstraintViolationException::SQLIntegrityConstraintViolationException(jstring arg0, jstring arg1)
+	SQLIntegrityConstraintViolationException::SQLIntegrityConstraintViolationException(JString arg0, JString arg1)
 		: java::sql::SQLNonTransientException(
 			"java.sql.SQLIntegrityConstraintViolationException",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		) {}
-	SQLIntegrityConstraintViolationException::SQLIntegrityConstraintViolationException(jstring arg0, jthrowable arg1)
+	SQLIntegrityConstraintViolationException::SQLIntegrityConstraintViolationException(JString arg0, JThrowable arg1)
 		: java::sql::SQLNonTransientException(
 			"java.sql.SQLIntegrityConstraintViolationException",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
 		) {}
-	SQLIntegrityConstraintViolationException::SQLIntegrityConstraintViolationException(jstring arg0, jstring arg1, jint arg2)
+	SQLIntegrityConstraintViolationException::SQLIntegrityConstraintViolationException(JString arg0, JString arg1, jint arg2)
 		: java::sql::SQLNonTransientException(
 			"java.sql.SQLIntegrityConstraintViolationException",
 			"(Ljava/lang/String;Ljava/lang/String;I)V",
-			arg0,
-			arg1,
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
 			arg2
 		) {}
-	SQLIntegrityConstraintViolationException::SQLIntegrityConstraintViolationException(jstring arg0, jstring arg1, jthrowable arg2)
+	SQLIntegrityConstraintViolationException::SQLIntegrityConstraintViolationException(JString arg0, JString arg1, JThrowable arg2)
 		: java::sql::SQLNonTransientException(
 			"java.sql.SQLIntegrityConstraintViolationException",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V",
-			arg0,
-			arg1,
-			arg2
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2.object<jthrowable>()
 		) {}
-	SQLIntegrityConstraintViolationException::SQLIntegrityConstraintViolationException(jstring arg0, jstring arg1, jint arg2, jthrowable arg3)
+	SQLIntegrityConstraintViolationException::SQLIntegrityConstraintViolationException(JString arg0, JString arg1, jint arg2, JThrowable arg3)
 		: java::sql::SQLNonTransientException(
 			"java.sql.SQLIntegrityConstraintViolationException",
 			"(Ljava/lang/String;Ljava/lang/String;ILjava/lang/Throwable;)V",
-			arg0,
-			arg1,
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
 			arg2,
-			arg3
+			arg3.object<jthrowable>()
 		) {}
 	
 	// Methods

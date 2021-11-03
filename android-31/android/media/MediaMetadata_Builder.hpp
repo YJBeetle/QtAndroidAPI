@@ -14,6 +14,8 @@ namespace android::media
 {
 	class Rating;
 }
+class JString;
+class JString;
 
 namespace android::media
 {
@@ -32,11 +34,11 @@ namespace android::media
 		
 		// Methods
 		android::media::MediaMetadata build();
-		android::media::MediaMetadata_Builder putBitmap(jstring arg0, android::graphics::Bitmap arg1);
-		android::media::MediaMetadata_Builder putLong(jstring arg0, jlong arg1);
-		android::media::MediaMetadata_Builder putRating(jstring arg0, android::media::Rating arg1);
-		android::media::MediaMetadata_Builder putString(jstring arg0, jstring arg1);
-		android::media::MediaMetadata_Builder putText(jstring arg0, jstring arg1);
+		android::media::MediaMetadata_Builder putBitmap(JString arg0, android::graphics::Bitmap arg1);
+		android::media::MediaMetadata_Builder putLong(JString arg0, jlong arg1);
+		android::media::MediaMetadata_Builder putRating(JString arg0, android::media::Rating arg1);
+		android::media::MediaMetadata_Builder putString(JString arg0, JString arg1);
+		android::media::MediaMetadata_Builder putText(JString arg0, JString arg1);
 		android::media::MediaMetadata_Builder setBitmapDimensionLimit(jint arg0);
 	};
 } // namespace android::media

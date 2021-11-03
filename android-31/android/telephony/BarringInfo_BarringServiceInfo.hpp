@@ -6,6 +6,7 @@ namespace android::os
 {
 	class Parcel;
 }
+class JObject;
 
 namespace android::telephony
 {
@@ -27,7 +28,7 @@ namespace android::telephony
 		
 		// Methods
 		jint describeContents();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint getBarringType();
 		jint getConditionalBarringFactor();
 		jint getConditionalBarringTimeSeconds();

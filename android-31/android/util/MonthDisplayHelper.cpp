@@ -1,3 +1,4 @@
+#include "../../JIntArray.hpp"
 #include "./MonthDisplayHelper.hpp"
 
 namespace android::util
@@ -42,13 +43,13 @@ namespace android::util
 			arg1
 		);
 	}
-	jintArray MonthDisplayHelper::getDigitsForRow(jint arg0)
+	JIntArray MonthDisplayHelper::getDigitsForRow(jint arg0)
 	{
 		return callObjectMethod(
 			"getDigitsForRow",
 			"(I)[I",
 			arg0
-		).object<jintArray>();
+		);
 	}
 	jint MonthDisplayHelper::getFirstDayOfMonth()
 	{

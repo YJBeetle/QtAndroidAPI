@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JString;
 
 namespace android::os
 {
@@ -9,8 +10,8 @@ namespace android::os
 	{
 	public:
 		// Fields
-		static jstring ACTION_CHARGING();
-		static jstring ACTION_DISCHARGING();
+		static JString ACTION_CHARGING();
+		static JString ACTION_DISCHARGING();
 		static jint BATTERY_HEALTH_COLD();
 		static jint BATTERY_HEALTH_DEAD();
 		static jint BATTERY_HEALTH_GOOD();
@@ -32,17 +33,17 @@ namespace android::os
 		static jint BATTERY_STATUS_FULL();
 		static jint BATTERY_STATUS_NOT_CHARGING();
 		static jint BATTERY_STATUS_UNKNOWN();
-		static jstring EXTRA_BATTERY_LOW();
-		static jstring EXTRA_HEALTH();
-		static jstring EXTRA_ICON_SMALL();
-		static jstring EXTRA_LEVEL();
-		static jstring EXTRA_PLUGGED();
-		static jstring EXTRA_PRESENT();
-		static jstring EXTRA_SCALE();
-		static jstring EXTRA_STATUS();
-		static jstring EXTRA_TECHNOLOGY();
-		static jstring EXTRA_TEMPERATURE();
-		static jstring EXTRA_VOLTAGE();
+		static JString EXTRA_BATTERY_LOW();
+		static JString EXTRA_HEALTH();
+		static JString EXTRA_ICON_SMALL();
+		static JString EXTRA_LEVEL();
+		static JString EXTRA_PLUGGED();
+		static JString EXTRA_PRESENT();
+		static JString EXTRA_SCALE();
+		static JString EXTRA_STATUS();
+		static JString EXTRA_TECHNOLOGY();
+		static JString EXTRA_TEMPERATURE();
+		static JString EXTRA_VOLTAGE();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit BatteryManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}

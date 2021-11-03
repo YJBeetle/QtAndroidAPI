@@ -1,3 +1,4 @@
+#include "../../JIntArray.hpp"
 #include "./CombinedVibration.hpp"
 #include "./VibrationAttributes.hpp"
 #include "./Vibrator.hpp"
@@ -35,12 +36,12 @@ namespace android::os
 			arg0
 		);
 	}
-	jintArray VibratorManager::getVibratorIds()
+	JIntArray VibratorManager::getVibratorIds()
 	{
 		return callObjectMethod(
 			"getVibratorIds",
 			"()[I"
-		).object<jintArray>();
+		);
 	}
 	void VibratorManager::vibrate(android::os::CombinedVibration arg0)
 	{

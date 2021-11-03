@@ -1,3 +1,5 @@
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
 #include "../../../java/util/Date.hpp"
 #include "./KeyInfo.hpp"
 
@@ -11,26 +13,26 @@ namespace android::security::keystore
 	// Constructors
 	
 	// Methods
-	jarray KeyInfo::getBlockModes()
+	JArray KeyInfo::getBlockModes()
 	{
 		return callObjectMethod(
 			"getBlockModes",
 			"()[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
-	jarray KeyInfo::getDigests()
+	JArray KeyInfo::getDigests()
 	{
 		return callObjectMethod(
 			"getDigests",
 			"()[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
-	jarray KeyInfo::getEncryptionPaddings()
+	JArray KeyInfo::getEncryptionPaddings()
 	{
 		return callObjectMethod(
 			"getEncryptionPaddings",
 			"()[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
 	jint KeyInfo::getKeySize()
 	{
@@ -60,12 +62,12 @@ namespace android::security::keystore
 			"()Ljava/util/Date;"
 		);
 	}
-	jstring KeyInfo::getKeystoreAlias()
+	JString KeyInfo::getKeystoreAlias()
 	{
 		return callObjectMethod(
 			"getKeystoreAlias",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint KeyInfo::getOrigin()
 	{
@@ -95,12 +97,12 @@ namespace android::security::keystore
 			"()I"
 		);
 	}
-	jarray KeyInfo::getSignaturePaddings()
+	JArray KeyInfo::getSignaturePaddings()
 	{
 		return callObjectMethod(
 			"getSignaturePaddings",
 			"()[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
 	jint KeyInfo::getUserAuthenticationType()
 	{

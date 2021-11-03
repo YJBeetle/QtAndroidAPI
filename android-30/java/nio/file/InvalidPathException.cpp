@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./InvalidPathException.hpp"
 
 namespace java::nio::file
@@ -8,19 +9,19 @@ namespace java::nio::file
 	InvalidPathException::InvalidPathException(QAndroidJniObject obj) : java::lang::IllegalArgumentException(obj) {}
 	
 	// Constructors
-	InvalidPathException::InvalidPathException(jstring arg0, jstring arg1)
+	InvalidPathException::InvalidPathException(JString arg0, JString arg1)
 		: java::lang::IllegalArgumentException(
 			"java.nio.file.InvalidPathException",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		) {}
-	InvalidPathException::InvalidPathException(jstring arg0, jstring arg1, jint arg2)
+	InvalidPathException::InvalidPathException(JString arg0, JString arg1, jint arg2)
 		: java::lang::IllegalArgumentException(
 			"java.nio.file.InvalidPathException",
 			"(Ljava/lang/String;Ljava/lang/String;I)V",
-			arg0,
-			arg1,
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
 			arg2
 		) {}
 	
@@ -32,26 +33,26 @@ namespace java::nio::file
 			"()I"
 		);
 	}
-	jstring InvalidPathException::getInput()
+	JString InvalidPathException::getInput()
 	{
 		return callObjectMethod(
 			"getInput",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring InvalidPathException::getMessage()
+	JString InvalidPathException::getMessage()
 	{
 		return callObjectMethod(
 			"getMessage",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring InvalidPathException::getReason()
+	JString InvalidPathException::getReason()
 	{
 		return callObjectMethod(
 			"getReason",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::nio::file
 

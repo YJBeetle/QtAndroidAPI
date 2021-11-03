@@ -1,3 +1,5 @@
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
 #include "./RowIdLifetime.hpp"
 
 namespace java::sql
@@ -50,22 +52,22 @@ namespace java::sql
 	// Constructors
 	
 	// Methods
-	java::sql::RowIdLifetime RowIdLifetime::valueOf(jstring arg0)
+	java::sql::RowIdLifetime RowIdLifetime::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"java.sql.RowIdLifetime",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/sql/RowIdLifetime;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray RowIdLifetime::values()
+	JArray RowIdLifetime::values()
 	{
 		return callStaticObjectMethod(
 			"java.sql.RowIdLifetime",
 			"values",
 			"()[Ljava/sql/RowIdLifetime;"
-		).object<jarray>();
+		);
 	}
 } // namespace java::sql
 

@@ -1,3 +1,5 @@
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./BaseObj.hpp"
 
 namespace android::renderscript
@@ -17,20 +19,20 @@ namespace android::renderscript
 			"()V"
 		);
 	}
-	jboolean BaseObj::equals(jobject arg0)
+	jboolean BaseObj::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jstring BaseObj::getName()
+	JString BaseObj::getName()
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint BaseObj::hashCode()
 	{
@@ -39,12 +41,12 @@ namespace android::renderscript
 			"()I"
 		);
 	}
-	void BaseObj::setName(jstring arg0)
+	void BaseObj::setName(JString arg0)
 	{
 		callMethod<void>(
 			"setName",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 } // namespace android::renderscript

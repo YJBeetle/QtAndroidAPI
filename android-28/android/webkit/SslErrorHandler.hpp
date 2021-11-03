@@ -1,8 +1,6 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "../os/Handler.hpp"
-
 
 namespace android::webkit
 {

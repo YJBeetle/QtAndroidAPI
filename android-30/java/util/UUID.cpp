@@ -1,3 +1,6 @@
+#include "../../JByteArray.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./UUID.hpp"
 
 namespace java::util
@@ -17,22 +20,22 @@ namespace java::util
 		) {}
 	
 	// Methods
-	java::util::UUID UUID::fromString(jstring arg0)
+	java::util::UUID UUID::fromString(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"java.util.UUID",
 			"fromString",
 			"(Ljava/lang/String;)Ljava/util/UUID;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	java::util::UUID UUID::nameUUIDFromBytes(jbyteArray arg0)
+	java::util::UUID UUID::nameUUIDFromBytes(JByteArray arg0)
 	{
 		return callStaticObjectMethod(
 			"java.util.UUID",
 			"nameUUIDFromBytes",
 			"([B)Ljava/util/UUID;",
-			arg0
+			arg0.object<jbyteArray>()
 		);
 	}
 	java::util::UUID UUID::randomUUID()
@@ -50,12 +53,12 @@ namespace java::util
 			"()I"
 		);
 	}
-	jint UUID::compareTo(jobject arg0)
+	jint UUID::compareTo(JObject arg0)
 	{
 		return callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Object;)I",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint UUID::compareTo(java::util::UUID arg0)
@@ -66,12 +69,12 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	jboolean UUID::equals(jobject arg0)
+	jboolean UUID::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jlong UUID::getLeastSignificantBits()
@@ -109,12 +112,12 @@ namespace java::util
 			"()J"
 		);
 	}
-	jstring UUID::toString()
+	JString UUID::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint UUID::variant()
 	{

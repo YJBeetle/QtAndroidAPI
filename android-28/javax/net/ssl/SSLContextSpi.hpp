@@ -2,6 +2,9 @@
 
 #include "../../../JObject.hpp"
 
+class JArray;
+class JArray;
+class JString;
 namespace java::security
 {
 	class SecureRandom;

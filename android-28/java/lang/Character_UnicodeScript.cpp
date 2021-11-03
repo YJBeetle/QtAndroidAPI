@@ -1,3 +1,6 @@
+#include "../../JIntArray.hpp"
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
 #include "../util/HashMap.hpp"
 #include "./Character_UnicodeScript.hpp"
 
@@ -1267,13 +1270,13 @@ namespace java::lang
 	// Constructors
 	
 	// Methods
-	java::lang::Character_UnicodeScript Character_UnicodeScript::forName(jstring arg0)
+	java::lang::Character_UnicodeScript Character_UnicodeScript::forName(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"java.lang.Character$UnicodeScript",
 			"forName",
 			"(Ljava/lang/String;)Ljava/lang/Character$UnicodeScript;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	java::lang::Character_UnicodeScript Character_UnicodeScript::of(jint arg0)
@@ -1285,22 +1288,22 @@ namespace java::lang
 			arg0
 		);
 	}
-	java::lang::Character_UnicodeScript Character_UnicodeScript::valueOf(jstring arg0)
+	java::lang::Character_UnicodeScript Character_UnicodeScript::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"java.lang.Character$UnicodeScript",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/lang/Character$UnicodeScript;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray Character_UnicodeScript::values()
+	JArray Character_UnicodeScript::values()
 	{
 		return callStaticObjectMethod(
 			"java.lang.Character$UnicodeScript",
 			"values",
 			"()[Ljava/lang/Character$UnicodeScript;"
-		).object<jarray>();
+		);
 	}
 } // namespace java::lang
 

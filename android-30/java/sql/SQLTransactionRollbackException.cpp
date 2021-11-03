@@ -1,3 +1,5 @@
+#include "../../JString.hpp"
+#include "../../JThrowable.hpp"
 #include "./SQLTransactionRollbackException.hpp"
 
 namespace java::sql
@@ -13,56 +15,56 @@ namespace java::sql
 			"java.sql.SQLTransactionRollbackException",
 			"()V"
 		) {}
-	SQLTransactionRollbackException::SQLTransactionRollbackException(jstring arg0)
+	SQLTransactionRollbackException::SQLTransactionRollbackException(JString arg0)
 		: java::sql::SQLTransientException(
 			"java.sql.SQLTransactionRollbackException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	SQLTransactionRollbackException::SQLTransactionRollbackException(jthrowable arg0)
+	SQLTransactionRollbackException::SQLTransactionRollbackException(JThrowable arg0)
 		: java::sql::SQLTransientException(
 			"java.sql.SQLTransactionRollbackException",
 			"(Ljava/lang/Throwable;)V",
-			arg0
+			arg0.object<jthrowable>()
 		) {}
-	SQLTransactionRollbackException::SQLTransactionRollbackException(jstring arg0, jstring arg1)
+	SQLTransactionRollbackException::SQLTransactionRollbackException(JString arg0, JString arg1)
 		: java::sql::SQLTransientException(
 			"java.sql.SQLTransactionRollbackException",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		) {}
-	SQLTransactionRollbackException::SQLTransactionRollbackException(jstring arg0, jthrowable arg1)
+	SQLTransactionRollbackException::SQLTransactionRollbackException(JString arg0, JThrowable arg1)
 		: java::sql::SQLTransientException(
 			"java.sql.SQLTransactionRollbackException",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
 		) {}
-	SQLTransactionRollbackException::SQLTransactionRollbackException(jstring arg0, jstring arg1, jint arg2)
+	SQLTransactionRollbackException::SQLTransactionRollbackException(JString arg0, JString arg1, jint arg2)
 		: java::sql::SQLTransientException(
 			"java.sql.SQLTransactionRollbackException",
 			"(Ljava/lang/String;Ljava/lang/String;I)V",
-			arg0,
-			arg1,
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
 			arg2
 		) {}
-	SQLTransactionRollbackException::SQLTransactionRollbackException(jstring arg0, jstring arg1, jthrowable arg2)
+	SQLTransactionRollbackException::SQLTransactionRollbackException(JString arg0, JString arg1, JThrowable arg2)
 		: java::sql::SQLTransientException(
 			"java.sql.SQLTransactionRollbackException",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V",
-			arg0,
-			arg1,
-			arg2
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2.object<jthrowable>()
 		) {}
-	SQLTransactionRollbackException::SQLTransactionRollbackException(jstring arg0, jstring arg1, jint arg2, jthrowable arg3)
+	SQLTransactionRollbackException::SQLTransactionRollbackException(JString arg0, JString arg1, jint arg2, JThrowable arg3)
 		: java::sql::SQLTransientException(
 			"java.sql.SQLTransactionRollbackException",
 			"(Ljava/lang/String;Ljava/lang/String;ILjava/lang/Throwable;)V",
-			arg0,
-			arg1,
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
 			arg2,
-			arg3
+			arg3.object<jthrowable>()
 		) {}
 	
 	// Methods

@@ -1,3 +1,4 @@
+#include "../../JArray.hpp"
 #include "../hardware/HardwareBuffer.hpp"
 #include "./AudioPresentation.hpp"
 #include "./Image.hpp"
@@ -14,6 +15,7 @@
 #include "../os/Handler.hpp"
 #include "../os/PersistableBundle.hpp"
 #include "../view/Surface.hpp"
+#include "../../JString.hpp"
 #include "../../java/nio/ByteBuffer.hpp"
 #include "./MediaCodec.hpp"
 
@@ -111,61 +113,61 @@ namespace android::media
 			"INFO_TRY_AGAIN_LATER"
 		);
 	}
-	jstring MediaCodec::PARAMETER_KEY_HDR10_PLUS_INFO()
+	JString MediaCodec::PARAMETER_KEY_HDR10_PLUS_INFO()
 	{
 		return getStaticObjectField(
 			"android.media.MediaCodec",
 			"PARAMETER_KEY_HDR10_PLUS_INFO",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring MediaCodec::PARAMETER_KEY_LOW_LATENCY()
+	JString MediaCodec::PARAMETER_KEY_LOW_LATENCY()
 	{
 		return getStaticObjectField(
 			"android.media.MediaCodec",
 			"PARAMETER_KEY_LOW_LATENCY",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring MediaCodec::PARAMETER_KEY_OFFSET_TIME()
+	JString MediaCodec::PARAMETER_KEY_OFFSET_TIME()
 	{
 		return getStaticObjectField(
 			"android.media.MediaCodec",
 			"PARAMETER_KEY_OFFSET_TIME",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring MediaCodec::PARAMETER_KEY_REQUEST_SYNC_FRAME()
+	JString MediaCodec::PARAMETER_KEY_REQUEST_SYNC_FRAME()
 	{
 		return getStaticObjectField(
 			"android.media.MediaCodec",
 			"PARAMETER_KEY_REQUEST_SYNC_FRAME",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring MediaCodec::PARAMETER_KEY_SUSPEND()
+	JString MediaCodec::PARAMETER_KEY_SUSPEND()
 	{
 		return getStaticObjectField(
 			"android.media.MediaCodec",
 			"PARAMETER_KEY_SUSPEND",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring MediaCodec::PARAMETER_KEY_SUSPEND_TIME()
+	JString MediaCodec::PARAMETER_KEY_SUSPEND_TIME()
 	{
 		return getStaticObjectField(
 			"android.media.MediaCodec",
 			"PARAMETER_KEY_SUSPEND_TIME",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring MediaCodec::PARAMETER_KEY_VIDEO_BITRATE()
+	JString MediaCodec::PARAMETER_KEY_VIDEO_BITRATE()
 	{
 		return getStaticObjectField(
 			"android.media.MediaCodec",
 			"PARAMETER_KEY_VIDEO_BITRATE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint MediaCodec::VIDEO_SCALING_MODE_SCALE_TO_FIT()
 	{
@@ -188,31 +190,31 @@ namespace android::media
 	// Constructors
 	
 	// Methods
-	android::media::MediaCodec MediaCodec::createByCodecName(jstring arg0)
+	android::media::MediaCodec MediaCodec::createByCodecName(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.media.MediaCodec",
 			"createByCodecName",
 			"(Ljava/lang/String;)Landroid/media/MediaCodec;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	android::media::MediaCodec MediaCodec::createDecoderByType(jstring arg0)
+	android::media::MediaCodec MediaCodec::createDecoderByType(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.media.MediaCodec",
 			"createDecoderByType",
 			"(Ljava/lang/String;)Landroid/media/MediaCodec;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	android::media::MediaCodec MediaCodec::createEncoderByType(jstring arg0)
+	android::media::MediaCodec MediaCodec::createEncoderByType(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.media.MediaCodec",
 			"createEncoderByType",
 			"(Ljava/lang/String;)Landroid/media/MediaCodec;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::view::Surface MediaCodec::createPersistentInputSurface()
@@ -285,12 +287,12 @@ namespace android::media
 			"()V"
 		);
 	}
-	jstring MediaCodec::getCanonicalName()
+	JString MediaCodec::getCanonicalName()
 	{
 		return callObjectMethod(
 			"getCanonicalName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::media::MediaCodecInfo MediaCodec::getCodecInfo()
 	{
@@ -307,12 +309,12 @@ namespace android::media
 			arg0
 		);
 	}
-	jarray MediaCodec::getInputBuffers()
+	JArray MediaCodec::getInputBuffers()
 	{
 		return callObjectMethod(
 			"getInputBuffers",
 			"()[Ljava/nio/ByteBuffer;"
-		).object<jarray>();
+		);
 	}
 	android::media::MediaFormat MediaCodec::getInputFormat()
 	{
@@ -336,12 +338,12 @@ namespace android::media
 			"()Landroid/os/PersistableBundle;"
 		);
 	}
-	jstring MediaCodec::getName()
+	JString MediaCodec::getName()
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	java::nio::ByteBuffer MediaCodec::getOutputBuffer(jint arg0)
 	{
@@ -351,12 +353,12 @@ namespace android::media
 			arg0
 		);
 	}
-	jarray MediaCodec::getOutputBuffers()
+	JArray MediaCodec::getOutputBuffers()
 	{
 		return callObjectMethod(
 			"getOutputBuffers",
 			"()[Ljava/nio/ByteBuffer;"
-		).object<jarray>();
+		);
 	}
 	android::media::MediaFormat MediaCodec::getOutputFormat()
 	{

@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JString;
 
 namespace android::util
 {
@@ -15,10 +16,10 @@ namespace android::util
 		LogPrinter(QAndroidJniObject obj);
 		
 		// Constructors
-		LogPrinter(jint arg0, jstring arg1);
+		LogPrinter(jint arg0, JString arg1);
 		
 		// Methods
-		void println(jstring arg0);
+		void println(JString arg0);
 	};
 } // namespace android::util
 

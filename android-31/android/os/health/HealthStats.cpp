@@ -1,4 +1,5 @@
 #include "./TimerStat.hpp"
+#include "../../../JString.hpp"
 #include "./HealthStats.hpp"
 
 namespace android::os::health
@@ -11,12 +12,12 @@ namespace android::os::health
 	// Constructors
 	
 	// Methods
-	jstring HealthStats::getDataType()
+	JString HealthStats::getDataType()
 	{
 		return callObjectMethod(
 			"getDataType",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jlong HealthStats::getMeasurement(jint arg0)
 	{

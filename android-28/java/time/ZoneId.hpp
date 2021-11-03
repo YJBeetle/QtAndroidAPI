@@ -6,6 +6,8 @@ namespace java::io
 {
 	class ObjectInputStream;
 }
+class JObject;
+class JString;
 namespace java::time
 {
 	class ZoneOffset;
@@ -40,17 +42,17 @@ namespace java::time
 		// Methods
 		static java::time::ZoneId from(JObject arg0);
 		static JObject getAvailableZoneIds();
-		static java::time::ZoneId of(jstring arg0);
-		static java::time::ZoneId of(jstring arg0, JObject arg1);
-		static java::time::ZoneId ofOffset(jstring arg0, java::time::ZoneOffset arg1);
+		static java::time::ZoneId of(JString arg0);
+		static java::time::ZoneId of(JString arg0, JObject arg1);
+		static java::time::ZoneId ofOffset(JString arg0, java::time::ZoneOffset arg1);
 		static java::time::ZoneId systemDefault();
-		jboolean equals(jobject arg0);
-		jstring getDisplayName(java::time::format::TextStyle arg0, java::util::Locale arg1);
-		jstring getId();
+		jboolean equals(JObject arg0);
+		JString getDisplayName(java::time::format::TextStyle arg0, java::util::Locale arg1);
+		JString getId();
 		java::time::zone::ZoneRules getRules();
 		jint hashCode();
 		java::time::ZoneId normalized();
-		jstring toString();
+		JString toString();
 	};
 } // namespace java::time
 

@@ -18,6 +18,8 @@ namespace android::os
 {
 	class Parcel;
 }
+class JObject;
+class JString;
 
 namespace android::net::wifi
 {
@@ -37,14 +39,14 @@ namespace android::net::wifi
 		
 		// Methods
 		jint describeContents();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		android::net::MacAddress getBssid();
 		android::net::wifi::WifiEnterpriseConfig getEnterpriseConfig();
-		jstring getPassphrase();
+		JString getPassphrase();
 		android::net::wifi::hotspot2::PasspointConfiguration getPasspointConfig();
 		jint getPriority();
 		jint getPriorityGroup();
-		jstring getSsid();
+		JString getSsid();
 		jint getSubscriptionId();
 		jint hashCode();
 		jboolean isAppInteractionRequired();
@@ -56,7 +58,7 @@ namespace android::net::wifi
 		jboolean isMetered();
 		jboolean isUntrusted();
 		jboolean isUserInteractionRequired();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::net::wifi

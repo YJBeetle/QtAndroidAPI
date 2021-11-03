@@ -2,6 +2,9 @@
 
 #include "../../../JObject.hpp"
 
+class JByteArray;
+class JObject;
+class JString;
 namespace java::security
 {
 	class Provider;
@@ -21,14 +24,14 @@ namespace java::security::cert
 		// Constructors
 		
 		// Methods
-		jboolean equals(jobject arg0);
-		jbyteArray getEncoded();
+		jboolean equals(JObject arg0);
+		JByteArray getEncoded();
 		JObject getPublicKey();
-		jstring getType();
+		JString getType();
 		jint hashCode();
-		jstring toString();
+		JString toString();
 		void verify(JObject arg0);
-		void verify(JObject arg0, jstring arg1);
+		void verify(JObject arg0, JString arg1);
 		void verify(JObject arg0, java::security::Provider arg1);
 	};
 } // namespace java::security::cert

@@ -14,6 +14,7 @@ namespace android::widget
 {
 	class RemoteViews;
 }
+class JString;
 
 namespace android::app
 {

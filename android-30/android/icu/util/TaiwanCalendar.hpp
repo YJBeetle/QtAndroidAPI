@@ -1,7 +1,5 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "./Calendar.hpp"
 #include "./GregorianCalendar.hpp"
 
 namespace android::icu::util
@@ -12,6 +10,7 @@ namespace android::icu::util
 {
 	class ULocale;
 }
+class JString;
 namespace java::util
 {
 	class Date;
@@ -46,7 +45,7 @@ namespace android::icu::util
 		TaiwanCalendar(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5);
 		
 		// Methods
-		jstring getType();
+		JString getType();
 	};
 } // namespace android::icu::util
 

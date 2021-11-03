@@ -1,4 +1,5 @@
 #include "../../os/Parcel.hpp"
+#include "../../../JObject.hpp"
 #include "./VcnConfig.hpp"
 
 namespace android::net::vcn
@@ -26,12 +27,12 @@ namespace android::net::vcn
 			"()I"
 		);
 	}
-	jboolean VcnConfig::equals(jobject arg0)
+	jboolean VcnConfig::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	JObject VcnConfig::getGatewayConnectionConfigs()

@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JArray;
 namespace android::content
 {
 	class ComponentName;
@@ -10,6 +11,7 @@ namespace android::content
 {
 	class Context;
 }
+class JString;
 
 namespace android::media
 {
@@ -26,13 +28,13 @@ namespace android::media
 		MediaScannerConnection(android::content::Context arg0, JObject arg1);
 		
 		// Methods
-		static void scanFile(android::content::Context arg0, jarray arg1, jarray arg2, JObject arg3);
+		static void scanFile(android::content::Context arg0, JArray arg1, JArray arg2, JObject arg3);
 		void connect();
 		void disconnect();
 		jboolean isConnected();
 		void onServiceConnected(android::content::ComponentName arg0, JObject arg1);
 		void onServiceDisconnected(android::content::ComponentName arg0);
-		void scanFile(jstring arg0, jstring arg1);
+		void scanFile(JString arg0, JString arg1);
 	};
 } // namespace android::media
 

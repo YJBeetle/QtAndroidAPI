@@ -1,6 +1,13 @@
+#include "../../JArray.hpp"
+#include "../../JArray.hpp"
+#include "../../JArray.hpp"
+#include "../../JClass.hpp"
 #include "./ClassLoader.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./Thread_State.hpp"
 #include "./ThreadGroup.hpp"
+#include "../../JThrowable.hpp"
 #include "./ref/ReferenceQueue.hpp"
 #include "../security/AccessControlContext.hpp"
 #include "./Thread.hpp"
@@ -45,18 +52,18 @@ namespace java::lang
 			"(Ljava/lang/Runnable;)V",
 			arg0.object()
 		) {}
-	Thread::Thread(jstring arg0)
+	Thread::Thread(JString arg0)
 		: JObject(
 			"java.lang.Thread",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	Thread::Thread(JObject arg0, jstring arg1)
+	Thread::Thread(JObject arg0, JString arg1)
 		: JObject(
 			"java.lang.Thread",
 			"(Ljava/lang/Runnable;Ljava/lang/String;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		) {}
 	Thread::Thread(java::lang::ThreadGroup arg0, JObject arg1)
 		: JObject(
@@ -65,37 +72,37 @@ namespace java::lang
 			arg0.object(),
 			arg1.object()
 		) {}
-	Thread::Thread(java::lang::ThreadGroup arg0, jstring arg1)
+	Thread::Thread(java::lang::ThreadGroup arg0, JString arg1)
 		: JObject(
 			"java.lang.Thread",
 			"(Ljava/lang/ThreadGroup;Ljava/lang/String;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		) {}
-	Thread::Thread(java::lang::ThreadGroup arg0, JObject arg1, jstring arg2)
+	Thread::Thread(java::lang::ThreadGroup arg0, JObject arg1, JString arg2)
 		: JObject(
 			"java.lang.Thread",
 			"(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;)V",
 			arg0.object(),
 			arg1.object(),
-			arg2
+			arg2.object<jstring>()
 		) {}
-	Thread::Thread(java::lang::ThreadGroup arg0, JObject arg1, jstring arg2, jlong arg3)
+	Thread::Thread(java::lang::ThreadGroup arg0, JObject arg1, JString arg2, jlong arg3)
 		: JObject(
 			"java.lang.Thread",
 			"(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V",
 			arg0.object(),
 			arg1.object(),
-			arg2,
+			arg2.object<jstring>(),
 			arg3
 		) {}
-	Thread::Thread(java::lang::ThreadGroup arg0, JObject arg1, jstring arg2, jlong arg3, jboolean arg4)
+	Thread::Thread(java::lang::ThreadGroup arg0, JObject arg1, JString arg2, jlong arg3, jboolean arg4)
 		: JObject(
 			"java.lang.Thread",
 			"(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;JZ)V",
 			arg0.object(),
 			arg1.object(),
-			arg2,
+			arg2.object<jstring>(),
 			arg3,
 			arg4
 		) {}
@@ -125,13 +132,13 @@ namespace java::lang
 			"()V"
 		);
 	}
-	jint Thread::enumerate(jarray arg0)
+	jint Thread::enumerate(JArray arg0)
 	{
 		return callStaticMethod<jint>(
 			"java.lang.Thread",
 			"enumerate",
 			"([Ljava/lang/Thread;)I",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
 	JObject Thread::getAllStackTraces()
@@ -150,13 +157,13 @@ namespace java::lang
 			"()Ljava/lang/Thread$UncaughtExceptionHandler;"
 		);
 	}
-	jboolean Thread::holdsLock(jobject arg0)
+	jboolean Thread::holdsLock(JObject arg0)
 	{
 		return callStaticMethod<jboolean>(
 			"java.lang.Thread",
 			"holdsLock",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jboolean Thread::interrupted()
@@ -239,12 +246,12 @@ namespace java::lang
 			"()J"
 		);
 	}
-	jstring Thread::getName()
+	JString Thread::getName()
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint Thread::getPriority()
 	{
@@ -253,12 +260,12 @@ namespace java::lang
 			"()I"
 		);
 	}
-	jarray Thread::getStackTrace()
+	JArray Thread::getStackTrace()
 	{
 		return callObjectMethod(
 			"getStackTrace",
 			"()[Ljava/lang/StackTraceElement;"
-		).object<jarray>();
+		);
 	}
 	java::lang::Thread_State Thread::getState()
 	{
@@ -363,12 +370,12 @@ namespace java::lang
 			arg0
 		);
 	}
-	void Thread::setName(jstring arg0)
+	void Thread::setName(JString arg0)
 	{
 		callMethod<void>(
 			"setName",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void Thread::setPriority(jint arg0)
@@ -408,12 +415,12 @@ namespace java::lang
 			"()V"
 		);
 	}
-	jstring Thread::toString()
+	JString Thread::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::lang
 

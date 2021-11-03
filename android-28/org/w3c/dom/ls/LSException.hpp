@@ -1,9 +1,8 @@
 #pragma once
 
-#include "../../../../JObject.hpp"
-#include "../../../../java/lang/Exception.hpp"
 #include "../../../../java/lang/RuntimeException.hpp"
 
+class JString;
 
 namespace org::w3c::dom::ls
 {
@@ -20,7 +19,7 @@ namespace org::w3c::dom::ls
 		LSException(QAndroidJniObject obj);
 		
 		// Constructors
-		LSException(jshort arg0, jstring arg1);
+		LSException(jshort arg0, JString arg1);
 		
 		// Methods
 	};

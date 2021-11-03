@@ -1,22 +1,25 @@
+#include "../../JByteArray.hpp"
+#include "../../JIntArray.hpp"
 #include "./MediaCodec_CryptoInfo_Pattern.hpp"
+#include "../../JString.hpp"
 #include "./MediaCodec_CryptoInfo.hpp"
 
 namespace android::media
 {
 	// Fields
-	jbyteArray MediaCodec_CryptoInfo::iv()
+	JByteArray MediaCodec_CryptoInfo::iv()
 	{
 		return getObjectField(
 			"iv",
 			"[B"
-		).object<jbyteArray>();
+		);
 	}
-	jbyteArray MediaCodec_CryptoInfo::key()
+	JByteArray MediaCodec_CryptoInfo::key()
 	{
 		return getObjectField(
 			"key",
 			"[B"
-		).object<jbyteArray>();
+		);
 	}
 	jint MediaCodec_CryptoInfo::mode()
 	{
@@ -24,19 +27,19 @@ namespace android::media
 			"mode"
 		);
 	}
-	jintArray MediaCodec_CryptoInfo::numBytesOfClearData()
+	JIntArray MediaCodec_CryptoInfo::numBytesOfClearData()
 	{
 		return getObjectField(
 			"numBytesOfClearData",
 			"[I"
-		).object<jintArray>();
+		);
 	}
-	jintArray MediaCodec_CryptoInfo::numBytesOfEncryptedData()
+	JIntArray MediaCodec_CryptoInfo::numBytesOfEncryptedData()
 	{
 		return getObjectField(
 			"numBytesOfEncryptedData",
 			"[I"
-		).object<jintArray>();
+		);
 	}
 	jint MediaCodec_CryptoInfo::numSubSamples()
 	{
@@ -63,16 +66,16 @@ namespace android::media
 			"()Landroid/media/MediaCodec$CryptoInfo$Pattern;"
 		);
 	}
-	void MediaCodec_CryptoInfo::set(jint arg0, jintArray arg1, jintArray arg2, jbyteArray arg3, jbyteArray arg4, jint arg5)
+	void MediaCodec_CryptoInfo::set(jint arg0, JIntArray arg1, JIntArray arg2, JByteArray arg3, JByteArray arg4, jint arg5)
 	{
 		callMethod<void>(
 			"set",
 			"(I[I[I[B[BI)V",
 			arg0,
-			arg1,
-			arg2,
-			arg3,
-			arg4,
+			arg1.object<jintArray>(),
+			arg2.object<jintArray>(),
+			arg3.object<jbyteArray>(),
+			arg4.object<jbyteArray>(),
 			arg5
 		);
 	}
@@ -84,12 +87,12 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	jstring MediaCodec_CryptoInfo::toString()
+	JString MediaCodec_CryptoInfo::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::media
 

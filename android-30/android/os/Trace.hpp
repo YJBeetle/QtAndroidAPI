@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JString;
 
 namespace android::os
 {
@@ -17,12 +18,12 @@ namespace android::os
 		// Constructors
 		
 		// Methods
-		static void beginAsyncSection(jstring arg0, jint arg1);
-		static void beginSection(jstring arg0);
-		static void endAsyncSection(jstring arg0, jint arg1);
+		static void beginAsyncSection(JString arg0, jint arg1);
+		static void beginSection(JString arg0);
+		static void endAsyncSection(JString arg0, jint arg1);
 		static void endSection();
 		static jboolean isEnabled();
-		static void setCounter(jstring arg0, jlong arg1);
+		static void setCounter(JString arg0, jlong arg1);
 	};
 } // namespace android::os
 

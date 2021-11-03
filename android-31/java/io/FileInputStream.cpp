@@ -1,5 +1,8 @@
+#include "../../JByteArray.hpp"
 #include "./File.hpp"
 #include "./FileDescriptor.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "../nio/channels/FileChannel.hpp"
 #include "./FileInputStream.hpp"
 
@@ -23,11 +26,11 @@ namespace java::io
 			"(Ljava/io/FileDescriptor;)V",
 			arg0.object()
 		) {}
-	FileInputStream::FileInputStream(jstring arg0)
+	FileInputStream::FileInputStream(JString arg0)
 		: java::io::InputStream(
 			"java.io.FileInputStream",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods
@@ -66,20 +69,20 @@ namespace java::io
 			"()I"
 		);
 	}
-	jint FileInputStream::read(jbyteArray arg0)
+	jint FileInputStream::read(JByteArray arg0)
 	{
 		return callMethod<jint>(
 			"read",
 			"([B)I",
-			arg0
+			arg0.object<jbyteArray>()
 		);
 	}
-	jint FileInputStream::read(jbyteArray arg0, jint arg1, jint arg2)
+	jint FileInputStream::read(JByteArray arg0, jint arg1, jint arg2)
 	{
 		return callMethod<jint>(
 			"read",
 			"([BII)I",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1,
 			arg2
 		);

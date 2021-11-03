@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "../content/BroadcastReceiver.hpp"
 
+class JIntArray;
 namespace android::appwidget
 {
 	class AppWidgetManager;
@@ -36,12 +36,12 @@ namespace android::appwidget
 		
 		// Methods
 		void onAppWidgetOptionsChanged(android::content::Context arg0, android::appwidget::AppWidgetManager arg1, jint arg2, android::os::Bundle arg3);
-		void onDeleted(android::content::Context arg0, jintArray arg1);
+		void onDeleted(android::content::Context arg0, JIntArray arg1);
 		void onDisabled(android::content::Context arg0);
 		void onEnabled(android::content::Context arg0);
 		void onReceive(android::content::Context arg0, android::content::Intent arg1);
-		void onRestored(android::content::Context arg0, jintArray arg1, jintArray arg2);
-		void onUpdate(android::content::Context arg0, android::appwidget::AppWidgetManager arg1, jintArray arg2);
+		void onRestored(android::content::Context arg0, JIntArray arg1, JIntArray arg2);
+		void onUpdate(android::content::Context arg0, android::appwidget::AppWidgetManager arg1, JIntArray arg2);
 	};
 } // namespace android::appwidget
 

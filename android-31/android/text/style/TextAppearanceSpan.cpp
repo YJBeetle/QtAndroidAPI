@@ -4,6 +4,7 @@
 #include "../../os/LocaleList.hpp"
 #include "../../os/Parcel.hpp"
 #include "../TextPaint.hpp"
+#include "../../../JString.hpp"
 #include "./TextAppearanceSpan.hpp"
 
 namespace android::text::style
@@ -35,11 +36,11 @@ namespace android::text::style
 			arg1,
 			arg2
 		) {}
-	TextAppearanceSpan::TextAppearanceSpan(jstring arg0, jint arg1, jint arg2, android::content::res::ColorStateList arg3, android::content::res::ColorStateList arg4)
+	TextAppearanceSpan::TextAppearanceSpan(JString arg0, jint arg1, jint arg2, android::content::res::ColorStateList arg3, android::content::res::ColorStateList arg4)
 		: android::text::style::MetricAffectingSpan(
 			"android.text.style.TextAppearanceSpan",
 			"(Ljava/lang/String;IILandroid/content/res/ColorStateList;Landroid/content/res/ColorStateList;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
 			arg2,
 			arg3.object(),
@@ -54,26 +55,26 @@ namespace android::text::style
 			"()I"
 		);
 	}
-	jstring TextAppearanceSpan::getFamily()
+	JString TextAppearanceSpan::getFamily()
 	{
 		return callObjectMethod(
 			"getFamily",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TextAppearanceSpan::getFontFeatureSettings()
+	JString TextAppearanceSpan::getFontFeatureSettings()
 	{
 		return callObjectMethod(
 			"getFontFeatureSettings",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TextAppearanceSpan::getFontVariationSettings()
+	JString TextAppearanceSpan::getFontVariationSettings()
 	{
 		return callObjectMethod(
 			"getFontVariationSettings",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::content::res::ColorStateList TextAppearanceSpan::getLinkTextColor()
 	{

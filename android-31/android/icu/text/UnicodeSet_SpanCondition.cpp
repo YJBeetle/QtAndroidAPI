@@ -1,3 +1,5 @@
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
 #include "./UnicodeSet_SpanCondition.hpp"
 
 namespace android::icu::text
@@ -42,22 +44,22 @@ namespace android::icu::text
 	// Constructors
 	
 	// Methods
-	android::icu::text::UnicodeSet_SpanCondition UnicodeSet_SpanCondition::valueOf(jstring arg0)
+	android::icu::text::UnicodeSet_SpanCondition UnicodeSet_SpanCondition::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.icu.text.UnicodeSet$SpanCondition",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/icu/text/UnicodeSet$SpanCondition;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray UnicodeSet_SpanCondition::values()
+	JArray UnicodeSet_SpanCondition::values()
 	{
 		return callStaticObjectMethod(
 			"android.icu.text.UnicodeSet$SpanCondition",
 			"values",
 			"()[Landroid/icu/text/UnicodeSet$SpanCondition;"
-		).object<jarray>();
+		);
 	}
 } // namespace android::icu::text
 

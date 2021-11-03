@@ -10,6 +10,9 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
+class JObject;
+class JString;
 
 namespace android::media
 {
@@ -27,12 +30,12 @@ namespace android::media
 		
 		// Methods
 		jint describeContents();
-		jboolean equals(jobject arg0);
-		jstring getClientPackageName();
+		jboolean equals(JObject arg0);
+		JString getClientPackageName();
 		android::os::Bundle getControlHints();
 		JObject getDeselectableRoutes();
-		jstring getId();
-		jstring getName();
+		JString getId();
+		JString getName();
 		JObject getSelectableRoutes();
 		JObject getSelectedRoutes();
 		JObject getTransferableRoutes();
@@ -40,7 +43,7 @@ namespace android::media
 		jint getVolumeHandling();
 		jint getVolumeMax();
 		jint hashCode();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::media

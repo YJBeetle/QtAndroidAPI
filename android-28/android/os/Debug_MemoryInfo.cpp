@@ -1,4 +1,5 @@
 #include "./Parcel.hpp"
+#include "../../JString.hpp"
 #include "./Debug_MemoryInfo.hpp"
 
 namespace android::os
@@ -85,13 +86,13 @@ namespace android::os
 			"()I"
 		);
 	}
-	jstring Debug_MemoryInfo::getMemoryStat(jstring arg0)
+	JString Debug_MemoryInfo::getMemoryStat(JString arg0)
 	{
 		return callObjectMethod(
 			"getMemoryStat",
 			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
+			arg0.object<jstring>()
+		);
 	}
 	JObject Debug_MemoryInfo::getMemoryStats()
 	{

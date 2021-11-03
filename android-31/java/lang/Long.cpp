@@ -1,3 +1,8 @@
+#include "../../JByteArray.hpp"
+#include "../../JString.hpp"
+#include "../../JClass.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./invoke/MethodHandles_Lookup.hpp"
 #include "../math/BigInteger.hpp"
 #include "../util/Optional.hpp"
@@ -34,24 +39,24 @@ namespace java::lang
 			"SIZE"
 		);
 	}
-	jclass Long::TYPE()
+	JClass Long::TYPE()
 	{
 		return getStaticObjectField(
 			"java.lang.Long",
 			"TYPE",
 			"Ljava/lang/Class;"
-		).object<jclass>();
+		);
 	}
 	
 	// QAndroidJniObject forward
 	Long::Long(QAndroidJniObject obj) : java::lang::Number(obj) {}
 	
 	// Constructors
-	Long::Long(jstring arg0)
+	Long::Long(JString arg0)
 		: java::lang::Number(
 			"java.lang.Long",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	Long::Long(jlong arg0)
 		: java::lang::Number(
@@ -90,13 +95,13 @@ namespace java::lang
 			arg1
 		);
 	}
-	java::lang::Long Long::decode(jstring arg0)
+	java::lang::Long Long::decode(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"java.lang.Long",
 			"decode",
 			"(Ljava/lang/String;)Ljava/lang/Long;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	jlong Long::divideUnsigned(jlong arg0, jlong arg1)
@@ -109,32 +114,32 @@ namespace java::lang
 			arg1
 		);
 	}
-	java::lang::Long Long::getLong(jstring arg0)
+	java::lang::Long Long::getLong(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"java.lang.Long",
 			"getLong",
 			"(Ljava/lang/String;)Ljava/lang/Long;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	java::lang::Long Long::getLong(jstring arg0, java::lang::Long arg1)
+	java::lang::Long Long::getLong(JString arg0, java::lang::Long arg1)
 	{
 		return callStaticObjectMethod(
 			"java.lang.Long",
 			"getLong",
 			"(Ljava/lang/String;Ljava/lang/Long;)Ljava/lang/Long;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
-	java::lang::Long Long::getLong(jstring arg0, jlong arg1)
+	java::lang::Long Long::getLong(JString arg0, jlong arg1)
 	{
 		return callStaticObjectMethod(
 			"java.lang.Long",
 			"getLong",
 			"(Ljava/lang/String;J)Ljava/lang/Long;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
@@ -203,63 +208,63 @@ namespace java::lang
 			arg0
 		);
 	}
-	jlong Long::parseLong(jstring arg0)
+	jlong Long::parseLong(JString arg0)
 	{
 		return callStaticMethod<jlong>(
 			"java.lang.Long",
 			"parseLong",
 			"(Ljava/lang/String;)J",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jlong Long::parseLong(jstring arg0, jint arg1)
+	jlong Long::parseLong(JString arg0, jint arg1)
 	{
 		return callStaticMethod<jlong>(
 			"java.lang.Long",
 			"parseLong",
 			"(Ljava/lang/String;I)J",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
-	jlong Long::parseLong(jstring arg0, jint arg1, jint arg2, jint arg3)
+	jlong Long::parseLong(JString arg0, jint arg1, jint arg2, jint arg3)
 	{
 		return callStaticMethod<jlong>(
 			"java.lang.Long",
 			"parseLong",
 			"(Ljava/lang/CharSequence;III)J",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
 			arg2,
 			arg3
 		);
 	}
-	jlong Long::parseUnsignedLong(jstring arg0)
+	jlong Long::parseUnsignedLong(JString arg0)
 	{
 		return callStaticMethod<jlong>(
 			"java.lang.Long",
 			"parseUnsignedLong",
 			"(Ljava/lang/String;)J",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jlong Long::parseUnsignedLong(jstring arg0, jint arg1)
+	jlong Long::parseUnsignedLong(JString arg0, jint arg1)
 	{
 		return callStaticMethod<jlong>(
 			"java.lang.Long",
 			"parseUnsignedLong",
 			"(Ljava/lang/String;I)J",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
-	jlong Long::parseUnsignedLong(jstring arg0, jint arg1, jint arg2, jint arg3)
+	jlong Long::parseUnsignedLong(JString arg0, jint arg1, jint arg2, jint arg3)
 	{
 		return callStaticMethod<jlong>(
 			"java.lang.Long",
 			"parseUnsignedLong",
 			"(Ljava/lang/CharSequence;III)J",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
 			arg2,
 			arg3
@@ -332,43 +337,43 @@ namespace java::lang
 			arg1
 		);
 	}
-	jstring Long::toBinaryString(jlong arg0)
+	JString Long::toBinaryString(jlong arg0)
 	{
 		return callStaticObjectMethod(
 			"java.lang.Long",
 			"toBinaryString",
 			"(J)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
-	jstring Long::toHexString(jlong arg0)
+	JString Long::toHexString(jlong arg0)
 	{
 		return callStaticObjectMethod(
 			"java.lang.Long",
 			"toHexString",
 			"(J)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
-	jstring Long::toOctalString(jlong arg0)
+	JString Long::toOctalString(jlong arg0)
 	{
 		return callStaticObjectMethod(
 			"java.lang.Long",
 			"toOctalString",
 			"(J)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
-	jstring Long::toString(jlong arg0)
+	JString Long::toString(jlong arg0)
 	{
 		return callStaticObjectMethod(
 			"java.lang.Long",
 			"toString",
 			"(J)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
-	jstring Long::toString(jlong arg0, jint arg1)
+	JString Long::toString(jlong arg0, jint arg1)
 	{
 		return callStaticObjectMethod(
 			"java.lang.Long",
@@ -376,18 +381,18 @@ namespace java::lang
 			"(JI)Ljava/lang/String;",
 			arg0,
 			arg1
-		).object<jstring>();
+		);
 	}
-	jstring Long::toUnsignedString(jlong arg0)
+	JString Long::toUnsignedString(jlong arg0)
 	{
 		return callStaticObjectMethod(
 			"java.lang.Long",
 			"toUnsignedString",
 			"(J)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
-	jstring Long::toUnsignedString(jlong arg0, jint arg1)
+	JString Long::toUnsignedString(jlong arg0, jint arg1)
 	{
 		return callStaticObjectMethod(
 			"java.lang.Long",
@@ -395,15 +400,15 @@ namespace java::lang
 			"(JI)Ljava/lang/String;",
 			arg0,
 			arg1
-		).object<jstring>();
+		);
 	}
-	java::lang::Long Long::valueOf(jstring arg0)
+	java::lang::Long Long::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"java.lang.Long",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/lang/Long;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	java::lang::Long Long::valueOf(jlong arg0)
@@ -415,13 +420,13 @@ namespace java::lang
 			arg0
 		);
 	}
-	java::lang::Long Long::valueOf(jstring arg0, jint arg1)
+	java::lang::Long Long::valueOf(JString arg0, jint arg1)
 	{
 		return callStaticObjectMethod(
 			"java.lang.Long",
 			"valueOf",
 			"(Ljava/lang/String;I)Ljava/lang/Long;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
@@ -440,12 +445,12 @@ namespace java::lang
 			arg0.object()
 		);
 	}
-	jint Long::compareTo(jobject arg0)
+	jint Long::compareTo(JObject arg0)
 	{
 		return callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Object;)I",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	java::util::Optional Long::describeConstable()
@@ -462,12 +467,12 @@ namespace java::lang
 			"()D"
 		);
 	}
-	jboolean Long::equals(jobject arg0)
+	jboolean Long::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jfloat Long::floatValue()
@@ -513,12 +518,12 @@ namespace java::lang
 			"()S"
 		);
 	}
-	jstring Long::toString()
+	JString Long::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::lang
 

@@ -1,3 +1,4 @@
+#include "../../JArray.hpp"
 #include "../content/ContentResolver.hpp"
 #include "../net/Uri.hpp"
 #include "./CalendarContract_EventDays.hpp"
@@ -20,7 +21,7 @@ namespace android::provider
 	// Constructors
 	
 	// Methods
-	JObject CalendarContract_EventDays::query(android::content::ContentResolver arg0, jint arg1, jint arg2, jarray arg3)
+	JObject CalendarContract_EventDays::query(android::content::ContentResolver arg0, jint arg1, jint arg2, JArray arg3)
 	{
 		return callStaticObjectMethod(
 			"android.provider.CalendarContract$EventDays",
@@ -29,7 +30,7 @@ namespace android::provider
 			arg0.object(),
 			arg1,
 			arg2,
-			arg3
+			arg3.object<jarray>()
 		);
 	}
 } // namespace android::provider

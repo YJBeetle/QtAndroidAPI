@@ -2,6 +2,9 @@
 
 #include "../../../JObject.hpp"
 
+class JIntArray;
+class JArray;
+class JBooleanArray;
 namespace android::icu::util
 {
 	class TimeZone_SystemTimeZoneType;
@@ -14,6 +17,8 @@ namespace java::lang
 {
 	class Integer;
 }
+class JObject;
+class JString;
 namespace java::util
 {
 	class Date;
@@ -41,7 +46,7 @@ namespace android::icu::util
 		static jint TIMEZONE_ICU();
 		static jint TIMEZONE_JDK();
 		static android::icu::util::TimeZone UNKNOWN_ZONE();
-		static jstring UNKNOWN_ZONE_ID();
+		static JString UNKNOWN_ZONE_ID();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit TimeZone(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
@@ -51,44 +56,44 @@ namespace android::icu::util
 		TimeZone();
 		
 		// Methods
-		static jint countEquivalentIDs(jstring arg0);
-		static jarray getAvailableIDs();
-		static jarray getAvailableIDs(jint arg0);
-		static jarray getAvailableIDs(jstring arg0);
-		static JObject getAvailableIDs(android::icu::util::TimeZone_SystemTimeZoneType arg0, jstring arg1, java::lang::Integer arg2);
-		static jstring getCanonicalID(jstring arg0);
-		static jstring getCanonicalID(jstring arg0, jbooleanArray arg1);
+		static jint countEquivalentIDs(JString arg0);
+		static JArray getAvailableIDs();
+		static JArray getAvailableIDs(jint arg0);
+		static JArray getAvailableIDs(JString arg0);
+		static JObject getAvailableIDs(android::icu::util::TimeZone_SystemTimeZoneType arg0, JString arg1, java::lang::Integer arg2);
+		static JString getCanonicalID(JString arg0);
+		static JString getCanonicalID(JString arg0, JBooleanArray arg1);
 		static android::icu::util::TimeZone getDefault();
-		static jstring getEquivalentID(jstring arg0, jint arg1);
-		static android::icu::util::TimeZone getFrozenTimeZone(jstring arg0);
-		static jstring getIDForWindowsID(jstring arg0, jstring arg1);
-		static jstring getRegion(jstring arg0);
-		static jstring getTZDataVersion();
-		static android::icu::util::TimeZone getTimeZone(jstring arg0);
-		static android::icu::util::TimeZone getTimeZone(jstring arg0, jint arg1);
-		static jstring getWindowsID(jstring arg0);
-		jobject clone();
+		static JString getEquivalentID(JString arg0, jint arg1);
+		static android::icu::util::TimeZone getFrozenTimeZone(JString arg0);
+		static JString getIDForWindowsID(JString arg0, JString arg1);
+		static JString getRegion(JString arg0);
+		static JString getTZDataVersion();
+		static android::icu::util::TimeZone getTimeZone(JString arg0);
+		static android::icu::util::TimeZone getTimeZone(JString arg0, jint arg1);
+		static JString getWindowsID(JString arg0);
+		JObject clone();
 		android::icu::util::TimeZone cloneAsThawed();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		android::icu::util::TimeZone freeze();
 		jint getDSTSavings();
-		jstring getDisplayName();
-		jstring getDisplayName(android::icu::util::ULocale arg0);
-		jstring getDisplayName(java::util::Locale arg0);
-		jstring getDisplayName(jboolean arg0, jint arg1);
-		jstring getDisplayName(jboolean arg0, jint arg1, android::icu::util::ULocale arg2);
-		jstring getDisplayName(jboolean arg0, jint arg1, java::util::Locale arg2);
-		jstring getID();
+		JString getDisplayName();
+		JString getDisplayName(android::icu::util::ULocale arg0);
+		JString getDisplayName(java::util::Locale arg0);
+		JString getDisplayName(jboolean arg0, jint arg1);
+		JString getDisplayName(jboolean arg0, jint arg1, android::icu::util::ULocale arg2);
+		JString getDisplayName(jboolean arg0, jint arg1, java::util::Locale arg2);
+		JString getID();
 		jint getOffset(jlong arg0);
 		jint getOffset(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5);
-		void getOffset(jlong arg0, jboolean arg1, jintArray arg2);
+		void getOffset(jlong arg0, jboolean arg1, JIntArray arg2);
 		jint getRawOffset();
 		jboolean hasSameRules(android::icu::util::TimeZone arg0);
 		jint hashCode();
 		jboolean inDaylightTime(java::util::Date arg0);
 		jboolean isFrozen();
 		jboolean observesDaylightTime();
-		void setID(jstring arg0);
+		void setID(JString arg0);
 		void setRawOffset(jint arg0);
 		jboolean useDaylightTime();
 	};

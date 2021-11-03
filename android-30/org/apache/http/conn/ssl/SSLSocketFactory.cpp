@@ -1,3 +1,4 @@
+#include "../../../../../JString.hpp"
 #include "../../../../../java/net/InetAddress.hpp"
 #include "../../../../../java/net/Socket.hpp"
 #include "../../../../../java/security/KeyStore.hpp"
@@ -23,21 +24,21 @@ namespace org::apache::http::conn::ssl
 			"Lorg/apache/http/conn/ssl/X509HostnameVerifier;"
 		);
 	}
-	jstring SSLSocketFactory::SSL()
+	JString SSLSocketFactory::SSL()
 	{
 		return getStaticObjectField(
 			"org.apache.http.conn.ssl.SSLSocketFactory",
 			"SSL",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring SSLSocketFactory::SSLV2()
+	JString SSLSocketFactory::SSLV2()
 	{
 		return getStaticObjectField(
 			"org.apache.http.conn.ssl.SSLSocketFactory",
 			"SSLV2",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	JObject SSLSocketFactory::STRICT_HOSTNAME_VERIFIER()
 	{
@@ -47,13 +48,13 @@ namespace org::apache::http::conn::ssl
 			"Lorg/apache/http/conn/ssl/X509HostnameVerifier;"
 		);
 	}
-	jstring SSLSocketFactory::TLS()
+	JString SSLSocketFactory::TLS()
 	{
 		return getStaticObjectField(
 			"org.apache.http.conn.ssl.SSLSocketFactory",
 			"TLS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QAndroidJniObject forward
@@ -66,28 +67,28 @@ namespace org::apache::http::conn::ssl
 			"(Ljava/security/KeyStore;)V",
 			arg0.object()
 		) {}
-	SSLSocketFactory::SSLSocketFactory(java::security::KeyStore arg0, jstring arg1)
+	SSLSocketFactory::SSLSocketFactory(java::security::KeyStore arg0, JString arg1)
 		: JObject(
 			"org.apache.http.conn.ssl.SSLSocketFactory",
 			"(Ljava/security/KeyStore;Ljava/lang/String;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		) {}
-	SSLSocketFactory::SSLSocketFactory(java::security::KeyStore arg0, jstring arg1, java::security::KeyStore arg2)
+	SSLSocketFactory::SSLSocketFactory(java::security::KeyStore arg0, JString arg1, java::security::KeyStore arg2)
 		: JObject(
 			"org.apache.http.conn.ssl.SSLSocketFactory",
 			"(Ljava/security/KeyStore;Ljava/lang/String;Ljava/security/KeyStore;)V",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2.object()
 		) {}
-	SSLSocketFactory::SSLSocketFactory(jstring arg0, java::security::KeyStore arg1, jstring arg2, java::security::KeyStore arg3, java::security::SecureRandom arg4, JObject arg5)
+	SSLSocketFactory::SSLSocketFactory(JString arg0, java::security::KeyStore arg1, JString arg2, java::security::KeyStore arg3, java::security::SecureRandom arg4, JObject arg5)
 		: JObject(
 			"org.apache.http.conn.ssl.SSLSocketFactory",
 			"(Ljava/lang/String;Ljava/security/KeyStore;Ljava/lang/String;Ljava/security/KeyStore;Ljava/security/SecureRandom;Lorg/apache/http/conn/scheme/HostNameResolver;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
-			arg2,
+			arg2.object<jstring>(),
 			arg3.object(),
 			arg4.object(),
 			arg5.object()
@@ -102,13 +103,13 @@ namespace org::apache::http::conn::ssl
 			"()Lorg/apache/http/conn/ssl/SSLSocketFactory;"
 		);
 	}
-	java::net::Socket SSLSocketFactory::connectSocket(java::net::Socket arg0, jstring arg1, jint arg2, java::net::InetAddress arg3, jint arg4, JObject arg5)
+	java::net::Socket SSLSocketFactory::connectSocket(java::net::Socket arg0, JString arg1, jint arg2, java::net::InetAddress arg3, jint arg4, JObject arg5)
 	{
 		return callObjectMethod(
 			"connectSocket",
 			"(Ljava/net/Socket;Ljava/lang/String;ILjava/net/InetAddress;ILorg/apache/http/params/HttpParams;)Ljava/net/Socket;",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2,
 			arg3.object(),
 			arg4,
@@ -122,13 +123,13 @@ namespace org::apache::http::conn::ssl
 			"()Ljava/net/Socket;"
 		);
 	}
-	java::net::Socket SSLSocketFactory::createSocket(java::net::Socket arg0, jstring arg1, jint arg2, jboolean arg3)
+	java::net::Socket SSLSocketFactory::createSocket(java::net::Socket arg0, JString arg1, jint arg2, jboolean arg3)
 	{
 		return callObjectMethod(
 			"createSocket",
 			"(Ljava/net/Socket;Ljava/lang/String;IZ)Ljava/net/Socket;",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2,
 			arg3
 		);

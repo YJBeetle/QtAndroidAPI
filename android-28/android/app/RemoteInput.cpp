@@ -1,6 +1,10 @@
+#include "../../JArray.hpp"
+#include "../../JArray.hpp"
 #include "../content/Intent.hpp"
 #include "../os/Bundle.hpp"
 #include "../os/Parcel.hpp"
+#include "../../JString.hpp"
+#include "../../JString.hpp"
 #include "./RemoteInput.hpp"
 
 namespace android::app
@@ -14,21 +18,21 @@ namespace android::app
 			"Landroid/os/Parcelable$Creator;"
 		);
 	}
-	jstring RemoteInput::EXTRA_RESULTS_DATA()
+	JString RemoteInput::EXTRA_RESULTS_DATA()
 	{
 		return getStaticObjectField(
 			"android.app.RemoteInput",
 			"EXTRA_RESULTS_DATA",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring RemoteInput::RESULTS_CLIP_LABEL()
+	JString RemoteInput::RESULTS_CLIP_LABEL()
 	{
 		return getStaticObjectField(
 			"android.app.RemoteInput",
 			"RESULTS_CLIP_LABEL",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint RemoteInput::SOURCE_CHOICE()
 	{
@@ -62,25 +66,25 @@ namespace android::app
 			arg2.object()
 		);
 	}
-	void RemoteInput::addResultsToIntent(jarray arg0, android::content::Intent arg1, android::os::Bundle arg2)
+	void RemoteInput::addResultsToIntent(JArray arg0, android::content::Intent arg1, android::os::Bundle arg2)
 	{
 		callStaticMethod<void>(
 			"android.app.RemoteInput",
 			"addResultsToIntent",
 			"([Landroid/app/RemoteInput;Landroid/content/Intent;Landroid/os/Bundle;)V",
-			arg0,
+			arg0.object<jarray>(),
 			arg1.object(),
 			arg2.object()
 		);
 	}
-	JObject RemoteInput::getDataResultsFromIntent(android::content::Intent arg0, jstring arg1)
+	JObject RemoteInput::getDataResultsFromIntent(android::content::Intent arg0, JString arg1)
 	{
 		return callStaticObjectMethod(
 			"android.app.RemoteInput",
 			"getDataResultsFromIntent",
 			"(Landroid/content/Intent;Ljava/lang/String;)Ljava/util/Map;",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
 	android::os::Bundle RemoteInput::getResultsFromIntent(android::content::Intent arg0)
@@ -132,12 +136,12 @@ namespace android::app
 			"()Ljava/util/Set;"
 		);
 	}
-	jarray RemoteInput::getChoices()
+	JArray RemoteInput::getChoices()
 	{
 		return callObjectMethod(
 			"getChoices",
 			"()[Ljava/lang/CharSequence;"
-		).object<jarray>();
+		);
 	}
 	android::os::Bundle RemoteInput::getExtras()
 	{
@@ -146,19 +150,19 @@ namespace android::app
 			"()Landroid/os/Bundle;"
 		);
 	}
-	jstring RemoteInput::getLabel()
+	JString RemoteInput::getLabel()
 	{
 		return callObjectMethod(
 			"getLabel",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
-	jstring RemoteInput::getResultKey()
+	JString RemoteInput::getResultKey()
 	{
 		return callObjectMethod(
 			"getResultKey",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jboolean RemoteInput::isDataOnly()
 	{

@@ -1,3 +1,5 @@
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./OptionalLong.hpp"
 
 namespace java::util
@@ -27,12 +29,12 @@ namespace java::util
 			arg0
 		);
 	}
-	jboolean OptionalLong::equals(jobject arg0)
+	jboolean OptionalLong::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jlong OptionalLong::getAsLong()
@@ -118,12 +120,12 @@ namespace java::util
 			"()Ljava/util/stream/LongStream;"
 		);
 	}
-	jstring OptionalLong::toString()
+	JString OptionalLong::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::util
 

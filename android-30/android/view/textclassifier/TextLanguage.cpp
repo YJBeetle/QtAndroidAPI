@@ -1,6 +1,7 @@
 #include "../../icu/util/ULocale.hpp"
 #include "../../os/Bundle.hpp"
 #include "../../os/Parcel.hpp"
+#include "../../../JString.hpp"
 #include "./TextLanguage.hpp"
 
 namespace android::view::textclassifier
@@ -43,12 +44,12 @@ namespace android::view::textclassifier
 			"()Landroid/os/Bundle;"
 		);
 	}
-	jstring TextLanguage::getId()
+	JString TextLanguage::getId()
 	{
 		return callObjectMethod(
 			"getId",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::icu::util::ULocale TextLanguage::getLocale(jint arg0)
 	{
@@ -65,12 +66,12 @@ namespace android::view::textclassifier
 			"()I"
 		);
 	}
-	jstring TextLanguage::toString()
+	JString TextLanguage::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void TextLanguage::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

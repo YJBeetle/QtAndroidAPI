@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JString;
 
 namespace android::util
 {
@@ -19,7 +20,7 @@ namespace android::util
 		
 		// Methods
 		void close();
-		void open(jstring arg0);
+		void open(JString arg0);
 		void warnIfOpen();
 	};
 } // namespace android::util

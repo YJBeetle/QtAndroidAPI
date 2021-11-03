@@ -6,4 +6,5 @@ public:
     template<typename ...Ts>
     explicit JLongArray(const char *className, const char *sig, Ts...agv) : JArray(className, sig, std::forward<Ts>(agv)...) {}
     JLongArray(QAndroidJniObject obj);
+    
 };

@@ -6,6 +6,7 @@ namespace android::net::ipsec::ike
 {
 	class IkeSessionConnectionInfo;
 }
+class JString;
 
 namespace android::net::ipsec::ike
 {
@@ -24,7 +25,7 @@ namespace android::net::ipsec::ike
 		
 		// Methods
 		android::net::ipsec::ike::IkeSessionConnectionInfo getIkeSessionConnectionInfo();
-		jstring getRemoteApplicationVersion();
+		JString getRemoteApplicationVersion();
 		JObject getRemoteVendorIds();
 		jboolean isIkeExtensionEnabled(jint arg0);
 	};

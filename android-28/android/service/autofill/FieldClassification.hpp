@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JString;
 namespace java::util
 {
 	class ArrayList;
@@ -22,7 +23,7 @@ namespace android::service::autofill
 		
 		// Methods
 		JObject getMatches();
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::service::autofill
 

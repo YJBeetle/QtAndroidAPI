@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JIntArray;
+class JArray;
 namespace android::webkit
 {
 	class TracingConfig;
@@ -22,8 +24,8 @@ namespace android::webkit
 		TracingConfig_Builder();
 		
 		// Methods
-		android::webkit::TracingConfig_Builder addCategories(jintArray arg0);
-		android::webkit::TracingConfig_Builder addCategories(jarray arg0);
+		android::webkit::TracingConfig_Builder addCategories(JIntArray arg0);
+		android::webkit::TracingConfig_Builder addCategories(JArray arg0);
 		android::webkit::TracingConfig_Builder addCategories(JObject arg0);
 		android::webkit::TracingConfig build();
 		android::webkit::TracingConfig_Builder setTracingMode(jint arg0);

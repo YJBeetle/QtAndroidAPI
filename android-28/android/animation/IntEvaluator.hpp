@@ -6,6 +6,7 @@ namespace java::lang
 {
 	class Integer;
 }
+class JObject;
 
 namespace android::animation
 {
@@ -23,7 +24,7 @@ namespace android::animation
 		
 		// Methods
 		java::lang::Integer evaluate(jfloat arg0, java::lang::Integer arg1, java::lang::Integer arg2);
-		jobject evaluate(jfloat arg0, jobject arg1, jobject arg2);
+		JObject evaluate(jfloat arg0, JObject arg1, JObject arg2);
 	};
 } // namespace android::animation
 

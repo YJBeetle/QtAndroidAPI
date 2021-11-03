@@ -1,4 +1,5 @@
 #include "./AppSearchSchema_BytesPropertyConfig.hpp"
+#include "../../../JString.hpp"
 #include "./AppSearchSchema_BytesPropertyConfig_Builder.hpp"
 
 namespace android::app::appsearch
@@ -9,11 +10,11 @@ namespace android::app::appsearch
 	AppSearchSchema_BytesPropertyConfig_Builder::AppSearchSchema_BytesPropertyConfig_Builder(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	AppSearchSchema_BytesPropertyConfig_Builder::AppSearchSchema_BytesPropertyConfig_Builder(jstring arg0)
+	AppSearchSchema_BytesPropertyConfig_Builder::AppSearchSchema_BytesPropertyConfig_Builder(JString arg0)
 		: JObject(
 			"android.app.appsearch.AppSearchSchema$BytesPropertyConfig$Builder",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

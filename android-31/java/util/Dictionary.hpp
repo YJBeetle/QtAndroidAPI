@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JObject;
 
 namespace java::util
 {
@@ -19,11 +20,11 @@ namespace java::util
 		
 		// Methods
 		JObject elements();
-		jobject get(jobject arg0);
+		JObject get(JObject arg0);
 		jboolean isEmpty();
 		JObject keys();
-		jobject put(jobject arg0, jobject arg1);
-		jobject remove(jobject arg0);
+		JObject put(JObject arg0, JObject arg1);
+		JObject remove(JObject arg0);
 		jint size();
 	};
 } // namespace java::util

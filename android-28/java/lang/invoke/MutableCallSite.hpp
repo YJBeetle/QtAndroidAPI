@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "./CallSite.hpp"
 
+class JArray;
 namespace java::lang::invoke
 {
 	class MethodHandle;
@@ -32,7 +32,7 @@ namespace java::lang::invoke
 		MutableCallSite(java::lang::invoke::MethodType arg0);
 		
 		// Methods
-		static void syncAll(jarray arg0);
+		static void syncAll(JArray arg0);
 		java::lang::invoke::MethodHandle dynamicInvoker();
 		java::lang::invoke::MethodHandle getTarget();
 		void setTarget(java::lang::invoke::MethodHandle arg0);

@@ -1,7 +1,9 @@
+#include "../../JIntArray.hpp"
 #include "./Layout_Alignment.hpp"
 #include "./StaticLayout.hpp"
 #include "./TextPaint.hpp"
 #include "./TextUtils_TruncateAt.hpp"
+#include "../../JString.hpp"
 #include "./StaticLayout_Builder.hpp"
 
 namespace android::text
@@ -14,13 +16,13 @@ namespace android::text
 	// Constructors
 	
 	// Methods
-	android::text::StaticLayout_Builder StaticLayout_Builder::obtain(jstring arg0, jint arg1, jint arg2, android::text::TextPaint arg3, jint arg4)
+	android::text::StaticLayout_Builder StaticLayout_Builder::obtain(JString arg0, jint arg1, jint arg2, android::text::TextPaint arg3, jint arg4)
 	{
 		return callStaticObjectMethod(
 			"android.text.StaticLayout$Builder",
 			"obtain",
 			"(Ljava/lang/CharSequence;IILandroid/text/TextPaint;I)Landroid/text/StaticLayout$Builder;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
 			arg2,
 			arg3.object(),
@@ -82,13 +84,13 @@ namespace android::text
 			arg0
 		);
 	}
-	android::text::StaticLayout_Builder StaticLayout_Builder::setIndents(jintArray arg0, jintArray arg1)
+	android::text::StaticLayout_Builder StaticLayout_Builder::setIndents(JIntArray arg0, JIntArray arg1)
 	{
 		return callObjectMethod(
 			"setIndents",
 			"([I[I)Landroid/text/StaticLayout$Builder;",
-			arg0,
-			arg1
+			arg0.object<jintArray>(),
+			arg1.object<jintArray>()
 		);
 	}
 	android::text::StaticLayout_Builder StaticLayout_Builder::setJustificationMode(jint arg0)
@@ -116,12 +118,12 @@ namespace android::text
 			arg0
 		);
 	}
-	android::text::StaticLayout_Builder StaticLayout_Builder::setText(jstring arg0)
+	android::text::StaticLayout_Builder StaticLayout_Builder::setText(JString arg0)
 	{
 		return callObjectMethod(
 			"setText",
 			"(Ljava/lang/CharSequence;)Landroid/text/StaticLayout$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::text::StaticLayout_Builder StaticLayout_Builder::setTextDirection(JObject arg0)

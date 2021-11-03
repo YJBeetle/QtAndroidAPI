@@ -1,4 +1,5 @@
 #include "../net/Uri.hpp"
+#include "../../JString.hpp"
 #include "./ContactsContract_PhoneLookup.hpp"
 
 namespace android::provider
@@ -20,13 +21,13 @@ namespace android::provider
 			"Landroid/net/Uri;"
 		);
 	}
-	jstring ContactsContract_PhoneLookup::QUERY_PARAMETER_SIP_ADDRESS()
+	JString ContactsContract_PhoneLookup::QUERY_PARAMETER_SIP_ADDRESS()
 	{
 		return getStaticObjectField(
 			"android.provider.ContactsContract$PhoneLookup",
 			"QUERY_PARAMETER_SIP_ADDRESS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QAndroidJniObject forward

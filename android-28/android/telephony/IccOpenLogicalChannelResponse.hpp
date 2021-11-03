@@ -2,10 +2,12 @@
 
 #include "../../JObject.hpp"
 
+class JByteArray;
 namespace android::os
 {
 	class Parcel;
 }
+class JString;
 
 namespace android::telephony
 {
@@ -29,9 +31,9 @@ namespace android::telephony
 		// Methods
 		jint describeContents();
 		jint getChannel();
-		jbyteArray getSelectResponse();
+		JByteArray getSelectResponse();
 		jint getStatus();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::telephony

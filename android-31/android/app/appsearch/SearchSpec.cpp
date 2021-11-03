@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./SearchSpec.hpp"
 
 namespace android::app::appsearch
@@ -31,13 +32,13 @@ namespace android::app::appsearch
 			"ORDER_DESCENDING"
 		);
 	}
-	jstring SearchSpec::PROJECTION_SCHEMA_TYPE_WILDCARD()
+	JString SearchSpec::PROJECTION_SCHEMA_TYPE_WILDCARD()
 	{
 		return getStaticObjectField(
 			"android.app.appsearch.SearchSpec",
 			"PROJECTION_SCHEMA_TYPE_WILDCARD",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint SearchSpec::RANKING_STRATEGY_CREATION_TIMESTAMP()
 	{

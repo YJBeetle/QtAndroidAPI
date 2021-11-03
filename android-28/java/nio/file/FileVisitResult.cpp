@@ -1,3 +1,5 @@
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
 #include "./FileVisitResult.hpp"
 
 namespace java::nio::file
@@ -42,22 +44,22 @@ namespace java::nio::file
 	// Constructors
 	
 	// Methods
-	java::nio::file::FileVisitResult FileVisitResult::valueOf(jstring arg0)
+	java::nio::file::FileVisitResult FileVisitResult::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"java.nio.file.FileVisitResult",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/nio/file/FileVisitResult;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray FileVisitResult::values()
+	JArray FileVisitResult::values()
 	{
 		return callStaticObjectMethod(
 			"java.nio.file.FileVisitResult",
 			"values",
 			"()[Ljava/nio/file/FileVisitResult;"
-		).object<jarray>();
+		);
 	}
 } // namespace java::nio::file
 

@@ -1,10 +1,9 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "../../lang/Exception.hpp"
-#include "../../lang/RuntimeException.hpp"
 #include "../DateTimeException.hpp"
 
+class JString;
+class JThrowable;
 
 namespace java::time::zone
 {
@@ -18,8 +17,8 @@ namespace java::time::zone
 		ZoneRulesException(QAndroidJniObject obj);
 		
 		// Constructors
-		ZoneRulesException(jstring arg0);
-		ZoneRulesException(jstring arg0, jthrowable arg1);
+		ZoneRulesException(JString arg0);
+		ZoneRulesException(JString arg0, JThrowable arg1);
 		
 		// Methods
 	};

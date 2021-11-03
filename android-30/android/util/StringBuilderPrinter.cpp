@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "../../java/lang/StringBuilder.hpp"
 #include "./StringBuilderPrinter.hpp"
 
@@ -17,12 +18,12 @@ namespace android::util
 		) {}
 	
 	// Methods
-	void StringBuilderPrinter::println(jstring arg0)
+	void StringBuilderPrinter::println(JString arg0)
 	{
 		callMethod<void>(
 			"println",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 } // namespace android::util

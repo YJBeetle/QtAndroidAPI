@@ -1,8 +1,9 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "./EapSessionConfig_EapMethodConfig.hpp"
 
+class JObject;
+class JString;
 
 namespace android::net::eap
 {
@@ -18,9 +19,9 @@ namespace android::net::eap
 		// Constructors
 		
 		// Methods
-		jboolean equals(jobject arg0);
-		jstring getPassword();
-		jstring getUsername();
+		jboolean equals(JObject arg0);
+		JString getPassword();
+		JString getUsername();
 		jint hashCode();
 	};
 } // namespace android::net::eap

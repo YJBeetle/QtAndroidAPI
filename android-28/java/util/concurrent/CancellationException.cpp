@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./CancellationException.hpp"
 
 namespace java::util::concurrent
@@ -13,11 +14,11 @@ namespace java::util::concurrent
 			"java.util.concurrent.CancellationException",
 			"()V"
 		) {}
-	CancellationException::CancellationException(jstring arg0)
+	CancellationException::CancellationException(JString arg0)
 		: java::lang::IllegalStateException(
 			"java.util.concurrent.CancellationException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

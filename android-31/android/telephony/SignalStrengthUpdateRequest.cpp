@@ -1,4 +1,6 @@
 #include "../os/Parcel.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./SignalStrengthUpdateRequest.hpp"
 
 namespace android::telephony
@@ -26,12 +28,12 @@ namespace android::telephony
 			"()I"
 		);
 	}
-	jboolean SignalStrengthUpdateRequest::equals(jobject arg0)
+	jboolean SignalStrengthUpdateRequest::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	JObject SignalStrengthUpdateRequest::getSignalThresholdInfos()
@@ -55,12 +57,12 @@ namespace android::telephony
 			"()Z"
 		);
 	}
-	jstring SignalStrengthUpdateRequest::toString()
+	JString SignalStrengthUpdateRequest::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void SignalStrengthUpdateRequest::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

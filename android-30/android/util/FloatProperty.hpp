@@ -1,12 +1,13 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./Property.hpp"
 
 namespace java::lang
 {
 	class Float;
 }
+class JObject;
+class JString;
 
 namespace android::util
 {
@@ -20,12 +21,12 @@ namespace android::util
 		FloatProperty(QAndroidJniObject obj);
 		
 		// Constructors
-		FloatProperty(jstring arg0);
+		FloatProperty(JString arg0);
 		
 		// Methods
-		void set(jobject arg0, java::lang::Float arg1);
-		void set(jobject arg0, jobject arg1);
-		void setValue(jobject arg0, jfloat arg1);
+		void set(JObject arg0, java::lang::Float arg1);
+		void set(JObject arg0, JObject arg1);
+		void setValue(JObject arg0, jfloat arg1);
 	};
 } // namespace android::util
 

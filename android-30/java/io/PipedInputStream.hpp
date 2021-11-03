@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./InputStream.hpp"
 
+class JByteArray;
 namespace java::io
 {
 	class PipedOutputStream;
@@ -34,7 +34,7 @@ namespace java::io
 		void close();
 		void connect(java::io::PipedOutputStream arg0);
 		jint read();
-		jint read(jbyteArray arg0, jint arg1, jint arg2);
+		jint read(JByteArray arg0, jint arg1, jint arg2);
 	};
 } // namespace java::io
 

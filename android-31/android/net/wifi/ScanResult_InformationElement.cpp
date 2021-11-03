@@ -1,4 +1,5 @@
 #include "../../os/Parcel.hpp"
+#include "../../../JObject.hpp"
 #include "../../../java/nio/ByteBuffer.hpp"
 #include "./ScanResult_InformationElement.hpp"
 
@@ -33,12 +34,12 @@ namespace android::net::wifi
 			"()I"
 		);
 	}
-	jboolean ScanResult_InformationElement::equals(jobject arg0)
+	jboolean ScanResult_InformationElement::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	java::nio::ByteBuffer ScanResult_InformationElement::getBytes()

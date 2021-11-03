@@ -1,8 +1,11 @@
+#include "../../../JIntArray.hpp"
 #include "../Intent.hpp"
 #include "../../graphics/Bitmap.hpp"
 #include "../../net/Uri.hpp"
 #include "../../os/Parcel.hpp"
 #include "../../os/UserHandle.hpp"
+#include "../../../JString.hpp"
+#include "../../../JString.hpp"
 #include "./PackageInstaller_SessionInfo.hpp"
 
 namespace android::content::pm
@@ -79,26 +82,26 @@ namespace android::content::pm
 			"()Landroid/graphics/Bitmap;"
 		);
 	}
-	jstring PackageInstaller_SessionInfo::getAppLabel()
+	JString PackageInstaller_SessionInfo::getAppLabel()
 	{
 		return callObjectMethod(
 			"getAppLabel",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageInstaller_SessionInfo::getAppPackageName()
+	JString PackageInstaller_SessionInfo::getAppPackageName()
 	{
 		return callObjectMethod(
 			"getAppPackageName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jintArray PackageInstaller_SessionInfo::getChildSessionIds()
+	JIntArray PackageInstaller_SessionInfo::getChildSessionIds()
 	{
 		return callObjectMethod(
 			"getChildSessionIds",
 			"()[I"
-		).object<jintArray>();
+		);
 	}
 	jlong PackageInstaller_SessionInfo::getCreatedMillis()
 	{
@@ -121,12 +124,12 @@ namespace android::content::pm
 			"()I"
 		);
 	}
-	jstring PackageInstaller_SessionInfo::getInstallerPackageName()
+	JString PackageInstaller_SessionInfo::getInstallerPackageName()
 	{
 		return callObjectMethod(
 			"getInstallerPackageName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint PackageInstaller_SessionInfo::getMode()
 	{
@@ -191,12 +194,12 @@ namespace android::content::pm
 			"()I"
 		);
 	}
-	jstring PackageInstaller_SessionInfo::getStagedSessionErrorMessage()
+	JString PackageInstaller_SessionInfo::getStagedSessionErrorMessage()
 	{
 		return callObjectMethod(
 			"getStagedSessionErrorMessage",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jlong PackageInstaller_SessionInfo::getUpdatedMillis()
 	{

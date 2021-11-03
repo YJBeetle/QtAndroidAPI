@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JString;
 
 namespace java::security::spec
 {
@@ -26,11 +27,11 @@ namespace java::security::spec
 		MGF1ParameterSpec(QAndroidJniObject obj);
 		
 		// Constructors
-		MGF1ParameterSpec(jstring arg0);
+		MGF1ParameterSpec(JString arg0);
 		
 		// Methods
-		jstring getDigestAlgorithm();
-		jstring toString();
+		JString getDigestAlgorithm();
+		JString toString();
 	};
 } // namespace java::security::spec
 

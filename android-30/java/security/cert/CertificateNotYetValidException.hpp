@@ -1,10 +1,8 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "../../lang/Exception.hpp"
-#include "../GeneralSecurityException.hpp"
 #include "./CertificateException.hpp"
 
+class JString;
 
 namespace java::security::cert
 {
@@ -19,7 +17,7 @@ namespace java::security::cert
 		
 		// Constructors
 		CertificateNotYetValidException();
-		CertificateNotYetValidException(jstring arg0);
+		CertificateNotYetValidException(JString arg0);
 		
 		// Methods
 	};

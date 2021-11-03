@@ -2,6 +2,8 @@
 
 #include "../../../JObject.hpp"
 
+class JArray;
+class JString;
 namespace java::security
 {
 	class KeyStore;
@@ -29,13 +31,13 @@ namespace javax::net::ssl
 		// Constructors
 		
 		// Methods
-		static jstring getDefaultAlgorithm();
-		static javax::net::ssl::TrustManagerFactory getInstance(jstring arg0);
-		static javax::net::ssl::TrustManagerFactory getInstance(jstring arg0, jstring arg1);
-		static javax::net::ssl::TrustManagerFactory getInstance(jstring arg0, java::security::Provider arg1);
-		jstring getAlgorithm();
+		static JString getDefaultAlgorithm();
+		static javax::net::ssl::TrustManagerFactory getInstance(JString arg0);
+		static javax::net::ssl::TrustManagerFactory getInstance(JString arg0, JString arg1);
+		static javax::net::ssl::TrustManagerFactory getInstance(JString arg0, java::security::Provider arg1);
+		JString getAlgorithm();
 		java::security::Provider getProvider();
-		jarray getTrustManagers();
+		JArray getTrustManagers();
 		void init(java::security::KeyStore arg0);
 		void init(JObject arg0);
 	};

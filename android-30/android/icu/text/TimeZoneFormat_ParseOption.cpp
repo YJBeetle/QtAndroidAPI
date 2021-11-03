@@ -1,3 +1,5 @@
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
 #include "./TimeZoneFormat_ParseOption.hpp"
 
 namespace android::icu::text
@@ -26,22 +28,22 @@ namespace android::icu::text
 	// Constructors
 	
 	// Methods
-	android::icu::text::TimeZoneFormat_ParseOption TimeZoneFormat_ParseOption::valueOf(jstring arg0)
+	android::icu::text::TimeZoneFormat_ParseOption TimeZoneFormat_ParseOption::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.icu.text.TimeZoneFormat$ParseOption",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/icu/text/TimeZoneFormat$ParseOption;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray TimeZoneFormat_ParseOption::values()
+	JArray TimeZoneFormat_ParseOption::values()
 	{
 		return callStaticObjectMethod(
 			"android.icu.text.TimeZoneFormat$ParseOption",
 			"values",
 			"()[Landroid/icu/text/TimeZoneFormat$ParseOption;"
-		).object<jarray>();
+		);
 	}
 } // namespace android::icu::text
 

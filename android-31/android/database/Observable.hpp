@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JObject;
 namespace java::util
 {
 	class ArrayList;
@@ -22,9 +23,9 @@ namespace android::database
 		Observable();
 		
 		// Methods
-		void registerObserver(jobject arg0);
+		void registerObserver(JObject arg0);
 		void unregisterAll();
-		void unregisterObserver(jobject arg0);
+		void unregisterObserver(JObject arg0);
 	};
 } // namespace android::database
 

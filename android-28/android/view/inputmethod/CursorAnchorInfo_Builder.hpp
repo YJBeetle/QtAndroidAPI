@@ -10,6 +10,7 @@ namespace android::view::inputmethod
 {
 	class CursorAnchorInfo;
 }
+class JString;
 
 namespace android::view::inputmethod
 {
@@ -29,7 +30,7 @@ namespace android::view::inputmethod
 		android::view::inputmethod::CursorAnchorInfo_Builder addCharacterBounds(jint arg0, jfloat arg1, jfloat arg2, jfloat arg3, jfloat arg4, jint arg5);
 		android::view::inputmethod::CursorAnchorInfo build();
 		void reset();
-		android::view::inputmethod::CursorAnchorInfo_Builder setComposingText(jint arg0, jstring arg1);
+		android::view::inputmethod::CursorAnchorInfo_Builder setComposingText(jint arg0, JString arg1);
 		android::view::inputmethod::CursorAnchorInfo_Builder setInsertionMarkerLocation(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, jint arg4);
 		android::view::inputmethod::CursorAnchorInfo_Builder setMatrix(android::graphics::Matrix arg0);
 		android::view::inputmethod::CursorAnchorInfo_Builder setSelectionRange(jint arg0, jint arg1);

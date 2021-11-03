@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JString;
 
 namespace android::net
 {
@@ -21,7 +22,7 @@ namespace android::net
 		
 		// Methods
 		jint getType();
-		jstring getTypeString();
+		JString getTypeString();
 	};
 } // namespace android::net
 

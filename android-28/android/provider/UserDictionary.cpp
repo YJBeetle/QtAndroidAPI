@@ -1,16 +1,17 @@
 #include "../net/Uri.hpp"
+#include "../../JString.hpp"
 #include "./UserDictionary.hpp"
 
 namespace android::provider
 {
 	// Fields
-	jstring UserDictionary::AUTHORITY()
+	JString UserDictionary::AUTHORITY()
 	{
 		return getStaticObjectField(
 			"android.provider.UserDictionary",
 			"AUTHORITY",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::net::Uri UserDictionary::CONTENT_URI()
 	{

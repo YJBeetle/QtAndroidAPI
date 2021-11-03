@@ -26,6 +26,7 @@ namespace android::os
 {
 	class Looper;
 }
+class JString;
 
 namespace android::net::wifi::p2p
 {
@@ -35,24 +36,24 @@ namespace android::net::wifi::p2p
 		// Fields
 		static jint BUSY();
 		static jint ERROR();
-		static jstring EXTRA_DISCOVERY_STATE();
-		static jstring EXTRA_NETWORK_INFO();
-		static jstring EXTRA_P2P_DEVICE_LIST();
-		static jstring EXTRA_WIFI_P2P_DEVICE();
-		static jstring EXTRA_WIFI_P2P_GROUP();
-		static jstring EXTRA_WIFI_P2P_INFO();
-		static jstring EXTRA_WIFI_STATE();
+		static JString EXTRA_DISCOVERY_STATE();
+		static JString EXTRA_NETWORK_INFO();
+		static JString EXTRA_P2P_DEVICE_LIST();
+		static JString EXTRA_WIFI_P2P_DEVICE();
+		static JString EXTRA_WIFI_P2P_GROUP();
+		static JString EXTRA_WIFI_P2P_INFO();
+		static JString EXTRA_WIFI_STATE();
 		static jint NO_SERVICE_REQUESTS();
 		static jint P2P_UNSUPPORTED();
-		static jstring WIFI_P2P_CONNECTION_CHANGED_ACTION();
-		static jstring WIFI_P2P_DISCOVERY_CHANGED_ACTION();
+		static JString WIFI_P2P_CONNECTION_CHANGED_ACTION();
+		static JString WIFI_P2P_DISCOVERY_CHANGED_ACTION();
 		static jint WIFI_P2P_DISCOVERY_STARTED();
 		static jint WIFI_P2P_DISCOVERY_STOPPED();
-		static jstring WIFI_P2P_PEERS_CHANGED_ACTION();
-		static jstring WIFI_P2P_STATE_CHANGED_ACTION();
+		static JString WIFI_P2P_PEERS_CHANGED_ACTION();
+		static JString WIFI_P2P_STATE_CHANGED_ACTION();
 		static jint WIFI_P2P_STATE_DISABLED();
 		static jint WIFI_P2P_STATE_ENABLED();
-		static jstring WIFI_P2P_THIS_DEVICE_CHANGED_ACTION();
+		static JString WIFI_P2P_THIS_DEVICE_CHANGED_ACTION();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit WifiP2pManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}

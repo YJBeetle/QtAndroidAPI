@@ -1,24 +1,25 @@
 #include "../net/Uri.hpp"
+#include "../../JString.hpp"
 #include "./Contacts_Groups.hpp"
 
 namespace android::provider
 {
 	// Fields
-	jstring Contacts_Groups::CONTENT_ITEM_TYPE()
+	JString Contacts_Groups::CONTENT_ITEM_TYPE()
 	{
 		return getStaticObjectField(
 			"android.provider.Contacts$Groups",
 			"CONTENT_ITEM_TYPE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Contacts_Groups::CONTENT_TYPE()
+	JString Contacts_Groups::CONTENT_TYPE()
 	{
 		return getStaticObjectField(
 			"android.provider.Contacts$Groups",
 			"CONTENT_TYPE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::net::Uri Contacts_Groups::CONTENT_URI()
 	{
@@ -28,13 +29,13 @@ namespace android::provider
 			"Landroid/net/Uri;"
 		);
 	}
-	jstring Contacts_Groups::DEFAULT_SORT_ORDER()
+	JString Contacts_Groups::DEFAULT_SORT_ORDER()
 	{
 		return getStaticObjectField(
 			"android.provider.Contacts$Groups",
 			"DEFAULT_SORT_ORDER",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::net::Uri Contacts_Groups::DELETED_CONTENT_URI()
 	{
@@ -44,21 +45,21 @@ namespace android::provider
 			"Landroid/net/Uri;"
 		);
 	}
-	jstring Contacts_Groups::GROUP_ANDROID_STARRED()
+	JString Contacts_Groups::GROUP_ANDROID_STARRED()
 	{
 		return getStaticObjectField(
 			"android.provider.Contacts$Groups",
 			"GROUP_ANDROID_STARRED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Contacts_Groups::GROUP_MY_CONTACTS()
+	JString Contacts_Groups::GROUP_MY_CONTACTS()
 	{
 		return getStaticObjectField(
 			"android.provider.Contacts$Groups",
 			"GROUP_MY_CONTACTS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QAndroidJniObject forward

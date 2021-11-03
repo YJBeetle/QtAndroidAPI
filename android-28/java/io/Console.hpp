@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JCharArray;
+class JObjectArray;
 namespace java::io
 {
 	class PrintWriter;
@@ -14,6 +16,8 @@ namespace java::io
 {
 	class Writer;
 }
+class JObject;
+class JString;
 namespace java::nio::charset
 {
 	class Charset;
@@ -38,12 +42,12 @@ namespace java::io
 		
 		// Methods
 		void flush();
-		java::io::Console format(jstring arg0, jobjectArray arg1);
-		java::io::Console printf(jstring arg0, jobjectArray arg1);
-		jstring readLine();
-		jstring readLine(jstring arg0, jobjectArray arg1);
-		jcharArray readPassword();
-		jcharArray readPassword(jstring arg0, jobjectArray arg1);
+		java::io::Console format(JString arg0, JObjectArray arg1);
+		java::io::Console printf(JString arg0, JObjectArray arg1);
+		JString readLine();
+		JString readLine(JString arg0, JObjectArray arg1);
+		JCharArray readPassword();
+		JCharArray readPassword(JString arg0, JObjectArray arg1);
 		java::io::Reader reader();
 		java::io::PrintWriter writer();
 	};

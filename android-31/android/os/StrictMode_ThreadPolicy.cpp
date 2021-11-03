@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./StrictMode_ThreadPolicy.hpp"
 
 namespace android::os
@@ -18,12 +19,12 @@ namespace android::os
 	// Constructors
 	
 	// Methods
-	jstring StrictMode_ThreadPolicy::toString()
+	JString StrictMode_ThreadPolicy::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::os
 

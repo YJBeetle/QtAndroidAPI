@@ -1,6 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "../../java/util/EventObject.hpp"
 
 namespace java::sql

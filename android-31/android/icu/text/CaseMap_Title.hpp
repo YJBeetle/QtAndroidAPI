@@ -1,6 +1,5 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "./CaseMap.hpp"
 
 namespace android::icu::text
@@ -15,6 +14,8 @@ namespace android::icu::text
 {
 	class Edits;
 }
+class JString;
+class JString;
 namespace java::util
 {
 	class Locale;
@@ -35,8 +36,8 @@ namespace android::icu::text
 		
 		// Methods
 		android::icu::text::CaseMap_Title adjustToCased();
-		JObject apply(java::util::Locale arg0, android::icu::text::BreakIterator arg1, jstring arg2, JObject arg3, android::icu::text::Edits arg4);
-		jstring apply(java::util::Locale arg0, android::icu::text::BreakIterator arg1, jstring arg2);
+		JObject apply(java::util::Locale arg0, android::icu::text::BreakIterator arg1, JString arg2, JObject arg3, android::icu::text::Edits arg4);
+		JString apply(java::util::Locale arg0, android::icu::text::BreakIterator arg1, JString arg2);
 		android::icu::text::CaseMap_Title noBreakAdjustment();
 		android::icu::text::CaseMap_Title noLowercase();
 		android::icu::text::CaseMap_Title omitUnchangedText();

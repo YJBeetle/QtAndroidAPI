@@ -1,4 +1,6 @@
+#include "../../JIntArray.hpp"
 #include "./SubscriptionPlan.hpp"
+#include "../../JString.hpp"
 #include "../../java/time/Period.hpp"
 #include "../../java/time/ZonedDateTime.hpp"
 #include "./SubscriptionPlan_Builder.hpp"
@@ -65,28 +67,28 @@ namespace android::telephony
 			arg1
 		);
 	}
-	android::telephony::SubscriptionPlan_Builder SubscriptionPlan_Builder::setNetworkTypes(jintArray arg0)
+	android::telephony::SubscriptionPlan_Builder SubscriptionPlan_Builder::setNetworkTypes(JIntArray arg0)
 	{
 		return callObjectMethod(
 			"setNetworkTypes",
 			"([I)Landroid/telephony/SubscriptionPlan$Builder;",
-			arg0
+			arg0.object<jintArray>()
 		);
 	}
-	android::telephony::SubscriptionPlan_Builder SubscriptionPlan_Builder::setSummary(jstring arg0)
+	android::telephony::SubscriptionPlan_Builder SubscriptionPlan_Builder::setSummary(JString arg0)
 	{
 		return callObjectMethod(
 			"setSummary",
 			"(Ljava/lang/CharSequence;)Landroid/telephony/SubscriptionPlan$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	android::telephony::SubscriptionPlan_Builder SubscriptionPlan_Builder::setTitle(jstring arg0)
+	android::telephony::SubscriptionPlan_Builder SubscriptionPlan_Builder::setTitle(JString arg0)
 	{
 		return callObjectMethod(
 			"setTitle",
 			"(Ljava/lang/CharSequence;)Landroid/telephony/SubscriptionPlan$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 } // namespace android::telephony

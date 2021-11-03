@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./MediaCodec_CryptoException.hpp"
 
 namespace android::media
@@ -50,12 +51,12 @@ namespace android::media
 	MediaCodec_CryptoException::MediaCodec_CryptoException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
 	
 	// Constructors
-	MediaCodec_CryptoException::MediaCodec_CryptoException(jint arg0, jstring arg1)
+	MediaCodec_CryptoException::MediaCodec_CryptoException(jint arg0, JString arg1)
 		: java::lang::RuntimeException(
 			"android.media.MediaCodec$CryptoException",
 			"(ILjava/lang/String;)V",
 			arg0,
-			arg1
+			arg1.object<jstring>()
 		) {}
 	
 	// Methods

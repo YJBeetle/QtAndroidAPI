@@ -1,3 +1,5 @@
+#include "../../../JString.hpp"
+#include "../../../JThrowable.hpp"
 #include "./BackendBusyException.hpp"
 
 namespace android::security::keystore
@@ -14,20 +16,20 @@ namespace android::security::keystore
 			"(J)V",
 			arg0
 		) {}
-	BackendBusyException::BackendBusyException(jlong arg0, jstring arg1)
+	BackendBusyException::BackendBusyException(jlong arg0, JString arg1)
 		: java::security::ProviderException(
 			"android.security.keystore.BackendBusyException",
 			"(JLjava/lang/String;)V",
 			arg0,
-			arg1
+			arg1.object<jstring>()
 		) {}
-	BackendBusyException::BackendBusyException(jlong arg0, jstring arg1, jthrowable arg2)
+	BackendBusyException::BackendBusyException(jlong arg0, JString arg1, JThrowable arg2)
 		: java::security::ProviderException(
 			"android.security.keystore.BackendBusyException",
 			"(JLjava/lang/String;Ljava/lang/Throwable;)V",
 			arg0,
-			arg1,
-			arg2
+			arg1.object<jstring>(),
+			arg2.object<jthrowable>()
 		) {}
 	
 	// Methods

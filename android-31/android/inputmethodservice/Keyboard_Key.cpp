@@ -1,17 +1,19 @@
+#include "../../JIntArray.hpp"
 #include "../content/res/Resources.hpp"
 #include "../graphics/drawable/Drawable.hpp"
 #include "./Keyboard_Row.hpp"
+#include "../../JString.hpp"
 #include "./Keyboard_Key.hpp"
 
 namespace android::inputmethodservice
 {
 	// Fields
-	jintArray Keyboard_Key::codes()
+	JIntArray Keyboard_Key::codes()
 	{
 		return getObjectField(
 			"codes",
 			"[I"
-		).object<jintArray>();
+		);
 	}
 	jint Keyboard_Key::edgeFlags()
 	{
@@ -45,12 +47,12 @@ namespace android::inputmethodservice
 			"Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	jstring Keyboard_Key::label()
+	JString Keyboard_Key::label()
 	{
 		return getObjectField(
 			"label",
 			"Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	jboolean Keyboard_Key::modifier()
 	{
@@ -64,12 +66,12 @@ namespace android::inputmethodservice
 			"on"
 		);
 	}
-	jstring Keyboard_Key::popupCharacters()
+	JString Keyboard_Key::popupCharacters()
 	{
 		return getObjectField(
 			"popupCharacters",
 			"Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	jint Keyboard_Key::popupResId()
 	{
@@ -95,12 +97,12 @@ namespace android::inputmethodservice
 			"sticky"
 		);
 	}
-	jstring Keyboard_Key::text()
+	JString Keyboard_Key::text()
 	{
 		return getObjectField(
 			"text",
 			"Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	jint Keyboard_Key::width()
 	{
@@ -143,12 +145,12 @@ namespace android::inputmethodservice
 		) {}
 	
 	// Methods
-	jintArray Keyboard_Key::getCurrentDrawableState()
+	JIntArray Keyboard_Key::getCurrentDrawableState()
 	{
 		return callObjectMethod(
 			"getCurrentDrawableState",
 			"()[I"
-		).object<jintArray>();
+		);
 	}
 	jboolean Keyboard_Key::isInside(jint arg0, jint arg1)
 	{

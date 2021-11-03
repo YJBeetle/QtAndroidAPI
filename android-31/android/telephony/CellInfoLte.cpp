@@ -3,6 +3,8 @@
 #include "./CellIdentityLte.hpp"
 #include "./CellSignalStrength.hpp"
 #include "./CellSignalStrengthLte.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./CellInfoLte.hpp"
 
 namespace android::telephony
@@ -30,12 +32,12 @@ namespace android::telephony
 			"()I"
 		);
 	}
-	jboolean CellInfoLte::equals(jobject arg0)
+	jboolean CellInfoLte::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	android::telephony::CellIdentityLte CellInfoLte::getCellIdentity()
@@ -59,12 +61,12 @@ namespace android::telephony
 			"()I"
 		);
 	}
-	jstring CellInfoLte::toString()
+	JString CellInfoLte::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void CellInfoLte::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

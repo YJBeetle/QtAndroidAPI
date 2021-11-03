@@ -3,6 +3,7 @@
 #include "./PlaybackState_CustomAction.hpp"
 #include "../../net/Uri.hpp"
 #include "../../os/Bundle.hpp"
+#include "../../../JString.hpp"
 #include "./MediaController_TransportControls.hpp"
 
 namespace android::media::session
@@ -36,21 +37,21 @@ namespace android::media::session
 			"()V"
 		);
 	}
-	void MediaController_TransportControls::playFromMediaId(jstring arg0, android::os::Bundle arg1)
+	void MediaController_TransportControls::playFromMediaId(JString arg0, android::os::Bundle arg1)
 	{
 		callMethod<void>(
 			"playFromMediaId",
 			"(Ljava/lang/String;Landroid/os/Bundle;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
-	void MediaController_TransportControls::playFromSearch(jstring arg0, android::os::Bundle arg1)
+	void MediaController_TransportControls::playFromSearch(JString arg0, android::os::Bundle arg1)
 	{
 		callMethod<void>(
 			"playFromSearch",
 			"(Ljava/lang/String;Landroid/os/Bundle;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
@@ -70,21 +71,21 @@ namespace android::media::session
 			"()V"
 		);
 	}
-	void MediaController_TransportControls::prepareFromMediaId(jstring arg0, android::os::Bundle arg1)
+	void MediaController_TransportControls::prepareFromMediaId(JString arg0, android::os::Bundle arg1)
 	{
 		callMethod<void>(
 			"prepareFromMediaId",
 			"(Ljava/lang/String;Landroid/os/Bundle;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
-	void MediaController_TransportControls::prepareFromSearch(jstring arg0, android::os::Bundle arg1)
+	void MediaController_TransportControls::prepareFromSearch(JString arg0, android::os::Bundle arg1)
 	{
 		callMethod<void>(
 			"prepareFromSearch",
 			"(Ljava/lang/String;Landroid/os/Bundle;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
@@ -121,12 +122,12 @@ namespace android::media::session
 			arg1.object()
 		);
 	}
-	void MediaController_TransportControls::sendCustomAction(jstring arg0, android::os::Bundle arg1)
+	void MediaController_TransportControls::sendCustomAction(JString arg0, android::os::Bundle arg1)
 	{
 		callMethod<void>(
 			"sendCustomAction",
 			"(Ljava/lang/String;Landroid/os/Bundle;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}

@@ -2,7 +2,6 @@
 
 #include "../../JObject.hpp"
 
-
 namespace java::security
 {
 	class KeyStore_CallbackHandlerProtection : public JObject

@@ -1,8 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../../java/lang/Exception.hpp"
-#include "../../java/lang/RuntimeException.hpp"
 #include "../../java/lang/SecurityException.hpp"
 
 namespace android::app
@@ -13,6 +10,8 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
+class JThrowable;
 
 namespace android::app
 {
@@ -27,12 +26,12 @@ namespace android::app
 		RecoverableSecurityException(QAndroidJniObject obj);
 		
 		// Constructors
-		RecoverableSecurityException(jthrowable arg0, jstring arg1, android::app::RemoteAction arg2);
+		RecoverableSecurityException(JThrowable arg0, JString arg1, android::app::RemoteAction arg2);
 		
 		// Methods
 		jint describeContents();
 		android::app::RemoteAction getUserAction();
-		jstring getUserMessage();
+		JString getUserMessage();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::app

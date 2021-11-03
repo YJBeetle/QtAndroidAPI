@@ -1,10 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../../java/lang/Exception.hpp"
-#include "../../java/lang/RuntimeException.hpp"
 #include "../../java/lang/IllegalStateException.hpp"
 
+class JString;
 
 namespace android::os
 {
@@ -19,7 +17,7 @@ namespace android::os
 		
 		// Constructors
 		LimitExceededException();
-		LimitExceededException(jstring arg0);
+		LimitExceededException(JString arg0);
 		
 		// Methods
 	};

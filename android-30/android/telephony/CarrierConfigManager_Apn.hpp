@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JString;
 
 namespace android::telephony
 {
@@ -9,12 +10,12 @@ namespace android::telephony
 	{
 	public:
 		// Fields
-		static jstring KEY_PREFIX();
-		static jstring KEY_SETTINGS_DEFAULT_PROTOCOL_STRING();
-		static jstring KEY_SETTINGS_DEFAULT_ROAMING_PROTOCOL_STRING();
-		static jstring PROTOCOL_IPV4();
-		static jstring PROTOCOL_IPV4V6();
-		static jstring PROTOCOL_IPV6();
+		static JString KEY_PREFIX();
+		static JString KEY_SETTINGS_DEFAULT_PROTOCOL_STRING();
+		static JString KEY_SETTINGS_DEFAULT_ROAMING_PROTOCOL_STRING();
+		static JString PROTOCOL_IPV4();
+		static JString PROTOCOL_IPV4V6();
+		static JString PROTOCOL_IPV6();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit CarrierConfigManager_Apn(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}

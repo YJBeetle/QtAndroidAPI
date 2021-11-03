@@ -1,3 +1,4 @@
+#include "../../../JIntArray.hpp"
 #include "../../content/res/ColorStateList.hpp"
 #include "../../content/res/Resources.hpp"
 #include "../../content/res/Resources_Theme.hpp"
@@ -13,6 +14,7 @@
 #include "./Drawable_ConstantState.hpp"
 #include "../../util/TypedValue.hpp"
 #include "../../../java/io/InputStream.hpp"
+#include "../../../JString.hpp"
 #include "./Drawable.hpp"
 
 namespace android::graphics::drawable
@@ -30,16 +32,16 @@ namespace android::graphics::drawable
 		) {}
 	
 	// Methods
-	android::graphics::drawable::Drawable Drawable::createFromPath(jstring arg0)
+	android::graphics::drawable::Drawable Drawable::createFromPath(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.graphics.drawable.Drawable",
 			"createFromPath",
 			"(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	android::graphics::drawable::Drawable Drawable::createFromResourceStream(android::content::res::Resources arg0, android::util::TypedValue arg1, java::io::InputStream arg2, jstring arg3)
+	android::graphics::drawable::Drawable Drawable::createFromResourceStream(android::content::res::Resources arg0, android::util::TypedValue arg1, java::io::InputStream arg2, JString arg3)
 	{
 		return callStaticObjectMethod(
 			"android.graphics.drawable.Drawable",
@@ -48,10 +50,10 @@ namespace android::graphics::drawable
 			arg0.object(),
 			arg1.object(),
 			arg2.object(),
-			arg3
+			arg3.object<jstring>()
 		);
 	}
-	android::graphics::drawable::Drawable Drawable::createFromResourceStream(android::content::res::Resources arg0, android::util::TypedValue arg1, java::io::InputStream arg2, jstring arg3, android::graphics::BitmapFactory_Options arg4)
+	android::graphics::drawable::Drawable Drawable::createFromResourceStream(android::content::res::Resources arg0, android::util::TypedValue arg1, java::io::InputStream arg2, JString arg3, android::graphics::BitmapFactory_Options arg4)
 	{
 		return callStaticObjectMethod(
 			"android.graphics.drawable.Drawable",
@@ -60,18 +62,18 @@ namespace android::graphics::drawable
 			arg0.object(),
 			arg1.object(),
 			arg2.object(),
-			arg3,
+			arg3.object<jstring>(),
 			arg4.object()
 		);
 	}
-	android::graphics::drawable::Drawable Drawable::createFromStream(java::io::InputStream arg0, jstring arg1)
+	android::graphics::drawable::Drawable Drawable::createFromStream(java::io::InputStream arg0, JString arg1)
 	{
 		return callStaticObjectMethod(
 			"android.graphics.drawable.Drawable",
 			"createFromStream",
 			"(Ljava/io/InputStream;Ljava/lang/String;)Landroid/graphics/drawable/Drawable;",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
 	android::graphics::drawable::Drawable Drawable::createFromXml(android::content::res::Resources arg0, JObject arg1)
@@ -309,12 +311,12 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	jintArray Drawable::getState()
+	JIntArray Drawable::getState()
 	{
 		return callObjectMethod(
 			"getState",
 			"()[I"
-		).object<jintArray>();
+		);
 	}
 	android::graphics::Region Drawable::getTransparentRegion()
 	{
@@ -544,12 +546,12 @@ namespace android::graphics::drawable
 			arg0
 		);
 	}
-	jboolean Drawable::setState(jintArray arg0)
+	jboolean Drawable::setState(JIntArray arg0)
 	{
 		return callMethod<jboolean>(
 			"setState",
 			"([I)Z",
-			arg0
+			arg0.object<jintArray>()
 		);
 	}
 	void Drawable::setTint(jint arg0)

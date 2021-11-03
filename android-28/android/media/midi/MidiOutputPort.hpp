@@ -1,6 +1,5 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "./MidiSender.hpp"
 
 namespace android::media::midi

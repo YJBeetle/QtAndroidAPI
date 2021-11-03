@@ -5,35 +5,36 @@
 #include "./StorageVolume.hpp"
 #include "../../../java/io/File.hpp"
 #include "../../../java/io/FileDescriptor.hpp"
+#include "../../../JString.hpp"
 #include "../../../java/util/UUID.hpp"
 #include "./StorageManager.hpp"
 
 namespace android::os::storage
 {
 	// Fields
-	jstring StorageManager::ACTION_MANAGE_STORAGE()
+	JString StorageManager::ACTION_MANAGE_STORAGE()
 	{
 		return getStaticObjectField(
 			"android.os.storage.StorageManager",
 			"ACTION_MANAGE_STORAGE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring StorageManager::EXTRA_REQUESTED_BYTES()
+	JString StorageManager::EXTRA_REQUESTED_BYTES()
 	{
 		return getStaticObjectField(
 			"android.os.storage.StorageManager",
 			"EXTRA_REQUESTED_BYTES",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring StorageManager::EXTRA_UUID()
+	JString StorageManager::EXTRA_UUID()
 	{
 		return getStaticObjectField(
 			"android.os.storage.StorageManager",
 			"EXTRA_UUID",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	java::util::UUID StorageManager::UUID_DEFAULT()
 	{
@@ -92,13 +93,13 @@ namespace android::os::storage
 			arg0.object()
 		);
 	}
-	jstring StorageManager::getMountedObbPath(jstring arg0)
+	JString StorageManager::getMountedObbPath(JString arg0)
 	{
 		return callObjectMethod(
 			"getMountedObbPath",
 			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
+			arg0.object<jstring>()
+		);
 	}
 	android::os::storage::StorageVolume StorageManager::getPrimaryStorageVolume()
 	{
@@ -162,21 +163,21 @@ namespace android::os::storage
 			arg0.object()
 		);
 	}
-	jboolean StorageManager::isObbMounted(jstring arg0)
+	jboolean StorageManager::isObbMounted(JString arg0)
 	{
 		return callMethod<jboolean>(
 			"isObbMounted",
 			"(Ljava/lang/String;)Z",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jboolean StorageManager::mountObb(jstring arg0, jstring arg1, android::os::storage::OnObbStateChangeListener arg2)
+	jboolean StorageManager::mountObb(JString arg0, JString arg1, android::os::storage::OnObbStateChangeListener arg2)
 	{
 		return callMethod<jboolean>(
 			"mountObb",
 			"(Ljava/lang/String;Ljava/lang/String;Landroid/os/storage/OnObbStateChangeListener;)Z",
-			arg0,
-			arg1,
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
 			arg2.object()
 		);
 	}
@@ -208,12 +209,12 @@ namespace android::os::storage
 			arg1
 		);
 	}
-	jboolean StorageManager::unmountObb(jstring arg0, jboolean arg1, android::os::storage::OnObbStateChangeListener arg2)
+	jboolean StorageManager::unmountObb(JString arg0, jboolean arg1, android::os::storage::OnObbStateChangeListener arg2)
 	{
 		return callMethod<jboolean>(
 			"unmountObb",
 			"(Ljava/lang/String;ZLandroid/os/storage/OnObbStateChangeListener;)Z",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
 			arg2.object()
 		);

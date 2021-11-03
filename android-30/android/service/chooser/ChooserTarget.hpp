@@ -18,6 +18,8 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
+class JString;
 
 namespace android::service::chooser
 {
@@ -32,7 +34,7 @@ namespace android::service::chooser
 		ChooserTarget(QAndroidJniObject obj);
 		
 		// Constructors
-		ChooserTarget(jstring arg0, android::graphics::drawable::Icon arg1, jfloat arg2, android::content::ComponentName arg3, android::os::Bundle arg4);
+		ChooserTarget(JString arg0, android::graphics::drawable::Icon arg1, jfloat arg2, android::content::ComponentName arg3, android::os::Bundle arg4);
 		
 		// Methods
 		jint describeContents();
@@ -40,8 +42,8 @@ namespace android::service::chooser
 		android::graphics::drawable::Icon getIcon();
 		android::os::Bundle getIntentExtras();
 		jfloat getScore();
-		jstring getTitle();
-		jstring toString();
+		JString getTitle();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::service::chooser

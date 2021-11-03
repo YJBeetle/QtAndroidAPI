@@ -1,4 +1,7 @@
 #include "../../os/Parcel.hpp"
+#include "../../../JString.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./AutofillValue.hpp"
 
 namespace android::view::autofill
@@ -37,13 +40,13 @@ namespace android::view::autofill
 			arg0
 		);
 	}
-	android::view::autofill::AutofillValue AutofillValue::forText(jstring arg0)
+	android::view::autofill::AutofillValue AutofillValue::forText(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.view.autofill.AutofillValue",
 			"forText",
 			"(Ljava/lang/CharSequence;)Landroid/view/autofill/AutofillValue;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::view::autofill::AutofillValue AutofillValue::forToggle(jboolean arg0)
@@ -62,12 +65,12 @@ namespace android::view::autofill
 			"()I"
 		);
 	}
-	jboolean AutofillValue::equals(jobject arg0)
+	jboolean AutofillValue::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jlong AutofillValue::getDateValue()
@@ -84,12 +87,12 @@ namespace android::view::autofill
 			"()I"
 		);
 	}
-	jstring AutofillValue::getTextValue()
+	JString AutofillValue::getTextValue()
 	{
 		return callObjectMethod(
 			"getTextValue",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	jboolean AutofillValue::getToggleValue()
 	{
@@ -133,12 +136,12 @@ namespace android::view::autofill
 			"()Z"
 		);
 	}
-	jstring AutofillValue::toString()
+	JString AutofillValue::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void AutofillValue::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

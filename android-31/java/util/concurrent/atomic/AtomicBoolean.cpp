@@ -1,3 +1,4 @@
+#include "../../../../JString.hpp"
 #include "./AtomicBoolean.hpp"
 
 namespace java::util::concurrent::atomic
@@ -133,12 +134,12 @@ namespace java::util::concurrent::atomic
 			arg0
 		);
 	}
-	jstring AtomicBoolean::toString()
+	JString AtomicBoolean::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jboolean AtomicBoolean::weakCompareAndSet(jboolean arg0, jboolean arg1)
 	{

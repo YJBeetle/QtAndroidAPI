@@ -1,4 +1,5 @@
 #include "../../eap/EapSessionConfig.hpp"
+#include "../../../../JObject.hpp"
 #include "./IkeSessionParams_IkeAuthEapConfig.hpp"
 
 namespace android::net::ipsec::ike
@@ -11,12 +12,12 @@ namespace android::net::ipsec::ike
 	// Constructors
 	
 	// Methods
-	jboolean IkeSessionParams_IkeAuthEapConfig::equals(jobject arg0)
+	jboolean IkeSessionParams_IkeAuthEapConfig::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	android::net::eap::EapSessionConfig IkeSessionParams_IkeAuthEapConfig::getEapConfig()

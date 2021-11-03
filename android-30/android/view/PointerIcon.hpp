@@ -18,6 +18,7 @@ namespace android::os
 {
 	class Parcel;
 }
+class JObject;
 
 namespace android::view
 {
@@ -61,7 +62,7 @@ namespace android::view
 		static android::view::PointerIcon getSystemIcon(android::content::Context arg0, jint arg1);
 		static android::view::PointerIcon load(android::content::res::Resources arg0, jint arg1);
 		jint describeContents();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::view

@@ -1,24 +1,26 @@
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "../../java/util/HashMap.hpp"
 #include "./DrmEvent.hpp"
 
 namespace android::drm
 {
 	// Fields
-	jstring DrmEvent::DRM_INFO_OBJECT()
+	JString DrmEvent::DRM_INFO_OBJECT()
 	{
 		return getStaticObjectField(
 			"android.drm.DrmEvent",
 			"DRM_INFO_OBJECT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DrmEvent::DRM_INFO_STATUS_OBJECT()
+	JString DrmEvent::DRM_INFO_STATUS_OBJECT()
 	{
 		return getStaticObjectField(
 			"android.drm.DrmEvent",
 			"DRM_INFO_STATUS_OBJECT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint DrmEvent::TYPE_ALL_RIGHTS_REMOVED()
 	{
@@ -41,20 +43,20 @@ namespace android::drm
 	// Constructors
 	
 	// Methods
-	jobject DrmEvent::getAttribute(jstring arg0)
+	JObject DrmEvent::getAttribute(JString arg0)
 	{
 		return callObjectMethod(
 			"getAttribute",
 			"(Ljava/lang/String;)Ljava/lang/Object;",
-			arg0
-		).object<jobject>();
+			arg0.object<jstring>()
+		);
 	}
-	jstring DrmEvent::getMessage()
+	JString DrmEvent::getMessage()
 	{
 		return callObjectMethod(
 			"getMessage",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint DrmEvent::getType()
 	{

@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JString;
 
 namespace android::app::appsearch
 {
@@ -9,7 +10,7 @@ namespace android::app::appsearch
 	{
 	public:
 		// Fields
-		static jstring PROJECTION_SCHEMA_TYPE_WILDCARD();
+		static JString PROJECTION_SCHEMA_TYPE_WILDCARD();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit GetByDocumentIdRequest(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
@@ -19,7 +20,7 @@ namespace android::app::appsearch
 		
 		// Methods
 		JObject getIds();
-		jstring getNamespace();
+		JString getNamespace();
 		JObject getProjections();
 	};
 } // namespace android::app::appsearch

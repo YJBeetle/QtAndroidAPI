@@ -1,14 +1,12 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../../java/lang/Exception.hpp"
-#include "../../java/lang/RuntimeException.hpp"
 #include "../util/AndroidRuntimeException.hpp"
 
 namespace java::lang
 {
 	class Exception;
 }
+class JString;
 
 namespace android::app
 {
@@ -22,7 +20,7 @@ namespace android::app
 		Fragment_InstantiationException(QAndroidJniObject obj);
 		
 		// Constructors
-		Fragment_InstantiationException(jstring arg0, java::lang::Exception arg1);
+		Fragment_InstantiationException(JString arg0, java::lang::Exception arg1);
 		
 		// Methods
 	};

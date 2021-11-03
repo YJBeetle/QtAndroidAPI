@@ -26,6 +26,7 @@ namespace android::os
 {
 	class Handler;
 }
+class JString;
 
 namespace android::hardware::camera2
 {
@@ -61,7 +62,7 @@ namespace android::hardware::camera2
 		void createReprocessableCaptureSession(android::hardware::camera2::params::InputConfiguration arg0, JObject arg1, android::hardware::camera2::CameraCaptureSession_StateCallback arg2, android::os::Handler arg3);
 		void createReprocessableCaptureSessionByConfigurations(android::hardware::camera2::params::InputConfiguration arg0, JObject arg1, android::hardware::camera2::CameraCaptureSession_StateCallback arg2, android::os::Handler arg3);
 		jint getCameraAudioRestriction();
-		jstring getId();
+		JString getId();
 		jboolean isSessionConfigurationSupported(android::hardware::camera2::params::SessionConfiguration arg0);
 		void setCameraAudioRestriction(jint arg0);
 	};

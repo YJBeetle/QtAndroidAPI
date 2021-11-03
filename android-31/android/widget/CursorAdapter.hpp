@@ -1,6 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./BaseAdapter.hpp"
 
 namespace android::content
@@ -23,6 +22,8 @@ namespace android::widget
 {
 	class Filter;
 }
+class JString;
+class JObject;
 
 namespace android::widget
 {
@@ -45,20 +46,20 @@ namespace android::widget
 		// Methods
 		void bindView(android::view::View arg0, android::content::Context arg1, JObject arg2);
 		void changeCursor(JObject arg0);
-		jstring convertToString(JObject arg0);
+		JString convertToString(JObject arg0);
 		jint getCount();
 		JObject getCursor();
 		android::view::View getDropDownView(jint arg0, android::view::View arg1, android::view::ViewGroup arg2);
 		android::content::res::Resources_Theme getDropDownViewTheme();
 		android::widget::Filter getFilter();
 		JObject getFilterQueryProvider();
-		jobject getItem(jint arg0);
+		JObject getItem(jint arg0);
 		jlong getItemId(jint arg0);
 		android::view::View getView(jint arg0, android::view::View arg1, android::view::ViewGroup arg2);
 		jboolean hasStableIds();
 		android::view::View newDropDownView(android::content::Context arg0, JObject arg1, android::view::ViewGroup arg2);
 		android::view::View newView(android::content::Context arg0, JObject arg1, android::view::ViewGroup arg2);
-		JObject runQueryOnBackgroundThread(jstring arg0);
+		JObject runQueryOnBackgroundThread(JString arg0);
 		void setDropDownViewTheme(android::content::res::Resources_Theme arg0);
 		void setFilterQueryProvider(JObject arg0);
 		JObject swapCursor(JObject arg0);

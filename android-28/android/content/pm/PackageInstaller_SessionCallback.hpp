@@ -2,7 +2,6 @@
 
 #include "../../../JObject.hpp"
 
-
 namespace android::content::pm
 {
 	class PackageInstaller_SessionCallback : public JObject

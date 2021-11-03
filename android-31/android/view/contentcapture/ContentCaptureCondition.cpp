@@ -1,5 +1,7 @@
 #include "../../content/LocusId.hpp"
 #include "../../os/Parcel.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./ContentCaptureCondition.hpp"
 
 namespace android::view::contentcapture
@@ -41,12 +43,12 @@ namespace android::view::contentcapture
 			"()I"
 		);
 	}
-	jboolean ContentCaptureCondition::equals(jobject arg0)
+	jboolean ContentCaptureCondition::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint ContentCaptureCondition::getFlags()
@@ -70,12 +72,12 @@ namespace android::view::contentcapture
 			"()I"
 		);
 	}
-	jstring ContentCaptureCondition::toString()
+	JString ContentCaptureCondition::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void ContentCaptureCondition::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

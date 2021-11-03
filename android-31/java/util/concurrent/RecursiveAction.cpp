@@ -1,3 +1,4 @@
+#include "../../../JObject.hpp"
 #include "../../lang/Void.hpp"
 #include "./RecursiveAction.hpp"
 

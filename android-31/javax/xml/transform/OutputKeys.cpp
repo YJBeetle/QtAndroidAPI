@@ -1,87 +1,88 @@
+#include "../../../JString.hpp"
 #include "./OutputKeys.hpp"
 
 namespace javax::xml::transform
 {
 	// Fields
-	jstring OutputKeys::CDATA_SECTION_ELEMENTS()
+	JString OutputKeys::CDATA_SECTION_ELEMENTS()
 	{
 		return getStaticObjectField(
 			"javax.xml.transform.OutputKeys",
 			"CDATA_SECTION_ELEMENTS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring OutputKeys::DOCTYPE_PUBLIC()
+	JString OutputKeys::DOCTYPE_PUBLIC()
 	{
 		return getStaticObjectField(
 			"javax.xml.transform.OutputKeys",
 			"DOCTYPE_PUBLIC",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring OutputKeys::DOCTYPE_SYSTEM()
+	JString OutputKeys::DOCTYPE_SYSTEM()
 	{
 		return getStaticObjectField(
 			"javax.xml.transform.OutputKeys",
 			"DOCTYPE_SYSTEM",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring OutputKeys::ENCODING()
+	JString OutputKeys::ENCODING()
 	{
 		return getStaticObjectField(
 			"javax.xml.transform.OutputKeys",
 			"ENCODING",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring OutputKeys::INDENT()
+	JString OutputKeys::INDENT()
 	{
 		return getStaticObjectField(
 			"javax.xml.transform.OutputKeys",
 			"INDENT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring OutputKeys::MEDIA_TYPE()
+	JString OutputKeys::MEDIA_TYPE()
 	{
 		return getStaticObjectField(
 			"javax.xml.transform.OutputKeys",
 			"MEDIA_TYPE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring OutputKeys::_METHOD()
+	JString OutputKeys::_METHOD()
 	{
 		return getStaticObjectField(
 			"javax.xml.transform.OutputKeys",
 			"METHOD",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring OutputKeys::OMIT_XML_DECLARATION()
+	JString OutputKeys::OMIT_XML_DECLARATION()
 	{
 		return getStaticObjectField(
 			"javax.xml.transform.OutputKeys",
 			"OMIT_XML_DECLARATION",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring OutputKeys::STANDALONE()
+	JString OutputKeys::STANDALONE()
 	{
 		return getStaticObjectField(
 			"javax.xml.transform.OutputKeys",
 			"STANDALONE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring OutputKeys::VERSION()
+	JString OutputKeys::VERSION()
 	{
 		return getStaticObjectField(
 			"javax.xml.transform.OutputKeys",
 			"VERSION",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QAndroidJniObject forward

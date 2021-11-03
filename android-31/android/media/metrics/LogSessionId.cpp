@@ -1,3 +1,5 @@
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./LogSessionId.hpp"
 
 namespace android::media::metrics
@@ -18,20 +20,20 @@ namespace android::media::metrics
 	// Constructors
 	
 	// Methods
-	jboolean LogSessionId::equals(jobject arg0)
+	jboolean LogSessionId::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jstring LogSessionId::getStringId()
+	JString LogSessionId::getStringId()
 	{
 		return callObjectMethod(
 			"getStringId",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint LogSessionId::hashCode()
 	{
@@ -40,12 +42,12 @@ namespace android::media::metrics
 			"()I"
 		);
 	}
-	jstring LogSessionId::toString()
+	JString LogSessionId::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::media::metrics
 

@@ -6,6 +6,7 @@ namespace android::graphics
 {
 	class Insets;
 }
+class JString;
 
 namespace android::view
 {
@@ -25,7 +26,7 @@ namespace android::view
 		android::graphics::Insets getLowerBound();
 		android::graphics::Insets getUpperBound();
 		android::view::WindowInsetsAnimation_Bounds inset(android::graphics::Insets arg0);
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::view
 

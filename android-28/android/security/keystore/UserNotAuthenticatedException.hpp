@@ -1,11 +1,9 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "../../../java/lang/Exception.hpp"
-#include "../../../java/security/GeneralSecurityException.hpp"
-#include "../../../java/security/KeyException.hpp"
 #include "../../../java/security/InvalidKeyException.hpp"
 
+class JString;
+class JThrowable;
 
 namespace android::security::keystore
 {
@@ -20,8 +18,8 @@ namespace android::security::keystore
 		
 		// Constructors
 		UserNotAuthenticatedException();
-		UserNotAuthenticatedException(jstring arg0);
-		UserNotAuthenticatedException(jstring arg0, jthrowable arg1);
+		UserNotAuthenticatedException(JString arg0);
+		UserNotAuthenticatedException(JString arg0, JThrowable arg1);
 		
 		// Methods
 	};

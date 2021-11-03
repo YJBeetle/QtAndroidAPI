@@ -1,5 +1,6 @@
 #include "./Handler.hpp"
 #include "../../java/io/PrintWriter.hpp"
+#include "../../JString.hpp"
 #include "./TokenWatcher.hpp"
 
 namespace android::os
@@ -10,22 +11,22 @@ namespace android::os
 	TokenWatcher::TokenWatcher(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	TokenWatcher::TokenWatcher(android::os::Handler arg0, jstring arg1)
+	TokenWatcher::TokenWatcher(android::os::Handler arg0, JString arg1)
 		: JObject(
 			"android.os.TokenWatcher",
 			"(Landroid/os/Handler;Ljava/lang/String;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		) {}
 	
 	// Methods
-	void TokenWatcher::acquire(JObject arg0, jstring arg1)
+	void TokenWatcher::acquire(JObject arg0, JString arg1)
 	{
 		callMethod<void>(
 			"acquire",
 			"(Landroid/os/IBinder;Ljava/lang/String;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
 	void TokenWatcher::acquired()

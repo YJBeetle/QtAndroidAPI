@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JString;
 
 namespace android::telephony
 {
@@ -9,11 +10,11 @@ namespace android::telephony
 	{
 	public:
 		// Fields
-		static jstring KEY_ENTITLEMENT_SERVER_URL_STRING();
-		static jstring KEY_FCM_SENDER_ID_STRING();
-		static jstring KEY_IMS_PROVISIONING_BOOL();
-		static jstring KEY_PREFIX();
-		static jstring KEY_SHOW_VOWIFI_WEBVIEW_BOOL();
+		static JString KEY_ENTITLEMENT_SERVER_URL_STRING();
+		static JString KEY_FCM_SENDER_ID_STRING();
+		static JString KEY_IMS_PROVISIONING_BOOL();
+		static JString KEY_PREFIX();
+		static JString KEY_SHOW_VOWIFI_WEBVIEW_BOOL();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit CarrierConfigManager_ImsServiceEntitlement(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}

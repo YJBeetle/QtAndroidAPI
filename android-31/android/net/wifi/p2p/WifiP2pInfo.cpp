@@ -1,4 +1,5 @@
 #include "../../../os/Parcel.hpp"
+#include "../../../../JString.hpp"
 #include "../../../../java/net/InetAddress.hpp"
 #include "./WifiP2pInfo.hpp"
 
@@ -57,12 +58,12 @@ namespace android::net::wifi::p2p
 			"()I"
 		);
 	}
-	jstring WifiP2pInfo::toString()
+	JString WifiP2pInfo::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void WifiP2pInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

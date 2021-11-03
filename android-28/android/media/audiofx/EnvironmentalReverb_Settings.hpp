@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JString;
 
 namespace android::media::audiofx
 {
@@ -26,10 +27,10 @@ namespace android::media::audiofx
 		
 		// Constructors
 		EnvironmentalReverb_Settings();
-		EnvironmentalReverb_Settings(jstring arg0);
+		EnvironmentalReverb_Settings(JString arg0);
 		
 		// Methods
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::media::audiofx
 

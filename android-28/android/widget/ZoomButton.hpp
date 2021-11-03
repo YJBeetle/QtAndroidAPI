@@ -1,8 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../view/View.hpp"
-#include "./ImageView.hpp"
 #include "./ImageButton.hpp"
 
 namespace android::content
@@ -21,6 +18,7 @@ namespace android::view
 {
 	class View;
 }
+class JString;
 
 namespace android::widget
 {
@@ -41,7 +39,7 @@ namespace android::widget
 		
 		// Methods
 		jboolean dispatchUnhandledMove(android::view::View arg0, jint arg1);
-		jstring getAccessibilityClassName();
+		JString getAccessibilityClassName();
 		jboolean onKeyUp(jint arg0, android::view::KeyEvent arg1);
 		jboolean onLongClick(android::view::View arg0);
 		jboolean onTouchEvent(android::view::MotionEvent arg0);

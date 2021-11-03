@@ -2,10 +2,12 @@
 
 #include "../../../JObject.hpp"
 
+class JByteArray;
 namespace android::os
 {
 	class ParcelFileDescriptor;
 }
+class JString;
 
 namespace android::app::blob
 {
@@ -22,13 +24,13 @@ namespace android::app::blob
 		
 		// Methods
 		void abandon();
-		void allowPackageAccess(jstring arg0, jbyteArray arg1);
+		void allowPackageAccess(JString arg0, JByteArray arg1);
 		void allowPublicAccess();
 		void allowSameSignatureAccess();
 		void close();
 		void commit(JObject arg0, JObject arg1);
 		jlong getSize();
-		jboolean isPackageAccessAllowed(jstring arg0, jbyteArray arg1);
+		jboolean isPackageAccessAllowed(JString arg0, JByteArray arg1);
 		jboolean isPublicAccessAllowed();
 		jboolean isSameSignatureAccessAllowed();
 		android::os::ParcelFileDescriptor openRead();

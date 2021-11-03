@@ -1,12 +1,14 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "./AudioEffect.hpp"
 
+class JIntArray;
+class JShortArray;
 namespace android::media::audiofx
 {
 	class Equalizer_Settings;
 }
+class JString;
 
 namespace android::media::audiofx
 {
@@ -34,14 +36,14 @@ namespace android::media::audiofx
 		
 		// Methods
 		jshort getBand(jint arg0);
-		jintArray getBandFreqRange(jshort arg0);
+		JIntArray getBandFreqRange(jshort arg0);
 		jshort getBandLevel(jshort arg0);
-		jshortArray getBandLevelRange();
+		JShortArray getBandLevelRange();
 		jint getCenterFreq(jshort arg0);
 		jshort getCurrentPreset();
 		jshort getNumberOfBands();
 		jshort getNumberOfPresets();
-		jstring getPresetName(jshort arg0);
+		JString getPresetName(jshort arg0);
 		android::media::audiofx::Equalizer_Settings getProperties();
 		void setBandLevel(jshort arg0, jshort arg1);
 		void setParameterListener(JObject arg0);

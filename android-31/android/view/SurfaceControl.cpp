@@ -1,4 +1,5 @@
 #include "../os/Parcel.hpp"
+#include "../../JString.hpp"
 #include "./SurfaceControl.hpp"
 
 namespace android::view
@@ -48,12 +49,12 @@ namespace android::view
 			"()V"
 		);
 	}
-	jstring SurfaceControl::toString()
+	JString SurfaceControl::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void SurfaceControl::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

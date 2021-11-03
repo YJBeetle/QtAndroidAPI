@@ -1,5 +1,7 @@
 #include "./Rect.hpp"
 #include "../os/Parcel.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./RectF.hpp"
 
 namespace android::graphics
@@ -129,12 +131,12 @@ namespace android::graphics
 			"()I"
 		);
 	}
-	jboolean RectF::equals(jobject arg0)
+	jboolean RectF::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint RectF::hashCode()
@@ -289,19 +291,19 @@ namespace android::graphics
 			"()V"
 		);
 	}
-	jstring RectF::toShortString()
+	JString RectF::toShortString()
 	{
 		return callObjectMethod(
 			"toShortString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring RectF::toString()
+	JString RectF::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void RectF::_union(android::graphics::RectF arg0)
 	{

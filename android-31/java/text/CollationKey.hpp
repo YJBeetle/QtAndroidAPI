@@ -2,6 +2,9 @@
 
 #include "../../JObject.hpp"
 
+class JByteArray;
+class JObject;
+class JString;
 
 namespace java::text
 {
@@ -17,10 +20,10 @@ namespace java::text
 		// Constructors
 		
 		// Methods
-		jint compareTo(jobject arg0);
+		jint compareTo(JObject arg0);
 		jint compareTo(java::text::CollationKey arg0);
-		jstring getSourceString();
-		jbyteArray toByteArray();
+		JString getSourceString();
+		JByteArray toByteArray();
 	};
 } // namespace java::text
 

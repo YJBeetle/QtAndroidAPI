@@ -1,4 +1,5 @@
 #include "./PrintDocumentInfo.hpp"
+#include "../../JString.hpp"
 #include "./PrintDocumentInfo_Builder.hpp"
 
 namespace android::print
@@ -9,11 +10,11 @@ namespace android::print
 	PrintDocumentInfo_Builder::PrintDocumentInfo_Builder(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	PrintDocumentInfo_Builder::PrintDocumentInfo_Builder(jstring arg0)
+	PrintDocumentInfo_Builder::PrintDocumentInfo_Builder(JString arg0)
 		: JObject(
 			"android.print.PrintDocumentInfo$Builder",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

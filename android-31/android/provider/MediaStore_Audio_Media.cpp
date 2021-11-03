@@ -1,32 +1,33 @@
 #include "../net/Uri.hpp"
+#include "../../JString.hpp"
 #include "./MediaStore_Audio_Media.hpp"
 
 namespace android::provider
 {
 	// Fields
-	jstring MediaStore_Audio_Media::CONTENT_TYPE()
+	JString MediaStore_Audio_Media::CONTENT_TYPE()
 	{
 		return getStaticObjectField(
 			"android.provider.MediaStore$Audio$Media",
 			"CONTENT_TYPE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring MediaStore_Audio_Media::DEFAULT_SORT_ORDER()
+	JString MediaStore_Audio_Media::DEFAULT_SORT_ORDER()
 	{
 		return getStaticObjectField(
 			"android.provider.MediaStore$Audio$Media",
 			"DEFAULT_SORT_ORDER",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring MediaStore_Audio_Media::ENTRY_CONTENT_TYPE()
+	JString MediaStore_Audio_Media::ENTRY_CONTENT_TYPE()
 	{
 		return getStaticObjectField(
 			"android.provider.MediaStore$Audio$Media",
 			"ENTRY_CONTENT_TYPE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::net::Uri MediaStore_Audio_Media::EXTERNAL_CONTENT_URI()
 	{
@@ -36,13 +37,13 @@ namespace android::provider
 			"Landroid/net/Uri;"
 		);
 	}
-	jstring MediaStore_Audio_Media::EXTRA_MAX_BYTES()
+	JString MediaStore_Audio_Media::EXTRA_MAX_BYTES()
 	{
 		return getStaticObjectField(
 			"android.provider.MediaStore$Audio$Media",
 			"EXTRA_MAX_BYTES",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::net::Uri MediaStore_Audio_Media::INTERNAL_CONTENT_URI()
 	{
@@ -52,13 +53,13 @@ namespace android::provider
 			"Landroid/net/Uri;"
 		);
 	}
-	jstring MediaStore_Audio_Media::RECORD_SOUND_ACTION()
+	JString MediaStore_Audio_Media::RECORD_SOUND_ACTION()
 	{
 		return getStaticObjectField(
 			"android.provider.MediaStore$Audio$Media",
 			"RECORD_SOUND_ACTION",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QAndroidJniObject forward
@@ -72,32 +73,32 @@ namespace android::provider
 		) {}
 	
 	// Methods
-	android::net::Uri MediaStore_Audio_Media::getContentUri(jstring arg0)
+	android::net::Uri MediaStore_Audio_Media::getContentUri(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.provider.MediaStore$Audio$Media",
 			"getContentUri",
 			"(Ljava/lang/String;)Landroid/net/Uri;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	android::net::Uri MediaStore_Audio_Media::getContentUri(jstring arg0, jlong arg1)
+	android::net::Uri MediaStore_Audio_Media::getContentUri(JString arg0, jlong arg1)
 	{
 		return callStaticObjectMethod(
 			"android.provider.MediaStore$Audio$Media",
 			"getContentUri",
 			"(Ljava/lang/String;J)Landroid/net/Uri;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
-	android::net::Uri MediaStore_Audio_Media::getContentUriForPath(jstring arg0)
+	android::net::Uri MediaStore_Audio_Media::getContentUriForPath(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.provider.MediaStore$Audio$Media",
 			"getContentUriForPath",
 			"(Ljava/lang/String;)Landroid/net/Uri;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 } // namespace android::provider

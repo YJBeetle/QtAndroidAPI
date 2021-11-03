@@ -1,6 +1,5 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "./SearchIterator.hpp"
 
 namespace android::icu::text
@@ -15,6 +14,7 @@ namespace android::icu::util
 {
 	class ULocale;
 }
+class JString;
 namespace java::util
 {
 	class Locale;
@@ -32,22 +32,22 @@ namespace android::icu::text
 		StringSearch(QAndroidJniObject obj);
 		
 		// Constructors
-		StringSearch(jstring arg0, jstring arg1);
-		StringSearch(jstring arg0, JObject arg1, android::icu::text::RuleBasedCollator arg2);
-		StringSearch(jstring arg0, JObject arg1, android::icu::util::ULocale arg2);
-		StringSearch(jstring arg0, JObject arg1, java::util::Locale arg2);
-		StringSearch(jstring arg0, JObject arg1, android::icu::text::RuleBasedCollator arg2, android::icu::text::BreakIterator arg3);
+		StringSearch(JString arg0, JString arg1);
+		StringSearch(JString arg0, JObject arg1, android::icu::text::RuleBasedCollator arg2);
+		StringSearch(JString arg0, JObject arg1, android::icu::util::ULocale arg2);
+		StringSearch(JString arg0, JObject arg1, java::util::Locale arg2);
+		StringSearch(JString arg0, JObject arg1, android::icu::text::RuleBasedCollator arg2, android::icu::text::BreakIterator arg3);
 		
 		// Methods
 		android::icu::text::RuleBasedCollator getCollator();
 		jint getIndex();
-		jstring getPattern();
+		JString getPattern();
 		jboolean isCanonical();
 		void reset();
 		void setCanonical(jboolean arg0);
 		void setCollator(android::icu::text::RuleBasedCollator arg0);
 		void setIndex(jint arg0);
-		void setPattern(jstring arg0);
+		void setPattern(JString arg0);
 		void setTarget(JObject arg0);
 	};
 } // namespace android::icu::text

@@ -1,4 +1,5 @@
 #include "./AppSearchSchema_LongPropertyConfig.hpp"
+#include "../../../JString.hpp"
 #include "./AppSearchSchema_LongPropertyConfig_Builder.hpp"
 
 namespace android::app::appsearch
@@ -9,11 +10,11 @@ namespace android::app::appsearch
 	AppSearchSchema_LongPropertyConfig_Builder::AppSearchSchema_LongPropertyConfig_Builder(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	AppSearchSchema_LongPropertyConfig_Builder::AppSearchSchema_LongPropertyConfig_Builder(jstring arg0)
+	AppSearchSchema_LongPropertyConfig_Builder::AppSearchSchema_LongPropertyConfig_Builder(JString arg0)
 		: JObject(
 			"android.app.appsearch.AppSearchSchema$LongPropertyConfig$Builder",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

@@ -1,4 +1,10 @@
+#include "../../JFloatArray.hpp"
+#include "../../JIntArray.hpp"
+#include "../../JArray.hpp"
+#include "../../JObjectArray.hpp"
 #include "./Animator.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./ValueAnimator.hpp"
 
 namespace android::animation
@@ -53,50 +59,50 @@ namespace android::animation
 			"()J"
 		);
 	}
-	android::animation::ValueAnimator ValueAnimator::ofArgb(jintArray arg0)
+	android::animation::ValueAnimator ValueAnimator::ofArgb(JIntArray arg0)
 	{
 		return callStaticObjectMethod(
 			"android.animation.ValueAnimator",
 			"ofArgb",
 			"([I)Landroid/animation/ValueAnimator;",
-			arg0
+			arg0.object<jintArray>()
 		);
 	}
-	android::animation::ValueAnimator ValueAnimator::ofFloat(jfloatArray arg0)
+	android::animation::ValueAnimator ValueAnimator::ofFloat(JFloatArray arg0)
 	{
 		return callStaticObjectMethod(
 			"android.animation.ValueAnimator",
 			"ofFloat",
 			"([F)Landroid/animation/ValueAnimator;",
-			arg0
+			arg0.object<jfloatArray>()
 		);
 	}
-	android::animation::ValueAnimator ValueAnimator::ofInt(jintArray arg0)
+	android::animation::ValueAnimator ValueAnimator::ofInt(JIntArray arg0)
 	{
 		return callStaticObjectMethod(
 			"android.animation.ValueAnimator",
 			"ofInt",
 			"([I)Landroid/animation/ValueAnimator;",
-			arg0
+			arg0.object<jintArray>()
 		);
 	}
-	android::animation::ValueAnimator ValueAnimator::ofObject(JObject arg0, jobjectArray arg1)
+	android::animation::ValueAnimator ValueAnimator::ofObject(JObject arg0, JObjectArray arg1)
 	{
 		return callStaticObjectMethod(
 			"android.animation.ValueAnimator",
 			"ofObject",
 			"(Landroid/animation/TypeEvaluator;[Ljava/lang/Object;)Landroid/animation/ValueAnimator;",
 			arg0.object(),
-			arg1
+			arg1.object<jobjectArray>()
 		);
 	}
-	android::animation::ValueAnimator ValueAnimator::ofPropertyValuesHolder(jarray arg0)
+	android::animation::ValueAnimator ValueAnimator::ofPropertyValuesHolder(JArray arg0)
 	{
 		return callStaticObjectMethod(
 			"android.animation.ValueAnimator",
 			"ofPropertyValuesHolder",
 			"([Landroid/animation/PropertyValuesHolder;)Landroid/animation/ValueAnimator;",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
 	void ValueAnimator::setFrameDelay(jlong arg0)
@@ -144,20 +150,20 @@ namespace android::animation
 			"()F"
 		);
 	}
-	jobject ValueAnimator::getAnimatedValue()
+	JObject ValueAnimator::getAnimatedValue()
 	{
 		return callObjectMethod(
 			"getAnimatedValue",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
-	jobject ValueAnimator::getAnimatedValue(jstring arg0)
+	JObject ValueAnimator::getAnimatedValue(JString arg0)
 	{
 		return callObjectMethod(
 			"getAnimatedValue",
 			"(Ljava/lang/String;)Ljava/lang/Object;",
-			arg0
-		).object<jobject>();
+			arg0.object<jstring>()
+		);
 	}
 	jlong ValueAnimator::getCurrentPlayTime()
 	{
@@ -208,12 +214,12 @@ namespace android::animation
 			"()J"
 		);
 	}
-	jarray ValueAnimator::getValues()
+	JArray ValueAnimator::getValues()
 	{
 		return callObjectMethod(
 			"getValues",
 			"()[Landroid/animation/PropertyValuesHolder;"
-		).object<jarray>();
+		);
 	}
 	jboolean ValueAnimator::isRunning()
 	{
@@ -297,20 +303,20 @@ namespace android::animation
 			arg0.object()
 		);
 	}
-	void ValueAnimator::setFloatValues(jfloatArray arg0)
+	void ValueAnimator::setFloatValues(JFloatArray arg0)
 	{
 		callMethod<void>(
 			"setFloatValues",
 			"([F)V",
-			arg0
+			arg0.object<jfloatArray>()
 		);
 	}
-	void ValueAnimator::setIntValues(jintArray arg0)
+	void ValueAnimator::setIntValues(JIntArray arg0)
 	{
 		callMethod<void>(
 			"setIntValues",
 			"([I)V",
-			arg0
+			arg0.object<jintArray>()
 		);
 	}
 	void ValueAnimator::setInterpolator(JObject arg0)
@@ -321,12 +327,12 @@ namespace android::animation
 			arg0.object()
 		);
 	}
-	void ValueAnimator::setObjectValues(jobjectArray arg0)
+	void ValueAnimator::setObjectValues(JObjectArray arg0)
 	{
 		callMethod<void>(
 			"setObjectValues",
 			"([Ljava/lang/Object;)V",
-			arg0
+			arg0.object<jobjectArray>()
 		);
 	}
 	void ValueAnimator::setRepeatCount(jint arg0)
@@ -353,12 +359,12 @@ namespace android::animation
 			arg0
 		);
 	}
-	void ValueAnimator::setValues(jarray arg0)
+	void ValueAnimator::setValues(JArray arg0)
 	{
 		callMethod<void>(
 			"setValues",
 			"([Landroid/animation/PropertyValuesHolder;)V",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
 	void ValueAnimator::start()
@@ -368,12 +374,12 @@ namespace android::animation
 			"()V"
 		);
 	}
-	jstring ValueAnimator::toString()
+	JString ValueAnimator::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::animation
 

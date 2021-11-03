@@ -1,8 +1,10 @@
+#include "../../JByteArray.hpp"
 #include "./MediaDrm_CryptoSession.hpp"
 #include "./MediaDrm_KeyRequest.hpp"
 #include "./MediaDrm_ProvisionRequest.hpp"
 #include "../os/Handler.hpp"
 #include "../os/PersistableBundle.hpp"
+#include "../../JString.hpp"
 #include "../../java/util/HashMap.hpp"
 #include "../../java/util/UUID.hpp"
 #include "./MediaDrm.hpp"
@@ -143,45 +145,45 @@ namespace android::media
 			"OFFLINE_LICENSE_STATE_USABLE"
 		);
 	}
-	jstring MediaDrm::PROPERTY_ALGORITHMS()
+	JString MediaDrm::PROPERTY_ALGORITHMS()
 	{
 		return getStaticObjectField(
 			"android.media.MediaDrm",
 			"PROPERTY_ALGORITHMS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring MediaDrm::PROPERTY_DESCRIPTION()
+	JString MediaDrm::PROPERTY_DESCRIPTION()
 	{
 		return getStaticObjectField(
 			"android.media.MediaDrm",
 			"PROPERTY_DESCRIPTION",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring MediaDrm::PROPERTY_DEVICE_UNIQUE_ID()
+	JString MediaDrm::PROPERTY_DEVICE_UNIQUE_ID()
 	{
 		return getStaticObjectField(
 			"android.media.MediaDrm",
 			"PROPERTY_DEVICE_UNIQUE_ID",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring MediaDrm::PROPERTY_VENDOR()
+	JString MediaDrm::PROPERTY_VENDOR()
 	{
 		return getStaticObjectField(
 			"android.media.MediaDrm",
 			"PROPERTY_VENDOR",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring MediaDrm::PROPERTY_VERSION()
+	JString MediaDrm::PROPERTY_VERSION()
 	{
 		return getStaticObjectField(
 			"android.media.MediaDrm",
 			"PROPERTY_VERSION",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint MediaDrm::SECURITY_LEVEL_HW_SECURE_ALL()
 	{
@@ -263,24 +265,24 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	jboolean MediaDrm::isCryptoSchemeSupported(java::util::UUID arg0, jstring arg1)
+	jboolean MediaDrm::isCryptoSchemeSupported(java::util::UUID arg0, JString arg1)
 	{
 		return callStaticMethod<jboolean>(
 			"android.media.MediaDrm",
 			"isCryptoSchemeSupported",
 			"(Ljava/util/UUID;Ljava/lang/String;)Z",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
-	jboolean MediaDrm::isCryptoSchemeSupported(java::util::UUID arg0, jstring arg1, jint arg2)
+	jboolean MediaDrm::isCryptoSchemeSupported(java::util::UUID arg0, JString arg1, jint arg2)
 	{
 		return callStaticMethod<jboolean>(
 			"android.media.MediaDrm",
 			"isCryptoSchemeSupported",
 			"(Ljava/util/UUID;Ljava/lang/String;I)Z",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2
 		);
 	}
@@ -319,12 +321,12 @@ namespace android::media
 			"()V"
 		);
 	}
-	void MediaDrm::closeSession(jbyteArray arg0)
+	void MediaDrm::closeSession(JByteArray arg0)
 	{
 		callMethod<void>(
 			"closeSession",
 			"([B)V",
-			arg0
+			arg0.object<jbyteArray>()
 		);
 	}
 	jint MediaDrm::getConnectedHdcpLevel()
@@ -334,24 +336,24 @@ namespace android::media
 			"()I"
 		);
 	}
-	android::media::MediaDrm_CryptoSession MediaDrm::getCryptoSession(jbyteArray arg0, jstring arg1, jstring arg2)
+	android::media::MediaDrm_CryptoSession MediaDrm::getCryptoSession(JByteArray arg0, JString arg1, JString arg2)
 	{
 		return callObjectMethod(
 			"getCryptoSession",
 			"([BLjava/lang/String;Ljava/lang/String;)Landroid/media/MediaDrm$CryptoSession;",
-			arg0,
-			arg1,
-			arg2
+			arg0.object<jbyteArray>(),
+			arg1.object<jstring>(),
+			arg2.object<jstring>()
 		);
 	}
-	android::media::MediaDrm_KeyRequest MediaDrm::getKeyRequest(jbyteArray arg0, jbyteArray arg1, jstring arg2, jint arg3, java::util::HashMap arg4)
+	android::media::MediaDrm_KeyRequest MediaDrm::getKeyRequest(JByteArray arg0, JByteArray arg1, JString arg2, jint arg3, java::util::HashMap arg4)
 	{
 		return callObjectMethod(
 			"getKeyRequest",
 			"([B[BLjava/lang/String;ILjava/util/HashMap;)Landroid/media/MediaDrm$KeyRequest;",
-			arg0,
-			arg1,
-			arg2,
+			arg0.object<jbyteArray>(),
+			arg1.object<jbyteArray>(),
+			arg2.object<jstring>(),
 			arg3,
 			arg4.object()
 		);
@@ -384,12 +386,12 @@ namespace android::media
 			"()Ljava/util/List;"
 		);
 	}
-	jint MediaDrm::getOfflineLicenseState(jbyteArray arg0)
+	jint MediaDrm::getOfflineLicenseState(JByteArray arg0)
 	{
 		return callMethod<jint>(
 			"getOfflineLicenseState",
 			"([B)I",
-			arg0
+			arg0.object<jbyteArray>()
 		);
 	}
 	jint MediaDrm::getOpenSessionCount()
@@ -399,21 +401,21 @@ namespace android::media
 			"()I"
 		);
 	}
-	jbyteArray MediaDrm::getPropertyByteArray(jstring arg0)
+	JByteArray MediaDrm::getPropertyByteArray(JString arg0)
 	{
 		return callObjectMethod(
 			"getPropertyByteArray",
 			"(Ljava/lang/String;)[B",
-			arg0
-		).object<jbyteArray>();
+			arg0.object<jstring>()
+		);
 	}
-	jstring MediaDrm::getPropertyString(jstring arg0)
+	JString MediaDrm::getPropertyString(JString arg0)
 	{
 		return callObjectMethod(
 			"getPropertyString",
 			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
+			arg0.object<jstring>()
+		);
 	}
 	android::media::MediaDrm_ProvisionRequest MediaDrm::getProvisionRequest()
 	{
@@ -422,13 +424,13 @@ namespace android::media
 			"()Landroid/media/MediaDrm$ProvisionRequest;"
 		);
 	}
-	jbyteArray MediaDrm::getSecureStop(jbyteArray arg0)
+	JByteArray MediaDrm::getSecureStop(JByteArray arg0)
 	{
 		return callObjectMethod(
 			"getSecureStop",
 			"([B)[B",
-			arg0
-		).object<jbyteArray>();
+			arg0.object<jbyteArray>()
+		);
 	}
 	JObject MediaDrm::getSecureStopIds()
 	{
@@ -444,52 +446,52 @@ namespace android::media
 			"()Ljava/util/List;"
 		);
 	}
-	jint MediaDrm::getSecurityLevel(jbyteArray arg0)
+	jint MediaDrm::getSecurityLevel(JByteArray arg0)
 	{
 		return callMethod<jint>(
 			"getSecurityLevel",
 			"([B)I",
-			arg0
+			arg0.object<jbyteArray>()
 		);
 	}
-	jbyteArray MediaDrm::openSession()
+	JByteArray MediaDrm::openSession()
 	{
 		return callObjectMethod(
 			"openSession",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
-	jbyteArray MediaDrm::openSession(jint arg0)
+	JByteArray MediaDrm::openSession(jint arg0)
 	{
 		return callObjectMethod(
 			"openSession",
 			"(I)[B",
 			arg0
-		).object<jbyteArray>();
+		);
 	}
-	jbyteArray MediaDrm::provideKeyResponse(jbyteArray arg0, jbyteArray arg1)
+	JByteArray MediaDrm::provideKeyResponse(JByteArray arg0, JByteArray arg1)
 	{
 		return callObjectMethod(
 			"provideKeyResponse",
 			"([B[B)[B",
-			arg0,
-			arg1
-		).object<jbyteArray>();
+			arg0.object<jbyteArray>(),
+			arg1.object<jbyteArray>()
+		);
 	}
-	void MediaDrm::provideProvisionResponse(jbyteArray arg0)
+	void MediaDrm::provideProvisionResponse(JByteArray arg0)
 	{
 		callMethod<void>(
 			"provideProvisionResponse",
 			"([B)V",
-			arg0
+			arg0.object<jbyteArray>()
 		);
 	}
-	java::util::HashMap MediaDrm::queryKeyStatus(jbyteArray arg0)
+	java::util::HashMap MediaDrm::queryKeyStatus(JByteArray arg0)
 	{
 		return callObjectMethod(
 			"queryKeyStatus",
 			"([B)Ljava/util/HashMap;",
-			arg0
+			arg0.object<jbyteArray>()
 		);
 	}
 	void MediaDrm::release()
@@ -506,12 +508,12 @@ namespace android::media
 			"()V"
 		);
 	}
-	void MediaDrm::releaseSecureStops(jbyteArray arg0)
+	void MediaDrm::releaseSecureStops(JByteArray arg0)
 	{
 		callMethod<void>(
 			"releaseSecureStops",
 			"([B)V",
-			arg0
+			arg0.object<jbyteArray>()
 		);
 	}
 	void MediaDrm::removeAllSecureStops()
@@ -521,37 +523,37 @@ namespace android::media
 			"()V"
 		);
 	}
-	void MediaDrm::removeKeys(jbyteArray arg0)
+	void MediaDrm::removeKeys(JByteArray arg0)
 	{
 		callMethod<void>(
 			"removeKeys",
 			"([B)V",
-			arg0
+			arg0.object<jbyteArray>()
 		);
 	}
-	void MediaDrm::removeOfflineLicense(jbyteArray arg0)
+	void MediaDrm::removeOfflineLicense(JByteArray arg0)
 	{
 		callMethod<void>(
 			"removeOfflineLicense",
 			"([B)V",
-			arg0
+			arg0.object<jbyteArray>()
 		);
 	}
-	void MediaDrm::removeSecureStop(jbyteArray arg0)
+	void MediaDrm::removeSecureStop(JByteArray arg0)
 	{
 		callMethod<void>(
 			"removeSecureStop",
 			"([B)V",
-			arg0
+			arg0.object<jbyteArray>()
 		);
 	}
-	void MediaDrm::restoreKeys(jbyteArray arg0, jbyteArray arg1)
+	void MediaDrm::restoreKeys(JByteArray arg0, JByteArray arg1)
 	{
 		callMethod<void>(
 			"restoreKeys",
 			"([B[B)V",
-			arg0,
-			arg1
+			arg0.object<jbyteArray>(),
+			arg1.object<jbyteArray>()
 		);
 	}
 	void MediaDrm::setOnEventListener(JObject arg0)
@@ -634,22 +636,22 @@ namespace android::media
 			arg1.object()
 		);
 	}
-	void MediaDrm::setPropertyByteArray(jstring arg0, jbyteArray arg1)
+	void MediaDrm::setPropertyByteArray(JString arg0, JByteArray arg1)
 	{
 		callMethod<void>(
 			"setPropertyByteArray",
 			"(Ljava/lang/String;[B)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jbyteArray>()
 		);
 	}
-	void MediaDrm::setPropertyString(jstring arg0, jstring arg1)
+	void MediaDrm::setPropertyString(JString arg0, JString arg1)
 	{
 		callMethod<void>(
 			"setPropertyString",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		);
 	}
 } // namespace android::media

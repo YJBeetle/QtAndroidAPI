@@ -5,6 +5,9 @@
 #include "../graphics/drawable/Drawable.hpp"
 #include "../os/Parcel.hpp"
 #include "../os/UserHandle.hpp"
+#include "../../JString.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./AppWidgetProviderInfo.hpp"
 
 namespace android::appwidget
@@ -125,12 +128,12 @@ namespace android::appwidget
 			"initialLayout"
 		);
 	}
-	jstring AppWidgetProviderInfo::label()
+	JString AppWidgetProviderInfo::label()
 	{
 		return getObjectField(
 			"label",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint AppWidgetProviderInfo::maxResizeHeight()
 	{
@@ -269,13 +272,13 @@ namespace android::appwidget
 			"()Landroid/os/UserHandle;"
 		);
 	}
-	jstring AppWidgetProviderInfo::loadDescription(android::content::Context arg0)
+	JString AppWidgetProviderInfo::loadDescription(android::content::Context arg0)
 	{
 		return callObjectMethod(
 			"loadDescription",
 			"(Landroid/content/Context;)Ljava/lang/CharSequence;",
 			arg0.object()
-		).object<jstring>();
+		);
 	}
 	android::graphics::drawable::Drawable AppWidgetProviderInfo::loadIcon(android::content::Context arg0, jint arg1)
 	{
@@ -286,13 +289,13 @@ namespace android::appwidget
 			arg1
 		);
 	}
-	jstring AppWidgetProviderInfo::loadLabel(android::content::pm::PackageManager arg0)
+	JString AppWidgetProviderInfo::loadLabel(android::content::pm::PackageManager arg0)
 	{
 		return callObjectMethod(
 			"loadLabel",
 			"(Landroid/content/pm/PackageManager;)Ljava/lang/String;",
 			arg0.object()
-		).object<jstring>();
+		);
 	}
 	android::graphics::drawable::Drawable AppWidgetProviderInfo::loadPreviewImage(android::content::Context arg0, jint arg1)
 	{
@@ -303,12 +306,12 @@ namespace android::appwidget
 			arg1
 		);
 	}
-	jstring AppWidgetProviderInfo::toString()
+	JString AppWidgetProviderInfo::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void AppWidgetProviderInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

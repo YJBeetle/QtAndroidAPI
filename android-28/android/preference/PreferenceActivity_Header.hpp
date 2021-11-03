@@ -18,6 +18,8 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
+class JString;
 
 namespace android::preference
 {
@@ -26,19 +28,19 @@ namespace android::preference
 	public:
 		// Fields
 		static JObject CREATOR();
-		jstring breadCrumbShortTitle();
+		JString breadCrumbShortTitle();
 		jint breadCrumbShortTitleRes();
-		jstring breadCrumbTitle();
+		JString breadCrumbTitle();
 		jint breadCrumbTitleRes();
 		android::os::Bundle extras();
-		jstring fragment();
+		JString fragment();
 		android::os::Bundle fragmentArguments();
 		jint iconRes();
 		jlong id();
 		android::content::Intent intent();
-		jstring summary();
+		JString summary();
 		jint summaryRes();
-		jstring title();
+		JString title();
 		jint titleRes();
 		
 		// QAndroidJniObject forward
@@ -50,10 +52,10 @@ namespace android::preference
 		
 		// Methods
 		jint describeContents();
-		jstring getBreadCrumbShortTitle(android::content::res::Resources arg0);
-		jstring getBreadCrumbTitle(android::content::res::Resources arg0);
-		jstring getSummary(android::content::res::Resources arg0);
-		jstring getTitle(android::content::res::Resources arg0);
+		JString getBreadCrumbShortTitle(android::content::res::Resources arg0);
+		JString getBreadCrumbTitle(android::content::res::Resources arg0);
+		JString getSummary(android::content::res::Resources arg0);
+		JString getTitle(android::content::res::Resources arg0);
 		void readFromParcel(android::os::Parcel arg0);
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};

@@ -1,5 +1,6 @@
 #include "./SearchResult_MatchInfo.hpp"
 #include "./SearchResult_MatchRange.hpp"
+#include "../../../JString.hpp"
 #include "./SearchResult_MatchInfo_Builder.hpp"
 
 namespace android::app::appsearch
@@ -10,11 +11,11 @@ namespace android::app::appsearch
 	SearchResult_MatchInfo_Builder::SearchResult_MatchInfo_Builder(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	SearchResult_MatchInfo_Builder::SearchResult_MatchInfo_Builder(jstring arg0)
+	SearchResult_MatchInfo_Builder::SearchResult_MatchInfo_Builder(JString arg0)
 		: JObject(
 			"android.app.appsearch.SearchResult$MatchInfo$Builder",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

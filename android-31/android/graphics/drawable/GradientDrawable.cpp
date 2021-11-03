@@ -1,3 +1,5 @@
+#include "../../../JFloatArray.hpp"
+#include "../../../JIntArray.hpp"
 #include "../../content/res/ColorStateList.hpp"
 #include "../../content/res/Resources.hpp"
 #include "../../content/res/Resources_Theme.hpp"
@@ -74,12 +76,12 @@ namespace android::graphics::drawable
 			"android.graphics.drawable.GradientDrawable",
 			"()V"
 		) {}
-	GradientDrawable::GradientDrawable(android::graphics::drawable::GradientDrawable_Orientation arg0, jintArray arg1)
+	GradientDrawable::GradientDrawable(android::graphics::drawable::GradientDrawable_Orientation arg0, JIntArray arg1)
 		: android::graphics::drawable::Drawable(
 			"android.graphics.drawable.GradientDrawable",
 			"(Landroid/graphics/drawable/GradientDrawable$Orientation;[I)V",
 			arg0.object(),
-			arg1
+			arg1.object<jintArray>()
 		) {}
 	
 	// Methods
@@ -134,12 +136,12 @@ namespace android::graphics::drawable
 			"()Landroid/graphics/ColorFilter;"
 		);
 	}
-	jintArray GradientDrawable::getColors()
+	JIntArray GradientDrawable::getColors()
 	{
 		return callObjectMethod(
 			"getColors",
 			"()[I"
-		).object<jintArray>();
+		);
 	}
 	android::graphics::drawable::Drawable_ConstantState GradientDrawable::getConstantState()
 	{
@@ -148,12 +150,12 @@ namespace android::graphics::drawable
 			"()Landroid/graphics/drawable/Drawable$ConstantState;"
 		);
 	}
-	jfloatArray GradientDrawable::getCornerRadii()
+	JFloatArray GradientDrawable::getCornerRadii()
 	{
 		return callObjectMethod(
 			"getCornerRadii",
 			"()[F"
-		).object<jfloatArray>();
+		);
 	}
 	jfloat GradientDrawable::getCornerRadius()
 	{
@@ -347,29 +349,29 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	void GradientDrawable::setColors(jintArray arg0)
+	void GradientDrawable::setColors(JIntArray arg0)
 	{
 		callMethod<void>(
 			"setColors",
 			"([I)V",
-			arg0
+			arg0.object<jintArray>()
 		);
 	}
-	void GradientDrawable::setColors(jintArray arg0, jfloatArray arg1)
+	void GradientDrawable::setColors(JIntArray arg0, JFloatArray arg1)
 	{
 		callMethod<void>(
 			"setColors",
 			"([I[F)V",
-			arg0,
-			arg1
+			arg0.object<jintArray>(),
+			arg1.object<jfloatArray>()
 		);
 	}
-	void GradientDrawable::setCornerRadii(jfloatArray arg0)
+	void GradientDrawable::setCornerRadii(JFloatArray arg0)
 	{
 		callMethod<void>(
 			"setCornerRadii",
 			"([F)V",
-			arg0
+			arg0.object<jfloatArray>()
 		);
 	}
 	void GradientDrawable::setCornerRadius(jfloat arg0)

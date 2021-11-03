@@ -1,4 +1,5 @@
 #include "./UnicodeSet.hpp"
+#include "../../../JString.hpp"
 #include "./UnicodeSetIterator.hpp"
 
 namespace android::icu::text
@@ -23,12 +24,12 @@ namespace android::icu::text
 			"codepointEnd"
 		);
 	}
-	jstring UnicodeSetIterator::string()
+	JString UnicodeSetIterator::string()
 	{
 		return getObjectField(
 			"string",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QAndroidJniObject forward
@@ -48,12 +49,12 @@ namespace android::icu::text
 		) {}
 	
 	// Methods
-	jstring UnicodeSetIterator::getString()
+	JString UnicodeSetIterator::getString()
 	{
 		return callObjectMethod(
 			"getString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jboolean UnicodeSetIterator::next()
 	{

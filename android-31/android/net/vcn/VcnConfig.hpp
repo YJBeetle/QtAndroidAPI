@@ -6,6 +6,7 @@ namespace android::os
 {
 	class Parcel;
 }
+class JObject;
 
 namespace android::net::vcn
 {
@@ -23,7 +24,7 @@ namespace android::net::vcn
 		
 		// Methods
 		jint describeContents();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		JObject getGatewayConnectionConfigs();
 		jint hashCode();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);

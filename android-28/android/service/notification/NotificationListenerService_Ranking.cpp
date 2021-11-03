@@ -1,4 +1,6 @@
 #include "../../app/NotificationChannel.hpp"
+#include "../../../JString.hpp"
+#include "../../../JString.hpp"
 #include "./NotificationListenerService_Ranking.hpp"
 
 namespace android::service::notification
@@ -58,26 +60,26 @@ namespace android::service::notification
 			"()I"
 		);
 	}
-	jstring NotificationListenerService_Ranking::getImportanceExplanation()
+	JString NotificationListenerService_Ranking::getImportanceExplanation()
 	{
 		return callObjectMethod(
 			"getImportanceExplanation",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
-	jstring NotificationListenerService_Ranking::getKey()
+	JString NotificationListenerService_Ranking::getKey()
 	{
 		return callObjectMethod(
 			"getKey",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring NotificationListenerService_Ranking::getOverrideGroupKey()
+	JString NotificationListenerService_Ranking::getOverrideGroupKey()
 	{
 		return callObjectMethod(
 			"getOverrideGroupKey",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint NotificationListenerService_Ranking::getRank()
 	{

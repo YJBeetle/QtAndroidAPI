@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JObject;
 
 namespace android::os
 {
@@ -20,16 +21,16 @@ namespace android::os
 		// Methods
 		jint beginBroadcast();
 		void finishBroadcast();
-		jobject getBroadcastCookie(jint arg0);
+		JObject getBroadcastCookie(jint arg0);
 		JObject getBroadcastItem(jint arg0);
-		jobject getRegisteredCallbackCookie(jint arg0);
+		JObject getRegisteredCallbackCookie(jint arg0);
 		jint getRegisteredCallbackCount();
 		JObject getRegisteredCallbackItem(jint arg0);
 		void kill();
 		void onCallbackDied(JObject arg0);
-		void onCallbackDied(JObject arg0, jobject arg1);
+		void onCallbackDied(JObject arg0, JObject arg1);
 		jboolean _register(JObject arg0);
-		jboolean _register(JObject arg0, jobject arg1);
+		jboolean _register(JObject arg0, JObject arg1);
 		jboolean unregister(JObject arg0);
 	};
 } // namespace android::os

@@ -2,6 +2,10 @@
 
 #include "../../../JObject.hpp"
 
+class JByteArray;
+class JCharArray;
+class JObject;
+class JString;
 
 namespace javax::net::ssl
 {
@@ -17,11 +21,11 @@ namespace javax::net::ssl
 		// Constructors
 		
 		// Methods
-		jboolean equals(jobject arg0);
-		jbyteArray getEncoded();
+		jboolean equals(JObject arg0);
+		JByteArray getEncoded();
 		jint getType();
 		jint hashCode();
-		jstring toString();
+		JString toString();
 	};
 } // namespace javax::net::ssl
 

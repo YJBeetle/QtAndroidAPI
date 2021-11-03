@@ -1,3 +1,5 @@
+#include "../../../JString.hpp"
+#include "../../../JThrowable.hpp"
 #include "./SipException.hpp"
 
 namespace android::net::sip
@@ -13,18 +15,18 @@ namespace android::net::sip
 			"android.net.sip.SipException",
 			"()V"
 		) {}
-	SipException::SipException(jstring arg0)
+	SipException::SipException(JString arg0)
 		: java::lang::Exception(
 			"android.net.sip.SipException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	SipException::SipException(jstring arg0, jthrowable arg1)
+	SipException::SipException(JString arg0, JThrowable arg1)
 		: java::lang::Exception(
 			"android.net.sip.SipException",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
 		) {}
 	
 	// Methods

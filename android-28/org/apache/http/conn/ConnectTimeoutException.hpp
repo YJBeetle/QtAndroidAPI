@@ -1,10 +1,8 @@
 #pragma once
 
-#include "../../../../JObject.hpp"
-#include "../../../../java/lang/Exception.hpp"
-#include "../../../../java/io/IOException.hpp"
 #include "../../../../java/io/InterruptedIOException.hpp"
 
+class JString;
 
 namespace org::apache::http::conn
 {
@@ -19,7 +17,7 @@ namespace org::apache::http::conn
 		
 		// Constructors
 		ConnectTimeoutException();
-		ConnectTimeoutException(jstring arg0);
+		ConnectTimeoutException(JString arg0);
 		
 		// Methods
 	};

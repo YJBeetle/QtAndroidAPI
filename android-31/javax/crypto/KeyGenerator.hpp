@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JObject;
+class JString;
 namespace java::security
 {
 	class Provider;
@@ -29,11 +31,11 @@ namespace javax::crypto
 		// Constructors
 		
 		// Methods
-		static javax::crypto::KeyGenerator getInstance(jstring arg0);
-		static javax::crypto::KeyGenerator getInstance(jstring arg0, jstring arg1);
-		static javax::crypto::KeyGenerator getInstance(jstring arg0, java::security::Provider arg1);
+		static javax::crypto::KeyGenerator getInstance(JString arg0);
+		static javax::crypto::KeyGenerator getInstance(JString arg0, JString arg1);
+		static javax::crypto::KeyGenerator getInstance(JString arg0, java::security::Provider arg1);
 		JObject generateKey();
-		jstring getAlgorithm();
+		JString getAlgorithm();
 		java::security::Provider getProvider();
 		void init(jint arg0);
 		void init(java::security::SecureRandom arg0);

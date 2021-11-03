@@ -10,6 +10,8 @@ namespace android::icu::text
 {
 	class MessagePattern_Part_Type;
 }
+class JObject;
+class JString;
 
 namespace android::icu::text
 {
@@ -25,7 +27,7 @@ namespace android::icu::text
 		// Constructors
 		
 		// Methods
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		android::icu::text::MessagePattern_ArgType getArgType();
 		jint getIndex();
 		jint getLength();
@@ -33,7 +35,7 @@ namespace android::icu::text
 		android::icu::text::MessagePattern_Part_Type getType();
 		jint getValue();
 		jint hashCode();
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::icu::text
 

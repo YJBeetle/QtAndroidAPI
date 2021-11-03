@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JString;
 namespace javax::xml::validation
 {
 	class SchemaFactory;
@@ -21,7 +22,7 @@ namespace javax::xml::validation
 		// Constructors
 		
 		// Methods
-		javax::xml::validation::SchemaFactory newFactory(jstring arg0);
+		javax::xml::validation::SchemaFactory newFactory(JString arg0);
 	};
 } // namespace javax::xml::validation
 

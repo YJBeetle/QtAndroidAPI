@@ -1,3 +1,6 @@
+#include "../../JByteArray.hpp"
+#include "../../JFloatArray.hpp"
+#include "../../JShortArray.hpp"
 #include "./AudioAttributes.hpp"
 #include "./AudioDeviceInfo.hpp"
 #include "./AudioFormat.hpp"
@@ -737,22 +740,22 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	jint AudioTrack::write(jbyteArray arg0, jint arg1, jint arg2)
+	jint AudioTrack::write(JByteArray arg0, jint arg1, jint arg2)
 	{
 		return callMethod<jint>(
 			"write",
 			"([BII)I",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1,
 			arg2
 		);
 	}
-	jint AudioTrack::write(jshortArray arg0, jint arg1, jint arg2)
+	jint AudioTrack::write(JShortArray arg0, jint arg1, jint arg2)
 	{
 		return callMethod<jint>(
 			"write",
 			"([SII)I",
-			arg0,
+			arg0.object<jshortArray>(),
 			arg1,
 			arg2
 		);
@@ -767,34 +770,34 @@ namespace android::media
 			arg2
 		);
 	}
-	jint AudioTrack::write(jbyteArray arg0, jint arg1, jint arg2, jint arg3)
+	jint AudioTrack::write(JByteArray arg0, jint arg1, jint arg2, jint arg3)
 	{
 		return callMethod<jint>(
 			"write",
 			"([BIII)I",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1,
 			arg2,
 			arg3
 		);
 	}
-	jint AudioTrack::write(jfloatArray arg0, jint arg1, jint arg2, jint arg3)
+	jint AudioTrack::write(JFloatArray arg0, jint arg1, jint arg2, jint arg3)
 	{
 		return callMethod<jint>(
 			"write",
 			"([FIII)I",
-			arg0,
+			arg0.object<jfloatArray>(),
 			arg1,
 			arg2,
 			arg3
 		);
 	}
-	jint AudioTrack::write(jshortArray arg0, jint arg1, jint arg2, jint arg3)
+	jint AudioTrack::write(JShortArray arg0, jint arg1, jint arg2, jint arg3)
 	{
 		return callMethod<jint>(
 			"write",
 			"([SIII)I",
-			arg0,
+			arg0.object<jshortArray>(),
 			arg1,
 			arg2,
 			arg3

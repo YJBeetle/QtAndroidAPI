@@ -10,6 +10,7 @@ namespace android::net
 {
 	class Uri;
 }
+class JString;
 
 namespace android::provider
 {
@@ -18,7 +19,7 @@ namespace android::provider
 	public:
 		// Fields
 		static android::net::Uri CONTENT_URI();
-		static jstring DEFAULT_SORT_ORDER();
+		static JString DEFAULT_SORT_ORDER();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Telephony_Sms(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
@@ -27,7 +28,7 @@ namespace android::provider
 		// Constructors
 		
 		// Methods
-		static jstring getDefaultSmsPackage(android::content::Context arg0);
+		static JString getDefaultSmsPackage(android::content::Context arg0);
 	};
 } // namespace android::provider
 

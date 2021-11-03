@@ -1,5 +1,8 @@
 #include "./Context.hpp"
 #include "../os/Parcel.hpp"
+#include "../../JClass.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./ComponentName.hpp"
 
 namespace android::content
@@ -24,47 +27,47 @@ namespace android::content
 			"(Landroid/os/Parcel;)V",
 			arg0.object()
 		) {}
-	ComponentName::ComponentName(android::content::Context arg0, jclass arg1)
+	ComponentName::ComponentName(android::content::Context arg0, JClass arg1)
 		: JObject(
 			"android.content.ComponentName",
 			"(Landroid/content/Context;Ljava/lang/Class;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jclass>()
 		) {}
-	ComponentName::ComponentName(android::content::Context arg0, jstring arg1)
+	ComponentName::ComponentName(android::content::Context arg0, JString arg1)
 		: JObject(
 			"android.content.ComponentName",
 			"(Landroid/content/Context;Ljava/lang/String;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		) {}
-	ComponentName::ComponentName(jstring arg0, jstring arg1)
+	ComponentName::ComponentName(JString arg0, JString arg1)
 		: JObject(
 			"android.content.ComponentName",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		) {}
 	
 	// Methods
-	android::content::ComponentName ComponentName::createRelative(android::content::Context arg0, jstring arg1)
+	android::content::ComponentName ComponentName::createRelative(android::content::Context arg0, JString arg1)
 	{
 		return callStaticObjectMethod(
 			"android.content.ComponentName",
 			"createRelative",
 			"(Landroid/content/Context;Ljava/lang/String;)Landroid/content/ComponentName;",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
-	android::content::ComponentName ComponentName::createRelative(jstring arg0, jstring arg1)
+	android::content::ComponentName ComponentName::createRelative(JString arg0, JString arg1)
 	{
 		return callStaticObjectMethod(
 			"android.content.ComponentName",
 			"createRelative",
 			"(Ljava/lang/String;Ljava/lang/String;)Landroid/content/ComponentName;",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		);
 	}
 	android::content::ComponentName ComponentName::readFromParcel(android::os::Parcel arg0)
@@ -76,13 +79,13 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	android::content::ComponentName ComponentName::unflattenFromString(jstring arg0)
+	android::content::ComponentName ComponentName::unflattenFromString(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.content.ComponentName",
 			"unflattenFromString",
 			"(Ljava/lang/String;)Landroid/content/ComponentName;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void ComponentName::writeToParcel(android::content::ComponentName arg0, android::os::Parcel arg1)
@@ -110,12 +113,12 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	jint ComponentName::compareTo(jobject arg0)
+	jint ComponentName::compareTo(JObject arg0)
 	{
 		return callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Object;)I",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint ComponentName::describeContents()
@@ -125,48 +128,48 @@ namespace android::content
 			"()I"
 		);
 	}
-	jboolean ComponentName::equals(jobject arg0)
+	jboolean ComponentName::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jstring ComponentName::flattenToShortString()
+	JString ComponentName::flattenToShortString()
 	{
 		return callObjectMethod(
 			"flattenToShortString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ComponentName::flattenToString()
+	JString ComponentName::flattenToString()
 	{
 		return callObjectMethod(
 			"flattenToString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ComponentName::getClassName()
+	JString ComponentName::getClassName()
 	{
 		return callObjectMethod(
 			"getClassName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ComponentName::getPackageName()
+	JString ComponentName::getPackageName()
 	{
 		return callObjectMethod(
 			"getPackageName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ComponentName::getShortClassName()
+	JString ComponentName::getShortClassName()
 	{
 		return callObjectMethod(
 			"getShortClassName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint ComponentName::hashCode()
 	{
@@ -175,19 +178,19 @@ namespace android::content
 			"()I"
 		);
 	}
-	jstring ComponentName::toShortString()
+	JString ComponentName::toShortString()
 	{
 		return callObjectMethod(
 			"toShortString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ComponentName::toString()
+	JString ComponentName::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void ComponentName::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

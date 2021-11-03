@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./UnknownError.hpp"
 
 namespace java::lang
@@ -13,11 +14,11 @@ namespace java::lang
 			"java.lang.UnknownError",
 			"()V"
 		) {}
-	UnknownError::UnknownError(jstring arg0)
+	UnknownError::UnknownError(JString arg0)
 		: java::lang::VirtualMachineError(
 			"java.lang.UnknownError",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

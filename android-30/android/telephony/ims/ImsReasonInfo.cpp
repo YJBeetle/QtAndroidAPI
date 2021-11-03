@@ -1,4 +1,5 @@
 #include "../../os/Parcel.hpp"
+#include "../../../JString.hpp"
 #include "./ImsReasonInfo.hpp"
 
 namespace android::telephony::ims
@@ -1228,13 +1229,13 @@ namespace android::telephony::ims
 	ImsReasonInfo::ImsReasonInfo(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	ImsReasonInfo::ImsReasonInfo(jint arg0, jint arg1, jstring arg2)
+	ImsReasonInfo::ImsReasonInfo(jint arg0, jint arg1, JString arg2)
 		: JObject(
 			"android.telephony.ims.ImsReasonInfo",
 			"(IILjava/lang/String;)V",
 			arg0,
 			arg1,
-			arg2
+			arg2.object<jstring>()
 		) {}
 	
 	// Methods
@@ -1259,19 +1260,19 @@ namespace android::telephony::ims
 			"()I"
 		);
 	}
-	jstring ImsReasonInfo::getExtraMessage()
+	JString ImsReasonInfo::getExtraMessage()
 	{
 		return callObjectMethod(
 			"getExtraMessage",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ImsReasonInfo::toString()
+	JString ImsReasonInfo::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void ImsReasonInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

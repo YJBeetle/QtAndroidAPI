@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./InvalidParameterException.hpp"
 
 namespace java::security
@@ -13,11 +14,11 @@ namespace java::security
 			"java.security.InvalidParameterException",
 			"()V"
 		) {}
-	InvalidParameterException::InvalidParameterException(jstring arg0)
+	InvalidParameterException::InvalidParameterException(JString arg0)
 		: java::lang::IllegalArgumentException(
 			"java.security.InvalidParameterException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

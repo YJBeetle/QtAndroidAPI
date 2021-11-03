@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JByteArray;
 namespace java::io
 {
 	class File;
@@ -36,7 +37,7 @@ namespace android::util
 		java::io::File getBaseFile();
 		jlong getLastModifiedTime();
 		java::io::FileInputStream openRead();
-		jbyteArray readFully();
+		JByteArray readFully();
 		java::io::FileOutputStream startWrite();
 	};
 } // namespace android::util

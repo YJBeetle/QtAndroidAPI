@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JObject;
+class JString;
 
 namespace android::util
 {
@@ -22,7 +24,7 @@ namespace android::util
 		JObject clamp(JObject arg0);
 		jboolean contains(android::util::Range arg0);
 		jboolean contains(JObject arg0);
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		android::util::Range extend(android::util::Range arg0);
 		android::util::Range extend(JObject arg0);
 		android::util::Range extend(JObject arg0, JObject arg1);
@@ -31,7 +33,7 @@ namespace android::util
 		jint hashCode();
 		android::util::Range intersect(android::util::Range arg0);
 		android::util::Range intersect(JObject arg0, JObject arg1);
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::util
 

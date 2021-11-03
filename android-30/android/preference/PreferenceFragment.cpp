@@ -6,6 +6,7 @@
 #include "../view/LayoutInflater.hpp"
 #include "../view/View.hpp"
 #include "../view/ViewGroup.hpp"
+#include "../../JString.hpp"
 #include "./PreferenceFragment.hpp"
 
 namespace android::preference
@@ -39,12 +40,12 @@ namespace android::preference
 			arg0
 		);
 	}
-	android::preference::Preference PreferenceFragment::findPreference(jstring arg0)
+	android::preference::Preference PreferenceFragment::findPreference(JString arg0)
 	{
 		return callObjectMethod(
 			"findPreference",
 			"(Ljava/lang/CharSequence;)Landroid/preference/Preference;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::preference::PreferenceManager PreferenceFragment::getPreferenceManager()

@@ -1,3 +1,5 @@
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
 #include "./KeyRep_Type.hpp"
 
 namespace java::security
@@ -34,22 +36,22 @@ namespace java::security
 	// Constructors
 	
 	// Methods
-	java::security::KeyRep_Type KeyRep_Type::valueOf(jstring arg0)
+	java::security::KeyRep_Type KeyRep_Type::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"java.security.KeyRep$Type",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/security/KeyRep$Type;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray KeyRep_Type::values()
+	JArray KeyRep_Type::values()
 	{
 		return callStaticObjectMethod(
 			"java.security.KeyRep$Type",
 			"values",
 			"()[Ljava/security/KeyRep$Type;"
-		).object<jarray>();
+		);
 	}
 } // namespace java::security
 

@@ -1,4 +1,5 @@
 #include "../../java/io/PrintStream.hpp"
+#include "../../JString.hpp"
 #include "./PrintStreamPrinter.hpp"
 
 namespace android::util
@@ -17,12 +18,12 @@ namespace android::util
 		) {}
 	
 	// Methods
-	void PrintStreamPrinter::println(jstring arg0)
+	void PrintStreamPrinter::println(JString arg0)
 	{
 		callMethod<void>(
 			"println",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 } // namespace android::util

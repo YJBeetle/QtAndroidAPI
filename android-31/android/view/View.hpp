@@ -2,6 +2,9 @@
 
 #include "../../JObject.hpp"
 
+class JIntArray;
+class JLongArray;
+class JArray;
 namespace android::animation
 {
 	class StateListAnimator;
@@ -226,6 +229,9 @@ namespace android::view::translation
 {
 	class ViewTranslationResponse;
 }
+class JString;
+class JObject;
+class JString;
 namespace java::util
 {
 	class ArrayList;
@@ -242,19 +248,19 @@ namespace android::view
 		static jint ACCESSIBILITY_LIVE_REGION_POLITE();
 		static android::util::Property ALPHA();
 		static jint AUTOFILL_FLAG_INCLUDE_NOT_IMPORTANT_VIEWS();
-		static jstring AUTOFILL_HINT_CREDIT_CARD_EXPIRATION_DATE();
-		static jstring AUTOFILL_HINT_CREDIT_CARD_EXPIRATION_DAY();
-		static jstring AUTOFILL_HINT_CREDIT_CARD_EXPIRATION_MONTH();
-		static jstring AUTOFILL_HINT_CREDIT_CARD_EXPIRATION_YEAR();
-		static jstring AUTOFILL_HINT_CREDIT_CARD_NUMBER();
-		static jstring AUTOFILL_HINT_CREDIT_CARD_SECURITY_CODE();
-		static jstring AUTOFILL_HINT_EMAIL_ADDRESS();
-		static jstring AUTOFILL_HINT_NAME();
-		static jstring AUTOFILL_HINT_PASSWORD();
-		static jstring AUTOFILL_HINT_PHONE();
-		static jstring AUTOFILL_HINT_POSTAL_ADDRESS();
-		static jstring AUTOFILL_HINT_POSTAL_CODE();
-		static jstring AUTOFILL_HINT_USERNAME();
+		static JString AUTOFILL_HINT_CREDIT_CARD_EXPIRATION_DATE();
+		static JString AUTOFILL_HINT_CREDIT_CARD_EXPIRATION_DAY();
+		static JString AUTOFILL_HINT_CREDIT_CARD_EXPIRATION_MONTH();
+		static JString AUTOFILL_HINT_CREDIT_CARD_EXPIRATION_YEAR();
+		static JString AUTOFILL_HINT_CREDIT_CARD_NUMBER();
+		static JString AUTOFILL_HINT_CREDIT_CARD_SECURITY_CODE();
+		static JString AUTOFILL_HINT_EMAIL_ADDRESS();
+		static JString AUTOFILL_HINT_NAME();
+		static JString AUTOFILL_HINT_PASSWORD();
+		static JString AUTOFILL_HINT_PHONE();
+		static JString AUTOFILL_HINT_POSTAL_ADDRESS();
+		static JString AUTOFILL_HINT_POSTAL_CODE();
+		static JString AUTOFILL_HINT_USERNAME();
 		static jint AUTOFILL_TYPE_DATE();
 		static jint AUTOFILL_TYPE_LIST();
 		static jint AUTOFILL_TYPE_NONE();
@@ -398,7 +404,7 @@ namespace android::view
 		static jint resolveSize(jint arg0, jint arg1);
 		static jint resolveSizeAndState(jint arg0, jint arg1, jint arg2);
 		void addChildrenForAccessibility(java::util::ArrayList arg0);
-		void addExtraDataToAccessibilityNodeInfo(android::view::accessibility::AccessibilityNodeInfo arg0, jstring arg1, android::os::Bundle arg2);
+		void addExtraDataToAccessibilityNodeInfo(android::view::accessibility::AccessibilityNodeInfo arg0, JString arg1, android::os::Bundle arg2);
 		void addFocusables(java::util::ArrayList arg0, jint arg1);
 		void addFocusables(java::util::ArrayList arg0, jint arg1, jint arg2);
 		void addKeyboardNavigationClusters(JObject arg0, jint arg1);
@@ -407,7 +413,7 @@ namespace android::view
 		void addOnUnhandledKeyEventListener(JObject arg0);
 		void addTouchables(java::util::ArrayList arg0);
 		android::view::ViewPropertyAnimator animate();
-		void announceForAccessibility(jstring arg0);
+		void announceForAccessibility(JString arg0);
 		void autofill(android::util::SparseArray arg0);
 		void autofill(android::view::autofill::AutofillValue arg0);
 		void bringToFront();
@@ -435,7 +441,7 @@ namespace android::view
 		android::view::WindowInsets dispatchApplyWindowInsets(android::view::WindowInsets arg0);
 		jboolean dispatchCapturedPointerEvent(android::view::MotionEvent arg0);
 		void dispatchConfigurationChanged(android::content::res::Configuration arg0);
-		void dispatchCreateViewTranslationRequest(JObject arg0, jintArray arg1, android::view::translation::TranslationCapability arg2, JObject arg3);
+		void dispatchCreateViewTranslationRequest(JObject arg0, JIntArray arg1, android::view::translation::TranslationCapability arg2, JObject arg3);
 		void dispatchDisplayHint(jint arg0);
 		jboolean dispatchDragEvent(android::view::DragEvent arg0);
 		void dispatchDrawableHotspotChanged(jfloat arg0, jfloat arg1);
@@ -447,8 +453,8 @@ namespace android::view
 		jboolean dispatchNestedFling(jfloat arg0, jfloat arg1, jboolean arg2);
 		jboolean dispatchNestedPreFling(jfloat arg0, jfloat arg1);
 		jboolean dispatchNestedPrePerformAccessibilityAction(jint arg0, android::os::Bundle arg1);
-		jboolean dispatchNestedPreScroll(jint arg0, jint arg1, jintArray arg2, jintArray arg3);
-		jboolean dispatchNestedScroll(jint arg0, jint arg1, jint arg2, jint arg3, jintArray arg4);
+		jboolean dispatchNestedPreScroll(jint arg0, jint arg1, JIntArray arg2, JIntArray arg3);
+		jboolean dispatchNestedScroll(jint arg0, jint arg1, jint arg2, jint arg3, JIntArray arg4);
 		void dispatchPointerCaptureChanged(jboolean arg0);
 		jboolean dispatchPopulateAccessibilityEvent(android::view::accessibility::AccessibilityEvent arg0);
 		void dispatchProvideAutofillStructure(android::view::ViewStructure arg0, jint arg1);
@@ -470,27 +476,27 @@ namespace android::view
 		void drawableHotspotChanged(jfloat arg0, jfloat arg1);
 		android::view::View findFocus();
 		android::view::View findViewById(jint arg0);
-		android::view::View findViewWithTag(jobject arg0);
-		void findViewsWithText(java::util::ArrayList arg0, jstring arg1, jint arg2);
+		android::view::View findViewWithTag(JObject arg0);
+		void findViewsWithText(java::util::ArrayList arg0, JString arg1, jint arg2);
 		android::view::View focusSearch(jint arg0);
 		void forceHasOverlappingRendering(jboolean arg0);
 		void forceLayout();
 		jboolean gatherTransparentRegion(android::graphics::Region arg0);
-		void generateDisplayHash(jstring arg0, android::graphics::Rect arg1, JObject arg2, JObject arg3);
-		jstring getAccessibilityClassName();
+		void generateDisplayHash(JString arg0, android::graphics::Rect arg1, JObject arg2, JObject arg3);
+		JString getAccessibilityClassName();
 		android::view::View_AccessibilityDelegate getAccessibilityDelegate();
 		jint getAccessibilityLiveRegion();
 		android::view::accessibility::AccessibilityNodeProvider getAccessibilityNodeProvider();
-		jstring getAccessibilityPaneTitle();
+		JString getAccessibilityPaneTitle();
 		jint getAccessibilityTraversalAfter();
 		jint getAccessibilityTraversalBefore();
 		jfloat getAlpha();
 		android::view::animation::Animation getAnimation();
 		android::graphics::Matrix getAnimationMatrix();
 		JObject getApplicationWindowToken();
-		jintArray getAttributeResolutionStack(jint arg0);
+		JIntArray getAttributeResolutionStack(jint arg0);
 		JObject getAttributeSourceResourceMap();
-		jarray getAutofillHints();
+		JArray getAutofillHints();
 		android::view::autofill::AutofillId getAutofillId();
 		jint getAutofillType();
 		android::view::autofill::AutofillValue getAutofillValue();
@@ -505,11 +511,11 @@ namespace android::view
 		jboolean getClipBounds(android::graphics::Rect arg0);
 		jboolean getClipToOutline();
 		android::view::contentcapture::ContentCaptureSession getContentCaptureSession();
-		jstring getContentDescription();
+		JString getContentDescription();
 		android::content::Context getContext();
 		jboolean getDefaultFocusHighlightEnabled();
 		android::view::Display getDisplay();
-		jintArray getDrawableState();
+		JIntArray getDrawableState();
 		android::graphics::Bitmap getDrawingCache();
 		android::graphics::Bitmap getDrawingCache(jboolean arg0);
 		jint getDrawingCacheBackgroundColor();
@@ -549,9 +555,9 @@ namespace android::view
 		android::view::ViewGroup_LayoutParams getLayoutParams();
 		jint getLeft();
 		jboolean getLocalVisibleRect(android::graphics::Rect arg0);
-		void getLocationInSurface(jintArray arg0);
-		void getLocationInWindow(jintArray arg0);
-		void getLocationOnScreen(jintArray arg0);
+		void getLocationInSurface(JIntArray arg0);
+		void getLocationInWindow(JIntArray arg0);
+		void getLocationOnScreen(JIntArray arg0);
 		android::graphics::Matrix getMatrix();
 		jint getMeasuredHeight();
 		jint getMeasuredHeightAndState();
@@ -583,7 +589,7 @@ namespace android::view
 		jfloat getPivotX();
 		jfloat getPivotY();
 		android::view::PointerIcon getPointerIcon();
-		jarray getReceiveContentMimeTypes();
+		JArray getReceiveContentMimeTypes();
 		android::content::res::Resources getResources();
 		jboolean getRevealOnFocusHint();
 		jint getRight();
@@ -605,20 +611,20 @@ namespace android::view
 		jint getScrollY();
 		jint getSolidColor();
 		jint getSourceLayoutResId();
-		jstring getStateDescription();
+		JString getStateDescription();
 		android::animation::StateListAnimator getStateListAnimator();
 		JObject getSystemGestureExclusionRects();
 		jint getSystemUiVisibility();
-		jobject getTag();
-		jobject getTag(jint arg0);
+		JObject getTag();
+		JObject getTag(jint arg0);
 		jint getTextAlignment();
 		jint getTextDirection();
-		jstring getTooltipText();
+		JString getTooltipText();
 		jint getTop();
 		android::view::TouchDelegate getTouchDelegate();
 		java::util::ArrayList getTouchables();
 		jfloat getTransitionAlpha();
-		jstring getTransitionName();
+		JString getTransitionName();
 		jfloat getTranslationX();
 		jfloat getTranslationY();
 		jfloat getTranslationZ();
@@ -718,8 +724,8 @@ namespace android::view
 		jboolean onCapturedPointerEvent(android::view::MotionEvent arg0);
 		jboolean onCheckIsTextEditor();
 		JObject onCreateInputConnection(android::view::inputmethod::EditorInfo arg0);
-		void onCreateViewTranslationRequest(jintArray arg0, JObject arg1);
-		void onCreateVirtualViewTranslationRequests(jlongArray arg0, jintArray arg1, JObject arg2);
+		void onCreateViewTranslationRequest(JIntArray arg0, JObject arg1);
+		void onCreateVirtualViewTranslationRequests(JLongArray arg0, JIntArray arg1, JObject arg2);
 		jboolean onDragEvent(android::view::DragEvent arg0);
 		void onDrawForeground(android::graphics::Canvas arg0);
 		jboolean onFilterTouchEventForSecurity(android::view::MotionEvent arg0);
@@ -797,7 +803,7 @@ namespace android::view
 		void resetPivot();
 		jboolean restoreDefaultFocus();
 		void restoreHierarchyState(android::util::SparseArray arg0);
-		void saveAttributeDataForStyleable(android::content::Context arg0, jintArray arg1, JObject arg2, android::content::res::TypedArray arg3, jint arg4, jint arg5);
+		void saveAttributeDataForStyleable(android::content::Context arg0, JIntArray arg1, JObject arg2, android::content::res::TypedArray arg3, jint arg4, jint arg5);
 		void saveHierarchyState(android::util::SparseArray arg0);
 		void scheduleDrawable(android::graphics::drawable::Drawable arg0, JObject arg1, jlong arg2);
 		void scrollBy(jint arg0, jint arg1);
@@ -807,7 +813,7 @@ namespace android::view
 		void setAccessibilityDelegate(android::view::View_AccessibilityDelegate arg0);
 		void setAccessibilityHeading(jboolean arg0);
 		void setAccessibilityLiveRegion(jint arg0);
-		void setAccessibilityPaneTitle(jstring arg0);
+		void setAccessibilityPaneTitle(JString arg0);
 		void setAccessibilityTraversalAfter(jint arg0);
 		void setAccessibilityTraversalBefore(jint arg0);
 		void setActivated(jboolean arg0);
@@ -815,7 +821,7 @@ namespace android::view
 		void setAlpha(jfloat arg0);
 		void setAnimation(android::view::animation::Animation arg0);
 		void setAnimationMatrix(android::graphics::Matrix arg0);
-		void setAutofillHints(jarray arg0);
+		void setAutofillHints(JArray arg0);
 		void setAutofillId(android::view::autofill::AutofillId arg0);
 		void setBackground(android::graphics::drawable::Drawable arg0);
 		void setBackgroundColor(jint arg0);
@@ -830,7 +836,7 @@ namespace android::view
 		void setClipBounds(android::graphics::Rect arg0);
 		void setClipToOutline(jboolean arg0);
 		void setContentCaptureSession(android::view::contentcapture::ContentCaptureSession arg0);
-		void setContentDescription(jstring arg0);
+		void setContentDescription(JString arg0);
 		void setContextClickable(jboolean arg0);
 		void setDefaultFocusHighlightEnabled(jboolean arg0);
 		void setDrawingCacheBackgroundColor(jint arg0);
@@ -893,7 +899,7 @@ namespace android::view
 		void setOnHoverListener(JObject arg0);
 		void setOnKeyListener(JObject arg0);
 		void setOnLongClickListener(JObject arg0);
-		void setOnReceiveContentListener(jarray arg0, JObject arg1);
+		void setOnReceiveContentListener(JArray arg0, JObject arg1);
 		void setOnScrollChangeListener(JObject arg0);
 		void setOnSystemUiVisibilityChangeListener(JObject arg0);
 		void setOnTouchListener(JObject arg0);
@@ -932,19 +938,19 @@ namespace android::view
 		void setScrollbarFadingEnabled(jboolean arg0);
 		void setSelected(jboolean arg0);
 		void setSoundEffectsEnabled(jboolean arg0);
-		void setStateDescription(jstring arg0);
+		void setStateDescription(JString arg0);
 		void setStateListAnimator(android::animation::StateListAnimator arg0);
 		void setSystemGestureExclusionRects(JObject arg0);
 		void setSystemUiVisibility(jint arg0);
-		void setTag(jobject arg0);
-		void setTag(jint arg0, jobject arg1);
+		void setTag(JObject arg0);
+		void setTag(jint arg0, JObject arg1);
 		void setTextAlignment(jint arg0);
 		void setTextDirection(jint arg0);
-		void setTooltipText(jstring arg0);
+		void setTooltipText(JString arg0);
 		void setTop(jint arg0);
 		void setTouchDelegate(android::view::TouchDelegate arg0);
 		void setTransitionAlpha(jfloat arg0);
-		void setTransitionName(jstring arg0);
+		void setTransitionName(JString arg0);
 		void setTransitionVisibility(jint arg0);
 		void setTranslationX(jfloat arg0);
 		void setTranslationY(jfloat arg0);
@@ -967,11 +973,11 @@ namespace android::view
 		android::view::ActionMode startActionMode(JObject arg0);
 		android::view::ActionMode startActionMode(JObject arg0, jint arg1);
 		void startAnimation(android::view::animation::Animation arg0);
-		jboolean startDrag(android::content::ClipData arg0, android::view::View_DragShadowBuilder arg1, jobject arg2, jint arg3);
-		jboolean startDragAndDrop(android::content::ClipData arg0, android::view::View_DragShadowBuilder arg1, jobject arg2, jint arg3);
+		jboolean startDrag(android::content::ClipData arg0, android::view::View_DragShadowBuilder arg1, JObject arg2, jint arg3);
+		jboolean startDragAndDrop(android::content::ClipData arg0, android::view::View_DragShadowBuilder arg1, JObject arg2, jint arg3);
 		jboolean startNestedScroll(jint arg0);
 		void stopNestedScroll();
-		jstring toString();
+		JString toString();
 		void transformMatrixToGlobal(android::graphics::Matrix arg0);
 		void transformMatrixToLocal(android::graphics::Matrix arg0);
 		void unscheduleDrawable(android::graphics::drawable::Drawable arg0);

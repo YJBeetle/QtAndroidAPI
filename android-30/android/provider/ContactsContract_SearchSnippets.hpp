@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JString;
 
 namespace android::provider
 {
@@ -9,8 +10,8 @@ namespace android::provider
 	{
 	public:
 		// Fields
-		static jstring DEFERRED_SNIPPETING_KEY();
-		static jstring SNIPPET();
+		static JString DEFERRED_SNIPPETING_KEY();
+		static JString SNIPPET();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ContactsContract_SearchSnippets(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}

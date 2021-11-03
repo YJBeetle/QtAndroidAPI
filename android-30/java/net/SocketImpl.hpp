@@ -14,6 +14,8 @@ namespace java::io
 {
 	class OutputStream;
 }
+class JObject;
+class JString;
 namespace java::net
 {
 	class InetAddress;
@@ -38,7 +40,7 @@ namespace java::net
 		SocketImpl();
 		
 		// Methods
-		jstring toString();
+		JString toString();
 	};
 } // namespace java::net
 

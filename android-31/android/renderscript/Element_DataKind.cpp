@@ -1,3 +1,5 @@
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
 #include "./Element_DataKind.hpp"
 
 namespace android::renderscript
@@ -74,22 +76,22 @@ namespace android::renderscript
 	// Constructors
 	
 	// Methods
-	android::renderscript::Element_DataKind Element_DataKind::valueOf(jstring arg0)
+	android::renderscript::Element_DataKind Element_DataKind::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.renderscript.Element$DataKind",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/renderscript/Element$DataKind;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray Element_DataKind::values()
+	JArray Element_DataKind::values()
 	{
 		return callStaticObjectMethod(
 			"android.renderscript.Element$DataKind",
 			"values",
 			"()[Landroid/renderscript/Element$DataKind;"
-		).object<jarray>();
+		);
 	}
 } // namespace android::renderscript
 

@@ -14,6 +14,8 @@ namespace android::icu::text
 {
 	class MessagePattern_Part_Type;
 }
+class JObject;
+class JString;
 
 namespace android::icu::text
 {
@@ -32,17 +34,17 @@ namespace android::icu::text
 		// Constructors
 		MessagePattern();
 		MessagePattern(android::icu::text::MessagePattern_ApostropheMode arg0);
-		MessagePattern(jstring arg0);
+		MessagePattern(JString arg0);
 		
 		// Methods
-		static jint validateArgumentName(jstring arg0);
-		jstring autoQuoteApostropheDeep();
+		static jint validateArgumentName(JString arg0);
+		JString autoQuoteApostropheDeep();
 		void clear();
 		void clearPatternAndSetApostropheMode(android::icu::text::MessagePattern_ApostropheMode arg0);
-		jobject clone();
+		JObject clone();
 		android::icu::text::MessagePattern cloneAsThawed();
 		jint countParts();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		android::icu::text::MessagePattern freeze();
 		android::icu::text::MessagePattern_ApostropheMode getApostropheMode();
 		jint getLimitPartIndex(jint arg0);
@@ -50,19 +52,19 @@ namespace android::icu::text
 		android::icu::text::MessagePattern_Part getPart(jint arg0);
 		android::icu::text::MessagePattern_Part_Type getPartType(jint arg0);
 		jint getPatternIndex(jint arg0);
-		jstring getPatternString();
+		JString getPatternString();
 		jdouble getPluralOffset(jint arg0);
-		jstring getSubstring(android::icu::text::MessagePattern_Part arg0);
+		JString getSubstring(android::icu::text::MessagePattern_Part arg0);
 		jboolean hasNamedArguments();
 		jboolean hasNumberedArguments();
 		jint hashCode();
 		jboolean isFrozen();
-		android::icu::text::MessagePattern parse(jstring arg0);
-		android::icu::text::MessagePattern parseChoiceStyle(jstring arg0);
-		android::icu::text::MessagePattern parsePluralStyle(jstring arg0);
-		android::icu::text::MessagePattern parseSelectStyle(jstring arg0);
-		jboolean partSubstringMatches(android::icu::text::MessagePattern_Part arg0, jstring arg1);
-		jstring toString();
+		android::icu::text::MessagePattern parse(JString arg0);
+		android::icu::text::MessagePattern parseChoiceStyle(JString arg0);
+		android::icu::text::MessagePattern parsePluralStyle(JString arg0);
+		android::icu::text::MessagePattern parseSelectStyle(JString arg0);
+		jboolean partSubstringMatches(android::icu::text::MessagePattern_Part arg0, JString arg1);
+		JString toString();
 	};
 } // namespace android::icu::text
 

@@ -1,3 +1,4 @@
+#include "../../../JByteArray.hpp"
 #include "../Tag.hpp"
 #include "./IsoDep.hpp"
 
@@ -34,19 +35,19 @@ namespace android::nfc::tech
 			"()V"
 		);
 	}
-	jbyteArray IsoDep::getHiLayerResponse()
+	JByteArray IsoDep::getHiLayerResponse()
 	{
 		return callObjectMethod(
 			"getHiLayerResponse",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
-	jbyteArray IsoDep::getHistoricalBytes()
+	JByteArray IsoDep::getHistoricalBytes()
 	{
 		return callObjectMethod(
 			"getHistoricalBytes",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
 	jint IsoDep::getMaxTransceiveLength()
 	{
@@ -91,13 +92,13 @@ namespace android::nfc::tech
 			arg0
 		);
 	}
-	jbyteArray IsoDep::transceive(jbyteArray arg0)
+	JByteArray IsoDep::transceive(JByteArray arg0)
 	{
 		return callObjectMethod(
 			"transceive",
 			"([B)[B",
-			arg0
-		).object<jbyteArray>();
+			arg0.object<jbyteArray>()
+		);
 	}
 } // namespace android::nfc::tech
 

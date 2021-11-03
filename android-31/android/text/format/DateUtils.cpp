@@ -1,4 +1,7 @@
+#include "../../../JIntArray.hpp"
 #include "../../content/Context.hpp"
+#include "../../../JString.hpp"
+#include "../../../JString.hpp"
 #include "../../../java/lang/StringBuilder.hpp"
 #include "../../../java/util/Formatter.hpp"
 #include "./DateUtils.hpp"
@@ -6,21 +9,21 @@
 namespace android::text::format
 {
 	// Fields
-	jstring DateUtils::ABBREV_MONTH_FORMAT()
+	JString DateUtils::ABBREV_MONTH_FORMAT()
 	{
 		return getStaticObjectField(
 			"android.text.format.DateUtils",
 			"ABBREV_MONTH_FORMAT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DateUtils::ABBREV_WEEKDAY_FORMAT()
+	JString DateUtils::ABBREV_WEEKDAY_FORMAT()
 	{
 		return getStaticObjectField(
 			"android.text.format.DateUtils",
 			"ABBREV_WEEKDAY_FORMAT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jlong DateUtils::DAY_IN_MILLIS()
 	{
@@ -190,13 +193,13 @@ namespace android::text::format
 			"HOUR_IN_MILLIS"
 		);
 	}
-	jstring DateUtils::HOUR_MINUTE_24()
+	JString DateUtils::HOUR_MINUTE_24()
 	{
 		return getStaticObjectField(
 			"android.text.format.DateUtils",
 			"HOUR_MINUTE_24",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint DateUtils::LENGTH_LONG()
 	{
@@ -240,29 +243,29 @@ namespace android::text::format
 			"MINUTE_IN_MILLIS"
 		);
 	}
-	jstring DateUtils::MONTH_DAY_FORMAT()
+	JString DateUtils::MONTH_DAY_FORMAT()
 	{
 		return getStaticObjectField(
 			"android.text.format.DateUtils",
 			"MONTH_DAY_FORMAT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DateUtils::MONTH_FORMAT()
+	JString DateUtils::MONTH_FORMAT()
 	{
 		return getStaticObjectField(
 			"android.text.format.DateUtils",
 			"MONTH_FORMAT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DateUtils::NUMERIC_MONTH_FORMAT()
+	JString DateUtils::NUMERIC_MONTH_FORMAT()
 	{
 		return getStaticObjectField(
 			"android.text.format.DateUtils",
 			"NUMERIC_MONTH_FORMAT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jlong DateUtils::SECOND_IN_MILLIS()
 	{
@@ -271,13 +274,13 @@ namespace android::text::format
 			"SECOND_IN_MILLIS"
 		);
 	}
-	jstring DateUtils::WEEKDAY_FORMAT()
+	JString DateUtils::WEEKDAY_FORMAT()
 	{
 		return getStaticObjectField(
 			"android.text.format.DateUtils",
 			"WEEKDAY_FORMAT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jlong DateUtils::WEEK_IN_MILLIS()
 	{
@@ -286,21 +289,21 @@ namespace android::text::format
 			"WEEK_IN_MILLIS"
 		);
 	}
-	jstring DateUtils::YEAR_FORMAT()
+	JString DateUtils::YEAR_FORMAT()
 	{
 		return getStaticObjectField(
 			"android.text.format.DateUtils",
 			"YEAR_FORMAT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DateUtils::YEAR_FORMAT_TWO_DIGITS()
+	JString DateUtils::YEAR_FORMAT_TWO_DIGITS()
 	{
 		return getStaticObjectField(
 			"android.text.format.DateUtils",
 			"YEAR_FORMAT_TWO_DIGITS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jlong DateUtils::YEAR_IN_MILLIS()
 	{
@@ -309,21 +312,21 @@ namespace android::text::format
 			"YEAR_IN_MILLIS"
 		);
 	}
-	jintArray DateUtils::sameMonthTable()
+	JIntArray DateUtils::sameMonthTable()
 	{
 		return getStaticObjectField(
 			"android.text.format.DateUtils",
 			"sameMonthTable",
 			"[I"
-		).object<jintArray>();
+		);
 	}
-	jintArray DateUtils::sameYearTable()
+	JIntArray DateUtils::sameYearTable()
 	{
 		return getStaticObjectField(
 			"android.text.format.DateUtils",
 			"sameYearTable",
 			"[I"
-		).object<jintArray>();
+		);
 	}
 	
 	// QAndroidJniObject forward
@@ -337,7 +340,7 @@ namespace android::text::format
 		) {}
 	
 	// Methods
-	jstring DateUtils::formatDateRange(android::content::Context arg0, jlong arg1, jlong arg2, jint arg3)
+	JString DateUtils::formatDateRange(android::content::Context arg0, jlong arg1, jlong arg2, jint arg3)
 	{
 		return callStaticObjectMethod(
 			"android.text.format.DateUtils",
@@ -347,7 +350,7 @@ namespace android::text::format
 			arg1,
 			arg2,
 			arg3
-		).object<jstring>();
+		);
 	}
 	java::util::Formatter DateUtils::formatDateRange(android::content::Context arg0, java::util::Formatter arg1, jlong arg2, jlong arg3, jint arg4)
 	{
@@ -362,7 +365,7 @@ namespace android::text::format
 			arg4
 		);
 	}
-	java::util::Formatter DateUtils::formatDateRange(android::content::Context arg0, java::util::Formatter arg1, jlong arg2, jlong arg3, jint arg4, jstring arg5)
+	java::util::Formatter DateUtils::formatDateRange(android::content::Context arg0, java::util::Formatter arg1, jlong arg2, jlong arg3, jint arg4, JString arg5)
 	{
 		return callStaticObjectMethod(
 			"android.text.format.DateUtils",
@@ -373,10 +376,10 @@ namespace android::text::format
 			arg2,
 			arg3,
 			arg4,
-			arg5
+			arg5.object<jstring>()
 		);
 	}
-	jstring DateUtils::formatDateTime(android::content::Context arg0, jlong arg1, jint arg2)
+	JString DateUtils::formatDateTime(android::content::Context arg0, jlong arg1, jint arg2)
 	{
 		return callStaticObjectMethod(
 			"android.text.format.DateUtils",
@@ -385,18 +388,18 @@ namespace android::text::format
 			arg0.object(),
 			arg1,
 			arg2
-		).object<jstring>();
+		);
 	}
-	jstring DateUtils::formatElapsedTime(jlong arg0)
+	JString DateUtils::formatElapsedTime(jlong arg0)
 	{
 		return callStaticObjectMethod(
 			"android.text.format.DateUtils",
 			"formatElapsedTime",
 			"(J)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
-	jstring DateUtils::formatElapsedTime(java::lang::StringBuilder arg0, jlong arg1)
+	JString DateUtils::formatElapsedTime(java::lang::StringBuilder arg0, jlong arg1)
 	{
 		return callStaticObjectMethod(
 			"android.text.format.DateUtils",
@@ -404,9 +407,9 @@ namespace android::text::format
 			"(Ljava/lang/StringBuilder;J)Ljava/lang/String;",
 			arg0.object(),
 			arg1
-		).object<jstring>();
+		);
 	}
-	jstring DateUtils::formatSameDayTime(jlong arg0, jlong arg1, jint arg2, jint arg3)
+	JString DateUtils::formatSameDayTime(jlong arg0, jlong arg1, jint arg2, jint arg3)
 	{
 		return callStaticObjectMethod(
 			"android.text.format.DateUtils",
@@ -416,18 +419,18 @@ namespace android::text::format
 			arg1,
 			arg2,
 			arg3
-		).object<jstring>();
+		);
 	}
-	jstring DateUtils::getAMPMString(jint arg0)
+	JString DateUtils::getAMPMString(jint arg0)
 	{
 		return callStaticObjectMethod(
 			"android.text.format.DateUtils",
 			"getAMPMString",
 			"(I)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
-	jstring DateUtils::getDayOfWeekString(jint arg0, jint arg1)
+	JString DateUtils::getDayOfWeekString(jint arg0, jint arg1)
 	{
 		return callStaticObjectMethod(
 			"android.text.format.DateUtils",
@@ -435,9 +438,9 @@ namespace android::text::format
 			"(II)Ljava/lang/String;",
 			arg0,
 			arg1
-		).object<jstring>();
+		);
 	}
-	jstring DateUtils::getMonthString(jint arg0, jint arg1)
+	JString DateUtils::getMonthString(jint arg0, jint arg1)
 	{
 		return callStaticObjectMethod(
 			"android.text.format.DateUtils",
@@ -445,9 +448,9 @@ namespace android::text::format
 			"(II)Ljava/lang/String;",
 			arg0,
 			arg1
-		).object<jstring>();
+		);
 	}
-	jstring DateUtils::getRelativeDateTimeString(android::content::Context arg0, jlong arg1, jlong arg2, jlong arg3, jint arg4)
+	JString DateUtils::getRelativeDateTimeString(android::content::Context arg0, jlong arg1, jlong arg2, jlong arg3, jint arg4)
 	{
 		return callStaticObjectMethod(
 			"android.text.format.DateUtils",
@@ -458,18 +461,18 @@ namespace android::text::format
 			arg2,
 			arg3,
 			arg4
-		).object<jstring>();
+		);
 	}
-	jstring DateUtils::getRelativeTimeSpanString(jlong arg0)
+	JString DateUtils::getRelativeTimeSpanString(jlong arg0)
 	{
 		return callStaticObjectMethod(
 			"android.text.format.DateUtils",
 			"getRelativeTimeSpanString",
 			"(J)Ljava/lang/CharSequence;",
 			arg0
-		).object<jstring>();
+		);
 	}
-	jstring DateUtils::getRelativeTimeSpanString(android::content::Context arg0, jlong arg1)
+	JString DateUtils::getRelativeTimeSpanString(android::content::Context arg0, jlong arg1)
 	{
 		return callStaticObjectMethod(
 			"android.text.format.DateUtils",
@@ -477,9 +480,9 @@ namespace android::text::format
 			"(Landroid/content/Context;J)Ljava/lang/CharSequence;",
 			arg0.object(),
 			arg1
-		).object<jstring>();
+		);
 	}
-	jstring DateUtils::getRelativeTimeSpanString(android::content::Context arg0, jlong arg1, jboolean arg2)
+	JString DateUtils::getRelativeTimeSpanString(android::content::Context arg0, jlong arg1, jboolean arg2)
 	{
 		return callStaticObjectMethod(
 			"android.text.format.DateUtils",
@@ -488,9 +491,9 @@ namespace android::text::format
 			arg0.object(),
 			arg1,
 			arg2
-		).object<jstring>();
+		);
 	}
-	jstring DateUtils::getRelativeTimeSpanString(jlong arg0, jlong arg1, jlong arg2)
+	JString DateUtils::getRelativeTimeSpanString(jlong arg0, jlong arg1, jlong arg2)
 	{
 		return callStaticObjectMethod(
 			"android.text.format.DateUtils",
@@ -499,9 +502,9 @@ namespace android::text::format
 			arg0,
 			arg1,
 			arg2
-		).object<jstring>();
+		);
 	}
-	jstring DateUtils::getRelativeTimeSpanString(jlong arg0, jlong arg1, jlong arg2, jint arg3)
+	JString DateUtils::getRelativeTimeSpanString(jlong arg0, jlong arg1, jlong arg2, jint arg3)
 	{
 		return callStaticObjectMethod(
 			"android.text.format.DateUtils",
@@ -511,7 +514,7 @@ namespace android::text::format
 			arg1,
 			arg2,
 			arg3
-		).object<jstring>();
+		);
 	}
 	jboolean DateUtils::isToday(jlong arg0)
 	{

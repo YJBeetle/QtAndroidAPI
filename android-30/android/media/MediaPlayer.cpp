@@ -1,3 +1,5 @@
+#include "../../JByteArray.hpp"
+#include "../../JArray.hpp"
 #include "../content/Context.hpp"
 #include "../content/res/AssetFileDescriptor.hpp"
 #include "./AudioAttributes.hpp"
@@ -15,6 +17,7 @@
 #include "../os/PersistableBundle.hpp"
 #include "../view/Surface.hpp"
 #include "../../java/io/FileDescriptor.hpp"
+#include "../../JString.hpp"
 #include "../../java/util/UUID.hpp"
 #include "./MediaPlayer.hpp"
 
@@ -161,13 +164,13 @@ namespace android::media
 			"MEDIA_INFO_VIDEO_TRACK_LAGGING"
 		);
 	}
-	jstring MediaPlayer::MEDIA_MIMETYPE_TEXT_SUBRIP()
+	JString MediaPlayer::MEDIA_MIMETYPE_TEXT_SUBRIP()
 	{
 		return getStaticObjectField(
 			"android.media.MediaPlayer",
 			"MEDIA_MIMETYPE_TEXT_SUBRIP",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint MediaPlayer::PREPARE_DRM_STATUS_PREPARATION_ERROR()
 	{
@@ -316,35 +319,35 @@ namespace android::media
 			arg1.object()
 		);
 	}
-	void MediaPlayer::addTimedTextSource(java::io::FileDescriptor arg0, jstring arg1)
+	void MediaPlayer::addTimedTextSource(java::io::FileDescriptor arg0, JString arg1)
 	{
 		callMethod<void>(
 			"addTimedTextSource",
 			"(Ljava/io/FileDescriptor;Ljava/lang/String;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
-	void MediaPlayer::addTimedTextSource(jstring arg0, jstring arg1)
+	void MediaPlayer::addTimedTextSource(JString arg0, JString arg1)
 	{
 		callMethod<void>(
 			"addTimedTextSource",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		);
 	}
-	void MediaPlayer::addTimedTextSource(android::content::Context arg0, android::net::Uri arg1, jstring arg2)
+	void MediaPlayer::addTimedTextSource(android::content::Context arg0, android::net::Uri arg1, JString arg2)
 	{
 		callMethod<void>(
 			"addTimedTextSource",
 			"(Landroid/content/Context;Landroid/net/Uri;Ljava/lang/String;)V",
 			arg0.object(),
 			arg1.object(),
-			arg2
+			arg2.object<jstring>()
 		);
 	}
-	void MediaPlayer::addTimedTextSource(java::io::FileDescriptor arg0, jlong arg1, jlong arg2, jstring arg3)
+	void MediaPlayer::addTimedTextSource(java::io::FileDescriptor arg0, jlong arg1, jlong arg2, JString arg3)
 	{
 		callMethod<void>(
 			"addTimedTextSource",
@@ -352,7 +355,7 @@ namespace android::media
 			arg0.object(),
 			arg1,
 			arg2,
-			arg3
+			arg3.object<jstring>()
 		);
 	}
 	void MediaPlayer::attachAuxEffect(jint arg0)
@@ -414,13 +417,13 @@ namespace android::media
 			"()Landroid/media/MediaPlayer$DrmInfo;"
 		);
 	}
-	jstring MediaPlayer::getDrmPropertyString(jstring arg0)
+	JString MediaPlayer::getDrmPropertyString(JString arg0)
 	{
 		return callObjectMethod(
 			"getDrmPropertyString",
 			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
+			arg0.object<jstring>()
+		);
 	}
 	jint MediaPlayer::getDuration()
 	{
@@ -429,14 +432,14 @@ namespace android::media
 			"()I"
 		);
 	}
-	android::media::MediaDrm_KeyRequest MediaPlayer::getKeyRequest(jbyteArray arg0, jbyteArray arg1, jstring arg2, jint arg3, JObject arg4)
+	android::media::MediaDrm_KeyRequest MediaPlayer::getKeyRequest(JByteArray arg0, JByteArray arg1, JString arg2, jint arg3, JObject arg4)
 	{
 		return callObjectMethod(
 			"getKeyRequest",
 			"([B[BLjava/lang/String;ILjava/util/Map;)Landroid/media/MediaDrm$KeyRequest;",
-			arg0,
-			arg1,
-			arg2,
+			arg0.object<jbyteArray>(),
+			arg1.object<jbyteArray>(),
+			arg2.object<jstring>(),
 			arg3,
 			arg4.object()
 		);
@@ -491,12 +494,12 @@ namespace android::media
 			"()Landroid/media/MediaTimestamp;"
 		);
 	}
-	jarray MediaPlayer::getTrackInfo()
+	JArray MediaPlayer::getTrackInfo()
 	{
 		return callObjectMethod(
 			"getTrackInfo",
 			"()[Landroid/media/MediaPlayer$TrackInfo;"
-		).object<jarray>();
+		);
 	}
 	jint MediaPlayer::getVideoHeight()
 	{
@@ -555,14 +558,14 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	jbyteArray MediaPlayer::provideKeyResponse(jbyteArray arg0, jbyteArray arg1)
+	JByteArray MediaPlayer::provideKeyResponse(JByteArray arg0, JByteArray arg1)
 	{
 		return callObjectMethod(
 			"provideKeyResponse",
 			"([B[B)[B",
-			arg0,
-			arg1
-		).object<jbyteArray>();
+			arg0.object<jbyteArray>(),
+			arg1.object<jbyteArray>()
+		);
 	}
 	void MediaPlayer::release()
 	{
@@ -593,12 +596,12 @@ namespace android::media
 			"()V"
 		);
 	}
-	void MediaPlayer::restoreKeys(jbyteArray arg0)
+	void MediaPlayer::restoreKeys(JByteArray arg0)
 	{
 		callMethod<void>(
 			"restoreKeys",
 			"([B)V",
-			arg0
+			arg0.object<jbyteArray>()
 		);
 	}
 	void MediaPlayer::seekTo(jint arg0)
@@ -682,12 +685,12 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void MediaPlayer::setDataSource(jstring arg0)
+	void MediaPlayer::setDataSource(JString arg0)
 	{
 		callMethod<void>(
 			"setDataSource",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void MediaPlayer::setDataSource(android::content::Context arg0, android::net::Uri arg1)
@@ -738,13 +741,13 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void MediaPlayer::setDrmPropertyString(jstring arg0, jstring arg1)
+	void MediaPlayer::setDrmPropertyString(JString arg0, JString arg1)
 	{
 		callMethod<void>(
 			"setDrmPropertyString",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		);
 	}
 	void MediaPlayer::setLooping(jboolean arg0)

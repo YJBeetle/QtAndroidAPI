@@ -3,6 +3,7 @@
 #include "../graphics/drawable/Drawable.hpp"
 #include "../view/ViewGroup_LayoutParams.hpp"
 #include "./LinearLayout_LayoutParams.hpp"
+#include "../../JString.hpp"
 #include "./LinearLayout.hpp"
 
 namespace android::widget
@@ -95,12 +96,12 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	jstring LinearLayout::getAccessibilityClassName()
+	JString LinearLayout::getAccessibilityClassName()
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	jint LinearLayout::getBaseline()
 	{

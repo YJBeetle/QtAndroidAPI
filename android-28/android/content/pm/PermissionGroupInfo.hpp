@@ -1,6 +1,5 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "./PackageItemInfo.hpp"
 
 namespace android::content::pm
@@ -11,6 +10,8 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
+class JString;
 
 namespace android::content::pm
 {
@@ -22,7 +23,7 @@ namespace android::content::pm
 		static jint FLAG_PERSONAL_INFO();
 		jint descriptionRes();
 		jint flags();
-		jstring nonLocalizedDescription();
+		JString nonLocalizedDescription();
 		jint priority();
 		
 		// QAndroidJniObject forward
@@ -35,8 +36,8 @@ namespace android::content::pm
 		
 		// Methods
 		jint describeContents();
-		jstring loadDescription(android::content::pm::PackageManager arg0);
-		jstring toString();
+		JString loadDescription(android::content::pm::PackageManager arg0);
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::content::pm

@@ -1,4 +1,5 @@
 #include "../../../io/ObjectInputStream.hpp"
+#include "../../../../JString.hpp"
 #include "../TimeUnit.hpp"
 #include "./StampedLock.hpp"
 
@@ -109,12 +110,12 @@ namespace java::util::concurrent::locks
 			"()J"
 		);
 	}
-	jstring StampedLock::toString()
+	JString StampedLock::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jlong StampedLock::tryConvertToOptimisticRead(jlong arg0)
 	{

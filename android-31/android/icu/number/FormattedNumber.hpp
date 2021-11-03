@@ -6,6 +6,8 @@ namespace android::icu::text
 {
 	class ConstrainedFieldPosition;
 }
+class JString;
+class JString;
 namespace java::math
 {
 	class BigDecimal;
@@ -29,10 +31,10 @@ namespace android::icu::number
 		jchar charAt(jint arg0);
 		jint length();
 		jboolean nextPosition(android::icu::text::ConstrainedFieldPosition arg0);
-		jstring subSequence(jint arg0, jint arg1);
+		JString subSequence(jint arg0, jint arg1);
 		java::math::BigDecimal toBigDecimal();
 		JObject toCharacterIterator();
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::icu::number
 

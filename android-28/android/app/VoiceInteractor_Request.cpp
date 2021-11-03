@@ -1,5 +1,6 @@
 #include "./Activity.hpp"
 #include "../content/Context.hpp"
+#include "../../JString.hpp"
 #include "./VoiceInteractor_Request.hpp"
 
 namespace android::app
@@ -33,12 +34,12 @@ namespace android::app
 			"()Landroid/content/Context;"
 		);
 	}
-	jstring VoiceInteractor_Request::getName()
+	JString VoiceInteractor_Request::getName()
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void VoiceInteractor_Request::onAttached(android::app::Activity arg0)
 	{
@@ -62,12 +63,12 @@ namespace android::app
 			"()V"
 		);
 	}
-	jstring VoiceInteractor_Request::toString()
+	JString VoiceInteractor_Request::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::app
 

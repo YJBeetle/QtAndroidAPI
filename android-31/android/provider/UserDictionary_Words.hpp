@@ -10,6 +10,7 @@ namespace android::net
 {
 	class Uri;
 }
+class JString;
 namespace java::util
 {
 	class Locale;
@@ -21,18 +22,18 @@ namespace android::provider
 	{
 	public:
 		// Fields
-		static jstring APP_ID();
-		static jstring CONTENT_ITEM_TYPE();
-		static jstring CONTENT_TYPE();
+		static JString APP_ID();
+		static JString CONTENT_ITEM_TYPE();
+		static JString CONTENT_TYPE();
 		static android::net::Uri CONTENT_URI();
-		static jstring DEFAULT_SORT_ORDER();
-		static jstring FREQUENCY();
-		static jstring LOCALE();
+		static JString DEFAULT_SORT_ORDER();
+		static JString FREQUENCY();
+		static JString LOCALE();
 		static jint LOCALE_TYPE_ALL();
 		static jint LOCALE_TYPE_CURRENT();
-		static jstring SHORTCUT();
-		static jstring WORD();
-		static jstring _ID();
+		static JString SHORTCUT();
+		static JString WORD();
+		static JString _ID();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit UserDictionary_Words(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
@@ -42,8 +43,8 @@ namespace android::provider
 		UserDictionary_Words();
 		
 		// Methods
-		static void addWord(android::content::Context arg0, jstring arg1, jint arg2, jint arg3);
-		static void addWord(android::content::Context arg0, jstring arg1, jint arg2, jstring arg3, java::util::Locale arg4);
+		static void addWord(android::content::Context arg0, JString arg1, jint arg2, jint arg3);
+		static void addWord(android::content::Context arg0, JString arg1, jint arg2, JString arg3, java::util::Locale arg4);
 	};
 } // namespace android::provider
 

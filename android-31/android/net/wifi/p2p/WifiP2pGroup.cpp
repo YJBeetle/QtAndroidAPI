@@ -1,5 +1,6 @@
 #include "./WifiP2pDevice.hpp"
 #include "../../../os/Parcel.hpp"
+#include "../../../../JString.hpp"
 #include "./WifiP2pGroup.hpp"
 
 namespace android::net::wifi::p2p
@@ -66,12 +67,12 @@ namespace android::net::wifi::p2p
 			"()I"
 		);
 	}
-	jstring WifiP2pGroup::getInterface()
+	JString WifiP2pGroup::getInterface()
 	{
 		return callObjectMethod(
 			"getInterface",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint WifiP2pGroup::getNetworkId()
 	{
@@ -80,12 +81,12 @@ namespace android::net::wifi::p2p
 			"()I"
 		);
 	}
-	jstring WifiP2pGroup::getNetworkName()
+	JString WifiP2pGroup::getNetworkName()
 	{
 		return callObjectMethod(
 			"getNetworkName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::net::wifi::p2p::WifiP2pDevice WifiP2pGroup::getOwner()
 	{
@@ -94,12 +95,12 @@ namespace android::net::wifi::p2p
 			"()Landroid/net/wifi/p2p/WifiP2pDevice;"
 		);
 	}
-	jstring WifiP2pGroup::getPassphrase()
+	JString WifiP2pGroup::getPassphrase()
 	{
 		return callObjectMethod(
 			"getPassphrase",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jboolean WifiP2pGroup::isGroupOwner()
 	{
@@ -108,12 +109,12 @@ namespace android::net::wifi::p2p
 			"()Z"
 		);
 	}
-	jstring WifiP2pGroup::toString()
+	JString WifiP2pGroup::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void WifiP2pGroup::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

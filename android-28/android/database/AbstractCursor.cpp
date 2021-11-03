@@ -1,3 +1,5 @@
+#include "../../JByteArray.hpp"
+#include "../../JArray.hpp"
 #include "../content/ContentResolver.hpp"
 #include "./CharArrayBuffer.hpp"
 #include "./ContentObserver.hpp"
@@ -5,6 +7,8 @@
 #include "./DataSetObserver.hpp"
 #include "../net/Uri.hpp"
 #include "../os/Bundle.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./AbstractCursor.hpp"
 
 namespace android::database
@@ -54,13 +58,13 @@ namespace android::database
 			arg1.object()
 		);
 	}
-	jbyteArray AbstractCursor::getBlob(jint arg0)
+	JByteArray AbstractCursor::getBlob(jint arg0)
 	{
 		return callObjectMethod(
 			"getBlob",
 			"(I)[B",
 			arg0
-		).object<jbyteArray>();
+		);
 	}
 	jint AbstractCursor::getColumnCount()
 	{
@@ -69,36 +73,36 @@ namespace android::database
 			"()I"
 		);
 	}
-	jint AbstractCursor::getColumnIndex(jstring arg0)
+	jint AbstractCursor::getColumnIndex(JString arg0)
 	{
 		return callMethod<jint>(
 			"getColumnIndex",
 			"(Ljava/lang/String;)I",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jint AbstractCursor::getColumnIndexOrThrow(jstring arg0)
+	jint AbstractCursor::getColumnIndexOrThrow(JString arg0)
 	{
 		return callMethod<jint>(
 			"getColumnIndexOrThrow",
 			"(Ljava/lang/String;)I",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jstring AbstractCursor::getColumnName(jint arg0)
+	JString AbstractCursor::getColumnName(jint arg0)
 	{
 		return callObjectMethod(
 			"getColumnName",
 			"(I)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
-	jarray AbstractCursor::getColumnNames()
+	JArray AbstractCursor::getColumnNames()
 	{
 		return callObjectMethod(
 			"getColumnNames",
 			"()[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
 	jint AbstractCursor::getCount()
 	{
@@ -168,13 +172,13 @@ namespace android::database
 			arg0
 		);
 	}
-	jstring AbstractCursor::getString(jint arg0)
+	JString AbstractCursor::getString(jint arg0)
 	{
 		return callObjectMethod(
 			"getString",
 			"(I)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
 	jint AbstractCursor::getType(jint arg0)
 	{

@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./FileSystemAlreadyExistsException.hpp"
 
 namespace java::nio::file
@@ -13,11 +14,11 @@ namespace java::nio::file
 			"java.nio.file.FileSystemAlreadyExistsException",
 			"()V"
 		) {}
-	FileSystemAlreadyExistsException::FileSystemAlreadyExistsException(jstring arg0)
+	FileSystemAlreadyExistsException::FileSystemAlreadyExistsException(JString arg0)
 		: java::lang::RuntimeException(
 			"java.nio.file.FileSystemAlreadyExistsException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

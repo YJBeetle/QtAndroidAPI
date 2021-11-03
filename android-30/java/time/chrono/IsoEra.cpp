@@ -1,3 +1,5 @@
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
 #include "./IsoEra.hpp"
 
 namespace java::time::chrono
@@ -35,22 +37,22 @@ namespace java::time::chrono
 			arg0
 		);
 	}
-	java::time::chrono::IsoEra IsoEra::valueOf(jstring arg0)
+	java::time::chrono::IsoEra IsoEra::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"java.time.chrono.IsoEra",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/time/chrono/IsoEra;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray IsoEra::values()
+	JArray IsoEra::values()
 	{
 		return callStaticObjectMethod(
 			"java.time.chrono.IsoEra",
 			"values",
 			"()[Ljava/time/chrono/IsoEra;"
-		).object<jarray>();
+		);
 	}
 	jint IsoEra::getValue()
 	{

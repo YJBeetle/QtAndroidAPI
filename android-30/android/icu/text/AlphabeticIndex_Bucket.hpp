@@ -6,6 +6,7 @@ namespace android::icu::text
 {
 	class AlphabeticIndex_Bucket_LabelType;
 }
+class JString;
 
 namespace android::icu::text
 {
@@ -21,11 +22,11 @@ namespace android::icu::text
 		// Constructors
 		
 		// Methods
-		jstring getLabel();
+		JString getLabel();
 		android::icu::text::AlphabeticIndex_Bucket_LabelType getLabelType();
 		JObject iterator();
 		jint size();
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::icu::text
 

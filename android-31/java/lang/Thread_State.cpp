@@ -1,3 +1,5 @@
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
 #include "./Thread_State.hpp"
 
 namespace java::lang
@@ -58,22 +60,22 @@ namespace java::lang
 	// Constructors
 	
 	// Methods
-	java::lang::Thread_State Thread_State::valueOf(jstring arg0)
+	java::lang::Thread_State Thread_State::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"java.lang.Thread$State",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/lang/Thread$State;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray Thread_State::values()
+	JArray Thread_State::values()
 	{
 		return callStaticObjectMethod(
 			"java.lang.Thread$State",
 			"values",
 			"()[Ljava/lang/Thread$State;"
-		).object<jarray>();
+		);
 	}
 } // namespace java::lang
 

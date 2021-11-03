@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JString;
 
 namespace java::nio::charset
 {
@@ -20,7 +21,7 @@ namespace java::nio::charset
 		// Constructors
 		
 		// Methods
-		jstring toString();
+		JString toString();
 	};
 } // namespace java::nio::charset
 

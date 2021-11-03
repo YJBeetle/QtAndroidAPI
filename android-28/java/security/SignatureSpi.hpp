@@ -2,6 +2,9 @@
 
 #include "../../JObject.hpp"
 
+class JByteArray;
+class JObject;
+class JString;
 namespace java::nio
 {
 	class ByteBuffer;
@@ -30,7 +33,7 @@ namespace java::security
 		SignatureSpi();
 		
 		// Methods
-		jobject clone();
+		JObject clone();
 	};
 } // namespace java::security
 

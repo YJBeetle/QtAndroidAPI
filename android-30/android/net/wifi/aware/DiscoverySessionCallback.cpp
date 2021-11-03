@@ -1,3 +1,4 @@
+#include "../../../../JByteArray.hpp"
 #include "./PeerHandle.hpp"
 #include "./PublishDiscoverySession.hpp"
 #include "./SubscribeDiscoverySession.hpp"
@@ -18,13 +19,13 @@ namespace android::net::wifi::aware
 		) {}
 	
 	// Methods
-	void DiscoverySessionCallback::onMessageReceived(android::net::wifi::aware::PeerHandle arg0, jbyteArray arg1)
+	void DiscoverySessionCallback::onMessageReceived(android::net::wifi::aware::PeerHandle arg0, JByteArray arg1)
 	{
 		callMethod<void>(
 			"onMessageReceived",
 			"(Landroid/net/wifi/aware/PeerHandle;[B)V",
 			arg0.object(),
-			arg1
+			arg1.object<jbyteArray>()
 		);
 	}
 	void DiscoverySessionCallback::onMessageSendFailed(jint arg0)
@@ -51,23 +52,23 @@ namespace android::net::wifi::aware
 			arg0.object()
 		);
 	}
-	void DiscoverySessionCallback::onServiceDiscovered(android::net::wifi::aware::PeerHandle arg0, jbyteArray arg1, JObject arg2)
+	void DiscoverySessionCallback::onServiceDiscovered(android::net::wifi::aware::PeerHandle arg0, JByteArray arg1, JObject arg2)
 	{
 		callMethod<void>(
 			"onServiceDiscovered",
 			"(Landroid/net/wifi/aware/PeerHandle;[BLjava/util/List;)V",
 			arg0.object(),
-			arg1,
+			arg1.object<jbyteArray>(),
 			arg2.object()
 		);
 	}
-	void DiscoverySessionCallback::onServiceDiscoveredWithinRange(android::net::wifi::aware::PeerHandle arg0, jbyteArray arg1, JObject arg2, jint arg3)
+	void DiscoverySessionCallback::onServiceDiscoveredWithinRange(android::net::wifi::aware::PeerHandle arg0, JByteArray arg1, JObject arg2, jint arg3)
 	{
 		callMethod<void>(
 			"onServiceDiscoveredWithinRange",
 			"(Landroid/net/wifi/aware/PeerHandle;[BLjava/util/List;I)V",
 			arg0.object(),
-			arg1,
+			arg1.object<jbyteArray>(),
 			arg2.object(),
 			arg3
 		);

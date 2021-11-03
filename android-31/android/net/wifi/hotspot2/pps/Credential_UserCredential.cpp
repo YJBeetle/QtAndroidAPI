@@ -1,4 +1,6 @@
 #include "../../../../os/Parcel.hpp"
+#include "../../../../../JObject.hpp"
+#include "../../../../../JString.hpp"
 #include "./Credential_UserCredential.hpp"
 
 namespace android::net::wifi::hotspot2::pps
@@ -37,12 +39,12 @@ namespace android::net::wifi::hotspot2::pps
 			"()I"
 		);
 	}
-	jboolean Credential_UserCredential::equals(jobject arg0)
+	jboolean Credential_UserCredential::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint Credential_UserCredential::getEapType()
@@ -52,26 +54,26 @@ namespace android::net::wifi::hotspot2::pps
 			"()I"
 		);
 	}
-	jstring Credential_UserCredential::getNonEapInnerMethod()
+	JString Credential_UserCredential::getNonEapInnerMethod()
 	{
 		return callObjectMethod(
 			"getNonEapInnerMethod",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Credential_UserCredential::getPassword()
+	JString Credential_UserCredential::getPassword()
 	{
 		return callObjectMethod(
 			"getPassword",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Credential_UserCredential::getUsername()
+	JString Credential_UserCredential::getUsername()
 	{
 		return callObjectMethod(
 			"getUsername",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint Credential_UserCredential::hashCode()
 	{
@@ -88,36 +90,36 @@ namespace android::net::wifi::hotspot2::pps
 			arg0
 		);
 	}
-	void Credential_UserCredential::setNonEapInnerMethod(jstring arg0)
+	void Credential_UserCredential::setNonEapInnerMethod(JString arg0)
 	{
 		callMethod<void>(
 			"setNonEapInnerMethod",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	void Credential_UserCredential::setPassword(jstring arg0)
+	void Credential_UserCredential::setPassword(JString arg0)
 	{
 		callMethod<void>(
 			"setPassword",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	void Credential_UserCredential::setUsername(jstring arg0)
+	void Credential_UserCredential::setUsername(JString arg0)
 	{
 		callMethod<void>(
 			"setUsername",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jstring Credential_UserCredential::toString()
+	JString Credential_UserCredential::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void Credential_UserCredential::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

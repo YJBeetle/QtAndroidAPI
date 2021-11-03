@@ -2,6 +2,7 @@
 #include "./WifiEnterpriseConfig.hpp"
 #include "./WifiNetworkSuggestion.hpp"
 #include "./hotspot2/PasspointConfiguration.hpp"
+#include "../../../JString.hpp"
 #include "./WifiNetworkSuggestion_Builder.hpp"
 
 namespace android::net::wifi
@@ -106,12 +107,12 @@ namespace android::net::wifi
 			arg0
 		);
 	}
-	android::net::wifi::WifiNetworkSuggestion_Builder WifiNetworkSuggestion_Builder::setSsid(jstring arg0)
+	android::net::wifi::WifiNetworkSuggestion_Builder WifiNetworkSuggestion_Builder::setSsid(JString arg0)
 	{
 		return callObjectMethod(
 			"setSsid",
 			"(Ljava/lang/String;)Landroid/net/wifi/WifiNetworkSuggestion$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::net::wifi::WifiNetworkSuggestion_Builder WifiNetworkSuggestion_Builder::setUntrusted(jboolean arg0)
@@ -130,12 +131,12 @@ namespace android::net::wifi
 			arg0.object()
 		);
 	}
-	android::net::wifi::WifiNetworkSuggestion_Builder WifiNetworkSuggestion_Builder::setWapiPassphrase(jstring arg0)
+	android::net::wifi::WifiNetworkSuggestion_Builder WifiNetworkSuggestion_Builder::setWapiPassphrase(JString arg0)
 	{
 		return callObjectMethod(
 			"setWapiPassphrase",
 			"(Ljava/lang/String;)Landroid/net/wifi/WifiNetworkSuggestion$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::net::wifi::WifiNetworkSuggestion_Builder WifiNetworkSuggestion_Builder::setWpa2EnterpriseConfig(android::net::wifi::WifiEnterpriseConfig arg0)
@@ -146,12 +147,12 @@ namespace android::net::wifi
 			arg0.object()
 		);
 	}
-	android::net::wifi::WifiNetworkSuggestion_Builder WifiNetworkSuggestion_Builder::setWpa2Passphrase(jstring arg0)
+	android::net::wifi::WifiNetworkSuggestion_Builder WifiNetworkSuggestion_Builder::setWpa2Passphrase(JString arg0)
 	{
 		return callObjectMethod(
 			"setWpa2Passphrase",
 			"(Ljava/lang/String;)Landroid/net/wifi/WifiNetworkSuggestion$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::net::wifi::WifiNetworkSuggestion_Builder WifiNetworkSuggestion_Builder::setWpa3EnterpriseConfig(android::net::wifi::WifiEnterpriseConfig arg0)
@@ -162,12 +163,12 @@ namespace android::net::wifi
 			arg0.object()
 		);
 	}
-	android::net::wifi::WifiNetworkSuggestion_Builder WifiNetworkSuggestion_Builder::setWpa3Passphrase(jstring arg0)
+	android::net::wifi::WifiNetworkSuggestion_Builder WifiNetworkSuggestion_Builder::setWpa3Passphrase(JString arg0)
 	{
 		return callObjectMethod(
 			"setWpa3Passphrase",
 			"(Ljava/lang/String;)Landroid/net/wifi/WifiNetworkSuggestion$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 } // namespace android::net::wifi

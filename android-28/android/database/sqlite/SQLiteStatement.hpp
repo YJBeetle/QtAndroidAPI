@@ -1,9 +1,8 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "./SQLiteClosable.hpp"
 #include "./SQLiteProgram.hpp"
 
+class JObjectArray;
 namespace android::database::sqlite
 {
 	class SQLiteDatabase;
@@ -12,6 +11,7 @@ namespace android::os
 {
 	class ParcelFileDescriptor;
 }
+class JString;
 
 namespace android::database::sqlite
 {
@@ -32,8 +32,8 @@ namespace android::database::sqlite
 		jint executeUpdateDelete();
 		android::os::ParcelFileDescriptor simpleQueryForBlobFileDescriptor();
 		jlong simpleQueryForLong();
-		jstring simpleQueryForString();
-		jstring toString();
+		JString simpleQueryForString();
+		JString toString();
 	};
 } // namespace android::database::sqlite
 

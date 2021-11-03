@@ -1,3 +1,4 @@
+#include "../../JObjectArray.hpp"
 #include "./Allocation.hpp"
 #include "./Script_KernelID.hpp"
 #include "./ScriptGroup.hpp"
@@ -19,13 +20,13 @@ namespace android::renderscript
 			"()V"
 		);
 	}
-	jobjectArray ScriptGroup::execute(jobjectArray arg0)
+	JObjectArray ScriptGroup::execute(JObjectArray arg0)
 	{
 		return callObjectMethod(
 			"execute",
 			"([Ljava/lang/Object;)[Ljava/lang/Object;",
-			arg0
-		).object<jobjectArray>();
+			arg0.object<jobjectArray>()
+		);
 	}
 	void ScriptGroup::execute()
 	{

@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./Identity.hpp"
 #include "./IdentityScope.hpp"
 
@@ -9,17 +10,17 @@ namespace java::security
 	IdentityScope::IdentityScope(QAndroidJniObject obj) : java::security::Identity(obj) {}
 	
 	// Constructors
-	IdentityScope::IdentityScope(jstring arg0)
+	IdentityScope::IdentityScope(JString arg0)
 		: java::security::Identity(
 			"java.security.IdentityScope",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	IdentityScope::IdentityScope(jstring arg0, java::security::IdentityScope &arg1)
+	IdentityScope::IdentityScope(JString arg0, java::security::IdentityScope &arg1)
 		: java::security::Identity(
 			"java.security.IdentityScope",
 			"(Ljava/lang/String;Ljava/security/IdentityScope;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		) {}
 	
@@ -40,12 +41,12 @@ namespace java::security
 			arg0.object()
 		);
 	}
-	java::security::Identity IdentityScope::getIdentity(jstring arg0)
+	java::security::Identity IdentityScope::getIdentity(JString arg0)
 	{
 		return callObjectMethod(
 			"getIdentity",
 			"(Ljava/lang/String;)Ljava/security/Identity;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	java::security::Identity IdentityScope::getIdentity(JObject arg0)
@@ -78,12 +79,12 @@ namespace java::security
 			"()I"
 		);
 	}
-	jstring IdentityScope::toString()
+	JString IdentityScope::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::security
 

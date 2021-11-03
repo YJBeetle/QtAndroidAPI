@@ -6,6 +6,7 @@ namespace android::net
 {
 	class Uri;
 }
+class JString;
 
 namespace android::provider
 {
@@ -13,11 +14,11 @@ namespace android::provider
 	{
 	public:
 		// Fields
-		static jstring KEY_TIMEZONE_INSTANCES();
-		static jstring KEY_TIMEZONE_INSTANCES_PREVIOUS();
-		static jstring KEY_TIMEZONE_TYPE();
-		static jstring TIMEZONE_TYPE_AUTO();
-		static jstring TIMEZONE_TYPE_HOME();
+		static JString KEY_TIMEZONE_INSTANCES();
+		static JString KEY_TIMEZONE_INSTANCES_PREVIOUS();
+		static JString KEY_TIMEZONE_TYPE();
+		static JString TIMEZONE_TYPE_AUTO();
+		static JString TIMEZONE_TYPE_HOME();
 		static android::net::Uri URI();
 		
 		// QAndroidJniObject forward

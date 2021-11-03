@@ -1,10 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../../java/lang/Exception.hpp"
-#include "../../java/lang/RuntimeException.hpp"
 #include "./RSRuntimeException.hpp"
 
+class JString;
 
 namespace android::renderscript
 {
@@ -18,7 +16,7 @@ namespace android::renderscript
 		RSInvalidStateException(QAndroidJniObject obj);
 		
 		// Constructors
-		RSInvalidStateException(jstring arg0);
+		RSInvalidStateException(JString arg0);
 		
 		// Methods
 	};

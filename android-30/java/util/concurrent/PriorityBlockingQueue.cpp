@@ -1,5 +1,9 @@
+#include "../../../JLongArray.hpp"
+#include "../../../JObjectArray.hpp"
 #include "../../io/ObjectInputStream.hpp"
 #include "../../io/ObjectOutputStream.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "../PriorityQueue.hpp"
 #include "./TimeUnit.hpp"
 #include "./locks/ReentrantLock.hpp"
@@ -39,12 +43,12 @@ namespace java::util::concurrent
 		) {}
 	
 	// Methods
-	jboolean PriorityBlockingQueue::add(jobject arg0)
+	jboolean PriorityBlockingQueue::add(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"add",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	void PriorityBlockingQueue::clear()
@@ -61,12 +65,12 @@ namespace java::util::concurrent
 			"()Ljava/util/Comparator;"
 		);
 	}
-	jboolean PriorityBlockingQueue::contains(jobject arg0)
+	jboolean PriorityBlockingQueue::contains(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"contains",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint PriorityBlockingQueue::drainTo(JObject arg0)
@@ -101,53 +105,53 @@ namespace java::util::concurrent
 			"()Ljava/util/Iterator;"
 		);
 	}
-	jboolean PriorityBlockingQueue::offer(jobject arg0)
+	jboolean PriorityBlockingQueue::offer(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"offer",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jboolean PriorityBlockingQueue::offer(jobject arg0, jlong arg1, java::util::concurrent::TimeUnit arg2)
+	jboolean PriorityBlockingQueue::offer(JObject arg0, jlong arg1, java::util::concurrent::TimeUnit arg2)
 	{
 		return callMethod<jboolean>(
 			"offer",
 			"(Ljava/lang/Object;JLjava/util/concurrent/TimeUnit;)Z",
-			arg0,
+			arg0.object<jobject>(),
 			arg1,
 			arg2.object()
 		);
 	}
-	jobject PriorityBlockingQueue::peek()
+	JObject PriorityBlockingQueue::peek()
 	{
 		return callObjectMethod(
 			"peek",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
-	jobject PriorityBlockingQueue::poll()
+	JObject PriorityBlockingQueue::poll()
 	{
 		return callObjectMethod(
 			"poll",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
-	jobject PriorityBlockingQueue::poll(jlong arg0, java::util::concurrent::TimeUnit arg1)
+	JObject PriorityBlockingQueue::poll(jlong arg0, java::util::concurrent::TimeUnit arg1)
 	{
 		return callObjectMethod(
 			"poll",
 			"(JLjava/util/concurrent/TimeUnit;)Ljava/lang/Object;",
 			arg0,
 			arg1.object()
-		).object<jobject>();
+		);
 	}
-	void PriorityBlockingQueue::put(jobject arg0)
+	void PriorityBlockingQueue::put(JObject arg0)
 	{
 		callMethod<void>(
 			"put",
 			"(Ljava/lang/Object;)V",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint PriorityBlockingQueue::remainingCapacity()
@@ -157,12 +161,12 @@ namespace java::util::concurrent
 			"()I"
 		);
 	}
-	jboolean PriorityBlockingQueue::remove(jobject arg0)
+	jboolean PriorityBlockingQueue::remove(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"remove",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jboolean PriorityBlockingQueue::removeAll(JObject arg0)
@@ -203,34 +207,34 @@ namespace java::util::concurrent
 			"()Ljava/util/Spliterator;"
 		);
 	}
-	jobject PriorityBlockingQueue::take()
+	JObject PriorityBlockingQueue::take()
 	{
 		return callObjectMethod(
 			"take",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
-	jobjectArray PriorityBlockingQueue::toArray()
+	JObjectArray PriorityBlockingQueue::toArray()
 	{
 		return callObjectMethod(
 			"toArray",
 			"()[Ljava/lang/Object;"
-		).object<jobjectArray>();
+		);
 	}
-	jobjectArray PriorityBlockingQueue::toArray(jobjectArray arg0)
+	JObjectArray PriorityBlockingQueue::toArray(JObjectArray arg0)
 	{
 		return callObjectMethod(
 			"toArray",
 			"([Ljava/lang/Object;)[Ljava/lang/Object;",
-			arg0
-		).object<jobjectArray>();
+			arg0.object<jobjectArray>()
+		);
 	}
-	jstring PriorityBlockingQueue::toString()
+	JString PriorityBlockingQueue::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::util::concurrent
 

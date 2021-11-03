@@ -1,4 +1,5 @@
 #include "../../os/Parcel.hpp"
+#include "../../../JString.hpp"
 #include "./TextClassificationContext.hpp"
 
 namespace android::view::textclassifier
@@ -26,33 +27,33 @@ namespace android::view::textclassifier
 			"()I"
 		);
 	}
-	jstring TextClassificationContext::getPackageName()
+	JString TextClassificationContext::getPackageName()
 	{
 		return callObjectMethod(
 			"getPackageName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TextClassificationContext::getWidgetType()
+	JString TextClassificationContext::getWidgetType()
 	{
 		return callObjectMethod(
 			"getWidgetType",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TextClassificationContext::getWidgetVersion()
+	JString TextClassificationContext::getWidgetVersion()
 	{
 		return callObjectMethod(
 			"getWidgetVersion",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TextClassificationContext::toString()
+	JString TextClassificationContext::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void TextClassificationContext::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

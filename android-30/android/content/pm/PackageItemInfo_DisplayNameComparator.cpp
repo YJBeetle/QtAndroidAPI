@@ -1,5 +1,6 @@
 #include "./PackageItemInfo.hpp"
 #include "./PackageManager.hpp"
+#include "../../../JObject.hpp"
 #include "./PackageItemInfo_DisplayNameComparator.hpp"
 
 namespace android::content::pm
@@ -27,13 +28,13 @@ namespace android::content::pm
 			arg1.object()
 		);
 	}
-	jint PackageItemInfo_DisplayNameComparator::compare(jobject arg0, jobject arg1)
+	jint PackageItemInfo_DisplayNameComparator::compare(JObject arg0, JObject arg1)
 	{
 		return callMethod<jint>(
 			"compare",
 			"(Ljava/lang/Object;Ljava/lang/Object;)I",
-			arg0,
-			arg1
+			arg0.object<jobject>(),
+			arg1.object<jobject>()
 		);
 	}
 } // namespace android::content::pm

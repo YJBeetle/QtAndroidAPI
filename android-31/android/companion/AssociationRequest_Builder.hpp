@@ -6,6 +6,7 @@ namespace android::companion
 {
 	class AssociationRequest;
 }
+class JString;
 
 namespace android::companion
 {
@@ -24,7 +25,7 @@ namespace android::companion
 		// Methods
 		android::companion::AssociationRequest_Builder addDeviceFilter(JObject arg0);
 		android::companion::AssociationRequest build();
-		android::companion::AssociationRequest_Builder setDeviceProfile(jstring arg0);
+		android::companion::AssociationRequest_Builder setDeviceProfile(JString arg0);
 		android::companion::AssociationRequest_Builder setSingleDevice(jboolean arg0);
 	};
 } // namespace android::companion

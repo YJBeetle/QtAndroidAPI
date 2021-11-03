@@ -1,4 +1,6 @@
+#include "../../JIntArray.hpp"
 #include "../os/Parcel.hpp"
+#include "../../JObject.hpp"
 #include "./RadioAccessSpecifier.hpp"
 
 namespace android::telephony
@@ -17,13 +19,13 @@ namespace android::telephony
 	RadioAccessSpecifier::RadioAccessSpecifier(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	RadioAccessSpecifier::RadioAccessSpecifier(jint arg0, jintArray arg1, jintArray arg2)
+	RadioAccessSpecifier::RadioAccessSpecifier(jint arg0, JIntArray arg1, JIntArray arg2)
 		: JObject(
 			"android.telephony.RadioAccessSpecifier",
 			"(I[I[I)V",
 			arg0,
-			arg1,
-			arg2
+			arg1.object<jintArray>(),
+			arg2.object<jintArray>()
 		) {}
 	
 	// Methods
@@ -34,27 +36,27 @@ namespace android::telephony
 			"()I"
 		);
 	}
-	jboolean RadioAccessSpecifier::equals(jobject arg0)
+	jboolean RadioAccessSpecifier::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jintArray RadioAccessSpecifier::getBands()
+	JIntArray RadioAccessSpecifier::getBands()
 	{
 		return callObjectMethod(
 			"getBands",
 			"()[I"
-		).object<jintArray>();
+		);
 	}
-	jintArray RadioAccessSpecifier::getChannels()
+	JIntArray RadioAccessSpecifier::getChannels()
 	{
 		return callObjectMethod(
 			"getChannels",
 			"()[I"
-		).object<jintArray>();
+		);
 	}
 	jint RadioAccessSpecifier::getRadioAccessNetwork()
 	{

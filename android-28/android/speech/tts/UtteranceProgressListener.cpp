@@ -1,3 +1,5 @@
+#include "../../../JByteArray.hpp"
+#include "../../../JString.hpp"
 #include "./UtteranceProgressListener.hpp"
 
 namespace android::speech::tts
@@ -15,76 +17,76 @@ namespace android::speech::tts
 		) {}
 	
 	// Methods
-	void UtteranceProgressListener::onAudioAvailable(jstring arg0, jbyteArray arg1)
+	void UtteranceProgressListener::onAudioAvailable(JString arg0, JByteArray arg1)
 	{
 		callMethod<void>(
 			"onAudioAvailable",
 			"(Ljava/lang/String;[B)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jbyteArray>()
 		);
 	}
-	void UtteranceProgressListener::onBeginSynthesis(jstring arg0, jint arg1, jint arg2, jint arg3)
+	void UtteranceProgressListener::onBeginSynthesis(JString arg0, jint arg1, jint arg2, jint arg3)
 	{
 		callMethod<void>(
 			"onBeginSynthesis",
 			"(Ljava/lang/String;III)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
 			arg2,
 			arg3
 		);
 	}
-	void UtteranceProgressListener::onDone(jstring arg0)
+	void UtteranceProgressListener::onDone(JString arg0)
 	{
 		callMethod<void>(
 			"onDone",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	void UtteranceProgressListener::onError(jstring arg0)
+	void UtteranceProgressListener::onError(JString arg0)
 	{
 		callMethod<void>(
 			"onError",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	void UtteranceProgressListener::onError(jstring arg0, jint arg1)
+	void UtteranceProgressListener::onError(JString arg0, jint arg1)
 	{
 		callMethod<void>(
 			"onError",
 			"(Ljava/lang/String;I)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
-	void UtteranceProgressListener::onRangeStart(jstring arg0, jint arg1, jint arg2, jint arg3)
+	void UtteranceProgressListener::onRangeStart(JString arg0, jint arg1, jint arg2, jint arg3)
 	{
 		callMethod<void>(
 			"onRangeStart",
 			"(Ljava/lang/String;III)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
 			arg2,
 			arg3
 		);
 	}
-	void UtteranceProgressListener::onStart(jstring arg0)
+	void UtteranceProgressListener::onStart(JString arg0)
 	{
 		callMethod<void>(
 			"onStart",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	void UtteranceProgressListener::onStop(jstring arg0, jboolean arg1)
+	void UtteranceProgressListener::onStop(JString arg0, jboolean arg1)
 	{
 		callMethod<void>(
 			"onStop",
 			"(Ljava/lang/String;Z)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}

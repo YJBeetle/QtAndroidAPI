@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JString;
 
 namespace android::mtp
 {
@@ -17,11 +18,11 @@ namespace android::mtp
 		// Constructors
 		
 		// Methods
-		jstring getDescription();
+		JString getDescription();
 		jlong getFreeSpace();
 		jlong getMaxCapacity();
 		jint getStorageId();
-		jstring getVolumeIdentifier();
+		JString getVolumeIdentifier();
 	};
 } // namespace android::mtp
 

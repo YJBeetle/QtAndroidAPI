@@ -1,6 +1,7 @@
 #include "./BlobHandle.hpp"
 #include "./BlobStoreManager_Session.hpp"
 #include "../../os/ParcelFileDescriptor.hpp"
+#include "../../../JString.hpp"
 #include "./BlobStoreManager.hpp"
 
 namespace android::app::blob
@@ -30,13 +31,13 @@ namespace android::app::blob
 			arg1
 		);
 	}
-	void BlobStoreManager::acquireLease(android::app::blob::BlobHandle arg0, jstring arg1)
+	void BlobStoreManager::acquireLease(android::app::blob::BlobHandle arg0, JString arg1)
 	{
 		callMethod<void>(
 			"acquireLease",
 			"(Landroid/app/blob/BlobHandle;Ljava/lang/CharSequence;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
 	void BlobStoreManager::acquireLease(android::app::blob::BlobHandle arg0, jint arg1, jlong arg2)
@@ -49,13 +50,13 @@ namespace android::app::blob
 			arg2
 		);
 	}
-	void BlobStoreManager::acquireLease(android::app::blob::BlobHandle arg0, jstring arg1, jlong arg2)
+	void BlobStoreManager::acquireLease(android::app::blob::BlobHandle arg0, JString arg1, jlong arg2)
 	{
 		callMethod<void>(
 			"acquireLease",
 			"(Landroid/app/blob/BlobHandle;Ljava/lang/CharSequence;J)V",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2
 		);
 	}

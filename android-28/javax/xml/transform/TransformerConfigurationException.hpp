@@ -1,9 +1,9 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "../../../java/lang/Exception.hpp"
 #include "./TransformerException.hpp"
 
+class JString;
+class JThrowable;
 
 namespace javax::xml::transform
 {
@@ -18,11 +18,11 @@ namespace javax::xml::transform
 		
 		// Constructors
 		TransformerConfigurationException();
-		TransformerConfigurationException(jstring arg0);
-		TransformerConfigurationException(jthrowable arg0);
-		TransformerConfigurationException(jstring arg0, jthrowable arg1);
-		TransformerConfigurationException(jstring arg0, JObject arg1);
-		TransformerConfigurationException(jstring arg0, JObject arg1, jthrowable arg2);
+		TransformerConfigurationException(JString arg0);
+		TransformerConfigurationException(JThrowable arg0);
+		TransformerConfigurationException(JString arg0, JThrowable arg1);
+		TransformerConfigurationException(JString arg0, JObject arg1);
+		TransformerConfigurationException(JString arg0, JObject arg1, JThrowable arg2);
 		
 		// Methods
 	};

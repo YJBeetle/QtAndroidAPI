@@ -1,3 +1,6 @@
+#include "../../../JArray.hpp"
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
 #include "./Attributes.hpp"
 #include "../zip/ZipEntry.hpp"
 #include "./JarEntry.hpp"
@@ -10,11 +13,11 @@ namespace java::util::jar
 	JarEntry::JarEntry(QAndroidJniObject obj) : java::util::zip::ZipEntry(obj) {}
 	
 	// Constructors
-	JarEntry::JarEntry(jstring arg0)
+	JarEntry::JarEntry(JString arg0)
 		: java::util::zip::ZipEntry(
 			"java.util.jar.JarEntry",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	JarEntry::JarEntry(java::util::jar::JarEntry &arg0)
 		: java::util::zip::ZipEntry(
@@ -37,26 +40,26 @@ namespace java::util::jar
 			"()Ljava/util/jar/Attributes;"
 		);
 	}
-	jarray JarEntry::getCertificates()
+	JArray JarEntry::getCertificates()
 	{
 		return callObjectMethod(
 			"getCertificates",
 			"()[Ljava/security/cert/Certificate;"
-		).object<jarray>();
+		);
 	}
-	jarray JarEntry::getCodeSigners()
+	JArray JarEntry::getCodeSigners()
 	{
 		return callObjectMethod(
 			"getCodeSigners",
 			"()[Ljava/security/CodeSigner;"
-		).object<jarray>();
+		);
 	}
-	jstring JarEntry::getRealName()
+	JString JarEntry::getRealName()
 	{
 		return callObjectMethod(
 			"getRealName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::util::jar
 

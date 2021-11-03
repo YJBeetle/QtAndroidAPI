@@ -1,3 +1,5 @@
+#include "../../JIntArray.hpp"
+#include "../../JObject.hpp"
 #include "./IntArrayEvaluator.hpp"
 
 namespace android::animation
@@ -13,33 +15,33 @@ namespace android::animation
 			"android.animation.IntArrayEvaluator",
 			"()V"
 		) {}
-	IntArrayEvaluator::IntArrayEvaluator(jintArray arg0)
+	IntArrayEvaluator::IntArrayEvaluator(JIntArray arg0)
 		: JObject(
 			"android.animation.IntArrayEvaluator",
 			"([I)V",
-			arg0
+			arg0.object<jintArray>()
 		) {}
 	
 	// Methods
-	jintArray IntArrayEvaluator::evaluate(jfloat arg0, jintArray arg1, jintArray arg2)
+	JIntArray IntArrayEvaluator::evaluate(jfloat arg0, JIntArray arg1, JIntArray arg2)
 	{
 		return callObjectMethod(
 			"evaluate",
 			"(F[I[I)[I",
 			arg0,
-			arg1,
-			arg2
-		).object<jintArray>();
+			arg1.object<jintArray>(),
+			arg2.object<jintArray>()
+		);
 	}
-	jobject IntArrayEvaluator::evaluate(jfloat arg0, jobject arg1, jobject arg2)
+	JObject IntArrayEvaluator::evaluate(jfloat arg0, JObject arg1, JObject arg2)
 	{
 		return callObjectMethod(
 			"evaluate",
 			"(FLjava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
 			arg0,
-			arg1,
-			arg2
-		).object<jobject>();
+			arg1.object<jobject>(),
+			arg2.object<jobject>()
+		);
 	}
 } // namespace android::animation
 

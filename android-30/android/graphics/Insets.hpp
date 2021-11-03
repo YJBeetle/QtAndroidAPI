@@ -10,6 +10,8 @@ namespace android::os
 {
 	class Parcel;
 }
+class JObject;
+class JString;
 
 namespace android::graphics
 {
@@ -38,9 +40,9 @@ namespace android::graphics
 		static android::graphics::Insets of(jint arg0, jint arg1, jint arg2, jint arg3);
 		static android::graphics::Insets subtract(android::graphics::Insets arg0, android::graphics::Insets arg1);
 		jint describeContents();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint hashCode();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::graphics

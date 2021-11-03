@@ -1,4 +1,7 @@
 #include "../io/ObjectInputStream.hpp"
+#include "../../JString.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./Clock.hpp"
 #include "./OffsetDateTime.hpp"
 #include "./ZoneId.hpp"
@@ -95,13 +98,13 @@ namespace java::time
 			arg1
 		);
 	}
-	java::time::Instant Instant::parse(jstring arg0)
+	java::time::Instant Instant::parse(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"java.time.Instant",
 			"parse",
 			"(Ljava/lang/CharSequence;)Ljava/time/Instant;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	JObject Instant::adjustInto(JObject arg0)
@@ -128,12 +131,12 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	jint Instant::compareTo(jobject arg0)
+	jint Instant::compareTo(JObject arg0)
 	{
 		return callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Object;)I",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint Instant::compareTo(java::time::Instant arg0)
@@ -144,12 +147,12 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	jboolean Instant::equals(jobject arg0)
+	jboolean Instant::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint Instant::get(JObject arg0)
@@ -295,13 +298,13 @@ namespace java::time
 			arg0
 		);
 	}
-	jobject Instant::query(JObject arg0)
+	JObject Instant::query(JObject arg0)
 	{
 		return callObjectMethod(
 			"query",
 			"(Ljava/time/temporal/TemporalQuery;)Ljava/lang/Object;",
 			arg0.object()
-		).object<jobject>();
+		);
 	}
 	java::time::temporal::ValueRange Instant::range(JObject arg0)
 	{
@@ -318,12 +321,12 @@ namespace java::time
 			"()J"
 		);
 	}
-	jstring Instant::toString()
+	JString Instant::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	java::time::Instant Instant::truncatedTo(JObject arg0)
 	{

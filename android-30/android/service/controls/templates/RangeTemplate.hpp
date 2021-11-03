@@ -1,8 +1,9 @@
 #pragma once
 
-#include "../../../../JObject.hpp"
 #include "./ControlTemplate.hpp"
 
+class JString;
+class JString;
 
 namespace android::service::controls::templates
 {
@@ -16,11 +17,11 @@ namespace android::service::controls::templates
 		RangeTemplate(QAndroidJniObject obj);
 		
 		// Constructors
-		RangeTemplate(jstring arg0, jfloat arg1, jfloat arg2, jfloat arg3, jfloat arg4, jstring arg5);
+		RangeTemplate(JString arg0, jfloat arg1, jfloat arg2, jfloat arg3, jfloat arg4, JString arg5);
 		
 		// Methods
 		jfloat getCurrentValue();
-		jstring getFormatString();
+		JString getFormatString();
 		jfloat getMaxValue();
 		jfloat getMinValue();
 		jfloat getStepValue();

@@ -1,10 +1,8 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "../../content/Context.hpp"
-#include "../../content/ContextWrapper.hpp"
 #include "../../app/Service.hpp"
 
+class JByteArray;
 namespace android::content
 {
 	class Intent;
@@ -17,6 +15,7 @@ namespace android::service::carrier
 {
 	class MessagePdu;
 }
+class JString;
 
 namespace android::service::carrier
 {
@@ -34,7 +33,7 @@ namespace android::service::carrier
 		static jint SEND_STATUS_ERROR();
 		static jint SEND_STATUS_OK();
 		static jint SEND_STATUS_RETRY_ON_CARRIER_NETWORK();
-		static jstring SERVICE_INTERFACE();
+		static JString SERVICE_INTERFACE();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit CarrierMessagingService(const char *className, const char *sig, Ts...agv) : android::app::Service(className, sig, std::forward<Ts>(agv)...) {}
@@ -46,15 +45,15 @@ namespace android::service::carrier
 		// Methods
 		JObject onBind(android::content::Intent arg0);
 		void onDownloadMms(android::net::Uri arg0, jint arg1, android::net::Uri arg2, JObject arg3);
-		void onFilterSms(android::service::carrier::MessagePdu arg0, jstring arg1, jint arg2, jint arg3, JObject arg4);
-		void onReceiveTextSms(android::service::carrier::MessagePdu arg0, jstring arg1, jint arg2, jint arg3, JObject arg4);
-		void onSendDataSms(jbyteArray arg0, jint arg1, jstring arg2, jint arg3, JObject arg4);
-		void onSendDataSms(jbyteArray arg0, jint arg1, jstring arg2, jint arg3, jint arg4, JObject arg5);
+		void onFilterSms(android::service::carrier::MessagePdu arg0, JString arg1, jint arg2, jint arg3, JObject arg4);
+		void onReceiveTextSms(android::service::carrier::MessagePdu arg0, JString arg1, jint arg2, jint arg3, JObject arg4);
+		void onSendDataSms(JByteArray arg0, jint arg1, JString arg2, jint arg3, JObject arg4);
+		void onSendDataSms(JByteArray arg0, jint arg1, JString arg2, jint arg3, jint arg4, JObject arg5);
 		void onSendMms(android::net::Uri arg0, jint arg1, android::net::Uri arg2, JObject arg3);
-		void onSendMultipartTextSms(JObject arg0, jint arg1, jstring arg2, JObject arg3);
-		void onSendMultipartTextSms(JObject arg0, jint arg1, jstring arg2, jint arg3, JObject arg4);
-		void onSendTextSms(jstring arg0, jint arg1, jstring arg2, JObject arg3);
-		void onSendTextSms(jstring arg0, jint arg1, jstring arg2, jint arg3, JObject arg4);
+		void onSendMultipartTextSms(JObject arg0, jint arg1, JString arg2, JObject arg3);
+		void onSendMultipartTextSms(JObject arg0, jint arg1, JString arg2, jint arg3, JObject arg4);
+		void onSendTextSms(JString arg0, jint arg1, JString arg2, JObject arg3);
+		void onSendTextSms(JString arg0, jint arg1, JString arg2, jint arg3, JObject arg4);
 	};
 } // namespace android::service::carrier
 

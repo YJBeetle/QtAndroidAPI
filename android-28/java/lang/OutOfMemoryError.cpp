@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./OutOfMemoryError.hpp"
 
 namespace java::lang
@@ -13,11 +14,11 @@ namespace java::lang
 			"java.lang.OutOfMemoryError",
 			"()V"
 		) {}
-	OutOfMemoryError::OutOfMemoryError(jstring arg0)
+	OutOfMemoryError::OutOfMemoryError(JString arg0)
 		: java::lang::VirtualMachineError(
 			"java.lang.OutOfMemoryError",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

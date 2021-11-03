@@ -1,6 +1,8 @@
 #include "../Intent.hpp"
 #include "../IntentSender.hpp"
 #include "./ShortcutInfo.hpp"
+#include "../../../JString.hpp"
+#include "../../../JString.hpp"
 #include "./ShortcutManager.hpp"
 
 namespace android::content::pm
@@ -65,13 +67,13 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	void ShortcutManager::disableShortcuts(JObject arg0, jstring arg1)
+	void ShortcutManager::disableShortcuts(JObject arg0, JString arg1)
 	{
 		callMethod<void>(
 			"disableShortcuts",
 			"(Ljava/util/List;Ljava/lang/CharSequence;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
 	void ShortcutManager::enableShortcuts(JObject arg0)
@@ -177,12 +179,12 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	void ShortcutManager::reportShortcutUsed(jstring arg0)
+	void ShortcutManager::reportShortcutUsed(JString arg0)
 	{
 		callMethod<void>(
 			"reportShortcutUsed",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	jboolean ShortcutManager::requestPinShortcut(android::content::pm::ShortcutInfo arg0, android::content::IntentSender arg1)

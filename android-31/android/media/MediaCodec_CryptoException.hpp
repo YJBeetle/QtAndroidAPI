@@ -1,9 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../../java/lang/Exception.hpp"
 #include "../../java/lang/RuntimeException.hpp"
 
+class JString;
 
 namespace android::media
 {
@@ -26,7 +25,7 @@ namespace android::media
 		MediaCodec_CryptoException(QAndroidJniObject obj);
 		
 		// Constructors
-		MediaCodec_CryptoException(jint arg0, jstring arg1);
+		MediaCodec_CryptoException(jint arg0, JString arg1);
 		
 		// Methods
 		jint getErrorCode();

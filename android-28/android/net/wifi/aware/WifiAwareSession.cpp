@@ -1,3 +1,4 @@
+#include "../../../../JByteArray.hpp"
 #include "../../NetworkSpecifier.hpp"
 #include "./DiscoverySessionCallback.hpp"
 #include "./PublishConfig.hpp"
@@ -5,6 +6,7 @@
 #include "./WifiAwareManager.hpp"
 #include "../../../os/Binder.hpp"
 #include "../../../os/Handler.hpp"
+#include "../../../../JString.hpp"
 #include "./WifiAwareSession.hpp"
 
 namespace android::net::wifi::aware
@@ -24,23 +26,23 @@ namespace android::net::wifi::aware
 			"()V"
 		);
 	}
-	android::net::NetworkSpecifier WifiAwareSession::createNetworkSpecifierOpen(jint arg0, jbyteArray arg1)
+	android::net::NetworkSpecifier WifiAwareSession::createNetworkSpecifierOpen(jint arg0, JByteArray arg1)
 	{
 		return callObjectMethod(
 			"createNetworkSpecifierOpen",
 			"(I[B)Landroid/net/NetworkSpecifier;",
 			arg0,
-			arg1
+			arg1.object<jbyteArray>()
 		);
 	}
-	android::net::NetworkSpecifier WifiAwareSession::createNetworkSpecifierPassphrase(jint arg0, jbyteArray arg1, jstring arg2)
+	android::net::NetworkSpecifier WifiAwareSession::createNetworkSpecifierPassphrase(jint arg0, JByteArray arg1, JString arg2)
 	{
 		return callObjectMethod(
 			"createNetworkSpecifierPassphrase",
 			"(I[BLjava/lang/String;)Landroid/net/NetworkSpecifier;",
 			arg0,
-			arg1,
-			arg2
+			arg1.object<jbyteArray>(),
+			arg2.object<jstring>()
 		);
 	}
 	void WifiAwareSession::publish(android::net::wifi::aware::PublishConfig arg0, android::net::wifi::aware::DiscoverySessionCallback arg1, android::os::Handler arg2)

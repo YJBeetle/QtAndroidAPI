@@ -1,5 +1,6 @@
 #include "./Context.hpp"
 #include "../os/Parcel.hpp"
+#include "../../JString.hpp"
 #include "./Intent_ShortcutIconResource.hpp"
 
 namespace android::content
@@ -13,19 +14,19 @@ namespace android::content
 			"Landroid/os/Parcelable$Creator;"
 		);
 	}
-	jstring Intent_ShortcutIconResource::packageName()
+	JString Intent_ShortcutIconResource::packageName()
 	{
 		return getObjectField(
 			"packageName",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Intent_ShortcutIconResource::resourceName()
+	JString Intent_ShortcutIconResource::resourceName()
 	{
 		return getObjectField(
 			"resourceName",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QAndroidJniObject forward
@@ -56,12 +57,12 @@ namespace android::content
 			"()I"
 		);
 	}
-	jstring Intent_ShortcutIconResource::toString()
+	JString Intent_ShortcutIconResource::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void Intent_ShortcutIconResource::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

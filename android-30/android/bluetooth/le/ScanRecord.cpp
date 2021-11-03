@@ -1,5 +1,7 @@
+#include "../../../JByteArray.hpp"
 #include "../../os/ParcelUuid.hpp"
 #include "../../util/SparseArray.hpp"
+#include "../../../JString.hpp"
 #include "./ScanRecord.hpp"
 
 namespace android::bluetooth::le
@@ -19,27 +21,27 @@ namespace android::bluetooth::le
 			"()I"
 		);
 	}
-	jbyteArray ScanRecord::getBytes()
+	JByteArray ScanRecord::getBytes()
 	{
 		return callObjectMethod(
 			"getBytes",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
-	jstring ScanRecord::getDeviceName()
+	JString ScanRecord::getDeviceName()
 	{
 		return callObjectMethod(
 			"getDeviceName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jbyteArray ScanRecord::getManufacturerSpecificData(jint arg0)
+	JByteArray ScanRecord::getManufacturerSpecificData(jint arg0)
 	{
 		return callObjectMethod(
 			"getManufacturerSpecificData",
 			"(I)[B",
 			arg0
-		).object<jbyteArray>();
+		);
 	}
 	android::util::SparseArray ScanRecord::getManufacturerSpecificData()
 	{
@@ -48,13 +50,13 @@ namespace android::bluetooth::le
 			"()Landroid/util/SparseArray;"
 		);
 	}
-	jbyteArray ScanRecord::getServiceData(android::os::ParcelUuid arg0)
+	JByteArray ScanRecord::getServiceData(android::os::ParcelUuid arg0)
 	{
 		return callObjectMethod(
 			"getServiceData",
 			"(Landroid/os/ParcelUuid;)[B",
 			arg0.object()
-		).object<jbyteArray>();
+		);
 	}
 	JObject ScanRecord::getServiceData()
 	{
@@ -84,12 +86,12 @@ namespace android::bluetooth::le
 			"()I"
 		);
 	}
-	jstring ScanRecord::toString()
+	JString ScanRecord::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::bluetooth::le
 

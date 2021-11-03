@@ -1,3 +1,6 @@
+#include "../../JByteArray.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./KeyRep_Type.hpp"
 #include "./KeyRep.hpp"
 
@@ -9,14 +12,14 @@ namespace java::security
 	KeyRep::KeyRep(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	KeyRep::KeyRep(java::security::KeyRep_Type arg0, jstring arg1, jstring arg2, jbyteArray arg3)
+	KeyRep::KeyRep(java::security::KeyRep_Type arg0, JString arg1, JString arg2, JByteArray arg3)
 		: JObject(
 			"java.security.KeyRep",
 			"(Ljava/security/KeyRep$Type;Ljava/lang/String;Ljava/lang/String;[B)V",
 			arg0.object(),
-			arg1,
-			arg2,
-			arg3
+			arg1.object<jstring>(),
+			arg2.object<jstring>(),
+			arg3.object<jbyteArray>()
 		) {}
 	
 	// Methods

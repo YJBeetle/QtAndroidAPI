@@ -1,4 +1,7 @@
+#include "../../../JArray.hpp"
+#include "../../../JArray.hpp"
 #include "../../os/Parcel.hpp"
+#include "../../../JString.hpp"
 #include "./ProviderInfo.hpp"
 
 namespace android::content::pm
@@ -19,12 +22,12 @@ namespace android::content::pm
 			"FLAG_SINGLE_USER"
 		);
 	}
-	jstring ProviderInfo::authority()
+	JString ProviderInfo::authority()
 	{
 		return getObjectField(
 			"authority",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint ProviderInfo::flags()
 	{
@@ -56,33 +59,33 @@ namespace android::content::pm
 			"multiprocess"
 		);
 	}
-	jarray ProviderInfo::pathPermissions()
+	JArray ProviderInfo::pathPermissions()
 	{
 		return getObjectField(
 			"pathPermissions",
 			"[Landroid/content/pm/PathPermission;"
-		).object<jarray>();
+		);
 	}
-	jstring ProviderInfo::readPermission()
+	JString ProviderInfo::readPermission()
 	{
 		return getObjectField(
 			"readPermission",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jarray ProviderInfo::uriPermissionPatterns()
+	JArray ProviderInfo::uriPermissionPatterns()
 	{
 		return getObjectField(
 			"uriPermissionPatterns",
 			"[Landroid/os/PatternMatcher;"
-		).object<jarray>();
+		);
 	}
-	jstring ProviderInfo::writePermission()
+	JString ProviderInfo::writePermission()
 	{
 		return getObjectField(
 			"writePermission",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QAndroidJniObject forward
@@ -109,21 +112,21 @@ namespace android::content::pm
 			"()I"
 		);
 	}
-	void ProviderInfo::dump(JObject arg0, jstring arg1)
+	void ProviderInfo::dump(JObject arg0, JString arg1)
 	{
 		callMethod<void>(
 			"dump",
 			"(Landroid/util/Printer;Ljava/lang/String;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
-	jstring ProviderInfo::toString()
+	JString ProviderInfo::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void ProviderInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

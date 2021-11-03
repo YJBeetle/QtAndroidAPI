@@ -1,3 +1,5 @@
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
 #include "../format/TextStyle.hpp"
 #include "../../util/Locale.hpp"
 #include "./MinguoEra.hpp"
@@ -37,31 +39,31 @@ namespace java::time::chrono
 			arg0
 		);
 	}
-	java::time::chrono::MinguoEra MinguoEra::valueOf(jstring arg0)
+	java::time::chrono::MinguoEra MinguoEra::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"java.time.chrono.MinguoEra",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/time/chrono/MinguoEra;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray MinguoEra::values()
+	JArray MinguoEra::values()
 	{
 		return callStaticObjectMethod(
 			"java.time.chrono.MinguoEra",
 			"values",
 			"()[Ljava/time/chrono/MinguoEra;"
-		).object<jarray>();
+		);
 	}
-	jstring MinguoEra::getDisplayName(java::time::format::TextStyle arg0, java::util::Locale arg1)
+	JString MinguoEra::getDisplayName(java::time::format::TextStyle arg0, java::util::Locale arg1)
 	{
 		return callObjectMethod(
 			"getDisplayName",
 			"(Ljava/time/format/TextStyle;Ljava/util/Locale;)Ljava/lang/String;",
 			arg0.object(),
 			arg1.object()
-		).object<jstring>();
+		);
 	}
 	jint MinguoEra::getValue()
 	{

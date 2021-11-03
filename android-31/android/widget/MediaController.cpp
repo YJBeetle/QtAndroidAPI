@@ -2,6 +2,7 @@
 #include "../view/KeyEvent.hpp"
 #include "../view/MotionEvent.hpp"
 #include "../view/View.hpp"
+#include "../../JString.hpp"
 #include "./MediaController.hpp"
 
 namespace android::widget
@@ -42,12 +43,12 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	jstring MediaController::getAccessibilityClassName()
+	JString MediaController::getAccessibilityClassName()
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	void MediaController::hide()
 	{

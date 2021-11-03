@@ -1,6 +1,7 @@
 #include "../../os/Bundle.hpp"
 #include "../../os/Parcel.hpp"
 #include "../../view/inputmethod/InlineSuggestionsRequest.hpp"
+#include "../../../JString.hpp"
 #include "./FillRequest.hpp"
 
 namespace android::service::autofill
@@ -77,12 +78,12 @@ namespace android::service::autofill
 			"()Landroid/view/inputmethod/InlineSuggestionsRequest;"
 		);
 	}
-	jstring FillRequest::toString()
+	JString FillRequest::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void FillRequest::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

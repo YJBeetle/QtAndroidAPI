@@ -1,4 +1,6 @@
+#include "../../JCharArray.hpp"
 #include "./InputStream.hpp"
+#include "../../JString.hpp"
 #include "../nio/charset/Charset.hpp"
 #include "../nio/charset/CharsetDecoder.hpp"
 #include "./InputStreamReader.hpp"
@@ -17,12 +19,12 @@ namespace java::io
 			"(Ljava/io/InputStream;)V",
 			arg0.object()
 		) {}
-	InputStreamReader::InputStreamReader(java::io::InputStream arg0, jstring arg1)
+	InputStreamReader::InputStreamReader(java::io::InputStream arg0, JString arg1)
 		: java::io::Reader(
 			"java.io.InputStreamReader",
 			"(Ljava/io/InputStream;Ljava/lang/String;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		) {}
 	InputStreamReader::InputStreamReader(java::io::InputStream arg0, java::nio::charset::Charset arg1)
 		: java::io::Reader(
@@ -47,12 +49,12 @@ namespace java::io
 			"()V"
 		);
 	}
-	jstring InputStreamReader::getEncoding()
+	JString InputStreamReader::getEncoding()
 	{
 		return callObjectMethod(
 			"getEncoding",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint InputStreamReader::read()
 	{
@@ -61,12 +63,12 @@ namespace java::io
 			"()I"
 		);
 	}
-	jint InputStreamReader::read(jcharArray arg0, jint arg1, jint arg2)
+	jint InputStreamReader::read(JCharArray arg0, jint arg1, jint arg2)
 	{
 		return callMethod<jint>(
 			"read",
 			"([CII)I",
-			arg0,
+			arg0.object<jcharArray>(),
 			arg1,
 			arg2
 		);

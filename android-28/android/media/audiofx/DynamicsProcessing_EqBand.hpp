@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "./DynamicsProcessing_BandBase.hpp"
 
+class JString;
 
 namespace android::media::audiofx
 {
@@ -22,7 +22,7 @@ namespace android::media::audiofx
 		// Methods
 		jfloat getGain();
 		void setGain(jfloat arg0);
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::media::audiofx
 

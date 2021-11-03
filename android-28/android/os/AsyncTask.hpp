@@ -2,10 +2,12 @@
 
 #include "../../JObject.hpp"
 
+class JObjectArray;
 namespace android::os
 {
 	class AsyncTask_Status;
 }
+class JObject;
 namespace java::util::concurrent
 {
 	class TimeUnit;
@@ -30,10 +32,10 @@ namespace android::os
 		// Methods
 		static void execute(JObject arg0);
 		jboolean cancel(jboolean arg0);
-		android::os::AsyncTask execute(jobjectArray arg0);
-		android::os::AsyncTask executeOnExecutor(JObject arg0, jobjectArray arg1);
-		jobject get();
-		jobject get(jlong arg0, java::util::concurrent::TimeUnit arg1);
+		android::os::AsyncTask execute(JObjectArray arg0);
+		android::os::AsyncTask executeOnExecutor(JObject arg0, JObjectArray arg1);
+		JObject get();
+		JObject get(jlong arg0, java::util::concurrent::TimeUnit arg1);
 		android::os::AsyncTask_Status getStatus();
 		jboolean isCancelled();
 	};

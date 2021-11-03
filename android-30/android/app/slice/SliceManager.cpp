@@ -1,26 +1,27 @@
 #include "./Slice.hpp"
 #include "../../content/Intent.hpp"
 #include "../../net/Uri.hpp"
+#include "../../../JString.hpp"
 #include "./SliceManager.hpp"
 
 namespace android::app::slice
 {
 	// Fields
-	jstring SliceManager::CATEGORY_SLICE()
+	JString SliceManager::CATEGORY_SLICE()
 	{
 		return getStaticObjectField(
 			"android.app.slice.SliceManager",
 			"CATEGORY_SLICE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring SliceManager::SLICE_METADATA_KEY()
+	JString SliceManager::SLICE_METADATA_KEY()
 	{
 		return getStaticObjectField(
 			"android.app.slice.SliceManager",
 			"SLICE_METADATA_KEY",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QAndroidJniObject forward
@@ -80,12 +81,12 @@ namespace android::app::slice
 			arg0.object()
 		);
 	}
-	void SliceManager::grantSlicePermission(jstring arg0, android::net::Uri arg1)
+	void SliceManager::grantSlicePermission(JString arg0, android::net::Uri arg1)
 	{
 		callMethod<void>(
 			"grantSlicePermission",
 			"(Ljava/lang/String;Landroid/net/Uri;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
@@ -106,12 +107,12 @@ namespace android::app::slice
 			arg1.object()
 		);
 	}
-	void SliceManager::revokeSlicePermission(jstring arg0, android::net::Uri arg1)
+	void SliceManager::revokeSlicePermission(JString arg0, android::net::Uri arg1)
 	{
 		callMethod<void>(
 			"revokeSlicePermission",
 			"(Ljava/lang/String;Landroid/net/Uri;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}

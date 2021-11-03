@@ -1,4 +1,7 @@
+#include "../../JByteArray.hpp"
 #include "../../java/io/ObjectInputStream.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./Cipher.hpp"
 #include "./SealedObject.hpp"
 
@@ -19,37 +22,37 @@ namespace javax::crypto
 		) {}
 	
 	// Methods
-	jstring SealedObject::getAlgorithm()
+	JString SealedObject::getAlgorithm()
 	{
 		return callObjectMethod(
 			"getAlgorithm",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jobject SealedObject::getObject(JObject arg0)
+	JObject SealedObject::getObject(JObject arg0)
 	{
 		return callObjectMethod(
 			"getObject",
 			"(Ljava/security/Key;)Ljava/lang/Object;",
 			arg0.object()
-		).object<jobject>();
+		);
 	}
-	jobject SealedObject::getObject(javax::crypto::Cipher arg0)
+	JObject SealedObject::getObject(javax::crypto::Cipher arg0)
 	{
 		return callObjectMethod(
 			"getObject",
 			"(Ljavax/crypto/Cipher;)Ljava/lang/Object;",
 			arg0.object()
-		).object<jobject>();
+		);
 	}
-	jobject SealedObject::getObject(JObject arg0, jstring arg1)
+	JObject SealedObject::getObject(JObject arg0, JString arg1)
 	{
 		return callObjectMethod(
 			"getObject",
 			"(Ljava/security/Key;Ljava/lang/String;)Ljava/lang/Object;",
 			arg0.object(),
-			arg1
-		).object<jobject>();
+			arg1.object<jstring>()
+		);
 	}
 } // namespace javax::crypto
 

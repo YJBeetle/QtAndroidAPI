@@ -2,7 +2,6 @@
 
 #include "../../JObject.hpp"
 
-
 namespace android::net
 {
 	class Credentials : public JObject

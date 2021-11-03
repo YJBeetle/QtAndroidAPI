@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./MathContext.hpp"
 
 namespace android::icu::math
@@ -153,12 +154,12 @@ namespace android::icu::math
 			"()I"
 		);
 	}
-	jstring MathContext::toString()
+	JString MathContext::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::icu::math
 

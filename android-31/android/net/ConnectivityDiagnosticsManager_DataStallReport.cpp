@@ -3,6 +3,8 @@
 #include "./NetworkCapabilities.hpp"
 #include "../os/Parcel.hpp"
 #include "../os/PersistableBundle.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./ConnectivityDiagnosticsManager_DataStallReport.hpp"
 
 namespace android::net
@@ -30,29 +32,29 @@ namespace android::net
 			"DETECTION_METHOD_TCP_METRICS"
 		);
 	}
-	jstring ConnectivityDiagnosticsManager_DataStallReport::KEY_DNS_CONSECUTIVE_TIMEOUTS()
+	JString ConnectivityDiagnosticsManager_DataStallReport::KEY_DNS_CONSECUTIVE_TIMEOUTS()
 	{
 		return getStaticObjectField(
 			"android.net.ConnectivityDiagnosticsManager$DataStallReport",
 			"KEY_DNS_CONSECUTIVE_TIMEOUTS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ConnectivityDiagnosticsManager_DataStallReport::KEY_TCP_METRICS_COLLECTION_PERIOD_MILLIS()
+	JString ConnectivityDiagnosticsManager_DataStallReport::KEY_TCP_METRICS_COLLECTION_PERIOD_MILLIS()
 	{
 		return getStaticObjectField(
 			"android.net.ConnectivityDiagnosticsManager$DataStallReport",
 			"KEY_TCP_METRICS_COLLECTION_PERIOD_MILLIS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ConnectivityDiagnosticsManager_DataStallReport::KEY_TCP_PACKET_FAIL_RATE()
+	JString ConnectivityDiagnosticsManager_DataStallReport::KEY_TCP_PACKET_FAIL_RATE()
 	{
 		return getStaticObjectField(
 			"android.net.ConnectivityDiagnosticsManager$DataStallReport",
 			"KEY_TCP_PACKET_FAIL_RATE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QAndroidJniObject forward
@@ -79,12 +81,12 @@ namespace android::net
 			"()I"
 		);
 	}
-	jboolean ConnectivityDiagnosticsManager_DataStallReport::equals(jobject arg0)
+	jboolean ConnectivityDiagnosticsManager_DataStallReport::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint ConnectivityDiagnosticsManager_DataStallReport::getDetectionMethod()

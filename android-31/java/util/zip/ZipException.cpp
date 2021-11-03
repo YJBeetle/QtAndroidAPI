@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./ZipException.hpp"
 
 namespace java::util::zip
@@ -13,11 +14,11 @@ namespace java::util::zip
 			"java.util.zip.ZipException",
 			"()V"
 		) {}
-	ZipException::ZipException(jstring arg0)
+	ZipException::ZipException(JString arg0)
 		: java::io::IOException(
 			"java.util.zip.ZipException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

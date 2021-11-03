@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JIntArray;
 namespace android::app
 {
 	class Activity;
@@ -43,7 +44,7 @@ namespace android::appwidget
 		android::appwidget::AppWidgetHostView createView(android::content::Context arg0, jint arg1, android::appwidget::AppWidgetProviderInfo arg2);
 		void deleteAppWidgetId(jint arg0);
 		void deleteHost();
-		jintArray getAppWidgetIds();
+		JIntArray getAppWidgetIds();
 		void onAppWidgetRemoved(jint arg0);
 		void startAppWidgetConfigureActivityForResult(android::app::Activity arg0, jint arg1, jint arg2, jint arg3, android::os::Bundle arg4);
 		void startListening();

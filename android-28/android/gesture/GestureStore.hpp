@@ -14,6 +14,7 @@ namespace java::io
 {
 	class OutputStream;
 }
+class JString;
 namespace java::util
 {
 	class ArrayList;
@@ -38,17 +39,17 @@ namespace android::gesture
 		GestureStore();
 		
 		// Methods
-		void addGesture(jstring arg0, android::gesture::Gesture arg1);
+		void addGesture(JString arg0, android::gesture::Gesture arg1);
 		JObject getGestureEntries();
-		java::util::ArrayList getGestures(jstring arg0);
+		java::util::ArrayList getGestures(JString arg0);
 		jint getOrientationStyle();
 		jint getSequenceType();
 		jboolean hasChanged();
 		void load(java::io::InputStream arg0);
 		void load(java::io::InputStream arg0, jboolean arg1);
 		java::util::ArrayList recognize(android::gesture::Gesture arg0);
-		void removeEntry(jstring arg0);
-		void removeGesture(jstring arg0, android::gesture::Gesture arg1);
+		void removeEntry(JString arg0);
+		void removeGesture(JString arg0, android::gesture::Gesture arg1);
 		void save(java::io::OutputStream arg0);
 		void save(java::io::OutputStream arg0, jboolean arg1);
 		void setOrientationStyle(jint arg0);

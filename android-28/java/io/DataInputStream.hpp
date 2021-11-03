@@ -1,13 +1,14 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "./InputStream.hpp"
 #include "./FilterInputStream.hpp"
 
+class JByteArray;
+class JCharArray;
 namespace java::io
 {
 	class InputStream;
 }
+class JString;
 
 namespace java::io
 {
@@ -24,21 +25,21 @@ namespace java::io
 		DataInputStream(java::io::InputStream arg0);
 		
 		// Methods
-		static jstring readUTF(JObject arg0);
-		jint read(jbyteArray arg0);
-		jint read(jbyteArray arg0, jint arg1, jint arg2);
+		static JString readUTF(JObject arg0);
+		jint read(JByteArray arg0);
+		jint read(JByteArray arg0, jint arg1, jint arg2);
 		jboolean readBoolean();
 		jbyte readByte();
 		jchar readChar();
 		jdouble readDouble();
 		jfloat readFloat();
-		void readFully(jbyteArray arg0);
-		void readFully(jbyteArray arg0, jint arg1, jint arg2);
+		void readFully(JByteArray arg0);
+		void readFully(JByteArray arg0, jint arg1, jint arg2);
 		jint readInt();
-		jstring readLine();
+		JString readLine();
 		jlong readLong();
 		jshort readShort();
-		jstring readUTF();
+		JString readUTF();
 		jint readUnsignedByte();
 		jint readUnsignedShort();
 		jint skipBytes(jint arg0);

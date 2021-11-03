@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JIntArray;
 namespace android::net
 {
 	class NetworkSpecifier;
@@ -10,6 +11,8 @@ namespace android::os
 {
 	class Parcel;
 }
+class JObject;
+class JString;
 
 namespace android::net
 {
@@ -64,8 +67,8 @@ namespace android::net
 		
 		// Methods
 		jint describeContents();
-		jboolean equals(jobject arg0);
-		jintArray getCapabilities();
+		jboolean equals(JObject arg0);
+		JIntArray getCapabilities();
 		jint getLinkDownstreamBandwidthKbps();
 		jint getLinkUpstreamBandwidthKbps();
 		android::net::NetworkSpecifier getNetworkSpecifier();
@@ -75,7 +78,7 @@ namespace android::net
 		jboolean hasCapability(jint arg0);
 		jboolean hasTransport(jint arg0);
 		jint hashCode();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::net

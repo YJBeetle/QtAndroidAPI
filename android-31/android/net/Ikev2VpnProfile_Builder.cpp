@@ -1,5 +1,7 @@
+#include "../../JByteArray.hpp"
 #include "./Ikev2VpnProfile.hpp"
 #include "./ProxyInfo.hpp"
+#include "../../JString.hpp"
 #include "../../java/security/cert/X509Certificate.hpp"
 #include "./Ikev2VpnProfile_Builder.hpp"
 
@@ -11,12 +13,12 @@ namespace android::net
 	Ikev2VpnProfile_Builder::Ikev2VpnProfile_Builder(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	Ikev2VpnProfile_Builder::Ikev2VpnProfile_Builder(jstring arg0, jstring arg1)
+	Ikev2VpnProfile_Builder::Ikev2VpnProfile_Builder(JString arg0, JString arg1)
 		: JObject(
 			"android.net.Ikev2VpnProfile$Builder",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		) {}
 	
 	// Methods
@@ -45,21 +47,21 @@ namespace android::net
 			arg2.object()
 		);
 	}
-	android::net::Ikev2VpnProfile_Builder Ikev2VpnProfile_Builder::setAuthPsk(jbyteArray arg0)
+	android::net::Ikev2VpnProfile_Builder Ikev2VpnProfile_Builder::setAuthPsk(JByteArray arg0)
 	{
 		return callObjectMethod(
 			"setAuthPsk",
 			"([B)Landroid/net/Ikev2VpnProfile$Builder;",
-			arg0
+			arg0.object<jbyteArray>()
 		);
 	}
-	android::net::Ikev2VpnProfile_Builder Ikev2VpnProfile_Builder::setAuthUsernamePassword(jstring arg0, jstring arg1, java::security::cert::X509Certificate arg2)
+	android::net::Ikev2VpnProfile_Builder Ikev2VpnProfile_Builder::setAuthUsernamePassword(JString arg0, JString arg1, java::security::cert::X509Certificate arg2)
 	{
 		return callObjectMethod(
 			"setAuthUsernamePassword",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/security/cert/X509Certificate;)Landroid/net/Ikev2VpnProfile$Builder;",
-			arg0,
-			arg1,
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
 			arg2.object()
 		);
 	}

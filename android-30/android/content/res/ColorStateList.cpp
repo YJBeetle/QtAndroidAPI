@@ -1,6 +1,9 @@
+#include "../../../JIntArray.hpp"
+#include "../../../JArray.hpp"
 #include "./Resources.hpp"
 #include "./Resources_Theme.hpp"
 #include "../../os/Parcel.hpp"
+#include "../../../JString.hpp"
 #include "./ColorStateList.hpp"
 
 namespace android::content::res
@@ -19,12 +22,12 @@ namespace android::content::res
 	ColorStateList::ColorStateList(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	ColorStateList::ColorStateList(jarray arg0, jintArray arg1)
+	ColorStateList::ColorStateList(JArray arg0, JIntArray arg1)
 		: JObject(
 			"android.content.res.ColorStateList",
 			"([[I[I)V",
-			arg0,
-			arg1
+			arg0.object<jarray>(),
+			arg1.object<jintArray>()
 		) {}
 	
 	// Methods
@@ -72,12 +75,12 @@ namespace android::content::res
 			"()I"
 		);
 	}
-	jint ColorStateList::getColorForState(jintArray arg0, jint arg1)
+	jint ColorStateList::getColorForState(JIntArray arg0, jint arg1)
 	{
 		return callMethod<jint>(
 			"getColorForState",
 			"([II)I",
-			arg0,
+			arg0.object<jintArray>(),
 			arg1
 		);
 	}
@@ -102,12 +105,12 @@ namespace android::content::res
 			"()Z"
 		);
 	}
-	jstring ColorStateList::toString()
+	JString ColorStateList::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::content::res::ColorStateList ColorStateList::withAlpha(jint arg0)
 	{
