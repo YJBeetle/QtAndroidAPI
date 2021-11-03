@@ -26,7 +26,7 @@ namespace android::view::accessibility
 	}
 	
 	// QAndroidJniObject forward
-	AccessibilityNodeInfo_RangeInfo::AccessibilityNodeInfo_RangeInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	AccessibilityNodeInfo_RangeInfo::AccessibilityNodeInfo_RangeInfo(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

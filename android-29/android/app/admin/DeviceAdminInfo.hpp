@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::content
 {
@@ -33,11 +33,11 @@ namespace android::os
 
 namespace android::app::admin
 {
-	class DeviceAdminInfo : public __JniBaseClass
+	class DeviceAdminInfo : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint USES_ENCRYPTED_STORAGE();
 		static jint USES_POLICY_DISABLE_CAMERA();
 		static jint USES_POLICY_DISABLE_KEYGUARD_FEATURES();
@@ -49,7 +49,7 @@ namespace android::app::admin
 		static jint USES_POLICY_WIPE_DATA();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit DeviceAdminInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit DeviceAdminInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		DeviceAdminInfo(QAndroidJniObject obj);
 		
 		// Constructors
@@ -57,7 +57,7 @@ namespace android::app::admin
 		
 		// Methods
 		jint describeContents();
-		void dump(__JniBaseClass arg0, jstring arg1);
+		void dump(JObject arg0, jstring arg1);
 		android::content::pm::ActivityInfo getActivityInfo();
 		android::content::ComponentName getComponent();
 		jstring getPackageName();

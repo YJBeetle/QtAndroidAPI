@@ -24,7 +24,7 @@ namespace android::transition
 			"(I)V",
 			arg0
 		) {}
-	Slide::Slide(android::content::Context arg0, __JniBaseClass arg1)
+	Slide::Slide(android::content::Context arg0, JObject arg1)
 		: android::transition::Visibility(
 			"android.transition.Slide",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",

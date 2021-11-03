@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::net
 {
@@ -49,7 +49,7 @@ namespace java::net
 
 namespace android::net::wifi
 {
-	class WifiManager : public __JniBaseClass
+	class WifiManager : public JObject
 	{
 	public:
 		// Fields
@@ -97,7 +97,7 @@ namespace android::net::wifi
 		static jint WPS_WEP_PROHIBITED();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit WifiManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit WifiManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		WifiManager(QAndroidJniObject obj);
 		
 		// Constructors
@@ -106,7 +106,7 @@ namespace android::net::wifi
 		static jint calculateSignalLevel(jint arg0, jint arg1);
 		static jint compareSignalLevel(jint arg0, jint arg1);
 		jint addNetwork(android::net::wifi::WifiConfiguration arg0);
-		jint addNetworkSuggestions(__JniBaseClass arg0);
+		jint addNetworkSuggestions(JObject arg0);
 		void addOrUpdatePasspointConfiguration(android::net::wifi::hotspot2::PasspointConfiguration arg0);
 		void cancelWps(android::net::wifi::WifiManager_WpsCallback arg0);
 		android::net::wifi::WifiManager_MulticastLock createMulticastLock(jstring arg0);
@@ -115,12 +115,12 @@ namespace android::net::wifi
 		jboolean disableNetwork(jint arg0);
 		jboolean disconnect();
 		jboolean enableNetwork(jint arg0, jboolean arg1);
-		__JniBaseClass getConfiguredNetworks();
+		JObject getConfiguredNetworks();
 		android::net::wifi::WifiInfo getConnectionInfo();
 		android::net::DhcpInfo getDhcpInfo();
 		jint getMaxNumberOfNetworkSuggestionsPerApp();
-		__JniBaseClass getPasspointConfigurations();
-		__JniBaseClass getScanResults();
+		JObject getPasspointConfigurations();
+		JObject getScanResults();
 		jint getWifiState();
 		jboolean is5GHzBandSupported();
 		jboolean isDeviceToApRttSupported();
@@ -138,7 +138,7 @@ namespace android::net::wifi
 		jboolean reassociate();
 		jboolean reconnect();
 		jboolean removeNetwork(jint arg0);
-		jint removeNetworkSuggestions(__JniBaseClass arg0);
+		jint removeNetworkSuggestions(JObject arg0);
 		void removePasspointConfiguration(jstring arg0);
 		jboolean saveConfiguration();
 		void setTdlsEnabled(java::net::InetAddress arg0, jboolean arg1);

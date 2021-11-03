@@ -61,11 +61,11 @@ namespace android::os::storage
 	}
 	
 	// QAndroidJniObject forward
-	OnObbStateChangeListener::OnObbStateChangeListener(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	OnObbStateChangeListener::OnObbStateChangeListener(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	OnObbStateChangeListener::OnObbStateChangeListener()
-		: __JniBaseClass(
+		: JObject(
 			"android.os.storage.OnObbStateChangeListener",
 			"()V"
 		) {}

@@ -26,21 +26,21 @@ namespace javax::xml::transform::sax
 	// Constructors
 	
 	// Methods
-	__JniBaseClass SAXTransformerFactory::newTemplatesHandler()
+	JObject SAXTransformerFactory::newTemplatesHandler()
 	{
 		return callObjectMethod(
 			"newTemplatesHandler",
 			"()Ljavax/xml/transform/sax/TemplatesHandler;"
 		);
 	}
-	__JniBaseClass SAXTransformerFactory::newTransformerHandler()
+	JObject SAXTransformerFactory::newTransformerHandler()
 	{
 		return callObjectMethod(
 			"newTransformerHandler",
 			"()Ljavax/xml/transform/sax/TransformerHandler;"
 		);
 	}
-	__JniBaseClass SAXTransformerFactory::newTransformerHandler(__JniBaseClass arg0)
+	JObject SAXTransformerFactory::newTransformerHandler(JObject arg0)
 	{
 		return callObjectMethod(
 			"newTransformerHandler",
@@ -48,7 +48,7 @@ namespace javax::xml::transform::sax
 			arg0.object()
 		);
 	}
-	__JniBaseClass SAXTransformerFactory::newXMLFilter(__JniBaseClass arg0)
+	JObject SAXTransformerFactory::newXMLFilter(JObject arg0)
 	{
 		return callObjectMethod(
 			"newXMLFilter",

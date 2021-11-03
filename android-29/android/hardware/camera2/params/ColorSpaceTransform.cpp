@@ -6,17 +6,17 @@ namespace android::hardware::camera2::params
 	// Fields
 	
 	// QAndroidJniObject forward
-	ColorSpaceTransform::ColorSpaceTransform(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	ColorSpaceTransform::ColorSpaceTransform(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ColorSpaceTransform::ColorSpaceTransform(jintArray arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.hardware.camera2.params.ColorSpaceTransform",
 			"([I)V",
 			arg0
 		) {}
 	ColorSpaceTransform::ColorSpaceTransform(jarray arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.hardware.camera2.params.ColorSpaceTransform",
 			"([Landroid/util/Rational;)V",
 			arg0

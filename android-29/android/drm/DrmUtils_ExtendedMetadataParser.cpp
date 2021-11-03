@@ -5,7 +5,7 @@ namespace android::drm
 	// Fields
 	
 	// QAndroidJniObject forward
-	DrmUtils_ExtendedMetadataParser::DrmUtils_ExtendedMetadataParser(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	DrmUtils_ExtendedMetadataParser::DrmUtils_ExtendedMetadataParser(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -18,14 +18,14 @@ namespace android::drm
 			arg0
 		).object<jstring>();
 	}
-	__JniBaseClass DrmUtils_ExtendedMetadataParser::iterator()
+	JObject DrmUtils_ExtendedMetadataParser::iterator()
 	{
 		return callObjectMethod(
 			"iterator",
 			"()Ljava/util/Iterator;"
 		);
 	}
-	__JniBaseClass DrmUtils_ExtendedMetadataParser::keyIterator()
+	JObject DrmUtils_ExtendedMetadataParser::keyIterator()
 	{
 		return callObjectMethod(
 			"keyIterator",

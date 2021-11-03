@@ -8,11 +8,11 @@ namespace android::net::wifi
 	// Fields
 	
 	// QAndroidJniObject forward
-	WifiNetworkSuggestion_Builder::WifiNetworkSuggestion_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	WifiNetworkSuggestion_Builder::WifiNetworkSuggestion_Builder(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	WifiNetworkSuggestion_Builder::WifiNetworkSuggestion_Builder()
-		: __JniBaseClass(
+		: JObject(
 			"android.net.wifi.WifiNetworkSuggestion$Builder",
 			"()V"
 		) {}

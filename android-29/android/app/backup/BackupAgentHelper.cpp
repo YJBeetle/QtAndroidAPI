@@ -18,7 +18,7 @@ namespace android::app::backup
 		) {}
 	
 	// Methods
-	void BackupAgentHelper::addHelper(jstring arg0, __JniBaseClass arg1)
+	void BackupAgentHelper::addHelper(jstring arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"addHelper",

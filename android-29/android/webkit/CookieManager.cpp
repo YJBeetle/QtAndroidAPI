@@ -6,11 +6,11 @@ namespace android::webkit
 	// Fields
 	
 	// QAndroidJniObject forward
-	CookieManager::CookieManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	CookieManager::CookieManager(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	CookieManager::CookieManager()
-		: __JniBaseClass(
+		: JObject(
 			"android.webkit.CookieManager",
 			"()V"
 		) {}
@@ -85,7 +85,7 @@ namespace android::webkit
 			"()V"
 		);
 	}
-	void CookieManager::removeAllCookies(__JniBaseClass arg0)
+	void CookieManager::removeAllCookies(JObject arg0)
 	{
 		callMethod<void>(
 			"removeAllCookies",
@@ -107,7 +107,7 @@ namespace android::webkit
 			"()V"
 		);
 	}
-	void CookieManager::removeSessionCookies(__JniBaseClass arg0)
+	void CookieManager::removeSessionCookies(JObject arg0)
 	{
 		callMethod<void>(
 			"removeSessionCookies",
@@ -141,7 +141,7 @@ namespace android::webkit
 			arg1
 		);
 	}
-	void CookieManager::setCookie(jstring arg0, jstring arg1, __JniBaseClass arg2)
+	void CookieManager::setCookie(jstring arg0, jstring arg1, JObject arg2)
 	{
 		callMethod<void>(
 			"setCookie",

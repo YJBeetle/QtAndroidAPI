@@ -5,11 +5,11 @@ namespace android::webkit
 	// Fields
 	
 	// QAndroidJniObject forward
-	RenderProcessGoneDetail::RenderProcessGoneDetail(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	RenderProcessGoneDetail::RenderProcessGoneDetail(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	RenderProcessGoneDetail::RenderProcessGoneDetail()
-		: __JniBaseClass(
+		: JObject(
 			"android.webkit.RenderProcessGoneDetail",
 			"()V"
 		) {}

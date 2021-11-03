@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::os
 {
@@ -9,11 +9,11 @@ namespace android::os
 
 namespace android::content::pm
 {
-	class PackageStats : public __JniBaseClass
+	class PackageStats : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		jlong cacheSize();
 		jlong codeSize();
 		jlong dataSize();
@@ -25,7 +25,7 @@ namespace android::content::pm
 		jstring packageName();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit PackageStats(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit PackageStats(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		PackageStats(QAndroidJniObject obj);
 		
 		// Constructors

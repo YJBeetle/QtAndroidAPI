@@ -6,18 +6,18 @@ namespace android::inputmethodservice
 	// Fields
 	
 	// QAndroidJniObject forward
-	AbstractInputMethodService_AbstractInputMethodImpl::AbstractInputMethodService_AbstractInputMethodImpl(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	AbstractInputMethodService_AbstractInputMethodImpl::AbstractInputMethodService_AbstractInputMethodImpl(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	AbstractInputMethodService_AbstractInputMethodImpl::AbstractInputMethodService_AbstractInputMethodImpl(android::inputmethodservice::AbstractInputMethodService arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.inputmethodservice.AbstractInputMethodService$AbstractInputMethodImpl",
 			"(Landroid/inputmethodservice/AbstractInputMethodService;)V",
 			arg0.object()
 		) {}
 	
 	// Methods
-	void AbstractInputMethodService_AbstractInputMethodImpl::createSession(__JniBaseClass arg0)
+	void AbstractInputMethodService_AbstractInputMethodImpl::createSession(JObject arg0)
 	{
 		callMethod<void>(
 			"createSession",
@@ -25,7 +25,7 @@ namespace android::inputmethodservice
 			arg0.object()
 		);
 	}
-	void AbstractInputMethodService_AbstractInputMethodImpl::revokeSession(__JniBaseClass arg0)
+	void AbstractInputMethodService_AbstractInputMethodImpl::revokeSession(JObject arg0)
 	{
 		callMethod<void>(
 			"revokeSession",
@@ -33,7 +33,7 @@ namespace android::inputmethodservice
 			arg0.object()
 		);
 	}
-	void AbstractInputMethodService_AbstractInputMethodImpl::setSessionEnabled(__JniBaseClass arg0, jboolean arg1)
+	void AbstractInputMethodService_AbstractInputMethodImpl::setSessionEnabled(JObject arg0, jboolean arg1)
 	{
 		callMethod<void>(
 			"setSessionEnabled",

@@ -17,7 +17,7 @@ namespace android::app
 	// Fields
 	
 	// QAndroidJniObject forward
-	FragmentController::FragmentController(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	FragmentController::FragmentController(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -54,7 +54,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	jboolean FragmentController::dispatchContextItemSelected(__JniBaseClass arg0)
+	jboolean FragmentController::dispatchContextItemSelected(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"dispatchContextItemSelected",
@@ -69,7 +69,7 @@ namespace android::app
 			"()V"
 		);
 	}
-	jboolean FragmentController::dispatchCreateOptionsMenu(__JniBaseClass arg0, android::view::MenuInflater arg1)
+	jboolean FragmentController::dispatchCreateOptionsMenu(JObject arg0, android::view::MenuInflater arg1)
 	{
 		return callMethod<jboolean>(
 			"dispatchCreateOptionsMenu",
@@ -116,7 +116,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	jboolean FragmentController::dispatchOptionsItemSelected(__JniBaseClass arg0)
+	jboolean FragmentController::dispatchOptionsItemSelected(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"dispatchOptionsItemSelected",
@@ -124,7 +124,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void FragmentController::dispatchOptionsMenuClosed(__JniBaseClass arg0)
+	void FragmentController::dispatchOptionsMenuClosed(JObject arg0)
 	{
 		callMethod<void>(
 			"dispatchOptionsMenuClosed",
@@ -156,7 +156,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	jboolean FragmentController::dispatchPrepareOptionsMenu(__JniBaseClass arg0)
+	jboolean FragmentController::dispatchPrepareOptionsMenu(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"dispatchPrepareOptionsMenu",
@@ -262,7 +262,7 @@ namespace android::app
 			"()V"
 		);
 	}
-	android::view::View FragmentController::onCreateView(android::view::View arg0, jstring arg1, android::content::Context arg2, __JniBaseClass arg3)
+	android::view::View FragmentController::onCreateView(android::view::View arg0, jstring arg1, android::content::Context arg2, JObject arg3)
 	{
 		return callObjectMethod(
 			"onCreateView",
@@ -280,7 +280,7 @@ namespace android::app
 			"()V"
 		);
 	}
-	void FragmentController::restoreAllState(__JniBaseClass arg0, android::app::FragmentManagerNonConfig arg1)
+	void FragmentController::restoreAllState(JObject arg0, android::app::FragmentManagerNonConfig arg1)
 	{
 		callMethod<void>(
 			"restoreAllState",
@@ -289,7 +289,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	void FragmentController::restoreAllState(__JniBaseClass arg0, __JniBaseClass arg1)
+	void FragmentController::restoreAllState(JObject arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"restoreAllState",
@@ -320,14 +320,14 @@ namespace android::app
 			"()Landroid/app/FragmentManagerNonConfig;"
 		);
 	}
-	__JniBaseClass FragmentController::retainNonConfig()
+	JObject FragmentController::retainNonConfig()
 	{
 		return callObjectMethod(
 			"retainNonConfig",
 			"()Ljava/util/List;"
 		);
 	}
-	__JniBaseClass FragmentController::saveAllState()
+	JObject FragmentController::saveAllState()
 	{
 		return callObjectMethod(
 			"saveAllState",

@@ -8,11 +8,11 @@ namespace android::view::contentcapture
 	// Fields
 	
 	// QAndroidJniObject forward
-	ContentCaptureContext_Builder::ContentCaptureContext_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	ContentCaptureContext_Builder::ContentCaptureContext_Builder(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ContentCaptureContext_Builder::ContentCaptureContext_Builder(android::content::LocusId arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.view.contentcapture.ContentCaptureContext$Builder",
 			"(Landroid/content/LocusId;)V",
 			arg0.object()

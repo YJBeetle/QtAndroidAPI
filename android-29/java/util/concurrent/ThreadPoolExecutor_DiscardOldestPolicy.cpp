@@ -6,17 +6,17 @@ namespace java::util::concurrent
 	// Fields
 	
 	// QAndroidJniObject forward
-	ThreadPoolExecutor_DiscardOldestPolicy::ThreadPoolExecutor_DiscardOldestPolicy(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	ThreadPoolExecutor_DiscardOldestPolicy::ThreadPoolExecutor_DiscardOldestPolicy(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ThreadPoolExecutor_DiscardOldestPolicy::ThreadPoolExecutor_DiscardOldestPolicy()
-		: __JniBaseClass(
+		: JObject(
 			"java.util.concurrent.ThreadPoolExecutor$DiscardOldestPolicy",
 			"()V"
 		) {}
 	
 	// Methods
-	void ThreadPoolExecutor_DiscardOldestPolicy::rejectedExecution(__JniBaseClass arg0, java::util::concurrent::ThreadPoolExecutor arg1)
+	void ThreadPoolExecutor_DiscardOldestPolicy::rejectedExecution(JObject arg0, java::util::concurrent::ThreadPoolExecutor arg1)
 	{
 		callMethod<void>(
 			"rejectedExecution",

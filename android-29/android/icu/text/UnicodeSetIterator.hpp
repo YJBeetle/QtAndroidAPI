@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::icu::text
 {
@@ -9,7 +9,7 @@ namespace android::icu::text
 
 namespace android::icu::text
 {
-	class UnicodeSetIterator : public __JniBaseClass
+	class UnicodeSetIterator : public JObject
 	{
 	public:
 		// Fields
@@ -19,7 +19,7 @@ namespace android::icu::text
 		jstring string();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit UnicodeSetIterator(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit UnicodeSetIterator(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		UnicodeSetIterator(QAndroidJniObject obj);
 		
 		// Constructors

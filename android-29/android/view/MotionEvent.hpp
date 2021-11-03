@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "./InputEvent.hpp"
 
 namespace android::graphics
@@ -105,7 +105,7 @@ namespace android::view
 		static jint CLASSIFICATION_AMBIGUOUS_GESTURE();
 		static jint CLASSIFICATION_DEEP_PRESS();
 		static jint CLASSIFICATION_NONE();
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint EDGE_BOTTOM();
 		static jint EDGE_LEFT();
 		static jint EDGE_RIGHT();

@@ -4,7 +4,7 @@
 namespace android::bluetooth
 {
 	// Fields
-	__JniBaseClass BluetoothClass::CREATOR()
+	JObject BluetoothClass::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.bluetooth.BluetoothClass",
@@ -14,7 +14,7 @@ namespace android::bluetooth
 	}
 	
 	// QAndroidJniObject forward
-	BluetoothClass::BluetoothClass(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	BluetoothClass::BluetoothClass(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

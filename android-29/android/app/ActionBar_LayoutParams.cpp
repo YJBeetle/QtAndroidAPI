@@ -34,7 +34,7 @@ namespace android::app
 			"(I)V",
 			arg0
 		) {}
-	ActionBar_LayoutParams::ActionBar_LayoutParams(android::content::Context arg0, __JniBaseClass arg1)
+	ActionBar_LayoutParams::ActionBar_LayoutParams(android::content::Context arg0, JObject arg1)
 		: android::view::ViewGroup_MarginLayoutParams(
 			"android.app.ActionBar$LayoutParams",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",

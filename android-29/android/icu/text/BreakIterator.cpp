@@ -119,7 +119,7 @@ namespace android::icu::text
 	}
 	
 	// QAndroidJniObject forward
-	BreakIterator::BreakIterator(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	BreakIterator::BreakIterator(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -306,7 +306,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	__JniBaseClass BreakIterator::getText()
+	JObject BreakIterator::getText()
 	{
 		return callObjectMethod(
 			"getText",
@@ -366,7 +366,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	void BreakIterator::setText(__JniBaseClass arg0)
+	void BreakIterator::setText(JObject arg0)
 	{
 		callMethod<void>(
 			"setText",

@@ -5,17 +5,17 @@ namespace java::util
 	// Fields
 	
 	// QAndroidJniObject forward
-	AbstractMap_SimpleEntry::AbstractMap_SimpleEntry(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	AbstractMap_SimpleEntry::AbstractMap_SimpleEntry(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	AbstractMap_SimpleEntry::AbstractMap_SimpleEntry(__JniBaseClass arg0)
-		: __JniBaseClass(
+	AbstractMap_SimpleEntry::AbstractMap_SimpleEntry(JObject arg0)
+		: JObject(
 			"java.util.AbstractMap$SimpleEntry",
 			"(Ljava/util/Map$Entry;)V",
 			arg0.object()
 		) {}
 	AbstractMap_SimpleEntry::AbstractMap_SimpleEntry(jobject arg0, jobject arg1)
-		: __JniBaseClass(
+		: JObject(
 			"java.util.AbstractMap$SimpleEntry",
 			"(Ljava/lang/Object;Ljava/lang/Object;)V",
 			arg0,

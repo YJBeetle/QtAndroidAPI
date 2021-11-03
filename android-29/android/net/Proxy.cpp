@@ -22,11 +22,11 @@ namespace android::net
 	}
 	
 	// QAndroidJniObject forward
-	Proxy::Proxy(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Proxy::Proxy(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Proxy::Proxy()
-		: __JniBaseClass(
+		: JObject(
 			"android.net.Proxy",
 			"()V"
 		) {}

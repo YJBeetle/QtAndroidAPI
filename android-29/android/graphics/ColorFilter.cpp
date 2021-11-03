@@ -5,11 +5,11 @@ namespace android::graphics
 	// Fields
 	
 	// QAndroidJniObject forward
-	ColorFilter::ColorFilter(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	ColorFilter::ColorFilter(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ColorFilter::ColorFilter()
-		: __JniBaseClass(
+		: JObject(
 			"android.graphics.ColorFilter",
 			"()V"
 		) {}

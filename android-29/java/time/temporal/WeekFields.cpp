@@ -22,7 +22,7 @@ namespace java::time::temporal
 			"Ljava/time/temporal/WeekFields;"
 		);
 	}
-	__JniBaseClass WeekFields::WEEK_BASED_YEARS()
+	JObject WeekFields::WEEK_BASED_YEARS()
 	{
 		return getStaticObjectField(
 			"java.time.temporal.WeekFields",
@@ -32,7 +32,7 @@ namespace java::time::temporal
 	}
 	
 	// QAndroidJniObject forward
-	WeekFields::WeekFields(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	WeekFields::WeekFields(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -56,7 +56,7 @@ namespace java::time::temporal
 			arg1
 		);
 	}
-	__JniBaseClass WeekFields::dayOfWeek()
+	JObject WeekFields::dayOfWeek()
 	{
 		return callObjectMethod(
 			"dayOfWeek",
@@ -99,28 +99,28 @@ namespace java::time::temporal
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	__JniBaseClass WeekFields::weekBasedYear()
+	JObject WeekFields::weekBasedYear()
 	{
 		return callObjectMethod(
 			"weekBasedYear",
 			"()Ljava/time/temporal/TemporalField;"
 		);
 	}
-	__JniBaseClass WeekFields::weekOfMonth()
+	JObject WeekFields::weekOfMonth()
 	{
 		return callObjectMethod(
 			"weekOfMonth",
 			"()Ljava/time/temporal/TemporalField;"
 		);
 	}
-	__JniBaseClass WeekFields::weekOfWeekBasedYear()
+	JObject WeekFields::weekOfWeekBasedYear()
 	{
 		return callObjectMethod(
 			"weekOfWeekBasedYear",
 			"()Ljava/time/temporal/TemporalField;"
 		);
 	}
-	__JniBaseClass WeekFields::weekOfYear()
+	JObject WeekFields::weekOfYear()
 	{
 		return callObjectMethod(
 			"weekOfYear",

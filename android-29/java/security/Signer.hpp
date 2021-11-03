@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "./Identity.hpp"
 
 namespace java::security
@@ -28,7 +28,7 @@ namespace java::security
 		Signer(jstring arg0, java::security::IdentityScope arg1);
 		
 		// Methods
-		__JniBaseClass getPrivateKey();
+		JObject getPrivateKey();
 		void setKeyPair(java::security::KeyPair arg0);
 		jstring toString();
 	};

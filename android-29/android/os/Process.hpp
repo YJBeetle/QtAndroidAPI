@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::os
 {
@@ -9,7 +9,7 @@ namespace android::os
 
 namespace android::os
 {
-	class Process : public __JniBaseClass
+	class Process : public JObject
 	{
 	public:
 		// Fields
@@ -37,7 +37,7 @@ namespace android::os
 		static jint THREAD_PRIORITY_VIDEO();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Process(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Process(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Process(QAndroidJniObject obj);
 		
 		// Constructors

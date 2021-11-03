@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::app
 {
@@ -29,11 +29,11 @@ namespace android::os
 
 namespace android::app::slice
 {
-	class SliceItem : public __JniBaseClass
+	class SliceItem : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jstring FORMAT_ACTION();
 		static jstring FORMAT_BUNDLE();
 		static jstring FORMAT_IMAGE();
@@ -44,7 +44,7 @@ namespace android::app::slice
 		static jstring FORMAT_TEXT();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit SliceItem(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit SliceItem(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		SliceItem(QAndroidJniObject obj);
 		
 		// Constructors
@@ -54,7 +54,7 @@ namespace android::app::slice
 		android::app::PendingIntent getAction();
 		android::os::Bundle getBundle();
 		jstring getFormat();
-		__JniBaseClass getHints();
+		JObject getHints();
 		android::graphics::drawable::Icon getIcon();
 		jint getInt();
 		jlong getLong();

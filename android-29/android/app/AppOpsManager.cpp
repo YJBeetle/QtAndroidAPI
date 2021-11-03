@@ -319,7 +319,7 @@ namespace android::app
 	}
 	
 	// QAndroidJniObject forward
-	AppOpsManager::AppOpsManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	AppOpsManager::AppOpsManager(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -440,7 +440,7 @@ namespace android::app
 			arg2
 		);
 	}
-	void AppOpsManager::startWatchingMode(jstring arg0, jstring arg1, __JniBaseClass arg2)
+	void AppOpsManager::startWatchingMode(jstring arg0, jstring arg1, JObject arg2)
 	{
 		callMethod<void>(
 			"startWatchingMode",
@@ -450,7 +450,7 @@ namespace android::app
 			arg2.object()
 		);
 	}
-	void AppOpsManager::startWatchingMode(jstring arg0, jstring arg1, jint arg2, __JniBaseClass arg3)
+	void AppOpsManager::startWatchingMode(jstring arg0, jstring arg1, jint arg2, JObject arg3)
 	{
 		callMethod<void>(
 			"startWatchingMode",
@@ -461,7 +461,7 @@ namespace android::app
 			arg3.object()
 		);
 	}
-	void AppOpsManager::stopWatchingMode(__JniBaseClass arg0)
+	void AppOpsManager::stopWatchingMode(JObject arg0)
 	{
 		callMethod<void>(
 			"stopWatchingMode",

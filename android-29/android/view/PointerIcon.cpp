@@ -7,7 +7,7 @@
 namespace android::view
 {
 	// Fields
-	__JniBaseClass PointerIcon::CREATOR()
+	JObject PointerIcon::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.view.PointerIcon",
@@ -178,7 +178,7 @@ namespace android::view
 	}
 	
 	// QAndroidJniObject forward
-	PointerIcon::PointerIcon(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	PointerIcon::PointerIcon(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

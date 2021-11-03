@@ -1,17 +1,17 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 
 namespace android::util
 {
-	class LruCache : public __JniBaseClass
+	class LruCache : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit LruCache(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit LruCache(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		LruCache(QAndroidJniObject obj);
 		
 		// Constructors
@@ -30,7 +30,7 @@ namespace android::util
 		jobject remove(jobject arg0);
 		void resize(jint arg0);
 		jint size();
-		__JniBaseClass snapshot();
+		JObject snapshot();
 		jstring toString();
 		void trimToSize(jint arg0);
 	};

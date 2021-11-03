@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace java::nio
 {
@@ -21,13 +21,13 @@ namespace javax::crypto
 
 namespace javax::crypto
 {
-	class Mac : public __JniBaseClass
+	class Mac : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Mac(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Mac(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Mac(QAndroidJniObject obj);
 		
 		// Constructors
@@ -43,8 +43,8 @@ namespace javax::crypto
 		jstring getAlgorithm();
 		jint getMacLength();
 		java::security::Provider getProvider();
-		void init(__JniBaseClass arg0);
-		void init(__JniBaseClass arg0, __JniBaseClass arg1);
+		void init(JObject arg0);
+		void init(JObject arg0, JObject arg1);
 		void reset();
 		void update(jbyteArray arg0);
 		void update(jbyte arg0);

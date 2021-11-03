@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace java::io
 {
@@ -25,13 +25,13 @@ namespace java::util
 
 namespace java::io
 {
-	class Console : public __JniBaseClass
+	class Console : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Console(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Console(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Console(QAndroidJniObject obj);
 		
 		// Constructors

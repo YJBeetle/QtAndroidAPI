@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::database
 {
@@ -9,13 +9,13 @@ namespace android::database
 
 namespace android::widget
 {
-	class BaseExpandableListAdapter : public __JniBaseClass
+	class BaseExpandableListAdapter : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit BaseExpandableListAdapter(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit BaseExpandableListAdapter(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		BaseExpandableListAdapter(QAndroidJniObject obj);
 		
 		// Constructors

@@ -9,7 +9,7 @@ namespace android::os
 	// Fields
 	
 	// QAndroidJniObject forward
-	FileUtils::FileUtils(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	FileUtils::FileUtils(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -23,7 +23,7 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	void FileUtils::closeQuietly(__JniBaseClass arg0)
+	void FileUtils::closeQuietly(JObject arg0)
 	{
 		callStaticMethod<void>(
 			"android.os.FileUtils",
@@ -52,7 +52,7 @@ namespace android::os
 			arg1.object()
 		);
 	}
-	jlong FileUtils::copy(java::io::FileDescriptor arg0, java::io::FileDescriptor arg1, android::os::CancellationSignal arg2, __JniBaseClass arg3, __JniBaseClass arg4)
+	jlong FileUtils::copy(java::io::FileDescriptor arg0, java::io::FileDescriptor arg1, android::os::CancellationSignal arg2, JObject arg3, JObject arg4)
 	{
 		return callStaticMethod<jlong>(
 			"android.os.FileUtils",
@@ -65,7 +65,7 @@ namespace android::os
 			arg4.object()
 		);
 	}
-	jlong FileUtils::copy(java::io::InputStream arg0, java::io::OutputStream arg1, android::os::CancellationSignal arg2, __JniBaseClass arg3, __JniBaseClass arg4)
+	jlong FileUtils::copy(java::io::InputStream arg0, java::io::OutputStream arg1, android::os::CancellationSignal arg2, JObject arg3, JObject arg4)
 	{
 		return callStaticMethod<jlong>(
 			"android.os.FileUtils",

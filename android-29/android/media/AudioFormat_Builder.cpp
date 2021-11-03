@@ -6,16 +6,16 @@ namespace android::media
 	// Fields
 	
 	// QAndroidJniObject forward
-	AudioFormat_Builder::AudioFormat_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	AudioFormat_Builder::AudioFormat_Builder(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	AudioFormat_Builder::AudioFormat_Builder()
-		: __JniBaseClass(
+		: JObject(
 			"android.media.AudioFormat$Builder",
 			"()V"
 		) {}
 	AudioFormat_Builder::AudioFormat_Builder(android::media::AudioFormat arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.media.AudioFormat$Builder",
 			"(Landroid/media/AudioFormat;)V",
 			arg0.object()

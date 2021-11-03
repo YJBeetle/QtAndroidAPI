@@ -8,16 +8,16 @@ namespace android::media::session
 	// Fields
 	
 	// QAndroidJniObject forward
-	PlaybackState_Builder::PlaybackState_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	PlaybackState_Builder::PlaybackState_Builder(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	PlaybackState_Builder::PlaybackState_Builder()
-		: __JniBaseClass(
+		: JObject(
 			"android.media.session.PlaybackState$Builder",
 			"()V"
 		) {}
 	PlaybackState_Builder::PlaybackState_Builder(android::media::session::PlaybackState arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.media.session.PlaybackState$Builder",
 			"(Landroid/media/session/PlaybackState;)V",
 			arg0.object()

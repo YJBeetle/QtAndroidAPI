@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::media
 {
@@ -25,13 +25,13 @@ namespace android::os
 
 namespace android::media::session
 {
-	class MediaController_TransportControls : public __JniBaseClass
+	class MediaController_TransportControls : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MediaController_TransportControls(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit MediaController_TransportControls(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		MediaController_TransportControls(QAndroidJniObject obj);
 		
 		// Constructors

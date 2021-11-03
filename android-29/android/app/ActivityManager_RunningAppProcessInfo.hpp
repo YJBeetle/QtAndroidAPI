@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::content
 {
@@ -13,11 +13,11 @@ namespace android::os
 
 namespace android::app
 {
-	class ActivityManager_RunningAppProcessInfo : public __JniBaseClass
+	class ActivityManager_RunningAppProcessInfo : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint IMPORTANCE_BACKGROUND();
 		static jint IMPORTANCE_CACHED();
 		static jint IMPORTANCE_CANT_SAVE_STATE();
@@ -46,7 +46,7 @@ namespace android::app
 		jint uid();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ActivityManager_RunningAppProcessInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ActivityManager_RunningAppProcessInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ActivityManager_RunningAppProcessInfo(QAndroidJniObject obj);
 		
 		// Constructors

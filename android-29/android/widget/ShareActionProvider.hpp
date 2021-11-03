@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "../view/ActionProvider.hpp"
 
 namespace android::content
@@ -34,8 +34,8 @@ namespace android::widget
 		// Methods
 		jboolean hasSubMenu();
 		android::view::View onCreateActionView();
-		void onPrepareSubMenu(__JniBaseClass arg0);
-		void setOnShareTargetSelectedListener(__JniBaseClass arg0);
+		void onPrepareSubMenu(JObject arg0);
+		void setOnShareTargetSelectedListener(JObject arg0);
 		void setShareHistoryFileName(jstring arg0);
 		void setShareIntent(android::content::Intent arg0);
 	};

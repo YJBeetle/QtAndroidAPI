@@ -6,7 +6,7 @@ namespace android::net
 	// Fields
 	
 	// QAndroidJniObject forward
-	InetAddresses::InetAddresses(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	InetAddresses::InetAddresses(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

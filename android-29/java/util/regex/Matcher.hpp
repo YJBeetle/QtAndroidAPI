@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace java::lang
 {
@@ -17,13 +17,13 @@ namespace java::util::regex
 
 namespace java::util::regex
 {
-	class Matcher : public __JniBaseClass
+	class Matcher : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Matcher(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Matcher(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Matcher(QAndroidJniObject obj);
 		
 		// Constructors
@@ -53,17 +53,17 @@ namespace java::util::regex
 		jint regionEnd();
 		jint regionStart();
 		jstring replaceAll(jstring arg0);
-		jstring replaceAll(__JniBaseClass arg0);
+		jstring replaceAll(JObject arg0);
 		jstring replaceFirst(jstring arg0);
-		jstring replaceFirst(__JniBaseClass arg0);
+		jstring replaceFirst(JObject arg0);
 		jboolean requireEnd();
 		java::util::regex::Matcher reset();
 		java::util::regex::Matcher reset(jstring arg0);
-		__JniBaseClass results();
+		JObject results();
 		jint start();
 		jint start(jint arg0);
 		jint start(jstring arg0);
-		__JniBaseClass toMatchResult();
+		JObject toMatchResult();
 		jstring toString();
 		java::util::regex::Matcher useAnchoringBounds(jboolean arg0);
 		java::util::regex::Matcher usePattern(java::util::regex::Pattern arg0);

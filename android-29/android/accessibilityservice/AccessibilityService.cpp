@@ -314,7 +314,7 @@ namespace android::accessibilityservice
 			arg0
 		).object<jobject>();
 	}
-	__JniBaseClass AccessibilityService::getWindows()
+	JObject AccessibilityService::getWindows()
 	{
 		return callObjectMethod(
 			"getWindows",
@@ -329,7 +329,7 @@ namespace android::accessibilityservice
 			arg0.object()
 		);
 	}
-	__JniBaseClass AccessibilityService::onBind(android::content::Intent arg0)
+	JObject AccessibilityService::onBind(android::content::Intent arg0)
 	{
 		return callObjectMethod(
 			"onBind",

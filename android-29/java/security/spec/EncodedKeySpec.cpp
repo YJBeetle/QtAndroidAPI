@@ -5,11 +5,11 @@ namespace java::security::spec
 	// Fields
 	
 	// QAndroidJniObject forward
-	EncodedKeySpec::EncodedKeySpec(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	EncodedKeySpec::EncodedKeySpec(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	EncodedKeySpec::EncodedKeySpec(jbyteArray arg0)
-		: __JniBaseClass(
+		: JObject(
 			"java.security.spec.EncodedKeySpec",
 			"([B)V",
 			arg0

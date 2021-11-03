@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::content::res
 {
@@ -13,7 +13,7 @@ namespace java::io
 
 namespace android::content::res
 {
-	class AssetManager : public __JniBaseClass
+	class AssetManager : public JObject
 	{
 	public:
 		// Fields
@@ -23,7 +23,7 @@ namespace android::content::res
 		static jint ACCESS_UNKNOWN();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit AssetManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit AssetManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		AssetManager(QAndroidJniObject obj);
 		
 		// Constructors
@@ -37,8 +37,8 @@ namespace android::content::res
 		android::content::res::AssetFileDescriptor openFd(jstring arg0);
 		android::content::res::AssetFileDescriptor openNonAssetFd(jstring arg0);
 		android::content::res::AssetFileDescriptor openNonAssetFd(jint arg0, jstring arg1);
-		__JniBaseClass openXmlResourceParser(jstring arg0);
-		__JniBaseClass openXmlResourceParser(jint arg0, jstring arg1);
+		JObject openXmlResourceParser(jstring arg0);
+		JObject openXmlResourceParser(jint arg0, jstring arg1);
 	};
 } // namespace android::content::res
 

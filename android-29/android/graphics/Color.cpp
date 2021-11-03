@@ -92,11 +92,11 @@ namespace android::graphics
 	}
 	
 	// QAndroidJniObject forward
-	Color::Color(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Color::Color(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Color::Color()
-		: __JniBaseClass(
+		: JObject(
 			"android.graphics.Color",
 			"()V"
 		) {}

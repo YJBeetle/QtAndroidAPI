@@ -9819,11 +9819,11 @@ namespace android
 	}
 	
 	// QAndroidJniObject forward
-	R_attr::R_attr(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	R_attr::R_attr(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	R_attr::R_attr()
-		: __JniBaseClass(
+		: JObject(
 			"android.R$attr",
 			"()V"
 		) {}

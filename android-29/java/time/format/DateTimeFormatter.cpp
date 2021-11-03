@@ -136,7 +136,7 @@ namespace java::time::format
 	}
 	
 	// QAndroidJniObject forward
-	DateTimeFormatter::DateTimeFormatter(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	DateTimeFormatter::DateTimeFormatter(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -197,7 +197,7 @@ namespace java::time::format
 			arg1.object()
 		);
 	}
-	__JniBaseClass DateTimeFormatter::parsedExcessDays()
+	JObject DateTimeFormatter::parsedExcessDays()
 	{
 		return callStaticObjectMethod(
 			"java.time.format.DateTimeFormatter",
@@ -205,7 +205,7 @@ namespace java::time::format
 			"()Ljava/time/temporal/TemporalQuery;"
 		);
 	}
-	__JniBaseClass DateTimeFormatter::parsedLeapSecond()
+	JObject DateTimeFormatter::parsedLeapSecond()
 	{
 		return callStaticObjectMethod(
 			"java.time.format.DateTimeFormatter",
@@ -213,7 +213,7 @@ namespace java::time::format
 			"()Ljava/time/temporal/TemporalQuery;"
 		);
 	}
-	jstring DateTimeFormatter::format(__JniBaseClass arg0)
+	jstring DateTimeFormatter::format(JObject arg0)
 	{
 		return callObjectMethod(
 			"format",
@@ -221,7 +221,7 @@ namespace java::time::format
 			arg0.object()
 		).object<jstring>();
 	}
-	void DateTimeFormatter::formatTo(__JniBaseClass arg0, __JniBaseClass arg1)
+	void DateTimeFormatter::formatTo(JObject arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"formatTo",
@@ -230,7 +230,7 @@ namespace java::time::format
 			arg1.object()
 		);
 	}
-	__JniBaseClass DateTimeFormatter::getChronology()
+	JObject DateTimeFormatter::getChronology()
 	{
 		return callObjectMethod(
 			"getChronology",
@@ -251,7 +251,7 @@ namespace java::time::format
 			"()Ljava/util/Locale;"
 		);
 	}
-	__JniBaseClass DateTimeFormatter::getResolverFields()
+	JObject DateTimeFormatter::getResolverFields()
 	{
 		return callObjectMethod(
 			"getResolverFields",
@@ -280,7 +280,7 @@ namespace java::time::format
 			arg0.object()
 		);
 	}
-	jobject DateTimeFormatter::parse(jstring arg0, __JniBaseClass arg1)
+	jobject DateTimeFormatter::parse(jstring arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"parse",
@@ -289,7 +289,7 @@ namespace java::time::format
 			arg1.object()
 		).object<jobject>();
 	}
-	__JniBaseClass DateTimeFormatter::parse(jstring arg0)
+	JObject DateTimeFormatter::parse(jstring arg0)
 	{
 		return callObjectMethod(
 			"parse",
@@ -297,7 +297,7 @@ namespace java::time::format
 			arg0
 		);
 	}
-	__JniBaseClass DateTimeFormatter::parse(jstring arg0, java::text::ParsePosition arg1)
+	JObject DateTimeFormatter::parse(jstring arg0, java::text::ParsePosition arg1)
 	{
 		return callObjectMethod(
 			"parse",
@@ -306,7 +306,7 @@ namespace java::time::format
 			arg1.object()
 		);
 	}
-	__JniBaseClass DateTimeFormatter::parseBest(jstring arg0, jarray arg1)
+	JObject DateTimeFormatter::parseBest(jstring arg0, jarray arg1)
 	{
 		return callObjectMethod(
 			"parseBest",
@@ -315,7 +315,7 @@ namespace java::time::format
 			arg1
 		);
 	}
-	__JniBaseClass DateTimeFormatter::parseUnresolved(jstring arg0, java::text::ParsePosition arg1)
+	JObject DateTimeFormatter::parseUnresolved(jstring arg0, java::text::ParsePosition arg1)
 	{
 		return callObjectMethod(
 			"parseUnresolved",
@@ -331,7 +331,7 @@ namespace java::time::format
 			"()Ljava/text/Format;"
 		);
 	}
-	java::text::Format DateTimeFormatter::toFormat(__JniBaseClass arg0)
+	java::text::Format DateTimeFormatter::toFormat(JObject arg0)
 	{
 		return callObjectMethod(
 			"toFormat",
@@ -346,7 +346,7 @@ namespace java::time::format
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	java::time::format::DateTimeFormatter DateTimeFormatter::withChronology(__JniBaseClass arg0)
+	java::time::format::DateTimeFormatter DateTimeFormatter::withChronology(JObject arg0)
 	{
 		return callObjectMethod(
 			"withChronology",
@@ -378,7 +378,7 @@ namespace java::time::format
 			arg0
 		);
 	}
-	java::time::format::DateTimeFormatter DateTimeFormatter::withResolverFields(__JniBaseClass arg0)
+	java::time::format::DateTimeFormatter DateTimeFormatter::withResolverFields(JObject arg0)
 	{
 		return callObjectMethod(
 			"withResolverFields",

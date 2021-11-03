@@ -4,7 +4,7 @@
 namespace android::content::pm
 {
 	// Fields
-	__JniBaseClass VersionedPackage::CREATOR()
+	JObject VersionedPackage::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.content.pm.VersionedPackage",
@@ -14,18 +14,18 @@ namespace android::content::pm
 	}
 	
 	// QAndroidJniObject forward
-	VersionedPackage::VersionedPackage(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	VersionedPackage::VersionedPackage(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	VersionedPackage::VersionedPackage(jstring arg0, jint arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.content.pm.VersionedPackage",
 			"(Ljava/lang/String;I)V",
 			arg0,
 			arg1
 		) {}
 	VersionedPackage::VersionedPackage(jstring arg0, jlong arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.content.pm.VersionedPackage",
 			"(Ljava/lang/String;J)V",
 			arg0,

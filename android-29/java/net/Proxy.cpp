@@ -15,11 +15,11 @@ namespace java::net
 	}
 	
 	// QAndroidJniObject forward
-	Proxy::Proxy(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Proxy::Proxy(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Proxy::Proxy(java::net::Proxy_Type arg0, java::net::SocketAddress arg1)
-		: __JniBaseClass(
+		: JObject(
 			"java.net.Proxy",
 			"(Ljava/net/Proxy$Type;Ljava/net/SocketAddress;)V",
 			arg0.object(),

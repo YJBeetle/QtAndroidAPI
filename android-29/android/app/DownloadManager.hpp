@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::app
 {
@@ -29,7 +29,7 @@ namespace java::lang
 
 namespace android::app
 {
-	class DownloadManager : public __JniBaseClass
+	class DownloadManager : public JObject
 	{
 	public:
 		// Fields
@@ -72,7 +72,7 @@ namespace android::app
 		static jint STATUS_SUCCESSFUL();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit DownloadManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit DownloadManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		DownloadManager(QAndroidJniObject obj);
 		
 		// Constructors
@@ -86,7 +86,7 @@ namespace android::app
 		jstring getMimeTypeForDownloadedFile(jlong arg0);
 		android::net::Uri getUriForDownloadedFile(jlong arg0);
 		android::os::ParcelFileDescriptor openDownloadedFile(jlong arg0);
-		__JniBaseClass query(android::app::DownloadManager_Query arg0);
+		JObject query(android::app::DownloadManager_Query arg0);
 		jint remove(jlongArray arg0);
 	};
 } // namespace android::app

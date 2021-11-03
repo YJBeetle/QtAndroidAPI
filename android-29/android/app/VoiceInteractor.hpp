@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::app
 {
@@ -9,13 +9,13 @@ namespace android::app
 
 namespace android::app
 {
-	class VoiceInteractor : public __JniBaseClass
+	class VoiceInteractor : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit VoiceInteractor(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit VoiceInteractor(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		VoiceInteractor(QAndroidJniObject obj);
 		
 		// Constructors
@@ -25,11 +25,11 @@ namespace android::app
 		jarray getActiveRequests();
 		jboolean isDestroyed();
 		void notifyDirectActionsChanged();
-		jboolean registerOnDestroyedCallback(__JniBaseClass arg0, __JniBaseClass arg1);
+		jboolean registerOnDestroyedCallback(JObject arg0, JObject arg1);
 		jboolean submitRequest(android::app::VoiceInteractor_Request arg0);
 		jboolean submitRequest(android::app::VoiceInteractor_Request arg0, jstring arg1);
 		jbooleanArray supportsCommands(jarray arg0);
-		jboolean unregisterOnDestroyedCallback(__JniBaseClass arg0);
+		jboolean unregisterOnDestroyedCallback(JObject arg0);
 	};
 } // namespace android::app
 

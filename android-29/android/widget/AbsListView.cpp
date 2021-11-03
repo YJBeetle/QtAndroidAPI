@@ -79,14 +79,14 @@ namespace android::widget
 			"(Landroid/content/Context;)V",
 			arg0.object()
 		) {}
-	AbsListView::AbsListView(android::content::Context arg0, __JniBaseClass arg1)
+	AbsListView::AbsListView(android::content::Context arg0, JObject arg1)
 		: android::widget::AdapterView(
 			"android.widget.AbsListView",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.object(),
 			arg1.object()
 		) {}
-	AbsListView::AbsListView(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
+	AbsListView::AbsListView(android::content::Context arg0, JObject arg1, jint arg2)
 		: android::widget::AdapterView(
 			"android.widget.AbsListView",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
@@ -94,7 +94,7 @@ namespace android::widget
 			arg1.object(),
 			arg2
 		) {}
-	AbsListView::AbsListView(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
+	AbsListView::AbsListView(android::content::Context arg0, JObject arg1, jint arg2, jint arg3)
 		: android::widget::AdapterView(
 			"android.widget.AbsListView",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;II)V",
@@ -113,7 +113,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void AbsListView::afterTextChanged(__JniBaseClass arg0)
+	void AbsListView::afterTextChanged(JObject arg0)
 	{
 		callMethod<void>(
 			"afterTextChanged",
@@ -194,7 +194,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	android::widget::AbsListView_LayoutParams AbsListView::generateLayoutParams(__JniBaseClass arg0)
+	android::widget::AbsListView_LayoutParams AbsListView::generateLayoutParams(JObject arg0)
 	{
 		return callObjectMethod(
 			"generateLayoutParams",
@@ -428,7 +428,7 @@ namespace android::widget
 			"()V"
 		);
 	}
-	__JniBaseClass AbsListView::onCreateInputConnection(android::view::inputmethod::EditorInfo arg0)
+	JObject AbsListView::onCreateInputConnection(android::view::inputmethod::EditorInfo arg0)
 	{
 		return callObjectMethod(
 			"onCreateInputConnection",
@@ -559,7 +559,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	void AbsListView::onRestoreInstanceState(__JniBaseClass arg0)
+	void AbsListView::onRestoreInstanceState(JObject arg0)
 	{
 		callMethod<void>(
 			"onRestoreInstanceState",
@@ -575,7 +575,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	__JniBaseClass AbsListView::onSaveInstanceState()
+	JObject AbsListView::onSaveInstanceState()
 	{
 		return callObjectMethod(
 			"onSaveInstanceState",
@@ -655,7 +655,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	void AbsListView::reclaimViews(__JniBaseClass arg0)
+	void AbsListView::reclaimViews(JObject arg0)
 	{
 		callMethod<void>(
 			"reclaimViews",
@@ -694,7 +694,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void AbsListView::setAdapter(__JniBaseClass arg0)
+	void AbsListView::setAdapter(JObject arg0)
 	{
 		callMethod<void>(
 			"setAdapter",
@@ -791,7 +791,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	void AbsListView::setMultiChoiceModeListener(__JniBaseClass arg0)
+	void AbsListView::setMultiChoiceModeListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setMultiChoiceModeListener",
@@ -799,7 +799,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void AbsListView::setOnScrollListener(__JniBaseClass arg0)
+	void AbsListView::setOnScrollListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setOnScrollListener",
@@ -807,7 +807,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void AbsListView::setRecyclerListener(__JniBaseClass arg0)
+	void AbsListView::setRecyclerListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setRecyclerListener",

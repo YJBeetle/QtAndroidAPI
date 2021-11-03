@@ -14,7 +14,7 @@ namespace org::xmlpull::v1
 			"(Ljava/lang/String;)V",
 			arg0
 		) {}
-	XmlPullParserException::XmlPullParserException(jstring arg0, __JniBaseClass arg1, jthrowable arg2)
+	XmlPullParserException::XmlPullParserException(jstring arg0, JObject arg1, jthrowable arg2)
 		: java::lang::Exception(
 			"org.xmlpull.v1.XmlPullParserException",
 			"(Ljava/lang/String;Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/Throwable;)V",

@@ -83,7 +83,7 @@ namespace java::text
 			arg2.object()
 		);
 	}
-	__JniBaseClass MessageFormat::formatToCharacterIterator(jobject arg0)
+	JObject MessageFormat::formatToCharacterIterator(jobject arg0)
 	{
 		return callObjectMethod(
 			"formatToCharacterIterator",

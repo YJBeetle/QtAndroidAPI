@@ -256,7 +256,7 @@ namespace android::os
 	}
 	
 	// QAndroidJniObject forward
-	BatteryManager::BatteryManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	BatteryManager::BatteryManager(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

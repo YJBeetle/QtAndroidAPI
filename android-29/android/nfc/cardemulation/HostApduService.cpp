@@ -54,7 +54,7 @@ namespace android::nfc::cardemulation
 			"()V"
 		);
 	}
-	__JniBaseClass HostApduService::onBind(android::content::Intent arg0)
+	JObject HostApduService::onBind(android::content::Intent arg0)
 	{
 		return callObjectMethod(
 			"onBind",

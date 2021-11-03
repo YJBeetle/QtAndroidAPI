@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::os
 {
@@ -9,7 +9,7 @@ namespace android::os
 
 namespace android::media
 {
-	class AudioFormat : public __JniBaseClass
+	class AudioFormat : public JObject
 	{
 	public:
 		// Fields
@@ -54,7 +54,7 @@ namespace android::media
 		static jint CHANNEL_OUT_SIDE_RIGHT();
 		static jint CHANNEL_OUT_STEREO();
 		static jint CHANNEL_OUT_SURROUND();
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint ENCODING_AAC_ELD();
 		static jint ENCODING_AAC_HE_V1();
 		static jint ENCODING_AAC_HE_V2();
@@ -78,7 +78,7 @@ namespace android::media
 		static jint SAMPLE_RATE_UNSPECIFIED();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit AudioFormat(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit AudioFormat(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		AudioFormat(QAndroidJniObject obj);
 		
 		// Constructors

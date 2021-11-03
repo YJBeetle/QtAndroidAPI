@@ -327,11 +327,11 @@ namespace android::text::format
 	}
 	
 	// QAndroidJniObject forward
-	DateUtils::DateUtils(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	DateUtils::DateUtils(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	DateUtils::DateUtils()
-		: __JniBaseClass(
+		: JObject(
 			"android.text.format.DateUtils",
 			"()V"
 		) {}

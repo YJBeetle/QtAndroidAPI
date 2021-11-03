@@ -8,7 +8,7 @@ namespace java::nio::file
 	// Fields
 	
 	// QAndroidJniObject forward
-	FileSystems::FileSystems(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	FileSystems::FileSystems(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -30,7 +30,7 @@ namespace java::nio::file
 			arg0.object()
 		);
 	}
-	java::nio::file::FileSystem FileSystems::newFileSystem(__JniBaseClass arg0)
+	java::nio::file::FileSystem FileSystems::newFileSystem(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"java.nio.file.FileSystems",
@@ -39,7 +39,7 @@ namespace java::nio::file
 			arg0.object()
 		);
 	}
-	java::nio::file::FileSystem FileSystems::newFileSystem(java::net::URI arg0, __JniBaseClass arg1)
+	java::nio::file::FileSystem FileSystems::newFileSystem(java::net::URI arg0, JObject arg1)
 	{
 		return callStaticObjectMethod(
 			"java.nio.file.FileSystems",
@@ -49,7 +49,7 @@ namespace java::nio::file
 			arg1.object()
 		);
 	}
-	java::nio::file::FileSystem FileSystems::newFileSystem(__JniBaseClass arg0, java::lang::ClassLoader arg1)
+	java::nio::file::FileSystem FileSystems::newFileSystem(JObject arg0, java::lang::ClassLoader arg1)
 	{
 		return callStaticObjectMethod(
 			"java.nio.file.FileSystems",
@@ -59,7 +59,7 @@ namespace java::nio::file
 			arg1.object()
 		);
 	}
-	java::nio::file::FileSystem FileSystems::newFileSystem(__JniBaseClass arg0, __JniBaseClass arg1)
+	java::nio::file::FileSystem FileSystems::newFileSystem(JObject arg0, JObject arg1)
 	{
 		return callStaticObjectMethod(
 			"java.nio.file.FileSystems",
@@ -69,7 +69,7 @@ namespace java::nio::file
 			arg1.object()
 		);
 	}
-	java::nio::file::FileSystem FileSystems::newFileSystem(java::net::URI arg0, __JniBaseClass arg1, java::lang::ClassLoader arg2)
+	java::nio::file::FileSystem FileSystems::newFileSystem(java::net::URI arg0, JObject arg1, java::lang::ClassLoader arg2)
 	{
 		return callStaticObjectMethod(
 			"java.nio.file.FileSystems",
@@ -80,7 +80,7 @@ namespace java::nio::file
 			arg2.object()
 		);
 	}
-	java::nio::file::FileSystem FileSystems::newFileSystem(__JniBaseClass arg0, __JniBaseClass arg1, java::lang::ClassLoader arg2)
+	java::nio::file::FileSystem FileSystems::newFileSystem(JObject arg0, JObject arg1, java::lang::ClassLoader arg2)
 	{
 		return callStaticObjectMethod(
 			"java.nio.file.FileSystems",

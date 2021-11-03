@@ -19,7 +19,7 @@ namespace android::icu::text
 			arg0,
 			arg1
 		) {}
-	StringSearch::StringSearch(jstring arg0, __JniBaseClass arg1, android::icu::text::RuleBasedCollator arg2)
+	StringSearch::StringSearch(jstring arg0, JObject arg1, android::icu::text::RuleBasedCollator arg2)
 		: android::icu::text::SearchIterator(
 			"android.icu.text.StringSearch",
 			"(Ljava/lang/String;Ljava/text/CharacterIterator;Landroid/icu/text/RuleBasedCollator;)V",
@@ -27,7 +27,7 @@ namespace android::icu::text
 			arg1.object(),
 			arg2.object()
 		) {}
-	StringSearch::StringSearch(jstring arg0, __JniBaseClass arg1, android::icu::util::ULocale arg2)
+	StringSearch::StringSearch(jstring arg0, JObject arg1, android::icu::util::ULocale arg2)
 		: android::icu::text::SearchIterator(
 			"android.icu.text.StringSearch",
 			"(Ljava/lang/String;Ljava/text/CharacterIterator;Landroid/icu/util/ULocale;)V",
@@ -35,7 +35,7 @@ namespace android::icu::text
 			arg1.object(),
 			arg2.object()
 		) {}
-	StringSearch::StringSearch(jstring arg0, __JniBaseClass arg1, java::util::Locale arg2)
+	StringSearch::StringSearch(jstring arg0, JObject arg1, java::util::Locale arg2)
 		: android::icu::text::SearchIterator(
 			"android.icu.text.StringSearch",
 			"(Ljava/lang/String;Ljava/text/CharacterIterator;Ljava/util/Locale;)V",
@@ -43,7 +43,7 @@ namespace android::icu::text
 			arg1.object(),
 			arg2.object()
 		) {}
-	StringSearch::StringSearch(jstring arg0, __JniBaseClass arg1, android::icu::text::RuleBasedCollator arg2, android::icu::text::BreakIterator arg3)
+	StringSearch::StringSearch(jstring arg0, JObject arg1, android::icu::text::RuleBasedCollator arg2, android::icu::text::BreakIterator arg3)
 		: android::icu::text::SearchIterator(
 			"android.icu.text.StringSearch",
 			"(Ljava/lang/String;Ljava/text/CharacterIterator;Landroid/icu/text/RuleBasedCollator;Landroid/icu/text/BreakIterator;)V",
@@ -121,7 +121,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	void StringSearch::setTarget(__JniBaseClass arg0)
+	void StringSearch::setTarget(JObject arg0)
 	{
 		callMethod<void>(
 			"setTarget",

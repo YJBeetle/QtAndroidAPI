@@ -6,11 +6,11 @@ namespace java::util::concurrent
 	// Fields
 	
 	// QAndroidJniObject forward
-	Exchanger::Exchanger(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Exchanger::Exchanger(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Exchanger::Exchanger()
-		: __JniBaseClass(
+		: JObject(
 			"java.util.concurrent.Exchanger",
 			"()V"
 		) {}

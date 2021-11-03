@@ -16,14 +16,14 @@ namespace android::preference
 			"(Landroid/content/Context;)V",
 			arg0.object()
 		) {}
-	SwitchPreference::SwitchPreference(android::content::Context arg0, __JniBaseClass arg1)
+	SwitchPreference::SwitchPreference(android::content::Context arg0, JObject arg1)
 		: android::preference::TwoStatePreference(
 			"android.preference.SwitchPreference",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.object(),
 			arg1.object()
 		) {}
-	SwitchPreference::SwitchPreference(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
+	SwitchPreference::SwitchPreference(android::content::Context arg0, JObject arg1, jint arg2)
 		: android::preference::TwoStatePreference(
 			"android.preference.SwitchPreference",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
@@ -31,7 +31,7 @@ namespace android::preference
 			arg1.object(),
 			arg2
 		) {}
-	SwitchPreference::SwitchPreference(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
+	SwitchPreference::SwitchPreference(android::content::Context arg0, JObject arg1, jint arg2, jint arg3)
 		: android::preference::TwoStatePreference(
 			"android.preference.SwitchPreference",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;II)V",

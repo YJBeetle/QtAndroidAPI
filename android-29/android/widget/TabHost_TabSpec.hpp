@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::content
 {
@@ -21,13 +21,13 @@ namespace android::widget
 
 namespace android::widget
 {
-	class TabHost_TabSpec : public __JniBaseClass
+	class TabHost_TabSpec : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit TabHost_TabSpec(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit TabHost_TabSpec(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		TabHost_TabSpec(QAndroidJniObject obj);
 		
 		// Constructors
@@ -35,7 +35,7 @@ namespace android::widget
 		// Methods
 		jstring getTag();
 		android::widget::TabHost_TabSpec setContent(android::content::Intent arg0);
-		android::widget::TabHost_TabSpec setContent(__JniBaseClass arg0);
+		android::widget::TabHost_TabSpec setContent(JObject arg0);
 		android::widget::TabHost_TabSpec setContent(jint arg0);
 		android::widget::TabHost_TabSpec setIndicator(android::view::View arg0);
 		android::widget::TabHost_TabSpec setIndicator(jstring arg0);

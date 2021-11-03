@@ -5,7 +5,7 @@
 namespace android::view
 {
 	// Fields
-	__JniBaseClass WindowId::CREATOR()
+	JObject WindowId::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.view.WindowId",
@@ -15,7 +15,7 @@ namespace android::view
 	}
 	
 	// QAndroidJniObject forward
-	WindowId::WindowId(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	WindowId::WindowId(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

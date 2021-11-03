@@ -13,7 +13,7 @@
 namespace android::graphics::drawable
 {
 	// Fields
-	__JniBaseClass Icon::CREATOR()
+	JObject Icon::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.graphics.drawable.Icon",
@@ -58,7 +58,7 @@ namespace android::graphics::drawable
 	}
 	
 	// QAndroidJniObject forward
-	Icon::Icon(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Icon::Icon(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -191,7 +191,7 @@ namespace android::graphics::drawable
 			arg1.object()
 		);
 	}
-	void Icon::loadDrawableAsync(android::content::Context arg0, __JniBaseClass arg1, android::os::Handler arg2)
+	void Icon::loadDrawableAsync(android::content::Context arg0, JObject arg1, android::os::Handler arg2)
 	{
 		callMethod<void>(
 			"loadDrawableAsync",

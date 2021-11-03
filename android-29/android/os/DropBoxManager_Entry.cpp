@@ -7,7 +7,7 @@
 namespace android::os
 {
 	// Fields
-	__JniBaseClass DropBoxManager_Entry::CREATOR()
+	JObject DropBoxManager_Entry::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.os.DropBoxManager$Entry",
@@ -17,18 +17,18 @@ namespace android::os
 	}
 	
 	// QAndroidJniObject forward
-	DropBoxManager_Entry::DropBoxManager_Entry(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	DropBoxManager_Entry::DropBoxManager_Entry(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	DropBoxManager_Entry::DropBoxManager_Entry(jstring arg0, jlong arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.os.DropBoxManager$Entry",
 			"(Ljava/lang/String;J)V",
 			arg0,
 			arg1
 		) {}
 	DropBoxManager_Entry::DropBoxManager_Entry(jstring arg0, jlong arg1, jstring arg2)
-		: __JniBaseClass(
+		: JObject(
 			"android.os.DropBoxManager$Entry",
 			"(Ljava/lang/String;JLjava/lang/String;)V",
 			arg0,
@@ -36,7 +36,7 @@ namespace android::os
 			arg2
 		) {}
 	DropBoxManager_Entry::DropBoxManager_Entry(jstring arg0, jlong arg1, jbyteArray arg2, jint arg3)
-		: __JniBaseClass(
+		: JObject(
 			"android.os.DropBoxManager$Entry",
 			"(Ljava/lang/String;J[BI)V",
 			arg0,
@@ -45,7 +45,7 @@ namespace android::os
 			arg3
 		) {}
 	DropBoxManager_Entry::DropBoxManager_Entry(jstring arg0, jlong arg1, android::os::ParcelFileDescriptor arg2, jint arg3)
-		: __JniBaseClass(
+		: JObject(
 			"android.os.DropBoxManager$Entry",
 			"(Ljava/lang/String;JLandroid/os/ParcelFileDescriptor;I)V",
 			arg0,
@@ -54,7 +54,7 @@ namespace android::os
 			arg3
 		) {}
 	DropBoxManager_Entry::DropBoxManager_Entry(jstring arg0, jlong arg1, java::io::File arg2, jint arg3)
-		: __JniBaseClass(
+		: JObject(
 			"android.os.DropBoxManager$Entry",
 			"(Ljava/lang/String;JLjava/io/File;I)V",
 			arg0,

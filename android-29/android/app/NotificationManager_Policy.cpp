@@ -4,7 +4,7 @@
 namespace android::app
 {
 	// Fields
-	__JniBaseClass NotificationManager_Policy::CREATOR()
+	JObject NotificationManager_Policy::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.app.NotificationManager$Policy",
@@ -178,11 +178,11 @@ namespace android::app
 	}
 	
 	// QAndroidJniObject forward
-	NotificationManager_Policy::NotificationManager_Policy(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	NotificationManager_Policy::NotificationManager_Policy(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	NotificationManager_Policy::NotificationManager_Policy(jint arg0, jint arg1, jint arg2)
-		: __JniBaseClass(
+		: JObject(
 			"android.app.NotificationManager$Policy",
 			"(III)V",
 			arg0,
@@ -190,7 +190,7 @@ namespace android::app
 			arg2
 		) {}
 	NotificationManager_Policy::NotificationManager_Policy(jint arg0, jint arg1, jint arg2, jint arg3)
-		: __JniBaseClass(
+		: JObject(
 			"android.app.NotificationManager$Policy",
 			"(IIII)V",
 			arg0,

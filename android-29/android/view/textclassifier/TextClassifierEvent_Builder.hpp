@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::icu::util
 {
@@ -17,13 +17,13 @@ namespace android::view::textclassifier
 
 namespace android::view::textclassifier
 {
-	class TextClassifierEvent_Builder : public __JniBaseClass
+	class TextClassifierEvent_Builder : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit TextClassifierEvent_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit TextClassifierEvent_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		TextClassifierEvent_Builder(QAndroidJniObject obj);
 		
 		// Constructors

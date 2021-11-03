@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::media
 {
@@ -9,7 +9,7 @@ namespace android::media
 
 namespace android::media
 {
-	class MicrophoneInfo : public __JniBaseClass
+	class MicrophoneInfo : public JObject
 	{
 	public:
 		// Fields
@@ -33,17 +33,17 @@ namespace android::media
 		static jfloat SPL_UNKNOWN();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MicrophoneInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit MicrophoneInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		MicrophoneInfo(QAndroidJniObject obj);
 		
 		// Constructors
 		
 		// Methods
 		jstring getAddress();
-		__JniBaseClass getChannelMapping();
+		JObject getChannelMapping();
 		jstring getDescription();
 		jint getDirectionality();
-		__JniBaseClass getFrequencyResponse();
+		JObject getFrequencyResponse();
 		jint getGroup();
 		jint getId();
 		jint getIndexInTheGroup();

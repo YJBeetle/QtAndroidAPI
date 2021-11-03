@@ -5,11 +5,11 @@ namespace android::opengl
 	// Fields
 	
 	// QAndroidJniObject forward
-	GLU::GLU(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	GLU::GLU(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	GLU::GLU()
-		: __JniBaseClass(
+		: JObject(
 			"android.opengl.GLU",
 			"()V"
 		) {}
@@ -24,7 +24,7 @@ namespace android::opengl
 			arg0
 		).object<jstring>();
 	}
-	void GLU::gluLookAt(__JniBaseClass arg0, jfloat arg1, jfloat arg2, jfloat arg3, jfloat arg4, jfloat arg5, jfloat arg6, jfloat arg7, jfloat arg8, jfloat arg9)
+	void GLU::gluLookAt(JObject arg0, jfloat arg1, jfloat arg2, jfloat arg3, jfloat arg4, jfloat arg5, jfloat arg6, jfloat arg7, jfloat arg8, jfloat arg9)
 	{
 		callStaticMethod<void>(
 			"android.opengl.GLU",
@@ -42,7 +42,7 @@ namespace android::opengl
 			arg9
 		);
 	}
-	void GLU::gluOrtho2D(__JniBaseClass arg0, jfloat arg1, jfloat arg2, jfloat arg3, jfloat arg4)
+	void GLU::gluOrtho2D(JObject arg0, jfloat arg1, jfloat arg2, jfloat arg3, jfloat arg4)
 	{
 		callStaticMethod<void>(
 			"android.opengl.GLU",
@@ -55,7 +55,7 @@ namespace android::opengl
 			arg4
 		);
 	}
-	void GLU::gluPerspective(__JniBaseClass arg0, jfloat arg1, jfloat arg2, jfloat arg3, jfloat arg4)
+	void GLU::gluPerspective(JObject arg0, jfloat arg1, jfloat arg2, jfloat arg3, jfloat arg4)
 	{
 		callStaticMethod<void>(
 			"android.opengl.GLU",

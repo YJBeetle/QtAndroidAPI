@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::os
 {
@@ -9,13 +9,13 @@ namespace android::os
 
 namespace android::telephony
 {
-	class SubscriptionPlan : public __JniBaseClass
+	class SubscriptionPlan : public JObject
 	{
 	public:
 		// Fields
 		static jlong BYTES_UNKNOWN();
 		static jlong BYTES_UNLIMITED();
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint LIMIT_BEHAVIOR_BILLED();
 		static jint LIMIT_BEHAVIOR_DISABLED();
 		static jint LIMIT_BEHAVIOR_THROTTLED();
@@ -23,13 +23,13 @@ namespace android::telephony
 		static jlong TIME_UNKNOWN();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit SubscriptionPlan(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit SubscriptionPlan(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		SubscriptionPlan(QAndroidJniObject obj);
 		
 		// Constructors
 		
 		// Methods
-		__JniBaseClass cycleIterator();
+		JObject cycleIterator();
 		jint describeContents();
 		jboolean equals(jobject arg0);
 		jint getDataLimitBehavior();

@@ -29,7 +29,7 @@ namespace android::media
 	}
 	
 	// QAndroidJniObject forward
-	MediaExtractor_MetricsConstants::MediaExtractor_MetricsConstants(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	MediaExtractor_MetricsConstants::MediaExtractor_MetricsConstants(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

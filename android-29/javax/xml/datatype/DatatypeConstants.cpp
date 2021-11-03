@@ -276,7 +276,7 @@ namespace javax::xml::datatype
 	}
 	
 	// QAndroidJniObject forward
-	DatatypeConstants::DatatypeConstants(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	DatatypeConstants::DatatypeConstants(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

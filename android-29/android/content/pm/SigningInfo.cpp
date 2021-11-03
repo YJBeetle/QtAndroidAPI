@@ -4,7 +4,7 @@
 namespace android::content::pm
 {
 	// Fields
-	__JniBaseClass SigningInfo::CREATOR()
+	JObject SigningInfo::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.content.pm.SigningInfo",
@@ -14,16 +14,16 @@ namespace android::content::pm
 	}
 	
 	// QAndroidJniObject forward
-	SigningInfo::SigningInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	SigningInfo::SigningInfo(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	SigningInfo::SigningInfo()
-		: __JniBaseClass(
+		: JObject(
 			"android.content.pm.SigningInfo",
 			"()V"
 		) {}
 	SigningInfo::SigningInfo(android::content::pm::SigningInfo &arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.content.pm.SigningInfo",
 			"(Landroid/content/pm/SigningInfo;)V",
 			arg0.object()

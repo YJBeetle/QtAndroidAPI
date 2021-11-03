@@ -7,11 +7,11 @@ namespace android::media::tv
 	// Fields
 	
 	// QAndroidJniObject forward
-	TvView_TvInputCallback::TvView_TvInputCallback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	TvView_TvInputCallback::TvView_TvInputCallback(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	TvView_TvInputCallback::TvView_TvInputCallback()
-		: __JniBaseClass(
+		: JObject(
 			"android.media.tv.TvView$TvInputCallback",
 			"()V"
 		) {}
@@ -78,7 +78,7 @@ namespace android::media::tv
 			arg2
 		);
 	}
-	void TvView_TvInputCallback::onTracksChanged(jstring arg0, __JniBaseClass arg1)
+	void TvView_TvInputCallback::onTracksChanged(jstring arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"onTracksChanged",

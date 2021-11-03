@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "./AbstractCollection.hpp"
 #include "./AbstractQueue.hpp"
 
@@ -27,26 +27,26 @@ namespace java::util
 		// Constructors
 		PriorityQueue();
 		PriorityQueue(jint arg0);
-		PriorityQueue(__JniBaseClass arg0);
+		PriorityQueue(JObject arg0);
 		PriorityQueue(java::util::PriorityQueue &arg0);
-		PriorityQueue(jint arg0, __JniBaseClass arg1);
+		PriorityQueue(jint arg0, JObject arg1);
 		
 		// Methods
 		jboolean add(jobject arg0);
 		void clear();
-		__JniBaseClass comparator();
+		JObject comparator();
 		jboolean contains(jobject arg0);
-		void forEach(__JniBaseClass arg0);
-		__JniBaseClass iterator();
+		void forEach(JObject arg0);
+		JObject iterator();
 		jboolean offer(jobject arg0);
 		jobject peek();
 		jobject poll();
 		jboolean remove(jobject arg0);
-		jboolean removeAll(__JniBaseClass arg0);
-		jboolean removeIf(__JniBaseClass arg0);
-		jboolean retainAll(__JniBaseClass arg0);
+		jboolean removeAll(JObject arg0);
+		jboolean removeIf(JObject arg0);
+		jboolean retainAll(JObject arg0);
 		jint size();
-		__JniBaseClass spliterator();
+		JObject spliterator();
 		jobjectArray toArray();
 		jobjectArray toArray(jobjectArray arg0);
 	};

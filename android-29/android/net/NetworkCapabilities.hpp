@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::os
 {
@@ -9,11 +9,11 @@ namespace android::os
 
 namespace android::net
 {
-	class NetworkCapabilities : public __JniBaseClass
+	class NetworkCapabilities : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint NET_CAPABILITY_CAPTIVE_PORTAL();
 		static jint NET_CAPABILITY_CBS();
 		static jint NET_CAPABILITY_DUN();
@@ -47,7 +47,7 @@ namespace android::net
 		static jint TRANSPORT_WIFI_AWARE();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit NetworkCapabilities(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit NetworkCapabilities(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		NetworkCapabilities(QAndroidJniObject obj);
 		
 		// Constructors
@@ -59,7 +59,7 @@ namespace android::net
 		jint getLinkDownstreamBandwidthKbps();
 		jint getLinkUpstreamBandwidthKbps();
 		jint getSignalStrength();
-		__JniBaseClass getTransportInfo();
+		JObject getTransportInfo();
 		jboolean hasCapability(jint arg0);
 		jboolean hasTransport(jint arg0);
 		jint hashCode();

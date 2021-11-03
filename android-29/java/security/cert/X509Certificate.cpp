@@ -36,21 +36,21 @@ namespace java::security::cert
 			"()I"
 		);
 	}
-	__JniBaseClass X509Certificate::getExtendedKeyUsage()
+	JObject X509Certificate::getExtendedKeyUsage()
 	{
 		return callObjectMethod(
 			"getExtendedKeyUsage",
 			"()Ljava/util/List;"
 		);
 	}
-	__JniBaseClass X509Certificate::getIssuerAlternativeNames()
+	JObject X509Certificate::getIssuerAlternativeNames()
 	{
 		return callObjectMethod(
 			"getIssuerAlternativeNames",
 			"()Ljava/util/Collection;"
 		);
 	}
-	__JniBaseClass X509Certificate::getIssuerDN()
+	JObject X509Certificate::getIssuerDN()
 	{
 		return callObjectMethod(
 			"getIssuerDN",
@@ -127,14 +127,14 @@ namespace java::security::cert
 			"()[B"
 		).object<jbyteArray>();
 	}
-	__JniBaseClass X509Certificate::getSubjectAlternativeNames()
+	JObject X509Certificate::getSubjectAlternativeNames()
 	{
 		return callObjectMethod(
 			"getSubjectAlternativeNames",
 			"()Ljava/util/Collection;"
 		);
 	}
-	__JniBaseClass X509Certificate::getSubjectDN()
+	JObject X509Certificate::getSubjectDN()
 	{
 		return callObjectMethod(
 			"getSubjectDN",
@@ -169,7 +169,7 @@ namespace java::security::cert
 			"()I"
 		);
 	}
-	void X509Certificate::verify(__JniBaseClass arg0, java::security::Provider arg1)
+	void X509Certificate::verify(JObject arg0, java::security::Provider arg1)
 	{
 		callMethod<void>(
 			"verify",

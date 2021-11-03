@@ -13,11 +13,11 @@ namespace android::content::pm
 	// Fields
 	
 	// QAndroidJniObject forward
-	ShortcutInfo_Builder::ShortcutInfo_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	ShortcutInfo_Builder::ShortcutInfo_Builder(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ShortcutInfo_Builder::ShortcutInfo_Builder(android::content::Context arg0, jstring arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.content.pm.ShortcutInfo$Builder",
 			"(Landroid/content/Context;Ljava/lang/String;)V",
 			arg0.object(),
@@ -40,7 +40,7 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	android::content::pm::ShortcutInfo_Builder ShortcutInfo_Builder::setCategories(__JniBaseClass arg0)
+	android::content::pm::ShortcutInfo_Builder ShortcutInfo_Builder::setCategories(JObject arg0)
 	{
 		return callObjectMethod(
 			"setCategories",

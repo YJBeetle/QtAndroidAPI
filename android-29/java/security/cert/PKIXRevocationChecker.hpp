@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "./PKIXCertPathChecker.hpp"
 
 namespace java::net
@@ -27,17 +27,17 @@ namespace java::security::cert
 		
 		// Methods
 		java::security::cert::PKIXRevocationChecker clone();
-		__JniBaseClass getOcspExtensions();
+		JObject getOcspExtensions();
 		java::net::URI getOcspResponder();
 		java::security::cert::X509Certificate getOcspResponderCert();
-		__JniBaseClass getOcspResponses();
-		__JniBaseClass getOptions();
-		__JniBaseClass getSoftFailExceptions();
-		void setOcspExtensions(__JniBaseClass arg0);
+		JObject getOcspResponses();
+		JObject getOptions();
+		JObject getSoftFailExceptions();
+		void setOcspExtensions(JObject arg0);
 		void setOcspResponder(java::net::URI arg0);
 		void setOcspResponderCert(java::security::cert::X509Certificate arg0);
-		void setOcspResponses(__JniBaseClass arg0);
-		void setOptions(__JniBaseClass arg0);
+		void setOcspResponses(JObject arg0);
+		void setOptions(JObject arg0);
 	};
 } // namespace java::security::cert
 

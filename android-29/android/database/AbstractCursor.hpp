@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::content
 {
@@ -33,13 +33,13 @@ namespace android::os
 
 namespace android::database
 {
-	class AbstractCursor : public __JniBaseClass
+	class AbstractCursor : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit AbstractCursor(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit AbstractCursor(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		AbstractCursor(QAndroidJniObject obj);
 		
 		// Constructors
@@ -63,7 +63,7 @@ namespace android::database
 		jint getInt(jint arg0);
 		jlong getLong(jint arg0);
 		android::net::Uri getNotificationUri();
-		__JniBaseClass getNotificationUris();
+		JObject getNotificationUris();
 		jint getPosition();
 		jshort getShort(jint arg0);
 		jstring getString(jint arg0);
@@ -89,7 +89,7 @@ namespace android::database
 		android::os::Bundle respond(android::os::Bundle arg0);
 		void setExtras(android::os::Bundle arg0);
 		void setNotificationUri(android::content::ContentResolver arg0, android::net::Uri arg1);
-		void setNotificationUris(android::content::ContentResolver arg0, __JniBaseClass arg1);
+		void setNotificationUris(android::content::ContentResolver arg0, JObject arg1);
 		void unregisterContentObserver(android::database::ContentObserver arg0);
 		void unregisterDataSetObserver(android::database::DataSetObserver arg0);
 	};

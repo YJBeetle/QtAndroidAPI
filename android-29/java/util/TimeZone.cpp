@@ -22,11 +22,11 @@ namespace java::util
 	}
 	
 	// QAndroidJniObject forward
-	TimeZone::TimeZone(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	TimeZone::TimeZone(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	TimeZone::TimeZone()
-		: __JniBaseClass(
+		: JObject(
 			"java.util.TimeZone",
 			"()V"
 		) {}

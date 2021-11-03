@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::graphics
 {
@@ -9,7 +9,7 @@ namespace android::graphics
 
 namespace android::view
 {
-	class Gravity : public __JniBaseClass
+	class Gravity : public JObject
 	{
 	public:
 		// Fields
@@ -42,7 +42,7 @@ namespace android::view
 		static jint VERTICAL_GRAVITY_MASK();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Gravity(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Gravity(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Gravity(QAndroidJniObject obj);
 		
 		// Constructors

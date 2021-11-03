@@ -6,11 +6,11 @@ namespace java::security
 	// Fields
 	
 	// QAndroidJniObject forward
-	DomainLoadStoreParameter::DomainLoadStoreParameter(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	DomainLoadStoreParameter::DomainLoadStoreParameter(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	DomainLoadStoreParameter::DomainLoadStoreParameter(java::net::URI arg0, __JniBaseClass arg1)
-		: __JniBaseClass(
+	DomainLoadStoreParameter::DomainLoadStoreParameter(java::net::URI arg0, JObject arg1)
+		: JObject(
 			"java.security.DomainLoadStoreParameter",
 			"(Ljava/net/URI;Ljava/util/Map;)V",
 			arg0.object(),
@@ -25,14 +25,14 @@ namespace java::security
 			"()Ljava/net/URI;"
 		);
 	}
-	__JniBaseClass DomainLoadStoreParameter::getProtectionParameter()
+	JObject DomainLoadStoreParameter::getProtectionParameter()
 	{
 		return callObjectMethod(
 			"getProtectionParameter",
 			"()Ljava/security/KeyStore$ProtectionParameter;"
 		);
 	}
-	__JniBaseClass DomainLoadStoreParameter::getProtectionParams()
+	JObject DomainLoadStoreParameter::getProtectionParams()
 	{
 		return callObjectMethod(
 			"getProtectionParams",

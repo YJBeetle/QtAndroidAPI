@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace java::io
 {
@@ -17,16 +17,16 @@ namespace java::util
 
 namespace java::time::temporal
 {
-	class WeekFields : public __JniBaseClass
+	class WeekFields : public JObject
 	{
 	public:
 		// Fields
 		static java::time::temporal::WeekFields ISO();
 		static java::time::temporal::WeekFields SUNDAY_START();
-		static __JniBaseClass WEEK_BASED_YEARS();
+		static JObject WEEK_BASED_YEARS();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit WeekFields(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit WeekFields(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		WeekFields(QAndroidJniObject obj);
 		
 		// Constructors
@@ -34,16 +34,16 @@ namespace java::time::temporal
 		// Methods
 		static java::time::temporal::WeekFields of(java::util::Locale arg0);
 		static java::time::temporal::WeekFields of(java::time::DayOfWeek arg0, jint arg1);
-		__JniBaseClass dayOfWeek();
+		JObject dayOfWeek();
 		jboolean equals(jobject arg0);
 		java::time::DayOfWeek getFirstDayOfWeek();
 		jint getMinimalDaysInFirstWeek();
 		jint hashCode();
 		jstring toString();
-		__JniBaseClass weekBasedYear();
-		__JniBaseClass weekOfMonth();
-		__JniBaseClass weekOfWeekBasedYear();
-		__JniBaseClass weekOfYear();
+		JObject weekBasedYear();
+		JObject weekOfMonth();
+		JObject weekOfWeekBasedYear();
+		JObject weekOfYear();
 	};
 } // namespace java::time::temporal
 

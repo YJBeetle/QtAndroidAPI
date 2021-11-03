@@ -10,7 +10,7 @@
 namespace android::content::pm
 {
 	// Fields
-	__JniBaseClass ShortcutInfo::CREATOR()
+	JObject ShortcutInfo::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.content.pm.ShortcutInfo",
@@ -84,7 +84,7 @@ namespace android::content::pm
 	}
 	
 	// QAndroidJniObject forward
-	ShortcutInfo::ShortcutInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	ShortcutInfo::ShortcutInfo(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -103,7 +103,7 @@ namespace android::content::pm
 			"()Landroid/content/ComponentName;"
 		);
 	}
-	__JniBaseClass ShortcutInfo::getCategories()
+	JObject ShortcutInfo::getCategories()
 	{
 		return callObjectMethod(
 			"getCategories",

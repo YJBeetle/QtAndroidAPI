@@ -6,7 +6,7 @@
 namespace android::view::inputmethod
 {
 	// Fields
-	__JniBaseClass EditorInfo::CREATOR()
+	JObject EditorInfo::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.view.inputmethod.EditorInfo",
@@ -247,11 +247,11 @@ namespace android::view::inputmethod
 	}
 	
 	// QAndroidJniObject forward
-	EditorInfo::EditorInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	EditorInfo::EditorInfo(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	EditorInfo::EditorInfo()
-		: __JniBaseClass(
+		: JObject(
 			"android.view.inputmethod.EditorInfo",
 			"()V"
 		) {}
@@ -264,7 +264,7 @@ namespace android::view::inputmethod
 			"()I"
 		);
 	}
-	void EditorInfo::dump(__JniBaseClass arg0, jstring arg1)
+	void EditorInfo::dump(JObject arg0, jstring arg1)
 	{
 		callMethod<void>(
 			"dump",

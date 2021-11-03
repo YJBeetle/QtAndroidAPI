@@ -5,7 +5,7 @@
 namespace android::view::textservice
 {
 	// Fields
-	__JniBaseClass SentenceSuggestionsInfo::CREATOR()
+	JObject SentenceSuggestionsInfo::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.view.textservice.SentenceSuggestionsInfo",
@@ -15,17 +15,17 @@ namespace android::view::textservice
 	}
 	
 	// QAndroidJniObject forward
-	SentenceSuggestionsInfo::SentenceSuggestionsInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	SentenceSuggestionsInfo::SentenceSuggestionsInfo(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	SentenceSuggestionsInfo::SentenceSuggestionsInfo(android::os::Parcel arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.view.textservice.SentenceSuggestionsInfo",
 			"(Landroid/os/Parcel;)V",
 			arg0.object()
 		) {}
 	SentenceSuggestionsInfo::SentenceSuggestionsInfo(jarray arg0, jintArray arg1, jintArray arg2)
-		: __JniBaseClass(
+		: JObject(
 			"android.view.textservice.SentenceSuggestionsInfo",
 			"([Landroid/view/textservice/SuggestionsInfo;[I[I)V",
 			arg0,

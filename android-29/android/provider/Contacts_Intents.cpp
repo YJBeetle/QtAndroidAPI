@@ -61,11 +61,11 @@ namespace android::provider
 	}
 	
 	// QAndroidJniObject forward
-	Contacts_Intents::Contacts_Intents(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Contacts_Intents::Contacts_Intents(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Contacts_Intents::Contacts_Intents()
-		: __JniBaseClass(
+		: JObject(
 			"android.provider.Contacts$Intents",
 			"()V"
 		) {}

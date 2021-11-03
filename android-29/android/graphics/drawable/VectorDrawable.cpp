@@ -103,7 +103,7 @@ namespace android::graphics::drawable
 			"()Landroid/graphics/Insets;"
 		);
 	}
-	void VectorDrawable::inflate(android::content::res::Resources arg0, __JniBaseClass arg1, __JniBaseClass arg2, android::content::res::Resources_Theme arg3)
+	void VectorDrawable::inflate(android::content::res::Resources arg0, JObject arg1, JObject arg2, android::content::res::Resources_Theme arg3)
 	{
 		callMethod<void>(
 			"inflate",

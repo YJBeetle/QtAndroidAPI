@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::content
 {
@@ -77,7 +77,7 @@ namespace java::util
 
 namespace android::media
 {
-	class MediaPlayer : public __JniBaseClass
+	class MediaPlayer : public JObject
 	{
 	public:
 		// Fields
@@ -114,7 +114,7 @@ namespace android::media
 		static jint VIDEO_SCALING_MODE_SCALE_TO_FIT_WITH_CROPPING();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MediaPlayer(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit MediaPlayer(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		MediaPlayer(QAndroidJniObject obj);
 		
 		// Constructors
@@ -123,10 +123,10 @@ namespace android::media
 		// Methods
 		static android::media::MediaPlayer create(android::content::Context arg0, android::net::Uri arg1);
 		static android::media::MediaPlayer create(android::content::Context arg0, jint arg1);
-		static android::media::MediaPlayer create(android::content::Context arg0, android::net::Uri arg1, __JniBaseClass arg2);
+		static android::media::MediaPlayer create(android::content::Context arg0, android::net::Uri arg1, JObject arg2);
 		static android::media::MediaPlayer create(android::content::Context arg0, jint arg1, android::media::AudioAttributes arg2, jint arg3);
-		static android::media::MediaPlayer create(android::content::Context arg0, android::net::Uri arg1, __JniBaseClass arg2, android::media::AudioAttributes arg3, jint arg4);
-		void addOnRoutingChangedListener(__JniBaseClass arg0, android::os::Handler arg1);
+		static android::media::MediaPlayer create(android::content::Context arg0, android::net::Uri arg1, JObject arg2, android::media::AudioAttributes arg3, jint arg4);
+		void addOnRoutingChangedListener(JObject arg0, android::os::Handler arg1);
 		void addTimedTextSource(java::io::FileDescriptor arg0, jstring arg1);
 		void addTimedTextSource(jstring arg0, jstring arg1);
 		void addTimedTextSource(android::content::Context arg0, android::net::Uri arg1, jstring arg2);
@@ -141,7 +141,7 @@ namespace android::media
 		android::media::MediaPlayer_DrmInfo getDrmInfo();
 		jstring getDrmPropertyString(jstring arg0);
 		jint getDuration();
-		android::media::MediaDrm_KeyRequest getKeyRequest(jbyteArray arg0, jbyteArray arg1, jstring arg2, jint arg3, __JniBaseClass arg4);
+		android::media::MediaDrm_KeyRequest getKeyRequest(jbyteArray arg0, jbyteArray arg1, jstring arg2, jint arg3, JObject arg4);
 		android::os::PersistableBundle getMetrics();
 		android::media::PlaybackParams getPlaybackParams();
 		android::media::AudioDeviceInfo getPreferredDevice();
@@ -161,7 +161,7 @@ namespace android::media
 		jbyteArray provideKeyResponse(jbyteArray arg0, jbyteArray arg1);
 		void release();
 		void releaseDrm();
-		void removeOnRoutingChangedListener(__JniBaseClass arg0);
+		void removeOnRoutingChangedListener(JObject arg0);
 		void reset();
 		void restoreKeys(jbyteArray arg0);
 		void seekTo(jint arg0);
@@ -176,31 +176,31 @@ namespace android::media
 		void setDataSource(java::io::FileDescriptor arg0);
 		void setDataSource(jstring arg0);
 		void setDataSource(android::content::Context arg0, android::net::Uri arg1);
-		void setDataSource(android::content::Context arg0, android::net::Uri arg1, __JniBaseClass arg2);
+		void setDataSource(android::content::Context arg0, android::net::Uri arg1, JObject arg2);
 		void setDataSource(java::io::FileDescriptor arg0, jlong arg1, jlong arg2);
-		void setDataSource(android::content::Context arg0, android::net::Uri arg1, __JniBaseClass arg2, __JniBaseClass arg3);
-		void setDisplay(__JniBaseClass arg0);
+		void setDataSource(android::content::Context arg0, android::net::Uri arg1, JObject arg2, JObject arg3);
+		void setDisplay(JObject arg0);
 		void setDrmPropertyString(jstring arg0, jstring arg1);
 		void setLooping(jboolean arg0);
 		void setNextMediaPlayer(android::media::MediaPlayer arg0);
-		void setOnBufferingUpdateListener(__JniBaseClass arg0);
-		void setOnCompletionListener(__JniBaseClass arg0);
-		void setOnDrmConfigHelper(__JniBaseClass arg0);
-		void setOnDrmInfoListener(__JniBaseClass arg0);
-		void setOnDrmInfoListener(__JniBaseClass arg0, android::os::Handler arg1);
-		void setOnDrmPreparedListener(__JniBaseClass arg0);
-		void setOnDrmPreparedListener(__JniBaseClass arg0, android::os::Handler arg1);
-		void setOnErrorListener(__JniBaseClass arg0);
-		void setOnInfoListener(__JniBaseClass arg0);
-		void setOnMediaTimeDiscontinuityListener(__JniBaseClass arg0);
-		void setOnMediaTimeDiscontinuityListener(__JniBaseClass arg0, android::os::Handler arg1);
-		void setOnPreparedListener(__JniBaseClass arg0);
-		void setOnSeekCompleteListener(__JniBaseClass arg0);
-		void setOnSubtitleDataListener(__JniBaseClass arg0);
-		void setOnSubtitleDataListener(__JniBaseClass arg0, android::os::Handler arg1);
-		void setOnTimedMetaDataAvailableListener(__JniBaseClass arg0);
-		void setOnTimedTextListener(__JniBaseClass arg0);
-		void setOnVideoSizeChangedListener(__JniBaseClass arg0);
+		void setOnBufferingUpdateListener(JObject arg0);
+		void setOnCompletionListener(JObject arg0);
+		void setOnDrmConfigHelper(JObject arg0);
+		void setOnDrmInfoListener(JObject arg0);
+		void setOnDrmInfoListener(JObject arg0, android::os::Handler arg1);
+		void setOnDrmPreparedListener(JObject arg0);
+		void setOnDrmPreparedListener(JObject arg0, android::os::Handler arg1);
+		void setOnErrorListener(JObject arg0);
+		void setOnInfoListener(JObject arg0);
+		void setOnMediaTimeDiscontinuityListener(JObject arg0);
+		void setOnMediaTimeDiscontinuityListener(JObject arg0, android::os::Handler arg1);
+		void setOnPreparedListener(JObject arg0);
+		void setOnSeekCompleteListener(JObject arg0);
+		void setOnSubtitleDataListener(JObject arg0);
+		void setOnSubtitleDataListener(JObject arg0, android::os::Handler arg1);
+		void setOnTimedMetaDataAvailableListener(JObject arg0);
+		void setOnTimedTextListener(JObject arg0);
+		void setOnVideoSizeChangedListener(JObject arg0);
 		void setPlaybackParams(android::media::PlaybackParams arg0);
 		jboolean setPreferredDevice(android::media::AudioDeviceInfo arg0);
 		void setScreenOnWhilePlaying(jboolean arg0);

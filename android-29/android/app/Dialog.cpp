@@ -22,17 +22,17 @@ namespace android::app
 	// Fields
 	
 	// QAndroidJniObject forward
-	Dialog::Dialog(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Dialog::Dialog(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Dialog::Dialog(android::content::Context arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.app.Dialog",
 			"(Landroid/content/Context;)V",
 			arg0.object()
 		) {}
 	Dialog::Dialog(android::content::Context arg0, jint arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.app.Dialog",
 			"(Landroid/content/Context;I)V",
 			arg0.object(),
@@ -247,7 +247,7 @@ namespace android::app
 			"()V"
 		);
 	}
-	jboolean Dialog::onContextItemSelected(__JniBaseClass arg0)
+	jboolean Dialog::onContextItemSelected(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"onContextItemSelected",
@@ -255,7 +255,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Dialog::onContextMenuClosed(__JniBaseClass arg0)
+	void Dialog::onContextMenuClosed(JObject arg0)
 	{
 		callMethod<void>(
 			"onContextMenuClosed",
@@ -263,7 +263,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Dialog::onCreateContextMenu(__JniBaseClass arg0, android::view::View arg1, __JniBaseClass arg2)
+	void Dialog::onCreateContextMenu(JObject arg0, android::view::View arg1, JObject arg2)
 	{
 		callMethod<void>(
 			"onCreateContextMenu",
@@ -273,7 +273,7 @@ namespace android::app
 			arg2.object()
 		);
 	}
-	jboolean Dialog::onCreateOptionsMenu(__JniBaseClass arg0)
+	jboolean Dialog::onCreateOptionsMenu(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"onCreateOptionsMenu",
@@ -281,7 +281,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	jboolean Dialog::onCreatePanelMenu(jint arg0, __JniBaseClass arg1)
+	jboolean Dialog::onCreatePanelMenu(jint arg0, JObject arg1)
 	{
 		return callMethod<jboolean>(
 			"onCreatePanelMenu",
@@ -359,7 +359,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	jboolean Dialog::onMenuItemSelected(jint arg0, __JniBaseClass arg1)
+	jboolean Dialog::onMenuItemSelected(jint arg0, JObject arg1)
 	{
 		return callMethod<jboolean>(
 			"onMenuItemSelected",
@@ -368,7 +368,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	jboolean Dialog::onMenuOpened(jint arg0, __JniBaseClass arg1)
+	jboolean Dialog::onMenuOpened(jint arg0, JObject arg1)
 	{
 		return callMethod<jboolean>(
 			"onMenuOpened",
@@ -377,7 +377,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	jboolean Dialog::onOptionsItemSelected(__JniBaseClass arg0)
+	jboolean Dialog::onOptionsItemSelected(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"onOptionsItemSelected",
@@ -385,7 +385,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Dialog::onOptionsMenuClosed(__JniBaseClass arg0)
+	void Dialog::onOptionsMenuClosed(JObject arg0)
 	{
 		callMethod<void>(
 			"onOptionsMenuClosed",
@@ -393,7 +393,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Dialog::onPanelClosed(jint arg0, __JniBaseClass arg1)
+	void Dialog::onPanelClosed(jint arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"onPanelClosed",
@@ -402,7 +402,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	jboolean Dialog::onPrepareOptionsMenu(__JniBaseClass arg0)
+	jboolean Dialog::onPrepareOptionsMenu(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"onPrepareOptionsMenu",
@@ -410,7 +410,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	jboolean Dialog::onPreparePanel(jint arg0, android::view::View arg1, __JniBaseClass arg2)
+	jboolean Dialog::onPreparePanel(jint arg0, android::view::View arg1, JObject arg2)
 	{
 		return callMethod<jboolean>(
 			"onPreparePanel",
@@ -482,7 +482,7 @@ namespace android::app
 			arg0
 		);
 	}
-	android::view::ActionMode Dialog::onWindowStartingActionMode(__JniBaseClass arg0)
+	android::view::ActionMode Dialog::onWindowStartingActionMode(JObject arg0)
 	{
 		return callObjectMethod(
 			"onWindowStartingActionMode",
@@ -490,7 +490,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	android::view::ActionMode Dialog::onWindowStartingActionMode(__JniBaseClass arg0, jint arg1)
+	android::view::ActionMode Dialog::onWindowStartingActionMode(JObject arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"onWindowStartingActionMode",
@@ -631,7 +631,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	void Dialog::setOnCancelListener(__JniBaseClass arg0)
+	void Dialog::setOnCancelListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setOnCancelListener",
@@ -639,7 +639,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Dialog::setOnDismissListener(__JniBaseClass arg0)
+	void Dialog::setOnDismissListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setOnDismissListener",
@@ -647,7 +647,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Dialog::setOnKeyListener(__JniBaseClass arg0)
+	void Dialog::setOnKeyListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setOnKeyListener",
@@ -655,7 +655,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Dialog::setOnShowListener(__JniBaseClass arg0)
+	void Dialog::setOnShowListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setOnShowListener",

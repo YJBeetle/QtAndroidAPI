@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 
 namespace android::media::audiofx
 {
-	class EnvironmentalReverb_Settings : public __JniBaseClass
+	class EnvironmentalReverb_Settings : public JObject
 	{
 	public:
 		// Fields
@@ -21,7 +21,7 @@ namespace android::media::audiofx
 		jshort roomLevel();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit EnvironmentalReverb_Settings(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit EnvironmentalReverb_Settings(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		EnvironmentalReverb_Settings(QAndroidJniObject obj);
 		
 		// Constructors

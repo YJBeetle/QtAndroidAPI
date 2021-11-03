@@ -46,7 +46,7 @@ namespace android::view
 			"(Landroid/view/ViewGroup$MarginLayoutParams;)V",
 			arg0.object()
 		) {}
-	ViewGroup_MarginLayoutParams::ViewGroup_MarginLayoutParams(android::content::Context arg0, __JniBaseClass arg1)
+	ViewGroup_MarginLayoutParams::ViewGroup_MarginLayoutParams(android::content::Context arg0, JObject arg1)
 		: android::view::ViewGroup_LayoutParams(
 			"android.view.ViewGroup$MarginLayoutParams",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",

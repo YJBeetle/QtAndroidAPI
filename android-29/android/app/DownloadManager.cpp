@@ -289,7 +289,7 @@ namespace android::app
 	}
 	
 	// QAndroidJniObject forward
-	DownloadManager::DownloadManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	DownloadManager::DownloadManager(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -374,7 +374,7 @@ namespace android::app
 			arg0
 		);
 	}
-	__JniBaseClass DownloadManager::query(android::app::DownloadManager_Query arg0)
+	JObject DownloadManager::query(android::app::DownloadManager_Query arg0)
 	{
 		return callObjectMethod(
 			"query",

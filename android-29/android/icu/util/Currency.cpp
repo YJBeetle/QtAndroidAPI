@@ -45,7 +45,7 @@ namespace android::icu::util
 			arg0.object()
 		);
 	}
-	__JniBaseClass Currency::getAvailableCurrencies()
+	JObject Currency::getAvailableCurrencies()
 	{
 		return callStaticObjectMethod(
 			"android.icu.util.Currency",

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::content
 {
@@ -25,13 +25,13 @@ namespace android::os
 
 namespace android::media
 {
-	class MediaController2_Builder : public __JniBaseClass
+	class MediaController2_Builder : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MediaController2_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit MediaController2_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		MediaController2_Builder(QAndroidJniObject obj);
 		
 		// Constructors
@@ -40,7 +40,7 @@ namespace android::media
 		// Methods
 		android::media::MediaController2 build();
 		android::media::MediaController2_Builder setConnectionHints(android::os::Bundle arg0);
-		android::media::MediaController2_Builder setControllerCallback(__JniBaseClass arg0, android::media::MediaController2_ControllerCallback arg1);
+		android::media::MediaController2_Builder setControllerCallback(JObject arg0, android::media::MediaController2_ControllerCallback arg1);
 	};
 } // namespace android::media
 

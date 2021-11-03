@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../../__JniBaseClass.hpp"
+#include "../../../../JObject.hpp"
 
 namespace java::util::concurrent
 {
@@ -13,13 +13,13 @@ namespace java::util::concurrent::locks
 
 namespace java::util::concurrent::locks
 {
-	class ReentrantReadWriteLock_ReadLock : public __JniBaseClass
+	class ReentrantReadWriteLock_ReadLock : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ReentrantReadWriteLock_ReadLock(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ReentrantReadWriteLock_ReadLock(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ReentrantReadWriteLock_ReadLock(QAndroidJniObject obj);
 		
 		// Constructors
@@ -27,7 +27,7 @@ namespace java::util::concurrent::locks
 		// Methods
 		void lock();
 		void lockInterruptibly();
-		__JniBaseClass newCondition();
+		JObject newCondition();
 		jstring toString();
 		jboolean tryLock();
 		jboolean tryLock(jlong arg0, java::util::concurrent::TimeUnit arg1);

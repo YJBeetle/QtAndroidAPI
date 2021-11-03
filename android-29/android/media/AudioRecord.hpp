@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::media
 {
@@ -41,7 +41,7 @@ namespace java::nio
 
 namespace android::media
 {
-	class AudioRecord : public __JniBaseClass
+	class AudioRecord : public JObject
 	{
 	public:
 		// Fields
@@ -58,7 +58,7 @@ namespace android::media
 		static jint SUCCESS();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit AudioRecord(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit AudioRecord(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		AudioRecord(QAndroidJniObject obj);
 		
 		// Constructors
@@ -66,8 +66,8 @@ namespace android::media
 		
 		// Methods
 		static jint getMinBufferSize(jint arg0, jint arg1, jint arg2);
-		void addOnRoutingChangedListener(__JniBaseClass arg0, android::os::Handler arg1);
-		__JniBaseClass getActiveMicrophones();
+		void addOnRoutingChangedListener(JObject arg0, android::os::Handler arg1);
+		JObject getActiveMicrophones();
 		android::media::AudioRecordingConfiguration getActiveRecordingConfiguration();
 		jint getAudioFormat();
 		jint getAudioSessionId();
@@ -92,16 +92,16 @@ namespace android::media
 		jint read(jbyteArray arg0, jint arg1, jint arg2, jint arg3);
 		jint read(jfloatArray arg0, jint arg1, jint arg2, jint arg3);
 		jint read(jshortArray arg0, jint arg1, jint arg2, jint arg3);
-		void registerAudioRecordingCallback(__JniBaseClass arg0, android::media::AudioManager_AudioRecordingCallback arg1);
+		void registerAudioRecordingCallback(JObject arg0, android::media::AudioManager_AudioRecordingCallback arg1);
 		void release();
-		void removeOnRoutingChangedListener(__JniBaseClass arg0);
+		void removeOnRoutingChangedListener(JObject arg0);
 		jint setNotificationMarkerPosition(jint arg0);
 		jint setPositionNotificationPeriod(jint arg0);
 		jboolean setPreferredDevice(android::media::AudioDeviceInfo arg0);
 		jboolean setPreferredMicrophoneDirection(jint arg0);
 		jboolean setPreferredMicrophoneFieldDimension(jfloat arg0);
-		void setRecordPositionUpdateListener(__JniBaseClass arg0);
-		void setRecordPositionUpdateListener(__JniBaseClass arg0, android::os::Handler arg1);
+		void setRecordPositionUpdateListener(JObject arg0);
+		void setRecordPositionUpdateListener(JObject arg0, android::os::Handler arg1);
 		void startRecording();
 		void startRecording(android::media::MediaSyncEvent arg0);
 		void stop();

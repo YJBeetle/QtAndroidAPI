@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace java::io
 {
@@ -33,13 +33,13 @@ namespace java::util::regex
 
 namespace java::util
 {
-	class Formatter : public __JniBaseClass
+	class Formatter : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Formatter(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Formatter(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Formatter(QAndroidJniObject obj);
 		
 		// Constructors
@@ -47,12 +47,12 @@ namespace java::util
 		Formatter(java::io::File arg0);
 		Formatter(java::io::OutputStream arg0);
 		Formatter(java::io::PrintStream arg0);
-		Formatter(__JniBaseClass arg0);
+		Formatter(JObject arg0);
 		Formatter(jstring arg0);
 		Formatter(java::util::Locale arg0);
 		Formatter(java::io::File arg0, jstring arg1);
 		Formatter(java::io::OutputStream arg0, jstring arg1);
-		Formatter(__JniBaseClass arg0, java::util::Locale arg1);
+		Formatter(JObject arg0, java::util::Locale arg1);
 		Formatter(jstring arg0, jstring arg1);
 		Formatter(java::io::File arg0, jstring arg1, java::util::Locale arg2);
 		Formatter(java::io::File arg0, java::nio::charset::Charset arg1, java::util::Locale arg2);
@@ -68,7 +68,7 @@ namespace java::util
 		java::util::Formatter format(java::util::Locale arg0, jstring arg1, jobjectArray arg2);
 		java::io::IOException ioException();
 		java::util::Locale locale();
-		__JniBaseClass out();
+		JObject out();
 		jstring toString();
 	};
 } // namespace java::util

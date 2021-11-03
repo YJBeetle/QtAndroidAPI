@@ -3,7 +3,7 @@
 namespace java::time::temporal
 {
 	// Fields
-	__JniBaseClass JulianFields::JULIAN_DAY()
+	JObject JulianFields::JULIAN_DAY()
 	{
 		return getStaticObjectField(
 			"java.time.temporal.JulianFields",
@@ -11,7 +11,7 @@ namespace java::time::temporal
 			"Ljava/time/temporal/TemporalField;"
 		);
 	}
-	__JniBaseClass JulianFields::MODIFIED_JULIAN_DAY()
+	JObject JulianFields::MODIFIED_JULIAN_DAY()
 	{
 		return getStaticObjectField(
 			"java.time.temporal.JulianFields",
@@ -19,7 +19,7 @@ namespace java::time::temporal
 			"Ljava/time/temporal/TemporalField;"
 		);
 	}
-	__JniBaseClass JulianFields::RATA_DIE()
+	JObject JulianFields::RATA_DIE()
 	{
 		return getStaticObjectField(
 			"java.time.temporal.JulianFields",
@@ -29,7 +29,7 @@ namespace java::time::temporal
 	}
 	
 	// QAndroidJniObject forward
-	JulianFields::JulianFields(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	JulianFields::JulianFields(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

@@ -24,16 +24,16 @@ namespace android::media::audiofx
 	}
 	
 	// QAndroidJniObject forward
-	Equalizer_Settings::Equalizer_Settings(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Equalizer_Settings::Equalizer_Settings(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Equalizer_Settings::Equalizer_Settings()
-		: __JniBaseClass(
+		: JObject(
 			"android.media.audiofx.Equalizer$Settings",
 			"()V"
 		) {}
 	Equalizer_Settings::Equalizer_Settings(jstring arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.media.audiofx.Equalizer$Settings",
 			"(Ljava/lang/String;)V",
 			arg0

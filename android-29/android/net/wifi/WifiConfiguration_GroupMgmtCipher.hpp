@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 
 namespace android::net::wifi
 {
-	class WifiConfiguration_GroupMgmtCipher : public __JniBaseClass
+	class WifiConfiguration_GroupMgmtCipher : public JObject
 	{
 	public:
 		// Fields
@@ -14,7 +14,7 @@ namespace android::net::wifi
 		static jint BIP_GMAC_256();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit WifiConfiguration_GroupMgmtCipher(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit WifiConfiguration_GroupMgmtCipher(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		WifiConfiguration_GroupMgmtCipher(QAndroidJniObject obj);
 		
 		// Constructors

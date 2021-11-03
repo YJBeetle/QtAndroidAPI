@@ -31,16 +31,16 @@ namespace android::net
 	}
 	
 	// QAndroidJniObject forward
-	LocalSocket::LocalSocket(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	LocalSocket::LocalSocket(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	LocalSocket::LocalSocket()
-		: __JniBaseClass(
+		: JObject(
 			"android.net.LocalSocket",
 			"()V"
 		) {}
 	LocalSocket::LocalSocket(jint arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.net.LocalSocket",
 			"(I)V",
 			arg0

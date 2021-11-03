@@ -7,16 +7,16 @@ namespace org::xml::sax::helpers
 	// Fields
 	
 	// QAndroidJniObject forward
-	XMLFilterImpl::XMLFilterImpl(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	XMLFilterImpl::XMLFilterImpl(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	XMLFilterImpl::XMLFilterImpl()
-		: __JniBaseClass(
+		: JObject(
 			"org.xml.sax.helpers.XMLFilterImpl",
 			"()V"
 		) {}
-	XMLFilterImpl::XMLFilterImpl(__JniBaseClass arg0)
-		: __JniBaseClass(
+	XMLFilterImpl::XMLFilterImpl(JObject arg0)
+		: JObject(
 			"org.xml.sax.helpers.XMLFilterImpl",
 			"(Lorg/xml/sax/XMLReader;)V",
 			arg0.object()
@@ -74,28 +74,28 @@ namespace org::xml::sax::helpers
 			arg0.object()
 		);
 	}
-	__JniBaseClass XMLFilterImpl::getContentHandler()
+	JObject XMLFilterImpl::getContentHandler()
 	{
 		return callObjectMethod(
 			"getContentHandler",
 			"()Lorg/xml/sax/ContentHandler;"
 		);
 	}
-	__JniBaseClass XMLFilterImpl::getDTDHandler()
+	JObject XMLFilterImpl::getDTDHandler()
 	{
 		return callObjectMethod(
 			"getDTDHandler",
 			"()Lorg/xml/sax/DTDHandler;"
 		);
 	}
-	__JniBaseClass XMLFilterImpl::getEntityResolver()
+	JObject XMLFilterImpl::getEntityResolver()
 	{
 		return callObjectMethod(
 			"getEntityResolver",
 			"()Lorg/xml/sax/EntityResolver;"
 		);
 	}
-	__JniBaseClass XMLFilterImpl::getErrorHandler()
+	JObject XMLFilterImpl::getErrorHandler()
 	{
 		return callObjectMethod(
 			"getErrorHandler",
@@ -110,7 +110,7 @@ namespace org::xml::sax::helpers
 			arg0
 		);
 	}
-	__JniBaseClass XMLFilterImpl::getParent()
+	JObject XMLFilterImpl::getParent()
 	{
 		return callObjectMethod(
 			"getParent",
@@ -179,7 +179,7 @@ namespace org::xml::sax::helpers
 			arg1
 		);
 	}
-	void XMLFilterImpl::setContentHandler(__JniBaseClass arg0)
+	void XMLFilterImpl::setContentHandler(JObject arg0)
 	{
 		callMethod<void>(
 			"setContentHandler",
@@ -187,7 +187,7 @@ namespace org::xml::sax::helpers
 			arg0.object()
 		);
 	}
-	void XMLFilterImpl::setDTDHandler(__JniBaseClass arg0)
+	void XMLFilterImpl::setDTDHandler(JObject arg0)
 	{
 		callMethod<void>(
 			"setDTDHandler",
@@ -195,7 +195,7 @@ namespace org::xml::sax::helpers
 			arg0.object()
 		);
 	}
-	void XMLFilterImpl::setDocumentLocator(__JniBaseClass arg0)
+	void XMLFilterImpl::setDocumentLocator(JObject arg0)
 	{
 		callMethod<void>(
 			"setDocumentLocator",
@@ -203,7 +203,7 @@ namespace org::xml::sax::helpers
 			arg0.object()
 		);
 	}
-	void XMLFilterImpl::setEntityResolver(__JniBaseClass arg0)
+	void XMLFilterImpl::setEntityResolver(JObject arg0)
 	{
 		callMethod<void>(
 			"setEntityResolver",
@@ -211,7 +211,7 @@ namespace org::xml::sax::helpers
 			arg0.object()
 		);
 	}
-	void XMLFilterImpl::setErrorHandler(__JniBaseClass arg0)
+	void XMLFilterImpl::setErrorHandler(JObject arg0)
 	{
 		callMethod<void>(
 			"setErrorHandler",
@@ -228,7 +228,7 @@ namespace org::xml::sax::helpers
 			arg1
 		);
 	}
-	void XMLFilterImpl::setParent(__JniBaseClass arg0)
+	void XMLFilterImpl::setParent(JObject arg0)
 	{
 		callMethod<void>(
 			"setParent",
@@ -260,7 +260,7 @@ namespace org::xml::sax::helpers
 			"()V"
 		);
 	}
-	void XMLFilterImpl::startElement(jstring arg0, jstring arg1, jstring arg2, __JniBaseClass arg3)
+	void XMLFilterImpl::startElement(jstring arg0, jstring arg1, jstring arg2, JObject arg3)
 	{
 		callMethod<void>(
 			"startElement",

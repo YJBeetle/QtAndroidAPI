@@ -16,7 +16,7 @@ namespace android::widget
 			"(Landroid/content/Context;)V",
 			arg0.object()
 		) {}
-	ZoomControls::ZoomControls(android::content::Context arg0, __JniBaseClass arg1)
+	ZoomControls::ZoomControls(android::content::Context arg0, JObject arg1)
 		: android::widget::LinearLayout(
 			"android.widget.ZoomControls",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
@@ -70,7 +70,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void ZoomControls::setOnZoomInClickListener(__JniBaseClass arg0)
+	void ZoomControls::setOnZoomInClickListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setOnZoomInClickListener",
@@ -78,7 +78,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void ZoomControls::setOnZoomOutClickListener(__JniBaseClass arg0)
+	void ZoomControls::setOnZoomOutClickListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setOnZoomOutClickListener",

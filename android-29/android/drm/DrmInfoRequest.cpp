@@ -49,11 +49,11 @@ namespace android::drm
 	}
 	
 	// QAndroidJniObject forward
-	DrmInfoRequest::DrmInfoRequest(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	DrmInfoRequest::DrmInfoRequest(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	DrmInfoRequest::DrmInfoRequest(jint arg0, jstring arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.drm.DrmInfoRequest",
 			"(ILjava/lang/String;)V",
 			arg0,
@@ -83,14 +83,14 @@ namespace android::drm
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	__JniBaseClass DrmInfoRequest::iterator()
+	JObject DrmInfoRequest::iterator()
 	{
 		return callObjectMethod(
 			"iterator",
 			"()Ljava/util/Iterator;"
 		);
 	}
-	__JniBaseClass DrmInfoRequest::keyIterator()
+	JObject DrmInfoRequest::keyIterator()
 	{
 		return callObjectMethod(
 			"keyIterator",

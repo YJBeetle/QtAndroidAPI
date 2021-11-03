@@ -9,7 +9,7 @@ namespace javax::xml::validation
 	// Fields
 	
 	// QAndroidJniObject forward
-	SchemaFactory::SchemaFactory(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	SchemaFactory::SchemaFactory(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -42,7 +42,7 @@ namespace javax::xml::validation
 			arg2.object()
 		);
 	}
-	__JniBaseClass SchemaFactory::getErrorHandler()
+	JObject SchemaFactory::getErrorHandler()
 	{
 		return callObjectMethod(
 			"getErrorHandler",
@@ -65,7 +65,7 @@ namespace javax::xml::validation
 			arg0
 		).object<jobject>();
 	}
-	__JniBaseClass SchemaFactory::getResourceResolver()
+	JObject SchemaFactory::getResourceResolver()
 	{
 		return callObjectMethod(
 			"getResourceResolver",
@@ -111,7 +111,7 @@ namespace javax::xml::validation
 			arg0.object()
 		);
 	}
-	javax::xml::validation::Schema SchemaFactory::newSchema(__JniBaseClass arg0)
+	javax::xml::validation::Schema SchemaFactory::newSchema(JObject arg0)
 	{
 		return callObjectMethod(
 			"newSchema",
@@ -119,7 +119,7 @@ namespace javax::xml::validation
 			arg0.object()
 		);
 	}
-	void SchemaFactory::setErrorHandler(__JniBaseClass arg0)
+	void SchemaFactory::setErrorHandler(JObject arg0)
 	{
 		callMethod<void>(
 			"setErrorHandler",
@@ -145,7 +145,7 @@ namespace javax::xml::validation
 			arg1
 		);
 	}
-	void SchemaFactory::setResourceResolver(__JniBaseClass arg0)
+	void SchemaFactory::setResourceResolver(JObject arg0)
 	{
 		callMethod<void>(
 			"setResourceResolver",

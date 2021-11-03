@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::hardware
 {
@@ -33,7 +33,7 @@ namespace android::os
 
 namespace android::hardware
 {
-	class SensorManager : public __JniBaseClass
+	class SensorManager : public JObject
 	{
 	public:
 		// Fields
@@ -97,7 +97,7 @@ namespace android::hardware
 		static jfloat STANDARD_GRAVITY();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit SensorManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit SensorManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		SensorManager(QAndroidJniObject obj);
 		
 		// Constructors
@@ -114,26 +114,26 @@ namespace android::hardware
 		jboolean cancelTriggerSensor(android::hardware::TriggerEventListener arg0, android::hardware::Sensor arg1);
 		android::hardware::SensorDirectChannel createDirectChannel(android::hardware::HardwareBuffer arg0);
 		android::hardware::SensorDirectChannel createDirectChannel(android::os::MemoryFile arg0);
-		jboolean flush(__JniBaseClass arg0);
+		jboolean flush(JObject arg0);
 		android::hardware::Sensor getDefaultSensor(jint arg0);
 		android::hardware::Sensor getDefaultSensor(jint arg0, jboolean arg1);
-		__JniBaseClass getDynamicSensorList(jint arg0);
-		__JniBaseClass getSensorList(jint arg0);
+		JObject getDynamicSensorList(jint arg0);
+		JObject getSensorList(jint arg0);
 		jint getSensors();
 		jboolean isDynamicSensorDiscoverySupported();
 		void registerDynamicSensorCallback(android::hardware::SensorManager_DynamicSensorCallback arg0);
 		void registerDynamicSensorCallback(android::hardware::SensorManager_DynamicSensorCallback arg0, android::os::Handler arg1);
-		jboolean registerListener(__JniBaseClass arg0, jint arg1);
-		jboolean registerListener(__JniBaseClass arg0, android::hardware::Sensor arg1, jint arg2);
-		jboolean registerListener(__JniBaseClass arg0, jint arg1, jint arg2);
-		jboolean registerListener(__JniBaseClass arg0, android::hardware::Sensor arg1, jint arg2, android::os::Handler arg3);
-		jboolean registerListener(__JniBaseClass arg0, android::hardware::Sensor arg1, jint arg2, jint arg3);
-		jboolean registerListener(__JniBaseClass arg0, android::hardware::Sensor arg1, jint arg2, jint arg3, android::os::Handler arg4);
+		jboolean registerListener(JObject arg0, jint arg1);
+		jboolean registerListener(JObject arg0, android::hardware::Sensor arg1, jint arg2);
+		jboolean registerListener(JObject arg0, jint arg1, jint arg2);
+		jboolean registerListener(JObject arg0, android::hardware::Sensor arg1, jint arg2, android::os::Handler arg3);
+		jboolean registerListener(JObject arg0, android::hardware::Sensor arg1, jint arg2, jint arg3);
+		jboolean registerListener(JObject arg0, android::hardware::Sensor arg1, jint arg2, jint arg3, android::os::Handler arg4);
 		jboolean requestTriggerSensor(android::hardware::TriggerEventListener arg0, android::hardware::Sensor arg1);
 		void unregisterDynamicSensorCallback(android::hardware::SensorManager_DynamicSensorCallback arg0);
-		void unregisterListener(__JniBaseClass arg0);
-		void unregisterListener(__JniBaseClass arg0, android::hardware::Sensor arg1);
-		void unregisterListener(__JniBaseClass arg0, jint arg1);
+		void unregisterListener(JObject arg0);
+		void unregisterListener(JObject arg0, android::hardware::Sensor arg1);
+		void unregisterListener(JObject arg0, jint arg1);
 	};
 } // namespace android::hardware
 

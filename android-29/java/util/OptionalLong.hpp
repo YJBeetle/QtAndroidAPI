@@ -1,17 +1,17 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 
 namespace java::util
 {
-	class OptionalLong : public __JniBaseClass
+	class OptionalLong : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit OptionalLong(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit OptionalLong(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		OptionalLong(QAndroidJniObject obj);
 		
 		// Constructors
@@ -22,15 +22,15 @@ namespace java::util
 		jboolean equals(jobject arg0);
 		jlong getAsLong();
 		jint hashCode();
-		void ifPresent(__JniBaseClass arg0);
-		void ifPresentOrElse(__JniBaseClass arg0, __JniBaseClass arg1);
+		void ifPresent(JObject arg0);
+		void ifPresentOrElse(JObject arg0, JObject arg1);
 		jboolean isEmpty();
 		jboolean isPresent();
 		jlong orElse(jlong arg0);
-		jlong orElseGet(__JniBaseClass arg0);
+		jlong orElseGet(JObject arg0);
 		jlong orElseThrow();
-		jlong orElseThrow(__JniBaseClass arg0);
-		__JniBaseClass stream();
+		jlong orElseThrow(JObject arg0);
+		JObject stream();
 		jstring toString();
 	};
 } // namespace java::util

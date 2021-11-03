@@ -23,7 +23,7 @@ namespace android::sax
 		) {}
 	
 	// Methods
-	__JniBaseClass RootElement::getContentHandler()
+	JObject RootElement::getContentHandler()
 	{
 		return callObjectMethod(
 			"getContentHandler",

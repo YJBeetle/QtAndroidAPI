@@ -14,11 +14,11 @@ namespace android::app
 	}
 	
 	// QAndroidJniObject forward
-	ActionBar_Tab::ActionBar_Tab(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	ActionBar_Tab::ActionBar_Tab(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ActionBar_Tab::ActionBar_Tab()
-		: __JniBaseClass(
+		: JObject(
 			"android.app.ActionBar$Tab",
 			"()V"
 		) {}
@@ -121,7 +121,7 @@ namespace android::app
 			arg0
 		);
 	}
-	android::app::ActionBar_Tab ActionBar_Tab::setTabListener(__JniBaseClass arg0)
+	android::app::ActionBar_Tab ActionBar_Tab::setTabListener(JObject arg0)
 	{
 		return callObjectMethod(
 			"setTabListener",

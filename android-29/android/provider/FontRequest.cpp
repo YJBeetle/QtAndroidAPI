@@ -5,19 +5,19 @@ namespace android::provider
 	// Fields
 	
 	// QAndroidJniObject forward
-	FontRequest::FontRequest(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	FontRequest::FontRequest(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	FontRequest::FontRequest(jstring arg0, jstring arg1, jstring arg2)
-		: __JniBaseClass(
+		: JObject(
 			"android.provider.FontRequest",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
 			arg1,
 			arg2
 		) {}
-	FontRequest::FontRequest(jstring arg0, jstring arg1, jstring arg2, __JniBaseClass arg3)
-		: __JniBaseClass(
+	FontRequest::FontRequest(jstring arg0, jstring arg1, jstring arg2, JObject arg3)
+		: JObject(
 			"android.provider.FontRequest",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;)V",
 			arg0,
@@ -27,7 +27,7 @@ namespace android::provider
 		) {}
 	
 	// Methods
-	__JniBaseClass FontRequest::getCertificates()
+	JObject FontRequest::getCertificates()
 	{
 		return callObjectMethod(
 			"getCertificates",

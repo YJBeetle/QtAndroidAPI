@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::os
 {
@@ -9,22 +9,22 @@ namespace android::os
 
 namespace android::service::carrier
 {
-	class MessagePdu : public __JniBaseClass
+	class MessagePdu : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MessagePdu(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit MessagePdu(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		MessagePdu(QAndroidJniObject obj);
 		
 		// Constructors
-		MessagePdu(__JniBaseClass arg0);
+		MessagePdu(JObject arg0);
 		
 		// Methods
 		jint describeContents();
-		__JniBaseClass getPdus();
+		JObject getPdus();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::service::carrier

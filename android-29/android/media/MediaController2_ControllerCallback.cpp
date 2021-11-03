@@ -10,11 +10,11 @@ namespace android::media
 	// Fields
 	
 	// QAndroidJniObject forward
-	MediaController2_ControllerCallback::MediaController2_ControllerCallback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	MediaController2_ControllerCallback::MediaController2_ControllerCallback(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	MediaController2_ControllerCallback::MediaController2_ControllerCallback()
-		: __JniBaseClass(
+		: JObject(
 			"android.media.MediaController2$ControllerCallback",
 			"()V"
 		) {}

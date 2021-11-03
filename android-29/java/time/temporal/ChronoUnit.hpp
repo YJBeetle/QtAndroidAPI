@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "../../lang/Enum.hpp"
 
 namespace java::time
@@ -40,12 +40,12 @@ namespace java::time::temporal
 		// Methods
 		static java::time::temporal::ChronoUnit valueOf(jstring arg0);
 		static jarray values();
-		__JniBaseClass addTo(__JniBaseClass arg0, jlong arg1);
-		jlong between(__JniBaseClass arg0, __JniBaseClass arg1);
+		JObject addTo(JObject arg0, jlong arg1);
+		jlong between(JObject arg0, JObject arg1);
 		java::time::Duration getDuration();
 		jboolean isDateBased();
 		jboolean isDurationEstimated();
-		jboolean isSupportedBy(__JniBaseClass arg0);
+		jboolean isSupportedBy(JObject arg0);
 		jboolean isTimeBased();
 		jstring toString();
 	};

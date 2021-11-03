@@ -7,7 +7,7 @@
 namespace android::view::contentcapture
 {
 	// Fields
-	__JniBaseClass ContentCaptureContext::CREATOR()
+	JObject ContentCaptureContext::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.view.contentcapture.ContentCaptureContext",
@@ -17,7 +17,7 @@ namespace android::view::contentcapture
 	}
 	
 	// QAndroidJniObject forward
-	ContentCaptureContext::ContentCaptureContext(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	ContentCaptureContext::ContentCaptureContext(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

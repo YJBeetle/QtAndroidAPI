@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../../__JniBaseClass.hpp"
+#include "../../../../JObject.hpp"
 
 namespace android::os
 {
@@ -9,16 +9,16 @@ namespace android::os
 
 namespace android::net::wifi::aware
 {
-	class PublishConfig : public __JniBaseClass
+	class PublishConfig : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint PUBLISH_TYPE_SOLICITED();
 		static jint PUBLISH_TYPE_UNSOLICITED();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit PublishConfig(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit PublishConfig(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		PublishConfig(QAndroidJniObject obj);
 		
 		// Constructors

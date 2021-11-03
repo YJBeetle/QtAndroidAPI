@@ -19,14 +19,14 @@ namespace android::widget
 			"(Landroid/content/Context;)V",
 			arg0.object()
 		) {}
-	AdapterViewAnimator::AdapterViewAnimator(android::content::Context arg0, __JniBaseClass arg1)
+	AdapterViewAnimator::AdapterViewAnimator(android::content::Context arg0, JObject arg1)
 		: android::widget::AdapterView(
 			"android.widget.AdapterViewAnimator",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.object(),
 			arg1.object()
 		) {}
-	AdapterViewAnimator::AdapterViewAnimator(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
+	AdapterViewAnimator::AdapterViewAnimator(android::content::Context arg0, JObject arg1, jint arg2)
 		: android::widget::AdapterView(
 			"android.widget.AdapterViewAnimator",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
@@ -34,7 +34,7 @@ namespace android::widget
 			arg1.object(),
 			arg2
 		) {}
-	AdapterViewAnimator::AdapterViewAnimator(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
+	AdapterViewAnimator::AdapterViewAnimator(android::content::Context arg0, JObject arg1, jint arg2, jint arg3)
 		: android::widget::AdapterView(
 			"android.widget.AdapterViewAnimator",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;II)V",
@@ -73,7 +73,7 @@ namespace android::widget
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
-	__JniBaseClass AdapterViewAnimator::getAdapter()
+	JObject AdapterViewAnimator::getAdapter()
 	{
 		return callObjectMethod(
 			"getAdapter",
@@ -136,7 +136,7 @@ namespace android::widget
 			"()V"
 		);
 	}
-	void AdapterViewAnimator::onRestoreInstanceState(__JniBaseClass arg0)
+	void AdapterViewAnimator::onRestoreInstanceState(JObject arg0)
 	{
 		callMethod<void>(
 			"onRestoreInstanceState",
@@ -144,7 +144,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	__JniBaseClass AdapterViewAnimator::onSaveInstanceState()
+	JObject AdapterViewAnimator::onSaveInstanceState()
 	{
 		return callObjectMethod(
 			"onSaveInstanceState",
@@ -159,7 +159,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void AdapterViewAnimator::setAdapter(__JniBaseClass arg0)
+	void AdapterViewAnimator::setAdapter(JObject arg0)
 	{
 		callMethod<void>(
 			"setAdapter",

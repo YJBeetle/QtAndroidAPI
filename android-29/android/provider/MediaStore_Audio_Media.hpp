@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::net
 {
@@ -9,7 +9,7 @@ namespace android::net
 
 namespace android::provider
 {
-	class MediaStore_Audio_Media : public __JniBaseClass
+	class MediaStore_Audio_Media : public JObject
 	{
 	public:
 		// Fields
@@ -22,7 +22,7 @@ namespace android::provider
 		static jstring RECORD_SOUND_ACTION();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MediaStore_Audio_Media(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit MediaStore_Audio_Media(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		MediaStore_Audio_Media(QAndroidJniObject obj);
 		
 		// Constructors

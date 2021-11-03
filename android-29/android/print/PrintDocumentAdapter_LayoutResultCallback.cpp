@@ -6,7 +6,7 @@ namespace android::print
 	// Fields
 	
 	// QAndroidJniObject forward
-	PrintDocumentAdapter_LayoutResultCallback::PrintDocumentAdapter_LayoutResultCallback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	PrintDocumentAdapter_LayoutResultCallback::PrintDocumentAdapter_LayoutResultCallback(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

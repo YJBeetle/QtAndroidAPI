@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::content
 {
@@ -17,13 +17,13 @@ namespace java::io
 
 namespace android::content
 {
-	class Loader : public __JniBaseClass
+	class Loader : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Loader(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Loader(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Loader(QAndroidJniObject obj);
 		
 		// Constructors
@@ -44,16 +44,16 @@ namespace android::content
 		jboolean isReset();
 		jboolean isStarted();
 		void onContentChanged();
-		void registerListener(jint arg0, __JniBaseClass arg1);
-		void registerOnLoadCanceledListener(__JniBaseClass arg0);
+		void registerListener(jint arg0, JObject arg1);
+		void registerOnLoadCanceledListener(JObject arg0);
 		void reset();
 		void rollbackContentChanged();
 		void startLoading();
 		void stopLoading();
 		jboolean takeContentChanged();
 		jstring toString();
-		void unregisterListener(__JniBaseClass arg0);
-		void unregisterOnLoadCanceledListener(__JniBaseClass arg0);
+		void unregisterListener(JObject arg0);
+		void unregisterOnLoadCanceledListener(JObject arg0);
 	};
 } // namespace android::content
 

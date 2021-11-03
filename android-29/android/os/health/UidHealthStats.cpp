@@ -446,7 +446,7 @@ namespace android::os::health
 	}
 	
 	// QAndroidJniObject forward
-	UidHealthStats::UidHealthStats(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	UidHealthStats::UidHealthStats(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

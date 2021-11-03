@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "./AudioEffect.hpp"
 
 namespace android::media::audiofx
@@ -33,7 +33,7 @@ namespace android::media::audiofx
 		// Methods
 		jshort getPreset();
 		android::media::audiofx::PresetReverb_Settings getProperties();
-		void setParameterListener(__JniBaseClass arg0);
+		void setParameterListener(JObject arg0);
 		void setPreset(jshort arg0);
 		void setProperties(android::media::audiofx::PresetReverb_Settings arg0);
 	};

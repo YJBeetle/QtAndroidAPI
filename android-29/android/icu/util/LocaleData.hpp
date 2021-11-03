@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::icu::util
 {
@@ -21,7 +21,7 @@ namespace android::icu::util
 
 namespace android::icu::util
 {
-	class LocaleData : public __JniBaseClass
+	class LocaleData : public JObject
 	{
 	public:
 		// Fields
@@ -31,7 +31,7 @@ namespace android::icu::util
 		static jint QUOTATION_START();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit LocaleData(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit LocaleData(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		LocaleData(QAndroidJniObject obj);
 		
 		// Constructors

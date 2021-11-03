@@ -240,12 +240,12 @@ namespace android::content
 	}
 	
 	// QAndroidJniObject forward
-	RestrictionsManager::RestrictionsManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	RestrictionsManager::RestrictionsManager(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	android::os::Bundle RestrictionsManager::convertRestrictionsToBundle(__JniBaseClass arg0)
+	android::os::Bundle RestrictionsManager::convertRestrictionsToBundle(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"android.content.RestrictionsManager",
@@ -268,7 +268,7 @@ namespace android::content
 			"()Landroid/os/Bundle;"
 		);
 	}
-	__JniBaseClass RestrictionsManager::getManifestRestrictions(jstring arg0)
+	JObject RestrictionsManager::getManifestRestrictions(jstring arg0)
 	{
 		return callObjectMethod(
 			"getManifestRestrictions",

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "./Transition.hpp"
 #include "./Visibility.hpp"
 
@@ -38,7 +38,7 @@ namespace android::transition
 		
 		// Constructors
 		Explode();
-		Explode(android::content::Context arg0, __JniBaseClass arg1);
+		Explode(android::content::Context arg0, JObject arg1);
 		
 		// Methods
 		void captureEndValues(android::transition::TransitionValues arg0);

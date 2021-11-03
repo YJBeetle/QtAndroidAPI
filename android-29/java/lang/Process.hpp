@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace java::io
 {
@@ -21,33 +21,33 @@ namespace java::util::concurrent
 
 namespace java::lang
 {
-	class Process : public __JniBaseClass
+	class Process : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Process(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Process(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Process(QAndroidJniObject obj);
 		
 		// Constructors
 		Process();
 		
 		// Methods
-		__JniBaseClass children();
-		__JniBaseClass descendants();
+		JObject children();
+		JObject descendants();
 		void destroy();
 		java::lang::Process destroyForcibly();
 		jint exitValue();
 		java::io::InputStream getErrorStream();
 		java::io::InputStream getInputStream();
 		java::io::OutputStream getOutputStream();
-		__JniBaseClass info();
+		JObject info();
 		jboolean isAlive();
 		java::util::concurrent::CompletableFuture onExit();
 		jlong pid();
 		jboolean supportsNormalTermination();
-		__JniBaseClass toHandle();
+		JObject toHandle();
 		jboolean waitFor(jlong arg0, java::util::concurrent::TimeUnit arg1);
 		jint waitFor();
 	};

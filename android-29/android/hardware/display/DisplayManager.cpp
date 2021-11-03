@@ -54,7 +54,7 @@ namespace android::hardware::display
 	}
 	
 	// QAndroidJniObject forward
-	DisplayManager::DisplayManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	DisplayManager::DisplayManager(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -110,7 +110,7 @@ namespace android::hardware::display
 			arg0
 		).object<jarray>();
 	}
-	void DisplayManager::registerDisplayListener(__JniBaseClass arg0, android::os::Handler arg1)
+	void DisplayManager::registerDisplayListener(JObject arg0, android::os::Handler arg1)
 	{
 		callMethod<void>(
 			"registerDisplayListener",
@@ -119,7 +119,7 @@ namespace android::hardware::display
 			arg1.object()
 		);
 	}
-	void DisplayManager::unregisterDisplayListener(__JniBaseClass arg0)
+	void DisplayManager::unregisterDisplayListener(JObject arg0)
 	{
 		callMethod<void>(
 			"unregisterDisplayListener",

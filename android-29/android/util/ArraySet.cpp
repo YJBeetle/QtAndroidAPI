@@ -5,28 +5,28 @@ namespace android::util
 	// Fields
 	
 	// QAndroidJniObject forward
-	ArraySet::ArraySet(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	ArraySet::ArraySet(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ArraySet::ArraySet()
-		: __JniBaseClass(
+		: JObject(
 			"android.util.ArraySet",
 			"()V"
 		) {}
 	ArraySet::ArraySet(android::util::ArraySet &arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.util.ArraySet",
 			"(Landroid/util/ArraySet;)V",
 			arg0.object()
 		) {}
 	ArraySet::ArraySet(jint arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.util.ArraySet",
 			"(I)V",
 			arg0
 		) {}
-	ArraySet::ArraySet(__JniBaseClass arg0)
-		: __JniBaseClass(
+	ArraySet::ArraySet(JObject arg0)
+		: JObject(
 			"android.util.ArraySet",
 			"(Ljava/util/Collection;)V",
 			arg0.object()
@@ -41,7 +41,7 @@ namespace android::util
 			arg0
 		);
 	}
-	jboolean ArraySet::addAll(__JniBaseClass arg0)
+	jboolean ArraySet::addAll(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"addAll",
@@ -72,7 +72,7 @@ namespace android::util
 			arg0
 		);
 	}
-	jboolean ArraySet::containsAll(__JniBaseClass arg0)
+	jboolean ArraySet::containsAll(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"containsAll",
@@ -118,7 +118,7 @@ namespace android::util
 			"()Z"
 		);
 	}
-	__JniBaseClass ArraySet::iterator()
+	JObject ArraySet::iterator()
 	{
 		return callObjectMethod(
 			"iterator",
@@ -141,7 +141,7 @@ namespace android::util
 			arg0.object()
 		);
 	}
-	jboolean ArraySet::removeAll(__JniBaseClass arg0)
+	jboolean ArraySet::removeAll(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"removeAll",
@@ -157,7 +157,7 @@ namespace android::util
 			arg0
 		).object<jobject>();
 	}
-	jboolean ArraySet::removeIf(__JniBaseClass arg0)
+	jboolean ArraySet::removeIf(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"removeIf",
@@ -165,7 +165,7 @@ namespace android::util
 			arg0.object()
 		);
 	}
-	jboolean ArraySet::retainAll(__JniBaseClass arg0)
+	jboolean ArraySet::retainAll(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"retainAll",

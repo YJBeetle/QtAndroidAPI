@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "./CameraMetadata.hpp"
 
 namespace android::hardware::camera2
@@ -43,7 +43,7 @@ namespace android::hardware::camera2
 		static android::hardware::camera2::CaptureRequest_Key CONTROL_POST_RAW_SENSITIVITY_BOOST();
 		static android::hardware::camera2::CaptureRequest_Key CONTROL_SCENE_MODE();
 		static android::hardware::camera2::CaptureRequest_Key CONTROL_VIDEO_STABILIZATION_MODE();
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static android::hardware::camera2::CaptureRequest_Key DISTORTION_CORRECTION_MODE();
 		static android::hardware::camera2::CaptureRequest_Key EDGE_MODE();
 		static android::hardware::camera2::CaptureRequest_Key FLASH_MODE();
@@ -86,7 +86,7 @@ namespace android::hardware::camera2
 		jint describeContents();
 		jboolean equals(jobject arg0);
 		jobject get(android::hardware::camera2::CaptureRequest_Key arg0);
-		__JniBaseClass getKeys();
+		JObject getKeys();
 		jobject getTag();
 		jint hashCode();
 		jboolean isReprocess();

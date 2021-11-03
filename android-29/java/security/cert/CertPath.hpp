@@ -1,27 +1,27 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 
 namespace java::security::cert
 {
-	class CertPath : public __JniBaseClass
+	class CertPath : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit CertPath(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit CertPath(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		CertPath(QAndroidJniObject obj);
 		
 		// Constructors
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		__JniBaseClass getCertificates();
+		JObject getCertificates();
 		jbyteArray getEncoded();
 		jbyteArray getEncoded(jstring arg0);
-		__JniBaseClass getEncodings();
+		JObject getEncodings();
 		jstring getType();
 		jint hashCode();
 		jstring toString();

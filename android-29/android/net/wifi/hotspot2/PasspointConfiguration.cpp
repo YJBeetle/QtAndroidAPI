@@ -6,7 +6,7 @@
 namespace android::net::wifi::hotspot2
 {
 	// Fields
-	__JniBaseClass PasspointConfiguration::CREATOR()
+	JObject PasspointConfiguration::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.net.wifi.hotspot2.PasspointConfiguration",
@@ -16,16 +16,16 @@ namespace android::net::wifi::hotspot2
 	}
 	
 	// QAndroidJniObject forward
-	PasspointConfiguration::PasspointConfiguration(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	PasspointConfiguration::PasspointConfiguration(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	PasspointConfiguration::PasspointConfiguration()
-		: __JniBaseClass(
+		: JObject(
 			"android.net.wifi.hotspot2.PasspointConfiguration",
 			"()V"
 		) {}
 	PasspointConfiguration::PasspointConfiguration(android::net::wifi::hotspot2::PasspointConfiguration &arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.net.wifi.hotspot2.PasspointConfiguration",
 			"(Landroid/net/wifi/hotspot2/PasspointConfiguration;)V",
 			arg0.object()

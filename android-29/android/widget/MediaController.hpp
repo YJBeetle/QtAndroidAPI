@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "../view/View.hpp"
 #include "../view/ViewGroup.hpp"
 #include "./FrameLayout.hpp"
@@ -35,7 +35,7 @@ namespace android::widget
 		
 		// Constructors
 		MediaController(android::content::Context arg0);
-		MediaController(android::content::Context arg0, __JniBaseClass arg1);
+		MediaController(android::content::Context arg0, JObject arg1);
 		MediaController(android::content::Context arg0, jboolean arg1);
 		
 		// Methods
@@ -48,8 +48,8 @@ namespace android::widget
 		jboolean onTrackballEvent(android::view::MotionEvent arg0);
 		void setAnchorView(android::view::View arg0);
 		void setEnabled(jboolean arg0);
-		void setMediaPlayer(__JniBaseClass arg0);
-		void setPrevNextListeners(__JniBaseClass arg0, __JniBaseClass arg1);
+		void setMediaPlayer(JObject arg0);
+		void setPrevNextListeners(JObject arg0, JObject arg1);
 		void show();
 		void show(jint arg0);
 	};

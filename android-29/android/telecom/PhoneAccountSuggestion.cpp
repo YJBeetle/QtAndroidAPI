@@ -5,7 +5,7 @@
 namespace android::telecom
 {
 	// Fields
-	__JniBaseClass PhoneAccountSuggestion::CREATOR()
+	JObject PhoneAccountSuggestion::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.telecom.PhoneAccountSuggestion",
@@ -50,11 +50,11 @@ namespace android::telecom
 	}
 	
 	// QAndroidJniObject forward
-	PhoneAccountSuggestion::PhoneAccountSuggestion(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	PhoneAccountSuggestion::PhoneAccountSuggestion(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	PhoneAccountSuggestion::PhoneAccountSuggestion(android::telecom::PhoneAccountHandle arg0, jint arg1, jboolean arg2)
-		: __JniBaseClass(
+		: JObject(
 			"android.telecom.PhoneAccountSuggestion",
 			"(Landroid/telecom/PhoneAccountHandle;IZ)V",
 			arg0.object(),

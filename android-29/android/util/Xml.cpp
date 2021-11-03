@@ -16,12 +16,12 @@ namespace android::util
 	}
 	
 	// QAndroidJniObject forward
-	Xml::Xml(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Xml::Xml(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	__JniBaseClass Xml::asAttributeSet(__JniBaseClass arg0)
+	JObject Xml::asAttributeSet(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"android.util.Xml",
@@ -39,7 +39,7 @@ namespace android::util
 			arg0
 		);
 	}
-	__JniBaseClass Xml::newPullParser()
+	JObject Xml::newPullParser()
 	{
 		return callStaticObjectMethod(
 			"android.util.Xml",
@@ -47,7 +47,7 @@ namespace android::util
 			"()Lorg/xmlpull/v1/XmlPullParser;"
 		);
 	}
-	__JniBaseClass Xml::newSerializer()
+	JObject Xml::newSerializer()
 	{
 		return callStaticObjectMethod(
 			"android.util.Xml",
@@ -55,7 +55,7 @@ namespace android::util
 			"()Lorg/xmlpull/v1/XmlSerializer;"
 		);
 	}
-	void Xml::parse(java::io::Reader arg0, __JniBaseClass arg1)
+	void Xml::parse(java::io::Reader arg0, JObject arg1)
 	{
 		callStaticMethod<void>(
 			"android.util.Xml",
@@ -65,7 +65,7 @@ namespace android::util
 			arg1.object()
 		);
 	}
-	void Xml::parse(jstring arg0, __JniBaseClass arg1)
+	void Xml::parse(jstring arg0, JObject arg1)
 	{
 		callStaticMethod<void>(
 			"android.util.Xml",
@@ -75,7 +75,7 @@ namespace android::util
 			arg1.object()
 		);
 	}
-	void Xml::parse(java::io::InputStream arg0, android::util::Xml_Encoding arg1, __JniBaseClass arg2)
+	void Xml::parse(java::io::InputStream arg0, android::util::Xml_Encoding arg1, JObject arg2)
 	{
 		callStaticMethod<void>(
 			"android.util.Xml",

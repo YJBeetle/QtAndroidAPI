@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace java::lang::invoke
 {
@@ -13,13 +13,13 @@ namespace java::util
 
 namespace java::lang::invoke
 {
-	class MethodHandle : public __JniBaseClass
+	class MethodHandle : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MethodHandle(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit MethodHandle(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		MethodHandle(QAndroidJniObject obj);
 		
 		// Constructors
@@ -37,7 +37,7 @@ namespace java::lang::invoke
 		jobject invoke(jobjectArray arg0);
 		jobject invokeExact(jobjectArray arg0);
 		jobject invokeWithArguments(jobjectArray arg0);
-		jobject invokeWithArguments(__JniBaseClass arg0);
+		jobject invokeWithArguments(JObject arg0);
 		jboolean isVarargsCollector();
 		jstring toString();
 		java::lang::invoke::MethodType type();

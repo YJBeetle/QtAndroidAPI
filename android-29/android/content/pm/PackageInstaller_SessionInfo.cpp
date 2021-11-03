@@ -8,7 +8,7 @@
 namespace android::content::pm
 {
 	// Fields
-	__JniBaseClass PackageInstaller_SessionInfo::CREATOR()
+	JObject PackageInstaller_SessionInfo::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageInstaller$SessionInfo",
@@ -53,7 +53,7 @@ namespace android::content::pm
 	}
 	
 	// QAndroidJniObject forward
-	PackageInstaller_SessionInfo::PackageInstaller_SessionInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	PackageInstaller_SessionInfo::PackageInstaller_SessionInfo(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

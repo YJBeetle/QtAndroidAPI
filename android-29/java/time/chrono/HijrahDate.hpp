@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace java::io
 {
@@ -33,43 +33,43 @@ namespace java::time::temporal
 
 namespace java::time::chrono
 {
-	class HijrahDate : public __JniBaseClass
+	class HijrahDate : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit HijrahDate(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit HijrahDate(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		HijrahDate(QAndroidJniObject obj);
 		
 		// Constructors
 		
 		// Methods
-		static java::time::chrono::HijrahDate from(__JniBaseClass arg0);
+		static java::time::chrono::HijrahDate from(JObject arg0);
 		static java::time::chrono::HijrahDate now();
 		static java::time::chrono::HijrahDate now(java::time::Clock arg0);
 		static java::time::chrono::HijrahDate now(java::time::ZoneId arg0);
 		static java::time::chrono::HijrahDate of(jint arg0, jint arg1, jint arg2);
-		__JniBaseClass atTime(java::time::LocalTime arg0);
+		JObject atTime(java::time::LocalTime arg0);
 		jboolean equals(jobject arg0);
 		java::time::chrono::HijrahChronology getChronology();
 		java::time::chrono::HijrahEra getEra();
-		jlong getLong(__JniBaseClass arg0);
+		jlong getLong(JObject arg0);
 		jint hashCode();
 		jboolean isLeapYear();
 		jint lengthOfMonth();
 		jint lengthOfYear();
-		java::time::chrono::HijrahDate minus(__JniBaseClass arg0);
-		java::time::chrono::HijrahDate minus(jlong arg0, __JniBaseClass arg1);
-		java::time::chrono::HijrahDate plus(__JniBaseClass arg0);
-		java::time::chrono::HijrahDate plus(jlong arg0, __JniBaseClass arg1);
-		java::time::temporal::ValueRange range(__JniBaseClass arg0);
+		java::time::chrono::HijrahDate minus(JObject arg0);
+		java::time::chrono::HijrahDate minus(jlong arg0, JObject arg1);
+		java::time::chrono::HijrahDate plus(JObject arg0);
+		java::time::chrono::HijrahDate plus(jlong arg0, JObject arg1);
+		java::time::temporal::ValueRange range(JObject arg0);
 		jlong toEpochDay();
 		jstring toString();
-		__JniBaseClass until(__JniBaseClass arg0);
-		jlong until(__JniBaseClass arg0, __JniBaseClass arg1);
-		java::time::chrono::HijrahDate with(__JniBaseClass arg0);
-		java::time::chrono::HijrahDate with(__JniBaseClass arg0, jlong arg1);
+		JObject until(JObject arg0);
+		jlong until(JObject arg0, JObject arg1);
+		java::time::chrono::HijrahDate with(JObject arg0);
+		java::time::chrono::HijrahDate with(JObject arg0, jlong arg1);
 		java::time::chrono::HijrahDate withVariant(java::time::chrono::HijrahChronology arg0);
 	};
 } // namespace java::time::chrono

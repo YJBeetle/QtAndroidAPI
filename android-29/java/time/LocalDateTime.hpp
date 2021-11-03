@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace java::io
 {
@@ -57,7 +57,7 @@ namespace java::time::temporal
 
 namespace java::time
 {
-	class LocalDateTime : public __JniBaseClass
+	class LocalDateTime : public JObject
 	{
 	public:
 		// Fields
@@ -65,13 +65,13 @@ namespace java::time
 		static java::time::LocalDateTime MIN();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit LocalDateTime(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit LocalDateTime(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		LocalDateTime(QAndroidJniObject obj);
 		
 		// Constructors
 		
 		// Methods
-		static java::time::LocalDateTime from(__JniBaseClass arg0);
+		static java::time::LocalDateTime from(JObject arg0);
 		static java::time::LocalDateTime now();
 		static java::time::LocalDateTime now(java::time::Clock arg0);
 		static java::time::LocalDateTime now(java::time::ZoneId arg0);
@@ -86,19 +86,19 @@ namespace java::time
 		static java::time::LocalDateTime ofInstant(java::time::Instant arg0, java::time::ZoneId arg1);
 		static java::time::LocalDateTime parse(jstring arg0);
 		static java::time::LocalDateTime parse(jstring arg0, java::time::format::DateTimeFormatter arg1);
-		__JniBaseClass adjustInto(__JniBaseClass arg0);
+		JObject adjustInto(JObject arg0);
 		java::time::OffsetDateTime atOffset(java::time::ZoneOffset arg0);
 		java::time::ZonedDateTime atZone(java::time::ZoneId arg0);
 		jint compareTo(jobject arg0);
-		jint compareTo(__JniBaseClass arg0);
+		jint compareTo(JObject arg0);
 		jboolean equals(jobject arg0);
 		jstring format(java::time::format::DateTimeFormatter arg0);
-		jint get(__JniBaseClass arg0);
+		jint get(JObject arg0);
 		jint getDayOfMonth();
 		java::time::DayOfWeek getDayOfWeek();
 		jint getDayOfYear();
 		jint getHour();
-		jlong getLong(__JniBaseClass arg0);
+		jlong getLong(JObject arg0);
 		jint getMinute();
 		java::time::Month getMonth();
 		jint getMonthValue();
@@ -106,12 +106,12 @@ namespace java::time
 		jint getSecond();
 		jint getYear();
 		jint hashCode();
-		jboolean isAfter(__JniBaseClass arg0);
-		jboolean isBefore(__JniBaseClass arg0);
-		jboolean isEqual(__JniBaseClass arg0);
-		jboolean isSupported(__JniBaseClass arg0);
-		java::time::LocalDateTime minus(__JniBaseClass arg0);
-		java::time::LocalDateTime minus(jlong arg0, __JniBaseClass arg1);
+		jboolean isAfter(JObject arg0);
+		jboolean isBefore(JObject arg0);
+		jboolean isEqual(JObject arg0);
+		jboolean isSupported(JObject arg0);
+		java::time::LocalDateTime minus(JObject arg0);
+		java::time::LocalDateTime minus(jlong arg0, JObject arg1);
 		java::time::LocalDateTime minusDays(jlong arg0);
 		java::time::LocalDateTime minusHours(jlong arg0);
 		java::time::LocalDateTime minusMinutes(jlong arg0);
@@ -120,8 +120,8 @@ namespace java::time
 		java::time::LocalDateTime minusSeconds(jlong arg0);
 		java::time::LocalDateTime minusWeeks(jlong arg0);
 		java::time::LocalDateTime minusYears(jlong arg0);
-		java::time::LocalDateTime plus(__JniBaseClass arg0);
-		java::time::LocalDateTime plus(jlong arg0, __JniBaseClass arg1);
+		java::time::LocalDateTime plus(JObject arg0);
+		java::time::LocalDateTime plus(jlong arg0, JObject arg1);
 		java::time::LocalDateTime plusDays(jlong arg0);
 		java::time::LocalDateTime plusHours(jlong arg0);
 		java::time::LocalDateTime plusMinutes(jlong arg0);
@@ -130,15 +130,15 @@ namespace java::time
 		java::time::LocalDateTime plusSeconds(jlong arg0);
 		java::time::LocalDateTime plusWeeks(jlong arg0);
 		java::time::LocalDateTime plusYears(jlong arg0);
-		jobject query(__JniBaseClass arg0);
-		java::time::temporal::ValueRange range(__JniBaseClass arg0);
+		jobject query(JObject arg0);
+		java::time::temporal::ValueRange range(JObject arg0);
 		java::time::LocalDate toLocalDate();
 		java::time::LocalTime toLocalTime();
 		jstring toString();
-		java::time::LocalDateTime truncatedTo(__JniBaseClass arg0);
-		jlong until(__JniBaseClass arg0, __JniBaseClass arg1);
-		java::time::LocalDateTime with(__JniBaseClass arg0);
-		java::time::LocalDateTime with(__JniBaseClass arg0, jlong arg1);
+		java::time::LocalDateTime truncatedTo(JObject arg0);
+		jlong until(JObject arg0, JObject arg1);
+		java::time::LocalDateTime with(JObject arg0);
+		java::time::LocalDateTime with(JObject arg0, jlong arg1);
 		java::time::LocalDateTime withDayOfMonth(jint arg0);
 		java::time::LocalDateTime withDayOfYear(jint arg0);
 		java::time::LocalDateTime withHour(jint arg0);

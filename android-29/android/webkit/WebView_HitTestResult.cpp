@@ -75,7 +75,7 @@ namespace android::webkit
 	}
 	
 	// QAndroidJniObject forward
-	WebView_HitTestResult::WebView_HitTestResult(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	WebView_HitTestResult::WebView_HitTestResult(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "./BaseInterpolator.hpp"
 
 namespace android::content
@@ -21,7 +21,7 @@ namespace android::view::animation
 		
 		// Constructors
 		BounceInterpolator();
-		BounceInterpolator(android::content::Context arg0, __JniBaseClass arg1);
+		BounceInterpolator(android::content::Context arg0, JObject arg1);
 		
 		// Methods
 		jfloat getInterpolation(jfloat arg0);

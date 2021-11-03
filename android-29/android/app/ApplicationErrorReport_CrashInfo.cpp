@@ -54,29 +54,29 @@ namespace android::app
 	}
 	
 	// QAndroidJniObject forward
-	ApplicationErrorReport_CrashInfo::ApplicationErrorReport_CrashInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	ApplicationErrorReport_CrashInfo::ApplicationErrorReport_CrashInfo(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ApplicationErrorReport_CrashInfo::ApplicationErrorReport_CrashInfo()
-		: __JniBaseClass(
+		: JObject(
 			"android.app.ApplicationErrorReport$CrashInfo",
 			"()V"
 		) {}
 	ApplicationErrorReport_CrashInfo::ApplicationErrorReport_CrashInfo(android::os::Parcel arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.app.ApplicationErrorReport$CrashInfo",
 			"(Landroid/os/Parcel;)V",
 			arg0.object()
 		) {}
 	ApplicationErrorReport_CrashInfo::ApplicationErrorReport_CrashInfo(jthrowable arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.app.ApplicationErrorReport$CrashInfo",
 			"(Ljava/lang/Throwable;)V",
 			arg0
 		) {}
 	
 	// Methods
-	void ApplicationErrorReport_CrashInfo::dump(__JniBaseClass arg0, jstring arg1)
+	void ApplicationErrorReport_CrashInfo::dump(JObject arg0, jstring arg1)
 	{
 		callMethod<void>(
 			"dump",

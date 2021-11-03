@@ -43,11 +43,11 @@ namespace android::graphics
 	}
 	
 	// QAndroidJniObject forward
-	HardwareRenderer::HardwareRenderer(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	HardwareRenderer::HardwareRenderer(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	HardwareRenderer::HardwareRenderer()
-		: __JniBaseClass(
+		: JObject(
 			"android.graphics.HardwareRenderer",
 			"()V"
 		) {}

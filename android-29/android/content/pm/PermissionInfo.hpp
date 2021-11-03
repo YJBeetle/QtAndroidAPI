@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "./PackageItemInfo.hpp"
 
 namespace android::content::pm
@@ -18,7 +18,7 @@ namespace android::content::pm
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint FLAG_COSTS_MONEY();
 		static jint FLAG_HARD_RESTRICTED();
 		static jint FLAG_IMMUTABLY_RESTRICTED();

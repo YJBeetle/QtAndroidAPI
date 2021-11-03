@@ -6,11 +6,11 @@ namespace android::transition
 	// Fields
 	
 	// QAndroidJniObject forward
-	TransitionListenerAdapter::TransitionListenerAdapter(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	TransitionListenerAdapter::TransitionListenerAdapter(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	TransitionListenerAdapter::TransitionListenerAdapter()
-		: __JniBaseClass(
+		: JObject(
 			"android.transition.TransitionListenerAdapter",
 			"()V"
 		) {}

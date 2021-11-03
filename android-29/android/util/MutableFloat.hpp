@@ -1,18 +1,18 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 
 namespace android::util
 {
-	class MutableFloat : public __JniBaseClass
+	class MutableFloat : public JObject
 	{
 	public:
 		// Fields
 		jfloat value();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MutableFloat(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit MutableFloat(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		MutableFloat(QAndroidJniObject obj);
 		
 		// Constructors

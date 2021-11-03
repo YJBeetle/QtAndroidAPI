@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::os
 {
@@ -17,16 +17,16 @@ namespace android::view::textclassifier
 
 namespace android::view::textclassifier
 {
-	class ConversationActions_Request : public __JniBaseClass
+	class ConversationActions_Request : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jstring HINT_FOR_IN_APP();
 		static jstring HINT_FOR_NOTIFICATION();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ConversationActions_Request(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ConversationActions_Request(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ConversationActions_Request(QAndroidJniObject obj);
 		
 		// Constructors
@@ -34,9 +34,9 @@ namespace android::view::textclassifier
 		// Methods
 		jint describeContents();
 		jstring getCallingPackageName();
-		__JniBaseClass getConversation();
+		JObject getConversation();
 		android::os::Bundle getExtras();
-		__JniBaseClass getHints();
+		JObject getHints();
 		jint getMaxSuggestions();
 		android::view::textclassifier::TextClassifier_EntityConfig getTypeConfig();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);

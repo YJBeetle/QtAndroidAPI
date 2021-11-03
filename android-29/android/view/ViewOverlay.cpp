@@ -8,7 +8,7 @@ namespace android::view
 	// Fields
 	
 	// QAndroidJniObject forward
-	ViewOverlay::ViewOverlay(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	ViewOverlay::ViewOverlay(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

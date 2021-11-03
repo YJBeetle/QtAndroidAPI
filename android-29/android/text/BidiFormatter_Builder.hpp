@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::text
 {
@@ -13,13 +13,13 @@ namespace java::util
 
 namespace android::text
 {
-	class BidiFormatter_Builder : public __JniBaseClass
+	class BidiFormatter_Builder : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit BidiFormatter_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit BidiFormatter_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		BidiFormatter_Builder(QAndroidJniObject obj);
 		
 		// Constructors
@@ -29,7 +29,7 @@ namespace android::text
 		
 		// Methods
 		android::text::BidiFormatter build();
-		android::text::BidiFormatter_Builder setTextDirectionHeuristic(__JniBaseClass arg0);
+		android::text::BidiFormatter_Builder setTextDirectionHeuristic(JObject arg0);
 		android::text::BidiFormatter_Builder stereoReset(jboolean arg0);
 	};
 } // namespace android::text

@@ -8,18 +8,18 @@ namespace android::widget
 	// Fields
 	
 	// QAndroidJniObject forward
-	PopupMenu::PopupMenu(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	PopupMenu::PopupMenu(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	PopupMenu::PopupMenu(android::content::Context arg0, android::view::View arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.widget.PopupMenu",
 			"(Landroid/content/Context;Landroid/view/View;)V",
 			arg0.object(),
 			arg1.object()
 		) {}
 	PopupMenu::PopupMenu(android::content::Context arg0, android::view::View arg1, jint arg2)
-		: __JniBaseClass(
+		: JObject(
 			"android.widget.PopupMenu",
 			"(Landroid/content/Context;Landroid/view/View;I)V",
 			arg0.object(),
@@ -27,7 +27,7 @@ namespace android::widget
 			arg2
 		) {}
 	PopupMenu::PopupMenu(android::content::Context arg0, android::view::View arg1, jint arg2, jint arg3, jint arg4)
-		: __JniBaseClass(
+		: JObject(
 			"android.widget.PopupMenu",
 			"(Landroid/content/Context;Landroid/view/View;III)V",
 			arg0.object(),
@@ -45,7 +45,7 @@ namespace android::widget
 			"()V"
 		);
 	}
-	__JniBaseClass PopupMenu::getDragToOpenListener()
+	JObject PopupMenu::getDragToOpenListener()
 	{
 		return callObjectMethod(
 			"getDragToOpenListener",
@@ -59,7 +59,7 @@ namespace android::widget
 			"()I"
 		);
 	}
-	__JniBaseClass PopupMenu::getMenu()
+	JObject PopupMenu::getMenu()
 	{
 		return callObjectMethod(
 			"getMenu",
@@ -97,7 +97,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void PopupMenu::setOnDismissListener(__JniBaseClass arg0)
+	void PopupMenu::setOnDismissListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setOnDismissListener",
@@ -105,7 +105,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void PopupMenu::setOnMenuItemClickListener(__JniBaseClass arg0)
+	void PopupMenu::setOnMenuItemClickListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setOnMenuItemClickListener",

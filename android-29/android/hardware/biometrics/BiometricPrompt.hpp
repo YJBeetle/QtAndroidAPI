@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::hardware::biometrics
 {
@@ -17,7 +17,7 @@ namespace android::os
 
 namespace android::hardware::biometrics
 {
-	class BiometricPrompt : public __JniBaseClass
+	class BiometricPrompt : public JObject
 	{
 	public:
 		// Fields
@@ -41,14 +41,14 @@ namespace android::hardware::biometrics
 		static jint BIOMETRIC_ERROR_VENDOR();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit BiometricPrompt(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit BiometricPrompt(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		BiometricPrompt(QAndroidJniObject obj);
 		
 		// Constructors
 		
 		// Methods
-		void authenticate(android::os::CancellationSignal arg0, __JniBaseClass arg1, android::hardware::biometrics::BiometricPrompt_AuthenticationCallback arg2);
-		void authenticate(android::hardware::biometrics::BiometricPrompt_CryptoObject arg0, android::os::CancellationSignal arg1, __JniBaseClass arg2, android::hardware::biometrics::BiometricPrompt_AuthenticationCallback arg3);
+		void authenticate(android::os::CancellationSignal arg0, JObject arg1, android::hardware::biometrics::BiometricPrompt_AuthenticationCallback arg2);
+		void authenticate(android::hardware::biometrics::BiometricPrompt_CryptoObject arg0, android::os::CancellationSignal arg1, JObject arg2, android::hardware::biometrics::BiometricPrompt_AuthenticationCallback arg3);
 	};
 } // namespace android::hardware::biometrics
 

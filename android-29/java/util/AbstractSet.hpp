@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "./AbstractCollection.hpp"
 
 
@@ -20,7 +20,7 @@ namespace java::util
 		// Methods
 		jboolean equals(jobject arg0);
 		jint hashCode();
-		jboolean removeAll(__JniBaseClass arg0);
+		jboolean removeAll(JObject arg0);
 	};
 } // namespace java::util
 

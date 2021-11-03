@@ -5,11 +5,11 @@ namespace android::drm
 	// Fields
 	
 	// QAndroidJniObject forward
-	DrmInfo::DrmInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	DrmInfo::DrmInfo(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	DrmInfo::DrmInfo(jint arg0, jbyteArray arg1, jstring arg2)
-		: __JniBaseClass(
+		: JObject(
 			"android.drm.DrmInfo",
 			"(I[BLjava/lang/String;)V",
 			arg0,
@@ -17,7 +17,7 @@ namespace android::drm
 			arg2
 		) {}
 	DrmInfo::DrmInfo(jint arg0, jstring arg1, jstring arg2)
-		: __JniBaseClass(
+		: JObject(
 			"android.drm.DrmInfo",
 			"(ILjava/lang/String;Ljava/lang/String;)V",
 			arg0,
@@ -55,14 +55,14 @@ namespace android::drm
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	__JniBaseClass DrmInfo::iterator()
+	JObject DrmInfo::iterator()
 	{
 		return callObjectMethod(
 			"iterator",
 			"()Ljava/util/Iterator;"
 		);
 	}
-	__JniBaseClass DrmInfo::keyIterator()
+	JObject DrmInfo::keyIterator()
 	{
 		return callObjectMethod(
 			"keyIterator",

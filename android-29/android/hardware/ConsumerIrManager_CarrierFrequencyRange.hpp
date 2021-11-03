@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::hardware
 {
@@ -9,13 +9,13 @@ namespace android::hardware
 
 namespace android::hardware
 {
-	class ConsumerIrManager_CarrierFrequencyRange : public __JniBaseClass
+	class ConsumerIrManager_CarrierFrequencyRange : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ConsumerIrManager_CarrierFrequencyRange(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ConsumerIrManager_CarrierFrequencyRange(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ConsumerIrManager_CarrierFrequencyRange(QAndroidJniObject obj);
 		
 		// Constructors

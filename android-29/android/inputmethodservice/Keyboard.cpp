@@ -79,18 +79,18 @@ namespace android::inputmethodservice
 	}
 	
 	// QAndroidJniObject forward
-	Keyboard::Keyboard(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Keyboard::Keyboard(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Keyboard::Keyboard(android::content::Context arg0, jint arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.inputmethodservice.Keyboard",
 			"(Landroid/content/Context;I)V",
 			arg0.object(),
 			arg1
 		) {}
 	Keyboard::Keyboard(android::content::Context arg0, jint arg1, jint arg2)
-		: __JniBaseClass(
+		: JObject(
 			"android.inputmethodservice.Keyboard",
 			"(Landroid/content/Context;II)V",
 			arg0.object(),
@@ -98,7 +98,7 @@ namespace android::inputmethodservice
 			arg2
 		) {}
 	Keyboard::Keyboard(android::content::Context arg0, jint arg1, jint arg2, jint arg3, jint arg4)
-		: __JniBaseClass(
+		: JObject(
 			"android.inputmethodservice.Keyboard",
 			"(Landroid/content/Context;IIII)V",
 			arg0.object(),
@@ -108,7 +108,7 @@ namespace android::inputmethodservice
 			arg4
 		) {}
 	Keyboard::Keyboard(android::content::Context arg0, jint arg1, jstring arg2, jint arg3, jint arg4)
-		: __JniBaseClass(
+		: JObject(
 			"android.inputmethodservice.Keyboard",
 			"(Landroid/content/Context;ILjava/lang/CharSequence;II)V",
 			arg0.object(),
@@ -126,7 +126,7 @@ namespace android::inputmethodservice
 			"()I"
 		);
 	}
-	__JniBaseClass Keyboard::getKeys()
+	JObject Keyboard::getKeys()
 	{
 		return callObjectMethod(
 			"getKeys",
@@ -140,7 +140,7 @@ namespace android::inputmethodservice
 			"()I"
 		);
 	}
-	__JniBaseClass Keyboard::getModifierKeys()
+	JObject Keyboard::getModifierKeys()
 	{
 		return callObjectMethod(
 			"getModifierKeys",

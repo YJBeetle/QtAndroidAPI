@@ -6,11 +6,11 @@ namespace android::webkit
 	// Fields
 	
 	// QAndroidJniObject forward
-	TracingConfig_Builder::TracingConfig_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	TracingConfig_Builder::TracingConfig_Builder(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	TracingConfig_Builder::TracingConfig_Builder()
-		: __JniBaseClass(
+		: JObject(
 			"android.webkit.TracingConfig$Builder",
 			"()V"
 		) {}
@@ -32,7 +32,7 @@ namespace android::webkit
 			arg0
 		);
 	}
-	android::webkit::TracingConfig_Builder TracingConfig_Builder::addCategories(__JniBaseClass arg0)
+	android::webkit::TracingConfig_Builder TracingConfig_Builder::addCategories(JObject arg0)
 	{
 		return callObjectMethod(
 			"addCategories",

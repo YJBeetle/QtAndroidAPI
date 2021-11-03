@@ -15,7 +15,7 @@ namespace android::system
 	// Fields
 	
 	// QAndroidJniObject forward
-	Os::Os(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Os::Os(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

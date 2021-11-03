@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::os
 {
@@ -9,11 +9,11 @@ namespace android::os
 
 namespace android::telephony::emergency
 {
-	class EmergencyNumber : public __JniBaseClass
+	class EmergencyNumber : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint EMERGENCY_CALL_ROUTING_EMERGENCY();
 		static jint EMERGENCY_CALL_ROUTING_NORMAL();
 		static jint EMERGENCY_CALL_ROUTING_UNKNOWN();
@@ -32,7 +32,7 @@ namespace android::telephony::emergency
 		static jint EMERGENCY_SERVICE_CATEGORY_UNSPECIFIED();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit EmergencyNumber(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit EmergencyNumber(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		EmergencyNumber(QAndroidJniObject obj);
 		
 		// Constructors
@@ -44,9 +44,9 @@ namespace android::telephony::emergency
 		jboolean equals(jobject arg0);
 		jstring getCountryIso();
 		jint getEmergencyCallRouting();
-		__JniBaseClass getEmergencyNumberSources();
-		__JniBaseClass getEmergencyServiceCategories();
-		__JniBaseClass getEmergencyUrns();
+		JObject getEmergencyNumberSources();
+		JObject getEmergencyServiceCategories();
+		JObject getEmergencyUrns();
 		jstring getMnc();
 		jstring getNumber();
 		jint hashCode();

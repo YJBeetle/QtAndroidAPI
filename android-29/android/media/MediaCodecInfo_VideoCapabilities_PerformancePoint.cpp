@@ -270,11 +270,11 @@ namespace android::media
 	}
 	
 	// QAndroidJniObject forward
-	MediaCodecInfo_VideoCapabilities_PerformancePoint::MediaCodecInfo_VideoCapabilities_PerformancePoint(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	MediaCodecInfo_VideoCapabilities_PerformancePoint::MediaCodecInfo_VideoCapabilities_PerformancePoint(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	MediaCodecInfo_VideoCapabilities_PerformancePoint::MediaCodecInfo_VideoCapabilities_PerformancePoint(jint arg0, jint arg1, jint arg2)
-		: __JniBaseClass(
+		: JObject(
 			"android.media.MediaCodecInfo$VideoCapabilities$PerformancePoint",
 			"(III)V",
 			arg0,

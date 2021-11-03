@@ -5,7 +5,7 @@
 namespace android::app
 {
 	// Fields
-	__JniBaseClass ActivityManager_TaskDescription::CREATOR()
+	JObject ActivityManager_TaskDescription::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.app.ActivityManager$TaskDescription",
@@ -15,42 +15,42 @@ namespace android::app
 	}
 	
 	// QAndroidJniObject forward
-	ActivityManager_TaskDescription::ActivityManager_TaskDescription(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	ActivityManager_TaskDescription::ActivityManager_TaskDescription(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ActivityManager_TaskDescription::ActivityManager_TaskDescription()
-		: __JniBaseClass(
+		: JObject(
 			"android.app.ActivityManager$TaskDescription",
 			"()V"
 		) {}
 	ActivityManager_TaskDescription::ActivityManager_TaskDescription(android::app::ActivityManager_TaskDescription &arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.app.ActivityManager$TaskDescription",
 			"(Landroid/app/ActivityManager$TaskDescription;)V",
 			arg0.object()
 		) {}
 	ActivityManager_TaskDescription::ActivityManager_TaskDescription(jstring arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.app.ActivityManager$TaskDescription",
 			"(Ljava/lang/String;)V",
 			arg0
 		) {}
 	ActivityManager_TaskDescription::ActivityManager_TaskDescription(jstring arg0, android::graphics::Bitmap arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.app.ActivityManager$TaskDescription",
 			"(Ljava/lang/String;Landroid/graphics/Bitmap;)V",
 			arg0,
 			arg1.object()
 		) {}
 	ActivityManager_TaskDescription::ActivityManager_TaskDescription(jstring arg0, jint arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.app.ActivityManager$TaskDescription",
 			"(Ljava/lang/String;I)V",
 			arg0,
 			arg1
 		) {}
 	ActivityManager_TaskDescription::ActivityManager_TaskDescription(jstring arg0, android::graphics::Bitmap arg1, jint arg2)
-		: __JniBaseClass(
+		: JObject(
 			"android.app.ActivityManager$TaskDescription",
 			"(Ljava/lang/String;Landroid/graphics/Bitmap;I)V",
 			arg0,
@@ -58,7 +58,7 @@ namespace android::app
 			arg2
 		) {}
 	ActivityManager_TaskDescription::ActivityManager_TaskDescription(jstring arg0, jint arg1, jint arg2)
-		: __JniBaseClass(
+		: JObject(
 			"android.app.ActivityManager$TaskDescription",
 			"(Ljava/lang/String;II)V",
 			arg0,

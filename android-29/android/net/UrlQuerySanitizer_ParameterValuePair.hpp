@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::net
 {
@@ -9,7 +9,7 @@ namespace android::net
 
 namespace android::net
 {
-	class UrlQuerySanitizer_ParameterValuePair : public __JniBaseClass
+	class UrlQuerySanitizer_ParameterValuePair : public JObject
 	{
 	public:
 		// Fields
@@ -17,7 +17,7 @@ namespace android::net
 		jstring mValue();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit UrlQuerySanitizer_ParameterValuePair(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit UrlQuerySanitizer_ParameterValuePair(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		UrlQuerySanitizer_ParameterValuePair(QAndroidJniObject obj);
 		
 		// Constructors

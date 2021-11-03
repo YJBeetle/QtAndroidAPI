@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::content
 {
@@ -29,13 +29,13 @@ namespace android::os
 
 namespace android::hardware::camera2
 {
-	class CameraManager : public __JniBaseClass
+	class CameraManager : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit CameraManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit CameraManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		CameraManager(QAndroidJniObject obj);
 		
 		// Constructors
@@ -44,11 +44,11 @@ namespace android::hardware::camera2
 		android::hardware::camera2::CameraCharacteristics getCameraCharacteristics(jstring arg0);
 		jarray getCameraIdList();
 		void openCamera(jstring arg0, android::hardware::camera2::CameraDevice_StateCallback arg1, android::os::Handler arg2);
-		void openCamera(jstring arg0, __JniBaseClass arg1, android::hardware::camera2::CameraDevice_StateCallback arg2);
+		void openCamera(jstring arg0, JObject arg1, android::hardware::camera2::CameraDevice_StateCallback arg2);
 		void registerAvailabilityCallback(android::hardware::camera2::CameraManager_AvailabilityCallback arg0, android::os::Handler arg1);
-		void registerAvailabilityCallback(__JniBaseClass arg0, android::hardware::camera2::CameraManager_AvailabilityCallback arg1);
+		void registerAvailabilityCallback(JObject arg0, android::hardware::camera2::CameraManager_AvailabilityCallback arg1);
 		void registerTorchCallback(android::hardware::camera2::CameraManager_TorchCallback arg0, android::os::Handler arg1);
-		void registerTorchCallback(__JniBaseClass arg0, android::hardware::camera2::CameraManager_TorchCallback arg1);
+		void registerTorchCallback(JObject arg0, android::hardware::camera2::CameraManager_TorchCallback arg1);
 		void setTorchMode(jstring arg0, jboolean arg1);
 		void unregisterAvailabilityCallback(android::hardware::camera2::CameraManager_AvailabilityCallback arg0);
 		void unregisterTorchCallback(android::hardware::camera2::CameraManager_TorchCallback arg0);

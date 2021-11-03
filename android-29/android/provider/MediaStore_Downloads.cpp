@@ -30,7 +30,7 @@ namespace android::provider
 	}
 	
 	// QAndroidJniObject forward
-	MediaStore_Downloads::MediaStore_Downloads(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	MediaStore_Downloads::MediaStore_Downloads(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

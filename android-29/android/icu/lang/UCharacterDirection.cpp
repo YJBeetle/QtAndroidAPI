@@ -5,7 +5,7 @@ namespace android::icu::lang
 	// Fields
 	
 	// QAndroidJniObject forward
-	UCharacterDirection::UCharacterDirection(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	UCharacterDirection::UCharacterDirection(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

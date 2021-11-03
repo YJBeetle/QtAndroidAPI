@@ -62,14 +62,14 @@ namespace android::widget
 			"(Landroid/content/Context;)V",
 			arg0.object()
 		) {}
-	TextView::TextView(android::content::Context arg0, __JniBaseClass arg1)
+	TextView::TextView(android::content::Context arg0, JObject arg1)
 		: android::view::View(
 			"android.widget.TextView",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.object(),
 			arg1.object()
 		) {}
-	TextView::TextView(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
+	TextView::TextView(android::content::Context arg0, JObject arg1, jint arg2)
 		: android::view::View(
 			"android.widget.TextView",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
@@ -77,7 +77,7 @@ namespace android::widget
 			arg1.object(),
 			arg2
 		) {}
-	TextView::TextView(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
+	TextView::TextView(android::content::Context arg0, JObject arg1, jint arg2, jint arg3)
 		: android::view::View(
 			"android.widget.TextView",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;II)V",
@@ -98,7 +98,7 @@ namespace android::widget
 			arg2.object()
 		);
 	}
-	void TextView::addTextChangedListener(__JniBaseClass arg0)
+	void TextView::addTextChangedListener(JObject arg0)
 	{
 		callMethod<void>(
 			"addTextChangedListener",
@@ -393,21 +393,21 @@ namespace android::widget
 			"()I"
 		);
 	}
-	__JniBaseClass TextView::getCustomInsertionActionModeCallback()
+	JObject TextView::getCustomInsertionActionModeCallback()
 	{
 		return callObjectMethod(
 			"getCustomInsertionActionModeCallback",
 			"()Landroid/view/ActionMode$Callback;"
 		);
 	}
-	__JniBaseClass TextView::getCustomSelectionActionModeCallback()
+	JObject TextView::getCustomSelectionActionModeCallback()
 	{
 		return callObjectMethod(
 			"getCustomSelectionActionModeCallback",
 			"()Landroid/view/ActionMode$Callback;"
 		);
 	}
-	__JniBaseClass TextView::getEditableText()
+	JObject TextView::getEditableText()
 	{
 		return callObjectMethod(
 			"getEditableText",
@@ -577,7 +577,7 @@ namespace android::widget
 			"()I"
 		);
 	}
-	__JniBaseClass TextView::getKeyListener()
+	JObject TextView::getKeyListener()
 	{
 		return callObjectMethod(
 			"getKeyListener",
@@ -719,7 +719,7 @@ namespace android::widget
 			"()I"
 		);
 	}
-	__JniBaseClass TextView::getMovementMethod()
+	JObject TextView::getMovementMethod()
 	{
 		return callObjectMethod(
 			"getMovementMethod",
@@ -812,7 +812,7 @@ namespace android::widget
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
-	__JniBaseClass TextView::getTextClassifier()
+	JObject TextView::getTextClassifier()
 	{
 		return callObjectMethod(
 			"getTextClassifier",
@@ -833,7 +833,7 @@ namespace android::widget
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	__JniBaseClass TextView::getTextDirectionHeuristic()
+	JObject TextView::getTextDirectionHeuristic()
 	{
 		return callObjectMethod(
 			"getTextDirectionHeuristic",
@@ -938,7 +938,7 @@ namespace android::widget
 			"()I"
 		);
 	}
-	__JniBaseClass TextView::getTransformationMethod()
+	JObject TextView::getTransformationMethod()
 	{
 		return callObjectMethod(
 			"getTransformationMethod",
@@ -1095,7 +1095,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	__JniBaseClass TextView::onCreateInputConnection(android::view::inputmethod::EditorInfo arg0)
+	JObject TextView::onCreateInputConnection(android::view::inputmethod::EditorInfo arg0)
 	{
 		return callObjectMethod(
 			"onCreateInputConnection",
@@ -1205,7 +1205,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	void TextView::onRestoreInstanceState(__JniBaseClass arg0)
+	void TextView::onRestoreInstanceState(JObject arg0)
 	{
 		callMethod<void>(
 			"onRestoreInstanceState",
@@ -1221,7 +1221,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	__JniBaseClass TextView::onSaveInstanceState()
+	JObject TextView::onSaveInstanceState()
 	{
 		return callObjectMethod(
 			"onSaveInstanceState",
@@ -1275,7 +1275,7 @@ namespace android::widget
 			"()Z"
 		);
 	}
-	void TextView::removeTextChangedListener(__JniBaseClass arg0)
+	void TextView::removeTextChangedListener(JObject arg0)
 	{
 		callMethod<void>(
 			"removeTextChangedListener",
@@ -1449,7 +1449,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void TextView::setCustomInsertionActionModeCallback(__JniBaseClass arg0)
+	void TextView::setCustomInsertionActionModeCallback(JObject arg0)
 	{
 		callMethod<void>(
 			"setCustomInsertionActionModeCallback",
@@ -1457,7 +1457,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void TextView::setCustomSelectionActionModeCallback(__JniBaseClass arg0)
+	void TextView::setCustomSelectionActionModeCallback(JObject arg0)
 	{
 		callMethod<void>(
 			"setCustomSelectionActionModeCallback",
@@ -1707,7 +1707,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void TextView::setKeyListener(__JniBaseClass arg0)
+	void TextView::setKeyListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setKeyListener",
@@ -1852,7 +1852,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void TextView::setMovementMethod(__JniBaseClass arg0)
+	void TextView::setMovementMethod(JObject arg0)
 	{
 		callMethod<void>(
 			"setMovementMethod",
@@ -1860,7 +1860,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void TextView::setOnEditorActionListener(__JniBaseClass arg0)
+	void TextView::setOnEditorActionListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setOnEditorActionListener",
@@ -2041,7 +2041,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	void TextView::setTextClassifier(__JniBaseClass arg0)
+	void TextView::setTextClassifier(JObject arg0)
 	{
 		callMethod<void>(
 			"setTextClassifier",
@@ -2203,7 +2203,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	void TextView::setTransformationMethod(__JniBaseClass arg0)
+	void TextView::setTransformationMethod(JObject arg0)
 	{
 		callMethod<void>(
 			"setTransformationMethod",

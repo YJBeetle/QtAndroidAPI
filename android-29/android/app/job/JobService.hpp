@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "../../content/Context.hpp"
 #include "../../content/ContextWrapper.hpp"
 #include "../Service.hpp"
@@ -31,7 +31,7 @@ namespace android::app::job
 		
 		// Methods
 		void jobFinished(android::app::job::JobParameters arg0, jboolean arg1);
-		__JniBaseClass onBind(android::content::Intent arg0);
+		JObject onBind(android::content::Intent arg0);
 		jboolean onStartJob(android::app::job::JobParameters arg0);
 		jboolean onStopJob(android::app::job::JobParameters arg0);
 	};

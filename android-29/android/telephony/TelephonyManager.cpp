@@ -779,7 +779,7 @@ namespace android::telephony
 	}
 	
 	// QAndroidJniObject forward
-	TelephonyManager::TelephonyManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	TelephonyManager::TelephonyManager(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -814,7 +814,7 @@ namespace android::telephony
 			"()Z"
 		);
 	}
-	__JniBaseClass TelephonyManager::getAllCellInfo()
+	JObject TelephonyManager::getAllCellInfo()
 	{
 		return callObjectMethod(
 			"getAllCellInfo",
@@ -899,14 +899,14 @@ namespace android::telephony
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	__JniBaseClass TelephonyManager::getEmergencyNumberList()
+	JObject TelephonyManager::getEmergencyNumberList()
 	{
 		return callObjectMethod(
 			"getEmergencyNumberList",
 			"()Ljava/util/Map;"
 		);
 	}
-	__JniBaseClass TelephonyManager::getEmergencyNumberList(jint arg0)
+	JObject TelephonyManager::getEmergencyNumberList(jint arg0)
 	{
 		return callObjectMethod(
 			"getEmergencyNumberList",
@@ -1174,7 +1174,7 @@ namespace android::telephony
 			arg0
 		).object<jstring>();
 	}
-	__JniBaseClass TelephonyManager::getUiccCardsInfo()
+	JObject TelephonyManager::getUiccCardsInfo()
 	{
 		return callObjectMethod(
 			"getUiccCardsInfo",
@@ -1398,7 +1398,7 @@ namespace android::telephony
 			arg1
 		);
 	}
-	void TelephonyManager::requestCellInfoUpdate(__JniBaseClass arg0, android::telephony::TelephonyManager_CellInfoCallback arg1)
+	void TelephonyManager::requestCellInfoUpdate(JObject arg0, android::telephony::TelephonyManager_CellInfoCallback arg1)
 	{
 		callMethod<void>(
 			"requestCellInfoUpdate",
@@ -1407,7 +1407,7 @@ namespace android::telephony
 			arg1.object()
 		);
 	}
-	android::telephony::NetworkScan TelephonyManager::requestNetworkScan(android::telephony::NetworkScanRequest arg0, __JniBaseClass arg1, android::telephony::TelephonyScanManager_NetworkScanCallback arg2)
+	android::telephony::NetworkScan TelephonyManager::requestNetworkScan(android::telephony::NetworkScanRequest arg0, JObject arg1, android::telephony::TelephonyScanManager_NetworkScanCallback arg2)
 	{
 		return callObjectMethod(
 			"requestNetworkScan",
@@ -1502,7 +1502,7 @@ namespace android::telephony
 			"()Z"
 		);
 	}
-	void TelephonyManager::setPreferredOpportunisticDataSubscription(jint arg0, jboolean arg1, __JniBaseClass arg2, __JniBaseClass arg3)
+	void TelephonyManager::setPreferredOpportunisticDataSubscription(jint arg0, jboolean arg1, JObject arg2, JObject arg3)
 	{
 		callMethod<void>(
 			"setPreferredOpportunisticDataSubscription",
@@ -1556,7 +1556,7 @@ namespace android::telephony
 			arg0
 		);
 	}
-	void TelephonyManager::updateAvailableNetworks(__JniBaseClass arg0, __JniBaseClass arg1, __JniBaseClass arg2)
+	void TelephonyManager::updateAvailableNetworks(JObject arg0, JObject arg1, JObject arg2)
 	{
 		callMethod<void>(
 			"updateAvailableNetworks",

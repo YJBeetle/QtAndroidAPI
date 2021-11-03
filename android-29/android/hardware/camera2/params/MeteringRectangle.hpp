@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../../__JniBaseClass.hpp"
+#include "../../../../JObject.hpp"
 
 namespace android::graphics
 {
@@ -17,7 +17,7 @@ namespace android::util
 
 namespace android::hardware::camera2::params
 {
-	class MeteringRectangle : public __JniBaseClass
+	class MeteringRectangle : public JObject
 	{
 	public:
 		// Fields
@@ -26,7 +26,7 @@ namespace android::hardware::camera2::params
 		static jint METERING_WEIGHT_MIN();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MeteringRectangle(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit MeteringRectangle(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		MeteringRectangle(QAndroidJniObject obj);
 		
 		// Constructors

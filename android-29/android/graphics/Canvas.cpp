@@ -27,16 +27,16 @@ namespace android::graphics
 	}
 	
 	// QAndroidJniObject forward
-	Canvas::Canvas(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Canvas::Canvas(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Canvas::Canvas()
-		: __JniBaseClass(
+		: JObject(
 			"android.graphics.Canvas",
 			"()V"
 		) {}
 	Canvas::Canvas(android::graphics::Bitmap arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.graphics.Canvas",
 			"(Landroid/graphics/Bitmap;)V",
 			arg0.object()

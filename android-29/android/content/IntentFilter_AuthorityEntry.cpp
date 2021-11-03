@@ -6,11 +6,11 @@ namespace android::content
 	// Fields
 	
 	// QAndroidJniObject forward
-	IntentFilter_AuthorityEntry::IntentFilter_AuthorityEntry(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	IntentFilter_AuthorityEntry::IntentFilter_AuthorityEntry(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	IntentFilter_AuthorityEntry::IntentFilter_AuthorityEntry(jstring arg0, jstring arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.content.IntentFilter$AuthorityEntry",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,

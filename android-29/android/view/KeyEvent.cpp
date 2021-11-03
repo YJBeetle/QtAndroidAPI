@@ -28,7 +28,7 @@ namespace android::view
 			"ACTION_UP"
 		);
 	}
-	__JniBaseClass KeyEvent::CREATOR()
+	JObject KeyEvent::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.view.KeyEvent",
@@ -2523,7 +2523,7 @@ namespace android::view
 			arg0
 		);
 	}
-	jboolean KeyEvent::dispatch(__JniBaseClass arg0)
+	jboolean KeyEvent::dispatch(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"dispatch",
@@ -2531,7 +2531,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	jboolean KeyEvent::dispatch(__JniBaseClass arg0, android::view::KeyEvent_DispatcherState arg1, jobject arg2)
+	jboolean KeyEvent::dispatch(JObject arg0, android::view::KeyEvent_DispatcherState arg1, jobject arg2)
 	{
 		return callMethod<jboolean>(
 			"dispatch",

@@ -143,12 +143,12 @@ namespace android::telephony
 	}
 	
 	// QAndroidJniObject forward
-	MbmsDownloadSession::MbmsDownloadSession(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	MbmsDownloadSession::MbmsDownloadSession(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	android::telephony::MbmsDownloadSession MbmsDownloadSession::create(android::content::Context arg0, __JniBaseClass arg1, android::telephony::mbms::MbmsDownloadSessionCallback arg2)
+	android::telephony::MbmsDownloadSession MbmsDownloadSession::create(android::content::Context arg0, JObject arg1, android::telephony::mbms::MbmsDownloadSessionCallback arg2)
 	{
 		return callStaticObjectMethod(
 			"android.telephony.MbmsDownloadSession",
@@ -159,7 +159,7 @@ namespace android::telephony
 			arg2.object()
 		);
 	}
-	android::telephony::MbmsDownloadSession MbmsDownloadSession::create(android::content::Context arg0, __JniBaseClass arg1, jint arg2, android::telephony::mbms::MbmsDownloadSessionCallback arg3)
+	android::telephony::MbmsDownloadSession MbmsDownloadSession::create(android::content::Context arg0, JObject arg1, jint arg2, android::telephony::mbms::MbmsDownloadSessionCallback arg3)
 	{
 		return callStaticObjectMethod(
 			"android.telephony.MbmsDownloadSession",
@@ -171,7 +171,7 @@ namespace android::telephony
 			arg3.object()
 		);
 	}
-	void MbmsDownloadSession::addProgressListener(android::telephony::mbms::DownloadRequest arg0, __JniBaseClass arg1, android::telephony::mbms::DownloadProgressListener arg2)
+	void MbmsDownloadSession::addProgressListener(android::telephony::mbms::DownloadRequest arg0, JObject arg1, android::telephony::mbms::DownloadProgressListener arg2)
 	{
 		callMethod<void>(
 			"addProgressListener",
@@ -181,7 +181,7 @@ namespace android::telephony
 			arg2.object()
 		);
 	}
-	void MbmsDownloadSession::addStatusListener(android::telephony::mbms::DownloadRequest arg0, __JniBaseClass arg1, android::telephony::mbms::DownloadStatusListener arg2)
+	void MbmsDownloadSession::addStatusListener(android::telephony::mbms::DownloadRequest arg0, JObject arg1, android::telephony::mbms::DownloadStatusListener arg2)
 	{
 		callMethod<void>(
 			"addStatusListener",
@@ -221,7 +221,7 @@ namespace android::telephony
 			"()Ljava/io/File;"
 		);
 	}
-	__JniBaseClass MbmsDownloadSession::listPendingDownloads()
+	JObject MbmsDownloadSession::listPendingDownloads()
 	{
 		return callObjectMethod(
 			"listPendingDownloads",
@@ -255,7 +255,7 @@ namespace android::telephony
 			arg1.object()
 		);
 	}
-	void MbmsDownloadSession::requestUpdateFileServices(__JniBaseClass arg0)
+	void MbmsDownloadSession::requestUpdateFileServices(JObject arg0)
 	{
 		callMethod<void>(
 			"requestUpdateFileServices",

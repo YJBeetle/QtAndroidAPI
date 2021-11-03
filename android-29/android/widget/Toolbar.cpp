@@ -19,14 +19,14 @@ namespace android::widget
 			"(Landroid/content/Context;)V",
 			arg0.object()
 		) {}
-	Toolbar::Toolbar(android::content::Context arg0, __JniBaseClass arg1)
+	Toolbar::Toolbar(android::content::Context arg0, JObject arg1)
 		: android::view::ViewGroup(
 			"android.widget.Toolbar",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.object(),
 			arg1.object()
 		) {}
-	Toolbar::Toolbar(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
+	Toolbar::Toolbar(android::content::Context arg0, JObject arg1, jint arg2)
 		: android::view::ViewGroup(
 			"android.widget.Toolbar",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
@@ -34,7 +34,7 @@ namespace android::widget
 			arg1.object(),
 			arg2
 		) {}
-	Toolbar::Toolbar(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
+	Toolbar::Toolbar(android::content::Context arg0, JObject arg1, jint arg2, jint arg3)
 		: android::view::ViewGroup(
 			"android.widget.Toolbar",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;II)V",
@@ -59,7 +59,7 @@ namespace android::widget
 			"()V"
 		);
 	}
-	android::widget::Toolbar_LayoutParams Toolbar::generateLayoutParams(__JniBaseClass arg0)
+	android::widget::Toolbar_LayoutParams Toolbar::generateLayoutParams(JObject arg0)
 	{
 		return callObjectMethod(
 			"generateLayoutParams",
@@ -165,7 +165,7 @@ namespace android::widget
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
-	__JniBaseClass Toolbar::getMenu()
+	JObject Toolbar::getMenu()
 	{
 		return callObjectMethod(
 			"getMenu",
@@ -417,7 +417,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void Toolbar::setNavigationOnClickListener(__JniBaseClass arg0)
+	void Toolbar::setNavigationOnClickListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setNavigationOnClickListener",
@@ -425,7 +425,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void Toolbar::setOnMenuItemClickListener(__JniBaseClass arg0)
+	void Toolbar::setOnMenuItemClickListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setOnMenuItemClickListener",

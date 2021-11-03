@@ -6,11 +6,11 @@ namespace org::json
 	// Fields
 	
 	// QAndroidJniObject forward
-	JSONTokener::JSONTokener(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	JSONTokener::JSONTokener(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	JSONTokener::JSONTokener(jstring arg0)
-		: __JniBaseClass(
+		: JObject(
 			"org.json.JSONTokener",
 			"(Ljava/lang/String;)V",
 			arg0

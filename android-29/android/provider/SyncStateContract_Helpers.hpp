@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::accounts
 {
@@ -25,13 +25,13 @@ namespace android::util
 
 namespace android::provider
 {
-	class SyncStateContract_Helpers : public __JniBaseClass
+	class SyncStateContract_Helpers : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit SyncStateContract_Helpers(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit SyncStateContract_Helpers(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		SyncStateContract_Helpers(QAndroidJniObject obj);
 		
 		// Constructors

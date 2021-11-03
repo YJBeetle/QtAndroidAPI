@@ -7,7 +7,7 @@ namespace android::media
 	// Fields
 	
 	// QAndroidJniObject forward
-	DrmInitData::DrmInitData(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	DrmInitData::DrmInitData(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

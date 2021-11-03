@@ -39,7 +39,7 @@ namespace android::location
 			"ACCURACY_MEDIUM"
 		);
 	}
-	__JniBaseClass Criteria::CREATOR()
+	JObject Criteria::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.location.Criteria",
@@ -77,16 +77,16 @@ namespace android::location
 	}
 	
 	// QAndroidJniObject forward
-	Criteria::Criteria(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Criteria::Criteria(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Criteria::Criteria()
-		: __JniBaseClass(
+		: JObject(
 			"android.location.Criteria",
 			"()V"
 		) {}
 	Criteria::Criteria(android::location::Criteria &arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.location.Criteria",
 			"(Landroid/location/Criteria;)V",
 			arg0.object()

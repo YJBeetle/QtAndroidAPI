@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::content
 {
@@ -9,19 +9,19 @@ namespace android::content
 
 namespace android::widget
 {
-	class Scroller : public __JniBaseClass
+	class Scroller : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Scroller(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Scroller(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Scroller(QAndroidJniObject obj);
 		
 		// Constructors
 		Scroller(android::content::Context arg0);
-		Scroller(android::content::Context arg0, __JniBaseClass arg1);
-		Scroller(android::content::Context arg0, __JniBaseClass arg1, jboolean arg2);
+		Scroller(android::content::Context arg0, JObject arg1);
+		Scroller(android::content::Context arg0, JObject arg1, jboolean arg2);
 		
 		// Methods
 		void abortAnimation();

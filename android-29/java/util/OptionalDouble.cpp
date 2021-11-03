@@ -5,7 +5,7 @@ namespace java::util
 	// Fields
 	
 	// QAndroidJniObject forward
-	OptionalDouble::OptionalDouble(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	OptionalDouble::OptionalDouble(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -49,7 +49,7 @@ namespace java::util
 			"()I"
 		);
 	}
-	void OptionalDouble::ifPresent(__JniBaseClass arg0)
+	void OptionalDouble::ifPresent(JObject arg0)
 	{
 		callMethod<void>(
 			"ifPresent",
@@ -57,7 +57,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	void OptionalDouble::ifPresentOrElse(__JniBaseClass arg0, __JniBaseClass arg1)
+	void OptionalDouble::ifPresentOrElse(JObject arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"ifPresentOrElse",
@@ -88,7 +88,7 @@ namespace java::util
 			arg0
 		);
 	}
-	jdouble OptionalDouble::orElseGet(__JniBaseClass arg0)
+	jdouble OptionalDouble::orElseGet(JObject arg0)
 	{
 		return callMethod<jdouble>(
 			"orElseGet",
@@ -103,7 +103,7 @@ namespace java::util
 			"()D"
 		);
 	}
-	jdouble OptionalDouble::orElseThrow(__JniBaseClass arg0)
+	jdouble OptionalDouble::orElseThrow(JObject arg0)
 	{
 		return callMethod<jdouble>(
 			"orElseThrow",
@@ -111,7 +111,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	__JniBaseClass OptionalDouble::stream()
+	JObject OptionalDouble::stream()
 	{
 		return callObjectMethod(
 			"stream",

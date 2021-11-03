@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "../content/Context.hpp"
 #include "../content/ContextWrapper.hpp"
 #include "../app/Service.hpp"
@@ -106,7 +106,7 @@ namespace android::inputmethodservice
 		jint getBackDisposition();
 		jint getCandidatesHiddenVisibility();
 		android::view::inputmethod::InputBinding getCurrentInputBinding();
-		__JniBaseClass getCurrentInputConnection();
+		JObject getCurrentInputConnection();
 		android::view::inputmethod::EditorInfo getCurrentInputEditorInfo();
 		jboolean getCurrentInputStarted();
 		jint getInputMethodWindowRecommendedHeight();

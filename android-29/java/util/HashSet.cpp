@@ -22,7 +22,7 @@ namespace java::util
 			"(I)V",
 			arg0
 		) {}
-	HashSet::HashSet(__JniBaseClass arg0)
+	HashSet::HashSet(JObject arg0)
 		: java::util::AbstractSet(
 			"java.util.HashSet",
 			"(Ljava/util/Collection;)V",
@@ -74,7 +74,7 @@ namespace java::util
 			"()Z"
 		);
 	}
-	__JniBaseClass HashSet::iterator()
+	JObject HashSet::iterator()
 	{
 		return callObjectMethod(
 			"iterator",
@@ -96,7 +96,7 @@ namespace java::util
 			"()I"
 		);
 	}
-	__JniBaseClass HashSet::spliterator()
+	JObject HashSet::spliterator()
 	{
 		return callObjectMethod(
 			"spliterator",

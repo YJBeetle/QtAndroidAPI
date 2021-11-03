@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace java::lang
 {
@@ -9,28 +9,28 @@ namespace java::lang
 
 namespace android::icu::text
 {
-	class UCharacterIterator : public __JniBaseClass
+	class UCharacterIterator : public JObject
 	{
 	public:
 		// Fields
 		static jint DONE();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit UCharacterIterator(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit UCharacterIterator(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		UCharacterIterator(QAndroidJniObject obj);
 		
 		// Constructors
 		
 		// Methods
 		static android::icu::text::UCharacterIterator getInstance(jcharArray arg0);
-		static android::icu::text::UCharacterIterator getInstance(__JniBaseClass arg0);
+		static android::icu::text::UCharacterIterator getInstance(JObject arg0);
 		static android::icu::text::UCharacterIterator getInstance(jstring arg0);
 		static android::icu::text::UCharacterIterator getInstance(java::lang::StringBuffer arg0);
 		static android::icu::text::UCharacterIterator getInstance(jcharArray arg0, jint arg1, jint arg2);
 		jobject clone();
 		jint current();
 		jint currentCodePoint();
-		__JniBaseClass getCharacterIterator();
+		JObject getCharacterIterator();
 		jint getIndex();
 		jint getLength();
 		jint getText(jcharArray arg0);

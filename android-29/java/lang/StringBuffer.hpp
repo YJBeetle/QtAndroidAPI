@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace java::io
 {
@@ -13,13 +13,13 @@ namespace java::io
 
 namespace java::lang
 {
-	class StringBuffer : public __JniBaseClass
+	class StringBuffer : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit StringBuffer(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit StringBuffer(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		StringBuffer(QAndroidJniObject obj);
 		
 		// Constructors
@@ -43,11 +43,11 @@ namespace java::lang
 		java::lang::StringBuffer appendCodePoint(jint arg0);
 		jint capacity();
 		jchar charAt(jint arg0);
-		__JniBaseClass chars();
+		JObject chars();
 		jint codePointAt(jint arg0);
 		jint codePointBefore(jint arg0);
 		jint codePointCount(jint arg0, jint arg1);
-		__JniBaseClass codePoints();
+		JObject codePoints();
 		jint compareTo(jobject arg0);
 		jint compareTo(java::lang::StringBuffer arg0);
 		java::lang::StringBuffer _delete(jint arg0, jint arg1);

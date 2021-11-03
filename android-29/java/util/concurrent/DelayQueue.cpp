@@ -17,7 +17,7 @@ namespace java::util::concurrent
 			"java.util.concurrent.DelayQueue",
 			"()V"
 		) {}
-	DelayQueue::DelayQueue(__JniBaseClass arg0)
+	DelayQueue::DelayQueue(JObject arg0)
 		: java::util::AbstractQueue(
 			"java.util.concurrent.DelayQueue",
 			"(Ljava/util/Collection;)V",
@@ -33,7 +33,7 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	jboolean DelayQueue::add(__JniBaseClass arg0)
+	jboolean DelayQueue::add(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"add",
@@ -48,7 +48,7 @@ namespace java::util::concurrent
 			"()V"
 		);
 	}
-	jint DelayQueue::drainTo(__JniBaseClass arg0)
+	jint DelayQueue::drainTo(JObject arg0)
 	{
 		return callMethod<jint>(
 			"drainTo",
@@ -56,7 +56,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	jint DelayQueue::drainTo(__JniBaseClass arg0, jint arg1)
+	jint DelayQueue::drainTo(JObject arg0, jint arg1)
 	{
 		return callMethod<jint>(
 			"drainTo",
@@ -65,7 +65,7 @@ namespace java::util::concurrent
 			arg1
 		);
 	}
-	__JniBaseClass DelayQueue::iterator()
+	JObject DelayQueue::iterator()
 	{
 		return callObjectMethod(
 			"iterator",
@@ -80,7 +80,7 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	jboolean DelayQueue::offer(__JniBaseClass arg0)
+	jboolean DelayQueue::offer(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"offer",
@@ -98,7 +98,7 @@ namespace java::util::concurrent
 			arg2.object()
 		);
 	}
-	jboolean DelayQueue::offer(__JniBaseClass arg0, jlong arg1, java::util::concurrent::TimeUnit arg2)
+	jboolean DelayQueue::offer(JObject arg0, jlong arg1, java::util::concurrent::TimeUnit arg2)
 	{
 		return callMethod<jboolean>(
 			"offer",
@@ -108,21 +108,21 @@ namespace java::util::concurrent
 			arg2.object()
 		);
 	}
-	__JniBaseClass DelayQueue::peek()
+	JObject DelayQueue::peek()
 	{
 		return callObjectMethod(
 			"peek",
 			"()Ljava/util/concurrent/Delayed;"
 		);
 	}
-	__JniBaseClass DelayQueue::poll()
+	JObject DelayQueue::poll()
 	{
 		return callObjectMethod(
 			"poll",
 			"()Ljava/util/concurrent/Delayed;"
 		);
 	}
-	__JniBaseClass DelayQueue::poll(jlong arg0, java::util::concurrent::TimeUnit arg1)
+	JObject DelayQueue::poll(jlong arg0, java::util::concurrent::TimeUnit arg1)
 	{
 		return callObjectMethod(
 			"poll",
@@ -139,7 +139,7 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	void DelayQueue::put(__JniBaseClass arg0)
+	void DelayQueue::put(JObject arg0)
 	{
 		callMethod<void>(
 			"put",
@@ -169,7 +169,7 @@ namespace java::util::concurrent
 			"()I"
 		);
 	}
-	__JniBaseClass DelayQueue::take()
+	JObject DelayQueue::take()
 	{
 		return callObjectMethod(
 			"take",

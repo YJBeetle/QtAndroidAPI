@@ -19,7 +19,7 @@ namespace java::util
 			arg1
 		);
 	}
-	jboolean AbstractSequentialList::addAll(jint arg0, __JniBaseClass arg1)
+	jboolean AbstractSequentialList::addAll(jint arg0, JObject arg1)
 	{
 		return callMethod<jboolean>(
 			"addAll",
@@ -36,14 +36,14 @@ namespace java::util
 			arg0
 		).object<jobject>();
 	}
-	__JniBaseClass AbstractSequentialList::iterator()
+	JObject AbstractSequentialList::iterator()
 	{
 		return callObjectMethod(
 			"iterator",
 			"()Ljava/util/Iterator;"
 		);
 	}
-	__JniBaseClass AbstractSequentialList::listIterator(jint arg0)
+	JObject AbstractSequentialList::listIterator(jint arg0)
 	{
 		return callObjectMethod(
 			"listIterator",

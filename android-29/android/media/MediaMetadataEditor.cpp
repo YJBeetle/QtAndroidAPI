@@ -27,7 +27,7 @@ namespace android::media
 	}
 	
 	// QAndroidJniObject forward
-	MediaMetadataEditor::MediaMetadataEditor(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	MediaMetadataEditor::MediaMetadataEditor(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

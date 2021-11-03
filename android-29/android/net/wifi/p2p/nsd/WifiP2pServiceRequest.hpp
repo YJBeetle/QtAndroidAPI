@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../../../__JniBaseClass.hpp"
+#include "../../../../../JObject.hpp"
 
 namespace android::os
 {
@@ -9,13 +9,13 @@ namespace android::os
 
 namespace android::net::wifi::p2p::nsd
 {
-	class WifiP2pServiceRequest : public __JniBaseClass
+	class WifiP2pServiceRequest : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit WifiP2pServiceRequest(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit WifiP2pServiceRequest(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		WifiP2pServiceRequest(QAndroidJniObject obj);
 		
 		// Constructors

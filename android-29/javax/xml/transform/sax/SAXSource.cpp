@@ -14,22 +14,22 @@ namespace javax::xml::transform::sax
 	}
 	
 	// QAndroidJniObject forward
-	SAXSource::SAXSource(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	SAXSource::SAXSource(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	SAXSource::SAXSource()
-		: __JniBaseClass(
+		: JObject(
 			"javax.xml.transform.sax.SAXSource",
 			"()V"
 		) {}
 	SAXSource::SAXSource(org::xml::sax::InputSource arg0)
-		: __JniBaseClass(
+		: JObject(
 			"javax.xml.transform.sax.SAXSource",
 			"(Lorg/xml/sax/InputSource;)V",
 			arg0.object()
 		) {}
-	SAXSource::SAXSource(__JniBaseClass arg0, org::xml::sax::InputSource arg1)
-		: __JniBaseClass(
+	SAXSource::SAXSource(JObject arg0, org::xml::sax::InputSource arg1)
+		: JObject(
 			"javax.xml.transform.sax.SAXSource",
 			"(Lorg/xml/sax/XMLReader;Lorg/xml/sax/InputSource;)V",
 			arg0.object(),
@@ -37,7 +37,7 @@ namespace javax::xml::transform::sax
 		) {}
 	
 	// Methods
-	org::xml::sax::InputSource SAXSource::sourceToInputSource(__JniBaseClass arg0)
+	org::xml::sax::InputSource SAXSource::sourceToInputSource(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"javax.xml.transform.sax.SAXSource",
@@ -60,7 +60,7 @@ namespace javax::xml::transform::sax
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	__JniBaseClass SAXSource::getXMLReader()
+	JObject SAXSource::getXMLReader()
 	{
 		return callObjectMethod(
 			"getXMLReader",
@@ -90,7 +90,7 @@ namespace javax::xml::transform::sax
 			arg0
 		);
 	}
-	void SAXSource::setXMLReader(__JniBaseClass arg0)
+	void SAXSource::setXMLReader(JObject arg0)
 	{
 		callMethod<void>(
 			"setXMLReader",

@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 
 namespace javax::xml
 {
-	class XMLConstants : public __JniBaseClass
+	class XMLConstants : public JObject
 	{
 	public:
 		// Fields
@@ -27,7 +27,7 @@ namespace javax::xml
 		static jstring XML_NS_URI();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit XMLConstants(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit XMLConstants(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		XMLConstants(QAndroidJniObject obj);
 		
 		// Constructors

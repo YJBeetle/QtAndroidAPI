@@ -7,7 +7,7 @@ namespace java::net
 	// Fields
 	
 	// QAndroidJniObject forward
-	URLEncoder::URLEncoder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	URLEncoder::URLEncoder(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

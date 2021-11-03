@@ -7,7 +7,7 @@ namespace javax::crypto
 	// Fields
 	
 	// QAndroidJniObject forward
-	SecretKeyFactory::SecretKeyFactory(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	SecretKeyFactory::SecretKeyFactory(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -41,7 +41,7 @@ namespace javax::crypto
 			arg1.object()
 		);
 	}
-	__JniBaseClass SecretKeyFactory::generateSecret(__JniBaseClass arg0)
+	JObject SecretKeyFactory::generateSecret(JObject arg0)
 	{
 		return callObjectMethod(
 			"generateSecret",
@@ -56,7 +56,7 @@ namespace javax::crypto
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	__JniBaseClass SecretKeyFactory::getKeySpec(__JniBaseClass arg0, jclass arg1)
+	JObject SecretKeyFactory::getKeySpec(JObject arg0, jclass arg1)
 	{
 		return callObjectMethod(
 			"getKeySpec",
@@ -72,7 +72,7 @@ namespace javax::crypto
 			"()Ljava/security/Provider;"
 		);
 	}
-	__JniBaseClass SecretKeyFactory::translateKey(__JniBaseClass arg0)
+	JObject SecretKeyFactory::translateKey(JObject arg0)
 	{
 		return callObjectMethod(
 			"translateKey",

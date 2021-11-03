@@ -7,11 +7,11 @@ namespace android::net::sip
 	// Fields
 	
 	// QAndroidJniObject forward
-	SipSession_Listener::SipSession_Listener(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	SipSession_Listener::SipSession_Listener(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	SipSession_Listener::SipSession_Listener()
-		: __JniBaseClass(
+		: JObject(
 			"android.net.sip.SipSession$Listener",
 			"()V"
 		) {}

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../../__JniBaseClass.hpp"
+#include "../../../../JObject.hpp"
 
 namespace android::hardware::camera2
 {
@@ -21,27 +21,27 @@ namespace android::os
 
 namespace android::hardware::camera2::params
 {
-	class SessionConfiguration : public __JniBaseClass
+	class SessionConfiguration : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint SESSION_HIGH_SPEED();
 		static jint SESSION_REGULAR();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit SessionConfiguration(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit SessionConfiguration(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		SessionConfiguration(QAndroidJniObject obj);
 		
 		// Constructors
-		SessionConfiguration(jint arg0, __JniBaseClass arg1, __JniBaseClass arg2, android::hardware::camera2::CameraCaptureSession_StateCallback arg3);
+		SessionConfiguration(jint arg0, JObject arg1, JObject arg2, android::hardware::camera2::CameraCaptureSession_StateCallback arg3);
 		
 		// Methods
 		jint describeContents();
 		jboolean equals(jobject arg0);
-		__JniBaseClass getExecutor();
+		JObject getExecutor();
 		android::hardware::camera2::params::InputConfiguration getInputConfiguration();
-		__JniBaseClass getOutputConfigurations();
+		JObject getOutputConfigurations();
 		android::hardware::camera2::CaptureRequest getSessionParameters();
 		jint getSessionType();
 		android::hardware::camera2::CameraCaptureSession_StateCallback getStateCallback();

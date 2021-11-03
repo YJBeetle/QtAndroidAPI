@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "./spi/AbstractInterruptibleChannel.hpp"
 
 namespace java::nio
@@ -34,8 +34,8 @@ namespace java::nio::channels
 		// Constructors
 		
 		// Methods
-		static java::nio::channels::FileChannel open(__JniBaseClass arg0, jarray arg1);
-		static java::nio::channels::FileChannel open(__JniBaseClass arg0, __JniBaseClass arg1, jarray arg2);
+		static java::nio::channels::FileChannel open(JObject arg0, jarray arg1);
+		static java::nio::channels::FileChannel open(JObject arg0, JObject arg1, jarray arg2);
 		void force(jboolean arg0);
 		java::nio::channels::FileLock lock();
 		java::nio::channels::FileLock lock(jlong arg0, jlong arg1, jboolean arg2);
@@ -47,8 +47,8 @@ namespace java::nio::channels
 		jlong read(jarray arg0);
 		jlong read(jarray arg0, jint arg1, jint arg2);
 		jlong size();
-		jlong transferFrom(__JniBaseClass arg0, jlong arg1, jlong arg2);
-		jlong transferTo(jlong arg0, jlong arg1, __JniBaseClass arg2);
+		jlong transferFrom(JObject arg0, jlong arg1, jlong arg2);
+		jlong transferTo(jlong arg0, jlong arg1, JObject arg2);
 		java::nio::channels::FileChannel truncate(jlong arg0);
 		java::nio::channels::FileLock tryLock();
 		java::nio::channels::FileLock tryLock(jlong arg0, jlong arg1, jboolean arg2);

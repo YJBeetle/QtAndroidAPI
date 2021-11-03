@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace java::nio::channels::spi
 {
@@ -13,21 +13,21 @@ namespace java::util::concurrent
 
 namespace java::nio::channels
 {
-	class AsynchronousChannelGroup : public __JniBaseClass
+	class AsynchronousChannelGroup : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit AsynchronousChannelGroup(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit AsynchronousChannelGroup(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		AsynchronousChannelGroup(QAndroidJniObject obj);
 		
 		// Constructors
 		
 		// Methods
-		static java::nio::channels::AsynchronousChannelGroup withCachedThreadPool(__JniBaseClass arg0, jint arg1);
-		static java::nio::channels::AsynchronousChannelGroup withFixedThreadPool(jint arg0, __JniBaseClass arg1);
-		static java::nio::channels::AsynchronousChannelGroup withThreadPool(__JniBaseClass arg0);
+		static java::nio::channels::AsynchronousChannelGroup withCachedThreadPool(JObject arg0, jint arg1);
+		static java::nio::channels::AsynchronousChannelGroup withFixedThreadPool(jint arg0, JObject arg1);
+		static java::nio::channels::AsynchronousChannelGroup withThreadPool(JObject arg0);
 		jboolean awaitTermination(jlong arg0, java::util::concurrent::TimeUnit arg1);
 		jboolean isShutdown();
 		jboolean isTerminated();

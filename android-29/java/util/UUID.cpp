@@ -5,11 +5,11 @@ namespace java::util
 	// Fields
 	
 	// QAndroidJniObject forward
-	UUID::UUID(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	UUID::UUID(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	UUID::UUID(jlong arg0, jlong arg1)
-		: __JniBaseClass(
+		: JObject(
 			"java.util.UUID",
 			"(JJ)V",
 			arg0,

@@ -5,7 +5,7 @@ namespace java::nio::file
 	// Fields
 	
 	// QAndroidJniObject forward
-	FileStore::FileStore(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	FileStore::FileStore(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -25,7 +25,7 @@ namespace java::nio::file
 			"()J"
 		);
 	}
-	__JniBaseClass FileStore::getFileStoreAttributeView(jclass arg0)
+	JObject FileStore::getFileStoreAttributeView(jclass arg0)
 	{
 		return callObjectMethod(
 			"getFileStoreAttributeView",

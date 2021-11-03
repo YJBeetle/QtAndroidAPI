@@ -5,18 +5,18 @@ namespace javax::crypto::spec
 	// Fields
 	
 	// QAndroidJniObject forward
-	PBEParameterSpec::PBEParameterSpec(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	PBEParameterSpec::PBEParameterSpec(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	PBEParameterSpec::PBEParameterSpec(jbyteArray arg0, jint arg1)
-		: __JniBaseClass(
+		: JObject(
 			"javax.crypto.spec.PBEParameterSpec",
 			"([BI)V",
 			arg0,
 			arg1
 		) {}
-	PBEParameterSpec::PBEParameterSpec(jbyteArray arg0, jint arg1, __JniBaseClass arg2)
-		: __JniBaseClass(
+	PBEParameterSpec::PBEParameterSpec(jbyteArray arg0, jint arg1, JObject arg2)
+		: JObject(
 			"javax.crypto.spec.PBEParameterSpec",
 			"([BILjava/security/spec/AlgorithmParameterSpec;)V",
 			arg0,
@@ -32,7 +32,7 @@ namespace javax::crypto::spec
 			"()I"
 		);
 	}
-	__JniBaseClass PBEParameterSpec::getParameterSpec()
+	JObject PBEParameterSpec::getParameterSpec()
 	{
 		return callObjectMethod(
 			"getParameterSpec",

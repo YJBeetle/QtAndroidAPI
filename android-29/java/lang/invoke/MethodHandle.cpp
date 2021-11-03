@@ -7,7 +7,7 @@ namespace java::lang::invoke
 	// Fields
 	
 	// QAndroidJniObject forward
-	MethodHandle::MethodHandle(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	MethodHandle::MethodHandle(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -112,7 +112,7 @@ namespace java::lang::invoke
 			arg0
 		).object<jobject>();
 	}
-	jobject MethodHandle::invokeWithArguments(__JniBaseClass arg0)
+	jobject MethodHandle::invokeWithArguments(JObject arg0)
 	{
 		return callObjectMethod(
 			"invokeWithArguments",

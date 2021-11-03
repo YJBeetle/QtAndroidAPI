@@ -8,7 +8,7 @@ namespace java::util::regex
 	// Fields
 	
 	// QAndroidJniObject forward
-	Matcher::Matcher(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Matcher::Matcher(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -197,7 +197,7 @@ namespace java::util::regex
 			arg0
 		).object<jstring>();
 	}
-	jstring Matcher::replaceAll(__JniBaseClass arg0)
+	jstring Matcher::replaceAll(JObject arg0)
 	{
 		return callObjectMethod(
 			"replaceAll",
@@ -213,7 +213,7 @@ namespace java::util::regex
 			arg0
 		).object<jstring>();
 	}
-	jstring Matcher::replaceFirst(__JniBaseClass arg0)
+	jstring Matcher::replaceFirst(JObject arg0)
 	{
 		return callObjectMethod(
 			"replaceFirst",
@@ -243,7 +243,7 @@ namespace java::util::regex
 			arg0
 		);
 	}
-	__JniBaseClass Matcher::results()
+	JObject Matcher::results()
 	{
 		return callObjectMethod(
 			"results",
@@ -273,7 +273,7 @@ namespace java::util::regex
 			arg0
 		);
 	}
-	__JniBaseClass Matcher::toMatchResult()
+	JObject Matcher::toMatchResult()
 	{
 		return callObjectMethod(
 			"toMatchResult",

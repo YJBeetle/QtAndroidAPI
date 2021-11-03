@@ -5,11 +5,11 @@ namespace android::drm
 	// Fields
 	
 	// QAndroidJniObject forward
-	DrmStore::DrmStore(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	DrmStore::DrmStore(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	DrmStore::DrmStore()
-		: __JniBaseClass(
+		: JObject(
 			"android.drm.DrmStore",
 			"()V"
 		) {}

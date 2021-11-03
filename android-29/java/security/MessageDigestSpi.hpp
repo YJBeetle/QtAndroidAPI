@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace java::nio
 {
@@ -9,13 +9,13 @@ namespace java::nio
 
 namespace java::security
 {
-	class MessageDigestSpi : public __JniBaseClass
+	class MessageDigestSpi : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MessageDigestSpi(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit MessageDigestSpi(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		MessageDigestSpi(QAndroidJniObject obj);
 		
 		// Constructors

@@ -21,14 +21,14 @@ namespace android::widget
 			"(Landroid/content/Context;)V",
 			arg0.object()
 		) {}
-	HorizontalScrollView::HorizontalScrollView(android::content::Context arg0, __JniBaseClass arg1)
+	HorizontalScrollView::HorizontalScrollView(android::content::Context arg0, JObject arg1)
 		: android::widget::FrameLayout(
 			"android.widget.HorizontalScrollView",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.object(),
 			arg1.object()
 		) {}
-	HorizontalScrollView::HorizontalScrollView(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
+	HorizontalScrollView::HorizontalScrollView(android::content::Context arg0, JObject arg1, jint arg2)
 		: android::widget::FrameLayout(
 			"android.widget.HorizontalScrollView",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
@@ -36,7 +36,7 @@ namespace android::widget
 			arg1.object(),
 			arg2
 		) {}
-	HorizontalScrollView::HorizontalScrollView(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
+	HorizontalScrollView::HorizontalScrollView(android::content::Context arg0, JObject arg1, jint arg2, jint arg3)
 		: android::widget::FrameLayout(
 			"android.widget.HorizontalScrollView",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;II)V",

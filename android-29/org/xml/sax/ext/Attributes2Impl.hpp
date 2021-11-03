@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../../__JniBaseClass.hpp"
+#include "../../../../JObject.hpp"
 #include "../helpers/AttributesImpl.hpp"
 
 
@@ -17,7 +17,7 @@ namespace org::xml::sax::ext
 		
 		// Constructors
 		Attributes2Impl();
-		Attributes2Impl(__JniBaseClass arg0);
+		Attributes2Impl(JObject arg0);
 		
 		// Methods
 		void addAttribute(jstring arg0, jstring arg1, jstring arg2, jstring arg3, jstring arg4);
@@ -28,7 +28,7 @@ namespace org::xml::sax::ext
 		jboolean isSpecified(jstring arg0);
 		jboolean isSpecified(jstring arg0, jstring arg1);
 		void removeAttribute(jint arg0);
-		void setAttributes(__JniBaseClass arg0);
+		void setAttributes(JObject arg0);
 		void setDeclared(jint arg0, jboolean arg1);
 		void setSpecified(jint arg0, jboolean arg1);
 	};

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::util
 {
@@ -9,7 +9,7 @@ namespace android::util
 
 namespace android::media
 {
-	class MediaCodecInfo_EncoderCapabilities : public __JniBaseClass
+	class MediaCodecInfo_EncoderCapabilities : public JObject
 	{
 	public:
 		// Fields
@@ -18,7 +18,7 @@ namespace android::media
 		static jint BITRATE_MODE_VBR();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MediaCodecInfo_EncoderCapabilities(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit MediaCodecInfo_EncoderCapabilities(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		MediaCodecInfo_EncoderCapabilities(QAndroidJniObject obj);
 		
 		// Constructors

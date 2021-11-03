@@ -4,7 +4,7 @@
 namespace android::content::pm
 {
 	// Fields
-	__JniBaseClass ModuleInfo::CREATOR()
+	JObject ModuleInfo::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.content.pm.ModuleInfo",
@@ -14,7 +14,7 @@ namespace android::content::pm
 	}
 	
 	// QAndroidJniObject forward
-	ModuleInfo::ModuleInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	ModuleInfo::ModuleInfo(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

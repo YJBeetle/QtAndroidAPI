@@ -4,7 +4,7 @@
 namespace android::telecom
 {
 	// Fields
-	__JniBaseClass VideoProfile_CameraCapabilities::CREATOR()
+	JObject VideoProfile_CameraCapabilities::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.telecom.VideoProfile$CameraCapabilities",
@@ -14,18 +14,18 @@ namespace android::telecom
 	}
 	
 	// QAndroidJniObject forward
-	VideoProfile_CameraCapabilities::VideoProfile_CameraCapabilities(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	VideoProfile_CameraCapabilities::VideoProfile_CameraCapabilities(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	VideoProfile_CameraCapabilities::VideoProfile_CameraCapabilities(jint arg0, jint arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.telecom.VideoProfile$CameraCapabilities",
 			"(II)V",
 			arg0,
 			arg1
 		) {}
 	VideoProfile_CameraCapabilities::VideoProfile_CameraCapabilities(jint arg0, jint arg1, jboolean arg2, jfloat arg3)
-		: __JniBaseClass(
+		: JObject(
 			"android.telecom.VideoProfile$CameraCapabilities",
 			"(IIZF)V",
 			arg0,

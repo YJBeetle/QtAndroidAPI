@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../../../__JniBaseClass.hpp"
+#include "../../../../../JObject.hpp"
 #include "./WifiP2pServiceInfo.hpp"
 
 
@@ -18,7 +18,7 @@ namespace android::net::wifi::p2p::nsd
 		// Constructors
 		
 		// Methods
-		static android::net::wifi::p2p::nsd::WifiP2pUpnpServiceInfo newInstance(jstring arg0, jstring arg1, __JniBaseClass arg2);
+		static android::net::wifi::p2p::nsd::WifiP2pUpnpServiceInfo newInstance(jstring arg0, jstring arg1, JObject arg2);
 	};
 } // namespace android::net::wifi::p2p::nsd
 

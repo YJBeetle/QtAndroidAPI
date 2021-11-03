@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "./CacheResponse.hpp"
 
 namespace java::util
@@ -24,11 +24,11 @@ namespace java::net
 		
 		// Methods
 		jstring getCipherSuite();
-		__JniBaseClass getLocalCertificateChain();
-		__JniBaseClass getLocalPrincipal();
-		__JniBaseClass getPeerPrincipal();
+		JObject getLocalCertificateChain();
+		JObject getLocalPrincipal();
+		JObject getPeerPrincipal();
 		java::util::Optional getSSLSession();
-		__JniBaseClass getServerCertificateChain();
+		JObject getServerCertificateChain();
 	};
 } // namespace java::net
 

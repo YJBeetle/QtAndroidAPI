@@ -5,11 +5,11 @@ namespace android::renderscript
 	// Fields
 	
 	// QAndroidJniObject forward
-	RenderScript_RSErrorHandler::RenderScript_RSErrorHandler(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	RenderScript_RSErrorHandler::RenderScript_RSErrorHandler(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	RenderScript_RSErrorHandler::RenderScript_RSErrorHandler()
-		: __JniBaseClass(
+		: JObject(
 			"android.renderscript.RenderScript$RSErrorHandler",
 			"()V"
 		) {}

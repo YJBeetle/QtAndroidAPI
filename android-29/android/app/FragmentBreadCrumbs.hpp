@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "../view/View.hpp"
 #include "../view/ViewGroup.hpp"
 
@@ -26,15 +26,15 @@ namespace android::app
 		
 		// Constructors
 		FragmentBreadCrumbs(android::content::Context arg0);
-		FragmentBreadCrumbs(android::content::Context arg0, __JniBaseClass arg1);
-		FragmentBreadCrumbs(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
+		FragmentBreadCrumbs(android::content::Context arg0, JObject arg1);
+		FragmentBreadCrumbs(android::content::Context arg0, JObject arg1, jint arg2);
 		
 		// Methods
 		void onBackStackChanged();
 		void setActivity(android::app::Activity arg0);
 		void setMaxVisible(jint arg0);
-		void setOnBreadCrumbClickListener(__JniBaseClass arg0);
-		void setParentTitle(jstring arg0, jstring arg1, __JniBaseClass arg2);
+		void setOnBreadCrumbClickListener(JObject arg0);
+		void setParentTitle(jstring arg0, jstring arg1, JObject arg2);
 		void setTitle(jstring arg0, jstring arg1);
 	};
 } // namespace android::app

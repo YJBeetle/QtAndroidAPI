@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace java::io
 {
@@ -73,7 +73,7 @@ namespace java::time::temporal
 
 namespace java::time
 {
-	class LocalDate : public __JniBaseClass
+	class LocalDate : public JObject
 	{
 	public:
 		// Fields
@@ -82,13 +82,13 @@ namespace java::time
 		static java::time::LocalDate MIN();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit LocalDate(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit LocalDate(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		LocalDate(QAndroidJniObject obj);
 		
 		// Constructors
 		
 		// Methods
-		static java::time::LocalDate from(__JniBaseClass arg0);
+		static java::time::LocalDate from(JObject arg0);
 		static java::time::LocalDate now();
 		static java::time::LocalDate now(java::time::Clock arg0);
 		static java::time::LocalDate now(java::time::ZoneId arg0);
@@ -99,7 +99,7 @@ namespace java::time
 		static java::time::LocalDate ofYearDay(jint arg0, jint arg1);
 		static java::time::LocalDate parse(jstring arg0);
 		static java::time::LocalDate parse(jstring arg0, java::time::format::DateTimeFormatter arg1);
-		__JniBaseClass adjustInto(__JniBaseClass arg0);
+		JObject adjustInto(JObject arg0);
 		java::time::LocalDateTime atStartOfDay();
 		java::time::ZonedDateTime atStartOfDay(java::time::ZoneId arg0);
 		java::time::LocalDateTime atTime(java::time::LocalTime arg0);
@@ -108,50 +108,50 @@ namespace java::time
 		java::time::LocalDateTime atTime(jint arg0, jint arg1, jint arg2, jint arg3);
 		java::time::OffsetDateTime atTime(java::time::OffsetTime arg0);
 		jint compareTo(jobject arg0);
-		jint compareTo(__JniBaseClass arg0);
-		__JniBaseClass datesUntil(java::time::LocalDate arg0);
-		__JniBaseClass datesUntil(java::time::LocalDate arg0, java::time::Period arg1);
+		jint compareTo(JObject arg0);
+		JObject datesUntil(java::time::LocalDate arg0);
+		JObject datesUntil(java::time::LocalDate arg0, java::time::Period arg1);
 		jboolean equals(jobject arg0);
 		jstring format(java::time::format::DateTimeFormatter arg0);
-		jint get(__JniBaseClass arg0);
+		jint get(JObject arg0);
 		java::time::chrono::IsoChronology getChronology();
 		jint getDayOfMonth();
 		java::time::DayOfWeek getDayOfWeek();
 		jint getDayOfYear();
 		java::time::chrono::IsoEra getEra();
-		jlong getLong(__JniBaseClass arg0);
+		jlong getLong(JObject arg0);
 		java::time::Month getMonth();
 		jint getMonthValue();
 		jint getYear();
 		jint hashCode();
-		jboolean isAfter(__JniBaseClass arg0);
-		jboolean isBefore(__JniBaseClass arg0);
-		jboolean isEqual(__JniBaseClass arg0);
+		jboolean isAfter(JObject arg0);
+		jboolean isBefore(JObject arg0);
+		jboolean isEqual(JObject arg0);
 		jboolean isLeapYear();
-		jboolean isSupported(__JniBaseClass arg0);
+		jboolean isSupported(JObject arg0);
 		jint lengthOfMonth();
 		jint lengthOfYear();
-		java::time::LocalDate minus(__JniBaseClass arg0);
-		java::time::LocalDate minus(jlong arg0, __JniBaseClass arg1);
+		java::time::LocalDate minus(JObject arg0);
+		java::time::LocalDate minus(jlong arg0, JObject arg1);
 		java::time::LocalDate minusDays(jlong arg0);
 		java::time::LocalDate minusMonths(jlong arg0);
 		java::time::LocalDate minusWeeks(jlong arg0);
 		java::time::LocalDate minusYears(jlong arg0);
-		java::time::LocalDate plus(__JniBaseClass arg0);
-		java::time::LocalDate plus(jlong arg0, __JniBaseClass arg1);
+		java::time::LocalDate plus(JObject arg0);
+		java::time::LocalDate plus(jlong arg0, JObject arg1);
 		java::time::LocalDate plusDays(jlong arg0);
 		java::time::LocalDate plusMonths(jlong arg0);
 		java::time::LocalDate plusWeeks(jlong arg0);
 		java::time::LocalDate plusYears(jlong arg0);
-		jobject query(__JniBaseClass arg0);
-		java::time::temporal::ValueRange range(__JniBaseClass arg0);
+		jobject query(JObject arg0);
+		java::time::temporal::ValueRange range(JObject arg0);
 		jlong toEpochDay();
 		jlong toEpochSecond(java::time::LocalTime arg0, java::time::ZoneOffset arg1);
 		jstring toString();
-		java::time::Period until(__JniBaseClass arg0);
-		jlong until(__JniBaseClass arg0, __JniBaseClass arg1);
-		java::time::LocalDate with(__JniBaseClass arg0);
-		java::time::LocalDate with(__JniBaseClass arg0, jlong arg1);
+		java::time::Period until(JObject arg0);
+		jlong until(JObject arg0, JObject arg1);
+		java::time::LocalDate with(JObject arg0);
+		java::time::LocalDate with(JObject arg0, jlong arg1);
 		java::time::LocalDate withDayOfMonth(jint arg0);
 		java::time::LocalDate withDayOfYear(jint arg0);
 		java::time::LocalDate withMonth(jint arg0);

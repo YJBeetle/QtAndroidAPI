@@ -26,11 +26,11 @@ namespace android::drm
 	}
 	
 	// QAndroidJniObject forward
-	DrmManagerClient::DrmManagerClient(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	DrmManagerClient::DrmManagerClient(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	DrmManagerClient::DrmManagerClient(android::content::Context arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.drm.DrmManagerClient",
 			"(Landroid/content/Context;)V",
 			arg0.object()
@@ -260,7 +260,7 @@ namespace android::drm
 			arg2
 		);
 	}
-	void DrmManagerClient::setOnErrorListener(__JniBaseClass arg0)
+	void DrmManagerClient::setOnErrorListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setOnErrorListener",
@@ -268,7 +268,7 @@ namespace android::drm
 			arg0.object()
 		);
 	}
-	void DrmManagerClient::setOnEventListener(__JniBaseClass arg0)
+	void DrmManagerClient::setOnEventListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setOnEventListener",
@@ -276,7 +276,7 @@ namespace android::drm
 			arg0.object()
 		);
 	}
-	void DrmManagerClient::setOnInfoListener(__JniBaseClass arg0)
+	void DrmManagerClient::setOnInfoListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setOnInfoListener",

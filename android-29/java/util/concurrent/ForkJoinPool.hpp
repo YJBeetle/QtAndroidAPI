@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "./AbstractExecutorService.hpp"
 
 namespace java::lang
@@ -34,7 +34,7 @@ namespace java::util::concurrent
 	{
 	public:
 		// Fields
-		static __JniBaseClass defaultForkJoinWorkerThreadFactory();
+		static JObject defaultForkJoinWorkerThreadFactory();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ForkJoinPool(const char *className, const char *sig, Ts...agv) : java::util::concurrent::AbstractExecutorService(className, sig, std::forward<Ts>(agv)...) {}
@@ -43,39 +43,39 @@ namespace java::util::concurrent
 		// Constructors
 		ForkJoinPool();
 		ForkJoinPool(jint arg0);
-		ForkJoinPool(jint arg0, __JniBaseClass arg1, __JniBaseClass arg2, jboolean arg3);
-		ForkJoinPool(jint arg0, __JniBaseClass arg1, __JniBaseClass arg2, jboolean arg3, jint arg4, jint arg5, jint arg6, __JniBaseClass arg7, jlong arg8, java::util::concurrent::TimeUnit arg9);
+		ForkJoinPool(jint arg0, JObject arg1, JObject arg2, jboolean arg3);
+		ForkJoinPool(jint arg0, JObject arg1, JObject arg2, jboolean arg3, jint arg4, jint arg5, jint arg6, JObject arg7, jlong arg8, java::util::concurrent::TimeUnit arg9);
 		
 		// Methods
 		static java::util::concurrent::ForkJoinPool commonPool();
 		static jint getCommonPoolParallelism();
-		static void managedBlock(__JniBaseClass arg0);
+		static void managedBlock(JObject arg0);
 		jboolean awaitQuiescence(jlong arg0, java::util::concurrent::TimeUnit arg1);
 		jboolean awaitTermination(jlong arg0, java::util::concurrent::TimeUnit arg1);
-		void execute(__JniBaseClass arg0);
+		void execute(JObject arg0);
 		void execute(java::util::concurrent::ForkJoinTask arg0);
 		jint getActiveThreadCount();
 		jboolean getAsyncMode();
-		__JniBaseClass getFactory();
+		JObject getFactory();
 		jint getParallelism();
 		jint getPoolSize();
 		jint getQueuedSubmissionCount();
 		jlong getQueuedTaskCount();
 		jint getRunningThreadCount();
 		jlong getStealCount();
-		__JniBaseClass getUncaughtExceptionHandler();
+		JObject getUncaughtExceptionHandler();
 		jboolean hasQueuedSubmissions();
 		jobject invoke(java::util::concurrent::ForkJoinTask arg0);
-		__JniBaseClass invokeAll(__JniBaseClass arg0);
+		JObject invokeAll(JObject arg0);
 		jboolean isQuiescent();
 		jboolean isShutdown();
 		jboolean isTerminated();
 		jboolean isTerminating();
 		void shutdown();
-		__JniBaseClass shutdownNow();
-		java::util::concurrent::ForkJoinTask submit(__JniBaseClass arg0);
+		JObject shutdownNow();
+		java::util::concurrent::ForkJoinTask submit(JObject arg0);
 		java::util::concurrent::ForkJoinTask submit(java::util::concurrent::ForkJoinTask arg0);
-		java::util::concurrent::ForkJoinTask submit(__JniBaseClass arg0, jobject arg1);
+		java::util::concurrent::ForkJoinTask submit(JObject arg0, jobject arg1);
 		jstring toString();
 	};
 } // namespace java::util::concurrent

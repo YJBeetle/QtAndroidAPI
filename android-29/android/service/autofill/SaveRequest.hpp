@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::os
 {
@@ -13,14 +13,14 @@ namespace android::os
 
 namespace android::service::autofill
 {
-	class SaveRequest : public __JniBaseClass
+	class SaveRequest : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit SaveRequest(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit SaveRequest(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		SaveRequest(QAndroidJniObject obj);
 		
 		// Constructors
@@ -28,8 +28,8 @@ namespace android::service::autofill
 		// Methods
 		jint describeContents();
 		android::os::Bundle getClientState();
-		__JniBaseClass getDatasetIds();
-		__JniBaseClass getFillContexts();
+		JObject getDatasetIds();
+		JObject getFillContexts();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::service::autofill

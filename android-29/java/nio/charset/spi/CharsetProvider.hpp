@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../../__JniBaseClass.hpp"
+#include "../../../../JObject.hpp"
 
 namespace java::lang
 {
@@ -13,20 +13,20 @@ namespace java::nio::charset
 
 namespace java::nio::charset::spi
 {
-	class CharsetProvider : public __JniBaseClass
+	class CharsetProvider : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit CharsetProvider(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit CharsetProvider(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		CharsetProvider(QAndroidJniObject obj);
 		
 		// Constructors
 		
 		// Methods
 		java::nio::charset::Charset charsetForName(jstring arg0);
-		__JniBaseClass charsets();
+		JObject charsets();
 	};
 } // namespace java::nio::charset::spi
 

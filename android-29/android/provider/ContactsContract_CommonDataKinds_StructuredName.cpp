@@ -125,7 +125,7 @@ namespace android::provider
 	}
 	
 	// QAndroidJniObject forward
-	ContactsContract_CommonDataKinds_StructuredName::ContactsContract_CommonDataKinds_StructuredName(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	ContactsContract_CommonDataKinds_StructuredName::ContactsContract_CommonDataKinds_StructuredName(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

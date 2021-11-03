@@ -51,11 +51,11 @@ namespace android::provider
 	}
 	
 	// QAndroidJniObject forward
-	SearchRecentSuggestions::SearchRecentSuggestions(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	SearchRecentSuggestions::SearchRecentSuggestions(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	SearchRecentSuggestions::SearchRecentSuggestions(android::content::Context arg0, jstring arg1, jint arg2)
-		: __JniBaseClass(
+		: JObject(
 			"android.provider.SearchRecentSuggestions",
 			"(Landroid/content/Context;Ljava/lang/String;I)V",
 			arg0.object(),

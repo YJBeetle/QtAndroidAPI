@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::net
 {
@@ -13,11 +13,11 @@ namespace android::os
 
 namespace android::nfc
 {
-	class NdefRecord : public __JniBaseClass
+	class NdefRecord : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jbyteArray RTD_ALTERNATIVE_CARRIER();
 		static jbyteArray RTD_HANDOVER_CARRIER();
 		static jbyteArray RTD_HANDOVER_REQUEST();
@@ -34,7 +34,7 @@ namespace android::nfc
 		static jshort TNF_WELL_KNOWN();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit NdefRecord(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit NdefRecord(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		NdefRecord(QAndroidJniObject obj);
 		
 		// Constructors

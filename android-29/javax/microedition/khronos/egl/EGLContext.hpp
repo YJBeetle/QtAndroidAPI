@@ -1,25 +1,25 @@
 #pragma once
 
-#include "../../../../__JniBaseClass.hpp"
+#include "../../../../JObject.hpp"
 
 
 namespace javax::microedition::khronos::egl
 {
-	class EGLContext : public __JniBaseClass
+	class EGLContext : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit EGLContext(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit EGLContext(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		EGLContext(QAndroidJniObject obj);
 		
 		// Constructors
 		EGLContext();
 		
 		// Methods
-		static __JniBaseClass getEGL();
-		__JniBaseClass getGL();
+		static JObject getEGL();
+		JObject getGL();
 	};
 } // namespace javax::microedition::khronos::egl
 

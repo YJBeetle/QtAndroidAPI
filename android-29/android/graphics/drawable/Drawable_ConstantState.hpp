@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::content::res
 {
@@ -17,13 +17,13 @@ namespace android::graphics::drawable
 
 namespace android::graphics::drawable
 {
-	class Drawable_ConstantState : public __JniBaseClass
+	class Drawable_ConstantState : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Drawable_ConstantState(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Drawable_ConstantState(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Drawable_ConstantState(QAndroidJniObject obj);
 		
 		// Constructors

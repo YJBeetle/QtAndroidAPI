@@ -22,11 +22,11 @@ namespace android::provider
 	}
 	
 	// QAndroidJniObject forward
-	CallLog::CallLog(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	CallLog::CallLog(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	CallLog::CallLog()
-		: __JniBaseClass(
+		: JObject(
 			"android.provider.CallLog",
 			"()V"
 		) {}

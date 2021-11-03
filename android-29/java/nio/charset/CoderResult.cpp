@@ -22,7 +22,7 @@ namespace java::nio::charset
 	}
 	
 	// QAndroidJniObject forward
-	CoderResult::CoderResult(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	CoderResult::CoderResult(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

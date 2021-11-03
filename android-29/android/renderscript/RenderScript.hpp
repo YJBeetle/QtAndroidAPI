@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::content
 {
@@ -25,7 +25,7 @@ namespace android::renderscript
 
 namespace android::renderscript
 {
-	class RenderScript : public __JniBaseClass
+	class RenderScript : public JObject
 	{
 	public:
 		// Fields
@@ -34,7 +34,7 @@ namespace android::renderscript
 		static jint CREATE_FLAG_NONE();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit RenderScript(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit RenderScript(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		RenderScript(QAndroidJniObject obj);
 		
 		// Constructors

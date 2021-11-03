@@ -7,17 +7,17 @@ namespace java::util::concurrent
 	// Fields
 	
 	// QAndroidJniObject forward
-	ExecutorCompletionService::ExecutorCompletionService(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	ExecutorCompletionService::ExecutorCompletionService(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	ExecutorCompletionService::ExecutorCompletionService(__JniBaseClass arg0)
-		: __JniBaseClass(
+	ExecutorCompletionService::ExecutorCompletionService(JObject arg0)
+		: JObject(
 			"java.util.concurrent.ExecutorCompletionService",
 			"(Ljava/util/concurrent/Executor;)V",
 			arg0.object()
 		) {}
-	ExecutorCompletionService::ExecutorCompletionService(__JniBaseClass arg0, __JniBaseClass arg1)
-		: __JniBaseClass(
+	ExecutorCompletionService::ExecutorCompletionService(JObject arg0, JObject arg1)
+		: JObject(
 			"java.util.concurrent.ExecutorCompletionService",
 			"(Ljava/util/concurrent/Executor;Ljava/util/concurrent/BlockingQueue;)V",
 			arg0.object(),
@@ -25,14 +25,14 @@ namespace java::util::concurrent
 		) {}
 	
 	// Methods
-	__JniBaseClass ExecutorCompletionService::poll()
+	JObject ExecutorCompletionService::poll()
 	{
 		return callObjectMethod(
 			"poll",
 			"()Ljava/util/concurrent/Future;"
 		);
 	}
-	__JniBaseClass ExecutorCompletionService::poll(jlong arg0, java::util::concurrent::TimeUnit arg1)
+	JObject ExecutorCompletionService::poll(jlong arg0, java::util::concurrent::TimeUnit arg1)
 	{
 		return callObjectMethod(
 			"poll",
@@ -41,7 +41,7 @@ namespace java::util::concurrent
 			arg1.object()
 		);
 	}
-	__JniBaseClass ExecutorCompletionService::submit(__JniBaseClass arg0)
+	JObject ExecutorCompletionService::submit(JObject arg0)
 	{
 		return callObjectMethod(
 			"submit",
@@ -49,7 +49,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	__JniBaseClass ExecutorCompletionService::submit(__JniBaseClass arg0, jobject arg1)
+	JObject ExecutorCompletionService::submit(JObject arg0, jobject arg1)
 	{
 		return callObjectMethod(
 			"submit",
@@ -58,7 +58,7 @@ namespace java::util::concurrent
 			arg1
 		);
 	}
-	__JniBaseClass ExecutorCompletionService::take()
+	JObject ExecutorCompletionService::take()
 	{
 		return callObjectMethod(
 			"take",

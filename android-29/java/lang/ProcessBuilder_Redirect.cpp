@@ -31,7 +31,7 @@ namespace java::lang
 	}
 	
 	// QAndroidJniObject forward
-	ProcessBuilder_Redirect::ProcessBuilder_Redirect(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	ProcessBuilder_Redirect::ProcessBuilder_Redirect(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

@@ -34,11 +34,11 @@ namespace android::net::wifi
 	}
 	
 	// QAndroidJniObject forward
-	WifiManager_LocalOnlyHotspotCallback::WifiManager_LocalOnlyHotspotCallback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	WifiManager_LocalOnlyHotspotCallback::WifiManager_LocalOnlyHotspotCallback(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	WifiManager_LocalOnlyHotspotCallback::WifiManager_LocalOnlyHotspotCallback()
-		: __JniBaseClass(
+		: JObject(
 			"android.net.wifi.WifiManager$LocalOnlyHotspotCallback",
 			"()V"
 		) {}

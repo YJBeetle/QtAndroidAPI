@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 
 namespace android::view::accessibility
 {
-	class AccessibilityNodeInfo_AccessibilityAction : public __JniBaseClass
+	class AccessibilityNodeInfo_AccessibilityAction : public JObject
 	{
 	public:
 		// Fields
@@ -48,7 +48,7 @@ namespace android::view::accessibility
 		static android::view::accessibility::AccessibilityNodeInfo_AccessibilityAction ACTION_SHOW_TOOLTIP();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit AccessibilityNodeInfo_AccessibilityAction(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit AccessibilityNodeInfo_AccessibilityAction(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		AccessibilityNodeInfo_AccessibilityAction(QAndroidJniObject obj);
 		
 		// Constructors

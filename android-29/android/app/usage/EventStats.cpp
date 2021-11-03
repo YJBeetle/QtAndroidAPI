@@ -4,7 +4,7 @@
 namespace android::app::usage
 {
 	// Fields
-	__JniBaseClass EventStats::CREATOR()
+	JObject EventStats::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.app.usage.EventStats",
@@ -14,11 +14,11 @@ namespace android::app::usage
 	}
 	
 	// QAndroidJniObject forward
-	EventStats::EventStats(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	EventStats::EventStats(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	EventStats::EventStats(android::app::usage::EventStats &arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.app.usage.EventStats",
 			"(Landroid/app/usage/EventStats;)V",
 			arg0.object()

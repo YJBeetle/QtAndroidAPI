@@ -415,7 +415,7 @@ namespace android::telephony
 	}
 	
 	// QAndroidJniObject forward
-	SmsManager::SmsManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	SmsManager::SmsManager(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -489,7 +489,7 @@ namespace android::telephony
 			"()Landroid/os/Bundle;"
 		);
 	}
-	void SmsManager::getSmsMessagesForFinancialApp(android::os::Bundle arg0, __JniBaseClass arg1, android::telephony::SmsManager_FinancialSmsCallback arg2)
+	void SmsManager::getSmsMessagesForFinancialApp(android::os::Bundle arg0, JObject arg1, android::telephony::SmsManager_FinancialSmsCallback arg2)
 	{
 		callMethod<void>(
 			"getSmsMessagesForFinancialApp",

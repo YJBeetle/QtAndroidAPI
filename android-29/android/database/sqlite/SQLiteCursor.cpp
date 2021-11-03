@@ -11,7 +11,7 @@ namespace android::database::sqlite
 	SQLiteCursor::SQLiteCursor(QAndroidJniObject obj) : android::database::AbstractWindowedCursor(obj) {}
 	
 	// Constructors
-	SQLiteCursor::SQLiteCursor(__JniBaseClass arg0, jstring arg1, android::database::sqlite::SQLiteQuery arg2)
+	SQLiteCursor::SQLiteCursor(JObject arg0, jstring arg1, android::database::sqlite::SQLiteQuery arg2)
 		: android::database::AbstractWindowedCursor(
 			"android.database.sqlite.SQLiteCursor",
 			"(Landroid/database/sqlite/SQLiteCursorDriver;Ljava/lang/String;Landroid/database/sqlite/SQLiteQuery;)V",
@@ -19,7 +19,7 @@ namespace android::database::sqlite
 			arg1,
 			arg2.object()
 		) {}
-	SQLiteCursor::SQLiteCursor(android::database::sqlite::SQLiteDatabase arg0, __JniBaseClass arg1, jstring arg2, android::database::sqlite::SQLiteQuery arg3)
+	SQLiteCursor::SQLiteCursor(android::database::sqlite::SQLiteDatabase arg0, JObject arg1, jstring arg2, android::database::sqlite::SQLiteQuery arg3)
 		: android::database::AbstractWindowedCursor(
 			"android.database.sqlite.SQLiteCursor",
 			"(Landroid/database/sqlite/SQLiteDatabase;Landroid/database/sqlite/SQLiteCursorDriver;Ljava/lang/String;Landroid/database/sqlite/SQLiteQuery;)V",

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::content
 {
@@ -21,7 +21,7 @@ namespace android::inputmethodservice
 
 namespace android::inputmethodservice
 {
-	class Keyboard : public __JniBaseClass
+	class Keyboard : public JObject
 	{
 	public:
 		// Fields
@@ -37,7 +37,7 @@ namespace android::inputmethodservice
 		static jint KEYCODE_SHIFT();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Keyboard(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Keyboard(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Keyboard(QAndroidJniObject obj);
 		
 		// Constructors
@@ -48,9 +48,9 @@ namespace android::inputmethodservice
 		
 		// Methods
 		jint getHeight();
-		__JniBaseClass getKeys();
+		JObject getKeys();
 		jint getMinWidth();
-		__JniBaseClass getModifierKeys();
+		JObject getModifierKeys();
 		jintArray getNearestKeys(jint arg0, jint arg1);
 		jint getShiftKeyIndex();
 		jboolean isShifted();

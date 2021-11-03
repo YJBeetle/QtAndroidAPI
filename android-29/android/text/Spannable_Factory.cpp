@@ -5,11 +5,11 @@ namespace android::text
 	// Fields
 	
 	// QAndroidJniObject forward
-	Spannable_Factory::Spannable_Factory(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Spannable_Factory::Spannable_Factory(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Spannable_Factory::Spannable_Factory()
-		: __JniBaseClass(
+		: JObject(
 			"android.text.Spannable$Factory",
 			"()V"
 		) {}
@@ -23,7 +23,7 @@ namespace android::text
 			"()Landroid/text/Spannable$Factory;"
 		);
 	}
-	__JniBaseClass Spannable_Factory::newSpannable(jstring arg0)
+	JObject Spannable_Factory::newSpannable(jstring arg0)
 	{
 		return callObjectMethod(
 			"newSpannable",

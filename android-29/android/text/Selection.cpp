@@ -22,12 +22,12 @@ namespace android::text
 	}
 	
 	// QAndroidJniObject forward
-	Selection::Selection(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Selection::Selection(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	jboolean Selection::extendDown(__JniBaseClass arg0, android::text::Layout arg1)
+	jboolean Selection::extendDown(JObject arg0, android::text::Layout arg1)
 	{
 		return callStaticMethod<jboolean>(
 			"android.text.Selection",
@@ -37,7 +37,7 @@ namespace android::text
 			arg1.object()
 		);
 	}
-	jboolean Selection::extendLeft(__JniBaseClass arg0, android::text::Layout arg1)
+	jboolean Selection::extendLeft(JObject arg0, android::text::Layout arg1)
 	{
 		return callStaticMethod<jboolean>(
 			"android.text.Selection",
@@ -47,7 +47,7 @@ namespace android::text
 			arg1.object()
 		);
 	}
-	jboolean Selection::extendRight(__JniBaseClass arg0, android::text::Layout arg1)
+	jboolean Selection::extendRight(JObject arg0, android::text::Layout arg1)
 	{
 		return callStaticMethod<jboolean>(
 			"android.text.Selection",
@@ -57,7 +57,7 @@ namespace android::text
 			arg1.object()
 		);
 	}
-	void Selection::extendSelection(__JniBaseClass arg0, jint arg1)
+	void Selection::extendSelection(JObject arg0, jint arg1)
 	{
 		callStaticMethod<void>(
 			"android.text.Selection",
@@ -67,7 +67,7 @@ namespace android::text
 			arg1
 		);
 	}
-	jboolean Selection::extendToLeftEdge(__JniBaseClass arg0, android::text::Layout arg1)
+	jboolean Selection::extendToLeftEdge(JObject arg0, android::text::Layout arg1)
 	{
 		return callStaticMethod<jboolean>(
 			"android.text.Selection",
@@ -77,7 +77,7 @@ namespace android::text
 			arg1.object()
 		);
 	}
-	jboolean Selection::extendToRightEdge(__JniBaseClass arg0, android::text::Layout arg1)
+	jboolean Selection::extendToRightEdge(JObject arg0, android::text::Layout arg1)
 	{
 		return callStaticMethod<jboolean>(
 			"android.text.Selection",
@@ -87,7 +87,7 @@ namespace android::text
 			arg1.object()
 		);
 	}
-	jboolean Selection::extendUp(__JniBaseClass arg0, android::text::Layout arg1)
+	jboolean Selection::extendUp(JObject arg0, android::text::Layout arg1)
 	{
 		return callStaticMethod<jboolean>(
 			"android.text.Selection",
@@ -115,7 +115,7 @@ namespace android::text
 			arg0
 		);
 	}
-	jboolean Selection::moveDown(__JniBaseClass arg0, android::text::Layout arg1)
+	jboolean Selection::moveDown(JObject arg0, android::text::Layout arg1)
 	{
 		return callStaticMethod<jboolean>(
 			"android.text.Selection",
@@ -125,7 +125,7 @@ namespace android::text
 			arg1.object()
 		);
 	}
-	jboolean Selection::moveLeft(__JniBaseClass arg0, android::text::Layout arg1)
+	jboolean Selection::moveLeft(JObject arg0, android::text::Layout arg1)
 	{
 		return callStaticMethod<jboolean>(
 			"android.text.Selection",
@@ -135,7 +135,7 @@ namespace android::text
 			arg1.object()
 		);
 	}
-	jboolean Selection::moveRight(__JniBaseClass arg0, android::text::Layout arg1)
+	jboolean Selection::moveRight(JObject arg0, android::text::Layout arg1)
 	{
 		return callStaticMethod<jboolean>(
 			"android.text.Selection",
@@ -145,7 +145,7 @@ namespace android::text
 			arg1.object()
 		);
 	}
-	jboolean Selection::moveToLeftEdge(__JniBaseClass arg0, android::text::Layout arg1)
+	jboolean Selection::moveToLeftEdge(JObject arg0, android::text::Layout arg1)
 	{
 		return callStaticMethod<jboolean>(
 			"android.text.Selection",
@@ -155,7 +155,7 @@ namespace android::text
 			arg1.object()
 		);
 	}
-	jboolean Selection::moveToRightEdge(__JniBaseClass arg0, android::text::Layout arg1)
+	jboolean Selection::moveToRightEdge(JObject arg0, android::text::Layout arg1)
 	{
 		return callStaticMethod<jboolean>(
 			"android.text.Selection",
@@ -165,7 +165,7 @@ namespace android::text
 			arg1.object()
 		);
 	}
-	jboolean Selection::moveUp(__JniBaseClass arg0, android::text::Layout arg1)
+	jboolean Selection::moveUp(JObject arg0, android::text::Layout arg1)
 	{
 		return callStaticMethod<jboolean>(
 			"android.text.Selection",
@@ -175,7 +175,7 @@ namespace android::text
 			arg1.object()
 		);
 	}
-	void Selection::removeSelection(__JniBaseClass arg0)
+	void Selection::removeSelection(JObject arg0)
 	{
 		callStaticMethod<void>(
 			"android.text.Selection",
@@ -184,7 +184,7 @@ namespace android::text
 			arg0.object()
 		);
 	}
-	void Selection::selectAll(__JniBaseClass arg0)
+	void Selection::selectAll(JObject arg0)
 	{
 		callStaticMethod<void>(
 			"android.text.Selection",
@@ -193,7 +193,7 @@ namespace android::text
 			arg0.object()
 		);
 	}
-	void Selection::setSelection(__JniBaseClass arg0, jint arg1)
+	void Selection::setSelection(JObject arg0, jint arg1)
 	{
 		callStaticMethod<void>(
 			"android.text.Selection",
@@ -203,7 +203,7 @@ namespace android::text
 			arg1
 		);
 	}
-	void Selection::setSelection(__JniBaseClass arg0, jint arg1, jint arg2)
+	void Selection::setSelection(JObject arg0, jint arg1, jint arg2)
 	{
 		callStaticMethod<void>(
 			"android.text.Selection",

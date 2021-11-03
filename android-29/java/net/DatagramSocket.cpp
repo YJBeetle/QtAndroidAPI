@@ -12,28 +12,28 @@ namespace java::net
 	// Fields
 	
 	// QAndroidJniObject forward
-	DatagramSocket::DatagramSocket(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	DatagramSocket::DatagramSocket(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	DatagramSocket::DatagramSocket()
-		: __JniBaseClass(
+		: JObject(
 			"java.net.DatagramSocket",
 			"()V"
 		) {}
 	DatagramSocket::DatagramSocket(jint arg0)
-		: __JniBaseClass(
+		: JObject(
 			"java.net.DatagramSocket",
 			"(I)V",
 			arg0
 		) {}
 	DatagramSocket::DatagramSocket(java::net::SocketAddress arg0)
-		: __JniBaseClass(
+		: JObject(
 			"java.net.DatagramSocket",
 			"(Ljava/net/SocketAddress;)V",
 			arg0.object()
 		) {}
 	DatagramSocket::DatagramSocket(jint arg0, java::net::InetAddress arg1)
-		: __JniBaseClass(
+		: JObject(
 			"java.net.DatagramSocket",
 			"(ILjava/net/InetAddress;)V",
 			arg0,
@@ -41,7 +41,7 @@ namespace java::net
 		) {}
 	
 	// Methods
-	void DatagramSocket::setDatagramSocketImplFactory(__JniBaseClass arg0)
+	void DatagramSocket::setDatagramSocketImplFactory(JObject arg0)
 	{
 		callStaticMethod<void>(
 			"java.net.DatagramSocket",
@@ -131,7 +131,7 @@ namespace java::net
 			"()Ljava/net/SocketAddress;"
 		);
 	}
-	jobject DatagramSocket::getOption(__JniBaseClass arg0)
+	jobject DatagramSocket::getOption(JObject arg0)
 	{
 		return callObjectMethod(
 			"getOption",
@@ -233,7 +233,7 @@ namespace java::net
 			arg0
 		);
 	}
-	java::net::DatagramSocket DatagramSocket::setOption(__JniBaseClass arg0, jobject arg1)
+	java::net::DatagramSocket DatagramSocket::setOption(JObject arg0, jobject arg1)
 	{
 		return callObjectMethod(
 			"setOption",
@@ -282,7 +282,7 @@ namespace java::net
 			arg0
 		);
 	}
-	__JniBaseClass DatagramSocket::supportedOptions()
+	JObject DatagramSocket::supportedOptions()
 	{
 		return callObjectMethod(
 			"supportedOptions",

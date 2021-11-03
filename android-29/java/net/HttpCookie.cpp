@@ -6,11 +6,11 @@ namespace java::net
 	// Fields
 	
 	// QAndroidJniObject forward
-	HttpCookie::HttpCookie(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	HttpCookie::HttpCookie(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	HttpCookie::HttpCookie(jstring arg0, jstring arg1)
-		: __JniBaseClass(
+		: JObject(
 			"java.net.HttpCookie",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
@@ -28,7 +28,7 @@ namespace java::net
 			arg1
 		);
 	}
-	__JniBaseClass HttpCookie::parse(jstring arg0)
+	JObject HttpCookie::parse(jstring arg0)
 	{
 		return callStaticObjectMethod(
 			"java.net.HttpCookie",

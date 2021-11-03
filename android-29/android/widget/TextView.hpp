@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "../view/View.hpp"
 
 namespace android::content
@@ -155,13 +155,13 @@ namespace android::widget
 		
 		// Constructors
 		TextView(android::content::Context arg0);
-		TextView(android::content::Context arg0, __JniBaseClass arg1);
-		TextView(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
-		TextView(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
+		TextView(android::content::Context arg0, JObject arg1);
+		TextView(android::content::Context arg0, JObject arg1, jint arg2);
+		TextView(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
 		void addExtraDataToAccessibilityNodeInfo(android::view::accessibility::AccessibilityNodeInfo arg0, jstring arg1, android::os::Bundle arg2);
-		void addTextChangedListener(__JniBaseClass arg0);
+		void addTextChangedListener(JObject arg0);
 		void append(jstring arg0);
 		void append(jstring arg0, jint arg1, jint arg2);
 		void autofill(android::view::autofill::AutofillValue arg0);
@@ -201,9 +201,9 @@ namespace android::widget
 		jint getCompoundPaddingTop();
 		jint getCurrentHintTextColor();
 		jint getCurrentTextColor();
-		__JniBaseClass getCustomInsertionActionModeCallback();
-		__JniBaseClass getCustomSelectionActionModeCallback();
-		__JniBaseClass getEditableText();
+		JObject getCustomInsertionActionModeCallback();
+		JObject getCustomSelectionActionModeCallback();
+		JObject getEditableText();
 		android::text::TextUtils_TruncateAt getEllipsize();
 		jstring getError();
 		jint getExtendedPaddingBottom();
@@ -227,7 +227,7 @@ namespace android::widget
 		android::os::Bundle getInputExtras(jboolean arg0);
 		jint getInputType();
 		jint getJustificationMode();
-		__JniBaseClass getKeyListener();
+		JObject getKeyListener();
 		jint getLastBaselineToBottomHeight();
 		android::text::Layout getLayout();
 		jfloat getLetterSpacing();
@@ -247,7 +247,7 @@ namespace android::widget
 		jint getMinHeight();
 		jint getMinLines();
 		jint getMinWidth();
-		__JniBaseClass getMovementMethod();
+		JObject getMovementMethod();
 		jint getOffsetForPosition(jfloat arg0, jfloat arg1);
 		android::text::TextPaint getPaint();
 		jint getPaintFlags();
@@ -260,10 +260,10 @@ namespace android::widget
 		jfloat getShadowRadius();
 		jboolean getShowSoftInputOnFocus();
 		jstring getText();
-		__JniBaseClass getTextClassifier();
+		JObject getTextClassifier();
 		android::content::res::ColorStateList getTextColors();
 		android::graphics::drawable::Drawable getTextCursorDrawable();
-		__JniBaseClass getTextDirectionHeuristic();
+		JObject getTextDirectionHeuristic();
 		java::util::Locale getTextLocale();
 		android::os::LocaleList getTextLocales();
 		android::text::PrecomputedText_Params getTextMetricsParams();
@@ -278,7 +278,7 @@ namespace android::widget
 		jint getTotalPaddingRight();
 		jint getTotalPaddingStart();
 		jint getTotalPaddingTop();
-		__JniBaseClass getTransformationMethod();
+		JObject getTransformationMethod();
 		android::graphics::Typeface getTypeface();
 		jarray getUrls();
 		jboolean hasOverlappingRendering();
@@ -300,7 +300,7 @@ namespace android::widget
 		jboolean onCheckIsTextEditor();
 		void onCommitCompletion(android::view::inputmethod::CompletionInfo arg0);
 		void onCommitCorrection(android::view::inputmethod::CorrectionInfo arg0);
-		__JniBaseClass onCreateInputConnection(android::view::inputmethod::EditorInfo arg0);
+		JObject onCreateInputConnection(android::view::inputmethod::EditorInfo arg0);
 		jboolean onDragEvent(android::view::DragEvent arg0);
 		void onEditorAction(jint arg0);
 		void onEndBatchEdit();
@@ -313,16 +313,16 @@ namespace android::widget
 		jboolean onPreDraw();
 		jboolean onPrivateIMECommand(jstring arg0, android::os::Bundle arg1);
 		android::view::PointerIcon onResolvePointerIcon(android::view::MotionEvent arg0, jint arg1);
-		void onRestoreInstanceState(__JniBaseClass arg0);
+		void onRestoreInstanceState(JObject arg0);
 		void onRtlPropertiesChanged(jint arg0);
-		__JniBaseClass onSaveInstanceState();
+		JObject onSaveInstanceState();
 		void onScreenStateChanged(jint arg0);
 		jboolean onTextContextMenuItem(jint arg0);
 		jboolean onTouchEvent(android::view::MotionEvent arg0);
 		jboolean onTrackballEvent(android::view::MotionEvent arg0);
 		void onWindowFocusChanged(jboolean arg0);
 		jboolean performLongClick();
-		void removeTextChangedListener(__JniBaseClass arg0);
+		void removeTextChangedListener(JObject arg0);
 		void sendAccessibilityEventUnchecked(android::view::accessibility::AccessibilityEvent arg0);
 		void setAllCaps(jboolean arg0);
 		void setAutoLinkMask(jint arg0);
@@ -341,8 +341,8 @@ namespace android::widget
 		void setCompoundDrawablesWithIntrinsicBounds(android::graphics::drawable::Drawable arg0, android::graphics::drawable::Drawable arg1, android::graphics::drawable::Drawable arg2, android::graphics::drawable::Drawable arg3);
 		void setCompoundDrawablesWithIntrinsicBounds(jint arg0, jint arg1, jint arg2, jint arg3);
 		void setCursorVisible(jboolean arg0);
-		void setCustomInsertionActionModeCallback(__JniBaseClass arg0);
-		void setCustomSelectionActionModeCallback(__JniBaseClass arg0);
+		void setCustomInsertionActionModeCallback(JObject arg0);
+		void setCustomSelectionActionModeCallback(JObject arg0);
 		void setEditableFactory(android::text::Editable_Factory arg0);
 		void setElegantTextHeight(jboolean arg0);
 		void setEllipsize(android::text::TextUtils_TruncateAt arg0);
@@ -373,7 +373,7 @@ namespace android::widget
 		void setInputExtras(jint arg0);
 		void setInputType(jint arg0);
 		void setJustificationMode(jint arg0);
-		void setKeyListener(__JniBaseClass arg0);
+		void setKeyListener(JObject arg0);
 		void setLastBaselineToBottomHeight(jint arg0);
 		void setLetterSpacing(jfloat arg0);
 		void setLineHeight(jint arg0);
@@ -391,8 +391,8 @@ namespace android::widget
 		void setMinHeight(jint arg0);
 		void setMinLines(jint arg0);
 		void setMinWidth(jint arg0);
-		void setMovementMethod(__JniBaseClass arg0);
-		void setOnEditorActionListener(__JniBaseClass arg0);
+		void setMovementMethod(JObject arg0);
+		void setOnEditorActionListener(JObject arg0);
 		void setPadding(jint arg0, jint arg1, jint arg2, jint arg3);
 		void setPaddingRelative(jint arg0, jint arg1, jint arg2, jint arg3);
 		void setPaintFlags(jint arg0);
@@ -413,7 +413,7 @@ namespace android::widget
 		void setText(jcharArray arg0, jint arg1, jint arg2);
 		void setTextAppearance(jint arg0);
 		void setTextAppearance(android::content::Context arg0, jint arg1);
-		void setTextClassifier(__JniBaseClass arg0);
+		void setTextClassifier(JObject arg0);
 		void setTextColor(android::content::res::ColorStateList arg0);
 		void setTextColor(jint arg0);
 		void setTextCursorDrawable(android::graphics::drawable::Drawable arg0);
@@ -433,7 +433,7 @@ namespace android::widget
 		void setTextSelectHandleRight(jint arg0);
 		void setTextSize(jfloat arg0);
 		void setTextSize(jint arg0, jfloat arg1);
-		void setTransformationMethod(__JniBaseClass arg0);
+		void setTransformationMethod(JObject arg0);
 		void setTypeface(android::graphics::Typeface arg0);
 		void setTypeface(android::graphics::Typeface arg0, jint arg1);
 		void setWidth(jint arg0);

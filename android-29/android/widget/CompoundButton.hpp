@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "../view/View.hpp"
 #include "./TextView.hpp"
 #include "./Button.hpp"
@@ -47,9 +47,9 @@ namespace android::widget
 		
 		// Constructors
 		CompoundButton(android::content::Context arg0);
-		CompoundButton(android::content::Context arg0, __JniBaseClass arg1);
-		CompoundButton(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
-		CompoundButton(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
+		CompoundButton(android::content::Context arg0, JObject arg1);
+		CompoundButton(android::content::Context arg0, JObject arg1, jint arg2);
+		CompoundButton(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
 		void autofill(android::view::autofill::AutofillValue arg0);
@@ -65,8 +65,8 @@ namespace android::widget
 		jint getCompoundPaddingRight();
 		jboolean isChecked();
 		void jumpDrawablesToCurrentState();
-		void onRestoreInstanceState(__JniBaseClass arg0);
-		__JniBaseClass onSaveInstanceState();
+		void onRestoreInstanceState(JObject arg0);
+		JObject onSaveInstanceState();
 		jboolean performClick();
 		void setButtonDrawable(android::graphics::drawable::Drawable arg0);
 		void setButtonDrawable(jint arg0);
@@ -74,7 +74,7 @@ namespace android::widget
 		void setButtonTintList(android::content::res::ColorStateList arg0);
 		void setButtonTintMode(android::graphics::PorterDuff_Mode arg0);
 		void setChecked(jboolean arg0);
-		void setOnCheckedChangeListener(__JniBaseClass arg0);
+		void setOnCheckedChangeListener(JObject arg0);
 		void toggle();
 	};
 } // namespace android::widget

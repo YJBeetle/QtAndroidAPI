@@ -134,7 +134,7 @@ namespace android::media
 	}
 	
 	// QAndroidJniObject forward
-	MicrophoneInfo::MicrophoneInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	MicrophoneInfo::MicrophoneInfo(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -146,7 +146,7 @@ namespace android::media
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	__JniBaseClass MicrophoneInfo::getChannelMapping()
+	JObject MicrophoneInfo::getChannelMapping()
 	{
 		return callObjectMethod(
 			"getChannelMapping",
@@ -167,7 +167,7 @@ namespace android::media
 			"()I"
 		);
 	}
-	__JniBaseClass MicrophoneInfo::getFrequencyResponse()
+	JObject MicrophoneInfo::getFrequencyResponse()
 	{
 		return callObjectMethod(
 			"getFrequencyResponse",

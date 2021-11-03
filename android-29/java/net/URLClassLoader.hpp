@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "../lang/ClassLoader.hpp"
 #include "../security/SecureClassLoader.hpp"
 
@@ -55,16 +55,16 @@ namespace java::net
 		// Constructors
 		URLClassLoader(jarray arg0);
 		URLClassLoader(jarray arg0, java::lang::ClassLoader arg1);
-		URLClassLoader(jarray arg0, java::lang::ClassLoader arg1, __JniBaseClass arg2);
+		URLClassLoader(jarray arg0, java::lang::ClassLoader arg1, JObject arg2);
 		URLClassLoader(jstring arg0, jarray arg1, java::lang::ClassLoader arg2);
-		URLClassLoader(jstring arg0, jarray arg1, java::lang::ClassLoader arg2, __JniBaseClass arg3);
+		URLClassLoader(jstring arg0, jarray arg1, java::lang::ClassLoader arg2, JObject arg3);
 		
 		// Methods
 		static java::net::URLClassLoader newInstance(jarray arg0);
 		static java::net::URLClassLoader newInstance(jarray arg0, java::lang::ClassLoader arg1);
 		void close();
 		java::net::URL findResource(jstring arg0);
-		__JniBaseClass findResources(jstring arg0);
+		JObject findResources(jstring arg0);
 		java::io::InputStream getResourceAsStream(jstring arg0);
 		jarray getURLs();
 	};

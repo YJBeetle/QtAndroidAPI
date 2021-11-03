@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "./AbstractCollection.hpp"
 #include "./AbstractSet.hpp"
 
@@ -31,7 +31,7 @@ namespace java::util
 		// Constructors
 		HashSet();
 		HashSet(jint arg0);
-		HashSet(__JniBaseClass arg0);
+		HashSet(JObject arg0);
 		HashSet(jint arg0, jfloat arg1);
 		
 		// Methods
@@ -40,10 +40,10 @@ namespace java::util
 		jobject clone();
 		jboolean contains(jobject arg0);
 		jboolean isEmpty();
-		__JniBaseClass iterator();
+		JObject iterator();
 		jboolean remove(jobject arg0);
 		jint size();
-		__JniBaseClass spliterator();
+		JObject spliterator();
 		jobjectArray toArray();
 		jobjectArray toArray(jobjectArray arg0);
 	};

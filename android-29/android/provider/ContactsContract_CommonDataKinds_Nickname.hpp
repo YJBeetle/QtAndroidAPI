@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 
 namespace android::provider
 {
-	class ContactsContract_CommonDataKinds_Nickname : public __JniBaseClass
+	class ContactsContract_CommonDataKinds_Nickname : public JObject
 	{
 	public:
 		// Fields
@@ -22,7 +22,7 @@ namespace android::provider
 		static jint TYPE_SHORT_NAME();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ContactsContract_CommonDataKinds_Nickname(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ContactsContract_CommonDataKinds_Nickname(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ContactsContract_CommonDataKinds_Nickname(QAndroidJniObject obj);
 		
 		// Constructors

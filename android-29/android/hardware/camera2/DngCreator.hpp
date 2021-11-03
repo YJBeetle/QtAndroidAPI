@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::graphics
 {
@@ -41,14 +41,14 @@ namespace java::nio
 
 namespace android::hardware::camera2
 {
-	class DngCreator : public __JniBaseClass
+	class DngCreator : public JObject
 	{
 	public:
 		// Fields
 		static jint MAX_THUMBNAIL_DIMENSION();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit DngCreator(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit DngCreator(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		DngCreator(QAndroidJniObject obj);
 		
 		// Constructors

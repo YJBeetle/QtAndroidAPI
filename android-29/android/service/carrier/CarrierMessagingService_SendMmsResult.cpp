@@ -5,11 +5,11 @@ namespace android::service::carrier
 	// Fields
 	
 	// QAndroidJniObject forward
-	CarrierMessagingService_SendMmsResult::CarrierMessagingService_SendMmsResult(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	CarrierMessagingService_SendMmsResult::CarrierMessagingService_SendMmsResult(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	CarrierMessagingService_SendMmsResult::CarrierMessagingService_SendMmsResult(jint arg0, jbyteArray arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.service.carrier.CarrierMessagingService$SendMmsResult",
 			"(I[B)V",
 			arg0,

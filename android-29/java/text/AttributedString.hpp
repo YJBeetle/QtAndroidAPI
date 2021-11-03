@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace java::lang
 {
@@ -13,29 +13,29 @@ namespace java::text
 
 namespace java::text
 {
-	class AttributedString : public __JniBaseClass
+	class AttributedString : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit AttributedString(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit AttributedString(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		AttributedString(QAndroidJniObject obj);
 		
 		// Constructors
 		AttributedString(jstring arg0);
-		AttributedString(__JniBaseClass arg0);
-		AttributedString(jstring arg0, __JniBaseClass arg1);
-		AttributedString(__JniBaseClass arg0, jint arg1, jint arg2);
-		AttributedString(__JniBaseClass arg0, jint arg1, jint arg2, jarray arg3);
+		AttributedString(JObject arg0);
+		AttributedString(jstring arg0, JObject arg1);
+		AttributedString(JObject arg0, jint arg1, jint arg2);
+		AttributedString(JObject arg0, jint arg1, jint arg2, jarray arg3);
 		
 		// Methods
 		void addAttribute(java::text::AttributedCharacterIterator_Attribute arg0, jobject arg1);
 		void addAttribute(java::text::AttributedCharacterIterator_Attribute arg0, jobject arg1, jint arg2, jint arg3);
-		void addAttributes(__JniBaseClass arg0, jint arg1, jint arg2);
-		__JniBaseClass getIterator();
-		__JniBaseClass getIterator(jarray arg0);
-		__JniBaseClass getIterator(jarray arg0, jint arg1, jint arg2);
+		void addAttributes(JObject arg0, jint arg1, jint arg2);
+		JObject getIterator();
+		JObject getIterator(jarray arg0);
+		JObject getIterator(jarray arg0, jint arg1, jint arg2);
 	};
 } // namespace java::text
 

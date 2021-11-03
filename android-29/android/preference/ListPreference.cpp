@@ -17,14 +17,14 @@ namespace android::preference
 			"(Landroid/content/Context;)V",
 			arg0.object()
 		) {}
-	ListPreference::ListPreference(android::content::Context arg0, __JniBaseClass arg1)
+	ListPreference::ListPreference(android::content::Context arg0, JObject arg1)
 		: android::preference::DialogPreference(
 			"android.preference.ListPreference",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.object(),
 			arg1.object()
 		) {}
-	ListPreference::ListPreference(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
+	ListPreference::ListPreference(android::content::Context arg0, JObject arg1, jint arg2)
 		: android::preference::DialogPreference(
 			"android.preference.ListPreference",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
@@ -32,7 +32,7 @@ namespace android::preference
 			arg1.object(),
 			arg2
 		) {}
-	ListPreference::ListPreference(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
+	ListPreference::ListPreference(android::content::Context arg0, JObject arg1, jint arg2, jint arg3)
 		: android::preference::DialogPreference(
 			"android.preference.ListPreference",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;II)V",

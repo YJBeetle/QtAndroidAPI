@@ -4,7 +4,7 @@
 namespace android::view
 {
 	// Fields
-	__JniBaseClass KeyboardShortcutInfo::CREATOR()
+	JObject KeyboardShortcutInfo::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.view.KeyboardShortcutInfo",
@@ -14,11 +14,11 @@ namespace android::view
 	}
 	
 	// QAndroidJniObject forward
-	KeyboardShortcutInfo::KeyboardShortcutInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	KeyboardShortcutInfo::KeyboardShortcutInfo(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	KeyboardShortcutInfo::KeyboardShortcutInfo(jstring arg0, jchar arg1, jint arg2)
-		: __JniBaseClass(
+		: JObject(
 			"android.view.KeyboardShortcutInfo",
 			"(Ljava/lang/CharSequence;CI)V",
 			arg0,
@@ -26,7 +26,7 @@ namespace android::view
 			arg2
 		) {}
 	KeyboardShortcutInfo::KeyboardShortcutInfo(jstring arg0, jint arg1, jint arg2)
-		: __JniBaseClass(
+		: JObject(
 			"android.view.KeyboardShortcutInfo",
 			"(Ljava/lang/CharSequence;II)V",
 			arg0,

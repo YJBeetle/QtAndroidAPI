@@ -5,28 +5,28 @@ namespace java::lang
 	// Fields
 	
 	// QAndroidJniObject forward
-	Exception::Exception(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Exception::Exception(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Exception::Exception()
-		: __JniBaseClass(
+		: JObject(
 			"java.lang.Exception",
 			"()V"
 		) {}
 	Exception::Exception(jstring arg0)
-		: __JniBaseClass(
+		: JObject(
 			"java.lang.Exception",
 			"(Ljava/lang/String;)V",
 			arg0
 		) {}
 	Exception::Exception(jthrowable arg0)
-		: __JniBaseClass(
+		: JObject(
 			"java.lang.Exception",
 			"(Ljava/lang/Throwable;)V",
 			arg0
 		) {}
 	Exception::Exception(jstring arg0, jthrowable arg1)
-		: __JniBaseClass(
+		: JObject(
 			"java.lang.Exception",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
 			arg0,

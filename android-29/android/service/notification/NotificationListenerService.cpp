@@ -340,7 +340,7 @@ namespace android::service::notification
 			"()Landroid/service/notification/NotificationListenerService$RankingMap;"
 		);
 	}
-	__JniBaseClass NotificationListenerService::getNotificationChannelGroups(jstring arg0, android::os::UserHandle arg1)
+	JObject NotificationListenerService::getNotificationChannelGroups(jstring arg0, android::os::UserHandle arg1)
 	{
 		return callObjectMethod(
 			"getNotificationChannelGroups",
@@ -349,7 +349,7 @@ namespace android::service::notification
 			arg1.object()
 		);
 	}
-	__JniBaseClass NotificationListenerService::getNotificationChannels(jstring arg0, android::os::UserHandle arg1)
+	JObject NotificationListenerService::getNotificationChannels(jstring arg0, android::os::UserHandle arg1)
 	{
 		return callObjectMethod(
 			"getNotificationChannels",
@@ -365,7 +365,7 @@ namespace android::service::notification
 			"()[Landroid/service/notification/StatusBarNotification;"
 		).object<jarray>();
 	}
-	__JniBaseClass NotificationListenerService::onBind(android::content::Intent arg0)
+	JObject NotificationListenerService::onBind(android::content::Intent arg0)
 	{
 		return callObjectMethod(
 			"onBind",

@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 
 namespace android::media
 {
-	class MediaCodecInfo_CodecProfileLevel : public __JniBaseClass
+	class MediaCodecInfo_CodecProfileLevel : public JObject
 	{
 	public:
 		// Fields
@@ -213,7 +213,7 @@ namespace android::media
 		jint profile();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MediaCodecInfo_CodecProfileLevel(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit MediaCodecInfo_CodecProfileLevel(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		MediaCodecInfo_CodecProfileLevel(QAndroidJniObject obj);
 		
 		// Constructors

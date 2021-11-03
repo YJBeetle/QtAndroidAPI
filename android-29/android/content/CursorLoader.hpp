@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "./Loader.hpp"
 #include "./AsyncTaskLoader.hpp"
 
@@ -38,7 +38,7 @@ namespace android::content
 		
 		// Methods
 		void cancelLoadInBackground();
-		void deliverResult(__JniBaseClass arg0);
+		void deliverResult(JObject arg0);
 		void deliverResult(jobject arg0);
 		void dump(jstring arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, jarray arg3);
 		jarray getProjection();
@@ -46,8 +46,8 @@ namespace android::content
 		jarray getSelectionArgs();
 		jstring getSortOrder();
 		android::net::Uri getUri();
-		__JniBaseClass loadInBackground();
-		void onCanceled(__JniBaseClass arg0);
+		JObject loadInBackground();
+		void onCanceled(JObject arg0);
 		void onCanceled(jobject arg0);
 		void setProjection(jarray arg0);
 		void setSelection(jstring arg0);

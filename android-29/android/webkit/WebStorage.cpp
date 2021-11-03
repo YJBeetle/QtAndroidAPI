@@ -5,7 +5,7 @@ namespace android::webkit
 	// Fields
 	
 	// QAndroidJniObject forward
-	WebStorage::WebStorage(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	WebStorage::WebStorage(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -33,7 +33,7 @@ namespace android::webkit
 			arg0
 		);
 	}
-	void WebStorage::getOrigins(__JniBaseClass arg0)
+	void WebStorage::getOrigins(JObject arg0)
 	{
 		callMethod<void>(
 			"getOrigins",
@@ -41,7 +41,7 @@ namespace android::webkit
 			arg0.object()
 		);
 	}
-	void WebStorage::getQuotaForOrigin(jstring arg0, __JniBaseClass arg1)
+	void WebStorage::getQuotaForOrigin(jstring arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"getQuotaForOrigin",
@@ -50,7 +50,7 @@ namespace android::webkit
 			arg1.object()
 		);
 	}
-	void WebStorage::getUsageForOrigin(jstring arg0, __JniBaseClass arg1)
+	void WebStorage::getUsageForOrigin(jstring arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"getUsageForOrigin",

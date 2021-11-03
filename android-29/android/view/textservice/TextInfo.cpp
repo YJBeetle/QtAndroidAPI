@@ -4,7 +4,7 @@
 namespace android::view::textservice
 {
 	// Fields
-	__JniBaseClass TextInfo::CREATOR()
+	JObject TextInfo::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.view.textservice.TextInfo",
@@ -14,23 +14,23 @@ namespace android::view::textservice
 	}
 	
 	// QAndroidJniObject forward
-	TextInfo::TextInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	TextInfo::TextInfo(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	TextInfo::TextInfo(android::os::Parcel arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.view.textservice.TextInfo",
 			"(Landroid/os/Parcel;)V",
 			arg0.object()
 		) {}
 	TextInfo::TextInfo(jstring arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.view.textservice.TextInfo",
 			"(Ljava/lang/String;)V",
 			arg0
 		) {}
 	TextInfo::TextInfo(jstring arg0, jint arg1, jint arg2)
-		: __JniBaseClass(
+		: JObject(
 			"android.view.textservice.TextInfo",
 			"(Ljava/lang/String;II)V",
 			arg0,
@@ -38,7 +38,7 @@ namespace android::view::textservice
 			arg2
 		) {}
 	TextInfo::TextInfo(jstring arg0, jint arg1, jint arg2, jint arg3, jint arg4)
-		: __JniBaseClass(
+		: JObject(
 			"android.view.textservice.TextInfo",
 			"(Ljava/lang/CharSequence;IIII)V",
 			arg0,

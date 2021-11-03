@@ -45,11 +45,11 @@ namespace android::telecom
 	}
 	
 	// QAndroidJniObject forward
-	Call_Callback::Call_Callback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Call_Callback::Call_Callback(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Call_Callback::Call_Callback()
-		: __JniBaseClass(
+		: JObject(
 			"android.telecom.Call$Callback",
 			"()V"
 		) {}
@@ -63,7 +63,7 @@ namespace android::telecom
 			arg0.object()
 		);
 	}
-	void Call_Callback::onCannedTextResponsesLoaded(android::telecom::Call arg0, __JniBaseClass arg1)
+	void Call_Callback::onCannedTextResponsesLoaded(android::telecom::Call arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"onCannedTextResponsesLoaded",
@@ -72,7 +72,7 @@ namespace android::telecom
 			arg1.object()
 		);
 	}
-	void Call_Callback::onChildrenChanged(android::telecom::Call arg0, __JniBaseClass arg1)
+	void Call_Callback::onChildrenChanged(android::telecom::Call arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"onChildrenChanged",
@@ -81,7 +81,7 @@ namespace android::telecom
 			arg1.object()
 		);
 	}
-	void Call_Callback::onConferenceableCallsChanged(android::telecom::Call arg0, __JniBaseClass arg1)
+	void Call_Callback::onConferenceableCallsChanged(android::telecom::Call arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"onConferenceableCallsChanged",

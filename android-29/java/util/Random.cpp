@@ -8,30 +8,30 @@ namespace java::util
 	// Fields
 	
 	// QAndroidJniObject forward
-	Random::Random(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Random::Random(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Random::Random()
-		: __JniBaseClass(
+		: JObject(
 			"java.util.Random",
 			"()V"
 		) {}
 	Random::Random(jlong arg0)
-		: __JniBaseClass(
+		: JObject(
 			"java.util.Random",
 			"(J)V",
 			arg0
 		) {}
 	
 	// Methods
-	__JniBaseClass Random::doubles()
+	JObject Random::doubles()
 	{
 		return callObjectMethod(
 			"doubles",
 			"()Ljava/util/stream/DoubleStream;"
 		);
 	}
-	__JniBaseClass Random::doubles(jlong arg0)
+	JObject Random::doubles(jlong arg0)
 	{
 		return callObjectMethod(
 			"doubles",
@@ -39,7 +39,7 @@ namespace java::util
 			arg0
 		);
 	}
-	__JniBaseClass Random::doubles(jdouble arg0, jdouble arg1)
+	JObject Random::doubles(jdouble arg0, jdouble arg1)
 	{
 		return callObjectMethod(
 			"doubles",
@@ -48,7 +48,7 @@ namespace java::util
 			arg1
 		);
 	}
-	__JniBaseClass Random::doubles(jlong arg0, jdouble arg1, jdouble arg2)
+	JObject Random::doubles(jlong arg0, jdouble arg1, jdouble arg2)
 	{
 		return callObjectMethod(
 			"doubles",
@@ -58,14 +58,14 @@ namespace java::util
 			arg2
 		);
 	}
-	__JniBaseClass Random::ints()
+	JObject Random::ints()
 	{
 		return callObjectMethod(
 			"ints",
 			"()Ljava/util/stream/IntStream;"
 		);
 	}
-	__JniBaseClass Random::ints(jlong arg0)
+	JObject Random::ints(jlong arg0)
 	{
 		return callObjectMethod(
 			"ints",
@@ -73,7 +73,7 @@ namespace java::util
 			arg0
 		);
 	}
-	__JniBaseClass Random::ints(jint arg0, jint arg1)
+	JObject Random::ints(jint arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"ints",
@@ -82,7 +82,7 @@ namespace java::util
 			arg1
 		);
 	}
-	__JniBaseClass Random::ints(jlong arg0, jint arg1, jint arg2)
+	JObject Random::ints(jlong arg0, jint arg1, jint arg2)
 	{
 		return callObjectMethod(
 			"ints",
@@ -92,14 +92,14 @@ namespace java::util
 			arg2
 		);
 	}
-	__JniBaseClass Random::longs()
+	JObject Random::longs()
 	{
 		return callObjectMethod(
 			"longs",
 			"()Ljava/util/stream/LongStream;"
 		);
 	}
-	__JniBaseClass Random::longs(jlong arg0)
+	JObject Random::longs(jlong arg0)
 	{
 		return callObjectMethod(
 			"longs",
@@ -107,7 +107,7 @@ namespace java::util
 			arg0
 		);
 	}
-	__JniBaseClass Random::longs(jlong arg0, jlong arg1)
+	JObject Random::longs(jlong arg0, jlong arg1)
 	{
 		return callObjectMethod(
 			"longs",
@@ -116,7 +116,7 @@ namespace java::util
 			arg1
 		);
 	}
-	__JniBaseClass Random::longs(jlong arg0, jlong arg1, jlong arg2)
+	JObject Random::longs(jlong arg0, jlong arg1, jlong arg2)
 	{
 		return callObjectMethod(
 			"longs",

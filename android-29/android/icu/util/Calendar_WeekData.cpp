@@ -41,11 +41,11 @@ namespace android::icu::util
 	}
 	
 	// QAndroidJniObject forward
-	Calendar_WeekData::Calendar_WeekData(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Calendar_WeekData::Calendar_WeekData(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Calendar_WeekData::Calendar_WeekData(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5)
-		: __JniBaseClass(
+		: JObject(
 			"android.icu.util.Calendar$WeekData",
 			"(IIIIII)V",
 			arg0,

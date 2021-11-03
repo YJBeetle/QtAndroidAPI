@@ -24,7 +24,7 @@ namespace android::widget
 			"(Landroid/view/ViewGroup$MarginLayoutParams;)V",
 			arg0.object()
 		) {}
-	RadioGroup_LayoutParams::RadioGroup_LayoutParams(android::content::Context arg0, __JniBaseClass arg1)
+	RadioGroup_LayoutParams::RadioGroup_LayoutParams(android::content::Context arg0, JObject arg1)
 		: android::widget::LinearLayout_LayoutParams(
 			"android.widget.RadioGroup$LayoutParams",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",

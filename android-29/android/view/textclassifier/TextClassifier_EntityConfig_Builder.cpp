@@ -6,11 +6,11 @@ namespace android::view::textclassifier
 	// Fields
 	
 	// QAndroidJniObject forward
-	TextClassifier_EntityConfig_Builder::TextClassifier_EntityConfig_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	TextClassifier_EntityConfig_Builder::TextClassifier_EntityConfig_Builder(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	TextClassifier_EntityConfig_Builder::TextClassifier_EntityConfig_Builder()
-		: __JniBaseClass(
+		: JObject(
 			"android.view.textclassifier.TextClassifier$EntityConfig$Builder",
 			"()V"
 		) {}
@@ -31,7 +31,7 @@ namespace android::view::textclassifier
 			arg0
 		);
 	}
-	android::view::textclassifier::TextClassifier_EntityConfig_Builder TextClassifier_EntityConfig_Builder::setExcludedTypes(__JniBaseClass arg0)
+	android::view::textclassifier::TextClassifier_EntityConfig_Builder TextClassifier_EntityConfig_Builder::setExcludedTypes(JObject arg0)
 	{
 		return callObjectMethod(
 			"setExcludedTypes",
@@ -39,7 +39,7 @@ namespace android::view::textclassifier
 			arg0.object()
 		);
 	}
-	android::view::textclassifier::TextClassifier_EntityConfig_Builder TextClassifier_EntityConfig_Builder::setHints(__JniBaseClass arg0)
+	android::view::textclassifier::TextClassifier_EntityConfig_Builder TextClassifier_EntityConfig_Builder::setHints(JObject arg0)
 	{
 		return callObjectMethod(
 			"setHints",
@@ -47,7 +47,7 @@ namespace android::view::textclassifier
 			arg0.object()
 		);
 	}
-	android::view::textclassifier::TextClassifier_EntityConfig_Builder TextClassifier_EntityConfig_Builder::setIncludedTypes(__JniBaseClass arg0)
+	android::view::textclassifier::TextClassifier_EntityConfig_Builder TextClassifier_EntityConfig_Builder::setIncludedTypes(JObject arg0)
 	{
 		return callObjectMethod(
 			"setIncludedTypes",

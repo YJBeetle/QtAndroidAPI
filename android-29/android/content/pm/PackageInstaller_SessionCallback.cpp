@@ -5,11 +5,11 @@ namespace android::content::pm
 	// Fields
 	
 	// QAndroidJniObject forward
-	PackageInstaller_SessionCallback::PackageInstaller_SessionCallback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	PackageInstaller_SessionCallback::PackageInstaller_SessionCallback(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	PackageInstaller_SessionCallback::PackageInstaller_SessionCallback()
-		: __JniBaseClass(
+		: JObject(
 			"android.content.pm.PackageInstaller$SessionCallback",
 			"()V"
 		) {}

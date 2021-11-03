@@ -8,7 +8,7 @@ namespace javax::net::ssl
 	// Fields
 	
 	// QAndroidJniObject forward
-	KeyManagerFactory::KeyManagerFactory(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	KeyManagerFactory::KeyManagerFactory(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -71,7 +71,7 @@ namespace javax::net::ssl
 			"()Ljava/security/Provider;"
 		);
 	}
-	void KeyManagerFactory::init(__JniBaseClass arg0)
+	void KeyManagerFactory::init(JObject arg0)
 	{
 		callMethod<void>(
 			"init",

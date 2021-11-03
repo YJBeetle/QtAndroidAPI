@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::os
 {
@@ -9,7 +9,7 @@ namespace android::os
 
 namespace android::net
 {
-	class DhcpInfo : public __JniBaseClass
+	class DhcpInfo : public JObject
 	{
 	public:
 		// Fields
@@ -22,7 +22,7 @@ namespace android::net
 		jint serverAddress();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit DhcpInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit DhcpInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		DhcpInfo(QAndroidJniObject obj);
 		
 		// Constructors

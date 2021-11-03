@@ -49,7 +49,7 @@ namespace android::hardware
 	}
 	
 	// QAndroidJniObject forward
-	SensorDirectChannel::SensorDirectChannel(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	SensorDirectChannel::SensorDirectChannel(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

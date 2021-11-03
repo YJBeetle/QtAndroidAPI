@@ -1,17 +1,17 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 
 namespace android::webkit
 {
-	class ClientCertRequest : public __JniBaseClass
+	class ClientCertRequest : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ClientCertRequest(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ClientCertRequest(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ClientCertRequest(QAndroidJniObject obj);
 		
 		// Constructors
@@ -24,7 +24,7 @@ namespace android::webkit
 		jint getPort();
 		jarray getPrincipals();
 		void ignore();
-		void proceed(__JniBaseClass arg0, jarray arg1);
+		void proceed(JObject arg0, jarray arg1);
 	};
 } // namespace android::webkit
 

@@ -17,7 +17,7 @@ namespace android::transition
 			"android.transition.ChangeBounds",
 			"()V"
 		) {}
-	ChangeBounds::ChangeBounds(android::content::Context arg0, __JniBaseClass arg1)
+	ChangeBounds::ChangeBounds(android::content::Context arg0, JObject arg1)
 		: android::transition::Transition(
 			"android.transition.ChangeBounds",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",

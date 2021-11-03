@@ -5,7 +5,7 @@ namespace java::util
 	// Fields
 	
 	// QAndroidJniObject forward
-	Spliterators_AbstractIntSpliterator::Spliterators_AbstractIntSpliterator(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Spliterators_AbstractIntSpliterator::Spliterators_AbstractIntSpliterator(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -24,7 +24,7 @@ namespace java::util
 			"()J"
 		);
 	}
-	__JniBaseClass Spliterators_AbstractIntSpliterator::trySplit()
+	JObject Spliterators_AbstractIntSpliterator::trySplit()
 	{
 		return callObjectMethod(
 			"trySplit",

@@ -140,7 +140,7 @@ namespace android::provider
 	}
 	
 	// QAndroidJniObject forward
-	ContactsContract_CommonDataKinds_StructuredPostal::ContactsContract_CommonDataKinds_StructuredPostal(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	ContactsContract_CommonDataKinds_StructuredPostal::ContactsContract_CommonDataKinds_StructuredPostal(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

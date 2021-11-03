@@ -31,7 +31,7 @@ namespace java::security::cert
 			"()[B"
 		).object<jbyteArray>();
 	}
-	__JniBaseClass X509CRL::getIssuerDN()
+	JObject X509CRL::getIssuerDN()
 	{
 		return callObjectMethod(
 			"getIssuerDN",
@@ -68,7 +68,7 @@ namespace java::security::cert
 			arg0.object()
 		);
 	}
-	__JniBaseClass X509CRL::getRevokedCertificates()
+	JObject X509CRL::getRevokedCertificates()
 	{
 		return callObjectMethod(
 			"getRevokedCertificates",
@@ -131,7 +131,7 @@ namespace java::security::cert
 			"()I"
 		);
 	}
-	void X509CRL::verify(__JniBaseClass arg0)
+	void X509CRL::verify(JObject arg0)
 	{
 		callMethod<void>(
 			"verify",
@@ -139,7 +139,7 @@ namespace java::security::cert
 			arg0.object()
 		);
 	}
-	void X509CRL::verify(__JniBaseClass arg0, jstring arg1)
+	void X509CRL::verify(JObject arg0, jstring arg1)
 	{
 		callMethod<void>(
 			"verify",
@@ -148,7 +148,7 @@ namespace java::security::cert
 			arg1
 		);
 	}
-	void X509CRL::verify(__JniBaseClass arg0, java::security::Provider arg1)
+	void X509CRL::verify(JObject arg0, java::security::Provider arg1)
 	{
 		callMethod<void>(
 			"verify",

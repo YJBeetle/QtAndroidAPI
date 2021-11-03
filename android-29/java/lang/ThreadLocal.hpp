@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace java::lang
 {
@@ -13,20 +13,20 @@ namespace java::util::concurrent::atomic
 
 namespace java::lang
 {
-	class ThreadLocal : public __JniBaseClass
+	class ThreadLocal : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ThreadLocal(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ThreadLocal(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ThreadLocal(QAndroidJniObject obj);
 		
 		// Constructors
 		ThreadLocal();
 		
 		// Methods
-		static java::lang::ThreadLocal withInitial(__JniBaseClass arg0);
+		static java::lang::ThreadLocal withInitial(JObject arg0);
 		jobject get();
 		void remove();
 		void set(jobject arg0);

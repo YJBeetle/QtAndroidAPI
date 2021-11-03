@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::content
 {
@@ -17,13 +17,13 @@ namespace java::io
 
 namespace android::media
 {
-	class SoundPool : public __JniBaseClass
+	class SoundPool : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit SoundPool(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit SoundPool(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		SoundPool(QAndroidJniObject obj);
 		
 		// Constructors
@@ -41,7 +41,7 @@ namespace android::media
 		void release();
 		void resume(jint arg0);
 		void setLoop(jint arg0, jint arg1);
-		void setOnLoadCompleteListener(__JniBaseClass arg0);
+		void setOnLoadCompleteListener(JObject arg0);
 		void setPriority(jint arg0, jint arg1);
 		void setRate(jint arg0, jfloat arg1);
 		void setVolume(jint arg0, jfloat arg1, jfloat arg2);

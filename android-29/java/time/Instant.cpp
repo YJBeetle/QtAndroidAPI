@@ -36,12 +36,12 @@ namespace java::time
 	}
 	
 	// QAndroidJniObject forward
-	Instant::Instant(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Instant::Instant(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	java::time::Instant Instant::from(__JniBaseClass arg0)
+	java::time::Instant Instant::from(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"java.time.Instant",
@@ -104,7 +104,7 @@ namespace java::time
 			arg0
 		);
 	}
-	__JniBaseClass Instant::adjustInto(__JniBaseClass arg0)
+	JObject Instant::adjustInto(JObject arg0)
 	{
 		return callObjectMethod(
 			"adjustInto",
@@ -152,7 +152,7 @@ namespace java::time
 			arg0
 		);
 	}
-	jint Instant::get(__JniBaseClass arg0)
+	jint Instant::get(JObject arg0)
 	{
 		return callMethod<jint>(
 			"get",
@@ -167,7 +167,7 @@ namespace java::time
 			"()J"
 		);
 	}
-	jlong Instant::getLong(__JniBaseClass arg0)
+	jlong Instant::getLong(JObject arg0)
 	{
 		return callMethod<jlong>(
 			"getLong",
@@ -205,7 +205,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	jboolean Instant::isSupported(__JniBaseClass arg0)
+	jboolean Instant::isSupported(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"isSupported",
@@ -213,7 +213,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	java::time::Instant Instant::minus(__JniBaseClass arg0)
+	java::time::Instant Instant::minus(JObject arg0)
 	{
 		return callObjectMethod(
 			"minus",
@@ -221,7 +221,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	java::time::Instant Instant::minus(jlong arg0, __JniBaseClass arg1)
+	java::time::Instant Instant::minus(jlong arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"minus",
@@ -254,7 +254,7 @@ namespace java::time
 			arg0
 		);
 	}
-	java::time::Instant Instant::plus(__JniBaseClass arg0)
+	java::time::Instant Instant::plus(JObject arg0)
 	{
 		return callObjectMethod(
 			"plus",
@@ -262,7 +262,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	java::time::Instant Instant::plus(jlong arg0, __JniBaseClass arg1)
+	java::time::Instant Instant::plus(jlong arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"plus",
@@ -295,7 +295,7 @@ namespace java::time
 			arg0
 		);
 	}
-	jobject Instant::query(__JniBaseClass arg0)
+	jobject Instant::query(JObject arg0)
 	{
 		return callObjectMethod(
 			"query",
@@ -303,7 +303,7 @@ namespace java::time
 			arg0.object()
 		).object<jobject>();
 	}
-	java::time::temporal::ValueRange Instant::range(__JniBaseClass arg0)
+	java::time::temporal::ValueRange Instant::range(JObject arg0)
 	{
 		return callObjectMethod(
 			"range",
@@ -325,7 +325,7 @@ namespace java::time
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	java::time::Instant Instant::truncatedTo(__JniBaseClass arg0)
+	java::time::Instant Instant::truncatedTo(JObject arg0)
 	{
 		return callObjectMethod(
 			"truncatedTo",
@@ -333,7 +333,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	jlong Instant::until(__JniBaseClass arg0, __JniBaseClass arg1)
+	jlong Instant::until(JObject arg0, JObject arg1)
 	{
 		return callMethod<jlong>(
 			"until",
@@ -342,7 +342,7 @@ namespace java::time
 			arg1.object()
 		);
 	}
-	java::time::Instant Instant::with(__JniBaseClass arg0)
+	java::time::Instant Instant::with(JObject arg0)
 	{
 		return callObjectMethod(
 			"with",
@@ -350,7 +350,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	java::time::Instant Instant::with(__JniBaseClass arg0, jlong arg1)
+	java::time::Instant Instant::with(JObject arg0, jlong arg1)
 	{
 		return callObjectMethod(
 			"with",

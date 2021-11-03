@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::app
 {
@@ -61,13 +61,13 @@ namespace android::widget
 
 namespace android::app
 {
-	class Notification_Builder : public __JniBaseClass
+	class Notification_Builder : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Notification_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Notification_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Notification_Builder(QAndroidJniObject obj);
 		
 		// Constructors
@@ -85,7 +85,7 @@ namespace android::app
 		android::widget::RemoteViews createBigContentView();
 		android::widget::RemoteViews createContentView();
 		android::widget::RemoteViews createHeadsUpContentView();
-		android::app::Notification_Builder extend(__JniBaseClass arg0);
+		android::app::Notification_Builder extend(JObject arg0);
 		android::os::Bundle getExtras();
 		android::app::Notification getNotification();
 		android::app::Notification_Style getStyle();

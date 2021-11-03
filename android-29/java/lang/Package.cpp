@@ -7,7 +7,7 @@ namespace java::lang
 	// Fields
 	
 	// QAndroidJniObject forward
-	Package::Package(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Package::Package(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -29,7 +29,7 @@ namespace java::lang
 			"()[Ljava/lang/Package;"
 		).object<jarray>();
 	}
-	__JniBaseClass Package::getAnnotation(jclass arg0)
+	JObject Package::getAnnotation(jclass arg0)
 	{
 		return callObjectMethod(
 			"getAnnotation",
@@ -52,7 +52,7 @@ namespace java::lang
 			arg0
 		).object<jarray>();
 	}
-	__JniBaseClass Package::getDeclaredAnnotation(jclass arg0)
+	JObject Package::getDeclaredAnnotation(jclass arg0)
 	{
 		return callObjectMethod(
 			"getDeclaredAnnotation",

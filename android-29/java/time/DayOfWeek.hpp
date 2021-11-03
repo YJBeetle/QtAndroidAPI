@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "../lang/Enum.hpp"
 
 namespace java::time::format
@@ -37,20 +37,20 @@ namespace java::time
 		// Constructors
 		
 		// Methods
-		static java::time::DayOfWeek from(__JniBaseClass arg0);
+		static java::time::DayOfWeek from(JObject arg0);
 		static java::time::DayOfWeek of(jint arg0);
 		static java::time::DayOfWeek valueOf(jstring arg0);
 		static jarray values();
-		__JniBaseClass adjustInto(__JniBaseClass arg0);
-		jint get(__JniBaseClass arg0);
+		JObject adjustInto(JObject arg0);
+		jint get(JObject arg0);
 		jstring getDisplayName(java::time::format::TextStyle arg0, java::util::Locale arg1);
-		jlong getLong(__JniBaseClass arg0);
+		jlong getLong(JObject arg0);
 		jint getValue();
-		jboolean isSupported(__JniBaseClass arg0);
+		jboolean isSupported(JObject arg0);
 		java::time::DayOfWeek minus(jlong arg0);
 		java::time::DayOfWeek plus(jlong arg0);
-		jobject query(__JniBaseClass arg0);
-		java::time::temporal::ValueRange range(__JniBaseClass arg0);
+		jobject query(JObject arg0);
+		java::time::temporal::ValueRange range(JObject arg0);
 	};
 } // namespace java::time
 

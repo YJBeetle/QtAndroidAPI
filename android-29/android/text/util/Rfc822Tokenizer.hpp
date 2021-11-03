@@ -1,17 +1,17 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 
 namespace android::text::util
 {
-	class Rfc822Tokenizer : public __JniBaseClass
+	class Rfc822Tokenizer : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Rfc822Tokenizer(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Rfc822Tokenizer(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Rfc822Tokenizer(QAndroidJniObject obj);
 		
 		// Constructors
@@ -19,7 +19,7 @@ namespace android::text::util
 		
 		// Methods
 		static jarray tokenize(jstring arg0);
-		static void tokenize(jstring arg0, __JniBaseClass arg1);
+		static void tokenize(jstring arg0, JObject arg1);
 		jint findTokenEnd(jstring arg0, jint arg1);
 		jint findTokenStart(jstring arg0, jint arg1);
 		jstring terminateToken(jstring arg0);

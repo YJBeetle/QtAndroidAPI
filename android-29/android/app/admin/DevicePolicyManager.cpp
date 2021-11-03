@@ -1095,7 +1095,7 @@ namespace android::app::admin
 	}
 	
 	// QAndroidJniObject forward
-	DevicePolicyManager::DevicePolicyManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	DevicePolicyManager::DevicePolicyManager(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -1147,7 +1147,7 @@ namespace android::app::admin
 			arg1
 		);
 	}
-	jboolean DevicePolicyManager::bindDeviceAdminServiceAsUser(android::content::ComponentName arg0, android::content::Intent arg1, __JniBaseClass arg2, jint arg3, android::os::UserHandle arg4)
+	jboolean DevicePolicyManager::bindDeviceAdminServiceAsUser(android::content::ComponentName arg0, android::content::Intent arg1, JObject arg2, jint arg3, android::os::UserHandle arg4)
 	{
 		return callMethod<jboolean>(
 			"bindDeviceAdminServiceAsUser",
@@ -1159,7 +1159,7 @@ namespace android::app::admin
 			arg4.object()
 		);
 	}
-	void DevicePolicyManager::clearApplicationUserData(android::content::ComponentName arg0, jstring arg1, __JniBaseClass arg2, __JniBaseClass arg3)
+	void DevicePolicyManager::clearApplicationUserData(android::content::ComponentName arg0, jstring arg1, JObject arg2, JObject arg3)
 	{
 		callMethod<void>(
 			"clearApplicationUserData",
@@ -1276,14 +1276,14 @@ namespace android::app::admin
 			"()[Ljava/lang/String;"
 		).object<jarray>();
 	}
-	__JniBaseClass DevicePolicyManager::getActiveAdmins()
+	JObject DevicePolicyManager::getActiveAdmins()
 	{
 		return callObjectMethod(
 			"getActiveAdmins",
 			"()Ljava/util/List;"
 		);
 	}
-	__JniBaseClass DevicePolicyManager::getAffiliationIds(android::content::ComponentName arg0)
+	JObject DevicePolicyManager::getAffiliationIds(android::content::ComponentName arg0)
 	{
 		return callObjectMethod(
 			"getAffiliationIds",
@@ -1291,7 +1291,7 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	__JniBaseClass DevicePolicyManager::getAlwaysOnVpnLockdownWhitelist(android::content::ComponentName arg0)
+	JObject DevicePolicyManager::getAlwaysOnVpnLockdownWhitelist(android::content::ComponentName arg0)
 	{
 		return callObjectMethod(
 			"getAlwaysOnVpnLockdownWhitelist",
@@ -1331,7 +1331,7 @@ namespace android::app::admin
 			"()Z"
 		);
 	}
-	__JniBaseClass DevicePolicyManager::getBindDeviceAdminTargetUsers(android::content::ComponentName arg0)
+	JObject DevicePolicyManager::getBindDeviceAdminTargetUsers(android::content::ComponentName arg0)
 	{
 		return callObjectMethod(
 			"getBindDeviceAdminTargetUsers",
@@ -1363,7 +1363,7 @@ namespace android::app::admin
 			arg0.object()
 		).object<jstring>();
 	}
-	__JniBaseClass DevicePolicyManager::getCrossProfileCalendarPackages(android::content::ComponentName arg0)
+	JObject DevicePolicyManager::getCrossProfileCalendarPackages(android::content::ComponentName arg0)
 	{
 		return callObjectMethod(
 			"getCrossProfileCalendarPackages",
@@ -1387,7 +1387,7 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	__JniBaseClass DevicePolicyManager::getCrossProfileWidgetProviders(android::content::ComponentName arg0)
+	JObject DevicePolicyManager::getCrossProfileWidgetProviders(android::content::ComponentName arg0)
 	{
 		return callObjectMethod(
 			"getCrossProfileWidgetProviders",
@@ -1402,7 +1402,7 @@ namespace android::app::admin
 			"()I"
 		);
 	}
-	__JniBaseClass DevicePolicyManager::getDelegatePackages(android::content::ComponentName arg0, jstring arg1)
+	JObject DevicePolicyManager::getDelegatePackages(android::content::ComponentName arg0, jstring arg1)
 	{
 		return callObjectMethod(
 			"getDelegatePackages",
@@ -1411,7 +1411,7 @@ namespace android::app::admin
 			arg1
 		);
 	}
-	__JniBaseClass DevicePolicyManager::getDelegatedScopes(android::content::ComponentName arg0, jstring arg1)
+	JObject DevicePolicyManager::getDelegatedScopes(android::content::ComponentName arg0, jstring arg1)
 	{
 		return callObjectMethod(
 			"getDelegatedScopes",
@@ -1451,7 +1451,7 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	__JniBaseClass DevicePolicyManager::getInstalledCaCerts(android::content::ComponentName arg0)
+	JObject DevicePolicyManager::getInstalledCaCerts(android::content::ComponentName arg0)
 	{
 		return callObjectMethod(
 			"getInstalledCaCerts",
@@ -1459,7 +1459,7 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	__JniBaseClass DevicePolicyManager::getKeepUninstalledPackages(android::content::ComponentName arg0)
+	JObject DevicePolicyManager::getKeepUninstalledPackages(android::content::ComponentName arg0)
 	{
 		return callObjectMethod(
 			"getKeepUninstalledPackages",
@@ -1515,7 +1515,7 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	__JniBaseClass DevicePolicyManager::getMeteredDataDisabledPackages(android::content::ComponentName arg0)
+	JObject DevicePolicyManager::getMeteredDataDisabledPackages(android::content::ComponentName arg0)
 	{
 		return callObjectMethod(
 			"getMeteredDataDisabledPackages",
@@ -1539,7 +1539,7 @@ namespace android::app::admin
 			arg0.object()
 		).object<jstring>();
 	}
-	__JniBaseClass DevicePolicyManager::getOverrideApns(android::content::ComponentName arg0)
+	JObject DevicePolicyManager::getOverrideApns(android::content::ComponentName arg0)
 	{
 		return callObjectMethod(
 			"getOverrideApns",
@@ -1684,7 +1684,7 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	__JniBaseClass DevicePolicyManager::getPermittedAccessibilityServices(android::content::ComponentName arg0)
+	JObject DevicePolicyManager::getPermittedAccessibilityServices(android::content::ComponentName arg0)
 	{
 		return callObjectMethod(
 			"getPermittedAccessibilityServices",
@@ -1692,7 +1692,7 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	__JniBaseClass DevicePolicyManager::getPermittedCrossProfileNotificationListeners(android::content::ComponentName arg0)
+	JObject DevicePolicyManager::getPermittedCrossProfileNotificationListeners(android::content::ComponentName arg0)
 	{
 		return callObjectMethod(
 			"getPermittedCrossProfileNotificationListeners",
@@ -1700,7 +1700,7 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	__JniBaseClass DevicePolicyManager::getPermittedInputMethods(android::content::ComponentName arg0)
+	JObject DevicePolicyManager::getPermittedInputMethods(android::content::ComponentName arg0)
 	{
 		return callObjectMethod(
 			"getPermittedInputMethods",
@@ -1724,7 +1724,7 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	__JniBaseClass DevicePolicyManager::getSecondaryUsers(android::content::ComponentName arg0)
+	JObject DevicePolicyManager::getSecondaryUsers(android::content::ComponentName arg0)
 	{
 		return callObjectMethod(
 			"getSecondaryUsers",
@@ -1777,7 +1777,7 @@ namespace android::app::admin
 			"()Landroid/os/PersistableBundle;"
 		);
 	}
-	__JniBaseClass DevicePolicyManager::getTrustAgentConfiguration(android::content::ComponentName arg0, android::content::ComponentName arg1)
+	JObject DevicePolicyManager::getTrustAgentConfiguration(android::content::ComponentName arg0, android::content::ComponentName arg1)
 	{
 		return callObjectMethod(
 			"getTrustAgentConfiguration",
@@ -1838,7 +1838,7 @@ namespace android::app::admin
 			arg1
 		);
 	}
-	jboolean DevicePolicyManager::installKeyPair(android::content::ComponentName arg0, __JniBaseClass arg1, java::security::cert::Certificate arg2, jstring arg3)
+	jboolean DevicePolicyManager::installKeyPair(android::content::ComponentName arg0, JObject arg1, java::security::cert::Certificate arg2, jstring arg3)
 	{
 		return callMethod<jboolean>(
 			"installKeyPair",
@@ -1849,7 +1849,7 @@ namespace android::app::admin
 			arg3
 		);
 	}
-	jboolean DevicePolicyManager::installKeyPair(android::content::ComponentName arg0, __JniBaseClass arg1, jarray arg2, jstring arg3, jboolean arg4)
+	jboolean DevicePolicyManager::installKeyPair(android::content::ComponentName arg0, JObject arg1, jarray arg2, jstring arg3, jboolean arg4)
 	{
 		return callMethod<jboolean>(
 			"installKeyPair",
@@ -1861,7 +1861,7 @@ namespace android::app::admin
 			arg4
 		);
 	}
-	jboolean DevicePolicyManager::installKeyPair(android::content::ComponentName arg0, __JniBaseClass arg1, jarray arg2, jstring arg3, jint arg4)
+	jboolean DevicePolicyManager::installKeyPair(android::content::ComponentName arg0, JObject arg1, jarray arg2, jstring arg3, jint arg4)
 	{
 		return callMethod<jboolean>(
 			"installKeyPair",
@@ -1873,7 +1873,7 @@ namespace android::app::admin
 			arg4
 		);
 	}
-	void DevicePolicyManager::installSystemUpdate(android::content::ComponentName arg0, android::net::Uri arg1, __JniBaseClass arg2, android::app::admin::DevicePolicyManager_InstallSystemUpdateCallback arg3)
+	void DevicePolicyManager::installSystemUpdate(android::content::ComponentName arg0, android::net::Uri arg1, JObject arg2, android::app::admin::DevicePolicyManager_InstallSystemUpdateCallback arg3)
 	{
 		callMethod<void>(
 			"installSystemUpdate",
@@ -2169,7 +2169,7 @@ namespace android::app::admin
 			arg3
 		);
 	}
-	__JniBaseClass DevicePolicyManager::retrieveNetworkLogs(android::content::ComponentName arg0, jlong arg1)
+	JObject DevicePolicyManager::retrieveNetworkLogs(android::content::ComponentName arg0, jlong arg1)
 	{
 		return callObjectMethod(
 			"retrieveNetworkLogs",
@@ -2178,7 +2178,7 @@ namespace android::app::admin
 			arg1
 		);
 	}
-	__JniBaseClass DevicePolicyManager::retrievePreRebootSecurityLogs(android::content::ComponentName arg0)
+	JObject DevicePolicyManager::retrievePreRebootSecurityLogs(android::content::ComponentName arg0)
 	{
 		return callObjectMethod(
 			"retrievePreRebootSecurityLogs",
@@ -2186,7 +2186,7 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	__JniBaseClass DevicePolicyManager::retrieveSecurityLogs(android::content::ComponentName arg0)
+	JObject DevicePolicyManager::retrieveSecurityLogs(android::content::ComponentName arg0)
 	{
 		return callObjectMethod(
 			"retrieveSecurityLogs",
@@ -2204,7 +2204,7 @@ namespace android::app::admin
 			arg2
 		);
 	}
-	void DevicePolicyManager::setAffiliationIds(android::content::ComponentName arg0, __JniBaseClass arg1)
+	void DevicePolicyManager::setAffiliationIds(android::content::ComponentName arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"setAffiliationIds",
@@ -2223,7 +2223,7 @@ namespace android::app::admin
 			arg2
 		);
 	}
-	void DevicePolicyManager::setAlwaysOnVpnPackage(android::content::ComponentName arg0, jstring arg1, jboolean arg2, __JniBaseClass arg3)
+	void DevicePolicyManager::setAlwaysOnVpnPackage(android::content::ComponentName arg0, jstring arg1, jboolean arg2, JObject arg3)
 	{
 		callMethod<void>(
 			"setAlwaysOnVpnPackage",
@@ -2308,7 +2308,7 @@ namespace android::app::admin
 			arg1
 		);
 	}
-	void DevicePolicyManager::setCrossProfileCalendarPackages(android::content::ComponentName arg0, __JniBaseClass arg1)
+	void DevicePolicyManager::setCrossProfileCalendarPackages(android::content::ComponentName arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"setCrossProfileCalendarPackages",
@@ -2344,7 +2344,7 @@ namespace android::app::admin
 			arg1
 		);
 	}
-	void DevicePolicyManager::setDelegatedScopes(android::content::ComponentName arg0, jstring arg1, __JniBaseClass arg2)
+	void DevicePolicyManager::setDelegatedScopes(android::content::ComponentName arg0, jstring arg1, JObject arg2)
 	{
 		callMethod<void>(
 			"setDelegatedScopes",
@@ -2399,7 +2399,7 @@ namespace android::app::admin
 			arg2
 		);
 	}
-	void DevicePolicyManager::setKeepUninstalledPackages(android::content::ComponentName arg0, __JniBaseClass arg1)
+	void DevicePolicyManager::setKeepUninstalledPackages(android::content::ComponentName arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"setKeepUninstalledPackages",
@@ -2408,7 +2408,7 @@ namespace android::app::admin
 			arg1.object()
 		);
 	}
-	jboolean DevicePolicyManager::setKeyPairCertificate(android::content::ComponentName arg0, jstring arg1, __JniBaseClass arg2, jboolean arg3)
+	jboolean DevicePolicyManager::setKeyPairCertificate(android::content::ComponentName arg0, jstring arg1, JObject arg2, jboolean arg3)
 	{
 		return callMethod<jboolean>(
 			"setKeyPairCertificate",
@@ -2500,7 +2500,7 @@ namespace android::app::admin
 			arg1
 		);
 	}
-	__JniBaseClass DevicePolicyManager::setMeteredDataDisabledPackages(android::content::ComponentName arg0, __JniBaseClass arg1)
+	JObject DevicePolicyManager::setMeteredDataDisabledPackages(android::content::ComponentName arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"setMeteredDataDisabledPackages",
@@ -2665,7 +2665,7 @@ namespace android::app::admin
 			arg1
 		);
 	}
-	jboolean DevicePolicyManager::setPermittedAccessibilityServices(android::content::ComponentName arg0, __JniBaseClass arg1)
+	jboolean DevicePolicyManager::setPermittedAccessibilityServices(android::content::ComponentName arg0, JObject arg1)
 	{
 		return callMethod<jboolean>(
 			"setPermittedAccessibilityServices",
@@ -2674,7 +2674,7 @@ namespace android::app::admin
 			arg1.object()
 		);
 	}
-	jboolean DevicePolicyManager::setPermittedCrossProfileNotificationListeners(android::content::ComponentName arg0, __JniBaseClass arg1)
+	jboolean DevicePolicyManager::setPermittedCrossProfileNotificationListeners(android::content::ComponentName arg0, JObject arg1)
 	{
 		return callMethod<jboolean>(
 			"setPermittedCrossProfileNotificationListeners",
@@ -2683,7 +2683,7 @@ namespace android::app::admin
 			arg1.object()
 		);
 	}
-	jboolean DevicePolicyManager::setPermittedInputMethods(android::content::ComponentName arg0, __JniBaseClass arg1)
+	jboolean DevicePolicyManager::setPermittedInputMethods(android::content::ComponentName arg0, JObject arg1)
 	{
 		return callMethod<jboolean>(
 			"setPermittedInputMethods",

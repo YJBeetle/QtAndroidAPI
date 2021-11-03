@@ -8,18 +8,18 @@ namespace android::service::autofill
 	// Fields
 	
 	// QAndroidJniObject forward
-	CustomDescription_Builder::CustomDescription_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	CustomDescription_Builder::CustomDescription_Builder(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	CustomDescription_Builder::CustomDescription_Builder(android::widget::RemoteViews arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.service.autofill.CustomDescription$Builder",
 			"(Landroid/widget/RemoteViews;)V",
 			arg0.object()
 		) {}
 	
 	// Methods
-	android::service::autofill::CustomDescription_Builder CustomDescription_Builder::addChild(jint arg0, __JniBaseClass arg1)
+	android::service::autofill::CustomDescription_Builder CustomDescription_Builder::addChild(jint arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"addChild",
@@ -28,7 +28,7 @@ namespace android::service::autofill
 			arg1.object()
 		);
 	}
-	android::service::autofill::CustomDescription_Builder CustomDescription_Builder::addOnClickAction(jint arg0, __JniBaseClass arg1)
+	android::service::autofill::CustomDescription_Builder CustomDescription_Builder::addOnClickAction(jint arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"addOnClickAction",
@@ -37,7 +37,7 @@ namespace android::service::autofill
 			arg1.object()
 		);
 	}
-	android::service::autofill::CustomDescription_Builder CustomDescription_Builder::batchUpdate(__JniBaseClass arg0, android::service::autofill::BatchUpdates arg1)
+	android::service::autofill::CustomDescription_Builder CustomDescription_Builder::batchUpdate(JObject arg0, android::service::autofill::BatchUpdates arg1)
 	{
 		return callObjectMethod(
 			"batchUpdate",

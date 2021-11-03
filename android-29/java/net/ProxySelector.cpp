@@ -9,11 +9,11 @@ namespace java::net
 	// Fields
 	
 	// QAndroidJniObject forward
-	ProxySelector::ProxySelector(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	ProxySelector::ProxySelector(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ProxySelector::ProxySelector()
-		: __JniBaseClass(
+		: JObject(
 			"java.net.ProxySelector",
 			"()V"
 		) {}
@@ -55,7 +55,7 @@ namespace java::net
 			arg2.object()
 		);
 	}
-	__JniBaseClass ProxySelector::select(java::net::URI arg0)
+	JObject ProxySelector::select(java::net::URI arg0)
 	{
 		return callObjectMethod(
 			"select",

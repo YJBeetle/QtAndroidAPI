@@ -56,7 +56,7 @@ namespace android::icu::text
 			arg1
 		).object<jstring>();
 	}
-	jstring MessageFormat::format(jstring arg0, __JniBaseClass arg1)
+	jstring MessageFormat::format(jstring arg0, JObject arg1)
 	{
 		return callStaticObjectMethod(
 			"android.icu.text.MessageFormat",
@@ -118,7 +118,7 @@ namespace android::icu::text
 			arg2.object()
 		);
 	}
-	java::lang::StringBuffer MessageFormat::format(__JniBaseClass arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
+	java::lang::StringBuffer MessageFormat::format(JObject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
 	{
 		return callObjectMethod(
 			"format",
@@ -128,7 +128,7 @@ namespace android::icu::text
 			arg2.object()
 		);
 	}
-	__JniBaseClass MessageFormat::formatToCharacterIterator(jobject arg0)
+	JObject MessageFormat::formatToCharacterIterator(jobject arg0)
 	{
 		return callObjectMethod(
 			"formatToCharacterIterator",
@@ -143,7 +143,7 @@ namespace android::icu::text
 			"()Landroid/icu/text/MessagePattern$ApostropheMode;"
 		);
 	}
-	__JniBaseClass MessageFormat::getArgumentNames()
+	JObject MessageFormat::getArgumentNames()
 	{
 		return callObjectMethod(
 			"getArgumentNames",
@@ -219,7 +219,7 @@ namespace android::icu::text
 			arg1.object()
 		).object<jobject>();
 	}
-	__JniBaseClass MessageFormat::parseToMap(jstring arg0)
+	JObject MessageFormat::parseToMap(jstring arg0)
 	{
 		return callObjectMethod(
 			"parseToMap",
@@ -227,7 +227,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	__JniBaseClass MessageFormat::parseToMap(jstring arg0, java::text::ParsePosition arg1)
+	JObject MessageFormat::parseToMap(jstring arg0, java::text::ParsePosition arg1)
 	{
 		return callObjectMethod(
 			"parseToMap",
@@ -279,7 +279,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	void MessageFormat::setFormatsByArgumentName(__JniBaseClass arg0)
+	void MessageFormat::setFormatsByArgumentName(JObject arg0)
 	{
 		callMethod<void>(
 			"setFormatsByArgumentName",

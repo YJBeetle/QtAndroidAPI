@@ -7,11 +7,11 @@ namespace android::hardware::biometrics
 	// Fields
 	
 	// QAndroidJniObject forward
-	BiometricPrompt_Builder::BiometricPrompt_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	BiometricPrompt_Builder::BiometricPrompt_Builder(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	BiometricPrompt_Builder::BiometricPrompt_Builder(android::content::Context arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.hardware.biometrics.BiometricPrompt$Builder",
 			"(Landroid/content/Context;)V",
 			arg0.object()
@@ -49,7 +49,7 @@ namespace android::hardware::biometrics
 			arg0
 		);
 	}
-	android::hardware::biometrics::BiometricPrompt_Builder BiometricPrompt_Builder::setNegativeButton(jstring arg0, __JniBaseClass arg1, __JniBaseClass arg2)
+	android::hardware::biometrics::BiometricPrompt_Builder BiometricPrompt_Builder::setNegativeButton(jstring arg0, JObject arg1, JObject arg2)
 	{
 		return callObjectMethod(
 			"setNegativeButton",

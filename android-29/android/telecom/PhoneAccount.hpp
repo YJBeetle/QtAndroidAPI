@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::graphics::drawable
 {
@@ -29,7 +29,7 @@ namespace android::telecom
 
 namespace android::telecom
 {
-	class PhoneAccount : public __JniBaseClass
+	class PhoneAccount : public JObject
 	{
 	public:
 		// Fields
@@ -43,7 +43,7 @@ namespace android::telecom
 		static jint CAPABILITY_SUPPORTS_VIDEO_CALLING();
 		static jint CAPABILITY_VIDEO_CALLING();
 		static jint CAPABILITY_VIDEO_CALLING_RELIES_ON_PRESENCE();
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jstring EXTRA_CALL_SUBJECT_CHARACTER_ENCODING();
 		static jstring EXTRA_CALL_SUBJECT_MAX_LENGTH();
 		static jstring EXTRA_LOG_SELF_MANAGED_CALLS();
@@ -56,7 +56,7 @@ namespace android::telecom
 		static jstring SCHEME_VOICEMAIL();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit PhoneAccount(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit PhoneAccount(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		PhoneAccount(QAndroidJniObject obj);
 		
 		// Constructors
@@ -74,7 +74,7 @@ namespace android::telecom
 		jstring getLabel();
 		jstring getShortDescription();
 		android::net::Uri getSubscriptionAddress();
-		__JniBaseClass getSupportedUriSchemes();
+		JObject getSupportedUriSchemes();
 		jboolean hasCapabilities(jint arg0);
 		jint hashCode();
 		jboolean isEnabled();

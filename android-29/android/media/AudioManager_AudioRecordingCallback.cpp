@@ -5,17 +5,17 @@ namespace android::media
 	// Fields
 	
 	// QAndroidJniObject forward
-	AudioManager_AudioRecordingCallback::AudioManager_AudioRecordingCallback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	AudioManager_AudioRecordingCallback::AudioManager_AudioRecordingCallback(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	AudioManager_AudioRecordingCallback::AudioManager_AudioRecordingCallback()
-		: __JniBaseClass(
+		: JObject(
 			"android.media.AudioManager$AudioRecordingCallback",
 			"()V"
 		) {}
 	
 	// Methods
-	void AudioManager_AudioRecordingCallback::onRecordingConfigChanged(__JniBaseClass arg0)
+	void AudioManager_AudioRecordingCallback::onRecordingConfigChanged(JObject arg0)
 	{
 		callMethod<void>(
 			"onRecordingConfigChanged",

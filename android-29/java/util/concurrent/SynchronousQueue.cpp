@@ -40,7 +40,7 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	jboolean SynchronousQueue::containsAll(__JniBaseClass arg0)
+	jboolean SynchronousQueue::containsAll(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"containsAll",
@@ -48,7 +48,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	jint SynchronousQueue::drainTo(__JniBaseClass arg0)
+	jint SynchronousQueue::drainTo(JObject arg0)
 	{
 		return callMethod<jint>(
 			"drainTo",
@@ -56,7 +56,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	jint SynchronousQueue::drainTo(__JniBaseClass arg0, jint arg1)
+	jint SynchronousQueue::drainTo(JObject arg0, jint arg1)
 	{
 		return callMethod<jint>(
 			"drainTo",
@@ -72,7 +72,7 @@ namespace java::util::concurrent
 			"()Z"
 		);
 	}
-	__JniBaseClass SynchronousQueue::iterator()
+	JObject SynchronousQueue::iterator()
 	{
 		return callObjectMethod(
 			"iterator",
@@ -143,7 +143,7 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	jboolean SynchronousQueue::removeAll(__JniBaseClass arg0)
+	jboolean SynchronousQueue::removeAll(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"removeAll",
@@ -151,7 +151,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	jboolean SynchronousQueue::retainAll(__JniBaseClass arg0)
+	jboolean SynchronousQueue::retainAll(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"retainAll",
@@ -166,7 +166,7 @@ namespace java::util::concurrent
 			"()I"
 		);
 	}
-	__JniBaseClass SynchronousQueue::spliterator()
+	JObject SynchronousQueue::spliterator()
 	{
 		return callObjectMethod(
 			"spliterator",

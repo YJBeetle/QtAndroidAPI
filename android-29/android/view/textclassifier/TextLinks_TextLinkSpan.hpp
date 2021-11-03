@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "../../text/style/CharacterStyle.hpp"
 #include "../../text/style/ClickableSpan.hpp"
 

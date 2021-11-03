@@ -11,7 +11,7 @@ namespace java::security
 	// Constructors
 	
 	// Methods
-	void AuthProvider::login(javax::security::auth::Subject arg0, __JniBaseClass arg1)
+	void AuthProvider::login(javax::security::auth::Subject arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"login",
@@ -27,7 +27,7 @@ namespace java::security
 			"()V"
 		);
 	}
-	void AuthProvider::setCallbackHandler(__JniBaseClass arg0)
+	void AuthProvider::setCallbackHandler(JObject arg0)
 	{
 		callMethod<void>(
 			"setCallbackHandler",

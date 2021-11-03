@@ -172,7 +172,7 @@ namespace android::media::audiofx
 			arg1
 		);
 	}
-	void Equalizer::setParameterListener(__JniBaseClass arg0)
+	void Equalizer::setParameterListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setParameterListener",

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::net
 {
@@ -41,7 +41,7 @@ namespace java::util
 
 namespace android::os::storage
 {
-	class StorageManager : public __JniBaseClass
+	class StorageManager : public JObject
 	{
 	public:
 		// Fields
@@ -51,7 +51,7 @@ namespace android::os::storage
 		static java::util::UUID UUID_DEFAULT();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit StorageManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit StorageManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		StorageManager(QAndroidJniObject obj);
 		
 		// Constructors
@@ -66,7 +66,7 @@ namespace android::os::storage
 		android::os::storage::StorageVolume getPrimaryStorageVolume();
 		android::os::storage::StorageVolume getStorageVolume(android::net::Uri arg0);
 		android::os::storage::StorageVolume getStorageVolume(java::io::File arg0);
-		__JniBaseClass getStorageVolumes();
+		JObject getStorageVolumes();
 		java::util::UUID getUuidForPath(java::io::File arg0);
 		jboolean isAllocationSupported(java::io::FileDescriptor arg0);
 		jboolean isCacheBehaviorGroup(java::io::File arg0);

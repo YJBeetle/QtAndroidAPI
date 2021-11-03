@@ -61,11 +61,11 @@ namespace android::drm
 	}
 	
 	// QAndroidJniObject forward
-	DrmStore_Action::DrmStore_Action(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	DrmStore_Action::DrmStore_Action(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	DrmStore_Action::DrmStore_Action()
-		: __JniBaseClass(
+		: JObject(
 			"android.drm.DrmStore$Action",
 			"()V"
 		) {}

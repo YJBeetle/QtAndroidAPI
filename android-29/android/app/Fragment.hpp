@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::animation
 {
@@ -81,13 +81,13 @@ namespace java::io
 
 namespace android::app
 {
-	class Fragment : public __JniBaseClass
+	class Fragment : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Fragment(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Fragment(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Fragment(QAndroidJniObject obj);
 		
 		// Constructors
@@ -141,11 +141,11 @@ namespace android::app
 		void onAttach(android::content::Context arg0);
 		void onAttachFragment(android::app::Fragment arg0);
 		void onConfigurationChanged(android::content::res::Configuration arg0);
-		jboolean onContextItemSelected(__JniBaseClass arg0);
+		jboolean onContextItemSelected(JObject arg0);
 		void onCreate(android::os::Bundle arg0);
 		android::animation::Animator onCreateAnimator(jint arg0, jboolean arg1, jint arg2);
-		void onCreateContextMenu(__JniBaseClass arg0, android::view::View arg1, __JniBaseClass arg2);
-		void onCreateOptionsMenu(__JniBaseClass arg0, android::view::MenuInflater arg1);
+		void onCreateContextMenu(JObject arg0, android::view::View arg1, JObject arg2);
+		void onCreateOptionsMenu(JObject arg0, android::view::MenuInflater arg1);
 		android::view::View onCreateView(android::view::LayoutInflater arg0, android::view::ViewGroup arg1, android::os::Bundle arg2);
 		void onDestroy();
 		void onDestroyOptionsMenu();
@@ -153,18 +153,18 @@ namespace android::app
 		void onDetach();
 		android::view::LayoutInflater onGetLayoutInflater(android::os::Bundle arg0);
 		void onHiddenChanged(jboolean arg0);
-		void onInflate(__JniBaseClass arg0, android::os::Bundle arg1);
-		void onInflate(android::app::Activity arg0, __JniBaseClass arg1, android::os::Bundle arg2);
-		void onInflate(android::content::Context arg0, __JniBaseClass arg1, android::os::Bundle arg2);
+		void onInflate(JObject arg0, android::os::Bundle arg1);
+		void onInflate(android::app::Activity arg0, JObject arg1, android::os::Bundle arg2);
+		void onInflate(android::content::Context arg0, JObject arg1, android::os::Bundle arg2);
 		void onLowMemory();
 		void onMultiWindowModeChanged(jboolean arg0);
 		void onMultiWindowModeChanged(jboolean arg0, android::content::res::Configuration arg1);
-		jboolean onOptionsItemSelected(__JniBaseClass arg0);
-		void onOptionsMenuClosed(__JniBaseClass arg0);
+		jboolean onOptionsItemSelected(JObject arg0);
+		void onOptionsMenuClosed(JObject arg0);
 		void onPause();
 		void onPictureInPictureModeChanged(jboolean arg0);
 		void onPictureInPictureModeChanged(jboolean arg0, android::content::res::Configuration arg1);
-		void onPrepareOptionsMenu(__JniBaseClass arg0);
+		void onPrepareOptionsMenu(JObject arg0);
 		void onRequestPermissionsResult(jint arg0, jarray arg1, jintArray arg2);
 		void onResume();
 		void onSaveInstanceState(android::os::Bundle arg0);

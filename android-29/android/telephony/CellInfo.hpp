@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::os
 {
@@ -9,7 +9,7 @@ namespace android::os
 
 namespace android::telephony
 {
-	class CellInfo : public __JniBaseClass
+	class CellInfo : public JObject
 	{
 	public:
 		// Fields
@@ -17,12 +17,12 @@ namespace android::telephony
 		static jint CONNECTION_PRIMARY_SERVING();
 		static jint CONNECTION_SECONDARY_SERVING();
 		static jint CONNECTION_UNKNOWN();
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint UNAVAILABLE();
 		static jlong UNAVAILABLE_LONG();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit CellInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit CellInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		CellInfo(QAndroidJniObject obj);
 		
 		// Constructors

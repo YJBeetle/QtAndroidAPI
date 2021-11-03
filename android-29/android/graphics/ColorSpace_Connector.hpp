@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::graphics
 {
@@ -13,13 +13,13 @@ namespace android::graphics
 
 namespace android::graphics
 {
-	class ColorSpace_Connector : public __JniBaseClass
+	class ColorSpace_Connector : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ColorSpace_Connector(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ColorSpace_Connector(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ColorSpace_Connector(QAndroidJniObject obj);
 		
 		// Constructors

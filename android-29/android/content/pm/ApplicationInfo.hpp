@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "./PackageItemInfo.hpp"
 
 namespace android::content
@@ -35,7 +35,7 @@ namespace android::content::pm
 		static jint CATEGORY_SOCIAL();
 		static jint CATEGORY_UNDEFINED();
 		static jint CATEGORY_VIDEO();
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint FLAG_ALLOW_BACKUP();
 		static jint FLAG_ALLOW_CLEAR_USER_DATA();
 		static jint FLAG_ALLOW_TASK_REPARENTING();
@@ -109,7 +109,7 @@ namespace android::content::pm
 		// Methods
 		static jstring getCategoryTitle(android::content::Context arg0, jint arg1);
 		jint describeContents();
-		void dump(__JniBaseClass arg0, jstring arg1);
+		void dump(JObject arg0, jstring arg1);
 		jboolean isProfileableByShell();
 		jboolean isResourceOverlay();
 		jboolean isVirtualPreload();

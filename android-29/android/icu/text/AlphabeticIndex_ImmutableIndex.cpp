@@ -6,7 +6,7 @@ namespace android::icu::text
 	// Fields
 	
 	// QAndroidJniObject forward
-	AlphabeticIndex_ImmutableIndex::AlphabeticIndex_ImmutableIndex(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	AlphabeticIndex_ImmutableIndex::AlphabeticIndex_ImmutableIndex(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -34,7 +34,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	__JniBaseClass AlphabeticIndex_ImmutableIndex::iterator()
+	JObject AlphabeticIndex_ImmutableIndex::iterator()
 	{
 		return callObjectMethod(
 			"iterator",

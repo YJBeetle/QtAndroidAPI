@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "../lang/Exception.hpp"
 #include "./SQLException.hpp"
 
@@ -18,17 +18,17 @@ namespace java::sql
 		
 		// Constructors
 		SQLClientInfoException();
-		SQLClientInfoException(__JniBaseClass arg0);
-		SQLClientInfoException(jstring arg0, __JniBaseClass arg1);
-		SQLClientInfoException(__JniBaseClass arg0, jthrowable arg1);
-		SQLClientInfoException(jstring arg0, jstring arg1, __JniBaseClass arg2);
-		SQLClientInfoException(jstring arg0, __JniBaseClass arg1, jthrowable arg2);
-		SQLClientInfoException(jstring arg0, jstring arg1, jint arg2, __JniBaseClass arg3);
-		SQLClientInfoException(jstring arg0, jstring arg1, __JniBaseClass arg2, jthrowable arg3);
-		SQLClientInfoException(jstring arg0, jstring arg1, jint arg2, __JniBaseClass arg3, jthrowable arg4);
+		SQLClientInfoException(JObject arg0);
+		SQLClientInfoException(jstring arg0, JObject arg1);
+		SQLClientInfoException(JObject arg0, jthrowable arg1);
+		SQLClientInfoException(jstring arg0, jstring arg1, JObject arg2);
+		SQLClientInfoException(jstring arg0, JObject arg1, jthrowable arg2);
+		SQLClientInfoException(jstring arg0, jstring arg1, jint arg2, JObject arg3);
+		SQLClientInfoException(jstring arg0, jstring arg1, JObject arg2, jthrowable arg3);
+		SQLClientInfoException(jstring arg0, jstring arg1, jint arg2, JObject arg3, jthrowable arg4);
 		
 		// Methods
-		__JniBaseClass getFailedProperties();
+		JObject getFailedProperties();
 	};
 } // namespace java::sql
 

@@ -18,11 +18,11 @@ namespace android::hardware
 	}
 	
 	// QAndroidJniObject forward
-	Camera_Size::Camera_Size(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Camera_Size::Camera_Size(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Camera_Size::Camera_Size(android::hardware::Camera arg0, jint arg1, jint arg2)
-		: __JniBaseClass(
+		: JObject(
 			"android.hardware.Camera$Size",
 			"(Landroid/hardware/Camera;II)V",
 			arg0.object(),

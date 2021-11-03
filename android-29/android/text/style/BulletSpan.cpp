@@ -16,35 +16,35 @@ namespace android::text::style
 	}
 	
 	// QAndroidJniObject forward
-	BulletSpan::BulletSpan(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	BulletSpan::BulletSpan(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	BulletSpan::BulletSpan()
-		: __JniBaseClass(
+		: JObject(
 			"android.text.style.BulletSpan",
 			"()V"
 		) {}
 	BulletSpan::BulletSpan(android::os::Parcel arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.text.style.BulletSpan",
 			"(Landroid/os/Parcel;)V",
 			arg0.object()
 		) {}
 	BulletSpan::BulletSpan(jint arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.text.style.BulletSpan",
 			"(I)V",
 			arg0
 		) {}
 	BulletSpan::BulletSpan(jint arg0, jint arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.text.style.BulletSpan",
 			"(II)V",
 			arg0,
 			arg1
 		) {}
 	BulletSpan::BulletSpan(jint arg0, jint arg1, jint arg2)
-		: __JniBaseClass(
+		: JObject(
 			"android.text.style.BulletSpan",
 			"(III)V",
 			arg0,

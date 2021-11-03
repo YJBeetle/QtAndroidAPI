@@ -7,7 +7,7 @@ namespace android::view::accessibility
 	// Fields
 	
 	// QAndroidJniObject forward
-	AccessibilityRecord::AccessibilityRecord(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	AccessibilityRecord::AccessibilityRecord(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -92,7 +92,7 @@ namespace android::view::accessibility
 			"()I"
 		);
 	}
-	__JniBaseClass AccessibilityRecord::getParcelableData()
+	JObject AccessibilityRecord::getParcelableData()
 	{
 		return callObjectMethod(
 			"getParcelableData",
@@ -141,7 +141,7 @@ namespace android::view::accessibility
 			"()Landroid/view/accessibility/AccessibilityNodeInfo;"
 		);
 	}
-	__JniBaseClass AccessibilityRecord::getText()
+	JObject AccessibilityRecord::getText()
 	{
 		return callObjectMethod(
 			"getText",
@@ -300,7 +300,7 @@ namespace android::view::accessibility
 			arg0
 		);
 	}
-	void AccessibilityRecord::setParcelableData(__JniBaseClass arg0)
+	void AccessibilityRecord::setParcelableData(JObject arg0)
 	{
 		callMethod<void>(
 			"setParcelableData",

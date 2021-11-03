@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace java::util::regex
 {
@@ -9,13 +9,13 @@ namespace java::util::regex
 
 namespace java::security
 {
-	class PKCS12Attribute : public __JniBaseClass
+	class PKCS12Attribute : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit PKCS12Attribute(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit PKCS12Attribute(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		PKCS12Attribute(QAndroidJniObject obj);
 		
 		// Constructors

@@ -7,7 +7,7 @@ namespace android::media
 	// Fields
 	
 	// QAndroidJniObject forward
-	JetPlayer::JetPlayer(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	JetPlayer::JetPlayer(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -112,7 +112,7 @@ namespace android::media
 			"()V"
 		);
 	}
-	void JetPlayer::setEventListener(__JniBaseClass arg0)
+	void JetPlayer::setEventListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setEventListener",
@@ -120,7 +120,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void JetPlayer::setEventListener(__JniBaseClass arg0, android::os::Handler arg1)
+	void JetPlayer::setEventListener(JObject arg0, android::os::Handler arg1)
 	{
 		callMethod<void>(
 			"setEventListener",

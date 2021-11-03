@@ -5,7 +5,7 @@ namespace javax::xml::datatype
 	// Fields
 	
 	// QAndroidJniObject forward
-	DatatypeConstants_Field::DatatypeConstants_Field(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	DatatypeConstants_Field::DatatypeConstants_Field(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

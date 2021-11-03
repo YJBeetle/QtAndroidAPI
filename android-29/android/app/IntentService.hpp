@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "../content/Context.hpp"
 #include "../content/ContextWrapper.hpp"
 #include "./Service.hpp"
@@ -25,7 +25,7 @@ namespace android::app
 		IntentService(jstring arg0);
 		
 		// Methods
-		__JniBaseClass onBind(android::content::Intent arg0);
+		JObject onBind(android::content::Intent arg0);
 		void onCreate();
 		void onDestroy();
 		void onStart(android::content::Intent arg0, jint arg1);

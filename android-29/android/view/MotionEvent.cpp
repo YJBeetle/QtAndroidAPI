@@ -560,7 +560,7 @@ namespace android::view
 			"CLASSIFICATION_NONE"
 		);
 	}
-	__JniBaseClass MotionEvent::CREATOR()
+	JObject MotionEvent::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.view.MotionEvent",

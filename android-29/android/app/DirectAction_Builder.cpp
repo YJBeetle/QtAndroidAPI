@@ -8,11 +8,11 @@ namespace android::app
 	// Fields
 	
 	// QAndroidJniObject forward
-	DirectAction_Builder::DirectAction_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	DirectAction_Builder::DirectAction_Builder(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	DirectAction_Builder::DirectAction_Builder(jstring arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.app.DirectAction$Builder",
 			"(Ljava/lang/String;)V",
 			arg0

@@ -30,14 +30,14 @@ namespace android::preference
 			"()Landroid/app/Dialog;"
 		);
 	}
-	__JniBaseClass PreferenceScreen::getRootAdapter()
+	JObject PreferenceScreen::getRootAdapter()
 	{
 		return callObjectMethod(
 			"getRootAdapter",
 			"()Landroid/widget/ListAdapter;"
 		);
 	}
-	void PreferenceScreen::onDismiss(__JniBaseClass arg0)
+	void PreferenceScreen::onDismiss(JObject arg0)
 	{
 		callMethod<void>(
 			"onDismiss",

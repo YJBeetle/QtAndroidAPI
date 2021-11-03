@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace java::util
 {
@@ -9,27 +9,27 @@ namespace java::util
 
 namespace android::animation
 {
-	class Animator : public __JniBaseClass
+	class Animator : public JObject
 	{
 	public:
 		// Fields
 		static jlong DURATION_INFINITE();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Animator(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Animator(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Animator(QAndroidJniObject obj);
 		
 		// Constructors
 		Animator();
 		
 		// Methods
-		void addListener(__JniBaseClass arg0);
-		void addPauseListener(__JniBaseClass arg0);
+		void addListener(JObject arg0);
+		void addPauseListener(JObject arg0);
 		void cancel();
 		android::animation::Animator clone();
 		void end();
 		jlong getDuration();
-		__JniBaseClass getInterpolator();
+		JObject getInterpolator();
 		java::util::ArrayList getListeners();
 		jlong getStartDelay();
 		jlong getTotalDuration();
@@ -38,11 +38,11 @@ namespace android::animation
 		jboolean isStarted();
 		void pause();
 		void removeAllListeners();
-		void removeListener(__JniBaseClass arg0);
-		void removePauseListener(__JniBaseClass arg0);
+		void removeListener(JObject arg0);
+		void removePauseListener(JObject arg0);
 		void resume();
 		android::animation::Animator setDuration(jlong arg0);
-		void setInterpolator(__JniBaseClass arg0);
+		void setInterpolator(JObject arg0);
 		void setStartDelay(jlong arg0);
 		void setTarget(jobject arg0);
 		void setupEndValues();

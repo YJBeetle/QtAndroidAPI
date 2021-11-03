@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::icu::util
 {
@@ -17,14 +17,14 @@ namespace java::util
 
 namespace android::os
 {
-	class LocaleList : public __JniBaseClass
+	class LocaleList : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit LocaleList(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit LocaleList(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		LocaleList(QAndroidJniObject obj);
 		
 		// Constructors

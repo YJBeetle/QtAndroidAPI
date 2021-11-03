@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "./Transition.hpp"
 
 namespace android::content
@@ -47,10 +47,10 @@ namespace android::transition
 		
 		// Constructors
 		TransitionSet();
-		TransitionSet(android::content::Context arg0, __JniBaseClass arg1);
+		TransitionSet(android::content::Context arg0, JObject arg1);
 		
 		// Methods
-		android::transition::TransitionSet addListener(__JniBaseClass arg0);
+		android::transition::TransitionSet addListener(JObject arg0);
 		android::transition::TransitionSet addTarget(android::view::View arg0);
 		android::transition::TransitionSet addTarget(jint arg0);
 		android::transition::TransitionSet addTarget(jclass arg0);
@@ -66,7 +66,7 @@ namespace android::transition
 		jint getOrdering();
 		android::transition::Transition getTransitionAt(jint arg0);
 		jint getTransitionCount();
-		android::transition::TransitionSet removeListener(__JniBaseClass arg0);
+		android::transition::TransitionSet removeListener(JObject arg0);
 		android::transition::TransitionSet removeTarget(android::view::View arg0);
 		android::transition::TransitionSet removeTarget(jint arg0);
 		android::transition::TransitionSet removeTarget(jclass arg0);
@@ -74,7 +74,7 @@ namespace android::transition
 		android::transition::TransitionSet removeTransition(android::transition::Transition arg0);
 		android::transition::TransitionSet setDuration(jlong arg0);
 		void setEpicenterCallback(android::transition::Transition_EpicenterCallback arg0);
-		android::transition::TransitionSet setInterpolator(__JniBaseClass arg0);
+		android::transition::TransitionSet setInterpolator(JObject arg0);
 		android::transition::TransitionSet setOrdering(jint arg0);
 		void setPathMotion(android::transition::PathMotion arg0);
 		void setPropagation(android::transition::TransitionPropagation arg0);

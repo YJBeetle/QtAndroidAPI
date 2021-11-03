@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::app
 {
@@ -13,20 +13,20 @@ namespace android::app::job
 
 namespace android::app::job
 {
-	class JobServiceEngine : public __JniBaseClass
+	class JobServiceEngine : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit JobServiceEngine(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit JobServiceEngine(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		JobServiceEngine(QAndroidJniObject obj);
 		
 		// Constructors
 		JobServiceEngine(android::app::Service arg0);
 		
 		// Methods
-		__JniBaseClass getBinder();
+		JObject getBinder();
 		void jobFinished(android::app::job::JobParameters arg0, jboolean arg1);
 		jboolean onStartJob(android::app::job::JobParameters arg0);
 		jboolean onStopJob(android::app::job::JobParameters arg0);

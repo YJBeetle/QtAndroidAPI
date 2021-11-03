@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::os
 {
@@ -9,7 +9,7 @@ namespace android::os
 
 namespace android::media
 {
-	class Session2Command_Result : public __JniBaseClass
+	class Session2Command_Result : public JObject
 	{
 	public:
 		// Fields
@@ -18,7 +18,7 @@ namespace android::media
 		static jint RESULT_SUCCESS();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Session2Command_Result(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Session2Command_Result(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Session2Command_Result(QAndroidJniObject obj);
 		
 		// Constructors

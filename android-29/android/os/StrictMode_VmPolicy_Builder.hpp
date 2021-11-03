@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::os
 {
@@ -9,13 +9,13 @@ namespace android::os
 
 namespace android::os
 {
-	class StrictMode_VmPolicy_Builder : public __JniBaseClass
+	class StrictMode_VmPolicy_Builder : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit StrictMode_VmPolicy_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit StrictMode_VmPolicy_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		StrictMode_VmPolicy_Builder(QAndroidJniObject obj);
 		
 		// Constructors
@@ -40,7 +40,7 @@ namespace android::os
 		android::os::StrictMode_VmPolicy_Builder penaltyDeathOnCleartextNetwork();
 		android::os::StrictMode_VmPolicy_Builder penaltyDeathOnFileUriExposure();
 		android::os::StrictMode_VmPolicy_Builder penaltyDropBox();
-		android::os::StrictMode_VmPolicy_Builder penaltyListener(__JniBaseClass arg0, __JniBaseClass arg1);
+		android::os::StrictMode_VmPolicy_Builder penaltyListener(JObject arg0, JObject arg1);
 		android::os::StrictMode_VmPolicy_Builder penaltyLog();
 		android::os::StrictMode_VmPolicy_Builder permitNonSdkApiUsage();
 		android::os::StrictMode_VmPolicy_Builder setClassInstanceLimit(jclass arg0, jint arg1);

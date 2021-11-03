@@ -6,18 +6,18 @@ namespace android::view
 	// Fields
 	
 	// QAndroidJniObject forward
-	MenuInflater::MenuInflater(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	MenuInflater::MenuInflater(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	MenuInflater::MenuInflater(android::content::Context arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.view.MenuInflater",
 			"(Landroid/content/Context;)V",
 			arg0.object()
 		) {}
 	
 	// Methods
-	void MenuInflater::inflate(jint arg0, __JniBaseClass arg1)
+	void MenuInflater::inflate(jint arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"inflate",

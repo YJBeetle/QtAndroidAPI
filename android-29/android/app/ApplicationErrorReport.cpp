@@ -10,7 +10,7 @@
 namespace android::app
 {
 	// Fields
-	__JniBaseClass ApplicationErrorReport::CREATOR()
+	JObject ApplicationErrorReport::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.app.ApplicationErrorReport",
@@ -122,11 +122,11 @@ namespace android::app
 	}
 	
 	// QAndroidJniObject forward
-	ApplicationErrorReport::ApplicationErrorReport(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	ApplicationErrorReport::ApplicationErrorReport(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ApplicationErrorReport::ApplicationErrorReport()
-		: __JniBaseClass(
+		: JObject(
 			"android.app.ApplicationErrorReport",
 			"()V"
 		) {}
@@ -150,7 +150,7 @@ namespace android::app
 			"()I"
 		);
 	}
-	void ApplicationErrorReport::dump(__JniBaseClass arg0, jstring arg1)
+	void ApplicationErrorReport::dump(JObject arg0, jstring arg1)
 	{
 		callMethod<void>(
 			"dump",

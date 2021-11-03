@@ -26,7 +26,7 @@ namespace android::telecom
 		) {}
 	
 	// Methods
-	__JniBaseClass CallScreeningService::onBind(android::content::Intent arg0)
+	JObject CallScreeningService::onBind(android::content::Intent arg0)
 	{
 		return callObjectMethod(
 			"onBind",

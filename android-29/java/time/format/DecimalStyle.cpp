@@ -14,12 +14,12 @@ namespace java::time::format
 	}
 	
 	// QAndroidJniObject forward
-	DecimalStyle::DecimalStyle(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	DecimalStyle::DecimalStyle(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	__JniBaseClass DecimalStyle::getAvailableLocales()
+	JObject DecimalStyle::getAvailableLocales()
 	{
 		return callStaticObjectMethod(
 			"java.time.format.DecimalStyle",

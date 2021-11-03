@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::hardware::usb
 {
@@ -37,13 +37,13 @@ namespace android::os
 
 namespace android::mtp
 {
-	class MtpDevice : public __JniBaseClass
+	class MtpDevice : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MtpDevice(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit MtpDevice(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		MtpDevice(QAndroidJniObject obj);
 		
 		// Constructors

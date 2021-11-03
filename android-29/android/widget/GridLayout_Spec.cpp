@@ -6,7 +6,7 @@ namespace android::widget
 	// Fields
 	
 	// QAndroidJniObject forward
-	GridLayout_Spec::GridLayout_Spec(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	GridLayout_Spec::GridLayout_Spec(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

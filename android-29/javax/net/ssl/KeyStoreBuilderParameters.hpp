@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace java::security
 {
@@ -9,21 +9,21 @@ namespace java::security
 
 namespace javax::net::ssl
 {
-	class KeyStoreBuilderParameters : public __JniBaseClass
+	class KeyStoreBuilderParameters : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit KeyStoreBuilderParameters(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit KeyStoreBuilderParameters(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		KeyStoreBuilderParameters(QAndroidJniObject obj);
 		
 		// Constructors
 		KeyStoreBuilderParameters(java::security::KeyStore_Builder arg0);
-		KeyStoreBuilderParameters(__JniBaseClass arg0);
+		KeyStoreBuilderParameters(JObject arg0);
 		
 		// Methods
-		__JniBaseClass getParameters();
+		JObject getParameters();
 	};
 } // namespace javax::net::ssl
 

@@ -4,7 +4,7 @@
 namespace android::os::health
 {
 	// Fields
-	__JniBaseClass TimerStat::CREATOR()
+	JObject TimerStat::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.os.health.TimerStat",
@@ -14,22 +14,22 @@ namespace android::os::health
 	}
 	
 	// QAndroidJniObject forward
-	TimerStat::TimerStat(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	TimerStat::TimerStat(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	TimerStat::TimerStat()
-		: __JniBaseClass(
+		: JObject(
 			"android.os.health.TimerStat",
 			"()V"
 		) {}
 	TimerStat::TimerStat(android::os::Parcel arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.os.health.TimerStat",
 			"(Landroid/os/Parcel;)V",
 			arg0.object()
 		) {}
 	TimerStat::TimerStat(jint arg0, jlong arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.os.health.TimerStat",
 			"(IJ)V",
 			arg0,

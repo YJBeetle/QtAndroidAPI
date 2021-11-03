@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::content
 {
@@ -13,13 +13,13 @@ namespace android::database::sqlite
 
 namespace android::database
 {
-	class DatabaseUtils_InsertHelper : public __JniBaseClass
+	class DatabaseUtils_InsertHelper : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit DatabaseUtils_InsertHelper(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit DatabaseUtils_InsertHelper(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		DatabaseUtils_InsertHelper(QAndroidJniObject obj);
 		
 		// Constructors

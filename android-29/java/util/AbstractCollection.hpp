@@ -1,32 +1,32 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 
 namespace java::util
 {
-	class AbstractCollection : public __JniBaseClass
+	class AbstractCollection : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit AbstractCollection(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit AbstractCollection(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		AbstractCollection(QAndroidJniObject obj);
 		
 		// Constructors
 		
 		// Methods
 		jboolean add(jobject arg0);
-		jboolean addAll(__JniBaseClass arg0);
+		jboolean addAll(JObject arg0);
 		void clear();
 		jboolean contains(jobject arg0);
-		jboolean containsAll(__JniBaseClass arg0);
+		jboolean containsAll(JObject arg0);
 		jboolean isEmpty();
-		__JniBaseClass iterator();
+		JObject iterator();
 		jboolean remove(jobject arg0);
-		jboolean removeAll(__JniBaseClass arg0);
-		jboolean retainAll(__JniBaseClass arg0);
+		jboolean removeAll(JObject arg0);
+		jboolean retainAll(JObject arg0);
 		jint size();
 		jobjectArray toArray();
 		jobjectArray toArray(jobjectArray arg0);

@@ -11,18 +11,18 @@ namespace android::graphics
 	// Fields
 	
 	// QAndroidJniObject forward
-	NinePatch::NinePatch(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	NinePatch::NinePatch(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	NinePatch::NinePatch(android::graphics::Bitmap arg0, jbyteArray arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.graphics.NinePatch",
 			"(Landroid/graphics/Bitmap;[B)V",
 			arg0.object(),
 			arg1
 		) {}
 	NinePatch::NinePatch(android::graphics::Bitmap arg0, jbyteArray arg1, jstring arg2)
-		: __JniBaseClass(
+		: JObject(
 			"android.graphics.NinePatch",
 			"(Landroid/graphics/Bitmap;[BLjava/lang/String;)V",
 			arg0.object(),

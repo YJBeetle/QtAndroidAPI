@@ -694,11 +694,11 @@ namespace android::provider
 	}
 	
 	// QAndroidJniObject forward
-	Settings::Settings(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Settings::Settings(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Settings::Settings()
-		: __JniBaseClass(
+		: JObject(
 			"android.provider.Settings",
 			"()V"
 		) {}

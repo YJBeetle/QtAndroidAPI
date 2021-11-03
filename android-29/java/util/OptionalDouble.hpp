@@ -1,17 +1,17 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 
 namespace java::util
 {
-	class OptionalDouble : public __JniBaseClass
+	class OptionalDouble : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit OptionalDouble(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit OptionalDouble(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		OptionalDouble(QAndroidJniObject obj);
 		
 		// Constructors
@@ -22,15 +22,15 @@ namespace java::util
 		jboolean equals(jobject arg0);
 		jdouble getAsDouble();
 		jint hashCode();
-		void ifPresent(__JniBaseClass arg0);
-		void ifPresentOrElse(__JniBaseClass arg0, __JniBaseClass arg1);
+		void ifPresent(JObject arg0);
+		void ifPresentOrElse(JObject arg0, JObject arg1);
 		jboolean isEmpty();
 		jboolean isPresent();
 		jdouble orElse(jdouble arg0);
-		jdouble orElseGet(__JniBaseClass arg0);
+		jdouble orElseGet(JObject arg0);
 		jdouble orElseThrow();
-		jdouble orElseThrow(__JniBaseClass arg0);
-		__JniBaseClass stream();
+		jdouble orElseThrow(JObject arg0);
+		JObject stream();
 		jstring toString();
 	};
 } // namespace java::util

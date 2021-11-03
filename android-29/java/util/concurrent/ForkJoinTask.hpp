@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace java::io
 {
@@ -29,27 +29,27 @@ namespace java::util::concurrent::locks
 
 namespace java::util::concurrent
 {
-	class ForkJoinTask : public __JniBaseClass
+	class ForkJoinTask : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ForkJoinTask(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ForkJoinTask(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ForkJoinTask(QAndroidJniObject obj);
 		
 		// Constructors
 		ForkJoinTask();
 		
 		// Methods
-		static java::util::concurrent::ForkJoinTask adapt(__JniBaseClass arg0);
-		static java::util::concurrent::ForkJoinTask adapt(__JniBaseClass arg0, jobject arg1);
+		static java::util::concurrent::ForkJoinTask adapt(JObject arg0);
+		static java::util::concurrent::ForkJoinTask adapt(JObject arg0, jobject arg1);
 		static java::util::concurrent::ForkJoinPool getPool();
 		static jint getQueuedTaskCount();
 		static jint getSurplusQueuedTaskCount();
 		static void helpQuiesce();
 		static jboolean inForkJoinPool();
-		static __JniBaseClass invokeAll(__JniBaseClass arg0);
+		static JObject invokeAll(JObject arg0);
 		static void invokeAll(jarray arg0);
 		static void invokeAll(java::util::concurrent::ForkJoinTask arg0, java::util::concurrent::ForkJoinTask arg1);
 		jboolean cancel(jboolean arg0);

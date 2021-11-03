@@ -442,7 +442,7 @@ namespace android::hardware
 	}
 	
 	// QAndroidJniObject forward
-	Camera_Parameters::Camera_Parameters(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Camera_Parameters::Camera_Parameters(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -518,7 +518,7 @@ namespace android::hardware
 			"()F"
 		);
 	}
-	__JniBaseClass Camera_Parameters::getFocusAreas()
+	JObject Camera_Parameters::getFocusAreas()
 	{
 		return callObjectMethod(
 			"getFocusAreas",
@@ -611,7 +611,7 @@ namespace android::hardware
 			"()I"
 		);
 	}
-	__JniBaseClass Camera_Parameters::getMeteringAreas()
+	JObject Camera_Parameters::getMeteringAreas()
 	{
 		return callObjectMethod(
 			"getMeteringAreas",
@@ -682,98 +682,98 @@ namespace android::hardware
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	__JniBaseClass Camera_Parameters::getSupportedAntibanding()
+	JObject Camera_Parameters::getSupportedAntibanding()
 	{
 		return callObjectMethod(
 			"getSupportedAntibanding",
 			"()Ljava/util/List;"
 		);
 	}
-	__JniBaseClass Camera_Parameters::getSupportedColorEffects()
+	JObject Camera_Parameters::getSupportedColorEffects()
 	{
 		return callObjectMethod(
 			"getSupportedColorEffects",
 			"()Ljava/util/List;"
 		);
 	}
-	__JniBaseClass Camera_Parameters::getSupportedFlashModes()
+	JObject Camera_Parameters::getSupportedFlashModes()
 	{
 		return callObjectMethod(
 			"getSupportedFlashModes",
 			"()Ljava/util/List;"
 		);
 	}
-	__JniBaseClass Camera_Parameters::getSupportedFocusModes()
+	JObject Camera_Parameters::getSupportedFocusModes()
 	{
 		return callObjectMethod(
 			"getSupportedFocusModes",
 			"()Ljava/util/List;"
 		);
 	}
-	__JniBaseClass Camera_Parameters::getSupportedJpegThumbnailSizes()
+	JObject Camera_Parameters::getSupportedJpegThumbnailSizes()
 	{
 		return callObjectMethod(
 			"getSupportedJpegThumbnailSizes",
 			"()Ljava/util/List;"
 		);
 	}
-	__JniBaseClass Camera_Parameters::getSupportedPictureFormats()
+	JObject Camera_Parameters::getSupportedPictureFormats()
 	{
 		return callObjectMethod(
 			"getSupportedPictureFormats",
 			"()Ljava/util/List;"
 		);
 	}
-	__JniBaseClass Camera_Parameters::getSupportedPictureSizes()
+	JObject Camera_Parameters::getSupportedPictureSizes()
 	{
 		return callObjectMethod(
 			"getSupportedPictureSizes",
 			"()Ljava/util/List;"
 		);
 	}
-	__JniBaseClass Camera_Parameters::getSupportedPreviewFormats()
+	JObject Camera_Parameters::getSupportedPreviewFormats()
 	{
 		return callObjectMethod(
 			"getSupportedPreviewFormats",
 			"()Ljava/util/List;"
 		);
 	}
-	__JniBaseClass Camera_Parameters::getSupportedPreviewFpsRange()
+	JObject Camera_Parameters::getSupportedPreviewFpsRange()
 	{
 		return callObjectMethod(
 			"getSupportedPreviewFpsRange",
 			"()Ljava/util/List;"
 		);
 	}
-	__JniBaseClass Camera_Parameters::getSupportedPreviewFrameRates()
+	JObject Camera_Parameters::getSupportedPreviewFrameRates()
 	{
 		return callObjectMethod(
 			"getSupportedPreviewFrameRates",
 			"()Ljava/util/List;"
 		);
 	}
-	__JniBaseClass Camera_Parameters::getSupportedPreviewSizes()
+	JObject Camera_Parameters::getSupportedPreviewSizes()
 	{
 		return callObjectMethod(
 			"getSupportedPreviewSizes",
 			"()Ljava/util/List;"
 		);
 	}
-	__JniBaseClass Camera_Parameters::getSupportedSceneModes()
+	JObject Camera_Parameters::getSupportedSceneModes()
 	{
 		return callObjectMethod(
 			"getSupportedSceneModes",
 			"()Ljava/util/List;"
 		);
 	}
-	__JniBaseClass Camera_Parameters::getSupportedVideoSizes()
+	JObject Camera_Parameters::getSupportedVideoSizes()
 	{
 		return callObjectMethod(
 			"getSupportedVideoSizes",
 			"()Ljava/util/List;"
 		);
 	}
-	__JniBaseClass Camera_Parameters::getSupportedWhiteBalance()
+	JObject Camera_Parameters::getSupportedWhiteBalance()
 	{
 		return callObjectMethod(
 			"getSupportedWhiteBalance",
@@ -808,7 +808,7 @@ namespace android::hardware
 			"()I"
 		);
 	}
-	__JniBaseClass Camera_Parameters::getZoomRatios()
+	JObject Camera_Parameters::getZoomRatios()
 	{
 		return callObjectMethod(
 			"getZoomRatios",
@@ -938,7 +938,7 @@ namespace android::hardware
 			arg0
 		);
 	}
-	void Camera_Parameters::setFocusAreas(__JniBaseClass arg0)
+	void Camera_Parameters::setFocusAreas(JObject arg0)
 	{
 		callMethod<void>(
 			"setFocusAreas",
@@ -1019,7 +1019,7 @@ namespace android::hardware
 			arg1
 		);
 	}
-	void Camera_Parameters::setMeteringAreas(__JniBaseClass arg0)
+	void Camera_Parameters::setMeteringAreas(JObject arg0)
 	{
 		callMethod<void>(
 			"setMeteringAreas",

@@ -1407,7 +1407,7 @@ namespace android::opengl
 	}
 	
 	// QAndroidJniObject forward
-	GLES31Ext::GLES31Ext(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	GLES31Ext::GLES31Ext(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -1501,7 +1501,7 @@ namespace android::opengl
 			arg14
 		);
 	}
-	void GLES31Ext::glDebugMessageCallbackKHR(__JniBaseClass arg0)
+	void GLES31Ext::glDebugMessageCallbackKHR(JObject arg0)
 	{
 		callStaticMethod<void>(
 			"android.opengl.GLES31Ext",
@@ -1584,7 +1584,7 @@ namespace android::opengl
 			arg3
 		);
 	}
-	__JniBaseClass GLES31Ext::glGetDebugMessageCallbackKHR()
+	JObject GLES31Ext::glGetDebugMessageCallbackKHR()
 	{
 		return callStaticObjectMethod(
 			"android.opengl.GLES31Ext",

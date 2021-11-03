@@ -6,24 +6,24 @@ namespace java::security::cert
 	// Fields
 	
 	// QAndroidJniObject forward
-	CertPathValidatorSpi::CertPathValidatorSpi(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	CertPathValidatorSpi::CertPathValidatorSpi(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	CertPathValidatorSpi::CertPathValidatorSpi()
-		: __JniBaseClass(
+		: JObject(
 			"java.security.cert.CertPathValidatorSpi",
 			"()V"
 		) {}
 	
 	// Methods
-	__JniBaseClass CertPathValidatorSpi::engineGetRevocationChecker()
+	JObject CertPathValidatorSpi::engineGetRevocationChecker()
 	{
 		return callObjectMethod(
 			"engineGetRevocationChecker",
 			"()Ljava/security/cert/CertPathChecker;"
 		);
 	}
-	__JniBaseClass CertPathValidatorSpi::engineValidate(java::security::cert::CertPath arg0, __JniBaseClass arg1)
+	JObject CertPathValidatorSpi::engineValidate(java::security::cert::CertPath arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"engineValidate",

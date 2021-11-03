@@ -18,7 +18,7 @@ namespace android::view
 			"(Landroid/content/Context;)V",
 			arg0.object()
 		) {}
-	ViewStub::ViewStub(android::content::Context arg0, __JniBaseClass arg1)
+	ViewStub::ViewStub(android::content::Context arg0, JObject arg1)
 		: android::view::View(
 			"android.view.ViewStub",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
@@ -32,7 +32,7 @@ namespace android::view
 			arg0.object(),
 			arg1
 		) {}
-	ViewStub::ViewStub(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
+	ViewStub::ViewStub(android::content::Context arg0, JObject arg1, jint arg2)
 		: android::view::View(
 			"android.view.ViewStub",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
@@ -40,7 +40,7 @@ namespace android::view
 			arg1.object(),
 			arg2
 		) {}
-	ViewStub::ViewStub(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
+	ViewStub::ViewStub(android::content::Context arg0, JObject arg1, jint arg2, jint arg3)
 		: android::view::View(
 			"android.view.ViewStub",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;II)V",
@@ -111,7 +111,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void ViewStub::setOnInflateListener(__JniBaseClass arg0)
+	void ViewStub::setOnInflateListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setOnInflateListener",

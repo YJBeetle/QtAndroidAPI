@@ -29,7 +29,7 @@ namespace android::bluetooth
 	}
 	
 	// QAndroidJniObject forward
-	BluetoothSocket::BluetoothSocket(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	BluetoothSocket::BluetoothSocket(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

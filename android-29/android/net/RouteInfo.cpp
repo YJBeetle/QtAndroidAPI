@@ -6,7 +6,7 @@
 namespace android::net
 {
 	// Fields
-	__JniBaseClass RouteInfo::CREATOR()
+	JObject RouteInfo::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.net.RouteInfo",
@@ -16,7 +16,7 @@ namespace android::net
 	}
 	
 	// QAndroidJniObject forward
-	RouteInfo::RouteInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	RouteInfo::RouteInfo(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

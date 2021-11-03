@@ -5,7 +5,7 @@
 namespace android::media::session
 {
 	// Fields
-	__JniBaseClass MediaController_PlaybackInfo::CREATOR()
+	JObject MediaController_PlaybackInfo::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.media.session.MediaController$PlaybackInfo",
@@ -29,7 +29,7 @@ namespace android::media::session
 	}
 	
 	// QAndroidJniObject forward
-	MediaController_PlaybackInfo::MediaController_PlaybackInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	MediaController_PlaybackInfo::MediaController_PlaybackInfo(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

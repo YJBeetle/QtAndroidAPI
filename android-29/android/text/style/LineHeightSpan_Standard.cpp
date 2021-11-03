@@ -7,17 +7,17 @@ namespace android::text::style
 	// Fields
 	
 	// QAndroidJniObject forward
-	LineHeightSpan_Standard::LineHeightSpan_Standard(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	LineHeightSpan_Standard::LineHeightSpan_Standard(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	LineHeightSpan_Standard::LineHeightSpan_Standard(android::os::Parcel arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.text.style.LineHeightSpan$Standard",
 			"(Landroid/os/Parcel;)V",
 			arg0.object()
 		) {}
 	LineHeightSpan_Standard::LineHeightSpan_Standard(jint arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.text.style.LineHeightSpan$Standard",
 			"(I)V",
 			arg0

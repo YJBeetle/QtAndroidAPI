@@ -4,7 +4,7 @@
 namespace android::widget
 {
 	// Fields
-	__JniBaseClass TextView_SavedState::CREATOR()
+	JObject TextView_SavedState::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.widget.TextView$SavedState",

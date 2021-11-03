@@ -8,12 +8,12 @@ namespace java::security
 	// Fields
 	
 	// QAndroidJniObject forward
-	KeyStore_Builder::KeyStore_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	KeyStore_Builder::KeyStore_Builder(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	java::security::KeyStore_Builder KeyStore_Builder::newInstance(java::io::File arg0, __JniBaseClass arg1)
+	java::security::KeyStore_Builder KeyStore_Builder::newInstance(java::io::File arg0, JObject arg1)
 	{
 		return callStaticObjectMethod(
 			"java.security.KeyStore$Builder",
@@ -23,7 +23,7 @@ namespace java::security
 			arg1.object()
 		);
 	}
-	java::security::KeyStore_Builder KeyStore_Builder::newInstance(java::security::KeyStore arg0, __JniBaseClass arg1)
+	java::security::KeyStore_Builder KeyStore_Builder::newInstance(java::security::KeyStore arg0, JObject arg1)
 	{
 		return callStaticObjectMethod(
 			"java.security.KeyStore$Builder",
@@ -33,7 +33,7 @@ namespace java::security
 			arg1.object()
 		);
 	}
-	java::security::KeyStore_Builder KeyStore_Builder::newInstance(jstring arg0, java::security::Provider arg1, __JniBaseClass arg2)
+	java::security::KeyStore_Builder KeyStore_Builder::newInstance(jstring arg0, java::security::Provider arg1, JObject arg2)
 	{
 		return callStaticObjectMethod(
 			"java.security.KeyStore$Builder",
@@ -44,7 +44,7 @@ namespace java::security
 			arg2.object()
 		);
 	}
-	java::security::KeyStore_Builder KeyStore_Builder::newInstance(jstring arg0, java::security::Provider arg1, java::io::File arg2, __JniBaseClass arg3)
+	java::security::KeyStore_Builder KeyStore_Builder::newInstance(jstring arg0, java::security::Provider arg1, java::io::File arg2, JObject arg3)
 	{
 		return callStaticObjectMethod(
 			"java.security.KeyStore$Builder",
@@ -63,7 +63,7 @@ namespace java::security
 			"()Ljava/security/KeyStore;"
 		);
 	}
-	__JniBaseClass KeyStore_Builder::getProtectionParameter(jstring arg0)
+	JObject KeyStore_Builder::getProtectionParameter(jstring arg0)
 	{
 		return callObjectMethod(
 			"getProtectionParameter",

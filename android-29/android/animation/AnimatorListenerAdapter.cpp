@@ -6,11 +6,11 @@ namespace android::animation
 	// Fields
 	
 	// QAndroidJniObject forward
-	AnimatorListenerAdapter::AnimatorListenerAdapter(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	AnimatorListenerAdapter::AnimatorListenerAdapter(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	AnimatorListenerAdapter::AnimatorListenerAdapter()
-		: __JniBaseClass(
+		: JObject(
 			"android.animation.AnimatorListenerAdapter",
 			"()V"
 		) {}

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "./CursorWrapper.hpp"
 
 namespace android::database
@@ -20,7 +20,7 @@ namespace android::database
 		CrossProcessCursorWrapper(QAndroidJniObject obj);
 		
 		// Constructors
-		CrossProcessCursorWrapper(__JniBaseClass arg0);
+		CrossProcessCursorWrapper(JObject arg0);
 		
 		// Methods
 		void fillWindow(jint arg0, android::database::CursorWindow arg1);

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::os
 {
@@ -13,11 +13,11 @@ namespace java::util
 
 namespace android::speech::tts
 {
-	class Voice : public __JniBaseClass
+	class Voice : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint LATENCY_HIGH();
 		static jint LATENCY_LOW();
 		static jint LATENCY_NORMAL();
@@ -30,16 +30,16 @@ namespace android::speech::tts
 		static jint QUALITY_VERY_LOW();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Voice(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Voice(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Voice(QAndroidJniObject obj);
 		
 		// Constructors
-		Voice(jstring arg0, java::util::Locale arg1, jint arg2, jint arg3, jboolean arg4, __JniBaseClass arg5);
+		Voice(jstring arg0, java::util::Locale arg1, jint arg2, jint arg3, jboolean arg4, JObject arg5);
 		
 		// Methods
 		jint describeContents();
 		jboolean equals(jobject arg0);
-		__JniBaseClass getFeatures();
+		JObject getFeatures();
 		jint getLatency();
 		java::util::Locale getLocale();
 		jstring getName();

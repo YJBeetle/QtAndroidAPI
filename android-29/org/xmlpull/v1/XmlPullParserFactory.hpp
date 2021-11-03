@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace java::util
 {
@@ -13,14 +13,14 @@ namespace java::util
 
 namespace org::xmlpull::v1
 {
-	class XmlPullParserFactory : public __JniBaseClass
+	class XmlPullParserFactory : public JObject
 	{
 	public:
 		// Fields
 		static jstring PROPERTY_NAME();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit XmlPullParserFactory(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit XmlPullParserFactory(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		XmlPullParserFactory(QAndroidJniObject obj);
 		
 		// Constructors
@@ -31,8 +31,8 @@ namespace org::xmlpull::v1
 		jboolean getFeature(jstring arg0);
 		jboolean isNamespaceAware();
 		jboolean isValidating();
-		__JniBaseClass newPullParser();
-		__JniBaseClass newSerializer();
+		JObject newPullParser();
+		JObject newSerializer();
 		void setFeature(jstring arg0, jboolean arg1);
 		void setNamespaceAware(jboolean arg0);
 		void setValidating(jboolean arg0);

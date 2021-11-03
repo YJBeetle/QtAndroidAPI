@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "./PackageItemInfo.hpp"
 #include "./ComponentInfo.hpp"
 
@@ -15,7 +15,7 @@ namespace android::content::pm
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint FLAG_EXTERNAL_SERVICE();
 		static jint FLAG_ISOLATED_PROCESS();
 		static jint FLAG_SINGLE_USER();
@@ -42,7 +42,7 @@ namespace android::content::pm
 		
 		// Methods
 		jint describeContents();
-		void dump(__JniBaseClass arg0, jstring arg1);
+		void dump(JObject arg0, jstring arg1);
 		jint getForegroundServiceType();
 		jstring toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::graphics
 {
@@ -21,14 +21,14 @@ namespace android::text
 
 namespace android::text::style
 {
-	class BulletSpan : public __JniBaseClass
+	class BulletSpan : public JObject
 	{
 	public:
 		// Fields
 		static jint STANDARD_GAP_WIDTH();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit BulletSpan(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit BulletSpan(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		BulletSpan(QAndroidJniObject obj);
 		
 		// Constructors

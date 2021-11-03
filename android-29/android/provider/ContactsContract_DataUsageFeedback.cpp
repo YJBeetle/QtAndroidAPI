@@ -54,11 +54,11 @@ namespace android::provider
 	}
 	
 	// QAndroidJniObject forward
-	ContactsContract_DataUsageFeedback::ContactsContract_DataUsageFeedback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	ContactsContract_DataUsageFeedback::ContactsContract_DataUsageFeedback(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ContactsContract_DataUsageFeedback::ContactsContract_DataUsageFeedback()
-		: __JniBaseClass(
+		: JObject(
 			"android.provider.ContactsContract$DataUsageFeedback",
 			"()V"
 		) {}

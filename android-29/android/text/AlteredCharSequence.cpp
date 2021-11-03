@@ -5,7 +5,7 @@ namespace android::text
 	// Fields
 	
 	// QAndroidJniObject forward
-	AlteredCharSequence::AlteredCharSequence(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	AlteredCharSequence::AlteredCharSequence(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

@@ -4,7 +4,7 @@
 namespace android::service::carrier
 {
 	// Fields
-	__JniBaseClass CarrierIdentifier::CREATOR()
+	JObject CarrierIdentifier::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.service.carrier.CarrierIdentifier",
@@ -14,11 +14,11 @@ namespace android::service::carrier
 	}
 	
 	// QAndroidJniObject forward
-	CarrierIdentifier::CarrierIdentifier(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	CarrierIdentifier::CarrierIdentifier(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	CarrierIdentifier::CarrierIdentifier(jbyteArray arg0, jstring arg1, jstring arg2)
-		: __JniBaseClass(
+		: JObject(
 			"android.service.carrier.CarrierIdentifier",
 			"([BLjava/lang/String;Ljava/lang/String;)V",
 			arg0,
@@ -26,7 +26,7 @@ namespace android::service::carrier
 			arg2
 		) {}
 	CarrierIdentifier::CarrierIdentifier(jstring arg0, jstring arg1, jstring arg2, jstring arg3, jstring arg4, jstring arg5)
-		: __JniBaseClass(
+		: JObject(
 			"android.service.carrier.CarrierIdentifier",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
@@ -37,7 +37,7 @@ namespace android::service::carrier
 			arg5
 		) {}
 	CarrierIdentifier::CarrierIdentifier(jstring arg0, jstring arg1, jstring arg2, jstring arg3, jstring arg4, jstring arg5, jint arg6, jint arg7)
-		: __JniBaseClass(
+		: JObject(
 			"android.service.carrier.CarrierIdentifier",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;II)V",
 			arg0,

@@ -17,14 +17,14 @@ namespace android::widget
 			"(Landroid/content/Context;)V",
 			arg0.object()
 		) {}
-	Button::Button(android::content::Context arg0, __JniBaseClass arg1)
+	Button::Button(android::content::Context arg0, JObject arg1)
 		: android::widget::TextView(
 			"android.widget.Button",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.object(),
 			arg1.object()
 		) {}
-	Button::Button(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
+	Button::Button(android::content::Context arg0, JObject arg1, jint arg2)
 		: android::widget::TextView(
 			"android.widget.Button",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
@@ -32,7 +32,7 @@ namespace android::widget
 			arg1.object(),
 			arg2
 		) {}
-	Button::Button(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
+	Button::Button(android::content::Context arg0, JObject arg1, jint arg2, jint arg3)
 		: android::widget::TextView(
 			"android.widget.Button",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;II)V",

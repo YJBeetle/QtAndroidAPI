@@ -24,7 +24,7 @@ namespace java::util::concurrent
 			"(I)V",
 			arg0
 		) {}
-	LinkedBlockingQueue::LinkedBlockingQueue(__JniBaseClass arg0)
+	LinkedBlockingQueue::LinkedBlockingQueue(JObject arg0)
 		: java::util::AbstractQueue(
 			"java.util.concurrent.LinkedBlockingQueue",
 			"(Ljava/util/Collection;)V",
@@ -47,7 +47,7 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	jint LinkedBlockingQueue::drainTo(__JniBaseClass arg0)
+	jint LinkedBlockingQueue::drainTo(JObject arg0)
 	{
 		return callMethod<jint>(
 			"drainTo",
@@ -55,7 +55,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	jint LinkedBlockingQueue::drainTo(__JniBaseClass arg0, jint arg1)
+	jint LinkedBlockingQueue::drainTo(JObject arg0, jint arg1)
 	{
 		return callMethod<jint>(
 			"drainTo",
@@ -64,7 +64,7 @@ namespace java::util::concurrent
 			arg1
 		);
 	}
-	void LinkedBlockingQueue::forEach(__JniBaseClass arg0)
+	void LinkedBlockingQueue::forEach(JObject arg0)
 	{
 		callMethod<void>(
 			"forEach",
@@ -72,7 +72,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	__JniBaseClass LinkedBlockingQueue::iterator()
+	JObject LinkedBlockingQueue::iterator()
 	{
 		return callObjectMethod(
 			"iterator",
@@ -143,7 +143,7 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	jboolean LinkedBlockingQueue::removeAll(__JniBaseClass arg0)
+	jboolean LinkedBlockingQueue::removeAll(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"removeAll",
@@ -151,7 +151,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	jboolean LinkedBlockingQueue::removeIf(__JniBaseClass arg0)
+	jboolean LinkedBlockingQueue::removeIf(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"removeIf",
@@ -159,7 +159,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	jboolean LinkedBlockingQueue::retainAll(__JniBaseClass arg0)
+	jboolean LinkedBlockingQueue::retainAll(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"retainAll",
@@ -174,7 +174,7 @@ namespace java::util::concurrent
 			"()I"
 		);
 	}
-	__JniBaseClass LinkedBlockingQueue::spliterator()
+	JObject LinkedBlockingQueue::spliterator()
 	{
 		return callObjectMethod(
 			"spliterator",

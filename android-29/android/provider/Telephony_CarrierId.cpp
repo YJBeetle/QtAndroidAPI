@@ -46,7 +46,7 @@ namespace android::provider
 	}
 	
 	// QAndroidJniObject forward
-	Telephony_CarrierId::Telephony_CarrierId(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Telephony_CarrierId::Telephony_CarrierId(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

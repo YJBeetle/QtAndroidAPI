@@ -5,11 +5,11 @@ namespace android::os
 	// Fields
 	
 	// QAndroidJniObject forward
-	CountDownTimer::CountDownTimer(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	CountDownTimer::CountDownTimer(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	CountDownTimer::CountDownTimer(jlong arg0, jlong arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.os.CountDownTimer",
 			"(JJ)V",
 			arg0,

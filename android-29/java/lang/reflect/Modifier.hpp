@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 
 namespace java::lang::reflect
 {
-	class Modifier : public __JniBaseClass
+	class Modifier : public JObject
 	{
 	public:
 		// Fields
@@ -23,7 +23,7 @@ namespace java::lang::reflect
 		static jint VOLATILE();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Modifier(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Modifier(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Modifier(QAndroidJniObject obj);
 		
 		// Constructors

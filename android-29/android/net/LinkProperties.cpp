@@ -6,7 +6,7 @@
 namespace android::net
 {
 	// Fields
-	__JniBaseClass LinkProperties::CREATOR()
+	JObject LinkProperties::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.net.LinkProperties",
@@ -16,11 +16,11 @@ namespace android::net
 	}
 	
 	// QAndroidJniObject forward
-	LinkProperties::LinkProperties(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	LinkProperties::LinkProperties(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	LinkProperties::LinkProperties()
-		: __JniBaseClass(
+		: JObject(
 			"android.net.LinkProperties",
 			"()V"
 		) {}
@@ -56,7 +56,7 @@ namespace android::net
 			arg0
 		);
 	}
-	__JniBaseClass LinkProperties::getDnsServers()
+	JObject LinkProperties::getDnsServers()
 	{
 		return callObjectMethod(
 			"getDnsServers",
@@ -84,7 +84,7 @@ namespace android::net
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	__JniBaseClass LinkProperties::getLinkAddresses()
+	JObject LinkProperties::getLinkAddresses()
 	{
 		return callObjectMethod(
 			"getLinkAddresses",
@@ -105,7 +105,7 @@ namespace android::net
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	__JniBaseClass LinkProperties::getRoutes()
+	JObject LinkProperties::getRoutes()
 	{
 		return callObjectMethod(
 			"getRoutes",
@@ -126,7 +126,7 @@ namespace android::net
 			"()Z"
 		);
 	}
-	void LinkProperties::setDnsServers(__JniBaseClass arg0)
+	void LinkProperties::setDnsServers(JObject arg0)
 	{
 		callMethod<void>(
 			"setDnsServers",
@@ -158,7 +158,7 @@ namespace android::net
 			arg0
 		);
 	}
-	void LinkProperties::setLinkAddresses(__JniBaseClass arg0)
+	void LinkProperties::setLinkAddresses(JObject arg0)
 	{
 		callMethod<void>(
 			"setLinkAddresses",

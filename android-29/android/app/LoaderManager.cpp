@@ -9,11 +9,11 @@ namespace android::app
 	// Fields
 	
 	// QAndroidJniObject forward
-	LoaderManager::LoaderManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	LoaderManager::LoaderManager(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	LoaderManager::LoaderManager()
-		: __JniBaseClass(
+		: JObject(
 			"android.app.LoaderManager",
 			"()V"
 		) {}
@@ -55,7 +55,7 @@ namespace android::app
 			arg0
 		);
 	}
-	android::content::Loader LoaderManager::initLoader(jint arg0, android::os::Bundle arg1, __JniBaseClass arg2)
+	android::content::Loader LoaderManager::initLoader(jint arg0, android::os::Bundle arg1, JObject arg2)
 	{
 		return callObjectMethod(
 			"initLoader",
@@ -65,7 +65,7 @@ namespace android::app
 			arg2.object()
 		);
 	}
-	android::content::Loader LoaderManager::restartLoader(jint arg0, android::os::Bundle arg1, __JniBaseClass arg2)
+	android::content::Loader LoaderManager::restartLoader(jint arg0, android::os::Bundle arg1, JObject arg2)
 	{
 		return callObjectMethod(
 			"restartLoader",

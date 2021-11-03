@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::content
 {
@@ -21,7 +21,7 @@ namespace android::net
 
 namespace android::provider
 {
-	class MediaStore_Video_Thumbnails : public __JniBaseClass
+	class MediaStore_Video_Thumbnails : public JObject
 	{
 	public:
 		// Fields
@@ -38,7 +38,7 @@ namespace android::provider
 		static jstring WIDTH();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MediaStore_Video_Thumbnails(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit MediaStore_Video_Thumbnails(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		MediaStore_Video_Thumbnails(QAndroidJniObject obj);
 		
 		// Constructors

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace java::nio::channels
 {
@@ -13,7 +13,7 @@ namespace java::nio::channels
 
 namespace java::nio::channels
 {
-	class SelectionKey : public __JniBaseClass
+	class SelectionKey : public JObject
 	{
 	public:
 		// Fields
@@ -23,7 +23,7 @@ namespace java::nio::channels
 		static jint OP_WRITE();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit SelectionKey(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit SelectionKey(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		SelectionKey(QAndroidJniObject obj);
 		
 		// Constructors

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::app
 {
@@ -53,13 +53,13 @@ namespace android::view
 
 namespace android::media::session
 {
-	class MediaController : public __JniBaseClass
+	class MediaController : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MediaController(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit MediaController(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		MediaController(QAndroidJniObject obj);
 		
 		// Constructors
@@ -74,7 +74,7 @@ namespace android::media::session
 		jstring getPackageName();
 		android::media::session::MediaController_PlaybackInfo getPlaybackInfo();
 		android::media::session::PlaybackState getPlaybackState();
-		__JniBaseClass getQueue();
+		JObject getQueue();
 		jstring getQueueTitle();
 		jint getRatingType();
 		android::app::PendingIntent getSessionActivity();

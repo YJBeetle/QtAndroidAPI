@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::app
 {
@@ -29,7 +29,7 @@ namespace java::util
 
 namespace android::telephony
 {
-	class SmsManager : public __JniBaseClass
+	class SmsManager : public JObject
 	{
 	public:
 		// Fields
@@ -88,7 +88,7 @@ namespace android::telephony
 		static jint STATUS_ON_ICC_UNSENT();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit SmsManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit SmsManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		SmsManager(QAndroidJniObject obj);
 		
 		// Constructors
@@ -102,7 +102,7 @@ namespace android::telephony
 		java::util::ArrayList divideMessage(jstring arg0);
 		void downloadMultimediaMessage(android::content::Context arg0, jstring arg1, android::net::Uri arg2, android::os::Bundle arg3, android::app::PendingIntent arg4);
 		android::os::Bundle getCarrierConfigValues();
-		void getSmsMessagesForFinancialApp(android::os::Bundle arg0, __JniBaseClass arg1, android::telephony::SmsManager_FinancialSmsCallback arg2);
+		void getSmsMessagesForFinancialApp(android::os::Bundle arg0, JObject arg1, android::telephony::SmsManager_FinancialSmsCallback arg2);
 		jint getSubscriptionId();
 		void injectSmsPdu(jbyteArray arg0, jstring arg1, android::app::PendingIntent arg2);
 		void sendDataMessage(jstring arg0, jstring arg1, jshort arg2, jbyteArray arg3, android::app::PendingIntent arg4, android::app::PendingIntent arg5);

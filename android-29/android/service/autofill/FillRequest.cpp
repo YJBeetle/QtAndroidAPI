@@ -5,7 +5,7 @@
 namespace android::service::autofill
 {
 	// Fields
-	__JniBaseClass FillRequest::CREATOR()
+	JObject FillRequest::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.service.autofill.FillRequest",
@@ -29,7 +29,7 @@ namespace android::service::autofill
 	}
 	
 	// QAndroidJniObject forward
-	FillRequest::FillRequest(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	FillRequest::FillRequest(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -48,7 +48,7 @@ namespace android::service::autofill
 			"()Landroid/os/Bundle;"
 		);
 	}
-	__JniBaseClass FillRequest::getFillContexts()
+	JObject FillRequest::getFillContexts()
 	{
 		return callObjectMethod(
 			"getFillContexts",

@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../__JniBaseClass.hpp"
+#include "../JObject.hpp"
 
 
 namespace android
 {
-	class Manifest_permission : public __JniBaseClass
+	class Manifest_permission : public JObject
 	{
 	public:
 		// Fields
@@ -169,7 +169,7 @@ namespace android
 		static jstring WRITE_VOICEMAIL();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Manifest_permission(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Manifest_permission(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Manifest_permission(QAndroidJniObject obj);
 		
 		// Constructors

@@ -4,7 +4,7 @@
 namespace android::service::autofill
 {
 	// Fields
-	__JniBaseClass LuhnChecksumValidator::CREATOR()
+	JObject LuhnChecksumValidator::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.service.autofill.LuhnChecksumValidator",
@@ -14,11 +14,11 @@ namespace android::service::autofill
 	}
 	
 	// QAndroidJniObject forward
-	LuhnChecksumValidator::LuhnChecksumValidator(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	LuhnChecksumValidator::LuhnChecksumValidator(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	LuhnChecksumValidator::LuhnChecksumValidator(jarray arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.service.autofill.LuhnChecksumValidator",
 			"([Landroid/view/autofill/AutofillId;)V",
 			arg0

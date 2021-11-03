@@ -4,7 +4,7 @@
 namespace android::view::contentcapture
 {
 	// Fields
-	__JniBaseClass ContentCaptureSessionId::CREATOR()
+	JObject ContentCaptureSessionId::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.view.contentcapture.ContentCaptureSessionId",
@@ -14,7 +14,7 @@ namespace android::view::contentcapture
 	}
 	
 	// QAndroidJniObject forward
-	ContentCaptureSessionId::ContentCaptureSessionId(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	ContentCaptureSessionId::ContentCaptureSessionId(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

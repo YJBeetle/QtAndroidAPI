@@ -27,7 +27,7 @@ namespace android::net::rtp
 	}
 	
 	// QAndroidJniObject forward
-	RtpStream::RtpStream(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	RtpStream::RtpStream(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

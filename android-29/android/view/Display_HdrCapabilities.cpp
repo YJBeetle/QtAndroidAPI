@@ -4,7 +4,7 @@
 namespace android::view
 {
 	// Fields
-	__JniBaseClass Display_HdrCapabilities::CREATOR()
+	JObject Display_HdrCapabilities::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.view.Display$HdrCapabilities",
@@ -49,7 +49,7 @@ namespace android::view
 	}
 	
 	// QAndroidJniObject forward
-	Display_HdrCapabilities::Display_HdrCapabilities(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Display_HdrCapabilities::Display_HdrCapabilities(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

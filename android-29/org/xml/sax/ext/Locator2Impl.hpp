@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../../__JniBaseClass.hpp"
+#include "../../../../JObject.hpp"
 #include "../helpers/LocatorImpl.hpp"
 
 
@@ -17,7 +17,7 @@ namespace org::xml::sax::ext
 		
 		// Constructors
 		Locator2Impl();
-		Locator2Impl(__JniBaseClass arg0);
+		Locator2Impl(JObject arg0);
 		
 		// Methods
 		jstring getEncoding();

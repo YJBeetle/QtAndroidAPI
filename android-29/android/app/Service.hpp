@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "../content/Context.hpp"
 #include "../content/ContextWrapper.hpp"
 
@@ -55,7 +55,7 @@ namespace android::app
 		// Methods
 		android::app::Application getApplication();
 		jint getForegroundServiceType();
-		__JniBaseClass onBind(android::content::Intent arg0);
+		JObject onBind(android::content::Intent arg0);
 		void onConfigurationChanged(android::content::res::Configuration arg0);
 		void onCreate();
 		void onDestroy();

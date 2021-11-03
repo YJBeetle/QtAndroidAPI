@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace java::io
 {
@@ -29,22 +29,22 @@ namespace org::xml::sax::helpers
 
 namespace javax::xml::parsers
 {
-	class SAXParser : public __JniBaseClass
+	class SAXParser : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit SAXParser(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit SAXParser(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		SAXParser(QAndroidJniObject obj);
 		
 		// Constructors
 		
 		// Methods
-		__JniBaseClass getParser();
+		JObject getParser();
 		jobject getProperty(jstring arg0);
 		javax::xml::validation::Schema getSchema();
-		__JniBaseClass getXMLReader();
+		JObject getXMLReader();
 		jboolean isNamespaceAware();
 		jboolean isValidating();
 		jboolean isXIncludeAware();

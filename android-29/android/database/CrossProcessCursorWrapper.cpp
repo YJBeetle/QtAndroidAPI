@@ -9,7 +9,7 @@ namespace android::database
 	CrossProcessCursorWrapper::CrossProcessCursorWrapper(QAndroidJniObject obj) : android::database::CursorWrapper(obj) {}
 	
 	// Constructors
-	CrossProcessCursorWrapper::CrossProcessCursorWrapper(__JniBaseClass arg0)
+	CrossProcessCursorWrapper::CrossProcessCursorWrapper(JObject arg0)
 		: android::database::CursorWrapper(
 			"android.database.CrossProcessCursorWrapper",
 			"(Landroid/database/Cursor;)V",

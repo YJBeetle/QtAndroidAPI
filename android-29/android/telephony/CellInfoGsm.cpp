@@ -6,7 +6,7 @@
 namespace android::telephony
 {
 	// Fields
-	__JniBaseClass CellInfoGsm::CREATOR()
+	JObject CellInfoGsm::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.telephony.CellInfoGsm",

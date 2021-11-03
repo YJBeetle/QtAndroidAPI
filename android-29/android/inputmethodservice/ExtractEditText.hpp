@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "../view/View.hpp"
 #include "../widget/TextView.hpp"
 #include "../widget/EditText.hpp"
@@ -27,9 +27,9 @@ namespace android::inputmethodservice
 		
 		// Constructors
 		ExtractEditText(android::content::Context arg0);
-		ExtractEditText(android::content::Context arg0, __JniBaseClass arg1);
-		ExtractEditText(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
-		ExtractEditText(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
+		ExtractEditText(android::content::Context arg0, JObject arg1);
+		ExtractEditText(android::content::Context arg0, JObject arg1, jint arg2);
+		ExtractEditText(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
 		void finishInternalChanges();

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::graphics
 {
@@ -21,7 +21,7 @@ namespace android::text
 
 namespace android::text::style
 {
-	class QuoteSpan : public __JniBaseClass
+	class QuoteSpan : public JObject
 	{
 	public:
 		// Fields
@@ -30,7 +30,7 @@ namespace android::text::style
 		static jint STANDARD_STRIPE_WIDTH_PX();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit QuoteSpan(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit QuoteSpan(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		QuoteSpan(QAndroidJniObject obj);
 		
 		// Constructors

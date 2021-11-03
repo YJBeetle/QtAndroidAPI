@@ -1,18 +1,18 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 
 namespace android::util
 {
-	class MutableInt : public __JniBaseClass
+	class MutableInt : public JObject
 	{
 	public:
 		// Fields
 		jint value();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MutableInt(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit MutableInt(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		MutableInt(QAndroidJniObject obj);
 		
 		// Constructors

@@ -731,17 +731,17 @@ namespace android::content
 	}
 	
 	// QAndroidJniObject forward
-	Context::Context(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Context::Context(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Context::Context()
-		: __JniBaseClass(
+		: JObject(
 			"android.content.Context",
 			"()V"
 		) {}
 	
 	// Methods
-	jboolean Context::bindIsolatedService(android::content::Intent arg0, jint arg1, jstring arg2, __JniBaseClass arg3, __JniBaseClass arg4)
+	jboolean Context::bindIsolatedService(android::content::Intent arg0, jint arg1, jstring arg2, JObject arg3, JObject arg4)
 	{
 		return callMethod<jboolean>(
 			"bindIsolatedService",
@@ -753,7 +753,7 @@ namespace android::content
 			arg4.object()
 		);
 	}
-	jboolean Context::bindService(android::content::Intent arg0, __JniBaseClass arg1, jint arg2)
+	jboolean Context::bindService(android::content::Intent arg0, JObject arg1, jint arg2)
 	{
 		return callMethod<jboolean>(
 			"bindService",
@@ -763,7 +763,7 @@ namespace android::content
 			arg2
 		);
 	}
-	jboolean Context::bindService(android::content::Intent arg0, jint arg1, __JniBaseClass arg2, __JniBaseClass arg3)
+	jboolean Context::bindService(android::content::Intent arg0, jint arg1, JObject arg2, JObject arg3)
 	{
 		return callMethod<jboolean>(
 			"bindService",
@@ -1159,7 +1159,7 @@ namespace android::content
 			"()Ljava/io/File;"
 		);
 	}
-	__JniBaseClass Context::getMainExecutor()
+	JObject Context::getMainExecutor()
 	{
 		return callObjectMethod(
 			"getMainExecutor",
@@ -1236,7 +1236,7 @@ namespace android::content
 			"()Landroid/content/res/Resources;"
 		);
 	}
-	__JniBaseClass Context::getSharedPreferences(jstring arg0, jint arg1)
+	JObject Context::getSharedPreferences(jstring arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"getSharedPreferences",
@@ -1372,7 +1372,7 @@ namespace android::content
 			arg0
 		);
 	}
-	android::content::res::TypedArray Context::obtainStyledAttributes(__JniBaseClass arg0, jintArray arg1)
+	android::content::res::TypedArray Context::obtainStyledAttributes(JObject arg0, jintArray arg1)
 	{
 		return callObjectMethod(
 			"obtainStyledAttributes",
@@ -1390,7 +1390,7 @@ namespace android::content
 			arg1
 		);
 	}
-	android::content::res::TypedArray Context::obtainStyledAttributes(__JniBaseClass arg0, jintArray arg1, jint arg2, jint arg3)
+	android::content::res::TypedArray Context::obtainStyledAttributes(JObject arg0, jintArray arg1, jint arg2, jint arg3)
 	{
 		return callObjectMethod(
 			"obtainStyledAttributes",
@@ -1418,7 +1418,7 @@ namespace android::content
 			arg1
 		);
 	}
-	android::database::sqlite::SQLiteDatabase Context::openOrCreateDatabase(jstring arg0, jint arg1, __JniBaseClass arg2)
+	android::database::sqlite::SQLiteDatabase Context::openOrCreateDatabase(jstring arg0, jint arg1, JObject arg2)
 	{
 		return callObjectMethod(
 			"openOrCreateDatabase",
@@ -1428,7 +1428,7 @@ namespace android::content
 			arg2.object()
 		);
 	}
-	android::database::sqlite::SQLiteDatabase Context::openOrCreateDatabase(jstring arg0, jint arg1, __JniBaseClass arg2, __JniBaseClass arg3)
+	android::database::sqlite::SQLiteDatabase Context::openOrCreateDatabase(jstring arg0, jint arg1, JObject arg2, JObject arg3)
 	{
 		return callObjectMethod(
 			"openOrCreateDatabase",
@@ -1446,7 +1446,7 @@ namespace android::content
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	void Context::registerComponentCallbacks(__JniBaseClass arg0)
+	void Context::registerComponentCallbacks(JObject arg0)
 	{
 		callMethod<void>(
 			"registerComponentCallbacks",
@@ -1767,7 +1767,7 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	void Context::unbindService(__JniBaseClass arg0)
+	void Context::unbindService(JObject arg0)
 	{
 		callMethod<void>(
 			"unbindService",
@@ -1775,7 +1775,7 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	void Context::unregisterComponentCallbacks(__JniBaseClass arg0)
+	void Context::unregisterComponentCallbacks(JObject arg0)
 	{
 		callMethod<void>(
 			"unregisterComponentCallbacks",
@@ -1791,7 +1791,7 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	void Context::updateServiceGroup(__JniBaseClass arg0, jint arg1, jint arg2)
+	void Context::updateServiceGroup(JObject arg0, jint arg1, jint arg2)
 	{
 		callMethod<void>(
 			"updateServiceGroup",

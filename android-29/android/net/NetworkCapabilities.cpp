@@ -4,7 +4,7 @@
 namespace android::net
 {
 	// Fields
-	__JniBaseClass NetworkCapabilities::CREATOR()
+	JObject NetworkCapabilities::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.net.NetworkCapabilities",
@@ -231,11 +231,11 @@ namespace android::net
 	}
 	
 	// QAndroidJniObject forward
-	NetworkCapabilities::NetworkCapabilities(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	NetworkCapabilities::NetworkCapabilities(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	NetworkCapabilities::NetworkCapabilities(android::net::NetworkCapabilities &arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.net.NetworkCapabilities",
 			"(Landroid/net/NetworkCapabilities;)V",
 			arg0.object()
@@ -278,7 +278,7 @@ namespace android::net
 			"()I"
 		);
 	}
-	__JniBaseClass NetworkCapabilities::getTransportInfo()
+	JObject NetworkCapabilities::getTransportInfo()
 	{
 		return callObjectMethod(
 			"getTransportInfo",

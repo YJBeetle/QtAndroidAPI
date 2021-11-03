@@ -17,11 +17,11 @@ namespace android::system
 	}
 	
 	// QAndroidJniObject forward
-	StructTimespec::StructTimespec(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	StructTimespec::StructTimespec(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	StructTimespec::StructTimespec(jlong arg0, jlong arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.system.StructTimespec",
 			"(JJ)V",
 			arg0,

@@ -14,11 +14,11 @@ namespace android::webkit
 	// Fields
 	
 	// QAndroidJniObject forward
-	WebChromeClient::WebChromeClient(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	WebChromeClient::WebChromeClient(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	WebChromeClient::WebChromeClient()
-		: __JniBaseClass(
+		: JObject(
 			"android.webkit.WebChromeClient",
 			"()V"
 		) {}
@@ -38,7 +38,7 @@ namespace android::webkit
 			"()Landroid/view/View;"
 		);
 	}
-	void WebChromeClient::getVisitedHistory(__JniBaseClass arg0)
+	void WebChromeClient::getVisitedHistory(JObject arg0)
 	{
 		callMethod<void>(
 			"getVisitedHistory",
@@ -83,7 +83,7 @@ namespace android::webkit
 			arg3.object()
 		);
 	}
-	void WebChromeClient::onExceededDatabaseQuota(jstring arg0, jstring arg1, jlong arg2, jlong arg3, jlong arg4, __JniBaseClass arg5)
+	void WebChromeClient::onExceededDatabaseQuota(jstring arg0, jstring arg1, jlong arg2, jlong arg3, jlong arg4, JObject arg5)
 	{
 		callMethod<void>(
 			"onExceededDatabaseQuota",
@@ -103,7 +103,7 @@ namespace android::webkit
 			"()V"
 		);
 	}
-	void WebChromeClient::onGeolocationPermissionsShowPrompt(jstring arg0, __JniBaseClass arg1)
+	void WebChromeClient::onGeolocationPermissionsShowPrompt(jstring arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"onGeolocationPermissionsShowPrompt",
@@ -196,7 +196,7 @@ namespace android::webkit
 			arg1
 		);
 	}
-	void WebChromeClient::onReachedMaxAppCacheSize(jlong arg0, jlong arg1, __JniBaseClass arg2)
+	void WebChromeClient::onReachedMaxAppCacheSize(jlong arg0, jlong arg1, JObject arg2)
 	{
 		callMethod<void>(
 			"onReachedMaxAppCacheSize",
@@ -242,7 +242,7 @@ namespace android::webkit
 			arg0.object()
 		);
 	}
-	void WebChromeClient::onShowCustomView(android::view::View arg0, __JniBaseClass arg1)
+	void WebChromeClient::onShowCustomView(android::view::View arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"onShowCustomView",
@@ -251,7 +251,7 @@ namespace android::webkit
 			arg1.object()
 		);
 	}
-	void WebChromeClient::onShowCustomView(android::view::View arg0, jint arg1, __JniBaseClass arg2)
+	void WebChromeClient::onShowCustomView(android::view::View arg0, jint arg1, JObject arg2)
 	{
 		callMethod<void>(
 			"onShowCustomView",
@@ -261,7 +261,7 @@ namespace android::webkit
 			arg2.object()
 		);
 	}
-	jboolean WebChromeClient::onShowFileChooser(android::webkit::WebView arg0, __JniBaseClass arg1, android::webkit::WebChromeClient_FileChooserParams arg2)
+	jboolean WebChromeClient::onShowFileChooser(android::webkit::WebView arg0, JObject arg1, android::webkit::WebChromeClient_FileChooserParams arg2)
 	{
 		return callMethod<jboolean>(
 			"onShowFileChooser",

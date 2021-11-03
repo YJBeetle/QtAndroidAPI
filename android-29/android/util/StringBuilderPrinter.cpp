@@ -6,11 +6,11 @@ namespace android::util
 	// Fields
 	
 	// QAndroidJniObject forward
-	StringBuilderPrinter::StringBuilderPrinter(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	StringBuilderPrinter::StringBuilderPrinter(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	StringBuilderPrinter::StringBuilderPrinter(java::lang::StringBuilder arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.util.StringBuilderPrinter",
 			"(Ljava/lang/StringBuilder;)V",
 			arg0.object()

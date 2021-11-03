@@ -1,18 +1,18 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 
 namespace android::provider
 {
-	class ContactsContract_Contacts_Data : public __JniBaseClass
+	class ContactsContract_Contacts_Data : public JObject
 	{
 	public:
 		// Fields
 		static jstring CONTENT_DIRECTORY();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ContactsContract_Contacts_Data(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ContactsContract_Contacts_Data(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ContactsContract_Contacts_Data(QAndroidJniObject obj);
 		
 		// Constructors

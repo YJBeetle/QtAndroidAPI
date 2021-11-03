@@ -1,17 +1,17 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 
 namespace android::webkit
 {
-	class WebIconDatabase : public __JniBaseClass
+	class WebIconDatabase : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit WebIconDatabase(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit WebIconDatabase(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		WebIconDatabase(QAndroidJniObject obj);
 		
 		// Constructors
@@ -23,7 +23,7 @@ namespace android::webkit
 		void open(jstring arg0);
 		void releaseIconForPageUrl(jstring arg0);
 		void removeAllIcons();
-		void requestIconForPageUrl(jstring arg0, __JniBaseClass arg1);
+		void requestIconForPageUrl(jstring arg0, JObject arg1);
 		void retainIconForPageUrl(jstring arg0);
 	};
 } // namespace android::webkit

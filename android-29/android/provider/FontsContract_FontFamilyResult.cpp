@@ -33,7 +33,7 @@ namespace android::provider
 	}
 	
 	// QAndroidJniObject forward
-	FontsContract_FontFamilyResult::FontsContract_FontFamilyResult(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	FontsContract_FontFamilyResult::FontsContract_FontFamilyResult(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

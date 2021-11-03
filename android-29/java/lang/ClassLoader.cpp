@@ -14,7 +14,7 @@ namespace java::lang
 	// Fields
 	
 	// QAndroidJniObject forward
-	ClassLoader::ClassLoader(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	ClassLoader::ClassLoader(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -53,7 +53,7 @@ namespace java::lang
 			arg0
 		);
 	}
-	__JniBaseClass ClassLoader::getSystemResources(jstring arg0)
+	JObject ClassLoader::getSystemResources(jstring arg0)
 	{
 		return callStaticObjectMethod(
 			"java.lang.ClassLoader",
@@ -114,7 +114,7 @@ namespace java::lang
 			arg0
 		);
 	}
-	__JniBaseClass ClassLoader::getResources(jstring arg0)
+	JObject ClassLoader::getResources(jstring arg0)
 	{
 		return callObjectMethod(
 			"getResources",
@@ -122,7 +122,7 @@ namespace java::lang
 			arg0
 		);
 	}
-	__JniBaseClass ClassLoader::getUnnamedModule()
+	JObject ClassLoader::getUnnamedModule()
 	{
 		return callObjectMethod(
 			"getUnnamedModule",
@@ -144,7 +144,7 @@ namespace java::lang
 			arg0
 		).object<jclass>();
 	}
-	__JniBaseClass ClassLoader::resources(jstring arg0)
+	JObject ClassLoader::resources(jstring arg0)
 	{
 		return callObjectMethod(
 			"resources",

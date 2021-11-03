@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 
 namespace android::view
 {
-	class HapticFeedbackConstants : public __JniBaseClass
+	class HapticFeedbackConstants : public JObject
 	{
 	public:
 		// Fields
@@ -22,7 +22,7 @@ namespace android::view
 		static jint VIRTUAL_KEY_RELEASE();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit HapticFeedbackConstants(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit HapticFeedbackConstants(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		HapticFeedbackConstants(QAndroidJniObject obj);
 		
 		// Constructors

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::hardware::biometrics
 {
@@ -9,13 +9,13 @@ namespace android::hardware::biometrics
 
 namespace android::hardware::biometrics
 {
-	class BiometricPrompt_AuthenticationResult : public __JniBaseClass
+	class BiometricPrompt_AuthenticationResult : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit BiometricPrompt_AuthenticationResult(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit BiometricPrompt_AuthenticationResult(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		BiometricPrompt_AuthenticationResult(QAndroidJniObject obj);
 		
 		// Constructors

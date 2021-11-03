@@ -331,7 +331,7 @@ namespace android::net::wifi
 	}
 	
 	// QAndroidJniObject forward
-	WifiManager::WifiManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	WifiManager::WifiManager(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -364,7 +364,7 @@ namespace android::net::wifi
 			arg0.object()
 		);
 	}
-	jint WifiManager::addNetworkSuggestions(__JniBaseClass arg0)
+	jint WifiManager::addNetworkSuggestions(JObject arg0)
 	{
 		return callMethod<jint>(
 			"addNetworkSuggestions",
@@ -437,7 +437,7 @@ namespace android::net::wifi
 			arg1
 		);
 	}
-	__JniBaseClass WifiManager::getConfiguredNetworks()
+	JObject WifiManager::getConfiguredNetworks()
 	{
 		return callObjectMethod(
 			"getConfiguredNetworks",
@@ -465,14 +465,14 @@ namespace android::net::wifi
 			"()I"
 		);
 	}
-	__JniBaseClass WifiManager::getPasspointConfigurations()
+	JObject WifiManager::getPasspointConfigurations()
 	{
 		return callObjectMethod(
 			"getPasspointConfigurations",
 			"()Ljava/util/List;"
 		);
 	}
-	__JniBaseClass WifiManager::getScanResults()
+	JObject WifiManager::getScanResults()
 	{
 		return callObjectMethod(
 			"getScanResults",
@@ -599,7 +599,7 @@ namespace android::net::wifi
 			arg0
 		);
 	}
-	jint WifiManager::removeNetworkSuggestions(__JniBaseClass arg0)
+	jint WifiManager::removeNetworkSuggestions(JObject arg0)
 	{
 		return callMethod<jint>(
 			"removeNetworkSuggestions",

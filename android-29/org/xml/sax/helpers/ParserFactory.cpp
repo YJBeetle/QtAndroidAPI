@@ -5,12 +5,12 @@ namespace org::xml::sax::helpers
 	// Fields
 	
 	// QAndroidJniObject forward
-	ParserFactory::ParserFactory(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	ParserFactory::ParserFactory(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	__JniBaseClass ParserFactory::makeParser()
+	JObject ParserFactory::makeParser()
 	{
 		return callStaticObjectMethod(
 			"org.xml.sax.helpers.ParserFactory",
@@ -18,7 +18,7 @@ namespace org::xml::sax::helpers
 			"()Lorg/xml/sax/Parser;"
 		);
 	}
-	__JniBaseClass ParserFactory::makeParser(jstring arg0)
+	JObject ParserFactory::makeParser(jstring arg0)
 	{
 		return callStaticObjectMethod(
 			"org.xml.sax.helpers.ParserFactory",

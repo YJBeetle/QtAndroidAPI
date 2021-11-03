@@ -49,11 +49,11 @@ namespace android::app
 	}
 	
 	// QAndroidJniObject forward
-	DownloadManager_Request::DownloadManager_Request(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	DownloadManager_Request::DownloadManager_Request(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	DownloadManager_Request::DownloadManager_Request(android::net::Uri arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.app.DownloadManager$Request",
 			"(Landroid/net/Uri;)V",
 			arg0.object()

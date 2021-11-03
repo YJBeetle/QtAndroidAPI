@@ -6,12 +6,12 @@ namespace org::xml::sax::helpers
 	// Fields
 	
 	// QAndroidJniObject forward
-	XMLReaderFactory::XMLReaderFactory(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	XMLReaderFactory::XMLReaderFactory(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	__JniBaseClass XMLReaderFactory::createXMLReader()
+	JObject XMLReaderFactory::createXMLReader()
 	{
 		return callStaticObjectMethod(
 			"org.xml.sax.helpers.XMLReaderFactory",
@@ -19,7 +19,7 @@ namespace org::xml::sax::helpers
 			"()Lorg/xml/sax/XMLReader;"
 		);
 	}
-	__JniBaseClass XMLReaderFactory::createXMLReader(jstring arg0)
+	JObject XMLReaderFactory::createXMLReader(jstring arg0)
 	{
 		return callStaticObjectMethod(
 			"org.xml.sax.helpers.XMLReaderFactory",

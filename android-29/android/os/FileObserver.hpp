@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace java::io
 {
@@ -9,7 +9,7 @@ namespace java::io
 
 namespace android::os
 {
-	class FileObserver : public __JniBaseClass
+	class FileObserver : public JObject
 	{
 	public:
 		// Fields
@@ -28,16 +28,16 @@ namespace android::os
 		static jint OPEN();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit FileObserver(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit FileObserver(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		FileObserver(QAndroidJniObject obj);
 		
 		// Constructors
 		FileObserver(java::io::File arg0);
 		FileObserver(jstring arg0);
-		FileObserver(__JniBaseClass arg0);
+		FileObserver(JObject arg0);
 		FileObserver(java::io::File arg0, jint arg1);
 		FileObserver(jstring arg0, jint arg1);
-		FileObserver(__JniBaseClass arg0, jint arg1);
+		FileObserver(JObject arg0, jint arg1);
 		
 		// Methods
 		void onEvent(jint arg0, jstring arg1);

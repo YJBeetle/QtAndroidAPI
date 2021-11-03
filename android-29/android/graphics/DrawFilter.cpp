@@ -5,11 +5,11 @@ namespace android::graphics
 	// Fields
 	
 	// QAndroidJniObject forward
-	DrawFilter::DrawFilter(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	DrawFilter::DrawFilter(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	DrawFilter::DrawFilter()
-		: __JniBaseClass(
+		: JObject(
 			"android.graphics.DrawFilter",
 			"()V"
 		) {}

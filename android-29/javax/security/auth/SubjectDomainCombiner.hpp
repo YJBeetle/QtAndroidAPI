@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace java::security
 {
@@ -13,13 +13,13 @@ namespace javax::security::auth
 
 namespace javax::security::auth
 {
-	class SubjectDomainCombiner : public __JniBaseClass
+	class SubjectDomainCombiner : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit SubjectDomainCombiner(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit SubjectDomainCombiner(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		SubjectDomainCombiner(QAndroidJniObject obj);
 		
 		// Constructors

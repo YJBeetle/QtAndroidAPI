@@ -4,7 +4,7 @@
 namespace android::service::notification
 {
 	// Fields
-	__JniBaseClass ZenPolicy::CREATOR()
+	JObject ZenPolicy::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.service.notification.ZenPolicy",
@@ -70,7 +70,7 @@ namespace android::service::notification
 	}
 	
 	// QAndroidJniObject forward
-	ZenPolicy::ZenPolicy(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	ZenPolicy::ZenPolicy(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

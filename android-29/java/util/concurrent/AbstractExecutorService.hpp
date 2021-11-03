@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace java::util
 {
@@ -13,25 +13,25 @@ namespace java::util::concurrent
 
 namespace java::util::concurrent
 {
-	class AbstractExecutorService : public __JniBaseClass
+	class AbstractExecutorService : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit AbstractExecutorService(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit AbstractExecutorService(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		AbstractExecutorService(QAndroidJniObject obj);
 		
 		// Constructors
 		AbstractExecutorService();
 		
 		// Methods
-		__JniBaseClass invokeAll(__JniBaseClass arg0);
-		__JniBaseClass invokeAll(__JniBaseClass arg0, jlong arg1, java::util::concurrent::TimeUnit arg2);
-		jobject invokeAny(__JniBaseClass arg0);
-		jobject invokeAny(__JniBaseClass arg0, jlong arg1, java::util::concurrent::TimeUnit arg2);
-		__JniBaseClass submit(__JniBaseClass arg0);
-		__JniBaseClass submit(__JniBaseClass arg0, jobject arg1);
+		JObject invokeAll(JObject arg0);
+		JObject invokeAll(JObject arg0, jlong arg1, java::util::concurrent::TimeUnit arg2);
+		jobject invokeAny(JObject arg0);
+		jobject invokeAny(JObject arg0, jlong arg1, java::util::concurrent::TimeUnit arg2);
+		JObject submit(JObject arg0);
+		JObject submit(JObject arg0, jobject arg1);
 	};
 } // namespace java::util::concurrent
 

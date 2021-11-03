@@ -39,11 +39,11 @@ namespace android::icu::text
 	}
 	
 	// QAndroidJniObject forward
-	DateTimePatternGenerator_PatternInfo::DateTimePatternGenerator_PatternInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	DateTimePatternGenerator_PatternInfo::DateTimePatternGenerator_PatternInfo(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	DateTimePatternGenerator_PatternInfo::DateTimePatternGenerator_PatternInfo()
-		: __JniBaseClass(
+		: JObject(
 			"android.icu.text.DateTimePatternGenerator$PatternInfo",
 			"()V"
 		) {}

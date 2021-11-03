@@ -11,7 +11,7 @@ namespace java::security::cert
 	// Fields
 	
 	// QAndroidJniObject forward
-	CertificateFactory::CertificateFactory(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	CertificateFactory::CertificateFactory(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -53,7 +53,7 @@ namespace java::security::cert
 			arg0.object()
 		);
 	}
-	__JniBaseClass CertificateFactory::generateCRLs(java::io::InputStream arg0)
+	JObject CertificateFactory::generateCRLs(java::io::InputStream arg0)
 	{
 		return callObjectMethod(
 			"generateCRLs",
@@ -69,7 +69,7 @@ namespace java::security::cert
 			arg0.object()
 		);
 	}
-	java::security::cert::CertPath CertificateFactory::generateCertPath(__JniBaseClass arg0)
+	java::security::cert::CertPath CertificateFactory::generateCertPath(JObject arg0)
 	{
 		return callObjectMethod(
 			"generateCertPath",
@@ -94,7 +94,7 @@ namespace java::security::cert
 			arg0.object()
 		);
 	}
-	__JniBaseClass CertificateFactory::generateCertificates(java::io::InputStream arg0)
+	JObject CertificateFactory::generateCertificates(java::io::InputStream arg0)
 	{
 		return callObjectMethod(
 			"generateCertificates",
@@ -102,7 +102,7 @@ namespace java::security::cert
 			arg0.object()
 		);
 	}
-	__JniBaseClass CertificateFactory::getCertPathEncodings()
+	JObject CertificateFactory::getCertPathEncodings()
 	{
 		return callObjectMethod(
 			"getCertPathEncodings",

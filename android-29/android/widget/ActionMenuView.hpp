@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "../view/View.hpp"
 #include "../view/ViewGroup.hpp"
 #include "./LinearLayout.hpp"
@@ -43,19 +43,19 @@ namespace android::widget
 		
 		// Constructors
 		ActionMenuView(android::content::Context arg0);
-		ActionMenuView(android::content::Context arg0, __JniBaseClass arg1);
+		ActionMenuView(android::content::Context arg0, JObject arg1);
 		
 		// Methods
 		void dismissPopupMenus();
-		android::widget::ActionMenuView_LayoutParams generateLayoutParams(__JniBaseClass arg0);
-		__JniBaseClass getMenu();
+		android::widget::ActionMenuView_LayoutParams generateLayoutParams(JObject arg0);
+		JObject getMenu();
 		android::graphics::drawable::Drawable getOverflowIcon();
 		jint getPopupTheme();
 		jboolean hideOverflowMenu();
 		jboolean isOverflowMenuShowing();
 		void onConfigurationChanged(android::content::res::Configuration arg0);
 		void onDetachedFromWindow();
-		void setOnMenuItemClickListener(__JniBaseClass arg0);
+		void setOnMenuItemClickListener(JObject arg0);
 		void setOverflowIcon(android::graphics::drawable::Drawable arg0);
 		void setPopupTheme(jint arg0);
 		jboolean showOverflowMenu();

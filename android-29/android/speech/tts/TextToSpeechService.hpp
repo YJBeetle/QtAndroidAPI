@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "../../content/Context.hpp"
 #include "../../content/ContextWrapper.hpp"
 #include "../../app/Service.hpp"
@@ -29,11 +29,11 @@ namespace android::speech::tts
 		TextToSpeechService();
 		
 		// Methods
-		__JniBaseClass onBind(android::content::Intent arg0);
+		JObject onBind(android::content::Intent arg0);
 		void onCreate();
 		void onDestroy();
 		jstring onGetDefaultVoiceNameFor(jstring arg0, jstring arg1, jstring arg2);
-		__JniBaseClass onGetVoices();
+		JObject onGetVoices();
 		jint onIsValidVoiceName(jstring arg0);
 		jint onLoadVoice(jstring arg0);
 	};

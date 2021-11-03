@@ -5,7 +5,7 @@
 namespace android::app
 {
 	// Fields
-	__JniBaseClass ActivityManager_RunningTaskInfo::CREATOR()
+	JObject ActivityManager_RunningTaskInfo::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.app.ActivityManager$RunningTaskInfo",

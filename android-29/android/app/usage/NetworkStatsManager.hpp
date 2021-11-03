@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::app::usage
 {
@@ -21,13 +21,13 @@ namespace android::os
 
 namespace android::app::usage
 {
-	class NetworkStatsManager : public __JniBaseClass
+	class NetworkStatsManager : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit NetworkStatsManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit NetworkStatsManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		NetworkStatsManager(QAndroidJniObject obj);
 		
 		// Constructors

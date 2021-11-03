@@ -53,7 +53,7 @@ namespace java::security
 			arg1.object()
 		);
 	}
-	java::security::SecureRandom SecureRandom::getInstance(jstring arg0, __JniBaseClass arg1)
+	java::security::SecureRandom SecureRandom::getInstance(jstring arg0, JObject arg1)
 	{
 		return callStaticObjectMethod(
 			"java.security.SecureRandom",
@@ -63,7 +63,7 @@ namespace java::security
 			arg1.object()
 		);
 	}
-	java::security::SecureRandom SecureRandom::getInstance(jstring arg0, __JniBaseClass arg1, jstring arg2)
+	java::security::SecureRandom SecureRandom::getInstance(jstring arg0, JObject arg1, jstring arg2)
 	{
 		return callStaticObjectMethod(
 			"java.security.SecureRandom",
@@ -74,7 +74,7 @@ namespace java::security
 			arg2
 		);
 	}
-	java::security::SecureRandom SecureRandom::getInstance(jstring arg0, __JniBaseClass arg1, java::security::Provider arg2)
+	java::security::SecureRandom SecureRandom::getInstance(jstring arg0, JObject arg1, java::security::Provider arg2)
 	{
 		return callStaticObjectMethod(
 			"java.security.SecureRandom",
@@ -117,7 +117,7 @@ namespace java::security
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	__JniBaseClass SecureRandom::getParameters()
+	JObject SecureRandom::getParameters()
 	{
 		return callObjectMethod(
 			"getParameters",
@@ -139,7 +139,7 @@ namespace java::security
 			arg0
 		);
 	}
-	void SecureRandom::nextBytes(jbyteArray arg0, __JniBaseClass arg1)
+	void SecureRandom::nextBytes(jbyteArray arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"nextBytes",
@@ -155,7 +155,7 @@ namespace java::security
 			"()V"
 		);
 	}
-	void SecureRandom::reseed(__JniBaseClass arg0)
+	void SecureRandom::reseed(JObject arg0)
 	{
 		callMethod<void>(
 			"reseed",

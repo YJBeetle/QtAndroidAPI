@@ -5,7 +5,7 @@ namespace android::view
 	// Fields
 	
 	// QAndroidJniObject forward
-	InputQueue::InputQueue(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	InputQueue::InputQueue(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

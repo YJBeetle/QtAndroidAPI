@@ -22,7 +22,7 @@ namespace java::nio::channels
 			"()Ljava/nio/channels/SocketChannel;"
 		);
 	}
-	java::nio::channels::SocketChannel SocketChannel::open(__JniBaseClass arg0)
+	java::nio::channels::SocketChannel SocketChannel::open(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"java.nio.channels.SocketChannel",
@@ -117,7 +117,7 @@ namespace java::nio::channels
 			arg2
 		);
 	}
-	java::nio::channels::SocketChannel SocketChannel::setOption(__JniBaseClass arg0, jobject arg1)
+	java::nio::channels::SocketChannel SocketChannel::setOption(JObject arg0, jobject arg1)
 	{
 		return callObjectMethod(
 			"setOption",

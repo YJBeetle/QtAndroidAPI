@@ -11,11 +11,11 @@ namespace android::util
 	}
 	
 	// QAndroidJniObject forward
-	MutableByte::MutableByte(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	MutableByte::MutableByte(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	MutableByte::MutableByte(jbyte arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.util.MutableByte",
 			"(B)V",
 			arg0

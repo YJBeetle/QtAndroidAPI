@@ -30,14 +30,14 @@ namespace javax::xml::transform
 			arg0,
 			arg1
 		) {}
-	TransformerException::TransformerException(jstring arg0, __JniBaseClass arg1)
+	TransformerException::TransformerException(jstring arg0, JObject arg1)
 		: java::lang::Exception(
 			"javax.xml.transform.TransformerException",
 			"(Ljava/lang/String;Ljavax/xml/transform/SourceLocator;)V",
 			arg0,
 			arg1.object()
 		) {}
-	TransformerException::TransformerException(jstring arg0, __JniBaseClass arg1, jthrowable arg2)
+	TransformerException::TransformerException(jstring arg0, JObject arg1, jthrowable arg2)
 		: java::lang::Exception(
 			"javax.xml.transform.TransformerException",
 			"(Ljava/lang/String;Ljavax/xml/transform/SourceLocator;Ljava/lang/Throwable;)V",
@@ -68,7 +68,7 @@ namespace javax::xml::transform
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	__JniBaseClass TransformerException::getLocator()
+	JObject TransformerException::getLocator()
 	{
 		return callObjectMethod(
 			"getLocator",
@@ -113,7 +113,7 @@ namespace javax::xml::transform
 			arg0.object()
 		);
 	}
-	void TransformerException::setLocator(__JniBaseClass arg0)
+	void TransformerException::setLocator(JObject arg0)
 	{
 		callMethod<void>(
 			"setLocator",

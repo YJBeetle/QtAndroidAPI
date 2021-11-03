@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::transition
 {
@@ -9,13 +9,13 @@ namespace android::transition
 
 namespace android::transition
 {
-	class TransitionListenerAdapter : public __JniBaseClass
+	class TransitionListenerAdapter : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit TransitionListenerAdapter(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit TransitionListenerAdapter(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		TransitionListenerAdapter(QAndroidJniObject obj);
 		
 		// Constructors

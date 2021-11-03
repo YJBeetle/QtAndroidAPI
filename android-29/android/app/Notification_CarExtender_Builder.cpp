@@ -8,11 +8,11 @@ namespace android::app
 	// Fields
 	
 	// QAndroidJniObject forward
-	Notification_CarExtender_Builder::Notification_CarExtender_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Notification_CarExtender_Builder::Notification_CarExtender_Builder(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Notification_CarExtender_Builder::Notification_CarExtender_Builder(jstring arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.app.Notification$CarExtender$Builder",
 			"(Ljava/lang/String;)V",
 			arg0

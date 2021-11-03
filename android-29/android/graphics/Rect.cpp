@@ -4,7 +4,7 @@
 namespace android::graphics
 {
 	// Fields
-	__JniBaseClass Rect::CREATOR()
+	JObject Rect::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.graphics.Rect",
@@ -38,22 +38,22 @@ namespace android::graphics
 	}
 	
 	// QAndroidJniObject forward
-	Rect::Rect(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Rect::Rect(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Rect::Rect()
-		: __JniBaseClass(
+		: JObject(
 			"android.graphics.Rect",
 			"()V"
 		) {}
 	Rect::Rect(android::graphics::Rect &arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.graphics.Rect",
 			"(Landroid/graphics/Rect;)V",
 			arg0.object()
 		) {}
 	Rect::Rect(jint arg0, jint arg1, jint arg2, jint arg3)
-		: __JniBaseClass(
+		: JObject(
 			"android.graphics.Rect",
 			"(IIII)V",
 			arg0,

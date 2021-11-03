@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::graphics
 {
@@ -13,11 +13,11 @@ namespace android::os
 
 namespace android::graphics
 {
-	class Insets : public __JniBaseClass
+	class Insets : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static android::graphics::Insets NONE();
 		jint bottom();
 		jint left();
@@ -25,7 +25,7 @@ namespace android::graphics
 		jint top();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Insets(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Insets(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Insets(QAndroidJniObject obj);
 		
 		// Constructors

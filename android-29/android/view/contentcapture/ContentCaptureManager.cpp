@@ -7,12 +7,12 @@ namespace android::view::contentcapture
 	// Fields
 	
 	// QAndroidJniObject forward
-	ContentCaptureManager::ContentCaptureManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	ContentCaptureManager::ContentCaptureManager(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	__JniBaseClass ContentCaptureManager::getContentCaptureConditions()
+	JObject ContentCaptureManager::getContentCaptureConditions()
 	{
 		return callObjectMethod(
 			"getContentCaptureConditions",

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "../view/View.hpp"
 #include "../view/ViewGroup.hpp"
 
@@ -26,12 +26,12 @@ namespace android::widget
 		
 		// Constructors
 		AbsoluteLayout(android::content::Context arg0);
-		AbsoluteLayout(android::content::Context arg0, __JniBaseClass arg1);
-		AbsoluteLayout(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
-		AbsoluteLayout(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
+		AbsoluteLayout(android::content::Context arg0, JObject arg1);
+		AbsoluteLayout(android::content::Context arg0, JObject arg1, jint arg2);
+		AbsoluteLayout(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
-		android::view::ViewGroup_LayoutParams generateLayoutParams(__JniBaseClass arg0);
+		android::view::ViewGroup_LayoutParams generateLayoutParams(JObject arg0);
 		jboolean shouldDelayChildPressedState();
 	};
 } // namespace android::widget

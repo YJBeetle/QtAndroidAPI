@@ -9,7 +9,7 @@
 namespace android::media::tv
 {
 	// Fields
-	__JniBaseClass TvInputInfo::CREATOR()
+	JObject TvInputInfo::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.media.tv.TvInputInfo",
@@ -97,7 +97,7 @@ namespace android::media::tv
 	}
 	
 	// QAndroidJniObject forward
-	TvInputInfo::TvInputInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	TvInputInfo::TvInputInfo(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace java::lang
 {
@@ -9,7 +9,7 @@ namespace java::lang
 
 namespace javax::xml::xpath
 {
-	class XPathFactory : public __JniBaseClass
+	class XPathFactory : public JObject
 	{
 	public:
 		// Fields
@@ -17,7 +17,7 @@ namespace javax::xml::xpath
 		static jstring DEFAULT_PROPERTY_NAME();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit XPathFactory(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit XPathFactory(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		XPathFactory(QAndroidJniObject obj);
 		
 		// Constructors
@@ -29,10 +29,10 @@ namespace javax::xml::xpath
 		static javax::xml::xpath::XPathFactory newInstance(jstring arg0, jstring arg1, java::lang::ClassLoader arg2);
 		jboolean getFeature(jstring arg0);
 		jboolean isObjectModelSupported(jstring arg0);
-		__JniBaseClass newXPath();
+		JObject newXPath();
 		void setFeature(jstring arg0, jboolean arg1);
-		void setXPathFunctionResolver(__JniBaseClass arg0);
-		void setXPathVariableResolver(__JniBaseClass arg0);
+		void setXPathFunctionResolver(JObject arg0);
+		void setXPathVariableResolver(JObject arg0);
 	};
 } // namespace javax::xml::xpath
 

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../../__JniBaseClass.hpp"
+#include "../../../../JObject.hpp"
 
 namespace android::net
 {
@@ -21,17 +21,17 @@ namespace android::os
 
 namespace android::net::wifi::rtt
 {
-	class RangingResult : public __JniBaseClass
+	class RangingResult : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint STATUS_FAIL();
 		static jint STATUS_RESPONDER_DOES_NOT_SUPPORT_IEEE80211MC();
 		static jint STATUS_SUCCESS();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit RangingResult(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit RangingResult(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		RangingResult(QAndroidJniObject obj);
 		
 		// Constructors

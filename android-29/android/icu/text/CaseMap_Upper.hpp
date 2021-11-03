@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "./CaseMap.hpp"
 
 namespace android::icu::text
@@ -30,7 +30,7 @@ namespace android::icu::text
 		// Constructors
 		
 		// Methods
-		__JniBaseClass apply(java::util::Locale arg0, jstring arg1, __JniBaseClass arg2, android::icu::text::Edits arg3);
+		JObject apply(java::util::Locale arg0, jstring arg1, JObject arg2, android::icu::text::Edits arg3);
 		jstring apply(java::util::Locale arg0, jstring arg1);
 		android::icu::text::CaseMap_Upper omitUnchangedText();
 	};

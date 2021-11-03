@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::net
 {
@@ -9,14 +9,14 @@ namespace android::net
 
 namespace android::content
 {
-	class UriMatcher : public __JniBaseClass
+	class UriMatcher : public JObject
 	{
 	public:
 		// Fields
 		static jint NO_MATCH();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit UriMatcher(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit UriMatcher(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		UriMatcher(QAndroidJniObject obj);
 		
 		// Constructors

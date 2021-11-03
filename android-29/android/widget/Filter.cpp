@@ -6,11 +6,11 @@ namespace android::widget
 	// Fields
 	
 	// QAndroidJniObject forward
-	Filter::Filter(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Filter::Filter(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Filter::Filter()
-		: __JniBaseClass(
+		: JObject(
 			"android.widget.Filter",
 			"()V"
 		) {}
@@ -32,7 +32,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void Filter::filter(jstring arg0, __JniBaseClass arg1)
+	void Filter::filter(jstring arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"filter",

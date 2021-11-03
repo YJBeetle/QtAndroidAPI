@@ -12,7 +12,7 @@ namespace android::media
 	// Fields
 	
 	// QAndroidJniObject forward
-	MediaSession2::MediaSession2(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	MediaSession2::MediaSession2(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -42,7 +42,7 @@ namespace android::media
 			"()V"
 		);
 	}
-	__JniBaseClass MediaSession2::getConnectedControllers()
+	JObject MediaSession2::getConnectedControllers()
 	{
 		return callObjectMethod(
 			"getConnectedControllers",

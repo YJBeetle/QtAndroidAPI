@@ -48,7 +48,7 @@ namespace android::view
 			"ACTION_DROP"
 		);
 	}
-	__JniBaseClass DragEvent::CREATOR()
+	JObject DragEvent::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.view.DragEvent",
@@ -58,7 +58,7 @@ namespace android::view
 	}
 	
 	// QAndroidJniObject forward
-	DragEvent::DragEvent(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	DragEvent::DragEvent(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

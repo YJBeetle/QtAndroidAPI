@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::content
 {
@@ -61,7 +61,7 @@ namespace java::util
 
 namespace android::content
 {
-	class Intent : public __JniBaseClass
+	class Intent : public JObject
 	{
 	public:
 		// Fields
@@ -234,7 +234,7 @@ namespace android::content
 		static jstring CATEGORY_UNIT_TEST();
 		static jstring CATEGORY_VOICE();
 		static jstring CATEGORY_VR_HOME();
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jstring EXTRA_ALARM_COUNT();
 		static jstring EXTRA_ALLOW_MULTIPLE();
 		static jstring EXTRA_ALLOW_REPLACE();
@@ -363,7 +363,7 @@ namespace android::content
 		static jint URI_INTENT_SCHEME();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Intent(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Intent(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Intent(QAndroidJniObject obj);
 		
 		// Constructors
@@ -383,7 +383,7 @@ namespace android::content
 		static android::content::Intent makeMainSelectorActivity(jstring arg0, jstring arg1);
 		static android::content::Intent makeRestartActivityTask(android::content::ComponentName arg0);
 		static jstring normalizeMimeType(jstring arg0);
-		static android::content::Intent parseIntent(android::content::res::Resources arg0, __JniBaseClass arg1, __JniBaseClass arg2);
+		static android::content::Intent parseIntent(android::content::res::Resources arg0, JObject arg1, JObject arg2);
 		static android::content::Intent parseUri(jstring arg0, jint arg1);
 		android::content::Intent addCategory(jstring arg0);
 		android::content::Intent addFlags(jint arg0);
@@ -399,7 +399,7 @@ namespace android::content
 		android::os::Bundle getBundleExtra(jstring arg0);
 		jbyteArray getByteArrayExtra(jstring arg0);
 		jbyte getByteExtra(jstring arg0, jbyte arg1);
-		__JniBaseClass getCategories();
+		JObject getCategories();
 		jcharArray getCharArrayExtra(jstring arg0);
 		jchar getCharExtra(jstring arg0, jchar arg1);
 		jarray getCharSequenceArrayExtra(jstring arg0);
@@ -424,10 +424,10 @@ namespace android::content
 		jstring getPackage();
 		jarray getParcelableArrayExtra(jstring arg0);
 		java::util::ArrayList getParcelableArrayListExtra(jstring arg0);
-		__JniBaseClass getParcelableExtra(jstring arg0);
+		JObject getParcelableExtra(jstring arg0);
 		jstring getScheme();
 		android::content::Intent getSelector();
-		__JniBaseClass getSerializableExtra(jstring arg0);
+		JObject getSerializableExtra(jstring arg0);
 		jshortArray getShortArrayExtra(jstring arg0);
 		jshort getShortExtra(jstring arg0, jshort arg1);
 		android::graphics::Rect getSourceBounds();
@@ -449,7 +449,7 @@ namespace android::content
 		android::content::Intent putExtra(jstring arg0, jshortArray arg1);
 		android::content::Intent putExtra(jstring arg0, jbooleanArray arg1);
 		android::content::Intent putExtra(jstring arg0, android::os::Bundle arg1);
-		android::content::Intent putExtra(jstring arg0, __JniBaseClass arg1);
+		android::content::Intent putExtra(jstring arg0, JObject arg1);
 		android::content::Intent putExtra(jstring arg0, jboolean arg1);
 		android::content::Intent putExtra(jstring arg0, jbyte arg1);
 		android::content::Intent putExtra(jstring arg0, jchar arg1);

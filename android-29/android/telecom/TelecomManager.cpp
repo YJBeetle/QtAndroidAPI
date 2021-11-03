@@ -349,7 +349,7 @@ namespace android::telecom
 	}
 	
 	// QAndroidJniObject forward
-	TelecomManager::TelecomManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	TelecomManager::TelecomManager(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -417,7 +417,7 @@ namespace android::telecom
 			arg0.object()
 		);
 	}
-	__JniBaseClass TelecomManager::getCallCapablePhoneAccounts()
+	JObject TelecomManager::getCallCapablePhoneAccounts()
 	{
 		return callObjectMethod(
 			"getCallCapablePhoneAccounts",
@@ -455,7 +455,7 @@ namespace android::telecom
 			arg0.object()
 		);
 	}
-	__JniBaseClass TelecomManager::getSelfManagedPhoneAccounts()
+	JObject TelecomManager::getSelfManagedPhoneAccounts()
 	{
 		return callObjectMethod(
 			"getSelfManagedPhoneAccounts",

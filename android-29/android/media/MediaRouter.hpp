@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::content
 {
@@ -25,7 +25,7 @@ namespace android::media
 
 namespace android::media
 {
-	class MediaRouter : public __JniBaseClass
+	class MediaRouter : public JObject
 	{
 	public:
 		// Fields
@@ -36,7 +36,7 @@ namespace android::media
 		static jint ROUTE_TYPE_USER();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MediaRouter(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit MediaRouter(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		MediaRouter(QAndroidJniObject obj);
 		
 		// Constructors

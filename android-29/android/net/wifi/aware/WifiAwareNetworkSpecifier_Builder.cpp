@@ -8,11 +8,11 @@ namespace android::net::wifi::aware
 	// Fields
 	
 	// QAndroidJniObject forward
-	WifiAwareNetworkSpecifier_Builder::WifiAwareNetworkSpecifier_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	WifiAwareNetworkSpecifier_Builder::WifiAwareNetworkSpecifier_Builder(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	WifiAwareNetworkSpecifier_Builder::WifiAwareNetworkSpecifier_Builder(android::net::wifi::aware::DiscoverySession arg0, android::net::wifi::aware::PeerHandle arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.net.wifi.aware.WifiAwareNetworkSpecifier$Builder",
 			"(Landroid/net/wifi/aware/DiscoverySession;Landroid/net/wifi/aware/PeerHandle;)V",
 			arg0.object(),

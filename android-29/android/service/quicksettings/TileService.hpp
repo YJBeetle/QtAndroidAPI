@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "../../content/Context.hpp"
 #include "../../content/ContextWrapper.hpp"
 #include "../../app/Service.hpp"
@@ -48,7 +48,7 @@ namespace android::service::quicksettings
 		android::service::quicksettings::Tile getQsTile();
 		jboolean isLocked();
 		jboolean isSecure();
-		__JniBaseClass onBind(android::content::Intent arg0);
+		JObject onBind(android::content::Intent arg0);
 		void onClick();
 		void onDestroy();
 		void onStartListening();
@@ -57,7 +57,7 @@ namespace android::service::quicksettings
 		void onTileRemoved();
 		void showDialog(android::app::Dialog arg0);
 		void startActivityAndCollapse(android::content::Intent arg0);
-		void unlockAndRun(__JniBaseClass arg0);
+		void unlockAndRun(JObject arg0);
 	};
 } // namespace android::service::quicksettings
 

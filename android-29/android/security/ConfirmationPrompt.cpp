@@ -7,7 +7,7 @@ namespace android::security
 	// Fields
 	
 	// QAndroidJniObject forward
-	ConfirmationPrompt::ConfirmationPrompt(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	ConfirmationPrompt::ConfirmationPrompt(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -28,7 +28,7 @@ namespace android::security
 			"()V"
 		);
 	}
-	void ConfirmationPrompt::presentPrompt(__JniBaseClass arg0, android::security::ConfirmationCallback arg1)
+	void ConfirmationPrompt::presentPrompt(JObject arg0, android::security::ConfirmationCallback arg1)
 	{
 		callMethod<void>(
 			"presentPrompt",

@@ -17,7 +17,7 @@ namespace android::text::method
 		) {}
 	
 	// Methods
-	jboolean BaseKeyListener::backspace(android::view::View arg0, __JniBaseClass arg1, jint arg2, android::view::KeyEvent arg3)
+	jboolean BaseKeyListener::backspace(android::view::View arg0, JObject arg1, jint arg2, android::view::KeyEvent arg3)
 	{
 		return callMethod<jboolean>(
 			"backspace",
@@ -28,7 +28,7 @@ namespace android::text::method
 			arg3.object()
 		);
 	}
-	jboolean BaseKeyListener::forwardDelete(android::view::View arg0, __JniBaseClass arg1, jint arg2, android::view::KeyEvent arg3)
+	jboolean BaseKeyListener::forwardDelete(android::view::View arg0, JObject arg1, jint arg2, android::view::KeyEvent arg3)
 	{
 		return callMethod<jboolean>(
 			"forwardDelete",
@@ -39,7 +39,7 @@ namespace android::text::method
 			arg3.object()
 		);
 	}
-	jboolean BaseKeyListener::onKeyDown(android::view::View arg0, __JniBaseClass arg1, jint arg2, android::view::KeyEvent arg3)
+	jboolean BaseKeyListener::onKeyDown(android::view::View arg0, JObject arg1, jint arg2, android::view::KeyEvent arg3)
 	{
 		return callMethod<jboolean>(
 			"onKeyDown",
@@ -50,7 +50,7 @@ namespace android::text::method
 			arg3.object()
 		);
 	}
-	jboolean BaseKeyListener::onKeyOther(android::view::View arg0, __JniBaseClass arg1, android::view::KeyEvent arg2)
+	jboolean BaseKeyListener::onKeyOther(android::view::View arg0, JObject arg1, android::view::KeyEvent arg2)
 	{
 		return callMethod<jboolean>(
 			"onKeyOther",

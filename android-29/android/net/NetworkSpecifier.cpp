@@ -5,11 +5,11 @@ namespace android::net
 	// Fields
 	
 	// QAndroidJniObject forward
-	NetworkSpecifier::NetworkSpecifier(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	NetworkSpecifier::NetworkSpecifier(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	NetworkSpecifier::NetworkSpecifier()
-		: __JniBaseClass(
+		: JObject(
 			"android.net.NetworkSpecifier",
 			"()V"
 		) {}

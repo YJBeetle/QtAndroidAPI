@@ -6,19 +6,19 @@ namespace java::security::spec
 	// Fields
 	
 	// QAndroidJniObject forward
-	EllipticCurve::EllipticCurve(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	EllipticCurve::EllipticCurve(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	EllipticCurve::EllipticCurve(__JniBaseClass arg0, java::math::BigInteger arg1, java::math::BigInteger arg2)
-		: __JniBaseClass(
+	EllipticCurve::EllipticCurve(JObject arg0, java::math::BigInteger arg1, java::math::BigInteger arg2)
+		: JObject(
 			"java.security.spec.EllipticCurve",
 			"(Ljava/security/spec/ECField;Ljava/math/BigInteger;Ljava/math/BigInteger;)V",
 			arg0.object(),
 			arg1.object(),
 			arg2.object()
 		) {}
-	EllipticCurve::EllipticCurve(__JniBaseClass arg0, java::math::BigInteger arg1, java::math::BigInteger arg2, jbyteArray arg3)
-		: __JniBaseClass(
+	EllipticCurve::EllipticCurve(JObject arg0, java::math::BigInteger arg1, java::math::BigInteger arg2, jbyteArray arg3)
+		: JObject(
 			"java.security.spec.EllipticCurve",
 			"(Ljava/security/spec/ECField;Ljava/math/BigInteger;Ljava/math/BigInteger;[B)V",
 			arg0.object(),
@@ -50,7 +50,7 @@ namespace java::security::spec
 			"()Ljava/math/BigInteger;"
 		);
 	}
-	__JniBaseClass EllipticCurve::getField()
+	JObject EllipticCurve::getField()
 	{
 		return callObjectMethod(
 			"getField",

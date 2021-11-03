@@ -9,7 +9,7 @@ namespace java::security
 	// Fields
 	
 	// QAndroidJniObject forward
-	AlgorithmParameterGenerator::AlgorithmParameterGenerator(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	AlgorithmParameterGenerator::AlgorithmParameterGenerator(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -72,7 +72,7 @@ namespace java::security
 			arg0
 		);
 	}
-	void AlgorithmParameterGenerator::init(__JniBaseClass arg0)
+	void AlgorithmParameterGenerator::init(JObject arg0)
 	{
 		callMethod<void>(
 			"init",
@@ -89,7 +89,7 @@ namespace java::security
 			arg1.object()
 		);
 	}
-	void AlgorithmParameterGenerator::init(__JniBaseClass arg0, java::security::SecureRandom arg1)
+	void AlgorithmParameterGenerator::init(JObject arg0, java::security::SecureRandom arg1)
 	{
 		callMethod<void>(
 			"init",

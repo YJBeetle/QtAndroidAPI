@@ -17,7 +17,7 @@ namespace android::transition
 			"android.transition.ChangeScroll",
 			"()V"
 		) {}
-	ChangeScroll::ChangeScroll(android::content::Context arg0, __JniBaseClass arg1)
+	ChangeScroll::ChangeScroll(android::content::Context arg0, JObject arg1)
 		: android::transition::Transition(
 			"android.transition.ChangeScroll",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",

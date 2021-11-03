@@ -5,7 +5,7 @@
 namespace android::content
 {
 	// Fields
-	__JniBaseClass Intent_ShortcutIconResource::CREATOR()
+	JObject Intent_ShortcutIconResource::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.content.Intent$ShortcutIconResource",
@@ -29,11 +29,11 @@ namespace android::content
 	}
 	
 	// QAndroidJniObject forward
-	Intent_ShortcutIconResource::Intent_ShortcutIconResource(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Intent_ShortcutIconResource::Intent_ShortcutIconResource(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Intent_ShortcutIconResource::Intent_ShortcutIconResource()
-		: __JniBaseClass(
+		: JObject(
 			"android.content.Intent$ShortcutIconResource",
 			"()V"
 		) {}

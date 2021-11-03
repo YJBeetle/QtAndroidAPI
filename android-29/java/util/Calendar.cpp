@@ -363,12 +363,12 @@ namespace java::util
 	}
 	
 	// QAndroidJniObject forward
-	Calendar::Calendar(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Calendar::Calendar(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	__JniBaseClass Calendar::getAvailableCalendarTypes()
+	JObject Calendar::getAvailableCalendarTypes()
 	{
 		return callStaticObjectMethod(
 			"java.util.Calendar",
@@ -532,7 +532,7 @@ namespace java::util
 			arg2.object()
 		).object<jstring>();
 	}
-	__JniBaseClass Calendar::getDisplayNames(jint arg0, jint arg1, java::util::Locale arg2)
+	JObject Calendar::getDisplayNames(jint arg0, jint arg1, java::util::Locale arg2)
 	{
 		return callObjectMethod(
 			"getDisplayNames",

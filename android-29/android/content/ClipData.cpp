@@ -9,7 +9,7 @@
 namespace android::content
 {
 	// Fields
-	__JniBaseClass ClipData::CREATOR()
+	JObject ClipData::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.content.ClipData",
@@ -19,24 +19,24 @@ namespace android::content
 	}
 	
 	// QAndroidJniObject forward
-	ClipData::ClipData(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	ClipData::ClipData(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ClipData::ClipData(android::content::ClipData &arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.content.ClipData",
 			"(Landroid/content/ClipData;)V",
 			arg0.object()
 		) {}
 	ClipData::ClipData(android::content::ClipDescription arg0, android::content::ClipData_Item arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.content.ClipData",
 			"(Landroid/content/ClipDescription;Landroid/content/ClipData$Item;)V",
 			arg0.object(),
 			arg1.object()
 		) {}
 	ClipData::ClipData(jstring arg0, jarray arg1, android::content::ClipData_Item arg2)
-		: __JniBaseClass(
+		: JObject(
 			"android.content.ClipData",
 			"(Ljava/lang/CharSequence;[Ljava/lang/String;Landroid/content/ClipData$Item;)V",
 			arg0,

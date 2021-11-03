@@ -111,11 +111,11 @@ namespace android::media::audiofx
 	}
 	
 	// QAndroidJniObject forward
-	Visualizer::Visualizer(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Visualizer::Visualizer(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Visualizer::Visualizer(jint arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.media.audiofx.Visualizer",
 			"(I)V",
 			arg0
@@ -212,7 +212,7 @@ namespace android::media::audiofx
 			arg0
 		);
 	}
-	jint Visualizer::setDataCaptureListener(__JniBaseClass arg0, jint arg1, jboolean arg2, jboolean arg3)
+	jint Visualizer::setDataCaptureListener(JObject arg0, jint arg1, jboolean arg2, jboolean arg3)
 	{
 		return callMethod<jint>(
 			"setDataCaptureListener",

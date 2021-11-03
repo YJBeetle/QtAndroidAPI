@@ -7,7 +7,7 @@ namespace java::lang
 	// Fields
 	
 	// QAndroidJniObject forward
-	Enum::Enum(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Enum::Enum(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

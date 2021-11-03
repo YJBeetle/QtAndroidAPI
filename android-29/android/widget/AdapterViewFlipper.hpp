@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "../view/View.hpp"
 #include "../view/ViewGroup.hpp"
 #include "./AdapterView.hpp"
@@ -24,9 +24,9 @@ namespace android::widget
 		
 		// Constructors
 		AdapterViewFlipper(android::content::Context arg0);
-		AdapterViewFlipper(android::content::Context arg0, __JniBaseClass arg1);
-		AdapterViewFlipper(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
-		AdapterViewFlipper(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
+		AdapterViewFlipper(android::content::Context arg0, JObject arg1);
+		AdapterViewFlipper(android::content::Context arg0, JObject arg1, jint arg2);
+		AdapterViewFlipper(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
 		void fyiWillBeAdvancedByHostKThx();
@@ -34,7 +34,7 @@ namespace android::widget
 		jint getFlipInterval();
 		jboolean isAutoStart();
 		jboolean isFlipping();
-		void setAdapter(__JniBaseClass arg0);
+		void setAdapter(JObject arg0);
 		void setAutoStart(jboolean arg0);
 		void setFlipInterval(jint arg0);
 		void showNext();

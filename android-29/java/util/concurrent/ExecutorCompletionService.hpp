@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace java::util::concurrent
 {
@@ -13,25 +13,25 @@ namespace java::util::concurrent
 
 namespace java::util::concurrent
 {
-	class ExecutorCompletionService : public __JniBaseClass
+	class ExecutorCompletionService : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ExecutorCompletionService(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ExecutorCompletionService(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ExecutorCompletionService(QAndroidJniObject obj);
 		
 		// Constructors
-		ExecutorCompletionService(__JniBaseClass arg0);
-		ExecutorCompletionService(__JniBaseClass arg0, __JniBaseClass arg1);
+		ExecutorCompletionService(JObject arg0);
+		ExecutorCompletionService(JObject arg0, JObject arg1);
 		
 		// Methods
-		__JniBaseClass poll();
-		__JniBaseClass poll(jlong arg0, java::util::concurrent::TimeUnit arg1);
-		__JniBaseClass submit(__JniBaseClass arg0);
-		__JniBaseClass submit(__JniBaseClass arg0, jobject arg1);
-		__JniBaseClass take();
+		JObject poll();
+		JObject poll(jlong arg0, java::util::concurrent::TimeUnit arg1);
+		JObject submit(JObject arg0);
+		JObject submit(JObject arg0, jobject arg1);
+		JObject take();
 	};
 } // namespace java::util::concurrent
 

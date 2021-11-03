@@ -10,17 +10,17 @@ namespace android::app
 	// Fields
 	
 	// QAndroidJniObject forward
-	Notification_Action_Builder::Notification_Action_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Notification_Action_Builder::Notification_Action_Builder(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Notification_Action_Builder::Notification_Action_Builder(android::app::Notification_Action arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.app.Notification$Action$Builder",
 			"(Landroid/app/Notification$Action;)V",
 			arg0.object()
 		) {}
 	Notification_Action_Builder::Notification_Action_Builder(android::graphics::drawable::Icon arg0, jstring arg1, android::app::PendingIntent arg2)
-		: __JniBaseClass(
+		: JObject(
 			"android.app.Notification$Action$Builder",
 			"(Landroid/graphics/drawable/Icon;Ljava/lang/CharSequence;Landroid/app/PendingIntent;)V",
 			arg0.object(),
@@ -28,7 +28,7 @@ namespace android::app
 			arg2.object()
 		) {}
 	Notification_Action_Builder::Notification_Action_Builder(jint arg0, jstring arg1, android::app::PendingIntent arg2)
-		: __JniBaseClass(
+		: JObject(
 			"android.app.Notification$Action$Builder",
 			"(ILjava/lang/CharSequence;Landroid/app/PendingIntent;)V",
 			arg0,
@@ -60,7 +60,7 @@ namespace android::app
 			"()Landroid/app/Notification$Action;"
 		);
 	}
-	android::app::Notification_Action_Builder Notification_Action_Builder::extend(__JniBaseClass arg0)
+	android::app::Notification_Action_Builder Notification_Action_Builder::extend(JObject arg0)
 	{
 		return callObjectMethod(
 			"extend",

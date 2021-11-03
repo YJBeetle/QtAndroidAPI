@@ -13,7 +13,7 @@ namespace android::telephony
 	}
 	
 	// QAndroidJniObject forward
-	SignalStrength::SignalStrength(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	SignalStrength::SignalStrength(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -47,14 +47,14 @@ namespace android::telephony
 			"()I"
 		);
 	}
-	__JniBaseClass SignalStrength::getCellSignalStrengths()
+	JObject SignalStrength::getCellSignalStrengths()
 	{
 		return callObjectMethod(
 			"getCellSignalStrengths",
 			"()Ljava/util/List;"
 		);
 	}
-	__JniBaseClass SignalStrength::getCellSignalStrengths(jclass arg0)
+	JObject SignalStrength::getCellSignalStrengths(jclass arg0)
 	{
 		return callObjectMethod(
 			"getCellSignalStrengths",

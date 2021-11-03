@@ -13,7 +13,7 @@ namespace android::os
 	}
 	
 	// QAndroidJniObject forward
-	Build_Partition::Build_Partition(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Build_Partition::Build_Partition(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

@@ -16,14 +16,14 @@ namespace android::widget
 			"(Landroid/content/Context;)V",
 			arg0.object()
 		) {}
-	Chronometer::Chronometer(android::content::Context arg0, __JniBaseClass arg1)
+	Chronometer::Chronometer(android::content::Context arg0, JObject arg1)
 		: android::widget::TextView(
 			"android.widget.Chronometer",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.object(),
 			arg1.object()
 		) {}
-	Chronometer::Chronometer(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
+	Chronometer::Chronometer(android::content::Context arg0, JObject arg1, jint arg2)
 		: android::widget::TextView(
 			"android.widget.Chronometer",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
@@ -31,7 +31,7 @@ namespace android::widget
 			arg1.object(),
 			arg2
 		) {}
-	Chronometer::Chronometer(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
+	Chronometer::Chronometer(android::content::Context arg0, JObject arg1, jint arg2, jint arg3)
 		: android::widget::TextView(
 			"android.widget.Chronometer",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;II)V",
@@ -70,7 +70,7 @@ namespace android::widget
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	__JniBaseClass Chronometer::getOnChronometerTickListener()
+	JObject Chronometer::getOnChronometerTickListener()
 	{
 		return callObjectMethod(
 			"getOnChronometerTickListener",
@@ -115,7 +115,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void Chronometer::setOnChronometerTickListener(__JniBaseClass arg0)
+	void Chronometer::setOnChronometerTickListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setOnChronometerTickListener",

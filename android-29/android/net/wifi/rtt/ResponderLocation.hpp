@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../../__JniBaseClass.hpp"
+#include "../../../../JObject.hpp"
 
 namespace android::location
 {
@@ -25,14 +25,14 @@ namespace android::util
 
 namespace android::net::wifi::rtt
 {
-	class ResponderLocation : public __JniBaseClass
+	class ResponderLocation : public JObject
 	{
 	public:
 		// Fields
 		static jint ALTITUDE_FLOORS();
 		static jint ALTITUDE_METERS();
 		static jint ALTITUDE_UNDEFINED();
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint DATUM_NAD83_MLLW();
 		static jint DATUM_NAD83_NAV88();
 		static jint DATUM_UNDEFINED();
@@ -44,7 +44,7 @@ namespace android::net::wifi::rtt
 		static jint LOCATION_VARIABLE();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ResponderLocation(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ResponderLocation(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ResponderLocation(QAndroidJniObject obj);
 		
 		// Constructors
@@ -55,7 +55,7 @@ namespace android::net::wifi::rtt
 		jdouble getAltitude();
 		jint getAltitudeType();
 		jdouble getAltitudeUncertainty();
-		__JniBaseClass getColocatedBssids();
+		JObject getColocatedBssids();
 		jint getDatum();
 		jint getExpectedToMove();
 		jdouble getFloorNumber();

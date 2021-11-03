@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::os
 {
@@ -9,18 +9,18 @@ namespace android::os
 
 namespace android::app
 {
-	class ActivityManager_MemoryInfo : public __JniBaseClass
+	class ActivityManager_MemoryInfo : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		jlong availMem();
 		jboolean lowMemory();
 		jlong threshold();
 		jlong totalMem();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ActivityManager_MemoryInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ActivityManager_MemoryInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ActivityManager_MemoryInfo(QAndroidJniObject obj);
 		
 		// Constructors

@@ -8,7 +8,7 @@ namespace android::media
 	// Fields
 	
 	// QAndroidJniObject forward
-	ImageWriter::ImageWriter(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	ImageWriter::ImageWriter(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -70,7 +70,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void ImageWriter::setOnImageReleasedListener(__JniBaseClass arg0, android::os::Handler arg1)
+	void ImageWriter::setOnImageReleasedListener(JObject arg0, android::os::Handler arg1)
 	{
 		callMethod<void>(
 			"setOnImageReleasedListener",

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::os
 {
@@ -9,17 +9,17 @@ namespace android::os
 
 namespace android::media
 {
-	class PlaybackParams : public __JniBaseClass
+	class PlaybackParams : public JObject
 	{
 	public:
 		// Fields
 		static jint AUDIO_FALLBACK_MODE_DEFAULT();
 		static jint AUDIO_FALLBACK_MODE_FAIL();
 		static jint AUDIO_FALLBACK_MODE_MUTE();
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit PlaybackParams(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit PlaybackParams(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		PlaybackParams(QAndroidJniObject obj);
 		
 		// Constructors

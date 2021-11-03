@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::webkit
 {
@@ -9,13 +9,13 @@ namespace android::webkit
 
 namespace android::webkit
 {
-	class CookieManager : public __JniBaseClass
+	class CookieManager : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit CookieManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit CookieManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		CookieManager(QAndroidJniObject obj);
 		
 		// Constructors
@@ -31,14 +31,14 @@ namespace android::webkit
 		jstring getCookie(jstring arg0);
 		jboolean hasCookies();
 		void removeAllCookie();
-		void removeAllCookies(__JniBaseClass arg0);
+		void removeAllCookies(JObject arg0);
 		void removeExpiredCookie();
 		void removeSessionCookie();
-		void removeSessionCookies(__JniBaseClass arg0);
+		void removeSessionCookies(JObject arg0);
 		void setAcceptCookie(jboolean arg0);
 		void setAcceptThirdPartyCookies(android::webkit::WebView arg0, jboolean arg1);
 		void setCookie(jstring arg0, jstring arg1);
-		void setCookie(jstring arg0, jstring arg1, __JniBaseClass arg2);
+		void setCookie(jstring arg0, jstring arg1, JObject arg2);
 	};
 } // namespace android::webkit
 

@@ -683,7 +683,7 @@ namespace android::hardware::camera2
 			"()J"
 		);
 	}
-	__JniBaseClass CaptureResult::getKeys()
+	JObject CaptureResult::getKeys()
 	{
 		return callObjectMethod(
 			"getKeys",

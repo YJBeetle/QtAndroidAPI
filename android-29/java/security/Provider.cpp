@@ -20,7 +20,7 @@ namespace java::security
 			"()V"
 		);
 	}
-	jobject Provider::compute(jobject arg0, __JniBaseClass arg1)
+	jobject Provider::compute(jobject arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"compute",
@@ -29,7 +29,7 @@ namespace java::security
 			arg1.object()
 		).object<jobject>();
 	}
-	jobject Provider::computeIfAbsent(jobject arg0, __JniBaseClass arg1)
+	jobject Provider::computeIfAbsent(jobject arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"computeIfAbsent",
@@ -38,7 +38,7 @@ namespace java::security
 			arg1.object()
 		).object<jobject>();
 	}
-	jobject Provider::computeIfPresent(jobject arg0, __JniBaseClass arg1)
+	jobject Provider::computeIfPresent(jobject arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"computeIfPresent",
@@ -55,21 +55,21 @@ namespace java::security
 			arg0
 		);
 	}
-	__JniBaseClass Provider::elements()
+	JObject Provider::elements()
 	{
 		return callObjectMethod(
 			"elements",
 			"()Ljava/util/Enumeration;"
 		);
 	}
-	__JniBaseClass Provider::entrySet()
+	JObject Provider::entrySet()
 	{
 		return callObjectMethod(
 			"entrySet",
 			"()Ljava/util/Set;"
 		);
 	}
-	void Provider::forEach(__JniBaseClass arg0)
+	void Provider::forEach(JObject arg0)
 	{
 		callMethod<void>(
 			"forEach",
@@ -125,7 +125,7 @@ namespace java::security
 			arg1
 		);
 	}
-	__JniBaseClass Provider::getServices()
+	JObject Provider::getServices()
 	{
 		return callObjectMethod(
 			"getServices",
@@ -153,14 +153,14 @@ namespace java::security
 			"()Z"
 		);
 	}
-	__JniBaseClass Provider::keySet()
+	JObject Provider::keySet()
 	{
 		return callObjectMethod(
 			"keySet",
 			"()Ljava/util/Set;"
 		);
 	}
-	__JniBaseClass Provider::keys()
+	JObject Provider::keys()
 	{
 		return callObjectMethod(
 			"keys",
@@ -175,7 +175,7 @@ namespace java::security
 			arg0.object()
 		);
 	}
-	jobject Provider::merge(jobject arg0, jobject arg1, __JniBaseClass arg2)
+	jobject Provider::merge(jobject arg0, jobject arg1, JObject arg2)
 	{
 		return callObjectMethod(
 			"merge",
@@ -194,7 +194,7 @@ namespace java::security
 			arg1
 		).object<jobject>();
 	}
-	void Provider::putAll(__JniBaseClass arg0)
+	void Provider::putAll(JObject arg0)
 	{
 		callMethod<void>(
 			"putAll",
@@ -247,7 +247,7 @@ namespace java::security
 			arg1
 		).object<jobject>();
 	}
-	void Provider::replaceAll(__JniBaseClass arg0)
+	void Provider::replaceAll(JObject arg0)
 	{
 		callMethod<void>(
 			"replaceAll",
@@ -262,7 +262,7 @@ namespace java::security
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	__JniBaseClass Provider::values()
+	JObject Provider::values()
 	{
 		return callObjectMethod(
 			"values",

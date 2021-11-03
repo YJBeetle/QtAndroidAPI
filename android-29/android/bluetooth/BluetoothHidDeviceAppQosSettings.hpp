@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::os
 {
@@ -9,18 +9,18 @@ namespace android::os
 
 namespace android::bluetooth
 {
-	class BluetoothHidDeviceAppQosSettings : public __JniBaseClass
+	class BluetoothHidDeviceAppQosSettings : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint MAX();
 		static jint SERVICE_BEST_EFFORT();
 		static jint SERVICE_GUARANTEED();
 		static jint SERVICE_NO_TRAFFIC();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit BluetoothHidDeviceAppQosSettings(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit BluetoothHidDeviceAppQosSettings(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		BluetoothHidDeviceAppQosSettings(QAndroidJniObject obj);
 		
 		// Constructors

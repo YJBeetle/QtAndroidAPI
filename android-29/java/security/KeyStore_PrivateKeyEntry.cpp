@@ -6,18 +6,18 @@ namespace java::security
 	// Fields
 	
 	// QAndroidJniObject forward
-	KeyStore_PrivateKeyEntry::KeyStore_PrivateKeyEntry(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	KeyStore_PrivateKeyEntry::KeyStore_PrivateKeyEntry(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	KeyStore_PrivateKeyEntry::KeyStore_PrivateKeyEntry(__JniBaseClass arg0, jarray arg1)
-		: __JniBaseClass(
+	KeyStore_PrivateKeyEntry::KeyStore_PrivateKeyEntry(JObject arg0, jarray arg1)
+		: JObject(
 			"java.security.KeyStore$PrivateKeyEntry",
 			"(Ljava/security/PrivateKey;[Ljava/security/cert/Certificate;)V",
 			arg0.object(),
 			arg1
 		) {}
-	KeyStore_PrivateKeyEntry::KeyStore_PrivateKeyEntry(__JniBaseClass arg0, jarray arg1, __JniBaseClass arg2)
-		: __JniBaseClass(
+	KeyStore_PrivateKeyEntry::KeyStore_PrivateKeyEntry(JObject arg0, jarray arg1, JObject arg2)
+		: JObject(
 			"java.security.KeyStore$PrivateKeyEntry",
 			"(Ljava/security/PrivateKey;[Ljava/security/cert/Certificate;Ljava/util/Set;)V",
 			arg0.object(),
@@ -26,7 +26,7 @@ namespace java::security
 		) {}
 	
 	// Methods
-	__JniBaseClass KeyStore_PrivateKeyEntry::getAttributes()
+	JObject KeyStore_PrivateKeyEntry::getAttributes()
 	{
 		return callObjectMethod(
 			"getAttributes",
@@ -47,7 +47,7 @@ namespace java::security
 			"()[Ljava/security/cert/Certificate;"
 		).object<jarray>();
 	}
-	__JniBaseClass KeyStore_PrivateKeyEntry::getPrivateKey()
+	JObject KeyStore_PrivateKeyEntry::getPrivateKey()
 	{
 		return callObjectMethod(
 			"getPrivateKey",

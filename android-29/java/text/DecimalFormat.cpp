@@ -100,7 +100,7 @@ namespace java::text
 			arg2.object()
 		);
 	}
-	__JniBaseClass DecimalFormat::formatToCharacterIterator(jobject arg0)
+	JObject DecimalFormat::formatToCharacterIterator(jobject arg0)
 	{
 		return callObjectMethod(
 			"formatToCharacterIterator",

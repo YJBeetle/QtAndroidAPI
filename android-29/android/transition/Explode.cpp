@@ -18,7 +18,7 @@ namespace android::transition
 			"android.transition.Explode",
 			"()V"
 		) {}
-	Explode::Explode(android::content::Context arg0, __JniBaseClass arg1)
+	Explode::Explode(android::content::Context arg0, JObject arg1)
 		: android::transition::Visibility(
 			"android.transition.Explode",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",

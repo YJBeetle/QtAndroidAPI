@@ -1,17 +1,17 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 
 namespace android::drm
 {
-	class DrmSupportInfo : public __JniBaseClass
+	class DrmSupportInfo : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit DrmSupportInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit DrmSupportInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		DrmSupportInfo(QAndroidJniObject obj);
 		
 		// Constructors
@@ -23,8 +23,8 @@ namespace android::drm
 		jboolean equals(jobject arg0);
 		jstring getDescriprition();
 		jstring getDescription();
-		__JniBaseClass getFileSuffixIterator();
-		__JniBaseClass getMimeTypeIterator();
+		JObject getFileSuffixIterator();
+		JObject getMimeTypeIterator();
 		jint hashCode();
 		void setDescription(jstring arg0);
 	};
