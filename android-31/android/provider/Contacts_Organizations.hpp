@@ -10,6 +10,8 @@ namespace android::net
 {
 	class Uri;
 }
+class JString;
+class JString;
 
 namespace android::provider
 {
@@ -17,9 +19,9 @@ namespace android::provider
 	{
 	public:
 		// Fields
-		static jstring CONTENT_DIRECTORY();
+		static JString CONTENT_DIRECTORY();
 		static android::net::Uri CONTENT_URI();
-		static jstring DEFAULT_SORT_ORDER();
+		static JString DEFAULT_SORT_ORDER();
 		
 		// QJniObject forward
 		template<typename ...Ts> explicit Contacts_Organizations(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
@@ -28,7 +30,7 @@ namespace android::provider
 		// Constructors
 		
 		// Methods
-		static jstring getDisplayLabel(android::content::Context arg0, jint arg1, jstring arg2);
+		static JString getDisplayLabel(android::content::Context arg0, jint arg1, JString arg2);
 	};
 } // namespace android::provider
 

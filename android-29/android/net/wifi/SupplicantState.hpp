@@ -1,12 +1,13 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "../../../java/lang/Enum.hpp"
 
+class JArray;
 namespace android::os
 {
 	class Parcel;
 }
+class JString;
 
 namespace android::net::wifi
 {
@@ -36,8 +37,8 @@ namespace android::net::wifi
 		
 		// Methods
 		static jboolean isValidState(android::net::wifi::SupplicantState arg0);
-		static android::net::wifi::SupplicantState valueOf(jstring arg0);
-		static jarray values();
+		static android::net::wifi::SupplicantState valueOf(JString arg0);
+		static JArray values();
 		jint describeContents();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};

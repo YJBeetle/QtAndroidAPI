@@ -2,42 +2,43 @@
 #include "./GetWalletCardsRequest.hpp"
 #include "./SelectWalletCardRequest.hpp"
 #include "./WalletServiceEvent.hpp"
+#include "../../../JString.hpp"
 #include "./QuickAccessWalletService.hpp"
 
 namespace android::service::quickaccesswallet
 {
 	// Fields
-	jstring QuickAccessWalletService::ACTION_VIEW_WALLET()
+	JString QuickAccessWalletService::ACTION_VIEW_WALLET()
 	{
 		return getStaticObjectField(
 			"android.service.quickaccesswallet.QuickAccessWalletService",
 			"ACTION_VIEW_WALLET",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring QuickAccessWalletService::ACTION_VIEW_WALLET_SETTINGS()
+	JString QuickAccessWalletService::ACTION_VIEW_WALLET_SETTINGS()
 	{
 		return getStaticObjectField(
 			"android.service.quickaccesswallet.QuickAccessWalletService",
 			"ACTION_VIEW_WALLET_SETTINGS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring QuickAccessWalletService::SERVICE_INTERFACE()
+	JString QuickAccessWalletService::SERVICE_INTERFACE()
 	{
 		return getStaticObjectField(
 			"android.service.quickaccesswallet.QuickAccessWalletService",
 			"SERVICE_INTERFACE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring QuickAccessWalletService::SERVICE_META_DATA()
+	JString QuickAccessWalletService::SERVICE_META_DATA()
 	{
 		return getStaticObjectField(
 			"android.service.quickaccesswallet.QuickAccessWalletService",
 			"SERVICE_META_DATA",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QJniObject forward

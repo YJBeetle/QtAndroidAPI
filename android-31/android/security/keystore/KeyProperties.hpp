@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JString;
 
 namespace android::security::keystore
 {
@@ -11,30 +12,30 @@ namespace android::security::keystore
 		// Fields
 		static jint AUTH_BIOMETRIC_STRONG();
 		static jint AUTH_DEVICE_CREDENTIAL();
-		static jstring BLOCK_MODE_CBC();
-		static jstring BLOCK_MODE_CTR();
-		static jstring BLOCK_MODE_ECB();
-		static jstring BLOCK_MODE_GCM();
-		static jstring DIGEST_MD5();
-		static jstring DIGEST_NONE();
-		static jstring DIGEST_SHA1();
-		static jstring DIGEST_SHA224();
-		static jstring DIGEST_SHA256();
-		static jstring DIGEST_SHA384();
-		static jstring DIGEST_SHA512();
-		static jstring ENCRYPTION_PADDING_NONE();
-		static jstring ENCRYPTION_PADDING_PKCS7();
-		static jstring ENCRYPTION_PADDING_RSA_OAEP();
-		static jstring ENCRYPTION_PADDING_RSA_PKCS1();
-		static jstring KEY_ALGORITHM_3DES();
-		static jstring KEY_ALGORITHM_AES();
-		static jstring KEY_ALGORITHM_EC();
-		static jstring KEY_ALGORITHM_HMAC_SHA1();
-		static jstring KEY_ALGORITHM_HMAC_SHA224();
-		static jstring KEY_ALGORITHM_HMAC_SHA256();
-		static jstring KEY_ALGORITHM_HMAC_SHA384();
-		static jstring KEY_ALGORITHM_HMAC_SHA512();
-		static jstring KEY_ALGORITHM_RSA();
+		static JString BLOCK_MODE_CBC();
+		static JString BLOCK_MODE_CTR();
+		static JString BLOCK_MODE_ECB();
+		static JString BLOCK_MODE_GCM();
+		static JString DIGEST_MD5();
+		static JString DIGEST_NONE();
+		static JString DIGEST_SHA1();
+		static JString DIGEST_SHA224();
+		static JString DIGEST_SHA256();
+		static JString DIGEST_SHA384();
+		static JString DIGEST_SHA512();
+		static JString ENCRYPTION_PADDING_NONE();
+		static JString ENCRYPTION_PADDING_PKCS7();
+		static JString ENCRYPTION_PADDING_RSA_OAEP();
+		static JString ENCRYPTION_PADDING_RSA_PKCS1();
+		static JString KEY_ALGORITHM_3DES();
+		static JString KEY_ALGORITHM_AES();
+		static JString KEY_ALGORITHM_EC();
+		static JString KEY_ALGORITHM_HMAC_SHA1();
+		static JString KEY_ALGORITHM_HMAC_SHA224();
+		static JString KEY_ALGORITHM_HMAC_SHA256();
+		static JString KEY_ALGORITHM_HMAC_SHA384();
+		static JString KEY_ALGORITHM_HMAC_SHA512();
+		static JString KEY_ALGORITHM_RSA();
 		static jint ORIGIN_GENERATED();
 		static jint ORIGIN_IMPORTED();
 		static jint ORIGIN_SECURELY_IMPORTED();
@@ -51,8 +52,8 @@ namespace android::security::keystore
 		static jint SECURITY_LEVEL_TRUSTED_ENVIRONMENT();
 		static jint SECURITY_LEVEL_UNKNOWN();
 		static jint SECURITY_LEVEL_UNKNOWN_SECURE();
-		static jstring SIGNATURE_PADDING_RSA_PKCS1();
-		static jstring SIGNATURE_PADDING_RSA_PSS();
+		static JString SIGNATURE_PADDING_RSA_PKCS1();
+		static JString SIGNATURE_PADDING_RSA_PSS();
 		static jint UNRESTRICTED_USAGE_COUNT();
 		
 		// QJniObject forward

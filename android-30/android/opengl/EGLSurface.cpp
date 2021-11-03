@@ -1,3 +1,4 @@
+#include "../../JObject.hpp"
 #include "./EGLSurface.hpp"
 
 namespace android::opengl
@@ -10,12 +11,12 @@ namespace android::opengl
 	// Constructors
 	
 	// Methods
-	jboolean EGLSurface::equals(jobject arg0)
+	jboolean EGLSurface::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 } // namespace android::opengl

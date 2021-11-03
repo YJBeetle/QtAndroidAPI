@@ -1,5 +1,9 @@
+#include "../../JArray.hpp"
 #include "../io/InputStream.hpp"
 #include "../io/ObjectInputStream.hpp"
+#include "../../JClass.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./Provider_Service.hpp"
 #include "./Provider.hpp"
 
@@ -20,39 +24,39 @@ namespace java::security
 			"()V"
 		);
 	}
-	jobject Provider::compute(jobject arg0, JObject arg1)
+	JObject Provider::compute(JObject arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"compute",
 			"(Ljava/lang/Object;Ljava/util/function/BiFunction;)Ljava/lang/Object;",
-			arg0,
+			arg0.object<jobject>(),
 			arg1.object()
-		).object<jobject>();
+		);
 	}
-	jobject Provider::computeIfAbsent(jobject arg0, JObject arg1)
+	JObject Provider::computeIfAbsent(JObject arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"computeIfAbsent",
 			"(Ljava/lang/Object;Ljava/util/function/Function;)Ljava/lang/Object;",
-			arg0,
+			arg0.object<jobject>(),
 			arg1.object()
-		).object<jobject>();
+		);
 	}
-	jobject Provider::computeIfPresent(jobject arg0, JObject arg1)
+	JObject Provider::computeIfPresent(JObject arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"computeIfPresent",
 			"(Ljava/lang/Object;Ljava/util/function/BiFunction;)Ljava/lang/Object;",
-			arg0,
+			arg0.object<jobject>(),
 			arg1.object()
-		).object<jobject>();
+		);
 	}
-	java::security::Provider Provider::configure(jstring arg0)
+	java::security::Provider Provider::configure(JString arg0)
 	{
 		return callObjectMethod(
 			"configure",
 			"(Ljava/lang/String;)Ljava/security/Provider;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	JObject Provider::elements()
@@ -77,52 +81,52 @@ namespace java::security
 			arg0.object()
 		);
 	}
-	jobject Provider::get(jobject arg0)
+	JObject Provider::get(JObject arg0)
 	{
 		return callObjectMethod(
 			"get",
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0
-		).object<jobject>();
+			arg0.object<jobject>()
+		);
 	}
-	jstring Provider::getInfo()
+	JString Provider::getInfo()
 	{
 		return callObjectMethod(
 			"getInfo",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Provider::getName()
+	JString Provider::getName()
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jobject Provider::getOrDefault(jobject arg0, jobject arg1)
+	JObject Provider::getOrDefault(JObject arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"getOrDefault",
 			"(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0,
-			arg1
-		).object<jobject>();
+			arg0.object<jobject>(),
+			arg1.object<jobject>()
+		);
 	}
-	jstring Provider::getProperty(jstring arg0)
+	JString Provider::getProperty(JString arg0)
 	{
 		return callObjectMethod(
 			"getProperty",
 			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
+			arg0.object<jstring>()
+		);
 	}
-	java::security::Provider_Service Provider::getService(jstring arg0, jstring arg1)
+	java::security::Provider_Service Provider::getService(JString arg0, JString arg1)
 	{
 		return callObjectMethod(
 			"getService",
 			"(Ljava/lang/String;Ljava/lang/String;)Ljava/security/Provider$Service;",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		);
 	}
 	JObject Provider::getServices()
@@ -139,12 +143,12 @@ namespace java::security
 			"()D"
 		);
 	}
-	jstring Provider::getVersionStr()
+	JString Provider::getVersionStr()
 	{
 		return callObjectMethod(
 			"getVersionStr",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jboolean Provider::isConfigured()
 	{
@@ -175,24 +179,24 @@ namespace java::security
 			arg0.object()
 		);
 	}
-	jobject Provider::merge(jobject arg0, jobject arg1, JObject arg2)
+	JObject Provider::merge(JObject arg0, JObject arg1, JObject arg2)
 	{
 		return callObjectMethod(
 			"merge",
 			"(Ljava/lang/Object;Ljava/lang/Object;Ljava/util/function/BiFunction;)Ljava/lang/Object;",
-			arg0,
-			arg1,
+			arg0.object<jobject>(),
+			arg1.object<jobject>(),
 			arg2.object()
-		).object<jobject>();
+		);
 	}
-	jobject Provider::put(jobject arg0, jobject arg1)
+	JObject Provider::put(JObject arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"put",
 			"(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0,
-			arg1
-		).object<jobject>();
+			arg0.object<jobject>(),
+			arg1.object<jobject>()
+		);
 	}
 	void Provider::putAll(JObject arg0)
 	{
@@ -202,50 +206,50 @@ namespace java::security
 			arg0.object()
 		);
 	}
-	jobject Provider::putIfAbsent(jobject arg0, jobject arg1)
+	JObject Provider::putIfAbsent(JObject arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"putIfAbsent",
 			"(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0,
-			arg1
-		).object<jobject>();
+			arg0.object<jobject>(),
+			arg1.object<jobject>()
+		);
 	}
-	jboolean Provider::remove(jobject arg0, jobject arg1)
+	jboolean Provider::remove(JObject arg0, JObject arg1)
 	{
 		return callMethod<jboolean>(
 			"remove",
 			"(Ljava/lang/Object;Ljava/lang/Object;)Z",
-			arg0,
-			arg1
+			arg0.object<jobject>(),
+			arg1.object<jobject>()
 		);
 	}
-	jobject Provider::remove(jobject arg0)
+	JObject Provider::remove(JObject arg0)
 	{
 		return callObjectMethod(
 			"remove",
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0
-		).object<jobject>();
+			arg0.object<jobject>()
+		);
 	}
-	jboolean Provider::replace(jobject arg0, jobject arg1, jobject arg2)
+	jboolean Provider::replace(JObject arg0, JObject arg1, JObject arg2)
 	{
 		return callMethod<jboolean>(
 			"replace",
 			"(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Z",
-			arg0,
-			arg1,
-			arg2
+			arg0.object<jobject>(),
+			arg1.object<jobject>(),
+			arg2.object<jobject>()
 		);
 	}
-	jobject Provider::replace(jobject arg0, jobject arg1)
+	JObject Provider::replace(JObject arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"replace",
 			"(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0,
-			arg1
-		).object<jobject>();
+			arg0.object<jobject>(),
+			arg1.object<jobject>()
+		);
 	}
 	void Provider::replaceAll(JObject arg0)
 	{
@@ -255,12 +259,12 @@ namespace java::security
 			arg0.object()
 		);
 	}
-	jstring Provider::toString()
+	JString Provider::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	JObject Provider::values()
 	{

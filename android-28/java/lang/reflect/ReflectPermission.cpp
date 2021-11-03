@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./ReflectPermission.hpp"
 
 namespace java::lang::reflect
@@ -8,18 +9,18 @@ namespace java::lang::reflect
 	ReflectPermission::ReflectPermission(QJniObject obj) : java::security::BasicPermission(obj) {}
 	
 	// Constructors
-	ReflectPermission::ReflectPermission(jstring arg0)
+	ReflectPermission::ReflectPermission(JString arg0)
 		: java::security::BasicPermission(
 			"java.lang.reflect.ReflectPermission",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	ReflectPermission::ReflectPermission(jstring arg0, jstring arg1)
+	ReflectPermission::ReflectPermission(JString arg0, JString arg1)
 		: java::security::BasicPermission(
 			"java.lang.reflect.ReflectPermission",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		) {}
 	
 	// Methods

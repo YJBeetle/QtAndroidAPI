@@ -2,7 +2,6 @@
 
 #include "../../JObject.hpp"
 
-
 namespace android::media
 {
 	class AudioMetadata : public JObject

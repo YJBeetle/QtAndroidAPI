@@ -1,6 +1,8 @@
 #include "../graphics/drawable/Icon.hpp"
 #include "../os/Bundle.hpp"
 #include "../os/Parcel.hpp"
+#include "../../JString.hpp"
+#include "../../JObject.hpp"
 #include "./StatusHints.hpp"
 
 namespace android::telecom
@@ -19,11 +21,11 @@ namespace android::telecom
 	StatusHints::StatusHints(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	StatusHints::StatusHints(jstring arg0, android::graphics::drawable::Icon arg1, android::os::Bundle arg2)
+	StatusHints::StatusHints(JString arg0, android::graphics::drawable::Icon arg1, android::os::Bundle arg2)
 		: JObject(
 			"android.telecom.StatusHints",
 			"(Ljava/lang/CharSequence;Landroid/graphics/drawable/Icon;Landroid/os/Bundle;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
 			arg2.object()
 		) {}
@@ -36,12 +38,12 @@ namespace android::telecom
 			"()I"
 		);
 	}
-	jboolean StatusHints::equals(jobject arg0)
+	jboolean StatusHints::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	android::os::Bundle StatusHints::getExtras()
@@ -58,12 +60,12 @@ namespace android::telecom
 			"()Landroid/graphics/drawable/Icon;"
 		);
 	}
-	jstring StatusHints::getLabel()
+	JString StatusHints::getLabel()
 	{
 		return callObjectMethod(
 			"getLabel",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	jint StatusHints::hashCode()
 	{

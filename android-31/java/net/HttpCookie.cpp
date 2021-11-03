@@ -1,3 +1,6 @@
+#include "../../JArray.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "../util/TimeZone.hpp"
 #include "./HttpCookie.hpp"
 
@@ -9,62 +12,62 @@ namespace java::net
 	HttpCookie::HttpCookie(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	HttpCookie::HttpCookie(jstring arg0, jstring arg1)
+	HttpCookie::HttpCookie(JString arg0, JString arg1)
 		: JObject(
 			"java.net.HttpCookie",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		) {}
 	
 	// Methods
-	jboolean HttpCookie::domainMatches(jstring arg0, jstring arg1)
+	jboolean HttpCookie::domainMatches(JString arg0, JString arg1)
 	{
 		return callStaticMethod<jboolean>(
 			"java.net.HttpCookie",
 			"domainMatches",
 			"(Ljava/lang/String;Ljava/lang/String;)Z",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		);
 	}
-	JObject HttpCookie::parse(jstring arg0)
+	JObject HttpCookie::parse(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"java.net.HttpCookie",
 			"parse",
 			"(Ljava/lang/String;)Ljava/util/List;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jobject HttpCookie::clone()
+	JObject HttpCookie::clone()
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
-	jboolean HttpCookie::equals(jobject arg0)
+	jboolean HttpCookie::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jstring HttpCookie::getComment()
+	JString HttpCookie::getComment()
 	{
 		return callObjectMethod(
 			"getComment",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring HttpCookie::getCommentURL()
+	JString HttpCookie::getCommentURL()
 	{
 		return callObjectMethod(
 			"getCommentURL",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jboolean HttpCookie::getDiscard()
 	{
@@ -73,12 +76,12 @@ namespace java::net
 			"()Z"
 		);
 	}
-	jstring HttpCookie::getDomain()
+	JString HttpCookie::getDomain()
 	{
 		return callObjectMethod(
 			"getDomain",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jlong HttpCookie::getMaxAge()
 	{
@@ -87,26 +90,26 @@ namespace java::net
 			"()J"
 		);
 	}
-	jstring HttpCookie::getName()
+	JString HttpCookie::getName()
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring HttpCookie::getPath()
+	JString HttpCookie::getPath()
 	{
 		return callObjectMethod(
 			"getPath",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring HttpCookie::getPortlist()
+	JString HttpCookie::getPortlist()
 	{
 		return callObjectMethod(
 			"getPortlist",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jboolean HttpCookie::getSecure()
 	{
@@ -115,12 +118,12 @@ namespace java::net
 			"()Z"
 		);
 	}
-	jstring HttpCookie::getValue()
+	JString HttpCookie::getValue()
 	{
 		return callObjectMethod(
 			"getValue",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint HttpCookie::getVersion()
 	{
@@ -150,20 +153,20 @@ namespace java::net
 			"()Z"
 		);
 	}
-	void HttpCookie::setComment(jstring arg0)
+	void HttpCookie::setComment(JString arg0)
 	{
 		callMethod<void>(
 			"setComment",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	void HttpCookie::setCommentURL(jstring arg0)
+	void HttpCookie::setCommentURL(JString arg0)
 	{
 		callMethod<void>(
 			"setCommentURL",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void HttpCookie::setDiscard(jboolean arg0)
@@ -174,12 +177,12 @@ namespace java::net
 			arg0
 		);
 	}
-	void HttpCookie::setDomain(jstring arg0)
+	void HttpCookie::setDomain(JString arg0)
 	{
 		callMethod<void>(
 			"setDomain",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void HttpCookie::setHttpOnly(jboolean arg0)
@@ -198,20 +201,20 @@ namespace java::net
 			arg0
 		);
 	}
-	void HttpCookie::setPath(jstring arg0)
+	void HttpCookie::setPath(JString arg0)
 	{
 		callMethod<void>(
 			"setPath",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	void HttpCookie::setPortlist(jstring arg0)
+	void HttpCookie::setPortlist(JString arg0)
 	{
 		callMethod<void>(
 			"setPortlist",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void HttpCookie::setSecure(jboolean arg0)
@@ -222,12 +225,12 @@ namespace java::net
 			arg0
 		);
 	}
-	void HttpCookie::setValue(jstring arg0)
+	void HttpCookie::setValue(JString arg0)
 	{
 		callMethod<void>(
 			"setValue",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void HttpCookie::setVersion(jint arg0)
@@ -238,12 +241,12 @@ namespace java::net
 			arg0
 		);
 	}
-	jstring HttpCookie::toString()
+	JString HttpCookie::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::net
 

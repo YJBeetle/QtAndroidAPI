@@ -1,9 +1,12 @@
+#include "../../../JIntArray.hpp"
 #include "./CollationElementIterator.hpp"
 #include "./CollationKey.hpp"
 #include "./Collator.hpp"
 #include "./UCharacterIterator.hpp"
 #include "./UnicodeSet.hpp"
 #include "../util/VersionInfo.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./RuleBasedCollator.hpp"
 
 namespace android::icu::text
@@ -14,20 +17,20 @@ namespace android::icu::text
 	RuleBasedCollator::RuleBasedCollator(QJniObject obj) : android::icu::text::Collator(obj) {}
 	
 	// Constructors
-	RuleBasedCollator::RuleBasedCollator(jstring arg0)
+	RuleBasedCollator::RuleBasedCollator(JString arg0)
 		: android::icu::text::Collator(
 			"android.icu.text.RuleBasedCollator",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods
-	jobject RuleBasedCollator::clone()
+	JObject RuleBasedCollator::clone()
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
 	android::icu::text::RuleBasedCollator RuleBasedCollator::cloneAsThawed()
 	{
@@ -36,21 +39,21 @@ namespace android::icu::text
 			"()Landroid/icu/text/RuleBasedCollator;"
 		);
 	}
-	jint RuleBasedCollator::compare(jstring arg0, jstring arg1)
+	jint RuleBasedCollator::compare(JString arg0, JString arg1)
 	{
 		return callMethod<jint>(
 			"compare",
 			"(Ljava/lang/String;Ljava/lang/String;)I",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		);
 	}
-	jboolean RuleBasedCollator::equals(jobject arg0)
+	jboolean RuleBasedCollator::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	android::icu::text::Collator RuleBasedCollator::freeze()
@@ -68,12 +71,12 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	android::icu::text::CollationElementIterator RuleBasedCollator::getCollationElementIterator(jstring arg0)
+	android::icu::text::CollationElementIterator RuleBasedCollator::getCollationElementIterator(JString arg0)
 	{
 		return callObjectMethod(
 			"getCollationElementIterator",
 			"(Ljava/lang/String;)Landroid/icu/text/CollationElementIterator;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::icu::text::CollationElementIterator RuleBasedCollator::getCollationElementIterator(JObject arg0)
@@ -84,12 +87,12 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	android::icu::text::CollationKey RuleBasedCollator::getCollationKey(jstring arg0)
+	android::icu::text::CollationKey RuleBasedCollator::getCollationKey(JString arg0)
 	{
 		return callObjectMethod(
 			"getCollationKey",
 			"(Ljava/lang/String;)Landroid/icu/text/CollationKey;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void RuleBasedCollator::getContractionsAndExpansions(android::icu::text::UnicodeSet arg0, android::icu::text::UnicodeSet arg1, jboolean arg2)
@@ -123,27 +126,27 @@ namespace android::icu::text
 			"()Z"
 		);
 	}
-	jintArray RuleBasedCollator::getReorderCodes()
+	JIntArray RuleBasedCollator::getReorderCodes()
 	{
 		return callObjectMethod(
 			"getReorderCodes",
 			"()[I"
-		).object<jintArray>();
+		);
 	}
-	jstring RuleBasedCollator::getRules()
+	JString RuleBasedCollator::getRules()
 	{
 		return callObjectMethod(
 			"getRules",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring RuleBasedCollator::getRules(jboolean arg0)
+	JString RuleBasedCollator::getRules(jboolean arg0)
 	{
 		return callObjectMethod(
 			"getRules",
 			"(Z)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
 	jint RuleBasedCollator::getStrength()
 	{
@@ -327,12 +330,12 @@ namespace android::icu::text
 			"()V"
 		);
 	}
-	void RuleBasedCollator::setReorderCodes(jintArray arg0)
+	void RuleBasedCollator::setReorderCodes(JIntArray arg0)
 	{
 		callMethod<void>(
 			"setReorderCodes",
 			"([I)V",
-			arg0
+			arg0.object<jintArray>()
 		);
 	}
 	void RuleBasedCollator::setStrength(jint arg0)

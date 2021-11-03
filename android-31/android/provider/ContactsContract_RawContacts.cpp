@@ -1,6 +1,7 @@
 #include "../content/ContentResolver.hpp"
 #include "../content/Context.hpp"
 #include "../net/Uri.hpp"
+#include "../../JString.hpp"
 #include "./ContactsContract_RawContacts.hpp"
 
 namespace android::provider
@@ -34,21 +35,21 @@ namespace android::provider
 			"AGGREGATION_MODE_SUSPENDED"
 		);
 	}
-	jstring ContactsContract_RawContacts::CONTENT_ITEM_TYPE()
+	JString ContactsContract_RawContacts::CONTENT_ITEM_TYPE()
 	{
 		return getStaticObjectField(
 			"android.provider.ContactsContract$RawContacts",
 			"CONTENT_ITEM_TYPE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ContactsContract_RawContacts::CONTENT_TYPE()
+	JString ContactsContract_RawContacts::CONTENT_TYPE()
 	{
 		return getStaticObjectField(
 			"android.provider.ContactsContract$RawContacts",
 			"CONTENT_TYPE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::net::Uri ContactsContract_RawContacts::CONTENT_URI()
 	{
@@ -75,23 +76,23 @@ namespace android::provider
 			arg1.object()
 		);
 	}
-	jstring ContactsContract_RawContacts::getLocalAccountName(android::content::Context arg0)
+	JString ContactsContract_RawContacts::getLocalAccountName(android::content::Context arg0)
 	{
 		return callStaticObjectMethod(
 			"android.provider.ContactsContract$RawContacts",
 			"getLocalAccountName",
 			"(Landroid/content/Context;)Ljava/lang/String;",
 			arg0.object()
-		).object<jstring>();
+		);
 	}
-	jstring ContactsContract_RawContacts::getLocalAccountType(android::content::Context arg0)
+	JString ContactsContract_RawContacts::getLocalAccountType(android::content::Context arg0)
 	{
 		return callStaticObjectMethod(
 			"android.provider.ContactsContract$RawContacts",
 			"getLocalAccountType",
 			"(Landroid/content/Context;)Ljava/lang/String;",
 			arg0.object()
-		).object<jstring>();
+		);
 	}
 	JObject ContactsContract_RawContacts::newEntityIterator(JObject arg0)
 	{

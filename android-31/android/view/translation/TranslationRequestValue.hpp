@@ -6,6 +6,9 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
+class JObject;
+class JString;
 
 namespace android::view::translation
 {
@@ -22,12 +25,12 @@ namespace android::view::translation
 		// Constructors
 		
 		// Methods
-		static android::view::translation::TranslationRequestValue forText(jstring arg0);
+		static android::view::translation::TranslationRequestValue forText(JString arg0);
 		jint describeContents();
-		jboolean equals(jobject arg0);
-		jstring getText();
+		jboolean equals(JObject arg0);
+		JString getText();
 		jint hashCode();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::view::translation

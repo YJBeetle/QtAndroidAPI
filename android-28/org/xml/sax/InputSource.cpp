@@ -1,5 +1,6 @@
 #include "../../../java/io/InputStream.hpp"
 #include "../../../java/io/Reader.hpp"
+#include "../../../JString.hpp"
 #include "./InputSource.hpp"
 
 namespace org::xml::sax
@@ -27,11 +28,11 @@ namespace org::xml::sax
 			"(Ljava/io/Reader;)V",
 			arg0.object()
 		) {}
-	InputSource::InputSource(jstring arg0)
+	InputSource::InputSource(JString arg0)
 		: JObject(
 			"org.xml.sax.InputSource",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods
@@ -49,26 +50,26 @@ namespace org::xml::sax
 			"()Ljava/io/Reader;"
 		);
 	}
-	jstring InputSource::getEncoding()
+	JString InputSource::getEncoding()
 	{
 		return callObjectMethod(
 			"getEncoding",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring InputSource::getPublicId()
+	JString InputSource::getPublicId()
 	{
 		return callObjectMethod(
 			"getPublicId",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring InputSource::getSystemId()
+	JString InputSource::getSystemId()
 	{
 		return callObjectMethod(
 			"getSystemId",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jboolean InputSource::isEmpty()
 	{
@@ -93,28 +94,28 @@ namespace org::xml::sax
 			arg0.object()
 		);
 	}
-	void InputSource::setEncoding(jstring arg0)
+	void InputSource::setEncoding(JString arg0)
 	{
 		callMethod<void>(
 			"setEncoding",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	void InputSource::setPublicId(jstring arg0)
+	void InputSource::setPublicId(JString arg0)
 	{
 		callMethod<void>(
 			"setPublicId",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	void InputSource::setSystemId(jstring arg0)
+	void InputSource::setSystemId(JString arg0)
 	{
 		callMethod<void>(
 			"setSystemId",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 } // namespace org::xml::sax

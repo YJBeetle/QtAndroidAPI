@@ -1,6 +1,5 @@
 #pragma once
 
-#include "../../../../JObject.hpp"
 #include "./Shape.hpp"
 
 namespace android::graphics
@@ -19,6 +18,7 @@ namespace android::graphics::drawable::shapes
 {
 	class Shape;
 }
+class JObject;
 
 namespace android::graphics::drawable::shapes
 {
@@ -37,7 +37,7 @@ namespace android::graphics::drawable::shapes
 		// Methods
 		android::graphics::drawable::shapes::PathShape clone();
 		void draw(android::graphics::Canvas arg0, android::graphics::Paint arg1);
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint hashCode();
 	};
 } // namespace android::graphics::drawable::shapes

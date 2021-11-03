@@ -10,6 +10,8 @@ namespace android::view
 {
 	class View;
 }
+class JString;
+class JObject;
 
 namespace android::app
 {
@@ -27,23 +29,23 @@ namespace android::app
 		ActionBar_Tab();
 		
 		// Methods
-		jstring getContentDescription();
+		JString getContentDescription();
 		android::view::View getCustomView();
 		android::graphics::drawable::Drawable getIcon();
 		jint getPosition();
-		jobject getTag();
-		jstring getText();
+		JObject getTag();
+		JString getText();
 		void select();
 		android::app::ActionBar_Tab setContentDescription(jint arg0);
-		android::app::ActionBar_Tab setContentDescription(jstring arg0);
+		android::app::ActionBar_Tab setContentDescription(JString arg0);
 		android::app::ActionBar_Tab setCustomView(android::view::View arg0);
 		android::app::ActionBar_Tab setCustomView(jint arg0);
 		android::app::ActionBar_Tab setIcon(android::graphics::drawable::Drawable arg0);
 		android::app::ActionBar_Tab setIcon(jint arg0);
 		android::app::ActionBar_Tab setTabListener(JObject arg0);
-		android::app::ActionBar_Tab setTag(jobject arg0);
+		android::app::ActionBar_Tab setTag(JObject arg0);
 		android::app::ActionBar_Tab setText(jint arg0);
-		android::app::ActionBar_Tab setText(jstring arg0);
+		android::app::ActionBar_Tab setText(JString arg0);
 	};
 } // namespace android::app
 

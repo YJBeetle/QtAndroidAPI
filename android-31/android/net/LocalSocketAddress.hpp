@@ -6,6 +6,7 @@ namespace android::net
 {
 	class LocalSocketAddress_Namespace;
 }
+class JString;
 
 namespace android::net
 {
@@ -19,11 +20,11 @@ namespace android::net
 		LocalSocketAddress(QJniObject obj);
 		
 		// Constructors
-		LocalSocketAddress(jstring arg0);
-		LocalSocketAddress(jstring arg0, android::net::LocalSocketAddress_Namespace arg1);
+		LocalSocketAddress(JString arg0);
+		LocalSocketAddress(JString arg0, android::net::LocalSocketAddress_Namespace arg1);
 		
 		// Methods
-		jstring getName();
+		JString getName();
 		android::net::LocalSocketAddress_Namespace getNamespace();
 	};
 } // namespace android::net

@@ -1,15 +1,12 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../../java/lang/Exception.hpp"
-#include "../../java/lang/RuntimeException.hpp"
-#include "../../java/lang/IllegalStateException.hpp"
 #include "./ServiceStartNotAllowedException.hpp"
 
 namespace android::os
 {
 	class Parcel;
 }
+class JString;
 
 namespace android::app
 {
@@ -24,7 +21,7 @@ namespace android::app
 		ForegroundServiceStartNotAllowedException(QJniObject obj);
 		
 		// Constructors
-		ForegroundServiceStartNotAllowedException(jstring arg0);
+		ForegroundServiceStartNotAllowedException(JString arg0);
 		
 		// Methods
 		jint describeContents();

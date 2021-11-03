@@ -1,6 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "../view/View.hpp"
 
 namespace android::content
@@ -23,6 +22,7 @@ namespace android::graphics::drawable
 {
 	class Icon;
 }
+class JString;
 
 namespace android::widget
 {
@@ -50,7 +50,7 @@ namespace android::widget
 		android::content::res::ColorStateList getMinuteHandTintList();
 		android::graphics::BlendMode getSecondHandTintBlendMode();
 		android::content::res::ColorStateList getSecondHandTintList();
-		jstring getTimeZone();
+		JString getTimeZone();
 		void onVisibilityAggregated(jboolean arg0);
 		void setDial(android::graphics::drawable::Icon arg0);
 		void setDialTintBlendMode(android::graphics::BlendMode arg0);
@@ -64,7 +64,7 @@ namespace android::widget
 		void setSecondHand(android::graphics::drawable::Icon arg0);
 		void setSecondHandTintBlendMode(android::graphics::BlendMode arg0);
 		void setSecondHandTintList(android::content::res::ColorStateList arg0);
-		void setTimeZone(jstring arg0);
+		void setTimeZone(JString arg0);
 	};
 } // namespace android::widget
 

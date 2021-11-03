@@ -1,5 +1,8 @@
+#include "../../JObjectArray.hpp"
 #include "../io/ObjectInputStream.hpp"
 #include "../io/ObjectOutputStream.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./LinkedList.hpp"
 
 namespace java::util
@@ -23,21 +26,21 @@ namespace java::util
 		) {}
 	
 	// Methods
-	jboolean LinkedList::add(jobject arg0)
+	jboolean LinkedList::add(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"add",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	void LinkedList::add(jint arg0, jobject arg1)
+	void LinkedList::add(jint arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"add",
 			"(ILjava/lang/Object;)V",
 			arg0,
-			arg1
+			arg1.object<jobject>()
 		);
 	}
 	jboolean LinkedList::addAll(JObject arg0)
@@ -57,20 +60,20 @@ namespace java::util
 			arg1.object()
 		);
 	}
-	void LinkedList::addFirst(jobject arg0)
+	void LinkedList::addFirst(JObject arg0)
 	{
 		callMethod<void>(
 			"addFirst",
 			"(Ljava/lang/Object;)V",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	void LinkedList::addLast(jobject arg0)
+	void LinkedList::addLast(JObject arg0)
 	{
 		callMethod<void>(
 			"addLast",
 			"(Ljava/lang/Object;)V",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	void LinkedList::clear()
@@ -80,19 +83,19 @@ namespace java::util
 			"()V"
 		);
 	}
-	jobject LinkedList::clone()
+	JObject LinkedList::clone()
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
-	jboolean LinkedList::contains(jobject arg0)
+	jboolean LinkedList::contains(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"contains",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	JObject LinkedList::descendingIterator()
@@ -102,49 +105,49 @@ namespace java::util
 			"()Ljava/util/Iterator;"
 		);
 	}
-	jobject LinkedList::element()
+	JObject LinkedList::element()
 	{
 		return callObjectMethod(
 			"element",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
-	jobject LinkedList::get(jint arg0)
+	JObject LinkedList::get(jint arg0)
 	{
 		return callObjectMethod(
 			"get",
 			"(I)Ljava/lang/Object;",
 			arg0
-		).object<jobject>();
+		);
 	}
-	jobject LinkedList::getFirst()
+	JObject LinkedList::getFirst()
 	{
 		return callObjectMethod(
 			"getFirst",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
-	jobject LinkedList::getLast()
+	JObject LinkedList::getLast()
 	{
 		return callObjectMethod(
 			"getLast",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
-	jint LinkedList::indexOf(jobject arg0)
+	jint LinkedList::indexOf(JObject arg0)
 	{
 		return callMethod<jint>(
 			"indexOf",
 			"(Ljava/lang/Object;)I",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jint LinkedList::lastIndexOf(jobject arg0)
+	jint LinkedList::lastIndexOf(JObject arg0)
 	{
 		return callMethod<jint>(
 			"lastIndexOf",
 			"(Ljava/lang/Object;)I",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	JObject LinkedList::listIterator(jint arg0)
@@ -155,148 +158,148 @@ namespace java::util
 			arg0
 		);
 	}
-	jboolean LinkedList::offer(jobject arg0)
+	jboolean LinkedList::offer(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"offer",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jboolean LinkedList::offerFirst(jobject arg0)
+	jboolean LinkedList::offerFirst(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"offerFirst",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jboolean LinkedList::offerLast(jobject arg0)
+	jboolean LinkedList::offerLast(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"offerLast",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jobject LinkedList::peek()
+	JObject LinkedList::peek()
 	{
 		return callObjectMethod(
 			"peek",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
-	jobject LinkedList::peekFirst()
+	JObject LinkedList::peekFirst()
 	{
 		return callObjectMethod(
 			"peekFirst",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
-	jobject LinkedList::peekLast()
+	JObject LinkedList::peekLast()
 	{
 		return callObjectMethod(
 			"peekLast",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
-	jobject LinkedList::poll()
+	JObject LinkedList::poll()
 	{
 		return callObjectMethod(
 			"poll",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
-	jobject LinkedList::pollFirst()
+	JObject LinkedList::pollFirst()
 	{
 		return callObjectMethod(
 			"pollFirst",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
-	jobject LinkedList::pollLast()
+	JObject LinkedList::pollLast()
 	{
 		return callObjectMethod(
 			"pollLast",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
-	jobject LinkedList::pop()
+	JObject LinkedList::pop()
 	{
 		return callObjectMethod(
 			"pop",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
-	void LinkedList::push(jobject arg0)
+	void LinkedList::push(JObject arg0)
 	{
 		callMethod<void>(
 			"push",
 			"(Ljava/lang/Object;)V",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jboolean LinkedList::remove(jobject arg0)
+	jboolean LinkedList::remove(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"remove",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jobject LinkedList::remove()
+	JObject LinkedList::remove()
 	{
 		return callObjectMethod(
 			"remove",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
-	jobject LinkedList::remove(jint arg0)
+	JObject LinkedList::remove(jint arg0)
 	{
 		return callObjectMethod(
 			"remove",
 			"(I)Ljava/lang/Object;",
 			arg0
-		).object<jobject>();
+		);
 	}
-	jobject LinkedList::removeFirst()
+	JObject LinkedList::removeFirst()
 	{
 		return callObjectMethod(
 			"removeFirst",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
-	jboolean LinkedList::removeFirstOccurrence(jobject arg0)
+	jboolean LinkedList::removeFirstOccurrence(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"removeFirstOccurrence",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jobject LinkedList::removeLast()
+	JObject LinkedList::removeLast()
 	{
 		return callObjectMethod(
 			"removeLast",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
-	jboolean LinkedList::removeLastOccurrence(jobject arg0)
+	jboolean LinkedList::removeLastOccurrence(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"removeLastOccurrence",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jobject LinkedList::set(jint arg0, jobject arg1)
+	JObject LinkedList::set(jint arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"set",
 			"(ILjava/lang/Object;)Ljava/lang/Object;",
 			arg0,
-			arg1
-		).object<jobject>();
+			arg1.object<jobject>()
+		);
 	}
 	jint LinkedList::size()
 	{
@@ -312,20 +315,20 @@ namespace java::util
 			"()Ljava/util/Spliterator;"
 		);
 	}
-	jobjectArray LinkedList::toArray()
+	JObjectArray LinkedList::toArray()
 	{
 		return callObjectMethod(
 			"toArray",
 			"()[Ljava/lang/Object;"
-		).object<jobjectArray>();
+		);
 	}
-	jobjectArray LinkedList::toArray(jobjectArray arg0)
+	JObjectArray LinkedList::toArray(JObjectArray arg0)
 	{
 		return callObjectMethod(
 			"toArray",
 			"([Ljava/lang/Object;)[Ljava/lang/Object;",
-			arg0
-		).object<jobjectArray>();
+			arg0.object<jobjectArray>()
+		);
 	}
 } // namespace java::util
 

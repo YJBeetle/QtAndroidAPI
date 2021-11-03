@@ -1,4 +1,6 @@
+#include "../../JByteArray.hpp"
 #include "../os/Parcel.hpp"
+#include "../../JString.hpp"
 #include "./BluetoothHidDeviceAppSdpSettings.hpp"
 
 namespace android::bluetooth
@@ -17,15 +19,15 @@ namespace android::bluetooth
 	BluetoothHidDeviceAppSdpSettings::BluetoothHidDeviceAppSdpSettings(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	BluetoothHidDeviceAppSdpSettings::BluetoothHidDeviceAppSdpSettings(jstring arg0, jstring arg1, jstring arg2, jbyte arg3, jbyteArray arg4)
+	BluetoothHidDeviceAppSdpSettings::BluetoothHidDeviceAppSdpSettings(JString arg0, JString arg1, JString arg2, jbyte arg3, JByteArray arg4)
 		: JObject(
 			"android.bluetooth.BluetoothHidDeviceAppSdpSettings",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;B[B)V",
-			arg0,
-			arg1,
-			arg2,
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2.object<jstring>(),
 			arg3,
-			arg4
+			arg4.object<jbyteArray>()
 		) {}
 	
 	// Methods
@@ -36,33 +38,33 @@ namespace android::bluetooth
 			"()I"
 		);
 	}
-	jstring BluetoothHidDeviceAppSdpSettings::getDescription()
+	JString BluetoothHidDeviceAppSdpSettings::getDescription()
 	{
 		return callObjectMethod(
 			"getDescription",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jbyteArray BluetoothHidDeviceAppSdpSettings::getDescriptors()
+	JByteArray BluetoothHidDeviceAppSdpSettings::getDescriptors()
 	{
 		return callObjectMethod(
 			"getDescriptors",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
-	jstring BluetoothHidDeviceAppSdpSettings::getName()
+	JString BluetoothHidDeviceAppSdpSettings::getName()
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring BluetoothHidDeviceAppSdpSettings::getProvider()
+	JString BluetoothHidDeviceAppSdpSettings::getProvider()
 	{
 		return callObjectMethod(
 			"getProvider",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jbyte BluetoothHidDeviceAppSdpSettings::getSubclass()
 	{

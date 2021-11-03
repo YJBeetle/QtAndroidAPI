@@ -6,6 +6,7 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
 
 namespace android::net::sip
 {
@@ -23,18 +24,18 @@ namespace android::net::sip
 		
 		// Methods
 		jint describeContents();
-		jstring getAuthUserName();
+		JString getAuthUserName();
 		jboolean getAutoRegistration();
-		jstring getDisplayName();
-		jstring getPassword();
+		JString getDisplayName();
+		JString getPassword();
 		jint getPort();
-		jstring getProfileName();
-		jstring getProtocol();
-		jstring getProxyAddress();
+		JString getProfileName();
+		JString getProtocol();
+		JString getProxyAddress();
 		jboolean getSendKeepAlive();
-		jstring getSipDomain();
-		jstring getUriString();
-		jstring getUserName();
+		JString getSipDomain();
+		JString getUriString();
+		JString getUserName();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::net::sip

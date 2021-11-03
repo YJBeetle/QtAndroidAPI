@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./HttpRetryException.hpp"
 
 namespace java::net
@@ -8,36 +9,36 @@ namespace java::net
 	HttpRetryException::HttpRetryException(QJniObject obj) : java::io::IOException(obj) {}
 	
 	// Constructors
-	HttpRetryException::HttpRetryException(jstring arg0, jint arg1)
+	HttpRetryException::HttpRetryException(JString arg0, jint arg1)
 		: java::io::IOException(
 			"java.net.HttpRetryException",
 			"(Ljava/lang/String;I)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		) {}
-	HttpRetryException::HttpRetryException(jstring arg0, jint arg1, jstring arg2)
+	HttpRetryException::HttpRetryException(JString arg0, jint arg1, JString arg2)
 		: java::io::IOException(
 			"java.net.HttpRetryException",
 			"(Ljava/lang/String;ILjava/lang/String;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
-			arg2
+			arg2.object<jstring>()
 		) {}
 	
 	// Methods
-	jstring HttpRetryException::getLocation()
+	JString HttpRetryException::getLocation()
 	{
 		return callObjectMethod(
 			"getLocation",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring HttpRetryException::getReason()
+	JString HttpRetryException::getReason()
 	{
 		return callObjectMethod(
 			"getReason",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint HttpRetryException::responseCode()
 	{

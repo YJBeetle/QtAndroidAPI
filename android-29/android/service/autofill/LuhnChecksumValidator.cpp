@@ -1,4 +1,6 @@
+#include "../../../JArray.hpp"
 #include "../../os/Parcel.hpp"
+#include "../../../JString.hpp"
 #include "./LuhnChecksumValidator.hpp"
 
 namespace android::service::autofill
@@ -17,11 +19,11 @@ namespace android::service::autofill
 	LuhnChecksumValidator::LuhnChecksumValidator(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	LuhnChecksumValidator::LuhnChecksumValidator(jarray arg0)
+	LuhnChecksumValidator::LuhnChecksumValidator(JArray arg0)
 		: JObject(
 			"android.service.autofill.LuhnChecksumValidator",
 			"([Landroid/view/autofill/AutofillId;)V",
-			arg0
+			arg0.object<jarray>()
 		) {}
 	
 	// Methods
@@ -32,12 +34,12 @@ namespace android::service::autofill
 			"()I"
 		);
 	}
-	jstring LuhnChecksumValidator::toString()
+	JString LuhnChecksumValidator::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void LuhnChecksumValidator::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

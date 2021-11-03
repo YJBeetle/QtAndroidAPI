@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "../../../java/util/ArrayList.hpp"
 #include "./FieldClassification.hpp"
 
@@ -18,12 +19,12 @@ namespace android::service::autofill
 			"()Ljava/util/List;"
 		);
 	}
-	jstring FieldClassification::toString()
+	JString FieldClassification::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::service::autofill
 

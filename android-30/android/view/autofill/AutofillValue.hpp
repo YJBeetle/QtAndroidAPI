@@ -6,6 +6,9 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
+class JObject;
+class JString;
 
 namespace android::view::autofill
 {
@@ -24,20 +27,20 @@ namespace android::view::autofill
 		// Methods
 		static android::view::autofill::AutofillValue forDate(jlong arg0);
 		static android::view::autofill::AutofillValue forList(jint arg0);
-		static android::view::autofill::AutofillValue forText(jstring arg0);
+		static android::view::autofill::AutofillValue forText(JString arg0);
 		static android::view::autofill::AutofillValue forToggle(jboolean arg0);
 		jint describeContents();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jlong getDateValue();
 		jint getListValue();
-		jstring getTextValue();
+		JString getTextValue();
 		jboolean getToggleValue();
 		jint hashCode();
 		jboolean isDate();
 		jboolean isList();
 		jboolean isText();
 		jboolean isToggle();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::view::autofill

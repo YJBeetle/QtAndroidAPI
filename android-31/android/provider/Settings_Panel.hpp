@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JString;
 
 namespace android::provider
 {
@@ -9,10 +10,10 @@ namespace android::provider
 	{
 	public:
 		// Fields
-		static jstring ACTION_INTERNET_CONNECTIVITY();
-		static jstring ACTION_NFC();
-		static jstring ACTION_VOLUME();
-		static jstring ACTION_WIFI();
+		static JString ACTION_INTERNET_CONNECTIVITY();
+		static JString ACTION_NFC();
+		static JString ACTION_VOLUME();
+		static JString ACTION_WIFI();
 		
 		// QJniObject forward
 		template<typename ...Ts> explicit Settings_Panel(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}

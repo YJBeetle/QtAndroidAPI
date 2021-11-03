@@ -1,6 +1,9 @@
+#include "../../JIntArray.hpp"
 #include "./View.hpp"
 #include "./ViewDebug_HierarchyTraceType.hpp"
 #include "./ViewDebug_RecyclerTraceType.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./ViewDebug.hpp"
 
 namespace android::view
@@ -32,33 +35,33 @@ namespace android::view
 		) {}
 	
 	// Methods
-	void ViewDebug::dumpCapturedView(jstring arg0, jobject arg1)
+	void ViewDebug::dumpCapturedView(JString arg0, JObject arg1)
 	{
 		callStaticMethod<void>(
 			"android.view.ViewDebug",
 			"dumpCapturedView",
 			"(Ljava/lang/String;Ljava/lang/Object;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jobject>()
 		);
 	}
-	void ViewDebug::startHierarchyTracing(jstring arg0, android::view::View arg1)
+	void ViewDebug::startHierarchyTracing(JString arg0, android::view::View arg1)
 	{
 		callStaticMethod<void>(
 			"android.view.ViewDebug",
 			"startHierarchyTracing",
 			"(Ljava/lang/String;Landroid/view/View;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
-	void ViewDebug::startRecyclerTracing(jstring arg0, android::view::View arg1)
+	void ViewDebug::startRecyclerTracing(JString arg0, android::view::View arg1)
 	{
 		callStaticMethod<void>(
 			"android.view.ViewDebug",
 			"startRecyclerTracing",
 			"(Ljava/lang/String;Landroid/view/View;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
@@ -88,7 +91,7 @@ namespace android::view
 			arg1.object()
 		);
 	}
-	void ViewDebug::trace(android::view::View arg0, android::view::ViewDebug_RecyclerTraceType arg1, jintArray arg2)
+	void ViewDebug::trace(android::view::View arg0, android::view::ViewDebug_RecyclerTraceType arg1, JIntArray arg2)
 	{
 		callStaticMethod<void>(
 			"android.view.ViewDebug",
@@ -96,7 +99,7 @@ namespace android::view
 			"(Landroid/view/View;Landroid/view/ViewDebug$RecyclerTraceType;[I)V",
 			arg0.object(),
 			arg1.object(),
-			arg2
+			arg2.object<jintArray>()
 		);
 	}
 } // namespace android::view

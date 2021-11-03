@@ -1,3 +1,5 @@
+#include "../../JString.hpp"
+#include "../../JThrowable.hpp"
 #include "./SQLException.hpp"
 
 namespace android::database
@@ -13,18 +15,18 @@ namespace android::database
 			"android.database.SQLException",
 			"()V"
 		) {}
-	SQLException::SQLException(jstring arg0)
+	SQLException::SQLException(JString arg0)
 		: java::lang::RuntimeException(
 			"android.database.SQLException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	SQLException::SQLException(jstring arg0, jthrowable arg1)
+	SQLException::SQLException(JString arg0, JThrowable arg1)
 		: java::lang::RuntimeException(
 			"android.database.SQLException",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
 		) {}
 	
 	// Methods

@@ -1,3 +1,4 @@
+#include "../../../../JObject.hpp"
 #include "../../../../java/net/InetAddress.hpp"
 #include "./IkeTrafficSelector.hpp"
 
@@ -46,12 +47,12 @@ namespace android::net::ipsec::ike
 		) {}
 	
 	// Methods
-	jboolean IkeTrafficSelector::equals(jobject arg0)
+	jboolean IkeTrafficSelector::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint IkeTrafficSelector::hashCode()

@@ -2,10 +2,13 @@
 
 #include "../../../JObject.hpp"
 
+class JByteArray;
 namespace java::io
 {
 	class DataOutputStream;
 }
+class JObject;
+class JString;
 namespace java::util::jar
 {
 	class Attributes_Name;
@@ -29,21 +32,21 @@ namespace java::util::jar
 		
 		// Methods
 		void clear();
-		jobject clone();
-		jboolean containsKey(jobject arg0);
-		jboolean containsValue(jobject arg0);
+		JObject clone();
+		jboolean containsKey(JObject arg0);
+		jboolean containsValue(JObject arg0);
 		JObject entrySet();
-		jboolean equals(jobject arg0);
-		jobject get(jobject arg0);
-		jstring getValue(jstring arg0);
-		jstring getValue(java::util::jar::Attributes_Name arg0);
+		jboolean equals(JObject arg0);
+		JObject get(JObject arg0);
+		JString getValue(JString arg0);
+		JString getValue(java::util::jar::Attributes_Name arg0);
 		jint hashCode();
 		jboolean isEmpty();
 		JObject keySet();
-		jobject put(jobject arg0, jobject arg1);
+		JObject put(JObject arg0, JObject arg1);
 		void putAll(JObject arg0);
-		jstring putValue(jstring arg0, jstring arg1);
-		jobject remove(jobject arg0);
+		JString putValue(JString arg0, JString arg1);
+		JObject remove(JObject arg0);
 		jint size();
 		JObject values();
 	};

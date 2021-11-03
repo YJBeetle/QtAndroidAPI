@@ -6,6 +6,8 @@ namespace android::os
 {
 	class Parcel;
 }
+class JObject;
+class JString;
 
 namespace android::provider
 {
@@ -20,15 +22,15 @@ namespace android::provider
 		DocumentsContract_Path(QJniObject obj);
 		
 		// Constructors
-		DocumentsContract_Path(jstring arg0, JObject arg1);
+		DocumentsContract_Path(JString arg0, JObject arg1);
 		
 		// Methods
 		jint describeContents();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		JObject getPath();
-		jstring getRootId();
+		JString getRootId();
 		jint hashCode();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::provider

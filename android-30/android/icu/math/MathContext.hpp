@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JString;
 
 namespace android::icu::math
 {
@@ -37,7 +38,7 @@ namespace android::icu::math
 		jint getForm();
 		jboolean getLostDigits();
 		jint getRoundingMode();
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::icu::math
 

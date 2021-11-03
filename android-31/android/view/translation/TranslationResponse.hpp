@@ -10,6 +10,7 @@ namespace android::util
 {
 	class SparseArray;
 }
+class JString;
 
 namespace android::view::translation
 {
@@ -34,7 +35,7 @@ namespace android::view::translation
 		jint getTranslationStatus();
 		android::util::SparseArray getViewTranslationResponses();
 		jboolean isFinalResponse();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::view::translation

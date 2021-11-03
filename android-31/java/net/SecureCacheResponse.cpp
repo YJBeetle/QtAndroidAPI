@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "../util/Optional.hpp"
 #include "./SecureCacheResponse.hpp"
 
@@ -16,12 +17,12 @@ namespace java::net
 		) {}
 	
 	// Methods
-	jstring SecureCacheResponse::getCipherSuite()
+	JString SecureCacheResponse::getCipherSuite()
 	{
 		return callObjectMethod(
 			"getCipherSuite",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	JObject SecureCacheResponse::getLocalCertificateChain()
 	{

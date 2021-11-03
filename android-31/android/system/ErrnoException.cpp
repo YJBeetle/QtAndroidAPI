@@ -1,4 +1,6 @@
 #include "../../java/io/IOException.hpp"
+#include "../../JString.hpp"
+#include "../../JThrowable.hpp"
 #include "../../java/net/SocketException.hpp"
 #include "./ErrnoException.hpp"
 
@@ -16,29 +18,29 @@ namespace android::system
 	ErrnoException::ErrnoException(QJniObject obj) : java::lang::Exception(obj) {}
 	
 	// Constructors
-	ErrnoException::ErrnoException(jstring arg0, jint arg1)
+	ErrnoException::ErrnoException(JString arg0, jint arg1)
 		: java::lang::Exception(
 			"android.system.ErrnoException",
 			"(Ljava/lang/String;I)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		) {}
-	ErrnoException::ErrnoException(jstring arg0, jint arg1, jthrowable arg2)
+	ErrnoException::ErrnoException(JString arg0, jint arg1, JThrowable arg2)
 		: java::lang::Exception(
 			"android.system.ErrnoException",
 			"(Ljava/lang/String;ILjava/lang/Throwable;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
-			arg2
+			arg2.object<jthrowable>()
 		) {}
 	
 	// Methods
-	jstring ErrnoException::getMessage()
+	JString ErrnoException::getMessage()
 	{
 		return callObjectMethod(
 			"getMessage",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	java::io::IOException ErrnoException::rethrowAsIOException()
 	{

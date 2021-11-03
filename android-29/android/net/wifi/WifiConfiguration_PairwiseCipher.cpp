@@ -1,3 +1,5 @@
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
 #include "./WifiConfiguration_PairwiseCipher.hpp"
 
 namespace android::net::wifi
@@ -31,21 +33,21 @@ namespace android::net::wifi
 			"TKIP"
 		);
 	}
-	jarray WifiConfiguration_PairwiseCipher::strings()
+	JArray WifiConfiguration_PairwiseCipher::strings()
 	{
 		return getStaticObjectField(
 			"android.net.wifi.WifiConfiguration$PairwiseCipher",
 			"strings",
 			"[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
-	jstring WifiConfiguration_PairwiseCipher::varName()
+	JString WifiConfiguration_PairwiseCipher::varName()
 	{
 		return getStaticObjectField(
 			"android.net.wifi.WifiConfiguration$PairwiseCipher",
 			"varName",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QJniObject forward

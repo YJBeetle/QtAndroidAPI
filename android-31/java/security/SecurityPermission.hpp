@@ -1,9 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "./Permission.hpp"
 #include "./BasicPermission.hpp"
 
+class JString;
 
 namespace java::security
 {
@@ -17,8 +16,8 @@ namespace java::security
 		SecurityPermission(QJniObject obj);
 		
 		// Constructors
-		SecurityPermission(jstring arg0);
-		SecurityPermission(jstring arg0, jstring arg1);
+		SecurityPermission(JString arg0);
+		SecurityPermission(JString arg0, JString arg1);
 		
 		// Methods
 	};

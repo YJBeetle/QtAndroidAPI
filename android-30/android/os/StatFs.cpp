@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./StatFs.hpp"
 
 namespace android::os
@@ -8,11 +9,11 @@ namespace android::os
 	StatFs::StatFs(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	StatFs::StatFs(jstring arg0)
+	StatFs::StatFs(JString arg0)
 		: JObject(
 			"android.os.StatFs",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods
@@ -93,12 +94,12 @@ namespace android::os
 			"()J"
 		);
 	}
-	void StatFs::restat(jstring arg0)
+	void StatFs::restat(JString arg0)
 	{
 		callMethod<void>(
 			"restat",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 } // namespace android::os

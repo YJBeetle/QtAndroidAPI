@@ -1,6 +1,8 @@
 #include "../content/ComponentName.hpp"
 #include "../os/Parcel.hpp"
 #include "../os/UserHandle.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./PhoneAccountHandle.hpp"
 
 namespace android::telecom
@@ -19,19 +21,19 @@ namespace android::telecom
 	PhoneAccountHandle::PhoneAccountHandle(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	PhoneAccountHandle::PhoneAccountHandle(android::content::ComponentName arg0, jstring arg1)
+	PhoneAccountHandle::PhoneAccountHandle(android::content::ComponentName arg0, JString arg1)
 		: JObject(
 			"android.telecom.PhoneAccountHandle",
 			"(Landroid/content/ComponentName;Ljava/lang/String;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		) {}
-	PhoneAccountHandle::PhoneAccountHandle(android::content::ComponentName arg0, jstring arg1, android::os::UserHandle arg2)
+	PhoneAccountHandle::PhoneAccountHandle(android::content::ComponentName arg0, JString arg1, android::os::UserHandle arg2)
 		: JObject(
 			"android.telecom.PhoneAccountHandle",
 			"(Landroid/content/ComponentName;Ljava/lang/String;Landroid/os/UserHandle;)V",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2.object()
 		) {}
 	
@@ -43,12 +45,12 @@ namespace android::telecom
 			"()I"
 		);
 	}
-	jboolean PhoneAccountHandle::equals(jobject arg0)
+	jboolean PhoneAccountHandle::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	android::content::ComponentName PhoneAccountHandle::getComponentName()
@@ -58,12 +60,12 @@ namespace android::telecom
 			"()Landroid/content/ComponentName;"
 		);
 	}
-	jstring PhoneAccountHandle::getId()
+	JString PhoneAccountHandle::getId()
 	{
 		return callObjectMethod(
 			"getId",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::os::UserHandle PhoneAccountHandle::getUserHandle()
 	{
@@ -79,12 +81,12 @@ namespace android::telecom
 			"()I"
 		);
 	}
-	jstring PhoneAccountHandle::toString()
+	JString PhoneAccountHandle::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void PhoneAccountHandle::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

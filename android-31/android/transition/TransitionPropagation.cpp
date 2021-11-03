@@ -1,3 +1,4 @@
+#include "../../JArray.hpp"
 #include "./Transition.hpp"
 #include "./TransitionValues.hpp"
 #include "../view/ViewGroup.hpp"
@@ -26,12 +27,12 @@ namespace android::transition
 			arg0.object()
 		);
 	}
-	jarray TransitionPropagation::getPropagationProperties()
+	JArray TransitionPropagation::getPropagationProperties()
 	{
 		return callObjectMethod(
 			"getPropagationProperties",
 			"()[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
 	jlong TransitionPropagation::getStartDelay(android::view::ViewGroup arg0, android::transition::Transition arg1, android::transition::TransitionValues arg2, android::transition::TransitionValues arg3)
 	{

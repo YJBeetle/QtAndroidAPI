@@ -1,3 +1,4 @@
+#include "../../JFloatArray.hpp"
 #include "./HardwareBuffer.hpp"
 #include "./Sensor.hpp"
 #include "./SensorDirectChannel.hpp"
@@ -433,78 +434,78 @@ namespace android::hardware
 			arg1
 		);
 	}
-	void SensorManager::getAngleChange(jfloatArray arg0, jfloatArray arg1, jfloatArray arg2)
+	void SensorManager::getAngleChange(JFloatArray arg0, JFloatArray arg1, JFloatArray arg2)
 	{
 		callStaticMethod<void>(
 			"android.hardware.SensorManager",
 			"getAngleChange",
 			"([F[F[F)V",
-			arg0,
-			arg1,
-			arg2
+			arg0.object<jfloatArray>(),
+			arg1.object<jfloatArray>(),
+			arg2.object<jfloatArray>()
 		);
 	}
-	jfloat SensorManager::getInclination(jfloatArray arg0)
+	jfloat SensorManager::getInclination(JFloatArray arg0)
 	{
 		return callStaticMethod<jfloat>(
 			"android.hardware.SensorManager",
 			"getInclination",
 			"([F)F",
-			arg0
+			arg0.object<jfloatArray>()
 		);
 	}
-	jfloatArray SensorManager::getOrientation(jfloatArray arg0, jfloatArray arg1)
+	JFloatArray SensorManager::getOrientation(JFloatArray arg0, JFloatArray arg1)
 	{
 		return callStaticObjectMethod(
 			"android.hardware.SensorManager",
 			"getOrientation",
 			"([F[F)[F",
-			arg0,
-			arg1
-		).object<jfloatArray>();
+			arg0.object<jfloatArray>(),
+			arg1.object<jfloatArray>()
+		);
 	}
-	void SensorManager::getQuaternionFromVector(jfloatArray arg0, jfloatArray arg1)
+	void SensorManager::getQuaternionFromVector(JFloatArray arg0, JFloatArray arg1)
 	{
 		callStaticMethod<void>(
 			"android.hardware.SensorManager",
 			"getQuaternionFromVector",
 			"([F[F)V",
-			arg0,
-			arg1
+			arg0.object<jfloatArray>(),
+			arg1.object<jfloatArray>()
 		);
 	}
-	jboolean SensorManager::getRotationMatrix(jfloatArray arg0, jfloatArray arg1, jfloatArray arg2, jfloatArray arg3)
+	jboolean SensorManager::getRotationMatrix(JFloatArray arg0, JFloatArray arg1, JFloatArray arg2, JFloatArray arg3)
 	{
 		return callStaticMethod<jboolean>(
 			"android.hardware.SensorManager",
 			"getRotationMatrix",
 			"([F[F[F[F)Z",
-			arg0,
-			arg1,
-			arg2,
-			arg3
+			arg0.object<jfloatArray>(),
+			arg1.object<jfloatArray>(),
+			arg2.object<jfloatArray>(),
+			arg3.object<jfloatArray>()
 		);
 	}
-	void SensorManager::getRotationMatrixFromVector(jfloatArray arg0, jfloatArray arg1)
+	void SensorManager::getRotationMatrixFromVector(JFloatArray arg0, JFloatArray arg1)
 	{
 		callStaticMethod<void>(
 			"android.hardware.SensorManager",
 			"getRotationMatrixFromVector",
 			"([F[F)V",
-			arg0,
-			arg1
+			arg0.object<jfloatArray>(),
+			arg1.object<jfloatArray>()
 		);
 	}
-	jboolean SensorManager::remapCoordinateSystem(jfloatArray arg0, jint arg1, jint arg2, jfloatArray arg3)
+	jboolean SensorManager::remapCoordinateSystem(JFloatArray arg0, jint arg1, jint arg2, JFloatArray arg3)
 	{
 		return callStaticMethod<jboolean>(
 			"android.hardware.SensorManager",
 			"remapCoordinateSystem",
 			"([FII[F)Z",
-			arg0,
+			arg0.object<jfloatArray>(),
 			arg1,
 			arg2,
-			arg3
+			arg3.object<jfloatArray>()
 		);
 	}
 	jboolean SensorManager::cancelTriggerSensor(android::hardware::TriggerEventListener arg0, android::hardware::Sensor arg1)

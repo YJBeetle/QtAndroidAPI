@@ -10,6 +10,7 @@ namespace android::os
 {
 	class Parcel;
 }
+class JObject;
 
 namespace android::app::job
 {
@@ -29,7 +30,7 @@ namespace android::app::job
 		
 		// Methods
 		jint describeContents();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint getFlags();
 		android::net::Uri getUri();
 		jint hashCode();

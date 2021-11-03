@@ -1,5 +1,7 @@
 #include "./ObjectInputStream.hpp"
 #include "./ObjectOutputStream.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "../nio/file/FileSystem.hpp"
 #include "../security/Permission.hpp"
 #include "../security/PermissionCollection.hpp"
@@ -13,29 +15,29 @@ namespace java::io
 	FilePermission::FilePermission(QJniObject obj) : java::security::Permission(obj) {}
 	
 	// Constructors
-	FilePermission::FilePermission(jstring arg0, jstring arg1)
+	FilePermission::FilePermission(JString arg0, JString arg1)
 		: java::security::Permission(
 			"java.io.FilePermission",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		) {}
 	
 	// Methods
-	jboolean FilePermission::equals(jobject arg0)
+	jboolean FilePermission::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jstring FilePermission::getActions()
+	JString FilePermission::getActions()
 	{
 		return callObjectMethod(
 			"getActions",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint FilePermission::hashCode()
 	{

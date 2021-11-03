@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "./Collator.hpp"
 
+class JIntArray;
 namespace android::icu::text
 {
 	class CollationElementIterator;
@@ -27,6 +27,8 @@ namespace android::icu::util
 {
 	class VersionInfo;
 }
+class JObject;
+class JString;
 
 namespace android::icu::text
 {
@@ -40,25 +42,25 @@ namespace android::icu::text
 		RuleBasedCollator(QJniObject obj);
 		
 		// Constructors
-		RuleBasedCollator(jstring arg0);
+		RuleBasedCollator(JString arg0);
 		
 		// Methods
-		jobject clone();
+		JObject clone();
 		android::icu::text::RuleBasedCollator cloneAsThawed();
-		jint compare(jstring arg0, jstring arg1);
-		jboolean equals(jobject arg0);
+		jint compare(JString arg0, JString arg1);
+		jboolean equals(JObject arg0);
 		android::icu::text::Collator freeze();
 		android::icu::text::CollationElementIterator getCollationElementIterator(android::icu::text::UCharacterIterator arg0);
-		android::icu::text::CollationElementIterator getCollationElementIterator(jstring arg0);
+		android::icu::text::CollationElementIterator getCollationElementIterator(JString arg0);
 		android::icu::text::CollationElementIterator getCollationElementIterator(JObject arg0);
-		android::icu::text::CollationKey getCollationKey(jstring arg0);
+		android::icu::text::CollationKey getCollationKey(JString arg0);
 		void getContractionsAndExpansions(android::icu::text::UnicodeSet arg0, android::icu::text::UnicodeSet arg1, jboolean arg2);
 		jint getDecomposition();
 		jint getMaxVariable();
 		jboolean getNumericCollation();
-		jintArray getReorderCodes();
-		jstring getRules();
-		jstring getRules(jboolean arg0);
+		JIntArray getReorderCodes();
+		JString getRules();
+		JString getRules(jboolean arg0);
 		jint getStrength();
 		android::icu::text::UnicodeSet getTailoredSet();
 		android::icu::util::VersionInfo getUCAVersion();
@@ -84,7 +86,7 @@ namespace android::icu::text
 		android::icu::text::RuleBasedCollator setMaxVariable(jint arg0);
 		void setNumericCollation(jboolean arg0);
 		void setNumericCollationDefault();
-		void setReorderCodes(jintArray arg0);
+		void setReorderCodes(JIntArray arg0);
 		void setStrength(jint arg0);
 		void setStrengthDefault();
 		void setUpperCaseFirst(jboolean arg0);

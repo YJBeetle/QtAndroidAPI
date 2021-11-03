@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "../ZoneId.hpp"
 #include "./DateTimeFormatter.hpp"
 #include "./FormatStyle.hpp"
@@ -22,7 +23,7 @@ namespace java::time::format
 		) {}
 	
 	// Methods
-	jstring DateTimeFormatterBuilder::getLocalizedDateTimePattern(java::time::format::FormatStyle arg0, java::time::format::FormatStyle arg1, JObject arg2, java::util::Locale arg3)
+	JString DateTimeFormatterBuilder::getLocalizedDateTimePattern(java::time::format::FormatStyle arg0, java::time::format::FormatStyle arg1, JObject arg2, java::util::Locale arg3)
 	{
 		return callStaticObjectMethod(
 			"java.time.format.DateTimeFormatterBuilder",
@@ -32,7 +33,7 @@ namespace java::time::format
 			arg1.object(),
 			arg2.object(),
 			arg3.object()
-		).object<jstring>();
+		);
 	}
 	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::append(java::time::format::DateTimeFormatter arg0)
 	{
@@ -116,12 +117,12 @@ namespace java::time::format
 			arg0
 		);
 	}
-	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::appendLiteral(jstring arg0)
+	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::appendLiteral(JString arg0)
 	{
 		return callObjectMethod(
 			"appendLiteral",
 			"(Ljava/lang/String;)Ljava/time/format/DateTimeFormatterBuilder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::appendLocalized(java::time::format::FormatStyle arg0, java::time::format::FormatStyle arg1)
@@ -141,13 +142,13 @@ namespace java::time::format
 			arg0.object()
 		);
 	}
-	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::appendOffset(jstring arg0, jstring arg1)
+	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::appendOffset(JString arg0, JString arg1)
 	{
 		return callObjectMethod(
 			"appendOffset",
 			"(Ljava/lang/String;Ljava/lang/String;)Ljava/time/format/DateTimeFormatterBuilder;",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		);
 	}
 	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::appendOffsetId()
@@ -165,12 +166,12 @@ namespace java::time::format
 			arg0.object()
 		);
 	}
-	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::appendPattern(jstring arg0)
+	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::appendPattern(JString arg0)
 	{
 		return callObjectMethod(
 			"appendPattern",
 			"(Ljava/lang/String;)Ljava/time/format/DateTimeFormatterBuilder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::appendText(JObject arg0)

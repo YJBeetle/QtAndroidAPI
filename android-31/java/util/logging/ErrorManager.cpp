@@ -1,4 +1,5 @@
 #include "../../lang/Exception.hpp"
+#include "../../../JString.hpp"
 #include "./ErrorManager.hpp"
 
 namespace java::util::logging
@@ -58,12 +59,12 @@ namespace java::util::logging
 		) {}
 	
 	// Methods
-	void ErrorManager::error(jstring arg0, java::lang::Exception arg1, jint arg2)
+	void ErrorManager::error(JString arg0, java::lang::Exception arg1, jint arg2)
 	{
 		callMethod<void>(
 			"error",
 			"(Ljava/lang/String;Ljava/lang/Exception;I)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
 			arg2
 		);

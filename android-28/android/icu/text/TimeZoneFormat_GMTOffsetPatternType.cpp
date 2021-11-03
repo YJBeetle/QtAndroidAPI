@@ -1,3 +1,5 @@
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
 #include "./TimeZoneFormat_GMTOffsetPatternType.hpp"
 
 namespace android::icu::text
@@ -58,22 +60,22 @@ namespace android::icu::text
 	// Constructors
 	
 	// Methods
-	android::icu::text::TimeZoneFormat_GMTOffsetPatternType TimeZoneFormat_GMTOffsetPatternType::valueOf(jstring arg0)
+	android::icu::text::TimeZoneFormat_GMTOffsetPatternType TimeZoneFormat_GMTOffsetPatternType::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.icu.text.TimeZoneFormat$GMTOffsetPatternType",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/icu/text/TimeZoneFormat$GMTOffsetPatternType;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray TimeZoneFormat_GMTOffsetPatternType::values()
+	JArray TimeZoneFormat_GMTOffsetPatternType::values()
 	{
 		return callStaticObjectMethod(
 			"android.icu.text.TimeZoneFormat$GMTOffsetPatternType",
 			"values",
 			"()[Landroid/icu/text/TimeZoneFormat$GMTOffsetPatternType;"
-		).object<jarray>();
+		);
 	}
 } // namespace android::icu::text
 

@@ -1,3 +1,5 @@
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
 #include "./ViewDebug_RecyclerTraceType.hpp"
 
 namespace android::view
@@ -58,22 +60,22 @@ namespace android::view
 	// Constructors
 	
 	// Methods
-	android::view::ViewDebug_RecyclerTraceType ViewDebug_RecyclerTraceType::valueOf(jstring arg0)
+	android::view::ViewDebug_RecyclerTraceType ViewDebug_RecyclerTraceType::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.view.ViewDebug$RecyclerTraceType",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/view/ViewDebug$RecyclerTraceType;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray ViewDebug_RecyclerTraceType::values()
+	JArray ViewDebug_RecyclerTraceType::values()
 	{
 		return callStaticObjectMethod(
 			"android.view.ViewDebug$RecyclerTraceType",
 			"values",
 			"()[Landroid/view/ViewDebug$RecyclerTraceType;"
-		).object<jarray>();
+		);
 	}
 } // namespace android::view
 

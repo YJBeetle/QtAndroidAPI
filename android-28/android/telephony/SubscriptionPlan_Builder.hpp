@@ -6,6 +6,7 @@ namespace android::telephony
 {
 	class SubscriptionPlan;
 }
+class JString;
 namespace java::time
 {
 	class Period;
@@ -34,8 +35,8 @@ namespace android::telephony
 		android::telephony::SubscriptionPlan build();
 		android::telephony::SubscriptionPlan_Builder setDataLimit(jlong arg0, jint arg1);
 		android::telephony::SubscriptionPlan_Builder setDataUsage(jlong arg0, jlong arg1);
-		android::telephony::SubscriptionPlan_Builder setSummary(jstring arg0);
-		android::telephony::SubscriptionPlan_Builder setTitle(jstring arg0);
+		android::telephony::SubscriptionPlan_Builder setSummary(JString arg0);
+		android::telephony::SubscriptionPlan_Builder setTitle(JString arg0);
 	};
 } // namespace android::telephony
 

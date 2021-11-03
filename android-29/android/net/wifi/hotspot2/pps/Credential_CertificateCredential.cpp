@@ -1,4 +1,7 @@
+#include "../../../../../JByteArray.hpp"
 #include "../../../../os/Parcel.hpp"
+#include "../../../../../JObject.hpp"
+#include "../../../../../JString.hpp"
 #include "./Credential_CertificateCredential.hpp"
 
 namespace android::net::wifi::hotspot2::pps
@@ -37,27 +40,27 @@ namespace android::net::wifi::hotspot2::pps
 			"()I"
 		);
 	}
-	jboolean Credential_CertificateCredential::equals(jobject arg0)
+	jboolean Credential_CertificateCredential::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jbyteArray Credential_CertificateCredential::getCertSha256Fingerprint()
+	JByteArray Credential_CertificateCredential::getCertSha256Fingerprint()
 	{
 		return callObjectMethod(
 			"getCertSha256Fingerprint",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
-	jstring Credential_CertificateCredential::getCertType()
+	JString Credential_CertificateCredential::getCertType()
 	{
 		return callObjectMethod(
 			"getCertType",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint Credential_CertificateCredential::hashCode()
 	{
@@ -66,28 +69,28 @@ namespace android::net::wifi::hotspot2::pps
 			"()I"
 		);
 	}
-	void Credential_CertificateCredential::setCertSha256Fingerprint(jbyteArray arg0)
+	void Credential_CertificateCredential::setCertSha256Fingerprint(JByteArray arg0)
 	{
 		callMethod<void>(
 			"setCertSha256Fingerprint",
 			"([B)V",
-			arg0
+			arg0.object<jbyteArray>()
 		);
 	}
-	void Credential_CertificateCredential::setCertType(jstring arg0)
+	void Credential_CertificateCredential::setCertType(JString arg0)
 	{
 		callMethod<void>(
 			"setCertType",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jstring Credential_CertificateCredential::toString()
+	JString Credential_CertificateCredential::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void Credential_CertificateCredential::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

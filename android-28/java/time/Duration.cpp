@@ -1,4 +1,7 @@
 #include "../io/ObjectInputStream.hpp"
+#include "../../JString.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "../math/BigDecimal.hpp"
 #include "../math/BigInteger.hpp"
 #include "./Duration.hpp"
@@ -114,13 +117,13 @@ namespace java::time
 			arg1
 		);
 	}
-	java::time::Duration Duration::parse(jstring arg0)
+	java::time::Duration Duration::parse(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"java.time.Duration",
 			"parse",
 			"(Ljava/lang/CharSequence;)Ljava/time/Duration;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	java::time::Duration Duration::abs()
@@ -138,12 +141,12 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	jint Duration::compareTo(jobject arg0)
+	jint Duration::compareTo(JObject arg0)
 	{
 		return callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Object;)I",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint Duration::compareTo(java::time::Duration arg0)
@@ -170,12 +173,12 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	jboolean Duration::equals(jobject arg0)
+	jboolean Duration::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jlong Duration::get(JObject arg0)
@@ -465,12 +468,12 @@ namespace java::time
 			"()I"
 		);
 	}
-	jstring Duration::toString()
+	JString Duration::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	java::time::Duration Duration::truncatedTo(JObject arg0)
 	{

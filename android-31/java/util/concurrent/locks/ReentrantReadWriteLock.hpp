@@ -2,6 +2,7 @@
 
 #include "../../../../JObject.hpp"
 
+class JString;
 namespace java::lang
 {
 	class Thread;
@@ -43,7 +44,7 @@ namespace java::util::concurrent::locks
 		jboolean isWriteLocked();
 		jboolean isWriteLockedByCurrentThread();
 		java::util::concurrent::locks::ReentrantReadWriteLock_ReadLock readLock();
-		jstring toString();
+		JString toString();
 		java::util::concurrent::locks::ReentrantReadWriteLock_WriteLock writeLock();
 	};
 } // namespace java::util::concurrent::locks

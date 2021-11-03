@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JObject;
+class JString;
 
 namespace android::util
 {
@@ -18,12 +20,12 @@ namespace android::util
 		SizeF(jfloat arg0, jfloat arg1);
 		
 		// Methods
-		static android::util::SizeF parseSizeF(jstring arg0);
-		jboolean equals(jobject arg0);
+		static android::util::SizeF parseSizeF(JString arg0);
+		jboolean equals(JObject arg0);
 		jfloat getHeight();
 		jfloat getWidth();
 		jint hashCode();
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::util
 

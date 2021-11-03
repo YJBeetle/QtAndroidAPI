@@ -1,3 +1,4 @@
+#include "../../JClass.hpp"
 #include "./KeyFactorySpi.hpp"
 
 namespace java::security

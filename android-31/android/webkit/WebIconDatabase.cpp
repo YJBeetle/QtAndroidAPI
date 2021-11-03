@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./WebIconDatabase.hpp"
 
 namespace android::webkit
@@ -30,20 +31,20 @@ namespace android::webkit
 			"()V"
 		);
 	}
-	void WebIconDatabase::open(jstring arg0)
+	void WebIconDatabase::open(JString arg0)
 	{
 		callMethod<void>(
 			"open",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	void WebIconDatabase::releaseIconForPageUrl(jstring arg0)
+	void WebIconDatabase::releaseIconForPageUrl(JString arg0)
 	{
 		callMethod<void>(
 			"releaseIconForPageUrl",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void WebIconDatabase::removeAllIcons()
@@ -53,21 +54,21 @@ namespace android::webkit
 			"()V"
 		);
 	}
-	void WebIconDatabase::requestIconForPageUrl(jstring arg0, JObject arg1)
+	void WebIconDatabase::requestIconForPageUrl(JString arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"requestIconForPageUrl",
 			"(Ljava/lang/String;Landroid/webkit/WebIconDatabase$IconListener;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
-	void WebIconDatabase::retainIconForPageUrl(jstring arg0)
+	void WebIconDatabase::retainIconForPageUrl(JString arg0)
 	{
 		callMethod<void>(
 			"retainIconForPageUrl",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 } // namespace android::webkit

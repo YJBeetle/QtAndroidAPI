@@ -10,6 +10,7 @@ namespace android::net
 {
 	class Uri;
 }
+class JString;
 
 namespace android::provider
 {
@@ -29,7 +30,7 @@ namespace android::provider
 		// Constructors
 		
 		// Methods
-		static jlong getOrCreateThreadId(android::content::Context arg0, jstring arg1);
+		static jlong getOrCreateThreadId(android::content::Context arg0, JString arg1);
 		static jlong getOrCreateThreadId(android::content::Context arg0, JObject arg1);
 	};
 } // namespace android::provider

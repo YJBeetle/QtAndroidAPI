@@ -1,4 +1,6 @@
 #include "../../os/Parcel.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./PackageStats.hpp"
 
 namespace android::content::pm
@@ -60,12 +62,12 @@ namespace android::content::pm
 			"externalObbSize"
 		);
 	}
-	jstring PackageStats::packageName()
+	JString PackageStats::packageName()
 	{
 		return getObjectField(
 			"packageName",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QJniObject forward
@@ -84,11 +86,11 @@ namespace android::content::pm
 			"(Landroid/os/Parcel;)V",
 			arg0.object()
 		) {}
-	PackageStats::PackageStats(jstring arg0)
+	PackageStats::PackageStats(JString arg0)
 		: JObject(
 			"android.content.pm.PackageStats",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods
@@ -99,12 +101,12 @@ namespace android::content::pm
 			"()I"
 		);
 	}
-	jboolean PackageStats::equals(jobject arg0)
+	jboolean PackageStats::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint PackageStats::hashCode()
@@ -114,12 +116,12 @@ namespace android::content::pm
 			"()I"
 		);
 	}
-	jstring PackageStats::toString()
+	JString PackageStats::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void PackageStats::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

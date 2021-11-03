@@ -14,6 +14,7 @@ namespace android::os
 {
 	class Bundle;
 }
+class JString;
 
 namespace android::app
 {
@@ -27,7 +28,7 @@ namespace android::app
 		DirectAction_Builder(QJniObject obj);
 		
 		// Constructors
-		DirectAction_Builder(jstring arg0);
+		DirectAction_Builder(JString arg0);
 		
 		// Methods
 		android::app::DirectAction build();

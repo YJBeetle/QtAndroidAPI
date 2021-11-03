@@ -1,5 +1,6 @@
 #include "../../icu/text/DateFormat.hpp"
 #include "../../os/Parcel.hpp"
+#include "../../../JString.hpp"
 #include "./DateValueSanitizer.hpp"
 
 namespace android::service::autofill
@@ -33,12 +34,12 @@ namespace android::service::autofill
 			"()I"
 		);
 	}
-	jstring DateValueSanitizer::toString()
+	JString DateValueSanitizer::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void DateValueSanitizer::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

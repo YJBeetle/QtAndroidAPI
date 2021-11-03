@@ -1,9 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../../java/lang/Exception.hpp"
 #include "../../java/lang/RuntimeException.hpp"
 
+class JString;
 
 namespace android::opengl
 {
@@ -18,7 +17,7 @@ namespace android::opengl
 		
 		// Constructors
 		GLException(jint arg0);
-		GLException(jint arg0, jstring arg1);
+		GLException(jint arg0, JString arg1);
 		
 		// Methods
 	};

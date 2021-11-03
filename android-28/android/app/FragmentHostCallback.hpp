@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./FragmentContainer.hpp"
 
+class JArray;
 namespace android::app
 {
 	class Fragment;
@@ -43,6 +43,8 @@ namespace java::io
 {
 	class PrintWriter;
 }
+class JObject;
+class JString;
 
 namespace android::app
 {
@@ -60,15 +62,15 @@ namespace android::app
 		
 		// Methods
 		void onAttachFragment(android::app::Fragment arg0);
-		void onDump(jstring arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, jarray arg3);
+		void onDump(JString arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, JArray arg3);
 		android::view::View onFindViewById(jint arg0);
-		jobject onGetHost();
+		JObject onGetHost();
 		android::view::LayoutInflater onGetLayoutInflater();
 		jint onGetWindowAnimations();
 		jboolean onHasView();
 		jboolean onHasWindowAnimations();
 		void onInvalidateOptionsMenu();
-		void onRequestPermissionsFromFragment(android::app::Fragment arg0, jarray arg1, jint arg2);
+		void onRequestPermissionsFromFragment(android::app::Fragment arg0, JArray arg1, jint arg2);
 		jboolean onShouldSaveFragmentState(android::app::Fragment arg0);
 		void onStartActivityFromFragment(android::app::Fragment arg0, android::content::Intent arg1, jint arg2, android::os::Bundle arg3);
 		void onStartIntentSenderFromFragment(android::app::Fragment arg0, android::content::IntentSender arg1, jint arg2, android::content::Intent arg3, jint arg4, jint arg5, jint arg6, android::os::Bundle arg7);

@@ -1,3 +1,4 @@
+#include "../../JArray.hpp"
 #include "../animation/Animator.hpp"
 #include "../content/Context.hpp"
 #include "./TransitionValues.hpp"
@@ -52,12 +53,12 @@ namespace android::transition
 			arg2.object()
 		);
 	}
-	jarray ChangeImageTransform::getTransitionProperties()
+	JArray ChangeImageTransform::getTransitionProperties()
 	{
 		return callObjectMethod(
 			"getTransitionProperties",
 			"()[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
 } // namespace android::transition
 

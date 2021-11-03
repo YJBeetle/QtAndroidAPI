@@ -1,4 +1,6 @@
 #include "../os/Parcel.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./LocusId.hpp"
 
 namespace android::content
@@ -17,11 +19,11 @@ namespace android::content
 	LocusId::LocusId(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	LocusId::LocusId(jstring arg0)
+	LocusId::LocusId(JString arg0)
 		: JObject(
 			"android.content.LocusId",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods
@@ -32,20 +34,20 @@ namespace android::content
 			"()I"
 		);
 	}
-	jboolean LocusId::equals(jobject arg0)
+	jboolean LocusId::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jstring LocusId::getId()
+	JString LocusId::getId()
 	{
 		return callObjectMethod(
 			"getId",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint LocusId::hashCode()
 	{
@@ -54,12 +56,12 @@ namespace android::content
 			"()I"
 		);
 	}
-	jstring LocusId::toString()
+	JString LocusId::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void LocusId::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

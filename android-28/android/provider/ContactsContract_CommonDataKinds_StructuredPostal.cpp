@@ -1,33 +1,35 @@
 #include "../content/res/Resources.hpp"
 #include "../net/Uri.hpp"
+#include "../../JString.hpp"
+#include "../../JString.hpp"
 #include "./ContactsContract_CommonDataKinds_StructuredPostal.hpp"
 
 namespace android::provider
 {
 	// Fields
-	jstring ContactsContract_CommonDataKinds_StructuredPostal::CITY()
+	JString ContactsContract_CommonDataKinds_StructuredPostal::CITY()
 	{
 		return getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$StructuredPostal",
 			"CITY",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ContactsContract_CommonDataKinds_StructuredPostal::CONTENT_ITEM_TYPE()
+	JString ContactsContract_CommonDataKinds_StructuredPostal::CONTENT_ITEM_TYPE()
 	{
 		return getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$StructuredPostal",
 			"CONTENT_ITEM_TYPE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ContactsContract_CommonDataKinds_StructuredPostal::CONTENT_TYPE()
+	JString ContactsContract_CommonDataKinds_StructuredPostal::CONTENT_TYPE()
 	{
 		return getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$StructuredPostal",
 			"CONTENT_TYPE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::net::Uri ContactsContract_CommonDataKinds_StructuredPostal::CONTENT_URI()
 	{
@@ -37,85 +39,85 @@ namespace android::provider
 			"Landroid/net/Uri;"
 		);
 	}
-	jstring ContactsContract_CommonDataKinds_StructuredPostal::COUNTRY()
+	JString ContactsContract_CommonDataKinds_StructuredPostal::COUNTRY()
 	{
 		return getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$StructuredPostal",
 			"COUNTRY",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ContactsContract_CommonDataKinds_StructuredPostal::EXTRA_ADDRESS_BOOK_INDEX()
+	JString ContactsContract_CommonDataKinds_StructuredPostal::EXTRA_ADDRESS_BOOK_INDEX()
 	{
 		return getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$StructuredPostal",
 			"EXTRA_ADDRESS_BOOK_INDEX",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ContactsContract_CommonDataKinds_StructuredPostal::EXTRA_ADDRESS_BOOK_INDEX_COUNTS()
+	JString ContactsContract_CommonDataKinds_StructuredPostal::EXTRA_ADDRESS_BOOK_INDEX_COUNTS()
 	{
 		return getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$StructuredPostal",
 			"EXTRA_ADDRESS_BOOK_INDEX_COUNTS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ContactsContract_CommonDataKinds_StructuredPostal::EXTRA_ADDRESS_BOOK_INDEX_TITLES()
+	JString ContactsContract_CommonDataKinds_StructuredPostal::EXTRA_ADDRESS_BOOK_INDEX_TITLES()
 	{
 		return getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$StructuredPostal",
 			"EXTRA_ADDRESS_BOOK_INDEX_TITLES",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ContactsContract_CommonDataKinds_StructuredPostal::FORMATTED_ADDRESS()
+	JString ContactsContract_CommonDataKinds_StructuredPostal::FORMATTED_ADDRESS()
 	{
 		return getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$StructuredPostal",
 			"FORMATTED_ADDRESS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ContactsContract_CommonDataKinds_StructuredPostal::NEIGHBORHOOD()
+	JString ContactsContract_CommonDataKinds_StructuredPostal::NEIGHBORHOOD()
 	{
 		return getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$StructuredPostal",
 			"NEIGHBORHOOD",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ContactsContract_CommonDataKinds_StructuredPostal::POBOX()
+	JString ContactsContract_CommonDataKinds_StructuredPostal::POBOX()
 	{
 		return getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$StructuredPostal",
 			"POBOX",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ContactsContract_CommonDataKinds_StructuredPostal::POSTCODE()
+	JString ContactsContract_CommonDataKinds_StructuredPostal::POSTCODE()
 	{
 		return getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$StructuredPostal",
 			"POSTCODE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ContactsContract_CommonDataKinds_StructuredPostal::REGION()
+	JString ContactsContract_CommonDataKinds_StructuredPostal::REGION()
 	{
 		return getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$StructuredPostal",
 			"REGION",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ContactsContract_CommonDataKinds_StructuredPostal::STREET()
+	JString ContactsContract_CommonDataKinds_StructuredPostal::STREET()
 	{
 		return getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$StructuredPostal",
 			"STREET",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint ContactsContract_CommonDataKinds_StructuredPostal::TYPE_HOME()
 	{
@@ -145,7 +147,7 @@ namespace android::provider
 	// Constructors
 	
 	// Methods
-	jstring ContactsContract_CommonDataKinds_StructuredPostal::getTypeLabel(android::content::res::Resources arg0, jint arg1, jstring arg2)
+	JString ContactsContract_CommonDataKinds_StructuredPostal::getTypeLabel(android::content::res::Resources arg0, jint arg1, JString arg2)
 	{
 		return callStaticObjectMethod(
 			"android.provider.ContactsContract$CommonDataKinds$StructuredPostal",
@@ -153,8 +155,8 @@ namespace android::provider
 			"(Landroid/content/res/Resources;ILjava/lang/CharSequence;)Ljava/lang/CharSequence;",
 			arg0.object(),
 			arg1,
-			arg2
-		).object<jstring>();
+			arg2.object<jstring>()
+		);
 	}
 	jint ContactsContract_CommonDataKinds_StructuredPostal::getTypeLabelResource(jint arg0)
 	{

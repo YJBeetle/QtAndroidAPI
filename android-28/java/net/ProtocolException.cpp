@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./ProtocolException.hpp"
 
 namespace java::net
@@ -13,11 +14,11 @@ namespace java::net
 			"java.net.ProtocolException",
 			"()V"
 		) {}
-	ProtocolException::ProtocolException(jstring arg0)
+	ProtocolException::ProtocolException(JString arg0)
 		: java::io::IOException(
 			"java.net.ProtocolException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

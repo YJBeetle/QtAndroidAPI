@@ -1,4 +1,5 @@
 #include "../../../java/lang/ClassLoader.hpp"
+#include "../../../JString.hpp"
 #include "../../../java/math/BigDecimal.hpp"
 #include "../../../java/math/BigInteger.hpp"
 #include "../../../java/util/GregorianCalendar.hpp"
@@ -10,21 +11,21 @@
 namespace javax::xml::datatype
 {
 	// Fields
-	jstring DatatypeFactory::DATATYPEFACTORY_IMPLEMENTATION_CLASS()
+	JString DatatypeFactory::DATATYPEFACTORY_IMPLEMENTATION_CLASS()
 	{
 		return getStaticObjectField(
 			"javax.xml.datatype.DatatypeFactory",
 			"DATATYPEFACTORY_IMPLEMENTATION_CLASS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DatatypeFactory::DATATYPEFACTORY_PROPERTY()
+	JString DatatypeFactory::DATATYPEFACTORY_PROPERTY()
 	{
 		return getStaticObjectField(
 			"javax.xml.datatype.DatatypeFactory",
 			"DATATYPEFACTORY_PROPERTY",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QJniObject forward
@@ -49,22 +50,22 @@ namespace javax::xml::datatype
 			"()Ljavax/xml/datatype/DatatypeFactory;"
 		);
 	}
-	javax::xml::datatype::DatatypeFactory DatatypeFactory::newInstance(jstring arg0, java::lang::ClassLoader arg1)
+	javax::xml::datatype::DatatypeFactory DatatypeFactory::newInstance(JString arg0, java::lang::ClassLoader arg1)
 	{
 		return callStaticObjectMethod(
 			"javax.xml.datatype.DatatypeFactory",
 			"newInstance",
 			"(Ljava/lang/String;Ljava/lang/ClassLoader;)Ljavax/xml/datatype/DatatypeFactory;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
-	javax::xml::datatype::Duration DatatypeFactory::newDuration(jstring arg0)
+	javax::xml::datatype::Duration DatatypeFactory::newDuration(JString arg0)
 	{
 		return callObjectMethod(
 			"newDuration",
 			"(Ljava/lang/String;)Ljavax/xml/datatype/Duration;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	javax::xml::datatype::Duration DatatypeFactory::newDuration(jlong arg0)
@@ -103,12 +104,12 @@ namespace javax::xml::datatype
 			arg6.object()
 		);
 	}
-	javax::xml::datatype::Duration DatatypeFactory::newDurationDayTime(jstring arg0)
+	javax::xml::datatype::Duration DatatypeFactory::newDurationDayTime(JString arg0)
 	{
 		return callObjectMethod(
 			"newDurationDayTime",
 			"(Ljava/lang/String;)Ljavax/xml/datatype/Duration;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	javax::xml::datatype::Duration DatatypeFactory::newDurationDayTime(jlong arg0)
@@ -143,12 +144,12 @@ namespace javax::xml::datatype
 			arg4.object()
 		);
 	}
-	javax::xml::datatype::Duration DatatypeFactory::newDurationYearMonth(jstring arg0)
+	javax::xml::datatype::Duration DatatypeFactory::newDurationYearMonth(JString arg0)
 	{
 		return callObjectMethod(
 			"newDurationYearMonth",
 			"(Ljava/lang/String;)Ljavax/xml/datatype/Duration;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	javax::xml::datatype::Duration DatatypeFactory::newDurationYearMonth(jlong arg0)
@@ -186,12 +187,12 @@ namespace javax::xml::datatype
 			"()Ljavax/xml/datatype/XMLGregorianCalendar;"
 		);
 	}
-	javax::xml::datatype::XMLGregorianCalendar DatatypeFactory::newXMLGregorianCalendar(jstring arg0)
+	javax::xml::datatype::XMLGregorianCalendar DatatypeFactory::newXMLGregorianCalendar(JString arg0)
 	{
 		return callObjectMethod(
 			"newXMLGregorianCalendar",
 			"(Ljava/lang/String;)Ljavax/xml/datatype/XMLGregorianCalendar;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	javax::xml::datatype::XMLGregorianCalendar DatatypeFactory::newXMLGregorianCalendar(java::util::GregorianCalendar arg0)

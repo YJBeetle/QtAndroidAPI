@@ -30,6 +30,9 @@ namespace android::os
 {
 	class UserHandle;
 }
+class JString;
+class JObject;
+class JString;
 
 namespace android::appwidget
 {
@@ -54,7 +57,7 @@ namespace android::appwidget
 		jint icon();
 		jint initialKeyguardLayout();
 		jint initialLayout();
-		jstring label();
+		JString label();
 		jint maxResizeHeight();
 		jint maxResizeWidth();
 		jint minHeight();
@@ -84,11 +87,11 @@ namespace android::appwidget
 		jint describeContents();
 		android::content::pm::ActivityInfo getActivityInfo();
 		android::os::UserHandle getProfile();
-		jstring loadDescription(android::content::Context arg0);
+		JString loadDescription(android::content::Context arg0);
 		android::graphics::drawable::Drawable loadIcon(android::content::Context arg0, jint arg1);
-		jstring loadLabel(android::content::pm::PackageManager arg0);
+		JString loadLabel(android::content::pm::PackageManager arg0);
 		android::graphics::drawable::Drawable loadPreviewImage(android::content::Context arg0, jint arg1);
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::appwidget

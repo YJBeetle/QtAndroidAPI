@@ -1,9 +1,10 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "./AttributedCharacterIterator_Attribute.hpp"
 #include "./Format_Field.hpp"
 
+class JArray;
+class JObject;
+class JString;
 
 namespace java::text
 {

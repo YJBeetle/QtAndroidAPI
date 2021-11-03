@@ -1,3 +1,4 @@
+#include "../../../JIntArray.hpp"
 #include "./CarrierMessagingService_SendMultipartSmsResult.hpp"
 
 namespace android::service::carrier
@@ -8,21 +9,21 @@ namespace android::service::carrier
 	CarrierMessagingService_SendMultipartSmsResult::CarrierMessagingService_SendMultipartSmsResult(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	CarrierMessagingService_SendMultipartSmsResult::CarrierMessagingService_SendMultipartSmsResult(jint arg0, jintArray arg1)
+	CarrierMessagingService_SendMultipartSmsResult::CarrierMessagingService_SendMultipartSmsResult(jint arg0, JIntArray arg1)
 		: JObject(
 			"android.service.carrier.CarrierMessagingService$SendMultipartSmsResult",
 			"(I[I)V",
 			arg0,
-			arg1
+			arg1.object<jintArray>()
 		) {}
 	
 	// Methods
-	jintArray CarrierMessagingService_SendMultipartSmsResult::getMessageRefs()
+	JIntArray CarrierMessagingService_SendMultipartSmsResult::getMessageRefs()
 	{
 		return callObjectMethod(
 			"getMessageRefs",
 			"()[I"
-		).object<jintArray>();
+		);
 	}
 	jint CarrierMessagingService_SendMultipartSmsResult::getSendStatus()
 	{

@@ -1,3 +1,6 @@
+#include "../../JIntArray.hpp"
+#include "../../JObjectArray.hpp"
+#include "../../JString.hpp"
 #include "./EventLog.hpp"
 
 namespace android::util
@@ -10,42 +13,42 @@ namespace android::util
 	// Constructors
 	
 	// Methods
-	jint EventLog::getTagCode(jstring arg0)
+	jint EventLog::getTagCode(JString arg0)
 	{
 		return callStaticMethod<jint>(
 			"android.util.EventLog",
 			"getTagCode",
 			"(Ljava/lang/String;)I",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jstring EventLog::getTagName(jint arg0)
+	JString EventLog::getTagName(jint arg0)
 	{
 		return callStaticObjectMethod(
 			"android.util.EventLog",
 			"getTagName",
 			"(I)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
-	void EventLog::readEvents(jintArray arg0, JObject arg1)
+	void EventLog::readEvents(JIntArray arg0, JObject arg1)
 	{
 		callStaticMethod<void>(
 			"android.util.EventLog",
 			"readEvents",
 			"([ILjava/util/Collection;)V",
-			arg0,
+			arg0.object<jintArray>(),
 			arg1.object()
 		);
 	}
-	jint EventLog::writeEvent(jint arg0, jobjectArray arg1)
+	jint EventLog::writeEvent(jint arg0, JObjectArray arg1)
 	{
 		return callStaticMethod<jint>(
 			"android.util.EventLog",
 			"writeEvent",
 			"(I[Ljava/lang/Object;)I",
 			arg0,
-			arg1
+			arg1.object<jobjectArray>()
 		);
 	}
 	jint EventLog::writeEvent(jint arg0, jfloat arg1)
@@ -68,14 +71,14 @@ namespace android::util
 			arg1
 		);
 	}
-	jint EventLog::writeEvent(jint arg0, jstring arg1)
+	jint EventLog::writeEvent(jint arg0, JString arg1)
 	{
 		return callStaticMethod<jint>(
 			"android.util.EventLog",
 			"writeEvent",
 			"(ILjava/lang/String;)I",
 			arg0,
-			arg1
+			arg1.object<jstring>()
 		);
 	}
 	jint EventLog::writeEvent(jint arg0, jlong arg1)

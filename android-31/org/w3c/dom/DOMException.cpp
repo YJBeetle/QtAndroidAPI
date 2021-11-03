@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./DOMException.hpp"
 
 namespace org::w3c::dom
@@ -133,12 +134,12 @@ namespace org::w3c::dom
 	DOMException::DOMException(QJniObject obj) : java::lang::RuntimeException(obj) {}
 	
 	// Constructors
-	DOMException::DOMException(jshort arg0, jstring arg1)
+	DOMException::DOMException(jshort arg0, JString arg1)
 		: java::lang::RuntimeException(
 			"org.w3c.dom.DOMException",
 			"(SLjava/lang/String;)V",
 			arg0,
-			arg1
+			arg1.object<jstring>()
 		) {}
 	
 	// Methods

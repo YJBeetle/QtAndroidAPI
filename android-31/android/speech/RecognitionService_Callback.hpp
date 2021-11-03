@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JByteArray;
 namespace android::content
 {
 	class AttributionSource;
@@ -30,7 +31,7 @@ namespace android::speech
 		
 		// Methods
 		void beginningOfSpeech();
-		void bufferReceived(jbyteArray arg0);
+		void bufferReceived(JByteArray arg0);
 		void endOfSpeech();
 		void error(jint arg0);
 		android::content::AttributionSource getCallingAttributionSource();

@@ -6,6 +6,8 @@ namespace android::icu::util
 {
 	class TimeUnit;
 }
+class JObject;
+class JString;
 
 namespace android::icu::util
 {
@@ -156,13 +158,13 @@ namespace android::icu::util
 		
 		// Methods
 		static JObject getAvailable();
-		static JObject getAvailable(jstring arg0);
+		static JObject getAvailable(JString arg0);
 		static JObject getAvailableTypes();
-		jboolean equals(jobject arg0);
-		jstring getSubtype();
-		jstring getType();
+		jboolean equals(JObject arg0);
+		JString getSubtype();
+		JString getType();
 		jint hashCode();
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::icu::util
 

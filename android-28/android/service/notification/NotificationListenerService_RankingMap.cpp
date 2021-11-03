@@ -1,5 +1,7 @@
+#include "../../../JArray.hpp"
 #include "../../os/Parcel.hpp"
 #include "./NotificationListenerService_Ranking.hpp"
+#include "../../../JString.hpp"
 #include "./NotificationListenerService_RankingMap.hpp"
 
 namespace android::service::notification
@@ -27,19 +29,19 @@ namespace android::service::notification
 			"()I"
 		);
 	}
-	jarray NotificationListenerService_RankingMap::getOrderedKeys()
+	JArray NotificationListenerService_RankingMap::getOrderedKeys()
 	{
 		return callObjectMethod(
 			"getOrderedKeys",
 			"()[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
-	jboolean NotificationListenerService_RankingMap::getRanking(jstring arg0, android::service::notification::NotificationListenerService_Ranking arg1)
+	jboolean NotificationListenerService_RankingMap::getRanking(JString arg0, android::service::notification::NotificationListenerService_Ranking arg1)
 	{
 		return callMethod<jboolean>(
 			"getRanking",
 			"(Ljava/lang/String;Landroid/service/notification/NotificationListenerService$Ranking;)Z",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}

@@ -1,8 +1,11 @@
+#include "../../../JArray.hpp"
 #include "./ColorStateList.hpp"
 #include "./Resources.hpp"
 #include "../../graphics/Typeface.hpp"
 #include "../../graphics/drawable/Drawable.hpp"
 #include "../../util/TypedValue.hpp"
+#include "../../../JString.hpp"
+#include "../../../JString.hpp"
 #include "./TypedArray.hpp"
 
 namespace android::content::res
@@ -153,29 +156,29 @@ namespace android::content::res
 			arg1
 		);
 	}
-	jint TypedArray::getLayoutDimension(jint arg0, jstring arg1)
+	jint TypedArray::getLayoutDimension(jint arg0, JString arg1)
 	{
 		return callMethod<jint>(
 			"getLayoutDimension",
 			"(ILjava/lang/String;)I",
 			arg0,
-			arg1
+			arg1.object<jstring>()
 		);
 	}
-	jstring TypedArray::getNonResourceString(jint arg0)
+	JString TypedArray::getNonResourceString(jint arg0)
 	{
 		return callObjectMethod(
 			"getNonResourceString",
 			"(I)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
-	jstring TypedArray::getPositionDescription()
+	JString TypedArray::getPositionDescription()
 	{
 		return callObjectMethod(
 			"getPositionDescription",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint TypedArray::getResourceId(jint arg0, jint arg1)
 	{
@@ -193,29 +196,29 @@ namespace android::content::res
 			"()Landroid/content/res/Resources;"
 		);
 	}
-	jstring TypedArray::getString(jint arg0)
+	JString TypedArray::getString(jint arg0)
 	{
 		return callObjectMethod(
 			"getString",
 			"(I)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
-	jstring TypedArray::getText(jint arg0)
+	JString TypedArray::getText(jint arg0)
 	{
 		return callObjectMethod(
 			"getText",
 			"(I)Ljava/lang/CharSequence;",
 			arg0
-		).object<jstring>();
+		);
 	}
-	jarray TypedArray::getTextArray(jint arg0)
+	JArray TypedArray::getTextArray(jint arg0)
 	{
 		return callObjectMethod(
 			"getTextArray",
 			"(I)[Ljava/lang/CharSequence;",
 			arg0
-		).object<jarray>();
+		);
 	}
 	jint TypedArray::getType(jint arg0)
 	{
@@ -272,12 +275,12 @@ namespace android::content::res
 			"()V"
 		);
 	}
-	jstring TypedArray::toString()
+	JString TypedArray::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::content::res
 

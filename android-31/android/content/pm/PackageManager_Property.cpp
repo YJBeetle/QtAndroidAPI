@@ -1,4 +1,5 @@
 #include "../../os/Parcel.hpp"
+#include "../../../JString.hpp"
 #include "./PackageManager_Property.hpp"
 
 namespace android::content::pm
@@ -33,12 +34,12 @@ namespace android::content::pm
 			"()Z"
 		);
 	}
-	jstring PackageManager_Property::getClassName()
+	JString PackageManager_Property::getClassName()
 	{
 		return callObjectMethod(
 			"getClassName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jfloat PackageManager_Property::getFloat()
 	{
@@ -54,19 +55,19 @@ namespace android::content::pm
 			"()I"
 		);
 	}
-	jstring PackageManager_Property::getName()
+	JString PackageManager_Property::getName()
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageManager_Property::getPackageName()
+	JString PackageManager_Property::getPackageName()
 	{
 		return callObjectMethod(
 			"getPackageName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint PackageManager_Property::getResourceId()
 	{
@@ -75,12 +76,12 @@ namespace android::content::pm
 			"()I"
 		);
 	}
-	jstring PackageManager_Property::getString()
+	JString PackageManager_Property::getString()
 	{
 		return callObjectMethod(
 			"getString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jboolean PackageManager_Property::isBoolean()
 	{

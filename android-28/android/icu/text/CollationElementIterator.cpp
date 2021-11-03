@@ -1,5 +1,7 @@
 #include "./RuleBasedCollator.hpp"
 #include "./UCharacterIterator.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./CollationElementIterator.hpp"
 
 namespace android::icu::text
@@ -53,12 +55,12 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	jboolean CollationElementIterator::equals(jobject arg0)
+	jboolean CollationElementIterator::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint CollationElementIterator::getMaxExpansion(jint arg0)
@@ -120,12 +122,12 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	void CollationElementIterator::setText(jstring arg0)
+	void CollationElementIterator::setText(JString arg0)
 	{
 		callMethod<void>(
 			"setText",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void CollationElementIterator::setText(JObject arg0)

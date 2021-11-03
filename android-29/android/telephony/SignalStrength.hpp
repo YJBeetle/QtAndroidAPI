@@ -6,6 +6,9 @@ namespace android::os
 {
 	class Parcel;
 }
+class JClass;
+class JObject;
+class JString;
 
 namespace android::telephony
 {
@@ -23,11 +26,11 @@ namespace android::telephony
 		
 		// Methods
 		jint describeContents();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint getCdmaDbm();
 		jint getCdmaEcio();
 		JObject getCellSignalStrengths();
-		JObject getCellSignalStrengths(jclass arg0);
+		JObject getCellSignalStrengths(JClass arg0);
 		jint getEvdoDbm();
 		jint getEvdoEcio();
 		jint getEvdoSnr();
@@ -36,7 +39,7 @@ namespace android::telephony
 		jint getLevel();
 		jint hashCode();
 		jboolean isGsm();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::telephony

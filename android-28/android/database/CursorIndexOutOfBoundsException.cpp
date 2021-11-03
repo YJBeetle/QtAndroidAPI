@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./CursorIndexOutOfBoundsException.hpp"
 
 namespace android::database
@@ -8,11 +9,11 @@ namespace android::database
 	CursorIndexOutOfBoundsException::CursorIndexOutOfBoundsException(QJniObject obj) : java::lang::IndexOutOfBoundsException(obj) {}
 	
 	// Constructors
-	CursorIndexOutOfBoundsException::CursorIndexOutOfBoundsException(jstring arg0)
+	CursorIndexOutOfBoundsException::CursorIndexOutOfBoundsException(JString arg0)
 		: java::lang::IndexOutOfBoundsException(
 			"android.database.CursorIndexOutOfBoundsException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	CursorIndexOutOfBoundsException::CursorIndexOutOfBoundsException(jint arg0, jint arg1)
 		: java::lang::IndexOutOfBoundsException(

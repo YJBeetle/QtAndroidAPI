@@ -1,4 +1,6 @@
+#include "../../../JArray.hpp"
 #include "../../os/Parcel.hpp"
+#include "../../../JString.hpp"
 #include "./SupplicantState.hpp"
 
 namespace android::net::wifi
@@ -124,22 +126,22 @@ namespace android::net::wifi
 			arg0.object()
 		);
 	}
-	android::net::wifi::SupplicantState SupplicantState::valueOf(jstring arg0)
+	android::net::wifi::SupplicantState SupplicantState::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.net.wifi.SupplicantState",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/net/wifi/SupplicantState;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray SupplicantState::values()
+	JArray SupplicantState::values()
 	{
 		return callStaticObjectMethod(
 			"android.net.wifi.SupplicantState",
 			"values",
 			"()[Landroid/net/wifi/SupplicantState;"
-		).object<jarray>();
+		);
 	}
 	jint SupplicantState::describeContents()
 	{

@@ -1,6 +1,5 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "../../content/BroadcastReceiver.hpp"
 
 namespace android::content
@@ -15,6 +14,7 @@ namespace android::os
 {
 	class PersistableBundle;
 }
+class JString;
 
 namespace android::service::restrictions
 {
@@ -32,7 +32,7 @@ namespace android::service::restrictions
 		
 		// Methods
 		void onReceive(android::content::Context arg0, android::content::Intent arg1);
-		void onRequestPermission(android::content::Context arg0, jstring arg1, jstring arg2, jstring arg3, android::os::PersistableBundle arg4);
+		void onRequestPermission(android::content::Context arg0, JString arg1, JString arg2, JString arg3, android::os::PersistableBundle arg4);
 	};
 } // namespace android::service::restrictions
 

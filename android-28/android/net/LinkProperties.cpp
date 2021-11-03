@@ -1,5 +1,7 @@
 #include "./ProxyInfo.hpp"
 #include "../os/Parcel.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./LinkProperties.hpp"
 
 namespace android::net
@@ -27,12 +29,12 @@ namespace android::net
 			"()I"
 		);
 	}
-	jboolean LinkProperties::equals(jobject arg0)
+	jboolean LinkProperties::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	JObject LinkProperties::getDnsServers()
@@ -42,12 +44,12 @@ namespace android::net
 			"()Ljava/util/List;"
 		);
 	}
-	jstring LinkProperties::getDomains()
+	JString LinkProperties::getDomains()
 	{
 		return callObjectMethod(
 			"getDomains",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::net::ProxyInfo LinkProperties::getHttpProxy()
 	{
@@ -56,12 +58,12 @@ namespace android::net
 			"()Landroid/net/ProxyInfo;"
 		);
 	}
-	jstring LinkProperties::getInterfaceName()
+	JString LinkProperties::getInterfaceName()
 	{
 		return callObjectMethod(
 			"getInterfaceName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	JObject LinkProperties::getLinkAddresses()
 	{
@@ -70,12 +72,12 @@ namespace android::net
 			"()Ljava/util/List;"
 		);
 	}
-	jstring LinkProperties::getPrivateDnsServerName()
+	JString LinkProperties::getPrivateDnsServerName()
 	{
 		return callObjectMethod(
 			"getPrivateDnsServerName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	JObject LinkProperties::getRoutes()
 	{
@@ -98,12 +100,12 @@ namespace android::net
 			"()Z"
 		);
 	}
-	jstring LinkProperties::toString()
+	JString LinkProperties::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void LinkProperties::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

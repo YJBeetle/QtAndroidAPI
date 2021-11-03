@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./PermissionCollection.hpp"
 
+class JArray;
 namespace java::io
 {
 	class ObjectInputStream;

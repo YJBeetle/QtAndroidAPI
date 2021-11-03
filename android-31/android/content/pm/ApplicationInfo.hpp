@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "./PackageItemInfo.hpp"
 
+class JArray;
 namespace android::content
 {
 	class Context;
@@ -15,6 +15,8 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
+class JString;
 namespace java::util
 {
 	class UUID;
@@ -82,34 +84,34 @@ namespace android::content::pm
 		static jint ZEROINIT_DEFAULT();
 		static jint ZEROINIT_DISABLED();
 		static jint ZEROINIT_ENABLED();
-		jstring appComponentFactory();
-		jstring backupAgentName();
+		JString appComponentFactory();
+		JString backupAgentName();
 		jint category();
-		jstring className();
+		JString className();
 		jint compatibleWidthLimitDp();
 		jint compileSdkVersion();
-		jstring compileSdkVersionCodename();
-		jstring dataDir();
+		JString compileSdkVersionCodename();
+		JString dataDir();
 		jint descriptionRes();
-		jstring deviceProtectedDataDir();
+		JString deviceProtectedDataDir();
 		jboolean enabled();
 		jint flags();
 		jint largestWidthLimitDp();
-		jstring manageSpaceActivityName();
+		JString manageSpaceActivityName();
 		jint minSdkVersion();
-		jstring nativeLibraryDir();
-		jstring permission();
-		jstring processName();
-		jstring publicSourceDir();
+		JString nativeLibraryDir();
+		JString permission();
+		JString processName();
+		JString publicSourceDir();
 		jint requiresSmallestWidthDp();
-		jarray sharedLibraryFiles();
-		jstring sourceDir();
-		jarray splitNames();
-		jarray splitPublicSourceDirs();
-		jarray splitSourceDirs();
+		JArray sharedLibraryFiles();
+		JString sourceDir();
+		JArray splitNames();
+		JArray splitPublicSourceDirs();
+		JArray splitSourceDirs();
 		java::util::UUID storageUuid();
 		jint targetSdkVersion();
-		jstring taskAffinity();
+		JString taskAffinity();
 		jint theme();
 		jint uiOptions();
 		jint uid();
@@ -123,10 +125,10 @@ namespace android::content::pm
 		ApplicationInfo(android::content::pm::ApplicationInfo &arg0);
 		
 		// Methods
-		static jstring getCategoryTitle(android::content::Context arg0, jint arg1);
+		static JString getCategoryTitle(android::content::Context arg0, jint arg1);
 		jboolean areAttributionsUserVisible();
 		jint describeContents();
-		void dump(JObject arg0, jstring arg1);
+		void dump(JObject arg0, JString arg1);
 		jint getGwpAsanMode();
 		jint getMemtagMode();
 		jint getNativeHeapZeroInitialized();
@@ -135,8 +137,8 @@ namespace android::content::pm
 		jboolean isProfileableByShell();
 		jboolean isResourceOverlay();
 		jboolean isVirtualPreload();
-		jstring loadDescription(android::content::pm::PackageManager arg0);
-		jstring toString();
+		JString loadDescription(android::content::pm::PackageManager arg0);
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::content::pm

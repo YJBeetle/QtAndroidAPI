@@ -1,12 +1,12 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./TaskInfo.hpp"
 
 namespace android::os
 {
 	class Parcel;
 }
+class JString;
 
 namespace android::app
 {
@@ -16,7 +16,7 @@ namespace android::app
 		// Fields
 		static JObject CREATOR();
 		jint affiliatedTaskId();
-		jstring description();
+		JString description();
 		jint id();
 		jint persistentId();
 		

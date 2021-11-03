@@ -1,7 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../view/View.hpp"
 #include "../view/ViewGroup.hpp"
 
 namespace android::content
@@ -24,6 +22,8 @@ namespace android::view
 {
 	class ViewStructure;
 }
+class JString;
+class JObject;
 
 namespace android::widget
 {
@@ -51,19 +51,19 @@ namespace android::widget
 		void addView(android::view::View arg0, android::view::ViewGroup_LayoutParams arg1);
 		void addView(android::view::View arg0, jint arg1);
 		void addView(android::view::View arg0, jint arg1, android::view::ViewGroup_LayoutParams arg2);
-		jstring getAccessibilityClassName();
+		JString getAccessibilityClassName();
 		JObject getAdapter();
 		jint getCount();
 		android::view::View getEmptyView();
 		jint getFirstVisiblePosition();
-		jobject getItemAtPosition(jint arg0);
+		JObject getItemAtPosition(jint arg0);
 		jlong getItemIdAtPosition(jint arg0);
 		jint getLastVisiblePosition();
 		JObject getOnItemClickListener();
 		JObject getOnItemLongClickListener();
 		JObject getOnItemSelectedListener();
 		jint getPositionForView(android::view::View arg0);
-		jobject getSelectedItem();
+		JObject getSelectedItem();
 		jlong getSelectedItemId();
 		jint getSelectedItemPosition();
 		android::view::View getSelectedView();

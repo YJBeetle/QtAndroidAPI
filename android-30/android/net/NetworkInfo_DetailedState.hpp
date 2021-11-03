@@ -1,8 +1,9 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "../../java/lang/Enum.hpp"
 
+class JArray;
+class JString;
 
 namespace android::net
 {
@@ -31,8 +32,8 @@ namespace android::net
 		// Constructors
 		
 		// Methods
-		static android::net::NetworkInfo_DetailedState valueOf(jstring arg0);
-		static jarray values();
+		static android::net::NetworkInfo_DetailedState valueOf(JString arg0);
+		static JArray values();
 	};
 } // namespace android::net
 

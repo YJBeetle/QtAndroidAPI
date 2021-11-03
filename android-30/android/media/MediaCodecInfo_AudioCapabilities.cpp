@@ -1,3 +1,5 @@
+#include "../../JIntArray.hpp"
+#include "../../JArray.hpp"
 #include "../util/Range.hpp"
 #include "./MediaCodecInfo_AudioCapabilities.hpp"
 
@@ -25,19 +27,19 @@ namespace android::media
 			"()I"
 		);
 	}
-	jarray MediaCodecInfo_AudioCapabilities::getSupportedSampleRateRanges()
+	JArray MediaCodecInfo_AudioCapabilities::getSupportedSampleRateRanges()
 	{
 		return callObjectMethod(
 			"getSupportedSampleRateRanges",
 			"()[Landroid/util/Range;"
-		).object<jarray>();
+		);
 	}
-	jintArray MediaCodecInfo_AudioCapabilities::getSupportedSampleRates()
+	JIntArray MediaCodecInfo_AudioCapabilities::getSupportedSampleRates()
 	{
 		return callObjectMethod(
 			"getSupportedSampleRates",
 			"()[I"
-		).object<jintArray>();
+		);
 	}
 	jboolean MediaCodecInfo_AudioCapabilities::isSampleRateSupported(jint arg0)
 	{

@@ -1,3 +1,5 @@
+#include "../../JByteArray.hpp"
+#include "../../JIntArray.hpp"
 #include "./Bitmap_CompressFormat.hpp"
 #include "./Bitmap_Config.hpp"
 #include "./Canvas.hpp"
@@ -67,13 +69,13 @@ namespace android::graphics
 			arg2.object()
 		);
 	}
-	android::graphics::Bitmap Bitmap::createBitmap(jintArray arg0, jint arg1, jint arg2, android::graphics::Bitmap_Config arg3)
+	android::graphics::Bitmap Bitmap::createBitmap(JIntArray arg0, jint arg1, jint arg2, android::graphics::Bitmap_Config arg3)
 	{
 		return callStaticObjectMethod(
 			"android.graphics.Bitmap",
 			"createBitmap",
 			"([IIILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;",
-			arg0,
+			arg0.object<jintArray>(),
 			arg1,
 			arg2,
 			arg3.object()
@@ -128,14 +130,14 @@ namespace android::graphics
 			arg4
 		);
 	}
-	android::graphics::Bitmap Bitmap::createBitmap(android::util::DisplayMetrics arg0, jintArray arg1, jint arg2, jint arg3, android::graphics::Bitmap_Config arg4)
+	android::graphics::Bitmap Bitmap::createBitmap(android::util::DisplayMetrics arg0, JIntArray arg1, jint arg2, jint arg3, android::graphics::Bitmap_Config arg4)
 	{
 		return callStaticObjectMethod(
 			"android.graphics.Bitmap",
 			"createBitmap",
 			"(Landroid/util/DisplayMetrics;[IIILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;",
 			arg0.object(),
-			arg1,
+			arg1.object<jintArray>(),
 			arg2,
 			arg3,
 			arg4.object()
@@ -167,13 +169,13 @@ namespace android::graphics
 			arg4.object()
 		);
 	}
-	android::graphics::Bitmap Bitmap::createBitmap(jintArray arg0, jint arg1, jint arg2, jint arg3, jint arg4, android::graphics::Bitmap_Config arg5)
+	android::graphics::Bitmap Bitmap::createBitmap(JIntArray arg0, jint arg1, jint arg2, jint arg3, jint arg4, android::graphics::Bitmap_Config arg5)
 	{
 		return callStaticObjectMethod(
 			"android.graphics.Bitmap",
 			"createBitmap",
 			"([IIIIILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;",
-			arg0,
+			arg0.object<jintArray>(),
 			arg1,
 			arg2,
 			arg3,
@@ -210,14 +212,14 @@ namespace android::graphics
 			arg6
 		);
 	}
-	android::graphics::Bitmap Bitmap::createBitmap(android::util::DisplayMetrics arg0, jintArray arg1, jint arg2, jint arg3, jint arg4, jint arg5, android::graphics::Bitmap_Config arg6)
+	android::graphics::Bitmap Bitmap::createBitmap(android::util::DisplayMetrics arg0, JIntArray arg1, jint arg2, jint arg3, jint arg4, jint arg5, android::graphics::Bitmap_Config arg6)
 	{
 		return callStaticObjectMethod(
 			"android.graphics.Bitmap",
 			"createBitmap",
 			"(Landroid/util/DisplayMetrics;[IIIIILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;",
 			arg0.object(),
-			arg1,
+			arg1.object<jintArray>(),
 			arg2,
 			arg3,
 			arg4,
@@ -312,13 +314,13 @@ namespace android::graphics
 			"()Landroid/graphics/Bitmap;"
 		);
 	}
-	android::graphics::Bitmap Bitmap::extractAlpha(android::graphics::Paint arg0, jintArray arg1)
+	android::graphics::Bitmap Bitmap::extractAlpha(android::graphics::Paint arg0, JIntArray arg1)
 	{
 		return callObjectMethod(
 			"extractAlpha",
 			"(Landroid/graphics/Paint;[I)Landroid/graphics/Bitmap;",
 			arg0.object(),
-			arg1
+			arg1.object<jintArray>()
 		);
 	}
 	jint Bitmap::getAllocationByteCount()
@@ -379,12 +381,12 @@ namespace android::graphics
 			"()I"
 		);
 	}
-	jbyteArray Bitmap::getNinePatchChunk()
+	JByteArray Bitmap::getNinePatchChunk()
 	{
 		return callObjectMethod(
 			"getNinePatchChunk",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
 	jint Bitmap::getPixel(jint arg0, jint arg1)
 	{
@@ -395,12 +397,12 @@ namespace android::graphics
 			arg1
 		);
 	}
-	void Bitmap::getPixels(jintArray arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6)
+	void Bitmap::getPixels(JIntArray arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6)
 	{
 		callMethod<void>(
 			"getPixels",
 			"([IIIIIII)V",
-			arg0,
+			arg0.object<jintArray>(),
 			arg1,
 			arg2,
 			arg3,
@@ -596,12 +598,12 @@ namespace android::graphics
 			arg2
 		);
 	}
-	void Bitmap::setPixels(jintArray arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6)
+	void Bitmap::setPixels(JIntArray arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6)
 	{
 		callMethod<void>(
 			"setPixels",
 			"([IIIIIII)V",
-			arg0,
+			arg0.object<jintArray>(),
 			arg1,
 			arg2,
 			arg3,

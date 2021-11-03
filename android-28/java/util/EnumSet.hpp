@@ -1,17 +1,18 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "./AbstractCollection.hpp"
 #include "./AbstractSet.hpp"
 
+class JArray;
 namespace java::io
 {
 	class ObjectInputStream;
 }
+class JClass;
 namespace java::lang
 {
 	class Enum;
 }
+class JObject;
 
 namespace java::util
 {
@@ -27,13 +28,13 @@ namespace java::util
 		// Constructors
 		
 		// Methods
-		static java::util::EnumSet allOf(jclass arg0);
+		static java::util::EnumSet allOf(JClass arg0);
 		static java::util::EnumSet complementOf(java::util::EnumSet arg0);
 		static java::util::EnumSet copyOf(JObject arg0);
 		static java::util::EnumSet copyOf(java::util::EnumSet arg0);
-		static java::util::EnumSet noneOf(jclass arg0);
+		static java::util::EnumSet noneOf(JClass arg0);
 		static java::util::EnumSet of(java::lang::Enum arg0);
-		static java::util::EnumSet of(java::lang::Enum arg0, jarray arg1);
+		static java::util::EnumSet of(java::lang::Enum arg0, JArray arg1);
 		static java::util::EnumSet of(java::lang::Enum arg0, java::lang::Enum arg1);
 		static java::util::EnumSet of(java::lang::Enum arg0, java::lang::Enum arg1, java::lang::Enum arg2);
 		static java::util::EnumSet of(java::lang::Enum arg0, java::lang::Enum arg1, java::lang::Enum arg2, java::lang::Enum arg3);

@@ -1,3 +1,6 @@
+#include "../../JClass.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./invoke/MethodHandles_Lookup.hpp"
 #include "../util/Optional.hpp"
 #include "./Float.hpp"
@@ -75,13 +78,13 @@ namespace java::lang
 			"SIZE"
 		);
 	}
-	jclass Float::TYPE()
+	JClass Float::TYPE()
 	{
 		return getStaticObjectField(
 			"java.lang.Float",
 			"TYPE",
 			"Ljava/lang/Class;"
-		).object<jclass>();
+		);
 	}
 	
 	// QJniObject forward
@@ -100,11 +103,11 @@ namespace java::lang
 			"(F)V",
 			arg0
 		) {}
-	Float::Float(jstring arg0)
+	Float::Float(JString arg0)
 		: java::lang::Number(
 			"java.lang.Float",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods
@@ -201,13 +204,13 @@ namespace java::lang
 			arg1
 		);
 	}
-	jfloat Float::parseFloat(jstring arg0)
+	jfloat Float::parseFloat(JString arg0)
 	{
 		return callStaticMethod<jfloat>(
 			"java.lang.Float",
 			"parseFloat",
 			"(Ljava/lang/String;)F",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	jfloat Float::sum(jfloat arg0, jfloat arg1)
@@ -220,23 +223,23 @@ namespace java::lang
 			arg1
 		);
 	}
-	jstring Float::toHexString(jfloat arg0)
+	JString Float::toHexString(jfloat arg0)
 	{
 		return callStaticObjectMethod(
 			"java.lang.Float",
 			"toHexString",
 			"(F)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
-	jstring Float::toString(jfloat arg0)
+	JString Float::toString(jfloat arg0)
 	{
 		return callStaticObjectMethod(
 			"java.lang.Float",
 			"toString",
 			"(F)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
 	java::lang::Float Float::valueOf(jfloat arg0)
 	{
@@ -247,13 +250,13 @@ namespace java::lang
 			arg0
 		);
 	}
-	java::lang::Float Float::valueOf(jstring arg0)
+	java::lang::Float Float::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"java.lang.Float",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/lang/Float;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	jbyte Float::byteValue()
@@ -271,12 +274,12 @@ namespace java::lang
 			arg0.object()
 		);
 	}
-	jint Float::compareTo(jobject arg0)
+	jint Float::compareTo(JObject arg0)
 	{
 		return callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Object;)I",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	java::util::Optional Float::describeConstable()
@@ -293,12 +296,12 @@ namespace java::lang
 			"()D"
 		);
 	}
-	jboolean Float::equals(jobject arg0)
+	jboolean Float::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jfloat Float::floatValue()
@@ -358,12 +361,12 @@ namespace java::lang
 			"()S"
 		);
 	}
-	jstring Float::toString()
+	JString Float::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::lang
 

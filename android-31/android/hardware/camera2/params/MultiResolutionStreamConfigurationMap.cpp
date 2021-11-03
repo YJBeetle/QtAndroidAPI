@@ -1,3 +1,6 @@
+#include "../../../../JIntArray.hpp"
+#include "../../../../JObject.hpp"
+#include "../../../../JString.hpp"
 #include "./MultiResolutionStreamConfigurationMap.hpp"
 
 namespace android::hardware::camera2::params
@@ -10,20 +13,20 @@ namespace android::hardware::camera2::params
 	// Constructors
 	
 	// Methods
-	jboolean MultiResolutionStreamConfigurationMap::equals(jobject arg0)
+	jboolean MultiResolutionStreamConfigurationMap::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jintArray MultiResolutionStreamConfigurationMap::getInputFormats()
+	JIntArray MultiResolutionStreamConfigurationMap::getInputFormats()
 	{
 		return callObjectMethod(
 			"getInputFormats",
 			"()[I"
-		).object<jintArray>();
+		);
 	}
 	JObject MultiResolutionStreamConfigurationMap::getInputInfo(jint arg0)
 	{
@@ -33,12 +36,12 @@ namespace android::hardware::camera2::params
 			arg0
 		);
 	}
-	jintArray MultiResolutionStreamConfigurationMap::getOutputFormats()
+	JIntArray MultiResolutionStreamConfigurationMap::getOutputFormats()
 	{
 		return callObjectMethod(
 			"getOutputFormats",
 			"()[I"
-		).object<jintArray>();
+		);
 	}
 	JObject MultiResolutionStreamConfigurationMap::getOutputInfo(jint arg0)
 	{
@@ -55,12 +58,12 @@ namespace android::hardware::camera2::params
 			"()I"
 		);
 	}
-	jstring MultiResolutionStreamConfigurationMap::toString()
+	JString MultiResolutionStreamConfigurationMap::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::hardware::camera2::params
 

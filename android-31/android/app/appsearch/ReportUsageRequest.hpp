@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JString;
 
 namespace android::app::appsearch
 {
@@ -17,8 +18,8 @@ namespace android::app::appsearch
 		// Constructors
 		
 		// Methods
-		jstring getDocumentId();
-		jstring getNamespace();
+		JString getDocumentId();
+		JString getNamespace();
 		jlong getUsageTimestampMillis();
 	};
 } // namespace android::app::appsearch

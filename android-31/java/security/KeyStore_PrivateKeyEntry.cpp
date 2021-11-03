@@ -1,3 +1,5 @@
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
 #include "./cert/Certificate.hpp"
 #include "./KeyStore_PrivateKeyEntry.hpp"
 
@@ -9,19 +11,19 @@ namespace java::security
 	KeyStore_PrivateKeyEntry::KeyStore_PrivateKeyEntry(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	KeyStore_PrivateKeyEntry::KeyStore_PrivateKeyEntry(JObject arg0, jarray arg1)
+	KeyStore_PrivateKeyEntry::KeyStore_PrivateKeyEntry(JObject arg0, JArray arg1)
 		: JObject(
 			"java.security.KeyStore$PrivateKeyEntry",
 			"(Ljava/security/PrivateKey;[Ljava/security/cert/Certificate;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jarray>()
 		) {}
-	KeyStore_PrivateKeyEntry::KeyStore_PrivateKeyEntry(JObject arg0, jarray arg1, JObject arg2)
+	KeyStore_PrivateKeyEntry::KeyStore_PrivateKeyEntry(JObject arg0, JArray arg1, JObject arg2)
 		: JObject(
 			"java.security.KeyStore$PrivateKeyEntry",
 			"(Ljava/security/PrivateKey;[Ljava/security/cert/Certificate;Ljava/util/Set;)V",
 			arg0.object(),
-			arg1,
+			arg1.object<jarray>(),
 			arg2.object()
 		) {}
 	
@@ -40,12 +42,12 @@ namespace java::security
 			"()Ljava/security/cert/Certificate;"
 		);
 	}
-	jarray KeyStore_PrivateKeyEntry::getCertificateChain()
+	JArray KeyStore_PrivateKeyEntry::getCertificateChain()
 	{
 		return callObjectMethod(
 			"getCertificateChain",
 			"()[Ljava/security/cert/Certificate;"
-		).object<jarray>();
+		);
 	}
 	JObject KeyStore_PrivateKeyEntry::getPrivateKey()
 	{
@@ -54,12 +56,12 @@ namespace java::security
 			"()Ljava/security/PrivateKey;"
 		);
 	}
-	jstring KeyStore_PrivateKeyEntry::toString()
+	JString KeyStore_PrivateKeyEntry::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::security
 

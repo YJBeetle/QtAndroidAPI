@@ -1,3 +1,4 @@
+#include "../../../../JString.hpp"
 #include "./CommandAction.hpp"
 
 namespace android::service::controls::actions
@@ -8,18 +9,18 @@ namespace android::service::controls::actions
 	CommandAction::CommandAction(QJniObject obj) : android::service::controls::actions::ControlAction(obj) {}
 	
 	// Constructors
-	CommandAction::CommandAction(jstring arg0)
+	CommandAction::CommandAction(JString arg0)
 		: android::service::controls::actions::ControlAction(
 			"android.service.controls.actions.CommandAction",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	CommandAction::CommandAction(jstring arg0, jstring arg1)
+	CommandAction::CommandAction(JString arg0, JString arg1)
 		: android::service::controls::actions::ControlAction(
 			"android.service.controls.actions.CommandAction",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		) {}
 	
 	// Methods

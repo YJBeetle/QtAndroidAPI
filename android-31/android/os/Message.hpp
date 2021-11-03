@@ -18,6 +18,8 @@ namespace android::os
 {
 	class Parcel;
 }
+class JObject;
+class JString;
 
 namespace android::os
 {
@@ -28,7 +30,7 @@ namespace android::os
 		static JObject CREATOR();
 		jint arg1();
 		jint arg2();
-		jobject obj();
+		JObject obj();
 		android::os::Messenger replyTo();
 		jint sendingUid();
 		jint what();
@@ -46,9 +48,9 @@ namespace android::os
 		static android::os::Message obtain(android::os::Message arg0);
 		static android::os::Message obtain(android::os::Handler arg0, jint arg1);
 		static android::os::Message obtain(android::os::Handler arg0, JObject arg1);
-		static android::os::Message obtain(android::os::Handler arg0, jint arg1, jobject arg2);
+		static android::os::Message obtain(android::os::Handler arg0, jint arg1, JObject arg2);
 		static android::os::Message obtain(android::os::Handler arg0, jint arg1, jint arg2, jint arg3);
-		static android::os::Message obtain(android::os::Handler arg0, jint arg1, jint arg2, jint arg3, jobject arg4);
+		static android::os::Message obtain(android::os::Handler arg0, jint arg1, jint arg2, jint arg3, JObject arg4);
 		void copyFrom(android::os::Message arg0);
 		jint describeContents();
 		JObject getCallback();
@@ -62,7 +64,7 @@ namespace android::os
 		void setAsynchronous(jboolean arg0);
 		void setData(android::os::Bundle arg0);
 		void setTarget(android::os::Handler arg0);
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::os

@@ -6,6 +6,8 @@ namespace android::os
 {
 	class Parcel;
 }
+class JObject;
+class JString;
 
 namespace android::bluetooth
 {
@@ -23,12 +25,12 @@ namespace android::bluetooth
 		
 		// Methods
 		jint describeContents();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint getDataType();
-		jstring getName();
+		JString getName();
 		jint getRole();
 		jint hashCode();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::bluetooth

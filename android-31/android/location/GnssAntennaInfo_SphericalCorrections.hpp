@@ -2,10 +2,13 @@
 
 #include "../../JObject.hpp"
 
+class JArray;
 namespace android::os
 {
 	class Parcel;
 }
+class JObject;
+class JString;
 
 namespace android::location
 {
@@ -20,17 +23,17 @@ namespace android::location
 		GnssAntennaInfo_SphericalCorrections(QJniObject obj);
 		
 		// Constructors
-		GnssAntennaInfo_SphericalCorrections(jarray arg0, jarray arg1);
+		GnssAntennaInfo_SphericalCorrections(JArray arg0, JArray arg1);
 		
 		// Methods
 		jint describeContents();
-		jboolean equals(jobject arg0);
-		jarray getCorrectionUncertaintiesArray();
-		jarray getCorrectionsArray();
+		jboolean equals(JObject arg0);
+		JArray getCorrectionUncertaintiesArray();
+		JArray getCorrectionsArray();
 		jdouble getDeltaPhi();
 		jdouble getDeltaTheta();
 		jint hashCode();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::location

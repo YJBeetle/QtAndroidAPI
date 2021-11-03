@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JArray;
+class JArray;
 namespace android::content
 {
 	class Intent;
@@ -14,6 +16,8 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
+class JString;
 
 namespace android::app
 {
@@ -25,8 +29,8 @@ namespace android::app
 		static jint EDIT_CHOICES_BEFORE_SENDING_AUTO();
 		static jint EDIT_CHOICES_BEFORE_SENDING_DISABLED();
 		static jint EDIT_CHOICES_BEFORE_SENDING_ENABLED();
-		static jstring EXTRA_RESULTS_DATA();
-		static jstring RESULTS_CLIP_LABEL();
+		static JString EXTRA_RESULTS_DATA();
+		static JString RESULTS_CLIP_LABEL();
 		static jint SOURCE_CHOICE();
 		static jint SOURCE_FREE_FORM_INPUT();
 		
@@ -38,19 +42,19 @@ namespace android::app
 		
 		// Methods
 		static void addDataResultToIntent(android::app::RemoteInput arg0, android::content::Intent arg1, JObject arg2);
-		static void addResultsToIntent(jarray arg0, android::content::Intent arg1, android::os::Bundle arg2);
-		static JObject getDataResultsFromIntent(android::content::Intent arg0, jstring arg1);
+		static void addResultsToIntent(JArray arg0, android::content::Intent arg1, android::os::Bundle arg2);
+		static JObject getDataResultsFromIntent(android::content::Intent arg0, JString arg1);
 		static android::os::Bundle getResultsFromIntent(android::content::Intent arg0);
 		static jint getResultsSource(android::content::Intent arg0);
 		static void setResultsSource(android::content::Intent arg0, jint arg1);
 		jint describeContents();
 		jboolean getAllowFreeFormInput();
 		JObject getAllowedDataTypes();
-		jarray getChoices();
+		JArray getChoices();
 		jint getEditChoicesBeforeSending();
 		android::os::Bundle getExtras();
-		jstring getLabel();
-		jstring getResultKey();
+		JString getLabel();
+		JString getResultKey();
 		jboolean isDataOnly();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};

@@ -2,6 +2,7 @@
 
 #include "../JObject.hpp"
 
+class JString;
 
 namespace android
 {
@@ -9,18 +10,18 @@ namespace android
 	{
 	public:
 		// Fields
-		static jstring ACTIVITY_RECOGNITION();
-		static jstring CALENDAR();
-		static jstring CALL_LOG();
-		static jstring CAMERA();
-		static jstring CONTACTS();
-		static jstring LOCATION();
-		static jstring MICROPHONE();
-		static jstring NEARBY_DEVICES();
-		static jstring PHONE();
-		static jstring SENSORS();
-		static jstring SMS();
-		static jstring STORAGE();
+		static JString ACTIVITY_RECOGNITION();
+		static JString CALENDAR();
+		static JString CALL_LOG();
+		static JString CAMERA();
+		static JString CONTACTS();
+		static JString LOCATION();
+		static JString MICROPHONE();
+		static JString NEARBY_DEVICES();
+		static JString PHONE();
+		static JString SENSORS();
+		static JString SMS();
+		static JString STORAGE();
 		
 		// QJniObject forward
 		template<typename ...Ts> explicit Manifest_permission_group(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}

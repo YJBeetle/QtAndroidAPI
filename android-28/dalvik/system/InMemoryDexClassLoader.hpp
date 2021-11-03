@@ -1,9 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../../java/lang/ClassLoader.hpp"
 #include "./BaseDexClassLoader.hpp"
 
+class JArray;
 namespace java::lang
 {
 	class ClassLoader;
@@ -25,7 +24,7 @@ namespace dalvik::system
 		InMemoryDexClassLoader(QJniObject obj);
 		
 		// Constructors
-		InMemoryDexClassLoader(jarray arg0, java::lang::ClassLoader arg1);
+		InMemoryDexClassLoader(JArray arg0, java::lang::ClassLoader arg1);
 		InMemoryDexClassLoader(java::nio::ByteBuffer arg0, java::lang::ClassLoader arg1);
 		
 		// Methods

@@ -1,4 +1,5 @@
 #include "../os/Parcel.hpp"
+#include "../../JString.hpp"
 #include "./WindowAnimationFrameStats.hpp"
 
 namespace android::view
@@ -26,12 +27,12 @@ namespace android::view
 			"()I"
 		);
 	}
-	jstring WindowAnimationFrameStats::toString()
+	JString WindowAnimationFrameStats::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void WindowAnimationFrameStats::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

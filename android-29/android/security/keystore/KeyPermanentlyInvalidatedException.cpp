@@ -1,3 +1,5 @@
+#include "../../../JString.hpp"
+#include "../../../JThrowable.hpp"
 #include "./KeyPermanentlyInvalidatedException.hpp"
 
 namespace android::security::keystore
@@ -13,18 +15,18 @@ namespace android::security::keystore
 			"android.security.keystore.KeyPermanentlyInvalidatedException",
 			"()V"
 		) {}
-	KeyPermanentlyInvalidatedException::KeyPermanentlyInvalidatedException(jstring arg0)
+	KeyPermanentlyInvalidatedException::KeyPermanentlyInvalidatedException(JString arg0)
 		: java::security::InvalidKeyException(
 			"android.security.keystore.KeyPermanentlyInvalidatedException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	KeyPermanentlyInvalidatedException::KeyPermanentlyInvalidatedException(jstring arg0, jthrowable arg1)
+	KeyPermanentlyInvalidatedException::KeyPermanentlyInvalidatedException(JString arg0, JThrowable arg1)
 		: java::security::InvalidKeyException(
 			"android.security.keystore.KeyPermanentlyInvalidatedException",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
 		) {}
 	
 	// Methods

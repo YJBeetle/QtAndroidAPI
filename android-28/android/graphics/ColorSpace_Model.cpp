@@ -1,3 +1,5 @@
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
 #include "./ColorSpace_Model.hpp"
 
 namespace android::graphics
@@ -42,22 +44,22 @@ namespace android::graphics
 	// Constructors
 	
 	// Methods
-	android::graphics::ColorSpace_Model ColorSpace_Model::valueOf(jstring arg0)
+	android::graphics::ColorSpace_Model ColorSpace_Model::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.graphics.ColorSpace$Model",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/graphics/ColorSpace$Model;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray ColorSpace_Model::values()
+	JArray ColorSpace_Model::values()
 	{
 		return callStaticObjectMethod(
 			"android.graphics.ColorSpace$Model",
 			"values",
 			"()[Landroid/graphics/ColorSpace$Model;"
-		).object<jarray>();
+		);
 	}
 	jint ColorSpace_Model::getComponentCount()
 	{

@@ -1,3 +1,4 @@
+#include "../../../JArray.hpp"
 #include "../../app/WallpaperColors.hpp"
 #include "../../os/Bundle.hpp"
 #include "./WallpaperService.hpp"
@@ -5,6 +6,7 @@
 #include "../../view/WindowInsets.hpp"
 #include "../../../java/io/FileDescriptor.hpp"
 #include "../../../java/io/PrintWriter.hpp"
+#include "../../../JString.hpp"
 #include "./WallpaperService_Engine.hpp"
 
 namespace android::service::wallpaper
@@ -73,12 +75,12 @@ namespace android::service::wallpaper
 			arg0.object()
 		);
 	}
-	android::os::Bundle WallpaperService_Engine::onCommand(jstring arg0, jint arg1, jint arg2, jint arg3, android::os::Bundle arg4, jboolean arg5)
+	android::os::Bundle WallpaperService_Engine::onCommand(JString arg0, jint arg1, jint arg2, jint arg3, android::os::Bundle arg4, jboolean arg5)
 	{
 		return callObjectMethod(
 			"onCommand",
 			"(Ljava/lang/String;IIILandroid/os/Bundle;Z)Landroid/os/Bundle;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
 			arg2,
 			arg3,

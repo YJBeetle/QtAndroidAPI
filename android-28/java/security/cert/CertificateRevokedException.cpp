@@ -1,5 +1,6 @@
 #include "../../io/ObjectInputStream.hpp"
 #include "../../io/ObjectOutputStream.hpp"
+#include "../../../JString.hpp"
 #include "./CRLReason.hpp"
 #include "../../util/Date.hpp"
 #include "../../../javax/security/auth/x500/X500Principal.hpp"
@@ -45,12 +46,12 @@ namespace java::security::cert
 			"()Ljava/util/Date;"
 		);
 	}
-	jstring CertificateRevokedException::getMessage()
+	JString CertificateRevokedException::getMessage()
 	{
 		return callObjectMethod(
 			"getMessage",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	java::util::Date CertificateRevokedException::getRevocationDate()
 	{

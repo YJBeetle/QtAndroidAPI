@@ -1,5 +1,6 @@
 #include "../../net/Uri.hpp"
 #include "./ApnSetting.hpp"
+#include "../../../JString.hpp"
 #include "../../../java/net/InetAddress.hpp"
 #include "./ApnSetting_Builder.hpp"
 
@@ -25,12 +26,12 @@ namespace android::telephony::data
 			"()Landroid/telephony/data/ApnSetting;"
 		);
 	}
-	android::telephony::data::ApnSetting_Builder ApnSetting_Builder::setApnName(jstring arg0)
+	android::telephony::data::ApnSetting_Builder ApnSetting_Builder::setApnName(JString arg0)
 	{
 		return callObjectMethod(
 			"setApnName",
 			"(Ljava/lang/String;)Landroid/telephony/data/ApnSetting$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::telephony::data::ApnSetting_Builder ApnSetting_Builder::setApnTypeBitmask(jint arg0)
@@ -65,20 +66,20 @@ namespace android::telephony::data
 			arg0
 		);
 	}
-	android::telephony::data::ApnSetting_Builder ApnSetting_Builder::setEntryName(jstring arg0)
+	android::telephony::data::ApnSetting_Builder ApnSetting_Builder::setEntryName(JString arg0)
 	{
 		return callObjectMethod(
 			"setEntryName",
 			"(Ljava/lang/String;)Landroid/telephony/data/ApnSetting$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	android::telephony::data::ApnSetting_Builder ApnSetting_Builder::setMmsProxyAddress(jstring arg0)
+	android::telephony::data::ApnSetting_Builder ApnSetting_Builder::setMmsProxyAddress(JString arg0)
 	{
 		return callObjectMethod(
 			"setMmsProxyAddress",
 			"(Ljava/lang/String;)Landroid/telephony/data/ApnSetting$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::telephony::data::ApnSetting_Builder ApnSetting_Builder::setMmsProxyAddress(java::net::InetAddress arg0)
@@ -121,20 +122,20 @@ namespace android::telephony::data
 			arg0
 		);
 	}
-	android::telephony::data::ApnSetting_Builder ApnSetting_Builder::setOperatorNumeric(jstring arg0)
+	android::telephony::data::ApnSetting_Builder ApnSetting_Builder::setOperatorNumeric(JString arg0)
 	{
 		return callObjectMethod(
 			"setOperatorNumeric",
 			"(Ljava/lang/String;)Landroid/telephony/data/ApnSetting$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	android::telephony::data::ApnSetting_Builder ApnSetting_Builder::setPassword(jstring arg0)
+	android::telephony::data::ApnSetting_Builder ApnSetting_Builder::setPassword(JString arg0)
 	{
 		return callObjectMethod(
 			"setPassword",
 			"(Ljava/lang/String;)Landroid/telephony/data/ApnSetting$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::telephony::data::ApnSetting_Builder ApnSetting_Builder::setProtocol(jint arg0)
@@ -145,12 +146,12 @@ namespace android::telephony::data
 			arg0
 		);
 	}
-	android::telephony::data::ApnSetting_Builder ApnSetting_Builder::setProxyAddress(jstring arg0)
+	android::telephony::data::ApnSetting_Builder ApnSetting_Builder::setProxyAddress(JString arg0)
 	{
 		return callObjectMethod(
 			"setProxyAddress",
 			"(Ljava/lang/String;)Landroid/telephony/data/ApnSetting$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::telephony::data::ApnSetting_Builder ApnSetting_Builder::setProxyAddress(java::net::InetAddress arg0)
@@ -177,12 +178,12 @@ namespace android::telephony::data
 			arg0
 		);
 	}
-	android::telephony::data::ApnSetting_Builder ApnSetting_Builder::setUser(jstring arg0)
+	android::telephony::data::ApnSetting_Builder ApnSetting_Builder::setUser(JString arg0)
 	{
 		return callObjectMethod(
 			"setUser",
 			"(Ljava/lang/String;)Landroid/telephony/data/ApnSetting$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 } // namespace android::telephony::data

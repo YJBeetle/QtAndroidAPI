@@ -4,6 +4,8 @@
 #include "../util/DateInterval.hpp"
 #include "../util/TimeZone.hpp"
 #include "../util/ULocale.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "../../../java/lang/StringBuffer.hpp"
 #include "../../../java/text/FieldPosition.hpp"
 #include "../../../java/text/ParsePosition.hpp"
@@ -20,73 +22,73 @@ namespace android::icu::text
 	// Constructors
 	
 	// Methods
-	android::icu::text::DateIntervalFormat DateIntervalFormat::getInstance(jstring arg0)
+	android::icu::text::DateIntervalFormat DateIntervalFormat::getInstance(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.icu.text.DateIntervalFormat",
 			"getInstance",
 			"(Ljava/lang/String;)Landroid/icu/text/DateIntervalFormat;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	android::icu::text::DateIntervalFormat DateIntervalFormat::getInstance(jstring arg0, android::icu::text::DateIntervalInfo arg1)
+	android::icu::text::DateIntervalFormat DateIntervalFormat::getInstance(JString arg0, android::icu::text::DateIntervalInfo arg1)
 	{
 		return callStaticObjectMethod(
 			"android.icu.text.DateIntervalFormat",
 			"getInstance",
 			"(Ljava/lang/String;Landroid/icu/text/DateIntervalInfo;)Landroid/icu/text/DateIntervalFormat;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
-	android::icu::text::DateIntervalFormat DateIntervalFormat::getInstance(jstring arg0, android::icu::util::ULocale arg1)
+	android::icu::text::DateIntervalFormat DateIntervalFormat::getInstance(JString arg0, android::icu::util::ULocale arg1)
 	{
 		return callStaticObjectMethod(
 			"android.icu.text.DateIntervalFormat",
 			"getInstance",
 			"(Ljava/lang/String;Landroid/icu/util/ULocale;)Landroid/icu/text/DateIntervalFormat;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
-	android::icu::text::DateIntervalFormat DateIntervalFormat::getInstance(jstring arg0, java::util::Locale arg1)
+	android::icu::text::DateIntervalFormat DateIntervalFormat::getInstance(JString arg0, java::util::Locale arg1)
 	{
 		return callStaticObjectMethod(
 			"android.icu.text.DateIntervalFormat",
 			"getInstance",
 			"(Ljava/lang/String;Ljava/util/Locale;)Landroid/icu/text/DateIntervalFormat;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
-	android::icu::text::DateIntervalFormat DateIntervalFormat::getInstance(jstring arg0, android::icu::util::ULocale arg1, android::icu::text::DateIntervalInfo arg2)
+	android::icu::text::DateIntervalFormat DateIntervalFormat::getInstance(JString arg0, android::icu::util::ULocale arg1, android::icu::text::DateIntervalInfo arg2)
 	{
 		return callStaticObjectMethod(
 			"android.icu.text.DateIntervalFormat",
 			"getInstance",
 			"(Ljava/lang/String;Landroid/icu/util/ULocale;Landroid/icu/text/DateIntervalInfo;)Landroid/icu/text/DateIntervalFormat;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
 			arg2.object()
 		);
 	}
-	android::icu::text::DateIntervalFormat DateIntervalFormat::getInstance(jstring arg0, java::util::Locale arg1, android::icu::text::DateIntervalInfo arg2)
+	android::icu::text::DateIntervalFormat DateIntervalFormat::getInstance(JString arg0, java::util::Locale arg1, android::icu::text::DateIntervalInfo arg2)
 	{
 		return callStaticObjectMethod(
 			"android.icu.text.DateIntervalFormat",
 			"getInstance",
 			"(Ljava/lang/String;Ljava/util/Locale;Landroid/icu/text/DateIntervalInfo;)Landroid/icu/text/DateIntervalFormat;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
 			arg2.object()
 		);
 	}
-	jobject DateIntervalFormat::clone()
+	JObject DateIntervalFormat::clone()
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
 	java::lang::StringBuffer DateIntervalFormat::format(android::icu::util::DateInterval arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
 	{
@@ -98,12 +100,12 @@ namespace android::icu::text
 			arg2.object()
 		);
 	}
-	java::lang::StringBuffer DateIntervalFormat::format(jobject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
+	java::lang::StringBuffer DateIntervalFormat::format(JObject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
 	{
 		return callObjectMethod(
 			"format",
 			"(Ljava/lang/Object;Ljava/lang/StringBuffer;Ljava/text/FieldPosition;)Ljava/lang/StringBuffer;",
-			arg0,
+			arg0.object<jobject>(),
 			arg1.object(),
 			arg2.object()
 		);
@@ -140,14 +142,14 @@ namespace android::icu::text
 			"()Landroid/icu/util/TimeZone;"
 		);
 	}
-	jobject DateIntervalFormat::parseObject(jstring arg0, java::text::ParsePosition arg1)
+	JObject DateIntervalFormat::parseObject(JString arg0, java::text::ParsePosition arg1)
 	{
 		return callObjectMethod(
 			"parseObject",
 			"(Ljava/lang/String;Ljava/text/ParsePosition;)Ljava/lang/Object;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
-		).object<jobject>();
+		);
 	}
 	void DateIntervalFormat::setDateIntervalInfo(android::icu::text::DateIntervalInfo arg0)
 	{

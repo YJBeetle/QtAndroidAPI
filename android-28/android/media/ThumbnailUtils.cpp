@@ -1,4 +1,5 @@
 #include "../graphics/Bitmap.hpp"
+#include "../../JString.hpp"
 #include "./ThumbnailUtils.hpp"
 
 namespace android::media
@@ -23,13 +24,13 @@ namespace android::media
 		) {}
 	
 	// Methods
-	android::graphics::Bitmap ThumbnailUtils::createVideoThumbnail(jstring arg0, jint arg1)
+	android::graphics::Bitmap ThumbnailUtils::createVideoThumbnail(JString arg0, jint arg1)
 	{
 		return callStaticObjectMethod(
 			"android.media.ThumbnailUtils",
 			"createVideoThumbnail",
 			"(Ljava/lang/String;I)Landroid/graphics/Bitmap;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}

@@ -6,6 +6,7 @@ namespace android::content::res
 {
 	class Configuration;
 }
+class JString;
 
 namespace android::app::usage
 {
@@ -41,11 +42,11 @@ namespace android::app::usage
 		
 		// Methods
 		jint getAppStandbyBucket();
-		jstring getClassName();
+		JString getClassName();
 		android::content::res::Configuration getConfiguration();
 		jint getEventType();
-		jstring getPackageName();
-		jstring getShortcutId();
+		JString getPackageName();
+		JString getShortcutId();
 		jlong getTimeStamp();
 	};
 } // namespace android::app::usage

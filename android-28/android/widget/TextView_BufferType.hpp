@@ -1,8 +1,9 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "../../java/lang/Enum.hpp"
 
+class JArray;
+class JString;
 
 namespace android::widget
 {
@@ -21,8 +22,8 @@ namespace android::widget
 		// Constructors
 		
 		// Methods
-		static android::widget::TextView_BufferType valueOf(jstring arg0);
-		static jarray values();
+		static android::widget::TextView_BufferType valueOf(JString arg0);
+		static JArray values();
 	};
 } // namespace android::widget
 

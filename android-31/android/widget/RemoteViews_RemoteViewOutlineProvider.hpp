@@ -1,6 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "../view/ViewOutlineProvider.hpp"
 
 namespace android::graphics

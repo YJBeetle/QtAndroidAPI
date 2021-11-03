@@ -6,6 +6,8 @@ namespace android::os
 {
 	class Parcel;
 }
+class JObject;
+class JString;
 namespace java::net
 {
 	class Inet6Address;
@@ -27,12 +29,12 @@ namespace android::net::wifi::aware
 		
 		// Methods
 		jint describeContents();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		java::net::Inet6Address getPeerIpv6Addr();
 		jint getPort();
 		jint getTransportProtocol();
 		jint hashCode();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::net::wifi::aware

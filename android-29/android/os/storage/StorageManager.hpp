@@ -34,6 +34,7 @@ namespace java::io
 {
 	class FileDescriptor;
 }
+class JString;
 namespace java::util
 {
 	class UUID;
@@ -45,9 +46,9 @@ namespace android::os::storage
 	{
 	public:
 		// Fields
-		static jstring ACTION_MANAGE_STORAGE();
-		static jstring EXTRA_REQUESTED_BYTES();
-		static jstring EXTRA_UUID();
+		static JString ACTION_MANAGE_STORAGE();
+		static JString EXTRA_REQUESTED_BYTES();
+		static JString EXTRA_UUID();
 		static java::util::UUID UUID_DEFAULT();
 		
 		// QJniObject forward
@@ -62,7 +63,7 @@ namespace android::os::storage
 		jlong getAllocatableBytes(java::util::UUID arg0);
 		jlong getCacheQuotaBytes(java::util::UUID arg0);
 		jlong getCacheSizeBytes(java::util::UUID arg0);
-		jstring getMountedObbPath(jstring arg0);
+		JString getMountedObbPath(JString arg0);
 		android::os::storage::StorageVolume getPrimaryStorageVolume();
 		android::os::storage::StorageVolume getStorageVolume(android::net::Uri arg0);
 		android::os::storage::StorageVolume getStorageVolume(java::io::File arg0);
@@ -72,12 +73,12 @@ namespace android::os::storage
 		jboolean isCacheBehaviorGroup(java::io::File arg0);
 		jboolean isCacheBehaviorTombstone(java::io::File arg0);
 		jboolean isEncrypted(java::io::File arg0);
-		jboolean isObbMounted(jstring arg0);
-		jboolean mountObb(jstring arg0, jstring arg1, android::os::storage::OnObbStateChangeListener arg2);
+		jboolean isObbMounted(JString arg0);
+		jboolean mountObb(JString arg0, JString arg1, android::os::storage::OnObbStateChangeListener arg2);
 		android::os::ParcelFileDescriptor openProxyFileDescriptor(jint arg0, android::os::ProxyFileDescriptorCallback arg1, android::os::Handler arg2);
 		void setCacheBehaviorGroup(java::io::File arg0, jboolean arg1);
 		void setCacheBehaviorTombstone(java::io::File arg0, jboolean arg1);
-		jboolean unmountObb(jstring arg0, jboolean arg1, android::os::storage::OnObbStateChangeListener arg2);
+		jboolean unmountObb(JString arg0, jboolean arg1, android::os::storage::OnObbStateChangeListener arg2);
 	};
 } // namespace android::os::storage
 

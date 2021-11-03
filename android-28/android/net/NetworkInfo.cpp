@@ -1,6 +1,7 @@
 #include "./NetworkInfo_DetailedState.hpp"
 #include "./NetworkInfo_State.hpp"
 #include "../os/Parcel.hpp"
+#include "../../JString.hpp"
 #include "./NetworkInfo.hpp"
 
 namespace android::net
@@ -35,19 +36,19 @@ namespace android::net
 			"()Landroid/net/NetworkInfo$DetailedState;"
 		);
 	}
-	jstring NetworkInfo::getExtraInfo()
+	JString NetworkInfo::getExtraInfo()
 	{
 		return callObjectMethod(
 			"getExtraInfo",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring NetworkInfo::getReason()
+	JString NetworkInfo::getReason()
 	{
 		return callObjectMethod(
 			"getReason",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::net::NetworkInfo_State NetworkInfo::getState()
 	{
@@ -63,12 +64,12 @@ namespace android::net
 			"()I"
 		);
 	}
-	jstring NetworkInfo::getSubtypeName()
+	JString NetworkInfo::getSubtypeName()
 	{
 		return callObjectMethod(
 			"getSubtypeName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint NetworkInfo::getType()
 	{
@@ -77,12 +78,12 @@ namespace android::net
 			"()I"
 		);
 	}
-	jstring NetworkInfo::getTypeName()
+	JString NetworkInfo::getTypeName()
 	{
 		return callObjectMethod(
 			"getTypeName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jboolean NetworkInfo::isAvailable()
 	{
@@ -119,12 +120,12 @@ namespace android::net
 			"()Z"
 		);
 	}
-	jstring NetworkInfo::toString()
+	JString NetworkInfo::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void NetworkInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

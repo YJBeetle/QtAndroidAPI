@@ -5,6 +5,8 @@
 #include "./ServiceInfo.hpp"
 #include "../../graphics/drawable/Drawable.hpp"
 #include "../../os/Parcel.hpp"
+#include "../../../JString.hpp"
+#include "../../../JString.hpp"
 #include "./ResolveInfo.hpp"
 
 namespace android::content::pm
@@ -62,12 +64,12 @@ namespace android::content::pm
 			"match"
 		);
 	}
-	jstring ResolveInfo::nonLocalizedLabel()
+	JString ResolveInfo::nonLocalizedLabel()
 	{
 		return getObjectField(
 			"nonLocalizedLabel",
 			"Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	jint ResolveInfo::preferredOrder()
 	{
@@ -88,12 +90,12 @@ namespace android::content::pm
 			"Landroid/content/pm/ProviderInfo;"
 		);
 	}
-	jstring ResolveInfo::resolvePackageName()
+	JString ResolveInfo::resolvePackageName()
 	{
 		return getObjectField(
 			"resolvePackageName",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::content::pm::ServiceInfo ResolveInfo::serviceInfo()
 	{
@@ -133,13 +135,13 @@ namespace android::content::pm
 			"()I"
 		);
 	}
-	void ResolveInfo::dump(JObject arg0, jstring arg1)
+	void ResolveInfo::dump(JObject arg0, JString arg1)
 	{
 		callMethod<void>(
 			"dump",
 			"(Landroid/util/Printer;Ljava/lang/String;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
 	jint ResolveInfo::getIconResource()
@@ -157,20 +159,20 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	jstring ResolveInfo::loadLabel(android::content::pm::PackageManager arg0)
+	JString ResolveInfo::loadLabel(android::content::pm::PackageManager arg0)
 	{
 		return callObjectMethod(
 			"loadLabel",
 			"(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;",
 			arg0.object()
-		).object<jstring>();
+		);
 	}
-	jstring ResolveInfo::toString()
+	JString ResolveInfo::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void ResolveInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

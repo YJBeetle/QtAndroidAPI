@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JIntArray;
 namespace android::bluetooth
 {
 	class BluetoothDevice;
@@ -61,7 +62,7 @@ namespace android::bluetooth
 		JObject getConnectedDevices();
 		jint getConnectionState(android::bluetooth::BluetoothDevice arg0);
 		android::bluetooth::BluetoothDevice getDevice();
-		JObject getDevicesMatchingConnectionStates(jintArray arg0);
+		JObject getDevicesMatchingConnectionStates(JIntArray arg0);
 		android::bluetooth::BluetoothGattService getService(java::util::UUID arg0);
 		JObject getServices();
 		jboolean readCharacteristic(android::bluetooth::BluetoothGattCharacteristic arg0);

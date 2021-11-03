@@ -1,3 +1,6 @@
+#include "../../JByteArray.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "../../java/security/Provider.hpp"
 #include "../../java/security/Provider_Service.hpp"
 #include "../../java/security/SecureRandom.hpp"
@@ -14,32 +17,32 @@ namespace javax::crypto
 	// Constructors
 	
 	// Methods
-	javax::crypto::KeyAgreement KeyAgreement::getInstance(jstring arg0)
+	javax::crypto::KeyAgreement KeyAgreement::getInstance(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"javax.crypto.KeyAgreement",
 			"getInstance",
 			"(Ljava/lang/String;)Ljavax/crypto/KeyAgreement;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	javax::crypto::KeyAgreement KeyAgreement::getInstance(jstring arg0, jstring arg1)
+	javax::crypto::KeyAgreement KeyAgreement::getInstance(JString arg0, JString arg1)
 	{
 		return callStaticObjectMethod(
 			"javax.crypto.KeyAgreement",
 			"getInstance",
 			"(Ljava/lang/String;Ljava/lang/String;)Ljavax/crypto/KeyAgreement;",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		);
 	}
-	javax::crypto::KeyAgreement KeyAgreement::getInstance(jstring arg0, java::security::Provider arg1)
+	javax::crypto::KeyAgreement KeyAgreement::getInstance(JString arg0, java::security::Provider arg1)
 	{
 		return callStaticObjectMethod(
 			"javax.crypto.KeyAgreement",
 			"getInstance",
 			"(Ljava/lang/String;Ljava/security/Provider;)Ljavax/crypto/KeyAgreement;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
@@ -52,36 +55,36 @@ namespace javax::crypto
 			arg1
 		);
 	}
-	jbyteArray KeyAgreement::generateSecret()
+	JByteArray KeyAgreement::generateSecret()
 	{
 		return callObjectMethod(
 			"generateSecret",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
-	jint KeyAgreement::generateSecret(jbyteArray arg0, jint arg1)
+	jint KeyAgreement::generateSecret(JByteArray arg0, jint arg1)
 	{
 		return callMethod<jint>(
 			"generateSecret",
 			"([BI)I",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1
 		);
 	}
-	JObject KeyAgreement::generateSecret(jstring arg0)
+	JObject KeyAgreement::generateSecret(JString arg0)
 	{
 		return callObjectMethod(
 			"generateSecret",
 			"(Ljava/lang/String;)Ljavax/crypto/SecretKey;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jstring KeyAgreement::getAlgorithm()
+	JString KeyAgreement::getAlgorithm()
 	{
 		return callObjectMethod(
 			"getAlgorithm",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	java::security::Provider KeyAgreement::getProvider()
 	{

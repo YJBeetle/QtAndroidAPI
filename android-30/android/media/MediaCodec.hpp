@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JArray;
 namespace android::hardware
 {
 	class HardwareBuffer;
@@ -66,6 +67,7 @@ namespace android::view
 {
 	class Surface;
 }
+class JString;
 namespace java::nio
 {
 	class ByteBuffer;
@@ -90,13 +92,13 @@ namespace android::media
 		static jint INFO_OUTPUT_BUFFERS_CHANGED();
 		static jint INFO_OUTPUT_FORMAT_CHANGED();
 		static jint INFO_TRY_AGAIN_LATER();
-		static jstring PARAMETER_KEY_HDR10_PLUS_INFO();
-		static jstring PARAMETER_KEY_LOW_LATENCY();
-		static jstring PARAMETER_KEY_OFFSET_TIME();
-		static jstring PARAMETER_KEY_REQUEST_SYNC_FRAME();
-		static jstring PARAMETER_KEY_SUSPEND();
-		static jstring PARAMETER_KEY_SUSPEND_TIME();
-		static jstring PARAMETER_KEY_VIDEO_BITRATE();
+		static JString PARAMETER_KEY_HDR10_PLUS_INFO();
+		static JString PARAMETER_KEY_LOW_LATENCY();
+		static JString PARAMETER_KEY_OFFSET_TIME();
+		static JString PARAMETER_KEY_REQUEST_SYNC_FRAME();
+		static JString PARAMETER_KEY_SUSPEND();
+		static JString PARAMETER_KEY_SUSPEND_TIME();
+		static JString PARAMETER_KEY_VIDEO_BITRATE();
 		static jint VIDEO_SCALING_MODE_SCALE_TO_FIT();
 		static jint VIDEO_SCALING_MODE_SCALE_TO_FIT_WITH_CROPPING();
 		
@@ -107,9 +109,9 @@ namespace android::media
 		// Constructors
 		
 		// Methods
-		static android::media::MediaCodec createByCodecName(jstring arg0);
-		static android::media::MediaCodec createDecoderByType(jstring arg0);
-		static android::media::MediaCodec createEncoderByType(jstring arg0);
+		static android::media::MediaCodec createByCodecName(JString arg0);
+		static android::media::MediaCodec createDecoderByType(JString arg0);
+		static android::media::MediaCodec createEncoderByType(JString arg0);
 		static android::view::Surface createPersistentInputSurface();
 		static android::media::Image mapHardwareBuffer(android::hardware::HardwareBuffer arg0);
 		void configure(android::media::MediaFormat arg0, android::view::Surface arg1, android::media::MediaCrypto arg2, jint arg3);
@@ -118,16 +120,16 @@ namespace android::media
 		jint dequeueInputBuffer(jlong arg0);
 		jint dequeueOutputBuffer(android::media::MediaCodec_BufferInfo arg0, jlong arg1);
 		void flush();
-		jstring getCanonicalName();
+		JString getCanonicalName();
 		android::media::MediaCodecInfo getCodecInfo();
 		java::nio::ByteBuffer getInputBuffer(jint arg0);
-		jarray getInputBuffers();
+		JArray getInputBuffers();
 		android::media::MediaFormat getInputFormat();
 		android::media::Image getInputImage(jint arg0);
 		android::os::PersistableBundle getMetrics();
-		jstring getName();
+		JString getName();
 		java::nio::ByteBuffer getOutputBuffer(jint arg0);
-		jarray getOutputBuffers();
+		JArray getOutputBuffers();
 		android::media::MediaFormat getOutputFormat();
 		android::media::MediaFormat getOutputFormat(jint arg0);
 		android::media::MediaCodec_OutputFrame getOutputFrame(jint arg0);

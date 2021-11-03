@@ -1,6 +1,5 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "./Animation.hpp"
 
 namespace android::content
@@ -15,6 +14,7 @@ namespace android::view::animation
 {
 	class Transformation;
 }
+class JObject;
 
 namespace android::view::animation
 {

@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JByteArray;
+class JString;
 
 namespace java::security
 {
@@ -18,7 +20,7 @@ namespace java::security
 		SecureRandomSpi();
 		
 		// Methods
-		jstring toString();
+		JString toString();
 	};
 } // namespace java::security
 

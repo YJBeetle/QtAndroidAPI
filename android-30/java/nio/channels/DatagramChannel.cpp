@@ -1,3 +1,5 @@
+#include "../../../JArray.hpp"
+#include "../../../JObject.hpp"
 #include "../../net/DatagramSocket.hpp"
 #include "../../net/SocketAddress.hpp"
 #include "../ByteBuffer.hpp"
@@ -83,20 +85,20 @@ namespace java::nio::channels
 			arg0.object()
 		);
 	}
-	jlong DatagramChannel::read(jarray arg0)
+	jlong DatagramChannel::read(JArray arg0)
 	{
 		return callMethod<jlong>(
 			"read",
 			"([Ljava/nio/ByteBuffer;)J",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
-	jlong DatagramChannel::read(jarray arg0, jint arg1, jint arg2)
+	jlong DatagramChannel::read(JArray arg0, jint arg1, jint arg2)
 	{
 		return callMethod<jlong>(
 			"read",
 			"([Ljava/nio/ByteBuffer;II)J",
-			arg0,
+			arg0.object<jarray>(),
 			arg1,
 			arg2
 		);
@@ -118,13 +120,13 @@ namespace java::nio::channels
 			arg1.object()
 		);
 	}
-	java::nio::channels::DatagramChannel DatagramChannel::setOption(JObject arg0, jobject arg1)
+	java::nio::channels::DatagramChannel DatagramChannel::setOption(JObject arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"setOption",
 			"(Ljava/net/SocketOption;Ljava/lang/Object;)Ljava/nio/channels/DatagramChannel;",
 			arg0.object(),
-			arg1
+			arg1.object<jobject>()
 		);
 	}
 	java::net::DatagramSocket DatagramChannel::socket()
@@ -149,20 +151,20 @@ namespace java::nio::channels
 			arg0.object()
 		);
 	}
-	jlong DatagramChannel::write(jarray arg0)
+	jlong DatagramChannel::write(JArray arg0)
 	{
 		return callMethod<jlong>(
 			"write",
 			"([Ljava/nio/ByteBuffer;)J",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
-	jlong DatagramChannel::write(jarray arg0, jint arg1, jint arg2)
+	jlong DatagramChannel::write(JArray arg0, jint arg1, jint arg2)
 	{
 		return callMethod<jlong>(
 			"write",
 			"([Ljava/nio/ByteBuffer;II)J",
-			arg0,
+			arg0.object<jarray>(),
 			arg1,
 			arg2
 		);

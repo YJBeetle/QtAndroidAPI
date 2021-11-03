@@ -6,6 +6,7 @@ namespace android::content
 {
 	class Context;
 }
+class JString;
 namespace java::math
 {
 	class BigInteger;
@@ -37,8 +38,8 @@ namespace android::security
 		android::content::Context getContext();
 		java::util::Date getEndDate();
 		jint getKeySize();
-		jstring getKeyType();
-		jstring getKeystoreAlias();
+		JString getKeyType();
+		JString getKeystoreAlias();
 		java::math::BigInteger getSerialNumber();
 		java::util::Date getStartDate();
 		javax::security::auth::x500::X500Principal getSubjectDN();

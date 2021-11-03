@@ -1,6 +1,5 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "../../lang/Thread.hpp"
 
 namespace java::lang
@@ -11,6 +10,7 @@ namespace java::lang
 {
 	class ThreadGroup;
 }
+class JThrowable;
 namespace java::security
 {
 	class AccessControlContext;

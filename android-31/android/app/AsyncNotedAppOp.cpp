@@ -1,4 +1,6 @@
 #include "../os/Parcel.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./AsyncNotedAppOp.hpp"
 
 namespace android::app
@@ -26,27 +28,27 @@ namespace android::app
 			"()I"
 		);
 	}
-	jboolean AsyncNotedAppOp::equals(jobject arg0)
+	jboolean AsyncNotedAppOp::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jstring AsyncNotedAppOp::getAttributionTag()
+	JString AsyncNotedAppOp::getAttributionTag()
 	{
 		return callObjectMethod(
 			"getAttributionTag",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring AsyncNotedAppOp::getMessage()
+	JString AsyncNotedAppOp::getMessage()
 	{
 		return callObjectMethod(
 			"getMessage",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint AsyncNotedAppOp::getNotingUid()
 	{
@@ -55,12 +57,12 @@ namespace android::app
 			"()I"
 		);
 	}
-	jstring AsyncNotedAppOp::getOp()
+	JString AsyncNotedAppOp::getOp()
 	{
 		return callObjectMethod(
 			"getOp",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jlong AsyncNotedAppOp::getTime()
 	{

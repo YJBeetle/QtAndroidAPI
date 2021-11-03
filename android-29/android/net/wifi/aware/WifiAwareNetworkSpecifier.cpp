@@ -1,4 +1,7 @@
+#include "../../../../JByteArray.hpp"
 #include "../../../os/Parcel.hpp"
+#include "../../../../JObject.hpp"
+#include "../../../../JString.hpp"
 #include "./WifiAwareNetworkSpecifier.hpp"
 
 namespace android::net::wifi::aware
@@ -26,12 +29,12 @@ namespace android::net::wifi::aware
 			"()I"
 		);
 	}
-	jboolean WifiAwareNetworkSpecifier::equals(jobject arg0)
+	jboolean WifiAwareNetworkSpecifier::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint WifiAwareNetworkSpecifier::hashCode()
@@ -41,12 +44,12 @@ namespace android::net::wifi::aware
 			"()I"
 		);
 	}
-	jstring WifiAwareNetworkSpecifier::toString()
+	JString WifiAwareNetworkSpecifier::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void WifiAwareNetworkSpecifier::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

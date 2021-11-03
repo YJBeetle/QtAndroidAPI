@@ -1,3 +1,6 @@
+#include "../../JLongArray.hpp"
+#include "../../JArray.hpp"
+#include "../../JArray.hpp"
 #include "./Notification.hpp"
 #include "./Notification_Action.hpp"
 #include "./Notification_BubbleMetadata.hpp"
@@ -12,6 +15,8 @@
 #include "../net/Uri.hpp"
 #include "../os/Bundle.hpp"
 #include "../widget/RemoteViews.hpp"
+#include "../../JString.hpp"
+#include "../../JString.hpp"
 #include "./Notification_Builder.hpp"
 
 namespace android::app
@@ -28,12 +33,12 @@ namespace android::app
 			"(Landroid/content/Context;)V",
 			arg0.object()
 		) {}
-	Notification_Builder::Notification_Builder(android::content::Context arg0, jstring arg1)
+	Notification_Builder::Notification_Builder(android::content::Context arg0, JString arg1)
 		: JObject(
 			"android.app.Notification$Builder",
 			"(Landroid/content/Context;Ljava/lang/String;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		) {}
 	
 	// Methods
@@ -55,13 +60,13 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	android::app::Notification_Builder Notification_Builder::addAction(jint arg0, jstring arg1, android::app::PendingIntent arg2)
+	android::app::Notification_Builder Notification_Builder::addAction(jint arg0, JString arg1, android::app::PendingIntent arg2)
 	{
 		return callObjectMethod(
 			"addAction",
 			"(ILjava/lang/CharSequence;Landroid/app/PendingIntent;)Landroid/app/Notification$Builder;",
 			arg0,
-			arg1,
+			arg1.object<jstring>(),
 			arg2.object()
 		);
 	}
@@ -81,12 +86,12 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	android::app::Notification_Builder Notification_Builder::addPerson(jstring arg0)
+	android::app::Notification_Builder Notification_Builder::addPerson(JString arg0)
 	{
 		return callObjectMethod(
 			"addPerson",
 			"(Ljava/lang/String;)Landroid/app/Notification$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::app::Notification Notification_Builder::build()
@@ -146,12 +151,12 @@ namespace android::app
 			"()Landroid/app/Notification$Style;"
 		);
 	}
-	android::app::Notification_Builder Notification_Builder::setActions(jarray arg0)
+	android::app::Notification_Builder Notification_Builder::setActions(JArray arg0)
 	{
 		return callObjectMethod(
 			"setActions",
 			"([Landroid/app/Notification$Action;)Landroid/app/Notification$Builder;",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
 	android::app::Notification_Builder Notification_Builder::setAllowSystemGeneratedContextualActions(jboolean arg0)
@@ -186,20 +191,20 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	android::app::Notification_Builder Notification_Builder::setCategory(jstring arg0)
+	android::app::Notification_Builder Notification_Builder::setCategory(JString arg0)
 	{
 		return callObjectMethod(
 			"setCategory",
 			"(Ljava/lang/String;)Landroid/app/Notification$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	android::app::Notification_Builder Notification_Builder::setChannelId(jstring arg0)
+	android::app::Notification_Builder Notification_Builder::setChannelId(JString arg0)
 	{
 		return callObjectMethod(
 			"setChannelId",
 			"(Ljava/lang/String;)Landroid/app/Notification$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::app::Notification_Builder Notification_Builder::setChronometerCountDown(jboolean arg0)
@@ -234,12 +239,12 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	android::app::Notification_Builder Notification_Builder::setContentInfo(jstring arg0)
+	android::app::Notification_Builder Notification_Builder::setContentInfo(JString arg0)
 	{
 		return callObjectMethod(
 			"setContentInfo",
 			"(Ljava/lang/CharSequence;)Landroid/app/Notification$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::app::Notification_Builder Notification_Builder::setContentIntent(android::app::PendingIntent arg0)
@@ -250,20 +255,20 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	android::app::Notification_Builder Notification_Builder::setContentText(jstring arg0)
+	android::app::Notification_Builder Notification_Builder::setContentText(JString arg0)
 	{
 		return callObjectMethod(
 			"setContentText",
 			"(Ljava/lang/CharSequence;)Landroid/app/Notification$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	android::app::Notification_Builder Notification_Builder::setContentTitle(jstring arg0)
+	android::app::Notification_Builder Notification_Builder::setContentTitle(JString arg0)
 	{
 		return callObjectMethod(
 			"setContentTitle",
 			"(Ljava/lang/CharSequence;)Landroid/app/Notification$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::app::Notification_Builder Notification_Builder::setCustomBigContentView(android::widget::RemoteViews arg0)
@@ -332,12 +337,12 @@ namespace android::app
 			arg1
 		);
 	}
-	android::app::Notification_Builder Notification_Builder::setGroup(jstring arg0)
+	android::app::Notification_Builder Notification_Builder::setGroup(JString arg0)
 	{
 		return callObjectMethod(
 			"setGroup",
 			"(Ljava/lang/String;)Landroid/app/Notification$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::app::Notification_Builder Notification_Builder::setGroupAlertBehavior(jint arg0)
@@ -448,28 +453,28 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	android::app::Notification_Builder Notification_Builder::setRemoteInputHistory(jarray arg0)
+	android::app::Notification_Builder Notification_Builder::setRemoteInputHistory(JArray arg0)
 	{
 		return callObjectMethod(
 			"setRemoteInputHistory",
 			"([Ljava/lang/CharSequence;)Landroid/app/Notification$Builder;",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
-	android::app::Notification_Builder Notification_Builder::setSettingsText(jstring arg0)
+	android::app::Notification_Builder Notification_Builder::setSettingsText(JString arg0)
 	{
 		return callObjectMethod(
 			"setSettingsText",
 			"(Ljava/lang/CharSequence;)Landroid/app/Notification$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	android::app::Notification_Builder Notification_Builder::setShortcutId(jstring arg0)
+	android::app::Notification_Builder Notification_Builder::setShortcutId(JString arg0)
 	{
 		return callObjectMethod(
 			"setShortcutId",
 			"(Ljava/lang/String;)Landroid/app/Notification$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::app::Notification_Builder Notification_Builder::setShowWhen(jboolean arg0)
@@ -505,12 +510,12 @@ namespace android::app
 			arg1
 		);
 	}
-	android::app::Notification_Builder Notification_Builder::setSortKey(jstring arg0)
+	android::app::Notification_Builder Notification_Builder::setSortKey(JString arg0)
 	{
 		return callObjectMethod(
 			"setSortKey",
 			"(Ljava/lang/String;)Landroid/app/Notification$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::app::Notification_Builder Notification_Builder::setSound(android::net::Uri arg0)
@@ -547,28 +552,28 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	android::app::Notification_Builder Notification_Builder::setSubText(jstring arg0)
+	android::app::Notification_Builder Notification_Builder::setSubText(JString arg0)
 	{
 		return callObjectMethod(
 			"setSubText",
 			"(Ljava/lang/CharSequence;)Landroid/app/Notification$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	android::app::Notification_Builder Notification_Builder::setTicker(jstring arg0)
+	android::app::Notification_Builder Notification_Builder::setTicker(JString arg0)
 	{
 		return callObjectMethod(
 			"setTicker",
 			"(Ljava/lang/CharSequence;)Landroid/app/Notification$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	android::app::Notification_Builder Notification_Builder::setTicker(jstring arg0, android::widget::RemoteViews arg1)
+	android::app::Notification_Builder Notification_Builder::setTicker(JString arg0, android::widget::RemoteViews arg1)
 	{
 		return callObjectMethod(
 			"setTicker",
 			"(Ljava/lang/CharSequence;Landroid/widget/RemoteViews;)Landroid/app/Notification$Builder;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
@@ -588,12 +593,12 @@ namespace android::app
 			arg0
 		);
 	}
-	android::app::Notification_Builder Notification_Builder::setVibrate(jlongArray arg0)
+	android::app::Notification_Builder Notification_Builder::setVibrate(JLongArray arg0)
 	{
 		return callObjectMethod(
 			"setVibrate",
 			"([J)Landroid/app/Notification$Builder;",
-			arg0
+			arg0.object<jlongArray>()
 		);
 	}
 	android::app::Notification_Builder Notification_Builder::setVisibility(jint arg0)

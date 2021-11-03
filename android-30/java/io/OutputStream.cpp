@@ -1,3 +1,4 @@
+#include "../../JByteArray.hpp"
 #include "./OutputStream.hpp"
 
 namespace java::io
@@ -37,12 +38,12 @@ namespace java::io
 			"()V"
 		);
 	}
-	void OutputStream::write(jbyteArray arg0)
+	void OutputStream::write(JByteArray arg0)
 	{
 		callMethod<void>(
 			"write",
 			"([B)V",
-			arg0
+			arg0.object<jbyteArray>()
 		);
 	}
 	void OutputStream::write(jint arg0)
@@ -53,12 +54,12 @@ namespace java::io
 			arg0
 		);
 	}
-	void OutputStream::write(jbyteArray arg0, jint arg1, jint arg2)
+	void OutputStream::write(JByteArray arg0, jint arg1, jint arg2)
 	{
 		callMethod<void>(
 			"write",
 			"([BII)V",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1,
 			arg2
 		);

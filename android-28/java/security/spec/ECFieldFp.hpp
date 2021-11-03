@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JObject;
 namespace java::math
 {
 	class BigInteger;
@@ -22,7 +23,7 @@ namespace java::security::spec
 		ECFieldFp(java::math::BigInteger arg0);
 		
 		// Methods
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint getFieldSize();
 		java::math::BigInteger getP();
 		jint hashCode();

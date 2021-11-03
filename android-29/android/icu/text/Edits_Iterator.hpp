@@ -2,6 +2,8 @@
 
 #include "../../../JObject.hpp"
 
+class JCharArray;
+class JString;
 
 namespace android::icu::text
 {
@@ -28,7 +30,7 @@ namespace android::icu::text
 		jint replacementIndex();
 		jint sourceIndex();
 		jint sourceIndexFromDestinationIndex(jint arg0);
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::icu::text
 

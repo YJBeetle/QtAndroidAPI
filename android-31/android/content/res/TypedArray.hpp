@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JArray;
 namespace android::content::res
 {
 	class ColorStateList;
@@ -22,6 +23,8 @@ namespace android::util
 {
 	class TypedValue;
 }
+class JString;
+class JString;
 
 namespace android::content::res
 {
@@ -54,15 +57,15 @@ namespace android::content::res
 		jint getInt(jint arg0, jint arg1);
 		jint getInteger(jint arg0, jint arg1);
 		jint getLayoutDimension(jint arg0, jint arg1);
-		jint getLayoutDimension(jint arg0, jstring arg1);
-		jstring getNonResourceString(jint arg0);
-		jstring getPositionDescription();
+		jint getLayoutDimension(jint arg0, JString arg1);
+		JString getNonResourceString(jint arg0);
+		JString getPositionDescription();
 		jint getResourceId(jint arg0, jint arg1);
 		android::content::res::Resources getResources();
 		jint getSourceResourceId(jint arg0, jint arg1);
-		jstring getString(jint arg0);
-		jstring getText(jint arg0);
-		jarray getTextArray(jint arg0);
+		JString getString(jint arg0);
+		JString getText(jint arg0);
+		JArray getTextArray(jint arg0);
 		jint getType(jint arg0);
 		jboolean getValue(jint arg0, android::util::TypedValue arg1);
 		jboolean hasValue(jint arg0);
@@ -70,7 +73,7 @@ namespace android::content::res
 		jint length();
 		android::util::TypedValue peekValue(jint arg0);
 		void recycle();
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::content::res
 

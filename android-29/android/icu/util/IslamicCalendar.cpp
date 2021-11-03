@@ -1,6 +1,7 @@
 #include "./IslamicCalendar_CalculationType.hpp"
 #include "./TimeZone.hpp"
 #include "./ULocale.hpp"
+#include "../../../JString.hpp"
 #include "../../../java/util/Date.hpp"
 #include "../../../java/util/Locale.hpp"
 #include "./IslamicCalendar.hpp"
@@ -168,12 +169,12 @@ namespace android::icu::util
 			"()Landroid/icu/util/IslamicCalendar$CalculationType;"
 		);
 	}
-	jstring IslamicCalendar::getType()
+	JString IslamicCalendar::getType()
 	{
 		return callObjectMethod(
 			"getType",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void IslamicCalendar::setCalculationType(android::icu::util::IslamicCalendar_CalculationType arg0)
 	{

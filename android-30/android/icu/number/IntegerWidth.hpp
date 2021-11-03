@@ -2,7 +2,6 @@
 
 #include "../../../JObject.hpp"
 
-
 namespace android::icu::number
 {
 	class IntegerWidth : public JObject

@@ -1,5 +1,10 @@
+#include "../../../JCharArray.hpp"
+#include "../../../JIntArray.hpp"
+#include "../../../JArray.hpp"
 #include "./NumericShaper_Range.hpp"
 #include "../../io/ObjectOutputStream.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./NumericShaper.hpp"
 
 namespace java::awt::font
@@ -208,12 +213,12 @@ namespace java::awt::font
 			arg0.object()
 		);
 	}
-	jboolean NumericShaper::equals(jobject arg0)
+	jboolean NumericShaper::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	JObject NumericShaper::getRangeSet()
@@ -244,44 +249,44 @@ namespace java::awt::font
 			"()Z"
 		);
 	}
-	void NumericShaper::shape(jcharArray arg0, jint arg1, jint arg2)
+	void NumericShaper::shape(JCharArray arg0, jint arg1, jint arg2)
 	{
 		callMethod<void>(
 			"shape",
 			"([CII)V",
-			arg0,
+			arg0.object<jcharArray>(),
 			arg1,
 			arg2
 		);
 	}
-	void NumericShaper::shape(jcharArray arg0, jint arg1, jint arg2, jint arg3)
+	void NumericShaper::shape(JCharArray arg0, jint arg1, jint arg2, jint arg3)
 	{
 		callMethod<void>(
 			"shape",
 			"([CIII)V",
-			arg0,
+			arg0.object<jcharArray>(),
 			arg1,
 			arg2,
 			arg3
 		);
 	}
-	void NumericShaper::shape(jcharArray arg0, jint arg1, jint arg2, java::awt::font::NumericShaper_Range arg3)
+	void NumericShaper::shape(JCharArray arg0, jint arg1, jint arg2, java::awt::font::NumericShaper_Range arg3)
 	{
 		callMethod<void>(
 			"shape",
 			"([CIILjava/awt/font/NumericShaper$Range;)V",
-			arg0,
+			arg0.object<jcharArray>(),
 			arg1,
 			arg2,
 			arg3.object()
 		);
 	}
-	jstring NumericShaper::toString()
+	JString NumericShaper::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::awt::font
 

@@ -34,6 +34,7 @@ namespace android::icu::util
 {
 	class ULocale;
 }
+class JString;
 namespace java::util
 {
 	class Locale;
@@ -59,11 +60,11 @@ namespace android::icu::text
 		static android::icu::text::RelativeDateTimeFormatter getInstance(android::icu::util::ULocale arg0, android::icu::text::NumberFormat arg1);
 		static android::icu::text::RelativeDateTimeFormatter getInstance(java::util::Locale arg0, android::icu::text::NumberFormat arg1);
 		static android::icu::text::RelativeDateTimeFormatter getInstance(android::icu::util::ULocale arg0, android::icu::text::NumberFormat arg1, android::icu::text::RelativeDateTimeFormatter_Style arg2, android::icu::text::DisplayContext arg3);
-		jstring combineDateAndTime(jstring arg0, jstring arg1);
-		jstring format(android::icu::text::RelativeDateTimeFormatter_Direction arg0, android::icu::text::RelativeDateTimeFormatter_AbsoluteUnit arg1);
-		jstring format(jdouble arg0, android::icu::text::RelativeDateTimeFormatter_RelativeDateTimeUnit arg1);
-		jstring format(jdouble arg0, android::icu::text::RelativeDateTimeFormatter_Direction arg1, android::icu::text::RelativeDateTimeFormatter_RelativeUnit arg2);
-		jstring formatNumeric(jdouble arg0, android::icu::text::RelativeDateTimeFormatter_RelativeDateTimeUnit arg1);
+		JString combineDateAndTime(JString arg0, JString arg1);
+		JString format(android::icu::text::RelativeDateTimeFormatter_Direction arg0, android::icu::text::RelativeDateTimeFormatter_AbsoluteUnit arg1);
+		JString format(jdouble arg0, android::icu::text::RelativeDateTimeFormatter_RelativeDateTimeUnit arg1);
+		JString format(jdouble arg0, android::icu::text::RelativeDateTimeFormatter_Direction arg1, android::icu::text::RelativeDateTimeFormatter_RelativeUnit arg2);
+		JString formatNumeric(jdouble arg0, android::icu::text::RelativeDateTimeFormatter_RelativeDateTimeUnit arg1);
 		android::icu::text::DisplayContext getCapitalizationContext();
 		android::icu::text::RelativeDateTimeFormatter_Style getFormatStyle();
 		android::icu::text::NumberFormat getNumberFormat();

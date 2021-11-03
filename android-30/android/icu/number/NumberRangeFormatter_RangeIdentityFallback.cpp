@@ -1,3 +1,5 @@
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
 #include "./NumberRangeFormatter_RangeIdentityFallback.hpp"
 
 namespace android::icu::number
@@ -42,22 +44,22 @@ namespace android::icu::number
 	// Constructors
 	
 	// Methods
-	android::icu::number::NumberRangeFormatter_RangeIdentityFallback NumberRangeFormatter_RangeIdentityFallback::valueOf(jstring arg0)
+	android::icu::number::NumberRangeFormatter_RangeIdentityFallback NumberRangeFormatter_RangeIdentityFallback::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.icu.number.NumberRangeFormatter$RangeIdentityFallback",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/icu/number/NumberRangeFormatter$RangeIdentityFallback;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray NumberRangeFormatter_RangeIdentityFallback::values()
+	JArray NumberRangeFormatter_RangeIdentityFallback::values()
 	{
 		return callStaticObjectMethod(
 			"android.icu.number.NumberRangeFormatter$RangeIdentityFallback",
 			"values",
 			"()[Landroid/icu/number/NumberRangeFormatter$RangeIdentityFallback;"
-		).object<jarray>();
+		);
 	}
 } // namespace android::icu::number
 

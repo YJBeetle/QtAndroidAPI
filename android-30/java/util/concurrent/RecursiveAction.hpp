@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "./ForkJoinTask.hpp"
 
+class JObject;
 namespace java::lang
 {
 	class Void;

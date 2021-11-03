@@ -1,3 +1,5 @@
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
 #include "./LinkOption.hpp"
 
 namespace java::nio::file
@@ -18,22 +20,22 @@ namespace java::nio::file
 	// Constructors
 	
 	// Methods
-	java::nio::file::LinkOption LinkOption::valueOf(jstring arg0)
+	java::nio::file::LinkOption LinkOption::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"java.nio.file.LinkOption",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/nio/file/LinkOption;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray LinkOption::values()
+	JArray LinkOption::values()
 	{
 		return callStaticObjectMethod(
 			"java.nio.file.LinkOption",
 			"values",
 			"()[Ljava/nio/file/LinkOption;"
-		).object<jarray>();
+		);
 	}
 } // namespace java::nio::file
 

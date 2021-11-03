@@ -14,6 +14,7 @@ namespace android::net::wifi
 {
 	class WifiNetworkSuggestion;
 }
+class JString;
 
 namespace android::net::wifi
 {
@@ -38,11 +39,11 @@ namespace android::net::wifi
 		android::net::wifi::WifiNetworkSuggestion_Builder setIsMetered(jboolean arg0);
 		android::net::wifi::WifiNetworkSuggestion_Builder setIsUserInteractionRequired(jboolean arg0);
 		android::net::wifi::WifiNetworkSuggestion_Builder setPriority(jint arg0);
-		android::net::wifi::WifiNetworkSuggestion_Builder setSsid(jstring arg0);
+		android::net::wifi::WifiNetworkSuggestion_Builder setSsid(JString arg0);
 		android::net::wifi::WifiNetworkSuggestion_Builder setWpa2EnterpriseConfig(android::net::wifi::WifiEnterpriseConfig arg0);
-		android::net::wifi::WifiNetworkSuggestion_Builder setWpa2Passphrase(jstring arg0);
+		android::net::wifi::WifiNetworkSuggestion_Builder setWpa2Passphrase(JString arg0);
 		android::net::wifi::WifiNetworkSuggestion_Builder setWpa3EnterpriseConfig(android::net::wifi::WifiEnterpriseConfig arg0);
-		android::net::wifi::WifiNetworkSuggestion_Builder setWpa3Passphrase(jstring arg0);
+		android::net::wifi::WifiNetworkSuggestion_Builder setWpa3Passphrase(JString arg0);
 	};
 } // namespace android::net::wifi
 

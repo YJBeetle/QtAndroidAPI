@@ -1,4 +1,5 @@
 #include "../content/Context.hpp"
+#include "../../JString.hpp"
 #include "../../java/util/Locale.hpp"
 #include "./Geocoder.hpp"
 
@@ -43,21 +44,21 @@ namespace android::location
 			arg2
 		);
 	}
-	JObject Geocoder::getFromLocationName(jstring arg0, jint arg1)
+	JObject Geocoder::getFromLocationName(JString arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"getFromLocationName",
 			"(Ljava/lang/String;I)Ljava/util/List;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
-	JObject Geocoder::getFromLocationName(jstring arg0, jint arg1, jdouble arg2, jdouble arg3, jdouble arg4, jdouble arg5)
+	JObject Geocoder::getFromLocationName(JString arg0, jint arg1, jdouble arg2, jdouble arg3, jdouble arg4, jdouble arg5)
 	{
 		return callObjectMethod(
 			"getFromLocationName",
 			"(Ljava/lang/String;IDDDD)Ljava/util/List;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
 			arg2,
 			arg3,

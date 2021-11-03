@@ -5,6 +5,7 @@
 #include "../content/ComponentName.hpp"
 #include "../content/Context.hpp"
 #include "../os/Parcel.hpp"
+#include "../../JString.hpp"
 #include "./ApplicationErrorReport.hpp"
 
 namespace android::app
@@ -74,26 +75,26 @@ namespace android::app
 			"Landroid/app/ApplicationErrorReport$CrashInfo;"
 		);
 	}
-	jstring ApplicationErrorReport::installerPackageName()
+	JString ApplicationErrorReport::installerPackageName()
 	{
 		return getObjectField(
 			"installerPackageName",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ApplicationErrorReport::packageName()
+	JString ApplicationErrorReport::packageName()
 	{
 		return getObjectField(
 			"packageName",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ApplicationErrorReport::processName()
+	JString ApplicationErrorReport::processName()
 	{
 		return getObjectField(
 			"processName",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::app::ApplicationErrorReport_RunningServiceInfo ApplicationErrorReport::runningServiceInfo()
 	{
@@ -132,14 +133,14 @@ namespace android::app
 		) {}
 	
 	// Methods
-	android::content::ComponentName ApplicationErrorReport::getErrorReportReceiver(android::content::Context arg0, jstring arg1, jint arg2)
+	android::content::ComponentName ApplicationErrorReport::getErrorReportReceiver(android::content::Context arg0, JString arg1, jint arg2)
 	{
 		return callStaticObjectMethod(
 			"android.app.ApplicationErrorReport",
 			"getErrorReportReceiver",
 			"(Landroid/content/Context;Ljava/lang/String;I)Landroid/content/ComponentName;",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2
 		);
 	}
@@ -150,13 +151,13 @@ namespace android::app
 			"()I"
 		);
 	}
-	void ApplicationErrorReport::dump(JObject arg0, jstring arg1)
+	void ApplicationErrorReport::dump(JObject arg0, JString arg1)
 	{
 		callMethod<void>(
 			"dump",
 			"(Landroid/util/Printer;Ljava/lang/String;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
 	void ApplicationErrorReport::readFromParcel(android::os::Parcel arg0)

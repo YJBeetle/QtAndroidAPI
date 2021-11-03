@@ -18,6 +18,7 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
 
 namespace android::app
 {
@@ -29,7 +30,7 @@ namespace android::app
 		jint affiliatedTaskId();
 		android::content::ComponentName baseActivity();
 		android::content::Intent baseIntent();
-		jstring description();
+		JString description();
 		jint id();
 		jint numActivities();
 		android::content::ComponentName origActivity();

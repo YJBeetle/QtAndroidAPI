@@ -38,6 +38,9 @@ namespace android::view
 {
 	class ViewGroup;
 }
+class JString;
+class JObject;
+class JString;
 
 namespace android::preference
 {
@@ -59,15 +62,15 @@ namespace android::preference
 		
 		// Methods
 		jint compareTo(android::preference::Preference arg0);
-		jint compareTo(jobject arg0);
+		jint compareTo(JObject arg0);
 		android::content::Context getContext();
-		jstring getDependency();
+		JString getDependency();
 		JObject getEditor();
 		android::os::Bundle getExtras();
-		jstring getFragment();
+		JString getFragment();
 		android::graphics::drawable::Drawable getIcon();
 		android::content::Intent getIntent();
-		jstring getKey();
+		JString getKey();
 		jint getLayoutResource();
 		JObject getOnPreferenceChangeListener();
 		JObject getOnPreferenceClickListener();
@@ -78,8 +81,8 @@ namespace android::preference
 		android::preference::PreferenceManager getPreferenceManager();
 		JObject getSharedPreferences();
 		jboolean getShouldDisableView();
-		jstring getSummary();
-		jstring getTitle();
+		JString getSummary();
+		JString getTitle();
 		jint getTitleRes();
 		android::view::View getView(android::view::View arg0, android::view::ViewGroup arg1);
 		jint getWidgetLayoutResource();
@@ -97,15 +100,15 @@ namespace android::preference
 		jboolean persistStringSet(JObject arg0);
 		void restoreHierarchyState(android::os::Bundle arg0);
 		void saveHierarchyState(android::os::Bundle arg0);
-		void setDefaultValue(jobject arg0);
-		void setDependency(jstring arg0);
+		void setDefaultValue(JObject arg0);
+		void setDependency(JString arg0);
 		void setEnabled(jboolean arg0);
-		void setFragment(jstring arg0);
+		void setFragment(JString arg0);
 		void setIcon(android::graphics::drawable::Drawable arg0);
 		void setIcon(jint arg0);
 		void setIconSpaceReserved(jboolean arg0);
 		void setIntent(android::content::Intent arg0);
-		void setKey(jstring arg0);
+		void setKey(JString arg0);
 		void setLayoutResource(jint arg0);
 		void setOnPreferenceChangeListener(JObject arg0);
 		void setOnPreferenceClickListener(JObject arg0);
@@ -117,13 +120,13 @@ namespace android::preference
 		void setShouldDisableView(jboolean arg0);
 		void setSingleLineTitle(jboolean arg0);
 		void setSummary(jint arg0);
-		void setSummary(jstring arg0);
+		void setSummary(JString arg0);
 		void setTitle(jint arg0);
-		void setTitle(jstring arg0);
+		void setTitle(JString arg0);
 		void setWidgetLayoutResource(jint arg0);
 		jboolean shouldCommit();
 		jboolean shouldDisableDependents();
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::preference
 

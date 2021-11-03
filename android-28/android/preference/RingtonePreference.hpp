@@ -1,6 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./Preference.hpp"
 
 namespace android::content
@@ -23,6 +22,7 @@ namespace android::preference
 {
 	class PreferenceManager;
 }
+class JObject;
 
 namespace android::preference
 {

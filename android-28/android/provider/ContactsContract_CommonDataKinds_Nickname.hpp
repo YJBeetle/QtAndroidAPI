@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JString;
 
 namespace android::provider
 {
@@ -9,11 +10,11 @@ namespace android::provider
 	{
 	public:
 		// Fields
-		static jstring CONTENT_ITEM_TYPE();
-		static jstring EXTRA_ADDRESS_BOOK_INDEX();
-		static jstring EXTRA_ADDRESS_BOOK_INDEX_COUNTS();
-		static jstring EXTRA_ADDRESS_BOOK_INDEX_TITLES();
-		static jstring NAME();
+		static JString CONTENT_ITEM_TYPE();
+		static JString EXTRA_ADDRESS_BOOK_INDEX();
+		static JString EXTRA_ADDRESS_BOOK_INDEX_COUNTS();
+		static JString EXTRA_ADDRESS_BOOK_INDEX_TITLES();
+		static JString NAME();
 		static jint TYPE_DEFAULT();
 		static jint TYPE_INITIALS();
 		static jint TYPE_MAIDEN_NAME();

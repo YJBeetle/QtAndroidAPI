@@ -1,10 +1,9 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../lang/Exception.hpp"
-#include "./SQLException.hpp"
 #include "./SQLNonTransientException.hpp"
 
+class JString;
+class JThrowable;
 
 namespace java::sql
 {
@@ -19,13 +18,13 @@ namespace java::sql
 		
 		// Constructors
 		SQLFeatureNotSupportedException();
-		SQLFeatureNotSupportedException(jstring arg0);
-		SQLFeatureNotSupportedException(jthrowable arg0);
-		SQLFeatureNotSupportedException(jstring arg0, jstring arg1);
-		SQLFeatureNotSupportedException(jstring arg0, jthrowable arg1);
-		SQLFeatureNotSupportedException(jstring arg0, jstring arg1, jint arg2);
-		SQLFeatureNotSupportedException(jstring arg0, jstring arg1, jthrowable arg2);
-		SQLFeatureNotSupportedException(jstring arg0, jstring arg1, jint arg2, jthrowable arg3);
+		SQLFeatureNotSupportedException(JString arg0);
+		SQLFeatureNotSupportedException(JThrowable arg0);
+		SQLFeatureNotSupportedException(JString arg0, JString arg1);
+		SQLFeatureNotSupportedException(JString arg0, JThrowable arg1);
+		SQLFeatureNotSupportedException(JString arg0, JString arg1, jint arg2);
+		SQLFeatureNotSupportedException(JString arg0, JString arg1, JThrowable arg2);
+		SQLFeatureNotSupportedException(JString arg0, JString arg1, jint arg2, JThrowable arg3);
 		
 		// Methods
 	};

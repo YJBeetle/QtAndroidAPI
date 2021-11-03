@@ -2,6 +2,10 @@
 
 #include "../../JObject.hpp"
 
+class JArray;
+class JArray;
+class JArray;
+class JString;
 
 namespace android::webkit
 {
@@ -19,12 +23,12 @@ namespace android::webkit
 		
 		// Methods
 		void cancel();
-		jstring getHost();
-		jarray getKeyTypes();
+		JString getHost();
+		JArray getKeyTypes();
 		jint getPort();
-		jarray getPrincipals();
+		JArray getPrincipals();
 		void ignore();
-		void proceed(JObject arg0, jarray arg1);
+		void proceed(JObject arg0, JArray arg1);
 	};
 } // namespace android::webkit
 

@@ -10,6 +10,7 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
 
 namespace android::media::midi
 {
@@ -30,7 +31,7 @@ namespace android::media::midi
 		android::media::midi::MidiDeviceInfo getDeviceInfo();
 		jint getOutputPortOpenCount(jint arg0);
 		jboolean isInputPortOpen(jint arg0);
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::media::midi

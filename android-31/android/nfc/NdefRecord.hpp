@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JByteArray;
 namespace android::net
 {
 	class Uri;
@@ -10,6 +11,8 @@ namespace android::os
 {
 	class Parcel;
 }
+class JObject;
+class JString;
 
 namespace android::nfc
 {
@@ -18,13 +21,13 @@ namespace android::nfc
 	public:
 		// Fields
 		static JObject CREATOR();
-		static jbyteArray RTD_ALTERNATIVE_CARRIER();
-		static jbyteArray RTD_HANDOVER_CARRIER();
-		static jbyteArray RTD_HANDOVER_REQUEST();
-		static jbyteArray RTD_HANDOVER_SELECT();
-		static jbyteArray RTD_SMART_POSTER();
-		static jbyteArray RTD_TEXT();
-		static jbyteArray RTD_URI();
+		static JByteArray RTD_ALTERNATIVE_CARRIER();
+		static JByteArray RTD_HANDOVER_CARRIER();
+		static JByteArray RTD_HANDOVER_REQUEST();
+		static JByteArray RTD_HANDOVER_SELECT();
+		static JByteArray RTD_SMART_POSTER();
+		static JByteArray RTD_TEXT();
+		static JByteArray RTD_URI();
 		static jshort TNF_ABSOLUTE_URI();
 		static jshort TNF_EMPTY();
 		static jshort TNF_EXTERNAL_TYPE();
@@ -38,26 +41,26 @@ namespace android::nfc
 		NdefRecord(QJniObject obj);
 		
 		// Constructors
-		NdefRecord(jbyteArray arg0);
-		NdefRecord(jshort arg0, jbyteArray arg1, jbyteArray arg2, jbyteArray arg3);
+		NdefRecord(JByteArray arg0);
+		NdefRecord(jshort arg0, JByteArray arg1, JByteArray arg2, JByteArray arg3);
 		
 		// Methods
-		static android::nfc::NdefRecord createApplicationRecord(jstring arg0);
-		static android::nfc::NdefRecord createExternal(jstring arg0, jstring arg1, jbyteArray arg2);
-		static android::nfc::NdefRecord createMime(jstring arg0, jbyteArray arg1);
-		static android::nfc::NdefRecord createTextRecord(jstring arg0, jstring arg1);
+		static android::nfc::NdefRecord createApplicationRecord(JString arg0);
+		static android::nfc::NdefRecord createExternal(JString arg0, JString arg1, JByteArray arg2);
+		static android::nfc::NdefRecord createMime(JString arg0, JByteArray arg1);
+		static android::nfc::NdefRecord createTextRecord(JString arg0, JString arg1);
 		static android::nfc::NdefRecord createUri(android::net::Uri arg0);
-		static android::nfc::NdefRecord createUri(jstring arg0);
+		static android::nfc::NdefRecord createUri(JString arg0);
 		jint describeContents();
-		jboolean equals(jobject arg0);
-		jbyteArray getId();
-		jbyteArray getPayload();
+		jboolean equals(JObject arg0);
+		JByteArray getId();
+		JByteArray getPayload();
 		jshort getTnf();
-		jbyteArray getType();
+		JByteArray getType();
 		jint hashCode();
-		jbyteArray toByteArray();
-		jstring toMimeType();
-		jstring toString();
+		JByteArray toByteArray();
+		JString toMimeType();
+		JString toString();
 		android::net::Uri toUri();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};

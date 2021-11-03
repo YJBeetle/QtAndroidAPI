@@ -1,5 +1,6 @@
 #include "../os/Parcel.hpp"
 #include "../../java/lang/Boolean.hpp"
+#include "../../JObject.hpp"
 #include "./VerifiedMotionEvent.hpp"
 
 namespace android::view
@@ -27,12 +28,12 @@ namespace android::view
 			"()I"
 		);
 	}
-	jboolean VerifiedMotionEvent::equals(jobject arg0)
+	jboolean VerifiedMotionEvent::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint VerifiedMotionEvent::getActionMasked()

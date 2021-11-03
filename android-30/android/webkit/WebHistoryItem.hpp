@@ -6,6 +6,8 @@ namespace android::graphics
 {
 	class Bitmap;
 }
+class JObject;
+class JString;
 
 namespace android::webkit
 {
@@ -23,9 +25,9 @@ namespace android::webkit
 		
 		// Methods
 		android::graphics::Bitmap getFavicon();
-		jstring getOriginalUrl();
-		jstring getTitle();
-		jstring getUrl();
+		JString getOriginalUrl();
+		JString getTitle();
+		JString getUrl();
 	};
 } // namespace android::webkit
 

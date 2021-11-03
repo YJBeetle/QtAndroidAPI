@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./MediaCodec_CodecException.hpp"
 
 namespace android::media
@@ -24,12 +25,12 @@ namespace android::media
 	// Constructors
 	
 	// Methods
-	jstring MediaCodec_CodecException::getDiagnosticInfo()
+	JString MediaCodec_CodecException::getDiagnosticInfo()
 	{
 		return callObjectMethod(
 			"getDiagnosticInfo",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint MediaCodec_CodecException::getErrorCode()
 	{

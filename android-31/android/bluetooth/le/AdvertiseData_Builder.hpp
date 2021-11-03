@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JByteArray;
 namespace android::bluetooth::le
 {
 	class AdvertiseData;
@@ -26,8 +27,8 @@ namespace android::bluetooth::le
 		AdvertiseData_Builder();
 		
 		// Methods
-		android::bluetooth::le::AdvertiseData_Builder addManufacturerData(jint arg0, jbyteArray arg1);
-		android::bluetooth::le::AdvertiseData_Builder addServiceData(android::os::ParcelUuid arg0, jbyteArray arg1);
+		android::bluetooth::le::AdvertiseData_Builder addManufacturerData(jint arg0, JByteArray arg1);
+		android::bluetooth::le::AdvertiseData_Builder addServiceData(android::os::ParcelUuid arg0, JByteArray arg1);
 		android::bluetooth::le::AdvertiseData_Builder addServiceSolicitationUuid(android::os::ParcelUuid arg0);
 		android::bluetooth::le::AdvertiseData_Builder addServiceUuid(android::os::ParcelUuid arg0);
 		android::bluetooth::le::AdvertiseData build();

@@ -2,6 +2,8 @@
 
 #include "../../../JObject.hpp"
 
+class JObject;
+class JString;
 
 namespace android::icu::util
 {
@@ -18,11 +20,11 @@ namespace android::icu::util
 		DateInterval(jlong arg0, jlong arg1);
 		
 		// Methods
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jlong getFromDate();
 		jlong getToDate();
 		jint hashCode();
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::icu::util
 

@@ -2,6 +2,7 @@
 #include "./RemoteConnection_VideoProvider_Callback.hpp"
 #include "./VideoProfile.hpp"
 #include "../view/Surface.hpp"
+#include "../../JString.hpp"
 #include "./RemoteConnection_VideoProvider.hpp"
 
 namespace android::telecom
@@ -53,12 +54,12 @@ namespace android::telecom
 			arg0.object()
 		);
 	}
-	void RemoteConnection_VideoProvider::setCamera(jstring arg0)
+	void RemoteConnection_VideoProvider::setCamera(JString arg0)
 	{
 		callMethod<void>(
 			"setCamera",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void RemoteConnection_VideoProvider::setDeviceOrientation(jint arg0)

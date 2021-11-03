@@ -1,5 +1,7 @@
+#include "../../JObjectArray.hpp"
 #include "../io/ObjectInputStream.hpp"
 #include "../io/ObjectOutputStream.hpp"
+#include "../../JObject.hpp"
 #include "./HashMap.hpp"
 #include "./HashSet.hpp"
 
@@ -37,12 +39,12 @@ namespace java::util
 		) {}
 	
 	// Methods
-	jboolean HashSet::add(jobject arg0)
+	jboolean HashSet::add(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"add",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	void HashSet::clear()
@@ -52,19 +54,19 @@ namespace java::util
 			"()V"
 		);
 	}
-	jobject HashSet::clone()
+	JObject HashSet::clone()
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
-	jboolean HashSet::contains(jobject arg0)
+	jboolean HashSet::contains(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"contains",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jboolean HashSet::isEmpty()
@@ -81,12 +83,12 @@ namespace java::util
 			"()Ljava/util/Iterator;"
 		);
 	}
-	jboolean HashSet::remove(jobject arg0)
+	jboolean HashSet::remove(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"remove",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint HashSet::size()
@@ -103,20 +105,20 @@ namespace java::util
 			"()Ljava/util/Spliterator;"
 		);
 	}
-	jobjectArray HashSet::toArray()
+	JObjectArray HashSet::toArray()
 	{
 		return callObjectMethod(
 			"toArray",
 			"()[Ljava/lang/Object;"
-		).object<jobjectArray>();
+		);
 	}
-	jobjectArray HashSet::toArray(jobjectArray arg0)
+	JObjectArray HashSet::toArray(JObjectArray arg0)
 	{
 		return callObjectMethod(
 			"toArray",
 			"([Ljava/lang/Object;)[Ljava/lang/Object;",
-			arg0
-		).object<jobjectArray>();
+			arg0.object<jobjectArray>()
+		);
 	}
 } // namespace java::util
 

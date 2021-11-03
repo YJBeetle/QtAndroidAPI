@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JFloatArray;
 
 namespace android::graphics::text
 {
@@ -21,10 +22,10 @@ namespace android::graphics::text
 		jfloat getDefaultTabStop();
 		jfloat getFirstWidth();
 		jint getFirstWidthLineCount();
-		jfloatArray getTabStops();
+		JFloatArray getTabStops();
 		jfloat getWidth();
 		void setIndent(jfloat arg0, jint arg1);
-		void setTabStops(jfloatArray arg0, jfloat arg1);
+		void setTabStops(JFloatArray arg0, jfloat arg1);
 		void setWidth(jfloat arg0);
 	};
 } // namespace android::graphics::text

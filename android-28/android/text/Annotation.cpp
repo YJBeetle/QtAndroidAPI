@@ -1,4 +1,5 @@
 #include "../os/Parcel.hpp"
+#include "../../JString.hpp"
 #include "./Annotation.hpp"
 
 namespace android::text
@@ -15,12 +16,12 @@ namespace android::text
 			"(Landroid/os/Parcel;)V",
 			arg0.object()
 		) {}
-	Annotation::Annotation(jstring arg0, jstring arg1)
+	Annotation::Annotation(JString arg0, JString arg1)
 		: JObject(
 			"android.text.Annotation",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		) {}
 	
 	// Methods
@@ -31,12 +32,12 @@ namespace android::text
 			"()I"
 		);
 	}
-	jstring Annotation::getKey()
+	JString Annotation::getKey()
 	{
 		return callObjectMethod(
 			"getKey",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint Annotation::getSpanTypeId()
 	{
@@ -45,12 +46,12 @@ namespace android::text
 			"()I"
 		);
 	}
-	jstring Annotation::getValue()
+	JString Annotation::getValue()
 	{
 		return callObjectMethod(
 			"getValue",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void Annotation::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

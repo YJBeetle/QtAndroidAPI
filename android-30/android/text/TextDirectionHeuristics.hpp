@@ -2,7 +2,6 @@
 
 #include "../../JObject.hpp"
 
-
 namespace android::text
 {
 	class TextDirectionHeuristics : public JObject

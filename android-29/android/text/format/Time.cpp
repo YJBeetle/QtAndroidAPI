@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./Time.hpp"
 
 namespace android::text::format
@@ -87,13 +88,13 @@ namespace android::text::format
 			"THURSDAY"
 		);
 	}
-	jstring Time::TIMEZONE_UTC()
+	JString Time::TIMEZONE_UTC()
 	{
 		return getStaticObjectField(
 			"android.text.format.Time",
 			"TIMEZONE_UTC",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint Time::TUESDAY()
 	{
@@ -185,12 +186,12 @@ namespace android::text::format
 			"second"
 		);
 	}
-	jstring Time::timezone()
+	JString Time::timezone()
 	{
 		return getObjectField(
 			"timezone",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint Time::weekDay()
 	{
@@ -226,11 +227,11 @@ namespace android::text::format
 			"(Landroid/text/format/Time;)V",
 			arg0.object()
 		) {}
-	Time::Time(jstring arg0)
+	Time::Time(JString arg0)
 		: JObject(
 			"android.text.format.Time",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods
@@ -244,13 +245,13 @@ namespace android::text::format
 			arg1.object()
 		);
 	}
-	jstring Time::getCurrentTimezone()
+	JString Time::getCurrentTimezone()
 	{
 		return callStaticObjectMethod(
 			"android.text.format.Time",
 			"getCurrentTimezone",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint Time::getJulianDay(jlong arg0, jlong arg1)
 	{
@@ -306,36 +307,36 @@ namespace android::text::format
 			arg0.object()
 		);
 	}
-	void Time::clear(jstring arg0)
+	void Time::clear(JString arg0)
 	{
 		callMethod<void>(
 			"clear",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jstring Time::format(jstring arg0)
+	JString Time::format(JString arg0)
 	{
 		return callObjectMethod(
 			"format",
 			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
+			arg0.object<jstring>()
+		);
 	}
-	jstring Time::format2445()
+	JString Time::format2445()
 	{
 		return callObjectMethod(
 			"format2445",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Time::format3339(jboolean arg0)
+	JString Time::format3339(jboolean arg0)
 	{
 		return callObjectMethod(
 			"format3339",
 			"(Z)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
 	jint Time::getActualMaximum(jint arg0)
 	{
@@ -360,20 +361,20 @@ namespace android::text::format
 			arg0
 		);
 	}
-	jboolean Time::parse(jstring arg0)
+	jboolean Time::parse(JString arg0)
 	{
 		return callMethod<jboolean>(
 			"parse",
 			"(Ljava/lang/String;)Z",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jboolean Time::parse3339(jstring arg0)
+	jboolean Time::parse3339(JString arg0)
 	{
 		return callMethod<jboolean>(
 			"parse3339",
 			"(Ljava/lang/String;)Z",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void Time::set(android::text::format::Time arg0)
@@ -430,12 +431,12 @@ namespace android::text::format
 			"()V"
 		);
 	}
-	void Time::switchTimezone(jstring arg0)
+	void Time::switchTimezone(JString arg0)
 	{
 		callMethod<void>(
 			"switchTimezone",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	jlong Time::toMillis(jboolean arg0)
@@ -446,12 +447,12 @@ namespace android::text::format
 			arg0
 		);
 	}
-	jstring Time::toString()
+	JString Time::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::text::format
 

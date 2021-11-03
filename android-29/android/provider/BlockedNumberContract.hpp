@@ -10,6 +10,7 @@ namespace android::net
 {
 	class Uri;
 }
+class JString;
 
 namespace android::provider
 {
@@ -17,7 +18,7 @@ namespace android::provider
 	{
 	public:
 		// Fields
-		static jstring AUTHORITY();
+		static JString AUTHORITY();
 		static android::net::Uri AUTHORITY_URI();
 		
 		// QJniObject forward
@@ -28,8 +29,8 @@ namespace android::provider
 		
 		// Methods
 		static jboolean canCurrentUserBlockNumbers(android::content::Context arg0);
-		static jboolean isBlocked(android::content::Context arg0, jstring arg1);
-		static jint unblock(android::content::Context arg0, jstring arg1);
+		static jboolean isBlocked(android::content::Context arg0, JString arg1);
+		static jint unblock(android::content::Context arg0, JString arg1);
 	};
 } // namespace android::provider
 

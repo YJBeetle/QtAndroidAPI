@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./PSSParameterSpec.hpp"
 
 namespace java::security::spec
@@ -29,31 +30,31 @@ namespace java::security::spec
 			"(I)V",
 			arg0
 		) {}
-	PSSParameterSpec::PSSParameterSpec(jstring arg0, jstring arg1, JObject arg2, jint arg3, jint arg4)
+	PSSParameterSpec::PSSParameterSpec(JString arg0, JString arg1, JObject arg2, jint arg3, jint arg4)
 		: JObject(
 			"java.security.spec.PSSParameterSpec",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/security/spec/AlgorithmParameterSpec;II)V",
-			arg0,
-			arg1,
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
 			arg2.object(),
 			arg3,
 			arg4
 		) {}
 	
 	// Methods
-	jstring PSSParameterSpec::getDigestAlgorithm()
+	JString PSSParameterSpec::getDigestAlgorithm()
 	{
 		return callObjectMethod(
 			"getDigestAlgorithm",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PSSParameterSpec::getMGFAlgorithm()
+	JString PSSParameterSpec::getMGFAlgorithm()
 	{
 		return callObjectMethod(
 			"getMGFAlgorithm",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	JObject PSSParameterSpec::getMGFParameters()
 	{
@@ -76,12 +77,12 @@ namespace java::security::spec
 			"()I"
 		);
 	}
-	jstring PSSParameterSpec::toString()
+	JString PSSParameterSpec::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::security::spec
 

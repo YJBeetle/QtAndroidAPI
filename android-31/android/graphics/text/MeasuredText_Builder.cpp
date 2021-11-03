@@ -1,3 +1,4 @@
+#include "../../../JCharArray.hpp"
 #include "../Paint.hpp"
 #include "./MeasuredText.hpp"
 #include "./MeasuredText_Builder.hpp"
@@ -10,11 +11,11 @@ namespace android::graphics::text
 	MeasuredText_Builder::MeasuredText_Builder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	MeasuredText_Builder::MeasuredText_Builder(jcharArray arg0)
+	MeasuredText_Builder::MeasuredText_Builder(JCharArray arg0)
 		: JObject(
 			"android.graphics.text.MeasuredText$Builder",
 			"([C)V",
-			arg0
+			arg0.object<jcharArray>()
 		) {}
 	MeasuredText_Builder::MeasuredText_Builder(android::graphics::text::MeasuredText arg0)
 		: JObject(

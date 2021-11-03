@@ -1,6 +1,5 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "./LayoutAnimationController.hpp"
 
 namespace android::content

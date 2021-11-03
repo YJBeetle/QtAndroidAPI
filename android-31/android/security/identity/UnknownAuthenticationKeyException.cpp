@@ -1,3 +1,5 @@
+#include "../../../JString.hpp"
+#include "../../../JThrowable.hpp"
 #include "./UnknownAuthenticationKeyException.hpp"
 
 namespace android::security::identity
@@ -8,18 +10,18 @@ namespace android::security::identity
 	UnknownAuthenticationKeyException::UnknownAuthenticationKeyException(QJniObject obj) : android::security::identity::IdentityCredentialException(obj) {}
 	
 	// Constructors
-	UnknownAuthenticationKeyException::UnknownAuthenticationKeyException(jstring arg0)
+	UnknownAuthenticationKeyException::UnknownAuthenticationKeyException(JString arg0)
 		: android::security::identity::IdentityCredentialException(
 			"android.security.identity.UnknownAuthenticationKeyException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	UnknownAuthenticationKeyException::UnknownAuthenticationKeyException(jstring arg0, jthrowable arg1)
+	UnknownAuthenticationKeyException::UnknownAuthenticationKeyException(JString arg0, JThrowable arg1)
 		: android::security::identity::IdentityCredentialException(
 			"android.security.identity.UnknownAuthenticationKeyException",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
 		) {}
 	
 	// Methods

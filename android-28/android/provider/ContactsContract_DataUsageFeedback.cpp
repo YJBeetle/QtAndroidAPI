@@ -1,4 +1,5 @@
 #include "../net/Uri.hpp"
+#include "../../JString.hpp"
 #include "./ContactsContract_DataUsageFeedback.hpp"
 
 namespace android::provider
@@ -20,37 +21,37 @@ namespace android::provider
 			"Landroid/net/Uri;"
 		);
 	}
-	jstring ContactsContract_DataUsageFeedback::USAGE_TYPE()
+	JString ContactsContract_DataUsageFeedback::USAGE_TYPE()
 	{
 		return getStaticObjectField(
 			"android.provider.ContactsContract$DataUsageFeedback",
 			"USAGE_TYPE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ContactsContract_DataUsageFeedback::USAGE_TYPE_CALL()
+	JString ContactsContract_DataUsageFeedback::USAGE_TYPE_CALL()
 	{
 		return getStaticObjectField(
 			"android.provider.ContactsContract$DataUsageFeedback",
 			"USAGE_TYPE_CALL",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ContactsContract_DataUsageFeedback::USAGE_TYPE_LONG_TEXT()
+	JString ContactsContract_DataUsageFeedback::USAGE_TYPE_LONG_TEXT()
 	{
 		return getStaticObjectField(
 			"android.provider.ContactsContract$DataUsageFeedback",
 			"USAGE_TYPE_LONG_TEXT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ContactsContract_DataUsageFeedback::USAGE_TYPE_SHORT_TEXT()
+	JString ContactsContract_DataUsageFeedback::USAGE_TYPE_SHORT_TEXT()
 	{
 		return getStaticObjectField(
 			"android.provider.ContactsContract$DataUsageFeedback",
 			"USAGE_TYPE_SHORT_TEXT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QJniObject forward

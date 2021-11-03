@@ -2,7 +2,6 @@
 
 #include "../../../JObject.hpp"
 
-
 namespace android::hardware::biometrics
 {
 	class BiometricManager : public JObject

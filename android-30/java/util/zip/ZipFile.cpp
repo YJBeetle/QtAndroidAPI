@@ -1,5 +1,7 @@
+#include "../../../JIntArray.hpp"
 #include "../../io/File.hpp"
 #include "../../io/InputStream.hpp"
+#include "../../../JString.hpp"
 #include "../../nio/charset/Charset.hpp"
 #include "../jar/JarEntry.hpp"
 #include "./ZipEntry.hpp"
@@ -33,11 +35,11 @@ namespace java::util::zip
 			"(Ljava/io/File;)V",
 			arg0.object()
 		) {}
-	ZipFile::ZipFile(jstring arg0)
+	ZipFile::ZipFile(JString arg0)
 		: JObject(
 			"java.util.zip.ZipFile",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	ZipFile::ZipFile(java::io::File arg0, jint arg1)
 		: JObject(
@@ -53,11 +55,11 @@ namespace java::util::zip
 			arg0.object(),
 			arg1.object()
 		) {}
-	ZipFile::ZipFile(jstring arg0, java::nio::charset::Charset arg1)
+	ZipFile::ZipFile(JString arg0, java::nio::charset::Charset arg1)
 		: JObject(
 			"java.util.zip.ZipFile",
 			"(Ljava/lang/String;Ljava/nio/charset/Charset;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		) {}
 	ZipFile::ZipFile(java::io::File arg0, jint arg1, java::nio::charset::Charset arg2)
@@ -84,19 +86,19 @@ namespace java::util::zip
 			"()Ljava/util/Enumeration;"
 		);
 	}
-	jstring ZipFile::getComment()
+	JString ZipFile::getComment()
 	{
 		return callObjectMethod(
 			"getComment",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	java::util::zip::ZipEntry ZipFile::getEntry(jstring arg0)
+	java::util::zip::ZipEntry ZipFile::getEntry(JString arg0)
 	{
 		return callObjectMethod(
 			"getEntry",
 			"(Ljava/lang/String;)Ljava/util/zip/ZipEntry;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	java::io::InputStream ZipFile::getInputStream(java::util::zip::ZipEntry arg0)
@@ -107,12 +109,12 @@ namespace java::util::zip
 			arg0.object()
 		);
 	}
-	jstring ZipFile::getName()
+	JString ZipFile::getName()
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint ZipFile::size()
 	{

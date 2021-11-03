@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./UnknownHostException.hpp"
 
 namespace java::net
@@ -13,11 +14,11 @@ namespace java::net
 			"java.net.UnknownHostException",
 			"()V"
 		) {}
-	UnknownHostException::UnknownHostException(jstring arg0)
+	UnknownHostException::UnknownHostException(JString arg0)
 		: java::io::IOException(
 			"java.net.UnknownHostException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

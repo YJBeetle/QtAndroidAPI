@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JString;
 
 namespace android::hardware::camera2
 {
@@ -19,8 +20,8 @@ namespace android::hardware::camera2
 		
 		// Methods
 		void onCameraAccessPrioritiesChanged();
-		void onCameraAvailable(jstring arg0);
-		void onCameraUnavailable(jstring arg0);
+		void onCameraAvailable(JString arg0);
+		void onCameraUnavailable(JString arg0);
 	};
 } // namespace android::hardware::camera2
 

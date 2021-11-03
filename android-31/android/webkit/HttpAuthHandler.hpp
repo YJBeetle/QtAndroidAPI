@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "../os/Handler.hpp"
 
+class JString;
 
 namespace android::webkit
 {
@@ -19,7 +19,7 @@ namespace android::webkit
 		
 		// Methods
 		void cancel();
-		void proceed(jstring arg0, jstring arg1);
+		void proceed(JString arg0, JString arg1);
 		jboolean useHttpAuthUsernamePassword();
 	};
 } // namespace android::webkit

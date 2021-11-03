@@ -1,3 +1,5 @@
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
 #include "./WifiConfiguration_Protocol.hpp"
 
 namespace android::net::wifi
@@ -24,21 +26,21 @@ namespace android::net::wifi
 			"WPA"
 		);
 	}
-	jarray WifiConfiguration_Protocol::strings()
+	JArray WifiConfiguration_Protocol::strings()
 	{
 		return getStaticObjectField(
 			"android.net.wifi.WifiConfiguration$Protocol",
 			"strings",
 			"[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
-	jstring WifiConfiguration_Protocol::varName()
+	JString WifiConfiguration_Protocol::varName()
 	{
 		return getStaticObjectField(
 			"android.net.wifi.WifiConfiguration$Protocol",
 			"varName",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QJniObject forward

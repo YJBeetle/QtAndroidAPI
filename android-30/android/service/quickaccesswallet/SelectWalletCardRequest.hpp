@@ -6,6 +6,7 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
 
 namespace android::service::quickaccesswallet
 {
@@ -20,11 +21,11 @@ namespace android::service::quickaccesswallet
 		SelectWalletCardRequest(QJniObject obj);
 		
 		// Constructors
-		SelectWalletCardRequest(jstring arg0);
+		SelectWalletCardRequest(JString arg0);
 		
 		// Methods
 		jint describeContents();
-		jstring getCardId();
+		JString getCardId();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::service::quickaccesswallet

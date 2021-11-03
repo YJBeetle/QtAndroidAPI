@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "./VoiceInteractionSession_Request.hpp"
 
+class JArray;
 namespace android::app
 {
 	class VoiceInteractor_Prompt;
@@ -11,6 +11,7 @@ namespace android::os
 {
 	class Bundle;
 }
+class JString;
 
 namespace android::service::voice
 {
@@ -26,11 +27,11 @@ namespace android::service::voice
 		// Constructors
 		
 		// Methods
-		jarray getOptions();
-		jstring getPrompt();
+		JArray getOptions();
+		JString getPrompt();
 		android::app::VoiceInteractor_Prompt getVoicePrompt();
-		void sendIntermediatePickOptionResult(jarray arg0, android::os::Bundle arg1);
-		void sendPickOptionResult(jarray arg0, android::os::Bundle arg1);
+		void sendIntermediatePickOptionResult(JArray arg0, android::os::Bundle arg1);
+		void sendPickOptionResult(JArray arg0, android::os::Bundle arg1);
 	};
 } // namespace android::service::voice
 

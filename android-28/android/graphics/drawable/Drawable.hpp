@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JIntArray;
 namespace android::content::res
 {
 	class ColorStateList;
@@ -54,6 +55,7 @@ namespace java::io
 {
 	class InputStream;
 }
+class JString;
 
 namespace android::graphics::drawable
 {
@@ -70,10 +72,10 @@ namespace android::graphics::drawable
 		Drawable();
 		
 		// Methods
-		static android::graphics::drawable::Drawable createFromPath(jstring arg0);
-		static android::graphics::drawable::Drawable createFromResourceStream(android::content::res::Resources arg0, android::util::TypedValue arg1, java::io::InputStream arg2, jstring arg3);
-		static android::graphics::drawable::Drawable createFromResourceStream(android::content::res::Resources arg0, android::util::TypedValue arg1, java::io::InputStream arg2, jstring arg3, android::graphics::BitmapFactory_Options arg4);
-		static android::graphics::drawable::Drawable createFromStream(java::io::InputStream arg0, jstring arg1);
+		static android::graphics::drawable::Drawable createFromPath(JString arg0);
+		static android::graphics::drawable::Drawable createFromResourceStream(android::content::res::Resources arg0, android::util::TypedValue arg1, java::io::InputStream arg2, JString arg3);
+		static android::graphics::drawable::Drawable createFromResourceStream(android::content::res::Resources arg0, android::util::TypedValue arg1, java::io::InputStream arg2, JString arg3, android::graphics::BitmapFactory_Options arg4);
+		static android::graphics::drawable::Drawable createFromStream(java::io::InputStream arg0, JString arg1);
 		static android::graphics::drawable::Drawable createFromXml(android::content::res::Resources arg0, JObject arg1);
 		static android::graphics::drawable::Drawable createFromXml(android::content::res::Resources arg0, JObject arg1, android::content::res::Resources_Theme arg2);
 		static android::graphics::drawable::Drawable createFromXmlInner(android::content::res::Resources arg0, JObject arg1, JObject arg2);
@@ -103,7 +105,7 @@ namespace android::graphics::drawable
 		jint getOpacity();
 		void getOutline(android::graphics::Outline arg0);
 		jboolean getPadding(android::graphics::Rect arg0);
-		jintArray getState();
+		JIntArray getState();
 		android::graphics::Region getTransparentRegion();
 		void inflate(android::content::res::Resources arg0, JObject arg1, JObject arg2);
 		void inflate(android::content::res::Resources arg0, JObject arg1, JObject arg2, android::content::res::Resources_Theme arg3);
@@ -130,7 +132,7 @@ namespace android::graphics::drawable
 		void setHotspotBounds(jint arg0, jint arg1, jint arg2, jint arg3);
 		jboolean setLayoutDirection(jint arg0);
 		jboolean setLevel(jint arg0);
-		jboolean setState(jintArray arg0);
+		jboolean setState(JIntArray arg0);
 		void setTint(jint arg0);
 		void setTintList(android::content::res::ColorStateList arg0);
 		void setTintMode(android::graphics::PorterDuff_Mode arg0);

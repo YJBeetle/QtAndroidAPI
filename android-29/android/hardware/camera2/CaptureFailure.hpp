@@ -6,6 +6,7 @@ namespace android::hardware::camera2
 {
 	class CaptureRequest;
 }
+class JString;
 
 namespace android::hardware::camera2
 {
@@ -24,7 +25,7 @@ namespace android::hardware::camera2
 		
 		// Methods
 		jlong getFrameNumber();
-		jstring getPhysicalCameraId();
+		JString getPhysicalCameraId();
 		jint getReason();
 		android::hardware::camera2::CaptureRequest getRequest();
 		jint getSequenceId();

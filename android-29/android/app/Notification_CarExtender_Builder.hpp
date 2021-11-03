@@ -14,6 +14,7 @@ namespace android::app
 {
 	class RemoteInput;
 }
+class JString;
 
 namespace android::app
 {
@@ -27,10 +28,10 @@ namespace android::app
 		Notification_CarExtender_Builder(QJniObject obj);
 		
 		// Constructors
-		Notification_CarExtender_Builder(jstring arg0);
+		Notification_CarExtender_Builder(JString arg0);
 		
 		// Methods
-		android::app::Notification_CarExtender_Builder addMessage(jstring arg0);
+		android::app::Notification_CarExtender_Builder addMessage(JString arg0);
 		android::app::Notification_CarExtender_UnreadConversation build();
 		android::app::Notification_CarExtender_Builder setLatestTimestamp(jlong arg0);
 		android::app::Notification_CarExtender_Builder setReadPendingIntent(android::app::PendingIntent arg0);

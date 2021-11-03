@@ -10,6 +10,7 @@ namespace android::telephony::data
 {
 	class ApnSetting;
 }
+class JString;
 namespace java::net
 {
 	class InetAddress;
@@ -31,23 +32,23 @@ namespace android::telephony::data
 		
 		// Methods
 		android::telephony::data::ApnSetting build();
-		android::telephony::data::ApnSetting_Builder setApnName(jstring arg0);
+		android::telephony::data::ApnSetting_Builder setApnName(JString arg0);
 		android::telephony::data::ApnSetting_Builder setApnTypeBitmask(jint arg0);
 		android::telephony::data::ApnSetting_Builder setAuthType(jint arg0);
 		android::telephony::data::ApnSetting_Builder setCarrierEnabled(jboolean arg0);
-		android::telephony::data::ApnSetting_Builder setEntryName(jstring arg0);
+		android::telephony::data::ApnSetting_Builder setEntryName(JString arg0);
 		android::telephony::data::ApnSetting_Builder setMmsProxyAddress(java::net::InetAddress arg0);
 		android::telephony::data::ApnSetting_Builder setMmsProxyPort(jint arg0);
 		android::telephony::data::ApnSetting_Builder setMmsc(android::net::Uri arg0);
 		android::telephony::data::ApnSetting_Builder setMvnoType(jint arg0);
 		android::telephony::data::ApnSetting_Builder setNetworkTypeBitmask(jint arg0);
-		android::telephony::data::ApnSetting_Builder setOperatorNumeric(jstring arg0);
-		android::telephony::data::ApnSetting_Builder setPassword(jstring arg0);
+		android::telephony::data::ApnSetting_Builder setOperatorNumeric(JString arg0);
+		android::telephony::data::ApnSetting_Builder setPassword(JString arg0);
 		android::telephony::data::ApnSetting_Builder setProtocol(jint arg0);
 		android::telephony::data::ApnSetting_Builder setProxyAddress(java::net::InetAddress arg0);
 		android::telephony::data::ApnSetting_Builder setProxyPort(jint arg0);
 		android::telephony::data::ApnSetting_Builder setRoamingProtocol(jint arg0);
-		android::telephony::data::ApnSetting_Builder setUser(jstring arg0);
+		android::telephony::data::ApnSetting_Builder setUser(JString arg0);
 	};
 } // namespace android::telephony::data
 

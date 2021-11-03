@@ -1,3 +1,5 @@
+#include "../../../JCharArray.hpp"
+#include "../../../JString.hpp"
 #include "./InputSource.hpp"
 #include "./SAXParseException.hpp"
 #include "./HandlerBase.hpp"
@@ -17,12 +19,12 @@ namespace org::xml::sax
 		) {}
 	
 	// Methods
-	void HandlerBase::characters(jcharArray arg0, jint arg1, jint arg2)
+	void HandlerBase::characters(JCharArray arg0, jint arg1, jint arg2)
 	{
 		callMethod<void>(
 			"characters",
 			"([CII)V",
-			arg0,
+			arg0.object<jcharArray>(),
 			arg1,
 			arg2
 		);
@@ -34,12 +36,12 @@ namespace org::xml::sax
 			"()V"
 		);
 	}
-	void HandlerBase::endElement(jstring arg0)
+	void HandlerBase::endElement(JString arg0)
 	{
 		callMethod<void>(
 			"endElement",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void HandlerBase::error(org::xml::sax::SAXParseException arg0)
@@ -58,42 +60,42 @@ namespace org::xml::sax
 			arg0.object()
 		);
 	}
-	void HandlerBase::ignorableWhitespace(jcharArray arg0, jint arg1, jint arg2)
+	void HandlerBase::ignorableWhitespace(JCharArray arg0, jint arg1, jint arg2)
 	{
 		callMethod<void>(
 			"ignorableWhitespace",
 			"([CII)V",
-			arg0,
+			arg0.object<jcharArray>(),
 			arg1,
 			arg2
 		);
 	}
-	void HandlerBase::notationDecl(jstring arg0, jstring arg1, jstring arg2)
+	void HandlerBase::notationDecl(JString arg0, JString arg1, JString arg2)
 	{
 		callMethod<void>(
 			"notationDecl",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1,
-			arg2
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2.object<jstring>()
 		);
 	}
-	void HandlerBase::processingInstruction(jstring arg0, jstring arg1)
+	void HandlerBase::processingInstruction(JString arg0, JString arg1)
 	{
 		callMethod<void>(
 			"processingInstruction",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		);
 	}
-	org::xml::sax::InputSource HandlerBase::resolveEntity(jstring arg0, jstring arg1)
+	org::xml::sax::InputSource HandlerBase::resolveEntity(JString arg0, JString arg1)
 	{
 		return callObjectMethod(
 			"resolveEntity",
 			"(Ljava/lang/String;Ljava/lang/String;)Lorg/xml/sax/InputSource;",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		);
 	}
 	void HandlerBase::setDocumentLocator(JObject arg0)
@@ -111,24 +113,24 @@ namespace org::xml::sax
 			"()V"
 		);
 	}
-	void HandlerBase::startElement(jstring arg0, JObject arg1)
+	void HandlerBase::startElement(JString arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"startElement",
 			"(Ljava/lang/String;Lorg/xml/sax/AttributeList;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
-	void HandlerBase::unparsedEntityDecl(jstring arg0, jstring arg1, jstring arg2, jstring arg3)
+	void HandlerBase::unparsedEntityDecl(JString arg0, JString arg1, JString arg2, JString arg3)
 	{
 		callMethod<void>(
 			"unparsedEntityDecl",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2.object<jstring>(),
+			arg3.object<jstring>()
 		);
 	}
 	void HandlerBase::warning(org::xml::sax::SAXParseException arg0)

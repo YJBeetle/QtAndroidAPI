@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JIntArray;
 namespace android::os
 {
 	class Handler;
@@ -10,6 +11,7 @@ namespace android::view
 {
 	class InputDevice;
 }
+class JString;
 
 namespace android::hardware::input
 {
@@ -17,8 +19,8 @@ namespace android::hardware::input
 	{
 	public:
 		// Fields
-		static jstring ACTION_QUERY_KEYBOARD_LAYOUTS();
-		static jstring META_DATA_KEYBOARD_LAYOUTS();
+		static JString ACTION_QUERY_KEYBOARD_LAYOUTS();
+		static JString META_DATA_KEYBOARD_LAYOUTS();
 		
 		// QJniObject forward
 		template<typename ...Ts> explicit InputManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
@@ -28,7 +30,7 @@ namespace android::hardware::input
 		
 		// Methods
 		android::view::InputDevice getInputDevice(jint arg0);
-		jintArray getInputDeviceIds();
+		JIntArray getInputDeviceIds();
 		void registerInputDeviceListener(JObject arg0, android::os::Handler arg1);
 		void unregisterInputDeviceListener(JObject arg0);
 	};

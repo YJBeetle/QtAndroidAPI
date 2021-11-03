@@ -2,6 +2,7 @@
 
 #include "../../../../JObject.hpp"
 
+class JByteArray;
 namespace android::net::wifi::aware
 {
 	class DiscoverySession;
@@ -18,6 +19,7 @@ namespace android::net::wifi::aware
 {
 	class WifiAwareNetworkSpecifier;
 }
+class JString;
 
 namespace android::net::wifi::aware
 {
@@ -36,9 +38,9 @@ namespace android::net::wifi::aware
 		
 		// Methods
 		android::net::wifi::aware::WifiAwareNetworkSpecifier build();
-		android::net::wifi::aware::WifiAwareNetworkSpecifier_Builder setPmk(jbyteArray arg0);
+		android::net::wifi::aware::WifiAwareNetworkSpecifier_Builder setPmk(JByteArray arg0);
 		android::net::wifi::aware::WifiAwareNetworkSpecifier_Builder setPort(jint arg0);
-		android::net::wifi::aware::WifiAwareNetworkSpecifier_Builder setPskPassphrase(jstring arg0);
+		android::net::wifi::aware::WifiAwareNetworkSpecifier_Builder setPskPassphrase(JString arg0);
 		android::net::wifi::aware::WifiAwareNetworkSpecifier_Builder setTransportProtocol(jint arg0);
 	};
 } // namespace android::net::wifi::aware

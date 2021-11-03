@@ -6,6 +6,8 @@ namespace android::os
 {
 	class Parcel;
 }
+class JObject;
+class JString;
 
 namespace android::graphics
 {
@@ -30,17 +32,17 @@ namespace android::graphics
 		
 		// Methods
 		static jboolean intersects(android::graphics::Rect arg0, android::graphics::Rect arg1);
-		static android::graphics::Rect unflattenFromString(jstring arg0);
+		static android::graphics::Rect unflattenFromString(JString arg0);
 		jint centerX();
 		jint centerY();
 		jboolean contains(android::graphics::Rect arg0);
 		jboolean contains(jint arg0, jint arg1);
 		jboolean contains(jint arg0, jint arg1, jint arg2, jint arg3);
 		jint describeContents();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jfloat exactCenterX();
 		jfloat exactCenterY();
-		jstring flattenToString();
+		JString flattenToString();
 		jint hashCode();
 		jint height();
 		void inset(jint arg0, jint arg1);
@@ -56,8 +58,8 @@ namespace android::graphics
 		void setEmpty();
 		jboolean setIntersect(android::graphics::Rect arg0, android::graphics::Rect arg1);
 		void sort();
-		jstring toShortString();
-		jstring toString();
+		JString toShortString();
+		JString toString();
 		void _union(android::graphics::Rect arg0);
 		void _union(jint arg0, jint arg1);
 		void _union(jint arg0, jint arg1, jint arg2, jint arg3);

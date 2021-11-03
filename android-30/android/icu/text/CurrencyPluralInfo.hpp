@@ -10,6 +10,8 @@ namespace android::icu::util
 {
 	class ULocale;
 }
+class JObject;
+class JString;
 namespace java::util
 {
 	class Locale;
@@ -35,15 +37,15 @@ namespace android::icu::text
 		static android::icu::text::CurrencyPluralInfo getInstance();
 		static android::icu::text::CurrencyPluralInfo getInstance(android::icu::util::ULocale arg0);
 		static android::icu::text::CurrencyPluralInfo getInstance(java::util::Locale arg0);
-		jobject clone();
-		jboolean equals(jobject arg0);
-		jstring getCurrencyPluralPattern(jstring arg0);
+		JObject clone();
+		jboolean equals(JObject arg0);
+		JString getCurrencyPluralPattern(JString arg0);
 		android::icu::util::ULocale getLocale();
 		android::icu::text::PluralRules getPluralRules();
 		jint hashCode();
-		void setCurrencyPluralPattern(jstring arg0, jstring arg1);
+		void setCurrencyPluralPattern(JString arg0, JString arg1);
 		void setLocale(android::icu::util::ULocale arg0);
-		void setPluralRules(jstring arg0);
+		void setPluralRules(JString arg0);
 	};
 } // namespace android::icu::text
 

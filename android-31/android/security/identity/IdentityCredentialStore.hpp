@@ -2,6 +2,8 @@
 
 #include "../../../JObject.hpp"
 
+class JByteArray;
+class JArray;
 namespace android::content
 {
 	class Context;
@@ -14,6 +16,7 @@ namespace android::security::identity
 {
 	class WritableIdentityCredential;
 }
+class JString;
 
 namespace android::security::identity
 {
@@ -32,10 +35,10 @@ namespace android::security::identity
 		// Methods
 		static android::security::identity::IdentityCredentialStore getDirectAccessInstance(android::content::Context arg0);
 		static android::security::identity::IdentityCredentialStore getInstance(android::content::Context arg0);
-		android::security::identity::WritableIdentityCredential createCredential(jstring arg0, jstring arg1);
-		jbyteArray deleteCredentialByName(jstring arg0);
-		android::security::identity::IdentityCredential getCredentialByName(jstring arg0, jint arg1);
-		jarray getSupportedDocTypes();
+		android::security::identity::WritableIdentityCredential createCredential(JString arg0, JString arg1);
+		JByteArray deleteCredentialByName(JString arg0);
+		android::security::identity::IdentityCredential getCredentialByName(JString arg0, jint arg1);
+		JArray getSupportedDocTypes();
 	};
 } // namespace android::security::identity
 

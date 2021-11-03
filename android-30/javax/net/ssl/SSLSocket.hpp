@@ -1,8 +1,9 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "../../../java/net/Socket.hpp"
 
+class JArray;
+class JString;
 namespace java::net
 {
 	class InetAddress;
@@ -27,24 +28,24 @@ namespace javax::net::ssl
 		
 		// Methods
 		void addHandshakeCompletedListener(JObject arg0);
-		jstring getApplicationProtocol();
+		JString getApplicationProtocol();
 		jboolean getEnableSessionCreation();
-		jarray getEnabledCipherSuites();
-		jarray getEnabledProtocols();
-		jstring getHandshakeApplicationProtocol();
+		JArray getEnabledCipherSuites();
+		JArray getEnabledProtocols();
+		JString getHandshakeApplicationProtocol();
 		JObject getHandshakeApplicationProtocolSelector();
 		JObject getHandshakeSession();
 		jboolean getNeedClientAuth();
 		javax::net::ssl::SSLParameters getSSLParameters();
 		JObject getSession();
-		jarray getSupportedCipherSuites();
-		jarray getSupportedProtocols();
+		JArray getSupportedCipherSuites();
+		JArray getSupportedProtocols();
 		jboolean getUseClientMode();
 		jboolean getWantClientAuth();
 		void removeHandshakeCompletedListener(JObject arg0);
 		void setEnableSessionCreation(jboolean arg0);
-		void setEnabledCipherSuites(jarray arg0);
-		void setEnabledProtocols(jarray arg0);
+		void setEnabledCipherSuites(JArray arg0);
+		void setEnabledProtocols(JArray arg0);
 		void setHandshakeApplicationProtocolSelector(JObject arg0);
 		void setNeedClientAuth(jboolean arg0);
 		void setSSLParameters(javax::net::ssl::SSLParameters arg0);

@@ -1,5 +1,7 @@
+#include "../../../JLongArray.hpp"
 #include "../ipsec/ike/IkeTunnelConnectionParams.hpp"
 #include "./VcnGatewayConnectionConfig.hpp"
+#include "../../../JString.hpp"
 #include "./VcnGatewayConnectionConfig_Builder.hpp"
 
 namespace android::net::vcn
@@ -10,11 +12,11 @@ namespace android::net::vcn
 	VcnGatewayConnectionConfig_Builder::VcnGatewayConnectionConfig_Builder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	VcnGatewayConnectionConfig_Builder::VcnGatewayConnectionConfig_Builder(jstring arg0, android::net::ipsec::ike::IkeTunnelConnectionParams arg1)
+	VcnGatewayConnectionConfig_Builder::VcnGatewayConnectionConfig_Builder(JString arg0, android::net::ipsec::ike::IkeTunnelConnectionParams arg1)
 		: JObject(
 			"android.net.vcn.VcnGatewayConnectionConfig$Builder",
 			"(Ljava/lang/String;Landroid/net/ipsec/ike/IkeTunnelConnectionParams;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		) {}
 	
@@ -50,12 +52,12 @@ namespace android::net::vcn
 			arg0
 		);
 	}
-	android::net::vcn::VcnGatewayConnectionConfig_Builder VcnGatewayConnectionConfig_Builder::setRetryIntervalsMillis(jlongArray arg0)
+	android::net::vcn::VcnGatewayConnectionConfig_Builder VcnGatewayConnectionConfig_Builder::setRetryIntervalsMillis(JLongArray arg0)
 	{
 		return callObjectMethod(
 			"setRetryIntervalsMillis",
 			"([J)Landroid/net/vcn/VcnGatewayConnectionConfig$Builder;",
-			arg0
+			arg0.object<jlongArray>()
 		);
 	}
 } // namespace android::net::vcn

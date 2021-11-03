@@ -1,4 +1,6 @@
+#include "../../JByteArray.hpp"
 #include "../io/OutputStream.hpp"
+#include "../../JString.hpp"
 #include "./MessageDigest.hpp"
 #include "./DigestOutputStream.hpp"
 
@@ -42,12 +44,12 @@ namespace java::security
 			arg0.object()
 		);
 	}
-	jstring DigestOutputStream::toString()
+	JString DigestOutputStream::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void DigestOutputStream::write(jint arg0)
 	{
@@ -57,12 +59,12 @@ namespace java::security
 			arg0
 		);
 	}
-	void DigestOutputStream::write(jbyteArray arg0, jint arg1, jint arg2)
+	void DigestOutputStream::write(JByteArray arg0, jint arg1, jint arg2)
 	{
 		callMethod<void>(
 			"write",
 			"([BII)V",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1,
 			arg2
 		);

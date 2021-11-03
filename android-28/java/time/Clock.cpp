@@ -1,3 +1,4 @@
+#include "../../JObject.hpp"
 #include "./Duration.hpp"
 #include "./Instant.hpp"
 #include "./ZoneId.hpp"
@@ -95,12 +96,12 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	jboolean Clock::equals(jobject arg0)
+	jboolean Clock::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	java::time::ZoneId Clock::getZone()

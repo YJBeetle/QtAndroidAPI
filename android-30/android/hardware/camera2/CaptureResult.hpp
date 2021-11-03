@@ -1,6 +1,5 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "./CameraMetadata.hpp"
 
 namespace android::hardware::camera2
@@ -11,6 +10,7 @@ namespace android::hardware::camera2
 {
 	class CaptureResult_Key;
 }
+class JObject;
 
 namespace android::hardware::camera2
 {
@@ -110,7 +110,7 @@ namespace android::hardware::camera2
 		// Constructors
 		
 		// Methods
-		jobject get(android::hardware::camera2::CaptureResult_Key arg0);
+		JObject get(android::hardware::camera2::CaptureResult_Key arg0);
 		jlong getFrameNumber();
 		JObject getKeys();
 		android::hardware::camera2::CaptureRequest getRequest();

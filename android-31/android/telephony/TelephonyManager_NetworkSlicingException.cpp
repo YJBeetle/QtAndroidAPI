@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./TelephonyManager_NetworkSlicingException.hpp"
 
 namespace android::telephony
@@ -10,12 +11,12 @@ namespace android::telephony
 	// Constructors
 	
 	// Methods
-	jstring TelephonyManager_NetworkSlicingException::toString()
+	JString TelephonyManager_NetworkSlicingException::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::telephony
 

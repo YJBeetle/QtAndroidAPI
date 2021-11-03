@@ -1,12 +1,12 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "./NetworkEvent.hpp"
 
 namespace android::os
 {
 	class Parcel;
 }
+class JString;
 namespace java::net
 {
 	class InetAddress;
@@ -30,7 +30,7 @@ namespace android::app::admin
 		jint describeContents();
 		java::net::InetAddress getInetAddress();
 		jint getPort();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::app::admin

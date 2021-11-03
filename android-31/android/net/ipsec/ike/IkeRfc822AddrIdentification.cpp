@@ -1,34 +1,36 @@
+#include "../../../../JObject.hpp"
+#include "../../../../JString.hpp"
 #include "./IkeRfc822AddrIdentification.hpp"
 
 namespace android::net::ipsec::ike
 {
 	// Fields
-	jstring IkeRfc822AddrIdentification::rfc822Name()
+	JString IkeRfc822AddrIdentification::rfc822Name()
 	{
 		return getObjectField(
 			"rfc822Name",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QJniObject forward
 	IkeRfc822AddrIdentification::IkeRfc822AddrIdentification(QJniObject obj) : android::net::ipsec::ike::IkeIdentification(obj) {}
 	
 	// Constructors
-	IkeRfc822AddrIdentification::IkeRfc822AddrIdentification(jstring arg0)
+	IkeRfc822AddrIdentification::IkeRfc822AddrIdentification(JString arg0)
 		: android::net::ipsec::ike::IkeIdentification(
 			"android.net.ipsec.ike.IkeRfc822AddrIdentification",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods
-	jboolean IkeRfc822AddrIdentification::equals(jobject arg0)
+	jboolean IkeRfc822AddrIdentification::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint IkeRfc822AddrIdentification::hashCode()

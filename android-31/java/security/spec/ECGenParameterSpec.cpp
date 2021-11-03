@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./ECGenParameterSpec.hpp"
 
 namespace java::security::spec
@@ -8,11 +9,11 @@ namespace java::security::spec
 	ECGenParameterSpec::ECGenParameterSpec(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	ECGenParameterSpec::ECGenParameterSpec(jstring arg0)
+	ECGenParameterSpec::ECGenParameterSpec(JString arg0)
 		: JObject(
 			"java.security.spec.ECGenParameterSpec",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

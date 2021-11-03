@@ -1,13 +1,13 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "./AbstractMap.hpp"
 #include "./HashMap.hpp"
 
+class JObjectArray;
 namespace java::io
 {
 	class ObjectOutputStream;
 }
+class JObject;
 
 namespace java::util
 {
@@ -29,11 +29,11 @@ namespace java::util
 		
 		// Methods
 		void clear();
-		jboolean containsValue(jobject arg0);
+		jboolean containsValue(JObject arg0);
 		JObject entrySet();
 		void forEach(JObject arg0);
-		jobject get(jobject arg0);
-		jobject getOrDefault(jobject arg0, jobject arg1);
+		JObject get(JObject arg0);
+		JObject getOrDefault(JObject arg0, JObject arg1);
 		JObject keySet();
 		void replaceAll(JObject arg0);
 		JObject values();

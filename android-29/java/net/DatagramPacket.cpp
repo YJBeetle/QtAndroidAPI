@@ -1,3 +1,4 @@
+#include "../../JByteArray.hpp"
 #include "./InetAddress.hpp"
 #include "./SocketAddress.hpp"
 #include "./DatagramPacket.hpp"
@@ -10,52 +11,52 @@ namespace java::net
 	DatagramPacket::DatagramPacket(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	DatagramPacket::DatagramPacket(jbyteArray arg0, jint arg1)
+	DatagramPacket::DatagramPacket(JByteArray arg0, jint arg1)
 		: JObject(
 			"java.net.DatagramPacket",
 			"([BI)V",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1
 		) {}
-	DatagramPacket::DatagramPacket(jbyteArray arg0, jint arg1, jint arg2)
+	DatagramPacket::DatagramPacket(JByteArray arg0, jint arg1, jint arg2)
 		: JObject(
 			"java.net.DatagramPacket",
 			"([BII)V",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1,
 			arg2
 		) {}
-	DatagramPacket::DatagramPacket(jbyteArray arg0, jint arg1, java::net::SocketAddress arg2)
+	DatagramPacket::DatagramPacket(JByteArray arg0, jint arg1, java::net::SocketAddress arg2)
 		: JObject(
 			"java.net.DatagramPacket",
 			"([BILjava/net/SocketAddress;)V",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1,
 			arg2.object()
 		) {}
-	DatagramPacket::DatagramPacket(jbyteArray arg0, jint arg1, jint arg2, java::net::SocketAddress arg3)
+	DatagramPacket::DatagramPacket(JByteArray arg0, jint arg1, jint arg2, java::net::SocketAddress arg3)
 		: JObject(
 			"java.net.DatagramPacket",
 			"([BIILjava/net/SocketAddress;)V",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1,
 			arg2,
 			arg3.object()
 		) {}
-	DatagramPacket::DatagramPacket(jbyteArray arg0, jint arg1, java::net::InetAddress arg2, jint arg3)
+	DatagramPacket::DatagramPacket(JByteArray arg0, jint arg1, java::net::InetAddress arg2, jint arg3)
 		: JObject(
 			"java.net.DatagramPacket",
 			"([BILjava/net/InetAddress;I)V",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1,
 			arg2.object(),
 			arg3
 		) {}
-	DatagramPacket::DatagramPacket(jbyteArray arg0, jint arg1, jint arg2, java::net::InetAddress arg3, jint arg4)
+	DatagramPacket::DatagramPacket(JByteArray arg0, jint arg1, jint arg2, java::net::InetAddress arg3, jint arg4)
 		: JObject(
 			"java.net.DatagramPacket",
 			"([BIILjava/net/InetAddress;I)V",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1,
 			arg2,
 			arg3.object(),
@@ -70,12 +71,12 @@ namespace java::net
 			"()Ljava/net/InetAddress;"
 		);
 	}
-	jbyteArray DatagramPacket::getData()
+	JByteArray DatagramPacket::getData()
 	{
 		return callObjectMethod(
 			"getData",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
 	jint DatagramPacket::getLength()
 	{
@@ -113,20 +114,20 @@ namespace java::net
 			arg0.object()
 		);
 	}
-	void DatagramPacket::setData(jbyteArray arg0)
+	void DatagramPacket::setData(JByteArray arg0)
 	{
 		callMethod<void>(
 			"setData",
 			"([B)V",
-			arg0
+			arg0.object<jbyteArray>()
 		);
 	}
-	void DatagramPacket::setData(jbyteArray arg0, jint arg1, jint arg2)
+	void DatagramPacket::setData(JByteArray arg0, jint arg1, jint arg2)
 	{
 		callMethod<void>(
 			"setData",
 			"([BII)V",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1,
 			arg2
 		);

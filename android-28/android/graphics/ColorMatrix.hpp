@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JFloatArray;
+class JObject;
 
 namespace android::graphics
 {
@@ -16,16 +18,16 @@ namespace android::graphics
 		
 		// Constructors
 		ColorMatrix();
-		ColorMatrix(jfloatArray arg0);
+		ColorMatrix(JFloatArray arg0);
 		ColorMatrix(android::graphics::ColorMatrix &arg0);
 		
 		// Methods
-		jboolean equals(jobject arg0);
-		jfloatArray getArray();
+		jboolean equals(JObject arg0);
+		JFloatArray getArray();
 		void postConcat(android::graphics::ColorMatrix arg0);
 		void preConcat(android::graphics::ColorMatrix arg0);
 		void reset();
-		void set(jfloatArray arg0);
+		void set(JFloatArray arg0);
 		void set(android::graphics::ColorMatrix arg0);
 		void setConcat(android::graphics::ColorMatrix arg0, android::graphics::ColorMatrix arg1);
 		void setRGB2YUV();

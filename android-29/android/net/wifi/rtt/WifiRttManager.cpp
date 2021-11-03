@@ -1,17 +1,18 @@
 #include "./RangingRequest.hpp"
 #include "./RangingResultCallback.hpp"
+#include "../../../../JString.hpp"
 #include "./WifiRttManager.hpp"
 
 namespace android::net::wifi::rtt
 {
 	// Fields
-	jstring WifiRttManager::ACTION_WIFI_RTT_STATE_CHANGED()
+	JString WifiRttManager::ACTION_WIFI_RTT_STATE_CHANGED()
 	{
 		return getStaticObjectField(
 			"android.net.wifi.rtt.WifiRttManager",
 			"ACTION_WIFI_RTT_STATE_CHANGED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QJniObject forward

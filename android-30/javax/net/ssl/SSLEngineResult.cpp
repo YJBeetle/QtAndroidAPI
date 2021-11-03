@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./SSLEngineResult_HandshakeStatus.hpp"
 #include "./SSLEngineResult_Status.hpp"
 #include "./SSLEngineResult.hpp"
@@ -66,12 +67,12 @@ namespace javax::net::ssl
 			"()J"
 		);
 	}
-	jstring SSLEngineResult::toString()
+	JString SSLEngineResult::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace javax::net::ssl
 

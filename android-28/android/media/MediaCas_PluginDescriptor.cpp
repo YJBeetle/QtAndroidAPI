@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./MediaCas_PluginDescriptor.hpp"
 
 namespace android::media
@@ -10,12 +11,12 @@ namespace android::media
 	// Constructors
 	
 	// Methods
-	jstring MediaCas_PluginDescriptor::getName()
+	JString MediaCas_PluginDescriptor::getName()
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint MediaCas_PluginDescriptor::getSystemId()
 	{
@@ -24,12 +25,12 @@ namespace android::media
 			"()I"
 		);
 	}
-	jstring MediaCas_PluginDescriptor::toString()
+	JString MediaCas_PluginDescriptor::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::media
 

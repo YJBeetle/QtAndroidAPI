@@ -1,4 +1,7 @@
+#include "../../../../../JLongArray.hpp"
 #include "../../../../os/Parcel.hpp"
+#include "../../../../../JObject.hpp"
+#include "../../../../../JString.hpp"
 #include "./HomeSp.hpp"
 
 namespace android::net::wifi::hotspot2::pps
@@ -37,34 +40,34 @@ namespace android::net::wifi::hotspot2::pps
 			"()I"
 		);
 	}
-	jboolean HomeSp::equals(jobject arg0)
+	jboolean HomeSp::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jstring HomeSp::getFqdn()
+	JString HomeSp::getFqdn()
 	{
 		return callObjectMethod(
 			"getFqdn",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring HomeSp::getFriendlyName()
+	JString HomeSp::getFriendlyName()
 	{
 		return callObjectMethod(
 			"getFriendlyName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jlongArray HomeSp::getRoamingConsortiumOis()
+	JLongArray HomeSp::getRoamingConsortiumOis()
 	{
 		return callObjectMethod(
 			"getRoamingConsortiumOis",
 			"()[J"
-		).object<jlongArray>();
+		);
 	}
 	jint HomeSp::hashCode()
 	{
@@ -73,36 +76,36 @@ namespace android::net::wifi::hotspot2::pps
 			"()I"
 		);
 	}
-	void HomeSp::setFqdn(jstring arg0)
+	void HomeSp::setFqdn(JString arg0)
 	{
 		callMethod<void>(
 			"setFqdn",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	void HomeSp::setFriendlyName(jstring arg0)
+	void HomeSp::setFriendlyName(JString arg0)
 	{
 		callMethod<void>(
 			"setFriendlyName",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	void HomeSp::setRoamingConsortiumOis(jlongArray arg0)
+	void HomeSp::setRoamingConsortiumOis(JLongArray arg0)
 	{
 		callMethod<void>(
 			"setRoamingConsortiumOis",
 			"([J)V",
-			arg0
+			arg0.object<jlongArray>()
 		);
 	}
-	jstring HomeSp::toString()
+	JString HomeSp::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void HomeSp::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

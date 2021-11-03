@@ -6,6 +6,8 @@ namespace android::webkit
 {
 	class WebView;
 }
+class JObject;
+class JString;
 
 namespace android::webkit
 {
@@ -28,7 +30,7 @@ namespace android::webkit
 		jboolean acceptCookie();
 		jboolean acceptThirdPartyCookies(android::webkit::WebView arg0);
 		void flush();
-		jstring getCookie(jstring arg0);
+		JString getCookie(JString arg0);
 		jboolean hasCookies();
 		void removeAllCookie();
 		void removeAllCookies(JObject arg0);
@@ -37,8 +39,8 @@ namespace android::webkit
 		void removeSessionCookies(JObject arg0);
 		void setAcceptCookie(jboolean arg0);
 		void setAcceptThirdPartyCookies(android::webkit::WebView arg0, jboolean arg1);
-		void setCookie(jstring arg0, jstring arg1);
-		void setCookie(jstring arg0, jstring arg1, JObject arg2);
+		void setCookie(JString arg0, JString arg1);
+		void setCookie(JString arg0, JString arg1, JObject arg2);
 	};
 } // namespace android::webkit
 

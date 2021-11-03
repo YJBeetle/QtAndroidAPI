@@ -1,5 +1,7 @@
 #include "../MediaDescription.hpp"
 #include "../../os/Parcel.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./MediaSession_QueueItem.hpp"
 
 namespace android::media::session
@@ -41,12 +43,12 @@ namespace android::media::session
 			"()I"
 		);
 	}
-	jboolean MediaSession_QueueItem::equals(jobject arg0)
+	jboolean MediaSession_QueueItem::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	android::media::MediaDescription MediaSession_QueueItem::getDescription()
@@ -63,12 +65,12 @@ namespace android::media::session
 			"()J"
 		);
 	}
-	jstring MediaSession_QueueItem::toString()
+	JString MediaSession_QueueItem::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void MediaSession_QueueItem::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

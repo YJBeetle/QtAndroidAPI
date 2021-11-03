@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JObject;
+class JString;
 
 namespace java::util
 {
@@ -19,7 +21,7 @@ namespace java::util
 		// Methods
 		static java::util::OptionalInt empty();
 		static java::util::OptionalInt of(jint arg0);
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint getAsInt();
 		jint hashCode();
 		void ifPresent(JObject arg0);
@@ -31,7 +33,7 @@ namespace java::util
 		jint orElseThrow();
 		jint orElseThrow(JObject arg0);
 		JObject stream();
-		jstring toString();
+		JString toString();
 	};
 } // namespace java::util
 

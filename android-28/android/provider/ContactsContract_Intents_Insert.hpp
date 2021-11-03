@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JString;
 
 namespace android::provider
 {
@@ -9,36 +10,36 @@ namespace android::provider
 	{
 	public:
 		// Fields
-		static jstring ACTION();
-		static jstring COMPANY();
-		static jstring DATA();
-		static jstring EMAIL();
-		static jstring EMAIL_ISPRIMARY();
-		static jstring EMAIL_TYPE();
-		static jstring EXTRA_ACCOUNT();
-		static jstring EXTRA_DATA_SET();
-		static jstring FULL_MODE();
-		static jstring IM_HANDLE();
-		static jstring IM_ISPRIMARY();
-		static jstring IM_PROTOCOL();
-		static jstring JOB_TITLE();
-		static jstring NAME();
-		static jstring NOTES();
-		static jstring PHONE();
-		static jstring PHONETIC_NAME();
-		static jstring PHONE_ISPRIMARY();
-		static jstring PHONE_TYPE();
-		static jstring POSTAL();
-		static jstring POSTAL_ISPRIMARY();
-		static jstring POSTAL_TYPE();
-		static jstring SECONDARY_EMAIL();
-		static jstring SECONDARY_EMAIL_TYPE();
-		static jstring SECONDARY_PHONE();
-		static jstring SECONDARY_PHONE_TYPE();
-		static jstring TERTIARY_EMAIL();
-		static jstring TERTIARY_EMAIL_TYPE();
-		static jstring TERTIARY_PHONE();
-		static jstring TERTIARY_PHONE_TYPE();
+		static JString ACTION();
+		static JString COMPANY();
+		static JString DATA();
+		static JString EMAIL();
+		static JString EMAIL_ISPRIMARY();
+		static JString EMAIL_TYPE();
+		static JString EXTRA_ACCOUNT();
+		static JString EXTRA_DATA_SET();
+		static JString FULL_MODE();
+		static JString IM_HANDLE();
+		static JString IM_ISPRIMARY();
+		static JString IM_PROTOCOL();
+		static JString JOB_TITLE();
+		static JString NAME();
+		static JString NOTES();
+		static JString PHONE();
+		static JString PHONETIC_NAME();
+		static JString PHONE_ISPRIMARY();
+		static JString PHONE_TYPE();
+		static JString POSTAL();
+		static JString POSTAL_ISPRIMARY();
+		static JString POSTAL_TYPE();
+		static JString SECONDARY_EMAIL();
+		static JString SECONDARY_EMAIL_TYPE();
+		static JString SECONDARY_PHONE();
+		static JString SECONDARY_PHONE_TYPE();
+		static JString TERTIARY_EMAIL();
+		static JString TERTIARY_EMAIL_TYPE();
+		static JString TERTIARY_PHONE();
+		static JString TERTIARY_PHONE_TYPE();
 		
 		// QJniObject forward
 		template<typename ...Ts> explicit ContactsContract_Intents_Insert(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}

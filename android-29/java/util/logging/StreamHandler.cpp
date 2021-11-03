@@ -1,5 +1,6 @@
 #include "../../io/OutputStream.hpp"
 #include "../../io/Writer.hpp"
+#include "../../../JString.hpp"
 #include "./Formatter.hpp"
 #include "./Level.hpp"
 #include "./LogRecord.hpp"
@@ -57,12 +58,12 @@ namespace java::util::logging
 			arg0.object()
 		);
 	}
-	void StreamHandler::setEncoding(jstring arg0)
+	void StreamHandler::setEncoding(JString arg0)
 	{
 		callMethod<void>(
 			"setEncoding",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 } // namespace java::util::logging

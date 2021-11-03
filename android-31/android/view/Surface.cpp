@@ -3,6 +3,7 @@
 #include "../graphics/SurfaceTexture.hpp"
 #include "../os/Parcel.hpp"
 #include "./SurfaceControl.hpp"
+#include "../../JString.hpp"
 #include "./Surface.hpp"
 
 namespace android::view
@@ -154,12 +155,12 @@ namespace android::view
 			arg2
 		);
 	}
-	jstring Surface::toString()
+	JString Surface::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void Surface::unlockCanvas(android::graphics::Canvas arg0)
 	{

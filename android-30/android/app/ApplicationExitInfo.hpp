@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JByteArray;
 namespace android::os
 {
 	class Parcel;
@@ -14,6 +15,8 @@ namespace java::io
 {
 	class InputStream;
 }
+class JObject;
+class JString;
 
 namespace android::app
 {
@@ -45,14 +48,14 @@ namespace android::app
 		
 		// Methods
 		jint describeContents();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint getDefiningUid();
-		jstring getDescription();
+		JString getDescription();
 		jint getImportance();
 		jint getPackageUid();
 		jint getPid();
-		jstring getProcessName();
-		jbyteArray getProcessStateSummary();
+		JString getProcessName();
+		JByteArray getProcessStateSummary();
 		jlong getPss();
 		jint getRealUid();
 		jint getReason();
@@ -62,7 +65,7 @@ namespace android::app
 		java::io::InputStream getTraceInputStream();
 		android::os::UserHandle getUserHandle();
 		jint hashCode();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::app

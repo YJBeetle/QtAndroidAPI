@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./Reader.hpp"
 
+class JCharArray;
 namespace java::io
 {
 	class PipedWriter;
@@ -33,7 +33,7 @@ namespace java::io
 		void close();
 		void connect(java::io::PipedWriter arg0);
 		jint read();
-		jint read(jcharArray arg0, jint arg1, jint arg2);
+		jint read(JCharArray arg0, jint arg1, jint arg2);
 		jboolean ready();
 	};
 } // namespace java::io

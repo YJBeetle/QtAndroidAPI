@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JObjectArray;
 namespace java::io
 {
 	class File;
@@ -18,6 +19,7 @@ namespace java::io
 {
 	class PrintStream;
 }
+class JString;
 namespace java::nio::charset
 {
 	class Charset;
@@ -48,28 +50,28 @@ namespace java::util
 		Formatter(java::io::OutputStream arg0);
 		Formatter(java::io::PrintStream arg0);
 		Formatter(JObject arg0);
-		Formatter(jstring arg0);
+		Formatter(JString arg0);
 		Formatter(java::util::Locale arg0);
-		Formatter(java::io::File arg0, jstring arg1);
-		Formatter(java::io::OutputStream arg0, jstring arg1);
+		Formatter(java::io::File arg0, JString arg1);
+		Formatter(java::io::OutputStream arg0, JString arg1);
 		Formatter(JObject arg0, java::util::Locale arg1);
-		Formatter(jstring arg0, jstring arg1);
-		Formatter(java::io::File arg0, jstring arg1, java::util::Locale arg2);
+		Formatter(JString arg0, JString arg1);
+		Formatter(java::io::File arg0, JString arg1, java::util::Locale arg2);
 		Formatter(java::io::File arg0, java::nio::charset::Charset arg1, java::util::Locale arg2);
-		Formatter(java::io::OutputStream arg0, jstring arg1, java::util::Locale arg2);
+		Formatter(java::io::OutputStream arg0, JString arg1, java::util::Locale arg2);
 		Formatter(java::io::OutputStream arg0, java::nio::charset::Charset arg1, java::util::Locale arg2);
-		Formatter(jstring arg0, jstring arg1, java::util::Locale arg2);
-		Formatter(jstring arg0, java::nio::charset::Charset arg1, java::util::Locale arg2);
+		Formatter(JString arg0, JString arg1, java::util::Locale arg2);
+		Formatter(JString arg0, java::nio::charset::Charset arg1, java::util::Locale arg2);
 		
 		// Methods
 		void close();
 		void flush();
-		java::util::Formatter format(jstring arg0, jobjectArray arg1);
-		java::util::Formatter format(java::util::Locale arg0, jstring arg1, jobjectArray arg2);
+		java::util::Formatter format(JString arg0, JObjectArray arg1);
+		java::util::Formatter format(java::util::Locale arg0, JString arg1, JObjectArray arg2);
 		java::io::IOException ioException();
 		java::util::Locale locale();
 		JObject out();
-		jstring toString();
+		JString toString();
 	};
 } // namespace java::util
 

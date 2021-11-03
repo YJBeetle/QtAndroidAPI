@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JString;
 
 namespace android::hardware::camera2
 {
@@ -18,8 +19,8 @@ namespace android::hardware::camera2
 		CameraManager_TorchCallback();
 		
 		// Methods
-		void onTorchModeChanged(jstring arg0, jboolean arg1);
-		void onTorchModeUnavailable(jstring arg0);
+		void onTorchModeChanged(JString arg0, jboolean arg1);
+		void onTorchModeUnavailable(JString arg0);
 	};
 } // namespace android::hardware::camera2
 

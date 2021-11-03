@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./NoSuchPaddingException.hpp"
 
 namespace javax::crypto
@@ -13,11 +14,11 @@ namespace javax::crypto
 			"javax.crypto.NoSuchPaddingException",
 			"()V"
 		) {}
-	NoSuchPaddingException::NoSuchPaddingException(jstring arg0)
+	NoSuchPaddingException::NoSuchPaddingException(JString arg0)
 		: java::security::GeneralSecurityException(
 			"javax.crypto.NoSuchPaddingException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

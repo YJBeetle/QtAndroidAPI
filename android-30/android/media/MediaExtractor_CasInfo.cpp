@@ -1,3 +1,4 @@
+#include "../../JByteArray.hpp"
 #include "./MediaCas_Session.hpp"
 #include "./MediaExtractor_CasInfo.hpp"
 
@@ -11,12 +12,12 @@ namespace android::media
 	// Constructors
 	
 	// Methods
-	jbyteArray MediaExtractor_CasInfo::getPrivateData()
+	JByteArray MediaExtractor_CasInfo::getPrivateData()
 	{
 		return callObjectMethod(
 			"getPrivateData",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
 	android::media::MediaCas_Session MediaExtractor_CasInfo::getSession()
 	{

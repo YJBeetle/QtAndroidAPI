@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JIntArray;
 
 namespace android::text
 {

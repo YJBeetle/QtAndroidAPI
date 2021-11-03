@@ -1,6 +1,5 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "../../app/Dialog.hpp"
 
 namespace android::content
@@ -19,6 +18,7 @@ namespace android::widget
 {
 	class AdapterView;
 }
+class JString;
 
 namespace android::text::method
 {
@@ -32,7 +32,7 @@ namespace android::text::method
 		CharacterPickerDialog(QJniObject obj);
 		
 		// Constructors
-		CharacterPickerDialog(android::content::Context arg0, android::view::View arg1, JObject arg2, jstring arg3, jboolean arg4);
+		CharacterPickerDialog(android::content::Context arg0, android::view::View arg1, JObject arg2, JString arg3, jboolean arg4);
 		
 		// Methods
 		void onClick(android::view::View arg0);

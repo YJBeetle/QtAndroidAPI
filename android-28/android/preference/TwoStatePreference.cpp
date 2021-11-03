@@ -1,5 +1,7 @@
 #include "../content/Context.hpp"
 #include "../content/res/TypedArray.hpp"
+#include "../../JString.hpp"
+#include "../../JObject.hpp"
 #include "./TwoStatePreference.hpp"
 
 namespace android::preference
@@ -49,19 +51,19 @@ namespace android::preference
 			"()Z"
 		);
 	}
-	jstring TwoStatePreference::getSummaryOff()
+	JString TwoStatePreference::getSummaryOff()
 	{
 		return callObjectMethod(
 			"getSummaryOff",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
-	jstring TwoStatePreference::getSummaryOn()
+	JString TwoStatePreference::getSummaryOn()
 	{
 		return callObjectMethod(
 			"getSummaryOn",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	jboolean TwoStatePreference::isChecked()
 	{
@@ -94,12 +96,12 @@ namespace android::preference
 			arg0
 		);
 	}
-	void TwoStatePreference::setSummaryOff(jstring arg0)
+	void TwoStatePreference::setSummaryOff(JString arg0)
 	{
 		callMethod<void>(
 			"setSummaryOff",
 			"(Ljava/lang/CharSequence;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void TwoStatePreference::setSummaryOn(jint arg0)
@@ -110,12 +112,12 @@ namespace android::preference
 			arg0
 		);
 	}
-	void TwoStatePreference::setSummaryOn(jstring arg0)
+	void TwoStatePreference::setSummaryOn(JString arg0)
 	{
 		callMethod<void>(
 			"setSummaryOn",
 			"(Ljava/lang/CharSequence;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	jboolean TwoStatePreference::shouldDisableDependents()

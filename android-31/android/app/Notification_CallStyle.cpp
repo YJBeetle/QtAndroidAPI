@@ -1,6 +1,7 @@
 #include "./PendingIntent.hpp"
 #include "./Person.hpp"
 #include "../graphics/drawable/Icon.hpp"
+#include "../../JString.hpp"
 #include "./Notification_CallStyle.hpp"
 
 namespace android::app
@@ -77,12 +78,12 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	android::app::Notification_CallStyle Notification_CallStyle::setVerificationText(jstring arg0)
+	android::app::Notification_CallStyle Notification_CallStyle::setVerificationText(JString arg0)
 	{
 		return callObjectMethod(
 			"setVerificationText",
 			"(Ljava/lang/CharSequence;)Landroid/app/Notification$CallStyle;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 } // namespace android::app

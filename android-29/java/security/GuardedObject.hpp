@@ -6,6 +6,7 @@ namespace java::io
 {
 	class ObjectOutputStream;
 }
+class JObject;
 
 namespace java::security
 {
@@ -19,10 +20,10 @@ namespace java::security
 		GuardedObject(QJniObject obj);
 		
 		// Constructors
-		GuardedObject(jobject arg0, JObject arg1);
+		GuardedObject(JObject arg0, JObject arg1);
 		
 		// Methods
-		jobject getObject();
+		JObject getObject();
 	};
 } // namespace java::security
 

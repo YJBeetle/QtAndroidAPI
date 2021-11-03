@@ -1,4 +1,6 @@
+#include "../../JByteArray.hpp"
 #include "../os/Parcel.hpp"
+#include "../../JString.hpp"
 #include "./ActivityManager_ProcessErrorStateInfo.hpp"
 
 namespace android::app
@@ -39,19 +41,19 @@ namespace android::app
 			"condition"
 		);
 	}
-	jbyteArray ActivityManager_ProcessErrorStateInfo::crashData()
+	JByteArray ActivityManager_ProcessErrorStateInfo::crashData()
 	{
 		return getObjectField(
 			"crashData",
 			"[B"
-		).object<jbyteArray>();
+		);
 	}
-	jstring ActivityManager_ProcessErrorStateInfo::longMsg()
+	JString ActivityManager_ProcessErrorStateInfo::longMsg()
 	{
 		return getObjectField(
 			"longMsg",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint ActivityManager_ProcessErrorStateInfo::pid()
 	{
@@ -59,33 +61,33 @@ namespace android::app
 			"pid"
 		);
 	}
-	jstring ActivityManager_ProcessErrorStateInfo::processName()
+	JString ActivityManager_ProcessErrorStateInfo::processName()
 	{
 		return getObjectField(
 			"processName",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ActivityManager_ProcessErrorStateInfo::shortMsg()
+	JString ActivityManager_ProcessErrorStateInfo::shortMsg()
 	{
 		return getObjectField(
 			"shortMsg",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ActivityManager_ProcessErrorStateInfo::stackTrace()
+	JString ActivityManager_ProcessErrorStateInfo::stackTrace()
 	{
 		return getObjectField(
 			"stackTrace",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ActivityManager_ProcessErrorStateInfo::tag()
+	JString ActivityManager_ProcessErrorStateInfo::tag()
 	{
 		return getObjectField(
 			"tag",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint ActivityManager_ProcessErrorStateInfo::uid()
 	{

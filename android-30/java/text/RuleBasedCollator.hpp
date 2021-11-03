@@ -1,8 +1,9 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./Collator.hpp"
 
+class JObject;
+class JString;
 namespace java::lang
 {
 	class StringBuffer;
@@ -28,16 +29,16 @@ namespace java::text
 		RuleBasedCollator(QJniObject obj);
 		
 		// Constructors
-		RuleBasedCollator(jstring arg0);
+		RuleBasedCollator(JString arg0);
 		
 		// Methods
-		jobject clone();
-		jint compare(jstring arg0, jstring arg1);
-		jboolean equals(jobject arg0);
-		java::text::CollationElementIterator getCollationElementIterator(jstring arg0);
+		JObject clone();
+		jint compare(JString arg0, JString arg1);
+		jboolean equals(JObject arg0);
+		java::text::CollationElementIterator getCollationElementIterator(JString arg0);
 		java::text::CollationElementIterator getCollationElementIterator(JObject arg0);
-		java::text::CollationKey getCollationKey(jstring arg0);
-		jstring getRules();
+		java::text::CollationKey getCollationKey(JString arg0);
+		JString getRules();
 		jint hashCode();
 	};
 } // namespace java::text

@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "../../lang/Exception.hpp"
 
+class JString;
 
 namespace java::util::concurrent
 {
@@ -17,7 +17,7 @@ namespace java::util::concurrent
 		
 		// Constructors
 		TimeoutException();
-		TimeoutException(jstring arg0);
+		TimeoutException(JString arg0);
 		
 		// Methods
 	};

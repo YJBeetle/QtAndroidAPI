@@ -1,8 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../view/View.hpp"
-#include "../view/ViewGroup.hpp"
 #include "./FrameLayout.hpp"
 
 namespace android::app
@@ -33,6 +30,8 @@ namespace android::widget
 {
 	class TabWidget;
 }
+class JString;
+class JString;
 
 namespace android::widget
 {
@@ -56,17 +55,17 @@ namespace android::widget
 		void clearAllTabs();
 		jboolean dispatchKeyEvent(android::view::KeyEvent arg0);
 		void dispatchWindowFocusChanged(jboolean arg0);
-		jstring getAccessibilityClassName();
+		JString getAccessibilityClassName();
 		jint getCurrentTab();
-		jstring getCurrentTabTag();
+		JString getCurrentTabTag();
 		android::view::View getCurrentTabView();
 		android::view::View getCurrentView();
 		android::widget::FrameLayout getTabContentView();
 		android::widget::TabWidget getTabWidget();
-		android::widget::TabHost_TabSpec newTabSpec(jstring arg0);
+		android::widget::TabHost_TabSpec newTabSpec(JString arg0);
 		void onTouchModeChanged(jboolean arg0);
 		void setCurrentTab(jint arg0);
-		void setCurrentTabByTag(jstring arg0);
+		void setCurrentTabByTag(JString arg0);
 		void setOnTabChangedListener(JObject arg0);
 		void setup();
 		void setup(android::app::LocalActivityManager arg0);

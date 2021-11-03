@@ -1,5 +1,6 @@
 #include "../../util/Range.hpp"
 #include "../../util/Size.hpp"
+#include "../../../JClass.hpp"
 #include "./CameraExtensionCharacteristics.hpp"
 
 namespace android::hardware::camera2
@@ -66,13 +67,13 @@ namespace android::hardware::camera2
 			arg1
 		);
 	}
-	JObject CameraExtensionCharacteristics::getExtensionSupportedSizes(jint arg0, jclass arg1)
+	JObject CameraExtensionCharacteristics::getExtensionSupportedSizes(jint arg0, JClass arg1)
 	{
 		return callObjectMethod(
 			"getExtensionSupportedSizes",
 			"(ILjava/lang/Class;)Ljava/util/List;",
 			arg0,
-			arg1
+			arg1.object<jclass>()
 		);
 	}
 	JObject CameraExtensionCharacteristics::getSupportedExtensions()

@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JByteArray;
 namespace android::graphics
 {
 	class SurfaceTexture;
@@ -14,6 +15,7 @@ namespace android::hardware
 {
 	class Camera_Parameters;
 }
+class JString;
 
 namespace android::hardware
 {
@@ -21,8 +23,8 @@ namespace android::hardware
 	{
 	public:
 		// Fields
-		static jstring ACTION_NEW_PICTURE();
-		static jstring ACTION_NEW_VIDEO();
+		static JString ACTION_NEW_PICTURE();
+		static JString ACTION_NEW_VIDEO();
 		static jint CAMERA_ERROR_EVICTED();
 		static jint CAMERA_ERROR_SERVER_DIED();
 		static jint CAMERA_ERROR_UNKNOWN();
@@ -38,7 +40,7 @@ namespace android::hardware
 		static jint getNumberOfCameras();
 		static android::hardware::Camera open();
 		static android::hardware::Camera open(jint arg0);
-		void addCallbackBuffer(jbyteArray arg0);
+		void addCallbackBuffer(JByteArray arg0);
 		void autoFocus(JObject arg0);
 		void cancelAutoFocus();
 		jboolean enableShutterSound(jboolean arg0);

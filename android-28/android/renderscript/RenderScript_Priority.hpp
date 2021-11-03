@@ -1,8 +1,9 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "../../java/lang/Enum.hpp"
 
+class JArray;
+class JString;
 
 namespace android::renderscript
 {
@@ -20,8 +21,8 @@ namespace android::renderscript
 		// Constructors
 		
 		// Methods
-		static android::renderscript::RenderScript_Priority valueOf(jstring arg0);
-		static jarray values();
+		static android::renderscript::RenderScript_Priority valueOf(JString arg0);
+		static JArray values();
 	};
 } // namespace android::renderscript
 

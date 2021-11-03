@@ -1,9 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "./Exception.hpp"
 #include "./RuntimeException.hpp"
 
+class JString;
 
 namespace java::lang
 {
@@ -18,7 +17,7 @@ namespace java::lang
 		
 		// Constructors
 		NegativeArraySizeException();
-		NegativeArraySizeException(jstring arg0);
+		NegativeArraySizeException(JString arg0);
 		
 		// Methods
 	};

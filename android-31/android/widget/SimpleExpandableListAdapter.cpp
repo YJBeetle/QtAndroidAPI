@@ -1,6 +1,9 @@
+#include "../../JIntArray.hpp"
+#include "../../JArray.hpp"
 #include "../content/Context.hpp"
 #include "../view/View.hpp"
 #include "../view/ViewGroup.hpp"
+#include "../../JObject.hpp"
 #include "./SimpleExpandableListAdapter.hpp"
 
 namespace android::widget
@@ -11,21 +14,21 @@ namespace android::widget
 	SimpleExpandableListAdapter::SimpleExpandableListAdapter(QJniObject obj) : android::widget::BaseExpandableListAdapter(obj) {}
 	
 	// Constructors
-	SimpleExpandableListAdapter::SimpleExpandableListAdapter(android::content::Context arg0, JObject arg1, jint arg2, jarray arg3, jintArray arg4, JObject arg5, jint arg6, jarray arg7, jintArray arg8)
+	SimpleExpandableListAdapter::SimpleExpandableListAdapter(android::content::Context arg0, JObject arg1, jint arg2, JArray arg3, JIntArray arg4, JObject arg5, jint arg6, JArray arg7, JIntArray arg8)
 		: android::widget::BaseExpandableListAdapter(
 			"android.widget.SimpleExpandableListAdapter",
 			"(Landroid/content/Context;Ljava/util/List;I[Ljava/lang/String;[ILjava/util/List;I[Ljava/lang/String;[I)V",
 			arg0.object(),
 			arg1.object(),
 			arg2,
-			arg3,
-			arg4,
+			arg3.object<jarray>(),
+			arg4.object<jintArray>(),
 			arg5.object(),
 			arg6,
-			arg7,
-			arg8
+			arg7.object<jarray>(),
+			arg8.object<jintArray>()
 		) {}
-	SimpleExpandableListAdapter::SimpleExpandableListAdapter(android::content::Context arg0, JObject arg1, jint arg2, jint arg3, jarray arg4, jintArray arg5, JObject arg6, jint arg7, jarray arg8, jintArray arg9)
+	SimpleExpandableListAdapter::SimpleExpandableListAdapter(android::content::Context arg0, JObject arg1, jint arg2, jint arg3, JArray arg4, JIntArray arg5, JObject arg6, jint arg7, JArray arg8, JIntArray arg9)
 		: android::widget::BaseExpandableListAdapter(
 			"android.widget.SimpleExpandableListAdapter",
 			"(Landroid/content/Context;Ljava/util/List;II[Ljava/lang/String;[ILjava/util/List;I[Ljava/lang/String;[I)V",
@@ -33,14 +36,14 @@ namespace android::widget
 			arg1.object(),
 			arg2,
 			arg3,
-			arg4,
-			arg5,
+			arg4.object<jarray>(),
+			arg5.object<jintArray>(),
 			arg6.object(),
 			arg7,
-			arg8,
-			arg9
+			arg8.object<jarray>(),
+			arg9.object<jintArray>()
 		) {}
-	SimpleExpandableListAdapter::SimpleExpandableListAdapter(android::content::Context arg0, JObject arg1, jint arg2, jint arg3, jarray arg4, jintArray arg5, JObject arg6, jint arg7, jint arg8, jarray arg9, jintArray arg10)
+	SimpleExpandableListAdapter::SimpleExpandableListAdapter(android::content::Context arg0, JObject arg1, jint arg2, jint arg3, JArray arg4, JIntArray arg5, JObject arg6, jint arg7, jint arg8, JArray arg9, JIntArray arg10)
 		: android::widget::BaseExpandableListAdapter(
 			"android.widget.SimpleExpandableListAdapter",
 			"(Landroid/content/Context;Ljava/util/List;II[Ljava/lang/String;[ILjava/util/List;II[Ljava/lang/String;[I)V",
@@ -48,24 +51,24 @@ namespace android::widget
 			arg1.object(),
 			arg2,
 			arg3,
-			arg4,
-			arg5,
+			arg4.object<jarray>(),
+			arg5.object<jintArray>(),
 			arg6.object(),
 			arg7,
 			arg8,
-			arg9,
-			arg10
+			arg9.object<jarray>(),
+			arg10.object<jintArray>()
 		) {}
 	
 	// Methods
-	jobject SimpleExpandableListAdapter::getChild(jint arg0, jint arg1)
+	JObject SimpleExpandableListAdapter::getChild(jint arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"getChild",
 			"(II)Ljava/lang/Object;",
 			arg0,
 			arg1
-		).object<jobject>();
+		);
 	}
 	jlong SimpleExpandableListAdapter::getChildId(jint arg0, jint arg1)
 	{
@@ -96,13 +99,13 @@ namespace android::widget
 			arg0
 		);
 	}
-	jobject SimpleExpandableListAdapter::getGroup(jint arg0)
+	JObject SimpleExpandableListAdapter::getGroup(jint arg0)
 	{
 		return callObjectMethod(
 			"getGroup",
 			"(I)Ljava/lang/Object;",
 			arg0
-		).object<jobject>();
+		);
 	}
 	jint SimpleExpandableListAdapter::getGroupCount()
 	{

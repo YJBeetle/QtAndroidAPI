@@ -2,10 +2,12 @@
 
 #include "../../../JObject.hpp"
 
+class JArray;
 namespace android::media::audiofx
 {
 	class AudioEffect_Descriptor;
 }
+class JString;
 namespace java::util
 {
 	class UUID;
@@ -17,18 +19,18 @@ namespace android::media::audiofx
 	{
 	public:
 		// Fields
-		static jstring ACTION_CLOSE_AUDIO_EFFECT_CONTROL_SESSION();
-		static jstring ACTION_DISPLAY_AUDIO_EFFECT_CONTROL_PANEL();
-		static jstring ACTION_OPEN_AUDIO_EFFECT_CONTROL_SESSION();
+		static JString ACTION_CLOSE_AUDIO_EFFECT_CONTROL_SESSION();
+		static JString ACTION_DISPLAY_AUDIO_EFFECT_CONTROL_PANEL();
+		static JString ACTION_OPEN_AUDIO_EFFECT_CONTROL_SESSION();
 		static jint ALREADY_EXISTS();
 		static jint CONTENT_TYPE_GAME();
 		static jint CONTENT_TYPE_MOVIE();
 		static jint CONTENT_TYPE_MUSIC();
 		static jint CONTENT_TYPE_VOICE();
-		static jstring EFFECT_AUXILIARY();
-		static jstring EFFECT_INSERT();
-		static jstring EFFECT_POST_PROCESSING();
-		static jstring EFFECT_PRE_PROCESSING();
+		static JString EFFECT_AUXILIARY();
+		static JString EFFECT_INSERT();
+		static JString EFFECT_POST_PROCESSING();
+		static JString EFFECT_PRE_PROCESSING();
 		static java::util::UUID EFFECT_TYPE_AEC();
 		static java::util::UUID EFFECT_TYPE_AGC();
 		static java::util::UUID EFFECT_TYPE_BASS_BOOST();
@@ -45,9 +47,9 @@ namespace android::media::audiofx
 		static jint ERROR_INVALID_OPERATION();
 		static jint ERROR_NO_INIT();
 		static jint ERROR_NO_MEMORY();
-		static jstring EXTRA_AUDIO_SESSION();
-		static jstring EXTRA_CONTENT_TYPE();
-		static jstring EXTRA_PACKAGE_NAME();
+		static JString EXTRA_AUDIO_SESSION();
+		static JString EXTRA_CONTENT_TYPE();
+		static JString EXTRA_PACKAGE_NAME();
 		static jint SUCCESS();
 		
 		// QJniObject forward
@@ -57,7 +59,7 @@ namespace android::media::audiofx
 		// Constructors
 		
 		// Methods
-		static jarray queryEffects();
+		static JArray queryEffects();
 		android::media::audiofx::AudioEffect_Descriptor getDescriptor();
 		jboolean getEnabled();
 		jint getId();

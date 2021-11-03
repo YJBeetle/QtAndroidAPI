@@ -2,7 +2,6 @@
 
 #include "../../../JObject.hpp"
 
-
 namespace android::telephony::mbms
 {
 	class MbmsErrors_GroupCallErrors : public JObject

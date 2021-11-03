@@ -1,5 +1,6 @@
 #include "./ContentObserver.hpp"
 #include "../net/Uri.hpp"
+#include "../../JObject.hpp"
 #include "./ContentObservable.hpp"
 
 namespace android::database
@@ -50,12 +51,12 @@ namespace android::database
 			arg0.object()
 		);
 	}
-	void ContentObservable::registerObserver(jobject arg0)
+	void ContentObservable::registerObserver(JObject arg0)
 	{
 		callMethod<void>(
 			"registerObserver",
 			"(Ljava/lang/Object;)V",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 } // namespace android::database

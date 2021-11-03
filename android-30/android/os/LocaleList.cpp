@@ -1,5 +1,9 @@
+#include "../../JArray.hpp"
+#include "../../JArray.hpp"
 #include "../icu/util/ULocale.hpp"
 #include "./Parcel.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "../../java/util/Locale.hpp"
 #include "./LocaleList.hpp"
 
@@ -19,21 +23,21 @@ namespace android::os
 	LocaleList::LocaleList(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	LocaleList::LocaleList(jarray arg0)
+	LocaleList::LocaleList(JArray arg0)
 		: JObject(
 			"android.os.LocaleList",
 			"([Ljava/util/Locale;)V",
-			arg0
+			arg0.object<jarray>()
 		) {}
 	
 	// Methods
-	android::os::LocaleList LocaleList::forLanguageTags(jstring arg0)
+	android::os::LocaleList LocaleList::forLanguageTags(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.os.LocaleList",
 			"forLanguageTags",
 			"(Ljava/lang/String;)Landroid/os/LocaleList;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::os::LocaleList LocaleList::getAdjustedDefault()
@@ -85,12 +89,12 @@ namespace android::os
 			"()I"
 		);
 	}
-	jboolean LocaleList::equals(jobject arg0)
+	jboolean LocaleList::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	java::util::Locale LocaleList::get(jint arg0)
@@ -101,12 +105,12 @@ namespace android::os
 			arg0
 		);
 	}
-	java::util::Locale LocaleList::getFirstMatch(jarray arg0)
+	java::util::Locale LocaleList::getFirstMatch(JArray arg0)
 	{
 		return callObjectMethod(
 			"getFirstMatch",
 			"([Ljava/lang/String;)Ljava/util/Locale;",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
 	jint LocaleList::hashCode()
@@ -138,19 +142,19 @@ namespace android::os
 			"()I"
 		);
 	}
-	jstring LocaleList::toLanguageTags()
+	JString LocaleList::toLanguageTags()
 	{
 		return callObjectMethod(
 			"toLanguageTags",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring LocaleList::toString()
+	JString LocaleList::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void LocaleList::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

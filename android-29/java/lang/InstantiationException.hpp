@@ -1,9 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "./Exception.hpp"
 #include "./ReflectiveOperationException.hpp"
 
+class JString;
 
 namespace java::lang
 {
@@ -18,7 +17,7 @@ namespace java::lang
 		
 		// Constructors
 		InstantiationException();
-		InstantiationException(jstring arg0);
+		InstantiationException(JString arg0);
 		
 		// Methods
 	};

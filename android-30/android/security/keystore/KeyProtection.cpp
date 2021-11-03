@@ -1,3 +1,4 @@
+#include "../../../JArray.hpp"
 #include "../../../java/util/Date.hpp"
 #include "./KeyProtection.hpp"
 
@@ -11,26 +12,26 @@ namespace android::security::keystore
 	// Constructors
 	
 	// Methods
-	jarray KeyProtection::getBlockModes()
+	JArray KeyProtection::getBlockModes()
 	{
 		return callObjectMethod(
 			"getBlockModes",
 			"()[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
-	jarray KeyProtection::getDigests()
+	JArray KeyProtection::getDigests()
 	{
 		return callObjectMethod(
 			"getDigests",
 			"()[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
-	jarray KeyProtection::getEncryptionPaddings()
+	JArray KeyProtection::getEncryptionPaddings()
 	{
 		return callObjectMethod(
 			"getEncryptionPaddings",
 			"()[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
 	java::util::Date KeyProtection::getKeyValidityForConsumptionEnd()
 	{
@@ -60,12 +61,12 @@ namespace android::security::keystore
 			"()I"
 		);
 	}
-	jarray KeyProtection::getSignaturePaddings()
+	JArray KeyProtection::getSignaturePaddings()
 	{
 		return callObjectMethod(
 			"getSignaturePaddings",
 			"()[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
 	jint KeyProtection::getUserAuthenticationType()
 	{

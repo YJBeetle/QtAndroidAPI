@@ -1,17 +1,19 @@
 #include "../content/res/Resources.hpp"
 #include "../net/Uri.hpp"
+#include "../../JString.hpp"
+#include "../../JString.hpp"
 #include "./ContactsContract_CommonDataKinds_Email.hpp"
 
 namespace android::provider
 {
 	// Fields
-	jstring ContactsContract_CommonDataKinds_Email::ADDRESS()
+	JString ContactsContract_CommonDataKinds_Email::ADDRESS()
 	{
 		return getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Email",
 			"ADDRESS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::net::Uri ContactsContract_CommonDataKinds_Email::CONTENT_FILTER_URI()
 	{
@@ -21,13 +23,13 @@ namespace android::provider
 			"Landroid/net/Uri;"
 		);
 	}
-	jstring ContactsContract_CommonDataKinds_Email::CONTENT_ITEM_TYPE()
+	JString ContactsContract_CommonDataKinds_Email::CONTENT_ITEM_TYPE()
 	{
 		return getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Email",
 			"CONTENT_ITEM_TYPE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::net::Uri ContactsContract_CommonDataKinds_Email::CONTENT_LOOKUP_URI()
 	{
@@ -37,13 +39,13 @@ namespace android::provider
 			"Landroid/net/Uri;"
 		);
 	}
-	jstring ContactsContract_CommonDataKinds_Email::CONTENT_TYPE()
+	JString ContactsContract_CommonDataKinds_Email::CONTENT_TYPE()
 	{
 		return getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Email",
 			"CONTENT_TYPE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::net::Uri ContactsContract_CommonDataKinds_Email::CONTENT_URI()
 	{
@@ -53,13 +55,13 @@ namespace android::provider
 			"Landroid/net/Uri;"
 		);
 	}
-	jstring ContactsContract_CommonDataKinds_Email::DISPLAY_NAME()
+	JString ContactsContract_CommonDataKinds_Email::DISPLAY_NAME()
 	{
 		return getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Email",
 			"DISPLAY_NAME",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::net::Uri ContactsContract_CommonDataKinds_Email::ENTERPRISE_CONTENT_FILTER_URI()
 	{
@@ -77,29 +79,29 @@ namespace android::provider
 			"Landroid/net/Uri;"
 		);
 	}
-	jstring ContactsContract_CommonDataKinds_Email::EXTRA_ADDRESS_BOOK_INDEX()
+	JString ContactsContract_CommonDataKinds_Email::EXTRA_ADDRESS_BOOK_INDEX()
 	{
 		return getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Email",
 			"EXTRA_ADDRESS_BOOK_INDEX",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ContactsContract_CommonDataKinds_Email::EXTRA_ADDRESS_BOOK_INDEX_COUNTS()
+	JString ContactsContract_CommonDataKinds_Email::EXTRA_ADDRESS_BOOK_INDEX_COUNTS()
 	{
 		return getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Email",
 			"EXTRA_ADDRESS_BOOK_INDEX_COUNTS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ContactsContract_CommonDataKinds_Email::EXTRA_ADDRESS_BOOK_INDEX_TITLES()
+	JString ContactsContract_CommonDataKinds_Email::EXTRA_ADDRESS_BOOK_INDEX_TITLES()
 	{
 		return getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Email",
 			"EXTRA_ADDRESS_BOOK_INDEX_TITLES",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint ContactsContract_CommonDataKinds_Email::TYPE_HOME()
 	{
@@ -136,7 +138,7 @@ namespace android::provider
 	// Constructors
 	
 	// Methods
-	jstring ContactsContract_CommonDataKinds_Email::getTypeLabel(android::content::res::Resources arg0, jint arg1, jstring arg2)
+	JString ContactsContract_CommonDataKinds_Email::getTypeLabel(android::content::res::Resources arg0, jint arg1, JString arg2)
 	{
 		return callStaticObjectMethod(
 			"android.provider.ContactsContract$CommonDataKinds$Email",
@@ -144,8 +146,8 @@ namespace android::provider
 			"(Landroid/content/res/Resources;ILjava/lang/CharSequence;)Ljava/lang/CharSequence;",
 			arg0.object(),
 			arg1,
-			arg2
-		).object<jstring>();
+			arg2.object<jstring>()
+		);
 	}
 	jint ContactsContract_CommonDataKinds_Email::getTypeLabelResource(jint arg0)
 	{

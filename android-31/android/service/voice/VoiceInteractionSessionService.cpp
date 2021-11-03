@@ -1,3 +1,4 @@
+#include "../../../JArray.hpp"
 #include "../../content/Intent.hpp"
 #include "../../content/res/Configuration.hpp"
 #include "../../os/Bundle.hpp"

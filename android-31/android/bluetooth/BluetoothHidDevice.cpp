@@ -1,19 +1,22 @@
+#include "../../JByteArray.hpp"
+#include "../../JIntArray.hpp"
 #include "./BluetoothDevice.hpp"
 #include "./BluetoothHidDevice_Callback.hpp"
 #include "./BluetoothHidDeviceAppQosSettings.hpp"
 #include "./BluetoothHidDeviceAppSdpSettings.hpp"
+#include "../../JString.hpp"
 #include "./BluetoothHidDevice.hpp"
 
 namespace android::bluetooth
 {
 	// Fields
-	jstring BluetoothHidDevice::ACTION_CONNECTION_STATE_CHANGED()
+	JString BluetoothHidDevice::ACTION_CONNECTION_STATE_CHANGED()
 	{
 		return getStaticObjectField(
 			"android.bluetooth.BluetoothHidDevice",
 			"ACTION_CONNECTION_STATE_CHANGED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jbyte BluetoothHidDevice::ERROR_RSP_INVALID_PARAM()
 	{
@@ -207,12 +210,12 @@ namespace android::bluetooth
 			arg0.object()
 		);
 	}
-	JObject BluetoothHidDevice::getDevicesMatchingConnectionStates(jintArray arg0)
+	JObject BluetoothHidDevice::getDevicesMatchingConnectionStates(JIntArray arg0)
 	{
 		return callObjectMethod(
 			"getDevicesMatchingConnectionStates",
 			"([I)Ljava/util/List;",
-			arg0
+			arg0.object<jintArray>()
 		);
 	}
 	jboolean BluetoothHidDevice::registerApp(android::bluetooth::BluetoothHidDeviceAppSdpSettings arg0, android::bluetooth::BluetoothHidDeviceAppQosSettings arg1, android::bluetooth::BluetoothHidDeviceAppQosSettings arg2, JObject arg3, android::bluetooth::BluetoothHidDevice_Callback arg4)
@@ -227,7 +230,7 @@ namespace android::bluetooth
 			arg4.object()
 		);
 	}
-	jboolean BluetoothHidDevice::replyReport(android::bluetooth::BluetoothDevice arg0, jbyte arg1, jbyte arg2, jbyteArray arg3)
+	jboolean BluetoothHidDevice::replyReport(android::bluetooth::BluetoothDevice arg0, jbyte arg1, jbyte arg2, JByteArray arg3)
 	{
 		return callMethod<jboolean>(
 			"replyReport",
@@ -235,7 +238,7 @@ namespace android::bluetooth
 			arg0.object(),
 			arg1,
 			arg2,
-			arg3
+			arg3.object<jbyteArray>()
 		);
 	}
 	jboolean BluetoothHidDevice::reportError(android::bluetooth::BluetoothDevice arg0, jbyte arg1)
@@ -247,14 +250,14 @@ namespace android::bluetooth
 			arg1
 		);
 	}
-	jboolean BluetoothHidDevice::sendReport(android::bluetooth::BluetoothDevice arg0, jint arg1, jbyteArray arg2)
+	jboolean BluetoothHidDevice::sendReport(android::bluetooth::BluetoothDevice arg0, jint arg1, JByteArray arg2)
 	{
 		return callMethod<jboolean>(
 			"sendReport",
 			"(Landroid/bluetooth/BluetoothDevice;I[B)Z",
 			arg0.object(),
 			arg1,
-			arg2
+			arg2.object<jbyteArray>()
 		);
 	}
 	jboolean BluetoothHidDevice::unregisterApp()

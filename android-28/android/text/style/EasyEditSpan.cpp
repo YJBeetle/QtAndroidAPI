@@ -1,17 +1,18 @@
 #include "../../app/PendingIntent.hpp"
 #include "../../os/Parcel.hpp"
+#include "../../../JString.hpp"
 #include "./EasyEditSpan.hpp"
 
 namespace android::text::style
 {
 	// Fields
-	jstring EasyEditSpan::EXTRA_TEXT_CHANGED_TYPE()
+	JString EasyEditSpan::EXTRA_TEXT_CHANGED_TYPE()
 	{
 		return getStaticObjectField(
 			"android.text.style.EasyEditSpan",
 			"EXTRA_TEXT_CHANGED_TYPE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint EasyEditSpan::TEXT_DELETED()
 	{

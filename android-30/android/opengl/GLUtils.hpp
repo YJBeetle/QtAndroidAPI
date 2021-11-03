@@ -6,6 +6,7 @@ namespace android::graphics
 {
 	class Bitmap;
 }
+class JString;
 
 namespace android::opengl
 {
@@ -21,7 +22,7 @@ namespace android::opengl
 		// Constructors
 		
 		// Methods
-		static jstring getEGLErrorString(jint arg0);
+		static JString getEGLErrorString(jint arg0);
 		static jint getInternalFormat(android::graphics::Bitmap arg0);
 		static jint getType(android::graphics::Bitmap arg0);
 		static void texImage2D(jint arg0, jint arg1, android::graphics::Bitmap arg2, jint arg3);

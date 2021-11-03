@@ -10,6 +10,7 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
 
 namespace android::content
 {
@@ -32,7 +33,7 @@ namespace android::content
 		android::net::Uri getUri();
 		jboolean isReadPermission();
 		jboolean isWritePermission();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::content

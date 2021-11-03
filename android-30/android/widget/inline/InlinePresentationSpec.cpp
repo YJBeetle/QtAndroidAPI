@@ -1,6 +1,8 @@
 #include "../../os/Bundle.hpp"
 #include "../../os/Parcel.hpp"
 #include "../../util/Size.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./InlinePresentationSpec.hpp"
 
 namespace android::widget::inline
@@ -28,12 +30,12 @@ namespace android::widget::inline
 			"()I"
 		);
 	}
-	jboolean InlinePresentationSpec::equals(jobject arg0)
+	jboolean InlinePresentationSpec::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	android::util::Size InlinePresentationSpec::getMaxSize()
@@ -64,12 +66,12 @@ namespace android::widget::inline
 			"()I"
 		);
 	}
-	jstring InlinePresentationSpec::toString()
+	JString InlinePresentationSpec::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void InlinePresentationSpec::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

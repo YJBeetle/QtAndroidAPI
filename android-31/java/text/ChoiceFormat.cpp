@@ -1,5 +1,10 @@
+#include "../../JDoubleArray.hpp"
+#include "../../JObjectArray.hpp"
+#include "../../JArray.hpp"
 #include "../io/ObjectInputStream.hpp"
 #include "../lang/Number.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "../lang/StringBuffer.hpp"
 #include "./FieldPosition.hpp"
 #include "./ParsePosition.hpp"
@@ -13,18 +18,18 @@ namespace java::text
 	ChoiceFormat::ChoiceFormat(QJniObject obj) : java::text::NumberFormat(obj) {}
 	
 	// Constructors
-	ChoiceFormat::ChoiceFormat(jstring arg0)
+	ChoiceFormat::ChoiceFormat(JString arg0)
 		: java::text::NumberFormat(
 			"java.text.ChoiceFormat",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	ChoiceFormat::ChoiceFormat(jdoubleArray arg0, jarray arg1)
+	ChoiceFormat::ChoiceFormat(JDoubleArray arg0, JArray arg1)
 		: java::text::NumberFormat(
 			"java.text.ChoiceFormat",
 			"([D[Ljava/lang/String;)V",
-			arg0,
-			arg1
+			arg0.object<jdoubleArray>(),
+			arg1.object<jarray>()
 		) {}
 	
 	// Methods
@@ -56,27 +61,27 @@ namespace java::text
 			arg0
 		);
 	}
-	void ChoiceFormat::applyPattern(jstring arg0)
+	void ChoiceFormat::applyPattern(JString arg0)
 	{
 		callMethod<void>(
 			"applyPattern",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jobject ChoiceFormat::clone()
+	JObject ChoiceFormat::clone()
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
-	jboolean ChoiceFormat::equals(jobject arg0)
+	jboolean ChoiceFormat::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	java::lang::StringBuffer ChoiceFormat::format(jdouble arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
@@ -99,19 +104,19 @@ namespace java::text
 			arg2.object()
 		);
 	}
-	jobjectArray ChoiceFormat::getFormats()
+	JObjectArray ChoiceFormat::getFormats()
 	{
 		return callObjectMethod(
 			"getFormats",
 			"()[Ljava/lang/Object;"
-		).object<jobjectArray>();
+		);
 	}
-	jdoubleArray ChoiceFormat::getLimits()
+	JDoubleArray ChoiceFormat::getLimits()
 	{
 		return callObjectMethod(
 			"getLimits",
 			"()[D"
-		).object<jdoubleArray>();
+		);
 	}
 	jint ChoiceFormat::hashCode()
 	{
@@ -120,30 +125,30 @@ namespace java::text
 			"()I"
 		);
 	}
-	java::lang::Number ChoiceFormat::parse(jstring arg0, java::text::ParsePosition arg1)
+	java::lang::Number ChoiceFormat::parse(JString arg0, java::text::ParsePosition arg1)
 	{
 		return callObjectMethod(
 			"parse",
 			"(Ljava/lang/String;Ljava/text/ParsePosition;)Ljava/lang/Number;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
-	void ChoiceFormat::setChoices(jdoubleArray arg0, jarray arg1)
+	void ChoiceFormat::setChoices(JDoubleArray arg0, JArray arg1)
 	{
 		callMethod<void>(
 			"setChoices",
 			"([D[Ljava/lang/String;)V",
-			arg0,
-			arg1
+			arg0.object<jdoubleArray>(),
+			arg1.object<jarray>()
 		);
 	}
-	jstring ChoiceFormat::toPattern()
+	JString ChoiceFormat::toPattern()
 	{
 		return callObjectMethod(
 			"toPattern",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::text
 

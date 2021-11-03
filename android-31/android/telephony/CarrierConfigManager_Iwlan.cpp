@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./CarrierConfigManager_Iwlan.hpp"
 
 namespace android::telephony
@@ -66,229 +67,229 @@ namespace android::telephony
 			"ID_TYPE_RFC822_ADDR"
 		);
 	}
-	jstring CarrierConfigManager_Iwlan::KEY_ADD_KE_TO_CHILD_SESSION_REKEY_BOOL()
+	JString CarrierConfigManager_Iwlan::KEY_ADD_KE_TO_CHILD_SESSION_REKEY_BOOL()
 	{
 		return getStaticObjectField(
 			"android.telephony.CarrierConfigManager$Iwlan",
 			"KEY_ADD_KE_TO_CHILD_SESSION_REKEY_BOOL",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring CarrierConfigManager_Iwlan::KEY_CHILD_SA_REKEY_HARD_TIMER_SEC_INT()
+	JString CarrierConfigManager_Iwlan::KEY_CHILD_SA_REKEY_HARD_TIMER_SEC_INT()
 	{
 		return getStaticObjectField(
 			"android.telephony.CarrierConfigManager$Iwlan",
 			"KEY_CHILD_SA_REKEY_HARD_TIMER_SEC_INT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring CarrierConfigManager_Iwlan::KEY_CHILD_SA_REKEY_SOFT_TIMER_SEC_INT()
+	JString CarrierConfigManager_Iwlan::KEY_CHILD_SA_REKEY_SOFT_TIMER_SEC_INT()
 	{
 		return getStaticObjectField(
 			"android.telephony.CarrierConfigManager$Iwlan",
 			"KEY_CHILD_SA_REKEY_SOFT_TIMER_SEC_INT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring CarrierConfigManager_Iwlan::KEY_CHILD_SESSION_AES_CBC_KEY_SIZE_INT_ARRAY()
+	JString CarrierConfigManager_Iwlan::KEY_CHILD_SESSION_AES_CBC_KEY_SIZE_INT_ARRAY()
 	{
 		return getStaticObjectField(
 			"android.telephony.CarrierConfigManager$Iwlan",
 			"KEY_CHILD_SESSION_AES_CBC_KEY_SIZE_INT_ARRAY",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring CarrierConfigManager_Iwlan::KEY_CHILD_SESSION_AES_CTR_KEY_SIZE_INT_ARRAY()
+	JString CarrierConfigManager_Iwlan::KEY_CHILD_SESSION_AES_CTR_KEY_SIZE_INT_ARRAY()
 	{
 		return getStaticObjectField(
 			"android.telephony.CarrierConfigManager$Iwlan",
 			"KEY_CHILD_SESSION_AES_CTR_KEY_SIZE_INT_ARRAY",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring CarrierConfigManager_Iwlan::KEY_DIFFIE_HELLMAN_GROUPS_INT_ARRAY()
+	JString CarrierConfigManager_Iwlan::KEY_DIFFIE_HELLMAN_GROUPS_INT_ARRAY()
 	{
 		return getStaticObjectField(
 			"android.telephony.CarrierConfigManager$Iwlan",
 			"KEY_DIFFIE_HELLMAN_GROUPS_INT_ARRAY",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring CarrierConfigManager_Iwlan::KEY_DPD_TIMER_SEC_INT()
+	JString CarrierConfigManager_Iwlan::KEY_DPD_TIMER_SEC_INT()
 	{
 		return getStaticObjectField(
 			"android.telephony.CarrierConfigManager$Iwlan",
 			"KEY_DPD_TIMER_SEC_INT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring CarrierConfigManager_Iwlan::KEY_EPDG_ADDRESS_PRIORITY_INT_ARRAY()
+	JString CarrierConfigManager_Iwlan::KEY_EPDG_ADDRESS_PRIORITY_INT_ARRAY()
 	{
 		return getStaticObjectField(
 			"android.telephony.CarrierConfigManager$Iwlan",
 			"KEY_EPDG_ADDRESS_PRIORITY_INT_ARRAY",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring CarrierConfigManager_Iwlan::KEY_EPDG_AUTHENTICATION_METHOD_INT()
+	JString CarrierConfigManager_Iwlan::KEY_EPDG_AUTHENTICATION_METHOD_INT()
 	{
 		return getStaticObjectField(
 			"android.telephony.CarrierConfigManager$Iwlan",
 			"KEY_EPDG_AUTHENTICATION_METHOD_INT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring CarrierConfigManager_Iwlan::KEY_EPDG_PCO_ID_IPV4_INT()
+	JString CarrierConfigManager_Iwlan::KEY_EPDG_PCO_ID_IPV4_INT()
 	{
 		return getStaticObjectField(
 			"android.telephony.CarrierConfigManager$Iwlan",
 			"KEY_EPDG_PCO_ID_IPV4_INT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring CarrierConfigManager_Iwlan::KEY_EPDG_PCO_ID_IPV6_INT()
+	JString CarrierConfigManager_Iwlan::KEY_EPDG_PCO_ID_IPV6_INT()
 	{
 		return getStaticObjectField(
 			"android.telephony.CarrierConfigManager$Iwlan",
 			"KEY_EPDG_PCO_ID_IPV6_INT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring CarrierConfigManager_Iwlan::KEY_EPDG_STATIC_ADDRESS_ROAMING_STRING()
+	JString CarrierConfigManager_Iwlan::KEY_EPDG_STATIC_ADDRESS_ROAMING_STRING()
 	{
 		return getStaticObjectField(
 			"android.telephony.CarrierConfigManager$Iwlan",
 			"KEY_EPDG_STATIC_ADDRESS_ROAMING_STRING",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring CarrierConfigManager_Iwlan::KEY_EPDG_STATIC_ADDRESS_STRING()
+	JString CarrierConfigManager_Iwlan::KEY_EPDG_STATIC_ADDRESS_STRING()
 	{
 		return getStaticObjectField(
 			"android.telephony.CarrierConfigManager$Iwlan",
 			"KEY_EPDG_STATIC_ADDRESS_STRING",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring CarrierConfigManager_Iwlan::KEY_IKE_LOCAL_ID_TYPE_INT()
+	JString CarrierConfigManager_Iwlan::KEY_IKE_LOCAL_ID_TYPE_INT()
 	{
 		return getStaticObjectField(
 			"android.telephony.CarrierConfigManager$Iwlan",
 			"KEY_IKE_LOCAL_ID_TYPE_INT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring CarrierConfigManager_Iwlan::KEY_IKE_REKEY_HARD_TIMER_SEC_INT()
+	JString CarrierConfigManager_Iwlan::KEY_IKE_REKEY_HARD_TIMER_SEC_INT()
 	{
 		return getStaticObjectField(
 			"android.telephony.CarrierConfigManager$Iwlan",
 			"KEY_IKE_REKEY_HARD_TIMER_SEC_INT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring CarrierConfigManager_Iwlan::KEY_IKE_REKEY_SOFT_TIMER_SEC_INT()
+	JString CarrierConfigManager_Iwlan::KEY_IKE_REKEY_SOFT_TIMER_SEC_INT()
 	{
 		return getStaticObjectField(
 			"android.telephony.CarrierConfigManager$Iwlan",
 			"KEY_IKE_REKEY_SOFT_TIMER_SEC_INT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring CarrierConfigManager_Iwlan::KEY_IKE_REMOTE_ID_TYPE_INT()
+	JString CarrierConfigManager_Iwlan::KEY_IKE_REMOTE_ID_TYPE_INT()
 	{
 		return getStaticObjectField(
 			"android.telephony.CarrierConfigManager$Iwlan",
 			"KEY_IKE_REMOTE_ID_TYPE_INT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring CarrierConfigManager_Iwlan::KEY_IKE_SESSION_AES_CBC_KEY_SIZE_INT_ARRAY()
+	JString CarrierConfigManager_Iwlan::KEY_IKE_SESSION_AES_CBC_KEY_SIZE_INT_ARRAY()
 	{
 		return getStaticObjectField(
 			"android.telephony.CarrierConfigManager$Iwlan",
 			"KEY_IKE_SESSION_AES_CBC_KEY_SIZE_INT_ARRAY",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring CarrierConfigManager_Iwlan::KEY_IKE_SESSION_AES_CTR_KEY_SIZE_INT_ARRAY()
+	JString CarrierConfigManager_Iwlan::KEY_IKE_SESSION_AES_CTR_KEY_SIZE_INT_ARRAY()
 	{
 		return getStaticObjectField(
 			"android.telephony.CarrierConfigManager$Iwlan",
 			"KEY_IKE_SESSION_AES_CTR_KEY_SIZE_INT_ARRAY",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring CarrierConfigManager_Iwlan::KEY_MAX_RETRIES_INT()
+	JString CarrierConfigManager_Iwlan::KEY_MAX_RETRIES_INT()
 	{
 		return getStaticObjectField(
 			"android.telephony.CarrierConfigManager$Iwlan",
 			"KEY_MAX_RETRIES_INT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring CarrierConfigManager_Iwlan::KEY_MCC_MNCS_STRING_ARRAY()
+	JString CarrierConfigManager_Iwlan::KEY_MCC_MNCS_STRING_ARRAY()
 	{
 		return getStaticObjectField(
 			"android.telephony.CarrierConfigManager$Iwlan",
 			"KEY_MCC_MNCS_STRING_ARRAY",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring CarrierConfigManager_Iwlan::KEY_NATT_KEEP_ALIVE_TIMER_SEC_INT()
+	JString CarrierConfigManager_Iwlan::KEY_NATT_KEEP_ALIVE_TIMER_SEC_INT()
 	{
 		return getStaticObjectField(
 			"android.telephony.CarrierConfigManager$Iwlan",
 			"KEY_NATT_KEEP_ALIVE_TIMER_SEC_INT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring CarrierConfigManager_Iwlan::KEY_PREFIX()
+	JString CarrierConfigManager_Iwlan::KEY_PREFIX()
 	{
 		return getStaticObjectField(
 			"android.telephony.CarrierConfigManager$Iwlan",
 			"KEY_PREFIX",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring CarrierConfigManager_Iwlan::KEY_RETRANSMIT_TIMER_MSEC_INT_ARRAY()
+	JString CarrierConfigManager_Iwlan::KEY_RETRANSMIT_TIMER_MSEC_INT_ARRAY()
 	{
 		return getStaticObjectField(
 			"android.telephony.CarrierConfigManager$Iwlan",
 			"KEY_RETRANSMIT_TIMER_MSEC_INT_ARRAY",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring CarrierConfigManager_Iwlan::KEY_SUPPORTED_CHILD_SESSION_ENCRYPTION_ALGORITHMS_INT_ARRAY()
+	JString CarrierConfigManager_Iwlan::KEY_SUPPORTED_CHILD_SESSION_ENCRYPTION_ALGORITHMS_INT_ARRAY()
 	{
 		return getStaticObjectField(
 			"android.telephony.CarrierConfigManager$Iwlan",
 			"KEY_SUPPORTED_CHILD_SESSION_ENCRYPTION_ALGORITHMS_INT_ARRAY",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring CarrierConfigManager_Iwlan::KEY_SUPPORTED_IKE_SESSION_ENCRYPTION_ALGORITHMS_INT_ARRAY()
+	JString CarrierConfigManager_Iwlan::KEY_SUPPORTED_IKE_SESSION_ENCRYPTION_ALGORITHMS_INT_ARRAY()
 	{
 		return getStaticObjectField(
 			"android.telephony.CarrierConfigManager$Iwlan",
 			"KEY_SUPPORTED_IKE_SESSION_ENCRYPTION_ALGORITHMS_INT_ARRAY",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring CarrierConfigManager_Iwlan::KEY_SUPPORTED_INTEGRITY_ALGORITHMS_INT_ARRAY()
+	JString CarrierConfigManager_Iwlan::KEY_SUPPORTED_INTEGRITY_ALGORITHMS_INT_ARRAY()
 	{
 		return getStaticObjectField(
 			"android.telephony.CarrierConfigManager$Iwlan",
 			"KEY_SUPPORTED_INTEGRITY_ALGORITHMS_INT_ARRAY",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring CarrierConfigManager_Iwlan::KEY_SUPPORTED_PRF_ALGORITHMS_INT_ARRAY()
+	JString CarrierConfigManager_Iwlan::KEY_SUPPORTED_PRF_ALGORITHMS_INT_ARRAY()
 	{
 		return getStaticObjectField(
 			"android.telephony.CarrierConfigManager$Iwlan",
 			"KEY_SUPPORTED_PRF_ALGORITHMS_INT_ARRAY",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QJniObject forward

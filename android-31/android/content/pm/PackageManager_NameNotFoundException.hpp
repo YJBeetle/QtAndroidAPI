@@ -1,9 +1,8 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "../../../java/lang/Exception.hpp"
 #include "../../util/AndroidException.hpp"
 
+class JString;
 
 namespace android::content::pm
 {
@@ -18,7 +17,7 @@ namespace android::content::pm
 		
 		// Constructors
 		PackageManager_NameNotFoundException();
-		PackageManager_NameNotFoundException(jstring arg0);
+		PackageManager_NameNotFoundException(JString arg0);
 		
 		// Methods
 	};

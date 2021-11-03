@@ -1,4 +1,6 @@
 #include "../../../os/Parcel.hpp"
+#include "../../../../JObject.hpp"
+#include "../../../../JString.hpp"
 #include "./WifiP2pDevice.hpp"
 
 namespace android::net::wifi::p2p
@@ -47,33 +49,33 @@ namespace android::net::wifi::p2p
 			"UNAVAILABLE"
 		);
 	}
-	jstring WifiP2pDevice::deviceAddress()
+	JString WifiP2pDevice::deviceAddress()
 	{
 		return getObjectField(
 			"deviceAddress",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring WifiP2pDevice::deviceName()
+	JString WifiP2pDevice::deviceName()
 	{
 		return getObjectField(
 			"deviceName",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring WifiP2pDevice::primaryDeviceType()
+	JString WifiP2pDevice::primaryDeviceType()
 	{
 		return getObjectField(
 			"primaryDeviceType",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring WifiP2pDevice::secondaryDeviceType()
+	JString WifiP2pDevice::secondaryDeviceType()
 	{
 		return getObjectField(
 			"secondaryDeviceType",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint WifiP2pDevice::status()
 	{
@@ -106,12 +108,12 @@ namespace android::net::wifi::p2p
 			"()I"
 		);
 	}
-	jboolean WifiP2pDevice::equals(jobject arg0)
+	jboolean WifiP2pDevice::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint WifiP2pDevice::hashCode()
@@ -135,12 +137,12 @@ namespace android::net::wifi::p2p
 			"()Z"
 		);
 	}
-	jstring WifiP2pDevice::toString()
+	JString WifiP2pDevice::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jboolean WifiP2pDevice::wpsDisplaySupported()
 	{

@@ -5,50 +5,51 @@
 #include "./mbms/FileInfo.hpp"
 #include "./mbms/MbmsDownloadSessionCallback.hpp"
 #include "../../java/io/File.hpp"
+#include "../../JString.hpp"
 #include "./MbmsDownloadSession.hpp"
 
 namespace android::telephony
 {
 	// Fields
-	jstring MbmsDownloadSession::DEFAULT_TOP_LEVEL_TEMP_DIRECTORY()
+	JString MbmsDownloadSession::DEFAULT_TOP_LEVEL_TEMP_DIRECTORY()
 	{
 		return getStaticObjectField(
 			"android.telephony.MbmsDownloadSession",
 			"DEFAULT_TOP_LEVEL_TEMP_DIRECTORY",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring MbmsDownloadSession::EXTRA_MBMS_COMPLETED_FILE_URI()
+	JString MbmsDownloadSession::EXTRA_MBMS_COMPLETED_FILE_URI()
 	{
 		return getStaticObjectField(
 			"android.telephony.MbmsDownloadSession",
 			"EXTRA_MBMS_COMPLETED_FILE_URI",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring MbmsDownloadSession::EXTRA_MBMS_DOWNLOAD_REQUEST()
+	JString MbmsDownloadSession::EXTRA_MBMS_DOWNLOAD_REQUEST()
 	{
 		return getStaticObjectField(
 			"android.telephony.MbmsDownloadSession",
 			"EXTRA_MBMS_DOWNLOAD_REQUEST",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring MbmsDownloadSession::EXTRA_MBMS_DOWNLOAD_RESULT()
+	JString MbmsDownloadSession::EXTRA_MBMS_DOWNLOAD_RESULT()
 	{
 		return getStaticObjectField(
 			"android.telephony.MbmsDownloadSession",
 			"EXTRA_MBMS_DOWNLOAD_RESULT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring MbmsDownloadSession::EXTRA_MBMS_FILE_INFO()
+	JString MbmsDownloadSession::EXTRA_MBMS_FILE_INFO()
 	{
 		return getStaticObjectField(
 			"android.telephony.MbmsDownloadSession",
 			"EXTRA_MBMS_FILE_INFO",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint MbmsDownloadSession::RESULT_CANCELLED()
 	{

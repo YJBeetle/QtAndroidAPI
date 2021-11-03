@@ -1,4 +1,5 @@
 #include "../../java/lang/Exception.hpp"
+#include "../../JString.hpp"
 #include "./BadParcelableException.hpp"
 
 namespace android::os
@@ -15,11 +16,11 @@ namespace android::os
 			"(Ljava/lang/Exception;)V",
 			arg0.object()
 		) {}
-	BadParcelableException::BadParcelableException(jstring arg0)
+	BadParcelableException::BadParcelableException(JString arg0)
 		: android::util::AndroidRuntimeException(
 			"android.os.BadParcelableException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

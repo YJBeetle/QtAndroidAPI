@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./Modifier.hpp"
 
 namespace java::lang::reflect
@@ -250,14 +251,14 @@ namespace java::lang::reflect
 			"()I"
 		);
 	}
-	jstring Modifier::toString(jint arg0)
+	JString Modifier::toString(jint arg0)
 	{
 		return callStaticObjectMethod(
 			"java.lang.reflect.Modifier",
 			"toString",
 			"(I)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
 } // namespace java::lang::reflect
 

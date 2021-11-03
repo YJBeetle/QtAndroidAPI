@@ -2,6 +2,8 @@
 
 #include "../../../../JObject.hpp"
 
+class JCharArray;
+class JString;
 
 namespace javax::security::auth::callback
 {
@@ -15,14 +17,14 @@ namespace javax::security::auth::callback
 		PasswordCallback(QJniObject obj);
 		
 		// Constructors
-		PasswordCallback(jstring arg0, jboolean arg1);
+		PasswordCallback(JString arg0, jboolean arg1);
 		
 		// Methods
 		void clearPassword();
-		jcharArray getPassword();
-		jstring getPrompt();
+		JCharArray getPassword();
+		JString getPrompt();
 		jboolean isEchoOn();
-		void setPassword(jcharArray arg0);
+		void setPassword(JCharArray arg0);
 	};
 } // namespace javax::security::auth::callback
 

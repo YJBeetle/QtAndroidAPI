@@ -1,3 +1,5 @@
+#include "../../../JArray.hpp"
+#include "../../../JArray.hpp"
 #include "../../app/Person.hpp"
 #include "../ComponentName.hpp"
 #include "../Context.hpp"
@@ -6,6 +8,8 @@
 #include "./ShortcutInfo.hpp"
 #include "../../graphics/drawable/Icon.hpp"
 #include "../../os/PersistableBundle.hpp"
+#include "../../../JString.hpp"
+#include "../../../JString.hpp"
 #include "./ShortcutInfo_Builder.hpp"
 
 namespace android::content::pm
@@ -16,12 +20,12 @@ namespace android::content::pm
 	ShortcutInfo_Builder::ShortcutInfo_Builder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	ShortcutInfo_Builder::ShortcutInfo_Builder(android::content::Context arg0, jstring arg1)
+	ShortcutInfo_Builder::ShortcutInfo_Builder(android::content::Context arg0, JString arg1)
 		: JObject(
 			"android.content.pm.ShortcutInfo$Builder",
 			"(Landroid/content/Context;Ljava/lang/String;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		) {}
 	
 	// Methods
@@ -48,12 +52,12 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	android::content::pm::ShortcutInfo_Builder ShortcutInfo_Builder::setDisabledMessage(jstring arg0)
+	android::content::pm::ShortcutInfo_Builder ShortcutInfo_Builder::setDisabledMessage(JString arg0)
 	{
 		return callObjectMethod(
 			"setDisabledMessage",
 			"(Ljava/lang/CharSequence;)Landroid/content/pm/ShortcutInfo$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::content::pm::ShortcutInfo_Builder ShortcutInfo_Builder::setExtras(android::os::PersistableBundle arg0)
@@ -80,12 +84,12 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	android::content::pm::ShortcutInfo_Builder ShortcutInfo_Builder::setIntents(jarray arg0)
+	android::content::pm::ShortcutInfo_Builder ShortcutInfo_Builder::setIntents(JArray arg0)
 	{
 		return callObjectMethod(
 			"setIntents",
 			"([Landroid/content/Intent;)Landroid/content/pm/ShortcutInfo$Builder;",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
 	android::content::pm::ShortcutInfo_Builder ShortcutInfo_Builder::setLocusId(android::content::LocusId arg0)
@@ -96,12 +100,12 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	android::content::pm::ShortcutInfo_Builder ShortcutInfo_Builder::setLongLabel(jstring arg0)
+	android::content::pm::ShortcutInfo_Builder ShortcutInfo_Builder::setLongLabel(JString arg0)
 	{
 		return callObjectMethod(
 			"setLongLabel",
 			"(Ljava/lang/CharSequence;)Landroid/content/pm/ShortcutInfo$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::content::pm::ShortcutInfo_Builder ShortcutInfo_Builder::setLongLived(jboolean arg0)
@@ -120,12 +124,12 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	android::content::pm::ShortcutInfo_Builder ShortcutInfo_Builder::setPersons(jarray arg0)
+	android::content::pm::ShortcutInfo_Builder ShortcutInfo_Builder::setPersons(JArray arg0)
 	{
 		return callObjectMethod(
 			"setPersons",
 			"([Landroid/app/Person;)Landroid/content/pm/ShortcutInfo$Builder;",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
 	android::content::pm::ShortcutInfo_Builder ShortcutInfo_Builder::setRank(jint arg0)
@@ -136,12 +140,12 @@ namespace android::content::pm
 			arg0
 		);
 	}
-	android::content::pm::ShortcutInfo_Builder ShortcutInfo_Builder::setShortLabel(jstring arg0)
+	android::content::pm::ShortcutInfo_Builder ShortcutInfo_Builder::setShortLabel(JString arg0)
 	{
 		return callObjectMethod(
 			"setShortLabel",
 			"(Ljava/lang/CharSequence;)Landroid/content/pm/ShortcutInfo$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 } // namespace android::content::pm

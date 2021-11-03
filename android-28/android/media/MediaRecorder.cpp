@@ -6,6 +6,7 @@
 #include "../view/Surface.hpp"
 #include "../../java/io/File.hpp"
 #include "../../java/io/FileDescriptor.hpp"
+#include "../../JString.hpp"
 #include "./MediaRecorder.hpp"
 
 namespace android::media
@@ -319,12 +320,12 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void MediaRecorder::setOutputFile(jstring arg0)
+	void MediaRecorder::setOutputFile(JString arg0)
 	{
 		callMethod<void>(
 			"setOutputFile",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void MediaRecorder::setOutputFormat(jint arg0)

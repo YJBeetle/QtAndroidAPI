@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./PathEffect.hpp"
 
+class JFloatArray;
 
 namespace android::graphics
 {
@@ -16,7 +16,7 @@ namespace android::graphics
 		DashPathEffect(QJniObject obj);
 		
 		// Constructors
-		DashPathEffect(jfloatArray arg0, jfloat arg1);
+		DashPathEffect(JFloatArray arg0, jfloat arg1);
 		
 		// Methods
 	};

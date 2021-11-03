@@ -2,6 +2,10 @@
 
 #include "../../../JObject.hpp"
 
+class JObjectArray;
+class JClass;
+class JObject;
+class JString;
 namespace java::lang::invoke
 {
 	class MethodHandle;

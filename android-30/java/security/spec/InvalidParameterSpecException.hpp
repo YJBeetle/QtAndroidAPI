@@ -1,9 +1,8 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "../../lang/Exception.hpp"
 #include "../GeneralSecurityException.hpp"
 
+class JString;
 
 namespace java::security::spec
 {
@@ -18,7 +17,7 @@ namespace java::security::spec
 		
 		// Constructors
 		InvalidParameterSpecException();
-		InvalidParameterSpecException(jstring arg0);
+		InvalidParameterSpecException(JString arg0);
 		
 		// Methods
 	};

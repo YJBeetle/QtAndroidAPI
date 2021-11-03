@@ -2,6 +2,8 @@
 #include "../os/Bundle.hpp"
 #include "../widget/TabHost.hpp"
 #include "../widget/TabWidget.hpp"
+#include "../../JString.hpp"
+#include "../../JString.hpp"
 #include "./TabActivity.hpp"
 
 namespace android::app
@@ -48,12 +50,12 @@ namespace android::app
 			arg0
 		);
 	}
-	void TabActivity::setDefaultTab(jstring arg0)
+	void TabActivity::setDefaultTab(JString arg0)
 	{
 		callMethod<void>(
 			"setDefaultTab",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 } // namespace android::app

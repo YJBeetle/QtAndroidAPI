@@ -1,6 +1,7 @@
 #include "../ComponentName.hpp"
 #include "../../graphics/drawable/Drawable.hpp"
 #include "../../os/UserHandle.hpp"
+#include "../../../JString.hpp"
 #include "./CrossProfileApps.hpp"
 
 namespace android::content::pm
@@ -21,13 +22,13 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	jstring CrossProfileApps::getProfileSwitchingLabel(android::os::UserHandle arg0)
+	JString CrossProfileApps::getProfileSwitchingLabel(android::os::UserHandle arg0)
 	{
 		return callObjectMethod(
 			"getProfileSwitchingLabel",
 			"(Landroid/os/UserHandle;)Ljava/lang/CharSequence;",
 			arg0.object()
-		).object<jstring>();
+		);
 	}
 	JObject CrossProfileApps::getTargetUserProfiles()
 	{

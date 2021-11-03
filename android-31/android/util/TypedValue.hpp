@@ -6,6 +6,8 @@ namespace android::util
 {
 	class DisplayMetrics;
 }
+class JString;
+class JString;
 
 namespace android::util
 {
@@ -59,7 +61,7 @@ namespace android::util
 		jint density();
 		jint resourceId();
 		jint sourceResourceId();
-		jstring string();
+		JString string();
 		jint type();
 		
 		// QJniObject forward
@@ -71,20 +73,20 @@ namespace android::util
 		
 		// Methods
 		static jfloat applyDimension(jint arg0, jfloat arg1, android::util::DisplayMetrics arg2);
-		static jstring coerceToString(jint arg0, jint arg1);
+		static JString coerceToString(jint arg0, jint arg1);
 		static jfloat complexToDimension(jint arg0, android::util::DisplayMetrics arg1);
 		static jint complexToDimensionPixelOffset(jint arg0, android::util::DisplayMetrics arg1);
 		static jint complexToDimensionPixelSize(jint arg0, android::util::DisplayMetrics arg1);
 		static jfloat complexToFloat(jint arg0);
 		static jfloat complexToFraction(jint arg0, jfloat arg1, jfloat arg2);
-		jstring coerceToString();
+		JString coerceToString();
 		jint getComplexUnit();
 		jfloat getDimension(android::util::DisplayMetrics arg0);
 		jfloat getFloat();
 		jfloat getFraction(jfloat arg0, jfloat arg1);
 		jboolean isColorType();
 		void setTo(android::util::TypedValue arg0);
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::util
 

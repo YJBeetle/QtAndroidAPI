@@ -2,10 +2,12 @@
 
 #include "../../../JObject.hpp"
 
+class JArray;
 namespace android::app::appsearch
 {
 	class SearchSpec;
 }
+class JString;
 
 namespace android::app::appsearch
 {
@@ -22,13 +24,13 @@ namespace android::app::appsearch
 		SearchSpec_Builder();
 		
 		// Methods
-		android::app::appsearch::SearchSpec_Builder addFilterNamespaces(jarray arg0);
+		android::app::appsearch::SearchSpec_Builder addFilterNamespaces(JArray arg0);
 		android::app::appsearch::SearchSpec_Builder addFilterNamespaces(JObject arg0);
-		android::app::appsearch::SearchSpec_Builder addFilterPackageNames(jarray arg0);
+		android::app::appsearch::SearchSpec_Builder addFilterPackageNames(JArray arg0);
 		android::app::appsearch::SearchSpec_Builder addFilterPackageNames(JObject arg0);
-		android::app::appsearch::SearchSpec_Builder addFilterSchemas(jarray arg0);
+		android::app::appsearch::SearchSpec_Builder addFilterSchemas(JArray arg0);
 		android::app::appsearch::SearchSpec_Builder addFilterSchemas(JObject arg0);
-		android::app::appsearch::SearchSpec_Builder addProjection(jstring arg0, JObject arg1);
+		android::app::appsearch::SearchSpec_Builder addProjection(JString arg0, JObject arg1);
 		android::app::appsearch::SearchSpec build();
 		android::app::appsearch::SearchSpec_Builder setMaxSnippetSize(jint arg0);
 		android::app::appsearch::SearchSpec_Builder setOrder(jint arg0);

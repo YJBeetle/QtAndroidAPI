@@ -1,11 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../view/View.hpp"
-#include "../view/ViewGroup.hpp"
-#include "./AdapterView.hpp"
 #include "./AbsListView.hpp"
 
+class JLongArray;
 namespace android::content
 {
 	class Context;
@@ -38,6 +35,8 @@ namespace android::view::accessibility
 {
 	class AccessibilityNodeInfo;
 }
+class JString;
+class JObject;
 
 namespace android::widget
 {
@@ -58,15 +57,15 @@ namespace android::widget
 		
 		// Methods
 		void addFooterView(android::view::View arg0);
-		void addFooterView(android::view::View arg0, jobject arg1, jboolean arg2);
+		void addFooterView(android::view::View arg0, JObject arg1, jboolean arg2);
 		void addHeaderView(android::view::View arg0);
-		void addHeaderView(android::view::View arg0, jobject arg1, jboolean arg2);
+		void addHeaderView(android::view::View arg0, JObject arg1, jboolean arg2);
 		jboolean areFooterDividersEnabled();
 		jboolean areHeaderDividersEnabled();
 		jboolean dispatchKeyEvent(android::view::KeyEvent arg0);
-		jstring getAccessibilityClassName();
+		JString getAccessibilityClassName();
 		JObject getAdapter();
-		jlongArray getCheckItemIds();
+		JLongArray getCheckItemIds();
 		android::graphics::drawable::Drawable getDivider();
 		jint getDividerHeight();
 		jint getFooterViewsCount();

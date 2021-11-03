@@ -1,4 +1,7 @@
+#include "../../../../JFloatArray.hpp"
 #include "../../../graphics/PointF.hpp"
+#include "../../../../JObject.hpp"
+#include "../../../../JString.hpp"
 #include "./TonemapCurve.hpp"
 
 namespace android::hardware::camera2::params
@@ -51,32 +54,32 @@ namespace android::hardware::camera2::params
 	TonemapCurve::TonemapCurve(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	TonemapCurve::TonemapCurve(jfloatArray arg0, jfloatArray arg1, jfloatArray arg2)
+	TonemapCurve::TonemapCurve(JFloatArray arg0, JFloatArray arg1, JFloatArray arg2)
 		: JObject(
 			"android.hardware.camera2.params.TonemapCurve",
 			"([F[F[F)V",
-			arg0,
-			arg1,
-			arg2
+			arg0.object<jfloatArray>(),
+			arg1.object<jfloatArray>(),
+			arg2.object<jfloatArray>()
 		) {}
 	
 	// Methods
-	void TonemapCurve::copyColorCurve(jint arg0, jfloatArray arg1, jint arg2)
+	void TonemapCurve::copyColorCurve(jint arg0, JFloatArray arg1, jint arg2)
 	{
 		callMethod<void>(
 			"copyColorCurve",
 			"(I[FI)V",
 			arg0,
-			arg1,
+			arg1.object<jfloatArray>(),
 			arg2
 		);
 	}
-	jboolean TonemapCurve::equals(jobject arg0)
+	jboolean TonemapCurve::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	android::graphics::PointF TonemapCurve::getPoint(jint arg0, jint arg1)
@@ -103,12 +106,12 @@ namespace android::hardware::camera2::params
 			"()I"
 		);
 	}
-	jstring TonemapCurve::toString()
+	JString TonemapCurve::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::hardware::camera2::params
 

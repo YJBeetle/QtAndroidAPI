@@ -6,6 +6,7 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
 
 namespace android::hardware::lights
 {
@@ -25,7 +26,7 @@ namespace android::hardware::lights
 		jint describeContents();
 		jint getColor();
 		jint getPlayerId();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::hardware::lights

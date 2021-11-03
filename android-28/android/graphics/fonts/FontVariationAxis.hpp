@@ -2,6 +2,8 @@
 
 #include "../../../JObject.hpp"
 
+class JArray;
+class JString;
 
 namespace android::graphics::fonts
 {
@@ -15,14 +17,14 @@ namespace android::graphics::fonts
 		FontVariationAxis(QJniObject obj);
 		
 		// Constructors
-		FontVariationAxis(jstring arg0, jfloat arg1);
+		FontVariationAxis(JString arg0, jfloat arg1);
 		
 		// Methods
-		static jarray fromFontVariationSettings(jstring arg0);
-		static jstring toFontVariationSettings(jarray arg0);
+		static JArray fromFontVariationSettings(JString arg0);
+		static JString toFontVariationSettings(JArray arg0);
 		jfloat getStyleValue();
-		jstring getTag();
-		jstring toString();
+		JString getTag();
+		JString toString();
 	};
 } // namespace android::graphics::fonts
 

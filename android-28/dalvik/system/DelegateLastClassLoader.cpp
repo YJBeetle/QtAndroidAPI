@@ -1,4 +1,6 @@
+#include "../../JClass.hpp"
 #include "../../java/lang/ClassLoader.hpp"
+#include "../../JString.hpp"
 #include "../../java/net/URL.hpp"
 #include "./DelegateLastClassLoader.hpp"
 
@@ -10,37 +12,37 @@ namespace dalvik::system
 	DelegateLastClassLoader::DelegateLastClassLoader(QJniObject obj) : dalvik::system::PathClassLoader(obj) {}
 	
 	// Constructors
-	DelegateLastClassLoader::DelegateLastClassLoader(jstring arg0, java::lang::ClassLoader arg1)
+	DelegateLastClassLoader::DelegateLastClassLoader(JString arg0, java::lang::ClassLoader arg1)
 		: dalvik::system::PathClassLoader(
 			"dalvik.system.DelegateLastClassLoader",
 			"(Ljava/lang/String;Ljava/lang/ClassLoader;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		) {}
-	DelegateLastClassLoader::DelegateLastClassLoader(jstring arg0, jstring arg1, java::lang::ClassLoader arg2)
+	DelegateLastClassLoader::DelegateLastClassLoader(JString arg0, JString arg1, java::lang::ClassLoader arg2)
 		: dalvik::system::PathClassLoader(
 			"dalvik.system.DelegateLastClassLoader",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/ClassLoader;)V",
-			arg0,
-			arg1,
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
 			arg2.object()
 		) {}
 	
 	// Methods
-	java::net::URL DelegateLastClassLoader::getResource(jstring arg0)
+	java::net::URL DelegateLastClassLoader::getResource(JString arg0)
 	{
 		return callObjectMethod(
 			"getResource",
 			"(Ljava/lang/String;)Ljava/net/URL;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	JObject DelegateLastClassLoader::getResources(jstring arg0)
+	JObject DelegateLastClassLoader::getResources(JString arg0)
 	{
 		return callObjectMethod(
 			"getResources",
 			"(Ljava/lang/String;)Ljava/util/Enumeration;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 } // namespace dalvik::system

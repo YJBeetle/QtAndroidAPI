@@ -6,6 +6,7 @@ namespace android::app::appsearch
 {
 	class AppSearchResult;
 }
+class JString;
 
 namespace android::app::appsearch
 {
@@ -19,14 +20,14 @@ namespace android::app::appsearch
 		SetSchemaResponse_MigrationFailure(QJniObject obj);
 		
 		// Constructors
-		SetSchemaResponse_MigrationFailure(jstring arg0, jstring arg1, jstring arg2, android::app::appsearch::AppSearchResult arg3);
+		SetSchemaResponse_MigrationFailure(JString arg0, JString arg1, JString arg2, android::app::appsearch::AppSearchResult arg3);
 		
 		// Methods
 		android::app::appsearch::AppSearchResult getAppSearchResult();
-		jstring getDocumentId();
-		jstring getNamespace();
-		jstring getSchemaType();
-		jstring toString();
+		JString getDocumentId();
+		JString getNamespace();
+		JString getSchemaType();
+		JString toString();
 	};
 } // namespace android::app::appsearch
 

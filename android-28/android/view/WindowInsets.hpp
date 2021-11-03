@@ -10,6 +10,8 @@ namespace android::view
 {
 	class DisplayCutout;
 }
+class JObject;
+class JString;
 
 namespace android::view
 {
@@ -29,7 +31,7 @@ namespace android::view
 		android::view::WindowInsets consumeDisplayCutout();
 		android::view::WindowInsets consumeStableInsets();
 		android::view::WindowInsets consumeSystemWindowInsets();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		android::view::DisplayCutout getDisplayCutout();
 		jint getStableInsetBottom();
 		jint getStableInsetLeft();
@@ -47,7 +49,7 @@ namespace android::view
 		jboolean isRound();
 		android::view::WindowInsets replaceSystemWindowInsets(android::graphics::Rect arg0);
 		android::view::WindowInsets replaceSystemWindowInsets(jint arg0, jint arg1, jint arg2, jint arg3);
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::view
 

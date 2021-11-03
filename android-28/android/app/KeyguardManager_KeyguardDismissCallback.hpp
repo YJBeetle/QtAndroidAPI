@@ -2,7 +2,6 @@
 
 #include "../../JObject.hpp"
 
-
 namespace android::app
 {
 	class KeyguardManager_KeyguardDismissCallback : public JObject

@@ -1,3 +1,5 @@
+#include "../../JString.hpp"
+#include "../../JThrowable.hpp"
 #include "../util/concurrent/atomic/AtomicReferenceFieldUpdater.hpp"
 #include "./SQLException.hpp"
 
@@ -14,56 +16,56 @@ namespace java::sql
 			"java.sql.SQLException",
 			"()V"
 		) {}
-	SQLException::SQLException(jstring arg0)
+	SQLException::SQLException(JString arg0)
 		: java::lang::Exception(
 			"java.sql.SQLException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	SQLException::SQLException(jthrowable arg0)
+	SQLException::SQLException(JThrowable arg0)
 		: java::lang::Exception(
 			"java.sql.SQLException",
 			"(Ljava/lang/Throwable;)V",
-			arg0
+			arg0.object<jthrowable>()
 		) {}
-	SQLException::SQLException(jstring arg0, jstring arg1)
+	SQLException::SQLException(JString arg0, JString arg1)
 		: java::lang::Exception(
 			"java.sql.SQLException",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		) {}
-	SQLException::SQLException(jstring arg0, jthrowable arg1)
+	SQLException::SQLException(JString arg0, JThrowable arg1)
 		: java::lang::Exception(
 			"java.sql.SQLException",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
 		) {}
-	SQLException::SQLException(jstring arg0, jstring arg1, jint arg2)
+	SQLException::SQLException(JString arg0, JString arg1, jint arg2)
 		: java::lang::Exception(
 			"java.sql.SQLException",
 			"(Ljava/lang/String;Ljava/lang/String;I)V",
-			arg0,
-			arg1,
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
 			arg2
 		) {}
-	SQLException::SQLException(jstring arg0, jstring arg1, jthrowable arg2)
+	SQLException::SQLException(JString arg0, JString arg1, JThrowable arg2)
 		: java::lang::Exception(
 			"java.sql.SQLException",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V",
-			arg0,
-			arg1,
-			arg2
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2.object<jthrowable>()
 		) {}
-	SQLException::SQLException(jstring arg0, jstring arg1, jint arg2, jthrowable arg3)
+	SQLException::SQLException(JString arg0, JString arg1, jint arg2, JThrowable arg3)
 		: java::lang::Exception(
 			"java.sql.SQLException",
 			"(Ljava/lang/String;Ljava/lang/String;ILjava/lang/Throwable;)V",
-			arg0,
-			arg1,
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
 			arg2,
-			arg3
+			arg3.object<jthrowable>()
 		) {}
 	
 	// Methods
@@ -81,12 +83,12 @@ namespace java::sql
 			"()Ljava/sql/SQLException;"
 		);
 	}
-	jstring SQLException::getSQLState()
+	JString SQLException::getSQLState()
 	{
 		return callObjectMethod(
 			"getSQLState",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	JObject SQLException::iterator()
 	{

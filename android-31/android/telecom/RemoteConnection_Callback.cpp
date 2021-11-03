@@ -5,6 +5,7 @@
 #include "./RemoteConnection.hpp"
 #include "./RemoteConnection_VideoProvider.hpp"
 #include "./StatusHints.hpp"
+#include "../../JString.hpp"
 #include "./RemoteConnection_Callback.hpp"
 
 namespace android::telecom
@@ -32,13 +33,13 @@ namespace android::telecom
 			arg2
 		);
 	}
-	void RemoteConnection_Callback::onCallerDisplayNameChanged(android::telecom::RemoteConnection arg0, jstring arg1, jint arg2)
+	void RemoteConnection_Callback::onCallerDisplayNameChanged(android::telecom::RemoteConnection arg0, JString arg1, jint arg2)
 	{
 		callMethod<void>(
 			"onCallerDisplayNameChanged",
 			"(Landroid/telecom/RemoteConnection;Ljava/lang/String;I)V",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2
 		);
 	}
@@ -69,13 +70,13 @@ namespace android::telecom
 			arg1
 		);
 	}
-	void RemoteConnection_Callback::onConnectionEvent(android::telecom::RemoteConnection arg0, jstring arg1, android::os::Bundle arg2)
+	void RemoteConnection_Callback::onConnectionEvent(android::telecom::RemoteConnection arg0, JString arg1, android::os::Bundle arg2)
 	{
 		callMethod<void>(
 			"onConnectionEvent",
 			"(Landroid/telecom/RemoteConnection;Ljava/lang/String;Landroid/os/Bundle;)V",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2.object()
 		);
 	}
@@ -123,13 +124,13 @@ namespace android::telecom
 			arg1
 		);
 	}
-	void RemoteConnection_Callback::onPostDialWait(android::telecom::RemoteConnection arg0, jstring arg1)
+	void RemoteConnection_Callback::onPostDialWait(android::telecom::RemoteConnection arg0, JString arg1)
 	{
 		callMethod<void>(
 			"onPostDialWait",
 			"(Landroid/telecom/RemoteConnection;Ljava/lang/String;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
 	void RemoteConnection_Callback::onRingbackRequested(android::telecom::RemoteConnection arg0, jboolean arg1)

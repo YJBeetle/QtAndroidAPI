@@ -1,8 +1,10 @@
+#include "../../JIntArray.hpp"
 #include "./BluetoothDevice.hpp"
 #include "./BluetoothHealthAppConfiguration.hpp"
 #include "./BluetoothHealthCallback.hpp"
 #include "../content/Context.hpp"
 #include "../os/ParcelFileDescriptor.hpp"
+#include "../../JString.hpp"
 #include "./BluetoothHealth.hpp"
 
 namespace android::bluetooth
@@ -133,12 +135,12 @@ namespace android::bluetooth
 			arg0.object()
 		);
 	}
-	JObject BluetoothHealth::getDevicesMatchingConnectionStates(jintArray arg0)
+	JObject BluetoothHealth::getDevicesMatchingConnectionStates(JIntArray arg0)
 	{
 		return callObjectMethod(
 			"getDevicesMatchingConnectionStates",
 			"([I)Ljava/util/List;",
-			arg0
+			arg0.object<jintArray>()
 		);
 	}
 	android::os::ParcelFileDescriptor BluetoothHealth::getMainChannelFd(android::bluetooth::BluetoothDevice arg0, android::bluetooth::BluetoothHealthAppConfiguration arg1)
@@ -150,12 +152,12 @@ namespace android::bluetooth
 			arg1.object()
 		);
 	}
-	jboolean BluetoothHealth::registerSinkAppConfiguration(jstring arg0, jint arg1, android::bluetooth::BluetoothHealthCallback arg2)
+	jboolean BluetoothHealth::registerSinkAppConfiguration(JString arg0, jint arg1, android::bluetooth::BluetoothHealthCallback arg2)
 	{
 		return callMethod<jboolean>(
 			"registerSinkAppConfiguration",
 			"(Ljava/lang/String;ILandroid/bluetooth/BluetoothHealthCallback;)Z",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
 			arg2.object()
 		);

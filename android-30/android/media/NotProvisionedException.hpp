@@ -1,9 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../../java/lang/Exception.hpp"
 #include "./MediaDrmException.hpp"
 
+class JString;
 
 namespace android::media
 {
@@ -17,7 +16,7 @@ namespace android::media
 		NotProvisionedException(QJniObject obj);
 		
 		// Constructors
-		NotProvisionedException(jstring arg0);
+		NotProvisionedException(JString arg0);
 		
 		// Methods
 	};

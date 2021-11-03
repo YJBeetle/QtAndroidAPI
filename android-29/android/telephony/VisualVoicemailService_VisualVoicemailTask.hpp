@@ -6,6 +6,7 @@ namespace android::os
 {
 	class Messenger;
 }
+class JObject;
 
 namespace android::telephony
 {
@@ -21,7 +22,7 @@ namespace android::telephony
 		// Constructors
 		
 		// Methods
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		void finish();
 		jint hashCode();
 	};

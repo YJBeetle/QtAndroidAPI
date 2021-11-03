@@ -1,3 +1,5 @@
+#include "../../../JString.hpp"
+#include "../../../JThrowable.hpp"
 #include "./LambdaConversionException.hpp"
 
 namespace java::lang::invoke
@@ -13,31 +15,31 @@ namespace java::lang::invoke
 			"java.lang.invoke.LambdaConversionException",
 			"()V"
 		) {}
-	LambdaConversionException::LambdaConversionException(jstring arg0)
+	LambdaConversionException::LambdaConversionException(JString arg0)
 		: java::lang::Exception(
 			"java.lang.invoke.LambdaConversionException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	LambdaConversionException::LambdaConversionException(jthrowable arg0)
+	LambdaConversionException::LambdaConversionException(JThrowable arg0)
 		: java::lang::Exception(
 			"java.lang.invoke.LambdaConversionException",
 			"(Ljava/lang/Throwable;)V",
-			arg0
+			arg0.object<jthrowable>()
 		) {}
-	LambdaConversionException::LambdaConversionException(jstring arg0, jthrowable arg1)
+	LambdaConversionException::LambdaConversionException(JString arg0, JThrowable arg1)
 		: java::lang::Exception(
 			"java.lang.invoke.LambdaConversionException",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
 		) {}
-	LambdaConversionException::LambdaConversionException(jstring arg0, jthrowable arg1, jboolean arg2, jboolean arg3)
+	LambdaConversionException::LambdaConversionException(JString arg0, JThrowable arg1, jboolean arg2, jboolean arg3)
 		: java::lang::Exception(
 			"java.lang.invoke.LambdaConversionException",
 			"(Ljava/lang/String;Ljava/lang/Throwable;ZZ)V",
-			arg0,
-			arg1,
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>(),
 			arg2,
 			arg3
 		) {}

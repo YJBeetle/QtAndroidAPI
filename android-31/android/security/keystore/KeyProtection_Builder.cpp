@@ -1,3 +1,4 @@
+#include "../../../JArray.hpp"
 #include "./KeyProtection.hpp"
 #include "../../../java/util/Date.hpp"
 #include "./KeyProtection_Builder.hpp"
@@ -25,28 +26,28 @@ namespace android::security::keystore
 			"()Landroid/security/keystore/KeyProtection;"
 		);
 	}
-	android::security::keystore::KeyProtection_Builder KeyProtection_Builder::setBlockModes(jarray arg0)
+	android::security::keystore::KeyProtection_Builder KeyProtection_Builder::setBlockModes(JArray arg0)
 	{
 		return callObjectMethod(
 			"setBlockModes",
 			"([Ljava/lang/String;)Landroid/security/keystore/KeyProtection$Builder;",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
-	android::security::keystore::KeyProtection_Builder KeyProtection_Builder::setDigests(jarray arg0)
+	android::security::keystore::KeyProtection_Builder KeyProtection_Builder::setDigests(JArray arg0)
 	{
 		return callObjectMethod(
 			"setDigests",
 			"([Ljava/lang/String;)Landroid/security/keystore/KeyProtection$Builder;",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
-	android::security::keystore::KeyProtection_Builder KeyProtection_Builder::setEncryptionPaddings(jarray arg0)
+	android::security::keystore::KeyProtection_Builder KeyProtection_Builder::setEncryptionPaddings(JArray arg0)
 	{
 		return callObjectMethod(
 			"setEncryptionPaddings",
 			"([Ljava/lang/String;)Landroid/security/keystore/KeyProtection$Builder;",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
 	android::security::keystore::KeyProtection_Builder KeyProtection_Builder::setInvalidatedByBiometricEnrollment(jboolean arg0)
@@ -113,12 +114,12 @@ namespace android::security::keystore
 			arg0
 		);
 	}
-	android::security::keystore::KeyProtection_Builder KeyProtection_Builder::setSignaturePaddings(jarray arg0)
+	android::security::keystore::KeyProtection_Builder KeyProtection_Builder::setSignaturePaddings(JArray arg0)
 	{
 		return callObjectMethod(
 			"setSignaturePaddings",
 			"([Ljava/lang/String;)Landroid/security/keystore/KeyProtection$Builder;",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
 	android::security::keystore::KeyProtection_Builder KeyProtection_Builder::setUnlockedDeviceRequired(jboolean arg0)

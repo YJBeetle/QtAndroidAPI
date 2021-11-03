@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./BiometricManager_Strings.hpp"
 
 namespace android::hardware::biometrics
@@ -10,26 +11,26 @@ namespace android::hardware::biometrics
 	// Constructors
 	
 	// Methods
-	jstring BiometricManager_Strings::getButtonLabel()
+	JString BiometricManager_Strings::getButtonLabel()
 	{
 		return callObjectMethod(
 			"getButtonLabel",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
-	jstring BiometricManager_Strings::getPromptMessage()
+	JString BiometricManager_Strings::getPromptMessage()
 	{
 		return callObjectMethod(
 			"getPromptMessage",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
-	jstring BiometricManager_Strings::getSettingName()
+	JString BiometricManager_Strings::getSettingName()
 	{
 		return callObjectMethod(
 			"getSettingName",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::hardware::biometrics
 

@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "./MidiReceiver.hpp"
 
+class JByteArray;
 namespace java::io
 {
 	class FileDescriptor;
@@ -25,7 +25,7 @@ namespace android::media::midi
 		void close();
 		jint getPortNumber();
 		void onFlush();
-		void onSend(jbyteArray arg0, jint arg1, jint arg2, jlong arg3);
+		void onSend(JByteArray arg0, jint arg1, jint arg2, jlong arg3);
 	};
 } // namespace android::media::midi
 

@@ -1,9 +1,9 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "../AbstractCollection.hpp"
 #include "../AbstractQueue.hpp"
 
+class JLongArray;
+class JObjectArray;
 namespace java::io
 {
 	class ObjectInputStream;
@@ -12,6 +12,8 @@ namespace java::io
 {
 	class ObjectOutputStream;
 }
+class JObject;
+class JString;
 namespace java::util
 {
 	class PriorityQueue;
@@ -43,31 +45,31 @@ namespace java::util::concurrent
 		PriorityBlockingQueue(jint arg0, JObject arg1);
 		
 		// Methods
-		jboolean add(jobject arg0);
+		jboolean add(JObject arg0);
 		void clear();
 		JObject comparator();
-		jboolean contains(jobject arg0);
+		jboolean contains(JObject arg0);
 		jint drainTo(JObject arg0);
 		jint drainTo(JObject arg0, jint arg1);
 		void forEach(JObject arg0);
 		JObject iterator();
-		jboolean offer(jobject arg0);
-		jboolean offer(jobject arg0, jlong arg1, java::util::concurrent::TimeUnit arg2);
-		jobject peek();
-		jobject poll();
-		jobject poll(jlong arg0, java::util::concurrent::TimeUnit arg1);
-		void put(jobject arg0);
+		jboolean offer(JObject arg0);
+		jboolean offer(JObject arg0, jlong arg1, java::util::concurrent::TimeUnit arg2);
+		JObject peek();
+		JObject poll();
+		JObject poll(jlong arg0, java::util::concurrent::TimeUnit arg1);
+		void put(JObject arg0);
 		jint remainingCapacity();
-		jboolean remove(jobject arg0);
+		jboolean remove(JObject arg0);
 		jboolean removeAll(JObject arg0);
 		jboolean removeIf(JObject arg0);
 		jboolean retainAll(JObject arg0);
 		jint size();
 		JObject spliterator();
-		jobject take();
-		jobjectArray toArray();
-		jobjectArray toArray(jobjectArray arg0);
-		jstring toString();
+		JObject take();
+		JObjectArray toArray();
+		JObjectArray toArray(JObjectArray arg0);
+		JString toString();
 	};
 } // namespace java::util::concurrent
 

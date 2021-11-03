@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./GeolocationPermissions.hpp"
 
 namespace android::webkit
@@ -18,20 +19,20 @@ namespace android::webkit
 			"()Landroid/webkit/GeolocationPermissions;"
 		);
 	}
-	void GeolocationPermissions::allow(jstring arg0)
+	void GeolocationPermissions::allow(JString arg0)
 	{
 		callMethod<void>(
 			"allow",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	void GeolocationPermissions::clear(jstring arg0)
+	void GeolocationPermissions::clear(JString arg0)
 	{
 		callMethod<void>(
 			"clear",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void GeolocationPermissions::clearAll()
@@ -41,12 +42,12 @@ namespace android::webkit
 			"()V"
 		);
 	}
-	void GeolocationPermissions::getAllowed(jstring arg0, JObject arg1)
+	void GeolocationPermissions::getAllowed(JString arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"getAllowed",
 			"(Ljava/lang/String;Landroid/webkit/ValueCallback;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}

@@ -1,4 +1,6 @@
 #include "../../../io/ObjectInputStream.hpp"
+#include "../../../../JObject.hpp"
+#include "../../../../JString.hpp"
 #include "./DoubleAdder.hpp"
 
 namespace java::util::concurrent::atomic
@@ -73,12 +75,12 @@ namespace java::util::concurrent::atomic
 			"()D"
 		);
 	}
-	jstring DoubleAdder::toString()
+	JString DoubleAdder::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::util::concurrent::atomic
 

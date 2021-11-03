@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JFloatArray;
+class JIntArray;
 namespace android::hardware
 {
 	class Sensor;
@@ -20,8 +22,8 @@ namespace android::hardware
 		static jint TYPE_SENSOR_PLACEMENT();
 		static jint TYPE_UNTRACKED_DELAY();
 		static jint TYPE_VEC3_CALIBRATION();
-		jfloatArray floatValues();
-		jintArray intValues();
+		JFloatArray floatValues();
+		JIntArray intValues();
 		android::hardware::Sensor sensor();
 		jint serial();
 		jint type();

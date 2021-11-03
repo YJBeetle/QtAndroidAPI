@@ -1,13 +1,12 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "../../../java/lang/Exception.hpp"
 #include "./SAXException.hpp"
 
 namespace java::lang
 {
 	class Exception;
 }
+class JString;
 
 namespace org::xml::sax
 {
@@ -21,17 +20,17 @@ namespace org::xml::sax
 		SAXParseException(QJniObject obj);
 		
 		// Constructors
-		SAXParseException(jstring arg0, JObject arg1);
-		SAXParseException(jstring arg0, JObject arg1, java::lang::Exception arg2);
-		SAXParseException(jstring arg0, jstring arg1, jstring arg2, jint arg3, jint arg4);
-		SAXParseException(jstring arg0, jstring arg1, jstring arg2, jint arg3, jint arg4, java::lang::Exception arg5);
+		SAXParseException(JString arg0, JObject arg1);
+		SAXParseException(JString arg0, JObject arg1, java::lang::Exception arg2);
+		SAXParseException(JString arg0, JString arg1, JString arg2, jint arg3, jint arg4);
+		SAXParseException(JString arg0, JString arg1, JString arg2, jint arg3, jint arg4, java::lang::Exception arg5);
 		
 		// Methods
 		jint getColumnNumber();
 		jint getLineNumber();
-		jstring getPublicId();
-		jstring getSystemId();
-		jstring toString();
+		JString getPublicId();
+		JString getSystemId();
+		JString toString();
 	};
 } // namespace org::xml::sax
 

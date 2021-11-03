@@ -1,8 +1,10 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./Number.hpp"
 
+class JClass;
+class JObject;
+class JString;
 namespace java::lang::invoke
 {
 	class MethodHandles_Lookup;
@@ -28,7 +30,7 @@ namespace java::lang
 		static jfloat NaN();
 		static jfloat POSITIVE_INFINITY();
 		static jint SIZE();
-		static jclass TYPE();
+		static JClass TYPE();
 		
 		// QJniObject forward
 		template<typename ...Ts> explicit Float(const char *className, const char *sig, Ts...agv) : java::lang::Number(className, sig, std::forward<Ts>(agv)...) {}
@@ -37,7 +39,7 @@ namespace java::lang
 		// Constructors
 		Float(jdouble arg0);
 		Float(jfloat arg0);
-		Float(jstring arg0);
+		Float(JString arg0);
 		
 		// Methods
 		static jint compare(jfloat arg0, jfloat arg1);
@@ -50,18 +52,18 @@ namespace java::lang
 		static jboolean isNaN(jfloat arg0);
 		static jfloat max(jfloat arg0, jfloat arg1);
 		static jfloat min(jfloat arg0, jfloat arg1);
-		static jfloat parseFloat(jstring arg0);
+		static jfloat parseFloat(JString arg0);
 		static jfloat sum(jfloat arg0, jfloat arg1);
-		static jstring toHexString(jfloat arg0);
-		static jstring toString(jfloat arg0);
+		static JString toHexString(jfloat arg0);
+		static JString toString(jfloat arg0);
 		static java::lang::Float valueOf(jfloat arg0);
-		static java::lang::Float valueOf(jstring arg0);
+		static java::lang::Float valueOf(JString arg0);
 		jbyte byteValue();
 		jint compareTo(java::lang::Float arg0);
-		jint compareTo(jobject arg0);
+		jint compareTo(JObject arg0);
 		java::util::Optional describeConstable();
 		jdouble doubleValue();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jfloat floatValue();
 		jint hashCode();
 		jint intValue();
@@ -70,7 +72,7 @@ namespace java::lang
 		jlong longValue();
 		java::lang::Float resolveConstantDesc(java::lang::invoke::MethodHandles_Lookup arg0);
 		jshort shortValue();
-		jstring toString();
+		JString toString();
 	};
 } // namespace java::lang
 

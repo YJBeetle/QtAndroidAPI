@@ -1,4 +1,6 @@
 #include "./WebView.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./CookieManager.hpp"
 
 namespace android::webkit
@@ -63,13 +65,13 @@ namespace android::webkit
 			"()V"
 		);
 	}
-	jstring CookieManager::getCookie(jstring arg0)
+	JString CookieManager::getCookie(JString arg0)
 	{
 		return callObjectMethod(
 			"getCookie",
 			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
+			arg0.object<jstring>()
+		);
 	}
 	jboolean CookieManager::hasCookies()
 	{
@@ -132,22 +134,22 @@ namespace android::webkit
 			arg1
 		);
 	}
-	void CookieManager::setCookie(jstring arg0, jstring arg1)
+	void CookieManager::setCookie(JString arg0, JString arg1)
 	{
 		callMethod<void>(
 			"setCookie",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		);
 	}
-	void CookieManager::setCookie(jstring arg0, jstring arg1, JObject arg2)
+	void CookieManager::setCookie(JString arg0, JString arg1, JObject arg2)
 	{
 		callMethod<void>(
 			"setCookie",
 			"(Ljava/lang/String;Ljava/lang/String;Landroid/webkit/ValueCallback;)V",
-			arg0,
-			arg1,
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
 			arg2.object()
 		);
 	}

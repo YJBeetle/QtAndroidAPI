@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JString;
 
 namespace android::os
 {
@@ -15,7 +16,7 @@ namespace android::os
 		StatFs(QJniObject obj);
 		
 		// Constructors
-		StatFs(jstring arg0);
+		StatFs(JString arg0);
 		
 		// Methods
 		jint getAvailableBlocks();
@@ -29,7 +30,7 @@ namespace android::os
 		jlong getFreeBlocksLong();
 		jlong getFreeBytes();
 		jlong getTotalBytes();
-		void restat(jstring arg0);
+		void restat(JString arg0);
 	};
 } // namespace android::os
 

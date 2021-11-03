@@ -1,8 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../view/View.hpp"
-#include "../view/ViewGroup.hpp"
 #include "./FrameLayout.hpp"
 
 namespace android::content
@@ -21,6 +18,7 @@ namespace android::view
 {
 	class View;
 }
+class JString;
 
 namespace android::widget
 {
@@ -40,7 +38,7 @@ namespace android::widget
 		
 		// Methods
 		jboolean dispatchKeyEvent(android::view::KeyEvent arg0);
-		jstring getAccessibilityClassName();
+		JString getAccessibilityClassName();
 		void hide();
 		jboolean isShowing();
 		void onFinishInflate();

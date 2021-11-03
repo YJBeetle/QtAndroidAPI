@@ -6,6 +6,7 @@ namespace android::net
 {
 	class Uri;
 }
+class JString;
 
 namespace android::provider
 {
@@ -15,10 +16,10 @@ namespace android::provider
 		// Fields
 		static android::net::Uri DELETE_USAGE_URI();
 		static android::net::Uri FEEDBACK_URI();
-		static jstring USAGE_TYPE();
-		static jstring USAGE_TYPE_CALL();
-		static jstring USAGE_TYPE_LONG_TEXT();
-		static jstring USAGE_TYPE_SHORT_TEXT();
+		static JString USAGE_TYPE();
+		static JString USAGE_TYPE_CALL();
+		static JString USAGE_TYPE_LONG_TEXT();
+		static JString USAGE_TYPE_SHORT_TEXT();
 		
 		// QJniObject forward
 		template<typename ...Ts> explicit ContactsContract_DataUsageFeedback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}

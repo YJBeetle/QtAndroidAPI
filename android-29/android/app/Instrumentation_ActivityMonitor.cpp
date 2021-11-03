@@ -2,6 +2,7 @@
 #include "./Instrumentation_ActivityResult.hpp"
 #include "../content/Intent.hpp"
 #include "../content/IntentFilter.hpp"
+#include "../../JString.hpp"
 #include "./Instrumentation_ActivityMonitor.hpp"
 
 namespace android::app
@@ -25,11 +26,11 @@ namespace android::app
 			arg1.object(),
 			arg2
 		) {}
-	Instrumentation_ActivityMonitor::Instrumentation_ActivityMonitor(jstring arg0, android::app::Instrumentation_ActivityResult arg1, jboolean arg2)
+	Instrumentation_ActivityMonitor::Instrumentation_ActivityMonitor(JString arg0, android::app::Instrumentation_ActivityResult arg1, jboolean arg2)
 		: JObject(
 			"android.app.Instrumentation$ActivityMonitor",
 			"(Ljava/lang/String;Landroid/app/Instrumentation$ActivityResult;Z)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
 			arg2
 		) {}

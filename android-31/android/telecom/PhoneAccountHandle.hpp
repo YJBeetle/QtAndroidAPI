@@ -14,6 +14,8 @@ namespace android::os
 {
 	class UserHandle;
 }
+class JObject;
+class JString;
 
 namespace android::telecom
 {
@@ -28,17 +30,17 @@ namespace android::telecom
 		PhoneAccountHandle(QJniObject obj);
 		
 		// Constructors
-		PhoneAccountHandle(android::content::ComponentName arg0, jstring arg1);
-		PhoneAccountHandle(android::content::ComponentName arg0, jstring arg1, android::os::UserHandle arg2);
+		PhoneAccountHandle(android::content::ComponentName arg0, JString arg1);
+		PhoneAccountHandle(android::content::ComponentName arg0, JString arg1, android::os::UserHandle arg2);
 		
 		// Methods
 		jint describeContents();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		android::content::ComponentName getComponentName();
-		jstring getId();
+		JString getId();
 		android::os::UserHandle getUserHandle();
 		jint hashCode();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::telecom

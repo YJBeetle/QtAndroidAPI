@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JString;
 namespace java::security
 {
 	class NoSuchAlgorithmException;
@@ -29,15 +30,15 @@ namespace java::security::cert
 		// Constructors
 		
 		// Methods
-		static jstring getDefaultType();
-		static java::security::cert::CertStore getInstance(jstring arg0, JObject arg1);
-		static java::security::cert::CertStore getInstance(jstring arg0, JObject arg1, jstring arg2);
-		static java::security::cert::CertStore getInstance(jstring arg0, JObject arg1, java::security::Provider arg2);
+		static JString getDefaultType();
+		static java::security::cert::CertStore getInstance(JString arg0, JObject arg1);
+		static java::security::cert::CertStore getInstance(JString arg0, JObject arg1, JString arg2);
+		static java::security::cert::CertStore getInstance(JString arg0, JObject arg1, java::security::Provider arg2);
 		JObject getCRLs(JObject arg0);
 		JObject getCertStoreParameters();
 		JObject getCertificates(JObject arg0);
 		java::security::Provider getProvider();
-		jstring getType();
+		JString getType();
 	};
 } // namespace java::security::cert
 

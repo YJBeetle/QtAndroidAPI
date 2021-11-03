@@ -1,4 +1,5 @@
 #include "./PrintDocumentInfo.hpp"
+#include "../../JString.hpp"
 #include "./PrintDocumentAdapter_LayoutResultCallback.hpp"
 
 namespace android::print
@@ -18,12 +19,12 @@ namespace android::print
 			"()V"
 		);
 	}
-	void PrintDocumentAdapter_LayoutResultCallback::onLayoutFailed(jstring arg0)
+	void PrintDocumentAdapter_LayoutResultCallback::onLayoutFailed(JString arg0)
 	{
 		callMethod<void>(
 			"onLayoutFailed",
 			"(Ljava/lang/CharSequence;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void PrintDocumentAdapter_LayoutResultCallback::onLayoutFinished(android::print::PrintDocumentInfo arg0, jboolean arg1)

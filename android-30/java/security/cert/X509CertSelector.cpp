@@ -1,4 +1,8 @@
+#include "../../../JByteArray.hpp"
+#include "../../../JBooleanArray.hpp"
 #include "../../lang/Boolean.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "../../math/BigInteger.hpp"
 #include "./Certificate.hpp"
 #include "./X509Certificate.hpp"
@@ -21,55 +25,55 @@ namespace java::security::cert
 		) {}
 	
 	// Methods
-	void X509CertSelector::addPathToName(jint arg0, jbyteArray arg1)
+	void X509CertSelector::addPathToName(jint arg0, JByteArray arg1)
 	{
 		callMethod<void>(
 			"addPathToName",
 			"(I[B)V",
 			arg0,
-			arg1
+			arg1.object<jbyteArray>()
 		);
 	}
-	void X509CertSelector::addPathToName(jint arg0, jstring arg1)
+	void X509CertSelector::addPathToName(jint arg0, JString arg1)
 	{
 		callMethod<void>(
 			"addPathToName",
 			"(ILjava/lang/String;)V",
 			arg0,
-			arg1
+			arg1.object<jstring>()
 		);
 	}
-	void X509CertSelector::addSubjectAlternativeName(jint arg0, jbyteArray arg1)
+	void X509CertSelector::addSubjectAlternativeName(jint arg0, JByteArray arg1)
 	{
 		callMethod<void>(
 			"addSubjectAlternativeName",
 			"(I[B)V",
 			arg0,
-			arg1
+			arg1.object<jbyteArray>()
 		);
 	}
-	void X509CertSelector::addSubjectAlternativeName(jint arg0, jstring arg1)
+	void X509CertSelector::addSubjectAlternativeName(jint arg0, JString arg1)
 	{
 		callMethod<void>(
 			"addSubjectAlternativeName",
 			"(ILjava/lang/String;)V",
 			arg0,
-			arg1
+			arg1.object<jstring>()
 		);
 	}
-	jobject X509CertSelector::clone()
+	JObject X509CertSelector::clone()
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
-	jbyteArray X509CertSelector::getAuthorityKeyIdentifier()
+	JByteArray X509CertSelector::getAuthorityKeyIdentifier()
 	{
 		return callObjectMethod(
 			"getAuthorityKeyIdentifier",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
 	jint X509CertSelector::getBasicConstraints()
 	{
@@ -106,26 +110,26 @@ namespace java::security::cert
 			"()Ljavax/security/auth/x500/X500Principal;"
 		);
 	}
-	jbyteArray X509CertSelector::getIssuerAsBytes()
+	JByteArray X509CertSelector::getIssuerAsBytes()
 	{
 		return callObjectMethod(
 			"getIssuerAsBytes",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
-	jstring X509CertSelector::getIssuerAsString()
+	JString X509CertSelector::getIssuerAsString()
 	{
 		return callObjectMethod(
 			"getIssuerAsString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jbooleanArray X509CertSelector::getKeyUsage()
+	JBooleanArray X509CertSelector::getKeyUsage()
 	{
 		return callObjectMethod(
 			"getKeyUsage",
 			"()[Z"
-		).object<jbooleanArray>();
+		);
 	}
 	jboolean X509CertSelector::getMatchAllSubjectAltNames()
 	{
@@ -134,12 +138,12 @@ namespace java::security::cert
 			"()Z"
 		);
 	}
-	jbyteArray X509CertSelector::getNameConstraints()
+	JByteArray X509CertSelector::getNameConstraints()
 	{
 		return callObjectMethod(
 			"getNameConstraints",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
 	JObject X509CertSelector::getPathToNames()
 	{
@@ -183,26 +187,26 @@ namespace java::security::cert
 			"()Ljava/util/Collection;"
 		);
 	}
-	jbyteArray X509CertSelector::getSubjectAsBytes()
+	JByteArray X509CertSelector::getSubjectAsBytes()
 	{
 		return callObjectMethod(
 			"getSubjectAsBytes",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
-	jstring X509CertSelector::getSubjectAsString()
+	JString X509CertSelector::getSubjectAsString()
 	{
 		return callObjectMethod(
 			"getSubjectAsString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jbyteArray X509CertSelector::getSubjectKeyIdentifier()
+	JByteArray X509CertSelector::getSubjectKeyIdentifier()
 	{
 		return callObjectMethod(
 			"getSubjectKeyIdentifier",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
 	JObject X509CertSelector::getSubjectPublicKey()
 	{
@@ -211,12 +215,12 @@ namespace java::security::cert
 			"()Ljava/security/PublicKey;"
 		);
 	}
-	jstring X509CertSelector::getSubjectPublicKeyAlgID()
+	JString X509CertSelector::getSubjectPublicKeyAlgID()
 	{
 		return callObjectMethod(
 			"getSubjectPublicKeyAlgID",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jboolean X509CertSelector::match(java::security::cert::Certificate arg0)
 	{
@@ -226,12 +230,12 @@ namespace java::security::cert
 			arg0.object()
 		);
 	}
-	void X509CertSelector::setAuthorityKeyIdentifier(jbyteArray arg0)
+	void X509CertSelector::setAuthorityKeyIdentifier(JByteArray arg0)
 	{
 		callMethod<void>(
 			"setAuthorityKeyIdentifier",
 			"([B)V",
-			arg0
+			arg0.object<jbyteArray>()
 		);
 	}
 	void X509CertSelector::setBasicConstraints(jint arg0)
@@ -266,20 +270,20 @@ namespace java::security::cert
 			arg0.object()
 		);
 	}
-	void X509CertSelector::setIssuer(jbyteArray arg0)
+	void X509CertSelector::setIssuer(JByteArray arg0)
 	{
 		callMethod<void>(
 			"setIssuer",
 			"([B)V",
-			arg0
+			arg0.object<jbyteArray>()
 		);
 	}
-	void X509CertSelector::setIssuer(jstring arg0)
+	void X509CertSelector::setIssuer(JString arg0)
 	{
 		callMethod<void>(
 			"setIssuer",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void X509CertSelector::setIssuer(javax::security::auth::x500::X500Principal arg0)
@@ -290,12 +294,12 @@ namespace java::security::cert
 			arg0.object()
 		);
 	}
-	void X509CertSelector::setKeyUsage(jbooleanArray arg0)
+	void X509CertSelector::setKeyUsage(JBooleanArray arg0)
 	{
 		callMethod<void>(
 			"setKeyUsage",
 			"([Z)V",
-			arg0
+			arg0.object<jbooleanArray>()
 		);
 	}
 	void X509CertSelector::setMatchAllSubjectAltNames(jboolean arg0)
@@ -306,12 +310,12 @@ namespace java::security::cert
 			arg0
 		);
 	}
-	void X509CertSelector::setNameConstraints(jbyteArray arg0)
+	void X509CertSelector::setNameConstraints(JByteArray arg0)
 	{
 		callMethod<void>(
 			"setNameConstraints",
 			"([B)V",
-			arg0
+			arg0.object<jbyteArray>()
 		);
 	}
 	void X509CertSelector::setPathToNames(JObject arg0)
@@ -346,20 +350,20 @@ namespace java::security::cert
 			arg0.object()
 		);
 	}
-	void X509CertSelector::setSubject(jbyteArray arg0)
+	void X509CertSelector::setSubject(JByteArray arg0)
 	{
 		callMethod<void>(
 			"setSubject",
 			"([B)V",
-			arg0
+			arg0.object<jbyteArray>()
 		);
 	}
-	void X509CertSelector::setSubject(jstring arg0)
+	void X509CertSelector::setSubject(JString arg0)
 	{
 		callMethod<void>(
 			"setSubject",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void X509CertSelector::setSubject(javax::security::auth::x500::X500Principal arg0)
@@ -378,20 +382,20 @@ namespace java::security::cert
 			arg0.object()
 		);
 	}
-	void X509CertSelector::setSubjectKeyIdentifier(jbyteArray arg0)
+	void X509CertSelector::setSubjectKeyIdentifier(JByteArray arg0)
 	{
 		callMethod<void>(
 			"setSubjectKeyIdentifier",
 			"([B)V",
-			arg0
+			arg0.object<jbyteArray>()
 		);
 	}
-	void X509CertSelector::setSubjectPublicKey(jbyteArray arg0)
+	void X509CertSelector::setSubjectPublicKey(JByteArray arg0)
 	{
 		callMethod<void>(
 			"setSubjectPublicKey",
 			"([B)V",
-			arg0
+			arg0.object<jbyteArray>()
 		);
 	}
 	void X509CertSelector::setSubjectPublicKey(JObject arg0)
@@ -402,20 +406,20 @@ namespace java::security::cert
 			arg0.object()
 		);
 	}
-	void X509CertSelector::setSubjectPublicKeyAlgID(jstring arg0)
+	void X509CertSelector::setSubjectPublicKeyAlgID(JString arg0)
 	{
 		callMethod<void>(
 			"setSubjectPublicKeyAlgID",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jstring X509CertSelector::toString()
+	JString X509CertSelector::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::security::cert
 

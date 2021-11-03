@@ -10,6 +10,8 @@ namespace android::telephony
 {
 	class CellIdentity;
 }
+class JObject;
+class JString;
 
 namespace android::telephony
 {
@@ -41,18 +43,18 @@ namespace android::telephony
 		
 		// Methods
 		jint describeContents();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint getAccessNetworkTechnology();
 		JObject getAvailableServices();
 		android::telephony::CellIdentity getCellIdentity();
 		jint getDomain();
-		jstring getRegisteredPlmn();
+		JString getRegisteredPlmn();
 		jint getTransportType();
 		jint hashCode();
 		jboolean isRegistered();
 		jboolean isRoaming();
 		jboolean isSearching();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::telephony

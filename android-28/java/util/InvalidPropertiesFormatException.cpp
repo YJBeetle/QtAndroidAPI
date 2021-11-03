@@ -1,5 +1,7 @@
 #include "../io/ObjectInputStream.hpp"
 #include "../io/ObjectOutputStream.hpp"
+#include "../../JString.hpp"
+#include "../../JThrowable.hpp"
 #include "./InvalidPropertiesFormatException.hpp"
 
 namespace java::util
@@ -10,17 +12,17 @@ namespace java::util
 	InvalidPropertiesFormatException::InvalidPropertiesFormatException(QJniObject obj) : java::io::IOException(obj) {}
 	
 	// Constructors
-	InvalidPropertiesFormatException::InvalidPropertiesFormatException(jstring arg0)
+	InvalidPropertiesFormatException::InvalidPropertiesFormatException(JString arg0)
 		: java::io::IOException(
 			"java.util.InvalidPropertiesFormatException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	InvalidPropertiesFormatException::InvalidPropertiesFormatException(jthrowable arg0)
+	InvalidPropertiesFormatException::InvalidPropertiesFormatException(JThrowable arg0)
 		: java::io::IOException(
 			"java.util.InvalidPropertiesFormatException",
 			"(Ljava/lang/Throwable;)V",
-			arg0
+			arg0.object<jthrowable>()
 		) {}
 	
 	// Methods

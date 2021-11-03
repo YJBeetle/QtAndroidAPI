@@ -1,3 +1,6 @@
+#include "../../JByteArray.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./DrmInfo.hpp"
 
 namespace android::drm
@@ -8,38 +11,38 @@ namespace android::drm
 	DrmInfo::DrmInfo(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	DrmInfo::DrmInfo(jint arg0, jbyteArray arg1, jstring arg2)
+	DrmInfo::DrmInfo(jint arg0, JByteArray arg1, JString arg2)
 		: JObject(
 			"android.drm.DrmInfo",
 			"(I[BLjava/lang/String;)V",
 			arg0,
-			arg1,
-			arg2
+			arg1.object<jbyteArray>(),
+			arg2.object<jstring>()
 		) {}
-	DrmInfo::DrmInfo(jint arg0, jstring arg1, jstring arg2)
+	DrmInfo::DrmInfo(jint arg0, JString arg1, JString arg2)
 		: JObject(
 			"android.drm.DrmInfo",
 			"(ILjava/lang/String;Ljava/lang/String;)V",
 			arg0,
-			arg1,
-			arg2
+			arg1.object<jstring>(),
+			arg2.object<jstring>()
 		) {}
 	
 	// Methods
-	jobject DrmInfo::get(jstring arg0)
+	JObject DrmInfo::get(JString arg0)
 	{
 		return callObjectMethod(
 			"get",
 			"(Ljava/lang/String;)Ljava/lang/Object;",
-			arg0
-		).object<jobject>();
+			arg0.object<jstring>()
+		);
 	}
-	jbyteArray DrmInfo::getData()
+	JByteArray DrmInfo::getData()
 	{
 		return callObjectMethod(
 			"getData",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
 	jint DrmInfo::getInfoType()
 	{
@@ -48,12 +51,12 @@ namespace android::drm
 			"()I"
 		);
 	}
-	jstring DrmInfo::getMimeType()
+	JString DrmInfo::getMimeType()
 	{
 		return callObjectMethod(
 			"getMimeType",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	JObject DrmInfo::iterator()
 	{
@@ -69,13 +72,13 @@ namespace android::drm
 			"()Ljava/util/Iterator;"
 		);
 	}
-	void DrmInfo::put(jstring arg0, jobject arg1)
+	void DrmInfo::put(JString arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"put",
 			"(Ljava/lang/String;Ljava/lang/Object;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jobject>()
 		);
 	}
 } // namespace android::drm

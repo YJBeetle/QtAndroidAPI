@@ -1,4 +1,6 @@
 #include "../os/Parcel.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./GnssCapabilities.hpp"
 
 namespace android::location
@@ -26,12 +28,12 @@ namespace android::location
 			"()I"
 		);
 	}
-	jboolean GnssCapabilities::equals(jobject arg0)
+	jboolean GnssCapabilities::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jboolean GnssCapabilities::hasAntennaInfo()
@@ -69,12 +71,12 @@ namespace android::location
 			"()I"
 		);
 	}
-	jstring GnssCapabilities::toString()
+	JString GnssCapabilities::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void GnssCapabilities::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

@@ -1,8 +1,9 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "../Error.hpp"
 
+class JString;
+class JThrowable;
 
 namespace java::lang::annotation
 {
@@ -16,9 +17,9 @@ namespace java::lang::annotation
 		AnnotationFormatError(QJniObject obj);
 		
 		// Constructors
-		AnnotationFormatError(jstring arg0);
-		AnnotationFormatError(jthrowable arg0);
-		AnnotationFormatError(jstring arg0, jthrowable arg1);
+		AnnotationFormatError(JString arg0);
+		AnnotationFormatError(JThrowable arg0);
+		AnnotationFormatError(JString arg0, JThrowable arg1);
 		
 		// Methods
 	};

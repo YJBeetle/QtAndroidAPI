@@ -1,4 +1,5 @@
 #include "../net/Uri.hpp"
+#include "../../JString.hpp"
 #include "./MediaStore_Files.hpp"
 
 namespace android::provider
@@ -16,22 +17,22 @@ namespace android::provider
 		) {}
 	
 	// Methods
-	android::net::Uri MediaStore_Files::getContentUri(jstring arg0)
+	android::net::Uri MediaStore_Files::getContentUri(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.provider.MediaStore$Files",
 			"getContentUri",
 			"(Ljava/lang/String;)Landroid/net/Uri;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	android::net::Uri MediaStore_Files::getContentUri(jstring arg0, jlong arg1)
+	android::net::Uri MediaStore_Files::getContentUri(JString arg0, jlong arg1)
 	{
 		return callStaticObjectMethod(
 			"android.provider.MediaStore$Files",
 			"getContentUri",
 			"(Ljava/lang/String;J)Landroid/net/Uri;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}

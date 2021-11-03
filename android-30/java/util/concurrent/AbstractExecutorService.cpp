@@ -1,3 +1,4 @@
+#include "../../../JObject.hpp"
 #include "../ArrayList.hpp"
 #include "./TimeUnit.hpp"
 #include "./AbstractExecutorService.hpp"
@@ -35,15 +36,15 @@ namespace java::util::concurrent
 			arg2.object()
 		);
 	}
-	jobject AbstractExecutorService::invokeAny(JObject arg0)
+	JObject AbstractExecutorService::invokeAny(JObject arg0)
 	{
 		return callObjectMethod(
 			"invokeAny",
 			"(Ljava/util/Collection;)Ljava/lang/Object;",
 			arg0.object()
-		).object<jobject>();
+		);
 	}
-	jobject AbstractExecutorService::invokeAny(JObject arg0, jlong arg1, java::util::concurrent::TimeUnit arg2)
+	JObject AbstractExecutorService::invokeAny(JObject arg0, jlong arg1, java::util::concurrent::TimeUnit arg2)
 	{
 		return callObjectMethod(
 			"invokeAny",
@@ -51,7 +52,7 @@ namespace java::util::concurrent
 			arg0.object(),
 			arg1,
 			arg2.object()
-		).object<jobject>();
+		);
 	}
 	JObject AbstractExecutorService::submit(JObject arg0)
 	{
@@ -61,13 +62,13 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	JObject AbstractExecutorService::submit(JObject arg0, jobject arg1)
+	JObject AbstractExecutorService::submit(JObject arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"submit",
 			"(Ljava/lang/Runnable;Ljava/lang/Object;)Ljava/util/concurrent/Future;",
 			arg0.object(),
-			arg1
+			arg1.object<jobject>()
 		);
 	}
 } // namespace java::util::concurrent

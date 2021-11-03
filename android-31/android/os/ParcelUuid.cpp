@@ -1,4 +1,6 @@
 #include "./Parcel.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "../../java/util/UUID.hpp"
 #include "./ParcelUuid.hpp"
 
@@ -26,13 +28,13 @@ namespace android::os
 		) {}
 	
 	// Methods
-	android::os::ParcelUuid ParcelUuid::fromString(jstring arg0)
+	android::os::ParcelUuid ParcelUuid::fromString(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.os.ParcelUuid",
 			"fromString",
 			"(Ljava/lang/String;)Landroid/os/ParcelUuid;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	jint ParcelUuid::describeContents()
@@ -42,12 +44,12 @@ namespace android::os
 			"()I"
 		);
 	}
-	jboolean ParcelUuid::equals(jobject arg0)
+	jboolean ParcelUuid::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	java::util::UUID ParcelUuid::getUuid()
@@ -64,12 +66,12 @@ namespace android::os
 			"()I"
 		);
 	}
-	jstring ParcelUuid::toString()
+	JString ParcelUuid::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void ParcelUuid::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

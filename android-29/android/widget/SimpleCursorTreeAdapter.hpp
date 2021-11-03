@@ -1,10 +1,9 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "./BaseExpandableListAdapter.hpp"
-#include "./CursorTreeAdapter.hpp"
 #include "./ResourceCursorTreeAdapter.hpp"
 
+class JIntArray;
+class JArray;
 namespace android::content
 {
 	class Context;
@@ -21,6 +20,7 @@ namespace android::widget
 {
 	class TextView;
 }
+class JString;
 
 namespace android::widget
 {
@@ -34,14 +34,14 @@ namespace android::widget
 		SimpleCursorTreeAdapter(QJniObject obj);
 		
 		// Constructors
-		SimpleCursorTreeAdapter(android::content::Context arg0, JObject arg1, jint arg2, jarray arg3, jintArray arg4, jint arg5, jarray arg6, jintArray arg7);
-		SimpleCursorTreeAdapter(android::content::Context arg0, JObject arg1, jint arg2, jint arg3, jarray arg4, jintArray arg5, jint arg6, jarray arg7, jintArray arg8);
-		SimpleCursorTreeAdapter(android::content::Context arg0, JObject arg1, jint arg2, jint arg3, jarray arg4, jintArray arg5, jint arg6, jint arg7, jarray arg8, jintArray arg9);
+		SimpleCursorTreeAdapter(android::content::Context arg0, JObject arg1, jint arg2, JArray arg3, JIntArray arg4, jint arg5, JArray arg6, JIntArray arg7);
+		SimpleCursorTreeAdapter(android::content::Context arg0, JObject arg1, jint arg2, jint arg3, JArray arg4, JIntArray arg5, jint arg6, JArray arg7, JIntArray arg8);
+		SimpleCursorTreeAdapter(android::content::Context arg0, JObject arg1, jint arg2, jint arg3, JArray arg4, JIntArray arg5, jint arg6, jint arg7, JArray arg8, JIntArray arg9);
 		
 		// Methods
 		JObject getViewBinder();
 		void setViewBinder(JObject arg0);
-		void setViewText(android::widget::TextView arg0, jstring arg1);
+		void setViewText(android::widget::TextView arg0, JString arg1);
 	};
 } // namespace android::widget
 

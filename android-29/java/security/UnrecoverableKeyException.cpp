@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./UnrecoverableKeyException.hpp"
 
 namespace java::security
@@ -13,11 +14,11 @@ namespace java::security
 			"java.security.UnrecoverableKeyException",
 			"()V"
 		) {}
-	UnrecoverableKeyException::UnrecoverableKeyException(jstring arg0)
+	UnrecoverableKeyException::UnrecoverableKeyException(JString arg0)
 		: java::security::UnrecoverableEntryException(
 			"java.security.UnrecoverableKeyException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

@@ -1,4 +1,7 @@
 #include "../../os/Parcel.hpp"
+#include "../../../JString.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./TranslationRequestValue.hpp"
 
 namespace android::view::translation
@@ -19,13 +22,13 @@ namespace android::view::translation
 	// Constructors
 	
 	// Methods
-	android::view::translation::TranslationRequestValue TranslationRequestValue::forText(jstring arg0)
+	android::view::translation::TranslationRequestValue TranslationRequestValue::forText(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.view.translation.TranslationRequestValue",
 			"forText",
 			"(Ljava/lang/CharSequence;)Landroid/view/translation/TranslationRequestValue;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	jint TranslationRequestValue::describeContents()
@@ -35,20 +38,20 @@ namespace android::view::translation
 			"()I"
 		);
 	}
-	jboolean TranslationRequestValue::equals(jobject arg0)
+	jboolean TranslationRequestValue::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jstring TranslationRequestValue::getText()
+	JString TranslationRequestValue::getText()
 	{
 		return callObjectMethod(
 			"getText",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	jint TranslationRequestValue::hashCode()
 	{
@@ -57,12 +60,12 @@ namespace android::view::translation
 			"()I"
 		);
 	}
-	jstring TranslationRequestValue::toString()
+	JString TranslationRequestValue::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void TranslationRequestValue::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

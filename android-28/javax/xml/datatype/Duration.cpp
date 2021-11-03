@@ -1,4 +1,6 @@
 #include "../../../java/lang/Number.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "../../../java/math/BigDecimal.hpp"
 #include "../../../java/util/Calendar.hpp"
 #include "../../../java/util/Date.hpp"
@@ -53,12 +55,12 @@ namespace javax::xml::datatype
 			arg0.object()
 		);
 	}
-	jboolean Duration::equals(jobject arg0)
+	jboolean Duration::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint Duration::getDays()
@@ -211,12 +213,12 @@ namespace javax::xml::datatype
 			arg0.object()
 		);
 	}
-	jstring Duration::toString()
+	JString Duration::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace javax::xml::datatype
 

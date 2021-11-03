@@ -1,9 +1,5 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "../../../java/text/Format.hpp"
-#include "./UFormat.hpp"
-#include "./NumberFormat.hpp"
 #include "./DecimalFormat.hpp"
 
 namespace android::icu::text
@@ -18,10 +14,12 @@ namespace android::icu::util
 {
 	class ULocale;
 }
+class JString;
 namespace java::lang
 {
 	class Number;
 }
+class JString;
 namespace java::text
 {
 	class ParsePosition;
@@ -47,8 +45,8 @@ namespace android::icu::text
 		// Methods
 		static android::icu::text::CompactDecimalFormat getInstance(android::icu::util::ULocale arg0, android::icu::text::CompactDecimalFormat_CompactStyle arg1);
 		static android::icu::text::CompactDecimalFormat getInstance(java::util::Locale arg0, android::icu::text::CompactDecimalFormat_CompactStyle arg1);
-		java::lang::Number parse(jstring arg0, java::text::ParsePosition arg1);
-		android::icu::util::CurrencyAmount parseCurrency(jstring arg0, java::text::ParsePosition arg1);
+		java::lang::Number parse(JString arg0, java::text::ParsePosition arg1);
+		android::icu::util::CurrencyAmount parseCurrency(JString arg0, java::text::ParsePosition arg1);
 	};
 } // namespace android::icu::text
 

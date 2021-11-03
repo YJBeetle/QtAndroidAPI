@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JByteArray;
 
 namespace android::media
 {
@@ -19,7 +20,7 @@ namespace android::media
 		// Constructors
 		
 		// Methods
-		jbyteArray getDescriptor();
+		JByteArray getDescriptor();
 		jint getEncapsulationType();
 		jint getStandard();
 	};

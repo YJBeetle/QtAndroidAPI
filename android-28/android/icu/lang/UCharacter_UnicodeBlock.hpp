@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "../../../java/lang/Character_Subset.hpp"
 
+class JString;
 
 namespace android::icu::lang
 {
@@ -585,7 +585,7 @@ namespace android::icu::lang
 		// Constructors
 		
 		// Methods
-		static android::icu::lang::UCharacter_UnicodeBlock forName(jstring arg0);
+		static android::icu::lang::UCharacter_UnicodeBlock forName(JString arg0);
 		static android::icu::lang::UCharacter_UnicodeBlock getInstance(jint arg0);
 		static android::icu::lang::UCharacter_UnicodeBlock of(jint arg0);
 		jint getID();

@@ -1,3 +1,5 @@
+#include "../../../JArray.hpp"
+#include "../../../JArray.hpp"
 #include "../../app/NotificationChannel.hpp"
 #include "../../app/NotificationChannelGroup.hpp"
 #include "../../content/ComponentName.hpp"
@@ -6,6 +8,7 @@
 #include "../../os/UserHandle.hpp"
 #include "./NotificationListenerService_RankingMap.hpp"
 #include "./StatusBarNotification.hpp"
+#include "../../../JString.hpp"
 #include "./NotificationListenerService.hpp"
 
 namespace android::service::notification
@@ -221,13 +224,13 @@ namespace android::service::notification
 			"REASON_USER_STOPPED"
 		);
 	}
-	jstring NotificationListenerService::SERVICE_INTERFACE()
+	JString NotificationListenerService::SERVICE_INTERFACE()
 	{
 		return getStaticObjectField(
 			"android.service.notification.NotificationListenerService",
 			"SERVICE_INTERFACE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint NotificationListenerService::SUPPRESSED_EFFECT_SCREEN_OFF()
 	{
@@ -271,30 +274,30 @@ namespace android::service::notification
 			"()V"
 		);
 	}
-	void NotificationListenerService::cancelNotification(jstring arg0)
+	void NotificationListenerService::cancelNotification(JString arg0)
 	{
 		callMethod<void>(
 			"cancelNotification",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	void NotificationListenerService::cancelNotification(jstring arg0, jstring arg1, jint arg2)
+	void NotificationListenerService::cancelNotification(JString arg0, JString arg1, jint arg2)
 	{
 		callMethod<void>(
 			"cancelNotification",
 			"(Ljava/lang/String;Ljava/lang/String;I)V",
-			arg0,
-			arg1,
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
 			arg2
 		);
 	}
-	void NotificationListenerService::cancelNotifications(jarray arg0)
+	void NotificationListenerService::cancelNotifications(JArray arg0)
 	{
 		callMethod<void>(
 			"cancelNotifications",
 			"([Ljava/lang/String;)V",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
 	void NotificationListenerService::clearRequestedListenerHints()
@@ -304,20 +307,20 @@ namespace android::service::notification
 			"()V"
 		);
 	}
-	jarray NotificationListenerService::getActiveNotifications()
+	JArray NotificationListenerService::getActiveNotifications()
 	{
 		return callObjectMethod(
 			"getActiveNotifications",
 			"()[Landroid/service/notification/StatusBarNotification;"
-		).object<jarray>();
+		);
 	}
-	jarray NotificationListenerService::getActiveNotifications(jarray arg0)
+	JArray NotificationListenerService::getActiveNotifications(JArray arg0)
 	{
 		return callObjectMethod(
 			"getActiveNotifications",
 			"([Ljava/lang/String;)[Landroid/service/notification/StatusBarNotification;",
-			arg0
-		).object<jarray>();
+			arg0.object<jarray>()
+		);
 	}
 	jint NotificationListenerService::getCurrentInterruptionFilter()
 	{
@@ -340,30 +343,30 @@ namespace android::service::notification
 			"()Landroid/service/notification/NotificationListenerService$RankingMap;"
 		);
 	}
-	JObject NotificationListenerService::getNotificationChannelGroups(jstring arg0, android::os::UserHandle arg1)
+	JObject NotificationListenerService::getNotificationChannelGroups(JString arg0, android::os::UserHandle arg1)
 	{
 		return callObjectMethod(
 			"getNotificationChannelGroups",
 			"(Ljava/lang/String;Landroid/os/UserHandle;)Ljava/util/List;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
-	JObject NotificationListenerService::getNotificationChannels(jstring arg0, android::os::UserHandle arg1)
+	JObject NotificationListenerService::getNotificationChannels(JString arg0, android::os::UserHandle arg1)
 	{
 		return callObjectMethod(
 			"getNotificationChannels",
 			"(Ljava/lang/String;Landroid/os/UserHandle;)Ljava/util/List;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
-	jarray NotificationListenerService::getSnoozedNotifications()
+	JArray NotificationListenerService::getSnoozedNotifications()
 	{
 		return callObjectMethod(
 			"getSnoozedNotifications",
 			"()[Landroid/service/notification/StatusBarNotification;"
-		).object<jarray>();
+		);
 	}
 	JObject NotificationListenerService::onBind(android::content::Intent arg0)
 	{
@@ -410,23 +413,23 @@ namespace android::service::notification
 			arg0
 		);
 	}
-	void NotificationListenerService::onNotificationChannelGroupModified(jstring arg0, android::os::UserHandle arg1, android::app::NotificationChannelGroup arg2, jint arg3)
+	void NotificationListenerService::onNotificationChannelGroupModified(JString arg0, android::os::UserHandle arg1, android::app::NotificationChannelGroup arg2, jint arg3)
 	{
 		callMethod<void>(
 			"onNotificationChannelGroupModified",
 			"(Ljava/lang/String;Landroid/os/UserHandle;Landroid/app/NotificationChannelGroup;I)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
 			arg2.object(),
 			arg3
 		);
 	}
-	void NotificationListenerService::onNotificationChannelModified(jstring arg0, android::os::UserHandle arg1, android::app::NotificationChannel arg2, jint arg3)
+	void NotificationListenerService::onNotificationChannelModified(JString arg0, android::os::UserHandle arg1, android::app::NotificationChannel arg2, jint arg3)
 	{
 		callMethod<void>(
 			"onNotificationChannelModified",
 			"(Ljava/lang/String;Landroid/os/UserHandle;Landroid/app/NotificationChannel;I)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
 			arg2.object(),
 			arg3
@@ -515,29 +518,29 @@ namespace android::service::notification
 			"()V"
 		);
 	}
-	void NotificationListenerService::setNotificationsShown(jarray arg0)
+	void NotificationListenerService::setNotificationsShown(JArray arg0)
 	{
 		callMethod<void>(
 			"setNotificationsShown",
 			"([Ljava/lang/String;)V",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
-	void NotificationListenerService::snoozeNotification(jstring arg0, jlong arg1)
+	void NotificationListenerService::snoozeNotification(JString arg0, jlong arg1)
 	{
 		callMethod<void>(
 			"snoozeNotification",
 			"(Ljava/lang/String;J)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
-	void NotificationListenerService::updateNotificationChannel(jstring arg0, android::os::UserHandle arg1, android::app::NotificationChannel arg2)
+	void NotificationListenerService::updateNotificationChannel(JString arg0, android::os::UserHandle arg1, android::app::NotificationChannel arg2)
 	{
 		callMethod<void>(
 			"updateNotificationChannel",
 			"(Ljava/lang/String;Landroid/os/UserHandle;Landroid/app/NotificationChannel;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
 			arg2.object()
 		);

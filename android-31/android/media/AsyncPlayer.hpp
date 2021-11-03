@@ -14,6 +14,7 @@ namespace android::net
 {
 	class Uri;
 }
+class JString;
 
 namespace android::media
 {
@@ -27,7 +28,7 @@ namespace android::media
 		AsyncPlayer(QJniObject obj);
 		
 		// Constructors
-		AsyncPlayer(jstring arg0);
+		AsyncPlayer(JString arg0);
 		
 		// Methods
 		void play(android::content::Context arg0, android::net::Uri arg1, jboolean arg2, android::media::AudioAttributes arg3);

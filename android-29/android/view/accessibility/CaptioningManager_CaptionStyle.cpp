@@ -1,4 +1,5 @@
 #include "../../graphics/Typeface.hpp"
+#include "../../../JString.hpp"
 #include "./CaptioningManager_CaptionStyle.hpp"
 
 namespace android::view::accessibility

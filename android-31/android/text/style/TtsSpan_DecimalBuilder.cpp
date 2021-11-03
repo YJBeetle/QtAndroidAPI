@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./TtsSpan_DecimalBuilder.hpp"
 
 namespace android::text::style
@@ -13,12 +14,12 @@ namespace android::text::style
 			"android.text.style.TtsSpan$DecimalBuilder",
 			"()V"
 		) {}
-	TtsSpan_DecimalBuilder::TtsSpan_DecimalBuilder(jstring arg0, jstring arg1)
+	TtsSpan_DecimalBuilder::TtsSpan_DecimalBuilder(JString arg0, JString arg1)
 		: android::text::style::TtsSpan_SemioticClassBuilder(
 			"android.text.style.TtsSpan$DecimalBuilder",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		) {}
 	TtsSpan_DecimalBuilder::TtsSpan_DecimalBuilder(jdouble arg0, jint arg1, jint arg2)
 		: android::text::style::TtsSpan_SemioticClassBuilder(
@@ -40,20 +41,20 @@ namespace android::text::style
 			arg2
 		);
 	}
-	android::text::style::TtsSpan_DecimalBuilder TtsSpan_DecimalBuilder::setFractionalPart(jstring arg0)
+	android::text::style::TtsSpan_DecimalBuilder TtsSpan_DecimalBuilder::setFractionalPart(JString arg0)
 	{
 		return callObjectMethod(
 			"setFractionalPart",
 			"(Ljava/lang/String;)Landroid/text/style/TtsSpan$DecimalBuilder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	android::text::style::TtsSpan_DecimalBuilder TtsSpan_DecimalBuilder::setIntegerPart(jstring arg0)
+	android::text::style::TtsSpan_DecimalBuilder TtsSpan_DecimalBuilder::setIntegerPart(JString arg0)
 	{
 		return callObjectMethod(
 			"setIntegerPart",
 			"(Ljava/lang/String;)Landroid/text/style/TtsSpan$DecimalBuilder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::text::style::TtsSpan_DecimalBuilder TtsSpan_DecimalBuilder::setIntegerPart(jlong arg0)

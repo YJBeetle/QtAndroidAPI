@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JLongArray;
 namespace android::app
 {
 	class DownloadManager_Query;
@@ -26,6 +27,7 @@ namespace java::lang
 {
 	class Long;
 }
+class JString;
 
 namespace android::app
 {
@@ -33,22 +35,22 @@ namespace android::app
 	{
 	public:
 		// Fields
-		static jstring ACTION_DOWNLOAD_COMPLETE();
-		static jstring ACTION_NOTIFICATION_CLICKED();
-		static jstring ACTION_VIEW_DOWNLOADS();
-		static jstring COLUMN_BYTES_DOWNLOADED_SO_FAR();
-		static jstring COLUMN_DESCRIPTION();
-		static jstring COLUMN_ID();
-		static jstring COLUMN_LAST_MODIFIED_TIMESTAMP();
-		static jstring COLUMN_LOCAL_FILENAME();
-		static jstring COLUMN_LOCAL_URI();
-		static jstring COLUMN_MEDIAPROVIDER_URI();
-		static jstring COLUMN_MEDIA_TYPE();
-		static jstring COLUMN_REASON();
-		static jstring COLUMN_STATUS();
-		static jstring COLUMN_TITLE();
-		static jstring COLUMN_TOTAL_SIZE_BYTES();
-		static jstring COLUMN_URI();
+		static JString ACTION_DOWNLOAD_COMPLETE();
+		static JString ACTION_NOTIFICATION_CLICKED();
+		static JString ACTION_VIEW_DOWNLOADS();
+		static JString COLUMN_BYTES_DOWNLOADED_SO_FAR();
+		static JString COLUMN_DESCRIPTION();
+		static JString COLUMN_ID();
+		static JString COLUMN_LAST_MODIFIED_TIMESTAMP();
+		static JString COLUMN_LOCAL_FILENAME();
+		static JString COLUMN_LOCAL_URI();
+		static JString COLUMN_MEDIAPROVIDER_URI();
+		static JString COLUMN_MEDIA_TYPE();
+		static JString COLUMN_REASON();
+		static JString COLUMN_STATUS();
+		static JString COLUMN_TITLE();
+		static JString COLUMN_TOTAL_SIZE_BYTES();
+		static JString COLUMN_URI();
 		static jint ERROR_CANNOT_RESUME();
 		static jint ERROR_DEVICE_NOT_FOUND();
 		static jint ERROR_FILE_ALREADY_EXISTS();
@@ -58,9 +60,9 @@ namespace android::app
 		static jint ERROR_TOO_MANY_REDIRECTS();
 		static jint ERROR_UNHANDLED_HTTP_CODE();
 		static jint ERROR_UNKNOWN();
-		static jstring EXTRA_DOWNLOAD_ID();
-		static jstring EXTRA_NOTIFICATION_CLICK_DOWNLOAD_IDS();
-		static jstring INTENT_EXTRAS_SORT_BY_SIZE();
+		static JString EXTRA_DOWNLOAD_ID();
+		static JString EXTRA_NOTIFICATION_CLICK_DOWNLOAD_IDS();
+		static JString INTENT_EXTRAS_SORT_BY_SIZE();
 		static jint PAUSED_QUEUED_FOR_WIFI();
 		static jint PAUSED_UNKNOWN();
 		static jint PAUSED_WAITING_FOR_NETWORK();
@@ -80,14 +82,14 @@ namespace android::app
 		// Methods
 		static java::lang::Long getMaxBytesOverMobile(android::content::Context arg0);
 		static java::lang::Long getRecommendedMaxBytesOverMobile(android::content::Context arg0);
-		jlong addCompletedDownload(jstring arg0, jstring arg1, jboolean arg2, jstring arg3, jstring arg4, jlong arg5, jboolean arg6);
-		jlong addCompletedDownload(jstring arg0, jstring arg1, jboolean arg2, jstring arg3, jstring arg4, jlong arg5, jboolean arg6, android::net::Uri arg7, android::net::Uri arg8);
+		jlong addCompletedDownload(JString arg0, JString arg1, jboolean arg2, JString arg3, JString arg4, jlong arg5, jboolean arg6);
+		jlong addCompletedDownload(JString arg0, JString arg1, jboolean arg2, JString arg3, JString arg4, jlong arg5, jboolean arg6, android::net::Uri arg7, android::net::Uri arg8);
 		jlong enqueue(android::app::DownloadManager_Request arg0);
-		jstring getMimeTypeForDownloadedFile(jlong arg0);
+		JString getMimeTypeForDownloadedFile(jlong arg0);
 		android::net::Uri getUriForDownloadedFile(jlong arg0);
 		android::os::ParcelFileDescriptor openDownloadedFile(jlong arg0);
 		JObject query(android::app::DownloadManager_Query arg0);
-		jint remove(jlongArray arg0);
+		jint remove(JLongArray arg0);
 	};
 } // namespace android::app
 

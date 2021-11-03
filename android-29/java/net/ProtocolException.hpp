@@ -1,9 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../lang/Exception.hpp"
 #include "../io/IOException.hpp"
 
+class JString;
 
 namespace java::net
 {
@@ -18,7 +17,7 @@ namespace java::net
 		
 		// Constructors
 		ProtocolException();
-		ProtocolException(jstring arg0);
+		ProtocolException(JString arg0);
 		
 		// Methods
 	};

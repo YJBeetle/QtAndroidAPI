@@ -1,9 +1,8 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "./TtsSpan_Builder.hpp"
 #include "./TtsSpan_SemioticClassBuilder.hpp"
 
+class JString;
 
 namespace android::text::style
 {
@@ -18,11 +17,11 @@ namespace android::text::style
 		
 		// Constructors
 		TtsSpan_OrdinalBuilder();
-		TtsSpan_OrdinalBuilder(jstring arg0);
+		TtsSpan_OrdinalBuilder(JString arg0);
 		TtsSpan_OrdinalBuilder(jlong arg0);
 		
 		// Methods
-		android::text::style::TtsSpan_OrdinalBuilder setNumber(jstring arg0);
+		android::text::style::TtsSpan_OrdinalBuilder setNumber(JString arg0);
 		android::text::style::TtsSpan_OrdinalBuilder setNumber(jlong arg0);
 	};
 } // namespace android::text::style

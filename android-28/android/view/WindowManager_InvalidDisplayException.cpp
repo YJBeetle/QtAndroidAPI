@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./WindowManager_InvalidDisplayException.hpp"
 
 namespace android::view
@@ -13,11 +14,11 @@ namespace android::view
 			"android.view.WindowManager$InvalidDisplayException",
 			"()V"
 		) {}
-	WindowManager_InvalidDisplayException::WindowManager_InvalidDisplayException(jstring arg0)
+	WindowManager_InvalidDisplayException::WindowManager_InvalidDisplayException(JString arg0)
 		: java::lang::RuntimeException(
 			"android.view.WindowManager$InvalidDisplayException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

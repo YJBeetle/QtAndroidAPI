@@ -2,14 +2,19 @@
 
 #include "../../../JObject.hpp"
 
+class JArray;
+class JArray;
 namespace java::lang
 {
 	class Boolean;
 }
+class JString;
+class JObject;
 namespace java::lang
 {
 	class RuntimeException;
 }
+class JString;
 namespace java::text
 {
 	class Format;
@@ -80,11 +85,11 @@ namespace java::time::format
 		static java::time::format::DateTimeFormatter ofLocalizedDateTime(java::time::format::FormatStyle arg0);
 		static java::time::format::DateTimeFormatter ofLocalizedDateTime(java::time::format::FormatStyle arg0, java::time::format::FormatStyle arg1);
 		static java::time::format::DateTimeFormatter ofLocalizedTime(java::time::format::FormatStyle arg0);
-		static java::time::format::DateTimeFormatter ofPattern(jstring arg0);
-		static java::time::format::DateTimeFormatter ofPattern(jstring arg0, java::util::Locale arg1);
+		static java::time::format::DateTimeFormatter ofPattern(JString arg0);
+		static java::time::format::DateTimeFormatter ofPattern(JString arg0, java::util::Locale arg1);
 		static JObject parsedExcessDays();
 		static JObject parsedLeapSecond();
-		jstring format(JObject arg0);
+		JString format(JObject arg0);
 		void formatTo(JObject arg0, JObject arg1);
 		JObject getChronology();
 		java::time::format::DecimalStyle getDecimalStyle();
@@ -93,18 +98,18 @@ namespace java::time::format
 		java::time::format::ResolverStyle getResolverStyle();
 		java::time::ZoneId getZone();
 		java::time::format::DateTimeFormatter localizedBy(java::util::Locale arg0);
-		jobject parse(jstring arg0, JObject arg1);
-		JObject parse(jstring arg0);
-		JObject parse(jstring arg0, java::text::ParsePosition arg1);
-		JObject parseBest(jstring arg0, jarray arg1);
-		JObject parseUnresolved(jstring arg0, java::text::ParsePosition arg1);
+		JObject parse(JString arg0, JObject arg1);
+		JObject parse(JString arg0);
+		JObject parse(JString arg0, java::text::ParsePosition arg1);
+		JObject parseBest(JString arg0, JArray arg1);
+		JObject parseUnresolved(JString arg0, java::text::ParsePosition arg1);
 		java::text::Format toFormat();
 		java::text::Format toFormat(JObject arg0);
-		jstring toString();
+		JString toString();
 		java::time::format::DateTimeFormatter withChronology(JObject arg0);
 		java::time::format::DateTimeFormatter withDecimalStyle(java::time::format::DecimalStyle arg0);
 		java::time::format::DateTimeFormatter withLocale(java::util::Locale arg0);
-		java::time::format::DateTimeFormatter withResolverFields(jarray arg0);
+		java::time::format::DateTimeFormatter withResolverFields(JArray arg0);
 		java::time::format::DateTimeFormatter withResolverFields(JObject arg0);
 		java::time::format::DateTimeFormatter withResolverStyle(java::time::format::ResolverStyle arg0);
 		java::time::format::DateTimeFormatter withZone(java::time::ZoneId arg0);

@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JArray;
 
 namespace android::provider
 {
@@ -21,7 +22,7 @@ namespace android::provider
 		// Constructors
 		
 		// Methods
-		jarray getFonts();
+		JArray getFonts();
 		jint getStatusCode();
 	};
 } // namespace android::provider

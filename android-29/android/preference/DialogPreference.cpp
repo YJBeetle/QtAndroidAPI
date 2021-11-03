@@ -4,6 +4,7 @@
 #include "../graphics/drawable/Drawable.hpp"
 #include "../os/Bundle.hpp"
 #include "../view/View.hpp"
+#include "../../JString.hpp"
 #include "./DialogPreference.hpp"
 
 namespace android::preference
@@ -67,33 +68,33 @@ namespace android::preference
 			"()I"
 		);
 	}
-	jstring DialogPreference::getDialogMessage()
+	JString DialogPreference::getDialogMessage()
 	{
 		return callObjectMethod(
 			"getDialogMessage",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
-	jstring DialogPreference::getDialogTitle()
+	JString DialogPreference::getDialogTitle()
 	{
 		return callObjectMethod(
 			"getDialogTitle",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
-	jstring DialogPreference::getNegativeButtonText()
+	JString DialogPreference::getNegativeButtonText()
 	{
 		return callObjectMethod(
 			"getNegativeButtonText",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
-	jstring DialogPreference::getPositiveButtonText()
+	JString DialogPreference::getPositiveButtonText()
 	{
 		return callObjectMethod(
 			"getPositiveButtonText",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	void DialogPreference::onActivityDestroy()
 	{
@@ -151,12 +152,12 @@ namespace android::preference
 			arg0
 		);
 	}
-	void DialogPreference::setDialogMessage(jstring arg0)
+	void DialogPreference::setDialogMessage(JString arg0)
 	{
 		callMethod<void>(
 			"setDialogMessage",
 			"(Ljava/lang/CharSequence;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void DialogPreference::setDialogTitle(jint arg0)
@@ -167,12 +168,12 @@ namespace android::preference
 			arg0
 		);
 	}
-	void DialogPreference::setDialogTitle(jstring arg0)
+	void DialogPreference::setDialogTitle(JString arg0)
 	{
 		callMethod<void>(
 			"setDialogTitle",
 			"(Ljava/lang/CharSequence;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void DialogPreference::setNegativeButtonText(jint arg0)
@@ -183,12 +184,12 @@ namespace android::preference
 			arg0
 		);
 	}
-	void DialogPreference::setNegativeButtonText(jstring arg0)
+	void DialogPreference::setNegativeButtonText(JString arg0)
 	{
 		callMethod<void>(
 			"setNegativeButtonText",
 			"(Ljava/lang/CharSequence;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void DialogPreference::setPositiveButtonText(jint arg0)
@@ -199,12 +200,12 @@ namespace android::preference
 			arg0
 		);
 	}
-	void DialogPreference::setPositiveButtonText(jstring arg0)
+	void DialogPreference::setPositiveButtonText(JString arg0)
 	{
 		callMethod<void>(
 			"setPositiveButtonText",
 			"(Ljava/lang/CharSequence;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 } // namespace android::preference

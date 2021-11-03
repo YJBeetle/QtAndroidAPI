@@ -1,8 +1,9 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./Permission.hpp"
 
+class JArray;
+class JArray;
 namespace java::io
 {
 	class ObjectInputStream;
@@ -11,6 +12,8 @@ namespace java::io
 {
 	class ObjectOutputStream;
 }
+class JObject;
+class JString;
 namespace java::security
 {
 	class Permission;
@@ -32,19 +35,19 @@ namespace java::security
 		UnresolvedPermission(QJniObject obj);
 		
 		// Constructors
-		UnresolvedPermission(jstring arg0, jstring arg1, jstring arg2, jarray arg3);
+		UnresolvedPermission(JString arg0, JString arg1, JString arg2, JArray arg3);
 		
 		// Methods
-		jboolean equals(jobject arg0);
-		jstring getActions();
-		jstring getUnresolvedActions();
-		jarray getUnresolvedCerts();
-		jstring getUnresolvedName();
-		jstring getUnresolvedType();
+		jboolean equals(JObject arg0);
+		JString getActions();
+		JString getUnresolvedActions();
+		JArray getUnresolvedCerts();
+		JString getUnresolvedName();
+		JString getUnresolvedType();
 		jint hashCode();
 		jboolean implies(java::security::Permission arg0);
 		java::security::PermissionCollection newPermissionCollection();
-		jstring toString();
+		JString toString();
 	};
 } // namespace java::security
 

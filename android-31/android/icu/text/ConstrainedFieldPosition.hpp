@@ -2,6 +2,9 @@
 
 #include "../../../JObject.hpp"
 
+class JClass;
+class JObject;
+class JString;
 namespace java::text
 {
 	class Format_Field;
@@ -22,18 +25,18 @@ namespace android::icu::text
 		ConstrainedFieldPosition();
 		
 		// Methods
-		void constrainClass(jclass arg0);
+		void constrainClass(JClass arg0);
 		void constrainField(java::text::Format_Field arg0);
 		java::text::Format_Field getField();
-		jobject getFieldValue();
+		JObject getFieldValue();
 		jlong getInt64IterationContext();
 		jint getLimit();
 		jint getStart();
-		jboolean matchesField(java::text::Format_Field arg0, jobject arg1);
+		jboolean matchesField(java::text::Format_Field arg0, JObject arg1);
 		void reset();
 		void setInt64IterationContext(jlong arg0);
-		void setState(java::text::Format_Field arg0, jobject arg1, jint arg2, jint arg3);
-		jstring toString();
+		void setState(java::text::Format_Field arg0, JObject arg1, jint arg2, jint arg3);
+		JString toString();
 	};
 } // namespace android::icu::text
 

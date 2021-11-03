@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JString;
 namespace java::util
 {
 	class TimeZone;
@@ -21,8 +22,8 @@ namespace android::util
 		// Constructors
 		
 		// Methods
-		static java::util::TimeZone getTimeZone(jint arg0, jboolean arg1, jlong arg2, jstring arg3);
-		static jstring getTimeZoneDatabaseVersion();
+		static java::util::TimeZone getTimeZone(jint arg0, jboolean arg1, jlong arg2, JString arg3);
+		static JString getTimeZoneDatabaseVersion();
 	};
 } // namespace android::util
 

@@ -1,8 +1,9 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "../../lang/Enum.hpp"
 
+class JArray;
+class JString;
 
 namespace java::nio::file
 {
@@ -22,8 +23,8 @@ namespace java::nio::file
 		// Constructors
 		
 		// Methods
-		static java::nio::file::FileVisitResult valueOf(jstring arg0);
-		static jarray values();
+		static java::nio::file::FileVisitResult valueOf(JString arg0);
+		static JArray values();
 	};
 } // namespace java::nio::file
 

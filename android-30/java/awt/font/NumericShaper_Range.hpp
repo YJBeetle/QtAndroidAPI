@@ -1,8 +1,9 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "../../lang/Enum.hpp"
 
+class JArray;
+class JString;
 
 namespace java::awt::font
 {
@@ -55,8 +56,8 @@ namespace java::awt::font
 		// Constructors
 		
 		// Methods
-		static java::awt::font::NumericShaper_Range valueOf(jstring arg0);
-		static jarray values();
+		static java::awt::font::NumericShaper_Range valueOf(JString arg0);
+		static JArray values();
 	};
 } // namespace java::awt::font
 

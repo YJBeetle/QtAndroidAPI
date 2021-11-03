@@ -1,6 +1,7 @@
 #include "../content/Context.hpp"
 #include "../view/View.hpp"
 #include "../view/ViewGroup_LayoutParams.hpp"
+#include "../../JString.hpp"
 #include "./ViewSwitcher.hpp"
 
 namespace android::widget
@@ -36,12 +37,12 @@ namespace android::widget
 			arg2.object()
 		);
 	}
-	jstring ViewSwitcher::getAccessibilityClassName()
+	JString ViewSwitcher::getAccessibilityClassName()
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	android::view::View ViewSwitcher::getNextView()
 	{

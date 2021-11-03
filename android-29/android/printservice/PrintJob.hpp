@@ -14,6 +14,9 @@ namespace android::printservice
 {
 	class PrintDocument;
 }
+class JString;
+class JObject;
+class JString;
 
 namespace android::printservice
 {
@@ -29,18 +32,18 @@ namespace android::printservice
 		// Constructors
 		
 		// Methods
-		jboolean block(jstring arg0);
+		jboolean block(JString arg0);
 		jboolean cancel();
 		jboolean complete();
-		jboolean equals(jobject arg0);
-		jboolean fail(jstring arg0);
-		jint getAdvancedIntOption(jstring arg0);
-		jstring getAdvancedStringOption(jstring arg0);
+		jboolean equals(JObject arg0);
+		jboolean fail(JString arg0);
+		jint getAdvancedIntOption(JString arg0);
+		JString getAdvancedStringOption(JString arg0);
 		android::printservice::PrintDocument getDocument();
 		android::print::PrintJobId getId();
 		android::print::PrintJobInfo getInfo();
-		jstring getTag();
-		jboolean hasAdvancedOption(jstring arg0);
+		JString getTag();
+		jboolean hasAdvancedOption(JString arg0);
 		jint hashCode();
 		jboolean isBlocked();
 		jboolean isCancelled();
@@ -50,8 +53,8 @@ namespace android::printservice
 		jboolean isStarted();
 		void setProgress(jfloat arg0);
 		void setStatus(jint arg0);
-		void setStatus(jstring arg0);
-		jboolean setTag(jstring arg0);
+		void setStatus(JString arg0);
+		jboolean setTag(JString arg0);
 		jboolean start();
 	};
 } // namespace android::printservice

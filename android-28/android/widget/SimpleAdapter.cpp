@@ -1,3 +1,5 @@
+#include "../../JIntArray.hpp"
+#include "../../JArray.hpp"
 #include "../content/Context.hpp"
 #include "../content/res/Resources_Theme.hpp"
 #include "../view/View.hpp"
@@ -5,6 +7,8 @@
 #include "./Filter.hpp"
 #include "./ImageView.hpp"
 #include "./TextView.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./SimpleAdapter.hpp"
 
 namespace android::widget
@@ -15,15 +19,15 @@ namespace android::widget
 	SimpleAdapter::SimpleAdapter(QJniObject obj) : android::widget::BaseAdapter(obj) {}
 	
 	// Constructors
-	SimpleAdapter::SimpleAdapter(android::content::Context arg0, JObject arg1, jint arg2, jarray arg3, jintArray arg4)
+	SimpleAdapter::SimpleAdapter(android::content::Context arg0, JObject arg1, jint arg2, JArray arg3, JIntArray arg4)
 		: android::widget::BaseAdapter(
 			"android.widget.SimpleAdapter",
 			"(Landroid/content/Context;Ljava/util/List;I[Ljava/lang/String;[I)V",
 			arg0.object(),
 			arg1.object(),
 			arg2,
-			arg3,
-			arg4
+			arg3.object<jarray>(),
+			arg4.object<jintArray>()
 		) {}
 	
 	// Methods
@@ -58,13 +62,13 @@ namespace android::widget
 			"()Landroid/widget/Filter;"
 		);
 	}
-	jobject SimpleAdapter::getItem(jint arg0)
+	JObject SimpleAdapter::getItem(jint arg0)
 	{
 		return callObjectMethod(
 			"getItem",
 			"(I)Ljava/lang/Object;",
 			arg0
-		).object<jobject>();
+		);
 	}
 	jlong SimpleAdapter::getItemId(jint arg0)
 	{
@@ -124,22 +128,22 @@ namespace android::widget
 			arg1
 		);
 	}
-	void SimpleAdapter::setViewImage(android::widget::ImageView arg0, jstring arg1)
+	void SimpleAdapter::setViewImage(android::widget::ImageView arg0, JString arg1)
 	{
 		callMethod<void>(
 			"setViewImage",
 			"(Landroid/widget/ImageView;Ljava/lang/String;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
-	void SimpleAdapter::setViewText(android::widget::TextView arg0, jstring arg1)
+	void SimpleAdapter::setViewText(android::widget::TextView arg0, JString arg1)
 	{
 		callMethod<void>(
 			"setViewText",
 			"(Landroid/widget/TextView;Ljava/lang/String;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
 } // namespace android::widget

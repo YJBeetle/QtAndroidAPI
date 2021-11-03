@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "./Reference.hpp"
 
+class JObject;
 namespace java::lang::ref
 {
 	class ReferenceQueue;
@@ -20,11 +20,11 @@ namespace java::lang::ref
 		SoftReference(QJniObject obj);
 		
 		// Constructors
-		SoftReference(jobject arg0);
-		SoftReference(jobject arg0, java::lang::ref::ReferenceQueue arg1);
+		SoftReference(JObject arg0);
+		SoftReference(JObject arg0, java::lang::ref::ReferenceQueue arg1);
 		
 		// Methods
-		jobject get();
+		JObject get();
 	};
 } // namespace java::lang::ref
 

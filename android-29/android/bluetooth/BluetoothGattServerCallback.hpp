@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JByteArray;
 namespace android::bluetooth
 {
 	class BluetoothDevice;
@@ -35,10 +36,10 @@ namespace android::bluetooth
 		
 		// Methods
 		void onCharacteristicReadRequest(android::bluetooth::BluetoothDevice arg0, jint arg1, jint arg2, android::bluetooth::BluetoothGattCharacteristic arg3);
-		void onCharacteristicWriteRequest(android::bluetooth::BluetoothDevice arg0, jint arg1, android::bluetooth::BluetoothGattCharacteristic arg2, jboolean arg3, jboolean arg4, jint arg5, jbyteArray arg6);
+		void onCharacteristicWriteRequest(android::bluetooth::BluetoothDevice arg0, jint arg1, android::bluetooth::BluetoothGattCharacteristic arg2, jboolean arg3, jboolean arg4, jint arg5, JByteArray arg6);
 		void onConnectionStateChange(android::bluetooth::BluetoothDevice arg0, jint arg1, jint arg2);
 		void onDescriptorReadRequest(android::bluetooth::BluetoothDevice arg0, jint arg1, jint arg2, android::bluetooth::BluetoothGattDescriptor arg3);
-		void onDescriptorWriteRequest(android::bluetooth::BluetoothDevice arg0, jint arg1, android::bluetooth::BluetoothGattDescriptor arg2, jboolean arg3, jboolean arg4, jint arg5, jbyteArray arg6);
+		void onDescriptorWriteRequest(android::bluetooth::BluetoothDevice arg0, jint arg1, android::bluetooth::BluetoothGattDescriptor arg2, jboolean arg3, jboolean arg4, jint arg5, JByteArray arg6);
 		void onExecuteWrite(android::bluetooth::BluetoothDevice arg0, jint arg1, jboolean arg2);
 		void onMtuChanged(android::bluetooth::BluetoothDevice arg0, jint arg1);
 		void onNotificationSent(android::bluetooth::BluetoothDevice arg0, jint arg1);

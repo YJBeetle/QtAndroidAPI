@@ -1,6 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./PathEffect.hpp"
 
 namespace android::graphics

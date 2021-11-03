@@ -2,6 +2,7 @@
 #include "../../graphics/Paint.hpp"
 #include "../../graphics/Paint_FontMetricsInt.hpp"
 #include "../TextPaint.hpp"
+#include "../../../JString.hpp"
 #include "./ReplacementSpan.hpp"
 
 namespace android::text::style
@@ -19,13 +20,13 @@ namespace android::text::style
 		) {}
 	
 	// Methods
-	void ReplacementSpan::draw(android::graphics::Canvas arg0, jstring arg1, jint arg2, jint arg3, jfloat arg4, jint arg5, jint arg6, jint arg7, android::graphics::Paint arg8)
+	void ReplacementSpan::draw(android::graphics::Canvas arg0, JString arg1, jint arg2, jint arg3, jfloat arg4, jint arg5, jint arg6, jint arg7, android::graphics::Paint arg8)
 	{
 		callMethod<void>(
 			"draw",
 			"(Landroid/graphics/Canvas;Ljava/lang/CharSequence;IIFIIILandroid/graphics/Paint;)V",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2,
 			arg3,
 			arg4,
@@ -35,13 +36,13 @@ namespace android::text::style
 			arg8.object()
 		);
 	}
-	jint ReplacementSpan::getSize(android::graphics::Paint arg0, jstring arg1, jint arg2, jint arg3, android::graphics::Paint_FontMetricsInt arg4)
+	jint ReplacementSpan::getSize(android::graphics::Paint arg0, JString arg1, jint arg2, jint arg3, android::graphics::Paint_FontMetricsInt arg4)
 	{
 		return callMethod<jint>(
 			"getSize",
 			"(Landroid/graphics/Paint;Ljava/lang/CharSequence;IILandroid/graphics/Paint$FontMetricsInt;)I",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2,
 			arg3,
 			arg4.object()

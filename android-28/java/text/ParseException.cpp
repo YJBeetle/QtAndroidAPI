@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./ParseException.hpp"
 
 namespace java::text
@@ -8,11 +9,11 @@ namespace java::text
 	ParseException::ParseException(QJniObject obj) : java::lang::Exception(obj) {}
 	
 	// Constructors
-	ParseException::ParseException(jstring arg0, jint arg1)
+	ParseException::ParseException(JString arg0, jint arg1)
 		: java::lang::Exception(
 			"java.text.ParseException",
 			"(Ljava/lang/String;I)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		) {}
 	

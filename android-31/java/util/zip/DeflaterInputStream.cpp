@@ -1,3 +1,4 @@
+#include "../../../JByteArray.hpp"
 #include "../../io/InputStream.hpp"
 #include "./Deflater.hpp"
 #include "./DeflaterInputStream.hpp"
@@ -69,12 +70,12 @@ namespace java::util::zip
 			"()I"
 		);
 	}
-	jint DeflaterInputStream::read(jbyteArray arg0, jint arg1, jint arg2)
+	jint DeflaterInputStream::read(JByteArray arg0, jint arg1, jint arg2)
 	{
 		return callMethod<jint>(
 			"read",
 			"([BII)I",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1,
 			arg2
 		);

@@ -1,3 +1,6 @@
+#include "../../../JByteArray.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "../../nio/file/attribute/FileTime.hpp"
 #include "../../time/LocalDateTime.hpp"
 #include "./ZipEntry.hpp"
@@ -24,11 +27,11 @@ namespace java::util::zip
 	ZipEntry::ZipEntry(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	ZipEntry::ZipEntry(jstring arg0)
+	ZipEntry::ZipEntry(JString arg0)
 		: JObject(
 			"java.util.zip.ZipEntry",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	ZipEntry::ZipEntry(java::util::zip::ZipEntry &arg0)
 		: JObject(
@@ -38,19 +41,19 @@ namespace java::util::zip
 		) {}
 	
 	// Methods
-	jobject ZipEntry::clone()
+	JObject ZipEntry::clone()
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
-	jstring ZipEntry::getComment()
+	JString ZipEntry::getComment()
 	{
 		return callObjectMethod(
 			"getComment",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jlong ZipEntry::getCompressedSize()
 	{
@@ -73,12 +76,12 @@ namespace java::util::zip
 			"()Ljava/nio/file/attribute/FileTime;"
 		);
 	}
-	jbyteArray ZipEntry::getExtra()
+	JByteArray ZipEntry::getExtra()
 	{
 		return callObjectMethod(
 			"getExtra",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
 	java::nio::file::attribute::FileTime ZipEntry::getLastAccessTime()
 	{
@@ -101,12 +104,12 @@ namespace java::util::zip
 			"()I"
 		);
 	}
-	jstring ZipEntry::getName()
+	JString ZipEntry::getName()
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jlong ZipEntry::getSize()
 	{
@@ -143,12 +146,12 @@ namespace java::util::zip
 			"()Z"
 		);
 	}
-	void ZipEntry::setComment(jstring arg0)
+	void ZipEntry::setComment(JString arg0)
 	{
 		callMethod<void>(
 			"setComment",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void ZipEntry::setCompressedSize(jlong arg0)
@@ -175,12 +178,12 @@ namespace java::util::zip
 			arg0.object()
 		);
 	}
-	void ZipEntry::setExtra(jbyteArray arg0)
+	void ZipEntry::setExtra(JByteArray arg0)
 	{
 		callMethod<void>(
 			"setExtra",
 			"([B)V",
-			arg0
+			arg0.object<jbyteArray>()
 		);
 	}
 	java::util::zip::ZipEntry ZipEntry::setLastAccessTime(java::nio::file::attribute::FileTime arg0)
@@ -231,12 +234,12 @@ namespace java::util::zip
 			arg0.object()
 		);
 	}
-	jstring ZipEntry::toString()
+	JString ZipEntry::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::util::zip
 

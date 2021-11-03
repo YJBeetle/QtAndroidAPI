@@ -1,17 +1,18 @@
 #include "../../content/Intent.hpp"
 #include "./SpellCheckerService_Session.hpp"
+#include "../../../JString.hpp"
 #include "./SpellCheckerService.hpp"
 
 namespace android::service::textservice
 {
 	// Fields
-	jstring SpellCheckerService::SERVICE_INTERFACE()
+	JString SpellCheckerService::SERVICE_INTERFACE()
 	{
 		return getStaticObjectField(
 			"android.service.textservice.SpellCheckerService",
 			"SERVICE_INTERFACE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QJniObject forward

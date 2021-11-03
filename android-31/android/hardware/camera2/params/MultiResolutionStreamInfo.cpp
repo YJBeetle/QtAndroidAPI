@@ -1,3 +1,5 @@
+#include "../../../../JObject.hpp"
+#include "../../../../JString.hpp"
 #include "./MultiResolutionStreamInfo.hpp"
 
 namespace android::hardware::camera2::params
@@ -8,22 +10,22 @@ namespace android::hardware::camera2::params
 	MultiResolutionStreamInfo::MultiResolutionStreamInfo(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	MultiResolutionStreamInfo::MultiResolutionStreamInfo(jint arg0, jint arg1, jstring arg2)
+	MultiResolutionStreamInfo::MultiResolutionStreamInfo(jint arg0, jint arg1, JString arg2)
 		: JObject(
 			"android.hardware.camera2.params.MultiResolutionStreamInfo",
 			"(IILjava/lang/String;)V",
 			arg0,
 			arg1,
-			arg2
+			arg2.object<jstring>()
 		) {}
 	
 	// Methods
-	jboolean MultiResolutionStreamInfo::equals(jobject arg0)
+	jboolean MultiResolutionStreamInfo::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint MultiResolutionStreamInfo::getHeight()
@@ -33,12 +35,12 @@ namespace android::hardware::camera2::params
 			"()I"
 		);
 	}
-	jstring MultiResolutionStreamInfo::getPhysicalCameraId()
+	JString MultiResolutionStreamInfo::getPhysicalCameraId()
 	{
 		return callObjectMethod(
 			"getPhysicalCameraId",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint MultiResolutionStreamInfo::getWidth()
 	{

@@ -1,3 +1,8 @@
+#include "../../JCharArray.hpp"
+#include "../../JIntArray.hpp"
+#include "../../JArray.hpp"
+#include "../../JArray.hpp"
+#include "../../JArray.hpp"
 #include "../content/Context.hpp"
 #include "../content/res/ColorStateList.hpp"
 #include "../content/res/Configuration.hpp"
@@ -30,6 +35,8 @@
 #include "../view/inputmethod/ExtractedTextRequest.hpp"
 #include "./Scroller.hpp"
 #include "./TextView_BufferType.hpp"
+#include "../../JString.hpp"
+#include "../../JString.hpp"
 #include "../../java/util/ArrayList.hpp"
 #include "../../java/util/Locale.hpp"
 #include "./TextView.hpp"
@@ -88,13 +95,13 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	void TextView::addExtraDataToAccessibilityNodeInfo(android::view::accessibility::AccessibilityNodeInfo arg0, jstring arg1, android::os::Bundle arg2)
+	void TextView::addExtraDataToAccessibilityNodeInfo(android::view::accessibility::AccessibilityNodeInfo arg0, JString arg1, android::os::Bundle arg2)
 	{
 		callMethod<void>(
 			"addExtraDataToAccessibilityNodeInfo",
 			"(Landroid/view/accessibility/AccessibilityNodeInfo;Ljava/lang/String;Landroid/os/Bundle;)V",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2.object()
 		);
 	}
@@ -106,20 +113,20 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void TextView::append(jstring arg0)
+	void TextView::append(JString arg0)
 	{
 		callMethod<void>(
 			"append",
 			"(Ljava/lang/CharSequence;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	void TextView::append(jstring arg0, jint arg1, jint arg2)
+	void TextView::append(JString arg0, jint arg1, jint arg2)
 	{
 		callMethod<void>(
 			"append",
 			"(Ljava/lang/CharSequence;II)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
 			arg2
 		);
@@ -208,22 +215,22 @@ namespace android::widget
 			arg1.object()
 		);
 	}
-	void TextView::findViewsWithText(java::util::ArrayList arg0, jstring arg1, jint arg2)
+	void TextView::findViewsWithText(java::util::ArrayList arg0, JString arg1, jint arg2)
 	{
 		callMethod<void>(
 			"findViewsWithText",
 			"(Ljava/util/ArrayList;Ljava/lang/CharSequence;I)V",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2
 		);
 	}
-	jstring TextView::getAccessibilityClassName()
+	JString TextView::getAccessibilityClassName()
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	jint TextView::getAutoLinkMask()
 	{
@@ -253,12 +260,12 @@ namespace android::widget
 			"()I"
 		);
 	}
-	jintArray TextView::getAutoSizeTextAvailableSizes()
+	JIntArray TextView::getAutoSizeTextAvailableSizes()
 	{
 		return callObjectMethod(
 			"getAutoSizeTextAvailableSizes",
 			"()[I"
-		).object<jintArray>();
+		);
 	}
 	jint TextView::getAutoSizeTextType()
 	{
@@ -316,19 +323,19 @@ namespace android::widget
 			"()Landroid/graphics/PorterDuff$Mode;"
 		);
 	}
-	jarray TextView::getCompoundDrawables()
+	JArray TextView::getCompoundDrawables()
 	{
 		return callObjectMethod(
 			"getCompoundDrawables",
 			"()[Landroid/graphics/drawable/Drawable;"
-		).object<jarray>();
+		);
 	}
-	jarray TextView::getCompoundDrawablesRelative()
+	JArray TextView::getCompoundDrawablesRelative()
 	{
 		return callObjectMethod(
 			"getCompoundDrawablesRelative",
 			"()[Landroid/graphics/drawable/Drawable;"
-		).object<jarray>();
+		);
 	}
 	jint TextView::getCompoundPaddingBottom()
 	{
@@ -414,12 +421,12 @@ namespace android::widget
 			"()Landroid/text/TextUtils$TruncateAt;"
 		);
 	}
-	jstring TextView::getError()
+	JString TextView::getError()
 	{
 		return callObjectMethod(
 			"getError",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	jint TextView::getExtendedPaddingBottom()
 	{
@@ -435,12 +442,12 @@ namespace android::widget
 			"()I"
 		);
 	}
-	jarray TextView::getFilters()
+	JArray TextView::getFilters()
 	{
 		return callObjectMethod(
 			"getFilters",
 			"()[Landroid/text/InputFilter;"
-		).object<jarray>();
+		);
 	}
 	jint TextView::getFirstBaselineToTopHeight()
 	{
@@ -457,19 +464,19 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	jstring TextView::getFontFeatureSettings()
+	JString TextView::getFontFeatureSettings()
 	{
 		return callObjectMethod(
 			"getFontFeatureSettings",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TextView::getFontVariationSettings()
+	JString TextView::getFontVariationSettings()
 	{
 		return callObjectMethod(
 			"getFontVariationSettings",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jboolean TextView::getFreezesText()
 	{
@@ -492,12 +499,12 @@ namespace android::widget
 			"()I"
 		);
 	}
-	jstring TextView::getHint()
+	JString TextView::getHint()
 	{
 		return callObjectMethod(
 			"getHint",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	android::content::res::ColorStateList TextView::getHintTextColors()
 	{
@@ -520,12 +527,12 @@ namespace android::widget
 			"()I"
 		);
 	}
-	jstring TextView::getImeActionLabel()
+	JString TextView::getImeActionLabel()
 	{
 		return callObjectMethod(
 			"getImeActionLabel",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	android::os::LocaleList TextView::getImeHintLocales()
 	{
@@ -742,12 +749,12 @@ namespace android::widget
 			"()I"
 		);
 	}
-	jstring TextView::getPrivateImeOptions()
+	JString TextView::getPrivateImeOptions()
 	{
 		return callObjectMethod(
 			"getPrivateImeOptions",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint TextView::getSelectionEnd()
 	{
@@ -798,12 +805,12 @@ namespace android::widget
 			"()Z"
 		);
 	}
-	jstring TextView::getText()
+	JString TextView::getText()
 	{
 		return callObjectMethod(
 			"getText",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	JObject TextView::getTextClassifier()
 	{
@@ -910,12 +917,12 @@ namespace android::widget
 			"()Landroid/graphics/Typeface;"
 		);
 	}
-	jarray TextView::getUrls()
+	JArray TextView::getUrls()
 	{
 		return callObjectMethod(
 			"getUrls",
 			"()[Landroid/text/style/URLSpan;"
-		).object<jarray>();
+		);
 	}
 	jboolean TextView::hasOverlappingRendering()
 	{
@@ -1131,12 +1138,12 @@ namespace android::widget
 			"()Z"
 		);
 	}
-	jboolean TextView::onPrivateIMECommand(jstring arg0, android::os::Bundle arg1)
+	jboolean TextView::onPrivateIMECommand(JString arg0, android::os::Bundle arg1)
 	{
 		return callMethod<jboolean>(
 			"onPrivateIMECommand",
 			"(Ljava/lang/String;Landroid/os/Bundle;)Z",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
@@ -1279,12 +1286,12 @@ namespace android::widget
 			arg3
 		);
 	}
-	void TextView::setAutoSizeTextTypeUniformWithPresetSizes(jintArray arg0, jint arg1)
+	void TextView::setAutoSizeTextTypeUniformWithPresetSizes(JIntArray arg0, jint arg1)
 	{
 		callMethod<void>(
 			"setAutoSizeTextTypeUniformWithPresetSizes",
 			"([II)V",
-			arg0,
+			arg0.object<jintArray>(),
 			arg1
 		);
 	}
@@ -1458,20 +1465,20 @@ namespace android::widget
 			arg0
 		);
 	}
-	void TextView::setError(jstring arg0)
+	void TextView::setError(JString arg0)
 	{
 		callMethod<void>(
 			"setError",
 			"(Ljava/lang/CharSequence;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	void TextView::setError(jstring arg0, android::graphics::drawable::Drawable arg1)
+	void TextView::setError(JString arg0, android::graphics::drawable::Drawable arg1)
 	{
 		callMethod<void>(
 			"setError",
 			"(Ljava/lang/CharSequence;Landroid/graphics/drawable/Drawable;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
@@ -1491,12 +1498,12 @@ namespace android::widget
 			arg0
 		);
 	}
-	void TextView::setFilters(jarray arg0)
+	void TextView::setFilters(JArray arg0)
 	{
 		callMethod<void>(
 			"setFilters",
 			"([Landroid/text/InputFilter;)V",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
 	void TextView::setFirstBaselineToTopHeight(jint arg0)
@@ -1507,20 +1514,20 @@ namespace android::widget
 			arg0
 		);
 	}
-	void TextView::setFontFeatureSettings(jstring arg0)
+	void TextView::setFontFeatureSettings(JString arg0)
 	{
 		callMethod<void>(
 			"setFontFeatureSettings",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jboolean TextView::setFontVariationSettings(jstring arg0)
+	jboolean TextView::setFontVariationSettings(JString arg0)
 	{
 		return callMethod<jboolean>(
 			"setFontVariationSettings",
 			"(Ljava/lang/String;)Z",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void TextView::setFreezesText(jboolean arg0)
@@ -1563,12 +1570,12 @@ namespace android::widget
 			arg0
 		);
 	}
-	void TextView::setHint(jstring arg0)
+	void TextView::setHint(JString arg0)
 	{
 		callMethod<void>(
 			"setHint",
 			"(Ljava/lang/CharSequence;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void TextView::setHintTextColor(android::content::res::ColorStateList arg0)
@@ -1603,12 +1610,12 @@ namespace android::widget
 			arg0
 		);
 	}
-	void TextView::setImeActionLabel(jstring arg0, jint arg1)
+	void TextView::setImeActionLabel(JString arg0, jint arg1)
 	{
 		callMethod<void>(
 			"setImeActionLabel",
 			"(Ljava/lang/CharSequence;I)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
@@ -1851,12 +1858,12 @@ namespace android::widget
 			arg0
 		);
 	}
-	void TextView::setPrivateImeOptions(jstring arg0)
+	void TextView::setPrivateImeOptions(JString arg0)
 	{
 		callMethod<void>(
 			"setPrivateImeOptions",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void TextView::setRawInputType(jint arg0)
@@ -1941,12 +1948,12 @@ namespace android::widget
 			arg0
 		);
 	}
-	void TextView::setText(jstring arg0)
+	void TextView::setText(JString arg0)
 	{
 		callMethod<void>(
 			"setText",
 			"(Ljava/lang/CharSequence;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void TextView::setText(jint arg0, android::widget::TextView_BufferType arg1)
@@ -1958,21 +1965,21 @@ namespace android::widget
 			arg1.object()
 		);
 	}
-	void TextView::setText(jstring arg0, android::widget::TextView_BufferType arg1)
+	void TextView::setText(JString arg0, android::widget::TextView_BufferType arg1)
 	{
 		callMethod<void>(
 			"setText",
 			"(Ljava/lang/CharSequence;Landroid/widget/TextView$BufferType;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
-	void TextView::setText(jcharArray arg0, jint arg1, jint arg2)
+	void TextView::setText(JCharArray arg0, jint arg1, jint arg2)
 	{
 		callMethod<void>(
 			"setText",
 			"([CII)V",
-			arg0,
+			arg0.object<jcharArray>(),
 			arg1,
 			arg2
 		);
@@ -2026,20 +2033,20 @@ namespace android::widget
 			arg0
 		);
 	}
-	void TextView::setTextKeepState(jstring arg0)
+	void TextView::setTextKeepState(JString arg0)
 	{
 		callMethod<void>(
 			"setTextKeepState",
 			"(Ljava/lang/CharSequence;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	void TextView::setTextKeepState(jstring arg0, android::widget::TextView_BufferType arg1)
+	void TextView::setTextKeepState(JString arg0, android::widget::TextView_BufferType arg1)
 	{
 		callMethod<void>(
 			"setTextKeepState",
 			"(Ljava/lang/CharSequence;Landroid/widget/TextView$BufferType;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}

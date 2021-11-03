@@ -1,6 +1,8 @@
 #include "./TextKeyListener_Capitalize.hpp"
 #include "../../view/KeyEvent.hpp"
 #include "../../view/View.hpp"
+#include "../../../JString.hpp"
+#include "../../../JObject.hpp"
 #include "./TextKeyListener.hpp"
 
 namespace android::text::method
@@ -47,14 +49,14 @@ namespace android::text::method
 			arg1.object()
 		);
 	}
-	jboolean TextKeyListener::shouldCap(android::text::method::TextKeyListener_Capitalize arg0, jstring arg1, jint arg2)
+	jboolean TextKeyListener::shouldCap(android::text::method::TextKeyListener_Capitalize arg0, JString arg1, jint arg2)
 	{
 		return callStaticMethod<jboolean>(
 			"android.text.method.TextKeyListener",
 			"shouldCap",
 			"(Landroid/text/method/TextKeyListener$Capitalize;Ljava/lang/CharSequence;I)Z",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2
 		);
 	}
@@ -97,37 +99,37 @@ namespace android::text::method
 			arg3.object()
 		);
 	}
-	void TextKeyListener::onSpanAdded(JObject arg0, jobject arg1, jint arg2, jint arg3)
+	void TextKeyListener::onSpanAdded(JObject arg0, JObject arg1, jint arg2, jint arg3)
 	{
 		callMethod<void>(
 			"onSpanAdded",
 			"(Landroid/text/Spannable;Ljava/lang/Object;II)V",
 			arg0.object(),
-			arg1,
+			arg1.object<jobject>(),
 			arg2,
 			arg3
 		);
 	}
-	void TextKeyListener::onSpanChanged(JObject arg0, jobject arg1, jint arg2, jint arg3, jint arg4, jint arg5)
+	void TextKeyListener::onSpanChanged(JObject arg0, JObject arg1, jint arg2, jint arg3, jint arg4, jint arg5)
 	{
 		callMethod<void>(
 			"onSpanChanged",
 			"(Landroid/text/Spannable;Ljava/lang/Object;IIII)V",
 			arg0.object(),
-			arg1,
+			arg1.object<jobject>(),
 			arg2,
 			arg3,
 			arg4,
 			arg5
 		);
 	}
-	void TextKeyListener::onSpanRemoved(JObject arg0, jobject arg1, jint arg2, jint arg3)
+	void TextKeyListener::onSpanRemoved(JObject arg0, JObject arg1, jint arg2, jint arg3)
 	{
 		callMethod<void>(
 			"onSpanRemoved",
 			"(Landroid/text/Spannable;Ljava/lang/Object;II)V",
 			arg0.object(),
-			arg1,
+			arg1.object<jobject>(),
 			arg2,
 			arg3
 		);

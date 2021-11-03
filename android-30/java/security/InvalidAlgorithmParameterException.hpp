@@ -1,9 +1,9 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../lang/Exception.hpp"
 #include "./GeneralSecurityException.hpp"
 
+class JString;
+class JThrowable;
 
 namespace java::security
 {
@@ -18,9 +18,9 @@ namespace java::security
 		
 		// Constructors
 		InvalidAlgorithmParameterException();
-		InvalidAlgorithmParameterException(jstring arg0);
-		InvalidAlgorithmParameterException(jthrowable arg0);
-		InvalidAlgorithmParameterException(jstring arg0, jthrowable arg1);
+		InvalidAlgorithmParameterException(JString arg0);
+		InvalidAlgorithmParameterException(JThrowable arg0);
+		InvalidAlgorithmParameterException(JString arg0, JThrowable arg1);
 		
 		// Methods
 	};

@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JArray;
 namespace android::content
 {
 	class ContentResolver;
@@ -14,6 +15,7 @@ namespace android::net
 {
 	class Uri;
 }
+class JString;
 
 namespace android::provider
 {
@@ -21,8 +23,8 @@ namespace android::provider
 	{
 	public:
 		// Fields
-		static jstring CONTENT_TYPE();
-		static jstring DEFAULT_SORT_ORDER();
+		static JString CONTENT_TYPE();
+		static JString DEFAULT_SORT_ORDER();
 		static android::net::Uri EXTERNAL_CONTENT_URI();
 		static android::net::Uri INTERNAL_CONTENT_URI();
 		
@@ -35,13 +37,13 @@ namespace android::provider
 		
 		// Methods
 		static android::graphics::Bitmap getBitmap(android::content::ContentResolver arg0, android::net::Uri arg1);
-		static android::net::Uri getContentUri(jstring arg0);
-		static android::net::Uri getContentUri(jstring arg0, jlong arg1);
-		static jstring insertImage(android::content::ContentResolver arg0, android::graphics::Bitmap arg1, jstring arg2, jstring arg3);
-		static jstring insertImage(android::content::ContentResolver arg0, jstring arg1, jstring arg2, jstring arg3);
-		static JObject query(android::content::ContentResolver arg0, android::net::Uri arg1, jarray arg2);
-		static JObject query(android::content::ContentResolver arg0, android::net::Uri arg1, jarray arg2, jstring arg3, jstring arg4);
-		static JObject query(android::content::ContentResolver arg0, android::net::Uri arg1, jarray arg2, jstring arg3, jarray arg4, jstring arg5);
+		static android::net::Uri getContentUri(JString arg0);
+		static android::net::Uri getContentUri(JString arg0, jlong arg1);
+		static JString insertImage(android::content::ContentResolver arg0, android::graphics::Bitmap arg1, JString arg2, JString arg3);
+		static JString insertImage(android::content::ContentResolver arg0, JString arg1, JString arg2, JString arg3);
+		static JObject query(android::content::ContentResolver arg0, android::net::Uri arg1, JArray arg2);
+		static JObject query(android::content::ContentResolver arg0, android::net::Uri arg1, JArray arg2, JString arg3, JString arg4);
+		static JObject query(android::content::ContentResolver arg0, android::net::Uri arg1, JArray arg2, JString arg3, JArray arg4, JString arg5);
 	};
 } // namespace android::provider
 

@@ -1,6 +1,8 @@
 #include "./Person.hpp"
 #include "../net/Uri.hpp"
 #include "../os/Bundle.hpp"
+#include "../../JString.hpp"
+#include "../../JString.hpp"
 #include "./Notification_MessagingStyle_Message.hpp"
 
 namespace android::app
@@ -11,30 +13,30 @@ namespace android::app
 	Notification_MessagingStyle_Message::Notification_MessagingStyle_Message(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	Notification_MessagingStyle_Message::Notification_MessagingStyle_Message(jstring arg0, jlong arg1, android::app::Person arg2)
+	Notification_MessagingStyle_Message::Notification_MessagingStyle_Message(JString arg0, jlong arg1, android::app::Person arg2)
 		: JObject(
 			"android.app.Notification$MessagingStyle$Message",
 			"(Ljava/lang/CharSequence;JLandroid/app/Person;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
 			arg2.object()
 		) {}
-	Notification_MessagingStyle_Message::Notification_MessagingStyle_Message(jstring arg0, jlong arg1, jstring arg2)
+	Notification_MessagingStyle_Message::Notification_MessagingStyle_Message(JString arg0, jlong arg1, JString arg2)
 		: JObject(
 			"android.app.Notification$MessagingStyle$Message",
 			"(Ljava/lang/CharSequence;JLjava/lang/CharSequence;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
-			arg2
+			arg2.object<jstring>()
 		) {}
 	
 	// Methods
-	jstring Notification_MessagingStyle_Message::getDataMimeType()
+	JString Notification_MessagingStyle_Message::getDataMimeType()
 	{
 		return callObjectMethod(
 			"getDataMimeType",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::net::Uri Notification_MessagingStyle_Message::getDataUri()
 	{
@@ -50,12 +52,12 @@ namespace android::app
 			"()Landroid/os/Bundle;"
 		);
 	}
-	jstring Notification_MessagingStyle_Message::getSender()
+	JString Notification_MessagingStyle_Message::getSender()
 	{
 		return callObjectMethod(
 			"getSender",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	android::app::Person Notification_MessagingStyle_Message::getSenderPerson()
 	{
@@ -64,12 +66,12 @@ namespace android::app
 			"()Landroid/app/Person;"
 		);
 	}
-	jstring Notification_MessagingStyle_Message::getText()
+	JString Notification_MessagingStyle_Message::getText()
 	{
 		return callObjectMethod(
 			"getText",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	jlong Notification_MessagingStyle_Message::getTimestamp()
 	{
@@ -78,12 +80,12 @@ namespace android::app
 			"()J"
 		);
 	}
-	android::app::Notification_MessagingStyle_Message Notification_MessagingStyle_Message::setData(jstring arg0, android::net::Uri arg1)
+	android::app::Notification_MessagingStyle_Message Notification_MessagingStyle_Message::setData(JString arg0, android::net::Uri arg1)
 	{
 		return callObjectMethod(
 			"setData",
 			"(Ljava/lang/String;Landroid/net/Uri;)Landroid/app/Notification$MessagingStyle$Message;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}

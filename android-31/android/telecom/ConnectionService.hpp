@@ -1,8 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../content/Context.hpp"
-#include "../content/ContextWrapper.hpp"
 #include "../app/Service.hpp"
 
 namespace android::content
@@ -33,6 +30,7 @@ namespace android::telecom
 {
 	class RemoteConnection;
 }
+class JString;
 
 namespace android::telecom
 {
@@ -40,7 +38,7 @@ namespace android::telecom
 	{
 	public:
 		// Fields
-		static jstring SERVICE_INTERFACE();
+		static JString SERVICE_INTERFACE();
 		
 		// QJniObject forward
 		template<typename ...Ts> explicit ConnectionService(const char *className, const char *sig, Ts...agv) : android::app::Service(className, sig, std::forward<Ts>(agv)...) {}

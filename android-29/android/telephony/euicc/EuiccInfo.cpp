@@ -1,4 +1,5 @@
 #include "../../os/Parcel.hpp"
+#include "../../../JString.hpp"
 #include "./EuiccInfo.hpp"
 
 namespace android::telephony::euicc
@@ -17,11 +18,11 @@ namespace android::telephony::euicc
 	EuiccInfo::EuiccInfo(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	EuiccInfo::EuiccInfo(jstring arg0)
+	EuiccInfo::EuiccInfo(JString arg0)
 		: JObject(
 			"android.telephony.euicc.EuiccInfo",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods
@@ -32,12 +33,12 @@ namespace android::telephony::euicc
 			"()I"
 		);
 	}
-	jstring EuiccInfo::getOsVersion()
+	JString EuiccInfo::getOsVersion()
 	{
 		return callObjectMethod(
 			"getOsVersion",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void EuiccInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

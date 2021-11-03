@@ -1,9 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../content/Context.hpp"
-#include "../content/ContextWrapper.hpp"
-#include "../view/ContextThemeWrapper.hpp"
 #include "../app/Activity.hpp"
 
 namespace android::os

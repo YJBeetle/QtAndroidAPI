@@ -4,6 +4,8 @@
 #include "../../graphics/drawable/Drawable.hpp"
 #include "../../os/Parcel.hpp"
 #include "./SpellCheckerSubtype.hpp"
+#include "../../../JString.hpp"
+#include "../../../JString.hpp"
 #include "./SpellCheckerInfo.hpp"
 
 namespace android::view::textservice
@@ -38,19 +40,19 @@ namespace android::view::textservice
 			"()Landroid/content/ComponentName;"
 		);
 	}
-	jstring SpellCheckerInfo::getId()
+	JString SpellCheckerInfo::getId()
 	{
 		return callObjectMethod(
 			"getId",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring SpellCheckerInfo::getPackageName()
+	JString SpellCheckerInfo::getPackageName()
 	{
 		return callObjectMethod(
 			"getPackageName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::content::pm::ServiceInfo SpellCheckerInfo::getServiceInfo()
 	{
@@ -59,12 +61,12 @@ namespace android::view::textservice
 			"()Landroid/content/pm/ServiceInfo;"
 		);
 	}
-	jstring SpellCheckerInfo::getSettingsActivity()
+	JString SpellCheckerInfo::getSettingsActivity()
 	{
 		return callObjectMethod(
 			"getSettingsActivity",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::view::textservice::SpellCheckerSubtype SpellCheckerInfo::getSubtypeAt(jint arg0)
 	{
@@ -89,13 +91,13 @@ namespace android::view::textservice
 			arg0.object()
 		);
 	}
-	jstring SpellCheckerInfo::loadLabel(android::content::pm::PackageManager arg0)
+	JString SpellCheckerInfo::loadLabel(android::content::pm::PackageManager arg0)
 	{
 		return callObjectMethod(
 			"loadLabel",
 			"(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;",
 			arg0.object()
-		).object<jstring>();
+		);
 	}
 	void SpellCheckerInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

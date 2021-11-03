@@ -1,3 +1,5 @@
+#include "../../JString.hpp"
+#include "../../JString.hpp"
 #include "./NumberFormatException.hpp"
 
 namespace java::lang
@@ -13,11 +15,11 @@ namespace java::lang
 			"java.lang.NumberFormatException",
 			"()V"
 		) {}
-	NumberFormatException::NumberFormatException(jstring arg0)
+	NumberFormatException::NumberFormatException(JString arg0)
 		: java::lang::IllegalArgumentException(
 			"java.lang.NumberFormatException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

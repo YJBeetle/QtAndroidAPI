@@ -6,6 +6,7 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
 
 namespace android::telecom
 {
@@ -39,11 +40,11 @@ namespace android::telecom
 		static jboolean isReceptionEnabled(jint arg0);
 		static jboolean isTransmissionEnabled(jint arg0);
 		static jboolean isVideo(jint arg0);
-		static jstring videoStateToString(jint arg0);
+		static JString videoStateToString(jint arg0);
 		jint describeContents();
 		jint getQuality();
 		jint getVideoState();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::telecom

@@ -2,10 +2,13 @@
 
 #include "../../JObject.hpp"
 
+class JClass;
 namespace java::lang
 {
 	class ClassLoader;
 }
+class JString;
+class JThrowable;
 namespace java::lang
 {
 	class Void;
@@ -45,15 +48,15 @@ namespace java::util
 		// Constructors
 		
 		// Methods
-		static java::util::ServiceLoader load(jclass arg0);
-		static java::util::ServiceLoader load(jclass arg0, java::lang::ClassLoader arg1);
-		static java::util::ServiceLoader load(JObject arg0, jclass arg1);
-		static java::util::ServiceLoader loadInstalled(jclass arg0);
+		static java::util::ServiceLoader load(JClass arg0);
+		static java::util::ServiceLoader load(JClass arg0, java::lang::ClassLoader arg1);
+		static java::util::ServiceLoader load(JObject arg0, JClass arg1);
+		static java::util::ServiceLoader loadInstalled(JClass arg0);
 		java::util::Optional findFirst();
 		JObject iterator();
 		void reload();
 		JObject stream();
-		jstring toString();
+		JString toString();
 	};
 } // namespace java::util
 

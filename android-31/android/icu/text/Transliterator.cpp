@@ -1,7 +1,9 @@
+#include "../../../JArray.hpp"
 #include "./Transliterator_Position.hpp"
 #include "./UnicodeFilter.hpp"
 #include "./UnicodeSet.hpp"
 #include "../util/ULocale.hpp"
+#include "../../../JString.hpp"
 #include "../../../java/util/Locale.hpp"
 #include "./Transliterator.hpp"
 
@@ -29,14 +31,14 @@ namespace android::icu::text
 	// Constructors
 	
 	// Methods
-	android::icu::text::Transliterator Transliterator::createFromRules(jstring arg0, jstring arg1, jint arg2)
+	android::icu::text::Transliterator Transliterator::createFromRules(JString arg0, JString arg1, jint arg2)
 	{
 		return callStaticObjectMethod(
 			"android.icu.text.Transliterator",
 			"createFromRules",
 			"(Ljava/lang/String;Ljava/lang/String;I)Landroid/icu/text/Transliterator;",
-			arg0,
-			arg1,
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
 			arg2
 		);
 	}
@@ -56,70 +58,70 @@ namespace android::icu::text
 			"()Ljava/util/Enumeration;"
 		);
 	}
-	JObject Transliterator::getAvailableTargets(jstring arg0)
+	JObject Transliterator::getAvailableTargets(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.icu.text.Transliterator",
 			"getAvailableTargets",
 			"(Ljava/lang/String;)Ljava/util/Enumeration;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	JObject Transliterator::getAvailableVariants(jstring arg0, jstring arg1)
+	JObject Transliterator::getAvailableVariants(JString arg0, JString arg1)
 	{
 		return callStaticObjectMethod(
 			"android.icu.text.Transliterator",
 			"getAvailableVariants",
 			"(Ljava/lang/String;Ljava/lang/String;)Ljava/util/Enumeration;",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		);
 	}
-	jstring Transliterator::getDisplayName(jstring arg0)
+	JString Transliterator::getDisplayName(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.icu.text.Transliterator",
 			"getDisplayName",
 			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
+			arg0.object<jstring>()
+		);
 	}
-	jstring Transliterator::getDisplayName(jstring arg0, android::icu::util::ULocale arg1)
+	JString Transliterator::getDisplayName(JString arg0, android::icu::util::ULocale arg1)
 	{
 		return callStaticObjectMethod(
 			"android.icu.text.Transliterator",
 			"getDisplayName",
 			"(Ljava/lang/String;Landroid/icu/util/ULocale;)Ljava/lang/String;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
-		).object<jstring>();
+		);
 	}
-	jstring Transliterator::getDisplayName(jstring arg0, java::util::Locale arg1)
+	JString Transliterator::getDisplayName(JString arg0, java::util::Locale arg1)
 	{
 		return callStaticObjectMethod(
 			"android.icu.text.Transliterator",
 			"getDisplayName",
 			"(Ljava/lang/String;Ljava/util/Locale;)Ljava/lang/String;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
-		).object<jstring>();
+		);
 	}
-	android::icu::text::Transliterator Transliterator::getInstance(jstring arg0)
+	android::icu::text::Transliterator Transliterator::getInstance(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.icu.text.Transliterator",
 			"getInstance",
 			"(Ljava/lang/String;)Landroid/icu/text/Transliterator;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	android::icu::text::Transliterator Transliterator::getInstance(jstring arg0, jint arg1)
+	android::icu::text::Transliterator Transliterator::getInstance(JString arg0, jint arg1)
 	{
 		return callStaticObjectMethod(
 			"android.icu.text.Transliterator",
 			"getInstance",
 			"(Ljava/lang/String;I)Landroid/icu/text/Transliterator;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
@@ -142,12 +144,12 @@ namespace android::icu::text
 			arg1.object()
 		);
 	}
-	jarray Transliterator::getElements()
+	JArray Transliterator::getElements()
 	{
 		return callObjectMethod(
 			"getElements",
 			"()[Landroid/icu/text/Transliterator;"
-		).object<jarray>();
+		);
 	}
 	android::icu::text::UnicodeFilter Transliterator::getFilter()
 	{
@@ -156,12 +158,12 @@ namespace android::icu::text
 			"()Landroid/icu/text/UnicodeFilter;"
 		);
 	}
-	jstring Transliterator::getID()
+	JString Transliterator::getID()
 	{
 		return callObjectMethod(
 			"getID",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::icu::text::Transliterator Transliterator::getInverse()
 	{
@@ -199,13 +201,13 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	jstring Transliterator::toRules(jboolean arg0)
+	JString Transliterator::toRules(jboolean arg0)
 	{
 		return callObjectMethod(
 			"toRules",
 			"(Z)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
 	jint Transliterator::transliterate(JObject arg0, jint arg1, jint arg2)
 	{
@@ -217,13 +219,13 @@ namespace android::icu::text
 			arg2
 		);
 	}
-	jstring Transliterator::transliterate(jstring arg0)
+	JString Transliterator::transliterate(JString arg0)
 	{
 		return callObjectMethod(
 			"transliterate",
 			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
+			arg0.object<jstring>()
+		);
 	}
 	void Transliterator::transliterate(JObject arg0)
 	{
@@ -252,14 +254,14 @@ namespace android::icu::text
 			arg2
 		);
 	}
-	void Transliterator::transliterate(JObject arg0, android::icu::text::Transliterator_Position arg1, jstring arg2)
+	void Transliterator::transliterate(JObject arg0, android::icu::text::Transliterator_Position arg1, JString arg2)
 	{
 		callMethod<void>(
 			"transliterate",
 			"(Landroid/icu/text/Replaceable;Landroid/icu/text/Transliterator$Position;Ljava/lang/String;)V",
 			arg0.object(),
 			arg1.object(),
-			arg2
+			arg2.object<jstring>()
 		);
 	}
 } // namespace android::icu::text

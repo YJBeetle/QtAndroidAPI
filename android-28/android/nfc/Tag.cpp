@@ -1,4 +1,7 @@
+#include "../../JByteArray.hpp"
+#include "../../JArray.hpp"
 #include "../os/Parcel.hpp"
+#include "../../JString.hpp"
 #include "./Tag.hpp"
 
 namespace android::nfc
@@ -26,26 +29,26 @@ namespace android::nfc
 			"()I"
 		);
 	}
-	jbyteArray Tag::getId()
+	JByteArray Tag::getId()
 	{
 		return callObjectMethod(
 			"getId",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
-	jarray Tag::getTechList()
+	JArray Tag::getTechList()
 	{
 		return callObjectMethod(
 			"getTechList",
 			"()[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
-	jstring Tag::toString()
+	JString Tag::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void Tag::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

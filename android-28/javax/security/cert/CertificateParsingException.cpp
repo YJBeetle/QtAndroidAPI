@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./CertificateParsingException.hpp"
 
 namespace javax::security::cert
@@ -13,11 +14,11 @@ namespace javax::security::cert
 			"javax.security.cert.CertificateParsingException",
 			"()V"
 		) {}
-	CertificateParsingException::CertificateParsingException(jstring arg0)
+	CertificateParsingException::CertificateParsingException(JString arg0)
 		: javax::security::cert::CertificateException(
 			"javax.security.cert.CertificateParsingException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

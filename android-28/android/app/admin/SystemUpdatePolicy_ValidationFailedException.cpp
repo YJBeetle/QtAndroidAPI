@@ -1,4 +1,5 @@
 #include "../../os/Parcel.hpp"
+#include "../../../JString.hpp"
 #include "./SystemUpdatePolicy_ValidationFailedException.hpp"
 
 namespace android::app::admin

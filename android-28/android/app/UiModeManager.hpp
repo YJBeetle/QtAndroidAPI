@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JString;
 
 namespace android::app
 {
@@ -9,10 +10,10 @@ namespace android::app
 	{
 	public:
 		// Fields
-		static jstring ACTION_ENTER_CAR_MODE();
-		static jstring ACTION_ENTER_DESK_MODE();
-		static jstring ACTION_EXIT_CAR_MODE();
-		static jstring ACTION_EXIT_DESK_MODE();
+		static JString ACTION_ENTER_CAR_MODE();
+		static JString ACTION_ENTER_DESK_MODE();
+		static JString ACTION_EXIT_CAR_MODE();
+		static JString ACTION_EXIT_DESK_MODE();
 		static jint DISABLE_CAR_MODE_GO_HOME();
 		static jint ENABLE_CAR_MODE_ALLOW_SLEEP();
 		static jint ENABLE_CAR_MODE_GO_CAR_HOME();

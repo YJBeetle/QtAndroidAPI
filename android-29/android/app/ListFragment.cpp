@@ -3,6 +3,7 @@
 #include "../view/View.hpp"
 #include "../view/ViewGroup.hpp"
 #include "../widget/ListView.hpp"
+#include "../../JString.hpp"
 #include "./ListFragment.hpp"
 
 namespace android::app
@@ -85,12 +86,12 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	void ListFragment::setEmptyText(jstring arg0)
+	void ListFragment::setEmptyText(JString arg0)
 	{
 		callMethod<void>(
 			"setEmptyText",
 			"(Ljava/lang/CharSequence;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void ListFragment::setListAdapter(JObject arg0)

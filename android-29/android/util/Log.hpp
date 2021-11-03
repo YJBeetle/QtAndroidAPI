@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JString;
+class JThrowable;
 
 namespace android::util
 {
@@ -23,23 +25,23 @@ namespace android::util
 		// Constructors
 		
 		// Methods
-		static jint d(jstring arg0, jstring arg1);
-		static jint d(jstring arg0, jstring arg1, jthrowable arg2);
-		static jint e(jstring arg0, jstring arg1);
-		static jint e(jstring arg0, jstring arg1, jthrowable arg2);
-		static jstring getStackTraceString(jthrowable arg0);
-		static jint i(jstring arg0, jstring arg1);
-		static jint i(jstring arg0, jstring arg1, jthrowable arg2);
-		static jboolean isLoggable(jstring arg0, jint arg1);
-		static jint println(jint arg0, jstring arg1, jstring arg2);
-		static jint v(jstring arg0, jstring arg1);
-		static jint v(jstring arg0, jstring arg1, jthrowable arg2);
-		static jint w(jstring arg0, jstring arg1);
-		static jint w(jstring arg0, jthrowable arg1);
-		static jint w(jstring arg0, jstring arg1, jthrowable arg2);
-		static jint wtf(jstring arg0, jstring arg1);
-		static jint wtf(jstring arg0, jthrowable arg1);
-		static jint wtf(jstring arg0, jstring arg1, jthrowable arg2);
+		static jint d(JString arg0, JString arg1);
+		static jint d(JString arg0, JString arg1, JThrowable arg2);
+		static jint e(JString arg0, JString arg1);
+		static jint e(JString arg0, JString arg1, JThrowable arg2);
+		static JString getStackTraceString(JThrowable arg0);
+		static jint i(JString arg0, JString arg1);
+		static jint i(JString arg0, JString arg1, JThrowable arg2);
+		static jboolean isLoggable(JString arg0, jint arg1);
+		static jint println(jint arg0, JString arg1, JString arg2);
+		static jint v(JString arg0, JString arg1);
+		static jint v(JString arg0, JString arg1, JThrowable arg2);
+		static jint w(JString arg0, JString arg1);
+		static jint w(JString arg0, JThrowable arg1);
+		static jint w(JString arg0, JString arg1, JThrowable arg2);
+		static jint wtf(JString arg0, JString arg1);
+		static jint wtf(JString arg0, JThrowable arg1);
+		static jint wtf(JString arg0, JString arg1, JThrowable arg2);
 	};
 } // namespace android::util
 

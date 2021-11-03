@@ -1,4 +1,7 @@
+#include "../../JCharArray.hpp"
 #include "./Writer.hpp"
+#include "../../JString.hpp"
+#include "../../JString.hpp"
 #include "../lang/StringBuffer.hpp"
 #include "./StringWriter.hpp"
 
@@ -31,20 +34,20 @@ namespace java::io
 			arg0
 		);
 	}
-	java::io::StringWriter StringWriter::append(jstring arg0)
+	java::io::StringWriter StringWriter::append(JString arg0)
 	{
 		return callObjectMethod(
 			"append",
 			"(Ljava/lang/CharSequence;)Ljava/io/StringWriter;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	java::io::StringWriter StringWriter::append(jstring arg0, jint arg1, jint arg2)
+	java::io::StringWriter StringWriter::append(JString arg0, jint arg1, jint arg2)
 	{
 		return callObjectMethod(
 			"append",
 			"(Ljava/lang/CharSequence;II)Ljava/io/StringWriter;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
 			arg2
 		);
@@ -70,12 +73,12 @@ namespace java::io
 			"()Ljava/lang/StringBuffer;"
 		);
 	}
-	jstring StringWriter::toString()
+	JString StringWriter::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void StringWriter::write(jint arg0)
 	{
@@ -85,30 +88,30 @@ namespace java::io
 			arg0
 		);
 	}
-	void StringWriter::write(jstring arg0)
+	void StringWriter::write(JString arg0)
 	{
 		callMethod<void>(
 			"write",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	void StringWriter::write(jcharArray arg0, jint arg1, jint arg2)
+	void StringWriter::write(JCharArray arg0, jint arg1, jint arg2)
 	{
 		callMethod<void>(
 			"write",
 			"([CII)V",
-			arg0,
+			arg0.object<jcharArray>(),
 			arg1,
 			arg2
 		);
 	}
-	void StringWriter::write(jstring arg0, jint arg1, jint arg2)
+	void StringWriter::write(JString arg0, jint arg1, jint arg2)
 	{
 		callMethod<void>(
 			"write",
 			"(Ljava/lang/String;II)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
 			arg2
 		);

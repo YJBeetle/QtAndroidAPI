@@ -6,6 +6,7 @@ namespace android::graphics
 {
 	class Bitmap;
 }
+class JString;
 
 namespace android::media
 {
@@ -23,7 +24,7 @@ namespace android::media
 		ThumbnailUtils();
 		
 		// Methods
-		static android::graphics::Bitmap createVideoThumbnail(jstring arg0, jint arg1);
+		static android::graphics::Bitmap createVideoThumbnail(JString arg0, jint arg1);
 		static android::graphics::Bitmap extractThumbnail(android::graphics::Bitmap arg0, jint arg1, jint arg2);
 		static android::graphics::Bitmap extractThumbnail(android::graphics::Bitmap arg0, jint arg1, jint arg2, jint arg3);
 	};

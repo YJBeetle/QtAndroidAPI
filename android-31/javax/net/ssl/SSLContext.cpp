@@ -1,3 +1,6 @@
+#include "../../../JArray.hpp"
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
 #include "../../../java/security/Provider.hpp"
 #include "../../../java/security/SecureRandom.hpp"
 #include "./SSLContextSpi.hpp"
@@ -25,32 +28,32 @@ namespace javax::net::ssl
 			"()Ljavax/net/ssl/SSLContext;"
 		);
 	}
-	javax::net::ssl::SSLContext SSLContext::getInstance(jstring arg0)
+	javax::net::ssl::SSLContext SSLContext::getInstance(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"javax.net.ssl.SSLContext",
 			"getInstance",
 			"(Ljava/lang/String;)Ljavax/net/ssl/SSLContext;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	javax::net::ssl::SSLContext SSLContext::getInstance(jstring arg0, jstring arg1)
+	javax::net::ssl::SSLContext SSLContext::getInstance(JString arg0, JString arg1)
 	{
 		return callStaticObjectMethod(
 			"javax.net.ssl.SSLContext",
 			"getInstance",
 			"(Ljava/lang/String;Ljava/lang/String;)Ljavax/net/ssl/SSLContext;",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		);
 	}
-	javax::net::ssl::SSLContext SSLContext::getInstance(jstring arg0, java::security::Provider arg1)
+	javax::net::ssl::SSLContext SSLContext::getInstance(JString arg0, java::security::Provider arg1)
 	{
 		return callStaticObjectMethod(
 			"javax.net.ssl.SSLContext",
 			"getInstance",
 			"(Ljava/lang/String;Ljava/security/Provider;)Ljavax/net/ssl/SSLContext;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
@@ -70,12 +73,12 @@ namespace javax::net::ssl
 			"()Ljavax/net/ssl/SSLEngine;"
 		);
 	}
-	javax::net::ssl::SSLEngine SSLContext::createSSLEngine(jstring arg0, jint arg1)
+	javax::net::ssl::SSLEngine SSLContext::createSSLEngine(JString arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"createSSLEngine",
 			"(Ljava/lang/String;I)Ljavax/net/ssl/SSLEngine;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
@@ -93,12 +96,12 @@ namespace javax::net::ssl
 			"()Ljavax/net/ssl/SSLParameters;"
 		);
 	}
-	jstring SSLContext::getProtocol()
+	JString SSLContext::getProtocol()
 	{
 		return callObjectMethod(
 			"getProtocol",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	java::security::Provider SSLContext::getProvider()
 	{
@@ -135,13 +138,13 @@ namespace javax::net::ssl
 			"()Ljavax/net/ssl/SSLParameters;"
 		);
 	}
-	void SSLContext::init(jarray arg0, jarray arg1, java::security::SecureRandom arg2)
+	void SSLContext::init(JArray arg0, JArray arg1, java::security::SecureRandom arg2)
 	{
 		callMethod<void>(
 			"init",
 			"([Ljavax/net/ssl/KeyManager;[Ljavax/net/ssl/TrustManager;Ljava/security/SecureRandom;)V",
-			arg0,
-			arg1,
+			arg0.object<jarray>(),
+			arg1.object<jarray>(),
 			arg2.object()
 		);
 	}

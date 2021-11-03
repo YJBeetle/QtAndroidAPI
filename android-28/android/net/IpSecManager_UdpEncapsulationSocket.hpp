@@ -6,6 +6,7 @@ namespace java::io
 {
 	class FileDescriptor;
 }
+class JString;
 
 namespace android::net
 {
@@ -24,7 +25,7 @@ namespace android::net
 		void close();
 		java::io::FileDescriptor getFileDescriptor();
 		jint getPort();
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::net
 

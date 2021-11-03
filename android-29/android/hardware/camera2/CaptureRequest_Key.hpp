@@ -2,6 +2,9 @@
 
 #include "../../../JObject.hpp"
 
+class JClass;
+class JObject;
+class JString;
 
 namespace android::hardware::camera2
 {
@@ -15,13 +18,13 @@ namespace android::hardware::camera2
 		CaptureRequest_Key(QJniObject obj);
 		
 		// Constructors
-		CaptureRequest_Key(jstring arg0, jclass arg1);
+		CaptureRequest_Key(JString arg0, JClass arg1);
 		
 		// Methods
-		jboolean equals(jobject arg0);
-		jstring getName();
+		jboolean equals(JObject arg0);
+		JString getName();
 		jint hashCode();
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::hardware::camera2
 

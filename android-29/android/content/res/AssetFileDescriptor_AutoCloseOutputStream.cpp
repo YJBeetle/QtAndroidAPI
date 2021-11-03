@@ -1,3 +1,4 @@
+#include "../../../JByteArray.hpp"
 #include "./AssetFileDescriptor.hpp"
 #include "./AssetFileDescriptor_AutoCloseOutputStream.hpp"
 
@@ -17,12 +18,12 @@ namespace android::content::res
 		) {}
 	
 	// Methods
-	void AssetFileDescriptor_AutoCloseOutputStream::write(jbyteArray arg0)
+	void AssetFileDescriptor_AutoCloseOutputStream::write(JByteArray arg0)
 	{
 		callMethod<void>(
 			"write",
 			"([B)V",
-			arg0
+			arg0.object<jbyteArray>()
 		);
 	}
 	void AssetFileDescriptor_AutoCloseOutputStream::write(jint arg0)
@@ -33,12 +34,12 @@ namespace android::content::res
 			arg0
 		);
 	}
-	void AssetFileDescriptor_AutoCloseOutputStream::write(jbyteArray arg0, jint arg1, jint arg2)
+	void AssetFileDescriptor_AutoCloseOutputStream::write(JByteArray arg0, jint arg1, jint arg2)
 	{
 		callMethod<void>(
 			"write",
 			"([BII)V",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1,
 			arg2
 		);

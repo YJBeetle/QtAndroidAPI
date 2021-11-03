@@ -1,7 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../view/ViewGroup_LayoutParams.hpp"
 #include "../view/ViewGroup_MarginLayoutParams.hpp"
 
 namespace android::content
@@ -24,6 +22,7 @@ namespace android::widget
 {
 	class GridLayout_Spec;
 }
+class JObject;
 
 namespace android::widget
 {
@@ -47,7 +46,7 @@ namespace android::widget
 		GridLayout_LayoutParams(android::widget::GridLayout_Spec arg0, android::widget::GridLayout_Spec arg1);
 		
 		// Methods
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint hashCode();
 		void setGravity(jint arg0);
 	};

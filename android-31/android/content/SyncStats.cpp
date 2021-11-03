@@ -1,4 +1,5 @@
 #include "../os/Parcel.hpp"
+#include "../../JString.hpp"
 #include "./SyncStats.hpp"
 
 namespace android::content
@@ -98,12 +99,12 @@ namespace android::content
 			"()I"
 		);
 	}
-	jstring SyncStats::toString()
+	JString SyncStats::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void SyncStats::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

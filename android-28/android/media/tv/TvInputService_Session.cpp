@@ -7,6 +7,7 @@
 #include "../../view/MotionEvent.hpp"
 #include "../../view/Surface.hpp"
 #include "../../view/View.hpp"
+#include "../../../JString.hpp"
 #include "./TvInputService_Session.hpp"
 
 namespace android::media::tv
@@ -67,13 +68,13 @@ namespace android::media::tv
 			arg0
 		);
 	}
-	void TvInputService_Session::notifyTrackSelected(jint arg0, jstring arg1)
+	void TvInputService_Session::notifyTrackSelected(jint arg0, JString arg1)
 	{
 		callMethod<void>(
 			"notifyTrackSelected",
 			"(ILjava/lang/String;)V",
 			arg0,
-			arg1
+			arg1.object<jstring>()
 		);
 	}
 	void TvInputService_Session::notifyTracksChanged(JObject arg0)
@@ -99,12 +100,12 @@ namespace android::media::tv
 			arg0
 		);
 	}
-	void TvInputService_Session::onAppPrivateCommand(jstring arg0, android::os::Bundle arg1)
+	void TvInputService_Session::onAppPrivateCommand(JString arg0, android::os::Bundle arg1)
 	{
 		callMethod<void>(
 			"onAppPrivateCommand",
 			"(Ljava/lang/String;Landroid/os/Bundle;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
@@ -176,13 +177,13 @@ namespace android::media::tv
 			"()V"
 		);
 	}
-	jboolean TvInputService_Session::onSelectTrack(jint arg0, jstring arg1)
+	jboolean TvInputService_Session::onSelectTrack(jint arg0, JString arg1)
 	{
 		return callMethod<jboolean>(
 			"onSelectTrack",
 			"(ILjava/lang/String;)Z",
 			arg0,
-			arg1
+			arg1.object<jstring>()
 		);
 	}
 	void TvInputService_Session::onSetCaptionEnabled(jboolean arg0)

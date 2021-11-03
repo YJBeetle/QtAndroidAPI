@@ -10,6 +10,7 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
 
 namespace android::service::autofill
 {
@@ -29,7 +30,7 @@ namespace android::service::autofill
 		jint describeContents();
 		android::os::Bundle getClientState();
 		JObject getEvents();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::service::autofill

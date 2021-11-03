@@ -1,5 +1,7 @@
 #include "../../../java/io/PrintStream.hpp"
 #include "../../../java/io/PrintWriter.hpp"
+#include "../../../JString.hpp"
+#include "../../../JThrowable.hpp"
 #include "../../../java/security/ProtectionDomain.hpp"
 #include "./TransformerException.hpp"
 
@@ -11,62 +13,62 @@ namespace javax::xml::transform
 	TransformerException::TransformerException(QJniObject obj) : java::lang::Exception(obj) {}
 	
 	// Constructors
-	TransformerException::TransformerException(jstring arg0)
+	TransformerException::TransformerException(JString arg0)
 		: java::lang::Exception(
 			"javax.xml.transform.TransformerException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	TransformerException::TransformerException(jthrowable arg0)
+	TransformerException::TransformerException(JThrowable arg0)
 		: java::lang::Exception(
 			"javax.xml.transform.TransformerException",
 			"(Ljava/lang/Throwable;)V",
-			arg0
+			arg0.object<jthrowable>()
 		) {}
-	TransformerException::TransformerException(jstring arg0, jthrowable arg1)
+	TransformerException::TransformerException(JString arg0, JThrowable arg1)
 		: java::lang::Exception(
 			"javax.xml.transform.TransformerException",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
 		) {}
-	TransformerException::TransformerException(jstring arg0, JObject arg1)
+	TransformerException::TransformerException(JString arg0, JObject arg1)
 		: java::lang::Exception(
 			"javax.xml.transform.TransformerException",
 			"(Ljava/lang/String;Ljavax/xml/transform/SourceLocator;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		) {}
-	TransformerException::TransformerException(jstring arg0, JObject arg1, jthrowable arg2)
+	TransformerException::TransformerException(JString arg0, JObject arg1, JThrowable arg2)
 		: java::lang::Exception(
 			"javax.xml.transform.TransformerException",
 			"(Ljava/lang/String;Ljavax/xml/transform/SourceLocator;Ljava/lang/Throwable;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
-			arg2
+			arg2.object<jthrowable>()
 		) {}
 	
 	// Methods
-	jthrowable TransformerException::getCause()
+	JThrowable TransformerException::getCause()
 	{
 		return callObjectMethod(
 			"getCause",
 			"()Ljava/lang/Throwable;"
-		).object<jthrowable>();
+		);
 	}
-	jthrowable TransformerException::getException()
+	JThrowable TransformerException::getException()
 	{
 		return callObjectMethod(
 			"getException",
 			"()Ljava/lang/Throwable;"
-		).object<jthrowable>();
+		);
 	}
-	jstring TransformerException::getLocationAsString()
+	JString TransformerException::getLocationAsString()
 	{
 		return callObjectMethod(
 			"getLocationAsString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	JObject TransformerException::getLocator()
 	{
@@ -75,20 +77,20 @@ namespace javax::xml::transform
 			"()Ljavax/xml/transform/SourceLocator;"
 		);
 	}
-	jstring TransformerException::getMessageAndLocation()
+	JString TransformerException::getMessageAndLocation()
 	{
 		return callObjectMethod(
 			"getMessageAndLocation",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jthrowable TransformerException::initCause(jthrowable arg0)
+	JThrowable TransformerException::initCause(JThrowable arg0)
 	{
 		return callObjectMethod(
 			"initCause",
 			"(Ljava/lang/Throwable;)Ljava/lang/Throwable;",
-			arg0
-		).object<jthrowable>();
+			arg0.object<jthrowable>()
+		);
 	}
 	void TransformerException::printStackTrace()
 	{

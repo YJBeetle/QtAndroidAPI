@@ -1,9 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "./InputStream.hpp"
 #include "./FilterInputStream.hpp"
 
+class JByteArray;
 namespace java::io
 {
 	class InputStream;
@@ -30,7 +29,7 @@ namespace java::io
 		void mark(jint arg0);
 		jboolean markSupported();
 		jint read();
-		jint read(jbyteArray arg0, jint arg1, jint arg2);
+		jint read(JByteArray arg0, jint arg1, jint arg2);
 		void reset();
 		jlong skip(jlong arg0);
 	};

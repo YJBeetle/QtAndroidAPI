@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "./Violation.hpp"
 
+class JClass;
 
 namespace android::os::strictmode
 {

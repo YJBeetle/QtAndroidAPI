@@ -1,6 +1,8 @@
 #include "../content/Context.hpp"
 #include "../graphics/drawable/Drawable.hpp"
 #include "../os/Bundle.hpp"
+#include "../../JString.hpp"
+#include "../../JString.hpp"
 #include "../../java/text/NumberFormat.hpp"
 #include "./ProgressDialog.hpp"
 
@@ -41,51 +43,51 @@ namespace android::app
 		) {}
 	
 	// Methods
-	android::app::ProgressDialog ProgressDialog::show(android::content::Context arg0, jstring arg1, jstring arg2)
+	android::app::ProgressDialog ProgressDialog::show(android::content::Context arg0, JString arg1, JString arg2)
 	{
 		return callStaticObjectMethod(
 			"android.app.ProgressDialog",
 			"show",
 			"(Landroid/content/Context;Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Landroid/app/ProgressDialog;",
 			arg0.object(),
-			arg1,
-			arg2
+			arg1.object<jstring>(),
+			arg2.object<jstring>()
 		);
 	}
-	android::app::ProgressDialog ProgressDialog::show(android::content::Context arg0, jstring arg1, jstring arg2, jboolean arg3)
+	android::app::ProgressDialog ProgressDialog::show(android::content::Context arg0, JString arg1, JString arg2, jboolean arg3)
 	{
 		return callStaticObjectMethod(
 			"android.app.ProgressDialog",
 			"show",
 			"(Landroid/content/Context;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Z)Landroid/app/ProgressDialog;",
 			arg0.object(),
-			arg1,
-			arg2,
+			arg1.object<jstring>(),
+			arg2.object<jstring>(),
 			arg3
 		);
 	}
-	android::app::ProgressDialog ProgressDialog::show(android::content::Context arg0, jstring arg1, jstring arg2, jboolean arg3, jboolean arg4)
+	android::app::ProgressDialog ProgressDialog::show(android::content::Context arg0, JString arg1, JString arg2, jboolean arg3, jboolean arg4)
 	{
 		return callStaticObjectMethod(
 			"android.app.ProgressDialog",
 			"show",
 			"(Landroid/content/Context;Ljava/lang/CharSequence;Ljava/lang/CharSequence;ZZ)Landroid/app/ProgressDialog;",
 			arg0.object(),
-			arg1,
-			arg2,
+			arg1.object<jstring>(),
+			arg2.object<jstring>(),
 			arg3,
 			arg4
 		);
 	}
-	android::app::ProgressDialog ProgressDialog::show(android::content::Context arg0, jstring arg1, jstring arg2, jboolean arg3, jboolean arg4, JObject arg5)
+	android::app::ProgressDialog ProgressDialog::show(android::content::Context arg0, JString arg1, JString arg2, jboolean arg3, jboolean arg4, JObject arg5)
 	{
 		return callStaticObjectMethod(
 			"android.app.ProgressDialog",
 			"show",
 			"(Landroid/content/Context;Ljava/lang/CharSequence;Ljava/lang/CharSequence;ZZLandroid/content/DialogInterface$OnCancelListener;)Landroid/app/ProgressDialog;",
 			arg0.object(),
-			arg1,
-			arg2,
+			arg1.object<jstring>(),
+			arg2.object<jstring>(),
 			arg3,
 			arg4,
 			arg5.object()
@@ -166,12 +168,12 @@ namespace android::app
 			arg0
 		);
 	}
-	void ProgressDialog::setMessage(jstring arg0)
+	void ProgressDialog::setMessage(JString arg0)
 	{
 		callMethod<void>(
 			"setMessage",
 			"(Ljava/lang/CharSequence;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void ProgressDialog::setProgress(jint arg0)
@@ -190,12 +192,12 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void ProgressDialog::setProgressNumberFormat(jstring arg0)
+	void ProgressDialog::setProgressNumberFormat(JString arg0)
 	{
 		callMethod<void>(
 			"setProgressNumberFormat",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void ProgressDialog::setProgressPercentFormat(java::text::NumberFormat arg0)

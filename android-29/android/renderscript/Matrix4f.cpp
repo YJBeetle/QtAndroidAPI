@@ -1,3 +1,4 @@
+#include "../../JFloatArray.hpp"
 #include "./Matrix4f.hpp"
 
 namespace android::renderscript
@@ -13,11 +14,11 @@ namespace android::renderscript
 			"android.renderscript.Matrix4f",
 			"()V"
 		) {}
-	Matrix4f::Matrix4f(jfloatArray arg0)
+	Matrix4f::Matrix4f(JFloatArray arg0)
 		: JObject(
 			"android.renderscript.Matrix4f",
 			"([F)V",
-			arg0
+			arg0.object<jfloatArray>()
 		) {}
 	
 	// Methods
@@ -30,12 +31,12 @@ namespace android::renderscript
 			arg1
 		);
 	}
-	jfloatArray Matrix4f::getArray()
+	JFloatArray Matrix4f::getArray()
 	{
 		return callObjectMethod(
 			"getArray",
 			"()[F"
-		).object<jfloatArray>();
+		);
 	}
 	jboolean Matrix4f::inverse()
 	{

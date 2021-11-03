@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./MediaCasStateException.hpp"
 
 namespace android::media
@@ -10,12 +11,12 @@ namespace android::media
 	// Constructors
 	
 	// Methods
-	jstring MediaCasStateException::getDiagnosticInfo()
+	JString MediaCasStateException::getDiagnosticInfo()
 	{
 		return callObjectMethod(
 			"getDiagnosticInfo",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::media
 

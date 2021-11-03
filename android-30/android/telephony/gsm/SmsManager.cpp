@@ -1,4 +1,6 @@
+#include "../../../JByteArray.hpp"
 #include "../../app/PendingIntent.hpp"
+#include "../../../JString.hpp"
 #include "../../../java/util/ArrayList.hpp"
 #include "./SmsManager.hpp"
 
@@ -83,47 +85,47 @@ namespace android::telephony::gsm
 			"()Landroid/telephony/gsm/SmsManager;"
 		);
 	}
-	java::util::ArrayList SmsManager::divideMessage(jstring arg0)
+	java::util::ArrayList SmsManager::divideMessage(JString arg0)
 	{
 		return callObjectMethod(
 			"divideMessage",
 			"(Ljava/lang/String;)Ljava/util/ArrayList;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	void SmsManager::sendDataMessage(jstring arg0, jstring arg1, jshort arg2, jbyteArray arg3, android::app::PendingIntent arg4, android::app::PendingIntent arg5)
+	void SmsManager::sendDataMessage(JString arg0, JString arg1, jshort arg2, JByteArray arg3, android::app::PendingIntent arg4, android::app::PendingIntent arg5)
 	{
 		callMethod<void>(
 			"sendDataMessage",
 			"(Ljava/lang/String;Ljava/lang/String;S[BLandroid/app/PendingIntent;Landroid/app/PendingIntent;)V",
-			arg0,
-			arg1,
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
 			arg2,
-			arg3,
+			arg3.object<jbyteArray>(),
 			arg4.object(),
 			arg5.object()
 		);
 	}
-	void SmsManager::sendMultipartTextMessage(jstring arg0, jstring arg1, java::util::ArrayList arg2, java::util::ArrayList arg3, java::util::ArrayList arg4)
+	void SmsManager::sendMultipartTextMessage(JString arg0, JString arg1, java::util::ArrayList arg2, java::util::ArrayList arg3, java::util::ArrayList arg4)
 	{
 		callMethod<void>(
 			"sendMultipartTextMessage",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/ArrayList;)V",
-			arg0,
-			arg1,
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
 			arg2.object(),
 			arg3.object(),
 			arg4.object()
 		);
 	}
-	void SmsManager::sendTextMessage(jstring arg0, jstring arg1, jstring arg2, android::app::PendingIntent arg3, android::app::PendingIntent arg4)
+	void SmsManager::sendTextMessage(JString arg0, JString arg1, JString arg2, android::app::PendingIntent arg3, android::app::PendingIntent arg4)
 	{
 		callMethod<void>(
 			"sendTextMessage",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/app/PendingIntent;Landroid/app/PendingIntent;)V",
-			arg0,
-			arg1,
-			arg2,
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2.object<jstring>(),
 			arg3.object(),
 			arg4.object()
 		);

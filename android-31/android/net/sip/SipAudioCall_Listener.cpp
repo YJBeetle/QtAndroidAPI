@@ -1,5 +1,6 @@
 #include "./SipAudioCall.hpp"
 #include "./SipProfile.hpp"
+#include "../../../JString.hpp"
 #include "./SipAudioCall_Listener.hpp"
 
 namespace android::net::sip
@@ -65,14 +66,14 @@ namespace android::net::sip
 			arg0.object()
 		);
 	}
-	void SipAudioCall_Listener::onError(android::net::sip::SipAudioCall arg0, jint arg1, jstring arg2)
+	void SipAudioCall_Listener::onError(android::net::sip::SipAudioCall arg0, jint arg1, JString arg2)
 	{
 		callMethod<void>(
 			"onError",
 			"(Landroid/net/sip/SipAudioCall;ILjava/lang/String;)V",
 			arg0.object(),
 			arg1,
-			arg2
+			arg2.object<jstring>()
 		);
 	}
 	void SipAudioCall_Listener::onReadyToCall(android::net::sip::SipAudioCall arg0)

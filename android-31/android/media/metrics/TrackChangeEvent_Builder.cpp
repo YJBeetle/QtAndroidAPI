@@ -1,5 +1,6 @@
 #include "./TrackChangeEvent.hpp"
 #include "../../os/Bundle.hpp"
+#include "../../../JString.hpp"
 #include "./TrackChangeEvent_Builder.hpp"
 
 namespace android::media::metrics
@@ -49,20 +50,20 @@ namespace android::media::metrics
 			arg0
 		);
 	}
-	android::media::metrics::TrackChangeEvent_Builder TrackChangeEvent_Builder::setCodecName(jstring arg0)
+	android::media::metrics::TrackChangeEvent_Builder TrackChangeEvent_Builder::setCodecName(JString arg0)
 	{
 		return callObjectMethod(
 			"setCodecName",
 			"(Ljava/lang/String;)Landroid/media/metrics/TrackChangeEvent$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	android::media::metrics::TrackChangeEvent_Builder TrackChangeEvent_Builder::setContainerMimeType(jstring arg0)
+	android::media::metrics::TrackChangeEvent_Builder TrackChangeEvent_Builder::setContainerMimeType(JString arg0)
 	{
 		return callObjectMethod(
 			"setContainerMimeType",
 			"(Ljava/lang/String;)Landroid/media/metrics/TrackChangeEvent$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::media::metrics::TrackChangeEvent_Builder TrackChangeEvent_Builder::setHeight(jint arg0)
@@ -73,20 +74,20 @@ namespace android::media::metrics
 			arg0
 		);
 	}
-	android::media::metrics::TrackChangeEvent_Builder TrackChangeEvent_Builder::setLanguage(jstring arg0)
+	android::media::metrics::TrackChangeEvent_Builder TrackChangeEvent_Builder::setLanguage(JString arg0)
 	{
 		return callObjectMethod(
 			"setLanguage",
 			"(Ljava/lang/String;)Landroid/media/metrics/TrackChangeEvent$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	android::media::metrics::TrackChangeEvent_Builder TrackChangeEvent_Builder::setLanguageRegion(jstring arg0)
+	android::media::metrics::TrackChangeEvent_Builder TrackChangeEvent_Builder::setLanguageRegion(JString arg0)
 	{
 		return callObjectMethod(
 			"setLanguageRegion",
 			"(Ljava/lang/String;)Landroid/media/metrics/TrackChangeEvent$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::media::metrics::TrackChangeEvent_Builder TrackChangeEvent_Builder::setMetricsBundle(android::os::Bundle arg0)
@@ -97,12 +98,12 @@ namespace android::media::metrics
 			arg0.object()
 		);
 	}
-	android::media::metrics::TrackChangeEvent_Builder TrackChangeEvent_Builder::setSampleMimeType(jstring arg0)
+	android::media::metrics::TrackChangeEvent_Builder TrackChangeEvent_Builder::setSampleMimeType(JString arg0)
 	{
 		return callObjectMethod(
 			"setSampleMimeType",
 			"(Ljava/lang/String;)Landroid/media/metrics/TrackChangeEvent$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::media::metrics::TrackChangeEvent_Builder TrackChangeEvent_Builder::setTimeSinceCreatedMillis(jlong arg0)

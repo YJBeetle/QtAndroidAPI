@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./Format.hpp"
 
+class JArray;
 namespace java::io
 {
 	class ObjectInputStream;
@@ -15,6 +15,8 @@ namespace java::lang
 {
 	class Number;
 }
+class JObject;
+class JString;
 namespace java::lang
 {
 	class StringBuffer;
@@ -56,7 +58,7 @@ namespace java::text
 		// Constructors
 		
 		// Methods
-		static jarray getAvailableLocales();
+		static JArray getAvailableLocales();
 		static java::text::NumberFormat getCompactNumberInstance();
 		static java::text::NumberFormat getCompactNumberInstance(java::util::Locale arg0, JObject arg1);
 		static java::text::NumberFormat getCurrencyInstance();
@@ -69,12 +71,12 @@ namespace java::text
 		static java::text::NumberFormat getNumberInstance(java::util::Locale arg0);
 		static java::text::NumberFormat getPercentInstance();
 		static java::text::NumberFormat getPercentInstance(java::util::Locale arg0);
-		jobject clone();
-		jboolean equals(jobject arg0);
-		jstring format(jdouble arg0);
-		jstring format(jlong arg0);
+		JObject clone();
+		jboolean equals(JObject arg0);
+		JString format(jdouble arg0);
+		JString format(jlong arg0);
 		java::lang::StringBuffer format(jdouble arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2);
-		java::lang::StringBuffer format(jobject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2);
+		java::lang::StringBuffer format(JObject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2);
 		java::lang::StringBuffer format(jlong arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2);
 		java::util::Currency getCurrency();
 		jint getMaximumFractionDigits();
@@ -85,9 +87,9 @@ namespace java::text
 		jint hashCode();
 		jboolean isGroupingUsed();
 		jboolean isParseIntegerOnly();
-		java::lang::Number parse(jstring arg0);
-		java::lang::Number parse(jstring arg0, java::text::ParsePosition arg1);
-		jobject parseObject(jstring arg0, java::text::ParsePosition arg1);
+		java::lang::Number parse(JString arg0);
+		java::lang::Number parse(JString arg0, java::text::ParsePosition arg1);
+		JObject parseObject(JString arg0, java::text::ParsePosition arg1);
 		void setCurrency(java::util::Currency arg0);
 		void setGroupingUsed(jboolean arg0);
 		void setMaximumFractionDigits(jint arg0);

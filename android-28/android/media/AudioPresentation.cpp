@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "../../java/util/Locale.hpp"
 #include "./AudioPresentation.hpp"
 

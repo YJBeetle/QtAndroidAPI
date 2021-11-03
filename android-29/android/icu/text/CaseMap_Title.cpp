@@ -1,6 +1,8 @@
 #include "./BreakIterator.hpp"
 #include "./CaseMap.hpp"
 #include "./Edits.hpp"
+#include "../../../JString.hpp"
+#include "../../../JString.hpp"
 #include "../../../java/util/Locale.hpp"
 #include "./CaseMap_Title.hpp"
 
@@ -21,27 +23,27 @@ namespace android::icu::text
 			"()Landroid/icu/text/CaseMap$Title;"
 		);
 	}
-	JObject CaseMap_Title::apply(java::util::Locale arg0, android::icu::text::BreakIterator arg1, jstring arg2, JObject arg3, android::icu::text::Edits arg4)
+	JObject CaseMap_Title::apply(java::util::Locale arg0, android::icu::text::BreakIterator arg1, JString arg2, JObject arg3, android::icu::text::Edits arg4)
 	{
 		return callObjectMethod(
 			"apply",
 			"(Ljava/util/Locale;Landroid/icu/text/BreakIterator;Ljava/lang/CharSequence;Ljava/lang/Appendable;Landroid/icu/text/Edits;)Ljava/lang/Appendable;",
 			arg0.object(),
 			arg1.object(),
-			arg2,
+			arg2.object<jstring>(),
 			arg3.object(),
 			arg4.object()
 		);
 	}
-	jstring CaseMap_Title::apply(java::util::Locale arg0, android::icu::text::BreakIterator arg1, jstring arg2)
+	JString CaseMap_Title::apply(java::util::Locale arg0, android::icu::text::BreakIterator arg1, JString arg2)
 	{
 		return callObjectMethod(
 			"apply",
 			"(Ljava/util/Locale;Landroid/icu/text/BreakIterator;Ljava/lang/CharSequence;)Ljava/lang/String;",
 			arg0.object(),
 			arg1.object(),
-			arg2
-		).object<jstring>();
+			arg2.object<jstring>()
+		);
 	}
 	android::icu::text::CaseMap_Title CaseMap_Title::noBreakAdjustment()
 	{

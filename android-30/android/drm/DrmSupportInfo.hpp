@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JObject;
+class JString;
 
 namespace android::drm
 {
@@ -18,15 +20,15 @@ namespace android::drm
 		DrmSupportInfo();
 		
 		// Methods
-		void addFileSuffix(jstring arg0);
-		void addMimeType(jstring arg0);
-		jboolean equals(jobject arg0);
-		jstring getDescriprition();
-		jstring getDescription();
+		void addFileSuffix(JString arg0);
+		void addMimeType(JString arg0);
+		jboolean equals(JObject arg0);
+		JString getDescriprition();
+		JString getDescription();
 		JObject getFileSuffixIterator();
 		JObject getMimeTypeIterator();
 		jint hashCode();
-		void setDescription(jstring arg0);
+		void setDescription(JString arg0);
 	};
 } // namespace android::drm
 

@@ -6,6 +6,9 @@ namespace android::app
 {
 	class NotificationChannel;
 }
+class JString;
+class JObject;
+class JString;
 
 namespace android::service::notification
 {
@@ -27,13 +30,13 @@ namespace android::service::notification
 		// Methods
 		jboolean canBubble();
 		jboolean canShowBadge();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		android::app::NotificationChannel getChannel();
 		jint getImportance();
-		jstring getImportanceExplanation();
-		jstring getKey();
+		JString getImportanceExplanation();
+		JString getKey();
 		jlong getLastAudiblyAlertedMillis();
-		jstring getOverrideGroupKey();
+		JString getOverrideGroupKey();
 		jint getRank();
 		JObject getSmartActions();
 		JObject getSmartReplies();

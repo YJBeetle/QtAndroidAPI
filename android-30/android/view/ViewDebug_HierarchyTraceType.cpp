@@ -1,3 +1,5 @@
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
 #include "./ViewDebug_HierarchyTraceType.hpp"
 
 namespace android::view
@@ -74,22 +76,22 @@ namespace android::view
 	// Constructors
 	
 	// Methods
-	android::view::ViewDebug_HierarchyTraceType ViewDebug_HierarchyTraceType::valueOf(jstring arg0)
+	android::view::ViewDebug_HierarchyTraceType ViewDebug_HierarchyTraceType::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.view.ViewDebug$HierarchyTraceType",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/view/ViewDebug$HierarchyTraceType;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray ViewDebug_HierarchyTraceType::values()
+	JArray ViewDebug_HierarchyTraceType::values()
 	{
 		return callStaticObjectMethod(
 			"android.view.ViewDebug$HierarchyTraceType",
 			"values",
 			"()[Landroid/view/ViewDebug$HierarchyTraceType;"
-		).object<jarray>();
+		);
 	}
 } // namespace android::view
 

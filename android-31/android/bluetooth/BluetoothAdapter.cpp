@@ -1,77 +1,80 @@
+#include "../../JByteArray.hpp"
+#include "../../JArray.hpp"
 #include "./BluetoothDevice.hpp"
 #include "./BluetoothServerSocket.hpp"
 #include "./le/BluetoothLeAdvertiser.hpp"
 #include "./le/BluetoothLeScanner.hpp"
 #include "../content/Context.hpp"
+#include "../../JString.hpp"
 #include "../../java/util/UUID.hpp"
 #include "./BluetoothAdapter.hpp"
 
 namespace android::bluetooth
 {
 	// Fields
-	jstring BluetoothAdapter::ACTION_CONNECTION_STATE_CHANGED()
+	JString BluetoothAdapter::ACTION_CONNECTION_STATE_CHANGED()
 	{
 		return getStaticObjectField(
 			"android.bluetooth.BluetoothAdapter",
 			"ACTION_CONNECTION_STATE_CHANGED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring BluetoothAdapter::ACTION_DISCOVERY_FINISHED()
+	JString BluetoothAdapter::ACTION_DISCOVERY_FINISHED()
 	{
 		return getStaticObjectField(
 			"android.bluetooth.BluetoothAdapter",
 			"ACTION_DISCOVERY_FINISHED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring BluetoothAdapter::ACTION_DISCOVERY_STARTED()
+	JString BluetoothAdapter::ACTION_DISCOVERY_STARTED()
 	{
 		return getStaticObjectField(
 			"android.bluetooth.BluetoothAdapter",
 			"ACTION_DISCOVERY_STARTED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring BluetoothAdapter::ACTION_LOCAL_NAME_CHANGED()
+	JString BluetoothAdapter::ACTION_LOCAL_NAME_CHANGED()
 	{
 		return getStaticObjectField(
 			"android.bluetooth.BluetoothAdapter",
 			"ACTION_LOCAL_NAME_CHANGED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring BluetoothAdapter::ACTION_REQUEST_DISCOVERABLE()
+	JString BluetoothAdapter::ACTION_REQUEST_DISCOVERABLE()
 	{
 		return getStaticObjectField(
 			"android.bluetooth.BluetoothAdapter",
 			"ACTION_REQUEST_DISCOVERABLE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring BluetoothAdapter::ACTION_REQUEST_ENABLE()
+	JString BluetoothAdapter::ACTION_REQUEST_ENABLE()
 	{
 		return getStaticObjectField(
 			"android.bluetooth.BluetoothAdapter",
 			"ACTION_REQUEST_ENABLE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring BluetoothAdapter::ACTION_SCAN_MODE_CHANGED()
+	JString BluetoothAdapter::ACTION_SCAN_MODE_CHANGED()
 	{
 		return getStaticObjectField(
 			"android.bluetooth.BluetoothAdapter",
 			"ACTION_SCAN_MODE_CHANGED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring BluetoothAdapter::ACTION_STATE_CHANGED()
+	JString BluetoothAdapter::ACTION_STATE_CHANGED()
 	{
 		return getStaticObjectField(
 			"android.bluetooth.BluetoothAdapter",
 			"ACTION_STATE_CHANGED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint BluetoothAdapter::ERROR()
 	{
@@ -80,69 +83,69 @@ namespace android::bluetooth
 			"ERROR"
 		);
 	}
-	jstring BluetoothAdapter::EXTRA_CONNECTION_STATE()
+	JString BluetoothAdapter::EXTRA_CONNECTION_STATE()
 	{
 		return getStaticObjectField(
 			"android.bluetooth.BluetoothAdapter",
 			"EXTRA_CONNECTION_STATE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring BluetoothAdapter::EXTRA_DISCOVERABLE_DURATION()
+	JString BluetoothAdapter::EXTRA_DISCOVERABLE_DURATION()
 	{
 		return getStaticObjectField(
 			"android.bluetooth.BluetoothAdapter",
 			"EXTRA_DISCOVERABLE_DURATION",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring BluetoothAdapter::EXTRA_LOCAL_NAME()
+	JString BluetoothAdapter::EXTRA_LOCAL_NAME()
 	{
 		return getStaticObjectField(
 			"android.bluetooth.BluetoothAdapter",
 			"EXTRA_LOCAL_NAME",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring BluetoothAdapter::EXTRA_PREVIOUS_CONNECTION_STATE()
+	JString BluetoothAdapter::EXTRA_PREVIOUS_CONNECTION_STATE()
 	{
 		return getStaticObjectField(
 			"android.bluetooth.BluetoothAdapter",
 			"EXTRA_PREVIOUS_CONNECTION_STATE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring BluetoothAdapter::EXTRA_PREVIOUS_SCAN_MODE()
+	JString BluetoothAdapter::EXTRA_PREVIOUS_SCAN_MODE()
 	{
 		return getStaticObjectField(
 			"android.bluetooth.BluetoothAdapter",
 			"EXTRA_PREVIOUS_SCAN_MODE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring BluetoothAdapter::EXTRA_PREVIOUS_STATE()
+	JString BluetoothAdapter::EXTRA_PREVIOUS_STATE()
 	{
 		return getStaticObjectField(
 			"android.bluetooth.BluetoothAdapter",
 			"EXTRA_PREVIOUS_STATE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring BluetoothAdapter::EXTRA_SCAN_MODE()
+	JString BluetoothAdapter::EXTRA_SCAN_MODE()
 	{
 		return getStaticObjectField(
 			"android.bluetooth.BluetoothAdapter",
 			"EXTRA_SCAN_MODE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring BluetoothAdapter::EXTRA_STATE()
+	JString BluetoothAdapter::EXTRA_STATE()
 	{
 		return getStaticObjectField(
 			"android.bluetooth.BluetoothAdapter",
 			"EXTRA_STATE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint BluetoothAdapter::SCAN_MODE_CONNECTABLE()
 	{
@@ -228,13 +231,13 @@ namespace android::bluetooth
 	// Constructors
 	
 	// Methods
-	jboolean BluetoothAdapter::checkBluetoothAddress(jstring arg0)
+	jboolean BluetoothAdapter::checkBluetoothAddress(JString arg0)
 	{
 		return callStaticMethod<jboolean>(
 			"android.bluetooth.BluetoothAdapter",
 			"checkBluetoothAddress",
 			"(Ljava/lang/String;)Z",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::bluetooth::BluetoothAdapter BluetoothAdapter::getDefaultAdapter()
@@ -275,12 +278,12 @@ namespace android::bluetooth
 			"()Z"
 		);
 	}
-	jstring BluetoothAdapter::getAddress()
+	JString BluetoothAdapter::getAddress()
 	{
 		return callObjectMethod(
 			"getAddress",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::bluetooth::le::BluetoothLeAdvertiser BluetoothAdapter::getBluetoothLeAdvertiser()
 	{
@@ -310,12 +313,12 @@ namespace android::bluetooth
 			"()I"
 		);
 	}
-	jstring BluetoothAdapter::getName()
+	JString BluetoothAdapter::getName()
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint BluetoothAdapter::getProfileConnectionState(jint arg0)
 	{
@@ -335,20 +338,20 @@ namespace android::bluetooth
 			arg2
 		);
 	}
-	android::bluetooth::BluetoothDevice BluetoothAdapter::getRemoteDevice(jbyteArray arg0)
+	android::bluetooth::BluetoothDevice BluetoothAdapter::getRemoteDevice(JByteArray arg0)
 	{
 		return callObjectMethod(
 			"getRemoteDevice",
 			"([B)Landroid/bluetooth/BluetoothDevice;",
-			arg0
+			arg0.object<jbyteArray>()
 		);
 	}
-	android::bluetooth::BluetoothDevice BluetoothAdapter::getRemoteDevice(jstring arg0)
+	android::bluetooth::BluetoothDevice BluetoothAdapter::getRemoteDevice(JString arg0)
 	{
 		return callObjectMethod(
 			"getRemoteDevice",
 			"(Ljava/lang/String;)Landroid/bluetooth/BluetoothDevice;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	jint BluetoothAdapter::getScanMode()
@@ -435,12 +438,12 @@ namespace android::bluetooth
 			"()Landroid/bluetooth/BluetoothServerSocket;"
 		);
 	}
-	android::bluetooth::BluetoothServerSocket BluetoothAdapter::listenUsingInsecureRfcommWithServiceRecord(jstring arg0, java::util::UUID arg1)
+	android::bluetooth::BluetoothServerSocket BluetoothAdapter::listenUsingInsecureRfcommWithServiceRecord(JString arg0, java::util::UUID arg1)
 	{
 		return callObjectMethod(
 			"listenUsingInsecureRfcommWithServiceRecord",
 			"(Ljava/lang/String;Ljava/util/UUID;)Landroid/bluetooth/BluetoothServerSocket;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
@@ -451,21 +454,21 @@ namespace android::bluetooth
 			"()Landroid/bluetooth/BluetoothServerSocket;"
 		);
 	}
-	android::bluetooth::BluetoothServerSocket BluetoothAdapter::listenUsingRfcommWithServiceRecord(jstring arg0, java::util::UUID arg1)
+	android::bluetooth::BluetoothServerSocket BluetoothAdapter::listenUsingRfcommWithServiceRecord(JString arg0, java::util::UUID arg1)
 	{
 		return callObjectMethod(
 			"listenUsingRfcommWithServiceRecord",
 			"(Ljava/lang/String;Ljava/util/UUID;)Landroid/bluetooth/BluetoothServerSocket;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
-	jboolean BluetoothAdapter::setName(jstring arg0)
+	jboolean BluetoothAdapter::setName(JString arg0)
 	{
 		return callMethod<jboolean>(
 			"setName",
 			"(Ljava/lang/String;)Z",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	jboolean BluetoothAdapter::startDiscovery()
@@ -483,12 +486,12 @@ namespace android::bluetooth
 			arg0.object()
 		);
 	}
-	jboolean BluetoothAdapter::startLeScan(jarray arg0, JObject arg1)
+	jboolean BluetoothAdapter::startLeScan(JArray arg0, JObject arg1)
 	{
 		return callMethod<jboolean>(
 			"startLeScan",
 			"([Ljava/util/UUID;Landroid/bluetooth/BluetoothAdapter$LeScanCallback;)Z",
-			arg0,
+			arg0.object<jarray>(),
 			arg1.object()
 		);
 	}

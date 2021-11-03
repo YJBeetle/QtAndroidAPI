@@ -1,3 +1,5 @@
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
 #include "./Authenticator_RequestorType.hpp"
 
 namespace java::net
@@ -26,22 +28,22 @@ namespace java::net
 	// Constructors
 	
 	// Methods
-	java::net::Authenticator_RequestorType Authenticator_RequestorType::valueOf(jstring arg0)
+	java::net::Authenticator_RequestorType Authenticator_RequestorType::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"java.net.Authenticator$RequestorType",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/net/Authenticator$RequestorType;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray Authenticator_RequestorType::values()
+	JArray Authenticator_RequestorType::values()
 	{
 		return callStaticObjectMethod(
 			"java.net.Authenticator$RequestorType",
 			"values",
 			"()[Ljava/net/Authenticator$RequestorType;"
-		).object<jarray>();
+		);
 	}
 } // namespace java::net
 

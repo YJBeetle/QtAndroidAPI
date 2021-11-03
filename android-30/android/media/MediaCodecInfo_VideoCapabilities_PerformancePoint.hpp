@@ -6,6 +6,8 @@ namespace android::media
 {
 	class MediaFormat;
 }
+class JObject;
+class JString;
 
 namespace android::media
 {
@@ -57,9 +59,9 @@ namespace android::media
 		// Methods
 		jboolean covers(android::media::MediaCodecInfo_VideoCapabilities_PerformancePoint arg0);
 		jboolean covers(android::media::MediaFormat arg0);
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint hashCode();
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::media
 

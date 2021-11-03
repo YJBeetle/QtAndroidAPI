@@ -1,3 +1,5 @@
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
 #include "./Layout_Alignment.hpp"
 
 namespace android::text
@@ -34,22 +36,22 @@ namespace android::text
 	// Constructors
 	
 	// Methods
-	android::text::Layout_Alignment Layout_Alignment::valueOf(jstring arg0)
+	android::text::Layout_Alignment Layout_Alignment::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.text.Layout$Alignment",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/text/Layout$Alignment;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray Layout_Alignment::values()
+	JArray Layout_Alignment::values()
 	{
 		return callStaticObjectMethod(
 			"android.text.Layout$Alignment",
 			"values",
 			"()[Landroid/text/Layout$Alignment;"
-		).object<jarray>();
+		);
 	}
 } // namespace android::text
 

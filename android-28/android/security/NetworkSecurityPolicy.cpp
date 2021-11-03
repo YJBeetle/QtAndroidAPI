@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./NetworkSecurityPolicy.hpp"
 
 namespace android::security
@@ -25,12 +26,12 @@ namespace android::security
 			"()Z"
 		);
 	}
-	jboolean NetworkSecurityPolicy::isCleartextTrafficPermitted(jstring arg0)
+	jboolean NetworkSecurityPolicy::isCleartextTrafficPermitted(JString arg0)
 	{
 		return callMethod<jboolean>(
 			"isCleartextTrafficPermitted",
 			"(Ljava/lang/String;)Z",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 } // namespace android::security

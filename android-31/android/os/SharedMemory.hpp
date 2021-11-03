@@ -6,6 +6,7 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
 namespace java::nio
 {
 	class ByteBuffer;
@@ -26,7 +27,7 @@ namespace android::os
 		// Constructors
 		
 		// Methods
-		static android::os::SharedMemory create(jstring arg0, jint arg1);
+		static android::os::SharedMemory create(JString arg0, jint arg1);
 		static void unmap(java::nio::ByteBuffer arg0);
 		void close();
 		jint describeContents();

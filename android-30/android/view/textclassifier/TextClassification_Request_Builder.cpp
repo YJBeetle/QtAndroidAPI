@@ -1,6 +1,7 @@
 #include "../../os/Bundle.hpp"
 #include "../../os/LocaleList.hpp"
 #include "./TextClassification_Request.hpp"
+#include "../../../JString.hpp"
 #include "../../../java/time/ZonedDateTime.hpp"
 #include "./TextClassification_Request_Builder.hpp"
 
@@ -12,11 +13,11 @@ namespace android::view::textclassifier
 	TextClassification_Request_Builder::TextClassification_Request_Builder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	TextClassification_Request_Builder::TextClassification_Request_Builder(jstring arg0, jint arg1, jint arg2)
+	TextClassification_Request_Builder::TextClassification_Request_Builder(JString arg0, jint arg1, jint arg2)
 		: JObject(
 			"android.view.textclassifier.TextClassification$Request$Builder",
 			"(Ljava/lang/CharSequence;II)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
 			arg2
 		) {}

@@ -2,6 +2,8 @@
 
 #include "../../../JObject.hpp"
 
+class JObject;
+class JString;
 
 namespace java::util::jar
 {
@@ -33,12 +35,12 @@ namespace java::util::jar
 		Attributes_Name(QJniObject obj);
 		
 		// Constructors
-		Attributes_Name(jstring arg0);
+		Attributes_Name(JString arg0);
 		
 		// Methods
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint hashCode();
-		jstring toString();
+		JString toString();
 	};
 } // namespace java::util::jar
 

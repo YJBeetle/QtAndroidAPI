@@ -10,6 +10,7 @@ namespace android::security
 {
 	class KeyPairGeneratorSpec;
 }
+class JString;
 namespace java::math
 {
 	class BigInteger;
@@ -40,11 +41,11 @@ namespace android::security
 		// Methods
 		android::security::KeyPairGeneratorSpec build();
 		android::security::KeyPairGeneratorSpec_Builder setAlgorithmParameterSpec(JObject arg0);
-		android::security::KeyPairGeneratorSpec_Builder setAlias(jstring arg0);
+		android::security::KeyPairGeneratorSpec_Builder setAlias(JString arg0);
 		android::security::KeyPairGeneratorSpec_Builder setEncryptionRequired();
 		android::security::KeyPairGeneratorSpec_Builder setEndDate(java::util::Date arg0);
 		android::security::KeyPairGeneratorSpec_Builder setKeySize(jint arg0);
-		android::security::KeyPairGeneratorSpec_Builder setKeyType(jstring arg0);
+		android::security::KeyPairGeneratorSpec_Builder setKeyType(JString arg0);
 		android::security::KeyPairGeneratorSpec_Builder setSerialNumber(java::math::BigInteger arg0);
 		android::security::KeyPairGeneratorSpec_Builder setStartDate(java::util::Date arg0);
 		android::security::KeyPairGeneratorSpec_Builder setSubject(javax::security::auth::x500::X500Principal arg0);

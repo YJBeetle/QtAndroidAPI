@@ -1,4 +1,10 @@
+#include "../../JByteArray.hpp"
+#include "../../JArray.hpp"
+#include "../../JArray.hpp"
+#include "../../JArray.hpp"
+#include "../../JArray.hpp"
 #include "./SSLSessionCache.hpp"
+#include "../../JString.hpp"
 #include "../../java/net/InetAddress.hpp"
 #include "../../java/net/Socket.hpp"
 #include "../../javax/net/SocketFactory.hpp"
@@ -57,12 +63,12 @@ namespace android::net
 			"()Ljava/net/Socket;"
 		);
 	}
-	java::net::Socket SSLCertificateSocketFactory::createSocket(jstring arg0, jint arg1)
+	java::net::Socket SSLCertificateSocketFactory::createSocket(JString arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"createSocket",
 			"(Ljava/lang/String;I)Ljava/net/Socket;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
@@ -75,12 +81,12 @@ namespace android::net
 			arg1
 		);
 	}
-	java::net::Socket SSLCertificateSocketFactory::createSocket(jstring arg0, jint arg1, java::net::InetAddress arg2, jint arg3)
+	java::net::Socket SSLCertificateSocketFactory::createSocket(JString arg0, jint arg1, java::net::InetAddress arg2, jint arg3)
 	{
 		return callObjectMethod(
 			"createSocket",
 			"(Ljava/lang/String;ILjava/net/InetAddress;I)Ljava/net/Socket;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
 			arg2.object(),
 			arg3
@@ -97,70 +103,70 @@ namespace android::net
 			arg3
 		);
 	}
-	java::net::Socket SSLCertificateSocketFactory::createSocket(java::net::Socket arg0, jstring arg1, jint arg2, jboolean arg3)
+	java::net::Socket SSLCertificateSocketFactory::createSocket(java::net::Socket arg0, JString arg1, jint arg2, jboolean arg3)
 	{
 		return callObjectMethod(
 			"createSocket",
 			"(Ljava/net/Socket;Ljava/lang/String;IZ)Ljava/net/Socket;",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2,
 			arg3
 		);
 	}
-	jarray SSLCertificateSocketFactory::getDefaultCipherSuites()
+	JArray SSLCertificateSocketFactory::getDefaultCipherSuites()
 	{
 		return callObjectMethod(
 			"getDefaultCipherSuites",
 			"()[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
-	jbyteArray SSLCertificateSocketFactory::getNpnSelectedProtocol(java::net::Socket arg0)
+	JByteArray SSLCertificateSocketFactory::getNpnSelectedProtocol(java::net::Socket arg0)
 	{
 		return callObjectMethod(
 			"getNpnSelectedProtocol",
 			"(Ljava/net/Socket;)[B",
 			arg0.object()
-		).object<jbyteArray>();
+		);
 	}
-	jarray SSLCertificateSocketFactory::getSupportedCipherSuites()
+	JArray SSLCertificateSocketFactory::getSupportedCipherSuites()
 	{
 		return callObjectMethod(
 			"getSupportedCipherSuites",
 			"()[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
-	void SSLCertificateSocketFactory::setHostname(java::net::Socket arg0, jstring arg1)
+	void SSLCertificateSocketFactory::setHostname(java::net::Socket arg0, JString arg1)
 	{
 		callMethod<void>(
 			"setHostname",
 			"(Ljava/net/Socket;Ljava/lang/String;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
-	void SSLCertificateSocketFactory::setKeyManagers(jarray arg0)
+	void SSLCertificateSocketFactory::setKeyManagers(JArray arg0)
 	{
 		callMethod<void>(
 			"setKeyManagers",
 			"([Ljavax/net/ssl/KeyManager;)V",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
-	void SSLCertificateSocketFactory::setNpnProtocols(jarray arg0)
+	void SSLCertificateSocketFactory::setNpnProtocols(JArray arg0)
 	{
 		callMethod<void>(
 			"setNpnProtocols",
 			"([[B)V",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
-	void SSLCertificateSocketFactory::setTrustManagers(jarray arg0)
+	void SSLCertificateSocketFactory::setTrustManagers(JArray arg0)
 	{
 		callMethod<void>(
 			"setTrustManagers",
 			"([Ljavax/net/ssl/TrustManager;)V",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
 	void SSLCertificateSocketFactory::setUseSessionTickets(java::net::Socket arg0, jboolean arg1)

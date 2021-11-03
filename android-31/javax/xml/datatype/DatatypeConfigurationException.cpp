@@ -1,3 +1,5 @@
+#include "../../../JString.hpp"
+#include "../../../JThrowable.hpp"
 #include "./DatatypeConfigurationException.hpp"
 
 namespace javax::xml::datatype
@@ -13,24 +15,24 @@ namespace javax::xml::datatype
 			"javax.xml.datatype.DatatypeConfigurationException",
 			"()V"
 		) {}
-	DatatypeConfigurationException::DatatypeConfigurationException(jstring arg0)
+	DatatypeConfigurationException::DatatypeConfigurationException(JString arg0)
 		: java::lang::Exception(
 			"javax.xml.datatype.DatatypeConfigurationException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	DatatypeConfigurationException::DatatypeConfigurationException(jthrowable arg0)
+	DatatypeConfigurationException::DatatypeConfigurationException(JThrowable arg0)
 		: java::lang::Exception(
 			"javax.xml.datatype.DatatypeConfigurationException",
 			"(Ljava/lang/Throwable;)V",
-			arg0
+			arg0.object<jthrowable>()
 		) {}
-	DatatypeConfigurationException::DatatypeConfigurationException(jstring arg0, jthrowable arg1)
+	DatatypeConfigurationException::DatatypeConfigurationException(JString arg0, JThrowable arg1)
 		: java::lang::Exception(
 			"javax.xml.datatype.DatatypeConfigurationException",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
 		) {}
 	
 	// Methods

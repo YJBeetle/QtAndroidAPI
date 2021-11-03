@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JClass;
+class JObject;
 
 namespace android::animation
 {
@@ -15,10 +17,10 @@ namespace android::animation
 		TypeConverter(QJniObject obj);
 		
 		// Constructors
-		TypeConverter(jclass arg0, jclass arg1);
+		TypeConverter(JClass arg0, JClass arg1);
 		
 		// Methods
-		jobject convert(jobject arg0);
+		JObject convert(JObject arg0);
 	};
 } // namespace android::animation
 

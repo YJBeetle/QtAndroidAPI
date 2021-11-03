@@ -1,9 +1,14 @@
+#include "../../../JIntArray.hpp"
+#include "../../../JArray.hpp"
+#include "../../../JArray.hpp"
 #include "../../graphics/Matrix.hpp"
 #include "../../os/Bundle.hpp"
 #include "../../os/LocaleList.hpp"
 #include "../../view/ViewStructure_HtmlInfo.hpp"
 #include "../../view/autofill/AutofillId.hpp"
 #include "../../view/autofill/AutofillValue.hpp"
+#include "../../../JString.hpp"
+#include "../../../JString.hpp"
 #include "./AssistStructure_ViewNode.hpp"
 
 namespace android::app::assist
@@ -58,12 +63,12 @@ namespace android::app::assist
 			"()F"
 		);
 	}
-	jarray AssistStructure_ViewNode::getAutofillHints()
+	JArray AssistStructure_ViewNode::getAutofillHints()
 	{
 		return callObjectMethod(
 			"getAutofillHints",
 			"()[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
 	android::view::autofill::AutofillId AssistStructure_ViewNode::getAutofillId()
 	{
@@ -72,12 +77,12 @@ namespace android::app::assist
 			"()Landroid/view/autofill/AutofillId;"
 		);
 	}
-	jarray AssistStructure_ViewNode::getAutofillOptions()
+	JArray AssistStructure_ViewNode::getAutofillOptions()
 	{
 		return callObjectMethod(
 			"getAutofillOptions",
 			"()[Ljava/lang/CharSequence;"
-		).object<jarray>();
+		);
 	}
 	jint AssistStructure_ViewNode::getAutofillType()
 	{
@@ -108,19 +113,19 @@ namespace android::app::assist
 			"()I"
 		);
 	}
-	jstring AssistStructure_ViewNode::getClassName()
+	JString AssistStructure_ViewNode::getClassName()
 	{
 		return callObjectMethod(
 			"getClassName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring AssistStructure_ViewNode::getContentDescription()
+	JString AssistStructure_ViewNode::getContentDescription()
 	{
 		return callObjectMethod(
 			"getContentDescription",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	jfloat AssistStructure_ViewNode::getElevation()
 	{
@@ -143,19 +148,19 @@ namespace android::app::assist
 			"()I"
 		);
 	}
-	jstring AssistStructure_ViewNode::getHint()
+	JString AssistStructure_ViewNode::getHint()
 	{
 		return callObjectMethod(
 			"getHint",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring AssistStructure_ViewNode::getHintIdEntry()
+	JString AssistStructure_ViewNode::getHintIdEntry()
 	{
 		return callObjectMethod(
 			"getHintIdEntry",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::view::ViewStructure_HtmlInfo AssistStructure_ViewNode::getHtmlInfo()
 	{
@@ -171,26 +176,26 @@ namespace android::app::assist
 			"()I"
 		);
 	}
-	jstring AssistStructure_ViewNode::getIdEntry()
+	JString AssistStructure_ViewNode::getIdEntry()
 	{
 		return callObjectMethod(
 			"getIdEntry",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring AssistStructure_ViewNode::getIdPackage()
+	JString AssistStructure_ViewNode::getIdPackage()
 	{
 		return callObjectMethod(
 			"getIdPackage",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring AssistStructure_ViewNode::getIdType()
+	JString AssistStructure_ViewNode::getIdType()
 	{
 		return callObjectMethod(
 			"getIdType",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint AssistStructure_ViewNode::getImportantForAutofill()
 	{
@@ -255,12 +260,12 @@ namespace android::app::assist
 			"()I"
 		);
 	}
-	jstring AssistStructure_ViewNode::getText()
+	JString AssistStructure_ViewNode::getText()
 	{
 		return callObjectMethod(
 			"getText",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	jint AssistStructure_ViewNode::getTextBackgroundColor()
 	{
@@ -276,26 +281,26 @@ namespace android::app::assist
 			"()I"
 		);
 	}
-	jstring AssistStructure_ViewNode::getTextIdEntry()
+	JString AssistStructure_ViewNode::getTextIdEntry()
 	{
 		return callObjectMethod(
 			"getTextIdEntry",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jintArray AssistStructure_ViewNode::getTextLineBaselines()
+	JIntArray AssistStructure_ViewNode::getTextLineBaselines()
 	{
 		return callObjectMethod(
 			"getTextLineBaselines",
 			"()[I"
-		).object<jintArray>();
+		);
 	}
-	jintArray AssistStructure_ViewNode::getTextLineCharOffsets()
+	JIntArray AssistStructure_ViewNode::getTextLineCharOffsets()
 	{
 		return callObjectMethod(
 			"getTextLineCharOffsets",
 			"()[I"
-		).object<jintArray>();
+		);
 	}
 	jint AssistStructure_ViewNode::getTextSelectionEnd()
 	{
@@ -346,19 +351,19 @@ namespace android::app::assist
 			"()I"
 		);
 	}
-	jstring AssistStructure_ViewNode::getWebDomain()
+	JString AssistStructure_ViewNode::getWebDomain()
 	{
 		return callObjectMethod(
 			"getWebDomain",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring AssistStructure_ViewNode::getWebScheme()
+	JString AssistStructure_ViewNode::getWebScheme()
 	{
 		return callObjectMethod(
 			"getWebScheme",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint AssistStructure_ViewNode::getWidth()
 	{

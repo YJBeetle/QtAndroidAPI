@@ -1,4 +1,5 @@
 #include "../../java/lang/RuntimeException.hpp"
+#include "../../JString.hpp"
 #include "./RemoteException.hpp"
 
 namespace android::os
@@ -14,11 +15,11 @@ namespace android::os
 			"android.os.RemoteException",
 			"()V"
 		) {}
-	RemoteException::RemoteException(jstring arg0)
+	RemoteException::RemoteException(JString arg0)
 		: android::util::AndroidException(
 			"android.os.RemoteException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

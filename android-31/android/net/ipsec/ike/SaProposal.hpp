@@ -2,6 +2,8 @@
 
 #include "../../../../JObject.hpp"
 
+class JObject;
+class JString;
 
 namespace android::net::ipsec::ike
 {
@@ -49,12 +51,12 @@ namespace android::net::ipsec::ike
 		
 		// Methods
 		static JObject getSupportedDhGroups();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		JObject getDhGroups();
 		JObject getEncryptionAlgorithms();
 		JObject getIntegrityAlgorithms();
 		jint hashCode();
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::net::ipsec::ike
 

@@ -1,5 +1,7 @@
 #include "./DateIntervalInfo_PatternInfo.hpp"
 #include "../util/ULocale.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "../../../java/util/Locale.hpp"
 #include "./DateIntervalInfo.hpp"
 
@@ -25,12 +27,12 @@ namespace android::icu::text
 		) {}
 	
 	// Methods
-	jobject DateIntervalInfo::clone()
+	JObject DateIntervalInfo::clone()
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
 	android::icu::text::DateIntervalInfo DateIntervalInfo::cloneAsThawed()
 	{
@@ -39,12 +41,12 @@ namespace android::icu::text
 			"()Landroid/icu/text/DateIntervalInfo;"
 		);
 	}
-	jboolean DateIntervalInfo::equals(jobject arg0)
+	jboolean DateIntervalInfo::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	android::icu::text::DateIntervalInfo DateIntervalInfo::freeze()
@@ -61,19 +63,19 @@ namespace android::icu::text
 			"()Z"
 		);
 	}
-	jstring DateIntervalInfo::getFallbackIntervalPattern()
+	JString DateIntervalInfo::getFallbackIntervalPattern()
 	{
 		return callObjectMethod(
 			"getFallbackIntervalPattern",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	android::icu::text::DateIntervalInfo_PatternInfo DateIntervalInfo::getIntervalPattern(jstring arg0, jint arg1)
+	android::icu::text::DateIntervalInfo_PatternInfo DateIntervalInfo::getIntervalPattern(JString arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"getIntervalPattern",
 			"(Ljava/lang/String;I)Landroid/icu/text/DateIntervalInfo$PatternInfo;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
@@ -91,22 +93,22 @@ namespace android::icu::text
 			"()Z"
 		);
 	}
-	void DateIntervalInfo::setFallbackIntervalPattern(jstring arg0)
+	void DateIntervalInfo::setFallbackIntervalPattern(JString arg0)
 	{
 		callMethod<void>(
 			"setFallbackIntervalPattern",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	void DateIntervalInfo::setIntervalPattern(jstring arg0, jint arg1, jstring arg2)
+	void DateIntervalInfo::setIntervalPattern(JString arg0, jint arg1, JString arg2)
 	{
 		callMethod<void>(
 			"setIntervalPattern",
 			"(Ljava/lang/String;ILjava/lang/String;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
-			arg2
+			arg2.object<jstring>()
 		);
 	}
 } // namespace android::icu::text

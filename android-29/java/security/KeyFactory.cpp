@@ -1,3 +1,6 @@
+#include "../../JClass.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./KeyFactorySpi.hpp"
 #include "./Provider.hpp"
 #include "./KeyFactory.hpp"
@@ -12,32 +15,32 @@ namespace java::security
 	// Constructors
 	
 	// Methods
-	java::security::KeyFactory KeyFactory::getInstance(jstring arg0)
+	java::security::KeyFactory KeyFactory::getInstance(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"java.security.KeyFactory",
 			"getInstance",
 			"(Ljava/lang/String;)Ljava/security/KeyFactory;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	java::security::KeyFactory KeyFactory::getInstance(jstring arg0, jstring arg1)
+	java::security::KeyFactory KeyFactory::getInstance(JString arg0, JString arg1)
 	{
 		return callStaticObjectMethod(
 			"java.security.KeyFactory",
 			"getInstance",
 			"(Ljava/lang/String;Ljava/lang/String;)Ljava/security/KeyFactory;",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		);
 	}
-	java::security::KeyFactory KeyFactory::getInstance(jstring arg0, java::security::Provider arg1)
+	java::security::KeyFactory KeyFactory::getInstance(JString arg0, java::security::Provider arg1)
 	{
 		return callStaticObjectMethod(
 			"java.security.KeyFactory",
 			"getInstance",
 			"(Ljava/lang/String;Ljava/security/Provider;)Ljava/security/KeyFactory;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
@@ -57,20 +60,20 @@ namespace java::security
 			arg0.object()
 		);
 	}
-	jstring KeyFactory::getAlgorithm()
+	JString KeyFactory::getAlgorithm()
 	{
 		return callObjectMethod(
 			"getAlgorithm",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	JObject KeyFactory::getKeySpec(JObject arg0, jclass arg1)
+	JObject KeyFactory::getKeySpec(JObject arg0, JClass arg1)
 	{
 		return callObjectMethod(
 			"getKeySpec",
 			"(Ljava/security/Key;Ljava/lang/Class;)Ljava/security/spec/KeySpec;",
 			arg0.object(),
-			arg1
+			arg1.object<jclass>()
 		);
 	}
 	java::security::Provider KeyFactory::getProvider()

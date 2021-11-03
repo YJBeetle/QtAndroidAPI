@@ -1,14 +1,13 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "../../io/InputStream.hpp"
-#include "../../io/FilterInputStream.hpp"
 #include "./InflaterInputStream.hpp"
 
+class JByteArray;
 namespace java::io
 {
 	class InputStream;
 }
+class JString;
 namespace java::nio::charset
 {
 	class Charset;
@@ -42,7 +41,7 @@ namespace java::util::zip
 		void close();
 		void closeEntry();
 		java::util::zip::ZipEntry getNextEntry();
-		jint read(jbyteArray arg0, jint arg1, jint arg2);
+		jint read(JByteArray arg0, jint arg1, jint arg2);
 		jlong skip(jlong arg0);
 	};
 } // namespace java::util::zip

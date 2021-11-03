@@ -1,7 +1,11 @@
+#include "../../JArray.hpp"
+#include "../../JArray.hpp"
 #include "../io/InputStream.hpp"
 #include "../io/ObjectInputStream.hpp"
 #include "../io/ObjectOutputStream.hpp"
+#include "../../JObject.hpp"
 #include "../lang/SecurityManager.hpp"
+#include "../../JString.hpp"
 #include "../lang/ThreadLocal.hpp"
 #include "./InetAddress.hpp"
 #include "./Proxy.hpp"
@@ -19,52 +23,52 @@ namespace java::net
 	URL::URL(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	URL::URL(jstring arg0)
+	URL::URL(JString arg0)
 		: JObject(
 			"java.net.URL",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	URL::URL(java::net::URL &arg0, jstring arg1)
+	URL::URL(java::net::URL &arg0, JString arg1)
 		: JObject(
 			"java.net.URL",
 			"(Ljava/net/URL;Ljava/lang/String;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		) {}
-	URL::URL(jstring arg0, jstring arg1, jstring arg2)
+	URL::URL(JString arg0, JString arg1, JString arg2)
 		: JObject(
 			"java.net.URL",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1,
-			arg2
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2.object<jstring>()
 		) {}
-	URL::URL(java::net::URL &arg0, jstring arg1, java::net::URLStreamHandler arg2)
+	URL::URL(java::net::URL &arg0, JString arg1, java::net::URLStreamHandler arg2)
 		: JObject(
 			"java.net.URL",
 			"(Ljava/net/URL;Ljava/lang/String;Ljava/net/URLStreamHandler;)V",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2.object()
 		) {}
-	URL::URL(jstring arg0, jstring arg1, jint arg2, jstring arg3)
+	URL::URL(JString arg0, JString arg1, jint arg2, JString arg3)
 		: JObject(
 			"java.net.URL",
 			"(Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;)V",
-			arg0,
-			arg1,
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
 			arg2,
-			arg3
+			arg3.object<jstring>()
 		) {}
-	URL::URL(jstring arg0, jstring arg1, jint arg2, jstring arg3, java::net::URLStreamHandler arg4)
+	URL::URL(JString arg0, JString arg1, jint arg2, JString arg3, java::net::URLStreamHandler arg4)
 		: JObject(
 			"java.net.URL",
 			"(Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;Ljava/net/URLStreamHandler;)V",
-			arg0,
-			arg1,
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
 			arg2,
-			arg3,
+			arg3.object<jstring>(),
 			arg4.object()
 		) {}
 	
@@ -78,35 +82,35 @@ namespace java::net
 			arg0.object()
 		);
 	}
-	jboolean URL::equals(jobject arg0)
+	jboolean URL::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jstring URL::getAuthority()
+	JString URL::getAuthority()
 	{
 		return callObjectMethod(
 			"getAuthority",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jobject URL::getContent()
+	JObject URL::getContent()
 	{
 		return callObjectMethod(
 			"getContent",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
-	jobject URL::getContent(jarray arg0)
+	JObject URL::getContent(JArray arg0)
 	{
 		return callObjectMethod(
 			"getContent",
 			"([Ljava/lang/Class;)Ljava/lang/Object;",
-			arg0
-		).object<jobject>();
+			arg0.object<jarray>()
+		);
 	}
 	jint URL::getDefaultPort()
 	{
@@ -115,26 +119,26 @@ namespace java::net
 			"()I"
 		);
 	}
-	jstring URL::getFile()
+	JString URL::getFile()
 	{
 		return callObjectMethod(
 			"getFile",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring URL::getHost()
+	JString URL::getHost()
 	{
 		return callObjectMethod(
 			"getHost",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring URL::getPath()
+	JString URL::getPath()
 	{
 		return callObjectMethod(
 			"getPath",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint URL::getPort()
 	{
@@ -143,33 +147,33 @@ namespace java::net
 			"()I"
 		);
 	}
-	jstring URL::getProtocol()
+	JString URL::getProtocol()
 	{
 		return callObjectMethod(
 			"getProtocol",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring URL::getQuery()
+	JString URL::getQuery()
 	{
 		return callObjectMethod(
 			"getQuery",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring URL::getRef()
+	JString URL::getRef()
 	{
 		return callObjectMethod(
 			"getRef",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring URL::getUserInfo()
+	JString URL::getUserInfo()
 	{
 		return callObjectMethod(
 			"getUserInfo",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint URL::hashCode()
 	{
@@ -208,19 +212,19 @@ namespace java::net
 			arg0.object()
 		);
 	}
-	jstring URL::toExternalForm()
+	JString URL::toExternalForm()
 	{
 		return callObjectMethod(
 			"toExternalForm",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring URL::toString()
+	JString URL::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	java::net::URI URL::toURI()
 	{

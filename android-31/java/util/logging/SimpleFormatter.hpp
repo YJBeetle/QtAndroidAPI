@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "./Formatter.hpp"
 
+class JString;
 namespace java::util::logging
 {
 	class LogRecord;
@@ -23,7 +23,7 @@ namespace java::util::logging
 		SimpleFormatter();
 		
 		// Methods
-		jstring format(java::util::logging::LogRecord arg0);
+		JString format(java::util::logging::LogRecord arg0);
 	};
 } // namespace java::util::logging
 

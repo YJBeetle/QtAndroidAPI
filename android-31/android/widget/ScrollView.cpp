@@ -5,6 +5,7 @@
 #include "../view/MotionEvent.hpp"
 #include "../view/View.hpp"
 #include "../view/ViewGroup_LayoutParams.hpp"
+#include "../../JString.hpp"
 #include "./ScrollView.hpp"
 
 namespace android::widget
@@ -138,12 +139,12 @@ namespace android::widget
 			arg0
 		);
 	}
-	jstring ScrollView::getAccessibilityClassName()
+	JString ScrollView::getAccessibilityClassName()
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	jint ScrollView::getBottomEdgeEffectColor()
 	{

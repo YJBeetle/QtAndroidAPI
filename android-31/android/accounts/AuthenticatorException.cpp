@@ -1,3 +1,5 @@
+#include "../../JString.hpp"
+#include "../../JThrowable.hpp"
 #include "./AuthenticatorException.hpp"
 
 namespace android::accounts
@@ -13,24 +15,24 @@ namespace android::accounts
 			"android.accounts.AuthenticatorException",
 			"()V"
 		) {}
-	AuthenticatorException::AuthenticatorException(jstring arg0)
+	AuthenticatorException::AuthenticatorException(JString arg0)
 		: android::accounts::AccountsException(
 			"android.accounts.AuthenticatorException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	AuthenticatorException::AuthenticatorException(jthrowable arg0)
+	AuthenticatorException::AuthenticatorException(JThrowable arg0)
 		: android::accounts::AccountsException(
 			"android.accounts.AuthenticatorException",
 			"(Ljava/lang/Throwable;)V",
-			arg0
+			arg0.object<jthrowable>()
 		) {}
-	AuthenticatorException::AuthenticatorException(jstring arg0, jthrowable arg1)
+	AuthenticatorException::AuthenticatorException(JString arg0, JThrowable arg1)
 		: android::accounts::AccountsException(
 			"android.accounts.AuthenticatorException",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
 		) {}
 	
 	// Methods

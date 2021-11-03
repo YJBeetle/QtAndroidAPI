@@ -5,106 +5,108 @@
 #include "../../net/Uri.hpp"
 #include "../../os/PersistableBundle.hpp"
 #include "../../os/UserHandle.hpp"
+#include "../../../JString.hpp"
+#include "../../../JString.hpp"
 #include "./DeviceAdminReceiver.hpp"
 
 namespace android::app::admin
 {
 	// Fields
-	jstring DeviceAdminReceiver::ACTION_CHOOSE_PRIVATE_KEY_ALIAS()
+	JString DeviceAdminReceiver::ACTION_CHOOSE_PRIVATE_KEY_ALIAS()
 	{
 		return getStaticObjectField(
 			"android.app.admin.DeviceAdminReceiver",
 			"ACTION_CHOOSE_PRIVATE_KEY_ALIAS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DeviceAdminReceiver::ACTION_DEVICE_ADMIN_DISABLED()
+	JString DeviceAdminReceiver::ACTION_DEVICE_ADMIN_DISABLED()
 	{
 		return getStaticObjectField(
 			"android.app.admin.DeviceAdminReceiver",
 			"ACTION_DEVICE_ADMIN_DISABLED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DeviceAdminReceiver::ACTION_DEVICE_ADMIN_DISABLE_REQUESTED()
+	JString DeviceAdminReceiver::ACTION_DEVICE_ADMIN_DISABLE_REQUESTED()
 	{
 		return getStaticObjectField(
 			"android.app.admin.DeviceAdminReceiver",
 			"ACTION_DEVICE_ADMIN_DISABLE_REQUESTED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DeviceAdminReceiver::ACTION_DEVICE_ADMIN_ENABLED()
+	JString DeviceAdminReceiver::ACTION_DEVICE_ADMIN_ENABLED()
 	{
 		return getStaticObjectField(
 			"android.app.admin.DeviceAdminReceiver",
 			"ACTION_DEVICE_ADMIN_ENABLED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DeviceAdminReceiver::ACTION_LOCK_TASK_ENTERING()
+	JString DeviceAdminReceiver::ACTION_LOCK_TASK_ENTERING()
 	{
 		return getStaticObjectField(
 			"android.app.admin.DeviceAdminReceiver",
 			"ACTION_LOCK_TASK_ENTERING",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DeviceAdminReceiver::ACTION_LOCK_TASK_EXITING()
+	JString DeviceAdminReceiver::ACTION_LOCK_TASK_EXITING()
 	{
 		return getStaticObjectField(
 			"android.app.admin.DeviceAdminReceiver",
 			"ACTION_LOCK_TASK_EXITING",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DeviceAdminReceiver::ACTION_NETWORK_LOGS_AVAILABLE()
+	JString DeviceAdminReceiver::ACTION_NETWORK_LOGS_AVAILABLE()
 	{
 		return getStaticObjectField(
 			"android.app.admin.DeviceAdminReceiver",
 			"ACTION_NETWORK_LOGS_AVAILABLE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DeviceAdminReceiver::ACTION_PASSWORD_CHANGED()
+	JString DeviceAdminReceiver::ACTION_PASSWORD_CHANGED()
 	{
 		return getStaticObjectField(
 			"android.app.admin.DeviceAdminReceiver",
 			"ACTION_PASSWORD_CHANGED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DeviceAdminReceiver::ACTION_PASSWORD_EXPIRING()
+	JString DeviceAdminReceiver::ACTION_PASSWORD_EXPIRING()
 	{
 		return getStaticObjectField(
 			"android.app.admin.DeviceAdminReceiver",
 			"ACTION_PASSWORD_EXPIRING",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DeviceAdminReceiver::ACTION_PASSWORD_FAILED()
+	JString DeviceAdminReceiver::ACTION_PASSWORD_FAILED()
 	{
 		return getStaticObjectField(
 			"android.app.admin.DeviceAdminReceiver",
 			"ACTION_PASSWORD_FAILED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DeviceAdminReceiver::ACTION_PASSWORD_SUCCEEDED()
+	JString DeviceAdminReceiver::ACTION_PASSWORD_SUCCEEDED()
 	{
 		return getStaticObjectField(
 			"android.app.admin.DeviceAdminReceiver",
 			"ACTION_PASSWORD_SUCCEEDED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DeviceAdminReceiver::ACTION_PROFILE_PROVISIONING_COMPLETE()
+	JString DeviceAdminReceiver::ACTION_PROFILE_PROVISIONING_COMPLETE()
 	{
 		return getStaticObjectField(
 			"android.app.admin.DeviceAdminReceiver",
 			"ACTION_PROFILE_PROVISIONING_COMPLETE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint DeviceAdminReceiver::BUGREPORT_FAILURE_FAILED_COMPLETING()
 	{
@@ -120,37 +122,37 @@ namespace android::app::admin
 			"BUGREPORT_FAILURE_FILE_NO_LONGER_AVAILABLE"
 		);
 	}
-	jstring DeviceAdminReceiver::DEVICE_ADMIN_META_DATA()
+	JString DeviceAdminReceiver::DEVICE_ADMIN_META_DATA()
 	{
 		return getStaticObjectField(
 			"android.app.admin.DeviceAdminReceiver",
 			"DEVICE_ADMIN_META_DATA",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DeviceAdminReceiver::EXTRA_DISABLE_WARNING()
+	JString DeviceAdminReceiver::EXTRA_DISABLE_WARNING()
 	{
 		return getStaticObjectField(
 			"android.app.admin.DeviceAdminReceiver",
 			"EXTRA_DISABLE_WARNING",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DeviceAdminReceiver::EXTRA_LOCK_TASK_PACKAGE()
+	JString DeviceAdminReceiver::EXTRA_LOCK_TASK_PACKAGE()
 	{
 		return getStaticObjectField(
 			"android.app.admin.DeviceAdminReceiver",
 			"EXTRA_LOCK_TASK_PACKAGE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DeviceAdminReceiver::EXTRA_TRANSFER_OWNERSHIP_ADMIN_EXTRAS_BUNDLE()
+	JString DeviceAdminReceiver::EXTRA_TRANSFER_OWNERSHIP_ADMIN_EXTRAS_BUNDLE()
 	{
 		return getStaticObjectField(
 			"android.app.admin.DeviceAdminReceiver",
 			"EXTRA_TRANSFER_OWNERSHIP_ADMIN_EXTRAS_BUNDLE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QJniObject forward
@@ -190,14 +192,14 @@ namespace android::app::admin
 			arg2
 		);
 	}
-	void DeviceAdminReceiver::onBugreportShared(android::content::Context arg0, android::content::Intent arg1, jstring arg2)
+	void DeviceAdminReceiver::onBugreportShared(android::content::Context arg0, android::content::Intent arg1, JString arg2)
 	{
 		callMethod<void>(
 			"onBugreportShared",
 			"(Landroid/content/Context;Landroid/content/Intent;Ljava/lang/String;)V",
 			arg0.object(),
 			arg1.object(),
-			arg2
+			arg2.object<jstring>()
 		);
 	}
 	void DeviceAdminReceiver::onBugreportSharingDeclined(android::content::Context arg0, android::content::Intent arg1)
@@ -209,7 +211,7 @@ namespace android::app::admin
 			arg1.object()
 		);
 	}
-	jstring DeviceAdminReceiver::onChoosePrivateKeyAlias(android::content::Context arg0, android::content::Intent arg1, jint arg2, android::net::Uri arg3, jstring arg4)
+	JString DeviceAdminReceiver::onChoosePrivateKeyAlias(android::content::Context arg0, android::content::Intent arg1, jint arg2, android::net::Uri arg3, JString arg4)
 	{
 		return callObjectMethod(
 			"onChoosePrivateKeyAlias",
@@ -218,17 +220,17 @@ namespace android::app::admin
 			arg1.object(),
 			arg2,
 			arg3.object(),
-			arg4
-		).object<jstring>();
+			arg4.object<jstring>()
+		);
 	}
-	jstring DeviceAdminReceiver::onDisableRequested(android::content::Context arg0, android::content::Intent arg1)
+	JString DeviceAdminReceiver::onDisableRequested(android::content::Context arg0, android::content::Intent arg1)
 	{
 		return callObjectMethod(
 			"onDisableRequested",
 			"(Landroid/content/Context;Landroid/content/Intent;)Ljava/lang/CharSequence;",
 			arg0.object(),
 			arg1.object()
-		).object<jstring>();
+		);
 	}
 	void DeviceAdminReceiver::onDisabled(android::content::Context arg0, android::content::Intent arg1)
 	{
@@ -248,14 +250,14 @@ namespace android::app::admin
 			arg1.object()
 		);
 	}
-	void DeviceAdminReceiver::onLockTaskModeEntering(android::content::Context arg0, android::content::Intent arg1, jstring arg2)
+	void DeviceAdminReceiver::onLockTaskModeEntering(android::content::Context arg0, android::content::Intent arg1, JString arg2)
 	{
 		callMethod<void>(
 			"onLockTaskModeEntering",
 			"(Landroid/content/Context;Landroid/content/Intent;Ljava/lang/String;)V",
 			arg0.object(),
 			arg1.object(),
-			arg2
+			arg2.object<jstring>()
 		);
 	}
 	void DeviceAdminReceiver::onLockTaskModeExiting(android::content::Context arg0, android::content::Intent arg1)

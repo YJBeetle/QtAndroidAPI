@@ -14,6 +14,7 @@ namespace java::io
 {
 	class File;
 }
+class JString;
 
 namespace android::gesture
 {
@@ -30,8 +31,8 @@ namespace android::gesture
 		
 		// Methods
 		static android::gesture::GestureLibrary fromFile(java::io::File arg0);
-		static android::gesture::GestureLibrary fromFile(jstring arg0);
-		static android::gesture::GestureLibrary fromPrivateFile(android::content::Context arg0, jstring arg1);
+		static android::gesture::GestureLibrary fromFile(JString arg0);
+		static android::gesture::GestureLibrary fromPrivateFile(android::content::Context arg0, JString arg1);
 		static android::gesture::GestureLibrary fromRawResource(android::content::Context arg0, jint arg1);
 	};
 } // namespace android::gesture

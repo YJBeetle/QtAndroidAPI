@@ -2,6 +2,8 @@
 
 #include "../../../JObject.hpp"
 
+class JObject;
+class JString;
 
 namespace android::icu::util
 {
@@ -9,7 +11,7 @@ namespace android::icu::util
 	{
 	public:
 		// Fields
-		jobject value();
+		JObject value();
 		
 		// QJniObject forward
 		template<typename ...Ts> explicit Output(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
@@ -17,10 +19,10 @@ namespace android::icu::util
 		
 		// Constructors
 		Output();
-		Output(jobject arg0);
+		Output(JObject arg0);
 		
 		// Methods
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::icu::util
 

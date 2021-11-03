@@ -1,3 +1,5 @@
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./SparseIntArray.hpp"
 
 namespace android::util
@@ -126,12 +128,12 @@ namespace android::util
 			"()I"
 		);
 	}
-	jstring SparseIntArray::toString()
+	JString SparseIntArray::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint SparseIntArray::valueAt(jint arg0)
 	{

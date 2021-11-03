@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JString;
 
 namespace android::hardware::biometrics
 {
@@ -17,9 +18,9 @@ namespace android::hardware::biometrics
 		// Constructors
 		
 		// Methods
-		jstring getButtonLabel();
-		jstring getPromptMessage();
-		jstring getSettingName();
+		JString getButtonLabel();
+		JString getPromptMessage();
+		JString getSettingName();
 	};
 } // namespace android::hardware::biometrics
 

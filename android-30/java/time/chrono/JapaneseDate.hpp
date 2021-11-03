@@ -1,11 +1,12 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 
 namespace java::io
 {
 	class ObjectInputStream;
 }
+class JObject;
+class JString;
 namespace java::time
 {
 	class Clock;
@@ -56,7 +57,7 @@ namespace java::time::chrono
 		static java::time::chrono::JapaneseDate of(jint arg0, jint arg1, jint arg2);
 		static java::time::chrono::JapaneseDate of(java::time::chrono::JapaneseEra arg0, jint arg1, jint arg2, jint arg3);
 		JObject atTime(java::time::LocalTime arg0);
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		java::time::chrono::JapaneseChronology getChronology();
 		java::time::chrono::JapaneseEra getEra();
 		jlong getLong(JObject arg0);
@@ -70,7 +71,7 @@ namespace java::time::chrono
 		java::time::chrono::JapaneseDate plus(jlong arg0, JObject arg1);
 		java::time::temporal::ValueRange range(JObject arg0);
 		jlong toEpochDay();
-		jstring toString();
+		JString toString();
 		JObject until(JObject arg0);
 		jlong until(JObject arg0, JObject arg1);
 		java::time::chrono::JapaneseDate with(JObject arg0);

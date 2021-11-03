@@ -1,4 +1,5 @@
 #include "../../os/Parcel.hpp"
+#include "../../../JString.hpp"
 #include "./SurroundingText.hpp"
 
 namespace android::view::inputmethod
@@ -17,11 +18,11 @@ namespace android::view::inputmethod
 	SurroundingText::SurroundingText(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	SurroundingText::SurroundingText(jstring arg0, jint arg1, jint arg2, jint arg3)
+	SurroundingText::SurroundingText(JString arg0, jint arg1, jint arg2, jint arg3)
 		: JObject(
 			"android.view.inputmethod.SurroundingText",
 			"(Ljava/lang/CharSequence;III)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
 			arg2,
 			arg3
@@ -56,12 +57,12 @@ namespace android::view::inputmethod
 			"()I"
 		);
 	}
-	jstring SurroundingText::getText()
+	JString SurroundingText::getText()
 	{
 		return callObjectMethod(
 			"getText",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	void SurroundingText::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

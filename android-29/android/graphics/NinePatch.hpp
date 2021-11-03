@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JByteArray;
 namespace android::graphics
 {
 	class Bitmap;
@@ -26,6 +27,7 @@ namespace android::graphics
 {
 	class Region;
 }
+class JString;
 
 namespace android::graphics
 {
@@ -39,18 +41,18 @@ namespace android::graphics
 		NinePatch(QJniObject obj);
 		
 		// Constructors
-		NinePatch(android::graphics::Bitmap arg0, jbyteArray arg1);
-		NinePatch(android::graphics::Bitmap arg0, jbyteArray arg1, jstring arg2);
+		NinePatch(android::graphics::Bitmap arg0, JByteArray arg1);
+		NinePatch(android::graphics::Bitmap arg0, JByteArray arg1, JString arg2);
 		
 		// Methods
-		static jboolean isNinePatchChunk(jbyteArray arg0);
+		static jboolean isNinePatchChunk(JByteArray arg0);
 		void draw(android::graphics::Canvas arg0, android::graphics::Rect arg1);
 		void draw(android::graphics::Canvas arg0, android::graphics::RectF arg1);
 		void draw(android::graphics::Canvas arg0, android::graphics::Rect arg1, android::graphics::Paint arg2);
 		android::graphics::Bitmap getBitmap();
 		jint getDensity();
 		jint getHeight();
-		jstring getName();
+		JString getName();
 		android::graphics::Paint getPaint();
 		android::graphics::Region getTransparentRegion(android::graphics::Rect arg0);
 		jint getWidth();

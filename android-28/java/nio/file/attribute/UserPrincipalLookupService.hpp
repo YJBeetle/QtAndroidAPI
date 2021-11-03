@@ -2,6 +2,7 @@
 
 #include "../../../../JObject.hpp"
 
+class JString;
 
 namespace java::nio::file::attribute
 {
@@ -17,8 +18,8 @@ namespace java::nio::file::attribute
 		// Constructors
 		
 		// Methods
-		JObject lookupPrincipalByGroupName(jstring arg0);
-		JObject lookupPrincipalByName(jstring arg0);
+		JObject lookupPrincipalByGroupName(JString arg0);
+		JObject lookupPrincipalByName(JString arg0);
 	};
 } // namespace java::nio::file::attribute
 

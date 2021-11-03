@@ -2,6 +2,8 @@
 
 #include "../../../JObject.hpp"
 
+class JObject;
+class JString;
 
 namespace android::icu::text
 {
@@ -15,15 +17,15 @@ namespace android::icu::text
 		DateIntervalInfo_PatternInfo(QJniObject obj);
 		
 		// Constructors
-		DateIntervalInfo_PatternInfo(jstring arg0, jstring arg1, jboolean arg2);
+		DateIntervalInfo_PatternInfo(JString arg0, JString arg1, jboolean arg2);
 		
 		// Methods
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jboolean firstDateInPtnIsLaterDate();
-		jstring getFirstPart();
-		jstring getSecondPart();
+		JString getFirstPart();
+		JString getSecondPart();
 		jint hashCode();
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::icu::text
 

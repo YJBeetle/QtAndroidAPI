@@ -3,6 +3,7 @@
 #include "../view/ViewGroup_LayoutParams.hpp"
 #include "./LinearLayout_LayoutParams.hpp"
 #include "./TableRow_LayoutParams.hpp"
+#include "../../JString.hpp"
 #include "./TableRow.hpp"
 
 namespace android::widget
@@ -36,12 +37,12 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	jstring TableRow::getAccessibilityClassName()
+	JString TableRow::getAccessibilityClassName()
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	android::view::View TableRow::getVirtualChildAt(jint arg0)
 	{

@@ -2,6 +2,9 @@
 
 #include "../../JObject.hpp"
 
+class JByteArray;
+class JClass;
+class JString;
 
 namespace java::security
 {

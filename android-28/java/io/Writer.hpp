@@ -2,6 +2,10 @@
 
 #include "../../JObject.hpp"
 
+class JCharArray;
+class JString;
+class JObject;
+class JString;
 
 namespace java::io
 {
@@ -19,15 +23,15 @@ namespace java::io
 		// Methods
 		static java::io::Writer nullWriter();
 		java::io::Writer append(jchar arg0);
-		java::io::Writer append(jstring arg0);
-		java::io::Writer append(jstring arg0, jint arg1, jint arg2);
+		java::io::Writer append(JString arg0);
+		java::io::Writer append(JString arg0, jint arg1, jint arg2);
 		void close();
 		void flush();
-		void write(jcharArray arg0);
+		void write(JCharArray arg0);
 		void write(jint arg0);
-		void write(jstring arg0);
-		void write(jcharArray arg0, jint arg1, jint arg2);
-		void write(jstring arg0, jint arg1, jint arg2);
+		void write(JString arg0);
+		void write(JCharArray arg0, jint arg1, jint arg2);
+		void write(JString arg0, jint arg1, jint arg2);
 	};
 } // namespace java::io
 

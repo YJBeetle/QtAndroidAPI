@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./TimingLogger.hpp"
 
 namespace android::util
@@ -8,21 +9,21 @@ namespace android::util
 	TimingLogger::TimingLogger(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	TimingLogger::TimingLogger(jstring arg0, jstring arg1)
+	TimingLogger::TimingLogger(JString arg0, JString arg1)
 		: JObject(
 			"android.util.TimingLogger",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		) {}
 	
 	// Methods
-	void TimingLogger::addSplit(jstring arg0)
+	void TimingLogger::addSplit(JString arg0)
 	{
 		callMethod<void>(
 			"addSplit",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void TimingLogger::dumpToLog()
@@ -39,13 +40,13 @@ namespace android::util
 			"()V"
 		);
 	}
-	void TimingLogger::reset(jstring arg0, jstring arg1)
+	void TimingLogger::reset(JString arg0, JString arg1)
 	{
 		callMethod<void>(
 			"reset",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		);
 	}
 } // namespace android::util

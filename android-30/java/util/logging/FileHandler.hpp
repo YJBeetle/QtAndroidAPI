@@ -1,13 +1,13 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "./Handler.hpp"
 #include "./StreamHandler.hpp"
 
+class JArray;
 namespace java::io
 {
 	class File;
 }
+class JString;
 namespace java::nio::channels
 {
 	class FileChannel;
@@ -30,11 +30,11 @@ namespace java::util::logging
 		
 		// Constructors
 		FileHandler();
-		FileHandler(jstring arg0);
-		FileHandler(jstring arg0, jboolean arg1);
-		FileHandler(jstring arg0, jint arg1, jint arg2);
-		FileHandler(jstring arg0, jint arg1, jint arg2, jboolean arg3);
-		FileHandler(jstring arg0, jlong arg1, jint arg2, jboolean arg3);
+		FileHandler(JString arg0);
+		FileHandler(JString arg0, jboolean arg1);
+		FileHandler(JString arg0, jint arg1, jint arg2);
+		FileHandler(JString arg0, jint arg1, jint arg2, jboolean arg3);
+		FileHandler(JString arg0, jlong arg1, jint arg2, jboolean arg3);
 		
 		// Methods
 		void close();

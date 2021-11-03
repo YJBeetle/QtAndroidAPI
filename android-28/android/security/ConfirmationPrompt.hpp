@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JByteArray;
 namespace android::content
 {
 	class Context;
@@ -10,6 +11,7 @@ namespace android::security
 {
 	class ConfirmationCallback;
 }
+class JString;
 
 namespace android::security
 {

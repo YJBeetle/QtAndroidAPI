@@ -1,6 +1,5 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "../../graphics/pdf/PdfDocument.hpp"
 
 namespace android::content

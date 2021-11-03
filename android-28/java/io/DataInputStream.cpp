@@ -1,4 +1,7 @@
+#include "../../JByteArray.hpp"
+#include "../../JCharArray.hpp"
 #include "./InputStream.hpp"
+#include "../../JString.hpp"
 #include "./DataInputStream.hpp"
 
 namespace java::io
@@ -17,29 +20,29 @@ namespace java::io
 		) {}
 	
 	// Methods
-	jstring DataInputStream::readUTF(JObject arg0)
+	JString DataInputStream::readUTF(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"java.io.DataInputStream",
 			"readUTF",
 			"(Ljava/io/DataInput;)Ljava/lang/String;",
 			arg0.object()
-		).object<jstring>();
+		);
 	}
-	jint DataInputStream::read(jbyteArray arg0)
+	jint DataInputStream::read(JByteArray arg0)
 	{
 		return callMethod<jint>(
 			"read",
 			"([B)I",
-			arg0
+			arg0.object<jbyteArray>()
 		);
 	}
-	jint DataInputStream::read(jbyteArray arg0, jint arg1, jint arg2)
+	jint DataInputStream::read(JByteArray arg0, jint arg1, jint arg2)
 	{
 		return callMethod<jint>(
 			"read",
 			"([BII)I",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1,
 			arg2
 		);
@@ -79,20 +82,20 @@ namespace java::io
 			"()F"
 		);
 	}
-	void DataInputStream::readFully(jbyteArray arg0)
+	void DataInputStream::readFully(JByteArray arg0)
 	{
 		callMethod<void>(
 			"readFully",
 			"([B)V",
-			arg0
+			arg0.object<jbyteArray>()
 		);
 	}
-	void DataInputStream::readFully(jbyteArray arg0, jint arg1, jint arg2)
+	void DataInputStream::readFully(JByteArray arg0, jint arg1, jint arg2)
 	{
 		callMethod<void>(
 			"readFully",
 			"([BII)V",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1,
 			arg2
 		);
@@ -104,12 +107,12 @@ namespace java::io
 			"()I"
 		);
 	}
-	jstring DataInputStream::readLine()
+	JString DataInputStream::readLine()
 	{
 		return callObjectMethod(
 			"readLine",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jlong DataInputStream::readLong()
 	{
@@ -125,12 +128,12 @@ namespace java::io
 			"()S"
 		);
 	}
-	jstring DataInputStream::readUTF()
+	JString DataInputStream::readUTF()
 	{
 		return callObjectMethod(
 			"readUTF",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint DataInputStream::readUnsignedByte()
 	{

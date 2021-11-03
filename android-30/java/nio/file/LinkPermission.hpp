@@ -1,9 +1,8 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "../../security/Permission.hpp"
 #include "../../security/BasicPermission.hpp"
 
+class JString;
 
 namespace java::nio::file
 {
@@ -17,8 +16,8 @@ namespace java::nio::file
 		LinkPermission(QJniObject obj);
 		
 		// Constructors
-		LinkPermission(jstring arg0);
-		LinkPermission(jstring arg0, jstring arg1);
+		LinkPermission(JString arg0);
+		LinkPermission(JString arg0, JString arg1);
 		
 		// Methods
 	};

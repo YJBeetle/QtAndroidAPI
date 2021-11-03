@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JByteArray;
 namespace java::io
 {
 	class OutputStream;
@@ -28,11 +29,11 @@ namespace java::io
 		void mark(jint arg0);
 		jboolean markSupported();
 		jint read();
-		jint read(jbyteArray arg0);
-		jint read(jbyteArray arg0, jint arg1, jint arg2);
-		jbyteArray readAllBytes();
-		jbyteArray readNBytes(jint arg0);
-		jint readNBytes(jbyteArray arg0, jint arg1, jint arg2);
+		jint read(JByteArray arg0);
+		jint read(JByteArray arg0, jint arg1, jint arg2);
+		JByteArray readAllBytes();
+		JByteArray readNBytes(jint arg0);
+		jint readNBytes(JByteArray arg0, jint arg1, jint arg2);
 		void reset();
 		jlong skip(jlong arg0);
 		void skipNBytes(jlong arg0);

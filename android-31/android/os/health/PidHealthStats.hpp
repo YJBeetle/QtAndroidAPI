@@ -2,7 +2,6 @@
 
 #include "../../../JObject.hpp"
 
-
 namespace android::os::health
 {
 	class PidHealthStats : public JObject

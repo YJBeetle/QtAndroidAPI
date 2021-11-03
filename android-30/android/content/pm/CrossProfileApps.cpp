@@ -4,18 +4,20 @@
 #include "../../graphics/drawable/Drawable.hpp"
 #include "../../os/Bundle.hpp"
 #include "../../os/UserHandle.hpp"
+#include "../../../JString.hpp"
+#include "../../../JString.hpp"
 #include "./CrossProfileApps.hpp"
 
 namespace android::content::pm
 {
 	// Fields
-	jstring CrossProfileApps::ACTION_CAN_INTERACT_ACROSS_PROFILES_CHANGED()
+	JString CrossProfileApps::ACTION_CAN_INTERACT_ACROSS_PROFILES_CHANGED()
 	{
 		return getStaticObjectField(
 			"android.content.pm.CrossProfileApps",
 			"ACTION_CAN_INTERACT_ACROSS_PROFILES_CHANGED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QJniObject forward
@@ -53,13 +55,13 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	jstring CrossProfileApps::getProfileSwitchingLabel(android::os::UserHandle arg0)
+	JString CrossProfileApps::getProfileSwitchingLabel(android::os::UserHandle arg0)
 	{
 		return callObjectMethod(
 			"getProfileSwitchingLabel",
 			"(Landroid/os/UserHandle;)Ljava/lang/CharSequence;",
 			arg0.object()
-		).object<jstring>();
+		);
 	}
 	JObject CrossProfileApps::getTargetUserProfiles()
 	{

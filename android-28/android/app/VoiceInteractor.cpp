@@ -1,4 +1,8 @@
+#include "../../JArray.hpp"
+#include "../../JArray.hpp"
+#include "../../JBooleanArray.hpp"
 #include "./VoiceInteractor_Request.hpp"
+#include "../../JString.hpp"
 #include "./VoiceInteractor.hpp"
 
 namespace android::app
@@ -11,20 +15,20 @@ namespace android::app
 	// Constructors
 	
 	// Methods
-	android::app::VoiceInteractor_Request VoiceInteractor::getActiveRequest(jstring arg0)
+	android::app::VoiceInteractor_Request VoiceInteractor::getActiveRequest(JString arg0)
 	{
 		return callObjectMethod(
 			"getActiveRequest",
 			"(Ljava/lang/String;)Landroid/app/VoiceInteractor$Request;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray VoiceInteractor::getActiveRequests()
+	JArray VoiceInteractor::getActiveRequests()
 	{
 		return callObjectMethod(
 			"getActiveRequests",
 			"()[Landroid/app/VoiceInteractor$Request;"
-		).object<jarray>();
+		);
 	}
 	jboolean VoiceInteractor::submitRequest(android::app::VoiceInteractor_Request arg0)
 	{
@@ -34,22 +38,22 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	jboolean VoiceInteractor::submitRequest(android::app::VoiceInteractor_Request arg0, jstring arg1)
+	jboolean VoiceInteractor::submitRequest(android::app::VoiceInteractor_Request arg0, JString arg1)
 	{
 		return callMethod<jboolean>(
 			"submitRequest",
 			"(Landroid/app/VoiceInteractor$Request;Ljava/lang/String;)Z",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
-	jbooleanArray VoiceInteractor::supportsCommands(jarray arg0)
+	JBooleanArray VoiceInteractor::supportsCommands(JArray arg0)
 	{
 		return callObjectMethod(
 			"supportsCommands",
 			"([Ljava/lang/String;)[Z",
-			arg0
-		).object<jbooleanArray>();
+			arg0.object<jarray>()
+		);
 	}
 } // namespace android::app
 

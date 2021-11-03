@@ -1,4 +1,7 @@
+#include "../../../JIntArray.hpp"
+#include "../../../JShortArray.hpp"
 #include "./Equalizer_Settings.hpp"
+#include "../../../JString.hpp"
 #include "./Equalizer.hpp"
 
 namespace android::media::audiofx
@@ -96,13 +99,13 @@ namespace android::media::audiofx
 			arg0
 		);
 	}
-	jintArray Equalizer::getBandFreqRange(jshort arg0)
+	JIntArray Equalizer::getBandFreqRange(jshort arg0)
 	{
 		return callObjectMethod(
 			"getBandFreqRange",
 			"(S)[I",
 			arg0
-		).object<jintArray>();
+		);
 	}
 	jshort Equalizer::getBandLevel(jshort arg0)
 	{
@@ -112,12 +115,12 @@ namespace android::media::audiofx
 			arg0
 		);
 	}
-	jshortArray Equalizer::getBandLevelRange()
+	JShortArray Equalizer::getBandLevelRange()
 	{
 		return callObjectMethod(
 			"getBandLevelRange",
 			"()[S"
-		).object<jshortArray>();
+		);
 	}
 	jint Equalizer::getCenterFreq(jshort arg0)
 	{
@@ -148,13 +151,13 @@ namespace android::media::audiofx
 			"()S"
 		);
 	}
-	jstring Equalizer::getPresetName(jshort arg0)
+	JString Equalizer::getPresetName(jshort arg0)
 	{
 		return callObjectMethod(
 			"getPresetName",
 			"(S)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
 	android::media::audiofx::Equalizer_Settings Equalizer::getProperties()
 	{

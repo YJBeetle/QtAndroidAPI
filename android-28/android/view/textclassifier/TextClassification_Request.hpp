@@ -10,6 +10,7 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
 namespace java::time
 {
 	class ZonedDateTime;
@@ -35,7 +36,7 @@ namespace android::view::textclassifier
 		jint getEndIndex();
 		java::time::ZonedDateTime getReferenceTime();
 		jint getStartIndex();
-		jstring getText();
+		JString getText();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::view::textclassifier

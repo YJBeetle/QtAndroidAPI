@@ -1,12 +1,12 @@
 #pragma once
 
-#include "../../../../JObject.hpp"
 #include "./IkeSessionParams_IkeAuthConfig.hpp"
 
 namespace android::net::eap
 {
 	class EapSessionConfig;
 }
+class JObject;
 
 namespace android::net::ipsec::ike
 {
@@ -22,7 +22,7 @@ namespace android::net::ipsec::ike
 		// Constructors
 		
 		// Methods
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		android::net::eap::EapSessionConfig getEapConfig();
 		jint hashCode();
 	};

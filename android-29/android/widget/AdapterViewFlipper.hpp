@@ -1,15 +1,12 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../view/View.hpp"
-#include "../view/ViewGroup.hpp"
-#include "./AdapterView.hpp"
 #include "./AdapterViewAnimator.hpp"
 
 namespace android::content
 {
 	class Context;
 }
+class JString;
 
 namespace android::widget
 {
@@ -30,7 +27,7 @@ namespace android::widget
 		
 		// Methods
 		void fyiWillBeAdvancedByHostKThx();
-		jstring getAccessibilityClassName();
+		JString getAccessibilityClassName();
 		jint getFlipInterval();
 		jboolean isAutoStart();
 		jboolean isFlipping();

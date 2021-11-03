@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../../../JObject.hpp"
 #include "../helpers/LocatorImpl.hpp"
 
+class JString;
 
 namespace org::xml::sax::ext
 {
@@ -20,10 +20,10 @@ namespace org::xml::sax::ext
 		Locator2Impl(JObject arg0);
 		
 		// Methods
-		jstring getEncoding();
-		jstring getXMLVersion();
-		void setEncoding(jstring arg0);
-		void setXMLVersion(jstring arg0);
+		JString getEncoding();
+		JString getXMLVersion();
+		void setEncoding(JString arg0);
+		void setXMLVersion(JString arg0);
 	};
 } // namespace org::xml::sax::ext
 

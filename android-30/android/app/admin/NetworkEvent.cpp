@@ -1,4 +1,5 @@
 #include "../../os/Parcel.hpp"
+#include "../../../JString.hpp"
 #include "./NetworkEvent.hpp"
 
 namespace android::app::admin
@@ -33,12 +34,12 @@ namespace android::app::admin
 			"()J"
 		);
 	}
-	jstring NetworkEvent::getPackageName()
+	JString NetworkEvent::getPackageName()
 	{
 		return callObjectMethod(
 			"getPackageName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jlong NetworkEvent::getTimestamp()
 	{

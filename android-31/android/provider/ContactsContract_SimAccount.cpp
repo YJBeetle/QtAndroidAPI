@@ -1,4 +1,6 @@
 #include "../os/Parcel.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./ContactsContract_SimAccount.hpp"
 
 namespace android::provider
@@ -54,27 +56,27 @@ namespace android::provider
 			"()I"
 		);
 	}
-	jboolean ContactsContract_SimAccount::equals(jobject arg0)
+	jboolean ContactsContract_SimAccount::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jstring ContactsContract_SimAccount::getAccountName()
+	JString ContactsContract_SimAccount::getAccountName()
 	{
 		return callObjectMethod(
 			"getAccountName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ContactsContract_SimAccount::getAccountType()
+	JString ContactsContract_SimAccount::getAccountType()
 	{
 		return callObjectMethod(
 			"getAccountType",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint ContactsContract_SimAccount::getEfType()
 	{

@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JArray;
 namespace android::content
 {
 	class ContentValues;
@@ -14,6 +15,8 @@ namespace android::os
 {
 	class Handler;
 }
+class JObject;
+class JString;
 
 namespace android::content
 {
@@ -21,13 +24,13 @@ namespace android::content
 	{
 	public:
 		// Fields
-		jobject cookie();
+		JObject cookie();
 		android::os::Handler handler();
-		jstring orderBy();
-		jarray projection();
-		jobject result();
-		jstring selection();
-		jarray selectionArgs();
+		JString orderBy();
+		JArray projection();
+		JObject result();
+		JString selection();
+		JArray selectionArgs();
 		android::net::Uri uri();
 		android::content::ContentValues values();
 		

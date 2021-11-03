@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JArray;
 namespace android::net
 {
 	class Credentials;
@@ -22,6 +23,7 @@ namespace java::io
 {
 	class OutputStream;
 }
+class JString;
 
 namespace android::net
 {
@@ -46,7 +48,7 @@ namespace android::net
 		void close();
 		void connect(android::net::LocalSocketAddress arg0);
 		void connect(android::net::LocalSocketAddress arg0, jint arg1);
-		jarray getAncillaryFileDescriptors();
+		JArray getAncillaryFileDescriptors();
 		java::io::FileDescriptor getFileDescriptor();
 		java::io::InputStream getInputStream();
 		android::net::LocalSocketAddress getLocalSocketAddress();
@@ -61,13 +63,13 @@ namespace android::net
 		jboolean isConnected();
 		jboolean isInputShutdown();
 		jboolean isOutputShutdown();
-		void setFileDescriptorsForSend(jarray arg0);
+		void setFileDescriptorsForSend(JArray arg0);
 		void setReceiveBufferSize(jint arg0);
 		void setSendBufferSize(jint arg0);
 		void setSoTimeout(jint arg0);
 		void shutdownInput();
 		void shutdownOutput();
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::net
 

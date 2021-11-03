@@ -1,4 +1,6 @@
 #include "../os/Parcel.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./PrinterId.hpp"
 
 namespace android::print
@@ -26,20 +28,20 @@ namespace android::print
 			"()I"
 		);
 	}
-	jboolean PrinterId::equals(jobject arg0)
+	jboolean PrinterId::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jstring PrinterId::getLocalId()
+	JString PrinterId::getLocalId()
 	{
 		return callObjectMethod(
 			"getLocalId",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint PrinterId::hashCode()
 	{
@@ -48,12 +50,12 @@ namespace android::print
 			"()I"
 		);
 	}
-	jstring PrinterId::toString()
+	JString PrinterId::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void PrinterId::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

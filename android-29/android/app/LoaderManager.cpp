@@ -1,7 +1,9 @@
+#include "../../JArray.hpp"
 #include "../content/Loader.hpp"
 #include "../os/Bundle.hpp"
 #include "../../java/io/FileDescriptor.hpp"
 #include "../../java/io/PrintWriter.hpp"
+#include "../../JString.hpp"
 #include "./LoaderManager.hpp"
 
 namespace android::app
@@ -36,15 +38,15 @@ namespace android::app
 			arg0
 		);
 	}
-	void LoaderManager::dump(jstring arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, jarray arg3)
+	void LoaderManager::dump(JString arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, JArray arg3)
 	{
 		callMethod<void>(
 			"dump",
 			"(Ljava/lang/String;Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
 			arg2.object(),
-			arg3
+			arg3.object<jarray>()
 		);
 	}
 	android::content::Loader LoaderManager::getLoader(jint arg0)

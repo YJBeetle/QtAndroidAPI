@@ -1,5 +1,7 @@
+#include "../../../../JByteArray.hpp"
 #include "./IkeSessionConfiguration.hpp"
 #include "./IkeSessionConnectionInfo.hpp"
+#include "../../../../JString.hpp"
 #include "./IkeSessionConfiguration_Builder.hpp"
 
 namespace android::net::ipsec::ike
@@ -26,12 +28,12 @@ namespace android::net::ipsec::ike
 			arg0
 		);
 	}
-	android::net::ipsec::ike::IkeSessionConfiguration_Builder IkeSessionConfiguration_Builder::addRemoteVendorId(jbyteArray arg0)
+	android::net::ipsec::ike::IkeSessionConfiguration_Builder IkeSessionConfiguration_Builder::addRemoteVendorId(JByteArray arg0)
 	{
 		return callObjectMethod(
 			"addRemoteVendorId",
 			"([B)Landroid/net/ipsec/ike/IkeSessionConfiguration$Builder;",
-			arg0
+			arg0.object<jbyteArray>()
 		);
 	}
 	android::net::ipsec::ike::IkeSessionConfiguration IkeSessionConfiguration_Builder::build()
@@ -62,12 +64,12 @@ namespace android::net::ipsec::ike
 			"()Landroid/net/ipsec/ike/IkeSessionConfiguration$Builder;"
 		);
 	}
-	android::net::ipsec::ike::IkeSessionConfiguration_Builder IkeSessionConfiguration_Builder::setRemoteApplicationVersion(jstring arg0)
+	android::net::ipsec::ike::IkeSessionConfiguration_Builder IkeSessionConfiguration_Builder::setRemoteApplicationVersion(JString arg0)
 	{
 		return callObjectMethod(
 			"setRemoteApplicationVersion",
 			"(Ljava/lang/String;)Landroid/net/ipsec/ike/IkeSessionConfiguration$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 } // namespace android::net::ipsec::ike

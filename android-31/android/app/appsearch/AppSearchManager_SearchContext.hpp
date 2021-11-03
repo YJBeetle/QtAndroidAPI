@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JString;
 
 namespace android::app::appsearch
 {
@@ -17,7 +18,7 @@ namespace android::app::appsearch
 		// Constructors
 		
 		// Methods
-		jstring getDatabaseName();
+		JString getDatabaseName();
 	};
 } // namespace android::app::appsearch
 

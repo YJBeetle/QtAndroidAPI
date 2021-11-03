@@ -2,6 +2,9 @@
 
 #include "../../../../JObject.hpp"
 
+class JClass;
+class JObject;
+class JString;
 
 namespace java::util::concurrent::atomic
 {
@@ -17,23 +20,23 @@ namespace java::util::concurrent::atomic
 		// Constructors
 		
 		// Methods
-		static java::util::concurrent::atomic::AtomicIntegerFieldUpdater newUpdater(jclass arg0, jstring arg1);
-		jint accumulateAndGet(jobject arg0, jint arg1, JObject arg2);
-		jint addAndGet(jobject arg0, jint arg1);
-		jboolean compareAndSet(jobject arg0, jint arg1, jint arg2);
-		jint decrementAndGet(jobject arg0);
-		jint get(jobject arg0);
-		jint getAndAccumulate(jobject arg0, jint arg1, JObject arg2);
-		jint getAndAdd(jobject arg0, jint arg1);
-		jint getAndDecrement(jobject arg0);
-		jint getAndIncrement(jobject arg0);
-		jint getAndSet(jobject arg0, jint arg1);
-		jint getAndUpdate(jobject arg0, JObject arg1);
-		jint incrementAndGet(jobject arg0);
-		void lazySet(jobject arg0, jint arg1);
-		void set(jobject arg0, jint arg1);
-		jint updateAndGet(jobject arg0, JObject arg1);
-		jboolean weakCompareAndSet(jobject arg0, jint arg1, jint arg2);
+		static java::util::concurrent::atomic::AtomicIntegerFieldUpdater newUpdater(JClass arg0, JString arg1);
+		jint accumulateAndGet(JObject arg0, jint arg1, JObject arg2);
+		jint addAndGet(JObject arg0, jint arg1);
+		jboolean compareAndSet(JObject arg0, jint arg1, jint arg2);
+		jint decrementAndGet(JObject arg0);
+		jint get(JObject arg0);
+		jint getAndAccumulate(JObject arg0, jint arg1, JObject arg2);
+		jint getAndAdd(JObject arg0, jint arg1);
+		jint getAndDecrement(JObject arg0);
+		jint getAndIncrement(JObject arg0);
+		jint getAndSet(JObject arg0, jint arg1);
+		jint getAndUpdate(JObject arg0, JObject arg1);
+		jint incrementAndGet(JObject arg0);
+		void lazySet(JObject arg0, jint arg1);
+		void set(JObject arg0, jint arg1);
+		jint updateAndGet(JObject arg0, JObject arg1);
+		jboolean weakCompareAndSet(JObject arg0, jint arg1, jint arg2);
 	};
 } // namespace java::util::concurrent::atomic
 

@@ -1,4 +1,6 @@
 #include "./TelephonyManager.hpp"
+#include "../../JString.hpp"
+#include "../../JString.hpp"
 #include "./TelephonyManager_UssdResponseCallback.hpp"
 
 namespace android::telephony
@@ -16,23 +18,23 @@ namespace android::telephony
 		) {}
 	
 	// Methods
-	void TelephonyManager_UssdResponseCallback::onReceiveUssdResponse(android::telephony::TelephonyManager arg0, jstring arg1, jstring arg2)
+	void TelephonyManager_UssdResponseCallback::onReceiveUssdResponse(android::telephony::TelephonyManager arg0, JString arg1, JString arg2)
 	{
 		callMethod<void>(
 			"onReceiveUssdResponse",
 			"(Landroid/telephony/TelephonyManager;Ljava/lang/String;Ljava/lang/CharSequence;)V",
 			arg0.object(),
-			arg1,
-			arg2
+			arg1.object<jstring>(),
+			arg2.object<jstring>()
 		);
 	}
-	void TelephonyManager_UssdResponseCallback::onReceiveUssdResponseFailed(android::telephony::TelephonyManager arg0, jstring arg1, jint arg2)
+	void TelephonyManager_UssdResponseCallback::onReceiveUssdResponseFailed(android::telephony::TelephonyManager arg0, JString arg1, jint arg2)
 	{
 		callMethod<void>(
 			"onReceiveUssdResponseFailed",
 			"(Landroid/telephony/TelephonyManager;Ljava/lang/String;I)V",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2
 		);
 	}

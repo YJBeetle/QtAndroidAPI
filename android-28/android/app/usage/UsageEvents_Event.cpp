@@ -1,4 +1,5 @@
 #include "../../content/res/Configuration.hpp"
+#include "../../../JString.hpp"
 #include "./UsageEvents_Event.hpp"
 
 namespace android::app::usage
@@ -100,12 +101,12 @@ namespace android::app::usage
 			"()I"
 		);
 	}
-	jstring UsageEvents_Event::getClassName()
+	JString UsageEvents_Event::getClassName()
 	{
 		return callObjectMethod(
 			"getClassName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::content::res::Configuration UsageEvents_Event::getConfiguration()
 	{
@@ -121,19 +122,19 @@ namespace android::app::usage
 			"()I"
 		);
 	}
-	jstring UsageEvents_Event::getPackageName()
+	JString UsageEvents_Event::getPackageName()
 	{
 		return callObjectMethod(
 			"getPackageName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring UsageEvents_Event::getShortcutId()
+	JString UsageEvents_Event::getShortcutId()
 	{
 		return callObjectMethod(
 			"getShortcutId",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jlong UsageEvents_Event::getTimeStamp()
 	{

@@ -1,3 +1,6 @@
+#include "../../JLongArray.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./Buffer.hpp"
 #include "./ByteOrder.hpp"
 #include "./LongBuffer.hpp"
@@ -21,32 +24,32 @@ namespace java::nio
 			arg0
 		);
 	}
-	java::nio::LongBuffer LongBuffer::wrap(jlongArray arg0)
+	java::nio::LongBuffer LongBuffer::wrap(JLongArray arg0)
 	{
 		return callStaticObjectMethod(
 			"java.nio.LongBuffer",
 			"wrap",
 			"([J)Ljava/nio/LongBuffer;",
-			arg0
+			arg0.object<jlongArray>()
 		);
 	}
-	java::nio::LongBuffer LongBuffer::wrap(jlongArray arg0, jint arg1, jint arg2)
+	java::nio::LongBuffer LongBuffer::wrap(JLongArray arg0, jint arg1, jint arg2)
 	{
 		return callStaticObjectMethod(
 			"java.nio.LongBuffer",
 			"wrap",
 			"([JII)Ljava/nio/LongBuffer;",
-			arg0,
+			arg0.object<jlongArray>(),
 			arg1,
 			arg2
 		);
 	}
-	jlongArray LongBuffer::array()
+	JLongArray LongBuffer::array()
 	{
 		return callObjectMethod(
 			"array",
 			"()[J"
-		).object<jlongArray>();
+		);
 	}
 	jint LongBuffer::arrayOffset()
 	{
@@ -76,12 +79,12 @@ namespace java::nio
 			"()Ljava/nio/LongBuffer;"
 		);
 	}
-	jint LongBuffer::compareTo(jobject arg0)
+	jint LongBuffer::compareTo(JObject arg0)
 	{
 		return callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Object;)I",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint LongBuffer::compareTo(java::nio::LongBuffer arg0)
@@ -99,12 +102,12 @@ namespace java::nio
 			"()Ljava/nio/LongBuffer;"
 		);
 	}
-	jboolean LongBuffer::equals(jobject arg0)
+	jboolean LongBuffer::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	java::nio::LongBuffer LongBuffer::flip()
@@ -114,40 +117,40 @@ namespace java::nio
 			"()Ljava/nio/LongBuffer;"
 		);
 	}
-	java::nio::LongBuffer LongBuffer::get(jlongArray arg0)
+	java::nio::LongBuffer LongBuffer::get(JLongArray arg0)
 	{
 		return callObjectMethod(
 			"get",
 			"([J)Ljava/nio/LongBuffer;",
-			arg0
+			arg0.object<jlongArray>()
 		);
 	}
-	java::nio::LongBuffer LongBuffer::get(jint arg0, jlongArray arg1)
+	java::nio::LongBuffer LongBuffer::get(jint arg0, JLongArray arg1)
 	{
 		return callObjectMethod(
 			"get",
 			"(I[J)Ljava/nio/LongBuffer;",
 			arg0,
-			arg1
+			arg1.object<jlongArray>()
 		);
 	}
-	java::nio::LongBuffer LongBuffer::get(jlongArray arg0, jint arg1, jint arg2)
+	java::nio::LongBuffer LongBuffer::get(JLongArray arg0, jint arg1, jint arg2)
 	{
 		return callObjectMethod(
 			"get",
 			"([JII)Ljava/nio/LongBuffer;",
-			arg0,
+			arg0.object<jlongArray>(),
 			arg1,
 			arg2
 		);
 	}
-	java::nio::LongBuffer LongBuffer::get(jint arg0, jlongArray arg1, jint arg2, jint arg3)
+	java::nio::LongBuffer LongBuffer::get(jint arg0, JLongArray arg1, jint arg2, jint arg3)
 	{
 		return callObjectMethod(
 			"get",
 			"(I[JII)Ljava/nio/LongBuffer;",
 			arg0,
-			arg1,
+			arg1.object<jlongArray>(),
 			arg2,
 			arg3
 		);
@@ -226,12 +229,12 @@ namespace java::nio
 			arg0
 		);
 	}
-	java::nio::LongBuffer LongBuffer::put(jlongArray arg0)
+	java::nio::LongBuffer LongBuffer::put(JLongArray arg0)
 	{
 		return callObjectMethod(
 			"put",
 			"([J)Ljava/nio/LongBuffer;",
-			arg0
+			arg0.object<jlongArray>()
 		);
 	}
 	java::nio::LongBuffer LongBuffer::put(java::nio::LongBuffer arg0)
@@ -250,13 +253,13 @@ namespace java::nio
 			arg0
 		);
 	}
-	java::nio::LongBuffer LongBuffer::put(jint arg0, jlongArray arg1)
+	java::nio::LongBuffer LongBuffer::put(jint arg0, JLongArray arg1)
 	{
 		return callObjectMethod(
 			"put",
 			"(I[J)Ljava/nio/LongBuffer;",
 			arg0,
-			arg1
+			arg1.object<jlongArray>()
 		);
 	}
 	java::nio::LongBuffer LongBuffer::put(jint arg0, jlong arg1)
@@ -268,23 +271,23 @@ namespace java::nio
 			arg1
 		);
 	}
-	java::nio::LongBuffer LongBuffer::put(jlongArray arg0, jint arg1, jint arg2)
+	java::nio::LongBuffer LongBuffer::put(JLongArray arg0, jint arg1, jint arg2)
 	{
 		return callObjectMethod(
 			"put",
 			"([JII)Ljava/nio/LongBuffer;",
-			arg0,
+			arg0.object<jlongArray>(),
 			arg1,
 			arg2
 		);
 	}
-	java::nio::LongBuffer LongBuffer::put(jint arg0, jlongArray arg1, jint arg2, jint arg3)
+	java::nio::LongBuffer LongBuffer::put(jint arg0, JLongArray arg1, jint arg2, jint arg3)
 	{
 		return callObjectMethod(
 			"put",
 			"(I[JII)Ljava/nio/LongBuffer;",
 			arg0,
-			arg1,
+			arg1.object<jlongArray>(),
 			arg2,
 			arg3
 		);
@@ -330,12 +333,12 @@ namespace java::nio
 			arg1
 		);
 	}
-	jstring LongBuffer::toString()
+	JString LongBuffer::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::nio
 

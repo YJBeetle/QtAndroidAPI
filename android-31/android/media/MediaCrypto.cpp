@@ -1,3 +1,5 @@
+#include "../../JByteArray.hpp"
+#include "../../JString.hpp"
 #include "../../java/util/UUID.hpp"
 #include "./MediaCrypto.hpp"
 
@@ -9,12 +11,12 @@ namespace android::media
 	MediaCrypto::MediaCrypto(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	MediaCrypto::MediaCrypto(java::util::UUID arg0, jbyteArray arg1)
+	MediaCrypto::MediaCrypto(java::util::UUID arg0, JByteArray arg1)
 		: JObject(
 			"android.media.MediaCrypto",
 			"(Ljava/util/UUID;[B)V",
 			arg0.object(),
-			arg1
+			arg1.object<jbyteArray>()
 		) {}
 	
 	// Methods
@@ -34,20 +36,20 @@ namespace android::media
 			"()V"
 		);
 	}
-	jboolean MediaCrypto::requiresSecureDecoderComponent(jstring arg0)
+	jboolean MediaCrypto::requiresSecureDecoderComponent(JString arg0)
 	{
 		return callMethod<jboolean>(
 			"requiresSecureDecoderComponent",
 			"(Ljava/lang/String;)Z",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	void MediaCrypto::setMediaDrmSession(jbyteArray arg0)
+	void MediaCrypto::setMediaDrmSession(JByteArray arg0)
 	{
 		callMethod<void>(
 			"setMediaDrmSession",
 			"([B)V",
-			arg0
+			arg0.object<jbyteArray>()
 		);
 	}
 } // namespace android::media

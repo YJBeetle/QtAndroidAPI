@@ -6,6 +6,7 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
 namespace java::net
 {
 	class InetAddress;
@@ -31,15 +32,15 @@ namespace android::net::nsd
 		JObject getAttributes();
 		java::net::InetAddress getHost();
 		jint getPort();
-		jstring getServiceName();
-		jstring getServiceType();
-		void removeAttribute(jstring arg0);
-		void setAttribute(jstring arg0, jstring arg1);
+		JString getServiceName();
+		JString getServiceType();
+		void removeAttribute(JString arg0);
+		void setAttribute(JString arg0, JString arg1);
 		void setHost(java::net::InetAddress arg0);
 		void setPort(jint arg0);
-		void setServiceName(jstring arg0);
-		void setServiceType(jstring arg0);
-		jstring toString();
+		void setServiceName(JString arg0);
+		void setServiceType(JString arg0);
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::net::nsd

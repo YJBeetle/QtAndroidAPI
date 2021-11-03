@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JByteArray;
+class JIntArray;
 namespace android::graphics
 {
 	class Bitmap_CompressFormat;
@@ -66,18 +68,18 @@ namespace android::graphics
 		static android::graphics::Bitmap createBitmap(android::graphics::Bitmap arg0);
 		static android::graphics::Bitmap createBitmap(android::graphics::Picture arg0);
 		static android::graphics::Bitmap createBitmap(jint arg0, jint arg1, android::graphics::Bitmap_Config arg2);
-		static android::graphics::Bitmap createBitmap(jintArray arg0, jint arg1, jint arg2, android::graphics::Bitmap_Config arg3);
+		static android::graphics::Bitmap createBitmap(JIntArray arg0, jint arg1, jint arg2, android::graphics::Bitmap_Config arg3);
 		static android::graphics::Bitmap createBitmap(android::graphics::Picture arg0, jint arg1, jint arg2, android::graphics::Bitmap_Config arg3);
 		static android::graphics::Bitmap createBitmap(android::util::DisplayMetrics arg0, jint arg1, jint arg2, android::graphics::Bitmap_Config arg3);
 		static android::graphics::Bitmap createBitmap(jint arg0, jint arg1, android::graphics::Bitmap_Config arg2, jboolean arg3);
 		static android::graphics::Bitmap createBitmap(android::graphics::Bitmap arg0, jint arg1, jint arg2, jint arg3, jint arg4);
-		static android::graphics::Bitmap createBitmap(android::util::DisplayMetrics arg0, jintArray arg1, jint arg2, jint arg3, android::graphics::Bitmap_Config arg4);
+		static android::graphics::Bitmap createBitmap(android::util::DisplayMetrics arg0, JIntArray arg1, jint arg2, jint arg3, android::graphics::Bitmap_Config arg4);
 		static android::graphics::Bitmap createBitmap(android::util::DisplayMetrics arg0, jint arg1, jint arg2, android::graphics::Bitmap_Config arg3, jboolean arg4);
 		static android::graphics::Bitmap createBitmap(jint arg0, jint arg1, android::graphics::Bitmap_Config arg2, jboolean arg3, android::graphics::ColorSpace arg4);
-		static android::graphics::Bitmap createBitmap(jintArray arg0, jint arg1, jint arg2, jint arg3, jint arg4, android::graphics::Bitmap_Config arg5);
+		static android::graphics::Bitmap createBitmap(JIntArray arg0, jint arg1, jint arg2, jint arg3, jint arg4, android::graphics::Bitmap_Config arg5);
 		static android::graphics::Bitmap createBitmap(android::util::DisplayMetrics arg0, jint arg1, jint arg2, android::graphics::Bitmap_Config arg3, jboolean arg4, android::graphics::ColorSpace arg5);
 		static android::graphics::Bitmap createBitmap(android::graphics::Bitmap arg0, jint arg1, jint arg2, jint arg3, jint arg4, android::graphics::Matrix arg5, jboolean arg6);
-		static android::graphics::Bitmap createBitmap(android::util::DisplayMetrics arg0, jintArray arg1, jint arg2, jint arg3, jint arg4, jint arg5, android::graphics::Bitmap_Config arg6);
+		static android::graphics::Bitmap createBitmap(android::util::DisplayMetrics arg0, JIntArray arg1, jint arg2, jint arg3, jint arg4, jint arg5, android::graphics::Bitmap_Config arg6);
 		static android::graphics::Bitmap createScaledBitmap(android::graphics::Bitmap arg0, jint arg1, jint arg2, jboolean arg3);
 		jboolean compress(android::graphics::Bitmap_CompressFormat arg0, jint arg1, java::io::OutputStream arg2);
 		android::graphics::Bitmap copy(android::graphics::Bitmap_Config arg0, jboolean arg1);
@@ -86,7 +88,7 @@ namespace android::graphics
 		jint describeContents();
 		void eraseColor(jint arg0);
 		android::graphics::Bitmap extractAlpha();
-		android::graphics::Bitmap extractAlpha(android::graphics::Paint arg0, jintArray arg1);
+		android::graphics::Bitmap extractAlpha(android::graphics::Paint arg0, JIntArray arg1);
 		jint getAllocationByteCount();
 		jint getByteCount();
 		android::graphics::ColorSpace getColorSpace();
@@ -94,9 +96,9 @@ namespace android::graphics
 		jint getDensity();
 		jint getGenerationId();
 		jint getHeight();
-		jbyteArray getNinePatchChunk();
+		JByteArray getNinePatchChunk();
 		jint getPixel(jint arg0, jint arg1);
-		void getPixels(jintArray arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6);
+		void getPixels(JIntArray arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6);
 		jint getRowBytes();
 		jint getScaledHeight(android::graphics::Canvas arg0);
 		jint getScaledHeight(android::util::DisplayMetrics arg0);
@@ -120,7 +122,7 @@ namespace android::graphics
 		void setHasMipMap(jboolean arg0);
 		void setHeight(jint arg0);
 		void setPixel(jint arg0, jint arg1, jint arg2);
-		void setPixels(jintArray arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6);
+		void setPixels(JIntArray arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6);
 		void setPremultiplied(jboolean arg0);
 		void setWidth(jint arg0);
 		void writeToParcel(android::os::Parcel arg0, jint arg1);

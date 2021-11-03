@@ -1,9 +1,11 @@
+#include "../../JByteArray.hpp"
 #include "./Bitmap.hpp"
 #include "./Canvas.hpp"
 #include "./Paint.hpp"
 #include "./Rect.hpp"
 #include "./RectF.hpp"
 #include "./Region.hpp"
+#include "../../JString.hpp"
 #include "./NinePatch.hpp"
 
 namespace android::graphics
@@ -14,30 +16,30 @@ namespace android::graphics
 	NinePatch::NinePatch(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	NinePatch::NinePatch(android::graphics::Bitmap arg0, jbyteArray arg1)
+	NinePatch::NinePatch(android::graphics::Bitmap arg0, JByteArray arg1)
 		: JObject(
 			"android.graphics.NinePatch",
 			"(Landroid/graphics/Bitmap;[B)V",
 			arg0.object(),
-			arg1
+			arg1.object<jbyteArray>()
 		) {}
-	NinePatch::NinePatch(android::graphics::Bitmap arg0, jbyteArray arg1, jstring arg2)
+	NinePatch::NinePatch(android::graphics::Bitmap arg0, JByteArray arg1, JString arg2)
 		: JObject(
 			"android.graphics.NinePatch",
 			"(Landroid/graphics/Bitmap;[BLjava/lang/String;)V",
 			arg0.object(),
-			arg1,
-			arg2
+			arg1.object<jbyteArray>(),
+			arg2.object<jstring>()
 		) {}
 	
 	// Methods
-	jboolean NinePatch::isNinePatchChunk(jbyteArray arg0)
+	jboolean NinePatch::isNinePatchChunk(JByteArray arg0)
 	{
 		return callStaticMethod<jboolean>(
 			"android.graphics.NinePatch",
 			"isNinePatchChunk",
 			"([B)Z",
-			arg0
+			arg0.object<jbyteArray>()
 		);
 	}
 	void NinePatch::draw(android::graphics::Canvas arg0, android::graphics::Rect arg1)
@@ -89,12 +91,12 @@ namespace android::graphics
 			"()I"
 		);
 	}
-	jstring NinePatch::getName()
+	JString NinePatch::getName()
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::graphics::Paint NinePatch::getPaint()
 	{

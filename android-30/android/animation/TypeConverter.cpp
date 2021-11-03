@@ -1,3 +1,5 @@
+#include "../../JClass.hpp"
+#include "../../JObject.hpp"
 #include "./TypeConverter.hpp"
 
 namespace android::animation
@@ -8,22 +10,22 @@ namespace android::animation
 	TypeConverter::TypeConverter(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	TypeConverter::TypeConverter(jclass arg0, jclass arg1)
+	TypeConverter::TypeConverter(JClass arg0, JClass arg1)
 		: JObject(
 			"android.animation.TypeConverter",
 			"(Ljava/lang/Class;Ljava/lang/Class;)V",
-			arg0,
-			arg1
+			arg0.object<jclass>(),
+			arg1.object<jclass>()
 		) {}
 	
 	// Methods
-	jobject TypeConverter::convert(jobject arg0)
+	JObject TypeConverter::convert(JObject arg0)
 	{
 		return callObjectMethod(
 			"convert",
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0
-		).object<jobject>();
+			arg0.object<jobject>()
+		);
 	}
 } // namespace android::animation
 

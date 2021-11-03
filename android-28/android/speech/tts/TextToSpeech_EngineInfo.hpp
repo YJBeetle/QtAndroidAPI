@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JString;
 
 namespace android::speech::tts
 {
@@ -10,8 +11,8 @@ namespace android::speech::tts
 	public:
 		// Fields
 		jint icon();
-		jstring label();
-		jstring name();
+		JString label();
+		JString name();
 		
 		// QJniObject forward
 		template<typename ...Ts> explicit TextToSpeech_EngineInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
@@ -21,7 +22,7 @@ namespace android::speech::tts
 		TextToSpeech_EngineInfo();
 		
 		// Methods
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::speech::tts
 

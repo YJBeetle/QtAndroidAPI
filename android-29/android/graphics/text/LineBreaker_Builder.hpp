@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JIntArray;
 namespace android::graphics::text
 {
 	class LineBreaker;
@@ -25,7 +26,7 @@ namespace android::graphics::text
 		android::graphics::text::LineBreaker build();
 		android::graphics::text::LineBreaker_Builder setBreakStrategy(jint arg0);
 		android::graphics::text::LineBreaker_Builder setHyphenationFrequency(jint arg0);
-		android::graphics::text::LineBreaker_Builder setIndents(jintArray arg0);
+		android::graphics::text::LineBreaker_Builder setIndents(JIntArray arg0);
 		android::graphics::text::LineBreaker_Builder setJustificationMode(jint arg0);
 	};
 } // namespace android::graphics::text

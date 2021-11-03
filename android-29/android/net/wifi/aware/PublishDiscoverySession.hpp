@@ -1,6 +1,5 @@
 #pragma once
 
-#include "../../../../JObject.hpp"
 #include "./DiscoverySession.hpp"
 
 namespace android::net::wifi::aware

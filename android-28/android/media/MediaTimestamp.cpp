@@ -1,3 +1,5 @@
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./MediaTimestamp.hpp"
 
 namespace android::media
@@ -18,12 +20,12 @@ namespace android::media
 	// Constructors
 	
 	// Methods
-	jboolean MediaTimestamp::equals(jobject arg0)
+	jboolean MediaTimestamp::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jlong MediaTimestamp::getAnchorMediaTimeUs()
@@ -47,12 +49,12 @@ namespace android::media
 			"()F"
 		);
 	}
-	jstring MediaTimestamp::toString()
+	JString MediaTimestamp::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::media
 

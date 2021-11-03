@@ -1,6 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./MediaMetadataEditor.hpp"
 
 namespace android::graphics
@@ -15,6 +14,8 @@ namespace android::media
 {
 	class RemoteControlClient;
 }
+class JObject;
+class JString;
 
 namespace android::media
 {
@@ -33,11 +34,11 @@ namespace android::media
 		// Methods
 		void apply();
 		void clear();
-		jobject clone();
+		JObject clone();
 		android::media::RemoteControlClient_MetadataEditor putBitmap(jint arg0, android::graphics::Bitmap arg1);
 		android::media::RemoteControlClient_MetadataEditor putLong(jint arg0, jlong arg1);
-		android::media::RemoteControlClient_MetadataEditor putObject(jint arg0, jobject arg1);
-		android::media::RemoteControlClient_MetadataEditor putString(jint arg0, jstring arg1);
+		android::media::RemoteControlClient_MetadataEditor putObject(jint arg0, JObject arg1);
+		android::media::RemoteControlClient_MetadataEditor putString(jint arg0, JString arg1);
 	};
 } // namespace android::media
 

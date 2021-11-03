@@ -2,7 +2,6 @@
 
 #include "../../../../JObject.hpp"
 
-
 namespace android::net::wifi::p2p
 {
 	class WifiP2pManager_Channel : public JObject

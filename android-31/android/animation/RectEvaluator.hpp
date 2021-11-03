@@ -6,6 +6,7 @@ namespace android::graphics
 {
 	class Rect;
 }
+class JObject;
 
 namespace android::animation
 {
@@ -24,7 +25,7 @@ namespace android::animation
 		
 		// Methods
 		android::graphics::Rect evaluate(jfloat arg0, android::graphics::Rect arg1, android::graphics::Rect arg2);
-		jobject evaluate(jfloat arg0, jobject arg1, jobject arg2);
+		JObject evaluate(jfloat arg0, JObject arg1, JObject arg2);
 	};
 } // namespace android::animation
 

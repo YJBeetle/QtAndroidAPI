@@ -1,13 +1,13 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../../java/lang/Exception.hpp"
 #include "../../java/lang/RuntimeException.hpp"
 
 namespace java::lang
 {
 	class Exception;
 }
+class JString;
+class JThrowable;
 
 namespace android::util
 {
@@ -23,8 +23,8 @@ namespace android::util
 		// Constructors
 		AndroidRuntimeException();
 		AndroidRuntimeException(java::lang::Exception arg0);
-		AndroidRuntimeException(jstring arg0);
-		AndroidRuntimeException(jstring arg0, jthrowable arg1);
+		AndroidRuntimeException(JString arg0);
+		AndroidRuntimeException(JString arg0, JThrowable arg1);
 		
 		// Methods
 	};

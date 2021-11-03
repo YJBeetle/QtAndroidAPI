@@ -18,6 +18,8 @@ namespace android::print
 {
 	class PrintAttributes_Resolution;
 }
+class JObject;
+class JString;
 
 namespace android::print
 {
@@ -40,14 +42,14 @@ namespace android::print
 		
 		// Methods
 		jint describeContents();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint getColorMode();
 		jint getDuplexMode();
 		android::print::PrintAttributes_MediaSize getMediaSize();
 		android::print::PrintAttributes_Margins getMinMargins();
 		android::print::PrintAttributes_Resolution getResolution();
 		jint hashCode();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::print

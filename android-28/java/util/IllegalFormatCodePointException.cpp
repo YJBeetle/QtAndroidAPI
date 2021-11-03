@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./IllegalFormatCodePointException.hpp"
 
 namespace java::util
@@ -23,12 +24,12 @@ namespace java::util
 			"()I"
 		);
 	}
-	jstring IllegalFormatCodePointException::getMessage()
+	JString IllegalFormatCodePointException::getMessage()
 	{
 		return callObjectMethod(
 			"getMessage",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::util
 

@@ -2,6 +2,9 @@
 
 #include "../../../../JObject.hpp"
 
+class JArray;
+class JArray;
+class JString;
 
 namespace org::xml::sax::helpers
 {
@@ -9,8 +12,8 @@ namespace org::xml::sax::helpers
 	{
 	public:
 		// Fields
-		static jstring NSDECL();
-		static jstring XMLNS();
+		static JString NSDECL();
+		static JString XMLNS();
 		
 		// QJniObject forward
 		template<typename ...Ts> explicit NamespaceSupport(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
@@ -20,15 +23,15 @@ namespace org::xml::sax::helpers
 		NamespaceSupport();
 		
 		// Methods
-		jboolean declarePrefix(jstring arg0, jstring arg1);
+		jboolean declarePrefix(JString arg0, JString arg1);
 		JObject getDeclaredPrefixes();
-		jstring getPrefix(jstring arg0);
+		JString getPrefix(JString arg0);
 		JObject getPrefixes();
-		JObject getPrefixes(jstring arg0);
-		jstring getURI(jstring arg0);
+		JObject getPrefixes(JString arg0);
+		JString getURI(JString arg0);
 		jboolean isNamespaceDeclUris();
 		void popContext();
-		jarray processName(jstring arg0, jarray arg1, jboolean arg2);
+		JArray processName(JString arg0, JArray arg1, jboolean arg2);
 		void pushContext();
 		void reset();
 		void setNamespaceDeclUris(jboolean arg0);

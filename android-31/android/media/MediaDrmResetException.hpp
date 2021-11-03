@@ -1,10 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../../java/lang/Exception.hpp"
-#include "../../java/lang/RuntimeException.hpp"
 #include "../../java/lang/IllegalStateException.hpp"
 
+class JString;
 
 namespace android::media
 {
@@ -18,7 +16,7 @@ namespace android::media
 		MediaDrmResetException(QJniObject obj);
 		
 		// Constructors
-		MediaDrmResetException(jstring arg0);
+		MediaDrmResetException(JString arg0);
 		
 		// Methods
 	};

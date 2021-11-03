@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "../nio/charset/Charset.hpp"
 #include "./URLDecoder.hpp"
 
@@ -16,34 +17,34 @@ namespace java::net
 		) {}
 	
 	// Methods
-	jstring URLDecoder::decode(jstring arg0)
+	JString URLDecoder::decode(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"java.net.URLDecoder",
 			"decode",
 			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
+			arg0.object<jstring>()
+		);
 	}
-	jstring URLDecoder::decode(jstring arg0, jstring arg1)
+	JString URLDecoder::decode(JString arg0, JString arg1)
 	{
 		return callStaticObjectMethod(
 			"java.net.URLDecoder",
 			"decode",
 			"(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
-			arg0,
-			arg1
-		).object<jstring>();
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
+		);
 	}
-	jstring URLDecoder::decode(jstring arg0, java::nio::charset::Charset arg1)
+	JString URLDecoder::decode(JString arg0, java::nio::charset::Charset arg1)
 	{
 		return callStaticObjectMethod(
 			"java.net.URLDecoder",
 			"decode",
 			"(Ljava/lang/String;Ljava/nio/charset/Charset;)Ljava/lang/String;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
-		).object<jstring>();
+		);
 	}
 } // namespace java::net
 

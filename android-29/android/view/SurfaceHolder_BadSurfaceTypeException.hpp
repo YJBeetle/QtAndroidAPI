@@ -1,9 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../../java/lang/Exception.hpp"
 #include "../../java/lang/RuntimeException.hpp"
 
+class JString;
 
 namespace android::view
 {
@@ -18,7 +17,7 @@ namespace android::view
 		
 		// Constructors
 		SurfaceHolder_BadSurfaceTypeException();
-		SurfaceHolder_BadSurfaceTypeException(jstring arg0);
+		SurfaceHolder_BadSurfaceTypeException(JString arg0);
 		
 		// Methods
 	};

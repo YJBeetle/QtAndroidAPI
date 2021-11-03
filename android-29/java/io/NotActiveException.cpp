@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./NotActiveException.hpp"
 
 namespace java::io
@@ -13,11 +14,11 @@ namespace java::io
 			"java.io.NotActiveException",
 			"()V"
 		) {}
-	NotActiveException::NotActiveException(jstring arg0)
+	NotActiveException::NotActiveException(JString arg0)
 		: java::io::ObjectStreamException(
 			"java.io.NotActiveException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

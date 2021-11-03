@@ -1,7 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "./Buffer.hpp"
 #include "./ByteBuffer.hpp"
 
 namespace java::io

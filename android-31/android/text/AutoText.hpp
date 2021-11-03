@@ -6,6 +6,8 @@ namespace android::view
 {
 	class View;
 }
+class JString;
+class JString;
 
 namespace android::text
 {
@@ -21,7 +23,7 @@ namespace android::text
 		// Constructors
 		
 		// Methods
-		static jstring get(jstring arg0, jint arg1, jint arg2, android::view::View arg3);
+		static JString get(JString arg0, jint arg1, jint arg2, android::view::View arg3);
 		static jint getSize(android::view::View arg0);
 	};
 } // namespace android::text

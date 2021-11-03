@@ -1,4 +1,6 @@
 #include "../../os/Parcel.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./ProviderProperties.hpp"
 
 namespace android::location::provider
@@ -61,12 +63,12 @@ namespace android::location::provider
 			"()I"
 		);
 	}
-	jboolean ProviderProperties::equals(jobject arg0)
+	jboolean ProviderProperties::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint ProviderProperties::getAccuracy()
@@ -139,12 +141,12 @@ namespace android::location::provider
 			"()I"
 		);
 	}
-	jstring ProviderProperties::toString()
+	JString ProviderProperties::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void ProviderProperties::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

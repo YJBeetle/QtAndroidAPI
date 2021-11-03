@@ -1,4 +1,12 @@
+#include "../../../JIntArray.hpp"
+#include "../../../JArray.hpp"
+#include "../../../JObjectArray.hpp"
+#include "../../../JArray.hpp"
+#include "../../../JArray.hpp"
+#include "../../../JClass.hpp"
+#include "../../../JObject.hpp"
 #include "../RuntimeException.hpp"
+#include "../../../JString.hpp"
 #include "./MethodHandle.hpp"
 #include "./MethodHandles_Lookup.hpp"
 #include "./MethodType.hpp"
@@ -16,104 +24,104 @@ namespace java::lang::invoke
 	// Constructors
 	
 	// Methods
-	java::lang::invoke::MethodHandle MethodHandles::arrayConstructor(jclass arg0)
+	java::lang::invoke::MethodHandle MethodHandles::arrayConstructor(JClass arg0)
 	{
 		return callStaticObjectMethod(
 			"java.lang.invoke.MethodHandles",
 			"arrayConstructor",
 			"(Ljava/lang/Class;)Ljava/lang/invoke/MethodHandle;",
-			arg0
+			arg0.object<jclass>()
 		);
 	}
-	java::lang::invoke::MethodHandle MethodHandles::arrayElementGetter(jclass arg0)
+	java::lang::invoke::MethodHandle MethodHandles::arrayElementGetter(JClass arg0)
 	{
 		return callStaticObjectMethod(
 			"java.lang.invoke.MethodHandles",
 			"arrayElementGetter",
 			"(Ljava/lang/Class;)Ljava/lang/invoke/MethodHandle;",
-			arg0
+			arg0.object<jclass>()
 		);
 	}
-	java::lang::invoke::MethodHandle MethodHandles::arrayElementSetter(jclass arg0)
+	java::lang::invoke::MethodHandle MethodHandles::arrayElementSetter(JClass arg0)
 	{
 		return callStaticObjectMethod(
 			"java.lang.invoke.MethodHandles",
 			"arrayElementSetter",
 			"(Ljava/lang/Class;)Ljava/lang/invoke/MethodHandle;",
-			arg0
+			arg0.object<jclass>()
 		);
 	}
-	JObject MethodHandles::arrayElementVarHandle(jclass arg0)
+	JObject MethodHandles::arrayElementVarHandle(JClass arg0)
 	{
 		return callStaticObjectMethod(
 			"java.lang.invoke.MethodHandles",
 			"arrayElementVarHandle",
 			"(Ljava/lang/Class;)Ljava/lang/invoke/VarHandle;",
-			arg0
+			arg0.object<jclass>()
 		);
 	}
-	java::lang::invoke::MethodHandle MethodHandles::arrayLength(jclass arg0)
+	java::lang::invoke::MethodHandle MethodHandles::arrayLength(JClass arg0)
 	{
 		return callStaticObjectMethod(
 			"java.lang.invoke.MethodHandles",
 			"arrayLength",
 			"(Ljava/lang/Class;)Ljava/lang/invoke/MethodHandle;",
-			arg0
+			arg0.object<jclass>()
 		);
 	}
-	JObject MethodHandles::byteArrayViewVarHandle(jclass arg0, java::nio::ByteOrder arg1)
+	JObject MethodHandles::byteArrayViewVarHandle(JClass arg0, java::nio::ByteOrder arg1)
 	{
 		return callStaticObjectMethod(
 			"java.lang.invoke.MethodHandles",
 			"byteArrayViewVarHandle",
 			"(Ljava/lang/Class;Ljava/nio/ByteOrder;)Ljava/lang/invoke/VarHandle;",
-			arg0,
+			arg0.object<jclass>(),
 			arg1.object()
 		);
 	}
-	JObject MethodHandles::byteBufferViewVarHandle(jclass arg0, java::nio::ByteOrder arg1)
+	JObject MethodHandles::byteBufferViewVarHandle(JClass arg0, java::nio::ByteOrder arg1)
 	{
 		return callStaticObjectMethod(
 			"java.lang.invoke.MethodHandles",
 			"byteBufferViewVarHandle",
 			"(Ljava/lang/Class;Ljava/nio/ByteOrder;)Ljava/lang/invoke/VarHandle;",
-			arg0,
+			arg0.object<jclass>(),
 			arg1.object()
 		);
 	}
-	java::lang::invoke::MethodHandle MethodHandles::catchException(java::lang::invoke::MethodHandle arg0, jclass arg1, java::lang::invoke::MethodHandle arg2)
+	java::lang::invoke::MethodHandle MethodHandles::catchException(java::lang::invoke::MethodHandle arg0, JClass arg1, java::lang::invoke::MethodHandle arg2)
 	{
 		return callStaticObjectMethod(
 			"java.lang.invoke.MethodHandles",
 			"catchException",
 			"(Ljava/lang/invoke/MethodHandle;Ljava/lang/Class;Ljava/lang/invoke/MethodHandle;)Ljava/lang/invoke/MethodHandle;",
 			arg0.object(),
-			arg1,
+			arg1.object<jclass>(),
 			arg2.object()
 		);
 	}
-	jobject MethodHandles::classData(java::lang::invoke::MethodHandles_Lookup arg0, jstring arg1, jclass arg2)
+	JObject MethodHandles::classData(java::lang::invoke::MethodHandles_Lookup arg0, JString arg1, JClass arg2)
 	{
 		return callStaticObjectMethod(
 			"java.lang.invoke.MethodHandles",
 			"classData",
 			"(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/Object;",
 			arg0.object(),
-			arg1,
-			arg2
-		).object<jobject>();
+			arg1.object<jstring>(),
+			arg2.object<jclass>()
+		);
 	}
-	jobject MethodHandles::classDataAt(java::lang::invoke::MethodHandles_Lookup arg0, jstring arg1, jclass arg2, jint arg3)
+	JObject MethodHandles::classDataAt(java::lang::invoke::MethodHandles_Lookup arg0, JString arg1, JClass arg2, jint arg3)
 	{
 		return callStaticObjectMethod(
 			"java.lang.invoke.MethodHandles",
 			"classDataAt",
 			"(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/Class;I)Ljava/lang/Object;",
 			arg0.object(),
-			arg1,
-			arg2,
+			arg1.object<jstring>(),
+			arg2.object<jclass>(),
 			arg3
-		).object<jobject>();
+		);
 	}
 	java::lang::invoke::MethodHandle MethodHandles::collectArguments(java::lang::invoke::MethodHandle arg0, jint arg1, java::lang::invoke::MethodHandle arg2)
 	{
@@ -126,14 +134,14 @@ namespace java::lang::invoke
 			arg2.object()
 		);
 	}
-	java::lang::invoke::MethodHandle MethodHandles::constant(jclass arg0, jobject arg1)
+	java::lang::invoke::MethodHandle MethodHandles::constant(JClass arg0, JObject arg1)
 	{
 		return callStaticObjectMethod(
 			"java.lang.invoke.MethodHandles",
 			"constant",
 			"(Ljava/lang/Class;Ljava/lang/Object;)Ljava/lang/invoke/MethodHandle;",
-			arg0,
-			arg1
+			arg0.object<jclass>(),
+			arg1.object<jobject>()
 		);
 	}
 	java::lang::invoke::MethodHandle MethodHandles::countedLoop(java::lang::invoke::MethodHandle arg0, java::lang::invoke::MethodHandle arg1, java::lang::invoke::MethodHandle arg2)
@@ -170,7 +178,7 @@ namespace java::lang::invoke
 			arg2.object()
 		);
 	}
-	java::lang::invoke::MethodHandle MethodHandles::dropArguments(java::lang::invoke::MethodHandle arg0, jint arg1, jarray arg2)
+	java::lang::invoke::MethodHandle MethodHandles::dropArguments(java::lang::invoke::MethodHandle arg0, jint arg1, JArray arg2)
 	{
 		return callStaticObjectMethod(
 			"java.lang.invoke.MethodHandles",
@@ -178,7 +186,7 @@ namespace java::lang::invoke
 			"(Ljava/lang/invoke/MethodHandle;I[Ljava/lang/Class;)Ljava/lang/invoke/MethodHandle;",
 			arg0.object(),
 			arg1,
-			arg2
+			arg2.object<jarray>()
 		);
 	}
 	java::lang::invoke::MethodHandle MethodHandles::dropArguments(java::lang::invoke::MethodHandle arg0, jint arg1, JObject arg2)
@@ -241,7 +249,7 @@ namespace java::lang::invoke
 			arg1.object()
 		);
 	}
-	java::lang::invoke::MethodHandle MethodHandles::filterArguments(java::lang::invoke::MethodHandle arg0, jint arg1, jarray arg2)
+	java::lang::invoke::MethodHandle MethodHandles::filterArguments(java::lang::invoke::MethodHandle arg0, jint arg1, JArray arg2)
 	{
 		return callStaticObjectMethod(
 			"java.lang.invoke.MethodHandles",
@@ -249,7 +257,7 @@ namespace java::lang::invoke
 			"(Ljava/lang/invoke/MethodHandle;I[Ljava/lang/invoke/MethodHandle;)Ljava/lang/invoke/MethodHandle;",
 			arg0.object(),
 			arg1,
-			arg2
+			arg2.object<jarray>()
 		);
 	}
 	java::lang::invoke::MethodHandle MethodHandles::filterReturnValue(java::lang::invoke::MethodHandle arg0, java::lang::invoke::MethodHandle arg1)
@@ -294,16 +302,16 @@ namespace java::lang::invoke
 			arg2.object()
 		);
 	}
-	java::lang::invoke::MethodHandle MethodHandles::identity(jclass arg0)
+	java::lang::invoke::MethodHandle MethodHandles::identity(JClass arg0)
 	{
 		return callStaticObjectMethod(
 			"java.lang.invoke.MethodHandles",
 			"identity",
 			"(Ljava/lang/Class;)Ljava/lang/invoke/MethodHandle;",
-			arg0
+			arg0.object<jclass>()
 		);
 	}
-	java::lang::invoke::MethodHandle MethodHandles::insertArguments(java::lang::invoke::MethodHandle arg0, jint arg1, jobjectArray arg2)
+	java::lang::invoke::MethodHandle MethodHandles::insertArguments(java::lang::invoke::MethodHandle arg0, jint arg1, JObjectArray arg2)
 	{
 		return callStaticObjectMethod(
 			"java.lang.invoke.MethodHandles",
@@ -311,7 +319,7 @@ namespace java::lang::invoke
 			"(Ljava/lang/invoke/MethodHandle;I[Ljava/lang/Object;)Ljava/lang/invoke/MethodHandle;",
 			arg0.object(),
 			arg1,
-			arg2
+			arg2.object<jobjectArray>()
 		);
 	}
 	java::lang::invoke::MethodHandle MethodHandles::invoker(java::lang::invoke::MethodType arg0)
@@ -342,16 +350,16 @@ namespace java::lang::invoke
 			"()Ljava/lang/invoke/MethodHandles$Lookup;"
 		);
 	}
-	java::lang::invoke::MethodHandle MethodHandles::loop(jarray arg0)
+	java::lang::invoke::MethodHandle MethodHandles::loop(JArray arg0)
 	{
 		return callStaticObjectMethod(
 			"java.lang.invoke.MethodHandles",
 			"loop",
 			"([[Ljava/lang/invoke/MethodHandle;)Ljava/lang/invoke/MethodHandle;",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
-	java::lang::invoke::MethodHandle MethodHandles::permuteArguments(java::lang::invoke::MethodHandle arg0, java::lang::invoke::MethodType arg1, jintArray arg2)
+	java::lang::invoke::MethodHandle MethodHandles::permuteArguments(java::lang::invoke::MethodHandle arg0, java::lang::invoke::MethodType arg1, JIntArray arg2)
 	{
 		return callStaticObjectMethod(
 			"java.lang.invoke.MethodHandles",
@@ -359,16 +367,16 @@ namespace java::lang::invoke
 			"(Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;[I)Ljava/lang/invoke/MethodHandle;",
 			arg0.object(),
 			arg1.object(),
-			arg2
+			arg2.object<jintArray>()
 		);
 	}
-	java::lang::invoke::MethodHandles_Lookup MethodHandles::privateLookupIn(jclass arg0, java::lang::invoke::MethodHandles_Lookup arg1)
+	java::lang::invoke::MethodHandles_Lookup MethodHandles::privateLookupIn(JClass arg0, java::lang::invoke::MethodHandles_Lookup arg1)
 	{
 		return callStaticObjectMethod(
 			"java.lang.invoke.MethodHandles",
 			"privateLookupIn",
 			"(Ljava/lang/Class;Ljava/lang/invoke/MethodHandles$Lookup;)Ljava/lang/invoke/MethodHandles$Lookup;",
-			arg0,
+			arg0.object<jclass>(),
 			arg1.object()
 		);
 	}
@@ -380,13 +388,13 @@ namespace java::lang::invoke
 			"()Ljava/lang/invoke/MethodHandles$Lookup;"
 		);
 	}
-	JObject MethodHandles::reflectAs(jclass arg0, java::lang::invoke::MethodHandle arg1)
+	JObject MethodHandles::reflectAs(JClass arg0, java::lang::invoke::MethodHandle arg1)
 	{
 		return callStaticObjectMethod(
 			"java.lang.invoke.MethodHandles",
 			"reflectAs",
 			"(Ljava/lang/Class;Ljava/lang/invoke/MethodHandle;)Ljava/lang/reflect/Member;",
-			arg0,
+			arg0.object<jclass>(),
 			arg1.object()
 		);
 	}
@@ -400,14 +408,14 @@ namespace java::lang::invoke
 			arg1
 		);
 	}
-	java::lang::invoke::MethodHandle MethodHandles::throwException(jclass arg0, jclass arg1)
+	java::lang::invoke::MethodHandle MethodHandles::throwException(JClass arg0, JClass arg1)
 	{
 		return callStaticObjectMethod(
 			"java.lang.invoke.MethodHandles",
 			"throwException",
 			"(Ljava/lang/Class;Ljava/lang/Class;)Ljava/lang/invoke/MethodHandle;",
-			arg0,
-			arg1
+			arg0.object<jclass>(),
+			arg1.object<jclass>()
 		);
 	}
 	java::lang::invoke::MethodHandle MethodHandles::tryFinally(java::lang::invoke::MethodHandle arg0, java::lang::invoke::MethodHandle arg1)
@@ -451,13 +459,13 @@ namespace java::lang::invoke
 			arg2.object()
 		);
 	}
-	java::lang::invoke::MethodHandle MethodHandles::zero(jclass arg0)
+	java::lang::invoke::MethodHandle MethodHandles::zero(JClass arg0)
 	{
 		return callStaticObjectMethod(
 			"java.lang.invoke.MethodHandles",
 			"zero",
 			"(Ljava/lang/Class;)Ljava/lang/invoke/MethodHandle;",
-			arg0
+			arg0.object<jclass>()
 		);
 	}
 } // namespace java::lang::invoke

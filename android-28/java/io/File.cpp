@@ -1,5 +1,9 @@
+#include "../../JArray.hpp"
+#include "../../JArray.hpp"
 #include "./ObjectInputStream.hpp"
 #include "./ObjectOutputStream.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "../net/URI.hpp"
 #include "../net/URL.hpp"
 #include "./File.hpp"
@@ -7,13 +11,13 @@
 namespace java::io
 {
 	// Fields
-	jstring File::pathSeparator()
+	JString File::pathSeparator()
 	{
 		return getStaticObjectField(
 			"java.io.File",
 			"pathSeparator",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jchar File::pathSeparatorChar()
 	{
@@ -22,13 +26,13 @@ namespace java::io
 			"pathSeparatorChar"
 		);
 	}
-	jstring File::separator()
+	JString File::separator()
 	{
 		return getStaticObjectField(
 			"java.io.File",
 			"separator",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jchar File::separatorChar()
 	{
@@ -42,11 +46,11 @@ namespace java::io
 	File::File(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	File::File(jstring arg0)
+	File::File(JString arg0)
 		: JObject(
 			"java.io.File",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	File::File(java::net::URI arg0)
 		: JObject(
@@ -54,50 +58,50 @@ namespace java::io
 			"(Ljava/net/URI;)V",
 			arg0.object()
 		) {}
-	File::File(java::io::File &arg0, jstring arg1)
+	File::File(java::io::File &arg0, JString arg1)
 		: JObject(
 			"java.io.File",
 			"(Ljava/io/File;Ljava/lang/String;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		) {}
-	File::File(jstring arg0, jstring arg1)
+	File::File(JString arg0, JString arg1)
 		: JObject(
 			"java.io.File",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		) {}
 	
 	// Methods
-	java::io::File File::createTempFile(jstring arg0, jstring arg1)
+	java::io::File File::createTempFile(JString arg0, JString arg1)
 	{
 		return callStaticObjectMethod(
 			"java.io.File",
 			"createTempFile",
 			"(Ljava/lang/String;Ljava/lang/String;)Ljava/io/File;",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		);
 	}
-	java::io::File File::createTempFile(jstring arg0, jstring arg1, java::io::File arg2)
+	java::io::File File::createTempFile(JString arg0, JString arg1, java::io::File arg2)
 	{
 		return callStaticObjectMethod(
 			"java.io.File",
 			"createTempFile",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/io/File;)Ljava/io/File;",
-			arg0,
-			arg1,
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
 			arg2.object()
 		);
 	}
-	jarray File::listRoots()
+	JArray File::listRoots()
 	{
 		return callStaticObjectMethod(
 			"java.io.File",
 			"listRoots",
 			"()[Ljava/io/File;"
-		).object<jarray>();
+		);
 	}
 	jboolean File::canExecute()
 	{
@@ -128,12 +132,12 @@ namespace java::io
 			arg0.object()
 		);
 	}
-	jint File::compareTo(jobject arg0)
+	jint File::compareTo(JObject arg0)
 	{
 		return callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Object;)I",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jboolean File::createNewFile()
@@ -157,12 +161,12 @@ namespace java::io
 			"()V"
 		);
 	}
-	jboolean File::equals(jobject arg0)
+	jboolean File::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jboolean File::exists()
@@ -179,12 +183,12 @@ namespace java::io
 			"()Ljava/io/File;"
 		);
 	}
-	jstring File::getAbsolutePath()
+	JString File::getAbsolutePath()
 	{
 		return callObjectMethod(
 			"getAbsolutePath",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	java::io::File File::getCanonicalFile()
 	{
@@ -193,12 +197,12 @@ namespace java::io
 			"()Ljava/io/File;"
 		);
 	}
-	jstring File::getCanonicalPath()
+	JString File::getCanonicalPath()
 	{
 		return callObjectMethod(
 			"getCanonicalPath",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jlong File::getFreeSpace()
 	{
@@ -207,19 +211,19 @@ namespace java::io
 			"()J"
 		);
 	}
-	jstring File::getName()
+	JString File::getName()
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring File::getParent()
+	JString File::getParent()
 	{
 		return callObjectMethod(
 			"getParent",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	java::io::File File::getParentFile()
 	{
@@ -228,12 +232,12 @@ namespace java::io
 			"()Ljava/io/File;"
 		);
 	}
-	jstring File::getPath()
+	JString File::getPath()
 	{
 		return callObjectMethod(
 			"getPath",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jlong File::getTotalSpace()
 	{
@@ -298,35 +302,35 @@ namespace java::io
 			"()J"
 		);
 	}
-	jarray File::list()
+	JArray File::list()
 	{
 		return callObjectMethod(
 			"list",
 			"()[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
-	jarray File::list(JObject arg0)
+	JArray File::list(JObject arg0)
 	{
 		return callObjectMethod(
 			"list",
 			"(Ljava/io/FilenameFilter;)[Ljava/lang/String;",
 			arg0.object()
-		).object<jarray>();
+		);
 	}
-	jarray File::listFiles()
+	JArray File::listFiles()
 	{
 		return callObjectMethod(
 			"listFiles",
 			"()[Ljava/io/File;"
-		).object<jarray>();
+		);
 	}
-	jarray File::listFiles(JObject arg0)
+	JArray File::listFiles(JObject arg0)
 	{
 		return callObjectMethod(
 			"listFiles",
 			"(Ljava/io/FileFilter;)[Ljava/io/File;",
 			arg0.object()
-		).object<jarray>();
+		);
 	}
 	jboolean File::mkdir()
 	{
@@ -423,12 +427,12 @@ namespace java::io
 			"()Ljava/nio/file/Path;"
 		);
 	}
-	jstring File::toString()
+	JString File::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	java::net::URI File::toURI()
 	{

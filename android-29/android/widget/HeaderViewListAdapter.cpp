@@ -2,6 +2,7 @@
 #include "../view/View.hpp"
 #include "../view/ViewGroup.hpp"
 #include "./Filter.hpp"
+#include "../../JObject.hpp"
 #include "../../java/util/ArrayList.hpp"
 #include "./HeaderViewListAdapter.hpp"
 
@@ -58,13 +59,13 @@ namespace android::widget
 			"()I"
 		);
 	}
-	jobject HeaderViewListAdapter::getItem(jint arg0)
+	JObject HeaderViewListAdapter::getItem(jint arg0)
 	{
 		return callObjectMethod(
 			"getItem",
 			"(I)Ljava/lang/Object;",
 			arg0
-		).object<jobject>();
+		);
 	}
 	jlong HeaderViewListAdapter::getItemId(jint arg0)
 	{

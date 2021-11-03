@@ -10,6 +10,8 @@ namespace android::icu::util
 {
 	class ULocale;
 }
+class JObject;
+class JString;
 namespace java::util
 {
 	class Locale;
@@ -22,12 +24,12 @@ namespace android::icu::text
 	public:
 		// Fields
 		static android::icu::text::PluralRules DEFAULT();
-		static jstring KEYWORD_FEW();
-		static jstring KEYWORD_MANY();
-		static jstring KEYWORD_ONE();
-		static jstring KEYWORD_OTHER();
-		static jstring KEYWORD_TWO();
-		static jstring KEYWORD_ZERO();
+		static JString KEYWORD_FEW();
+		static JString KEYWORD_MANY();
+		static JString KEYWORD_ONE();
+		static JString KEYWORD_OTHER();
+		static JString KEYWORD_TWO();
+		static JString KEYWORD_ZERO();
 		static jdouble NO_UNIQUE_VALUE();
 		
 		// QJniObject forward
@@ -37,21 +39,21 @@ namespace android::icu::text
 		// Constructors
 		
 		// Methods
-		static android::icu::text::PluralRules createRules(jstring arg0);
+		static android::icu::text::PluralRules createRules(JString arg0);
 		static android::icu::text::PluralRules forLocale(android::icu::util::ULocale arg0);
 		static android::icu::text::PluralRules forLocale(java::util::Locale arg0);
 		static android::icu::text::PluralRules forLocale(android::icu::util::ULocale arg0, android::icu::text::PluralRules_PluralType arg1);
 		static android::icu::text::PluralRules forLocale(java::util::Locale arg0, android::icu::text::PluralRules_PluralType arg1);
-		static android::icu::text::PluralRules parseDescription(jstring arg0);
+		static android::icu::text::PluralRules parseDescription(JString arg0);
 		jboolean equals(android::icu::text::PluralRules arg0);
-		jboolean equals(jobject arg0);
-		JObject getAllKeywordValues(jstring arg0);
+		jboolean equals(JObject arg0);
+		JObject getAllKeywordValues(JString arg0);
 		JObject getKeywords();
-		JObject getSamples(jstring arg0);
-		jdouble getUniqueKeywordValue(jstring arg0);
+		JObject getSamples(JString arg0);
+		jdouble getUniqueKeywordValue(JString arg0);
 		jint hashCode();
-		jstring select(jdouble arg0);
-		jstring toString();
+		JString select(jdouble arg0);
+		JString toString();
 	};
 } // namespace android::icu::text
 

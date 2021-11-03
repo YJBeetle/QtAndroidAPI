@@ -6,6 +6,8 @@ namespace android::os
 {
 	class Parcel;
 }
+class JObject;
+class JString;
 
 namespace android::app
 {
@@ -54,13 +56,13 @@ namespace android::app
 		NotificationManager_Policy(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4);
 		
 		// Methods
-		static jstring priorityCategoriesToString(jint arg0);
-		static jstring prioritySendersToString(jint arg0);
-		static jstring suppressedEffectsToString(jint arg0);
+		static JString priorityCategoriesToString(jint arg0);
+		static JString prioritySendersToString(jint arg0);
+		static JString suppressedEffectsToString(jint arg0);
 		jint describeContents();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint hashCode();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::app

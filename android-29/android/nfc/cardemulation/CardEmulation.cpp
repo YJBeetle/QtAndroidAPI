@@ -1,50 +1,51 @@
 #include "../../app/Activity.hpp"
 #include "../../content/ComponentName.hpp"
 #include "../NfcAdapter.hpp"
+#include "../../../JString.hpp"
 #include "./CardEmulation.hpp"
 
 namespace android::nfc::cardemulation
 {
 	// Fields
-	jstring CardEmulation::ACTION_CHANGE_DEFAULT()
+	JString CardEmulation::ACTION_CHANGE_DEFAULT()
 	{
 		return getStaticObjectField(
 			"android.nfc.cardemulation.CardEmulation",
 			"ACTION_CHANGE_DEFAULT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring CardEmulation::CATEGORY_OTHER()
+	JString CardEmulation::CATEGORY_OTHER()
 	{
 		return getStaticObjectField(
 			"android.nfc.cardemulation.CardEmulation",
 			"CATEGORY_OTHER",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring CardEmulation::CATEGORY_PAYMENT()
+	JString CardEmulation::CATEGORY_PAYMENT()
 	{
 		return getStaticObjectField(
 			"android.nfc.cardemulation.CardEmulation",
 			"CATEGORY_PAYMENT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring CardEmulation::EXTRA_CATEGORY()
+	JString CardEmulation::EXTRA_CATEGORY()
 	{
 		return getStaticObjectField(
 			"android.nfc.cardemulation.CardEmulation",
 			"EXTRA_CATEGORY",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring CardEmulation::EXTRA_SERVICE_COMPONENT()
+	JString CardEmulation::EXTRA_SERVICE_COMPONENT()
 	{
 		return getStaticObjectField(
 			"android.nfc.cardemulation.CardEmulation",
 			"EXTRA_SERVICE_COMPONENT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint CardEmulation::SELECTION_MODE_ALWAYS_ASK()
 	{
@@ -83,75 +84,75 @@ namespace android::nfc::cardemulation
 			arg0.object()
 		);
 	}
-	jboolean CardEmulation::categoryAllowsForegroundPreference(jstring arg0)
+	jboolean CardEmulation::categoryAllowsForegroundPreference(JString arg0)
 	{
 		return callMethod<jboolean>(
 			"categoryAllowsForegroundPreference",
 			"(Ljava/lang/String;)Z",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	JObject CardEmulation::getAidsForService(android::content::ComponentName arg0, jstring arg1)
+	JObject CardEmulation::getAidsForService(android::content::ComponentName arg0, JString arg1)
 	{
 		return callObjectMethod(
 			"getAidsForService",
 			"(Landroid/content/ComponentName;Ljava/lang/String;)Ljava/util/List;",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
-	jint CardEmulation::getSelectionModeForCategory(jstring arg0)
+	jint CardEmulation::getSelectionModeForCategory(JString arg0)
 	{
 		return callMethod<jint>(
 			"getSelectionModeForCategory",
 			"(Ljava/lang/String;)I",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jboolean CardEmulation::isDefaultServiceForAid(android::content::ComponentName arg0, jstring arg1)
+	jboolean CardEmulation::isDefaultServiceForAid(android::content::ComponentName arg0, JString arg1)
 	{
 		return callMethod<jboolean>(
 			"isDefaultServiceForAid",
 			"(Landroid/content/ComponentName;Ljava/lang/String;)Z",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
-	jboolean CardEmulation::isDefaultServiceForCategory(android::content::ComponentName arg0, jstring arg1)
+	jboolean CardEmulation::isDefaultServiceForCategory(android::content::ComponentName arg0, JString arg1)
 	{
 		return callMethod<jboolean>(
 			"isDefaultServiceForCategory",
 			"(Landroid/content/ComponentName;Ljava/lang/String;)Z",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
-	jboolean CardEmulation::registerAidsForService(android::content::ComponentName arg0, jstring arg1, JObject arg2)
+	jboolean CardEmulation::registerAidsForService(android::content::ComponentName arg0, JString arg1, JObject arg2)
 	{
 		return callMethod<jboolean>(
 			"registerAidsForService",
 			"(Landroid/content/ComponentName;Ljava/lang/String;Ljava/util/List;)Z",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2.object()
 		);
 	}
-	jboolean CardEmulation::removeAidsForService(android::content::ComponentName arg0, jstring arg1)
+	jboolean CardEmulation::removeAidsForService(android::content::ComponentName arg0, JString arg1)
 	{
 		return callMethod<jboolean>(
 			"removeAidsForService",
 			"(Landroid/content/ComponentName;Ljava/lang/String;)Z",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
-	jboolean CardEmulation::setOffHostForService(android::content::ComponentName arg0, jstring arg1)
+	jboolean CardEmulation::setOffHostForService(android::content::ComponentName arg0, JString arg1)
 	{
 		return callMethod<jboolean>(
 			"setOffHostForService",
 			"(Landroid/content/ComponentName;Ljava/lang/String;)Z",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
 	jboolean CardEmulation::setPreferredService(android::app::Activity arg0, android::content::ComponentName arg1)

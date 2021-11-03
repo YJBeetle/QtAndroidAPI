@@ -1,56 +1,58 @@
 #include "../content/res/Resources.hpp"
+#include "../../JString.hpp"
+#include "../../JString.hpp"
 #include "./ContactsContract_CommonDataKinds_Im.hpp"
 
 namespace android::provider
 {
 	// Fields
-	jstring ContactsContract_CommonDataKinds_Im::CONTENT_ITEM_TYPE()
+	JString ContactsContract_CommonDataKinds_Im::CONTENT_ITEM_TYPE()
 	{
 		return getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Im",
 			"CONTENT_ITEM_TYPE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ContactsContract_CommonDataKinds_Im::CUSTOM_PROTOCOL()
+	JString ContactsContract_CommonDataKinds_Im::CUSTOM_PROTOCOL()
 	{
 		return getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Im",
 			"CUSTOM_PROTOCOL",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ContactsContract_CommonDataKinds_Im::EXTRA_ADDRESS_BOOK_INDEX()
+	JString ContactsContract_CommonDataKinds_Im::EXTRA_ADDRESS_BOOK_INDEX()
 	{
 		return getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Im",
 			"EXTRA_ADDRESS_BOOK_INDEX",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ContactsContract_CommonDataKinds_Im::EXTRA_ADDRESS_BOOK_INDEX_COUNTS()
+	JString ContactsContract_CommonDataKinds_Im::EXTRA_ADDRESS_BOOK_INDEX_COUNTS()
 	{
 		return getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Im",
 			"EXTRA_ADDRESS_BOOK_INDEX_COUNTS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ContactsContract_CommonDataKinds_Im::EXTRA_ADDRESS_BOOK_INDEX_TITLES()
+	JString ContactsContract_CommonDataKinds_Im::EXTRA_ADDRESS_BOOK_INDEX_TITLES()
 	{
 		return getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Im",
 			"EXTRA_ADDRESS_BOOK_INDEX_TITLES",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ContactsContract_CommonDataKinds_Im::PROTOCOL()
+	JString ContactsContract_CommonDataKinds_Im::PROTOCOL()
 	{
 		return getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Im",
 			"PROTOCOL",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint ContactsContract_CommonDataKinds_Im::PROTOCOL_AIM()
 	{
@@ -150,7 +152,7 @@ namespace android::provider
 	// Constructors
 	
 	// Methods
-	jstring ContactsContract_CommonDataKinds_Im::getProtocolLabel(android::content::res::Resources arg0, jint arg1, jstring arg2)
+	JString ContactsContract_CommonDataKinds_Im::getProtocolLabel(android::content::res::Resources arg0, jint arg1, JString arg2)
 	{
 		return callStaticObjectMethod(
 			"android.provider.ContactsContract$CommonDataKinds$Im",
@@ -158,8 +160,8 @@ namespace android::provider
 			"(Landroid/content/res/Resources;ILjava/lang/CharSequence;)Ljava/lang/CharSequence;",
 			arg0.object(),
 			arg1,
-			arg2
-		).object<jstring>();
+			arg2.object<jstring>()
+		);
 	}
 	jint ContactsContract_CommonDataKinds_Im::getProtocolLabelResource(jint arg0)
 	{
@@ -170,7 +172,7 @@ namespace android::provider
 			arg0
 		);
 	}
-	jstring ContactsContract_CommonDataKinds_Im::getTypeLabel(android::content::res::Resources arg0, jint arg1, jstring arg2)
+	JString ContactsContract_CommonDataKinds_Im::getTypeLabel(android::content::res::Resources arg0, jint arg1, JString arg2)
 	{
 		return callStaticObjectMethod(
 			"android.provider.ContactsContract$CommonDataKinds$Im",
@@ -178,8 +180,8 @@ namespace android::provider
 			"(Landroid/content/res/Resources;ILjava/lang/CharSequence;)Ljava/lang/CharSequence;",
 			arg0.object(),
 			arg1,
-			arg2
-		).object<jstring>();
+			arg2.object<jstring>()
+		);
 	}
 	jint ContactsContract_CommonDataKinds_Im::getTypeLabelResource(jint arg0)
 	{

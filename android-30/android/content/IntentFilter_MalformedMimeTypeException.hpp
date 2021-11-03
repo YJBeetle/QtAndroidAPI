@@ -1,9 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../../java/lang/Exception.hpp"
 #include "../util/AndroidException.hpp"
 
+class JString;
 
 namespace android::content
 {
@@ -18,7 +17,7 @@ namespace android::content
 		
 		// Constructors
 		IntentFilter_MalformedMimeTypeException();
-		IntentFilter_MalformedMimeTypeException(jstring arg0);
+		IntentFilter_MalformedMimeTypeException(JString arg0);
 		
 		// Methods
 	};

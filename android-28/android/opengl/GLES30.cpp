@@ -1,3 +1,9 @@
+#include "../../JByteArray.hpp"
+#include "../../JFloatArray.hpp"
+#include "../../JIntArray.hpp"
+#include "../../JLongArray.hpp"
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
 #include "../../java/nio/Buffer.hpp"
 #include "../../java/nio/ByteBuffer.hpp"
 #include "../../java/nio/FloatBuffer.hpp"
@@ -2268,7 +2274,7 @@ namespace android::opengl
 			arg2.object()
 		);
 	}
-	void GLES30::glClearBufferfv(jint arg0, jint arg1, jfloatArray arg2, jint arg3)
+	void GLES30::glClearBufferfv(jint arg0, jint arg1, JFloatArray arg2, jint arg3)
 	{
 		callStaticMethod<void>(
 			"android.opengl.GLES30",
@@ -2276,7 +2282,7 @@ namespace android::opengl
 			"(II[FI)V",
 			arg0,
 			arg1,
-			arg2,
+			arg2.object<jfloatArray>(),
 			arg3
 		);
 	}
@@ -2291,7 +2297,7 @@ namespace android::opengl
 			arg2.object()
 		);
 	}
-	void GLES30::glClearBufferiv(jint arg0, jint arg1, jintArray arg2, jint arg3)
+	void GLES30::glClearBufferiv(jint arg0, jint arg1, JIntArray arg2, jint arg3)
 	{
 		callStaticMethod<void>(
 			"android.opengl.GLES30",
@@ -2299,7 +2305,7 @@ namespace android::opengl
 			"(II[II)V",
 			arg0,
 			arg1,
-			arg2,
+			arg2.object<jintArray>(),
 			arg3
 		);
 	}
@@ -2314,7 +2320,7 @@ namespace android::opengl
 			arg2.object()
 		);
 	}
-	void GLES30::glClearBufferuiv(jint arg0, jint arg1, jintArray arg2, jint arg3)
+	void GLES30::glClearBufferuiv(jint arg0, jint arg1, JIntArray arg2, jint arg3)
 	{
 		callStaticMethod<void>(
 			"android.opengl.GLES30",
@@ -2322,7 +2328,7 @@ namespace android::opengl
 			"(II[II)V",
 			arg0,
 			arg1,
-			arg2,
+			arg2.object<jintArray>(),
 			arg3
 		);
 	}
@@ -2449,14 +2455,14 @@ namespace android::opengl
 			arg1.object()
 		);
 	}
-	void GLES30::glDeleteQueries(jint arg0, jintArray arg1, jint arg2)
+	void GLES30::glDeleteQueries(jint arg0, JIntArray arg1, jint arg2)
 	{
 		callStaticMethod<void>(
 			"android.opengl.GLES30",
 			"glDeleteQueries",
 			"(I[II)V",
 			arg0,
-			arg1,
+			arg1.object<jintArray>(),
 			arg2
 		);
 	}
@@ -2470,14 +2476,14 @@ namespace android::opengl
 			arg1.object()
 		);
 	}
-	void GLES30::glDeleteSamplers(jint arg0, jintArray arg1, jint arg2)
+	void GLES30::glDeleteSamplers(jint arg0, JIntArray arg1, jint arg2)
 	{
 		callStaticMethod<void>(
 			"android.opengl.GLES30",
 			"glDeleteSamplers",
 			"(I[II)V",
 			arg0,
-			arg1,
+			arg1.object<jintArray>(),
 			arg2
 		);
 	}
@@ -2500,14 +2506,14 @@ namespace android::opengl
 			arg1.object()
 		);
 	}
-	void GLES30::glDeleteTransformFeedbacks(jint arg0, jintArray arg1, jint arg2)
+	void GLES30::glDeleteTransformFeedbacks(jint arg0, JIntArray arg1, jint arg2)
 	{
 		callStaticMethod<void>(
 			"android.opengl.GLES30",
 			"glDeleteTransformFeedbacks",
 			"(I[II)V",
 			arg0,
-			arg1,
+			arg1.object<jintArray>(),
 			arg2
 		);
 	}
@@ -2521,14 +2527,14 @@ namespace android::opengl
 			arg1.object()
 		);
 	}
-	void GLES30::glDeleteVertexArrays(jint arg0, jintArray arg1, jint arg2)
+	void GLES30::glDeleteVertexArrays(jint arg0, JIntArray arg1, jint arg2)
 	{
 		callStaticMethod<void>(
 			"android.opengl.GLES30",
 			"glDeleteVertexArrays",
 			"(I[II)V",
 			arg0,
-			arg1,
+			arg1.object<jintArray>(),
 			arg2
 		);
 	}
@@ -2554,14 +2560,14 @@ namespace android::opengl
 			arg1.object()
 		);
 	}
-	void GLES30::glDrawBuffers(jint arg0, jintArray arg1, jint arg2)
+	void GLES30::glDrawBuffers(jint arg0, JIntArray arg1, jint arg2)
 	{
 		callStaticMethod<void>(
 			"android.opengl.GLES30",
 			"glDrawBuffers",
 			"(I[II)V",
 			arg0,
-			arg1,
+			arg1.object<jintArray>(),
 			arg2
 		);
 	}
@@ -2680,14 +2686,14 @@ namespace android::opengl
 			arg1.object()
 		);
 	}
-	void GLES30::glGenQueries(jint arg0, jintArray arg1, jint arg2)
+	void GLES30::glGenQueries(jint arg0, JIntArray arg1, jint arg2)
 	{
 		callStaticMethod<void>(
 			"android.opengl.GLES30",
 			"glGenQueries",
 			"(I[II)V",
 			arg0,
-			arg1,
+			arg1.object<jintArray>(),
 			arg2
 		);
 	}
@@ -2701,14 +2707,14 @@ namespace android::opengl
 			arg1.object()
 		);
 	}
-	void GLES30::glGenSamplers(jint arg0, jintArray arg1, jint arg2)
+	void GLES30::glGenSamplers(jint arg0, JIntArray arg1, jint arg2)
 	{
 		callStaticMethod<void>(
 			"android.opengl.GLES30",
 			"glGenSamplers",
 			"(I[II)V",
 			arg0,
-			arg1,
+			arg1.object<jintArray>(),
 			arg2
 		);
 	}
@@ -2722,14 +2728,14 @@ namespace android::opengl
 			arg1.object()
 		);
 	}
-	void GLES30::glGenTransformFeedbacks(jint arg0, jintArray arg1, jint arg2)
+	void GLES30::glGenTransformFeedbacks(jint arg0, JIntArray arg1, jint arg2)
 	{
 		callStaticMethod<void>(
 			"android.opengl.GLES30",
 			"glGenTransformFeedbacks",
 			"(I[II)V",
 			arg0,
-			arg1,
+			arg1.object<jintArray>(),
 			arg2
 		);
 	}
@@ -2743,18 +2749,18 @@ namespace android::opengl
 			arg1.object()
 		);
 	}
-	void GLES30::glGenVertexArrays(jint arg0, jintArray arg1, jint arg2)
+	void GLES30::glGenVertexArrays(jint arg0, JIntArray arg1, jint arg2)
 	{
 		callStaticMethod<void>(
 			"android.opengl.GLES30",
 			"glGenVertexArrays",
 			"(I[II)V",
 			arg0,
-			arg1,
+			arg1.object<jintArray>(),
 			arg2
 		);
 	}
-	jstring GLES30::glGetActiveUniformBlockName(jint arg0, jint arg1)
+	JString GLES30::glGetActiveUniformBlockName(jint arg0, jint arg1)
 	{
 		return callStaticObjectMethod(
 			"android.opengl.GLES30",
@@ -2762,7 +2768,7 @@ namespace android::opengl
 			"(II)Ljava/lang/String;",
 			arg0,
 			arg1
-		).object<jstring>();
+		);
 	}
 	void GLES30::glGetActiveUniformBlockName(jint arg0, jint arg1, java::nio::Buffer arg2, java::nio::Buffer arg3)
 	{
@@ -2776,7 +2782,7 @@ namespace android::opengl
 			arg3.object()
 		);
 	}
-	void GLES30::glGetActiveUniformBlockName(jint arg0, jint arg1, jint arg2, jintArray arg3, jint arg4, jbyteArray arg5, jint arg6)
+	void GLES30::glGetActiveUniformBlockName(jint arg0, jint arg1, jint arg2, JIntArray arg3, jint arg4, JByteArray arg5, jint arg6)
 	{
 		callStaticMethod<void>(
 			"android.opengl.GLES30",
@@ -2785,9 +2791,9 @@ namespace android::opengl
 			arg0,
 			arg1,
 			arg2,
-			arg3,
+			arg3.object<jintArray>(),
 			arg4,
-			arg5,
+			arg5.object<jbyteArray>(),
 			arg6
 		);
 	}
@@ -2803,7 +2809,7 @@ namespace android::opengl
 			arg3.object()
 		);
 	}
-	void GLES30::glGetActiveUniformBlockiv(jint arg0, jint arg1, jint arg2, jintArray arg3, jint arg4)
+	void GLES30::glGetActiveUniformBlockiv(jint arg0, jint arg1, jint arg2, JIntArray arg3, jint arg4)
 	{
 		callStaticMethod<void>(
 			"android.opengl.GLES30",
@@ -2812,7 +2818,7 @@ namespace android::opengl
 			arg0,
 			arg1,
 			arg2,
-			arg3,
+			arg3.object<jintArray>(),
 			arg4
 		);
 	}
@@ -2829,7 +2835,7 @@ namespace android::opengl
 			arg4.object()
 		);
 	}
-	void GLES30::glGetActiveUniformsiv(jint arg0, jint arg1, jintArray arg2, jint arg3, jint arg4, jintArray arg5, jint arg6)
+	void GLES30::glGetActiveUniformsiv(jint arg0, jint arg1, JIntArray arg2, jint arg3, jint arg4, JIntArray arg5, jint arg6)
 	{
 		callStaticMethod<void>(
 			"android.opengl.GLES30",
@@ -2837,10 +2843,10 @@ namespace android::opengl
 			"(II[III[II)V",
 			arg0,
 			arg1,
-			arg2,
+			arg2.object<jintArray>(),
 			arg3,
 			arg4,
-			arg5,
+			arg5.object<jintArray>(),
 			arg6
 		);
 	}
@@ -2855,7 +2861,7 @@ namespace android::opengl
 			arg2.object()
 		);
 	}
-	void GLES30::glGetBufferParameteri64v(jint arg0, jint arg1, jlongArray arg2, jint arg3)
+	void GLES30::glGetBufferParameteri64v(jint arg0, jint arg1, JLongArray arg2, jint arg3)
 	{
 		callStaticMethod<void>(
 			"android.opengl.GLES30",
@@ -2863,7 +2869,7 @@ namespace android::opengl
 			"(II[JI)V",
 			arg0,
 			arg1,
-			arg2,
+			arg2.object<jlongArray>(),
 			arg3
 		);
 	}
@@ -2877,14 +2883,14 @@ namespace android::opengl
 			arg1
 		);
 	}
-	jint GLES30::glGetFragDataLocation(jint arg0, jstring arg1)
+	jint GLES30::glGetFragDataLocation(jint arg0, JString arg1)
 	{
 		return callStaticMethod<jint>(
 			"android.opengl.GLES30",
 			"glGetFragDataLocation",
 			"(ILjava/lang/String;)I",
 			arg0,
-			arg1
+			arg1.object<jstring>()
 		);
 	}
 	void GLES30::glGetInteger64i_v(jint arg0, jint arg1, java::nio::LongBuffer arg2)
@@ -2898,7 +2904,7 @@ namespace android::opengl
 			arg2.object()
 		);
 	}
-	void GLES30::glGetInteger64i_v(jint arg0, jint arg1, jlongArray arg2, jint arg3)
+	void GLES30::glGetInteger64i_v(jint arg0, jint arg1, JLongArray arg2, jint arg3)
 	{
 		callStaticMethod<void>(
 			"android.opengl.GLES30",
@@ -2906,7 +2912,7 @@ namespace android::opengl
 			"(II[JI)V",
 			arg0,
 			arg1,
-			arg2,
+			arg2.object<jlongArray>(),
 			arg3
 		);
 	}
@@ -2920,14 +2926,14 @@ namespace android::opengl
 			arg1.object()
 		);
 	}
-	void GLES30::glGetInteger64v(jint arg0, jlongArray arg1, jint arg2)
+	void GLES30::glGetInteger64v(jint arg0, JLongArray arg1, jint arg2)
 	{
 		callStaticMethod<void>(
 			"android.opengl.GLES30",
 			"glGetInteger64v",
 			"(I[JI)V",
 			arg0,
-			arg1,
+			arg1.object<jlongArray>(),
 			arg2
 		);
 	}
@@ -2942,7 +2948,7 @@ namespace android::opengl
 			arg2.object()
 		);
 	}
-	void GLES30::glGetIntegeri_v(jint arg0, jint arg1, jintArray arg2, jint arg3)
+	void GLES30::glGetIntegeri_v(jint arg0, jint arg1, JIntArray arg2, jint arg3)
 	{
 		callStaticMethod<void>(
 			"android.opengl.GLES30",
@@ -2950,7 +2956,7 @@ namespace android::opengl
 			"(II[II)V",
 			arg0,
 			arg1,
-			arg2,
+			arg2.object<jintArray>(),
 			arg3
 		);
 	}
@@ -2967,7 +2973,7 @@ namespace android::opengl
 			arg4.object()
 		);
 	}
-	void GLES30::glGetInternalformativ(jint arg0, jint arg1, jint arg2, jint arg3, jintArray arg4, jint arg5)
+	void GLES30::glGetInternalformativ(jint arg0, jint arg1, jint arg2, jint arg3, JIntArray arg4, jint arg5)
 	{
 		callStaticMethod<void>(
 			"android.opengl.GLES30",
@@ -2977,7 +2983,7 @@ namespace android::opengl
 			arg1,
 			arg2,
 			arg3,
-			arg4,
+			arg4.object<jintArray>(),
 			arg5
 		);
 	}
@@ -2994,7 +3000,7 @@ namespace android::opengl
 			arg4.object()
 		);
 	}
-	void GLES30::glGetProgramBinary(jint arg0, jint arg1, jintArray arg2, jint arg3, jintArray arg4, jint arg5, java::nio::Buffer arg6)
+	void GLES30::glGetProgramBinary(jint arg0, jint arg1, JIntArray arg2, jint arg3, JIntArray arg4, jint arg5, java::nio::Buffer arg6)
 	{
 		callStaticMethod<void>(
 			"android.opengl.GLES30",
@@ -3002,9 +3008,9 @@ namespace android::opengl
 			"(II[II[IILjava/nio/Buffer;)V",
 			arg0,
 			arg1,
-			arg2,
+			arg2.object<jintArray>(),
 			arg3,
-			arg4,
+			arg4.object<jintArray>(),
 			arg5,
 			arg6.object()
 		);
@@ -3020,7 +3026,7 @@ namespace android::opengl
 			arg2.object()
 		);
 	}
-	void GLES30::glGetQueryObjectuiv(jint arg0, jint arg1, jintArray arg2, jint arg3)
+	void GLES30::glGetQueryObjectuiv(jint arg0, jint arg1, JIntArray arg2, jint arg3)
 	{
 		callStaticMethod<void>(
 			"android.opengl.GLES30",
@@ -3028,7 +3034,7 @@ namespace android::opengl
 			"(II[II)V",
 			arg0,
 			arg1,
-			arg2,
+			arg2.object<jintArray>(),
 			arg3
 		);
 	}
@@ -3043,7 +3049,7 @@ namespace android::opengl
 			arg2.object()
 		);
 	}
-	void GLES30::glGetQueryiv(jint arg0, jint arg1, jintArray arg2, jint arg3)
+	void GLES30::glGetQueryiv(jint arg0, jint arg1, JIntArray arg2, jint arg3)
 	{
 		callStaticMethod<void>(
 			"android.opengl.GLES30",
@@ -3051,7 +3057,7 @@ namespace android::opengl
 			"(II[II)V",
 			arg0,
 			arg1,
-			arg2,
+			arg2.object<jintArray>(),
 			arg3
 		);
 	}
@@ -3066,7 +3072,7 @@ namespace android::opengl
 			arg2.object()
 		);
 	}
-	void GLES30::glGetSamplerParameterfv(jint arg0, jint arg1, jfloatArray arg2, jint arg3)
+	void GLES30::glGetSamplerParameterfv(jint arg0, jint arg1, JFloatArray arg2, jint arg3)
 	{
 		callStaticMethod<void>(
 			"android.opengl.GLES30",
@@ -3074,7 +3080,7 @@ namespace android::opengl
 			"(II[FI)V",
 			arg0,
 			arg1,
-			arg2,
+			arg2.object<jfloatArray>(),
 			arg3
 		);
 	}
@@ -3089,7 +3095,7 @@ namespace android::opengl
 			arg2.object()
 		);
 	}
-	void GLES30::glGetSamplerParameteriv(jint arg0, jint arg1, jintArray arg2, jint arg3)
+	void GLES30::glGetSamplerParameteriv(jint arg0, jint arg1, JIntArray arg2, jint arg3)
 	{
 		callStaticMethod<void>(
 			"android.opengl.GLES30",
@@ -3097,11 +3103,11 @@ namespace android::opengl
 			"(II[II)V",
 			arg0,
 			arg1,
-			arg2,
+			arg2.object<jintArray>(),
 			arg3
 		);
 	}
-	jstring GLES30::glGetStringi(jint arg0, jint arg1)
+	JString GLES30::glGetStringi(jint arg0, jint arg1)
 	{
 		return callStaticObjectMethod(
 			"android.opengl.GLES30",
@@ -3109,7 +3115,7 @@ namespace android::opengl
 			"(II)Ljava/lang/String;",
 			arg0,
 			arg1
-		).object<jstring>();
+		);
 	}
 	void GLES30::glGetSynciv(jlong arg0, jint arg1, jint arg2, java::nio::IntBuffer arg3, java::nio::IntBuffer arg4)
 	{
@@ -3124,7 +3130,7 @@ namespace android::opengl
 			arg4.object()
 		);
 	}
-	void GLES30::glGetSynciv(jlong arg0, jint arg1, jint arg2, jintArray arg3, jint arg4, jintArray arg5, jint arg6)
+	void GLES30::glGetSynciv(jlong arg0, jint arg1, jint arg2, JIntArray arg3, jint arg4, JIntArray arg5, jint arg6)
 	{
 		callStaticMethod<void>(
 			"android.opengl.GLES30",
@@ -3133,13 +3139,13 @@ namespace android::opengl
 			arg0,
 			arg1,
 			arg2,
-			arg3,
+			arg3.object<jintArray>(),
 			arg4,
-			arg5,
+			arg5.object<jintArray>(),
 			arg6
 		);
 	}
-	jstring GLES30::glGetTransformFeedbackVarying(jint arg0, jint arg1, java::nio::IntBuffer arg2, java::nio::IntBuffer arg3)
+	JString GLES30::glGetTransformFeedbackVarying(jint arg0, jint arg1, java::nio::IntBuffer arg2, java::nio::IntBuffer arg3)
 	{
 		return callStaticObjectMethod(
 			"android.opengl.GLES30",
@@ -3149,9 +3155,9 @@ namespace android::opengl
 			arg1,
 			arg2.object(),
 			arg3.object()
-		).object<jstring>();
+		);
 	}
-	jstring GLES30::glGetTransformFeedbackVarying(jint arg0, jint arg1, jintArray arg2, jint arg3, jintArray arg4, jint arg5)
+	JString GLES30::glGetTransformFeedbackVarying(jint arg0, jint arg1, JIntArray arg2, jint arg3, JIntArray arg4, jint arg5)
 	{
 		return callStaticObjectMethod(
 			"android.opengl.GLES30",
@@ -3159,11 +3165,11 @@ namespace android::opengl
 			"(II[II[II)Ljava/lang/String;",
 			arg0,
 			arg1,
-			arg2,
+			arg2.object<jintArray>(),
 			arg3,
-			arg4,
+			arg4.object<jintArray>(),
 			arg5
-		).object<jstring>();
+		);
 	}
 	void GLES30::glGetTransformFeedbackVarying(jint arg0, jint arg1, jint arg2, java::nio::IntBuffer arg3, java::nio::IntBuffer arg4, java::nio::IntBuffer arg5, jbyte arg6)
 	{
@@ -3195,7 +3201,7 @@ namespace android::opengl
 			arg6.object()
 		);
 	}
-	void GLES30::glGetTransformFeedbackVarying(jint arg0, jint arg1, jint arg2, jintArray arg3, jint arg4, jintArray arg5, jint arg6, jintArray arg7, jint arg8, jbyteArray arg9, jint arg10)
+	void GLES30::glGetTransformFeedbackVarying(jint arg0, jint arg1, jint arg2, JIntArray arg3, jint arg4, JIntArray arg5, jint arg6, JIntArray arg7, jint arg8, JByteArray arg9, jint arg10)
 	{
 		callStaticMethod<void>(
 			"android.opengl.GLES30",
@@ -3204,46 +3210,46 @@ namespace android::opengl
 			arg0,
 			arg1,
 			arg2,
-			arg3,
+			arg3.object<jintArray>(),
 			arg4,
-			arg5,
+			arg5.object<jintArray>(),
 			arg6,
-			arg7,
+			arg7.object<jintArray>(),
 			arg8,
-			arg9,
+			arg9.object<jbyteArray>(),
 			arg10
 		);
 	}
-	jint GLES30::glGetUniformBlockIndex(jint arg0, jstring arg1)
+	jint GLES30::glGetUniformBlockIndex(jint arg0, JString arg1)
 	{
 		return callStaticMethod<jint>(
 			"android.opengl.GLES30",
 			"glGetUniformBlockIndex",
 			"(ILjava/lang/String;)I",
 			arg0,
-			arg1
+			arg1.object<jstring>()
 		);
 	}
-	void GLES30::glGetUniformIndices(jint arg0, jarray arg1, java::nio::IntBuffer arg2)
+	void GLES30::glGetUniformIndices(jint arg0, JArray arg1, java::nio::IntBuffer arg2)
 	{
 		callStaticMethod<void>(
 			"android.opengl.GLES30",
 			"glGetUniformIndices",
 			"(I[Ljava/lang/String;Ljava/nio/IntBuffer;)V",
 			arg0,
-			arg1,
+			arg1.object<jarray>(),
 			arg2.object()
 		);
 	}
-	void GLES30::glGetUniformIndices(jint arg0, jarray arg1, jintArray arg2, jint arg3)
+	void GLES30::glGetUniformIndices(jint arg0, JArray arg1, JIntArray arg2, jint arg3)
 	{
 		callStaticMethod<void>(
 			"android.opengl.GLES30",
 			"glGetUniformIndices",
 			"(I[Ljava/lang/String;[II)V",
 			arg0,
-			arg1,
-			arg2,
+			arg1.object<jarray>(),
+			arg2.object<jintArray>(),
 			arg3
 		);
 	}
@@ -3258,7 +3264,7 @@ namespace android::opengl
 			arg2.object()
 		);
 	}
-	void GLES30::glGetUniformuiv(jint arg0, jint arg1, jintArray arg2, jint arg3)
+	void GLES30::glGetUniformuiv(jint arg0, jint arg1, JIntArray arg2, jint arg3)
 	{
 		callStaticMethod<void>(
 			"android.opengl.GLES30",
@@ -3266,7 +3272,7 @@ namespace android::opengl
 			"(II[II)V",
 			arg0,
 			arg1,
-			arg2,
+			arg2.object<jintArray>(),
 			arg3
 		);
 	}
@@ -3281,7 +3287,7 @@ namespace android::opengl
 			arg2.object()
 		);
 	}
-	void GLES30::glGetVertexAttribIiv(jint arg0, jint arg1, jintArray arg2, jint arg3)
+	void GLES30::glGetVertexAttribIiv(jint arg0, jint arg1, JIntArray arg2, jint arg3)
 	{
 		callStaticMethod<void>(
 			"android.opengl.GLES30",
@@ -3289,7 +3295,7 @@ namespace android::opengl
 			"(II[II)V",
 			arg0,
 			arg1,
-			arg2,
+			arg2.object<jintArray>(),
 			arg3
 		);
 	}
@@ -3304,7 +3310,7 @@ namespace android::opengl
 			arg2.object()
 		);
 	}
-	void GLES30::glGetVertexAttribIuiv(jint arg0, jint arg1, jintArray arg2, jint arg3)
+	void GLES30::glGetVertexAttribIuiv(jint arg0, jint arg1, JIntArray arg2, jint arg3)
 	{
 		callStaticMethod<void>(
 			"android.opengl.GLES30",
@@ -3312,7 +3318,7 @@ namespace android::opengl
 			"(II[II)V",
 			arg0,
 			arg1,
-			arg2,
+			arg2.object<jintArray>(),
 			arg3
 		);
 	}
@@ -3327,7 +3333,7 @@ namespace android::opengl
 			arg2.object()
 		);
 	}
-	void GLES30::glInvalidateFramebuffer(jint arg0, jint arg1, jintArray arg2, jint arg3)
+	void GLES30::glInvalidateFramebuffer(jint arg0, jint arg1, JIntArray arg2, jint arg3)
 	{
 		callStaticMethod<void>(
 			"android.opengl.GLES30",
@@ -3335,7 +3341,7 @@ namespace android::opengl
 			"(II[II)V",
 			arg0,
 			arg1,
-			arg2,
+			arg2.object<jintArray>(),
 			arg3
 		);
 	}
@@ -3354,7 +3360,7 @@ namespace android::opengl
 			arg6
 		);
 	}
-	void GLES30::glInvalidateSubFramebuffer(jint arg0, jint arg1, jintArray arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7)
+	void GLES30::glInvalidateSubFramebuffer(jint arg0, jint arg1, JIntArray arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7)
 	{
 		callStaticMethod<void>(
 			"android.opengl.GLES30",
@@ -3362,7 +3368,7 @@ namespace android::opengl
 			"(II[IIIIII)V",
 			arg0,
 			arg1,
-			arg2,
+			arg2.object<jintArray>(),
 			arg3,
 			arg4,
 			arg5,
@@ -3525,7 +3531,7 @@ namespace android::opengl
 			arg2.object()
 		);
 	}
-	void GLES30::glSamplerParameterfv(jint arg0, jint arg1, jfloatArray arg2, jint arg3)
+	void GLES30::glSamplerParameterfv(jint arg0, jint arg1, JFloatArray arg2, jint arg3)
 	{
 		callStaticMethod<void>(
 			"android.opengl.GLES30",
@@ -3533,7 +3539,7 @@ namespace android::opengl
 			"(II[FI)V",
 			arg0,
 			arg1,
-			arg2,
+			arg2.object<jfloatArray>(),
 			arg3
 		);
 	}
@@ -3559,7 +3565,7 @@ namespace android::opengl
 			arg2.object()
 		);
 	}
-	void GLES30::glSamplerParameteriv(jint arg0, jint arg1, jintArray arg2, jint arg3)
+	void GLES30::glSamplerParameteriv(jint arg0, jint arg1, JIntArray arg2, jint arg3)
 	{
 		callStaticMethod<void>(
 			"android.opengl.GLES30",
@@ -3567,7 +3573,7 @@ namespace android::opengl
 			"(II[II)V",
 			arg0,
 			arg1,
-			arg2,
+			arg2.object<jintArray>(),
 			arg3
 		);
 	}
@@ -3672,14 +3678,14 @@ namespace android::opengl
 			arg10.object()
 		);
 	}
-	void GLES30::glTransformFeedbackVaryings(jint arg0, jarray arg1, jint arg2)
+	void GLES30::glTransformFeedbackVaryings(jint arg0, JArray arg1, jint arg2)
 	{
 		callStaticMethod<void>(
 			"android.opengl.GLES30",
 			"glTransformFeedbackVaryings",
 			"(I[Ljava/lang/String;I)V",
 			arg0,
-			arg1,
+			arg1.object<jarray>(),
 			arg2
 		);
 	}
@@ -3704,7 +3710,7 @@ namespace android::opengl
 			arg2.object()
 		);
 	}
-	void GLES30::glUniform1uiv(jint arg0, jint arg1, jintArray arg2, jint arg3)
+	void GLES30::glUniform1uiv(jint arg0, jint arg1, JIntArray arg2, jint arg3)
 	{
 		callStaticMethod<void>(
 			"android.opengl.GLES30",
@@ -3712,7 +3718,7 @@ namespace android::opengl
 			"(II[II)V",
 			arg0,
 			arg1,
-			arg2,
+			arg2.object<jintArray>(),
 			arg3
 		);
 	}
@@ -3738,7 +3744,7 @@ namespace android::opengl
 			arg2.object()
 		);
 	}
-	void GLES30::glUniform2uiv(jint arg0, jint arg1, jintArray arg2, jint arg3)
+	void GLES30::glUniform2uiv(jint arg0, jint arg1, JIntArray arg2, jint arg3)
 	{
 		callStaticMethod<void>(
 			"android.opengl.GLES30",
@@ -3746,7 +3752,7 @@ namespace android::opengl
 			"(II[II)V",
 			arg0,
 			arg1,
-			arg2,
+			arg2.object<jintArray>(),
 			arg3
 		);
 	}
@@ -3773,7 +3779,7 @@ namespace android::opengl
 			arg2.object()
 		);
 	}
-	void GLES30::glUniform3uiv(jint arg0, jint arg1, jintArray arg2, jint arg3)
+	void GLES30::glUniform3uiv(jint arg0, jint arg1, JIntArray arg2, jint arg3)
 	{
 		callStaticMethod<void>(
 			"android.opengl.GLES30",
@@ -3781,7 +3787,7 @@ namespace android::opengl
 			"(II[II)V",
 			arg0,
 			arg1,
-			arg2,
+			arg2.object<jintArray>(),
 			arg3
 		);
 	}
@@ -3809,7 +3815,7 @@ namespace android::opengl
 			arg2.object()
 		);
 	}
-	void GLES30::glUniform4uiv(jint arg0, jint arg1, jintArray arg2, jint arg3)
+	void GLES30::glUniform4uiv(jint arg0, jint arg1, JIntArray arg2, jint arg3)
 	{
 		callStaticMethod<void>(
 			"android.opengl.GLES30",
@@ -3817,7 +3823,7 @@ namespace android::opengl
 			"(II[II)V",
 			arg0,
 			arg1,
-			arg2,
+			arg2.object<jintArray>(),
 			arg3
 		);
 	}
@@ -3844,7 +3850,7 @@ namespace android::opengl
 			arg3.object()
 		);
 	}
-	void GLES30::glUniformMatrix2x3fv(jint arg0, jint arg1, jboolean arg2, jfloatArray arg3, jint arg4)
+	void GLES30::glUniformMatrix2x3fv(jint arg0, jint arg1, jboolean arg2, JFloatArray arg3, jint arg4)
 	{
 		callStaticMethod<void>(
 			"android.opengl.GLES30",
@@ -3853,7 +3859,7 @@ namespace android::opengl
 			arg0,
 			arg1,
 			arg2,
-			arg3,
+			arg3.object<jfloatArray>(),
 			arg4
 		);
 	}
@@ -3869,7 +3875,7 @@ namespace android::opengl
 			arg3.object()
 		);
 	}
-	void GLES30::glUniformMatrix2x4fv(jint arg0, jint arg1, jboolean arg2, jfloatArray arg3, jint arg4)
+	void GLES30::glUniformMatrix2x4fv(jint arg0, jint arg1, jboolean arg2, JFloatArray arg3, jint arg4)
 	{
 		callStaticMethod<void>(
 			"android.opengl.GLES30",
@@ -3878,7 +3884,7 @@ namespace android::opengl
 			arg0,
 			arg1,
 			arg2,
-			arg3,
+			arg3.object<jfloatArray>(),
 			arg4
 		);
 	}
@@ -3894,7 +3900,7 @@ namespace android::opengl
 			arg3.object()
 		);
 	}
-	void GLES30::glUniformMatrix3x2fv(jint arg0, jint arg1, jboolean arg2, jfloatArray arg3, jint arg4)
+	void GLES30::glUniformMatrix3x2fv(jint arg0, jint arg1, jboolean arg2, JFloatArray arg3, jint arg4)
 	{
 		callStaticMethod<void>(
 			"android.opengl.GLES30",
@@ -3903,7 +3909,7 @@ namespace android::opengl
 			arg0,
 			arg1,
 			arg2,
-			arg3,
+			arg3.object<jfloatArray>(),
 			arg4
 		);
 	}
@@ -3919,7 +3925,7 @@ namespace android::opengl
 			arg3.object()
 		);
 	}
-	void GLES30::glUniformMatrix3x4fv(jint arg0, jint arg1, jboolean arg2, jfloatArray arg3, jint arg4)
+	void GLES30::glUniformMatrix3x4fv(jint arg0, jint arg1, jboolean arg2, JFloatArray arg3, jint arg4)
 	{
 		callStaticMethod<void>(
 			"android.opengl.GLES30",
@@ -3928,7 +3934,7 @@ namespace android::opengl
 			arg0,
 			arg1,
 			arg2,
-			arg3,
+			arg3.object<jfloatArray>(),
 			arg4
 		);
 	}
@@ -3944,7 +3950,7 @@ namespace android::opengl
 			arg3.object()
 		);
 	}
-	void GLES30::glUniformMatrix4x2fv(jint arg0, jint arg1, jboolean arg2, jfloatArray arg3, jint arg4)
+	void GLES30::glUniformMatrix4x2fv(jint arg0, jint arg1, jboolean arg2, JFloatArray arg3, jint arg4)
 	{
 		callStaticMethod<void>(
 			"android.opengl.GLES30",
@@ -3953,7 +3959,7 @@ namespace android::opengl
 			arg0,
 			arg1,
 			arg2,
-			arg3,
+			arg3.object<jfloatArray>(),
 			arg4
 		);
 	}
@@ -3969,7 +3975,7 @@ namespace android::opengl
 			arg3.object()
 		);
 	}
-	void GLES30::glUniformMatrix4x3fv(jint arg0, jint arg1, jboolean arg2, jfloatArray arg3, jint arg4)
+	void GLES30::glUniformMatrix4x3fv(jint arg0, jint arg1, jboolean arg2, JFloatArray arg3, jint arg4)
 	{
 		callStaticMethod<void>(
 			"android.opengl.GLES30",
@@ -3978,7 +3984,7 @@ namespace android::opengl
 			arg0,
 			arg1,
 			arg2,
-			arg3,
+			arg3.object<jfloatArray>(),
 			arg4
 		);
 	}
@@ -4024,14 +4030,14 @@ namespace android::opengl
 			arg1.object()
 		);
 	}
-	void GLES30::glVertexAttribI4iv(jint arg0, jintArray arg1, jint arg2)
+	void GLES30::glVertexAttribI4iv(jint arg0, JIntArray arg1, jint arg2)
 	{
 		callStaticMethod<void>(
 			"android.opengl.GLES30",
 			"glVertexAttribI4iv",
 			"(I[II)V",
 			arg0,
-			arg1,
+			arg1.object<jintArray>(),
 			arg2
 		);
 	}
@@ -4058,14 +4064,14 @@ namespace android::opengl
 			arg1.object()
 		);
 	}
-	void GLES30::glVertexAttribI4uiv(jint arg0, jintArray arg1, jint arg2)
+	void GLES30::glVertexAttribI4uiv(jint arg0, JIntArray arg1, jint arg2)
 	{
 		callStaticMethod<void>(
 			"android.opengl.GLES30",
 			"glVertexAttribI4uiv",
 			"(I[II)V",
 			arg0,
-			arg1,
+			arg1.object<jintArray>(),
 			arg2
 		);
 	}

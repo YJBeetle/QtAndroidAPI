@@ -1,4 +1,5 @@
 #include "../../../java/lang/Exception.hpp"
+#include "../../../JString.hpp"
 #include "./SAXParseException.hpp"
 
 namespace org::xml::sax
@@ -9,38 +10,38 @@ namespace org::xml::sax
 	SAXParseException::SAXParseException(QJniObject obj) : org::xml::sax::SAXException(obj) {}
 	
 	// Constructors
-	SAXParseException::SAXParseException(jstring arg0, JObject arg1)
+	SAXParseException::SAXParseException(JString arg0, JObject arg1)
 		: org::xml::sax::SAXException(
 			"org.xml.sax.SAXParseException",
 			"(Ljava/lang/String;Lorg/xml/sax/Locator;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		) {}
-	SAXParseException::SAXParseException(jstring arg0, JObject arg1, java::lang::Exception arg2)
+	SAXParseException::SAXParseException(JString arg0, JObject arg1, java::lang::Exception arg2)
 		: org::xml::sax::SAXException(
 			"org.xml.sax.SAXParseException",
 			"(Ljava/lang/String;Lorg/xml/sax/Locator;Ljava/lang/Exception;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
 			arg2.object()
 		) {}
-	SAXParseException::SAXParseException(jstring arg0, jstring arg1, jstring arg2, jint arg3, jint arg4)
+	SAXParseException::SAXParseException(JString arg0, JString arg1, JString arg2, jint arg3, jint arg4)
 		: org::xml::sax::SAXException(
 			"org.xml.sax.SAXParseException",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;II)V",
-			arg0,
-			arg1,
-			arg2,
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2.object<jstring>(),
 			arg3,
 			arg4
 		) {}
-	SAXParseException::SAXParseException(jstring arg0, jstring arg1, jstring arg2, jint arg3, jint arg4, java::lang::Exception arg5)
+	SAXParseException::SAXParseException(JString arg0, JString arg1, JString arg2, jint arg3, jint arg4, java::lang::Exception arg5)
 		: org::xml::sax::SAXException(
 			"org.xml.sax.SAXParseException",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;IILjava/lang/Exception;)V",
-			arg0,
-			arg1,
-			arg2,
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2.object<jstring>(),
 			arg3,
 			arg4,
 			arg5.object()
@@ -61,26 +62,26 @@ namespace org::xml::sax
 			"()I"
 		);
 	}
-	jstring SAXParseException::getPublicId()
+	JString SAXParseException::getPublicId()
 	{
 		return callObjectMethod(
 			"getPublicId",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring SAXParseException::getSystemId()
+	JString SAXParseException::getSystemId()
 	{
 		return callObjectMethod(
 			"getSystemId",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring SAXParseException::toString()
+	JString SAXParseException::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace org::xml::sax
 

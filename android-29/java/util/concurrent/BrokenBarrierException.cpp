@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./BrokenBarrierException.hpp"
 
 namespace java::util::concurrent
@@ -13,11 +14,11 @@ namespace java::util::concurrent
 			"java.util.concurrent.BrokenBarrierException",
 			"()V"
 		) {}
-	BrokenBarrierException::BrokenBarrierException(jstring arg0)
+	BrokenBarrierException::BrokenBarrierException(JString arg0)
 		: java::lang::Exception(
 			"java.util.concurrent.BrokenBarrierException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

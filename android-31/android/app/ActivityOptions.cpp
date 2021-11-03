@@ -1,3 +1,4 @@
+#include "../../JArray.hpp"
 #include "./Activity.hpp"
 #include "./PendingIntent.hpp"
 #include "../content/Context.hpp"
@@ -5,26 +6,27 @@
 #include "../graphics/Rect.hpp"
 #include "../os/Bundle.hpp"
 #include "../view/View.hpp"
+#include "../../JString.hpp"
 #include "./ActivityOptions.hpp"
 
 namespace android::app
 {
 	// Fields
-	jstring ActivityOptions::EXTRA_USAGE_TIME_REPORT()
+	JString ActivityOptions::EXTRA_USAGE_TIME_REPORT()
 	{
 		return getStaticObjectField(
 			"android.app.ActivityOptions",
 			"EXTRA_USAGE_TIME_REPORT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ActivityOptions::EXTRA_USAGE_TIME_REPORT_PACKAGES()
+	JString ActivityOptions::EXTRA_USAGE_TIME_REPORT_PACKAGES()
 	{
 		return getStaticObjectField(
 			"android.app.ActivityOptions",
 			"EXTRA_USAGE_TIME_REPORT_PACKAGES",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QJniObject forward
@@ -78,17 +80,17 @@ namespace android::app
 			arg4
 		);
 	}
-	android::app::ActivityOptions ActivityOptions::makeSceneTransitionAnimation(android::app::Activity arg0, jarray arg1)
+	android::app::ActivityOptions ActivityOptions::makeSceneTransitionAnimation(android::app::Activity arg0, JArray arg1)
 	{
 		return callStaticObjectMethod(
 			"android.app.ActivityOptions",
 			"makeSceneTransitionAnimation",
 			"(Landroid/app/Activity;[Landroid/util/Pair;)Landroid/app/ActivityOptions;",
 			arg0.object(),
-			arg1
+			arg1.object<jarray>()
 		);
 	}
-	android::app::ActivityOptions ActivityOptions::makeSceneTransitionAnimation(android::app::Activity arg0, android::view::View arg1, jstring arg2)
+	android::app::ActivityOptions ActivityOptions::makeSceneTransitionAnimation(android::app::Activity arg0, android::view::View arg1, JString arg2)
 	{
 		return callStaticObjectMethod(
 			"android.app.ActivityOptions",
@@ -96,7 +98,7 @@ namespace android::app
 			"(Landroid/app/Activity;Landroid/view/View;Ljava/lang/String;)Landroid/app/ActivityOptions;",
 			arg0.object(),
 			arg1.object(),
-			arg2
+			arg2.object<jstring>()
 		);
 	}
 	android::app::ActivityOptions ActivityOptions::makeTaskLaunchBehind()
@@ -187,12 +189,12 @@ namespace android::app
 			"()Landroid/os/Bundle;"
 		);
 	}
-	jstring ActivityOptions::toString()
+	JString ActivityOptions::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void ActivityOptions::update(android::app::ActivityOptions arg0)
 	{

@@ -1,12 +1,13 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "../SocketFactory.hpp"
 
+class JArray;
 namespace java::io
 {
 	class InputStream;
 }
+class JString;
 namespace java::net
 {
 	class Socket;
@@ -33,9 +34,9 @@ namespace javax::net::ssl
 		// Methods
 		static javax::net::SocketFactory getDefault();
 		java::net::Socket createSocket(java::net::Socket arg0, java::io::InputStream arg1, jboolean arg2);
-		java::net::Socket createSocket(java::net::Socket arg0, jstring arg1, jint arg2, jboolean arg3);
-		jarray getDefaultCipherSuites();
-		jarray getSupportedCipherSuites();
+		java::net::Socket createSocket(java::net::Socket arg0, JString arg1, jint arg2, jboolean arg3);
+		JArray getDefaultCipherSuites();
+		JArray getSupportedCipherSuites();
 	};
 } // namespace javax::net::ssl
 

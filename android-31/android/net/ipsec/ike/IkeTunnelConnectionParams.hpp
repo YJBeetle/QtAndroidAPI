@@ -10,6 +10,7 @@ namespace android::net::ipsec::ike
 {
 	class TunnelModeChildSessionParams;
 }
+class JObject;
 
 namespace android::net::ipsec::ike
 {
@@ -26,7 +27,7 @@ namespace android::net::ipsec::ike
 		IkeTunnelConnectionParams(android::net::ipsec::ike::IkeSessionParams arg0, android::net::ipsec::ike::TunnelModeChildSessionParams arg1);
 		
 		// Methods
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		android::net::ipsec::ike::IkeSessionParams getIkeSessionParams();
 		android::net::ipsec::ike::TunnelModeChildSessionParams getTunnelModeChildSessionParams();
 		jint hashCode();

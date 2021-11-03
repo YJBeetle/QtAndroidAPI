@@ -1,6 +1,8 @@
+#include "../../JByteArray.hpp"
 #include "./Canvas.hpp"
 #include "./Paint.hpp"
 #include "../../java/io/InputStream.hpp"
+#include "../../JString.hpp"
 #include "./Movie.hpp"
 
 namespace android::graphics
@@ -13,24 +15,24 @@ namespace android::graphics
 	// Constructors
 	
 	// Methods
-	android::graphics::Movie Movie::decodeByteArray(jbyteArray arg0, jint arg1, jint arg2)
+	android::graphics::Movie Movie::decodeByteArray(JByteArray arg0, jint arg1, jint arg2)
 	{
 		return callStaticObjectMethod(
 			"android.graphics.Movie",
 			"decodeByteArray",
 			"([BII)Landroid/graphics/Movie;",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1,
 			arg2
 		);
 	}
-	android::graphics::Movie Movie::decodeFile(jstring arg0)
+	android::graphics::Movie Movie::decodeFile(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.graphics.Movie",
 			"decodeFile",
 			"(Ljava/lang/String;)Landroid/graphics/Movie;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::graphics::Movie Movie::decodeStream(java::io::InputStream arg0)

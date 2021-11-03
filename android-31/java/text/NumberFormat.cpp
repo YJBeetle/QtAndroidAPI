@@ -1,6 +1,9 @@
+#include "../../JArray.hpp"
 #include "../io/ObjectInputStream.hpp"
 #include "../io/ObjectOutputStream.hpp"
 #include "../lang/Number.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "../lang/StringBuffer.hpp"
 #include "../math/RoundingMode.hpp"
 #include "./FieldPosition.hpp"
@@ -33,13 +36,13 @@ namespace java::text
 	// Constructors
 	
 	// Methods
-	jarray NumberFormat::getAvailableLocales()
+	JArray NumberFormat::getAvailableLocales()
 	{
 		return callStaticObjectMethod(
 			"java.text.NumberFormat",
 			"getAvailableLocales",
 			"()[Ljava/util/Locale;"
-		).object<jarray>();
+		);
 	}
 	java::text::NumberFormat NumberFormat::getCompactNumberInstance()
 	{
@@ -144,36 +147,36 @@ namespace java::text
 			arg0.object()
 		);
 	}
-	jobject NumberFormat::clone()
+	JObject NumberFormat::clone()
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
-	jboolean NumberFormat::equals(jobject arg0)
+	jboolean NumberFormat::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jstring NumberFormat::format(jdouble arg0)
+	JString NumberFormat::format(jdouble arg0)
 	{
 		return callObjectMethod(
 			"format",
 			"(D)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
-	jstring NumberFormat::format(jlong arg0)
+	JString NumberFormat::format(jlong arg0)
 	{
 		return callObjectMethod(
 			"format",
 			"(J)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
 	java::lang::StringBuffer NumberFormat::format(jdouble arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
 	{
@@ -185,12 +188,12 @@ namespace java::text
 			arg2.object()
 		);
 	}
-	java::lang::StringBuffer NumberFormat::format(jobject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
+	java::lang::StringBuffer NumberFormat::format(JObject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
 	{
 		return callObjectMethod(
 			"format",
 			"(Ljava/lang/Object;Ljava/lang/StringBuffer;Ljava/text/FieldPosition;)Ljava/lang/StringBuffer;",
-			arg0,
+			arg0.object<jobject>(),
 			arg1.object(),
 			arg2.object()
 		);
@@ -268,31 +271,31 @@ namespace java::text
 			"()Z"
 		);
 	}
-	java::lang::Number NumberFormat::parse(jstring arg0)
+	java::lang::Number NumberFormat::parse(JString arg0)
 	{
 		return callObjectMethod(
 			"parse",
 			"(Ljava/lang/String;)Ljava/lang/Number;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	java::lang::Number NumberFormat::parse(jstring arg0, java::text::ParsePosition arg1)
+	java::lang::Number NumberFormat::parse(JString arg0, java::text::ParsePosition arg1)
 	{
 		return callObjectMethod(
 			"parse",
 			"(Ljava/lang/String;Ljava/text/ParsePosition;)Ljava/lang/Number;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
-	jobject NumberFormat::parseObject(jstring arg0, java::text::ParsePosition arg1)
+	JObject NumberFormat::parseObject(JString arg0, java::text::ParsePosition arg1)
 	{
 		return callObjectMethod(
 			"parseObject",
 			"(Ljava/lang/String;Ljava/text/ParsePosition;)Ljava/lang/Object;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
-		).object<jobject>();
+		);
 	}
 	void NumberFormat::setCurrency(java::util::Currency arg0)
 	{

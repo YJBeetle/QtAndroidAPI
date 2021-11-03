@@ -1,3 +1,5 @@
+#include "../../JString.hpp"
+#include "../../JThrowable.hpp"
 #include "./IllegalStateException.hpp"
 
 namespace java::lang
@@ -13,24 +15,24 @@ namespace java::lang
 			"java.lang.IllegalStateException",
 			"()V"
 		) {}
-	IllegalStateException::IllegalStateException(jstring arg0)
+	IllegalStateException::IllegalStateException(JString arg0)
 		: java::lang::RuntimeException(
 			"java.lang.IllegalStateException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	IllegalStateException::IllegalStateException(jthrowable arg0)
+	IllegalStateException::IllegalStateException(JThrowable arg0)
 		: java::lang::RuntimeException(
 			"java.lang.IllegalStateException",
 			"(Ljava/lang/Throwable;)V",
-			arg0
+			arg0.object<jthrowable>()
 		) {}
-	IllegalStateException::IllegalStateException(jstring arg0, jthrowable arg1)
+	IllegalStateException::IllegalStateException(JString arg0, JThrowable arg1)
 		: java::lang::RuntimeException(
 			"java.lang.IllegalStateException",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
 		) {}
 	
 	// Methods

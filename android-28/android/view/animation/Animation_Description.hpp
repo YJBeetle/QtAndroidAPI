@@ -2,7 +2,6 @@
 
 #include "../../../JObject.hpp"
 
-
 namespace android::view::animation
 {
 	class Animation_Description : public JObject

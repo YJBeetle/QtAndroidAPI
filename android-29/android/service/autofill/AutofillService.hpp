@@ -1,8 +1,5 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "../../content/Context.hpp"
-#include "../../content/ContextWrapper.hpp"
 #include "../../app/Service.hpp"
 
 namespace android::content
@@ -33,6 +30,7 @@ namespace android::service::autofill
 {
 	class SaveRequest;
 }
+class JString;
 
 namespace android::service::autofill
 {
@@ -40,8 +38,8 @@ namespace android::service::autofill
 	{
 	public:
 		// Fields
-		static jstring SERVICE_INTERFACE();
-		static jstring SERVICE_META_DATA();
+		static JString SERVICE_INTERFACE();
+		static JString SERVICE_META_DATA();
 		
 		// QJniObject forward
 		template<typename ...Ts> explicit AutofillService(const char *className, const char *sig, Ts...agv) : android::app::Service(className, sig, std::forward<Ts>(agv)...) {}

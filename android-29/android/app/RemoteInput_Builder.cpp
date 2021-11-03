@@ -1,5 +1,8 @@
+#include "../../JArray.hpp"
 #include "./RemoteInput.hpp"
 #include "../os/Bundle.hpp"
+#include "../../JString.hpp"
+#include "../../JString.hpp"
 #include "./RemoteInput_Builder.hpp"
 
 namespace android::app
@@ -10,11 +13,11 @@ namespace android::app
 	RemoteInput_Builder::RemoteInput_Builder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	RemoteInput_Builder::RemoteInput_Builder(jstring arg0)
+	RemoteInput_Builder::RemoteInput_Builder(JString arg0)
 		: JObject(
 			"android.app.RemoteInput$Builder",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods
@@ -40,12 +43,12 @@ namespace android::app
 			"()Landroid/os/Bundle;"
 		);
 	}
-	android::app::RemoteInput_Builder RemoteInput_Builder::setAllowDataType(jstring arg0, jboolean arg1)
+	android::app::RemoteInput_Builder RemoteInput_Builder::setAllowDataType(JString arg0, jboolean arg1)
 	{
 		return callObjectMethod(
 			"setAllowDataType",
 			"(Ljava/lang/String;Z)Landroid/app/RemoteInput$Builder;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
@@ -57,12 +60,12 @@ namespace android::app
 			arg0
 		);
 	}
-	android::app::RemoteInput_Builder RemoteInput_Builder::setChoices(jarray arg0)
+	android::app::RemoteInput_Builder RemoteInput_Builder::setChoices(JArray arg0)
 	{
 		return callObjectMethod(
 			"setChoices",
 			"([Ljava/lang/CharSequence;)Landroid/app/RemoteInput$Builder;",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
 	android::app::RemoteInput_Builder RemoteInput_Builder::setEditChoicesBeforeSending(jint arg0)
@@ -73,12 +76,12 @@ namespace android::app
 			arg0
 		);
 	}
-	android::app::RemoteInput_Builder RemoteInput_Builder::setLabel(jstring arg0)
+	android::app::RemoteInput_Builder RemoteInput_Builder::setLabel(JString arg0)
 	{
 		return callObjectMethod(
 			"setLabel",
 			"(Ljava/lang/CharSequence;)Landroid/app/RemoteInput$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 } // namespace android::app

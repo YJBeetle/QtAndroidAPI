@@ -10,6 +10,9 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
+class JObject;
+class JString;
 
 namespace android::view::translation
 {
@@ -18,7 +21,7 @@ namespace android::view::translation
 	public:
 		// Fields
 		static JObject CREATOR();
-		static jstring EXTRA_DEFINITIONS();
+		static JString EXTRA_DEFINITIONS();
 		static jint STATUS_ERROR();
 		static jint STATUS_SUCCESS();
 		
@@ -31,13 +34,13 @@ namespace android::view::translation
 		// Methods
 		static android::view::translation::TranslationResponseValue forError();
 		jint describeContents();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		android::os::Bundle getExtras();
 		jint getStatusCode();
-		jstring getText();
-		jstring getTransliteration();
+		JString getText();
+		JString getTransliteration();
 		jint hashCode();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::view::translation

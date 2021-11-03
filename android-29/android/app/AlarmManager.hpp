@@ -14,6 +14,7 @@ namespace android::os
 {
 	class Handler;
 }
+class JString;
 
 namespace android::app
 {
@@ -21,7 +22,7 @@ namespace android::app
 	{
 	public:
 		// Fields
-		static jstring ACTION_NEXT_ALARM_CLOCK_CHANGED();
+		static JString ACTION_NEXT_ALARM_CLOCK_CHANGED();
 		static jint ELAPSED_REALTIME();
 		static jint ELAPSED_REALTIME_WAKEUP();
 		static jlong INTERVAL_DAY();
@@ -43,18 +44,18 @@ namespace android::app
 		void cancel(android::app::PendingIntent arg0);
 		android::app::AlarmManager_AlarmClockInfo getNextAlarmClock();
 		void set(jint arg0, jlong arg1, android::app::PendingIntent arg2);
-		void set(jint arg0, jlong arg1, jstring arg2, JObject arg3, android::os::Handler arg4);
+		void set(jint arg0, jlong arg1, JString arg2, JObject arg3, android::os::Handler arg4);
 		void setAlarmClock(android::app::AlarmManager_AlarmClockInfo arg0, android::app::PendingIntent arg1);
 		void setAndAllowWhileIdle(jint arg0, jlong arg1, android::app::PendingIntent arg2);
 		void setExact(jint arg0, jlong arg1, android::app::PendingIntent arg2);
-		void setExact(jint arg0, jlong arg1, jstring arg2, JObject arg3, android::os::Handler arg4);
+		void setExact(jint arg0, jlong arg1, JString arg2, JObject arg3, android::os::Handler arg4);
 		void setExactAndAllowWhileIdle(jint arg0, jlong arg1, android::app::PendingIntent arg2);
 		void setInexactRepeating(jint arg0, jlong arg1, jlong arg2, android::app::PendingIntent arg3);
 		void setRepeating(jint arg0, jlong arg1, jlong arg2, android::app::PendingIntent arg3);
 		void setTime(jlong arg0);
-		void setTimeZone(jstring arg0);
+		void setTimeZone(JString arg0);
 		void setWindow(jint arg0, jlong arg1, jlong arg2, android::app::PendingIntent arg3);
-		void setWindow(jint arg0, jlong arg1, jlong arg2, jstring arg3, JObject arg4, android::os::Handler arg5);
+		void setWindow(jint arg0, jlong arg1, jlong arg2, JString arg3, JObject arg4, android::os::Handler arg5);
 	};
 } // namespace android::app
 

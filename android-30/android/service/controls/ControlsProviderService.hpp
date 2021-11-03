@@ -1,8 +1,5 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "../../content/Context.hpp"
-#include "../../content/ContextWrapper.hpp"
 #include "../../app/Service.hpp"
 
 namespace android::content
@@ -25,6 +22,7 @@ namespace android::service::controls::actions
 {
 	class ControlAction;
 }
+class JString;
 
 namespace android::service::controls
 {
@@ -32,8 +30,8 @@ namespace android::service::controls
 	{
 	public:
 		// Fields
-		static jstring SERVICE_CONTROLS();
-		static jstring TAG();
+		static JString SERVICE_CONTROLS();
+		static JString TAG();
 		
 		// QJniObject forward
 		template<typename ...Ts> explicit ControlsProviderService(const char *className, const char *sig, Ts...agv) : android::app::Service(className, sig, std::forward<Ts>(agv)...) {}
@@ -49,7 +47,7 @@ namespace android::service::controls
 		JObject createPublisherForSuggested();
 		JObject onBind(android::content::Intent arg0);
 		jboolean onUnbind(android::content::Intent arg0);
-		void performControlAction(jstring arg0, android::service::controls::actions::ControlAction arg1, JObject arg2);
+		void performControlAction(JString arg0, android::service::controls::actions::ControlAction arg1, JObject arg2);
 	};
 } // namespace android::service::controls
 

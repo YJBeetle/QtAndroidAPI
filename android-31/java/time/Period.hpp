@@ -6,6 +6,9 @@ namespace java::io
 {
 	class ObjectInputStream;
 }
+class JString;
+class JObject;
+class JString;
 namespace java::time
 {
 	class LocalDate;
@@ -41,9 +44,9 @@ namespace java::time
 		static java::time::Period ofMonths(jint arg0);
 		static java::time::Period ofWeeks(jint arg0);
 		static java::time::Period ofYears(jint arg0);
-		static java::time::Period parse(jstring arg0);
+		static java::time::Period parse(JString arg0);
 		JObject addTo(JObject arg0);
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jlong get(JObject arg0);
 		java::time::chrono::IsoChronology getChronology();
 		jint getDays();
@@ -65,7 +68,7 @@ namespace java::time
 		java::time::Period plusMonths(jlong arg0);
 		java::time::Period plusYears(jlong arg0);
 		JObject subtractFrom(JObject arg0);
-		jstring toString();
+		JString toString();
 		jlong toTotalMonths();
 		java::time::Period withDays(jint arg0);
 		java::time::Period withMonths(jint arg0);

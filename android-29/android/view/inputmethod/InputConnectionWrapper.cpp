@@ -6,6 +6,8 @@
 #include "./ExtractedText.hpp"
 #include "./ExtractedTextRequest.hpp"
 #include "./InputContentInfo.hpp"
+#include "../../../JString.hpp"
+#include "../../../JString.hpp"
 #include "./InputConnectionWrapper.hpp"
 
 namespace android::view::inputmethod
@@ -73,12 +75,12 @@ namespace android::view::inputmethod
 			arg0.object()
 		);
 	}
-	jboolean InputConnectionWrapper::commitText(jstring arg0, jint arg1)
+	jboolean InputConnectionWrapper::commitText(JString arg0, jint arg1)
 	{
 		return callMethod<jboolean>(
 			"commitText",
 			"(Ljava/lang/CharSequence;I)Z",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
@@ -138,31 +140,31 @@ namespace android::view::inputmethod
 			"()Landroid/os/Handler;"
 		);
 	}
-	jstring InputConnectionWrapper::getSelectedText(jint arg0)
+	JString InputConnectionWrapper::getSelectedText(jint arg0)
 	{
 		return callObjectMethod(
 			"getSelectedText",
 			"(I)Ljava/lang/CharSequence;",
 			arg0
-		).object<jstring>();
+		);
 	}
-	jstring InputConnectionWrapper::getTextAfterCursor(jint arg0, jint arg1)
+	JString InputConnectionWrapper::getTextAfterCursor(jint arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"getTextAfterCursor",
 			"(II)Ljava/lang/CharSequence;",
 			arg0,
 			arg1
-		).object<jstring>();
+		);
 	}
-	jstring InputConnectionWrapper::getTextBeforeCursor(jint arg0, jint arg1)
+	JString InputConnectionWrapper::getTextBeforeCursor(jint arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"getTextBeforeCursor",
 			"(II)Ljava/lang/CharSequence;",
 			arg0,
 			arg1
-		).object<jstring>();
+		);
 	}
 	jboolean InputConnectionWrapper::performContextMenuAction(jint arg0)
 	{
@@ -180,12 +182,12 @@ namespace android::view::inputmethod
 			arg0
 		);
 	}
-	jboolean InputConnectionWrapper::performPrivateCommand(jstring arg0, android::os::Bundle arg1)
+	jboolean InputConnectionWrapper::performPrivateCommand(JString arg0, android::os::Bundle arg1)
 	{
 		return callMethod<jboolean>(
 			"performPrivateCommand",
 			"(Ljava/lang/String;Landroid/os/Bundle;)Z",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
@@ -222,12 +224,12 @@ namespace android::view::inputmethod
 			arg1
 		);
 	}
-	jboolean InputConnectionWrapper::setComposingText(jstring arg0, jint arg1)
+	jboolean InputConnectionWrapper::setComposingText(JString arg0, jint arg1)
 	{
 		return callMethod<jboolean>(
 			"setComposingText",
 			"(Ljava/lang/CharSequence;I)Z",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}

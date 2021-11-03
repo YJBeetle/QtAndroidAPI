@@ -1,6 +1,7 @@
 #include "../../icu/util/ULocale.hpp"
 #include "../../os/Bundle.hpp"
 #include "./TextLanguage.hpp"
+#include "../../../JString.hpp"
 #include "./TextLanguage_Builder.hpp"
 
 namespace android::view::textclassifier
@@ -42,12 +43,12 @@ namespace android::view::textclassifier
 			arg0.object()
 		);
 	}
-	android::view::textclassifier::TextLanguage_Builder TextLanguage_Builder::setId(jstring arg0)
+	android::view::textclassifier::TextLanguage_Builder TextLanguage_Builder::setId(JString arg0)
 	{
 		return callObjectMethod(
 			"setId",
 			"(Ljava/lang/String;)Landroid/view/textclassifier/TextLanguage$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 } // namespace android::view::textclassifier

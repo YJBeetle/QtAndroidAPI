@@ -14,6 +14,7 @@ namespace java::io
 {
 	class FileDescriptor;
 }
+class JString;
 namespace java::nio
 {
 	class ByteBuffer;
@@ -32,7 +33,7 @@ namespace android::media
 		
 		// Constructors
 		MediaMuxer(java::io::FileDescriptor arg0, jint arg1);
-		MediaMuxer(jstring arg0, jint arg1);
+		MediaMuxer(JString arg0, jint arg1);
 		
 		// Methods
 		jint addTrack(android::media::MediaFormat arg0);

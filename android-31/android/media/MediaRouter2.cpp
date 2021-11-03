@@ -5,6 +5,7 @@
 #include "./MediaRouter2_RoutingController.hpp"
 #include "./MediaRouter2_TransferCallback.hpp"
 #include "./RouteDiscoveryPreference.hpp"
+#include "../../JString.hpp"
 #include "./MediaRouter2.hpp"
 
 namespace android::media
@@ -26,12 +27,12 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	android::media::MediaRouter2_RoutingController MediaRouter2::getController(jstring arg0)
+	android::media::MediaRouter2_RoutingController MediaRouter2::getController(JString arg0)
 	{
 		return callObjectMethod(
 			"getController",
 			"(Ljava/lang/String;)Landroid/media/MediaRouter2$RoutingController;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	JObject MediaRouter2::getControllers()

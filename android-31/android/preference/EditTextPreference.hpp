@@ -1,7 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "./Preference.hpp"
 #include "./DialogPreference.hpp"
 
 namespace android::content
@@ -24,6 +22,8 @@ namespace android::widget
 {
 	class EditText;
 }
+class JObject;
+class JString;
 
 namespace android::preference
 {
@@ -44,8 +44,8 @@ namespace android::preference
 		
 		// Methods
 		android::widget::EditText getEditText();
-		jstring getText();
-		void setText(jstring arg0);
+		JString getText();
+		void setText(JString arg0);
 		jboolean shouldDisableDependents();
 	};
 } // namespace android::preference

@@ -1,3 +1,5 @@
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./LruCache.hpp"
 
 namespace android::util
@@ -37,13 +39,13 @@ namespace android::util
 			"()I"
 		);
 	}
-	jobject LruCache::get(jobject arg0)
+	JObject LruCache::get(JObject arg0)
 	{
 		return callObjectMethod(
 			"get",
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0
-		).object<jobject>();
+			arg0.object<jobject>()
+		);
 	}
 	jint LruCache::hitCount()
 	{
@@ -66,14 +68,14 @@ namespace android::util
 			"()I"
 		);
 	}
-	jobject LruCache::put(jobject arg0, jobject arg1)
+	JObject LruCache::put(JObject arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"put",
 			"(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0,
-			arg1
-		).object<jobject>();
+			arg0.object<jobject>(),
+			arg1.object<jobject>()
+		);
 	}
 	jint LruCache::putCount()
 	{
@@ -82,13 +84,13 @@ namespace android::util
 			"()I"
 		);
 	}
-	jobject LruCache::remove(jobject arg0)
+	JObject LruCache::remove(JObject arg0)
 	{
 		return callObjectMethod(
 			"remove",
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0
-		).object<jobject>();
+			arg0.object<jobject>()
+		);
 	}
 	void LruCache::resize(jint arg0)
 	{
@@ -112,12 +114,12 @@ namespace android::util
 			"()Ljava/util/Map;"
 		);
 	}
-	jstring LruCache::toString()
+	JString LruCache::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void LruCache::trimToSize(jint arg0)
 	{

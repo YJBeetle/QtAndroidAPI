@@ -1,3 +1,5 @@
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
 #include "./AsyncTask_Status.hpp"
 
 namespace android::os
@@ -34,22 +36,22 @@ namespace android::os
 	// Constructors
 	
 	// Methods
-	android::os::AsyncTask_Status AsyncTask_Status::valueOf(jstring arg0)
+	android::os::AsyncTask_Status AsyncTask_Status::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.os.AsyncTask$Status",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/os/AsyncTask$Status;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray AsyncTask_Status::values()
+	JArray AsyncTask_Status::values()
 	{
 		return callStaticObjectMethod(
 			"android.os.AsyncTask$Status",
 			"values",
 			"()[Landroid/os/AsyncTask$Status;"
-		).object<jarray>();
+		);
 	}
 } // namespace android::os
 

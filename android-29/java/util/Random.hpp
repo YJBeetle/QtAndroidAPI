@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JByteArray;
+class JArray;
 namespace java::io
 {
 	class ObjectInputStream;
@@ -10,6 +12,7 @@ namespace java::io
 {
 	class ObjectOutputStream;
 }
+class JString;
 namespace java::util::concurrent::atomic
 {
 	class AtomicLong;
@@ -44,7 +47,7 @@ namespace java::util
 		JObject longs(jlong arg0, jlong arg1);
 		JObject longs(jlong arg0, jlong arg1, jlong arg2);
 		jboolean nextBoolean();
-		void nextBytes(jbyteArray arg0);
+		void nextBytes(JByteArray arg0);
 		jdouble nextDouble();
 		jfloat nextFloat();
 		jdouble nextGaussian();

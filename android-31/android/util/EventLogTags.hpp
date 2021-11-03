@@ -10,6 +10,7 @@ namespace java::io
 {
 	class BufferedReader;
 }
+class JString;
 
 namespace android::util
 {
@@ -28,7 +29,7 @@ namespace android::util
 		
 		// Methods
 		android::util::EventLogTags_Description get(jint arg0);
-		android::util::EventLogTags_Description get(jstring arg0);
+		android::util::EventLogTags_Description get(JString arg0);
 	};
 } // namespace android::util
 

@@ -1,3 +1,4 @@
+#include "../../../JIntArray.hpp"
 #include "../../content/res/ColorStateList.hpp"
 #include "../../content/res/Resources.hpp"
 #include "../../content/res/Resources_Theme.hpp"
@@ -11,6 +12,7 @@
 #include "./Drawable_ConstantState.hpp"
 #include "./ShapeDrawable_ShaderFactory.hpp"
 #include "./shapes/Shape.hpp"
+#include "../../../JString.hpp"
 #include "./ShapeDrawable.hpp"
 
 namespace android::graphics::drawable

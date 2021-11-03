@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "../../../java/lang/Exception.hpp"
 
+class JArray;
 namespace java::io
 {
 	class ObjectInputStream;
@@ -15,6 +15,8 @@ namespace java::lang
 {
 	class Exception;
 }
+class JString;
+class JThrowable;
 
 namespace org::xml::sax
 {
@@ -30,14 +32,14 @@ namespace org::xml::sax
 		// Constructors
 		SAXException();
 		SAXException(java::lang::Exception arg0);
-		SAXException(jstring arg0);
-		SAXException(jstring arg0, java::lang::Exception arg1);
+		SAXException(JString arg0);
+		SAXException(JString arg0, java::lang::Exception arg1);
 		
 		// Methods
-		jthrowable getCause();
+		JThrowable getCause();
 		java::lang::Exception getException();
-		jstring getMessage();
-		jstring toString();
+		JString getMessage();
+		JString toString();
 	};
 } // namespace org::xml::sax
 

@@ -10,6 +10,7 @@ namespace android::content::pm
 {
 	class PackageManager;
 }
+class JObject;
 
 namespace android::content::pm
 {
@@ -27,7 +28,7 @@ namespace android::content::pm
 		
 		// Methods
 		jint compare(android::content::pm::ApplicationInfo arg0, android::content::pm::ApplicationInfo arg1);
-		jint compare(jobject arg0, jobject arg1);
+		jint compare(JObject arg0, JObject arg1);
 	};
 } // namespace android::content::pm
 

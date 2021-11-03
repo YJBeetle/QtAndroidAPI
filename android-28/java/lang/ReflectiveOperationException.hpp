@@ -1,8 +1,9 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./Exception.hpp"
 
+class JString;
+class JThrowable;
 
 namespace java::lang
 {
@@ -17,9 +18,9 @@ namespace java::lang
 		
 		// Constructors
 		ReflectiveOperationException();
-		ReflectiveOperationException(jstring arg0);
-		ReflectiveOperationException(jthrowable arg0);
-		ReflectiveOperationException(jstring arg0, jthrowable arg1);
+		ReflectiveOperationException(JString arg0);
+		ReflectiveOperationException(JThrowable arg0);
+		ReflectiveOperationException(JString arg0, JThrowable arg1);
 		
 		// Methods
 	};

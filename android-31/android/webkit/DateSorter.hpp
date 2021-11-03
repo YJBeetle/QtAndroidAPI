@@ -6,6 +6,7 @@ namespace android::content
 {
 	class Context;
 }
+class JString;
 
 namespace android::webkit
 {
@@ -25,7 +26,7 @@ namespace android::webkit
 		// Methods
 		jlong getBoundary(jint arg0);
 		jint getIndex(jlong arg0);
-		jstring getLabel(jint arg0);
+		JString getLabel(jint arg0);
 	};
 } // namespace android::webkit
 

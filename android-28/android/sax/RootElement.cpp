@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./RootElement.hpp"
 
 namespace android::sax
@@ -8,18 +9,18 @@ namespace android::sax
 	RootElement::RootElement(QJniObject obj) : android::sax::Element(obj) {}
 	
 	// Constructors
-	RootElement::RootElement(jstring arg0)
+	RootElement::RootElement(JString arg0)
 		: android::sax::Element(
 			"android.sax.RootElement",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	RootElement::RootElement(jstring arg0, jstring arg1)
+	RootElement::RootElement(JString arg0, JString arg1)
 		: android::sax::Element(
 			"android.sax.RootElement",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		) {}
 	
 	// Methods

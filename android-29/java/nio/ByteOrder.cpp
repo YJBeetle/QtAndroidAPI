@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./ByteOrder.hpp"
 
 namespace java::nio
@@ -34,12 +35,12 @@ namespace java::nio
 			"()Ljava/nio/ByteOrder;"
 		);
 	}
-	jstring ByteOrder::toString()
+	JString ByteOrder::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::nio
 

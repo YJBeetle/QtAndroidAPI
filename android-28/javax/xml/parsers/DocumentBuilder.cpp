@@ -1,5 +1,6 @@
 #include "../../../java/io/File.hpp"
 #include "../../../java/io/InputStream.hpp"
+#include "../../../JString.hpp"
 #include "../validation/Schema.hpp"
 #include "../../../org/xml/sax/InputSource.hpp"
 #include "./DocumentBuilder.hpp"
@@ -72,12 +73,12 @@ namespace javax::xml::parsers
 			arg0.object()
 		);
 	}
-	JObject DocumentBuilder::parse(jstring arg0)
+	JObject DocumentBuilder::parse(JString arg0)
 	{
 		return callObjectMethod(
 			"parse",
 			"(Ljava/lang/String;)Lorg/w3c/dom/Document;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	JObject DocumentBuilder::parse(org::xml::sax::InputSource arg0)
@@ -88,13 +89,13 @@ namespace javax::xml::parsers
 			arg0.object()
 		);
 	}
-	JObject DocumentBuilder::parse(java::io::InputStream arg0, jstring arg1)
+	JObject DocumentBuilder::parse(java::io::InputStream arg0, JString arg1)
 	{
 		return callObjectMethod(
 			"parse",
 			"(Ljava/io/InputStream;Ljava/lang/String;)Lorg/w3c/dom/Document;",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
 	void DocumentBuilder::reset()

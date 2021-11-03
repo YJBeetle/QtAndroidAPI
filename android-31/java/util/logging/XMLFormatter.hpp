@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "./Formatter.hpp"
 
+class JString;
 namespace java::lang
 {
 	class StringBuilder;
@@ -35,9 +35,9 @@ namespace java::util::logging
 		XMLFormatter();
 		
 		// Methods
-		jstring format(java::util::logging::LogRecord arg0);
-		jstring getHead(java::util::logging::Handler arg0);
-		jstring getTail(java::util::logging::Handler arg0);
+		JString format(java::util::logging::LogRecord arg0);
+		JString getHead(java::util::logging::Handler arg0);
+		JString getTail(java::util::logging::Handler arg0);
 	};
 } // namespace java::util::logging
 

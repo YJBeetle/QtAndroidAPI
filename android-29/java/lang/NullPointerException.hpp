@@ -1,9 +1,9 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "./Exception.hpp"
 #include "./RuntimeException.hpp"
 
+class JString;
+class JThrowable;
 
 namespace java::lang
 {
@@ -18,11 +18,11 @@ namespace java::lang
 		
 		// Constructors
 		NullPointerException();
-		NullPointerException(jstring arg0);
+		NullPointerException(JString arg0);
 		
 		// Methods
-		jthrowable fillInStackTrace();
-		jstring getMessage();
+		JThrowable fillInStackTrace();
+		JString getMessage();
 	};
 } // namespace java::lang
 

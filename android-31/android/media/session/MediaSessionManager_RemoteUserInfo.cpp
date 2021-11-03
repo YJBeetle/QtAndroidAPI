@@ -1,3 +1,5 @@
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./MediaSessionManager_RemoteUserInfo.hpp"
 
 namespace android::media::session
@@ -8,30 +10,30 @@ namespace android::media::session
 	MediaSessionManager_RemoteUserInfo::MediaSessionManager_RemoteUserInfo(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	MediaSessionManager_RemoteUserInfo::MediaSessionManager_RemoteUserInfo(jstring arg0, jint arg1, jint arg2)
+	MediaSessionManager_RemoteUserInfo::MediaSessionManager_RemoteUserInfo(JString arg0, jint arg1, jint arg2)
 		: JObject(
 			"android.media.session.MediaSessionManager$RemoteUserInfo",
 			"(Ljava/lang/String;II)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
 			arg2
 		) {}
 	
 	// Methods
-	jboolean MediaSessionManager_RemoteUserInfo::equals(jobject arg0)
+	jboolean MediaSessionManager_RemoteUserInfo::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jstring MediaSessionManager_RemoteUserInfo::getPackageName()
+	JString MediaSessionManager_RemoteUserInfo::getPackageName()
 	{
 		return callObjectMethod(
 			"getPackageName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint MediaSessionManager_RemoteUserInfo::getPid()
 	{

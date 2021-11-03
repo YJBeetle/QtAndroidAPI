@@ -2,6 +2,8 @@
 
 #include "../../../JObject.hpp"
 
+class JByteArray;
+class JLongArray;
 namespace android::os
 {
 	class Bundle;
@@ -10,6 +12,8 @@ namespace android::os
 {
 	class Parcel;
 }
+class JObject;
+class JString;
 
 namespace android::media::metrics
 {
@@ -52,26 +56,26 @@ namespace android::media::metrics
 		
 		// Methods
 		jint describeContents();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint getAudioUnderrunCount();
 		jint getContentType();
-		jbyteArray getDrmSessionId();
+		JByteArray getDrmSessionId();
 		jint getDrmType();
-		jlongArray getExperimentIds();
+		JLongArray getExperimentIds();
 		jlong getLocalBytesRead();
 		jlong getMediaDurationMillis();
 		android::os::Bundle getMetricsBundle();
 		jlong getNetworkBytesRead();
 		jlong getNetworkTransferDurationMillis();
 		jint getPlaybackType();
-		jstring getPlayerName();
-		jstring getPlayerVersion();
+		JString getPlayerName();
+		JString getPlayerVersion();
 		jint getStreamSource();
 		jint getStreamType();
 		jint getVideoFramesDropped();
 		jint getVideoFramesPlayed();
 		jint hashCode();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::media::metrics

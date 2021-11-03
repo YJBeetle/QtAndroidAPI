@@ -1,5 +1,6 @@
 #include "./File.hpp"
 #include "./FileDescriptor.hpp"
+#include "../../JString.hpp"
 #include "../nio/charset/Charset.hpp"
 #include "./FileWriter.hpp"
 
@@ -23,11 +24,11 @@ namespace java::io
 			"(Ljava/io/FileDescriptor;)V",
 			arg0.object()
 		) {}
-	FileWriter::FileWriter(jstring arg0)
+	FileWriter::FileWriter(JString arg0)
 		: java::io::OutputStreamWriter(
 			"java.io.FileWriter",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	FileWriter::FileWriter(java::io::File arg0, jboolean arg1)
 		: java::io::OutputStreamWriter(
@@ -43,18 +44,18 @@ namespace java::io
 			arg0.object(),
 			arg1.object()
 		) {}
-	FileWriter::FileWriter(jstring arg0, jboolean arg1)
+	FileWriter::FileWriter(JString arg0, jboolean arg1)
 		: java::io::OutputStreamWriter(
 			"java.io.FileWriter",
 			"(Ljava/lang/String;Z)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		) {}
-	FileWriter::FileWriter(jstring arg0, java::nio::charset::Charset arg1)
+	FileWriter::FileWriter(JString arg0, java::nio::charset::Charset arg1)
 		: java::io::OutputStreamWriter(
 			"java.io.FileWriter",
 			"(Ljava/lang/String;Ljava/nio/charset/Charset;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		) {}
 	FileWriter::FileWriter(java::io::File arg0, java::nio::charset::Charset arg1, jboolean arg2)
@@ -65,11 +66,11 @@ namespace java::io
 			arg1.object(),
 			arg2
 		) {}
-	FileWriter::FileWriter(jstring arg0, java::nio::charset::Charset arg1, jboolean arg2)
+	FileWriter::FileWriter(JString arg0, java::nio::charset::Charset arg1, jboolean arg2)
 		: java::io::OutputStreamWriter(
 			"java.io.FileWriter",
 			"(Ljava/lang/String;Ljava/nio/charset/Charset;Z)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
 			arg2
 		) {}

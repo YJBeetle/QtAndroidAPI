@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JArray;
 
 namespace android::net::wifi
 {
@@ -12,7 +13,7 @@ namespace android::net::wifi
 		static jint CURRENT();
 		static jint DISABLED();
 		static jint ENABLED();
-		static jarray strings();
+		static JArray strings();
 		
 		// QJniObject forward
 		template<typename ...Ts> explicit WifiConfiguration_Status(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}

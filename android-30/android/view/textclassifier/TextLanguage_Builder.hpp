@@ -14,6 +14,7 @@ namespace android::view::textclassifier
 {
 	class TextLanguage;
 }
+class JString;
 
 namespace android::view::textclassifier
 {
@@ -33,7 +34,7 @@ namespace android::view::textclassifier
 		android::view::textclassifier::TextLanguage build();
 		android::view::textclassifier::TextLanguage_Builder putLocale(android::icu::util::ULocale arg0, jfloat arg1);
 		android::view::textclassifier::TextLanguage_Builder setExtras(android::os::Bundle arg0);
-		android::view::textclassifier::TextLanguage_Builder setId(jstring arg0);
+		android::view::textclassifier::TextLanguage_Builder setId(JString arg0);
 	};
 } // namespace android::view::textclassifier
 

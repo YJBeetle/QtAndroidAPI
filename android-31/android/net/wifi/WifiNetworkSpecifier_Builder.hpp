@@ -18,6 +18,7 @@ namespace android::os
 {
 	class PatternMatcher;
 }
+class JString;
 
 namespace android::net::wifi
 {
@@ -40,14 +41,14 @@ namespace android::net::wifi
 		android::net::wifi::WifiNetworkSpecifier_Builder setBssidPattern(android::net::MacAddress arg0, android::net::MacAddress arg1);
 		android::net::wifi::WifiNetworkSpecifier_Builder setIsEnhancedOpen(jboolean arg0);
 		android::net::wifi::WifiNetworkSpecifier_Builder setIsHiddenSsid(jboolean arg0);
-		android::net::wifi::WifiNetworkSpecifier_Builder setSsid(jstring arg0);
+		android::net::wifi::WifiNetworkSpecifier_Builder setSsid(JString arg0);
 		android::net::wifi::WifiNetworkSpecifier_Builder setSsidPattern(android::os::PatternMatcher arg0);
 		android::net::wifi::WifiNetworkSpecifier_Builder setWpa2EnterpriseConfig(android::net::wifi::WifiEnterpriseConfig arg0);
-		android::net::wifi::WifiNetworkSpecifier_Builder setWpa2Passphrase(jstring arg0);
+		android::net::wifi::WifiNetworkSpecifier_Builder setWpa2Passphrase(JString arg0);
 		android::net::wifi::WifiNetworkSpecifier_Builder setWpa3Enterprise192BitModeConfig(android::net::wifi::WifiEnterpriseConfig arg0);
 		android::net::wifi::WifiNetworkSpecifier_Builder setWpa3EnterpriseConfig(android::net::wifi::WifiEnterpriseConfig arg0);
 		android::net::wifi::WifiNetworkSpecifier_Builder setWpa3EnterpriseStandardModeConfig(android::net::wifi::WifiEnterpriseConfig arg0);
-		android::net::wifi::WifiNetworkSpecifier_Builder setWpa3Passphrase(jstring arg0);
+		android::net::wifi::WifiNetworkSpecifier_Builder setWpa3Passphrase(JString arg0);
 	};
 } // namespace android::net::wifi
 

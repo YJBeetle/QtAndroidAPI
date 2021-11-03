@@ -1,6 +1,8 @@
+#include "../../JIntArray.hpp"
 #include "../content/Context.hpp"
 #include "../view/ViewGroup_LayoutParams.hpp"
 #include "../view/ViewGroup_MarginLayoutParams.hpp"
+#include "../../JString.hpp"
 #include "./RelativeLayout_LayoutParams.hpp"
 
 namespace android::widget
@@ -68,13 +70,13 @@ namespace android::widget
 			arg1
 		);
 	}
-	jstring RelativeLayout_LayoutParams::debug(jstring arg0)
+	JString RelativeLayout_LayoutParams::debug(JString arg0)
 	{
 		return callObjectMethod(
 			"debug",
 			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
+			arg0.object<jstring>()
+		);
 	}
 	jint RelativeLayout_LayoutParams::getRule(jint arg0)
 	{
@@ -84,12 +86,12 @@ namespace android::widget
 			arg0
 		);
 	}
-	jintArray RelativeLayout_LayoutParams::getRules()
+	JIntArray RelativeLayout_LayoutParams::getRules()
 	{
 		return callObjectMethod(
 			"getRules",
 			"()[I"
-		).object<jintArray>();
+		);
 	}
 	void RelativeLayout_LayoutParams::removeRule(jint arg0)
 	{

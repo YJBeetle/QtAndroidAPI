@@ -1,5 +1,6 @@
 #include "./IkeSessionParams.hpp"
 #include "./TunnelModeChildSessionParams.hpp"
+#include "../../../../JObject.hpp"
 #include "./IkeTunnelConnectionParams.hpp"
 
 namespace android::net::ipsec::ike
@@ -19,12 +20,12 @@ namespace android::net::ipsec::ike
 		) {}
 	
 	// Methods
-	jboolean IkeTunnelConnectionParams::equals(jobject arg0)
+	jboolean IkeTunnelConnectionParams::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	android::net::ipsec::ike::IkeSessionParams IkeTunnelConnectionParams::getIkeSessionParams()

@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./SocketTimeoutException.hpp"
 
 namespace java::net
@@ -13,11 +14,11 @@ namespace java::net
 			"java.net.SocketTimeoutException",
 			"()V"
 		) {}
-	SocketTimeoutException::SocketTimeoutException(jstring arg0)
+	SocketTimeoutException::SocketTimeoutException(JString arg0)
 		: java::io::InterruptedIOException(
 			"java.net.SocketTimeoutException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

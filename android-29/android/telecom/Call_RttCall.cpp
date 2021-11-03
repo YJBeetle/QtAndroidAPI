@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./Call_RttCall.hpp"
 
 namespace android::telecom
@@ -38,19 +39,19 @@ namespace android::telecom
 			"()I"
 		);
 	}
-	jstring Call_RttCall::read()
+	JString Call_RttCall::read()
 	{
 		return callObjectMethod(
 			"read",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Call_RttCall::readImmediately()
+	JString Call_RttCall::readImmediately()
 	{
 		return callObjectMethod(
 			"readImmediately",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void Call_RttCall::setRttMode(jint arg0)
 	{
@@ -60,12 +61,12 @@ namespace android::telecom
 			arg0
 		);
 	}
-	void Call_RttCall::write(jstring arg0)
+	void Call_RttCall::write(JString arg0)
 	{
 		callMethod<void>(
 			"write",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 } // namespace android::telecom

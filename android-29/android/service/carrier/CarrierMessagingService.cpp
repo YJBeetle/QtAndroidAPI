@@ -1,6 +1,8 @@
+#include "../../../JByteArray.hpp"
 #include "../../content/Intent.hpp"
 #include "../../net/Uri.hpp"
 #include "./MessagePdu.hpp"
+#include "../../../JString.hpp"
 #include "./CarrierMessagingService.hpp"
 
 namespace android::service::carrier
@@ -76,13 +78,13 @@ namespace android::service::carrier
 			"SEND_STATUS_RETRY_ON_CARRIER_NETWORK"
 		);
 	}
-	jstring CarrierMessagingService::SERVICE_INTERFACE()
+	JString CarrierMessagingService::SERVICE_INTERFACE()
 	{
 		return getStaticObjectField(
 			"android.service.carrier.CarrierMessagingService",
 			"SERVICE_INTERFACE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QJniObject forward
@@ -115,50 +117,50 @@ namespace android::service::carrier
 			arg3.object()
 		);
 	}
-	void CarrierMessagingService::onFilterSms(android::service::carrier::MessagePdu arg0, jstring arg1, jint arg2, jint arg3, JObject arg4)
+	void CarrierMessagingService::onFilterSms(android::service::carrier::MessagePdu arg0, JString arg1, jint arg2, jint arg3, JObject arg4)
 	{
 		callMethod<void>(
 			"onFilterSms",
 			"(Landroid/service/carrier/MessagePdu;Ljava/lang/String;IILandroid/service/carrier/CarrierMessagingService$ResultCallback;)V",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2,
 			arg3,
 			arg4.object()
 		);
 	}
-	void CarrierMessagingService::onReceiveTextSms(android::service::carrier::MessagePdu arg0, jstring arg1, jint arg2, jint arg3, JObject arg4)
+	void CarrierMessagingService::onReceiveTextSms(android::service::carrier::MessagePdu arg0, JString arg1, jint arg2, jint arg3, JObject arg4)
 	{
 		callMethod<void>(
 			"onReceiveTextSms",
 			"(Landroid/service/carrier/MessagePdu;Ljava/lang/String;IILandroid/service/carrier/CarrierMessagingService$ResultCallback;)V",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2,
 			arg3,
 			arg4.object()
 		);
 	}
-	void CarrierMessagingService::onSendDataSms(jbyteArray arg0, jint arg1, jstring arg2, jint arg3, JObject arg4)
+	void CarrierMessagingService::onSendDataSms(JByteArray arg0, jint arg1, JString arg2, jint arg3, JObject arg4)
 	{
 		callMethod<void>(
 			"onSendDataSms",
 			"([BILjava/lang/String;ILandroid/service/carrier/CarrierMessagingService$ResultCallback;)V",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1,
-			arg2,
+			arg2.object<jstring>(),
 			arg3,
 			arg4.object()
 		);
 	}
-	void CarrierMessagingService::onSendDataSms(jbyteArray arg0, jint arg1, jstring arg2, jint arg3, jint arg4, JObject arg5)
+	void CarrierMessagingService::onSendDataSms(JByteArray arg0, jint arg1, JString arg2, jint arg3, jint arg4, JObject arg5)
 	{
 		callMethod<void>(
 			"onSendDataSms",
 			"([BILjava/lang/String;IILandroid/service/carrier/CarrierMessagingService$ResultCallback;)V",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1,
-			arg2,
+			arg2.object<jstring>(),
 			arg3,
 			arg4,
 			arg5.object()
@@ -175,48 +177,48 @@ namespace android::service::carrier
 			arg3.object()
 		);
 	}
-	void CarrierMessagingService::onSendMultipartTextSms(JObject arg0, jint arg1, jstring arg2, JObject arg3)
+	void CarrierMessagingService::onSendMultipartTextSms(JObject arg0, jint arg1, JString arg2, JObject arg3)
 	{
 		callMethod<void>(
 			"onSendMultipartTextSms",
 			"(Ljava/util/List;ILjava/lang/String;Landroid/service/carrier/CarrierMessagingService$ResultCallback;)V",
 			arg0.object(),
 			arg1,
-			arg2,
+			arg2.object<jstring>(),
 			arg3.object()
 		);
 	}
-	void CarrierMessagingService::onSendMultipartTextSms(JObject arg0, jint arg1, jstring arg2, jint arg3, JObject arg4)
+	void CarrierMessagingService::onSendMultipartTextSms(JObject arg0, jint arg1, JString arg2, jint arg3, JObject arg4)
 	{
 		callMethod<void>(
 			"onSendMultipartTextSms",
 			"(Ljava/util/List;ILjava/lang/String;ILandroid/service/carrier/CarrierMessagingService$ResultCallback;)V",
 			arg0.object(),
 			arg1,
-			arg2,
+			arg2.object<jstring>(),
 			arg3,
 			arg4.object()
 		);
 	}
-	void CarrierMessagingService::onSendTextSms(jstring arg0, jint arg1, jstring arg2, JObject arg3)
+	void CarrierMessagingService::onSendTextSms(JString arg0, jint arg1, JString arg2, JObject arg3)
 	{
 		callMethod<void>(
 			"onSendTextSms",
 			"(Ljava/lang/String;ILjava/lang/String;Landroid/service/carrier/CarrierMessagingService$ResultCallback;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
-			arg2,
+			arg2.object<jstring>(),
 			arg3.object()
 		);
 	}
-	void CarrierMessagingService::onSendTextSms(jstring arg0, jint arg1, jstring arg2, jint arg3, JObject arg4)
+	void CarrierMessagingService::onSendTextSms(JString arg0, jint arg1, JString arg2, jint arg3, JObject arg4)
 	{
 		callMethod<void>(
 			"onSendTextSms",
 			"(Ljava/lang/String;ILjava/lang/String;ILandroid/service/carrier/CarrierMessagingService$ResultCallback;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
-			arg2,
+			arg2.object<jstring>(),
 			arg3,
 			arg4.object()
 		);

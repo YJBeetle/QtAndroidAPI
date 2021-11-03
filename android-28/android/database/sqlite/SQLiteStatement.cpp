@@ -1,5 +1,7 @@
+#include "../../../JObjectArray.hpp"
 #include "./SQLiteDatabase.hpp"
 #include "../../os/ParcelFileDescriptor.hpp"
+#include "../../../JString.hpp"
 #include "./SQLiteStatement.hpp"
 
 namespace android::database::sqlite
@@ -47,19 +49,19 @@ namespace android::database::sqlite
 			"()J"
 		);
 	}
-	jstring SQLiteStatement::simpleQueryForString()
+	JString SQLiteStatement::simpleQueryForString()
 	{
 		return callObjectMethod(
 			"simpleQueryForString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring SQLiteStatement::toString()
+	JString SQLiteStatement::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::database::sqlite
 

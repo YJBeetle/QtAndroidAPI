@@ -1,5 +1,7 @@
 #include "./Rect.hpp"
 #include "../os/Parcel.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./Insets.hpp"
 
 namespace android::graphics
@@ -120,12 +122,12 @@ namespace android::graphics
 			"()I"
 		);
 	}
-	jboolean Insets::equals(jobject arg0)
+	jboolean Insets::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint Insets::hashCode()
@@ -135,12 +137,12 @@ namespace android::graphics
 			"()I"
 		);
 	}
-	jstring Insets::toString()
+	JString Insets::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void Insets::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

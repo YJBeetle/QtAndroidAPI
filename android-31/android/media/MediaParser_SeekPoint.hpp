@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JObject;
+class JString;
 
 namespace android::media
 {
@@ -20,9 +22,9 @@ namespace android::media
 		// Constructors
 		
 		// Methods
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint hashCode();
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::media
 

@@ -1,5 +1,6 @@
 #include "../content/Context.hpp"
 #include "./AudioAttributes.hpp"
+#include "../../JString.hpp"
 #include "./Ringtone.hpp"
 
 namespace android::media
@@ -26,13 +27,13 @@ namespace android::media
 			"()I"
 		);
 	}
-	jstring Ringtone::getTitle(android::content::Context arg0)
+	JString Ringtone::getTitle(android::content::Context arg0)
 	{
 		return callObjectMethod(
 			"getTitle",
 			"(Landroid/content/Context;)Ljava/lang/String;",
 			arg0.object()
-		).object<jstring>();
+		);
 	}
 	jfloat Ringtone::getVolume()
 	{

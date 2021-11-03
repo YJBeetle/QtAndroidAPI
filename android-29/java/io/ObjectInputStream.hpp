@@ -1,8 +1,9 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./InputStream.hpp"
 
+class JByteArray;
+class JArray;
 namespace java::io
 {
 	class IOException;
@@ -23,6 +24,7 @@ namespace java::lang
 {
 	class Boolean;
 }
+class JClass;
 namespace java::lang
 {
 	class ClassLoader;
@@ -31,6 +33,8 @@ namespace java::lang
 {
 	class Enum;
 }
+class JObject;
+class JString;
 
 namespace java::io
 {
@@ -52,22 +56,22 @@ namespace java::io
 		void defaultReadObject();
 		JObject getObjectInputFilter();
 		jint read();
-		jint read(jbyteArray arg0, jint arg1, jint arg2);
+		jint read(JByteArray arg0, jint arg1, jint arg2);
 		jboolean readBoolean();
 		jbyte readByte();
 		jchar readChar();
 		jdouble readDouble();
 		java::io::ObjectInputStream_GetField readFields();
 		jfloat readFloat();
-		void readFully(jbyteArray arg0);
-		void readFully(jbyteArray arg0, jint arg1, jint arg2);
+		void readFully(JByteArray arg0);
+		void readFully(JByteArray arg0, jint arg1, jint arg2);
 		jint readInt();
-		jstring readLine();
+		JString readLine();
 		jlong readLong();
-		jobject readObject();
+		JObject readObject();
 		jshort readShort();
-		jstring readUTF();
-		jobject readUnshared();
+		JString readUTF();
+		JObject readUnshared();
 		jint readUnsignedByte();
 		jint readUnsignedShort();
 		void registerValidation(JObject arg0, jint arg1);

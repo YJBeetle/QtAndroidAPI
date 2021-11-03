@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./SQLiteFullException.hpp"
 
 namespace android::database::sqlite
@@ -13,11 +14,11 @@ namespace android::database::sqlite
 			"android.database.sqlite.SQLiteFullException",
 			"()V"
 		) {}
-	SQLiteFullException::SQLiteFullException(jstring arg0)
+	SQLiteFullException::SQLiteFullException(JString arg0)
 		: android::database::sqlite::SQLiteException(
 			"android.database.sqlite.SQLiteFullException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

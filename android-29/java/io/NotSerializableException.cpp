@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./NotSerializableException.hpp"
 
 namespace java::io
@@ -13,11 +14,11 @@ namespace java::io
 			"java.io.NotSerializableException",
 			"()V"
 		) {}
-	NotSerializableException::NotSerializableException(jstring arg0)
+	NotSerializableException::NotSerializableException(JString arg0)
 		: java::io::ObjectStreamException(
 			"java.io.NotSerializableException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

@@ -1,5 +1,7 @@
+#include "../../../JArray.hpp"
 #include "./AssetFileDescriptor.hpp"
 #include "../../../java/io/InputStream.hpp"
+#include "../../../JString.hpp"
 #include "./AssetManager.hpp"
 
 namespace android::content::res
@@ -47,78 +49,78 @@ namespace android::content::res
 			"()V"
 		);
 	}
-	jarray AssetManager::getLocales()
+	JArray AssetManager::getLocales()
 	{
 		return callObjectMethod(
 			"getLocales",
 			"()[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
-	jarray AssetManager::list(jstring arg0)
+	JArray AssetManager::list(JString arg0)
 	{
 		return callObjectMethod(
 			"list",
 			"(Ljava/lang/String;)[Ljava/lang/String;",
-			arg0
-		).object<jarray>();
+			arg0.object<jstring>()
+		);
 	}
-	java::io::InputStream AssetManager::open(jstring arg0)
+	java::io::InputStream AssetManager::open(JString arg0)
 	{
 		return callObjectMethod(
 			"open",
 			"(Ljava/lang/String;)Ljava/io/InputStream;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	java::io::InputStream AssetManager::open(jstring arg0, jint arg1)
+	java::io::InputStream AssetManager::open(JString arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"open",
 			"(Ljava/lang/String;I)Ljava/io/InputStream;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
-	android::content::res::AssetFileDescriptor AssetManager::openFd(jstring arg0)
+	android::content::res::AssetFileDescriptor AssetManager::openFd(JString arg0)
 	{
 		return callObjectMethod(
 			"openFd",
 			"(Ljava/lang/String;)Landroid/content/res/AssetFileDescriptor;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	android::content::res::AssetFileDescriptor AssetManager::openNonAssetFd(jstring arg0)
+	android::content::res::AssetFileDescriptor AssetManager::openNonAssetFd(JString arg0)
 	{
 		return callObjectMethod(
 			"openNonAssetFd",
 			"(Ljava/lang/String;)Landroid/content/res/AssetFileDescriptor;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	android::content::res::AssetFileDescriptor AssetManager::openNonAssetFd(jint arg0, jstring arg1)
+	android::content::res::AssetFileDescriptor AssetManager::openNonAssetFd(jint arg0, JString arg1)
 	{
 		return callObjectMethod(
 			"openNonAssetFd",
 			"(ILjava/lang/String;)Landroid/content/res/AssetFileDescriptor;",
 			arg0,
-			arg1
+			arg1.object<jstring>()
 		);
 	}
-	JObject AssetManager::openXmlResourceParser(jstring arg0)
+	JObject AssetManager::openXmlResourceParser(JString arg0)
 	{
 		return callObjectMethod(
 			"openXmlResourceParser",
 			"(Ljava/lang/String;)Landroid/content/res/XmlResourceParser;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	JObject AssetManager::openXmlResourceParser(jint arg0, jstring arg1)
+	JObject AssetManager::openXmlResourceParser(jint arg0, JString arg1)
 	{
 		return callObjectMethod(
 			"openXmlResourceParser",
 			"(ILjava/lang/String;)Landroid/content/res/XmlResourceParser;",
 			arg0,
-			arg1
+			arg1.object<jstring>()
 		);
 	}
 } // namespace android::content::res

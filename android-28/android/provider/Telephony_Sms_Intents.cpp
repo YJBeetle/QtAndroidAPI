@@ -1,56 +1,58 @@
+#include "../../JArray.hpp"
 #include "../content/Intent.hpp"
+#include "../../JString.hpp"
 #include "./Telephony_Sms_Intents.hpp"
 
 namespace android::provider
 {
 	// Fields
-	jstring Telephony_Sms_Intents::ACTION_CHANGE_DEFAULT()
+	JString Telephony_Sms_Intents::ACTION_CHANGE_DEFAULT()
 	{
 		return getStaticObjectField(
 			"android.provider.Telephony$Sms$Intents",
 			"ACTION_CHANGE_DEFAULT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Telephony_Sms_Intents::ACTION_DEFAULT_SMS_PACKAGE_CHANGED()
+	JString Telephony_Sms_Intents::ACTION_DEFAULT_SMS_PACKAGE_CHANGED()
 	{
 		return getStaticObjectField(
 			"android.provider.Telephony$Sms$Intents",
 			"ACTION_DEFAULT_SMS_PACKAGE_CHANGED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Telephony_Sms_Intents::ACTION_EXTERNAL_PROVIDER_CHANGE()
+	JString Telephony_Sms_Intents::ACTION_EXTERNAL_PROVIDER_CHANGE()
 	{
 		return getStaticObjectField(
 			"android.provider.Telephony$Sms$Intents",
 			"ACTION_EXTERNAL_PROVIDER_CHANGE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Telephony_Sms_Intents::DATA_SMS_RECEIVED_ACTION()
+	JString Telephony_Sms_Intents::DATA_SMS_RECEIVED_ACTION()
 	{
 		return getStaticObjectField(
 			"android.provider.Telephony$Sms$Intents",
 			"DATA_SMS_RECEIVED_ACTION",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Telephony_Sms_Intents::EXTRA_IS_DEFAULT_SMS_APP()
+	JString Telephony_Sms_Intents::EXTRA_IS_DEFAULT_SMS_APP()
 	{
 		return getStaticObjectField(
 			"android.provider.Telephony$Sms$Intents",
 			"EXTRA_IS_DEFAULT_SMS_APP",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Telephony_Sms_Intents::EXTRA_PACKAGE_NAME()
+	JString Telephony_Sms_Intents::EXTRA_PACKAGE_NAME()
 	{
 		return getStaticObjectField(
 			"android.provider.Telephony$Sms$Intents",
 			"EXTRA_PACKAGE_NAME",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint Telephony_Sms_Intents::RESULT_SMS_DUPLICATED()
 	{
@@ -87,77 +89,77 @@ namespace android::provider
 			"RESULT_SMS_UNSUPPORTED"
 		);
 	}
-	jstring Telephony_Sms_Intents::SECRET_CODE_ACTION()
+	JString Telephony_Sms_Intents::SECRET_CODE_ACTION()
 	{
 		return getStaticObjectField(
 			"android.provider.Telephony$Sms$Intents",
 			"SECRET_CODE_ACTION",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Telephony_Sms_Intents::SIM_FULL_ACTION()
+	JString Telephony_Sms_Intents::SIM_FULL_ACTION()
 	{
 		return getStaticObjectField(
 			"android.provider.Telephony$Sms$Intents",
 			"SIM_FULL_ACTION",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Telephony_Sms_Intents::SMS_CB_RECEIVED_ACTION()
+	JString Telephony_Sms_Intents::SMS_CB_RECEIVED_ACTION()
 	{
 		return getStaticObjectField(
 			"android.provider.Telephony$Sms$Intents",
 			"SMS_CB_RECEIVED_ACTION",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Telephony_Sms_Intents::SMS_DELIVER_ACTION()
+	JString Telephony_Sms_Intents::SMS_DELIVER_ACTION()
 	{
 		return getStaticObjectField(
 			"android.provider.Telephony$Sms$Intents",
 			"SMS_DELIVER_ACTION",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Telephony_Sms_Intents::SMS_RECEIVED_ACTION()
+	JString Telephony_Sms_Intents::SMS_RECEIVED_ACTION()
 	{
 		return getStaticObjectField(
 			"android.provider.Telephony$Sms$Intents",
 			"SMS_RECEIVED_ACTION",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Telephony_Sms_Intents::SMS_REJECTED_ACTION()
+	JString Telephony_Sms_Intents::SMS_REJECTED_ACTION()
 	{
 		return getStaticObjectField(
 			"android.provider.Telephony$Sms$Intents",
 			"SMS_REJECTED_ACTION",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Telephony_Sms_Intents::SMS_SERVICE_CATEGORY_PROGRAM_DATA_RECEIVED_ACTION()
+	JString Telephony_Sms_Intents::SMS_SERVICE_CATEGORY_PROGRAM_DATA_RECEIVED_ACTION()
 	{
 		return getStaticObjectField(
 			"android.provider.Telephony$Sms$Intents",
 			"SMS_SERVICE_CATEGORY_PROGRAM_DATA_RECEIVED_ACTION",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Telephony_Sms_Intents::WAP_PUSH_DELIVER_ACTION()
+	JString Telephony_Sms_Intents::WAP_PUSH_DELIVER_ACTION()
 	{
 		return getStaticObjectField(
 			"android.provider.Telephony$Sms$Intents",
 			"WAP_PUSH_DELIVER_ACTION",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Telephony_Sms_Intents::WAP_PUSH_RECEIVED_ACTION()
+	JString Telephony_Sms_Intents::WAP_PUSH_RECEIVED_ACTION()
 	{
 		return getStaticObjectField(
 			"android.provider.Telephony$Sms$Intents",
 			"WAP_PUSH_RECEIVED_ACTION",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QJniObject forward
@@ -166,14 +168,14 @@ namespace android::provider
 	// Constructors
 	
 	// Methods
-	jarray Telephony_Sms_Intents::getMessagesFromIntent(android::content::Intent arg0)
+	JArray Telephony_Sms_Intents::getMessagesFromIntent(android::content::Intent arg0)
 	{
 		return callStaticObjectMethod(
 			"android.provider.Telephony$Sms$Intents",
 			"getMessagesFromIntent",
 			"(Landroid/content/Intent;)[Landroid/telephony/SmsMessage;",
 			arg0.object()
-		).object<jarray>();
+		);
 	}
 } // namespace android::provider
 

@@ -10,6 +10,7 @@ namespace java::io
 {
 	class Reader;
 }
+class JString;
 
 namespace android::util
 {
@@ -37,13 +38,13 @@ namespace android::util
 		jdouble nextDouble();
 		jint nextInt();
 		jlong nextLong();
-		jstring nextName();
+		JString nextName();
 		void nextNull();
-		jstring nextString();
+		JString nextString();
 		android::util::JsonToken peek();
 		void setLenient(jboolean arg0);
 		void skipValue();
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::util
 

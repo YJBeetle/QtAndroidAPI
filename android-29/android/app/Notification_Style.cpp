@@ -1,6 +1,7 @@
 #include "./Notification.hpp"
 #include "./Notification_Builder.hpp"
 #include "../widget/RemoteViews.hpp"
+#include "../../JString.hpp"
 #include "./Notification_Style.hpp"
 
 namespace android::app

@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./MultiAutoCompleteTextView_CommaTokenizer.hpp"
 
 namespace android::widget
@@ -15,31 +16,31 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	jint MultiAutoCompleteTextView_CommaTokenizer::findTokenEnd(jstring arg0, jint arg1)
+	jint MultiAutoCompleteTextView_CommaTokenizer::findTokenEnd(JString arg0, jint arg1)
 	{
 		return callMethod<jint>(
 			"findTokenEnd",
 			"(Ljava/lang/CharSequence;I)I",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
-	jint MultiAutoCompleteTextView_CommaTokenizer::findTokenStart(jstring arg0, jint arg1)
+	jint MultiAutoCompleteTextView_CommaTokenizer::findTokenStart(JString arg0, jint arg1)
 	{
 		return callMethod<jint>(
 			"findTokenStart",
 			"(Ljava/lang/CharSequence;I)I",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
-	jstring MultiAutoCompleteTextView_CommaTokenizer::terminateToken(jstring arg0)
+	JString MultiAutoCompleteTextView_CommaTokenizer::terminateToken(JString arg0)
 	{
 		return callObjectMethod(
 			"terminateToken",
 			"(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;",
-			arg0
-		).object<jstring>();
+			arg0.object<jstring>()
+		);
 	}
 } // namespace android::widget
 

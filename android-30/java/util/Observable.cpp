@@ -1,3 +1,4 @@
+#include "../../JObject.hpp"
 #include "./Vector.hpp"
 #include "./Observable.hpp"
 
@@ -60,12 +61,12 @@ namespace java::util
 			"()V"
 		);
 	}
-	void Observable::notifyObservers(jobject arg0)
+	void Observable::notifyObservers(JObject arg0)
 	{
 		callMethod<void>(
 			"notifyObservers",
 			"(Ljava/lang/Object;)V",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 } // namespace java::util

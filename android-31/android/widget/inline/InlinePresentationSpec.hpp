@@ -14,6 +14,8 @@ namespace android::util
 {
 	class Size;
 }
+class JObject;
+class JString;
 
 namespace android::widget::inline
 {
@@ -31,12 +33,12 @@ namespace android::widget::inline
 		
 		// Methods
 		jint describeContents();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		android::util::Size getMaxSize();
 		android::util::Size getMinSize();
 		android::os::Bundle getStyle();
 		jint hashCode();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::widget::inline

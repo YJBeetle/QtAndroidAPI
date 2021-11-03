@@ -1,6 +1,7 @@
 #include "./BackupDataInput.hpp"
 #include "./BackupDataOutput.hpp"
 #include "../../os/ParcelFileDescriptor.hpp"
+#include "../../../JString.hpp"
 #include "./BackupAgentHelper.hpp"
 
 namespace android::app::backup
@@ -18,12 +19,12 @@ namespace android::app::backup
 		) {}
 	
 	// Methods
-	void BackupAgentHelper::addHelper(jstring arg0, JObject arg1)
+	void BackupAgentHelper::addHelper(JString arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"addHelper",
 			"(Ljava/lang/String;Landroid/app/backup/BackupHelper;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}

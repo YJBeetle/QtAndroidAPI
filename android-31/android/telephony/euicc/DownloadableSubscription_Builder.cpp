@@ -1,4 +1,5 @@
 #include "./DownloadableSubscription.hpp"
+#include "../../../JString.hpp"
 #include "./DownloadableSubscription_Builder.hpp"
 
 namespace android::telephony::euicc
@@ -15,11 +16,11 @@ namespace android::telephony::euicc
 			"(Landroid/telephony/euicc/DownloadableSubscription;)V",
 			arg0.object()
 		) {}
-	DownloadableSubscription_Builder::DownloadableSubscription_Builder(jstring arg0)
+	DownloadableSubscription_Builder::DownloadableSubscription_Builder(JString arg0)
 		: JObject(
 			"android.telephony.euicc.DownloadableSubscription$Builder",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods
@@ -30,20 +31,20 @@ namespace android::telephony::euicc
 			"()Landroid/telephony/euicc/DownloadableSubscription;"
 		);
 	}
-	android::telephony::euicc::DownloadableSubscription_Builder DownloadableSubscription_Builder::setConfirmationCode(jstring arg0)
+	android::telephony::euicc::DownloadableSubscription_Builder DownloadableSubscription_Builder::setConfirmationCode(JString arg0)
 	{
 		return callObjectMethod(
 			"setConfirmationCode",
 			"(Ljava/lang/String;)Landroid/telephony/euicc/DownloadableSubscription$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	android::telephony::euicc::DownloadableSubscription_Builder DownloadableSubscription_Builder::setEncodedActivationCode(jstring arg0)
+	android::telephony::euicc::DownloadableSubscription_Builder DownloadableSubscription_Builder::setEncodedActivationCode(JString arg0)
 	{
 		return callObjectMethod(
 			"setEncodedActivationCode",
 			"(Ljava/lang/String;)Landroid/telephony/euicc/DownloadableSubscription$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 } // namespace android::telephony::euicc

@@ -6,6 +6,7 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
 
 namespace android::view::translation
 {
@@ -30,7 +31,7 @@ namespace android::view::translation
 		jint getFlags();
 		JObject getTranslationRequestValues();
 		JObject getViewTranslationRequests();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::view::translation

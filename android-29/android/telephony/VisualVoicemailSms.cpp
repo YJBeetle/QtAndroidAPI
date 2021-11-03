@@ -1,6 +1,7 @@
 #include "../os/Bundle.hpp"
 #include "../os/Parcel.hpp"
 #include "../telecom/PhoneAccountHandle.hpp"
+#include "../../JString.hpp"
 #include "./VisualVoicemailSms.hpp"
 
 namespace android::telephony
@@ -35,12 +36,12 @@ namespace android::telephony
 			"()Landroid/os/Bundle;"
 		);
 	}
-	jstring VisualVoicemailSms::getMessageBody()
+	JString VisualVoicemailSms::getMessageBody()
 	{
 		return callObjectMethod(
 			"getMessageBody",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::telecom::PhoneAccountHandle VisualVoicemailSms::getPhoneAccountHandle()
 	{
@@ -49,12 +50,12 @@ namespace android::telephony
 			"()Landroid/telecom/PhoneAccountHandle;"
 		);
 	}
-	jstring VisualVoicemailSms::getPrefix()
+	JString VisualVoicemailSms::getPrefix()
 	{
 		return callObjectMethod(
 			"getPrefix",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void VisualVoicemailSms::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

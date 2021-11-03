@@ -1,3 +1,6 @@
+#include "../../JIntArray.hpp"
+#include "../../JObjectArray.hpp"
+#include "../../JArray.hpp"
 #include "../animation/Animator.hpp"
 #include "./Activity.hpp"
 #include "./Fragment_SavedState.hpp"
@@ -17,6 +20,9 @@
 #include "../view/ViewGroup.hpp"
 #include "../../java/io/FileDescriptor.hpp"
 #include "../../java/io/PrintWriter.hpp"
+#include "../../JString.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./Fragment.hpp"
 
 namespace android::app
@@ -34,44 +40,44 @@ namespace android::app
 		) {}
 	
 	// Methods
-	android::app::Fragment Fragment::instantiate(android::content::Context arg0, jstring arg1)
+	android::app::Fragment Fragment::instantiate(android::content::Context arg0, JString arg1)
 	{
 		return callStaticObjectMethod(
 			"android.app.Fragment",
 			"instantiate",
 			"(Landroid/content/Context;Ljava/lang/String;)Landroid/app/Fragment;",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
-	android::app::Fragment Fragment::instantiate(android::content::Context arg0, jstring arg1, android::os::Bundle arg2)
+	android::app::Fragment Fragment::instantiate(android::content::Context arg0, JString arg1, android::os::Bundle arg2)
 	{
 		return callStaticObjectMethod(
 			"android.app.Fragment",
 			"instantiate",
 			"(Landroid/content/Context;Ljava/lang/String;Landroid/os/Bundle;)Landroid/app/Fragment;",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2.object()
 		);
 	}
-	void Fragment::dump(jstring arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, jarray arg3)
+	void Fragment::dump(JString arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, JArray arg3)
 	{
 		callMethod<void>(
 			"dump",
 			"(Ljava/lang/String;Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
 			arg2.object(),
-			arg3
+			arg3.object<jarray>()
 		);
 	}
-	jboolean Fragment::equals(jobject arg0)
+	jboolean Fragment::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	android::app::Activity Fragment::getActivity()
@@ -137,12 +143,12 @@ namespace android::app
 			"()Landroid/app/FragmentManager;"
 		);
 	}
-	jobject Fragment::getHost()
+	JObject Fragment::getHost()
 	{
 		return callObjectMethod(
 			"getHost",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
 	jint Fragment::getId()
 	{
@@ -214,29 +220,29 @@ namespace android::app
 			"()Landroid/transition/Transition;"
 		);
 	}
-	jstring Fragment::getString(jint arg0)
+	JString Fragment::getString(jint arg0)
 	{
 		return callObjectMethod(
 			"getString",
 			"(I)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
-	jstring Fragment::getString(jint arg0, jobjectArray arg1)
+	JString Fragment::getString(jint arg0, JObjectArray arg1)
 	{
 		return callObjectMethod(
 			"getString",
 			"(I[Ljava/lang/Object;)Ljava/lang/String;",
 			arg0,
-			arg1
-		).object<jstring>();
+			arg1.object<jobjectArray>()
+		);
 	}
-	jstring Fragment::getTag()
+	JString Fragment::getTag()
 	{
 		return callObjectMethod(
 			"getTag",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::app::Fragment Fragment::getTargetFragment()
 	{
@@ -252,13 +258,13 @@ namespace android::app
 			"()I"
 		);
 	}
-	jstring Fragment::getText(jint arg0)
+	JString Fragment::getText(jint arg0)
 	{
 		return callObjectMethod(
 			"getText",
 			"(I)Ljava/lang/CharSequence;",
 			arg0
-		).object<jstring>();
+		);
 	}
 	jboolean Fragment::getUserVisibleHint()
 	{
@@ -587,14 +593,14 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Fragment::onRequestPermissionsResult(jint arg0, jarray arg1, jintArray arg2)
+	void Fragment::onRequestPermissionsResult(jint arg0, JArray arg1, JIntArray arg2)
 	{
 		callMethod<void>(
 			"onRequestPermissionsResult",
 			"(I[Ljava/lang/String;[I)V",
 			arg0,
-			arg1,
-			arg2
+			arg1.object<jarray>(),
+			arg2.object<jintArray>()
 		);
 	}
 	void Fragment::onResume()
@@ -666,12 +672,12 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Fragment::requestPermissions(jarray arg0, jint arg1)
+	void Fragment::requestPermissions(JArray arg0, jint arg1)
 	{
 		callMethod<void>(
 			"requestPermissions",
 			"([Ljava/lang/String;I)V",
-			arg0,
+			arg0.object<jarray>(),
 			arg1
 		);
 	}
@@ -812,12 +818,12 @@ namespace android::app
 			arg0
 		);
 	}
-	jboolean Fragment::shouldShowRequestPermissionRationale(jstring arg0)
+	jboolean Fragment::shouldShowRequestPermissionRationale(JString arg0)
 	{
 		return callMethod<jboolean>(
 			"shouldShowRequestPermissionRationale",
 			"(Ljava/lang/String;)Z",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void Fragment::startActivity(android::content::Intent arg0)
@@ -877,12 +883,12 @@ namespace android::app
 			"()V"
 		);
 	}
-	jstring Fragment::toString()
+	JString Fragment::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void Fragment::unregisterForContextMenu(android::view::View arg0)
 	{

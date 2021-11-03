@@ -1,5 +1,7 @@
 #include "../../os/Bundle.hpp"
 #include "../../os/Parcel.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./TrackChangeEvent.hpp"
 
 namespace android::media::metrics
@@ -97,12 +99,12 @@ namespace android::media::metrics
 			"()I"
 		);
 	}
-	jboolean TrackChangeEvent::equals(jobject arg0)
+	jboolean TrackChangeEvent::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint TrackChangeEvent::getAudioSampleRate()
@@ -126,19 +128,19 @@ namespace android::media::metrics
 			"()I"
 		);
 	}
-	jstring TrackChangeEvent::getCodecName()
+	JString TrackChangeEvent::getCodecName()
 	{
 		return callObjectMethod(
 			"getCodecName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TrackChangeEvent::getContainerMimeType()
+	JString TrackChangeEvent::getContainerMimeType()
 	{
 		return callObjectMethod(
 			"getContainerMimeType",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint TrackChangeEvent::getHeight()
 	{
@@ -147,19 +149,19 @@ namespace android::media::metrics
 			"()I"
 		);
 	}
-	jstring TrackChangeEvent::getLanguage()
+	JString TrackChangeEvent::getLanguage()
 	{
 		return callObjectMethod(
 			"getLanguage",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TrackChangeEvent::getLanguageRegion()
+	JString TrackChangeEvent::getLanguageRegion()
 	{
 		return callObjectMethod(
 			"getLanguageRegion",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::os::Bundle TrackChangeEvent::getMetricsBundle()
 	{
@@ -168,12 +170,12 @@ namespace android::media::metrics
 			"()Landroid/os/Bundle;"
 		);
 	}
-	jstring TrackChangeEvent::getSampleMimeType()
+	JString TrackChangeEvent::getSampleMimeType()
 	{
 		return callObjectMethod(
 			"getSampleMimeType",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jlong TrackChangeEvent::getTimeSinceCreatedMillis()
 	{
@@ -224,12 +226,12 @@ namespace android::media::metrics
 			"()I"
 		);
 	}
-	jstring TrackChangeEvent::toString()
+	JString TrackChangeEvent::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void TrackChangeEvent::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

@@ -1,3 +1,5 @@
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
 #include "./NetworkInfo_State.hpp"
 
 namespace android::net
@@ -58,22 +60,22 @@ namespace android::net
 	// Constructors
 	
 	// Methods
-	android::net::NetworkInfo_State NetworkInfo_State::valueOf(jstring arg0)
+	android::net::NetworkInfo_State NetworkInfo_State::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.net.NetworkInfo$State",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/net/NetworkInfo$State;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray NetworkInfo_State::values()
+	JArray NetworkInfo_State::values()
 	{
 		return callStaticObjectMethod(
 			"android.net.NetworkInfo$State",
 			"values",
 			"()[Landroid/net/NetworkInfo$State;"
-		).object<jarray>();
+		);
 	}
 } // namespace android::net
 

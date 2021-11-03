@@ -1,3 +1,6 @@
+#include "../../JByteArray.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "../nio/ByteBuffer.hpp"
 #include "./AlgorithmParameters.hpp"
 #include "./Provider.hpp"
@@ -16,56 +19,56 @@ namespace java::security
 	// Constructors
 	
 	// Methods
-	java::security::Signature Signature::getInstance(jstring arg0)
+	java::security::Signature Signature::getInstance(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"java.security.Signature",
 			"getInstance",
 			"(Ljava/lang/String;)Ljava/security/Signature;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	java::security::Signature Signature::getInstance(jstring arg0, jstring arg1)
+	java::security::Signature Signature::getInstance(JString arg0, JString arg1)
 	{
 		return callStaticObjectMethod(
 			"java.security.Signature",
 			"getInstance",
 			"(Ljava/lang/String;Ljava/lang/String;)Ljava/security/Signature;",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		);
 	}
-	java::security::Signature Signature::getInstance(jstring arg0, java::security::Provider arg1)
+	java::security::Signature Signature::getInstance(JString arg0, java::security::Provider arg1)
 	{
 		return callStaticObjectMethod(
 			"java.security.Signature",
 			"getInstance",
 			"(Ljava/lang/String;Ljava/security/Provider;)Ljava/security/Signature;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
-	jobject Signature::clone()
+	JObject Signature::clone()
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
-	jstring Signature::getAlgorithm()
+	JString Signature::getAlgorithm()
 	{
 		return callObjectMethod(
 			"getAlgorithm",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jobject Signature::getParameter(jstring arg0)
+	JObject Signature::getParameter(JString arg0)
 	{
 		return callObjectMethod(
 			"getParameter",
 			"(Ljava/lang/String;)Ljava/lang/Object;",
-			arg0
-		).object<jobject>();
+			arg0.object<jstring>()
+		);
 	}
 	java::security::AlgorithmParameters Signature::getParameters()
 	{
@@ -122,45 +125,45 @@ namespace java::security
 			arg0.object()
 		);
 	}
-	void Signature::setParameter(jstring arg0, jobject arg1)
+	void Signature::setParameter(JString arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"setParameter",
 			"(Ljava/lang/String;Ljava/lang/Object;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jobject>()
 		);
 	}
-	jbyteArray Signature::sign()
+	JByteArray Signature::sign()
 	{
 		return callObjectMethod(
 			"sign",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
-	jint Signature::sign(jbyteArray arg0, jint arg1, jint arg2)
+	jint Signature::sign(JByteArray arg0, jint arg1, jint arg2)
 	{
 		return callMethod<jint>(
 			"sign",
 			"([BII)I",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1,
 			arg2
 		);
 	}
-	jstring Signature::toString()
+	JString Signature::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	void Signature::update(jbyteArray arg0)
+	void Signature::update(JByteArray arg0)
 	{
 		callMethod<void>(
 			"update",
 			"([B)V",
-			arg0
+			arg0.object<jbyteArray>()
 		);
 	}
 	void Signature::update(jbyte arg0)
@@ -179,30 +182,30 @@ namespace java::security
 			arg0.object()
 		);
 	}
-	void Signature::update(jbyteArray arg0, jint arg1, jint arg2)
+	void Signature::update(JByteArray arg0, jint arg1, jint arg2)
 	{
 		callMethod<void>(
 			"update",
 			"([BII)V",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1,
 			arg2
 		);
 	}
-	jboolean Signature::verify(jbyteArray arg0)
+	jboolean Signature::verify(JByteArray arg0)
 	{
 		return callMethod<jboolean>(
 			"verify",
 			"([B)Z",
-			arg0
+			arg0.object<jbyteArray>()
 		);
 	}
-	jboolean Signature::verify(jbyteArray arg0, jint arg1, jint arg2)
+	jboolean Signature::verify(JByteArray arg0, jint arg1, jint arg2)
 	{
 		return callMethod<jboolean>(
 			"verify",
 			"([BII)Z",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1,
 			arg2
 		);

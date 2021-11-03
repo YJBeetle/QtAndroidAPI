@@ -1,4 +1,5 @@
 #include "../lang/ClassLoader.hpp"
+#include "../../JString.hpp"
 #include "../lang/Void.hpp"
 #include "../lang/reflect/Constructor.hpp"
 #include "./Locale.hpp"
@@ -71,83 +72,83 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	JObject ResourceBundle_Control::getCandidateLocales(jstring arg0, java::util::Locale arg1)
+	JObject ResourceBundle_Control::getCandidateLocales(JString arg0, java::util::Locale arg1)
 	{
 		return callObjectMethod(
 			"getCandidateLocales",
 			"(Ljava/lang/String;Ljava/util/Locale;)Ljava/util/List;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
-	java::util::Locale ResourceBundle_Control::getFallbackLocale(jstring arg0, java::util::Locale arg1)
+	java::util::Locale ResourceBundle_Control::getFallbackLocale(JString arg0, java::util::Locale arg1)
 	{
 		return callObjectMethod(
 			"getFallbackLocale",
 			"(Ljava/lang/String;Ljava/util/Locale;)Ljava/util/Locale;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
-	JObject ResourceBundle_Control::getFormats(jstring arg0)
+	JObject ResourceBundle_Control::getFormats(JString arg0)
 	{
 		return callObjectMethod(
 			"getFormats",
 			"(Ljava/lang/String;)Ljava/util/List;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jlong ResourceBundle_Control::getTimeToLive(jstring arg0, java::util::Locale arg1)
+	jlong ResourceBundle_Control::getTimeToLive(JString arg0, java::util::Locale arg1)
 	{
 		return callMethod<jlong>(
 			"getTimeToLive",
 			"(Ljava/lang/String;Ljava/util/Locale;)J",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
-	jboolean ResourceBundle_Control::needsReload(jstring arg0, java::util::Locale arg1, jstring arg2, java::lang::ClassLoader arg3, java::util::ResourceBundle arg4, jlong arg5)
+	jboolean ResourceBundle_Control::needsReload(JString arg0, java::util::Locale arg1, JString arg2, java::lang::ClassLoader arg3, java::util::ResourceBundle arg4, jlong arg5)
 	{
 		return callMethod<jboolean>(
 			"needsReload",
 			"(Ljava/lang/String;Ljava/util/Locale;Ljava/lang/String;Ljava/lang/ClassLoader;Ljava/util/ResourceBundle;J)Z",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
-			arg2,
+			arg2.object<jstring>(),
 			arg3.object(),
 			arg4.object(),
 			arg5
 		);
 	}
-	java::util::ResourceBundle ResourceBundle_Control::newBundle(jstring arg0, java::util::Locale arg1, jstring arg2, java::lang::ClassLoader arg3, jboolean arg4)
+	java::util::ResourceBundle ResourceBundle_Control::newBundle(JString arg0, java::util::Locale arg1, JString arg2, java::lang::ClassLoader arg3, jboolean arg4)
 	{
 		return callObjectMethod(
 			"newBundle",
 			"(Ljava/lang/String;Ljava/util/Locale;Ljava/lang/String;Ljava/lang/ClassLoader;Z)Ljava/util/ResourceBundle;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
-			arg2,
+			arg2.object<jstring>(),
 			arg3.object(),
 			arg4
 		);
 	}
-	jstring ResourceBundle_Control::toBundleName(jstring arg0, java::util::Locale arg1)
+	JString ResourceBundle_Control::toBundleName(JString arg0, java::util::Locale arg1)
 	{
 		return callObjectMethod(
 			"toBundleName",
 			"(Ljava/lang/String;Ljava/util/Locale;)Ljava/lang/String;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
-		).object<jstring>();
+		);
 	}
-	jstring ResourceBundle_Control::toResourceName(jstring arg0, jstring arg1)
+	JString ResourceBundle_Control::toResourceName(JString arg0, JString arg1)
 	{
 		return callObjectMethod(
 			"toResourceName",
 			"(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
-			arg0,
-			arg1
-		).object<jstring>();
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
+		);
 	}
 } // namespace java::util
 

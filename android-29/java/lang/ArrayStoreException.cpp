@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./ArrayStoreException.hpp"
 
 namespace java::lang
@@ -13,11 +14,11 @@ namespace java::lang
 			"java.lang.ArrayStoreException",
 			"()V"
 		) {}
-	ArrayStoreException::ArrayStoreException(jstring arg0)
+	ArrayStoreException::ArrayStoreException(JString arg0)
 		: java::lang::RuntimeException(
 			"java.lang.ArrayStoreException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

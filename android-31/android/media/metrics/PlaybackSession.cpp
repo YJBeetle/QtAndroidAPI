@@ -4,6 +4,7 @@
 #include "./PlaybackMetrics.hpp"
 #include "./PlaybackStateEvent.hpp"
 #include "./TrackChangeEvent.hpp"
+#include "../../../JObject.hpp"
 #include "./PlaybackSession.hpp"
 
 namespace android::media::metrics
@@ -23,12 +24,12 @@ namespace android::media::metrics
 			"()V"
 		);
 	}
-	jboolean PlaybackSession::equals(jobject arg0)
+	jboolean PlaybackSession::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	android::media::metrics::LogSessionId PlaybackSession::getSessionId()

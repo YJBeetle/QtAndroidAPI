@@ -2,7 +2,6 @@
 
 #include "../../JObject.hpp"
 
-
 namespace android::util
 {
 	class MutableFloat : public JObject

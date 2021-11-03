@@ -13,34 +13,35 @@
 #include "../../os/Bundle.hpp"
 #include "../../os/Handler.hpp"
 #include "../../os/UserHandle.hpp"
+#include "../../../JString.hpp"
 #include "./LauncherApps.hpp"
 
 namespace android::content::pm
 {
 	// Fields
-	jstring LauncherApps::ACTION_CONFIRM_PIN_APPWIDGET()
+	JString LauncherApps::ACTION_CONFIRM_PIN_APPWIDGET()
 	{
 		return getStaticObjectField(
 			"android.content.pm.LauncherApps",
 			"ACTION_CONFIRM_PIN_APPWIDGET",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring LauncherApps::ACTION_CONFIRM_PIN_SHORTCUT()
+	JString LauncherApps::ACTION_CONFIRM_PIN_SHORTCUT()
 	{
 		return getStaticObjectField(
 			"android.content.pm.LauncherApps",
 			"ACTION_CONFIRM_PIN_SHORTCUT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring LauncherApps::EXTRA_PIN_ITEM_REQUEST()
+	JString LauncherApps::EXTRA_PIN_ITEM_REQUEST()
 	{
 		return getStaticObjectField(
 			"android.content.pm.LauncherApps",
 			"EXTRA_PIN_ITEM_REQUEST",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QJniObject forward
@@ -49,21 +50,21 @@ namespace android::content::pm
 	// Constructors
 	
 	// Methods
-	JObject LauncherApps::getActivityList(jstring arg0, android::os::UserHandle arg1)
+	JObject LauncherApps::getActivityList(JString arg0, android::os::UserHandle arg1)
 	{
 		return callObjectMethod(
 			"getActivityList",
 			"(Ljava/lang/String;Landroid/os/UserHandle;)Ljava/util/List;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
-	android::content::pm::ApplicationInfo LauncherApps::getApplicationInfo(jstring arg0, jint arg1, android::os::UserHandle arg2)
+	android::content::pm::ApplicationInfo LauncherApps::getApplicationInfo(JString arg0, jint arg1, android::os::UserHandle arg2)
 	{
 		return callObjectMethod(
 			"getApplicationInfo",
 			"(Ljava/lang/String;ILandroid/os/UserHandle;)Landroid/content/pm/ApplicationInfo;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
 			arg2.object()
 		);
@@ -100,12 +101,12 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	JObject LauncherApps::getShortcutConfigActivityList(jstring arg0, android::os::UserHandle arg1)
+	JObject LauncherApps::getShortcutConfigActivityList(JString arg0, android::os::UserHandle arg1)
 	{
 		return callObjectMethod(
 			"getShortcutConfigActivityList",
 			"(Ljava/lang/String;Landroid/os/UserHandle;)Ljava/util/List;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
@@ -127,12 +128,12 @@ namespace android::content::pm
 			arg1.object()
 		);
 	}
-	android::os::Bundle LauncherApps::getSuspendedPackageLauncherExtras(jstring arg0, android::os::UserHandle arg1)
+	android::os::Bundle LauncherApps::getSuspendedPackageLauncherExtras(JString arg0, android::os::UserHandle arg1)
 	{
 		return callObjectMethod(
 			"getSuspendedPackageLauncherExtras",
 			"(Ljava/lang/String;Landroid/os/UserHandle;)Landroid/os/Bundle;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
@@ -152,21 +153,21 @@ namespace android::content::pm
 			arg1.object()
 		);
 	}
-	jboolean LauncherApps::isPackageEnabled(jstring arg0, android::os::UserHandle arg1)
+	jboolean LauncherApps::isPackageEnabled(JString arg0, android::os::UserHandle arg1)
 	{
 		return callMethod<jboolean>(
 			"isPackageEnabled",
 			"(Ljava/lang/String;Landroid/os/UserHandle;)Z",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
-	void LauncherApps::pinShortcuts(jstring arg0, JObject arg1, android::os::UserHandle arg2)
+	void LauncherApps::pinShortcuts(JString arg0, JObject arg1, android::os::UserHandle arg2)
 	{
 		callMethod<void>(
 			"pinShortcuts",
 			"(Ljava/lang/String;Ljava/util/List;Landroid/os/UserHandle;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
 			arg2.object()
 		);
@@ -229,13 +230,13 @@ namespace android::content::pm
 			arg2.object()
 		);
 	}
-	void LauncherApps::startShortcut(jstring arg0, jstring arg1, android::graphics::Rect arg2, android::os::Bundle arg3, android::os::UserHandle arg4)
+	void LauncherApps::startShortcut(JString arg0, JString arg1, android::graphics::Rect arg2, android::os::Bundle arg3, android::os::UserHandle arg4)
 	{
 		callMethod<void>(
 			"startShortcut",
 			"(Ljava/lang/String;Ljava/lang/String;Landroid/graphics/Rect;Landroid/os/Bundle;Landroid/os/UserHandle;)V",
-			arg0,
-			arg1,
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
 			arg2.object(),
 			arg3.object(),
 			arg4.object()

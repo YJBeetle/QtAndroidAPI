@@ -1,4 +1,6 @@
+#include "../../JByteArray.hpp"
 #include "../os/Parcel.hpp"
+#include "../../JString.hpp"
 #include "./IccOpenLogicalChannelResponse.hpp"
 
 namespace android::telephony
@@ -68,12 +70,12 @@ namespace android::telephony
 			"()I"
 		);
 	}
-	jbyteArray IccOpenLogicalChannelResponse::getSelectResponse()
+	JByteArray IccOpenLogicalChannelResponse::getSelectResponse()
 	{
 		return callObjectMethod(
 			"getSelectResponse",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
 	jint IccOpenLogicalChannelResponse::getStatus()
 	{
@@ -82,12 +84,12 @@ namespace android::telephony
 			"()I"
 		);
 	}
-	jstring IccOpenLogicalChannelResponse::toString()
+	JString IccOpenLogicalChannelResponse::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void IccOpenLogicalChannelResponse::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

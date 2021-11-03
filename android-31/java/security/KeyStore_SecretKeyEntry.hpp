@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JString;
 
 namespace java::security
 {
@@ -21,7 +22,7 @@ namespace java::security
 		// Methods
 		JObject getAttributes();
 		JObject getSecretKey();
-		jstring toString();
+		JString toString();
 	};
 } // namespace java::security
 

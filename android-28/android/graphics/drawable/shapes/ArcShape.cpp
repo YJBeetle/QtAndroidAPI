@@ -3,6 +3,7 @@
 #include "../../Paint.hpp"
 #include "./RectShape.hpp"
 #include "./Shape.hpp"
+#include "../../../../JObject.hpp"
 #include "./ArcShape.hpp"
 
 namespace android::graphics::drawable::shapes

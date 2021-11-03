@@ -1,34 +1,36 @@
+#include "../../../../JObject.hpp"
+#include "../../../../JString.hpp"
 #include "./IkeFqdnIdentification.hpp"
 
 namespace android::net::ipsec::ike
 {
 	// Fields
-	jstring IkeFqdnIdentification::fqdn()
+	JString IkeFqdnIdentification::fqdn()
 	{
 		return getObjectField(
 			"fqdn",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QJniObject forward
 	IkeFqdnIdentification::IkeFqdnIdentification(QJniObject obj) : android::net::ipsec::ike::IkeIdentification(obj) {}
 	
 	// Constructors
-	IkeFqdnIdentification::IkeFqdnIdentification(jstring arg0)
+	IkeFqdnIdentification::IkeFqdnIdentification(JString arg0)
 		: android::net::ipsec::ike::IkeIdentification(
 			"android.net.ipsec.ike.IkeFqdnIdentification",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods
-	jboolean IkeFqdnIdentification::equals(jobject arg0)
+	jboolean IkeFqdnIdentification::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint IkeFqdnIdentification::hashCode()

@@ -1,9 +1,8 @@
 #pragma once
 
-#include "../../../../JObject.hpp"
-#include "./Shape.hpp"
 #include "./RectShape.hpp"
 
+class JFloatArray;
 namespace android::graphics
 {
 	class Canvas;
@@ -28,6 +27,7 @@ namespace android::graphics::drawable::shapes
 {
 	class Shape;
 }
+class JObject;
 
 namespace android::graphics::drawable::shapes
 {
@@ -41,12 +41,12 @@ namespace android::graphics::drawable::shapes
 		RoundRectShape(QJniObject obj);
 		
 		// Constructors
-		RoundRectShape(jfloatArray arg0, android::graphics::RectF arg1, jfloatArray arg2);
+		RoundRectShape(JFloatArray arg0, android::graphics::RectF arg1, JFloatArray arg2);
 		
 		// Methods
 		android::graphics::drawable::shapes::RoundRectShape clone();
 		void draw(android::graphics::Canvas arg0, android::graphics::Paint arg1);
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		void getOutline(android::graphics::Outline arg0);
 		jint hashCode();
 	};

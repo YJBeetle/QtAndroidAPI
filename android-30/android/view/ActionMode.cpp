@@ -1,5 +1,7 @@
 #include "./MenuInflater.hpp"
 #include "./View.hpp"
+#include "../../JString.hpp"
+#include "../../JObject.hpp"
 #include "./ActionMode.hpp"
 
 namespace android::view
@@ -66,26 +68,26 @@ namespace android::view
 			"()Landroid/view/MenuInflater;"
 		);
 	}
-	jstring ActionMode::getSubtitle()
+	JString ActionMode::getSubtitle()
 	{
 		return callObjectMethod(
 			"getSubtitle",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
-	jobject ActionMode::getTag()
+	JObject ActionMode::getTag()
 	{
 		return callObjectMethod(
 			"getTag",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
-	jstring ActionMode::getTitle()
+	JString ActionMode::getTitle()
 	{
 		return callObjectMethod(
 			"getTitle",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	jboolean ActionMode::getTitleOptionalHint()
 	{
@@ -154,20 +156,20 @@ namespace android::view
 			arg0
 		);
 	}
-	void ActionMode::setSubtitle(jstring arg0)
+	void ActionMode::setSubtitle(JString arg0)
 	{
 		callMethod<void>(
 			"setSubtitle",
 			"(Ljava/lang/CharSequence;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	void ActionMode::setTag(jobject arg0)
+	void ActionMode::setTag(JObject arg0)
 	{
 		callMethod<void>(
 			"setTag",
 			"(Ljava/lang/Object;)V",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	void ActionMode::setTitle(jint arg0)
@@ -178,12 +180,12 @@ namespace android::view
 			arg0
 		);
 	}
-	void ActionMode::setTitle(jstring arg0)
+	void ActionMode::setTitle(JString arg0)
 	{
 		callMethod<void>(
 			"setTitle",
 			"(Ljava/lang/CharSequence;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void ActionMode::setTitleOptionalHint(jboolean arg0)

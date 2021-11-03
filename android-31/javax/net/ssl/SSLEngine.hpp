@@ -2,6 +2,9 @@
 
 #include "../../../JObject.hpp"
 
+class JArray;
+class JArray;
+class JString;
 namespace java::nio
 {
 	class ByteBuffer;
@@ -36,40 +39,40 @@ namespace javax::net::ssl
 		void beginHandshake();
 		void closeInbound();
 		void closeOutbound();
-		jstring getApplicationProtocol();
+		JString getApplicationProtocol();
 		JObject getDelegatedTask();
 		jboolean getEnableSessionCreation();
-		jarray getEnabledCipherSuites();
-		jarray getEnabledProtocols();
-		jstring getHandshakeApplicationProtocol();
+		JArray getEnabledCipherSuites();
+		JArray getEnabledProtocols();
+		JString getHandshakeApplicationProtocol();
 		JObject getHandshakeApplicationProtocolSelector();
 		JObject getHandshakeSession();
 		javax::net::ssl::SSLEngineResult_HandshakeStatus getHandshakeStatus();
 		jboolean getNeedClientAuth();
-		jstring getPeerHost();
+		JString getPeerHost();
 		jint getPeerPort();
 		javax::net::ssl::SSLParameters getSSLParameters();
 		JObject getSession();
-		jarray getSupportedCipherSuites();
-		jarray getSupportedProtocols();
+		JArray getSupportedCipherSuites();
+		JArray getSupportedProtocols();
 		jboolean getUseClientMode();
 		jboolean getWantClientAuth();
 		jboolean isInboundDone();
 		jboolean isOutboundDone();
 		void setEnableSessionCreation(jboolean arg0);
-		void setEnabledCipherSuites(jarray arg0);
-		void setEnabledProtocols(jarray arg0);
+		void setEnabledCipherSuites(JArray arg0);
+		void setEnabledProtocols(JArray arg0);
 		void setHandshakeApplicationProtocolSelector(JObject arg0);
 		void setNeedClientAuth(jboolean arg0);
 		void setSSLParameters(javax::net::ssl::SSLParameters arg0);
 		void setUseClientMode(jboolean arg0);
 		void setWantClientAuth(jboolean arg0);
-		javax::net::ssl::SSLEngineResult unwrap(java::nio::ByteBuffer arg0, jarray arg1);
+		javax::net::ssl::SSLEngineResult unwrap(java::nio::ByteBuffer arg0, JArray arg1);
 		javax::net::ssl::SSLEngineResult unwrap(java::nio::ByteBuffer arg0, java::nio::ByteBuffer arg1);
-		javax::net::ssl::SSLEngineResult unwrap(java::nio::ByteBuffer arg0, jarray arg1, jint arg2, jint arg3);
-		javax::net::ssl::SSLEngineResult wrap(jarray arg0, java::nio::ByteBuffer arg1);
+		javax::net::ssl::SSLEngineResult unwrap(java::nio::ByteBuffer arg0, JArray arg1, jint arg2, jint arg3);
+		javax::net::ssl::SSLEngineResult wrap(JArray arg0, java::nio::ByteBuffer arg1);
 		javax::net::ssl::SSLEngineResult wrap(java::nio::ByteBuffer arg0, java::nio::ByteBuffer arg1);
-		javax::net::ssl::SSLEngineResult wrap(jarray arg0, jint arg1, jint arg2, java::nio::ByteBuffer arg3);
+		javax::net::ssl::SSLEngineResult wrap(JArray arg0, jint arg1, jint arg2, java::nio::ByteBuffer arg3);
 	};
 } // namespace javax::net::ssl
 

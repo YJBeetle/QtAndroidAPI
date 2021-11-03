@@ -1,13 +1,13 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "./Reader.hpp"
 #include "./BufferedReader.hpp"
 
+class JCharArray;
 namespace java::io
 {
 	class Reader;
 }
+class JString;
 
 namespace java::io
 {
@@ -28,8 +28,8 @@ namespace java::io
 		jint getLineNumber();
 		void mark(jint arg0);
 		jint read();
-		jint read(jcharArray arg0, jint arg1, jint arg2);
-		jstring readLine();
+		jint read(JCharArray arg0, jint arg1, jint arg2);
+		JString readLine();
 		void reset();
 		void setLineNumber(jint arg0);
 		jlong skip(jlong arg0);

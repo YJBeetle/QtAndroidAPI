@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JByteArray;
 namespace android::content
 {
 	class Context;
@@ -30,6 +31,7 @@ namespace java::io
 {
 	class File;
 }
+class JString;
 
 namespace android::telephony
 {
@@ -37,11 +39,11 @@ namespace android::telephony
 	{
 	public:
 		// Fields
-		static jstring DEFAULT_TOP_LEVEL_TEMP_DIRECTORY();
-		static jstring EXTRA_MBMS_COMPLETED_FILE_URI();
-		static jstring EXTRA_MBMS_DOWNLOAD_REQUEST();
-		static jstring EXTRA_MBMS_DOWNLOAD_RESULT();
-		static jstring EXTRA_MBMS_FILE_INFO();
+		static JString DEFAULT_TOP_LEVEL_TEMP_DIRECTORY();
+		static JString EXTRA_MBMS_COMPLETED_FILE_URI();
+		static JString EXTRA_MBMS_DOWNLOAD_REQUEST();
+		static JString EXTRA_MBMS_DOWNLOAD_RESULT();
+		static JString EXTRA_MBMS_FILE_INFO();
 		static jint RESULT_CANCELLED();
 		static jint RESULT_DOWNLOAD_FAILURE();
 		static jint RESULT_EXPIRED();
@@ -67,7 +69,7 @@ namespace android::telephony
 		static android::telephony::MbmsDownloadSession create(android::content::Context arg0, JObject arg1, jint arg2, android::telephony::mbms::MbmsDownloadSessionCallback arg3);
 		static jint getMaximumServiceAnnouncementSize();
 		void addProgressListener(android::telephony::mbms::DownloadRequest arg0, JObject arg1, android::telephony::mbms::DownloadProgressListener arg2);
-		void addServiceAnnouncement(jbyteArray arg0);
+		void addServiceAnnouncement(JByteArray arg0);
 		void addStatusListener(android::telephony::mbms::DownloadRequest arg0, JObject arg1, android::telephony::mbms::DownloadStatusListener arg2);
 		void cancelDownload(android::telephony::mbms::DownloadRequest arg0);
 		void close();

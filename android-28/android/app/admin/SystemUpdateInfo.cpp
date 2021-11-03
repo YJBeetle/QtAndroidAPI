@@ -1,4 +1,6 @@
 #include "../../os/Parcel.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./SystemUpdateInfo.hpp"
 
 namespace android::app::admin
@@ -47,12 +49,12 @@ namespace android::app::admin
 			"()I"
 		);
 	}
-	jboolean SystemUpdateInfo::equals(jobject arg0)
+	jboolean SystemUpdateInfo::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jlong SystemUpdateInfo::getReceivedTime()
@@ -76,12 +78,12 @@ namespace android::app::admin
 			"()I"
 		);
 	}
-	jstring SystemUpdateInfo::toString()
+	JString SystemUpdateInfo::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void SystemUpdateInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

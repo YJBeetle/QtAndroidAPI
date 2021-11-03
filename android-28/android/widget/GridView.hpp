@@ -1,9 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../view/View.hpp"
-#include "../view/ViewGroup.hpp"
-#include "./AdapterView.hpp"
 #include "./AbsListView.hpp"
 
 namespace android::content
@@ -34,6 +30,7 @@ namespace android::view::accessibility
 {
 	class AccessibilityNodeInfo;
 }
+class JString;
 
 namespace android::widget
 {
@@ -58,7 +55,7 @@ namespace android::widget
 		GridView(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
-		jstring getAccessibilityClassName();
+		JString getAccessibilityClassName();
 		JObject getAdapter();
 		jint getColumnWidth();
 		jint getGravity();

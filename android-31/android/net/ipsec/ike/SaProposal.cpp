@@ -1,3 +1,5 @@
+#include "../../../../JObject.hpp"
+#include "../../../../JString.hpp"
 #include "./SaProposal.hpp"
 
 namespace android::net::ipsec::ike
@@ -235,12 +237,12 @@ namespace android::net::ipsec::ike
 			"()Ljava/util/Set;"
 		);
 	}
-	jboolean SaProposal::equals(jobject arg0)
+	jboolean SaProposal::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	JObject SaProposal::getDhGroups()
@@ -271,12 +273,12 @@ namespace android::net::ipsec::ike
 			"()I"
 		);
 	}
-	jstring SaProposal::toString()
+	JString SaProposal::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::net::ipsec::ike
 

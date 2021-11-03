@@ -1,3 +1,5 @@
+#include "../../JString.hpp"
+#include "../../JThrowable.hpp"
 #include "./InternalError.hpp"
 
 namespace java::lang
@@ -13,24 +15,24 @@ namespace java::lang
 			"java.lang.InternalError",
 			"()V"
 		) {}
-	InternalError::InternalError(jstring arg0)
+	InternalError::InternalError(JString arg0)
 		: java::lang::VirtualMachineError(
 			"java.lang.InternalError",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	InternalError::InternalError(jthrowable arg0)
+	InternalError::InternalError(JThrowable arg0)
 		: java::lang::VirtualMachineError(
 			"java.lang.InternalError",
 			"(Ljava/lang/Throwable;)V",
-			arg0
+			arg0.object<jthrowable>()
 		) {}
-	InternalError::InternalError(jstring arg0, jthrowable arg1)
+	InternalError::InternalError(JString arg0, JThrowable arg1)
 		: java::lang::VirtualMachineError(
 			"java.lang.InternalError",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
 		) {}
 	
 	// Methods

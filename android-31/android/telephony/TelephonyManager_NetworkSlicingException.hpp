@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "../../java/lang/Exception.hpp"
 
+class JString;
 
 namespace android::telephony
 {
@@ -18,7 +18,7 @@ namespace android::telephony
 		// Constructors
 		
 		// Methods
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::telephony
 

@@ -1,4 +1,5 @@
 #include "../../java/lang/Exception.hpp"
+#include "../../JString.hpp"
 #include "./IntentSender_SendIntentException.hpp"
 
 namespace android::content
@@ -20,11 +21,11 @@ namespace android::content
 			"(Ljava/lang/Exception;)V",
 			arg0.object()
 		) {}
-	IntentSender_SendIntentException::IntentSender_SendIntentException(jstring arg0)
+	IntentSender_SendIntentException::IntentSender_SendIntentException(JString arg0)
 		: android::util::AndroidException(
 			"android.content.IntentSender$SendIntentException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

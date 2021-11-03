@@ -1,3 +1,5 @@
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
 #include "./TextView_BufferType.hpp"
 
 namespace android::widget
@@ -34,22 +36,22 @@ namespace android::widget
 	// Constructors
 	
 	// Methods
-	android::widget::TextView_BufferType TextView_BufferType::valueOf(jstring arg0)
+	android::widget::TextView_BufferType TextView_BufferType::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.widget.TextView$BufferType",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/widget/TextView$BufferType;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray TextView_BufferType::values()
+	JArray TextView_BufferType::values()
 	{
 		return callStaticObjectMethod(
 			"android.widget.TextView$BufferType",
 			"values",
 			"()[Landroid/widget/TextView$BufferType;"
-		).object<jarray>();
+		);
 	}
 } // namespace android::widget
 

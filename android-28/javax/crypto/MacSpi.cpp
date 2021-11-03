@@ -1,3 +1,5 @@
+#include "../../JByteArray.hpp"
+#include "../../JObject.hpp"
 #include "../../java/nio/ByteBuffer.hpp"
 #include "./MacSpi.hpp"
 
@@ -16,12 +18,12 @@ namespace javax::crypto
 		) {}
 	
 	// Methods
-	jobject MacSpi::clone()
+	JObject MacSpi::clone()
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
 } // namespace javax::crypto
 

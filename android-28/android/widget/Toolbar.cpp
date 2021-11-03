@@ -3,6 +3,7 @@
 #include "../view/MotionEvent.hpp"
 #include "../view/ViewGroup_LayoutParams.hpp"
 #include "./Toolbar_LayoutParams.hpp"
+#include "../../JString.hpp"
 #include "./Toolbar.hpp"
 
 namespace android::widget
@@ -144,12 +145,12 @@ namespace android::widget
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	jstring Toolbar::getLogoDescription()
+	JString Toolbar::getLogoDescription()
 	{
 		return callObjectMethod(
 			"getLogoDescription",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	JObject Toolbar::getMenu()
 	{
@@ -158,12 +159,12 @@ namespace android::widget
 			"()Landroid/view/Menu;"
 		);
 	}
-	jstring Toolbar::getNavigationContentDescription()
+	JString Toolbar::getNavigationContentDescription()
 	{
 		return callObjectMethod(
 			"getNavigationContentDescription",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	android::graphics::drawable::Drawable Toolbar::getNavigationIcon()
 	{
@@ -186,19 +187,19 @@ namespace android::widget
 			"()I"
 		);
 	}
-	jstring Toolbar::getSubtitle()
+	JString Toolbar::getSubtitle()
 	{
 		return callObjectMethod(
 			"getSubtitle",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
-	jstring Toolbar::getTitle()
+	JString Toolbar::getTitle()
 	{
 		return callObjectMethod(
 			"getTitle",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	jint Toolbar::getTitleMarginBottom()
 	{
@@ -331,12 +332,12 @@ namespace android::widget
 			arg0
 		);
 	}
-	void Toolbar::setLogoDescription(jstring arg0)
+	void Toolbar::setLogoDescription(JString arg0)
 	{
 		callMethod<void>(
 			"setLogoDescription",
 			"(Ljava/lang/CharSequence;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void Toolbar::setNavigationContentDescription(jint arg0)
@@ -347,12 +348,12 @@ namespace android::widget
 			arg0
 		);
 	}
-	void Toolbar::setNavigationContentDescription(jstring arg0)
+	void Toolbar::setNavigationContentDescription(JString arg0)
 	{
 		callMethod<void>(
 			"setNavigationContentDescription",
 			"(Ljava/lang/CharSequence;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void Toolbar::setNavigationIcon(android::graphics::drawable::Drawable arg0)
@@ -411,12 +412,12 @@ namespace android::widget
 			arg0
 		);
 	}
-	void Toolbar::setSubtitle(jstring arg0)
+	void Toolbar::setSubtitle(JString arg0)
 	{
 		callMethod<void>(
 			"setSubtitle",
 			"(Ljava/lang/CharSequence;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void Toolbar::setSubtitleTextAppearance(android::content::Context arg0, jint arg1)
@@ -444,12 +445,12 @@ namespace android::widget
 			arg0
 		);
 	}
-	void Toolbar::setTitle(jstring arg0)
+	void Toolbar::setTitle(JString arg0)
 	{
 		callMethod<void>(
 			"setTitle",
 			"(Ljava/lang/CharSequence;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void Toolbar::setTitleMargin(jint arg0, jint arg1, jint arg2, jint arg3)

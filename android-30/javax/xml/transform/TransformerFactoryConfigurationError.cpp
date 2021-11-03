@@ -1,4 +1,6 @@
 #include "../../../java/lang/Exception.hpp"
+#include "../../../JString.hpp"
+#include "../../../JThrowable.hpp"
 #include "./TransformerFactoryConfigurationError.hpp"
 
 namespace javax::xml::transform
@@ -20,27 +22,27 @@ namespace javax::xml::transform
 			"(Ljava/lang/Exception;)V",
 			arg0.object()
 		) {}
-	TransformerFactoryConfigurationError::TransformerFactoryConfigurationError(jstring arg0)
+	TransformerFactoryConfigurationError::TransformerFactoryConfigurationError(JString arg0)
 		: java::lang::Error(
 			"javax.xml.transform.TransformerFactoryConfigurationError",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	TransformerFactoryConfigurationError::TransformerFactoryConfigurationError(java::lang::Exception arg0, jstring arg1)
+	TransformerFactoryConfigurationError::TransformerFactoryConfigurationError(java::lang::Exception arg0, JString arg1)
 		: java::lang::Error(
 			"javax.xml.transform.TransformerFactoryConfigurationError",
 			"(Ljava/lang/Exception;Ljava/lang/String;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		) {}
 	
 	// Methods
-	jthrowable TransformerFactoryConfigurationError::getCause()
+	JThrowable TransformerFactoryConfigurationError::getCause()
 	{
 		return callObjectMethod(
 			"getCause",
 			"()Ljava/lang/Throwable;"
-		).object<jthrowable>();
+		);
 	}
 	java::lang::Exception TransformerFactoryConfigurationError::getException()
 	{
@@ -49,12 +51,12 @@ namespace javax::xml::transform
 			"()Ljava/lang/Exception;"
 		);
 	}
-	jstring TransformerFactoryConfigurationError::getMessage()
+	JString TransformerFactoryConfigurationError::getMessage()
 	{
 		return callObjectMethod(
 			"getMessage",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace javax::xml::transform
 

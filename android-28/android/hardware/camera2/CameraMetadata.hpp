@@ -2,7 +2,6 @@
 
 #include "../../../JObject.hpp"
 
-
 namespace android::hardware::camera2
 {
 	class CameraMetadata : public JObject

@@ -2,7 +2,6 @@
 
 #include "../../../JObject.hpp"
 
-
 namespace android::media::browse
 {
 	class MediaBrowser_ConnectionCallback : public JObject

@@ -1,5 +1,6 @@
 #include "../../java/io/Writer.hpp"
 #include "../../java/lang/Number.hpp"
+#include "../../JString.hpp"
 #include "./JsonWriter.hpp"
 
 namespace android::util
@@ -67,12 +68,12 @@ namespace android::util
 			"()Z"
 		);
 	}
-	android::util::JsonWriter JsonWriter::name(jstring arg0)
+	android::util::JsonWriter JsonWriter::name(JString arg0)
 	{
 		return callObjectMethod(
 			"name",
 			"(Ljava/lang/String;)Landroid/util/JsonWriter;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::util::JsonWriter JsonWriter::nullValue()
@@ -82,12 +83,12 @@ namespace android::util
 			"()Landroid/util/JsonWriter;"
 		);
 	}
-	void JsonWriter::setIndent(jstring arg0)
+	void JsonWriter::setIndent(JString arg0)
 	{
 		callMethod<void>(
 			"setIndent",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void JsonWriter::setLenient(jboolean arg0)
@@ -122,12 +123,12 @@ namespace android::util
 			arg0.object()
 		);
 	}
-	android::util::JsonWriter JsonWriter::value(jstring arg0)
+	android::util::JsonWriter JsonWriter::value(JString arg0)
 	{
 		return callObjectMethod(
 			"value",
 			"(Ljava/lang/String;)Landroid/util/JsonWriter;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::util::JsonWriter JsonWriter::value(jlong arg0)

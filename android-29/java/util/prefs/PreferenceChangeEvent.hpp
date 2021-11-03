@@ -1,6 +1,5 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "../EventObject.hpp"
 
 namespace java::io
@@ -11,6 +10,7 @@ namespace java::io
 {
 	class ObjectOutputStream;
 }
+class JString;
 namespace java::util::prefs
 {
 	class Preferences;
@@ -28,11 +28,11 @@ namespace java::util::prefs
 		PreferenceChangeEvent(QJniObject obj);
 		
 		// Constructors
-		PreferenceChangeEvent(java::util::prefs::Preferences arg0, jstring arg1, jstring arg2);
+		PreferenceChangeEvent(java::util::prefs::Preferences arg0, JString arg1, JString arg2);
 		
 		// Methods
-		jstring getKey();
-		jstring getNewValue();
+		JString getKey();
+		JString getNewValue();
 		java::util::prefs::Preferences getNode();
 	};
 } // namespace java::util::prefs

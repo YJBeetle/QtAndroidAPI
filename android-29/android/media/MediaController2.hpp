@@ -22,6 +22,7 @@ namespace android::os
 {
 	class Bundle;
 }
+class JObject;
 
 namespace android::media
 {
@@ -37,11 +38,11 @@ namespace android::media
 		// Constructors
 		
 		// Methods
-		void cancelSessionCommand(jobject arg0);
+		void cancelSessionCommand(JObject arg0);
 		void close();
 		android::media::Session2Token getConnectedToken();
 		jboolean isPlaybackActive();
-		jobject sendSessionCommand(android::media::Session2Command arg0, android::os::Bundle arg1);
+		JObject sendSessionCommand(android::media::Session2Command arg0, android::os::Bundle arg1);
 	};
 } // namespace android::media
 

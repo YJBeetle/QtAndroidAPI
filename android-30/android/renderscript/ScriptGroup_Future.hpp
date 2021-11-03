@@ -2,7 +2,6 @@
 
 #include "../../JObject.hpp"
 
-
 namespace android::renderscript
 {
 	class ScriptGroup_Future : public JObject

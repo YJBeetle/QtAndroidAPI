@@ -10,6 +10,8 @@ namespace android::os
 {
 	class Parcel;
 }
+class JObject;
+class JString;
 
 namespace android::media
 {
@@ -26,13 +28,13 @@ namespace android::media
 		
 		// Constructors
 		Session2Command(jint arg0);
-		Session2Command(jstring arg0, android::os::Bundle arg1);
+		Session2Command(JString arg0, android::os::Bundle arg1);
 		
 		// Methods
 		jint describeContents();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint getCommandCode();
-		jstring getCustomAction();
+		JString getCustomAction();
 		android::os::Bundle getCustomExtras();
 		jint hashCode();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);

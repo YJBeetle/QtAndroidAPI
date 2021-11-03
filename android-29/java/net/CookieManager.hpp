@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./CookieHandler.hpp"
 
+class JString;
 namespace java::net
 {
 	class HttpCookie;

@@ -1,4 +1,5 @@
 #include "../lang/IllegalArgumentException.hpp"
+#include "../../JObject.hpp"
 #include "./Buffer.hpp"
 
 namespace java::nio
@@ -11,12 +12,12 @@ namespace java::nio
 	// Constructors
 	
 	// Methods
-	jobject Buffer::array()
+	JObject Buffer::array()
 	{
 		return callObjectMethod(
 			"array",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
 	jint Buffer::arrayOffset()
 	{

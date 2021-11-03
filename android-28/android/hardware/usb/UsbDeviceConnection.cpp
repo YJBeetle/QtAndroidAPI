@@ -1,8 +1,10 @@
+#include "../../../JByteArray.hpp"
 #include "./UsbConfiguration.hpp"
 #include "./UsbDevice.hpp"
 #include "./UsbEndpoint.hpp"
 #include "./UsbInterface.hpp"
 #include "./UsbRequest.hpp"
+#include "../../../JString.hpp"
 #include "./UsbDeviceConnection.hpp"
 
 namespace android::hardware::usb
@@ -15,24 +17,24 @@ namespace android::hardware::usb
 	// Constructors
 	
 	// Methods
-	jint UsbDeviceConnection::bulkTransfer(android::hardware::usb::UsbEndpoint arg0, jbyteArray arg1, jint arg2, jint arg3)
+	jint UsbDeviceConnection::bulkTransfer(android::hardware::usb::UsbEndpoint arg0, JByteArray arg1, jint arg2, jint arg3)
 	{
 		return callMethod<jint>(
 			"bulkTransfer",
 			"(Landroid/hardware/usb/UsbEndpoint;[BII)I",
 			arg0.object(),
-			arg1,
+			arg1.object<jbyteArray>(),
 			arg2,
 			arg3
 		);
 	}
-	jint UsbDeviceConnection::bulkTransfer(android::hardware::usb::UsbEndpoint arg0, jbyteArray arg1, jint arg2, jint arg3, jint arg4)
+	jint UsbDeviceConnection::bulkTransfer(android::hardware::usb::UsbEndpoint arg0, JByteArray arg1, jint arg2, jint arg3, jint arg4)
 	{
 		return callMethod<jint>(
 			"bulkTransfer",
 			"(Landroid/hardware/usb/UsbEndpoint;[BIII)I",
 			arg0.object(),
-			arg1,
+			arg1.object<jbyteArray>(),
 			arg2,
 			arg3,
 			arg4
@@ -54,7 +56,7 @@ namespace android::hardware::usb
 			"()V"
 		);
 	}
-	jint UsbDeviceConnection::controlTransfer(jint arg0, jint arg1, jint arg2, jint arg3, jbyteArray arg4, jint arg5, jint arg6)
+	jint UsbDeviceConnection::controlTransfer(jint arg0, jint arg1, jint arg2, jint arg3, JByteArray arg4, jint arg5, jint arg6)
 	{
 		return callMethod<jint>(
 			"controlTransfer",
@@ -63,12 +65,12 @@ namespace android::hardware::usb
 			arg1,
 			arg2,
 			arg3,
-			arg4,
+			arg4.object<jbyteArray>(),
 			arg5,
 			arg6
 		);
 	}
-	jint UsbDeviceConnection::controlTransfer(jint arg0, jint arg1, jint arg2, jint arg3, jbyteArray arg4, jint arg5, jint arg6, jint arg7)
+	jint UsbDeviceConnection::controlTransfer(jint arg0, jint arg1, jint arg2, jint arg3, JByteArray arg4, jint arg5, jint arg6, jint arg7)
 	{
 		return callMethod<jint>(
 			"controlTransfer",
@@ -77,7 +79,7 @@ namespace android::hardware::usb
 			arg1,
 			arg2,
 			arg3,
-			arg4,
+			arg4.object<jbyteArray>(),
 			arg5,
 			arg6,
 			arg7
@@ -90,19 +92,19 @@ namespace android::hardware::usb
 			"()I"
 		);
 	}
-	jbyteArray UsbDeviceConnection::getRawDescriptors()
+	JByteArray UsbDeviceConnection::getRawDescriptors()
 	{
 		return callObjectMethod(
 			"getRawDescriptors",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
-	jstring UsbDeviceConnection::getSerial()
+	JString UsbDeviceConnection::getSerial()
 	{
 		return callObjectMethod(
 			"getSerial",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jboolean UsbDeviceConnection::releaseInterface(android::hardware::usb::UsbInterface arg0)
 	{

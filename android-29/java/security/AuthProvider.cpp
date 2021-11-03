@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "../../javax/security/auth/Subject.hpp"
 #include "./AuthProvider.hpp"
 

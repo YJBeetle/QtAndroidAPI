@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "./PKIXParameters.hpp"
 
+class JString;
 namespace java::security
 {
 	class KeyStore;
@@ -26,7 +26,7 @@ namespace java::security::cert
 		// Methods
 		jint getMaxPathLength();
 		void setMaxPathLength(jint arg0);
-		jstring toString();
+		JString toString();
 	};
 } // namespace java::security::cert
 

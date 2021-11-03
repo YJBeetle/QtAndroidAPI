@@ -1,4 +1,5 @@
 #include "./ReportSystemUsageRequest.hpp"
+#include "../../../JString.hpp"
 #include "./ReportSystemUsageRequest_Builder.hpp"
 
 namespace android::app::appsearch
@@ -9,14 +10,14 @@ namespace android::app::appsearch
 	ReportSystemUsageRequest_Builder::ReportSystemUsageRequest_Builder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	ReportSystemUsageRequest_Builder::ReportSystemUsageRequest_Builder(jstring arg0, jstring arg1, jstring arg2, jstring arg3)
+	ReportSystemUsageRequest_Builder::ReportSystemUsageRequest_Builder(JString arg0, JString arg1, JString arg2, JString arg3)
 		: JObject(
 			"android.app.appsearch.ReportSystemUsageRequest$Builder",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2.object<jstring>(),
+			arg3.object<jstring>()
 		) {}
 	
 	// Methods

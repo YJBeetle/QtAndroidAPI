@@ -1,8 +1,9 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "../../lang/Enum.hpp"
 
+class JArray;
+class JString;
 
 namespace java::util::stream
 {
@@ -21,8 +22,8 @@ namespace java::util::stream
 		// Constructors
 		
 		// Methods
-		static java::util::stream::Collector_Characteristics valueOf(jstring arg0);
-		static jarray values();
+		static java::util::stream::Collector_Characteristics valueOf(JString arg0);
+		static JArray values();
 	};
 } // namespace java::util::stream
 

@@ -5,6 +5,8 @@
 #include "./Session2Command.hpp"
 #include "./Session2Token.hpp"
 #include "../os/Bundle.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./MediaSession2.hpp"
 
 namespace android::media
@@ -26,13 +28,13 @@ namespace android::media
 			arg1.object()
 		);
 	}
-	void MediaSession2::cancelSessionCommand(android::media::MediaSession2_ControllerInfo arg0, jobject arg1)
+	void MediaSession2::cancelSessionCommand(android::media::MediaSession2_ControllerInfo arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"cancelSessionCommand",
 			"(Landroid/media/MediaSession2$ControllerInfo;Ljava/lang/Object;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jobject>()
 		);
 	}
 	void MediaSession2::close()
@@ -49,12 +51,12 @@ namespace android::media
 			"()Ljava/util/List;"
 		);
 	}
-	jstring MediaSession2::getId()
+	JString MediaSession2::getId()
 	{
 		return callObjectMethod(
 			"getId",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::media::Session2Token MediaSession2::getToken()
 	{
@@ -70,7 +72,7 @@ namespace android::media
 			"()Z"
 		);
 	}
-	jobject MediaSession2::sendSessionCommand(android::media::MediaSession2_ControllerInfo arg0, android::media::Session2Command arg1, android::os::Bundle arg2)
+	JObject MediaSession2::sendSessionCommand(android::media::MediaSession2_ControllerInfo arg0, android::media::Session2Command arg1, android::os::Bundle arg2)
 	{
 		return callObjectMethod(
 			"sendSessionCommand",
@@ -78,7 +80,7 @@ namespace android::media
 			arg0.object(),
 			arg1.object(),
 			arg2.object()
-		).object<jobject>();
+		);
 	}
 	void MediaSession2::setPlaybackActive(jboolean arg0)
 	{

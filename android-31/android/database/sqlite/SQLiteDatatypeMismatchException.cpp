@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./SQLiteDatatypeMismatchException.hpp"
 
 namespace android::database::sqlite
@@ -13,11 +14,11 @@ namespace android::database::sqlite
 			"android.database.sqlite.SQLiteDatatypeMismatchException",
 			"()V"
 		) {}
-	SQLiteDatatypeMismatchException::SQLiteDatatypeMismatchException(jstring arg0)
+	SQLiteDatatypeMismatchException::SQLiteDatatypeMismatchException(JString arg0)
 		: android::database::sqlite::SQLiteException(
 			"android.database.sqlite.SQLiteDatatypeMismatchException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

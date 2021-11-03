@@ -1,9 +1,9 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "../../lang/Exception.hpp"
 #include "../../lang/RuntimeException.hpp"
 
+class JString;
+class JThrowable;
 
 namespace java::util::concurrent
 {
@@ -17,8 +17,8 @@ namespace java::util::concurrent
 		CompletionException(QJniObject obj);
 		
 		// Constructors
-		CompletionException(jthrowable arg0);
-		CompletionException(jstring arg0, jthrowable arg1);
+		CompletionException(JThrowable arg0);
+		CompletionException(JString arg0, JThrowable arg1);
 		
 		// Methods
 	};

@@ -1,3 +1,5 @@
+#include "../../JByteArray.hpp"
+#include "../../JString.hpp"
 #include "./concurrent/atomic/AtomicLong.hpp"
 #include "./SplittableRandom.hpp"
 
@@ -131,12 +133,12 @@ namespace java::util
 			"()Z"
 		);
 	}
-	void SplittableRandom::nextBytes(jbyteArray arg0)
+	void SplittableRandom::nextBytes(JByteArray arg0)
 	{
 		callMethod<void>(
 			"nextBytes",
 			"([B)V",
-			arg0
+			arg0.object<jbyteArray>()
 		);
 	}
 	jdouble SplittableRandom::nextDouble()

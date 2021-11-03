@@ -1,10 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "./AbstractCollection.hpp"
-#include "./AbstractList.hpp"
 #include "./Vector.hpp"
 
+class JObject;
 
 namespace java::util
 {
@@ -22,10 +20,10 @@ namespace java::util
 		
 		// Methods
 		jboolean empty();
-		jobject peek();
-		jobject pop();
-		jobject push(jobject arg0);
-		jint search(jobject arg0);
+		JObject peek();
+		JObject pop();
+		JObject push(JObject arg0);
+		jint search(JObject arg0);
 	};
 } // namespace java::util
 

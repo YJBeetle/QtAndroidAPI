@@ -1,4 +1,5 @@
 #include "./AttributionSource.hpp"
+#include "../../JString.hpp"
 #include "./AttributionSource_Builder.hpp"
 
 namespace android::content
@@ -24,12 +25,12 @@ namespace android::content
 			"()Landroid/content/AttributionSource;"
 		);
 	}
-	android::content::AttributionSource_Builder AttributionSource_Builder::setAttributionTag(jstring arg0)
+	android::content::AttributionSource_Builder AttributionSource_Builder::setAttributionTag(JString arg0)
 	{
 		return callObjectMethod(
 			"setAttributionTag",
 			"(Ljava/lang/String;)Landroid/content/AttributionSource$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::content::AttributionSource_Builder AttributionSource_Builder::setNext(android::content::AttributionSource arg0)
@@ -40,12 +41,12 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	android::content::AttributionSource_Builder AttributionSource_Builder::setPackageName(jstring arg0)
+	android::content::AttributionSource_Builder AttributionSource_Builder::setPackageName(JString arg0)
 	{
 		return callObjectMethod(
 			"setPackageName",
 			"(Ljava/lang/String;)Landroid/content/AttributionSource$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 } // namespace android::content

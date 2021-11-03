@@ -1,5 +1,7 @@
 #include "./Context.hpp"
 #include "../os/Parcel.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./AttributionSource.hpp"
 
 namespace android::content
@@ -41,20 +43,20 @@ namespace android::content
 			"()V"
 		);
 	}
-	jboolean AttributionSource::equals(jobject arg0)
+	jboolean AttributionSource::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jstring AttributionSource::getAttributionTag()
+	JString AttributionSource::getAttributionTag()
 	{
 		return callObjectMethod(
 			"getAttributionTag",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::content::AttributionSource AttributionSource::getNext()
 	{
@@ -63,12 +65,12 @@ namespace android::content
 			"()Landroid/content/AttributionSource;"
 		);
 	}
-	jstring AttributionSource::getPackageName()
+	JString AttributionSource::getPackageName()
 	{
 		return callObjectMethod(
 			"getPackageName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint AttributionSource::getUid()
 	{
@@ -92,12 +94,12 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	jstring AttributionSource::toString()
+	JString AttributionSource::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void AttributionSource::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

@@ -1,3 +1,5 @@
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
 #include "./ULocale_AvailableType.hpp"
 
 namespace android::icu::util
@@ -34,22 +36,22 @@ namespace android::icu::util
 	// Constructors
 	
 	// Methods
-	android::icu::util::ULocale_AvailableType ULocale_AvailableType::valueOf(jstring arg0)
+	android::icu::util::ULocale_AvailableType ULocale_AvailableType::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.icu.util.ULocale$AvailableType",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/icu/util/ULocale$AvailableType;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray ULocale_AvailableType::values()
+	JArray ULocale_AvailableType::values()
 	{
 		return callStaticObjectMethod(
 			"android.icu.util.ULocale$AvailableType",
 			"values",
 			"()[Landroid/icu/util/ULocale$AvailableType;"
-		).object<jarray>();
+		);
 	}
 } // namespace android::icu::util
 

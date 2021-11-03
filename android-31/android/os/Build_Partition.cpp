@@ -1,15 +1,17 @@
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./Build_Partition.hpp"
 
 namespace android::os
 {
 	// Fields
-	jstring Build_Partition::PARTITION_NAME_SYSTEM()
+	JString Build_Partition::PARTITION_NAME_SYSTEM()
 	{
 		return getStaticObjectField(
 			"android.os.Build$Partition",
 			"PARTITION_NAME_SYSTEM",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QJniObject forward
@@ -18,12 +20,12 @@ namespace android::os
 	// Constructors
 	
 	// Methods
-	jboolean Build_Partition::equals(jobject arg0)
+	jboolean Build_Partition::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jlong Build_Partition::getBuildTimeMillis()
@@ -33,19 +35,19 @@ namespace android::os
 			"()J"
 		);
 	}
-	jstring Build_Partition::getFingerprint()
+	JString Build_Partition::getFingerprint()
 	{
 		return callObjectMethod(
 			"getFingerprint",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Build_Partition::getName()
+	JString Build_Partition::getName()
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint Build_Partition::hashCode()
 	{

@@ -1,8 +1,5 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "../../content/Context.hpp"
-#include "../../content/ContextWrapper.hpp"
 #include "../../app/Service.hpp"
 
 namespace android::content
@@ -17,6 +14,7 @@ namespace android::service::carrier
 {
 	class CarrierIdentifier;
 }
+class JString;
 
 namespace android::service::carrier
 {
@@ -24,7 +22,7 @@ namespace android::service::carrier
 	{
 	public:
 		// Fields
-		static jstring CARRIER_SERVICE_INTERFACE();
+		static JString CARRIER_SERVICE_INTERFACE();
 		
 		// QJniObject forward
 		template<typename ...Ts> explicit CarrierService(const char *className, const char *sig, Ts...agv) : android::app::Service(className, sig, std::forward<Ts>(agv)...) {}

@@ -1,3 +1,7 @@
+#include "../../../JIntArray.hpp"
+#include "../../../JArray.hpp"
+#include "../../../JObjectArray.hpp"
+#include "../../../JArray.hpp"
 #include "./AssetFileDescriptor.hpp"
 #include "./AssetManager.hpp"
 #include "./ColorStateList.hpp"
@@ -11,6 +15,8 @@
 #include "../../util/DisplayMetrics.hpp"
 #include "../../util/TypedValue.hpp"
 #include "../../../java/io/InputStream.hpp"
+#include "../../../JString.hpp"
+#include "../../../JString.hpp"
 #include "./Resources.hpp"
 
 namespace android::content::res
@@ -202,23 +208,23 @@ namespace android::content::res
 			arg2
 		);
 	}
-	jint Resources::getIdentifier(jstring arg0, jstring arg1, jstring arg2)
+	jint Resources::getIdentifier(JString arg0, JString arg1, JString arg2)
 	{
 		return callMethod<jint>(
 			"getIdentifier",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I",
-			arg0,
-			arg1,
-			arg2
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2.object<jstring>()
 		);
 	}
-	jintArray Resources::getIntArray(jint arg0)
+	JIntArray Resources::getIntArray(jint arg0)
 	{
 		return callObjectMethod(
 			"getIntArray",
 			"(I)[I",
 			arg0
-		).object<jintArray>();
+		);
 	}
 	jint Resources::getInteger(jint arg0)
 	{
@@ -244,115 +250,115 @@ namespace android::content::res
 			arg0
 		);
 	}
-	jstring Resources::getQuantityString(jint arg0, jint arg1)
+	JString Resources::getQuantityString(jint arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"getQuantityString",
 			"(II)Ljava/lang/String;",
 			arg0,
 			arg1
-		).object<jstring>();
+		);
 	}
-	jstring Resources::getQuantityString(jint arg0, jint arg1, jobjectArray arg2)
+	JString Resources::getQuantityString(jint arg0, jint arg1, JObjectArray arg2)
 	{
 		return callObjectMethod(
 			"getQuantityString",
 			"(II[Ljava/lang/Object;)Ljava/lang/String;",
 			arg0,
 			arg1,
-			arg2
-		).object<jstring>();
+			arg2.object<jobjectArray>()
+		);
 	}
-	jstring Resources::getQuantityText(jint arg0, jint arg1)
+	JString Resources::getQuantityText(jint arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"getQuantityText",
 			"(II)Ljava/lang/CharSequence;",
 			arg0,
 			arg1
-		).object<jstring>();
+		);
 	}
-	jstring Resources::getResourceEntryName(jint arg0)
+	JString Resources::getResourceEntryName(jint arg0)
 	{
 		return callObjectMethod(
 			"getResourceEntryName",
 			"(I)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
-	jstring Resources::getResourceName(jint arg0)
+	JString Resources::getResourceName(jint arg0)
 	{
 		return callObjectMethod(
 			"getResourceName",
 			"(I)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
-	jstring Resources::getResourcePackageName(jint arg0)
+	JString Resources::getResourcePackageName(jint arg0)
 	{
 		return callObjectMethod(
 			"getResourcePackageName",
 			"(I)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
-	jstring Resources::getResourceTypeName(jint arg0)
+	JString Resources::getResourceTypeName(jint arg0)
 	{
 		return callObjectMethod(
 			"getResourceTypeName",
 			"(I)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
-	jstring Resources::getString(jint arg0)
+	JString Resources::getString(jint arg0)
 	{
 		return callObjectMethod(
 			"getString",
 			"(I)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
-	jstring Resources::getString(jint arg0, jobjectArray arg1)
+	JString Resources::getString(jint arg0, JObjectArray arg1)
 	{
 		return callObjectMethod(
 			"getString",
 			"(I[Ljava/lang/Object;)Ljava/lang/String;",
 			arg0,
-			arg1
-		).object<jstring>();
+			arg1.object<jobjectArray>()
+		);
 	}
-	jarray Resources::getStringArray(jint arg0)
+	JArray Resources::getStringArray(jint arg0)
 	{
 		return callObjectMethod(
 			"getStringArray",
 			"(I)[Ljava/lang/String;",
 			arg0
-		).object<jarray>();
+		);
 	}
-	jstring Resources::getText(jint arg0)
+	JString Resources::getText(jint arg0)
 	{
 		return callObjectMethod(
 			"getText",
 			"(I)Ljava/lang/CharSequence;",
 			arg0
-		).object<jstring>();
+		);
 	}
-	jstring Resources::getText(jint arg0, jstring arg1)
+	JString Resources::getText(jint arg0, JString arg1)
 	{
 		return callObjectMethod(
 			"getText",
 			"(ILjava/lang/CharSequence;)Ljava/lang/CharSequence;",
 			arg0,
-			arg1
-		).object<jstring>();
+			arg1.object<jstring>()
+		);
 	}
-	jarray Resources::getTextArray(jint arg0)
+	JArray Resources::getTextArray(jint arg0)
 	{
 		return callObjectMethod(
 			"getTextArray",
 			"(I)[Ljava/lang/CharSequence;",
 			arg0
-		).object<jarray>();
+		);
 	}
 	void Resources::getValue(jint arg0, android::util::TypedValue arg1, jboolean arg2)
 	{
@@ -364,12 +370,12 @@ namespace android::content::res
 			arg2
 		);
 	}
-	void Resources::getValue(jstring arg0, android::util::TypedValue arg1, jboolean arg2)
+	void Resources::getValue(JString arg0, android::util::TypedValue arg1, jboolean arg2)
 	{
 		callMethod<void>(
 			"getValue",
 			"(Ljava/lang/String;Landroid/util/TypedValue;Z)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
 			arg2
 		);
@@ -400,13 +406,13 @@ namespace android::content::res
 			"()Landroid/content/res/Resources$Theme;"
 		);
 	}
-	android::content::res::TypedArray Resources::obtainAttributes(JObject arg0, jintArray arg1)
+	android::content::res::TypedArray Resources::obtainAttributes(JObject arg0, JIntArray arg1)
 	{
 		return callObjectMethod(
 			"obtainAttributes",
 			"(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;",
 			arg0.object(),
-			arg1
+			arg1.object<jintArray>()
 		);
 	}
 	android::content::res::TypedArray Resources::obtainTypedArray(jint arg0)
@@ -442,12 +448,12 @@ namespace android::content::res
 			arg0
 		);
 	}
-	void Resources::parseBundleExtra(jstring arg0, JObject arg1, android::os::Bundle arg2)
+	void Resources::parseBundleExtra(JString arg0, JObject arg1, android::os::Bundle arg2)
 	{
 		callMethod<void>(
 			"parseBundleExtra",
 			"(Ljava/lang/String;Landroid/util/AttributeSet;Landroid/os/Bundle;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
 			arg2.object()
 		);

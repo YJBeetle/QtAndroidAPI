@@ -1,3 +1,5 @@
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./FontStyle.hpp"
 
 namespace android::graphics::fonts
@@ -113,12 +115,12 @@ namespace android::graphics::fonts
 		) {}
 	
 	// Methods
-	jboolean FontStyle::equals(jobject arg0)
+	jboolean FontStyle::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint FontStyle::getSlant()
@@ -142,12 +144,12 @@ namespace android::graphics::fonts
 			"()I"
 		);
 	}
-	jstring FontStyle::toString()
+	JString FontStyle::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::graphics::fonts
 

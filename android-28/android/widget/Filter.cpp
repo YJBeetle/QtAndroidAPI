@@ -1,4 +1,6 @@
 #include "./Filter_FilterResults.hpp"
+#include "../../JString.hpp"
+#include "../../JObject.hpp"
 #include "./Filter.hpp"
 
 namespace android::widget
@@ -16,28 +18,28 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	jstring Filter::convertResultToString(jobject arg0)
+	JString Filter::convertResultToString(JObject arg0)
 	{
 		return callObjectMethod(
 			"convertResultToString",
 			"(Ljava/lang/Object;)Ljava/lang/CharSequence;",
-			arg0
-		).object<jstring>();
+			arg0.object<jobject>()
+		);
 	}
-	void Filter::filter(jstring arg0)
+	void Filter::filter(JString arg0)
 	{
 		callMethod<void>(
 			"filter",
 			"(Ljava/lang/CharSequence;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	void Filter::filter(jstring arg0, JObject arg1)
+	void Filter::filter(JString arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"filter",
 			"(Ljava/lang/CharSequence;Landroid/widget/Filter$FilterListener;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}

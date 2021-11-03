@@ -1,8 +1,10 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./ResourceBundle.hpp"
 
+class JArray;
+class JObject;
+class JString;
 
 namespace java::util
 {
@@ -20,7 +22,7 @@ namespace java::util
 		
 		// Methods
 		JObject getKeys();
-		jobject handleGetObject(jstring arg0);
+		JObject handleGetObject(JString arg0);
 	};
 } // namespace java::util
 

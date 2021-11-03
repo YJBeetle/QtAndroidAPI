@@ -1,10 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../content/Context.hpp"
-#include "../content/ContextWrapper.hpp"
-#include "../view/ContextThemeWrapper.hpp"
-#include "./Activity.hpp"
 #include "./ListActivity.hpp"
 
 namespace android::app
@@ -27,6 +22,7 @@ namespace android::widget
 {
 	class ListView;
 }
+class JString;
 
 namespace android::app
 {
@@ -45,7 +41,7 @@ namespace android::app
 		// Methods
 		JObject makeListItems();
 		void setTitle(jint arg0);
-		void setTitle(jstring arg0);
+		void setTitle(JString arg0);
 	};
 } // namespace android::app
 

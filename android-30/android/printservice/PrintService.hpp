@@ -1,8 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../content/Context.hpp"
-#include "../content/ContextWrapper.hpp"
 #include "../app/Service.hpp"
 
 namespace android::content
@@ -25,6 +22,7 @@ namespace android::printservice
 {
 	class PrinterDiscoverySession;
 }
+class JString;
 
 namespace android::printservice
 {
@@ -32,13 +30,13 @@ namespace android::printservice
 	{
 	public:
 		// Fields
-		static jstring EXTRA_CAN_SELECT_PRINTER();
-		static jstring EXTRA_PRINTER_INFO();
-		static jstring EXTRA_PRINT_DOCUMENT_INFO();
-		static jstring EXTRA_PRINT_JOB_INFO();
-		static jstring EXTRA_SELECT_PRINTER();
-		static jstring SERVICE_INTERFACE();
-		static jstring SERVICE_META_DATA();
+		static JString EXTRA_CAN_SELECT_PRINTER();
+		static JString EXTRA_PRINTER_INFO();
+		static JString EXTRA_PRINT_DOCUMENT_INFO();
+		static JString EXTRA_PRINT_JOB_INFO();
+		static JString EXTRA_SELECT_PRINTER();
+		static JString SERVICE_INTERFACE();
+		static JString SERVICE_META_DATA();
 		
 		// QJniObject forward
 		template<typename ...Ts> explicit PrintService(const char *className, const char *sig, Ts...agv) : android::app::Service(className, sig, std::forward<Ts>(agv)...) {}
@@ -48,7 +46,7 @@ namespace android::printservice
 		PrintService();
 		
 		// Methods
-		android::print::PrinterId generatePrinterId(jstring arg0);
+		android::print::PrinterId generatePrinterId(JString arg0);
 		JObject getActivePrintJobs();
 		JObject onBind(android::content::Intent arg0);
 	};

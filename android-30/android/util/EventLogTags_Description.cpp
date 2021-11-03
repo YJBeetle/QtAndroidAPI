@@ -1,14 +1,15 @@
+#include "../../JString.hpp"
 #include "./EventLogTags_Description.hpp"
 
 namespace android::util
 {
 	// Fields
-	jstring EventLogTags_Description::mName()
+	JString EventLogTags_Description::mName()
 	{
 		return getObjectField(
 			"mName",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint EventLogTags_Description::mTag()
 	{

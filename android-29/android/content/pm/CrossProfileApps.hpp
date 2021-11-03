@@ -14,6 +14,7 @@ namespace android::os
 {
 	class UserHandle;
 }
+class JString;
 
 namespace android::content::pm
 {
@@ -30,7 +31,7 @@ namespace android::content::pm
 		
 		// Methods
 		android::graphics::drawable::Drawable getProfileSwitchingIconDrawable(android::os::UserHandle arg0);
-		jstring getProfileSwitchingLabel(android::os::UserHandle arg0);
+		JString getProfileSwitchingLabel(android::os::UserHandle arg0);
 		JObject getTargetUserProfiles();
 		void startMainActivity(android::content::ComponentName arg0, android::os::UserHandle arg1);
 	};

@@ -1,4 +1,6 @@
 #include "../../io/ObjectInputStream.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "../Clock.hpp"
 #include "../Instant.hpp"
 #include "../ZoneId.hpp"
@@ -122,19 +124,19 @@ namespace java::time::chrono
 			"()Ljava/util/List;"
 		);
 	}
-	jstring JapaneseChronology::getCalendarType()
+	JString JapaneseChronology::getCalendarType()
 	{
 		return callObjectMethod(
 			"getCalendarType",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring JapaneseChronology::getId()
+	JString JapaneseChronology::getId()
 	{
 		return callObjectMethod(
 			"getId",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jboolean JapaneseChronology::isLeapYear(jlong arg0)
 	{

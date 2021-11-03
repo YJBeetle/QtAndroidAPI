@@ -22,6 +22,7 @@ namespace android::telecom
 {
 	class InCallService_VideoCall;
 }
+class JString;
 
 namespace android::telecom
 {
@@ -47,12 +48,12 @@ namespace android::telecom
 		void onCannedTextResponsesLoaded(android::telecom::Call arg0, JObject arg1);
 		void onChildrenChanged(android::telecom::Call arg0, JObject arg1);
 		void onConferenceableCallsChanged(android::telecom::Call arg0, JObject arg1);
-		void onConnectionEvent(android::telecom::Call arg0, jstring arg1, android::os::Bundle arg2);
+		void onConnectionEvent(android::telecom::Call arg0, JString arg1, android::os::Bundle arg2);
 		void onDetailsChanged(android::telecom::Call arg0, android::telecom::Call_Details arg1);
 		void onHandoverComplete(android::telecom::Call arg0);
 		void onHandoverFailed(android::telecom::Call arg0, jint arg1);
 		void onParentChanged(android::telecom::Call arg0, android::telecom::Call arg1);
-		void onPostDialWait(android::telecom::Call arg0, jstring arg1);
+		void onPostDialWait(android::telecom::Call arg0, JString arg1);
 		void onRttInitiationFailure(android::telecom::Call arg0, jint arg1);
 		void onRttModeChanged(android::telecom::Call arg0, jint arg1);
 		void onRttRequest(android::telecom::Call arg0, jint arg1);

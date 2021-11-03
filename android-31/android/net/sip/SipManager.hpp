@@ -34,6 +34,7 @@ namespace android::net::sip
 {
 	class SipSession_Listener;
 }
+class JString;
 
 namespace android::net::sip
 {
@@ -41,8 +42,8 @@ namespace android::net::sip
 	{
 	public:
 		// Fields
-		static jstring EXTRA_CALL_ID();
-		static jstring EXTRA_OFFER_SD();
+		static JString EXTRA_CALL_ID();
+		static JString EXTRA_OFFER_SD();
 		static jint INCOMING_CALL_RESULT_CODE();
 		
 		// QJniObject forward
@@ -52,24 +53,24 @@ namespace android::net::sip
 		// Constructors
 		
 		// Methods
-		static jstring getCallId(android::content::Intent arg0);
-		static jstring getOfferSessionDescription(android::content::Intent arg0);
+		static JString getCallId(android::content::Intent arg0);
+		static JString getOfferSessionDescription(android::content::Intent arg0);
 		static jboolean isApiSupported(android::content::Context arg0);
 		static jboolean isIncomingCallIntent(android::content::Intent arg0);
 		static jboolean isSipWifiOnly(android::content::Context arg0);
 		static jboolean isVoipSupported(android::content::Context arg0);
 		static android::net::sip::SipManager newInstance(android::content::Context arg0);
-		void close(jstring arg0);
+		void close(JString arg0);
 		android::net::sip::SipSession createSipSession(android::net::sip::SipProfile arg0, android::net::sip::SipSession_Listener arg1);
 		android::net::sip::SipSession getSessionFor(android::content::Intent arg0);
-		jboolean isOpened(jstring arg0);
-		jboolean isRegistered(jstring arg0);
+		jboolean isOpened(JString arg0);
+		jboolean isRegistered(JString arg0);
 		android::net::sip::SipAudioCall makeAudioCall(android::net::sip::SipProfile arg0, android::net::sip::SipProfile arg1, android::net::sip::SipAudioCall_Listener arg2, jint arg3);
-		android::net::sip::SipAudioCall makeAudioCall(jstring arg0, jstring arg1, android::net::sip::SipAudioCall_Listener arg2, jint arg3);
+		android::net::sip::SipAudioCall makeAudioCall(JString arg0, JString arg1, android::net::sip::SipAudioCall_Listener arg2, jint arg3);
 		void open(android::net::sip::SipProfile arg0);
 		void open(android::net::sip::SipProfile arg0, android::app::PendingIntent arg1, JObject arg2);
 		void _register(android::net::sip::SipProfile arg0, jint arg1, JObject arg2);
-		void setRegistrationListener(jstring arg0, JObject arg1);
+		void setRegistrationListener(JString arg0, JObject arg1);
 		android::net::sip::SipAudioCall takeAudioCall(android::content::Intent arg0, android::net::sip::SipAudioCall_Listener arg1);
 		void unregister(android::net::sip::SipProfile arg0, JObject arg1);
 	};

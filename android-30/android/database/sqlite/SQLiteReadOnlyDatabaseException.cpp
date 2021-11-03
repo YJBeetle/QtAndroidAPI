@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./SQLiteReadOnlyDatabaseException.hpp"
 
 namespace android::database::sqlite
@@ -13,11 +14,11 @@ namespace android::database::sqlite
 			"android.database.sqlite.SQLiteReadOnlyDatabaseException",
 			"()V"
 		) {}
-	SQLiteReadOnlyDatabaseException::SQLiteReadOnlyDatabaseException(jstring arg0)
+	SQLiteReadOnlyDatabaseException::SQLiteReadOnlyDatabaseException(JString arg0)
 		: android::database::sqlite::SQLiteException(
 			"android.database.sqlite.SQLiteReadOnlyDatabaseException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

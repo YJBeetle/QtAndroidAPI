@@ -1,3 +1,5 @@
+#include "../../../JString.hpp"
+#include "../../../JThrowable.hpp"
 #include "./ZoneRulesException.hpp"
 
 namespace java::time::zone
@@ -8,18 +10,18 @@ namespace java::time::zone
 	ZoneRulesException::ZoneRulesException(QJniObject obj) : java::time::DateTimeException(obj) {}
 	
 	// Constructors
-	ZoneRulesException::ZoneRulesException(jstring arg0)
+	ZoneRulesException::ZoneRulesException(JString arg0)
 		: java::time::DateTimeException(
 			"java.time.zone.ZoneRulesException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	ZoneRulesException::ZoneRulesException(jstring arg0, jthrowable arg1)
+	ZoneRulesException::ZoneRulesException(JString arg0, JThrowable arg1)
 		: java::time::DateTimeException(
 			"java.time.zone.ZoneRulesException",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
 		) {}
 	
 	// Methods

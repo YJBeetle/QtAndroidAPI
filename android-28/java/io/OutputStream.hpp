@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JByteArray;
 
 namespace java::io
 {
@@ -21,9 +22,9 @@ namespace java::io
 		static java::io::OutputStream nullOutputStream();
 		void close();
 		void flush();
-		void write(jbyteArray arg0);
+		void write(JByteArray arg0);
 		void write(jint arg0);
-		void write(jbyteArray arg0, jint arg1, jint arg2);
+		void write(JByteArray arg0, jint arg1, jint arg2);
 	};
 } // namespace java::io
 

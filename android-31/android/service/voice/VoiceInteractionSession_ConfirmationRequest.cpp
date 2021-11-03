@@ -1,5 +1,6 @@
 #include "../../app/VoiceInteractor_Prompt.hpp"
 #include "../../os/Bundle.hpp"
+#include "../../../JString.hpp"
 #include "./VoiceInteractionSession_ConfirmationRequest.hpp"
 
 namespace android::service::voice
@@ -12,12 +13,12 @@ namespace android::service::voice
 	// Constructors
 	
 	// Methods
-	jstring VoiceInteractionSession_ConfirmationRequest::getPrompt()
+	JString VoiceInteractionSession_ConfirmationRequest::getPrompt()
 	{
 		return callObjectMethod(
 			"getPrompt",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	android::app::VoiceInteractor_Prompt VoiceInteractionSession_ConfirmationRequest::getVoicePrompt()
 	{

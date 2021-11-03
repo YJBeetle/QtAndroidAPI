@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JArray;
 namespace android::os
 {
 	class Parcel;
@@ -10,6 +11,8 @@ namespace android::os
 {
 	class PersistableBundle;
 }
+class JString;
+class JString;
 
 namespace android::content
 {
@@ -21,11 +24,11 @@ namespace android::content
 		static jint CLASSIFICATION_NOT_COMPLETE();
 		static jint CLASSIFICATION_NOT_PERFORMED();
 		static JObject CREATOR();
-		static jstring MIMETYPE_TEXT_HTML();
-		static jstring MIMETYPE_TEXT_INTENT();
-		static jstring MIMETYPE_TEXT_PLAIN();
-		static jstring MIMETYPE_TEXT_URILIST();
-		static jstring MIMETYPE_UNKNOWN();
+		static JString MIMETYPE_TEXT_HTML();
+		static JString MIMETYPE_TEXT_INTENT();
+		static JString MIMETYPE_TEXT_PLAIN();
+		static JString MIMETYPE_TEXT_URILIST();
+		static JString MIMETYPE_UNKNOWN();
 		
 		// QJniObject forward
 		template<typename ...Ts> explicit ClipDescription(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
@@ -33,23 +36,23 @@ namespace android::content
 		
 		// Constructors
 		ClipDescription(android::content::ClipDescription &arg0);
-		ClipDescription(jstring arg0, jarray arg1);
+		ClipDescription(JString arg0, JArray arg1);
 		
 		// Methods
-		static jboolean compareMimeTypes(jstring arg0, jstring arg1);
+		static jboolean compareMimeTypes(JString arg0, JString arg1);
 		jint describeContents();
-		jarray filterMimeTypes(jstring arg0);
+		JArray filterMimeTypes(JString arg0);
 		jint getClassificationStatus();
-		jfloat getConfidenceScore(jstring arg0);
+		jfloat getConfidenceScore(JString arg0);
 		android::os::PersistableBundle getExtras();
-		jstring getLabel();
-		jstring getMimeType(jint arg0);
+		JString getLabel();
+		JString getMimeType(jint arg0);
 		jint getMimeTypeCount();
 		jlong getTimestamp();
-		jboolean hasMimeType(jstring arg0);
+		jboolean hasMimeType(JString arg0);
 		jboolean isStyledText();
 		void setExtras(android::os::PersistableBundle arg0);
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::content

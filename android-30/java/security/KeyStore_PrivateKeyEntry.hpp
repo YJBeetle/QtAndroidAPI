@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JArray;
+class JString;
 namespace java::security::cert
 {
 	class Certificate;
@@ -19,15 +21,15 @@ namespace java::security
 		KeyStore_PrivateKeyEntry(QJniObject obj);
 		
 		// Constructors
-		KeyStore_PrivateKeyEntry(JObject arg0, jarray arg1);
-		KeyStore_PrivateKeyEntry(JObject arg0, jarray arg1, JObject arg2);
+		KeyStore_PrivateKeyEntry(JObject arg0, JArray arg1);
+		KeyStore_PrivateKeyEntry(JObject arg0, JArray arg1, JObject arg2);
 		
 		// Methods
 		JObject getAttributes();
 		java::security::cert::Certificate getCertificate();
-		jarray getCertificateChain();
+		JArray getCertificateChain();
 		JObject getPrivateKey();
-		jstring toString();
+		JString toString();
 	};
 } // namespace java::security
 

@@ -6,6 +6,7 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
 
 namespace android::location
 {
@@ -60,7 +61,7 @@ namespace android::location
 		jdouble getCarrierPhase();
 		jdouble getCarrierPhaseUncertainty();
 		jdouble getCn0DbHz();
-		jstring getCodeType();
+		JString getCodeType();
 		jint getConstellationType();
 		jdouble getFullInterSignalBiasNanos();
 		jdouble getFullInterSignalBiasUncertaintyNanos();
@@ -87,7 +88,7 @@ namespace android::location
 		jboolean hasSatelliteInterSignalBiasNanos();
 		jboolean hasSatelliteInterSignalBiasUncertaintyNanos();
 		jboolean hasSnrInDb();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::location

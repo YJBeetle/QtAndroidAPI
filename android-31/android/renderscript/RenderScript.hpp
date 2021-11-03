@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JIntArray;
 namespace android::content
 {
 	class Context;
@@ -52,7 +53,7 @@ namespace android::renderscript
 		android::content::Context getApplicationContext();
 		android::renderscript::RenderScript_RSErrorHandler getErrorHandler();
 		android::renderscript::RenderScript_RSMessageHandler getMessageHandler();
-		void sendMessage(jint arg0, jintArray arg1);
+		void sendMessage(jint arg0, JIntArray arg1);
 		void setErrorHandler(android::renderscript::RenderScript_RSErrorHandler arg0);
 		void setMessageHandler(android::renderscript::RenderScript_RSMessageHandler arg0);
 		void setPriority(android::renderscript::RenderScript_Priority arg0);

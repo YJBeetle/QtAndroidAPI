@@ -1,3 +1,5 @@
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "../../util/Locale.hpp"
 #include "./DecimalStyle.hpp"
 
@@ -44,12 +46,12 @@ namespace java::time::format
 			"()Ljava/time/format/DecimalStyle;"
 		);
 	}
-	jboolean DecimalStyle::equals(jobject arg0)
+	jboolean DecimalStyle::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jchar DecimalStyle::getDecimalSeparator()
@@ -87,12 +89,12 @@ namespace java::time::format
 			"()I"
 		);
 	}
-	jstring DecimalStyle::toString()
+	JString DecimalStyle::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	java::time::format::DecimalStyle DecimalStyle::withDecimalSeparator(jchar arg0)
 	{

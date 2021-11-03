@@ -14,6 +14,7 @@ namespace android::view
 {
 	class Surface;
 }
+class JString;
 
 namespace android::graphics
 {
@@ -43,7 +44,7 @@ namespace android::graphics
 		void setContentRoot(android::graphics::RenderNode arg0);
 		void setLightSourceAlpha(jfloat arg0, jfloat arg1);
 		void setLightSourceGeometry(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3);
-		void setName(jstring arg0);
+		void setName(JString arg0);
 		void setOpaque(jboolean arg0);
 		void setSurface(android::view::Surface arg0);
 		void start();

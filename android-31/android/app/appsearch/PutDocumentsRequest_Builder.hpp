@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JArray;
 namespace android::app::appsearch
 {
 	class PutDocumentsRequest;
@@ -22,7 +23,7 @@ namespace android::app::appsearch
 		PutDocumentsRequest_Builder();
 		
 		// Methods
-		android::app::appsearch::PutDocumentsRequest_Builder addGenericDocuments(jarray arg0);
+		android::app::appsearch::PutDocumentsRequest_Builder addGenericDocuments(JArray arg0);
 		android::app::appsearch::PutDocumentsRequest_Builder addGenericDocuments(JObject arg0);
 		android::app::appsearch::PutDocumentsRequest build();
 	};

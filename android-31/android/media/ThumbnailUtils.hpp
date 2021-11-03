@@ -18,6 +18,7 @@ namespace java::io
 {
 	class File;
 }
+class JString;
 
 namespace android::media
 {
@@ -35,11 +36,11 @@ namespace android::media
 		ThumbnailUtils();
 		
 		// Methods
-		static android::graphics::Bitmap createAudioThumbnail(jstring arg0, jint arg1);
+		static android::graphics::Bitmap createAudioThumbnail(JString arg0, jint arg1);
 		static android::graphics::Bitmap createAudioThumbnail(java::io::File arg0, android::util::Size arg1, android::os::CancellationSignal arg2);
-		static android::graphics::Bitmap createImageThumbnail(jstring arg0, jint arg1);
+		static android::graphics::Bitmap createImageThumbnail(JString arg0, jint arg1);
 		static android::graphics::Bitmap createImageThumbnail(java::io::File arg0, android::util::Size arg1, android::os::CancellationSignal arg2);
-		static android::graphics::Bitmap createVideoThumbnail(jstring arg0, jint arg1);
+		static android::graphics::Bitmap createVideoThumbnail(JString arg0, jint arg1);
 		static android::graphics::Bitmap createVideoThumbnail(java::io::File arg0, android::util::Size arg1, android::os::CancellationSignal arg2);
 		static android::graphics::Bitmap extractThumbnail(android::graphics::Bitmap arg0, jint arg1, jint arg2);
 		static android::graphics::Bitmap extractThumbnail(android::graphics::Bitmap arg0, jint arg1, jint arg2, jint arg3);

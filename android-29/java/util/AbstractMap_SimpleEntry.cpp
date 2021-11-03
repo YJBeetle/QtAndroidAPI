@@ -1,3 +1,5 @@
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./AbstractMap_SimpleEntry.hpp"
 
 namespace java::util
@@ -14,36 +16,36 @@ namespace java::util
 			"(Ljava/util/Map$Entry;)V",
 			arg0.object()
 		) {}
-	AbstractMap_SimpleEntry::AbstractMap_SimpleEntry(jobject arg0, jobject arg1)
+	AbstractMap_SimpleEntry::AbstractMap_SimpleEntry(JObject arg0, JObject arg1)
 		: JObject(
 			"java.util.AbstractMap$SimpleEntry",
 			"(Ljava/lang/Object;Ljava/lang/Object;)V",
-			arg0,
-			arg1
+			arg0.object<jobject>(),
+			arg1.object<jobject>()
 		) {}
 	
 	// Methods
-	jboolean AbstractMap_SimpleEntry::equals(jobject arg0)
+	jboolean AbstractMap_SimpleEntry::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jobject AbstractMap_SimpleEntry::getKey()
+	JObject AbstractMap_SimpleEntry::getKey()
 	{
 		return callObjectMethod(
 			"getKey",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
-	jobject AbstractMap_SimpleEntry::getValue()
+	JObject AbstractMap_SimpleEntry::getValue()
 	{
 		return callObjectMethod(
 			"getValue",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
 	jint AbstractMap_SimpleEntry::hashCode()
 	{
@@ -52,20 +54,20 @@ namespace java::util
 			"()I"
 		);
 	}
-	jobject AbstractMap_SimpleEntry::setValue(jobject arg0)
+	JObject AbstractMap_SimpleEntry::setValue(JObject arg0)
 	{
 		return callObjectMethod(
 			"setValue",
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0
-		).object<jobject>();
+			arg0.object<jobject>()
+		);
 	}
-	jstring AbstractMap_SimpleEntry::toString()
+	JString AbstractMap_SimpleEntry::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::util
 

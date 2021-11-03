@@ -1,4 +1,5 @@
 #include "./MicrophoneInfo_Coordinate3F.hpp"
+#include "../../JString.hpp"
 #include "./MicrophoneInfo.hpp"
 
 namespace android::media
@@ -139,12 +140,12 @@ namespace android::media
 	// Constructors
 	
 	// Methods
-	jstring MicrophoneInfo::getAddress()
+	JString MicrophoneInfo::getAddress()
 	{
 		return callObjectMethod(
 			"getAddress",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	JObject MicrophoneInfo::getChannelMapping()
 	{
@@ -153,12 +154,12 @@ namespace android::media
 			"()Ljava/util/List;"
 		);
 	}
-	jstring MicrophoneInfo::getDescription()
+	JString MicrophoneInfo::getDescription()
 	{
 		return callObjectMethod(
 			"getDescription",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint MicrophoneInfo::getDirectionality()
 	{

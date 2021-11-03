@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JByteArray;
 namespace java::nio
 {
 	class ByteBuffer;
@@ -26,7 +27,7 @@ namespace java::util::zip
 		void reset();
 		void update(jint arg0);
 		void update(java::nio::ByteBuffer arg0);
-		void update(jbyteArray arg0, jint arg1, jint arg2);
+		void update(JByteArray arg0, jint arg1, jint arg2);
 	};
 } // namespace java::util::zip
 

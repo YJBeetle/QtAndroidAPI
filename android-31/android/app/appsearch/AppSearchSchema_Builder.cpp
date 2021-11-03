@@ -1,5 +1,6 @@
 #include "./AppSearchSchema.hpp"
 #include "./AppSearchSchema_PropertyConfig.hpp"
+#include "../../../JString.hpp"
 #include "./AppSearchSchema_Builder.hpp"
 
 namespace android::app::appsearch
@@ -10,11 +11,11 @@ namespace android::app::appsearch
 	AppSearchSchema_Builder::AppSearchSchema_Builder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	AppSearchSchema_Builder::AppSearchSchema_Builder(jstring arg0)
+	AppSearchSchema_Builder::AppSearchSchema_Builder(JString arg0)
 		: JObject(
 			"android.app.appsearch.AppSearchSchema$Builder",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

@@ -1,6 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./MediaRouter_RouteInfo.hpp"
 
 namespace android::graphics::drawable
@@ -15,6 +14,7 @@ namespace android::media
 {
 	class MediaRouter_RouteInfo;
 }
+class JString;
 
 namespace android::media
 {
@@ -40,7 +40,7 @@ namespace android::media
 		void requestUpdateVolume(jint arg0);
 		void setIconDrawable(android::graphics::drawable::Drawable arg0);
 		void setIconResource(jint arg0);
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::media
 

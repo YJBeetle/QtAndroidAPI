@@ -2,10 +2,12 @@
 
 #include "../../../JObject.hpp"
 
+class JArray;
 namespace android::widget
 {
 	class TextView;
 }
+class JString;
 namespace java::util::regex
 {
 	class Pattern;
@@ -36,12 +38,12 @@ namespace android::text::util
 		// Methods
 		static jboolean addLinks(JObject arg0, jint arg1);
 		static jboolean addLinks(android::widget::TextView arg0, jint arg1);
-		static jboolean addLinks(JObject arg0, java::util::regex::Pattern arg1, jstring arg2);
-		static jboolean addLinks(JObject arg0, java::util::regex::Pattern arg1, jstring arg2, JObject arg3, JObject arg4);
-		static jboolean addLinks(JObject arg0, java::util::regex::Pattern arg1, jstring arg2, jarray arg3, JObject arg4, JObject arg5);
-		static void addLinks(android::widget::TextView arg0, java::util::regex::Pattern arg1, jstring arg2);
-		static void addLinks(android::widget::TextView arg0, java::util::regex::Pattern arg1, jstring arg2, JObject arg3, JObject arg4);
-		static void addLinks(android::widget::TextView arg0, java::util::regex::Pattern arg1, jstring arg2, jarray arg3, JObject arg4, JObject arg5);
+		static jboolean addLinks(JObject arg0, java::util::regex::Pattern arg1, JString arg2);
+		static jboolean addLinks(JObject arg0, java::util::regex::Pattern arg1, JString arg2, JObject arg3, JObject arg4);
+		static jboolean addLinks(JObject arg0, java::util::regex::Pattern arg1, JString arg2, JArray arg3, JObject arg4, JObject arg5);
+		static void addLinks(android::widget::TextView arg0, java::util::regex::Pattern arg1, JString arg2);
+		static void addLinks(android::widget::TextView arg0, java::util::regex::Pattern arg1, JString arg2, JObject arg3, JObject arg4);
+		static void addLinks(android::widget::TextView arg0, java::util::regex::Pattern arg1, JString arg2, JArray arg3, JObject arg4, JObject arg5);
 	};
 } // namespace android::text::util
 

@@ -1,3 +1,6 @@
+#include "../../JClass.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./Property.hpp"
 
 namespace android::util
@@ -8,47 +11,47 @@ namespace android::util
 	Property::Property(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	Property::Property(jclass arg0, jstring arg1)
+	Property::Property(JClass arg0, JString arg1)
 		: JObject(
 			"android.util.Property",
 			"(Ljava/lang/Class;Ljava/lang/String;)V",
-			arg0,
-			arg1
+			arg0.object<jclass>(),
+			arg1.object<jstring>()
 		) {}
 	
 	// Methods
-	android::util::Property Property::of(jclass arg0, jclass arg1, jstring arg2)
+	android::util::Property Property::of(JClass arg0, JClass arg1, JString arg2)
 	{
 		return callStaticObjectMethod(
 			"android.util.Property",
 			"of",
 			"(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/String;)Landroid/util/Property;",
-			arg0,
-			arg1,
-			arg2
+			arg0.object<jclass>(),
+			arg1.object<jclass>(),
+			arg2.object<jstring>()
 		);
 	}
-	jobject Property::get(jobject arg0)
+	JObject Property::get(JObject arg0)
 	{
 		return callObjectMethod(
 			"get",
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0
-		).object<jobject>();
+			arg0.object<jobject>()
+		);
 	}
-	jstring Property::getName()
+	JString Property::getName()
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jclass Property::getType()
+	JClass Property::getType()
 	{
 		return callObjectMethod(
 			"getType",
 			"()Ljava/lang/Class;"
-		).object<jclass>();
+		);
 	}
 	jboolean Property::isReadOnly()
 	{
@@ -57,13 +60,13 @@ namespace android::util
 			"()Z"
 		);
 	}
-	void Property::set(jobject arg0, jobject arg1)
+	void Property::set(JObject arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"set",
 			"(Ljava/lang/Object;Ljava/lang/Object;)V",
-			arg0,
-			arg1
+			arg0.object<jobject>(),
+			arg1.object<jobject>()
 		);
 	}
 } // namespace android::util

@@ -6,6 +6,7 @@ namespace android::content::pm::verify::domain
 {
 	class DomainVerificationUserState;
 }
+class JString;
 
 namespace android::content::pm::verify::domain
 {
@@ -21,7 +22,7 @@ namespace android::content::pm::verify::domain
 		// Constructors
 		
 		// Methods
-		android::content::pm::verify::domain::DomainVerificationUserState getDomainVerificationUserState(jstring arg0);
+		android::content::pm::verify::domain::DomainVerificationUserState getDomainVerificationUserState(JString arg0);
 	};
 } // namespace android::content::pm::verify::domain
 

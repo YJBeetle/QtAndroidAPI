@@ -2,7 +2,6 @@
 
 #include "../../JObject.hpp"
 
-
 namespace android::media
 {
 	class MediaCodec_CryptoInfo_Pattern : public JObject

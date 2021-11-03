@@ -14,6 +14,7 @@ namespace android::view::autofill
 {
 	class AutofillId;
 }
+class JString;
 
 namespace android::service::autofill
 {
@@ -34,7 +35,7 @@ namespace android::service::autofill
 		android::view::autofill::AutofillId getFocusedId();
 		jint getRequestId();
 		android::app::assist::AssistStructure getStructure();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::service::autofill

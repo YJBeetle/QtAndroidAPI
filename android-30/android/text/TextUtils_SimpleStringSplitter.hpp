@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JObject;
+class JString;
 
 namespace android::text
 {
@@ -20,9 +22,9 @@ namespace android::text
 		// Methods
 		jboolean hasNext();
 		JObject iterator();
-		jstring next();
+		JString next();
 		void remove();
-		void setString(jstring arg0);
+		void setString(JString arg0);
 	};
 } // namespace android::text
 

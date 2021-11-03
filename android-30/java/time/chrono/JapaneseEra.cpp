@@ -1,4 +1,8 @@
+#include "../../../JArray.hpp"
+#include "../../../JArray.hpp"
 #include "../../io/ObjectInputStream.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "../LocalDate.hpp"
 #include "../format/TextStyle.hpp"
 #include "../temporal/ValueRange.hpp"
@@ -64,31 +68,31 @@ namespace java::time::chrono
 			arg0
 		);
 	}
-	java::time::chrono::JapaneseEra JapaneseEra::valueOf(jstring arg0)
+	java::time::chrono::JapaneseEra JapaneseEra::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"java.time.chrono.JapaneseEra",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/time/chrono/JapaneseEra;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray JapaneseEra::values()
+	JArray JapaneseEra::values()
 	{
 		return callStaticObjectMethod(
 			"java.time.chrono.JapaneseEra",
 			"values",
 			"()[Ljava/time/chrono/JapaneseEra;"
-		).object<jarray>();
+		);
 	}
-	jstring JapaneseEra::getDisplayName(java::time::format::TextStyle arg0, java::util::Locale arg1)
+	JString JapaneseEra::getDisplayName(java::time::format::TextStyle arg0, java::util::Locale arg1)
 	{
 		return callObjectMethod(
 			"getDisplayName",
 			"(Ljava/time/format/TextStyle;Ljava/util/Locale;)Ljava/lang/String;",
 			arg0.object(),
 			arg1.object()
-		).object<jstring>();
+		);
 	}
 	jint JapaneseEra::getValue()
 	{
@@ -105,12 +109,12 @@ namespace java::time::chrono
 			arg0.object()
 		);
 	}
-	jstring JapaneseEra::toString()
+	JString JapaneseEra::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::time::chrono
 

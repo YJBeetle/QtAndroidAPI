@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JByteArray;
 namespace android::content
 {
 	class Context;
@@ -10,6 +11,7 @@ namespace android::security
 {
 	class ConfirmationPrompt;
 }
+class JString;
 
 namespace android::security
 {
@@ -27,8 +29,8 @@ namespace android::security
 		
 		// Methods
 		android::security::ConfirmationPrompt build();
-		android::security::ConfirmationPrompt_Builder setExtraData(jbyteArray arg0);
-		android::security::ConfirmationPrompt_Builder setPromptText(jstring arg0);
+		android::security::ConfirmationPrompt_Builder setExtraData(JByteArray arg0);
+		android::security::ConfirmationPrompt_Builder setPromptText(JString arg0);
 	};
 } // namespace android::security
 

@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "./PackageItemInfo.hpp"
 
+class JArray;
 namespace android::content::pm
 {
 	class ApplicationInfo;
@@ -11,6 +11,7 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
 
 namespace android::content::pm
 {
@@ -19,13 +20,13 @@ namespace android::content::pm
 	public:
 		// Fields
 		android::content::pm::ApplicationInfo applicationInfo();
-		jarray attributionTags();
+		JArray attributionTags();
 		jint descriptionRes();
 		jboolean directBootAware();
 		jboolean enabled();
 		jboolean exported();
-		jstring processName();
-		jstring splitName();
+		JString processName();
+		JString splitName();
 		
 		// QJniObject forward
 		template<typename ...Ts> explicit ComponentInfo(const char *className, const char *sig, Ts...agv) : android::content::pm::PackageItemInfo(className, sig, std::forward<Ts>(agv)...) {}

@@ -1,9 +1,8 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "../AbstractCollection.hpp"
 #include "../AbstractSet.hpp"
 
+class JObject;
 namespace java::lang::reflect
 {
 	class Field;
@@ -25,34 +24,34 @@ namespace java::util::concurrent
 		ConcurrentSkipListSet(JObject arg0);
 		
 		// Methods
-		jboolean add(jobject arg0);
-		jobject ceiling(jobject arg0);
+		jboolean add(JObject arg0);
+		JObject ceiling(JObject arg0);
 		void clear();
 		java::util::concurrent::ConcurrentSkipListSet clone();
 		JObject comparator();
-		jboolean contains(jobject arg0);
+		jboolean contains(JObject arg0);
 		JObject descendingIterator();
 		JObject descendingSet();
-		jboolean equals(jobject arg0);
-		jobject first();
-		jobject floor(jobject arg0);
-		JObject headSet(jobject arg0);
-		JObject headSet(jobject arg0, jboolean arg1);
-		jobject higher(jobject arg0);
+		jboolean equals(JObject arg0);
+		JObject first();
+		JObject floor(JObject arg0);
+		JObject headSet(JObject arg0);
+		JObject headSet(JObject arg0, jboolean arg1);
+		JObject higher(JObject arg0);
 		jboolean isEmpty();
 		JObject iterator();
-		jobject last();
-		jobject lower(jobject arg0);
-		jobject pollFirst();
-		jobject pollLast();
-		jboolean remove(jobject arg0);
+		JObject last();
+		JObject lower(JObject arg0);
+		JObject pollFirst();
+		JObject pollLast();
+		jboolean remove(JObject arg0);
 		jboolean removeAll(JObject arg0);
 		jint size();
 		JObject spliterator();
-		JObject subSet(jobject arg0, jobject arg1);
-		JObject subSet(jobject arg0, jboolean arg1, jobject arg2, jboolean arg3);
-		JObject tailSet(jobject arg0);
-		JObject tailSet(jobject arg0, jboolean arg1);
+		JObject subSet(JObject arg0, JObject arg1);
+		JObject subSet(JObject arg0, jboolean arg1, JObject arg2, jboolean arg3);
+		JObject tailSet(JObject arg0);
+		JObject tailSet(JObject arg0, jboolean arg1);
 	};
 } // namespace java::util::concurrent
 

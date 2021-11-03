@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./SQLiteDatabase_OpenParams.hpp"
 
 namespace android::database::sqlite
@@ -31,12 +32,12 @@ namespace android::database::sqlite
 			"()J"
 		);
 	}
-	jstring SQLiteDatabase_OpenParams::getJournalMode()
+	JString SQLiteDatabase_OpenParams::getJournalMode()
 	{
 		return callObjectMethod(
 			"getJournalMode",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint SQLiteDatabase_OpenParams::getLookasideSlotCount()
 	{
@@ -59,12 +60,12 @@ namespace android::database::sqlite
 			"()I"
 		);
 	}
-	jstring SQLiteDatabase_OpenParams::getSynchronousMode()
+	JString SQLiteDatabase_OpenParams::getSynchronousMode()
 	{
 		return callObjectMethod(
 			"getSynchronousMode",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::database::sqlite
 

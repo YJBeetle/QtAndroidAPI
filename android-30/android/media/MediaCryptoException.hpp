@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "../../java/lang/Exception.hpp"
 
+class JString;
 
 namespace android::media
 {
@@ -16,7 +16,7 @@ namespace android::media
 		MediaCryptoException(QJniObject obj);
 		
 		// Constructors
-		MediaCryptoException(jstring arg0);
+		MediaCryptoException(JString arg0);
 		
 		// Methods
 	};

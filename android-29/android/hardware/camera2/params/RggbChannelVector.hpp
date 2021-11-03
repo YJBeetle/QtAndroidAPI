@@ -2,6 +2,9 @@
 
 #include "../../../../JObject.hpp"
 
+class JFloatArray;
+class JObject;
+class JString;
 
 namespace android::hardware::camera2::params
 {
@@ -23,15 +26,15 @@ namespace android::hardware::camera2::params
 		RggbChannelVector(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3);
 		
 		// Methods
-		void copyTo(jfloatArray arg0, jint arg1);
-		jboolean equals(jobject arg0);
+		void copyTo(JFloatArray arg0, jint arg1);
+		jboolean equals(JObject arg0);
 		jfloat getBlue();
 		jfloat getComponent(jint arg0);
 		jfloat getGreenEven();
 		jfloat getGreenOdd();
 		jfloat getRed();
 		jint hashCode();
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::hardware::camera2::params
 

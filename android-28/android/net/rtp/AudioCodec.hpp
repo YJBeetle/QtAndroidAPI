@@ -2,6 +2,8 @@
 
 #include "../../../JObject.hpp"
 
+class JArray;
+class JString;
 
 namespace android::net::rtp
 {
@@ -14,8 +16,8 @@ namespace android::net::rtp
 		static android::net::rtp::AudioCodec GSM_EFR();
 		static android::net::rtp::AudioCodec PCMA();
 		static android::net::rtp::AudioCodec PCMU();
-		jstring fmtp();
-		jstring rtpmap();
+		JString fmtp();
+		JString rtpmap();
 		jint type();
 		
 		// QJniObject forward
@@ -25,8 +27,8 @@ namespace android::net::rtp
 		// Constructors
 		
 		// Methods
-		static android::net::rtp::AudioCodec getCodec(jint arg0, jstring arg1, jstring arg2);
-		static jarray getCodecs();
+		static android::net::rtp::AudioCodec getCodec(jint arg0, JString arg1, JString arg2);
+		static JArray getCodecs();
 	};
 } // namespace android::net::rtp
 

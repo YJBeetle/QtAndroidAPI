@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JByteArray;
 namespace android::media
 {
 	class MediaCas;
@@ -26,9 +27,9 @@ namespace android::media
 		
 		// Methods
 		void close();
-		void processEcm(jbyteArray arg0);
-		void processEcm(jbyteArray arg0, jint arg1, jint arg2);
-		void setPrivateData(jbyteArray arg0);
+		void processEcm(JByteArray arg0);
+		void processEcm(JByteArray arg0, jint arg1, jint arg2);
+		void setPrivateData(JByteArray arg0);
 	};
 } // namespace android::media
 

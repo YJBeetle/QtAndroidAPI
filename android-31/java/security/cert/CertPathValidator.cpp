@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "../Provider.hpp"
 #include "./CertPath.hpp"
 #include "./CertPathValidatorSpi.hpp"
@@ -13,49 +14,49 @@ namespace java::security::cert
 	// Constructors
 	
 	// Methods
-	jstring CertPathValidator::getDefaultType()
+	JString CertPathValidator::getDefaultType()
 	{
 		return callStaticObjectMethod(
 			"java.security.cert.CertPathValidator",
 			"getDefaultType",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	java::security::cert::CertPathValidator CertPathValidator::getInstance(jstring arg0)
+	java::security::cert::CertPathValidator CertPathValidator::getInstance(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"java.security.cert.CertPathValidator",
 			"getInstance",
 			"(Ljava/lang/String;)Ljava/security/cert/CertPathValidator;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	java::security::cert::CertPathValidator CertPathValidator::getInstance(jstring arg0, jstring arg1)
+	java::security::cert::CertPathValidator CertPathValidator::getInstance(JString arg0, JString arg1)
 	{
 		return callStaticObjectMethod(
 			"java.security.cert.CertPathValidator",
 			"getInstance",
 			"(Ljava/lang/String;Ljava/lang/String;)Ljava/security/cert/CertPathValidator;",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		);
 	}
-	java::security::cert::CertPathValidator CertPathValidator::getInstance(jstring arg0, java::security::Provider arg1)
+	java::security::cert::CertPathValidator CertPathValidator::getInstance(JString arg0, java::security::Provider arg1)
 	{
 		return callStaticObjectMethod(
 			"java.security.cert.CertPathValidator",
 			"getInstance",
 			"(Ljava/lang/String;Ljava/security/Provider;)Ljava/security/cert/CertPathValidator;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
-	jstring CertPathValidator::getAlgorithm()
+	JString CertPathValidator::getAlgorithm()
 	{
 		return callObjectMethod(
 			"getAlgorithm",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	java::security::Provider CertPathValidator::getProvider()
 	{

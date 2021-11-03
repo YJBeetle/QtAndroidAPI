@@ -1,3 +1,6 @@
+#include "../../../JString.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "../../../java/util/Date.hpp"
 #include "../../../java/util/Locale.hpp"
 #include "./ServiceInfo.hpp"
@@ -12,12 +15,12 @@ namespace android::telephony::mbms
 	// Constructors
 	
 	// Methods
-	jboolean ServiceInfo::equals(jobject arg0)
+	jboolean ServiceInfo::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	JObject ServiceInfo::getLocales()
@@ -27,13 +30,13 @@ namespace android::telephony::mbms
 			"()Ljava/util/List;"
 		);
 	}
-	jstring ServiceInfo::getNameForLocale(java::util::Locale arg0)
+	JString ServiceInfo::getNameForLocale(java::util::Locale arg0)
 	{
 		return callObjectMethod(
 			"getNameForLocale",
 			"(Ljava/util/Locale;)Ljava/lang/CharSequence;",
 			arg0.object()
-		).object<jstring>();
+		);
 	}
 	JObject ServiceInfo::getNamedContentLocales()
 	{
@@ -42,19 +45,19 @@ namespace android::telephony::mbms
 			"()Ljava/util/Set;"
 		);
 	}
-	jstring ServiceInfo::getServiceClassName()
+	JString ServiceInfo::getServiceClassName()
 	{
 		return callObjectMethod(
 			"getServiceClassName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ServiceInfo::getServiceId()
+	JString ServiceInfo::getServiceId()
 	{
 		return callObjectMethod(
 			"getServiceId",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	java::util::Date ServiceInfo::getSessionEndTime()
 	{

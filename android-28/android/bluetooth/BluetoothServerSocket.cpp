@@ -1,4 +1,5 @@
 #include "./BluetoothSocket.hpp"
+#include "../../JString.hpp"
 #include "./BluetoothServerSocket.hpp"
 
 namespace android::bluetooth
@@ -33,12 +34,12 @@ namespace android::bluetooth
 			"()V"
 		);
 	}
-	jstring BluetoothServerSocket::toString()
+	JString BluetoothServerSocket::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::bluetooth
 

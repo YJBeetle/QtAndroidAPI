@@ -1,3 +1,5 @@
+#include "../../JByteArray.hpp"
+#include "../../JIntArray.hpp"
 #include "./Rect.hpp"
 #include "../../java/io/OutputStream.hpp"
 #include "./YuvImage.hpp"
@@ -10,15 +12,15 @@ namespace android::graphics
 	YuvImage::YuvImage(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	YuvImage::YuvImage(jbyteArray arg0, jint arg1, jint arg2, jint arg3, jintArray arg4)
+	YuvImage::YuvImage(JByteArray arg0, jint arg1, jint arg2, jint arg3, JIntArray arg4)
 		: JObject(
 			"android.graphics.YuvImage",
 			"([BIII[I)V",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1,
 			arg2,
 			arg3,
-			arg4
+			arg4.object<jintArray>()
 		) {}
 	
 	// Methods
@@ -39,12 +41,12 @@ namespace android::graphics
 			"()I"
 		);
 	}
-	jintArray YuvImage::getStrides()
+	JIntArray YuvImage::getStrides()
 	{
 		return callObjectMethod(
 			"getStrides",
 			"()[I"
-		).object<jintArray>();
+		);
 	}
 	jint YuvImage::getWidth()
 	{
@@ -53,12 +55,12 @@ namespace android::graphics
 			"()I"
 		);
 	}
-	jbyteArray YuvImage::getYuvData()
+	JByteArray YuvImage::getYuvData()
 	{
 		return callObjectMethod(
 			"getYuvData",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
 	jint YuvImage::getYuvFormat()
 	{

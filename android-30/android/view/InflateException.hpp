@@ -1,9 +1,9 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../../java/lang/Exception.hpp"
 #include "../../java/lang/RuntimeException.hpp"
 
+class JString;
+class JThrowable;
 
 namespace android::view
 {
@@ -18,9 +18,9 @@ namespace android::view
 		
 		// Constructors
 		InflateException();
-		InflateException(jstring arg0);
-		InflateException(jthrowable arg0);
-		InflateException(jstring arg0, jthrowable arg1);
+		InflateException(JString arg0);
+		InflateException(JThrowable arg0);
+		InflateException(JString arg0, JThrowable arg1);
 		
 		// Methods
 	};

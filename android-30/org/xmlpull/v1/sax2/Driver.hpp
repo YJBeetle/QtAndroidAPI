@@ -2,6 +2,8 @@
 
 #include "../../../../JObject.hpp"
 
+class JObject;
+class JString;
 namespace org::xml::sax
 {
 	class InputSource;
@@ -28,32 +30,32 @@ namespace org::xmlpull::v1::sax2
 		JObject getDTDHandler();
 		JObject getEntityResolver();
 		JObject getErrorHandler();
-		jboolean getFeature(jstring arg0);
-		jint getIndex(jstring arg0);
-		jint getIndex(jstring arg0, jstring arg1);
+		jboolean getFeature(JString arg0);
+		jint getIndex(JString arg0);
+		jint getIndex(JString arg0, JString arg1);
 		jint getLength();
 		jint getLineNumber();
-		jstring getLocalName(jint arg0);
-		jobject getProperty(jstring arg0);
-		jstring getPublicId();
-		jstring getQName(jint arg0);
-		jstring getSystemId();
-		jstring getType(jint arg0);
-		jstring getType(jstring arg0);
-		jstring getType(jstring arg0, jstring arg1);
-		jstring getURI(jint arg0);
-		jstring getValue(jint arg0);
-		jstring getValue(jstring arg0);
-		jstring getValue(jstring arg0, jstring arg1);
-		void parse(jstring arg0);
+		JString getLocalName(jint arg0);
+		JObject getProperty(JString arg0);
+		JString getPublicId();
+		JString getQName(jint arg0);
+		JString getSystemId();
+		JString getType(jint arg0);
+		JString getType(JString arg0);
+		JString getType(JString arg0, JString arg1);
+		JString getURI(jint arg0);
+		JString getValue(jint arg0);
+		JString getValue(JString arg0);
+		JString getValue(JString arg0, JString arg1);
+		void parse(JString arg0);
 		void parse(org::xml::sax::InputSource arg0);
 		void parseSubTree(JObject arg0);
 		void setContentHandler(JObject arg0);
 		void setDTDHandler(JObject arg0);
 		void setEntityResolver(JObject arg0);
 		void setErrorHandler(JObject arg0);
-		void setFeature(jstring arg0, jboolean arg1);
-		void setProperty(jstring arg0, jobject arg1);
+		void setFeature(JString arg0, jboolean arg1);
+		void setProperty(JString arg0, JObject arg1);
 	};
 } // namespace org::xmlpull::v1::sax2
 

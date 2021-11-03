@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./Base64DataException.hpp"
 
 namespace android::util
@@ -8,11 +9,11 @@ namespace android::util
 	Base64DataException::Base64DataException(QJniObject obj) : java::io::IOException(obj) {}
 	
 	// Constructors
-	Base64DataException::Base64DataException(jstring arg0)
+	Base64DataException::Base64DataException(JString arg0)
 		: java::io::IOException(
 			"android.util.Base64DataException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

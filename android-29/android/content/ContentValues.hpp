@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JByteArray;
 namespace android::os
 {
 	class Parcel;
@@ -30,10 +31,12 @@ namespace java::lang
 {
 	class Long;
 }
+class JObject;
 namespace java::lang
 {
 	class Short;
 }
+class JString;
 
 namespace android::content
 {
@@ -42,7 +45,7 @@ namespace android::content
 	public:
 		// Fields
 		static JObject CREATOR();
-		static jstring TAG();
+		static JString TAG();
 		
 		// QJniObject forward
 		template<typename ...Ts> explicit ContentValues(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
@@ -55,35 +58,35 @@ namespace android::content
 		
 		// Methods
 		void clear();
-		jboolean containsKey(jstring arg0);
+		jboolean containsKey(JString arg0);
 		jint describeContents();
-		jboolean equals(jobject arg0);
-		jobject get(jstring arg0);
-		java::lang::Boolean getAsBoolean(jstring arg0);
-		java::lang::Byte getAsByte(jstring arg0);
-		jbyteArray getAsByteArray(jstring arg0);
-		java::lang::Double getAsDouble(jstring arg0);
-		java::lang::Float getAsFloat(jstring arg0);
-		java::lang::Integer getAsInteger(jstring arg0);
-		java::lang::Long getAsLong(jstring arg0);
-		java::lang::Short getAsShort(jstring arg0);
-		jstring getAsString(jstring arg0);
+		jboolean equals(JObject arg0);
+		JObject get(JString arg0);
+		java::lang::Boolean getAsBoolean(JString arg0);
+		java::lang::Byte getAsByte(JString arg0);
+		JByteArray getAsByteArray(JString arg0);
+		java::lang::Double getAsDouble(JString arg0);
+		java::lang::Float getAsFloat(JString arg0);
+		java::lang::Integer getAsInteger(JString arg0);
+		java::lang::Long getAsLong(JString arg0);
+		java::lang::Short getAsShort(JString arg0);
+		JString getAsString(JString arg0);
 		jint hashCode();
 		JObject keySet();
-		void put(jstring arg0, jbyteArray arg1);
-		void put(jstring arg0, java::lang::Boolean arg1);
-		void put(jstring arg0, java::lang::Byte arg1);
-		void put(jstring arg0, java::lang::Double arg1);
-		void put(jstring arg0, java::lang::Float arg1);
-		void put(jstring arg0, java::lang::Integer arg1);
-		void put(jstring arg0, java::lang::Long arg1);
-		void put(jstring arg0, java::lang::Short arg1);
-		void put(jstring arg0, jstring arg1);
+		void put(JString arg0, JByteArray arg1);
+		void put(JString arg0, java::lang::Boolean arg1);
+		void put(JString arg0, java::lang::Byte arg1);
+		void put(JString arg0, java::lang::Double arg1);
+		void put(JString arg0, java::lang::Float arg1);
+		void put(JString arg0, java::lang::Integer arg1);
+		void put(JString arg0, java::lang::Long arg1);
+		void put(JString arg0, java::lang::Short arg1);
+		void put(JString arg0, JString arg1);
 		void putAll(android::content::ContentValues arg0);
-		void putNull(jstring arg0);
-		void remove(jstring arg0);
+		void putNull(JString arg0);
+		void remove(JString arg0);
 		jint size();
-		jstring toString();
+		JString toString();
 		JObject valueSet();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};

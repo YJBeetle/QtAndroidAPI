@@ -1,6 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./AbstractMap.hpp"
 
 namespace java::io
@@ -11,6 +10,7 @@ namespace java::io
 {
 	class ObjectOutputStream;
 }
+class JObject;
 
 namespace java::util
 {
@@ -28,50 +28,50 @@ namespace java::util
 		TreeMap(JObject arg0);
 		
 		// Methods
-		JObject ceilingEntry(jobject arg0);
-		jobject ceilingKey(jobject arg0);
+		JObject ceilingEntry(JObject arg0);
+		JObject ceilingKey(JObject arg0);
 		void clear();
-		jobject clone();
+		JObject clone();
 		JObject comparator();
-		jobject compute(jobject arg0, JObject arg1);
-		jobject computeIfAbsent(jobject arg0, JObject arg1);
-		jobject computeIfPresent(jobject arg0, JObject arg1);
-		jboolean containsKey(jobject arg0);
-		jboolean containsValue(jobject arg0);
+		JObject compute(JObject arg0, JObject arg1);
+		JObject computeIfAbsent(JObject arg0, JObject arg1);
+		JObject computeIfPresent(JObject arg0, JObject arg1);
+		jboolean containsKey(JObject arg0);
+		jboolean containsValue(JObject arg0);
 		JObject descendingKeySet();
 		JObject descendingMap();
 		JObject entrySet();
 		JObject firstEntry();
-		jobject firstKey();
-		JObject floorEntry(jobject arg0);
-		jobject floorKey(jobject arg0);
+		JObject firstKey();
+		JObject floorEntry(JObject arg0);
+		JObject floorKey(JObject arg0);
 		void forEach(JObject arg0);
-		jobject get(jobject arg0);
-		JObject headMap(jobject arg0, jboolean arg1);
-		JObject headMap(jobject arg0);
-		JObject higherEntry(jobject arg0);
-		jobject higherKey(jobject arg0);
+		JObject get(JObject arg0);
+		JObject headMap(JObject arg0, jboolean arg1);
+		JObject headMap(JObject arg0);
+		JObject higherEntry(JObject arg0);
+		JObject higherKey(JObject arg0);
 		JObject keySet();
 		JObject lastEntry();
-		jobject lastKey();
-		JObject lowerEntry(jobject arg0);
-		jobject lowerKey(jobject arg0);
-		jobject merge(jobject arg0, jobject arg1, JObject arg2);
+		JObject lastKey();
+		JObject lowerEntry(JObject arg0);
+		JObject lowerKey(JObject arg0);
+		JObject merge(JObject arg0, JObject arg1, JObject arg2);
 		JObject navigableKeySet();
 		JObject pollFirstEntry();
 		JObject pollLastEntry();
-		jobject put(jobject arg0, jobject arg1);
+		JObject put(JObject arg0, JObject arg1);
 		void putAll(JObject arg0);
-		jobject putIfAbsent(jobject arg0, jobject arg1);
-		jobject remove(jobject arg0);
-		jboolean replace(jobject arg0, jobject arg1, jobject arg2);
-		jobject replace(jobject arg0, jobject arg1);
+		JObject putIfAbsent(JObject arg0, JObject arg1);
+		JObject remove(JObject arg0);
+		jboolean replace(JObject arg0, JObject arg1, JObject arg2);
+		JObject replace(JObject arg0, JObject arg1);
 		void replaceAll(JObject arg0);
 		jint size();
-		JObject subMap(jobject arg0, jboolean arg1, jobject arg2, jboolean arg3);
-		JObject subMap(jobject arg0, jobject arg1);
-		JObject tailMap(jobject arg0, jboolean arg1);
-		JObject tailMap(jobject arg0);
+		JObject subMap(JObject arg0, jboolean arg1, JObject arg2, jboolean arg3);
+		JObject subMap(JObject arg0, JObject arg1);
+		JObject tailMap(JObject arg0, jboolean arg1);
+		JObject tailMap(JObject arg0);
 		JObject values();
 	};
 } // namespace java::util

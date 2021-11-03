@@ -1,9 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../security/Permission.hpp"
 #include "../security/BasicPermission.hpp"
 
+class JString;
 
 namespace java::io
 {
@@ -17,8 +16,8 @@ namespace java::io
 		SerializablePermission(QJniObject obj);
 		
 		// Constructors
-		SerializablePermission(jstring arg0);
-		SerializablePermission(jstring arg0, jstring arg1);
+		SerializablePermission(JString arg0);
+		SerializablePermission(JString arg0, JString arg1);
 		
 		// Methods
 	};

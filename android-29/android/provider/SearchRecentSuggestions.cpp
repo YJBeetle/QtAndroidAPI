@@ -1,25 +1,27 @@
+#include "../../JArray.hpp"
 #include "../content/ContentResolver.hpp"
 #include "../content/Context.hpp"
+#include "../../JString.hpp"
 #include "./SearchRecentSuggestions.hpp"
 
 namespace android::provider
 {
 	// Fields
-	jarray SearchRecentSuggestions::QUERIES_PROJECTION_1LINE()
+	JArray SearchRecentSuggestions::QUERIES_PROJECTION_1LINE()
 	{
 		return getStaticObjectField(
 			"android.provider.SearchRecentSuggestions",
 			"QUERIES_PROJECTION_1LINE",
 			"[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
-	jarray SearchRecentSuggestions::QUERIES_PROJECTION_2LINE()
+	JArray SearchRecentSuggestions::QUERIES_PROJECTION_2LINE()
 	{
 		return getStaticObjectField(
 			"android.provider.SearchRecentSuggestions",
 			"QUERIES_PROJECTION_2LINE",
 			"[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
 	jint SearchRecentSuggestions::QUERIES_PROJECTION_DATE_INDEX()
 	{
@@ -54,12 +56,12 @@ namespace android::provider
 	SearchRecentSuggestions::SearchRecentSuggestions(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	SearchRecentSuggestions::SearchRecentSuggestions(android::content::Context arg0, jstring arg1, jint arg2)
+	SearchRecentSuggestions::SearchRecentSuggestions(android::content::Context arg0, JString arg1, jint arg2)
 		: JObject(
 			"android.provider.SearchRecentSuggestions",
 			"(Landroid/content/Context;Ljava/lang/String;I)V",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2
 		) {}
 	
@@ -71,13 +73,13 @@ namespace android::provider
 			"()V"
 		);
 	}
-	void SearchRecentSuggestions::saveRecentQuery(jstring arg0, jstring arg1)
+	void SearchRecentSuggestions::saveRecentQuery(JString arg0, JString arg1)
 	{
 		callMethod<void>(
 			"saveRecentQuery",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		);
 	}
 } // namespace android::provider

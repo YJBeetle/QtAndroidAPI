@@ -2,6 +2,7 @@
 #include "./MediaCodec.hpp"
 #include "./MediaCodec_CryptoInfo.hpp"
 #include "./MediaCodec_LinearBlock.hpp"
+#include "../../JString.hpp"
 #include "../../java/nio/ByteBuffer.hpp"
 #include "./MediaCodec_QueueRequest.hpp"
 
@@ -22,12 +23,12 @@ namespace android::media
 			"()V"
 		);
 	}
-	android::media::MediaCodec_QueueRequest MediaCodec_QueueRequest::setByteBufferParameter(jstring arg0, java::nio::ByteBuffer arg1)
+	android::media::MediaCodec_QueueRequest MediaCodec_QueueRequest::setByteBufferParameter(JString arg0, java::nio::ByteBuffer arg1)
 	{
 		return callObjectMethod(
 			"setByteBufferParameter",
 			"(Ljava/lang/String;Ljava/nio/ByteBuffer;)Landroid/media/MediaCodec$QueueRequest;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
@@ -50,12 +51,12 @@ namespace android::media
 			arg0
 		);
 	}
-	android::media::MediaCodec_QueueRequest MediaCodec_QueueRequest::setFloatParameter(jstring arg0, jfloat arg1)
+	android::media::MediaCodec_QueueRequest MediaCodec_QueueRequest::setFloatParameter(JString arg0, jfloat arg1)
 	{
 		return callObjectMethod(
 			"setFloatParameter",
 			"(Ljava/lang/String;F)Landroid/media/MediaCodec$QueueRequest;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
@@ -67,12 +68,12 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	android::media::MediaCodec_QueueRequest MediaCodec_QueueRequest::setIntegerParameter(jstring arg0, jint arg1)
+	android::media::MediaCodec_QueueRequest MediaCodec_QueueRequest::setIntegerParameter(JString arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"setIntegerParameter",
 			"(Ljava/lang/String;I)Landroid/media/MediaCodec$QueueRequest;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
@@ -86,12 +87,12 @@ namespace android::media
 			arg2
 		);
 	}
-	android::media::MediaCodec_QueueRequest MediaCodec_QueueRequest::setLongParameter(jstring arg0, jlong arg1)
+	android::media::MediaCodec_QueueRequest MediaCodec_QueueRequest::setLongParameter(JString arg0, jlong arg1)
 	{
 		return callObjectMethod(
 			"setLongParameter",
 			"(Ljava/lang/String;J)Landroid/media/MediaCodec$QueueRequest;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
@@ -103,13 +104,13 @@ namespace android::media
 			arg0
 		);
 	}
-	android::media::MediaCodec_QueueRequest MediaCodec_QueueRequest::setStringParameter(jstring arg0, jstring arg1)
+	android::media::MediaCodec_QueueRequest MediaCodec_QueueRequest::setStringParameter(JString arg0, JString arg1)
 	{
 		return callObjectMethod(
 			"setStringParameter",
 			"(Ljava/lang/String;Ljava/lang/String;)Landroid/media/MediaCodec$QueueRequest;",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		);
 	}
 } // namespace android::media

@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JByteArray;
 
 namespace android::media
 {
@@ -15,10 +16,10 @@ namespace android::media
 		SubtitleData(QJniObject obj);
 		
 		// Constructors
-		SubtitleData(jint arg0, jlong arg1, jlong arg2, jbyteArray arg3);
+		SubtitleData(jint arg0, jlong arg1, jlong arg2, JByteArray arg3);
 		
 		// Methods
-		jbyteArray getData();
+		JByteArray getData();
 		jlong getDurationUs();
 		jlong getStartTimeUs();
 		jint getTrackIndex();

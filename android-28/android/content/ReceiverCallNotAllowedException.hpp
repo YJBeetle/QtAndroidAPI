@@ -1,10 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../../java/lang/Exception.hpp"
-#include "../../java/lang/RuntimeException.hpp"
 #include "../util/AndroidRuntimeException.hpp"
 
+class JString;
 
 namespace android::content
 {
@@ -18,7 +16,7 @@ namespace android::content
 		ReceiverCallNotAllowedException(QJniObject obj);
 		
 		// Constructors
-		ReceiverCallNotAllowedException(jstring arg0);
+		ReceiverCallNotAllowedException(JString arg0);
 		
 		// Methods
 	};

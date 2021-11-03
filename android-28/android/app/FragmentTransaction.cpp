@@ -1,5 +1,7 @@
 #include "./Fragment.hpp"
 #include "../view/View.hpp"
+#include "../../JString.hpp"
+#include "../../JString.hpp"
 #include "./FragmentTransaction.hpp"
 
 namespace android::app
@@ -66,13 +68,13 @@ namespace android::app
 		) {}
 	
 	// Methods
-	android::app::FragmentTransaction FragmentTransaction::add(android::app::Fragment arg0, jstring arg1)
+	android::app::FragmentTransaction FragmentTransaction::add(android::app::Fragment arg0, JString arg1)
 	{
 		return callObjectMethod(
 			"add",
 			"(Landroid/app/Fragment;Ljava/lang/String;)Landroid/app/FragmentTransaction;",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
 	android::app::FragmentTransaction FragmentTransaction::add(jint arg0, android::app::Fragment arg1)
@@ -84,31 +86,31 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	android::app::FragmentTransaction FragmentTransaction::add(jint arg0, android::app::Fragment arg1, jstring arg2)
+	android::app::FragmentTransaction FragmentTransaction::add(jint arg0, android::app::Fragment arg1, JString arg2)
 	{
 		return callObjectMethod(
 			"add",
 			"(ILandroid/app/Fragment;Ljava/lang/String;)Landroid/app/FragmentTransaction;",
 			arg0,
 			arg1.object(),
-			arg2
+			arg2.object<jstring>()
 		);
 	}
-	android::app::FragmentTransaction FragmentTransaction::addSharedElement(android::view::View arg0, jstring arg1)
+	android::app::FragmentTransaction FragmentTransaction::addSharedElement(android::view::View arg0, JString arg1)
 	{
 		return callObjectMethod(
 			"addSharedElement",
 			"(Landroid/view/View;Ljava/lang/String;)Landroid/app/FragmentTransaction;",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
-	android::app::FragmentTransaction FragmentTransaction::addToBackStack(jstring arg0)
+	android::app::FragmentTransaction FragmentTransaction::addToBackStack(JString arg0)
 	{
 		return callObjectMethod(
 			"addToBackStack",
 			"(Ljava/lang/String;)Landroid/app/FragmentTransaction;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::app::FragmentTransaction FragmentTransaction::attach(android::app::Fragment arg0)
@@ -201,14 +203,14 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	android::app::FragmentTransaction FragmentTransaction::replace(jint arg0, android::app::Fragment arg1, jstring arg2)
+	android::app::FragmentTransaction FragmentTransaction::replace(jint arg0, android::app::Fragment arg1, JString arg2)
 	{
 		return callObjectMethod(
 			"replace",
 			"(ILandroid/app/Fragment;Ljava/lang/String;)Landroid/app/FragmentTransaction;",
 			arg0,
 			arg1.object(),
-			arg2
+			arg2.object<jstring>()
 		);
 	}
 	android::app::FragmentTransaction FragmentTransaction::runOnCommit(JObject arg0)
@@ -227,12 +229,12 @@ namespace android::app
 			arg0
 		);
 	}
-	android::app::FragmentTransaction FragmentTransaction::setBreadCrumbShortTitle(jstring arg0)
+	android::app::FragmentTransaction FragmentTransaction::setBreadCrumbShortTitle(JString arg0)
 	{
 		return callObjectMethod(
 			"setBreadCrumbShortTitle",
 			"(Ljava/lang/CharSequence;)Landroid/app/FragmentTransaction;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::app::FragmentTransaction FragmentTransaction::setBreadCrumbTitle(jint arg0)
@@ -243,12 +245,12 @@ namespace android::app
 			arg0
 		);
 	}
-	android::app::FragmentTransaction FragmentTransaction::setBreadCrumbTitle(jstring arg0)
+	android::app::FragmentTransaction FragmentTransaction::setBreadCrumbTitle(JString arg0)
 	{
 		return callObjectMethod(
 			"setBreadCrumbTitle",
 			"(Ljava/lang/CharSequence;)Landroid/app/FragmentTransaction;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::app::FragmentTransaction FragmentTransaction::setCustomAnimations(jint arg0, jint arg1)

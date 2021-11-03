@@ -1,3 +1,5 @@
+#include "../../../../JLongArray.hpp"
+#include "../../../../JString.hpp"
 #include "./AtomicLongArray.hpp"
 
 namespace java::util::concurrent::atomic
@@ -8,11 +10,11 @@ namespace java::util::concurrent::atomic
 	AtomicLongArray::AtomicLongArray(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	AtomicLongArray::AtomicLongArray(jlongArray arg0)
+	AtomicLongArray::AtomicLongArray(JLongArray arg0)
 		: JObject(
 			"java.util.concurrent.atomic.AtomicLongArray",
 			"([J)V",
-			arg0
+			arg0.object<jlongArray>()
 		) {}
 	AtomicLongArray::AtomicLongArray(jint arg0)
 		: JObject(
@@ -234,12 +236,12 @@ namespace java::util::concurrent::atomic
 			arg1
 		);
 	}
-	jstring AtomicLongArray::toString()
+	JString AtomicLongArray::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jlong AtomicLongArray::updateAndGet(jint arg0, JObject arg1)
 	{

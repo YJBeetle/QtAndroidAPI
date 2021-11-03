@@ -1,24 +1,26 @@
 #include "../content/Context.hpp"
+#include "../../JString.hpp"
+#include "../../JString.hpp"
 #include "./TextClock.hpp"
 
 namespace android::widget
 {
 	// Fields
-	jstring TextClock::DEFAULT_FORMAT_12_HOUR()
+	JString TextClock::DEFAULT_FORMAT_12_HOUR()
 	{
 		return getStaticObjectField(
 			"android.widget.TextClock",
 			"DEFAULT_FORMAT_12_HOUR",
 			"Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
-	jstring TextClock::DEFAULT_FORMAT_24_HOUR()
+	JString TextClock::DEFAULT_FORMAT_24_HOUR()
 	{
 		return getStaticObjectField(
 			"android.widget.TextClock",
 			"DEFAULT_FORMAT_24_HOUR",
 			"Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	
 	// QJniObject forward
@@ -57,26 +59,26 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	jstring TextClock::getFormat12Hour()
+	JString TextClock::getFormat12Hour()
 	{
 		return callObjectMethod(
 			"getFormat12Hour",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
-	jstring TextClock::getFormat24Hour()
+	JString TextClock::getFormat24Hour()
 	{
 		return callObjectMethod(
 			"getFormat24Hour",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
-	jstring TextClock::getTimeZone()
+	JString TextClock::getTimeZone()
 	{
 		return callObjectMethod(
 			"getTimeZone",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jboolean TextClock::is24HourModeEnabled()
 	{
@@ -100,28 +102,28 @@ namespace android::widget
 			"()V"
 		);
 	}
-	void TextClock::setFormat12Hour(jstring arg0)
+	void TextClock::setFormat12Hour(JString arg0)
 	{
 		callMethod<void>(
 			"setFormat12Hour",
 			"(Ljava/lang/CharSequence;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	void TextClock::setFormat24Hour(jstring arg0)
+	void TextClock::setFormat24Hour(JString arg0)
 	{
 		callMethod<void>(
 			"setFormat24Hour",
 			"(Ljava/lang/CharSequence;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	void TextClock::setTimeZone(jstring arg0)
+	void TextClock::setTimeZone(JString arg0)
 	{
 		callMethod<void>(
 			"setTimeZone",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 } // namespace android::widget

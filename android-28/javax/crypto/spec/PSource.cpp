@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./PSource.hpp"
 
 namespace javax::crypto::spec
@@ -10,12 +11,12 @@ namespace javax::crypto::spec
 	// Constructors
 	
 	// Methods
-	jstring PSource::getAlgorithm()
+	JString PSource::getAlgorithm()
 	{
 		return callObjectMethod(
 			"getAlgorithm",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace javax::crypto::spec
 

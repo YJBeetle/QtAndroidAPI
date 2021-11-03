@@ -2,6 +2,9 @@
 
 #include "../../../JObject.hpp"
 
+class JArray;
+class JArray;
+class JArray;
 namespace android::os
 {
 	class Bundle;
@@ -14,6 +17,7 @@ namespace android::view::textservice
 {
 	class TextInfo;
 }
+class JString;
 
 namespace android::service::textservice
 {
@@ -31,14 +35,14 @@ namespace android::service::textservice
 		
 		// Methods
 		android::os::Bundle getBundle();
-		jstring getLocale();
+		JString getLocale();
 		jint getSupportedAttributes();
 		void onCancel();
 		void onClose();
 		void onCreate();
-		jarray onGetSentenceSuggestionsMultiple(jarray arg0, jint arg1);
+		JArray onGetSentenceSuggestionsMultiple(JArray arg0, jint arg1);
 		android::view::textservice::SuggestionsInfo onGetSuggestions(android::view::textservice::TextInfo arg0, jint arg1);
-		jarray onGetSuggestionsMultiple(jarray arg0, jint arg1, jboolean arg2);
+		JArray onGetSuggestionsMultiple(JArray arg0, jint arg1, jboolean arg2);
 	};
 } // namespace android::service::textservice
 

@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./VoiceInteractor_Request.hpp"
 
+class JArray;
 namespace android::app
 {
 	class VoiceInteractor_Prompt;
@@ -24,10 +24,10 @@ namespace android::app
 		VoiceInteractor_PickOptionRequest(QJniObject obj);
 		
 		// Constructors
-		VoiceInteractor_PickOptionRequest(android::app::VoiceInteractor_Prompt arg0, jarray arg1, android::os::Bundle arg2);
+		VoiceInteractor_PickOptionRequest(android::app::VoiceInteractor_Prompt arg0, JArray arg1, android::os::Bundle arg2);
 		
 		// Methods
-		void onPickOptionResult(jboolean arg0, jarray arg1, android::os::Bundle arg2);
+		void onPickOptionResult(jboolean arg0, JArray arg1, android::os::Bundle arg2);
 	};
 } // namespace android::app
 

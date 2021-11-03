@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JIntArray;
+class JString;
 namespace java::util
 {
 	class Calendar;
@@ -36,9 +38,9 @@ namespace java::util
 		// Methods
 		java::util::Calendar build();
 		java::util::Calendar_Builder set(jint arg0, jint arg1);
-		java::util::Calendar_Builder setCalendarType(jstring arg0);
+		java::util::Calendar_Builder setCalendarType(JString arg0);
 		java::util::Calendar_Builder setDate(jint arg0, jint arg1, jint arg2);
-		java::util::Calendar_Builder setFields(jintArray arg0);
+		java::util::Calendar_Builder setFields(JIntArray arg0);
 		java::util::Calendar_Builder setInstant(java::util::Date arg0);
 		java::util::Calendar_Builder setInstant(jlong arg0);
 		java::util::Calendar_Builder setLenient(jboolean arg0);

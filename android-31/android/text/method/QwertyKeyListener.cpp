@@ -1,6 +1,7 @@
 #include "./TextKeyListener_Capitalize.hpp"
 #include "../../view/KeyEvent.hpp"
 #include "../../view/View.hpp"
+#include "../../../JString.hpp"
 #include "./QwertyKeyListener.hpp"
 
 namespace android::text::method
@@ -38,7 +39,7 @@ namespace android::text::method
 			"()Landroid/text/method/QwertyKeyListener;"
 		);
 	}
-	void QwertyKeyListener::markAsReplaced(JObject arg0, jint arg1, jint arg2, jstring arg3)
+	void QwertyKeyListener::markAsReplaced(JObject arg0, jint arg1, jint arg2, JString arg3)
 	{
 		callStaticMethod<void>(
 			"android.text.method.QwertyKeyListener",
@@ -47,7 +48,7 @@ namespace android::text::method
 			arg0.object(),
 			arg1,
 			arg2,
-			arg3
+			arg3.object<jstring>()
 		);
 	}
 	jint QwertyKeyListener::getInputType()

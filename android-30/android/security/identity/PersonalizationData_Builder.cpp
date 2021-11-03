@@ -1,5 +1,7 @@
+#include "../../../JByteArray.hpp"
 #include "./AccessControlProfile.hpp"
 #include "./PersonalizationData.hpp"
+#include "../../../JString.hpp"
 #include "./PersonalizationData_Builder.hpp"
 
 namespace android::security::identity
@@ -32,15 +34,15 @@ namespace android::security::identity
 			"()Landroid/security/identity/PersonalizationData;"
 		);
 	}
-	android::security::identity::PersonalizationData_Builder PersonalizationData_Builder::putEntry(jstring arg0, jstring arg1, JObject arg2, jbyteArray arg3)
+	android::security::identity::PersonalizationData_Builder PersonalizationData_Builder::putEntry(JString arg0, JString arg1, JObject arg2, JByteArray arg3)
 	{
 		return callObjectMethod(
 			"putEntry",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/util/Collection;[B)Landroid/security/identity/PersonalizationData$Builder;",
-			arg0,
-			arg1,
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
 			arg2.object(),
-			arg3
+			arg3.object<jbyteArray>()
 		);
 	}
 } // namespace android::security::identity

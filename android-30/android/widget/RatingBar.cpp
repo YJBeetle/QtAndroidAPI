@@ -1,4 +1,5 @@
 #include "../content/Context.hpp"
+#include "../../JString.hpp"
 #include "./RatingBar.hpp"
 
 namespace android::widget
@@ -41,12 +42,12 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	jstring RatingBar::getAccessibilityClassName()
+	JString RatingBar::getAccessibilityClassName()
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	jint RatingBar::getNumStars()
 	{

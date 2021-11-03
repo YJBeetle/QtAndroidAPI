@@ -1,3 +1,6 @@
+#include "../../JByteArray.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./Inet4Address.hpp"
 
 namespace java::net
@@ -10,27 +13,27 @@ namespace java::net
 	// Constructors
 	
 	// Methods
-	jboolean Inet4Address::equals(jobject arg0)
+	jboolean Inet4Address::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jbyteArray Inet4Address::getAddress()
+	JByteArray Inet4Address::getAddress()
 	{
 		return callObjectMethod(
 			"getAddress",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
-	jstring Inet4Address::getHostAddress()
+	JString Inet4Address::getHostAddress()
 	{
 		return callObjectMethod(
 			"getHostAddress",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint Inet4Address::hashCode()
 	{

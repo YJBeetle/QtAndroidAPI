@@ -2,6 +2,8 @@
 
 #include "../../../JObject.hpp"
 
+class JByteArray;
+class JObject;
 
 namespace javax::crypto::spec
 {
@@ -16,12 +18,12 @@ namespace javax::crypto::spec
 		
 		// Constructors
 		RC5ParameterSpec(jint arg0, jint arg1, jint arg2);
-		RC5ParameterSpec(jint arg0, jint arg1, jint arg2, jbyteArray arg3);
-		RC5ParameterSpec(jint arg0, jint arg1, jint arg2, jbyteArray arg3, jint arg4);
+		RC5ParameterSpec(jint arg0, jint arg1, jint arg2, JByteArray arg3);
+		RC5ParameterSpec(jint arg0, jint arg1, jint arg2, JByteArray arg3, jint arg4);
 		
 		// Methods
-		jboolean equals(jobject arg0);
-		jbyteArray getIV();
+		jboolean equals(JObject arg0);
+		JByteArray getIV();
 		jint getRounds();
 		jint getVersion();
 		jint getWordSize();

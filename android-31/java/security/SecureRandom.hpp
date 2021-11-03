@@ -1,8 +1,9 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "../util/Random.hpp"
 
+class JByteArray;
+class JString;
 namespace java::security
 {
 	class MessageDigest;
@@ -29,28 +30,28 @@ namespace java::security
 		
 		// Constructors
 		SecureRandom();
-		SecureRandom(jbyteArray arg0);
+		SecureRandom(JByteArray arg0);
 		
 		// Methods
-		static java::security::SecureRandom getInstance(jstring arg0);
-		static java::security::SecureRandom getInstance(jstring arg0, jstring arg1);
-		static java::security::SecureRandom getInstance(jstring arg0, java::security::Provider arg1);
-		static java::security::SecureRandom getInstance(jstring arg0, JObject arg1);
-		static java::security::SecureRandom getInstance(jstring arg0, JObject arg1, jstring arg2);
-		static java::security::SecureRandom getInstance(jstring arg0, JObject arg1, java::security::Provider arg2);
+		static java::security::SecureRandom getInstance(JString arg0);
+		static java::security::SecureRandom getInstance(JString arg0, JString arg1);
+		static java::security::SecureRandom getInstance(JString arg0, java::security::Provider arg1);
+		static java::security::SecureRandom getInstance(JString arg0, JObject arg1);
+		static java::security::SecureRandom getInstance(JString arg0, JObject arg1, JString arg2);
+		static java::security::SecureRandom getInstance(JString arg0, JObject arg1, java::security::Provider arg2);
 		static java::security::SecureRandom getInstanceStrong();
-		static jbyteArray getSeed(jint arg0);
-		jbyteArray generateSeed(jint arg0);
-		jstring getAlgorithm();
+		static JByteArray getSeed(jint arg0);
+		JByteArray generateSeed(jint arg0);
+		JString getAlgorithm();
 		JObject getParameters();
 		java::security::Provider getProvider();
-		void nextBytes(jbyteArray arg0);
-		void nextBytes(jbyteArray arg0, JObject arg1);
+		void nextBytes(JByteArray arg0);
+		void nextBytes(JByteArray arg0, JObject arg1);
 		void reseed();
 		void reseed(JObject arg0);
-		void setSeed(jbyteArray arg0);
+		void setSeed(JByteArray arg0);
 		void setSeed(jlong arg0);
-		jstring toString();
+		JString toString();
 	};
 } // namespace java::security
 

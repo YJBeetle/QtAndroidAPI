@@ -1,5 +1,6 @@
 #include "../content/ContentResolver.hpp"
 #include "../net/Uri.hpp"
+#include "../../JString.hpp"
 #include "./ContactsContract_RawContacts.hpp"
 
 namespace android::provider
@@ -33,21 +34,21 @@ namespace android::provider
 			"AGGREGATION_MODE_SUSPENDED"
 		);
 	}
-	jstring ContactsContract_RawContacts::CONTENT_ITEM_TYPE()
+	JString ContactsContract_RawContacts::CONTENT_ITEM_TYPE()
 	{
 		return getStaticObjectField(
 			"android.provider.ContactsContract$RawContacts",
 			"CONTENT_ITEM_TYPE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ContactsContract_RawContacts::CONTENT_TYPE()
+	JString ContactsContract_RawContacts::CONTENT_TYPE()
 	{
 		return getStaticObjectField(
 			"android.provider.ContactsContract$RawContacts",
 			"CONTENT_TYPE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::net::Uri ContactsContract_RawContacts::CONTENT_URI()
 	{

@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./StructStatVfs.hpp"
 
 namespace android::system
@@ -92,12 +93,12 @@ namespace android::system
 		) {}
 	
 	// Methods
-	jstring StructStatVfs::toString()
+	JString StructStatVfs::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::system
 

@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JFloatArray;
+class JIntArray;
 
 namespace android::location
 {

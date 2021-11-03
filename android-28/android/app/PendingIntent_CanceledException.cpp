@@ -1,4 +1,5 @@
 #include "../../java/lang/Exception.hpp"
+#include "../../JString.hpp"
 #include "./PendingIntent_CanceledException.hpp"
 
 namespace android::app
@@ -20,11 +21,11 @@ namespace android::app
 			"(Ljava/lang/Exception;)V",
 			arg0.object()
 		) {}
-	PendingIntent_CanceledException::PendingIntent_CanceledException(jstring arg0)
+	PendingIntent_CanceledException::PendingIntent_CanceledException(JString arg0)
 		: android::util::AndroidException(
 			"android.app.PendingIntent$CanceledException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

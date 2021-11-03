@@ -1,3 +1,5 @@
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
 #include "./CursorJoiner_Result.hpp"
 
 namespace android::database
@@ -34,22 +36,22 @@ namespace android::database
 	// Constructors
 	
 	// Methods
-	android::database::CursorJoiner_Result CursorJoiner_Result::valueOf(jstring arg0)
+	android::database::CursorJoiner_Result CursorJoiner_Result::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.database.CursorJoiner$Result",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/database/CursorJoiner$Result;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray CursorJoiner_Result::values()
+	JArray CursorJoiner_Result::values()
 	{
 		return callStaticObjectMethod(
 			"android.database.CursorJoiner$Result",
 			"values",
 			"()[Landroid/database/CursorJoiner$Result;"
-		).object<jarray>();
+		);
 	}
 } // namespace android::database
 

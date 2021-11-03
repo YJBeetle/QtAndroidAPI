@@ -6,6 +6,7 @@ namespace android::net
 {
 	class Uri;
 }
+class JString;
 
 namespace android::provider
 {
@@ -13,10 +14,10 @@ namespace android::provider
 	{
 	public:
 		// Fields
-		static jstring AUDIO_ID();
-		static jstring CONTENT_DIRECTORY();
-		static jstring DEFAULT_SORT_ORDER();
-		static jstring GENRE_ID();
+		static JString AUDIO_ID();
+		static JString CONTENT_DIRECTORY();
+		static JString DEFAULT_SORT_ORDER();
+		static JString GENRE_ID();
 		
 		// QJniObject forward
 		template<typename ...Ts> explicit MediaStore_Audio_Genres_Members(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
@@ -26,7 +27,7 @@ namespace android::provider
 		MediaStore_Audio_Genres_Members();
 		
 		// Methods
-		static android::net::Uri getContentUri(jstring arg0, jlong arg1);
+		static android::net::Uri getContentUri(JString arg0, jlong arg1);
 	};
 } // namespace android::provider
 

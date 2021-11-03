@@ -1,3 +1,4 @@
+#include "../../JArray.hpp"
 #include "../net/Uri.hpp"
 #include "../os/Bundle.hpp"
 #include "../os/Handler.hpp"
@@ -6,42 +7,43 @@
 #include "./Call_RttCall.hpp"
 #include "./InCallService_VideoCall.hpp"
 #include "./PhoneAccountHandle.hpp"
+#include "../../JString.hpp"
 #include "./Call.hpp"
 
 namespace android::telecom
 {
 	// Fields
-	jstring Call::AVAILABLE_PHONE_ACCOUNTS()
+	JString Call::AVAILABLE_PHONE_ACCOUNTS()
 	{
 		return getStaticObjectField(
 			"android.telecom.Call",
 			"AVAILABLE_PHONE_ACCOUNTS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Call::EXTRA_LAST_EMERGENCY_CALLBACK_TIME_MILLIS()
+	JString Call::EXTRA_LAST_EMERGENCY_CALLBACK_TIME_MILLIS()
 	{
 		return getStaticObjectField(
 			"android.telecom.Call",
 			"EXTRA_LAST_EMERGENCY_CALLBACK_TIME_MILLIS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Call::EXTRA_SILENT_RINGING_REQUESTED()
+	JString Call::EXTRA_SILENT_RINGING_REQUESTED()
 	{
 		return getStaticObjectField(
 			"android.telecom.Call",
 			"EXTRA_SILENT_RINGING_REQUESTED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Call::EXTRA_SUGGESTED_PHONE_ACCOUNTS()
+	JString Call::EXTRA_SUGGESTED_PHONE_ACCOUNTS()
 	{
 		return getStaticObjectField(
 			"android.telecom.Call",
 			"EXTRA_SUGGESTED_PHONE_ACCOUNTS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint Call::REJECT_REASON_DECLINED()
 	{
@@ -221,12 +223,12 @@ namespace android::telecom
 			"()Landroid/telecom/Call;"
 		);
 	}
-	jstring Call::getRemainingPostDialSequence()
+	JString Call::getRemainingPostDialSequence()
 	{
 		return callObjectMethod(
 			"getRemainingPostDialSequence",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::telecom::Call_RttCall Call::getRttCall()
 	{
@@ -345,21 +347,21 @@ namespace android::telecom
 			arg0
 		);
 	}
-	void Call::reject(jboolean arg0, jstring arg1)
+	void Call::reject(jboolean arg0, JString arg1)
 	{
 		callMethod<void>(
 			"reject",
 			"(ZLjava/lang/String;)V",
 			arg0,
-			arg1
+			arg1.object<jstring>()
 		);
 	}
-	void Call::removeExtras(jarray arg0)
+	void Call::removeExtras(JArray arg0)
 	{
 		callMethod<void>(
 			"removeExtras",
 			"([Ljava/lang/String;)V",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
 	void Call::removeExtras(JObject arg0)
@@ -379,12 +381,12 @@ namespace android::telecom
 			arg1
 		);
 	}
-	void Call::sendCallEvent(jstring arg0, android::os::Bundle arg1)
+	void Call::sendCallEvent(JString arg0, android::os::Bundle arg1)
 	{
 		callMethod<void>(
 			"sendCallEvent",
 			"(Ljava/lang/String;Landroid/os/Bundle;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
@@ -423,12 +425,12 @@ namespace android::telecom
 			"()V"
 		);
 	}
-	jstring Call::toString()
+	JString Call::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void Call::unhold()
 	{

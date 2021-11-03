@@ -1,29 +1,30 @@
 #include "../os/Parcel.hpp"
+#include "../../JString.hpp"
 #include "./ApplicationErrorReport_AnrInfo.hpp"
 
 namespace android::app
 {
 	// Fields
-	jstring ApplicationErrorReport_AnrInfo::activity()
+	JString ApplicationErrorReport_AnrInfo::activity()
 	{
 		return getObjectField(
 			"activity",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ApplicationErrorReport_AnrInfo::cause()
+	JString ApplicationErrorReport_AnrInfo::cause()
 	{
 		return getObjectField(
 			"cause",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ApplicationErrorReport_AnrInfo::info()
+	JString ApplicationErrorReport_AnrInfo::info()
 	{
 		return getObjectField(
 			"info",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QJniObject forward
@@ -43,13 +44,13 @@ namespace android::app
 		) {}
 	
 	// Methods
-	void ApplicationErrorReport_AnrInfo::dump(JObject arg0, jstring arg1)
+	void ApplicationErrorReport_AnrInfo::dump(JObject arg0, JString arg1)
 	{
 		callMethod<void>(
 			"dump",
 			"(Landroid/util/Printer;Ljava/lang/String;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
 	void ApplicationErrorReport_AnrInfo::writeToParcel(android::os::Parcel arg0, jint arg1)

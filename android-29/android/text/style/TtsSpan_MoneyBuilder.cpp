@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./TtsSpan_MoneyBuilder.hpp"
 
 namespace android::text::style
@@ -15,28 +16,28 @@ namespace android::text::style
 		) {}
 	
 	// Methods
-	android::text::style::TtsSpan_MoneyBuilder TtsSpan_MoneyBuilder::setCurrency(jstring arg0)
+	android::text::style::TtsSpan_MoneyBuilder TtsSpan_MoneyBuilder::setCurrency(JString arg0)
 	{
 		return callObjectMethod(
 			"setCurrency",
 			"(Ljava/lang/String;)Landroid/text/style/TtsSpan$MoneyBuilder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	android::text::style::TtsSpan_MoneyBuilder TtsSpan_MoneyBuilder::setFractionalPart(jstring arg0)
+	android::text::style::TtsSpan_MoneyBuilder TtsSpan_MoneyBuilder::setFractionalPart(JString arg0)
 	{
 		return callObjectMethod(
 			"setFractionalPart",
 			"(Ljava/lang/String;)Landroid/text/style/TtsSpan$MoneyBuilder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	android::text::style::TtsSpan_MoneyBuilder TtsSpan_MoneyBuilder::setIntegerPart(jstring arg0)
+	android::text::style::TtsSpan_MoneyBuilder TtsSpan_MoneyBuilder::setIntegerPart(JString arg0)
 	{
 		return callObjectMethod(
 			"setIntegerPart",
 			"(Ljava/lang/String;)Landroid/text/style/TtsSpan$MoneyBuilder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::text::style::TtsSpan_MoneyBuilder TtsSpan_MoneyBuilder::setIntegerPart(jlong arg0)
@@ -47,12 +48,12 @@ namespace android::text::style
 			arg0
 		);
 	}
-	android::text::style::TtsSpan_MoneyBuilder TtsSpan_MoneyBuilder::setQuantity(jstring arg0)
+	android::text::style::TtsSpan_MoneyBuilder TtsSpan_MoneyBuilder::setQuantity(JString arg0)
 	{
 		return callObjectMethod(
 			"setQuantity",
 			"(Ljava/lang/String;)Landroid/text/style/TtsSpan$MoneyBuilder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 } // namespace android::text::style

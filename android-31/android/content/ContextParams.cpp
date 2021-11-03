@@ -1,4 +1,5 @@
 #include "./AttributionSource.hpp"
+#include "../../JString.hpp"
 #include "./ContextParams.hpp"
 
 namespace android::content
@@ -11,12 +12,12 @@ namespace android::content
 	// Constructors
 	
 	// Methods
-	jstring ContextParams::getAttributionTag()
+	JString ContextParams::getAttributionTag()
 	{
 		return callObjectMethod(
 			"getAttributionTag",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::content::AttributionSource ContextParams::getNextAttributionSource()
 	{

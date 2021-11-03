@@ -3,6 +3,9 @@
 #include "./MediaRouter_RouteCategory.hpp"
 #include "./MediaRouter_RouteGroup.hpp"
 #include "../view/Display.hpp"
+#include "../../JString.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./MediaRouter_RouteInfo.hpp"
 
 namespace android::media
@@ -78,12 +81,12 @@ namespace android::media
 			"()Landroid/media/MediaRouter$RouteCategory;"
 		);
 	}
-	jstring MediaRouter_RouteInfo::getDescription()
+	JString MediaRouter_RouteInfo::getDescription()
 	{
 		return callObjectMethod(
 			"getDescription",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	jint MediaRouter_RouteInfo::getDeviceType()
 	{
@@ -106,20 +109,20 @@ namespace android::media
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	jstring MediaRouter_RouteInfo::getName()
+	JString MediaRouter_RouteInfo::getName()
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
-	jstring MediaRouter_RouteInfo::getName(android::content::Context arg0)
+	JString MediaRouter_RouteInfo::getName(android::content::Context arg0)
 	{
 		return callObjectMethod(
 			"getName",
 			"(Landroid/content/Context;)Ljava/lang/CharSequence;",
 			arg0.object()
-		).object<jstring>();
+		);
 	}
 	jint MediaRouter_RouteInfo::getPlaybackStream()
 	{
@@ -142,12 +145,12 @@ namespace android::media
 			"()Landroid/view/Display;"
 		);
 	}
-	jstring MediaRouter_RouteInfo::getStatus()
+	JString MediaRouter_RouteInfo::getStatus()
 	{
 		return callObjectMethod(
 			"getStatus",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	jint MediaRouter_RouteInfo::getSupportedTypes()
 	{
@@ -156,12 +159,12 @@ namespace android::media
 			"()I"
 		);
 	}
-	jobject MediaRouter_RouteInfo::getTag()
+	JObject MediaRouter_RouteInfo::getTag()
 	{
 		return callObjectMethod(
 			"getTag",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
 	jint MediaRouter_RouteInfo::getVolume()
 	{
@@ -214,20 +217,20 @@ namespace android::media
 			arg0
 		);
 	}
-	void MediaRouter_RouteInfo::setTag(jobject arg0)
+	void MediaRouter_RouteInfo::setTag(JObject arg0)
 	{
 		callMethod<void>(
 			"setTag",
 			"(Ljava/lang/Object;)V",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jstring MediaRouter_RouteInfo::toString()
+	JString MediaRouter_RouteInfo::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::media
 

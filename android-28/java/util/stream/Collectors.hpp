@@ -2,6 +2,11 @@
 
 #include "../../../JObject.hpp"
 
+class JDoubleArray;
+class JIntArray;
+class JLongArray;
+class JObjectArray;
+class JString;
 namespace java::lang
 {
 	class Double;
@@ -18,6 +23,7 @@ namespace java::lang
 {
 	class Long;
 }
+class JObject;
 namespace java::lang
 {
 	class StringBuilder;
@@ -83,16 +89,16 @@ namespace java::util::stream
 		static JObject groupingByConcurrent(JObject arg0, JObject arg1);
 		static JObject groupingByConcurrent(JObject arg0, JObject arg1, JObject arg2);
 		static JObject joining();
-		static JObject joining(jstring arg0);
-		static JObject joining(jstring arg0, jstring arg1, jstring arg2);
+		static JObject joining(JString arg0);
+		static JObject joining(JString arg0, JString arg1, JString arg2);
 		static JObject mapping(JObject arg0, JObject arg1);
 		static JObject maxBy(JObject arg0);
 		static JObject minBy(JObject arg0);
 		static JObject partitioningBy(JObject arg0);
 		static JObject partitioningBy(JObject arg0, JObject arg1);
 		static JObject reducing(JObject arg0);
-		static JObject reducing(jobject arg0, JObject arg1);
-		static JObject reducing(jobject arg0, JObject arg1, JObject arg2);
+		static JObject reducing(JObject arg0, JObject arg1);
+		static JObject reducing(JObject arg0, JObject arg1, JObject arg2);
 		static JObject summarizingDouble(JObject arg0);
 		static JObject summarizingInt(JObject arg0);
 		static JObject summarizingLong(JObject arg0);

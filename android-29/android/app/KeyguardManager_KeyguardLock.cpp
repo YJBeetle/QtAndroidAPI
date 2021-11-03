@@ -1,4 +1,5 @@
 #include "./KeyguardManager.hpp"
+#include "../../JString.hpp"
 #include "./KeyguardManager_KeyguardLock.hpp"
 
 namespace android::app

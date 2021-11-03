@@ -1,3 +1,4 @@
+#include "../../../JByteArray.hpp"
 #include "../Tag.hpp"
 #include "./MifareUltralight.hpp"
 
@@ -97,13 +98,13 @@ namespace android::nfc::tech
 			"()Z"
 		);
 	}
-	jbyteArray MifareUltralight::readPages(jint arg0)
+	JByteArray MifareUltralight::readPages(jint arg0)
 	{
 		return callObjectMethod(
 			"readPages",
 			"(I)[B",
 			arg0
-		).object<jbyteArray>();
+		);
 	}
 	void MifareUltralight::setTimeout(jint arg0)
 	{
@@ -113,21 +114,21 @@ namespace android::nfc::tech
 			arg0
 		);
 	}
-	jbyteArray MifareUltralight::transceive(jbyteArray arg0)
+	JByteArray MifareUltralight::transceive(JByteArray arg0)
 	{
 		return callObjectMethod(
 			"transceive",
 			"([B)[B",
-			arg0
-		).object<jbyteArray>();
+			arg0.object<jbyteArray>()
+		);
 	}
-	void MifareUltralight::writePage(jint arg0, jbyteArray arg1)
+	void MifareUltralight::writePage(jint arg0, JByteArray arg1)
 	{
 		callMethod<void>(
 			"writePage",
 			"(I[B)V",
 			arg0,
-			arg1
+			arg1.object<jbyteArray>()
 		);
 	}
 } // namespace android::nfc::tech

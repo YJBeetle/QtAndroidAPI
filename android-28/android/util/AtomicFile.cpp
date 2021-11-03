@@ -1,3 +1,4 @@
+#include "../../JByteArray.hpp"
 #include "../../java/io/File.hpp"
 #include "../../java/io/FileInputStream.hpp"
 #include "../../java/io/FileOutputStream.hpp"
@@ -56,12 +57,12 @@ namespace android::util
 			"()Ljava/io/FileInputStream;"
 		);
 	}
-	jbyteArray AtomicFile::readFully()
+	JByteArray AtomicFile::readFully()
 	{
 		return callObjectMethod(
 			"readFully",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
 	java::io::FileOutputStream AtomicFile::startWrite()
 	{

@@ -6,6 +6,9 @@ namespace java::io
 {
 	class IOException;
 }
+class JClass;
+class JObject;
+class JString;
 namespace java::net
 {
 	class DatagramPacket;
@@ -61,7 +64,7 @@ namespace java::net
 		java::net::InetAddress getLocalAddress();
 		jint getLocalPort();
 		java::net::SocketAddress getLocalSocketAddress();
-		jobject getOption(JObject arg0);
+		JObject getOption(JObject arg0);
 		jint getPort();
 		jint getReceiveBufferSize();
 		java::net::SocketAddress getRemoteSocketAddress();
@@ -75,7 +78,7 @@ namespace java::net
 		void receive(java::net::DatagramPacket arg0);
 		void send(java::net::DatagramPacket arg0);
 		void setBroadcast(jboolean arg0);
-		java::net::DatagramSocket setOption(JObject arg0, jobject arg1);
+		java::net::DatagramSocket setOption(JObject arg0, JObject arg1);
 		void setReceiveBufferSize(jint arg0);
 		void setReuseAddress(jboolean arg0);
 		void setSendBufferSize(jint arg0);

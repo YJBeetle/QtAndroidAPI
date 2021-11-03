@@ -1,16 +1,17 @@
 #include "../net/Uri.hpp"
+#include "../../JString.hpp"
 #include "./ContactsContract_RawContactsEntity.hpp"
 
 namespace android::provider
 {
 	// Fields
-	jstring ContactsContract_RawContactsEntity::CONTENT_TYPE()
+	JString ContactsContract_RawContactsEntity::CONTENT_TYPE()
 	{
 		return getStaticObjectField(
 			"android.provider.ContactsContract$RawContactsEntity",
 			"CONTENT_TYPE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::net::Uri ContactsContract_RawContactsEntity::CONTENT_URI()
 	{
@@ -20,13 +21,13 @@ namespace android::provider
 			"Landroid/net/Uri;"
 		);
 	}
-	jstring ContactsContract_RawContactsEntity::DATA_ID()
+	JString ContactsContract_RawContactsEntity::DATA_ID()
 	{
 		return getStaticObjectField(
 			"android.provider.ContactsContract$RawContactsEntity",
 			"DATA_ID",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::net::Uri ContactsContract_RawContactsEntity::PROFILE_CONTENT_URI()
 	{

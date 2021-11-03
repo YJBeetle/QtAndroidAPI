@@ -1,6 +1,5 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "../Intent.hpp"
 
 namespace android::content
@@ -19,6 +18,8 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
+class JString;
 
 namespace android::content::pm
 {
@@ -33,18 +34,18 @@ namespace android::content::pm
 		LabeledIntent(QJniObject obj);
 		
 		// Constructors
-		LabeledIntent(jstring arg0, jint arg1, jint arg2);
-		LabeledIntent(jstring arg0, jstring arg1, jint arg2);
-		LabeledIntent(android::content::Intent arg0, jstring arg1, jint arg2, jint arg3);
-		LabeledIntent(android::content::Intent arg0, jstring arg1, jstring arg2, jint arg3);
+		LabeledIntent(JString arg0, jint arg1, jint arg2);
+		LabeledIntent(JString arg0, JString arg1, jint arg2);
+		LabeledIntent(android::content::Intent arg0, JString arg1, jint arg2, jint arg3);
+		LabeledIntent(android::content::Intent arg0, JString arg1, JString arg2, jint arg3);
 		
 		// Methods
 		jint getIconResource();
 		jint getLabelResource();
-		jstring getNonLocalizedLabel();
-		jstring getSourcePackage();
+		JString getNonLocalizedLabel();
+		JString getSourcePackage();
 		android::graphics::drawable::Drawable loadIcon(android::content::pm::PackageManager arg0);
-		jstring loadLabel(android::content::pm::PackageManager arg0);
+		JString loadLabel(android::content::pm::PackageManager arg0);
 		void readFromParcel(android::os::Parcel arg0);
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};

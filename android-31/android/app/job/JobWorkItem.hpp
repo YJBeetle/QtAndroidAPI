@@ -10,6 +10,7 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
 
 namespace android::app::job
 {
@@ -33,7 +34,7 @@ namespace android::app::job
 		jlong getEstimatedNetworkDownloadBytes();
 		jlong getEstimatedNetworkUploadBytes();
 		android::content::Intent getIntent();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::app::job

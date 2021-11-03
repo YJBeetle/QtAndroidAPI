@@ -1,3 +1,5 @@
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./CollectionCertStoreParameters.hpp"
 
 namespace java::security::cert
@@ -21,12 +23,12 @@ namespace java::security::cert
 		) {}
 	
 	// Methods
-	jobject CollectionCertStoreParameters::clone()
+	JObject CollectionCertStoreParameters::clone()
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
 	JObject CollectionCertStoreParameters::getCollection()
 	{
@@ -35,12 +37,12 @@ namespace java::security::cert
 			"()Ljava/util/Collection;"
 		);
 	}
-	jstring CollectionCertStoreParameters::toString()
+	JString CollectionCertStoreParameters::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::security::cert
 

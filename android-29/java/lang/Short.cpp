@@ -1,3 +1,6 @@
+#include "../../JClass.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "../util/Optional.hpp"
 #include "./Short.hpp"
 
@@ -32,24 +35,24 @@ namespace java::lang
 			"SIZE"
 		);
 	}
-	jclass Short::TYPE()
+	JClass Short::TYPE()
 	{
 		return getStaticObjectField(
 			"java.lang.Short",
 			"TYPE",
 			"Ljava/lang/Class;"
-		).object<jclass>();
+		);
 	}
 	
 	// QJniObject forward
 	Short::Short(QJniObject obj) : java::lang::Number(obj) {}
 	
 	// Constructors
-	Short::Short(jstring arg0)
+	Short::Short(JString arg0)
 		: java::lang::Number(
 			"java.lang.Short",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	Short::Short(jshort arg0)
 		: java::lang::Number(
@@ -79,13 +82,13 @@ namespace java::lang
 			arg1
 		);
 	}
-	java::lang::Short Short::decode(jstring arg0)
+	java::lang::Short Short::decode(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"java.lang.Short",
 			"decode",
 			"(Ljava/lang/String;)Ljava/lang/Short;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	jint Short::hashCode(jshort arg0)
@@ -97,22 +100,22 @@ namespace java::lang
 			arg0
 		);
 	}
-	jshort Short::parseShort(jstring arg0)
+	jshort Short::parseShort(JString arg0)
 	{
 		return callStaticMethod<jshort>(
 			"java.lang.Short",
 			"parseShort",
 			"(Ljava/lang/String;)S",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jshort Short::parseShort(jstring arg0, jint arg1)
+	jshort Short::parseShort(JString arg0, jint arg1)
 	{
 		return callStaticMethod<jshort>(
 			"java.lang.Short",
 			"parseShort",
 			"(Ljava/lang/String;I)S",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
@@ -125,14 +128,14 @@ namespace java::lang
 			arg0
 		);
 	}
-	jstring Short::toString(jshort arg0)
+	JString Short::toString(jshort arg0)
 	{
 		return callStaticObjectMethod(
 			"java.lang.Short",
 			"toString",
 			"(S)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
 	jint Short::toUnsignedInt(jshort arg0)
 	{
@@ -152,13 +155,13 @@ namespace java::lang
 			arg0
 		);
 	}
-	java::lang::Short Short::valueOf(jstring arg0)
+	java::lang::Short Short::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"java.lang.Short",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/lang/Short;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	java::lang::Short Short::valueOf(jshort arg0)
@@ -170,13 +173,13 @@ namespace java::lang
 			arg0
 		);
 	}
-	java::lang::Short Short::valueOf(jstring arg0, jint arg1)
+	java::lang::Short Short::valueOf(JString arg0, jint arg1)
 	{
 		return callStaticObjectMethod(
 			"java.lang.Short",
 			"valueOf",
 			"(Ljava/lang/String;I)Ljava/lang/Short;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
@@ -187,12 +190,12 @@ namespace java::lang
 			"()B"
 		);
 	}
-	jint Short::compareTo(jobject arg0)
+	jint Short::compareTo(JObject arg0)
 	{
 		return callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Object;)I",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint Short::compareTo(java::lang::Short arg0)
@@ -217,12 +220,12 @@ namespace java::lang
 			"()D"
 		);
 	}
-	jboolean Short::equals(jobject arg0)
+	jboolean Short::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jfloat Short::floatValue()
@@ -260,12 +263,12 @@ namespace java::lang
 			"()S"
 		);
 	}
-	jstring Short::toString()
+	JString Short::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::lang
 

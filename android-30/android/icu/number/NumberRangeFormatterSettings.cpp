@@ -1,6 +1,7 @@
 #include "./NumberRangeFormatter_RangeCollapse.hpp"
 #include "./NumberRangeFormatter_RangeIdentityFallback.hpp"
 #include "./UnlocalizedNumberFormatter.hpp"
+#include "../../../JObject.hpp"
 #include "./NumberRangeFormatterSettings.hpp"
 
 namespace android::icu::number
@@ -21,12 +22,12 @@ namespace android::icu::number
 			arg0.object()
 		);
 	}
-	jboolean NumberRangeFormatterSettings::equals(jobject arg0)
+	jboolean NumberRangeFormatterSettings::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint NumberRangeFormatterSettings::hashCode()

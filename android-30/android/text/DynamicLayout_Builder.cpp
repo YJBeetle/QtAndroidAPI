@@ -2,6 +2,7 @@
 #include "./Layout_Alignment.hpp"
 #include "./TextPaint.hpp"
 #include "./TextUtils_TruncateAt.hpp"
+#include "../../JString.hpp"
 #include "./DynamicLayout_Builder.hpp"
 
 namespace android::text
@@ -14,13 +15,13 @@ namespace android::text
 	// Constructors
 	
 	// Methods
-	android::text::DynamicLayout_Builder DynamicLayout_Builder::obtain(jstring arg0, android::text::TextPaint arg1, jint arg2)
+	android::text::DynamicLayout_Builder DynamicLayout_Builder::obtain(JString arg0, android::text::TextPaint arg1, jint arg2)
 	{
 		return callStaticObjectMethod(
 			"android.text.DynamicLayout$Builder",
 			"obtain",
 			"(Ljava/lang/CharSequence;Landroid/text/TextPaint;I)Landroid/text/DynamicLayout$Builder;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
 			arg2
 		);
@@ -48,12 +49,12 @@ namespace android::text
 			arg0
 		);
 	}
-	android::text::DynamicLayout_Builder DynamicLayout_Builder::setDisplayText(jstring arg0)
+	android::text::DynamicLayout_Builder DynamicLayout_Builder::setDisplayText(JString arg0)
 	{
 		return callObjectMethod(
 			"setDisplayText",
 			"(Ljava/lang/CharSequence;)Landroid/text/DynamicLayout$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::text::DynamicLayout_Builder DynamicLayout_Builder::setEllipsize(android::text::TextUtils_TruncateAt arg0)

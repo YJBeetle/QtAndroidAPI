@@ -1,43 +1,45 @@
 #include "../os/Parcel.hpp"
+#include "../../JString.hpp"
+#include "../../JThrowable.hpp"
 #include "./ApplicationErrorReport_CrashInfo.hpp"
 
 namespace android::app
 {
 	// Fields
-	jstring ApplicationErrorReport_CrashInfo::exceptionClassName()
+	JString ApplicationErrorReport_CrashInfo::exceptionClassName()
 	{
 		return getObjectField(
 			"exceptionClassName",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ApplicationErrorReport_CrashInfo::exceptionMessage()
+	JString ApplicationErrorReport_CrashInfo::exceptionMessage()
 	{
 		return getObjectField(
 			"exceptionMessage",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ApplicationErrorReport_CrashInfo::stackTrace()
+	JString ApplicationErrorReport_CrashInfo::stackTrace()
 	{
 		return getObjectField(
 			"stackTrace",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ApplicationErrorReport_CrashInfo::throwClassName()
+	JString ApplicationErrorReport_CrashInfo::throwClassName()
 	{
 		return getObjectField(
 			"throwClassName",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ApplicationErrorReport_CrashInfo::throwFileName()
+	JString ApplicationErrorReport_CrashInfo::throwFileName()
 	{
 		return getObjectField(
 			"throwFileName",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint ApplicationErrorReport_CrashInfo::throwLineNumber()
 	{
@@ -45,12 +47,12 @@ namespace android::app
 			"throwLineNumber"
 		);
 	}
-	jstring ApplicationErrorReport_CrashInfo::throwMethodName()
+	JString ApplicationErrorReport_CrashInfo::throwMethodName()
 	{
 		return getObjectField(
 			"throwMethodName",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QJniObject forward
@@ -68,21 +70,21 @@ namespace android::app
 			"(Landroid/os/Parcel;)V",
 			arg0.object()
 		) {}
-	ApplicationErrorReport_CrashInfo::ApplicationErrorReport_CrashInfo(jthrowable arg0)
+	ApplicationErrorReport_CrashInfo::ApplicationErrorReport_CrashInfo(JThrowable arg0)
 		: JObject(
 			"android.app.ApplicationErrorReport$CrashInfo",
 			"(Ljava/lang/Throwable;)V",
-			arg0
+			arg0.object<jthrowable>()
 		) {}
 	
 	// Methods
-	void ApplicationErrorReport_CrashInfo::dump(JObject arg0, jstring arg1)
+	void ApplicationErrorReport_CrashInfo::dump(JObject arg0, JString arg1)
 	{
 		callMethod<void>(
 			"dump",
 			"(Landroid/util/Printer;Ljava/lang/String;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
 	void ApplicationErrorReport_CrashInfo::writeToParcel(android::os::Parcel arg0, jint arg1)

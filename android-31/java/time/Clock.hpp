@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JObject;
 namespace java::time
 {
 	class Duration;
@@ -38,7 +39,7 @@ namespace java::time
 		static java::time::Clock tickMillis(java::time::ZoneId arg0);
 		static java::time::Clock tickMinutes(java::time::ZoneId arg0);
 		static java::time::Clock tickSeconds(java::time::ZoneId arg0);
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		java::time::ZoneId getZone();
 		jint hashCode();
 		java::time::Instant instant();

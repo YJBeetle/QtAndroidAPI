@@ -2,7 +2,6 @@
 
 #include "../../JObject.hpp"
 
-
 namespace android::renderscript
 {
 	class Float3 : public JObject

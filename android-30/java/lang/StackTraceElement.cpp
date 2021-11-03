@@ -1,3 +1,8 @@
+#include "../../JArray.hpp"
+#include "../../JClass.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
+#include "../../JThrowable.hpp"
 #include "./StackTraceElement.hpp"
 
 namespace java::lang
@@ -8,57 +13,57 @@ namespace java::lang
 	StackTraceElement::StackTraceElement(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	StackTraceElement::StackTraceElement(jstring arg0, jstring arg1, jstring arg2, jint arg3)
+	StackTraceElement::StackTraceElement(JString arg0, JString arg1, JString arg2, jint arg3)
 		: JObject(
 			"java.lang.StackTraceElement",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V",
-			arg0,
-			arg1,
-			arg2,
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2.object<jstring>(),
 			arg3
 		) {}
-	StackTraceElement::StackTraceElement(jstring arg0, jstring arg1, jstring arg2, jstring arg3, jstring arg4, jstring arg5, jint arg6)
+	StackTraceElement::StackTraceElement(JString arg0, JString arg1, JString arg2, JString arg3, JString arg4, JString arg5, jint arg6)
 		: JObject(
 			"java.lang.StackTraceElement",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3,
-			arg4,
-			arg5,
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2.object<jstring>(),
+			arg3.object<jstring>(),
+			arg4.object<jstring>(),
+			arg5.object<jstring>(),
 			arg6
 		) {}
 	
 	// Methods
-	jboolean StackTraceElement::equals(jobject arg0)
+	jboolean StackTraceElement::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jstring StackTraceElement::getClassLoaderName()
+	JString StackTraceElement::getClassLoaderName()
 	{
 		return callObjectMethod(
 			"getClassLoaderName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring StackTraceElement::getClassName()
+	JString StackTraceElement::getClassName()
 	{
 		return callObjectMethod(
 			"getClassName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring StackTraceElement::getFileName()
+	JString StackTraceElement::getFileName()
 	{
 		return callObjectMethod(
 			"getFileName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint StackTraceElement::getLineNumber()
 	{
@@ -67,26 +72,26 @@ namespace java::lang
 			"()I"
 		);
 	}
-	jstring StackTraceElement::getMethodName()
+	JString StackTraceElement::getMethodName()
 	{
 		return callObjectMethod(
 			"getMethodName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring StackTraceElement::getModuleName()
+	JString StackTraceElement::getModuleName()
 	{
 		return callObjectMethod(
 			"getModuleName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring StackTraceElement::getModuleVersion()
+	JString StackTraceElement::getModuleVersion()
 	{
 		return callObjectMethod(
 			"getModuleVersion",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint StackTraceElement::hashCode()
 	{
@@ -102,12 +107,12 @@ namespace java::lang
 			"()Z"
 		);
 	}
-	jstring StackTraceElement::toString()
+	JString StackTraceElement::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::lang
 

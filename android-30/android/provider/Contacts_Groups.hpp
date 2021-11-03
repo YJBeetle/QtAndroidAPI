@@ -6,6 +6,7 @@ namespace android::net
 {
 	class Uri;
 }
+class JString;
 
 namespace android::provider
 {
@@ -13,13 +14,13 @@ namespace android::provider
 	{
 	public:
 		// Fields
-		static jstring CONTENT_ITEM_TYPE();
-		static jstring CONTENT_TYPE();
+		static JString CONTENT_ITEM_TYPE();
+		static JString CONTENT_TYPE();
 		static android::net::Uri CONTENT_URI();
-		static jstring DEFAULT_SORT_ORDER();
+		static JString DEFAULT_SORT_ORDER();
 		static android::net::Uri DELETED_CONTENT_URI();
-		static jstring GROUP_ANDROID_STARRED();
-		static jstring GROUP_MY_CONTACTS();
+		static JString GROUP_ANDROID_STARRED();
+		static JString GROUP_MY_CONTACTS();
 		
 		// QJniObject forward
 		template<typename ...Ts> explicit Contacts_Groups(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}

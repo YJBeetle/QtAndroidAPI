@@ -18,6 +18,8 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
+class JString;
 
 namespace android::content::pm
 {
@@ -37,11 +39,11 @@ namespace android::content::pm
 		android::content::Intent createDetailsIntent();
 		jint describeContents();
 		android::graphics::Bitmap getAppIcon();
-		jstring getAppLabel();
-		jstring getAppPackageName();
+		JString getAppLabel();
+		JString getAppPackageName();
 		jint getInstallLocation();
 		jint getInstallReason();
-		jstring getInstallerPackageName();
+		JString getInstallerPackageName();
 		jint getMode();
 		jint getOriginatingUid();
 		android::net::Uri getOriginatingUri();

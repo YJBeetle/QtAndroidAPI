@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JIntArray;
 
 namespace android::util
 {
@@ -21,7 +22,7 @@ namespace android::util
 		// Methods
 		jint getColumnOf(jint arg0);
 		jint getDayAt(jint arg0, jint arg1);
-		jintArray getDigitsForRow(jint arg0);
+		JIntArray getDigitsForRow(jint arg0);
 		jint getFirstDayOfMonth();
 		jint getMonth();
 		jint getNumberOfDaysInMonth();

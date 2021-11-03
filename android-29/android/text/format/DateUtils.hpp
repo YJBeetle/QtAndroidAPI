@@ -2,10 +2,13 @@
 
 #include "../../../JObject.hpp"
 
+class JIntArray;
 namespace android::content
 {
 	class Context;
 }
+class JString;
+class JString;
 namespace java::lang
 {
 	class StringBuilder;
@@ -21,8 +24,8 @@ namespace android::text::format
 	{
 	public:
 		// Fields
-		static jstring ABBREV_MONTH_FORMAT();
-		static jstring ABBREV_WEEKDAY_FORMAT();
+		static JString ABBREV_MONTH_FORMAT();
+		static JString ABBREV_WEEKDAY_FORMAT();
 		static jlong DAY_IN_MILLIS();
 		static jint FORMAT_12HOUR();
 		static jint FORMAT_24HOUR();
@@ -47,24 +50,24 @@ namespace android::text::format
 		static jint FORMAT_SHOW_YEAR();
 		static jint FORMAT_UTC();
 		static jlong HOUR_IN_MILLIS();
-		static jstring HOUR_MINUTE_24();
+		static JString HOUR_MINUTE_24();
 		static jint LENGTH_LONG();
 		static jint LENGTH_MEDIUM();
 		static jint LENGTH_SHORT();
 		static jint LENGTH_SHORTER();
 		static jint LENGTH_SHORTEST();
 		static jlong MINUTE_IN_MILLIS();
-		static jstring MONTH_DAY_FORMAT();
-		static jstring MONTH_FORMAT();
-		static jstring NUMERIC_MONTH_FORMAT();
+		static JString MONTH_DAY_FORMAT();
+		static JString MONTH_FORMAT();
+		static JString NUMERIC_MONTH_FORMAT();
 		static jlong SECOND_IN_MILLIS();
-		static jstring WEEKDAY_FORMAT();
+		static JString WEEKDAY_FORMAT();
 		static jlong WEEK_IN_MILLIS();
-		static jstring YEAR_FORMAT();
-		static jstring YEAR_FORMAT_TWO_DIGITS();
+		static JString YEAR_FORMAT();
+		static JString YEAR_FORMAT_TWO_DIGITS();
 		static jlong YEAR_IN_MILLIS();
-		static jintArray sameMonthTable();
-		static jintArray sameYearTable();
+		static JIntArray sameMonthTable();
+		static JIntArray sameYearTable();
 		
 		// QJniObject forward
 		template<typename ...Ts> explicit DateUtils(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
@@ -74,22 +77,22 @@ namespace android::text::format
 		DateUtils();
 		
 		// Methods
-		static jstring formatDateRange(android::content::Context arg0, jlong arg1, jlong arg2, jint arg3);
+		static JString formatDateRange(android::content::Context arg0, jlong arg1, jlong arg2, jint arg3);
 		static java::util::Formatter formatDateRange(android::content::Context arg0, java::util::Formatter arg1, jlong arg2, jlong arg3, jint arg4);
-		static java::util::Formatter formatDateRange(android::content::Context arg0, java::util::Formatter arg1, jlong arg2, jlong arg3, jint arg4, jstring arg5);
-		static jstring formatDateTime(android::content::Context arg0, jlong arg1, jint arg2);
-		static jstring formatElapsedTime(jlong arg0);
-		static jstring formatElapsedTime(java::lang::StringBuilder arg0, jlong arg1);
-		static jstring formatSameDayTime(jlong arg0, jlong arg1, jint arg2, jint arg3);
-		static jstring getAMPMString(jint arg0);
-		static jstring getDayOfWeekString(jint arg0, jint arg1);
-		static jstring getMonthString(jint arg0, jint arg1);
-		static jstring getRelativeDateTimeString(android::content::Context arg0, jlong arg1, jlong arg2, jlong arg3, jint arg4);
-		static jstring getRelativeTimeSpanString(jlong arg0);
-		static jstring getRelativeTimeSpanString(android::content::Context arg0, jlong arg1);
-		static jstring getRelativeTimeSpanString(android::content::Context arg0, jlong arg1, jboolean arg2);
-		static jstring getRelativeTimeSpanString(jlong arg0, jlong arg1, jlong arg2);
-		static jstring getRelativeTimeSpanString(jlong arg0, jlong arg1, jlong arg2, jint arg3);
+		static java::util::Formatter formatDateRange(android::content::Context arg0, java::util::Formatter arg1, jlong arg2, jlong arg3, jint arg4, JString arg5);
+		static JString formatDateTime(android::content::Context arg0, jlong arg1, jint arg2);
+		static JString formatElapsedTime(jlong arg0);
+		static JString formatElapsedTime(java::lang::StringBuilder arg0, jlong arg1);
+		static JString formatSameDayTime(jlong arg0, jlong arg1, jint arg2, jint arg3);
+		static JString getAMPMString(jint arg0);
+		static JString getDayOfWeekString(jint arg0, jint arg1);
+		static JString getMonthString(jint arg0, jint arg1);
+		static JString getRelativeDateTimeString(android::content::Context arg0, jlong arg1, jlong arg2, jlong arg3, jint arg4);
+		static JString getRelativeTimeSpanString(jlong arg0);
+		static JString getRelativeTimeSpanString(android::content::Context arg0, jlong arg1);
+		static JString getRelativeTimeSpanString(android::content::Context arg0, jlong arg1, jboolean arg2);
+		static JString getRelativeTimeSpanString(jlong arg0, jlong arg1, jlong arg2);
+		static JString getRelativeTimeSpanString(jlong arg0, jlong arg1, jlong arg2, jint arg3);
 		static jboolean isToday(jlong arg0);
 	};
 } // namespace android::text::format

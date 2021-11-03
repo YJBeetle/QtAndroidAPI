@@ -1,8 +1,9 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./Shader.hpp"
 
+class JFloatArray;
+class JIntArray;
 namespace android::graphics
 {
 	class Shader_TileMode;
@@ -20,7 +21,7 @@ namespace android::graphics
 		LinearGradient(QJniObject obj);
 		
 		// Constructors
-		LinearGradient(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, jintArray arg4, jfloatArray arg5, android::graphics::Shader_TileMode arg6);
+		LinearGradient(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, JIntArray arg4, JFloatArray arg5, android::graphics::Shader_TileMode arg6);
 		LinearGradient(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, jint arg4, jint arg5, android::graphics::Shader_TileMode arg6);
 		
 		// Methods

@@ -6,6 +6,7 @@
 #include "../view/View.hpp"
 #include "../widget/Button.hpp"
 #include "../widget/ListView.hpp"
+#include "../../JString.hpp"
 #include "./AlertDialog.hpp"
 
 namespace android::app
@@ -86,77 +87,77 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	void AlertDialog::setButton(jstring arg0, JObject arg1)
+	void AlertDialog::setButton(JString arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"setButton",
 			"(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
-	void AlertDialog::setButton(jstring arg0, android::os::Message arg1)
+	void AlertDialog::setButton(JString arg0, android::os::Message arg1)
 	{
 		callMethod<void>(
 			"setButton",
 			"(Ljava/lang/CharSequence;Landroid/os/Message;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
-	void AlertDialog::setButton(jint arg0, jstring arg1, JObject arg2)
+	void AlertDialog::setButton(jint arg0, JString arg1, JObject arg2)
 	{
 		callMethod<void>(
 			"setButton",
 			"(ILjava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)V",
 			arg0,
-			arg1,
+			arg1.object<jstring>(),
 			arg2.object()
 		);
 	}
-	void AlertDialog::setButton(jint arg0, jstring arg1, android::os::Message arg2)
+	void AlertDialog::setButton(jint arg0, JString arg1, android::os::Message arg2)
 	{
 		callMethod<void>(
 			"setButton",
 			"(ILjava/lang/CharSequence;Landroid/os/Message;)V",
 			arg0,
-			arg1,
+			arg1.object<jstring>(),
 			arg2.object()
 		);
 	}
-	void AlertDialog::setButton2(jstring arg0, JObject arg1)
+	void AlertDialog::setButton2(JString arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"setButton2",
 			"(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
-	void AlertDialog::setButton2(jstring arg0, android::os::Message arg1)
+	void AlertDialog::setButton2(JString arg0, android::os::Message arg1)
 	{
 		callMethod<void>(
 			"setButton2",
 			"(Ljava/lang/CharSequence;Landroid/os/Message;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
-	void AlertDialog::setButton3(jstring arg0, JObject arg1)
+	void AlertDialog::setButton3(JString arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"setButton3",
 			"(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
-	void AlertDialog::setButton3(jstring arg0, android::os::Message arg1)
+	void AlertDialog::setButton3(JString arg0, android::os::Message arg1)
 	{
 		callMethod<void>(
 			"setButton3",
 			"(Ljava/lang/CharSequence;Landroid/os/Message;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
@@ -200,20 +201,20 @@ namespace android::app
 			arg0
 		);
 	}
-	void AlertDialog::setMessage(jstring arg0)
+	void AlertDialog::setMessage(JString arg0)
 	{
 		callMethod<void>(
 			"setMessage",
 			"(Ljava/lang/CharSequence;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	void AlertDialog::setTitle(jstring arg0)
+	void AlertDialog::setTitle(JString arg0)
 	{
 		callMethod<void>(
 			"setTitle",
 			"(Ljava/lang/CharSequence;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void AlertDialog::setView(android::view::View arg0)

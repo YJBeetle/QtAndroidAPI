@@ -1,4 +1,6 @@
 #include "./ControlButton.hpp"
+#include "../../../../JString.hpp"
+#include "../../../../JString.hpp"
 #include "./ToggleTemplate.hpp"
 
 namespace android::service::controls::templates
@@ -9,21 +11,21 @@ namespace android::service::controls::templates
 	ToggleTemplate::ToggleTemplate(QJniObject obj) : android::service::controls::templates::ControlTemplate(obj) {}
 	
 	// Constructors
-	ToggleTemplate::ToggleTemplate(jstring arg0, android::service::controls::templates::ControlButton arg1)
+	ToggleTemplate::ToggleTemplate(JString arg0, android::service::controls::templates::ControlButton arg1)
 		: android::service::controls::templates::ControlTemplate(
 			"android.service.controls.templates.ToggleTemplate",
 			"(Ljava/lang/String;Landroid/service/controls/templates/ControlButton;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		) {}
 	
 	// Methods
-	jstring ToggleTemplate::getContentDescription()
+	JString ToggleTemplate::getContentDescription()
 	{
 		return callObjectMethod(
 			"getContentDescription",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	jint ToggleTemplate::getTemplateType()
 	{

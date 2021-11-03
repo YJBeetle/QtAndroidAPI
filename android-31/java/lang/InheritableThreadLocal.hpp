@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./ThreadLocal.hpp"
 
+class JObject;
 namespace java::lang
 {
 	class Thread;

@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./SocketAddress.hpp"
 
+class JArray;
 namespace java::io
 {
 	class ObjectInputStream;
@@ -11,6 +11,8 @@ namespace java::io
 {
 	class ObjectOutputStream;
 }
+class JObject;
+class JString;
 namespace java::net
 {
 	class InetAddress;
@@ -29,19 +31,19 @@ namespace java::net
 		
 		// Constructors
 		InetSocketAddress(jint arg0);
-		InetSocketAddress(jstring arg0, jint arg1);
+		InetSocketAddress(JString arg0, jint arg1);
 		InetSocketAddress(java::net::InetAddress arg0, jint arg1);
 		
 		// Methods
-		static java::net::InetSocketAddress createUnresolved(jstring arg0, jint arg1);
-		jboolean equals(jobject arg0);
+		static java::net::InetSocketAddress createUnresolved(JString arg0, jint arg1);
+		jboolean equals(JObject arg0);
 		java::net::InetAddress getAddress();
-		jstring getHostName();
-		jstring getHostString();
+		JString getHostName();
+		JString getHostString();
 		jint getPort();
 		jint hashCode();
 		jboolean isUnresolved();
-		jstring toString();
+		JString toString();
 	};
 } // namespace java::net
 

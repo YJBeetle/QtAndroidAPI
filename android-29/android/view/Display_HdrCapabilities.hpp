@@ -2,10 +2,12 @@
 
 #include "../../JObject.hpp"
 
+class JIntArray;
 namespace android::os
 {
 	class Parcel;
 }
+class JObject;
 
 namespace android::view
 {
@@ -28,11 +30,11 @@ namespace android::view
 		
 		// Methods
 		jint describeContents();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jfloat getDesiredMaxAverageLuminance();
 		jfloat getDesiredMaxLuminance();
 		jfloat getDesiredMinLuminance();
-		jintArray getSupportedHdrTypes();
+		JIntArray getSupportedHdrTypes();
 		jint hashCode();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};

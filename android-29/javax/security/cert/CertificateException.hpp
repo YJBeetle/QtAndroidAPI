@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "../../../java/lang/Exception.hpp"
 
+class JString;
 
 namespace javax::security::cert
 {
@@ -17,7 +17,7 @@ namespace javax::security::cert
 		
 		// Constructors
 		CertificateException();
-		CertificateException(jstring arg0);
+		CertificateException(JString arg0);
 		
 		// Methods
 	};

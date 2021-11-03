@@ -1,9 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../../java/lang/Exception.hpp"
 #include "../../java/lang/RuntimeException.hpp"
 
+class JString;
 
 namespace android::os
 {
@@ -17,7 +16,7 @@ namespace android::os
 		FileUriExposedException(QJniObject obj);
 		
 		// Constructors
-		FileUriExposedException(jstring arg0);
+		FileUriExposedException(JString arg0);
 		
 		// Methods
 	};

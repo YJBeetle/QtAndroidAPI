@@ -1,6 +1,14 @@
+#include "../../JFloatArray.hpp"
+#include "../../JIntArray.hpp"
+#include "../../JArray.hpp"
+#include "../../JObjectArray.hpp"
+#include "../../JArray.hpp"
+#include "../../JArray.hpp"
 #include "./TypeConverter.hpp"
 #include "../graphics/Path.hpp"
 #include "../util/Property.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./PropertyValuesHolder.hpp"
 
 namespace android::animation
@@ -13,152 +21,152 @@ namespace android::animation
 	// Constructors
 	
 	// Methods
-	android::animation::PropertyValuesHolder PropertyValuesHolder::ofFloat(android::util::Property arg0, jfloatArray arg1)
+	android::animation::PropertyValuesHolder PropertyValuesHolder::ofFloat(android::util::Property arg0, JFloatArray arg1)
 	{
 		return callStaticObjectMethod(
 			"android.animation.PropertyValuesHolder",
 			"ofFloat",
 			"(Landroid/util/Property;[F)Landroid/animation/PropertyValuesHolder;",
 			arg0.object(),
-			arg1
+			arg1.object<jfloatArray>()
 		);
 	}
-	android::animation::PropertyValuesHolder PropertyValuesHolder::ofFloat(jstring arg0, jfloatArray arg1)
+	android::animation::PropertyValuesHolder PropertyValuesHolder::ofFloat(JString arg0, JFloatArray arg1)
 	{
 		return callStaticObjectMethod(
 			"android.animation.PropertyValuesHolder",
 			"ofFloat",
 			"(Ljava/lang/String;[F)Landroid/animation/PropertyValuesHolder;",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jfloatArray>()
 		);
 	}
-	android::animation::PropertyValuesHolder PropertyValuesHolder::ofInt(android::util::Property arg0, jintArray arg1)
+	android::animation::PropertyValuesHolder PropertyValuesHolder::ofInt(android::util::Property arg0, JIntArray arg1)
 	{
 		return callStaticObjectMethod(
 			"android.animation.PropertyValuesHolder",
 			"ofInt",
 			"(Landroid/util/Property;[I)Landroid/animation/PropertyValuesHolder;",
 			arg0.object(),
-			arg1
+			arg1.object<jintArray>()
 		);
 	}
-	android::animation::PropertyValuesHolder PropertyValuesHolder::ofInt(jstring arg0, jintArray arg1)
+	android::animation::PropertyValuesHolder PropertyValuesHolder::ofInt(JString arg0, JIntArray arg1)
 	{
 		return callStaticObjectMethod(
 			"android.animation.PropertyValuesHolder",
 			"ofInt",
 			"(Ljava/lang/String;[I)Landroid/animation/PropertyValuesHolder;",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jintArray>()
 		);
 	}
-	android::animation::PropertyValuesHolder PropertyValuesHolder::ofKeyframe(android::util::Property arg0, jarray arg1)
+	android::animation::PropertyValuesHolder PropertyValuesHolder::ofKeyframe(android::util::Property arg0, JArray arg1)
 	{
 		return callStaticObjectMethod(
 			"android.animation.PropertyValuesHolder",
 			"ofKeyframe",
 			"(Landroid/util/Property;[Landroid/animation/Keyframe;)Landroid/animation/PropertyValuesHolder;",
 			arg0.object(),
-			arg1
+			arg1.object<jarray>()
 		);
 	}
-	android::animation::PropertyValuesHolder PropertyValuesHolder::ofKeyframe(jstring arg0, jarray arg1)
+	android::animation::PropertyValuesHolder PropertyValuesHolder::ofKeyframe(JString arg0, JArray arg1)
 	{
 		return callStaticObjectMethod(
 			"android.animation.PropertyValuesHolder",
 			"ofKeyframe",
 			"(Ljava/lang/String;[Landroid/animation/Keyframe;)Landroid/animation/PropertyValuesHolder;",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jarray>()
 		);
 	}
-	android::animation::PropertyValuesHolder PropertyValuesHolder::ofMultiFloat(jstring arg0, jarray arg1)
+	android::animation::PropertyValuesHolder PropertyValuesHolder::ofMultiFloat(JString arg0, JArray arg1)
 	{
 		return callStaticObjectMethod(
 			"android.animation.PropertyValuesHolder",
 			"ofMultiFloat",
 			"(Ljava/lang/String;[[F)Landroid/animation/PropertyValuesHolder;",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jarray>()
 		);
 	}
-	android::animation::PropertyValuesHolder PropertyValuesHolder::ofMultiFloat(jstring arg0, android::graphics::Path arg1)
+	android::animation::PropertyValuesHolder PropertyValuesHolder::ofMultiFloat(JString arg0, android::graphics::Path arg1)
 	{
 		return callStaticObjectMethod(
 			"android.animation.PropertyValuesHolder",
 			"ofMultiFloat",
 			"(Ljava/lang/String;Landroid/graphics/Path;)Landroid/animation/PropertyValuesHolder;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
-	android::animation::PropertyValuesHolder PropertyValuesHolder::ofMultiFloat(jstring arg0, android::animation::TypeConverter arg1, JObject arg2, jarray arg3)
+	android::animation::PropertyValuesHolder PropertyValuesHolder::ofMultiFloat(JString arg0, android::animation::TypeConverter arg1, JObject arg2, JArray arg3)
 	{
 		return callStaticObjectMethod(
 			"android.animation.PropertyValuesHolder",
 			"ofMultiFloat",
 			"(Ljava/lang/String;Landroid/animation/TypeConverter;Landroid/animation/TypeEvaluator;[Landroid/animation/Keyframe;)Landroid/animation/PropertyValuesHolder;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
 			arg2.object(),
-			arg3
+			arg3.object<jarray>()
 		);
 	}
-	android::animation::PropertyValuesHolder PropertyValuesHolder::ofMultiFloat(jstring arg0, android::animation::TypeConverter arg1, JObject arg2, jobjectArray arg3)
+	android::animation::PropertyValuesHolder PropertyValuesHolder::ofMultiFloat(JString arg0, android::animation::TypeConverter arg1, JObject arg2, JObjectArray arg3)
 	{
 		return callStaticObjectMethod(
 			"android.animation.PropertyValuesHolder",
 			"ofMultiFloat",
 			"(Ljava/lang/String;Landroid/animation/TypeConverter;Landroid/animation/TypeEvaluator;[Ljava/lang/Object;)Landroid/animation/PropertyValuesHolder;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
 			arg2.object(),
-			arg3
+			arg3.object<jobjectArray>()
 		);
 	}
-	android::animation::PropertyValuesHolder PropertyValuesHolder::ofMultiInt(jstring arg0, jarray arg1)
+	android::animation::PropertyValuesHolder PropertyValuesHolder::ofMultiInt(JString arg0, JArray arg1)
 	{
 		return callStaticObjectMethod(
 			"android.animation.PropertyValuesHolder",
 			"ofMultiInt",
 			"(Ljava/lang/String;[[I)Landroid/animation/PropertyValuesHolder;",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jarray>()
 		);
 	}
-	android::animation::PropertyValuesHolder PropertyValuesHolder::ofMultiInt(jstring arg0, android::graphics::Path arg1)
+	android::animation::PropertyValuesHolder PropertyValuesHolder::ofMultiInt(JString arg0, android::graphics::Path arg1)
 	{
 		return callStaticObjectMethod(
 			"android.animation.PropertyValuesHolder",
 			"ofMultiInt",
 			"(Ljava/lang/String;Landroid/graphics/Path;)Landroid/animation/PropertyValuesHolder;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
-	android::animation::PropertyValuesHolder PropertyValuesHolder::ofMultiInt(jstring arg0, android::animation::TypeConverter arg1, JObject arg2, jarray arg3)
+	android::animation::PropertyValuesHolder PropertyValuesHolder::ofMultiInt(JString arg0, android::animation::TypeConverter arg1, JObject arg2, JArray arg3)
 	{
 		return callStaticObjectMethod(
 			"android.animation.PropertyValuesHolder",
 			"ofMultiInt",
 			"(Ljava/lang/String;Landroid/animation/TypeConverter;Landroid/animation/TypeEvaluator;[Landroid/animation/Keyframe;)Landroid/animation/PropertyValuesHolder;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
 			arg2.object(),
-			arg3
+			arg3.object<jarray>()
 		);
 	}
-	android::animation::PropertyValuesHolder PropertyValuesHolder::ofMultiInt(jstring arg0, android::animation::TypeConverter arg1, JObject arg2, jobjectArray arg3)
+	android::animation::PropertyValuesHolder PropertyValuesHolder::ofMultiInt(JString arg0, android::animation::TypeConverter arg1, JObject arg2, JObjectArray arg3)
 	{
 		return callStaticObjectMethod(
 			"android.animation.PropertyValuesHolder",
 			"ofMultiInt",
 			"(Ljava/lang/String;Landroid/animation/TypeConverter;Landroid/animation/TypeEvaluator;[Ljava/lang/Object;)Landroid/animation/PropertyValuesHolder;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
 			arg2.object(),
-			arg3
+			arg3.object<jobjectArray>()
 		);
 	}
 	android::animation::PropertyValuesHolder PropertyValuesHolder::ofObject(android::util::Property arg0, android::animation::TypeConverter arg1, android::graphics::Path arg2)
@@ -172,7 +180,7 @@ namespace android::animation
 			arg2.object()
 		);
 	}
-	android::animation::PropertyValuesHolder PropertyValuesHolder::ofObject(android::util::Property arg0, JObject arg1, jobjectArray arg2)
+	android::animation::PropertyValuesHolder PropertyValuesHolder::ofObject(android::util::Property arg0, JObject arg1, JObjectArray arg2)
 	{
 		return callStaticObjectMethod(
 			"android.animation.PropertyValuesHolder",
@@ -180,32 +188,32 @@ namespace android::animation
 			"(Landroid/util/Property;Landroid/animation/TypeEvaluator;[Ljava/lang/Object;)Landroid/animation/PropertyValuesHolder;",
 			arg0.object(),
 			arg1.object(),
-			arg2
+			arg2.object<jobjectArray>()
 		);
 	}
-	android::animation::PropertyValuesHolder PropertyValuesHolder::ofObject(jstring arg0, android::animation::TypeConverter arg1, android::graphics::Path arg2)
+	android::animation::PropertyValuesHolder PropertyValuesHolder::ofObject(JString arg0, android::animation::TypeConverter arg1, android::graphics::Path arg2)
 	{
 		return callStaticObjectMethod(
 			"android.animation.PropertyValuesHolder",
 			"ofObject",
 			"(Ljava/lang/String;Landroid/animation/TypeConverter;Landroid/graphics/Path;)Landroid/animation/PropertyValuesHolder;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
 			arg2.object()
 		);
 	}
-	android::animation::PropertyValuesHolder PropertyValuesHolder::ofObject(jstring arg0, JObject arg1, jobjectArray arg2)
+	android::animation::PropertyValuesHolder PropertyValuesHolder::ofObject(JString arg0, JObject arg1, JObjectArray arg2)
 	{
 		return callStaticObjectMethod(
 			"android.animation.PropertyValuesHolder",
 			"ofObject",
 			"(Ljava/lang/String;Landroid/animation/TypeEvaluator;[Ljava/lang/Object;)Landroid/animation/PropertyValuesHolder;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
-			arg2
+			arg2.object<jobjectArray>()
 		);
 	}
-	android::animation::PropertyValuesHolder PropertyValuesHolder::ofObject(android::util::Property arg0, android::animation::TypeConverter arg1, JObject arg2, jobjectArray arg3)
+	android::animation::PropertyValuesHolder PropertyValuesHolder::ofObject(android::util::Property arg0, android::animation::TypeConverter arg1, JObject arg2, JObjectArray arg3)
 	{
 		return callStaticObjectMethod(
 			"android.animation.PropertyValuesHolder",
@@ -214,7 +222,7 @@ namespace android::animation
 			arg0.object(),
 			arg1.object(),
 			arg2.object(),
-			arg3
+			arg3.object<jobjectArray>()
 		);
 	}
 	android::animation::PropertyValuesHolder PropertyValuesHolder::clone()
@@ -224,12 +232,12 @@ namespace android::animation
 			"()Landroid/animation/PropertyValuesHolder;"
 		);
 	}
-	jstring PropertyValuesHolder::getPropertyName()
+	JString PropertyValuesHolder::getPropertyName()
 	{
 		return callObjectMethod(
 			"getPropertyName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void PropertyValuesHolder::setConverter(android::animation::TypeConverter arg0)
 	{
@@ -247,36 +255,36 @@ namespace android::animation
 			arg0.object()
 		);
 	}
-	void PropertyValuesHolder::setFloatValues(jfloatArray arg0)
+	void PropertyValuesHolder::setFloatValues(JFloatArray arg0)
 	{
 		callMethod<void>(
 			"setFloatValues",
 			"([F)V",
-			arg0
+			arg0.object<jfloatArray>()
 		);
 	}
-	void PropertyValuesHolder::setIntValues(jintArray arg0)
+	void PropertyValuesHolder::setIntValues(JIntArray arg0)
 	{
 		callMethod<void>(
 			"setIntValues",
 			"([I)V",
-			arg0
+			arg0.object<jintArray>()
 		);
 	}
-	void PropertyValuesHolder::setKeyframes(jarray arg0)
+	void PropertyValuesHolder::setKeyframes(JArray arg0)
 	{
 		callMethod<void>(
 			"setKeyframes",
 			"([Landroid/animation/Keyframe;)V",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
-	void PropertyValuesHolder::setObjectValues(jobjectArray arg0)
+	void PropertyValuesHolder::setObjectValues(JObjectArray arg0)
 	{
 		callMethod<void>(
 			"setObjectValues",
 			"([Ljava/lang/Object;)V",
-			arg0
+			arg0.object<jobjectArray>()
 		);
 	}
 	void PropertyValuesHolder::setProperty(android::util::Property arg0)
@@ -287,20 +295,20 @@ namespace android::animation
 			arg0.object()
 		);
 	}
-	void PropertyValuesHolder::setPropertyName(jstring arg0)
+	void PropertyValuesHolder::setPropertyName(JString arg0)
 	{
 		callMethod<void>(
 			"setPropertyName",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jstring PropertyValuesHolder::toString()
+	JString PropertyValuesHolder::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::animation
 

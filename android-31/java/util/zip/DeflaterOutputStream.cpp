@@ -1,3 +1,4 @@
+#include "../../../JByteArray.hpp"
 #include "../../io/OutputStream.hpp"
 #include "./Deflater.hpp"
 #include "./DeflaterOutputStream.hpp"
@@ -86,12 +87,12 @@ namespace java::util::zip
 			arg0
 		);
 	}
-	void DeflaterOutputStream::write(jbyteArray arg0, jint arg1, jint arg2)
+	void DeflaterOutputStream::write(JByteArray arg0, jint arg1, jint arg2)
 	{
 		callMethod<void>(
 			"write",
 			"([BII)V",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1,
 			arg2
 		);

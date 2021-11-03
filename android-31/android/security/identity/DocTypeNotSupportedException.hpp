@@ -1,9 +1,9 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "../../../java/lang/Exception.hpp"
 #include "./IdentityCredentialException.hpp"
 
+class JString;
+class JThrowable;
 
 namespace android::security::identity
 {
@@ -17,8 +17,8 @@ namespace android::security::identity
 		DocTypeNotSupportedException(QJniObject obj);
 		
 		// Constructors
-		DocTypeNotSupportedException(jstring arg0);
-		DocTypeNotSupportedException(jstring arg0, jthrowable arg1);
+		DocTypeNotSupportedException(JString arg0);
+		DocTypeNotSupportedException(JString arg0, JThrowable arg1);
 		
 		// Methods
 	};

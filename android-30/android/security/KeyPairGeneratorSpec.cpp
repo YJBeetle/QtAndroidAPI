@@ -1,4 +1,5 @@
 #include "../content/Context.hpp"
+#include "../../JString.hpp"
 #include "../../java/math/BigInteger.hpp"
 #include "../../java/util/Date.hpp"
 #include "../../javax/security/auth/x500/X500Principal.hpp"
@@ -42,19 +43,19 @@ namespace android::security
 			"()I"
 		);
 	}
-	jstring KeyPairGeneratorSpec::getKeyType()
+	JString KeyPairGeneratorSpec::getKeyType()
 	{
 		return callObjectMethod(
 			"getKeyType",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring KeyPairGeneratorSpec::getKeystoreAlias()
+	JString KeyPairGeneratorSpec::getKeystoreAlias()
 	{
 		return callObjectMethod(
 			"getKeystoreAlias",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	java::math::BigInteger KeyPairGeneratorSpec::getSerialNumber()
 	{

@@ -1,3 +1,5 @@
+#include "../../../../JArray.hpp"
+#include "../../../../JString.hpp"
 #include "./AclEntryPermission.hpp"
 
 namespace java::nio::file::attribute
@@ -146,22 +148,22 @@ namespace java::nio::file::attribute
 	// Constructors
 	
 	// Methods
-	java::nio::file::attribute::AclEntryPermission AclEntryPermission::valueOf(jstring arg0)
+	java::nio::file::attribute::AclEntryPermission AclEntryPermission::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"java.nio.file.attribute.AclEntryPermission",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/nio/file/attribute/AclEntryPermission;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray AclEntryPermission::values()
+	JArray AclEntryPermission::values()
 	{
 		return callStaticObjectMethod(
 			"java.nio.file.attribute.AclEntryPermission",
 			"values",
 			"()[Ljava/nio/file/attribute/AclEntryPermission;"
-		).object<jarray>();
+		);
 	}
 } // namespace java::nio::file::attribute
 

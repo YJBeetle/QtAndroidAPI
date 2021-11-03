@@ -6,6 +6,9 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
+class JObject;
+class JString;
 
 namespace android::view::accessibility
 {
@@ -59,15 +62,15 @@ namespace android::view::accessibility
 		AccessibilityNodeInfo_AccessibilityAction(QJniObject obj);
 		
 		// Constructors
-		AccessibilityNodeInfo_AccessibilityAction(jint arg0, jstring arg1);
+		AccessibilityNodeInfo_AccessibilityAction(jint arg0, JString arg1);
 		
 		// Methods
 		jint describeContents();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint getId();
-		jstring getLabel();
+		JString getLabel();
 		jint hashCode();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::view::accessibility

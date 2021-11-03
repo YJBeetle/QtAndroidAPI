@@ -3,6 +3,7 @@
 #include "../content/Intent.hpp"
 #include "../view/MotionEvent.hpp"
 #include "../view/View.hpp"
+#include "../../JString.hpp"
 #include "./AdapterViewAnimator.hpp"
 
 namespace android::widget
@@ -66,12 +67,12 @@ namespace android::widget
 			"()V"
 		);
 	}
-	jstring AdapterViewAnimator::getAccessibilityClassName()
+	JString AdapterViewAnimator::getAccessibilityClassName()
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	JObject AdapterViewAnimator::getAdapter()
 	{

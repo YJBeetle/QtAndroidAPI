@@ -2,6 +2,7 @@
 
 #include "../../../../JObject.hpp"
 
+class JString;
 
 namespace java::util::concurrent::atomic
 {
@@ -33,7 +34,7 @@ namespace java::util::concurrent::atomic
 		void setOpaque(jboolean arg0);
 		void setPlain(jboolean arg0);
 		void setRelease(jboolean arg0);
-		jstring toString();
+		JString toString();
 		jboolean weakCompareAndSet(jboolean arg0, jboolean arg1);
 		jboolean weakCompareAndSetAcquire(jboolean arg0, jboolean arg1);
 		jboolean weakCompareAndSetPlain(jboolean arg0, jboolean arg1);

@@ -1,5 +1,7 @@
 #include "./TvTrackInfo.hpp"
 #include "../../os/Bundle.hpp"
+#include "../../../JString.hpp"
+#include "../../../JString.hpp"
 #include "./TvTrackInfo_Builder.hpp"
 
 namespace android::media::tv
@@ -10,12 +12,12 @@ namespace android::media::tv
 	TvTrackInfo_Builder::TvTrackInfo_Builder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	TvTrackInfo_Builder::TvTrackInfo_Builder(jint arg0, jstring arg1)
+	TvTrackInfo_Builder::TvTrackInfo_Builder(jint arg0, JString arg1)
 		: JObject(
 			"android.media.tv.TvTrackInfo$Builder",
 			"(ILjava/lang/String;)V",
 			arg0,
-			arg1
+			arg1.object<jstring>()
 		) {}
 	
 	// Methods
@@ -50,20 +52,20 @@ namespace android::media::tv
 			arg0
 		);
 	}
-	android::media::tv::TvTrackInfo_Builder TvTrackInfo_Builder::setDescription(jstring arg0)
+	android::media::tv::TvTrackInfo_Builder TvTrackInfo_Builder::setDescription(JString arg0)
 	{
 		return callObjectMethod(
 			"setDescription",
 			"(Ljava/lang/CharSequence;)Landroid/media/tv/TvTrackInfo$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	android::media::tv::TvTrackInfo_Builder TvTrackInfo_Builder::setEncoding(jstring arg0)
+	android::media::tv::TvTrackInfo_Builder TvTrackInfo_Builder::setEncoding(JString arg0)
 	{
 		return callObjectMethod(
 			"setEncoding",
 			"(Ljava/lang/String;)Landroid/media/tv/TvTrackInfo$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::media::tv::TvTrackInfo_Builder TvTrackInfo_Builder::setEncrypted(jboolean arg0)
@@ -90,12 +92,12 @@ namespace android::media::tv
 			arg0
 		);
 	}
-	android::media::tv::TvTrackInfo_Builder TvTrackInfo_Builder::setLanguage(jstring arg0)
+	android::media::tv::TvTrackInfo_Builder TvTrackInfo_Builder::setLanguage(JString arg0)
 	{
 		return callObjectMethod(
 			"setLanguage",
 			"(Ljava/lang/String;)Landroid/media/tv/TvTrackInfo$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::media::tv::TvTrackInfo_Builder TvTrackInfo_Builder::setSpokenSubtitle(jboolean arg0)

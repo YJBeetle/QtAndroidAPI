@@ -1,3 +1,4 @@
+#include "../../../../JString.hpp"
 #include "./Locator2Impl.hpp"
 
 namespace org::xml::sax::ext
@@ -21,34 +22,34 @@ namespace org::xml::sax::ext
 		) {}
 	
 	// Methods
-	jstring Locator2Impl::getEncoding()
+	JString Locator2Impl::getEncoding()
 	{
 		return callObjectMethod(
 			"getEncoding",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Locator2Impl::getXMLVersion()
+	JString Locator2Impl::getXMLVersion()
 	{
 		return callObjectMethod(
 			"getXMLVersion",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	void Locator2Impl::setEncoding(jstring arg0)
+	void Locator2Impl::setEncoding(JString arg0)
 	{
 		callMethod<void>(
 			"setEncoding",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	void Locator2Impl::setXMLVersion(jstring arg0)
+	void Locator2Impl::setXMLVersion(JString arg0)
 	{
 		callMethod<void>(
 			"setXMLVersion",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 } // namespace org::xml::sax::ext

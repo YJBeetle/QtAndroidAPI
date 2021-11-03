@@ -1,5 +1,7 @@
+#include "../../JByteArray.hpp"
 #include "./CharArrayBuffer.hpp"
 #include "./CursorWindow.hpp"
+#include "../../JString.hpp"
 #include "./AbstractWindowedCursor.hpp"
 
 namespace android::database
@@ -26,13 +28,13 @@ namespace android::database
 			arg1.object()
 		);
 	}
-	jbyteArray AbstractWindowedCursor::getBlob(jint arg0)
+	JByteArray AbstractWindowedCursor::getBlob(jint arg0)
 	{
 		return callObjectMethod(
 			"getBlob",
 			"(I)[B",
 			arg0
-		).object<jbyteArray>();
+		);
 	}
 	jdouble AbstractWindowedCursor::getDouble(jint arg0)
 	{
@@ -74,13 +76,13 @@ namespace android::database
 			arg0
 		);
 	}
-	jstring AbstractWindowedCursor::getString(jint arg0)
+	JString AbstractWindowedCursor::getString(jint arg0)
 	{
 		return callObjectMethod(
 			"getString",
 			"(I)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
 	jint AbstractWindowedCursor::getType(jint arg0)
 	{

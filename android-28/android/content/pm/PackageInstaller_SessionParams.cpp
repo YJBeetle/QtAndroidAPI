@@ -1,6 +1,8 @@
 #include "../../graphics/Bitmap.hpp"
 #include "../../net/Uri.hpp"
 #include "../../os/Parcel.hpp"
+#include "../../../JString.hpp"
+#include "../../../JString.hpp"
 #include "./PackageInstaller_SessionParams.hpp"
 
 namespace android::content::pm
@@ -56,20 +58,20 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	void PackageInstaller_SessionParams::setAppLabel(jstring arg0)
+	void PackageInstaller_SessionParams::setAppLabel(JString arg0)
 	{
 		callMethod<void>(
 			"setAppLabel",
 			"(Ljava/lang/CharSequence;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	void PackageInstaller_SessionParams::setAppPackageName(jstring arg0)
+	void PackageInstaller_SessionParams::setAppPackageName(JString arg0)
 	{
 		callMethod<void>(
 			"setAppPackageName",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void PackageInstaller_SessionParams::setInstallLocation(jint arg0)

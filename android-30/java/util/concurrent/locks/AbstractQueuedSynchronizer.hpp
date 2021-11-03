@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../../../JObject.hpp"
 #include "./AbstractOwnableSynchronizer.hpp"
 
+class JString;
 namespace java::lang
 {
 	class Thread;
@@ -45,7 +45,7 @@ namespace java::util::concurrent::locks
 		jboolean owns(java::util::concurrent::locks::AbstractQueuedSynchronizer_ConditionObject arg0);
 		jboolean release(jint arg0);
 		jboolean releaseShared(jint arg0);
-		jstring toString();
+		JString toString();
 		jboolean tryAcquireNanos(jint arg0, jlong arg1);
 		jboolean tryAcquireSharedNanos(jint arg0, jlong arg1);
 	};

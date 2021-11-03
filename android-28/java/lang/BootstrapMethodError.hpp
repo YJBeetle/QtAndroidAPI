@@ -1,9 +1,9 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "./Error.hpp"
 #include "./LinkageError.hpp"
 
+class JString;
+class JThrowable;
 
 namespace java::lang
 {
@@ -18,9 +18,9 @@ namespace java::lang
 		
 		// Constructors
 		BootstrapMethodError();
-		BootstrapMethodError(jstring arg0);
-		BootstrapMethodError(jthrowable arg0);
-		BootstrapMethodError(jstring arg0, jthrowable arg1);
+		BootstrapMethodError(JString arg0);
+		BootstrapMethodError(JThrowable arg0);
+		BootstrapMethodError(JString arg0, JThrowable arg1);
 		
 		// Methods
 	};

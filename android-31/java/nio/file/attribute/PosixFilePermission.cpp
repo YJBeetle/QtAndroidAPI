@@ -1,3 +1,5 @@
+#include "../../../../JArray.hpp"
+#include "../../../../JString.hpp"
 #include "./PosixFilePermission.hpp"
 
 namespace java::nio::file::attribute
@@ -82,22 +84,22 @@ namespace java::nio::file::attribute
 	// Constructors
 	
 	// Methods
-	java::nio::file::attribute::PosixFilePermission PosixFilePermission::valueOf(jstring arg0)
+	java::nio::file::attribute::PosixFilePermission PosixFilePermission::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"java.nio.file.attribute.PosixFilePermission",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/nio/file/attribute/PosixFilePermission;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray PosixFilePermission::values()
+	JArray PosixFilePermission::values()
 	{
 		return callStaticObjectMethod(
 			"java.nio.file.attribute.PosixFilePermission",
 			"values",
 			"()[Ljava/nio/file/attribute/PosixFilePermission;"
-		).object<jarray>();
+		);
 	}
 } // namespace java::nio::file::attribute
 

@@ -1,3 +1,5 @@
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./DisplayMetrics.hpp"
 
 namespace android::util
@@ -191,12 +193,12 @@ namespace android::util
 			arg0.object()
 		);
 	}
-	jboolean DisplayMetrics::equals(jobject arg0)
+	jboolean DisplayMetrics::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint DisplayMetrics::hashCode()
@@ -221,12 +223,12 @@ namespace android::util
 			"()V"
 		);
 	}
-	jstring DisplayMetrics::toString()
+	JString DisplayMetrics::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::util
 

@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JString;
 
 namespace android::media
 {
@@ -20,7 +21,7 @@ namespace android::media
 		jint getBitrate();
 		jint getChannels();
 		jint getCodec();
-		jstring getMediaType();
+		JString getMediaType();
 		jint getProfile();
 		jint getSampleRate();
 	};

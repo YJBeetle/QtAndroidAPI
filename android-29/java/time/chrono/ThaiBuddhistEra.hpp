@@ -1,8 +1,9 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "../../lang/Enum.hpp"
 
+class JArray;
+class JString;
 namespace java::time::format
 {
 	class TextStyle;
@@ -29,9 +30,9 @@ namespace java::time::chrono
 		
 		// Methods
 		static java::time::chrono::ThaiBuddhistEra of(jint arg0);
-		static java::time::chrono::ThaiBuddhistEra valueOf(jstring arg0);
-		static jarray values();
-		jstring getDisplayName(java::time::format::TextStyle arg0, java::util::Locale arg1);
+		static java::time::chrono::ThaiBuddhistEra valueOf(JString arg0);
+		static JArray values();
+		JString getDisplayName(java::time::format::TextStyle arg0, java::util::Locale arg1);
 		jint getValue();
 	};
 } // namespace java::time::chrono

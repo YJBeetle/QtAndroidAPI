@@ -2,6 +2,7 @@
 #include "./Layout_Directions.hpp"
 #include "./TextPaint.hpp"
 #include "./TextUtils_TruncateAt.hpp"
+#include "../../JString.hpp"
 #include "./DynamicLayout.hpp"
 
 namespace android::text
@@ -12,11 +13,11 @@ namespace android::text
 	DynamicLayout::DynamicLayout(QJniObject obj) : android::text::Layout(obj) {}
 	
 	// Constructors
-	DynamicLayout::DynamicLayout(jstring arg0, android::text::TextPaint arg1, jint arg2, android::text::Layout_Alignment arg3, jfloat arg4, jfloat arg5, jboolean arg6)
+	DynamicLayout::DynamicLayout(JString arg0, android::text::TextPaint arg1, jint arg2, android::text::Layout_Alignment arg3, jfloat arg4, jfloat arg5, jboolean arg6)
 		: android::text::Layout(
 			"android.text.DynamicLayout",
 			"(Ljava/lang/CharSequence;Landroid/text/TextPaint;ILandroid/text/Layout$Alignment;FFZ)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
 			arg2,
 			arg3.object(),
@@ -24,12 +25,12 @@ namespace android::text
 			arg5,
 			arg6
 		) {}
-	DynamicLayout::DynamicLayout(jstring arg0, jstring arg1, android::text::TextPaint arg2, jint arg3, android::text::Layout_Alignment arg4, jfloat arg5, jfloat arg6, jboolean arg7)
+	DynamicLayout::DynamicLayout(JString arg0, JString arg1, android::text::TextPaint arg2, jint arg3, android::text::Layout_Alignment arg4, jfloat arg5, jfloat arg6, jboolean arg7)
 		: android::text::Layout(
 			"android.text.DynamicLayout",
 			"(Ljava/lang/CharSequence;Ljava/lang/CharSequence;Landroid/text/TextPaint;ILandroid/text/Layout$Alignment;FFZ)V",
-			arg0,
-			arg1,
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
 			arg2.object(),
 			arg3,
 			arg4.object(),
@@ -37,12 +38,12 @@ namespace android::text
 			arg6,
 			arg7
 		) {}
-	DynamicLayout::DynamicLayout(jstring arg0, jstring arg1, android::text::TextPaint arg2, jint arg3, android::text::Layout_Alignment arg4, jfloat arg5, jfloat arg6, jboolean arg7, android::text::TextUtils_TruncateAt arg8, jint arg9)
+	DynamicLayout::DynamicLayout(JString arg0, JString arg1, android::text::TextPaint arg2, jint arg3, android::text::Layout_Alignment arg4, jfloat arg5, jfloat arg6, jboolean arg7, android::text::TextUtils_TruncateAt arg8, jint arg9)
 		: android::text::Layout(
 			"android.text.DynamicLayout",
 			"(Ljava/lang/CharSequence;Ljava/lang/CharSequence;Landroid/text/TextPaint;ILandroid/text/Layout$Alignment;FFZLandroid/text/TextUtils$TruncateAt;I)V",
-			arg0,
-			arg1,
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
 			arg2.object(),
 			arg3,
 			arg4.object(),

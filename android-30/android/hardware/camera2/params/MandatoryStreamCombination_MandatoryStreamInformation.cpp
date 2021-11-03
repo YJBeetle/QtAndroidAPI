@@ -1,3 +1,4 @@
+#include "../../../../JObject.hpp"
 #include "./MandatoryStreamCombination_MandatoryStreamInformation.hpp"
 
 namespace android::hardware::camera2::params
@@ -10,12 +11,12 @@ namespace android::hardware::camera2::params
 	// Constructors
 	
 	// Methods
-	jboolean MandatoryStreamCombination_MandatoryStreamInformation::equals(jobject arg0)
+	jboolean MandatoryStreamCombination_MandatoryStreamInformation::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	JObject MandatoryStreamCombination_MandatoryStreamInformation::getAvailableSizes()

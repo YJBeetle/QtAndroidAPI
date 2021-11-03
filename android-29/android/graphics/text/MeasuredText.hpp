@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JCharArray;
 namespace android::graphics
 {
 	class Rect;

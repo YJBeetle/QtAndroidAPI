@@ -42,6 +42,7 @@ namespace java::io
 {
 	class File;
 }
+class JString;
 namespace java::nio
 {
 	class ByteBuffer;
@@ -71,13 +72,13 @@ namespace android::graphics
 		static android::graphics::ImageDecoder_Source createSource(java::nio::ByteBuffer arg0);
 		static android::graphics::ImageDecoder_Source createSource(JObject arg0);
 		static android::graphics::ImageDecoder_Source createSource(android::content::ContentResolver arg0, android::net::Uri arg1);
-		static android::graphics::ImageDecoder_Source createSource(android::content::res::AssetManager arg0, jstring arg1);
+		static android::graphics::ImageDecoder_Source createSource(android::content::res::AssetManager arg0, JString arg1);
 		static android::graphics::ImageDecoder_Source createSource(android::content::res::Resources arg0, jint arg1);
 		static android::graphics::Bitmap decodeBitmap(android::graphics::ImageDecoder_Source arg0);
 		static android::graphics::Bitmap decodeBitmap(android::graphics::ImageDecoder_Source arg0, JObject arg1);
 		static android::graphics::drawable::Drawable decodeDrawable(android::graphics::ImageDecoder_Source arg0);
 		static android::graphics::drawable::Drawable decodeDrawable(android::graphics::ImageDecoder_Source arg0, JObject arg1);
-		static jboolean isMimeTypeSupported(jstring arg0);
+		static jboolean isMimeTypeSupported(JString arg0);
 		void close();
 		jint getAllocator();
 		android::graphics::Rect getCrop();

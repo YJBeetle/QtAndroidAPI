@@ -1,6 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./Layout.hpp"
 
 namespace android::graphics
@@ -35,6 +34,7 @@ namespace android::text
 {
 	class TextUtils_TruncateAt;
 }
+class JString;
 
 namespace android::text
 {
@@ -48,14 +48,14 @@ namespace android::text
 		BoringLayout(QJniObject obj);
 		
 		// Constructors
-		BoringLayout(jstring arg0, android::text::TextPaint arg1, jint arg2, android::text::Layout_Alignment arg3, jfloat arg4, jfloat arg5, android::text::BoringLayout_Metrics arg6, jboolean arg7);
-		BoringLayout(jstring arg0, android::text::TextPaint arg1, jint arg2, android::text::Layout_Alignment arg3, jfloat arg4, jfloat arg5, android::text::BoringLayout_Metrics arg6, jboolean arg7, android::text::TextUtils_TruncateAt arg8, jint arg9);
+		BoringLayout(JString arg0, android::text::TextPaint arg1, jint arg2, android::text::Layout_Alignment arg3, jfloat arg4, jfloat arg5, android::text::BoringLayout_Metrics arg6, jboolean arg7);
+		BoringLayout(JString arg0, android::text::TextPaint arg1, jint arg2, android::text::Layout_Alignment arg3, jfloat arg4, jfloat arg5, android::text::BoringLayout_Metrics arg6, jboolean arg7, android::text::TextUtils_TruncateAt arg8, jint arg9);
 		
 		// Methods
-		static android::text::BoringLayout_Metrics isBoring(jstring arg0, android::text::TextPaint arg1);
-		static android::text::BoringLayout_Metrics isBoring(jstring arg0, android::text::TextPaint arg1, android::text::BoringLayout_Metrics arg2);
-		static android::text::BoringLayout make(jstring arg0, android::text::TextPaint arg1, jint arg2, android::text::Layout_Alignment arg3, jfloat arg4, jfloat arg5, android::text::BoringLayout_Metrics arg6, jboolean arg7);
-		static android::text::BoringLayout make(jstring arg0, android::text::TextPaint arg1, jint arg2, android::text::Layout_Alignment arg3, jfloat arg4, jfloat arg5, android::text::BoringLayout_Metrics arg6, jboolean arg7, android::text::TextUtils_TruncateAt arg8, jint arg9);
+		static android::text::BoringLayout_Metrics isBoring(JString arg0, android::text::TextPaint arg1);
+		static android::text::BoringLayout_Metrics isBoring(JString arg0, android::text::TextPaint arg1, android::text::BoringLayout_Metrics arg2);
+		static android::text::BoringLayout make(JString arg0, android::text::TextPaint arg1, jint arg2, android::text::Layout_Alignment arg3, jfloat arg4, jfloat arg5, android::text::BoringLayout_Metrics arg6, jboolean arg7);
+		static android::text::BoringLayout make(JString arg0, android::text::TextPaint arg1, jint arg2, android::text::Layout_Alignment arg3, jfloat arg4, jfloat arg5, android::text::BoringLayout_Metrics arg6, jboolean arg7, android::text::TextUtils_TruncateAt arg8, jint arg9);
 		void draw(android::graphics::Canvas arg0, android::graphics::Path arg1, android::graphics::Paint arg2, jint arg3);
 		void ellipsized(jint arg0, jint arg1);
 		jint getBottomPadding();
@@ -73,8 +73,8 @@ namespace android::text
 		jfloat getLineWidth(jint arg0);
 		jint getParagraphDirection(jint arg0);
 		jint getTopPadding();
-		android::text::BoringLayout replaceOrMake(jstring arg0, android::text::TextPaint arg1, jint arg2, android::text::Layout_Alignment arg3, jfloat arg4, jfloat arg5, android::text::BoringLayout_Metrics arg6, jboolean arg7);
-		android::text::BoringLayout replaceOrMake(jstring arg0, android::text::TextPaint arg1, jint arg2, android::text::Layout_Alignment arg3, jfloat arg4, jfloat arg5, android::text::BoringLayout_Metrics arg6, jboolean arg7, android::text::TextUtils_TruncateAt arg8, jint arg9);
+		android::text::BoringLayout replaceOrMake(JString arg0, android::text::TextPaint arg1, jint arg2, android::text::Layout_Alignment arg3, jfloat arg4, jfloat arg5, android::text::BoringLayout_Metrics arg6, jboolean arg7);
+		android::text::BoringLayout replaceOrMake(JString arg0, android::text::TextPaint arg1, jint arg2, android::text::Layout_Alignment arg3, jfloat arg4, jfloat arg5, android::text::BoringLayout_Metrics arg6, jboolean arg7, android::text::TextUtils_TruncateAt arg8, jint arg9);
 	};
 } // namespace android::text
 

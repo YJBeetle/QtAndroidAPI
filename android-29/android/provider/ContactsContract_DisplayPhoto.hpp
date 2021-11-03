@@ -6,6 +6,7 @@ namespace android::net
 {
 	class Uri;
 }
+class JString;
 
 namespace android::provider
 {
@@ -15,8 +16,8 @@ namespace android::provider
 		// Fields
 		static android::net::Uri CONTENT_MAX_DIMENSIONS_URI();
 		static android::net::Uri CONTENT_URI();
-		static jstring DISPLAY_MAX_DIM();
-		static jstring THUMBNAIL_MAX_DIM();
+		static JString DISPLAY_MAX_DIM();
+		static JString THUMBNAIL_MAX_DIM();
 		
 		// QJniObject forward
 		template<typename ...Ts> explicit ContactsContract_DisplayPhoto(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}

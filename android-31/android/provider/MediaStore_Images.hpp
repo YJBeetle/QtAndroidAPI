@@ -2,7 +2,6 @@
 
 #include "../../JObject.hpp"
 
-
 namespace android::provider
 {
 	class MediaStore_Images : public JObject

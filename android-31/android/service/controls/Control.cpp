@@ -3,6 +3,8 @@
 #include "../../graphics/drawable/Icon.hpp"
 #include "../../os/Parcel.hpp"
 #include "./templates/ControlTemplate.hpp"
+#include "../../../JString.hpp"
+#include "../../../JString.hpp"
 #include "./Control.hpp"
 
 namespace android::service::controls
@@ -72,12 +74,12 @@ namespace android::service::controls
 			"()Landroid/app/PendingIntent;"
 		);
 	}
-	jstring Control::getControlId()
+	JString Control::getControlId()
 	{
 		return callObjectMethod(
 			"getControlId",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::service::controls::templates::ControlTemplate Control::getControlTemplate()
 	{
@@ -114,40 +116,40 @@ namespace android::service::controls
 			"()I"
 		);
 	}
-	jstring Control::getStatusText()
+	JString Control::getStatusText()
 	{
 		return callObjectMethod(
 			"getStatusText",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
-	jstring Control::getStructure()
+	JString Control::getStructure()
 	{
 		return callObjectMethod(
 			"getStructure",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
-	jstring Control::getSubtitle()
+	JString Control::getSubtitle()
 	{
 		return callObjectMethod(
 			"getSubtitle",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
-	jstring Control::getTitle()
+	JString Control::getTitle()
 	{
 		return callObjectMethod(
 			"getTitle",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
-	jstring Control::getZone()
+	JString Control::getZone()
 	{
 		return callObjectMethod(
 			"getZone",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	void Control::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

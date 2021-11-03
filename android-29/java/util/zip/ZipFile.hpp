@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JIntArray;
 namespace java::io
 {
 	class File;
@@ -10,6 +11,7 @@ namespace java::io
 {
 	class InputStream;
 }
+class JString;
 namespace java::nio::charset
 {
 	class Charset;
@@ -38,19 +40,19 @@ namespace java::util::zip
 		
 		// Constructors
 		ZipFile(java::io::File arg0);
-		ZipFile(jstring arg0);
+		ZipFile(JString arg0);
 		ZipFile(java::io::File arg0, jint arg1);
 		ZipFile(java::io::File arg0, java::nio::charset::Charset arg1);
-		ZipFile(jstring arg0, java::nio::charset::Charset arg1);
+		ZipFile(JString arg0, java::nio::charset::Charset arg1);
 		ZipFile(java::io::File arg0, jint arg1, java::nio::charset::Charset arg2);
 		
 		// Methods
 		void close();
 		JObject entries();
-		jstring getComment();
-		java::util::zip::ZipEntry getEntry(jstring arg0);
+		JString getComment();
+		java::util::zip::ZipEntry getEntry(JString arg0);
 		java::io::InputStream getInputStream(java::util::zip::ZipEntry arg0);
-		jstring getName();
+		JString getName();
 		jint size();
 		JObject stream();
 	};

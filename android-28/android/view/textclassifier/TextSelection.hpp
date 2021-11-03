@@ -6,6 +6,7 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
 
 namespace android::view::textclassifier
 {
@@ -23,13 +24,13 @@ namespace android::view::textclassifier
 		
 		// Methods
 		jint describeContents();
-		jfloat getConfidenceScore(jstring arg0);
-		jstring getEntity(jint arg0);
+		jfloat getConfidenceScore(JString arg0);
+		JString getEntity(jint arg0);
 		jint getEntityCount();
-		jstring getId();
+		JString getId();
 		jint getSelectionEndIndex();
 		jint getSelectionStartIndex();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::view::textclassifier

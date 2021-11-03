@@ -6,6 +6,7 @@ namespace android::content
 {
 	class Context;
 }
+class JString;
 
 namespace android::text::format
 {
@@ -22,9 +23,9 @@ namespace android::text::format
 		Formatter();
 		
 		// Methods
-		static jstring formatFileSize(android::content::Context arg0, jlong arg1);
-		static jstring formatIpAddress(jint arg0);
-		static jstring formatShortFileSize(android::content::Context arg0, jlong arg1);
+		static JString formatFileSize(android::content::Context arg0, jlong arg1);
+		static JString formatIpAddress(jint arg0);
+		static JString formatShortFileSize(android::content::Context arg0, jlong arg1);
 	};
 } // namespace android::text::format
 

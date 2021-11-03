@@ -1,14 +1,12 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../../java/lang/Exception.hpp"
-#include "../../java/lang/RuntimeException.hpp"
 #include "../util/AndroidRuntimeException.hpp"
 
 namespace java::lang
 {
 	class Exception;
 }
+class JString;
 
 namespace android::os
 {
@@ -23,7 +21,7 @@ namespace android::os
 		
 		// Constructors
 		BadParcelableException(java::lang::Exception arg0);
-		BadParcelableException(jstring arg0);
+		BadParcelableException(JString arg0);
 		
 		// Methods
 	};

@@ -1,3 +1,6 @@
+#include "../../../JByteArray.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./Certificate.hpp"
 
 namespace javax::security::cert
@@ -15,20 +18,20 @@ namespace javax::security::cert
 		) {}
 	
 	// Methods
-	jboolean Certificate::equals(jobject arg0)
+	jboolean Certificate::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jbyteArray Certificate::getEncoded()
+	JByteArray Certificate::getEncoded()
 	{
 		return callObjectMethod(
 			"getEncoded",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
 	JObject Certificate::getPublicKey()
 	{
@@ -44,12 +47,12 @@ namespace javax::security::cert
 			"()I"
 		);
 	}
-	jstring Certificate::toString()
+	JString Certificate::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void Certificate::verify(JObject arg0)
 	{
@@ -59,13 +62,13 @@ namespace javax::security::cert
 			arg0.object()
 		);
 	}
-	void Certificate::verify(JObject arg0, jstring arg1)
+	void Certificate::verify(JObject arg0, JString arg1)
 	{
 		callMethod<void>(
 			"verify",
 			"(Ljava/security/PublicKey;Ljava/lang/String;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
 } // namespace javax::security::cert

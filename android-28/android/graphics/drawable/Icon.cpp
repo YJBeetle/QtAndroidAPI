@@ -1,3 +1,4 @@
+#include "../../../JByteArray.hpp"
 #include "../../content/Context.hpp"
 #include "../../content/res/ColorStateList.hpp"
 #include "../Bitmap.hpp"
@@ -7,6 +8,7 @@
 #include "../../os/Handler.hpp"
 #include "../../os/Message.hpp"
 #include "../../os/Parcel.hpp"
+#include "../../../JString.hpp"
 #include "./Icon.hpp"
 
 namespace android::graphics::drawable
@@ -89,33 +91,33 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	android::graphics::drawable::Icon Icon::createWithContentUri(jstring arg0)
+	android::graphics::drawable::Icon Icon::createWithContentUri(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.graphics.drawable.Icon",
 			"createWithContentUri",
 			"(Ljava/lang/String;)Landroid/graphics/drawable/Icon;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	android::graphics::drawable::Icon Icon::createWithData(jbyteArray arg0, jint arg1, jint arg2)
+	android::graphics::drawable::Icon Icon::createWithData(JByteArray arg0, jint arg1, jint arg2)
 	{
 		return callStaticObjectMethod(
 			"android.graphics.drawable.Icon",
 			"createWithData",
 			"([BII)Landroid/graphics/drawable/Icon;",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1,
 			arg2
 		);
 	}
-	android::graphics::drawable::Icon Icon::createWithFilePath(jstring arg0)
+	android::graphics::drawable::Icon Icon::createWithFilePath(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.graphics.drawable.Icon",
 			"createWithFilePath",
 			"(Ljava/lang/String;)Landroid/graphics/drawable/Icon;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::graphics::drawable::Icon Icon::createWithResource(android::content::Context arg0, jint arg1)
@@ -128,13 +130,13 @@ namespace android::graphics::drawable
 			arg1
 		);
 	}
-	android::graphics::drawable::Icon Icon::createWithResource(jstring arg0, jint arg1)
+	android::graphics::drawable::Icon Icon::createWithResource(JString arg0, jint arg1)
 	{
 		return callStaticObjectMethod(
 			"android.graphics.drawable.Icon",
 			"createWithResource",
 			"(Ljava/lang/String;I)Landroid/graphics/drawable/Icon;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
@@ -152,12 +154,12 @@ namespace android::graphics::drawable
 			"()I"
 		);
 	}
-	jstring Icon::getResPackage()
+	JString Icon::getResPackage()
 	{
 		return callObjectMethod(
 			"getResPackage",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint Icon::getType()
 	{
@@ -224,12 +226,12 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	jstring Icon::toString()
+	JString Icon::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void Icon::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

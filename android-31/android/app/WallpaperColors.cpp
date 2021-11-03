@@ -2,6 +2,8 @@
 #include "../graphics/Color.hpp"
 #include "../graphics/drawable/Drawable.hpp"
 #include "../os/Parcel.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./WallpaperColors.hpp"
 
 namespace android::app
@@ -84,12 +86,12 @@ namespace android::app
 			"()I"
 		);
 	}
-	jboolean WallpaperColors::equals(jobject arg0)
+	jboolean WallpaperColors::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint WallpaperColors::getColorHints()
@@ -127,12 +129,12 @@ namespace android::app
 			"()I"
 		);
 	}
-	jstring WallpaperColors::toString()
+	JString WallpaperColors::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void WallpaperColors::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./RSRuntimeException.hpp"
 
 namespace android::renderscript
@@ -8,11 +9,11 @@ namespace android::renderscript
 	RSRuntimeException::RSRuntimeException(QJniObject obj) : java::lang::RuntimeException(obj) {}
 	
 	// Constructors
-	RSRuntimeException::RSRuntimeException(jstring arg0)
+	RSRuntimeException::RSRuntimeException(JString arg0)
 		: java::lang::RuntimeException(
 			"android.renderscript.RSRuntimeException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

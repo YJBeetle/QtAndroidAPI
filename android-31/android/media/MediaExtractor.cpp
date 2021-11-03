@@ -10,6 +10,7 @@
 #include "../net/Uri.hpp"
 #include "../os/PersistableBundle.hpp"
 #include "../../java/io/FileDescriptor.hpp"
+#include "../../JString.hpp"
 #include "../../java/nio/ByteBuffer.hpp"
 #include "./MediaExtractor.hpp"
 
@@ -243,20 +244,20 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void MediaExtractor::setDataSource(jstring arg0)
+	void MediaExtractor::setDataSource(JString arg0)
 	{
 		callMethod<void>(
 			"setDataSource",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	void MediaExtractor::setDataSource(jstring arg0, JObject arg1)
+	void MediaExtractor::setDataSource(JString arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"setDataSource",
 			"(Ljava/lang/String;Ljava/util/Map;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}

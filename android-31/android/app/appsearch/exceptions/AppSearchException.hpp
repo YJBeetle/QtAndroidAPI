@@ -1,12 +1,13 @@
 #pragma once
 
-#include "../../../../JObject.hpp"
 #include "../../../../java/lang/Exception.hpp"
 
 namespace android::app::appsearch
 {
 	class AppSearchResult;
 }
+class JString;
+class JThrowable;
 
 namespace android::app::appsearch::exceptions
 {
@@ -21,8 +22,8 @@ namespace android::app::appsearch::exceptions
 		
 		// Constructors
 		AppSearchException(jint arg0);
-		AppSearchException(jint arg0, jstring arg1);
-		AppSearchException(jint arg0, jstring arg1, jthrowable arg2);
+		AppSearchException(jint arg0, JString arg1);
+		AppSearchException(jint arg0, JString arg1, JThrowable arg2);
 		
 		// Methods
 		jint getResultCode();

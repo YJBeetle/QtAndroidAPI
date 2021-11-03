@@ -1,3 +1,6 @@
+#include "../../JByteArray.hpp"
+#include "../../JClass.hpp"
+#include "../../JString.hpp"
 #include "./AlgorithmParametersSpi.hpp"
 #include "./Provider.hpp"
 #include "./AlgorithmParameters.hpp"
@@ -12,63 +15,63 @@ namespace java::security
 	// Constructors
 	
 	// Methods
-	java::security::AlgorithmParameters AlgorithmParameters::getInstance(jstring arg0)
+	java::security::AlgorithmParameters AlgorithmParameters::getInstance(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"java.security.AlgorithmParameters",
 			"getInstance",
 			"(Ljava/lang/String;)Ljava/security/AlgorithmParameters;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	java::security::AlgorithmParameters AlgorithmParameters::getInstance(jstring arg0, jstring arg1)
+	java::security::AlgorithmParameters AlgorithmParameters::getInstance(JString arg0, JString arg1)
 	{
 		return callStaticObjectMethod(
 			"java.security.AlgorithmParameters",
 			"getInstance",
 			"(Ljava/lang/String;Ljava/lang/String;)Ljava/security/AlgorithmParameters;",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		);
 	}
-	java::security::AlgorithmParameters AlgorithmParameters::getInstance(jstring arg0, java::security::Provider arg1)
+	java::security::AlgorithmParameters AlgorithmParameters::getInstance(JString arg0, java::security::Provider arg1)
 	{
 		return callStaticObjectMethod(
 			"java.security.AlgorithmParameters",
 			"getInstance",
 			"(Ljava/lang/String;Ljava/security/Provider;)Ljava/security/AlgorithmParameters;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
-	jstring AlgorithmParameters::getAlgorithm()
+	JString AlgorithmParameters::getAlgorithm()
 	{
 		return callObjectMethod(
 			"getAlgorithm",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jbyteArray AlgorithmParameters::getEncoded()
+	JByteArray AlgorithmParameters::getEncoded()
 	{
 		return callObjectMethod(
 			"getEncoded",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
-	jbyteArray AlgorithmParameters::getEncoded(jstring arg0)
+	JByteArray AlgorithmParameters::getEncoded(JString arg0)
 	{
 		return callObjectMethod(
 			"getEncoded",
 			"(Ljava/lang/String;)[B",
-			arg0
-		).object<jbyteArray>();
+			arg0.object<jstring>()
+		);
 	}
-	JObject AlgorithmParameters::getParameterSpec(jclass arg0)
+	JObject AlgorithmParameters::getParameterSpec(JClass arg0)
 	{
 		return callObjectMethod(
 			"getParameterSpec",
 			"(Ljava/lang/Class;)Ljava/security/spec/AlgorithmParameterSpec;",
-			arg0
+			arg0.object<jclass>()
 		);
 	}
 	java::security::Provider AlgorithmParameters::getProvider()
@@ -78,12 +81,12 @@ namespace java::security
 			"()Ljava/security/Provider;"
 		);
 	}
-	void AlgorithmParameters::init(jbyteArray arg0)
+	void AlgorithmParameters::init(JByteArray arg0)
 	{
 		callMethod<void>(
 			"init",
 			"([B)V",
-			arg0
+			arg0.object<jbyteArray>()
 		);
 	}
 	void AlgorithmParameters::init(JObject arg0)
@@ -94,21 +97,21 @@ namespace java::security
 			arg0.object()
 		);
 	}
-	void AlgorithmParameters::init(jbyteArray arg0, jstring arg1)
+	void AlgorithmParameters::init(JByteArray arg0, JString arg1)
 	{
 		callMethod<void>(
 			"init",
 			"([BLjava/lang/String;)V",
-			arg0,
-			arg1
+			arg0.object<jbyteArray>(),
+			arg1.object<jstring>()
 		);
 	}
-	jstring AlgorithmParameters::toString()
+	JString AlgorithmParameters::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::security
 

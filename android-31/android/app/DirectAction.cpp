@@ -1,6 +1,8 @@
 #include "../content/LocusId.hpp"
 #include "../os/Bundle.hpp"
 #include "../os/Parcel.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./DirectAction.hpp"
 
 namespace android::app
@@ -28,12 +30,12 @@ namespace android::app
 			"()I"
 		);
 	}
-	jboolean DirectAction::equals(jobject arg0)
+	jboolean DirectAction::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	android::os::Bundle DirectAction::getExtras()
@@ -43,12 +45,12 @@ namespace android::app
 			"()Landroid/os/Bundle;"
 		);
 	}
-	jstring DirectAction::getId()
+	JString DirectAction::getId()
 	{
 		return callObjectMethod(
 			"getId",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::content::LocusId DirectAction::getLocusId()
 	{

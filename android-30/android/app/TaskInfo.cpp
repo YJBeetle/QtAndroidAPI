@@ -1,6 +1,7 @@
 #include "./ActivityManager_TaskDescription.hpp"
 #include "../content/ComponentName.hpp"
 #include "../content/Intent.hpp"
+#include "../../JString.hpp"
 #include "./TaskInfo.hpp"
 
 namespace android::app
@@ -66,12 +67,12 @@ namespace android::app
 	// Constructors
 	
 	// Methods
-	jstring TaskInfo::toString()
+	JString TaskInfo::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::app
 

@@ -1,26 +1,28 @@
+#include "../../JByteArray.hpp"
 #include "../graphics/SurfaceTexture.hpp"
 #include "./Camera_CameraInfo.hpp"
 #include "./Camera_Parameters.hpp"
+#include "../../JString.hpp"
 #include "./Camera.hpp"
 
 namespace android::hardware
 {
 	// Fields
-	jstring Camera::ACTION_NEW_PICTURE()
+	JString Camera::ACTION_NEW_PICTURE()
 	{
 		return getStaticObjectField(
 			"android.hardware.Camera",
 			"ACTION_NEW_PICTURE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Camera::ACTION_NEW_VIDEO()
+	JString Camera::ACTION_NEW_VIDEO()
 	{
 		return getStaticObjectField(
 			"android.hardware.Camera",
 			"ACTION_NEW_VIDEO",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint Camera::CAMERA_ERROR_EVICTED()
 	{
@@ -85,12 +87,12 @@ namespace android::hardware
 			arg0
 		);
 	}
-	void Camera::addCallbackBuffer(jbyteArray arg0)
+	void Camera::addCallbackBuffer(JByteArray arg0)
 	{
 		callMethod<void>(
 			"addCallbackBuffer",
 			"([B)V",
-			arg0
+			arg0.object<jbyteArray>()
 		);
 	}
 	void Camera::autoFocus(JObject arg0)

@@ -1,3 +1,4 @@
+#include "../../../JArray.hpp"
 #include "./ExtendedSSLSession.hpp"
 
 namespace javax::net::ssl
@@ -15,19 +16,19 @@ namespace javax::net::ssl
 		) {}
 	
 	// Methods
-	jarray ExtendedSSLSession::getLocalSupportedSignatureAlgorithms()
+	JArray ExtendedSSLSession::getLocalSupportedSignatureAlgorithms()
 	{
 		return callObjectMethod(
 			"getLocalSupportedSignatureAlgorithms",
 			"()[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
-	jarray ExtendedSSLSession::getPeerSupportedSignatureAlgorithms()
+	JArray ExtendedSSLSession::getPeerSupportedSignatureAlgorithms()
 	{
 		return callObjectMethod(
 			"getPeerSupportedSignatureAlgorithms",
 			"()[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
 	JObject ExtendedSSLSession::getRequestedServerNames()
 	{

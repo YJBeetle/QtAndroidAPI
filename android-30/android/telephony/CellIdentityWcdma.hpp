@@ -1,6 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./CellIdentity.hpp"
 
 namespace android::os
@@ -11,6 +10,8 @@ namespace android::telephony
 {
 	class ClosedSubscriberGroupInfo;
 }
+class JObject;
+class JString;
 
 namespace android::telephony
 {
@@ -27,20 +28,20 @@ namespace android::telephony
 		// Constructors
 		
 		// Methods
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		JObject getAdditionalPlmns();
 		jint getCid();
 		android::telephony::ClosedSubscriberGroupInfo getClosedSubscriberGroupInfo();
 		jint getLac();
 		jint getMcc();
-		jstring getMccString();
+		JString getMccString();
 		jint getMnc();
-		jstring getMncString();
-		jstring getMobileNetworkOperator();
+		JString getMncString();
+		JString getMobileNetworkOperator();
 		jint getPsc();
 		jint getUarfcn();
 		jint hashCode();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::telephony

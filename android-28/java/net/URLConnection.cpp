@@ -1,5 +1,9 @@
+#include "../../JIntArray.hpp"
+#include "../../JArray.hpp"
 #include "../io/InputStream.hpp"
 #include "../io/OutputStream.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./ContentHandler.hpp"
 #include "./URL.hpp"
 #include "../security/Permission.hpp"
@@ -25,22 +29,22 @@ namespace java::net
 			"()Z"
 		);
 	}
-	jstring URLConnection::getDefaultRequestProperty(jstring arg0)
+	JString URLConnection::getDefaultRequestProperty(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"java.net.URLConnection",
 			"getDefaultRequestProperty",
 			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
+			arg0.object<jstring>()
+		);
 	}
-	jboolean URLConnection::getDefaultUseCaches(jstring arg0)
+	jboolean URLConnection::getDefaultUseCaches(JString arg0)
 	{
 		return callStaticMethod<jboolean>(
 			"java.net.URLConnection",
 			"getDefaultUseCaches",
 			"(Ljava/lang/String;)Z",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	JObject URLConnection::getFileNameMap()
@@ -51,23 +55,23 @@ namespace java::net
 			"()Ljava/net/FileNameMap;"
 		);
 	}
-	jstring URLConnection::guessContentTypeFromName(jstring arg0)
+	JString URLConnection::guessContentTypeFromName(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"java.net.URLConnection",
 			"guessContentTypeFromName",
 			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
+			arg0.object<jstring>()
+		);
 	}
-	jstring URLConnection::guessContentTypeFromStream(java::io::InputStream arg0)
+	JString URLConnection::guessContentTypeFromStream(java::io::InputStream arg0)
 	{
 		return callStaticObjectMethod(
 			"java.net.URLConnection",
 			"guessContentTypeFromStream",
 			"(Ljava/io/InputStream;)Ljava/lang/String;",
 			arg0.object()
-		).object<jstring>();
+		);
 	}
 	void URLConnection::setContentHandlerFactory(JObject arg0)
 	{
@@ -87,23 +91,23 @@ namespace java::net
 			arg0
 		);
 	}
-	void URLConnection::setDefaultRequestProperty(jstring arg0, jstring arg1)
+	void URLConnection::setDefaultRequestProperty(JString arg0, JString arg1)
 	{
 		callStaticMethod<void>(
 			"java.net.URLConnection",
 			"setDefaultRequestProperty",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		);
 	}
-	void URLConnection::setDefaultUseCaches(jstring arg0, jboolean arg1)
+	void URLConnection::setDefaultUseCaches(JString arg0, jboolean arg1)
 	{
 		callStaticMethod<void>(
 			"java.net.URLConnection",
 			"setDefaultUseCaches",
 			"(Ljava/lang/String;Z)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
@@ -116,13 +120,13 @@ namespace java::net
 			arg0.object()
 		);
 	}
-	void URLConnection::addRequestProperty(jstring arg0, jstring arg1)
+	void URLConnection::addRequestProperty(JString arg0, JString arg1)
 	{
 		callMethod<void>(
 			"addRequestProperty",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		);
 	}
 	void URLConnection::connect()
@@ -146,27 +150,27 @@ namespace java::net
 			"()I"
 		);
 	}
-	jobject URLConnection::getContent()
+	JObject URLConnection::getContent()
 	{
 		return callObjectMethod(
 			"getContent",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
-	jobject URLConnection::getContent(jarray arg0)
+	JObject URLConnection::getContent(JArray arg0)
 	{
 		return callObjectMethod(
 			"getContent",
 			"([Ljava/lang/Class;)Ljava/lang/Object;",
-			arg0
-		).object<jobject>();
+			arg0.object<jarray>()
+		);
 	}
-	jstring URLConnection::getContentEncoding()
+	JString URLConnection::getContentEncoding()
 	{
 		return callObjectMethod(
 			"getContentEncoding",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint URLConnection::getContentLength()
 	{
@@ -182,12 +186,12 @@ namespace java::net
 			"()J"
 		);
 	}
-	jstring URLConnection::getContentType()
+	JString URLConnection::getContentType()
 	{
 		return callObjectMethod(
 			"getContentType",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jlong URLConnection::getDate()
 	{
@@ -224,54 +228,54 @@ namespace java::net
 			"()J"
 		);
 	}
-	jstring URLConnection::getHeaderField(jint arg0)
+	JString URLConnection::getHeaderField(jint arg0)
 	{
 		return callObjectMethod(
 			"getHeaderField",
 			"(I)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
-	jstring URLConnection::getHeaderField(jstring arg0)
+	JString URLConnection::getHeaderField(JString arg0)
 	{
 		return callObjectMethod(
 			"getHeaderField",
 			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
+			arg0.object<jstring>()
+		);
 	}
-	jlong URLConnection::getHeaderFieldDate(jstring arg0, jlong arg1)
+	jlong URLConnection::getHeaderFieldDate(JString arg0, jlong arg1)
 	{
 		return callMethod<jlong>(
 			"getHeaderFieldDate",
 			"(Ljava/lang/String;J)J",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
-	jint URLConnection::getHeaderFieldInt(jstring arg0, jint arg1)
+	jint URLConnection::getHeaderFieldInt(JString arg0, jint arg1)
 	{
 		return callMethod<jint>(
 			"getHeaderFieldInt",
 			"(Ljava/lang/String;I)I",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
-	jstring URLConnection::getHeaderFieldKey(jint arg0)
+	JString URLConnection::getHeaderFieldKey(jint arg0)
 	{
 		return callObjectMethod(
 			"getHeaderFieldKey",
 			"(I)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
-	jlong URLConnection::getHeaderFieldLong(jstring arg0, jlong arg1)
+	jlong URLConnection::getHeaderFieldLong(JString arg0, jlong arg1)
 	{
 		return callMethod<jlong>(
 			"getHeaderFieldLong",
 			"(Ljava/lang/String;J)J",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
@@ -331,13 +335,13 @@ namespace java::net
 			"()Ljava/util/Map;"
 		);
 	}
-	jstring URLConnection::getRequestProperty(jstring arg0)
+	JString URLConnection::getRequestProperty(JString arg0)
 	{
 		return callObjectMethod(
 			"getRequestProperty",
 			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
+			arg0.object<jstring>()
+		);
 	}
 	java::net::URL URLConnection::getURL()
 	{
@@ -409,13 +413,13 @@ namespace java::net
 			arg0
 		);
 	}
-	void URLConnection::setRequestProperty(jstring arg0, jstring arg1)
+	void URLConnection::setRequestProperty(JString arg0, JString arg1)
 	{
 		callMethod<void>(
 			"setRequestProperty",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		);
 	}
 	void URLConnection::setUseCaches(jboolean arg0)
@@ -426,12 +430,12 @@ namespace java::net
 			arg0
 		);
 	}
-	jstring URLConnection::toString()
+	JString URLConnection::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::net
 

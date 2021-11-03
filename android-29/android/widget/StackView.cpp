@@ -1,6 +1,7 @@
 #include "../content/Context.hpp"
 #include "../graphics/Canvas.hpp"
 #include "../view/MotionEvent.hpp"
+#include "../../JString.hpp"
 #include "./StackView.hpp"
 
 namespace android::widget
@@ -50,12 +51,12 @@ namespace android::widget
 			"()V"
 		);
 	}
-	jstring StackView::getAccessibilityClassName()
+	JString StackView::getAccessibilityClassName()
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	jboolean StackView::onGenericMotionEvent(android::view::MotionEvent arg0)
 	{

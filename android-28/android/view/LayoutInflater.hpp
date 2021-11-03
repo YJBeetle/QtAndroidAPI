@@ -14,6 +14,7 @@ namespace android::view
 {
 	class ViewGroup;
 }
+class JString;
 
 namespace android::view
 {
@@ -31,7 +32,7 @@ namespace android::view
 		// Methods
 		static android::view::LayoutInflater from(android::content::Context arg0);
 		android::view::LayoutInflater cloneInContext(android::content::Context arg0);
-		android::view::View createView(jstring arg0, jstring arg1, JObject arg2);
+		android::view::View createView(JString arg0, JString arg1, JObject arg2);
 		android::content::Context getContext();
 		JObject getFactory();
 		JObject getFactory2();

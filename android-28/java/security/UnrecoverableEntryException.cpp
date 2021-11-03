@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./UnrecoverableEntryException.hpp"
 
 namespace java::security
@@ -13,11 +14,11 @@ namespace java::security
 			"java.security.UnrecoverableEntryException",
 			"()V"
 		) {}
-	UnrecoverableEntryException::UnrecoverableEntryException(jstring arg0)
+	UnrecoverableEntryException::UnrecoverableEntryException(JString arg0)
 		: java::security::GeneralSecurityException(
 			"java.security.UnrecoverableEntryException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

@@ -18,6 +18,7 @@ namespace android::view::textclassifier
 {
 	class TextClassification;
 }
+class JString;
 
 namespace android::view::textclassifier
 {
@@ -36,13 +37,13 @@ namespace android::view::textclassifier
 		// Methods
 		android::view::textclassifier::TextClassification_Builder addAction(android::app::RemoteAction arg0);
 		android::view::textclassifier::TextClassification build();
-		android::view::textclassifier::TextClassification_Builder setEntityType(jstring arg0, jfloat arg1);
+		android::view::textclassifier::TextClassification_Builder setEntityType(JString arg0, jfloat arg1);
 		android::view::textclassifier::TextClassification_Builder setIcon(android::graphics::drawable::Drawable arg0);
-		android::view::textclassifier::TextClassification_Builder setId(jstring arg0);
+		android::view::textclassifier::TextClassification_Builder setId(JString arg0);
 		android::view::textclassifier::TextClassification_Builder setIntent(android::content::Intent arg0);
-		android::view::textclassifier::TextClassification_Builder setLabel(jstring arg0);
+		android::view::textclassifier::TextClassification_Builder setLabel(JString arg0);
 		android::view::textclassifier::TextClassification_Builder setOnClickListener(JObject arg0);
-		android::view::textclassifier::TextClassification_Builder setText(jstring arg0);
+		android::view::textclassifier::TextClassification_Builder setText(JString arg0);
 	};
 } // namespace android::view::textclassifier
 

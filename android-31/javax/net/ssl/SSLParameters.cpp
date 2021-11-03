@@ -1,3 +1,5 @@
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
 #include "./SSLParameters.hpp"
 
 namespace javax::net::ssl
@@ -13,18 +15,18 @@ namespace javax::net::ssl
 			"javax.net.ssl.SSLParameters",
 			"()V"
 		) {}
-	SSLParameters::SSLParameters(jarray arg0)
+	SSLParameters::SSLParameters(JArray arg0)
 		: JObject(
 			"javax.net.ssl.SSLParameters",
 			"([Ljava/lang/String;)V",
-			arg0
+			arg0.object<jarray>()
 		) {}
-	SSLParameters::SSLParameters(jarray arg0, jarray arg1)
+	SSLParameters::SSLParameters(JArray arg0, JArray arg1)
 		: JObject(
 			"javax.net.ssl.SSLParameters",
 			"([Ljava/lang/String;[Ljava/lang/String;)V",
-			arg0,
-			arg1
+			arg0.object<jarray>(),
+			arg1.object<jarray>()
 		) {}
 	
 	// Methods
@@ -35,19 +37,19 @@ namespace javax::net::ssl
 			"()Ljava/security/AlgorithmConstraints;"
 		);
 	}
-	jarray SSLParameters::getApplicationProtocols()
+	JArray SSLParameters::getApplicationProtocols()
 	{
 		return callObjectMethod(
 			"getApplicationProtocols",
 			"()[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
-	jarray SSLParameters::getCipherSuites()
+	JArray SSLParameters::getCipherSuites()
 	{
 		return callObjectMethod(
 			"getCipherSuites",
 			"()[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
 	jboolean SSLParameters::getEnableRetransmissions()
 	{
@@ -56,12 +58,12 @@ namespace javax::net::ssl
 			"()Z"
 		);
 	}
-	jstring SSLParameters::getEndpointIdentificationAlgorithm()
+	JString SSLParameters::getEndpointIdentificationAlgorithm()
 	{
 		return callObjectMethod(
 			"getEndpointIdentificationAlgorithm",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint SSLParameters::getMaximumPacketSize()
 	{
@@ -77,12 +79,12 @@ namespace javax::net::ssl
 			"()Z"
 		);
 	}
-	jarray SSLParameters::getProtocols()
+	JArray SSLParameters::getProtocols()
 	{
 		return callObjectMethod(
 			"getProtocols",
 			"()[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
 	JObject SSLParameters::getSNIMatchers()
 	{
@@ -120,20 +122,20 @@ namespace javax::net::ssl
 			arg0.object()
 		);
 	}
-	void SSLParameters::setApplicationProtocols(jarray arg0)
+	void SSLParameters::setApplicationProtocols(JArray arg0)
 	{
 		callMethod<void>(
 			"setApplicationProtocols",
 			"([Ljava/lang/String;)V",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
-	void SSLParameters::setCipherSuites(jarray arg0)
+	void SSLParameters::setCipherSuites(JArray arg0)
 	{
 		callMethod<void>(
 			"setCipherSuites",
 			"([Ljava/lang/String;)V",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
 	void SSLParameters::setEnableRetransmissions(jboolean arg0)
@@ -144,12 +146,12 @@ namespace javax::net::ssl
 			arg0
 		);
 	}
-	void SSLParameters::setEndpointIdentificationAlgorithm(jstring arg0)
+	void SSLParameters::setEndpointIdentificationAlgorithm(JString arg0)
 	{
 		callMethod<void>(
 			"setEndpointIdentificationAlgorithm",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void SSLParameters::setMaximumPacketSize(jint arg0)
@@ -168,12 +170,12 @@ namespace javax::net::ssl
 			arg0
 		);
 	}
-	void SSLParameters::setProtocols(jarray arg0)
+	void SSLParameters::setProtocols(JArray arg0)
 	{
 		callMethod<void>(
 			"setProtocols",
 			"([Ljava/lang/String;)V",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
 	void SSLParameters::setSNIMatchers(JObject arg0)

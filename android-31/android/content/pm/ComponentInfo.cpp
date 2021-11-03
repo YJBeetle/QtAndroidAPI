@@ -1,5 +1,7 @@
+#include "../../../JArray.hpp"
 #include "./ApplicationInfo.hpp"
 #include "../../os/Parcel.hpp"
+#include "../../../JString.hpp"
 #include "./ComponentInfo.hpp"
 
 namespace android::content::pm
@@ -12,12 +14,12 @@ namespace android::content::pm
 			"Landroid/content/pm/ApplicationInfo;"
 		);
 	}
-	jarray ComponentInfo::attributionTags()
+	JArray ComponentInfo::attributionTags()
 	{
 		return getObjectField(
 			"attributionTags",
 			"[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
 	jint ComponentInfo::descriptionRes()
 	{
@@ -43,19 +45,19 @@ namespace android::content::pm
 			"exported"
 		);
 	}
-	jstring ComponentInfo::processName()
+	JString ComponentInfo::processName()
 	{
 		return getObjectField(
 			"processName",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ComponentInfo::splitName()
+	JString ComponentInfo::splitName()
 	{
 		return getObjectField(
 			"splitName",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QJniObject forward

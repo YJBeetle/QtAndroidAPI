@@ -1,9 +1,8 @@
 #pragma once
 
-#include "../../../../JObject.hpp"
-#include "../../../lang/Exception.hpp"
 #include "../../../io/IOException.hpp"
 
+class JString;
 
 namespace java::nio::file::attribute
 {
@@ -17,10 +16,10 @@ namespace java::nio::file::attribute
 		UserPrincipalNotFoundException(QJniObject obj);
 		
 		// Constructors
-		UserPrincipalNotFoundException(jstring arg0);
+		UserPrincipalNotFoundException(JString arg0);
 		
 		// Methods
-		jstring getName();
+		JString getName();
 	};
 } // namespace java::nio::file::attribute
 

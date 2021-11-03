@@ -1,5 +1,7 @@
 #include "./Point.hpp"
 #include "../os/Parcel.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./PointF.hpp"
 
 namespace android::graphics
@@ -73,12 +75,12 @@ namespace android::graphics
 			"()I"
 		);
 	}
-	jboolean PointF::equals(jobject arg0)
+	jboolean PointF::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jboolean PointF::equals(jfloat arg0, jfloat arg1)
@@ -145,12 +147,12 @@ namespace android::graphics
 			arg1
 		);
 	}
-	jstring PointF::toString()
+	JString PointF::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void PointF::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

@@ -1,5 +1,6 @@
 #include "../../Context.hpp"
 #include "../../../os/ParcelFileDescriptor.hpp"
+#include "../../../../JString.hpp"
 #include "./ResourcesProvider.hpp"
 
 namespace android::content::res::loader
@@ -40,24 +41,24 @@ namespace android::content::res::loader
 			arg1.object()
 		);
 	}
-	android::content::res::loader::ResourcesProvider ResourcesProvider::loadFromDirectory(jstring arg0, JObject arg1)
+	android::content::res::loader::ResourcesProvider ResourcesProvider::loadFromDirectory(JString arg0, JObject arg1)
 	{
 		return callStaticObjectMethod(
 			"android.content.res.loader.ResourcesProvider",
 			"loadFromDirectory",
 			"(Ljava/lang/String;Landroid/content/res/loader/AssetsProvider;)Landroid/content/res/loader/ResourcesProvider;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
-	android::content::res::loader::ResourcesProvider ResourcesProvider::loadFromSplit(android::content::Context arg0, jstring arg1)
+	android::content::res::loader::ResourcesProvider ResourcesProvider::loadFromSplit(android::content::Context arg0, JString arg1)
 	{
 		return callStaticObjectMethod(
 			"android.content.res.loader.ResourcesProvider",
 			"loadFromSplit",
 			"(Landroid/content/Context;Ljava/lang/String;)Landroid/content/res/loader/ResourcesProvider;",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
 	android::content::res::loader::ResourcesProvider ResourcesProvider::loadFromTable(android::os::ParcelFileDescriptor arg0, JObject arg1)

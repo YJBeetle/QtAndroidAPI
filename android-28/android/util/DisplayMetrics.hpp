@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JObject;
+class JString;
 
 namespace android::util
 {
@@ -44,11 +46,11 @@ namespace android::util
 		
 		// Methods
 		jboolean equals(android::util::DisplayMetrics arg0);
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint hashCode();
 		void setTo(android::util::DisplayMetrics arg0);
 		void setToDefaults();
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::util
 

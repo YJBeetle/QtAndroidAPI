@@ -1,3 +1,5 @@
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
 #include "./ULocale_Category.hpp"
 
 namespace android::icu::util
@@ -26,22 +28,22 @@ namespace android::icu::util
 	// Constructors
 	
 	// Methods
-	android::icu::util::ULocale_Category ULocale_Category::valueOf(jstring arg0)
+	android::icu::util::ULocale_Category ULocale_Category::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.icu.util.ULocale$Category",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/icu/util/ULocale$Category;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray ULocale_Category::values()
+	JArray ULocale_Category::values()
 	{
 		return callStaticObjectMethod(
 			"android.icu.util.ULocale$Category",
 			"values",
 			"()[Landroid/icu/util/ULocale$Category;"
-		).object<jarray>();
+		);
 	}
 } // namespace android::icu::util
 

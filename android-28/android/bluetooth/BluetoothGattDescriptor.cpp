@@ -1,3 +1,4 @@
+#include "../../JByteArray.hpp"
 #include "./BluetoothGattCharacteristic.hpp"
 #include "../os/Parcel.hpp"
 #include "../../java/util/UUID.hpp"
@@ -14,29 +15,29 @@ namespace android::bluetooth
 			"Landroid/os/Parcelable$Creator;"
 		);
 	}
-	jbyteArray BluetoothGattDescriptor::DISABLE_NOTIFICATION_VALUE()
+	JByteArray BluetoothGattDescriptor::DISABLE_NOTIFICATION_VALUE()
 	{
 		return getStaticObjectField(
 			"android.bluetooth.BluetoothGattDescriptor",
 			"DISABLE_NOTIFICATION_VALUE",
 			"[B"
-		).object<jbyteArray>();
+		);
 	}
-	jbyteArray BluetoothGattDescriptor::ENABLE_INDICATION_VALUE()
+	JByteArray BluetoothGattDescriptor::ENABLE_INDICATION_VALUE()
 	{
 		return getStaticObjectField(
 			"android.bluetooth.BluetoothGattDescriptor",
 			"ENABLE_INDICATION_VALUE",
 			"[B"
-		).object<jbyteArray>();
+		);
 	}
-	jbyteArray BluetoothGattDescriptor::ENABLE_NOTIFICATION_VALUE()
+	JByteArray BluetoothGattDescriptor::ENABLE_NOTIFICATION_VALUE()
 	{
 		return getStaticObjectField(
 			"android.bluetooth.BluetoothGattDescriptor",
 			"ENABLE_NOTIFICATION_VALUE",
 			"[B"
-		).object<jbyteArray>();
+		);
 	}
 	jint BluetoothGattDescriptor::PERMISSION_READ()
 	{
@@ -136,19 +137,19 @@ namespace android::bluetooth
 			"()Ljava/util/UUID;"
 		);
 	}
-	jbyteArray BluetoothGattDescriptor::getValue()
+	JByteArray BluetoothGattDescriptor::getValue()
 	{
 		return callObjectMethod(
 			"getValue",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
-	jboolean BluetoothGattDescriptor::setValue(jbyteArray arg0)
+	jboolean BluetoothGattDescriptor::setValue(JByteArray arg0)
 	{
 		return callMethod<jboolean>(
 			"setValue",
 			"([B)Z",
-			arg0
+			arg0.object<jbyteArray>()
 		);
 	}
 	void BluetoothGattDescriptor::writeToParcel(android::os::Parcel arg0, jint arg1)

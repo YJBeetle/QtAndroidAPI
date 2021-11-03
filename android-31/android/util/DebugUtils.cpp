@@ -1,3 +1,4 @@
+#include "../../JObject.hpp"
 #include "./DebugUtils.hpp"
 
 namespace android::util
@@ -10,13 +11,13 @@ namespace android::util
 	// Constructors
 	
 	// Methods
-	jboolean DebugUtils::isObjectSelected(jobject arg0)
+	jboolean DebugUtils::isObjectSelected(JObject arg0)
 	{
 		return callStaticMethod<jboolean>(
 			"android.util.DebugUtils",
 			"isObjectSelected",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 } // namespace android::util

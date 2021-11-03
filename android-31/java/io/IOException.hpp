@@ -1,8 +1,9 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "../lang/Exception.hpp"
 
+class JString;
+class JThrowable;
 
 namespace java::io
 {
@@ -17,9 +18,9 @@ namespace java::io
 		
 		// Constructors
 		IOException();
-		IOException(jstring arg0);
-		IOException(jthrowable arg0);
-		IOException(jstring arg0, jthrowable arg1);
+		IOException(JString arg0);
+		IOException(JThrowable arg0);
+		IOException(JString arg0, JThrowable arg1);
 		
 		// Methods
 	};

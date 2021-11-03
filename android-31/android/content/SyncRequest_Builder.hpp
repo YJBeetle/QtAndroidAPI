@@ -14,6 +14,7 @@ namespace android::os
 {
 	class Bundle;
 }
+class JString;
 
 namespace android::content
 {
@@ -40,7 +41,7 @@ namespace android::content
 		android::content::SyncRequest_Builder setNoRetry(jboolean arg0);
 		android::content::SyncRequest_Builder setRequiresCharging(jboolean arg0);
 		android::content::SyncRequest_Builder setScheduleAsExpeditedJob(jboolean arg0);
-		android::content::SyncRequest_Builder setSyncAdapter(android::accounts::Account arg0, jstring arg1);
+		android::content::SyncRequest_Builder setSyncAdapter(android::accounts::Account arg0, JString arg1);
 		android::content::SyncRequest_Builder syncOnce();
 		android::content::SyncRequest_Builder syncPeriodic(jlong arg0, jlong arg1);
 	};

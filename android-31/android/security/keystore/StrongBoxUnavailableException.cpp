@@ -1,3 +1,5 @@
+#include "../../../JString.hpp"
+#include "../../../JThrowable.hpp"
 #include "./StrongBoxUnavailableException.hpp"
 
 namespace android::security::keystore
@@ -13,24 +15,24 @@ namespace android::security::keystore
 			"android.security.keystore.StrongBoxUnavailableException",
 			"()V"
 		) {}
-	StrongBoxUnavailableException::StrongBoxUnavailableException(jstring arg0)
+	StrongBoxUnavailableException::StrongBoxUnavailableException(JString arg0)
 		: java::security::ProviderException(
 			"android.security.keystore.StrongBoxUnavailableException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	StrongBoxUnavailableException::StrongBoxUnavailableException(jthrowable arg0)
+	StrongBoxUnavailableException::StrongBoxUnavailableException(JThrowable arg0)
 		: java::security::ProviderException(
 			"android.security.keystore.StrongBoxUnavailableException",
 			"(Ljava/lang/Throwable;)V",
-			arg0
+			arg0.object<jthrowable>()
 		) {}
-	StrongBoxUnavailableException::StrongBoxUnavailableException(jstring arg0, jthrowable arg1)
+	StrongBoxUnavailableException::StrongBoxUnavailableException(JString arg0, JThrowable arg1)
 		: java::security::ProviderException(
 			"android.security.keystore.StrongBoxUnavailableException",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
 		) {}
 	
 	// Methods

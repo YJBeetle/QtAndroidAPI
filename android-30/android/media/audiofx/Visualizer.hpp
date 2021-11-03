@@ -2,6 +2,8 @@
 
 #include "../../../JObject.hpp"
 
+class JByteArray;
+class JIntArray;
 namespace android::media::audiofx
 {
 	class Visualizer_MeasurementPeakRms;
@@ -37,16 +39,16 @@ namespace android::media::audiofx
 		Visualizer(jint arg0);
 		
 		// Methods
-		static jintArray getCaptureSizeRange();
+		static JIntArray getCaptureSizeRange();
 		static jint getMaxCaptureRate();
 		jint getCaptureSize();
 		jboolean getEnabled();
-		jint getFft(jbyteArray arg0);
+		jint getFft(JByteArray arg0);
 		jint getMeasurementMode();
 		jint getMeasurementPeakRms(android::media::audiofx::Visualizer_MeasurementPeakRms arg0);
 		jint getSamplingRate();
 		jint getScalingMode();
-		jint getWaveForm(jbyteArray arg0);
+		jint getWaveForm(JByteArray arg0);
 		void release();
 		jint setCaptureSize(jint arg0);
 		jint setDataCaptureListener(JObject arg0, jint arg1, jboolean arg2, jboolean arg3);

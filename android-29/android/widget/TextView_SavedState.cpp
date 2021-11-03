@@ -1,4 +1,5 @@
 #include "../os/Parcel.hpp"
+#include "../../JString.hpp"
 #include "./TextView_SavedState.hpp"
 
 namespace android::widget
@@ -19,12 +20,12 @@ namespace android::widget
 	// Constructors
 	
 	// Methods
-	jstring TextView_SavedState::toString()
+	JString TextView_SavedState::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void TextView_SavedState::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

@@ -1,3 +1,5 @@
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./Range.hpp"
 
 namespace android::util
@@ -51,12 +53,12 @@ namespace android::util
 			arg0.object()
 		);
 	}
-	jboolean Range::equals(jobject arg0)
+	jboolean Range::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	android::util::Range Range::extend(android::util::Range arg0)
@@ -122,12 +124,12 @@ namespace android::util
 			arg1.object()
 		);
 	}
-	jstring Range::toString()
+	JString Range::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::util
 

@@ -2,6 +2,8 @@
 
 #include "../../../JObject.hpp"
 
+class JCharArray;
+class JArray;
 namespace java::security
 {
 	class KeyStore;

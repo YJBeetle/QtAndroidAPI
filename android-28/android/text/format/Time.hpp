@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JString;
 
 namespace android::text::format
 {
@@ -21,7 +22,7 @@ namespace android::text::format
 		static jint SECOND();
 		static jint SUNDAY();
 		static jint THURSDAY();
-		static jstring TIMEZONE_UTC();
+		static JString TIMEZONE_UTC();
 		static jint TUESDAY();
 		static jint WEDNESDAY();
 		static jint WEEK_DAY();
@@ -36,7 +37,7 @@ namespace android::text::format
 		jint month();
 		jint monthDay();
 		jint second();
-		jstring timezone();
+		JString timezone();
 		jint weekDay();
 		jint year();
 		jint yearDay();
@@ -48,35 +49,35 @@ namespace android::text::format
 		// Constructors
 		Time();
 		Time(android::text::format::Time &arg0);
-		Time(jstring arg0);
+		Time(JString arg0);
 		
 		// Methods
 		static jint compare(android::text::format::Time arg0, android::text::format::Time arg1);
-		static jstring getCurrentTimezone();
+		static JString getCurrentTimezone();
 		static jint getJulianDay(jlong arg0, jlong arg1);
 		static jint getJulianMondayFromWeeksSinceEpoch(jint arg0);
 		static jint getWeeksSinceEpochFromJulianDay(jint arg0, jint arg1);
 		static jboolean isEpoch(android::text::format::Time arg0);
 		jboolean after(android::text::format::Time arg0);
 		jboolean before(android::text::format::Time arg0);
-		void clear(jstring arg0);
-		jstring format(jstring arg0);
-		jstring format2445();
-		jstring format3339(jboolean arg0);
+		void clear(JString arg0);
+		JString format(JString arg0);
+		JString format2445();
+		JString format3339(jboolean arg0);
 		jint getActualMaximum(jint arg0);
 		jint getWeekNumber();
 		jlong normalize(jboolean arg0);
-		jboolean parse(jstring arg0);
-		jboolean parse3339(jstring arg0);
+		jboolean parse(JString arg0);
+		jboolean parse3339(JString arg0);
 		void set(android::text::format::Time arg0);
 		void set(jlong arg0);
 		void set(jint arg0, jint arg1, jint arg2);
 		void set(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5);
 		jlong setJulianDay(jint arg0);
 		void setToNow();
-		void switchTimezone(jstring arg0);
+		void switchTimezone(JString arg0);
 		jlong toMillis(jboolean arg0);
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::text::format
 

@@ -1,9 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../view/View.hpp"
-#include "./TextView.hpp"
-#include "./Button.hpp"
 #include "./CompoundButton.hpp"
 
 namespace android::content
@@ -14,6 +10,7 @@ namespace android::view::accessibility
 {
 	class AccessibilityNodeInfo;
 }
+class JString;
 
 namespace android::widget
 {
@@ -33,7 +30,7 @@ namespace android::widget
 		RadioButton(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
-		jstring getAccessibilityClassName();
+		JString getAccessibilityClassName();
 		void onInitializeAccessibilityNodeInfo(android::view::accessibility::AccessibilityNodeInfo arg0);
 		void toggle();
 	};

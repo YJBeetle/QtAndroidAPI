@@ -6,6 +6,8 @@ namespace java::io
 {
 	class ObjectInputStream;
 }
+class JObject;
+class JString;
 namespace java::security::cert
 {
 	class CertPath;
@@ -30,11 +32,11 @@ namespace java::security
 		Timestamp(java::util::Date arg0, java::security::cert::CertPath arg1);
 		
 		// Methods
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		java::security::cert::CertPath getSignerCertPath();
 		java::util::Date getTimestamp();
 		jint hashCode();
-		jstring toString();
+		JString toString();
 	};
 } // namespace java::security
 

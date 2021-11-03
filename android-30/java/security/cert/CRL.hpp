@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JString;
 namespace java::security::cert
 {
 	class Certificate;
@@ -21,9 +22,9 @@ namespace java::security::cert
 		// Constructors
 		
 		// Methods
-		jstring getType();
+		JString getType();
 		jboolean isRevoked(java::security::cert::Certificate arg0);
-		jstring toString();
+		JString toString();
 	};
 } // namespace java::security::cert
 

@@ -6,6 +6,7 @@ namespace android::print
 {
 	class PrintDocumentInfo;
 }
+class JString;
 
 namespace android::print
 {
@@ -22,7 +23,7 @@ namespace android::print
 		
 		// Methods
 		void onLayoutCancelled();
-		void onLayoutFailed(jstring arg0);
+		void onLayoutFailed(JString arg0);
 		void onLayoutFinished(android::print::PrintDocumentInfo arg0, jboolean arg1);
 	};
 } // namespace android::print

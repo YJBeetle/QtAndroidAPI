@@ -2,10 +2,13 @@
 
 #include "../../JObject.hpp"
 
+class JByteArray;
+class JIntArray;
 namespace android::media
 {
 	class MediaCodec_CryptoInfo_Pattern;
 }
+class JString;
 
 namespace android::media
 {
@@ -13,11 +16,11 @@ namespace android::media
 	{
 	public:
 		// Fields
-		jbyteArray iv();
-		jbyteArray key();
+		JByteArray iv();
+		JByteArray key();
 		jint mode();
-		jintArray numBytesOfClearData();
-		jintArray numBytesOfEncryptedData();
+		JIntArray numBytesOfClearData();
+		JIntArray numBytesOfEncryptedData();
 		jint numSubSamples();
 		
 		// QJniObject forward
@@ -29,9 +32,9 @@ namespace android::media
 		
 		// Methods
 		android::media::MediaCodec_CryptoInfo_Pattern getPattern();
-		void set(jint arg0, jintArray arg1, jintArray arg2, jbyteArray arg3, jbyteArray arg4, jint arg5);
+		void set(jint arg0, JIntArray arg1, JIntArray arg2, JByteArray arg3, JByteArray arg4, jint arg5);
 		void setPattern(android::media::MediaCodec_CryptoInfo_Pattern arg0);
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::media
 

@@ -1,3 +1,6 @@
+#include "../../../JArray.hpp"
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
 #include "../../../java/security/SecureRandom.hpp"
 #include "./SSLEngine.hpp"
 #include "./SSLParameters.hpp"

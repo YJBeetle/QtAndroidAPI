@@ -1,4 +1,6 @@
+#include "../../../JByteArray.hpp"
 #include "../../../java/io/OutputStream.hpp"
+#include "../../../JString.hpp"
 #include "./ProtoOutputStream.hpp"
 
 namespace android::util::proto
@@ -269,41 +271,41 @@ namespace android::util::proto
 			arg1
 		);
 	}
-	jstring ProtoOutputStream::getFieldCountString(jlong arg0)
+	JString ProtoOutputStream::getFieldCountString(jlong arg0)
 	{
 		return callStaticObjectMethod(
 			"android.util.proto.ProtoOutputStream",
 			"getFieldCountString",
 			"(J)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
-	jstring ProtoOutputStream::getFieldIdString(jlong arg0)
+	JString ProtoOutputStream::getFieldIdString(jlong arg0)
 	{
 		return callStaticObjectMethod(
 			"android.util.proto.ProtoOutputStream",
 			"getFieldIdString",
 			"(J)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
-	jstring ProtoOutputStream::getFieldTypeString(jlong arg0)
+	JString ProtoOutputStream::getFieldTypeString(jlong arg0)
 	{
 		return callStaticObjectMethod(
 			"android.util.proto.ProtoOutputStream",
 			"getFieldTypeString",
 			"(J)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
-	jstring ProtoOutputStream::getWireTypeString(jint arg0)
+	JString ProtoOutputStream::getWireTypeString(jint arg0)
 	{
 		return callStaticObjectMethod(
 			"android.util.proto.ProtoOutputStream",
 			"getWireTypeString",
 			"(I)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
 	jlong ProtoOutputStream::makeFieldId(jint arg0, jlong arg1)
 	{
@@ -328,21 +330,21 @@ namespace android::util::proto
 			arg4
 		);
 	}
-	jstring ProtoOutputStream::token2String(jlong arg0)
+	JString ProtoOutputStream::token2String(jlong arg0)
 	{
 		return callStaticObjectMethod(
 			"android.util.proto.ProtoOutputStream",
 			"token2String",
 			"(J)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
-	void ProtoOutputStream::dump(jstring arg0)
+	void ProtoOutputStream::dump(JString arg0)
 	{
 		callMethod<void>(
 			"dump",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void ProtoOutputStream::end(jlong arg0)
@@ -360,12 +362,12 @@ namespace android::util::proto
 			"()V"
 		);
 	}
-	jbyteArray ProtoOutputStream::getBytes()
+	JByteArray ProtoOutputStream::getBytes()
 	{
 		return callObjectMethod(
 			"getBytes",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
 	jint ProtoOutputStream::getRawSize()
 	{
@@ -382,13 +384,13 @@ namespace android::util::proto
 			arg0
 		);
 	}
-	void ProtoOutputStream::write(jlong arg0, jbyteArray arg1)
+	void ProtoOutputStream::write(jlong arg0, JByteArray arg1)
 	{
 		callMethod<void>(
 			"write",
 			"(J[B)V",
 			arg0,
-			arg1
+			arg1.object<jbyteArray>()
 		);
 	}
 	void ProtoOutputStream::write(jlong arg0, jboolean arg1)
@@ -427,13 +429,13 @@ namespace android::util::proto
 			arg1
 		);
 	}
-	void ProtoOutputStream::write(jlong arg0, jstring arg1)
+	void ProtoOutputStream::write(jlong arg0, JString arg1)
 	{
 		callMethod<void>(
 			"write",
 			"(JLjava/lang/String;)V",
 			arg0,
-			arg1
+			arg1.object<jstring>()
 		);
 	}
 	void ProtoOutputStream::write(jlong arg0, jlong arg1)

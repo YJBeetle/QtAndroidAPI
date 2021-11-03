@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JArray;
 namespace android::content
 {
 	class ClipData;
@@ -26,6 +27,8 @@ namespace android::os
 {
 	class PersistableBundle;
 }
+class JObject;
+class JString;
 
 namespace android::app::job
 {
@@ -56,7 +59,7 @@ namespace android::app::job
 		static jlong getMinFlexMillis();
 		static jlong getMinPeriodMillis();
 		jint describeContents();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint getBackoffPolicy();
 		android::content::ClipData getClipData();
 		jint getClipGrantFlags();
@@ -75,7 +78,7 @@ namespace android::app::job
 		android::os::Bundle getTransientExtras();
 		jlong getTriggerContentMaxDelay();
 		jlong getTriggerContentUpdateDelay();
-		jarray getTriggerContentUris();
+		JArray getTriggerContentUris();
 		jint hashCode();
 		jboolean isExpedited();
 		jboolean isImportantWhileForeground();
@@ -86,7 +89,7 @@ namespace android::app::job
 		jboolean isRequireCharging();
 		jboolean isRequireDeviceIdle();
 		jboolean isRequireStorageNotLow();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::app::job

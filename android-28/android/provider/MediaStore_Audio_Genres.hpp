@@ -6,6 +6,7 @@ namespace android::net
 {
 	class Uri;
 }
+class JString;
 
 namespace android::provider
 {
@@ -13,9 +14,9 @@ namespace android::provider
 	{
 	public:
 		// Fields
-		static jstring CONTENT_TYPE();
-		static jstring DEFAULT_SORT_ORDER();
-		static jstring ENTRY_CONTENT_TYPE();
+		static JString CONTENT_TYPE();
+		static JString DEFAULT_SORT_ORDER();
+		static JString ENTRY_CONTENT_TYPE();
 		static android::net::Uri EXTERNAL_CONTENT_URI();
 		static android::net::Uri INTERNAL_CONTENT_URI();
 		
@@ -27,8 +28,8 @@ namespace android::provider
 		MediaStore_Audio_Genres();
 		
 		// Methods
-		static android::net::Uri getContentUri(jstring arg0);
-		static android::net::Uri getContentUriForAudioId(jstring arg0, jint arg1);
+		static android::net::Uri getContentUri(JString arg0);
+		static android::net::Uri getContentUriForAudioId(JString arg0, jint arg1);
 	};
 } // namespace android::provider
 

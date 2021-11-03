@@ -1,4 +1,5 @@
 #include "../net/Uri.hpp"
+#include "../../JString.hpp"
 #include "./UriMatcher.hpp"
 
 namespace android::content
@@ -24,13 +25,13 @@ namespace android::content
 		) {}
 	
 	// Methods
-	void UriMatcher::addURI(jstring arg0, jstring arg1, jint arg2)
+	void UriMatcher::addURI(JString arg0, JString arg1, jint arg2)
 	{
 		callMethod<void>(
 			"addURI",
 			"(Ljava/lang/String;Ljava/lang/String;I)V",
-			arg0,
-			arg1,
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
 			arg2
 		);
 	}

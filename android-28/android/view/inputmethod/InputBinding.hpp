@@ -6,6 +6,7 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
 
 namespace android::view::inputmethod
 {
@@ -29,7 +30,7 @@ namespace android::view::inputmethod
 		JObject getConnectionToken();
 		jint getPid();
 		jint getUid();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::view::inputmethod

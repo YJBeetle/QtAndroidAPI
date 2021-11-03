@@ -1,4 +1,6 @@
 #include "../../../java/lang/ClassLoader.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./Transformer.hpp"
 #include "./TransformerFactory.hpp"
 
@@ -28,34 +30,34 @@ namespace javax::xml::transform
 			"()Ljavax/xml/transform/TransformerFactory;"
 		);
 	}
-	javax::xml::transform::TransformerFactory TransformerFactory::newInstance(jstring arg0, java::lang::ClassLoader arg1)
+	javax::xml::transform::TransformerFactory TransformerFactory::newInstance(JString arg0, java::lang::ClassLoader arg1)
 	{
 		return callStaticObjectMethod(
 			"javax.xml.transform.TransformerFactory",
 			"newInstance",
 			"(Ljava/lang/String;Ljava/lang/ClassLoader;)Ljavax/xml/transform/TransformerFactory;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
-	JObject TransformerFactory::getAssociatedStylesheet(JObject arg0, jstring arg1, jstring arg2, jstring arg3)
+	JObject TransformerFactory::getAssociatedStylesheet(JObject arg0, JString arg1, JString arg2, JString arg3)
 	{
 		return callObjectMethod(
 			"getAssociatedStylesheet",
 			"(Ljavax/xml/transform/Source;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljavax/xml/transform/Source;",
 			arg0.object(),
-			arg1,
-			arg2,
-			arg3
+			arg1.object<jstring>(),
+			arg2.object<jstring>(),
+			arg3.object<jstring>()
 		);
 	}
-	jobject TransformerFactory::getAttribute(jstring arg0)
+	JObject TransformerFactory::getAttribute(JString arg0)
 	{
 		return callObjectMethod(
 			"getAttribute",
 			"(Ljava/lang/String;)Ljava/lang/Object;",
-			arg0
-		).object<jobject>();
+			arg0.object<jstring>()
+		);
 	}
 	JObject TransformerFactory::getErrorListener()
 	{
@@ -64,12 +66,12 @@ namespace javax::xml::transform
 			"()Ljavax/xml/transform/ErrorListener;"
 		);
 	}
-	jboolean TransformerFactory::getFeature(jstring arg0)
+	jboolean TransformerFactory::getFeature(JString arg0)
 	{
 		return callMethod<jboolean>(
 			"getFeature",
 			"(Ljava/lang/String;)Z",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	JObject TransformerFactory::getURIResolver()
@@ -102,13 +104,13 @@ namespace javax::xml::transform
 			arg0.object()
 		);
 	}
-	void TransformerFactory::setAttribute(jstring arg0, jobject arg1)
+	void TransformerFactory::setAttribute(JString arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"setAttribute",
 			"(Ljava/lang/String;Ljava/lang/Object;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jobject>()
 		);
 	}
 	void TransformerFactory::setErrorListener(JObject arg0)
@@ -119,12 +121,12 @@ namespace javax::xml::transform
 			arg0.object()
 		);
 	}
-	void TransformerFactory::setFeature(jstring arg0, jboolean arg1)
+	void TransformerFactory::setFeature(JString arg0, jboolean arg1)
 	{
 		callMethod<void>(
 			"setFeature",
 			"(Ljava/lang/String;Z)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}

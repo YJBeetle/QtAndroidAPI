@@ -1,4 +1,5 @@
 #include "../os/Parcel.hpp"
+#include "../../JString.hpp"
 #include "./GnssMeasurement.hpp"
 
 namespace android::location
@@ -278,12 +279,12 @@ namespace android::location
 			"()D"
 		);
 	}
-	jstring GnssMeasurement::getCodeType()
+	JString GnssMeasurement::getCodeType()
 	{
 		return callObjectMethod(
 			"getCodeType",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint GnssMeasurement::getConstellationType()
 	{
@@ -404,12 +405,12 @@ namespace android::location
 			"()Z"
 		);
 	}
-	jstring GnssMeasurement::toString()
+	JString GnssMeasurement::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void GnssMeasurement::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

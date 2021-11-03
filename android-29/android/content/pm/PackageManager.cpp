@@ -1,3 +1,9 @@
+#include "../../../JByteArray.hpp"
+#include "../../../JIntArray.hpp"
+#include "../../../JArray.hpp"
+#include "../../../JArray.hpp"
+#include "../../../JArray.hpp"
+#include "../../../JArray.hpp"
 #include "../ComponentName.hpp"
 #include "../Intent.hpp"
 #include "../IntentFilter.hpp"
@@ -19,6 +25,8 @@
 #include "../../graphics/drawable/Drawable.hpp"
 #include "../../os/Bundle.hpp"
 #include "../../os/UserHandle.hpp"
+#include "../../../JString.hpp"
+#include "../../../JString.hpp"
 #include "./PackageManager.hpp"
 
 namespace android::content::pm
@@ -80,885 +88,885 @@ namespace android::content::pm
 			"DONT_KILL_APP"
 		);
 	}
-	jstring PackageManager::EXTRA_VERIFICATION_ID()
+	JString PackageManager::EXTRA_VERIFICATION_ID()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager",
 			"EXTRA_VERIFICATION_ID",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageManager::EXTRA_VERIFICATION_RESULT()
+	JString PackageManager::EXTRA_VERIFICATION_RESULT()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager",
 			"EXTRA_VERIFICATION_RESULT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageManager::FEATURE_ACTIVITIES_ON_SECONDARY_DISPLAYS()
+	JString PackageManager::FEATURE_ACTIVITIES_ON_SECONDARY_DISPLAYS()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager",
 			"FEATURE_ACTIVITIES_ON_SECONDARY_DISPLAYS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageManager::FEATURE_APP_WIDGETS()
+	JString PackageManager::FEATURE_APP_WIDGETS()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager",
 			"FEATURE_APP_WIDGETS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageManager::FEATURE_AUDIO_LOW_LATENCY()
+	JString PackageManager::FEATURE_AUDIO_LOW_LATENCY()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager",
 			"FEATURE_AUDIO_LOW_LATENCY",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageManager::FEATURE_AUDIO_OUTPUT()
+	JString PackageManager::FEATURE_AUDIO_OUTPUT()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager",
 			"FEATURE_AUDIO_OUTPUT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageManager::FEATURE_AUDIO_PRO()
+	JString PackageManager::FEATURE_AUDIO_PRO()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager",
 			"FEATURE_AUDIO_PRO",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageManager::FEATURE_AUTOFILL()
+	JString PackageManager::FEATURE_AUTOFILL()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager",
 			"FEATURE_AUTOFILL",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageManager::FEATURE_AUTOMOTIVE()
+	JString PackageManager::FEATURE_AUTOMOTIVE()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager",
 			"FEATURE_AUTOMOTIVE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageManager::FEATURE_BACKUP()
+	JString PackageManager::FEATURE_BACKUP()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager",
 			"FEATURE_BACKUP",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageManager::FEATURE_BLUETOOTH()
+	JString PackageManager::FEATURE_BLUETOOTH()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager",
 			"FEATURE_BLUETOOTH",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageManager::FEATURE_BLUETOOTH_LE()
+	JString PackageManager::FEATURE_BLUETOOTH_LE()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager",
 			"FEATURE_BLUETOOTH_LE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageManager::FEATURE_CAMERA()
+	JString PackageManager::FEATURE_CAMERA()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager",
 			"FEATURE_CAMERA",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageManager::FEATURE_CAMERA_ANY()
+	JString PackageManager::FEATURE_CAMERA_ANY()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager",
 			"FEATURE_CAMERA_ANY",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageManager::FEATURE_CAMERA_AR()
+	JString PackageManager::FEATURE_CAMERA_AR()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager",
 			"FEATURE_CAMERA_AR",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageManager::FEATURE_CAMERA_AUTOFOCUS()
+	JString PackageManager::FEATURE_CAMERA_AUTOFOCUS()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager",
 			"FEATURE_CAMERA_AUTOFOCUS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageManager::FEATURE_CAMERA_CAPABILITY_MANUAL_POST_PROCESSING()
+	JString PackageManager::FEATURE_CAMERA_CAPABILITY_MANUAL_POST_PROCESSING()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager",
 			"FEATURE_CAMERA_CAPABILITY_MANUAL_POST_PROCESSING",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageManager::FEATURE_CAMERA_CAPABILITY_MANUAL_SENSOR()
+	JString PackageManager::FEATURE_CAMERA_CAPABILITY_MANUAL_SENSOR()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager",
 			"FEATURE_CAMERA_CAPABILITY_MANUAL_SENSOR",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageManager::FEATURE_CAMERA_CAPABILITY_RAW()
+	JString PackageManager::FEATURE_CAMERA_CAPABILITY_RAW()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager",
 			"FEATURE_CAMERA_CAPABILITY_RAW",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageManager::FEATURE_CAMERA_EXTERNAL()
+	JString PackageManager::FEATURE_CAMERA_EXTERNAL()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager",
 			"FEATURE_CAMERA_EXTERNAL",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageManager::FEATURE_CAMERA_FLASH()
+	JString PackageManager::FEATURE_CAMERA_FLASH()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager",
 			"FEATURE_CAMERA_FLASH",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageManager::FEATURE_CAMERA_FRONT()
+	JString PackageManager::FEATURE_CAMERA_FRONT()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager",
 			"FEATURE_CAMERA_FRONT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageManager::FEATURE_CAMERA_LEVEL_FULL()
+	JString PackageManager::FEATURE_CAMERA_LEVEL_FULL()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager",
 			"FEATURE_CAMERA_LEVEL_FULL",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageManager::FEATURE_CANT_SAVE_STATE()
+	JString PackageManager::FEATURE_CANT_SAVE_STATE()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager",
 			"FEATURE_CANT_SAVE_STATE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageManager::FEATURE_COMPANION_DEVICE_SETUP()
+	JString PackageManager::FEATURE_COMPANION_DEVICE_SETUP()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager",
 			"FEATURE_COMPANION_DEVICE_SETUP",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageManager::FEATURE_CONNECTION_SERVICE()
+	JString PackageManager::FEATURE_CONNECTION_SERVICE()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager",
 			"FEATURE_CONNECTION_SERVICE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageManager::FEATURE_CONSUMER_IR()
+	JString PackageManager::FEATURE_CONSUMER_IR()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager",
 			"FEATURE_CONSUMER_IR",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageManager::FEATURE_DEVICE_ADMIN()
+	JString PackageManager::FEATURE_DEVICE_ADMIN()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager",
 			"FEATURE_DEVICE_ADMIN",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageManager::FEATURE_EMBEDDED()
+	JString PackageManager::FEATURE_EMBEDDED()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager",
 			"FEATURE_EMBEDDED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageManager::FEATURE_ETHERNET()
+	JString PackageManager::FEATURE_ETHERNET()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager",
 			"FEATURE_ETHERNET",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageManager::FEATURE_FACE()
+	JString PackageManager::FEATURE_FACE()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager",
 			"FEATURE_FACE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageManager::FEATURE_FAKETOUCH()
+	JString PackageManager::FEATURE_FAKETOUCH()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager",
 			"FEATURE_FAKETOUCH",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageManager::FEATURE_FAKETOUCH_MULTITOUCH_DISTINCT()
+	JString PackageManager::FEATURE_FAKETOUCH_MULTITOUCH_DISTINCT()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager",
 			"FEATURE_FAKETOUCH_MULTITOUCH_DISTINCT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageManager::FEATURE_FAKETOUCH_MULTITOUCH_JAZZHAND()
+	JString PackageManager::FEATURE_FAKETOUCH_MULTITOUCH_JAZZHAND()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager",
 			"FEATURE_FAKETOUCH_MULTITOUCH_JAZZHAND",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageManager::FEATURE_FINGERPRINT()
+	JString PackageManager::FEATURE_FINGERPRINT()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager",
 			"FEATURE_FINGERPRINT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageManager::FEATURE_FREEFORM_WINDOW_MANAGEMENT()
+	JString PackageManager::FEATURE_FREEFORM_WINDOW_MANAGEMENT()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager",
 			"FEATURE_FREEFORM_WINDOW_MANAGEMENT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageManager::FEATURE_GAMEPAD()
+	JString PackageManager::FEATURE_GAMEPAD()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager",
 			"FEATURE_GAMEPAD",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageManager::FEATURE_HIFI_SENSORS()
+	JString PackageManager::FEATURE_HIFI_SENSORS()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager",
 			"FEATURE_HIFI_SENSORS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageManager::FEATURE_HOME_SCREEN()
+	JString PackageManager::FEATURE_HOME_SCREEN()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager",
 			"FEATURE_HOME_SCREEN",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageManager::FEATURE_INPUT_METHODS()
+	JString PackageManager::FEATURE_INPUT_METHODS()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager",
 			"FEATURE_INPUT_METHODS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageManager::FEATURE_IPSEC_TUNNELS()
+	JString PackageManager::FEATURE_IPSEC_TUNNELS()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager",
 			"FEATURE_IPSEC_TUNNELS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageManager::FEATURE_IRIS()
+	JString PackageManager::FEATURE_IRIS()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager",
 			"FEATURE_IRIS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageManager::FEATURE_LEANBACK()
+	JString PackageManager::FEATURE_LEANBACK()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager",
 			"FEATURE_LEANBACK",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageManager::FEATURE_LEANBACK_ONLY()
+	JString PackageManager::FEATURE_LEANBACK_ONLY()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager",
 			"FEATURE_LEANBACK_ONLY",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageManager::FEATURE_LIVE_TV()
+	JString PackageManager::FEATURE_LIVE_TV()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager",
 			"FEATURE_LIVE_TV",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageManager::FEATURE_LIVE_WALLPAPER()
+	JString PackageManager::FEATURE_LIVE_WALLPAPER()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager",
 			"FEATURE_LIVE_WALLPAPER",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageManager::FEATURE_LOCATION()
+	JString PackageManager::FEATURE_LOCATION()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager",
 			"FEATURE_LOCATION",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageManager::FEATURE_LOCATION_GPS()
+	JString PackageManager::FEATURE_LOCATION_GPS()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager",
 			"FEATURE_LOCATION_GPS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageManager::FEATURE_LOCATION_NETWORK()
+	JString PackageManager::FEATURE_LOCATION_NETWORK()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager",
 			"FEATURE_LOCATION_NETWORK",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageManager::FEATURE_MANAGED_USERS()
+	JString PackageManager::FEATURE_MANAGED_USERS()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager",
 			"FEATURE_MANAGED_USERS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageManager::FEATURE_MICROPHONE()
+	JString PackageManager::FEATURE_MICROPHONE()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager",
 			"FEATURE_MICROPHONE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageManager::FEATURE_MIDI()
+	JString PackageManager::FEATURE_MIDI()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager",
 			"FEATURE_MIDI",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageManager::FEATURE_NFC()
+	JString PackageManager::FEATURE_NFC()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager",
 			"FEATURE_NFC",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageManager::FEATURE_NFC_BEAM()
+	JString PackageManager::FEATURE_NFC_BEAM()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager",
 			"FEATURE_NFC_BEAM",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageManager::FEATURE_NFC_HOST_CARD_EMULATION()
+	JString PackageManager::FEATURE_NFC_HOST_CARD_EMULATION()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager",
 			"FEATURE_NFC_HOST_CARD_EMULATION",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageManager::FEATURE_NFC_HOST_CARD_EMULATION_NFCF()
+	JString PackageManager::FEATURE_NFC_HOST_CARD_EMULATION_NFCF()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager",
 			"FEATURE_NFC_HOST_CARD_EMULATION_NFCF",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageManager::FEATURE_NFC_OFF_HOST_CARD_EMULATION_ESE()
+	JString PackageManager::FEATURE_NFC_OFF_HOST_CARD_EMULATION_ESE()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager",
 			"FEATURE_NFC_OFF_HOST_CARD_EMULATION_ESE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageManager::FEATURE_NFC_OFF_HOST_CARD_EMULATION_UICC()
+	JString PackageManager::FEATURE_NFC_OFF_HOST_CARD_EMULATION_UICC()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager",
 			"FEATURE_NFC_OFF_HOST_CARD_EMULATION_UICC",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageManager::FEATURE_OPENGLES_EXTENSION_PACK()
+	JString PackageManager::FEATURE_OPENGLES_EXTENSION_PACK()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager",
 			"FEATURE_OPENGLES_EXTENSION_PACK",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageManager::FEATURE_PC()
+	JString PackageManager::FEATURE_PC()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager",
 			"FEATURE_PC",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageManager::FEATURE_PICTURE_IN_PICTURE()
+	JString PackageManager::FEATURE_PICTURE_IN_PICTURE()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager",
 			"FEATURE_PICTURE_IN_PICTURE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageManager::FEATURE_PRINTING()
+	JString PackageManager::FEATURE_PRINTING()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager",
 			"FEATURE_PRINTING",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageManager::FEATURE_RAM_LOW()
+	JString PackageManager::FEATURE_RAM_LOW()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager",
 			"FEATURE_RAM_LOW",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageManager::FEATURE_RAM_NORMAL()
+	JString PackageManager::FEATURE_RAM_NORMAL()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager",
 			"FEATURE_RAM_NORMAL",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageManager::FEATURE_SCREEN_LANDSCAPE()
+	JString PackageManager::FEATURE_SCREEN_LANDSCAPE()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager",
 			"FEATURE_SCREEN_LANDSCAPE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageManager::FEATURE_SCREEN_PORTRAIT()
+	JString PackageManager::FEATURE_SCREEN_PORTRAIT()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager",
 			"FEATURE_SCREEN_PORTRAIT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageManager::FEATURE_SECURELY_REMOVES_USERS()
+	JString PackageManager::FEATURE_SECURELY_REMOVES_USERS()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager",
 			"FEATURE_SECURELY_REMOVES_USERS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageManager::FEATURE_SECURE_LOCK_SCREEN()
+	JString PackageManager::FEATURE_SECURE_LOCK_SCREEN()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager",
 			"FEATURE_SECURE_LOCK_SCREEN",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageManager::FEATURE_SENSOR_ACCELEROMETER()
+	JString PackageManager::FEATURE_SENSOR_ACCELEROMETER()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager",
 			"FEATURE_SENSOR_ACCELEROMETER",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageManager::FEATURE_SENSOR_AMBIENT_TEMPERATURE()
+	JString PackageManager::FEATURE_SENSOR_AMBIENT_TEMPERATURE()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager",
 			"FEATURE_SENSOR_AMBIENT_TEMPERATURE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageManager::FEATURE_SENSOR_BAROMETER()
+	JString PackageManager::FEATURE_SENSOR_BAROMETER()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager",
 			"FEATURE_SENSOR_BAROMETER",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageManager::FEATURE_SENSOR_COMPASS()
+	JString PackageManager::FEATURE_SENSOR_COMPASS()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager",
 			"FEATURE_SENSOR_COMPASS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageManager::FEATURE_SENSOR_GYROSCOPE()
+	JString PackageManager::FEATURE_SENSOR_GYROSCOPE()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager",
 			"FEATURE_SENSOR_GYROSCOPE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageManager::FEATURE_SENSOR_HEART_RATE()
+	JString PackageManager::FEATURE_SENSOR_HEART_RATE()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager",
 			"FEATURE_SENSOR_HEART_RATE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageManager::FEATURE_SENSOR_HEART_RATE_ECG()
+	JString PackageManager::FEATURE_SENSOR_HEART_RATE_ECG()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager",
 			"FEATURE_SENSOR_HEART_RATE_ECG",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageManager::FEATURE_SENSOR_LIGHT()
+	JString PackageManager::FEATURE_SENSOR_LIGHT()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager",
 			"FEATURE_SENSOR_LIGHT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageManager::FEATURE_SENSOR_PROXIMITY()
+	JString PackageManager::FEATURE_SENSOR_PROXIMITY()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager",
 			"FEATURE_SENSOR_PROXIMITY",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageManager::FEATURE_SENSOR_RELATIVE_HUMIDITY()
+	JString PackageManager::FEATURE_SENSOR_RELATIVE_HUMIDITY()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager",
 			"FEATURE_SENSOR_RELATIVE_HUMIDITY",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageManager::FEATURE_SENSOR_STEP_COUNTER()
+	JString PackageManager::FEATURE_SENSOR_STEP_COUNTER()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager",
 			"FEATURE_SENSOR_STEP_COUNTER",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageManager::FEATURE_SENSOR_STEP_DETECTOR()
+	JString PackageManager::FEATURE_SENSOR_STEP_DETECTOR()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager",
 			"FEATURE_SENSOR_STEP_DETECTOR",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageManager::FEATURE_SIP()
+	JString PackageManager::FEATURE_SIP()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager",
 			"FEATURE_SIP",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageManager::FEATURE_SIP_VOIP()
+	JString PackageManager::FEATURE_SIP_VOIP()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager",
 			"FEATURE_SIP_VOIP",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageManager::FEATURE_STRONGBOX_KEYSTORE()
+	JString PackageManager::FEATURE_STRONGBOX_KEYSTORE()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager",
 			"FEATURE_STRONGBOX_KEYSTORE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageManager::FEATURE_TELEPHONY()
+	JString PackageManager::FEATURE_TELEPHONY()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager",
 			"FEATURE_TELEPHONY",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageManager::FEATURE_TELEPHONY_CDMA()
+	JString PackageManager::FEATURE_TELEPHONY_CDMA()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager",
 			"FEATURE_TELEPHONY_CDMA",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageManager::FEATURE_TELEPHONY_EUICC()
+	JString PackageManager::FEATURE_TELEPHONY_EUICC()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager",
 			"FEATURE_TELEPHONY_EUICC",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageManager::FEATURE_TELEPHONY_GSM()
+	JString PackageManager::FEATURE_TELEPHONY_GSM()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager",
 			"FEATURE_TELEPHONY_GSM",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageManager::FEATURE_TELEPHONY_IMS()
+	JString PackageManager::FEATURE_TELEPHONY_IMS()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager",
 			"FEATURE_TELEPHONY_IMS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageManager::FEATURE_TELEPHONY_MBMS()
+	JString PackageManager::FEATURE_TELEPHONY_MBMS()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager",
 			"FEATURE_TELEPHONY_MBMS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageManager::FEATURE_TELEVISION()
+	JString PackageManager::FEATURE_TELEVISION()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager",
 			"FEATURE_TELEVISION",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageManager::FEATURE_TOUCHSCREEN()
+	JString PackageManager::FEATURE_TOUCHSCREEN()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager",
 			"FEATURE_TOUCHSCREEN",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageManager::FEATURE_TOUCHSCREEN_MULTITOUCH()
+	JString PackageManager::FEATURE_TOUCHSCREEN_MULTITOUCH()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager",
 			"FEATURE_TOUCHSCREEN_MULTITOUCH",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageManager::FEATURE_TOUCHSCREEN_MULTITOUCH_DISTINCT()
+	JString PackageManager::FEATURE_TOUCHSCREEN_MULTITOUCH_DISTINCT()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager",
 			"FEATURE_TOUCHSCREEN_MULTITOUCH_DISTINCT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageManager::FEATURE_TOUCHSCREEN_MULTITOUCH_JAZZHAND()
+	JString PackageManager::FEATURE_TOUCHSCREEN_MULTITOUCH_JAZZHAND()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager",
 			"FEATURE_TOUCHSCREEN_MULTITOUCH_JAZZHAND",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageManager::FEATURE_USB_ACCESSORY()
+	JString PackageManager::FEATURE_USB_ACCESSORY()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager",
 			"FEATURE_USB_ACCESSORY",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageManager::FEATURE_USB_HOST()
+	JString PackageManager::FEATURE_USB_HOST()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager",
 			"FEATURE_USB_HOST",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageManager::FEATURE_VERIFIED_BOOT()
+	JString PackageManager::FEATURE_VERIFIED_BOOT()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager",
 			"FEATURE_VERIFIED_BOOT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageManager::FEATURE_VR_HEADTRACKING()
+	JString PackageManager::FEATURE_VR_HEADTRACKING()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager",
 			"FEATURE_VR_HEADTRACKING",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageManager::FEATURE_VR_MODE()
+	JString PackageManager::FEATURE_VR_MODE()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager",
 			"FEATURE_VR_MODE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageManager::FEATURE_VR_MODE_HIGH_PERFORMANCE()
+	JString PackageManager::FEATURE_VR_MODE_HIGH_PERFORMANCE()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager",
 			"FEATURE_VR_MODE_HIGH_PERFORMANCE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageManager::FEATURE_VULKAN_HARDWARE_COMPUTE()
+	JString PackageManager::FEATURE_VULKAN_HARDWARE_COMPUTE()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager",
 			"FEATURE_VULKAN_HARDWARE_COMPUTE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageManager::FEATURE_VULKAN_HARDWARE_LEVEL()
+	JString PackageManager::FEATURE_VULKAN_HARDWARE_LEVEL()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager",
 			"FEATURE_VULKAN_HARDWARE_LEVEL",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageManager::FEATURE_VULKAN_HARDWARE_VERSION()
+	JString PackageManager::FEATURE_VULKAN_HARDWARE_VERSION()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager",
 			"FEATURE_VULKAN_HARDWARE_VERSION",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageManager::FEATURE_WATCH()
+	JString PackageManager::FEATURE_WATCH()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager",
 			"FEATURE_WATCH",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageManager::FEATURE_WEBVIEW()
+	JString PackageManager::FEATURE_WEBVIEW()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager",
 			"FEATURE_WEBVIEW",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageManager::FEATURE_WIFI()
+	JString PackageManager::FEATURE_WIFI()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager",
 			"FEATURE_WIFI",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageManager::FEATURE_WIFI_AWARE()
+	JString PackageManager::FEATURE_WIFI_AWARE()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager",
 			"FEATURE_WIFI_AWARE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageManager::FEATURE_WIFI_DIRECT()
+	JString PackageManager::FEATURE_WIFI_DIRECT()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager",
 			"FEATURE_WIFI_DIRECT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageManager::FEATURE_WIFI_PASSPOINT()
+	JString PackageManager::FEATURE_WIFI_PASSPOINT()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager",
 			"FEATURE_WIFI_PASSPOINT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageManager::FEATURE_WIFI_RTT()
+	JString PackageManager::FEATURE_WIFI_RTT()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager",
 			"FEATURE_WIFI_RTT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint PackageManager::FLAG_PERMISSION_WHITELIST_INSTALLER()
 	{
@@ -1308,12 +1316,12 @@ namespace android::content::pm
 		) {}
 	
 	// Methods
-	void PackageManager::addPackageToPreferred(jstring arg0)
+	void PackageManager::addPackageToPreferred(JString arg0)
 	{
 		callMethod<void>(
 			"addPackageToPreferred",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	jboolean PackageManager::addPermission(android::content::pm::PermissionInfo arg0)
@@ -1332,24 +1340,24 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	void PackageManager::addPreferredActivity(android::content::IntentFilter arg0, jint arg1, jarray arg2, android::content::ComponentName arg3)
+	void PackageManager::addPreferredActivity(android::content::IntentFilter arg0, jint arg1, JArray arg2, android::content::ComponentName arg3)
 	{
 		callMethod<void>(
 			"addPreferredActivity",
 			"(Landroid/content/IntentFilter;I[Landroid/content/ComponentName;Landroid/content/ComponentName;)V",
 			arg0.object(),
 			arg1,
-			arg2,
+			arg2.object<jarray>(),
 			arg3.object()
 		);
 	}
-	jboolean PackageManager::addWhitelistedRestrictedPermission(jstring arg0, jstring arg1, jint arg2)
+	jboolean PackageManager::addWhitelistedRestrictedPermission(JString arg0, JString arg1, jint arg2)
 	{
 		return callMethod<jboolean>(
 			"addWhitelistedRestrictedPermission",
 			"(Ljava/lang/String;Ljava/lang/String;I)Z",
-			arg0,
-			arg1,
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
 			arg2
 		);
 	}
@@ -1360,21 +1368,21 @@ namespace android::content::pm
 			"()Z"
 		);
 	}
-	jarray PackageManager::canonicalToCurrentPackageNames(jarray arg0)
+	JArray PackageManager::canonicalToCurrentPackageNames(JArray arg0)
 	{
 		return callObjectMethod(
 			"canonicalToCurrentPackageNames",
 			"([Ljava/lang/String;)[Ljava/lang/String;",
-			arg0
-		).object<jarray>();
+			arg0.object<jarray>()
+		);
 	}
-	jint PackageManager::checkPermission(jstring arg0, jstring arg1)
+	jint PackageManager::checkPermission(JString arg0, JString arg1)
 	{
 		return callMethod<jint>(
 			"checkPermission",
 			"(Ljava/lang/String;Ljava/lang/String;)I",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		);
 	}
 	jint PackageManager::checkSignatures(jint arg0, jint arg1)
@@ -1386,13 +1394,13 @@ namespace android::content::pm
 			arg1
 		);
 	}
-	jint PackageManager::checkSignatures(jstring arg0, jstring arg1)
+	jint PackageManager::checkSignatures(JString arg0, JString arg1)
 	{
 		return callMethod<jint>(
 			"checkSignatures",
 			"(Ljava/lang/String;Ljava/lang/String;)I",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		);
 	}
 	void PackageManager::clearInstantAppCookie()
@@ -1402,21 +1410,21 @@ namespace android::content::pm
 			"()V"
 		);
 	}
-	void PackageManager::clearPackagePreferredActivities(jstring arg0)
+	void PackageManager::clearPackagePreferredActivities(JString arg0)
 	{
 		callMethod<void>(
 			"clearPackagePreferredActivities",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray PackageManager::currentToCanonicalPackageNames(jarray arg0)
+	JArray PackageManager::currentToCanonicalPackageNames(JArray arg0)
 	{
 		return callObjectMethod(
 			"currentToCanonicalPackageNames",
 			"([Ljava/lang/String;)[Ljava/lang/String;",
-			arg0
-		).object<jarray>();
+			arg0.object<jarray>()
+		);
 	}
 	void PackageManager::extendVerificationTimeout(jint arg0, jint arg1, jlong arg2)
 	{
@@ -1501,20 +1509,20 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	android::graphics::drawable::Drawable PackageManager::getApplicationBanner(jstring arg0)
+	android::graphics::drawable::Drawable PackageManager::getApplicationBanner(JString arg0)
 	{
 		return callObjectMethod(
 			"getApplicationBanner",
 			"(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jint PackageManager::getApplicationEnabledSetting(jstring arg0)
+	jint PackageManager::getApplicationEnabledSetting(JString arg0)
 	{
 		return callMethod<jint>(
 			"getApplicationEnabledSetting",
 			"(Ljava/lang/String;)I",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::graphics::drawable::Drawable PackageManager::getApplicationIcon(android::content::pm::ApplicationInfo arg0)
@@ -1525,30 +1533,30 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	android::graphics::drawable::Drawable PackageManager::getApplicationIcon(jstring arg0)
+	android::graphics::drawable::Drawable PackageManager::getApplicationIcon(JString arg0)
 	{
 		return callObjectMethod(
 			"getApplicationIcon",
 			"(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	android::content::pm::ApplicationInfo PackageManager::getApplicationInfo(jstring arg0, jint arg1)
+	android::content::pm::ApplicationInfo PackageManager::getApplicationInfo(JString arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"getApplicationInfo",
 			"(Ljava/lang/String;I)Landroid/content/pm/ApplicationInfo;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
-	jstring PackageManager::getApplicationLabel(android::content::pm::ApplicationInfo arg0)
+	JString PackageManager::getApplicationLabel(android::content::pm::ApplicationInfo arg0)
 	{
 		return callObjectMethod(
 			"getApplicationLabel",
 			"(Landroid/content/pm/ApplicationInfo;)Ljava/lang/CharSequence;",
 			arg0.object()
-		).object<jstring>();
+		);
 	}
 	android::graphics::drawable::Drawable PackageManager::getApplicationLogo(android::content::pm::ApplicationInfo arg0)
 	{
@@ -1558,12 +1566,12 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	android::graphics::drawable::Drawable PackageManager::getApplicationLogo(jstring arg0)
+	android::graphics::drawable::Drawable PackageManager::getApplicationLogo(JString arg0)
 	{
 		return callObjectMethod(
 			"getApplicationLogo",
 			"(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::content::pm::ChangedPackages PackageManager::getChangedPackages(jint arg0)
@@ -1589,12 +1597,12 @@ namespace android::content::pm
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	android::graphics::drawable::Drawable PackageManager::getDrawable(jstring arg0, jint arg1, android::content::pm::ApplicationInfo arg2)
+	android::graphics::drawable::Drawable PackageManager::getDrawable(JString arg0, jint arg1, android::content::pm::ApplicationInfo arg2)
 	{
 		return callObjectMethod(
 			"getDrawable",
 			"(Ljava/lang/String;ILandroid/content/pm/ApplicationInfo;)Landroid/graphics/drawable/Drawable;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
 			arg2.object()
 		);
@@ -1623,20 +1631,20 @@ namespace android::content::pm
 			arg0
 		);
 	}
-	jstring PackageManager::getInstallerPackageName(jstring arg0)
+	JString PackageManager::getInstallerPackageName(JString arg0)
 	{
 		return callObjectMethod(
 			"getInstallerPackageName",
 			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
+			arg0.object<jstring>()
+		);
 	}
-	jbyteArray PackageManager::getInstantAppCookie()
+	JByteArray PackageManager::getInstantAppCookie()
 	{
 		return callObjectMethod(
 			"getInstantAppCookie",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
 	jint PackageManager::getInstantAppCookieMaxBytes()
 	{
@@ -1654,64 +1662,64 @@ namespace android::content::pm
 			arg1
 		);
 	}
-	android::content::Intent PackageManager::getLaunchIntentForPackage(jstring arg0)
+	android::content::Intent PackageManager::getLaunchIntentForPackage(JString arg0)
 	{
 		return callObjectMethod(
 			"getLaunchIntentForPackage",
 			"(Ljava/lang/String;)Landroid/content/Intent;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	android::content::Intent PackageManager::getLeanbackLaunchIntentForPackage(jstring arg0)
+	android::content::Intent PackageManager::getLeanbackLaunchIntentForPackage(JString arg0)
 	{
 		return callObjectMethod(
 			"getLeanbackLaunchIntentForPackage",
 			"(Ljava/lang/String;)Landroid/content/Intent;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	android::content::pm::ModuleInfo PackageManager::getModuleInfo(jstring arg0, jint arg1)
+	android::content::pm::ModuleInfo PackageManager::getModuleInfo(JString arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"getModuleInfo",
 			"(Ljava/lang/String;I)Landroid/content/pm/ModuleInfo;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
-	jstring PackageManager::getNameForUid(jint arg0)
+	JString PackageManager::getNameForUid(jint arg0)
 	{
 		return callObjectMethod(
 			"getNameForUid",
 			"(I)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
-	android::content::pm::PackageInfo PackageManager::getPackageArchiveInfo(jstring arg0, jint arg1)
+	android::content::pm::PackageInfo PackageManager::getPackageArchiveInfo(JString arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"getPackageArchiveInfo",
 			"(Ljava/lang/String;I)Landroid/content/pm/PackageInfo;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
-	jintArray PackageManager::getPackageGids(jstring arg0)
+	JIntArray PackageManager::getPackageGids(JString arg0)
 	{
 		return callObjectMethod(
 			"getPackageGids",
 			"(Ljava/lang/String;)[I",
-			arg0
-		).object<jintArray>();
+			arg0.object<jstring>()
+		);
 	}
-	jintArray PackageManager::getPackageGids(jstring arg0, jint arg1)
+	JIntArray PackageManager::getPackageGids(JString arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"getPackageGids",
 			"(Ljava/lang/String;I)[I",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
-		).object<jintArray>();
+		);
 	}
 	android::content::pm::PackageInfo PackageManager::getPackageInfo(android::content::pm::VersionedPackage arg0, jint arg1)
 	{
@@ -1722,12 +1730,12 @@ namespace android::content::pm
 			arg1
 		);
 	}
-	android::content::pm::PackageInfo PackageManager::getPackageInfo(jstring arg0, jint arg1)
+	android::content::pm::PackageInfo PackageManager::getPackageInfo(JString arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"getPackageInfo",
 			"(Ljava/lang/String;I)Landroid/content/pm/PackageInfo;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
@@ -1738,58 +1746,58 @@ namespace android::content::pm
 			"()Landroid/content/pm/PackageInstaller;"
 		);
 	}
-	jint PackageManager::getPackageUid(jstring arg0, jint arg1)
+	jint PackageManager::getPackageUid(JString arg0, jint arg1)
 	{
 		return callMethod<jint>(
 			"getPackageUid",
 			"(Ljava/lang/String;I)I",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
-	jarray PackageManager::getPackagesForUid(jint arg0)
+	JArray PackageManager::getPackagesForUid(jint arg0)
 	{
 		return callObjectMethod(
 			"getPackagesForUid",
 			"(I)[Ljava/lang/String;",
 			arg0
-		).object<jarray>();
+		);
 	}
-	JObject PackageManager::getPackagesHoldingPermissions(jarray arg0, jint arg1)
+	JObject PackageManager::getPackagesHoldingPermissions(JArray arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"getPackagesHoldingPermissions",
 			"([Ljava/lang/String;I)Ljava/util/List;",
-			arg0,
+			arg0.object<jarray>(),
 			arg1
 		);
 	}
-	android::content::pm::PermissionGroupInfo PackageManager::getPermissionGroupInfo(jstring arg0, jint arg1)
+	android::content::pm::PermissionGroupInfo PackageManager::getPermissionGroupInfo(JString arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"getPermissionGroupInfo",
 			"(Ljava/lang/String;I)Landroid/content/pm/PermissionGroupInfo;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
-	android::content::pm::PermissionInfo PackageManager::getPermissionInfo(jstring arg0, jint arg1)
+	android::content::pm::PermissionInfo PackageManager::getPermissionInfo(JString arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"getPermissionInfo",
 			"(Ljava/lang/String;I)Landroid/content/pm/PermissionInfo;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
-	jint PackageManager::getPreferredActivities(JObject arg0, JObject arg1, jstring arg2)
+	jint PackageManager::getPreferredActivities(JObject arg0, JObject arg1, JString arg2)
 	{
 		return callMethod<jint>(
 			"getPreferredActivities",
 			"(Ljava/util/List;Ljava/util/List;Ljava/lang/String;)I",
 			arg0.object(),
 			arg1.object(),
-			arg2
+			arg2.object<jstring>()
 		);
 	}
 	JObject PackageManager::getPreferredPackages(jint arg0)
@@ -1834,12 +1842,12 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	android::content::res::Resources PackageManager::getResourcesForApplication(jstring arg0)
+	android::content::res::Resources PackageManager::getResourcesForApplication(JString arg0)
 	{
 		return callObjectMethod(
 			"getResourcesForApplication",
 			"(Ljava/lang/String;)Landroid/content/res/Resources;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::content::pm::ServiceInfo PackageManager::getServiceInfo(android::content::ComponentName arg0, jint arg1)
@@ -1866,37 +1874,37 @@ namespace android::content::pm
 			"()Landroid/os/Bundle;"
 		);
 	}
-	jboolean PackageManager::getSyntheticAppDetailsActivityEnabled(jstring arg0)
+	jboolean PackageManager::getSyntheticAppDetailsActivityEnabled(JString arg0)
 	{
 		return callMethod<jboolean>(
 			"getSyntheticAppDetailsActivityEnabled",
 			"(Ljava/lang/String;)Z",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray PackageManager::getSystemAvailableFeatures()
+	JArray PackageManager::getSystemAvailableFeatures()
 	{
 		return callObjectMethod(
 			"getSystemAvailableFeatures",
 			"()[Landroid/content/pm/FeatureInfo;"
-		).object<jarray>();
+		);
 	}
-	jarray PackageManager::getSystemSharedLibraryNames()
+	JArray PackageManager::getSystemSharedLibraryNames()
 	{
 		return callObjectMethod(
 			"getSystemSharedLibraryNames",
 			"()[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
-	jstring PackageManager::getText(jstring arg0, jint arg1, android::content::pm::ApplicationInfo arg2)
+	JString PackageManager::getText(JString arg0, jint arg1, android::content::pm::ApplicationInfo arg2)
 	{
 		return callObjectMethod(
 			"getText",
 			"(Ljava/lang/String;ILandroid/content/pm/ApplicationInfo;)Ljava/lang/CharSequence;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
 			arg2.object()
-		).object<jstring>();
+		);
 	}
 	android::graphics::drawable::Drawable PackageManager::getUserBadgedDrawableForDensity(android::graphics::drawable::Drawable arg0, android::os::UserHandle arg1, android::graphics::Rect arg2, jint arg3)
 	{
@@ -1918,68 +1926,68 @@ namespace android::content::pm
 			arg1.object()
 		);
 	}
-	jstring PackageManager::getUserBadgedLabel(jstring arg0, android::os::UserHandle arg1)
+	JString PackageManager::getUserBadgedLabel(JString arg0, android::os::UserHandle arg1)
 	{
 		return callObjectMethod(
 			"getUserBadgedLabel",
 			"(Ljava/lang/CharSequence;Landroid/os/UserHandle;)Ljava/lang/CharSequence;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
-		).object<jstring>();
+		);
 	}
-	JObject PackageManager::getWhitelistedRestrictedPermissions(jstring arg0, jint arg1)
+	JObject PackageManager::getWhitelistedRestrictedPermissions(JString arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"getWhitelistedRestrictedPermissions",
 			"(Ljava/lang/String;I)Ljava/util/Set;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
-	JObject PackageManager::getXml(jstring arg0, jint arg1, android::content::pm::ApplicationInfo arg2)
+	JObject PackageManager::getXml(JString arg0, jint arg1, android::content::pm::ApplicationInfo arg2)
 	{
 		return callObjectMethod(
 			"getXml",
 			"(Ljava/lang/String;ILandroid/content/pm/ApplicationInfo;)Landroid/content/res/XmlResourceParser;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
 			arg2.object()
 		);
 	}
-	jboolean PackageManager::hasSigningCertificate(jint arg0, jbyteArray arg1, jint arg2)
+	jboolean PackageManager::hasSigningCertificate(jint arg0, JByteArray arg1, jint arg2)
 	{
 		return callMethod<jboolean>(
 			"hasSigningCertificate",
 			"(I[BI)Z",
 			arg0,
-			arg1,
+			arg1.object<jbyteArray>(),
 			arg2
 		);
 	}
-	jboolean PackageManager::hasSigningCertificate(jstring arg0, jbyteArray arg1, jint arg2)
+	jboolean PackageManager::hasSigningCertificate(JString arg0, JByteArray arg1, jint arg2)
 	{
 		return callMethod<jboolean>(
 			"hasSigningCertificate",
 			"(Ljava/lang/String;[BI)Z",
-			arg0,
-			arg1,
+			arg0.object<jstring>(),
+			arg1.object<jbyteArray>(),
 			arg2
 		);
 	}
-	jboolean PackageManager::hasSystemFeature(jstring arg0)
+	jboolean PackageManager::hasSystemFeature(JString arg0)
 	{
 		return callMethod<jboolean>(
 			"hasSystemFeature",
 			"(Ljava/lang/String;)Z",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jboolean PackageManager::hasSystemFeature(jstring arg0, jint arg1)
+	jboolean PackageManager::hasSystemFeature(JString arg0, jint arg1)
 	{
 		return callMethod<jboolean>(
 			"hasSystemFeature",
 			"(Ljava/lang/String;I)Z",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
@@ -1997,12 +2005,12 @@ namespace android::content::pm
 			"()Z"
 		);
 	}
-	jboolean PackageManager::isInstantApp(jstring arg0)
+	jboolean PackageManager::isInstantApp(JString arg0)
 	{
 		return callMethod<jboolean>(
 			"isInstantApp",
 			"(Ljava/lang/String;)Z",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	jboolean PackageManager::isPackageSuspended()
@@ -2012,21 +2020,21 @@ namespace android::content::pm
 			"()Z"
 		);
 	}
-	jboolean PackageManager::isPackageSuspended(jstring arg0)
+	jboolean PackageManager::isPackageSuspended(JString arg0)
 	{
 		return callMethod<jboolean>(
 			"isPackageSuspended",
 			"(Ljava/lang/String;)Z",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jboolean PackageManager::isPermissionRevokedByPolicy(jstring arg0, jstring arg1)
+	jboolean PackageManager::isPermissionRevokedByPolicy(JString arg0, JString arg1)
 	{
 		return callMethod<jboolean>(
 			"isPermissionRevokedByPolicy",
 			"(Ljava/lang/String;Ljava/lang/String;)Z",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		);
 	}
 	jboolean PackageManager::isSafeMode()
@@ -2045,22 +2053,22 @@ namespace android::content::pm
 			arg1
 		);
 	}
-	JObject PackageManager::queryContentProviders(jstring arg0, jint arg1, jint arg2)
+	JObject PackageManager::queryContentProviders(JString arg0, jint arg1, jint arg2)
 	{
 		return callObjectMethod(
 			"queryContentProviders",
 			"(Ljava/lang/String;II)Ljava/util/List;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
 			arg2
 		);
 	}
-	JObject PackageManager::queryInstrumentation(jstring arg0, jint arg1)
+	JObject PackageManager::queryInstrumentation(JString arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"queryInstrumentation",
 			"(Ljava/lang/String;I)Ljava/util/List;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
@@ -2073,13 +2081,13 @@ namespace android::content::pm
 			arg1
 		);
 	}
-	JObject PackageManager::queryIntentActivityOptions(android::content::ComponentName arg0, jarray arg1, android::content::Intent arg2, jint arg3)
+	JObject PackageManager::queryIntentActivityOptions(android::content::ComponentName arg0, JArray arg1, android::content::Intent arg2, jint arg3)
 	{
 		return callObjectMethod(
 			"queryIntentActivityOptions",
 			"(Landroid/content/ComponentName;[Landroid/content/Intent;Landroid/content/Intent;I)Ljava/util/List;",
 			arg0.object(),
-			arg1,
+			arg1.object<jarray>(),
 			arg2.object(),
 			arg3
 		);
@@ -2102,38 +2110,38 @@ namespace android::content::pm
 			arg1
 		);
 	}
-	JObject PackageManager::queryPermissionsByGroup(jstring arg0, jint arg1)
+	JObject PackageManager::queryPermissionsByGroup(JString arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"queryPermissionsByGroup",
 			"(Ljava/lang/String;I)Ljava/util/List;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
-	void PackageManager::removePackageFromPreferred(jstring arg0)
+	void PackageManager::removePackageFromPreferred(JString arg0)
 	{
 		callMethod<void>(
 			"removePackageFromPreferred",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	void PackageManager::removePermission(jstring arg0)
+	void PackageManager::removePermission(JString arg0)
 	{
 		callMethod<void>(
 			"removePermission",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jboolean PackageManager::removeWhitelistedRestrictedPermission(jstring arg0, jstring arg1, jint arg2)
+	jboolean PackageManager::removeWhitelistedRestrictedPermission(JString arg0, JString arg1, jint arg2)
 	{
 		return callMethod<jboolean>(
 			"removeWhitelistedRestrictedPermission",
 			"(Ljava/lang/String;Ljava/lang/String;I)Z",
-			arg0,
-			arg1,
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
 			arg2
 		);
 	}
@@ -2146,12 +2154,12 @@ namespace android::content::pm
 			arg1
 		);
 	}
-	android::content::pm::ProviderInfo PackageManager::resolveContentProvider(jstring arg0, jint arg1)
+	android::content::pm::ProviderInfo PackageManager::resolveContentProvider(JString arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"resolveContentProvider",
 			"(Ljava/lang/String;I)Landroid/content/pm/ProviderInfo;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
@@ -2164,21 +2172,21 @@ namespace android::content::pm
 			arg1
 		);
 	}
-	void PackageManager::setApplicationCategoryHint(jstring arg0, jint arg1)
+	void PackageManager::setApplicationCategoryHint(JString arg0, jint arg1)
 	{
 		callMethod<void>(
 			"setApplicationCategoryHint",
 			"(Ljava/lang/String;I)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
-	void PackageManager::setApplicationEnabledSetting(jstring arg0, jint arg1, jint arg2)
+	void PackageManager::setApplicationEnabledSetting(JString arg0, jint arg1, jint arg2)
 	{
 		callMethod<void>(
 			"setApplicationEnabledSetting",
 			"(Ljava/lang/String;II)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
 			arg2
 		);
@@ -2193,21 +2201,21 @@ namespace android::content::pm
 			arg2
 		);
 	}
-	void PackageManager::setInstallerPackageName(jstring arg0, jstring arg1)
+	void PackageManager::setInstallerPackageName(JString arg0, JString arg1)
 	{
 		callMethod<void>(
 			"setInstallerPackageName",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		);
 	}
-	void PackageManager::updateInstantAppCookie(jbyteArray arg0)
+	void PackageManager::updateInstantAppCookie(JByteArray arg0)
 	{
 		callMethod<void>(
 			"updateInstantAppCookie",
 			"([B)V",
-			arg0
+			arg0.object<jbyteArray>()
 		);
 	}
 	void PackageManager::verifyPendingInstall(jint arg0, jint arg1)

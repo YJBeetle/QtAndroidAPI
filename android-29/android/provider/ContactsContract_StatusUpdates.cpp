@@ -1,24 +1,25 @@
 #include "../net/Uri.hpp"
+#include "../../JString.hpp"
 #include "./ContactsContract_StatusUpdates.hpp"
 
 namespace android::provider
 {
 	// Fields
-	jstring ContactsContract_StatusUpdates::CONTENT_ITEM_TYPE()
+	JString ContactsContract_StatusUpdates::CONTENT_ITEM_TYPE()
 	{
 		return getStaticObjectField(
 			"android.provider.ContactsContract$StatusUpdates",
 			"CONTENT_ITEM_TYPE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ContactsContract_StatusUpdates::CONTENT_TYPE()
+	JString ContactsContract_StatusUpdates::CONTENT_TYPE()
 	{
 		return getStaticObjectField(
 			"android.provider.ContactsContract$StatusUpdates",
 			"CONTENT_TYPE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::net::Uri ContactsContract_StatusUpdates::CONTENT_URI()
 	{

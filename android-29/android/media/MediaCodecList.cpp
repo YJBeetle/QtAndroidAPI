@@ -1,5 +1,7 @@
+#include "../../JArray.hpp"
 #include "./MediaCodecInfo.hpp"
 #include "./MediaFormat.hpp"
+#include "../../JString.hpp"
 #include "./MediaCodecList.hpp"
 
 namespace android::media
@@ -49,28 +51,28 @@ namespace android::media
 			arg0
 		);
 	}
-	jstring MediaCodecList::findDecoderForFormat(android::media::MediaFormat arg0)
+	JString MediaCodecList::findDecoderForFormat(android::media::MediaFormat arg0)
 	{
 		return callObjectMethod(
 			"findDecoderForFormat",
 			"(Landroid/media/MediaFormat;)Ljava/lang/String;",
 			arg0.object()
-		).object<jstring>();
+		);
 	}
-	jstring MediaCodecList::findEncoderForFormat(android::media::MediaFormat arg0)
+	JString MediaCodecList::findEncoderForFormat(android::media::MediaFormat arg0)
 	{
 		return callObjectMethod(
 			"findEncoderForFormat",
 			"(Landroid/media/MediaFormat;)Ljava/lang/String;",
 			arg0.object()
-		).object<jstring>();
+		);
 	}
-	jarray MediaCodecList::getCodecInfos()
+	JArray MediaCodecList::getCodecInfos()
 	{
 		return callObjectMethod(
 			"getCodecInfos",
 			"()[Landroid/media/MediaCodecInfo;"
-		).object<jarray>();
+		);
 	}
 } // namespace android::media
 

@@ -1,3 +1,5 @@
+#include "../../../JString.hpp"
+#include "../../../JThrowable.hpp"
 #include "./VcnManager_VcnStatusCallback.hpp"
 
 namespace android::net::vcn
@@ -15,14 +17,14 @@ namespace android::net::vcn
 		) {}
 	
 	// Methods
-	void VcnManager_VcnStatusCallback::onGatewayConnectionError(jstring arg0, jint arg1, jthrowable arg2)
+	void VcnManager_VcnStatusCallback::onGatewayConnectionError(JString arg0, jint arg1, JThrowable arg2)
 	{
 		callMethod<void>(
 			"onGatewayConnectionError",
 			"(Ljava/lang/String;ILjava/lang/Throwable;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
-			arg2
+			arg2.object<jthrowable>()
 		);
 	}
 	void VcnManager_VcnStatusCallback::onStatusChanged(jint arg0)

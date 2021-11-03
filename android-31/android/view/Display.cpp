@@ -1,3 +1,5 @@
+#include "../../JFloatArray.hpp"
+#include "../../JArray.hpp"
 #include "../graphics/ColorSpace.hpp"
 #include "../graphics/Point.hpp"
 #include "../graphics/Rect.hpp"
@@ -7,6 +9,7 @@
 #include "./Display_Mode.hpp"
 #include "./DisplayCutout.hpp"
 #include "./RoundedCorner.hpp"
+#include "../../JString.hpp"
 #include "./Display.hpp"
 
 namespace android::view
@@ -190,12 +193,12 @@ namespace android::view
 			"()Landroid/view/Display$Mode;"
 		);
 	}
-	jstring Display::getName()
+	JString Display::getName()
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint Display::getOrientation()
 	{
@@ -286,19 +289,19 @@ namespace android::view
 			"()I"
 		);
 	}
-	jarray Display::getSupportedModes()
+	JArray Display::getSupportedModes()
 	{
 		return callObjectMethod(
 			"getSupportedModes",
 			"()[Landroid/view/Display$Mode;"
-		).object<jarray>();
+		);
 	}
-	jfloatArray Display::getSupportedRefreshRates()
+	JFloatArray Display::getSupportedRefreshRates()
 	{
 		return callObjectMethod(
 			"getSupportedRefreshRates",
 			"()[F"
-		).object<jfloatArray>();
+		);
 	}
 	jint Display::getWidth()
 	{
@@ -335,12 +338,12 @@ namespace android::view
 			"()Z"
 		);
 	}
-	jstring Display::toString()
+	JString Display::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::view
 

@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "./AppSearchSchema_PropertyConfig.hpp"
 
+class JString;
 
 namespace android::app::appsearch
 {
@@ -18,7 +18,7 @@ namespace android::app::appsearch
 		// Constructors
 		
 		// Methods
-		jstring getSchemaType();
+		JString getSchemaType();
 		jboolean shouldIndexNestedProperties();
 	};
 } // namespace android::app::appsearch

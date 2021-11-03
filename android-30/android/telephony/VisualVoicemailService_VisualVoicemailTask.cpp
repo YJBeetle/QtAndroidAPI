@@ -1,3 +1,4 @@
+#include "../../JObject.hpp"
 #include "./VisualVoicemailService_VisualVoicemailTask.hpp"
 
 namespace android::telephony
@@ -10,12 +11,12 @@ namespace android::telephony
 	// Constructors
 	
 	// Methods
-	jboolean VisualVoicemailService_VisualVoicemailTask::equals(jobject arg0)
+	jboolean VisualVoicemailService_VisualVoicemailTask::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	void VisualVoicemailService_VisualVoicemailTask::finish()

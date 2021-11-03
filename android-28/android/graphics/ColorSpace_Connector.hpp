@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JFloatArray;
 namespace android::graphics
 {
 	class ColorSpace;
@@ -28,8 +29,8 @@ namespace android::graphics
 		android::graphics::ColorSpace getDestination();
 		android::graphics::ColorSpace_RenderIntent getRenderIntent();
 		android::graphics::ColorSpace getSource();
-		jfloatArray transform(jfloatArray arg0);
-		jfloatArray transform(jfloat arg0, jfloat arg1, jfloat arg2);
+		JFloatArray transform(JFloatArray arg0);
+		JFloatArray transform(jfloat arg0, jfloat arg1, jfloat arg2);
 	};
 } // namespace android::graphics
 

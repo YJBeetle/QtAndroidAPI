@@ -22,6 +22,7 @@ namespace android::view
 {
 	class SurfaceControl;
 }
+class JString;
 
 namespace android::view
 {
@@ -56,7 +57,7 @@ namespace android::view
 		void release();
 		void setFrameRate(jfloat arg0, jint arg1);
 		void setFrameRate(jfloat arg0, jint arg1, jint arg2);
-		jstring toString();
+		JString toString();
 		void unlockCanvas(android::graphics::Canvas arg0);
 		void unlockCanvasAndPost(android::graphics::Canvas arg0);
 		void writeToParcel(android::os::Parcel arg0, jint arg1);

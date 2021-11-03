@@ -6,6 +6,7 @@ namespace android::service::media
 {
 	class MediaBrowserService;
 }
+class JObject;
 
 namespace android::service::media
 {
@@ -22,7 +23,7 @@ namespace android::service::media
 		
 		// Methods
 		void detach();
-		void sendResult(jobject arg0);
+		void sendResult(JObject arg0);
 	};
 } // namespace android::service::media
 

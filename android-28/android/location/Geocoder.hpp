@@ -6,6 +6,7 @@ namespace android::content
 {
 	class Context;
 }
+class JString;
 namespace java::util
 {
 	class Locale;
@@ -29,8 +30,8 @@ namespace android::location
 		// Methods
 		static jboolean isPresent();
 		JObject getFromLocation(jdouble arg0, jdouble arg1, jint arg2);
-		JObject getFromLocationName(jstring arg0, jint arg1);
-		JObject getFromLocationName(jstring arg0, jint arg1, jdouble arg2, jdouble arg3, jdouble arg4, jdouble arg5);
+		JObject getFromLocationName(JString arg0, jint arg1);
+		JObject getFromLocationName(JString arg0, jint arg1, jdouble arg2, jdouble arg3, jdouble arg4, jdouble arg5);
 	};
 } // namespace android::location
 

@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JArray;
+class JString;
 
 namespace android::print
 {
@@ -18,8 +20,8 @@ namespace android::print
 		
 		// Methods
 		void onWriteCancelled();
-		void onWriteFailed(jstring arg0);
-		void onWriteFinished(jarray arg0);
+		void onWriteFailed(JString arg0);
+		void onWriteFinished(JArray arg0);
 	};
 } // namespace android::print
 

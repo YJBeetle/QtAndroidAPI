@@ -1,3 +1,4 @@
+#include "../../JByteArray.hpp"
 #include "./PipedOutputStream.hpp"
 #include "../lang/Thread.hpp"
 #include "./PipedInputStream.hpp"
@@ -65,12 +66,12 @@ namespace java::io
 			"()I"
 		);
 	}
-	jint PipedInputStream::read(jbyteArray arg0, jint arg1, jint arg2)
+	jint PipedInputStream::read(JByteArray arg0, jint arg1, jint arg2)
 	{
 		return callMethod<jint>(
 			"read",
 			"([BII)I",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1,
 			arg2
 		);

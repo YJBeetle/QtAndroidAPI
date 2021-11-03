@@ -14,6 +14,8 @@ namespace android::view::textclassifier
 {
 	class ConversationAction;
 }
+class JString;
+class JString;
 
 namespace android::view::textclassifier
 {
@@ -27,14 +29,14 @@ namespace android::view::textclassifier
 		ConversationAction_Builder(QJniObject obj);
 		
 		// Constructors
-		ConversationAction_Builder(jstring arg0);
+		ConversationAction_Builder(JString arg0);
 		
 		// Methods
 		android::view::textclassifier::ConversationAction build();
 		android::view::textclassifier::ConversationAction_Builder setAction(android::app::RemoteAction arg0);
 		android::view::textclassifier::ConversationAction_Builder setConfidenceScore(jfloat arg0);
 		android::view::textclassifier::ConversationAction_Builder setExtras(android::os::Bundle arg0);
-		android::view::textclassifier::ConversationAction_Builder setTextReply(jstring arg0);
+		android::view::textclassifier::ConversationAction_Builder setTextReply(JString arg0);
 	};
 } // namespace android::view::textclassifier
 

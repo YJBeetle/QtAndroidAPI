@@ -2,7 +2,6 @@
 
 #include "../../../JObject.hpp"
 
-
 namespace android::media::projection
 {
 	class MediaProjection_Callback : public JObject

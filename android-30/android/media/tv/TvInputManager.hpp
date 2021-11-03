@@ -18,6 +18,7 @@ namespace android::os
 {
 	class Handler;
 }
+class JString;
 
 namespace android::media::tv
 {
@@ -25,15 +26,15 @@ namespace android::media::tv
 	{
 	public:
 		// Fields
-		static jstring ACTION_BLOCKED_RATINGS_CHANGED();
-		static jstring ACTION_PARENTAL_CONTROLS_ENABLED_CHANGED();
-		static jstring ACTION_QUERY_CONTENT_RATING_SYSTEMS();
-		static jstring ACTION_SETUP_INPUTS();
-		static jstring ACTION_VIEW_RECORDING_SCHEDULES();
+		static JString ACTION_BLOCKED_RATINGS_CHANGED();
+		static JString ACTION_PARENTAL_CONTROLS_ENABLED_CHANGED();
+		static JString ACTION_QUERY_CONTENT_RATING_SYSTEMS();
+		static JString ACTION_SETUP_INPUTS();
+		static JString ACTION_VIEW_RECORDING_SCHEDULES();
 		static jint INPUT_STATE_CONNECTED();
 		static jint INPUT_STATE_CONNECTED_STANDBY();
 		static jint INPUT_STATE_DISCONNECTED();
-		static jstring META_DATA_CONTENT_RATING_SYSTEMS();
+		static JString META_DATA_CONTENT_RATING_SYSTEMS();
 		static jint RECORDING_ERROR_INSUFFICIENT_SPACE();
 		static jint RECORDING_ERROR_RESOURCE_BUSY();
 		static jint RECORDING_ERROR_UNKNOWN();
@@ -69,8 +70,8 @@ namespace android::media::tv
 		
 		// Methods
 		JObject getBlockedRatings();
-		jint getInputState(jstring arg0);
-		android::media::tv::TvInputInfo getTvInputInfo(jstring arg0);
+		jint getInputState(JString arg0);
+		android::media::tv::TvInputInfo getTvInputInfo(JString arg0);
 		JObject getTvInputList();
 		jboolean isParentalControlsEnabled();
 		jboolean isRatingBlocked(android::media::tv::TvContentRating arg0);

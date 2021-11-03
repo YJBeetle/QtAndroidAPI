@@ -1,11 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../view/View.hpp"
-#include "./TextView.hpp"
-#include "./Button.hpp"
 #include "./CompoundButton.hpp"
 
+class JIntArray;
 namespace android::content
 {
 	class Context;
@@ -42,6 +39,7 @@ namespace android::view
 {
 	class MotionEvent;
 }
+class JString;
 
 namespace android::widget
 {
@@ -63,15 +61,15 @@ namespace android::widget
 		// Methods
 		void draw(android::graphics::Canvas arg0);
 		void drawableHotspotChanged(jfloat arg0, jfloat arg1);
-		jstring getAccessibilityClassName();
+		JString getAccessibilityClassName();
 		jint getCompoundPaddingLeft();
 		jint getCompoundPaddingRight();
 		jboolean getShowText();
 		jboolean getSplitTrack();
 		jint getSwitchMinWidth();
 		jint getSwitchPadding();
-		jstring getTextOff();
-		jstring getTextOn();
+		JString getTextOff();
+		JString getTextOn();
 		android::graphics::drawable::Drawable getThumbDrawable();
 		jint getThumbTextPadding();
 		android::graphics::BlendMode getThumbTintBlendMode();
@@ -92,8 +90,8 @@ namespace android::widget
 		void setSwitchTextAppearance(android::content::Context arg0, jint arg1);
 		void setSwitchTypeface(android::graphics::Typeface arg0);
 		void setSwitchTypeface(android::graphics::Typeface arg0, jint arg1);
-		void setTextOff(jstring arg0);
-		void setTextOn(jstring arg0);
+		void setTextOff(JString arg0);
+		void setTextOn(JString arg0);
 		void setThumbDrawable(android::graphics::drawable::Drawable arg0);
 		void setThumbIcon(android::graphics::drawable::Icon arg0);
 		void setThumbResource(jint arg0);

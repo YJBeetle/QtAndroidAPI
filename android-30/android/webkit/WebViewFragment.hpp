@@ -1,6 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "../app/Fragment.hpp"
 
 namespace android::os

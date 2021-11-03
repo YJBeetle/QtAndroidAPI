@@ -2,6 +2,13 @@
 
 #include "../../JObject.hpp"
 
+class JByteArray;
+class JObjectArray;
+class JArray;
+class JArray;
+class JArray;
+class JObject;
+class JString;
 namespace java::net
 {
 	class InetAddress;
@@ -23,17 +30,17 @@ namespace java::net
 		// Methods
 		static java::net::NetworkInterface getByIndex(jint arg0);
 		static java::net::NetworkInterface getByInetAddress(java::net::InetAddress arg0);
-		static java::net::NetworkInterface getByName(jstring arg0);
+		static java::net::NetworkInterface getByName(JString arg0);
 		static JObject getNetworkInterfaces();
 		static JObject networkInterfaces();
-		jboolean equals(jobject arg0);
-		jstring getDisplayName();
-		jbyteArray getHardwareAddress();
+		jboolean equals(JObject arg0);
+		JString getDisplayName();
+		JByteArray getHardwareAddress();
 		jint getIndex();
 		JObject getInetAddresses();
 		JObject getInterfaceAddresses();
 		jint getMTU();
-		jstring getName();
+		JString getName();
 		java::net::NetworkInterface getParent();
 		JObject getSubInterfaces();
 		jint hashCode();
@@ -44,7 +51,7 @@ namespace java::net
 		jboolean isVirtual();
 		JObject subInterfaces();
 		jboolean supportsMulticast();
-		jstring toString();
+		JString toString();
 	};
 } // namespace java::net
 

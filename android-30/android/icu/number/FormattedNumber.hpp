@@ -2,6 +2,9 @@
 
 #include "../../../JObject.hpp"
 
+class JString;
+class JObject;
+class JString;
 namespace java::math
 {
 	class BigDecimal;
@@ -22,13 +25,13 @@ namespace android::icu::number
 		
 		// Methods
 		jchar charAt(jint arg0);
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint hashCode();
 		jint length();
-		jstring subSequence(jint arg0, jint arg1);
+		JString subSequence(jint arg0, jint arg1);
 		java::math::BigDecimal toBigDecimal();
 		JObject toCharacterIterator();
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::icu::number
 

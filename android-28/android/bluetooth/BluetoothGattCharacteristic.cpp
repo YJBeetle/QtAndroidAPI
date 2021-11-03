@@ -1,8 +1,10 @@
+#include "../../JByteArray.hpp"
 #include "./BluetoothGattDescriptor.hpp"
 #include "./BluetoothGattService.hpp"
 #include "../os/Parcel.hpp"
 #include "../../java/lang/Float.hpp"
 #include "../../java/lang/Integer.hpp"
+#include "../../JString.hpp"
 #include "../../java/util/UUID.hpp"
 #include "./BluetoothGattCharacteristic.hpp"
 
@@ -297,13 +299,13 @@ namespace android::bluetooth
 			"()Landroid/bluetooth/BluetoothGattService;"
 		);
 	}
-	jstring BluetoothGattCharacteristic::getStringValue(jint arg0)
+	JString BluetoothGattCharacteristic::getStringValue(jint arg0)
 	{
 		return callObjectMethod(
 			"getStringValue",
 			"(I)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
 	java::util::UUID BluetoothGattCharacteristic::getUuid()
 	{
@@ -312,12 +314,12 @@ namespace android::bluetooth
 			"()Ljava/util/UUID;"
 		);
 	}
-	jbyteArray BluetoothGattCharacteristic::getValue()
+	JByteArray BluetoothGattCharacteristic::getValue()
 	{
 		return callObjectMethod(
 			"getValue",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
 	jint BluetoothGattCharacteristic::getWriteType()
 	{
@@ -326,20 +328,20 @@ namespace android::bluetooth
 			"()I"
 		);
 	}
-	jboolean BluetoothGattCharacteristic::setValue(jbyteArray arg0)
+	jboolean BluetoothGattCharacteristic::setValue(JByteArray arg0)
 	{
 		return callMethod<jboolean>(
 			"setValue",
 			"([B)Z",
-			arg0
+			arg0.object<jbyteArray>()
 		);
 	}
-	jboolean BluetoothGattCharacteristic::setValue(jstring arg0)
+	jboolean BluetoothGattCharacteristic::setValue(JString arg0)
 	{
 		return callMethod<jboolean>(
 			"setValue",
 			"(Ljava/lang/String;)Z",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	jboolean BluetoothGattCharacteristic::setValue(jint arg0, jint arg1, jint arg2)

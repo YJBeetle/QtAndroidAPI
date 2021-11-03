@@ -6,6 +6,8 @@ namespace android::widget
 {
 	class Filter_FilterResults;
 }
+class JString;
+class JObject;
 
 namespace android::widget
 {
@@ -22,9 +24,9 @@ namespace android::widget
 		Filter();
 		
 		// Methods
-		jstring convertResultToString(jobject arg0);
-		void filter(jstring arg0);
-		void filter(jstring arg0, JObject arg1);
+		JString convertResultToString(JObject arg0);
+		void filter(JString arg0);
+		void filter(JString arg0, JObject arg1);
 	};
 } // namespace android::widget
 

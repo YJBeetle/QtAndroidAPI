@@ -1,6 +1,7 @@
 #include "./Element_DataKind.hpp"
 #include "./Element_DataType.hpp"
 #include "./RenderScript.hpp"
+#include "../../JString.hpp"
 #include "./Element.hpp"
 
 namespace android::renderscript
@@ -682,13 +683,13 @@ namespace android::renderscript
 			"()I"
 		);
 	}
-	jstring Element::getSubElementName(jint arg0)
+	JString Element::getSubElementName(jint arg0)
 	{
 		return callObjectMethod(
 			"getSubElementName",
 			"(I)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
 	jint Element::getSubElementOffsetBytes(jint arg0)
 	{

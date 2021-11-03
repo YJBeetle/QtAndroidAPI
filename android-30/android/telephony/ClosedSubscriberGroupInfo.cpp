@@ -1,4 +1,6 @@
 #include "../os/Parcel.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./ClosedSubscriberGroupInfo.hpp"
 
 namespace android::telephony
@@ -26,12 +28,12 @@ namespace android::telephony
 			"()I"
 		);
 	}
-	jboolean ClosedSubscriberGroupInfo::equals(jobject arg0)
+	jboolean ClosedSubscriberGroupInfo::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint ClosedSubscriberGroupInfo::getCsgIdentity()
@@ -48,12 +50,12 @@ namespace android::telephony
 			"()Z"
 		);
 	}
-	jstring ClosedSubscriberGroupInfo::getHomeNodebName()
+	JString ClosedSubscriberGroupInfo::getHomeNodebName()
 	{
 		return callObjectMethod(
 			"getHomeNodebName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint ClosedSubscriberGroupInfo::hashCode()
 	{
@@ -62,12 +64,12 @@ namespace android::telephony
 			"()I"
 		);
 	}
-	jstring ClosedSubscriberGroupInfo::toString()
+	JString ClosedSubscriberGroupInfo::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void ClosedSubscriberGroupInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

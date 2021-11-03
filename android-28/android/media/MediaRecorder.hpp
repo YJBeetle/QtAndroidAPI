@@ -34,6 +34,7 @@ namespace java::io
 {
 	class FileDescriptor;
 }
+class JString;
 
 namespace android::media
 {
@@ -89,7 +90,7 @@ namespace android::media
 		void setOrientationHint(jint arg0);
 		void setOutputFile(java::io::File arg0);
 		void setOutputFile(java::io::FileDescriptor arg0);
-		void setOutputFile(jstring arg0);
+		void setOutputFile(JString arg0);
 		void setOutputFormat(jint arg0);
 		jboolean setPreferredDevice(android::media::AudioDeviceInfo arg0);
 		void setPreviewDisplay(android::view::Surface arg0);

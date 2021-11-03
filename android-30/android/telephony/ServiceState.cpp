@@ -1,4 +1,7 @@
+#include "../../JIntArray.hpp"
 #include "../os/Parcel.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./ServiceState.hpp"
 
 namespace android::telephony
@@ -99,12 +102,12 @@ namespace android::telephony
 			"()I"
 		);
 	}
-	jboolean ServiceState::equals(jobject arg0)
+	jboolean ServiceState::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint ServiceState::getCdmaNetworkId()
@@ -121,12 +124,12 @@ namespace android::telephony
 			"()I"
 		);
 	}
-	jintArray ServiceState::getCellBandwidths()
+	JIntArray ServiceState::getCellBandwidths()
 	{
 		return callObjectMethod(
 			"getCellBandwidths",
 			"()[I"
-		).object<jintArray>();
+		);
 	}
 	jint ServiceState::getChannelNumber()
 	{
@@ -156,26 +159,26 @@ namespace android::telephony
 			"()Ljava/util/List;"
 		);
 	}
-	jstring ServiceState::getOperatorAlphaLong()
+	JString ServiceState::getOperatorAlphaLong()
 	{
 		return callObjectMethod(
 			"getOperatorAlphaLong",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ServiceState::getOperatorAlphaShort()
+	JString ServiceState::getOperatorAlphaShort()
 	{
 		return callObjectMethod(
 			"getOperatorAlphaShort",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ServiceState::getOperatorNumeric()
+	JString ServiceState::getOperatorNumeric()
 	{
 		return callObjectMethod(
 			"getOperatorNumeric",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jboolean ServiceState::getRoaming()
 	{
@@ -213,14 +216,14 @@ namespace android::telephony
 			arg0
 		);
 	}
-	void ServiceState::setOperatorName(jstring arg0, jstring arg1, jstring arg2)
+	void ServiceState::setOperatorName(JString arg0, JString arg1, JString arg2)
 	{
 		callMethod<void>(
 			"setOperatorName",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1,
-			arg2
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2.object<jstring>()
 		);
 	}
 	void ServiceState::setRoaming(jboolean arg0)
@@ -253,12 +256,12 @@ namespace android::telephony
 			"()V"
 		);
 	}
-	jstring ServiceState::toString()
+	JString ServiceState::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void ServiceState::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

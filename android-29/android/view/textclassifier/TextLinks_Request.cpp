@@ -2,6 +2,8 @@
 #include "../../os/LocaleList.hpp"
 #include "../../os/Parcel.hpp"
 #include "./TextClassifier_EntityConfig.hpp"
+#include "../../../JString.hpp"
+#include "../../../JString.hpp"
 #include "./TextLinks_Request.hpp"
 
 namespace android::view::textclassifier
@@ -29,12 +31,12 @@ namespace android::view::textclassifier
 			"()I"
 		);
 	}
-	jstring TextLinks_Request::getCallingPackageName()
+	JString TextLinks_Request::getCallingPackageName()
 	{
 		return callObjectMethod(
 			"getCallingPackageName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::os::LocaleList TextLinks_Request::getDefaultLocales()
 	{
@@ -57,12 +59,12 @@ namespace android::view::textclassifier
 			"()Landroid/os/Bundle;"
 		);
 	}
-	jstring TextLinks_Request::getText()
+	JString TextLinks_Request::getText()
 	{
 		return callObjectMethod(
 			"getText",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	void TextLinks_Request::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

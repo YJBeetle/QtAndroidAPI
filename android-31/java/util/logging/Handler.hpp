@@ -6,6 +6,7 @@ namespace java::lang
 {
 	class Exception;
 }
+class JString;
 namespace java::util::logging
 {
 	class ErrorManager;
@@ -43,14 +44,14 @@ namespace java::util::logging
 		// Methods
 		void close();
 		void flush();
-		jstring getEncoding();
+		JString getEncoding();
 		java::util::logging::ErrorManager getErrorManager();
 		JObject getFilter();
 		java::util::logging::Formatter getFormatter();
 		java::util::logging::Level getLevel();
 		jboolean isLoggable(java::util::logging::LogRecord arg0);
 		void publish(java::util::logging::LogRecord arg0);
-		void setEncoding(jstring arg0);
+		void setEncoding(JString arg0);
 		void setErrorManager(java::util::logging::ErrorManager arg0);
 		void setFilter(JObject arg0);
 		void setFormatter(java::util::logging::Formatter arg0);

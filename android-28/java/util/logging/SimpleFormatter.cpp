@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./LogRecord.hpp"
 #include "./SimpleFormatter.hpp"
 
@@ -16,13 +17,13 @@ namespace java::util::logging
 		) {}
 	
 	// Methods
-	jstring SimpleFormatter::format(java::util::logging::LogRecord arg0)
+	JString SimpleFormatter::format(java::util::logging::LogRecord arg0)
 	{
 		return callObjectMethod(
 			"format",
 			"(Ljava/util/logging/LogRecord;)Ljava/lang/String;",
 			arg0.object()
-		).object<jstring>();
+		);
 	}
 } // namespace java::util::logging
 

@@ -1,4 +1,5 @@
 #include "../ComponentName.hpp"
+#include "../../../JString.hpp"
 #include "./LauncherApps_ShortcutQuery.hpp"
 
 namespace android::content::pm
@@ -82,12 +83,12 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	android::content::pm::LauncherApps_ShortcutQuery LauncherApps_ShortcutQuery::setPackage(jstring arg0)
+	android::content::pm::LauncherApps_ShortcutQuery LauncherApps_ShortcutQuery::setPackage(JString arg0)
 	{
 		return callObjectMethod(
 			"setPackage",
 			"(Ljava/lang/String;)Landroid/content/pm/LauncherApps$ShortcutQuery;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::content::pm::LauncherApps_ShortcutQuery LauncherApps_ShortcutQuery::setQueryFlags(jint arg0)

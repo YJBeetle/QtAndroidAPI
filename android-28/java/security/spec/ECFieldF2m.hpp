@@ -2,6 +2,8 @@
 
 #include "../../../JObject.hpp"
 
+class JIntArray;
+class JObject;
 namespace java::math
 {
 	class BigInteger;
@@ -20,14 +22,14 @@ namespace java::security::spec
 		
 		// Constructors
 		ECFieldF2m(jint arg0);
-		ECFieldF2m(jint arg0, jintArray arg1);
+		ECFieldF2m(jint arg0, JIntArray arg1);
 		ECFieldF2m(jint arg0, java::math::BigInteger arg1);
 		
 		// Methods
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint getFieldSize();
 		jint getM();
-		jintArray getMidTermsOfReductionPolynomial();
+		JIntArray getMidTermsOfReductionPolynomial();
 		java::math::BigInteger getReductionPolynomial();
 		jint hashCode();
 	};

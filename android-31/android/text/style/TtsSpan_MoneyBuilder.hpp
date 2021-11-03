@@ -1,9 +1,8 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "./TtsSpan_Builder.hpp"
 #include "./TtsSpan_SemioticClassBuilder.hpp"
 
+class JString;
 
 namespace android::text::style
 {
@@ -20,11 +19,11 @@ namespace android::text::style
 		TtsSpan_MoneyBuilder();
 		
 		// Methods
-		android::text::style::TtsSpan_MoneyBuilder setCurrency(jstring arg0);
-		android::text::style::TtsSpan_MoneyBuilder setFractionalPart(jstring arg0);
-		android::text::style::TtsSpan_MoneyBuilder setIntegerPart(jstring arg0);
+		android::text::style::TtsSpan_MoneyBuilder setCurrency(JString arg0);
+		android::text::style::TtsSpan_MoneyBuilder setFractionalPart(JString arg0);
+		android::text::style::TtsSpan_MoneyBuilder setIntegerPart(JString arg0);
 		android::text::style::TtsSpan_MoneyBuilder setIntegerPart(jlong arg0);
-		android::text::style::TtsSpan_MoneyBuilder setQuantity(jstring arg0);
+		android::text::style::TtsSpan_MoneyBuilder setQuantity(JString arg0);
 	};
 } // namespace android::text::style
 

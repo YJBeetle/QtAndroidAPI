@@ -1,3 +1,5 @@
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
 #include "./CertPathValidatorException_BasicReason.hpp"
 
 namespace java::security::cert
@@ -66,22 +68,22 @@ namespace java::security::cert
 	// Constructors
 	
 	// Methods
-	java::security::cert::CertPathValidatorException_BasicReason CertPathValidatorException_BasicReason::valueOf(jstring arg0)
+	java::security::cert::CertPathValidatorException_BasicReason CertPathValidatorException_BasicReason::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"java.security.cert.CertPathValidatorException$BasicReason",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/security/cert/CertPathValidatorException$BasicReason;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray CertPathValidatorException_BasicReason::values()
+	JArray CertPathValidatorException_BasicReason::values()
 	{
 		return callStaticObjectMethod(
 			"java.security.cert.CertPathValidatorException$BasicReason",
 			"values",
 			"()[Ljava/security/cert/CertPathValidatorException$BasicReason;"
-		).object<jarray>();
+		);
 	}
 } // namespace java::security::cert
 

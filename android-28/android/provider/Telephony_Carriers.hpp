@@ -6,6 +6,7 @@ namespace android::net
 {
 	class Uri;
 }
+class JString;
 
 namespace android::provider
 {
@@ -13,32 +14,32 @@ namespace android::provider
 	{
 	public:
 		// Fields
-		static jstring APN();
-		static jstring AUTH_TYPE();
-		static jstring BEARER();
-		static jstring CARRIER_ENABLED();
+		static JString APN();
+		static JString AUTH_TYPE();
+		static JString BEARER();
+		static JString CARRIER_ENABLED();
 		static android::net::Uri CONTENT_URI();
-		static jstring CURRENT();
-		static jstring DEFAULT_SORT_ORDER();
-		static jstring MCC();
-		static jstring MMSC();
-		static jstring MMSPORT();
-		static jstring MMSPROXY();
-		static jstring MNC();
-		static jstring MVNO_MATCH_DATA();
-		static jstring MVNO_TYPE();
-		static jstring NAME();
-		static jstring NETWORK_TYPE_BITMASK();
-		static jstring NUMERIC();
-		static jstring PASSWORD();
-		static jstring PORT();
-		static jstring PROTOCOL();
-		static jstring PROXY();
-		static jstring ROAMING_PROTOCOL();
-		static jstring SERVER();
-		static jstring SUBSCRIPTION_ID();
-		static jstring TYPE();
-		static jstring USER();
+		static JString CURRENT();
+		static JString DEFAULT_SORT_ORDER();
+		static JString MCC();
+		static JString MMSC();
+		static JString MMSPORT();
+		static JString MMSPROXY();
+		static JString MNC();
+		static JString MVNO_MATCH_DATA();
+		static JString MVNO_TYPE();
+		static JString NAME();
+		static JString NETWORK_TYPE_BITMASK();
+		static JString NUMERIC();
+		static JString PASSWORD();
+		static JString PORT();
+		static JString PROTOCOL();
+		static JString PROXY();
+		static JString ROAMING_PROTOCOL();
+		static JString SERVER();
+		static JString SUBSCRIPTION_ID();
+		static JString TYPE();
+		static JString USER();
 		
 		// QJniObject forward
 		template<typename ...Ts> explicit Telephony_Carriers(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}

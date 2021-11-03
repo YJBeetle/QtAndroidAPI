@@ -1,4 +1,6 @@
 #include "../io/ObjectInputStream.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./ZoneOffset.hpp"
 #include "./format/TextStyle.hpp"
 #include "./zone/ZoneRules.hpp"
@@ -40,32 +42,32 @@ namespace java::time
 			"()Ljava/util/Set;"
 		);
 	}
-	java::time::ZoneId ZoneId::of(jstring arg0)
+	java::time::ZoneId ZoneId::of(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"java.time.ZoneId",
 			"of",
 			"(Ljava/lang/String;)Ljava/time/ZoneId;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	java::time::ZoneId ZoneId::of(jstring arg0, JObject arg1)
+	java::time::ZoneId ZoneId::of(JString arg0, JObject arg1)
 	{
 		return callStaticObjectMethod(
 			"java.time.ZoneId",
 			"of",
 			"(Ljava/lang/String;Ljava/util/Map;)Ljava/time/ZoneId;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
-	java::time::ZoneId ZoneId::ofOffset(jstring arg0, java::time::ZoneOffset arg1)
+	java::time::ZoneId ZoneId::ofOffset(JString arg0, java::time::ZoneOffset arg1)
 	{
 		return callStaticObjectMethod(
 			"java.time.ZoneId",
 			"ofOffset",
 			"(Ljava/lang/String;Ljava/time/ZoneOffset;)Ljava/time/ZoneId;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
@@ -77,29 +79,29 @@ namespace java::time
 			"()Ljava/time/ZoneId;"
 		);
 	}
-	jboolean ZoneId::equals(jobject arg0)
+	jboolean ZoneId::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jstring ZoneId::getDisplayName(java::time::format::TextStyle arg0, java::util::Locale arg1)
+	JString ZoneId::getDisplayName(java::time::format::TextStyle arg0, java::util::Locale arg1)
 	{
 		return callObjectMethod(
 			"getDisplayName",
 			"(Ljava/time/format/TextStyle;Ljava/util/Locale;)Ljava/lang/String;",
 			arg0.object(),
 			arg1.object()
-		).object<jstring>();
+		);
 	}
-	jstring ZoneId::getId()
+	JString ZoneId::getId()
 	{
 		return callObjectMethod(
 			"getId",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	java::time::zone::ZoneRules ZoneId::getRules()
 	{
@@ -122,12 +124,12 @@ namespace java::time
 			"()Ljava/time/ZoneId;"
 		);
 	}
-	jstring ZoneId::toString()
+	JString ZoneId::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::time
 

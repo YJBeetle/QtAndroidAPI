@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JString;
 
 namespace javax::xml::transform
 {
@@ -9,16 +10,16 @@ namespace javax::xml::transform
 	{
 	public:
 		// Fields
-		static jstring CDATA_SECTION_ELEMENTS();
-		static jstring DOCTYPE_PUBLIC();
-		static jstring DOCTYPE_SYSTEM();
-		static jstring ENCODING();
-		static jstring INDENT();
-		static jstring MEDIA_TYPE();
-		static jstring _METHOD();
-		static jstring OMIT_XML_DECLARATION();
-		static jstring STANDALONE();
-		static jstring VERSION();
+		static JString CDATA_SECTION_ELEMENTS();
+		static JString DOCTYPE_PUBLIC();
+		static JString DOCTYPE_SYSTEM();
+		static JString ENCODING();
+		static JString INDENT();
+		static JString MEDIA_TYPE();
+		static JString _METHOD();
+		static JString OMIT_XML_DECLARATION();
+		static JString STANDALONE();
+		static JString VERSION();
 		
 		// QJniObject forward
 		template<typename ...Ts> explicit OutputKeys(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}

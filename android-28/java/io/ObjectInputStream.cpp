@@ -1,10 +1,15 @@
+#include "../../JByteArray.hpp"
+#include "../../JArray.hpp"
 #include "./IOException.hpp"
 #include "./InputStream.hpp"
 #include "./ObjectInputStream_GetField.hpp"
 #include "./ObjectStreamClass.hpp"
 #include "../lang/Boolean.hpp"
+#include "../../JClass.hpp"
 #include "../lang/ClassLoader.hpp"
 #include "../lang/Enum.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./ObjectInputStream.hpp"
 
 namespace java::io
@@ -58,12 +63,12 @@ namespace java::io
 			"()I"
 		);
 	}
-	jint ObjectInputStream::read(jbyteArray arg0, jint arg1, jint arg2)
+	jint ObjectInputStream::read(JByteArray arg0, jint arg1, jint arg2)
 	{
 		return callMethod<jint>(
 			"read",
 			"([BII)I",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1,
 			arg2
 		);
@@ -110,20 +115,20 @@ namespace java::io
 			"()F"
 		);
 	}
-	void ObjectInputStream::readFully(jbyteArray arg0)
+	void ObjectInputStream::readFully(JByteArray arg0)
 	{
 		callMethod<void>(
 			"readFully",
 			"([B)V",
-			arg0
+			arg0.object<jbyteArray>()
 		);
 	}
-	void ObjectInputStream::readFully(jbyteArray arg0, jint arg1, jint arg2)
+	void ObjectInputStream::readFully(JByteArray arg0, jint arg1, jint arg2)
 	{
 		callMethod<void>(
 			"readFully",
 			"([BII)V",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1,
 			arg2
 		);
@@ -135,12 +140,12 @@ namespace java::io
 			"()I"
 		);
 	}
-	jstring ObjectInputStream::readLine()
+	JString ObjectInputStream::readLine()
 	{
 		return callObjectMethod(
 			"readLine",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jlong ObjectInputStream::readLong()
 	{
@@ -149,12 +154,12 @@ namespace java::io
 			"()J"
 		);
 	}
-	jobject ObjectInputStream::readObject()
+	JObject ObjectInputStream::readObject()
 	{
 		return callObjectMethod(
 			"readObject",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
 	jshort ObjectInputStream::readShort()
 	{
@@ -163,19 +168,19 @@ namespace java::io
 			"()S"
 		);
 	}
-	jstring ObjectInputStream::readUTF()
+	JString ObjectInputStream::readUTF()
 	{
 		return callObjectMethod(
 			"readUTF",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jobject ObjectInputStream::readUnshared()
+	JObject ObjectInputStream::readUnshared()
 	{
 		return callObjectMethod(
 			"readUnshared",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
 	jint ObjectInputStream::readUnsignedByte()
 	{

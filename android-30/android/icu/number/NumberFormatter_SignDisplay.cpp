@@ -1,3 +1,5 @@
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
 #include "./NumberFormatter_SignDisplay.hpp"
 
 namespace android::icu::number
@@ -66,22 +68,22 @@ namespace android::icu::number
 	// Constructors
 	
 	// Methods
-	android::icu::number::NumberFormatter_SignDisplay NumberFormatter_SignDisplay::valueOf(jstring arg0)
+	android::icu::number::NumberFormatter_SignDisplay NumberFormatter_SignDisplay::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.icu.number.NumberFormatter$SignDisplay",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/icu/number/NumberFormatter$SignDisplay;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray NumberFormatter_SignDisplay::values()
+	JArray NumberFormatter_SignDisplay::values()
 	{
 		return callStaticObjectMethod(
 			"android.icu.number.NumberFormatter$SignDisplay",
 			"values",
 			"()[Landroid/icu/number/NumberFormatter$SignDisplay;"
-		).object<jarray>();
+		);
 	}
 } // namespace android::icu::number
 

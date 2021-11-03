@@ -1,9 +1,8 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "../Exception.hpp"
 #include "../RuntimeException.hpp"
 
+class JArray;
 namespace java::io
 {
 	class ObjectInputStream;
@@ -12,6 +11,8 @@ namespace java::io
 {
 	class ObjectOutputStream;
 }
+class JString;
+class JThrowable;
 
 namespace java::lang::reflect
 {
@@ -25,11 +26,11 @@ namespace java::lang::reflect
 		UndeclaredThrowableException(QJniObject obj);
 		
 		// Constructors
-		UndeclaredThrowableException(jthrowable arg0);
-		UndeclaredThrowableException(jthrowable arg0, jstring arg1);
+		UndeclaredThrowableException(JThrowable arg0);
+		UndeclaredThrowableException(JThrowable arg0, JString arg1);
 		
 		// Methods
-		jthrowable getUndeclaredThrowable();
+		JThrowable getUndeclaredThrowable();
 	};
 } // namespace java::lang::reflect
 

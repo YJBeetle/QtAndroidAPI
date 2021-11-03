@@ -1,10 +1,9 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "./Exception.hpp"
-#include "./RuntimeException.hpp"
 #include "./IllegalArgumentException.hpp"
 
+class JString;
+class JString;
 
 namespace java::lang
 {
@@ -19,7 +18,7 @@ namespace java::lang
 		
 		// Constructors
 		NumberFormatException();
-		NumberFormatException(jstring arg0);
+		NumberFormatException(JString arg0);
 		
 		// Methods
 	};

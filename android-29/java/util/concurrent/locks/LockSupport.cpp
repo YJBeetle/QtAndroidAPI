@@ -1,3 +1,4 @@
+#include "../../../../JObject.hpp"
 #include "../../../lang/Thread.hpp"
 #include "./LockSupport.hpp"
 
@@ -11,14 +12,14 @@ namespace java::util::concurrent::locks
 	// Constructors
 	
 	// Methods
-	jobject LockSupport::getBlocker(java::lang::Thread arg0)
+	JObject LockSupport::getBlocker(java::lang::Thread arg0)
 	{
 		return callStaticObjectMethod(
 			"java.util.concurrent.locks.LockSupport",
 			"getBlocker",
 			"(Ljava/lang/Thread;)Ljava/lang/Object;",
 			arg0.object()
-		).object<jobject>();
+		);
 	}
 	void LockSupport::park()
 	{
@@ -28,13 +29,13 @@ namespace java::util::concurrent::locks
 			"()V"
 		);
 	}
-	void LockSupport::park(jobject arg0)
+	void LockSupport::park(JObject arg0)
 	{
 		callStaticMethod<void>(
 			"java.util.concurrent.locks.LockSupport",
 			"park",
 			"(Ljava/lang/Object;)V",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	void LockSupport::parkNanos(jlong arg0)
@@ -46,13 +47,13 @@ namespace java::util::concurrent::locks
 			arg0
 		);
 	}
-	void LockSupport::parkNanos(jobject arg0, jlong arg1)
+	void LockSupport::parkNanos(JObject arg0, jlong arg1)
 	{
 		callStaticMethod<void>(
 			"java.util.concurrent.locks.LockSupport",
 			"parkNanos",
 			"(Ljava/lang/Object;J)V",
-			arg0,
+			arg0.object<jobject>(),
 			arg1
 		);
 	}
@@ -65,23 +66,23 @@ namespace java::util::concurrent::locks
 			arg0
 		);
 	}
-	void LockSupport::parkUntil(jobject arg0, jlong arg1)
+	void LockSupport::parkUntil(JObject arg0, jlong arg1)
 	{
 		callStaticMethod<void>(
 			"java.util.concurrent.locks.LockSupport",
 			"parkUntil",
 			"(Ljava/lang/Object;J)V",
-			arg0,
+			arg0.object<jobject>(),
 			arg1
 		);
 	}
-	void LockSupport::setCurrentBlocker(jobject arg0)
+	void LockSupport::setCurrentBlocker(JObject arg0)
 	{
 		callStaticMethod<void>(
 			"java.util.concurrent.locks.LockSupport",
 			"setCurrentBlocker",
 			"(Ljava/lang/Object;)V",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	void LockSupport::unpark(java::lang::Thread arg0)

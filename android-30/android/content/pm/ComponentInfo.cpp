@@ -1,5 +1,6 @@
 #include "./ApplicationInfo.hpp"
 #include "../../os/Parcel.hpp"
+#include "../../../JString.hpp"
 #include "./ComponentInfo.hpp"
 
 namespace android::content::pm
@@ -36,19 +37,19 @@ namespace android::content::pm
 			"exported"
 		);
 	}
-	jstring ComponentInfo::processName()
+	JString ComponentInfo::processName()
 	{
 		return getObjectField(
 			"processName",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ComponentInfo::splitName()
+	JString ComponentInfo::splitName()
 	{
 		return getObjectField(
 			"splitName",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QJniObject forward

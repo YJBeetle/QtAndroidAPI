@@ -1,4 +1,5 @@
 #include "../os/Parcel.hpp"
+#include "../../JString.hpp"
 #include "./ApplicationErrorReport_RunningServiceInfo.hpp"
 
 namespace android::app
@@ -10,12 +11,12 @@ namespace android::app
 			"durationMillis"
 		);
 	}
-	jstring ApplicationErrorReport_RunningServiceInfo::serviceDetails()
+	JString ApplicationErrorReport_RunningServiceInfo::serviceDetails()
 	{
 		return getObjectField(
 			"serviceDetails",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QJniObject forward
@@ -35,13 +36,13 @@ namespace android::app
 		) {}
 	
 	// Methods
-	void ApplicationErrorReport_RunningServiceInfo::dump(JObject arg0, jstring arg1)
+	void ApplicationErrorReport_RunningServiceInfo::dump(JObject arg0, JString arg1)
 	{
 		callMethod<void>(
 			"dump",
 			"(Landroid/util/Printer;Ljava/lang/String;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
 	void ApplicationErrorReport_RunningServiceInfo::writeToParcel(android::os::Parcel arg0, jint arg1)

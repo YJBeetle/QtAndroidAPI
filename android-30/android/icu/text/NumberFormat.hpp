@@ -1,9 +1,8 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "../../../java/text/Format.hpp"
 #include "./UFormat.hpp"
 
+class JArray;
 namespace android::icu::math
 {
 	class BigDecimal;
@@ -28,10 +27,13 @@ namespace android::icu::util
 {
 	class ULocale;
 }
+class JString;
 namespace java::lang
 {
 	class Number;
 }
+class JObject;
+class JString;
 namespace java::lang
 {
 	class StringBuffer;
@@ -84,7 +86,7 @@ namespace android::icu::text
 		NumberFormat();
 		
 		// Methods
-		static jarray getAvailableLocales();
+		static JArray getAvailableLocales();
 		static android::icu::text::NumberFormat getCurrencyInstance();
 		static android::icu::text::NumberFormat getCurrencyInstance(android::icu::util::ULocale arg0);
 		static android::icu::text::NumberFormat getCurrencyInstance(java::util::Locale arg0);
@@ -106,18 +108,18 @@ namespace android::icu::text
 		static android::icu::text::NumberFormat getScientificInstance();
 		static android::icu::text::NumberFormat getScientificInstance(android::icu::util::ULocale arg0);
 		static android::icu::text::NumberFormat getScientificInstance(java::util::Locale arg0);
-		jobject clone();
-		jboolean equals(jobject arg0);
-		jstring format(android::icu::math::BigDecimal arg0);
-		jstring format(android::icu::util::CurrencyAmount arg0);
-		jstring format(jdouble arg0);
-		jstring format(java::math::BigDecimal arg0);
-		jstring format(java::math::BigInteger arg0);
-		jstring format(jlong arg0);
+		JObject clone();
+		jboolean equals(JObject arg0);
+		JString format(android::icu::math::BigDecimal arg0);
+		JString format(android::icu::util::CurrencyAmount arg0);
+		JString format(jdouble arg0);
+		JString format(java::math::BigDecimal arg0);
+		JString format(java::math::BigInteger arg0);
+		JString format(jlong arg0);
 		java::lang::StringBuffer format(android::icu::math::BigDecimal arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2);
 		java::lang::StringBuffer format(android::icu::util::CurrencyAmount arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2);
 		java::lang::StringBuffer format(jdouble arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2);
-		java::lang::StringBuffer format(jobject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2);
+		java::lang::StringBuffer format(JObject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2);
 		java::lang::StringBuffer format(java::math::BigDecimal arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2);
 		java::lang::StringBuffer format(java::math::BigInteger arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2);
 		java::lang::StringBuffer format(jlong arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2);
@@ -132,10 +134,10 @@ namespace android::icu::text
 		jboolean isGroupingUsed();
 		jboolean isParseIntegerOnly();
 		jboolean isParseStrict();
-		java::lang::Number parse(jstring arg0);
-		java::lang::Number parse(jstring arg0, java::text::ParsePosition arg1);
-		android::icu::util::CurrencyAmount parseCurrency(jstring arg0, java::text::ParsePosition arg1);
-		jobject parseObject(jstring arg0, java::text::ParsePosition arg1);
+		java::lang::Number parse(JString arg0);
+		java::lang::Number parse(JString arg0, java::text::ParsePosition arg1);
+		android::icu::util::CurrencyAmount parseCurrency(JString arg0, java::text::ParsePosition arg1);
+		JObject parseObject(JString arg0, java::text::ParsePosition arg1);
 		void setContext(android::icu::text::DisplayContext arg0);
 		void setCurrency(android::icu::util::Currency arg0);
 		void setGroupingUsed(jboolean arg0);

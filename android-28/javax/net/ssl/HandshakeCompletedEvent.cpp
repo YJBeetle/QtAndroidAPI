@@ -1,3 +1,6 @@
+#include "../../../JArray.hpp"
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
 #include "./SSLSocket.hpp"
 #include "./HandshakeCompletedEvent.hpp"
 
@@ -18,19 +21,19 @@ namespace javax::net::ssl
 		) {}
 	
 	// Methods
-	jstring HandshakeCompletedEvent::getCipherSuite()
+	JString HandshakeCompletedEvent::getCipherSuite()
 	{
 		return callObjectMethod(
 			"getCipherSuite",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jarray HandshakeCompletedEvent::getLocalCertificates()
+	JArray HandshakeCompletedEvent::getLocalCertificates()
 	{
 		return callObjectMethod(
 			"getLocalCertificates",
 			"()[Ljava/security/cert/Certificate;"
-		).object<jarray>();
+		);
 	}
 	JObject HandshakeCompletedEvent::getLocalPrincipal()
 	{
@@ -39,19 +42,19 @@ namespace javax::net::ssl
 			"()Ljava/security/Principal;"
 		);
 	}
-	jarray HandshakeCompletedEvent::getPeerCertificateChain()
+	JArray HandshakeCompletedEvent::getPeerCertificateChain()
 	{
 		return callObjectMethod(
 			"getPeerCertificateChain",
 			"()[Ljavax/security/cert/X509Certificate;"
-		).object<jarray>();
+		);
 	}
-	jarray HandshakeCompletedEvent::getPeerCertificates()
+	JArray HandshakeCompletedEvent::getPeerCertificates()
 	{
 		return callObjectMethod(
 			"getPeerCertificates",
 			"()[Ljava/security/cert/Certificate;"
-		).object<jarray>();
+		);
 	}
 	JObject HandshakeCompletedEvent::getPeerPrincipal()
 	{

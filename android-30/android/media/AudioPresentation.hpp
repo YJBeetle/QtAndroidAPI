@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JObject;
+class JString;
 namespace java::util
 {
 	class Locale;
@@ -26,7 +28,7 @@ namespace android::media
 		// Constructors
 		
 		// Methods
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		JObject getLabels();
 		java::util::Locale getLocale();
 		jint getMasteringIndication();
@@ -36,7 +38,7 @@ namespace android::media
 		jboolean hasDialogueEnhancement();
 		jboolean hasSpokenSubtitles();
 		jint hashCode();
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::media
 

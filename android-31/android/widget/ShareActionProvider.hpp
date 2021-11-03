@@ -1,6 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "../view/ActionProvider.hpp"
 
 namespace android::content
@@ -15,6 +14,7 @@ namespace android::view
 {
 	class View;
 }
+class JString;
 
 namespace android::widget
 {
@@ -22,7 +22,7 @@ namespace android::widget
 	{
 	public:
 		// Fields
-		static jstring DEFAULT_SHARE_HISTORY_FILE_NAME();
+		static JString DEFAULT_SHARE_HISTORY_FILE_NAME();
 		
 		// QJniObject forward
 		template<typename ...Ts> explicit ShareActionProvider(const char *className, const char *sig, Ts...agv) : android::view::ActionProvider(className, sig, std::forward<Ts>(agv)...) {}
@@ -36,7 +36,7 @@ namespace android::widget
 		android::view::View onCreateActionView();
 		void onPrepareSubMenu(JObject arg0);
 		void setOnShareTargetSelectedListener(JObject arg0);
-		void setShareHistoryFileName(jstring arg0);
+		void setShareHistoryFileName(JString arg0);
 		void setShareIntent(android::content::Intent arg0);
 	};
 } // namespace android::widget

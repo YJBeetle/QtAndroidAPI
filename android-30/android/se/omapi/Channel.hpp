@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JByteArray;
 namespace android::se::omapi
 {
 	class Session;
@@ -22,12 +23,12 @@ namespace android::se::omapi
 		
 		// Methods
 		void close();
-		jbyteArray getSelectResponse();
+		JByteArray getSelectResponse();
 		android::se::omapi::Session getSession();
 		jboolean isBasicChannel();
 		jboolean isOpen();
 		jboolean selectNext();
-		jbyteArray transmit(jbyteArray arg0);
+		JByteArray transmit(JByteArray arg0);
 	};
 } // namespace android::se::omapi
 

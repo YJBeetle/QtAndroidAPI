@@ -1,7 +1,5 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "./CharacterStyle.hpp"
 #include "./MetricAffectingSpan.hpp"
 
 namespace android::os

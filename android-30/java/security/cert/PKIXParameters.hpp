@@ -2,6 +2,8 @@
 
 #include "../../../JObject.hpp"
 
+class JObject;
+class JString;
 namespace java::security
 {
 	class KeyStore;
@@ -37,13 +39,13 @@ namespace java::security::cert
 		// Methods
 		void addCertPathChecker(java::security::cert::PKIXCertPathChecker arg0);
 		void addCertStore(java::security::cert::CertStore arg0);
-		jobject clone();
+		JObject clone();
 		JObject getCertPathCheckers();
 		JObject getCertStores();
 		java::util::Date getDate();
 		JObject getInitialPolicies();
 		jboolean getPolicyQualifiersRejected();
-		jstring getSigProvider();
+		JString getSigProvider();
 		JObject getTargetCertConstraints();
 		JObject getTrustAnchors();
 		jboolean isAnyPolicyInhibited();
@@ -59,10 +61,10 @@ namespace java::security::cert
 		void setPolicyMappingInhibited(jboolean arg0);
 		void setPolicyQualifiersRejected(jboolean arg0);
 		void setRevocationEnabled(jboolean arg0);
-		void setSigProvider(jstring arg0);
+		void setSigProvider(JString arg0);
 		void setTargetCertConstraints(JObject arg0);
 		void setTrustAnchors(JObject arg0);
-		jstring toString();
+		JString toString();
 	};
 } // namespace java::security::cert
 

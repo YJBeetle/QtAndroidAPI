@@ -1,5 +1,11 @@
+#include "../../../JByteArray.hpp"
+#include "../../../JCharArray.hpp"
+#include "../../../JIntArray.hpp"
+#include "../../../JObjectArray.hpp"
 #include "./BidiClassifier.hpp"
 #include "./BidiRun.hpp"
+#include "../../../JString.hpp"
+#include "../../../JString.hpp"
 #include "./Bidi.hpp"
 
 namespace android::icu::text
@@ -231,95 +237,95 @@ namespace android::icu::text
 			arg0,
 			arg1
 		) {}
-	Bidi::Bidi(jstring arg0, jint arg1)
+	Bidi::Bidi(JString arg0, jint arg1)
 		: JObject(
 			"android.icu.text.Bidi",
 			"(Ljava/lang/String;I)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		) {}
-	Bidi::Bidi(jcharArray arg0, jint arg1, jbyteArray arg2, jint arg3, jint arg4, jint arg5)
+	Bidi::Bidi(JCharArray arg0, jint arg1, JByteArray arg2, jint arg3, jint arg4, jint arg5)
 		: JObject(
 			"android.icu.text.Bidi",
 			"([CI[BIII)V",
-			arg0,
+			arg0.object<jcharArray>(),
 			arg1,
-			arg2,
+			arg2.object<jbyteArray>(),
 			arg3,
 			arg4,
 			arg5
 		) {}
 	
 	// Methods
-	jbyte Bidi::getBaseDirection(jstring arg0)
+	jbyte Bidi::getBaseDirection(JString arg0)
 	{
 		return callStaticMethod<jbyte>(
 			"android.icu.text.Bidi",
 			"getBaseDirection",
 			"(Ljava/lang/CharSequence;)B",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jintArray Bidi::invertMap(jintArray arg0)
+	JIntArray Bidi::invertMap(JIntArray arg0)
 	{
 		return callStaticObjectMethod(
 			"android.icu.text.Bidi",
 			"invertMap",
 			"([I)[I",
-			arg0
-		).object<jintArray>();
+			arg0.object<jintArray>()
+		);
 	}
-	jintArray Bidi::reorderLogical(jbyteArray arg0)
+	JIntArray Bidi::reorderLogical(JByteArray arg0)
 	{
 		return callStaticObjectMethod(
 			"android.icu.text.Bidi",
 			"reorderLogical",
 			"([B)[I",
-			arg0
-		).object<jintArray>();
+			arg0.object<jbyteArray>()
+		);
 	}
-	jintArray Bidi::reorderVisual(jbyteArray arg0)
+	JIntArray Bidi::reorderVisual(JByteArray arg0)
 	{
 		return callStaticObjectMethod(
 			"android.icu.text.Bidi",
 			"reorderVisual",
 			"([B)[I",
-			arg0
-		).object<jintArray>();
+			arg0.object<jbyteArray>()
+		);
 	}
-	void Bidi::reorderVisually(jbyteArray arg0, jint arg1, jobjectArray arg2, jint arg3, jint arg4)
+	void Bidi::reorderVisually(JByteArray arg0, jint arg1, JObjectArray arg2, jint arg3, jint arg4)
 	{
 		callStaticMethod<void>(
 			"android.icu.text.Bidi",
 			"reorderVisually",
 			"([BI[Ljava/lang/Object;II)V",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1,
-			arg2,
+			arg2.object<jobjectArray>(),
 			arg3,
 			arg4
 		);
 	}
-	jboolean Bidi::requiresBidi(jcharArray arg0, jint arg1, jint arg2)
+	jboolean Bidi::requiresBidi(JCharArray arg0, jint arg1, jint arg2)
 	{
 		return callStaticMethod<jboolean>(
 			"android.icu.text.Bidi",
 			"requiresBidi",
 			"([CII)Z",
-			arg0,
+			arg0.object<jcharArray>(),
 			arg1,
 			arg2
 		);
 	}
-	jstring Bidi::writeReverse(jstring arg0, jint arg1)
+	JString Bidi::writeReverse(JString arg0, jint arg1)
 	{
 		return callStaticObjectMethod(
 			"android.icu.text.Bidi",
 			"writeReverse",
 			"(Ljava/lang/String;I)Ljava/lang/String;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
-		).object<jstring>();
+		);
 	}
 	jboolean Bidi::baseIsLeftToRight()
 	{
@@ -395,12 +401,12 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	jbyteArray Bidi::getLevels()
+	JByteArray Bidi::getLevels()
 	{
 		return callObjectMethod(
 			"getLevels",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
 	jint Bidi::getLogicalIndex(jint arg0)
 	{
@@ -410,12 +416,12 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	jintArray Bidi::getLogicalMap()
+	JIntArray Bidi::getLogicalMap()
 	{
 		return callObjectMethod(
 			"getLogicalMap",
 			"()[I"
-		).object<jintArray>();
+		);
 	}
 	android::icu::text::BidiRun Bidi::getLogicalRun(jint arg0)
 	{
@@ -515,19 +521,19 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	jcharArray Bidi::getText()
+	JCharArray Bidi::getText()
 	{
 		return callObjectMethod(
 			"getText",
 			"()[C"
-		).object<jcharArray>();
+		);
 	}
-	jstring Bidi::getTextAsString()
+	JString Bidi::getTextAsString()
 	{
 		return callObjectMethod(
 			"getTextAsString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint Bidi::getVisualIndex(jint arg0)
 	{
@@ -537,12 +543,12 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	jintArray Bidi::getVisualMap()
+	JIntArray Bidi::getVisualMap()
 	{
 		return callObjectMethod(
 			"getVisualMap",
 			"()[I"
-		).object<jintArray>();
+		);
 	}
 	android::icu::text::BidiRun Bidi::getVisualRun(jint arg0)
 	{
@@ -595,13 +601,13 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	void Bidi::setContext(jstring arg0, jstring arg1)
+	void Bidi::setContext(JString arg0, JString arg1)
 	{
 		callMethod<void>(
 			"setContext",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		);
 	}
 	void Bidi::setCustomClassifier(android::icu::text::BidiClassifier arg0)
@@ -637,24 +643,24 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	void Bidi::setPara(jcharArray arg0, jbyte arg1, jbyteArray arg2)
+	void Bidi::setPara(JCharArray arg0, jbyte arg1, JByteArray arg2)
 	{
 		callMethod<void>(
 			"setPara",
 			"([CB[B)V",
-			arg0,
+			arg0.object<jcharArray>(),
 			arg1,
-			arg2
+			arg2.object<jbyteArray>()
 		);
 	}
-	void Bidi::setPara(jstring arg0, jbyte arg1, jbyteArray arg2)
+	void Bidi::setPara(JString arg0, jbyte arg1, JByteArray arg2)
 	{
 		callMethod<void>(
 			"setPara",
 			"(Ljava/lang/String;B[B)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
-			arg2
+			arg2.object<jbyteArray>()
 		);
 	}
 	void Bidi::setReorderingMode(jint arg0)
@@ -673,13 +679,13 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	jstring Bidi::writeReordered(jint arg0)
+	JString Bidi::writeReordered(jint arg0)
 	{
 		return callObjectMethod(
 			"writeReordered",
 			"(I)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
 } // namespace android::icu::text
 

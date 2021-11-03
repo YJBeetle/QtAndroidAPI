@@ -1,8 +1,11 @@
+#include "../../JArray.hpp"
+#include "../../JObjectArray.hpp"
 #include "../content/Context.hpp"
 #include "../content/res/Resources_Theme.hpp"
 #include "../view/View.hpp"
 #include "../view/ViewGroup.hpp"
 #include "./Filter.hpp"
+#include "../../JObject.hpp"
 #include "./ArrayAdapter.hpp"
 
 namespace android::widget
@@ -20,13 +23,13 @@ namespace android::widget
 			arg0.object(),
 			arg1
 		) {}
-	ArrayAdapter::ArrayAdapter(android::content::Context arg0, jint arg1, jobjectArray arg2)
+	ArrayAdapter::ArrayAdapter(android::content::Context arg0, jint arg1, JObjectArray arg2)
 		: android::widget::BaseAdapter(
 			"android.widget.ArrayAdapter",
 			"(Landroid/content/Context;I[Ljava/lang/Object;)V",
 			arg0.object(),
 			arg1,
-			arg2
+			arg2.object<jobjectArray>()
 		) {}
 	ArrayAdapter::ArrayAdapter(android::content::Context arg0, jint arg1, jint arg2)
 		: android::widget::BaseAdapter(
@@ -44,14 +47,14 @@ namespace android::widget
 			arg1,
 			arg2.object()
 		) {}
-	ArrayAdapter::ArrayAdapter(android::content::Context arg0, jint arg1, jint arg2, jobjectArray arg3)
+	ArrayAdapter::ArrayAdapter(android::content::Context arg0, jint arg1, jint arg2, JObjectArray arg3)
 		: android::widget::BaseAdapter(
 			"android.widget.ArrayAdapter",
 			"(Landroid/content/Context;II[Ljava/lang/Object;)V",
 			arg0.object(),
 			arg1,
 			arg2,
-			arg3
+			arg3.object<jobjectArray>()
 		) {}
 	ArrayAdapter::ArrayAdapter(android::content::Context arg0, jint arg1, jint arg2, JObject arg3)
 		: android::widget::BaseAdapter(
@@ -75,20 +78,20 @@ namespace android::widget
 			arg2
 		);
 	}
-	void ArrayAdapter::add(jobject arg0)
+	void ArrayAdapter::add(JObject arg0)
 	{
 		callMethod<void>(
 			"add",
 			"(Ljava/lang/Object;)V",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	void ArrayAdapter::addAll(jobjectArray arg0)
+	void ArrayAdapter::addAll(JObjectArray arg0)
 	{
 		callMethod<void>(
 			"addAll",
 			"([Ljava/lang/Object;)V",
-			arg0
+			arg0.object<jobjectArray>()
 		);
 	}
 	void ArrayAdapter::addAll(JObject arg0)
@@ -106,12 +109,12 @@ namespace android::widget
 			"()V"
 		);
 	}
-	jarray ArrayAdapter::getAutofillOptions()
+	JArray ArrayAdapter::getAutofillOptions()
 	{
 		return callObjectMethod(
 			"getAutofillOptions",
 			"()[Ljava/lang/CharSequence;"
-		).object<jarray>();
+		);
 	}
 	android::content::Context ArrayAdapter::getContext()
 	{
@@ -151,13 +154,13 @@ namespace android::widget
 			"()Landroid/widget/Filter;"
 		);
 	}
-	jobject ArrayAdapter::getItem(jint arg0)
+	JObject ArrayAdapter::getItem(jint arg0)
 	{
 		return callObjectMethod(
 			"getItem",
 			"(I)Ljava/lang/Object;",
 			arg0
-		).object<jobject>();
+		);
 	}
 	jlong ArrayAdapter::getItemId(jint arg0)
 	{
@@ -167,12 +170,12 @@ namespace android::widget
 			arg0
 		);
 	}
-	jint ArrayAdapter::getPosition(jobject arg0)
+	jint ArrayAdapter::getPosition(JObject arg0)
 	{
 		return callMethod<jint>(
 			"getPosition",
 			"(Ljava/lang/Object;)I",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	android::view::View ArrayAdapter::getView(jint arg0, android::view::View arg1, android::view::ViewGroup arg2)
@@ -185,12 +188,12 @@ namespace android::widget
 			arg2.object()
 		);
 	}
-	void ArrayAdapter::insert(jobject arg0, jint arg1)
+	void ArrayAdapter::insert(JObject arg0, jint arg1)
 	{
 		callMethod<void>(
 			"insert",
 			"(Ljava/lang/Object;I)V",
-			arg0,
+			arg0.object<jobject>(),
 			arg1
 		);
 	}
@@ -201,12 +204,12 @@ namespace android::widget
 			"()V"
 		);
 	}
-	void ArrayAdapter::remove(jobject arg0)
+	void ArrayAdapter::remove(JObject arg0)
 	{
 		callMethod<void>(
 			"remove",
 			"(Ljava/lang/Object;)V",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	void ArrayAdapter::setDropDownViewResource(jint arg0)

@@ -2,6 +2,7 @@
 #include "../view/ViewStructure.hpp"
 #include "../view/autofill/AutofillValue.hpp"
 #include "../../java/lang/Boolean.hpp"
+#include "../../JString.hpp"
 #include "../../java/lang/Integer.hpp"
 #include "./TimePicker.hpp"
 
@@ -62,12 +63,12 @@ namespace android::widget
 			arg1
 		);
 	}
-	jstring TimePicker::getAccessibilityClassName()
+	JString TimePicker::getAccessibilityClassName()
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	jint TimePicker::getAutofillType()
 	{

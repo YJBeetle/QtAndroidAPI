@@ -1,24 +1,25 @@
 #include "../net/Uri.hpp"
+#include "../../JString.hpp"
 #include "./Telephony_CarrierId.hpp"
 
 namespace android::provider
 {
 	// Fields
-	jstring Telephony_CarrierId::CARRIER_ID()
+	JString Telephony_CarrierId::CARRIER_ID()
 	{
 		return getStaticObjectField(
 			"android.provider.Telephony$CarrierId",
 			"CARRIER_ID",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Telephony_CarrierId::CARRIER_NAME()
+	JString Telephony_CarrierId::CARRIER_NAME()
 	{
 		return getStaticObjectField(
 			"android.provider.Telephony$CarrierId",
 			"CARRIER_NAME",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::net::Uri Telephony_CarrierId::CONTENT_URI()
 	{
@@ -28,21 +29,21 @@ namespace android::provider
 			"Landroid/net/Uri;"
 		);
 	}
-	jstring Telephony_CarrierId::SPECIFIC_CARRIER_ID()
+	JString Telephony_CarrierId::SPECIFIC_CARRIER_ID()
 	{
 		return getStaticObjectField(
 			"android.provider.Telephony$CarrierId",
 			"SPECIFIC_CARRIER_ID",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Telephony_CarrierId::SPECIFIC_CARRIER_ID_NAME()
+	JString Telephony_CarrierId::SPECIFIC_CARRIER_ID_NAME()
 	{
 		return getStaticObjectField(
 			"android.provider.Telephony$CarrierId",
 			"SPECIFIC_CARRIER_ID_NAME",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QJniObject forward

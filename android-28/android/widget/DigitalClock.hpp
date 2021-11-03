@@ -1,13 +1,12 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../view/View.hpp"
 #include "./TextView.hpp"
 
 namespace android::content
 {
 	class Context;
 }
+class JString;
 
 namespace android::widget
 {
@@ -25,7 +24,7 @@ namespace android::widget
 		DigitalClock(android::content::Context arg0, JObject arg1);
 		
 		// Methods
-		jstring getAccessibilityClassName();
+		JString getAccessibilityClassName();
 	};
 } // namespace android::widget
 

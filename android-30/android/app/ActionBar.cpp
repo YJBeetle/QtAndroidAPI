@@ -3,6 +3,7 @@
 #include "../content/Context.hpp"
 #include "../graphics/drawable/Drawable.hpp"
 #include "../view/View.hpp"
+#include "../../JString.hpp"
 #include "./ActionBar.hpp"
 
 namespace android::app
@@ -183,12 +184,12 @@ namespace android::app
 			"()Landroid/app/ActionBar$Tab;"
 		);
 	}
-	jstring ActionBar::getSubtitle()
+	JString ActionBar::getSubtitle()
 	{
 		return callObjectMethod(
 			"getSubtitle",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	android::app::ActionBar_Tab ActionBar::getTabAt(jint arg0)
 	{
@@ -212,12 +213,12 @@ namespace android::app
 			"()Landroid/content/Context;"
 		);
 	}
-	jstring ActionBar::getTitle()
+	JString ActionBar::getTitle()
 	{
 		return callObjectMethod(
 			"getTitle",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	void ActionBar::hide()
 	{
@@ -408,12 +409,12 @@ namespace android::app
 			arg0
 		);
 	}
-	void ActionBar::setHomeActionContentDescription(jstring arg0)
+	void ActionBar::setHomeActionContentDescription(JString arg0)
 	{
 		callMethod<void>(
 			"setHomeActionContentDescription",
 			"(Ljava/lang/CharSequence;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void ActionBar::setHomeAsUpIndicator(android::graphics::drawable::Drawable arg0)
@@ -521,12 +522,12 @@ namespace android::app
 			arg0
 		);
 	}
-	void ActionBar::setSubtitle(jstring arg0)
+	void ActionBar::setSubtitle(JString arg0)
 	{
 		callMethod<void>(
 			"setSubtitle",
 			"(Ljava/lang/CharSequence;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void ActionBar::setTitle(jint arg0)
@@ -537,12 +538,12 @@ namespace android::app
 			arg0
 		);
 	}
-	void ActionBar::setTitle(jstring arg0)
+	void ActionBar::setTitle(JString arg0)
 	{
 		callMethod<void>(
 			"setTitle",
 			"(Ljava/lang/CharSequence;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void ActionBar::show()

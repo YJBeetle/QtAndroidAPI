@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./AuthPermission.hpp"
 
 namespace javax::security::auth
@@ -8,18 +9,18 @@ namespace javax::security::auth
 	AuthPermission::AuthPermission(QJniObject obj) : java::security::BasicPermission(obj) {}
 	
 	// Constructors
-	AuthPermission::AuthPermission(jstring arg0)
+	AuthPermission::AuthPermission(JString arg0)
 		: java::security::BasicPermission(
 			"javax.security.auth.AuthPermission",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	AuthPermission::AuthPermission(jstring arg0, jstring arg1)
+	AuthPermission::AuthPermission(JString arg0, JString arg1)
 		: java::security::BasicPermission(
 			"javax.security.auth.AuthPermission",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		) {}
 	
 	// Methods

@@ -1,5 +1,7 @@
+#include "../../JArray.hpp"
 #include "./PendingIntent.hpp"
 #include "./RemoteInput.hpp"
+#include "../../JString.hpp"
 #include "./Notification_CarExtender_UnreadConversation.hpp"
 
 namespace android::app
@@ -19,26 +21,26 @@ namespace android::app
 			"()J"
 		);
 	}
-	jarray Notification_CarExtender_UnreadConversation::getMessages()
+	JArray Notification_CarExtender_UnreadConversation::getMessages()
 	{
 		return callObjectMethod(
 			"getMessages",
 			"()[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
-	jstring Notification_CarExtender_UnreadConversation::getParticipant()
+	JString Notification_CarExtender_UnreadConversation::getParticipant()
 	{
 		return callObjectMethod(
 			"getParticipant",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jarray Notification_CarExtender_UnreadConversation::getParticipants()
+	JArray Notification_CarExtender_UnreadConversation::getParticipants()
 	{
 		return callObjectMethod(
 			"getParticipants",
 			"()[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
 	android::app::PendingIntent Notification_CarExtender_UnreadConversation::getReadPendingIntent()
 	{

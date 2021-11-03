@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JArray;
+class JArray;
 namespace java::io
 {
 	class ObjectInputStream;
@@ -10,6 +12,8 @@ namespace java::io
 {
 	class ObjectOutputStream;
 }
+class JObject;
+class JString;
 namespace java::net
 {
 	class URI;
@@ -25,9 +29,9 @@ namespace java::io
 	{
 	public:
 		// Fields
-		static jstring pathSeparator();
+		static JString pathSeparator();
 		static jchar pathSeparatorChar();
-		static jstring separator();
+		static JString separator();
 		static jchar separatorChar();
 		
 		// QJniObject forward
@@ -35,34 +39,34 @@ namespace java::io
 		File(QJniObject obj);
 		
 		// Constructors
-		File(jstring arg0);
+		File(JString arg0);
 		File(java::net::URI arg0);
-		File(java::io::File &arg0, jstring arg1);
-		File(jstring arg0, jstring arg1);
+		File(java::io::File &arg0, JString arg1);
+		File(JString arg0, JString arg1);
 		
 		// Methods
-		static java::io::File createTempFile(jstring arg0, jstring arg1);
-		static java::io::File createTempFile(jstring arg0, jstring arg1, java::io::File arg2);
-		static jarray listRoots();
+		static java::io::File createTempFile(JString arg0, JString arg1);
+		static java::io::File createTempFile(JString arg0, JString arg1, java::io::File arg2);
+		static JArray listRoots();
 		jboolean canExecute();
 		jboolean canRead();
 		jboolean canWrite();
 		jint compareTo(java::io::File arg0);
-		jint compareTo(jobject arg0);
+		jint compareTo(JObject arg0);
 		jboolean createNewFile();
 		jboolean _delete();
 		void deleteOnExit();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jboolean exists();
 		java::io::File getAbsoluteFile();
-		jstring getAbsolutePath();
+		JString getAbsolutePath();
 		java::io::File getCanonicalFile();
-		jstring getCanonicalPath();
+		JString getCanonicalPath();
 		jlong getFreeSpace();
-		jstring getName();
-		jstring getParent();
+		JString getName();
+		JString getParent();
 		java::io::File getParentFile();
-		jstring getPath();
+		JString getPath();
 		jlong getTotalSpace();
 		jlong getUsableSpace();
 		jint hashCode();
@@ -72,10 +76,10 @@ namespace java::io
 		jboolean isHidden();
 		jlong lastModified();
 		jlong length();
-		jarray list();
-		jarray list(JObject arg0);
-		jarray listFiles();
-		jarray listFiles(JObject arg0);
+		JArray list();
+		JArray list(JObject arg0);
+		JArray listFiles();
+		JArray listFiles(JObject arg0);
 		jboolean mkdir();
 		jboolean mkdirs();
 		jboolean renameTo(java::io::File arg0);
@@ -88,7 +92,7 @@ namespace java::io
 		jboolean setWritable(jboolean arg0);
 		jboolean setWritable(jboolean arg0, jboolean arg1);
 		JObject toPath();
-		jstring toString();
+		JString toString();
 		java::net::URI toURI();
 		java::net::URL toURL();
 	};

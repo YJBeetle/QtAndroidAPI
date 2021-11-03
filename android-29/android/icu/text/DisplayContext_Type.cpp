@@ -1,3 +1,5 @@
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
 #include "./DisplayContext_Type.hpp"
 
 namespace android::icu::text
@@ -42,22 +44,22 @@ namespace android::icu::text
 	// Constructors
 	
 	// Methods
-	android::icu::text::DisplayContext_Type DisplayContext_Type::valueOf(jstring arg0)
+	android::icu::text::DisplayContext_Type DisplayContext_Type::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.icu.text.DisplayContext$Type",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/icu/text/DisplayContext$Type;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray DisplayContext_Type::values()
+	JArray DisplayContext_Type::values()
 	{
 		return callStaticObjectMethod(
 			"android.icu.text.DisplayContext$Type",
 			"values",
 			"()[Landroid/icu/text/DisplayContext$Type;"
-		).object<jarray>();
+		);
 	}
 } // namespace android::icu::text
 

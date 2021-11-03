@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./Conferenceable.hpp"
 
+class JArray;
 namespace android::bluetooth
 {
 	class BluetoothDevice;
@@ -39,6 +39,7 @@ namespace android::telecom
 {
 	class StatusHints;
 }
+class JString;
 
 namespace android::telecom
 {
@@ -67,13 +68,13 @@ namespace android::telecom
 		static jint CAPABILITY_SUPPORT_DEFLECT();
 		static jint CAPABILITY_SUPPORT_HOLD();
 		static jint CAPABILITY_SWAP_CONFERENCE();
-		static jstring EVENT_CALL_MERGE_FAILED();
-		static jstring EVENT_CALL_PULL_FAILED();
-		static jstring EXTRA_ANSWERING_DROPS_FG_CALL();
-		static jstring EXTRA_ANSWERING_DROPS_FG_CALL_APP_NAME();
-		static jstring EXTRA_CALL_SUBJECT();
-		static jstring EXTRA_CHILD_ADDRESS();
-		static jstring EXTRA_LAST_FORWARDED_NUMBER();
+		static JString EVENT_CALL_MERGE_FAILED();
+		static JString EVENT_CALL_PULL_FAILED();
+		static JString EXTRA_ANSWERING_DROPS_FG_CALL();
+		static JString EXTRA_ANSWERING_DROPS_FG_CALL_APP_NAME();
+		static JString EXTRA_CALL_SUBJECT();
+		static JString EXTRA_CHILD_ADDRESS();
+		static JString EXTRA_LAST_FORWARDED_NUMBER();
 		static jint PROPERTY_HAS_CDMA_VOICE_PRIVACY();
 		static jint PROPERTY_IS_EXTERNAL_CALL();
 		static jint PROPERTY_IS_RTT();
@@ -95,17 +96,17 @@ namespace android::telecom
 		Connection();
 		
 		// Methods
-		static jstring capabilitiesToString(jint arg0);
+		static JString capabilitiesToString(jint arg0);
 		static android::telecom::Connection createCanceledConnection();
 		static android::telecom::Connection createFailedConnection(android::telecom::DisconnectCause arg0);
-		static jstring propertiesToString(jint arg0);
-		static jstring stateToString(jint arg0);
+		static JString propertiesToString(jint arg0);
+		static JString stateToString(jint arg0);
 		void destroy();
 		android::net::Uri getAddress();
 		jint getAddressPresentation();
 		jboolean getAudioModeIsVoip();
 		android::telecom::CallAudioState getCallAudioState();
-		jstring getCallerDisplayName();
+		JString getCallerDisplayName();
 		jint getCallerDisplayNamePresentation();
 		android::telecom::Conference getConference();
 		JObject getConferenceables();
@@ -122,7 +123,7 @@ namespace android::telecom
 		void onAnswer();
 		void onAnswer(jint arg0);
 		void onCallAudioStateChanged(android::telecom::CallAudioState arg0);
-		void onCallEvent(jstring arg0, android::os::Bundle arg1);
+		void onCallEvent(JString arg0, android::os::Bundle arg1);
 		void onDeflect(android::net::Uri arg0);
 		void onDisconnect();
 		void onExtrasChanged(android::os::Bundle arg0);
@@ -132,7 +133,7 @@ namespace android::telecom
 		void onPostDialContinue(jboolean arg0);
 		void onPullExternalCall();
 		void onReject();
-		void onReject(jstring arg0);
+		void onReject(JString arg0);
 		void onSeparate();
 		void onShowIncomingCallUi();
 		void onStartRtt(android::telecom::Connection_RttTextStream arg0);
@@ -141,10 +142,10 @@ namespace android::telecom
 		void onStopRtt();
 		void onUnhold();
 		void putExtras(android::os::Bundle arg0);
-		void removeExtras(jarray arg0);
+		void removeExtras(JArray arg0);
 		void removeExtras(JObject arg0);
 		void requestBluetoothAudio(android::bluetooth::BluetoothDevice arg0);
-		void sendConnectionEvent(jstring arg0, android::os::Bundle arg1);
+		void sendConnectionEvent(JString arg0, android::os::Bundle arg1);
 		void sendRemoteRttRequest();
 		void sendRttInitiationFailure(jint arg0);
 		void sendRttInitiationSuccess();
@@ -153,7 +154,7 @@ namespace android::telecom
 		void setAddress(android::net::Uri arg0, jint arg1);
 		void setAudioModeIsVoip(jboolean arg0);
 		void setAudioRoute(jint arg0);
-		void setCallerDisplayName(jstring arg0, jint arg1);
+		void setCallerDisplayName(JString arg0, jint arg1);
 		void setConferenceableConnections(JObject arg0);
 		void setConferenceables(JObject arg0);
 		void setConnectionCapabilities(jint arg0);
@@ -165,7 +166,7 @@ namespace android::telecom
 		void setInitializing();
 		void setNextPostDialChar(jchar arg0);
 		void setOnHold();
-		void setPostDialWait(jstring arg0);
+		void setPostDialWait(JString arg0);
 		void setPulling();
 		void setRingbackRequested(jboolean arg0);
 		void setRinging();

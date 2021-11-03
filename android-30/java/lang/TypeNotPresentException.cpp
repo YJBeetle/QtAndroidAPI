@@ -1,3 +1,5 @@
+#include "../../JString.hpp"
+#include "../../JThrowable.hpp"
 #include "./TypeNotPresentException.hpp"
 
 namespace java::lang
@@ -8,21 +10,21 @@ namespace java::lang
 	TypeNotPresentException::TypeNotPresentException(QJniObject obj) : java::lang::RuntimeException(obj) {}
 	
 	// Constructors
-	TypeNotPresentException::TypeNotPresentException(jstring arg0, jthrowable arg1)
+	TypeNotPresentException::TypeNotPresentException(JString arg0, JThrowable arg1)
 		: java::lang::RuntimeException(
 			"java.lang.TypeNotPresentException",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
 		) {}
 	
 	// Methods
-	jstring TypeNotPresentException::typeName()
+	JString TypeNotPresentException::typeName()
 	{
 		return callObjectMethod(
 			"typeName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::lang
 

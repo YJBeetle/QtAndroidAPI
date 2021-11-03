@@ -1,6 +1,8 @@
 #include "../content/ComponentName.hpp"
 #include "../net/Uri.hpp"
 #include "../os/Parcel.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./AutomaticZenRule.hpp"
 
 namespace android::app
@@ -25,11 +27,11 @@ namespace android::app
 			"(Landroid/os/Parcel;)V",
 			arg0.object()
 		) {}
-	AutomaticZenRule::AutomaticZenRule(jstring arg0, android::content::ComponentName arg1, android::net::Uri arg2, jint arg3, jboolean arg4)
+	AutomaticZenRule::AutomaticZenRule(JString arg0, android::content::ComponentName arg1, android::net::Uri arg2, jint arg3, jboolean arg4)
 		: JObject(
 			"android.app.AutomaticZenRule",
 			"(Ljava/lang/String;Landroid/content/ComponentName;Landroid/net/Uri;IZ)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
 			arg2.object(),
 			arg3,
@@ -44,12 +46,12 @@ namespace android::app
 			"()I"
 		);
 	}
-	jboolean AutomaticZenRule::equals(jobject arg0)
+	jboolean AutomaticZenRule::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	android::net::Uri AutomaticZenRule::getConditionId()
@@ -73,12 +75,12 @@ namespace android::app
 			"()I"
 		);
 	}
-	jstring AutomaticZenRule::getName()
+	JString AutomaticZenRule::getName()
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::content::ComponentName AutomaticZenRule::getOwner()
 	{
@@ -125,20 +127,20 @@ namespace android::app
 			arg0
 		);
 	}
-	void AutomaticZenRule::setName(jstring arg0)
+	void AutomaticZenRule::setName(JString arg0)
 	{
 		callMethod<void>(
 			"setName",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jstring AutomaticZenRule::toString()
+	JString AutomaticZenRule::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void AutomaticZenRule::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

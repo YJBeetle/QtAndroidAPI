@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./EnvironmentalReverb_Settings.hpp"
 
 namespace android::media::audiofx
@@ -73,20 +74,20 @@ namespace android::media::audiofx
 			"android.media.audiofx.EnvironmentalReverb$Settings",
 			"()V"
 		) {}
-	EnvironmentalReverb_Settings::EnvironmentalReverb_Settings(jstring arg0)
+	EnvironmentalReverb_Settings::EnvironmentalReverb_Settings(JString arg0)
 		: JObject(
 			"android.media.audiofx.EnvironmentalReverb$Settings",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods
-	jstring EnvironmentalReverb_Settings::toString()
+	JString EnvironmentalReverb_Settings::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::media::audiofx
 

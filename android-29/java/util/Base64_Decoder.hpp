@@ -2,10 +2,13 @@
 
 #include "../../JObject.hpp"
 
+class JByteArray;
+class JIntArray;
 namespace java::io
 {
 	class InputStream;
 }
+class JString;
 namespace java::nio
 {
 	class ByteBuffer;
@@ -25,9 +28,9 @@ namespace java::util
 		// Constructors
 		
 		// Methods
-		jbyteArray decode(jbyteArray arg0);
-		jbyteArray decode(jstring arg0);
-		jint decode(jbyteArray arg0, jbyteArray arg1);
+		JByteArray decode(JByteArray arg0);
+		JByteArray decode(JString arg0);
+		jint decode(JByteArray arg0, JByteArray arg1);
 		java::nio::ByteBuffer decode(java::nio::ByteBuffer arg0);
 		java::io::InputStream wrap(java::io::InputStream arg0);
 	};

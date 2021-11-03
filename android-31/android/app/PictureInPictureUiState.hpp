@@ -6,6 +6,7 @@ namespace android::os
 {
 	class Parcel;
 }
+class JObject;
 
 namespace android::app
 {
@@ -23,7 +24,7 @@ namespace android::app
 		
 		// Methods
 		jint describeContents();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint hashCode();
 		jboolean isStashed();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);

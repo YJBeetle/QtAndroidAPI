@@ -10,66 +10,67 @@
 #include "../os/Handler.hpp"
 #include "../os/ParcelFileDescriptor.hpp"
 #include "../../java/io/InputStream.hpp"
+#include "../../JString.hpp"
 #include "./WallpaperManager.hpp"
 
 namespace android::app
 {
 	// Fields
-	jstring WallpaperManager::ACTION_CHANGE_LIVE_WALLPAPER()
+	JString WallpaperManager::ACTION_CHANGE_LIVE_WALLPAPER()
 	{
 		return getStaticObjectField(
 			"android.app.WallpaperManager",
 			"ACTION_CHANGE_LIVE_WALLPAPER",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring WallpaperManager::ACTION_CROP_AND_SET_WALLPAPER()
+	JString WallpaperManager::ACTION_CROP_AND_SET_WALLPAPER()
 	{
 		return getStaticObjectField(
 			"android.app.WallpaperManager",
 			"ACTION_CROP_AND_SET_WALLPAPER",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring WallpaperManager::ACTION_LIVE_WALLPAPER_CHOOSER()
+	JString WallpaperManager::ACTION_LIVE_WALLPAPER_CHOOSER()
 	{
 		return getStaticObjectField(
 			"android.app.WallpaperManager",
 			"ACTION_LIVE_WALLPAPER_CHOOSER",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring WallpaperManager::COMMAND_DROP()
+	JString WallpaperManager::COMMAND_DROP()
 	{
 		return getStaticObjectField(
 			"android.app.WallpaperManager",
 			"COMMAND_DROP",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring WallpaperManager::COMMAND_SECONDARY_TAP()
+	JString WallpaperManager::COMMAND_SECONDARY_TAP()
 	{
 		return getStaticObjectField(
 			"android.app.WallpaperManager",
 			"COMMAND_SECONDARY_TAP",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring WallpaperManager::COMMAND_TAP()
+	JString WallpaperManager::COMMAND_TAP()
 	{
 		return getStaticObjectField(
 			"android.app.WallpaperManager",
 			"COMMAND_TAP",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring WallpaperManager::EXTRA_LIVE_WALLPAPER_COMPONENT()
+	JString WallpaperManager::EXTRA_LIVE_WALLPAPER_COMPONENT()
 	{
 		return getStaticObjectField(
 			"android.app.WallpaperManager",
 			"EXTRA_LIVE_WALLPAPER_COMPONENT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint WallpaperManager::FLAG_LOCK()
 	{
@@ -85,13 +86,13 @@ namespace android::app
 			"FLAG_SYSTEM"
 		);
 	}
-	jstring WallpaperManager::WALLPAPER_PREVIEW_META_DATA()
+	JString WallpaperManager::WALLPAPER_PREVIEW_META_DATA()
 	{
 		return getStaticObjectField(
 			"android.app.WallpaperManager",
 			"WALLPAPER_PREVIEW_META_DATA",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QJniObject forward
@@ -306,13 +307,13 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void WallpaperManager::sendWallpaperCommand(JObject arg0, jstring arg1, jint arg2, jint arg3, jint arg4, android::os::Bundle arg5)
+	void WallpaperManager::sendWallpaperCommand(JObject arg0, JString arg1, jint arg2, jint arg3, jint arg4, android::os::Bundle arg5)
 	{
 		callMethod<void>(
 			"sendWallpaperCommand",
 			"(Landroid/os/IBinder;Ljava/lang/String;IIILandroid/os/Bundle;)V",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2,
 			arg3,
 			arg4,

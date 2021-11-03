@@ -1,6 +1,11 @@
+#include "../../JByteArray.hpp"
+#include "../../JCharArray.hpp"
+#include "../../JArray.hpp"
 #include "../io/File.hpp"
 #include "../io/InputStream.hpp"
 #include "../io/OutputStream.hpp"
+#include "../../JClass.hpp"
+#include "../../JString.hpp"
 #include "./KeyStoreSpi.hpp"
 #include "./Provider.hpp"
 #include "./cert/Certificate.hpp"
@@ -17,31 +22,31 @@ namespace java::security
 	// Constructors
 	
 	// Methods
-	jstring KeyStore::getDefaultType()
+	JString KeyStore::getDefaultType()
 	{
 		return callStaticObjectMethod(
 			"java.security.KeyStore",
 			"getDefaultType",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	java::security::KeyStore KeyStore::getInstance(jstring arg0)
+	java::security::KeyStore KeyStore::getInstance(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"java.security.KeyStore",
 			"getInstance",
 			"(Ljava/lang/String;)Ljava/security/KeyStore;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	java::security::KeyStore KeyStore::getInstance(java::io::File arg0, jcharArray arg1)
+	java::security::KeyStore KeyStore::getInstance(java::io::File arg0, JCharArray arg1)
 	{
 		return callStaticObjectMethod(
 			"java.security.KeyStore",
 			"getInstance",
 			"(Ljava/io/File;[C)Ljava/security/KeyStore;",
 			arg0.object(),
-			arg1
+			arg1.object<jcharArray>()
 		);
 	}
 	java::security::KeyStore KeyStore::getInstance(java::io::File arg0, JObject arg1)
@@ -54,23 +59,23 @@ namespace java::security
 			arg1.object()
 		);
 	}
-	java::security::KeyStore KeyStore::getInstance(jstring arg0, jstring arg1)
+	java::security::KeyStore KeyStore::getInstance(JString arg0, JString arg1)
 	{
 		return callStaticObjectMethod(
 			"java.security.KeyStore",
 			"getInstance",
 			"(Ljava/lang/String;Ljava/lang/String;)Ljava/security/KeyStore;",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		);
 	}
-	java::security::KeyStore KeyStore::getInstance(jstring arg0, java::security::Provider arg1)
+	java::security::KeyStore KeyStore::getInstance(JString arg0, java::security::Provider arg1)
 	{
 		return callStaticObjectMethod(
 			"java.security.KeyStore",
 			"getInstance",
 			"(Ljava/lang/String;Ljava/security/Provider;)Ljava/security/KeyStore;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
@@ -81,79 +86,79 @@ namespace java::security
 			"()Ljava/util/Enumeration;"
 		);
 	}
-	jboolean KeyStore::containsAlias(jstring arg0)
+	jboolean KeyStore::containsAlias(JString arg0)
 	{
 		return callMethod<jboolean>(
 			"containsAlias",
 			"(Ljava/lang/String;)Z",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	void KeyStore::deleteEntry(jstring arg0)
+	void KeyStore::deleteEntry(JString arg0)
 	{
 		callMethod<void>(
 			"deleteEntry",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jboolean KeyStore::entryInstanceOf(jstring arg0, jclass arg1)
+	jboolean KeyStore::entryInstanceOf(JString arg0, JClass arg1)
 	{
 		return callMethod<jboolean>(
 			"entryInstanceOf",
 			"(Ljava/lang/String;Ljava/lang/Class;)Z",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jclass>()
 		);
 	}
-	java::security::cert::Certificate KeyStore::getCertificate(jstring arg0)
+	java::security::cert::Certificate KeyStore::getCertificate(JString arg0)
 	{
 		return callObjectMethod(
 			"getCertificate",
 			"(Ljava/lang/String;)Ljava/security/cert/Certificate;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jstring KeyStore::getCertificateAlias(java::security::cert::Certificate arg0)
+	JString KeyStore::getCertificateAlias(java::security::cert::Certificate arg0)
 	{
 		return callObjectMethod(
 			"getCertificateAlias",
 			"(Ljava/security/cert/Certificate;)Ljava/lang/String;",
 			arg0.object()
-		).object<jstring>();
+		);
 	}
-	jarray KeyStore::getCertificateChain(jstring arg0)
+	JArray KeyStore::getCertificateChain(JString arg0)
 	{
 		return callObjectMethod(
 			"getCertificateChain",
 			"(Ljava/lang/String;)[Ljava/security/cert/Certificate;",
-			arg0
-		).object<jarray>();
+			arg0.object<jstring>()
+		);
 	}
-	java::util::Date KeyStore::getCreationDate(jstring arg0)
+	java::util::Date KeyStore::getCreationDate(JString arg0)
 	{
 		return callObjectMethod(
 			"getCreationDate",
 			"(Ljava/lang/String;)Ljava/util/Date;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	JObject KeyStore::getEntry(jstring arg0, JObject arg1)
+	JObject KeyStore::getEntry(JString arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"getEntry",
 			"(Ljava/lang/String;Ljava/security/KeyStore$ProtectionParameter;)Ljava/security/KeyStore$Entry;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
-	JObject KeyStore::getKey(jstring arg0, jcharArray arg1)
+	JObject KeyStore::getKey(JString arg0, JCharArray arg1)
 	{
 		return callObjectMethod(
 			"getKey",
 			"(Ljava/lang/String;[C)Ljava/security/Key;",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jcharArray>()
 		);
 	}
 	java::security::Provider KeyStore::getProvider()
@@ -163,27 +168,27 @@ namespace java::security
 			"()Ljava/security/Provider;"
 		);
 	}
-	jstring KeyStore::getType()
+	JString KeyStore::getType()
 	{
 		return callObjectMethod(
 			"getType",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jboolean KeyStore::isCertificateEntry(jstring arg0)
+	jboolean KeyStore::isCertificateEntry(JString arg0)
 	{
 		return callMethod<jboolean>(
 			"isCertificateEntry",
 			"(Ljava/lang/String;)Z",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jboolean KeyStore::isKeyEntry(jstring arg0)
+	jboolean KeyStore::isKeyEntry(JString arg0)
 	{
 		return callMethod<jboolean>(
 			"isKeyEntry",
 			"(Ljava/lang/String;)Z",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void KeyStore::load(JObject arg0)
@@ -194,53 +199,53 @@ namespace java::security
 			arg0.object()
 		);
 	}
-	void KeyStore::load(java::io::InputStream arg0, jcharArray arg1)
+	void KeyStore::load(java::io::InputStream arg0, JCharArray arg1)
 	{
 		callMethod<void>(
 			"load",
 			"(Ljava/io/InputStream;[C)V",
 			arg0.object(),
-			arg1
+			arg1.object<jcharArray>()
 		);
 	}
-	void KeyStore::setCertificateEntry(jstring arg0, java::security::cert::Certificate arg1)
+	void KeyStore::setCertificateEntry(JString arg0, java::security::cert::Certificate arg1)
 	{
 		callMethod<void>(
 			"setCertificateEntry",
 			"(Ljava/lang/String;Ljava/security/cert/Certificate;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
-	void KeyStore::setEntry(jstring arg0, JObject arg1, JObject arg2)
+	void KeyStore::setEntry(JString arg0, JObject arg1, JObject arg2)
 	{
 		callMethod<void>(
 			"setEntry",
 			"(Ljava/lang/String;Ljava/security/KeyStore$Entry;Ljava/security/KeyStore$ProtectionParameter;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
 			arg2.object()
 		);
 	}
-	void KeyStore::setKeyEntry(jstring arg0, jbyteArray arg1, jarray arg2)
+	void KeyStore::setKeyEntry(JString arg0, JByteArray arg1, JArray arg2)
 	{
 		callMethod<void>(
 			"setKeyEntry",
 			"(Ljava/lang/String;[B[Ljava/security/cert/Certificate;)V",
-			arg0,
-			arg1,
-			arg2
+			arg0.object<jstring>(),
+			arg1.object<jbyteArray>(),
+			arg2.object<jarray>()
 		);
 	}
-	void KeyStore::setKeyEntry(jstring arg0, JObject arg1, jcharArray arg2, jarray arg3)
+	void KeyStore::setKeyEntry(JString arg0, JObject arg1, JCharArray arg2, JArray arg3)
 	{
 		callMethod<void>(
 			"setKeyEntry",
 			"(Ljava/lang/String;Ljava/security/Key;[C[Ljava/security/cert/Certificate;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
-			arg2,
-			arg3
+			arg2.object<jcharArray>(),
+			arg3.object<jarray>()
 		);
 	}
 	jint KeyStore::size()
@@ -258,13 +263,13 @@ namespace java::security
 			arg0.object()
 		);
 	}
-	void KeyStore::store(java::io::OutputStream arg0, jcharArray arg1)
+	void KeyStore::store(java::io::OutputStream arg0, JCharArray arg1)
 	{
 		callMethod<void>(
 			"store",
 			"(Ljava/io/OutputStream;[C)V",
 			arg0.object(),
-			arg1
+			arg1.object<jcharArray>()
 		);
 	}
 } // namespace java::security

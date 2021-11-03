@@ -30,6 +30,8 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
+class JString;
 
 namespace android::content::pm
 {
@@ -45,11 +47,11 @@ namespace android::content::pm
 		jboolean isInstantAppAvailable();
 		jint labelRes();
 		jint match();
-		jstring nonLocalizedLabel();
+		JString nonLocalizedLabel();
 		jint preferredOrder();
 		jint priority();
 		android::content::pm::ProviderInfo providerInfo();
-		jstring resolvePackageName();
+		JString resolvePackageName();
 		android::content::pm::ServiceInfo serviceInfo();
 		jint specificIndex();
 		
@@ -63,12 +65,12 @@ namespace android::content::pm
 		
 		// Methods
 		jint describeContents();
-		void dump(JObject arg0, jstring arg1);
+		void dump(JObject arg0, JString arg1);
 		jint getIconResource();
 		jboolean isCrossProfileIntentForwarderActivity();
 		android::graphics::drawable::Drawable loadIcon(android::content::pm::PackageManager arg0);
-		jstring loadLabel(android::content::pm::PackageManager arg0);
-		jstring toString();
+		JString loadLabel(android::content::pm::PackageManager arg0);
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::content::pm

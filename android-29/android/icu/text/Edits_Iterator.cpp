@@ -1,3 +1,5 @@
+#include "../../../JCharArray.hpp"
+#include "../../../JString.hpp"
 #include "./Edits_Iterator.hpp"
 
 namespace android::icu::text
@@ -91,12 +93,12 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	jstring Edits_Iterator::toString()
+	JString Edits_Iterator::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::icu::text
 

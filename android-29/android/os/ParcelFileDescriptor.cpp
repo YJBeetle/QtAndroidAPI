@@ -1,7 +1,9 @@
+#include "../../JArray.hpp"
 #include "./Handler.hpp"
 #include "./Parcel.hpp"
 #include "../../java/io/File.hpp"
 #include "../../java/io/FileDescriptor.hpp"
+#include "../../JString.hpp"
 #include "../../java/net/DatagramSocket.hpp"
 #include "../../java/net/Socket.hpp"
 #include "./ParcelFileDescriptor.hpp"
@@ -95,37 +97,37 @@ namespace android::os
 			arg0
 		);
 	}
-	jarray ParcelFileDescriptor::createPipe()
+	JArray ParcelFileDescriptor::createPipe()
 	{
 		return callStaticObjectMethod(
 			"android.os.ParcelFileDescriptor",
 			"createPipe",
 			"()[Landroid/os/ParcelFileDescriptor;"
-		).object<jarray>();
+		);
 	}
-	jarray ParcelFileDescriptor::createReliablePipe()
+	JArray ParcelFileDescriptor::createReliablePipe()
 	{
 		return callStaticObjectMethod(
 			"android.os.ParcelFileDescriptor",
 			"createReliablePipe",
 			"()[Landroid/os/ParcelFileDescriptor;"
-		).object<jarray>();
+		);
 	}
-	jarray ParcelFileDescriptor::createReliableSocketPair()
+	JArray ParcelFileDescriptor::createReliableSocketPair()
 	{
 		return callStaticObjectMethod(
 			"android.os.ParcelFileDescriptor",
 			"createReliableSocketPair",
 			"()[Landroid/os/ParcelFileDescriptor;"
-		).object<jarray>();
+		);
 	}
-	jarray ParcelFileDescriptor::createSocketPair()
+	JArray ParcelFileDescriptor::createSocketPair()
 	{
 		return callStaticObjectMethod(
 			"android.os.ParcelFileDescriptor",
 			"createSocketPair",
 			"()[Landroid/os/ParcelFileDescriptor;"
-		).object<jarray>();
+		);
 	}
 	android::os::ParcelFileDescriptor ParcelFileDescriptor::dup(java::io::FileDescriptor arg0)
 	{
@@ -185,13 +187,13 @@ namespace android::os
 			arg3.object()
 		);
 	}
-	jint ParcelFileDescriptor::parseMode(jstring arg0)
+	jint ParcelFileDescriptor::parseMode(JString arg0)
 	{
 		return callStaticMethod<jint>(
 			"android.os.ParcelFileDescriptor",
 			"parseMode",
 			"(Ljava/lang/String;)I",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	jboolean ParcelFileDescriptor::canDetectErrors()
@@ -215,12 +217,12 @@ namespace android::os
 			"()V"
 		);
 	}
-	void ParcelFileDescriptor::closeWithError(jstring arg0)
+	void ParcelFileDescriptor::closeWithError(JString arg0)
 	{
 		callMethod<void>(
 			"closeWithError",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	jint ParcelFileDescriptor::describeContents()
@@ -265,12 +267,12 @@ namespace android::os
 			"()J"
 		);
 	}
-	jstring ParcelFileDescriptor::toString()
+	JString ParcelFileDescriptor::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void ParcelFileDescriptor::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

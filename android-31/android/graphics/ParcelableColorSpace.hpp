@@ -10,6 +10,7 @@ namespace android::os
 {
 	class Parcel;
 }
+class JObject;
 
 namespace android::graphics
 {
@@ -29,7 +30,7 @@ namespace android::graphics
 		// Methods
 		static jboolean isParcelable(android::graphics::ColorSpace arg0);
 		jint describeContents();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		android::graphics::ColorSpace getColorSpace();
 		jint hashCode();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);

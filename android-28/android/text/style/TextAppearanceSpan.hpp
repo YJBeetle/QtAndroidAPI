@@ -1,7 +1,5 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "./CharacterStyle.hpp"
 #include "./MetricAffectingSpan.hpp"
 
 namespace android::content
@@ -20,6 +18,7 @@ namespace android::text
 {
 	class TextPaint;
 }
+class JString;
 
 namespace android::text::style
 {
@@ -36,11 +35,11 @@ namespace android::text::style
 		TextAppearanceSpan(android::os::Parcel arg0);
 		TextAppearanceSpan(android::content::Context arg0, jint arg1);
 		TextAppearanceSpan(android::content::Context arg0, jint arg1, jint arg2);
-		TextAppearanceSpan(jstring arg0, jint arg1, jint arg2, android::content::res::ColorStateList arg3, android::content::res::ColorStateList arg4);
+		TextAppearanceSpan(JString arg0, jint arg1, jint arg2, android::content::res::ColorStateList arg3, android::content::res::ColorStateList arg4);
 		
 		// Methods
 		jint describeContents();
-		jstring getFamily();
+		JString getFamily();
 		android::content::res::ColorStateList getLinkTextColor();
 		jint getSpanTypeId();
 		android::content::res::ColorStateList getTextColor();

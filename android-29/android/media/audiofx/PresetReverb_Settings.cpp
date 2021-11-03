@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./PresetReverb_Settings.hpp"
 
 namespace android::media::audiofx
@@ -19,20 +20,20 @@ namespace android::media::audiofx
 			"android.media.audiofx.PresetReverb$Settings",
 			"()V"
 		) {}
-	PresetReverb_Settings::PresetReverb_Settings(jstring arg0)
+	PresetReverb_Settings::PresetReverb_Settings(JString arg0)
 		: JObject(
 			"android.media.audiofx.PresetReverb$Settings",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods
-	jstring PresetReverb_Settings::toString()
+	JString PresetReverb_Settings::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::media::audiofx
 

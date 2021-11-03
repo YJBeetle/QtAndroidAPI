@@ -1,5 +1,6 @@
 #include "../../view/Display.hpp"
 #include "../../view/Surface.hpp"
+#include "../../../JString.hpp"
 #include "./VirtualDisplay.hpp"
 
 namespace android::hardware::display
@@ -51,12 +52,12 @@ namespace android::hardware::display
 			arg0.object()
 		);
 	}
-	jstring VirtualDisplay::toString()
+	JString VirtualDisplay::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::hardware::display
 

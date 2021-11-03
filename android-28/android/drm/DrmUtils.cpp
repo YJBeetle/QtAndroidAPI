@@ -1,3 +1,4 @@
+#include "../../JByteArray.hpp"
 #include "./DrmUtils_ExtendedMetadataParser.hpp"
 #include "./DrmUtils.hpp"
 
@@ -16,13 +17,13 @@ namespace android::drm
 		) {}
 	
 	// Methods
-	android::drm::DrmUtils_ExtendedMetadataParser DrmUtils::getExtendedMetadataParser(jbyteArray arg0)
+	android::drm::DrmUtils_ExtendedMetadataParser DrmUtils::getExtendedMetadataParser(JByteArray arg0)
 	{
 		return callStaticObjectMethod(
 			"android.drm.DrmUtils",
 			"getExtendedMetadataParser",
 			"([B)Landroid/drm/DrmUtils$ExtendedMetadataParser;",
-			arg0
+			arg0.object<jbyteArray>()
 		);
 	}
 } // namespace android::drm

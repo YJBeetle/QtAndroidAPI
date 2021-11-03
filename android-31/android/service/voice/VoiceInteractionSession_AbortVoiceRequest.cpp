@@ -1,5 +1,6 @@
 #include "../../app/VoiceInteractor_Prompt.hpp"
 #include "../../os/Bundle.hpp"
+#include "../../../JString.hpp"
 #include "./VoiceInteractionSession_AbortVoiceRequest.hpp"
 
 namespace android::service::voice
@@ -12,12 +13,12 @@ namespace android::service::voice
 	// Constructors
 	
 	// Methods
-	jstring VoiceInteractionSession_AbortVoiceRequest::getMessage()
+	JString VoiceInteractionSession_AbortVoiceRequest::getMessage()
 	{
 		return callObjectMethod(
 			"getMessage",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	android::app::VoiceInteractor_Prompt VoiceInteractionSession_AbortVoiceRequest::getVoicePrompt()
 	{

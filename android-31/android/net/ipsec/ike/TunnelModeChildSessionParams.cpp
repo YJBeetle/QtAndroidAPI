@@ -1,3 +1,4 @@
+#include "../../../../JObject.hpp"
 #include "./TunnelModeChildSessionParams.hpp"
 
 namespace android::net::ipsec::ike
@@ -10,12 +11,12 @@ namespace android::net::ipsec::ike
 	// Constructors
 	
 	// Methods
-	jboolean TunnelModeChildSessionParams::equals(jobject arg0)
+	jboolean TunnelModeChildSessionParams::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	JObject TunnelModeChildSessionParams::getConfigurationRequests()

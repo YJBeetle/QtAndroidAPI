@@ -6,6 +6,7 @@ namespace android::service::autofill
 {
 	class FillResponse;
 }
+class JString;
 
 namespace android::service::autofill
 {
@@ -21,7 +22,7 @@ namespace android::service::autofill
 		// Constructors
 		
 		// Methods
-		void onFailure(jstring arg0);
+		void onFailure(JString arg0);
 		void onSuccess(android::service::autofill::FillResponse arg0);
 	};
 } // namespace android::service::autofill

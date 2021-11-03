@@ -6,6 +6,7 @@ namespace java::io
 {
 	class PrintStream;
 }
+class JString;
 
 namespace android::util
 {
@@ -22,7 +23,7 @@ namespace android::util
 		PrintStreamPrinter(java::io::PrintStream arg0);
 		
 		// Methods
-		void println(jstring arg0);
+		void println(JString arg0);
 	};
 } // namespace android::util
 

@@ -1,4 +1,6 @@
 #include "../../../java/lang/ClassLoader.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./DocumentBuilder.hpp"
 #include "../validation/Schema.hpp"
 #include "./DocumentBuilderFactory.hpp"
@@ -37,13 +39,13 @@ namespace javax::xml::parsers
 			"()Ljavax/xml/parsers/DocumentBuilderFactory;"
 		);
 	}
-	javax::xml::parsers::DocumentBuilderFactory DocumentBuilderFactory::newInstance(jstring arg0, java::lang::ClassLoader arg1)
+	javax::xml::parsers::DocumentBuilderFactory DocumentBuilderFactory::newInstance(JString arg0, java::lang::ClassLoader arg1)
 	{
 		return callStaticObjectMethod(
 			"javax.xml.parsers.DocumentBuilderFactory",
 			"newInstance",
 			"(Ljava/lang/String;Ljava/lang/ClassLoader;)Ljavax/xml/parsers/DocumentBuilderFactory;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
@@ -55,30 +57,30 @@ namespace javax::xml::parsers
 			"()Ljavax/xml/parsers/DocumentBuilderFactory;"
 		);
 	}
-	javax::xml::parsers::DocumentBuilderFactory DocumentBuilderFactory::newNSInstance(jstring arg0, java::lang::ClassLoader arg1)
+	javax::xml::parsers::DocumentBuilderFactory DocumentBuilderFactory::newNSInstance(JString arg0, java::lang::ClassLoader arg1)
 	{
 		return callStaticObjectMethod(
 			"javax.xml.parsers.DocumentBuilderFactory",
 			"newNSInstance",
 			"(Ljava/lang/String;Ljava/lang/ClassLoader;)Ljavax/xml/parsers/DocumentBuilderFactory;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
-	jobject DocumentBuilderFactory::getAttribute(jstring arg0)
+	JObject DocumentBuilderFactory::getAttribute(JString arg0)
 	{
 		return callObjectMethod(
 			"getAttribute",
 			"(Ljava/lang/String;)Ljava/lang/Object;",
-			arg0
-		).object<jobject>();
+			arg0.object<jstring>()
+		);
 	}
-	jboolean DocumentBuilderFactory::getFeature(jstring arg0)
+	jboolean DocumentBuilderFactory::getFeature(JString arg0)
 	{
 		return callMethod<jboolean>(
 			"getFeature",
 			"(Ljava/lang/String;)Z",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	javax::xml::validation::Schema DocumentBuilderFactory::getSchema()
@@ -144,13 +146,13 @@ namespace javax::xml::parsers
 			"()Ljavax/xml/parsers/DocumentBuilder;"
 		);
 	}
-	void DocumentBuilderFactory::setAttribute(jstring arg0, jobject arg1)
+	void DocumentBuilderFactory::setAttribute(JString arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"setAttribute",
 			"(Ljava/lang/String;Ljava/lang/Object;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jobject>()
 		);
 	}
 	void DocumentBuilderFactory::setCoalescing(jboolean arg0)
@@ -169,12 +171,12 @@ namespace javax::xml::parsers
 			arg0
 		);
 	}
-	void DocumentBuilderFactory::setFeature(jstring arg0, jboolean arg1)
+	void DocumentBuilderFactory::setFeature(JString arg0, jboolean arg1)
 	{
 		callMethod<void>(
 			"setFeature",
 			"(Ljava/lang/String;Z)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}

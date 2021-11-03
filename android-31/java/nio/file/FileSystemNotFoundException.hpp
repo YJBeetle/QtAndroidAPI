@@ -1,9 +1,8 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "../../lang/Exception.hpp"
 #include "../../lang/RuntimeException.hpp"
 
+class JString;
 
 namespace java::nio::file
 {
@@ -18,7 +17,7 @@ namespace java::nio::file
 		
 		// Constructors
 		FileSystemNotFoundException();
-		FileSystemNotFoundException(jstring arg0);
+		FileSystemNotFoundException(JString arg0);
 		
 		// Methods
 	};

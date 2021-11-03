@@ -2,6 +2,7 @@
 
 #include "../../../../JObject.hpp"
 
+class JByteArray;
 namespace android::net
 {
 	class MacAddress;
@@ -14,6 +15,8 @@ namespace android::os
 {
 	class Parcel;
 }
+class JObject;
+class JString;
 
 namespace android::net::wifi::rtt
 {
@@ -34,7 +37,7 @@ namespace android::net::wifi::rtt
 		
 		// Methods
 		jint describeContents();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint getDistanceMm();
 		jint getDistanceStdDevMm();
 		android::net::MacAddress getMacAddress();
@@ -45,7 +48,7 @@ namespace android::net::wifi::rtt
 		jint getRssi();
 		jint getStatus();
 		jint hashCode();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::net::wifi::rtt

@@ -2,10 +2,12 @@
 
 #include "../../../JObject.hpp"
 
+class JByteArray;
 namespace android::net::wifi
 {
 	class WifiInfo;
 }
+class JString;
 
 namespace android::net::wifi
 {
@@ -23,10 +25,10 @@ namespace android::net::wifi
 		
 		// Methods
 		android::net::wifi::WifiInfo build();
-		android::net::wifi::WifiInfo_Builder setBssid(jstring arg0);
+		android::net::wifi::WifiInfo_Builder setBssid(JString arg0);
 		android::net::wifi::WifiInfo_Builder setNetworkId(jint arg0);
 		android::net::wifi::WifiInfo_Builder setRssi(jint arg0);
-		android::net::wifi::WifiInfo_Builder setSsid(jbyteArray arg0);
+		android::net::wifi::WifiInfo_Builder setSsid(JByteArray arg0);
 	};
 } // namespace android::net::wifi
 

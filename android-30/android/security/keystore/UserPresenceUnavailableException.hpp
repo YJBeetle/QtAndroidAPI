@@ -1,11 +1,9 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "../../../java/lang/Exception.hpp"
-#include "../../../java/security/GeneralSecurityException.hpp"
-#include "../../../java/security/KeyException.hpp"
 #include "../../../java/security/InvalidKeyException.hpp"
 
+class JString;
+class JThrowable;
 
 namespace android::security::keystore
 {
@@ -20,8 +18,8 @@ namespace android::security::keystore
 		
 		// Constructors
 		UserPresenceUnavailableException();
-		UserPresenceUnavailableException(jstring arg0);
-		UserPresenceUnavailableException(jstring arg0, jthrowable arg1);
+		UserPresenceUnavailableException(JString arg0);
+		UserPresenceUnavailableException(JString arg0, JThrowable arg1);
 		
 		// Methods
 	};

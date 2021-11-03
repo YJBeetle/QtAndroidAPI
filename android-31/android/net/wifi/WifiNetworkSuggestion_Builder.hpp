@@ -18,6 +18,7 @@ namespace android::net::wifi::hotspot2
 {
 	class PasspointConfiguration;
 }
+class JString;
 
 namespace android::net::wifi
 {
@@ -49,17 +50,17 @@ namespace android::net::wifi
 		android::net::wifi::WifiNetworkSuggestion_Builder setPasspointConfig(android::net::wifi::hotspot2::PasspointConfiguration arg0);
 		android::net::wifi::WifiNetworkSuggestion_Builder setPriority(jint arg0);
 		android::net::wifi::WifiNetworkSuggestion_Builder setPriorityGroup(jint arg0);
-		android::net::wifi::WifiNetworkSuggestion_Builder setSsid(jstring arg0);
+		android::net::wifi::WifiNetworkSuggestion_Builder setSsid(JString arg0);
 		android::net::wifi::WifiNetworkSuggestion_Builder setSubscriptionId(jint arg0);
 		android::net::wifi::WifiNetworkSuggestion_Builder setUntrusted(jboolean arg0);
 		android::net::wifi::WifiNetworkSuggestion_Builder setWapiEnterpriseConfig(android::net::wifi::WifiEnterpriseConfig arg0);
-		android::net::wifi::WifiNetworkSuggestion_Builder setWapiPassphrase(jstring arg0);
+		android::net::wifi::WifiNetworkSuggestion_Builder setWapiPassphrase(JString arg0);
 		android::net::wifi::WifiNetworkSuggestion_Builder setWpa2EnterpriseConfig(android::net::wifi::WifiEnterpriseConfig arg0);
-		android::net::wifi::WifiNetworkSuggestion_Builder setWpa2Passphrase(jstring arg0);
+		android::net::wifi::WifiNetworkSuggestion_Builder setWpa2Passphrase(JString arg0);
 		android::net::wifi::WifiNetworkSuggestion_Builder setWpa3Enterprise192BitModeConfig(android::net::wifi::WifiEnterpriseConfig arg0);
 		android::net::wifi::WifiNetworkSuggestion_Builder setWpa3EnterpriseConfig(android::net::wifi::WifiEnterpriseConfig arg0);
 		android::net::wifi::WifiNetworkSuggestion_Builder setWpa3EnterpriseStandardModeConfig(android::net::wifi::WifiEnterpriseConfig arg0);
-		android::net::wifi::WifiNetworkSuggestion_Builder setWpa3Passphrase(jstring arg0);
+		android::net::wifi::WifiNetworkSuggestion_Builder setWpa3Passphrase(JString arg0);
 	};
 } // namespace android::net::wifi
 

@@ -1,6 +1,5 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "../../content/BroadcastReceiver.hpp"
 
 namespace android::app::admin
@@ -31,6 +30,8 @@ namespace android::os
 {
 	class UserHandle;
 }
+class JString;
+class JString;
 
 namespace android::app::admin
 {
@@ -38,24 +39,24 @@ namespace android::app::admin
 	{
 	public:
 		// Fields
-		static jstring ACTION_CHOOSE_PRIVATE_KEY_ALIAS();
-		static jstring ACTION_DEVICE_ADMIN_DISABLED();
-		static jstring ACTION_DEVICE_ADMIN_DISABLE_REQUESTED();
-		static jstring ACTION_DEVICE_ADMIN_ENABLED();
-		static jstring ACTION_LOCK_TASK_ENTERING();
-		static jstring ACTION_LOCK_TASK_EXITING();
-		static jstring ACTION_NETWORK_LOGS_AVAILABLE();
-		static jstring ACTION_PASSWORD_CHANGED();
-		static jstring ACTION_PASSWORD_EXPIRING();
-		static jstring ACTION_PASSWORD_FAILED();
-		static jstring ACTION_PASSWORD_SUCCEEDED();
-		static jstring ACTION_PROFILE_PROVISIONING_COMPLETE();
+		static JString ACTION_CHOOSE_PRIVATE_KEY_ALIAS();
+		static JString ACTION_DEVICE_ADMIN_DISABLED();
+		static JString ACTION_DEVICE_ADMIN_DISABLE_REQUESTED();
+		static JString ACTION_DEVICE_ADMIN_ENABLED();
+		static JString ACTION_LOCK_TASK_ENTERING();
+		static JString ACTION_LOCK_TASK_EXITING();
+		static JString ACTION_NETWORK_LOGS_AVAILABLE();
+		static JString ACTION_PASSWORD_CHANGED();
+		static JString ACTION_PASSWORD_EXPIRING();
+		static JString ACTION_PASSWORD_FAILED();
+		static JString ACTION_PASSWORD_SUCCEEDED();
+		static JString ACTION_PROFILE_PROVISIONING_COMPLETE();
 		static jint BUGREPORT_FAILURE_FAILED_COMPLETING();
 		static jint BUGREPORT_FAILURE_FILE_NO_LONGER_AVAILABLE();
-		static jstring DEVICE_ADMIN_META_DATA();
-		static jstring EXTRA_DISABLE_WARNING();
-		static jstring EXTRA_LOCK_TASK_PACKAGE();
-		static jstring EXTRA_TRANSFER_OWNERSHIP_ADMIN_EXTRAS_BUNDLE();
+		static JString DEVICE_ADMIN_META_DATA();
+		static JString EXTRA_DISABLE_WARNING();
+		static JString EXTRA_LOCK_TASK_PACKAGE();
+		static JString EXTRA_TRANSFER_OWNERSHIP_ADMIN_EXTRAS_BUNDLE();
 		
 		// QJniObject forward
 		template<typename ...Ts> explicit DeviceAdminReceiver(const char *className, const char *sig, Ts...agv) : android::content::BroadcastReceiver(className, sig, std::forward<Ts>(agv)...) {}
@@ -68,13 +69,13 @@ namespace android::app::admin
 		android::app::admin::DevicePolicyManager getManager(android::content::Context arg0);
 		android::content::ComponentName getWho(android::content::Context arg0);
 		void onBugreportFailed(android::content::Context arg0, android::content::Intent arg1, jint arg2);
-		void onBugreportShared(android::content::Context arg0, android::content::Intent arg1, jstring arg2);
+		void onBugreportShared(android::content::Context arg0, android::content::Intent arg1, JString arg2);
 		void onBugreportSharingDeclined(android::content::Context arg0, android::content::Intent arg1);
-		jstring onChoosePrivateKeyAlias(android::content::Context arg0, android::content::Intent arg1, jint arg2, android::net::Uri arg3, jstring arg4);
-		jstring onDisableRequested(android::content::Context arg0, android::content::Intent arg1);
+		JString onChoosePrivateKeyAlias(android::content::Context arg0, android::content::Intent arg1, jint arg2, android::net::Uri arg3, JString arg4);
+		JString onDisableRequested(android::content::Context arg0, android::content::Intent arg1);
 		void onDisabled(android::content::Context arg0, android::content::Intent arg1);
 		void onEnabled(android::content::Context arg0, android::content::Intent arg1);
-		void onLockTaskModeEntering(android::content::Context arg0, android::content::Intent arg1, jstring arg2);
+		void onLockTaskModeEntering(android::content::Context arg0, android::content::Intent arg1, JString arg2);
 		void onLockTaskModeExiting(android::content::Context arg0, android::content::Intent arg1);
 		void onNetworkLogsAvailable(android::content::Context arg0, android::content::Intent arg1, jlong arg2, jint arg3);
 		void onPasswordChanged(android::content::Context arg0, android::content::Intent arg1);

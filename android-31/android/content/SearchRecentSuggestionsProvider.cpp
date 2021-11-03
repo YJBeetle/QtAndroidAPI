@@ -1,5 +1,7 @@
+#include "../../JArray.hpp"
 #include "./ContentValues.hpp"
 #include "../net/Uri.hpp"
+#include "../../JString.hpp"
 #include "./SearchRecentSuggestionsProvider.hpp"
 
 namespace android::content
@@ -31,23 +33,23 @@ namespace android::content
 		) {}
 	
 	// Methods
-	jint SearchRecentSuggestionsProvider::_delete(android::net::Uri arg0, jstring arg1, jarray arg2)
+	jint SearchRecentSuggestionsProvider::_delete(android::net::Uri arg0, JString arg1, JArray arg2)
 	{
 		return callMethod<jint>(
 			"delete",
 			"(Landroid/net/Uri;Ljava/lang/String;[Ljava/lang/String;)I",
 			arg0.object(),
-			arg1,
-			arg2
+			arg1.object<jstring>(),
+			arg2.object<jarray>()
 		);
 	}
-	jstring SearchRecentSuggestionsProvider::getType(android::net::Uri arg0)
+	JString SearchRecentSuggestionsProvider::getType(android::net::Uri arg0)
 	{
 		return callObjectMethod(
 			"getType",
 			"(Landroid/net/Uri;)Ljava/lang/String;",
 			arg0.object()
-		).object<jstring>();
+		);
 	}
 	android::net::Uri SearchRecentSuggestionsProvider::insert(android::net::Uri arg0, android::content::ContentValues arg1)
 	{
@@ -65,27 +67,27 @@ namespace android::content
 			"()Z"
 		);
 	}
-	JObject SearchRecentSuggestionsProvider::query(android::net::Uri arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4)
+	JObject SearchRecentSuggestionsProvider::query(android::net::Uri arg0, JArray arg1, JString arg2, JArray arg3, JString arg4)
 	{
 		return callObjectMethod(
 			"query",
 			"(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;",
 			arg0.object(),
-			arg1,
-			arg2,
-			arg3,
-			arg4
+			arg1.object<jarray>(),
+			arg2.object<jstring>(),
+			arg3.object<jarray>(),
+			arg4.object<jstring>()
 		);
 	}
-	jint SearchRecentSuggestionsProvider::update(android::net::Uri arg0, android::content::ContentValues arg1, jstring arg2, jarray arg3)
+	jint SearchRecentSuggestionsProvider::update(android::net::Uri arg0, android::content::ContentValues arg1, JString arg2, JArray arg3)
 	{
 		return callMethod<jint>(
 			"update",
 			"(Landroid/net/Uri;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I",
 			arg0.object(),
 			arg1.object(),
-			arg2,
-			arg3
+			arg2.object<jstring>(),
+			arg3.object<jarray>()
 		);
 	}
 } // namespace android::content

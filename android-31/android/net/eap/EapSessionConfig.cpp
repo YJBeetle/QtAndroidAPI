@@ -1,8 +1,10 @@
+#include "../../../JByteArray.hpp"
 #include "./EapSessionConfig_EapAkaConfig.hpp"
 #include "./EapSessionConfig_EapAkaPrimeConfig.hpp"
 #include "./EapSessionConfig_EapMsChapV2Config.hpp"
 #include "./EapSessionConfig_EapSimConfig.hpp"
 #include "./EapSessionConfig_EapTtlsConfig.hpp"
+#include "../../../JObject.hpp"
 #include "./EapSessionConfig.hpp"
 
 namespace android::net::eap
@@ -15,12 +17,12 @@ namespace android::net::eap
 	// Constructors
 	
 	// Methods
-	jboolean EapSessionConfig::equals(jobject arg0)
+	jboolean EapSessionConfig::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	android::net::eap::EapSessionConfig_EapAkaConfig EapSessionConfig::getEapAkaConfig()
@@ -37,12 +39,12 @@ namespace android::net::eap
 			"()Landroid/net/eap/EapSessionConfig$EapAkaPrimeConfig;"
 		);
 	}
-	jbyteArray EapSessionConfig::getEapIdentity()
+	JByteArray EapSessionConfig::getEapIdentity()
 	{
 		return callObjectMethod(
 			"getEapIdentity",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
 	android::net::eap::EapSessionConfig_EapMsChapV2Config EapSessionConfig::getEapMsChapV2Config()
 	{

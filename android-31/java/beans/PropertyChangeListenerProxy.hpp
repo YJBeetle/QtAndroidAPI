@@ -1,12 +1,12 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "../util/EventListenerProxy.hpp"
 
 namespace java::beans
 {
 	class PropertyChangeEvent;
 }
+class JString;
 
 namespace java::beans
 {
@@ -20,10 +20,10 @@ namespace java::beans
 		PropertyChangeListenerProxy(QJniObject obj);
 		
 		// Constructors
-		PropertyChangeListenerProxy(jstring arg0, JObject arg1);
+		PropertyChangeListenerProxy(JString arg0, JObject arg1);
 		
 		// Methods
-		jstring getPropertyName();
+		JString getPropertyName();
 		void propertyChange(java::beans::PropertyChangeEvent arg0);
 	};
 } // namespace java::beans

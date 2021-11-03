@@ -1,8 +1,9 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "./MeasureUnit.hpp"
 
+class JArray;
+class JString;
 
 namespace android::icu::util
 {
@@ -18,7 +19,7 @@ namespace android::icu::util
 		// Constructors
 		
 		// Methods
-		static jarray values();
+		static JArray values();
 	};
 } // namespace android::icu::util
 

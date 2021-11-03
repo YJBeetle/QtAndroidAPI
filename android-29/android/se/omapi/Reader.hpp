@@ -10,6 +10,7 @@ namespace android::se::omapi
 {
 	class Session;
 }
+class JString;
 
 namespace android::se::omapi
 {
@@ -26,7 +27,7 @@ namespace android::se::omapi
 		
 		// Methods
 		void closeSessions();
-		jstring getName();
+		JString getName();
 		android::se::omapi::SEService getSEService();
 		jboolean isSecureElementPresent();
 		android::se::omapi::Session openSession();

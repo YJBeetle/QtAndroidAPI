@@ -1,6 +1,8 @@
 #include "./Person_Builder.hpp"
 #include "../graphics/drawable/Icon.hpp"
 #include "../os/Parcel.hpp"
+#include "../../JString.hpp"
+#include "../../JString.hpp"
 #include "./Person.hpp"
 
 namespace android::app
@@ -35,26 +37,26 @@ namespace android::app
 			"()Landroid/graphics/drawable/Icon;"
 		);
 	}
-	jstring Person::getKey()
+	JString Person::getKey()
 	{
 		return callObjectMethod(
 			"getKey",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Person::getName()
+	JString Person::getName()
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
-	jstring Person::getUri()
+	JString Person::getUri()
 	{
 		return callObjectMethod(
 			"getUri",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jboolean Person::isBot()
 	{

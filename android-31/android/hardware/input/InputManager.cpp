@@ -1,27 +1,29 @@
+#include "../../../JIntArray.hpp"
 #include "../../os/Handler.hpp"
 #include "../../view/InputDevice.hpp"
 #include "../../view/InputEvent.hpp"
 #include "../../view/VerifiedInputEvent.hpp"
+#include "../../../JString.hpp"
 #include "./InputManager.hpp"
 
 namespace android::hardware::input
 {
 	// Fields
-	jstring InputManager::ACTION_QUERY_KEYBOARD_LAYOUTS()
+	JString InputManager::ACTION_QUERY_KEYBOARD_LAYOUTS()
 	{
 		return getStaticObjectField(
 			"android.hardware.input.InputManager",
 			"ACTION_QUERY_KEYBOARD_LAYOUTS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring InputManager::META_DATA_KEYBOARD_LAYOUTS()
+	JString InputManager::META_DATA_KEYBOARD_LAYOUTS()
 	{
 		return getStaticObjectField(
 			"android.hardware.input.InputManager",
 			"META_DATA_KEYBOARD_LAYOUTS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QJniObject forward
@@ -38,12 +40,12 @@ namespace android::hardware::input
 			arg0
 		);
 	}
-	jintArray InputManager::getInputDeviceIds()
+	JIntArray InputManager::getInputDeviceIds()
 	{
 		return callObjectMethod(
 			"getInputDeviceIds",
 			"()[I"
-		).object<jintArray>();
+		);
 	}
 	jfloat InputManager::getMaximumObscuringOpacityForTouch()
 	{

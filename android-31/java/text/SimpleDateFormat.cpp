@@ -1,4 +1,12 @@
+#include "../../JCharArray.hpp"
+#include "../../JIntArray.hpp"
+#include "../../JArray.hpp"
+#include "../../JArray.hpp"
+#include "../../JBooleanArray.hpp"
+#include "../../JArray.hpp"
 #include "../io/ObjectInputStream.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "../lang/StringBuffer.hpp"
 #include "../lang/StringBuilder.hpp"
 #include "./DateFormatSymbols.hpp"
@@ -22,57 +30,57 @@ namespace java::text
 			"java.text.SimpleDateFormat",
 			"()V"
 		) {}
-	SimpleDateFormat::SimpleDateFormat(jstring arg0)
+	SimpleDateFormat::SimpleDateFormat(JString arg0)
 		: java::text::DateFormat(
 			"java.text.SimpleDateFormat",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	SimpleDateFormat::SimpleDateFormat(jstring arg0, java::text::DateFormatSymbols arg1)
+	SimpleDateFormat::SimpleDateFormat(JString arg0, java::text::DateFormatSymbols arg1)
 		: java::text::DateFormat(
 			"java.text.SimpleDateFormat",
 			"(Ljava/lang/String;Ljava/text/DateFormatSymbols;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		) {}
-	SimpleDateFormat::SimpleDateFormat(jstring arg0, java::util::Locale arg1)
+	SimpleDateFormat::SimpleDateFormat(JString arg0, java::util::Locale arg1)
 		: java::text::DateFormat(
 			"java.text.SimpleDateFormat",
 			"(Ljava/lang/String;Ljava/util/Locale;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		) {}
 	
 	// Methods
-	void SimpleDateFormat::applyLocalizedPattern(jstring arg0)
+	void SimpleDateFormat::applyLocalizedPattern(JString arg0)
 	{
 		callMethod<void>(
 			"applyLocalizedPattern",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	void SimpleDateFormat::applyPattern(jstring arg0)
+	void SimpleDateFormat::applyPattern(JString arg0)
 	{
 		callMethod<void>(
 			"applyPattern",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jobject SimpleDateFormat::clone()
+	JObject SimpleDateFormat::clone()
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
-	jboolean SimpleDateFormat::equals(jobject arg0)
+	jboolean SimpleDateFormat::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	java::lang::StringBuffer SimpleDateFormat::format(java::util::Date arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
@@ -85,12 +93,12 @@ namespace java::text
 			arg2.object()
 		);
 	}
-	JObject SimpleDateFormat::formatToCharacterIterator(jobject arg0)
+	JObject SimpleDateFormat::formatToCharacterIterator(JObject arg0)
 	{
 		return callObjectMethod(
 			"formatToCharacterIterator",
 			"(Ljava/lang/Object;)Ljava/text/AttributedCharacterIterator;",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	java::util::Date SimpleDateFormat::get2DigitYearStart()
@@ -114,12 +122,12 @@ namespace java::text
 			"()I"
 		);
 	}
-	java::util::Date SimpleDateFormat::parse(jstring arg0, java::text::ParsePosition arg1)
+	java::util::Date SimpleDateFormat::parse(JString arg0, java::text::ParsePosition arg1)
 	{
 		return callObjectMethod(
 			"parse",
 			"(Ljava/lang/String;Ljava/text/ParsePosition;)Ljava/util/Date;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
@@ -139,19 +147,19 @@ namespace java::text
 			arg0.object()
 		);
 	}
-	jstring SimpleDateFormat::toLocalizedPattern()
+	JString SimpleDateFormat::toLocalizedPattern()
 	{
 		return callObjectMethod(
 			"toLocalizedPattern",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring SimpleDateFormat::toPattern()
+	JString SimpleDateFormat::toPattern()
 	{
 		return callObjectMethod(
 			"toPattern",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::text
 

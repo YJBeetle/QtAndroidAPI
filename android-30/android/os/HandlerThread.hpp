@@ -1,12 +1,12 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "../../java/lang/Thread.hpp"
 
 namespace android::os
 {
 	class Looper;
 }
+class JString;
 
 namespace android::os
 {
@@ -20,8 +20,8 @@ namespace android::os
 		HandlerThread(QJniObject obj);
 		
 		// Constructors
-		HandlerThread(jstring arg0);
-		HandlerThread(jstring arg0, jint arg1);
+		HandlerThread(JString arg0);
+		HandlerThread(JString arg0, jint arg1);
 		
 		// Methods
 		android::os::Looper getLooper();

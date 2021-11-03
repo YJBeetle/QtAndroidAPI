@@ -1,8 +1,9 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "../../java/lang/Exception.hpp"
 
+class JString;
+class JThrowable;
 
 namespace android::content
 {
@@ -18,10 +19,10 @@ namespace android::content
 		// Constructors
 		OperationApplicationException();
 		OperationApplicationException(jint arg0);
-		OperationApplicationException(jstring arg0);
-		OperationApplicationException(jthrowable arg0);
-		OperationApplicationException(jstring arg0, jint arg1);
-		OperationApplicationException(jstring arg0, jthrowable arg1);
+		OperationApplicationException(JString arg0);
+		OperationApplicationException(JThrowable arg0);
+		OperationApplicationException(JString arg0, jint arg1);
+		OperationApplicationException(JString arg0, JThrowable arg1);
 		
 		// Methods
 		jint getNumSuccessfulYieldPoints();

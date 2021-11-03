@@ -1,5 +1,9 @@
+#include "../../JByteArray.hpp"
+#include "../../JArray.hpp"
+#include "../../JArray.hpp"
 #include "./ContentObserver.hpp"
 #include "./DataSetObserver.hpp"
+#include "../../JString.hpp"
 #include "./MergeCursor.hpp"
 
 namespace android::database
@@ -10,11 +14,11 @@ namespace android::database
 	MergeCursor::MergeCursor(QJniObject obj) : android::database::AbstractCursor(obj) {}
 	
 	// Constructors
-	MergeCursor::MergeCursor(jarray arg0)
+	MergeCursor::MergeCursor(JArray arg0)
 		: android::database::AbstractCursor(
 			"android.database.MergeCursor",
 			"([Landroid/database/Cursor;)V",
-			arg0
+			arg0.object<jarray>()
 		) {}
 	
 	// Methods
@@ -32,20 +36,20 @@ namespace android::database
 			"()V"
 		);
 	}
-	jbyteArray MergeCursor::getBlob(jint arg0)
+	JByteArray MergeCursor::getBlob(jint arg0)
 	{
 		return callObjectMethod(
 			"getBlob",
 			"(I)[B",
 			arg0
-		).object<jbyteArray>();
+		);
 	}
-	jarray MergeCursor::getColumnNames()
+	JArray MergeCursor::getColumnNames()
 	{
 		return callObjectMethod(
 			"getColumnNames",
 			"()[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
 	jint MergeCursor::getCount()
 	{
@@ -94,13 +98,13 @@ namespace android::database
 			arg0
 		);
 	}
-	jstring MergeCursor::getString(jint arg0)
+	JString MergeCursor::getString(jint arg0)
 	{
 		return callObjectMethod(
 			"getString",
 			"(I)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
 	jint MergeCursor::getType(jint arg0)
 	{

@@ -1,4 +1,7 @@
 #include "../io/IOException.hpp"
+#include "../../JClass.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./DatagramPacket.hpp"
 #include "./DatagramSocketImpl.hpp"
 #include "./InetAddress.hpp"
@@ -131,13 +134,13 @@ namespace java::net
 			"()Ljava/net/SocketAddress;"
 		);
 	}
-	jobject DatagramSocket::getOption(JObject arg0)
+	JObject DatagramSocket::getOption(JObject arg0)
 	{
 		return callObjectMethod(
 			"getOption",
 			"(Ljava/net/SocketOption;)Ljava/lang/Object;",
 			arg0.object()
-		).object<jobject>();
+		);
 	}
 	jint DatagramSocket::getPort()
 	{
@@ -233,13 +236,13 @@ namespace java::net
 			arg0
 		);
 	}
-	java::net::DatagramSocket DatagramSocket::setOption(JObject arg0, jobject arg1)
+	java::net::DatagramSocket DatagramSocket::setOption(JObject arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"setOption",
 			"(Ljava/net/SocketOption;Ljava/lang/Object;)Ljava/net/DatagramSocket;",
 			arg0.object(),
-			arg1
+			arg1.object<jobject>()
 		);
 	}
 	void DatagramSocket::setReceiveBufferSize(jint arg0)

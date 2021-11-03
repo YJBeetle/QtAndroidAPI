@@ -10,6 +10,7 @@ namespace android::net
 {
 	class Uri;
 }
+class JString;
 
 namespace android::provider
 {
@@ -19,7 +20,7 @@ namespace android::provider
 		// Fields
 		static jint ANSWERED_EXTERNALLY_TYPE();
 		static jint BLOCKED_TYPE();
-		static jstring BLOCK_REASON();
+		static JString BLOCK_REASON();
 		static jint BLOCK_REASON_BLOCKED_NUMBER();
 		static jint BLOCK_REASON_CALL_SCREENING_SERVICE();
 		static jint BLOCK_REASON_DIRECT_TO_VOICEMAIL();
@@ -28,58 +29,58 @@ namespace android::provider
 		static jint BLOCK_REASON_PAY_PHONE();
 		static jint BLOCK_REASON_RESTRICTED_NUMBER();
 		static jint BLOCK_REASON_UNKNOWN_NUMBER();
-		static jstring CACHED_FORMATTED_NUMBER();
-		static jstring CACHED_LOOKUP_URI();
-		static jstring CACHED_MATCHED_NUMBER();
-		static jstring CACHED_NAME();
-		static jstring CACHED_NORMALIZED_NUMBER();
-		static jstring CACHED_NUMBER_LABEL();
-		static jstring CACHED_NUMBER_TYPE();
-		static jstring CACHED_PHOTO_ID();
-		static jstring CACHED_PHOTO_URI();
-		static jstring CALL_SCREENING_APP_NAME();
-		static jstring CALL_SCREENING_COMPONENT_NAME();
+		static JString CACHED_FORMATTED_NUMBER();
+		static JString CACHED_LOOKUP_URI();
+		static JString CACHED_MATCHED_NUMBER();
+		static JString CACHED_NAME();
+		static JString CACHED_NORMALIZED_NUMBER();
+		static JString CACHED_NUMBER_LABEL();
+		static JString CACHED_NUMBER_TYPE();
+		static JString CACHED_PHOTO_ID();
+		static JString CACHED_PHOTO_URI();
+		static JString CALL_SCREENING_APP_NAME();
+		static JString CALL_SCREENING_COMPONENT_NAME();
 		static android::net::Uri CONTENT_FILTER_URI();
-		static jstring CONTENT_ITEM_TYPE();
-		static jstring CONTENT_TYPE();
+		static JString CONTENT_ITEM_TYPE();
+		static JString CONTENT_TYPE();
 		static android::net::Uri CONTENT_URI();
 		static android::net::Uri CONTENT_URI_WITH_VOICEMAIL();
-		static jstring COUNTRY_ISO();
-		static jstring DATA_USAGE();
-		static jstring DATE();
-		static jstring DEFAULT_SORT_ORDER();
-		static jstring DURATION();
-		static jstring EXTRA_CALL_TYPE_FILTER();
-		static jstring FEATURES();
+		static JString COUNTRY_ISO();
+		static JString DATA_USAGE();
+		static JString DATE();
+		static JString DEFAULT_SORT_ORDER();
+		static JString DURATION();
+		static JString EXTRA_CALL_TYPE_FILTER();
+		static JString FEATURES();
 		static jint FEATURES_HD_CALL();
 		static jint FEATURES_PULLED_EXTERNALLY();
 		static jint FEATURES_RTT();
 		static jint FEATURES_VIDEO();
 		static jint FEATURES_WIFI();
-		static jstring GEOCODED_LOCATION();
+		static JString GEOCODED_LOCATION();
 		static jint INCOMING_TYPE();
-		static jstring IS_READ();
-		static jstring LAST_MODIFIED();
-		static jstring LIMIT_PARAM_KEY();
+		static JString IS_READ();
+		static JString LAST_MODIFIED();
+		static JString LIMIT_PARAM_KEY();
 		static jint MISSED_TYPE();
-		static jstring NEW();
-		static jstring NUMBER();
-		static jstring NUMBER_PRESENTATION();
-		static jstring OFFSET_PARAM_KEY();
+		static JString NEW();
+		static JString NUMBER();
+		static JString NUMBER_PRESENTATION();
+		static JString OFFSET_PARAM_KEY();
 		static jint OUTGOING_TYPE();
-		static jstring PHONE_ACCOUNT_COMPONENT_NAME();
-		static jstring PHONE_ACCOUNT_ID();
-		static jstring POST_DIAL_DIGITS();
+		static JString PHONE_ACCOUNT_COMPONENT_NAME();
+		static JString PHONE_ACCOUNT_ID();
+		static JString POST_DIAL_DIGITS();
 		static jint PRESENTATION_ALLOWED();
 		static jint PRESENTATION_PAYPHONE();
 		static jint PRESENTATION_RESTRICTED();
 		static jint PRESENTATION_UNKNOWN();
 		static jint REJECTED_TYPE();
-		static jstring TRANSCRIPTION();
-		static jstring TYPE();
-		static jstring VIA_NUMBER();
+		static JString TRANSCRIPTION();
+		static JString TYPE();
+		static JString VIA_NUMBER();
 		static jint VOICEMAIL_TYPE();
-		static jstring VOICEMAIL_URI();
+		static JString VOICEMAIL_URI();
 		
 		// QJniObject forward
 		template<typename ...Ts> explicit CallLog_Calls(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
@@ -89,7 +90,7 @@ namespace android::provider
 		CallLog_Calls();
 		
 		// Methods
-		static jstring getLastOutgoingCall(android::content::Context arg0);
+		static JString getLastOutgoingCall(android::content::Context arg0);
 	};
 } // namespace android::provider
 

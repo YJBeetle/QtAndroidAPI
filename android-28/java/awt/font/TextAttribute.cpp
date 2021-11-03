@@ -1,6 +1,8 @@
 #include "../../lang/Boolean.hpp"
 #include "../../lang/Float.hpp"
 #include "../../lang/Integer.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./TextAttribute.hpp"
 
 namespace java::awt::font

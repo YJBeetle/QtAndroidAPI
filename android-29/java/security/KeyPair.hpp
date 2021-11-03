@@ -2,7 +2,6 @@
 
 #include "../../JObject.hpp"
 
-
 namespace java::security
 {
 	class KeyPair : public JObject

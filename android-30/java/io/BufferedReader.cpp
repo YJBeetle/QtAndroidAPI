@@ -1,4 +1,7 @@
+#include "../../JCharArray.hpp"
+#include "../../JBooleanArray.hpp"
 #include "./Reader.hpp"
+#include "../../JString.hpp"
 #include "./BufferedReader.hpp"
 
 namespace java::io
@@ -60,22 +63,22 @@ namespace java::io
 			"()I"
 		);
 	}
-	jint BufferedReader::read(jcharArray arg0, jint arg1, jint arg2)
+	jint BufferedReader::read(JCharArray arg0, jint arg1, jint arg2)
 	{
 		return callMethod<jint>(
 			"read",
 			"([CII)I",
-			arg0,
+			arg0.object<jcharArray>(),
 			arg1,
 			arg2
 		);
 	}
-	jstring BufferedReader::readLine()
+	JString BufferedReader::readLine()
 	{
 		return callObjectMethod(
 			"readLine",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jboolean BufferedReader::ready()
 	{

@@ -1,40 +1,41 @@
 #include "../content/Context.hpp"
+#include "../../JString.hpp"
 #include "./Browser.hpp"
 
 namespace android::provider
 {
 	// Fields
-	jstring Browser::EXTRA_APPLICATION_ID()
+	JString Browser::EXTRA_APPLICATION_ID()
 	{
 		return getStaticObjectField(
 			"android.provider.Browser",
 			"EXTRA_APPLICATION_ID",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Browser::EXTRA_CREATE_NEW_TAB()
+	JString Browser::EXTRA_CREATE_NEW_TAB()
 	{
 		return getStaticObjectField(
 			"android.provider.Browser",
 			"EXTRA_CREATE_NEW_TAB",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Browser::EXTRA_HEADERS()
+	JString Browser::EXTRA_HEADERS()
 	{
 		return getStaticObjectField(
 			"android.provider.Browser",
 			"EXTRA_HEADERS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Browser::INITIAL_ZOOM_LEVEL()
+	JString Browser::INITIAL_ZOOM_LEVEL()
 	{
 		return getStaticObjectField(
 			"android.provider.Browser",
 			"INITIAL_ZOOM_LEVEL",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QJniObject forward
@@ -48,14 +49,14 @@ namespace android::provider
 		) {}
 	
 	// Methods
-	void Browser::sendString(android::content::Context arg0, jstring arg1)
+	void Browser::sendString(android::content::Context arg0, JString arg1)
 	{
 		callStaticMethod<void>(
 			"android.provider.Browser",
 			"sendString",
 			"(Landroid/content/Context;Ljava/lang/String;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
 } // namespace android::provider

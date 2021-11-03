@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JArray;
 namespace android::graphics
 {
 	class Rect;
@@ -30,7 +31,7 @@ namespace android::media
 		jint getFormat();
 		android::hardware::HardwareBuffer getHardwareBuffer();
 		jint getHeight();
-		jarray getPlanes();
+		JArray getPlanes();
 		jlong getTimestamp();
 		jint getWidth();
 		void setCropRect(android::graphics::Rect arg0);

@@ -22,6 +22,9 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
+class JObject;
+class JString;
 
 namespace android::media
 {
@@ -30,35 +33,35 @@ namespace android::media
 	public:
 		// Fields
 		static JObject CREATOR();
-		static jstring METADATA_KEY_ALBUM();
-		static jstring METADATA_KEY_ALBUM_ART();
-		static jstring METADATA_KEY_ALBUM_ARTIST();
-		static jstring METADATA_KEY_ALBUM_ART_URI();
-		static jstring METADATA_KEY_ART();
-		static jstring METADATA_KEY_ARTIST();
-		static jstring METADATA_KEY_ART_URI();
-		static jstring METADATA_KEY_AUTHOR();
-		static jstring METADATA_KEY_BT_FOLDER_TYPE();
-		static jstring METADATA_KEY_COMPILATION();
-		static jstring METADATA_KEY_COMPOSER();
-		static jstring METADATA_KEY_DATE();
-		static jstring METADATA_KEY_DISC_NUMBER();
-		static jstring METADATA_KEY_DISPLAY_DESCRIPTION();
-		static jstring METADATA_KEY_DISPLAY_ICON();
-		static jstring METADATA_KEY_DISPLAY_ICON_URI();
-		static jstring METADATA_KEY_DISPLAY_SUBTITLE();
-		static jstring METADATA_KEY_DISPLAY_TITLE();
-		static jstring METADATA_KEY_DURATION();
-		static jstring METADATA_KEY_GENRE();
-		static jstring METADATA_KEY_MEDIA_ID();
-		static jstring METADATA_KEY_MEDIA_URI();
-		static jstring METADATA_KEY_NUM_TRACKS();
-		static jstring METADATA_KEY_RATING();
-		static jstring METADATA_KEY_TITLE();
-		static jstring METADATA_KEY_TRACK_NUMBER();
-		static jstring METADATA_KEY_USER_RATING();
-		static jstring METADATA_KEY_WRITER();
-		static jstring METADATA_KEY_YEAR();
+		static JString METADATA_KEY_ALBUM();
+		static JString METADATA_KEY_ALBUM_ART();
+		static JString METADATA_KEY_ALBUM_ARTIST();
+		static JString METADATA_KEY_ALBUM_ART_URI();
+		static JString METADATA_KEY_ART();
+		static JString METADATA_KEY_ARTIST();
+		static JString METADATA_KEY_ART_URI();
+		static JString METADATA_KEY_AUTHOR();
+		static JString METADATA_KEY_BT_FOLDER_TYPE();
+		static JString METADATA_KEY_COMPILATION();
+		static JString METADATA_KEY_COMPOSER();
+		static JString METADATA_KEY_DATE();
+		static JString METADATA_KEY_DISC_NUMBER();
+		static JString METADATA_KEY_DISPLAY_DESCRIPTION();
+		static JString METADATA_KEY_DISPLAY_ICON();
+		static JString METADATA_KEY_DISPLAY_ICON_URI();
+		static JString METADATA_KEY_DISPLAY_SUBTITLE();
+		static JString METADATA_KEY_DISPLAY_TITLE();
+		static JString METADATA_KEY_DURATION();
+		static JString METADATA_KEY_GENRE();
+		static JString METADATA_KEY_MEDIA_ID();
+		static JString METADATA_KEY_MEDIA_URI();
+		static JString METADATA_KEY_NUM_TRACKS();
+		static JString METADATA_KEY_RATING();
+		static JString METADATA_KEY_TITLE();
+		static JString METADATA_KEY_TRACK_NUMBER();
+		static JString METADATA_KEY_USER_RATING();
+		static JString METADATA_KEY_WRITER();
+		static JString METADATA_KEY_YEAR();
 		
 		// QJniObject forward
 		template<typename ...Ts> explicit MediaMetadata(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
@@ -67,15 +70,15 @@ namespace android::media
 		// Constructors
 		
 		// Methods
-		jboolean containsKey(jstring arg0);
+		jboolean containsKey(JString arg0);
 		jint describeContents();
-		jboolean equals(jobject arg0);
-		android::graphics::Bitmap getBitmap(jstring arg0);
+		jboolean equals(JObject arg0);
+		android::graphics::Bitmap getBitmap(JString arg0);
 		android::media::MediaDescription getDescription();
-		jlong getLong(jstring arg0);
-		android::media::Rating getRating(jstring arg0);
-		jstring getString(jstring arg0);
-		jstring getText(jstring arg0);
+		jlong getLong(JString arg0);
+		android::media::Rating getRating(JString arg0);
+		JString getString(JString arg0);
+		JString getText(JString arg0);
 		jint hashCode();
 		JObject keySet();
 		jint size();

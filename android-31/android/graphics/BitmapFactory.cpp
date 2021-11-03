@@ -1,3 +1,4 @@
+#include "../../JByteArray.hpp"
 #include "../content/res/Resources.hpp"
 #include "./Bitmap.hpp"
 #include "./BitmapFactory_Options.hpp"
@@ -5,6 +6,7 @@
 #include "../util/TypedValue.hpp"
 #include "../../java/io/FileDescriptor.hpp"
 #include "../../java/io/InputStream.hpp"
+#include "../../JString.hpp"
 #include "./BitmapFactory.hpp"
 
 namespace android::graphics
@@ -22,45 +24,45 @@ namespace android::graphics
 		) {}
 	
 	// Methods
-	android::graphics::Bitmap BitmapFactory::decodeByteArray(jbyteArray arg0, jint arg1, jint arg2)
+	android::graphics::Bitmap BitmapFactory::decodeByteArray(JByteArray arg0, jint arg1, jint arg2)
 	{
 		return callStaticObjectMethod(
 			"android.graphics.BitmapFactory",
 			"decodeByteArray",
 			"([BII)Landroid/graphics/Bitmap;",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1,
 			arg2
 		);
 	}
-	android::graphics::Bitmap BitmapFactory::decodeByteArray(jbyteArray arg0, jint arg1, jint arg2, android::graphics::BitmapFactory_Options arg3)
+	android::graphics::Bitmap BitmapFactory::decodeByteArray(JByteArray arg0, jint arg1, jint arg2, android::graphics::BitmapFactory_Options arg3)
 	{
 		return callStaticObjectMethod(
 			"android.graphics.BitmapFactory",
 			"decodeByteArray",
 			"([BIILandroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1,
 			arg2,
 			arg3.object()
 		);
 	}
-	android::graphics::Bitmap BitmapFactory::decodeFile(jstring arg0)
+	android::graphics::Bitmap BitmapFactory::decodeFile(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.graphics.BitmapFactory",
 			"decodeFile",
 			"(Ljava/lang/String;)Landroid/graphics/Bitmap;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	android::graphics::Bitmap BitmapFactory::decodeFile(jstring arg0, android::graphics::BitmapFactory_Options arg1)
+	android::graphics::Bitmap BitmapFactory::decodeFile(JString arg0, android::graphics::BitmapFactory_Options arg1)
 	{
 		return callStaticObjectMethod(
 			"android.graphics.BitmapFactory",
 			"decodeFile",
 			"(Ljava/lang/String;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}

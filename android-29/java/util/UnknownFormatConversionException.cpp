@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./UnknownFormatConversionException.hpp"
 
 namespace java::util
@@ -8,27 +9,27 @@ namespace java::util
 	UnknownFormatConversionException::UnknownFormatConversionException(QJniObject obj) : java::util::IllegalFormatException(obj) {}
 	
 	// Constructors
-	UnknownFormatConversionException::UnknownFormatConversionException(jstring arg0)
+	UnknownFormatConversionException::UnknownFormatConversionException(JString arg0)
 		: java::util::IllegalFormatException(
 			"java.util.UnknownFormatConversionException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods
-	jstring UnknownFormatConversionException::getConversion()
+	JString UnknownFormatConversionException::getConversion()
 	{
 		return callObjectMethod(
 			"getConversion",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring UnknownFormatConversionException::getMessage()
+	JString UnknownFormatConversionException::getMessage()
 	{
 		return callObjectMethod(
 			"getMessage",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::util
 

@@ -1,3 +1,5 @@
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "../../../java/math/BigDecimal.hpp"
 #include "../../../java/math/BigInteger.hpp"
 #include "../../../java/util/GregorianCalendar.hpp"
@@ -37,12 +39,12 @@ namespace javax::xml::datatype
 			"()V"
 		);
 	}
-	jobject XMLGregorianCalendar::clone()
+	JObject XMLGregorianCalendar::clone()
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
 	jint XMLGregorianCalendar::compare(javax::xml::datatype::XMLGregorianCalendar arg0)
 	{
@@ -52,12 +54,12 @@ namespace javax::xml::datatype
 			arg0.object()
 		);
 	}
-	jboolean XMLGregorianCalendar::equals(jobject arg0)
+	jboolean XMLGregorianCalendar::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint XMLGregorianCalendar::getDay()
@@ -309,19 +311,19 @@ namespace javax::xml::datatype
 			arg2.object()
 		);
 	}
-	jstring XMLGregorianCalendar::toString()
+	JString XMLGregorianCalendar::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring XMLGregorianCalendar::toXMLFormat()
+	JString XMLGregorianCalendar::toXMLFormat()
 	{
 		return callObjectMethod(
 			"toXMLFormat",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace javax::xml::datatype
 

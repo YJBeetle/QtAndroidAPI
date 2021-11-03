@@ -1,5 +1,6 @@
 #include "../WpsInfo.hpp"
 #include "../../../os/Parcel.hpp"
+#include "../../../../JString.hpp"
 #include "./WifiP2pConfig.hpp"
 
 namespace android::net::wifi::p2p
@@ -55,12 +56,12 @@ namespace android::net::wifi::p2p
 			"GROUP_OWNER_INTENT_MIN"
 		);
 	}
-	jstring WifiP2pConfig::deviceAddress()
+	JString WifiP2pConfig::deviceAddress()
 	{
 		return getObjectField(
 			"deviceAddress",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint WifiP2pConfig::groupOwnerIntent()
 	{
@@ -114,26 +115,26 @@ namespace android::net::wifi::p2p
 			"()I"
 		);
 	}
-	jstring WifiP2pConfig::getNetworkName()
+	JString WifiP2pConfig::getNetworkName()
 	{
 		return callObjectMethod(
 			"getNetworkName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring WifiP2pConfig::getPassphrase()
+	JString WifiP2pConfig::getPassphrase()
 	{
 		return callObjectMethod(
 			"getPassphrase",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring WifiP2pConfig::toString()
+	JString WifiP2pConfig::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void WifiP2pConfig::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

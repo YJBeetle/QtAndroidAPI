@@ -2,6 +2,9 @@
 
 #include "../../JObject.hpp"
 
+class JByteArray;
+class JObject;
+class JString;
 
 namespace android::media
 {
@@ -9,8 +12,8 @@ namespace android::media
 	{
 	public:
 		// Fields
-		jbyteArray data();
-		jstring mimeType();
+		JByteArray data();
+		JString mimeType();
 		
 		// QJniObject forward
 		template<typename ...Ts> explicit DrmInitData_SchemeInitData(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
@@ -19,7 +22,7 @@ namespace android::media
 		// Constructors
 		
 		// Methods
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint hashCode();
 	};
 } // namespace android::media

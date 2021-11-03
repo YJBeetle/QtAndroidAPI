@@ -1,5 +1,6 @@
 #include "./SetSchemaResponse.hpp"
 #include "./SetSchemaResponse_MigrationFailure.hpp"
+#include "../../../JString.hpp"
 #include "./SetSchemaResponse_Builder.hpp"
 
 namespace android::app::appsearch
@@ -17,12 +18,12 @@ namespace android::app::appsearch
 		) {}
 	
 	// Methods
-	android::app::appsearch::SetSchemaResponse_Builder SetSchemaResponse_Builder::addDeletedType(jstring arg0)
+	android::app::appsearch::SetSchemaResponse_Builder SetSchemaResponse_Builder::addDeletedType(JString arg0)
 	{
 		return callObjectMethod(
 			"addDeletedType",
 			"(Ljava/lang/String;)Landroid/app/appsearch/SetSchemaResponse$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::app::appsearch::SetSchemaResponse_Builder SetSchemaResponse_Builder::addDeletedTypes(JObject arg0)
@@ -33,12 +34,12 @@ namespace android::app::appsearch
 			arg0.object()
 		);
 	}
-	android::app::appsearch::SetSchemaResponse_Builder SetSchemaResponse_Builder::addIncompatibleType(jstring arg0)
+	android::app::appsearch::SetSchemaResponse_Builder SetSchemaResponse_Builder::addIncompatibleType(JString arg0)
 	{
 		return callObjectMethod(
 			"addIncompatibleType",
 			"(Ljava/lang/String;)Landroid/app/appsearch/SetSchemaResponse$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::app::appsearch::SetSchemaResponse_Builder SetSchemaResponse_Builder::addIncompatibleTypes(JObject arg0)
@@ -49,12 +50,12 @@ namespace android::app::appsearch
 			arg0.object()
 		);
 	}
-	android::app::appsearch::SetSchemaResponse_Builder SetSchemaResponse_Builder::addMigratedType(jstring arg0)
+	android::app::appsearch::SetSchemaResponse_Builder SetSchemaResponse_Builder::addMigratedType(JString arg0)
 	{
 		return callObjectMethod(
 			"addMigratedType",
 			"(Ljava/lang/String;)Landroid/app/appsearch/SetSchemaResponse$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::app::appsearch::SetSchemaResponse_Builder SetSchemaResponse_Builder::addMigratedTypes(JObject arg0)

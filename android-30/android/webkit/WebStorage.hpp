@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JString;
 
 namespace android::webkit
 {
@@ -19,11 +20,11 @@ namespace android::webkit
 		// Methods
 		static android::webkit::WebStorage getInstance();
 		void deleteAllData();
-		void deleteOrigin(jstring arg0);
+		void deleteOrigin(JString arg0);
 		void getOrigins(JObject arg0);
-		void getQuotaForOrigin(jstring arg0, JObject arg1);
-		void getUsageForOrigin(jstring arg0, JObject arg1);
-		void setQuotaForOrigin(jstring arg0, jlong arg1);
+		void getQuotaForOrigin(JString arg0, JObject arg1);
+		void getUsageForOrigin(JString arg0, JObject arg1);
+		void setQuotaForOrigin(JString arg0, jlong arg1);
 	};
 } // namespace android::webkit
 

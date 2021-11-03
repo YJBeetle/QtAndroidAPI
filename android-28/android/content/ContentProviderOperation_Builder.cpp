@@ -1,6 +1,9 @@
+#include "../../JArray.hpp"
 #include "./ContentProviderOperation.hpp"
 #include "./ContentValues.hpp"
 #include "../net/Uri.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./ContentProviderOperation_Builder.hpp"
 
 namespace android::content
@@ -28,13 +31,13 @@ namespace android::content
 			arg0
 		);
 	}
-	android::content::ContentProviderOperation_Builder ContentProviderOperation_Builder::withSelection(jstring arg0, jarray arg1)
+	android::content::ContentProviderOperation_Builder ContentProviderOperation_Builder::withSelection(JString arg0, JArray arg1)
 	{
 		return callObjectMethod(
 			"withSelection",
 			"(Ljava/lang/String;[Ljava/lang/String;)Landroid/content/ContentProviderOperation$Builder;",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jarray>()
 		);
 	}
 	android::content::ContentProviderOperation_Builder ContentProviderOperation_Builder::withSelectionBackReference(jint arg0, jint arg1)
@@ -46,21 +49,21 @@ namespace android::content
 			arg1
 		);
 	}
-	android::content::ContentProviderOperation_Builder ContentProviderOperation_Builder::withValue(jstring arg0, jobject arg1)
+	android::content::ContentProviderOperation_Builder ContentProviderOperation_Builder::withValue(JString arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"withValue",
 			"(Ljava/lang/String;Ljava/lang/Object;)Landroid/content/ContentProviderOperation$Builder;",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jobject>()
 		);
 	}
-	android::content::ContentProviderOperation_Builder ContentProviderOperation_Builder::withValueBackReference(jstring arg0, jint arg1)
+	android::content::ContentProviderOperation_Builder ContentProviderOperation_Builder::withValueBackReference(JString arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"withValueBackReference",
 			"(Ljava/lang/String;I)Landroid/content/ContentProviderOperation$Builder;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}

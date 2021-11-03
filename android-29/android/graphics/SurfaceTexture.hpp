@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JFloatArray;
 namespace android::os
 {
 	class Handler;
@@ -27,7 +28,7 @@ namespace android::graphics
 		void attachToGLContext(jint arg0);
 		void detachFromGLContext();
 		jlong getTimestamp();
-		void getTransformMatrix(jfloatArray arg0);
+		void getTransformMatrix(JFloatArray arg0);
 		jboolean isReleased();
 		void release();
 		void releaseTexImage();

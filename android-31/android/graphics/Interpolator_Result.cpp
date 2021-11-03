@@ -1,3 +1,5 @@
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
 #include "./Interpolator_Result.hpp"
 
 namespace android::graphics
@@ -34,22 +36,22 @@ namespace android::graphics
 	// Constructors
 	
 	// Methods
-	android::graphics::Interpolator_Result Interpolator_Result::valueOf(jstring arg0)
+	android::graphics::Interpolator_Result Interpolator_Result::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.graphics.Interpolator$Result",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/graphics/Interpolator$Result;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray Interpolator_Result::values()
+	JArray Interpolator_Result::values()
 	{
 		return callStaticObjectMethod(
 			"android.graphics.Interpolator$Result",
 			"values",
 			"()[Landroid/graphics/Interpolator$Result;"
-		).object<jarray>();
+		);
 	}
 } // namespace android::graphics
 

@@ -2,10 +2,13 @@
 
 #include "../../JObject.hpp"
 
+class JIntArray;
 namespace android::graphics
 {
 	class Bitmap;
 }
+class JObject;
+class JString;
 
 namespace android::media
 {
@@ -28,14 +31,14 @@ namespace android::media
 		void apply();
 		void clear();
 		android::graphics::Bitmap getBitmap(jint arg0, android::graphics::Bitmap arg1);
-		jintArray getEditableKeys();
+		JIntArray getEditableKeys();
 		jlong getLong(jint arg0, jlong arg1);
-		jobject getObject(jint arg0, jobject arg1);
-		jstring getString(jint arg0, jstring arg1);
+		JObject getObject(jint arg0, JObject arg1);
+		JString getString(jint arg0, JString arg1);
 		android::media::MediaMetadataEditor putBitmap(jint arg0, android::graphics::Bitmap arg1);
 		android::media::MediaMetadataEditor putLong(jint arg0, jlong arg1);
-		android::media::MediaMetadataEditor putObject(jint arg0, jobject arg1);
-		android::media::MediaMetadataEditor putString(jint arg0, jstring arg1);
+		android::media::MediaMetadataEditor putObject(jint arg0, JObject arg1);
+		android::media::MediaMetadataEditor putString(jint arg0, JString arg1);
 		void removeEditableKeys();
 	};
 } // namespace android::media

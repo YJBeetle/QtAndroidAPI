@@ -2,7 +2,6 @@
 
 #include "../../JObject.hpp"
 
-
 namespace android::graphics
 {
 	class PathEffect : public JObject

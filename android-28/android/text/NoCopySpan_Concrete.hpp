@@ -2,7 +2,6 @@
 
 #include "../../JObject.hpp"
 
-
 namespace android::text
 {
 	class NoCopySpan_Concrete : public JObject

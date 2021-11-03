@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JString;
 namespace java::security
 {
 	class AlgorithmParameterGeneratorSpi;
@@ -33,11 +34,11 @@ namespace java::security
 		// Constructors
 		
 		// Methods
-		static java::security::AlgorithmParameterGenerator getInstance(jstring arg0);
-		static java::security::AlgorithmParameterGenerator getInstance(jstring arg0, jstring arg1);
-		static java::security::AlgorithmParameterGenerator getInstance(jstring arg0, java::security::Provider arg1);
+		static java::security::AlgorithmParameterGenerator getInstance(JString arg0);
+		static java::security::AlgorithmParameterGenerator getInstance(JString arg0, JString arg1);
+		static java::security::AlgorithmParameterGenerator getInstance(JString arg0, java::security::Provider arg1);
 		java::security::AlgorithmParameters generateParameters();
-		jstring getAlgorithm();
+		JString getAlgorithm();
 		java::security::Provider getProvider();
 		void init(jint arg0);
 		void init(JObject arg0);

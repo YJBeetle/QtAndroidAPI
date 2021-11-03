@@ -1,26 +1,27 @@
 #include "../content/res/Configuration.hpp"
 #include "../os/Bundle.hpp"
 #include "../view/InputQueue.hpp"
+#include "../../JString.hpp"
 #include "./NativeActivity.hpp"
 
 namespace android::app
 {
 	// Fields
-	jstring NativeActivity::META_DATA_FUNC_NAME()
+	JString NativeActivity::META_DATA_FUNC_NAME()
 	{
 		return getStaticObjectField(
 			"android.app.NativeActivity",
 			"META_DATA_FUNC_NAME",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring NativeActivity::META_DATA_LIB_NAME()
+	JString NativeActivity::META_DATA_LIB_NAME()
 	{
 		return getStaticObjectField(
 			"android.app.NativeActivity",
 			"META_DATA_LIB_NAME",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QJniObject forward

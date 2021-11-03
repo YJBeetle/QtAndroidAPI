@@ -1,5 +1,6 @@
 #include "./CaptureRequest_Key.hpp"
 #include "../../os/Parcel.hpp"
+#include "../../../JObject.hpp"
 #include "./CaptureRequest.hpp"
 
 namespace android::hardware::camera2
@@ -491,21 +492,21 @@ namespace android::hardware::camera2
 			"()I"
 		);
 	}
-	jboolean CaptureRequest::equals(jobject arg0)
+	jboolean CaptureRequest::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jobject CaptureRequest::get(android::hardware::camera2::CaptureRequest_Key arg0)
+	JObject CaptureRequest::get(android::hardware::camera2::CaptureRequest_Key arg0)
 	{
 		return callObjectMethod(
 			"get",
 			"(Landroid/hardware/camera2/CaptureRequest$Key;)Ljava/lang/Object;",
 			arg0.object()
-		).object<jobject>();
+		);
 	}
 	JObject CaptureRequest::getKeys()
 	{
@@ -514,12 +515,12 @@ namespace android::hardware::camera2
 			"()Ljava/util/List;"
 		);
 	}
-	jobject CaptureRequest::getTag()
+	JObject CaptureRequest::getTag()
 	{
 		return callObjectMethod(
 			"getTag",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
 	jint CaptureRequest::hashCode()
 	{

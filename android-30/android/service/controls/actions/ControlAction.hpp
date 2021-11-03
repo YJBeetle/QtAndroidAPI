@@ -2,6 +2,7 @@
 
 #include "../../../../JObject.hpp"
 
+class JString;
 
 namespace android::service::controls::actions
 {
@@ -31,8 +32,8 @@ namespace android::service::controls::actions
 		static android::service::controls::actions::ControlAction getErrorAction();
 		static jboolean isValidResponse(jint arg0);
 		jint getActionType();
-		jstring getChallengeValue();
-		jstring getTemplateId();
+		JString getChallengeValue();
+		JString getTemplateId();
 	};
 } // namespace android::service::controls::actions
 

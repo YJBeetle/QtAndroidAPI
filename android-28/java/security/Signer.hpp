@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./Identity.hpp"
 
+class JString;
 namespace java::security
 {
 	class IdentityScope;
@@ -24,13 +24,13 @@ namespace java::security
 		Signer(QJniObject obj);
 		
 		// Constructors
-		Signer(jstring arg0);
-		Signer(jstring arg0, java::security::IdentityScope arg1);
+		Signer(JString arg0);
+		Signer(JString arg0, java::security::IdentityScope arg1);
 		
 		// Methods
 		JObject getPrivateKey();
 		void setKeyPair(java::security::KeyPair arg0);
-		jstring toString();
+		JString toString();
 	};
 } // namespace java::security
 

@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JArray;
 namespace android::net
 {
 	class Uri;
@@ -10,6 +11,8 @@ namespace android::os
 {
 	class Parcel;
 }
+class JObject;
+class JString;
 
 namespace android::net
 {
@@ -27,19 +30,19 @@ namespace android::net
 		ProxyInfo(android::net::ProxyInfo &arg0);
 		
 		// Methods
-		static android::net::ProxyInfo buildDirectProxy(jstring arg0, jint arg1);
-		static android::net::ProxyInfo buildDirectProxy(jstring arg0, jint arg1, JObject arg2);
+		static android::net::ProxyInfo buildDirectProxy(JString arg0, jint arg1);
+		static android::net::ProxyInfo buildDirectProxy(JString arg0, jint arg1, JObject arg2);
 		static android::net::ProxyInfo buildPacProxy(android::net::Uri arg0);
 		static android::net::ProxyInfo buildPacProxy(android::net::Uri arg0, jint arg1);
 		jint describeContents();
-		jboolean equals(jobject arg0);
-		jarray getExclusionList();
-		jstring getHost();
+		jboolean equals(JObject arg0);
+		JArray getExclusionList();
+		JString getHost();
 		android::net::Uri getPacFileUrl();
 		jint getPort();
 		jint hashCode();
 		jboolean isValid();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::net

@@ -1,3 +1,4 @@
+#include "../../../../JString.hpp"
 #include "../TimeUnit.hpp"
 #include "./ReentrantReadWriteLock.hpp"
 #include "./ReentrantReadWriteLock_WriteLock.hpp"
@@ -47,12 +48,12 @@ namespace java::util::concurrent::locks
 			"()Ljava/util/concurrent/locks/Condition;"
 		);
 	}
-	jstring ReentrantReadWriteLock_WriteLock::toString()
+	JString ReentrantReadWriteLock_WriteLock::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jboolean ReentrantReadWriteLock_WriteLock::tryLock()
 	{

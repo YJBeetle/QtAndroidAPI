@@ -2,6 +2,9 @@
 
 #include "../../JObject.hpp"
 
+class JByteArray;
+class JLongArray;
+class JArray;
 namespace java::io
 {
 	class ObjectInputStream;
@@ -10,6 +13,8 @@ namespace java::io
 {
 	class ObjectOutputStream;
 }
+class JObject;
+class JString;
 namespace java::nio
 {
 	class ByteBuffer;
@@ -35,8 +40,8 @@ namespace java::util
 		BitSet(jint arg0);
 		
 		// Methods
-		static java::util::BitSet valueOf(jbyteArray arg0);
-		static java::util::BitSet valueOf(jlongArray arg0);
+		static java::util::BitSet valueOf(JByteArray arg0);
+		static java::util::BitSet valueOf(JLongArray arg0);
 		static java::util::BitSet valueOf(java::nio::ByteBuffer arg0);
 		static java::util::BitSet valueOf(java::nio::LongBuffer arg0);
 		void _and(java::util::BitSet arg0);
@@ -45,8 +50,8 @@ namespace java::util
 		void clear();
 		void clear(jint arg0);
 		void clear(jint arg0, jint arg1);
-		jobject clone();
-		jboolean equals(jobject arg0);
+		JObject clone();
+		jboolean equals(JObject arg0);
 		void flip(jint arg0);
 		void flip(jint arg0, jint arg1);
 		jboolean get(jint arg0);
@@ -66,9 +71,9 @@ namespace java::util
 		void set(jint arg0, jint arg1, jboolean arg2);
 		jint size();
 		JObject stream();
-		jbyteArray toByteArray();
-		jlongArray toLongArray();
-		jstring toString();
+		JByteArray toByteArray();
+		JLongArray toLongArray();
+		JString toString();
 		void _xor(java::util::BitSet arg0);
 	};
 } // namespace java::util

@@ -1,8 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../view/View.hpp"
-#include "../view/ViewGroup.hpp"
 #include "./LinearLayout.hpp"
 
 namespace android::content
@@ -33,6 +30,7 @@ namespace android::widget
 {
 	class RadioGroup_LayoutParams;
 }
+class JString;
 
 namespace android::widget
 {
@@ -55,7 +53,7 @@ namespace android::widget
 		void check(jint arg0);
 		void clearCheck();
 		android::widget::RadioGroup_LayoutParams generateLayoutParams(JObject arg0);
-		jstring getAccessibilityClassName();
+		JString getAccessibilityClassName();
 		jint getAutofillType();
 		android::view::autofill::AutofillValue getAutofillValue();
 		jint getCheckedRadioButtonId();

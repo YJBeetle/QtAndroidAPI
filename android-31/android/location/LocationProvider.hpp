@@ -6,6 +6,7 @@ namespace android::location
 {
 	class Criteria;
 }
+class JString;
 
 namespace android::location
 {
@@ -25,7 +26,7 @@ namespace android::location
 		
 		// Methods
 		jint getAccuracy();
-		jstring getName();
+		JString getName();
 		jint getPowerRequirement();
 		jboolean hasMonetaryCost();
 		jboolean meetsCriteria(android::location::Criteria arg0);

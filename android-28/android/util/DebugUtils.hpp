@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JObject;
 
 namespace android::util
 {
@@ -17,7 +18,7 @@ namespace android::util
 		// Constructors
 		
 		// Methods
-		static jboolean isObjectSelected(jobject arg0);
+		static jboolean isObjectSelected(JObject arg0);
 	};
 } // namespace android::util
 

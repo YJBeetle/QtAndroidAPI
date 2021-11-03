@@ -6,6 +6,7 @@ namespace android::view::inputmethod
 {
 	class InputMethodSubtype;
 }
+class JString;
 
 namespace android::view::inputmethod
 {
@@ -25,13 +26,13 @@ namespace android::view::inputmethod
 		android::view::inputmethod::InputMethodSubtype build();
 		android::view::inputmethod::InputMethodSubtype_InputMethodSubtypeBuilder setIsAsciiCapable(jboolean arg0);
 		android::view::inputmethod::InputMethodSubtype_InputMethodSubtypeBuilder setIsAuxiliary(jboolean arg0);
-		android::view::inputmethod::InputMethodSubtype_InputMethodSubtypeBuilder setLanguageTag(jstring arg0);
+		android::view::inputmethod::InputMethodSubtype_InputMethodSubtypeBuilder setLanguageTag(JString arg0);
 		android::view::inputmethod::InputMethodSubtype_InputMethodSubtypeBuilder setOverridesImplicitlyEnabledSubtype(jboolean arg0);
-		android::view::inputmethod::InputMethodSubtype_InputMethodSubtypeBuilder setSubtypeExtraValue(jstring arg0);
+		android::view::inputmethod::InputMethodSubtype_InputMethodSubtypeBuilder setSubtypeExtraValue(JString arg0);
 		android::view::inputmethod::InputMethodSubtype_InputMethodSubtypeBuilder setSubtypeIconResId(jint arg0);
 		android::view::inputmethod::InputMethodSubtype_InputMethodSubtypeBuilder setSubtypeId(jint arg0);
-		android::view::inputmethod::InputMethodSubtype_InputMethodSubtypeBuilder setSubtypeLocale(jstring arg0);
-		android::view::inputmethod::InputMethodSubtype_InputMethodSubtypeBuilder setSubtypeMode(jstring arg0);
+		android::view::inputmethod::InputMethodSubtype_InputMethodSubtypeBuilder setSubtypeLocale(JString arg0);
+		android::view::inputmethod::InputMethodSubtype_InputMethodSubtypeBuilder setSubtypeMode(JString arg0);
 		android::view::inputmethod::InputMethodSubtype_InputMethodSubtypeBuilder setSubtypeNameResId(jint arg0);
 	};
 } // namespace android::view::inputmethod

@@ -1,9 +1,12 @@
+#include "../../JArray.hpp"
+#include "../../JArray.hpp"
 #include "./ContentProvider.hpp"
 #include "./ContentProviderOperation_Builder.hpp"
 #include "./ContentProviderResult.hpp"
 #include "./ContentValues.hpp"
 #include "../net/Uri.hpp"
 #include "../os/Parcel.hpp"
+#include "../../JString.hpp"
 #include "./ContentProviderOperation.hpp"
 
 namespace android::content
@@ -60,13 +63,13 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	android::content::ContentProviderResult ContentProviderOperation::apply(android::content::ContentProvider arg0, jarray arg1, jint arg2)
+	android::content::ContentProviderResult ContentProviderOperation::apply(android::content::ContentProvider arg0, JArray arg1, jint arg2)
 	{
 		return callObjectMethod(
 			"apply",
 			"(Landroid/content/ContentProvider;[Landroid/content/ContentProviderResult;I)Landroid/content/ContentProviderResult;",
 			arg0.object(),
-			arg1,
+			arg1.object<jarray>(),
 			arg2
 		);
 	}
@@ -133,30 +136,30 @@ namespace android::content
 			"()Z"
 		);
 	}
-	jarray ContentProviderOperation::resolveSelectionArgsBackReferences(jarray arg0, jint arg1)
+	JArray ContentProviderOperation::resolveSelectionArgsBackReferences(JArray arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"resolveSelectionArgsBackReferences",
 			"([Landroid/content/ContentProviderResult;I)[Ljava/lang/String;",
-			arg0,
+			arg0.object<jarray>(),
 			arg1
-		).object<jarray>();
+		);
 	}
-	android::content::ContentValues ContentProviderOperation::resolveValueBackReferences(jarray arg0, jint arg1)
+	android::content::ContentValues ContentProviderOperation::resolveValueBackReferences(JArray arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"resolveValueBackReferences",
 			"([Landroid/content/ContentProviderResult;I)Landroid/content/ContentValues;",
-			arg0,
+			arg0.object<jarray>(),
 			arg1
 		);
 	}
-	jstring ContentProviderOperation::toString()
+	JString ContentProviderOperation::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void ContentProviderOperation::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

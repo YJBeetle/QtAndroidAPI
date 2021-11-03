@@ -1,4 +1,6 @@
+#include "../../../JByteArray.hpp"
 #include "../../../java/io/FileDescriptor.hpp"
+#include "../../../JString.hpp"
 #include "./BackupDataInput.hpp"
 
 namespace android::app::backup
@@ -18,19 +20,19 @@ namespace android::app::backup
 			"()I"
 		);
 	}
-	jstring BackupDataInput::getKey()
+	JString BackupDataInput::getKey()
 	{
 		return callObjectMethod(
 			"getKey",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jint BackupDataInput::readEntityData(jbyteArray arg0, jint arg1, jint arg2)
+	jint BackupDataInput::readEntityData(JByteArray arg0, jint arg1, jint arg2)
 	{
 		return callMethod<jint>(
 			"readEntityData",
 			"([BII)I",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1,
 			arg2
 		);

@@ -1,3 +1,5 @@
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
 #include "../../../java/net/URL.hpp"
 #include "../../../java/util/Optional.hpp"
 #include "./SSLSocketFactory.hpp"
@@ -47,12 +49,12 @@ namespace javax::net::ssl
 			arg0.object()
 		);
 	}
-	jstring HttpsURLConnection::getCipherSuite()
+	JString HttpsURLConnection::getCipherSuite()
 	{
 		return callObjectMethod(
 			"getCipherSuite",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	JObject HttpsURLConnection::getHostnameVerifier()
 	{
@@ -61,12 +63,12 @@ namespace javax::net::ssl
 			"()Ljavax/net/ssl/HostnameVerifier;"
 		);
 	}
-	jarray HttpsURLConnection::getLocalCertificates()
+	JArray HttpsURLConnection::getLocalCertificates()
 	{
 		return callObjectMethod(
 			"getLocalCertificates",
 			"()[Ljava/security/cert/Certificate;"
-		).object<jarray>();
+		);
 	}
 	JObject HttpsURLConnection::getLocalPrincipal()
 	{
@@ -96,12 +98,12 @@ namespace javax::net::ssl
 			"()Ljavax/net/ssl/SSLSocketFactory;"
 		);
 	}
-	jarray HttpsURLConnection::getServerCertificates()
+	JArray HttpsURLConnection::getServerCertificates()
 	{
 		return callObjectMethod(
 			"getServerCertificates",
 			"()[Ljava/security/cert/Certificate;"
-		).object<jarray>();
+		);
 	}
 	void HttpsURLConnection::setHostnameVerifier(JObject arg0)
 	{

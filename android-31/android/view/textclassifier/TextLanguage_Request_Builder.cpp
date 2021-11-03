@@ -1,5 +1,6 @@
 #include "../../os/Bundle.hpp"
 #include "./TextLanguage_Request.hpp"
+#include "../../../JString.hpp"
 #include "./TextLanguage_Request_Builder.hpp"
 
 namespace android::view::textclassifier
@@ -10,11 +11,11 @@ namespace android::view::textclassifier
 	TextLanguage_Request_Builder::TextLanguage_Request_Builder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	TextLanguage_Request_Builder::TextLanguage_Request_Builder(jstring arg0)
+	TextLanguage_Request_Builder::TextLanguage_Request_Builder(JString arg0)
 		: JObject(
 			"android.view.textclassifier.TextLanguage$Request$Builder",
 			"(Ljava/lang/CharSequence;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

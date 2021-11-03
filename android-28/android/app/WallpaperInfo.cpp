@@ -6,6 +6,8 @@
 #include "../graphics/drawable/Drawable.hpp"
 #include "../net/Uri.hpp"
 #include "../os/Parcel.hpp"
+#include "../../JString.hpp"
+#include "../../JString.hpp"
 #include "./WallpaperInfo.hpp"
 
 namespace android::app
@@ -40,13 +42,13 @@ namespace android::app
 			"()I"
 		);
 	}
-	void WallpaperInfo::dump(JObject arg0, jstring arg1)
+	void WallpaperInfo::dump(JObject arg0, JString arg1)
 	{
 		callMethod<void>(
 			"dump",
 			"(Landroid/util/Printer;Ljava/lang/String;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
 	android::content::ComponentName WallpaperInfo::getComponent()
@@ -56,12 +58,12 @@ namespace android::app
 			"()Landroid/content/ComponentName;"
 		);
 	}
-	jstring WallpaperInfo::getPackageName()
+	JString WallpaperInfo::getPackageName()
 	{
 		return callObjectMethod(
 			"getPackageName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::content::pm::ServiceInfo WallpaperInfo::getServiceInfo()
 	{
@@ -70,19 +72,19 @@ namespace android::app
 			"()Landroid/content/pm/ServiceInfo;"
 		);
 	}
-	jstring WallpaperInfo::getServiceName()
+	JString WallpaperInfo::getServiceName()
 	{
 		return callObjectMethod(
 			"getServiceName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring WallpaperInfo::getSettingsActivity()
+	JString WallpaperInfo::getSettingsActivity()
 	{
 		return callObjectMethod(
 			"getSettingsActivity",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jboolean WallpaperInfo::getShowMetadataInPreview()
 	{
@@ -91,21 +93,21 @@ namespace android::app
 			"()Z"
 		);
 	}
-	jstring WallpaperInfo::loadAuthor(android::content::pm::PackageManager arg0)
+	JString WallpaperInfo::loadAuthor(android::content::pm::PackageManager arg0)
 	{
 		return callObjectMethod(
 			"loadAuthor",
 			"(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;",
 			arg0.object()
-		).object<jstring>();
+		);
 	}
-	jstring WallpaperInfo::loadContextDescription(android::content::pm::PackageManager arg0)
+	JString WallpaperInfo::loadContextDescription(android::content::pm::PackageManager arg0)
 	{
 		return callObjectMethod(
 			"loadContextDescription",
 			"(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;",
 			arg0.object()
-		).object<jstring>();
+		);
 	}
 	android::net::Uri WallpaperInfo::loadContextUri(android::content::pm::PackageManager arg0)
 	{
@@ -115,13 +117,13 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	jstring WallpaperInfo::loadDescription(android::content::pm::PackageManager arg0)
+	JString WallpaperInfo::loadDescription(android::content::pm::PackageManager arg0)
 	{
 		return callObjectMethod(
 			"loadDescription",
 			"(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;",
 			arg0.object()
-		).object<jstring>();
+		);
 	}
 	android::graphics::drawable::Drawable WallpaperInfo::loadIcon(android::content::pm::PackageManager arg0)
 	{
@@ -131,13 +133,13 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	jstring WallpaperInfo::loadLabel(android::content::pm::PackageManager arg0)
+	JString WallpaperInfo::loadLabel(android::content::pm::PackageManager arg0)
 	{
 		return callObjectMethod(
 			"loadLabel",
 			"(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;",
 			arg0.object()
-		).object<jstring>();
+		);
 	}
 	android::graphics::drawable::Drawable WallpaperInfo::loadThumbnail(android::content::pm::PackageManager arg0)
 	{
@@ -147,12 +149,12 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	jstring WallpaperInfo::toString()
+	JString WallpaperInfo::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void WallpaperInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

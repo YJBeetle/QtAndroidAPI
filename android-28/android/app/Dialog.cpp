@@ -15,6 +15,7 @@
 #include "../view/Window.hpp"
 #include "../view/WindowManager_LayoutParams.hpp"
 #include "../view/accessibility/AccessibilityEvent.hpp"
+#include "../../JString.hpp"
 #include "./Dialog.hpp"
 
 namespace android::app
@@ -679,12 +680,12 @@ namespace android::app
 			arg0
 		);
 	}
-	void Dialog::setTitle(jstring arg0)
+	void Dialog::setTitle(JString arg0)
 	{
 		callMethod<void>(
 			"setTitle",
 			"(Ljava/lang/CharSequence;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void Dialog::setVolumeControlStream(jint arg0)

@@ -6,6 +6,8 @@ namespace java::io
 {
 	class ObjectInputStream;
 }
+class JObject;
+class JString;
 namespace java::time::format
 {
 	class ResolverStyle;
@@ -37,12 +39,11 @@ namespace java::time::chrono
 		// Constructors
 		
 		// Methods
-		jint compareTo(jobject arg0);
 		jint compareTo(JObject arg0);
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint hashCode();
 		JObject resolveDate(JObject arg0, java::time::format::ResolverStyle arg1);
-		jstring toString();
+		JString toString();
 	};
 } // namespace java::time::chrono
 

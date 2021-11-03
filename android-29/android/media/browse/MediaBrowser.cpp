@@ -5,26 +5,27 @@
 #include "./MediaBrowser_SubscriptionCallback.hpp"
 #include "../session/MediaSession_Token.hpp"
 #include "../../os/Bundle.hpp"
+#include "../../../JString.hpp"
 #include "./MediaBrowser.hpp"
 
 namespace android::media::browse
 {
 	// Fields
-	jstring MediaBrowser::EXTRA_PAGE()
+	JString MediaBrowser::EXTRA_PAGE()
 	{
 		return getStaticObjectField(
 			"android.media.browse.MediaBrowser",
 			"EXTRA_PAGE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring MediaBrowser::EXTRA_PAGE_SIZE()
+	JString MediaBrowser::EXTRA_PAGE_SIZE()
 	{
 		return getStaticObjectField(
 			"android.media.browse.MediaBrowser",
 			"EXTRA_PAGE_SIZE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QJniObject forward
@@ -63,21 +64,21 @@ namespace android::media::browse
 			"()Landroid/os/Bundle;"
 		);
 	}
-	void MediaBrowser::getItem(jstring arg0, android::media::browse::MediaBrowser_ItemCallback arg1)
+	void MediaBrowser::getItem(JString arg0, android::media::browse::MediaBrowser_ItemCallback arg1)
 	{
 		callMethod<void>(
 			"getItem",
 			"(Ljava/lang/String;Landroid/media/browse/MediaBrowser$ItemCallback;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
-	jstring MediaBrowser::getRoot()
+	JString MediaBrowser::getRoot()
 	{
 		return callObjectMethod(
 			"getRoot",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::content::ComponentName MediaBrowser::getServiceComponent()
 	{
@@ -100,39 +101,39 @@ namespace android::media::browse
 			"()Z"
 		);
 	}
-	void MediaBrowser::subscribe(jstring arg0, android::media::browse::MediaBrowser_SubscriptionCallback arg1)
+	void MediaBrowser::subscribe(JString arg0, android::media::browse::MediaBrowser_SubscriptionCallback arg1)
 	{
 		callMethod<void>(
 			"subscribe",
 			"(Ljava/lang/String;Landroid/media/browse/MediaBrowser$SubscriptionCallback;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
-	void MediaBrowser::subscribe(jstring arg0, android::os::Bundle arg1, android::media::browse::MediaBrowser_SubscriptionCallback arg2)
+	void MediaBrowser::subscribe(JString arg0, android::os::Bundle arg1, android::media::browse::MediaBrowser_SubscriptionCallback arg2)
 	{
 		callMethod<void>(
 			"subscribe",
 			"(Ljava/lang/String;Landroid/os/Bundle;Landroid/media/browse/MediaBrowser$SubscriptionCallback;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
 			arg2.object()
 		);
 	}
-	void MediaBrowser::unsubscribe(jstring arg0)
+	void MediaBrowser::unsubscribe(JString arg0)
 	{
 		callMethod<void>(
 			"unsubscribe",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	void MediaBrowser::unsubscribe(jstring arg0, android::media::browse::MediaBrowser_SubscriptionCallback arg1)
+	void MediaBrowser::unsubscribe(JString arg0, android::media::browse::MediaBrowser_SubscriptionCallback arg1)
 	{
 		callMethod<void>(
 			"unsubscribe",
 			"(Ljava/lang/String;Landroid/media/browse/MediaBrowser$SubscriptionCallback;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}

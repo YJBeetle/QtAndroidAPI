@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./UCharacter_UnicodeBlock.hpp"
 
 namespace android::icu::lang
@@ -4683,13 +4684,13 @@ namespace android::icu::lang
 	// Constructors
 	
 	// Methods
-	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::forName(jstring arg0)
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::forName(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.icu.lang.UCharacter$UnicodeBlock",
 			"forName",
 			"(Ljava/lang/String;)Landroid/icu/lang/UCharacter$UnicodeBlock;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::getInstance(jint arg0)

@@ -1,6 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./CellInfo.hpp"
 
 namespace android::os
@@ -23,6 +22,8 @@ namespace android::telephony
 {
 	class CellSignalStrengthGsm;
 }
+class JObject;
+class JString;
 
 namespace android::telephony
 {
@@ -40,11 +41,11 @@ namespace android::telephony
 		
 		// Methods
 		jint describeContents();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		android::telephony::CellIdentityGsm getCellIdentity();
 		android::telephony::CellSignalStrengthGsm getCellSignalStrength();
 		jint hashCode();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::telephony

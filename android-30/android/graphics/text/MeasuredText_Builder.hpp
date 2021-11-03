@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JCharArray;
 namespace android::graphics
 {
 	class Paint;
@@ -23,7 +24,7 @@ namespace android::graphics::text
 		MeasuredText_Builder(QJniObject obj);
 		
 		// Constructors
-		MeasuredText_Builder(jcharArray arg0);
+		MeasuredText_Builder(JCharArray arg0);
 		MeasuredText_Builder(android::graphics::text::MeasuredText arg0);
 		
 		// Methods

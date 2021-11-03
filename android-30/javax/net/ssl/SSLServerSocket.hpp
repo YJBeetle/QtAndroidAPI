@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "../../../java/net/ServerSocket.hpp"
 
+class JArray;
 namespace java::net
 {
 	class InetAddress;
@@ -27,17 +27,17 @@ namespace javax::net::ssl
 		
 		// Methods
 		jboolean getEnableSessionCreation();
-		jarray getEnabledCipherSuites();
-		jarray getEnabledProtocols();
+		JArray getEnabledCipherSuites();
+		JArray getEnabledProtocols();
 		jboolean getNeedClientAuth();
 		javax::net::ssl::SSLParameters getSSLParameters();
-		jarray getSupportedCipherSuites();
-		jarray getSupportedProtocols();
+		JArray getSupportedCipherSuites();
+		JArray getSupportedProtocols();
 		jboolean getUseClientMode();
 		jboolean getWantClientAuth();
 		void setEnableSessionCreation(jboolean arg0);
-		void setEnabledCipherSuites(jarray arg0);
-		void setEnabledProtocols(jarray arg0);
+		void setEnabledCipherSuites(JArray arg0);
+		void setEnabledProtocols(JArray arg0);
 		void setNeedClientAuth(jboolean arg0);
 		void setSSLParameters(javax::net::ssl::SSLParameters arg0);
 		void setUseClientMode(jboolean arg0);

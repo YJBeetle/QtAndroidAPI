@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "./Drawable_ConstantState.hpp"
 
+class JArray;
 namespace android::content::res
 {
 	class Resources;
@@ -40,7 +40,7 @@ namespace android::graphics::drawable
 		jint getChangingConfigurations();
 		android::graphics::drawable::Drawable getChild(jint arg0);
 		jint getChildCount();
-		jarray getChildren();
+		JArray getChildren();
 		jint getConstantHeight();
 		jint getConstantMinimumHeight();
 		jint getConstantMinimumWidth();

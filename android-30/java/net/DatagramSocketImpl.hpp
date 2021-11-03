@@ -6,6 +6,7 @@ namespace java::io
 {
 	class FileDescriptor;
 }
+class JObject;
 namespace java::net
 {
 	class DatagramPacket;

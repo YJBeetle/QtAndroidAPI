@@ -1,6 +1,7 @@
 #include "./NetworkInfo_DetailedState.hpp"
 #include "./NetworkInfo_State.hpp"
 #include "../os/Parcel.hpp"
+#include "../../JString.hpp"
 #include "./NetworkInfo.hpp"
 
 namespace android::net
@@ -19,14 +20,14 @@ namespace android::net
 	NetworkInfo::NetworkInfo(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	NetworkInfo::NetworkInfo(jint arg0, jint arg1, jstring arg2, jstring arg3)
+	NetworkInfo::NetworkInfo(jint arg0, jint arg1, JString arg2, JString arg3)
 		: JObject(
 			"android.net.NetworkInfo",
 			"(IILjava/lang/String;Ljava/lang/String;)V",
 			arg0,
 			arg1,
-			arg2,
-			arg3
+			arg2.object<jstring>(),
+			arg3.object<jstring>()
 		) {}
 	
 	// Methods
@@ -44,19 +45,19 @@ namespace android::net
 			"()Landroid/net/NetworkInfo$DetailedState;"
 		);
 	}
-	jstring NetworkInfo::getExtraInfo()
+	JString NetworkInfo::getExtraInfo()
 	{
 		return callObjectMethod(
 			"getExtraInfo",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring NetworkInfo::getReason()
+	JString NetworkInfo::getReason()
 	{
 		return callObjectMethod(
 			"getReason",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::net::NetworkInfo_State NetworkInfo::getState()
 	{
@@ -72,12 +73,12 @@ namespace android::net
 			"()I"
 		);
 	}
-	jstring NetworkInfo::getSubtypeName()
+	JString NetworkInfo::getSubtypeName()
 	{
 		return callObjectMethod(
 			"getSubtypeName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint NetworkInfo::getType()
 	{
@@ -86,12 +87,12 @@ namespace android::net
 			"()I"
 		);
 	}
-	jstring NetworkInfo::getTypeName()
+	JString NetworkInfo::getTypeName()
 	{
 		return callObjectMethod(
 			"getTypeName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jboolean NetworkInfo::isAvailable()
 	{
@@ -128,22 +129,22 @@ namespace android::net
 			"()Z"
 		);
 	}
-	void NetworkInfo::setDetailedState(android::net::NetworkInfo_DetailedState arg0, jstring arg1, jstring arg2)
+	void NetworkInfo::setDetailedState(android::net::NetworkInfo_DetailedState arg0, JString arg1, JString arg2)
 	{
 		callMethod<void>(
 			"setDetailedState",
 			"(Landroid/net/NetworkInfo$DetailedState;Ljava/lang/String;Ljava/lang/String;)V",
 			arg0.object(),
-			arg1,
-			arg2
+			arg1.object<jstring>(),
+			arg2.object<jstring>()
 		);
 	}
-	jstring NetworkInfo::toString()
+	JString NetworkInfo::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void NetworkInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

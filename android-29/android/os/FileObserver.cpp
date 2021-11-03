@@ -1,4 +1,5 @@
 #include "../../java/io/File.hpp"
+#include "../../JString.hpp"
 #include "./FileObserver.hpp"
 
 namespace android::os
@@ -106,11 +107,11 @@ namespace android::os
 			"(Ljava/io/File;)V",
 			arg0.object()
 		) {}
-	FileObserver::FileObserver(jstring arg0)
+	FileObserver::FileObserver(JString arg0)
 		: JObject(
 			"android.os.FileObserver",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	FileObserver::FileObserver(JObject arg0)
 		: JObject(
@@ -125,11 +126,11 @@ namespace android::os
 			arg0.object(),
 			arg1
 		) {}
-	FileObserver::FileObserver(jstring arg0, jint arg1)
+	FileObserver::FileObserver(JString arg0, jint arg1)
 		: JObject(
 			"android.os.FileObserver",
 			"(Ljava/lang/String;I)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		) {}
 	FileObserver::FileObserver(JObject arg0, jint arg1)
@@ -141,13 +142,13 @@ namespace android::os
 		) {}
 	
 	// Methods
-	void FileObserver::onEvent(jint arg0, jstring arg1)
+	void FileObserver::onEvent(jint arg0, JString arg1)
 	{
 		callMethod<void>(
 			"onEvent",
 			"(ILjava/lang/String;)V",
 			arg0,
-			arg1
+			arg1.object<jstring>()
 		);
 	}
 	void FileObserver::startWatching()

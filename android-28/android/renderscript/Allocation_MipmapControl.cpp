@@ -1,3 +1,5 @@
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
 #include "./Allocation_MipmapControl.hpp"
 
 namespace android::renderscript
@@ -34,22 +36,22 @@ namespace android::renderscript
 	// Constructors
 	
 	// Methods
-	android::renderscript::Allocation_MipmapControl Allocation_MipmapControl::valueOf(jstring arg0)
+	android::renderscript::Allocation_MipmapControl Allocation_MipmapControl::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.renderscript.Allocation$MipmapControl",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/renderscript/Allocation$MipmapControl;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray Allocation_MipmapControl::values()
+	JArray Allocation_MipmapControl::values()
 	{
 		return callStaticObjectMethod(
 			"android.renderscript.Allocation$MipmapControl",
 			"values",
 			"()[Landroid/renderscript/Allocation$MipmapControl;"
-		).object<jarray>();
+		);
 	}
 } // namespace android::renderscript
 

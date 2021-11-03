@@ -1,3 +1,5 @@
+#include "../../../JByteArray.hpp"
+#include "../../../JString.hpp"
 #include "./BackupDataOutput.hpp"
 
 namespace android::app::backup
@@ -24,21 +26,21 @@ namespace android::app::backup
 			"()I"
 		);
 	}
-	jint BackupDataOutput::writeEntityData(jbyteArray arg0, jint arg1)
+	jint BackupDataOutput::writeEntityData(JByteArray arg0, jint arg1)
 	{
 		return callMethod<jint>(
 			"writeEntityData",
 			"([BI)I",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1
 		);
 	}
-	jint BackupDataOutput::writeEntityHeader(jstring arg0, jint arg1)
+	jint BackupDataOutput::writeEntityHeader(JString arg0, jint arg1)
 	{
 		return callMethod<jint>(
 			"writeEntityHeader",
 			"(Ljava/lang/String;I)I",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}

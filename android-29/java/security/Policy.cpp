@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./CodeSource.hpp"
 #include "./NoSuchAlgorithmException.hpp"
 #include "./Permission.hpp"
@@ -30,34 +31,34 @@ namespace java::security
 		) {}
 	
 	// Methods
-	java::security::Policy Policy::getInstance(jstring arg0, JObject arg1)
+	java::security::Policy Policy::getInstance(JString arg0, JObject arg1)
 	{
 		return callStaticObjectMethod(
 			"java.security.Policy",
 			"getInstance",
 			"(Ljava/lang/String;Ljava/security/Policy$Parameters;)Ljava/security/Policy;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
-	java::security::Policy Policy::getInstance(jstring arg0, JObject arg1, jstring arg2)
+	java::security::Policy Policy::getInstance(JString arg0, JObject arg1, JString arg2)
 	{
 		return callStaticObjectMethod(
 			"java.security.Policy",
 			"getInstance",
 			"(Ljava/lang/String;Ljava/security/Policy$Parameters;Ljava/lang/String;)Ljava/security/Policy;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
-			arg2
+			arg2.object<jstring>()
 		);
 	}
-	java::security::Policy Policy::getInstance(jstring arg0, JObject arg1, java::security::Provider arg2)
+	java::security::Policy Policy::getInstance(JString arg0, JObject arg1, java::security::Provider arg2)
 	{
 		return callStaticObjectMethod(
 			"java.security.Policy",
 			"getInstance",
 			"(Ljava/lang/String;Ljava/security/Policy$Parameters;Ljava/security/Provider;)Ljava/security/Policy;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
 			arg2.object()
 		);
@@ -109,12 +110,12 @@ namespace java::security
 			"()Ljava/security/Provider;"
 		);
 	}
-	jstring Policy::getType()
+	JString Policy::getType()
 	{
 		return callObjectMethod(
 			"getType",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jboolean Policy::implies(java::security::ProtectionDomain arg0, java::security::Permission arg1)
 	{

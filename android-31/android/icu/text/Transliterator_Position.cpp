@@ -1,3 +1,5 @@
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./Transliterator_Position.hpp"
 
 namespace android::icu::text
@@ -62,12 +64,12 @@ namespace android::icu::text
 		) {}
 	
 	// Methods
-	jboolean Transliterator_Position::equals(jobject arg0)
+	jboolean Transliterator_Position::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint Transliterator_Position::hashCode()
@@ -85,12 +87,12 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	jstring Transliterator_Position::toString()
+	JString Transliterator_Position::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void Transliterator_Position::validate(jint arg0)
 	{

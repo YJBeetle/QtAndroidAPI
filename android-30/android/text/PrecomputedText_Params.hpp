@@ -6,6 +6,8 @@ namespace android::text
 {
 	class TextPaint;
 }
+class JObject;
+class JString;
 
 namespace android::text
 {
@@ -21,13 +23,13 @@ namespace android::text
 		// Constructors
 		
 		// Methods
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint getBreakStrategy();
 		jint getHyphenationFrequency();
 		JObject getTextDirection();
 		android::text::TextPaint getTextPaint();
 		jint hashCode();
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::text
 

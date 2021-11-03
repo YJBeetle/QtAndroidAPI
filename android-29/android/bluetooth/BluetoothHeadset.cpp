@@ -1,33 +1,35 @@
+#include "../../JIntArray.hpp"
 #include "./BluetoothDevice.hpp"
 #include "../content/Context.hpp"
+#include "../../JString.hpp"
 #include "./BluetoothHeadset.hpp"
 
 namespace android::bluetooth
 {
 	// Fields
-	jstring BluetoothHeadset::ACTION_AUDIO_STATE_CHANGED()
+	JString BluetoothHeadset::ACTION_AUDIO_STATE_CHANGED()
 	{
 		return getStaticObjectField(
 			"android.bluetooth.BluetoothHeadset",
 			"ACTION_AUDIO_STATE_CHANGED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring BluetoothHeadset::ACTION_CONNECTION_STATE_CHANGED()
+	JString BluetoothHeadset::ACTION_CONNECTION_STATE_CHANGED()
 	{
 		return getStaticObjectField(
 			"android.bluetooth.BluetoothHeadset",
 			"ACTION_CONNECTION_STATE_CHANGED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring BluetoothHeadset::ACTION_VENDOR_SPECIFIC_HEADSET_EVENT()
+	JString BluetoothHeadset::ACTION_VENDOR_SPECIFIC_HEADSET_EVENT()
 	{
 		return getStaticObjectField(
 			"android.bluetooth.BluetoothHeadset",
 			"ACTION_VENDOR_SPECIFIC_HEADSET_EVENT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint BluetoothHeadset::AT_CMD_TYPE_ACTION()
 	{
@@ -64,29 +66,29 @@ namespace android::bluetooth
 			"AT_CMD_TYPE_TEST"
 		);
 	}
-	jstring BluetoothHeadset::EXTRA_VENDOR_SPECIFIC_HEADSET_EVENT_ARGS()
+	JString BluetoothHeadset::EXTRA_VENDOR_SPECIFIC_HEADSET_EVENT_ARGS()
 	{
 		return getStaticObjectField(
 			"android.bluetooth.BluetoothHeadset",
 			"EXTRA_VENDOR_SPECIFIC_HEADSET_EVENT_ARGS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring BluetoothHeadset::EXTRA_VENDOR_SPECIFIC_HEADSET_EVENT_CMD()
+	JString BluetoothHeadset::EXTRA_VENDOR_SPECIFIC_HEADSET_EVENT_CMD()
 	{
 		return getStaticObjectField(
 			"android.bluetooth.BluetoothHeadset",
 			"EXTRA_VENDOR_SPECIFIC_HEADSET_EVENT_CMD",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring BluetoothHeadset::EXTRA_VENDOR_SPECIFIC_HEADSET_EVENT_CMD_TYPE()
+	JString BluetoothHeadset::EXTRA_VENDOR_SPECIFIC_HEADSET_EVENT_CMD_TYPE()
 	{
 		return getStaticObjectField(
 			"android.bluetooth.BluetoothHeadset",
 			"EXTRA_VENDOR_SPECIFIC_HEADSET_EVENT_CMD_TYPE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint BluetoothHeadset::STATE_AUDIO_CONNECTED()
 	{
@@ -109,21 +111,21 @@ namespace android::bluetooth
 			"STATE_AUDIO_DISCONNECTED"
 		);
 	}
-	jstring BluetoothHeadset::VENDOR_RESULT_CODE_COMMAND_ANDROID()
+	JString BluetoothHeadset::VENDOR_RESULT_CODE_COMMAND_ANDROID()
 	{
 		return getStaticObjectField(
 			"android.bluetooth.BluetoothHeadset",
 			"VENDOR_RESULT_CODE_COMMAND_ANDROID",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring BluetoothHeadset::VENDOR_SPECIFIC_HEADSET_EVENT_COMPANY_ID_CATEGORY()
+	JString BluetoothHeadset::VENDOR_SPECIFIC_HEADSET_EVENT_COMPANY_ID_CATEGORY()
 	{
 		return getStaticObjectField(
 			"android.bluetooth.BluetoothHeadset",
 			"VENDOR_SPECIFIC_HEADSET_EVENT_COMPANY_ID_CATEGORY",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QJniObject forward
@@ -147,12 +149,12 @@ namespace android::bluetooth
 			arg0.object()
 		);
 	}
-	JObject BluetoothHeadset::getDevicesMatchingConnectionStates(jintArray arg0)
+	JObject BluetoothHeadset::getDevicesMatchingConnectionStates(JIntArray arg0)
 	{
 		return callObjectMethod(
 			"getDevicesMatchingConnectionStates",
 			"([I)Ljava/util/List;",
-			arg0
+			arg0.object<jintArray>()
 		);
 	}
 	jboolean BluetoothHeadset::isAudioConnected(android::bluetooth::BluetoothDevice arg0)
@@ -163,14 +165,14 @@ namespace android::bluetooth
 			arg0.object()
 		);
 	}
-	jboolean BluetoothHeadset::sendVendorSpecificResultCode(android::bluetooth::BluetoothDevice arg0, jstring arg1, jstring arg2)
+	jboolean BluetoothHeadset::sendVendorSpecificResultCode(android::bluetooth::BluetoothDevice arg0, JString arg1, JString arg2)
 	{
 		return callMethod<jboolean>(
 			"sendVendorSpecificResultCode",
 			"(Landroid/bluetooth/BluetoothDevice;Ljava/lang/String;Ljava/lang/String;)Z",
 			arg0.object(),
-			arg1,
-			arg2
+			arg1.object<jstring>(),
+			arg2.object<jstring>()
 		);
 	}
 	jboolean BluetoothHeadset::startVoiceRecognition(android::bluetooth::BluetoothDevice arg0)

@@ -10,6 +10,7 @@ namespace android::view
 {
 	class Surface;
 }
+class JString;
 
 namespace android::hardware::display
 {
@@ -30,7 +31,7 @@ namespace android::hardware::display
 		void release();
 		void resize(jint arg0, jint arg1, jint arg2);
 		void setSurface(android::view::Surface arg0);
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::hardware::display
 

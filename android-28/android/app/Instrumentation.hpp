@@ -66,10 +66,15 @@ namespace android::view
 {
 	class MotionEvent;
 }
+class JString;
+class JClass;
 namespace java::lang
 {
 	class ClassLoader;
 }
+class JObject;
+class JString;
+class JThrowable;
 
 namespace android::app
 {
@@ -77,8 +82,8 @@ namespace android::app
 	{
 	public:
 		// Fields
-		static jstring REPORT_KEY_IDENTIFIER();
-		static jstring REPORT_KEY_STREAMRESULT();
+		static JString REPORT_KEY_IDENTIFIER();
+		static JString REPORT_KEY_STREAMRESULT();
 		
 		// QJniObject forward
 		template<typename ...Ts> explicit Instrumentation(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
@@ -88,10 +93,10 @@ namespace android::app
 		Instrumentation();
 		
 		// Methods
-		static android::app::Application newApplication(jclass arg0, android::content::Context arg1);
+		static android::app::Application newApplication(JClass arg0, android::content::Context arg1);
 		android::os::TestLooperManager acquireLooperManager(android::os::Looper arg0);
 		android::app::Instrumentation_ActivityMonitor addMonitor(android::content::IntentFilter arg0, android::app::Instrumentation_ActivityResult arg1, jboolean arg2);
-		android::app::Instrumentation_ActivityMonitor addMonitor(jstring arg0, android::app::Instrumentation_ActivityResult arg1, jboolean arg2);
+		android::app::Instrumentation_ActivityMonitor addMonitor(JString arg0, android::app::Instrumentation_ActivityResult arg1, jboolean arg2);
 		void addMonitor(android::app::Instrumentation_ActivityMonitor arg0);
 		void addResults(android::os::Bundle arg0);
 		void callActivityOnCreate(android::app::Activity arg0, android::os::Bundle arg1);
@@ -118,19 +123,19 @@ namespace android::app
 		android::os::Bundle getBinderCounts();
 		android::content::ComponentName getComponentName();
 		android::content::Context getContext();
-		jstring getProcessName();
+		JString getProcessName();
 		android::content::Context getTargetContext();
 		android::app::UiAutomation getUiAutomation();
 		android::app::UiAutomation getUiAutomation(jint arg0);
 		jboolean invokeContextMenuAction(android::app::Activity arg0, jint arg1, jint arg2);
 		jboolean invokeMenuActionSync(android::app::Activity arg0, jint arg1, jint arg2);
 		jboolean isProfiling();
-		android::app::Activity newActivity(java::lang::ClassLoader arg0, jstring arg1, android::content::Intent arg2);
-		android::app::Activity newActivity(jclass arg0, android::content::Context arg1, JObject arg2, android::app::Application arg3, android::content::Intent arg4, android::content::pm::ActivityInfo arg5, jstring arg6, android::app::Activity arg7, jstring arg8, jobject arg9);
-		android::app::Application newApplication(java::lang::ClassLoader arg0, jstring arg1, android::content::Context arg2);
+		android::app::Activity newActivity(java::lang::ClassLoader arg0, JString arg1, android::content::Intent arg2);
+		android::app::Activity newActivity(JClass arg0, android::content::Context arg1, JObject arg2, android::app::Application arg3, android::content::Intent arg4, android::content::pm::ActivityInfo arg5, JString arg6, android::app::Activity arg7, JString arg8, JObject arg9);
+		android::app::Application newApplication(java::lang::ClassLoader arg0, JString arg1, android::content::Context arg2);
 		void onCreate(android::os::Bundle arg0);
 		void onDestroy();
-		jboolean onException(jobject arg0, jthrowable arg1);
+		jboolean onException(JObject arg0, JThrowable arg1);
 		void onStart();
 		void removeMonitor(android::app::Instrumentation_ActivityMonitor arg0);
 		void runOnMainSync(JObject arg0);
@@ -139,7 +144,7 @@ namespace android::app
 		void sendKeySync(android::view::KeyEvent arg0);
 		void sendPointerSync(android::view::MotionEvent arg0);
 		void sendStatus(jint arg0, android::os::Bundle arg1);
-		void sendStringSync(jstring arg0);
+		void sendStringSync(JString arg0);
 		void sendTrackballEventSync(android::view::MotionEvent arg0);
 		void setAutomaticPerformanceSnapshots();
 		void setInTouchMode(jboolean arg0);

@@ -1,6 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./Notification_Style.hpp"
 
 namespace android::app
@@ -15,6 +14,7 @@ namespace android::graphics::drawable
 {
 	class Icon;
 }
+class JString;
 
 namespace android::app
 {
@@ -37,7 +37,7 @@ namespace android::app
 		android::app::Notification_CallStyle setDeclineButtonColorHint(jint arg0);
 		android::app::Notification_CallStyle setIsVideo(jboolean arg0);
 		android::app::Notification_CallStyle setVerificationIcon(android::graphics::drawable::Icon arg0);
-		android::app::Notification_CallStyle setVerificationText(jstring arg0);
+		android::app::Notification_CallStyle setVerificationText(JString arg0);
 	};
 } // namespace android::app
 

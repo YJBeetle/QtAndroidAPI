@@ -1,4 +1,5 @@
 #include "../../os/Parcel.hpp"
+#include "../../../JString.hpp"
 #include "./ObbInfo.hpp"
 
 namespace android::content::res
@@ -19,12 +20,12 @@ namespace android::content::res
 			"OBB_OVERLAY"
 		);
 	}
-	jstring ObbInfo::filename()
+	JString ObbInfo::filename()
 	{
 		return getObjectField(
 			"filename",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint ObbInfo::flags()
 	{
@@ -32,12 +33,12 @@ namespace android::content::res
 			"flags"
 		);
 	}
-	jstring ObbInfo::packageName()
+	JString ObbInfo::packageName()
 	{
 		return getObjectField(
 			"packageName",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint ObbInfo::version()
 	{
@@ -59,12 +60,12 @@ namespace android::content::res
 			"()I"
 		);
 	}
-	jstring ObbInfo::toString()
+	JString ObbInfo::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void ObbInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

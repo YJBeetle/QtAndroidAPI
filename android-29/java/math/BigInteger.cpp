@@ -1,5 +1,15 @@
+#include "../../JByteArray.hpp"
+#include "../../JCharArray.hpp"
+#include "../../JDoubleArray.hpp"
+#include "../../JIntArray.hpp"
+#include "../../JLongArray.hpp"
+#include "../../JArray.hpp"
+#include "../../JArray.hpp"
+#include "../../JArray.hpp"
 #include "../io/ObjectInputStream.hpp"
 #include "../io/ObjectOutputStream.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "../lang/StringBuilder.hpp"
 #include "../util/Random.hpp"
 #include "./BigInteger.hpp"
@@ -44,24 +54,24 @@ namespace java::math
 	BigInteger::BigInteger(QJniObject obj) : java::lang::Number(obj) {}
 	
 	// Constructors
-	BigInteger::BigInteger(jbyteArray arg0)
+	BigInteger::BigInteger(JByteArray arg0)
 		: java::lang::Number(
 			"java.math.BigInteger",
 			"([B)V",
-			arg0
+			arg0.object<jbyteArray>()
 		) {}
-	BigInteger::BigInteger(jstring arg0)
+	BigInteger::BigInteger(JString arg0)
 		: java::lang::Number(
 			"java.math.BigInteger",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	BigInteger::BigInteger(jint arg0, jbyteArray arg1)
+	BigInteger::BigInteger(jint arg0, JByteArray arg1)
 		: java::lang::Number(
 			"java.math.BigInteger",
 			"(I[B)V",
 			arg0,
-			arg1
+			arg1.object<jbyteArray>()
 		) {}
 	BigInteger::BigInteger(jint arg0, java::util::Random arg1)
 		: java::lang::Number(
@@ -70,18 +80,18 @@ namespace java::math
 			arg0,
 			arg1.object()
 		) {}
-	BigInteger::BigInteger(jstring arg0, jint arg1)
+	BigInteger::BigInteger(JString arg0, jint arg1)
 		: java::lang::Number(
 			"java.math.BigInteger",
 			"(Ljava/lang/String;I)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		) {}
-	BigInteger::BigInteger(jbyteArray arg0, jint arg1, jint arg2)
+	BigInteger::BigInteger(JByteArray arg0, jint arg1, jint arg2)
 		: java::lang::Number(
 			"java.math.BigInteger",
 			"([BII)V",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1,
 			arg2
 		) {}
@@ -93,12 +103,12 @@ namespace java::math
 			arg1,
 			arg2.object()
 		) {}
-	BigInteger::BigInteger(jint arg0, jbyteArray arg1, jint arg2, jint arg3)
+	BigInteger::BigInteger(jint arg0, JByteArray arg1, jint arg2, jint arg3)
 		: java::lang::Number(
 			"java.math.BigInteger",
 			"(I[BII)V",
 			arg0,
-			arg1,
+			arg1.object<jbyteArray>(),
 			arg2,
 			arg3
 		) {}
@@ -183,12 +193,12 @@ namespace java::math
 			arg0
 		);
 	}
-	jint BigInteger::compareTo(jobject arg0)
+	jint BigInteger::compareTo(JObject arg0)
 	{
 		return callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Object;)I",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint BigInteger::compareTo(java::math::BigInteger arg0)
@@ -207,13 +217,13 @@ namespace java::math
 			arg0.object()
 		);
 	}
-	jarray BigInteger::divideAndRemainder(java::math::BigInteger arg0)
+	JArray BigInteger::divideAndRemainder(java::math::BigInteger arg0)
 	{
 		return callObjectMethod(
 			"divideAndRemainder",
 			"(Ljava/math/BigInteger;)[Ljava/math/BigInteger;",
 			arg0.object()
-		).object<jarray>();
+		);
 	}
 	jdouble BigInteger::doubleValue()
 	{
@@ -222,12 +232,12 @@ namespace java::math
 			"()D"
 		);
 	}
-	jboolean BigInteger::equals(jobject arg0)
+	jboolean BigInteger::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	java::math::BigInteger BigInteger::flipBit(jint arg0)
@@ -442,12 +452,12 @@ namespace java::math
 			"()Ljava/math/BigInteger;"
 		);
 	}
-	jarray BigInteger::sqrtAndRemainder()
+	JArray BigInteger::sqrtAndRemainder()
 	{
 		return callObjectMethod(
 			"sqrtAndRemainder",
 			"()[Ljava/math/BigInteger;"
-		).object<jarray>();
+		);
 	}
 	java::math::BigInteger BigInteger::subtract(java::math::BigInteger arg0)
 	{
@@ -465,27 +475,27 @@ namespace java::math
 			arg0
 		);
 	}
-	jbyteArray BigInteger::toByteArray()
+	JByteArray BigInteger::toByteArray()
 	{
 		return callObjectMethod(
 			"toByteArray",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
-	jstring BigInteger::toString()
+	JString BigInteger::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring BigInteger::toString(jint arg0)
+	JString BigInteger::toString(jint arg0)
 	{
 		return callObjectMethod(
 			"toString",
 			"(I)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
 	java::math::BigInteger BigInteger::_xor(java::math::BigInteger arg0)
 	{

@@ -1,3 +1,4 @@
+#include "../../../JObject.hpp"
 #include "./ResourceMismatchViolation.hpp"
 
 namespace android::os::strictmode

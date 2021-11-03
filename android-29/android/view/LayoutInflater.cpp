@@ -1,6 +1,7 @@
 #include "../content/Context.hpp"
 #include "./View.hpp"
 #include "./ViewGroup.hpp"
+#include "../../JString.hpp"
 #include "./LayoutInflater.hpp"
 
 namespace android::view
@@ -30,24 +31,24 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	android::view::View LayoutInflater::createView(jstring arg0, jstring arg1, JObject arg2)
+	android::view::View LayoutInflater::createView(JString arg0, JString arg1, JObject arg2)
 	{
 		return callObjectMethod(
 			"createView",
 			"(Ljava/lang/String;Ljava/lang/String;Landroid/util/AttributeSet;)Landroid/view/View;",
-			arg0,
-			arg1,
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
 			arg2.object()
 		);
 	}
-	android::view::View LayoutInflater::createView(android::content::Context arg0, jstring arg1, jstring arg2, JObject arg3)
+	android::view::View LayoutInflater::createView(android::content::Context arg0, JString arg1, JString arg2, JObject arg3)
 	{
 		return callObjectMethod(
 			"createView",
 			"(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Landroid/util/AttributeSet;)Landroid/view/View;",
 			arg0.object(),
-			arg1,
-			arg2,
+			arg1.object<jstring>(),
+			arg2.object<jstring>(),
 			arg3.object()
 		);
 	}
@@ -117,14 +118,14 @@ namespace android::view
 			arg2
 		);
 	}
-	android::view::View LayoutInflater::onCreateView(android::content::Context arg0, android::view::View arg1, jstring arg2, JObject arg3)
+	android::view::View LayoutInflater::onCreateView(android::content::Context arg0, android::view::View arg1, JString arg2, JObject arg3)
 	{
 		return callObjectMethod(
 			"onCreateView",
 			"(Landroid/content/Context;Landroid/view/View;Ljava/lang/String;Landroid/util/AttributeSet;)Landroid/view/View;",
 			arg0.object(),
 			arg1.object(),
-			arg2,
+			arg2.object<jstring>(),
 			arg3.object()
 		);
 	}

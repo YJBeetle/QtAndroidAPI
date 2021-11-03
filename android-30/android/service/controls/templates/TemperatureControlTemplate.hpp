@@ -1,12 +1,12 @@
 #pragma once
 
-#include "../../../../JObject.hpp"
 #include "./ControlTemplate.hpp"
 
 namespace android::service::controls::templates
 {
 	class ControlTemplate;
 }
+class JString;
 
 namespace android::service::controls::templates
 {
@@ -31,7 +31,7 @@ namespace android::service::controls::templates
 		TemperatureControlTemplate(QJniObject obj);
 		
 		// Constructors
-		TemperatureControlTemplate(jstring arg0, android::service::controls::templates::ControlTemplate arg1, jint arg2, jint arg3, jint arg4);
+		TemperatureControlTemplate(JString arg0, android::service::controls::templates::ControlTemplate arg1, jint arg2, jint arg3, jint arg4);
 		
 		// Methods
 		jint getCurrentActiveMode();

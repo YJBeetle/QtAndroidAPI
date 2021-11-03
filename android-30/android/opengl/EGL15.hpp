@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JLongArray;
 namespace android::opengl
 {
 	class EGLConfig;
@@ -93,14 +94,14 @@ namespace android::opengl
 		
 		// Methods
 		static jint eglClientWaitSync(android::opengl::EGLDisplay arg0, android::opengl::EGLSync arg1, jint arg2, jlong arg3);
-		static android::opengl::EGLImage eglCreateImage(android::opengl::EGLDisplay arg0, android::opengl::EGLContext arg1, jint arg2, jlong arg3, jlongArray arg4, jint arg5);
-		static android::opengl::EGLSurface eglCreatePlatformPixmapSurface(android::opengl::EGLDisplay arg0, android::opengl::EGLConfig arg1, java::nio::Buffer arg2, jlongArray arg3, jint arg4);
-		static android::opengl::EGLSurface eglCreatePlatformWindowSurface(android::opengl::EGLDisplay arg0, android::opengl::EGLConfig arg1, java::nio::Buffer arg2, jlongArray arg3, jint arg4);
-		static android::opengl::EGLSync eglCreateSync(android::opengl::EGLDisplay arg0, jint arg1, jlongArray arg2, jint arg3);
+		static android::opengl::EGLImage eglCreateImage(android::opengl::EGLDisplay arg0, android::opengl::EGLContext arg1, jint arg2, jlong arg3, JLongArray arg4, jint arg5);
+		static android::opengl::EGLSurface eglCreatePlatformPixmapSurface(android::opengl::EGLDisplay arg0, android::opengl::EGLConfig arg1, java::nio::Buffer arg2, JLongArray arg3, jint arg4);
+		static android::opengl::EGLSurface eglCreatePlatformWindowSurface(android::opengl::EGLDisplay arg0, android::opengl::EGLConfig arg1, java::nio::Buffer arg2, JLongArray arg3, jint arg4);
+		static android::opengl::EGLSync eglCreateSync(android::opengl::EGLDisplay arg0, jint arg1, JLongArray arg2, jint arg3);
 		static jboolean eglDestroyImage(android::opengl::EGLDisplay arg0, android::opengl::EGLImage arg1);
 		static jboolean eglDestroySync(android::opengl::EGLDisplay arg0, android::opengl::EGLSync arg1);
-		static android::opengl::EGLDisplay eglGetPlatformDisplay(jint arg0, jlong arg1, jlongArray arg2, jint arg3);
-		static jboolean eglGetSyncAttrib(android::opengl::EGLDisplay arg0, android::opengl::EGLSync arg1, jint arg2, jlongArray arg3, jint arg4);
+		static android::opengl::EGLDisplay eglGetPlatformDisplay(jint arg0, jlong arg1, JLongArray arg2, jint arg3);
+		static jboolean eglGetSyncAttrib(android::opengl::EGLDisplay arg0, android::opengl::EGLSync arg1, jint arg2, JLongArray arg3, jint arg4);
 		static jboolean eglWaitSync(android::opengl::EGLDisplay arg0, android::opengl::EGLSync arg1, jint arg2);
 	};
 } // namespace android::opengl

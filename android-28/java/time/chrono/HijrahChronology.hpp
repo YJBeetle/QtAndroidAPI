@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "./AbstractChronology.hpp"
 
+class JIntArray;
 namespace java::io
 {
 	class InputStream;
@@ -11,6 +11,8 @@ namespace java::io
 {
 	class ObjectInputStream;
 }
+class JObject;
+class JString;
 namespace java::lang
 {
 	class Void;
@@ -78,8 +80,8 @@ namespace java::time::chrono
 		java::time::chrono::HijrahDate dateYearDay(JObject arg0, jint arg1, jint arg2);
 		java::time::chrono::HijrahEra eraOf(jint arg0);
 		JObject eras();
-		jstring getCalendarType();
-		jstring getId();
+		JString getCalendarType();
+		JString getId();
 		jboolean isLeapYear(jlong arg0);
 		JObject localDateTime(JObject arg0);
 		jint prolepticYear(JObject arg0, jint arg1);

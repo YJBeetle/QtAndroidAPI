@@ -1,4 +1,6 @@
 #include "../../io/ObjectInputStream.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "../Clock.hpp"
 #include "../Instant.hpp"
 #include "../ZoneId.hpp"
@@ -121,19 +123,19 @@ namespace java::time::chrono
 			"()Ljava/util/List;"
 		);
 	}
-	jstring MinguoChronology::getCalendarType()
+	JString MinguoChronology::getCalendarType()
 	{
 		return callObjectMethod(
 			"getCalendarType",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring MinguoChronology::getId()
+	JString MinguoChronology::getId()
 	{
 		return callObjectMethod(
 			"getId",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jboolean MinguoChronology::isLeapYear(jlong arg0)
 	{

@@ -1,3 +1,4 @@
+#include "../../../JObject.hpp"
 #include "./SelectableChannel.hpp"
 #include "./Selector.hpp"
 #include "./SelectionKey.hpp"
@@ -40,20 +41,20 @@ namespace java::nio::channels
 	// Constructors
 	
 	// Methods
-	jobject SelectionKey::attach(jobject arg0)
+	JObject SelectionKey::attach(JObject arg0)
 	{
 		return callObjectMethod(
 			"attach",
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0
-		).object<jobject>();
+			arg0.object<jobject>()
+		);
 	}
-	jobject SelectionKey::attachment()
+	JObject SelectionKey::attachment()
 	{
 		return callObjectMethod(
 			"attachment",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
 	void SelectionKey::cancel()
 	{

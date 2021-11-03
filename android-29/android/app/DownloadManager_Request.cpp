@@ -1,5 +1,7 @@
 #include "../content/Context.hpp"
 #include "../net/Uri.hpp"
+#include "../../JString.hpp"
+#include "../../JString.hpp"
 #include "./DownloadManager_Request.hpp"
 
 namespace android::app
@@ -60,13 +62,13 @@ namespace android::app
 		) {}
 	
 	// Methods
-	android::app::DownloadManager_Request DownloadManager_Request::addRequestHeader(jstring arg0, jstring arg1)
+	android::app::DownloadManager_Request DownloadManager_Request::addRequestHeader(JString arg0, JString arg1)
 	{
 		return callObjectMethod(
 			"addRequestHeader",
 			"(Ljava/lang/String;Ljava/lang/String;)Landroid/app/DownloadManager$Request;",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		);
 	}
 	void DownloadManager_Request::allowScanningByMediaScanner()
@@ -100,31 +102,31 @@ namespace android::app
 			arg0
 		);
 	}
-	android::app::DownloadManager_Request DownloadManager_Request::setDescription(jstring arg0)
+	android::app::DownloadManager_Request DownloadManager_Request::setDescription(JString arg0)
 	{
 		return callObjectMethod(
 			"setDescription",
 			"(Ljava/lang/CharSequence;)Landroid/app/DownloadManager$Request;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	android::app::DownloadManager_Request DownloadManager_Request::setDestinationInExternalFilesDir(android::content::Context arg0, jstring arg1, jstring arg2)
+	android::app::DownloadManager_Request DownloadManager_Request::setDestinationInExternalFilesDir(android::content::Context arg0, JString arg1, JString arg2)
 	{
 		return callObjectMethod(
 			"setDestinationInExternalFilesDir",
 			"(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)Landroid/app/DownloadManager$Request;",
 			arg0.object(),
-			arg1,
-			arg2
+			arg1.object<jstring>(),
+			arg2.object<jstring>()
 		);
 	}
-	android::app::DownloadManager_Request DownloadManager_Request::setDestinationInExternalPublicDir(jstring arg0, jstring arg1)
+	android::app::DownloadManager_Request DownloadManager_Request::setDestinationInExternalPublicDir(JString arg0, JString arg1)
 	{
 		return callObjectMethod(
 			"setDestinationInExternalPublicDir",
 			"(Ljava/lang/String;Ljava/lang/String;)Landroid/app/DownloadManager$Request;",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		);
 	}
 	android::app::DownloadManager_Request DownloadManager_Request::setDestinationUri(android::net::Uri arg0)
@@ -135,12 +137,12 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	android::app::DownloadManager_Request DownloadManager_Request::setMimeType(jstring arg0)
+	android::app::DownloadManager_Request DownloadManager_Request::setMimeType(JString arg0)
 	{
 		return callObjectMethod(
 			"setMimeType",
 			"(Ljava/lang/String;)Landroid/app/DownloadManager$Request;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::app::DownloadManager_Request DownloadManager_Request::setNotificationVisibility(jint arg0)
@@ -175,12 +177,12 @@ namespace android::app
 			arg0
 		);
 	}
-	android::app::DownloadManager_Request DownloadManager_Request::setTitle(jstring arg0)
+	android::app::DownloadManager_Request DownloadManager_Request::setTitle(JString arg0)
 	{
 		return callObjectMethod(
 			"setTitle",
 			"(Ljava/lang/CharSequence;)Landroid/app/DownloadManager$Request;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::app::DownloadManager_Request DownloadManager_Request::setVisibleInDownloadsUi(jboolean arg0)

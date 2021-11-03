@@ -3,6 +3,7 @@
 #include "../view/ViewGroup_LayoutParams.hpp"
 #include "../view/ViewGroup_MarginLayoutParams.hpp"
 #include "./GridLayout_Spec.hpp"
+#include "../../JObject.hpp"
 #include "./GridLayout_LayoutParams.hpp"
 
 namespace android::widget
@@ -66,12 +67,12 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	jboolean GridLayout_LayoutParams::equals(jobject arg0)
+	jboolean GridLayout_LayoutParams::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint GridLayout_LayoutParams::hashCode()

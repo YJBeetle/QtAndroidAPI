@@ -1,3 +1,4 @@
+#include "../../JArray.hpp"
 #include "../content/Context.hpp"
 #include "../content/Intent.hpp"
 #include "../content/IntentSender.hpp"
@@ -5,6 +6,8 @@
 #include "../os/Handler.hpp"
 #include "../os/Parcel.hpp"
 #include "../os/UserHandle.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./PendingIntent.hpp"
 
 namespace android::app
@@ -67,7 +70,7 @@ namespace android::app
 	// Constructors
 	
 	// Methods
-	android::app::PendingIntent PendingIntent::getActivities(android::content::Context arg0, jint arg1, jarray arg2, jint arg3)
+	android::app::PendingIntent PendingIntent::getActivities(android::content::Context arg0, jint arg1, JArray arg2, jint arg3)
 	{
 		return callStaticObjectMethod(
 			"android.app.PendingIntent",
@@ -75,11 +78,11 @@ namespace android::app
 			"(Landroid/content/Context;I[Landroid/content/Intent;I)Landroid/app/PendingIntent;",
 			arg0.object(),
 			arg1,
-			arg2,
+			arg2.object<jarray>(),
 			arg3
 		);
 	}
-	android::app::PendingIntent PendingIntent::getActivities(android::content::Context arg0, jint arg1, jarray arg2, jint arg3, android::os::Bundle arg4)
+	android::app::PendingIntent PendingIntent::getActivities(android::content::Context arg0, jint arg1, JArray arg2, jint arg3, android::os::Bundle arg4)
 	{
 		return callStaticObjectMethod(
 			"android.app.PendingIntent",
@@ -87,7 +90,7 @@ namespace android::app
 			"(Landroid/content/Context;I[Landroid/content/Intent;ILandroid/os/Bundle;)Landroid/app/PendingIntent;",
 			arg0.object(),
 			arg1,
-			arg2,
+			arg2.object<jarray>(),
 			arg3,
 			arg4.object()
 		);
@@ -186,20 +189,20 @@ namespace android::app
 			"()I"
 		);
 	}
-	jboolean PendingIntent::equals(jobject arg0)
+	jboolean PendingIntent::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jstring PendingIntent::getCreatorPackage()
+	JString PendingIntent::getCreatorPackage()
 	{
 		return callObjectMethod(
 			"getCreatorPackage",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint PendingIntent::getCreatorUid()
 	{
@@ -222,12 +225,12 @@ namespace android::app
 			"()Landroid/content/IntentSender;"
 		);
 	}
-	jstring PendingIntent::getTargetPackage()
+	JString PendingIntent::getTargetPackage()
 	{
 		return callObjectMethod(
 			"getTargetPackage",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint PendingIntent::hashCode()
 	{
@@ -318,7 +321,7 @@ namespace android::app
 			arg4.object()
 		);
 	}
-	void PendingIntent::send(android::content::Context arg0, jint arg1, android::content::Intent arg2, JObject arg3, android::os::Handler arg4, jstring arg5)
+	void PendingIntent::send(android::content::Context arg0, jint arg1, android::content::Intent arg2, JObject arg3, android::os::Handler arg4, JString arg5)
 	{
 		callMethod<void>(
 			"send",
@@ -328,10 +331,10 @@ namespace android::app
 			arg2.object(),
 			arg3.object(),
 			arg4.object(),
-			arg5
+			arg5.object<jstring>()
 		);
 	}
-	void PendingIntent::send(android::content::Context arg0, jint arg1, android::content::Intent arg2, JObject arg3, android::os::Handler arg4, jstring arg5, android::os::Bundle arg6)
+	void PendingIntent::send(android::content::Context arg0, jint arg1, android::content::Intent arg2, JObject arg3, android::os::Handler arg4, JString arg5, android::os::Bundle arg6)
 	{
 		callMethod<void>(
 			"send",
@@ -341,16 +344,16 @@ namespace android::app
 			arg2.object(),
 			arg3.object(),
 			arg4.object(),
-			arg5,
+			arg5.object<jstring>(),
 			arg6.object()
 		);
 	}
-	jstring PendingIntent::toString()
+	JString PendingIntent::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void PendingIntent::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

@@ -1,3 +1,5 @@
+#include "../../../JString.hpp"
+#include "../../../JThrowable.hpp"
 #include "./SSLException.hpp"
 
 namespace javax::net::ssl
@@ -8,24 +10,24 @@ namespace javax::net::ssl
 	SSLException::SSLException(QJniObject obj) : java::io::IOException(obj) {}
 	
 	// Constructors
-	SSLException::SSLException(jstring arg0)
+	SSLException::SSLException(JString arg0)
 		: java::io::IOException(
 			"javax.net.ssl.SSLException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	SSLException::SSLException(jthrowable arg0)
+	SSLException::SSLException(JThrowable arg0)
 		: java::io::IOException(
 			"javax.net.ssl.SSLException",
 			"(Ljava/lang/Throwable;)V",
-			arg0
+			arg0.object<jthrowable>()
 		) {}
-	SSLException::SSLException(jstring arg0, jthrowable arg1)
+	SSLException::SSLException(JString arg0, JThrowable arg1)
 		: java::io::IOException(
 			"javax.net.ssl.SSLException",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
 		) {}
 	
 	// Methods

@@ -1,3 +1,4 @@
+#include "../../JObject.hpp"
 #include "./AbstractSequentialList.hpp"
 
 namespace java::util
@@ -10,13 +11,13 @@ namespace java::util
 	// Constructors
 	
 	// Methods
-	void AbstractSequentialList::add(jint arg0, jobject arg1)
+	void AbstractSequentialList::add(jint arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"add",
 			"(ILjava/lang/Object;)V",
 			arg0,
-			arg1
+			arg1.object<jobject>()
 		);
 	}
 	jboolean AbstractSequentialList::addAll(jint arg0, JObject arg1)
@@ -28,13 +29,13 @@ namespace java::util
 			arg1.object()
 		);
 	}
-	jobject AbstractSequentialList::get(jint arg0)
+	JObject AbstractSequentialList::get(jint arg0)
 	{
 		return callObjectMethod(
 			"get",
 			"(I)Ljava/lang/Object;",
 			arg0
-		).object<jobject>();
+		);
 	}
 	JObject AbstractSequentialList::iterator()
 	{
@@ -51,22 +52,22 @@ namespace java::util
 			arg0
 		);
 	}
-	jobject AbstractSequentialList::remove(jint arg0)
+	JObject AbstractSequentialList::remove(jint arg0)
 	{
 		return callObjectMethod(
 			"remove",
 			"(I)Ljava/lang/Object;",
 			arg0
-		).object<jobject>();
+		);
 	}
-	jobject AbstractSequentialList::set(jint arg0, jobject arg1)
+	JObject AbstractSequentialList::set(jint arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"set",
 			"(ILjava/lang/Object;)Ljava/lang/Object;",
 			arg0,
-			arg1
-		).object<jobject>();
+			arg1.object<jobject>()
+		);
 	}
 } // namespace java::util
 

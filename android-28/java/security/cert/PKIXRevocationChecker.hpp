@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "./PKIXCertPathChecker.hpp"
 
+class JObject;
 namespace java::net
 {
 	class URI;

@@ -1,3 +1,4 @@
+#include "../../JIntArray.hpp"
 #include "../animation/LayoutTransition.hpp"
 #include "../content/Context.hpp"
 #include "../content/res/Configuration.hpp"
@@ -21,6 +22,7 @@
 #include "./accessibility/AccessibilityEvent.hpp"
 #include "./animation/LayoutAnimationController.hpp"
 #include "./animation/Transformation.hpp"
+#include "../../JString.hpp"
 #include "../../java/util/ArrayList.hpp"
 #include "./ViewGroup.hpp"
 
@@ -473,13 +475,13 @@ namespace android::view
 			"()Landroid/view/View;"
 		);
 	}
-	void ViewGroup::findViewsWithText(java::util::ArrayList arg0, jstring arg1, jint arg2)
+	void ViewGroup::findViewsWithText(java::util::ArrayList arg0, JString arg1, jint arg2)
 	{
 		callMethod<void>(
 			"findViewsWithText",
 			"(Ljava/util/ArrayList;Ljava/lang/CharSequence;I)V",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2
 		);
 	}
@@ -516,12 +518,12 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	jstring ViewGroup::getAccessibilityClassName()
+	JString ViewGroup::getAccessibilityClassName()
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	android::view::View ViewGroup::getChildAt(jint arg0)
 	{
@@ -663,12 +665,12 @@ namespace android::view
 			arg1.object()
 		);
 	}
-	JObject ViewGroup::invalidateChildInParent(jintArray arg0, android::graphics::Rect arg1)
+	JObject ViewGroup::invalidateChildInParent(JIntArray arg0, android::graphics::Rect arg1)
 	{
 		return callObjectMethod(
 			"invalidateChildInParent",
 			"([ILandroid/graphics/Rect;)Landroid/view/ViewParent;",
-			arg0,
+			arg0.object<jintArray>(),
 			arg1.object()
 		);
 	}
@@ -802,7 +804,7 @@ namespace android::view
 			arg2.object()
 		);
 	}
-	void ViewGroup::onNestedPreScroll(android::view::View arg0, jint arg1, jint arg2, jintArray arg3)
+	void ViewGroup::onNestedPreScroll(android::view::View arg0, jint arg1, jint arg2, JIntArray arg3)
 	{
 		callMethod<void>(
 			"onNestedPreScroll",
@@ -810,7 +812,7 @@ namespace android::view
 			arg0.object(),
 			arg1,
 			arg2,
-			arg3
+			arg3.object<jintArray>()
 		);
 	}
 	void ViewGroup::onNestedScroll(android::view::View arg0, jint arg1, jint arg2, jint arg3, jint arg4)

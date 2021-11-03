@@ -1,4 +1,6 @@
+#include "../../JObjectArray.hpp"
 #include "../io/ObjectOutputStream.hpp"
+#include "../../JObject.hpp"
 #include "./LinkedHashMap.hpp"
 
 namespace java::util
@@ -50,12 +52,12 @@ namespace java::util
 			"()V"
 		);
 	}
-	jboolean LinkedHashMap::containsValue(jobject arg0)
+	jboolean LinkedHashMap::containsValue(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"containsValue",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	JObject LinkedHashMap::entrySet()
@@ -73,22 +75,22 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	jobject LinkedHashMap::get(jobject arg0)
+	JObject LinkedHashMap::get(JObject arg0)
 	{
 		return callObjectMethod(
 			"get",
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0
-		).object<jobject>();
+			arg0.object<jobject>()
+		);
 	}
-	jobject LinkedHashMap::getOrDefault(jobject arg0, jobject arg1)
+	JObject LinkedHashMap::getOrDefault(JObject arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"getOrDefault",
 			"(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0,
-			arg1
-		).object<jobject>();
+			arg0.object<jobject>(),
+			arg1.object<jobject>()
+		);
 	}
 	JObject LinkedHashMap::keySet()
 	{

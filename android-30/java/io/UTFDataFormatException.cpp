@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./UTFDataFormatException.hpp"
 
 namespace java::io
@@ -13,11 +14,11 @@ namespace java::io
 			"java.io.UTFDataFormatException",
 			"()V"
 		) {}
-	UTFDataFormatException::UTFDataFormatException(jstring arg0)
+	UTFDataFormatException::UTFDataFormatException(JString arg0)
 		: java::io::IOException(
 			"java.io.UTFDataFormatException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./ClassCastException.hpp"
 
 namespace java::lang
@@ -13,11 +14,11 @@ namespace java::lang
 			"java.lang.ClassCastException",
 			"()V"
 		) {}
-	ClassCastException::ClassCastException(jstring arg0)
+	ClassCastException::ClassCastException(JString arg0)
 		: java::lang::RuntimeException(
 			"java.lang.ClassCastException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

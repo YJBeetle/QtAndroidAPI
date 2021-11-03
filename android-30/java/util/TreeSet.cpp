@@ -1,5 +1,6 @@
 #include "../io/ObjectInputStream.hpp"
 #include "../io/ObjectOutputStream.hpp"
+#include "../../JObject.hpp"
 #include "./TreeSet.hpp"
 
 namespace java::util
@@ -23,12 +24,12 @@ namespace java::util
 		) {}
 	
 	// Methods
-	jboolean TreeSet::add(jobject arg0)
+	jboolean TreeSet::add(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"add",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jboolean TreeSet::addAll(JObject arg0)
@@ -39,13 +40,13 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	jobject TreeSet::ceiling(jobject arg0)
+	JObject TreeSet::ceiling(JObject arg0)
 	{
 		return callObjectMethod(
 			"ceiling",
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0
-		).object<jobject>();
+			arg0.object<jobject>()
+		);
 	}
 	void TreeSet::clear()
 	{
@@ -54,12 +55,12 @@ namespace java::util
 			"()V"
 		);
 	}
-	jobject TreeSet::clone()
+	JObject TreeSet::clone()
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
 	JObject TreeSet::comparator()
 	{
@@ -68,12 +69,12 @@ namespace java::util
 			"()Ljava/util/Comparator;"
 		);
 	}
-	jboolean TreeSet::contains(jobject arg0)
+	jboolean TreeSet::contains(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"contains",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	JObject TreeSet::descendingIterator()
@@ -90,45 +91,45 @@ namespace java::util
 			"()Ljava/util/NavigableSet;"
 		);
 	}
-	jobject TreeSet::first()
+	JObject TreeSet::first()
 	{
 		return callObjectMethod(
 			"first",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
-	jobject TreeSet::floor(jobject arg0)
+	JObject TreeSet::floor(JObject arg0)
 	{
 		return callObjectMethod(
 			"floor",
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0
-		).object<jobject>();
+			arg0.object<jobject>()
+		);
 	}
-	JObject TreeSet::headSet(jobject arg0, jboolean arg1)
+	JObject TreeSet::headSet(JObject arg0, jboolean arg1)
 	{
 		return callObjectMethod(
 			"headSet",
 			"(Ljava/lang/Object;Z)Ljava/util/NavigableSet;",
-			arg0,
+			arg0.object<jobject>(),
 			arg1
 		);
 	}
-	JObject TreeSet::headSet(jobject arg0)
+	JObject TreeSet::headSet(JObject arg0)
 	{
 		return callObjectMethod(
 			"headSet",
 			"(Ljava/lang/Object;)Ljava/util/SortedSet;",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jobject TreeSet::higher(jobject arg0)
+	JObject TreeSet::higher(JObject arg0)
 	{
 		return callObjectMethod(
 			"higher",
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0
-		).object<jobject>();
+			arg0.object<jobject>()
+		);
 	}
 	jboolean TreeSet::isEmpty()
 	{
@@ -144,41 +145,41 @@ namespace java::util
 			"()Ljava/util/Iterator;"
 		);
 	}
-	jobject TreeSet::last()
+	JObject TreeSet::last()
 	{
 		return callObjectMethod(
 			"last",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
-	jobject TreeSet::lower(jobject arg0)
+	JObject TreeSet::lower(JObject arg0)
 	{
 		return callObjectMethod(
 			"lower",
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0
-		).object<jobject>();
+			arg0.object<jobject>()
+		);
 	}
-	jobject TreeSet::pollFirst()
+	JObject TreeSet::pollFirst()
 	{
 		return callObjectMethod(
 			"pollFirst",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
-	jobject TreeSet::pollLast()
+	JObject TreeSet::pollLast()
 	{
 		return callObjectMethod(
 			"pollLast",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
-	jboolean TreeSet::remove(jobject arg0)
+	jboolean TreeSet::remove(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"remove",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint TreeSet::size()
@@ -195,41 +196,41 @@ namespace java::util
 			"()Ljava/util/Spliterator;"
 		);
 	}
-	JObject TreeSet::subSet(jobject arg0, jboolean arg1, jobject arg2, jboolean arg3)
+	JObject TreeSet::subSet(JObject arg0, jboolean arg1, JObject arg2, jboolean arg3)
 	{
 		return callObjectMethod(
 			"subSet",
 			"(Ljava/lang/Object;ZLjava/lang/Object;Z)Ljava/util/NavigableSet;",
-			arg0,
+			arg0.object<jobject>(),
 			arg1,
-			arg2,
+			arg2.object<jobject>(),
 			arg3
 		);
 	}
-	JObject TreeSet::subSet(jobject arg0, jobject arg1)
+	JObject TreeSet::subSet(JObject arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"subSet",
 			"(Ljava/lang/Object;Ljava/lang/Object;)Ljava/util/SortedSet;",
-			arg0,
-			arg1
+			arg0.object<jobject>(),
+			arg1.object<jobject>()
 		);
 	}
-	JObject TreeSet::tailSet(jobject arg0, jboolean arg1)
+	JObject TreeSet::tailSet(JObject arg0, jboolean arg1)
 	{
 		return callObjectMethod(
 			"tailSet",
 			"(Ljava/lang/Object;Z)Ljava/util/NavigableSet;",
-			arg0,
+			arg0.object<jobject>(),
 			arg1
 		);
 	}
-	JObject TreeSet::tailSet(jobject arg0)
+	JObject TreeSet::tailSet(JObject arg0)
 	{
 		return callObjectMethod(
 			"tailSet",
 			"(Ljava/lang/Object;)Ljava/util/SortedSet;",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 } // namespace java::util

@@ -1,7 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../view/View.hpp"
 #include "./TextView.hpp"
 
 namespace android::content
@@ -16,6 +14,7 @@ namespace android::widget
 {
 	class TextView_BufferType;
 }
+class JString;
 
 namespace android::widget
 {
@@ -36,14 +35,14 @@ namespace android::widget
 		
 		// Methods
 		void extendSelection(jint arg0);
-		jstring getAccessibilityClassName();
+		JString getAccessibilityClassName();
 		jboolean getFreezesText();
 		JObject getText();
 		void selectAll();
 		void setEllipsize(android::text::TextUtils_TruncateAt arg0);
 		void setSelection(jint arg0);
 		void setSelection(jint arg0, jint arg1);
-		void setText(jstring arg0, android::widget::TextView_BufferType arg1);
+		void setText(JString arg0, android::widget::TextView_BufferType arg1);
 	};
 } // namespace android::widget
 

@@ -1,3 +1,4 @@
+#include "../../JArray.hpp"
 #include "./Fragment.hpp"
 #include "./Fragment_SavedState.hpp"
 #include "./FragmentManager_FragmentLifecycleCallbacks.hpp"
@@ -5,6 +6,7 @@
 #include "../os/Bundle.hpp"
 #include "../../java/io/FileDescriptor.hpp"
 #include "../../java/io/PrintWriter.hpp"
+#include "../../JString.hpp"
 #include "./FragmentManager.hpp"
 
 namespace android::app
@@ -53,15 +55,15 @@ namespace android::app
 			"()Landroid/app/FragmentTransaction;"
 		);
 	}
-	void FragmentManager::dump(jstring arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, jarray arg3)
+	void FragmentManager::dump(JString arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, JArray arg3)
 	{
 		callMethod<void>(
 			"dump",
 			"(Ljava/lang/String;Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
 			arg2.object(),
-			arg3
+			arg3.object<jarray>()
 		);
 	}
 	jboolean FragmentManager::executePendingTransactions()
@@ -79,12 +81,12 @@ namespace android::app
 			arg0
 		);
 	}
-	android::app::Fragment FragmentManager::findFragmentByTag(jstring arg0)
+	android::app::Fragment FragmentManager::findFragmentByTag(JString arg0)
 	{
 		return callObjectMethod(
 			"findFragmentByTag",
 			"(Ljava/lang/String;)Landroid/app/Fragment;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	JObject FragmentManager::getBackStackEntryAt(jint arg0)
@@ -102,13 +104,13 @@ namespace android::app
 			"()I"
 		);
 	}
-	android::app::Fragment FragmentManager::getFragment(android::os::Bundle arg0, jstring arg1)
+	android::app::Fragment FragmentManager::getFragment(android::os::Bundle arg0, JString arg1)
 	{
 		return callObjectMethod(
 			"getFragment",
 			"(Landroid/os/Bundle;Ljava/lang/String;)Landroid/app/Fragment;",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
 	JObject FragmentManager::getFragments()
@@ -162,12 +164,12 @@ namespace android::app
 			arg1
 		);
 	}
-	void FragmentManager::popBackStack(jstring arg0, jint arg1)
+	void FragmentManager::popBackStack(JString arg0, jint arg1)
 	{
 		callMethod<void>(
 			"popBackStack",
 			"(Ljava/lang/String;I)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
@@ -187,22 +189,22 @@ namespace android::app
 			arg1
 		);
 	}
-	jboolean FragmentManager::popBackStackImmediate(jstring arg0, jint arg1)
+	jboolean FragmentManager::popBackStackImmediate(JString arg0, jint arg1)
 	{
 		return callMethod<jboolean>(
 			"popBackStackImmediate",
 			"(Ljava/lang/String;I)Z",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
-	void FragmentManager::putFragment(android::os::Bundle arg0, jstring arg1, android::app::Fragment arg2)
+	void FragmentManager::putFragment(android::os::Bundle arg0, JString arg1, android::app::Fragment arg2)
 	{
 		callMethod<void>(
 			"putFragment",
 			"(Landroid/os/Bundle;Ljava/lang/String;Landroid/app/Fragment;)V",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2.object()
 		);
 	}

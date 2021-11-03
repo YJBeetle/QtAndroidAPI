@@ -2,10 +2,13 @@
 
 #include "../../JObject.hpp"
 
+class JArray;
 namespace android::os
 {
 	class Parcel;
 }
+class JString;
+class JString;
 
 namespace android::app
 {
@@ -20,15 +23,15 @@ namespace android::app
 		VoiceInteractor_Prompt(QJniObject obj);
 		
 		// Constructors
-		VoiceInteractor_Prompt(jstring arg0);
-		VoiceInteractor_Prompt(jarray arg0, jstring arg1);
+		VoiceInteractor_Prompt(JString arg0);
+		VoiceInteractor_Prompt(JArray arg0, JString arg1);
 		
 		// Methods
 		jint countVoicePrompts();
 		jint describeContents();
-		jstring getVisualPrompt();
-		jstring getVoicePromptAt(jint arg0);
-		jstring toString();
+		JString getVisualPrompt();
+		JString getVoicePromptAt(jint arg0);
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::app

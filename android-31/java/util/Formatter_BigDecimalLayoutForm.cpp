@@ -1,3 +1,5 @@
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
 #include "./Formatter_BigDecimalLayoutForm.hpp"
 
 namespace java::util
@@ -26,22 +28,22 @@ namespace java::util
 	// Constructors
 	
 	// Methods
-	java::util::Formatter_BigDecimalLayoutForm Formatter_BigDecimalLayoutForm::valueOf(jstring arg0)
+	java::util::Formatter_BigDecimalLayoutForm Formatter_BigDecimalLayoutForm::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"java.util.Formatter$BigDecimalLayoutForm",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/util/Formatter$BigDecimalLayoutForm;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray Formatter_BigDecimalLayoutForm::values()
+	JArray Formatter_BigDecimalLayoutForm::values()
 	{
 		return callStaticObjectMethod(
 			"java.util.Formatter$BigDecimalLayoutForm",
 			"values",
 			"()[Ljava/util/Formatter$BigDecimalLayoutForm;"
-		).object<jarray>();
+		);
 	}
 } // namespace java::util
 

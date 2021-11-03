@@ -14,6 +14,7 @@ namespace android::net
 {
 	class Uri;
 }
+class JString;
 
 namespace android::app::slice
 {
@@ -21,8 +22,8 @@ namespace android::app::slice
 	{
 	public:
 		// Fields
-		static jstring CATEGORY_SLICE();
-		static jstring SLICE_METADATA_KEY();
+		static JString CATEGORY_SLICE();
+		static JString SLICE_METADATA_KEY();
 		
 		// QJniObject forward
 		template<typename ...Ts> explicit SliceManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
@@ -37,10 +38,10 @@ namespace android::app::slice
 		JObject getPinnedSlices();
 		JObject getPinnedSpecs(android::net::Uri arg0);
 		JObject getSliceDescendants(android::net::Uri arg0);
-		void grantSlicePermission(jstring arg0, android::net::Uri arg1);
+		void grantSlicePermission(JString arg0, android::net::Uri arg1);
 		android::net::Uri mapIntentToUri(android::content::Intent arg0);
 		void pinSlice(android::net::Uri arg0, JObject arg1);
-		void revokeSlicePermission(jstring arg0, android::net::Uri arg1);
+		void revokeSlicePermission(JString arg0, android::net::Uri arg1);
 		void unpinSlice(android::net::Uri arg0);
 	};
 } // namespace android::app::slice

@@ -14,6 +14,8 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
+class JString;
 
 namespace android::content::pm
 {
@@ -36,8 +38,8 @@ namespace android::content::pm
 		// Methods
 		jint describeContents();
 		void setAppIcon(android::graphics::Bitmap arg0);
-		void setAppLabel(jstring arg0);
-		void setAppPackageName(jstring arg0);
+		void setAppLabel(JString arg0);
+		void setAppPackageName(JString arg0);
 		void setAutoRevokePermissionsMode(jboolean arg0);
 		void setInstallLocation(jint arg0);
 		void setInstallReason(jint arg0);

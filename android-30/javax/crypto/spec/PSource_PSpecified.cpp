@@ -1,3 +1,4 @@
+#include "../../../JByteArray.hpp"
 #include "./PSource_PSpecified.hpp"
 
 namespace javax::crypto::spec
@@ -16,20 +17,20 @@ namespace javax::crypto::spec
 	PSource_PSpecified::PSource_PSpecified(QJniObject obj) : javax::crypto::spec::PSource(obj) {}
 	
 	// Constructors
-	PSource_PSpecified::PSource_PSpecified(jbyteArray arg0)
+	PSource_PSpecified::PSource_PSpecified(JByteArray arg0)
 		: javax::crypto::spec::PSource(
 			"javax.crypto.spec.PSource$PSpecified",
 			"([B)V",
-			arg0
+			arg0.object<jbyteArray>()
 		) {}
 	
 	// Methods
-	jbyteArray PSource_PSpecified::getValue()
+	JByteArray PSource_PSpecified::getValue()
 	{
 		return callObjectMethod(
 			"getValue",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
 } // namespace javax::crypto::spec
 

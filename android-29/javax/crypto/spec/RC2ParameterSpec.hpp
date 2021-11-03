@@ -2,6 +2,8 @@
 
 #include "../../../JObject.hpp"
 
+class JByteArray;
+class JObject;
 
 namespace javax::crypto::spec
 {
@@ -16,13 +18,13 @@ namespace javax::crypto::spec
 		
 		// Constructors
 		RC2ParameterSpec(jint arg0);
-		RC2ParameterSpec(jint arg0, jbyteArray arg1);
-		RC2ParameterSpec(jint arg0, jbyteArray arg1, jint arg2);
+		RC2ParameterSpec(jint arg0, JByteArray arg1);
+		RC2ParameterSpec(jint arg0, JByteArray arg1, jint arg2);
 		
 		// Methods
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint getEffectiveKeyBits();
-		jbyteArray getIV();
+		JByteArray getIV();
 		jint hashCode();
 	};
 } // namespace javax::crypto::spec

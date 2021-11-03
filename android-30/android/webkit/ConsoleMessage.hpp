@@ -6,6 +6,7 @@ namespace android::webkit
 {
 	class ConsoleMessage_MessageLevel;
 }
+class JString;
 
 namespace android::webkit
 {
@@ -19,13 +20,13 @@ namespace android::webkit
 		ConsoleMessage(QJniObject obj);
 		
 		// Constructors
-		ConsoleMessage(jstring arg0, jstring arg1, jint arg2, android::webkit::ConsoleMessage_MessageLevel arg3);
+		ConsoleMessage(JString arg0, JString arg1, jint arg2, android::webkit::ConsoleMessage_MessageLevel arg3);
 		
 		// Methods
 		jint lineNumber();
-		jstring message();
+		JString message();
 		android::webkit::ConsoleMessage_MessageLevel messageLevel();
-		jstring sourceId();
+		JString sourceId();
 	};
 } // namespace android::webkit
 

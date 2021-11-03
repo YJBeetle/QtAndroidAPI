@@ -2,10 +2,14 @@
 
 #include "../../JObject.hpp"
 
+class JArray;
+class JArray;
 namespace android::content
 {
 	class Intent;
 }
+class JString;
+class JString;
 
 namespace android::webkit
 {
@@ -25,12 +29,12 @@ namespace android::webkit
 		WebChromeClient_FileChooserParams();
 		
 		// Methods
-		static jarray parseResult(jint arg0, android::content::Intent arg1);
+		static JArray parseResult(jint arg0, android::content::Intent arg1);
 		android::content::Intent createIntent();
-		jarray getAcceptTypes();
-		jstring getFilenameHint();
+		JArray getAcceptTypes();
+		JString getFilenameHint();
 		jint getMode();
-		jstring getTitle();
+		JString getTitle();
 		jboolean isCaptureEnabled();
 	};
 } // namespace android::webkit

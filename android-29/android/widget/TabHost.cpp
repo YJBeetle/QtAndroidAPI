@@ -5,6 +5,8 @@
 #include "./FrameLayout.hpp"
 #include "./TabHost_TabSpec.hpp"
 #include "./TabWidget.hpp"
+#include "../../JString.hpp"
+#include "../../JString.hpp"
 #include "./TabHost.hpp"
 
 namespace android::widget
@@ -78,12 +80,12 @@ namespace android::widget
 			arg0
 		);
 	}
-	jstring TabHost::getAccessibilityClassName()
+	JString TabHost::getAccessibilityClassName()
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	jint TabHost::getCurrentTab()
 	{
@@ -92,12 +94,12 @@ namespace android::widget
 			"()I"
 		);
 	}
-	jstring TabHost::getCurrentTabTag()
+	JString TabHost::getCurrentTabTag()
 	{
 		return callObjectMethod(
 			"getCurrentTabTag",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::view::View TabHost::getCurrentTabView()
 	{
@@ -127,12 +129,12 @@ namespace android::widget
 			"()Landroid/widget/TabWidget;"
 		);
 	}
-	android::widget::TabHost_TabSpec TabHost::newTabSpec(jstring arg0)
+	android::widget::TabHost_TabSpec TabHost::newTabSpec(JString arg0)
 	{
 		return callObjectMethod(
 			"newTabSpec",
 			"(Ljava/lang/String;)Landroid/widget/TabHost$TabSpec;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void TabHost::onTouchModeChanged(jboolean arg0)
@@ -151,12 +153,12 @@ namespace android::widget
 			arg0
 		);
 	}
-	void TabHost::setCurrentTabByTag(jstring arg0)
+	void TabHost::setCurrentTabByTag(JString arg0)
 	{
 		callMethod<void>(
 			"setCurrentTabByTag",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void TabHost::setOnTabChangedListener(JObject arg0)

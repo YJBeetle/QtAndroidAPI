@@ -1,5 +1,6 @@
 #include "../../content/Context.hpp"
 #include "./Transformation.hpp"
+#include "../../../JObject.hpp"
 #include "./Animation.hpp"
 
 namespace android::view::animation

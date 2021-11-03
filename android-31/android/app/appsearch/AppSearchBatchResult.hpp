@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JString;
 
 namespace android::app::appsearch
 {
@@ -21,7 +22,7 @@ namespace android::app::appsearch
 		JObject getFailures();
 		JObject getSuccesses();
 		jboolean isSuccess();
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::app::appsearch
 

@@ -1,3 +1,4 @@
+#include "../../JArray.hpp"
 #include "../animation/Animator.hpp"
 #include "../content/Context.hpp"
 #include "./TransitionValues.hpp"
@@ -59,12 +60,12 @@ namespace android::transition
 			"()Z"
 		);
 	}
-	jarray ChangeBounds::getTransitionProperties()
+	JArray ChangeBounds::getTransitionProperties()
 	{
 		return callObjectMethod(
 			"getTransitionProperties",
 			"()[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
 	void ChangeBounds::setReparent(jboolean arg0)
 	{

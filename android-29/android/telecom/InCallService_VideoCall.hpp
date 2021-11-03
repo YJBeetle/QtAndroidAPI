@@ -22,6 +22,7 @@ namespace android::view
 {
 	class Surface;
 }
+class JString;
 
 namespace android::telecom
 {
@@ -44,7 +45,7 @@ namespace android::telecom
 		void requestCameraCapabilities();
 		void sendSessionModifyRequest(android::telecom::VideoProfile arg0);
 		void sendSessionModifyResponse(android::telecom::VideoProfile arg0);
-		void setCamera(jstring arg0);
+		void setCamera(JString arg0);
 		void setDeviceOrientation(jint arg0);
 		void setDisplaySurface(android::view::Surface arg0);
 		void setPauseImage(android::net::Uri arg0);

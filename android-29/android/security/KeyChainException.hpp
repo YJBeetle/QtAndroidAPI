@@ -1,8 +1,9 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "../../java/lang/Exception.hpp"
 
+class JString;
+class JThrowable;
 
 namespace android::security
 {
@@ -17,9 +18,9 @@ namespace android::security
 		
 		// Constructors
 		KeyChainException();
-		KeyChainException(jstring arg0);
-		KeyChainException(jthrowable arg0);
-		KeyChainException(jstring arg0, jthrowable arg1);
+		KeyChainException(JString arg0);
+		KeyChainException(JThrowable arg0);
+		KeyChainException(JString arg0, JThrowable arg1);
 		
 		// Methods
 	};

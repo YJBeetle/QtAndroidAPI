@@ -1,8 +1,6 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "./AppSearchSchema_PropertyConfig.hpp"
-
 
 namespace android::app::appsearch
 {

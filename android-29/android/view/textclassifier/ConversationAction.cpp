@@ -1,6 +1,8 @@
 #include "../../app/RemoteAction.hpp"
 #include "../../os/Bundle.hpp"
 #include "../../os/Parcel.hpp"
+#include "../../../JString.hpp"
+#include "../../../JString.hpp"
 #include "./ConversationAction.hpp"
 
 namespace android::view::textclassifier
@@ -14,85 +16,85 @@ namespace android::view::textclassifier
 			"Landroid/os/Parcelable$Creator;"
 		);
 	}
-	jstring ConversationAction::TYPE_CALL_PHONE()
+	JString ConversationAction::TYPE_CALL_PHONE()
 	{
 		return getStaticObjectField(
 			"android.view.textclassifier.ConversationAction",
 			"TYPE_CALL_PHONE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ConversationAction::TYPE_CREATE_REMINDER()
+	JString ConversationAction::TYPE_CREATE_REMINDER()
 	{
 		return getStaticObjectField(
 			"android.view.textclassifier.ConversationAction",
 			"TYPE_CREATE_REMINDER",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ConversationAction::TYPE_OPEN_URL()
+	JString ConversationAction::TYPE_OPEN_URL()
 	{
 		return getStaticObjectField(
 			"android.view.textclassifier.ConversationAction",
 			"TYPE_OPEN_URL",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ConversationAction::TYPE_SEND_EMAIL()
+	JString ConversationAction::TYPE_SEND_EMAIL()
 	{
 		return getStaticObjectField(
 			"android.view.textclassifier.ConversationAction",
 			"TYPE_SEND_EMAIL",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ConversationAction::TYPE_SEND_SMS()
+	JString ConversationAction::TYPE_SEND_SMS()
 	{
 		return getStaticObjectField(
 			"android.view.textclassifier.ConversationAction",
 			"TYPE_SEND_SMS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ConversationAction::TYPE_SHARE_LOCATION()
+	JString ConversationAction::TYPE_SHARE_LOCATION()
 	{
 		return getStaticObjectField(
 			"android.view.textclassifier.ConversationAction",
 			"TYPE_SHARE_LOCATION",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ConversationAction::TYPE_TEXT_REPLY()
+	JString ConversationAction::TYPE_TEXT_REPLY()
 	{
 		return getStaticObjectField(
 			"android.view.textclassifier.ConversationAction",
 			"TYPE_TEXT_REPLY",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ConversationAction::TYPE_TRACK_FLIGHT()
+	JString ConversationAction::TYPE_TRACK_FLIGHT()
 	{
 		return getStaticObjectField(
 			"android.view.textclassifier.ConversationAction",
 			"TYPE_TRACK_FLIGHT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ConversationAction::TYPE_VIEW_CALENDAR()
+	JString ConversationAction::TYPE_VIEW_CALENDAR()
 	{
 		return getStaticObjectField(
 			"android.view.textclassifier.ConversationAction",
 			"TYPE_VIEW_CALENDAR",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ConversationAction::TYPE_VIEW_MAP()
+	JString ConversationAction::TYPE_VIEW_MAP()
 	{
 		return getStaticObjectField(
 			"android.view.textclassifier.ConversationAction",
 			"TYPE_VIEW_MAP",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QJniObject forward
@@ -129,19 +131,19 @@ namespace android::view::textclassifier
 			"()Landroid/os/Bundle;"
 		);
 	}
-	jstring ConversationAction::getTextReply()
+	JString ConversationAction::getTextReply()
 	{
 		return callObjectMethod(
 			"getTextReply",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
-	jstring ConversationAction::getType()
+	JString ConversationAction::getType()
 	{
 		return callObjectMethod(
 			"getType",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void ConversationAction::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

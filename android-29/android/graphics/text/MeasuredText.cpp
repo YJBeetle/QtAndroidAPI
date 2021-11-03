@@ -1,3 +1,4 @@
+#include "../../../JCharArray.hpp"
 #include "../Rect.hpp"
 #include "./MeasuredText.hpp"
 

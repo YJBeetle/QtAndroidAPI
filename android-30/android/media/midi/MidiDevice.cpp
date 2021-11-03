@@ -2,6 +2,7 @@
 #include "./MidiDeviceInfo.hpp"
 #include "./MidiInputPort.hpp"
 #include "./MidiOutputPort.hpp"
+#include "../../../JString.hpp"
 #include "./MidiDevice.hpp"
 
 namespace android::media::midi
@@ -53,12 +54,12 @@ namespace android::media::midi
 			arg0
 		);
 	}
-	jstring MidiDevice::toString()
+	JString MidiDevice::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::media::midi
 

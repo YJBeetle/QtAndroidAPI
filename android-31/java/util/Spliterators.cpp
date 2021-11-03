@@ -1,3 +1,7 @@
+#include "../../JDoubleArray.hpp"
+#include "../../JIntArray.hpp"
+#include "../../JLongArray.hpp"
+#include "../../JObjectArray.hpp"
 #include "./Spliterators.hpp"
 
 namespace java::util
@@ -51,13 +55,13 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	JObject Spliterators::spliterator(jobjectArray arg0, jint arg1)
+	JObject Spliterators::spliterator(JObjectArray arg0, jint arg1)
 	{
 		return callStaticObjectMethod(
 			"java.util.Spliterators",
 			"spliterator",
 			"([Ljava/lang/Object;I)Ljava/util/Spliterator;",
-			arg0,
+			arg0.object<jobjectArray>(),
 			arg1
 		);
 	}
@@ -82,79 +86,79 @@ namespace java::util
 			arg2
 		);
 	}
-	JObject Spliterators::spliterator(jobjectArray arg0, jint arg1, jint arg2, jint arg3)
+	JObject Spliterators::spliterator(JObjectArray arg0, jint arg1, jint arg2, jint arg3)
 	{
 		return callStaticObjectMethod(
 			"java.util.Spliterators",
 			"spliterator",
 			"([Ljava/lang/Object;III)Ljava/util/Spliterator;",
-			arg0,
+			arg0.object<jobjectArray>(),
 			arg1,
 			arg2,
 			arg3
 		);
 	}
-	JObject Spliterators::spliterator(jdoubleArray arg0, jint arg1)
+	JObject Spliterators::spliterator(JDoubleArray arg0, jint arg1)
 	{
 		return callStaticObjectMethod(
 			"java.util.Spliterators",
 			"spliterator",
 			"([DI)Ljava/util/Spliterator$OfDouble;",
-			arg0,
+			arg0.object<jdoubleArray>(),
 			arg1
 		);
 	}
-	JObject Spliterators::spliterator(jdoubleArray arg0, jint arg1, jint arg2, jint arg3)
+	JObject Spliterators::spliterator(JDoubleArray arg0, jint arg1, jint arg2, jint arg3)
 	{
 		return callStaticObjectMethod(
 			"java.util.Spliterators",
 			"spliterator",
 			"([DIII)Ljava/util/Spliterator$OfDouble;",
-			arg0,
+			arg0.object<jdoubleArray>(),
 			arg1,
 			arg2,
 			arg3
 		);
 	}
-	JObject Spliterators::spliterator(jintArray arg0, jint arg1)
+	JObject Spliterators::spliterator(JIntArray arg0, jint arg1)
 	{
 		return callStaticObjectMethod(
 			"java.util.Spliterators",
 			"spliterator",
 			"([II)Ljava/util/Spliterator$OfInt;",
-			arg0,
+			arg0.object<jintArray>(),
 			arg1
 		);
 	}
-	JObject Spliterators::spliterator(jintArray arg0, jint arg1, jint arg2, jint arg3)
+	JObject Spliterators::spliterator(JIntArray arg0, jint arg1, jint arg2, jint arg3)
 	{
 		return callStaticObjectMethod(
 			"java.util.Spliterators",
 			"spliterator",
 			"([IIII)Ljava/util/Spliterator$OfInt;",
-			arg0,
+			arg0.object<jintArray>(),
 			arg1,
 			arg2,
 			arg3
 		);
 	}
-	JObject Spliterators::spliterator(jlongArray arg0, jint arg1)
+	JObject Spliterators::spliterator(JLongArray arg0, jint arg1)
 	{
 		return callStaticObjectMethod(
 			"java.util.Spliterators",
 			"spliterator",
 			"([JI)Ljava/util/Spliterator$OfLong;",
-			arg0,
+			arg0.object<jlongArray>(),
 			arg1
 		);
 	}
-	JObject Spliterators::spliterator(jlongArray arg0, jint arg1, jint arg2, jint arg3)
+	JObject Spliterators::spliterator(JLongArray arg0, jint arg1, jint arg2, jint arg3)
 	{
 		return callStaticObjectMethod(
 			"java.util.Spliterators",
 			"spliterator",
 			"([JIII)Ljava/util/Spliterator$OfLong;",
-			arg0,
+			arg0.object<jlongArray>(),
 			arg1,
 			arg2,
 			arg3

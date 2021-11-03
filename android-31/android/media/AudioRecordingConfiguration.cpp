@@ -1,6 +1,7 @@
 #include "./AudioDeviceInfo.hpp"
 #include "./AudioFormat.hpp"
 #include "../os/Parcel.hpp"
+#include "../../JObject.hpp"
 #include "./AudioRecordingConfiguration.hpp"
 
 namespace android::media
@@ -28,12 +29,12 @@ namespace android::media
 			"()I"
 		);
 	}
-	jboolean AudioRecordingConfiguration::equals(jobject arg0)
+	jboolean AudioRecordingConfiguration::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	android::media::AudioDeviceInfo AudioRecordingConfiguration::getAudioDevice()

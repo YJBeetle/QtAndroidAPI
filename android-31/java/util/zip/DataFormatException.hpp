@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "../../lang/Exception.hpp"
 
+class JString;
 
 namespace java::util::zip
 {
@@ -17,7 +17,7 @@ namespace java::util::zip
 		
 		// Constructors
 		DataFormatException();
-		DataFormatException(jstring arg0);
+		DataFormatException(JString arg0);
 		
 		// Methods
 	};

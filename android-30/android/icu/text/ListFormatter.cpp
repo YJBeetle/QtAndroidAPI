@@ -1,4 +1,6 @@
+#include "../../../JObjectArray.hpp"
 #include "../util/ULocale.hpp"
+#include "../../../JString.hpp"
 #include "../../../java/util/Locale.hpp"
 #include "./ListFormatter.hpp"
 
@@ -38,29 +40,29 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	jstring ListFormatter::format(jobjectArray arg0)
+	JString ListFormatter::format(JObjectArray arg0)
 	{
 		return callObjectMethod(
 			"format",
 			"([Ljava/lang/Object;)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
+			arg0.object<jobjectArray>()
+		);
 	}
-	jstring ListFormatter::format(JObject arg0)
+	JString ListFormatter::format(JObject arg0)
 	{
 		return callObjectMethod(
 			"format",
 			"(Ljava/util/Collection;)Ljava/lang/String;",
 			arg0.object()
-		).object<jstring>();
+		);
 	}
-	jstring ListFormatter::getPatternForNumItems(jint arg0)
+	JString ListFormatter::getPatternForNumItems(jint arg0)
 	{
 		return callObjectMethod(
 			"getPatternForNumItems",
 			"(I)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
 } // namespace android::icu::text
 

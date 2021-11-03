@@ -1,8 +1,17 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "./AccessibleObject.hpp"
 
+class JByteArray;
+class JArray;
+class JArray;
+class JArray;
+class JArray;
+class JArray;
+class JArray;
+class JArray;
+class JClass;
+class JString;
 namespace java::lang
 {
 	class StringBuilder;
@@ -22,27 +31,27 @@ namespace java::lang::reflect
 		// Constructors
 		
 		// Methods
-		jarray getAnnotatedExceptionTypes();
-		jarray getAnnotatedParameterTypes();
+		JArray getAnnotatedExceptionTypes();
+		JArray getAnnotatedParameterTypes();
 		JObject getAnnotatedReceiverType();
 		JObject getAnnotatedReturnType();
-		JObject getAnnotation(jclass arg0);
-		jarray getAnnotationsByType(jclass arg0);
-		jarray getDeclaredAnnotations();
-		jclass getDeclaringClass();
-		jarray getExceptionTypes();
-		jarray getGenericExceptionTypes();
-		jarray getGenericParameterTypes();
+		JObject getAnnotation(JClass arg0);
+		JArray getAnnotationsByType(JClass arg0);
+		JArray getDeclaredAnnotations();
+		JClass getDeclaringClass();
+		JArray getExceptionTypes();
+		JArray getGenericExceptionTypes();
+		JArray getGenericParameterTypes();
 		jint getModifiers();
-		jstring getName();
-		jarray getParameterAnnotations();
+		JString getName();
+		JArray getParameterAnnotations();
 		jint getParameterCount();
-		jarray getParameterTypes();
-		jarray getParameters();
-		jarray getTypeParameters();
+		JArray getParameterTypes();
+		JArray getParameters();
+		JArray getTypeParameters();
 		jboolean isSynthetic();
 		jboolean isVarArgs();
-		jstring toGenericString();
+		JString toGenericString();
 	};
 } // namespace java::lang::reflect
 

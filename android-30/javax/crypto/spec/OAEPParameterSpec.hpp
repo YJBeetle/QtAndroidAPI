@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JString;
 namespace javax::crypto::spec
 {
 	class PSource;
@@ -20,11 +21,11 @@ namespace javax::crypto::spec
 		OAEPParameterSpec(QJniObject obj);
 		
 		// Constructors
-		OAEPParameterSpec(jstring arg0, jstring arg1, JObject arg2, javax::crypto::spec::PSource arg3);
+		OAEPParameterSpec(JString arg0, JString arg1, JObject arg2, javax::crypto::spec::PSource arg3);
 		
 		// Methods
-		jstring getDigestAlgorithm();
-		jstring getMGFAlgorithm();
+		JString getDigestAlgorithm();
+		JString getMGFAlgorithm();
 		JObject getMGFParameters();
 		javax::crypto::spec::PSource getPSource();
 	};

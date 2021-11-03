@@ -1,5 +1,6 @@
 #include "../net/Uri.hpp"
 #include "./AppUriAuthenticationPolicy.hpp"
+#include "../../JString.hpp"
 #include "./AppUriAuthenticationPolicy_Builder.hpp"
 
 namespace android::security
@@ -17,14 +18,14 @@ namespace android::security
 		) {}
 	
 	// Methods
-	android::security::AppUriAuthenticationPolicy_Builder AppUriAuthenticationPolicy_Builder::addAppAndUriMapping(jstring arg0, android::net::Uri arg1, jstring arg2)
+	android::security::AppUriAuthenticationPolicy_Builder AppUriAuthenticationPolicy_Builder::addAppAndUriMapping(JString arg0, android::net::Uri arg1, JString arg2)
 	{
 		return callObjectMethod(
 			"addAppAndUriMapping",
 			"(Ljava/lang/String;Landroid/net/Uri;Ljava/lang/String;)Landroid/security/AppUriAuthenticationPolicy$Builder;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
-			arg2
+			arg2.object<jstring>()
 		);
 	}
 	android::security::AppUriAuthenticationPolicy AppUriAuthenticationPolicy_Builder::build()

@@ -1,6 +1,13 @@
+#include "../../JByteArray.hpp"
+#include "../../JObjectArray.hpp"
+#include "../../JArray.hpp"
+#include "../../JArray.hpp"
 #include "../io/File.hpp"
 #include "../io/InputStream.hpp"
+#include "../../JClass.hpp"
+#include "../../JObject.hpp"
 #include "./Package.hpp"
+#include "../../JString.hpp"
 #include "./Void.hpp"
 #include "../net/URL.hpp"
 #include "../nio/ByteBuffer.hpp"
@@ -35,31 +42,31 @@ namespace java::lang
 			"()Ljava/lang/ClassLoader;"
 		);
 	}
-	java::net::URL ClassLoader::getSystemResource(jstring arg0)
+	java::net::URL ClassLoader::getSystemResource(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"java.lang.ClassLoader",
 			"getSystemResource",
 			"(Ljava/lang/String;)Ljava/net/URL;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	java::io::InputStream ClassLoader::getSystemResourceAsStream(jstring arg0)
+	java::io::InputStream ClassLoader::getSystemResourceAsStream(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"java.lang.ClassLoader",
 			"getSystemResourceAsStream",
 			"(Ljava/lang/String;)Ljava/io/InputStream;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	JObject ClassLoader::getSystemResources(jstring arg0)
+	JObject ClassLoader::getSystemResources(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"java.lang.ClassLoader",
 			"getSystemResources",
 			"(Ljava/lang/String;)Ljava/util/Enumeration;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void ClassLoader::clearAssertionStatus()
@@ -69,27 +76,27 @@ namespace java::lang
 			"()V"
 		);
 	}
-	java::lang::Package ClassLoader::getDefinedPackage(jstring arg0)
+	java::lang::Package ClassLoader::getDefinedPackage(JString arg0)
 	{
 		return callObjectMethod(
 			"getDefinedPackage",
 			"(Ljava/lang/String;)Ljava/lang/Package;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray ClassLoader::getDefinedPackages()
+	JArray ClassLoader::getDefinedPackages()
 	{
 		return callObjectMethod(
 			"getDefinedPackages",
 			"()[Ljava/lang/Package;"
-		).object<jarray>();
+		);
 	}
-	jstring ClassLoader::getName()
+	JString ClassLoader::getName()
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	java::lang::ClassLoader ClassLoader::getParent()
 	{
@@ -98,28 +105,28 @@ namespace java::lang
 			"()Ljava/lang/ClassLoader;"
 		);
 	}
-	java::net::URL ClassLoader::getResource(jstring arg0)
+	java::net::URL ClassLoader::getResource(JString arg0)
 	{
 		return callObjectMethod(
 			"getResource",
 			"(Ljava/lang/String;)Ljava/net/URL;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	java::io::InputStream ClassLoader::getResourceAsStream(jstring arg0)
+	java::io::InputStream ClassLoader::getResourceAsStream(JString arg0)
 	{
 		return callObjectMethod(
 			"getResourceAsStream",
 			"(Ljava/lang/String;)Ljava/io/InputStream;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	JObject ClassLoader::getResources(jstring arg0)
+	JObject ClassLoader::getResources(JString arg0)
 	{
 		return callObjectMethod(
 			"getResources",
 			"(Ljava/lang/String;)Ljava/util/Enumeration;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	JObject ClassLoader::getUnnamedModule()
@@ -136,28 +143,28 @@ namespace java::lang
 			"()Z"
 		);
 	}
-	jclass ClassLoader::loadClass(jstring arg0)
+	JClass ClassLoader::loadClass(JString arg0)
 	{
 		return callObjectMethod(
 			"loadClass",
 			"(Ljava/lang/String;)Ljava/lang/Class;",
-			arg0
-		).object<jclass>();
+			arg0.object<jstring>()
+		);
 	}
-	JObject ClassLoader::resources(jstring arg0)
+	JObject ClassLoader::resources(JString arg0)
 	{
 		return callObjectMethod(
 			"resources",
 			"(Ljava/lang/String;)Ljava/util/stream/Stream;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	void ClassLoader::setClassAssertionStatus(jstring arg0, jboolean arg1)
+	void ClassLoader::setClassAssertionStatus(JString arg0, jboolean arg1)
 	{
 		callMethod<void>(
 			"setClassAssertionStatus",
 			"(Ljava/lang/String;Z)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
@@ -169,12 +176,12 @@ namespace java::lang
 			arg0
 		);
 	}
-	void ClassLoader::setPackageAssertionStatus(jstring arg0, jboolean arg1)
+	void ClassLoader::setPackageAssertionStatus(JString arg0, jboolean arg1)
 	{
 		callMethod<void>(
 			"setPackageAssertionStatus",
 			"(Ljava/lang/String;Z)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}

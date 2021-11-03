@@ -1,6 +1,7 @@
 #include "./Handler.hpp"
 #include "./Message.hpp"
 #include "./Parcel.hpp"
+#include "../../JObject.hpp"
 #include "./Messenger.hpp"
 
 namespace android::os
@@ -59,12 +60,12 @@ namespace android::os
 			"()I"
 		);
 	}
-	jboolean Messenger::equals(jobject arg0)
+	jboolean Messenger::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	JObject Messenger::getBinder()

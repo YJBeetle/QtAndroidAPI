@@ -1,3 +1,5 @@
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
 #include "./ColorSpace_Adaptation.hpp"
 
 namespace android::graphics
@@ -34,22 +36,22 @@ namespace android::graphics
 	// Constructors
 	
 	// Methods
-	android::graphics::ColorSpace_Adaptation ColorSpace_Adaptation::valueOf(jstring arg0)
+	android::graphics::ColorSpace_Adaptation ColorSpace_Adaptation::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.graphics.ColorSpace$Adaptation",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/graphics/ColorSpace$Adaptation;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray ColorSpace_Adaptation::values()
+	JArray ColorSpace_Adaptation::values()
 	{
 		return callStaticObjectMethod(
 			"android.graphics.ColorSpace$Adaptation",
 			"values",
 			"()[Landroid/graphics/ColorSpace$Adaptation;"
-		).object<jarray>();
+		);
 	}
 } // namespace android::graphics
 

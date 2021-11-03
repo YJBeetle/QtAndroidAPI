@@ -1,3 +1,4 @@
+#include "../../../JObject.hpp"
 #include "./EapSessionConfig_EapMethodConfig.hpp"
 
 namespace android::net::eap
@@ -45,12 +46,12 @@ namespace android::net::eap
 	// Constructors
 	
 	// Methods
-	jboolean EapSessionConfig_EapMethodConfig::equals(jobject arg0)
+	jboolean EapSessionConfig_EapMethodConfig::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint EapSessionConfig_EapMethodConfig::getMethodType()

@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./WebView_HitTestResult.hpp"
 
 namespace android::webkit
@@ -80,12 +81,12 @@ namespace android::webkit
 	// Constructors
 	
 	// Methods
-	jstring WebView_HitTestResult::getExtra()
+	JString WebView_HitTestResult::getExtra()
 	{
 		return callObjectMethod(
 			"getExtra",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint WebView_HitTestResult::getType()
 	{

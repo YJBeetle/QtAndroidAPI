@@ -1,5 +1,9 @@
+#include "../../../JArray.hpp"
 #include "../../../java/io/ObjectInputStream.hpp"
 #include "../../../java/io/ObjectOutputStream.hpp"
+#include "../../../JClass.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "../../../java/security/AccessControlContext.hpp"
 #include "../../../java/util/LinkedList.hpp"
 #include "./Subject.hpp"
@@ -28,7 +32,7 @@ namespace javax::security::auth
 		) {}
 	
 	// Methods
-	jobject Subject::doAs(javax::security::auth::Subject arg0, JObject arg1)
+	JObject Subject::doAs(javax::security::auth::Subject arg0, JObject arg1)
 	{
 		return callStaticObjectMethod(
 			"javax.security.auth.Subject",
@@ -36,9 +40,9 @@ namespace javax::security::auth
 			"(Ljavax/security/auth/Subject;Ljava/security/PrivilegedAction;)Ljava/lang/Object;",
 			arg0.object(),
 			arg1.object()
-		).object<jobject>();
+		);
 	}
-	jobject Subject::doAsPrivileged(javax::security::auth::Subject arg0, JObject arg1, java::security::AccessControlContext arg2)
+	JObject Subject::doAsPrivileged(javax::security::auth::Subject arg0, JObject arg1, java::security::AccessControlContext arg2)
 	{
 		return callStaticObjectMethod(
 			"javax.security.auth.Subject",
@@ -47,7 +51,7 @@ namespace javax::security::auth
 			arg0.object(),
 			arg1.object(),
 			arg2.object()
-		).object<jobject>();
+		);
 	}
 	javax::security::auth::Subject Subject::getSubject(java::security::AccessControlContext arg0)
 	{
@@ -58,12 +62,12 @@ namespace javax::security::auth
 			arg0.object()
 		);
 	}
-	jboolean Subject::equals(jobject arg0)
+	jboolean Subject::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	JObject Subject::getPrincipals()
@@ -73,12 +77,12 @@ namespace javax::security::auth
 			"()Ljava/util/Set;"
 		);
 	}
-	JObject Subject::getPrincipals(jclass arg0)
+	JObject Subject::getPrincipals(JClass arg0)
 	{
 		return callObjectMethod(
 			"getPrincipals",
 			"(Ljava/lang/Class;)Ljava/util/Set;",
-			arg0
+			arg0.object<jclass>()
 		);
 	}
 	JObject Subject::getPrivateCredentials()
@@ -88,12 +92,12 @@ namespace javax::security::auth
 			"()Ljava/util/Set;"
 		);
 	}
-	JObject Subject::getPrivateCredentials(jclass arg0)
+	JObject Subject::getPrivateCredentials(JClass arg0)
 	{
 		return callObjectMethod(
 			"getPrivateCredentials",
 			"(Ljava/lang/Class;)Ljava/util/Set;",
-			arg0
+			arg0.object<jclass>()
 		);
 	}
 	JObject Subject::getPublicCredentials()
@@ -103,12 +107,12 @@ namespace javax::security::auth
 			"()Ljava/util/Set;"
 		);
 	}
-	JObject Subject::getPublicCredentials(jclass arg0)
+	JObject Subject::getPublicCredentials(JClass arg0)
 	{
 		return callObjectMethod(
 			"getPublicCredentials",
 			"(Ljava/lang/Class;)Ljava/util/Set;",
-			arg0
+			arg0.object<jclass>()
 		);
 	}
 	jint Subject::hashCode()
@@ -132,12 +136,12 @@ namespace javax::security::auth
 			"()V"
 		);
 	}
-	jstring Subject::toString()
+	JString Subject::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace javax::security::auth
 

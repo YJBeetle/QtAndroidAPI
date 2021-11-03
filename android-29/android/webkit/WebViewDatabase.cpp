@@ -1,4 +1,6 @@
+#include "../../JArray.hpp"
 #include "../content/Context.hpp"
+#include "../../JString.hpp"
 #include "./WebViewDatabase.hpp"
 
 namespace android::webkit
@@ -46,14 +48,14 @@ namespace android::webkit
 			"()V"
 		);
 	}
-	jarray WebViewDatabase::getHttpAuthUsernamePassword(jstring arg0, jstring arg1)
+	JArray WebViewDatabase::getHttpAuthUsernamePassword(JString arg0, JString arg1)
 	{
 		return callObjectMethod(
 			"getHttpAuthUsernamePassword",
 			"(Ljava/lang/String;Ljava/lang/String;)[Ljava/lang/String;",
-			arg0,
-			arg1
-		).object<jarray>();
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
+		);
 	}
 	jboolean WebViewDatabase::hasFormData()
 	{
@@ -76,15 +78,15 @@ namespace android::webkit
 			"()Z"
 		);
 	}
-	void WebViewDatabase::setHttpAuthUsernamePassword(jstring arg0, jstring arg1, jstring arg2, jstring arg3)
+	void WebViewDatabase::setHttpAuthUsernamePassword(JString arg0, JString arg1, JString arg2, JString arg3)
 	{
 		callMethod<void>(
 			"setHttpAuthUsernamePassword",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2.object<jstring>(),
+			arg3.object<jstring>()
 		);
 	}
 } // namespace android::webkit

@@ -1,3 +1,5 @@
+#include "../../JString.hpp"
+#include "../../JThrowable.hpp"
 #include "./MissingResourceException.hpp"
 
 namespace java::util
@@ -8,29 +10,29 @@ namespace java::util
 	MissingResourceException::MissingResourceException(QJniObject obj) : java::lang::RuntimeException(obj) {}
 	
 	// Constructors
-	MissingResourceException::MissingResourceException(jstring arg0, jstring arg1, jstring arg2)
+	MissingResourceException::MissingResourceException(JString arg0, JString arg1, JString arg2)
 		: java::lang::RuntimeException(
 			"java.util.MissingResourceException",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1,
-			arg2
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2.object<jstring>()
 		) {}
 	
 	// Methods
-	jstring MissingResourceException::getClassName()
+	JString MissingResourceException::getClassName()
 	{
 		return callObjectMethod(
 			"getClassName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring MissingResourceException::getKey()
+	JString MissingResourceException::getKey()
 	{
 		return callObjectMethod(
 			"getKey",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::util
 

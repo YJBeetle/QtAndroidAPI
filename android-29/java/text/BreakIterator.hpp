@@ -2,6 +2,10 @@
 
 #include "../../JObject.hpp"
 
+class JArray;
+class JArray;
+class JObject;
+class JString;
 namespace java::util
 {
 	class Locale;
@@ -22,7 +26,7 @@ namespace java::text
 		// Constructors
 		
 		// Methods
-		static jarray getAvailableLocales();
+		static JArray getAvailableLocales();
 		static java::text::BreakIterator getCharacterInstance();
 		static java::text::BreakIterator getCharacterInstance(java::util::Locale arg0);
 		static java::text::BreakIterator getLineInstance();
@@ -31,7 +35,7 @@ namespace java::text
 		static java::text::BreakIterator getSentenceInstance(java::util::Locale arg0);
 		static java::text::BreakIterator getWordInstance();
 		static java::text::BreakIterator getWordInstance(java::util::Locale arg0);
-		jobject clone();
+		JObject clone();
 		jint current();
 		jint first();
 		jint following(jint arg0);
@@ -42,7 +46,7 @@ namespace java::text
 		jint next(jint arg0);
 		jint preceding(jint arg0);
 		jint previous();
-		void setText(jstring arg0);
+		void setText(JString arg0);
 		void setText(JObject arg0);
 	};
 } // namespace java::text

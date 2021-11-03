@@ -1,4 +1,5 @@
 #include "./TextLinks.hpp"
+#include "../../../JString.hpp"
 #include "./TextLinks_Builder.hpp"
 
 namespace android::view::textclassifier
@@ -9,11 +10,11 @@ namespace android::view::textclassifier
 	TextLinks_Builder::TextLinks_Builder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	TextLinks_Builder::TextLinks_Builder(jstring arg0)
+	TextLinks_Builder::TextLinks_Builder(JString arg0)
 		: JObject(
 			"android.view.textclassifier.TextLinks$Builder",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

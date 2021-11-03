@@ -1,3 +1,5 @@
+#include "../../JIntArray.hpp"
+#include "../../JString.hpp"
 #include "./MtpDeviceInfo.hpp"
 
 namespace android::mtp
@@ -10,47 +12,47 @@ namespace android::mtp
 	// Constructors
 	
 	// Methods
-	jintArray MtpDeviceInfo::getEventsSupported()
+	JIntArray MtpDeviceInfo::getEventsSupported()
 	{
 		return callObjectMethod(
 			"getEventsSupported",
 			"()[I"
-		).object<jintArray>();
+		);
 	}
-	jstring MtpDeviceInfo::getManufacturer()
+	JString MtpDeviceInfo::getManufacturer()
 	{
 		return callObjectMethod(
 			"getManufacturer",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring MtpDeviceInfo::getModel()
+	JString MtpDeviceInfo::getModel()
 	{
 		return callObjectMethod(
 			"getModel",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jintArray MtpDeviceInfo::getOperationsSupported()
+	JIntArray MtpDeviceInfo::getOperationsSupported()
 	{
 		return callObjectMethod(
 			"getOperationsSupported",
 			"()[I"
-		).object<jintArray>();
+		);
 	}
-	jstring MtpDeviceInfo::getSerialNumber()
+	JString MtpDeviceInfo::getSerialNumber()
 	{
 		return callObjectMethod(
 			"getSerialNumber",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring MtpDeviceInfo::getVersion()
+	JString MtpDeviceInfo::getVersion()
 	{
 		return callObjectMethod(
 			"getVersion",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jboolean MtpDeviceInfo::isEventSupported(jint arg0)
 	{

@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JByteArray;
 
 namespace android::drm
 {
@@ -12,7 +13,7 @@ namespace android::drm
 		static jint STATUS_ERROR();
 		static jint STATUS_INPUTDATA_ERROR();
 		static jint STATUS_OK();
-		jbyteArray convertedData();
+		JByteArray convertedData();
 		jint offset();
 		jint statusCode();
 		
@@ -21,7 +22,7 @@ namespace android::drm
 		DrmConvertedStatus(QJniObject obj);
 		
 		// Constructors
-		DrmConvertedStatus(jint arg0, jbyteArray arg1, jint arg2);
+		DrmConvertedStatus(jint arg0, JByteArray arg1, jint arg2);
 		
 		// Methods
 	};

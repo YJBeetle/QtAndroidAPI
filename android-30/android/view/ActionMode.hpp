@@ -10,6 +10,8 @@ namespace android::view
 {
 	class View;
 }
+class JString;
+class JObject;
 
 namespace android::view
 {
@@ -33,9 +35,9 @@ namespace android::view
 		android::view::View getCustomView();
 		JObject getMenu();
 		android::view::MenuInflater getMenuInflater();
-		jstring getSubtitle();
-		jobject getTag();
-		jstring getTitle();
+		JString getSubtitle();
+		JObject getTag();
+		JString getTitle();
 		jboolean getTitleOptionalHint();
 		jint getType();
 		void hide(jlong arg0);
@@ -45,10 +47,10 @@ namespace android::view
 		void onWindowFocusChanged(jboolean arg0);
 		void setCustomView(android::view::View arg0);
 		void setSubtitle(jint arg0);
-		void setSubtitle(jstring arg0);
-		void setTag(jobject arg0);
+		void setSubtitle(JString arg0);
+		void setTag(JObject arg0);
 		void setTitle(jint arg0);
-		void setTitle(jstring arg0);
+		void setTitle(JString arg0);
 		void setTitleOptionalHint(jboolean arg0);
 		void setType(jint arg0);
 	};

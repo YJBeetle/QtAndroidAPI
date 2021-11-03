@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JArray;
 namespace java::io
 {
 	class ObjectInputStream;
@@ -10,6 +11,9 @@ namespace java::io
 {
 	class ObjectOutputStream;
 }
+class JClass;
+class JObject;
+class JString;
 namespace java::security
 {
 	class AccessControlContext;
@@ -35,20 +39,20 @@ namespace javax::security::auth
 		Subject(jboolean arg0, JObject arg1, JObject arg2, JObject arg3);
 		
 		// Methods
-		static jobject doAs(javax::security::auth::Subject arg0, JObject arg1);
-		static jobject doAsPrivileged(javax::security::auth::Subject arg0, JObject arg1, java::security::AccessControlContext arg2);
+		static JObject doAs(javax::security::auth::Subject arg0, JObject arg1);
+		static JObject doAsPrivileged(javax::security::auth::Subject arg0, JObject arg1, java::security::AccessControlContext arg2);
 		static javax::security::auth::Subject getSubject(java::security::AccessControlContext arg0);
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		JObject getPrincipals();
-		JObject getPrincipals(jclass arg0);
+		JObject getPrincipals(JClass arg0);
 		JObject getPrivateCredentials();
-		JObject getPrivateCredentials(jclass arg0);
+		JObject getPrivateCredentials(JClass arg0);
 		JObject getPublicCredentials();
-		JObject getPublicCredentials(jclass arg0);
+		JObject getPublicCredentials(JClass arg0);
 		jint hashCode();
 		jboolean isReadOnly();
 		void setReadOnly();
-		jstring toString();
+		JString toString();
 	};
 } // namespace javax::security::auth
 

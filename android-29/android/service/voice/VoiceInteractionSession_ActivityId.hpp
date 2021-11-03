@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JObject;
 
 namespace android::service::voice
 {
@@ -17,7 +18,7 @@ namespace android::service::voice
 		// Constructors
 		
 		// Methods
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint hashCode();
 	};
 } // namespace android::service::voice

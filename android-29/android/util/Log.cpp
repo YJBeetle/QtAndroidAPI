@@ -1,3 +1,5 @@
+#include "../../JString.hpp"
+#include "../../JThrowable.hpp"
 #include "./Log.hpp"
 
 namespace android::util
@@ -52,180 +54,180 @@ namespace android::util
 	// Constructors
 	
 	// Methods
-	jint Log::d(jstring arg0, jstring arg1)
+	jint Log::d(JString arg0, JString arg1)
 	{
 		return callStaticMethod<jint>(
 			"android.util.Log",
 			"d",
 			"(Ljava/lang/String;Ljava/lang/String;)I",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		);
 	}
-	jint Log::d(jstring arg0, jstring arg1, jthrowable arg2)
+	jint Log::d(JString arg0, JString arg1, JThrowable arg2)
 	{
 		return callStaticMethod<jint>(
 			"android.util.Log",
 			"d",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I",
-			arg0,
-			arg1,
-			arg2
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2.object<jthrowable>()
 		);
 	}
-	jint Log::e(jstring arg0, jstring arg1)
+	jint Log::e(JString arg0, JString arg1)
 	{
 		return callStaticMethod<jint>(
 			"android.util.Log",
 			"e",
 			"(Ljava/lang/String;Ljava/lang/String;)I",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		);
 	}
-	jint Log::e(jstring arg0, jstring arg1, jthrowable arg2)
+	jint Log::e(JString arg0, JString arg1, JThrowable arg2)
 	{
 		return callStaticMethod<jint>(
 			"android.util.Log",
 			"e",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I",
-			arg0,
-			arg1,
-			arg2
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2.object<jthrowable>()
 		);
 	}
-	jstring Log::getStackTraceString(jthrowable arg0)
+	JString Log::getStackTraceString(JThrowable arg0)
 	{
 		return callStaticObjectMethod(
 			"android.util.Log",
 			"getStackTraceString",
 			"(Ljava/lang/Throwable;)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
+			arg0.object<jthrowable>()
+		);
 	}
-	jint Log::i(jstring arg0, jstring arg1)
+	jint Log::i(JString arg0, JString arg1)
 	{
 		return callStaticMethod<jint>(
 			"android.util.Log",
 			"i",
 			"(Ljava/lang/String;Ljava/lang/String;)I",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		);
 	}
-	jint Log::i(jstring arg0, jstring arg1, jthrowable arg2)
+	jint Log::i(JString arg0, JString arg1, JThrowable arg2)
 	{
 		return callStaticMethod<jint>(
 			"android.util.Log",
 			"i",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I",
-			arg0,
-			arg1,
-			arg2
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2.object<jthrowable>()
 		);
 	}
-	jboolean Log::isLoggable(jstring arg0, jint arg1)
+	jboolean Log::isLoggable(JString arg0, jint arg1)
 	{
 		return callStaticMethod<jboolean>(
 			"android.util.Log",
 			"isLoggable",
 			"(Ljava/lang/String;I)Z",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
-	jint Log::println(jint arg0, jstring arg1, jstring arg2)
+	jint Log::println(jint arg0, JString arg1, JString arg2)
 	{
 		return callStaticMethod<jint>(
 			"android.util.Log",
 			"println",
 			"(ILjava/lang/String;Ljava/lang/String;)I",
 			arg0,
-			arg1,
-			arg2
+			arg1.object<jstring>(),
+			arg2.object<jstring>()
 		);
 	}
-	jint Log::v(jstring arg0, jstring arg1)
+	jint Log::v(JString arg0, JString arg1)
 	{
 		return callStaticMethod<jint>(
 			"android.util.Log",
 			"v",
 			"(Ljava/lang/String;Ljava/lang/String;)I",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		);
 	}
-	jint Log::v(jstring arg0, jstring arg1, jthrowable arg2)
+	jint Log::v(JString arg0, JString arg1, JThrowable arg2)
 	{
 		return callStaticMethod<jint>(
 			"android.util.Log",
 			"v",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I",
-			arg0,
-			arg1,
-			arg2
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2.object<jthrowable>()
 		);
 	}
-	jint Log::w(jstring arg0, jstring arg1)
+	jint Log::w(JString arg0, JString arg1)
 	{
 		return callStaticMethod<jint>(
 			"android.util.Log",
 			"w",
 			"(Ljava/lang/String;Ljava/lang/String;)I",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		);
 	}
-	jint Log::w(jstring arg0, jthrowable arg1)
+	jint Log::w(JString arg0, JThrowable arg1)
 	{
 		return callStaticMethod<jint>(
 			"android.util.Log",
 			"w",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)I",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
 		);
 	}
-	jint Log::w(jstring arg0, jstring arg1, jthrowable arg2)
+	jint Log::w(JString arg0, JString arg1, JThrowable arg2)
 	{
 		return callStaticMethod<jint>(
 			"android.util.Log",
 			"w",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I",
-			arg0,
-			arg1,
-			arg2
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2.object<jthrowable>()
 		);
 	}
-	jint Log::wtf(jstring arg0, jstring arg1)
+	jint Log::wtf(JString arg0, JString arg1)
 	{
 		return callStaticMethod<jint>(
 			"android.util.Log",
 			"wtf",
 			"(Ljava/lang/String;Ljava/lang/String;)I",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		);
 	}
-	jint Log::wtf(jstring arg0, jthrowable arg1)
+	jint Log::wtf(JString arg0, JThrowable arg1)
 	{
 		return callStaticMethod<jint>(
 			"android.util.Log",
 			"wtf",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)I",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
 		);
 	}
-	jint Log::wtf(jstring arg0, jstring arg1, jthrowable arg2)
+	jint Log::wtf(JString arg0, JString arg1, JThrowable arg2)
 	{
 		return callStaticMethod<jint>(
 			"android.util.Log",
 			"wtf",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I",
-			arg0,
-			arg1,
-			arg2
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2.object<jthrowable>()
 		);
 	}
 } // namespace android::util

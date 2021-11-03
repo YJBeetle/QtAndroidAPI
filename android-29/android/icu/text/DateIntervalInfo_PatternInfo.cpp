@@ -1,3 +1,5 @@
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./DateIntervalInfo_PatternInfo.hpp"
 
 namespace android::icu::text
@@ -8,22 +10,22 @@ namespace android::icu::text
 	DateIntervalInfo_PatternInfo::DateIntervalInfo_PatternInfo(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	DateIntervalInfo_PatternInfo::DateIntervalInfo_PatternInfo(jstring arg0, jstring arg1, jboolean arg2)
+	DateIntervalInfo_PatternInfo::DateIntervalInfo_PatternInfo(JString arg0, JString arg1, jboolean arg2)
 		: JObject(
 			"android.icu.text.DateIntervalInfo$PatternInfo",
 			"(Ljava/lang/String;Ljava/lang/String;Z)V",
-			arg0,
-			arg1,
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
 			arg2
 		) {}
 	
 	// Methods
-	jboolean DateIntervalInfo_PatternInfo::equals(jobject arg0)
+	jboolean DateIntervalInfo_PatternInfo::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jboolean DateIntervalInfo_PatternInfo::firstDateInPtnIsLaterDate()
@@ -33,19 +35,19 @@ namespace android::icu::text
 			"()Z"
 		);
 	}
-	jstring DateIntervalInfo_PatternInfo::getFirstPart()
+	JString DateIntervalInfo_PatternInfo::getFirstPart()
 	{
 		return callObjectMethod(
 			"getFirstPart",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DateIntervalInfo_PatternInfo::getSecondPart()
+	JString DateIntervalInfo_PatternInfo::getSecondPart()
 	{
 		return callObjectMethod(
 			"getSecondPart",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint DateIntervalInfo_PatternInfo::hashCode()
 	{
@@ -54,12 +56,12 @@ namespace android::icu::text
 			"()I"
 		);
 	}
-	jstring DateIntervalInfo_PatternInfo::toString()
+	JString DateIntervalInfo_PatternInfo::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::icu::text
 

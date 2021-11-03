@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JArray;
 namespace android::os
 {
 	class Bundle;
@@ -26,6 +27,7 @@ namespace android::print
 {
 	class PrintDocumentAdapter_WriteResultCallback;
 }
+class JString;
 
 namespace android::print
 {
@@ -33,7 +35,7 @@ namespace android::print
 	{
 	public:
 		// Fields
-		static jstring EXTRA_PRINT_PREVIEW();
+		static JString EXTRA_PRINT_PREVIEW();
 		
 		// QJniObject forward
 		template<typename ...Ts> explicit PrintDocumentAdapter(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
@@ -46,7 +48,7 @@ namespace android::print
 		void onFinish();
 		void onLayout(android::print::PrintAttributes arg0, android::print::PrintAttributes arg1, android::os::CancellationSignal arg2, android::print::PrintDocumentAdapter_LayoutResultCallback arg3, android::os::Bundle arg4);
 		void onStart();
-		void onWrite(jarray arg0, android::os::ParcelFileDescriptor arg1, android::os::CancellationSignal arg2, android::print::PrintDocumentAdapter_WriteResultCallback arg3);
+		void onWrite(JArray arg0, android::os::ParcelFileDescriptor arg1, android::os::CancellationSignal arg2, android::print::PrintDocumentAdapter_WriteResultCallback arg3);
 	};
 } // namespace android::print
 

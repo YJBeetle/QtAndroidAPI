@@ -1,3 +1,4 @@
+#include "../../JArray.hpp"
 #include "../net/Uri.hpp"
 #include "./FontsContract_FontInfo.hpp"
 
@@ -11,12 +12,12 @@ namespace android::provider
 	// Constructors
 	
 	// Methods
-	jarray FontsContract_FontInfo::getAxes()
+	JArray FontsContract_FontInfo::getAxes()
 	{
 		return callObjectMethod(
 			"getAxes",
 			"()[Landroid/graphics/fonts/FontVariationAxis;"
-		).object<jarray>();
+		);
 	}
 	jint FontsContract_FontInfo::getResultCode()
 	{

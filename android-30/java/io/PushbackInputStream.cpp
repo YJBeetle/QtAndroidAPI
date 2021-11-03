@@ -1,3 +1,4 @@
+#include "../../JByteArray.hpp"
 #include "./InputStream.hpp"
 #include "./PushbackInputStream.hpp"
 
@@ -60,12 +61,12 @@ namespace java::io
 			"()I"
 		);
 	}
-	jint PushbackInputStream::read(jbyteArray arg0, jint arg1, jint arg2)
+	jint PushbackInputStream::read(JByteArray arg0, jint arg1, jint arg2)
 	{
 		return callMethod<jint>(
 			"read",
 			"([BII)I",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1,
 			arg2
 		);
@@ -85,12 +86,12 @@ namespace java::io
 			arg0
 		);
 	}
-	void PushbackInputStream::unread(jbyteArray arg0)
+	void PushbackInputStream::unread(JByteArray arg0)
 	{
 		callMethod<void>(
 			"unread",
 			"([B)V",
-			arg0
+			arg0.object<jbyteArray>()
 		);
 	}
 	void PushbackInputStream::unread(jint arg0)
@@ -101,12 +102,12 @@ namespace java::io
 			arg0
 		);
 	}
-	void PushbackInputStream::unread(jbyteArray arg0, jint arg1, jint arg2)
+	void PushbackInputStream::unread(JByteArray arg0, jint arg1, jint arg2)
 	{
 		callMethod<void>(
 			"unread",
 			"([BII)V",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1,
 			arg2
 		);

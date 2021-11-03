@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JFloatArray;
+class JArray;
 
 namespace android::os
 {
@@ -26,9 +28,9 @@ namespace android::os
 		// Constructors
 		
 		// Methods
-		jarray getCpuUsages();
-		jfloatArray getDeviceTemperatures(jint arg0, jint arg1);
-		jfloatArray getFanSpeeds();
+		JArray getCpuUsages();
+		JFloatArray getDeviceTemperatures(jint arg0, jint arg1);
+		JFloatArray getFanSpeeds();
 	};
 } // namespace android::os
 

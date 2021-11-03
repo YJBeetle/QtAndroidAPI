@@ -1,8 +1,9 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./InputStream.hpp"
 
+class JByteArray;
+class JString;
 
 namespace java::io
 {
@@ -16,12 +17,12 @@ namespace java::io
 		StringBufferInputStream(QJniObject obj);
 		
 		// Constructors
-		StringBufferInputStream(jstring arg0);
+		StringBufferInputStream(JString arg0);
 		
 		// Methods
 		jint available();
 		jint read();
-		jint read(jbyteArray arg0, jint arg1, jint arg2);
+		jint read(JByteArray arg0, jint arg1, jint arg2);
 		void reset();
 		jlong skip(jlong arg0);
 	};

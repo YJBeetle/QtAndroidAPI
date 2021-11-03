@@ -1,5 +1,7 @@
+#include "../../JObjectArray.hpp"
 #include "../io/ObjectInputStream.hpp"
 #include "../io/ObjectOutputStream.hpp"
+#include "../../JObject.hpp"
 #include "./IdentityHashMap.hpp"
 
 namespace java::util
@@ -36,27 +38,27 @@ namespace java::util
 			"()V"
 		);
 	}
-	jobject IdentityHashMap::clone()
+	JObject IdentityHashMap::clone()
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
-	jboolean IdentityHashMap::containsKey(jobject arg0)
+	jboolean IdentityHashMap::containsKey(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"containsKey",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jboolean IdentityHashMap::containsValue(jobject arg0)
+	jboolean IdentityHashMap::containsValue(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"containsValue",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	JObject IdentityHashMap::entrySet()
@@ -66,12 +68,12 @@ namespace java::util
 			"()Ljava/util/Set;"
 		);
 	}
-	jboolean IdentityHashMap::equals(jobject arg0)
+	jboolean IdentityHashMap::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	void IdentityHashMap::forEach(JObject arg0)
@@ -82,13 +84,13 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	jobject IdentityHashMap::get(jobject arg0)
+	JObject IdentityHashMap::get(JObject arg0)
 	{
 		return callObjectMethod(
 			"get",
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0
-		).object<jobject>();
+			arg0.object<jobject>()
+		);
 	}
 	jint IdentityHashMap::hashCode()
 	{
@@ -111,14 +113,14 @@ namespace java::util
 			"()Ljava/util/Set;"
 		);
 	}
-	jobject IdentityHashMap::put(jobject arg0, jobject arg1)
+	JObject IdentityHashMap::put(JObject arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"put",
 			"(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0,
-			arg1
-		).object<jobject>();
+			arg0.object<jobject>(),
+			arg1.object<jobject>()
+		);
 	}
 	void IdentityHashMap::putAll(JObject arg0)
 	{
@@ -128,13 +130,13 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	jobject IdentityHashMap::remove(jobject arg0)
+	JObject IdentityHashMap::remove(JObject arg0)
 	{
 		return callObjectMethod(
 			"remove",
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0
-		).object<jobject>();
+			arg0.object<jobject>()
+		);
 	}
 	void IdentityHashMap::replaceAll(JObject arg0)
 	{

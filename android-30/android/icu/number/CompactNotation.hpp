@@ -1,8 +1,6 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "./Notation.hpp"
-
 
 namespace android::icu::number
 {

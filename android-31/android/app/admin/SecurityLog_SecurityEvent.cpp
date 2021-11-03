@@ -1,4 +1,5 @@
 #include "../../os/Parcel.hpp"
+#include "../../../JObject.hpp"
 #include "./SecurityLog_SecurityEvent.hpp"
 
 namespace android::app::admin
@@ -26,20 +27,20 @@ namespace android::app::admin
 			"()I"
 		);
 	}
-	jboolean SecurityLog_SecurityEvent::equals(jobject arg0)
+	jboolean SecurityLog_SecurityEvent::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jobject SecurityLog_SecurityEvent::getData()
+	JObject SecurityLog_SecurityEvent::getData()
 	{
 		return callObjectMethod(
 			"getData",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
 	jlong SecurityLog_SecurityEvent::getId()
 	{

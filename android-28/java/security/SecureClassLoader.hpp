@@ -1,12 +1,14 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "../lang/ClassLoader.hpp"
 
+class JByteArray;
+class JClass;
 namespace java::lang
 {
 	class ClassLoader;
 }
+class JString;
 namespace java::nio
 {
 	class ByteBuffer;

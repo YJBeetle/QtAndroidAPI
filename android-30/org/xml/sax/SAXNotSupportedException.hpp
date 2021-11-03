@@ -1,9 +1,8 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "../../../java/lang/Exception.hpp"
 #include "./SAXException.hpp"
 
+class JString;
 
 namespace org::xml::sax
 {
@@ -18,7 +17,7 @@ namespace org::xml::sax
 		
 		// Constructors
 		SAXNotSupportedException();
-		SAXNotSupportedException(jstring arg0);
+		SAXNotSupportedException(JString arg0);
 		
 		// Methods
 	};

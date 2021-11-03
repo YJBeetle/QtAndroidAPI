@@ -2,7 +2,6 @@
 
 #include "../../JObject.hpp"
 
-
 namespace android::gesture
 {
 	class OrientedBoundingBox : public JObject

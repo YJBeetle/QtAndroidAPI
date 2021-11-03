@@ -1,4 +1,9 @@
+#include "../../../JByteArray.hpp"
+#include "../../../JCharArray.hpp"
+#include "../../../JIntArray.hpp"
 #include "../../os/Parcel.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./Signature.hpp"
 
 namespace android::content::pm
@@ -17,17 +22,17 @@ namespace android::content::pm
 	Signature::Signature(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	Signature::Signature(jbyteArray arg0)
+	Signature::Signature(JByteArray arg0)
 		: JObject(
 			"android.content.pm.Signature",
 			"([B)V",
-			arg0
+			arg0.object<jbyteArray>()
 		) {}
-	Signature::Signature(jstring arg0)
+	Signature::Signature(JString arg0)
 		: JObject(
 			"android.content.pm.Signature",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods
@@ -38,12 +43,12 @@ namespace android::content::pm
 			"()I"
 		);
 	}
-	jboolean Signature::equals(jobject arg0)
+	jboolean Signature::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint Signature::hashCode()
@@ -53,35 +58,35 @@ namespace android::content::pm
 			"()I"
 		);
 	}
-	jbyteArray Signature::toByteArray()
+	JByteArray Signature::toByteArray()
 	{
 		return callObjectMethod(
 			"toByteArray",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
-	jcharArray Signature::toChars()
+	JCharArray Signature::toChars()
 	{
 		return callObjectMethod(
 			"toChars",
 			"()[C"
-		).object<jcharArray>();
+		);
 	}
-	jcharArray Signature::toChars(jcharArray arg0, jintArray arg1)
+	JCharArray Signature::toChars(JCharArray arg0, JIntArray arg1)
 	{
 		return callObjectMethod(
 			"toChars",
 			"([C[I)[C",
-			arg0,
-			arg1
-		).object<jcharArray>();
+			arg0.object<jcharArray>(),
+			arg1.object<jintArray>()
+		);
 	}
-	jstring Signature::toCharsString()
+	JString Signature::toCharsString()
 	{
 		return callObjectMethod(
 			"toCharsString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void Signature::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

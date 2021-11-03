@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JObject;
+class JString;
 
 namespace android::os
 {
@@ -9,7 +11,7 @@ namespace android::os
 	{
 	public:
 		// Fields
-		static jstring PARTITION_NAME_SYSTEM();
+		static JString PARTITION_NAME_SYSTEM();
 		
 		// QJniObject forward
 		template<typename ...Ts> explicit Build_Partition(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
@@ -18,10 +20,10 @@ namespace android::os
 		// Constructors
 		
 		// Methods
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jlong getBuildTimeMillis();
-		jstring getFingerprint();
-		jstring getName();
+		JString getFingerprint();
+		JString getName();
 		jint hashCode();
 	};
 } // namespace android::os

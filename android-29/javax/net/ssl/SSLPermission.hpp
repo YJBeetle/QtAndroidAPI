@@ -1,9 +1,8 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "../../../java/security/Permission.hpp"
 #include "../../../java/security/BasicPermission.hpp"
 
+class JString;
 
 namespace javax::net::ssl
 {
@@ -17,8 +16,8 @@ namespace javax::net::ssl
 		SSLPermission(QJniObject obj);
 		
 		// Constructors
-		SSLPermission(jstring arg0);
-		SSLPermission(jstring arg0, jstring arg1);
+		SSLPermission(JString arg0);
+		SSLPermission(JString arg0, JString arg1);
 		
 		// Methods
 	};

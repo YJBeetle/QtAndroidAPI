@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./AbstractMethodError.hpp"
 
 namespace java::lang
@@ -13,11 +14,11 @@ namespace java::lang
 			"java.lang.AbstractMethodError",
 			"()V"
 		) {}
-	AbstractMethodError::AbstractMethodError(jstring arg0)
+	AbstractMethodError::AbstractMethodError(JString arg0)
 		: java::lang::IncompatibleClassChangeError(
 			"java.lang.AbstractMethodError",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

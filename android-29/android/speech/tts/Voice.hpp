@@ -6,6 +6,8 @@ namespace android::os
 {
 	class Parcel;
 }
+class JObject;
+class JString;
 namespace java::util
 {
 	class Locale;
@@ -34,19 +36,19 @@ namespace android::speech::tts
 		Voice(QJniObject obj);
 		
 		// Constructors
-		Voice(jstring arg0, java::util::Locale arg1, jint arg2, jint arg3, jboolean arg4, JObject arg5);
+		Voice(JString arg0, java::util::Locale arg1, jint arg2, jint arg3, jboolean arg4, JObject arg5);
 		
 		// Methods
 		jint describeContents();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		JObject getFeatures();
 		jint getLatency();
 		java::util::Locale getLocale();
-		jstring getName();
+		JString getName();
 		jint getQuality();
 		jint hashCode();
 		jboolean isNetworkConnectionRequired();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::speech::tts

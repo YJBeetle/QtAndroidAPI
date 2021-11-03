@@ -1,9 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "./Preference.hpp"
 #include "./DialogPreference.hpp"
 
+class JArray;
 namespace android::app
 {
 	class AlertDialog_Builder;
@@ -16,6 +15,9 @@ namespace android::content::res
 {
 	class TypedArray;
 }
+class JString;
+class JObject;
+class JString;
 
 namespace android::preference
 {
@@ -35,18 +37,18 @@ namespace android::preference
 		ListPreference(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
-		jint findIndexOfValue(jstring arg0);
-		jarray getEntries();
-		jstring getEntry();
-		jarray getEntryValues();
-		jstring getSummary();
-		jstring getValue();
-		void setEntries(jarray arg0);
+		jint findIndexOfValue(JString arg0);
+		JArray getEntries();
+		JString getEntry();
+		JArray getEntryValues();
+		JString getSummary();
+		JString getValue();
+		void setEntries(JArray arg0);
 		void setEntries(jint arg0);
-		void setEntryValues(jarray arg0);
+		void setEntryValues(JArray arg0);
 		void setEntryValues(jint arg0);
-		void setSummary(jstring arg0);
-		void setValue(jstring arg0);
+		void setSummary(JString arg0);
+		void setValue(JString arg0);
 		void setValueIndex(jint arg0);
 	};
 } // namespace android::preference

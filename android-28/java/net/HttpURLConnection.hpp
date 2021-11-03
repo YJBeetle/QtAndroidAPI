@@ -1,12 +1,13 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./URLConnection.hpp"
 
+class JArray;
 namespace java::io
 {
 	class InputStream;
 }
+class JString;
 namespace java::net
 {
 	class Authenticator;
@@ -74,20 +75,20 @@ namespace java::net
 		static void setFollowRedirects(jboolean arg0);
 		void disconnect();
 		java::io::InputStream getErrorStream();
-		jstring getHeaderField(jint arg0);
-		jlong getHeaderFieldDate(jstring arg0, jlong arg1);
-		jstring getHeaderFieldKey(jint arg0);
+		JString getHeaderField(jint arg0);
+		jlong getHeaderFieldDate(JString arg0, jlong arg1);
+		JString getHeaderFieldKey(jint arg0);
 		jboolean getInstanceFollowRedirects();
 		java::security::Permission getPermission();
-		jstring getRequestMethod();
+		JString getRequestMethod();
 		jint getResponseCode();
-		jstring getResponseMessage();
+		JString getResponseMessage();
 		void setAuthenticator(java::net::Authenticator arg0);
 		void setChunkedStreamingMode(jint arg0);
 		void setFixedLengthStreamingMode(jint arg0);
 		void setFixedLengthStreamingMode(jlong arg0);
 		void setInstanceFollowRedirects(jboolean arg0);
-		void setRequestMethod(jstring arg0);
+		void setRequestMethod(JString arg0);
 		jboolean usingProxy();
 	};
 } // namespace java::net

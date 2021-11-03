@@ -10,6 +10,7 @@ namespace android::icu::text
 {
 	class SearchIterator_ElementComparisonType;
 }
+class JString;
 
 namespace android::icu::text
 {
@@ -33,7 +34,7 @@ namespace android::icu::text
 		jint getIndex();
 		jint getMatchLength();
 		jint getMatchStart();
-		jstring getMatchedText();
+		JString getMatchedText();
 		JObject getTarget();
 		jboolean isOverlapping();
 		jint last();

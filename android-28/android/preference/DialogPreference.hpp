@@ -1,6 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./Preference.hpp"
 
 namespace android::app
@@ -27,6 +26,7 @@ namespace android::view
 {
 	class View;
 }
+class JString;
 
 namespace android::preference
 {
@@ -49,10 +49,10 @@ namespace android::preference
 		android::app::Dialog getDialog();
 		android::graphics::drawable::Drawable getDialogIcon();
 		jint getDialogLayoutResource();
-		jstring getDialogMessage();
-		jstring getDialogTitle();
-		jstring getNegativeButtonText();
-		jstring getPositiveButtonText();
+		JString getDialogMessage();
+		JString getDialogTitle();
+		JString getNegativeButtonText();
+		JString getPositiveButtonText();
 		void onActivityDestroy();
 		void onClick(JObject arg0, jint arg1);
 		void onDismiss(JObject arg0);
@@ -60,13 +60,13 @@ namespace android::preference
 		void setDialogIcon(jint arg0);
 		void setDialogLayoutResource(jint arg0);
 		void setDialogMessage(jint arg0);
-		void setDialogMessage(jstring arg0);
+		void setDialogMessage(JString arg0);
 		void setDialogTitle(jint arg0);
-		void setDialogTitle(jstring arg0);
+		void setDialogTitle(JString arg0);
 		void setNegativeButtonText(jint arg0);
-		void setNegativeButtonText(jstring arg0);
+		void setNegativeButtonText(JString arg0);
 		void setPositiveButtonText(jint arg0);
-		void setPositiveButtonText(jstring arg0);
+		void setPositiveButtonText(JString arg0);
 	};
 } // namespace android::preference
 

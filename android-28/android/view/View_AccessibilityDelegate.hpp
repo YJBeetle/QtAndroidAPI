@@ -26,6 +26,7 @@ namespace android::view::accessibility
 {
 	class AccessibilityNodeProvider;
 }
+class JString;
 
 namespace android::view
 {
@@ -42,7 +43,7 @@ namespace android::view
 		View_AccessibilityDelegate();
 		
 		// Methods
-		void addExtraDataToAccessibilityNodeInfo(android::view::View arg0, android::view::accessibility::AccessibilityNodeInfo arg1, jstring arg2, android::os::Bundle arg3);
+		void addExtraDataToAccessibilityNodeInfo(android::view::View arg0, android::view::accessibility::AccessibilityNodeInfo arg1, JString arg2, android::os::Bundle arg3);
 		jboolean dispatchPopulateAccessibilityEvent(android::view::View arg0, android::view::accessibility::AccessibilityEvent arg1);
 		android::view::accessibility::AccessibilityNodeProvider getAccessibilityNodeProvider(android::view::View arg0);
 		void onInitializeAccessibilityEvent(android::view::View arg0, android::view::accessibility::AccessibilityEvent arg1);

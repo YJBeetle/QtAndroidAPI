@@ -1,8 +1,9 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "../../java/lang/Number.hpp"
 
+class JObject;
+class JString;
 
 namespace android::util
 {
@@ -31,7 +32,7 @@ namespace android::util
 		// Constructors
 		Half(jdouble arg0);
 		Half(jfloat arg0);
-		Half(jstring arg0);
+		Half(JString arg0);
 		Half(jshort arg0);
 		
 		// Methods
@@ -58,21 +59,21 @@ namespace android::util
 		static jboolean lessEquals(jshort arg0, jshort arg1);
 		static jshort max(jshort arg0, jshort arg1);
 		static jshort min(jshort arg0, jshort arg1);
-		static jshort parseHalf(jstring arg0);
+		static jshort parseHalf(JString arg0);
 		static jshort round(jshort arg0);
 		static jfloat toFloat(jshort arg0);
 		static jshort toHalf(jfloat arg0);
-		static jstring toHexString(jshort arg0);
-		static jstring toString(jshort arg0);
+		static JString toHexString(jshort arg0);
+		static JString toString(jshort arg0);
 		static jshort trunc(jshort arg0);
 		static android::util::Half valueOf(jfloat arg0);
-		static android::util::Half valueOf(jstring arg0);
+		static android::util::Half valueOf(JString arg0);
 		static android::util::Half valueOf(jshort arg0);
 		jbyte byteValue();
 		jint compareTo(android::util::Half arg0);
-		jint compareTo(jobject arg0);
+		jint compareTo(JObject arg0);
 		jdouble doubleValue();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jfloat floatValue();
 		jshort halfValue();
 		jint hashCode();
@@ -80,7 +81,7 @@ namespace android::util
 		jboolean isNaN();
 		jlong longValue();
 		jshort shortValue();
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::util
 

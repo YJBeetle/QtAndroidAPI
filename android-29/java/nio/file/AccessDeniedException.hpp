@@ -1,10 +1,8 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "../../lang/Exception.hpp"
-#include "../../io/IOException.hpp"
 #include "./FileSystemException.hpp"
 
+class JString;
 
 namespace java::nio::file
 {
@@ -18,8 +16,8 @@ namespace java::nio::file
 		AccessDeniedException(QJniObject obj);
 		
 		// Constructors
-		AccessDeniedException(jstring arg0);
-		AccessDeniedException(jstring arg0, jstring arg1, jstring arg2);
+		AccessDeniedException(JString arg0);
+		AccessDeniedException(JString arg0, JString arg1, JString arg2);
 		
 		// Methods
 	};

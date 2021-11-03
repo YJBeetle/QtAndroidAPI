@@ -18,6 +18,7 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
 
 namespace android::view
 {
@@ -47,7 +48,7 @@ namespace android::view
 		jint getFlags();
 		android::net::Uri getLinkUri();
 		jint getSource();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::view

@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./DynamicsProcessing_MbcBand.hpp"
 
 namespace android::media::audiofx
@@ -167,12 +168,12 @@ namespace android::media::audiofx
 			arg0
 		);
 	}
-	jstring DynamicsProcessing_MbcBand::toString()
+	JString DynamicsProcessing_MbcBand::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::media::audiofx
 

@@ -1,3 +1,5 @@
+#include "../../JArray.hpp"
+#include "../../JObject.hpp"
 #include "./URLConnection.hpp"
 #include "./ContentHandler.hpp"
 
@@ -16,22 +18,22 @@ namespace java::net
 		) {}
 	
 	// Methods
-	jobject ContentHandler::getContent(java::net::URLConnection arg0)
+	JObject ContentHandler::getContent(java::net::URLConnection arg0)
 	{
 		return callObjectMethod(
 			"getContent",
 			"(Ljava/net/URLConnection;)Ljava/lang/Object;",
 			arg0.object()
-		).object<jobject>();
+		);
 	}
-	jobject ContentHandler::getContent(java::net::URLConnection arg0, jarray arg1)
+	JObject ContentHandler::getContent(java::net::URLConnection arg0, JArray arg1)
 	{
 		return callObjectMethod(
 			"getContent",
 			"(Ljava/net/URLConnection;[Ljava/lang/Class;)Ljava/lang/Object;",
 			arg0.object(),
-			arg1
-		).object<jobject>();
+			arg1.object<jarray>()
+		);
 	}
 } // namespace java::net
 

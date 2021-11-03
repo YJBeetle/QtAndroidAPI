@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JString;
 
 namespace android::telephony::mbms
 {
@@ -18,7 +19,7 @@ namespace android::telephony::mbms
 		MbmsDownloadSessionCallback();
 		
 		// Methods
-		void onError(jint arg0, jstring arg1);
+		void onError(jint arg0, JString arg1);
 		void onFileServicesUpdated(JObject arg0);
 		void onMiddlewareReady();
 	};

@@ -1,3 +1,5 @@
+#include "../../JFloatArray.hpp"
+#include "../../JArray.hpp"
 #include "./HardwarePropertiesManager.hpp"
 
 namespace android::os
@@ -73,28 +75,28 @@ namespace android::os
 	// Constructors
 	
 	// Methods
-	jarray HardwarePropertiesManager::getCpuUsages()
+	JArray HardwarePropertiesManager::getCpuUsages()
 	{
 		return callObjectMethod(
 			"getCpuUsages",
 			"()[Landroid/os/CpuUsageInfo;"
-		).object<jarray>();
+		);
 	}
-	jfloatArray HardwarePropertiesManager::getDeviceTemperatures(jint arg0, jint arg1)
+	JFloatArray HardwarePropertiesManager::getDeviceTemperatures(jint arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"getDeviceTemperatures",
 			"(II)[F",
 			arg0,
 			arg1
-		).object<jfloatArray>();
+		);
 	}
-	jfloatArray HardwarePropertiesManager::getFanSpeeds()
+	JFloatArray HardwarePropertiesManager::getFanSpeeds()
 	{
 		return callObjectMethod(
 			"getFanSpeeds",
 			"()[F"
-		).object<jfloatArray>();
+		);
 	}
 } // namespace android::os
 

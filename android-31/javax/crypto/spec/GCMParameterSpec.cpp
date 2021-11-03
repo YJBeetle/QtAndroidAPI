@@ -1,3 +1,4 @@
+#include "../../../JByteArray.hpp"
 #include "./GCMParameterSpec.hpp"
 
 namespace javax::crypto::spec
@@ -8,30 +9,30 @@ namespace javax::crypto::spec
 	GCMParameterSpec::GCMParameterSpec(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	GCMParameterSpec::GCMParameterSpec(jint arg0, jbyteArray arg1)
+	GCMParameterSpec::GCMParameterSpec(jint arg0, JByteArray arg1)
 		: JObject(
 			"javax.crypto.spec.GCMParameterSpec",
 			"(I[B)V",
 			arg0,
-			arg1
+			arg1.object<jbyteArray>()
 		) {}
-	GCMParameterSpec::GCMParameterSpec(jint arg0, jbyteArray arg1, jint arg2, jint arg3)
+	GCMParameterSpec::GCMParameterSpec(jint arg0, JByteArray arg1, jint arg2, jint arg3)
 		: JObject(
 			"javax.crypto.spec.GCMParameterSpec",
 			"(I[BII)V",
 			arg0,
-			arg1,
+			arg1.object<jbyteArray>(),
 			arg2,
 			arg3
 		) {}
 	
 	// Methods
-	jbyteArray GCMParameterSpec::getIV()
+	JByteArray GCMParameterSpec::getIV()
 	{
 		return callObjectMethod(
 			"getIV",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
 	jint GCMParameterSpec::getTLen()
 	{

@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./SQLiteDiskIOException.hpp"
 
 namespace android::database::sqlite
@@ -13,11 +14,11 @@ namespace android::database::sqlite
 			"android.database.sqlite.SQLiteDiskIOException",
 			"()V"
 		) {}
-	SQLiteDiskIOException::SQLiteDiskIOException(jstring arg0)
+	SQLiteDiskIOException::SQLiteDiskIOException(JString arg0)
 		: android::database::sqlite::SQLiteException(
 			"android.database.sqlite.SQLiteDiskIOException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

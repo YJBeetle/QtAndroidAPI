@@ -1,9 +1,8 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "../../../java/lang/Exception.hpp"
 #include "../../../java/lang/RuntimeException.hpp"
 
+class JString;
 
 namespace org::w3c::dom
 {
@@ -35,7 +34,7 @@ namespace org::w3c::dom
 		DOMException(QJniObject obj);
 		
 		// Constructors
-		DOMException(jshort arg0, jstring arg1);
+		DOMException(jshort arg0, JString arg1);
 		
 		// Methods
 	};

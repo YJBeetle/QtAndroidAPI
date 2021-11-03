@@ -6,6 +6,7 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
 
 namespace android::media
 {
@@ -41,7 +42,7 @@ namespace android::media
 		jboolean hasHeart();
 		jboolean isRated();
 		jboolean isThumbUp();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::media

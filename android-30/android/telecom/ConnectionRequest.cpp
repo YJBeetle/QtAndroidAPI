@@ -3,6 +3,7 @@
 #include "../os/Parcel.hpp"
 #include "./Connection_RttTextStream.hpp"
 #include "./PhoneAccountHandle.hpp"
+#include "../../JString.hpp"
 #include "./ConnectionRequest.hpp"
 
 namespace android::telecom
@@ -103,12 +104,12 @@ namespace android::telecom
 			"()Z"
 		);
 	}
-	jstring ConnectionRequest::toString()
+	JString ConnectionRequest::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void ConnectionRequest::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

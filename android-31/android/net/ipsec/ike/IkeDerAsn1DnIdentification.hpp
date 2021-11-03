@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../../../JObject.hpp"
 #include "./IkeIdentification.hpp"
 
+class JObject;
 namespace javax::security::auth::x500
 {
 	class X500Principal;
@@ -24,7 +24,7 @@ namespace android::net::ipsec::ike
 		IkeDerAsn1DnIdentification(javax::security::auth::x500::X500Principal arg0);
 		
 		// Methods
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint hashCode();
 	};
 } // namespace android::net::ipsec::ike

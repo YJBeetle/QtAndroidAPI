@@ -10,6 +10,8 @@ namespace android::os
 {
 	class Bundle;
 }
+class JObject;
+class JString;
 
 namespace android::media
 {
@@ -25,13 +27,13 @@ namespace android::media
 		// Constructors
 		
 		// Methods
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		android::os::Bundle getConnectionHints();
-		jstring getPackageName();
+		JString getPackageName();
 		android::media::session::MediaSessionManager_RemoteUserInfo getRemoteUserInfo();
 		jint getUid();
 		jint hashCode();
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::media
 

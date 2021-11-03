@@ -10,6 +10,7 @@ namespace android::telephony
 {
 	class VisualVoicemailSmsFilterSettings_Builder;
 }
+class JString;
 
 namespace android::telephony
 {
@@ -20,7 +21,7 @@ namespace android::telephony
 		static JObject CREATOR();
 		static jint DESTINATION_PORT_ANY();
 		static jint DESTINATION_PORT_DATA_SMS();
-		jstring clientPrefix();
+		JString clientPrefix();
 		jint destinationPort();
 		JObject originatingNumbers();
 		
@@ -32,7 +33,7 @@ namespace android::telephony
 		
 		// Methods
 		jint describeContents();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::telephony

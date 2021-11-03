@@ -1,9 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../../java/lang/Exception.hpp"
 #include "./MediaDrmException.hpp"
 
+class JString;
 
 namespace android::media
 {
@@ -17,7 +16,7 @@ namespace android::media
 		UnsupportedSchemeException(QJniObject obj);
 		
 		// Constructors
-		UnsupportedSchemeException(jstring arg0);
+		UnsupportedSchemeException(JString arg0);
 		
 		// Methods
 	};

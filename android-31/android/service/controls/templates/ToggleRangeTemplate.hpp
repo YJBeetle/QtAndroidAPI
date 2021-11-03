@@ -1,6 +1,5 @@
 #pragma once
 
-#include "../../../../JObject.hpp"
 #include "./ControlTemplate.hpp"
 
 namespace android::service::controls::templates
@@ -11,6 +10,8 @@ namespace android::service::controls::templates
 {
 	class RangeTemplate;
 }
+class JString;
+class JString;
 
 namespace android::service::controls::templates
 {
@@ -24,11 +25,11 @@ namespace android::service::controls::templates
 		ToggleRangeTemplate(QJniObject obj);
 		
 		// Constructors
-		ToggleRangeTemplate(jstring arg0, android::service::controls::templates::ControlButton arg1, android::service::controls::templates::RangeTemplate arg2);
-		ToggleRangeTemplate(jstring arg0, jboolean arg1, jstring arg2, android::service::controls::templates::RangeTemplate arg3);
+		ToggleRangeTemplate(JString arg0, android::service::controls::templates::ControlButton arg1, android::service::controls::templates::RangeTemplate arg2);
+		ToggleRangeTemplate(JString arg0, jboolean arg1, JString arg2, android::service::controls::templates::RangeTemplate arg3);
 		
 		// Methods
-		jstring getActionDescription();
+		JString getActionDescription();
 		android::service::controls::templates::RangeTemplate getRange();
 		jint getTemplateType();
 		jboolean isChecked();

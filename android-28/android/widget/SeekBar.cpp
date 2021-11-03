@@ -1,4 +1,5 @@
 #include "../content/Context.hpp"
+#include "../../JString.hpp"
 #include "./SeekBar.hpp"
 
 namespace android::widget
@@ -41,12 +42,12 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	jstring SeekBar::getAccessibilityClassName()
+	JString SeekBar::getAccessibilityClassName()
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	void SeekBar::setOnSeekBarChangeListener(JObject arg0)
 	{

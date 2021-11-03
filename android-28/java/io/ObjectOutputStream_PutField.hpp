@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JObject;
+class JString;
 
 namespace java::io
 {
@@ -18,15 +20,15 @@ namespace java::io
 		ObjectOutputStream_PutField();
 		
 		// Methods
-		void put(jstring arg0, jboolean arg1);
-		void put(jstring arg0, jbyte arg1);
-		void put(jstring arg0, jchar arg1);
-		void put(jstring arg0, jdouble arg1);
-		void put(jstring arg0, jfloat arg1);
-		void put(jstring arg0, jint arg1);
-		void put(jstring arg0, jobject arg1);
-		void put(jstring arg0, jlong arg1);
-		void put(jstring arg0, jshort arg1);
+		void put(JString arg0, jboolean arg1);
+		void put(JString arg0, jbyte arg1);
+		void put(JString arg0, jchar arg1);
+		void put(JString arg0, jdouble arg1);
+		void put(JString arg0, jfloat arg1);
+		void put(JString arg0, jint arg1);
+		void put(JString arg0, JObject arg1);
+		void put(JString arg0, jlong arg1);
+		void put(JString arg0, jshort arg1);
 		void write(JObject arg0);
 	};
 } // namespace java::io

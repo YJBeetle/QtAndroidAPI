@@ -3,6 +3,7 @@
 #include "./MediaProjection_Callback.hpp"
 #include "../../os/Handler.hpp"
 #include "../../view/Surface.hpp"
+#include "../../../JString.hpp"
 #include "./MediaProjection.hpp"
 
 namespace android::media::projection
@@ -15,12 +16,12 @@ namespace android::media::projection
 	// Constructors
 	
 	// Methods
-	android::hardware::display::VirtualDisplay MediaProjection::createVirtualDisplay(jstring arg0, jint arg1, jint arg2, jint arg3, jint arg4, android::view::Surface arg5, android::hardware::display::VirtualDisplay_Callback arg6, android::os::Handler arg7)
+	android::hardware::display::VirtualDisplay MediaProjection::createVirtualDisplay(JString arg0, jint arg1, jint arg2, jint arg3, jint arg4, android::view::Surface arg5, android::hardware::display::VirtualDisplay_Callback arg6, android::os::Handler arg7)
 	{
 		return callObjectMethod(
 			"createVirtualDisplay",
 			"(Ljava/lang/String;IIIILandroid/view/Surface;Landroid/hardware/display/VirtualDisplay$Callback;Landroid/os/Handler;)Landroid/hardware/display/VirtualDisplay;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
 			arg2,
 			arg3,

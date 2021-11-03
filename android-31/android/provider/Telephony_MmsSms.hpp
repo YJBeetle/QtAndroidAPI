@@ -6,6 +6,7 @@ namespace android::net
 {
 	class Uri;
 }
+class JString;
 
 namespace android::provider
 {
@@ -30,7 +31,7 @@ namespace android::provider
 		static jint NO_ERROR();
 		static android::net::Uri SEARCH_URI();
 		static jint SMS_PROTO();
-		static jstring TYPE_DISCRIMINATOR_COLUMN();
+		static JString TYPE_DISCRIMINATOR_COLUMN();
 		
 		// QJniObject forward
 		template<typename ...Ts> explicit Telephony_MmsSms(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}

@@ -1,10 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../lang/Exception.hpp"
-#include "../io/IOException.hpp"
 #include "../io/InterruptedIOException.hpp"
 
+class JString;
 
 namespace java::net
 {
@@ -19,7 +17,7 @@ namespace java::net
 		
 		// Constructors
 		SocketTimeoutException();
-		SocketTimeoutException(jstring arg0);
+		SocketTimeoutException(JString arg0);
 		
 		// Methods
 	};

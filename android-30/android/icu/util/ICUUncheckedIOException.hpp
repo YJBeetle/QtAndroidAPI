@@ -1,9 +1,9 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "../../../java/lang/Exception.hpp"
 #include "../../../java/lang/RuntimeException.hpp"
 
+class JString;
+class JThrowable;
 
 namespace android::icu::util
 {
@@ -18,9 +18,9 @@ namespace android::icu::util
 		
 		// Constructors
 		ICUUncheckedIOException();
-		ICUUncheckedIOException(jstring arg0);
-		ICUUncheckedIOException(jthrowable arg0);
-		ICUUncheckedIOException(jstring arg0, jthrowable arg1);
+		ICUUncheckedIOException(JString arg0);
+		ICUUncheckedIOException(JThrowable arg0);
+		ICUUncheckedIOException(JString arg0, JThrowable arg1);
 		
 		// Methods
 	};

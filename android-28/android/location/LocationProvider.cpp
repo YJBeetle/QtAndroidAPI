@@ -1,4 +1,5 @@
 #include "./Criteria.hpp"
+#include "../../JString.hpp"
 #include "./LocationProvider.hpp"
 
 namespace android::location
@@ -39,12 +40,12 @@ namespace android::location
 			"()I"
 		);
 	}
-	jstring LocationProvider::getName()
+	JString LocationProvider::getName()
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint LocationProvider::getPowerRequirement()
 	{

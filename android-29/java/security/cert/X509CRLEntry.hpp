@@ -2,6 +2,9 @@
 
 #include "../../../JObject.hpp"
 
+class JByteArray;
+class JObject;
+class JString;
 namespace java::math
 {
 	class BigInteger;
@@ -34,15 +37,15 @@ namespace java::security::cert
 		X509CRLEntry();
 		
 		// Methods
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		javax::security::auth::x500::X500Principal getCertificateIssuer();
-		jbyteArray getEncoded();
+		JByteArray getEncoded();
 		java::util::Date getRevocationDate();
 		java::security::cert::CRLReason getRevocationReason();
 		java::math::BigInteger getSerialNumber();
 		jboolean hasExtensions();
 		jint hashCode();
-		jstring toString();
+		JString toString();
 	};
 } // namespace java::security::cert
 

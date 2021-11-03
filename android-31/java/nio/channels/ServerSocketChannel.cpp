@@ -1,3 +1,4 @@
+#include "../../../JObject.hpp"
 #include "../../net/ServerSocket.hpp"
 #include "../../net/SocketAddress.hpp"
 #include "./SocketChannel.hpp"
@@ -62,13 +63,13 @@ namespace java::nio::channels
 			"()Ljava/net/SocketAddress;"
 		);
 	}
-	java::nio::channels::ServerSocketChannel ServerSocketChannel::setOption(JObject arg0, jobject arg1)
+	java::nio::channels::ServerSocketChannel ServerSocketChannel::setOption(JObject arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"setOption",
 			"(Ljava/net/SocketOption;Ljava/lang/Object;)Ljava/nio/channels/ServerSocketChannel;",
 			arg0.object(),
-			arg1
+			arg1.object<jobject>()
 		);
 	}
 	java::net::ServerSocket ServerSocketChannel::socket()

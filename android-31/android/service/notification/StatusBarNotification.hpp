@@ -14,6 +14,8 @@ namespace android::os
 {
 	class UserHandle;
 }
+class JObject;
+class JString;
 
 namespace android::service::notification
 {
@@ -29,20 +31,20 @@ namespace android::service::notification
 		
 		// Constructors
 		StatusBarNotification(android::os::Parcel arg0);
-		StatusBarNotification(jstring arg0, jstring arg1, jint arg2, jstring arg3, jint arg4, jint arg5, jint arg6, android::app::Notification arg7, android::os::UserHandle arg8, jlong arg9);
+		StatusBarNotification(JString arg0, JString arg1, jint arg2, JString arg3, jint arg4, jint arg5, jint arg6, android::app::Notification arg7, android::os::UserHandle arg8, jlong arg9);
 		
 		// Methods
 		android::service::notification::StatusBarNotification clone();
 		jint describeContents();
-		jstring getGroupKey();
+		JString getGroupKey();
 		jint getId();
-		jstring getKey();
+		JString getKey();
 		android::app::Notification getNotification();
-		jstring getOpPkg();
-		jstring getOverrideGroupKey();
-		jstring getPackageName();
+		JString getOpPkg();
+		JString getOverrideGroupKey();
+		JString getPackageName();
 		jlong getPostTime();
-		jstring getTag();
+		JString getTag();
 		jint getUid();
 		android::os::UserHandle getUser();
 		jint getUserId();
@@ -50,8 +52,8 @@ namespace android::service::notification
 		jboolean isClearable();
 		jboolean isGroup();
 		jboolean isOngoing();
-		void setOverrideGroupKey(jstring arg0);
-		jstring toString();
+		void setOverrideGroupKey(JString arg0);
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::service::notification

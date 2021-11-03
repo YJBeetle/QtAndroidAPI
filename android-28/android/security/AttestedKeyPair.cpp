@@ -1,3 +1,4 @@
+#include "../../JArray.hpp"
 #include "../../java/security/KeyPair.hpp"
 #include "./AttestedKeyPair.hpp"
 

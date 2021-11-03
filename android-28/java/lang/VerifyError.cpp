@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./VerifyError.hpp"
 
 namespace java::lang
@@ -13,11 +14,11 @@ namespace java::lang
 			"java.lang.VerifyError",
 			"()V"
 		) {}
-	VerifyError::VerifyError(jstring arg0)
+	VerifyError::VerifyError(JString arg0)
 		: java::lang::LinkageError(
 			"java.lang.VerifyError",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

@@ -6,6 +6,7 @@ namespace android::media::effect
 {
 	class Effect;
 }
+class JString;
 
 namespace android::media::effect
 {
@@ -13,33 +14,33 @@ namespace android::media::effect
 	{
 	public:
 		// Fields
-		static jstring EFFECT_AUTOFIX();
-		static jstring EFFECT_BACKDROPPER();
-		static jstring EFFECT_BITMAPOVERLAY();
-		static jstring EFFECT_BLACKWHITE();
-		static jstring EFFECT_BRIGHTNESS();
-		static jstring EFFECT_CONTRAST();
-		static jstring EFFECT_CROP();
-		static jstring EFFECT_CROSSPROCESS();
-		static jstring EFFECT_DOCUMENTARY();
-		static jstring EFFECT_DUOTONE();
-		static jstring EFFECT_FILLLIGHT();
-		static jstring EFFECT_FISHEYE();
-		static jstring EFFECT_FLIP();
-		static jstring EFFECT_GRAIN();
-		static jstring EFFECT_GRAYSCALE();
-		static jstring EFFECT_LOMOISH();
-		static jstring EFFECT_NEGATIVE();
-		static jstring EFFECT_POSTERIZE();
-		static jstring EFFECT_REDEYE();
-		static jstring EFFECT_ROTATE();
-		static jstring EFFECT_SATURATE();
-		static jstring EFFECT_SEPIA();
-		static jstring EFFECT_SHARPEN();
-		static jstring EFFECT_STRAIGHTEN();
-		static jstring EFFECT_TEMPERATURE();
-		static jstring EFFECT_TINT();
-		static jstring EFFECT_VIGNETTE();
+		static JString EFFECT_AUTOFIX();
+		static JString EFFECT_BACKDROPPER();
+		static JString EFFECT_BITMAPOVERLAY();
+		static JString EFFECT_BLACKWHITE();
+		static JString EFFECT_BRIGHTNESS();
+		static JString EFFECT_CONTRAST();
+		static JString EFFECT_CROP();
+		static JString EFFECT_CROSSPROCESS();
+		static JString EFFECT_DOCUMENTARY();
+		static JString EFFECT_DUOTONE();
+		static JString EFFECT_FILLLIGHT();
+		static JString EFFECT_FISHEYE();
+		static JString EFFECT_FLIP();
+		static JString EFFECT_GRAIN();
+		static JString EFFECT_GRAYSCALE();
+		static JString EFFECT_LOMOISH();
+		static JString EFFECT_NEGATIVE();
+		static JString EFFECT_POSTERIZE();
+		static JString EFFECT_REDEYE();
+		static JString EFFECT_ROTATE();
+		static JString EFFECT_SATURATE();
+		static JString EFFECT_SEPIA();
+		static JString EFFECT_SHARPEN();
+		static JString EFFECT_STRAIGHTEN();
+		static JString EFFECT_TEMPERATURE();
+		static JString EFFECT_TINT();
+		static JString EFFECT_VIGNETTE();
 		
 		// QJniObject forward
 		template<typename ...Ts> explicit EffectFactory(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
@@ -48,8 +49,8 @@ namespace android::media::effect
 		// Constructors
 		
 		// Methods
-		static jboolean isEffectSupported(jstring arg0);
-		android::media::effect::Effect createEffect(jstring arg0);
+		static jboolean isEffectSupported(JString arg0);
+		android::media::effect::Effect createEffect(JString arg0);
 	};
 } // namespace android::media::effect
 

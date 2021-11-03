@@ -2,6 +2,7 @@
 
 #include "../../../../JObject.hpp"
 
+class JObject;
 
 namespace android::net::wifi::aware
 {
@@ -17,7 +18,7 @@ namespace android::net::wifi::aware
 		// Constructors
 		
 		// Methods
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint hashCode();
 	};
 } // namespace android::net::wifi::aware

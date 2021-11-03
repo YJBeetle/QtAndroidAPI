@@ -6,6 +6,7 @@ namespace android::graphics
 {
 	class Typeface;
 }
+class JString;
 
 namespace android::view::accessibility
 {

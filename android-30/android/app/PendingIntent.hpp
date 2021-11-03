@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JArray;
 namespace android::content
 {
 	class Context;
@@ -30,6 +31,8 @@ namespace android::os
 {
 	class UserHandle;
 }
+class JObject;
+class JString;
 
 namespace android::app
 {
@@ -51,8 +54,8 @@ namespace android::app
 		// Constructors
 		
 		// Methods
-		static android::app::PendingIntent getActivities(android::content::Context arg0, jint arg1, jarray arg2, jint arg3);
-		static android::app::PendingIntent getActivities(android::content::Context arg0, jint arg1, jarray arg2, jint arg3, android::os::Bundle arg4);
+		static android::app::PendingIntent getActivities(android::content::Context arg0, jint arg1, JArray arg2, jint arg3);
+		static android::app::PendingIntent getActivities(android::content::Context arg0, jint arg1, JArray arg2, jint arg3, android::os::Bundle arg4);
 		static android::app::PendingIntent getActivity(android::content::Context arg0, jint arg1, android::content::Intent arg2, jint arg3);
 		static android::app::PendingIntent getActivity(android::content::Context arg0, jint arg1, android::content::Intent arg2, jint arg3, android::os::Bundle arg4);
 		static android::app::PendingIntent getBroadcast(android::content::Context arg0, jint arg1, android::content::Intent arg2, jint arg3);
@@ -62,21 +65,21 @@ namespace android::app
 		static void writePendingIntentOrNullToParcel(android::app::PendingIntent arg0, android::os::Parcel arg1);
 		void cancel();
 		jint describeContents();
-		jboolean equals(jobject arg0);
-		jstring getCreatorPackage();
+		jboolean equals(JObject arg0);
+		JString getCreatorPackage();
 		jint getCreatorUid();
 		android::os::UserHandle getCreatorUserHandle();
 		android::content::IntentSender getIntentSender();
-		jstring getTargetPackage();
+		JString getTargetPackage();
 		jint hashCode();
 		void send();
 		void send(jint arg0);
 		void send(android::content::Context arg0, jint arg1, android::content::Intent arg2);
 		void send(jint arg0, JObject arg1, android::os::Handler arg2);
 		void send(android::content::Context arg0, jint arg1, android::content::Intent arg2, JObject arg3, android::os::Handler arg4);
-		void send(android::content::Context arg0, jint arg1, android::content::Intent arg2, JObject arg3, android::os::Handler arg4, jstring arg5);
-		void send(android::content::Context arg0, jint arg1, android::content::Intent arg2, JObject arg3, android::os::Handler arg4, jstring arg5, android::os::Bundle arg6);
-		jstring toString();
+		void send(android::content::Context arg0, jint arg1, android::content::Intent arg2, JObject arg3, android::os::Handler arg4, JString arg5);
+		void send(android::content::Context arg0, jint arg1, android::content::Intent arg2, JObject arg3, android::os::Handler arg4, JString arg5, android::os::Bundle arg6);
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::app

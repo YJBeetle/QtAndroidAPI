@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JFloatArray;
 namespace android::graphics
 {
 	class ColorSpace;
@@ -14,6 +15,8 @@ namespace android::graphics
 {
 	class ColorSpace_Model;
 }
+class JObject;
+class JString;
 
 namespace android::graphics
 {
@@ -42,9 +45,9 @@ namespace android::graphics
 		Color();
 		
 		// Methods
-		static jint HSVToColor(jfloatArray arg0);
-		static jint HSVToColor(jint arg0, jfloatArray arg1);
-		static void RGBToHSV(jint arg0, jint arg1, jint arg2, jfloatArray arg3);
+		static jint HSVToColor(JFloatArray arg0);
+		static jint HSVToColor(jint arg0, JFloatArray arg1);
+		static void RGBToHSV(jint arg0, jint arg1, jint arg2, JFloatArray arg3);
 		static jfloat alpha(jlong arg0);
 		static jint alpha(jint arg0);
 		static jint argb(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3);
@@ -52,7 +55,7 @@ namespace android::graphics
 		static jfloat blue(jlong arg0);
 		static jint blue(jint arg0);
 		static android::graphics::ColorSpace colorSpace(jlong arg0);
-		static void colorToHSV(jint arg0, jfloatArray arg1);
+		static void colorToHSV(jint arg0, JFloatArray arg1);
 		static jlong convert(jint arg0, android::graphics::ColorSpace arg1);
 		static jlong convert(jlong arg0, android::graphics::ColorSpace arg1);
 		static jlong convert(jlong arg0, android::graphics::ColorSpace_Connector arg1);
@@ -69,7 +72,7 @@ namespace android::graphics
 		static jlong pack(jfloat arg0, jfloat arg1, jfloat arg2);
 		static jlong pack(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3);
 		static jlong pack(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, android::graphics::ColorSpace arg4);
-		static jint parseColor(jstring arg0);
+		static jint parseColor(JString arg0);
 		static jfloat red(jlong arg0);
 		static jint red(jint arg0);
 		static jint rgb(jfloat arg0, jfloat arg1, jfloat arg2);
@@ -77,19 +80,19 @@ namespace android::graphics
 		static jint toArgb(jlong arg0);
 		static android::graphics::Color valueOf(jint arg0);
 		static android::graphics::Color valueOf(jlong arg0);
-		static android::graphics::Color valueOf(jfloatArray arg0, android::graphics::ColorSpace arg1);
+		static android::graphics::Color valueOf(JFloatArray arg0, android::graphics::ColorSpace arg1);
 		static android::graphics::Color valueOf(jfloat arg0, jfloat arg1, jfloat arg2);
 		static android::graphics::Color valueOf(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3);
 		static android::graphics::Color valueOf(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, android::graphics::ColorSpace arg4);
 		jfloat alpha();
 		jfloat blue();
 		android::graphics::Color convert(android::graphics::ColorSpace arg0);
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		android::graphics::ColorSpace getColorSpace();
 		jfloat getComponent(jint arg0);
 		jint getComponentCount();
-		jfloatArray getComponents();
-		jfloatArray getComponents(jfloatArray arg0);
+		JFloatArray getComponents();
+		JFloatArray getComponents(JFloatArray arg0);
 		android::graphics::ColorSpace_Model getModel();
 		jfloat green();
 		jint hashCode();
@@ -99,7 +102,7 @@ namespace android::graphics
 		jlong pack();
 		jfloat red();
 		jint toArgb();
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::graphics
 

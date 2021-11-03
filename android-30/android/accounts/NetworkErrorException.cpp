@@ -1,3 +1,5 @@
+#include "../../JString.hpp"
+#include "../../JThrowable.hpp"
 #include "./NetworkErrorException.hpp"
 
 namespace android::accounts
@@ -13,24 +15,24 @@ namespace android::accounts
 			"android.accounts.NetworkErrorException",
 			"()V"
 		) {}
-	NetworkErrorException::NetworkErrorException(jstring arg0)
+	NetworkErrorException::NetworkErrorException(JString arg0)
 		: android::accounts::AccountsException(
 			"android.accounts.NetworkErrorException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	NetworkErrorException::NetworkErrorException(jthrowable arg0)
+	NetworkErrorException::NetworkErrorException(JThrowable arg0)
 		: android::accounts::AccountsException(
 			"android.accounts.NetworkErrorException",
 			"(Ljava/lang/Throwable;)V",
-			arg0
+			arg0.object<jthrowable>()
 		) {}
-	NetworkErrorException::NetworkErrorException(jstring arg0, jthrowable arg1)
+	NetworkErrorException::NetworkErrorException(JString arg0, JThrowable arg1)
 		: android::accounts::AccountsException(
 			"android.accounts.NetworkErrorException",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
 		) {}
 	
 	// Methods

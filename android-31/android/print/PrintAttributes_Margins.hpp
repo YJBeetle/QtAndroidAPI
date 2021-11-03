@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JObject;
+class JString;
 
 namespace android::print
 {
@@ -19,13 +21,13 @@ namespace android::print
 		PrintAttributes_Margins(jint arg0, jint arg1, jint arg2, jint arg3);
 		
 		// Methods
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint getBottomMils();
 		jint getLeftMils();
 		jint getRightMils();
 		jint getTopMils();
 		jint hashCode();
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::print
 

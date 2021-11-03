@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JClass;
 
 namespace android::view::inspector
 {
@@ -18,7 +19,7 @@ namespace android::view::inspector
 		StaticInspectionCompanionProvider();
 		
 		// Methods
-		JObject provide(jclass arg0);
+		JObject provide(JClass arg0);
 	};
 } // namespace android::view::inspector
 

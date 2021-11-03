@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./DuplicateFormatFlagsException.hpp"
 
 namespace java::util
@@ -8,27 +9,27 @@ namespace java::util
 	DuplicateFormatFlagsException::DuplicateFormatFlagsException(QJniObject obj) : java::util::IllegalFormatException(obj) {}
 	
 	// Constructors
-	DuplicateFormatFlagsException::DuplicateFormatFlagsException(jstring arg0)
+	DuplicateFormatFlagsException::DuplicateFormatFlagsException(JString arg0)
 		: java::util::IllegalFormatException(
 			"java.util.DuplicateFormatFlagsException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods
-	jstring DuplicateFormatFlagsException::getFlags()
+	JString DuplicateFormatFlagsException::getFlags()
 	{
 		return callObjectMethod(
 			"getFlags",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DuplicateFormatFlagsException::getMessage()
+	JString DuplicateFormatFlagsException::getMessage()
 	{
 		return callObjectMethod(
 			"getMessage",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::util
 

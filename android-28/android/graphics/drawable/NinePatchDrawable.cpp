@@ -1,3 +1,5 @@
+#include "../../../JByteArray.hpp"
+#include "../../../JIntArray.hpp"
 #include "../../content/res/ColorStateList.hpp"
 #include "../../content/res/Resources.hpp"
 #include "../../content/res/Resources_Theme.hpp"
@@ -13,6 +15,7 @@
 #include "./Drawable.hpp"
 #include "./Drawable_ConstantState.hpp"
 #include "../../util/DisplayMetrics.hpp"
+#include "../../../JString.hpp"
 #include "./NinePatchDrawable.hpp"
 
 namespace android::graphics::drawable
@@ -36,24 +39,24 @@ namespace android::graphics::drawable
 			arg0.object(),
 			arg1.object()
 		) {}
-	NinePatchDrawable::NinePatchDrawable(android::graphics::Bitmap arg0, jbyteArray arg1, android::graphics::Rect arg2, jstring arg3)
+	NinePatchDrawable::NinePatchDrawable(android::graphics::Bitmap arg0, JByteArray arg1, android::graphics::Rect arg2, JString arg3)
 		: android::graphics::drawable::Drawable(
 			"android.graphics.drawable.NinePatchDrawable",
 			"(Landroid/graphics/Bitmap;[BLandroid/graphics/Rect;Ljava/lang/String;)V",
 			arg0.object(),
-			arg1,
+			arg1.object<jbyteArray>(),
 			arg2.object(),
-			arg3
+			arg3.object<jstring>()
 		) {}
-	NinePatchDrawable::NinePatchDrawable(android::content::res::Resources arg0, android::graphics::Bitmap arg1, jbyteArray arg2, android::graphics::Rect arg3, jstring arg4)
+	NinePatchDrawable::NinePatchDrawable(android::content::res::Resources arg0, android::graphics::Bitmap arg1, JByteArray arg2, android::graphics::Rect arg3, JString arg4)
 		: android::graphics::drawable::Drawable(
 			"android.graphics.drawable.NinePatchDrawable",
 			"(Landroid/content/res/Resources;Landroid/graphics/Bitmap;[BLandroid/graphics/Rect;Ljava/lang/String;)V",
 			arg0.object(),
 			arg1.object(),
-			arg2,
+			arg2.object<jbyteArray>(),
 			arg3.object(),
-			arg4
+			arg4.object<jstring>()
 		) {}
 	
 	// Methods

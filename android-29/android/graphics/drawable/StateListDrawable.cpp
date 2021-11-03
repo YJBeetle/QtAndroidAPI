@@ -1,3 +1,4 @@
+#include "../../../JIntArray.hpp"
 #include "../../content/res/Resources.hpp"
 #include "../../content/res/Resources_Theme.hpp"
 #include "./Drawable.hpp"
@@ -19,12 +20,12 @@ namespace android::graphics::drawable
 		) {}
 	
 	// Methods
-	void StateListDrawable::addState(jintArray arg0, android::graphics::drawable::Drawable arg1)
+	void StateListDrawable::addState(JIntArray arg0, android::graphics::drawable::Drawable arg1)
 	{
 		callMethod<void>(
 			"addState",
 			"([ILandroid/graphics/drawable/Drawable;)V",
-			arg0,
+			arg0.object<jintArray>(),
 			arg1.object()
 		);
 	}
@@ -36,12 +37,12 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	jint StateListDrawable::findStateDrawableIndex(jintArray arg0)
+	jint StateListDrawable::findStateDrawableIndex(JIntArray arg0)
 	{
 		return callMethod<jint>(
 			"findStateDrawableIndex",
 			"([I)I",
-			arg0
+			arg0.object<jintArray>()
 		);
 	}
 	jint StateListDrawable::getStateCount()
@@ -59,13 +60,13 @@ namespace android::graphics::drawable
 			arg0
 		);
 	}
-	jintArray StateListDrawable::getStateSet(jint arg0)
+	JIntArray StateListDrawable::getStateSet(jint arg0)
 	{
 		return callObjectMethod(
 			"getStateSet",
 			"(I)[I",
 			arg0
-		).object<jintArray>();
+		);
 	}
 	void StateListDrawable::inflate(android::content::res::Resources arg0, JObject arg1, JObject arg2, android::content::res::Resources_Theme arg3)
 	{

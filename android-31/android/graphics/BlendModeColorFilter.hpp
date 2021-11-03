@@ -1,12 +1,12 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./ColorFilter.hpp"
 
 namespace android::graphics
 {
 	class BlendMode;
 }
+class JObject;
 
 namespace android::graphics
 {
@@ -23,7 +23,7 @@ namespace android::graphics
 		BlendModeColorFilter(jint arg0, android::graphics::BlendMode arg1);
 		
 		// Methods
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint getColor();
 		android::graphics::BlendMode getMode();
 		jint hashCode();

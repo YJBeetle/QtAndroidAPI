@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JString;
+class JString;
 
 namespace android::telephony
 {
@@ -16,12 +18,12 @@ namespace android::telephony
 		
 		// Constructors
 		PhoneNumberFormattingTextWatcher();
-		PhoneNumberFormattingTextWatcher(jstring arg0);
+		PhoneNumberFormattingTextWatcher(JString arg0);
 		
 		// Methods
 		void afterTextChanged(JObject arg0);
-		void beforeTextChanged(jstring arg0, jint arg1, jint arg2, jint arg3);
-		void onTextChanged(jstring arg0, jint arg1, jint arg2, jint arg3);
+		void beforeTextChanged(JString arg0, jint arg1, jint arg2, jint arg3);
+		void onTextChanged(JString arg0, jint arg1, jint arg2, jint arg3);
 	};
 } // namespace android::telephony
 

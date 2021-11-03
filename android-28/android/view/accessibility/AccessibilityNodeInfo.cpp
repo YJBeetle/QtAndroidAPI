@@ -7,6 +7,9 @@
 #include "./AccessibilityNodeInfo_CollectionItemInfo.hpp"
 #include "./AccessibilityNodeInfo_RangeInfo.hpp"
 #include "./AccessibilityWindowInfo.hpp"
+#include "../../../JString.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./AccessibilityNodeInfo.hpp"
 
 namespace android::view::accessibility
@@ -19,93 +22,93 @@ namespace android::view::accessibility
 			"ACTION_ACCESSIBILITY_FOCUS"
 		);
 	}
-	jstring AccessibilityNodeInfo::ACTION_ARGUMENT_COLUMN_INT()
+	JString AccessibilityNodeInfo::ACTION_ARGUMENT_COLUMN_INT()
 	{
 		return getStaticObjectField(
 			"android.view.accessibility.AccessibilityNodeInfo",
 			"ACTION_ARGUMENT_COLUMN_INT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring AccessibilityNodeInfo::ACTION_ARGUMENT_EXTEND_SELECTION_BOOLEAN()
+	JString AccessibilityNodeInfo::ACTION_ARGUMENT_EXTEND_SELECTION_BOOLEAN()
 	{
 		return getStaticObjectField(
 			"android.view.accessibility.AccessibilityNodeInfo",
 			"ACTION_ARGUMENT_EXTEND_SELECTION_BOOLEAN",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring AccessibilityNodeInfo::ACTION_ARGUMENT_HTML_ELEMENT_STRING()
+	JString AccessibilityNodeInfo::ACTION_ARGUMENT_HTML_ELEMENT_STRING()
 	{
 		return getStaticObjectField(
 			"android.view.accessibility.AccessibilityNodeInfo",
 			"ACTION_ARGUMENT_HTML_ELEMENT_STRING",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring AccessibilityNodeInfo::ACTION_ARGUMENT_MOVEMENT_GRANULARITY_INT()
+	JString AccessibilityNodeInfo::ACTION_ARGUMENT_MOVEMENT_GRANULARITY_INT()
 	{
 		return getStaticObjectField(
 			"android.view.accessibility.AccessibilityNodeInfo",
 			"ACTION_ARGUMENT_MOVEMENT_GRANULARITY_INT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring AccessibilityNodeInfo::ACTION_ARGUMENT_MOVE_WINDOW_X()
+	JString AccessibilityNodeInfo::ACTION_ARGUMENT_MOVE_WINDOW_X()
 	{
 		return getStaticObjectField(
 			"android.view.accessibility.AccessibilityNodeInfo",
 			"ACTION_ARGUMENT_MOVE_WINDOW_X",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring AccessibilityNodeInfo::ACTION_ARGUMENT_MOVE_WINDOW_Y()
+	JString AccessibilityNodeInfo::ACTION_ARGUMENT_MOVE_WINDOW_Y()
 	{
 		return getStaticObjectField(
 			"android.view.accessibility.AccessibilityNodeInfo",
 			"ACTION_ARGUMENT_MOVE_WINDOW_Y",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring AccessibilityNodeInfo::ACTION_ARGUMENT_PROGRESS_VALUE()
+	JString AccessibilityNodeInfo::ACTION_ARGUMENT_PROGRESS_VALUE()
 	{
 		return getStaticObjectField(
 			"android.view.accessibility.AccessibilityNodeInfo",
 			"ACTION_ARGUMENT_PROGRESS_VALUE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring AccessibilityNodeInfo::ACTION_ARGUMENT_ROW_INT()
+	JString AccessibilityNodeInfo::ACTION_ARGUMENT_ROW_INT()
 	{
 		return getStaticObjectField(
 			"android.view.accessibility.AccessibilityNodeInfo",
 			"ACTION_ARGUMENT_ROW_INT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring AccessibilityNodeInfo::ACTION_ARGUMENT_SELECTION_END_INT()
+	JString AccessibilityNodeInfo::ACTION_ARGUMENT_SELECTION_END_INT()
 	{
 		return getStaticObjectField(
 			"android.view.accessibility.AccessibilityNodeInfo",
 			"ACTION_ARGUMENT_SELECTION_END_INT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring AccessibilityNodeInfo::ACTION_ARGUMENT_SELECTION_START_INT()
+	JString AccessibilityNodeInfo::ACTION_ARGUMENT_SELECTION_START_INT()
 	{
 		return getStaticObjectField(
 			"android.view.accessibility.AccessibilityNodeInfo",
 			"ACTION_ARGUMENT_SELECTION_START_INT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring AccessibilityNodeInfo::ACTION_ARGUMENT_SET_TEXT_CHARSEQUENCE()
+	JString AccessibilityNodeInfo::ACTION_ARGUMENT_SET_TEXT_CHARSEQUENCE()
 	{
 		return getStaticObjectField(
 			"android.view.accessibility.AccessibilityNodeInfo",
 			"ACTION_ARGUMENT_SET_TEXT_CHARSEQUENCE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint AccessibilityNodeInfo::ACTION_CLEAR_ACCESSIBILITY_FOCUS()
 	{
@@ -262,29 +265,29 @@ namespace android::view::accessibility
 			"Landroid/os/Parcelable$Creator;"
 		);
 	}
-	jstring AccessibilityNodeInfo::EXTRA_DATA_TEXT_CHARACTER_LOCATION_ARG_LENGTH()
+	JString AccessibilityNodeInfo::EXTRA_DATA_TEXT_CHARACTER_LOCATION_ARG_LENGTH()
 	{
 		return getStaticObjectField(
 			"android.view.accessibility.AccessibilityNodeInfo",
 			"EXTRA_DATA_TEXT_CHARACTER_LOCATION_ARG_LENGTH",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring AccessibilityNodeInfo::EXTRA_DATA_TEXT_CHARACTER_LOCATION_ARG_START_INDEX()
+	JString AccessibilityNodeInfo::EXTRA_DATA_TEXT_CHARACTER_LOCATION_ARG_START_INDEX()
 	{
 		return getStaticObjectField(
 			"android.view.accessibility.AccessibilityNodeInfo",
 			"EXTRA_DATA_TEXT_CHARACTER_LOCATION_ARG_START_INDEX",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring AccessibilityNodeInfo::EXTRA_DATA_TEXT_CHARACTER_LOCATION_KEY()
+	JString AccessibilityNodeInfo::EXTRA_DATA_TEXT_CHARACTER_LOCATION_KEY()
 	{
 		return getStaticObjectField(
 			"android.view.accessibility.AccessibilityNodeInfo",
 			"EXTRA_DATA_TEXT_CHARACTER_LOCATION_KEY",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint AccessibilityNodeInfo::FOCUS_ACCESSIBILITY()
 	{
@@ -425,28 +428,28 @@ namespace android::view::accessibility
 			"()I"
 		);
 	}
-	jboolean AccessibilityNodeInfo::equals(jobject arg0)
+	jboolean AccessibilityNodeInfo::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	JObject AccessibilityNodeInfo::findAccessibilityNodeInfosByText(jstring arg0)
+	JObject AccessibilityNodeInfo::findAccessibilityNodeInfosByText(JString arg0)
 	{
 		return callObjectMethod(
 			"findAccessibilityNodeInfosByText",
 			"(Ljava/lang/String;)Ljava/util/List;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	JObject AccessibilityNodeInfo::findAccessibilityNodeInfosByViewId(jstring arg0)
+	JObject AccessibilityNodeInfo::findAccessibilityNodeInfosByViewId(JString arg0)
 	{
 		return callObjectMethod(
 			"findAccessibilityNodeInfosByViewId",
 			"(Ljava/lang/String;)Ljava/util/List;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::view::accessibility::AccessibilityNodeInfo AccessibilityNodeInfo::findFocus(jint arg0)
@@ -517,12 +520,12 @@ namespace android::view::accessibility
 			"()I"
 		);
 	}
-	jstring AccessibilityNodeInfo::getClassName()
+	JString AccessibilityNodeInfo::getClassName()
 	{
 		return callObjectMethod(
 			"getClassName",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	android::view::accessibility::AccessibilityNodeInfo_CollectionInfo AccessibilityNodeInfo::getCollectionInfo()
 	{
@@ -538,12 +541,12 @@ namespace android::view::accessibility
 			"()Landroid/view/accessibility/AccessibilityNodeInfo$CollectionItemInfo;"
 		);
 	}
-	jstring AccessibilityNodeInfo::getContentDescription()
+	JString AccessibilityNodeInfo::getContentDescription()
 	{
 		return callObjectMethod(
 			"getContentDescription",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	jint AccessibilityNodeInfo::getDrawingOrder()
 	{
@@ -552,12 +555,12 @@ namespace android::view::accessibility
 			"()I"
 		);
 	}
-	jstring AccessibilityNodeInfo::getError()
+	JString AccessibilityNodeInfo::getError()
 	{
 		return callObjectMethod(
 			"getError",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	android::os::Bundle AccessibilityNodeInfo::getExtras()
 	{
@@ -566,12 +569,12 @@ namespace android::view::accessibility
 			"()Landroid/os/Bundle;"
 		);
 	}
-	jstring AccessibilityNodeInfo::getHintText()
+	JString AccessibilityNodeInfo::getHintText()
 	{
 		return callObjectMethod(
 			"getHintText",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	jint AccessibilityNodeInfo::getInputType()
 	{
@@ -615,19 +618,19 @@ namespace android::view::accessibility
 			"()I"
 		);
 	}
-	jstring AccessibilityNodeInfo::getPackageName()
+	JString AccessibilityNodeInfo::getPackageName()
 	{
 		return callObjectMethod(
 			"getPackageName",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
-	jstring AccessibilityNodeInfo::getPaneTitle()
+	JString AccessibilityNodeInfo::getPaneTitle()
 	{
 		return callObjectMethod(
 			"getPaneTitle",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	android::view::accessibility::AccessibilityNodeInfo AccessibilityNodeInfo::getParent()
 	{
@@ -643,12 +646,12 @@ namespace android::view::accessibility
 			"()Landroid/view/accessibility/AccessibilityNodeInfo$RangeInfo;"
 		);
 	}
-	jstring AccessibilityNodeInfo::getText()
+	JString AccessibilityNodeInfo::getText()
 	{
 		return callObjectMethod(
 			"getText",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	jint AccessibilityNodeInfo::getTextSelectionEnd()
 	{
@@ -664,12 +667,12 @@ namespace android::view::accessibility
 			"()I"
 		);
 	}
-	jstring AccessibilityNodeInfo::getTooltipText()
+	JString AccessibilityNodeInfo::getTooltipText()
 	{
 		return callObjectMethod(
 			"getTooltipText",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	android::view::accessibility::AccessibilityNodeInfo AccessibilityNodeInfo::getTraversalAfter()
 	{
@@ -685,12 +688,12 @@ namespace android::view::accessibility
 			"()Landroid/view/accessibility/AccessibilityNodeInfo;"
 		);
 	}
-	jstring AccessibilityNodeInfo::getViewIdResourceName()
+	JString AccessibilityNodeInfo::getViewIdResourceName()
 	{
 		return callObjectMethod(
 			"getViewIdResourceName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::view::accessibility::AccessibilityWindowInfo AccessibilityNodeInfo::getWindow()
 	{
@@ -891,12 +894,12 @@ namespace android::view::accessibility
 			"()Z"
 		);
 	}
-	jboolean AccessibilityNodeInfo::refreshWithExtraData(jstring arg0, android::os::Bundle arg1)
+	jboolean AccessibilityNodeInfo::refreshWithExtraData(JString arg0, android::os::Bundle arg1)
 	{
 		return callMethod<jboolean>(
 			"refreshWithExtraData",
 			"(Ljava/lang/String;Landroid/os/Bundle;)Z",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
@@ -989,12 +992,12 @@ namespace android::view::accessibility
 			arg0
 		);
 	}
-	void AccessibilityNodeInfo::setClassName(jstring arg0)
+	void AccessibilityNodeInfo::setClassName(JString arg0)
 	{
 		callMethod<void>(
 			"setClassName",
 			"(Ljava/lang/CharSequence;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void AccessibilityNodeInfo::setClickable(jboolean arg0)
@@ -1021,12 +1024,12 @@ namespace android::view::accessibility
 			arg0.object()
 		);
 	}
-	void AccessibilityNodeInfo::setContentDescription(jstring arg0)
+	void AccessibilityNodeInfo::setContentDescription(JString arg0)
 	{
 		callMethod<void>(
 			"setContentDescription",
 			"(Ljava/lang/CharSequence;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void AccessibilityNodeInfo::setContentInvalid(jboolean arg0)
@@ -1077,12 +1080,12 @@ namespace android::view::accessibility
 			arg0
 		);
 	}
-	void AccessibilityNodeInfo::setError(jstring arg0)
+	void AccessibilityNodeInfo::setError(JString arg0)
 	{
 		callMethod<void>(
 			"setError",
 			"(Ljava/lang/CharSequence;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void AccessibilityNodeInfo::setFocusable(jboolean arg0)
@@ -1109,12 +1112,12 @@ namespace android::view::accessibility
 			arg0
 		);
 	}
-	void AccessibilityNodeInfo::setHintText(jstring arg0)
+	void AccessibilityNodeInfo::setHintText(JString arg0)
 	{
 		callMethod<void>(
 			"setHintText",
 			"(Ljava/lang/CharSequence;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void AccessibilityNodeInfo::setImportantForAccessibility(jboolean arg0)
@@ -1207,20 +1210,20 @@ namespace android::view::accessibility
 			arg0
 		);
 	}
-	void AccessibilityNodeInfo::setPackageName(jstring arg0)
+	void AccessibilityNodeInfo::setPackageName(JString arg0)
 	{
 		callMethod<void>(
 			"setPackageName",
 			"(Ljava/lang/CharSequence;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	void AccessibilityNodeInfo::setPaneTitle(jstring arg0)
+	void AccessibilityNodeInfo::setPaneTitle(JString arg0)
 	{
 		callMethod<void>(
 			"setPaneTitle",
 			"(Ljava/lang/CharSequence;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void AccessibilityNodeInfo::setParent(android::view::View arg0)
@@ -1305,12 +1308,12 @@ namespace android::view::accessibility
 			arg1
 		);
 	}
-	void AccessibilityNodeInfo::setText(jstring arg0)
+	void AccessibilityNodeInfo::setText(JString arg0)
 	{
 		callMethod<void>(
 			"setText",
 			"(Ljava/lang/CharSequence;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void AccessibilityNodeInfo::setTextSelection(jint arg0, jint arg1)
@@ -1322,12 +1325,12 @@ namespace android::view::accessibility
 			arg1
 		);
 	}
-	void AccessibilityNodeInfo::setTooltipText(jstring arg0)
+	void AccessibilityNodeInfo::setTooltipText(JString arg0)
 	{
 		callMethod<void>(
 			"setTooltipText",
 			"(Ljava/lang/CharSequence;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void AccessibilityNodeInfo::setTraversalAfter(android::view::View arg0)
@@ -1364,12 +1367,12 @@ namespace android::view::accessibility
 			arg1
 		);
 	}
-	void AccessibilityNodeInfo::setViewIdResourceName(jstring arg0)
+	void AccessibilityNodeInfo::setViewIdResourceName(JString arg0)
 	{
 		callMethod<void>(
 			"setViewIdResourceName",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void AccessibilityNodeInfo::setVisibleToUser(jboolean arg0)
@@ -1380,12 +1383,12 @@ namespace android::view::accessibility
 			arg0
 		);
 	}
-	jstring AccessibilityNodeInfo::toString()
+	JString AccessibilityNodeInfo::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void AccessibilityNodeInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

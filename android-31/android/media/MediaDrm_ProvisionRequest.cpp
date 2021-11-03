@@ -1,3 +1,5 @@
+#include "../../JByteArray.hpp"
+#include "../../JString.hpp"
 #include "./MediaDrm_ProvisionRequest.hpp"
 
 namespace android::media
@@ -10,19 +12,19 @@ namespace android::media
 	// Constructors
 	
 	// Methods
-	jbyteArray MediaDrm_ProvisionRequest::getData()
+	JByteArray MediaDrm_ProvisionRequest::getData()
 	{
 		return callObjectMethod(
 			"getData",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
-	jstring MediaDrm_ProvisionRequest::getDefaultUrl()
+	JString MediaDrm_ProvisionRequest::getDefaultUrl()
 	{
 		return callObjectMethod(
 			"getDefaultUrl",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::media
 

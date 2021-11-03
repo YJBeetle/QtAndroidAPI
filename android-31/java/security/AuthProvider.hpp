@@ -1,11 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../util/Dictionary.hpp"
-#include "../util/Hashtable.hpp"
-#include "../util/Properties.hpp"
 #include "./Provider.hpp"
 
+class JString;
 namespace javax::security::auth
 {
 	class Subject;

@@ -1,5 +1,7 @@
 #include "../bluetooth/BluetoothDevice.hpp"
 #include "../os/Parcel.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./CallAudioState.hpp"
 
 namespace android::telecom
@@ -63,14 +65,14 @@ namespace android::telecom
 		) {}
 	
 	// Methods
-	jstring CallAudioState::audioRouteToString(jint arg0)
+	JString CallAudioState::audioRouteToString(jint arg0)
 	{
 		return callStaticObjectMethod(
 			"android.telecom.CallAudioState",
 			"audioRouteToString",
 			"(I)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
 	jint CallAudioState::describeContents()
 	{
@@ -79,12 +81,12 @@ namespace android::telecom
 			"()I"
 		);
 	}
-	jboolean CallAudioState::equals(jobject arg0)
+	jboolean CallAudioState::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	android::bluetooth::BluetoothDevice CallAudioState::getActiveBluetoothDevice()
@@ -122,12 +124,12 @@ namespace android::telecom
 			"()Z"
 		);
 	}
-	jstring CallAudioState::toString()
+	JString CallAudioState::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void CallAudioState::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

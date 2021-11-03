@@ -1,4 +1,6 @@
 #include "../../os/Parcel.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./SliceSpec.hpp"
 
 namespace android::app::slice
@@ -17,11 +19,11 @@ namespace android::app::slice
 	SliceSpec::SliceSpec(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	SliceSpec::SliceSpec(jstring arg0, jint arg1)
+	SliceSpec::SliceSpec(JString arg0, jint arg1)
 		: JObject(
 			"android.app.slice.SliceSpec",
 			"(Ljava/lang/String;I)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		) {}
 	
@@ -41,12 +43,12 @@ namespace android::app::slice
 			"()I"
 		);
 	}
-	jboolean SliceSpec::equals(jobject arg0)
+	jboolean SliceSpec::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint SliceSpec::getRevision()
@@ -56,19 +58,19 @@ namespace android::app::slice
 			"()I"
 		);
 	}
-	jstring SliceSpec::getType()
+	JString SliceSpec::getType()
 	{
 		return callObjectMethod(
 			"getType",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring SliceSpec::toString()
+	JString SliceSpec::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void SliceSpec::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

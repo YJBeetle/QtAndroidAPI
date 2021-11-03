@@ -6,6 +6,7 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
 
 namespace android::telephony::euicc
 {
@@ -20,11 +21,11 @@ namespace android::telephony::euicc
 		EuiccInfo(QJniObject obj);
 		
 		// Constructors
-		EuiccInfo(jstring arg0);
+		EuiccInfo(JString arg0);
 		
 		// Methods
 		jint describeContents();
-		jstring getOsVersion();
+		JString getOsVersion();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::telephony::euicc

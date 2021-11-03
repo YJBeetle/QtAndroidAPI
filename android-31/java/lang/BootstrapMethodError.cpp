@@ -1,3 +1,5 @@
+#include "../../JString.hpp"
+#include "../../JThrowable.hpp"
 #include "./BootstrapMethodError.hpp"
 
 namespace java::lang
@@ -13,24 +15,24 @@ namespace java::lang
 			"java.lang.BootstrapMethodError",
 			"()V"
 		) {}
-	BootstrapMethodError::BootstrapMethodError(jstring arg0)
+	BootstrapMethodError::BootstrapMethodError(JString arg0)
 		: java::lang::LinkageError(
 			"java.lang.BootstrapMethodError",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	BootstrapMethodError::BootstrapMethodError(jthrowable arg0)
+	BootstrapMethodError::BootstrapMethodError(JThrowable arg0)
 		: java::lang::LinkageError(
 			"java.lang.BootstrapMethodError",
 			"(Ljava/lang/Throwable;)V",
-			arg0
+			arg0.object<jthrowable>()
 		) {}
-	BootstrapMethodError::BootstrapMethodError(jstring arg0, jthrowable arg1)
+	BootstrapMethodError::BootstrapMethodError(JString arg0, JThrowable arg1)
 		: java::lang::LinkageError(
 			"java.lang.BootstrapMethodError",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
 		) {}
 	
 	// Methods

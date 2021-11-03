@@ -1,4 +1,5 @@
 #include "../os/Parcel.hpp"
+#include "../../JString.hpp"
 #include "./ForegroundServiceStartNotAllowedException.hpp"
 
 namespace android::app
@@ -17,11 +18,11 @@ namespace android::app
 	ForegroundServiceStartNotAllowedException::ForegroundServiceStartNotAllowedException(QJniObject obj) : android::app::ServiceStartNotAllowedException(obj) {}
 	
 	// Constructors
-	ForegroundServiceStartNotAllowedException::ForegroundServiceStartNotAllowedException(jstring arg0)
+	ForegroundServiceStartNotAllowedException::ForegroundServiceStartNotAllowedException(JString arg0)
 		: android::app::ServiceStartNotAllowedException(
 			"android.app.ForegroundServiceStartNotAllowedException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

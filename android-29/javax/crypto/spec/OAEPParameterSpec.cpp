@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./PSource.hpp"
 #include "./OAEPParameterSpec.hpp"
 
@@ -17,30 +18,30 @@ namespace javax::crypto::spec
 	OAEPParameterSpec::OAEPParameterSpec(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	OAEPParameterSpec::OAEPParameterSpec(jstring arg0, jstring arg1, JObject arg2, javax::crypto::spec::PSource arg3)
+	OAEPParameterSpec::OAEPParameterSpec(JString arg0, JString arg1, JObject arg2, javax::crypto::spec::PSource arg3)
 		: JObject(
 			"javax.crypto.spec.OAEPParameterSpec",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/security/spec/AlgorithmParameterSpec;Ljavax/crypto/spec/PSource;)V",
-			arg0,
-			arg1,
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
 			arg2.object(),
 			arg3.object()
 		) {}
 	
 	// Methods
-	jstring OAEPParameterSpec::getDigestAlgorithm()
+	JString OAEPParameterSpec::getDigestAlgorithm()
 	{
 		return callObjectMethod(
 			"getDigestAlgorithm",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring OAEPParameterSpec::getMGFAlgorithm()
+	JString OAEPParameterSpec::getMGFAlgorithm()
 	{
 		return callObjectMethod(
 			"getMGFAlgorithm",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	JObject OAEPParameterSpec::getMGFParameters()
 	{

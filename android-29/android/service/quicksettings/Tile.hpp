@@ -10,6 +10,7 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
 
 namespace android::service::quicksettings
 {
@@ -30,16 +31,16 @@ namespace android::service::quicksettings
 		
 		// Methods
 		jint describeContents();
-		jstring getContentDescription();
+		JString getContentDescription();
 		android::graphics::drawable::Icon getIcon();
-		jstring getLabel();
+		JString getLabel();
 		jint getState();
-		jstring getSubtitle();
-		void setContentDescription(jstring arg0);
+		JString getSubtitle();
+		void setContentDescription(JString arg0);
 		void setIcon(android::graphics::drawable::Icon arg0);
-		void setLabel(jstring arg0);
+		void setLabel(JString arg0);
 		void setState(jint arg0);
-		void setSubtitle(jstring arg0);
+		void setSubtitle(JString arg0);
 		void updateTile();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};

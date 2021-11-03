@@ -1,3 +1,6 @@
+#include "../../../JArray.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "../../lang/Thread.hpp"
 #include "../../time/Duration.hpp"
 #include "../../time/temporal/ChronoUnit.hpp"
@@ -78,22 +81,22 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	java::util::concurrent::TimeUnit TimeUnit::valueOf(jstring arg0)
+	java::util::concurrent::TimeUnit TimeUnit::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"java.util.concurrent.TimeUnit",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/util/concurrent/TimeUnit;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray TimeUnit::values()
+	JArray TimeUnit::values()
 	{
 		return callStaticObjectMethod(
 			"java.util.concurrent.TimeUnit",
 			"values",
 			"()[Ljava/util/concurrent/TimeUnit;"
-		).object<jarray>();
+		);
 	}
 	jlong TimeUnit::convert(java::time::Duration arg0)
 	{
@@ -129,12 +132,12 @@ namespace java::util::concurrent
 			arg1
 		);
 	}
-	void TimeUnit::timedWait(jobject arg0, jlong arg1)
+	void TimeUnit::timedWait(JObject arg0, jlong arg1)
 	{
 		callMethod<void>(
 			"timedWait",
 			"(Ljava/lang/Object;J)V",
-			arg0,
+			arg0.object<jobject>(),
 			arg1
 		);
 	}

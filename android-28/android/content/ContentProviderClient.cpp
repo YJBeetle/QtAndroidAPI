@@ -1,3 +1,6 @@
+#include "../../JArray.hpp"
+#include "../../JArray.hpp"
+#include "../../JArray.hpp"
 #include "./ContentProvider.hpp"
 #include "./ContentValues.hpp"
 #include "./res/AssetFileDescriptor.hpp"
@@ -5,6 +8,7 @@
 #include "../os/Bundle.hpp"
 #include "../os/CancellationSignal.hpp"
 #include "../os/ParcelFileDescriptor.hpp"
+#include "../../JString.hpp"
 #include "../../java/util/ArrayList.hpp"
 #include "./ContentProviderClient.hpp"
 
@@ -18,30 +22,30 @@ namespace android::content
 	// Constructors
 	
 	// Methods
-	jarray ContentProviderClient::applyBatch(java::util::ArrayList arg0)
+	JArray ContentProviderClient::applyBatch(java::util::ArrayList arg0)
 	{
 		return callObjectMethod(
 			"applyBatch",
 			"(Ljava/util/ArrayList;)[Landroid/content/ContentProviderResult;",
 			arg0.object()
-		).object<jarray>();
+		);
 	}
-	jint ContentProviderClient::bulkInsert(android::net::Uri arg0, jarray arg1)
+	jint ContentProviderClient::bulkInsert(android::net::Uri arg0, JArray arg1)
 	{
 		return callMethod<jint>(
 			"bulkInsert",
 			"(Landroid/net/Uri;[Landroid/content/ContentValues;)I",
 			arg0.object(),
-			arg1
+			arg1.object<jarray>()
 		);
 	}
-	android::os::Bundle ContentProviderClient::call(jstring arg0, jstring arg1, android::os::Bundle arg2)
+	android::os::Bundle ContentProviderClient::call(JString arg0, JString arg1, android::os::Bundle arg2)
 	{
 		return callObjectMethod(
 			"call",
 			"(Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;)Landroid/os/Bundle;",
-			arg0,
-			arg1,
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
 			arg2.object()
 		);
 	}
@@ -60,14 +64,14 @@ namespace android::content
 			"()V"
 		);
 	}
-	jint ContentProviderClient::_delete(android::net::Uri arg0, jstring arg1, jarray arg2)
+	jint ContentProviderClient::_delete(android::net::Uri arg0, JString arg1, JArray arg2)
 	{
 		return callMethod<jint>(
 			"delete",
 			"(Landroid/net/Uri;Ljava/lang/String;[Ljava/lang/String;)I",
 			arg0.object(),
-			arg1,
-			arg2
+			arg1.object<jstring>(),
+			arg2.object<jarray>()
 		);
 	}
 	android::content::ContentProvider ContentProviderClient::getLocalContentProvider()
@@ -77,22 +81,22 @@ namespace android::content
 			"()Landroid/content/ContentProvider;"
 		);
 	}
-	jarray ContentProviderClient::getStreamTypes(android::net::Uri arg0, jstring arg1)
+	JArray ContentProviderClient::getStreamTypes(android::net::Uri arg0, JString arg1)
 	{
 		return callObjectMethod(
 			"getStreamTypes",
 			"(Landroid/net/Uri;Ljava/lang/String;)[Ljava/lang/String;",
 			arg0.object(),
-			arg1
-		).object<jarray>();
+			arg1.object<jstring>()
+		);
 	}
-	jstring ContentProviderClient::getType(android::net::Uri arg0)
+	JString ContentProviderClient::getType(android::net::Uri arg0)
 	{
 		return callObjectMethod(
 			"getType",
 			"(Landroid/net/Uri;)Ljava/lang/String;",
 			arg0.object()
-		).object<jstring>();
+		);
 	}
 	android::net::Uri ContentProviderClient::insert(android::net::Uri arg0, android::content::ContentValues arg1)
 	{
@@ -103,98 +107,98 @@ namespace android::content
 			arg1.object()
 		);
 	}
-	android::content::res::AssetFileDescriptor ContentProviderClient::openAssetFile(android::net::Uri arg0, jstring arg1)
+	android::content::res::AssetFileDescriptor ContentProviderClient::openAssetFile(android::net::Uri arg0, JString arg1)
 	{
 		return callObjectMethod(
 			"openAssetFile",
 			"(Landroid/net/Uri;Ljava/lang/String;)Landroid/content/res/AssetFileDescriptor;",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
-	android::content::res::AssetFileDescriptor ContentProviderClient::openAssetFile(android::net::Uri arg0, jstring arg1, android::os::CancellationSignal arg2)
+	android::content::res::AssetFileDescriptor ContentProviderClient::openAssetFile(android::net::Uri arg0, JString arg1, android::os::CancellationSignal arg2)
 	{
 		return callObjectMethod(
 			"openAssetFile",
 			"(Landroid/net/Uri;Ljava/lang/String;Landroid/os/CancellationSignal;)Landroid/content/res/AssetFileDescriptor;",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2.object()
 		);
 	}
-	android::os::ParcelFileDescriptor ContentProviderClient::openFile(android::net::Uri arg0, jstring arg1)
+	android::os::ParcelFileDescriptor ContentProviderClient::openFile(android::net::Uri arg0, JString arg1)
 	{
 		return callObjectMethod(
 			"openFile",
 			"(Landroid/net/Uri;Ljava/lang/String;)Landroid/os/ParcelFileDescriptor;",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
-	android::os::ParcelFileDescriptor ContentProviderClient::openFile(android::net::Uri arg0, jstring arg1, android::os::CancellationSignal arg2)
+	android::os::ParcelFileDescriptor ContentProviderClient::openFile(android::net::Uri arg0, JString arg1, android::os::CancellationSignal arg2)
 	{
 		return callObjectMethod(
 			"openFile",
 			"(Landroid/net/Uri;Ljava/lang/String;Landroid/os/CancellationSignal;)Landroid/os/ParcelFileDescriptor;",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2.object()
 		);
 	}
-	android::content::res::AssetFileDescriptor ContentProviderClient::openTypedAssetFileDescriptor(android::net::Uri arg0, jstring arg1, android::os::Bundle arg2)
+	android::content::res::AssetFileDescriptor ContentProviderClient::openTypedAssetFileDescriptor(android::net::Uri arg0, JString arg1, android::os::Bundle arg2)
 	{
 		return callObjectMethod(
 			"openTypedAssetFileDescriptor",
 			"(Landroid/net/Uri;Ljava/lang/String;Landroid/os/Bundle;)Landroid/content/res/AssetFileDescriptor;",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2.object()
 		);
 	}
-	android::content::res::AssetFileDescriptor ContentProviderClient::openTypedAssetFileDescriptor(android::net::Uri arg0, jstring arg1, android::os::Bundle arg2, android::os::CancellationSignal arg3)
+	android::content::res::AssetFileDescriptor ContentProviderClient::openTypedAssetFileDescriptor(android::net::Uri arg0, JString arg1, android::os::Bundle arg2, android::os::CancellationSignal arg3)
 	{
 		return callObjectMethod(
 			"openTypedAssetFileDescriptor",
 			"(Landroid/net/Uri;Ljava/lang/String;Landroid/os/Bundle;Landroid/os/CancellationSignal;)Landroid/content/res/AssetFileDescriptor;",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2.object(),
 			arg3.object()
 		);
 	}
-	JObject ContentProviderClient::query(android::net::Uri arg0, jarray arg1, android::os::Bundle arg2, android::os::CancellationSignal arg3)
+	JObject ContentProviderClient::query(android::net::Uri arg0, JArray arg1, android::os::Bundle arg2, android::os::CancellationSignal arg3)
 	{
 		return callObjectMethod(
 			"query",
 			"(Landroid/net/Uri;[Ljava/lang/String;Landroid/os/Bundle;Landroid/os/CancellationSignal;)Landroid/database/Cursor;",
 			arg0.object(),
-			arg1,
+			arg1.object<jarray>(),
 			arg2.object(),
 			arg3.object()
 		);
 	}
-	JObject ContentProviderClient::query(android::net::Uri arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4)
+	JObject ContentProviderClient::query(android::net::Uri arg0, JArray arg1, JString arg2, JArray arg3, JString arg4)
 	{
 		return callObjectMethod(
 			"query",
 			"(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;",
 			arg0.object(),
-			arg1,
-			arg2,
-			arg3,
-			arg4
+			arg1.object<jarray>(),
+			arg2.object<jstring>(),
+			arg3.object<jarray>(),
+			arg4.object<jstring>()
 		);
 	}
-	JObject ContentProviderClient::query(android::net::Uri arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4, android::os::CancellationSignal arg5)
+	JObject ContentProviderClient::query(android::net::Uri arg0, JArray arg1, JString arg2, JArray arg3, JString arg4, android::os::CancellationSignal arg5)
 	{
 		return callObjectMethod(
 			"query",
 			"(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;Landroid/os/CancellationSignal;)Landroid/database/Cursor;",
 			arg0.object(),
-			arg1,
-			arg2,
-			arg3,
-			arg4,
+			arg1.object<jarray>(),
+			arg2.object<jstring>(),
+			arg3.object<jarray>(),
+			arg4.object<jstring>(),
 			arg5.object()
 		);
 	}
@@ -223,15 +227,15 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	jint ContentProviderClient::update(android::net::Uri arg0, android::content::ContentValues arg1, jstring arg2, jarray arg3)
+	jint ContentProviderClient::update(android::net::Uri arg0, android::content::ContentValues arg1, JString arg2, JArray arg3)
 	{
 		return callMethod<jint>(
 			"update",
 			"(Landroid/net/Uri;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I",
 			arg0.object(),
 			arg1.object(),
-			arg2,
-			arg3
+			arg2.object<jstring>(),
+			arg3.object<jarray>()
 		);
 	}
 } // namespace android::content

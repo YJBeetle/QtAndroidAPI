@@ -1,34 +1,35 @@
 #include "../../app/PendingIntent.hpp"
 #include "./ScanCallback.hpp"
 #include "./ScanSettings.hpp"
+#include "../../../JString.hpp"
 #include "./BluetoothLeScanner.hpp"
 
 namespace android::bluetooth::le
 {
 	// Fields
-	jstring BluetoothLeScanner::EXTRA_CALLBACK_TYPE()
+	JString BluetoothLeScanner::EXTRA_CALLBACK_TYPE()
 	{
 		return getStaticObjectField(
 			"android.bluetooth.le.BluetoothLeScanner",
 			"EXTRA_CALLBACK_TYPE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring BluetoothLeScanner::EXTRA_ERROR_CODE()
+	JString BluetoothLeScanner::EXTRA_ERROR_CODE()
 	{
 		return getStaticObjectField(
 			"android.bluetooth.le.BluetoothLeScanner",
 			"EXTRA_ERROR_CODE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring BluetoothLeScanner::EXTRA_LIST_SCAN_RESULT()
+	JString BluetoothLeScanner::EXTRA_LIST_SCAN_RESULT()
 	{
 		return getStaticObjectField(
 			"android.bluetooth.le.BluetoothLeScanner",
 			"EXTRA_LIST_SCAN_RESULT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QJniObject forward

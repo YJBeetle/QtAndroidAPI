@@ -1,7 +1,12 @@
+#include "../../JCharArray.hpp"
+#include "../../JObjectArray.hpp"
 #include "./File.hpp"
 #include "./OutputStream.hpp"
 #include "./PrintStream.hpp"
 #include "./Writer.hpp"
+#include "../../JString.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "../nio/charset/Charset.hpp"
 #include "../util/Formatter.hpp"
 #include "../util/Locale.hpp"
@@ -33,18 +38,18 @@ namespace java::io
 			"(Ljava/io/Writer;)V",
 			arg0.object()
 		) {}
-	PrintWriter::PrintWriter(jstring arg0)
+	PrintWriter::PrintWriter(JString arg0)
 		: java::io::Writer(
 			"java.io.PrintWriter",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	PrintWriter::PrintWriter(java::io::File arg0, jstring arg1)
+	PrintWriter::PrintWriter(java::io::File arg0, JString arg1)
 		: java::io::Writer(
 			"java.io.PrintWriter",
 			"(Ljava/io/File;Ljava/lang/String;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		) {}
 	PrintWriter::PrintWriter(java::io::File arg0, java::nio::charset::Charset arg1)
 		: java::io::Writer(
@@ -67,18 +72,18 @@ namespace java::io
 			arg0.object(),
 			arg1
 		) {}
-	PrintWriter::PrintWriter(jstring arg0, jstring arg1)
+	PrintWriter::PrintWriter(JString arg0, JString arg1)
 		: java::io::Writer(
 			"java.io.PrintWriter",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		) {}
-	PrintWriter::PrintWriter(jstring arg0, java::nio::charset::Charset arg1)
+	PrintWriter::PrintWriter(JString arg0, java::nio::charset::Charset arg1)
 		: java::io::Writer(
 			"java.io.PrintWriter",
 			"(Ljava/lang/String;Ljava/nio/charset/Charset;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		) {}
 	PrintWriter::PrintWriter(java::io::OutputStream arg0, jboolean arg1, java::nio::charset::Charset arg2)
@@ -99,20 +104,20 @@ namespace java::io
 			arg0
 		);
 	}
-	java::io::PrintWriter PrintWriter::append(jstring arg0)
+	java::io::PrintWriter PrintWriter::append(JString arg0)
 	{
 		return callObjectMethod(
 			"append",
 			"(Ljava/lang/CharSequence;)Ljava/io/PrintWriter;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	java::io::PrintWriter PrintWriter::append(jstring arg0, jint arg1, jint arg2)
+	java::io::PrintWriter PrintWriter::append(JString arg0, jint arg1, jint arg2)
 	{
 		return callObjectMethod(
 			"append",
 			"(Ljava/lang/CharSequence;II)Ljava/io/PrintWriter;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
 			arg2
 		);
@@ -138,31 +143,31 @@ namespace java::io
 			"()V"
 		);
 	}
-	java::io::PrintWriter PrintWriter::format(jstring arg0, jobjectArray arg1)
+	java::io::PrintWriter PrintWriter::format(JString arg0, JObjectArray arg1)
 	{
 		return callObjectMethod(
 			"format",
 			"(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintWriter;",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jobjectArray>()
 		);
 	}
-	java::io::PrintWriter PrintWriter::format(java::util::Locale arg0, jstring arg1, jobjectArray arg2)
+	java::io::PrintWriter PrintWriter::format(java::util::Locale arg0, JString arg1, JObjectArray arg2)
 	{
 		return callObjectMethod(
 			"format",
 			"(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintWriter;",
 			arg0.object(),
-			arg1,
-			arg2
+			arg1.object<jstring>(),
+			arg2.object<jobjectArray>()
 		);
 	}
-	void PrintWriter::print(jcharArray arg0)
+	void PrintWriter::print(JCharArray arg0)
 	{
 		callMethod<void>(
 			"print",
 			"([C)V",
-			arg0
+			arg0.object<jcharArray>()
 		);
 	}
 	void PrintWriter::print(jboolean arg0)
@@ -205,20 +210,20 @@ namespace java::io
 			arg0
 		);
 	}
-	void PrintWriter::print(jobject arg0)
+	void PrintWriter::print(JObject arg0)
 	{
 		callMethod<void>(
 			"print",
 			"(Ljava/lang/Object;)V",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	void PrintWriter::print(jstring arg0)
+	void PrintWriter::print(JString arg0)
 	{
 		callMethod<void>(
 			"print",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void PrintWriter::print(jlong arg0)
@@ -229,23 +234,23 @@ namespace java::io
 			arg0
 		);
 	}
-	java::io::PrintWriter PrintWriter::printf(jstring arg0, jobjectArray arg1)
+	java::io::PrintWriter PrintWriter::printf(JString arg0, JObjectArray arg1)
 	{
 		return callObjectMethod(
 			"printf",
 			"(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintWriter;",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jobjectArray>()
 		);
 	}
-	java::io::PrintWriter PrintWriter::printf(java::util::Locale arg0, jstring arg1, jobjectArray arg2)
+	java::io::PrintWriter PrintWriter::printf(java::util::Locale arg0, JString arg1, JObjectArray arg2)
 	{
 		return callObjectMethod(
 			"printf",
 			"(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintWriter;",
 			arg0.object(),
-			arg1,
-			arg2
+			arg1.object<jstring>(),
+			arg2.object<jobjectArray>()
 		);
 	}
 	void PrintWriter::println()
@@ -255,12 +260,12 @@ namespace java::io
 			"()V"
 		);
 	}
-	void PrintWriter::println(jcharArray arg0)
+	void PrintWriter::println(JCharArray arg0)
 	{
 		callMethod<void>(
 			"println",
 			"([C)V",
-			arg0
+			arg0.object<jcharArray>()
 		);
 	}
 	void PrintWriter::println(jboolean arg0)
@@ -303,20 +308,20 @@ namespace java::io
 			arg0
 		);
 	}
-	void PrintWriter::println(jobject arg0)
+	void PrintWriter::println(JObject arg0)
 	{
 		callMethod<void>(
 			"println",
 			"(Ljava/lang/Object;)V",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	void PrintWriter::println(jstring arg0)
+	void PrintWriter::println(JString arg0)
 	{
 		callMethod<void>(
 			"println",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void PrintWriter::println(jlong arg0)
@@ -327,12 +332,12 @@ namespace java::io
 			arg0
 		);
 	}
-	void PrintWriter::write(jcharArray arg0)
+	void PrintWriter::write(JCharArray arg0)
 	{
 		callMethod<void>(
 			"write",
 			"([C)V",
-			arg0
+			arg0.object<jcharArray>()
 		);
 	}
 	void PrintWriter::write(jint arg0)
@@ -343,30 +348,30 @@ namespace java::io
 			arg0
 		);
 	}
-	void PrintWriter::write(jstring arg0)
+	void PrintWriter::write(JString arg0)
 	{
 		callMethod<void>(
 			"write",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	void PrintWriter::write(jcharArray arg0, jint arg1, jint arg2)
+	void PrintWriter::write(JCharArray arg0, jint arg1, jint arg2)
 	{
 		callMethod<void>(
 			"write",
 			"([CII)V",
-			arg0,
+			arg0.object<jcharArray>(),
 			arg1,
 			arg2
 		);
 	}
-	void PrintWriter::write(jstring arg0, jint arg1, jint arg2)
+	void PrintWriter::write(JString arg0, jint arg1, jint arg2)
 	{
 		callMethod<void>(
 			"write",
 			"(Ljava/lang/String;II)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
 			arg2
 		);

@@ -2,7 +2,6 @@
 
 #include "../../../JObject.hpp"
 
-
 namespace android::view::accessibility
 {
 	class AccessibilityNodeInfo_CollectionInfo : public JObject

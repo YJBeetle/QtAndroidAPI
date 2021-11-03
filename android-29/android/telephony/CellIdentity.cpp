@@ -1,4 +1,7 @@
 #include "../os/Parcel.hpp"
+#include "../../JString.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./CellIdentity.hpp"
 
 namespace android::telephony
@@ -26,27 +29,27 @@ namespace android::telephony
 			"()I"
 		);
 	}
-	jboolean CellIdentity::equals(jobject arg0)
+	jboolean CellIdentity::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jstring CellIdentity::getOperatorAlphaLong()
+	JString CellIdentity::getOperatorAlphaLong()
 	{
 		return callObjectMethod(
 			"getOperatorAlphaLong",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
-	jstring CellIdentity::getOperatorAlphaShort()
+	JString CellIdentity::getOperatorAlphaShort()
 	{
 		return callObjectMethod(
 			"getOperatorAlphaShort",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	jint CellIdentity::hashCode()
 	{

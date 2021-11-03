@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JByteArray;
 
 namespace javax::crypto::spec
 {
@@ -16,12 +17,12 @@ namespace javax::crypto::spec
 		DESedeKeySpec(QJniObject obj);
 		
 		// Constructors
-		DESedeKeySpec(jbyteArray arg0);
-		DESedeKeySpec(jbyteArray arg0, jint arg1);
+		DESedeKeySpec(JByteArray arg0);
+		DESedeKeySpec(JByteArray arg0, jint arg1);
 		
 		// Methods
-		static jboolean isParityAdjusted(jbyteArray arg0, jint arg1);
-		jbyteArray getKey();
+		static jboolean isParityAdjusted(JByteArray arg0, jint arg1);
+		JByteArray getKey();
 	};
 } // namespace javax::crypto::spec
 

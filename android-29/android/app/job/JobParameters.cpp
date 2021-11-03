@@ -1,3 +1,5 @@
+#include "../../../JArray.hpp"
+#include "../../../JArray.hpp"
 #include "./JobWorkItem.hpp"
 #include "../../content/ClipData.hpp"
 #include "../../net/Network.hpp"
@@ -88,19 +90,19 @@ namespace android::app::job
 			"()Landroid/os/Bundle;"
 		);
 	}
-	jarray JobParameters::getTriggeredContentAuthorities()
+	JArray JobParameters::getTriggeredContentAuthorities()
 	{
 		return callObjectMethod(
 			"getTriggeredContentAuthorities",
 			"()[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
-	jarray JobParameters::getTriggeredContentUris()
+	JArray JobParameters::getTriggeredContentUris()
 	{
 		return callObjectMethod(
 			"getTriggeredContentUris",
 			"()[Landroid/net/Uri;"
-		).object<jarray>();
+		);
 	}
 	jboolean JobParameters::isOverrideDeadlineExpired()
 	{

@@ -9,6 +9,10 @@
 #include "../view/View.hpp"
 #include "../view/ViewGroup.hpp"
 #include "./RemoteViews_RemoteResponse.hpp"
+#include "../../JString.hpp"
+#include "../../JClass.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./RemoteViews.hpp"
 
 namespace android::widget
@@ -22,13 +26,13 @@ namespace android::widget
 			"Landroid/os/Parcelable$Creator;"
 		);
 	}
-	jstring RemoteViews::EXTRA_SHARED_ELEMENT_BOUNDS()
+	JString RemoteViews::EXTRA_SHARED_ELEMENT_BOUNDS()
 	{
 		return getStaticObjectField(
 			"android.widget.RemoteViews",
 			"EXTRA_SHARED_ELEMENT_BOUNDS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QJniObject forward
@@ -54,11 +58,11 @@ namespace android::widget
 			arg0.object(),
 			arg1.object()
 		) {}
-	RemoteViews::RemoteViews(jstring arg0, jint arg1)
+	RemoteViews::RemoteViews(JString arg0, jint arg1)
 		: JObject(
 			"android.widget.RemoteViews",
 			"(Ljava/lang/String;I)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		) {}
 	
@@ -102,19 +106,19 @@ namespace android::widget
 			"()I"
 		);
 	}
-	jstring RemoteViews::getPackage()
+	JString RemoteViews::getPackage()
 	{
 		return callObjectMethod(
 			"getPackage",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jboolean RemoteViews::onLoadClass(jclass arg0)
+	jboolean RemoteViews::onLoadClass(JClass arg0)
 	{
 		return callMethod<jboolean>(
 			"onLoadClass",
 			"(Ljava/lang/Class;)Z",
-			arg0
+			arg0.object<jclass>()
 		);
 	}
 	void RemoteViews::reapply(android::content::Context arg0, android::view::View arg1)
@@ -152,74 +156,74 @@ namespace android::widget
 			arg1
 		);
 	}
-	void RemoteViews::setBitmap(jint arg0, jstring arg1, android::graphics::Bitmap arg2)
+	void RemoteViews::setBitmap(jint arg0, JString arg1, android::graphics::Bitmap arg2)
 	{
 		callMethod<void>(
 			"setBitmap",
 			"(ILjava/lang/String;Landroid/graphics/Bitmap;)V",
 			arg0,
-			arg1,
+			arg1.object<jstring>(),
 			arg2.object()
 		);
 	}
-	void RemoteViews::setBoolean(jint arg0, jstring arg1, jboolean arg2)
+	void RemoteViews::setBoolean(jint arg0, JString arg1, jboolean arg2)
 	{
 		callMethod<void>(
 			"setBoolean",
 			"(ILjava/lang/String;Z)V",
 			arg0,
-			arg1,
+			arg1.object<jstring>(),
 			arg2
 		);
 	}
-	void RemoteViews::setBundle(jint arg0, jstring arg1, android::os::Bundle arg2)
+	void RemoteViews::setBundle(jint arg0, JString arg1, android::os::Bundle arg2)
 	{
 		callMethod<void>(
 			"setBundle",
 			"(ILjava/lang/String;Landroid/os/Bundle;)V",
 			arg0,
-			arg1,
+			arg1.object<jstring>(),
 			arg2.object()
 		);
 	}
-	void RemoteViews::setByte(jint arg0, jstring arg1, jbyte arg2)
+	void RemoteViews::setByte(jint arg0, JString arg1, jbyte arg2)
 	{
 		callMethod<void>(
 			"setByte",
 			"(ILjava/lang/String;B)V",
 			arg0,
-			arg1,
+			arg1.object<jstring>(),
 			arg2
 		);
 	}
-	void RemoteViews::setChar(jint arg0, jstring arg1, jchar arg2)
+	void RemoteViews::setChar(jint arg0, JString arg1, jchar arg2)
 	{
 		callMethod<void>(
 			"setChar",
 			"(ILjava/lang/String;C)V",
 			arg0,
-			arg1,
+			arg1.object<jstring>(),
 			arg2
 		);
 	}
-	void RemoteViews::setCharSequence(jint arg0, jstring arg1, jstring arg2)
+	void RemoteViews::setCharSequence(jint arg0, JString arg1, JString arg2)
 	{
 		callMethod<void>(
 			"setCharSequence",
 			"(ILjava/lang/String;Ljava/lang/CharSequence;)V",
 			arg0,
-			arg1,
-			arg2
+			arg1.object<jstring>(),
+			arg2.object<jstring>()
 		);
 	}
-	void RemoteViews::setChronometer(jint arg0, jlong arg1, jstring arg2, jboolean arg3)
+	void RemoteViews::setChronometer(jint arg0, jlong arg1, JString arg2, jboolean arg3)
 	{
 		callMethod<void>(
 			"setChronometer",
 			"(IJLjava/lang/String;Z)V",
 			arg0,
 			arg1,
-			arg2,
+			arg2.object<jstring>(),
 			arg3
 		);
 	}
@@ -232,13 +236,13 @@ namespace android::widget
 			arg1
 		);
 	}
-	void RemoteViews::setContentDescription(jint arg0, jstring arg1)
+	void RemoteViews::setContentDescription(jint arg0, JString arg1)
 	{
 		callMethod<void>(
 			"setContentDescription",
 			"(ILjava/lang/CharSequence;)V",
 			arg0,
-			arg1
+			arg1.object<jstring>()
 		);
 	}
 	void RemoteViews::setDisplayedChild(jint arg0, jint arg1)
@@ -250,13 +254,13 @@ namespace android::widget
 			arg1
 		);
 	}
-	void RemoteViews::setDouble(jint arg0, jstring arg1, jdouble arg2)
+	void RemoteViews::setDouble(jint arg0, JString arg1, jdouble arg2)
 	{
 		callMethod<void>(
 			"setDouble",
 			"(ILjava/lang/String;D)V",
 			arg0,
-			arg1,
+			arg1.object<jstring>(),
 			arg2
 		);
 	}
@@ -269,23 +273,23 @@ namespace android::widget
 			arg1
 		);
 	}
-	void RemoteViews::setFloat(jint arg0, jstring arg1, jfloat arg2)
+	void RemoteViews::setFloat(jint arg0, JString arg1, jfloat arg2)
 	{
 		callMethod<void>(
 			"setFloat",
 			"(ILjava/lang/String;F)V",
 			arg0,
-			arg1,
+			arg1.object<jstring>(),
 			arg2
 		);
 	}
-	void RemoteViews::setIcon(jint arg0, jstring arg1, android::graphics::drawable::Icon arg2)
+	void RemoteViews::setIcon(jint arg0, JString arg1, android::graphics::drawable::Icon arg2)
 	{
 		callMethod<void>(
 			"setIcon",
 			"(ILjava/lang/String;Landroid/graphics/drawable/Icon;)V",
 			arg0,
-			arg1,
+			arg1.object<jstring>(),
 			arg2.object()
 		);
 	}
@@ -325,23 +329,23 @@ namespace android::widget
 			arg1.object()
 		);
 	}
-	void RemoteViews::setInt(jint arg0, jstring arg1, jint arg2)
+	void RemoteViews::setInt(jint arg0, JString arg1, jint arg2)
 	{
 		callMethod<void>(
 			"setInt",
 			"(ILjava/lang/String;I)V",
 			arg0,
-			arg1,
+			arg1.object<jstring>(),
 			arg2
 		);
 	}
-	void RemoteViews::setIntent(jint arg0, jstring arg1, android::content::Intent arg2)
+	void RemoteViews::setIntent(jint arg0, JString arg1, android::content::Intent arg2)
 	{
 		callMethod<void>(
 			"setIntent",
 			"(ILjava/lang/String;Landroid/content/Intent;)V",
 			arg0,
-			arg1,
+			arg1.object<jstring>(),
 			arg2.object()
 		);
 	}
@@ -362,13 +366,13 @@ namespace android::widget
 			arg0
 		);
 	}
-	void RemoteViews::setLong(jint arg0, jstring arg1, jlong arg2)
+	void RemoteViews::setLong(jint arg0, JString arg1, jlong arg2)
 	{
 		callMethod<void>(
 			"setLong",
 			"(ILjava/lang/String;J)V",
 			arg0,
-			arg1,
+			arg1.object<jstring>(),
 			arg2
 		);
 	}
@@ -456,24 +460,24 @@ namespace android::widget
 			arg1
 		);
 	}
-	void RemoteViews::setShort(jint arg0, jstring arg1, jshort arg2)
+	void RemoteViews::setShort(jint arg0, JString arg1, jshort arg2)
 	{
 		callMethod<void>(
 			"setShort",
 			"(ILjava/lang/String;S)V",
 			arg0,
-			arg1,
+			arg1.object<jstring>(),
 			arg2
 		);
 	}
-	void RemoteViews::setString(jint arg0, jstring arg1, jstring arg2)
+	void RemoteViews::setString(jint arg0, JString arg1, JString arg2)
 	{
 		callMethod<void>(
 			"setString",
 			"(ILjava/lang/String;Ljava/lang/String;)V",
 			arg0,
-			arg1,
-			arg2
+			arg1.object<jstring>(),
+			arg2.object<jstring>()
 		);
 	}
 	void RemoteViews::setTextColor(jint arg0, jint arg1)
@@ -509,13 +513,13 @@ namespace android::widget
 			arg4
 		);
 	}
-	void RemoteViews::setTextViewText(jint arg0, jstring arg1)
+	void RemoteViews::setTextViewText(jint arg0, JString arg1)
 	{
 		callMethod<void>(
 			"setTextViewText",
 			"(ILjava/lang/CharSequence;)V",
 			arg0,
-			arg1
+			arg1.object<jstring>()
 		);
 	}
 	void RemoteViews::setTextViewTextSize(jint arg0, jint arg1, jfloat arg2)
@@ -528,13 +532,13 @@ namespace android::widget
 			arg2
 		);
 	}
-	void RemoteViews::setUri(jint arg0, jstring arg1, android::net::Uri arg2)
+	void RemoteViews::setUri(jint arg0, JString arg1, android::net::Uri arg2)
 	{
 		callMethod<void>(
 			"setUri",
 			"(ILjava/lang/String;Landroid/net/Uri;)V",
 			arg0,
-			arg1,
+			arg1.object<jstring>(),
 			arg2.object()
 		);
 	}

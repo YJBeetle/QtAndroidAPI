@@ -10,6 +10,7 @@ namespace android::net::sip
 {
 	class SipSession_Listener;
 }
+class JString;
 
 namespace android::net::sip
 {
@@ -25,16 +26,16 @@ namespace android::net::sip
 		// Constructors
 		
 		// Methods
-		void answerCall(jstring arg0, jint arg1);
-		void changeCall(jstring arg0, jint arg1);
+		void answerCall(JString arg0, jint arg1);
+		void changeCall(JString arg0, jint arg1);
 		void endCall();
-		jstring getCallId();
-		jstring getLocalIp();
+		JString getCallId();
+		JString getLocalIp();
 		android::net::sip::SipProfile getLocalProfile();
 		android::net::sip::SipProfile getPeerProfile();
 		jint getState();
 		jboolean isInCall();
-		void makeCall(android::net::sip::SipProfile arg0, jstring arg1, jint arg2);
+		void makeCall(android::net::sip::SipProfile arg0, JString arg1, jint arg2);
 		void _register(jint arg0);
 		void setListener(android::net::sip::SipSession_Listener arg0);
 		void unregister();

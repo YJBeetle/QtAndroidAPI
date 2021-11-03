@@ -1,9 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../view/View.hpp"
 #include "./TextView.hpp"
 
+class JIntArray;
 namespace android::content
 {
 	class Context;
@@ -24,6 +23,7 @@ namespace android::graphics::drawable
 {
 	class Drawable;
 }
+class JString;
 
 namespace android::widget
 {
@@ -44,7 +44,7 @@ namespace android::widget
 		
 		// Methods
 		void drawableHotspotChanged(jfloat arg0, jfloat arg1);
-		jstring getAccessibilityClassName();
+		JString getAccessibilityClassName();
 		android::graphics::drawable::Drawable getCheckMarkDrawable();
 		android::content::res::ColorStateList getCheckMarkTintList();
 		android::graphics::PorterDuff_Mode getCheckMarkTintMode();

@@ -1,3 +1,7 @@
+#include "../../JArray.hpp"
+#include "../../JArray.hpp"
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
 #include "./ClientCertRequest.hpp"
 
 namespace android::webkit
@@ -22,19 +26,19 @@ namespace android::webkit
 			"()V"
 		);
 	}
-	jstring ClientCertRequest::getHost()
+	JString ClientCertRequest::getHost()
 	{
 		return callObjectMethod(
 			"getHost",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jarray ClientCertRequest::getKeyTypes()
+	JArray ClientCertRequest::getKeyTypes()
 	{
 		return callObjectMethod(
 			"getKeyTypes",
 			"()[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
 	jint ClientCertRequest::getPort()
 	{
@@ -43,12 +47,12 @@ namespace android::webkit
 			"()I"
 		);
 	}
-	jarray ClientCertRequest::getPrincipals()
+	JArray ClientCertRequest::getPrincipals()
 	{
 		return callObjectMethod(
 			"getPrincipals",
 			"()[Ljava/security/Principal;"
-		).object<jarray>();
+		);
 	}
 	void ClientCertRequest::ignore()
 	{
@@ -57,13 +61,13 @@ namespace android::webkit
 			"()V"
 		);
 	}
-	void ClientCertRequest::proceed(JObject arg0, jarray arg1)
+	void ClientCertRequest::proceed(JObject arg0, JArray arg1)
 	{
 		callMethod<void>(
 			"proceed",
 			"(Ljava/security/PrivateKey;[Ljava/security/cert/X509Certificate;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jarray>()
 		);
 	}
 } // namespace android::webkit

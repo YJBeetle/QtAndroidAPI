@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "../content/ContentProvider.hpp"
 
+class JArray;
 namespace android::content
 {
 	class ContentValues;
@@ -47,6 +47,7 @@ namespace android::provider
 {
 	class DocumentsContract_Path;
 }
+class JString;
 
 namespace android::provider
 {
@@ -64,47 +65,47 @@ namespace android::provider
 		
 		// Methods
 		void attachInfo(android::content::Context arg0, android::content::pm::ProviderInfo arg1);
-		android::os::Bundle call(jstring arg0, jstring arg1, android::os::Bundle arg2);
+		android::os::Bundle call(JString arg0, JString arg1, android::os::Bundle arg2);
 		android::net::Uri canonicalize(android::net::Uri arg0);
-		jstring copyDocument(jstring arg0, jstring arg1);
-		jstring createDocument(jstring arg0, jstring arg1, jstring arg2);
-		android::content::IntentSender createWebLinkIntent(jstring arg0, android::os::Bundle arg1);
-		jint _delete(android::net::Uri arg0, jstring arg1, jarray arg2);
-		void deleteDocument(jstring arg0);
-		void ejectRoot(jstring arg0);
-		android::provider::DocumentsContract_Path findDocumentPath(jstring arg0, jstring arg1);
-		android::os::Bundle getDocumentMetadata(jstring arg0);
-		jarray getDocumentStreamTypes(jstring arg0, jstring arg1);
-		jstring getDocumentType(jstring arg0);
-		jarray getStreamTypes(android::net::Uri arg0, jstring arg1);
-		jstring getType(android::net::Uri arg0);
+		JString copyDocument(JString arg0, JString arg1);
+		JString createDocument(JString arg0, JString arg1, JString arg2);
+		android::content::IntentSender createWebLinkIntent(JString arg0, android::os::Bundle arg1);
+		jint _delete(android::net::Uri arg0, JString arg1, JArray arg2);
+		void deleteDocument(JString arg0);
+		void ejectRoot(JString arg0);
+		android::provider::DocumentsContract_Path findDocumentPath(JString arg0, JString arg1);
+		android::os::Bundle getDocumentMetadata(JString arg0);
+		JArray getDocumentStreamTypes(JString arg0, JString arg1);
+		JString getDocumentType(JString arg0);
+		JArray getStreamTypes(android::net::Uri arg0, JString arg1);
+		JString getType(android::net::Uri arg0);
 		android::net::Uri insert(android::net::Uri arg0, android::content::ContentValues arg1);
-		jboolean isChildDocument(jstring arg0, jstring arg1);
-		jstring moveDocument(jstring arg0, jstring arg1, jstring arg2);
-		android::content::res::AssetFileDescriptor openAssetFile(android::net::Uri arg0, jstring arg1);
-		android::content::res::AssetFileDescriptor openAssetFile(android::net::Uri arg0, jstring arg1, android::os::CancellationSignal arg2);
-		android::os::ParcelFileDescriptor openDocument(jstring arg0, jstring arg1, android::os::CancellationSignal arg2);
-		android::content::res::AssetFileDescriptor openDocumentThumbnail(jstring arg0, android::graphics::Point arg1, android::os::CancellationSignal arg2);
-		android::os::ParcelFileDescriptor openFile(android::net::Uri arg0, jstring arg1);
-		android::os::ParcelFileDescriptor openFile(android::net::Uri arg0, jstring arg1, android::os::CancellationSignal arg2);
-		android::content::res::AssetFileDescriptor openTypedAssetFile(android::net::Uri arg0, jstring arg1, android::os::Bundle arg2);
-		android::content::res::AssetFileDescriptor openTypedAssetFile(android::net::Uri arg0, jstring arg1, android::os::Bundle arg2, android::os::CancellationSignal arg3);
-		android::content::res::AssetFileDescriptor openTypedDocument(jstring arg0, jstring arg1, android::os::Bundle arg2, android::os::CancellationSignal arg3);
-		JObject query(android::net::Uri arg0, jarray arg1, android::os::Bundle arg2, android::os::CancellationSignal arg3);
-		JObject query(android::net::Uri arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4);
-		JObject query(android::net::Uri arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4, android::os::CancellationSignal arg5);
-		JObject queryChildDocuments(jstring arg0, jarray arg1, android::os::Bundle arg2);
-		JObject queryChildDocuments(jstring arg0, jarray arg1, jstring arg2);
-		JObject queryDocument(jstring arg0, jarray arg1);
-		JObject queryRecentDocuments(jstring arg0, jarray arg1);
-		JObject queryRecentDocuments(jstring arg0, jarray arg1, android::os::Bundle arg2, android::os::CancellationSignal arg3);
-		JObject queryRoots(jarray arg0);
-		JObject querySearchDocuments(jstring arg0, jarray arg1, android::os::Bundle arg2);
-		JObject querySearchDocuments(jstring arg0, jstring arg1, jarray arg2);
-		void removeDocument(jstring arg0, jstring arg1);
-		jstring renameDocument(jstring arg0, jstring arg1);
-		void revokeDocumentPermission(jstring arg0);
-		jint update(android::net::Uri arg0, android::content::ContentValues arg1, jstring arg2, jarray arg3);
+		jboolean isChildDocument(JString arg0, JString arg1);
+		JString moveDocument(JString arg0, JString arg1, JString arg2);
+		android::content::res::AssetFileDescriptor openAssetFile(android::net::Uri arg0, JString arg1);
+		android::content::res::AssetFileDescriptor openAssetFile(android::net::Uri arg0, JString arg1, android::os::CancellationSignal arg2);
+		android::os::ParcelFileDescriptor openDocument(JString arg0, JString arg1, android::os::CancellationSignal arg2);
+		android::content::res::AssetFileDescriptor openDocumentThumbnail(JString arg0, android::graphics::Point arg1, android::os::CancellationSignal arg2);
+		android::os::ParcelFileDescriptor openFile(android::net::Uri arg0, JString arg1);
+		android::os::ParcelFileDescriptor openFile(android::net::Uri arg0, JString arg1, android::os::CancellationSignal arg2);
+		android::content::res::AssetFileDescriptor openTypedAssetFile(android::net::Uri arg0, JString arg1, android::os::Bundle arg2);
+		android::content::res::AssetFileDescriptor openTypedAssetFile(android::net::Uri arg0, JString arg1, android::os::Bundle arg2, android::os::CancellationSignal arg3);
+		android::content::res::AssetFileDescriptor openTypedDocument(JString arg0, JString arg1, android::os::Bundle arg2, android::os::CancellationSignal arg3);
+		JObject query(android::net::Uri arg0, JArray arg1, android::os::Bundle arg2, android::os::CancellationSignal arg3);
+		JObject query(android::net::Uri arg0, JArray arg1, JString arg2, JArray arg3, JString arg4);
+		JObject query(android::net::Uri arg0, JArray arg1, JString arg2, JArray arg3, JString arg4, android::os::CancellationSignal arg5);
+		JObject queryChildDocuments(JString arg0, JArray arg1, android::os::Bundle arg2);
+		JObject queryChildDocuments(JString arg0, JArray arg1, JString arg2);
+		JObject queryDocument(JString arg0, JArray arg1);
+		JObject queryRecentDocuments(JString arg0, JArray arg1);
+		JObject queryRecentDocuments(JString arg0, JArray arg1, android::os::Bundle arg2, android::os::CancellationSignal arg3);
+		JObject queryRoots(JArray arg0);
+		JObject querySearchDocuments(JString arg0, JArray arg1, android::os::Bundle arg2);
+		JObject querySearchDocuments(JString arg0, JString arg1, JArray arg2);
+		void removeDocument(JString arg0, JString arg1);
+		JString renameDocument(JString arg0, JString arg1);
+		void revokeDocumentPermission(JString arg0);
+		jint update(android::net::Uri arg0, android::content::ContentValues arg1, JString arg2, JArray arg3);
 	};
 } // namespace android::provider
 

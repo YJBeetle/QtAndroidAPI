@@ -2,6 +2,10 @@
 
 #include "../../JObject.hpp"
 
+class JByteArray;
+class JCharArray;
+class JObjectArray;
+class JString;
 
 namespace java::text
 {
@@ -20,12 +24,12 @@ namespace java::text
 		
 		// Constructors
 		Bidi(JObject arg0);
-		Bidi(jstring arg0, jint arg1);
-		Bidi(jcharArray arg0, jint arg1, jbyteArray arg2, jint arg3, jint arg4, jint arg5);
+		Bidi(JString arg0, jint arg1);
+		Bidi(JCharArray arg0, jint arg1, JByteArray arg2, jint arg3, jint arg4, jint arg5);
 		
 		// Methods
-		static void reorderVisually(jbyteArray arg0, jint arg1, jobjectArray arg2, jint arg3, jint arg4);
-		static jboolean requiresBidi(jcharArray arg0, jint arg1, jint arg2);
+		static void reorderVisually(JByteArray arg0, jint arg1, JObjectArray arg2, jint arg3, jint arg4);
+		static jboolean requiresBidi(JCharArray arg0, jint arg1, jint arg2);
 		jboolean baseIsLeftToRight();
 		java::text::Bidi createLineBidi(jint arg0, jint arg1);
 		jint getBaseLevel();
@@ -38,7 +42,7 @@ namespace java::text
 		jboolean isLeftToRight();
 		jboolean isMixed();
 		jboolean isRightToLeft();
-		jstring toString();
+		JString toString();
 	};
 } // namespace java::text
 

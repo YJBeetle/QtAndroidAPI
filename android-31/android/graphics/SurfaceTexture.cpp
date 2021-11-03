@@ -1,3 +1,4 @@
+#include "../../JFloatArray.hpp"
 #include "../os/Handler.hpp"
 #include "./SurfaceTexture.hpp"
 
@@ -52,12 +53,12 @@ namespace android::graphics
 			"()J"
 		);
 	}
-	void SurfaceTexture::getTransformMatrix(jfloatArray arg0)
+	void SurfaceTexture::getTransformMatrix(JFloatArray arg0)
 	{
 		callMethod<void>(
 			"getTransformMatrix",
 			"([F)V",
-			arg0
+			arg0.object<jfloatArray>()
 		);
 	}
 	jboolean SurfaceTexture::isReleased()

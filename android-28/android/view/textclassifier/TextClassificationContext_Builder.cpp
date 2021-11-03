@@ -1,4 +1,5 @@
 #include "./TextClassificationContext.hpp"
+#include "../../../JString.hpp"
 #include "./TextClassificationContext_Builder.hpp"
 
 namespace android::view::textclassifier
@@ -9,12 +10,12 @@ namespace android::view::textclassifier
 	TextClassificationContext_Builder::TextClassificationContext_Builder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	TextClassificationContext_Builder::TextClassificationContext_Builder(jstring arg0, jstring arg1)
+	TextClassificationContext_Builder::TextClassificationContext_Builder(JString arg0, JString arg1)
 		: JObject(
 			"android.view.textclassifier.TextClassificationContext$Builder",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		) {}
 	
 	// Methods
@@ -25,12 +26,12 @@ namespace android::view::textclassifier
 			"()Landroid/view/textclassifier/TextClassificationContext;"
 		);
 	}
-	android::view::textclassifier::TextClassificationContext_Builder TextClassificationContext_Builder::setWidgetVersion(jstring arg0)
+	android::view::textclassifier::TextClassificationContext_Builder TextClassificationContext_Builder::setWidgetVersion(JString arg0)
 	{
 		return callObjectMethod(
 			"setWidgetVersion",
 			"(Ljava/lang/String;)Landroid/view/textclassifier/TextClassificationContext$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 } // namespace android::view::textclassifier

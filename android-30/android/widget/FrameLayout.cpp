@@ -1,6 +1,7 @@
 #include "../content/Context.hpp"
 #include "../view/ViewGroup_LayoutParams.hpp"
 #include "./FrameLayout_LayoutParams.hpp"
+#include "../../JString.hpp"
 #include "./FrameLayout.hpp"
 
 namespace android::widget
@@ -51,12 +52,12 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	jstring FrameLayout::getAccessibilityClassName()
+	JString FrameLayout::getAccessibilityClassName()
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	jboolean FrameLayout::getConsiderGoneChildrenWhenMeasuring()
 	{

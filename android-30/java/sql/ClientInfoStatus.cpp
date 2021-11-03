@@ -1,3 +1,5 @@
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
 #include "./ClientInfoStatus.hpp"
 
 namespace java::sql
@@ -42,22 +44,22 @@ namespace java::sql
 	// Constructors
 	
 	// Methods
-	java::sql::ClientInfoStatus ClientInfoStatus::valueOf(jstring arg0)
+	java::sql::ClientInfoStatus ClientInfoStatus::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"java.sql.ClientInfoStatus",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/sql/ClientInfoStatus;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray ClientInfoStatus::values()
+	JArray ClientInfoStatus::values()
 	{
 		return callStaticObjectMethod(
 			"java.sql.ClientInfoStatus",
 			"values",
 			"()[Ljava/sql/ClientInfoStatus;"
-		).object<jarray>();
+		);
 	}
 } // namespace java::sql
 

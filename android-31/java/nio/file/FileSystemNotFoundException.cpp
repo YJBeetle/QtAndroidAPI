@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./FileSystemNotFoundException.hpp"
 
 namespace java::nio::file
@@ -13,11 +14,11 @@ namespace java::nio::file
 			"java.nio.file.FileSystemNotFoundException",
 			"()V"
 		) {}
-	FileSystemNotFoundException::FileSystemNotFoundException(jstring arg0)
+	FileSystemNotFoundException::FileSystemNotFoundException(JString arg0)
 		: java::lang::RuntimeException(
 			"java.nio.file.FileSystemNotFoundException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

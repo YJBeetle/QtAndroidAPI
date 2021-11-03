@@ -14,6 +14,7 @@ namespace android::icu::number
 {
 	class UnlocalizedNumberFormatter;
 }
+class JObject;
 
 namespace android::icu::number
 {
@@ -30,7 +31,7 @@ namespace android::icu::number
 		
 		// Methods
 		android::icu::number::NumberRangeFormatterSettings collapse(android::icu::number::NumberRangeFormatter_RangeCollapse arg0);
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint hashCode();
 		android::icu::number::NumberRangeFormatterSettings identityFallback(android::icu::number::NumberRangeFormatter_RangeIdentityFallback arg0);
 		android::icu::number::NumberRangeFormatterSettings numberFormatterBoth(android::icu::number::UnlocalizedNumberFormatter arg0);

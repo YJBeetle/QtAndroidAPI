@@ -2,10 +2,13 @@
 
 #include "../../../../../JObject.hpp"
 
+class JLongArray;
 namespace android::os
 {
 	class Parcel;
 }
+class JObject;
+class JString;
 
 namespace android::net::wifi::hotspot2::pps
 {
@@ -25,21 +28,21 @@ namespace android::net::wifi::hotspot2::pps
 		
 		// Methods
 		jint describeContents();
-		jboolean equals(jobject arg0);
-		jstring getFqdn();
-		jstring getFriendlyName();
-		jlongArray getMatchAllOis();
-		jlongArray getMatchAnyOis();
+		jboolean equals(JObject arg0);
+		JString getFqdn();
+		JString getFriendlyName();
+		JLongArray getMatchAllOis();
+		JLongArray getMatchAnyOis();
 		JObject getOtherHomePartnersList();
-		jlongArray getRoamingConsortiumOis();
+		JLongArray getRoamingConsortiumOis();
 		jint hashCode();
-		void setFqdn(jstring arg0);
-		void setFriendlyName(jstring arg0);
-		void setMatchAllOis(jlongArray arg0);
-		void setMatchAnyOis(jlongArray arg0);
+		void setFqdn(JString arg0);
+		void setFriendlyName(JString arg0);
+		void setMatchAllOis(JLongArray arg0);
+		void setMatchAnyOis(JLongArray arg0);
 		void setOtherHomePartnersList(JObject arg0);
-		void setRoamingConsortiumOis(jlongArray arg0);
-		jstring toString();
+		void setRoamingConsortiumOis(JLongArray arg0);
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::net::wifi::hotspot2::pps

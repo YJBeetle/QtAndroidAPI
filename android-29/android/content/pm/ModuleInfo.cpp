@@ -1,4 +1,7 @@
 #include "../../os/Parcel.hpp"
+#include "../../../JString.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./ModuleInfo.hpp"
 
 namespace android::content::pm
@@ -26,27 +29,27 @@ namespace android::content::pm
 			"()I"
 		);
 	}
-	jboolean ModuleInfo::equals(jobject arg0)
+	jboolean ModuleInfo::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jstring ModuleInfo::getName()
+	JString ModuleInfo::getName()
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
-	jstring ModuleInfo::getPackageName()
+	JString ModuleInfo::getPackageName()
 	{
 		return callObjectMethod(
 			"getPackageName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint ModuleInfo::hashCode()
 	{
@@ -62,12 +65,12 @@ namespace android::content::pm
 			"()Z"
 		);
 	}
-	jstring ModuleInfo::toString()
+	JString ModuleInfo::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void ModuleInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

@@ -2,6 +2,8 @@
 
 #include "../../../JObject.hpp"
 
+class JIntArray;
+class JArray;
 namespace android::content::res
 {
 	class Resources;
@@ -14,6 +16,7 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
 
 namespace android::content::res
 {
@@ -28,7 +31,7 @@ namespace android::content::res
 		ColorStateList(QJniObject obj);
 		
 		// Constructors
-		ColorStateList(jarray arg0, jintArray arg1);
+		ColorStateList(JArray arg0, JIntArray arg1);
 		
 		// Methods
 		static android::content::res::ColorStateList createFromXml(android::content::res::Resources arg0, JObject arg1);
@@ -36,11 +39,11 @@ namespace android::content::res
 		static android::content::res::ColorStateList valueOf(jint arg0);
 		jint describeContents();
 		jint getChangingConfigurations();
-		jint getColorForState(jintArray arg0, jint arg1);
+		jint getColorForState(JIntArray arg0, jint arg1);
 		jint getDefaultColor();
 		jboolean isOpaque();
 		jboolean isStateful();
-		jstring toString();
+		JString toString();
 		android::content::res::ColorStateList withAlpha(jint arg0);
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};

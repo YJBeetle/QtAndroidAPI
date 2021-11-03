@@ -2,10 +2,12 @@
 
 #include "../../JObject.hpp"
 
+class JIntArray;
 namespace android::os
 {
 	class UserHandle;
 }
+class JString;
 
 namespace android::os
 {
@@ -45,12 +47,12 @@ namespace android::os
 		
 		// Methods
 		static jlong getElapsedCpuTime();
-		static jintArray getExclusiveCores();
-		static jint getGidForName(jstring arg0);
+		static JIntArray getExclusiveCores();
+		static jint getGidForName(JString arg0);
 		static jlong getStartElapsedRealtime();
 		static jlong getStartUptimeMillis();
 		static jint getThreadPriority(jint arg0);
-		static jint getUidForName(jstring arg0);
+		static jint getUidForName(JString arg0);
 		static jboolean is64Bit();
 		static jboolean isApplicationUid(jint arg0);
 		static jboolean isIsolated();

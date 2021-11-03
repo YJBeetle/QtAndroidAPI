@@ -1,8 +1,15 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "../lang/Number.hpp"
 
+class JByteArray;
+class JCharArray;
+class JDoubleArray;
+class JIntArray;
+class JLongArray;
+class JArray;
+class JArray;
+class JArray;
 namespace java::io
 {
 	class ObjectInputStream;
@@ -11,6 +18,8 @@ namespace java::io
 {
 	class ObjectOutputStream;
 }
+class JObject;
+class JString;
 namespace java::lang
 {
 	class StringBuilder;
@@ -36,14 +45,14 @@ namespace java::math
 		BigInteger(QJniObject obj);
 		
 		// Constructors
-		BigInteger(jbyteArray arg0);
-		BigInteger(jstring arg0);
-		BigInteger(jint arg0, jbyteArray arg1);
+		BigInteger(JByteArray arg0);
+		BigInteger(JString arg0);
+		BigInteger(jint arg0, JByteArray arg1);
 		BigInteger(jint arg0, java::util::Random arg1);
-		BigInteger(jstring arg0, jint arg1);
-		BigInteger(jbyteArray arg0, jint arg1, jint arg2);
+		BigInteger(JString arg0, jint arg1);
+		BigInteger(JByteArray arg0, jint arg1, jint arg2);
 		BigInteger(jint arg0, jint arg1, java::util::Random arg2);
-		BigInteger(jint arg0, jbyteArray arg1, jint arg2, jint arg3);
+		BigInteger(jint arg0, JByteArray arg1, jint arg2, jint arg3);
 		
 		// Methods
 		static java::math::BigInteger probablePrime(jint arg0, java::util::Random arg1);
@@ -56,12 +65,12 @@ namespace java::math
 		jint bitLength();
 		jbyte byteValueExact();
 		java::math::BigInteger clearBit(jint arg0);
-		jint compareTo(jobject arg0);
+		jint compareTo(JObject arg0);
 		jint compareTo(java::math::BigInteger arg0);
 		java::math::BigInteger divide(java::math::BigInteger arg0);
-		jarray divideAndRemainder(java::math::BigInteger arg0);
+		JArray divideAndRemainder(java::math::BigInteger arg0);
 		jdouble doubleValue();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		java::math::BigInteger flipBit(jint arg0);
 		jfloat floatValue();
 		java::math::BigInteger gcd(java::math::BigInteger arg0);
@@ -90,12 +99,12 @@ namespace java::math
 		jshort shortValueExact();
 		jint signum();
 		java::math::BigInteger sqrt();
-		jarray sqrtAndRemainder();
+		JArray sqrtAndRemainder();
 		java::math::BigInteger subtract(java::math::BigInteger arg0);
 		jboolean testBit(jint arg0);
-		jbyteArray toByteArray();
-		jstring toString();
-		jstring toString(jint arg0);
+		JByteArray toByteArray();
+		JString toString();
+		JString toString(jint arg0);
 		java::math::BigInteger _xor(java::math::BigInteger arg0);
 	};
 } // namespace java::math

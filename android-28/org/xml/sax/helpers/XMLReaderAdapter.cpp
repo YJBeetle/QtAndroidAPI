@@ -1,3 +1,5 @@
+#include "../../../../JCharArray.hpp"
+#include "../../../../JString.hpp"
 #include "../../../../java/util/Locale.hpp"
 #include "../InputSource.hpp"
 #include "./XMLReaderAdapter.hpp"
@@ -23,12 +25,12 @@ namespace org::xml::sax::helpers
 		) {}
 	
 	// Methods
-	void XMLReaderAdapter::characters(jcharArray arg0, jint arg1, jint arg2)
+	void XMLReaderAdapter::characters(JCharArray arg0, jint arg1, jint arg2)
 	{
 		callMethod<void>(
 			"characters",
 			"([CII)V",
-			arg0,
+			arg0.object<jcharArray>(),
 			arg1,
 			arg2
 		);
@@ -40,40 +42,40 @@ namespace org::xml::sax::helpers
 			"()V"
 		);
 	}
-	void XMLReaderAdapter::endElement(jstring arg0, jstring arg1, jstring arg2)
+	void XMLReaderAdapter::endElement(JString arg0, JString arg1, JString arg2)
 	{
 		callMethod<void>(
 			"endElement",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1,
-			arg2
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2.object<jstring>()
 		);
 	}
-	void XMLReaderAdapter::endPrefixMapping(jstring arg0)
+	void XMLReaderAdapter::endPrefixMapping(JString arg0)
 	{
 		callMethod<void>(
 			"endPrefixMapping",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	void XMLReaderAdapter::ignorableWhitespace(jcharArray arg0, jint arg1, jint arg2)
+	void XMLReaderAdapter::ignorableWhitespace(JCharArray arg0, jint arg1, jint arg2)
 	{
 		callMethod<void>(
 			"ignorableWhitespace",
 			"([CII)V",
-			arg0,
+			arg0.object<jcharArray>(),
 			arg1,
 			arg2
 		);
 	}
-	void XMLReaderAdapter::parse(jstring arg0)
+	void XMLReaderAdapter::parse(JString arg0)
 	{
 		callMethod<void>(
 			"parse",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void XMLReaderAdapter::parse(org::xml::sax::InputSource arg0)
@@ -84,13 +86,13 @@ namespace org::xml::sax::helpers
 			arg0.object()
 		);
 	}
-	void XMLReaderAdapter::processingInstruction(jstring arg0, jstring arg1)
+	void XMLReaderAdapter::processingInstruction(JString arg0, JString arg1)
 	{
 		callMethod<void>(
 			"processingInstruction",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		);
 	}
 	void XMLReaderAdapter::setDTDHandler(JObject arg0)
@@ -141,12 +143,12 @@ namespace org::xml::sax::helpers
 			arg0.object()
 		);
 	}
-	void XMLReaderAdapter::skippedEntity(jstring arg0)
+	void XMLReaderAdapter::skippedEntity(JString arg0)
 	{
 		callMethod<void>(
 			"skippedEntity",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void XMLReaderAdapter::startDocument()
@@ -156,24 +158,24 @@ namespace org::xml::sax::helpers
 			"()V"
 		);
 	}
-	void XMLReaderAdapter::startElement(jstring arg0, jstring arg1, jstring arg2, JObject arg3)
+	void XMLReaderAdapter::startElement(JString arg0, JString arg1, JString arg2, JObject arg3)
 	{
 		callMethod<void>(
 			"startElement",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lorg/xml/sax/Attributes;)V",
-			arg0,
-			arg1,
-			arg2,
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2.object<jstring>(),
 			arg3.object()
 		);
 	}
-	void XMLReaderAdapter::startPrefixMapping(jstring arg0, jstring arg1)
+	void XMLReaderAdapter::startPrefixMapping(JString arg0, JString arg1)
 	{
 		callMethod<void>(
 			"startPrefixMapping",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		);
 	}
 } // namespace org::xml::sax::helpers

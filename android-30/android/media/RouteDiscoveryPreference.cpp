@@ -1,4 +1,6 @@
 #include "../os/Parcel.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./RouteDiscoveryPreference.hpp"
 
 namespace android::media
@@ -26,12 +28,12 @@ namespace android::media
 			"()I"
 		);
 	}
-	jboolean RouteDiscoveryPreference::equals(jobject arg0)
+	jboolean RouteDiscoveryPreference::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	JObject RouteDiscoveryPreference::getPreferredFeatures()
@@ -55,12 +57,12 @@ namespace android::media
 			"()Z"
 		);
 	}
-	jstring RouteDiscoveryPreference::toString()
+	JString RouteDiscoveryPreference::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void RouteDiscoveryPreference::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

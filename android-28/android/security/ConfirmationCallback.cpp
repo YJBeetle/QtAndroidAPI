@@ -1,3 +1,5 @@
+#include "../../JByteArray.hpp"
+#include "../../JThrowable.hpp"
 #include "./ConfirmationCallback.hpp"
 
 namespace android::security
@@ -22,12 +24,12 @@ namespace android::security
 			"()V"
 		);
 	}
-	void ConfirmationCallback::onConfirmed(jbyteArray arg0)
+	void ConfirmationCallback::onConfirmed(JByteArray arg0)
 	{
 		callMethod<void>(
 			"onConfirmed",
 			"([B)V",
-			arg0
+			arg0.object<jbyteArray>()
 		);
 	}
 	void ConfirmationCallback::onDismissed()
@@ -37,12 +39,12 @@ namespace android::security
 			"()V"
 		);
 	}
-	void ConfirmationCallback::onError(jthrowable arg0)
+	void ConfirmationCallback::onError(JThrowable arg0)
 	{
 		callMethod<void>(
 			"onError",
 			"(Ljava/lang/Throwable;)V",
-			arg0
+			arg0.object<jthrowable>()
 		);
 	}
 } // namespace android::security

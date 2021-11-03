@@ -1,3 +1,4 @@
+#include "../../JByteArray.hpp"
 #include "../../java/io/InputStream.hpp"
 #include "./Cipher.hpp"
 #include "./CipherInputStream.hpp"
@@ -47,20 +48,20 @@ namespace javax::crypto
 			"()I"
 		);
 	}
-	jint CipherInputStream::read(jbyteArray arg0)
+	jint CipherInputStream::read(JByteArray arg0)
 	{
 		return callMethod<jint>(
 			"read",
 			"([B)I",
-			arg0
+			arg0.object<jbyteArray>()
 		);
 	}
-	jint CipherInputStream::read(jbyteArray arg0, jint arg1, jint arg2)
+	jint CipherInputStream::read(JByteArray arg0, jint arg1, jint arg2)
 	{
 		return callMethod<jint>(
 			"read",
 			"([BII)I",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1,
 			arg2
 		);

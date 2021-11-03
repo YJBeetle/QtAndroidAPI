@@ -1,3 +1,4 @@
+#include "../../../JIntArray.hpp"
 #include "../../content/res/ColorStateList.hpp"
 #include "../../content/res/Resources_Theme.hpp"
 #include "../BlendMode.hpp"

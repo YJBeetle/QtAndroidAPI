@@ -6,6 +6,7 @@ namespace android::content
 {
 	class ContentProvider;
 }
+class JString;
 
 namespace android::content
 {

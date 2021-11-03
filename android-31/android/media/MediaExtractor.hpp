@@ -50,6 +50,7 @@ namespace java::io
 {
 	class FileDescriptor;
 }
+class JString;
 namespace java::nio
 {
 	class ByteBuffer;
@@ -99,8 +100,8 @@ namespace android::media
 		void setDataSource(android::content::res::AssetFileDescriptor arg0);
 		void setDataSource(android::media::MediaDataSource arg0);
 		void setDataSource(java::io::FileDescriptor arg0);
-		void setDataSource(jstring arg0);
-		void setDataSource(jstring arg0, JObject arg1);
+		void setDataSource(JString arg0);
+		void setDataSource(JString arg0, JObject arg1);
 		void setDataSource(android::content::Context arg0, android::net::Uri arg1, JObject arg2);
 		void setDataSource(java::io::FileDescriptor arg0, jlong arg1, jlong arg2);
 		void setLogSessionId(android::media::metrics::LogSessionId arg0);

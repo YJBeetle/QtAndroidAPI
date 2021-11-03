@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JIntArray;
+class JArray;
 namespace java::io
 {
 	class InputStream;
@@ -10,6 +12,8 @@ namespace java::io
 {
 	class OutputStream;
 }
+class JObject;
+class JString;
 namespace java::net
 {
 	class ContentHandler;
@@ -46,37 +50,37 @@ namespace java::net
 		
 		// Methods
 		static jboolean getDefaultAllowUserInteraction();
-		static jstring getDefaultRequestProperty(jstring arg0);
-		static jboolean getDefaultUseCaches(jstring arg0);
+		static JString getDefaultRequestProperty(JString arg0);
+		static jboolean getDefaultUseCaches(JString arg0);
 		static JObject getFileNameMap();
-		static jstring guessContentTypeFromName(jstring arg0);
-		static jstring guessContentTypeFromStream(java::io::InputStream arg0);
+		static JString guessContentTypeFromName(JString arg0);
+		static JString guessContentTypeFromStream(java::io::InputStream arg0);
 		static void setContentHandlerFactory(JObject arg0);
 		static void setDefaultAllowUserInteraction(jboolean arg0);
-		static void setDefaultRequestProperty(jstring arg0, jstring arg1);
-		static void setDefaultUseCaches(jstring arg0, jboolean arg1);
+		static void setDefaultRequestProperty(JString arg0, JString arg1);
+		static void setDefaultUseCaches(JString arg0, jboolean arg1);
 		static void setFileNameMap(JObject arg0);
-		void addRequestProperty(jstring arg0, jstring arg1);
+		void addRequestProperty(JString arg0, JString arg1);
 		void connect();
 		jboolean getAllowUserInteraction();
 		jint getConnectTimeout();
-		jobject getContent();
-		jobject getContent(jarray arg0);
-		jstring getContentEncoding();
+		JObject getContent();
+		JObject getContent(JArray arg0);
+		JString getContentEncoding();
 		jint getContentLength();
 		jlong getContentLengthLong();
-		jstring getContentType();
+		JString getContentType();
 		jlong getDate();
 		jboolean getDefaultUseCaches();
 		jboolean getDoInput();
 		jboolean getDoOutput();
 		jlong getExpiration();
-		jstring getHeaderField(jint arg0);
-		jstring getHeaderField(jstring arg0);
-		jlong getHeaderFieldDate(jstring arg0, jlong arg1);
-		jint getHeaderFieldInt(jstring arg0, jint arg1);
-		jstring getHeaderFieldKey(jint arg0);
-		jlong getHeaderFieldLong(jstring arg0, jlong arg1);
+		JString getHeaderField(jint arg0);
+		JString getHeaderField(JString arg0);
+		jlong getHeaderFieldDate(JString arg0, jlong arg1);
+		jint getHeaderFieldInt(JString arg0, jint arg1);
+		JString getHeaderFieldKey(jint arg0);
+		jlong getHeaderFieldLong(JString arg0, jlong arg1);
 		JObject getHeaderFields();
 		jlong getIfModifiedSince();
 		java::io::InputStream getInputStream();
@@ -85,7 +89,7 @@ namespace java::net
 		java::security::Permission getPermission();
 		jint getReadTimeout();
 		JObject getRequestProperties();
-		jstring getRequestProperty(jstring arg0);
+		JString getRequestProperty(JString arg0);
 		java::net::URL getURL();
 		jboolean getUseCaches();
 		void setAllowUserInteraction(jboolean arg0);
@@ -95,9 +99,9 @@ namespace java::net
 		void setDoOutput(jboolean arg0);
 		void setIfModifiedSince(jlong arg0);
 		void setReadTimeout(jint arg0);
-		void setRequestProperty(jstring arg0, jstring arg1);
+		void setRequestProperty(JString arg0, JString arg1);
 		void setUseCaches(jboolean arg0);
-		jstring toString();
+		JString toString();
 	};
 } // namespace java::net
 

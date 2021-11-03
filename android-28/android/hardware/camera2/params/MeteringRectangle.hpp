@@ -14,6 +14,8 @@ namespace android::util
 {
 	class Size;
 }
+class JObject;
+class JString;
 
 namespace android::hardware::camera2::params
 {
@@ -36,7 +38,7 @@ namespace android::hardware::camera2::params
 		
 		// Methods
 		jboolean equals(android::hardware::camera2::params::MeteringRectangle arg0);
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint getHeight();
 		jint getMeteringWeight();
 		android::graphics::Rect getRect();
@@ -46,7 +48,7 @@ namespace android::hardware::camera2::params
 		jint getX();
 		jint getY();
 		jint hashCode();
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::hardware::camera2::params
 

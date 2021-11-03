@@ -1,6 +1,5 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "../../text/AttributedCharacterIterator_Attribute.hpp"
 
 namespace java::lang
@@ -15,6 +14,8 @@ namespace java::lang
 {
 	class Integer;
 }
+class JObject;
+class JString;
 
 namespace java::awt::font
 {

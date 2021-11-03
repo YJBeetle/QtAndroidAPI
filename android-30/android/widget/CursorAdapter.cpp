@@ -3,6 +3,8 @@
 #include "../view/View.hpp"
 #include "../view/ViewGroup.hpp"
 #include "./Filter.hpp"
+#include "../../JString.hpp"
+#include "../../JObject.hpp"
 #include "./CursorAdapter.hpp"
 
 namespace android::widget
@@ -70,13 +72,13 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	jstring CursorAdapter::convertToString(JObject arg0)
+	JString CursorAdapter::convertToString(JObject arg0)
 	{
 		return callObjectMethod(
 			"convertToString",
 			"(Landroid/database/Cursor;)Ljava/lang/CharSequence;",
 			arg0.object()
-		).object<jstring>();
+		);
 	}
 	jint CursorAdapter::getCount()
 	{
@@ -123,13 +125,13 @@ namespace android::widget
 			"()Landroid/widget/FilterQueryProvider;"
 		);
 	}
-	jobject CursorAdapter::getItem(jint arg0)
+	JObject CursorAdapter::getItem(jint arg0)
 	{
 		return callObjectMethod(
 			"getItem",
 			"(I)Ljava/lang/Object;",
 			arg0
-		).object<jobject>();
+		);
 	}
 	jlong CursorAdapter::getItemId(jint arg0)
 	{
@@ -176,12 +178,12 @@ namespace android::widget
 			arg2.object()
 		);
 	}
-	JObject CursorAdapter::runQueryOnBackgroundThread(jstring arg0)
+	JObject CursorAdapter::runQueryOnBackgroundThread(JString arg0)
 	{
 		return callObjectMethod(
 			"runQueryOnBackgroundThread",
 			"(Ljava/lang/CharSequence;)Landroid/database/Cursor;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void CursorAdapter::setDropDownViewTheme(android::content::res::Resources_Theme arg0)

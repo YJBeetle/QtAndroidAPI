@@ -10,6 +10,7 @@ namespace android::view::autofill
 {
 	class AutofillId;
 }
+class JString;
 namespace java::util::regex
 {
 	class Pattern;
@@ -27,10 +28,10 @@ namespace android::service::autofill
 		CharSequenceTransformation_Builder(QJniObject obj);
 		
 		// Constructors
-		CharSequenceTransformation_Builder(android::view::autofill::AutofillId arg0, java::util::regex::Pattern arg1, jstring arg2);
+		CharSequenceTransformation_Builder(android::view::autofill::AutofillId arg0, java::util::regex::Pattern arg1, JString arg2);
 		
 		// Methods
-		android::service::autofill::CharSequenceTransformation_Builder addField(android::view::autofill::AutofillId arg0, java::util::regex::Pattern arg1, jstring arg2);
+		android::service::autofill::CharSequenceTransformation_Builder addField(android::view::autofill::AutofillId arg0, java::util::regex::Pattern arg1, JString arg2);
 		android::service::autofill::CharSequenceTransformation build();
 	};
 } // namespace android::service::autofill

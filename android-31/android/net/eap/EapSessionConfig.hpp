@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JByteArray;
 namespace android::net::eap
 {
 	class EapSessionConfig_EapAkaConfig;
@@ -22,6 +23,7 @@ namespace android::net::eap
 {
 	class EapSessionConfig_EapTtlsConfig;
 }
+class JObject;
 
 namespace android::net::eap
 {
@@ -37,10 +39,10 @@ namespace android::net::eap
 		// Constructors
 		
 		// Methods
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		android::net::eap::EapSessionConfig_EapAkaConfig getEapAkaConfig();
 		android::net::eap::EapSessionConfig_EapAkaPrimeConfig getEapAkaPrimeConfig();
-		jbyteArray getEapIdentity();
+		JByteArray getEapIdentity();
 		android::net::eap::EapSessionConfig_EapMsChapV2Config getEapMsChapV2Config();
 		android::net::eap::EapSessionConfig_EapSimConfig getEapSimConfig();
 		android::net::eap::EapSessionConfig_EapTtlsConfig getEapTtlsConfig();

@@ -1,7 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../view/View.hpp"
 #include "../view/ViewGroup.hpp"
 
 namespace android::content
@@ -24,6 +22,7 @@ namespace android::widget
 {
 	class Toolbar_LayoutParams;
 }
+class JString;
 
 namespace android::widget
 {
@@ -57,14 +56,14 @@ namespace android::widget
 		jint getCurrentContentInsetRight();
 		jint getCurrentContentInsetStart();
 		android::graphics::drawable::Drawable getLogo();
-		jstring getLogoDescription();
+		JString getLogoDescription();
 		JObject getMenu();
-		jstring getNavigationContentDescription();
+		JString getNavigationContentDescription();
 		android::graphics::drawable::Drawable getNavigationIcon();
 		android::graphics::drawable::Drawable getOverflowIcon();
 		jint getPopupTheme();
-		jstring getSubtitle();
-		jstring getTitle();
+		JString getSubtitle();
+		JString getTitle();
 		jint getTitleMarginBottom();
 		jint getTitleMarginEnd();
 		jint getTitleMarginStart();
@@ -82,9 +81,9 @@ namespace android::widget
 		void setLogo(android::graphics::drawable::Drawable arg0);
 		void setLogo(jint arg0);
 		void setLogoDescription(jint arg0);
-		void setLogoDescription(jstring arg0);
+		void setLogoDescription(JString arg0);
 		void setNavigationContentDescription(jint arg0);
-		void setNavigationContentDescription(jstring arg0);
+		void setNavigationContentDescription(JString arg0);
 		void setNavigationIcon(android::graphics::drawable::Drawable arg0);
 		void setNavigationIcon(jint arg0);
 		void setNavigationOnClickListener(JObject arg0);
@@ -92,11 +91,11 @@ namespace android::widget
 		void setOverflowIcon(android::graphics::drawable::Drawable arg0);
 		void setPopupTheme(jint arg0);
 		void setSubtitle(jint arg0);
-		void setSubtitle(jstring arg0);
+		void setSubtitle(JString arg0);
 		void setSubtitleTextAppearance(android::content::Context arg0, jint arg1);
 		void setSubtitleTextColor(jint arg0);
 		void setTitle(jint arg0);
-		void setTitle(jstring arg0);
+		void setTitle(JString arg0);
 		void setTitleMargin(jint arg0, jint arg1, jint arg2, jint arg3);
 		void setTitleMarginBottom(jint arg0);
 		void setTitleMarginEnd(jint arg0);

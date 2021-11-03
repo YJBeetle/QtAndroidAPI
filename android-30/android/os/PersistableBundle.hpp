@@ -1,6 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./BaseBundle.hpp"
 
 namespace android::os
@@ -15,6 +14,8 @@ namespace java::io
 {
 	class OutputStream;
 }
+class JObject;
+class JString;
 
 namespace android::os
 {
@@ -36,12 +37,12 @@ namespace android::os
 		
 		// Methods
 		static android::os::PersistableBundle readFromStream(java::io::InputStream arg0);
-		jobject clone();
+		JObject clone();
 		android::os::PersistableBundle deepCopy();
 		jint describeContents();
-		android::os::PersistableBundle getPersistableBundle(jstring arg0);
-		void putPersistableBundle(jstring arg0, android::os::PersistableBundle arg1);
-		jstring toString();
+		android::os::PersistableBundle getPersistableBundle(JString arg0);
+		void putPersistableBundle(JString arg0, android::os::PersistableBundle arg1);
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 		void writeToStream(java::io::OutputStream arg0);
 	};

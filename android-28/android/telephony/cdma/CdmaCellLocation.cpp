@@ -1,4 +1,6 @@
 #include "../../os/Bundle.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./CdmaCellLocation.hpp"
 
 namespace android::telephony::cdma
@@ -31,12 +33,12 @@ namespace android::telephony::cdma
 			arg0
 		);
 	}
-	jboolean CdmaCellLocation::equals(jobject arg0)
+	jboolean CdmaCellLocation::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	void CdmaCellLocation::fillInNotifierBundle(android::os::Bundle arg0)
@@ -118,12 +120,12 @@ namespace android::telephony::cdma
 			"()V"
 		);
 	}
-	jstring CdmaCellLocation::toString()
+	JString CdmaCellLocation::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::telephony::cdma
 

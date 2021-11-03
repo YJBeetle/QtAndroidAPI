@@ -1,5 +1,7 @@
 #include "../../lang/RuntimePermission.hpp"
+#include "../../../JString.hpp"
 #include "../../lang/Thread.hpp"
+#include "../../../JThrowable.hpp"
 #include "../HashSet.hpp"
 #include "./TimeUnit.hpp"
 #include "./atomic/AtomicInteger.hpp"
@@ -264,12 +266,12 @@ namespace java::util::concurrent
 			"()Ljava/util/List;"
 		);
 	}
-	jstring ThreadPoolExecutor::toString()
+	JString ThreadPoolExecutor::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::util::concurrent
 

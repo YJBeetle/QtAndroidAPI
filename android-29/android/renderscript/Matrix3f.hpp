@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JFloatArray;
 
 namespace android::renderscript
 {
@@ -16,11 +17,11 @@ namespace android::renderscript
 		
 		// Constructors
 		Matrix3f();
-		Matrix3f(jfloatArray arg0);
+		Matrix3f(JFloatArray arg0);
 		
 		// Methods
 		jfloat get(jint arg0, jint arg1);
-		jfloatArray getArray();
+		JFloatArray getArray();
 		void load(android::renderscript::Matrix3f arg0);
 		void loadIdentity();
 		void loadMultiply(android::renderscript::Matrix3f arg0, android::renderscript::Matrix3f arg1);

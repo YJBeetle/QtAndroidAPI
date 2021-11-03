@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JString;
 
 namespace android::view::inspector
 {
@@ -18,7 +19,7 @@ namespace android::view::inspector
 		IntFlagMapping();
 		
 		// Methods
-		void add(jint arg0, jint arg1, jstring arg2);
+		void add(jint arg0, jint arg1, JString arg2);
 		JObject get(jint arg0);
 	};
 } // namespace android::view::inspector

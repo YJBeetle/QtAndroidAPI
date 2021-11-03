@@ -1,3 +1,5 @@
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
 #include "./RetentionPolicy.hpp"
 
 namespace java::lang::annotation
@@ -34,22 +36,22 @@ namespace java::lang::annotation
 	// Constructors
 	
 	// Methods
-	java::lang::annotation::RetentionPolicy RetentionPolicy::valueOf(jstring arg0)
+	java::lang::annotation::RetentionPolicy RetentionPolicy::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"java.lang.annotation.RetentionPolicy",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/lang/annotation/RetentionPolicy;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray RetentionPolicy::values()
+	JArray RetentionPolicy::values()
 	{
 		return callStaticObjectMethod(
 			"java.lang.annotation.RetentionPolicy",
 			"values",
 			"()[Ljava/lang/annotation/RetentionPolicy;"
-		).object<jarray>();
+		);
 	}
 } // namespace java::lang::annotation
 

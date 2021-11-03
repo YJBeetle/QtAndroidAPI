@@ -10,6 +10,7 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
 
 namespace android::app
 {
@@ -33,12 +34,12 @@ namespace android::app
 		jint getInputType();
 		android::content::ComponentName getSearchActivity();
 		jint getSettingsDescriptionId();
-		jstring getSuggestAuthority();
-		jstring getSuggestIntentAction();
-		jstring getSuggestIntentData();
-		jstring getSuggestPackage();
-		jstring getSuggestPath();
-		jstring getSuggestSelection();
+		JString getSuggestAuthority();
+		JString getSuggestIntentAction();
+		JString getSuggestIntentData();
+		JString getSuggestPackage();
+		JString getSuggestPath();
+		JString getSuggestSelection();
 		jint getSuggestThreshold();
 		jint getVoiceLanguageId();
 		jint getVoiceLanguageModeId();

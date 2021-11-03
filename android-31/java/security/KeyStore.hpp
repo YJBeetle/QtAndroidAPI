@@ -2,6 +2,9 @@
 
 #include "../../JObject.hpp"
 
+class JByteArray;
+class JCharArray;
+class JArray;
 namespace java::io
 {
 	class File;
@@ -14,6 +17,8 @@ namespace java::io
 {
 	class OutputStream;
 }
+class JClass;
+class JString;
 namespace java::security
 {
 	class KeyStoreSpi;
@@ -45,35 +50,35 @@ namespace java::security
 		// Constructors
 		
 		// Methods
-		static jstring getDefaultType();
-		static java::security::KeyStore getInstance(jstring arg0);
-		static java::security::KeyStore getInstance(java::io::File arg0, jcharArray arg1);
+		static JString getDefaultType();
+		static java::security::KeyStore getInstance(JString arg0);
+		static java::security::KeyStore getInstance(java::io::File arg0, JCharArray arg1);
 		static java::security::KeyStore getInstance(java::io::File arg0, JObject arg1);
-		static java::security::KeyStore getInstance(jstring arg0, jstring arg1);
-		static java::security::KeyStore getInstance(jstring arg0, java::security::Provider arg1);
+		static java::security::KeyStore getInstance(JString arg0, JString arg1);
+		static java::security::KeyStore getInstance(JString arg0, java::security::Provider arg1);
 		JObject aliases();
-		jboolean containsAlias(jstring arg0);
-		void deleteEntry(jstring arg0);
-		jboolean entryInstanceOf(jstring arg0, jclass arg1);
-		java::security::cert::Certificate getCertificate(jstring arg0);
-		jstring getCertificateAlias(java::security::cert::Certificate arg0);
-		jarray getCertificateChain(jstring arg0);
-		java::util::Date getCreationDate(jstring arg0);
-		JObject getEntry(jstring arg0, JObject arg1);
-		JObject getKey(jstring arg0, jcharArray arg1);
+		jboolean containsAlias(JString arg0);
+		void deleteEntry(JString arg0);
+		jboolean entryInstanceOf(JString arg0, JClass arg1);
+		java::security::cert::Certificate getCertificate(JString arg0);
+		JString getCertificateAlias(java::security::cert::Certificate arg0);
+		JArray getCertificateChain(JString arg0);
+		java::util::Date getCreationDate(JString arg0);
+		JObject getEntry(JString arg0, JObject arg1);
+		JObject getKey(JString arg0, JCharArray arg1);
 		java::security::Provider getProvider();
-		jstring getType();
-		jboolean isCertificateEntry(jstring arg0);
-		jboolean isKeyEntry(jstring arg0);
+		JString getType();
+		jboolean isCertificateEntry(JString arg0);
+		jboolean isKeyEntry(JString arg0);
 		void load(JObject arg0);
-		void load(java::io::InputStream arg0, jcharArray arg1);
-		void setCertificateEntry(jstring arg0, java::security::cert::Certificate arg1);
-		void setEntry(jstring arg0, JObject arg1, JObject arg2);
-		void setKeyEntry(jstring arg0, jbyteArray arg1, jarray arg2);
-		void setKeyEntry(jstring arg0, JObject arg1, jcharArray arg2, jarray arg3);
+		void load(java::io::InputStream arg0, JCharArray arg1);
+		void setCertificateEntry(JString arg0, java::security::cert::Certificate arg1);
+		void setEntry(JString arg0, JObject arg1, JObject arg2);
+		void setKeyEntry(JString arg0, JByteArray arg1, JArray arg2);
+		void setKeyEntry(JString arg0, JObject arg1, JCharArray arg2, JArray arg3);
 		jint size();
 		void store(JObject arg0);
-		void store(java::io::OutputStream arg0, jcharArray arg1);
+		void store(java::io::OutputStream arg0, JCharArray arg1);
 	};
 } // namespace java::security
 

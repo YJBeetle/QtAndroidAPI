@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./ReceiverCallNotAllowedException.hpp"
 
 namespace android::content
@@ -8,11 +9,11 @@ namespace android::content
 	ReceiverCallNotAllowedException::ReceiverCallNotAllowedException(QJniObject obj) : android::util::AndroidRuntimeException(obj) {}
 	
 	// Constructors
-	ReceiverCallNotAllowedException::ReceiverCallNotAllowedException(jstring arg0)
+	ReceiverCallNotAllowedException::ReceiverCallNotAllowedException(JString arg0)
 		: android::util::AndroidRuntimeException(
 			"android.content.ReceiverCallNotAllowedException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

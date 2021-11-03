@@ -1,5 +1,7 @@
 #include "./AudioAttributes.hpp"
 #include "../os/Parcel.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./AudioPlaybackConfiguration.hpp"
 
 namespace android::media
@@ -27,12 +29,12 @@ namespace android::media
 			"()I"
 		);
 	}
-	jboolean AudioPlaybackConfiguration::equals(jobject arg0)
+	jboolean AudioPlaybackConfiguration::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	android::media::AudioAttributes AudioPlaybackConfiguration::getAudioAttributes()
@@ -49,12 +51,12 @@ namespace android::media
 			"()I"
 		);
 	}
-	jstring AudioPlaybackConfiguration::toString()
+	JString AudioPlaybackConfiguration::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void AudioPlaybackConfiguration::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

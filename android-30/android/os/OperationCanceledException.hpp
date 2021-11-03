@@ -1,9 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../../java/lang/Exception.hpp"
 #include "../../java/lang/RuntimeException.hpp"
 
+class JString;
 
 namespace android::os
 {
@@ -18,7 +17,7 @@ namespace android::os
 		
 		// Constructors
 		OperationCanceledException();
-		OperationCanceledException(jstring arg0);
+		OperationCanceledException(JString arg0);
 		
 		// Methods
 	};

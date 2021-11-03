@@ -1,3 +1,5 @@
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
 #include "./Currency_CurrencyUsage.hpp"
 
 namespace android::icu::util
@@ -26,22 +28,22 @@ namespace android::icu::util
 	// Constructors
 	
 	// Methods
-	android::icu::util::Currency_CurrencyUsage Currency_CurrencyUsage::valueOf(jstring arg0)
+	android::icu::util::Currency_CurrencyUsage Currency_CurrencyUsage::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.icu.util.Currency$CurrencyUsage",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/icu/util/Currency$CurrencyUsage;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray Currency_CurrencyUsage::values()
+	JArray Currency_CurrencyUsage::values()
 	{
 		return callStaticObjectMethod(
 			"android.icu.util.Currency$CurrencyUsage",
 			"values",
 			"()[Landroid/icu/util/Currency$CurrencyUsage;"
-		).object<jarray>();
+		);
 	}
 } // namespace android::icu::util
 

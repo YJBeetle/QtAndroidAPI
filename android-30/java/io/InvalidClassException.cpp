@@ -1,41 +1,42 @@
+#include "../../JString.hpp"
 #include "./InvalidClassException.hpp"
 
 namespace java::io
 {
 	// Fields
-	jstring InvalidClassException::classname()
+	JString InvalidClassException::classname()
 	{
 		return getObjectField(
 			"classname",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QJniObject forward
 	InvalidClassException::InvalidClassException(QJniObject obj) : java::io::ObjectStreamException(obj) {}
 	
 	// Constructors
-	InvalidClassException::InvalidClassException(jstring arg0)
+	InvalidClassException::InvalidClassException(JString arg0)
 		: java::io::ObjectStreamException(
 			"java.io.InvalidClassException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	InvalidClassException::InvalidClassException(jstring arg0, jstring arg1)
+	InvalidClassException::InvalidClassException(JString arg0, JString arg1)
 		: java::io::ObjectStreamException(
 			"java.io.InvalidClassException",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		) {}
 	
 	// Methods
-	jstring InvalidClassException::getMessage()
+	JString InvalidClassException::getMessage()
 	{
 		return callObjectMethod(
 			"getMessage",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::io
 

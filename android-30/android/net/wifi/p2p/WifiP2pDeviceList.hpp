@@ -10,6 +10,7 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
 
 namespace android::net::wifi::p2p
 {
@@ -29,9 +30,9 @@ namespace android::net::wifi::p2p
 		
 		// Methods
 		jint describeContents();
-		android::net::wifi::p2p::WifiP2pDevice get(jstring arg0);
+		android::net::wifi::p2p::WifiP2pDevice get(JString arg0);
 		JObject getDeviceList();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::net::wifi::p2p

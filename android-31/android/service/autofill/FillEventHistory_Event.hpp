@@ -6,6 +6,7 @@ namespace android::os
 {
 	class Bundle;
 }
+class JString;
 
 namespace android::service::autofill
 {
@@ -36,14 +37,14 @@ namespace android::service::autofill
 		// Methods
 		JObject getChangedFields();
 		android::os::Bundle getClientState();
-		jstring getDatasetId();
+		JString getDatasetId();
 		JObject getFieldsClassification();
 		JObject getIgnoredDatasetIds();
 		JObject getManuallyEnteredField();
 		jint getNoSaveUiReason();
 		JObject getSelectedDatasetIds();
 		jint getType();
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::service::autofill
 

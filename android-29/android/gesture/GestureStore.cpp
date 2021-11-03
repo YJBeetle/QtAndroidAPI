@@ -1,6 +1,7 @@
 #include "./Gesture.hpp"
 #include "../../java/io/InputStream.hpp"
 #include "../../java/io/OutputStream.hpp"
+#include "../../JString.hpp"
 #include "../../java/util/ArrayList.hpp"
 #include "./GestureStore.hpp"
 
@@ -47,12 +48,12 @@ namespace android::gesture
 		) {}
 	
 	// Methods
-	void GestureStore::addGesture(jstring arg0, android::gesture::Gesture arg1)
+	void GestureStore::addGesture(JString arg0, android::gesture::Gesture arg1)
 	{
 		callMethod<void>(
 			"addGesture",
 			"(Ljava/lang/String;Landroid/gesture/Gesture;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
@@ -63,12 +64,12 @@ namespace android::gesture
 			"()Ljava/util/Set;"
 		);
 	}
-	java::util::ArrayList GestureStore::getGestures(jstring arg0)
+	java::util::ArrayList GestureStore::getGestures(JString arg0)
 	{
 		return callObjectMethod(
 			"getGestures",
 			"(Ljava/lang/String;)Ljava/util/ArrayList;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	jint GestureStore::getOrientationStyle()
@@ -117,20 +118,20 @@ namespace android::gesture
 			arg0.object()
 		);
 	}
-	void GestureStore::removeEntry(jstring arg0)
+	void GestureStore::removeEntry(JString arg0)
 	{
 		callMethod<void>(
 			"removeEntry",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	void GestureStore::removeGesture(jstring arg0, android::gesture::Gesture arg1)
+	void GestureStore::removeGesture(JString arg0, android::gesture::Gesture arg1)
 	{
 		callMethod<void>(
 			"removeGesture",
 			"(Ljava/lang/String;Landroid/gesture/Gesture;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}

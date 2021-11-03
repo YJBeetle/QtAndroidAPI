@@ -1,7 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../view/View.hpp"
 #include "../view/ViewGroup.hpp"
 
 namespace android::content
@@ -28,6 +26,7 @@ namespace android::widget
 {
 	class GridLayout_Spec;
 }
+class JString;
 
 namespace android::widget
 {
@@ -70,7 +69,7 @@ namespace android::widget
 		static android::widget::GridLayout_Spec spec(jint arg0, jint arg1, jfloat arg2);
 		static android::widget::GridLayout_Spec spec(jint arg0, jint arg1, android::widget::GridLayout_Alignment arg2, jfloat arg3);
 		android::widget::GridLayout_LayoutParams generateLayoutParams(JObject arg0);
-		jstring getAccessibilityClassName();
+		JString getAccessibilityClassName();
 		jint getAlignmentMode();
 		jint getColumnCount();
 		jint getOrientation();

@@ -1,9 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../view/View.hpp"
-#include "../view/ViewGroup.hpp"
-#include "./AdapterView.hpp"
 #include "./AbsSpinner.hpp"
 
 namespace android::content
@@ -34,6 +30,7 @@ namespace android::view::animation
 {
 	class Transformation;
 }
+class JString;
 
 namespace android::widget
 {
@@ -56,7 +53,7 @@ namespace android::widget
 		jboolean dispatchKeyEvent(android::view::KeyEvent arg0);
 		void dispatchSetSelected(jboolean arg0);
 		android::view::ViewGroup_LayoutParams generateLayoutParams(JObject arg0);
-		jstring getAccessibilityClassName();
+		JString getAccessibilityClassName();
 		jboolean onDown(android::view::MotionEvent arg0);
 		jboolean onFling(android::view::MotionEvent arg0, android::view::MotionEvent arg1, jfloat arg2, jfloat arg3);
 		jboolean onKeyDown(jint arg0, android::view::KeyEvent arg1);

@@ -1,40 +1,41 @@
+#include "../../JString.hpp"
 #include "../../java/time/LocalTime.hpp"
 #include "./UiModeManager.hpp"
 
 namespace android::app
 {
 	// Fields
-	jstring UiModeManager::ACTION_ENTER_CAR_MODE()
+	JString UiModeManager::ACTION_ENTER_CAR_MODE()
 	{
 		return getStaticObjectField(
 			"android.app.UiModeManager",
 			"ACTION_ENTER_CAR_MODE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring UiModeManager::ACTION_ENTER_DESK_MODE()
+	JString UiModeManager::ACTION_ENTER_DESK_MODE()
 	{
 		return getStaticObjectField(
 			"android.app.UiModeManager",
 			"ACTION_ENTER_DESK_MODE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring UiModeManager::ACTION_EXIT_CAR_MODE()
+	JString UiModeManager::ACTION_EXIT_CAR_MODE()
 	{
 		return getStaticObjectField(
 			"android.app.UiModeManager",
 			"ACTION_EXIT_CAR_MODE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring UiModeManager::ACTION_EXIT_DESK_MODE()
+	JString UiModeManager::ACTION_EXIT_DESK_MODE()
 	{
 		return getStaticObjectField(
 			"android.app.UiModeManager",
 			"ACTION_EXIT_DESK_MODE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint UiModeManager::DISABLE_CAR_MODE_GO_HOME()
 	{

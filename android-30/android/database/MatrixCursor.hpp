@@ -1,12 +1,15 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./AbstractCursor.hpp"
 
+class JByteArray;
+class JObjectArray;
+class JArray;
 namespace android::database
 {
 	class MatrixCursor_RowBuilder;
 }
+class JString;
 
 namespace android::database
 {
@@ -20,21 +23,21 @@ namespace android::database
 		MatrixCursor(QJniObject obj);
 		
 		// Constructors
-		MatrixCursor(jarray arg0);
-		MatrixCursor(jarray arg0, jint arg1);
+		MatrixCursor(JArray arg0);
+		MatrixCursor(JArray arg0, jint arg1);
 		
 		// Methods
-		void addRow(jobjectArray arg0);
+		void addRow(JObjectArray arg0);
 		void addRow(JObject arg0);
-		jbyteArray getBlob(jint arg0);
-		jarray getColumnNames();
+		JByteArray getBlob(jint arg0);
+		JArray getColumnNames();
 		jint getCount();
 		jdouble getDouble(jint arg0);
 		jfloat getFloat(jint arg0);
 		jint getInt(jint arg0);
 		jlong getLong(jint arg0);
 		jshort getShort(jint arg0);
-		jstring getString(jint arg0);
+		JString getString(jint arg0);
 		jint getType(jint arg0);
 		jboolean isNull(jint arg0);
 		android::database::MatrixCursor_RowBuilder newRow();

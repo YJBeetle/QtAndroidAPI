@@ -1,3 +1,5 @@
+#include "../../../../../JString.hpp"
+#include "../../../../../JThrowable.hpp"
 #include "./IkeInternalException.hpp"
 
 namespace android::net::ipsec::ike::exceptions
@@ -8,18 +10,18 @@ namespace android::net::ipsec::ike::exceptions
 	IkeInternalException::IkeInternalException(QJniObject obj) : android::net::ipsec::ike::exceptions::IkeNonProtocolException(obj) {}
 	
 	// Constructors
-	IkeInternalException::IkeInternalException(jthrowable arg0)
+	IkeInternalException::IkeInternalException(JThrowable arg0)
 		: android::net::ipsec::ike::exceptions::IkeNonProtocolException(
 			"android.net.ipsec.ike.exceptions.IkeInternalException",
 			"(Ljava/lang/Throwable;)V",
-			arg0
+			arg0.object<jthrowable>()
 		) {}
-	IkeInternalException::IkeInternalException(jstring arg0, jthrowable arg1)
+	IkeInternalException::IkeInternalException(JString arg0, JThrowable arg1)
 		: android::net::ipsec::ike::exceptions::IkeNonProtocolException(
 			"android.net.ipsec.ike.exceptions.IkeInternalException",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
 		) {}
 	
 	// Methods

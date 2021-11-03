@@ -1,3 +1,5 @@
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./SearchResult_MatchRange.hpp"
 
 namespace android::app::appsearch
@@ -17,12 +19,12 @@ namespace android::app::appsearch
 		) {}
 	
 	// Methods
-	jboolean SearchResult_MatchRange::equals(jobject arg0)
+	jboolean SearchResult_MatchRange::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint SearchResult_MatchRange::getEnd()
@@ -46,12 +48,12 @@ namespace android::app::appsearch
 			"()I"
 		);
 	}
-	jstring SearchResult_MatchRange::toString()
+	JString SearchResult_MatchRange::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::app::appsearch
 

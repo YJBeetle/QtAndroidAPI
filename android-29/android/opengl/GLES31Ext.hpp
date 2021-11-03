@@ -2,6 +2,10 @@
 
 #include "../../JObject.hpp"
 
+class JByteArray;
+class JIntArray;
+class JArray;
+class JString;
 namespace java::nio
 {
 	class ByteBuffer;
@@ -234,44 +238,44 @@ namespace android::opengl
 		static void glCopyImageSubDataEXT(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8, jint arg9, jint arg10, jint arg11, jint arg12, jint arg13, jint arg14);
 		static void glDebugMessageCallbackKHR(JObject arg0);
 		static void glDebugMessageControlKHR(jint arg0, jint arg1, jint arg2, jint arg3, java::nio::IntBuffer arg4, jboolean arg5);
-		static void glDebugMessageControlKHR(jint arg0, jint arg1, jint arg2, jint arg3, jintArray arg4, jint arg5, jboolean arg6);
-		static void glDebugMessageInsertKHR(jint arg0, jint arg1, jint arg2, jint arg3, jstring arg4);
+		static void glDebugMessageControlKHR(jint arg0, jint arg1, jint arg2, jint arg3, JIntArray arg4, jint arg5, jboolean arg6);
+		static void glDebugMessageInsertKHR(jint arg0, jint arg1, jint arg2, jint arg3, JString arg4);
 		static void glDisableiEXT(jint arg0, jint arg1);
 		static void glEnableiEXT(jint arg0, jint arg1);
 		static void glFramebufferTextureEXT(jint arg0, jint arg1, jint arg2, jint arg3);
 		static JObject glGetDebugMessageCallbackKHR();
-		static jarray glGetDebugMessageLogKHR(jint arg0, java::nio::IntBuffer arg1, java::nio::IntBuffer arg2, java::nio::IntBuffer arg3, java::nio::IntBuffer arg4);
-		static jarray glGetDebugMessageLogKHR(jint arg0, jintArray arg1, jint arg2, jintArray arg3, jint arg4, jintArray arg5, jint arg6, jintArray arg7, jint arg8);
+		static JArray glGetDebugMessageLogKHR(jint arg0, java::nio::IntBuffer arg1, java::nio::IntBuffer arg2, java::nio::IntBuffer arg3, java::nio::IntBuffer arg4);
+		static JArray glGetDebugMessageLogKHR(jint arg0, JIntArray arg1, jint arg2, JIntArray arg3, jint arg4, JIntArray arg5, jint arg6, JIntArray arg7, jint arg8);
 		static jint glGetDebugMessageLogKHR(jint arg0, java::nio::IntBuffer arg1, java::nio::IntBuffer arg2, java::nio::IntBuffer arg3, java::nio::IntBuffer arg4, java::nio::IntBuffer arg5, java::nio::ByteBuffer arg6);
-		static jint glGetDebugMessageLogKHR(jint arg0, jint arg1, jintArray arg2, jint arg3, jintArray arg4, jint arg5, jintArray arg6, jint arg7, jintArray arg8, jint arg9, jintArray arg10, jint arg11, jbyteArray arg12, jint arg13);
-		static jstring glGetObjectLabelKHR(jint arg0, jint arg1);
-		static jstring glGetObjectPtrLabelKHR(jlong arg0);
+		static jint glGetDebugMessageLogKHR(jint arg0, jint arg1, JIntArray arg2, jint arg3, JIntArray arg4, jint arg5, JIntArray arg6, jint arg7, JIntArray arg8, jint arg9, JIntArray arg10, jint arg11, JByteArray arg12, jint arg13);
+		static JString glGetObjectLabelKHR(jint arg0, jint arg1);
+		static JString glGetObjectPtrLabelKHR(jlong arg0);
 		static void glGetSamplerParameterIivEXT(jint arg0, jint arg1, java::nio::IntBuffer arg2);
-		static void glGetSamplerParameterIivEXT(jint arg0, jint arg1, jintArray arg2, jint arg3);
+		static void glGetSamplerParameterIivEXT(jint arg0, jint arg1, JIntArray arg2, jint arg3);
 		static void glGetSamplerParameterIuivEXT(jint arg0, jint arg1, java::nio::IntBuffer arg2);
-		static void glGetSamplerParameterIuivEXT(jint arg0, jint arg1, jintArray arg2, jint arg3);
+		static void glGetSamplerParameterIuivEXT(jint arg0, jint arg1, JIntArray arg2, jint arg3);
 		static void glGetTexParameterIivEXT(jint arg0, jint arg1, java::nio::IntBuffer arg2);
-		static void glGetTexParameterIivEXT(jint arg0, jint arg1, jintArray arg2, jint arg3);
+		static void glGetTexParameterIivEXT(jint arg0, jint arg1, JIntArray arg2, jint arg3);
 		static void glGetTexParameterIuivEXT(jint arg0, jint arg1, java::nio::IntBuffer arg2);
-		static void glGetTexParameterIuivEXT(jint arg0, jint arg1, jintArray arg2, jint arg3);
+		static void glGetTexParameterIuivEXT(jint arg0, jint arg1, JIntArray arg2, jint arg3);
 		static jboolean glIsEnablediEXT(jint arg0, jint arg1);
 		static void glMinSampleShadingOES(jfloat arg0);
-		static void glObjectLabelKHR(jint arg0, jint arg1, jint arg2, jstring arg3);
-		static void glObjectPtrLabelKHR(jlong arg0, jstring arg1);
+		static void glObjectLabelKHR(jint arg0, jint arg1, jint arg2, JString arg3);
+		static void glObjectPtrLabelKHR(jlong arg0, JString arg1);
 		static void glPatchParameteriEXT(jint arg0, jint arg1);
 		static void glPopDebugGroupKHR();
 		static void glPrimitiveBoundingBoxEXT(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, jfloat arg4, jfloat arg5, jfloat arg6, jfloat arg7);
-		static void glPushDebugGroupKHR(jint arg0, jint arg1, jint arg2, jstring arg3);
+		static void glPushDebugGroupKHR(jint arg0, jint arg1, jint arg2, JString arg3);
 		static void glSamplerParameterIivEXT(jint arg0, jint arg1, java::nio::IntBuffer arg2);
-		static void glSamplerParameterIivEXT(jint arg0, jint arg1, jintArray arg2, jint arg3);
+		static void glSamplerParameterIivEXT(jint arg0, jint arg1, JIntArray arg2, jint arg3);
 		static void glSamplerParameterIuivEXT(jint arg0, jint arg1, java::nio::IntBuffer arg2);
-		static void glSamplerParameterIuivEXT(jint arg0, jint arg1, jintArray arg2, jint arg3);
+		static void glSamplerParameterIuivEXT(jint arg0, jint arg1, JIntArray arg2, jint arg3);
 		static void glTexBufferEXT(jint arg0, jint arg1, jint arg2);
 		static void glTexBufferRangeEXT(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4);
 		static void glTexParameterIivEXT(jint arg0, jint arg1, java::nio::IntBuffer arg2);
-		static void glTexParameterIivEXT(jint arg0, jint arg1, jintArray arg2, jint arg3);
+		static void glTexParameterIivEXT(jint arg0, jint arg1, JIntArray arg2, jint arg3);
 		static void glTexParameterIuivEXT(jint arg0, jint arg1, java::nio::IntBuffer arg2);
-		static void glTexParameterIuivEXT(jint arg0, jint arg1, jintArray arg2, jint arg3);
+		static void glTexParameterIuivEXT(jint arg0, jint arg1, JIntArray arg2, jint arg3);
 		static void glTexStorage3DMultisampleOES(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jboolean arg6);
 	};
 } // namespace android::opengl

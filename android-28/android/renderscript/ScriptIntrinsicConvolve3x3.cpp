@@ -1,3 +1,4 @@
+#include "../../JFloatArray.hpp"
 #include "./Allocation.hpp"
 #include "./Element.hpp"
 #include "./RenderScript.hpp"
@@ -57,12 +58,12 @@ namespace android::renderscript
 			"()Landroid/renderscript/Script$KernelID;"
 		);
 	}
-	void ScriptIntrinsicConvolve3x3::setCoefficients(jfloatArray arg0)
+	void ScriptIntrinsicConvolve3x3::setCoefficients(JFloatArray arg0)
 	{
 		callMethod<void>(
 			"setCoefficients",
 			"([F)V",
-			arg0
+			arg0.object<jfloatArray>()
 		);
 	}
 	void ScriptIntrinsicConvolve3x3::setInput(android::renderscript::Allocation arg0)

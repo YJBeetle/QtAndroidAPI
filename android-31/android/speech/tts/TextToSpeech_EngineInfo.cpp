@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./TextToSpeech_EngineInfo.hpp"
 
 namespace android::speech::tts
@@ -9,19 +10,19 @@ namespace android::speech::tts
 			"icon"
 		);
 	}
-	jstring TextToSpeech_EngineInfo::label()
+	JString TextToSpeech_EngineInfo::label()
 	{
 		return getObjectField(
 			"label",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TextToSpeech_EngineInfo::name()
+	JString TextToSpeech_EngineInfo::name()
 	{
 		return getObjectField(
 			"name",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QJniObject forward
@@ -35,12 +36,12 @@ namespace android::speech::tts
 		) {}
 	
 	// Methods
-	jstring TextToSpeech_EngineInfo::toString()
+	JString TextToSpeech_EngineInfo::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::speech::tts
 

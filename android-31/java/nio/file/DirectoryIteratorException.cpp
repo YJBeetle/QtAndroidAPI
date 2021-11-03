@@ -1,5 +1,6 @@
 #include "../../io/IOException.hpp"
 #include "../../io/ObjectInputStream.hpp"
+#include "../../../JThrowable.hpp"
 #include "./DirectoryIteratorException.hpp"
 
 namespace java::nio::file

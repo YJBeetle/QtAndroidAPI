@@ -1,3 +1,5 @@
+#include "../../JByteArray.hpp"
+#include "../../JString.hpp"
 #include "./SecureRandomSpi.hpp"
 
 namespace java::security
@@ -15,12 +17,12 @@ namespace java::security
 		) {}
 	
 	// Methods
-	jstring SecureRandomSpi::toString()
+	JString SecureRandomSpi::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::security
 

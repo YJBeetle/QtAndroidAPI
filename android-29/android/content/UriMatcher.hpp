@@ -6,6 +6,7 @@ namespace android::net
 {
 	class Uri;
 }
+class JString;
 
 namespace android::content
 {
@@ -23,7 +24,7 @@ namespace android::content
 		UriMatcher(jint arg0);
 		
 		// Methods
-		void addURI(jstring arg0, jstring arg1, jint arg2);
+		void addURI(JString arg0, JString arg1, jint arg2);
 		jint match(android::net::Uri arg0);
 	};
 } // namespace android::content

@@ -1,6 +1,7 @@
 #include "../../content/Context.hpp"
 #include "../../content/Intent.hpp"
 #include "../../net/Uri.hpp"
+#include "../../../JString.hpp"
 #include "./DelegatedAdminReceiver.hpp"
 
 namespace android::app::admin
@@ -18,7 +19,7 @@ namespace android::app::admin
 		) {}
 	
 	// Methods
-	jstring DelegatedAdminReceiver::onChoosePrivateKeyAlias(android::content::Context arg0, android::content::Intent arg1, jint arg2, android::net::Uri arg3, jstring arg4)
+	JString DelegatedAdminReceiver::onChoosePrivateKeyAlias(android::content::Context arg0, android::content::Intent arg1, jint arg2, android::net::Uri arg3, JString arg4)
 	{
 		return callObjectMethod(
 			"onChoosePrivateKeyAlias",
@@ -27,8 +28,8 @@ namespace android::app::admin
 			arg1.object(),
 			arg2,
 			arg3.object(),
-			arg4
-		).object<jstring>();
+			arg4.object<jstring>()
+		);
 	}
 	void DelegatedAdminReceiver::onNetworkLogsAvailable(android::content::Context arg0, android::content::Intent arg1, jlong arg2, jint arg3)
 	{

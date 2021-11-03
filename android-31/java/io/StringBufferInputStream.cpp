@@ -1,3 +1,5 @@
+#include "../../JByteArray.hpp"
+#include "../../JString.hpp"
 #include "./StringBufferInputStream.hpp"
 
 namespace java::io
@@ -8,11 +10,11 @@ namespace java::io
 	StringBufferInputStream::StringBufferInputStream(QJniObject obj) : java::io::InputStream(obj) {}
 	
 	// Constructors
-	StringBufferInputStream::StringBufferInputStream(jstring arg0)
+	StringBufferInputStream::StringBufferInputStream(JString arg0)
 		: java::io::InputStream(
 			"java.io.StringBufferInputStream",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods
@@ -30,12 +32,12 @@ namespace java::io
 			"()I"
 		);
 	}
-	jint StringBufferInputStream::read(jbyteArray arg0, jint arg1, jint arg2)
+	jint StringBufferInputStream::read(JByteArray arg0, jint arg1, jint arg2)
 	{
 		return callMethod<jint>(
 			"read",
 			"([BII)I",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1,
 			arg2
 		);

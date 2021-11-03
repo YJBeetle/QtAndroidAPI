@@ -1,4 +1,7 @@
+#include "../../JByteArray.hpp"
+#include "../../JCharArray.hpp"
 #include "../io/OutputStream.hpp"
+#include "../../JString.hpp"
 #include "../nio/ByteBuffer.hpp"
 #include "./Base64_Encoder.hpp"
 
@@ -12,21 +15,21 @@ namespace java::util
 	// Constructors
 	
 	// Methods
-	jbyteArray Base64_Encoder::encode(jbyteArray arg0)
+	JByteArray Base64_Encoder::encode(JByteArray arg0)
 	{
 		return callObjectMethod(
 			"encode",
 			"([B)[B",
-			arg0
-		).object<jbyteArray>();
+			arg0.object<jbyteArray>()
+		);
 	}
-	jint Base64_Encoder::encode(jbyteArray arg0, jbyteArray arg1)
+	jint Base64_Encoder::encode(JByteArray arg0, JByteArray arg1)
 	{
 		return callMethod<jint>(
 			"encode",
 			"([B[B)I",
-			arg0,
-			arg1
+			arg0.object<jbyteArray>(),
+			arg1.object<jbyteArray>()
 		);
 	}
 	java::nio::ByteBuffer Base64_Encoder::encode(java::nio::ByteBuffer arg0)
@@ -37,13 +40,13 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	jstring Base64_Encoder::encodeToString(jbyteArray arg0)
+	JString Base64_Encoder::encodeToString(JByteArray arg0)
 	{
 		return callObjectMethod(
 			"encodeToString",
 			"([B)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
+			arg0.object<jbyteArray>()
+		);
 	}
 	java::util::Base64_Encoder Base64_Encoder::withoutPadding()
 	{

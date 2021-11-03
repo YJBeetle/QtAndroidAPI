@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./ParserConfigurationException.hpp"
 
 namespace javax::xml::parsers
@@ -13,11 +14,11 @@ namespace javax::xml::parsers
 			"javax.xml.parsers.ParserConfigurationException",
 			"()V"
 		) {}
-	ParserConfigurationException::ParserConfigurationException(jstring arg0)
+	ParserConfigurationException::ParserConfigurationException(JString arg0)
 		: java::lang::Exception(
 			"javax.xml.parsers.ParserConfigurationException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

@@ -30,6 +30,7 @@ namespace java::io
 {
 	class File;
 }
+class JString;
 
 namespace android::telephony
 {
@@ -37,11 +38,11 @@ namespace android::telephony
 	{
 	public:
 		// Fields
-		static jstring DEFAULT_TOP_LEVEL_TEMP_DIRECTORY();
-		static jstring EXTRA_MBMS_COMPLETED_FILE_URI();
-		static jstring EXTRA_MBMS_DOWNLOAD_REQUEST();
-		static jstring EXTRA_MBMS_DOWNLOAD_RESULT();
-		static jstring EXTRA_MBMS_FILE_INFO();
+		static JString DEFAULT_TOP_LEVEL_TEMP_DIRECTORY();
+		static JString EXTRA_MBMS_COMPLETED_FILE_URI();
+		static JString EXTRA_MBMS_DOWNLOAD_REQUEST();
+		static JString EXTRA_MBMS_DOWNLOAD_RESULT();
+		static JString EXTRA_MBMS_FILE_INFO();
 		static jint RESULT_CANCELLED();
 		static jint RESULT_DOWNLOAD_FAILURE();
 		static jint RESULT_EXPIRED();

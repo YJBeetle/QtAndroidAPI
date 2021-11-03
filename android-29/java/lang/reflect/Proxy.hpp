@@ -2,10 +2,15 @@
 
 #include "../../../JObject.hpp"
 
+class JArray;
+class JObjectArray;
+class JClass;
 namespace java::lang
 {
 	class ClassLoader;
 }
+class JObject;
+class JString;
 namespace java::lang::invoke
 {
 	class MethodHandle;
@@ -45,10 +50,10 @@ namespace java::lang::reflect
 		// Constructors
 		
 		// Methods
-		static JObject getInvocationHandler(jobject arg0);
-		static jclass getProxyClass(java::lang::ClassLoader arg0, jarray arg1);
-		static jboolean isProxyClass(jclass arg0);
-		static jobject newProxyInstance(java::lang::ClassLoader arg0, jarray arg1, JObject arg2);
+		static JObject getInvocationHandler(JObject arg0);
+		static JClass getProxyClass(java::lang::ClassLoader arg0, JArray arg1);
+		static jboolean isProxyClass(JClass arg0);
+		static JObject newProxyInstance(java::lang::ClassLoader arg0, JArray arg1, JObject arg2);
 	};
 } // namespace java::lang::reflect
 

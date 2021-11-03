@@ -10,6 +10,8 @@
 #include "../../os/Handler.hpp"
 #include "../../os/ResultReceiver.hpp"
 #include "../../view/KeyEvent.hpp"
+#include "../../../JString.hpp"
+#include "../../../JString.hpp"
 #include "./MediaController.hpp"
 
 namespace android::media::session
@@ -67,12 +69,12 @@ namespace android::media::session
 			"()Landroid/media/MediaMetadata;"
 		);
 	}
-	jstring MediaController::getPackageName()
+	JString MediaController::getPackageName()
 	{
 		return callObjectMethod(
 			"getPackageName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::media::session::MediaController_PlaybackInfo MediaController::getPlaybackInfo()
 	{
@@ -95,12 +97,12 @@ namespace android::media::session
 			"()Ljava/util/List;"
 		);
 	}
-	jstring MediaController::getQueueTitle()
+	JString MediaController::getQueueTitle()
 	{
 		return callObjectMethod(
 			"getQueueTitle",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	jint MediaController::getRatingType()
 	{
@@ -154,12 +156,12 @@ namespace android::media::session
 			arg1.object()
 		);
 	}
-	void MediaController::sendCommand(jstring arg0, android::os::Bundle arg1, android::os::ResultReceiver arg2)
+	void MediaController::sendCommand(JString arg0, android::os::Bundle arg1, android::os::ResultReceiver arg2)
 	{
 		callMethod<void>(
 			"sendCommand",
 			"(Ljava/lang/String;Landroid/os/Bundle;Landroid/os/ResultReceiver;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
 			arg2.object()
 		);

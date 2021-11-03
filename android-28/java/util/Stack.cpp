@@ -1,3 +1,4 @@
+#include "../../JObject.hpp"
 #include "./Stack.hpp"
 
 namespace java::util
@@ -22,34 +23,34 @@ namespace java::util
 			"()Z"
 		);
 	}
-	jobject Stack::peek()
+	JObject Stack::peek()
 	{
 		return callObjectMethod(
 			"peek",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
-	jobject Stack::pop()
+	JObject Stack::pop()
 	{
 		return callObjectMethod(
 			"pop",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
-	jobject Stack::push(jobject arg0)
+	JObject Stack::push(JObject arg0)
 	{
 		return callObjectMethod(
 			"push",
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0
-		).object<jobject>();
+			arg0.object<jobject>()
+		);
 	}
-	jint Stack::search(jobject arg0)
+	jint Stack::search(JObject arg0)
 	{
 		return callMethod<jint>(
 			"search",
 			"(Ljava/lang/Object;)I",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 } // namespace java::util

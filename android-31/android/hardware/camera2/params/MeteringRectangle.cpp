@@ -1,6 +1,8 @@
 #include "../../../graphics/Point.hpp"
 #include "../../../graphics/Rect.hpp"
 #include "../../../util/Size.hpp"
+#include "../../../../JObject.hpp"
+#include "../../../../JString.hpp"
 #include "./MeteringRectangle.hpp"
 
 namespace android::hardware::camera2::params
@@ -67,12 +69,12 @@ namespace android::hardware::camera2::params
 			arg0.object()
 		);
 	}
-	jboolean MeteringRectangle::equals(jobject arg0)
+	jboolean MeteringRectangle::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint MeteringRectangle::getHeight()
@@ -138,12 +140,12 @@ namespace android::hardware::camera2::params
 			"()I"
 		);
 	}
-	jstring MeteringRectangle::toString()
+	JString MeteringRectangle::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::hardware::camera2::params
 

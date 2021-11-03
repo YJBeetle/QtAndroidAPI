@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./UserManager_UserOperationException.hpp"
 
 namespace android::os

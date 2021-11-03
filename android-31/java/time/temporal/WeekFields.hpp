@@ -6,6 +6,8 @@ namespace java::io
 {
 	class ObjectInputStream;
 }
+class JObject;
+class JString;
 namespace java::time
 {
 	class DayOfWeek;
@@ -35,11 +37,11 @@ namespace java::time::temporal
 		static java::time::temporal::WeekFields of(java::util::Locale arg0);
 		static java::time::temporal::WeekFields of(java::time::DayOfWeek arg0, jint arg1);
 		JObject dayOfWeek();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		java::time::DayOfWeek getFirstDayOfWeek();
 		jint getMinimalDaysInFirstWeek();
 		jint hashCode();
-		jstring toString();
+		JString toString();
 		JObject weekBasedYear();
 		JObject weekOfMonth();
 		JObject weekOfWeekBasedYear();

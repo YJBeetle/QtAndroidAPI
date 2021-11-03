@@ -1,4 +1,6 @@
+#include "../../../JArray.hpp"
 #include "../../os/Parcel.hpp"
+#include "../../../JString.hpp"
 #include "./SuggestionsInfo.hpp"
 
 namespace android::view::textservice
@@ -44,19 +46,19 @@ namespace android::view::textservice
 			"(Landroid/os/Parcel;)V",
 			arg0.object()
 		) {}
-	SuggestionsInfo::SuggestionsInfo(jint arg0, jarray arg1)
+	SuggestionsInfo::SuggestionsInfo(jint arg0, JArray arg1)
 		: JObject(
 			"android.view.textservice.SuggestionsInfo",
 			"(I[Ljava/lang/String;)V",
 			arg0,
-			arg1
+			arg1.object<jarray>()
 		) {}
-	SuggestionsInfo::SuggestionsInfo(jint arg0, jarray arg1, jint arg2, jint arg3)
+	SuggestionsInfo::SuggestionsInfo(jint arg0, JArray arg1, jint arg2, jint arg3)
 		: JObject(
 			"android.view.textservice.SuggestionsInfo",
 			"(I[Ljava/lang/String;II)V",
 			arg0,
-			arg1,
+			arg1.object<jarray>(),
 			arg2,
 			arg3
 		) {}
@@ -83,13 +85,13 @@ namespace android::view::textservice
 			"()I"
 		);
 	}
-	jstring SuggestionsInfo::getSuggestionAt(jint arg0)
+	JString SuggestionsInfo::getSuggestionAt(jint arg0)
 	{
 		return callObjectMethod(
 			"getSuggestionAt",
 			"(I)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
 	jint SuggestionsInfo::getSuggestionsAttributes()
 	{

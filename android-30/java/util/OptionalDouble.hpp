@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JObject;
+class JString;
 
 namespace java::util
 {
@@ -19,7 +21,7 @@ namespace java::util
 		// Methods
 		static java::util::OptionalDouble empty();
 		static java::util::OptionalDouble of(jdouble arg0);
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jdouble getAsDouble();
 		jint hashCode();
 		void ifPresent(JObject arg0);
@@ -31,7 +33,7 @@ namespace java::util
 		jdouble orElseThrow();
 		jdouble orElseThrow(JObject arg0);
 		JObject stream();
-		jstring toString();
+		JString toString();
 	};
 } // namespace java::util
 

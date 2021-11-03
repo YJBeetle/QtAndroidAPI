@@ -6,6 +6,7 @@ namespace android::net
 {
 	class Uri;
 }
+class JString;
 
 namespace android::provider
 {
@@ -13,7 +14,7 @@ namespace android::provider
 	{
 	public:
 		// Fields
-		static jstring CONFIGURATION_STATE();
+		static JString CONFIGURATION_STATE();
 		static jint CONFIGURATION_STATE_CAN_BE_CONFIGURED();
 		static jint CONFIGURATION_STATE_CONFIGURING();
 		static jint CONFIGURATION_STATE_DISABLED();
@@ -21,7 +22,7 @@ namespace android::provider
 		static jint CONFIGURATION_STATE_NOT_CONFIGURED();
 		static jint CONFIGURATION_STATE_OK();
 		static android::net::Uri CONTENT_URI();
-		static jstring DATA_CHANNEL_STATE();
+		static JString DATA_CHANNEL_STATE();
 		static jint DATA_CHANNEL_STATE_BAD_CONFIGURATION();
 		static jint DATA_CHANNEL_STATE_COMMUNICATION_ERROR();
 		static jint DATA_CHANNEL_STATE_NO_CONNECTION();
@@ -29,21 +30,21 @@ namespace android::provider
 		static jint DATA_CHANNEL_STATE_OK();
 		static jint DATA_CHANNEL_STATE_SERVER_CONNECTION_ERROR();
 		static jint DATA_CHANNEL_STATE_SERVER_ERROR();
-		static jstring DIR_TYPE();
-		static jstring ITEM_TYPE();
-		static jstring NOTIFICATION_CHANNEL_STATE();
+		static JString DIR_TYPE();
+		static JString ITEM_TYPE();
+		static JString NOTIFICATION_CHANNEL_STATE();
 		static jint NOTIFICATION_CHANNEL_STATE_MESSAGE_WAITING();
 		static jint NOTIFICATION_CHANNEL_STATE_NO_CONNECTION();
 		static jint NOTIFICATION_CHANNEL_STATE_OK();
-		static jstring PHONE_ACCOUNT_COMPONENT_NAME();
-		static jstring PHONE_ACCOUNT_ID();
-		static jstring QUOTA_OCCUPIED();
-		static jstring QUOTA_TOTAL();
+		static JString PHONE_ACCOUNT_COMPONENT_NAME();
+		static JString PHONE_ACCOUNT_ID();
+		static JString QUOTA_OCCUPIED();
+		static JString QUOTA_TOTAL();
 		static jint QUOTA_UNAVAILABLE();
-		static jstring SETTINGS_URI();
-		static jstring SOURCE_PACKAGE();
-		static jstring SOURCE_TYPE();
-		static jstring VOICEMAIL_ACCESS_URI();
+		static JString SETTINGS_URI();
+		static JString SOURCE_PACKAGE();
+		static JString SOURCE_TYPE();
+		static JString VOICEMAIL_ACCESS_URI();
 		
 		// QJniObject forward
 		template<typename ...Ts> explicit VoicemailContract_Status(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
@@ -52,7 +53,7 @@ namespace android::provider
 		// Constructors
 		
 		// Methods
-		static android::net::Uri buildSourceUri(jstring arg0);
+		static android::net::Uri buildSourceUri(JString arg0);
 	};
 } // namespace android::provider
 

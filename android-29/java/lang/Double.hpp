@@ -1,8 +1,10 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./Number.hpp"
 
+class JClass;
+class JObject;
+class JString;
 namespace java::lang::invoke
 {
 	class MethodHandles_Lookup;
@@ -28,7 +30,7 @@ namespace java::lang
 		static jdouble NaN();
 		static jdouble POSITIVE_INFINITY();
 		static jint SIZE();
-		static jclass TYPE();
+		static JClass TYPE();
 		
 		// QJniObject forward
 		template<typename ...Ts> explicit Double(const char *className, const char *sig, Ts...agv) : java::lang::Number(className, sig, std::forward<Ts>(agv)...) {}
@@ -36,7 +38,7 @@ namespace java::lang
 		
 		// Constructors
 		Double(jdouble arg0);
-		Double(jstring arg0);
+		Double(JString arg0);
 		
 		// Methods
 		static jint compare(jdouble arg0, jdouble arg1);
@@ -49,18 +51,18 @@ namespace java::lang
 		static jdouble longBitsToDouble(jlong arg0);
 		static jdouble max(jdouble arg0, jdouble arg1);
 		static jdouble min(jdouble arg0, jdouble arg1);
-		static jdouble parseDouble(jstring arg0);
+		static jdouble parseDouble(JString arg0);
 		static jdouble sum(jdouble arg0, jdouble arg1);
-		static jstring toHexString(jdouble arg0);
-		static jstring toString(jdouble arg0);
+		static JString toHexString(jdouble arg0);
+		static JString toString(jdouble arg0);
 		static java::lang::Double valueOf(jdouble arg0);
-		static java::lang::Double valueOf(jstring arg0);
+		static java::lang::Double valueOf(JString arg0);
 		jbyte byteValue();
 		jint compareTo(java::lang::Double arg0);
-		jint compareTo(jobject arg0);
+		jint compareTo(JObject arg0);
 		java::util::Optional describeConstable();
 		jdouble doubleValue();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jfloat floatValue();
 		jint hashCode();
 		jint intValue();
@@ -69,7 +71,7 @@ namespace java::lang
 		jlong longValue();
 		java::lang::Double resolveConstantDesc(java::lang::invoke::MethodHandles_Lookup arg0);
 		jshort shortValue();
-		jstring toString();
+		JString toString();
 	};
 } // namespace java::lang
 

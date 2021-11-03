@@ -1,4 +1,5 @@
 #include "./EncoderProfiles.hpp"
+#include "../../JString.hpp"
 #include "./CamcorderProfile.hpp"
 
 namespace android::media
@@ -361,13 +362,13 @@ namespace android::media
 			arg1
 		);
 	}
-	android::media::EncoderProfiles CamcorderProfile::getAll(jstring arg0, jint arg1)
+	android::media::EncoderProfiles CamcorderProfile::getAll(JString arg0, jint arg1)
 	{
 		return callStaticObjectMethod(
 			"android.media.CamcorderProfile",
 			"getAll",
 			"(Ljava/lang/String;I)Landroid/media/EncoderProfiles;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}

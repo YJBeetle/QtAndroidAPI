@@ -1,8 +1,9 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./AbstractCollection.hpp"
 
+class JObject;
+class JString;
 
 namespace java::util
 {
@@ -18,20 +19,20 @@ namespace java::util
 		// Constructors
 		
 		// Methods
-		jboolean add(jobject arg0);
-		void add(jint arg0, jobject arg1);
+		jboolean add(JObject arg0);
+		void add(jint arg0, JObject arg1);
 		jboolean addAll(jint arg0, JObject arg1);
 		void clear();
-		jboolean equals(jobject arg0);
-		jobject get(jint arg0);
+		jboolean equals(JObject arg0);
+		JObject get(jint arg0);
 		jint hashCode();
-		jint indexOf(jobject arg0);
+		jint indexOf(JObject arg0);
 		JObject iterator();
-		jint lastIndexOf(jobject arg0);
+		jint lastIndexOf(JObject arg0);
 		JObject listIterator();
 		JObject listIterator(jint arg0);
-		jobject remove(jint arg0);
-		jobject set(jint arg0, jobject arg1);
+		JObject remove(jint arg0);
+		JObject set(jint arg0, JObject arg1);
 		JObject subList(jint arg0, jint arg1);
 	};
 } // namespace java::util

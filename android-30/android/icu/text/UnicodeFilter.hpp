@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JIntArray;
 
 namespace android::icu::text
 {
@@ -18,7 +19,7 @@ namespace android::icu::text
 		
 		// Methods
 		jboolean contains(jint arg0);
-		jint matches(JObject arg0, jintArray arg1, jint arg2, jboolean arg3);
+		jint matches(JObject arg0, JIntArray arg1, jint arg2, jboolean arg3);
 	};
 } // namespace android::icu::text
 

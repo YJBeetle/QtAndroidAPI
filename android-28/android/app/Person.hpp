@@ -14,6 +14,8 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
+class JString;
 
 namespace android::app
 {
@@ -32,9 +34,9 @@ namespace android::app
 		// Methods
 		jint describeContents();
 		android::graphics::drawable::Icon getIcon();
-		jstring getKey();
-		jstring getName();
-		jstring getUri();
+		JString getKey();
+		JString getName();
+		JString getUri();
 		jboolean isBot();
 		jboolean isImportant();
 		android::app::Person_Builder toBuilder();

@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./RSIllegalArgumentException.hpp"
 
 namespace android::renderscript
@@ -8,11 +9,11 @@ namespace android::renderscript
 	RSIllegalArgumentException::RSIllegalArgumentException(QJniObject obj) : android::renderscript::RSRuntimeException(obj) {}
 	
 	// Constructors
-	RSIllegalArgumentException::RSIllegalArgumentException(jstring arg0)
+	RSIllegalArgumentException::RSIllegalArgumentException(JString arg0)
 		: android::renderscript::RSRuntimeException(
 			"android.renderscript.RSIllegalArgumentException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

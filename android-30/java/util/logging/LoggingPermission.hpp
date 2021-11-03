@@ -1,9 +1,8 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "../../security/Permission.hpp"
 #include "../../security/BasicPermission.hpp"
 
+class JString;
 
 namespace java::util::logging
 {
@@ -17,7 +16,7 @@ namespace java::util::logging
 		LoggingPermission(QJniObject obj);
 		
 		// Constructors
-		LoggingPermission(jstring arg0, jstring arg1);
+		LoggingPermission(JString arg0, JString arg1);
 		
 		// Methods
 	};

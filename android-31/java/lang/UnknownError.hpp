@@ -1,9 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "./Error.hpp"
 #include "./VirtualMachineError.hpp"
 
+class JString;
 
 namespace java::lang
 {
@@ -18,7 +17,7 @@ namespace java::lang
 		
 		// Constructors
 		UnknownError();
-		UnknownError(jstring arg0);
+		UnknownError(JString arg0);
 		
 		// Methods
 	};

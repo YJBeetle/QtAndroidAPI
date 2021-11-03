@@ -1,8 +1,9 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "../../java/lang/Enum.hpp"
 
+class JArray;
+class JString;
 
 namespace android::database
 {
@@ -21,8 +22,8 @@ namespace android::database
 		// Constructors
 		
 		// Methods
-		static android::database::CursorJoiner_Result valueOf(jstring arg0);
-		static jarray values();
+		static android::database::CursorJoiner_Result valueOf(JString arg0);
+		static JArray values();
 	};
 } // namespace android::database
 

@@ -1,5 +1,10 @@
+#include "../../JByteArray.hpp"
+#include "../../JIntArray.hpp"
+#include "../../JArray.hpp"
 #include "../io/ObjectInputStream.hpp"
 #include "../io/ObjectOutputStream.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "../security/Permission.hpp"
 #include "../security/PermissionCollection.hpp"
 #include "./SocketPermission.hpp"
@@ -12,29 +17,29 @@ namespace java::net
 	SocketPermission::SocketPermission(QJniObject obj) : java::security::Permission(obj) {}
 	
 	// Constructors
-	SocketPermission::SocketPermission(jstring arg0, jstring arg1)
+	SocketPermission::SocketPermission(JString arg0, JString arg1)
 		: java::security::Permission(
 			"java.net.SocketPermission",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		) {}
 	
 	// Methods
-	jboolean SocketPermission::equals(jobject arg0)
+	jboolean SocketPermission::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jstring SocketPermission::getActions()
+	JString SocketPermission::getActions()
 	{
 		return callObjectMethod(
 			"getActions",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint SocketPermission::hashCode()
 	{

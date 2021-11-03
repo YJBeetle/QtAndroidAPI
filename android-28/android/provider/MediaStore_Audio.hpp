@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JString;
 
 namespace android::provider
 {
@@ -18,7 +19,7 @@ namespace android::provider
 		MediaStore_Audio();
 		
 		// Methods
-		static jstring keyFor(jstring arg0);
+		static JString keyFor(JString arg0);
 	};
 } // namespace android::provider
 

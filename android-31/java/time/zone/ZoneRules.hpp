@@ -2,10 +2,17 @@
 
 #include "../../../JObject.hpp"
 
+class JLongArray;
+class JArray;
+class JArray;
+class JArray;
+class JArray;
 namespace java::io
 {
 	class ObjectInputStream;
 }
+class JObject;
+class JString;
 namespace java::time
 {
 	class Duration;
@@ -43,7 +50,7 @@ namespace java::time::zone
 		// Methods
 		static java::time::zone::ZoneRules of(java::time::ZoneOffset arg0);
 		static java::time::zone::ZoneRules of(java::time::ZoneOffset arg0, java::time::ZoneOffset arg1, JObject arg2, JObject arg3, JObject arg4);
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		java::time::Duration getDaylightSavings(java::time::Instant arg0);
 		java::time::ZoneOffset getOffset(java::time::Instant arg0);
 		java::time::ZoneOffset getOffset(java::time::LocalDateTime arg0);
@@ -58,7 +65,7 @@ namespace java::time::zone
 		jboolean isValidOffset(java::time::LocalDateTime arg0, java::time::ZoneOffset arg1);
 		java::time::zone::ZoneOffsetTransition nextTransition(java::time::Instant arg0);
 		java::time::zone::ZoneOffsetTransition previousTransition(java::time::Instant arg0);
-		jstring toString();
+		JString toString();
 	};
 } // namespace java::time::zone
 

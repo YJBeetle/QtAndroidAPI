@@ -1,5 +1,6 @@
 #include "../../os/LocaleList.hpp"
 #include "../../os/Parcel.hpp"
+#include "../../../JString.hpp"
 #include "../../../java/time/ZonedDateTime.hpp"
 #include "./TextClassification_Request.hpp"
 
@@ -56,12 +57,12 @@ namespace android::view::textclassifier
 			"()I"
 		);
 	}
-	jstring TextClassification_Request::getText()
+	JString TextClassification_Request::getText()
 	{
 		return callObjectMethod(
 			"getText",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	void TextClassification_Request::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

@@ -2,6 +2,8 @@
 #include "../content/res/TypedArray.hpp"
 #include "../view/View.hpp"
 #include "../widget/EditText.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./EditTextPreference.hpp"
 
 namespace android::preference
@@ -51,19 +53,19 @@ namespace android::preference
 			"()Landroid/widget/EditText;"
 		);
 	}
-	jstring EditTextPreference::getText()
+	JString EditTextPreference::getText()
 	{
 		return callObjectMethod(
 			"getText",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	void EditTextPreference::setText(jstring arg0)
+	void EditTextPreference::setText(JString arg0)
 	{
 		callMethod<void>(
 			"setText",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	jboolean EditTextPreference::shouldDisableDependents()

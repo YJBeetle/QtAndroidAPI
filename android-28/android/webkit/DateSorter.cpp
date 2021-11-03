@@ -1,4 +1,5 @@
 #include "../content/Context.hpp"
+#include "../../JString.hpp"
 #include "./DateSorter.hpp"
 
 namespace android::webkit
@@ -40,13 +41,13 @@ namespace android::webkit
 			arg0
 		);
 	}
-	jstring DateSorter::getLabel(jint arg0)
+	JString DateSorter::getLabel(jint arg0)
 	{
 		return callObjectMethod(
 			"getLabel",
 			"(I)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
 } // namespace android::webkit
 

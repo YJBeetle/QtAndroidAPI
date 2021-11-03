@@ -18,6 +18,9 @@ namespace android::view::accessibility
 {
 	class AccessibilityNodeInfo;
 }
+class JString;
+class JObject;
+class JString;
 
 namespace android::view::accessibility
 {
@@ -44,7 +47,7 @@ namespace android::view::accessibility
 		static android::view::accessibility::AccessibilityWindowInfo obtain();
 		static android::view::accessibility::AccessibilityWindowInfo obtain(android::view::accessibility::AccessibilityWindowInfo arg0);
 		jint describeContents();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		android::view::accessibility::AccessibilityNodeInfo getAnchor();
 		void getBoundsInScreen(android::graphics::Rect arg0);
 		android::view::accessibility::AccessibilityWindowInfo getChild(jint arg0);
@@ -55,7 +58,7 @@ namespace android::view::accessibility
 		android::view::accessibility::AccessibilityWindowInfo getParent();
 		void getRegionInScreen(android::graphics::Region arg0);
 		android::view::accessibility::AccessibilityNodeInfo getRoot();
-		jstring getTitle();
+		JString getTitle();
 		jint getType();
 		jint hashCode();
 		jboolean isAccessibilityFocused();
@@ -63,7 +66,7 @@ namespace android::view::accessibility
 		jboolean isFocused();
 		jboolean isInPictureInPictureMode();
 		void recycle();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::view::accessibility

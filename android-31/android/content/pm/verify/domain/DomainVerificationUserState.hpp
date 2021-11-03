@@ -10,6 +10,8 @@ namespace android::os
 {
 	class UserHandle;
 }
+class JObject;
+class JString;
 
 namespace android::content::pm::verify::domain
 {
@@ -30,13 +32,13 @@ namespace android::content::pm::verify::domain
 		
 		// Methods
 		jint describeContents();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		JObject getHostToStateMap();
-		jstring getPackageName();
+		JString getPackageName();
 		android::os::UserHandle getUser();
 		jint hashCode();
 		jboolean isLinkHandlingAllowed();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::content::pm::verify::domain

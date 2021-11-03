@@ -6,6 +6,7 @@ namespace android::app
 {
 	class KeyguardManager;
 }
+class JString;
 
 namespace android::app
 {

@@ -1,3 +1,4 @@
+#include "../../../JByteArray.hpp"
 #include "./MidiReceiver.hpp"
 
 namespace android::media::midi
@@ -42,33 +43,33 @@ namespace android::media::midi
 			"()V"
 		);
 	}
-	void MidiReceiver::onSend(jbyteArray arg0, jint arg1, jint arg2, jlong arg3)
+	void MidiReceiver::onSend(JByteArray arg0, jint arg1, jint arg2, jlong arg3)
 	{
 		callMethod<void>(
 			"onSend",
 			"([BIIJ)V",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1,
 			arg2,
 			arg3
 		);
 	}
-	void MidiReceiver::send(jbyteArray arg0, jint arg1, jint arg2)
+	void MidiReceiver::send(JByteArray arg0, jint arg1, jint arg2)
 	{
 		callMethod<void>(
 			"send",
 			"([BII)V",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1,
 			arg2
 		);
 	}
-	void MidiReceiver::send(jbyteArray arg0, jint arg1, jint arg2, jlong arg3)
+	void MidiReceiver::send(JByteArray arg0, jint arg1, jint arg2, jlong arg3)
 	{
 		callMethod<void>(
 			"send",
 			"([BIIJ)V",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1,
 			arg2,
 			arg3

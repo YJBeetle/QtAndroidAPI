@@ -1,8 +1,10 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "./Certificate.hpp"
 
+class JByteArray;
+class JBooleanArray;
+class JString;
 namespace java::math
 {
 	class BigInteger;
@@ -40,21 +42,21 @@ namespace java::security::cert
 		JObject getExtendedKeyUsage();
 		JObject getIssuerAlternativeNames();
 		JObject getIssuerDN();
-		jbooleanArray getIssuerUniqueID();
+		JBooleanArray getIssuerUniqueID();
 		javax::security::auth::x500::X500Principal getIssuerX500Principal();
-		jbooleanArray getKeyUsage();
+		JBooleanArray getKeyUsage();
 		java::util::Date getNotAfter();
 		java::util::Date getNotBefore();
 		java::math::BigInteger getSerialNumber();
-		jstring getSigAlgName();
-		jstring getSigAlgOID();
-		jbyteArray getSigAlgParams();
-		jbyteArray getSignature();
+		JString getSigAlgName();
+		JString getSigAlgOID();
+		JByteArray getSigAlgParams();
+		JByteArray getSignature();
 		JObject getSubjectAlternativeNames();
 		JObject getSubjectDN();
-		jbooleanArray getSubjectUniqueID();
+		JBooleanArray getSubjectUniqueID();
 		javax::security::auth::x500::X500Principal getSubjectX500Principal();
-		jbyteArray getTBSCertificate();
+		JByteArray getTBSCertificate();
 		jint getVersion();
 		void verify(JObject arg0, java::security::Provider arg1);
 	};

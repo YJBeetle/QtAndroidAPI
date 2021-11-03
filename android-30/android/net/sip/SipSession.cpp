@@ -1,5 +1,6 @@
 #include "./SipProfile.hpp"
 #include "./SipSession_Listener.hpp"
+#include "../../../JString.hpp"
 #include "./SipSession.hpp"
 
 namespace android::net::sip
@@ -12,21 +13,21 @@ namespace android::net::sip
 	// Constructors
 	
 	// Methods
-	void SipSession::answerCall(jstring arg0, jint arg1)
+	void SipSession::answerCall(JString arg0, jint arg1)
 	{
 		callMethod<void>(
 			"answerCall",
 			"(Ljava/lang/String;I)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
-	void SipSession::changeCall(jstring arg0, jint arg1)
+	void SipSession::changeCall(JString arg0, jint arg1)
 	{
 		callMethod<void>(
 			"changeCall",
 			"(Ljava/lang/String;I)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
@@ -37,19 +38,19 @@ namespace android::net::sip
 			"()V"
 		);
 	}
-	jstring SipSession::getCallId()
+	JString SipSession::getCallId()
 	{
 		return callObjectMethod(
 			"getCallId",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring SipSession::getLocalIp()
+	JString SipSession::getLocalIp()
 	{
 		return callObjectMethod(
 			"getLocalIp",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::net::sip::SipProfile SipSession::getLocalProfile()
 	{
@@ -79,13 +80,13 @@ namespace android::net::sip
 			"()Z"
 		);
 	}
-	void SipSession::makeCall(android::net::sip::SipProfile arg0, jstring arg1, jint arg2)
+	void SipSession::makeCall(android::net::sip::SipProfile arg0, JString arg1, jint arg2)
 	{
 		callMethod<void>(
 			"makeCall",
 			"(Landroid/net/sip/SipProfile;Ljava/lang/String;I)V",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2
 		);
 	}

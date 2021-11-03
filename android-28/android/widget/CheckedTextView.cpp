@@ -1,8 +1,10 @@
+#include "../../JIntArray.hpp"
 #include "../content/Context.hpp"
 #include "../content/res/ColorStateList.hpp"
 #include "../graphics/Canvas.hpp"
 #include "../graphics/PorterDuff_Mode.hpp"
 #include "../graphics/drawable/Drawable.hpp"
+#include "../../JString.hpp"
 #include "./CheckedTextView.hpp"
 
 namespace android::widget
@@ -54,12 +56,12 @@ namespace android::widget
 			arg1
 		);
 	}
-	jstring CheckedTextView::getAccessibilityClassName()
+	JString CheckedTextView::getAccessibilityClassName()
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	android::graphics::drawable::Drawable CheckedTextView::getCheckMarkDrawable()
 	{

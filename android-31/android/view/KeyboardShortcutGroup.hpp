@@ -10,6 +10,7 @@ namespace android::view
 {
 	class KeyboardShortcutInfo;
 }
+class JString;
 
 namespace android::view
 {
@@ -24,14 +25,14 @@ namespace android::view
 		KeyboardShortcutGroup(QJniObject obj);
 		
 		// Constructors
-		KeyboardShortcutGroup(jstring arg0);
-		KeyboardShortcutGroup(jstring arg0, JObject arg1);
+		KeyboardShortcutGroup(JString arg0);
+		KeyboardShortcutGroup(JString arg0, JObject arg1);
 		
 		// Methods
 		void addItem(android::view::KeyboardShortcutInfo arg0);
 		jint describeContents();
 		JObject getItems();
-		jstring getLabel();
+		JString getLabel();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::view

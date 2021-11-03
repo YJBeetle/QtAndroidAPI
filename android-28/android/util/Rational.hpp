@@ -1,8 +1,9 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "../../java/lang/Number.hpp"
 
+class JObject;
+class JString;
 
 namespace android::util
 {
@@ -23,11 +24,11 @@ namespace android::util
 		Rational(jint arg0, jint arg1);
 		
 		// Methods
-		static android::util::Rational parseRational(jstring arg0);
+		static android::util::Rational parseRational(JString arg0);
 		jint compareTo(android::util::Rational arg0);
-		jint compareTo(jobject arg0);
+		jint compareTo(JObject arg0);
 		jdouble doubleValue();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jfloat floatValue();
 		jint getDenominator();
 		jint getNumerator();
@@ -39,7 +40,7 @@ namespace android::util
 		jboolean isZero();
 		jlong longValue();
 		jshort shortValue();
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::util
 

@@ -2,10 +2,14 @@
 
 #include "../../JObject.hpp"
 
+class JArray;
+class JArray;
+class JBooleanArray;
 namespace android::app
 {
 	class VoiceInteractor_Request;
 }
+class JString;
 
 namespace android::app
 {
@@ -21,11 +25,11 @@ namespace android::app
 		// Constructors
 		
 		// Methods
-		android::app::VoiceInteractor_Request getActiveRequest(jstring arg0);
-		jarray getActiveRequests();
+		android::app::VoiceInteractor_Request getActiveRequest(JString arg0);
+		JArray getActiveRequests();
 		jboolean submitRequest(android::app::VoiceInteractor_Request arg0);
-		jboolean submitRequest(android::app::VoiceInteractor_Request arg0, jstring arg1);
-		jbooleanArray supportsCommands(jarray arg0);
+		jboolean submitRequest(android::app::VoiceInteractor_Request arg0, JString arg1);
+		JBooleanArray supportsCommands(JArray arg0);
 	};
 } // namespace android::app
 

@@ -1,6 +1,5 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "./Event.hpp"
 
 namespace android::os
@@ -11,6 +10,8 @@ namespace android::os
 {
 	class Parcel;
 }
+class JObject;
+class JString;
 
 namespace android::media::metrics
 {
@@ -38,12 +39,12 @@ namespace android::media::metrics
 		
 		// Methods
 		jint describeContents();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		android::os::Bundle getMetricsBundle();
 		jint getNetworkType();
 		jlong getTimeSinceCreatedMillis();
 		jint hashCode();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::media::metrics

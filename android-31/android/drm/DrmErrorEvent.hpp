@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./DrmEvent.hpp"
 
+class JString;
 namespace java::util
 {
 	class HashMap;
@@ -28,8 +28,8 @@ namespace android::drm
 		DrmErrorEvent(QJniObject obj);
 		
 		// Constructors
-		DrmErrorEvent(jint arg0, jint arg1, jstring arg2);
-		DrmErrorEvent(jint arg0, jint arg1, jstring arg2, java::util::HashMap arg3);
+		DrmErrorEvent(jint arg0, jint arg1, JString arg2);
+		DrmErrorEvent(jint arg0, jint arg1, JString arg2, java::util::HashMap arg3);
 		
 		// Methods
 	};

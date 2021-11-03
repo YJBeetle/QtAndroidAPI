@@ -1,6 +1,7 @@
 #include "../content/Context.hpp"
 #include "../view/ViewGroup_LayoutParams.hpp"
 #include "./RelativeLayout_LayoutParams.hpp"
+#include "../../JString.hpp"
 #include "./RelativeLayout.hpp"
 
 namespace android::widget
@@ -212,12 +213,12 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	jstring RelativeLayout::getAccessibilityClassName()
+	JString RelativeLayout::getAccessibilityClassName()
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	jint RelativeLayout::getBaseline()
 	{

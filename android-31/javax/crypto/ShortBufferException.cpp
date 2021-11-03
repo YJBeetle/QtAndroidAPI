@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./ShortBufferException.hpp"
 
 namespace javax::crypto
@@ -13,11 +14,11 @@ namespace javax::crypto
 			"javax.crypto.ShortBufferException",
 			"()V"
 		) {}
-	ShortBufferException::ShortBufferException(jstring arg0)
+	ShortBufferException::ShortBufferException(JString arg0)
 		: java::security::GeneralSecurityException(
 			"javax.crypto.ShortBufferException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

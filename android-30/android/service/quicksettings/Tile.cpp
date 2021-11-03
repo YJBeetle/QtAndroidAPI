@@ -1,5 +1,6 @@
 #include "../../graphics/drawable/Icon.hpp"
 #include "../../os/Parcel.hpp"
+#include "../../../JString.hpp"
 #include "./Tile.hpp"
 
 namespace android::service::quicksettings
@@ -48,12 +49,12 @@ namespace android::service::quicksettings
 			"()I"
 		);
 	}
-	jstring Tile::getContentDescription()
+	JString Tile::getContentDescription()
 	{
 		return callObjectMethod(
 			"getContentDescription",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	android::graphics::drawable::Icon Tile::getIcon()
 	{
@@ -62,12 +63,12 @@ namespace android::service::quicksettings
 			"()Landroid/graphics/drawable/Icon;"
 		);
 	}
-	jstring Tile::getLabel()
+	JString Tile::getLabel()
 	{
 		return callObjectMethod(
 			"getLabel",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	jint Tile::getState()
 	{
@@ -76,26 +77,26 @@ namespace android::service::quicksettings
 			"()I"
 		);
 	}
-	jstring Tile::getStateDescription()
+	JString Tile::getStateDescription()
 	{
 		return callObjectMethod(
 			"getStateDescription",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
-	jstring Tile::getSubtitle()
+	JString Tile::getSubtitle()
 	{
 		return callObjectMethod(
 			"getSubtitle",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
-	void Tile::setContentDescription(jstring arg0)
+	void Tile::setContentDescription(JString arg0)
 	{
 		callMethod<void>(
 			"setContentDescription",
 			"(Ljava/lang/CharSequence;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void Tile::setIcon(android::graphics::drawable::Icon arg0)
@@ -106,12 +107,12 @@ namespace android::service::quicksettings
 			arg0.object()
 		);
 	}
-	void Tile::setLabel(jstring arg0)
+	void Tile::setLabel(JString arg0)
 	{
 		callMethod<void>(
 			"setLabel",
 			"(Ljava/lang/CharSequence;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void Tile::setState(jint arg0)
@@ -122,20 +123,20 @@ namespace android::service::quicksettings
 			arg0
 		);
 	}
-	void Tile::setStateDescription(jstring arg0)
+	void Tile::setStateDescription(JString arg0)
 	{
 		callMethod<void>(
 			"setStateDescription",
 			"(Ljava/lang/CharSequence;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	void Tile::setSubtitle(jstring arg0)
+	void Tile::setSubtitle(JString arg0)
 	{
 		callMethod<void>(
 			"setSubtitle",
 			"(Ljava/lang/CharSequence;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void Tile::updateTile()

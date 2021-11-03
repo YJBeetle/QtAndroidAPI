@@ -1,8 +1,10 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "../zip/ZipEntry.hpp"
 
+class JArray;
+class JArray;
+class JString;
 namespace java::util::jar
 {
 	class Attributes;
@@ -24,15 +26,15 @@ namespace java::util::jar
 		JarEntry(QJniObject obj);
 		
 		// Constructors
-		JarEntry(jstring arg0);
+		JarEntry(JString arg0);
 		JarEntry(java::util::jar::JarEntry &arg0);
 		JarEntry(java::util::zip::ZipEntry arg0);
 		
 		// Methods
 		java::util::jar::Attributes getAttributes();
-		jarray getCertificates();
-		jarray getCodeSigners();
-		jstring getRealName();
+		JArray getCertificates();
+		JArray getCodeSigners();
+		JString getRealName();
 	};
 } // namespace java::util::jar
 

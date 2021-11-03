@@ -1,3 +1,5 @@
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
 #include "./LocalSocketAddress_Namespace.hpp"
 
 namespace android::net
@@ -34,22 +36,22 @@ namespace android::net
 	// Constructors
 	
 	// Methods
-	android::net::LocalSocketAddress_Namespace LocalSocketAddress_Namespace::valueOf(jstring arg0)
+	android::net::LocalSocketAddress_Namespace LocalSocketAddress_Namespace::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.net.LocalSocketAddress$Namespace",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/net/LocalSocketAddress$Namespace;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray LocalSocketAddress_Namespace::values()
+	JArray LocalSocketAddress_Namespace::values()
 	{
 		return callStaticObjectMethod(
 			"android.net.LocalSocketAddress$Namespace",
 			"values",
 			"()[Landroid/net/LocalSocketAddress$Namespace;"
-		).object<jarray>();
+		);
 	}
 } // namespace android::net
 

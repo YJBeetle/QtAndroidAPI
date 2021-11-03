@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JObject;
+class JString;
 
 namespace android::util
 {
@@ -21,17 +23,17 @@ namespace android::util
 		jint createCount();
 		void evictAll();
 		jint evictionCount();
-		jobject get(jobject arg0);
+		JObject get(JObject arg0);
 		jint hitCount();
 		jint maxSize();
 		jint missCount();
-		jobject put(jobject arg0, jobject arg1);
+		JObject put(JObject arg0, JObject arg1);
 		jint putCount();
-		jobject remove(jobject arg0);
+		JObject remove(JObject arg0);
 		void resize(jint arg0);
 		jint size();
 		JObject snapshot();
-		jstring toString();
+		JString toString();
 		void trimToSize(jint arg0);
 	};
 } // namespace android::util

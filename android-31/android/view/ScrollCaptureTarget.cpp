@@ -1,6 +1,7 @@
 #include "../graphics/Point.hpp"
 #include "../graphics/Rect.hpp"
 #include "./View.hpp"
+#include "../../JString.hpp"
 #include "./ScrollCaptureTarget.hpp"
 
 namespace android::view
@@ -72,12 +73,12 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	jstring ScrollCaptureTarget::toString()
+	JString ScrollCaptureTarget::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void ScrollCaptureTarget::updatePositionInWindow()
 	{

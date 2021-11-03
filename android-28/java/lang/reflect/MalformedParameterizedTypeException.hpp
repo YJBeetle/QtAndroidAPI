@@ -1,9 +1,8 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "../Exception.hpp"
 #include "../RuntimeException.hpp"
 
+class JString;
 
 namespace java::lang::reflect
 {
@@ -18,7 +17,7 @@ namespace java::lang::reflect
 		
 		// Constructors
 		MalformedParameterizedTypeException();
-		MalformedParameterizedTypeException(jstring arg0);
+		MalformedParameterizedTypeException(JString arg0);
 		
 		// Methods
 	};

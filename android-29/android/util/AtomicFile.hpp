@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JByteArray;
 namespace java::io
 {
 	class File;
@@ -35,7 +36,7 @@ namespace android::util
 		void finishWrite(java::io::FileOutputStream arg0);
 		java::io::File getBaseFile();
 		java::io::FileInputStream openRead();
-		jbyteArray readFully();
+		JByteArray readFully();
 		java::io::FileOutputStream startWrite();
 	};
 } // namespace android::util

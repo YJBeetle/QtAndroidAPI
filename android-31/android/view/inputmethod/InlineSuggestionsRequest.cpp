@@ -2,6 +2,8 @@
 #include "../../os/LocaleList.hpp"
 #include "../../os/Parcel.hpp"
 #include "../../widget/inline/InlinePresentationSpec.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./InlineSuggestionsRequest.hpp"
 
 namespace android::view::inputmethod
@@ -36,12 +38,12 @@ namespace android::view::inputmethod
 			"()I"
 		);
 	}
-	jboolean InlineSuggestionsRequest::equals(jobject arg0)
+	jboolean InlineSuggestionsRequest::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	android::os::Bundle InlineSuggestionsRequest::getExtras()
@@ -51,12 +53,12 @@ namespace android::view::inputmethod
 			"()Landroid/os/Bundle;"
 		);
 	}
-	jstring InlineSuggestionsRequest::getHostPackageName()
+	JString InlineSuggestionsRequest::getHostPackageName()
 	{
 		return callObjectMethod(
 			"getHostPackageName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	JObject InlineSuggestionsRequest::getInlinePresentationSpecs()
 	{
@@ -93,12 +95,12 @@ namespace android::view::inputmethod
 			"()I"
 		);
 	}
-	jstring InlineSuggestionsRequest::toString()
+	JString InlineSuggestionsRequest::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void InlineSuggestionsRequest::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

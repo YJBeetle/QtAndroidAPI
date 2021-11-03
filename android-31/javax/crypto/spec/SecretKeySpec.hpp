@@ -2,6 +2,9 @@
 
 #include "../../../JObject.hpp"
 
+class JByteArray;
+class JObject;
+class JString;
 
 namespace javax::crypto::spec
 {
@@ -15,14 +18,14 @@ namespace javax::crypto::spec
 		SecretKeySpec(QJniObject obj);
 		
 		// Constructors
-		SecretKeySpec(jbyteArray arg0, jstring arg1);
-		SecretKeySpec(jbyteArray arg0, jint arg1, jint arg2, jstring arg3);
+		SecretKeySpec(JByteArray arg0, JString arg1);
+		SecretKeySpec(JByteArray arg0, jint arg1, jint arg2, JString arg3);
 		
 		// Methods
-		jboolean equals(jobject arg0);
-		jstring getAlgorithm();
-		jbyteArray getEncoded();
-		jstring getFormat();
+		jboolean equals(JObject arg0);
+		JString getAlgorithm();
+		JByteArray getEncoded();
+		JString getFormat();
 		jint hashCode();
 	};
 } // namespace javax::crypto::spec

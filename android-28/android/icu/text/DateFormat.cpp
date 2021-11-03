@@ -1,3 +1,4 @@
+#include "../../../JArray.hpp"
 #include "./DateFormat_BooleanAttribute.hpp"
 #include "./DisplayContext.hpp"
 #include "./DisplayContext_Type.hpp"
@@ -5,6 +6,8 @@
 #include "../util/Calendar.hpp"
 #include "../util/TimeZone.hpp"
 #include "../util/ULocale.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "../../../java/lang/StringBuffer.hpp"
 #include "../../../java/text/FieldPosition.hpp"
 #include "../../../java/text/ParsePosition.hpp"
@@ -15,69 +18,69 @@
 namespace android::icu::text
 {
 	// Fields
-	jstring DateFormat::ABBR_GENERIC_TZ()
+	JString DateFormat::ABBR_GENERIC_TZ()
 	{
 		return getStaticObjectField(
 			"android.icu.text.DateFormat",
 			"ABBR_GENERIC_TZ",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DateFormat::ABBR_MONTH()
+	JString DateFormat::ABBR_MONTH()
 	{
 		return getStaticObjectField(
 			"android.icu.text.DateFormat",
 			"ABBR_MONTH",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DateFormat::ABBR_MONTH_DAY()
+	JString DateFormat::ABBR_MONTH_DAY()
 	{
 		return getStaticObjectField(
 			"android.icu.text.DateFormat",
 			"ABBR_MONTH_DAY",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DateFormat::ABBR_MONTH_WEEKDAY_DAY()
+	JString DateFormat::ABBR_MONTH_WEEKDAY_DAY()
 	{
 		return getStaticObjectField(
 			"android.icu.text.DateFormat",
 			"ABBR_MONTH_WEEKDAY_DAY",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DateFormat::ABBR_QUARTER()
+	JString DateFormat::ABBR_QUARTER()
 	{
 		return getStaticObjectField(
 			"android.icu.text.DateFormat",
 			"ABBR_QUARTER",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DateFormat::ABBR_SPECIFIC_TZ()
+	JString DateFormat::ABBR_SPECIFIC_TZ()
 	{
 		return getStaticObjectField(
 			"android.icu.text.DateFormat",
 			"ABBR_SPECIFIC_TZ",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DateFormat::ABBR_UTC_TZ()
+	JString DateFormat::ABBR_UTC_TZ()
 	{
 		return getStaticObjectField(
 			"android.icu.text.DateFormat",
 			"ABBR_UTC_TZ",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DateFormat::ABBR_WEEKDAY()
+	JString DateFormat::ABBR_WEEKDAY()
 	{
 		return getStaticObjectField(
 			"android.icu.text.DateFormat",
 			"ABBR_WEEKDAY",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint DateFormat::AM_PM_FIELD()
 	{
@@ -100,13 +103,13 @@ namespace android::icu::text
 			"DATE_FIELD"
 		);
 	}
-	jstring DateFormat::DAY()
+	JString DateFormat::DAY()
 	{
 		return getStaticObjectField(
 			"android.icu.text.DateFormat",
 			"DAY",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint DateFormat::DAY_OF_WEEK_FIELD()
 	{
@@ -178,21 +181,21 @@ namespace android::icu::text
 			"FULL"
 		);
 	}
-	jstring DateFormat::GENERIC_TZ()
+	JString DateFormat::GENERIC_TZ()
 	{
 		return getStaticObjectField(
 			"android.icu.text.DateFormat",
 			"GENERIC_TZ",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DateFormat::HOUR()
+	JString DateFormat::HOUR()
 	{
 		return getStaticObjectField(
 			"android.icu.text.DateFormat",
 			"HOUR",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint DateFormat::HOUR0_FIELD()
 	{
@@ -208,45 +211,45 @@ namespace android::icu::text
 			"HOUR1_FIELD"
 		);
 	}
-	jstring DateFormat::HOUR24()
+	JString DateFormat::HOUR24()
 	{
 		return getStaticObjectField(
 			"android.icu.text.DateFormat",
 			"HOUR24",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DateFormat::HOUR24_MINUTE()
+	JString DateFormat::HOUR24_MINUTE()
 	{
 		return getStaticObjectField(
 			"android.icu.text.DateFormat",
 			"HOUR24_MINUTE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DateFormat::HOUR24_MINUTE_SECOND()
+	JString DateFormat::HOUR24_MINUTE_SECOND()
 	{
 		return getStaticObjectField(
 			"android.icu.text.DateFormat",
 			"HOUR24_MINUTE_SECOND",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DateFormat::HOUR_MINUTE()
+	JString DateFormat::HOUR_MINUTE()
 	{
 		return getStaticObjectField(
 			"android.icu.text.DateFormat",
 			"HOUR_MINUTE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DateFormat::HOUR_MINUTE_SECOND()
+	JString DateFormat::HOUR_MINUTE_SECOND()
 	{
 		return getStaticObjectField(
 			"android.icu.text.DateFormat",
 			"HOUR_MINUTE_SECOND",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint DateFormat::HOUR_OF_DAY0_FIELD()
 	{
@@ -269,13 +272,13 @@ namespace android::icu::text
 			"JULIAN_DAY_FIELD"
 		);
 	}
-	jstring DateFormat::LOCATION_TZ()
+	JString DateFormat::LOCATION_TZ()
 	{
 		return getStaticObjectField(
 			"android.icu.text.DateFormat",
 			"LOCATION_TZ",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint DateFormat::LONG()
 	{
@@ -305,13 +308,13 @@ namespace android::icu::text
 			"MILLISECOND_FIELD"
 		);
 	}
-	jstring DateFormat::MINUTE()
+	JString DateFormat::MINUTE()
 	{
 		return getStaticObjectField(
 			"android.icu.text.DateFormat",
 			"MINUTE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint DateFormat::MINUTE_FIELD()
 	{
@@ -320,29 +323,29 @@ namespace android::icu::text
 			"MINUTE_FIELD"
 		);
 	}
-	jstring DateFormat::MINUTE_SECOND()
+	JString DateFormat::MINUTE_SECOND()
 	{
 		return getStaticObjectField(
 			"android.icu.text.DateFormat",
 			"MINUTE_SECOND",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DateFormat::MONTH()
+	JString DateFormat::MONTH()
 	{
 		return getStaticObjectField(
 			"android.icu.text.DateFormat",
 			"MONTH",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DateFormat::MONTH_DAY()
+	JString DateFormat::MONTH_DAY()
 	{
 		return getStaticObjectField(
 			"android.icu.text.DateFormat",
 			"MONTH_DAY",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint DateFormat::MONTH_FIELD()
 	{
@@ -351,13 +354,13 @@ namespace android::icu::text
 			"MONTH_FIELD"
 		);
 	}
-	jstring DateFormat::MONTH_WEEKDAY_DAY()
+	JString DateFormat::MONTH_WEEKDAY_DAY()
 	{
 		return getStaticObjectField(
 			"android.icu.text.DateFormat",
 			"MONTH_WEEKDAY_DAY",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint DateFormat::NONE()
 	{
@@ -366,37 +369,37 @@ namespace android::icu::text
 			"NONE"
 		);
 	}
-	jstring DateFormat::NUM_MONTH()
+	JString DateFormat::NUM_MONTH()
 	{
 		return getStaticObjectField(
 			"android.icu.text.DateFormat",
 			"NUM_MONTH",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DateFormat::NUM_MONTH_DAY()
+	JString DateFormat::NUM_MONTH_DAY()
 	{
 		return getStaticObjectField(
 			"android.icu.text.DateFormat",
 			"NUM_MONTH_DAY",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DateFormat::NUM_MONTH_WEEKDAY_DAY()
+	JString DateFormat::NUM_MONTH_WEEKDAY_DAY()
 	{
 		return getStaticObjectField(
 			"android.icu.text.DateFormat",
 			"NUM_MONTH_WEEKDAY_DAY",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DateFormat::QUARTER()
+	JString DateFormat::QUARTER()
 	{
 		return getStaticObjectField(
 			"android.icu.text.DateFormat",
 			"QUARTER",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint DateFormat::QUARTER_FIELD()
 	{
@@ -447,13 +450,13 @@ namespace android::icu::text
 			"RELATIVE_SHORT"
 		);
 	}
-	jstring DateFormat::SECOND()
+	JString DateFormat::SECOND()
 	{
 		return getStaticObjectField(
 			"android.icu.text.DateFormat",
 			"SECOND",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint DateFormat::SECOND_FIELD()
 	{
@@ -469,13 +472,13 @@ namespace android::icu::text
 			"SHORT"
 		);
 	}
-	jstring DateFormat::SPECIFIC_TZ()
+	JString DateFormat::SPECIFIC_TZ()
 	{
 		return getStaticObjectField(
 			"android.icu.text.DateFormat",
 			"SPECIFIC_TZ",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint DateFormat::STANDALONE_DAY_FIELD()
 	{
@@ -547,13 +550,13 @@ namespace android::icu::text
 			"TIMEZONE_SPECIAL_FIELD"
 		);
 	}
-	jstring DateFormat::WEEKDAY()
+	JString DateFormat::WEEKDAY()
 	{
 		return getStaticObjectField(
 			"android.icu.text.DateFormat",
 			"WEEKDAY",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint DateFormat::WEEK_OF_MONTH_FIELD()
 	{
@@ -569,45 +572,45 @@ namespace android::icu::text
 			"WEEK_OF_YEAR_FIELD"
 		);
 	}
-	jstring DateFormat::YEAR()
+	JString DateFormat::YEAR()
 	{
 		return getStaticObjectField(
 			"android.icu.text.DateFormat",
 			"YEAR",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DateFormat::YEAR_ABBR_MONTH()
+	JString DateFormat::YEAR_ABBR_MONTH()
 	{
 		return getStaticObjectField(
 			"android.icu.text.DateFormat",
 			"YEAR_ABBR_MONTH",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DateFormat::YEAR_ABBR_MONTH_DAY()
+	JString DateFormat::YEAR_ABBR_MONTH_DAY()
 	{
 		return getStaticObjectField(
 			"android.icu.text.DateFormat",
 			"YEAR_ABBR_MONTH_DAY",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DateFormat::YEAR_ABBR_MONTH_WEEKDAY_DAY()
+	JString DateFormat::YEAR_ABBR_MONTH_WEEKDAY_DAY()
 	{
 		return getStaticObjectField(
 			"android.icu.text.DateFormat",
 			"YEAR_ABBR_MONTH_WEEKDAY_DAY",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DateFormat::YEAR_ABBR_QUARTER()
+	JString DateFormat::YEAR_ABBR_QUARTER()
 	{
 		return getStaticObjectField(
 			"android.icu.text.DateFormat",
 			"YEAR_ABBR_QUARTER",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint DateFormat::YEAR_FIELD()
 	{
@@ -616,29 +619,29 @@ namespace android::icu::text
 			"YEAR_FIELD"
 		);
 	}
-	jstring DateFormat::YEAR_MONTH()
+	JString DateFormat::YEAR_MONTH()
 	{
 		return getStaticObjectField(
 			"android.icu.text.DateFormat",
 			"YEAR_MONTH",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DateFormat::YEAR_MONTH_DAY()
+	JString DateFormat::YEAR_MONTH_DAY()
 	{
 		return getStaticObjectField(
 			"android.icu.text.DateFormat",
 			"YEAR_MONTH_DAY",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DateFormat::YEAR_MONTH_WEEKDAY_DAY()
+	JString DateFormat::YEAR_MONTH_WEEKDAY_DAY()
 	{
 		return getStaticObjectField(
 			"android.icu.text.DateFormat",
 			"YEAR_MONTH_WEEKDAY_DAY",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint DateFormat::YEAR_NAME_FIELD()
 	{
@@ -647,37 +650,37 @@ namespace android::icu::text
 			"YEAR_NAME_FIELD"
 		);
 	}
-	jstring DateFormat::YEAR_NUM_MONTH()
+	JString DateFormat::YEAR_NUM_MONTH()
 	{
 		return getStaticObjectField(
 			"android.icu.text.DateFormat",
 			"YEAR_NUM_MONTH",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DateFormat::YEAR_NUM_MONTH_DAY()
+	JString DateFormat::YEAR_NUM_MONTH_DAY()
 	{
 		return getStaticObjectField(
 			"android.icu.text.DateFormat",
 			"YEAR_NUM_MONTH_DAY",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DateFormat::YEAR_NUM_MONTH_WEEKDAY_DAY()
+	JString DateFormat::YEAR_NUM_MONTH_WEEKDAY_DAY()
 	{
 		return getStaticObjectField(
 			"android.icu.text.DateFormat",
 			"YEAR_NUM_MONTH_WEEKDAY_DAY",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DateFormat::YEAR_QUARTER()
+	JString DateFormat::YEAR_QUARTER()
 	{
 		return getStaticObjectField(
 			"android.icu.text.DateFormat",
 			"YEAR_QUARTER",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint DateFormat::YEAR_WOY_FIELD()
 	{
@@ -693,13 +696,13 @@ namespace android::icu::text
 	// Constructors
 	
 	// Methods
-	jarray DateFormat::getAvailableLocales()
+	JArray DateFormat::getAvailableLocales()
 	{
 		return callStaticObjectMethod(
 			"android.icu.text.DateFormat",
 			"getAvailableLocales",
 			"()[Ljava/util/Locale;"
-		).object<jarray>();
+		);
 	}
 	android::icu::text::DateFormat DateFormat::getDateInstance()
 	{
@@ -872,105 +875,105 @@ namespace android::icu::text
 			arg1.object()
 		);
 	}
-	android::icu::text::DateFormat DateFormat::getInstanceForSkeleton(jstring arg0)
+	android::icu::text::DateFormat DateFormat::getInstanceForSkeleton(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.icu.text.DateFormat",
 			"getInstanceForSkeleton",
 			"(Ljava/lang/String;)Landroid/icu/text/DateFormat;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	android::icu::text::DateFormat DateFormat::getInstanceForSkeleton(jstring arg0, android::icu::util::ULocale arg1)
+	android::icu::text::DateFormat DateFormat::getInstanceForSkeleton(JString arg0, android::icu::util::ULocale arg1)
 	{
 		return callStaticObjectMethod(
 			"android.icu.text.DateFormat",
 			"getInstanceForSkeleton",
 			"(Ljava/lang/String;Landroid/icu/util/ULocale;)Landroid/icu/text/DateFormat;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
-	android::icu::text::DateFormat DateFormat::getInstanceForSkeleton(jstring arg0, java::util::Locale arg1)
+	android::icu::text::DateFormat DateFormat::getInstanceForSkeleton(JString arg0, java::util::Locale arg1)
 	{
 		return callStaticObjectMethod(
 			"android.icu.text.DateFormat",
 			"getInstanceForSkeleton",
 			"(Ljava/lang/String;Ljava/util/Locale;)Landroid/icu/text/DateFormat;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
-	android::icu::text::DateFormat DateFormat::getInstanceForSkeleton(android::icu::util::Calendar arg0, jstring arg1, android::icu::util::ULocale arg2)
+	android::icu::text::DateFormat DateFormat::getInstanceForSkeleton(android::icu::util::Calendar arg0, JString arg1, android::icu::util::ULocale arg2)
 	{
 		return callStaticObjectMethod(
 			"android.icu.text.DateFormat",
 			"getInstanceForSkeleton",
 			"(Landroid/icu/util/Calendar;Ljava/lang/String;Landroid/icu/util/ULocale;)Landroid/icu/text/DateFormat;",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2.object()
 		);
 	}
-	android::icu::text::DateFormat DateFormat::getInstanceForSkeleton(android::icu::util::Calendar arg0, jstring arg1, java::util::Locale arg2)
+	android::icu::text::DateFormat DateFormat::getInstanceForSkeleton(android::icu::util::Calendar arg0, JString arg1, java::util::Locale arg2)
 	{
 		return callStaticObjectMethod(
 			"android.icu.text.DateFormat",
 			"getInstanceForSkeleton",
 			"(Landroid/icu/util/Calendar;Ljava/lang/String;Ljava/util/Locale;)Landroid/icu/text/DateFormat;",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2.object()
 		);
 	}
-	android::icu::text::DateFormat DateFormat::getPatternInstance(jstring arg0)
+	android::icu::text::DateFormat DateFormat::getPatternInstance(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.icu.text.DateFormat",
 			"getPatternInstance",
 			"(Ljava/lang/String;)Landroid/icu/text/DateFormat;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	android::icu::text::DateFormat DateFormat::getPatternInstance(jstring arg0, android::icu::util::ULocale arg1)
+	android::icu::text::DateFormat DateFormat::getPatternInstance(JString arg0, android::icu::util::ULocale arg1)
 	{
 		return callStaticObjectMethod(
 			"android.icu.text.DateFormat",
 			"getPatternInstance",
 			"(Ljava/lang/String;Landroid/icu/util/ULocale;)Landroid/icu/text/DateFormat;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
-	android::icu::text::DateFormat DateFormat::getPatternInstance(jstring arg0, java::util::Locale arg1)
+	android::icu::text::DateFormat DateFormat::getPatternInstance(JString arg0, java::util::Locale arg1)
 	{
 		return callStaticObjectMethod(
 			"android.icu.text.DateFormat",
 			"getPatternInstance",
 			"(Ljava/lang/String;Ljava/util/Locale;)Landroid/icu/text/DateFormat;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
-	android::icu::text::DateFormat DateFormat::getPatternInstance(android::icu::util::Calendar arg0, jstring arg1, android::icu::util::ULocale arg2)
+	android::icu::text::DateFormat DateFormat::getPatternInstance(android::icu::util::Calendar arg0, JString arg1, android::icu::util::ULocale arg2)
 	{
 		return callStaticObjectMethod(
 			"android.icu.text.DateFormat",
 			"getPatternInstance",
 			"(Landroid/icu/util/Calendar;Ljava/lang/String;Landroid/icu/util/ULocale;)Landroid/icu/text/DateFormat;",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2.object()
 		);
 	}
-	android::icu::text::DateFormat DateFormat::getPatternInstance(android::icu::util::Calendar arg0, jstring arg1, java::util::Locale arg2)
+	android::icu::text::DateFormat DateFormat::getPatternInstance(android::icu::util::Calendar arg0, JString arg1, java::util::Locale arg2)
 	{
 		return callStaticObjectMethod(
 			"android.icu.text.DateFormat",
 			"getPatternInstance",
 			"(Landroid/icu/util/Calendar;Ljava/lang/String;Ljava/util/Locale;)Landroid/icu/text/DateFormat;",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2.object()
 		);
 	}
@@ -1043,28 +1046,28 @@ namespace android::icu::text
 			arg2.object()
 		);
 	}
-	jobject DateFormat::clone()
+	JObject DateFormat::clone()
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
-	jboolean DateFormat::equals(jobject arg0)
+	jboolean DateFormat::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jstring DateFormat::format(java::util::Date arg0)
+	JString DateFormat::format(java::util::Date arg0)
 	{
 		return callObjectMethod(
 			"format",
 			"(Ljava/util/Date;)Ljava/lang/String;",
 			arg0.object()
-		).object<jstring>();
+		);
 	}
 	java::lang::StringBuffer DateFormat::format(android::icu::util::Calendar arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
 	{
@@ -1076,12 +1079,12 @@ namespace android::icu::text
 			arg2.object()
 		);
 	}
-	java::lang::StringBuffer DateFormat::format(jobject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
+	java::lang::StringBuffer DateFormat::format(JObject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
 	{
 		return callObjectMethod(
 			"format",
 			"(Ljava/lang/Object;Ljava/lang/StringBuffer;Ljava/text/FieldPosition;)Ljava/lang/StringBuffer;",
-			arg0,
+			arg0.object<jobject>(),
 			arg1.object(),
 			arg2.object()
 		);
@@ -1154,41 +1157,41 @@ namespace android::icu::text
 			"()Z"
 		);
 	}
-	java::util::Date DateFormat::parse(jstring arg0)
+	java::util::Date DateFormat::parse(JString arg0)
 	{
 		return callObjectMethod(
 			"parse",
 			"(Ljava/lang/String;)Ljava/util/Date;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	java::util::Date DateFormat::parse(jstring arg0, java::text::ParsePosition arg1)
+	java::util::Date DateFormat::parse(JString arg0, java::text::ParsePosition arg1)
 	{
 		return callObjectMethod(
 			"parse",
 			"(Ljava/lang/String;Ljava/text/ParsePosition;)Ljava/util/Date;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
-	void DateFormat::parse(jstring arg0, android::icu::util::Calendar arg1, java::text::ParsePosition arg2)
+	void DateFormat::parse(JString arg0, android::icu::util::Calendar arg1, java::text::ParsePosition arg2)
 	{
 		callMethod<void>(
 			"parse",
 			"(Ljava/lang/String;Landroid/icu/util/Calendar;Ljava/text/ParsePosition;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
 			arg2.object()
 		);
 	}
-	jobject DateFormat::parseObject(jstring arg0, java::text::ParsePosition arg1)
+	JObject DateFormat::parseObject(JString arg0, java::text::ParsePosition arg1)
 	{
 		return callObjectMethod(
 			"parseObject",
 			"(Ljava/lang/String;Ljava/text/ParsePosition;)Ljava/lang/Object;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
-		).object<jobject>();
+		);
 	}
 	android::icu::text::DateFormat DateFormat::setBooleanAttribute(android::icu::text::DateFormat_BooleanAttribute arg0, jboolean arg1)
 	{

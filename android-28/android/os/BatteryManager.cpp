@@ -1,23 +1,24 @@
+#include "../../JString.hpp"
 #include "./BatteryManager.hpp"
 
 namespace android::os
 {
 	// Fields
-	jstring BatteryManager::ACTION_CHARGING()
+	JString BatteryManager::ACTION_CHARGING()
 	{
 		return getStaticObjectField(
 			"android.os.BatteryManager",
 			"ACTION_CHARGING",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring BatteryManager::ACTION_DISCHARGING()
+	JString BatteryManager::ACTION_DISCHARGING()
 	{
 		return getStaticObjectField(
 			"android.os.BatteryManager",
 			"ACTION_DISCHARGING",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint BatteryManager::BATTERY_HEALTH_COLD()
 	{
@@ -166,93 +167,93 @@ namespace android::os
 			"BATTERY_STATUS_UNKNOWN"
 		);
 	}
-	jstring BatteryManager::EXTRA_BATTERY_LOW()
+	JString BatteryManager::EXTRA_BATTERY_LOW()
 	{
 		return getStaticObjectField(
 			"android.os.BatteryManager",
 			"EXTRA_BATTERY_LOW",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring BatteryManager::EXTRA_HEALTH()
+	JString BatteryManager::EXTRA_HEALTH()
 	{
 		return getStaticObjectField(
 			"android.os.BatteryManager",
 			"EXTRA_HEALTH",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring BatteryManager::EXTRA_ICON_SMALL()
+	JString BatteryManager::EXTRA_ICON_SMALL()
 	{
 		return getStaticObjectField(
 			"android.os.BatteryManager",
 			"EXTRA_ICON_SMALL",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring BatteryManager::EXTRA_LEVEL()
+	JString BatteryManager::EXTRA_LEVEL()
 	{
 		return getStaticObjectField(
 			"android.os.BatteryManager",
 			"EXTRA_LEVEL",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring BatteryManager::EXTRA_PLUGGED()
+	JString BatteryManager::EXTRA_PLUGGED()
 	{
 		return getStaticObjectField(
 			"android.os.BatteryManager",
 			"EXTRA_PLUGGED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring BatteryManager::EXTRA_PRESENT()
+	JString BatteryManager::EXTRA_PRESENT()
 	{
 		return getStaticObjectField(
 			"android.os.BatteryManager",
 			"EXTRA_PRESENT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring BatteryManager::EXTRA_SCALE()
+	JString BatteryManager::EXTRA_SCALE()
 	{
 		return getStaticObjectField(
 			"android.os.BatteryManager",
 			"EXTRA_SCALE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring BatteryManager::EXTRA_STATUS()
+	JString BatteryManager::EXTRA_STATUS()
 	{
 		return getStaticObjectField(
 			"android.os.BatteryManager",
 			"EXTRA_STATUS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring BatteryManager::EXTRA_TECHNOLOGY()
+	JString BatteryManager::EXTRA_TECHNOLOGY()
 	{
 		return getStaticObjectField(
 			"android.os.BatteryManager",
 			"EXTRA_TECHNOLOGY",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring BatteryManager::EXTRA_TEMPERATURE()
+	JString BatteryManager::EXTRA_TEMPERATURE()
 	{
 		return getStaticObjectField(
 			"android.os.BatteryManager",
 			"EXTRA_TEMPERATURE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring BatteryManager::EXTRA_VOLTAGE()
+	JString BatteryManager::EXTRA_VOLTAGE()
 	{
 		return getStaticObjectField(
 			"android.os.BatteryManager",
 			"EXTRA_VOLTAGE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QJniObject forward

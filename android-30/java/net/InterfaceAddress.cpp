@@ -1,3 +1,5 @@
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./Inet4Address.hpp"
 #include "./InetAddress.hpp"
 #include "./InterfaceAddress.hpp"
@@ -12,12 +14,12 @@ namespace java::net
 	// Constructors
 	
 	// Methods
-	jboolean InterfaceAddress::equals(jobject arg0)
+	jboolean InterfaceAddress::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	java::net::InetAddress InterfaceAddress::getAddress()
@@ -48,12 +50,12 @@ namespace java::net
 			"()I"
 		);
 	}
-	jstring InterfaceAddress::toString()
+	JString InterfaceAddress::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::net
 

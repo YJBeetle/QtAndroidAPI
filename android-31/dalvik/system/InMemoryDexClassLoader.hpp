@@ -1,13 +1,13 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../../java/lang/ClassLoader.hpp"
 #include "./BaseDexClassLoader.hpp"
 
+class JArray;
 namespace java::lang
 {
 	class ClassLoader;
 }
+class JString;
 namespace java::nio
 {
 	class ByteBuffer;
@@ -25,9 +25,9 @@ namespace dalvik::system
 		InMemoryDexClassLoader(QJniObject obj);
 		
 		// Constructors
-		InMemoryDexClassLoader(jarray arg0, java::lang::ClassLoader arg1);
+		InMemoryDexClassLoader(JArray arg0, java::lang::ClassLoader arg1);
 		InMemoryDexClassLoader(java::nio::ByteBuffer arg0, java::lang::ClassLoader arg1);
-		InMemoryDexClassLoader(jarray arg0, jstring arg1, java::lang::ClassLoader arg2);
+		InMemoryDexClassLoader(JArray arg0, JString arg1, java::lang::ClassLoader arg2);
 		
 		// Methods
 	};

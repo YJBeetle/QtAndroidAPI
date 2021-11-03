@@ -2,6 +2,9 @@
 
 #include "../../../../JObject.hpp"
 
+class JIntArray;
+class JObject;
+class JString;
 
 namespace android::hardware::camera2::params
 {
@@ -18,11 +21,11 @@ namespace android::hardware::camera2::params
 		// Constructors
 		
 		// Methods
-		void copyTo(jintArray arg0, jint arg1);
-		jboolean equals(jobject arg0);
+		void copyTo(JIntArray arg0, jint arg1);
+		jboolean equals(JObject arg0);
 		jint getOffsetForIndex(jint arg0, jint arg1);
 		jint hashCode();
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::hardware::camera2::params
 

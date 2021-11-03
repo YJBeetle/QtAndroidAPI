@@ -1,3 +1,5 @@
+#include "../../JByteArray.hpp"
+#include "../../JArray.hpp"
 #include "../content/ContentValues.hpp"
 #include "../content/Context.hpp"
 #include "./DrmConvertedStatus.hpp"
@@ -5,6 +7,7 @@
 #include "./DrmInfoRequest.hpp"
 #include "./DrmRights.hpp"
 #include "../net/Uri.hpp"
+#include "../../JString.hpp"
 #include "./DrmManagerClient.hpp"
 
 namespace android::drm
@@ -53,22 +56,22 @@ namespace android::drm
 			arg0.object()
 		);
 	}
-	jboolean DrmManagerClient::canHandle(android::net::Uri arg0, jstring arg1)
+	jboolean DrmManagerClient::canHandle(android::net::Uri arg0, JString arg1)
 	{
 		return callMethod<jboolean>(
 			"canHandle",
 			"(Landroid/net/Uri;Ljava/lang/String;)Z",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
-	jboolean DrmManagerClient::canHandle(jstring arg0, jstring arg1)
+	jboolean DrmManagerClient::canHandle(JString arg0, JString arg1)
 	{
 		return callMethod<jboolean>(
 			"canHandle",
 			"(Ljava/lang/String;Ljava/lang/String;)Z",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		);
 	}
 	jint DrmManagerClient::checkRightsStatus(android::net::Uri arg0)
@@ -79,12 +82,12 @@ namespace android::drm
 			arg0.object()
 		);
 	}
-	jint DrmManagerClient::checkRightsStatus(jstring arg0)
+	jint DrmManagerClient::checkRightsStatus(JString arg0)
 	{
 		return callMethod<jint>(
 			"checkRightsStatus",
 			"(Ljava/lang/String;)I",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	jint DrmManagerClient::checkRightsStatus(android::net::Uri arg0, jint arg1)
@@ -96,12 +99,12 @@ namespace android::drm
 			arg1
 		);
 	}
-	jint DrmManagerClient::checkRightsStatus(jstring arg0, jint arg1)
+	jint DrmManagerClient::checkRightsStatus(JString arg0, jint arg1)
 	{
 		return callMethod<jint>(
 			"checkRightsStatus",
 			"(Ljava/lang/String;I)I",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
@@ -120,21 +123,21 @@ namespace android::drm
 			arg0
 		);
 	}
-	android::drm::DrmConvertedStatus DrmManagerClient::convertData(jint arg0, jbyteArray arg1)
+	android::drm::DrmConvertedStatus DrmManagerClient::convertData(jint arg0, JByteArray arg1)
 	{
 		return callObjectMethod(
 			"convertData",
 			"(I[B)Landroid/drm/DrmConvertedStatus;",
 			arg0,
-			arg1
+			arg1.object<jbyteArray>()
 		);
 	}
-	jarray DrmManagerClient::getAvailableDrmEngines()
+	JArray DrmManagerClient::getAvailableDrmEngines()
 	{
 		return callObjectMethod(
 			"getAvailableDrmEngines",
 			"()[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
 	JObject DrmManagerClient::getAvailableDrmSupportInfo()
 	{
@@ -152,31 +155,31 @@ namespace android::drm
 			arg1
 		);
 	}
-	android::content::ContentValues DrmManagerClient::getConstraints(jstring arg0, jint arg1)
+	android::content::ContentValues DrmManagerClient::getConstraints(JString arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"getConstraints",
 			"(Ljava/lang/String;I)Landroid/content/ContentValues;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
-	jint DrmManagerClient::getDrmObjectType(android::net::Uri arg0, jstring arg1)
+	jint DrmManagerClient::getDrmObjectType(android::net::Uri arg0, JString arg1)
 	{
 		return callMethod<jint>(
 			"getDrmObjectType",
 			"(Landroid/net/Uri;Ljava/lang/String;)I",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
-	jint DrmManagerClient::getDrmObjectType(jstring arg0, jstring arg1)
+	jint DrmManagerClient::getDrmObjectType(JString arg0, JString arg1)
 	{
 		return callMethod<jint>(
 			"getDrmObjectType",
 			"(Ljava/lang/String;Ljava/lang/String;)I",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		);
 	}
 	android::content::ContentValues DrmManagerClient::getMetadata(android::net::Uri arg0)
@@ -187,36 +190,36 @@ namespace android::drm
 			arg0.object()
 		);
 	}
-	android::content::ContentValues DrmManagerClient::getMetadata(jstring arg0)
+	android::content::ContentValues DrmManagerClient::getMetadata(JString arg0)
 	{
 		return callObjectMethod(
 			"getMetadata",
 			"(Ljava/lang/String;)Landroid/content/ContentValues;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jstring DrmManagerClient::getOriginalMimeType(android::net::Uri arg0)
+	JString DrmManagerClient::getOriginalMimeType(android::net::Uri arg0)
 	{
 		return callObjectMethod(
 			"getOriginalMimeType",
 			"(Landroid/net/Uri;)Ljava/lang/String;",
 			arg0.object()
-		).object<jstring>();
+		);
 	}
-	jstring DrmManagerClient::getOriginalMimeType(jstring arg0)
+	JString DrmManagerClient::getOriginalMimeType(JString arg0)
 	{
 		return callObjectMethod(
 			"getOriginalMimeType",
 			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
+			arg0.object<jstring>()
+		);
 	}
-	jint DrmManagerClient::openConvertSession(jstring arg0)
+	jint DrmManagerClient::openConvertSession(JString arg0)
 	{
 		return callMethod<jint>(
 			"openConvertSession",
 			"(Ljava/lang/String;)I",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	jint DrmManagerClient::processDrmInfo(android::drm::DrmInfo arg0)
@@ -249,22 +252,22 @@ namespace android::drm
 			arg0.object()
 		);
 	}
-	jint DrmManagerClient::removeRights(jstring arg0)
+	jint DrmManagerClient::removeRights(JString arg0)
 	{
 		return callMethod<jint>(
 			"removeRights",
 			"(Ljava/lang/String;)I",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jint DrmManagerClient::saveRights(android::drm::DrmRights arg0, jstring arg1, jstring arg2)
+	jint DrmManagerClient::saveRights(android::drm::DrmRights arg0, JString arg1, JString arg2)
 	{
 		return callMethod<jint>(
 			"saveRights",
 			"(Landroid/drm/DrmRights;Ljava/lang/String;Ljava/lang/String;)I",
 			arg0.object(),
-			arg1,
-			arg2
+			arg1.object<jstring>(),
+			arg2.object<jstring>()
 		);
 	}
 	void DrmManagerClient::setOnErrorListener(JObject arg0)

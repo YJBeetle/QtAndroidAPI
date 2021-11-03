@@ -1,3 +1,6 @@
+#include "../../../JByteArray.hpp"
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
 #include "../../../java/math/BigInteger.hpp"
 #include "../../../java/util/Date.hpp"
 #include "../../../javax/security/auth/x500/X500Principal.hpp"
@@ -20,19 +23,19 @@ namespace android::security::keystore
 			"()Ljava/security/spec/AlgorithmParameterSpec;"
 		);
 	}
-	jbyteArray KeyGenParameterSpec::getAttestationChallenge()
+	JByteArray KeyGenParameterSpec::getAttestationChallenge()
 	{
 		return callObjectMethod(
 			"getAttestationChallenge",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
-	jarray KeyGenParameterSpec::getBlockModes()
+	JArray KeyGenParameterSpec::getBlockModes()
 	{
 		return callObjectMethod(
 			"getBlockModes",
 			"()[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
 	java::util::Date KeyGenParameterSpec::getCertificateNotAfter()
 	{
@@ -62,19 +65,19 @@ namespace android::security::keystore
 			"()Ljavax/security/auth/x500/X500Principal;"
 		);
 	}
-	jarray KeyGenParameterSpec::getDigests()
+	JArray KeyGenParameterSpec::getDigests()
 	{
 		return callObjectMethod(
 			"getDigests",
 			"()[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
-	jarray KeyGenParameterSpec::getEncryptionPaddings()
+	JArray KeyGenParameterSpec::getEncryptionPaddings()
 	{
 		return callObjectMethod(
 			"getEncryptionPaddings",
 			"()[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
 	jint KeyGenParameterSpec::getKeySize()
 	{
@@ -104,12 +107,12 @@ namespace android::security::keystore
 			"()Ljava/util/Date;"
 		);
 	}
-	jstring KeyGenParameterSpec::getKeystoreAlias()
+	JString KeyGenParameterSpec::getKeystoreAlias()
 	{
 		return callObjectMethod(
 			"getKeystoreAlias",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint KeyGenParameterSpec::getPurposes()
 	{
@@ -118,12 +121,12 @@ namespace android::security::keystore
 			"()I"
 		);
 	}
-	jarray KeyGenParameterSpec::getSignaturePaddings()
+	JArray KeyGenParameterSpec::getSignaturePaddings()
 	{
 		return callObjectMethod(
 			"getSignaturePaddings",
 			"()[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
 	jint KeyGenParameterSpec::getUserAuthenticationValidityDurationSeconds()
 	{

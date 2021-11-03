@@ -1,3 +1,4 @@
+#include "../../JArray.hpp"
 #include "./Application.hpp"
 #include "./Notification.hpp"
 #include "../content/Context.hpp"

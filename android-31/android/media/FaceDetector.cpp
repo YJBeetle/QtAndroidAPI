@@ -1,3 +1,4 @@
+#include "../../JArray.hpp"
 #include "../graphics/Bitmap.hpp"
 #include "./FaceDetector.hpp"
 
@@ -19,13 +20,13 @@ namespace android::media
 		) {}
 	
 	// Methods
-	jint FaceDetector::findFaces(android::graphics::Bitmap arg0, jarray arg1)
+	jint FaceDetector::findFaces(android::graphics::Bitmap arg0, JArray arg1)
 	{
 		return callMethod<jint>(
 			"findFaces",
 			"(Landroid/graphics/Bitmap;[Landroid/media/FaceDetector$Face;)I",
 			arg0.object(),
-			arg1
+			arg1.object<jarray>()
 		);
 	}
 } // namespace android::media

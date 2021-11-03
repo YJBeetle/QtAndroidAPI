@@ -30,6 +30,7 @@ namespace android::media
 {
 	class RouteDiscoveryPreference;
 }
+class JString;
 
 namespace android::media
 {
@@ -46,7 +47,7 @@ namespace android::media
 		
 		// Methods
 		static android::media::MediaRouter2 getInstance(android::content::Context arg0);
-		android::media::MediaRouter2_RoutingController getController(jstring arg0);
+		android::media::MediaRouter2_RoutingController getController(JString arg0);
 		JObject getControllers();
 		JObject getRoutes();
 		android::media::MediaRouter2_RoutingController getSystemController();

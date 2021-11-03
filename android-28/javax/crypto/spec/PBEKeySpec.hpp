@@ -2,6 +2,8 @@
 
 #include "../../../JObject.hpp"
 
+class JByteArray;
+class JCharArray;
 
 namespace javax::crypto::spec
 {
@@ -15,16 +17,16 @@ namespace javax::crypto::spec
 		PBEKeySpec(QJniObject obj);
 		
 		// Constructors
-		PBEKeySpec(jcharArray arg0);
-		PBEKeySpec(jcharArray arg0, jbyteArray arg1, jint arg2);
-		PBEKeySpec(jcharArray arg0, jbyteArray arg1, jint arg2, jint arg3);
+		PBEKeySpec(JCharArray arg0);
+		PBEKeySpec(JCharArray arg0, JByteArray arg1, jint arg2);
+		PBEKeySpec(JCharArray arg0, JByteArray arg1, jint arg2, jint arg3);
 		
 		// Methods
 		void clearPassword();
 		jint getIterationCount();
 		jint getKeyLength();
-		jcharArray getPassword();
-		jbyteArray getSalt();
+		JCharArray getPassword();
+		JByteArray getSalt();
 	};
 } // namespace javax::crypto::spec
 

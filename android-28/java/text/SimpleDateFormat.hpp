@@ -1,13 +1,19 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "./Format.hpp"
 #include "./DateFormat.hpp"
 
+class JCharArray;
+class JIntArray;
+class JArray;
+class JArray;
+class JBooleanArray;
+class JArray;
 namespace java::io
 {
 	class ObjectInputStream;
 }
+class JObject;
+class JString;
 namespace java::lang
 {
 	class StringBuffer;
@@ -54,25 +60,25 @@ namespace java::text
 		
 		// Constructors
 		SimpleDateFormat();
-		SimpleDateFormat(jstring arg0);
-		SimpleDateFormat(jstring arg0, java::text::DateFormatSymbols arg1);
-		SimpleDateFormat(jstring arg0, java::util::Locale arg1);
+		SimpleDateFormat(JString arg0);
+		SimpleDateFormat(JString arg0, java::text::DateFormatSymbols arg1);
+		SimpleDateFormat(JString arg0, java::util::Locale arg1);
 		
 		// Methods
-		void applyLocalizedPattern(jstring arg0);
-		void applyPattern(jstring arg0);
-		jobject clone();
-		jboolean equals(jobject arg0);
+		void applyLocalizedPattern(JString arg0);
+		void applyPattern(JString arg0);
+		JObject clone();
+		jboolean equals(JObject arg0);
 		java::lang::StringBuffer format(java::util::Date arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2);
-		JObject formatToCharacterIterator(jobject arg0);
+		JObject formatToCharacterIterator(JObject arg0);
 		java::util::Date get2DigitYearStart();
 		java::text::DateFormatSymbols getDateFormatSymbols();
 		jint hashCode();
-		java::util::Date parse(jstring arg0, java::text::ParsePosition arg1);
+		java::util::Date parse(JString arg0, java::text::ParsePosition arg1);
 		void set2DigitYearStart(java::util::Date arg0);
 		void setDateFormatSymbols(java::text::DateFormatSymbols arg0);
-		jstring toLocalizedPattern();
-		jstring toPattern();
+		JString toLocalizedPattern();
+		JString toPattern();
 	};
 } // namespace java::text
 

@@ -1,3 +1,4 @@
+#include "../../../JArray.hpp"
 #include "../../content/IntentSender.hpp"
 #include "../../os/Bundle.hpp"
 #include "./Dataset.hpp"
@@ -44,12 +45,12 @@ namespace android::service::autofill
 			arg0
 		);
 	}
-	android::service::autofill::FillResponse_Builder FillResponse_Builder::setAuthentication(jarray arg0, android::content::IntentSender arg1, android::widget::RemoteViews arg2)
+	android::service::autofill::FillResponse_Builder FillResponse_Builder::setAuthentication(JArray arg0, android::content::IntentSender arg1, android::widget::RemoteViews arg2)
 	{
 		return callObjectMethod(
 			"setAuthentication",
 			"([Landroid/view/autofill/AutofillId;Landroid/content/IntentSender;Landroid/widget/RemoteViews;)Landroid/service/autofill/FillResponse$Builder;",
-			arg0,
+			arg0.object<jarray>(),
 			arg1.object(),
 			arg2.object()
 		);
@@ -62,12 +63,12 @@ namespace android::service::autofill
 			arg0.object()
 		);
 	}
-	android::service::autofill::FillResponse_Builder FillResponse_Builder::setFieldClassificationIds(jarray arg0)
+	android::service::autofill::FillResponse_Builder FillResponse_Builder::setFieldClassificationIds(JArray arg0)
 	{
 		return callObjectMethod(
 			"setFieldClassificationIds",
 			"([Landroid/view/autofill/AutofillId;)Landroid/service/autofill/FillResponse$Builder;",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
 	android::service::autofill::FillResponse_Builder FillResponse_Builder::setFlags(jint arg0)
@@ -94,12 +95,12 @@ namespace android::service::autofill
 			arg0.object()
 		);
 	}
-	android::service::autofill::FillResponse_Builder FillResponse_Builder::setIgnoredIds(jarray arg0)
+	android::service::autofill::FillResponse_Builder FillResponse_Builder::setIgnoredIds(JArray arg0)
 	{
 		return callObjectMethod(
 			"setIgnoredIds",
 			"([Landroid/view/autofill/AutofillId;)Landroid/service/autofill/FillResponse$Builder;",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
 	android::service::autofill::FillResponse_Builder FillResponse_Builder::setSaveInfo(android::service::autofill::SaveInfo arg0)

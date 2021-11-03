@@ -1,8 +1,10 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./GLES10.hpp"
 
+class JFloatArray;
+class JIntArray;
+class JBooleanArray;
 namespace java::nio
 {
 	class Buffer;
@@ -157,70 +159,70 @@ namespace android::opengl
 		static void glBufferData(jint arg0, jint arg1, java::nio::Buffer arg2, jint arg3);
 		static void glBufferSubData(jint arg0, jint arg1, jint arg2, java::nio::Buffer arg3);
 		static void glClipPlanef(jint arg0, java::nio::FloatBuffer arg1);
-		static void glClipPlanef(jint arg0, jfloatArray arg1, jint arg2);
+		static void glClipPlanef(jint arg0, JFloatArray arg1, jint arg2);
 		static void glClipPlanex(jint arg0, java::nio::IntBuffer arg1);
-		static void glClipPlanex(jint arg0, jintArray arg1, jint arg2);
+		static void glClipPlanex(jint arg0, JIntArray arg1, jint arg2);
 		static void glColor4ub(jbyte arg0, jbyte arg1, jbyte arg2, jbyte arg3);
 		static void glColorPointer(jint arg0, jint arg1, jint arg2, jint arg3);
 		static void glDeleteBuffers(jint arg0, java::nio::IntBuffer arg1);
-		static void glDeleteBuffers(jint arg0, jintArray arg1, jint arg2);
+		static void glDeleteBuffers(jint arg0, JIntArray arg1, jint arg2);
 		static void glDrawElements(jint arg0, jint arg1, jint arg2, jint arg3);
 		static void glGenBuffers(jint arg0, java::nio::IntBuffer arg1);
-		static void glGenBuffers(jint arg0, jintArray arg1, jint arg2);
+		static void glGenBuffers(jint arg0, JIntArray arg1, jint arg2);
 		static void glGetBooleanv(jint arg0, java::nio::IntBuffer arg1);
-		static void glGetBooleanv(jint arg0, jbooleanArray arg1, jint arg2);
+		static void glGetBooleanv(jint arg0, JBooleanArray arg1, jint arg2);
 		static void glGetBufferParameteriv(jint arg0, jint arg1, java::nio::IntBuffer arg2);
-		static void glGetBufferParameteriv(jint arg0, jint arg1, jintArray arg2, jint arg3);
+		static void glGetBufferParameteriv(jint arg0, jint arg1, JIntArray arg2, jint arg3);
 		static void glGetClipPlanef(jint arg0, java::nio::FloatBuffer arg1);
-		static void glGetClipPlanef(jint arg0, jfloatArray arg1, jint arg2);
+		static void glGetClipPlanef(jint arg0, JFloatArray arg1, jint arg2);
 		static void glGetClipPlanex(jint arg0, java::nio::IntBuffer arg1);
-		static void glGetClipPlanex(jint arg0, jintArray arg1, jint arg2);
+		static void glGetClipPlanex(jint arg0, JIntArray arg1, jint arg2);
 		static void glGetFixedv(jint arg0, java::nio::IntBuffer arg1);
-		static void glGetFixedv(jint arg0, jintArray arg1, jint arg2);
+		static void glGetFixedv(jint arg0, JIntArray arg1, jint arg2);
 		static void glGetFloatv(jint arg0, java::nio::FloatBuffer arg1);
-		static void glGetFloatv(jint arg0, jfloatArray arg1, jint arg2);
+		static void glGetFloatv(jint arg0, JFloatArray arg1, jint arg2);
 		static void glGetLightfv(jint arg0, jint arg1, java::nio::FloatBuffer arg2);
-		static void glGetLightfv(jint arg0, jint arg1, jfloatArray arg2, jint arg3);
+		static void glGetLightfv(jint arg0, jint arg1, JFloatArray arg2, jint arg3);
 		static void glGetLightxv(jint arg0, jint arg1, java::nio::IntBuffer arg2);
-		static void glGetLightxv(jint arg0, jint arg1, jintArray arg2, jint arg3);
+		static void glGetLightxv(jint arg0, jint arg1, JIntArray arg2, jint arg3);
 		static void glGetMaterialfv(jint arg0, jint arg1, java::nio::FloatBuffer arg2);
-		static void glGetMaterialfv(jint arg0, jint arg1, jfloatArray arg2, jint arg3);
+		static void glGetMaterialfv(jint arg0, jint arg1, JFloatArray arg2, jint arg3);
 		static void glGetMaterialxv(jint arg0, jint arg1, java::nio::IntBuffer arg2);
-		static void glGetMaterialxv(jint arg0, jint arg1, jintArray arg2, jint arg3);
+		static void glGetMaterialxv(jint arg0, jint arg1, JIntArray arg2, jint arg3);
 		static void glGetTexEnvfv(jint arg0, jint arg1, java::nio::FloatBuffer arg2);
-		static void glGetTexEnvfv(jint arg0, jint arg1, jfloatArray arg2, jint arg3);
+		static void glGetTexEnvfv(jint arg0, jint arg1, JFloatArray arg2, jint arg3);
 		static void glGetTexEnviv(jint arg0, jint arg1, java::nio::IntBuffer arg2);
-		static void glGetTexEnviv(jint arg0, jint arg1, jintArray arg2, jint arg3);
+		static void glGetTexEnviv(jint arg0, jint arg1, JIntArray arg2, jint arg3);
 		static void glGetTexEnvxv(jint arg0, jint arg1, java::nio::IntBuffer arg2);
-		static void glGetTexEnvxv(jint arg0, jint arg1, jintArray arg2, jint arg3);
+		static void glGetTexEnvxv(jint arg0, jint arg1, JIntArray arg2, jint arg3);
 		static void glGetTexParameterfv(jint arg0, jint arg1, java::nio::FloatBuffer arg2);
-		static void glGetTexParameterfv(jint arg0, jint arg1, jfloatArray arg2, jint arg3);
+		static void glGetTexParameterfv(jint arg0, jint arg1, JFloatArray arg2, jint arg3);
 		static void glGetTexParameteriv(jint arg0, jint arg1, java::nio::IntBuffer arg2);
-		static void glGetTexParameteriv(jint arg0, jint arg1, jintArray arg2, jint arg3);
+		static void glGetTexParameteriv(jint arg0, jint arg1, JIntArray arg2, jint arg3);
 		static void glGetTexParameterxv(jint arg0, jint arg1, java::nio::IntBuffer arg2);
-		static void glGetTexParameterxv(jint arg0, jint arg1, jintArray arg2, jint arg3);
+		static void glGetTexParameterxv(jint arg0, jint arg1, JIntArray arg2, jint arg3);
 		static jboolean glIsBuffer(jint arg0);
 		static jboolean glIsEnabled(jint arg0);
 		static jboolean glIsTexture(jint arg0);
 		static void glNormalPointer(jint arg0, jint arg1, jint arg2);
 		static void glPointParameterf(jint arg0, jfloat arg1);
 		static void glPointParameterfv(jint arg0, java::nio::FloatBuffer arg1);
-		static void glPointParameterfv(jint arg0, jfloatArray arg1, jint arg2);
+		static void glPointParameterfv(jint arg0, JFloatArray arg1, jint arg2);
 		static void glPointParameterx(jint arg0, jint arg1);
 		static void glPointParameterxv(jint arg0, java::nio::IntBuffer arg1);
-		static void glPointParameterxv(jint arg0, jintArray arg1, jint arg2);
+		static void glPointParameterxv(jint arg0, JIntArray arg1, jint arg2);
 		static void glPointSizePointerOES(jint arg0, jint arg1, java::nio::Buffer arg2);
 		static void glTexCoordPointer(jint arg0, jint arg1, jint arg2, jint arg3);
 		static void glTexEnvi(jint arg0, jint arg1, jint arg2);
 		static void glTexEnviv(jint arg0, jint arg1, java::nio::IntBuffer arg2);
-		static void glTexEnviv(jint arg0, jint arg1, jintArray arg2, jint arg3);
+		static void glTexEnviv(jint arg0, jint arg1, JIntArray arg2, jint arg3);
 		static void glTexParameterfv(jint arg0, jint arg1, java::nio::FloatBuffer arg2);
-		static void glTexParameterfv(jint arg0, jint arg1, jfloatArray arg2, jint arg3);
+		static void glTexParameterfv(jint arg0, jint arg1, JFloatArray arg2, jint arg3);
 		static void glTexParameteri(jint arg0, jint arg1, jint arg2);
 		static void glTexParameteriv(jint arg0, jint arg1, java::nio::IntBuffer arg2);
-		static void glTexParameteriv(jint arg0, jint arg1, jintArray arg2, jint arg3);
+		static void glTexParameteriv(jint arg0, jint arg1, JIntArray arg2, jint arg3);
 		static void glTexParameterxv(jint arg0, jint arg1, java::nio::IntBuffer arg2);
-		static void glTexParameterxv(jint arg0, jint arg1, jintArray arg2, jint arg3);
+		static void glTexParameterxv(jint arg0, jint arg1, JIntArray arg2, jint arg3);
 		static void glVertexPointer(jint arg0, jint arg1, jint arg2, jint arg3);
 	};
 } // namespace android::opengl

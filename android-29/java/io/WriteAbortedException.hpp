@@ -1,14 +1,13 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../lang/Exception.hpp"
-#include "./IOException.hpp"
 #include "./ObjectStreamException.hpp"
 
 namespace java::lang
 {
 	class Exception;
 }
+class JString;
+class JThrowable;
 
 namespace java::io
 {
@@ -23,11 +22,11 @@ namespace java::io
 		WriteAbortedException(QJniObject obj);
 		
 		// Constructors
-		WriteAbortedException(jstring arg0, java::lang::Exception arg1);
+		WriteAbortedException(JString arg0, java::lang::Exception arg1);
 		
 		// Methods
-		jthrowable getCause();
-		jstring getMessage();
+		JThrowable getCause();
+		JString getMessage();
 	};
 } // namespace java::io
 

@@ -1,5 +1,7 @@
 #include "../os/Parcel.hpp"
 #include "./BarringInfo_BarringServiceInfo.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./BarringInfo.hpp"
 
 namespace android::telephony
@@ -97,12 +99,12 @@ namespace android::telephony
 			"()I"
 		);
 	}
-	jboolean BarringInfo::equals(jobject arg0)
+	jboolean BarringInfo::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	android::telephony::BarringInfo_BarringServiceInfo BarringInfo::getBarringServiceInfo(jint arg0)
@@ -120,12 +122,12 @@ namespace android::telephony
 			"()I"
 		);
 	}
-	jstring BarringInfo::toString()
+	JString BarringInfo::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void BarringInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

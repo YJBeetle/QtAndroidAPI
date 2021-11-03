@@ -1,4 +1,6 @@
 #include "../../../os/Parcel.hpp"
+#include "../../../../JObject.hpp"
+#include "../../../../JString.hpp"
 #include "../../../../java/net/Inet6Address.hpp"
 #include "./WifiAwareNetworkInfo.hpp"
 
@@ -27,12 +29,12 @@ namespace android::net::wifi::aware
 			"()I"
 		);
 	}
-	jboolean WifiAwareNetworkInfo::equals(jobject arg0)
+	jboolean WifiAwareNetworkInfo::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	java::net::Inet6Address WifiAwareNetworkInfo::getPeerIpv6Addr()
@@ -63,12 +65,12 @@ namespace android::net::wifi::aware
 			"()I"
 		);
 	}
-	jstring WifiAwareNetworkInfo::toString()
+	JString WifiAwareNetworkInfo::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void WifiAwareNetworkInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

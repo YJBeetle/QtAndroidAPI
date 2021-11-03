@@ -7,6 +7,7 @@
 #include "./RemoteConnection_Callback.hpp"
 #include "./RemoteConnection_VideoProvider.hpp"
 #include "./StatusHints.hpp"
+#include "../../JString.hpp"
 #include "./RemoteConnection.hpp"
 
 namespace android::telecom
@@ -54,12 +55,12 @@ namespace android::telecom
 			"()I"
 		);
 	}
-	jstring RemoteConnection::getCallerDisplayName()
+	JString RemoteConnection::getCallerDisplayName()
 	{
 		return callObjectMethod(
 			"getCallerDisplayName",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	jint RemoteConnection::getCallerDisplayNamePresentation()
 	{

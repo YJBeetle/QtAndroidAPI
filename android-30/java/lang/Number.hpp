@@ -2,7 +2,6 @@
 
 #include "../../JObject.hpp"
 
-
 namespace java::lang
 {
 	class Number : public JObject

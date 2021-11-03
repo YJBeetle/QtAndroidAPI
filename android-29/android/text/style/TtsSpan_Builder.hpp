@@ -6,6 +6,7 @@ namespace android::text::style
 {
 	class TtsSpan;
 }
+class JString;
 
 namespace android::text::style
 {
@@ -19,13 +20,13 @@ namespace android::text::style
 		TtsSpan_Builder(QJniObject obj);
 		
 		// Constructors
-		TtsSpan_Builder(jstring arg0);
+		TtsSpan_Builder(JString arg0);
 		
 		// Methods
 		android::text::style::TtsSpan build();
-		android::text::style::TtsSpan_Builder setIntArgument(jstring arg0, jint arg1);
-		android::text::style::TtsSpan_Builder setLongArgument(jstring arg0, jlong arg1);
-		android::text::style::TtsSpan_Builder setStringArgument(jstring arg0, jstring arg1);
+		android::text::style::TtsSpan_Builder setIntArgument(JString arg0, jint arg1);
+		android::text::style::TtsSpan_Builder setLongArgument(JString arg0, jlong arg1);
+		android::text::style::TtsSpan_Builder setStringArgument(JString arg0, JString arg1);
 	};
 } // namespace android::text::style
 

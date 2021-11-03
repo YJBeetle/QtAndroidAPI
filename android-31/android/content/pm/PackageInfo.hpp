@@ -2,6 +2,18 @@
 
 #include "../../../JObject.hpp"
 
+class JIntArray;
+class JArray;
+class JArray;
+class JArray;
+class JArray;
+class JArray;
+class JArray;
+class JArray;
+class JArray;
+class JArray;
+class JArray;
+class JArray;
 namespace android::content::pm
 {
 	class ApplicationInfo;
@@ -14,6 +26,7 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
 
 namespace android::content::pm
 {
@@ -27,34 +40,34 @@ namespace android::content::pm
 		static jint INSTALL_LOCATION_PREFER_EXTERNAL();
 		static jint REQUESTED_PERMISSION_GRANTED();
 		static jint REQUESTED_PERMISSION_NEVER_FOR_LOCATION();
-		jarray activities();
+		JArray activities();
 		android::content::pm::ApplicationInfo applicationInfo();
-		jarray attributions();
+		JArray attributions();
 		jint baseRevisionCode();
-		jarray configPreferences();
-		jarray featureGroups();
+		JArray configPreferences();
+		JArray featureGroups();
 		jlong firstInstallTime();
-		jintArray gids();
+		JIntArray gids();
 		jint installLocation();
-		jarray instrumentation();
+		JArray instrumentation();
 		jboolean isApex();
 		jlong lastUpdateTime();
-		jstring packageName();
-		jarray permissions();
-		jarray providers();
-		jarray receivers();
-		jarray reqFeatures();
-		jarray requestedPermissions();
-		jintArray requestedPermissionsFlags();
-		jarray services();
-		jstring sharedUserId();
+		JString packageName();
+		JArray permissions();
+		JArray providers();
+		JArray receivers();
+		JArray reqFeatures();
+		JArray requestedPermissions();
+		JIntArray requestedPermissionsFlags();
+		JArray services();
+		JString sharedUserId();
 		jint sharedUserLabel();
-		jarray signatures();
+		JArray signatures();
 		android::content::pm::SigningInfo signingInfo();
-		jarray splitNames();
-		jintArray splitRevisionCodes();
+		JArray splitNames();
+		JIntArray splitRevisionCodes();
 		jint versionCode();
-		jstring versionName();
+		JString versionName();
 		
 		// QJniObject forward
 		template<typename ...Ts> explicit PackageInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
@@ -67,7 +80,7 @@ namespace android::content::pm
 		jint describeContents();
 		jlong getLongVersionCode();
 		void setLongVersionCode(jlong arg0);
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::content::pm

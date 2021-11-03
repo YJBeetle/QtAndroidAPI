@@ -14,6 +14,7 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
 
 namespace android::net::wifi
 {
@@ -21,8 +22,8 @@ namespace android::net::wifi
 	{
 	public:
 		// Fields
-		static jstring FREQUENCY_UNITS();
-		static jstring LINK_SPEED_UNITS();
+		static JString FREQUENCY_UNITS();
+		static JString LINK_SPEED_UNITS();
 		
 		// QJniObject forward
 		template<typename ...Ts> explicit WifiInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
@@ -33,17 +34,17 @@ namespace android::net::wifi
 		// Methods
 		static android::net::NetworkInfo_DetailedState getDetailedStateOf(android::net::wifi::SupplicantState arg0);
 		jint describeContents();
-		jstring getBSSID();
+		JString getBSSID();
 		jint getFrequency();
 		jboolean getHiddenSSID();
 		jint getIpAddress();
 		jint getLinkSpeed();
-		jstring getMacAddress();
+		JString getMacAddress();
 		jint getNetworkId();
 		jint getRssi();
-		jstring getSSID();
+		JString getSSID();
 		android::net::wifi::SupplicantState getSupplicantState();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::net::wifi

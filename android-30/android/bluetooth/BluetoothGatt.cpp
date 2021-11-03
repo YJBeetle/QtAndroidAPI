@@ -1,3 +1,4 @@
+#include "../../JIntArray.hpp"
 #include "./BluetoothDevice.hpp"
 #include "./BluetoothGattCharacteristic.hpp"
 #include "./BluetoothGattDescriptor.hpp"
@@ -185,12 +186,12 @@ namespace android::bluetooth
 			"()Landroid/bluetooth/BluetoothDevice;"
 		);
 	}
-	JObject BluetoothGatt::getDevicesMatchingConnectionStates(jintArray arg0)
+	JObject BluetoothGatt::getDevicesMatchingConnectionStates(JIntArray arg0)
 	{
 		return callObjectMethod(
 			"getDevicesMatchingConnectionStates",
 			"([I)Ljava/util/List;",
-			arg0
+			arg0.object<jintArray>()
 		);
 	}
 	android::bluetooth::BluetoothGattService BluetoothGatt::getService(java::util::UUID arg0)

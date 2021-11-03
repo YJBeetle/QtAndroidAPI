@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JString;
 
 namespace android::speech
 {
@@ -9,13 +10,13 @@ namespace android::speech
 	{
 	public:
 		// Fields
-		static jstring ACTION_VOICE_SEARCH_RESULTS();
-		static jstring EXTRA_VOICE_SEARCH_RESULT_HTML();
-		static jstring EXTRA_VOICE_SEARCH_RESULT_HTML_BASE_URLS();
-		static jstring EXTRA_VOICE_SEARCH_RESULT_HTTP_HEADERS();
-		static jstring EXTRA_VOICE_SEARCH_RESULT_STRINGS();
-		static jstring EXTRA_VOICE_SEARCH_RESULT_URLS();
-		static jstring URI_SCHEME_INLINE();
+		static JString ACTION_VOICE_SEARCH_RESULTS();
+		static JString EXTRA_VOICE_SEARCH_RESULT_HTML();
+		static JString EXTRA_VOICE_SEARCH_RESULT_HTML_BASE_URLS();
+		static JString EXTRA_VOICE_SEARCH_RESULT_HTTP_HEADERS();
+		static JString EXTRA_VOICE_SEARCH_RESULT_STRINGS();
+		static JString EXTRA_VOICE_SEARCH_RESULT_URLS();
+		static JString URI_SCHEME_INLINE();
 		
 		// QJniObject forward
 		template<typename ...Ts> explicit RecognizerResultsIntent(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}

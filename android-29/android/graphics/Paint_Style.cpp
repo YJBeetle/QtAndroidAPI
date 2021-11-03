@@ -1,3 +1,5 @@
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
 #include "./Paint_Style.hpp"
 
 namespace android::graphics
@@ -34,22 +36,22 @@ namespace android::graphics
 	// Constructors
 	
 	// Methods
-	android::graphics::Paint_Style Paint_Style::valueOf(jstring arg0)
+	android::graphics::Paint_Style Paint_Style::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.graphics.Paint$Style",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/graphics/Paint$Style;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray Paint_Style::values()
+	JArray Paint_Style::values()
 	{
 		return callStaticObjectMethod(
 			"android.graphics.Paint$Style",
 			"values",
 			"()[Landroid/graphics/Paint$Style;"
-		).object<jarray>();
+		);
 	}
 } // namespace android::graphics
 

@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./IllegalFormatFlagsException.hpp"
 
 namespace java::util
@@ -8,27 +9,27 @@ namespace java::util
 	IllegalFormatFlagsException::IllegalFormatFlagsException(QJniObject obj) : java::util::IllegalFormatException(obj) {}
 	
 	// Constructors
-	IllegalFormatFlagsException::IllegalFormatFlagsException(jstring arg0)
+	IllegalFormatFlagsException::IllegalFormatFlagsException(JString arg0)
 		: java::util::IllegalFormatException(
 			"java.util.IllegalFormatFlagsException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods
-	jstring IllegalFormatFlagsException::getFlags()
+	JString IllegalFormatFlagsException::getFlags()
 	{
 		return callObjectMethod(
 			"getFlags",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring IllegalFormatFlagsException::getMessage()
+	JString IllegalFormatFlagsException::getMessage()
 	{
 		return callObjectMethod(
 			"getMessage",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::util
 

@@ -1,6 +1,8 @@
 #include "../../app/Notification.hpp"
 #include "../../os/Parcel.hpp"
 #include "../../os/UserHandle.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./StatusBarNotification.hpp"
 
 namespace android::service::notification
@@ -25,14 +27,14 @@ namespace android::service::notification
 			"(Landroid/os/Parcel;)V",
 			arg0.object()
 		) {}
-	StatusBarNotification::StatusBarNotification(jstring arg0, jstring arg1, jint arg2, jstring arg3, jint arg4, jint arg5, jint arg6, android::app::Notification arg7, android::os::UserHandle arg8, jlong arg9)
+	StatusBarNotification::StatusBarNotification(JString arg0, JString arg1, jint arg2, JString arg3, jint arg4, jint arg5, jint arg6, android::app::Notification arg7, android::os::UserHandle arg8, jlong arg9)
 		: JObject(
 			"android.service.notification.StatusBarNotification",
 			"(Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;IIILandroid/app/Notification;Landroid/os/UserHandle;J)V",
-			arg0,
-			arg1,
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
 			arg2,
-			arg3,
+			arg3.object<jstring>(),
 			arg4,
 			arg5,
 			arg6,
@@ -56,12 +58,12 @@ namespace android::service::notification
 			"()I"
 		);
 	}
-	jstring StatusBarNotification::getGroupKey()
+	JString StatusBarNotification::getGroupKey()
 	{
 		return callObjectMethod(
 			"getGroupKey",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint StatusBarNotification::getId()
 	{
@@ -70,12 +72,12 @@ namespace android::service::notification
 			"()I"
 		);
 	}
-	jstring StatusBarNotification::getKey()
+	JString StatusBarNotification::getKey()
 	{
 		return callObjectMethod(
 			"getKey",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::app::Notification StatusBarNotification::getNotification()
 	{
@@ -84,19 +86,19 @@ namespace android::service::notification
 			"()Landroid/app/Notification;"
 		);
 	}
-	jstring StatusBarNotification::getOverrideGroupKey()
+	JString StatusBarNotification::getOverrideGroupKey()
 	{
 		return callObjectMethod(
 			"getOverrideGroupKey",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring StatusBarNotification::getPackageName()
+	JString StatusBarNotification::getPackageName()
 	{
 		return callObjectMethod(
 			"getPackageName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jlong StatusBarNotification::getPostTime()
 	{
@@ -105,12 +107,12 @@ namespace android::service::notification
 			"()J"
 		);
 	}
-	jstring StatusBarNotification::getTag()
+	JString StatusBarNotification::getTag()
 	{
 		return callObjectMethod(
 			"getTag",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::os::UserHandle StatusBarNotification::getUser()
 	{
@@ -147,20 +149,20 @@ namespace android::service::notification
 			"()Z"
 		);
 	}
-	void StatusBarNotification::setOverrideGroupKey(jstring arg0)
+	void StatusBarNotification::setOverrideGroupKey(JString arg0)
 	{
 		callMethod<void>(
 			"setOverrideGroupKey",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jstring StatusBarNotification::toString()
+	JString StatusBarNotification::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void StatusBarNotification::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

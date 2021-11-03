@@ -10,6 +10,7 @@ namespace android::widget
 {
 	class ListView;
 }
+class JObject;
 
 namespace android::widget
 {
@@ -17,7 +18,7 @@ namespace android::widget
 	{
 	public:
 		// Fields
-		jobject data();
+		JObject data();
 		jboolean isSelectable();
 		android::view::View view();
 		

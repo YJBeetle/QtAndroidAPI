@@ -1,3 +1,5 @@
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./SparseArray.hpp"
 
 namespace android::util
@@ -21,13 +23,13 @@ namespace android::util
 		) {}
 	
 	// Methods
-	void SparseArray::append(jint arg0, jobject arg1)
+	void SparseArray::append(jint arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"append",
 			"(ILjava/lang/Object;)V",
 			arg0,
-			arg1
+			arg1.object<jobject>()
 		);
 	}
 	void SparseArray::clear()
@@ -75,22 +77,22 @@ namespace android::util
 			arg0
 		);
 	}
-	jobject SparseArray::get(jint arg0)
+	JObject SparseArray::get(jint arg0)
 	{
 		return callObjectMethod(
 			"get",
 			"(I)Ljava/lang/Object;",
 			arg0
-		).object<jobject>();
+		);
 	}
-	jobject SparseArray::get(jint arg0, jobject arg1)
+	JObject SparseArray::get(jint arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"get",
 			"(ILjava/lang/Object;)Ljava/lang/Object;",
 			arg0,
-			arg1
-		).object<jobject>();
+			arg1.object<jobject>()
+		);
 	}
 	jint SparseArray::indexOfKey(jint arg0)
 	{
@@ -100,12 +102,12 @@ namespace android::util
 			arg0
 		);
 	}
-	jint SparseArray::indexOfValue(jobject arg0)
+	jint SparseArray::indexOfValue(JObject arg0)
 	{
 		return callMethod<jint>(
 			"indexOfValue",
 			"(Ljava/lang/Object;)I",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint SparseArray::keyAt(jint arg0)
@@ -116,13 +118,13 @@ namespace android::util
 			arg0
 		);
 	}
-	void SparseArray::put(jint arg0, jobject arg1)
+	void SparseArray::put(jint arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"put",
 			"(ILjava/lang/Object;)V",
 			arg0,
-			arg1
+			arg1.object<jobject>()
 		);
 	}
 	void SparseArray::remove(jint arg0)
@@ -150,22 +152,22 @@ namespace android::util
 			arg1
 		);
 	}
-	void SparseArray::set(jint arg0, jobject arg1)
+	void SparseArray::set(jint arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"set",
 			"(ILjava/lang/Object;)V",
 			arg0,
-			arg1
+			arg1.object<jobject>()
 		);
 	}
-	void SparseArray::setValueAt(jint arg0, jobject arg1)
+	void SparseArray::setValueAt(jint arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"setValueAt",
 			"(ILjava/lang/Object;)V",
 			arg0,
-			arg1
+			arg1.object<jobject>()
 		);
 	}
 	jint SparseArray::size()
@@ -175,20 +177,20 @@ namespace android::util
 			"()I"
 		);
 	}
-	jstring SparseArray::toString()
+	JString SparseArray::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jobject SparseArray::valueAt(jint arg0)
+	JObject SparseArray::valueAt(jint arg0)
 	{
 		return callObjectMethod(
 			"valueAt",
 			"(I)Ljava/lang/Object;",
 			arg0
-		).object<jobject>();
+		);
 	}
 } // namespace android::util
 

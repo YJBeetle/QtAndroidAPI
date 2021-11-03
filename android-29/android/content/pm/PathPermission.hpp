@@ -1,12 +1,12 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "../../os/PatternMatcher.hpp"
 
 namespace android::os
 {
 	class Parcel;
 }
+class JString;
 
 namespace android::content::pm
 {
@@ -22,11 +22,11 @@ namespace android::content::pm
 		
 		// Constructors
 		PathPermission(android::os::Parcel arg0);
-		PathPermission(jstring arg0, jint arg1, jstring arg2, jstring arg3);
+		PathPermission(JString arg0, jint arg1, JString arg2, JString arg3);
 		
 		// Methods
-		jstring getReadPermission();
-		jstring getWritePermission();
+		JString getReadPermission();
+		JString getWritePermission();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::content::pm

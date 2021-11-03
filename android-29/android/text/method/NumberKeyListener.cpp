@@ -1,5 +1,7 @@
+#include "../../../JCharArray.hpp"
 #include "../../view/KeyEvent.hpp"
 #include "../../view/View.hpp"
+#include "../../../JString.hpp"
 #include "./NumberKeyListener.hpp"
 
 namespace android::text::method
@@ -17,18 +19,18 @@ namespace android::text::method
 		) {}
 	
 	// Methods
-	jstring NumberKeyListener::filter(jstring arg0, jint arg1, jint arg2, JObject arg3, jint arg4, jint arg5)
+	JString NumberKeyListener::filter(JString arg0, jint arg1, jint arg2, JObject arg3, jint arg4, jint arg5)
 	{
 		return callObjectMethod(
 			"filter",
 			"(Ljava/lang/CharSequence;IILandroid/text/Spanned;II)Ljava/lang/CharSequence;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
 			arg2,
 			arg3.object(),
 			arg4,
 			arg5
-		).object<jstring>();
+		);
 	}
 	jboolean NumberKeyListener::onKeyDown(android::view::View arg0, JObject arg1, jint arg2, android::view::KeyEvent arg3)
 	{

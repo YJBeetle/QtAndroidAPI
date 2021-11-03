@@ -1,3 +1,4 @@
+#include "../../../JByteArray.hpp"
 #include "../../nio/ByteBuffer.hpp"
 #include "./Inflater.hpp"
 
@@ -78,12 +79,12 @@ namespace java::util::zip
 			"()I"
 		);
 	}
-	jint Inflater::inflate(jbyteArray arg0)
+	jint Inflater::inflate(JByteArray arg0)
 	{
 		return callMethod<jint>(
 			"inflate",
 			"([B)I",
-			arg0
+			arg0.object<jbyteArray>()
 		);
 	}
 	jint Inflater::inflate(java::nio::ByteBuffer arg0)
@@ -94,12 +95,12 @@ namespace java::util::zip
 			arg0.object()
 		);
 	}
-	jint Inflater::inflate(jbyteArray arg0, jint arg1, jint arg2)
+	jint Inflater::inflate(JByteArray arg0, jint arg1, jint arg2)
 	{
 		return callMethod<jint>(
 			"inflate",
 			"([BII)I",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1,
 			arg2
 		);
@@ -125,12 +126,12 @@ namespace java::util::zip
 			"()V"
 		);
 	}
-	void Inflater::setDictionary(jbyteArray arg0)
+	void Inflater::setDictionary(JByteArray arg0)
 	{
 		callMethod<void>(
 			"setDictionary",
 			"([B)V",
-			arg0
+			arg0.object<jbyteArray>()
 		);
 	}
 	void Inflater::setDictionary(java::nio::ByteBuffer arg0)
@@ -141,22 +142,22 @@ namespace java::util::zip
 			arg0.object()
 		);
 	}
-	void Inflater::setDictionary(jbyteArray arg0, jint arg1, jint arg2)
+	void Inflater::setDictionary(JByteArray arg0, jint arg1, jint arg2)
 	{
 		callMethod<void>(
 			"setDictionary",
 			"([BII)V",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1,
 			arg2
 		);
 	}
-	void Inflater::setInput(jbyteArray arg0)
+	void Inflater::setInput(JByteArray arg0)
 	{
 		callMethod<void>(
 			"setInput",
 			"([B)V",
-			arg0
+			arg0.object<jbyteArray>()
 		);
 	}
 	void Inflater::setInput(java::nio::ByteBuffer arg0)
@@ -167,12 +168,12 @@ namespace java::util::zip
 			arg0.object()
 		);
 	}
-	void Inflater::setInput(jbyteArray arg0, jint arg1, jint arg2)
+	void Inflater::setInput(JByteArray arg0, jint arg1, jint arg2)
 	{
 		callMethod<void>(
 			"setInput",
 			"([BII)V",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1,
 			arg2
 		);

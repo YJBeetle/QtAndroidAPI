@@ -1,3 +1,4 @@
+#include "../../../JThrowable.hpp"
 #include "./WebViewMethodCalledOnWrongThreadViolation.hpp"
 
 namespace android::os::strictmode

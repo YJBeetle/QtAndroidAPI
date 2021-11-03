@@ -1,9 +1,9 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "../../../java/lang/Exception.hpp"
 #include "../../../java/text/ParseException.hpp"
 
+class JObject;
+class JString;
 
 namespace android::icu::text
 {
@@ -29,15 +29,15 @@ namespace android::icu::text
 		StringPrepParseException(QJniObject obj);
 		
 		// Constructors
-		StringPrepParseException(jstring arg0, jint arg1);
-		StringPrepParseException(jstring arg0, jint arg1, jstring arg2, jint arg3);
-		StringPrepParseException(jstring arg0, jint arg1, jstring arg2, jint arg3, jint arg4);
+		StringPrepParseException(JString arg0, jint arg1);
+		StringPrepParseException(JString arg0, jint arg1, JString arg2, jint arg3);
+		StringPrepParseException(JString arg0, jint arg1, JString arg2, jint arg3, jint arg4);
 		
 		// Methods
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint getError();
 		jint hashCode();
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::icu::text
 

@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "../Provider.hpp"
 #include "./CertPathBuilderSpi.hpp"
 #include "./CertPathBuilder.hpp"
@@ -12,40 +13,40 @@ namespace java::security::cert
 	// Constructors
 	
 	// Methods
-	jstring CertPathBuilder::getDefaultType()
+	JString CertPathBuilder::getDefaultType()
 	{
 		return callStaticObjectMethod(
 			"java.security.cert.CertPathBuilder",
 			"getDefaultType",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	java::security::cert::CertPathBuilder CertPathBuilder::getInstance(jstring arg0)
+	java::security::cert::CertPathBuilder CertPathBuilder::getInstance(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"java.security.cert.CertPathBuilder",
 			"getInstance",
 			"(Ljava/lang/String;)Ljava/security/cert/CertPathBuilder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	java::security::cert::CertPathBuilder CertPathBuilder::getInstance(jstring arg0, jstring arg1)
+	java::security::cert::CertPathBuilder CertPathBuilder::getInstance(JString arg0, JString arg1)
 	{
 		return callStaticObjectMethod(
 			"java.security.cert.CertPathBuilder",
 			"getInstance",
 			"(Ljava/lang/String;Ljava/lang/String;)Ljava/security/cert/CertPathBuilder;",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		);
 	}
-	java::security::cert::CertPathBuilder CertPathBuilder::getInstance(jstring arg0, java::security::Provider arg1)
+	java::security::cert::CertPathBuilder CertPathBuilder::getInstance(JString arg0, java::security::Provider arg1)
 	{
 		return callStaticObjectMethod(
 			"java.security.cert.CertPathBuilder",
 			"getInstance",
 			"(Ljava/lang/String;Ljava/security/Provider;)Ljava/security/cert/CertPathBuilder;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
@@ -57,12 +58,12 @@ namespace java::security::cert
 			arg0.object()
 		);
 	}
-	jstring CertPathBuilder::getAlgorithm()
+	JString CertPathBuilder::getAlgorithm()
 	{
 		return callObjectMethod(
 			"getAlgorithm",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	java::security::Provider CertPathBuilder::getProvider()
 	{

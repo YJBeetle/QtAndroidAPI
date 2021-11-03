@@ -1,6 +1,7 @@
 #include "../content/Context.hpp"
 #include "./GestureLibrary.hpp"
 #include "../../java/io/File.hpp"
+#include "../../JString.hpp"
 #include "./GestureLibraries.hpp"
 
 namespace android::gesture
@@ -22,23 +23,23 @@ namespace android::gesture
 			arg0.object()
 		);
 	}
-	android::gesture::GestureLibrary GestureLibraries::fromFile(jstring arg0)
+	android::gesture::GestureLibrary GestureLibraries::fromFile(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.gesture.GestureLibraries",
 			"fromFile",
 			"(Ljava/lang/String;)Landroid/gesture/GestureLibrary;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	android::gesture::GestureLibrary GestureLibraries::fromPrivateFile(android::content::Context arg0, jstring arg1)
+	android::gesture::GestureLibrary GestureLibraries::fromPrivateFile(android::content::Context arg0, JString arg1)
 	{
 		return callStaticObjectMethod(
 			"android.gesture.GestureLibraries",
 			"fromPrivateFile",
 			"(Landroid/content/Context;Ljava/lang/String;)Landroid/gesture/GestureLibrary;",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
 	android::gesture::GestureLibrary GestureLibraries::fromRawResource(android::content::Context arg0, jint arg1)

@@ -2,10 +2,15 @@
 
 #include "../../JObject.hpp"
 
+class JArray;
+class JArray;
+class JArray;
 namespace java::io
 {
 	class ObjectOutputStream;
 }
+class JObject;
+class JString;
 namespace java::util
 {
 	class Locale;
@@ -27,28 +32,28 @@ namespace java::text
 		DateFormatSymbols(java::util::Locale arg0);
 		
 		// Methods
-		static jarray getAvailableLocales();
+		static JArray getAvailableLocales();
 		static java::text::DateFormatSymbols getInstance();
 		static java::text::DateFormatSymbols getInstance(java::util::Locale arg0);
-		jobject clone();
-		jboolean equals(jobject arg0);
-		jarray getAmPmStrings();
-		jarray getEras();
-		jstring getLocalPatternChars();
-		jarray getMonths();
-		jarray getShortMonths();
-		jarray getShortWeekdays();
-		jarray getWeekdays();
-		jarray getZoneStrings();
+		JObject clone();
+		jboolean equals(JObject arg0);
+		JArray getAmPmStrings();
+		JArray getEras();
+		JString getLocalPatternChars();
+		JArray getMonths();
+		JArray getShortMonths();
+		JArray getShortWeekdays();
+		JArray getWeekdays();
+		JArray getZoneStrings();
 		jint hashCode();
-		void setAmPmStrings(jarray arg0);
-		void setEras(jarray arg0);
-		void setLocalPatternChars(jstring arg0);
-		void setMonths(jarray arg0);
-		void setShortMonths(jarray arg0);
-		void setShortWeekdays(jarray arg0);
-		void setWeekdays(jarray arg0);
-		void setZoneStrings(jarray arg0);
+		void setAmPmStrings(JArray arg0);
+		void setEras(JArray arg0);
+		void setLocalPatternChars(JString arg0);
+		void setMonths(JArray arg0);
+		void setShortMonths(JArray arg0);
+		void setShortWeekdays(JArray arg0);
+		void setWeekdays(JArray arg0);
+		void setZoneStrings(JArray arg0);
 	};
 } // namespace java::text
 

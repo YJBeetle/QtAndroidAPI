@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JIntArray;
 namespace java::nio
 {
 	class IntBuffer;
@@ -23,7 +24,7 @@ namespace android::opengl
 		
 		// Methods
 		static jint glQueryMatrixxOES(java::nio::IntBuffer arg0, java::nio::IntBuffer arg1);
-		static jint glQueryMatrixxOES(jintArray arg0, jint arg1, jintArray arg2, jint arg3);
+		static jint glQueryMatrixxOES(JIntArray arg0, jint arg1, JIntArray arg2, jint arg3);
 	};
 } // namespace android::opengl
 

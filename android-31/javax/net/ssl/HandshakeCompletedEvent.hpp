@@ -1,8 +1,10 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "../../../java/util/EventObject.hpp"
 
+class JArray;
+class JArray;
+class JString;
 namespace javax::net::ssl
 {
 	class SSLSocket;
@@ -23,11 +25,11 @@ namespace javax::net::ssl
 		HandshakeCompletedEvent(javax::net::ssl::SSLSocket arg0, JObject arg1);
 		
 		// Methods
-		jstring getCipherSuite();
-		jarray getLocalCertificates();
+		JString getCipherSuite();
+		JArray getLocalCertificates();
 		JObject getLocalPrincipal();
-		jarray getPeerCertificateChain();
-		jarray getPeerCertificates();
+		JArray getPeerCertificateChain();
+		JArray getPeerCertificates();
 		JObject getPeerPrincipal();
 		JObject getSession();
 		javax::net::ssl::SSLSocket getSocket();

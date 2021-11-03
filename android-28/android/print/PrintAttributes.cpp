@@ -2,6 +2,8 @@
 #include "./PrintAttributes_Margins.hpp"
 #include "./PrintAttributes_MediaSize.hpp"
 #include "./PrintAttributes_Resolution.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./PrintAttributes.hpp"
 
 namespace android::print
@@ -64,12 +66,12 @@ namespace android::print
 			"()I"
 		);
 	}
-	jboolean PrintAttributes::equals(jobject arg0)
+	jboolean PrintAttributes::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint PrintAttributes::getColorMode()
@@ -114,12 +116,12 @@ namespace android::print
 			"()I"
 		);
 	}
-	jstring PrintAttributes::toString()
+	JString PrintAttributes::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void PrintAttributes::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

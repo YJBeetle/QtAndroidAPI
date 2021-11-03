@@ -1,4 +1,6 @@
 #include "../graphics/Bitmap.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./WebHistoryItem.hpp"
 
 namespace android::webkit
@@ -23,26 +25,26 @@ namespace android::webkit
 			"()Landroid/graphics/Bitmap;"
 		);
 	}
-	jstring WebHistoryItem::getOriginalUrl()
+	JString WebHistoryItem::getOriginalUrl()
 	{
 		return callObjectMethod(
 			"getOriginalUrl",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring WebHistoryItem::getTitle()
+	JString WebHistoryItem::getTitle()
 	{
 		return callObjectMethod(
 			"getTitle",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring WebHistoryItem::getUrl()
+	JString WebHistoryItem::getUrl()
 	{
 		return callObjectMethod(
 			"getUrl",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::webkit
 

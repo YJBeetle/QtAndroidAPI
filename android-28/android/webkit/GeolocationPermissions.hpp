@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JString;
 
 namespace android::webkit
 {
@@ -18,10 +19,10 @@ namespace android::webkit
 		
 		// Methods
 		static android::webkit::GeolocationPermissions getInstance();
-		void allow(jstring arg0);
-		void clear(jstring arg0);
+		void allow(JString arg0);
+		void clear(JString arg0);
 		void clearAll();
-		void getAllowed(jstring arg0, JObject arg1);
+		void getAllowed(JString arg0, JObject arg1);
 		void getOrigins(JObject arg0);
 	};
 } // namespace android::webkit

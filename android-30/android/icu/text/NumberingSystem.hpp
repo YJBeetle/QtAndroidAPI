@@ -2,10 +2,12 @@
 
 #include "../../../JObject.hpp"
 
+class JArray;
 namespace android::icu::util
 {
 	class ULocale;
 }
+class JString;
 namespace java::util
 {
 	class Locale;
@@ -27,15 +29,15 @@ namespace android::icu::text
 		NumberingSystem();
 		
 		// Methods
-		static jarray getAvailableNames();
+		static JArray getAvailableNames();
 		static android::icu::text::NumberingSystem getInstance();
 		static android::icu::text::NumberingSystem getInstance(android::icu::util::ULocale arg0);
 		static android::icu::text::NumberingSystem getInstance(java::util::Locale arg0);
-		static android::icu::text::NumberingSystem getInstance(jint arg0, jboolean arg1, jstring arg2);
-		static android::icu::text::NumberingSystem getInstanceByName(jstring arg0);
-		static jboolean isValidDigitString(jstring arg0);
-		jstring getDescription();
-		jstring getName();
+		static android::icu::text::NumberingSystem getInstance(jint arg0, jboolean arg1, JString arg2);
+		static android::icu::text::NumberingSystem getInstanceByName(JString arg0);
+		static jboolean isValidDigitString(JString arg0);
+		JString getDescription();
+		JString getName();
 		jint getRadix();
 		jboolean isAlgorithmic();
 	};

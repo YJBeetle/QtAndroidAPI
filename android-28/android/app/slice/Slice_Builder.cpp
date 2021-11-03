@@ -5,6 +5,8 @@
 #include "../../graphics/drawable/Icon.hpp"
 #include "../../net/Uri.hpp"
 #include "../../os/Bundle.hpp"
+#include "../../../JString.hpp"
+#include "../../../JString.hpp"
 #include "./Slice_Builder.hpp"
 
 namespace android::app::slice
@@ -30,23 +32,23 @@ namespace android::app::slice
 		) {}
 	
 	// Methods
-	android::app::slice::Slice_Builder Slice_Builder::addAction(android::app::PendingIntent arg0, android::app::slice::Slice arg1, jstring arg2)
+	android::app::slice::Slice_Builder Slice_Builder::addAction(android::app::PendingIntent arg0, android::app::slice::Slice arg1, JString arg2)
 	{
 		return callObjectMethod(
 			"addAction",
 			"(Landroid/app/PendingIntent;Landroid/app/slice/Slice;Ljava/lang/String;)Landroid/app/slice/Slice$Builder;",
 			arg0.object(),
 			arg1.object(),
-			arg2
+			arg2.object<jstring>()
 		);
 	}
-	android::app::slice::Slice_Builder Slice_Builder::addBundle(android::os::Bundle arg0, jstring arg1, JObject arg2)
+	android::app::slice::Slice_Builder Slice_Builder::addBundle(android::os::Bundle arg0, JString arg1, JObject arg2)
 	{
 		return callObjectMethod(
 			"addBundle",
 			"(Landroid/os/Bundle;Ljava/lang/String;Ljava/util/List;)Landroid/app/slice/Slice$Builder;",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2.object()
 		);
 	}
@@ -58,62 +60,62 @@ namespace android::app::slice
 			arg0.object()
 		);
 	}
-	android::app::slice::Slice_Builder Slice_Builder::addIcon(android::graphics::drawable::Icon arg0, jstring arg1, JObject arg2)
+	android::app::slice::Slice_Builder Slice_Builder::addIcon(android::graphics::drawable::Icon arg0, JString arg1, JObject arg2)
 	{
 		return callObjectMethod(
 			"addIcon",
 			"(Landroid/graphics/drawable/Icon;Ljava/lang/String;Ljava/util/List;)Landroid/app/slice/Slice$Builder;",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2.object()
 		);
 	}
-	android::app::slice::Slice_Builder Slice_Builder::addInt(jint arg0, jstring arg1, JObject arg2)
+	android::app::slice::Slice_Builder Slice_Builder::addInt(jint arg0, JString arg1, JObject arg2)
 	{
 		return callObjectMethod(
 			"addInt",
 			"(ILjava/lang/String;Ljava/util/List;)Landroid/app/slice/Slice$Builder;",
 			arg0,
-			arg1,
+			arg1.object<jstring>(),
 			arg2.object()
 		);
 	}
-	android::app::slice::Slice_Builder Slice_Builder::addLong(jlong arg0, jstring arg1, JObject arg2)
+	android::app::slice::Slice_Builder Slice_Builder::addLong(jlong arg0, JString arg1, JObject arg2)
 	{
 		return callObjectMethod(
 			"addLong",
 			"(JLjava/lang/String;Ljava/util/List;)Landroid/app/slice/Slice$Builder;",
 			arg0,
-			arg1,
+			arg1.object<jstring>(),
 			arg2.object()
 		);
 	}
-	android::app::slice::Slice_Builder Slice_Builder::addRemoteInput(android::app::RemoteInput arg0, jstring arg1, JObject arg2)
+	android::app::slice::Slice_Builder Slice_Builder::addRemoteInput(android::app::RemoteInput arg0, JString arg1, JObject arg2)
 	{
 		return callObjectMethod(
 			"addRemoteInput",
 			"(Landroid/app/RemoteInput;Ljava/lang/String;Ljava/util/List;)Landroid/app/slice/Slice$Builder;",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2.object()
 		);
 	}
-	android::app::slice::Slice_Builder Slice_Builder::addSubSlice(android::app::slice::Slice arg0, jstring arg1)
+	android::app::slice::Slice_Builder Slice_Builder::addSubSlice(android::app::slice::Slice arg0, JString arg1)
 	{
 		return callObjectMethod(
 			"addSubSlice",
 			"(Landroid/app/slice/Slice;Ljava/lang/String;)Landroid/app/slice/Slice$Builder;",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
-	android::app::slice::Slice_Builder Slice_Builder::addText(jstring arg0, jstring arg1, JObject arg2)
+	android::app::slice::Slice_Builder Slice_Builder::addText(JString arg0, JString arg1, JObject arg2)
 	{
 		return callObjectMethod(
 			"addText",
 			"(Ljava/lang/CharSequence;Ljava/lang/String;Ljava/util/List;)Landroid/app/slice/Slice$Builder;",
-			arg0,
-			arg1,
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
 			arg2.object()
 		);
 	}

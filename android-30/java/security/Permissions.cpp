@@ -1,3 +1,4 @@
+#include "../../JArray.hpp"
 #include "../io/ObjectInputStream.hpp"
 #include "../io/ObjectOutputStream.hpp"
 #include "./Permission.hpp"

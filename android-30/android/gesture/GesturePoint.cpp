@@ -1,3 +1,4 @@
+#include "../../JObject.hpp"
 #include "./GesturePoint.hpp"
 
 namespace android::gesture
@@ -36,12 +37,12 @@ namespace android::gesture
 		) {}
 	
 	// Methods
-	jobject GesturePoint::clone()
+	JObject GesturePoint::clone()
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
 } // namespace android::gesture
 

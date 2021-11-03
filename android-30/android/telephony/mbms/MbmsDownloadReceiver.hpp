@@ -1,6 +1,5 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "../../content/BroadcastReceiver.hpp"
 
 namespace android::content

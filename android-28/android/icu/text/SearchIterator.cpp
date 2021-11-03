@@ -1,5 +1,6 @@
 #include "./BreakIterator.hpp"
 #include "./SearchIterator_ElementComparisonType.hpp"
+#include "../../../JString.hpp"
 #include "./SearchIterator.hpp"
 
 namespace android::icu::text
@@ -69,12 +70,12 @@ namespace android::icu::text
 			"()I"
 		);
 	}
-	jstring SearchIterator::getMatchedText()
+	JString SearchIterator::getMatchedText()
 	{
 		return callObjectMethod(
 			"getMatchedText",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	JObject SearchIterator::getTarget()
 	{

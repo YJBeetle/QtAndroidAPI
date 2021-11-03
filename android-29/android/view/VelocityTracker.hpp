@@ -6,6 +6,7 @@ namespace android::view
 {
 	class MotionEvent;
 }
+class JString;
 
 namespace android::view
 {

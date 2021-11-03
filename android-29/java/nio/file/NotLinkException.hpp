@@ -1,10 +1,8 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "../../lang/Exception.hpp"
-#include "../../io/IOException.hpp"
 #include "./FileSystemException.hpp"
 
+class JString;
 
 namespace java::nio::file
 {
@@ -18,8 +16,8 @@ namespace java::nio::file
 		NotLinkException(QJniObject obj);
 		
 		// Constructors
-		NotLinkException(jstring arg0);
-		NotLinkException(jstring arg0, jstring arg1, jstring arg2);
+		NotLinkException(JString arg0);
+		NotLinkException(JString arg0, JString arg1, JString arg2);
 		
 		// Methods
 	};

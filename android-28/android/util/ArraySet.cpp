@@ -1,3 +1,6 @@
+#include "../../JObjectArray.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./ArraySet.hpp"
 
 namespace android::util
@@ -27,12 +30,12 @@ namespace android::util
 		) {}
 	
 	// Methods
-	jboolean ArraySet::add(jobject arg0)
+	jboolean ArraySet::add(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"add",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jboolean ArraySet::addAll(JObject arg0)
@@ -58,12 +61,12 @@ namespace android::util
 			"()V"
 		);
 	}
-	jboolean ArraySet::contains(jobject arg0)
+	jboolean ArraySet::contains(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"contains",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jboolean ArraySet::containsAll(JObject arg0)
@@ -82,12 +85,12 @@ namespace android::util
 			arg0
 		);
 	}
-	jboolean ArraySet::equals(jobject arg0)
+	jboolean ArraySet::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint ArraySet::hashCode()
@@ -97,12 +100,12 @@ namespace android::util
 			"()I"
 		);
 	}
-	jint ArraySet::indexOf(jobject arg0)
+	jint ArraySet::indexOf(JObject arg0)
 	{
 		return callMethod<jint>(
 			"indexOf",
 			"(Ljava/lang/Object;)I",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jboolean ArraySet::isEmpty()
@@ -119,12 +122,12 @@ namespace android::util
 			"()Ljava/util/Iterator;"
 		);
 	}
-	jboolean ArraySet::remove(jobject arg0)
+	jboolean ArraySet::remove(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"remove",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jboolean ArraySet::removeAll(android::util::ArraySet arg0)
@@ -143,13 +146,13 @@ namespace android::util
 			arg0.object()
 		);
 	}
-	jobject ArraySet::removeAt(jint arg0)
+	JObject ArraySet::removeAt(jint arg0)
 	{
 		return callObjectMethod(
 			"removeAt",
 			"(I)Ljava/lang/Object;",
 			arg0
-		).object<jobject>();
+		);
 	}
 	jboolean ArraySet::retainAll(JObject arg0)
 	{
@@ -166,35 +169,35 @@ namespace android::util
 			"()I"
 		);
 	}
-	jobjectArray ArraySet::toArray()
+	JObjectArray ArraySet::toArray()
 	{
 		return callObjectMethod(
 			"toArray",
 			"()[Ljava/lang/Object;"
-		).object<jobjectArray>();
+		);
 	}
-	jobjectArray ArraySet::toArray(jobjectArray arg0)
+	JObjectArray ArraySet::toArray(JObjectArray arg0)
 	{
 		return callObjectMethod(
 			"toArray",
 			"([Ljava/lang/Object;)[Ljava/lang/Object;",
-			arg0
-		).object<jobjectArray>();
+			arg0.object<jobjectArray>()
+		);
 	}
-	jstring ArraySet::toString()
+	JString ArraySet::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jobject ArraySet::valueAt(jint arg0)
+	JObject ArraySet::valueAt(jint arg0)
 	{
 		return callObjectMethod(
 			"valueAt",
 			"(I)Ljava/lang/Object;",
 			arg0
-		).object<jobject>();
+		);
 	}
 } // namespace android::util
 

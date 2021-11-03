@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JArray;
 namespace android::app
 {
 	class PendingIntent;
@@ -10,6 +11,7 @@ namespace android::app
 {
 	class RemoteInput;
 }
+class JString;
 
 namespace android::app
 {
@@ -26,9 +28,9 @@ namespace android::app
 		
 		// Methods
 		jlong getLatestTimestamp();
-		jarray getMessages();
-		jstring getParticipant();
-		jarray getParticipants();
+		JArray getMessages();
+		JString getParticipant();
+		JArray getParticipants();
 		android::app::PendingIntent getReadPendingIntent();
 		android::app::RemoteInput getRemoteInput();
 		android::app::PendingIntent getReplyPendingIntent();

@@ -1,3 +1,4 @@
+#include "../../JArray.hpp"
 #include "../content/ContentValues.hpp"
 #include "../content/Context.hpp"
 #include "./DatabaseUtils_InsertHelper.hpp"
@@ -8,6 +9,8 @@
 #include "../os/ParcelFileDescriptor.hpp"
 #include "../../java/io/PrintStream.hpp"
 #include "../../java/lang/Exception.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "../../java/lang/StringBuilder.hpp"
 #include "./DatabaseUtils.hpp"
 
@@ -96,37 +99,37 @@ namespace android::database
 		) {}
 	
 	// Methods
-	void DatabaseUtils::appendEscapedSQLString(java::lang::StringBuilder arg0, jstring arg1)
+	void DatabaseUtils::appendEscapedSQLString(java::lang::StringBuilder arg0, JString arg1)
 	{
 		callStaticMethod<void>(
 			"android.database.DatabaseUtils",
 			"appendEscapedSQLString",
 			"(Ljava/lang/StringBuilder;Ljava/lang/String;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
-	jarray DatabaseUtils::appendSelectionArgs(jarray arg0, jarray arg1)
+	JArray DatabaseUtils::appendSelectionArgs(JArray arg0, JArray arg1)
 	{
 		return callStaticObjectMethod(
 			"android.database.DatabaseUtils",
 			"appendSelectionArgs",
 			"([Ljava/lang/String;[Ljava/lang/String;)[Ljava/lang/String;",
-			arg0,
-			arg1
-		).object<jarray>();
+			arg0.object<jarray>(),
+			arg1.object<jarray>()
+		);
 	}
-	void DatabaseUtils::appendValueToSql(java::lang::StringBuilder arg0, jobject arg1)
+	void DatabaseUtils::appendValueToSql(java::lang::StringBuilder arg0, JObject arg1)
 	{
 		callStaticMethod<void>(
 			"android.database.DatabaseUtils",
 			"appendValueToSql",
 			"(Ljava/lang/StringBuilder;Ljava/lang/Object;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jobject>()
 		);
 	}
-	void DatabaseUtils::bindObjectToProgram(android::database::sqlite::SQLiteProgram arg0, jint arg1, jobject arg2)
+	void DatabaseUtils::bindObjectToProgram(android::database::sqlite::SQLiteProgram arg0, jint arg1, JObject arg2)
 	{
 		callStaticMethod<void>(
 			"android.database.DatabaseUtils",
@@ -134,65 +137,65 @@ namespace android::database
 			"(Landroid/database/sqlite/SQLiteProgram;ILjava/lang/Object;)V",
 			arg0.object(),
 			arg1,
-			arg2
+			arg2.object<jobject>()
 		);
 	}
-	android::os::ParcelFileDescriptor DatabaseUtils::blobFileDescriptorForQuery(android::database::sqlite::SQLiteStatement arg0, jarray arg1)
+	android::os::ParcelFileDescriptor DatabaseUtils::blobFileDescriptorForQuery(android::database::sqlite::SQLiteStatement arg0, JArray arg1)
 	{
 		return callStaticObjectMethod(
 			"android.database.DatabaseUtils",
 			"blobFileDescriptorForQuery",
 			"(Landroid/database/sqlite/SQLiteStatement;[Ljava/lang/String;)Landroid/os/ParcelFileDescriptor;",
 			arg0.object(),
-			arg1
+			arg1.object<jarray>()
 		);
 	}
-	android::os::ParcelFileDescriptor DatabaseUtils::blobFileDescriptorForQuery(android::database::sqlite::SQLiteDatabase arg0, jstring arg1, jarray arg2)
+	android::os::ParcelFileDescriptor DatabaseUtils::blobFileDescriptorForQuery(android::database::sqlite::SQLiteDatabase arg0, JString arg1, JArray arg2)
 	{
 		return callStaticObjectMethod(
 			"android.database.DatabaseUtils",
 			"blobFileDescriptorForQuery",
 			"(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;[Ljava/lang/String;)Landroid/os/ParcelFileDescriptor;",
 			arg0.object(),
-			arg1,
-			arg2
+			arg1.object<jstring>(),
+			arg2.object<jarray>()
 		);
 	}
-	jstring DatabaseUtils::concatenateWhere(jstring arg0, jstring arg1)
+	JString DatabaseUtils::concatenateWhere(JString arg0, JString arg1)
 	{
 		return callStaticObjectMethod(
 			"android.database.DatabaseUtils",
 			"concatenateWhere",
 			"(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
-			arg0,
-			arg1
-		).object<jstring>();
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
+		);
 	}
-	void DatabaseUtils::createDbFromSqlStatements(android::content::Context arg0, jstring arg1, jint arg2, jstring arg3)
+	void DatabaseUtils::createDbFromSqlStatements(android::content::Context arg0, JString arg1, jint arg2, JString arg3)
 	{
 		callStaticMethod<void>(
 			"android.database.DatabaseUtils",
 			"createDbFromSqlStatements",
 			"(Landroid/content/Context;Ljava/lang/String;ILjava/lang/String;)V",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2,
-			arg3
+			arg3.object<jstring>()
 		);
 	}
-	void DatabaseUtils::cursorDoubleToContentValues(JObject arg0, jstring arg1, android::content::ContentValues arg2, jstring arg3)
+	void DatabaseUtils::cursorDoubleToContentValues(JObject arg0, JString arg1, android::content::ContentValues arg2, JString arg3)
 	{
 		callStaticMethod<void>(
 			"android.database.DatabaseUtils",
 			"cursorDoubleToContentValues",
 			"(Landroid/database/Cursor;Ljava/lang/String;Landroid/content/ContentValues;Ljava/lang/String;)V",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2.object(),
-			arg3
+			arg3.object<jstring>()
 		);
 	}
-	void DatabaseUtils::cursorDoubleToContentValuesIfPresent(JObject arg0, android::content::ContentValues arg1, jstring arg2)
+	void DatabaseUtils::cursorDoubleToContentValuesIfPresent(JObject arg0, android::content::ContentValues arg1, JString arg2)
 	{
 		callStaticMethod<void>(
 			"android.database.DatabaseUtils",
@@ -200,21 +203,21 @@ namespace android::database
 			"(Landroid/database/Cursor;Landroid/content/ContentValues;Ljava/lang/String;)V",
 			arg0.object(),
 			arg1.object(),
-			arg2
+			arg2.object<jstring>()
 		);
 	}
-	void DatabaseUtils::cursorDoubleToCursorValues(JObject arg0, jstring arg1, android::content::ContentValues arg2)
+	void DatabaseUtils::cursorDoubleToCursorValues(JObject arg0, JString arg1, android::content::ContentValues arg2)
 	{
 		callStaticMethod<void>(
 			"android.database.DatabaseUtils",
 			"cursorDoubleToCursorValues",
 			"(Landroid/database/Cursor;Ljava/lang/String;Landroid/content/ContentValues;)V",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2.object()
 		);
 	}
-	void DatabaseUtils::cursorFloatToContentValuesIfPresent(JObject arg0, android::content::ContentValues arg1, jstring arg2)
+	void DatabaseUtils::cursorFloatToContentValuesIfPresent(JObject arg0, android::content::ContentValues arg1, JString arg2)
 	{
 		callStaticMethod<void>(
 			"android.database.DatabaseUtils",
@@ -222,33 +225,33 @@ namespace android::database
 			"(Landroid/database/Cursor;Landroid/content/ContentValues;Ljava/lang/String;)V",
 			arg0.object(),
 			arg1.object(),
-			arg2
+			arg2.object<jstring>()
 		);
 	}
-	void DatabaseUtils::cursorIntToContentValues(JObject arg0, jstring arg1, android::content::ContentValues arg2)
+	void DatabaseUtils::cursorIntToContentValues(JObject arg0, JString arg1, android::content::ContentValues arg2)
 	{
 		callStaticMethod<void>(
 			"android.database.DatabaseUtils",
 			"cursorIntToContentValues",
 			"(Landroid/database/Cursor;Ljava/lang/String;Landroid/content/ContentValues;)V",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2.object()
 		);
 	}
-	void DatabaseUtils::cursorIntToContentValues(JObject arg0, jstring arg1, android::content::ContentValues arg2, jstring arg3)
+	void DatabaseUtils::cursorIntToContentValues(JObject arg0, JString arg1, android::content::ContentValues arg2, JString arg3)
 	{
 		callStaticMethod<void>(
 			"android.database.DatabaseUtils",
 			"cursorIntToContentValues",
 			"(Landroid/database/Cursor;Ljava/lang/String;Landroid/content/ContentValues;Ljava/lang/String;)V",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2.object(),
-			arg3
+			arg3.object<jstring>()
 		);
 	}
-	void DatabaseUtils::cursorIntToContentValuesIfPresent(JObject arg0, android::content::ContentValues arg1, jstring arg2)
+	void DatabaseUtils::cursorIntToContentValuesIfPresent(JObject arg0, android::content::ContentValues arg1, JString arg2)
 	{
 		callStaticMethod<void>(
 			"android.database.DatabaseUtils",
@@ -256,33 +259,33 @@ namespace android::database
 			"(Landroid/database/Cursor;Landroid/content/ContentValues;Ljava/lang/String;)V",
 			arg0.object(),
 			arg1.object(),
-			arg2
+			arg2.object<jstring>()
 		);
 	}
-	void DatabaseUtils::cursorLongToContentValues(JObject arg0, jstring arg1, android::content::ContentValues arg2)
+	void DatabaseUtils::cursorLongToContentValues(JObject arg0, JString arg1, android::content::ContentValues arg2)
 	{
 		callStaticMethod<void>(
 			"android.database.DatabaseUtils",
 			"cursorLongToContentValues",
 			"(Landroid/database/Cursor;Ljava/lang/String;Landroid/content/ContentValues;)V",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2.object()
 		);
 	}
-	void DatabaseUtils::cursorLongToContentValues(JObject arg0, jstring arg1, android::content::ContentValues arg2, jstring arg3)
+	void DatabaseUtils::cursorLongToContentValues(JObject arg0, JString arg1, android::content::ContentValues arg2, JString arg3)
 	{
 		callStaticMethod<void>(
 			"android.database.DatabaseUtils",
 			"cursorLongToContentValues",
 			"(Landroid/database/Cursor;Ljava/lang/String;Landroid/content/ContentValues;Ljava/lang/String;)V",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2.object(),
-			arg3
+			arg3.object<jstring>()
 		);
 	}
-	void DatabaseUtils::cursorLongToContentValuesIfPresent(JObject arg0, android::content::ContentValues arg1, jstring arg2)
+	void DatabaseUtils::cursorLongToContentValuesIfPresent(JObject arg0, android::content::ContentValues arg1, JString arg2)
 	{
 		callStaticMethod<void>(
 			"android.database.DatabaseUtils",
@@ -290,7 +293,7 @@ namespace android::database
 			"(Landroid/database/Cursor;Landroid/content/ContentValues;Ljava/lang/String;)V",
 			arg0.object(),
 			arg1.object(),
-			arg2
+			arg2.object<jstring>()
 		);
 	}
 	void DatabaseUtils::cursorRowToContentValues(JObject arg0, android::content::ContentValues arg1)
@@ -303,7 +306,7 @@ namespace android::database
 			arg1.object()
 		);
 	}
-	void DatabaseUtils::cursorShortToContentValuesIfPresent(JObject arg0, android::content::ContentValues arg1, jstring arg2)
+	void DatabaseUtils::cursorShortToContentValuesIfPresent(JObject arg0, android::content::ContentValues arg1, JString arg2)
 	{
 		callStaticMethod<void>(
 			"android.database.DatabaseUtils",
@@ -311,33 +314,33 @@ namespace android::database
 			"(Landroid/database/Cursor;Landroid/content/ContentValues;Ljava/lang/String;)V",
 			arg0.object(),
 			arg1.object(),
-			arg2
+			arg2.object<jstring>()
 		);
 	}
-	void DatabaseUtils::cursorStringToContentValues(JObject arg0, jstring arg1, android::content::ContentValues arg2)
+	void DatabaseUtils::cursorStringToContentValues(JObject arg0, JString arg1, android::content::ContentValues arg2)
 	{
 		callStaticMethod<void>(
 			"android.database.DatabaseUtils",
 			"cursorStringToContentValues",
 			"(Landroid/database/Cursor;Ljava/lang/String;Landroid/content/ContentValues;)V",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2.object()
 		);
 	}
-	void DatabaseUtils::cursorStringToContentValues(JObject arg0, jstring arg1, android::content::ContentValues arg2, jstring arg3)
+	void DatabaseUtils::cursorStringToContentValues(JObject arg0, JString arg1, android::content::ContentValues arg2, JString arg3)
 	{
 		callStaticMethod<void>(
 			"android.database.DatabaseUtils",
 			"cursorStringToContentValues",
 			"(Landroid/database/Cursor;Ljava/lang/String;Landroid/content/ContentValues;Ljava/lang/String;)V",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2.object(),
-			arg3
+			arg3.object<jstring>()
 		);
 	}
-	void DatabaseUtils::cursorStringToContentValuesIfPresent(JObject arg0, android::content::ContentValues arg1, jstring arg2)
+	void DatabaseUtils::cursorStringToContentValuesIfPresent(JObject arg0, android::content::ContentValues arg1, JString arg2)
 	{
 		callStaticMethod<void>(
 			"android.database.DatabaseUtils",
@@ -345,17 +348,17 @@ namespace android::database
 			"(Landroid/database/Cursor;Landroid/content/ContentValues;Ljava/lang/String;)V",
 			arg0.object(),
 			arg1.object(),
-			arg2
+			arg2.object<jstring>()
 		);
 	}
-	void DatabaseUtils::cursorStringToInsertHelper(JObject arg0, jstring arg1, android::database::DatabaseUtils_InsertHelper arg2, jint arg3)
+	void DatabaseUtils::cursorStringToInsertHelper(JObject arg0, JString arg1, android::database::DatabaseUtils_InsertHelper arg2, jint arg3)
 	{
 		callStaticMethod<void>(
 			"android.database.DatabaseUtils",
 			"cursorStringToInsertHelper",
 			"(Landroid/database/Cursor;Ljava/lang/String;Landroid/database/DatabaseUtils$InsertHelper;I)V",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2.object(),
 			arg3
 		);
@@ -389,14 +392,14 @@ namespace android::database
 			arg1.object()
 		);
 	}
-	jstring DatabaseUtils::dumpCurrentRowToString(JObject arg0)
+	JString DatabaseUtils::dumpCurrentRowToString(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"android.database.DatabaseUtils",
 			"dumpCurrentRowToString",
 			"(Landroid/database/Cursor;)Ljava/lang/String;",
 			arg0.object()
-		).object<jstring>();
+		);
 	}
 	void DatabaseUtils::dumpCursor(JObject arg0)
 	{
@@ -427,94 +430,94 @@ namespace android::database
 			arg1.object()
 		);
 	}
-	jstring DatabaseUtils::dumpCursorToString(JObject arg0)
+	JString DatabaseUtils::dumpCursorToString(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"android.database.DatabaseUtils",
 			"dumpCursorToString",
 			"(Landroid/database/Cursor;)Ljava/lang/String;",
 			arg0.object()
-		).object<jstring>();
+		);
 	}
-	jstring DatabaseUtils::getCollationKey(jstring arg0)
+	JString DatabaseUtils::getCollationKey(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.database.DatabaseUtils",
 			"getCollationKey",
 			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
+			arg0.object<jstring>()
+		);
 	}
-	jstring DatabaseUtils::getHexCollationKey(jstring arg0)
+	JString DatabaseUtils::getHexCollationKey(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.database.DatabaseUtils",
 			"getHexCollationKey",
 			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
+			arg0.object<jstring>()
+		);
 	}
-	jint DatabaseUtils::getSqlStatementType(jstring arg0)
+	jint DatabaseUtils::getSqlStatementType(JString arg0)
 	{
 		return callStaticMethod<jint>(
 			"android.database.DatabaseUtils",
 			"getSqlStatementType",
 			"(Ljava/lang/String;)I",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jlong DatabaseUtils::longForQuery(android::database::sqlite::SQLiteStatement arg0, jarray arg1)
+	jlong DatabaseUtils::longForQuery(android::database::sqlite::SQLiteStatement arg0, JArray arg1)
 	{
 		return callStaticMethod<jlong>(
 			"android.database.DatabaseUtils",
 			"longForQuery",
 			"(Landroid/database/sqlite/SQLiteStatement;[Ljava/lang/String;)J",
 			arg0.object(),
-			arg1
+			arg1.object<jarray>()
 		);
 	}
-	jlong DatabaseUtils::longForQuery(android::database::sqlite::SQLiteDatabase arg0, jstring arg1, jarray arg2)
+	jlong DatabaseUtils::longForQuery(android::database::sqlite::SQLiteDatabase arg0, JString arg1, JArray arg2)
 	{
 		return callStaticMethod<jlong>(
 			"android.database.DatabaseUtils",
 			"longForQuery",
 			"(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;[Ljava/lang/String;)J",
 			arg0.object(),
-			arg1,
-			arg2
+			arg1.object<jstring>(),
+			arg2.object<jarray>()
 		);
 	}
-	jlong DatabaseUtils::queryNumEntries(android::database::sqlite::SQLiteDatabase arg0, jstring arg1)
+	jlong DatabaseUtils::queryNumEntries(android::database::sqlite::SQLiteDatabase arg0, JString arg1)
 	{
 		return callStaticMethod<jlong>(
 			"android.database.DatabaseUtils",
 			"queryNumEntries",
 			"(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;)J",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
-	jlong DatabaseUtils::queryNumEntries(android::database::sqlite::SQLiteDatabase arg0, jstring arg1, jstring arg2)
+	jlong DatabaseUtils::queryNumEntries(android::database::sqlite::SQLiteDatabase arg0, JString arg1, JString arg2)
 	{
 		return callStaticMethod<jlong>(
 			"android.database.DatabaseUtils",
 			"queryNumEntries",
 			"(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;Ljava/lang/String;)J",
 			arg0.object(),
-			arg1,
-			arg2
+			arg1.object<jstring>(),
+			arg2.object<jstring>()
 		);
 	}
-	jlong DatabaseUtils::queryNumEntries(android::database::sqlite::SQLiteDatabase arg0, jstring arg1, jstring arg2, jarray arg3)
+	jlong DatabaseUtils::queryNumEntries(android::database::sqlite::SQLiteDatabase arg0, JString arg1, JString arg2, JArray arg3)
 	{
 		return callStaticMethod<jlong>(
 			"android.database.DatabaseUtils",
 			"queryNumEntries",
 			"(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)J",
 			arg0.object(),
-			arg1,
-			arg2,
-			arg3
+			arg1.object<jstring>(),
+			arg2.object<jstring>(),
+			arg3.object<jarray>()
 		);
 	}
 	void DatabaseUtils::readExceptionFromParcel(android::os::Parcel arg0)
@@ -544,35 +547,35 @@ namespace android::database
 			arg0.object()
 		);
 	}
-	jstring DatabaseUtils::sqlEscapeString(jstring arg0)
+	JString DatabaseUtils::sqlEscapeString(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.database.DatabaseUtils",
 			"sqlEscapeString",
 			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
+			arg0.object<jstring>()
+		);
 	}
-	jstring DatabaseUtils::stringForQuery(android::database::sqlite::SQLiteStatement arg0, jarray arg1)
+	JString DatabaseUtils::stringForQuery(android::database::sqlite::SQLiteStatement arg0, JArray arg1)
 	{
 		return callStaticObjectMethod(
 			"android.database.DatabaseUtils",
 			"stringForQuery",
 			"(Landroid/database/sqlite/SQLiteStatement;[Ljava/lang/String;)Ljava/lang/String;",
 			arg0.object(),
-			arg1
-		).object<jstring>();
+			arg1.object<jarray>()
+		);
 	}
-	jstring DatabaseUtils::stringForQuery(android::database::sqlite::SQLiteDatabase arg0, jstring arg1, jarray arg2)
+	JString DatabaseUtils::stringForQuery(android::database::sqlite::SQLiteDatabase arg0, JString arg1, JArray arg2)
 	{
 		return callStaticObjectMethod(
 			"android.database.DatabaseUtils",
 			"stringForQuery",
 			"(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;[Ljava/lang/String;)Ljava/lang/String;",
 			arg0.object(),
-			arg1,
-			arg2
-		).object<jstring>();
+			arg1.object<jstring>(),
+			arg2.object<jarray>()
+		);
 	}
 	void DatabaseUtils::writeExceptionToParcel(android::os::Parcel arg0, java::lang::Exception arg1)
 	{

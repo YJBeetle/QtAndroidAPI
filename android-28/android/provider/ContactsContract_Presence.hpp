@@ -1,8 +1,6 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./ContactsContract_StatusUpdates.hpp"
-
 
 namespace android::provider
 {

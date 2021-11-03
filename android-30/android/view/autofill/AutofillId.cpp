@@ -1,4 +1,6 @@
 #include "../../os/Parcel.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./AutofillId.hpp"
 
 namespace android::view::autofill
@@ -26,12 +28,12 @@ namespace android::view::autofill
 			"()I"
 		);
 	}
-	jboolean AutofillId::equals(jobject arg0)
+	jboolean AutofillId::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint AutofillId::hashCode()
@@ -41,12 +43,12 @@ namespace android::view::autofill
 			"()I"
 		);
 	}
-	jstring AutofillId::toString()
+	JString AutofillId::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void AutofillId::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

@@ -1,5 +1,7 @@
 #include "../../os/Bundle.hpp"
 #include "../../os/Parcel.hpp"
+#include "../../../JString.hpp"
+#include "../../../JString.hpp"
 #include "./TextLinks.hpp"
 
 namespace android::view::textclassifier
@@ -100,19 +102,19 @@ namespace android::view::textclassifier
 			"()Ljava/util/Collection;"
 		);
 	}
-	jstring TextLinks::getText()
+	JString TextLinks::getText()
 	{
 		return callObjectMethod(
 			"getText",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
-	jstring TextLinks::toString()
+	JString TextLinks::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void TextLinks::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JString;
 
 namespace android::telephony::mbms
 {
@@ -20,7 +21,7 @@ namespace android::telephony::mbms
 		
 		// Methods
 		void onBroadcastSignalStrengthUpdated(jint arg0);
-		void onError(jint arg0, jstring arg1);
+		void onError(jint arg0, JString arg1);
 		void onMediaDescriptionUpdated();
 		void onStreamMethodUpdated(jint arg0);
 		void onStreamStateUpdated(jint arg0, jint arg1);

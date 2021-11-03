@@ -1,6 +1,7 @@
 #include "../../Canvas.hpp"
 #include "../../Outline.hpp"
 #include "../../Paint.hpp"
+#include "../../../../JObject.hpp"
 #include "./Shape.hpp"
 
 namespace android::graphics::drawable::shapes

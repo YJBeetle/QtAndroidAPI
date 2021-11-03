@@ -1,6 +1,7 @@
 #include "./MediaCodec_BufferInfo.hpp"
 #include "./MediaFormat.hpp"
 #include "../../java/io/FileDescriptor.hpp"
+#include "../../JString.hpp"
 #include "../../java/nio/ByteBuffer.hpp"
 #include "./MediaMuxer.hpp"
 
@@ -19,11 +20,11 @@ namespace android::media
 			arg0.object(),
 			arg1
 		) {}
-	MediaMuxer::MediaMuxer(jstring arg0, jint arg1)
+	MediaMuxer::MediaMuxer(JString arg0, jint arg1)
 		: JObject(
 			"android.media.MediaMuxer",
 			"(Ljava/lang/String;I)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		) {}
 	

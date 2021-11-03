@@ -14,6 +14,8 @@ namespace android::widget::inline
 {
 	class InlinePresentationSpec;
 }
+class JObject;
+class JString;
 
 namespace android::service::autofill
 {
@@ -32,12 +34,12 @@ namespace android::service::autofill
 		
 		// Methods
 		jint describeContents();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		android::widget::inline::InlinePresentationSpec getInlinePresentationSpec();
 		android::app::slice::Slice getSlice();
 		jint hashCode();
 		jboolean isPinned();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::service::autofill

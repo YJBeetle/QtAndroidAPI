@@ -1,3 +1,4 @@
+#include "../../../JArray.hpp"
 #include "../../content/Intent.hpp"
 #include "../../view/ActionMode.hpp"
 #include "../../view/KeyEvent.hpp"
@@ -10,26 +11,27 @@
 #include "../../view/accessibility/AccessibilityEvent.hpp"
 #include "../../../java/io/FileDescriptor.hpp"
 #include "../../../java/io/PrintWriter.hpp"
+#include "../../../JString.hpp"
 #include "./DreamService.hpp"
 
 namespace android::service::dreams
 {
 	// Fields
-	jstring DreamService::DREAM_META_DATA()
+	JString DreamService::DREAM_META_DATA()
 	{
 		return getStaticObjectField(
 			"android.service.dreams.DreamService",
 			"DREAM_META_DATA",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DreamService::SERVICE_INTERFACE()
+	JString DreamService::SERVICE_INTERFACE()
 	{
 		return getStaticObjectField(
 			"android.service.dreams.DreamService",
 			"SERVICE_INTERFACE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QJniObject forward

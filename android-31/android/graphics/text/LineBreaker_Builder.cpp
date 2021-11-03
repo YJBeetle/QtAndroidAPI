@@ -1,3 +1,4 @@
+#include "../../../JIntArray.hpp"
 #include "./LineBreaker.hpp"
 #include "./LineBreaker_Builder.hpp"
 
@@ -39,12 +40,12 @@ namespace android::graphics::text
 			arg0
 		);
 	}
-	android::graphics::text::LineBreaker_Builder LineBreaker_Builder::setIndents(jintArray arg0)
+	android::graphics::text::LineBreaker_Builder LineBreaker_Builder::setIndents(JIntArray arg0)
 	{
 		return callObjectMethod(
 			"setIndents",
 			"([I)Landroid/graphics/text/LineBreaker$Builder;",
-			arg0
+			arg0.object<jintArray>()
 		);
 	}
 	android::graphics::text::LineBreaker_Builder LineBreaker_Builder::setJustificationMode(jint arg0)

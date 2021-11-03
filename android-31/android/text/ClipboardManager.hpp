@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JString;
 
 namespace android::text
 {
@@ -18,9 +19,9 @@ namespace android::text
 		ClipboardManager();
 		
 		// Methods
-		jstring getText();
+		JString getText();
 		jboolean hasText();
-		void setText(jstring arg0);
+		void setText(JString arg0);
 	};
 } // namespace android::text
 

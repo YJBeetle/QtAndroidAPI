@@ -1,4 +1,7 @@
 #include "./NumberRangeFormatter_RangeIdentityResult.hpp"
+#include "../../../JString.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "../../../java/math/BigDecimal.hpp"
 #include "./FormattedNumberRange.hpp"
 
@@ -20,12 +23,12 @@ namespace android::icu::number
 			arg0
 		);
 	}
-	jboolean FormattedNumberRange::equals(jobject arg0)
+	jboolean FormattedNumberRange::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	java::math::BigDecimal FormattedNumberRange::getFirstBigDecimal()
@@ -63,14 +66,14 @@ namespace android::icu::number
 			"()I"
 		);
 	}
-	jstring FormattedNumberRange::subSequence(jint arg0, jint arg1)
+	JString FormattedNumberRange::subSequence(jint arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"subSequence",
 			"(II)Ljava/lang/CharSequence;",
 			arg0,
 			arg1
-		).object<jstring>();
+		);
 	}
 	JObject FormattedNumberRange::toCharacterIterator()
 	{
@@ -79,12 +82,12 @@ namespace android::icu::number
 			"()Ljava/text/AttributedCharacterIterator;"
 		);
 	}
-	jstring FormattedNumberRange::toString()
+	JString FormattedNumberRange::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::icu::number
 

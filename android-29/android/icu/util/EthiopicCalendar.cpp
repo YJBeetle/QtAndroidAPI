@@ -1,5 +1,6 @@
 #include "./TimeZone.hpp"
 #include "./ULocale.hpp"
+#include "../../../JString.hpp"
 #include "../../../java/util/Date.hpp"
 #include "../../../java/util/Locale.hpp"
 #include "./EthiopicCalendar.hpp"
@@ -167,12 +168,12 @@ namespace android::icu::util
 		) {}
 	
 	// Methods
-	jstring EthiopicCalendar::getType()
+	JString EthiopicCalendar::getType()
 	{
 		return callObjectMethod(
 			"getType",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jboolean EthiopicCalendar::isAmeteAlemEra()
 	{

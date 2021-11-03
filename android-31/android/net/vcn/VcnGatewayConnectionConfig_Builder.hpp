@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JLongArray;
 namespace android::net::ipsec::ike
 {
 	class IkeTunnelConnectionParams;
@@ -10,6 +11,7 @@ namespace android::net::vcn
 {
 	class VcnGatewayConnectionConfig;
 }
+class JString;
 
 namespace android::net::vcn
 {
@@ -23,14 +25,14 @@ namespace android::net::vcn
 		VcnGatewayConnectionConfig_Builder(QJniObject obj);
 		
 		// Constructors
-		VcnGatewayConnectionConfig_Builder(jstring arg0, android::net::ipsec::ike::IkeTunnelConnectionParams arg1);
+		VcnGatewayConnectionConfig_Builder(JString arg0, android::net::ipsec::ike::IkeTunnelConnectionParams arg1);
 		
 		// Methods
 		android::net::vcn::VcnGatewayConnectionConfig_Builder addExposedCapability(jint arg0);
 		android::net::vcn::VcnGatewayConnectionConfig build();
 		android::net::vcn::VcnGatewayConnectionConfig_Builder removeExposedCapability(jint arg0);
 		android::net::vcn::VcnGatewayConnectionConfig_Builder setMaxMtu(jint arg0);
-		android::net::vcn::VcnGatewayConnectionConfig_Builder setRetryIntervalsMillis(jlongArray arg0);
+		android::net::vcn::VcnGatewayConnectionConfig_Builder setRetryIntervalsMillis(JLongArray arg0);
 	};
 } // namespace android::net::vcn
 

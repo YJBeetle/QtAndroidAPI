@@ -6,6 +6,7 @@ namespace android::widget
 {
 	class GridLayout_Alignment;
 }
+class JObject;
 
 namespace android::widget
 {
@@ -21,7 +22,7 @@ namespace android::widget
 		// Constructors
 		
 		// Methods
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint hashCode();
 	};
 } // namespace android::widget

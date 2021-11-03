@@ -6,6 +6,8 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
+class JThrowable;
 
 namespace android::app
 {
@@ -13,13 +15,13 @@ namespace android::app
 	{
 	public:
 		// Fields
-		jstring exceptionClassName();
-		jstring exceptionMessage();
-		jstring stackTrace();
-		jstring throwClassName();
-		jstring throwFileName();
+		JString exceptionClassName();
+		JString exceptionMessage();
+		JString stackTrace();
+		JString throwClassName();
+		JString throwFileName();
 		jint throwLineNumber();
-		jstring throwMethodName();
+		JString throwMethodName();
 		
 		// QJniObject forward
 		template<typename ...Ts> explicit ApplicationErrorReport_CrashInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
@@ -28,10 +30,10 @@ namespace android::app
 		// Constructors
 		ApplicationErrorReport_CrashInfo();
 		ApplicationErrorReport_CrashInfo(android::os::Parcel arg0);
-		ApplicationErrorReport_CrashInfo(jthrowable arg0);
+		ApplicationErrorReport_CrashInfo(JThrowable arg0);
 		
 		// Methods
-		void dump(JObject arg0, jstring arg1);
+		void dump(JObject arg0, JString arg1);
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::app

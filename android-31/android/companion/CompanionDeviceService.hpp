@@ -1,14 +1,12 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../content/Context.hpp"
-#include "../content/ContextWrapper.hpp"
 #include "../app/Service.hpp"
 
 namespace android::content
 {
 	class Intent;
 }
+class JString;
 
 namespace android::companion
 {
@@ -16,7 +14,7 @@ namespace android::companion
 	{
 	public:
 		// Fields
-		static jstring SERVICE_INTERFACE();
+		static JString SERVICE_INTERFACE();
 		
 		// QJniObject forward
 		template<typename ...Ts> explicit CompanionDeviceService(const char *className, const char *sig, Ts...agv) : android::app::Service(className, sig, std::forward<Ts>(agv)...) {}
@@ -27,8 +25,8 @@ namespace android::companion
 		
 		// Methods
 		JObject onBind(android::content::Intent arg0);
-		void onDeviceAppeared(jstring arg0);
-		void onDeviceDisappeared(jstring arg0);
+		void onDeviceAppeared(JString arg0);
+		void onDeviceDisappeared(JString arg0);
 	};
 } // namespace android::companion
 

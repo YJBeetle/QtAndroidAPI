@@ -3,6 +3,7 @@
 #include "../../net/Uri.hpp"
 #include "../../os/Bundle.hpp"
 #include "../../os/Parcel.hpp"
+#include "../../../JString.hpp"
 #include "./AssistContent.hpp"
 
 namespace android::app::assist
@@ -56,12 +57,12 @@ namespace android::app::assist
 			"()Landroid/content/Intent;"
 		);
 	}
-	jstring AssistContent::getStructuredData()
+	JString AssistContent::getStructuredData()
 	{
 		return callObjectMethod(
 			"getStructuredData",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::net::Uri AssistContent::getWebUri()
 	{
@@ -100,12 +101,12 @@ namespace android::app::assist
 			arg0.object()
 		);
 	}
-	void AssistContent::setStructuredData(jstring arg0)
+	void AssistContent::setStructuredData(JString arg0)
 	{
 		callMethod<void>(
 			"setStructuredData",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void AssistContent::setWebUri(android::net::Uri arg0)

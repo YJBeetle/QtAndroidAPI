@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./IntentFilter_MalformedMimeTypeException.hpp"
 
 namespace android::content
@@ -13,11 +14,11 @@ namespace android::content
 			"android.content.IntentFilter$MalformedMimeTypeException",
 			"()V"
 		) {}
-	IntentFilter_MalformedMimeTypeException::IntentFilter_MalformedMimeTypeException(jstring arg0)
+	IntentFilter_MalformedMimeTypeException::IntentFilter_MalformedMimeTypeException(JString arg0)
 		: android::util::AndroidException(
 			"android.content.IntentFilter$MalformedMimeTypeException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

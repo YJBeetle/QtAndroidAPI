@@ -1,6 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./VoiceInteractor_Request.hpp"
 
 namespace android::app

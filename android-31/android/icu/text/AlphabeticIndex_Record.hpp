@@ -2,6 +2,9 @@
 
 #include "../../../JObject.hpp"
 
+class JString;
+class JObject;
+class JString;
 
 namespace android::icu::text
 {
@@ -17,9 +20,9 @@ namespace android::icu::text
 		// Constructors
 		
 		// Methods
-		jobject getData();
-		jstring getName();
-		jstring toString();
+		JObject getData();
+		JString getName();
+		JString toString();
 	};
 } // namespace android::icu::text
 

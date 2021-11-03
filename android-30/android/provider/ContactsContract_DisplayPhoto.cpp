@@ -1,4 +1,5 @@
 #include "../net/Uri.hpp"
+#include "../../JString.hpp"
 #include "./ContactsContract_DisplayPhoto.hpp"
 
 namespace android::provider
@@ -20,21 +21,21 @@ namespace android::provider
 			"Landroid/net/Uri;"
 		);
 	}
-	jstring ContactsContract_DisplayPhoto::DISPLAY_MAX_DIM()
+	JString ContactsContract_DisplayPhoto::DISPLAY_MAX_DIM()
 	{
 		return getStaticObjectField(
 			"android.provider.ContactsContract$DisplayPhoto",
 			"DISPLAY_MAX_DIM",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ContactsContract_DisplayPhoto::THUMBNAIL_MAX_DIM()
+	JString ContactsContract_DisplayPhoto::THUMBNAIL_MAX_DIM()
 	{
 		return getStaticObjectField(
 			"android.provider.ContactsContract$DisplayPhoto",
 			"THUMBNAIL_MAX_DIM",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QJniObject forward

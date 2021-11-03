@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JArray;
 namespace android::os
 {
 	class Parcel;
@@ -22,7 +23,7 @@ namespace android::media
 		
 		// Methods
 		JObject getPssh();
-		jarray getSupportedSchemes();
+		JArray getSupportedSchemes();
 	};
 } // namespace android::media
 

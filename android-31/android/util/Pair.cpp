@@ -1,52 +1,54 @@
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./Pair.hpp"
 
 namespace android::util
 {
 	// Fields
-	jobject Pair::first()
+	JObject Pair::first()
 	{
 		return getObjectField(
 			"first",
 			"Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
-	jobject Pair::second()
+	JObject Pair::second()
 	{
 		return getObjectField(
 			"second",
 			"Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
 	
 	// QJniObject forward
 	Pair::Pair(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	Pair::Pair(jobject arg0, jobject arg1)
+	Pair::Pair(JObject arg0, JObject arg1)
 		: JObject(
 			"android.util.Pair",
 			"(Ljava/lang/Object;Ljava/lang/Object;)V",
-			arg0,
-			arg1
+			arg0.object<jobject>(),
+			arg1.object<jobject>()
 		) {}
 	
 	// Methods
-	android::util::Pair Pair::create(jobject arg0, jobject arg1)
+	android::util::Pair Pair::create(JObject arg0, JObject arg1)
 	{
 		return callStaticObjectMethod(
 			"android.util.Pair",
 			"create",
 			"(Ljava/lang/Object;Ljava/lang/Object;)Landroid/util/Pair;",
-			arg0,
-			arg1
+			arg0.object<jobject>(),
+			arg1.object<jobject>()
 		);
 	}
-	jboolean Pair::equals(jobject arg0)
+	jboolean Pair::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint Pair::hashCode()
@@ -56,12 +58,12 @@ namespace android::util
 			"()I"
 		);
 	}
-	jstring Pair::toString()
+	JString Pair::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::util
 

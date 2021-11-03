@@ -1,3 +1,5 @@
+#include "../../JString.hpp"
+#include "../../JThrowable.hpp"
 #include "./LinkageError.hpp"
 
 namespace java::lang
@@ -13,18 +15,18 @@ namespace java::lang
 			"java.lang.LinkageError",
 			"()V"
 		) {}
-	LinkageError::LinkageError(jstring arg0)
+	LinkageError::LinkageError(JString arg0)
 		: java::lang::Error(
 			"java.lang.LinkageError",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	LinkageError::LinkageError(jstring arg0, jthrowable arg1)
+	LinkageError::LinkageError(JString arg0, JThrowable arg1)
 		: java::lang::Error(
 			"java.lang.LinkageError",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
 		) {}
 	
 	// Methods

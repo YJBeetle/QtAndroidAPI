@@ -1,49 +1,50 @@
 #include "../NdefMessage.hpp"
 #include "../Tag.hpp"
+#include "../../../JString.hpp"
 #include "./Ndef.hpp"
 
 namespace android::nfc::tech
 {
 	// Fields
-	jstring Ndef::MIFARE_CLASSIC()
+	JString Ndef::MIFARE_CLASSIC()
 	{
 		return getStaticObjectField(
 			"android.nfc.tech.Ndef",
 			"MIFARE_CLASSIC",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Ndef::NFC_FORUM_TYPE_1()
+	JString Ndef::NFC_FORUM_TYPE_1()
 	{
 		return getStaticObjectField(
 			"android.nfc.tech.Ndef",
 			"NFC_FORUM_TYPE_1",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Ndef::NFC_FORUM_TYPE_2()
+	JString Ndef::NFC_FORUM_TYPE_2()
 	{
 		return getStaticObjectField(
 			"android.nfc.tech.Ndef",
 			"NFC_FORUM_TYPE_2",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Ndef::NFC_FORUM_TYPE_3()
+	JString Ndef::NFC_FORUM_TYPE_3()
 	{
 		return getStaticObjectField(
 			"android.nfc.tech.Ndef",
 			"NFC_FORUM_TYPE_3",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Ndef::NFC_FORUM_TYPE_4()
+	JString Ndef::NFC_FORUM_TYPE_4()
 	{
 		return getStaticObjectField(
 			"android.nfc.tech.Ndef",
 			"NFC_FORUM_TYPE_4",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QJniObject forward
@@ -110,12 +111,12 @@ namespace android::nfc::tech
 			"()Landroid/nfc/Tag;"
 		);
 	}
-	jstring Ndef::getType()
+	JString Ndef::getType()
 	{
 		return callObjectMethod(
 			"getType",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jboolean Ndef::isConnected()
 	{

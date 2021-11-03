@@ -1,8 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../view/View.hpp"
-#include "../view/ViewGroup.hpp"
 #include "./FrameLayout.hpp"
 
 namespace android::content
@@ -17,6 +14,7 @@ namespace android::graphics::drawable
 {
 	class Drawable;
 }
+class JString;
 
 namespace android::widget
 {
@@ -36,7 +34,7 @@ namespace android::widget
 		CalendarView(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
-		jstring getAccessibilityClassName();
+		JString getAccessibilityClassName();
 		jlong getDate();
 		jint getDateTextAppearance();
 		jint getFirstDayOfWeek();

@@ -1,3 +1,4 @@
+#include "../../JByteArray.hpp"
 #include "./BluetoothDevice.hpp"
 #include "./BluetoothGattCharacteristic.hpp"
 #include "./BluetoothGattDescriptor.hpp"
@@ -30,7 +31,7 @@ namespace android::bluetooth
 			arg3.object()
 		);
 	}
-	void BluetoothGattServerCallback::onCharacteristicWriteRequest(android::bluetooth::BluetoothDevice arg0, jint arg1, android::bluetooth::BluetoothGattCharacteristic arg2, jboolean arg3, jboolean arg4, jint arg5, jbyteArray arg6)
+	void BluetoothGattServerCallback::onCharacteristicWriteRequest(android::bluetooth::BluetoothDevice arg0, jint arg1, android::bluetooth::BluetoothGattCharacteristic arg2, jboolean arg3, jboolean arg4, jint arg5, JByteArray arg6)
 	{
 		callMethod<void>(
 			"onCharacteristicWriteRequest",
@@ -41,7 +42,7 @@ namespace android::bluetooth
 			arg3,
 			arg4,
 			arg5,
-			arg6
+			arg6.object<jbyteArray>()
 		);
 	}
 	void BluetoothGattServerCallback::onConnectionStateChange(android::bluetooth::BluetoothDevice arg0, jint arg1, jint arg2)
@@ -65,7 +66,7 @@ namespace android::bluetooth
 			arg3.object()
 		);
 	}
-	void BluetoothGattServerCallback::onDescriptorWriteRequest(android::bluetooth::BluetoothDevice arg0, jint arg1, android::bluetooth::BluetoothGattDescriptor arg2, jboolean arg3, jboolean arg4, jint arg5, jbyteArray arg6)
+	void BluetoothGattServerCallback::onDescriptorWriteRequest(android::bluetooth::BluetoothDevice arg0, jint arg1, android::bluetooth::BluetoothGattDescriptor arg2, jboolean arg3, jboolean arg4, jint arg5, JByteArray arg6)
 	{
 		callMethod<void>(
 			"onDescriptorWriteRequest",
@@ -76,7 +77,7 @@ namespace android::bluetooth
 			arg3,
 			arg4,
 			arg5,
-			arg6
+			arg6.object<jbyteArray>()
 		);
 	}
 	void BluetoothGattServerCallback::onExecuteWrite(android::bluetooth::BluetoothDevice arg0, jint arg1, jboolean arg2)

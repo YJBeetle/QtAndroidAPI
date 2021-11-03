@@ -1,10 +1,9 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "../../content/Context.hpp"
-#include "../../content/ContextWrapper.hpp"
 #include "../../app/Service.hpp"
 
+class JArray;
+class JArray;
 namespace android::app
 {
 	class NotificationChannel;
@@ -37,6 +36,7 @@ namespace android::service::notification
 {
 	class StatusBarNotification;
 }
+class JString;
 
 namespace android::service::notification
 {
@@ -74,7 +74,7 @@ namespace android::service::notification
 		static jint REASON_TIMEOUT();
 		static jint REASON_UNAUTOBUNDLED();
 		static jint REASON_USER_STOPPED();
-		static jstring SERVICE_INTERFACE();
+		static JString SERVICE_INTERFACE();
 		static jint SUPPRESSED_EFFECT_SCREEN_OFF();
 		static jint SUPPRESSED_EFFECT_SCREEN_ON();
 		
@@ -88,25 +88,25 @@ namespace android::service::notification
 		// Methods
 		static void requestRebind(android::content::ComponentName arg0);
 		void cancelAllNotifications();
-		void cancelNotification(jstring arg0);
-		void cancelNotification(jstring arg0, jstring arg1, jint arg2);
-		void cancelNotifications(jarray arg0);
-		jarray getActiveNotifications();
-		jarray getActiveNotifications(jarray arg0);
+		void cancelNotification(JString arg0);
+		void cancelNotification(JString arg0, JString arg1, jint arg2);
+		void cancelNotifications(JArray arg0);
+		JArray getActiveNotifications();
+		JArray getActiveNotifications(JArray arg0);
 		jint getCurrentInterruptionFilter();
 		jint getCurrentListenerHints();
 		android::service::notification::NotificationListenerService_RankingMap getCurrentRanking();
-		JObject getNotificationChannelGroups(jstring arg0, android::os::UserHandle arg1);
-		JObject getNotificationChannels(jstring arg0, android::os::UserHandle arg1);
-		jarray getSnoozedNotifications();
+		JObject getNotificationChannelGroups(JString arg0, android::os::UserHandle arg1);
+		JObject getNotificationChannels(JString arg0, android::os::UserHandle arg1);
+		JArray getSnoozedNotifications();
 		JObject onBind(android::content::Intent arg0);
 		void onDestroy();
 		void onInterruptionFilterChanged(jint arg0);
 		void onListenerConnected();
 		void onListenerDisconnected();
 		void onListenerHintsChanged(jint arg0);
-		void onNotificationChannelGroupModified(jstring arg0, android::os::UserHandle arg1, android::app::NotificationChannelGroup arg2, jint arg3);
-		void onNotificationChannelModified(jstring arg0, android::os::UserHandle arg1, android::app::NotificationChannel arg2, jint arg3);
+		void onNotificationChannelGroupModified(JString arg0, android::os::UserHandle arg1, android::app::NotificationChannelGroup arg2, jint arg3);
+		void onNotificationChannelModified(JString arg0, android::os::UserHandle arg1, android::app::NotificationChannel arg2, jint arg3);
 		void onNotificationPosted(android::service::notification::StatusBarNotification arg0);
 		void onNotificationPosted(android::service::notification::StatusBarNotification arg0, android::service::notification::NotificationListenerService_RankingMap arg1);
 		void onNotificationRankingUpdate(android::service::notification::NotificationListenerService_RankingMap arg0);
@@ -116,9 +116,9 @@ namespace android::service::notification
 		void requestInterruptionFilter(jint arg0);
 		void requestListenerHints(jint arg0);
 		void requestUnbind();
-		void setNotificationsShown(jarray arg0);
-		void snoozeNotification(jstring arg0, jlong arg1);
-		void updateNotificationChannel(jstring arg0, android::os::UserHandle arg1, android::app::NotificationChannel arg2);
+		void setNotificationsShown(JArray arg0);
+		void snoozeNotification(JString arg0, jlong arg1);
+		void updateNotificationChannel(JString arg0, android::os::UserHandle arg1, android::app::NotificationChannel arg2);
 	};
 } // namespace android::service::notification
 

@@ -1,5 +1,6 @@
 #include "../../../graphics/Point.hpp"
 #include "../../../graphics/Rect.hpp"
+#include "../../../../JString.hpp"
 #include "./Face.hpp"
 
 namespace android::hardware::camera2::params
@@ -75,12 +76,12 @@ namespace android::hardware::camera2::params
 			"()I"
 		);
 	}
-	jstring Face::toString()
+	JString Face::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::hardware::camera2::params
 

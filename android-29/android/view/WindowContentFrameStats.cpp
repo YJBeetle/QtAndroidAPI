@@ -1,4 +1,5 @@
 #include "../os/Parcel.hpp"
+#include "../../JString.hpp"
 #include "./WindowContentFrameStats.hpp"
 
 namespace android::view
@@ -42,12 +43,12 @@ namespace android::view
 			arg0
 		);
 	}
-	jstring WindowContentFrameStats::toString()
+	JString WindowContentFrameStats::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void WindowContentFrameStats::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

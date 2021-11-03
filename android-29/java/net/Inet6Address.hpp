@@ -1,8 +1,9 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./InetAddress.hpp"
 
+class JByteArray;
+class JArray;
 namespace java::io
 {
 	class ObjectInputStream;
@@ -11,6 +12,8 @@ namespace java::io
 {
 	class ObjectOutputStream;
 }
+class JObject;
+class JString;
 namespace java::net
 {
 	class NetworkInterface;
@@ -30,11 +33,11 @@ namespace java::net
 		// Constructors
 		
 		// Methods
-		static java::net::Inet6Address getByAddress(jstring arg0, jbyteArray arg1, jint arg2);
-		static java::net::Inet6Address getByAddress(jstring arg0, jbyteArray arg1, java::net::NetworkInterface arg2);
-		jboolean equals(jobject arg0);
-		jbyteArray getAddress();
-		jstring getHostAddress();
+		static java::net::Inet6Address getByAddress(JString arg0, JByteArray arg1, jint arg2);
+		static java::net::Inet6Address getByAddress(JString arg0, JByteArray arg1, java::net::NetworkInterface arg2);
+		jboolean equals(JObject arg0);
+		JByteArray getAddress();
+		JString getHostAddress();
 		jint getScopeId();
 		java::net::NetworkInterface getScopedInterface();
 		jint hashCode();

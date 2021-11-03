@@ -10,6 +10,8 @@ namespace android::icu::text
 {
 	class UCharacterIterator;
 }
+class JObject;
+class JString;
 
 namespace android::icu::text
 {
@@ -30,7 +32,7 @@ namespace android::icu::text
 		static jint primaryOrder(jint arg0);
 		static jint secondaryOrder(jint arg0);
 		static jint tertiaryOrder(jint arg0);
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint getMaxExpansion(jint arg0);
 		jint getOffset();
 		jint hashCode();
@@ -39,7 +41,7 @@ namespace android::icu::text
 		void reset();
 		void setOffset(jint arg0);
 		void setText(android::icu::text::UCharacterIterator arg0);
-		void setText(jstring arg0);
+		void setText(JString arg0);
 		void setText(JObject arg0);
 	};
 } // namespace android::icu::text

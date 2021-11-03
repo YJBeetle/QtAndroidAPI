@@ -6,6 +6,8 @@ namespace android::os
 {
 	class Bundle;
 }
+class JString;
+class JString;
 
 namespace android::speech::tts
 {
@@ -19,19 +21,19 @@ namespace android::speech::tts
 		SynthesisRequest(QJniObject obj);
 		
 		// Constructors
-		SynthesisRequest(jstring arg0, android::os::Bundle arg1);
+		SynthesisRequest(JString arg0, android::os::Bundle arg1);
 		
 		// Methods
 		jint getCallerUid();
-		jstring getCharSequenceText();
-		jstring getCountry();
-		jstring getLanguage();
+		JString getCharSequenceText();
+		JString getCountry();
+		JString getLanguage();
 		android::os::Bundle getParams();
 		jint getPitch();
 		jint getSpeechRate();
-		jstring getText();
-		jstring getVariant();
-		jstring getVoiceName();
+		JString getText();
+		JString getVariant();
+		JString getVoiceName();
 	};
 } // namespace android::speech::tts
 

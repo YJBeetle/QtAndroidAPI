@@ -1,8 +1,9 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "../Exception.hpp"
 
+class JString;
+class JThrowable;
 
 namespace java::lang::invoke
 {
@@ -17,10 +18,10 @@ namespace java::lang::invoke
 		
 		// Constructors
 		LambdaConversionException();
-		LambdaConversionException(jstring arg0);
-		LambdaConversionException(jthrowable arg0);
-		LambdaConversionException(jstring arg0, jthrowable arg1);
-		LambdaConversionException(jstring arg0, jthrowable arg1, jboolean arg2, jboolean arg3);
+		LambdaConversionException(JString arg0);
+		LambdaConversionException(JThrowable arg0);
+		LambdaConversionException(JString arg0, JThrowable arg1);
+		LambdaConversionException(JString arg0, JThrowable arg1, jboolean arg2, jboolean arg3);
 		
 		// Methods
 	};

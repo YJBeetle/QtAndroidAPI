@@ -1,3 +1,4 @@
+#include "../../../JArray.hpp"
 #include "../Rect.hpp"
 #include "./Drawable.hpp"
 #include "./DrawableContainer_DrawableContainerState.hpp"
@@ -56,12 +57,12 @@ namespace android::graphics::drawable
 			"()I"
 		);
 	}
-	jarray DrawableContainer_DrawableContainerState::getChildren()
+	JArray DrawableContainer_DrawableContainerState::getChildren()
 	{
 		return callObjectMethod(
 			"getChildren",
 			"()[Landroid/graphics/drawable/Drawable;"
-		).object<jarray>();
+		);
 	}
 	jint DrawableContainer_DrawableContainerState::getConstantHeight()
 	{

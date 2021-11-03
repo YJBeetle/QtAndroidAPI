@@ -1,4 +1,5 @@
 #include "./ControlTemplate.hpp"
+#include "../../../../JString.hpp"
 #include "./TemperatureControlTemplate.hpp"
 
 namespace android::service::controls::templates
@@ -86,11 +87,11 @@ namespace android::service::controls::templates
 	TemperatureControlTemplate::TemperatureControlTemplate(QJniObject obj) : android::service::controls::templates::ControlTemplate(obj) {}
 	
 	// Constructors
-	TemperatureControlTemplate::TemperatureControlTemplate(jstring arg0, android::service::controls::templates::ControlTemplate arg1, jint arg2, jint arg3, jint arg4)
+	TemperatureControlTemplate::TemperatureControlTemplate(JString arg0, android::service::controls::templates::ControlTemplate arg1, jint arg2, jint arg3, jint arg4)
 		: android::service::controls::templates::ControlTemplate(
 			"android.service.controls.templates.TemperatureControlTemplate",
 			"(Ljava/lang/String;Landroid/service/controls/templates/ControlTemplate;III)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
 			arg2,
 			arg3,

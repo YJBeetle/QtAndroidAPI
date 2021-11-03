@@ -1,16 +1,17 @@
+#include "../../../../JString.hpp"
 #include "../../../../org/xml/sax/InputSource.hpp"
 #include "./SAXSource.hpp"
 
 namespace javax::xml::transform::sax
 {
 	// Fields
-	jstring SAXSource::FEATURE()
+	JString SAXSource::FEATURE()
 	{
 		return getStaticObjectField(
 			"javax.xml.transform.sax.SAXSource",
 			"FEATURE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QJniObject forward
@@ -53,12 +54,12 @@ namespace javax::xml::transform::sax
 			"()Lorg/xml/sax/InputSource;"
 		);
 	}
-	jstring SAXSource::getSystemId()
+	JString SAXSource::getSystemId()
 	{
 		return callObjectMethod(
 			"getSystemId",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	JObject SAXSource::getXMLReader()
 	{
@@ -82,12 +83,12 @@ namespace javax::xml::transform::sax
 			arg0.object()
 		);
 	}
-	void SAXSource::setSystemId(jstring arg0)
+	void SAXSource::setSystemId(JString arg0)
 	{
 		callMethod<void>(
 			"setSystemId",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void SAXSource::setXMLReader(JObject arg0)

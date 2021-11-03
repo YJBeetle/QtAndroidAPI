@@ -1,6 +1,8 @@
 #include "../../net/Uri.hpp"
 #include "../../os/Parcel.hpp"
 #include "./ApnSetting_Builder.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "../../../java/net/InetAddress.hpp"
 #include "./ApnSetting.hpp"
 
@@ -183,20 +185,20 @@ namespace android::telephony::data
 			"()I"
 		);
 	}
-	jboolean ApnSetting::equals(jobject arg0)
+	jboolean ApnSetting::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jstring ApnSetting::getApnName()
+	JString ApnSetting::getApnName()
 	{
 		return callObjectMethod(
 			"getApnName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint ApnSetting::getApnTypeBitmask()
 	{
@@ -212,12 +214,12 @@ namespace android::telephony::data
 			"()I"
 		);
 	}
-	jstring ApnSetting::getEntryName()
+	JString ApnSetting::getEntryName()
 	{
 		return callObjectMethod(
 			"getEntryName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint ApnSetting::getId()
 	{
@@ -261,19 +263,19 @@ namespace android::telephony::data
 			"()I"
 		);
 	}
-	jstring ApnSetting::getOperatorNumeric()
+	JString ApnSetting::getOperatorNumeric()
 	{
 		return callObjectMethod(
 			"getOperatorNumeric",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ApnSetting::getPassword()
+	JString ApnSetting::getPassword()
 	{
 		return callObjectMethod(
 			"getPassword",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint ApnSetting::getProtocol()
 	{
@@ -303,12 +305,12 @@ namespace android::telephony::data
 			"()I"
 		);
 	}
-	jstring ApnSetting::getUser()
+	JString ApnSetting::getUser()
 	{
 		return callObjectMethod(
 			"getUser",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jboolean ApnSetting::isEnabled()
 	{
@@ -317,12 +319,12 @@ namespace android::telephony::data
 			"()Z"
 		);
 	}
-	jstring ApnSetting::toString()
+	JString ApnSetting::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void ApnSetting::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

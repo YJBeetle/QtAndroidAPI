@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./WebStorage_Origin.hpp"
 
 namespace android::webkit
@@ -10,12 +11,12 @@ namespace android::webkit
 	// Constructors
 	
 	// Methods
-	jstring WebStorage_Origin::getOrigin()
+	JString WebStorage_Origin::getOrigin()
 	{
 		return callObjectMethod(
 			"getOrigin",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jlong WebStorage_Origin::getQuota()
 	{

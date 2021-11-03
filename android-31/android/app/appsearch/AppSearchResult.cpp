@@ -1,3 +1,5 @@
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./AppSearchResult.hpp"
 
 namespace android::app::appsearch
@@ -73,39 +75,39 @@ namespace android::app::appsearch
 	// Constructors
 	
 	// Methods
-	android::app::appsearch::AppSearchResult AppSearchResult::newFailedResult(jint arg0, jstring arg1)
+	android::app::appsearch::AppSearchResult AppSearchResult::newFailedResult(jint arg0, JString arg1)
 	{
 		return callStaticObjectMethod(
 			"android.app.appsearch.AppSearchResult",
 			"newFailedResult",
 			"(ILjava/lang/String;)Landroid/app/appsearch/AppSearchResult;",
 			arg0,
-			arg1
+			arg1.object<jstring>()
 		);
 	}
-	android::app::appsearch::AppSearchResult AppSearchResult::newSuccessfulResult(jobject arg0)
+	android::app::appsearch::AppSearchResult AppSearchResult::newSuccessfulResult(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"android.app.appsearch.AppSearchResult",
 			"newSuccessfulResult",
 			"(Ljava/lang/Object;)Landroid/app/appsearch/AppSearchResult;",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jboolean AppSearchResult::equals(jobject arg0)
+	jboolean AppSearchResult::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jstring AppSearchResult::getErrorMessage()
+	JString AppSearchResult::getErrorMessage()
 	{
 		return callObjectMethod(
 			"getErrorMessage",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint AppSearchResult::getResultCode()
 	{
@@ -114,12 +116,12 @@ namespace android::app::appsearch
 			"()I"
 		);
 	}
-	jobject AppSearchResult::getResultValue()
+	JObject AppSearchResult::getResultValue()
 	{
 		return callObjectMethod(
 			"getResultValue",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
 	jint AppSearchResult::hashCode()
 	{
@@ -135,12 +137,12 @@ namespace android::app::appsearch
 			"()Z"
 		);
 	}
-	jstring AppSearchResult::toString()
+	JString AppSearchResult::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::app::appsearch
 

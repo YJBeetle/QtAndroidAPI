@@ -2,7 +2,6 @@
 
 #include "../../JObject.hpp"
 
-
 namespace android::os
 {
 	class Debug_InstructionCount : public JObject

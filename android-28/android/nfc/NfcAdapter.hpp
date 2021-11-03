@@ -2,6 +2,10 @@
 
 #include "../../JObject.hpp"
 
+class JArray;
+class JArray;
+class JArray;
+class JArray;
 namespace android::app
 {
 	class Activity;
@@ -30,6 +34,7 @@ namespace android::os
 {
 	class Handler;
 }
+class JString;
 
 namespace android::nfc
 {
@@ -37,19 +42,19 @@ namespace android::nfc
 	{
 	public:
 		// Fields
-		static jstring ACTION_ADAPTER_STATE_CHANGED();
-		static jstring ACTION_NDEF_DISCOVERED();
-		static jstring ACTION_TAG_DISCOVERED();
-		static jstring ACTION_TECH_DISCOVERED();
-		static jstring ACTION_TRANSACTION_DETECTED();
-		static jstring EXTRA_ADAPTER_STATE();
-		static jstring EXTRA_AID();
-		static jstring EXTRA_DATA();
-		static jstring EXTRA_ID();
-		static jstring EXTRA_NDEF_MESSAGES();
-		static jstring EXTRA_READER_PRESENCE_CHECK_DELAY();
-		static jstring EXTRA_SECURE_ELEMENT_NAME();
-		static jstring EXTRA_TAG();
+		static JString ACTION_ADAPTER_STATE_CHANGED();
+		static JString ACTION_NDEF_DISCOVERED();
+		static JString ACTION_TAG_DISCOVERED();
+		static JString ACTION_TECH_DISCOVERED();
+		static JString ACTION_TRANSACTION_DETECTED();
+		static JString EXTRA_ADAPTER_STATE();
+		static JString EXTRA_AID();
+		static JString EXTRA_DATA();
+		static JString EXTRA_ID();
+		static JString EXTRA_NDEF_MESSAGES();
+		static JString EXTRA_READER_PRESENCE_CHECK_DELAY();
+		static JString EXTRA_SECURE_ELEMENT_NAME();
+		static JString EXTRA_TAG();
 		static jint FLAG_READER_NFC_A();
 		static jint FLAG_READER_NFC_B();
 		static jint FLAG_READER_NFC_BARCODE();
@@ -73,18 +78,18 @@ namespace android::nfc
 		void disableForegroundDispatch(android::app::Activity arg0);
 		void disableForegroundNdefPush(android::app::Activity arg0);
 		void disableReaderMode(android::app::Activity arg0);
-		void enableForegroundDispatch(android::app::Activity arg0, android::app::PendingIntent arg1, jarray arg2, jarray arg3);
+		void enableForegroundDispatch(android::app::Activity arg0, android::app::PendingIntent arg1, JArray arg2, JArray arg3);
 		void enableForegroundNdefPush(android::app::Activity arg0, android::nfc::NdefMessage arg1);
 		void enableReaderMode(android::app::Activity arg0, JObject arg1, jint arg2, android::os::Bundle arg3);
 		jboolean ignore(android::nfc::Tag arg0, jint arg1, JObject arg2, android::os::Handler arg3);
 		jboolean invokeBeam(android::app::Activity arg0);
 		jboolean isEnabled();
 		jboolean isNdefPushEnabled();
-		void setBeamPushUris(jarray arg0, android::app::Activity arg1);
+		void setBeamPushUris(JArray arg0, android::app::Activity arg1);
 		void setBeamPushUrisCallback(JObject arg0, android::app::Activity arg1);
-		void setNdefPushMessage(android::nfc::NdefMessage arg0, android::app::Activity arg1, jarray arg2);
-		void setNdefPushMessageCallback(JObject arg0, android::app::Activity arg1, jarray arg2);
-		void setOnNdefPushCompleteCallback(JObject arg0, android::app::Activity arg1, jarray arg2);
+		void setNdefPushMessage(android::nfc::NdefMessage arg0, android::app::Activity arg1, JArray arg2);
+		void setNdefPushMessageCallback(JObject arg0, android::app::Activity arg1, JArray arg2);
+		void setOnNdefPushCompleteCallback(JObject arg0, android::app::Activity arg1, JArray arg2);
 	};
 } // namespace android::nfc
 

@@ -1,8 +1,9 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "../lang/Enum.hpp"
 
+class JArray;
+class JString;
 
 namespace java::net
 {
@@ -21,8 +22,8 @@ namespace java::net
 		// Constructors
 		
 		// Methods
-		static java::net::StandardProtocolFamily valueOf(jstring arg0);
-		static jarray values();
+		static java::net::StandardProtocolFamily valueOf(JString arg0);
+		static JArray values();
 	};
 } // namespace java::net
 

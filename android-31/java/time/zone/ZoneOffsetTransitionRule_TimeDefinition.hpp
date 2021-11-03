@@ -1,8 +1,9 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "../../lang/Enum.hpp"
 
+class JArray;
+class JString;
 namespace java::time
 {
 	class LocalDateTime;
@@ -29,8 +30,8 @@ namespace java::time::zone
 		// Constructors
 		
 		// Methods
-		static java::time::zone::ZoneOffsetTransitionRule_TimeDefinition valueOf(jstring arg0);
-		static jarray values();
+		static java::time::zone::ZoneOffsetTransitionRule_TimeDefinition valueOf(JString arg0);
+		static JArray values();
 		java::time::LocalDateTime createDateTime(java::time::LocalDateTime arg0, java::time::ZoneOffset arg1, java::time::ZoneOffset arg2);
 	};
 } // namespace java::time::zone

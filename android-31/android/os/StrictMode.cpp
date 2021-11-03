@@ -1,5 +1,6 @@
 #include "./StrictMode_ThreadPolicy.hpp"
 #include "./StrictMode_VmPolicy.hpp"
+#include "../../JString.hpp"
 #include "./StrictMode.hpp"
 
 namespace android::os
@@ -52,13 +53,13 @@ namespace android::os
 			"()Landroid/os/StrictMode$VmPolicy;"
 		);
 	}
-	void StrictMode::noteSlowCall(jstring arg0)
+	void StrictMode::noteSlowCall(JString arg0)
 	{
 		callStaticMethod<void>(
 			"android.os.StrictMode",
 			"noteSlowCall",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void StrictMode::setThreadPolicy(android::os::StrictMode_ThreadPolicy arg0)

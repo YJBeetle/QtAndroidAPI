@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./MissingFormatArgumentException.hpp"
 
 namespace java::util
@@ -8,27 +9,27 @@ namespace java::util
 	MissingFormatArgumentException::MissingFormatArgumentException(QJniObject obj) : java::util::IllegalFormatException(obj) {}
 	
 	// Constructors
-	MissingFormatArgumentException::MissingFormatArgumentException(jstring arg0)
+	MissingFormatArgumentException::MissingFormatArgumentException(JString arg0)
 		: java::util::IllegalFormatException(
 			"java.util.MissingFormatArgumentException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods
-	jstring MissingFormatArgumentException::getFormatSpecifier()
+	JString MissingFormatArgumentException::getFormatSpecifier()
 	{
 		return callObjectMethod(
 			"getFormatSpecifier",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring MissingFormatArgumentException::getMessage()
+	JString MissingFormatArgumentException::getMessage()
 	{
 		return callObjectMethod(
 			"getMessage",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::util
 

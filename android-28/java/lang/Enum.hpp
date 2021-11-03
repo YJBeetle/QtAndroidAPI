@@ -6,6 +6,9 @@ namespace java::io
 {
 	class ObjectInputStream;
 }
+class JClass;
+class JObject;
+class JString;
 namespace java::util
 {
 	class Optional;
@@ -25,16 +28,16 @@ namespace java::lang
 		// Constructors
 		
 		// Methods
-		static java::lang::Enum valueOf(jclass arg0, jstring arg1);
+		static java::lang::Enum valueOf(JClass arg0, JString arg1);
 		jint compareTo(java::lang::Enum arg0);
-		jint compareTo(jobject arg0);
+		jint compareTo(JObject arg0);
 		java::util::Optional describeConstable();
-		jboolean equals(jobject arg0);
-		jclass getDeclaringClass();
+		jboolean equals(JObject arg0);
+		JClass getDeclaringClass();
 		jint hashCode();
-		jstring name();
+		JString name();
 		jint ordinal();
-		jstring toString();
+		JString toString();
 	};
 } // namespace java::lang
 

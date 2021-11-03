@@ -1,3 +1,4 @@
+#include "../../../../JString.hpp"
 #include "../../../lang/Thread.hpp"
 #include "../TimeUnit.hpp"
 #include "./ReentrantLock.hpp"
@@ -110,12 +111,12 @@ namespace java::util::concurrent::locks
 			"()Ljava/util/concurrent/locks/Condition;"
 		);
 	}
-	jstring ReentrantLock::toString()
+	JString ReentrantLock::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jboolean ReentrantLock::tryLock()
 	{

@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JByteArray;
+class JString;
 
 namespace android::webkit
 {
@@ -18,22 +20,22 @@ namespace android::webkit
 		URLUtil();
 		
 		// Methods
-		static jstring composeSearchUrl(jstring arg0, jstring arg1, jstring arg2);
-		static jbyteArray decode(jbyteArray arg0);
-		static jstring guessFileName(jstring arg0, jstring arg1, jstring arg2);
-		static jstring guessUrl(jstring arg0);
-		static jboolean isAboutUrl(jstring arg0);
-		static jboolean isAssetUrl(jstring arg0);
-		static jboolean isContentUrl(jstring arg0);
-		static jboolean isCookielessProxyUrl(jstring arg0);
-		static jboolean isDataUrl(jstring arg0);
-		static jboolean isFileUrl(jstring arg0);
-		static jboolean isHttpUrl(jstring arg0);
-		static jboolean isHttpsUrl(jstring arg0);
-		static jboolean isJavaScriptUrl(jstring arg0);
-		static jboolean isNetworkUrl(jstring arg0);
-		static jboolean isValidUrl(jstring arg0);
-		static jstring stripAnchor(jstring arg0);
+		static JString composeSearchUrl(JString arg0, JString arg1, JString arg2);
+		static JByteArray decode(JByteArray arg0);
+		static JString guessFileName(JString arg0, JString arg1, JString arg2);
+		static JString guessUrl(JString arg0);
+		static jboolean isAboutUrl(JString arg0);
+		static jboolean isAssetUrl(JString arg0);
+		static jboolean isContentUrl(JString arg0);
+		static jboolean isCookielessProxyUrl(JString arg0);
+		static jboolean isDataUrl(JString arg0);
+		static jboolean isFileUrl(JString arg0);
+		static jboolean isHttpUrl(JString arg0);
+		static jboolean isHttpsUrl(JString arg0);
+		static jboolean isJavaScriptUrl(JString arg0);
+		static jboolean isNetworkUrl(JString arg0);
+		static jboolean isValidUrl(JString arg0);
+		static JString stripAnchor(JString arg0);
 	};
 } // namespace android::webkit
 

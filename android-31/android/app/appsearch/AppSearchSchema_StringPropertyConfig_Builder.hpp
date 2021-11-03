@@ -6,6 +6,7 @@ namespace android::app::appsearch
 {
 	class AppSearchSchema_StringPropertyConfig;
 }
+class JString;
 
 namespace android::app::appsearch
 {
@@ -19,7 +20,7 @@ namespace android::app::appsearch
 		AppSearchSchema_StringPropertyConfig_Builder(QJniObject obj);
 		
 		// Constructors
-		AppSearchSchema_StringPropertyConfig_Builder(jstring arg0);
+		AppSearchSchema_StringPropertyConfig_Builder(JString arg0);
 		
 		// Methods
 		android::app::appsearch::AppSearchSchema_StringPropertyConfig build();

@@ -1,10 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../lang/Exception.hpp"
-#include "../lang/RuntimeException.hpp"
 #include "./NoSuchElementException.hpp"
 
+class JString;
 
 namespace java::util
 {
@@ -19,7 +17,7 @@ namespace java::util
 		
 		// Constructors
 		InputMismatchException();
-		InputMismatchException(jstring arg0);
+		InputMismatchException(JString arg0);
 		
 		// Methods
 	};

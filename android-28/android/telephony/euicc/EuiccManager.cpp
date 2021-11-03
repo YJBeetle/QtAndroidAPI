@@ -4,26 +4,27 @@
 #include "../../content/Intent.hpp"
 #include "./DownloadableSubscription.hpp"
 #include "./EuiccInfo.hpp"
+#include "../../../JString.hpp"
 #include "./EuiccManager.hpp"
 
 namespace android::telephony::euicc
 {
 	// Fields
-	jstring EuiccManager::ACTION_MANAGE_EMBEDDED_SUBSCRIPTIONS()
+	JString EuiccManager::ACTION_MANAGE_EMBEDDED_SUBSCRIPTIONS()
 	{
 		return getStaticObjectField(
 			"android.telephony.euicc.EuiccManager",
 			"ACTION_MANAGE_EMBEDDED_SUBSCRIPTIONS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring EuiccManager::ACTION_NOTIFY_CARRIER_SETUP_INCOMPLETE()
+	JString EuiccManager::ACTION_NOTIFY_CARRIER_SETUP_INCOMPLETE()
 	{
 		return getStaticObjectField(
 			"android.telephony.euicc.EuiccManager",
 			"ACTION_NOTIFY_CARRIER_SETUP_INCOMPLETE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint EuiccManager::EMBEDDED_SUBSCRIPTION_RESULT_ERROR()
 	{
@@ -46,29 +47,29 @@ namespace android::telephony::euicc
 			"EMBEDDED_SUBSCRIPTION_RESULT_RESOLVABLE_ERROR"
 		);
 	}
-	jstring EuiccManager::EXTRA_EMBEDDED_SUBSCRIPTION_DETAILED_CODE()
+	JString EuiccManager::EXTRA_EMBEDDED_SUBSCRIPTION_DETAILED_CODE()
 	{
 		return getStaticObjectField(
 			"android.telephony.euicc.EuiccManager",
 			"EXTRA_EMBEDDED_SUBSCRIPTION_DETAILED_CODE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring EuiccManager::EXTRA_EMBEDDED_SUBSCRIPTION_DOWNLOADABLE_SUBSCRIPTION()
+	JString EuiccManager::EXTRA_EMBEDDED_SUBSCRIPTION_DOWNLOADABLE_SUBSCRIPTION()
 	{
 		return getStaticObjectField(
 			"android.telephony.euicc.EuiccManager",
 			"EXTRA_EMBEDDED_SUBSCRIPTION_DOWNLOADABLE_SUBSCRIPTION",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring EuiccManager::META_DATA_CARRIER_ICON()
+	JString EuiccManager::META_DATA_CARRIER_ICON()
 	{
 		return getStaticObjectField(
 			"android.telephony.euicc.EuiccManager",
 			"META_DATA_CARRIER_ICON",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QJniObject forward
@@ -96,12 +97,12 @@ namespace android::telephony::euicc
 			arg2.object()
 		);
 	}
-	jstring EuiccManager::getEid()
+	JString EuiccManager::getEid()
 	{
 		return callObjectMethod(
 			"getEid",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::telephony::euicc::EuiccInfo EuiccManager::getEuiccInfo()
 	{

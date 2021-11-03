@@ -1,13 +1,12 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "./DynamicsProcessing_Stage.hpp"
 #include "./DynamicsProcessing_BandStage.hpp"
 
 namespace android::media::audiofx
 {
 	class DynamicsProcessing_MbcBand;
 }
+class JString;
 
 namespace android::media::audiofx
 {
@@ -27,7 +26,7 @@ namespace android::media::audiofx
 		// Methods
 		android::media::audiofx::DynamicsProcessing_MbcBand getBand(jint arg0);
 		void setBand(jint arg0, android::media::audiofx::DynamicsProcessing_MbcBand arg1);
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::media::audiofx
 

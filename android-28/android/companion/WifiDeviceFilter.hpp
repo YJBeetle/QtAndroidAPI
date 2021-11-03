@@ -6,6 +6,7 @@ namespace android::os
 {
 	class Parcel;
 }
+class JObject;
 namespace java::util::regex
 {
 	class Pattern;
@@ -27,7 +28,7 @@ namespace android::companion
 		
 		// Methods
 		jint describeContents();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint hashCode();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};

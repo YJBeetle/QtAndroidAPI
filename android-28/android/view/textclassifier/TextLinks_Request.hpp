@@ -14,6 +14,7 @@ namespace android::view::textclassifier
 {
 	class TextClassifier_EntityConfig;
 }
+class JString;
 
 namespace android::view::textclassifier
 {
@@ -33,7 +34,7 @@ namespace android::view::textclassifier
 		jint describeContents();
 		android::os::LocaleList getDefaultLocales();
 		android::view::textclassifier::TextClassifier_EntityConfig getEntityConfig();
-		jstring getText();
+		JString getText();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::view::textclassifier

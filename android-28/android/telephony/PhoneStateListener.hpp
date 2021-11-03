@@ -14,6 +14,7 @@ namespace android::telephony
 {
 	class SignalStrength;
 }
+class JString;
 
 namespace android::telephony
 {
@@ -43,7 +44,7 @@ namespace android::telephony
 		
 		// Methods
 		void onCallForwardingIndicatorChanged(jboolean arg0);
-		void onCallStateChanged(jint arg0, jstring arg1);
+		void onCallStateChanged(jint arg0, JString arg1);
 		void onCellInfoChanged(JObject arg0);
 		void onCellLocationChanged(android::telephony::CellLocation arg0);
 		void onDataActivity(jint arg0);

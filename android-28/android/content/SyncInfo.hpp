@@ -10,6 +10,7 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
 
 namespace android::content
 {
@@ -18,7 +19,7 @@ namespace android::content
 	public:
 		// Fields
 		android::accounts::Account account();
-		jstring authority();
+		JString authority();
 		jlong startTime();
 		
 		// QJniObject forward

@@ -1,3 +1,4 @@
+#include "../../../JByteArray.hpp"
 #include "./AssetManager.hpp"
 #include "./AssetManager_AssetInputStream.hpp"
 
@@ -47,20 +48,20 @@ namespace android::content::res
 			"()I"
 		);
 	}
-	jint AssetManager_AssetInputStream::read(jbyteArray arg0)
+	jint AssetManager_AssetInputStream::read(JByteArray arg0)
 	{
 		return callMethod<jint>(
 			"read",
 			"([B)I",
-			arg0
+			arg0.object<jbyteArray>()
 		);
 	}
-	jint AssetManager_AssetInputStream::read(jbyteArray arg0, jint arg1, jint arg2)
+	jint AssetManager_AssetInputStream::read(JByteArray arg0, jint arg1, jint arg2)
 	{
 		return callMethod<jint>(
 			"read",
 			"([BII)I",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1,
 			arg2
 		);

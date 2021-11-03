@@ -1,3 +1,7 @@
+#include "../../../JObjectArray.hpp"
+#include "../../../JArray.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "../../lang/ThreadLocal.hpp"
 #include "../ByteBuffer.hpp"
 #include "../CharBuffer.hpp"
@@ -33,22 +37,22 @@ namespace java::nio::charset
 			"()Ljava/nio/charset/Charset;"
 		);
 	}
-	java::nio::charset::Charset Charset::forName(jstring arg0)
+	java::nio::charset::Charset Charset::forName(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"java.nio.charset.Charset",
 			"forName",
 			"(Ljava/lang/String;)Ljava/nio/charset/Charset;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jboolean Charset::isSupported(jstring arg0)
+	jboolean Charset::isSupported(JString arg0)
 	{
 		return callStaticMethod<jboolean>(
 			"java.nio.charset.Charset",
 			"isSupported",
 			"(Ljava/lang/String;)Z",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	JObject Charset::aliases()
@@ -65,12 +69,12 @@ namespace java::nio::charset
 			"()Z"
 		);
 	}
-	jint Charset::compareTo(jobject arg0)
+	jint Charset::compareTo(JObject arg0)
 	{
 		return callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Object;)I",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint Charset::compareTo(java::nio::charset::Charset arg0)
@@ -97,27 +101,27 @@ namespace java::nio::charset
 			arg0.object()
 		);
 	}
-	jstring Charset::displayName()
+	JString Charset::displayName()
 	{
 		return callObjectMethod(
 			"displayName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Charset::displayName(java::util::Locale arg0)
+	JString Charset::displayName(java::util::Locale arg0)
 	{
 		return callObjectMethod(
 			"displayName",
 			"(Ljava/util/Locale;)Ljava/lang/String;",
 			arg0.object()
-		).object<jstring>();
+		);
 	}
-	java::nio::ByteBuffer Charset::encode(jstring arg0)
+	java::nio::ByteBuffer Charset::encode(JString arg0)
 	{
 		return callObjectMethod(
 			"encode",
 			"(Ljava/lang/String;)Ljava/nio/ByteBuffer;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	java::nio::ByteBuffer Charset::encode(java::nio::CharBuffer arg0)
@@ -128,12 +132,12 @@ namespace java::nio::charset
 			arg0.object()
 		);
 	}
-	jboolean Charset::equals(jobject arg0)
+	jboolean Charset::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint Charset::hashCode()
@@ -150,12 +154,12 @@ namespace java::nio::charset
 			"()Z"
 		);
 	}
-	jstring Charset::name()
+	JString Charset::name()
 	{
 		return callObjectMethod(
 			"name",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	java::nio::charset::CharsetDecoder Charset::newDecoder()
 	{
@@ -171,12 +175,12 @@ namespace java::nio::charset
 			"()Ljava/nio/charset/CharsetEncoder;"
 		);
 	}
-	jstring Charset::toString()
+	JString Charset::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::nio::charset
 

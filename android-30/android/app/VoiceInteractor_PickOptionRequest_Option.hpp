@@ -10,6 +10,7 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
 
 namespace android::app
 {
@@ -24,16 +25,16 @@ namespace android::app
 		VoiceInteractor_PickOptionRequest_Option(QJniObject obj);
 		
 		// Constructors
-		VoiceInteractor_PickOptionRequest_Option(jstring arg0, jint arg1);
+		VoiceInteractor_PickOptionRequest_Option(JString arg0, jint arg1);
 		
 		// Methods
-		android::app::VoiceInteractor_PickOptionRequest_Option addSynonym(jstring arg0);
+		android::app::VoiceInteractor_PickOptionRequest_Option addSynonym(JString arg0);
 		jint countSynonyms();
 		jint describeContents();
 		android::os::Bundle getExtras();
 		jint getIndex();
-		jstring getLabel();
-		jstring getSynonymAt(jint arg0);
+		JString getLabel();
+		JString getSynonymAt(jint arg0);
 		void setExtras(android::os::Bundle arg0);
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};

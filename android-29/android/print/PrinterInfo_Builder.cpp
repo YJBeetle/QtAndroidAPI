@@ -2,6 +2,7 @@
 #include "./PrinterCapabilitiesInfo.hpp"
 #include "./PrinterId.hpp"
 #include "./PrinterInfo.hpp"
+#include "../../JString.hpp"
 #include "./PrinterInfo_Builder.hpp"
 
 namespace android::print
@@ -18,12 +19,12 @@ namespace android::print
 			"(Landroid/print/PrinterInfo;)V",
 			arg0.object()
 		) {}
-	PrinterInfo_Builder::PrinterInfo_Builder(android::print::PrinterId arg0, jstring arg1, jint arg2)
+	PrinterInfo_Builder::PrinterInfo_Builder(android::print::PrinterId arg0, JString arg1, jint arg2)
 		: JObject(
 			"android.print.PrinterInfo$Builder",
 			"(Landroid/print/PrinterId;Ljava/lang/String;I)V",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2
 		) {}
 	
@@ -43,12 +44,12 @@ namespace android::print
 			arg0.object()
 		);
 	}
-	android::print::PrinterInfo_Builder PrinterInfo_Builder::setDescription(jstring arg0)
+	android::print::PrinterInfo_Builder PrinterInfo_Builder::setDescription(JString arg0)
 	{
 		return callObjectMethod(
 			"setDescription",
 			"(Ljava/lang/String;)Landroid/print/PrinterInfo$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::print::PrinterInfo_Builder PrinterInfo_Builder::setHasCustomPrinterIcon(jboolean arg0)
@@ -75,12 +76,12 @@ namespace android::print
 			arg0.object()
 		);
 	}
-	android::print::PrinterInfo_Builder PrinterInfo_Builder::setName(jstring arg0)
+	android::print::PrinterInfo_Builder PrinterInfo_Builder::setName(JString arg0)
 	{
 		return callObjectMethod(
 			"setName",
 			"(Ljava/lang/String;)Landroid/print/PrinterInfo$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::print::PrinterInfo_Builder PrinterInfo_Builder::setStatus(jint arg0)

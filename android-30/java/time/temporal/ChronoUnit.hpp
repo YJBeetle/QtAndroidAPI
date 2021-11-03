@@ -1,8 +1,9 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "../../lang/Enum.hpp"
 
+class JArray;
+class JString;
 namespace java::time
 {
 	class Duration;
@@ -38,8 +39,8 @@ namespace java::time::temporal
 		// Constructors
 		
 		// Methods
-		static java::time::temporal::ChronoUnit valueOf(jstring arg0);
-		static jarray values();
+		static java::time::temporal::ChronoUnit valueOf(JString arg0);
+		static JArray values();
 		JObject addTo(JObject arg0, jlong arg1);
 		jlong between(JObject arg0, JObject arg1);
 		java::time::Duration getDuration();
@@ -47,7 +48,7 @@ namespace java::time::temporal
 		jboolean isDurationEstimated();
 		jboolean isSupportedBy(JObject arg0);
 		jboolean isTimeBased();
-		jstring toString();
+		JString toString();
 	};
 } // namespace java::time::temporal
 

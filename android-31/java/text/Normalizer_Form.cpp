@@ -1,3 +1,5 @@
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
 #include "./Normalizer_Form.hpp"
 
 namespace java::text
@@ -42,22 +44,22 @@ namespace java::text
 	// Constructors
 	
 	// Methods
-	java::text::Normalizer_Form Normalizer_Form::valueOf(jstring arg0)
+	java::text::Normalizer_Form Normalizer_Form::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"java.text.Normalizer$Form",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/text/Normalizer$Form;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray Normalizer_Form::values()
+	JArray Normalizer_Form::values()
 	{
 		return callStaticObjectMethod(
 			"java.text.Normalizer$Form",
 			"values",
 			"()[Ljava/text/Normalizer$Form;"
-		).object<jarray>();
+		);
 	}
 } // namespace java::text
 

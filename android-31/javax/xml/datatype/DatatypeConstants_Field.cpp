@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./DatatypeConstants_Field.hpp"
 
 namespace javax::xml::datatype
@@ -17,12 +18,12 @@ namespace javax::xml::datatype
 			"()I"
 		);
 	}
-	jstring DatatypeConstants_Field::toString()
+	JString DatatypeConstants_Field::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace javax::xml::datatype
 

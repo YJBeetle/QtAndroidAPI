@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./RuntimePermission.hpp"
 
 namespace java::lang
@@ -8,18 +9,18 @@ namespace java::lang
 	RuntimePermission::RuntimePermission(QJniObject obj) : java::security::BasicPermission(obj) {}
 	
 	// Constructors
-	RuntimePermission::RuntimePermission(jstring arg0)
+	RuntimePermission::RuntimePermission(JString arg0)
 		: java::security::BasicPermission(
 			"java.lang.RuntimePermission",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	RuntimePermission::RuntimePermission(jstring arg0, jstring arg1)
+	RuntimePermission::RuntimePermission(JString arg0, JString arg1)
 		: java::security::BasicPermission(
 			"java.lang.RuntimePermission",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		) {}
 	
 	// Methods

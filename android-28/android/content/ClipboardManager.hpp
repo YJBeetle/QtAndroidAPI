@@ -1,6 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "../text/ClipboardManager.hpp"
 
 namespace android::content
@@ -11,6 +10,7 @@ namespace android::content
 {
 	class ClipDescription;
 }
+class JString;
 
 namespace android::content
 {
@@ -30,12 +30,12 @@ namespace android::content
 		void clearPrimaryClip();
 		android::content::ClipData getPrimaryClip();
 		android::content::ClipDescription getPrimaryClipDescription();
-		jstring getText();
+		JString getText();
 		jboolean hasPrimaryClip();
 		jboolean hasText();
 		void removePrimaryClipChangedListener(JObject arg0);
 		void setPrimaryClip(android::content::ClipData arg0);
-		void setText(jstring arg0);
+		void setText(JString arg0);
 	};
 } // namespace android::content
 

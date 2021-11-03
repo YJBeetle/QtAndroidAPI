@@ -1,9 +1,9 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../lang/Exception.hpp"
 #include "./SQLException.hpp"
 
+class JIntArray;
+class JLongArray;
 namespace java::io
 {
 	class ObjectInputStream;
@@ -12,6 +12,8 @@ namespace java::io
 {
 	class ObjectOutputStream;
 }
+class JString;
+class JThrowable;
 
 namespace java::sql
 {
@@ -26,20 +28,20 @@ namespace java::sql
 		
 		// Constructors
 		BatchUpdateException();
-		BatchUpdateException(jintArray arg0);
-		BatchUpdateException(jthrowable arg0);
-		BatchUpdateException(jintArray arg0, jthrowable arg1);
-		BatchUpdateException(jstring arg0, jintArray arg1);
-		BatchUpdateException(jstring arg0, jintArray arg1, jthrowable arg2);
-		BatchUpdateException(jstring arg0, jstring arg1, jintArray arg2);
-		BatchUpdateException(jstring arg0, jstring arg1, jintArray arg2, jthrowable arg3);
-		BatchUpdateException(jstring arg0, jstring arg1, jint arg2, jintArray arg3);
-		BatchUpdateException(jstring arg0, jstring arg1, jint arg2, jintArray arg3, jthrowable arg4);
-		BatchUpdateException(jstring arg0, jstring arg1, jint arg2, jlongArray arg3, jthrowable arg4);
+		BatchUpdateException(JIntArray arg0);
+		BatchUpdateException(JThrowable arg0);
+		BatchUpdateException(JIntArray arg0, JThrowable arg1);
+		BatchUpdateException(JString arg0, JIntArray arg1);
+		BatchUpdateException(JString arg0, JIntArray arg1, JThrowable arg2);
+		BatchUpdateException(JString arg0, JString arg1, JIntArray arg2);
+		BatchUpdateException(JString arg0, JString arg1, JIntArray arg2, JThrowable arg3);
+		BatchUpdateException(JString arg0, JString arg1, jint arg2, JIntArray arg3);
+		BatchUpdateException(JString arg0, JString arg1, jint arg2, JIntArray arg3, JThrowable arg4);
+		BatchUpdateException(JString arg0, JString arg1, jint arg2, JLongArray arg3, JThrowable arg4);
 		
 		// Methods
-		jlongArray getLargeUpdateCounts();
-		jintArray getUpdateCounts();
+		JLongArray getLargeUpdateCounts();
+		JIntArray getUpdateCounts();
 	};
 } // namespace java::sql
 

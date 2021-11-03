@@ -1,3 +1,5 @@
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
 #include "./WifiConfiguration_GroupCipher.hpp"
 
 namespace android::net::wifi
@@ -31,21 +33,21 @@ namespace android::net::wifi
 			"WEP40"
 		);
 	}
-	jarray WifiConfiguration_GroupCipher::strings()
+	JArray WifiConfiguration_GroupCipher::strings()
 	{
 		return getStaticObjectField(
 			"android.net.wifi.WifiConfiguration$GroupCipher",
 			"strings",
 			"[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
-	jstring WifiConfiguration_GroupCipher::varName()
+	JString WifiConfiguration_GroupCipher::varName()
 	{
 		return getStaticObjectField(
 			"android.net.wifi.WifiConfiguration$GroupCipher",
 			"varName",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QJniObject forward

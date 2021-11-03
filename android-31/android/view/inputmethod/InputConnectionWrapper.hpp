@@ -38,6 +38,8 @@ namespace android::view::inputmethod
 {
 	class SurroundingText;
 }
+class JString;
+class JString;
 
 namespace android::view::inputmethod
 {
@@ -60,7 +62,7 @@ namespace android::view::inputmethod
 		jboolean commitCompletion(android::view::inputmethod::CompletionInfo arg0);
 		jboolean commitContent(android::view::inputmethod::InputContentInfo arg0, jint arg1, android::os::Bundle arg2);
 		jboolean commitCorrection(android::view::inputmethod::CorrectionInfo arg0);
-		jboolean commitText(jstring arg0, jint arg1);
+		jboolean commitText(JString arg0, jint arg1);
 		jboolean deleteSurroundingText(jint arg0, jint arg1);
 		jboolean deleteSurroundingTextInCodePoints(jint arg0, jint arg1);
 		jboolean endBatchEdit();
@@ -68,19 +70,19 @@ namespace android::view::inputmethod
 		jint getCursorCapsMode(jint arg0);
 		android::view::inputmethod::ExtractedText getExtractedText(android::view::inputmethod::ExtractedTextRequest arg0, jint arg1);
 		android::os::Handler getHandler();
-		jstring getSelectedText(jint arg0);
+		JString getSelectedText(jint arg0);
 		android::view::inputmethod::SurroundingText getSurroundingText(jint arg0, jint arg1, jint arg2);
-		jstring getTextAfterCursor(jint arg0, jint arg1);
-		jstring getTextBeforeCursor(jint arg0, jint arg1);
+		JString getTextAfterCursor(jint arg0, jint arg1);
+		JString getTextBeforeCursor(jint arg0, jint arg1);
 		jboolean performContextMenuAction(jint arg0);
 		jboolean performEditorAction(jint arg0);
-		jboolean performPrivateCommand(jstring arg0, android::os::Bundle arg1);
+		jboolean performPrivateCommand(JString arg0, android::os::Bundle arg1);
 		jboolean performSpellCheck();
 		jboolean reportFullscreenMode(jboolean arg0);
 		jboolean requestCursorUpdates(jint arg0);
 		jboolean sendKeyEvent(android::view::KeyEvent arg0);
 		jboolean setComposingRegion(jint arg0, jint arg1);
-		jboolean setComposingText(jstring arg0, jint arg1);
+		jboolean setComposingText(JString arg0, jint arg1);
 		jboolean setImeConsumesInput(jboolean arg0);
 		jboolean setSelection(jint arg0, jint arg1);
 		void setTarget(JObject arg0);

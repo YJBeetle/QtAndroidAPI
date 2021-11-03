@@ -3,6 +3,7 @@
 #include "./SipProfile.hpp"
 #include "./SipSession.hpp"
 #include "../../os/Message.hpp"
+#include "../../../JString.hpp"
 #include "./SipAudioCall.hpp"
 
 namespace android::net::sip
@@ -30,13 +31,13 @@ namespace android::net::sip
 			arg0
 		);
 	}
-	void SipAudioCall::attachCall(android::net::sip::SipSession arg0, jstring arg1)
+	void SipAudioCall::attachCall(android::net::sip::SipSession arg0, JString arg1)
 	{
 		callMethod<void>(
 			"attachCall",
 			"(Landroid/net/sip/SipSession;Ljava/lang/String;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
 	void SipAudioCall::close()

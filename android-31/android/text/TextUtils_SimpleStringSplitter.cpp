@@ -1,3 +1,5 @@
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./TextUtils_SimpleStringSplitter.hpp"
 
 namespace android::text
@@ -30,12 +32,12 @@ namespace android::text
 			"()Ljava/util/Iterator;"
 		);
 	}
-	jstring TextUtils_SimpleStringSplitter::next()
+	JString TextUtils_SimpleStringSplitter::next()
 	{
 		return callObjectMethod(
 			"next",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void TextUtils_SimpleStringSplitter::remove()
 	{
@@ -44,12 +46,12 @@ namespace android::text
 			"()V"
 		);
 	}
-	void TextUtils_SimpleStringSplitter::setString(jstring arg0)
+	void TextUtils_SimpleStringSplitter::setString(JString arg0)
 	{
 		callMethod<void>(
 			"setString",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 } // namespace android::text

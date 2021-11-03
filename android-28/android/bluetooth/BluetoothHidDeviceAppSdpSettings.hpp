@@ -2,10 +2,12 @@
 
 #include "../../JObject.hpp"
 
+class JByteArray;
 namespace android::os
 {
 	class Parcel;
 }
+class JString;
 
 namespace android::bluetooth
 {
@@ -20,14 +22,14 @@ namespace android::bluetooth
 		BluetoothHidDeviceAppSdpSettings(QJniObject obj);
 		
 		// Constructors
-		BluetoothHidDeviceAppSdpSettings(jstring arg0, jstring arg1, jstring arg2, jbyte arg3, jbyteArray arg4);
+		BluetoothHidDeviceAppSdpSettings(JString arg0, JString arg1, JString arg2, jbyte arg3, JByteArray arg4);
 		
 		// Methods
 		jint describeContents();
-		jstring getDescription();
-		jbyteArray getDescriptors();
-		jstring getName();
-		jstring getProvider();
+		JString getDescription();
+		JByteArray getDescriptors();
+		JString getName();
+		JString getProvider();
 		jbyte getSubclass();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};

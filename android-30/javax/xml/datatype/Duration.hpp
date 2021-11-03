@@ -6,6 +6,8 @@ namespace java::lang
 {
 	class Number;
 }
+class JObject;
+class JString;
 namespace java::math
 {
 	class BigDecimal;
@@ -46,7 +48,7 @@ namespace javax::xml::datatype
 		void addTo(java::util::Calendar arg0);
 		void addTo(java::util::Date arg0);
 		jint compare(javax::xml::datatype::Duration arg0);
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint getDays();
 		java::lang::Number getField(javax::xml::datatype::DatatypeConstants_Field arg0);
 		jint getHours();
@@ -67,7 +69,7 @@ namespace javax::xml::datatype
 		javax::xml::datatype::Duration negate();
 		javax::xml::datatype::Duration normalizeWith(java::util::Calendar arg0);
 		javax::xml::datatype::Duration subtract(javax::xml::datatype::Duration arg0);
-		jstring toString();
+		JString toString();
 	};
 } // namespace javax::xml::datatype
 

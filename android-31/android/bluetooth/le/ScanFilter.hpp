@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JByteArray;
 namespace android::bluetooth::le
 {
 	class ScanResult;
@@ -14,6 +15,8 @@ namespace android::os
 {
 	class ParcelUuid;
 }
+class JObject;
+class JString;
 
 namespace android::bluetooth::le
 {
@@ -31,14 +34,14 @@ namespace android::bluetooth::le
 		
 		// Methods
 		jint describeContents();
-		jboolean equals(jobject arg0);
-		jstring getDeviceAddress();
-		jstring getDeviceName();
-		jbyteArray getManufacturerData();
-		jbyteArray getManufacturerDataMask();
+		jboolean equals(JObject arg0);
+		JString getDeviceAddress();
+		JString getDeviceName();
+		JByteArray getManufacturerData();
+		JByteArray getManufacturerDataMask();
 		jint getManufacturerId();
-		jbyteArray getServiceData();
-		jbyteArray getServiceDataMask();
+		JByteArray getServiceData();
+		JByteArray getServiceDataMask();
 		android::os::ParcelUuid getServiceDataUuid();
 		android::os::ParcelUuid getServiceSolicitationUuid();
 		android::os::ParcelUuid getServiceSolicitationUuidMask();
@@ -46,7 +49,7 @@ namespace android::bluetooth::le
 		android::os::ParcelUuid getServiceUuidMask();
 		jint hashCode();
 		jboolean matches(android::bluetooth::le::ScanResult arg0);
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::bluetooth::le

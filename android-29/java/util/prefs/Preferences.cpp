@@ -1,5 +1,9 @@
+#include "../../../JByteArray.hpp"
+#include "../../../JArray.hpp"
 #include "../../io/InputStream.hpp"
 #include "../../io/OutputStream.hpp"
+#include "../../../JClass.hpp"
+#include "../../../JString.hpp"
 #include "../../security/Permission.hpp"
 #include "./Preferences.hpp"
 
@@ -43,13 +47,13 @@ namespace java::util::prefs
 			arg0.object()
 		);
 	}
-	java::util::prefs::Preferences Preferences::systemNodeForPackage(jclass arg0)
+	java::util::prefs::Preferences Preferences::systemNodeForPackage(JClass arg0)
 	{
 		return callStaticObjectMethod(
 			"java.util.prefs.Preferences",
 			"systemNodeForPackage",
 			"(Ljava/lang/Class;)Ljava/util/prefs/Preferences;",
-			arg0
+			arg0.object<jclass>()
 		);
 	}
 	java::util::prefs::Preferences Preferences::systemRoot()
@@ -60,13 +64,13 @@ namespace java::util::prefs
 			"()Ljava/util/prefs/Preferences;"
 		);
 	}
-	java::util::prefs::Preferences Preferences::userNodeForPackage(jclass arg0)
+	java::util::prefs::Preferences Preferences::userNodeForPackage(JClass arg0)
 	{
 		return callStaticObjectMethod(
 			"java.util.prefs.Preferences",
 			"userNodeForPackage",
 			"(Ljava/lang/Class;)Ljava/util/prefs/Preferences;",
-			arg0
+			arg0.object<jclass>()
 		);
 	}
 	java::util::prefs::Preferences Preferences::userRoot()
@@ -77,12 +81,12 @@ namespace java::util::prefs
 			"()Ljava/util/prefs/Preferences;"
 		);
 	}
-	jstring Preferences::absolutePath()
+	JString Preferences::absolutePath()
 	{
 		return callObjectMethod(
 			"absolutePath",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void Preferences::addNodeChangeListener(JObject arg0)
 	{
@@ -100,12 +104,12 @@ namespace java::util::prefs
 			arg0.object()
 		);
 	}
-	jarray Preferences::childrenNames()
+	JArray Preferences::childrenNames()
 	{
 		return callObjectMethod(
 			"childrenNames",
 			"()[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
 	void Preferences::clear()
 	{
@@ -137,66 +141,66 @@ namespace java::util::prefs
 			"()V"
 		);
 	}
-	jstring Preferences::get(jstring arg0, jstring arg1)
+	JString Preferences::get(JString arg0, JString arg1)
 	{
 		return callObjectMethod(
 			"get",
 			"(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
-			arg0,
-			arg1
-		).object<jstring>();
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
+		);
 	}
-	jboolean Preferences::getBoolean(jstring arg0, jboolean arg1)
+	jboolean Preferences::getBoolean(JString arg0, jboolean arg1)
 	{
 		return callMethod<jboolean>(
 			"getBoolean",
 			"(Ljava/lang/String;Z)Z",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
-	jbyteArray Preferences::getByteArray(jstring arg0, jbyteArray arg1)
+	JByteArray Preferences::getByteArray(JString arg0, JByteArray arg1)
 	{
 		return callObjectMethod(
 			"getByteArray",
 			"(Ljava/lang/String;[B)[B",
-			arg0,
-			arg1
-		).object<jbyteArray>();
+			arg0.object<jstring>(),
+			arg1.object<jbyteArray>()
+		);
 	}
-	jdouble Preferences::getDouble(jstring arg0, jdouble arg1)
+	jdouble Preferences::getDouble(JString arg0, jdouble arg1)
 	{
 		return callMethod<jdouble>(
 			"getDouble",
 			"(Ljava/lang/String;D)D",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
-	jfloat Preferences::getFloat(jstring arg0, jfloat arg1)
+	jfloat Preferences::getFloat(JString arg0, jfloat arg1)
 	{
 		return callMethod<jfloat>(
 			"getFloat",
 			"(Ljava/lang/String;F)F",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
-	jint Preferences::getInt(jstring arg0, jint arg1)
+	jint Preferences::getInt(JString arg0, jint arg1)
 	{
 		return callMethod<jint>(
 			"getInt",
 			"(Ljava/lang/String;I)I",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
-	jlong Preferences::getLong(jstring arg0, jlong arg1)
+	jlong Preferences::getLong(JString arg0, jlong arg1)
 	{
 		return callMethod<jlong>(
 			"getLong",
 			"(Ljava/lang/String;J)J",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
@@ -207,34 +211,34 @@ namespace java::util::prefs
 			"()Z"
 		);
 	}
-	jarray Preferences::keys()
+	JArray Preferences::keys()
 	{
 		return callObjectMethod(
 			"keys",
 			"()[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
-	jstring Preferences::name()
+	JString Preferences::name()
 	{
 		return callObjectMethod(
 			"name",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	java::util::prefs::Preferences Preferences::node(jstring arg0)
+	java::util::prefs::Preferences Preferences::node(JString arg0)
 	{
 		return callObjectMethod(
 			"node",
 			"(Ljava/lang/String;)Ljava/util/prefs/Preferences;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jboolean Preferences::nodeExists(jstring arg0)
+	jboolean Preferences::nodeExists(JString arg0)
 	{
 		return callMethod<jboolean>(
 			"nodeExists",
 			"(Ljava/lang/String;)Z",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	java::util::prefs::Preferences Preferences::parent()
@@ -244,75 +248,75 @@ namespace java::util::prefs
 			"()Ljava/util/prefs/Preferences;"
 		);
 	}
-	void Preferences::put(jstring arg0, jstring arg1)
+	void Preferences::put(JString arg0, JString arg1)
 	{
 		callMethod<void>(
 			"put",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		);
 	}
-	void Preferences::putBoolean(jstring arg0, jboolean arg1)
+	void Preferences::putBoolean(JString arg0, jboolean arg1)
 	{
 		callMethod<void>(
 			"putBoolean",
 			"(Ljava/lang/String;Z)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
-	void Preferences::putByteArray(jstring arg0, jbyteArray arg1)
+	void Preferences::putByteArray(JString arg0, JByteArray arg1)
 	{
 		callMethod<void>(
 			"putByteArray",
 			"(Ljava/lang/String;[B)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jbyteArray>()
 		);
 	}
-	void Preferences::putDouble(jstring arg0, jdouble arg1)
+	void Preferences::putDouble(JString arg0, jdouble arg1)
 	{
 		callMethod<void>(
 			"putDouble",
 			"(Ljava/lang/String;D)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
-	void Preferences::putFloat(jstring arg0, jfloat arg1)
+	void Preferences::putFloat(JString arg0, jfloat arg1)
 	{
 		callMethod<void>(
 			"putFloat",
 			"(Ljava/lang/String;F)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
-	void Preferences::putInt(jstring arg0, jint arg1)
+	void Preferences::putInt(JString arg0, jint arg1)
 	{
 		callMethod<void>(
 			"putInt",
 			"(Ljava/lang/String;I)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
-	void Preferences::putLong(jstring arg0, jlong arg1)
+	void Preferences::putLong(JString arg0, jlong arg1)
 	{
 		callMethod<void>(
 			"putLong",
 			"(Ljava/lang/String;J)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
-	void Preferences::remove(jstring arg0)
+	void Preferences::remove(JString arg0)
 	{
 		callMethod<void>(
 			"remove",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void Preferences::removeNode()
@@ -345,12 +349,12 @@ namespace java::util::prefs
 			"()V"
 		);
 	}
-	jstring Preferences::toString()
+	JString Preferences::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::util::prefs
 

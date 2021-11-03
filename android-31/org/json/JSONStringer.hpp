@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JObject;
+class JString;
 
 namespace org::json
 {
@@ -21,12 +23,12 @@ namespace org::json
 		org::json::JSONStringer array();
 		org::json::JSONStringer endArray();
 		org::json::JSONStringer endObject();
-		org::json::JSONStringer key(jstring arg0);
+		org::json::JSONStringer key(JString arg0);
 		org::json::JSONStringer object();
-		jstring toString();
+		JString toString();
 		org::json::JSONStringer value(jboolean arg0);
 		org::json::JSONStringer value(jdouble arg0);
-		org::json::JSONStringer value(jobject arg0);
+		org::json::JSONStringer value(JObject arg0);
 		org::json::JSONStringer value(jlong arg0);
 	};
 } // namespace org::json

@@ -1,10 +1,9 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "../../../java/lang/Exception.hpp"
-#include "../../../java/lang/RuntimeException.hpp"
 #include "../../../java/security/ProviderException.hpp"
 
+class JString;
+class JThrowable;
 
 namespace android::security::keystore
 {
@@ -19,9 +18,9 @@ namespace android::security::keystore
 		
 		// Constructors
 		SecureKeyImportUnavailableException();
-		SecureKeyImportUnavailableException(jstring arg0);
-		SecureKeyImportUnavailableException(jthrowable arg0);
-		SecureKeyImportUnavailableException(jstring arg0, jthrowable arg1);
+		SecureKeyImportUnavailableException(JString arg0);
+		SecureKeyImportUnavailableException(JThrowable arg0);
+		SecureKeyImportUnavailableException(JString arg0, JThrowable arg1);
 		
 		// Methods
 	};

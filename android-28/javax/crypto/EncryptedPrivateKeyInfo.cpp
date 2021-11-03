@@ -1,3 +1,5 @@
+#include "../../JByteArray.hpp"
+#include "../../JString.hpp"
 #include "../../java/security/AlgorithmParameters.hpp"
 #include "../../java/security/Provider.hpp"
 #include "../../java/security/spec/PKCS8EncodedKeySpec.hpp"
@@ -12,34 +14,34 @@ namespace javax::crypto
 	EncryptedPrivateKeyInfo::EncryptedPrivateKeyInfo(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	EncryptedPrivateKeyInfo::EncryptedPrivateKeyInfo(jbyteArray arg0)
+	EncryptedPrivateKeyInfo::EncryptedPrivateKeyInfo(JByteArray arg0)
 		: JObject(
 			"javax.crypto.EncryptedPrivateKeyInfo",
 			"([B)V",
-			arg0
+			arg0.object<jbyteArray>()
 		) {}
-	EncryptedPrivateKeyInfo::EncryptedPrivateKeyInfo(jstring arg0, jbyteArray arg1)
+	EncryptedPrivateKeyInfo::EncryptedPrivateKeyInfo(JString arg0, JByteArray arg1)
 		: JObject(
 			"javax.crypto.EncryptedPrivateKeyInfo",
 			"(Ljava/lang/String;[B)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jbyteArray>()
 		) {}
-	EncryptedPrivateKeyInfo::EncryptedPrivateKeyInfo(java::security::AlgorithmParameters arg0, jbyteArray arg1)
+	EncryptedPrivateKeyInfo::EncryptedPrivateKeyInfo(java::security::AlgorithmParameters arg0, JByteArray arg1)
 		: JObject(
 			"javax.crypto.EncryptedPrivateKeyInfo",
 			"(Ljava/security/AlgorithmParameters;[B)V",
 			arg0.object(),
-			arg1
+			arg1.object<jbyteArray>()
 		) {}
 	
 	// Methods
-	jstring EncryptedPrivateKeyInfo::getAlgName()
+	JString EncryptedPrivateKeyInfo::getAlgName()
 	{
 		return callObjectMethod(
 			"getAlgName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	java::security::AlgorithmParameters EncryptedPrivateKeyInfo::getAlgParameters()
 	{
@@ -48,19 +50,19 @@ namespace javax::crypto
 			"()Ljava/security/AlgorithmParameters;"
 		);
 	}
-	jbyteArray EncryptedPrivateKeyInfo::getEncoded()
+	JByteArray EncryptedPrivateKeyInfo::getEncoded()
 	{
 		return callObjectMethod(
 			"getEncoded",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
-	jbyteArray EncryptedPrivateKeyInfo::getEncryptedData()
+	JByteArray EncryptedPrivateKeyInfo::getEncryptedData()
 	{
 		return callObjectMethod(
 			"getEncryptedData",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
 	java::security::spec::PKCS8EncodedKeySpec EncryptedPrivateKeyInfo::getKeySpec(JObject arg0)
 	{
@@ -78,13 +80,13 @@ namespace javax::crypto
 			arg0.object()
 		);
 	}
-	java::security::spec::PKCS8EncodedKeySpec EncryptedPrivateKeyInfo::getKeySpec(JObject arg0, jstring arg1)
+	java::security::spec::PKCS8EncodedKeySpec EncryptedPrivateKeyInfo::getKeySpec(JObject arg0, JString arg1)
 	{
 		return callObjectMethod(
 			"getKeySpec",
 			"(Ljava/security/Key;Ljava/lang/String;)Ljava/security/spec/PKCS8EncodedKeySpec;",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
 	java::security::spec::PKCS8EncodedKeySpec EncryptedPrivateKeyInfo::getKeySpec(JObject arg0, java::security::Provider arg1)

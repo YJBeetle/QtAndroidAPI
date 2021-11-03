@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JByteArray;
 
 namespace javax::crypto::spec
 {
@@ -15,11 +16,11 @@ namespace javax::crypto::spec
 		IvParameterSpec(QJniObject obj);
 		
 		// Constructors
-		IvParameterSpec(jbyteArray arg0);
-		IvParameterSpec(jbyteArray arg0, jint arg1, jint arg2);
+		IvParameterSpec(JByteArray arg0);
+		IvParameterSpec(JByteArray arg0, jint arg1, jint arg2);
 		
 		// Methods
-		jbyteArray getIV();
+		JByteArray getIV();
 	};
 } // namespace javax::crypto::spec
 

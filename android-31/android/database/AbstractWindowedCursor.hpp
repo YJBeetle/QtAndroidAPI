@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./AbstractCursor.hpp"
 
+class JByteArray;
 namespace android::database
 {
 	class CharArrayBuffer;
@@ -11,6 +11,7 @@ namespace android::database
 {
 	class CursorWindow;
 }
+class JString;
 
 namespace android::database
 {
@@ -28,13 +29,13 @@ namespace android::database
 		
 		// Methods
 		void copyStringToBuffer(jint arg0, android::database::CharArrayBuffer arg1);
-		jbyteArray getBlob(jint arg0);
+		JByteArray getBlob(jint arg0);
 		jdouble getDouble(jint arg0);
 		jfloat getFloat(jint arg0);
 		jint getInt(jint arg0);
 		jlong getLong(jint arg0);
 		jshort getShort(jint arg0);
-		jstring getString(jint arg0);
+		JString getString(jint arg0);
 		jint getType(jint arg0);
 		android::database::CursorWindow getWindow();
 		jboolean hasWindow();

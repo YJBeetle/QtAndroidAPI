@@ -1,6 +1,9 @@
 #include "../../graphics/Rect.hpp"
 #include "../../os/Parcel.hpp"
 #include "./AccessibilityNodeInfo.hpp"
+#include "../../../JString.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./AccessibilityWindowInfo.hpp"
 
 namespace android::view::accessibility
@@ -80,12 +83,12 @@ namespace android::view::accessibility
 			"()I"
 		);
 	}
-	jboolean AccessibilityWindowInfo::equals(jobject arg0)
+	jboolean AccessibilityWindowInfo::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	android::view::accessibility::AccessibilityNodeInfo AccessibilityWindowInfo::getAnchor()
@@ -146,12 +149,12 @@ namespace android::view::accessibility
 			"()Landroid/view/accessibility/AccessibilityNodeInfo;"
 		);
 	}
-	jstring AccessibilityWindowInfo::getTitle()
+	JString AccessibilityWindowInfo::getTitle()
 	{
 		return callObjectMethod(
 			"getTitle",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	jint AccessibilityWindowInfo::getType()
 	{
@@ -202,12 +205,12 @@ namespace android::view::accessibility
 			"()V"
 		);
 	}
-	jstring AccessibilityWindowInfo::toString()
+	JString AccessibilityWindowInfo::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void AccessibilityWindowInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

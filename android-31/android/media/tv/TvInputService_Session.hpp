@@ -38,6 +38,7 @@ namespace android::view
 {
 	class View;
 }
+class JString;
 
 namespace android::media::tv
 {
@@ -59,11 +60,11 @@ namespace android::media::tv
 		void notifyContentAllowed();
 		void notifyContentBlocked(android::media::tv::TvContentRating arg0);
 		void notifyTimeShiftStatusChanged(jint arg0);
-		void notifyTrackSelected(jint arg0, jstring arg1);
+		void notifyTrackSelected(jint arg0, JString arg1);
 		void notifyTracksChanged(JObject arg0);
 		void notifyVideoAvailable();
 		void notifyVideoUnavailable(jint arg0);
-		void onAppPrivateCommand(jstring arg0, android::os::Bundle arg1);
+		void onAppPrivateCommand(JString arg0, android::os::Bundle arg1);
 		android::view::View onCreateOverlayView();
 		jboolean onGenericMotionEvent(android::view::MotionEvent arg0);
 		jboolean onKeyDown(jint arg0, android::view::KeyEvent arg1);
@@ -72,7 +73,7 @@ namespace android::media::tv
 		jboolean onKeyUp(jint arg0, android::view::KeyEvent arg1);
 		void onOverlayViewSizeChanged(jint arg0, jint arg1);
 		void onRelease();
-		jboolean onSelectTrack(jint arg0, jstring arg1);
+		jboolean onSelectTrack(jint arg0, JString arg1);
 		void onSetCaptionEnabled(jboolean arg0);
 		void onSetStreamVolume(jfloat arg0);
 		jboolean onSetSurface(android::view::Surface arg0);

@@ -1,8 +1,6 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "./LayoutAnimationController_AnimationParameters.hpp"
-
 
 namespace android::view::animation
 {

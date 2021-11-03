@@ -14,6 +14,7 @@ namespace android::os
 {
 	class Parcel;
 }
+class JObject;
 
 namespace android::os
 {
@@ -35,7 +36,7 @@ namespace android::os
 		static android::os::Messenger readMessengerOrNullFromParcel(android::os::Parcel arg0);
 		static void writeMessengerOrNullToParcel(android::os::Messenger arg0, android::os::Parcel arg1);
 		jint describeContents();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		JObject getBinder();
 		jint hashCode();
 		void send(android::os::Message arg0);

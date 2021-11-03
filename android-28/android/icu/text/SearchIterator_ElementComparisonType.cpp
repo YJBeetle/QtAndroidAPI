@@ -1,3 +1,5 @@
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
 #include "./SearchIterator_ElementComparisonType.hpp"
 
 namespace android::icu::text
@@ -34,22 +36,22 @@ namespace android::icu::text
 	// Constructors
 	
 	// Methods
-	android::icu::text::SearchIterator_ElementComparisonType SearchIterator_ElementComparisonType::valueOf(jstring arg0)
+	android::icu::text::SearchIterator_ElementComparisonType SearchIterator_ElementComparisonType::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.icu.text.SearchIterator$ElementComparisonType",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/icu/text/SearchIterator$ElementComparisonType;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray SearchIterator_ElementComparisonType::values()
+	JArray SearchIterator_ElementComparisonType::values()
 	{
 		return callStaticObjectMethod(
 			"android.icu.text.SearchIterator$ElementComparisonType",
 			"values",
 			"()[Landroid/icu/text/SearchIterator$ElementComparisonType;"
-		).object<jarray>();
+		);
 	}
 } // namespace android::icu::text
 

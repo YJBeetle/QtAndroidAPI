@@ -1,8 +1,9 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./AbstractMap.hpp"
 
+class JObjectArray;
+class JArray;
 namespace java::io
 {
 	class ObjectInputStream;
@@ -11,6 +12,8 @@ namespace java::io
 {
 	class ObjectOutputStream;
 }
+class JClass;
+class JObject;
 
 namespace java::util
 {
@@ -31,26 +34,26 @@ namespace java::util
 		
 		// Methods
 		void clear();
-		jobject clone();
-		jobject compute(jobject arg0, JObject arg1);
-		jobject computeIfAbsent(jobject arg0, JObject arg1);
-		jobject computeIfPresent(jobject arg0, JObject arg1);
-		jboolean containsKey(jobject arg0);
-		jboolean containsValue(jobject arg0);
+		JObject clone();
+		JObject compute(JObject arg0, JObject arg1);
+		JObject computeIfAbsent(JObject arg0, JObject arg1);
+		JObject computeIfPresent(JObject arg0, JObject arg1);
+		jboolean containsKey(JObject arg0);
+		jboolean containsValue(JObject arg0);
 		JObject entrySet();
 		void forEach(JObject arg0);
-		jobject get(jobject arg0);
-		jobject getOrDefault(jobject arg0, jobject arg1);
+		JObject get(JObject arg0);
+		JObject getOrDefault(JObject arg0, JObject arg1);
 		jboolean isEmpty();
 		JObject keySet();
-		jobject merge(jobject arg0, jobject arg1, JObject arg2);
-		jobject put(jobject arg0, jobject arg1);
+		JObject merge(JObject arg0, JObject arg1, JObject arg2);
+		JObject put(JObject arg0, JObject arg1);
 		void putAll(JObject arg0);
-		jobject putIfAbsent(jobject arg0, jobject arg1);
-		jboolean remove(jobject arg0, jobject arg1);
-		jobject remove(jobject arg0);
-		jboolean replace(jobject arg0, jobject arg1, jobject arg2);
-		jobject replace(jobject arg0, jobject arg1);
+		JObject putIfAbsent(JObject arg0, JObject arg1);
+		jboolean remove(JObject arg0, JObject arg1);
+		JObject remove(JObject arg0);
+		jboolean replace(JObject arg0, JObject arg1, JObject arg2);
+		JObject replace(JObject arg0, JObject arg1);
 		void replaceAll(JObject arg0);
 		jint size();
 		JObject values();

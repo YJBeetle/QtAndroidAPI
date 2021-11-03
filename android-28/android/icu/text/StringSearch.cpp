@@ -1,6 +1,7 @@
 #include "./BreakIterator.hpp"
 #include "./RuleBasedCollator.hpp"
 #include "../util/ULocale.hpp"
+#include "../../../JString.hpp"
 #include "../../../java/util/Locale.hpp"
 #include "./StringSearch.hpp"
 
@@ -12,42 +13,42 @@ namespace android::icu::text
 	StringSearch::StringSearch(QJniObject obj) : android::icu::text::SearchIterator(obj) {}
 	
 	// Constructors
-	StringSearch::StringSearch(jstring arg0, jstring arg1)
+	StringSearch::StringSearch(JString arg0, JString arg1)
 		: android::icu::text::SearchIterator(
 			"android.icu.text.StringSearch",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		) {}
-	StringSearch::StringSearch(jstring arg0, JObject arg1, android::icu::text::RuleBasedCollator arg2)
+	StringSearch::StringSearch(JString arg0, JObject arg1, android::icu::text::RuleBasedCollator arg2)
 		: android::icu::text::SearchIterator(
 			"android.icu.text.StringSearch",
 			"(Ljava/lang/String;Ljava/text/CharacterIterator;Landroid/icu/text/RuleBasedCollator;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
 			arg2.object()
 		) {}
-	StringSearch::StringSearch(jstring arg0, JObject arg1, android::icu::util::ULocale arg2)
+	StringSearch::StringSearch(JString arg0, JObject arg1, android::icu::util::ULocale arg2)
 		: android::icu::text::SearchIterator(
 			"android.icu.text.StringSearch",
 			"(Ljava/lang/String;Ljava/text/CharacterIterator;Landroid/icu/util/ULocale;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
 			arg2.object()
 		) {}
-	StringSearch::StringSearch(jstring arg0, JObject arg1, java::util::Locale arg2)
+	StringSearch::StringSearch(JString arg0, JObject arg1, java::util::Locale arg2)
 		: android::icu::text::SearchIterator(
 			"android.icu.text.StringSearch",
 			"(Ljava/lang/String;Ljava/text/CharacterIterator;Ljava/util/Locale;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
 			arg2.object()
 		) {}
-	StringSearch::StringSearch(jstring arg0, JObject arg1, android::icu::text::RuleBasedCollator arg2, android::icu::text::BreakIterator arg3)
+	StringSearch::StringSearch(JString arg0, JObject arg1, android::icu::text::RuleBasedCollator arg2, android::icu::text::BreakIterator arg3)
 		: android::icu::text::SearchIterator(
 			"android.icu.text.StringSearch",
 			"(Ljava/lang/String;Ljava/text/CharacterIterator;Landroid/icu/text/RuleBasedCollator;Landroid/icu/text/BreakIterator;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
 			arg2.object(),
 			arg3.object()
@@ -68,12 +69,12 @@ namespace android::icu::text
 			"()I"
 		);
 	}
-	jstring StringSearch::getPattern()
+	JString StringSearch::getPattern()
 	{
 		return callObjectMethod(
 			"getPattern",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jboolean StringSearch::isCanonical()
 	{
@@ -113,12 +114,12 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	void StringSearch::setPattern(jstring arg0)
+	void StringSearch::setPattern(JString arg0)
 	{
 		callMethod<void>(
 			"setPattern",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void StringSearch::setTarget(JObject arg0)

@@ -1,4 +1,6 @@
+#include "../../JIntArray.hpp"
 #include "../os/Parcel.hpp"
+#include "../../JObject.hpp"
 #include "./Display_HdrCapabilities.hpp"
 
 namespace android::view
@@ -61,12 +63,12 @@ namespace android::view
 			"()I"
 		);
 	}
-	jboolean Display_HdrCapabilities::equals(jobject arg0)
+	jboolean Display_HdrCapabilities::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jfloat Display_HdrCapabilities::getDesiredMaxAverageLuminance()
@@ -90,12 +92,12 @@ namespace android::view
 			"()F"
 		);
 	}
-	jintArray Display_HdrCapabilities::getSupportedHdrTypes()
+	JIntArray Display_HdrCapabilities::getSupportedHdrTypes()
 	{
 		return callObjectMethod(
 			"getSupportedHdrTypes",
 			"()[I"
-		).object<jintArray>();
+		);
 	}
 	jint Display_HdrCapabilities::hashCode()
 	{

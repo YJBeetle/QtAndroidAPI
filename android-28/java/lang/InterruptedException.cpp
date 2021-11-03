@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./InterruptedException.hpp"
 
 namespace java::lang
@@ -13,11 +14,11 @@ namespace java::lang
 			"java.lang.InterruptedException",
 			"()V"
 		) {}
-	InterruptedException::InterruptedException(jstring arg0)
+	InterruptedException::InterruptedException(JString arg0)
 		: java::lang::Exception(
 			"java.lang.InterruptedException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

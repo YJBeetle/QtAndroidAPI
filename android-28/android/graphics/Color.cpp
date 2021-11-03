@@ -1,6 +1,9 @@
+#include "../../JFloatArray.hpp"
 #include "./ColorSpace.hpp"
 #include "./ColorSpace_Connector.hpp"
 #include "./ColorSpace_Model.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./Color.hpp"
 
 namespace android::graphics
@@ -102,26 +105,26 @@ namespace android::graphics
 		) {}
 	
 	// Methods
-	jint Color::HSVToColor(jfloatArray arg0)
+	jint Color::HSVToColor(JFloatArray arg0)
 	{
 		return callStaticMethod<jint>(
 			"android.graphics.Color",
 			"HSVToColor",
 			"([F)I",
-			arg0
+			arg0.object<jfloatArray>()
 		);
 	}
-	jint Color::HSVToColor(jint arg0, jfloatArray arg1)
+	jint Color::HSVToColor(jint arg0, JFloatArray arg1)
 	{
 		return callStaticMethod<jint>(
 			"android.graphics.Color",
 			"HSVToColor",
 			"(I[F)I",
 			arg0,
-			arg1
+			arg1.object<jfloatArray>()
 		);
 	}
-	void Color::RGBToHSV(jint arg0, jint arg1, jint arg2, jfloatArray arg3)
+	void Color::RGBToHSV(jint arg0, jint arg1, jint arg2, JFloatArray arg3)
 	{
 		callStaticMethod<void>(
 			"android.graphics.Color",
@@ -130,7 +133,7 @@ namespace android::graphics
 			arg0,
 			arg1,
 			arg2,
-			arg3
+			arg3.object<jfloatArray>()
 		);
 	}
 	jfloat Color::alpha(jlong arg0)
@@ -202,14 +205,14 @@ namespace android::graphics
 			arg0
 		);
 	}
-	void Color::colorToHSV(jint arg0, jfloatArray arg1)
+	void Color::colorToHSV(jint arg0, JFloatArray arg1)
 	{
 		callStaticMethod<void>(
 			"android.graphics.Color",
 			"colorToHSV",
 			"(I[F)V",
 			arg0,
-			arg1
+			arg1.object<jfloatArray>()
 		);
 	}
 	jlong Color::convert(jint arg0, android::graphics::ColorSpace arg1)
@@ -378,13 +381,13 @@ namespace android::graphics
 			arg4.object()
 		);
 	}
-	jint Color::parseColor(jstring arg0)
+	jint Color::parseColor(JString arg0)
 	{
 		return callStaticMethod<jint>(
 			"android.graphics.Color",
 			"parseColor",
 			"(Ljava/lang/String;)I",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	jfloat Color::red(jlong arg0)
@@ -454,13 +457,13 @@ namespace android::graphics
 			arg0
 		);
 	}
-	android::graphics::Color Color::valueOf(jfloatArray arg0, android::graphics::ColorSpace arg1)
+	android::graphics::Color Color::valueOf(JFloatArray arg0, android::graphics::ColorSpace arg1)
 	{
 		return callStaticObjectMethod(
 			"android.graphics.Color",
 			"valueOf",
 			"([FLandroid/graphics/ColorSpace;)Landroid/graphics/Color;",
-			arg0,
+			arg0.object<jfloatArray>(),
 			arg1.object()
 		);
 	}
@@ -522,12 +525,12 @@ namespace android::graphics
 			arg0.object()
 		);
 	}
-	jboolean Color::equals(jobject arg0)
+	jboolean Color::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	android::graphics::ColorSpace Color::getColorSpace()
@@ -552,20 +555,20 @@ namespace android::graphics
 			"()I"
 		);
 	}
-	jfloatArray Color::getComponents()
+	JFloatArray Color::getComponents()
 	{
 		return callObjectMethod(
 			"getComponents",
 			"()[F"
-		).object<jfloatArray>();
+		);
 	}
-	jfloatArray Color::getComponents(jfloatArray arg0)
+	JFloatArray Color::getComponents(JFloatArray arg0)
 	{
 		return callObjectMethod(
 			"getComponents",
 			"([F)[F",
-			arg0
-		).object<jfloatArray>();
+			arg0.object<jfloatArray>()
+		);
 	}
 	android::graphics::ColorSpace_Model Color::getModel()
 	{
@@ -630,12 +633,12 @@ namespace android::graphics
 			"()I"
 		);
 	}
-	jstring Color::toString()
+	JString Color::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::graphics
 

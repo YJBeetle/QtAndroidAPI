@@ -1,5 +1,7 @@
+#include "../../JByteArray.hpp"
 #include "../../java/io/InputStream.hpp"
 #include "../../java/io/OutputStream.hpp"
+#include "../../JString.hpp"
 #include "./MemoryFile.hpp"
 
 namespace android::os
@@ -10,11 +12,11 @@ namespace android::os
 	MemoryFile::MemoryFile(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	MemoryFile::MemoryFile(jstring arg0, jint arg1)
+	MemoryFile::MemoryFile(JString arg0, jint arg1)
 		: JObject(
 			"android.os.MemoryFile",
 			"(Ljava/lang/String;I)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		) {}
 	
@@ -62,23 +64,23 @@ namespace android::os
 			"()I"
 		);
 	}
-	jint MemoryFile::readBytes(jbyteArray arg0, jint arg1, jint arg2, jint arg3)
+	jint MemoryFile::readBytes(JByteArray arg0, jint arg1, jint arg2, jint arg3)
 	{
 		return callMethod<jint>(
 			"readBytes",
 			"([BIII)I",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1,
 			arg2,
 			arg3
 		);
 	}
-	void MemoryFile::writeBytes(jbyteArray arg0, jint arg1, jint arg2, jint arg3)
+	void MemoryFile::writeBytes(JByteArray arg0, jint arg1, jint arg2, jint arg3)
 	{
 		callMethod<void>(
 			"writeBytes",
 			"([BIII)V",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1,
 			arg2,
 			arg3

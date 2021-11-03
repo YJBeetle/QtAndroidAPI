@@ -1,4 +1,6 @@
 #include "../content/Context.hpp"
+#include "../../JString.hpp"
+#include "../../JString.hpp"
 #include "./MediaRouter_RouteCategory.hpp"
 
 namespace android::media
@@ -11,20 +13,20 @@ namespace android::media
 	// Constructors
 	
 	// Methods
-	jstring MediaRouter_RouteCategory::getName()
+	JString MediaRouter_RouteCategory::getName()
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
-	jstring MediaRouter_RouteCategory::getName(android::content::Context arg0)
+	JString MediaRouter_RouteCategory::getName(android::content::Context arg0)
 	{
 		return callObjectMethod(
 			"getName",
 			"(Landroid/content/Context;)Ljava/lang/CharSequence;",
 			arg0.object()
-		).object<jstring>();
+		);
 	}
 	JObject MediaRouter_RouteCategory::getRoutes(JObject arg0)
 	{
@@ -48,12 +50,12 @@ namespace android::media
 			"()Z"
 		);
 	}
-	jstring MediaRouter_RouteCategory::toString()
+	JString MediaRouter_RouteCategory::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::media
 

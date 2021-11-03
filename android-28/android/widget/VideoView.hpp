@@ -1,7 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../view/View.hpp"
 #include "../view/SurfaceView.hpp"
 
 namespace android::content
@@ -40,6 +38,8 @@ namespace java::io
 {
 	class InputStream;
 }
+class JString;
+class JString;
 
 namespace android::widget
 {
@@ -64,7 +64,7 @@ namespace android::widget
 		jboolean canSeekBackward();
 		jboolean canSeekForward();
 		void draw(android::graphics::Canvas arg0);
-		jstring getAccessibilityClassName();
+		JString getAccessibilityClassName();
 		jint getAudioSessionId();
 		jint getBufferPercentage();
 		jint getCurrentPosition();
@@ -84,7 +84,7 @@ namespace android::widget
 		void setOnErrorListener(JObject arg0);
 		void setOnInfoListener(JObject arg0);
 		void setOnPreparedListener(JObject arg0);
-		void setVideoPath(jstring arg0);
+		void setVideoPath(JString arg0);
 		void setVideoURI(android::net::Uri arg0);
 		void setVideoURI(android::net::Uri arg0, JObject arg1);
 		void start();

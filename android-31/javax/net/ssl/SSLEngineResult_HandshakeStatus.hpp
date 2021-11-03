@@ -1,8 +1,9 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "../../../java/lang/Enum.hpp"
 
+class JArray;
+class JString;
 
 namespace javax::net::ssl
 {
@@ -24,8 +25,8 @@ namespace javax::net::ssl
 		// Constructors
 		
 		// Methods
-		static javax::net::ssl::SSLEngineResult_HandshakeStatus valueOf(jstring arg0);
-		static jarray values();
+		static javax::net::ssl::SSLEngineResult_HandshakeStatus valueOf(JString arg0);
+		static JArray values();
 	};
 } // namespace javax::net::ssl
 

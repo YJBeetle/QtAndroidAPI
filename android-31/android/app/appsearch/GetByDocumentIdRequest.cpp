@@ -1,15 +1,16 @@
+#include "../../../JString.hpp"
 #include "./GetByDocumentIdRequest.hpp"
 
 namespace android::app::appsearch
 {
 	// Fields
-	jstring GetByDocumentIdRequest::PROJECTION_SCHEMA_TYPE_WILDCARD()
+	JString GetByDocumentIdRequest::PROJECTION_SCHEMA_TYPE_WILDCARD()
 	{
 		return getStaticObjectField(
 			"android.app.appsearch.GetByDocumentIdRequest",
 			"PROJECTION_SCHEMA_TYPE_WILDCARD",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QJniObject forward
@@ -25,12 +26,12 @@ namespace android::app::appsearch
 			"()Ljava/util/Set;"
 		);
 	}
-	jstring GetByDocumentIdRequest::getNamespace()
+	JString GetByDocumentIdRequest::getNamespace()
 	{
 		return callObjectMethod(
 			"getNamespace",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	JObject GetByDocumentIdRequest::getProjections()
 	{

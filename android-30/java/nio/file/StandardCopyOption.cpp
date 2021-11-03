@@ -1,3 +1,5 @@
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
 #include "./StandardCopyOption.hpp"
 
 namespace java::nio::file
@@ -34,22 +36,22 @@ namespace java::nio::file
 	// Constructors
 	
 	// Methods
-	java::nio::file::StandardCopyOption StandardCopyOption::valueOf(jstring arg0)
+	java::nio::file::StandardCopyOption StandardCopyOption::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"java.nio.file.StandardCopyOption",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/nio/file/StandardCopyOption;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray StandardCopyOption::values()
+	JArray StandardCopyOption::values()
 	{
 		return callStaticObjectMethod(
 			"java.nio.file.StandardCopyOption",
 			"values",
 			"()[Ljava/nio/file/StandardCopyOption;"
-		).object<jarray>();
+		);
 	}
 } // namespace java::nio::file
 

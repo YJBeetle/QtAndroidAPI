@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./UnsupportedClassVersionError.hpp"
 
 namespace java::lang
@@ -13,11 +14,11 @@ namespace java::lang
 			"java.lang.UnsupportedClassVersionError",
 			"()V"
 		) {}
-	UnsupportedClassVersionError::UnsupportedClassVersionError(jstring arg0)
+	UnsupportedClassVersionError::UnsupportedClassVersionError(JString arg0)
 		: java::lang::ClassFormatError(
 			"java.lang.UnsupportedClassVersionError",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

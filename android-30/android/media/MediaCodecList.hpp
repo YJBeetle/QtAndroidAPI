@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JArray;
 namespace android::media
 {
 	class MediaCodecInfo;
@@ -10,6 +11,7 @@ namespace android::media
 {
 	class MediaFormat;
 }
+class JString;
 
 namespace android::media
 {
@@ -30,9 +32,9 @@ namespace android::media
 		// Methods
 		static jint getCodecCount();
 		static android::media::MediaCodecInfo getCodecInfoAt(jint arg0);
-		jstring findDecoderForFormat(android::media::MediaFormat arg0);
-		jstring findEncoderForFormat(android::media::MediaFormat arg0);
-		jarray getCodecInfos();
+		JString findDecoderForFormat(android::media::MediaFormat arg0);
+		JString findEncoderForFormat(android::media::MediaFormat arg0);
+		JArray getCodecInfos();
 	};
 } // namespace android::media
 

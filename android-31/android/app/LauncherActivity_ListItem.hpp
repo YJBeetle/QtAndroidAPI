@@ -14,6 +14,8 @@ namespace android::os
 {
 	class Bundle;
 }
+class JString;
+class JString;
 
 namespace android::app
 {
@@ -21,11 +23,11 @@ namespace android::app
 	{
 	public:
 		// Fields
-		jstring className();
+		JString className();
 		android::os::Bundle extras();
 		android::graphics::drawable::Drawable icon();
-		jstring label();
-		jstring packageName();
+		JString label();
+		JString packageName();
 		android::content::pm::ResolveInfo resolveInfo();
 		
 		// QJniObject forward

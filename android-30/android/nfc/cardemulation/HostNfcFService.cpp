@@ -1,5 +1,7 @@
+#include "../../../JByteArray.hpp"
 #include "../../content/Intent.hpp"
 #include "../../os/Bundle.hpp"
+#include "../../../JString.hpp"
 #include "./HostNfcFService.hpp"
 
 namespace android::nfc::cardemulation
@@ -12,21 +14,21 @@ namespace android::nfc::cardemulation
 			"DEACTIVATION_LINK_LOSS"
 		);
 	}
-	jstring HostNfcFService::SERVICE_INTERFACE()
+	JString HostNfcFService::SERVICE_INTERFACE()
 	{
 		return getStaticObjectField(
 			"android.nfc.cardemulation.HostNfcFService",
 			"SERVICE_INTERFACE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring HostNfcFService::SERVICE_META_DATA()
+	JString HostNfcFService::SERVICE_META_DATA()
 	{
 		return getStaticObjectField(
 			"android.nfc.cardemulation.HostNfcFService",
 			"SERVICE_META_DATA",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QJniObject forward
@@ -56,21 +58,21 @@ namespace android::nfc::cardemulation
 			arg0
 		);
 	}
-	jbyteArray HostNfcFService::processNfcFPacket(jbyteArray arg0, android::os::Bundle arg1)
+	JByteArray HostNfcFService::processNfcFPacket(JByteArray arg0, android::os::Bundle arg1)
 	{
 		return callObjectMethod(
 			"processNfcFPacket",
 			"([BLandroid/os/Bundle;)[B",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1.object()
-		).object<jbyteArray>();
+		);
 	}
-	void HostNfcFService::sendResponsePacket(jbyteArray arg0)
+	void HostNfcFService::sendResponsePacket(JByteArray arg0)
 	{
 		callMethod<void>(
 			"sendResponsePacket",
 			"([B)V",
-			arg0
+			arg0.object<jbyteArray>()
 		);
 	}
 } // namespace android::nfc::cardemulation

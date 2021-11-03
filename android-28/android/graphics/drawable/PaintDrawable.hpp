@@ -1,13 +1,13 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "./Drawable.hpp"
 #include "./ShapeDrawable.hpp"
 
+class JFloatArray;
 namespace android::content::res
 {
 	class Resources;
 }
+class JString;
 
 namespace android::graphics::drawable
 {
@@ -25,7 +25,7 @@ namespace android::graphics::drawable
 		PaintDrawable(jint arg0);
 		
 		// Methods
-		void setCornerRadii(jfloatArray arg0);
+		void setCornerRadii(JFloatArray arg0);
 		void setCornerRadius(jfloat arg0);
 	};
 } // namespace android::graphics::drawable

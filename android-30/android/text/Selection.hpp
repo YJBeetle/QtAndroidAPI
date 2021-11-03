@@ -6,6 +6,8 @@ namespace android::text
 {
 	class Layout;
 }
+class JString;
+class JObject;
 
 namespace android::text
 {
@@ -13,8 +15,8 @@ namespace android::text
 	{
 	public:
 		// Fields
-		static jobject SELECTION_END();
-		static jobject SELECTION_START();
+		static JObject SELECTION_END();
+		static JObject SELECTION_START();
 		
 		// QJniObject forward
 		template<typename ...Ts> explicit Selection(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
@@ -30,8 +32,8 @@ namespace android::text
 		static jboolean extendToLeftEdge(JObject arg0, android::text::Layout arg1);
 		static jboolean extendToRightEdge(JObject arg0, android::text::Layout arg1);
 		static jboolean extendUp(JObject arg0, android::text::Layout arg1);
-		static jint getSelectionEnd(jstring arg0);
-		static jint getSelectionStart(jstring arg0);
+		static jint getSelectionEnd(JString arg0);
+		static jint getSelectionStart(JString arg0);
 		static jboolean moveDown(JObject arg0, android::text::Layout arg1);
 		static jboolean moveLeft(JObject arg0, android::text::Layout arg1);
 		static jboolean moveRight(JObject arg0, android::text::Layout arg1);

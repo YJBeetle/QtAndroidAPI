@@ -1,3 +1,4 @@
+#include "../../JArray.hpp"
 #include "../os/Bundle.hpp"
 #include "./CallAudioState.hpp"
 #include "./Connection.hpp"
@@ -5,6 +6,7 @@
 #include "./DisconnectCause.hpp"
 #include "./PhoneAccountHandle.hpp"
 #include "./StatusHints.hpp"
+#include "../../JString.hpp"
 #include "./Conference.hpp"
 
 namespace android::telecom
@@ -289,12 +291,12 @@ namespace android::telecom
 			arg0.object()
 		);
 	}
-	void Conference::removeExtras(jarray arg0)
+	void Conference::removeExtras(JArray arg0)
 	{
 		callMethod<void>(
 			"removeExtras",
 			"([Ljava/lang/String;)V",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
 	void Conference::removeExtras(JObject arg0)
@@ -305,12 +307,12 @@ namespace android::telecom
 			arg0.object()
 		);
 	}
-	void Conference::sendConferenceEvent(jstring arg0, android::os::Bundle arg1)
+	void Conference::sendConferenceEvent(JString arg0, android::os::Bundle arg1)
 	{
 		callMethod<void>(
 			"sendConferenceEvent",
 			"(Ljava/lang/String;Landroid/os/Bundle;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
@@ -440,12 +442,12 @@ namespace android::telecom
 			arg1
 		);
 	}
-	jstring Conference::toString()
+	JString Conference::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::telecom
 

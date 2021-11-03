@@ -1,10 +1,8 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "../../io/InputStream.hpp"
-#include "../../io/FilterInputStream.hpp"
 #include "./InflaterInputStream.hpp"
 
+class JByteArray;
 namespace java::io
 {
 	class InputStream;
@@ -32,7 +30,7 @@ namespace java::util::zip
 		
 		// Methods
 		void close();
-		jint read(jbyteArray arg0, jint arg1, jint arg2);
+		jint read(JByteArray arg0, jint arg1, jint arg2);
 	};
 } // namespace java::util::zip
 

@@ -1,9 +1,9 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "./Exception.hpp"
 #include "./RuntimeException.hpp"
 
+class JString;
+class JThrowable;
 
 namespace java::lang
 {
@@ -18,9 +18,9 @@ namespace java::lang
 		
 		// Constructors
 		IllegalStateException();
-		IllegalStateException(jstring arg0);
-		IllegalStateException(jthrowable arg0);
-		IllegalStateException(jstring arg0, jthrowable arg1);
+		IllegalStateException(JString arg0);
+		IllegalStateException(JThrowable arg0);
+		IllegalStateException(JString arg0, JThrowable arg1);
 		
 		// Methods
 	};

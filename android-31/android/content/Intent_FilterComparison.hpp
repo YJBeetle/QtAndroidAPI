@@ -6,6 +6,7 @@ namespace android::content
 {
 	class Intent;
 }
+class JObject;
 
 namespace android::content
 {
@@ -22,7 +23,7 @@ namespace android::content
 		Intent_FilterComparison(android::content::Intent arg0);
 		
 		// Methods
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		android::content::Intent getIntent();
 		jint hashCode();
 	};

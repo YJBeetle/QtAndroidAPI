@@ -1,9 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../view/View.hpp"
-#include "./TextView.hpp"
-#include "./Button.hpp"
 #include "./CompoundButton.hpp"
 
 namespace android::content
@@ -14,6 +10,7 @@ namespace android::graphics::drawable
 {
 	class Drawable;
 }
+class JString;
 
 namespace android::widget
 {
@@ -33,14 +30,14 @@ namespace android::widget
 		ToggleButton(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
-		jstring getAccessibilityClassName();
+		JString getAccessibilityClassName();
 		jfloat getDisabledAlpha();
-		jstring getTextOff();
-		jstring getTextOn();
+		JString getTextOff();
+		JString getTextOn();
 		void setBackgroundDrawable(android::graphics::drawable::Drawable arg0);
 		void setChecked(jboolean arg0);
-		void setTextOff(jstring arg0);
-		void setTextOn(jstring arg0);
+		void setTextOff(JString arg0);
+		void setTextOn(JString arg0);
 	};
 } // namespace android::widget
 

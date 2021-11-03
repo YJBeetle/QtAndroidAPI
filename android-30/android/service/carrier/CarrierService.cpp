@@ -1,18 +1,19 @@
 #include "../../content/Intent.hpp"
 #include "../../os/PersistableBundle.hpp"
 #include "./CarrierIdentifier.hpp"
+#include "../../../JString.hpp"
 #include "./CarrierService.hpp"
 
 namespace android::service::carrier
 {
 	// Fields
-	jstring CarrierService::CARRIER_SERVICE_INTERFACE()
+	JString CarrierService::CARRIER_SERVICE_INTERFACE()
 	{
 		return getStaticObjectField(
 			"android.service.carrier.CarrierService",
 			"CARRIER_SERVICE_INTERFACE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QJniObject forward

@@ -1,4 +1,7 @@
 #include "../os/Parcel.hpp"
+#include "../../JString.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./NotificationChannelGroup.hpp"
 
 namespace android::app
@@ -17,12 +20,12 @@ namespace android::app
 	NotificationChannelGroup::NotificationChannelGroup(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	NotificationChannelGroup::NotificationChannelGroup(jstring arg0, jstring arg1)
+	NotificationChannelGroup::NotificationChannelGroup(JString arg0, JString arg1)
 		: JObject(
 			"android.app.NotificationChannelGroup",
 			"(Ljava/lang/String;Ljava/lang/CharSequence;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		) {}
 	
 	// Methods
@@ -40,12 +43,12 @@ namespace android::app
 			"()I"
 		);
 	}
-	jboolean NotificationChannelGroup::equals(jobject arg0)
+	jboolean NotificationChannelGroup::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	JObject NotificationChannelGroup::getChannels()
@@ -55,26 +58,26 @@ namespace android::app
 			"()Ljava/util/List;"
 		);
 	}
-	jstring NotificationChannelGroup::getDescription()
+	JString NotificationChannelGroup::getDescription()
 	{
 		return callObjectMethod(
 			"getDescription",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring NotificationChannelGroup::getId()
+	JString NotificationChannelGroup::getId()
 	{
 		return callObjectMethod(
 			"getId",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring NotificationChannelGroup::getName()
+	JString NotificationChannelGroup::getName()
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	jint NotificationChannelGroup::hashCode()
 	{
@@ -90,20 +93,20 @@ namespace android::app
 			"()Z"
 		);
 	}
-	void NotificationChannelGroup::setDescription(jstring arg0)
+	void NotificationChannelGroup::setDescription(JString arg0)
 	{
 		callMethod<void>(
 			"setDescription",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jstring NotificationChannelGroup::toString()
+	JString NotificationChannelGroup::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void NotificationChannelGroup::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

@@ -1,3 +1,5 @@
+#include "../../../../JCharArray.hpp"
+#include "../../../../JString.hpp"
 #include "./PasswordCallback.hpp"
 
 namespace javax::security::auth::callback
@@ -8,11 +10,11 @@ namespace javax::security::auth::callback
 	PasswordCallback::PasswordCallback(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	PasswordCallback::PasswordCallback(jstring arg0, jboolean arg1)
+	PasswordCallback::PasswordCallback(JString arg0, jboolean arg1)
 		: JObject(
 			"javax.security.auth.callback.PasswordCallback",
 			"(Ljava/lang/String;Z)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		) {}
 	
@@ -24,19 +26,19 @@ namespace javax::security::auth::callback
 			"()V"
 		);
 	}
-	jcharArray PasswordCallback::getPassword()
+	JCharArray PasswordCallback::getPassword()
 	{
 		return callObjectMethod(
 			"getPassword",
 			"()[C"
-		).object<jcharArray>();
+		);
 	}
-	jstring PasswordCallback::getPrompt()
+	JString PasswordCallback::getPrompt()
 	{
 		return callObjectMethod(
 			"getPrompt",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jboolean PasswordCallback::isEchoOn()
 	{
@@ -45,12 +47,12 @@ namespace javax::security::auth::callback
 			"()Z"
 		);
 	}
-	void PasswordCallback::setPassword(jcharArray arg0)
+	void PasswordCallback::setPassword(JCharArray arg0)
 	{
 		callMethod<void>(
 			"setPassword",
 			"([C)V",
-			arg0
+			arg0.object<jcharArray>()
 		);
 	}
 } // namespace javax::security::auth::callback

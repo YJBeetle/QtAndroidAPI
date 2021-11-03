@@ -1,5 +1,6 @@
 #include "../../os/Parcel.hpp"
 #include "./ImageTransformation_Builder.hpp"
+#include "../../../JString.hpp"
 #include "./ImageTransformation.hpp"
 
 namespace android::service::autofill
@@ -27,12 +28,12 @@ namespace android::service::autofill
 			"()I"
 		);
 	}
-	jstring ImageTransformation::toString()
+	JString ImageTransformation::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void ImageTransformation::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

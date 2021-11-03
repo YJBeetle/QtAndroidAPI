@@ -1,3 +1,5 @@
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
 #include "./ConsoleMessage_MessageLevel.hpp"
 
 namespace android::webkit
@@ -50,22 +52,22 @@ namespace android::webkit
 	// Constructors
 	
 	// Methods
-	android::webkit::ConsoleMessage_MessageLevel ConsoleMessage_MessageLevel::valueOf(jstring arg0)
+	android::webkit::ConsoleMessage_MessageLevel ConsoleMessage_MessageLevel::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.webkit.ConsoleMessage$MessageLevel",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/webkit/ConsoleMessage$MessageLevel;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray ConsoleMessage_MessageLevel::values()
+	JArray ConsoleMessage_MessageLevel::values()
 	{
 		return callStaticObjectMethod(
 			"android.webkit.ConsoleMessage$MessageLevel",
 			"values",
 			"()[Landroid/webkit/ConsoleMessage$MessageLevel;"
-		).object<jarray>();
+		);
 	}
 } // namespace android::webkit
 

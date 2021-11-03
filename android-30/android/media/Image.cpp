@@ -1,3 +1,4 @@
+#include "../../JArray.hpp"
 #include "../graphics/Rect.hpp"
 #include "../hardware/HardwareBuffer.hpp"
 #include "./Image.hpp"
@@ -47,12 +48,12 @@ namespace android::media
 			"()I"
 		);
 	}
-	jarray Image::getPlanes()
+	JArray Image::getPlanes()
 	{
 		return callObjectMethod(
 			"getPlanes",
 			"()[Landroid/media/Image$Plane;"
-		).object<jarray>();
+		);
 	}
 	jlong Image::getTimestamp()
 	{

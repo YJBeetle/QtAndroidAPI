@@ -1,3 +1,5 @@
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
 #include "./TextStyle.hpp"
 
 namespace java::time::format
@@ -58,22 +60,22 @@ namespace java::time::format
 	// Constructors
 	
 	// Methods
-	java::time::format::TextStyle TextStyle::valueOf(jstring arg0)
+	java::time::format::TextStyle TextStyle::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"java.time.format.TextStyle",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/time/format/TextStyle;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray TextStyle::values()
+	JArray TextStyle::values()
 	{
 		return callStaticObjectMethod(
 			"java.time.format.TextStyle",
 			"values",
 			"()[Ljava/time/format/TextStyle;"
-		).object<jarray>();
+		);
 	}
 	java::time::format::TextStyle TextStyle::asNormal()
 	{

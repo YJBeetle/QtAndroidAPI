@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JObject;
+class JString;
 
 namespace android::system
 {
@@ -21,10 +23,10 @@ namespace android::system
 		
 		// Methods
 		jint compareTo(android::system::StructTimespec arg0);
-		jint compareTo(jobject arg0);
-		jboolean equals(jobject arg0);
+		jint compareTo(JObject arg0);
+		jboolean equals(JObject arg0);
 		jint hashCode();
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::system
 

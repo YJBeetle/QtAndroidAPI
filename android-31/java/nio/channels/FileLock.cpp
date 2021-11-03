@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./AsynchronousFileChannel.hpp"
 #include "./FileChannel.hpp"
 #include "./FileLock.hpp"
@@ -77,12 +78,12 @@ namespace java::nio::channels
 			"()J"
 		);
 	}
-	jstring FileLock::toString()
+	JString FileLock::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::nio::channels
 

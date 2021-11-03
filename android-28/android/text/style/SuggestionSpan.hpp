@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "./CharacterStyle.hpp"
 
+class JArray;
 namespace android::content
 {
 	class Context;
@@ -15,6 +15,9 @@ namespace android::text
 {
 	class TextPaint;
 }
+class JClass;
+class JObject;
+class JString;
 namespace java::util
 {
 	class Locale;
@@ -26,15 +29,15 @@ namespace android::text::style
 	{
 	public:
 		// Fields
-		static jstring ACTION_SUGGESTION_PICKED();
+		static JString ACTION_SUGGESTION_PICKED();
 		static JObject CREATOR();
 		static jint FLAG_AUTO_CORRECTION();
 		static jint FLAG_EASY_CORRECT();
 		static jint FLAG_MISSPELLED();
 		static jint SUGGESTIONS_MAX_SIZE();
-		static jstring SUGGESTION_SPAN_PICKED_AFTER();
-		static jstring SUGGESTION_SPAN_PICKED_BEFORE();
-		static jstring SUGGESTION_SPAN_PICKED_HASHCODE();
+		static JString SUGGESTION_SPAN_PICKED_AFTER();
+		static JString SUGGESTION_SPAN_PICKED_BEFORE();
+		static JString SUGGESTION_SPAN_PICKED_HASHCODE();
 		
 		// QJniObject forward
 		template<typename ...Ts> explicit SuggestionSpan(const char *className, const char *sig, Ts...agv) : android::text::style::CharacterStyle(className, sig, std::forward<Ts>(agv)...) {}
@@ -42,18 +45,18 @@ namespace android::text::style
 		
 		// Constructors
 		SuggestionSpan(android::os::Parcel arg0);
-		SuggestionSpan(android::content::Context arg0, jarray arg1, jint arg2);
-		SuggestionSpan(java::util::Locale arg0, jarray arg1, jint arg2);
-		SuggestionSpan(android::content::Context arg0, java::util::Locale arg1, jarray arg2, jint arg3, jclass arg4);
+		SuggestionSpan(android::content::Context arg0, JArray arg1, jint arg2);
+		SuggestionSpan(java::util::Locale arg0, JArray arg1, jint arg2);
+		SuggestionSpan(android::content::Context arg0, java::util::Locale arg1, JArray arg2, jint arg3, JClass arg4);
 		
 		// Methods
 		jint describeContents();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint getFlags();
-		jstring getLocale();
+		JString getLocale();
 		java::util::Locale getLocaleObject();
 		jint getSpanTypeId();
-		jarray getSuggestions();
+		JArray getSuggestions();
 		jint hashCode();
 		void setFlags(jint arg0);
 		void updateDrawState(android::text::TextPaint arg0);

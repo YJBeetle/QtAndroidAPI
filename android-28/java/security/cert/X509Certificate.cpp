@@ -1,3 +1,6 @@
+#include "../../../JByteArray.hpp"
+#include "../../../JBooleanArray.hpp"
+#include "../../../JString.hpp"
 #include "../../math/BigInteger.hpp"
 #include "../Provider.hpp"
 #include "../../util/Date.hpp"
@@ -57,12 +60,12 @@ namespace java::security::cert
 			"()Ljava/security/Principal;"
 		);
 	}
-	jbooleanArray X509Certificate::getIssuerUniqueID()
+	JBooleanArray X509Certificate::getIssuerUniqueID()
 	{
 		return callObjectMethod(
 			"getIssuerUniqueID",
 			"()[Z"
-		).object<jbooleanArray>();
+		);
 	}
 	javax::security::auth::x500::X500Principal X509Certificate::getIssuerX500Principal()
 	{
@@ -71,12 +74,12 @@ namespace java::security::cert
 			"()Ljavax/security/auth/x500/X500Principal;"
 		);
 	}
-	jbooleanArray X509Certificate::getKeyUsage()
+	JBooleanArray X509Certificate::getKeyUsage()
 	{
 		return callObjectMethod(
 			"getKeyUsage",
 			"()[Z"
-		).object<jbooleanArray>();
+		);
 	}
 	java::util::Date X509Certificate::getNotAfter()
 	{
@@ -99,33 +102,33 @@ namespace java::security::cert
 			"()Ljava/math/BigInteger;"
 		);
 	}
-	jstring X509Certificate::getSigAlgName()
+	JString X509Certificate::getSigAlgName()
 	{
 		return callObjectMethod(
 			"getSigAlgName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring X509Certificate::getSigAlgOID()
+	JString X509Certificate::getSigAlgOID()
 	{
 		return callObjectMethod(
 			"getSigAlgOID",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jbyteArray X509Certificate::getSigAlgParams()
+	JByteArray X509Certificate::getSigAlgParams()
 	{
 		return callObjectMethod(
 			"getSigAlgParams",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
-	jbyteArray X509Certificate::getSignature()
+	JByteArray X509Certificate::getSignature()
 	{
 		return callObjectMethod(
 			"getSignature",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
 	JObject X509Certificate::getSubjectAlternativeNames()
 	{
@@ -141,12 +144,12 @@ namespace java::security::cert
 			"()Ljava/security/Principal;"
 		);
 	}
-	jbooleanArray X509Certificate::getSubjectUniqueID()
+	JBooleanArray X509Certificate::getSubjectUniqueID()
 	{
 		return callObjectMethod(
 			"getSubjectUniqueID",
 			"()[Z"
-		).object<jbooleanArray>();
+		);
 	}
 	javax::security::auth::x500::X500Principal X509Certificate::getSubjectX500Principal()
 	{
@@ -155,12 +158,12 @@ namespace java::security::cert
 			"()Ljavax/security/auth/x500/X500Principal;"
 		);
 	}
-	jbyteArray X509Certificate::getTBSCertificate()
+	JByteArray X509Certificate::getTBSCertificate()
 	{
 		return callObjectMethod(
 			"getTBSCertificate",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
 	jint X509Certificate::getVersion()
 	{

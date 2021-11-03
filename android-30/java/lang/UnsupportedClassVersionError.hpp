@@ -1,10 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "./Error.hpp"
-#include "./LinkageError.hpp"
 #include "./ClassFormatError.hpp"
 
+class JString;
 
 namespace java::lang
 {
@@ -19,7 +17,7 @@ namespace java::lang
 		
 		// Constructors
 		UnsupportedClassVersionError();
-		UnsupportedClassVersionError(jstring arg0);
+		UnsupportedClassVersionError(JString arg0);
 		
 		// Methods
 	};

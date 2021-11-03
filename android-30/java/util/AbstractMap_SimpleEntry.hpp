@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JObject;
+class JString;
 
 namespace java::util
 {
@@ -16,15 +18,15 @@ namespace java::util
 		
 		// Constructors
 		AbstractMap_SimpleEntry(JObject arg0);
-		AbstractMap_SimpleEntry(jobject arg0, jobject arg1);
+		AbstractMap_SimpleEntry(JObject arg0, JObject arg1);
 		
 		// Methods
-		jboolean equals(jobject arg0);
-		jobject getKey();
-		jobject getValue();
+		jboolean equals(JObject arg0);
+		JObject getKey();
+		JObject getValue();
 		jint hashCode();
-		jobject setValue(jobject arg0);
-		jstring toString();
+		JObject setValue(JObject arg0);
+		JString toString();
 	};
 } // namespace java::util
 

@@ -1,3 +1,4 @@
+#include "../../JObject.hpp"
 #include "./Thread.hpp"
 #include "./InheritableThreadLocal.hpp"
 

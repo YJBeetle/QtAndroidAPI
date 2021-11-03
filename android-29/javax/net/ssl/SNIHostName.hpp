@@ -1,8 +1,10 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "./SNIServerName.hpp"
 
+class JByteArray;
+class JObject;
+class JString;
 namespace javax::net::ssl
 {
 	class SNIMatcher;
@@ -20,15 +22,15 @@ namespace javax::net::ssl
 		SNIHostName(QJniObject obj);
 		
 		// Constructors
-		SNIHostName(jbyteArray arg0);
-		SNIHostName(jstring arg0);
+		SNIHostName(JByteArray arg0);
+		SNIHostName(JString arg0);
 		
 		// Methods
-		static javax::net::ssl::SNIMatcher createSNIMatcher(jstring arg0);
-		jboolean equals(jobject arg0);
-		jstring getAsciiName();
+		static javax::net::ssl::SNIMatcher createSNIMatcher(JString arg0);
+		jboolean equals(JObject arg0);
+		JString getAsciiName();
 		jint hashCode();
-		jstring toString();
+		JString toString();
 	};
 } // namespace javax::net::ssl
 

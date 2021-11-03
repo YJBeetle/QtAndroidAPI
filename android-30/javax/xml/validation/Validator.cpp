@@ -1,3 +1,5 @@
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./Validator.hpp"
 
 namespace javax::xml::validation
@@ -17,21 +19,21 @@ namespace javax::xml::validation
 			"()Lorg/xml/sax/ErrorHandler;"
 		);
 	}
-	jboolean Validator::getFeature(jstring arg0)
+	jboolean Validator::getFeature(JString arg0)
 	{
 		return callMethod<jboolean>(
 			"getFeature",
 			"(Ljava/lang/String;)Z",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jobject Validator::getProperty(jstring arg0)
+	JObject Validator::getProperty(JString arg0)
 	{
 		return callObjectMethod(
 			"getProperty",
 			"(Ljava/lang/String;)Ljava/lang/Object;",
-			arg0
-		).object<jobject>();
+			arg0.object<jstring>()
+		);
 	}
 	JObject Validator::getResourceResolver()
 	{
@@ -55,22 +57,22 @@ namespace javax::xml::validation
 			arg0.object()
 		);
 	}
-	void Validator::setFeature(jstring arg0, jboolean arg1)
+	void Validator::setFeature(JString arg0, jboolean arg1)
 	{
 		callMethod<void>(
 			"setFeature",
 			"(Ljava/lang/String;Z)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
-	void Validator::setProperty(jstring arg0, jobject arg1)
+	void Validator::setProperty(JString arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"setProperty",
 			"(Ljava/lang/String;Ljava/lang/Object;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jobject>()
 		);
 	}
 	void Validator::setResourceResolver(JObject arg0)

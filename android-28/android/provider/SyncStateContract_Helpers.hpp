@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JByteArray;
 namespace android::accounts
 {
 	class Account;
@@ -38,13 +39,13 @@ namespace android::provider
 		SyncStateContract_Helpers();
 		
 		// Methods
-		static jbyteArray get(android::content::ContentProviderClient arg0, android::net::Uri arg1, android::accounts::Account arg2);
+		static JByteArray get(android::content::ContentProviderClient arg0, android::net::Uri arg1, android::accounts::Account arg2);
 		static android::util::Pair getWithUri(android::content::ContentProviderClient arg0, android::net::Uri arg1, android::accounts::Account arg2);
-		static android::net::Uri insert(android::content::ContentProviderClient arg0, android::net::Uri arg1, android::accounts::Account arg2, jbyteArray arg3);
-		static android::content::ContentProviderOperation newSetOperation(android::net::Uri arg0, android::accounts::Account arg1, jbyteArray arg2);
-		static android::content::ContentProviderOperation newUpdateOperation(android::net::Uri arg0, jbyteArray arg1);
-		static void set(android::content::ContentProviderClient arg0, android::net::Uri arg1, android::accounts::Account arg2, jbyteArray arg3);
-		static void update(android::content::ContentProviderClient arg0, android::net::Uri arg1, jbyteArray arg2);
+		static android::net::Uri insert(android::content::ContentProviderClient arg0, android::net::Uri arg1, android::accounts::Account arg2, JByteArray arg3);
+		static android::content::ContentProviderOperation newSetOperation(android::net::Uri arg0, android::accounts::Account arg1, JByteArray arg2);
+		static android::content::ContentProviderOperation newUpdateOperation(android::net::Uri arg0, JByteArray arg1);
+		static void set(android::content::ContentProviderClient arg0, android::net::Uri arg1, android::accounts::Account arg2, JByteArray arg3);
+		static void update(android::content::ContentProviderClient arg0, android::net::Uri arg1, JByteArray arg2);
 	};
 } // namespace android::provider
 

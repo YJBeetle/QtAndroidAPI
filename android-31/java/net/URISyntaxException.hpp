@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "../lang/Exception.hpp"
 
+class JString;
 
 namespace java::net
 {
@@ -16,14 +16,14 @@ namespace java::net
 		URISyntaxException(QJniObject obj);
 		
 		// Constructors
-		URISyntaxException(jstring arg0, jstring arg1);
-		URISyntaxException(jstring arg0, jstring arg1, jint arg2);
+		URISyntaxException(JString arg0, JString arg1);
+		URISyntaxException(JString arg0, JString arg1, jint arg2);
 		
 		// Methods
 		jint getIndex();
-		jstring getInput();
-		jstring getMessage();
-		jstring getReason();
+		JString getInput();
+		JString getMessage();
+		JString getReason();
 	};
 } // namespace java::net
 

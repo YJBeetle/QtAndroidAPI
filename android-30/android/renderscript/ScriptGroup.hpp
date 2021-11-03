@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./BaseObj.hpp"
 
+class JObjectArray;
 namespace android::renderscript
 {
 	class Allocation;
@@ -27,7 +27,7 @@ namespace android::renderscript
 		
 		// Methods
 		void destroy();
-		jobjectArray execute(jobjectArray arg0);
+		JObjectArray execute(JObjectArray arg0);
 		void execute();
 		void setInput(android::renderscript::Script_KernelID arg0, android::renderscript::Allocation arg1);
 		void setOutput(android::renderscript::Script_KernelID arg0, android::renderscript::Allocation arg1);

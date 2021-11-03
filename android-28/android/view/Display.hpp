@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JFloatArray;
+class JArray;
 namespace android::graphics
 {
 	class Point;
@@ -22,6 +24,7 @@ namespace android::view
 {
 	class Display_Mode;
 }
+class JString;
 
 namespace android::view
 {
@@ -59,7 +62,7 @@ namespace android::view
 		jint getHeight();
 		void getMetrics(android::util::DisplayMetrics arg0);
 		android::view::Display_Mode getMode();
-		jstring getName();
+		JString getName();
 		jint getOrientation();
 		jint getPixelFormat();
 		jlong getPresentationDeadlineNanos();
@@ -70,13 +73,13 @@ namespace android::view
 		jint getRotation();
 		void getSize(android::graphics::Point arg0);
 		jint getState();
-		jarray getSupportedModes();
-		jfloatArray getSupportedRefreshRates();
+		JArray getSupportedModes();
+		JFloatArray getSupportedRefreshRates();
 		jint getWidth();
 		jboolean isHdr();
 		jboolean isValid();
 		jboolean isWideColorGamut();
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::view
 

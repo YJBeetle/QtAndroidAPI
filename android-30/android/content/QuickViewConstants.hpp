@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JString;
 
 namespace android::content
 {
@@ -9,12 +10,12 @@ namespace android::content
 	{
 	public:
 		// Fields
-		static jstring FEATURE_DELETE();
-		static jstring FEATURE_DOWNLOAD();
-		static jstring FEATURE_EDIT();
-		static jstring FEATURE_PRINT();
-		static jstring FEATURE_SEND();
-		static jstring FEATURE_VIEW();
+		static JString FEATURE_DELETE();
+		static JString FEATURE_DOWNLOAD();
+		static JString FEATURE_EDIT();
+		static JString FEATURE_PRINT();
+		static JString FEATURE_SEND();
+		static JString FEATURE_VIEW();
 		
 		// QJniObject forward
 		template<typename ...Ts> explicit QuickViewConstants(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}

@@ -1,9 +1,8 @@
 #pragma once
 
-#include "../../../../JObject.hpp"
-#include "../../../../java/lang/Exception.hpp"
 #include "../../../../java/security/GeneralSecurityException.hpp"
 
+class JString;
 
 namespace javax::security::auth::login
 {
@@ -18,7 +17,7 @@ namespace javax::security::auth::login
 		
 		// Constructors
 		LoginException();
-		LoginException(jstring arg0);
+		LoginException(JString arg0);
 		
 		// Methods
 	};

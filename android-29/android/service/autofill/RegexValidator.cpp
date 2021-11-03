@@ -1,5 +1,6 @@
 #include "../../os/Parcel.hpp"
 #include "../../view/autofill/AutofillId.hpp"
+#include "../../../JString.hpp"
 #include "../../../java/util/regex/Pattern.hpp"
 #include "./RegexValidator.hpp"
 
@@ -35,12 +36,12 @@ namespace android::service::autofill
 			"()I"
 		);
 	}
-	jstring RegexValidator::toString()
+	JString RegexValidator::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void RegexValidator::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

@@ -2,6 +2,10 @@
 
 #include "../../JObject.hpp"
 
+class JIntArray;
+class JArray;
+class JObject;
+class JString;
 namespace java::time
 {
 	class ZoneId;
@@ -32,26 +36,26 @@ namespace java::util
 		TimeZone();
 		
 		// Methods
-		static jarray getAvailableIDs();
-		static jarray getAvailableIDs(jint arg0);
+		static JArray getAvailableIDs();
+		static JArray getAvailableIDs(jint arg0);
 		static java::util::TimeZone getDefault();
-		static java::util::TimeZone getTimeZone(jstring arg0);
+		static java::util::TimeZone getTimeZone(JString arg0);
 		static java::util::TimeZone getTimeZone(java::time::ZoneId arg0);
 		static void setDefault(java::util::TimeZone arg0);
-		jobject clone();
+		JObject clone();
 		jint getDSTSavings();
-		jstring getDisplayName();
-		jstring getDisplayName(java::util::Locale arg0);
-		jstring getDisplayName(jboolean arg0, jint arg1);
-		jstring getDisplayName(jboolean arg0, jint arg1, java::util::Locale arg2);
-		jstring getID();
+		JString getDisplayName();
+		JString getDisplayName(java::util::Locale arg0);
+		JString getDisplayName(jboolean arg0, jint arg1);
+		JString getDisplayName(jboolean arg0, jint arg1, java::util::Locale arg2);
+		JString getID();
 		jint getOffset(jlong arg0);
 		jint getOffset(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5);
 		jint getRawOffset();
 		jboolean hasSameRules(java::util::TimeZone arg0);
 		jboolean inDaylightTime(java::util::Date arg0);
 		jboolean observesDaylightTime();
-		void setID(jstring arg0);
+		void setID(JString arg0);
 		void setRawOffset(jint arg0);
 		java::time::ZoneId toZoneId();
 		jboolean useDaylightTime();

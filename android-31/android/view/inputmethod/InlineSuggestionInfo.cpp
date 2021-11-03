@@ -1,5 +1,8 @@
+#include "../../../JArray.hpp"
 #include "../../os/Parcel.hpp"
 #include "../../widget/inline/InlinePresentationSpec.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./InlineSuggestionInfo.hpp"
 
 namespace android::view::inputmethod
@@ -13,37 +16,37 @@ namespace android::view::inputmethod
 			"Landroid/os/Parcelable$Creator;"
 		);
 	}
-	jstring InlineSuggestionInfo::SOURCE_AUTOFILL()
+	JString InlineSuggestionInfo::SOURCE_AUTOFILL()
 	{
 		return getStaticObjectField(
 			"android.view.inputmethod.InlineSuggestionInfo",
 			"SOURCE_AUTOFILL",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring InlineSuggestionInfo::SOURCE_PLATFORM()
+	JString InlineSuggestionInfo::SOURCE_PLATFORM()
 	{
 		return getStaticObjectField(
 			"android.view.inputmethod.InlineSuggestionInfo",
 			"SOURCE_PLATFORM",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring InlineSuggestionInfo::TYPE_ACTION()
+	JString InlineSuggestionInfo::TYPE_ACTION()
 	{
 		return getStaticObjectField(
 			"android.view.inputmethod.InlineSuggestionInfo",
 			"TYPE_ACTION",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring InlineSuggestionInfo::TYPE_SUGGESTION()
+	JString InlineSuggestionInfo::TYPE_SUGGESTION()
 	{
 		return getStaticObjectField(
 			"android.view.inputmethod.InlineSuggestionInfo",
 			"TYPE_SUGGESTION",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QJniObject forward
@@ -59,20 +62,20 @@ namespace android::view::inputmethod
 			"()I"
 		);
 	}
-	jboolean InlineSuggestionInfo::equals(jobject arg0)
+	jboolean InlineSuggestionInfo::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jarray InlineSuggestionInfo::getAutofillHints()
+	JArray InlineSuggestionInfo::getAutofillHints()
 	{
 		return callObjectMethod(
 			"getAutofillHints",
 			"()[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
 	android::widget::inline::InlinePresentationSpec InlineSuggestionInfo::getInlinePresentationSpec()
 	{
@@ -81,19 +84,19 @@ namespace android::view::inputmethod
 			"()Landroid/widget/inline/InlinePresentationSpec;"
 		);
 	}
-	jstring InlineSuggestionInfo::getSource()
+	JString InlineSuggestionInfo::getSource()
 	{
 		return callObjectMethod(
 			"getSource",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring InlineSuggestionInfo::getType()
+	JString InlineSuggestionInfo::getType()
 	{
 		return callObjectMethod(
 			"getType",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint InlineSuggestionInfo::hashCode()
 	{
@@ -109,12 +112,12 @@ namespace android::view::inputmethod
 			"()Z"
 		);
 	}
-	jstring InlineSuggestionInfo::toString()
+	JString InlineSuggestionInfo::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void InlineSuggestionInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

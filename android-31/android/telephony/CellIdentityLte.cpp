@@ -1,5 +1,8 @@
+#include "../../JIntArray.hpp"
 #include "../os/Parcel.hpp"
 #include "./ClosedSubscriberGroupInfo.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./CellIdentityLte.hpp"
 
 namespace android::telephony
@@ -20,12 +23,12 @@ namespace android::telephony
 	// Constructors
 	
 	// Methods
-	jboolean CellIdentityLte::equals(jobject arg0)
+	jboolean CellIdentityLte::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	JObject CellIdentityLte::getAdditionalPlmns()
@@ -35,12 +38,12 @@ namespace android::telephony
 			"()Ljava/util/Set;"
 		);
 	}
-	jintArray CellIdentityLte::getBands()
+	JIntArray CellIdentityLte::getBands()
 	{
 		return callObjectMethod(
 			"getBands",
 			"()[I"
-		).object<jintArray>();
+		);
 	}
 	jint CellIdentityLte::getBandwidth()
 	{
@@ -77,12 +80,12 @@ namespace android::telephony
 			"()I"
 		);
 	}
-	jstring CellIdentityLte::getMccString()
+	JString CellIdentityLte::getMccString()
 	{
 		return callObjectMethod(
 			"getMccString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint CellIdentityLte::getMnc()
 	{
@@ -91,19 +94,19 @@ namespace android::telephony
 			"()I"
 		);
 	}
-	jstring CellIdentityLte::getMncString()
+	JString CellIdentityLte::getMncString()
 	{
 		return callObjectMethod(
 			"getMncString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring CellIdentityLte::getMobileNetworkOperator()
+	JString CellIdentityLte::getMobileNetworkOperator()
 	{
 		return callObjectMethod(
 			"getMobileNetworkOperator",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint CellIdentityLte::getPci()
 	{
@@ -126,12 +129,12 @@ namespace android::telephony
 			"()I"
 		);
 	}
-	jstring CellIdentityLte::toString()
+	JString CellIdentityLte::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void CellIdentityLte::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

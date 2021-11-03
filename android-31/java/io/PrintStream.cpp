@@ -1,7 +1,13 @@
+#include "../../JByteArray.hpp"
+#include "../../JCharArray.hpp"
+#include "../../JObjectArray.hpp"
 #include "./BufferedWriter.hpp"
 #include "./File.hpp"
 #include "./OutputStream.hpp"
 #include "./OutputStreamWriter.hpp"
+#include "../../JString.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "../nio/charset/Charset.hpp"
 #include "../util/Formatter.hpp"
 #include "../util/Locale.hpp"
@@ -27,18 +33,18 @@ namespace java::io
 			"(Ljava/io/OutputStream;)V",
 			arg0.object()
 		) {}
-	PrintStream::PrintStream(jstring arg0)
+	PrintStream::PrintStream(JString arg0)
 		: java::io::FilterOutputStream(
 			"java.io.PrintStream",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	PrintStream::PrintStream(java::io::File arg0, jstring arg1)
+	PrintStream::PrintStream(java::io::File arg0, JString arg1)
 		: java::io::FilterOutputStream(
 			"java.io.PrintStream",
 			"(Ljava/io/File;Ljava/lang/String;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		) {}
 	PrintStream::PrintStream(java::io::File arg0, java::nio::charset::Charset arg1)
 		: java::io::FilterOutputStream(
@@ -54,27 +60,27 @@ namespace java::io
 			arg0.object(),
 			arg1
 		) {}
-	PrintStream::PrintStream(jstring arg0, jstring arg1)
+	PrintStream::PrintStream(JString arg0, JString arg1)
 		: java::io::FilterOutputStream(
 			"java.io.PrintStream",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		) {}
-	PrintStream::PrintStream(jstring arg0, java::nio::charset::Charset arg1)
+	PrintStream::PrintStream(JString arg0, java::nio::charset::Charset arg1)
 		: java::io::FilterOutputStream(
 			"java.io.PrintStream",
 			"(Ljava/lang/String;Ljava/nio/charset/Charset;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		) {}
-	PrintStream::PrintStream(java::io::OutputStream arg0, jboolean arg1, jstring arg2)
+	PrintStream::PrintStream(java::io::OutputStream arg0, jboolean arg1, JString arg2)
 		: java::io::FilterOutputStream(
 			"java.io.PrintStream",
 			"(Ljava/io/OutputStream;ZLjava/lang/String;)V",
 			arg0.object(),
 			arg1,
-			arg2
+			arg2.object<jstring>()
 		) {}
 	PrintStream::PrintStream(java::io::OutputStream arg0, jboolean arg1, java::nio::charset::Charset arg2)
 		: java::io::FilterOutputStream(
@@ -94,20 +100,20 @@ namespace java::io
 			arg0
 		);
 	}
-	java::io::PrintStream PrintStream::append(jstring arg0)
+	java::io::PrintStream PrintStream::append(JString arg0)
 	{
 		return callObjectMethod(
 			"append",
 			"(Ljava/lang/CharSequence;)Ljava/io/PrintStream;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	java::io::PrintStream PrintStream::append(jstring arg0, jint arg1, jint arg2)
+	java::io::PrintStream PrintStream::append(JString arg0, jint arg1, jint arg2)
 	{
 		return callObjectMethod(
 			"append",
 			"(Ljava/lang/CharSequence;II)Ljava/io/PrintStream;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
 			arg2
 		);
@@ -133,31 +139,31 @@ namespace java::io
 			"()V"
 		);
 	}
-	java::io::PrintStream PrintStream::format(jstring arg0, jobjectArray arg1)
+	java::io::PrintStream PrintStream::format(JString arg0, JObjectArray arg1)
 	{
 		return callObjectMethod(
 			"format",
 			"(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintStream;",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jobjectArray>()
 		);
 	}
-	java::io::PrintStream PrintStream::format(java::util::Locale arg0, jstring arg1, jobjectArray arg2)
+	java::io::PrintStream PrintStream::format(java::util::Locale arg0, JString arg1, JObjectArray arg2)
 	{
 		return callObjectMethod(
 			"format",
 			"(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintStream;",
 			arg0.object(),
-			arg1,
-			arg2
+			arg1.object<jstring>(),
+			arg2.object<jobjectArray>()
 		);
 	}
-	void PrintStream::print(jcharArray arg0)
+	void PrintStream::print(JCharArray arg0)
 	{
 		callMethod<void>(
 			"print",
 			"([C)V",
-			arg0
+			arg0.object<jcharArray>()
 		);
 	}
 	void PrintStream::print(jboolean arg0)
@@ -200,20 +206,20 @@ namespace java::io
 			arg0
 		);
 	}
-	void PrintStream::print(jobject arg0)
+	void PrintStream::print(JObject arg0)
 	{
 		callMethod<void>(
 			"print",
 			"(Ljava/lang/Object;)V",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	void PrintStream::print(jstring arg0)
+	void PrintStream::print(JString arg0)
 	{
 		callMethod<void>(
 			"print",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void PrintStream::print(jlong arg0)
@@ -224,23 +230,23 @@ namespace java::io
 			arg0
 		);
 	}
-	java::io::PrintStream PrintStream::printf(jstring arg0, jobjectArray arg1)
+	java::io::PrintStream PrintStream::printf(JString arg0, JObjectArray arg1)
 	{
 		return callObjectMethod(
 			"printf",
 			"(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintStream;",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jobjectArray>()
 		);
 	}
-	java::io::PrintStream PrintStream::printf(java::util::Locale arg0, jstring arg1, jobjectArray arg2)
+	java::io::PrintStream PrintStream::printf(java::util::Locale arg0, JString arg1, JObjectArray arg2)
 	{
 		return callObjectMethod(
 			"printf",
 			"(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintStream;",
 			arg0.object(),
-			arg1,
-			arg2
+			arg1.object<jstring>(),
+			arg2.object<jobjectArray>()
 		);
 	}
 	void PrintStream::println()
@@ -250,12 +256,12 @@ namespace java::io
 			"()V"
 		);
 	}
-	void PrintStream::println(jcharArray arg0)
+	void PrintStream::println(JCharArray arg0)
 	{
 		callMethod<void>(
 			"println",
 			"([C)V",
-			arg0
+			arg0.object<jcharArray>()
 		);
 	}
 	void PrintStream::println(jboolean arg0)
@@ -298,20 +304,20 @@ namespace java::io
 			arg0
 		);
 	}
-	void PrintStream::println(jobject arg0)
+	void PrintStream::println(JObject arg0)
 	{
 		callMethod<void>(
 			"println",
 			"(Ljava/lang/Object;)V",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	void PrintStream::println(jstring arg0)
+	void PrintStream::println(JString arg0)
 	{
 		callMethod<void>(
 			"println",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void PrintStream::println(jlong arg0)
@@ -322,12 +328,12 @@ namespace java::io
 			arg0
 		);
 	}
-	void PrintStream::write(jbyteArray arg0)
+	void PrintStream::write(JByteArray arg0)
 	{
 		callMethod<void>(
 			"write",
 			"([B)V",
-			arg0
+			arg0.object<jbyteArray>()
 		);
 	}
 	void PrintStream::write(jint arg0)
@@ -338,22 +344,22 @@ namespace java::io
 			arg0
 		);
 	}
-	void PrintStream::write(jbyteArray arg0, jint arg1, jint arg2)
+	void PrintStream::write(JByteArray arg0, jint arg1, jint arg2)
 	{
 		callMethod<void>(
 			"write",
 			"([BII)V",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1,
 			arg2
 		);
 	}
-	void PrintStream::writeBytes(jbyteArray arg0)
+	void PrintStream::writeBytes(JByteArray arg0)
 	{
 		callMethod<void>(
 			"writeBytes",
 			"([B)V",
-			arg0
+			arg0.object<jbyteArray>()
 		);
 	}
 } // namespace java::io

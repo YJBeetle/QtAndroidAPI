@@ -1,6 +1,7 @@
 #include "../autofill/AutofillId.hpp"
 #include "./TranslationResponseValue.hpp"
 #include "./ViewTranslationResponse.hpp"
+#include "../../../JString.hpp"
 #include "./ViewTranslationResponse_Builder.hpp"
 
 namespace android::view::translation
@@ -26,12 +27,12 @@ namespace android::view::translation
 			"()Landroid/view/translation/ViewTranslationResponse;"
 		);
 	}
-	android::view::translation::ViewTranslationResponse_Builder ViewTranslationResponse_Builder::setValue(jstring arg0, android::view::translation::TranslationResponseValue arg1)
+	android::view::translation::ViewTranslationResponse_Builder ViewTranslationResponse_Builder::setValue(JString arg0, android::view::translation::TranslationResponseValue arg1)
 	{
 		return callObjectMethod(
 			"setValue",
 			"(Ljava/lang/String;Landroid/view/translation/TranslationResponseValue;)Landroid/view/translation/ViewTranslationResponse$Builder;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}

@@ -30,6 +30,7 @@ namespace android::app::appsearch
 {
 	class SetSchemaRequest;
 }
+class JString;
 
 namespace android::app::appsearch
 {
@@ -52,9 +53,9 @@ namespace android::app::appsearch
 		void getStorageInfo(JObject arg0, JObject arg1);
 		void put(android::app::appsearch::PutDocumentsRequest arg0, JObject arg1, JObject arg2);
 		void remove(android::app::appsearch::RemoveByDocumentIdRequest arg0, JObject arg1, JObject arg2);
-		void remove(jstring arg0, android::app::appsearch::SearchSpec arg1, JObject arg2, JObject arg3);
+		void remove(JString arg0, android::app::appsearch::SearchSpec arg1, JObject arg2, JObject arg3);
 		void reportUsage(android::app::appsearch::ReportUsageRequest arg0, JObject arg1, JObject arg2);
-		android::app::appsearch::SearchResults search(jstring arg0, android::app::appsearch::SearchSpec arg1);
+		android::app::appsearch::SearchResults search(JString arg0, android::app::appsearch::SearchSpec arg1);
 		void setSchema(android::app::appsearch::SetSchemaRequest arg0, JObject arg1, JObject arg2, JObject arg3);
 	};
 } // namespace android::app::appsearch

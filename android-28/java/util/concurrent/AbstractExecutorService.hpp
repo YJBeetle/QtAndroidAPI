@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JObject;
 namespace java::util
 {
 	class ArrayList;
@@ -28,10 +29,10 @@ namespace java::util::concurrent
 		// Methods
 		JObject invokeAll(JObject arg0);
 		JObject invokeAll(JObject arg0, jlong arg1, java::util::concurrent::TimeUnit arg2);
-		jobject invokeAny(JObject arg0);
-		jobject invokeAny(JObject arg0, jlong arg1, java::util::concurrent::TimeUnit arg2);
+		JObject invokeAny(JObject arg0);
+		JObject invokeAny(JObject arg0, jlong arg1, java::util::concurrent::TimeUnit arg2);
 		JObject submit(JObject arg0);
-		JObject submit(JObject arg0, jobject arg1);
+		JObject submit(JObject arg0, JObject arg1);
 	};
 } // namespace java::util::concurrent
 

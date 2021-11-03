@@ -1,9 +1,9 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../lang/Exception.hpp"
 #include "./SQLException.hpp"
 
+class JString;
+class JThrowable;
 
 namespace java::sql
 {
@@ -18,13 +18,13 @@ namespace java::sql
 		
 		// Constructors
 		SQLNonTransientException();
-		SQLNonTransientException(jstring arg0);
-		SQLNonTransientException(jthrowable arg0);
-		SQLNonTransientException(jstring arg0, jstring arg1);
-		SQLNonTransientException(jstring arg0, jthrowable arg1);
-		SQLNonTransientException(jstring arg0, jstring arg1, jint arg2);
-		SQLNonTransientException(jstring arg0, jstring arg1, jthrowable arg2);
-		SQLNonTransientException(jstring arg0, jstring arg1, jint arg2, jthrowable arg3);
+		SQLNonTransientException(JString arg0);
+		SQLNonTransientException(JThrowable arg0);
+		SQLNonTransientException(JString arg0, JString arg1);
+		SQLNonTransientException(JString arg0, JThrowable arg1);
+		SQLNonTransientException(JString arg0, JString arg1, jint arg2);
+		SQLNonTransientException(JString arg0, JString arg1, JThrowable arg2);
+		SQLNonTransientException(JString arg0, JString arg1, jint arg2, JThrowable arg3);
 		
 		// Methods
 	};

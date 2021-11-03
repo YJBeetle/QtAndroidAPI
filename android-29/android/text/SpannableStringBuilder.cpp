@@ -1,4 +1,11 @@
+#include "../../JCharArray.hpp"
+#include "../../JArray.hpp"
+#include "../../JObjectArray.hpp"
 #include "../graphics/Paint.hpp"
+#include "../../JString.hpp"
+#include "../../JClass.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./SpannableStringBuilder.hpp"
 
 namespace android::text
@@ -14,29 +21,29 @@ namespace android::text
 			"android.text.SpannableStringBuilder",
 			"()V"
 		) {}
-	SpannableStringBuilder::SpannableStringBuilder(jstring arg0)
+	SpannableStringBuilder::SpannableStringBuilder(JString arg0)
 		: JObject(
 			"android.text.SpannableStringBuilder",
 			"(Ljava/lang/CharSequence;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	SpannableStringBuilder::SpannableStringBuilder(jstring arg0, jint arg1, jint arg2)
+	SpannableStringBuilder::SpannableStringBuilder(JString arg0, jint arg1, jint arg2)
 		: JObject(
 			"android.text.SpannableStringBuilder",
 			"(Ljava/lang/CharSequence;II)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
 			arg2
 		) {}
 	
 	// Methods
-	android::text::SpannableStringBuilder SpannableStringBuilder::valueOf(jstring arg0)
+	android::text::SpannableStringBuilder SpannableStringBuilder::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.text.SpannableStringBuilder",
 			"valueOf",
 			"(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::text::SpannableStringBuilder SpannableStringBuilder::append(jchar arg0)
@@ -47,31 +54,31 @@ namespace android::text
 			arg0
 		);
 	}
-	android::text::SpannableStringBuilder SpannableStringBuilder::append(jstring arg0)
+	android::text::SpannableStringBuilder SpannableStringBuilder::append(JString arg0)
 	{
 		return callObjectMethod(
 			"append",
 			"(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	android::text::SpannableStringBuilder SpannableStringBuilder::append(jstring arg0, jint arg1, jint arg2)
+	android::text::SpannableStringBuilder SpannableStringBuilder::append(JString arg0, jint arg1, jint arg2)
 	{
 		return callObjectMethod(
 			"append",
 			"(Ljava/lang/CharSequence;II)Landroid/text/SpannableStringBuilder;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
 			arg2
 		);
 	}
-	android::text::SpannableStringBuilder SpannableStringBuilder::append(jstring arg0, jobject arg1, jint arg2)
+	android::text::SpannableStringBuilder SpannableStringBuilder::append(JString arg0, JObject arg1, jint arg2)
 	{
 		return callObjectMethod(
 			"append",
 			"(Ljava/lang/CharSequence;Ljava/lang/Object;I)Landroid/text/SpannableStringBuilder;",
-			arg0,
-			arg1,
+			arg0.object<jstring>(),
+			arg1.object<jobject>(),
 			arg2
 		);
 	}
@@ -106,65 +113,65 @@ namespace android::text
 			arg1
 		);
 	}
-	jboolean SpannableStringBuilder::equals(jobject arg0)
+	jboolean SpannableStringBuilder::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	void SpannableStringBuilder::getChars(jint arg0, jint arg1, jcharArray arg2, jint arg3)
+	void SpannableStringBuilder::getChars(jint arg0, jint arg1, JCharArray arg2, jint arg3)
 	{
 		callMethod<void>(
 			"getChars",
 			"(II[CI)V",
 			arg0,
 			arg1,
-			arg2,
+			arg2.object<jcharArray>(),
 			arg3
 		);
 	}
-	jarray SpannableStringBuilder::getFilters()
+	JArray SpannableStringBuilder::getFilters()
 	{
 		return callObjectMethod(
 			"getFilters",
 			"()[Landroid/text/InputFilter;"
-		).object<jarray>();
+		);
 	}
-	jint SpannableStringBuilder::getSpanEnd(jobject arg0)
+	jint SpannableStringBuilder::getSpanEnd(JObject arg0)
 	{
 		return callMethod<jint>(
 			"getSpanEnd",
 			"(Ljava/lang/Object;)I",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jint SpannableStringBuilder::getSpanFlags(jobject arg0)
+	jint SpannableStringBuilder::getSpanFlags(JObject arg0)
 	{
 		return callMethod<jint>(
 			"getSpanFlags",
 			"(Ljava/lang/Object;)I",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jint SpannableStringBuilder::getSpanStart(jobject arg0)
+	jint SpannableStringBuilder::getSpanStart(JObject arg0)
 	{
 		return callMethod<jint>(
 			"getSpanStart",
 			"(Ljava/lang/Object;)I",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jobjectArray SpannableStringBuilder::getSpans(jint arg0, jint arg1, jclass arg2)
+	JObjectArray SpannableStringBuilder::getSpans(jint arg0, jint arg1, JClass arg2)
 	{
 		return callObjectMethod(
 			"getSpans",
 			"(IILjava/lang/Class;)[Ljava/lang/Object;",
 			arg0,
 			arg1,
-			arg2
-		).object<jobjectArray>();
+			arg2.object<jclass>()
+		);
 	}
 	jint SpannableStringBuilder::getTextRunCursor(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, android::graphics::Paint arg5)
 	{
@@ -193,22 +200,22 @@ namespace android::text
 			"()I"
 		);
 	}
-	android::text::SpannableStringBuilder SpannableStringBuilder::insert(jint arg0, jstring arg1)
+	android::text::SpannableStringBuilder SpannableStringBuilder::insert(jint arg0, JString arg1)
 	{
 		return callObjectMethod(
 			"insert",
 			"(ILjava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;",
 			arg0,
-			arg1
+			arg1.object<jstring>()
 		);
 	}
-	android::text::SpannableStringBuilder SpannableStringBuilder::insert(jint arg0, jstring arg1, jint arg2, jint arg3)
+	android::text::SpannableStringBuilder SpannableStringBuilder::insert(jint arg0, JString arg1, jint arg2, jint arg3)
 	{
 		return callObjectMethod(
 			"insert",
 			"(ILjava/lang/CharSequence;II)Landroid/text/SpannableStringBuilder;",
 			arg0,
-			arg1,
+			arg1.object<jstring>(),
 			arg2,
 			arg3
 		);
@@ -220,80 +227,80 @@ namespace android::text
 			"()I"
 		);
 	}
-	jint SpannableStringBuilder::nextSpanTransition(jint arg0, jint arg1, jclass arg2)
+	jint SpannableStringBuilder::nextSpanTransition(jint arg0, jint arg1, JClass arg2)
 	{
 		return callMethod<jint>(
 			"nextSpanTransition",
 			"(IILjava/lang/Class;)I",
 			arg0,
 			arg1,
-			arg2
+			arg2.object<jclass>()
 		);
 	}
-	void SpannableStringBuilder::removeSpan(jobject arg0)
+	void SpannableStringBuilder::removeSpan(JObject arg0)
 	{
 		callMethod<void>(
 			"removeSpan",
 			"(Ljava/lang/Object;)V",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	android::text::SpannableStringBuilder SpannableStringBuilder::replace(jint arg0, jint arg1, jstring arg2)
+	android::text::SpannableStringBuilder SpannableStringBuilder::replace(jint arg0, jint arg1, JString arg2)
 	{
 		return callObjectMethod(
 			"replace",
 			"(IILjava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;",
 			arg0,
 			arg1,
-			arg2
+			arg2.object<jstring>()
 		);
 	}
-	android::text::SpannableStringBuilder SpannableStringBuilder::replace(jint arg0, jint arg1, jstring arg2, jint arg3, jint arg4)
+	android::text::SpannableStringBuilder SpannableStringBuilder::replace(jint arg0, jint arg1, JString arg2, jint arg3, jint arg4)
 	{
 		return callObjectMethod(
 			"replace",
 			"(IILjava/lang/CharSequence;II)Landroid/text/SpannableStringBuilder;",
 			arg0,
 			arg1,
-			arg2,
+			arg2.object<jstring>(),
 			arg3,
 			arg4
 		);
 	}
-	void SpannableStringBuilder::setFilters(jarray arg0)
+	void SpannableStringBuilder::setFilters(JArray arg0)
 	{
 		callMethod<void>(
 			"setFilters",
 			"([Landroid/text/InputFilter;)V",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
-	void SpannableStringBuilder::setSpan(jobject arg0, jint arg1, jint arg2, jint arg3)
+	void SpannableStringBuilder::setSpan(JObject arg0, jint arg1, jint arg2, jint arg3)
 	{
 		callMethod<void>(
 			"setSpan",
 			"(Ljava/lang/Object;III)V",
-			arg0,
+			arg0.object<jobject>(),
 			arg1,
 			arg2,
 			arg3
 		);
 	}
-	jstring SpannableStringBuilder::subSequence(jint arg0, jint arg1)
+	JString SpannableStringBuilder::subSequence(jint arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"subSequence",
 			"(II)Ljava/lang/CharSequence;",
 			arg0,
 			arg1
-		).object<jstring>();
+		);
 	}
-	jstring SpannableStringBuilder::toString()
+	JString SpannableStringBuilder::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::text
 

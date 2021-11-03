@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JString;
 
 namespace android::app::appsearch
 {
@@ -13,7 +14,7 @@ namespace android::app::appsearch
 		static jint GROUPING_TYPE_PER_PACKAGE();
 		static jint ORDER_ASCENDING();
 		static jint ORDER_DESCENDING();
-		static jstring PROJECTION_SCHEMA_TYPE_WILDCARD();
+		static JString PROJECTION_SCHEMA_TYPE_WILDCARD();
 		static jint RANKING_STRATEGY_CREATION_TIMESTAMP();
 		static jint RANKING_STRATEGY_DOCUMENT_SCORE();
 		static jint RANKING_STRATEGY_NONE();

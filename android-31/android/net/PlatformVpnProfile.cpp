@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./PlatformVpnProfile.hpp"
 
 namespace android::net
@@ -38,12 +39,12 @@ namespace android::net
 			"()I"
 		);
 	}
-	jstring PlatformVpnProfile::getTypeString()
+	JString PlatformVpnProfile::getTypeString()
 	{
 		return callObjectMethod(
 			"getTypeString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::net
 

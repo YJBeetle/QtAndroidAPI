@@ -6,6 +6,8 @@ namespace android::app
 {
 	class NotificationChannel;
 }
+class JString;
+class JString;
 
 namespace android::service::notification
 {
@@ -28,9 +30,9 @@ namespace android::service::notification
 		jboolean canShowBadge();
 		android::app::NotificationChannel getChannel();
 		jint getImportance();
-		jstring getImportanceExplanation();
-		jstring getKey();
-		jstring getOverrideGroupKey();
+		JString getImportanceExplanation();
+		JString getKey();
+		JString getOverrideGroupKey();
 		jint getRank();
 		jint getSuppressedVisualEffects();
 		jint getUserSentiment();

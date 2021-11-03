@@ -2,10 +2,12 @@
 
 #include "../../../../JObject.hpp"
 
+class JByteArray;
 namespace android::net::wifi::aware
 {
 	class PublishConfig;
 }
+class JString;
 
 namespace android::net::wifi::aware
 {
@@ -26,8 +28,8 @@ namespace android::net::wifi::aware
 		android::net::wifi::aware::PublishConfig_Builder setMatchFilter(JObject arg0);
 		android::net::wifi::aware::PublishConfig_Builder setPublishType(jint arg0);
 		android::net::wifi::aware::PublishConfig_Builder setRangingEnabled(jboolean arg0);
-		android::net::wifi::aware::PublishConfig_Builder setServiceName(jstring arg0);
-		android::net::wifi::aware::PublishConfig_Builder setServiceSpecificInfo(jbyteArray arg0);
+		android::net::wifi::aware::PublishConfig_Builder setServiceName(JString arg0);
+		android::net::wifi::aware::PublishConfig_Builder setServiceSpecificInfo(JByteArray arg0);
 		android::net::wifi::aware::PublishConfig_Builder setTerminateNotificationEnabled(jboolean arg0);
 		android::net::wifi::aware::PublishConfig_Builder setTtlSec(jint arg0);
 	};

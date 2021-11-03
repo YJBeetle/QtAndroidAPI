@@ -10,6 +10,7 @@ namespace android::net
 {
 	class NetworkSpecifier;
 }
+class JString;
 
 namespace android::net
 {
@@ -33,7 +34,7 @@ namespace android::net
 		android::net::NetworkRequest_Builder removeCapability(jint arg0);
 		android::net::NetworkRequest_Builder removeTransportType(jint arg0);
 		android::net::NetworkRequest_Builder setNetworkSpecifier(android::net::NetworkSpecifier arg0);
-		android::net::NetworkRequest_Builder setNetworkSpecifier(jstring arg0);
+		android::net::NetworkRequest_Builder setNetworkSpecifier(JString arg0);
 	};
 } // namespace android::net
 

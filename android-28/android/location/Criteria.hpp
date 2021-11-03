@@ -6,6 +6,7 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
 
 namespace android::location
 {
@@ -54,7 +55,7 @@ namespace android::location
 		void setSpeedAccuracy(jint arg0);
 		void setSpeedRequired(jboolean arg0);
 		void setVerticalAccuracy(jint arg0);
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::location

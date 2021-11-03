@@ -2,6 +2,9 @@
 
 #include "../../../JObject.hpp"
 
+class JByteArray;
+class JObject;
+class JString;
 namespace java::math
 {
 	class BigInteger;
@@ -43,9 +46,9 @@ namespace java::security::cert
 		
 		// Methods
 		void addIssuer(javax::security::auth::x500::X500Principal arg0);
-		void addIssuerName(jbyteArray arg0);
-		void addIssuerName(jstring arg0);
-		jobject clone();
+		void addIssuerName(JByteArray arg0);
+		void addIssuerName(JString arg0);
+		JObject clone();
 		java::security::cert::X509Certificate getCertificateChecking();
 		java::util::Date getDateAndTime();
 		JObject getIssuerNames();
@@ -59,7 +62,7 @@ namespace java::security::cert
 		void setIssuers(JObject arg0);
 		void setMaxCRLNumber(java::math::BigInteger arg0);
 		void setMinCRLNumber(java::math::BigInteger arg0);
-		jstring toString();
+		JString toString();
 	};
 } // namespace java::security::cert
 

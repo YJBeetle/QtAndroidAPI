@@ -26,6 +26,8 @@ namespace java::io
 {
 	class File;
 }
+class JString;
+class JString;
 namespace java::util
 {
 	class HashMap;
@@ -41,7 +43,7 @@ namespace android::speech::tts
 	{
 	public:
 		// Fields
-		static jstring ACTION_TTS_QUEUE_PROCESSING_COMPLETED();
+		static JString ACTION_TTS_QUEUE_PROCESSING_COMPLETED();
 		static jint ERROR();
 		static jint ERROR_INVALID_REQUEST();
 		static jint ERROR_NETWORK();
@@ -66,19 +68,19 @@ namespace android::speech::tts
 		
 		// Constructors
 		TextToSpeech(android::content::Context arg0, JObject arg1);
-		TextToSpeech(android::content::Context arg0, JObject arg1, jstring arg2);
+		TextToSpeech(android::content::Context arg0, JObject arg1, JString arg2);
 		
 		// Methods
 		static jint getMaxSpeechInputLength();
-		jint addEarcon(jstring arg0, java::io::File arg1);
-		jint addEarcon(jstring arg0, jstring arg1);
-		jint addEarcon(jstring arg0, jstring arg1, jint arg2);
-		jint addSpeech(jstring arg0, java::io::File arg1);
-		jint addSpeech(jstring arg0, jstring arg1);
-		jint addSpeech(jstring arg0, jstring arg1, jint arg2);
+		jint addEarcon(JString arg0, java::io::File arg1);
+		jint addEarcon(JString arg0, JString arg1);
+		jint addEarcon(JString arg0, JString arg1, jint arg2);
+		jint addSpeech(JString arg0, java::io::File arg1);
+		jint addSpeech(JString arg0, JString arg1);
+		jint addSpeech(JString arg0, JString arg1, jint arg2);
 		jboolean areDefaultsEnforced();
 		JObject getAvailableLanguages();
-		jstring getDefaultEngine();
+		JString getDefaultEngine();
 		java::util::Locale getDefaultLanguage();
 		android::speech::tts::Voice getDefaultVoice();
 		JObject getEngines();
@@ -88,12 +90,12 @@ namespace android::speech::tts
 		JObject getVoices();
 		jint isLanguageAvailable(java::util::Locale arg0);
 		jboolean isSpeaking();
-		jint playEarcon(jstring arg0, jint arg1, java::util::HashMap arg2);
-		jint playEarcon(jstring arg0, jint arg1, android::os::Bundle arg2, jstring arg3);
+		jint playEarcon(JString arg0, jint arg1, java::util::HashMap arg2);
+		jint playEarcon(JString arg0, jint arg1, android::os::Bundle arg2, JString arg3);
 		jint playSilence(jlong arg0, jint arg1, java::util::HashMap arg2);
-		jint playSilentUtterance(jlong arg0, jint arg1, jstring arg2);
+		jint playSilentUtterance(jlong arg0, jint arg1, JString arg2);
 		jint setAudioAttributes(android::media::AudioAttributes arg0);
-		jint setEngineByPackageName(jstring arg0);
+		jint setEngineByPackageName(JString arg0);
 		jint setLanguage(java::util::Locale arg0);
 		jint setOnUtteranceCompletedListener(JObject arg0);
 		jint setOnUtteranceProgressListener(android::speech::tts::UtteranceProgressListener arg0);
@@ -101,11 +103,11 @@ namespace android::speech::tts
 		jint setSpeechRate(jfloat arg0);
 		jint setVoice(android::speech::tts::Voice arg0);
 		void shutdown();
-		jint speak(jstring arg0, jint arg1, java::util::HashMap arg2);
-		jint speak(jstring arg0, jint arg1, android::os::Bundle arg2, jstring arg3);
+		jint speak(JString arg0, jint arg1, java::util::HashMap arg2);
+		jint speak(JString arg0, jint arg1, android::os::Bundle arg2, JString arg3);
 		jint stop();
-		jint synthesizeToFile(jstring arg0, java::util::HashMap arg1, jstring arg2);
-		jint synthesizeToFile(jstring arg0, android::os::Bundle arg1, java::io::File arg2, jstring arg3);
+		jint synthesizeToFile(JString arg0, java::util::HashMap arg1, JString arg2);
+		jint synthesizeToFile(JString arg0, android::os::Bundle arg1, java::io::File arg2, JString arg3);
 	};
 } // namespace android::speech::tts
 

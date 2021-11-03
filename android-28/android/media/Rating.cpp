@@ -1,4 +1,5 @@
 #include "../os/Parcel.hpp"
+#include "../../JString.hpp"
 #include "./Rating.hpp"
 
 namespace android::media
@@ -163,12 +164,12 @@ namespace android::media
 			"()Z"
 		);
 	}
-	jstring Rating::toString()
+	JString Rating::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void Rating::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

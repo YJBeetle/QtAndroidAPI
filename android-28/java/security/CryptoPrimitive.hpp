@@ -1,8 +1,9 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "../lang/Enum.hpp"
 
+class JArray;
+class JString;
 
 namespace java::security
 {
@@ -28,8 +29,8 @@ namespace java::security
 		// Constructors
 		
 		// Methods
-		static java::security::CryptoPrimitive valueOf(jstring arg0);
-		static jarray values();
+		static java::security::CryptoPrimitive valueOf(JString arg0);
+		static JArray values();
 	};
 } // namespace java::security
 

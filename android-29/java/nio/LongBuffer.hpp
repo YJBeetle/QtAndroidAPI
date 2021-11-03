@@ -1,8 +1,10 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./Buffer.hpp"
 
+class JLongArray;
+class JObject;
+class JString;
 namespace java::nio
 {
 	class Buffer;
@@ -27,22 +29,22 @@ namespace java::nio
 		
 		// Methods
 		static java::nio::LongBuffer allocate(jint arg0);
-		static java::nio::LongBuffer wrap(jlongArray arg0);
-		static java::nio::LongBuffer wrap(jlongArray arg0, jint arg1, jint arg2);
-		jlongArray array();
+		static java::nio::LongBuffer wrap(JLongArray arg0);
+		static java::nio::LongBuffer wrap(JLongArray arg0, jint arg1, jint arg2);
+		JLongArray array();
 		jint arrayOffset();
 		java::nio::LongBuffer asReadOnlyBuffer();
 		java::nio::LongBuffer clear();
 		java::nio::LongBuffer compact();
-		jint compareTo(jobject arg0);
+		jint compareTo(JObject arg0);
 		jint compareTo(java::nio::LongBuffer arg0);
 		java::nio::LongBuffer duplicate();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		java::nio::LongBuffer flip();
-		java::nio::LongBuffer get(jlongArray arg0);
-		java::nio::LongBuffer get(jint arg0, jlongArray arg1);
-		java::nio::LongBuffer get(jlongArray arg0, jint arg1, jint arg2);
-		java::nio::LongBuffer get(jint arg0, jlongArray arg1, jint arg2, jint arg3);
+		java::nio::LongBuffer get(JLongArray arg0);
+		java::nio::LongBuffer get(jint arg0, JLongArray arg1);
+		java::nio::LongBuffer get(JLongArray arg0, jint arg1, jint arg2);
+		java::nio::LongBuffer get(jint arg0, JLongArray arg1, jint arg2, jint arg3);
 		jlong get();
 		jlong get(jint arg0);
 		jboolean hasArray();
@@ -53,19 +55,19 @@ namespace java::nio
 		jint mismatch(java::nio::LongBuffer arg0);
 		java::nio::ByteOrder order();
 		java::nio::LongBuffer position(jint arg0);
-		java::nio::LongBuffer put(jlongArray arg0);
+		java::nio::LongBuffer put(JLongArray arg0);
 		java::nio::LongBuffer put(java::nio::LongBuffer arg0);
 		java::nio::LongBuffer put(jlong arg0);
-		java::nio::LongBuffer put(jint arg0, jlongArray arg1);
+		java::nio::LongBuffer put(jint arg0, JLongArray arg1);
 		java::nio::LongBuffer put(jint arg0, jlong arg1);
-		java::nio::LongBuffer put(jlongArray arg0, jint arg1, jint arg2);
-		java::nio::LongBuffer put(jint arg0, jlongArray arg1, jint arg2, jint arg3);
+		java::nio::LongBuffer put(JLongArray arg0, jint arg1, jint arg2);
+		java::nio::LongBuffer put(jint arg0, JLongArray arg1, jint arg2, jint arg3);
 		java::nio::LongBuffer put(jint arg0, java::nio::LongBuffer arg1, jint arg2, jint arg3);
 		java::nio::LongBuffer reset();
 		java::nio::LongBuffer rewind();
 		java::nio::LongBuffer slice();
 		java::nio::LongBuffer slice(jint arg0, jint arg1);
-		jstring toString();
+		JString toString();
 	};
 } // namespace java::nio
 

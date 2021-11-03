@@ -1,8 +1,10 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./Format.hpp"
 
+class JArray;
+class JObject;
+class JString;
 namespace java::lang
 {
 	class StringBuffer;
@@ -73,7 +75,7 @@ namespace java::text
 		// Constructors
 		
 		// Methods
-		static jarray getAvailableLocales();
+		static JArray getAvailableLocales();
 		static java::text::DateFormat getDateInstance();
 		static java::text::DateFormat getDateInstance(jint arg0);
 		static java::text::DateFormat getDateInstance(jint arg0, java::util::Locale arg1);
@@ -84,19 +86,19 @@ namespace java::text
 		static java::text::DateFormat getTimeInstance();
 		static java::text::DateFormat getTimeInstance(jint arg0);
 		static java::text::DateFormat getTimeInstance(jint arg0, java::util::Locale arg1);
-		jobject clone();
-		jboolean equals(jobject arg0);
-		jstring format(java::util::Date arg0);
-		java::lang::StringBuffer format(jobject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2);
+		JObject clone();
+		jboolean equals(JObject arg0);
+		JString format(java::util::Date arg0);
+		java::lang::StringBuffer format(JObject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2);
 		java::lang::StringBuffer format(java::util::Date arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2);
 		java::util::Calendar getCalendar();
 		java::text::NumberFormat getNumberFormat();
 		java::util::TimeZone getTimeZone();
 		jint hashCode();
 		jboolean isLenient();
-		java::util::Date parse(jstring arg0);
-		java::util::Date parse(jstring arg0, java::text::ParsePosition arg1);
-		jobject parseObject(jstring arg0, java::text::ParsePosition arg1);
+		java::util::Date parse(JString arg0);
+		java::util::Date parse(JString arg0, java::text::ParsePosition arg1);
+		JObject parseObject(JString arg0, java::text::ParsePosition arg1);
 		void setCalendar(java::util::Calendar arg0);
 		void setLenient(jboolean arg0);
 		void setNumberFormat(java::text::NumberFormat arg0);

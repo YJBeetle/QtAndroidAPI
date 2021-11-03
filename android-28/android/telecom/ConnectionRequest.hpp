@@ -22,6 +22,7 @@ namespace android::telecom
 {
 	class PhoneAccountHandle;
 }
+class JString;
 
 namespace android::telecom
 {
@@ -47,7 +48,7 @@ namespace android::telecom
 		android::telecom::Connection_RttTextStream getRttTextStream();
 		jint getVideoState();
 		jboolean isRequestingRtt();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::telecom

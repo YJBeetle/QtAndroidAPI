@@ -2,6 +2,9 @@
 
 #include "../../JObject.hpp"
 
+class JClass;
+class JObject;
+class JString;
 
 namespace java::lang
 {
@@ -17,9 +20,9 @@ namespace java::lang
 		// Constructors
 		
 		// Methods
-		static jobject command(jobject arg0);
-		static jboolean compileClass(jclass arg0);
-		static jboolean compileClasses(jstring arg0);
+		static JObject command(JObject arg0);
+		static jboolean compileClass(JClass arg0);
+		static jboolean compileClasses(JString arg0);
 		static void disable();
 		static void enable();
 	};

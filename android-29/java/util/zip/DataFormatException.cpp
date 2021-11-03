@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./DataFormatException.hpp"
 
 namespace java::util::zip
@@ -13,11 +14,11 @@ namespace java::util::zip
 			"java.util.zip.DataFormatException",
 			"()V"
 		) {}
-	DataFormatException::DataFormatException(jstring arg0)
+	DataFormatException::DataFormatException(JString arg0)
 		: java::lang::Exception(
 			"java.util.zip.DataFormatException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

@@ -6,6 +6,7 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
 
 namespace android::media
 {
@@ -28,10 +29,10 @@ namespace android::media
 		JObject getSupportedVideoMimeTypes();
 		JObject getUnsupportedHdrTypes();
 		JObject getUnsupportedVideoMimeTypes();
-		jboolean isFormatSpecified(jstring arg0);
-		jboolean isHdrTypeSupported(jstring arg0);
-		jboolean isVideoMimeTypeSupported(jstring arg0);
-		jstring toString();
+		jboolean isFormatSpecified(JString arg0);
+		jboolean isHdrTypeSupported(JString arg0);
+		jboolean isVideoMimeTypeSupported(JString arg0);
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::media

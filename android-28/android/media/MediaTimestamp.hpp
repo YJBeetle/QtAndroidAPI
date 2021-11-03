@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JObject;
+class JString;
 
 namespace android::media
 {
@@ -18,11 +20,11 @@ namespace android::media
 		// Constructors
 		
 		// Methods
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jlong getAnchorMediaTimeUs();
 		jlong getAnchorSytemNanoTime();
 		jfloat getMediaClockRate();
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::media
 

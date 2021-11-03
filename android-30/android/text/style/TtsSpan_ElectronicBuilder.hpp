@@ -1,9 +1,8 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "./TtsSpan_Builder.hpp"
 #include "./TtsSpan_SemioticClassBuilder.hpp"
 
+class JString;
 
 namespace android::text::style
 {
@@ -20,15 +19,15 @@ namespace android::text::style
 		TtsSpan_ElectronicBuilder();
 		
 		// Methods
-		android::text::style::TtsSpan_ElectronicBuilder setDomain(jstring arg0);
-		android::text::style::TtsSpan_ElectronicBuilder setEmailArguments(jstring arg0, jstring arg1);
-		android::text::style::TtsSpan_ElectronicBuilder setFragmentId(jstring arg0);
-		android::text::style::TtsSpan_ElectronicBuilder setPassword(jstring arg0);
-		android::text::style::TtsSpan_ElectronicBuilder setPath(jstring arg0);
+		android::text::style::TtsSpan_ElectronicBuilder setDomain(JString arg0);
+		android::text::style::TtsSpan_ElectronicBuilder setEmailArguments(JString arg0, JString arg1);
+		android::text::style::TtsSpan_ElectronicBuilder setFragmentId(JString arg0);
+		android::text::style::TtsSpan_ElectronicBuilder setPassword(JString arg0);
+		android::text::style::TtsSpan_ElectronicBuilder setPath(JString arg0);
 		android::text::style::TtsSpan_ElectronicBuilder setPort(jint arg0);
-		android::text::style::TtsSpan_ElectronicBuilder setProtocol(jstring arg0);
-		android::text::style::TtsSpan_ElectronicBuilder setQueryString(jstring arg0);
-		android::text::style::TtsSpan_ElectronicBuilder setUsername(jstring arg0);
+		android::text::style::TtsSpan_ElectronicBuilder setProtocol(JString arg0);
+		android::text::style::TtsSpan_ElectronicBuilder setQueryString(JString arg0);
+		android::text::style::TtsSpan_ElectronicBuilder setUsername(JString arg0);
 	};
 } // namespace android::text::style
 

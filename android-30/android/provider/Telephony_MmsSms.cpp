@@ -1,4 +1,5 @@
 #include "../net/Uri.hpp"
+#include "../../JString.hpp"
 #include "./Telephony_MmsSms.hpp"
 
 namespace android::provider
@@ -130,13 +131,13 @@ namespace android::provider
 			"SMS_PROTO"
 		);
 	}
-	jstring Telephony_MmsSms::TYPE_DISCRIMINATOR_COLUMN()
+	JString Telephony_MmsSms::TYPE_DISCRIMINATOR_COLUMN()
 	{
 		return getStaticObjectField(
 			"android.provider.Telephony$MmsSms",
 			"TYPE_DISCRIMINATOR_COLUMN",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QJniObject forward

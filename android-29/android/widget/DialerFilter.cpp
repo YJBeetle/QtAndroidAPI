@@ -1,6 +1,8 @@
 #include "../content/Context.hpp"
 #include "../graphics/Rect.hpp"
 #include "../view/KeyEvent.hpp"
+#include "../../JString.hpp"
+#include "../../JString.hpp"
 #include "./DialerFilter.hpp"
 
 namespace android::widget
@@ -61,12 +63,12 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	void DialerFilter::append(jstring arg0)
+	void DialerFilter::append(JString arg0)
 	{
 		callMethod<void>(
 			"append",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void DialerFilter::clearText()
@@ -76,26 +78,26 @@ namespace android::widget
 			"()V"
 		);
 	}
-	jstring DialerFilter::getDigits()
+	JString DialerFilter::getDigits()
 	{
 		return callObjectMethod(
 			"getDigits",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
-	jstring DialerFilter::getFilterText()
+	JString DialerFilter::getFilterText()
 	{
 		return callObjectMethod(
 			"getFilterText",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
-	jstring DialerFilter::getLetters()
+	JString DialerFilter::getLetters()
 	{
 		return callObjectMethod(
 			"getLetters",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	jint DialerFilter::getMode()
 	{

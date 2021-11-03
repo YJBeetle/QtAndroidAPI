@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./PortUnreachableException.hpp"
 
 namespace java::net
@@ -13,11 +14,11 @@ namespace java::net
 			"java.net.PortUnreachableException",
 			"()V"
 		) {}
-	PortUnreachableException::PortUnreachableException(jstring arg0)
+	PortUnreachableException::PortUnreachableException(JString arg0)
 		: java::net::SocketException(
 			"java.net.PortUnreachableException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

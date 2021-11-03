@@ -1,3 +1,5 @@
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
 #include "../../../java/net/Socket.hpp"
 #include "./SSLEngine.hpp"
 #include "./X509ExtendedTrustManager.hpp"
@@ -17,43 +19,43 @@ namespace javax::net::ssl
 		) {}
 	
 	// Methods
-	void X509ExtendedTrustManager::checkClientTrusted(jarray arg0, jstring arg1, java::net::Socket arg2)
+	void X509ExtendedTrustManager::checkClientTrusted(JArray arg0, JString arg1, java::net::Socket arg2)
 	{
 		callMethod<void>(
 			"checkClientTrusted",
 			"([Ljava/security/cert/X509Certificate;Ljava/lang/String;Ljava/net/Socket;)V",
-			arg0,
-			arg1,
+			arg0.object<jarray>(),
+			arg1.object<jstring>(),
 			arg2.object()
 		);
 	}
-	void X509ExtendedTrustManager::checkClientTrusted(jarray arg0, jstring arg1, javax::net::ssl::SSLEngine arg2)
+	void X509ExtendedTrustManager::checkClientTrusted(JArray arg0, JString arg1, javax::net::ssl::SSLEngine arg2)
 	{
 		callMethod<void>(
 			"checkClientTrusted",
 			"([Ljava/security/cert/X509Certificate;Ljava/lang/String;Ljavax/net/ssl/SSLEngine;)V",
-			arg0,
-			arg1,
+			arg0.object<jarray>(),
+			arg1.object<jstring>(),
 			arg2.object()
 		);
 	}
-	void X509ExtendedTrustManager::checkServerTrusted(jarray arg0, jstring arg1, java::net::Socket arg2)
+	void X509ExtendedTrustManager::checkServerTrusted(JArray arg0, JString arg1, java::net::Socket arg2)
 	{
 		callMethod<void>(
 			"checkServerTrusted",
 			"([Ljava/security/cert/X509Certificate;Ljava/lang/String;Ljava/net/Socket;)V",
-			arg0,
-			arg1,
+			arg0.object<jarray>(),
+			arg1.object<jstring>(),
 			arg2.object()
 		);
 	}
-	void X509ExtendedTrustManager::checkServerTrusted(jarray arg0, jstring arg1, javax::net::ssl::SSLEngine arg2)
+	void X509ExtendedTrustManager::checkServerTrusted(JArray arg0, JString arg1, javax::net::ssl::SSLEngine arg2)
 	{
 		callMethod<void>(
 			"checkServerTrusted",
 			"([Ljava/security/cert/X509Certificate;Ljava/lang/String;Ljavax/net/ssl/SSLEngine;)V",
-			arg0,
-			arg1,
+			arg0.object<jarray>(),
+			arg1.object<jstring>(),
 			arg2.object()
 		);
 	}

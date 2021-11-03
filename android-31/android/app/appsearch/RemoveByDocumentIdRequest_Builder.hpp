@@ -2,10 +2,12 @@
 
 #include "../../../JObject.hpp"
 
+class JArray;
 namespace android::app::appsearch
 {
 	class RemoveByDocumentIdRequest;
 }
+class JString;
 
 namespace android::app::appsearch
 {
@@ -19,10 +21,10 @@ namespace android::app::appsearch
 		RemoveByDocumentIdRequest_Builder(QJniObject obj);
 		
 		// Constructors
-		RemoveByDocumentIdRequest_Builder(jstring arg0);
+		RemoveByDocumentIdRequest_Builder(JString arg0);
 		
 		// Methods
-		android::app::appsearch::RemoveByDocumentIdRequest_Builder addIds(jarray arg0);
+		android::app::appsearch::RemoveByDocumentIdRequest_Builder addIds(JArray arg0);
 		android::app::appsearch::RemoveByDocumentIdRequest_Builder addIds(JObject arg0);
 		android::app::appsearch::RemoveByDocumentIdRequest build();
 	};

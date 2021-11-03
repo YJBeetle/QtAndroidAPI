@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JByteArray;
+class JArray;
 namespace android::content
 {
 	class Context;
@@ -70,6 +72,7 @@ namespace java::io
 {
 	class FileDescriptor;
 }
+class JString;
 namespace java::util
 {
 	class UUID;
@@ -101,7 +104,7 @@ namespace android::media
 		static jint MEDIA_INFO_VIDEO_NOT_PLAYING();
 		static jint MEDIA_INFO_VIDEO_RENDERING_START();
 		static jint MEDIA_INFO_VIDEO_TRACK_LAGGING();
-		static jstring MEDIA_MIMETYPE_TEXT_SUBRIP();
+		static JString MEDIA_MIMETYPE_TEXT_SUBRIP();
 		static jint PREPARE_DRM_STATUS_PREPARATION_ERROR();
 		static jint PREPARE_DRM_STATUS_PROVISIONING_NETWORK_ERROR();
 		static jint PREPARE_DRM_STATUS_PROVISIONING_SERVER_ERROR();
@@ -127,10 +130,10 @@ namespace android::media
 		static android::media::MediaPlayer create(android::content::Context arg0, jint arg1, android::media::AudioAttributes arg2, jint arg3);
 		static android::media::MediaPlayer create(android::content::Context arg0, android::net::Uri arg1, JObject arg2, android::media::AudioAttributes arg3, jint arg4);
 		void addOnRoutingChangedListener(JObject arg0, android::os::Handler arg1);
-		void addTimedTextSource(java::io::FileDescriptor arg0, jstring arg1);
-		void addTimedTextSource(jstring arg0, jstring arg1);
-		void addTimedTextSource(android::content::Context arg0, android::net::Uri arg1, jstring arg2);
-		void addTimedTextSource(java::io::FileDescriptor arg0, jlong arg1, jlong arg2, jstring arg3);
+		void addTimedTextSource(java::io::FileDescriptor arg0, JString arg1);
+		void addTimedTextSource(JString arg0, JString arg1);
+		void addTimedTextSource(android::content::Context arg0, android::net::Uri arg1, JString arg2);
+		void addTimedTextSource(java::io::FileDescriptor arg0, jlong arg1, jlong arg2, JString arg3);
 		void attachAuxEffect(jint arg0);
 		void clearOnMediaTimeDiscontinuityListener();
 		void clearOnSubtitleDataListener();
@@ -139,9 +142,9 @@ namespace android::media
 		jint getAudioSessionId();
 		jint getCurrentPosition();
 		android::media::MediaPlayer_DrmInfo getDrmInfo();
-		jstring getDrmPropertyString(jstring arg0);
+		JString getDrmPropertyString(JString arg0);
 		jint getDuration();
-		android::media::MediaDrm_KeyRequest getKeyRequest(jbyteArray arg0, jbyteArray arg1, jstring arg2, jint arg3, JObject arg4);
+		android::media::MediaDrm_KeyRequest getKeyRequest(JByteArray arg0, JByteArray arg1, JString arg2, jint arg3, JObject arg4);
 		android::os::PersistableBundle getMetrics();
 		android::media::PlaybackParams getPlaybackParams();
 		android::media::AudioDeviceInfo getPreferredDevice();
@@ -149,7 +152,7 @@ namespace android::media
 		jint getSelectedTrack(jint arg0);
 		android::media::SyncParams getSyncParams();
 		android::media::MediaTimestamp getTimestamp();
-		jarray getTrackInfo();
+		JArray getTrackInfo();
 		jint getVideoHeight();
 		jint getVideoWidth();
 		jboolean isLooping();
@@ -158,12 +161,12 @@ namespace android::media
 		void prepare();
 		void prepareAsync();
 		void prepareDrm(java::util::UUID arg0);
-		jbyteArray provideKeyResponse(jbyteArray arg0, jbyteArray arg1);
+		JByteArray provideKeyResponse(JByteArray arg0, JByteArray arg1);
 		void release();
 		void releaseDrm();
 		void removeOnRoutingChangedListener(JObject arg0);
 		void reset();
-		void restoreKeys(jbyteArray arg0);
+		void restoreKeys(JByteArray arg0);
 		void seekTo(jint arg0);
 		void seekTo(jlong arg0, jint arg1);
 		void selectTrack(jint arg0);
@@ -174,13 +177,13 @@ namespace android::media
 		void setDataSource(android::content::res::AssetFileDescriptor arg0);
 		void setDataSource(android::media::MediaDataSource arg0);
 		void setDataSource(java::io::FileDescriptor arg0);
-		void setDataSource(jstring arg0);
+		void setDataSource(JString arg0);
 		void setDataSource(android::content::Context arg0, android::net::Uri arg1);
 		void setDataSource(android::content::Context arg0, android::net::Uri arg1, JObject arg2);
 		void setDataSource(java::io::FileDescriptor arg0, jlong arg1, jlong arg2);
 		void setDataSource(android::content::Context arg0, android::net::Uri arg1, JObject arg2, JObject arg3);
 		void setDisplay(JObject arg0);
-		void setDrmPropertyString(jstring arg0, jstring arg1);
+		void setDrmPropertyString(JString arg0, JString arg1);
 		void setLooping(jboolean arg0);
 		void setNextMediaPlayer(android::media::MediaPlayer arg0);
 		void setOnBufferingUpdateListener(JObject arg0);

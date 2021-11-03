@@ -1,3 +1,4 @@
+#include "../../JByteArray.hpp"
 #include "./Base64_Decoder.hpp"
 #include "./Base64_Encoder.hpp"
 #include "./Base64.hpp"
@@ -44,14 +45,14 @@ namespace java::util
 			"()Ljava/util/Base64$Encoder;"
 		);
 	}
-	java::util::Base64_Encoder Base64::getMimeEncoder(jint arg0, jbyteArray arg1)
+	java::util::Base64_Encoder Base64::getMimeEncoder(jint arg0, JByteArray arg1)
 	{
 		return callStaticObjectMethod(
 			"java.util.Base64",
 			"getMimeEncoder",
 			"(I[B)Ljava/util/Base64$Encoder;",
 			arg0,
-			arg1
+			arg1.object<jbyteArray>()
 		);
 	}
 	java::util::Base64_Decoder Base64::getUrlDecoder()

@@ -1,3 +1,5 @@
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./Size.hpp"
 
 namespace android::util
@@ -17,21 +19,21 @@ namespace android::util
 		) {}
 	
 	// Methods
-	android::util::Size Size::parseSize(jstring arg0)
+	android::util::Size Size::parseSize(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.util.Size",
 			"parseSize",
 			"(Ljava/lang/String;)Landroid/util/Size;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jboolean Size::equals(jobject arg0)
+	jboolean Size::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint Size::getHeight()
@@ -55,12 +57,12 @@ namespace android::util
 			"()I"
 		);
 	}
-	jstring Size::toString()
+	JString Size::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::util
 

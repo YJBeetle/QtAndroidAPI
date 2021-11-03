@@ -1,10 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../content/Context.hpp"
-#include "../content/ContextWrapper.hpp"
-#include "../view/ContextThemeWrapper.hpp"
-#include "../app/Activity.hpp"
 #include "../app/ListActivity.hpp"
 
 namespace android::app
@@ -47,6 +42,8 @@ namespace android::widget
 {
 	class ListView;
 }
+class JString;
+class JString;
 
 namespace android::preference
 {
@@ -54,11 +51,11 @@ namespace android::preference
 	{
 	public:
 		// Fields
-		static jstring EXTRA_NO_HEADERS();
-		static jstring EXTRA_SHOW_FRAGMENT();
-		static jstring EXTRA_SHOW_FRAGMENT_ARGUMENTS();
-		static jstring EXTRA_SHOW_FRAGMENT_SHORT_TITLE();
-		static jstring EXTRA_SHOW_FRAGMENT_TITLE();
+		static JString EXTRA_NO_HEADERS();
+		static JString EXTRA_SHOW_FRAGMENT();
+		static JString EXTRA_SHOW_FRAGMENT_ARGUMENTS();
+		static JString EXTRA_SHOW_FRAGMENT_SHORT_TITLE();
+		static JString EXTRA_SHOW_FRAGMENT_TITLE();
 		static jlong HEADER_ID_UNDEFINED();
 		
 		// QJniObject forward
@@ -71,7 +68,7 @@ namespace android::preference
 		// Methods
 		void addPreferencesFromIntent(android::content::Intent arg0);
 		void addPreferencesFromResource(jint arg0);
-		android::preference::Preference findPreference(jstring arg0);
+		android::preference::Preference findPreference(JString arg0);
 		void finishPreferencePanel(android::app::Fragment arg0, jint arg1, android::content::Intent arg2);
 		android::preference::PreferenceManager getPreferenceManager();
 		android::preference::PreferenceScreen getPreferenceScreen();
@@ -81,7 +78,7 @@ namespace android::preference
 		void loadHeadersFromResource(jint arg0, JObject arg1);
 		void onBackPressed();
 		void onBuildHeaders(JObject arg0);
-		android::content::Intent onBuildStartFragmentIntent(jstring arg0, android::os::Bundle arg1, jint arg2, jint arg3);
+		android::content::Intent onBuildStartFragmentIntent(JString arg0, android::os::Bundle arg1, jint arg2, jint arg3);
 		void onContentChanged();
 		android::preference::PreferenceActivity_Header onGetInitialHeader();
 		android::preference::PreferenceActivity_Header onGetNewHeader();
@@ -92,15 +89,15 @@ namespace android::preference
 		jboolean onPreferenceStartFragment(android::preference::PreferenceFragment arg0, android::preference::Preference arg1);
 		jboolean onPreferenceTreeClick(android::preference::PreferenceScreen arg0, android::preference::Preference arg1);
 		void setListFooter(android::view::View arg0);
-		void setParentTitle(jstring arg0, jstring arg1, JObject arg2);
+		void setParentTitle(JString arg0, JString arg1, JObject arg2);
 		void setPreferenceScreen(android::preference::PreferenceScreen arg0);
-		void showBreadCrumbs(jstring arg0, jstring arg1);
+		void showBreadCrumbs(JString arg0, JString arg1);
 		void startPreferenceFragment(android::app::Fragment arg0, jboolean arg1);
-		void startPreferencePanel(jstring arg0, android::os::Bundle arg1, jint arg2, jstring arg3, android::app::Fragment arg4, jint arg5);
-		void startWithFragment(jstring arg0, android::os::Bundle arg1, android::app::Fragment arg2, jint arg3);
-		void startWithFragment(jstring arg0, android::os::Bundle arg1, android::app::Fragment arg2, jint arg3, jint arg4, jint arg5);
+		void startPreferencePanel(JString arg0, android::os::Bundle arg1, jint arg2, JString arg3, android::app::Fragment arg4, jint arg5);
+		void startWithFragment(JString arg0, android::os::Bundle arg1, android::app::Fragment arg2, jint arg3);
+		void startWithFragment(JString arg0, android::os::Bundle arg1, android::app::Fragment arg2, jint arg3, jint arg4, jint arg5);
 		void switchToHeader(android::preference::PreferenceActivity_Header arg0);
-		void switchToHeader(jstring arg0, android::os::Bundle arg1);
+		void switchToHeader(JString arg0, android::os::Bundle arg1);
 	};
 } // namespace android::preference
 

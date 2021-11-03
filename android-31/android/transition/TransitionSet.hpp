@@ -1,6 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./Transition.hpp"
 
 namespace android::content
@@ -31,6 +30,9 @@ namespace android::view
 {
 	class View;
 }
+class JClass;
+class JObject;
+class JString;
 
 namespace android::transition
 {
@@ -53,24 +55,24 @@ namespace android::transition
 		android::transition::TransitionSet addListener(JObject arg0);
 		android::transition::TransitionSet addTarget(android::view::View arg0);
 		android::transition::TransitionSet addTarget(jint arg0);
-		android::transition::TransitionSet addTarget(jclass arg0);
-		android::transition::TransitionSet addTarget(jstring arg0);
+		android::transition::TransitionSet addTarget(JClass arg0);
+		android::transition::TransitionSet addTarget(JString arg0);
 		android::transition::TransitionSet addTransition(android::transition::Transition arg0);
 		void captureEndValues(android::transition::TransitionValues arg0);
 		void captureStartValues(android::transition::TransitionValues arg0);
 		android::transition::TransitionSet clone();
 		android::transition::Transition excludeTarget(android::view::View arg0, jboolean arg1);
 		android::transition::Transition excludeTarget(jint arg0, jboolean arg1);
-		android::transition::Transition excludeTarget(jclass arg0, jboolean arg1);
-		android::transition::Transition excludeTarget(jstring arg0, jboolean arg1);
+		android::transition::Transition excludeTarget(JClass arg0, jboolean arg1);
+		android::transition::Transition excludeTarget(JString arg0, jboolean arg1);
 		jint getOrdering();
 		android::transition::Transition getTransitionAt(jint arg0);
 		jint getTransitionCount();
 		android::transition::TransitionSet removeListener(JObject arg0);
 		android::transition::TransitionSet removeTarget(android::view::View arg0);
 		android::transition::TransitionSet removeTarget(jint arg0);
-		android::transition::TransitionSet removeTarget(jclass arg0);
-		android::transition::TransitionSet removeTarget(jstring arg0);
+		android::transition::TransitionSet removeTarget(JClass arg0);
+		android::transition::TransitionSet removeTarget(JString arg0);
 		android::transition::TransitionSet removeTransition(android::transition::Transition arg0);
 		android::transition::TransitionSet setDuration(jlong arg0);
 		void setEpicenterCallback(android::transition::Transition_EpicenterCallback arg0);

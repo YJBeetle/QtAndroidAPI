@@ -1,3 +1,5 @@
+#include "../../JCharArray.hpp"
+#include "../../JFloatArray.hpp"
 #include "./ColorFilter.hpp"
 #include "./MaskFilter.hpp"
 #include "./Paint_Align.hpp"
@@ -13,6 +15,8 @@
 #include "./Typeface.hpp"
 #include "./Xfermode.hpp"
 #include "../os/LocaleList.hpp"
+#include "../../JString.hpp"
+#include "../../JString.hpp"
 #include "../../java/util/Locale.hpp"
 #include "./Paint.hpp"
 
@@ -134,40 +138,40 @@ namespace android::graphics
 			"()F"
 		);
 	}
-	jint Paint::breakText(jstring arg0, jboolean arg1, jfloat arg2, jfloatArray arg3)
+	jint Paint::breakText(JString arg0, jboolean arg1, jfloat arg2, JFloatArray arg3)
 	{
 		return callMethod<jint>(
 			"breakText",
 			"(Ljava/lang/String;ZF[F)I",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
 			arg2,
-			arg3
+			arg3.object<jfloatArray>()
 		);
 	}
-	jint Paint::breakText(jcharArray arg0, jint arg1, jint arg2, jfloat arg3, jfloatArray arg4)
+	jint Paint::breakText(JCharArray arg0, jint arg1, jint arg2, jfloat arg3, JFloatArray arg4)
 	{
 		return callMethod<jint>(
 			"breakText",
 			"([CIIF[F)I",
-			arg0,
+			arg0.object<jcharArray>(),
 			arg1,
 			arg2,
 			arg3,
-			arg4
+			arg4.object<jfloatArray>()
 		);
 	}
-	jint Paint::breakText(jstring arg0, jint arg1, jint arg2, jboolean arg3, jfloat arg4, jfloatArray arg5)
+	jint Paint::breakText(JString arg0, jint arg1, jint arg2, jboolean arg3, jfloat arg4, JFloatArray arg5)
 	{
 		return callMethod<jint>(
 			"breakText",
 			"(Ljava/lang/CharSequence;IIZF[F)I",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
 			arg2,
 			arg3,
 			arg4,
-			arg5
+			arg5.object<jfloatArray>()
 		);
 	}
 	void Paint::clearShadowLayer()
@@ -229,12 +233,12 @@ namespace android::graphics
 			"()I"
 		);
 	}
-	jstring Paint::getFontFeatureSettings()
+	JString Paint::getFontFeatureSettings()
 	{
 		return callObjectMethod(
 			"getFontFeatureSettings",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::graphics::Paint_FontMetrics Paint::getFontMetrics()
 	{
@@ -273,12 +277,12 @@ namespace android::graphics
 			"()F"
 		);
 	}
-	jstring Paint::getFontVariationSettings()
+	JString Paint::getFontVariationSettings()
 	{
 		return callObjectMethod(
 			"getFontVariationSettings",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint Paint::getHinting()
 	{
@@ -301,12 +305,12 @@ namespace android::graphics
 			"()Landroid/graphics/MaskFilter;"
 		);
 	}
-	jint Paint::getOffsetForAdvance(jcharArray arg0, jint arg1, jint arg2, jint arg3, jint arg4, jboolean arg5, jfloat arg6)
+	jint Paint::getOffsetForAdvance(JCharArray arg0, jint arg1, jint arg2, jint arg3, jint arg4, jboolean arg5, jfloat arg6)
 	{
 		return callMethod<jint>(
 			"getOffsetForAdvance",
 			"([CIIIIZF)I",
-			arg0,
+			arg0.object<jcharArray>(),
 			arg1,
 			arg2,
 			arg3,
@@ -315,12 +319,12 @@ namespace android::graphics
 			arg6
 		);
 	}
-	jint Paint::getOffsetForAdvance(jstring arg0, jint arg1, jint arg2, jint arg3, jint arg4, jboolean arg5, jfloat arg6)
+	jint Paint::getOffsetForAdvance(JString arg0, jint arg1, jint arg2, jint arg3, jint arg4, jboolean arg5, jfloat arg6)
 	{
 		return callMethod<jint>(
 			"getOffsetForAdvance",
 			"(Ljava/lang/CharSequence;IIIIZF)I",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
 			arg2,
 			arg3,
@@ -336,12 +340,12 @@ namespace android::graphics
 			"()Landroid/graphics/PathEffect;"
 		);
 	}
-	jfloat Paint::getRunAdvance(jcharArray arg0, jint arg1, jint arg2, jint arg3, jint arg4, jboolean arg5, jint arg6)
+	jfloat Paint::getRunAdvance(JCharArray arg0, jint arg1, jint arg2, jint arg3, jint arg4, jboolean arg5, jint arg6)
 	{
 		return callMethod<jfloat>(
 			"getRunAdvance",
 			"([CIIIIZI)F",
-			arg0,
+			arg0.object<jcharArray>(),
 			arg1,
 			arg2,
 			arg3,
@@ -350,12 +354,12 @@ namespace android::graphics
 			arg6
 		);
 	}
-	jfloat Paint::getRunAdvance(jstring arg0, jint arg1, jint arg2, jint arg3, jint arg4, jboolean arg5, jint arg6)
+	jfloat Paint::getRunAdvance(JString arg0, jint arg1, jint arg2, jint arg3, jint arg4, jboolean arg5, jint arg6)
 	{
 		return callMethod<jfloat>(
 			"getRunAdvance",
 			"(Ljava/lang/CharSequence;IIIIZI)F",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
 			arg2,
 			arg3,
@@ -413,23 +417,23 @@ namespace android::graphics
 			"()Landroid/graphics/Paint$Align;"
 		);
 	}
-	void Paint::getTextBounds(jcharArray arg0, jint arg1, jint arg2, android::graphics::Rect arg3)
+	void Paint::getTextBounds(JCharArray arg0, jint arg1, jint arg2, android::graphics::Rect arg3)
 	{
 		callMethod<void>(
 			"getTextBounds",
 			"([CIILandroid/graphics/Rect;)V",
-			arg0,
+			arg0.object<jcharArray>(),
 			arg1,
 			arg2,
 			arg3.object()
 		);
 	}
-	void Paint::getTextBounds(jstring arg0, jint arg1, jint arg2, android::graphics::Rect arg3)
+	void Paint::getTextBounds(JString arg0, jint arg1, jint arg2, android::graphics::Rect arg3)
 	{
 		callMethod<void>(
 			"getTextBounds",
 			"(Ljava/lang/String;IILandroid/graphics/Rect;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
 			arg2,
 			arg3.object()
@@ -449,12 +453,12 @@ namespace android::graphics
 			"()Landroid/os/LocaleList;"
 		);
 	}
-	void Paint::getTextPath(jcharArray arg0, jint arg1, jint arg2, jfloat arg3, jfloat arg4, android::graphics::Path arg5)
+	void Paint::getTextPath(JCharArray arg0, jint arg1, jint arg2, jfloat arg3, jfloat arg4, android::graphics::Path arg5)
 	{
 		callMethod<void>(
 			"getTextPath",
 			"([CIIFFLandroid/graphics/Path;)V",
-			arg0,
+			arg0.object<jcharArray>(),
 			arg1,
 			arg2,
 			arg3,
@@ -462,12 +466,12 @@ namespace android::graphics
 			arg5.object()
 		);
 	}
-	void Paint::getTextPath(jstring arg0, jint arg1, jint arg2, jfloat arg3, jfloat arg4, android::graphics::Path arg5)
+	void Paint::getTextPath(JString arg0, jint arg1, jint arg2, jfloat arg3, jfloat arg4, android::graphics::Path arg5)
 	{
 		callMethod<void>(
 			"getTextPath",
 			"(Ljava/lang/String;IIFFLandroid/graphics/Path;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
 			arg2,
 			arg3,
@@ -496,35 +500,35 @@ namespace android::graphics
 			"()F"
 		);
 	}
-	jint Paint::getTextWidths(jstring arg0, jfloatArray arg1)
+	jint Paint::getTextWidths(JString arg0, JFloatArray arg1)
 	{
 		return callMethod<jint>(
 			"getTextWidths",
 			"(Ljava/lang/String;[F)I",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jfloatArray>()
 		);
 	}
-	jint Paint::getTextWidths(jcharArray arg0, jint arg1, jint arg2, jfloatArray arg3)
+	jint Paint::getTextWidths(JCharArray arg0, jint arg1, jint arg2, JFloatArray arg3)
 	{
 		return callMethod<jint>(
 			"getTextWidths",
 			"([CII[F)I",
-			arg0,
+			arg0.object<jcharArray>(),
 			arg1,
 			arg2,
-			arg3
+			arg3.object<jfloatArray>()
 		);
 	}
-	jint Paint::getTextWidths(jstring arg0, jint arg1, jint arg2, jfloatArray arg3)
+	jint Paint::getTextWidths(JString arg0, jint arg1, jint arg2, JFloatArray arg3)
 	{
 		return callMethod<jint>(
 			"getTextWidths",
 			"(Ljava/lang/CharSequence;II[F)I",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
 			arg2,
-			arg3
+			arg3.object<jfloatArray>()
 		);
 	}
 	android::graphics::Typeface Paint::getTypeface()
@@ -541,12 +545,12 @@ namespace android::graphics
 			"()Landroid/graphics/Xfermode;"
 		);
 	}
-	jboolean Paint::hasGlyph(jstring arg0)
+	jboolean Paint::hasGlyph(JString arg0)
 	{
 		return callMethod<jboolean>(
 			"hasGlyph",
 			"(Ljava/lang/String;)Z",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	jboolean Paint::isAntiAlias()
@@ -612,30 +616,30 @@ namespace android::graphics
 			"()Z"
 		);
 	}
-	jfloat Paint::measureText(jstring arg0)
+	jfloat Paint::measureText(JString arg0)
 	{
 		return callMethod<jfloat>(
 			"measureText",
 			"(Ljava/lang/String;)F",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jfloat Paint::measureText(jcharArray arg0, jint arg1, jint arg2)
+	jfloat Paint::measureText(JCharArray arg0, jint arg1, jint arg2)
 	{
 		return callMethod<jfloat>(
 			"measureText",
 			"([CII)F",
-			arg0,
+			arg0.object<jcharArray>(),
 			arg1,
 			arg2
 		);
 	}
-	jfloat Paint::measureText(jstring arg0, jint arg1, jint arg2)
+	jfloat Paint::measureText(JString arg0, jint arg1, jint arg2)
 	{
 		return callMethod<jfloat>(
 			"measureText",
 			"(Ljava/lang/CharSequence;II)F",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
 			arg2
 		);
@@ -738,20 +742,20 @@ namespace android::graphics
 			arg0
 		);
 	}
-	void Paint::setFontFeatureSettings(jstring arg0)
+	void Paint::setFontFeatureSettings(JString arg0)
 	{
 		callMethod<void>(
 			"setFontFeatureSettings",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jboolean Paint::setFontVariationSettings(jstring arg0)
+	jboolean Paint::setFontVariationSettings(JString arg0)
 	{
 		return callMethod<jboolean>(
 			"setFontVariationSettings",
 			"(Ljava/lang/String;)Z",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void Paint::setHinting(jint arg0)

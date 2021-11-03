@@ -1,9 +1,8 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "../../../java/lang/Exception.hpp"
 #include "../../../java/lang/RuntimeException.hpp"
 
+class JString;
 
 namespace android::icu::util
 {
@@ -18,8 +17,8 @@ namespace android::icu::util
 		
 		// Constructors
 		IllformedLocaleException();
-		IllformedLocaleException(jstring arg0);
-		IllformedLocaleException(jstring arg0, jint arg1);
+		IllformedLocaleException(JString arg0);
+		IllformedLocaleException(JString arg0, jint arg1);
 		
 		// Methods
 		jint getErrorIndex();

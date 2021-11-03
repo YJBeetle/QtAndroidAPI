@@ -2,10 +2,13 @@
 
 #include "../../JObject.hpp"
 
+class JFloatArray;
 namespace android::os
 {
 	class Parcel;
 }
+class JObject;
+class JString;
 
 namespace android::media
 {
@@ -32,13 +35,13 @@ namespace android::media
 		// Methods
 		static jint getMaximumCurvePoints();
 		jint describeContents();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jlong getDuration();
 		jint getInterpolatorType();
-		jfloatArray getTimes();
-		jfloatArray getVolumes();
+		JFloatArray getTimes();
+		JFloatArray getVolumes();
 		jint hashCode();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::media

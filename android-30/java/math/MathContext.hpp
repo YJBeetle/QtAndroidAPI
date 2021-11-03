@@ -6,6 +6,8 @@ namespace java::io
 {
 	class ObjectInputStream;
 }
+class JObject;
+class JString;
 namespace java::math
 {
 	class RoundingMode;
@@ -28,15 +30,15 @@ namespace java::math
 		
 		// Constructors
 		MathContext(jint arg0);
-		MathContext(jstring arg0);
+		MathContext(JString arg0);
 		MathContext(jint arg0, java::math::RoundingMode arg1);
 		
 		// Methods
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint getPrecision();
 		java::math::RoundingMode getRoundingMode();
 		jint hashCode();
-		jstring toString();
+		JString toString();
 	};
 } // namespace java::math
 

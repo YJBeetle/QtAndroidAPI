@@ -1,5 +1,7 @@
 #include "../graphics/Insets.hpp"
 #include "../graphics/Rect.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./DisplayCutout.hpp"
 
 namespace android::view
@@ -40,12 +42,12 @@ namespace android::view
 		) {}
 	
 	// Methods
-	jboolean DisplayCutout::equals(jobject arg0)
+	jboolean DisplayCutout::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	android::graphics::Rect DisplayCutout::getBoundingRectBottom()
@@ -125,12 +127,12 @@ namespace android::view
 			"()I"
 		);
 	}
-	jstring DisplayCutout::toString()
+	JString DisplayCutout::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::view
 

@@ -6,6 +6,9 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
+class JObject;
+class JString;
 
 namespace android::app
 {
@@ -20,20 +23,20 @@ namespace android::app
 		NotificationChannelGroup(QJniObject obj);
 		
 		// Constructors
-		NotificationChannelGroup(jstring arg0, jstring arg1);
+		NotificationChannelGroup(JString arg0, JString arg1);
 		
 		// Methods
 		android::app::NotificationChannelGroup clone();
 		jint describeContents();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		JObject getChannels();
-		jstring getDescription();
-		jstring getId();
-		jstring getName();
+		JString getDescription();
+		JString getId();
+		JString getName();
 		jint hashCode();
 		jboolean isBlocked();
-		void setDescription(jstring arg0);
-		jstring toString();
+		void setDescription(JString arg0);
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::app

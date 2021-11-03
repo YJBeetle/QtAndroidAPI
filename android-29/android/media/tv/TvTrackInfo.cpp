@@ -1,5 +1,8 @@
 #include "../../os/Bundle.hpp"
 #include "../../os/Parcel.hpp"
+#include "../../../JString.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./TvTrackInfo.hpp"
 
 namespace android::media::tv
@@ -48,12 +51,12 @@ namespace android::media::tv
 			"()I"
 		);
 	}
-	jboolean TvTrackInfo::equals(jobject arg0)
+	jboolean TvTrackInfo::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint TvTrackInfo::getAudioChannelCount()
@@ -70,12 +73,12 @@ namespace android::media::tv
 			"()I"
 		);
 	}
-	jstring TvTrackInfo::getDescription()
+	JString TvTrackInfo::getDescription()
 	{
 		return callObjectMethod(
 			"getDescription",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	android::os::Bundle TvTrackInfo::getExtra()
 	{
@@ -84,19 +87,19 @@ namespace android::media::tv
 			"()Landroid/os/Bundle;"
 		);
 	}
-	jstring TvTrackInfo::getId()
+	JString TvTrackInfo::getId()
 	{
 		return callObjectMethod(
 			"getId",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TvTrackInfo::getLanguage()
+	JString TvTrackInfo::getLanguage()
 	{
 		return callObjectMethod(
 			"getLanguage",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint TvTrackInfo::getType()
 	{

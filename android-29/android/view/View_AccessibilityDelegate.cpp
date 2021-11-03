@@ -4,6 +4,7 @@
 #include "./accessibility/AccessibilityEvent.hpp"
 #include "./accessibility/AccessibilityNodeInfo.hpp"
 #include "./accessibility/AccessibilityNodeProvider.hpp"
+#include "../../JString.hpp"
 #include "./View_AccessibilityDelegate.hpp"
 
 namespace android::view
@@ -21,14 +22,14 @@ namespace android::view
 		) {}
 	
 	// Methods
-	void View_AccessibilityDelegate::addExtraDataToAccessibilityNodeInfo(android::view::View arg0, android::view::accessibility::AccessibilityNodeInfo arg1, jstring arg2, android::os::Bundle arg3)
+	void View_AccessibilityDelegate::addExtraDataToAccessibilityNodeInfo(android::view::View arg0, android::view::accessibility::AccessibilityNodeInfo arg1, JString arg2, android::os::Bundle arg3)
 	{
 		callMethod<void>(
 			"addExtraDataToAccessibilityNodeInfo",
 			"(Landroid/view/View;Landroid/view/accessibility/AccessibilityNodeInfo;Ljava/lang/String;Landroid/os/Bundle;)V",
 			arg0.object(),
 			arg1.object(),
-			arg2,
+			arg2.object<jstring>(),
 			arg3.object()
 		);
 	}

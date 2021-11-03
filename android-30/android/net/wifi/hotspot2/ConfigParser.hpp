@@ -2,10 +2,12 @@
 
 #include "../../../../JObject.hpp"
 
+class JByteArray;
 namespace android::net::wifi::hotspot2
 {
 	class PasspointConfiguration;
 }
+class JString;
 
 namespace android::net::wifi::hotspot2
 {
@@ -21,7 +23,7 @@ namespace android::net::wifi::hotspot2
 		// Constructors
 		
 		// Methods
-		static android::net::wifi::hotspot2::PasspointConfiguration parsePasspointConfig(jstring arg0, jbyteArray arg1);
+		static android::net::wifi::hotspot2::PasspointConfiguration parsePasspointConfig(JString arg0, JByteArray arg1);
 	};
 } // namespace android::net::wifi::hotspot2
 

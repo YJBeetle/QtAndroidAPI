@@ -1,3 +1,4 @@
+#include "../../JClass.hpp"
 #include "./SecretKeyFactorySpi.hpp"
 
 namespace javax::crypto

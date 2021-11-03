@@ -1,3 +1,5 @@
+#include "../../JByteArray.hpp"
+#include "../../JString.hpp"
 #include "../../java/nio/ByteBuffer.hpp"
 #include "../../java/security/AlgorithmParameters.hpp"
 #include "../../java/security/SecureRandom.hpp"

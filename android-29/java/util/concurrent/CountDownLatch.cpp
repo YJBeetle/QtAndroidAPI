@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./TimeUnit.hpp"
 #include "./CountDownLatch.hpp"
 
@@ -47,12 +48,12 @@ namespace java::util::concurrent
 			"()J"
 		);
 	}
-	jstring CountDownLatch::toString()
+	JString CountDownLatch::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::util::concurrent
 

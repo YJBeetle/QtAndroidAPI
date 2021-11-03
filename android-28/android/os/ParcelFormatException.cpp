@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./ParcelFormatException.hpp"
 
 namespace android::os
@@ -13,11 +14,11 @@ namespace android::os
 			"android.os.ParcelFormatException",
 			"()V"
 		) {}
-	ParcelFormatException::ParcelFormatException(jstring arg0)
+	ParcelFormatException::ParcelFormatException(JString arg0)
 		: java::lang::RuntimeException(
 			"android.os.ParcelFormatException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

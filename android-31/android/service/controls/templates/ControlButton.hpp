@@ -6,6 +6,7 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
 
 namespace android::service::controls::templates
 {
@@ -20,11 +21,11 @@ namespace android::service::controls::templates
 		ControlButton(QJniObject obj);
 		
 		// Constructors
-		ControlButton(jboolean arg0, jstring arg1);
+		ControlButton(jboolean arg0, JString arg1);
 		
 		// Methods
 		jint describeContents();
-		jstring getActionDescription();
+		JString getActionDescription();
 		jboolean isChecked();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};

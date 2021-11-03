@@ -2,7 +2,6 @@
 
 #include "../../../JObject.hpp"
 
-
 namespace android::telephony::ims
 {
 	class RcsUceAdapter : public JObject

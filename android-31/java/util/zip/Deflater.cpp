@@ -1,3 +1,4 @@
+#include "../../../JByteArray.hpp"
 #include "../../nio/ByteBuffer.hpp"
 #include "./Deflater.hpp"
 
@@ -106,12 +107,12 @@ namespace java::util::zip
 		) {}
 	
 	// Methods
-	jint Deflater::deflate(jbyteArray arg0)
+	jint Deflater::deflate(JByteArray arg0)
 	{
 		return callMethod<jint>(
 			"deflate",
 			"([B)I",
-			arg0
+			arg0.object<jbyteArray>()
 		);
 	}
 	jint Deflater::deflate(java::nio::ByteBuffer arg0)
@@ -131,22 +132,22 @@ namespace java::util::zip
 			arg1
 		);
 	}
-	jint Deflater::deflate(jbyteArray arg0, jint arg1, jint arg2)
+	jint Deflater::deflate(JByteArray arg0, jint arg1, jint arg2)
 	{
 		return callMethod<jint>(
 			"deflate",
 			"([BII)I",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1,
 			arg2
 		);
 	}
-	jint Deflater::deflate(jbyteArray arg0, jint arg1, jint arg2, jint arg3)
+	jint Deflater::deflate(JByteArray arg0, jint arg1, jint arg2, jint arg3)
 	{
 		return callMethod<jint>(
 			"deflate",
 			"([BIII)I",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1,
 			arg2,
 			arg3
@@ -222,12 +223,12 @@ namespace java::util::zip
 			"()V"
 		);
 	}
-	void Deflater::setDictionary(jbyteArray arg0)
+	void Deflater::setDictionary(JByteArray arg0)
 	{
 		callMethod<void>(
 			"setDictionary",
 			"([B)V",
-			arg0
+			arg0.object<jbyteArray>()
 		);
 	}
 	void Deflater::setDictionary(java::nio::ByteBuffer arg0)
@@ -238,22 +239,22 @@ namespace java::util::zip
 			arg0.object()
 		);
 	}
-	void Deflater::setDictionary(jbyteArray arg0, jint arg1, jint arg2)
+	void Deflater::setDictionary(JByteArray arg0, jint arg1, jint arg2)
 	{
 		callMethod<void>(
 			"setDictionary",
 			"([BII)V",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1,
 			arg2
 		);
 	}
-	void Deflater::setInput(jbyteArray arg0)
+	void Deflater::setInput(JByteArray arg0)
 	{
 		callMethod<void>(
 			"setInput",
 			"([B)V",
-			arg0
+			arg0.object<jbyteArray>()
 		);
 	}
 	void Deflater::setInput(java::nio::ByteBuffer arg0)
@@ -264,12 +265,12 @@ namespace java::util::zip
 			arg0.object()
 		);
 	}
-	void Deflater::setInput(jbyteArray arg0, jint arg1, jint arg2)
+	void Deflater::setInput(JByteArray arg0, jint arg1, jint arg2)
 	{
 		callMethod<void>(
 			"setInput",
 			"([BII)V",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1,
 			arg2
 		);

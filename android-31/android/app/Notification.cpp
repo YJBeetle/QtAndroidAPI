@@ -1,3 +1,5 @@
+#include "../../JLongArray.hpp"
+#include "../../JArray.hpp"
 #include "./Notification_BubbleMetadata.hpp"
 #include "./PendingIntent.hpp"
 #include "../content/LocusId.hpp"
@@ -9,6 +11,9 @@
 #include "../os/Parcel.hpp"
 #include "../util/Pair.hpp"
 #include "../widget/RemoteViews.hpp"
+#include "../../JString.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./Notification.hpp"
 
 namespace android::app
@@ -43,165 +48,165 @@ namespace android::app
 			"BADGE_ICON_SMALL"
 		);
 	}
-	jstring Notification::CATEGORY_ALARM()
+	JString Notification::CATEGORY_ALARM()
 	{
 		return getStaticObjectField(
 			"android.app.Notification",
 			"CATEGORY_ALARM",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Notification::CATEGORY_CALL()
+	JString Notification::CATEGORY_CALL()
 	{
 		return getStaticObjectField(
 			"android.app.Notification",
 			"CATEGORY_CALL",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Notification::CATEGORY_EMAIL()
+	JString Notification::CATEGORY_EMAIL()
 	{
 		return getStaticObjectField(
 			"android.app.Notification",
 			"CATEGORY_EMAIL",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Notification::CATEGORY_ERROR()
+	JString Notification::CATEGORY_ERROR()
 	{
 		return getStaticObjectField(
 			"android.app.Notification",
 			"CATEGORY_ERROR",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Notification::CATEGORY_EVENT()
+	JString Notification::CATEGORY_EVENT()
 	{
 		return getStaticObjectField(
 			"android.app.Notification",
 			"CATEGORY_EVENT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Notification::CATEGORY_LOCATION_SHARING()
+	JString Notification::CATEGORY_LOCATION_SHARING()
 	{
 		return getStaticObjectField(
 			"android.app.Notification",
 			"CATEGORY_LOCATION_SHARING",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Notification::CATEGORY_MESSAGE()
+	JString Notification::CATEGORY_MESSAGE()
 	{
 		return getStaticObjectField(
 			"android.app.Notification",
 			"CATEGORY_MESSAGE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Notification::CATEGORY_MISSED_CALL()
+	JString Notification::CATEGORY_MISSED_CALL()
 	{
 		return getStaticObjectField(
 			"android.app.Notification",
 			"CATEGORY_MISSED_CALL",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Notification::CATEGORY_NAVIGATION()
+	JString Notification::CATEGORY_NAVIGATION()
 	{
 		return getStaticObjectField(
 			"android.app.Notification",
 			"CATEGORY_NAVIGATION",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Notification::CATEGORY_PROGRESS()
+	JString Notification::CATEGORY_PROGRESS()
 	{
 		return getStaticObjectField(
 			"android.app.Notification",
 			"CATEGORY_PROGRESS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Notification::CATEGORY_PROMO()
+	JString Notification::CATEGORY_PROMO()
 	{
 		return getStaticObjectField(
 			"android.app.Notification",
 			"CATEGORY_PROMO",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Notification::CATEGORY_RECOMMENDATION()
+	JString Notification::CATEGORY_RECOMMENDATION()
 	{
 		return getStaticObjectField(
 			"android.app.Notification",
 			"CATEGORY_RECOMMENDATION",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Notification::CATEGORY_REMINDER()
+	JString Notification::CATEGORY_REMINDER()
 	{
 		return getStaticObjectField(
 			"android.app.Notification",
 			"CATEGORY_REMINDER",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Notification::CATEGORY_SERVICE()
+	JString Notification::CATEGORY_SERVICE()
 	{
 		return getStaticObjectField(
 			"android.app.Notification",
 			"CATEGORY_SERVICE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Notification::CATEGORY_SOCIAL()
+	JString Notification::CATEGORY_SOCIAL()
 	{
 		return getStaticObjectField(
 			"android.app.Notification",
 			"CATEGORY_SOCIAL",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Notification::CATEGORY_STATUS()
+	JString Notification::CATEGORY_STATUS()
 	{
 		return getStaticObjectField(
 			"android.app.Notification",
 			"CATEGORY_STATUS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Notification::CATEGORY_STOPWATCH()
+	JString Notification::CATEGORY_STOPWATCH()
 	{
 		return getStaticObjectField(
 			"android.app.Notification",
 			"CATEGORY_STOPWATCH",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Notification::CATEGORY_SYSTEM()
+	JString Notification::CATEGORY_SYSTEM()
 	{
 		return getStaticObjectField(
 			"android.app.Notification",
 			"CATEGORY_SYSTEM",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Notification::CATEGORY_TRANSPORT()
+	JString Notification::CATEGORY_TRANSPORT()
 	{
 		return getStaticObjectField(
 			"android.app.Notification",
 			"CATEGORY_TRANSPORT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Notification::CATEGORY_WORKOUT()
+	JString Notification::CATEGORY_WORKOUT()
 	{
 		return getStaticObjectField(
 			"android.app.Notification",
 			"CATEGORY_WORKOUT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint Notification::COLOR_DEFAULT()
 	{
@@ -246,405 +251,405 @@ namespace android::app
 			"DEFAULT_VIBRATE"
 		);
 	}
-	jstring Notification::EXTRA_ANSWER_COLOR()
+	JString Notification::EXTRA_ANSWER_COLOR()
 	{
 		return getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_ANSWER_COLOR",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Notification::EXTRA_ANSWER_INTENT()
+	JString Notification::EXTRA_ANSWER_INTENT()
 	{
 		return getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_ANSWER_INTENT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Notification::EXTRA_AUDIO_CONTENTS_URI()
+	JString Notification::EXTRA_AUDIO_CONTENTS_URI()
 	{
 		return getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_AUDIO_CONTENTS_URI",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Notification::EXTRA_BACKGROUND_IMAGE_URI()
+	JString Notification::EXTRA_BACKGROUND_IMAGE_URI()
 	{
 		return getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_BACKGROUND_IMAGE_URI",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Notification::EXTRA_BIG_TEXT()
+	JString Notification::EXTRA_BIG_TEXT()
 	{
 		return getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_BIG_TEXT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Notification::EXTRA_CALL_IS_VIDEO()
+	JString Notification::EXTRA_CALL_IS_VIDEO()
 	{
 		return getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_CALL_IS_VIDEO",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Notification::EXTRA_CALL_PERSON()
+	JString Notification::EXTRA_CALL_PERSON()
 	{
 		return getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_CALL_PERSON",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Notification::EXTRA_CHANNEL_GROUP_ID()
+	JString Notification::EXTRA_CHANNEL_GROUP_ID()
 	{
 		return getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_CHANNEL_GROUP_ID",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Notification::EXTRA_CHANNEL_ID()
+	JString Notification::EXTRA_CHANNEL_ID()
 	{
 		return getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_CHANNEL_ID",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Notification::EXTRA_CHRONOMETER_COUNT_DOWN()
+	JString Notification::EXTRA_CHRONOMETER_COUNT_DOWN()
 	{
 		return getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_CHRONOMETER_COUNT_DOWN",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Notification::EXTRA_COLORIZED()
+	JString Notification::EXTRA_COLORIZED()
 	{
 		return getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_COLORIZED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Notification::EXTRA_COMPACT_ACTIONS()
+	JString Notification::EXTRA_COMPACT_ACTIONS()
 	{
 		return getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_COMPACT_ACTIONS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Notification::EXTRA_CONVERSATION_TITLE()
+	JString Notification::EXTRA_CONVERSATION_TITLE()
 	{
 		return getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_CONVERSATION_TITLE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Notification::EXTRA_DECLINE_COLOR()
+	JString Notification::EXTRA_DECLINE_COLOR()
 	{
 		return getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_DECLINE_COLOR",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Notification::EXTRA_DECLINE_INTENT()
+	JString Notification::EXTRA_DECLINE_INTENT()
 	{
 		return getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_DECLINE_INTENT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Notification::EXTRA_HANG_UP_INTENT()
+	JString Notification::EXTRA_HANG_UP_INTENT()
 	{
 		return getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_HANG_UP_INTENT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Notification::EXTRA_HISTORIC_MESSAGES()
+	JString Notification::EXTRA_HISTORIC_MESSAGES()
 	{
 		return getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_HISTORIC_MESSAGES",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Notification::EXTRA_INFO_TEXT()
+	JString Notification::EXTRA_INFO_TEXT()
 	{
 		return getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_INFO_TEXT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Notification::EXTRA_IS_GROUP_CONVERSATION()
+	JString Notification::EXTRA_IS_GROUP_CONVERSATION()
 	{
 		return getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_IS_GROUP_CONVERSATION",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Notification::EXTRA_LARGE_ICON()
+	JString Notification::EXTRA_LARGE_ICON()
 	{
 		return getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_LARGE_ICON",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Notification::EXTRA_LARGE_ICON_BIG()
+	JString Notification::EXTRA_LARGE_ICON_BIG()
 	{
 		return getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_LARGE_ICON_BIG",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Notification::EXTRA_MEDIA_SESSION()
+	JString Notification::EXTRA_MEDIA_SESSION()
 	{
 		return getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_MEDIA_SESSION",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Notification::EXTRA_MESSAGES()
+	JString Notification::EXTRA_MESSAGES()
 	{
 		return getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_MESSAGES",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Notification::EXTRA_MESSAGING_PERSON()
+	JString Notification::EXTRA_MESSAGING_PERSON()
 	{
 		return getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_MESSAGING_PERSON",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Notification::EXTRA_NOTIFICATION_ID()
+	JString Notification::EXTRA_NOTIFICATION_ID()
 	{
 		return getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_NOTIFICATION_ID",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Notification::EXTRA_NOTIFICATION_TAG()
+	JString Notification::EXTRA_NOTIFICATION_TAG()
 	{
 		return getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_NOTIFICATION_TAG",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Notification::EXTRA_PEOPLE()
+	JString Notification::EXTRA_PEOPLE()
 	{
 		return getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_PEOPLE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Notification::EXTRA_PEOPLE_LIST()
+	JString Notification::EXTRA_PEOPLE_LIST()
 	{
 		return getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_PEOPLE_LIST",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Notification::EXTRA_PICTURE()
+	JString Notification::EXTRA_PICTURE()
 	{
 		return getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_PICTURE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Notification::EXTRA_PICTURE_CONTENT_DESCRIPTION()
+	JString Notification::EXTRA_PICTURE_CONTENT_DESCRIPTION()
 	{
 		return getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_PICTURE_CONTENT_DESCRIPTION",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Notification::EXTRA_PICTURE_ICON()
+	JString Notification::EXTRA_PICTURE_ICON()
 	{
 		return getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_PICTURE_ICON",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Notification::EXTRA_PROGRESS()
+	JString Notification::EXTRA_PROGRESS()
 	{
 		return getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_PROGRESS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Notification::EXTRA_PROGRESS_INDETERMINATE()
+	JString Notification::EXTRA_PROGRESS_INDETERMINATE()
 	{
 		return getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_PROGRESS_INDETERMINATE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Notification::EXTRA_PROGRESS_MAX()
+	JString Notification::EXTRA_PROGRESS_MAX()
 	{
 		return getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_PROGRESS_MAX",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Notification::EXTRA_REMOTE_INPUT_DRAFT()
+	JString Notification::EXTRA_REMOTE_INPUT_DRAFT()
 	{
 		return getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_REMOTE_INPUT_DRAFT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Notification::EXTRA_REMOTE_INPUT_HISTORY()
+	JString Notification::EXTRA_REMOTE_INPUT_HISTORY()
 	{
 		return getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_REMOTE_INPUT_HISTORY",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Notification::EXTRA_SELF_DISPLAY_NAME()
+	JString Notification::EXTRA_SELF_DISPLAY_NAME()
 	{
 		return getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_SELF_DISPLAY_NAME",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Notification::EXTRA_SHOW_BIG_PICTURE_WHEN_COLLAPSED()
+	JString Notification::EXTRA_SHOW_BIG_PICTURE_WHEN_COLLAPSED()
 	{
 		return getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_SHOW_BIG_PICTURE_WHEN_COLLAPSED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Notification::EXTRA_SHOW_CHRONOMETER()
+	JString Notification::EXTRA_SHOW_CHRONOMETER()
 	{
 		return getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_SHOW_CHRONOMETER",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Notification::EXTRA_SHOW_WHEN()
+	JString Notification::EXTRA_SHOW_WHEN()
 	{
 		return getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_SHOW_WHEN",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Notification::EXTRA_SMALL_ICON()
+	JString Notification::EXTRA_SMALL_ICON()
 	{
 		return getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_SMALL_ICON",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Notification::EXTRA_SUB_TEXT()
+	JString Notification::EXTRA_SUB_TEXT()
 	{
 		return getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_SUB_TEXT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Notification::EXTRA_SUMMARY_TEXT()
+	JString Notification::EXTRA_SUMMARY_TEXT()
 	{
 		return getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_SUMMARY_TEXT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Notification::EXTRA_TEMPLATE()
+	JString Notification::EXTRA_TEMPLATE()
 	{
 		return getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_TEMPLATE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Notification::EXTRA_TEXT()
+	JString Notification::EXTRA_TEXT()
 	{
 		return getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_TEXT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Notification::EXTRA_TEXT_LINES()
+	JString Notification::EXTRA_TEXT_LINES()
 	{
 		return getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_TEXT_LINES",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Notification::EXTRA_TITLE()
+	JString Notification::EXTRA_TITLE()
 	{
 		return getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_TITLE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Notification::EXTRA_TITLE_BIG()
+	JString Notification::EXTRA_TITLE_BIG()
 	{
 		return getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_TITLE_BIG",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Notification::EXTRA_VERIFICATION_ICON()
+	JString Notification::EXTRA_VERIFICATION_ICON()
 	{
 		return getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_VERIFICATION_ICON",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Notification::EXTRA_VERIFICATION_TEXT()
+	JString Notification::EXTRA_VERIFICATION_TEXT()
 	{
 		return getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_VERIFICATION_TEXT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint Notification::FLAG_AUTO_CANCEL()
 	{
@@ -765,13 +770,13 @@ namespace android::app
 			"GROUP_ALERT_SUMMARY"
 		);
 	}
-	jstring Notification::INTENT_CATEGORY_NOTIFICATION_PREFERENCES()
+	JString Notification::INTENT_CATEGORY_NOTIFICATION_PREFERENCES()
 	{
 		return getStaticObjectField(
 			"android.app.Notification",
 			"INTENT_CATEGORY_NOTIFICATION_PREFERENCES",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint Notification::PRIORITY_DEFAULT()
 	{
@@ -836,12 +841,12 @@ namespace android::app
 			"VISIBILITY_SECRET"
 		);
 	}
-	jarray Notification::actions()
+	JArray Notification::actions()
 	{
 		return getObjectField(
 			"actions",
 			"[Landroid/app/Notification$Action;"
-		).object<jarray>();
+		);
 	}
 	android::media::AudioAttributes Notification::audioAttributes()
 	{
@@ -863,12 +868,12 @@ namespace android::app
 			"Landroid/widget/RemoteViews;"
 		);
 	}
-	jstring Notification::category()
+	JString Notification::category()
 	{
 		return getObjectField(
 			"category",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint Notification::color()
 	{
@@ -993,12 +998,12 @@ namespace android::app
 			"Landroid/net/Uri;"
 		);
 	}
-	jstring Notification::tickerText()
+	JString Notification::tickerText()
 	{
 		return getObjectField(
 			"tickerText",
 			"Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	android::widget::RemoteViews Notification::tickerView()
 	{
@@ -1007,12 +1012,12 @@ namespace android::app
 			"Landroid/widget/RemoteViews;"
 		);
 	}
-	jlongArray Notification::vibrate()
+	JLongArray Notification::vibrate()
 	{
 		return getObjectField(
 			"vibrate",
 			"[J"
-		).object<jlongArray>();
+		);
 	}
 	jint Notification::visibility()
 	{
@@ -1042,12 +1047,12 @@ namespace android::app
 			"(Landroid/os/Parcel;)V",
 			arg0.object()
 		) {}
-	Notification::Notification(jint arg0, jstring arg1, jlong arg2)
+	Notification::Notification(jint arg0, JString arg1, jlong arg2)
 		: JObject(
 			"android.app.Notification",
 			"(ILjava/lang/CharSequence;J)V",
 			arg0,
-			arg1,
+			arg1.object<jstring>(),
 			arg2
 		) {}
 	
@@ -1095,12 +1100,12 @@ namespace android::app
 			"()Landroid/app/Notification$BubbleMetadata;"
 		);
 	}
-	jstring Notification::getChannelId()
+	JString Notification::getChannelId()
 	{
 		return callObjectMethod(
 			"getChannelId",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	JObject Notification::getContextualActions()
 	{
@@ -1109,12 +1114,12 @@ namespace android::app
 			"()Ljava/util/List;"
 		);
 	}
-	jstring Notification::getGroup()
+	JString Notification::getGroup()
 	{
 		return callObjectMethod(
 			"getGroup",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint Notification::getGroupAlertBehavior()
 	{
@@ -1137,19 +1142,19 @@ namespace android::app
 			"()Landroid/content/LocusId;"
 		);
 	}
-	jstring Notification::getSettingsText()
+	JString Notification::getSettingsText()
 	{
 		return callObjectMethod(
 			"getSettingsText",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
-	jstring Notification::getShortcutId()
+	JString Notification::getShortcutId()
 	{
 		return callObjectMethod(
 			"getShortcutId",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::graphics::drawable::Icon Notification::getSmallIcon()
 	{
@@ -1158,12 +1163,12 @@ namespace android::app
 			"()Landroid/graphics/drawable/Icon;"
 		);
 	}
-	jstring Notification::getSortKey()
+	JString Notification::getSortKey()
 	{
 		return callObjectMethod(
 			"getSortKey",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jlong Notification::getTimeoutAfter()
 	{
@@ -1179,12 +1184,12 @@ namespace android::app
 			"()Z"
 		);
 	}
-	jstring Notification::toString()
+	JString Notification::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void Notification::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

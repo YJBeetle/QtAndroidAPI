@@ -1,4 +1,7 @@
 #include "../os/Parcel.hpp"
+#include "../../JClass.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./SignalStrength.hpp"
 
 namespace android::telephony
@@ -39,12 +42,12 @@ namespace android::telephony
 			"()I"
 		);
 	}
-	jboolean SignalStrength::equals(jobject arg0)
+	jboolean SignalStrength::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint SignalStrength::getCdmaDbm()
@@ -68,12 +71,12 @@ namespace android::telephony
 			"()Ljava/util/List;"
 		);
 	}
-	JObject SignalStrength::getCellSignalStrengths(jclass arg0)
+	JObject SignalStrength::getCellSignalStrengths(JClass arg0)
 	{
 		return callObjectMethod(
 			"getCellSignalStrengths",
 			"(Ljava/lang/Class;)Ljava/util/List;",
-			arg0
+			arg0.object<jclass>()
 		);
 	}
 	jint SignalStrength::getEvdoDbm()
@@ -139,12 +142,12 @@ namespace android::telephony
 			"()Z"
 		);
 	}
-	jstring SignalStrength::toString()
+	JString SignalStrength::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void SignalStrength::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

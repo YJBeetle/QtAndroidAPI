@@ -2,7 +2,6 @@
 
 #include "../../JObject.hpp"
 
-
 namespace android::widget
 {
 	class GridLayout_Alignment : public JObject

@@ -10,6 +10,8 @@ namespace android::net
 {
 	class Uri;
 }
+class JString;
+class JString;
 
 namespace android::provider
 {
@@ -18,17 +20,17 @@ namespace android::provider
 	public:
 		// Fields
 		static android::net::Uri CONTENT_FILTER_URI();
-		static jstring CONTENT_ITEM_TYPE();
-		static jstring CONTENT_TYPE();
+		static JString CONTENT_ITEM_TYPE();
+		static JString CONTENT_TYPE();
 		static android::net::Uri CONTENT_URI();
 		static android::net::Uri ENTERPRISE_CONTENT_FILTER_URI();
-		static jstring EXTRA_ADDRESS_BOOK_INDEX();
-		static jstring EXTRA_ADDRESS_BOOK_INDEX_COUNTS();
-		static jstring EXTRA_ADDRESS_BOOK_INDEX_TITLES();
-		static jstring NORMALIZED_NUMBER();
-		static jstring NUMBER();
-		static jstring SEARCH_DISPLAY_NAME_KEY();
-		static jstring SEARCH_PHONE_NUMBER_KEY();
+		static JString EXTRA_ADDRESS_BOOK_INDEX();
+		static JString EXTRA_ADDRESS_BOOK_INDEX_COUNTS();
+		static JString EXTRA_ADDRESS_BOOK_INDEX_TITLES();
+		static JString NORMALIZED_NUMBER();
+		static JString NUMBER();
+		static JString SEARCH_DISPLAY_NAME_KEY();
+		static JString SEARCH_PHONE_NUMBER_KEY();
 		static jint TYPE_ASSISTANT();
 		static jint TYPE_CALLBACK();
 		static jint TYPE_CAR();
@@ -57,7 +59,7 @@ namespace android::provider
 		// Constructors
 		
 		// Methods
-		static jstring getTypeLabel(android::content::res::Resources arg0, jint arg1, jstring arg2);
+		static JString getTypeLabel(android::content::res::Resources arg0, jint arg1, JString arg2);
 		static jint getTypeLabelResource(jint arg0);
 	};
 } // namespace android::provider

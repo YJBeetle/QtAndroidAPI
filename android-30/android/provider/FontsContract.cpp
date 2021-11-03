@@ -1,3 +1,4 @@
+#include "../../JArray.hpp"
 #include "../content/Context.hpp"
 #include "../graphics/Typeface.hpp"
 #include "../os/CancellationSignal.hpp"
@@ -17,7 +18,7 @@ namespace android::provider
 	// Constructors
 	
 	// Methods
-	android::graphics::Typeface FontsContract::buildTypeface(android::content::Context arg0, android::os::CancellationSignal arg1, jarray arg2)
+	android::graphics::Typeface FontsContract::buildTypeface(android::content::Context arg0, android::os::CancellationSignal arg1, JArray arg2)
 	{
 		return callStaticObjectMethod(
 			"android.provider.FontsContract",
@@ -25,7 +26,7 @@ namespace android::provider
 			"(Landroid/content/Context;Landroid/os/CancellationSignal;[Landroid/provider/FontsContract$FontInfo;)Landroid/graphics/Typeface;",
 			arg0.object(),
 			arg1.object(),
-			arg2
+			arg2.object<jarray>()
 		);
 	}
 	android::provider::FontsContract_FontFamilyResult FontsContract::fetchFonts(android::content::Context arg0, android::os::CancellationSignal arg1, android::provider::FontRequest arg2)

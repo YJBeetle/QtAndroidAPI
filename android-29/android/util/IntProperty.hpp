@@ -1,12 +1,13 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./Property.hpp"
 
 namespace java::lang
 {
 	class Integer;
 }
+class JObject;
+class JString;
 
 namespace android::util
 {
@@ -20,12 +21,12 @@ namespace android::util
 		IntProperty(QJniObject obj);
 		
 		// Constructors
-		IntProperty(jstring arg0);
+		IntProperty(JString arg0);
 		
 		// Methods
-		void set(jobject arg0, java::lang::Integer arg1);
-		void set(jobject arg0, jobject arg1);
-		void setValue(jobject arg0, jint arg1);
+		void set(JObject arg0, java::lang::Integer arg1);
+		void set(JObject arg0, JObject arg1);
+		void setValue(JObject arg0, jint arg1);
 	};
 } // namespace android::util
 

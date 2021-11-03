@@ -6,6 +6,7 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
 
 namespace android::net::wifi
 {
@@ -13,14 +14,14 @@ namespace android::net::wifi
 	{
 	public:
 		// Fields
-		jstring BSSID();
+		JString BSSID();
 		static JObject CREATOR();
 		static jint DISPLAY();
 		static jint INVALID();
 		static jint KEYPAD();
 		static jint LABEL();
 		static jint PBC();
-		jstring pin();
+		JString pin();
 		jint setup();
 		
 		// QJniObject forward
@@ -33,7 +34,7 @@ namespace android::net::wifi
 		
 		// Methods
 		jint describeContents();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::net::wifi

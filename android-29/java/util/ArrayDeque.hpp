@@ -1,8 +1,9 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./AbstractCollection.hpp"
 
+class JLongArray;
+class JObjectArray;
 namespace java::io
 {
 	class ObjectInputStream;
@@ -11,6 +12,8 @@ namespace java::io
 {
 	class ObjectOutputStream;
 }
+class JClass;
+class JObject;
 
 namespace java::util
 {
@@ -29,44 +32,44 @@ namespace java::util
 		ArrayDeque(JObject arg0);
 		
 		// Methods
-		jboolean add(jobject arg0);
+		jboolean add(JObject arg0);
 		jboolean addAll(JObject arg0);
-		void addFirst(jobject arg0);
-		void addLast(jobject arg0);
+		void addFirst(JObject arg0);
+		void addLast(JObject arg0);
 		void clear();
 		java::util::ArrayDeque clone();
-		jboolean contains(jobject arg0);
+		jboolean contains(JObject arg0);
 		JObject descendingIterator();
-		jobject element();
+		JObject element();
 		void forEach(JObject arg0);
-		jobject getFirst();
-		jobject getLast();
+		JObject getFirst();
+		JObject getLast();
 		jboolean isEmpty();
 		JObject iterator();
-		jboolean offer(jobject arg0);
-		jboolean offerFirst(jobject arg0);
-		jboolean offerLast(jobject arg0);
-		jobject peek();
-		jobject peekFirst();
-		jobject peekLast();
-		jobject poll();
-		jobject pollFirst();
-		jobject pollLast();
-		jobject pop();
-		void push(jobject arg0);
-		jboolean remove(jobject arg0);
-		jobject remove();
+		jboolean offer(JObject arg0);
+		jboolean offerFirst(JObject arg0);
+		jboolean offerLast(JObject arg0);
+		JObject peek();
+		JObject peekFirst();
+		JObject peekLast();
+		JObject poll();
+		JObject pollFirst();
+		JObject pollLast();
+		JObject pop();
+		void push(JObject arg0);
+		jboolean remove(JObject arg0);
+		JObject remove();
 		jboolean removeAll(JObject arg0);
-		jobject removeFirst();
-		jboolean removeFirstOccurrence(jobject arg0);
+		JObject removeFirst();
+		jboolean removeFirstOccurrence(JObject arg0);
 		jboolean removeIf(JObject arg0);
-		jobject removeLast();
-		jboolean removeLastOccurrence(jobject arg0);
+		JObject removeLast();
+		jboolean removeLastOccurrence(JObject arg0);
 		jboolean retainAll(JObject arg0);
 		jint size();
 		JObject spliterator();
-		jobjectArray toArray();
-		jobjectArray toArray(jobjectArray arg0);
+		JObjectArray toArray();
+		JObjectArray toArray(JObjectArray arg0);
 	};
 } // namespace java::util
 

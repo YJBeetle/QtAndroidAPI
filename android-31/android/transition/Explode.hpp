@@ -1,7 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "./Transition.hpp"
 #include "./Visibility.hpp"
 
 namespace android::animation

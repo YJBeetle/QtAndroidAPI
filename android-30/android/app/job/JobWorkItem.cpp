@@ -1,5 +1,6 @@
 #include "../../content/Intent.hpp"
 #include "../../os/Parcel.hpp"
+#include "../../../JString.hpp"
 #include "./JobWorkItem.hpp"
 
 namespace android::app::job
@@ -69,12 +70,12 @@ namespace android::app::job
 			"()Landroid/content/Intent;"
 		);
 	}
-	jstring JobWorkItem::toString()
+	JString JobWorkItem::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void JobWorkItem::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

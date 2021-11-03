@@ -1,4 +1,6 @@
+#include "../../../JByteArray.hpp"
 #include "../../io/OutputStream.hpp"
+#include "../../../JString.hpp"
 #include "../../nio/charset/Charset.hpp"
 #include "../HashSet.hpp"
 #include "../Vector.hpp"
@@ -72,12 +74,12 @@ namespace java::util::zip
 			arg0.object()
 		);
 	}
-	void ZipOutputStream::setComment(jstring arg0)
+	void ZipOutputStream::setComment(JString arg0)
 	{
 		callMethod<void>(
 			"setComment",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void ZipOutputStream::setLevel(jint arg0)
@@ -96,12 +98,12 @@ namespace java::util::zip
 			arg0
 		);
 	}
-	void ZipOutputStream::write(jbyteArray arg0, jint arg1, jint arg2)
+	void ZipOutputStream::write(JByteArray arg0, jint arg1, jint arg2)
 	{
 		callMethod<void>(
 			"write",
 			"([BII)V",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1,
 			arg2
 		);

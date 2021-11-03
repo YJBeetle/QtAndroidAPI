@@ -2,7 +2,6 @@
 
 #include "../../JObject.hpp"
 
-
 namespace android::hardware
 {
 	class GeomagneticField : public JObject

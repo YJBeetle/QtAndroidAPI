@@ -4,6 +4,7 @@
 #include "./WebSettings_RenderPriority.hpp"
 #include "./WebSettings_TextSize.hpp"
 #include "./WebSettings_ZoomDensity.hpp"
+#include "../../JString.hpp"
 #include "./WebSettings.hpp"
 
 namespace android::webkit
@@ -105,14 +106,14 @@ namespace android::webkit
 		) {}
 	
 	// Methods
-	jstring WebSettings::getDefaultUserAgent(android::content::Context arg0)
+	JString WebSettings::getDefaultUserAgent(android::content::Context arg0)
 	{
 		return callStaticObjectMethod(
 			"android.webkit.WebSettings",
 			"getDefaultUserAgent",
 			"(Landroid/content/Context;)Ljava/lang/String;",
 			arg0.object()
-		).object<jstring>();
+		);
 	}
 	jboolean WebSettings::enableSmoothTransition()
 	{
@@ -177,12 +178,12 @@ namespace android::webkit
 			"()I"
 		);
 	}
-	jstring WebSettings::getCursiveFontFamily()
+	JString WebSettings::getCursiveFontFamily()
 	{
 		return callObjectMethod(
 			"getCursiveFontFamily",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jboolean WebSettings::getDatabaseEnabled()
 	{
@@ -191,12 +192,12 @@ namespace android::webkit
 			"()Z"
 		);
 	}
-	jstring WebSettings::getDatabasePath()
+	JString WebSettings::getDatabasePath()
 	{
 		return callObjectMethod(
 			"getDatabasePath",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint WebSettings::getDefaultFixedFontSize()
 	{
@@ -212,12 +213,12 @@ namespace android::webkit
 			"()I"
 		);
 	}
-	jstring WebSettings::getDefaultTextEncodingName()
+	JString WebSettings::getDefaultTextEncodingName()
 	{
 		return callObjectMethod(
 			"getDefaultTextEncodingName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::webkit::WebSettings_ZoomDensity WebSettings::getDefaultZoom()
 	{
@@ -247,19 +248,19 @@ namespace android::webkit
 			"()Z"
 		);
 	}
-	jstring WebSettings::getFantasyFontFamily()
+	JString WebSettings::getFantasyFontFamily()
 	{
 		return callObjectMethod(
 			"getFantasyFontFamily",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring WebSettings::getFixedFontFamily()
+	JString WebSettings::getFixedFontFamily()
 	{
 		return callObjectMethod(
 			"getFixedFontFamily",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jboolean WebSettings::getJavaScriptCanOpenWindowsAutomatically()
 	{
@@ -352,12 +353,12 @@ namespace android::webkit
 			"()Z"
 		);
 	}
-	jstring WebSettings::getSansSerifFontFamily()
+	JString WebSettings::getSansSerifFontFamily()
 	{
 		return callObjectMethod(
 			"getSansSerifFontFamily",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jboolean WebSettings::getSaveFormData()
 	{
@@ -373,19 +374,19 @@ namespace android::webkit
 			"()Z"
 		);
 	}
-	jstring WebSettings::getSerifFontFamily()
+	JString WebSettings::getSerifFontFamily()
 	{
 		return callObjectMethod(
 			"getSerifFontFamily",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring WebSettings::getStandardFontFamily()
+	JString WebSettings::getStandardFontFamily()
 	{
 		return callObjectMethod(
 			"getStandardFontFamily",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::webkit::WebSettings_TextSize WebSettings::getTextSize()
 	{
@@ -408,12 +409,12 @@ namespace android::webkit
 			"()Z"
 		);
 	}
-	jstring WebSettings::getUserAgentString()
+	JString WebSettings::getUserAgentString()
 	{
 		return callObjectMethod(
 			"getUserAgentString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void WebSettings::setAllowContentAccess(jboolean arg0)
 	{
@@ -463,12 +464,12 @@ namespace android::webkit
 			arg0
 		);
 	}
-	void WebSettings::setAppCachePath(jstring arg0)
+	void WebSettings::setAppCachePath(JString arg0)
 	{
 		callMethod<void>(
 			"setAppCachePath",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void WebSettings::setBlockNetworkImage(jboolean arg0)
@@ -503,12 +504,12 @@ namespace android::webkit
 			arg0
 		);
 	}
-	void WebSettings::setCursiveFontFamily(jstring arg0)
+	void WebSettings::setCursiveFontFamily(JString arg0)
 	{
 		callMethod<void>(
 			"setCursiveFontFamily",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void WebSettings::setDatabaseEnabled(jboolean arg0)
@@ -519,12 +520,12 @@ namespace android::webkit
 			arg0
 		);
 	}
-	void WebSettings::setDatabasePath(jstring arg0)
+	void WebSettings::setDatabasePath(JString arg0)
 	{
 		callMethod<void>(
 			"setDatabasePath",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void WebSettings::setDefaultFixedFontSize(jint arg0)
@@ -543,12 +544,12 @@ namespace android::webkit
 			arg0
 		);
 	}
-	void WebSettings::setDefaultTextEncodingName(jstring arg0)
+	void WebSettings::setDefaultTextEncodingName(JString arg0)
 	{
 		callMethod<void>(
 			"setDefaultTextEncodingName",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void WebSettings::setDefaultZoom(android::webkit::WebSettings_ZoomDensity arg0)
@@ -591,28 +592,28 @@ namespace android::webkit
 			arg0
 		);
 	}
-	void WebSettings::setFantasyFontFamily(jstring arg0)
+	void WebSettings::setFantasyFontFamily(JString arg0)
 	{
 		callMethod<void>(
 			"setFantasyFontFamily",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	void WebSettings::setFixedFontFamily(jstring arg0)
+	void WebSettings::setFixedFontFamily(JString arg0)
 	{
 		callMethod<void>(
 			"setFixedFontFamily",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	void WebSettings::setGeolocationDatabasePath(jstring arg0)
+	void WebSettings::setGeolocationDatabasePath(JString arg0)
 	{
 		callMethod<void>(
 			"setGeolocationDatabasePath",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void WebSettings::setGeolocationEnabled(jboolean arg0)
@@ -743,12 +744,12 @@ namespace android::webkit
 			arg0
 		);
 	}
-	void WebSettings::setSansSerifFontFamily(jstring arg0)
+	void WebSettings::setSansSerifFontFamily(JString arg0)
 	{
 		callMethod<void>(
 			"setSansSerifFontFamily",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void WebSettings::setSaveFormData(jboolean arg0)
@@ -767,20 +768,20 @@ namespace android::webkit
 			arg0
 		);
 	}
-	void WebSettings::setSerifFontFamily(jstring arg0)
+	void WebSettings::setSerifFontFamily(JString arg0)
 	{
 		callMethod<void>(
 			"setSerifFontFamily",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	void WebSettings::setStandardFontFamily(jstring arg0)
+	void WebSettings::setStandardFontFamily(JString arg0)
 	{
 		callMethod<void>(
 			"setStandardFontFamily",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void WebSettings::setSupportMultipleWindows(jboolean arg0)
@@ -823,12 +824,12 @@ namespace android::webkit
 			arg0
 		);
 	}
-	void WebSettings::setUserAgentString(jstring arg0)
+	void WebSettings::setUserAgentString(JString arg0)
 	{
 		callMethod<void>(
 			"setUserAgentString",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	jboolean WebSettings::supportMultipleWindows()

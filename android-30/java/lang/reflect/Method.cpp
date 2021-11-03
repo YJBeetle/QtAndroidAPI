@@ -1,3 +1,13 @@
+#include "../../../JByteArray.hpp"
+#include "../../../JArray.hpp"
+#include "../../../JObjectArray.hpp"
+#include "../../../JArray.hpp"
+#include "../../../JArray.hpp"
+#include "../../../JArray.hpp"
+#include "../../../JArray.hpp"
+#include "../../../JClass.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "../StringBuilder.hpp"
 #include "./AccessibleObject.hpp"
 #include "./Method.hpp"
@@ -12,12 +22,12 @@ namespace java::lang::reflect
 	// Constructors
 	
 	// Methods
-	jboolean Method::equals(jobject arg0)
+	jboolean Method::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	JObject Method::getAnnotatedReturnType()
@@ -27,55 +37,55 @@ namespace java::lang::reflect
 			"()Ljava/lang/reflect/AnnotatedType;"
 		);
 	}
-	JObject Method::getAnnotation(jclass arg0)
+	JObject Method::getAnnotation(JClass arg0)
 	{
 		return callObjectMethod(
 			"getAnnotation",
 			"(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;",
-			arg0
+			arg0.object<jclass>()
 		);
 	}
-	jarray Method::getDeclaredAnnotations()
+	JArray Method::getDeclaredAnnotations()
 	{
 		return callObjectMethod(
 			"getDeclaredAnnotations",
 			"()[Ljava/lang/annotation/Annotation;"
-		).object<jarray>();
+		);
 	}
-	jclass Method::getDeclaringClass()
+	JClass Method::getDeclaringClass()
 	{
 		return callObjectMethod(
 			"getDeclaringClass",
 			"()Ljava/lang/Class;"
-		).object<jclass>();
+		);
 	}
-	jobject Method::getDefaultValue()
+	JObject Method::getDefaultValue()
 	{
 		return callObjectMethod(
 			"getDefaultValue",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
-	jarray Method::getExceptionTypes()
+	JArray Method::getExceptionTypes()
 	{
 		return callObjectMethod(
 			"getExceptionTypes",
 			"()[Ljava/lang/Class;"
-		).object<jarray>();
+		);
 	}
-	jarray Method::getGenericExceptionTypes()
+	JArray Method::getGenericExceptionTypes()
 	{
 		return callObjectMethod(
 			"getGenericExceptionTypes",
 			"()[Ljava/lang/reflect/Type;"
-		).object<jarray>();
+		);
 	}
-	jarray Method::getGenericParameterTypes()
+	JArray Method::getGenericParameterTypes()
 	{
 		return callObjectMethod(
 			"getGenericParameterTypes",
 			"()[Ljava/lang/reflect/Type;"
-		).object<jarray>();
+		);
 	}
 	JObject Method::getGenericReturnType()
 	{
@@ -91,19 +101,19 @@ namespace java::lang::reflect
 			"()I"
 		);
 	}
-	jstring Method::getName()
+	JString Method::getName()
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jarray Method::getParameterAnnotations()
+	JArray Method::getParameterAnnotations()
 	{
 		return callObjectMethod(
 			"getParameterAnnotations",
 			"()[[Ljava/lang/annotation/Annotation;"
-		).object<jarray>();
+		);
 	}
 	jint Method::getParameterCount()
 	{
@@ -112,26 +122,26 @@ namespace java::lang::reflect
 			"()I"
 		);
 	}
-	jarray Method::getParameterTypes()
+	JArray Method::getParameterTypes()
 	{
 		return callObjectMethod(
 			"getParameterTypes",
 			"()[Ljava/lang/Class;"
-		).object<jarray>();
+		);
 	}
-	jclass Method::getReturnType()
+	JClass Method::getReturnType()
 	{
 		return callObjectMethod(
 			"getReturnType",
 			"()Ljava/lang/Class;"
-		).object<jclass>();
+		);
 	}
-	jarray Method::getTypeParameters()
+	JArray Method::getTypeParameters()
 	{
 		return callObjectMethod(
 			"getTypeParameters",
 			"()[Ljava/lang/reflect/TypeVariable;"
-		).object<jarray>();
+		);
 	}
 	jint Method::hashCode()
 	{
@@ -140,14 +150,14 @@ namespace java::lang::reflect
 			"()I"
 		);
 	}
-	jobject Method::invoke(jobject arg0, jobjectArray arg1)
+	JObject Method::invoke(JObject arg0, JObjectArray arg1)
 	{
 		return callObjectMethod(
 			"invoke",
 			"(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0,
-			arg1
-		).object<jobject>();
+			arg0.object<jobject>(),
+			arg1.object<jobjectArray>()
+		);
 	}
 	jboolean Method::isBridge()
 	{
@@ -185,19 +195,19 @@ namespace java::lang::reflect
 			arg0
 		);
 	}
-	jstring Method::toGenericString()
+	JString Method::toGenericString()
 	{
 		return callObjectMethod(
 			"toGenericString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Method::toString()
+	JString Method::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::lang::reflect
 

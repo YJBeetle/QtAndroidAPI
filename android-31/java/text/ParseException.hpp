@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "../lang/Exception.hpp"
 
+class JString;
 
 namespace java::text
 {
@@ -16,7 +16,7 @@ namespace java::text
 		ParseException(QJniObject obj);
 		
 		// Constructors
-		ParseException(jstring arg0, jint arg1);
+		ParseException(JString arg0, jint arg1);
 		
 		// Methods
 		jint getErrorOffset();

@@ -1,7 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../view/View.hpp"
 #include "./TextView.hpp"
 
 namespace android::content
@@ -12,6 +10,8 @@ namespace android::view
 {
 	class View;
 }
+class JString;
+class JString;
 
 namespace android::widget
 {
@@ -31,16 +31,16 @@ namespace android::widget
 		Chronometer(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
-		jstring getAccessibilityClassName();
+		JString getAccessibilityClassName();
 		jlong getBase();
-		jstring getContentDescription();
-		jstring getFormat();
+		JString getContentDescription();
+		JString getFormat();
 		JObject getOnChronometerTickListener();
 		jboolean isCountDown();
 		jboolean isTheFinalCountDown();
 		void setBase(jlong arg0);
 		void setCountDown(jboolean arg0);
-		void setFormat(jstring arg0);
+		void setFormat(JString arg0);
 		void setOnChronometerTickListener(JObject arg0);
 		void start();
 		void stop();

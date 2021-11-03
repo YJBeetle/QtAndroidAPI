@@ -2,6 +2,10 @@
 
 #include "../../JObject.hpp"
 
+class JDoubleArray;
+class JIntArray;
+class JLongArray;
+class JObjectArray;
 
 namespace java::util
 {
@@ -22,16 +26,16 @@ namespace java::util
 		static JObject emptyLongSpliterator();
 		static JObject emptySpliterator();
 		static JObject iterator(JObject arg0);
-		static JObject spliterator(jobjectArray arg0, jint arg1);
+		static JObject spliterator(JObjectArray arg0, jint arg1);
 		static JObject spliterator(JObject arg0, jint arg1);
 		static JObject spliterator(JObject arg0, jlong arg1, jint arg2);
-		static JObject spliterator(jobjectArray arg0, jint arg1, jint arg2, jint arg3);
-		static JObject spliterator(jdoubleArray arg0, jint arg1);
-		static JObject spliterator(jdoubleArray arg0, jint arg1, jint arg2, jint arg3);
-		static JObject spliterator(jintArray arg0, jint arg1);
-		static JObject spliterator(jintArray arg0, jint arg1, jint arg2, jint arg3);
-		static JObject spliterator(jlongArray arg0, jint arg1);
-		static JObject spliterator(jlongArray arg0, jint arg1, jint arg2, jint arg3);
+		static JObject spliterator(JObjectArray arg0, jint arg1, jint arg2, jint arg3);
+		static JObject spliterator(JDoubleArray arg0, jint arg1);
+		static JObject spliterator(JDoubleArray arg0, jint arg1, jint arg2, jint arg3);
+		static JObject spliterator(JIntArray arg0, jint arg1);
+		static JObject spliterator(JIntArray arg0, jint arg1, jint arg2, jint arg3);
+		static JObject spliterator(JLongArray arg0, jint arg1);
+		static JObject spliterator(JLongArray arg0, jint arg1, jint arg2, jint arg3);
 		static JObject spliteratorUnknownSize(JObject arg0, jint arg1);
 	};
 } // namespace java::util

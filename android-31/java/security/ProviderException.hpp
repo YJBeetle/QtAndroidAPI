@@ -1,9 +1,9 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../lang/Exception.hpp"
 #include "../lang/RuntimeException.hpp"
 
+class JString;
+class JThrowable;
 
 namespace java::security
 {
@@ -18,9 +18,9 @@ namespace java::security
 		
 		// Constructors
 		ProviderException();
-		ProviderException(jstring arg0);
-		ProviderException(jthrowable arg0);
-		ProviderException(jstring arg0, jthrowable arg1);
+		ProviderException(JString arg0);
+		ProviderException(JThrowable arg0);
+		ProviderException(JString arg0, JThrowable arg1);
 		
 		// Methods
 	};

@@ -1,8 +1,9 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "../../../java/lang/Enum.hpp"
 
+class JArray;
+class JString;
 
 namespace android::graphics::drawable
 {
@@ -26,8 +27,8 @@ namespace android::graphics::drawable
 		// Constructors
 		
 		// Methods
-		static android::graphics::drawable::GradientDrawable_Orientation valueOf(jstring arg0);
-		static jarray values();
+		static android::graphics::drawable::GradientDrawable_Orientation valueOf(JString arg0);
+		static JArray values();
 	};
 } // namespace android::graphics::drawable
 

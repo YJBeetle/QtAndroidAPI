@@ -1,5 +1,6 @@
 #include "../../os/Parcel.hpp"
 #include "../../util/SparseArray.hpp"
+#include "../../../JString.hpp"
 #include "./TranslationResponse.hpp"
 
 namespace android::view::translation
@@ -76,12 +77,12 @@ namespace android::view::translation
 			"()Z"
 		);
 	}
-	jstring TranslationResponse::toString()
+	JString TranslationResponse::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void TranslationResponse::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

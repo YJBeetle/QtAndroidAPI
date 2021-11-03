@@ -1,3 +1,4 @@
+#include "../../../JArray.hpp"
 #include "../../content/ComponentName.hpp"
 #include "../../content/Context.hpp"
 #include "../../content/Intent.hpp"
@@ -6,27 +7,28 @@
 #include "./AlwaysOnHotwordDetector_Callback.hpp"
 #include "../../../java/io/FileDescriptor.hpp"
 #include "../../../java/io/PrintWriter.hpp"
+#include "../../../JString.hpp"
 #include "../../../java/util/Locale.hpp"
 #include "./VoiceInteractionService.hpp"
 
 namespace android::service::voice
 {
 	// Fields
-	jstring VoiceInteractionService::SERVICE_INTERFACE()
+	JString VoiceInteractionService::SERVICE_INTERFACE()
 	{
 		return getStaticObjectField(
 			"android.service.voice.VoiceInteractionService",
 			"SERVICE_INTERFACE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring VoiceInteractionService::SERVICE_META_DATA()
+	JString VoiceInteractionService::SERVICE_META_DATA()
 	{
 		return getStaticObjectField(
 			"android.service.voice.VoiceInteractionService",
 			"SERVICE_META_DATA",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QJniObject forward
@@ -50,12 +52,12 @@ namespace android::service::voice
 			arg1.object()
 		);
 	}
-	android::service::voice::AlwaysOnHotwordDetector VoiceInteractionService::createAlwaysOnHotwordDetector(jstring arg0, java::util::Locale arg1, android::service::voice::AlwaysOnHotwordDetector_Callback arg2)
+	android::service::voice::AlwaysOnHotwordDetector VoiceInteractionService::createAlwaysOnHotwordDetector(JString arg0, java::util::Locale arg1, android::service::voice::AlwaysOnHotwordDetector_Callback arg2)
 	{
 		return callObjectMethod(
 			"createAlwaysOnHotwordDetector",
 			"(Ljava/lang/String;Ljava/util/Locale;Landroid/service/voice/AlwaysOnHotwordDetector$Callback;)Landroid/service/voice/AlwaysOnHotwordDetector;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
 			arg2.object()
 		);

@@ -1,3 +1,5 @@
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./StringCharacterIterator.hpp"
 
 namespace java::text
@@ -8,36 +10,36 @@ namespace java::text
 	StringCharacterIterator::StringCharacterIterator(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	StringCharacterIterator::StringCharacterIterator(jstring arg0)
+	StringCharacterIterator::StringCharacterIterator(JString arg0)
 		: JObject(
 			"java.text.StringCharacterIterator",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	StringCharacterIterator::StringCharacterIterator(jstring arg0, jint arg1)
+	StringCharacterIterator::StringCharacterIterator(JString arg0, jint arg1)
 		: JObject(
 			"java.text.StringCharacterIterator",
 			"(Ljava/lang/String;I)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		) {}
-	StringCharacterIterator::StringCharacterIterator(jstring arg0, jint arg1, jint arg2, jint arg3)
+	StringCharacterIterator::StringCharacterIterator(JString arg0, jint arg1, jint arg2, jint arg3)
 		: JObject(
 			"java.text.StringCharacterIterator",
 			"(Ljava/lang/String;III)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
 			arg2,
 			arg3
 		) {}
 	
 	// Methods
-	jobject StringCharacterIterator::clone()
+	JObject StringCharacterIterator::clone()
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
 	jchar StringCharacterIterator::current()
 	{
@@ -46,12 +48,12 @@ namespace java::text
 			"()C"
 		);
 	}
-	jboolean StringCharacterIterator::equals(jobject arg0)
+	jboolean StringCharacterIterator::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jchar StringCharacterIterator::first()
@@ -118,12 +120,12 @@ namespace java::text
 			arg0
 		);
 	}
-	void StringCharacterIterator::setText(jstring arg0)
+	void StringCharacterIterator::setText(JString arg0)
 	{
 		callMethod<void>(
 			"setText",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 } // namespace java::text

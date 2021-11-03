@@ -1,7 +1,10 @@
+#include "../../../JArray.hpp"
 #include "../../os/Bundle.hpp"
 #include "../../os/LocaleList.hpp"
 #include "../../os/Parcel.hpp"
 #include "./SurroundingText.hpp"
+#include "../../../JString.hpp"
+#include "../../../JString.hpp"
 #include "./EditorInfo.hpp"
 
 namespace android::view::inputmethod
@@ -147,19 +150,19 @@ namespace android::view::inputmethod
 			"actionId"
 		);
 	}
-	jstring EditorInfo::actionLabel()
+	JString EditorInfo::actionLabel()
 	{
 		return getObjectField(
 			"actionLabel",
 			"Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
-	jarray EditorInfo::contentMimeTypes()
+	JArray EditorInfo::contentMimeTypes()
 	{
 		return getObjectField(
 			"contentMimeTypes",
 			"[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
 	android::os::Bundle EditorInfo::extras()
 	{
@@ -174,12 +177,12 @@ namespace android::view::inputmethod
 			"fieldId"
 		);
 	}
-	jstring EditorInfo::fieldName()
+	JString EditorInfo::fieldName()
 	{
 		return getObjectField(
 			"fieldName",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::os::LocaleList EditorInfo::hintLocales()
 	{
@@ -188,12 +191,12 @@ namespace android::view::inputmethod
 			"Landroid/os/LocaleList;"
 		);
 	}
-	jstring EditorInfo::hintText()
+	JString EditorInfo::hintText()
 	{
 		return getObjectField(
 			"hintText",
 			"Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	jint EditorInfo::imeOptions()
 	{
@@ -225,26 +228,26 @@ namespace android::view::inputmethod
 			"inputType"
 		);
 	}
-	jstring EditorInfo::label()
+	JString EditorInfo::label()
 	{
 		return getObjectField(
 			"label",
 			"Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
-	jstring EditorInfo::packageName()
+	JString EditorInfo::packageName()
 	{
 		return getObjectField(
 			"packageName",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring EditorInfo::privateImeOptions()
+	JString EditorInfo::privateImeOptions()
 	{
 		return getObjectField(
 			"privateImeOptions",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QJniObject forward
@@ -265,22 +268,22 @@ namespace android::view::inputmethod
 			"()I"
 		);
 	}
-	void EditorInfo::dump(JObject arg0, jstring arg1)
+	void EditorInfo::dump(JObject arg0, JString arg1)
 	{
 		callMethod<void>(
 			"dump",
 			"(Landroid/util/Printer;Ljava/lang/String;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
-	jstring EditorInfo::getInitialSelectedText(jint arg0)
+	JString EditorInfo::getInitialSelectedText(jint arg0)
 	{
 		return callObjectMethod(
 			"getInitialSelectedText",
 			"(I)Ljava/lang/CharSequence;",
 			arg0
-		).object<jstring>();
+		);
 	}
 	android::view::inputmethod::SurroundingText EditorInfo::getInitialSurroundingText(jint arg0, jint arg1, jint arg2)
 	{
@@ -292,23 +295,23 @@ namespace android::view::inputmethod
 			arg2
 		);
 	}
-	jstring EditorInfo::getInitialTextAfterCursor(jint arg0, jint arg1)
+	JString EditorInfo::getInitialTextAfterCursor(jint arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"getInitialTextAfterCursor",
 			"(II)Ljava/lang/CharSequence;",
 			arg0,
 			arg1
-		).object<jstring>();
+		);
 	}
-	jstring EditorInfo::getInitialTextBeforeCursor(jint arg0, jint arg1)
+	JString EditorInfo::getInitialTextBeforeCursor(jint arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"getInitialTextBeforeCursor",
 			"(II)Ljava/lang/CharSequence;",
 			arg0,
 			arg1
-		).object<jstring>();
+		);
 	}
 	void EditorInfo::makeCompatible(jint arg0)
 	{
@@ -318,21 +321,21 @@ namespace android::view::inputmethod
 			arg0
 		);
 	}
-	void EditorInfo::setInitialSurroundingSubText(jstring arg0, jint arg1)
+	void EditorInfo::setInitialSurroundingSubText(JString arg0, jint arg1)
 	{
 		callMethod<void>(
 			"setInitialSurroundingSubText",
 			"(Ljava/lang/CharSequence;I)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
-	void EditorInfo::setInitialSurroundingText(jstring arg0)
+	void EditorInfo::setInitialSurroundingText(JString arg0)
 	{
 		callMethod<void>(
 			"setInitialSurroundingText",
 			"(Ljava/lang/CharSequence;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void EditorInfo::writeToParcel(android::os::Parcel arg0, jint arg1)

@@ -1,3 +1,6 @@
+#include "../../JObjectArray.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./AbstractCollection.hpp"
 
 namespace java::util
@@ -10,12 +13,12 @@ namespace java::util
 	// Constructors
 	
 	// Methods
-	jboolean AbstractCollection::add(jobject arg0)
+	jboolean AbstractCollection::add(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"add",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jboolean AbstractCollection::addAll(JObject arg0)
@@ -33,12 +36,12 @@ namespace java::util
 			"()V"
 		);
 	}
-	jboolean AbstractCollection::contains(jobject arg0)
+	jboolean AbstractCollection::contains(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"contains",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jboolean AbstractCollection::containsAll(JObject arg0)
@@ -63,12 +66,12 @@ namespace java::util
 			"()Ljava/util/Iterator;"
 		);
 	}
-	jboolean AbstractCollection::remove(jobject arg0)
+	jboolean AbstractCollection::remove(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"remove",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jboolean AbstractCollection::removeAll(JObject arg0)
@@ -94,27 +97,27 @@ namespace java::util
 			"()I"
 		);
 	}
-	jobjectArray AbstractCollection::toArray()
+	JObjectArray AbstractCollection::toArray()
 	{
 		return callObjectMethod(
 			"toArray",
 			"()[Ljava/lang/Object;"
-		).object<jobjectArray>();
+		);
 	}
-	jobjectArray AbstractCollection::toArray(jobjectArray arg0)
+	JObjectArray AbstractCollection::toArray(JObjectArray arg0)
 	{
 		return callObjectMethod(
 			"toArray",
 			"([Ljava/lang/Object;)[Ljava/lang/Object;",
-			arg0
-		).object<jobjectArray>();
+			arg0.object<jobjectArray>()
+		);
 	}
-	jstring AbstractCollection::toString()
+	JString AbstractCollection::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::util
 

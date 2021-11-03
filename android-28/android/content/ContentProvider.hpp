@@ -2,6 +2,10 @@
 
 #include "../../JObject.hpp"
 
+class JArray;
+class JArray;
+class JArray;
+class JArray;
 namespace android::content
 {
 	class ContentValues;
@@ -46,6 +50,8 @@ namespace java::io
 {
 	class PrintWriter;
 }
+class JObject;
+class JString;
 namespace java::util
 {
 	class ArrayList;
@@ -66,39 +72,39 @@ namespace android::content
 		ContentProvider();
 		
 		// Methods
-		jarray applyBatch(java::util::ArrayList arg0);
+		JArray applyBatch(java::util::ArrayList arg0);
 		void attachInfo(android::content::Context arg0, android::content::pm::ProviderInfo arg1);
-		jint bulkInsert(android::net::Uri arg0, jarray arg1);
-		android::os::Bundle call(jstring arg0, jstring arg1, android::os::Bundle arg2);
+		jint bulkInsert(android::net::Uri arg0, JArray arg1);
+		android::os::Bundle call(JString arg0, JString arg1, android::os::Bundle arg2);
 		android::net::Uri canonicalize(android::net::Uri arg0);
-		jint _delete(android::net::Uri arg0, jstring arg1, jarray arg2);
-		void dump(java::io::FileDescriptor arg0, java::io::PrintWriter arg1, jarray arg2);
-		jstring getCallingPackage();
+		jint _delete(android::net::Uri arg0, JString arg1, JArray arg2);
+		void dump(java::io::FileDescriptor arg0, java::io::PrintWriter arg1, JArray arg2);
+		JString getCallingPackage();
 		android::content::Context getContext();
-		jarray getPathPermissions();
-		jstring getReadPermission();
-		jarray getStreamTypes(android::net::Uri arg0, jstring arg1);
-		jstring getType(android::net::Uri arg0);
-		jstring getWritePermission();
+		JArray getPathPermissions();
+		JString getReadPermission();
+		JArray getStreamTypes(android::net::Uri arg0, JString arg1);
+		JString getType(android::net::Uri arg0);
+		JString getWritePermission();
 		android::net::Uri insert(android::net::Uri arg0, android::content::ContentValues arg1);
 		void onConfigurationChanged(android::content::res::Configuration arg0);
 		jboolean onCreate();
 		void onLowMemory();
 		void onTrimMemory(jint arg0);
-		android::content::res::AssetFileDescriptor openAssetFile(android::net::Uri arg0, jstring arg1);
-		android::content::res::AssetFileDescriptor openAssetFile(android::net::Uri arg0, jstring arg1, android::os::CancellationSignal arg2);
-		android::os::ParcelFileDescriptor openFile(android::net::Uri arg0, jstring arg1);
-		android::os::ParcelFileDescriptor openFile(android::net::Uri arg0, jstring arg1, android::os::CancellationSignal arg2);
-		android::os::ParcelFileDescriptor openPipeHelper(android::net::Uri arg0, jstring arg1, android::os::Bundle arg2, jobject arg3, JObject arg4);
-		android::content::res::AssetFileDescriptor openTypedAssetFile(android::net::Uri arg0, jstring arg1, android::os::Bundle arg2);
-		android::content::res::AssetFileDescriptor openTypedAssetFile(android::net::Uri arg0, jstring arg1, android::os::Bundle arg2, android::os::CancellationSignal arg3);
-		JObject query(android::net::Uri arg0, jarray arg1, android::os::Bundle arg2, android::os::CancellationSignal arg3);
-		JObject query(android::net::Uri arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4);
-		JObject query(android::net::Uri arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4, android::os::CancellationSignal arg5);
+		android::content::res::AssetFileDescriptor openAssetFile(android::net::Uri arg0, JString arg1);
+		android::content::res::AssetFileDescriptor openAssetFile(android::net::Uri arg0, JString arg1, android::os::CancellationSignal arg2);
+		android::os::ParcelFileDescriptor openFile(android::net::Uri arg0, JString arg1);
+		android::os::ParcelFileDescriptor openFile(android::net::Uri arg0, JString arg1, android::os::CancellationSignal arg2);
+		android::os::ParcelFileDescriptor openPipeHelper(android::net::Uri arg0, JString arg1, android::os::Bundle arg2, JObject arg3, JObject arg4);
+		android::content::res::AssetFileDescriptor openTypedAssetFile(android::net::Uri arg0, JString arg1, android::os::Bundle arg2);
+		android::content::res::AssetFileDescriptor openTypedAssetFile(android::net::Uri arg0, JString arg1, android::os::Bundle arg2, android::os::CancellationSignal arg3);
+		JObject query(android::net::Uri arg0, JArray arg1, android::os::Bundle arg2, android::os::CancellationSignal arg3);
+		JObject query(android::net::Uri arg0, JArray arg1, JString arg2, JArray arg3, JString arg4);
+		JObject query(android::net::Uri arg0, JArray arg1, JString arg2, JArray arg3, JString arg4, android::os::CancellationSignal arg5);
 		jboolean refresh(android::net::Uri arg0, android::os::Bundle arg1, android::os::CancellationSignal arg2);
 		void shutdown();
 		android::net::Uri uncanonicalize(android::net::Uri arg0);
-		jint update(android::net::Uri arg0, android::content::ContentValues arg1, jstring arg2, jarray arg3);
+		jint update(android::net::Uri arg0, android::content::ContentValues arg1, JString arg2, JArray arg3);
 	};
 } // namespace android::content
 

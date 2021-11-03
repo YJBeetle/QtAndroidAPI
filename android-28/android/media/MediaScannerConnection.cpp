@@ -1,5 +1,7 @@
+#include "../../JArray.hpp"
 #include "../content/ComponentName.hpp"
 #include "../content/Context.hpp"
+#include "../../JString.hpp"
 #include "./MediaScannerConnection.hpp"
 
 namespace android::media
@@ -19,15 +21,15 @@ namespace android::media
 		) {}
 	
 	// Methods
-	void MediaScannerConnection::scanFile(android::content::Context arg0, jarray arg1, jarray arg2, JObject arg3)
+	void MediaScannerConnection::scanFile(android::content::Context arg0, JArray arg1, JArray arg2, JObject arg3)
 	{
 		callStaticMethod<void>(
 			"android.media.MediaScannerConnection",
 			"scanFile",
 			"(Landroid/content/Context;[Ljava/lang/String;[Ljava/lang/String;Landroid/media/MediaScannerConnection$OnScanCompletedListener;)V",
 			arg0.object(),
-			arg1,
-			arg2,
+			arg1.object<jarray>(),
+			arg2.object<jarray>(),
 			arg3.object()
 		);
 	}
@@ -69,13 +71,13 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void MediaScannerConnection::scanFile(jstring arg0, jstring arg1)
+	void MediaScannerConnection::scanFile(JString arg0, JString arg1)
 	{
 		callMethod<void>(
 			"scanFile",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		);
 	}
 } // namespace android::media

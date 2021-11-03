@@ -18,6 +18,7 @@ namespace android::os
 {
 	class UserHandle;
 }
+class JString;
 
 namespace android::os
 {
@@ -25,58 +26,58 @@ namespace android::os
 	{
 	public:
 		// Fields
-		static jstring ALLOW_PARENT_PROFILE_APP_LINKING();
-		static jstring DISALLOW_ADD_MANAGED_PROFILE();
-		static jstring DISALLOW_ADD_USER();
-		static jstring DISALLOW_ADJUST_VOLUME();
-		static jstring DISALLOW_AIRPLANE_MODE();
-		static jstring DISALLOW_AMBIENT_DISPLAY();
-		static jstring DISALLOW_APPS_CONTROL();
-		static jstring DISALLOW_AUTOFILL();
-		static jstring DISALLOW_BLUETOOTH();
-		static jstring DISALLOW_BLUETOOTH_SHARING();
-		static jstring DISALLOW_CONFIG_BLUETOOTH();
-		static jstring DISALLOW_CONFIG_BRIGHTNESS();
-		static jstring DISALLOW_CONFIG_CELL_BROADCASTS();
-		static jstring DISALLOW_CONFIG_CREDENTIALS();
-		static jstring DISALLOW_CONFIG_DATE_TIME();
-		static jstring DISALLOW_CONFIG_LOCALE();
-		static jstring DISALLOW_CONFIG_LOCATION();
-		static jstring DISALLOW_CONFIG_MOBILE_NETWORKS();
-		static jstring DISALLOW_CONFIG_SCREEN_TIMEOUT();
-		static jstring DISALLOW_CONFIG_TETHERING();
-		static jstring DISALLOW_CONFIG_VPN();
-		static jstring DISALLOW_CONFIG_WIFI();
-		static jstring DISALLOW_CREATE_WINDOWS();
-		static jstring DISALLOW_CROSS_PROFILE_COPY_PASTE();
-		static jstring DISALLOW_DATA_ROAMING();
-		static jstring DISALLOW_DEBUGGING_FEATURES();
-		static jstring DISALLOW_FACTORY_RESET();
-		static jstring DISALLOW_FUN();
-		static jstring DISALLOW_INSTALL_APPS();
-		static jstring DISALLOW_INSTALL_UNKNOWN_SOURCES();
-		static jstring DISALLOW_MODIFY_ACCOUNTS();
-		static jstring DISALLOW_MOUNT_PHYSICAL_MEDIA();
-		static jstring DISALLOW_NETWORK_RESET();
-		static jstring DISALLOW_OUTGOING_BEAM();
-		static jstring DISALLOW_OUTGOING_CALLS();
-		static jstring DISALLOW_PRINTING();
-		static jstring DISALLOW_REMOVE_MANAGED_PROFILE();
-		static jstring DISALLOW_REMOVE_USER();
-		static jstring DISALLOW_SAFE_BOOT();
-		static jstring DISALLOW_SET_USER_ICON();
-		static jstring DISALLOW_SET_WALLPAPER();
-		static jstring DISALLOW_SHARE_INTO_MANAGED_PROFILE();
-		static jstring DISALLOW_SHARE_LOCATION();
-		static jstring DISALLOW_SMS();
-		static jstring DISALLOW_SYSTEM_ERROR_DIALOGS();
-		static jstring DISALLOW_UNIFIED_PASSWORD();
-		static jstring DISALLOW_UNINSTALL_APPS();
-		static jstring DISALLOW_UNMUTE_MICROPHONE();
-		static jstring DISALLOW_USB_FILE_TRANSFER();
-		static jstring DISALLOW_USER_SWITCH();
-		static jstring ENSURE_VERIFY_APPS();
-		static jstring KEY_RESTRICTIONS_PENDING();
+		static JString ALLOW_PARENT_PROFILE_APP_LINKING();
+		static JString DISALLOW_ADD_MANAGED_PROFILE();
+		static JString DISALLOW_ADD_USER();
+		static JString DISALLOW_ADJUST_VOLUME();
+		static JString DISALLOW_AIRPLANE_MODE();
+		static JString DISALLOW_AMBIENT_DISPLAY();
+		static JString DISALLOW_APPS_CONTROL();
+		static JString DISALLOW_AUTOFILL();
+		static JString DISALLOW_BLUETOOTH();
+		static JString DISALLOW_BLUETOOTH_SHARING();
+		static JString DISALLOW_CONFIG_BLUETOOTH();
+		static JString DISALLOW_CONFIG_BRIGHTNESS();
+		static JString DISALLOW_CONFIG_CELL_BROADCASTS();
+		static JString DISALLOW_CONFIG_CREDENTIALS();
+		static JString DISALLOW_CONFIG_DATE_TIME();
+		static JString DISALLOW_CONFIG_LOCALE();
+		static JString DISALLOW_CONFIG_LOCATION();
+		static JString DISALLOW_CONFIG_MOBILE_NETWORKS();
+		static JString DISALLOW_CONFIG_SCREEN_TIMEOUT();
+		static JString DISALLOW_CONFIG_TETHERING();
+		static JString DISALLOW_CONFIG_VPN();
+		static JString DISALLOW_CONFIG_WIFI();
+		static JString DISALLOW_CREATE_WINDOWS();
+		static JString DISALLOW_CROSS_PROFILE_COPY_PASTE();
+		static JString DISALLOW_DATA_ROAMING();
+		static JString DISALLOW_DEBUGGING_FEATURES();
+		static JString DISALLOW_FACTORY_RESET();
+		static JString DISALLOW_FUN();
+		static JString DISALLOW_INSTALL_APPS();
+		static JString DISALLOW_INSTALL_UNKNOWN_SOURCES();
+		static JString DISALLOW_MODIFY_ACCOUNTS();
+		static JString DISALLOW_MOUNT_PHYSICAL_MEDIA();
+		static JString DISALLOW_NETWORK_RESET();
+		static JString DISALLOW_OUTGOING_BEAM();
+		static JString DISALLOW_OUTGOING_CALLS();
+		static JString DISALLOW_PRINTING();
+		static JString DISALLOW_REMOVE_MANAGED_PROFILE();
+		static JString DISALLOW_REMOVE_USER();
+		static JString DISALLOW_SAFE_BOOT();
+		static JString DISALLOW_SET_USER_ICON();
+		static JString DISALLOW_SET_WALLPAPER();
+		static JString DISALLOW_SHARE_INTO_MANAGED_PROFILE();
+		static JString DISALLOW_SHARE_LOCATION();
+		static JString DISALLOW_SMS();
+		static JString DISALLOW_SYSTEM_ERROR_DIALOGS();
+		static JString DISALLOW_UNIFIED_PASSWORD();
+		static JString DISALLOW_UNINSTALL_APPS();
+		static JString DISALLOW_UNMUTE_MICROPHONE();
+		static JString DISALLOW_USB_FILE_TRANSFER();
+		static JString DISALLOW_USER_SWITCH();
+		static JString ENSURE_VERIFY_APPS();
+		static JString KEY_RESTRICTIONS_PENDING();
 		static jint USER_CREATION_FAILED_NOT_PERMITTED();
 		static jint USER_CREATION_FAILED_NO_MORE_USERS();
 		static jint USER_OPERATION_ERROR_CURRENT_USER();
@@ -94,18 +95,18 @@ namespace android::os
 		// Constructors
 		
 		// Methods
-		static android::content::Intent createUserCreationIntent(jstring arg0, jstring arg1, jstring arg2, android::os::PersistableBundle arg3);
+		static android::content::Intent createUserCreationIntent(JString arg0, JString arg1, JString arg2, android::os::PersistableBundle arg3);
 		static jboolean supportsMultipleUsers();
-		android::os::Bundle getApplicationRestrictions(jstring arg0);
+		android::os::Bundle getApplicationRestrictions(JString arg0);
 		jlong getSerialNumberForUser(android::os::UserHandle arg0);
 		jint getUserCount();
 		jlong getUserCreationTime(android::os::UserHandle arg0);
 		android::os::UserHandle getUserForSerialNumber(jlong arg0);
-		jstring getUserName();
+		JString getUserName();
 		JObject getUserProfiles();
 		android::os::Bundle getUserRestrictions();
 		android::os::Bundle getUserRestrictions(android::os::UserHandle arg0);
-		jboolean hasUserRestriction(jstring arg0);
+		jboolean hasUserRestriction(JString arg0);
 		jboolean isDemoUser();
 		jboolean isQuietModeEnabled(android::os::UserHandle arg0);
 		jboolean isSystemUser();
@@ -115,8 +116,8 @@ namespace android::os
 		jboolean isUserUnlocked();
 		jboolean isUserUnlocked(android::os::UserHandle arg0);
 		jboolean requestQuietModeEnabled(jboolean arg0, android::os::UserHandle arg1);
-		jboolean setRestrictionsChallenge(jstring arg0);
-		void setUserRestriction(jstring arg0, jboolean arg1);
+		jboolean setRestrictionsChallenge(JString arg0);
+		void setUserRestriction(JString arg0, jboolean arg1);
 		void setUserRestrictions(android::os::Bundle arg0);
 		void setUserRestrictions(android::os::Bundle arg0, android::os::UserHandle arg1);
 	};

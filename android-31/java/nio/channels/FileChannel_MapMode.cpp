@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./FileChannel_MapMode.hpp"
 
 namespace java::nio::channels
@@ -34,12 +35,12 @@ namespace java::nio::channels
 	// Constructors
 	
 	// Methods
-	jstring FileChannel_MapMode::toString()
+	JString FileChannel_MapMode::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::nio::channels
 

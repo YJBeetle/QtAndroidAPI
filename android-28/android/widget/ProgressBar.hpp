@@ -1,6 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "../view/View.hpp"
 
 namespace android::content
@@ -23,6 +22,7 @@ namespace android::graphics::drawable
 {
 	class Drawable;
 }
+class JString;
 
 namespace android::widget
 {
@@ -43,7 +43,7 @@ namespace android::widget
 		
 		// Methods
 		void drawableHotspotChanged(jfloat arg0, jfloat arg1);
-		jstring getAccessibilityClassName();
+		JString getAccessibilityClassName();
 		android::graphics::drawable::Drawable getIndeterminateDrawable();
 		android::content::res::ColorStateList getIndeterminateTintList();
 		android::graphics::PorterDuff_Mode getIndeterminateTintMode();

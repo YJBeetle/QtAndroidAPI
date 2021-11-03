@@ -1,4 +1,5 @@
 #include "../os/Parcel.hpp"
+#include "../../JString.hpp"
 #include "./GnssClock.hpp"
 
 namespace android::location
@@ -138,12 +139,12 @@ namespace android::location
 			"()Z"
 		);
 	}
-	jstring GnssClock::toString()
+	JString GnssClock::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void GnssClock::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

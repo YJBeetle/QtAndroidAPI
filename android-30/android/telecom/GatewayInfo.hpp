@@ -10,6 +10,7 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
 
 namespace android::telecom
 {
@@ -24,12 +25,12 @@ namespace android::telecom
 		GatewayInfo(QJniObject obj);
 		
 		// Constructors
-		GatewayInfo(jstring arg0, android::net::Uri arg1, android::net::Uri arg2);
+		GatewayInfo(JString arg0, android::net::Uri arg1, android::net::Uri arg2);
 		
 		// Methods
 		jint describeContents();
 		android::net::Uri getGatewayAddress();
-		jstring getGatewayProviderPackageName();
+		JString getGatewayProviderPackageName();
 		android::net::Uri getOriginalAddress();
 		jboolean isEmpty();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);

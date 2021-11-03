@@ -1,9 +1,9 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../lang/Exception.hpp"
 #include "../lang/RuntimeException.hpp"
 
+class JString;
+class JThrowable;
 
 namespace java::util
 {
@@ -18,9 +18,9 @@ namespace java::util
 		
 		// Constructors
 		NoSuchElementException();
-		NoSuchElementException(jstring arg0);
-		NoSuchElementException(jthrowable arg0);
-		NoSuchElementException(jstring arg0, jthrowable arg1);
+		NoSuchElementException(JString arg0);
+		NoSuchElementException(JThrowable arg0);
+		NoSuchElementException(JString arg0, JThrowable arg1);
 		
 		// Methods
 	};

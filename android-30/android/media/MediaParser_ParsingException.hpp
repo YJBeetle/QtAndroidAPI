@@ -1,9 +1,6 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../../java/lang/Exception.hpp"
 #include "../../java/io/IOException.hpp"
-
 
 namespace android::media
 {

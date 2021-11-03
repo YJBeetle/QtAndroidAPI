@@ -2,6 +2,8 @@
 
 #include "../../../JObject.hpp"
 
+class JObject;
+class JString;
 namespace java::util
 {
 	class Locale;
@@ -25,13 +27,13 @@ namespace java::time::format
 		static JObject getAvailableLocales();
 		static java::time::format::DecimalStyle of(java::util::Locale arg0);
 		static java::time::format::DecimalStyle ofDefaultLocale();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jchar getDecimalSeparator();
 		jchar getNegativeSign();
 		jchar getPositiveSign();
 		jchar getZeroDigit();
 		jint hashCode();
-		jstring toString();
+		JString toString();
 		java::time::format::DecimalStyle withDecimalSeparator(jchar arg0);
 		java::time::format::DecimalStyle withNegativeSign(jchar arg0);
 		java::time::format::DecimalStyle withPositiveSign(jchar arg0);

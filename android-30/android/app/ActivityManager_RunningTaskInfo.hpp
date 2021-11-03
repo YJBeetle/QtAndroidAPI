@@ -1,6 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./TaskInfo.hpp"
 
 namespace android::graphics
@@ -11,6 +10,7 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
 
 namespace android::app
 {
@@ -19,7 +19,7 @@ namespace android::app
 	public:
 		// Fields
 		static JObject CREATOR();
-		jstring description();
+		JString description();
 		jint id();
 		jint numRunning();
 		android::graphics::Bitmap thumbnail();

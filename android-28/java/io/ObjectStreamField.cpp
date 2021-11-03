@@ -1,3 +1,6 @@
+#include "../../JClass.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "../lang/StringBuilder.hpp"
 #include "../lang/reflect/Field.hpp"
 #include "./ObjectStreamField.hpp"
@@ -10,37 +13,37 @@ namespace java::io
 	ObjectStreamField::ObjectStreamField(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	ObjectStreamField::ObjectStreamField(jstring arg0, jclass arg1)
+	ObjectStreamField::ObjectStreamField(JString arg0, JClass arg1)
 		: JObject(
 			"java.io.ObjectStreamField",
 			"(Ljava/lang/String;Ljava/lang/Class;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jclass>()
 		) {}
-	ObjectStreamField::ObjectStreamField(jstring arg0, jclass arg1, jboolean arg2)
+	ObjectStreamField::ObjectStreamField(JString arg0, JClass arg1, jboolean arg2)
 		: JObject(
 			"java.io.ObjectStreamField",
 			"(Ljava/lang/String;Ljava/lang/Class;Z)V",
-			arg0,
-			arg1,
+			arg0.object<jstring>(),
+			arg1.object<jclass>(),
 			arg2
 		) {}
 	
 	// Methods
-	jint ObjectStreamField::compareTo(jobject arg0)
+	jint ObjectStreamField::compareTo(JObject arg0)
 	{
 		return callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Object;)I",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jstring ObjectStreamField::getName()
+	JString ObjectStreamField::getName()
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint ObjectStreamField::getOffset()
 	{
@@ -49,12 +52,12 @@ namespace java::io
 			"()I"
 		);
 	}
-	jclass ObjectStreamField::getType()
+	JClass ObjectStreamField::getType()
 	{
 		return callObjectMethod(
 			"getType",
 			"()Ljava/lang/Class;"
-		).object<jclass>();
+		);
 	}
 	jchar ObjectStreamField::getTypeCode()
 	{
@@ -63,12 +66,12 @@ namespace java::io
 			"()C"
 		);
 	}
-	jstring ObjectStreamField::getTypeString()
+	JString ObjectStreamField::getTypeString()
 	{
 		return callObjectMethod(
 			"getTypeString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jboolean ObjectStreamField::isPrimitive()
 	{
@@ -84,12 +87,12 @@ namespace java::io
 			"()Z"
 		);
 	}
-	jstring ObjectStreamField::toString()
+	JString ObjectStreamField::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::io
 

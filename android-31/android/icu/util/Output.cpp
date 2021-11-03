@@ -1,14 +1,16 @@
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./Output.hpp"
 
 namespace android::icu::util
 {
 	// Fields
-	jobject Output::value()
+	JObject Output::value()
 	{
 		return getObjectField(
 			"value",
 			"Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
 	
 	// QJniObject forward
@@ -20,20 +22,20 @@ namespace android::icu::util
 			"android.icu.util.Output",
 			"()V"
 		) {}
-	Output::Output(jobject arg0)
+	Output::Output(JObject arg0)
 		: JObject(
 			"android.icu.util.Output",
 			"(Ljava/lang/Object;)V",
-			arg0
+			arg0.object<jobject>()
 		) {}
 	
 	// Methods
-	jstring Output::toString()
+	JString Output::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::icu::util
 

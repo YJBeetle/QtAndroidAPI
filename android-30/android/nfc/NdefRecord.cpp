@@ -1,5 +1,8 @@
+#include "../../JByteArray.hpp"
 #include "../net/Uri.hpp"
 #include "../os/Parcel.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./NdefRecord.hpp"
 
 namespace android::nfc
@@ -13,61 +16,61 @@ namespace android::nfc
 			"Landroid/os/Parcelable$Creator;"
 		);
 	}
-	jbyteArray NdefRecord::RTD_ALTERNATIVE_CARRIER()
+	JByteArray NdefRecord::RTD_ALTERNATIVE_CARRIER()
 	{
 		return getStaticObjectField(
 			"android.nfc.NdefRecord",
 			"RTD_ALTERNATIVE_CARRIER",
 			"[B"
-		).object<jbyteArray>();
+		);
 	}
-	jbyteArray NdefRecord::RTD_HANDOVER_CARRIER()
+	JByteArray NdefRecord::RTD_HANDOVER_CARRIER()
 	{
 		return getStaticObjectField(
 			"android.nfc.NdefRecord",
 			"RTD_HANDOVER_CARRIER",
 			"[B"
-		).object<jbyteArray>();
+		);
 	}
-	jbyteArray NdefRecord::RTD_HANDOVER_REQUEST()
+	JByteArray NdefRecord::RTD_HANDOVER_REQUEST()
 	{
 		return getStaticObjectField(
 			"android.nfc.NdefRecord",
 			"RTD_HANDOVER_REQUEST",
 			"[B"
-		).object<jbyteArray>();
+		);
 	}
-	jbyteArray NdefRecord::RTD_HANDOVER_SELECT()
+	JByteArray NdefRecord::RTD_HANDOVER_SELECT()
 	{
 		return getStaticObjectField(
 			"android.nfc.NdefRecord",
 			"RTD_HANDOVER_SELECT",
 			"[B"
-		).object<jbyteArray>();
+		);
 	}
-	jbyteArray NdefRecord::RTD_SMART_POSTER()
+	JByteArray NdefRecord::RTD_SMART_POSTER()
 	{
 		return getStaticObjectField(
 			"android.nfc.NdefRecord",
 			"RTD_SMART_POSTER",
 			"[B"
-		).object<jbyteArray>();
+		);
 	}
-	jbyteArray NdefRecord::RTD_TEXT()
+	JByteArray NdefRecord::RTD_TEXT()
 	{
 		return getStaticObjectField(
 			"android.nfc.NdefRecord",
 			"RTD_TEXT",
 			"[B"
-		).object<jbyteArray>();
+		);
 	}
-	jbyteArray NdefRecord::RTD_URI()
+	JByteArray NdefRecord::RTD_URI()
 	{
 		return getStaticObjectField(
 			"android.nfc.NdefRecord",
 			"RTD_URI",
 			"[B"
-		).object<jbyteArray>();
+		);
 	}
 	jshort NdefRecord::TNF_ABSOLUTE_URI()
 	{
@@ -123,61 +126,61 @@ namespace android::nfc
 	NdefRecord::NdefRecord(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	NdefRecord::NdefRecord(jbyteArray arg0)
+	NdefRecord::NdefRecord(JByteArray arg0)
 		: JObject(
 			"android.nfc.NdefRecord",
 			"([B)V",
-			arg0
+			arg0.object<jbyteArray>()
 		) {}
-	NdefRecord::NdefRecord(jshort arg0, jbyteArray arg1, jbyteArray arg2, jbyteArray arg3)
+	NdefRecord::NdefRecord(jshort arg0, JByteArray arg1, JByteArray arg2, JByteArray arg3)
 		: JObject(
 			"android.nfc.NdefRecord",
 			"(S[B[B[B)V",
 			arg0,
-			arg1,
-			arg2,
-			arg3
+			arg1.object<jbyteArray>(),
+			arg2.object<jbyteArray>(),
+			arg3.object<jbyteArray>()
 		) {}
 	
 	// Methods
-	android::nfc::NdefRecord NdefRecord::createApplicationRecord(jstring arg0)
+	android::nfc::NdefRecord NdefRecord::createApplicationRecord(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.nfc.NdefRecord",
 			"createApplicationRecord",
 			"(Ljava/lang/String;)Landroid/nfc/NdefRecord;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	android::nfc::NdefRecord NdefRecord::createExternal(jstring arg0, jstring arg1, jbyteArray arg2)
+	android::nfc::NdefRecord NdefRecord::createExternal(JString arg0, JString arg1, JByteArray arg2)
 	{
 		return callStaticObjectMethod(
 			"android.nfc.NdefRecord",
 			"createExternal",
 			"(Ljava/lang/String;Ljava/lang/String;[B)Landroid/nfc/NdefRecord;",
-			arg0,
-			arg1,
-			arg2
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2.object<jbyteArray>()
 		);
 	}
-	android::nfc::NdefRecord NdefRecord::createMime(jstring arg0, jbyteArray arg1)
+	android::nfc::NdefRecord NdefRecord::createMime(JString arg0, JByteArray arg1)
 	{
 		return callStaticObjectMethod(
 			"android.nfc.NdefRecord",
 			"createMime",
 			"(Ljava/lang/String;[B)Landroid/nfc/NdefRecord;",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jbyteArray>()
 		);
 	}
-	android::nfc::NdefRecord NdefRecord::createTextRecord(jstring arg0, jstring arg1)
+	android::nfc::NdefRecord NdefRecord::createTextRecord(JString arg0, JString arg1)
 	{
 		return callStaticObjectMethod(
 			"android.nfc.NdefRecord",
 			"createTextRecord",
 			"(Ljava/lang/String;Ljava/lang/String;)Landroid/nfc/NdefRecord;",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		);
 	}
 	android::nfc::NdefRecord NdefRecord::createUri(android::net::Uri arg0)
@@ -189,13 +192,13 @@ namespace android::nfc
 			arg0.object()
 		);
 	}
-	android::nfc::NdefRecord NdefRecord::createUri(jstring arg0)
+	android::nfc::NdefRecord NdefRecord::createUri(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.nfc.NdefRecord",
 			"createUri",
 			"(Ljava/lang/String;)Landroid/nfc/NdefRecord;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	jint NdefRecord::describeContents()
@@ -205,27 +208,27 @@ namespace android::nfc
 			"()I"
 		);
 	}
-	jboolean NdefRecord::equals(jobject arg0)
+	jboolean NdefRecord::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jbyteArray NdefRecord::getId()
+	JByteArray NdefRecord::getId()
 	{
 		return callObjectMethod(
 			"getId",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
-	jbyteArray NdefRecord::getPayload()
+	JByteArray NdefRecord::getPayload()
 	{
 		return callObjectMethod(
 			"getPayload",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
 	jshort NdefRecord::getTnf()
 	{
@@ -234,12 +237,12 @@ namespace android::nfc
 			"()S"
 		);
 	}
-	jbyteArray NdefRecord::getType()
+	JByteArray NdefRecord::getType()
 	{
 		return callObjectMethod(
 			"getType",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
 	jint NdefRecord::hashCode()
 	{
@@ -248,26 +251,26 @@ namespace android::nfc
 			"()I"
 		);
 	}
-	jbyteArray NdefRecord::toByteArray()
+	JByteArray NdefRecord::toByteArray()
 	{
 		return callObjectMethod(
 			"toByteArray",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
-	jstring NdefRecord::toMimeType()
+	JString NdefRecord::toMimeType()
 	{
 		return callObjectMethod(
 			"toMimeType",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring NdefRecord::toString()
+	JString NdefRecord::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::net::Uri NdefRecord::toUri()
 	{

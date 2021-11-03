@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JString;
 
 namespace android::os
 {
@@ -9,15 +10,15 @@ namespace android::os
 	{
 	public:
 		// Fields
-		static jstring BASE_OS();
-		static jstring CODENAME();
-		static jstring INCREMENTAL();
+		static JString BASE_OS();
+		static JString CODENAME();
+		static JString INCREMENTAL();
 		static jint PREVIEW_SDK_INT();
-		static jstring RELEASE();
-		static jstring RELEASE_OR_CODENAME();
-		static jstring SDK();
+		static JString RELEASE();
+		static JString RELEASE_OR_CODENAME();
+		static JString SDK();
 		static jint SDK_INT();
-		static jstring SECURITY_PATCH();
+		static JString SECURITY_PATCH();
 		
 		// QJniObject forward
 		template<typename ...Ts> explicit Build_VERSION(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}

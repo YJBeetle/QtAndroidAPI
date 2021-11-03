@@ -10,6 +10,7 @@ namespace java::io
 {
 	class PrintWriter;
 }
+class JString;
 
 namespace android::os
 {
@@ -23,10 +24,10 @@ namespace android::os
 		TokenWatcher(QJniObject obj);
 		
 		// Constructors
-		TokenWatcher(android::os::Handler arg0, jstring arg1);
+		TokenWatcher(android::os::Handler arg0, JString arg1);
 		
 		// Methods
-		void acquire(JObject arg0, jstring arg1);
+		void acquire(JObject arg0, JString arg1);
 		void acquired();
 		void cleanup(JObject arg0, jboolean arg1);
 		void dump();

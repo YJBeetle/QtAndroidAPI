@@ -1,6 +1,7 @@
 #include "./HardwareRenderer_FrameRenderRequest.hpp"
 #include "./RenderNode.hpp"
 #include "../view/Surface.hpp"
+#include "../../JString.hpp"
 #include "./HardwareRenderer.hpp"
 
 namespace android::graphics
@@ -116,12 +117,12 @@ namespace android::graphics
 			arg3
 		);
 	}
-	void HardwareRenderer::setName(jstring arg0)
+	void HardwareRenderer::setName(JString arg0)
 	{
 		callMethod<void>(
 			"setName",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void HardwareRenderer::setOpaque(jboolean arg0)

@@ -1,5 +1,7 @@
+#include "../../JArray.hpp"
 #include "../content/ComponentName.hpp"
 #include "../os/Parcel.hpp"
+#include "../../JString.hpp"
 #include "./ActivityManager_RunningAppProcessInfo.hpp"
 
 namespace android::app
@@ -168,19 +170,19 @@ namespace android::app
 			"pid"
 		);
 	}
-	jarray ActivityManager_RunningAppProcessInfo::pkgList()
+	JArray ActivityManager_RunningAppProcessInfo::pkgList()
 	{
 		return getObjectField(
 			"pkgList",
 			"[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
-	jstring ActivityManager_RunningAppProcessInfo::processName()
+	JString ActivityManager_RunningAppProcessInfo::processName()
 	{
 		return getObjectField(
 			"processName",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint ActivityManager_RunningAppProcessInfo::uid()
 	{
@@ -198,13 +200,13 @@ namespace android::app
 			"android.app.ActivityManager$RunningAppProcessInfo",
 			"()V"
 		) {}
-	ActivityManager_RunningAppProcessInfo::ActivityManager_RunningAppProcessInfo(jstring arg0, jint arg1, jarray arg2)
+	ActivityManager_RunningAppProcessInfo::ActivityManager_RunningAppProcessInfo(JString arg0, jint arg1, JArray arg2)
 		: JObject(
 			"android.app.ActivityManager$RunningAppProcessInfo",
 			"(Ljava/lang/String;I[Ljava/lang/String;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
-			arg2
+			arg2.object<jarray>()
 		) {}
 	
 	// Methods

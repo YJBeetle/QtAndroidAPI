@@ -1,12 +1,13 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "../../java/lang/Exception.hpp"
 
 namespace java::io
 {
 	class IOException;
 }
+class JString;
+class JThrowable;
 namespace java::net
 {
 	class SocketException;
@@ -25,11 +26,11 @@ namespace android::system
 		ErrnoException(QJniObject obj);
 		
 		// Constructors
-		ErrnoException(jstring arg0, jint arg1);
-		ErrnoException(jstring arg0, jint arg1, jthrowable arg2);
+		ErrnoException(JString arg0, jint arg1);
+		ErrnoException(JString arg0, jint arg1, JThrowable arg2);
 		
 		// Methods
-		jstring getMessage();
+		JString getMessage();
 		java::io::IOException rethrowAsIOException();
 		java::net::SocketException rethrowAsSocketException();
 	};

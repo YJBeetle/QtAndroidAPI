@@ -1,3 +1,5 @@
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
 #include "./Bitmap_Config.hpp"
 
 namespace android::graphics
@@ -58,22 +60,22 @@ namespace android::graphics
 	// Constructors
 	
 	// Methods
-	android::graphics::Bitmap_Config Bitmap_Config::valueOf(jstring arg0)
+	android::graphics::Bitmap_Config Bitmap_Config::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.graphics.Bitmap$Config",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/graphics/Bitmap$Config;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray Bitmap_Config::values()
+	JArray Bitmap_Config::values()
 	{
 		return callStaticObjectMethod(
 			"android.graphics.Bitmap$Config",
 			"values",
 			"()[Landroid/graphics/Bitmap$Config;"
-		).object<jarray>();
+		);
 	}
 } // namespace android::graphics
 

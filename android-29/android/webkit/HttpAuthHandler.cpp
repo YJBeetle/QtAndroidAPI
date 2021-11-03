@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./HttpAuthHandler.hpp"
 
 namespace android::webkit
@@ -17,13 +18,13 @@ namespace android::webkit
 			"()V"
 		);
 	}
-	void HttpAuthHandler::proceed(jstring arg0, jstring arg1)
+	void HttpAuthHandler::proceed(JString arg0, JString arg1)
 	{
 		callMethod<void>(
 			"proceed",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		);
 	}
 	jboolean HttpAuthHandler::useHttpAuthUsernamePassword()

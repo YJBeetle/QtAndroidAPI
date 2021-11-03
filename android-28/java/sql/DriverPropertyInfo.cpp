@@ -1,28 +1,30 @@
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
 #include "./DriverPropertyInfo.hpp"
 
 namespace java::sql
 {
 	// Fields
-	jarray DriverPropertyInfo::choices()
+	JArray DriverPropertyInfo::choices()
 	{
 		return getObjectField(
 			"choices",
 			"[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
-	jstring DriverPropertyInfo::description()
+	JString DriverPropertyInfo::description()
 	{
 		return getObjectField(
 			"description",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DriverPropertyInfo::name()
+	JString DriverPropertyInfo::name()
 	{
 		return getObjectField(
 			"name",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jboolean DriverPropertyInfo::required()
 	{
@@ -30,24 +32,24 @@ namespace java::sql
 			"required"
 		);
 	}
-	jstring DriverPropertyInfo::value()
+	JString DriverPropertyInfo::value()
 	{
 		return getObjectField(
 			"value",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QJniObject forward
 	DriverPropertyInfo::DriverPropertyInfo(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	DriverPropertyInfo::DriverPropertyInfo(jstring arg0, jstring arg1)
+	DriverPropertyInfo::DriverPropertyInfo(JString arg0, JString arg1)
 		: JObject(
 			"java.sql.DriverPropertyInfo",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		) {}
 	
 	// Methods

@@ -1,5 +1,6 @@
 #include "./WifiP2pDevice.hpp"
 #include "../../../os/Parcel.hpp"
+#include "../../../../JString.hpp"
 #include "./WifiP2pDeviceList.hpp"
 
 namespace android::net::wifi::p2p
@@ -38,12 +39,12 @@ namespace android::net::wifi::p2p
 			"()I"
 		);
 	}
-	android::net::wifi::p2p::WifiP2pDevice WifiP2pDeviceList::get(jstring arg0)
+	android::net::wifi::p2p::WifiP2pDevice WifiP2pDeviceList::get(JString arg0)
 	{
 		return callObjectMethod(
 			"get",
 			"(Ljava/lang/String;)Landroid/net/wifi/p2p/WifiP2pDevice;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	JObject WifiP2pDeviceList::getDeviceList()
@@ -53,12 +54,12 @@ namespace android::net::wifi::p2p
 			"()Ljava/util/Collection;"
 		);
 	}
-	jstring WifiP2pDeviceList::toString()
+	JString WifiP2pDeviceList::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void WifiP2pDeviceList::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

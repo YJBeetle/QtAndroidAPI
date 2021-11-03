@@ -1,4 +1,5 @@
 #include "./BiometricPrompt_AuthenticationResult.hpp"
+#include "../../../JString.hpp"
 #include "./BiometricPrompt_AuthenticationCallback.hpp"
 
 namespace android::hardware::biometrics
@@ -16,13 +17,13 @@ namespace android::hardware::biometrics
 		) {}
 	
 	// Methods
-	void BiometricPrompt_AuthenticationCallback::onAuthenticationError(jint arg0, jstring arg1)
+	void BiometricPrompt_AuthenticationCallback::onAuthenticationError(jint arg0, JString arg1)
 	{
 		callMethod<void>(
 			"onAuthenticationError",
 			"(ILjava/lang/CharSequence;)V",
 			arg0,
-			arg1
+			arg1.object<jstring>()
 		);
 	}
 	void BiometricPrompt_AuthenticationCallback::onAuthenticationFailed()
@@ -32,13 +33,13 @@ namespace android::hardware::biometrics
 			"()V"
 		);
 	}
-	void BiometricPrompt_AuthenticationCallback::onAuthenticationHelp(jint arg0, jstring arg1)
+	void BiometricPrompt_AuthenticationCallback::onAuthenticationHelp(jint arg0, JString arg1)
 	{
 		callMethod<void>(
 			"onAuthenticationHelp",
 			"(ILjava/lang/CharSequence;)V",
 			arg0,
-			arg1
+			arg1.object<jstring>()
 		);
 	}
 	void BiometricPrompt_AuthenticationCallback::onAuthenticationSucceeded(android::hardware::biometrics::BiometricPrompt_AuthenticationResult arg0)

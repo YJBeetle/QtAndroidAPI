@@ -6,6 +6,8 @@ namespace android::content::res
 {
 	class Resources;
 }
+class JString;
+class JString;
 
 namespace android::provider
 {
@@ -13,18 +15,18 @@ namespace android::provider
 	{
 	public:
 		// Fields
-		static jstring COMPANY();
-		static jstring CONTENT_ITEM_TYPE();
-		static jstring DEPARTMENT();
-		static jstring EXTRA_ADDRESS_BOOK_INDEX();
-		static jstring EXTRA_ADDRESS_BOOK_INDEX_COUNTS();
-		static jstring EXTRA_ADDRESS_BOOK_INDEX_TITLES();
-		static jstring JOB_DESCRIPTION();
-		static jstring OFFICE_LOCATION();
-		static jstring PHONETIC_NAME();
-		static jstring PHONETIC_NAME_STYLE();
-		static jstring SYMBOL();
-		static jstring TITLE();
+		static JString COMPANY();
+		static JString CONTENT_ITEM_TYPE();
+		static JString DEPARTMENT();
+		static JString EXTRA_ADDRESS_BOOK_INDEX();
+		static JString EXTRA_ADDRESS_BOOK_INDEX_COUNTS();
+		static JString EXTRA_ADDRESS_BOOK_INDEX_TITLES();
+		static JString JOB_DESCRIPTION();
+		static JString OFFICE_LOCATION();
+		static JString PHONETIC_NAME();
+		static JString PHONETIC_NAME_STYLE();
+		static JString SYMBOL();
+		static JString TITLE();
 		static jint TYPE_OTHER();
 		static jint TYPE_WORK();
 		
@@ -35,7 +37,7 @@ namespace android::provider
 		// Constructors
 		
 		// Methods
-		static jstring getTypeLabel(android::content::res::Resources arg0, jint arg1, jstring arg2);
+		static JString getTypeLabel(android::content::res::Resources arg0, jint arg1, JString arg2);
 		static jint getTypeLabelResource(jint arg0);
 	};
 } // namespace android::provider

@@ -1,5 +1,9 @@
+#include "../../../JByteArray.hpp"
+#include "../../../JIntArray.hpp"
 #include "./SmsMessage_MessageClass.hpp"
 #include "./SmsMessage_SubmitPdu.hpp"
+#include "../../../JString.hpp"
+#include "../../../JString.hpp"
 #include "./SmsMessage.hpp"
 
 namespace android::telephony::gsm
@@ -66,86 +70,86 @@ namespace android::telephony::gsm
 		) {}
 	
 	// Methods
-	jintArray SmsMessage::calculateLength(jstring arg0, jboolean arg1)
+	JIntArray SmsMessage::calculateLength(JString arg0, jboolean arg1)
 	{
 		return callStaticObjectMethod(
 			"android.telephony.gsm.SmsMessage",
 			"calculateLength",
 			"(Ljava/lang/CharSequence;Z)[I",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
-		).object<jintArray>();
+		);
 	}
-	android::telephony::gsm::SmsMessage SmsMessage::createFromPdu(jbyteArray arg0)
+	android::telephony::gsm::SmsMessage SmsMessage::createFromPdu(JByteArray arg0)
 	{
 		return callStaticObjectMethod(
 			"android.telephony.gsm.SmsMessage",
 			"createFromPdu",
 			"([B)Landroid/telephony/gsm/SmsMessage;",
-			arg0
+			arg0.object<jbyteArray>()
 		);
 	}
-	android::telephony::gsm::SmsMessage_SubmitPdu SmsMessage::getSubmitPdu(jstring arg0, jstring arg1, jstring arg2, jboolean arg3)
+	android::telephony::gsm::SmsMessage_SubmitPdu SmsMessage::getSubmitPdu(JString arg0, JString arg1, JString arg2, jboolean arg3)
 	{
 		return callStaticObjectMethod(
 			"android.telephony.gsm.SmsMessage",
 			"getSubmitPdu",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)Landroid/telephony/gsm/SmsMessage$SubmitPdu;",
-			arg0,
-			arg1,
-			arg2,
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2.object<jstring>(),
 			arg3
 		);
 	}
-	android::telephony::gsm::SmsMessage_SubmitPdu SmsMessage::getSubmitPdu(jstring arg0, jstring arg1, jshort arg2, jbyteArray arg3, jboolean arg4)
+	android::telephony::gsm::SmsMessage_SubmitPdu SmsMessage::getSubmitPdu(JString arg0, JString arg1, jshort arg2, JByteArray arg3, jboolean arg4)
 	{
 		return callStaticObjectMethod(
 			"android.telephony.gsm.SmsMessage",
 			"getSubmitPdu",
 			"(Ljava/lang/String;Ljava/lang/String;S[BZ)Landroid/telephony/gsm/SmsMessage$SubmitPdu;",
-			arg0,
-			arg1,
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
 			arg2,
-			arg3,
+			arg3.object<jbyteArray>(),
 			arg4
 		);
 	}
-	jint SmsMessage::getTPLayerLengthForPDU(jstring arg0)
+	jint SmsMessage::getTPLayerLengthForPDU(JString arg0)
 	{
 		return callStaticMethod<jint>(
 			"android.telephony.gsm.SmsMessage",
 			"getTPLayerLengthForPDU",
 			"(Ljava/lang/String;)I",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jstring SmsMessage::getDisplayMessageBody()
+	JString SmsMessage::getDisplayMessageBody()
 	{
 		return callObjectMethod(
 			"getDisplayMessageBody",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring SmsMessage::getDisplayOriginatingAddress()
+	JString SmsMessage::getDisplayOriginatingAddress()
 	{
 		return callObjectMethod(
 			"getDisplayOriginatingAddress",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring SmsMessage::getEmailBody()
+	JString SmsMessage::getEmailBody()
 	{
 		return callObjectMethod(
 			"getEmailBody",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring SmsMessage::getEmailFrom()
+	JString SmsMessage::getEmailFrom()
 	{
 		return callObjectMethod(
 			"getEmailFrom",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint SmsMessage::getIndexOnSim()
 	{
@@ -154,12 +158,12 @@ namespace android::telephony::gsm
 			"()I"
 		);
 	}
-	jstring SmsMessage::getMessageBody()
+	JString SmsMessage::getMessageBody()
 	{
 		return callObjectMethod(
 			"getMessageBody",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::telephony::gsm::SmsMessage_MessageClass SmsMessage::getMessageClass()
 	{
@@ -168,19 +172,19 @@ namespace android::telephony::gsm
 			"()Landroid/telephony/gsm/SmsMessage$MessageClass;"
 		);
 	}
-	jstring SmsMessage::getOriginatingAddress()
+	JString SmsMessage::getOriginatingAddress()
 	{
 		return callObjectMethod(
 			"getOriginatingAddress",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jbyteArray SmsMessage::getPdu()
+	JByteArray SmsMessage::getPdu()
 	{
 		return callObjectMethod(
 			"getPdu",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
 	jint SmsMessage::getProtocolIdentifier()
 	{
@@ -189,19 +193,19 @@ namespace android::telephony::gsm
 			"()I"
 		);
 	}
-	jstring SmsMessage::getPseudoSubject()
+	JString SmsMessage::getPseudoSubject()
 	{
 		return callObjectMethod(
 			"getPseudoSubject",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring SmsMessage::getServiceCenterAddress()
+	JString SmsMessage::getServiceCenterAddress()
 	{
 		return callObjectMethod(
 			"getServiceCenterAddress",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint SmsMessage::getStatus()
 	{
@@ -224,12 +228,12 @@ namespace android::telephony::gsm
 			"()J"
 		);
 	}
-	jbyteArray SmsMessage::getUserData()
+	JByteArray SmsMessage::getUserData()
 	{
 		return callObjectMethod(
 			"getUserData",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
 	jboolean SmsMessage::isCphsMwiMessage()
 	{

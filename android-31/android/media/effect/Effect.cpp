@@ -1,3 +1,5 @@
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./Effect.hpp"
 
 namespace android::media::effect
@@ -26,12 +28,12 @@ namespace android::media::effect
 			arg3
 		);
 	}
-	jstring Effect::getName()
+	JString Effect::getName()
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void Effect::release()
 	{
@@ -40,13 +42,13 @@ namespace android::media::effect
 			"()V"
 		);
 	}
-	void Effect::setParameter(jstring arg0, jobject arg1)
+	void Effect::setParameter(JString arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"setParameter",
 			"(Ljava/lang/String;Ljava/lang/Object;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jobject>()
 		);
 	}
 	void Effect::setUpdateListener(JObject arg0)

@@ -2,6 +2,7 @@
 
 #include "../../../../JObject.hpp"
 
+class JObject;
 
 namespace android::hardware::camera2::params
 {
@@ -17,7 +18,7 @@ namespace android::hardware::camera2::params
 		// Constructors
 		
 		// Methods
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		JObject getAvailableSizes();
 		jint getFormat();
 		jint hashCode();

@@ -1,3 +1,5 @@
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
 #include "./IslamicCalendar_CalculationType.hpp"
 
 namespace android::icu::util
@@ -42,22 +44,22 @@ namespace android::icu::util
 	// Constructors
 	
 	// Methods
-	android::icu::util::IslamicCalendar_CalculationType IslamicCalendar_CalculationType::valueOf(jstring arg0)
+	android::icu::util::IslamicCalendar_CalculationType IslamicCalendar_CalculationType::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.icu.util.IslamicCalendar$CalculationType",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/icu/util/IslamicCalendar$CalculationType;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray IslamicCalendar_CalculationType::values()
+	JArray IslamicCalendar_CalculationType::values()
 	{
 		return callStaticObjectMethod(
 			"android.icu.util.IslamicCalendar$CalculationType",
 			"values",
 			"()[Landroid/icu/util/IslamicCalendar$CalculationType;"
-		).object<jarray>();
+		);
 	}
 } // namespace android::icu::util
 

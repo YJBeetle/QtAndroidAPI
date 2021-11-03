@@ -2,6 +2,8 @@
 #include "../../graphics/drawable/Icon.hpp"
 #include "../../os/Bundle.hpp"
 #include "../../os/Parcel.hpp"
+#include "../../../JString.hpp"
+#include "../../../JString.hpp"
 #include "./ChooserTarget.hpp"
 
 namespace android::service::chooser
@@ -20,11 +22,11 @@ namespace android::service::chooser
 	ChooserTarget::ChooserTarget(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	ChooserTarget::ChooserTarget(jstring arg0, android::graphics::drawable::Icon arg1, jfloat arg2, android::content::ComponentName arg3, android::os::Bundle arg4)
+	ChooserTarget::ChooserTarget(JString arg0, android::graphics::drawable::Icon arg1, jfloat arg2, android::content::ComponentName arg3, android::os::Bundle arg4)
 		: JObject(
 			"android.service.chooser.ChooserTarget",
 			"(Ljava/lang/CharSequence;Landroid/graphics/drawable/Icon;FLandroid/content/ComponentName;Landroid/os/Bundle;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
 			arg2,
 			arg3.object(),
@@ -67,19 +69,19 @@ namespace android::service::chooser
 			"()F"
 		);
 	}
-	jstring ChooserTarget::getTitle()
+	JString ChooserTarget::getTitle()
 	{
 		return callObjectMethod(
 			"getTitle",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
-	jstring ChooserTarget::toString()
+	JString ChooserTarget::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void ChooserTarget::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

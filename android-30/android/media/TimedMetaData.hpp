@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JByteArray;
 
 namespace android::media
 {
@@ -15,10 +16,10 @@ namespace android::media
 		TimedMetaData(QJniObject obj);
 		
 		// Constructors
-		TimedMetaData(jlong arg0, jbyteArray arg1);
+		TimedMetaData(jlong arg0, JByteArray arg1);
 		
 		// Methods
-		jbyteArray getMetaData();
+		JByteArray getMetaData();
 		jlong getTimestamp();
 	};
 } // namespace android::media

@@ -18,6 +18,7 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
 
 namespace android::view
 {
@@ -45,7 +46,7 @@ namespace android::view
 		android::graphics::Canvas lockHardwareCanvas();
 		void readFromParcel(android::os::Parcel arg0);
 		void release();
-		jstring toString();
+		JString toString();
 		void unlockCanvas(android::graphics::Canvas arg0);
 		void unlockCanvasAndPost(android::graphics::Canvas arg0);
 		void writeToParcel(android::os::Parcel arg0, jint arg1);

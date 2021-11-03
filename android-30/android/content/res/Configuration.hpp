@@ -10,6 +10,8 @@ namespace android::os
 {
 	class Parcel;
 }
+class JObject;
+class JString;
 namespace java::util
 {
 	class Locale;
@@ -126,11 +128,11 @@ namespace android::content::res
 		// Methods
 		static jboolean needNewResources(jint arg0, jint arg1);
 		jint compareTo(android::content::res::Configuration arg0);
-		jint compareTo(jobject arg0);
+		jint compareTo(JObject arg0);
 		jint describeContents();
 		jint diff(android::content::res::Configuration arg0);
 		jboolean equals(android::content::res::Configuration arg0);
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint getLayoutDirection();
 		android::os::LocaleList getLocales();
 		jint hashCode();
@@ -145,7 +147,7 @@ namespace android::content::res
 		void setLocales(android::os::LocaleList arg0);
 		void setTo(android::content::res::Configuration arg0);
 		void setToDefaults();
-		jstring toString();
+		JString toString();
 		jint updateFrom(android::content::res::Configuration arg0);
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};

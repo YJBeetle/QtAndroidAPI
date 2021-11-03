@@ -2,6 +2,8 @@
 #include "../../graphics/drawable/Drawable.hpp"
 #include "../../os/Bundle.hpp"
 #include "../../os/Parcel.hpp"
+#include "../../../JString.hpp"
+#include "../../../JString.hpp"
 #include "./PackageItemInfo.hpp"
 
 namespace android::content::pm
@@ -38,26 +40,26 @@ namespace android::content::pm
 			"Landroid/os/Bundle;"
 		);
 	}
-	jstring PackageItemInfo::name()
+	JString PackageItemInfo::name()
 	{
 		return getObjectField(
 			"name",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageItemInfo::nonLocalizedLabel()
+	JString PackageItemInfo::nonLocalizedLabel()
 	{
 		return getObjectField(
 			"nonLocalizedLabel",
 			"Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
-	jstring PackageItemInfo::packageName()
+	JString PackageItemInfo::packageName()
 	{
 		return getObjectField(
 			"packageName",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QJniObject forward
@@ -93,13 +95,13 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	jstring PackageItemInfo::loadLabel(android::content::pm::PackageManager arg0)
+	JString PackageItemInfo::loadLabel(android::content::pm::PackageManager arg0)
 	{
 		return callObjectMethod(
 			"loadLabel",
 			"(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;",
 			arg0.object()
-		).object<jstring>();
+		);
 	}
 	android::graphics::drawable::Drawable PackageItemInfo::loadLogo(android::content::pm::PackageManager arg0)
 	{
@@ -117,13 +119,13 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	JObject PackageItemInfo::loadXmlMetaData(android::content::pm::PackageManager arg0, jstring arg1)
+	JObject PackageItemInfo::loadXmlMetaData(android::content::pm::PackageManager arg0, JString arg1)
 	{
 		return callObjectMethod(
 			"loadXmlMetaData",
 			"(Landroid/content/pm/PackageManager;Ljava/lang/String;)Landroid/content/res/XmlResourceParser;",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
 	void PackageItemInfo::writeToParcel(android::os::Parcel arg0, jint arg1)

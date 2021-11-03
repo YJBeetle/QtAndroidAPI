@@ -14,6 +14,8 @@ namespace android::view
 {
 	class Surface;
 }
+class JObject;
+class JString;
 
 namespace android::hardware::camera2
 {
@@ -31,12 +33,12 @@ namespace android::hardware::camera2
 		// Methods
 		void addTarget(android::view::Surface arg0);
 		android::hardware::camera2::CaptureRequest build();
-		jobject get(android::hardware::camera2::CaptureRequest_Key arg0);
-		jobject getPhysicalCameraKey(android::hardware::camera2::CaptureRequest_Key arg0, jstring arg1);
+		JObject get(android::hardware::camera2::CaptureRequest_Key arg0);
+		JObject getPhysicalCameraKey(android::hardware::camera2::CaptureRequest_Key arg0, JString arg1);
 		void removeTarget(android::view::Surface arg0);
-		void set(android::hardware::camera2::CaptureRequest_Key arg0, jobject arg1);
-		android::hardware::camera2::CaptureRequest_Builder setPhysicalCameraKey(android::hardware::camera2::CaptureRequest_Key arg0, jobject arg1, jstring arg2);
-		void setTag(jobject arg0);
+		void set(android::hardware::camera2::CaptureRequest_Key arg0, JObject arg1);
+		android::hardware::camera2::CaptureRequest_Builder setPhysicalCameraKey(android::hardware::camera2::CaptureRequest_Key arg0, JObject arg1, JString arg2);
+		void setTag(JObject arg0);
 	};
 } // namespace android::hardware::camera2
 

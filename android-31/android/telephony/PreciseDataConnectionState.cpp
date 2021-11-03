@@ -1,6 +1,8 @@
 #include "../net/LinkProperties.hpp"
 #include "../os/Parcel.hpp"
 #include "./data/ApnSetting.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./PreciseDataConnectionState.hpp"
 
 namespace android::telephony
@@ -28,12 +30,12 @@ namespace android::telephony
 			"()I"
 		);
 	}
-	jboolean PreciseDataConnectionState::equals(jobject arg0)
+	jboolean PreciseDataConnectionState::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	android::telephony::data::ApnSetting PreciseDataConnectionState::getApnSetting()
@@ -92,12 +94,12 @@ namespace android::telephony
 			"()I"
 		);
 	}
-	jstring PreciseDataConnectionState::toString()
+	JString PreciseDataConnectionState::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void PreciseDataConnectionState::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

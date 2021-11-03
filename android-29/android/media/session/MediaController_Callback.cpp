@@ -2,6 +2,8 @@
 #include "./MediaController_PlaybackInfo.hpp"
 #include "./PlaybackState.hpp"
 #include "../../os/Bundle.hpp"
+#include "../../../JString.hpp"
+#include "../../../JString.hpp"
 #include "./MediaController_Callback.hpp"
 
 namespace android::media::session
@@ -59,12 +61,12 @@ namespace android::media::session
 			arg0.object()
 		);
 	}
-	void MediaController_Callback::onQueueTitleChanged(jstring arg0)
+	void MediaController_Callback::onQueueTitleChanged(JString arg0)
 	{
 		callMethod<void>(
 			"onQueueTitleChanged",
 			"(Ljava/lang/CharSequence;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void MediaController_Callback::onSessionDestroyed()
@@ -74,12 +76,12 @@ namespace android::media::session
 			"()V"
 		);
 	}
-	void MediaController_Callback::onSessionEvent(jstring arg0, android::os::Bundle arg1)
+	void MediaController_Callback::onSessionEvent(JString arg0, android::os::Bundle arg1)
 	{
 		callMethod<void>(
 			"onSessionEvent",
 			"(Ljava/lang/String;Landroid/os/Bundle;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}

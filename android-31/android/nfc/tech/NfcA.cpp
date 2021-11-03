@@ -1,3 +1,4 @@
+#include "../../../JByteArray.hpp"
 #include "../Tag.hpp"
 #include "./NfcA.hpp"
 
@@ -34,12 +35,12 @@ namespace android::nfc::tech
 			"()V"
 		);
 	}
-	jbyteArray NfcA::getAtqa()
+	JByteArray NfcA::getAtqa()
 	{
 		return callObjectMethod(
 			"getAtqa",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
 	jint NfcA::getMaxTransceiveLength()
 	{
@@ -84,13 +85,13 @@ namespace android::nfc::tech
 			arg0
 		);
 	}
-	jbyteArray NfcA::transceive(jbyteArray arg0)
+	JByteArray NfcA::transceive(JByteArray arg0)
 	{
 		return callObjectMethod(
 			"transceive",
 			"([B)[B",
-			arg0
-		).object<jbyteArray>();
+			arg0.object<jbyteArray>()
+		);
 	}
 } // namespace android::nfc::tech
 

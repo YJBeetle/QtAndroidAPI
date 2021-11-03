@@ -1,3 +1,5 @@
+#include "../../JByteArray.hpp"
+#include "../../JIntArray.hpp"
 #include "../hardware/usb/UsbDevice.hpp"
 #include "../hardware/usb/UsbDeviceConnection.hpp"
 #include "./MtpDeviceInfo.hpp"
@@ -6,6 +8,7 @@
 #include "./MtpStorageInfo.hpp"
 #include "../os/CancellationSignal.hpp"
 #include "../os/ParcelFileDescriptor.hpp"
+#include "../../JString.hpp"
 #include "./MtpDevice.hpp"
 
 namespace android::mtp
@@ -53,23 +56,23 @@ namespace android::mtp
 			"()Landroid/mtp/MtpDeviceInfo;"
 		);
 	}
-	jstring MtpDevice::getDeviceName()
+	JString MtpDevice::getDeviceName()
 	{
 		return callObjectMethod(
 			"getDeviceName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jbyteArray MtpDevice::getObject(jint arg0, jint arg1)
+	JByteArray MtpDevice::getObject(jint arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"getObject",
 			"(II)[B",
 			arg0,
 			arg1
-		).object<jbyteArray>();
+		);
 	}
-	jintArray MtpDevice::getObjectHandles(jint arg0, jint arg1, jint arg2)
+	JIntArray MtpDevice::getObjectHandles(jint arg0, jint arg1, jint arg2)
 	{
 		return callObjectMethod(
 			"getObjectHandles",
@@ -77,7 +80,7 @@ namespace android::mtp
 			arg0,
 			arg1,
 			arg2
-		).object<jintArray>();
+		);
 	}
 	android::mtp::MtpObjectInfo MtpDevice::getObjectInfo(jint arg0)
 	{
@@ -95,7 +98,7 @@ namespace android::mtp
 			arg0
 		);
 	}
-	jlong MtpDevice::getPartialObject(jint arg0, jlong arg1, jlong arg2, jbyteArray arg3)
+	jlong MtpDevice::getPartialObject(jint arg0, jlong arg1, jlong arg2, JByteArray arg3)
 	{
 		return callMethod<jlong>(
 			"getPartialObject",
@@ -103,10 +106,10 @@ namespace android::mtp
 			arg0,
 			arg1,
 			arg2,
-			arg3
+			arg3.object<jbyteArray>()
 		);
 	}
-	jlong MtpDevice::getPartialObject64(jint arg0, jlong arg1, jlong arg2, jbyteArray arg3)
+	jlong MtpDevice::getPartialObject64(jint arg0, jlong arg1, jlong arg2, JByteArray arg3)
 	{
 		return callMethod<jlong>(
 			"getPartialObject64",
@@ -114,7 +117,7 @@ namespace android::mtp
 			arg0,
 			arg1,
 			arg2,
-			arg3
+			arg3.object<jbyteArray>()
 		);
 	}
 	jlong MtpDevice::getStorageId(jint arg0)
@@ -125,12 +128,12 @@ namespace android::mtp
 			arg0
 		);
 	}
-	jintArray MtpDevice::getStorageIds()
+	JIntArray MtpDevice::getStorageIds()
 	{
 		return callObjectMethod(
 			"getStorageIds",
 			"()[I"
-		).object<jintArray>();
+		);
 	}
 	android::mtp::MtpStorageInfo MtpDevice::getStorageInfo(jint arg0)
 	{
@@ -140,13 +143,13 @@ namespace android::mtp
 			arg0
 		);
 	}
-	jbyteArray MtpDevice::getThumbnail(jint arg0)
+	JByteArray MtpDevice::getThumbnail(jint arg0)
 	{
 		return callObjectMethod(
 			"getThumbnail",
 			"(I)[B",
 			arg0
-		).object<jbyteArray>();
+		);
 	}
 	jboolean MtpDevice::importFile(jint arg0, android::os::ParcelFileDescriptor arg1)
 	{
@@ -157,13 +160,13 @@ namespace android::mtp
 			arg1.object()
 		);
 	}
-	jboolean MtpDevice::importFile(jint arg0, jstring arg1)
+	jboolean MtpDevice::importFile(jint arg0, JString arg1)
 	{
 		return callMethod<jboolean>(
 			"importFile",
 			"(ILjava/lang/String;)Z",
 			arg0,
-			arg1
+			arg1.object<jstring>()
 		);
 	}
 	jboolean MtpDevice::open(android::hardware::usb::UsbDeviceConnection arg0)
@@ -200,12 +203,12 @@ namespace android::mtp
 			arg0.object()
 		);
 	}
-	jstring MtpDevice::toString()
+	JString MtpDevice::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::mtp
 

@@ -2,6 +2,7 @@
 
 #include "../../../../JObject.hpp"
 
+class JString;
 
 namespace org::xml::sax::helpers
 {
@@ -18,7 +19,7 @@ namespace org::xml::sax::helpers
 		
 		// Methods
 		static JObject makeParser();
-		static JObject makeParser(jstring arg0);
+		static JObject makeParser(JString arg0);
 	};
 } // namespace org::xml::sax::helpers
 

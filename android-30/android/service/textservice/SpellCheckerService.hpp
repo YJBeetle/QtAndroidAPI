@@ -1,8 +1,5 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "../../content/Context.hpp"
-#include "../../content/ContextWrapper.hpp"
 #include "../../app/Service.hpp"
 
 namespace android::content
@@ -13,6 +10,7 @@ namespace android::service::textservice
 {
 	class SpellCheckerService_Session;
 }
+class JString;
 
 namespace android::service::textservice
 {
@@ -20,7 +18,7 @@ namespace android::service::textservice
 	{
 	public:
 		// Fields
-		static jstring SERVICE_INTERFACE();
+		static JString SERVICE_INTERFACE();
 		
 		// QJniObject forward
 		template<typename ...Ts> explicit SpellCheckerService(const char *className, const char *sig, Ts...agv) : android::app::Service(className, sig, std::forward<Ts>(agv)...) {}

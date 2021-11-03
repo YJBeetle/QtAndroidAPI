@@ -14,6 +14,7 @@ namespace android::graphics::fonts
 {
 	class FontStyle;
 }
+class JString;
 
 namespace android::graphics
 {
@@ -34,7 +35,7 @@ namespace android::graphics
 		android::graphics::Typeface_CustomFallbackBuilder addCustomFallback(android::graphics::fonts::FontFamily arg0);
 		android::graphics::Typeface build();
 		android::graphics::Typeface_CustomFallbackBuilder setStyle(android::graphics::fonts::FontStyle arg0);
-		android::graphics::Typeface_CustomFallbackBuilder setSystemFallback(jstring arg0);
+		android::graphics::Typeface_CustomFallbackBuilder setSystemFallback(JString arg0);
 	};
 } // namespace android::graphics
 

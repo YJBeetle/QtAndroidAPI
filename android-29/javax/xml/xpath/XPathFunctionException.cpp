@@ -1,3 +1,5 @@
+#include "../../../JString.hpp"
+#include "../../../JThrowable.hpp"
 #include "./XPathFunctionException.hpp"
 
 namespace javax::xml::xpath
@@ -8,17 +10,17 @@ namespace javax::xml::xpath
 	XPathFunctionException::XPathFunctionException(QJniObject obj) : javax::xml::xpath::XPathExpressionException(obj) {}
 	
 	// Constructors
-	XPathFunctionException::XPathFunctionException(jstring arg0)
+	XPathFunctionException::XPathFunctionException(JString arg0)
 		: javax::xml::xpath::XPathExpressionException(
 			"javax.xml.xpath.XPathFunctionException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	XPathFunctionException::XPathFunctionException(jthrowable arg0)
+	XPathFunctionException::XPathFunctionException(JThrowable arg0)
 		: javax::xml::xpath::XPathExpressionException(
 			"javax.xml.xpath.XPathFunctionException",
 			"(Ljava/lang/Throwable;)V",
-			arg0
+			arg0.object<jthrowable>()
 		) {}
 	
 	// Methods

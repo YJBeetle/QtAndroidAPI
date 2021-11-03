@@ -16,6 +16,8 @@
 #include "./View.hpp"
 #include "./ViewGroup_LayoutParams.hpp"
 #include "./WindowManager_LayoutParams.hpp"
+#include "../../JString.hpp"
+#include "../../JString.hpp"
 #include "./Window.hpp"
 
 namespace android::view
@@ -147,13 +149,13 @@ namespace android::view
 			"ID_ANDROID_CONTENT"
 		);
 	}
-	jstring Window::NAVIGATION_BAR_BACKGROUND_TRANSITION_NAME()
+	JString Window::NAVIGATION_BAR_BACKGROUND_TRANSITION_NAME()
 	{
 		return getStaticObjectField(
 			"android.view.Window",
 			"NAVIGATION_BAR_BACKGROUND_TRANSITION_NAME",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint Window::PROGRESS_END()
 	{
@@ -211,13 +213,13 @@ namespace android::view
 			"PROGRESS_VISIBILITY_ON"
 		);
 	}
-	jstring Window::STATUS_BAR_BACKGROUND_TRANSITION_NAME()
+	JString Window::STATUS_BAR_BACKGROUND_TRANSITION_NAME()
 	{
 		return getStaticObjectField(
 			"android.view.Window",
 			"STATUS_BAR_BACKGROUND_TRANSITION_NAME",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QJniObject forward
@@ -1086,12 +1088,12 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void Window::setTitle(jstring arg0)
+	void Window::setTitle(JString arg0)
 	{
 		callMethod<void>(
 			"setTitle",
 			"(Ljava/lang/CharSequence;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void Window::setTitleColor(jint arg0)
@@ -1159,24 +1161,24 @@ namespace android::view
 			arg0
 		);
 	}
-	void Window::setWindowManager(JObject arg0, JObject arg1, jstring arg2)
+	void Window::setWindowManager(JObject arg0, JObject arg1, JString arg2)
 	{
 		callMethod<void>(
 			"setWindowManager",
 			"(Landroid/view/WindowManager;Landroid/os/IBinder;Ljava/lang/String;)V",
 			arg0.object(),
 			arg1.object(),
-			arg2
+			arg2.object<jstring>()
 		);
 	}
-	void Window::setWindowManager(JObject arg0, JObject arg1, jstring arg2, jboolean arg3)
+	void Window::setWindowManager(JObject arg0, JObject arg1, JString arg2, jboolean arg3)
 	{
 		callMethod<void>(
 			"setWindowManager",
 			"(Landroid/view/WindowManager;Landroid/os/IBinder;Ljava/lang/String;Z)V",
 			arg0.object(),
 			arg1.object(),
-			arg2,
+			arg2.object<jstring>(),
 			arg3
 		);
 	}

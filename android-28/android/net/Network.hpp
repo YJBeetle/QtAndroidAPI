@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JArray;
 namespace android::os
 {
 	class Parcel;
@@ -10,6 +11,8 @@ namespace java::io
 {
 	class FileDescriptor;
 }
+class JObject;
+class JString;
 namespace java::net
 {
 	class DatagramSocket;
@@ -59,15 +62,15 @@ namespace android::net
 		void bindSocket(java::net::DatagramSocket arg0);
 		void bindSocket(java::net::Socket arg0);
 		jint describeContents();
-		jboolean equals(jobject arg0);
-		jarray getAllByName(jstring arg0);
-		java::net::InetAddress getByName(jstring arg0);
+		jboolean equals(JObject arg0);
+		JArray getAllByName(JString arg0);
+		java::net::InetAddress getByName(JString arg0);
 		jlong getNetworkHandle();
 		javax::net::SocketFactory getSocketFactory();
 		jint hashCode();
 		java::net::URLConnection openConnection(java::net::URL arg0);
 		java::net::URLConnection openConnection(java::net::URL arg0, java::net::Proxy arg1);
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::net

@@ -1,3 +1,5 @@
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
 #include "./Region_Op.hpp"
 
 namespace android::graphics
@@ -58,22 +60,22 @@ namespace android::graphics
 	// Constructors
 	
 	// Methods
-	android::graphics::Region_Op Region_Op::valueOf(jstring arg0)
+	android::graphics::Region_Op Region_Op::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.graphics.Region$Op",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/graphics/Region$Op;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray Region_Op::values()
+	JArray Region_Op::values()
 	{
 		return callStaticObjectMethod(
 			"android.graphics.Region$Op",
 			"values",
 			"()[Landroid/graphics/Region$Op;"
-		).object<jarray>();
+		);
 	}
 } // namespace android::graphics
 

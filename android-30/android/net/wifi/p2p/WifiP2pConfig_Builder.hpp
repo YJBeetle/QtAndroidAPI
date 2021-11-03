@@ -10,6 +10,7 @@ namespace android::net::wifi::p2p
 {
 	class WifiP2pConfig;
 }
+class JString;
 
 namespace android::net::wifi::p2p
 {
@@ -31,8 +32,8 @@ namespace android::net::wifi::p2p
 		android::net::wifi::p2p::WifiP2pConfig_Builder setDeviceAddress(android::net::MacAddress arg0);
 		android::net::wifi::p2p::WifiP2pConfig_Builder setGroupOperatingBand(jint arg0);
 		android::net::wifi::p2p::WifiP2pConfig_Builder setGroupOperatingFrequency(jint arg0);
-		android::net::wifi::p2p::WifiP2pConfig_Builder setNetworkName(jstring arg0);
-		android::net::wifi::p2p::WifiP2pConfig_Builder setPassphrase(jstring arg0);
+		android::net::wifi::p2p::WifiP2pConfig_Builder setNetworkName(JString arg0);
+		android::net::wifi::p2p::WifiP2pConfig_Builder setPassphrase(JString arg0);
 	};
 } // namespace android::net::wifi::p2p
 

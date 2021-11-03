@@ -1,3 +1,4 @@
+#include "../../JIntArray.hpp"
 #include "./PerformanceHintManager_Session.hpp"
 #include "./PerformanceHintManager.hpp"
 
@@ -11,12 +12,12 @@ namespace android::os
 	// Constructors
 	
 	// Methods
-	android::os::PerformanceHintManager_Session PerformanceHintManager::createHintSession(jintArray arg0, jlong arg1)
+	android::os::PerformanceHintManager_Session PerformanceHintManager::createHintSession(JIntArray arg0, jlong arg1)
 	{
 		return callObjectMethod(
 			"createHintSession",
 			"([IJ)Landroid/os/PerformanceHintManager$Session;",
-			arg0,
+			arg0.object<jintArray>(),
 			arg1
 		);
 	}

@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JObject;
+class JString;
 
 namespace java::text
 {
@@ -15,14 +17,14 @@ namespace java::text
 		StringCharacterIterator(QJniObject obj);
 		
 		// Constructors
-		StringCharacterIterator(jstring arg0);
-		StringCharacterIterator(jstring arg0, jint arg1);
-		StringCharacterIterator(jstring arg0, jint arg1, jint arg2, jint arg3);
+		StringCharacterIterator(JString arg0);
+		StringCharacterIterator(JString arg0, jint arg1);
+		StringCharacterIterator(JString arg0, jint arg1, jint arg2, jint arg3);
 		
 		// Methods
-		jobject clone();
+		JObject clone();
 		jchar current();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jchar first();
 		jint getBeginIndex();
 		jint getEndIndex();
@@ -32,7 +34,7 @@ namespace java::text
 		jchar next();
 		jchar previous();
 		jchar setIndex(jint arg0);
-		void setText(jstring arg0);
+		void setText(JString arg0);
 	};
 } // namespace java::text
 

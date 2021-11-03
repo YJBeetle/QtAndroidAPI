@@ -2,6 +2,7 @@
 
 #include "../../../../JObject.hpp"
 
+class JObject;
 namespace java::lang
 {
 	class Thread;
@@ -21,14 +22,14 @@ namespace java::util::concurrent::locks
 		// Constructors
 		
 		// Methods
-		static jobject getBlocker(java::lang::Thread arg0);
+		static JObject getBlocker(java::lang::Thread arg0);
 		static void park();
-		static void park(jobject arg0);
+		static void park(JObject arg0);
 		static void parkNanos(jlong arg0);
-		static void parkNanos(jobject arg0, jlong arg1);
+		static void parkNanos(JObject arg0, jlong arg1);
 		static void parkUntil(jlong arg0);
-		static void parkUntil(jobject arg0, jlong arg1);
-		static void setCurrentBlocker(jobject arg0);
+		static void parkUntil(JObject arg0, jlong arg1);
+		static void setCurrentBlocker(JObject arg0);
 		static void unpark(java::lang::Thread arg0);
 	};
 } // namespace java::util::concurrent::locks

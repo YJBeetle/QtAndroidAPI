@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JArray;
 namespace android::os
 {
 	class Parcel;
@@ -25,8 +26,8 @@ namespace android::content::pm
 		
 		// Methods
 		jint describeContents();
-		jarray getApkContentsSigners();
-		jarray getSigningCertificateHistory();
+		JArray getApkContentsSigners();
+		JArray getSigningCertificateHistory();
 		jboolean hasMultipleSigners();
 		jboolean hasPastSigningCertificates();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);

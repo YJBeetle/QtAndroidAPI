@@ -1,3 +1,6 @@
+#include "../../../JByteArray.hpp"
+#include "../../../JArray.hpp"
+#include "../../../JArray.hpp"
 #include "./DevicePolicyManager_InstallSystemUpdateCallback.hpp"
 #include "./FactoryResetProtectionPolicy.hpp"
 #include "./SystemUpdateInfo.hpp"
@@ -14,227 +17,229 @@
 #include "../../security/AttestedKeyPair.hpp"
 #include "../../security/keystore/KeyGenParameterSpec.hpp"
 #include "../../telephony/data/ApnSetting.hpp"
+#include "../../../JString.hpp"
+#include "../../../JString.hpp"
 #include "../../../java/security/cert/Certificate.hpp"
 #include "./DevicePolicyManager.hpp"
 
 namespace android::app::admin
 {
 	// Fields
-	jstring DevicePolicyManager::ACTION_ADD_DEVICE_ADMIN()
+	JString DevicePolicyManager::ACTION_ADD_DEVICE_ADMIN()
 	{
 		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"ACTION_ADD_DEVICE_ADMIN",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DevicePolicyManager::ACTION_ADMIN_POLICY_COMPLIANCE()
+	JString DevicePolicyManager::ACTION_ADMIN_POLICY_COMPLIANCE()
 	{
 		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"ACTION_ADMIN_POLICY_COMPLIANCE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DevicePolicyManager::ACTION_APPLICATION_DELEGATION_SCOPES_CHANGED()
+	JString DevicePolicyManager::ACTION_APPLICATION_DELEGATION_SCOPES_CHANGED()
 	{
 		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"ACTION_APPLICATION_DELEGATION_SCOPES_CHANGED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DevicePolicyManager::ACTION_CHECK_POLICY_COMPLIANCE()
+	JString DevicePolicyManager::ACTION_CHECK_POLICY_COMPLIANCE()
 	{
 		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"ACTION_CHECK_POLICY_COMPLIANCE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DevicePolicyManager::ACTION_DEVICE_ADMIN_SERVICE()
+	JString DevicePolicyManager::ACTION_DEVICE_ADMIN_SERVICE()
 	{
 		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"ACTION_DEVICE_ADMIN_SERVICE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DevicePolicyManager::ACTION_DEVICE_OWNER_CHANGED()
+	JString DevicePolicyManager::ACTION_DEVICE_OWNER_CHANGED()
 	{
 		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"ACTION_DEVICE_OWNER_CHANGED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DevicePolicyManager::ACTION_GET_PROVISIONING_MODE()
+	JString DevicePolicyManager::ACTION_GET_PROVISIONING_MODE()
 	{
 		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"ACTION_GET_PROVISIONING_MODE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DevicePolicyManager::ACTION_MANAGED_PROFILE_PROVISIONED()
+	JString DevicePolicyManager::ACTION_MANAGED_PROFILE_PROVISIONED()
 	{
 		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"ACTION_MANAGED_PROFILE_PROVISIONED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DevicePolicyManager::ACTION_PROFILE_OWNER_CHANGED()
+	JString DevicePolicyManager::ACTION_PROFILE_OWNER_CHANGED()
 	{
 		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"ACTION_PROFILE_OWNER_CHANGED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DevicePolicyManager::ACTION_PROVISIONING_SUCCESSFUL()
+	JString DevicePolicyManager::ACTION_PROVISIONING_SUCCESSFUL()
 	{
 		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"ACTION_PROVISIONING_SUCCESSFUL",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DevicePolicyManager::ACTION_PROVISION_MANAGED_DEVICE()
+	JString DevicePolicyManager::ACTION_PROVISION_MANAGED_DEVICE()
 	{
 		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"ACTION_PROVISION_MANAGED_DEVICE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DevicePolicyManager::ACTION_PROVISION_MANAGED_PROFILE()
+	JString DevicePolicyManager::ACTION_PROVISION_MANAGED_PROFILE()
 	{
 		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"ACTION_PROVISION_MANAGED_PROFILE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DevicePolicyManager::ACTION_SET_NEW_PARENT_PROFILE_PASSWORD()
+	JString DevicePolicyManager::ACTION_SET_NEW_PARENT_PROFILE_PASSWORD()
 	{
 		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"ACTION_SET_NEW_PARENT_PROFILE_PASSWORD",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DevicePolicyManager::ACTION_SET_NEW_PASSWORD()
+	JString DevicePolicyManager::ACTION_SET_NEW_PASSWORD()
 	{
 		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"ACTION_SET_NEW_PASSWORD",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DevicePolicyManager::ACTION_START_ENCRYPTION()
+	JString DevicePolicyManager::ACTION_START_ENCRYPTION()
 	{
 		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"ACTION_START_ENCRYPTION",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DevicePolicyManager::ACTION_SYSTEM_UPDATE_POLICY_CHANGED()
+	JString DevicePolicyManager::ACTION_SYSTEM_UPDATE_POLICY_CHANGED()
 	{
 		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"ACTION_SYSTEM_UPDATE_POLICY_CHANGED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DevicePolicyManager::DELEGATION_APP_RESTRICTIONS()
+	JString DevicePolicyManager::DELEGATION_APP_RESTRICTIONS()
 	{
 		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"DELEGATION_APP_RESTRICTIONS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DevicePolicyManager::DELEGATION_BLOCK_UNINSTALL()
+	JString DevicePolicyManager::DELEGATION_BLOCK_UNINSTALL()
 	{
 		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"DELEGATION_BLOCK_UNINSTALL",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DevicePolicyManager::DELEGATION_CERT_INSTALL()
+	JString DevicePolicyManager::DELEGATION_CERT_INSTALL()
 	{
 		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"DELEGATION_CERT_INSTALL",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DevicePolicyManager::DELEGATION_CERT_SELECTION()
+	JString DevicePolicyManager::DELEGATION_CERT_SELECTION()
 	{
 		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"DELEGATION_CERT_SELECTION",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DevicePolicyManager::DELEGATION_ENABLE_SYSTEM_APP()
+	JString DevicePolicyManager::DELEGATION_ENABLE_SYSTEM_APP()
 	{
 		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"DELEGATION_ENABLE_SYSTEM_APP",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DevicePolicyManager::DELEGATION_INSTALL_EXISTING_PACKAGE()
+	JString DevicePolicyManager::DELEGATION_INSTALL_EXISTING_PACKAGE()
 	{
 		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"DELEGATION_INSTALL_EXISTING_PACKAGE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DevicePolicyManager::DELEGATION_KEEP_UNINSTALLED_PACKAGES()
+	JString DevicePolicyManager::DELEGATION_KEEP_UNINSTALLED_PACKAGES()
 	{
 		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"DELEGATION_KEEP_UNINSTALLED_PACKAGES",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DevicePolicyManager::DELEGATION_NETWORK_LOGGING()
+	JString DevicePolicyManager::DELEGATION_NETWORK_LOGGING()
 	{
 		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"DELEGATION_NETWORK_LOGGING",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DevicePolicyManager::DELEGATION_PACKAGE_ACCESS()
+	JString DevicePolicyManager::DELEGATION_PACKAGE_ACCESS()
 	{
 		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"DELEGATION_PACKAGE_ACCESS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DevicePolicyManager::DELEGATION_PERMISSION_GRANT()
+	JString DevicePolicyManager::DELEGATION_PERMISSION_GRANT()
 	{
 		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"DELEGATION_PERMISSION_GRANT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DevicePolicyManager::DELEGATION_SECURITY_LOGGING()
+	JString DevicePolicyManager::DELEGATION_SECURITY_LOGGING()
 	{
 		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"DELEGATION_SECURITY_LOGGING",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint DevicePolicyManager::ENCRYPTION_STATUS_ACTIVATING()
 	{
@@ -278,389 +283,389 @@ namespace android::app::admin
 			"ENCRYPTION_STATUS_UNSUPPORTED"
 		);
 	}
-	jstring DevicePolicyManager::EXTRA_ADD_EXPLANATION()
+	JString DevicePolicyManager::EXTRA_ADD_EXPLANATION()
 	{
 		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"EXTRA_ADD_EXPLANATION",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DevicePolicyManager::EXTRA_DELEGATION_SCOPES()
+	JString DevicePolicyManager::EXTRA_DELEGATION_SCOPES()
 	{
 		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"EXTRA_DELEGATION_SCOPES",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DevicePolicyManager::EXTRA_DEVICE_ADMIN()
+	JString DevicePolicyManager::EXTRA_DEVICE_ADMIN()
 	{
 		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"EXTRA_DEVICE_ADMIN",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DevicePolicyManager::EXTRA_DEVICE_PASSWORD_REQUIREMENT_ONLY()
+	JString DevicePolicyManager::EXTRA_DEVICE_PASSWORD_REQUIREMENT_ONLY()
 	{
 		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"EXTRA_DEVICE_PASSWORD_REQUIREMENT_ONLY",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DevicePolicyManager::EXTRA_PASSWORD_COMPLEXITY()
+	JString DevicePolicyManager::EXTRA_PASSWORD_COMPLEXITY()
 	{
 		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"EXTRA_PASSWORD_COMPLEXITY",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DevicePolicyManager::EXTRA_PROVISIONING_ACCOUNT_TO_MIGRATE()
+	JString DevicePolicyManager::EXTRA_PROVISIONING_ACCOUNT_TO_MIGRATE()
 	{
 		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"EXTRA_PROVISIONING_ACCOUNT_TO_MIGRATE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DevicePolicyManager::EXTRA_PROVISIONING_ADMIN_EXTRAS_BUNDLE()
+	JString DevicePolicyManager::EXTRA_PROVISIONING_ADMIN_EXTRAS_BUNDLE()
 	{
 		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"EXTRA_PROVISIONING_ADMIN_EXTRAS_BUNDLE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DevicePolicyManager::EXTRA_PROVISIONING_ALLOWED_PROVISIONING_MODES()
+	JString DevicePolicyManager::EXTRA_PROVISIONING_ALLOWED_PROVISIONING_MODES()
 	{
 		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"EXTRA_PROVISIONING_ALLOWED_PROVISIONING_MODES",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DevicePolicyManager::EXTRA_PROVISIONING_DEVICE_ADMIN_COMPONENT_NAME()
+	JString DevicePolicyManager::EXTRA_PROVISIONING_DEVICE_ADMIN_COMPONENT_NAME()
 	{
 		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"EXTRA_PROVISIONING_DEVICE_ADMIN_COMPONENT_NAME",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DevicePolicyManager::EXTRA_PROVISIONING_DEVICE_ADMIN_MINIMUM_VERSION_CODE()
+	JString DevicePolicyManager::EXTRA_PROVISIONING_DEVICE_ADMIN_MINIMUM_VERSION_CODE()
 	{
 		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"EXTRA_PROVISIONING_DEVICE_ADMIN_MINIMUM_VERSION_CODE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DevicePolicyManager::EXTRA_PROVISIONING_DEVICE_ADMIN_PACKAGE_CHECKSUM()
+	JString DevicePolicyManager::EXTRA_PROVISIONING_DEVICE_ADMIN_PACKAGE_CHECKSUM()
 	{
 		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"EXTRA_PROVISIONING_DEVICE_ADMIN_PACKAGE_CHECKSUM",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DevicePolicyManager::EXTRA_PROVISIONING_DEVICE_ADMIN_PACKAGE_DOWNLOAD_COOKIE_HEADER()
+	JString DevicePolicyManager::EXTRA_PROVISIONING_DEVICE_ADMIN_PACKAGE_DOWNLOAD_COOKIE_HEADER()
 	{
 		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"EXTRA_PROVISIONING_DEVICE_ADMIN_PACKAGE_DOWNLOAD_COOKIE_HEADER",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DevicePolicyManager::EXTRA_PROVISIONING_DEVICE_ADMIN_PACKAGE_DOWNLOAD_LOCATION()
+	JString DevicePolicyManager::EXTRA_PROVISIONING_DEVICE_ADMIN_PACKAGE_DOWNLOAD_LOCATION()
 	{
 		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"EXTRA_PROVISIONING_DEVICE_ADMIN_PACKAGE_DOWNLOAD_LOCATION",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DevicePolicyManager::EXTRA_PROVISIONING_DEVICE_ADMIN_PACKAGE_NAME()
+	JString DevicePolicyManager::EXTRA_PROVISIONING_DEVICE_ADMIN_PACKAGE_NAME()
 	{
 		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"EXTRA_PROVISIONING_DEVICE_ADMIN_PACKAGE_NAME",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DevicePolicyManager::EXTRA_PROVISIONING_DEVICE_ADMIN_SIGNATURE_CHECKSUM()
+	JString DevicePolicyManager::EXTRA_PROVISIONING_DEVICE_ADMIN_SIGNATURE_CHECKSUM()
 	{
 		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"EXTRA_PROVISIONING_DEVICE_ADMIN_SIGNATURE_CHECKSUM",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DevicePolicyManager::EXTRA_PROVISIONING_DISCLAIMERS()
+	JString DevicePolicyManager::EXTRA_PROVISIONING_DISCLAIMERS()
 	{
 		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"EXTRA_PROVISIONING_DISCLAIMERS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DevicePolicyManager::EXTRA_PROVISIONING_DISCLAIMER_CONTENT()
+	JString DevicePolicyManager::EXTRA_PROVISIONING_DISCLAIMER_CONTENT()
 	{
 		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"EXTRA_PROVISIONING_DISCLAIMER_CONTENT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DevicePolicyManager::EXTRA_PROVISIONING_DISCLAIMER_HEADER()
+	JString DevicePolicyManager::EXTRA_PROVISIONING_DISCLAIMER_HEADER()
 	{
 		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"EXTRA_PROVISIONING_DISCLAIMER_HEADER",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DevicePolicyManager::EXTRA_PROVISIONING_EMAIL_ADDRESS()
+	JString DevicePolicyManager::EXTRA_PROVISIONING_EMAIL_ADDRESS()
 	{
 		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"EXTRA_PROVISIONING_EMAIL_ADDRESS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DevicePolicyManager::EXTRA_PROVISIONING_IMEI()
+	JString DevicePolicyManager::EXTRA_PROVISIONING_IMEI()
 	{
 		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"EXTRA_PROVISIONING_IMEI",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DevicePolicyManager::EXTRA_PROVISIONING_KEEP_ACCOUNT_ON_MIGRATION()
+	JString DevicePolicyManager::EXTRA_PROVISIONING_KEEP_ACCOUNT_ON_MIGRATION()
 	{
 		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"EXTRA_PROVISIONING_KEEP_ACCOUNT_ON_MIGRATION",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DevicePolicyManager::EXTRA_PROVISIONING_LEAVE_ALL_SYSTEM_APPS_ENABLED()
+	JString DevicePolicyManager::EXTRA_PROVISIONING_LEAVE_ALL_SYSTEM_APPS_ENABLED()
 	{
 		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"EXTRA_PROVISIONING_LEAVE_ALL_SYSTEM_APPS_ENABLED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DevicePolicyManager::EXTRA_PROVISIONING_LOCALE()
+	JString DevicePolicyManager::EXTRA_PROVISIONING_LOCALE()
 	{
 		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"EXTRA_PROVISIONING_LOCALE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DevicePolicyManager::EXTRA_PROVISIONING_LOCAL_TIME()
+	JString DevicePolicyManager::EXTRA_PROVISIONING_LOCAL_TIME()
 	{
 		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"EXTRA_PROVISIONING_LOCAL_TIME",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DevicePolicyManager::EXTRA_PROVISIONING_LOGO_URI()
+	JString DevicePolicyManager::EXTRA_PROVISIONING_LOGO_URI()
 	{
 		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"EXTRA_PROVISIONING_LOGO_URI",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DevicePolicyManager::EXTRA_PROVISIONING_MAIN_COLOR()
+	JString DevicePolicyManager::EXTRA_PROVISIONING_MAIN_COLOR()
 	{
 		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"EXTRA_PROVISIONING_MAIN_COLOR",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DevicePolicyManager::EXTRA_PROVISIONING_MODE()
+	JString DevicePolicyManager::EXTRA_PROVISIONING_MODE()
 	{
 		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"EXTRA_PROVISIONING_MODE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DevicePolicyManager::EXTRA_PROVISIONING_SENSORS_PERMISSION_GRANT_OPT_OUT()
+	JString DevicePolicyManager::EXTRA_PROVISIONING_SENSORS_PERMISSION_GRANT_OPT_OUT()
 	{
 		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"EXTRA_PROVISIONING_SENSORS_PERMISSION_GRANT_OPT_OUT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DevicePolicyManager::EXTRA_PROVISIONING_SERIAL_NUMBER()
+	JString DevicePolicyManager::EXTRA_PROVISIONING_SERIAL_NUMBER()
 	{
 		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"EXTRA_PROVISIONING_SERIAL_NUMBER",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DevicePolicyManager::EXTRA_PROVISIONING_SKIP_EDUCATION_SCREENS()
+	JString DevicePolicyManager::EXTRA_PROVISIONING_SKIP_EDUCATION_SCREENS()
 	{
 		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"EXTRA_PROVISIONING_SKIP_EDUCATION_SCREENS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DevicePolicyManager::EXTRA_PROVISIONING_SKIP_ENCRYPTION()
+	JString DevicePolicyManager::EXTRA_PROVISIONING_SKIP_ENCRYPTION()
 	{
 		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"EXTRA_PROVISIONING_SKIP_ENCRYPTION",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DevicePolicyManager::EXTRA_PROVISIONING_SKIP_USER_CONSENT()
+	JString DevicePolicyManager::EXTRA_PROVISIONING_SKIP_USER_CONSENT()
 	{
 		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"EXTRA_PROVISIONING_SKIP_USER_CONSENT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DevicePolicyManager::EXTRA_PROVISIONING_TIME_ZONE()
+	JString DevicePolicyManager::EXTRA_PROVISIONING_TIME_ZONE()
 	{
 		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"EXTRA_PROVISIONING_TIME_ZONE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DevicePolicyManager::EXTRA_PROVISIONING_WIFI_ANONYMOUS_IDENTITY()
+	JString DevicePolicyManager::EXTRA_PROVISIONING_WIFI_ANONYMOUS_IDENTITY()
 	{
 		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"EXTRA_PROVISIONING_WIFI_ANONYMOUS_IDENTITY",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DevicePolicyManager::EXTRA_PROVISIONING_WIFI_CA_CERTIFICATE()
+	JString DevicePolicyManager::EXTRA_PROVISIONING_WIFI_CA_CERTIFICATE()
 	{
 		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"EXTRA_PROVISIONING_WIFI_CA_CERTIFICATE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DevicePolicyManager::EXTRA_PROVISIONING_WIFI_DOMAIN()
+	JString DevicePolicyManager::EXTRA_PROVISIONING_WIFI_DOMAIN()
 	{
 		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"EXTRA_PROVISIONING_WIFI_DOMAIN",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DevicePolicyManager::EXTRA_PROVISIONING_WIFI_EAP_METHOD()
+	JString DevicePolicyManager::EXTRA_PROVISIONING_WIFI_EAP_METHOD()
 	{
 		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"EXTRA_PROVISIONING_WIFI_EAP_METHOD",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DevicePolicyManager::EXTRA_PROVISIONING_WIFI_HIDDEN()
+	JString DevicePolicyManager::EXTRA_PROVISIONING_WIFI_HIDDEN()
 	{
 		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"EXTRA_PROVISIONING_WIFI_HIDDEN",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DevicePolicyManager::EXTRA_PROVISIONING_WIFI_IDENTITY()
+	JString DevicePolicyManager::EXTRA_PROVISIONING_WIFI_IDENTITY()
 	{
 		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"EXTRA_PROVISIONING_WIFI_IDENTITY",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DevicePolicyManager::EXTRA_PROVISIONING_WIFI_PAC_URL()
+	JString DevicePolicyManager::EXTRA_PROVISIONING_WIFI_PAC_URL()
 	{
 		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"EXTRA_PROVISIONING_WIFI_PAC_URL",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DevicePolicyManager::EXTRA_PROVISIONING_WIFI_PASSWORD()
+	JString DevicePolicyManager::EXTRA_PROVISIONING_WIFI_PASSWORD()
 	{
 		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"EXTRA_PROVISIONING_WIFI_PASSWORD",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DevicePolicyManager::EXTRA_PROVISIONING_WIFI_PHASE2_AUTH()
+	JString DevicePolicyManager::EXTRA_PROVISIONING_WIFI_PHASE2_AUTH()
 	{
 		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"EXTRA_PROVISIONING_WIFI_PHASE2_AUTH",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DevicePolicyManager::EXTRA_PROVISIONING_WIFI_PROXY_BYPASS()
+	JString DevicePolicyManager::EXTRA_PROVISIONING_WIFI_PROXY_BYPASS()
 	{
 		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"EXTRA_PROVISIONING_WIFI_PROXY_BYPASS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DevicePolicyManager::EXTRA_PROVISIONING_WIFI_PROXY_HOST()
+	JString DevicePolicyManager::EXTRA_PROVISIONING_WIFI_PROXY_HOST()
 	{
 		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"EXTRA_PROVISIONING_WIFI_PROXY_HOST",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DevicePolicyManager::EXTRA_PROVISIONING_WIFI_PROXY_PORT()
+	JString DevicePolicyManager::EXTRA_PROVISIONING_WIFI_PROXY_PORT()
 	{
 		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"EXTRA_PROVISIONING_WIFI_PROXY_PORT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DevicePolicyManager::EXTRA_PROVISIONING_WIFI_SECURITY_TYPE()
+	JString DevicePolicyManager::EXTRA_PROVISIONING_WIFI_SECURITY_TYPE()
 	{
 		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"EXTRA_PROVISIONING_WIFI_SECURITY_TYPE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DevicePolicyManager::EXTRA_PROVISIONING_WIFI_SSID()
+	JString DevicePolicyManager::EXTRA_PROVISIONING_WIFI_SSID()
 	{
 		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"EXTRA_PROVISIONING_WIFI_SSID",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DevicePolicyManager::EXTRA_PROVISIONING_WIFI_USER_CERTIFICATE()
+	JString DevicePolicyManager::EXTRA_PROVISIONING_WIFI_USER_CERTIFICATE()
 	{
 		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"EXTRA_PROVISIONING_WIFI_USER_CERTIFICATE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint DevicePolicyManager::FLAG_EVICT_CREDENTIAL_ENCRYPTION_KEY()
 	{
@@ -886,13 +891,13 @@ namespace android::app::admin
 			"MAKE_USER_EPHEMERAL"
 		);
 	}
-	jstring DevicePolicyManager::MIME_TYPE_PROVISIONING_NFC()
+	JString DevicePolicyManager::MIME_TYPE_PROVISIONING_NFC()
 	{
 		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"MIME_TYPE_PROVISIONING_NFC",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint DevicePolicyManager::NEARBY_STREAMING_DISABLED()
 	{
@@ -1076,21 +1081,21 @@ namespace android::app::admin
 			"PERSONAL_APPS_SUSPENDED_PROFILE_TIMEOUT"
 		);
 	}
-	jstring DevicePolicyManager::POLICY_DISABLE_CAMERA()
+	JString DevicePolicyManager::POLICY_DISABLE_CAMERA()
 	{
 		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"POLICY_DISABLE_CAMERA",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DevicePolicyManager::POLICY_DISABLE_SCREEN_CAPTURE()
+	JString DevicePolicyManager::POLICY_DISABLE_SCREEN_CAPTURE()
 	{
 		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"POLICY_DISABLE_SCREEN_CAPTURE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint DevicePolicyManager::PRIVATE_DNS_MODE_OFF()
 	{
@@ -1235,13 +1240,13 @@ namespace android::app::admin
 			arg2
 		);
 	}
-	jboolean DevicePolicyManager::addCrossProfileWidgetProvider(android::content::ComponentName arg0, jstring arg1)
+	jboolean DevicePolicyManager::addCrossProfileWidgetProvider(android::content::ComponentName arg0, JString arg1)
 	{
 		return callMethod<jboolean>(
 			"addCrossProfileWidgetProvider",
 			"(Landroid/content/ComponentName;Ljava/lang/String;)Z",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
 	jint DevicePolicyManager::addOverrideApn(android::content::ComponentName arg0, android::telephony::data::ApnSetting arg1)
@@ -1263,13 +1268,13 @@ namespace android::app::admin
 			arg2.object()
 		);
 	}
-	void DevicePolicyManager::addUserRestriction(android::content::ComponentName arg0, jstring arg1)
+	void DevicePolicyManager::addUserRestriction(android::content::ComponentName arg0, JString arg1)
 	{
 		callMethod<void>(
 			"addUserRestriction",
 			"(Landroid/content/ComponentName;Ljava/lang/String;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
 	jboolean DevicePolicyManager::bindDeviceAdminServiceAsUser(android::content::ComponentName arg0, android::content::Intent arg1, JObject arg2, jint arg3, android::os::UserHandle arg4)
@@ -1298,13 +1303,13 @@ namespace android::app::admin
 			"()Z"
 		);
 	}
-	void DevicePolicyManager::clearApplicationUserData(android::content::ComponentName arg0, jstring arg1, JObject arg2, JObject arg3)
+	void DevicePolicyManager::clearApplicationUserData(android::content::ComponentName arg0, JString arg1, JObject arg2, JObject arg3)
 	{
 		callMethod<void>(
 			"clearApplicationUserData",
 			"(Landroid/content/ComponentName;Ljava/lang/String;Ljava/util/concurrent/Executor;Landroid/app/admin/DevicePolicyManager$OnClearApplicationUserDataListener;)V",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2.object(),
 			arg3.object()
 		);
@@ -1317,21 +1322,21 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	void DevicePolicyManager::clearDeviceOwnerApp(jstring arg0)
+	void DevicePolicyManager::clearDeviceOwnerApp(JString arg0)
 	{
 		callMethod<void>(
 			"clearDeviceOwnerApp",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	void DevicePolicyManager::clearPackagePersistentPreferredActivities(android::content::ComponentName arg0, jstring arg1)
+	void DevicePolicyManager::clearPackagePersistentPreferredActivities(android::content::ComponentName arg0, JString arg1)
 	{
 		callMethod<void>(
 			"clearPackagePersistentPreferredActivities",
 			"(Landroid/content/ComponentName;Ljava/lang/String;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
 	void DevicePolicyManager::clearProfileOwner(android::content::ComponentName arg0)
@@ -1350,30 +1355,30 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	void DevicePolicyManager::clearUserRestriction(android::content::ComponentName arg0, jstring arg1)
+	void DevicePolicyManager::clearUserRestriction(android::content::ComponentName arg0, JString arg1)
 	{
 		callMethod<void>(
 			"clearUserRestriction",
 			"(Landroid/content/ComponentName;Ljava/lang/String;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
-	android::content::Intent DevicePolicyManager::createAdminSupportIntent(jstring arg0)
+	android::content::Intent DevicePolicyManager::createAdminSupportIntent(JString arg0)
 	{
 		return callObjectMethod(
 			"createAdminSupportIntent",
 			"(Ljava/lang/String;)Landroid/content/Intent;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	android::os::UserHandle DevicePolicyManager::createAndManageUser(android::content::ComponentName arg0, jstring arg1, android::content::ComponentName arg2, android::os::PersistableBundle arg3, jint arg4)
+	android::os::UserHandle DevicePolicyManager::createAndManageUser(android::content::ComponentName arg0, JString arg1, android::content::ComponentName arg2, android::os::PersistableBundle arg3, jint arg4)
 	{
 		return callObjectMethod(
 			"createAndManageUser",
 			"(Landroid/content/ComponentName;Ljava/lang/String;Landroid/content/ComponentName;Landroid/os/PersistableBundle;I)Landroid/os/UserHandle;",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2.object(),
 			arg3.object(),
 			arg4
@@ -1388,32 +1393,32 @@ namespace android::app::admin
 			arg1.object()
 		);
 	}
-	void DevicePolicyManager::enableSystemApp(android::content::ComponentName arg0, jstring arg1)
+	void DevicePolicyManager::enableSystemApp(android::content::ComponentName arg0, JString arg1)
 	{
 		callMethod<void>(
 			"enableSystemApp",
 			"(Landroid/content/ComponentName;Ljava/lang/String;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
-	android::security::AttestedKeyPair DevicePolicyManager::generateKeyPair(android::content::ComponentName arg0, jstring arg1, android::security::keystore::KeyGenParameterSpec arg2, jint arg3)
+	android::security::AttestedKeyPair DevicePolicyManager::generateKeyPair(android::content::ComponentName arg0, JString arg1, android::security::keystore::KeyGenParameterSpec arg2, jint arg3)
 	{
 		return callObjectMethod(
 			"generateKeyPair",
 			"(Landroid/content/ComponentName;Ljava/lang/String;Landroid/security/keystore/KeyGenParameterSpec;I)Landroid/security/AttestedKeyPair;",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2.object(),
 			arg3
 		);
 	}
-	jarray DevicePolicyManager::getAccountTypesWithManagementDisabled()
+	JArray DevicePolicyManager::getAccountTypesWithManagementDisabled()
 	{
 		return callObjectMethod(
 			"getAccountTypesWithManagementDisabled",
 			"()[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
 	JObject DevicePolicyManager::getActiveAdmins()
 	{
@@ -1438,30 +1443,30 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	jstring DevicePolicyManager::getAlwaysOnVpnPackage(android::content::ComponentName arg0)
+	JString DevicePolicyManager::getAlwaysOnVpnPackage(android::content::ComponentName arg0)
 	{
 		return callObjectMethod(
 			"getAlwaysOnVpnPackage",
 			"(Landroid/content/ComponentName;)Ljava/lang/String;",
 			arg0.object()
-		).object<jstring>();
+		);
 	}
-	android::os::Bundle DevicePolicyManager::getApplicationRestrictions(android::content::ComponentName arg0, jstring arg1)
+	android::os::Bundle DevicePolicyManager::getApplicationRestrictions(android::content::ComponentName arg0, JString arg1)
 	{
 		return callObjectMethod(
 			"getApplicationRestrictions",
 			"(Landroid/content/ComponentName;Ljava/lang/String;)Landroid/os/Bundle;",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
-	jstring DevicePolicyManager::getApplicationRestrictionsManagingPackage(android::content::ComponentName arg0)
+	JString DevicePolicyManager::getApplicationRestrictionsManagingPackage(android::content::ComponentName arg0)
 	{
 		return callObjectMethod(
 			"getApplicationRestrictionsManagingPackage",
 			"(Landroid/content/ComponentName;)Ljava/lang/String;",
 			arg0.object()
-		).object<jstring>();
+		);
 	}
 	jboolean DevicePolicyManager::getAutoTimeEnabled(android::content::ComponentName arg0)
 	{
@@ -1510,13 +1515,13 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	jstring DevicePolicyManager::getCertInstallerPackage(android::content::ComponentName arg0)
+	JString DevicePolicyManager::getCertInstallerPackage(android::content::ComponentName arg0)
 	{
 		return callObjectMethod(
 			"getCertInstallerPackage",
 			"(Landroid/content/ComponentName;)Ljava/lang/String;",
 			arg0.object()
-		).object<jstring>();
+		);
 	}
 	JObject DevicePolicyManager::getCrossProfileCalendarPackages(android::content::ComponentName arg0)
 	{
@@ -1565,45 +1570,45 @@ namespace android::app::admin
 			"()I"
 		);
 	}
-	JObject DevicePolicyManager::getDelegatePackages(android::content::ComponentName arg0, jstring arg1)
+	JObject DevicePolicyManager::getDelegatePackages(android::content::ComponentName arg0, JString arg1)
 	{
 		return callObjectMethod(
 			"getDelegatePackages",
 			"(Landroid/content/ComponentName;Ljava/lang/String;)Ljava/util/List;",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
-	JObject DevicePolicyManager::getDelegatedScopes(android::content::ComponentName arg0, jstring arg1)
+	JObject DevicePolicyManager::getDelegatedScopes(android::content::ComponentName arg0, JString arg1)
 	{
 		return callObjectMethod(
 			"getDelegatedScopes",
 			"(Landroid/content/ComponentName;Ljava/lang/String;)Ljava/util/List;",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
-	jstring DevicePolicyManager::getDeviceOwnerLockScreenInfo()
+	JString DevicePolicyManager::getDeviceOwnerLockScreenInfo()
 	{
 		return callObjectMethod(
 			"getDeviceOwnerLockScreenInfo",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
-	jstring DevicePolicyManager::getEndUserSessionMessage(android::content::ComponentName arg0)
+	JString DevicePolicyManager::getEndUserSessionMessage(android::content::ComponentName arg0)
 	{
 		return callObjectMethod(
 			"getEndUserSessionMessage",
 			"(Landroid/content/ComponentName;)Ljava/lang/CharSequence;",
 			arg0.object()
-		).object<jstring>();
+		);
 	}
-	jstring DevicePolicyManager::getEnrollmentSpecificId()
+	JString DevicePolicyManager::getEnrollmentSpecificId()
 	{
 		return callObjectMethod(
 			"getEnrollmentSpecificId",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::app::admin::FactoryResetProtectionPolicy DevicePolicyManager::getFactoryResetProtectionPolicy(android::content::ComponentName arg0)
 	{
@@ -1613,13 +1618,13 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	jstring DevicePolicyManager::getGlobalPrivateDnsHost(android::content::ComponentName arg0)
+	JString DevicePolicyManager::getGlobalPrivateDnsHost(android::content::ComponentName arg0)
 	{
 		return callObjectMethod(
 			"getGlobalPrivateDnsHost",
 			"(Landroid/content/ComponentName;)Ljava/lang/String;",
 			arg0.object()
-		).object<jstring>();
+		);
 	}
 	jint DevicePolicyManager::getGlobalPrivateDnsMode(android::content::ComponentName arg0)
 	{
@@ -1645,12 +1650,12 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	JObject DevicePolicyManager::getKeyPairGrants(jstring arg0)
+	JObject DevicePolicyManager::getKeyPairGrants(JString arg0)
 	{
 		return callObjectMethod(
 			"getKeyPairGrants",
 			"(Ljava/lang/String;)Ljava/util/Map;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	jint DevicePolicyManager::getKeyguardDisabledFeatures(android::content::ComponentName arg0)
@@ -1669,21 +1674,21 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	jarray DevicePolicyManager::getLockTaskPackages(android::content::ComponentName arg0)
+	JArray DevicePolicyManager::getLockTaskPackages(android::content::ComponentName arg0)
 	{
 		return callObjectMethod(
 			"getLockTaskPackages",
 			"(Landroid/content/ComponentName;)[Ljava/lang/String;",
 			arg0.object()
-		).object<jarray>();
+		);
 	}
-	jstring DevicePolicyManager::getLongSupportMessage(android::content::ComponentName arg0)
+	JString DevicePolicyManager::getLongSupportMessage(android::content::ComponentName arg0)
 	{
 		return callObjectMethod(
 			"getLongSupportMessage",
 			"(Landroid/content/ComponentName;)Ljava/lang/CharSequence;",
 			arg0.object()
-		).object<jstring>();
+		);
 	}
 	jlong DevicePolicyManager::getManagedProfileMaximumTimeOff(android::content::ComponentName arg0)
 	{
@@ -1739,13 +1744,13 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	jstring DevicePolicyManager::getOrganizationName(android::content::ComponentName arg0)
+	JString DevicePolicyManager::getOrganizationName(android::content::ComponentName arg0)
 	{
 		return callObjectMethod(
 			"getOrganizationName",
 			"(Landroid/content/ComponentName;)Ljava/lang/CharSequence;",
 			arg0.object()
-		).object<jstring>();
+		);
 	}
 	JObject DevicePolicyManager::getOverrideApns(android::content::ComponentName arg0)
 	{
@@ -1874,14 +1879,14 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	jint DevicePolicyManager::getPermissionGrantState(android::content::ComponentName arg0, jstring arg1, jstring arg2)
+	jint DevicePolicyManager::getPermissionGrantState(android::content::ComponentName arg0, JString arg1, JString arg2)
 	{
 		return callMethod<jint>(
 			"getPermissionGrantState",
 			"(Landroid/content/ComponentName;Ljava/lang/String;Ljava/lang/String;)I",
 			arg0.object(),
-			arg1,
-			arg2
+			arg1.object<jstring>(),
+			arg2.object<jstring>()
 		);
 	}
 	jint DevicePolicyManager::getPermissionPolicy(android::content::ComponentName arg0)
@@ -1955,21 +1960,21 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	jstring DevicePolicyManager::getShortSupportMessage(android::content::ComponentName arg0)
+	JString DevicePolicyManager::getShortSupportMessage(android::content::ComponentName arg0)
 	{
 		return callObjectMethod(
 			"getShortSupportMessage",
 			"(Landroid/content/ComponentName;)Ljava/lang/CharSequence;",
 			arg0.object()
-		).object<jstring>();
+		);
 	}
-	jstring DevicePolicyManager::getStartUserSessionMessage(android::content::ComponentName arg0)
+	JString DevicePolicyManager::getStartUserSessionMessage(android::content::ComponentName arg0)
 	{
 		return callObjectMethod(
 			"getStartUserSessionMessage",
 			"(Landroid/content/ComponentName;)Ljava/lang/CharSequence;",
 			arg0.object()
-		).object<jstring>();
+		);
 	}
 	jboolean DevicePolicyManager::getStorageEncryption(android::content::ComponentName arg0)
 	{
@@ -2025,39 +2030,39 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	jstring DevicePolicyManager::getWifiMacAddress(android::content::ComponentName arg0)
+	JString DevicePolicyManager::getWifiMacAddress(android::content::ComponentName arg0)
 	{
 		return callObjectMethod(
 			"getWifiMacAddress",
 			"(Landroid/content/ComponentName;)Ljava/lang/String;",
 			arg0.object()
-		).object<jstring>();
+		);
 	}
-	jboolean DevicePolicyManager::grantKeyPairToApp(android::content::ComponentName arg0, jstring arg1, jstring arg2)
+	jboolean DevicePolicyManager::grantKeyPairToApp(android::content::ComponentName arg0, JString arg1, JString arg2)
 	{
 		return callMethod<jboolean>(
 			"grantKeyPairToApp",
 			"(Landroid/content/ComponentName;Ljava/lang/String;Ljava/lang/String;)Z",
 			arg0.object(),
-			arg1,
-			arg2
+			arg1.object<jstring>(),
+			arg2.object<jstring>()
 		);
 	}
-	jboolean DevicePolicyManager::grantKeyPairToWifiAuth(jstring arg0)
+	jboolean DevicePolicyManager::grantKeyPairToWifiAuth(JString arg0)
 	{
 		return callMethod<jboolean>(
 			"grantKeyPairToWifiAuth",
 			"(Ljava/lang/String;)Z",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jboolean DevicePolicyManager::hasCaCertInstalled(android::content::ComponentName arg0, jbyteArray arg1)
+	jboolean DevicePolicyManager::hasCaCertInstalled(android::content::ComponentName arg0, JByteArray arg1)
 	{
 		return callMethod<jboolean>(
 			"hasCaCertInstalled",
 			"(Landroid/content/ComponentName;[B)Z",
 			arg0.object(),
-			arg1
+			arg1.object<jbyteArray>()
 		);
 	}
 	jboolean DevicePolicyManager::hasGrantedPolicy(android::content::ComponentName arg0, jint arg1)
@@ -2069,12 +2074,12 @@ namespace android::app::admin
 			arg1
 		);
 	}
-	jboolean DevicePolicyManager::hasKeyPair(jstring arg0)
+	jboolean DevicePolicyManager::hasKeyPair(JString arg0)
 	{
 		return callMethod<jboolean>(
 			"hasKeyPair",
 			"(Ljava/lang/String;)Z",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	jboolean DevicePolicyManager::hasLockdownAdminConfiguredNetworks(android::content::ComponentName arg0)
@@ -2085,25 +2090,25 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	jboolean DevicePolicyManager::installCaCert(android::content::ComponentName arg0, jbyteArray arg1)
+	jboolean DevicePolicyManager::installCaCert(android::content::ComponentName arg0, JByteArray arg1)
 	{
 		return callMethod<jboolean>(
 			"installCaCert",
 			"(Landroid/content/ComponentName;[B)Z",
 			arg0.object(),
-			arg1
+			arg1.object<jbyteArray>()
 		);
 	}
-	jboolean DevicePolicyManager::installExistingPackage(android::content::ComponentName arg0, jstring arg1)
+	jboolean DevicePolicyManager::installExistingPackage(android::content::ComponentName arg0, JString arg1)
 	{
 		return callMethod<jboolean>(
 			"installExistingPackage",
 			"(Landroid/content/ComponentName;Ljava/lang/String;)Z",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
-	jboolean DevicePolicyManager::installKeyPair(android::content::ComponentName arg0, JObject arg1, java::security::cert::Certificate arg2, jstring arg3)
+	jboolean DevicePolicyManager::installKeyPair(android::content::ComponentName arg0, JObject arg1, java::security::cert::Certificate arg2, JString arg3)
 	{
 		return callMethod<jboolean>(
 			"installKeyPair",
@@ -2111,30 +2116,30 @@ namespace android::app::admin
 			arg0.object(),
 			arg1.object(),
 			arg2.object(),
-			arg3
+			arg3.object<jstring>()
 		);
 	}
-	jboolean DevicePolicyManager::installKeyPair(android::content::ComponentName arg0, JObject arg1, jarray arg2, jstring arg3, jboolean arg4)
+	jboolean DevicePolicyManager::installKeyPair(android::content::ComponentName arg0, JObject arg1, JArray arg2, JString arg3, jboolean arg4)
 	{
 		return callMethod<jboolean>(
 			"installKeyPair",
 			"(Landroid/content/ComponentName;Ljava/security/PrivateKey;[Ljava/security/cert/Certificate;Ljava/lang/String;Z)Z",
 			arg0.object(),
 			arg1.object(),
-			arg2,
-			arg3,
+			arg2.object<jarray>(),
+			arg3.object<jstring>(),
 			arg4
 		);
 	}
-	jboolean DevicePolicyManager::installKeyPair(android::content::ComponentName arg0, JObject arg1, jarray arg2, jstring arg3, jint arg4)
+	jboolean DevicePolicyManager::installKeyPair(android::content::ComponentName arg0, JObject arg1, JArray arg2, JString arg3, jint arg4)
 	{
 		return callMethod<jboolean>(
 			"installKeyPair",
 			"(Landroid/content/ComponentName;Ljava/security/PrivateKey;[Ljava/security/cert/Certificate;Ljava/lang/String;I)Z",
 			arg0.object(),
 			arg1.object(),
-			arg2,
-			arg3,
+			arg2.object<jarray>(),
+			arg3.object<jstring>(),
 			arg4
 		);
 	}
@@ -2186,13 +2191,13 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	jboolean DevicePolicyManager::isApplicationHidden(android::content::ComponentName arg0, jstring arg1)
+	jboolean DevicePolicyManager::isApplicationHidden(android::content::ComponentName arg0, JString arg1)
 	{
 		return callMethod<jboolean>(
 			"isApplicationHidden",
 			"(Landroid/content/ComponentName;Ljava/lang/String;)Z",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
 	jboolean DevicePolicyManager::isBackupServiceEnabled(android::content::ComponentName arg0)
@@ -2232,12 +2237,12 @@ namespace android::app::admin
 			"()Z"
 		);
 	}
-	jboolean DevicePolicyManager::isDeviceOwnerApp(jstring arg0)
+	jboolean DevicePolicyManager::isDeviceOwnerApp(JString arg0)
 	{
 		return callMethod<jboolean>(
 			"isDeviceOwnerApp",
 			"(Ljava/lang/String;)Z",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	jboolean DevicePolicyManager::isEphemeralUser(android::content::ComponentName arg0)
@@ -2248,20 +2253,20 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	jboolean DevicePolicyManager::isKeyPairGrantedToWifiAuth(jstring arg0)
+	jboolean DevicePolicyManager::isKeyPairGrantedToWifiAuth(JString arg0)
 	{
 		return callMethod<jboolean>(
 			"isKeyPairGrantedToWifiAuth",
 			"(Ljava/lang/String;)Z",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jboolean DevicePolicyManager::isLockTaskPermitted(jstring arg0)
+	jboolean DevicePolicyManager::isLockTaskPermitted(JString arg0)
 	{
 		return callMethod<jboolean>(
 			"isLockTaskPermitted",
 			"(Ljava/lang/String;)Z",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	jboolean DevicePolicyManager::isLogoutEnabled()
@@ -2310,13 +2315,13 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	jboolean DevicePolicyManager::isPackageSuspended(android::content::ComponentName arg0, jstring arg1)
+	jboolean DevicePolicyManager::isPackageSuspended(android::content::ComponentName arg0, JString arg1)
 	{
 		return callMethod<jboolean>(
 			"isPackageSuspended",
 			"(Landroid/content/ComponentName;Ljava/lang/String;)Z",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
 	jboolean DevicePolicyManager::isPreferentialNetworkServiceEnabled()
@@ -2326,20 +2331,20 @@ namespace android::app::admin
 			"()Z"
 		);
 	}
-	jboolean DevicePolicyManager::isProfileOwnerApp(jstring arg0)
+	jboolean DevicePolicyManager::isProfileOwnerApp(JString arg0)
 	{
 		return callMethod<jboolean>(
 			"isProfileOwnerApp",
 			"(Ljava/lang/String;)Z",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jboolean DevicePolicyManager::isProvisioningAllowed(jstring arg0)
+	jboolean DevicePolicyManager::isProvisioningAllowed(JString arg0)
 	{
 		return callMethod<jboolean>(
 			"isProvisioningAllowed",
 			"(Ljava/lang/String;)Z",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	jboolean DevicePolicyManager::isResetPasswordTokenActive(android::content::ComponentName arg0)
@@ -2366,13 +2371,13 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	jboolean DevicePolicyManager::isUninstallBlocked(android::content::ComponentName arg0, jstring arg1)
+	jboolean DevicePolicyManager::isUninstallBlocked(android::content::ComponentName arg0, JString arg1)
 	{
 		return callMethod<jboolean>(
 			"isUninstallBlocked",
 			"(Landroid/content/ComponentName;Ljava/lang/String;)Z",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
 	jboolean DevicePolicyManager::isUniqueDeviceAttestationSupported()
@@ -2443,22 +2448,22 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	jboolean DevicePolicyManager::removeCrossProfileWidgetProvider(android::content::ComponentName arg0, jstring arg1)
+	jboolean DevicePolicyManager::removeCrossProfileWidgetProvider(android::content::ComponentName arg0, JString arg1)
 	{
 		return callMethod<jboolean>(
 			"removeCrossProfileWidgetProvider",
 			"(Landroid/content/ComponentName;Ljava/lang/String;)Z",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
-	jboolean DevicePolicyManager::removeKeyPair(android::content::ComponentName arg0, jstring arg1)
+	jboolean DevicePolicyManager::removeKeyPair(android::content::ComponentName arg0, JString arg1)
 	{
 		return callMethod<jboolean>(
 			"removeKeyPair",
 			"(Landroid/content/ComponentName;Ljava/lang/String;)Z",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
 	jboolean DevicePolicyManager::removeOverrideApn(android::content::ComponentName arg0, jint arg1)
@@ -2487,23 +2492,23 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	jboolean DevicePolicyManager::resetPassword(jstring arg0, jint arg1)
+	jboolean DevicePolicyManager::resetPassword(JString arg0, jint arg1)
 	{
 		return callMethod<jboolean>(
 			"resetPassword",
 			"(Ljava/lang/String;I)Z",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
-	jboolean DevicePolicyManager::resetPasswordWithToken(android::content::ComponentName arg0, jstring arg1, jbyteArray arg2, jint arg3)
+	jboolean DevicePolicyManager::resetPasswordWithToken(android::content::ComponentName arg0, JString arg1, JByteArray arg2, jint arg3)
 	{
 		return callMethod<jboolean>(
 			"resetPasswordWithToken",
 			"(Landroid/content/ComponentName;Ljava/lang/String;[BI)Z",
 			arg0.object(),
-			arg1,
-			arg2,
+			arg1.object<jstring>(),
+			arg2.object<jbyteArray>(),
 			arg3
 		);
 	}
@@ -2532,31 +2537,31 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	jboolean DevicePolicyManager::revokeKeyPairFromApp(android::content::ComponentName arg0, jstring arg1, jstring arg2)
+	jboolean DevicePolicyManager::revokeKeyPairFromApp(android::content::ComponentName arg0, JString arg1, JString arg2)
 	{
 		return callMethod<jboolean>(
 			"revokeKeyPairFromApp",
 			"(Landroid/content/ComponentName;Ljava/lang/String;Ljava/lang/String;)Z",
 			arg0.object(),
-			arg1,
-			arg2
+			arg1.object<jstring>(),
+			arg2.object<jstring>()
 		);
 	}
-	jboolean DevicePolicyManager::revokeKeyPairFromWifiAuth(jstring arg0)
+	jboolean DevicePolicyManager::revokeKeyPairFromWifiAuth(JString arg0)
 	{
 		return callMethod<jboolean>(
 			"revokeKeyPairFromWifiAuth",
 			"(Ljava/lang/String;)Z",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	void DevicePolicyManager::setAccountManagementDisabled(android::content::ComponentName arg0, jstring arg1, jboolean arg2)
+	void DevicePolicyManager::setAccountManagementDisabled(android::content::ComponentName arg0, JString arg1, jboolean arg2)
 	{
 		callMethod<void>(
 			"setAccountManagementDisabled",
 			"(Landroid/content/ComponentName;Ljava/lang/String;Z)V",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2
 		);
 	}
@@ -2569,54 +2574,54 @@ namespace android::app::admin
 			arg1.object()
 		);
 	}
-	void DevicePolicyManager::setAlwaysOnVpnPackage(android::content::ComponentName arg0, jstring arg1, jboolean arg2)
+	void DevicePolicyManager::setAlwaysOnVpnPackage(android::content::ComponentName arg0, JString arg1, jboolean arg2)
 	{
 		callMethod<void>(
 			"setAlwaysOnVpnPackage",
 			"(Landroid/content/ComponentName;Ljava/lang/String;Z)V",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2
 		);
 	}
-	void DevicePolicyManager::setAlwaysOnVpnPackage(android::content::ComponentName arg0, jstring arg1, jboolean arg2, JObject arg3)
+	void DevicePolicyManager::setAlwaysOnVpnPackage(android::content::ComponentName arg0, JString arg1, jboolean arg2, JObject arg3)
 	{
 		callMethod<void>(
 			"setAlwaysOnVpnPackage",
 			"(Landroid/content/ComponentName;Ljava/lang/String;ZLjava/util/Set;)V",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2,
 			arg3.object()
 		);
 	}
-	jboolean DevicePolicyManager::setApplicationHidden(android::content::ComponentName arg0, jstring arg1, jboolean arg2)
+	jboolean DevicePolicyManager::setApplicationHidden(android::content::ComponentName arg0, JString arg1, jboolean arg2)
 	{
 		return callMethod<jboolean>(
 			"setApplicationHidden",
 			"(Landroid/content/ComponentName;Ljava/lang/String;Z)Z",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2
 		);
 	}
-	void DevicePolicyManager::setApplicationRestrictions(android::content::ComponentName arg0, jstring arg1, android::os::Bundle arg2)
+	void DevicePolicyManager::setApplicationRestrictions(android::content::ComponentName arg0, JString arg1, android::os::Bundle arg2)
 	{
 		callMethod<void>(
 			"setApplicationRestrictions",
 			"(Landroid/content/ComponentName;Ljava/lang/String;Landroid/os/Bundle;)V",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2.object()
 		);
 	}
-	void DevicePolicyManager::setApplicationRestrictionsManagingPackage(android::content::ComponentName arg0, jstring arg1)
+	void DevicePolicyManager::setApplicationRestrictionsManagingPackage(android::content::ComponentName arg0, JString arg1)
 	{
 		callMethod<void>(
 			"setApplicationRestrictionsManagingPackage",
 			"(Landroid/content/ComponentName;Ljava/lang/String;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
 	void DevicePolicyManager::setAutoTimeEnabled(android::content::ComponentName arg0, jboolean arg1)
@@ -2673,13 +2678,13 @@ namespace android::app::admin
 			arg1
 		);
 	}
-	void DevicePolicyManager::setCertInstallerPackage(android::content::ComponentName arg0, jstring arg1)
+	void DevicePolicyManager::setCertInstallerPackage(android::content::ComponentName arg0, JString arg1)
 	{
 		callMethod<void>(
 			"setCertInstallerPackage",
 			"(Landroid/content/ComponentName;Ljava/lang/String;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
 	void DevicePolicyManager::setCommonCriteriaModeEnabled(android::content::ComponentName arg0, jboolean arg1)
@@ -2736,41 +2741,41 @@ namespace android::app::admin
 			arg1.object()
 		);
 	}
-	void DevicePolicyManager::setDefaultSmsApplication(android::content::ComponentName arg0, jstring arg1)
+	void DevicePolicyManager::setDefaultSmsApplication(android::content::ComponentName arg0, JString arg1)
 	{
 		callMethod<void>(
 			"setDefaultSmsApplication",
 			"(Landroid/content/ComponentName;Ljava/lang/String;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
-	void DevicePolicyManager::setDelegatedScopes(android::content::ComponentName arg0, jstring arg1, JObject arg2)
+	void DevicePolicyManager::setDelegatedScopes(android::content::ComponentName arg0, JString arg1, JObject arg2)
 	{
 		callMethod<void>(
 			"setDelegatedScopes",
 			"(Landroid/content/ComponentName;Ljava/lang/String;Ljava/util/List;)V",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2.object()
 		);
 	}
-	void DevicePolicyManager::setDeviceOwnerLockScreenInfo(android::content::ComponentName arg0, jstring arg1)
+	void DevicePolicyManager::setDeviceOwnerLockScreenInfo(android::content::ComponentName arg0, JString arg1)
 	{
 		callMethod<void>(
 			"setDeviceOwnerLockScreenInfo",
 			"(Landroid/content/ComponentName;Ljava/lang/CharSequence;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
-	void DevicePolicyManager::setEndUserSessionMessage(android::content::ComponentName arg0, jstring arg1)
+	void DevicePolicyManager::setEndUserSessionMessage(android::content::ComponentName arg0, JString arg1)
 	{
 		callMethod<void>(
 			"setEndUserSessionMessage",
 			"(Landroid/content/ComponentName;Ljava/lang/CharSequence;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
 	void DevicePolicyManager::setFactoryResetProtectionPolicy(android::content::ComponentName arg0, android::app::admin::FactoryResetProtectionPolicy arg1)
@@ -2790,23 +2795,23 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	jint DevicePolicyManager::setGlobalPrivateDnsModeSpecifiedHost(android::content::ComponentName arg0, jstring arg1)
+	jint DevicePolicyManager::setGlobalPrivateDnsModeSpecifiedHost(android::content::ComponentName arg0, JString arg1)
 	{
 		return callMethod<jint>(
 			"setGlobalPrivateDnsModeSpecifiedHost",
 			"(Landroid/content/ComponentName;Ljava/lang/String;)I",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
-	void DevicePolicyManager::setGlobalSetting(android::content::ComponentName arg0, jstring arg1, jstring arg2)
+	void DevicePolicyManager::setGlobalSetting(android::content::ComponentName arg0, JString arg1, JString arg2)
 	{
 		callMethod<void>(
 			"setGlobalSetting",
 			"(Landroid/content/ComponentName;Ljava/lang/String;Ljava/lang/String;)V",
 			arg0.object(),
-			arg1,
-			arg2
+			arg1.object<jstring>(),
+			arg2.object<jstring>()
 		);
 	}
 	void DevicePolicyManager::setKeepUninstalledPackages(android::content::ComponentName arg0, JObject arg1)
@@ -2818,13 +2823,13 @@ namespace android::app::admin
 			arg1.object()
 		);
 	}
-	jboolean DevicePolicyManager::setKeyPairCertificate(android::content::ComponentName arg0, jstring arg1, JObject arg2, jboolean arg3)
+	jboolean DevicePolicyManager::setKeyPairCertificate(android::content::ComponentName arg0, JString arg1, JObject arg2, jboolean arg3)
 	{
 		return callMethod<jboolean>(
 			"setKeyPairCertificate",
 			"(Landroid/content/ComponentName;Ljava/lang/String;Ljava/util/List;Z)Z",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2.object(),
 			arg3
 		);
@@ -2865,13 +2870,13 @@ namespace android::app::admin
 			arg1
 		);
 	}
-	void DevicePolicyManager::setLockTaskPackages(android::content::ComponentName arg0, jarray arg1)
+	void DevicePolicyManager::setLockTaskPackages(android::content::ComponentName arg0, JArray arg1)
 	{
 		callMethod<void>(
 			"setLockTaskPackages",
 			"(Landroid/content/ComponentName;[Ljava/lang/String;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jarray>()
 		);
 	}
 	void DevicePolicyManager::setLogoutEnabled(android::content::ComponentName arg0, jboolean arg1)
@@ -2883,13 +2888,13 @@ namespace android::app::admin
 			arg1
 		);
 	}
-	void DevicePolicyManager::setLongSupportMessage(android::content::ComponentName arg0, jstring arg1)
+	void DevicePolicyManager::setLongSupportMessage(android::content::ComponentName arg0, JString arg1)
 	{
 		callMethod<void>(
 			"setLongSupportMessage",
 			"(Landroid/content/ComponentName;Ljava/lang/CharSequence;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
 	void DevicePolicyManager::setManagedProfileMaximumTimeOff(android::content::ComponentName arg0, jlong arg1)
@@ -2971,21 +2976,21 @@ namespace android::app::admin
 			arg1
 		);
 	}
-	void DevicePolicyManager::setOrganizationId(jstring arg0)
+	void DevicePolicyManager::setOrganizationId(JString arg0)
 	{
 		callMethod<void>(
 			"setOrganizationId",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	void DevicePolicyManager::setOrganizationName(android::content::ComponentName arg0, jstring arg1)
+	void DevicePolicyManager::setOrganizationName(android::content::ComponentName arg0, JString arg1)
 	{
 		callMethod<void>(
 			"setOrganizationName",
 			"(Landroid/content/ComponentName;Ljava/lang/CharSequence;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
 	void DevicePolicyManager::setOverrideApnsEnabled(android::content::ComponentName arg0, jboolean arg1)
@@ -2997,15 +3002,15 @@ namespace android::app::admin
 			arg1
 		);
 	}
-	jarray DevicePolicyManager::setPackagesSuspended(android::content::ComponentName arg0, jarray arg1, jboolean arg2)
+	JArray DevicePolicyManager::setPackagesSuspended(android::content::ComponentName arg0, JArray arg1, jboolean arg2)
 	{
 		return callObjectMethod(
 			"setPackagesSuspended",
 			"(Landroid/content/ComponentName;[Ljava/lang/String;Z)[Ljava/lang/String;",
 			arg0.object(),
-			arg1,
+			arg1.object<jarray>(),
 			arg2
-		).object<jarray>();
+		);
 	}
 	void DevicePolicyManager::setPasswordExpirationTimeout(android::content::ComponentName arg0, jlong arg1)
 	{
@@ -3097,14 +3102,14 @@ namespace android::app::admin
 			arg1
 		);
 	}
-	jboolean DevicePolicyManager::setPermissionGrantState(android::content::ComponentName arg0, jstring arg1, jstring arg2, jint arg3)
+	jboolean DevicePolicyManager::setPermissionGrantState(android::content::ComponentName arg0, JString arg1, JString arg2, jint arg3)
 	{
 		return callMethod<jboolean>(
 			"setPermissionGrantState",
 			"(Landroid/content/ComponentName;Ljava/lang/String;Ljava/lang/String;I)Z",
 			arg0.object(),
-			arg1,
-			arg2,
+			arg1.object<jstring>(),
+			arg2.object<jstring>(),
 			arg3
 		);
 	}
@@ -3169,13 +3174,13 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	void DevicePolicyManager::setProfileName(android::content::ComponentName arg0, jstring arg1)
+	void DevicePolicyManager::setProfileName(android::content::ComponentName arg0, JString arg1)
 	{
 		callMethod<void>(
 			"setProfileName",
 			"(Landroid/content/ComponentName;Ljava/lang/String;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
 	void DevicePolicyManager::setRecommendedGlobalProxy(android::content::ComponentName arg0, android::net::ProxyInfo arg1)
@@ -3204,13 +3209,13 @@ namespace android::app::admin
 			arg1
 		);
 	}
-	jboolean DevicePolicyManager::setResetPasswordToken(android::content::ComponentName arg0, jbyteArray arg1)
+	jboolean DevicePolicyManager::setResetPasswordToken(android::content::ComponentName arg0, JByteArray arg1)
 	{
 		return callMethod<jboolean>(
 			"setResetPasswordToken",
 			"(Landroid/content/ComponentName;[B)Z",
 			arg0.object(),
-			arg1
+			arg1.object<jbyteArray>()
 		);
 	}
 	void DevicePolicyManager::setRestrictionsProvider(android::content::ComponentName arg0, android::content::ComponentName arg1)
@@ -3231,14 +3236,14 @@ namespace android::app::admin
 			arg1
 		);
 	}
-	void DevicePolicyManager::setSecureSetting(android::content::ComponentName arg0, jstring arg1, jstring arg2)
+	void DevicePolicyManager::setSecureSetting(android::content::ComponentName arg0, JString arg1, JString arg2)
 	{
 		callMethod<void>(
 			"setSecureSetting",
 			"(Landroid/content/ComponentName;Ljava/lang/String;Ljava/lang/String;)V",
 			arg0.object(),
-			arg1,
-			arg2
+			arg1.object<jstring>(),
+			arg2.object<jstring>()
 		);
 	}
 	void DevicePolicyManager::setSecurityLoggingEnabled(android::content::ComponentName arg0, jboolean arg1)
@@ -3250,22 +3255,22 @@ namespace android::app::admin
 			arg1
 		);
 	}
-	void DevicePolicyManager::setShortSupportMessage(android::content::ComponentName arg0, jstring arg1)
+	void DevicePolicyManager::setShortSupportMessage(android::content::ComponentName arg0, JString arg1)
 	{
 		callMethod<void>(
 			"setShortSupportMessage",
 			"(Landroid/content/ComponentName;Ljava/lang/CharSequence;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
-	void DevicePolicyManager::setStartUserSessionMessage(android::content::ComponentName arg0, jstring arg1)
+	void DevicePolicyManager::setStartUserSessionMessage(android::content::ComponentName arg0, JString arg1)
 	{
 		callMethod<void>(
 			"setStartUserSessionMessage",
 			"(Landroid/content/ComponentName;Ljava/lang/CharSequence;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
 	jboolean DevicePolicyManager::setStatusBarDisabled(android::content::ComponentName arg0, jboolean arg1)
@@ -3286,14 +3291,14 @@ namespace android::app::admin
 			arg1
 		);
 	}
-	void DevicePolicyManager::setSystemSetting(android::content::ComponentName arg0, jstring arg1, jstring arg2)
+	void DevicePolicyManager::setSystemSetting(android::content::ComponentName arg0, JString arg1, JString arg2)
 	{
 		callMethod<void>(
 			"setSystemSetting",
 			"(Landroid/content/ComponentName;Ljava/lang/String;Ljava/lang/String;)V",
 			arg0.object(),
-			arg1,
-			arg2
+			arg1.object<jstring>(),
+			arg2.object<jstring>()
 		);
 	}
 	void DevicePolicyManager::setSystemUpdatePolicy(android::content::ComponentName arg0, android::app::admin::SystemUpdatePolicy arg1)
@@ -3314,13 +3319,13 @@ namespace android::app::admin
 			arg1
 		);
 	}
-	jboolean DevicePolicyManager::setTimeZone(android::content::ComponentName arg0, jstring arg1)
+	jboolean DevicePolicyManager::setTimeZone(android::content::ComponentName arg0, JString arg1)
 	{
 		return callMethod<jboolean>(
 			"setTimeZone",
 			"(Landroid/content/ComponentName;Ljava/lang/String;)Z",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
 	void DevicePolicyManager::setTrustAgentConfiguration(android::content::ComponentName arg0, android::content::ComponentName arg1, android::os::PersistableBundle arg2)
@@ -3333,13 +3338,13 @@ namespace android::app::admin
 			arg2.object()
 		);
 	}
-	void DevicePolicyManager::setUninstallBlocked(android::content::ComponentName arg0, jstring arg1, jboolean arg2)
+	void DevicePolicyManager::setUninstallBlocked(android::content::ComponentName arg0, JString arg1, jboolean arg2)
 	{
 		callMethod<void>(
 			"setUninstallBlocked",
 			"(Landroid/content/ComponentName;Ljava/lang/String;Z)V",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2
 		);
 	}
@@ -3414,13 +3419,13 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	void DevicePolicyManager::uninstallCaCert(android::content::ComponentName arg0, jbyteArray arg1)
+	void DevicePolicyManager::uninstallCaCert(android::content::ComponentName arg0, JByteArray arg1)
 	{
 		callMethod<void>(
 			"uninstallCaCert",
 			"(Landroid/content/ComponentName;[B)V",
 			arg0.object(),
-			arg1
+			arg1.object<jbyteArray>()
 		);
 	}
 	jboolean DevicePolicyManager::updateOverrideApn(android::content::ComponentName arg0, jint arg1, android::telephony::data::ApnSetting arg2)
@@ -3441,13 +3446,13 @@ namespace android::app::admin
 			arg0
 		);
 	}
-	void DevicePolicyManager::wipeData(jint arg0, jstring arg1)
+	void DevicePolicyManager::wipeData(jint arg0, JString arg1)
 	{
 		callMethod<void>(
 			"wipeData",
 			"(ILjava/lang/CharSequence;)V",
 			arg0,
-			arg1
+			arg1.object<jstring>()
 		);
 	}
 } // namespace android::app::admin

@@ -1,3 +1,5 @@
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
 #include "./Canvas_VertexMode.hpp"
 
 namespace android::graphics
@@ -34,22 +36,22 @@ namespace android::graphics
 	// Constructors
 	
 	// Methods
-	android::graphics::Canvas_VertexMode Canvas_VertexMode::valueOf(jstring arg0)
+	android::graphics::Canvas_VertexMode Canvas_VertexMode::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.graphics.Canvas$VertexMode",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/graphics/Canvas$VertexMode;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray Canvas_VertexMode::values()
+	JArray Canvas_VertexMode::values()
 	{
 		return callStaticObjectMethod(
 			"android.graphics.Canvas$VertexMode",
 			"values",
 			"()[Landroid/graphics/Canvas$VertexMode;"
-		).object<jarray>();
+		);
 	}
 } // namespace android::graphics
 

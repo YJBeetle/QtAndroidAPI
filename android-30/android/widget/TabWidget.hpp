@@ -1,8 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../view/View.hpp"
-#include "../view/ViewGroup.hpp"
 #include "./LinearLayout.hpp"
 
 namespace android::content
@@ -29,6 +26,7 @@ namespace android::view
 {
 	class View;
 }
+class JString;
 
 namespace android::widget
 {
@@ -52,7 +50,7 @@ namespace android::widget
 		void childDrawableStateChanged(android::view::View arg0);
 		void dispatchDraw(android::graphics::Canvas arg0);
 		void focusCurrentTab(jint arg0);
-		jstring getAccessibilityClassName();
+		JString getAccessibilityClassName();
 		android::view::View getChildTabViewAt(jint arg0);
 		android::graphics::drawable::Drawable getLeftStripDrawable();
 		android::graphics::drawable::Drawable getRightStripDrawable();

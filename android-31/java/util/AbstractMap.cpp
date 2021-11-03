@@ -1,3 +1,5 @@
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./AbstractMap.hpp"
 
 namespace java::util
@@ -17,20 +19,20 @@ namespace java::util
 			"()V"
 		);
 	}
-	jboolean AbstractMap::containsKey(jobject arg0)
+	jboolean AbstractMap::containsKey(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"containsKey",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jboolean AbstractMap::containsValue(jobject arg0)
+	jboolean AbstractMap::containsValue(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"containsValue",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	JObject AbstractMap::entrySet()
@@ -40,21 +42,21 @@ namespace java::util
 			"()Ljava/util/Set;"
 		);
 	}
-	jboolean AbstractMap::equals(jobject arg0)
+	jboolean AbstractMap::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jobject AbstractMap::get(jobject arg0)
+	JObject AbstractMap::get(JObject arg0)
 	{
 		return callObjectMethod(
 			"get",
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0
-		).object<jobject>();
+			arg0.object<jobject>()
+		);
 	}
 	jint AbstractMap::hashCode()
 	{
@@ -77,14 +79,14 @@ namespace java::util
 			"()Ljava/util/Set;"
 		);
 	}
-	jobject AbstractMap::put(jobject arg0, jobject arg1)
+	JObject AbstractMap::put(JObject arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"put",
 			"(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0,
-			arg1
-		).object<jobject>();
+			arg0.object<jobject>(),
+			arg1.object<jobject>()
+		);
 	}
 	void AbstractMap::putAll(JObject arg0)
 	{
@@ -94,13 +96,13 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	jobject AbstractMap::remove(jobject arg0)
+	JObject AbstractMap::remove(JObject arg0)
 	{
 		return callObjectMethod(
 			"remove",
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0
-		).object<jobject>();
+			arg0.object<jobject>()
+		);
 	}
 	jint AbstractMap::size()
 	{
@@ -109,12 +111,12 @@ namespace java::util
 			"()I"
 		);
 	}
-	jstring AbstractMap::toString()
+	JString AbstractMap::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	JObject AbstractMap::values()
 	{

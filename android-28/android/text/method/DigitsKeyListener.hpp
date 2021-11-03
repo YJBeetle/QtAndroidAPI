@@ -1,10 +1,10 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "./MetaKeyKeyListener.hpp"
-#include "./BaseKeyListener.hpp"
 #include "./NumberKeyListener.hpp"
 
+class JCharArray;
+class JString;
+class JString;
 namespace java::util
 {
 	class Locale;
@@ -29,11 +29,11 @@ namespace android::text::method
 		
 		// Methods
 		static android::text::method::DigitsKeyListener getInstance();
-		static android::text::method::DigitsKeyListener getInstance(jstring arg0);
+		static android::text::method::DigitsKeyListener getInstance(JString arg0);
 		static android::text::method::DigitsKeyListener getInstance(java::util::Locale arg0);
 		static android::text::method::DigitsKeyListener getInstance(jboolean arg0, jboolean arg1);
 		static android::text::method::DigitsKeyListener getInstance(java::util::Locale arg0, jboolean arg1, jboolean arg2);
-		jstring filter(jstring arg0, jint arg1, jint arg2, JObject arg3, jint arg4, jint arg5);
+		JString filter(JString arg0, jint arg1, jint arg2, JObject arg3, jint arg4, jint arg5);
 		jint getInputType();
 	};
 } // namespace android::text::method

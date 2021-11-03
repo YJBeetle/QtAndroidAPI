@@ -14,6 +14,7 @@ namespace android::os
 {
 	class Handler;
 }
+class JObject;
 
 namespace android::accessibilityservice
 {

@@ -1,4 +1,9 @@
+#include "../../JArray.hpp"
+#include "../../JArray.hpp"
+#include "../../JArray.hpp"
 #include "../io/ObjectOutputStream.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "../util/Locale.hpp"
 #include "./DateFormatSymbols.hpp"
 
@@ -23,13 +28,13 @@ namespace java::text
 		) {}
 	
 	// Methods
-	jarray DateFormatSymbols::getAvailableLocales()
+	JArray DateFormatSymbols::getAvailableLocales()
 	{
 		return callStaticObjectMethod(
 			"java.text.DateFormatSymbols",
 			"getAvailableLocales",
 			"()[Ljava/util/Locale;"
-		).object<jarray>();
+		);
 	}
 	java::text::DateFormatSymbols DateFormatSymbols::getInstance()
 	{
@@ -48,76 +53,76 @@ namespace java::text
 			arg0.object()
 		);
 	}
-	jobject DateFormatSymbols::clone()
+	JObject DateFormatSymbols::clone()
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
-	jboolean DateFormatSymbols::equals(jobject arg0)
+	jboolean DateFormatSymbols::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jarray DateFormatSymbols::getAmPmStrings()
+	JArray DateFormatSymbols::getAmPmStrings()
 	{
 		return callObjectMethod(
 			"getAmPmStrings",
 			"()[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
-	jarray DateFormatSymbols::getEras()
+	JArray DateFormatSymbols::getEras()
 	{
 		return callObjectMethod(
 			"getEras",
 			"()[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
-	jstring DateFormatSymbols::getLocalPatternChars()
+	JString DateFormatSymbols::getLocalPatternChars()
 	{
 		return callObjectMethod(
 			"getLocalPatternChars",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jarray DateFormatSymbols::getMonths()
+	JArray DateFormatSymbols::getMonths()
 	{
 		return callObjectMethod(
 			"getMonths",
 			"()[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
-	jarray DateFormatSymbols::getShortMonths()
+	JArray DateFormatSymbols::getShortMonths()
 	{
 		return callObjectMethod(
 			"getShortMonths",
 			"()[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
-	jarray DateFormatSymbols::getShortWeekdays()
+	JArray DateFormatSymbols::getShortWeekdays()
 	{
 		return callObjectMethod(
 			"getShortWeekdays",
 			"()[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
-	jarray DateFormatSymbols::getWeekdays()
+	JArray DateFormatSymbols::getWeekdays()
 	{
 		return callObjectMethod(
 			"getWeekdays",
 			"()[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
-	jarray DateFormatSymbols::getZoneStrings()
+	JArray DateFormatSymbols::getZoneStrings()
 	{
 		return callObjectMethod(
 			"getZoneStrings",
 			"()[[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
 	jint DateFormatSymbols::hashCode()
 	{
@@ -126,68 +131,68 @@ namespace java::text
 			"()I"
 		);
 	}
-	void DateFormatSymbols::setAmPmStrings(jarray arg0)
+	void DateFormatSymbols::setAmPmStrings(JArray arg0)
 	{
 		callMethod<void>(
 			"setAmPmStrings",
 			"([Ljava/lang/String;)V",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
-	void DateFormatSymbols::setEras(jarray arg0)
+	void DateFormatSymbols::setEras(JArray arg0)
 	{
 		callMethod<void>(
 			"setEras",
 			"([Ljava/lang/String;)V",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
-	void DateFormatSymbols::setLocalPatternChars(jstring arg0)
+	void DateFormatSymbols::setLocalPatternChars(JString arg0)
 	{
 		callMethod<void>(
 			"setLocalPatternChars",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	void DateFormatSymbols::setMonths(jarray arg0)
+	void DateFormatSymbols::setMonths(JArray arg0)
 	{
 		callMethod<void>(
 			"setMonths",
 			"([Ljava/lang/String;)V",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
-	void DateFormatSymbols::setShortMonths(jarray arg0)
+	void DateFormatSymbols::setShortMonths(JArray arg0)
 	{
 		callMethod<void>(
 			"setShortMonths",
 			"([Ljava/lang/String;)V",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
-	void DateFormatSymbols::setShortWeekdays(jarray arg0)
+	void DateFormatSymbols::setShortWeekdays(JArray arg0)
 	{
 		callMethod<void>(
 			"setShortWeekdays",
 			"([Ljava/lang/String;)V",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
-	void DateFormatSymbols::setWeekdays(jarray arg0)
+	void DateFormatSymbols::setWeekdays(JArray arg0)
 	{
 		callMethod<void>(
 			"setWeekdays",
 			"([Ljava/lang/String;)V",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
-	void DateFormatSymbols::setZoneStrings(jarray arg0)
+	void DateFormatSymbols::setZoneStrings(JArray arg0)
 	{
 		callMethod<void>(
 			"setZoneStrings",
 			"([[Ljava/lang/String;)V",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
 } // namespace java::text

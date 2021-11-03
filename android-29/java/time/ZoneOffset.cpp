@@ -1,4 +1,7 @@
 #include "../io/ObjectInputStream.hpp"
+#include "../../JString.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./temporal/ValueRange.hpp"
 #include "./zone/ZoneRules.hpp"
 #include "./ZoneOffset.hpp"
@@ -46,13 +49,13 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	java::time::ZoneOffset ZoneOffset::of(jstring arg0)
+	java::time::ZoneOffset ZoneOffset::of(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"java.time.ZoneOffset",
 			"of",
 			"(Ljava/lang/String;)Ljava/time/ZoneOffset;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	java::time::ZoneOffset ZoneOffset::ofHours(jint arg0)
@@ -102,12 +105,12 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	jint ZoneOffset::compareTo(jobject arg0)
+	jint ZoneOffset::compareTo(JObject arg0)
 	{
 		return callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Object;)I",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint ZoneOffset::compareTo(java::time::ZoneOffset arg0)
@@ -118,12 +121,12 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	jboolean ZoneOffset::equals(jobject arg0)
+	jboolean ZoneOffset::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint ZoneOffset::get(JObject arg0)
@@ -134,12 +137,12 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	jstring ZoneOffset::getId()
+	JString ZoneOffset::getId()
 	{
 		return callObjectMethod(
 			"getId",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jlong ZoneOffset::getLong(JObject arg0)
 	{
@@ -178,13 +181,13 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	jobject ZoneOffset::query(JObject arg0)
+	JObject ZoneOffset::query(JObject arg0)
 	{
 		return callObjectMethod(
 			"query",
 			"(Ljava/time/temporal/TemporalQuery;)Ljava/lang/Object;",
 			arg0.object()
-		).object<jobject>();
+		);
 	}
 	java::time::temporal::ValueRange ZoneOffset::range(JObject arg0)
 	{
@@ -194,12 +197,12 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	jstring ZoneOffset::toString()
+	JString ZoneOffset::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::time
 

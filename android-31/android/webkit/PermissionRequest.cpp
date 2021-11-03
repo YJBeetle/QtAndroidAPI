@@ -1,40 +1,42 @@
+#include "../../JArray.hpp"
 #include "../net/Uri.hpp"
+#include "../../JString.hpp"
 #include "./PermissionRequest.hpp"
 
 namespace android::webkit
 {
 	// Fields
-	jstring PermissionRequest::RESOURCE_AUDIO_CAPTURE()
+	JString PermissionRequest::RESOURCE_AUDIO_CAPTURE()
 	{
 		return getStaticObjectField(
 			"android.webkit.PermissionRequest",
 			"RESOURCE_AUDIO_CAPTURE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PermissionRequest::RESOURCE_MIDI_SYSEX()
+	JString PermissionRequest::RESOURCE_MIDI_SYSEX()
 	{
 		return getStaticObjectField(
 			"android.webkit.PermissionRequest",
 			"RESOURCE_MIDI_SYSEX",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PermissionRequest::RESOURCE_PROTECTED_MEDIA_ID()
+	JString PermissionRequest::RESOURCE_PROTECTED_MEDIA_ID()
 	{
 		return getStaticObjectField(
 			"android.webkit.PermissionRequest",
 			"RESOURCE_PROTECTED_MEDIA_ID",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PermissionRequest::RESOURCE_VIDEO_CAPTURE()
+	JString PermissionRequest::RESOURCE_VIDEO_CAPTURE()
 	{
 		return getStaticObjectField(
 			"android.webkit.PermissionRequest",
 			"RESOURCE_VIDEO_CAPTURE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QJniObject forward
@@ -62,19 +64,19 @@ namespace android::webkit
 			"()Landroid/net/Uri;"
 		);
 	}
-	jarray PermissionRequest::getResources()
+	JArray PermissionRequest::getResources()
 	{
 		return callObjectMethod(
 			"getResources",
 			"()[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
-	void PermissionRequest::grant(jarray arg0)
+	void PermissionRequest::grant(JArray arg0)
 	{
 		callMethod<void>(
 			"grant",
 			"([Ljava/lang/String;)V",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
 } // namespace android::webkit

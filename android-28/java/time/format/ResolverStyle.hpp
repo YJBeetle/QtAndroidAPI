@@ -1,8 +1,9 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "../../lang/Enum.hpp"
 
+class JArray;
+class JString;
 
 namespace java::time::format
 {
@@ -21,8 +22,8 @@ namespace java::time::format
 		// Constructors
 		
 		// Methods
-		static java::time::format::ResolverStyle valueOf(jstring arg0);
-		static jarray values();
+		static java::time::format::ResolverStyle valueOf(JString arg0);
+		static JArray values();
 	};
 } // namespace java::time::format
 

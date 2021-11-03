@@ -1,10 +1,8 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "../../lang/Exception.hpp"
-#include "../../io/IOException.hpp"
 #include "./FileSystemException.hpp"
 
+class JString;
 
 namespace java::nio::file
 {
@@ -18,7 +16,7 @@ namespace java::nio::file
 		NotDirectoryException(QJniObject obj);
 		
 		// Constructors
-		NotDirectoryException(jstring arg0);
+		NotDirectoryException(JString arg0);
 		
 		// Methods
 	};

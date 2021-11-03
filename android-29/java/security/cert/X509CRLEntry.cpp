@@ -1,3 +1,6 @@
+#include "../../../JByteArray.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "../../math/BigInteger.hpp"
 #include "./CRLReason.hpp"
 #include "../../util/Date.hpp"
@@ -19,12 +22,12 @@ namespace java::security::cert
 		) {}
 	
 	// Methods
-	jboolean X509CRLEntry::equals(jobject arg0)
+	jboolean X509CRLEntry::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	javax::security::auth::x500::X500Principal X509CRLEntry::getCertificateIssuer()
@@ -34,12 +37,12 @@ namespace java::security::cert
 			"()Ljavax/security/auth/x500/X500Principal;"
 		);
 	}
-	jbyteArray X509CRLEntry::getEncoded()
+	JByteArray X509CRLEntry::getEncoded()
 	{
 		return callObjectMethod(
 			"getEncoded",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
 	java::util::Date X509CRLEntry::getRevocationDate()
 	{
@@ -76,12 +79,12 @@ namespace java::security::cert
 			"()I"
 		);
 	}
-	jstring X509CRLEntry::toString()
+	JString X509CRLEntry::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::security::cert
 

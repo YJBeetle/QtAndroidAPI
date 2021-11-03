@@ -1,17 +1,20 @@
+#include "../../JArray.hpp"
 #include "./ContentValues.hpp"
 #include "../net/Uri.hpp"
 #include "../os/Handler.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./AsyncQueryHandler_WorkerArgs.hpp"
 
 namespace android::content
 {
 	// Fields
-	jobject AsyncQueryHandler_WorkerArgs::cookie()
+	JObject AsyncQueryHandler_WorkerArgs::cookie()
 	{
 		return getObjectField(
 			"cookie",
 			"Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
 	android::os::Handler AsyncQueryHandler_WorkerArgs::handler()
 	{
@@ -20,40 +23,40 @@ namespace android::content
 			"Landroid/os/Handler;"
 		);
 	}
-	jstring AsyncQueryHandler_WorkerArgs::orderBy()
+	JString AsyncQueryHandler_WorkerArgs::orderBy()
 	{
 		return getObjectField(
 			"orderBy",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jarray AsyncQueryHandler_WorkerArgs::projection()
+	JArray AsyncQueryHandler_WorkerArgs::projection()
 	{
 		return getObjectField(
 			"projection",
 			"[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
-	jobject AsyncQueryHandler_WorkerArgs::result()
+	JObject AsyncQueryHandler_WorkerArgs::result()
 	{
 		return getObjectField(
 			"result",
 			"Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
-	jstring AsyncQueryHandler_WorkerArgs::selection()
+	JString AsyncQueryHandler_WorkerArgs::selection()
 	{
 		return getObjectField(
 			"selection",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jarray AsyncQueryHandler_WorkerArgs::selectionArgs()
+	JArray AsyncQueryHandler_WorkerArgs::selectionArgs()
 	{
 		return getObjectField(
 			"selectionArgs",
 			"[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
 	android::net::Uri AsyncQueryHandler_WorkerArgs::uri()
 	{

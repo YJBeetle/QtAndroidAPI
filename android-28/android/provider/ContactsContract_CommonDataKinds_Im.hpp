@@ -6,6 +6,8 @@ namespace android::content::res
 {
 	class Resources;
 }
+class JString;
+class JString;
 
 namespace android::provider
 {
@@ -13,12 +15,12 @@ namespace android::provider
 	{
 	public:
 		// Fields
-		static jstring CONTENT_ITEM_TYPE();
-		static jstring CUSTOM_PROTOCOL();
-		static jstring EXTRA_ADDRESS_BOOK_INDEX();
-		static jstring EXTRA_ADDRESS_BOOK_INDEX_COUNTS();
-		static jstring EXTRA_ADDRESS_BOOK_INDEX_TITLES();
-		static jstring PROTOCOL();
+		static JString CONTENT_ITEM_TYPE();
+		static JString CUSTOM_PROTOCOL();
+		static JString EXTRA_ADDRESS_BOOK_INDEX();
+		static JString EXTRA_ADDRESS_BOOK_INDEX_COUNTS();
+		static JString EXTRA_ADDRESS_BOOK_INDEX_TITLES();
+		static JString PROTOCOL();
 		static jint PROTOCOL_AIM();
 		static jint PROTOCOL_CUSTOM();
 		static jint PROTOCOL_GOOGLE_TALK();
@@ -40,9 +42,9 @@ namespace android::provider
 		// Constructors
 		
 		// Methods
-		static jstring getProtocolLabel(android::content::res::Resources arg0, jint arg1, jstring arg2);
+		static JString getProtocolLabel(android::content::res::Resources arg0, jint arg1, JString arg2);
 		static jint getProtocolLabelResource(jint arg0);
-		static jstring getTypeLabel(android::content::res::Resources arg0, jint arg1, jstring arg2);
+		static JString getTypeLabel(android::content::res::Resources arg0, jint arg1, JString arg2);
 		static jint getTypeLabelResource(jint arg0);
 	};
 } // namespace android::provider

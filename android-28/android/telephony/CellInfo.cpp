@@ -1,4 +1,6 @@
 #include "../os/Parcel.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./CellInfo.hpp"
 
 namespace android::telephony
@@ -54,12 +56,12 @@ namespace android::telephony
 			"()I"
 		);
 	}
-	jboolean CellInfo::equals(jobject arg0)
+	jboolean CellInfo::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint CellInfo::getCellConnectionStatus()
@@ -90,12 +92,12 @@ namespace android::telephony
 			"()Z"
 		);
 	}
-	jstring CellInfo::toString()
+	JString CellInfo::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void CellInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

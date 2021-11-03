@@ -1,3 +1,5 @@
+#include "../../../../JArray.hpp"
+#include "../../../../JObject.hpp"
 #include "../SelectableChannel.hpp"
 #include "../SelectionKey.hpp"
 #include "../Selector.hpp"
@@ -14,12 +16,12 @@ namespace java::nio::channels::spi
 	// Constructors
 	
 	// Methods
-	jobject AbstractSelectableChannel::blockingLock()
+	JObject AbstractSelectableChannel::blockingLock()
 	{
 		return callObjectMethod(
 			"blockingLock",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
 	java::nio::channels::SelectableChannel AbstractSelectableChannel::configureBlocking(jboolean arg0)
 	{
@@ -58,14 +60,14 @@ namespace java::nio::channels::spi
 			"()Ljava/nio/channels/spi/SelectorProvider;"
 		);
 	}
-	java::nio::channels::SelectionKey AbstractSelectableChannel::_register(java::nio::channels::Selector arg0, jint arg1, jobject arg2)
+	java::nio::channels::SelectionKey AbstractSelectableChannel::_register(java::nio::channels::Selector arg0, jint arg1, JObject arg2)
 	{
 		return callObjectMethod(
 			"register",
 			"(Ljava/nio/channels/Selector;ILjava/lang/Object;)Ljava/nio/channels/SelectionKey;",
 			arg0.object(),
 			arg1,
-			arg2
+			arg2.object<jobject>()
 		);
 	}
 } // namespace java::nio::channels::spi

@@ -1,4 +1,6 @@
 #include "../os/Parcel.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./CellSignalStrengthWcdma.hpp"
 
 namespace android::telephony
@@ -26,12 +28,12 @@ namespace android::telephony
 			"()I"
 		);
 	}
-	jboolean CellSignalStrengthWcdma::equals(jobject arg0)
+	jboolean CellSignalStrengthWcdma::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint CellSignalStrengthWcdma::getAsuLevel()
@@ -62,12 +64,12 @@ namespace android::telephony
 			"()I"
 		);
 	}
-	jstring CellSignalStrengthWcdma::toString()
+	JString CellSignalStrengthWcdma::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void CellSignalStrengthWcdma::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

@@ -1,12 +1,12 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "./Violation.hpp"
 
 namespace android::net
 {
 	class Uri;
 }
+class JString;
 
 namespace android::os::strictmode
 {

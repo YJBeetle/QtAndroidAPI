@@ -2,7 +2,6 @@
 
 #include "../../../../JObject.hpp"
 
-
 namespace android::net::wifi::rtt
 {
 	class CivicLocationKeys : public JObject

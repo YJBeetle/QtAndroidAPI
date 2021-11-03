@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./MidiDeviceInfo_PortInfo.hpp"
 
 namespace android::media::midi
@@ -24,12 +25,12 @@ namespace android::media::midi
 	// Constructors
 	
 	// Methods
-	jstring MidiDeviceInfo_PortInfo::getName()
+	JString MidiDeviceInfo_PortInfo::getName()
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint MidiDeviceInfo_PortInfo::getPortNumber()
 	{

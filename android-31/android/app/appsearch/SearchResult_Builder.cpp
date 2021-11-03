@@ -1,6 +1,7 @@
 #include "./GenericDocument.hpp"
 #include "./SearchResult.hpp"
 #include "./SearchResult_MatchInfo.hpp"
+#include "../../../JString.hpp"
 #include "./SearchResult_Builder.hpp"
 
 namespace android::app::appsearch
@@ -11,12 +12,12 @@ namespace android::app::appsearch
 	SearchResult_Builder::SearchResult_Builder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	SearchResult_Builder::SearchResult_Builder(jstring arg0, jstring arg1)
+	SearchResult_Builder::SearchResult_Builder(JString arg0, JString arg1)
 		: JObject(
 			"android.app.appsearch.SearchResult$Builder",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		) {}
 	
 	// Methods

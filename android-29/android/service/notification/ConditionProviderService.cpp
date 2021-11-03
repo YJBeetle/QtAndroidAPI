@@ -1,51 +1,53 @@
+#include "../../../JArray.hpp"
 #include "../../content/ComponentName.hpp"
 #include "../../content/Intent.hpp"
 #include "../../net/Uri.hpp"
 #include "./Condition.hpp"
+#include "../../../JString.hpp"
 #include "./ConditionProviderService.hpp"
 
 namespace android::service::notification
 {
 	// Fields
-	jstring ConditionProviderService::EXTRA_RULE_ID()
+	JString ConditionProviderService::EXTRA_RULE_ID()
 	{
 		return getStaticObjectField(
 			"android.service.notification.ConditionProviderService",
 			"EXTRA_RULE_ID",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ConditionProviderService::META_DATA_CONFIGURATION_ACTIVITY()
+	JString ConditionProviderService::META_DATA_CONFIGURATION_ACTIVITY()
 	{
 		return getStaticObjectField(
 			"android.service.notification.ConditionProviderService",
 			"META_DATA_CONFIGURATION_ACTIVITY",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ConditionProviderService::META_DATA_RULE_INSTANCE_LIMIT()
+	JString ConditionProviderService::META_DATA_RULE_INSTANCE_LIMIT()
 	{
 		return getStaticObjectField(
 			"android.service.notification.ConditionProviderService",
 			"META_DATA_RULE_INSTANCE_LIMIT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ConditionProviderService::META_DATA_RULE_TYPE()
+	JString ConditionProviderService::META_DATA_RULE_TYPE()
 	{
 		return getStaticObjectField(
 			"android.service.notification.ConditionProviderService",
 			"META_DATA_RULE_TYPE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ConditionProviderService::SERVICE_INTERFACE()
+	JString ConditionProviderService::SERVICE_INTERFACE()
 	{
 		return getStaticObjectField(
 			"android.service.notification.ConditionProviderService",
 			"SERVICE_INTERFACE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QJniObject forward
@@ -76,12 +78,12 @@ namespace android::service::notification
 			arg0.object()
 		);
 	}
-	void ConditionProviderService::notifyConditions(jarray arg0)
+	void ConditionProviderService::notifyConditions(JArray arg0)
 	{
 		callMethod<void>(
 			"notifyConditions",
 			"([Landroid/service/notification/Condition;)V",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
 	JObject ConditionProviderService::onBind(android::content::Intent arg0)

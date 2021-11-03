@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JString;
 
 namespace android::telecom
 {
@@ -17,9 +18,9 @@ namespace android::telecom
 		// Constructors
 		
 		// Methods
-		jstring read();
-		jstring readImmediately();
-		void write(jstring arg0);
+		JString read();
+		JString readImmediately();
+		void write(JString arg0);
 	};
 } // namespace android::telecom
 

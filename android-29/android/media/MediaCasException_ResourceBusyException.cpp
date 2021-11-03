@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./MediaCasException_ResourceBusyException.hpp"
 
 namespace android::media

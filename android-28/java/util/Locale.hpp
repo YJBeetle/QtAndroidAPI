@@ -2,6 +2,9 @@
 
 #include "../../JObject.hpp"
 
+class JArray;
+class JArray;
+class JArray;
 namespace java::io
 {
 	class ObjectInputStream;
@@ -10,6 +13,8 @@ namespace java::io
 {
 	class ObjectOutputStream;
 }
+class JObject;
+class JString;
 namespace java::util
 {
 	class Locale_Category;
@@ -59,54 +64,54 @@ namespace java::util
 		Locale(QJniObject obj);
 		
 		// Constructors
-		Locale(jstring arg0);
-		Locale(jstring arg0, jstring arg1);
-		Locale(jstring arg0, jstring arg1, jstring arg2);
+		Locale(JString arg0);
+		Locale(JString arg0, JString arg1);
+		Locale(JString arg0, JString arg1, JString arg2);
 		
 		// Methods
 		static JObject filter(JObject arg0, JObject arg1);
 		static JObject filter(JObject arg0, JObject arg1, java::util::Locale_FilteringMode arg2);
 		static JObject filterTags(JObject arg0, JObject arg1);
 		static JObject filterTags(JObject arg0, JObject arg1, java::util::Locale_FilteringMode arg2);
-		static java::util::Locale forLanguageTag(jstring arg0);
-		static jarray getAvailableLocales();
+		static java::util::Locale forLanguageTag(JString arg0);
+		static JArray getAvailableLocales();
 		static java::util::Locale getDefault();
 		static java::util::Locale getDefault(java::util::Locale_Category arg0);
-		static jarray getISOCountries();
+		static JArray getISOCountries();
 		static JObject getISOCountries(JObject arg0);
-		static jarray getISOLanguages();
+		static JArray getISOLanguages();
 		static java::util::Locale lookup(JObject arg0, JObject arg1);
-		static jstring lookupTag(JObject arg0, JObject arg1);
+		static JString lookupTag(JObject arg0, JObject arg1);
 		static void setDefault(java::util::Locale arg0);
 		static void setDefault(java::util::Locale_Category arg0, java::util::Locale arg1);
-		jobject clone();
-		jboolean equals(jobject arg0);
-		jstring getCountry();
-		jstring getDisplayCountry();
-		jstring getDisplayCountry(java::util::Locale arg0);
-		jstring getDisplayLanguage();
-		jstring getDisplayLanguage(java::util::Locale arg0);
-		jstring getDisplayName();
-		jstring getDisplayName(java::util::Locale arg0);
-		jstring getDisplayScript();
-		jstring getDisplayScript(java::util::Locale arg0);
-		jstring getDisplayVariant();
-		jstring getDisplayVariant(java::util::Locale arg0);
-		jstring getExtension(jchar arg0);
+		JObject clone();
+		jboolean equals(JObject arg0);
+		JString getCountry();
+		JString getDisplayCountry();
+		JString getDisplayCountry(java::util::Locale arg0);
+		JString getDisplayLanguage();
+		JString getDisplayLanguage(java::util::Locale arg0);
+		JString getDisplayName();
+		JString getDisplayName(java::util::Locale arg0);
+		JString getDisplayScript();
+		JString getDisplayScript(java::util::Locale arg0);
+		JString getDisplayVariant();
+		JString getDisplayVariant(java::util::Locale arg0);
+		JString getExtension(jchar arg0);
 		JObject getExtensionKeys();
-		jstring getISO3Country();
-		jstring getISO3Language();
-		jstring getLanguage();
-		jstring getScript();
+		JString getISO3Country();
+		JString getISO3Language();
+		JString getLanguage();
+		JString getScript();
 		JObject getUnicodeLocaleAttributes();
 		JObject getUnicodeLocaleKeys();
-		jstring getUnicodeLocaleType(jstring arg0);
-		jstring getVariant();
+		JString getUnicodeLocaleType(JString arg0);
+		JString getVariant();
 		jboolean hasExtensions();
 		jint hashCode();
 		java::util::Locale stripExtensions();
-		jstring toLanguageTag();
-		jstring toString();
+		JString toLanguageTag();
+		JString toString();
 	};
 } // namespace java::util
 

@@ -1,4 +1,5 @@
 #include "./MediaBrowser_MediaItem.hpp"
+#include "../../../JString.hpp"
 #include "./MediaBrowser_ItemCallback.hpp"
 
 namespace android::media::browse
@@ -16,12 +17,12 @@ namespace android::media::browse
 		) {}
 	
 	// Methods
-	void MediaBrowser_ItemCallback::onError(jstring arg0)
+	void MediaBrowser_ItemCallback::onError(JString arg0)
 	{
 		callMethod<void>(
 			"onError",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void MediaBrowser_ItemCallback::onItemLoaded(android::media::browse::MediaBrowser_MediaItem arg0)

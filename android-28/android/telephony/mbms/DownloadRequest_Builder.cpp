@@ -1,3 +1,4 @@
+#include "../../../JByteArray.hpp"
 #include "../../content/Intent.hpp"
 #include "../../net/Uri.hpp"
 #include "./DownloadRequest.hpp"
@@ -30,13 +31,13 @@ namespace android::telephony::mbms
 			arg0.object()
 		);
 	}
-	android::telephony::mbms::DownloadRequest_Builder DownloadRequest_Builder::fromSerializedRequest(jbyteArray arg0)
+	android::telephony::mbms::DownloadRequest_Builder DownloadRequest_Builder::fromSerializedRequest(JByteArray arg0)
 	{
 		return callStaticObjectMethod(
 			"android.telephony.mbms.DownloadRequest$Builder",
 			"fromSerializedRequest",
 			"([B)Landroid/telephony/mbms/DownloadRequest$Builder;",
-			arg0
+			arg0.object<jbyteArray>()
 		);
 	}
 	android::telephony::mbms::DownloadRequest DownloadRequest_Builder::build()

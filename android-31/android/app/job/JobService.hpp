@@ -1,8 +1,5 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "../../content/Context.hpp"
-#include "../../content/ContextWrapper.hpp"
 #include "../Service.hpp"
 
 namespace android::app::job
@@ -13,6 +10,7 @@ namespace android::content
 {
 	class Intent;
 }
+class JString;
 
 namespace android::app::job
 {
@@ -20,7 +18,7 @@ namespace android::app::job
 	{
 	public:
 		// Fields
-		static jstring PERMISSION_BIND();
+		static JString PERMISSION_BIND();
 		
 		// QJniObject forward
 		template<typename ...Ts> explicit JobService(const char *className, const char *sig, Ts...agv) : android::app::Service(className, sig, std::forward<Ts>(agv)...) {}

@@ -1,17 +1,19 @@
 #include "../content/pm/ResolveInfo.hpp"
 #include "../graphics/drawable/Drawable.hpp"
 #include "../os/Bundle.hpp"
+#include "../../JString.hpp"
+#include "../../JString.hpp"
 #include "./LauncherActivity_ListItem.hpp"
 
 namespace android::app
 {
 	// Fields
-	jstring LauncherActivity_ListItem::className()
+	JString LauncherActivity_ListItem::className()
 	{
 		return getObjectField(
 			"className",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::os::Bundle LauncherActivity_ListItem::extras()
 	{
@@ -27,19 +29,19 @@ namespace android::app
 			"Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	jstring LauncherActivity_ListItem::label()
+	JString LauncherActivity_ListItem::label()
 	{
 		return getObjectField(
 			"label",
 			"Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
-	jstring LauncherActivity_ListItem::packageName()
+	JString LauncherActivity_ListItem::packageName()
 	{
 		return getObjectField(
 			"packageName",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::content::pm::ResolveInfo LauncherActivity_ListItem::resolveInfo()
 	{

@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./DrmUtils_ExtendedMetadataParser.hpp"
 
 namespace android::drm
@@ -10,13 +11,13 @@ namespace android::drm
 	// Constructors
 	
 	// Methods
-	jstring DrmUtils_ExtendedMetadataParser::get(jstring arg0)
+	JString DrmUtils_ExtendedMetadataParser::get(JString arg0)
 	{
 		return callObjectMethod(
 			"get",
 			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
+			arg0.object<jstring>()
+		);
 	}
 	JObject DrmUtils_ExtendedMetadataParser::iterator()
 	{

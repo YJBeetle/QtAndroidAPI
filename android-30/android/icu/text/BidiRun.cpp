@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./BidiRun.hpp"
 
 namespace android::icu::text
@@ -59,12 +60,12 @@ namespace android::icu::text
 			"()Z"
 		);
 	}
-	jstring BidiRun::toString()
+	JString BidiRun::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::icu::text
 

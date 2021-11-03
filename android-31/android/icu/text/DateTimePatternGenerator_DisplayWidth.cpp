@@ -1,3 +1,5 @@
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
 #include "./DateTimePatternGenerator_DisplayWidth.hpp"
 
 namespace android::icu::text
@@ -34,22 +36,22 @@ namespace android::icu::text
 	// Constructors
 	
 	// Methods
-	android::icu::text::DateTimePatternGenerator_DisplayWidth DateTimePatternGenerator_DisplayWidth::valueOf(jstring arg0)
+	android::icu::text::DateTimePatternGenerator_DisplayWidth DateTimePatternGenerator_DisplayWidth::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.icu.text.DateTimePatternGenerator$DisplayWidth",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/icu/text/DateTimePatternGenerator$DisplayWidth;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray DateTimePatternGenerator_DisplayWidth::values()
+	JArray DateTimePatternGenerator_DisplayWidth::values()
 	{
 		return callStaticObjectMethod(
 			"android.icu.text.DateTimePatternGenerator$DisplayWidth",
 			"values",
 			"()[Landroid/icu/text/DateTimePatternGenerator$DisplayWidth;"
-		).object<jarray>();
+		);
 	}
 } // namespace android::icu::text
 

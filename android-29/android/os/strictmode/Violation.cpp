@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./Violation.hpp"
 
 namespace android::os::strictmode
@@ -5,7 +6,7 @@ namespace android::os::strictmode
 	// Fields
 	
 	// QJniObject forward
-	Violation::Violation(QJniObject obj) : JObject(obj) {}
+	Violation::Violation(QJniObject obj) : JThrowable(obj) {}
 	
 	// Constructors
 	

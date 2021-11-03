@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JString;
 namespace java::nio::charset
 {
 	class Charset;
@@ -22,9 +23,9 @@ namespace java::net
 		URLDecoder();
 		
 		// Methods
-		static jstring decode(jstring arg0);
-		static jstring decode(jstring arg0, jstring arg1);
-		static jstring decode(jstring arg0, java::nio::charset::Charset arg1);
+		static JString decode(JString arg0);
+		static JString decode(JString arg0, JString arg1);
+		static JString decode(JString arg0, java::nio::charset::Charset arg1);
 	};
 } // namespace java::net
 

@@ -6,6 +6,7 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
 
 namespace android::location
 {
@@ -74,7 +75,7 @@ namespace android::location
 		jboolean hasCarrierPhase();
 		jboolean hasCarrierPhaseUncertainty();
 		jboolean hasSnrInDb();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::location

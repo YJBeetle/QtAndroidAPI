@@ -2,6 +2,10 @@
 
 #include "../../../JObject.hpp"
 
+class JObjectArray;
+class JClass;
+class JObject;
+class JString;
 namespace java::lang::invoke
 {
 	class MethodType;
@@ -25,21 +29,21 @@ namespace java::lang::invoke
 		// Constructors
 		
 		// Methods
-		java::lang::invoke::MethodHandle asCollector(jclass arg0, jint arg1);
-		java::lang::invoke::MethodHandle asCollector(jint arg0, jclass arg1, jint arg2);
+		java::lang::invoke::MethodHandle asCollector(JClass arg0, jint arg1);
+		java::lang::invoke::MethodHandle asCollector(jint arg0, JClass arg1, jint arg2);
 		java::lang::invoke::MethodHandle asFixedArity();
-		java::lang::invoke::MethodHandle asSpreader(jclass arg0, jint arg1);
-		java::lang::invoke::MethodHandle asSpreader(jint arg0, jclass arg1, jint arg2);
+		java::lang::invoke::MethodHandle asSpreader(JClass arg0, jint arg1);
+		java::lang::invoke::MethodHandle asSpreader(jint arg0, JClass arg1, jint arg2);
 		java::lang::invoke::MethodHandle asType(java::lang::invoke::MethodType arg0);
-		java::lang::invoke::MethodHandle asVarargsCollector(jclass arg0);
-		java::lang::invoke::MethodHandle bindTo(jobject arg0);
+		java::lang::invoke::MethodHandle asVarargsCollector(JClass arg0);
+		java::lang::invoke::MethodHandle bindTo(JObject arg0);
 		java::util::Optional describeConstable();
-		jobject invoke(jobjectArray arg0);
-		jobject invokeExact(jobjectArray arg0);
-		jobject invokeWithArguments(jobjectArray arg0);
-		jobject invokeWithArguments(JObject arg0);
+		JObject invoke(JObjectArray arg0);
+		JObject invokeExact(JObjectArray arg0);
+		JObject invokeWithArguments(JObjectArray arg0);
+		JObject invokeWithArguments(JObject arg0);
 		jboolean isVarargsCollector();
-		jstring toString();
+		JString toString();
 		java::lang::invoke::MethodType type();
 		java::lang::invoke::MethodHandle withVarargs(jboolean arg0);
 	};

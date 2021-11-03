@@ -1,4 +1,11 @@
+#include "../../JIntArray.hpp"
+#include "../../JObjectArray.hpp"
+#include "../../JArray.hpp"
+#include "../../JArray.hpp"
+#include "../../JArray.hpp"
 #include "../io/ObjectInputStream.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "../lang/StringBuffer.hpp"
 #include "../lang/StringBuilder.hpp"
 #include "./FieldPosition.hpp"
@@ -15,95 +22,95 @@ namespace java::text
 	MessageFormat::MessageFormat(QJniObject obj) : java::text::Format(obj) {}
 	
 	// Constructors
-	MessageFormat::MessageFormat(jstring arg0)
+	MessageFormat::MessageFormat(JString arg0)
 		: java::text::Format(
 			"java.text.MessageFormat",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	MessageFormat::MessageFormat(jstring arg0, java::util::Locale arg1)
+	MessageFormat::MessageFormat(JString arg0, java::util::Locale arg1)
 		: java::text::Format(
 			"java.text.MessageFormat",
 			"(Ljava/lang/String;Ljava/util/Locale;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		) {}
 	
 	// Methods
-	jstring MessageFormat::format(jstring arg0, jobjectArray arg1)
+	JString MessageFormat::format(JString arg0, JObjectArray arg1)
 	{
 		return callStaticObjectMethod(
 			"java.text.MessageFormat",
 			"format",
 			"(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;",
-			arg0,
-			arg1
-		).object<jstring>();
+			arg0.object<jstring>(),
+			arg1.object<jobjectArray>()
+		);
 	}
-	void MessageFormat::applyPattern(jstring arg0)
+	void MessageFormat::applyPattern(JString arg0)
 	{
 		callMethod<void>(
 			"applyPattern",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jobject MessageFormat::clone()
+	JObject MessageFormat::clone()
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
-	jboolean MessageFormat::equals(jobject arg0)
+	jboolean MessageFormat::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	java::lang::StringBuffer MessageFormat::format(jobjectArray arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
+	java::lang::StringBuffer MessageFormat::format(JObjectArray arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
 	{
 		return callObjectMethod(
 			"format",
 			"([Ljava/lang/Object;Ljava/lang/StringBuffer;Ljava/text/FieldPosition;)Ljava/lang/StringBuffer;",
-			arg0,
+			arg0.object<jobjectArray>(),
 			arg1.object(),
 			arg2.object()
 		);
 	}
-	java::lang::StringBuffer MessageFormat::format(jobject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
+	java::lang::StringBuffer MessageFormat::format(JObject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
 	{
 		return callObjectMethod(
 			"format",
 			"(Ljava/lang/Object;Ljava/lang/StringBuffer;Ljava/text/FieldPosition;)Ljava/lang/StringBuffer;",
-			arg0,
+			arg0.object<jobject>(),
 			arg1.object(),
 			arg2.object()
 		);
 	}
-	JObject MessageFormat::formatToCharacterIterator(jobject arg0)
+	JObject MessageFormat::formatToCharacterIterator(JObject arg0)
 	{
 		return callObjectMethod(
 			"formatToCharacterIterator",
 			"(Ljava/lang/Object;)Ljava/text/AttributedCharacterIterator;",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jarray MessageFormat::getFormats()
+	JArray MessageFormat::getFormats()
 	{
 		return callObjectMethod(
 			"getFormats",
 			"()[Ljava/text/Format;"
-		).object<jarray>();
+		);
 	}
-	jarray MessageFormat::getFormatsByArgumentIndex()
+	JArray MessageFormat::getFormatsByArgumentIndex()
 	{
 		return callObjectMethod(
 			"getFormatsByArgumentIndex",
 			"()[Ljava/text/Format;"
-		).object<jarray>();
+		);
 	}
 	java::util::Locale MessageFormat::getLocale()
 	{
@@ -119,31 +126,31 @@ namespace java::text
 			"()I"
 		);
 	}
-	jobjectArray MessageFormat::parse(jstring arg0)
+	JObjectArray MessageFormat::parse(JString arg0)
 	{
 		return callObjectMethod(
 			"parse",
 			"(Ljava/lang/String;)[Ljava/lang/Object;",
-			arg0
-		).object<jobjectArray>();
+			arg0.object<jstring>()
+		);
 	}
-	jobjectArray MessageFormat::parse(jstring arg0, java::text::ParsePosition arg1)
+	JObjectArray MessageFormat::parse(JString arg0, java::text::ParsePosition arg1)
 	{
 		return callObjectMethod(
 			"parse",
 			"(Ljava/lang/String;Ljava/text/ParsePosition;)[Ljava/lang/Object;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
-		).object<jobjectArray>();
+		);
 	}
-	jobject MessageFormat::parseObject(jstring arg0, java::text::ParsePosition arg1)
+	JObject MessageFormat::parseObject(JString arg0, java::text::ParsePosition arg1)
 	{
 		return callObjectMethod(
 			"parseObject",
 			"(Ljava/lang/String;Ljava/text/ParsePosition;)Ljava/lang/Object;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
-		).object<jobject>();
+		);
 	}
 	void MessageFormat::setFormat(jint arg0, java::text::Format arg1)
 	{
@@ -163,20 +170,20 @@ namespace java::text
 			arg1.object()
 		);
 	}
-	void MessageFormat::setFormats(jarray arg0)
+	void MessageFormat::setFormats(JArray arg0)
 	{
 		callMethod<void>(
 			"setFormats",
 			"([Ljava/text/Format;)V",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
-	void MessageFormat::setFormatsByArgumentIndex(jarray arg0)
+	void MessageFormat::setFormatsByArgumentIndex(JArray arg0)
 	{
 		callMethod<void>(
 			"setFormatsByArgumentIndex",
 			"([Ljava/text/Format;)V",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
 	void MessageFormat::setLocale(java::util::Locale arg0)
@@ -187,12 +194,12 @@ namespace java::text
 			arg0.object()
 		);
 	}
-	jstring MessageFormat::toPattern()
+	JString MessageFormat::toPattern()
 	{
 		return callObjectMethod(
 			"toPattern",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::text
 

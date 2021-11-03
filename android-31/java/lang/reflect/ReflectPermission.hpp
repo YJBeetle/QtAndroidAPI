@@ -1,9 +1,8 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "../../security/Permission.hpp"
 #include "../../security/BasicPermission.hpp"
 
+class JString;
 
 namespace java::lang::reflect
 {
@@ -17,8 +16,8 @@ namespace java::lang::reflect
 		ReflectPermission(QJniObject obj);
 		
 		// Constructors
-		ReflectPermission(jstring arg0);
-		ReflectPermission(jstring arg0, jstring arg1);
+		ReflectPermission(JString arg0);
+		ReflectPermission(JString arg0, JString arg1);
 		
 		// Methods
 	};

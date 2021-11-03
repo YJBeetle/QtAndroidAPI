@@ -3,6 +3,7 @@
 #include "../../view/autofill/AutofillId.hpp"
 #include "../../view/autofill/AutofillValue.hpp"
 #include "../../widget/RemoteViews.hpp"
+#include "../../../JString.hpp"
 #include "../../../java/util/regex/Pattern.hpp"
 #include "./Dataset_Builder.hpp"
 
@@ -42,12 +43,12 @@ namespace android::service::autofill
 			arg0.object()
 		);
 	}
-	android::service::autofill::Dataset_Builder Dataset_Builder::setId(jstring arg0)
+	android::service::autofill::Dataset_Builder Dataset_Builder::setId(JString arg0)
 	{
 		return callObjectMethod(
 			"setId",
 			"(Ljava/lang/String;)Landroid/service/autofill/Dataset$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::service::autofill::Dataset_Builder Dataset_Builder::setValue(android::view::autofill::AutofillId arg0, android::view::autofill::AutofillValue arg1)

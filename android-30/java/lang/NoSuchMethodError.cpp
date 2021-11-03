@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./NoSuchMethodError.hpp"
 
 namespace java::lang
@@ -13,11 +14,11 @@ namespace java::lang
 			"java.lang.NoSuchMethodError",
 			"()V"
 		) {}
-	NoSuchMethodError::NoSuchMethodError(jstring arg0)
+	NoSuchMethodError::NoSuchMethodError(JString arg0)
 		: java::lang::IncompatibleClassChangeError(
 			"java.lang.NoSuchMethodError",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

@@ -2,7 +2,6 @@
 
 #include "../../JObject.hpp"
 
-
 namespace android::widget
 {
 	class Toast_Callback : public JObject

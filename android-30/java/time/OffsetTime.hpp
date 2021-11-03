@@ -6,6 +6,9 @@ namespace java::io
 {
 	class ObjectInputStream;
 }
+class JString;
+class JObject;
+class JString;
 namespace java::time
 {
 	class Clock;
@@ -66,14 +69,14 @@ namespace java::time
 		static java::time::OffsetTime of(java::time::LocalTime arg0, java::time::ZoneOffset arg1);
 		static java::time::OffsetTime of(jint arg0, jint arg1, jint arg2, jint arg3, java::time::ZoneOffset arg4);
 		static java::time::OffsetTime ofInstant(java::time::Instant arg0, java::time::ZoneId arg1);
-		static java::time::OffsetTime parse(jstring arg0);
-		static java::time::OffsetTime parse(jstring arg0, java::time::format::DateTimeFormatter arg1);
+		static java::time::OffsetTime parse(JString arg0);
+		static java::time::OffsetTime parse(JString arg0, java::time::format::DateTimeFormatter arg1);
 		JObject adjustInto(JObject arg0);
 		java::time::OffsetDateTime atDate(java::time::LocalDate arg0);
-		jint compareTo(jobject arg0);
+		jint compareTo(JObject arg0);
 		jint compareTo(java::time::OffsetTime arg0);
-		jboolean equals(jobject arg0);
-		jstring format(java::time::format::DateTimeFormatter arg0);
+		jboolean equals(JObject arg0);
+		JString format(java::time::format::DateTimeFormatter arg0);
 		jint get(JObject arg0);
 		jint getHour();
 		jlong getLong(JObject arg0);
@@ -98,11 +101,11 @@ namespace java::time
 		java::time::OffsetTime plusMinutes(jlong arg0);
 		java::time::OffsetTime plusNanos(jlong arg0);
 		java::time::OffsetTime plusSeconds(jlong arg0);
-		jobject query(JObject arg0);
+		JObject query(JObject arg0);
 		java::time::temporal::ValueRange range(JObject arg0);
 		jlong toEpochSecond(java::time::LocalDate arg0);
 		java::time::LocalTime toLocalTime();
-		jstring toString();
+		JString toString();
 		java::time::OffsetTime truncatedTo(JObject arg0);
 		jlong until(JObject arg0, JObject arg1);
 		java::time::OffsetTime with(JObject arg0);

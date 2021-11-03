@@ -1,3 +1,4 @@
+#include "../../../JByteArray.hpp"
 #include "./Channel.hpp"
 #include "./Reader.hpp"
 #include "./Session.hpp"
@@ -26,12 +27,12 @@ namespace android::se::omapi
 			"()V"
 		);
 	}
-	jbyteArray Session::getATR()
+	JByteArray Session::getATR()
 	{
 		return callObjectMethod(
 			"getATR",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
 	android::se::omapi::Reader Session::getReader()
 	{
@@ -47,37 +48,37 @@ namespace android::se::omapi
 			"()Z"
 		);
 	}
-	android::se::omapi::Channel Session::openBasicChannel(jbyteArray arg0)
+	android::se::omapi::Channel Session::openBasicChannel(JByteArray arg0)
 	{
 		return callObjectMethod(
 			"openBasicChannel",
 			"([B)Landroid/se/omapi/Channel;",
-			arg0
+			arg0.object<jbyteArray>()
 		);
 	}
-	android::se::omapi::Channel Session::openBasicChannel(jbyteArray arg0, jbyte arg1)
+	android::se::omapi::Channel Session::openBasicChannel(JByteArray arg0, jbyte arg1)
 	{
 		return callObjectMethod(
 			"openBasicChannel",
 			"([BB)Landroid/se/omapi/Channel;",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1
 		);
 	}
-	android::se::omapi::Channel Session::openLogicalChannel(jbyteArray arg0)
+	android::se::omapi::Channel Session::openLogicalChannel(JByteArray arg0)
 	{
 		return callObjectMethod(
 			"openLogicalChannel",
 			"([B)Landroid/se/omapi/Channel;",
-			arg0
+			arg0.object<jbyteArray>()
 		);
 	}
-	android::se::omapi::Channel Session::openLogicalChannel(jbyteArray arg0, jbyte arg1)
+	android::se::omapi::Channel Session::openLogicalChannel(JByteArray arg0, jbyte arg1)
 	{
 		return callObjectMethod(
 			"openLogicalChannel",
 			"([BB)Landroid/se/omapi/Channel;",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1
 		);
 	}

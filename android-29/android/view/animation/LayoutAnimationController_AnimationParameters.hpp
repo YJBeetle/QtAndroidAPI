@@ -2,7 +2,6 @@
 
 #include "../../../JObject.hpp"
 
-
 namespace android::view::animation
 {
 	class LayoutAnimationController_AnimationParameters : public JObject

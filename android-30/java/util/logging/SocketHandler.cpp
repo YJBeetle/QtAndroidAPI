@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "../../net/Socket.hpp"
 #include "./LogRecord.hpp"
 #include "./SocketHandler.hpp"
@@ -15,11 +16,11 @@ namespace java::util::logging
 			"java.util.logging.SocketHandler",
 			"()V"
 		) {}
-	SocketHandler::SocketHandler(jstring arg0, jint arg1)
+	SocketHandler::SocketHandler(JString arg0, jint arg1)
 		: java::util::logging::StreamHandler(
 			"java.util.logging.SocketHandler",
 			"(Ljava/lang/String;I)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		) {}
 	

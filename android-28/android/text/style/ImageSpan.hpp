@@ -1,9 +1,5 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "./CharacterStyle.hpp"
-#include "./MetricAffectingSpan.hpp"
-#include "./ReplacementSpan.hpp"
 #include "./DynamicDrawableSpan.hpp"
 
 namespace android::content
@@ -22,6 +18,7 @@ namespace android::net
 {
 	class Uri;
 }
+class JString;
 
 namespace android::text::style
 {
@@ -42,15 +39,15 @@ namespace android::text::style
 		ImageSpan(android::content::Context arg0, jint arg1);
 		ImageSpan(android::graphics::Bitmap arg0, jint arg1);
 		ImageSpan(android::graphics::drawable::Drawable arg0, jint arg1);
-		ImageSpan(android::graphics::drawable::Drawable arg0, jstring arg1);
+		ImageSpan(android::graphics::drawable::Drawable arg0, JString arg1);
 		ImageSpan(android::content::Context arg0, android::graphics::Bitmap arg1, jint arg2);
 		ImageSpan(android::content::Context arg0, android::net::Uri arg1, jint arg2);
 		ImageSpan(android::content::Context arg0, jint arg1, jint arg2);
-		ImageSpan(android::graphics::drawable::Drawable arg0, jstring arg1, jint arg2);
+		ImageSpan(android::graphics::drawable::Drawable arg0, JString arg1, jint arg2);
 		
 		// Methods
 		android::graphics::drawable::Drawable getDrawable();
-		jstring getSource();
+		JString getSource();
 	};
 } // namespace android::text::style
 

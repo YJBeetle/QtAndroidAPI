@@ -14,6 +14,7 @@ namespace android::os
 {
 	class CancellationSignal;
 }
+class JString;
 
 namespace android::hardware::biometrics
 {
@@ -53,10 +54,10 @@ namespace android::hardware::biometrics
 		void authenticate(android::os::CancellationSignal arg0, JObject arg1, android::hardware::biometrics::BiometricPrompt_AuthenticationCallback arg2);
 		void authenticate(android::hardware::biometrics::BiometricPrompt_CryptoObject arg0, android::os::CancellationSignal arg1, JObject arg2, android::hardware::biometrics::BiometricPrompt_AuthenticationCallback arg3);
 		jint getAllowedAuthenticators();
-		jstring getDescription();
-		jstring getNegativeButtonText();
-		jstring getSubtitle();
-		jstring getTitle();
+		JString getDescription();
+		JString getNegativeButtonText();
+		JString getSubtitle();
+		JString getTitle();
 		jboolean isConfirmationRequired();
 	};
 } // namespace android::hardware::biometrics

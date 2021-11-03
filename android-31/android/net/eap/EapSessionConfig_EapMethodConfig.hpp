@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JObject;
 
 namespace android::net::eap
 {
@@ -22,7 +23,7 @@ namespace android::net::eap
 		// Constructors
 		
 		// Methods
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint getMethodType();
 		jint hashCode();
 	};

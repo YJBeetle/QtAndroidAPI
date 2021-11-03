@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JString;
 namespace java::util::concurrent
 {
 	class TimeUnit;
@@ -45,7 +46,7 @@ namespace java::util::concurrent
 		jint getUnarrivedParties();
 		jboolean isTerminated();
 		jint _register();
-		jstring toString();
+		JString toString();
 	};
 } // namespace java::util::concurrent
 

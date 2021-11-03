@@ -1,10 +1,8 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "./MetaKeyKeyListener.hpp"
-#include "./BaseKeyListener.hpp"
 #include "./NumberKeyListener.hpp"
 
+class JCharArray;
 namespace java::util
 {
 	class Locale;
@@ -16,7 +14,7 @@ namespace android::text::method
 	{
 	public:
 		// Fields
-		static jcharArray CHARACTERS();
+		static JCharArray CHARACTERS();
 		
 		// QJniObject forward
 		template<typename ...Ts> explicit DateTimeKeyListener(const char *className, const char *sig, Ts...agv) : android::text::method::NumberKeyListener(className, sig, std::forward<Ts>(agv)...) {}

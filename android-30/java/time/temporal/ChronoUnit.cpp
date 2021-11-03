@@ -1,3 +1,5 @@
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
 #include "../Duration.hpp"
 #include "./ChronoUnit.hpp"
 
@@ -139,22 +141,22 @@ namespace java::time::temporal
 	// Constructors
 	
 	// Methods
-	java::time::temporal::ChronoUnit ChronoUnit::valueOf(jstring arg0)
+	java::time::temporal::ChronoUnit ChronoUnit::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"java.time.temporal.ChronoUnit",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/time/temporal/ChronoUnit;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray ChronoUnit::values()
+	JArray ChronoUnit::values()
 	{
 		return callStaticObjectMethod(
 			"java.time.temporal.ChronoUnit",
 			"values",
 			"()[Ljava/time/temporal/ChronoUnit;"
-		).object<jarray>();
+		);
 	}
 	JObject ChronoUnit::addTo(JObject arg0, jlong arg1)
 	{
@@ -210,12 +212,12 @@ namespace java::time::temporal
 			"()Z"
 		);
 	}
-	jstring ChronoUnit::toString()
+	JString ChronoUnit::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::time::temporal
 

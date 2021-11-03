@@ -1,3 +1,5 @@
+#include "../../../JByteArray.hpp"
+#include "../../../JString.hpp"
 #include "./PolicyQualifierInfo.hpp"
 
 namespace java::security::cert
@@ -8,41 +10,41 @@ namespace java::security::cert
 	PolicyQualifierInfo::PolicyQualifierInfo(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	PolicyQualifierInfo::PolicyQualifierInfo(jbyteArray arg0)
+	PolicyQualifierInfo::PolicyQualifierInfo(JByteArray arg0)
 		: JObject(
 			"java.security.cert.PolicyQualifierInfo",
 			"([B)V",
-			arg0
+			arg0.object<jbyteArray>()
 		) {}
 	
 	// Methods
-	jbyteArray PolicyQualifierInfo::getEncoded()
+	JByteArray PolicyQualifierInfo::getEncoded()
 	{
 		return callObjectMethod(
 			"getEncoded",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
-	jbyteArray PolicyQualifierInfo::getPolicyQualifier()
+	JByteArray PolicyQualifierInfo::getPolicyQualifier()
 	{
 		return callObjectMethod(
 			"getPolicyQualifier",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
-	jstring PolicyQualifierInfo::getPolicyQualifierId()
+	JString PolicyQualifierInfo::getPolicyQualifierId()
 	{
 		return callObjectMethod(
 			"getPolicyQualifierId",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PolicyQualifierInfo::toString()
+	JString PolicyQualifierInfo::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::security::cert
 

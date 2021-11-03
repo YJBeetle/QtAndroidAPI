@@ -1,3 +1,5 @@
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
 #include "./Path_Op.hpp"
 
 namespace android::graphics
@@ -50,22 +52,22 @@ namespace android::graphics
 	// Constructors
 	
 	// Methods
-	android::graphics::Path_Op Path_Op::valueOf(jstring arg0)
+	android::graphics::Path_Op Path_Op::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.graphics.Path$Op",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/graphics/Path$Op;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray Path_Op::values()
+	JArray Path_Op::values()
 	{
 		return callStaticObjectMethod(
 			"android.graphics.Path$Op",
 			"values",
 			"()[Landroid/graphics/Path$Op;"
-		).object<jarray>();
+		);
 	}
 } // namespace android::graphics
 

@@ -1,6 +1,7 @@
 #include "../content/ContentResolver.hpp"
 #include "../net/Uri.hpp"
 #include "../../java/io/InputStream.hpp"
+#include "../../JString.hpp"
 #include "./ContactsContract_Contacts.hpp"
 
 namespace android::provider
@@ -30,13 +31,13 @@ namespace android::provider
 			"Landroid/net/Uri;"
 		);
 	}
-	jstring ContactsContract_Contacts::CONTENT_ITEM_TYPE()
+	JString ContactsContract_Contacts::CONTENT_ITEM_TYPE()
 	{
 		return getStaticObjectField(
 			"android.provider.ContactsContract$Contacts",
 			"CONTENT_ITEM_TYPE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::net::Uri ContactsContract_Contacts::CONTENT_LOOKUP_URI()
 	{
@@ -70,13 +71,13 @@ namespace android::provider
 			"Landroid/net/Uri;"
 		);
 	}
-	jstring ContactsContract_Contacts::CONTENT_TYPE()
+	JString ContactsContract_Contacts::CONTENT_TYPE()
 	{
 		return getStaticObjectField(
 			"android.provider.ContactsContract$Contacts",
 			"CONTENT_TYPE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::net::Uri ContactsContract_Contacts::CONTENT_URI()
 	{
@@ -86,13 +87,13 @@ namespace android::provider
 			"Landroid/net/Uri;"
 		);
 	}
-	jstring ContactsContract_Contacts::CONTENT_VCARD_TYPE()
+	JString ContactsContract_Contacts::CONTENT_VCARD_TYPE()
 	{
 		return getStaticObjectField(
 			"android.provider.ContactsContract$Contacts",
 			"CONTENT_VCARD_TYPE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::net::Uri ContactsContract_Contacts::CONTENT_VCARD_URI()
 	{
@@ -110,37 +111,37 @@ namespace android::provider
 			"Landroid/net/Uri;"
 		);
 	}
-	jstring ContactsContract_Contacts::EXTRA_ADDRESS_BOOK_INDEX()
+	JString ContactsContract_Contacts::EXTRA_ADDRESS_BOOK_INDEX()
 	{
 		return getStaticObjectField(
 			"android.provider.ContactsContract$Contacts",
 			"EXTRA_ADDRESS_BOOK_INDEX",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ContactsContract_Contacts::EXTRA_ADDRESS_BOOK_INDEX_COUNTS()
+	JString ContactsContract_Contacts::EXTRA_ADDRESS_BOOK_INDEX_COUNTS()
 	{
 		return getStaticObjectField(
 			"android.provider.ContactsContract$Contacts",
 			"EXTRA_ADDRESS_BOOK_INDEX_COUNTS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ContactsContract_Contacts::EXTRA_ADDRESS_BOOK_INDEX_TITLES()
+	JString ContactsContract_Contacts::EXTRA_ADDRESS_BOOK_INDEX_TITLES()
 	{
 		return getStaticObjectField(
 			"android.provider.ContactsContract$Contacts",
 			"EXTRA_ADDRESS_BOOK_INDEX_TITLES",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ContactsContract_Contacts::QUERY_PARAMETER_VCARD_NO_PHOTO()
+	JString ContactsContract_Contacts::QUERY_PARAMETER_VCARD_NO_PHOTO()
 	{
 		return getStaticObjectField(
 			"android.provider.ContactsContract$Contacts",
 			"QUERY_PARAMETER_VCARD_NO_PHOTO",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QJniObject forward
@@ -159,14 +160,14 @@ namespace android::provider
 			arg1.object()
 		);
 	}
-	android::net::Uri ContactsContract_Contacts::getLookupUri(jlong arg0, jstring arg1)
+	android::net::Uri ContactsContract_Contacts::getLookupUri(jlong arg0, JString arg1)
 	{
 		return callStaticObjectMethod(
 			"android.provider.ContactsContract$Contacts",
 			"getLookupUri",
 			"(JLjava/lang/String;)Landroid/net/Uri;",
 			arg0,
-			arg1
+			arg1.object<jstring>()
 		);
 	}
 	jboolean ContactsContract_Contacts::isEnterpriseContactId(jlong arg0)

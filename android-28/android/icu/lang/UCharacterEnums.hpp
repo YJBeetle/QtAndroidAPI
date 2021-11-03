@@ -2,7 +2,6 @@
 
 #include "../../../JObject.hpp"
 
-
 namespace android::icu::lang
 {
 	class UCharacterEnums : public JObject

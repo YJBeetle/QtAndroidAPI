@@ -1,12 +1,13 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "../CellLocation.hpp"
 
 namespace android::os
 {
 	class Bundle;
 }
+class JObject;
+class JString;
 
 namespace android::telephony::gsm
 {
@@ -24,7 +25,7 @@ namespace android::telephony::gsm
 		GsmCellLocation(android::os::Bundle arg0);
 		
 		// Methods
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		void fillInNotifierBundle(android::os::Bundle arg0);
 		jint getCid();
 		jint getLac();
@@ -32,7 +33,7 @@ namespace android::telephony::gsm
 		jint hashCode();
 		void setLacAndCid(jint arg0, jint arg1);
 		void setStateInvalid();
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::telephony::gsm
 

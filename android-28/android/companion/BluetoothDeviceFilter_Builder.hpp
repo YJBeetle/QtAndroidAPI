@@ -10,6 +10,7 @@ namespace android::os
 {
 	class ParcelUuid;
 }
+class JString;
 namespace java::util::regex
 {
 	class Pattern;
@@ -32,7 +33,7 @@ namespace android::companion
 		// Methods
 		android::companion::BluetoothDeviceFilter_Builder addServiceUuid(android::os::ParcelUuid arg0, android::os::ParcelUuid arg1);
 		android::companion::BluetoothDeviceFilter build();
-		android::companion::BluetoothDeviceFilter_Builder setAddress(jstring arg0);
+		android::companion::BluetoothDeviceFilter_Builder setAddress(JString arg0);
 		android::companion::BluetoothDeviceFilter_Builder setNamePattern(java::util::regex::Pattern arg0);
 	};
 } // namespace android::companion

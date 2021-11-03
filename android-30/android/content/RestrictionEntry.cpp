@@ -1,5 +1,9 @@
+#include "../../JArray.hpp"
+#include "../../JArray.hpp"
 #include "./Context.hpp"
 #include "../os/Parcel.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./RestrictionEntry.hpp"
 
 namespace android::content
@@ -80,61 +84,61 @@ namespace android::content
 			"(Landroid/os/Parcel;)V",
 			arg0.object()
 		) {}
-	RestrictionEntry::RestrictionEntry(jint arg0, jstring arg1)
+	RestrictionEntry::RestrictionEntry(jint arg0, JString arg1)
 		: JObject(
 			"android.content.RestrictionEntry",
 			"(ILjava/lang/String;)V",
 			arg0,
-			arg1
+			arg1.object<jstring>()
 		) {}
-	RestrictionEntry::RestrictionEntry(jstring arg0, jarray arg1)
+	RestrictionEntry::RestrictionEntry(JString arg0, JArray arg1)
 		: JObject(
 			"android.content.RestrictionEntry",
 			"(Ljava/lang/String;[Ljava/lang/String;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jarray>()
 		) {}
-	RestrictionEntry::RestrictionEntry(jstring arg0, jboolean arg1)
+	RestrictionEntry::RestrictionEntry(JString arg0, jboolean arg1)
 		: JObject(
 			"android.content.RestrictionEntry",
 			"(Ljava/lang/String;Z)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		) {}
-	RestrictionEntry::RestrictionEntry(jstring arg0, jint arg1)
+	RestrictionEntry::RestrictionEntry(JString arg0, jint arg1)
 		: JObject(
 			"android.content.RestrictionEntry",
 			"(Ljava/lang/String;I)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		) {}
-	RestrictionEntry::RestrictionEntry(jstring arg0, jstring arg1)
+	RestrictionEntry::RestrictionEntry(JString arg0, JString arg1)
 		: JObject(
 			"android.content.RestrictionEntry",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		) {}
 	
 	// Methods
-	android::content::RestrictionEntry RestrictionEntry::createBundleArrayEntry(jstring arg0, jarray arg1)
+	android::content::RestrictionEntry RestrictionEntry::createBundleArrayEntry(JString arg0, JArray arg1)
 	{
 		return callStaticObjectMethod(
 			"android.content.RestrictionEntry",
 			"createBundleArrayEntry",
 			"(Ljava/lang/String;[Landroid/content/RestrictionEntry;)Landroid/content/RestrictionEntry;",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jarray>()
 		);
 	}
-	android::content::RestrictionEntry RestrictionEntry::createBundleEntry(jstring arg0, jarray arg1)
+	android::content::RestrictionEntry RestrictionEntry::createBundleEntry(JString arg0, JArray arg1)
 	{
 		return callStaticObjectMethod(
 			"android.content.RestrictionEntry",
 			"createBundleEntry",
 			"(Ljava/lang/String;[Landroid/content/RestrictionEntry;)Landroid/content/RestrictionEntry;",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jarray>()
 		);
 	}
 	jint RestrictionEntry::describeContents()
@@ -144,41 +148,41 @@ namespace android::content
 			"()I"
 		);
 	}
-	jboolean RestrictionEntry::equals(jobject arg0)
+	jboolean RestrictionEntry::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jarray RestrictionEntry::getAllSelectedStrings()
+	JArray RestrictionEntry::getAllSelectedStrings()
 	{
 		return callObjectMethod(
 			"getAllSelectedStrings",
 			"()[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
-	jarray RestrictionEntry::getChoiceEntries()
+	JArray RestrictionEntry::getChoiceEntries()
 	{
 		return callObjectMethod(
 			"getChoiceEntries",
 			"()[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
-	jarray RestrictionEntry::getChoiceValues()
+	JArray RestrictionEntry::getChoiceValues()
 	{
 		return callObjectMethod(
 			"getChoiceValues",
 			"()[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
-	jstring RestrictionEntry::getDescription()
+	JString RestrictionEntry::getDescription()
 	{
 		return callObjectMethod(
 			"getDescription",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint RestrictionEntry::getIntValue()
 	{
@@ -187,19 +191,19 @@ namespace android::content
 			"()I"
 		);
 	}
-	jstring RestrictionEntry::getKey()
+	JString RestrictionEntry::getKey()
 	{
 		return callObjectMethod(
 			"getKey",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jarray RestrictionEntry::getRestrictions()
+	JArray RestrictionEntry::getRestrictions()
 	{
 		return callObjectMethod(
 			"getRestrictions",
 			"()[Landroid/content/RestrictionEntry;"
-		).object<jarray>();
+		);
 	}
 	jboolean RestrictionEntry::getSelectedState()
 	{
@@ -208,19 +212,19 @@ namespace android::content
 			"()Z"
 		);
 	}
-	jstring RestrictionEntry::getSelectedString()
+	JString RestrictionEntry::getSelectedString()
 	{
 		return callObjectMethod(
 			"getSelectedString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring RestrictionEntry::getTitle()
+	JString RestrictionEntry::getTitle()
 	{
 		return callObjectMethod(
 			"getTitle",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint RestrictionEntry::getType()
 	{
@@ -236,20 +240,20 @@ namespace android::content
 			"()I"
 		);
 	}
-	void RestrictionEntry::setAllSelectedStrings(jarray arg0)
+	void RestrictionEntry::setAllSelectedStrings(JArray arg0)
 	{
 		callMethod<void>(
 			"setAllSelectedStrings",
 			"([Ljava/lang/String;)V",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
-	void RestrictionEntry::setChoiceEntries(jarray arg0)
+	void RestrictionEntry::setChoiceEntries(JArray arg0)
 	{
 		callMethod<void>(
 			"setChoiceEntries",
 			"([Ljava/lang/String;)V",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
 	void RestrictionEntry::setChoiceEntries(android::content::Context arg0, jint arg1)
@@ -261,12 +265,12 @@ namespace android::content
 			arg1
 		);
 	}
-	void RestrictionEntry::setChoiceValues(jarray arg0)
+	void RestrictionEntry::setChoiceValues(JArray arg0)
 	{
 		callMethod<void>(
 			"setChoiceValues",
 			"([Ljava/lang/String;)V",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
 	void RestrictionEntry::setChoiceValues(android::content::Context arg0, jint arg1)
@@ -278,12 +282,12 @@ namespace android::content
 			arg1
 		);
 	}
-	void RestrictionEntry::setDescription(jstring arg0)
+	void RestrictionEntry::setDescription(JString arg0)
 	{
 		callMethod<void>(
 			"setDescription",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void RestrictionEntry::setIntValue(jint arg0)
@@ -294,12 +298,12 @@ namespace android::content
 			arg0
 		);
 	}
-	void RestrictionEntry::setRestrictions(jarray arg0)
+	void RestrictionEntry::setRestrictions(JArray arg0)
 	{
 		callMethod<void>(
 			"setRestrictions",
 			"([Landroid/content/RestrictionEntry;)V",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
 	void RestrictionEntry::setSelectedState(jboolean arg0)
@@ -310,20 +314,20 @@ namespace android::content
 			arg0
 		);
 	}
-	void RestrictionEntry::setSelectedString(jstring arg0)
+	void RestrictionEntry::setSelectedString(JString arg0)
 	{
 		callMethod<void>(
 			"setSelectedString",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	void RestrictionEntry::setTitle(jstring arg0)
+	void RestrictionEntry::setTitle(JString arg0)
 	{
 		callMethod<void>(
 			"setTitle",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void RestrictionEntry::setType(jint arg0)
@@ -334,12 +338,12 @@ namespace android::content
 			arg0
 		);
 	}
-	jstring RestrictionEntry::toString()
+	JString RestrictionEntry::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void RestrictionEntry::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

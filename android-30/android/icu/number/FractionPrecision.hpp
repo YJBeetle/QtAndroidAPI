@@ -1,6 +1,5 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "./Precision.hpp"
 
 namespace android::icu::number

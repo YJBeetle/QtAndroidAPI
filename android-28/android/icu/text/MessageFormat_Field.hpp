@@ -1,9 +1,9 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "../../../java/text/AttributedCharacterIterator_Attribute.hpp"
 #include "../../../java/text/Format_Field.hpp"
 
+class JObject;
+class JString;
 
 namespace android::icu::text
 {

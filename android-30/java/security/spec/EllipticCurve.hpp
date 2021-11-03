@@ -2,6 +2,9 @@
 
 #include "../../../JObject.hpp"
 
+class JByteArray;
+class JObject;
+class JString;
 namespace java::math
 {
 	class BigInteger;
@@ -20,14 +23,14 @@ namespace java::security::spec
 		
 		// Constructors
 		EllipticCurve(JObject arg0, java::math::BigInteger arg1, java::math::BigInteger arg2);
-		EllipticCurve(JObject arg0, java::math::BigInteger arg1, java::math::BigInteger arg2, jbyteArray arg3);
+		EllipticCurve(JObject arg0, java::math::BigInteger arg1, java::math::BigInteger arg2, JByteArray arg3);
 		
 		// Methods
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		java::math::BigInteger getA();
 		java::math::BigInteger getB();
 		JObject getField();
-		jbyteArray getSeed();
+		JByteArray getSeed();
 		jint hashCode();
 	};
 } // namespace java::security::spec

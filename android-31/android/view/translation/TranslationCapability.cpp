@@ -1,5 +1,6 @@
 #include "../../os/Parcel.hpp"
 #include "./TranslationSpec.hpp"
+#include "../../../JString.hpp"
 #include "./TranslationCapability.hpp"
 
 namespace android::view::translation
@@ -90,12 +91,12 @@ namespace android::view::translation
 			"()Z"
 		);
 	}
-	jstring TranslationCapability::toString()
+	JString TranslationCapability::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void TranslationCapability::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

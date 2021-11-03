@@ -1,3 +1,5 @@
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
 #include "./MessagePattern_Part_Type.hpp"
 
 namespace android::icu::text
@@ -122,22 +124,22 @@ namespace android::icu::text
 	// Constructors
 	
 	// Methods
-	android::icu::text::MessagePattern_Part_Type MessagePattern_Part_Type::valueOf(jstring arg0)
+	android::icu::text::MessagePattern_Part_Type MessagePattern_Part_Type::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.icu.text.MessagePattern$Part$Type",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/icu/text/MessagePattern$Part$Type;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray MessagePattern_Part_Type::values()
+	JArray MessagePattern_Part_Type::values()
 	{
 		return callStaticObjectMethod(
 			"android.icu.text.MessagePattern$Part$Type",
 			"values",
 			"()[Landroid/icu/text/MessagePattern$Part$Type;"
-		).object<jarray>();
+		);
 	}
 	jboolean MessagePattern_Part_Type::hasNumericValue()
 	{

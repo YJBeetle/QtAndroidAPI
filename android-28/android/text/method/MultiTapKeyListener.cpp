@@ -1,6 +1,7 @@
 #include "./TextKeyListener_Capitalize.hpp"
 #include "../../view/KeyEvent.hpp"
 #include "../../view/View.hpp"
+#include "../../../JObject.hpp"
 #include "./MultiTapKeyListener.hpp"
 
 namespace android::text::method
@@ -48,37 +49,37 @@ namespace android::text::method
 			arg3.object()
 		);
 	}
-	void MultiTapKeyListener::onSpanAdded(JObject arg0, jobject arg1, jint arg2, jint arg3)
+	void MultiTapKeyListener::onSpanAdded(JObject arg0, JObject arg1, jint arg2, jint arg3)
 	{
 		callMethod<void>(
 			"onSpanAdded",
 			"(Landroid/text/Spannable;Ljava/lang/Object;II)V",
 			arg0.object(),
-			arg1,
+			arg1.object<jobject>(),
 			arg2,
 			arg3
 		);
 	}
-	void MultiTapKeyListener::onSpanChanged(JObject arg0, jobject arg1, jint arg2, jint arg3, jint arg4, jint arg5)
+	void MultiTapKeyListener::onSpanChanged(JObject arg0, JObject arg1, jint arg2, jint arg3, jint arg4, jint arg5)
 	{
 		callMethod<void>(
 			"onSpanChanged",
 			"(Landroid/text/Spannable;Ljava/lang/Object;IIII)V",
 			arg0.object(),
-			arg1,
+			arg1.object<jobject>(),
 			arg2,
 			arg3,
 			arg4,
 			arg5
 		);
 	}
-	void MultiTapKeyListener::onSpanRemoved(JObject arg0, jobject arg1, jint arg2, jint arg3)
+	void MultiTapKeyListener::onSpanRemoved(JObject arg0, JObject arg1, jint arg2, jint arg3)
 	{
 		callMethod<void>(
 			"onSpanRemoved",
 			"(Landroid/text/Spannable;Ljava/lang/Object;II)V",
 			arg0.object(),
-			arg1,
+			arg1.object<jobject>(),
 			arg2,
 			arg3
 		);

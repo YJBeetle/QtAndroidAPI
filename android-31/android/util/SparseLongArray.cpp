@@ -1,3 +1,5 @@
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./SparseLongArray.hpp"
 
 namespace android::util
@@ -117,12 +119,12 @@ namespace android::util
 			"()I"
 		);
 	}
-	jstring SparseLongArray::toString()
+	JString SparseLongArray::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jlong SparseLongArray::valueAt(jint arg0)
 	{

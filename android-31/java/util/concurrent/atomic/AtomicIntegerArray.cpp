@@ -1,3 +1,5 @@
+#include "../../../../JIntArray.hpp"
+#include "../../../../JString.hpp"
 #include "./AtomicIntegerArray.hpp"
 
 namespace java::util::concurrent::atomic
@@ -8,11 +10,11 @@ namespace java::util::concurrent::atomic
 	AtomicIntegerArray::AtomicIntegerArray(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	AtomicIntegerArray::AtomicIntegerArray(jintArray arg0)
+	AtomicIntegerArray::AtomicIntegerArray(JIntArray arg0)
 		: JObject(
 			"java.util.concurrent.atomic.AtomicIntegerArray",
 			"([I)V",
-			arg0
+			arg0.object<jintArray>()
 		) {}
 	AtomicIntegerArray::AtomicIntegerArray(jint arg0)
 		: JObject(
@@ -234,12 +236,12 @@ namespace java::util::concurrent::atomic
 			arg1
 		);
 	}
-	jstring AtomicIntegerArray::toString()
+	JString AtomicIntegerArray::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint AtomicIntegerArray::updateAndGet(jint arg0, JObject arg1)
 	{

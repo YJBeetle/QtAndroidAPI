@@ -1,3 +1,4 @@
+#include "../../../JArray.hpp"
 #include "./AudioGroup.hpp"
 
 namespace android::net::rtp
@@ -57,12 +58,12 @@ namespace android::net::rtp
 			"()I"
 		);
 	}
-	jarray AudioGroup::getStreams()
+	JArray AudioGroup::getStreams()
 	{
 		return callObjectMethod(
 			"getStreams",
 			"()[Landroid/net/rtp/AudioStream;"
-		).object<jarray>();
+		);
 	}
 	void AudioGroup::sendDtmf(jint arg0)
 	{

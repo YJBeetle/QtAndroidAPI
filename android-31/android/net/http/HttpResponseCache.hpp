@@ -1,12 +1,12 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "../../../java/net/ResponseCache.hpp"
 
 namespace java::io
 {
 	class File;
 }
+class JString;
 namespace java::net
 {
 	class CacheRequest;
@@ -43,7 +43,7 @@ namespace android::net::http
 		void close();
 		void _delete();
 		void flush();
-		java::net::CacheResponse get(java::net::URI arg0, jstring arg1, JObject arg2);
+		java::net::CacheResponse get(java::net::URI arg0, JString arg1, JObject arg2);
 		jint getHitCount();
 		jint getNetworkCount();
 		jint getRequestCount();

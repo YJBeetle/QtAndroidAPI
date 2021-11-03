@@ -1,5 +1,6 @@
 #include "./BluetoothDeviceFilter.hpp"
 #include "../os/ParcelUuid.hpp"
+#include "../../JString.hpp"
 #include "../../java/util/regex/Pattern.hpp"
 #include "./BluetoothDeviceFilter_Builder.hpp"
 
@@ -34,12 +35,12 @@ namespace android::companion
 			"()Landroid/companion/BluetoothDeviceFilter;"
 		);
 	}
-	android::companion::BluetoothDeviceFilter_Builder BluetoothDeviceFilter_Builder::setAddress(jstring arg0)
+	android::companion::BluetoothDeviceFilter_Builder BluetoothDeviceFilter_Builder::setAddress(JString arg0)
 	{
 		return callObjectMethod(
 			"setAddress",
 			"(Ljava/lang/String;)Landroid/companion/BluetoothDeviceFilter$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::companion::BluetoothDeviceFilter_Builder BluetoothDeviceFilter_Builder::setNamePattern(java::util::regex::Pattern arg0)

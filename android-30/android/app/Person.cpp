@@ -1,6 +1,9 @@
 #include "./Person_Builder.hpp"
 #include "../graphics/drawable/Icon.hpp"
 #include "../os/Parcel.hpp"
+#include "../../JString.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./Person.hpp"
 
 namespace android::app
@@ -28,12 +31,12 @@ namespace android::app
 			"()I"
 		);
 	}
-	jboolean Person::equals(jobject arg0)
+	jboolean Person::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	android::graphics::drawable::Icon Person::getIcon()
@@ -43,26 +46,26 @@ namespace android::app
 			"()Landroid/graphics/drawable/Icon;"
 		);
 	}
-	jstring Person::getKey()
+	JString Person::getKey()
 	{
 		return callObjectMethod(
 			"getKey",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Person::getName()
+	JString Person::getName()
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
-	jstring Person::getUri()
+	JString Person::getUri()
 	{
 		return callObjectMethod(
 			"getUri",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint Person::hashCode()
 	{

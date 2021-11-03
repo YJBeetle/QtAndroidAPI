@@ -1,3 +1,6 @@
+#include "../../../JString.hpp"
+#include "../../../JString.hpp"
+#include "../../../JThrowable.hpp"
 #include "./DateTimeParseException.hpp"
 
 namespace java::time::format
@@ -8,22 +11,22 @@ namespace java::time::format
 	DateTimeParseException::DateTimeParseException(QJniObject obj) : java::time::DateTimeException(obj) {}
 	
 	// Constructors
-	DateTimeParseException::DateTimeParseException(jstring arg0, jstring arg1, jint arg2)
+	DateTimeParseException::DateTimeParseException(JString arg0, JString arg1, jint arg2)
 		: java::time::DateTimeException(
 			"java.time.format.DateTimeParseException",
 			"(Ljava/lang/String;Ljava/lang/CharSequence;I)V",
-			arg0,
-			arg1,
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
 			arg2
 		) {}
-	DateTimeParseException::DateTimeParseException(jstring arg0, jstring arg1, jint arg2, jthrowable arg3)
+	DateTimeParseException::DateTimeParseException(JString arg0, JString arg1, jint arg2, JThrowable arg3)
 		: java::time::DateTimeException(
 			"java.time.format.DateTimeParseException",
 			"(Ljava/lang/String;Ljava/lang/CharSequence;ILjava/lang/Throwable;)V",
-			arg0,
-			arg1,
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
 			arg2,
-			arg3
+			arg3.object<jthrowable>()
 		) {}
 	
 	// Methods
@@ -34,12 +37,12 @@ namespace java::time::format
 			"()I"
 		);
 	}
-	jstring DateTimeParseException::getParsedString()
+	JString DateTimeParseException::getParsedString()
 	{
 		return callObjectMethod(
 			"getParsedString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::time::format
 

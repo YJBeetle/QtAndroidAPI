@@ -10,6 +10,8 @@ namespace java::io
 {
 	class OutputStream;
 }
+class JObject;
+class JString;
 namespace java::lang
 {
 	class Void;
@@ -49,11 +51,11 @@ namespace java::net
 		// Constructors
 		Socket();
 		Socket(java::net::Proxy arg0);
-		Socket(jstring arg0, jint arg1);
+		Socket(JString arg0, jint arg1);
 		Socket(java::net::InetAddress arg0, jint arg1);
-		Socket(jstring arg0, jint arg1, jboolean arg2);
+		Socket(JString arg0, jint arg1, jboolean arg2);
 		Socket(java::net::InetAddress arg0, jint arg1, jboolean arg2);
-		Socket(jstring arg0, jint arg1, java::net::InetAddress arg2, jint arg3);
+		Socket(JString arg0, jint arg1, java::net::InetAddress arg2, jint arg3);
 		Socket(java::net::InetAddress arg0, jint arg1, java::net::InetAddress arg2, jint arg3);
 		
 		// Methods
@@ -70,7 +72,7 @@ namespace java::net
 		jint getLocalPort();
 		java::net::SocketAddress getLocalSocketAddress();
 		jboolean getOOBInline();
-		jobject getOption(JObject arg0);
+		JObject getOption(JObject arg0);
 		java::io::OutputStream getOutputStream();
 		jint getPort();
 		jint getReceiveBufferSize();
@@ -89,7 +91,7 @@ namespace java::net
 		void sendUrgentData(jint arg0);
 		void setKeepAlive(jboolean arg0);
 		void setOOBInline(jboolean arg0);
-		java::net::Socket setOption(JObject arg0, jobject arg1);
+		java::net::Socket setOption(JObject arg0, JObject arg1);
 		void setPerformancePreferences(jint arg0, jint arg1, jint arg2);
 		void setReceiveBufferSize(jint arg0);
 		void setReuseAddress(jboolean arg0);
@@ -101,7 +103,7 @@ namespace java::net
 		void shutdownInput();
 		void shutdownOutput();
 		JObject supportedOptions();
-		jstring toString();
+		JString toString();
 	};
 } // namespace java::net
 

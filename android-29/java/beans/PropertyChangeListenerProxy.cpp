@@ -1,4 +1,5 @@
 #include "./PropertyChangeEvent.hpp"
+#include "../../JString.hpp"
 #include "./PropertyChangeListenerProxy.hpp"
 
 namespace java::beans
@@ -9,21 +10,21 @@ namespace java::beans
 	PropertyChangeListenerProxy::PropertyChangeListenerProxy(QJniObject obj) : java::util::EventListenerProxy(obj) {}
 	
 	// Constructors
-	PropertyChangeListenerProxy::PropertyChangeListenerProxy(jstring arg0, JObject arg1)
+	PropertyChangeListenerProxy::PropertyChangeListenerProxy(JString arg0, JObject arg1)
 		: java::util::EventListenerProxy(
 			"java.beans.PropertyChangeListenerProxy",
 			"(Ljava/lang/String;Ljava/beans/PropertyChangeListener;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		) {}
 	
 	// Methods
-	jstring PropertyChangeListenerProxy::getPropertyName()
+	JString PropertyChangeListenerProxy::getPropertyName()
 	{
 		return callObjectMethod(
 			"getPropertyName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void PropertyChangeListenerProxy::propertyChange(java::beans::PropertyChangeEvent arg0)
 	{

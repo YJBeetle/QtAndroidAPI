@@ -2,6 +2,9 @@
 
 #include "../../JObject.hpp"
 
+class JByteArray;
+class JArray;
+class JArray;
 namespace java::io
 {
 	class ObjectInputStream;
@@ -10,6 +13,8 @@ namespace java::io
 {
 	class ObjectOutputStream;
 }
+class JObject;
+class JString;
 namespace java::net
 {
 	class NetworkInterface;
@@ -29,17 +34,17 @@ namespace java::net
 		// Constructors
 		
 		// Methods
-		static jarray getAllByName(jstring arg0);
-		static java::net::InetAddress getByAddress(jbyteArray arg0);
-		static java::net::InetAddress getByAddress(jstring arg0, jbyteArray arg1);
-		static java::net::InetAddress getByName(jstring arg0);
+		static JArray getAllByName(JString arg0);
+		static java::net::InetAddress getByAddress(JByteArray arg0);
+		static java::net::InetAddress getByAddress(JString arg0, JByteArray arg1);
+		static java::net::InetAddress getByName(JString arg0);
 		static java::net::InetAddress getLocalHost();
 		static java::net::InetAddress getLoopbackAddress();
-		jboolean equals(jobject arg0);
-		jbyteArray getAddress();
-		jstring getCanonicalHostName();
-		jstring getHostAddress();
-		jstring getHostName();
+		jboolean equals(JObject arg0);
+		JByteArray getAddress();
+		JString getCanonicalHostName();
+		JString getHostAddress();
+		JString getHostName();
 		jint hashCode();
 		jboolean isAnyLocalAddress();
 		jboolean isLinkLocalAddress();
@@ -53,7 +58,7 @@ namespace java::net
 		jboolean isReachable(jint arg0);
 		jboolean isReachable(java::net::NetworkInterface arg0, jint arg1, jint arg2);
 		jboolean isSiteLocalAddress();
-		jstring toString();
+		JString toString();
 	};
 } // namespace java::net
 

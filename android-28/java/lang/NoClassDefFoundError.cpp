@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./NoClassDefFoundError.hpp"
 
 namespace java::lang
@@ -13,11 +14,11 @@ namespace java::lang
 			"java.lang.NoClassDefFoundError",
 			"()V"
 		) {}
-	NoClassDefFoundError::NoClassDefFoundError(jstring arg0)
+	NoClassDefFoundError::NoClassDefFoundError(JString arg0)
 		: java::lang::LinkageError(
 			"java.lang.NoClassDefFoundError",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

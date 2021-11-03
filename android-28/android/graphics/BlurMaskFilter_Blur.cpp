@@ -1,3 +1,5 @@
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
 #include "./BlurMaskFilter_Blur.hpp"
 
 namespace android::graphics
@@ -42,22 +44,22 @@ namespace android::graphics
 	// Constructors
 	
 	// Methods
-	android::graphics::BlurMaskFilter_Blur BlurMaskFilter_Blur::valueOf(jstring arg0)
+	android::graphics::BlurMaskFilter_Blur BlurMaskFilter_Blur::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.graphics.BlurMaskFilter$Blur",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/graphics/BlurMaskFilter$Blur;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray BlurMaskFilter_Blur::values()
+	JArray BlurMaskFilter_Blur::values()
 	{
 		return callStaticObjectMethod(
 			"android.graphics.BlurMaskFilter$Blur",
 			"values",
 			"()[Landroid/graphics/BlurMaskFilter$Blur;"
-		).object<jarray>();
+		);
 	}
 } // namespace android::graphics
 

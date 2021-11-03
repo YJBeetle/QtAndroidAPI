@@ -1,3 +1,6 @@
+#include "../../../JClass.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./CameraCharacteristics_Key.hpp"
 
 namespace android::hardware::camera2
@@ -8,29 +11,29 @@ namespace android::hardware::camera2
 	CameraCharacteristics_Key::CameraCharacteristics_Key(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	CameraCharacteristics_Key::CameraCharacteristics_Key(jstring arg0, jclass arg1)
+	CameraCharacteristics_Key::CameraCharacteristics_Key(JString arg0, JClass arg1)
 		: JObject(
 			"android.hardware.camera2.CameraCharacteristics$Key",
 			"(Ljava/lang/String;Ljava/lang/Class;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jclass>()
 		) {}
 	
 	// Methods
-	jboolean CameraCharacteristics_Key::equals(jobject arg0)
+	jboolean CameraCharacteristics_Key::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jstring CameraCharacteristics_Key::getName()
+	JString CameraCharacteristics_Key::getName()
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint CameraCharacteristics_Key::hashCode()
 	{
@@ -39,12 +42,12 @@ namespace android::hardware::camera2
 			"()I"
 		);
 	}
-	jstring CameraCharacteristics_Key::toString()
+	JString CameraCharacteristics_Key::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::hardware::camera2
 

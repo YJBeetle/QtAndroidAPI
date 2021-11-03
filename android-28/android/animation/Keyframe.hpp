@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JClass;
+class JObject;
 
 namespace android::animation
 {
@@ -23,16 +25,16 @@ namespace android::animation
 		static android::animation::Keyframe ofInt(jfloat arg0);
 		static android::animation::Keyframe ofInt(jfloat arg0, jint arg1);
 		static android::animation::Keyframe ofObject(jfloat arg0);
-		static android::animation::Keyframe ofObject(jfloat arg0, jobject arg1);
+		static android::animation::Keyframe ofObject(jfloat arg0, JObject arg1);
 		android::animation::Keyframe clone();
 		jfloat getFraction();
 		JObject getInterpolator();
-		jclass getType();
-		jobject getValue();
+		JClass getType();
+		JObject getValue();
 		jboolean hasValue();
 		void setFraction(jfloat arg0);
 		void setInterpolator(JObject arg0);
-		void setValue(jobject arg0);
+		void setValue(JObject arg0);
 	};
 } // namespace android::animation
 

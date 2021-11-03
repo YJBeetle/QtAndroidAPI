@@ -1,3 +1,4 @@
+#include "../../JByteArray.hpp"
 #include "./BaseObj.hpp"
 #include "./Byte2.hpp"
 #include "./Byte3.hpp"
@@ -30,11 +31,11 @@ namespace android::renderscript
 	FieldPacker::FieldPacker(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	FieldPacker::FieldPacker(jbyteArray arg0)
+	FieldPacker::FieldPacker(JByteArray arg0)
 		: JObject(
 			"android.renderscript.FieldPacker",
 			"([B)V",
-			arg0
+			arg0.object<jbyteArray>()
 		) {}
 	FieldPacker::FieldPacker(jint arg0)
 		: JObject(
@@ -412,12 +413,12 @@ namespace android::renderscript
 			arg0
 		);
 	}
-	jbyteArray FieldPacker::getData()
+	JByteArray FieldPacker::getData()
 	{
 		return callObjectMethod(
 			"getData",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
 	void FieldPacker::reset()
 	{

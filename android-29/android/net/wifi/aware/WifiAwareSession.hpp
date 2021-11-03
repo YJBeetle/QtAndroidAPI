@@ -2,6 +2,7 @@
 
 #include "../../../../JObject.hpp"
 
+class JByteArray;
 namespace android::net
 {
 	class NetworkSpecifier;
@@ -30,6 +31,7 @@ namespace android::os
 {
 	class Handler;
 }
+class JString;
 
 namespace android::net::wifi::aware
 {
@@ -46,8 +48,8 @@ namespace android::net::wifi::aware
 		
 		// Methods
 		void close();
-		android::net::NetworkSpecifier createNetworkSpecifierOpen(jint arg0, jbyteArray arg1);
-		android::net::NetworkSpecifier createNetworkSpecifierPassphrase(jint arg0, jbyteArray arg1, jstring arg2);
+		android::net::NetworkSpecifier createNetworkSpecifierOpen(jint arg0, JByteArray arg1);
+		android::net::NetworkSpecifier createNetworkSpecifierPassphrase(jint arg0, JByteArray arg1, JString arg2);
 		void publish(android::net::wifi::aware::PublishConfig arg0, android::net::wifi::aware::DiscoverySessionCallback arg1, android::os::Handler arg2);
 		void subscribe(android::net::wifi::aware::SubscribeConfig arg0, android::net::wifi::aware::DiscoverySessionCallback arg1, android::os::Handler arg2);
 	};

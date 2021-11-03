@@ -1,4 +1,8 @@
+#include "../../../JByteArray.hpp"
 #include "../../os/Parcel.hpp"
+#include "../../../JString.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./BlobHandle.hpp"
 
 namespace android::app::blob
@@ -19,16 +23,16 @@ namespace android::app::blob
 	// Constructors
 	
 	// Methods
-	android::app::blob::BlobHandle BlobHandle::createWithSha256(jbyteArray arg0, jstring arg1, jlong arg2, jstring arg3)
+	android::app::blob::BlobHandle BlobHandle::createWithSha256(JByteArray arg0, JString arg1, jlong arg2, JString arg3)
 	{
 		return callStaticObjectMethod(
 			"android.app.blob.BlobHandle",
 			"createWithSha256",
 			"([BLjava/lang/CharSequence;JLjava/lang/String;)Landroid/app/blob/BlobHandle;",
-			arg0,
-			arg1,
+			arg0.object<jbyteArray>(),
+			arg1.object<jstring>(),
 			arg2,
-			arg3
+			arg3.object<jstring>()
 		);
 	}
 	jint BlobHandle::describeContents()
@@ -38,12 +42,12 @@ namespace android::app::blob
 			"()I"
 		);
 	}
-	jboolean BlobHandle::equals(jobject arg0)
+	jboolean BlobHandle::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jlong BlobHandle::getExpiryTimeMillis()
@@ -53,26 +57,26 @@ namespace android::app::blob
 			"()J"
 		);
 	}
-	jstring BlobHandle::getLabel()
+	JString BlobHandle::getLabel()
 	{
 		return callObjectMethod(
 			"getLabel",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
-	jbyteArray BlobHandle::getSha256Digest()
+	JByteArray BlobHandle::getSha256Digest()
 	{
 		return callObjectMethod(
 			"getSha256Digest",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
-	jstring BlobHandle::getTag()
+	JString BlobHandle::getTag()
 	{
 		return callObjectMethod(
 			"getTag",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint BlobHandle::hashCode()
 	{
@@ -81,12 +85,12 @@ namespace android::app::blob
 			"()I"
 		);
 	}
-	jstring BlobHandle::toString()
+	JString BlobHandle::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void BlobHandle::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

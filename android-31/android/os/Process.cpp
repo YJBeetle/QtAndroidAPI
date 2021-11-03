@@ -1,4 +1,6 @@
+#include "../../JIntArray.hpp"
 #include "./UserHandle.hpp"
+#include "../../JString.hpp"
 #include "./Process.hpp"
 
 namespace android::os
@@ -185,21 +187,21 @@ namespace android::os
 			"()J"
 		);
 	}
-	jintArray Process::getExclusiveCores()
+	JIntArray Process::getExclusiveCores()
 	{
 		return callStaticObjectMethod(
 			"android.os.Process",
 			"getExclusiveCores",
 			"()[I"
-		).object<jintArray>();
+		);
 	}
-	jint Process::getGidForName(jstring arg0)
+	jint Process::getGidForName(JString arg0)
 	{
 		return callStaticMethod<jint>(
 			"android.os.Process",
 			"getGidForName",
 			"(Ljava/lang/String;)I",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	jlong Process::getStartElapsedRealtime()
@@ -227,13 +229,13 @@ namespace android::os
 			arg0
 		);
 	}
-	jint Process::getUidForName(jstring arg0)
+	jint Process::getUidForName(JString arg0)
 	{
 		return callStaticMethod<jint>(
 			"android.os.Process",
 			"getUidForName",
 			"(Ljava/lang/String;)I",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	jboolean Process::is64Bit()

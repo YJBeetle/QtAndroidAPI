@@ -1,4 +1,5 @@
 #include "../net/Uri.hpp"
+#include "../../JString.hpp"
 #include "./Telephony_MmsSms_PendingMessages.hpp"
 
 namespace android::provider
@@ -12,77 +13,77 @@ namespace android::provider
 			"Landroid/net/Uri;"
 		);
 	}
-	jstring Telephony_MmsSms_PendingMessages::DUE_TIME()
+	JString Telephony_MmsSms_PendingMessages::DUE_TIME()
 	{
 		return getStaticObjectField(
 			"android.provider.Telephony$MmsSms$PendingMessages",
 			"DUE_TIME",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Telephony_MmsSms_PendingMessages::ERROR_CODE()
+	JString Telephony_MmsSms_PendingMessages::ERROR_CODE()
 	{
 		return getStaticObjectField(
 			"android.provider.Telephony$MmsSms$PendingMessages",
 			"ERROR_CODE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Telephony_MmsSms_PendingMessages::ERROR_TYPE()
+	JString Telephony_MmsSms_PendingMessages::ERROR_TYPE()
 	{
 		return getStaticObjectField(
 			"android.provider.Telephony$MmsSms$PendingMessages",
 			"ERROR_TYPE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Telephony_MmsSms_PendingMessages::LAST_TRY()
+	JString Telephony_MmsSms_PendingMessages::LAST_TRY()
 	{
 		return getStaticObjectField(
 			"android.provider.Telephony$MmsSms$PendingMessages",
 			"LAST_TRY",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Telephony_MmsSms_PendingMessages::MSG_ID()
+	JString Telephony_MmsSms_PendingMessages::MSG_ID()
 	{
 		return getStaticObjectField(
 			"android.provider.Telephony$MmsSms$PendingMessages",
 			"MSG_ID",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Telephony_MmsSms_PendingMessages::MSG_TYPE()
+	JString Telephony_MmsSms_PendingMessages::MSG_TYPE()
 	{
 		return getStaticObjectField(
 			"android.provider.Telephony$MmsSms$PendingMessages",
 			"MSG_TYPE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Telephony_MmsSms_PendingMessages::PROTO_TYPE()
+	JString Telephony_MmsSms_PendingMessages::PROTO_TYPE()
 	{
 		return getStaticObjectField(
 			"android.provider.Telephony$MmsSms$PendingMessages",
 			"PROTO_TYPE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Telephony_MmsSms_PendingMessages::RETRY_INDEX()
+	JString Telephony_MmsSms_PendingMessages::RETRY_INDEX()
 	{
 		return getStaticObjectField(
 			"android.provider.Telephony$MmsSms$PendingMessages",
 			"RETRY_INDEX",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Telephony_MmsSms_PendingMessages::SUBSCRIPTION_ID()
+	JString Telephony_MmsSms_PendingMessages::SUBSCRIPTION_ID()
 	{
 		return getStaticObjectField(
 			"android.provider.Telephony$MmsSms$PendingMessages",
 			"SUBSCRIPTION_ID",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QJniObject forward

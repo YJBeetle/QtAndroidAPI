@@ -1,10 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../lang/Exception.hpp"
-#include "../io/IOException.hpp"
 #include "./SocketException.hpp"
 
+class JString;
 
 namespace java::net
 {
@@ -19,7 +17,7 @@ namespace java::net
 		
 		// Constructors
 		BindException();
-		BindException(jstring arg0);
+		BindException(JString arg0);
 		
 		// Methods
 	};

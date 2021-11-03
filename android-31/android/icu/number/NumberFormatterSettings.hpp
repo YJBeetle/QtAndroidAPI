@@ -46,6 +46,7 @@ namespace android::icu::util
 {
 	class MeasureUnit;
 }
+class JObject;
 namespace java::math
 {
 	class RoundingMode;
@@ -66,7 +67,7 @@ namespace android::icu::number
 		
 		// Methods
 		android::icu::number::NumberFormatterSettings decimal(android::icu::number::NumberFormatter_DecimalSeparatorDisplay arg0);
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		android::icu::number::NumberFormatterSettings grouping(android::icu::number::NumberFormatter_GroupingStrategy arg0);
 		jint hashCode();
 		android::icu::number::NumberFormatterSettings integerWidth(android::icu::number::IntegerWidth arg0);

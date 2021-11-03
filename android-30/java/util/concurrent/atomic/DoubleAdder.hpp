@@ -1,11 +1,12 @@
 #pragma once
 
-#include "../../../../JObject.hpp"
 
 namespace java::io
 {
 	class ObjectInputStream;
 }
+class JObject;
+class JString;
 
 namespace java::util::concurrent::atomic
 {
@@ -30,7 +31,7 @@ namespace java::util::concurrent::atomic
 		void reset();
 		jdouble sum();
 		jdouble sumThenReset();
-		jstring toString();
+		JString toString();
 	};
 } // namespace java::util::concurrent::atomic
 

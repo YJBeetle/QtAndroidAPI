@@ -1,9 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "./Exception.hpp"
 #include "./ReflectiveOperationException.hpp"
 
+class JArray;
 namespace java::io
 {
 	class ObjectInputStream;
@@ -12,6 +11,8 @@ namespace java::io
 {
 	class ObjectOutputStream;
 }
+class JString;
+class JThrowable;
 
 namespace java::lang
 {
@@ -26,11 +27,11 @@ namespace java::lang
 		
 		// Constructors
 		ClassNotFoundException();
-		ClassNotFoundException(jstring arg0);
-		ClassNotFoundException(jstring arg0, jthrowable arg1);
+		ClassNotFoundException(JString arg0);
+		ClassNotFoundException(JString arg0, JThrowable arg1);
 		
 		// Methods
-		jthrowable getException();
+		JThrowable getException();
 	};
 } // namespace java::lang
 

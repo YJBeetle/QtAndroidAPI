@@ -1,3 +1,5 @@
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
 #include "./BlendMode.hpp"
 
 namespace android::graphics
@@ -242,22 +244,22 @@ namespace android::graphics
 	// Constructors
 	
 	// Methods
-	android::graphics::BlendMode BlendMode::valueOf(jstring arg0)
+	android::graphics::BlendMode BlendMode::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.graphics.BlendMode",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/graphics/BlendMode;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray BlendMode::values()
+	JArray BlendMode::values()
 	{
 		return callStaticObjectMethod(
 			"android.graphics.BlendMode",
 			"values",
 			"()[Landroid/graphics/BlendMode;"
-		).object<jarray>();
+		);
 	}
 } // namespace android::graphics
 

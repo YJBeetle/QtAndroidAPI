@@ -14,6 +14,7 @@ namespace android::view
 {
 	class ViewGroup;
 }
+class JString;
 
 namespace android::view
 {
@@ -31,8 +32,8 @@ namespace android::view
 		// Methods
 		static android::view::LayoutInflater from(android::content::Context arg0);
 		android::view::LayoutInflater cloneInContext(android::content::Context arg0);
-		android::view::View createView(jstring arg0, jstring arg1, JObject arg2);
-		android::view::View createView(android::content::Context arg0, jstring arg1, jstring arg2, JObject arg3);
+		android::view::View createView(JString arg0, JString arg1, JObject arg2);
+		android::view::View createView(android::content::Context arg0, JString arg1, JString arg2, JObject arg3);
 		android::content::Context getContext();
 		JObject getFactory();
 		JObject getFactory2();
@@ -41,7 +42,7 @@ namespace android::view
 		android::view::View inflate(JObject arg0, android::view::ViewGroup arg1);
 		android::view::View inflate(jint arg0, android::view::ViewGroup arg1, jboolean arg2);
 		android::view::View inflate(JObject arg0, android::view::ViewGroup arg1, jboolean arg2);
-		android::view::View onCreateView(android::content::Context arg0, android::view::View arg1, jstring arg2, JObject arg3);
+		android::view::View onCreateView(android::content::Context arg0, android::view::View arg1, JString arg2, JObject arg3);
 		void setFactory(JObject arg0);
 		void setFactory2(JObject arg0);
 		void setFilter(JObject arg0);

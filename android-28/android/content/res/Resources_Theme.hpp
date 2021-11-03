@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JIntArray;
 namespace android::content::res
 {
 	class Resources;
@@ -18,6 +19,7 @@ namespace android::util
 {
 	class TypedValue;
 }
+class JString;
 
 namespace android::content::res
 {
@@ -34,13 +36,13 @@ namespace android::content::res
 		
 		// Methods
 		void applyStyle(jint arg0, jboolean arg1);
-		void dump(jint arg0, jstring arg1, jstring arg2);
+		void dump(jint arg0, JString arg1, JString arg2);
 		jint getChangingConfigurations();
 		android::graphics::drawable::Drawable getDrawable(jint arg0);
 		android::content::res::Resources getResources();
-		android::content::res::TypedArray obtainStyledAttributes(jintArray arg0);
-		android::content::res::TypedArray obtainStyledAttributes(jint arg0, jintArray arg1);
-		android::content::res::TypedArray obtainStyledAttributes(JObject arg0, jintArray arg1, jint arg2, jint arg3);
+		android::content::res::TypedArray obtainStyledAttributes(JIntArray arg0);
+		android::content::res::TypedArray obtainStyledAttributes(jint arg0, JIntArray arg1);
+		android::content::res::TypedArray obtainStyledAttributes(JObject arg0, JIntArray arg1, jint arg2, jint arg3);
 		jboolean resolveAttribute(jint arg0, android::util::TypedValue arg1, jboolean arg2);
 		void setTo(android::content::res::Resources_Theme arg0);
 	};

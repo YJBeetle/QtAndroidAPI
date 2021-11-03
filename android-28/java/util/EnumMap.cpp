@@ -1,6 +1,10 @@
+#include "../../JArray.hpp"
+#include "../../JObjectArray.hpp"
 #include "../io/ObjectInputStream.hpp"
 #include "../io/ObjectOutputStream.hpp"
+#include "../../JClass.hpp"
 #include "../lang/Enum.hpp"
+#include "../../JObject.hpp"
 #include "./EnumMap.hpp"
 
 namespace java::util
@@ -11,11 +15,11 @@ namespace java::util
 	EnumMap::EnumMap(QJniObject obj) : java::util::AbstractMap(obj) {}
 	
 	// Constructors
-	EnumMap::EnumMap(jclass arg0)
+	EnumMap::EnumMap(JClass arg0)
 		: java::util::AbstractMap(
 			"java.util.EnumMap",
 			"(Ljava/lang/Class;)V",
-			arg0
+			arg0.object<jclass>()
 		) {}
 	EnumMap::EnumMap(java::util::EnumMap &arg0)
 		: java::util::AbstractMap(
@@ -45,20 +49,20 @@ namespace java::util
 			"()Ljava/util/EnumMap;"
 		);
 	}
-	jboolean EnumMap::containsKey(jobject arg0)
+	jboolean EnumMap::containsKey(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"containsKey",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jboolean EnumMap::containsValue(jobject arg0)
+	jboolean EnumMap::containsValue(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"containsValue",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	JObject EnumMap::entrySet()
@@ -68,21 +72,21 @@ namespace java::util
 			"()Ljava/util/Set;"
 		);
 	}
-	jboolean EnumMap::equals(jobject arg0)
+	jboolean EnumMap::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jobject EnumMap::get(jobject arg0)
+	JObject EnumMap::get(JObject arg0)
 	{
 		return callObjectMethod(
 			"get",
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0
-		).object<jobject>();
+			arg0.object<jobject>()
+		);
 	}
 	jint EnumMap::hashCode()
 	{
@@ -98,23 +102,23 @@ namespace java::util
 			"()Ljava/util/Set;"
 		);
 	}
-	jobject EnumMap::put(java::lang::Enum arg0, jobject arg1)
+	JObject EnumMap::put(java::lang::Enum arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"put",
 			"(Ljava/lang/Enum;Ljava/lang/Object;)Ljava/lang/Object;",
 			arg0.object(),
-			arg1
-		).object<jobject>();
+			arg1.object<jobject>()
+		);
 	}
-	jobject EnumMap::put(jobject arg0, jobject arg1)
+	JObject EnumMap::put(JObject arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"put",
 			"(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0,
-			arg1
-		).object<jobject>();
+			arg0.object<jobject>(),
+			arg1.object<jobject>()
+		);
 	}
 	void EnumMap::putAll(JObject arg0)
 	{
@@ -124,13 +128,13 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	jobject EnumMap::remove(jobject arg0)
+	JObject EnumMap::remove(JObject arg0)
 	{
 		return callObjectMethod(
 			"remove",
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0
-		).object<jobject>();
+			arg0.object<jobject>()
+		);
 	}
 	jint EnumMap::size()
 	{

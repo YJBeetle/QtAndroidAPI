@@ -6,6 +6,7 @@ namespace android::app::usage
 {
 	class UsageEvents;
 }
+class JString;
 
 namespace android::app::usage
 {
@@ -31,7 +32,7 @@ namespace android::app::usage
 		
 		// Methods
 		jint getAppStandbyBucket();
-		jboolean isAppInactive(jstring arg0);
+		jboolean isAppInactive(JString arg0);
 		JObject queryAndAggregateUsageStats(jlong arg0, jlong arg1);
 		JObject queryConfigurations(jint arg0, jlong arg1, jlong arg2);
 		JObject queryEventStats(jint arg0, jlong arg1, jlong arg2);

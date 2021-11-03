@@ -1,6 +1,7 @@
 #include "../content/Context.hpp"
 #include "../os/Bundle.hpp"
 #include "./Preference.hpp"
+#include "../../JString.hpp"
 #include "./PreferenceGroup.hpp"
 
 namespace android::preference
@@ -53,12 +54,12 @@ namespace android::preference
 			arg0.object()
 		);
 	}
-	android::preference::Preference PreferenceGroup::findPreference(jstring arg0)
+	android::preference::Preference PreferenceGroup::findPreference(JString arg0)
 	{
 		return callObjectMethod(
 			"findPreference",
 			"(Ljava/lang/CharSequence;)Landroid/preference/Preference;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::preference::Preference PreferenceGroup::getPreference(jint arg0)

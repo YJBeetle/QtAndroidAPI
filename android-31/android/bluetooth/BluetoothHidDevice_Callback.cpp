@@ -1,3 +1,4 @@
+#include "../../JByteArray.hpp"
 #include "./BluetoothDevice.hpp"
 #include "./BluetoothHidDevice_Callback.hpp"
 
@@ -45,14 +46,14 @@ namespace android::bluetooth
 			arg3
 		);
 	}
-	void BluetoothHidDevice_Callback::onInterruptData(android::bluetooth::BluetoothDevice arg0, jbyte arg1, jbyteArray arg2)
+	void BluetoothHidDevice_Callback::onInterruptData(android::bluetooth::BluetoothDevice arg0, jbyte arg1, JByteArray arg2)
 	{
 		callMethod<void>(
 			"onInterruptData",
 			"(Landroid/bluetooth/BluetoothDevice;B[B)V",
 			arg0.object(),
 			arg1,
-			arg2
+			arg2.object<jbyteArray>()
 		);
 	}
 	void BluetoothHidDevice_Callback::onSetProtocol(android::bluetooth::BluetoothDevice arg0, jbyte arg1)
@@ -64,7 +65,7 @@ namespace android::bluetooth
 			arg1
 		);
 	}
-	void BluetoothHidDevice_Callback::onSetReport(android::bluetooth::BluetoothDevice arg0, jbyte arg1, jbyte arg2, jbyteArray arg3)
+	void BluetoothHidDevice_Callback::onSetReport(android::bluetooth::BluetoothDevice arg0, jbyte arg1, jbyte arg2, JByteArray arg3)
 	{
 		callMethod<void>(
 			"onSetReport",
@@ -72,7 +73,7 @@ namespace android::bluetooth
 			arg0.object(),
 			arg1,
 			arg2,
-			arg3
+			arg3.object<jbyteArray>()
 		);
 	}
 	void BluetoothHidDevice_Callback::onVirtualCableUnplug(android::bluetooth::BluetoothDevice arg0)

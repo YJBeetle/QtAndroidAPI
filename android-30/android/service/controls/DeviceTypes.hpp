@@ -2,7 +2,6 @@
 
 #include "../../../JObject.hpp"
 
-
 namespace android::service::controls
 {
 	class DeviceTypes : public JObject

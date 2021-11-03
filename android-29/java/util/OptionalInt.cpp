@@ -1,3 +1,5 @@
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./OptionalInt.hpp"
 
 namespace java::util
@@ -27,12 +29,12 @@ namespace java::util
 			arg0
 		);
 	}
-	jboolean OptionalInt::equals(jobject arg0)
+	jboolean OptionalInt::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint OptionalInt::getAsInt()
@@ -118,12 +120,12 @@ namespace java::util
 			"()Ljava/util/stream/IntStream;"
 		);
 	}
-	jstring OptionalInt::toString()
+	JString OptionalInt::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::util
 

@@ -1,3 +1,4 @@
+#include "../../JObject.hpp"
 #include "./MotionEvent_PointerProperties.hpp"
 
 namespace android::view
@@ -48,12 +49,12 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	jboolean MotionEvent_PointerProperties::equals(jobject arg0)
+	jboolean MotionEvent_PointerProperties::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint MotionEvent_PointerProperties::hashCode()

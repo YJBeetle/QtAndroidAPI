@@ -1,3 +1,4 @@
+#include "../../JIntArray.hpp"
 #include "../app/Activity.hpp"
 #include "./AppWidgetHostView.hpp"
 #include "./AppWidgetProviderInfo.hpp"
@@ -62,12 +63,12 @@ namespace android::appwidget
 			"()V"
 		);
 	}
-	jintArray AppWidgetHost::getAppWidgetIds()
+	JIntArray AppWidgetHost::getAppWidgetIds()
 	{
 		return callObjectMethod(
 			"getAppWidgetIds",
 			"()[I"
-		).object<jintArray>();
+		);
 	}
 	void AppWidgetHost::startAppWidgetConfigureActivityForResult(android::app::Activity arg0, jint arg1, jint arg2, jint arg3, android::os::Bundle arg4)
 	{

@@ -1,3 +1,7 @@
+#include "../../JCharArray.hpp"
+#include "../../JFloatArray.hpp"
+#include "../../JIntArray.hpp"
+#include "../../JShortArray.hpp"
 #include "./Bitmap.hpp"
 #include "./BlendMode.hpp"
 #include "./Canvas_EdgeType.hpp"
@@ -13,6 +17,8 @@
 #include "./Region_Op.hpp"
 #include "./RenderNode.hpp"
 #include "./text/MeasuredText.hpp"
+#include "../../JString.hpp"
+#include "../../JString.hpp"
 #include "./Canvas.hpp"
 
 namespace android::graphics
@@ -270,12 +276,12 @@ namespace android::graphics
 			arg3.object()
 		);
 	}
-	void Canvas::drawBitmap(jintArray arg0, jint arg1, jint arg2, jfloat arg3, jfloat arg4, jint arg5, jint arg6, jboolean arg7, android::graphics::Paint arg8)
+	void Canvas::drawBitmap(JIntArray arg0, jint arg1, jint arg2, jfloat arg3, jfloat arg4, jint arg5, jint arg6, jboolean arg7, android::graphics::Paint arg8)
 	{
 		callMethod<void>(
 			"drawBitmap",
 			"([IIIFFIIZLandroid/graphics/Paint;)V",
-			arg0,
+			arg0.object<jintArray>(),
 			arg1,
 			arg2,
 			arg3,
@@ -286,12 +292,12 @@ namespace android::graphics
 			arg8.object()
 		);
 	}
-	void Canvas::drawBitmap(jintArray arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jboolean arg7, android::graphics::Paint arg8)
+	void Canvas::drawBitmap(JIntArray arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jboolean arg7, android::graphics::Paint arg8)
 	{
 		callMethod<void>(
 			"drawBitmap",
 			"([IIIIIIIZLandroid/graphics/Paint;)V",
-			arg0,
+			arg0.object<jintArray>(),
 			arg1,
 			arg2,
 			arg3,
@@ -302,7 +308,7 @@ namespace android::graphics
 			arg8.object()
 		);
 	}
-	void Canvas::drawBitmapMesh(android::graphics::Bitmap arg0, jint arg1, jint arg2, jfloatArray arg3, jint arg4, jintArray arg5, jint arg6, android::graphics::Paint arg7)
+	void Canvas::drawBitmapMesh(android::graphics::Bitmap arg0, jint arg1, jint arg2, JFloatArray arg3, jint arg4, JIntArray arg5, jint arg6, android::graphics::Paint arg7)
 	{
 		callMethod<void>(
 			"drawBitmapMesh",
@@ -310,9 +316,9 @@ namespace android::graphics
 			arg0.object(),
 			arg1,
 			arg2,
-			arg3,
+			arg3.object<jfloatArray>(),
 			arg4,
-			arg5,
+			arg5.object<jintArray>(),
 			arg6,
 			arg7.object()
 		);
@@ -371,15 +377,15 @@ namespace android::graphics
 			arg1.object()
 		);
 	}
-	void Canvas::drawDoubleRoundRect(android::graphics::RectF arg0, jfloatArray arg1, android::graphics::RectF arg2, jfloatArray arg3, android::graphics::Paint arg4)
+	void Canvas::drawDoubleRoundRect(android::graphics::RectF arg0, JFloatArray arg1, android::graphics::RectF arg2, JFloatArray arg3, android::graphics::Paint arg4)
 	{
 		callMethod<void>(
 			"drawDoubleRoundRect",
 			"(Landroid/graphics/RectF;[FLandroid/graphics/RectF;[FLandroid/graphics/Paint;)V",
 			arg0.object(),
-			arg1,
+			arg1.object<jfloatArray>(),
 			arg2.object(),
-			arg3,
+			arg3.object<jfloatArray>(),
 			arg4.object()
 		);
 	}
@@ -409,21 +415,21 @@ namespace android::graphics
 			arg4.object()
 		);
 	}
-	void Canvas::drawLines(jfloatArray arg0, android::graphics::Paint arg1)
+	void Canvas::drawLines(JFloatArray arg0, android::graphics::Paint arg1)
 	{
 		callMethod<void>(
 			"drawLines",
 			"([FLandroid/graphics/Paint;)V",
-			arg0,
+			arg0.object<jfloatArray>(),
 			arg1.object()
 		);
 	}
-	void Canvas::drawLines(jfloatArray arg0, jint arg1, jint arg2, android::graphics::Paint arg3)
+	void Canvas::drawLines(JFloatArray arg0, jint arg1, jint arg2, android::graphics::Paint arg3)
 	{
 		callMethod<void>(
 			"drawLines",
 			"([FIILandroid/graphics/Paint;)V",
-			arg0,
+			arg0.object<jfloatArray>(),
 			arg1,
 			arg2,
 			arg3.object()
@@ -503,45 +509,45 @@ namespace android::graphics
 			arg2.object()
 		);
 	}
-	void Canvas::drawPoints(jfloatArray arg0, android::graphics::Paint arg1)
+	void Canvas::drawPoints(JFloatArray arg0, android::graphics::Paint arg1)
 	{
 		callMethod<void>(
 			"drawPoints",
 			"([FLandroid/graphics/Paint;)V",
-			arg0,
+			arg0.object<jfloatArray>(),
 			arg1.object()
 		);
 	}
-	void Canvas::drawPoints(jfloatArray arg0, jint arg1, jint arg2, android::graphics::Paint arg3)
+	void Canvas::drawPoints(JFloatArray arg0, jint arg1, jint arg2, android::graphics::Paint arg3)
 	{
 		callMethod<void>(
 			"drawPoints",
 			"([FIILandroid/graphics/Paint;)V",
-			arg0,
+			arg0.object<jfloatArray>(),
 			arg1,
 			arg2,
 			arg3.object()
 		);
 	}
-	void Canvas::drawPosText(jstring arg0, jfloatArray arg1, android::graphics::Paint arg2)
+	void Canvas::drawPosText(JString arg0, JFloatArray arg1, android::graphics::Paint arg2)
 	{
 		callMethod<void>(
 			"drawPosText",
 			"(Ljava/lang/String;[FLandroid/graphics/Paint;)V",
-			arg0,
-			arg1,
+			arg0.object<jstring>(),
+			arg1.object<jfloatArray>(),
 			arg2.object()
 		);
 	}
-	void Canvas::drawPosText(jcharArray arg0, jint arg1, jint arg2, jfloatArray arg3, android::graphics::Paint arg4)
+	void Canvas::drawPosText(JCharArray arg0, jint arg1, jint arg2, JFloatArray arg3, android::graphics::Paint arg4)
 	{
 		callMethod<void>(
 			"drawPosText",
 			"([CII[FLandroid/graphics/Paint;)V",
-			arg0,
+			arg0.object<jcharArray>(),
 			arg1,
 			arg2,
-			arg3,
+			arg3.object<jfloatArray>(),
 			arg4.object()
 		);
 	}
@@ -618,23 +624,23 @@ namespace android::graphics
 			arg6.object()
 		);
 	}
-	void Canvas::drawText(jstring arg0, jfloat arg1, jfloat arg2, android::graphics::Paint arg3)
+	void Canvas::drawText(JString arg0, jfloat arg1, jfloat arg2, android::graphics::Paint arg3)
 	{
 		callMethod<void>(
 			"drawText",
 			"(Ljava/lang/String;FFLandroid/graphics/Paint;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
 			arg2,
 			arg3.object()
 		);
 	}
-	void Canvas::drawText(jcharArray arg0, jint arg1, jint arg2, jfloat arg3, jfloat arg4, android::graphics::Paint arg5)
+	void Canvas::drawText(JCharArray arg0, jint arg1, jint arg2, jfloat arg3, jfloat arg4, android::graphics::Paint arg5)
 	{
 		callMethod<void>(
 			"drawText",
 			"([CIIFFLandroid/graphics/Paint;)V",
-			arg0,
+			arg0.object<jcharArray>(),
 			arg1,
 			arg2,
 			arg3,
@@ -642,12 +648,12 @@ namespace android::graphics
 			arg5.object()
 		);
 	}
-	void Canvas::drawText(jstring arg0, jint arg1, jint arg2, jfloat arg3, jfloat arg4, android::graphics::Paint arg5)
+	void Canvas::drawText(JString arg0, jint arg1, jint arg2, jfloat arg3, jfloat arg4, android::graphics::Paint arg5)
 	{
 		callMethod<void>(
 			"drawText",
 			"(Ljava/lang/CharSequence;IIFFLandroid/graphics/Paint;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
 			arg2,
 			arg3,
@@ -655,24 +661,24 @@ namespace android::graphics
 			arg5.object()
 		);
 	}
-	void Canvas::drawTextOnPath(jstring arg0, android::graphics::Path arg1, jfloat arg2, jfloat arg3, android::graphics::Paint arg4)
+	void Canvas::drawTextOnPath(JString arg0, android::graphics::Path arg1, jfloat arg2, jfloat arg3, android::graphics::Paint arg4)
 	{
 		callMethod<void>(
 			"drawTextOnPath",
 			"(Ljava/lang/String;Landroid/graphics/Path;FFLandroid/graphics/Paint;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
 			arg2,
 			arg3,
 			arg4.object()
 		);
 	}
-	void Canvas::drawTextOnPath(jcharArray arg0, jint arg1, jint arg2, android::graphics::Path arg3, jfloat arg4, jfloat arg5, android::graphics::Paint arg6)
+	void Canvas::drawTextOnPath(JCharArray arg0, jint arg1, jint arg2, android::graphics::Path arg3, jfloat arg4, jfloat arg5, android::graphics::Paint arg6)
 	{
 		callMethod<void>(
 			"drawTextOnPath",
 			"([CIILandroid/graphics/Path;FFLandroid/graphics/Paint;)V",
-			arg0,
+			arg0.object<jcharArray>(),
 			arg1,
 			arg2,
 			arg3.object(),
@@ -681,12 +687,12 @@ namespace android::graphics
 			arg6.object()
 		);
 	}
-	void Canvas::drawTextRun(jcharArray arg0, jint arg1, jint arg2, jint arg3, jint arg4, jfloat arg5, jfloat arg6, jboolean arg7, android::graphics::Paint arg8)
+	void Canvas::drawTextRun(JCharArray arg0, jint arg1, jint arg2, jint arg3, jint arg4, jfloat arg5, jfloat arg6, jboolean arg7, android::graphics::Paint arg8)
 	{
 		callMethod<void>(
 			"drawTextRun",
 			"([CIIIIFFZLandroid/graphics/Paint;)V",
-			arg0,
+			arg0.object<jcharArray>(),
 			arg1,
 			arg2,
 			arg3,
@@ -713,12 +719,12 @@ namespace android::graphics
 			arg8.object()
 		);
 	}
-	void Canvas::drawTextRun(jstring arg0, jint arg1, jint arg2, jint arg3, jint arg4, jfloat arg5, jfloat arg6, jboolean arg7, android::graphics::Paint arg8)
+	void Canvas::drawTextRun(JString arg0, jint arg1, jint arg2, jint arg3, jint arg4, jfloat arg5, jfloat arg6, jboolean arg7, android::graphics::Paint arg8)
 	{
 		callMethod<void>(
 			"drawTextRun",
 			"(Ljava/lang/CharSequence;IIIIFFZLandroid/graphics/Paint;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
 			arg2,
 			arg3,
@@ -729,20 +735,20 @@ namespace android::graphics
 			arg8.object()
 		);
 	}
-	void Canvas::drawVertices(android::graphics::Canvas_VertexMode arg0, jint arg1, jfloatArray arg2, jint arg3, jfloatArray arg4, jint arg5, jintArray arg6, jint arg7, jshortArray arg8, jint arg9, jint arg10, android::graphics::Paint arg11)
+	void Canvas::drawVertices(android::graphics::Canvas_VertexMode arg0, jint arg1, JFloatArray arg2, jint arg3, JFloatArray arg4, jint arg5, JIntArray arg6, jint arg7, JShortArray arg8, jint arg9, jint arg10, android::graphics::Paint arg11)
 	{
 		callMethod<void>(
 			"drawVertices",
 			"(Landroid/graphics/Canvas$VertexMode;I[FI[FI[II[SIILandroid/graphics/Paint;)V",
 			arg0.object(),
 			arg1,
-			arg2,
+			arg2.object<jfloatArray>(),
 			arg3,
-			arg4,
+			arg4.object<jfloatArray>(),
 			arg5,
-			arg6,
+			arg6.object<jintArray>(),
 			arg7,
-			arg8,
+			arg8.object<jshortArray>(),
 			arg9,
 			arg10,
 			arg11.object()

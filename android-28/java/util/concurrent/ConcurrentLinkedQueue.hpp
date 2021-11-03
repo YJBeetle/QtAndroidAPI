@@ -1,9 +1,8 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "../AbstractCollection.hpp"
 #include "../AbstractQueue.hpp"
 
+class JObjectArray;
 namespace java::io
 {
 	class ObjectInputStream;
@@ -12,6 +11,8 @@ namespace java::io
 {
 	class ObjectOutputStream;
 }
+class JObject;
+class JString;
 
 namespace java::util::concurrent
 {
@@ -29,25 +30,25 @@ namespace java::util::concurrent
 		ConcurrentLinkedQueue(JObject arg0);
 		
 		// Methods
-		jboolean add(jobject arg0);
+		jboolean add(JObject arg0);
 		jboolean addAll(JObject arg0);
 		void clear();
-		jboolean contains(jobject arg0);
+		jboolean contains(JObject arg0);
 		void forEach(JObject arg0);
 		jboolean isEmpty();
 		JObject iterator();
-		jboolean offer(jobject arg0);
-		jobject peek();
-		jobject poll();
-		jboolean remove(jobject arg0);
+		jboolean offer(JObject arg0);
+		JObject peek();
+		JObject poll();
+		jboolean remove(JObject arg0);
 		jboolean removeAll(JObject arg0);
 		jboolean removeIf(JObject arg0);
 		jboolean retainAll(JObject arg0);
 		jint size();
 		JObject spliterator();
-		jobjectArray toArray();
-		jobjectArray toArray(jobjectArray arg0);
-		jstring toString();
+		JObjectArray toArray();
+		JObjectArray toArray(JObjectArray arg0);
+		JString toString();
 	};
 } // namespace java::util::concurrent
 

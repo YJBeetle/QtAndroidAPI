@@ -6,6 +6,7 @@ namespace android::net::http
 {
 	class SslCertificate;
 }
+class JString;
 namespace java::security::cert
 {
 	class X509Certificate;
@@ -32,16 +33,16 @@ namespace android::net::http
 		// Constructors
 		SslError(jint arg0, android::net::http::SslCertificate arg1);
 		SslError(jint arg0, java::security::cert::X509Certificate arg1);
-		SslError(jint arg0, android::net::http::SslCertificate arg1, jstring arg2);
-		SslError(jint arg0, java::security::cert::X509Certificate arg1, jstring arg2);
+		SslError(jint arg0, android::net::http::SslCertificate arg1, JString arg2);
+		SslError(jint arg0, java::security::cert::X509Certificate arg1, JString arg2);
 		
 		// Methods
 		jboolean addError(jint arg0);
 		android::net::http::SslCertificate getCertificate();
 		jint getPrimaryError();
-		jstring getUrl();
+		JString getUrl();
 		jboolean hasError(jint arg0);
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::net::http
 

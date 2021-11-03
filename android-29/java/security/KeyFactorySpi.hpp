@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JClass;
 
 namespace java::security
 {

@@ -2,7 +2,6 @@
 
 #include "../../JObject.hpp"
 
-
 namespace android::view
 {
 	class ViewTreeObserver : public JObject

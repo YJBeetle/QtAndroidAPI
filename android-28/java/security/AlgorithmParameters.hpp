@@ -2,6 +2,9 @@
 
 #include "../../JObject.hpp"
 
+class JByteArray;
+class JClass;
+class JString;
 namespace java::security
 {
 	class AlgorithmParametersSpi;
@@ -25,18 +28,18 @@ namespace java::security
 		// Constructors
 		
 		// Methods
-		static java::security::AlgorithmParameters getInstance(jstring arg0);
-		static java::security::AlgorithmParameters getInstance(jstring arg0, jstring arg1);
-		static java::security::AlgorithmParameters getInstance(jstring arg0, java::security::Provider arg1);
-		jstring getAlgorithm();
-		jbyteArray getEncoded();
-		jbyteArray getEncoded(jstring arg0);
-		JObject getParameterSpec(jclass arg0);
+		static java::security::AlgorithmParameters getInstance(JString arg0);
+		static java::security::AlgorithmParameters getInstance(JString arg0, JString arg1);
+		static java::security::AlgorithmParameters getInstance(JString arg0, java::security::Provider arg1);
+		JString getAlgorithm();
+		JByteArray getEncoded();
+		JByteArray getEncoded(JString arg0);
+		JObject getParameterSpec(JClass arg0);
 		java::security::Provider getProvider();
-		void init(jbyteArray arg0);
+		void init(JByteArray arg0);
 		void init(JObject arg0);
-		void init(jbyteArray arg0, jstring arg1);
-		jstring toString();
+		void init(JByteArray arg0, JString arg1);
+		JString toString();
 	};
 } // namespace java::security
 

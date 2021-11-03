@@ -1,7 +1,10 @@
+#include "../../JArray.hpp"
 #include "./PendingIntent.hpp"
 #include "../graphics/drawable/Icon.hpp"
 #include "../os/Bundle.hpp"
 #include "../os/Parcel.hpp"
+#include "../../JString.hpp"
+#include "../../JObject.hpp"
 #include "./Notification_Action.hpp"
 
 namespace android::app
@@ -105,24 +108,24 @@ namespace android::app
 			"icon"
 		);
 	}
-	jstring Notification_Action::title()
+	JString Notification_Action::title()
 	{
 		return getObjectField(
 			"title",
 			"Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	
 	// QJniObject forward
 	Notification_Action::Notification_Action(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	Notification_Action::Notification_Action(jint arg0, jstring arg1, android::app::PendingIntent arg2)
+	Notification_Action::Notification_Action(jint arg0, JString arg1, android::app::PendingIntent arg2)
 		: JObject(
 			"android.app.Notification$Action",
 			"(ILjava/lang/CharSequence;Landroid/app/PendingIntent;)V",
 			arg0,
-			arg1,
+			arg1.object<jstring>(),
 			arg2.object()
 		) {}
 	
@@ -148,12 +151,12 @@ namespace android::app
 			"()Z"
 		);
 	}
-	jarray Notification_Action::getDataOnlyRemoteInputs()
+	JArray Notification_Action::getDataOnlyRemoteInputs()
 	{
 		return callObjectMethod(
 			"getDataOnlyRemoteInputs",
 			"()[Landroid/app/RemoteInput;"
-		).object<jarray>();
+		);
 	}
 	android::os::Bundle Notification_Action::getExtras()
 	{
@@ -169,12 +172,12 @@ namespace android::app
 			"()Landroid/graphics/drawable/Icon;"
 		);
 	}
-	jarray Notification_Action::getRemoteInputs()
+	JArray Notification_Action::getRemoteInputs()
 	{
 		return callObjectMethod(
 			"getRemoteInputs",
 			"()[Landroid/app/RemoteInput;"
-		).object<jarray>();
+		);
 	}
 	jint Notification_Action::getSemanticAction()
 	{

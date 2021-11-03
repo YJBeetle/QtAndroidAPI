@@ -3,6 +3,8 @@
 #include "../../Uri.hpp"
 #include "../../../os/Parcel.hpp"
 #include "../../../util/SparseArray.hpp"
+#include "../../../../JObject.hpp"
+#include "../../../../JString.hpp"
 #include "./ResponderLocation.hpp"
 
 namespace android::net::wifi::rtt
@@ -114,12 +116,12 @@ namespace android::net::wifi::rtt
 			"()I"
 		);
 	}
-	jboolean ResponderLocation::equals(jobject arg0)
+	jboolean ResponderLocation::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jdouble ResponderLocation::getAltitude()
@@ -220,12 +222,12 @@ namespace android::net::wifi::rtt
 			"()D"
 		);
 	}
-	jstring ResponderLocation::getMapImageMimeType()
+	JString ResponderLocation::getMapImageMimeType()
 	{
 		return callObjectMethod(
 			"getMapImageMimeType",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::net::Uri ResponderLocation::getMapImageUri()
 	{

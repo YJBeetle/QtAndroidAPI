@@ -2,7 +2,6 @@
 
 #include "../../../JObject.hpp"
 
-
 namespace android::icu::util
 {
 	class LocaleData_PaperSize : public JObject

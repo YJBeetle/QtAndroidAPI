@@ -1,9 +1,9 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../../java/lang/Exception.hpp"
 #include "../../java/lang/RuntimeException.hpp"
 
+class JString;
+class JThrowable;
 
 namespace android::net
 {
@@ -11,15 +11,15 @@ namespace android::net
 	{
 	public:
 		// Fields
-		jstring response();
+		JString response();
 		
 		// QJniObject forward
 		template<typename ...Ts> explicit ParseException(const char *className, const char *sig, Ts...agv) : java::lang::RuntimeException(className, sig, std::forward<Ts>(agv)...) {}
 		ParseException(QJniObject obj);
 		
 		// Constructors
-		ParseException(jstring arg0);
-		ParseException(jstring arg0, jthrowable arg1);
+		ParseException(JString arg0);
+		ParseException(JString arg0, JThrowable arg1);
 		
 		// Methods
 	};

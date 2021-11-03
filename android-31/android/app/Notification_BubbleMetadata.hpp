@@ -14,6 +14,7 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
 
 namespace android::app
 {
@@ -37,7 +38,7 @@ namespace android::app
 		jint getDesiredHeightResId();
 		android::graphics::drawable::Icon getIcon();
 		android::app::PendingIntent getIntent();
-		jstring getShortcutId();
+		JString getShortcutId();
 		jboolean isBubbleSuppressable();
 		jboolean isBubbleSuppressed();
 		jboolean isNotificationSuppressed();

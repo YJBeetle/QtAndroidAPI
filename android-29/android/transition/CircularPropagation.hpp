@@ -1,7 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "./TransitionPropagation.hpp"
 #include "./VisibilityPropagation.hpp"
 
 namespace android::transition

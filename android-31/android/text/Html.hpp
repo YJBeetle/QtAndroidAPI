@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JString;
+class JString;
 
 namespace android::text
 {
@@ -28,13 +30,13 @@ namespace android::text
 		// Constructors
 		
 		// Methods
-		static jstring escapeHtml(jstring arg0);
-		static JObject fromHtml(jstring arg0);
-		static JObject fromHtml(jstring arg0, jint arg1);
-		static JObject fromHtml(jstring arg0, JObject arg1, JObject arg2);
-		static JObject fromHtml(jstring arg0, jint arg1, JObject arg2, JObject arg3);
-		static jstring toHtml(JObject arg0);
-		static jstring toHtml(JObject arg0, jint arg1);
+		static JString escapeHtml(JString arg0);
+		static JObject fromHtml(JString arg0);
+		static JObject fromHtml(JString arg0, jint arg1);
+		static JObject fromHtml(JString arg0, JObject arg1, JObject arg2);
+		static JObject fromHtml(JString arg0, jint arg1, JObject arg2, JObject arg3);
+		static JString toHtml(JObject arg0);
+		static JString toHtml(JObject arg0, jint arg1);
 	};
 } // namespace android::text
 

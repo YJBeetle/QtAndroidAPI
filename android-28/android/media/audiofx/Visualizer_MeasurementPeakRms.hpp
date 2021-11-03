@@ -2,7 +2,6 @@
 
 #include "../../../JObject.hpp"
 
-
 namespace android::media::audiofx
 {
 	class Visualizer_MeasurementPeakRms : public JObject

@@ -2,10 +2,12 @@
 
 #include "../../JObject.hpp"
 
+class JArray;
 namespace java::lang
 {
 	class ClassLoader;
 }
+class JString;
 namespace java::security
 {
 	class CodeSource;
@@ -32,16 +34,16 @@ namespace java::security
 		
 		// Constructors
 		ProtectionDomain(java::security::CodeSource arg0, java::security::PermissionCollection arg1);
-		ProtectionDomain(java::security::CodeSource arg0, java::security::PermissionCollection arg1, java::lang::ClassLoader arg2, jarray arg3);
+		ProtectionDomain(java::security::CodeSource arg0, java::security::PermissionCollection arg1, java::lang::ClassLoader arg2, JArray arg3);
 		
 		// Methods
 		java::lang::ClassLoader getClassLoader();
 		java::security::CodeSource getCodeSource();
 		java::security::PermissionCollection getPermissions();
-		jarray getPrincipals();
+		JArray getPrincipals();
 		jboolean implies(java::security::Permission arg0);
 		jboolean staticPermissionsOnly();
-		jstring toString();
+		JString toString();
 	};
 } // namespace java::security
 

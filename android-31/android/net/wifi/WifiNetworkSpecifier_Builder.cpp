@@ -2,6 +2,7 @@
 #include "./WifiEnterpriseConfig.hpp"
 #include "./WifiNetworkSpecifier.hpp"
 #include "../../os/PatternMatcher.hpp"
+#include "../../../JString.hpp"
 #include "./WifiNetworkSpecifier_Builder.hpp"
 
 namespace android::net::wifi
@@ -67,12 +68,12 @@ namespace android::net::wifi
 			arg0
 		);
 	}
-	android::net::wifi::WifiNetworkSpecifier_Builder WifiNetworkSpecifier_Builder::setSsid(jstring arg0)
+	android::net::wifi::WifiNetworkSpecifier_Builder WifiNetworkSpecifier_Builder::setSsid(JString arg0)
 	{
 		return callObjectMethod(
 			"setSsid",
 			"(Ljava/lang/String;)Landroid/net/wifi/WifiNetworkSpecifier$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::net::wifi::WifiNetworkSpecifier_Builder WifiNetworkSpecifier_Builder::setSsidPattern(android::os::PatternMatcher arg0)
@@ -91,12 +92,12 @@ namespace android::net::wifi
 			arg0.object()
 		);
 	}
-	android::net::wifi::WifiNetworkSpecifier_Builder WifiNetworkSpecifier_Builder::setWpa2Passphrase(jstring arg0)
+	android::net::wifi::WifiNetworkSpecifier_Builder WifiNetworkSpecifier_Builder::setWpa2Passphrase(JString arg0)
 	{
 		return callObjectMethod(
 			"setWpa2Passphrase",
 			"(Ljava/lang/String;)Landroid/net/wifi/WifiNetworkSpecifier$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::net::wifi::WifiNetworkSpecifier_Builder WifiNetworkSpecifier_Builder::setWpa3Enterprise192BitModeConfig(android::net::wifi::WifiEnterpriseConfig arg0)
@@ -123,12 +124,12 @@ namespace android::net::wifi
 			arg0.object()
 		);
 	}
-	android::net::wifi::WifiNetworkSpecifier_Builder WifiNetworkSpecifier_Builder::setWpa3Passphrase(jstring arg0)
+	android::net::wifi::WifiNetworkSpecifier_Builder WifiNetworkSpecifier_Builder::setWpa3Passphrase(JString arg0)
 	{
 		return callObjectMethod(
 			"setWpa3Passphrase",
 			"(Ljava/lang/String;)Landroid/net/wifi/WifiNetworkSpecifier$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 } // namespace android::net::wifi

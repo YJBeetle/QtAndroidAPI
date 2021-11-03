@@ -2,6 +2,7 @@
 #include "../content/Intent.hpp"
 #include "../os/Bundle.hpp"
 #include "../view/Window.hpp"
+#include "../../JString.hpp"
 #include "./LocalActivityManager.hpp"
 
 namespace android::app
@@ -21,12 +22,12 @@ namespace android::app
 		) {}
 	
 	// Methods
-	android::view::Window LocalActivityManager::destroyActivity(jstring arg0, jboolean arg1)
+	android::view::Window LocalActivityManager::destroyActivity(JString arg0, jboolean arg1)
 	{
 		return callObjectMethod(
 			"destroyActivity",
 			"(Ljava/lang/String;Z)Landroid/view/Window;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
@@ -68,12 +69,12 @@ namespace android::app
 			"()V"
 		);
 	}
-	android::app::Activity LocalActivityManager::getActivity(jstring arg0)
+	android::app::Activity LocalActivityManager::getActivity(JString arg0)
 	{
 		return callObjectMethod(
 			"getActivity",
 			"(Ljava/lang/String;)Landroid/app/Activity;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::app::Activity LocalActivityManager::getCurrentActivity()
@@ -83,12 +84,12 @@ namespace android::app
 			"()Landroid/app/Activity;"
 		);
 	}
-	jstring LocalActivityManager::getCurrentId()
+	JString LocalActivityManager::getCurrentId()
 	{
 		return callObjectMethod(
 			"getCurrentId",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void LocalActivityManager::removeAllActivities()
 	{
@@ -104,12 +105,12 @@ namespace android::app
 			"()Landroid/os/Bundle;"
 		);
 	}
-	android::view::Window LocalActivityManager::startActivity(jstring arg0, android::content::Intent arg1)
+	android::view::Window LocalActivityManager::startActivity(JString arg0, android::content::Intent arg1)
 	{
 		return callObjectMethod(
 			"startActivity",
 			"(Ljava/lang/String;Landroid/content/Intent;)Landroid/view/Window;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}

@@ -1,8 +1,10 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./InputEvent.hpp"
 
+class JIntArray;
+class JArray;
+class JArray;
 namespace android::graphics
 {
 	class Matrix;
@@ -19,6 +21,7 @@ namespace android::view
 {
 	class MotionEvent_PointerProperties;
 }
+class JString;
 
 namespace android::view
 {
@@ -126,17 +129,17 @@ namespace android::view
 		// Constructors
 		
 		// Methods
-		static jstring actionToString(jint arg0);
-		static jint axisFromString(jstring arg0);
-		static jstring axisToString(jint arg0);
+		static JString actionToString(jint arg0);
+		static jint axisFromString(JString arg0);
+		static JString axisToString(jint arg0);
 		static android::view::MotionEvent obtain(android::view::MotionEvent arg0);
 		static android::view::MotionEvent obtain(jlong arg0, jlong arg1, jint arg2, jfloat arg3, jfloat arg4, jint arg5);
 		static android::view::MotionEvent obtain(jlong arg0, jlong arg1, jint arg2, jfloat arg3, jfloat arg4, jfloat arg5, jfloat arg6, jint arg7, jfloat arg8, jfloat arg9, jint arg10, jint arg11);
-		static android::view::MotionEvent obtain(jlong arg0, jlong arg1, jint arg2, jint arg3, jintArray arg4, jarray arg5, jint arg6, jfloat arg7, jfloat arg8, jint arg9, jint arg10, jint arg11, jint arg12);
+		static android::view::MotionEvent obtain(jlong arg0, jlong arg1, jint arg2, jint arg3, JIntArray arg4, JArray arg5, jint arg6, jfloat arg7, jfloat arg8, jint arg9, jint arg10, jint arg11, jint arg12);
 		static android::view::MotionEvent obtain(jlong arg0, jlong arg1, jint arg2, jint arg3, jfloat arg4, jfloat arg5, jfloat arg6, jfloat arg7, jint arg8, jfloat arg9, jfloat arg10, jint arg11, jint arg12);
-		static android::view::MotionEvent obtain(jlong arg0, jlong arg1, jint arg2, jint arg3, jarray arg4, jarray arg5, jint arg6, jint arg7, jfloat arg8, jfloat arg9, jint arg10, jint arg11, jint arg12, jint arg13);
+		static android::view::MotionEvent obtain(jlong arg0, jlong arg1, jint arg2, jint arg3, JArray arg4, JArray arg5, jint arg6, jint arg7, jfloat arg8, jfloat arg9, jint arg10, jint arg11, jint arg12, jint arg13);
 		static android::view::MotionEvent obtainNoHistory(android::view::MotionEvent arg0);
-		void addBatch(jlong arg0, jarray arg1, jint arg2);
+		void addBatch(jlong arg0, JArray arg1, jint arg2);
 		void addBatch(jlong arg0, jfloat arg1, jfloat arg2, jfloat arg3, jfloat arg4, jint arg5);
 		jint findPointerIndex(jint arg0);
 		jint getAction();
@@ -213,7 +216,7 @@ namespace android::view
 		void setEdgeFlags(jint arg0);
 		void setLocation(jfloat arg0, jfloat arg1);
 		void setSource(jint arg0);
-		jstring toString();
+		JString toString();
 		void transform(android::graphics::Matrix arg0);
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};

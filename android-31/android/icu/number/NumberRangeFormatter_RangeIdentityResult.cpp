@@ -1,3 +1,5 @@
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
 #include "./NumberRangeFormatter_RangeIdentityResult.hpp"
 
 namespace android::icu::number
@@ -34,22 +36,22 @@ namespace android::icu::number
 	// Constructors
 	
 	// Methods
-	android::icu::number::NumberRangeFormatter_RangeIdentityResult NumberRangeFormatter_RangeIdentityResult::valueOf(jstring arg0)
+	android::icu::number::NumberRangeFormatter_RangeIdentityResult NumberRangeFormatter_RangeIdentityResult::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.icu.number.NumberRangeFormatter$RangeIdentityResult",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/icu/number/NumberRangeFormatter$RangeIdentityResult;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray NumberRangeFormatter_RangeIdentityResult::values()
+	JArray NumberRangeFormatter_RangeIdentityResult::values()
 	{
 		return callStaticObjectMethod(
 			"android.icu.number.NumberRangeFormatter$RangeIdentityResult",
 			"values",
 			"()[Landroid/icu/number/NumberRangeFormatter$RangeIdentityResult;"
-		).object<jarray>();
+		);
 	}
 } // namespace android::icu::number
 

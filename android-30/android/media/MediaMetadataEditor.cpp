@@ -1,4 +1,7 @@
+#include "../../JIntArray.hpp"
 #include "../graphics/Bitmap.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./MediaMetadataEditor.hpp"
 
 namespace android::media
@@ -63,12 +66,12 @@ namespace android::media
 			arg1.object()
 		);
 	}
-	jintArray MediaMetadataEditor::getEditableKeys()
+	JIntArray MediaMetadataEditor::getEditableKeys()
 	{
 		return callObjectMethod(
 			"getEditableKeys",
 			"()[I"
-		).object<jintArray>();
+		);
 	}
 	jlong MediaMetadataEditor::getLong(jint arg0, jlong arg1)
 	{
@@ -79,23 +82,23 @@ namespace android::media
 			arg1
 		);
 	}
-	jobject MediaMetadataEditor::getObject(jint arg0, jobject arg1)
+	JObject MediaMetadataEditor::getObject(jint arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"getObject",
 			"(ILjava/lang/Object;)Ljava/lang/Object;",
 			arg0,
-			arg1
-		).object<jobject>();
+			arg1.object<jobject>()
+		);
 	}
-	jstring MediaMetadataEditor::getString(jint arg0, jstring arg1)
+	JString MediaMetadataEditor::getString(jint arg0, JString arg1)
 	{
 		return callObjectMethod(
 			"getString",
 			"(ILjava/lang/String;)Ljava/lang/String;",
 			arg0,
-			arg1
-		).object<jstring>();
+			arg1.object<jstring>()
+		);
 	}
 	android::media::MediaMetadataEditor MediaMetadataEditor::putBitmap(jint arg0, android::graphics::Bitmap arg1)
 	{
@@ -115,22 +118,22 @@ namespace android::media
 			arg1
 		);
 	}
-	android::media::MediaMetadataEditor MediaMetadataEditor::putObject(jint arg0, jobject arg1)
+	android::media::MediaMetadataEditor MediaMetadataEditor::putObject(jint arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"putObject",
 			"(ILjava/lang/Object;)Landroid/media/MediaMetadataEditor;",
 			arg0,
-			arg1
+			arg1.object<jobject>()
 		);
 	}
-	android::media::MediaMetadataEditor MediaMetadataEditor::putString(jint arg0, jstring arg1)
+	android::media::MediaMetadataEditor MediaMetadataEditor::putString(jint arg0, JString arg1)
 	{
 		return callObjectMethod(
 			"putString",
 			"(ILjava/lang/String;)Landroid/media/MediaMetadataEditor;",
 			arg0,
-			arg1
+			arg1.object<jstring>()
 		);
 	}
 	void MediaMetadataEditor::removeEditableKeys()

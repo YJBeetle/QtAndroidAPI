@@ -1,12 +1,13 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "../../../java/lang/Enum.hpp"
 
+class JArray;
 namespace android::icu::text
 {
 	class DisplayContext_Type;
 }
+class JString;
 
 namespace android::icu::text
 {
@@ -33,8 +34,8 @@ namespace android::icu::text
 		// Constructors
 		
 		// Methods
-		static android::icu::text::DisplayContext valueOf(jstring arg0);
-		static jarray values();
+		static android::icu::text::DisplayContext valueOf(JString arg0);
+		static JArray values();
 		android::icu::text::DisplayContext_Type type();
 		jint value();
 	};

@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./LogPrinter.hpp"
 
 namespace android::util
@@ -8,21 +9,21 @@ namespace android::util
 	LogPrinter::LogPrinter(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	LogPrinter::LogPrinter(jint arg0, jstring arg1)
+	LogPrinter::LogPrinter(jint arg0, JString arg1)
 		: JObject(
 			"android.util.LogPrinter",
 			"(ILjava/lang/String;)V",
 			arg0,
-			arg1
+			arg1.object<jstring>()
 		) {}
 	
 	// Methods
-	void LogPrinter::println(jstring arg0)
+	void LogPrinter::println(JString arg0)
 	{
 		callMethod<void>(
 			"println",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 } // namespace android::util

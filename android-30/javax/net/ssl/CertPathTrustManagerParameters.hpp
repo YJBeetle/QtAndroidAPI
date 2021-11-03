@@ -2,7 +2,6 @@
 
 #include "../../../JObject.hpp"
 
-
 namespace javax::net::ssl
 {
 	class CertPathTrustManagerParameters : public JObject

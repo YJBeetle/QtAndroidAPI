@@ -1,9 +1,9 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../lang/Exception.hpp"
 #include "./GeneralSecurityException.hpp"
 
+class JString;
+class JThrowable;
 
 namespace java::security
 {
@@ -18,9 +18,9 @@ namespace java::security
 		
 		// Constructors
 		NoSuchAlgorithmException();
-		NoSuchAlgorithmException(jstring arg0);
-		NoSuchAlgorithmException(jthrowable arg0);
-		NoSuchAlgorithmException(jstring arg0, jthrowable arg1);
+		NoSuchAlgorithmException(JString arg0);
+		NoSuchAlgorithmException(JThrowable arg0);
+		NoSuchAlgorithmException(JString arg0, JThrowable arg1);
 		
 		// Methods
 	};

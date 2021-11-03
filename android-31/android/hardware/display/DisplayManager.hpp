@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JArray;
 namespace android::hardware::display
 {
 	class VirtualDisplay;
@@ -22,6 +23,7 @@ namespace android::view
 {
 	class Surface;
 }
+class JString;
 
 namespace android::hardware::display
 {
@@ -29,7 +31,7 @@ namespace android::hardware::display
 	{
 	public:
 		// Fields
-		static jstring DISPLAY_CATEGORY_PRESENTATION();
+		static JString DISPLAY_CATEGORY_PRESENTATION();
 		static jint MATCH_CONTENT_FRAMERATE_ALWAYS();
 		static jint MATCH_CONTENT_FRAMERATE_NEVER();
 		static jint MATCH_CONTENT_FRAMERATE_SEAMLESSS_ONLY();
@@ -47,11 +49,11 @@ namespace android::hardware::display
 		// Constructors
 		
 		// Methods
-		android::hardware::display::VirtualDisplay createVirtualDisplay(jstring arg0, jint arg1, jint arg2, jint arg3, android::view::Surface arg4, jint arg5);
-		android::hardware::display::VirtualDisplay createVirtualDisplay(jstring arg0, jint arg1, jint arg2, jint arg3, android::view::Surface arg4, jint arg5, android::hardware::display::VirtualDisplay_Callback arg6, android::os::Handler arg7);
+		android::hardware::display::VirtualDisplay createVirtualDisplay(JString arg0, jint arg1, jint arg2, jint arg3, android::view::Surface arg4, jint arg5);
+		android::hardware::display::VirtualDisplay createVirtualDisplay(JString arg0, jint arg1, jint arg2, jint arg3, android::view::Surface arg4, jint arg5, android::hardware::display::VirtualDisplay_Callback arg6, android::os::Handler arg7);
 		android::view::Display getDisplay(jint arg0);
-		jarray getDisplays();
-		jarray getDisplays(jstring arg0);
+		JArray getDisplays();
+		JArray getDisplays(JString arg0);
 		jint getMatchContentFrameRateUserPreference();
 		void registerDisplayListener(JObject arg0, android::os::Handler arg1);
 		void unregisterDisplayListener(JObject arg0);

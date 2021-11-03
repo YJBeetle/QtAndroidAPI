@@ -2,10 +2,12 @@
 
 #include "../../JObject.hpp"
 
+class JIntArray;
 namespace android::animation
 {
 	class Animator;
 }
+class JObject;
 
 namespace android::animation
 {
@@ -22,7 +24,7 @@ namespace android::animation
 		StateListAnimator();
 		
 		// Methods
-		void addState(jintArray arg0, android::animation::Animator arg1);
+		void addState(JIntArray arg0, android::animation::Animator arg1);
 		android::animation::StateListAnimator clone();
 		void jumpToCurrentState();
 	};

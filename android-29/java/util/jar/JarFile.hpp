@@ -1,8 +1,9 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "../zip/ZipFile.hpp"
 
+class JByteArray;
+class JArray;
 namespace java::io
 {
 	class File;
@@ -11,6 +12,7 @@ namespace java::io
 {
 	class InputStream;
 }
+class JString;
 namespace java::lang
 {
 	class ThreadLocal;
@@ -46,7 +48,7 @@ namespace java::util::jar
 	{
 	public:
 		// Fields
-		static jstring MANIFEST_NAME();
+		static JString MANIFEST_NAME();
 		
 		// QJniObject forward
 		template<typename ...Ts> explicit JarFile(const char *className, const char *sig, Ts...agv) : java::util::zip::ZipFile(className, sig, std::forward<Ts>(agv)...) {}
@@ -54,9 +56,9 @@ namespace java::util::jar
 		
 		// Constructors
 		JarFile(java::io::File arg0);
-		JarFile(jstring arg0);
+		JarFile(JString arg0);
 		JarFile(java::io::File arg0, jboolean arg1);
-		JarFile(jstring arg0, jboolean arg1);
+		JarFile(JString arg0, jboolean arg1);
 		JarFile(java::io::File arg0, jboolean arg1, jint arg2);
 		JarFile(java::io::File arg0, jboolean arg1, jint arg2, JObject arg3);
 		
@@ -64,9 +66,9 @@ namespace java::util::jar
 		static JObject baseVersion();
 		static JObject runtimeVersion();
 		JObject entries();
-		java::util::zip::ZipEntry getEntry(jstring arg0);
+		java::util::zip::ZipEntry getEntry(JString arg0);
 		java::io::InputStream getInputStream(java::util::zip::ZipEntry arg0);
-		java::util::jar::JarEntry getJarEntry(jstring arg0);
+		java::util::jar::JarEntry getJarEntry(JString arg0);
 		java::util::jar::Manifest getManifest();
 		JObject getVersion();
 		jboolean isMultiRelease();

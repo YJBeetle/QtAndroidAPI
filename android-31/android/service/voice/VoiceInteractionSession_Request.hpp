@@ -6,6 +6,7 @@ namespace android::os
 {
 	class Bundle;
 }
+class JString;
 
 namespace android::service::voice
 {
@@ -22,11 +23,11 @@ namespace android::service::voice
 		
 		// Methods
 		void cancel();
-		jstring getCallingPackage();
+		JString getCallingPackage();
 		jint getCallingUid();
 		android::os::Bundle getExtras();
 		jboolean isActive();
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::service::voice
 

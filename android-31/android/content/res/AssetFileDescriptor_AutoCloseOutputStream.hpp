@@ -1,10 +1,8 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "../../../java/io/OutputStream.hpp"
-#include "../../../java/io/FileOutputStream.hpp"
 #include "../../os/ParcelFileDescriptor_AutoCloseOutputStream.hpp"
 
+class JByteArray;
 namespace android::content::res
 {
 	class AssetFileDescriptor;
@@ -25,9 +23,9 @@ namespace android::content::res
 		AssetFileDescriptor_AutoCloseOutputStream(android::content::res::AssetFileDescriptor arg0);
 		
 		// Methods
-		void write(jbyteArray arg0);
+		void write(JByteArray arg0);
 		void write(jint arg0);
-		void write(jbyteArray arg0, jint arg1, jint arg2);
+		void write(JByteArray arg0, jint arg1, jint arg2);
 	};
 } // namespace android::content::res
 

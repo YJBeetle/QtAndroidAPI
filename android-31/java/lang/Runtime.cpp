@@ -1,5 +1,8 @@
+#include "../../JArray.hpp"
 #include "../io/File.hpp"
+#include "../../JClass.hpp"
 #include "./Process.hpp"
+#include "../../JString.hpp"
 #include "./Thread.hpp"
 #include "./Runtime.hpp"
 
@@ -44,57 +47,57 @@ namespace java::lang
 			"()I"
 		);
 	}
-	java::lang::Process Runtime::exec(jarray arg0)
+	java::lang::Process Runtime::exec(JArray arg0)
 	{
 		return callObjectMethod(
 			"exec",
 			"([Ljava/lang/String;)Ljava/lang/Process;",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
-	java::lang::Process Runtime::exec(jstring arg0)
+	java::lang::Process Runtime::exec(JString arg0)
 	{
 		return callObjectMethod(
 			"exec",
 			"(Ljava/lang/String;)Ljava/lang/Process;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	java::lang::Process Runtime::exec(jarray arg0, jarray arg1)
+	java::lang::Process Runtime::exec(JArray arg0, JArray arg1)
 	{
 		return callObjectMethod(
 			"exec",
 			"([Ljava/lang/String;[Ljava/lang/String;)Ljava/lang/Process;",
-			arg0,
-			arg1
+			arg0.object<jarray>(),
+			arg1.object<jarray>()
 		);
 	}
-	java::lang::Process Runtime::exec(jstring arg0, jarray arg1)
+	java::lang::Process Runtime::exec(JString arg0, JArray arg1)
 	{
 		return callObjectMethod(
 			"exec",
 			"(Ljava/lang/String;[Ljava/lang/String;)Ljava/lang/Process;",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jarray>()
 		);
 	}
-	java::lang::Process Runtime::exec(jarray arg0, jarray arg1, java::io::File arg2)
+	java::lang::Process Runtime::exec(JArray arg0, JArray arg1, java::io::File arg2)
 	{
 		return callObjectMethod(
 			"exec",
 			"([Ljava/lang/String;[Ljava/lang/String;Ljava/io/File;)Ljava/lang/Process;",
-			arg0,
-			arg1,
+			arg0.object<jarray>(),
+			arg1.object<jarray>(),
 			arg2.object()
 		);
 	}
-	java::lang::Process Runtime::exec(jstring arg0, jarray arg1, java::io::File arg2)
+	java::lang::Process Runtime::exec(JString arg0, JArray arg1, java::io::File arg2)
 	{
 		return callObjectMethod(
 			"exec",
 			"(Ljava/lang/String;[Ljava/lang/String;Ljava/io/File;)Ljava/lang/Process;",
-			arg0,
-			arg1,
+			arg0.object<jstring>(),
+			arg1.object<jarray>(),
 			arg2.object()
 		);
 	}
@@ -128,20 +131,20 @@ namespace java::lang
 			arg0
 		);
 	}
-	void Runtime::load(jstring arg0)
+	void Runtime::load(JString arg0)
 	{
 		callMethod<void>(
 			"load",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	void Runtime::loadLibrary(jstring arg0)
+	void Runtime::loadLibrary(JString arg0)
 	{
 		callMethod<void>(
 			"loadLibrary",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	jlong Runtime::maxMemory()

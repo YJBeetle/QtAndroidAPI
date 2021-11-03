@@ -1,4 +1,5 @@
 #include "../os/Parcel.hpp"
+#include "../../JObject.hpp"
 #include "./BluetoothDeviceFilter.hpp"
 
 namespace android::companion
@@ -26,12 +27,12 @@ namespace android::companion
 			"()I"
 		);
 	}
-	jboolean BluetoothDeviceFilter::equals(jobject arg0)
+	jboolean BluetoothDeviceFilter::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint BluetoothDeviceFilter::hashCode()

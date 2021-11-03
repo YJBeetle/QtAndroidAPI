@@ -2,6 +2,7 @@
 #include "../view/View.hpp"
 #include "../view/ViewGroup_LayoutParams.hpp"
 #include "../view/animation/Animation.hpp"
+#include "../../JString.hpp"
 #include "./ViewAnimator.hpp"
 
 namespace android::widget
@@ -37,12 +38,12 @@ namespace android::widget
 			arg2.object()
 		);
 	}
-	jstring ViewAnimator::getAccessibilityClassName()
+	JString ViewAnimator::getAccessibilityClassName()
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	jboolean ViewAnimator::getAnimateFirstView()
 	{

@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JClass;
 
 namespace java::lang
 {
@@ -9,7 +10,7 @@ namespace java::lang
 	{
 	public:
 		// Fields
-		static jclass TYPE();
+		static JClass TYPE();
 		
 		// QJniObject forward
 		template<typename ...Ts> explicit Void(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}

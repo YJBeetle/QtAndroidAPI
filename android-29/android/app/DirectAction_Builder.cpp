@@ -1,6 +1,7 @@
 #include "./DirectAction.hpp"
 #include "../content/LocusId.hpp"
 #include "../os/Bundle.hpp"
+#include "../../JString.hpp"
 #include "./DirectAction_Builder.hpp"
 
 namespace android::app
@@ -11,11 +12,11 @@ namespace android::app
 	DirectAction_Builder::DirectAction_Builder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	DirectAction_Builder::DirectAction_Builder(jstring arg0)
+	DirectAction_Builder::DirectAction_Builder(JString arg0)
 		: JObject(
 			"android.app.DirectAction$Builder",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

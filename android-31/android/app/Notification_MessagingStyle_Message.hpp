@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JArray;
 namespace android::app
 {
 	class Person;
@@ -14,6 +15,8 @@ namespace android::os
 {
 	class Bundle;
 }
+class JString;
+class JString;
 
 namespace android::app
 {
@@ -27,19 +30,19 @@ namespace android::app
 		Notification_MessagingStyle_Message(QJniObject obj);
 		
 		// Constructors
-		Notification_MessagingStyle_Message(jstring arg0, jlong arg1, android::app::Person arg2);
-		Notification_MessagingStyle_Message(jstring arg0, jlong arg1, jstring arg2);
+		Notification_MessagingStyle_Message(JString arg0, jlong arg1, android::app::Person arg2);
+		Notification_MessagingStyle_Message(JString arg0, jlong arg1, JString arg2);
 		
 		// Methods
-		static JObject getMessagesFromBundleArray(jarray arg0);
-		jstring getDataMimeType();
+		static JObject getMessagesFromBundleArray(JArray arg0);
+		JString getDataMimeType();
 		android::net::Uri getDataUri();
 		android::os::Bundle getExtras();
-		jstring getSender();
+		JString getSender();
 		android::app::Person getSenderPerson();
-		jstring getText();
+		JString getText();
 		jlong getTimestamp();
-		android::app::Notification_MessagingStyle_Message setData(jstring arg0, android::net::Uri arg1);
+		android::app::Notification_MessagingStyle_Message setData(JString arg0, android::net::Uri arg1);
 	};
 } // namespace android::app
 

@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JByteArray;
 namespace java::security
 {
 	class AlgorithmParameters;

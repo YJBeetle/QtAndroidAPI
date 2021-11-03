@@ -18,6 +18,8 @@ namespace android::os
 {
 	class UserHandle;
 }
+class JString;
+class JString;
 
 namespace android::content::pm
 {
@@ -38,8 +40,8 @@ namespace android::content::pm
 		android::content::ComponentName getComponentName();
 		jlong getFirstInstallTime();
 		android::graphics::drawable::Drawable getIcon(jint arg0);
-		jstring getLabel();
-		jstring getName();
+		JString getLabel();
+		JString getName();
 		android::os::UserHandle getUser();
 	};
 } // namespace android::content::pm

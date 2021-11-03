@@ -1,3 +1,5 @@
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./Permission.hpp"
 #include "./PermissionCollection.hpp"
 #include "./AllPermission.hpp"
@@ -15,29 +17,29 @@ namespace java::security
 			"java.security.AllPermission",
 			"()V"
 		) {}
-	AllPermission::AllPermission(jstring arg0, jstring arg1)
+	AllPermission::AllPermission(JString arg0, JString arg1)
 		: java::security::Permission(
 			"java.security.AllPermission",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		) {}
 	
 	// Methods
-	jboolean AllPermission::equals(jobject arg0)
+	jboolean AllPermission::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jstring AllPermission::getActions()
+	JString AllPermission::getActions()
 	{
 		return callObjectMethod(
 			"getActions",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint AllPermission::hashCode()
 	{

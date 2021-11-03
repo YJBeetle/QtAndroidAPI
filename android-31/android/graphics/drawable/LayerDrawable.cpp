@@ -1,3 +1,5 @@
+#include "../../../JIntArray.hpp"
+#include "../../../JArray.hpp"
 #include "../../content/res/ColorStateList.hpp"
 #include "../../content/res/Resources.hpp"
 #include "../../content/res/Resources_Theme.hpp"
@@ -39,11 +41,11 @@ namespace android::graphics::drawable
 	LayerDrawable::LayerDrawable(QJniObject obj) : android::graphics::drawable::Drawable(obj) {}
 	
 	// Constructors
-	LayerDrawable::LayerDrawable(jarray arg0)
+	LayerDrawable::LayerDrawable(JArray arg0)
 		: android::graphics::drawable::Drawable(
 			"android.graphics.drawable.LayerDrawable",
 			"([Landroid/graphics/drawable/Drawable;)V",
-			arg0
+			arg0.object<jarray>()
 		) {}
 	
 	// Methods

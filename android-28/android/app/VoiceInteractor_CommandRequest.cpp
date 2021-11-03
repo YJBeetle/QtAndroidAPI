@@ -1,4 +1,5 @@
 #include "../os/Bundle.hpp"
+#include "../../JString.hpp"
 #include "./VoiceInteractor_CommandRequest.hpp"
 
 namespace android::app
@@ -9,11 +10,11 @@ namespace android::app
 	VoiceInteractor_CommandRequest::VoiceInteractor_CommandRequest(QJniObject obj) : android::app::VoiceInteractor_Request(obj) {}
 	
 	// Constructors
-	VoiceInteractor_CommandRequest::VoiceInteractor_CommandRequest(jstring arg0, android::os::Bundle arg1)
+	VoiceInteractor_CommandRequest::VoiceInteractor_CommandRequest(JString arg0, android::os::Bundle arg1)
 		: android::app::VoiceInteractor_Request(
 			"android.app.VoiceInteractor$CommandRequest",
 			"(Ljava/lang/String;Landroid/os/Bundle;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		) {}
 	

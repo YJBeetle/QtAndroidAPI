@@ -1,71 +1,72 @@
+#include "../../JString.hpp"
 #include "./DocumentsContract_Document.hpp"
 
 namespace android::provider
 {
 	// Fields
-	jstring DocumentsContract_Document::COLUMN_DISPLAY_NAME()
+	JString DocumentsContract_Document::COLUMN_DISPLAY_NAME()
 	{
 		return getStaticObjectField(
 			"android.provider.DocumentsContract$Document",
 			"COLUMN_DISPLAY_NAME",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DocumentsContract_Document::COLUMN_DOCUMENT_ID()
+	JString DocumentsContract_Document::COLUMN_DOCUMENT_ID()
 	{
 		return getStaticObjectField(
 			"android.provider.DocumentsContract$Document",
 			"COLUMN_DOCUMENT_ID",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DocumentsContract_Document::COLUMN_FLAGS()
+	JString DocumentsContract_Document::COLUMN_FLAGS()
 	{
 		return getStaticObjectField(
 			"android.provider.DocumentsContract$Document",
 			"COLUMN_FLAGS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DocumentsContract_Document::COLUMN_ICON()
+	JString DocumentsContract_Document::COLUMN_ICON()
 	{
 		return getStaticObjectField(
 			"android.provider.DocumentsContract$Document",
 			"COLUMN_ICON",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DocumentsContract_Document::COLUMN_LAST_MODIFIED()
+	JString DocumentsContract_Document::COLUMN_LAST_MODIFIED()
 	{
 		return getStaticObjectField(
 			"android.provider.DocumentsContract$Document",
 			"COLUMN_LAST_MODIFIED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DocumentsContract_Document::COLUMN_MIME_TYPE()
+	JString DocumentsContract_Document::COLUMN_MIME_TYPE()
 	{
 		return getStaticObjectField(
 			"android.provider.DocumentsContract$Document",
 			"COLUMN_MIME_TYPE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DocumentsContract_Document::COLUMN_SIZE()
+	JString DocumentsContract_Document::COLUMN_SIZE()
 	{
 		return getStaticObjectField(
 			"android.provider.DocumentsContract$Document",
 			"COLUMN_SIZE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DocumentsContract_Document::COLUMN_SUMMARY()
+	JString DocumentsContract_Document::COLUMN_SUMMARY()
 	{
 		return getStaticObjectField(
 			"android.provider.DocumentsContract$Document",
 			"COLUMN_SUMMARY",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint DocumentsContract_Document::FLAG_DIR_PREFERS_GRID()
 	{
@@ -158,13 +159,13 @@ namespace android::provider
 			"FLAG_WEB_LINKABLE"
 		);
 	}
-	jstring DocumentsContract_Document::MIME_TYPE_DIR()
+	JString DocumentsContract_Document::MIME_TYPE_DIR()
 	{
 		return getStaticObjectField(
 			"android.provider.DocumentsContract$Document",
 			"MIME_TYPE_DIR",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QJniObject forward

@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./SQLiteQuery.hpp"
 
 namespace android::database::sqlite
@@ -10,12 +11,12 @@ namespace android::database::sqlite
 	// Constructors
 	
 	// Methods
-	jstring SQLiteQuery::toString()
+	JString SQLiteQuery::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::database::sqlite
 

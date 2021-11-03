@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "../KeyStore.hpp"
 #include "./PKIXBuilderParameters.hpp"
 
@@ -40,12 +41,12 @@ namespace java::security::cert
 			arg0
 		);
 	}
-	jstring PKIXBuilderParameters::toString()
+	JString PKIXBuilderParameters::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::security::cert
 

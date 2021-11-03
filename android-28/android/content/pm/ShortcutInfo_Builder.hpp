@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JArray;
 namespace android::content
 {
 	class ComponentName;
@@ -26,6 +27,8 @@ namespace android::os
 {
 	class PersistableBundle;
 }
+class JString;
+class JString;
 
 namespace android::content::pm
 {
@@ -39,20 +42,20 @@ namespace android::content::pm
 		ShortcutInfo_Builder(QJniObject obj);
 		
 		// Constructors
-		ShortcutInfo_Builder(android::content::Context arg0, jstring arg1);
+		ShortcutInfo_Builder(android::content::Context arg0, JString arg1);
 		
 		// Methods
 		android::content::pm::ShortcutInfo build();
 		android::content::pm::ShortcutInfo_Builder setActivity(android::content::ComponentName arg0);
 		android::content::pm::ShortcutInfo_Builder setCategories(JObject arg0);
-		android::content::pm::ShortcutInfo_Builder setDisabledMessage(jstring arg0);
+		android::content::pm::ShortcutInfo_Builder setDisabledMessage(JString arg0);
 		android::content::pm::ShortcutInfo_Builder setExtras(android::os::PersistableBundle arg0);
 		android::content::pm::ShortcutInfo_Builder setIcon(android::graphics::drawable::Icon arg0);
 		android::content::pm::ShortcutInfo_Builder setIntent(android::content::Intent arg0);
-		android::content::pm::ShortcutInfo_Builder setIntents(jarray arg0);
-		android::content::pm::ShortcutInfo_Builder setLongLabel(jstring arg0);
+		android::content::pm::ShortcutInfo_Builder setIntents(JArray arg0);
+		android::content::pm::ShortcutInfo_Builder setLongLabel(JString arg0);
 		android::content::pm::ShortcutInfo_Builder setRank(jint arg0);
-		android::content::pm::ShortcutInfo_Builder setShortLabel(jstring arg0);
+		android::content::pm::ShortcutInfo_Builder setShortLabel(JString arg0);
 	};
 } // namespace android::content::pm
 

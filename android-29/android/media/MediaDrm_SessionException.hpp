@@ -1,9 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../../java/lang/Exception.hpp"
 #include "../../java/lang/RuntimeException.hpp"
 
+class JString;
 
 namespace android::media
 {
@@ -19,7 +18,7 @@ namespace android::media
 		MediaDrm_SessionException(QJniObject obj);
 		
 		// Constructors
-		MediaDrm_SessionException(jint arg0, jstring arg1);
+		MediaDrm_SessionException(jint arg0, JString arg1);
 		
 		// Methods
 		jint getErrorCode();

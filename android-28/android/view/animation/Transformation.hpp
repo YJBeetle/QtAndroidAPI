@@ -6,6 +6,7 @@ namespace android::graphics
 {
 	class Matrix;
 }
+class JString;
 
 namespace android::view::animation
 {
@@ -34,8 +35,8 @@ namespace android::view::animation
 		void set(android::view::animation::Transformation arg0);
 		void setAlpha(jfloat arg0);
 		void setTransformationType(jint arg0);
-		jstring toShortString();
-		jstring toString();
+		JString toShortString();
+		JString toString();
 	};
 } // namespace android::view::animation
 

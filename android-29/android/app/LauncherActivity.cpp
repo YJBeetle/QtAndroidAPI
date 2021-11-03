@@ -3,6 +3,7 @@
 #include "../os/Bundle.hpp"
 #include "../view/View.hpp"
 #include "../widget/ListView.hpp"
+#include "../../JString.hpp"
 #include "./LauncherActivity.hpp"
 
 namespace android::app
@@ -35,12 +36,12 @@ namespace android::app
 			arg0
 		);
 	}
-	void LauncherActivity::setTitle(jstring arg0)
+	void LauncherActivity::setTitle(JString arg0)
 	{
 		callMethod<void>(
 			"setTitle",
 			"(Ljava/lang/CharSequence;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 } // namespace android::app

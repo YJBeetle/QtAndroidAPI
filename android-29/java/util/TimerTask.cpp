@@ -1,3 +1,4 @@
+#include "../../JObject.hpp"
 #include "./TimerTask.hpp"
 
 namespace java::util

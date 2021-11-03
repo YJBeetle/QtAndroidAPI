@@ -1,4 +1,7 @@
 #include "../io/ObjectInputStream.hpp"
+#include "../../JString.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./Clock.hpp"
 #include "./DayOfWeek.hpp"
 #include "./Instant.hpp"
@@ -189,22 +192,22 @@ namespace java::time
 			arg1.object()
 		);
 	}
-	java::time::LocalDateTime LocalDateTime::parse(jstring arg0)
+	java::time::LocalDateTime LocalDateTime::parse(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"java.time.LocalDateTime",
 			"parse",
 			"(Ljava/lang/CharSequence;)Ljava/time/LocalDateTime;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	java::time::LocalDateTime LocalDateTime::parse(jstring arg0, java::time::format::DateTimeFormatter arg1)
+	java::time::LocalDateTime LocalDateTime::parse(JString arg0, java::time::format::DateTimeFormatter arg1)
 	{
 		return callStaticObjectMethod(
 			"java.time.LocalDateTime",
 			"parse",
 			"(Ljava/lang/CharSequence;Ljava/time/format/DateTimeFormatter;)Ljava/time/LocalDateTime;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
@@ -232,37 +235,29 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	jint LocalDateTime::compareTo(jobject arg0)
-	{
-		return callMethod<jint>(
-			"compareTo",
-			"(Ljava/lang/Object;)I",
-			arg0
-		);
-	}
 	jint LocalDateTime::compareTo(JObject arg0)
 	{
 		return callMethod<jint>(
 			"compareTo",
-			"(Ljava/time/chrono/ChronoLocalDateTime;)I",
-			arg0.object()
+			"(Ljava/lang/Object;)I",
+			arg0.object<jobject>()
 		);
 	}
-	jboolean LocalDateTime::equals(jobject arg0)
+	jboolean LocalDateTime::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jstring LocalDateTime::format(java::time::format::DateTimeFormatter arg0)
+	JString LocalDateTime::format(java::time::format::DateTimeFormatter arg0)
 	{
 		return callObjectMethod(
 			"format",
 			"(Ljava/time/format/DateTimeFormatter;)Ljava/lang/String;",
 			arg0.object()
-		).object<jstring>();
+		);
 	}
 	jint LocalDateTime::get(JObject arg0)
 	{
@@ -551,13 +546,13 @@ namespace java::time
 			arg0
 		);
 	}
-	jobject LocalDateTime::query(JObject arg0)
+	JObject LocalDateTime::query(JObject arg0)
 	{
 		return callObjectMethod(
 			"query",
 			"(Ljava/time/temporal/TemporalQuery;)Ljava/lang/Object;",
 			arg0.object()
-		).object<jobject>();
+		);
 	}
 	java::time::temporal::ValueRange LocalDateTime::range(JObject arg0)
 	{
@@ -581,12 +576,12 @@ namespace java::time
 			"()Ljava/time/LocalTime;"
 		);
 	}
-	jstring LocalDateTime::toString()
+	JString LocalDateTime::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	java::time::LocalDateTime LocalDateTime::truncatedTo(JObject arg0)
 	{

@@ -6,6 +6,7 @@ namespace android::net
 {
 	class Uri;
 }
+class JString;
 
 namespace android::provider
 {
@@ -13,15 +14,15 @@ namespace android::provider
 	{
 	public:
 		// Fields
-		static jstring AUTHORITY();
+		static JString AUTHORITY();
 		static android::net::Uri BASE_URI();
-		static jstring KEY_AIRPLANE_MODE();
-		static jstring KEY_BATTERY_SAVER();
-		static jstring KEY_BLUETOOTH();
-		static jstring KEY_LOCATION();
-		static jstring KEY_WIFI();
-		static jstring PATH_SETTING_ACTION();
-		static jstring PATH_SETTING_INTENT();
+		static JString KEY_AIRPLANE_MODE();
+		static JString KEY_BATTERY_SAVER();
+		static JString KEY_BLUETOOTH();
+		static JString KEY_LOCATION();
+		static JString KEY_WIFI();
+		static JString PATH_SETTING_ACTION();
+		static JString PATH_SETTING_INTENT();
 		
 		// QJniObject forward
 		template<typename ...Ts> explicit SettingsSlicesContract(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}

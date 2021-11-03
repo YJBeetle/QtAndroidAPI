@@ -10,6 +10,8 @@ namespace java::io
 {
 	class File;
 }
+class JObject;
+class JString;
 
 namespace android::graphics
 {
@@ -35,13 +37,13 @@ namespace android::graphics
 		
 		// Methods
 		static android::graphics::Typeface create(android::graphics::Typeface arg0, jint arg1);
-		static android::graphics::Typeface create(jstring arg0, jint arg1);
+		static android::graphics::Typeface create(JString arg0, jint arg1);
 		static android::graphics::Typeface create(android::graphics::Typeface arg0, jint arg1, jboolean arg2);
-		static android::graphics::Typeface createFromAsset(android::content::res::AssetManager arg0, jstring arg1);
+		static android::graphics::Typeface createFromAsset(android::content::res::AssetManager arg0, JString arg1);
 		static android::graphics::Typeface createFromFile(java::io::File arg0);
-		static android::graphics::Typeface createFromFile(jstring arg0);
+		static android::graphics::Typeface createFromFile(JString arg0);
 		static android::graphics::Typeface defaultFromStyle(jint arg0);
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint getStyle();
 		jint getWeight();
 		jint hashCode();

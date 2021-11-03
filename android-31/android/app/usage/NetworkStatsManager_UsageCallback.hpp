@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JString;
 
 namespace android::app::usage
 {
@@ -18,7 +19,7 @@ namespace android::app::usage
 		NetworkStatsManager_UsageCallback();
 		
 		// Methods
-		void onThresholdReached(jint arg0, jstring arg1);
+		void onThresholdReached(jint arg0, JString arg1);
 	};
 } // namespace android::app::usage
 

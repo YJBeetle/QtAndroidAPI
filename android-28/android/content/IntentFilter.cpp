@@ -4,6 +4,7 @@
 #include "../net/Uri.hpp"
 #include "../os/Parcel.hpp"
 #include "../os/PatternMatcher.hpp"
+#include "../../JString.hpp"
 #include "./IntentFilter.hpp"
 
 namespace android::content
@@ -145,29 +146,29 @@ namespace android::content
 			"(Landroid/content/IntentFilter;)V",
 			arg0.object()
 		) {}
-	IntentFilter::IntentFilter(jstring arg0)
+	IntentFilter::IntentFilter(JString arg0)
 		: JObject(
 			"android.content.IntentFilter",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	IntentFilter::IntentFilter(jstring arg0, jstring arg1)
+	IntentFilter::IntentFilter(JString arg0, JString arg1)
 		: JObject(
 			"android.content.IntentFilter",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		) {}
 	
 	// Methods
-	android::content::IntentFilter IntentFilter::create(jstring arg0, jstring arg1)
+	android::content::IntentFilter IntentFilter::create(JString arg0, JString arg1)
 	{
 		return callStaticObjectMethod(
 			"android.content.IntentFilter",
 			"create",
 			"(Ljava/lang/String;Ljava/lang/String;)Landroid/content/IntentFilter;",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		);
 	}
 	JObject IntentFilter::actionsIterator()
@@ -177,63 +178,63 @@ namespace android::content
 			"()Ljava/util/Iterator;"
 		);
 	}
-	void IntentFilter::addAction(jstring arg0)
+	void IntentFilter::addAction(JString arg0)
 	{
 		callMethod<void>(
 			"addAction",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	void IntentFilter::addCategory(jstring arg0)
+	void IntentFilter::addCategory(JString arg0)
 	{
 		callMethod<void>(
 			"addCategory",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	void IntentFilter::addDataAuthority(jstring arg0, jstring arg1)
+	void IntentFilter::addDataAuthority(JString arg0, JString arg1)
 	{
 		callMethod<void>(
 			"addDataAuthority",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		);
 	}
-	void IntentFilter::addDataPath(jstring arg0, jint arg1)
+	void IntentFilter::addDataPath(JString arg0, jint arg1)
 	{
 		callMethod<void>(
 			"addDataPath",
 			"(Ljava/lang/String;I)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
-	void IntentFilter::addDataScheme(jstring arg0)
+	void IntentFilter::addDataScheme(JString arg0)
 	{
 		callMethod<void>(
 			"addDataScheme",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	void IntentFilter::addDataSchemeSpecificPart(jstring arg0, jint arg1)
+	void IntentFilter::addDataSchemeSpecificPart(JString arg0, jint arg1)
 	{
 		callMethod<void>(
 			"addDataSchemeSpecificPart",
 			"(Ljava/lang/String;I)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
-	void IntentFilter::addDataType(jstring arg0)
+	void IntentFilter::addDataType(JString arg0)
 	{
 		callMethod<void>(
 			"addDataType",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	JObject IntentFilter::authoritiesIterator()
@@ -306,30 +307,30 @@ namespace android::content
 			"()I"
 		);
 	}
-	void IntentFilter::dump(JObject arg0, jstring arg1)
+	void IntentFilter::dump(JObject arg0, JString arg1)
 	{
 		callMethod<void>(
 			"dump",
 			"(Landroid/util/Printer;Ljava/lang/String;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
-	jstring IntentFilter::getAction(jint arg0)
+	JString IntentFilter::getAction(jint arg0)
 	{
 		return callObjectMethod(
 			"getAction",
 			"(I)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
-	jstring IntentFilter::getCategory(jint arg0)
+	JString IntentFilter::getCategory(jint arg0)
 	{
 		return callObjectMethod(
 			"getCategory",
 			"(I)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
 	android::content::IntentFilter_AuthorityEntry IntentFilter::getDataAuthority(jint arg0)
 	{
@@ -347,13 +348,13 @@ namespace android::content
 			arg0
 		);
 	}
-	jstring IntentFilter::getDataScheme(jint arg0)
+	JString IntentFilter::getDataScheme(jint arg0)
 	{
 		return callObjectMethod(
 			"getDataScheme",
 			"(I)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
 	android::os::PatternMatcher IntentFilter::getDataSchemeSpecificPart(jint arg0)
 	{
@@ -363,13 +364,13 @@ namespace android::content
 			arg0
 		);
 	}
-	jstring IntentFilter::getDataType(jint arg0)
+	JString IntentFilter::getDataType(jint arg0)
 	{
 		return callObjectMethod(
 			"getDataType",
 			"(I)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
 	jint IntentFilter::getPriority()
 	{
@@ -378,20 +379,20 @@ namespace android::content
 			"()I"
 		);
 	}
-	jboolean IntentFilter::hasAction(jstring arg0)
+	jboolean IntentFilter::hasAction(JString arg0)
 	{
 		return callMethod<jboolean>(
 			"hasAction",
 			"(Ljava/lang/String;)Z",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jboolean IntentFilter::hasCategory(jstring arg0)
+	jboolean IntentFilter::hasCategory(JString arg0)
 	{
 		return callMethod<jboolean>(
 			"hasCategory",
 			"(Ljava/lang/String;)Z",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	jboolean IntentFilter::hasDataAuthority(android::net::Uri arg0)
@@ -402,39 +403,39 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	jboolean IntentFilter::hasDataPath(jstring arg0)
+	jboolean IntentFilter::hasDataPath(JString arg0)
 	{
 		return callMethod<jboolean>(
 			"hasDataPath",
 			"(Ljava/lang/String;)Z",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jboolean IntentFilter::hasDataScheme(jstring arg0)
+	jboolean IntentFilter::hasDataScheme(JString arg0)
 	{
 		return callMethod<jboolean>(
 			"hasDataScheme",
 			"(Ljava/lang/String;)Z",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jboolean IntentFilter::hasDataSchemeSpecificPart(jstring arg0)
+	jboolean IntentFilter::hasDataSchemeSpecificPart(JString arg0)
 	{
 		return callMethod<jboolean>(
 			"hasDataSchemeSpecificPart",
 			"(Ljava/lang/String;)Z",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jboolean IntentFilter::hasDataType(jstring arg0)
+	jboolean IntentFilter::hasDataType(JString arg0)
 	{
 		return callMethod<jboolean>(
 			"hasDataType",
 			"(Ljava/lang/String;)Z",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jint IntentFilter::match(android::content::ContentResolver arg0, android::content::Intent arg1, jboolean arg2, jstring arg3)
+	jint IntentFilter::match(android::content::ContentResolver arg0, android::content::Intent arg1, jboolean arg2, JString arg3)
 	{
 		return callMethod<jint>(
 			"match",
@@ -442,45 +443,45 @@ namespace android::content
 			arg0.object(),
 			arg1.object(),
 			arg2,
-			arg3
+			arg3.object<jstring>()
 		);
 	}
-	jint IntentFilter::match(jstring arg0, jstring arg1, jstring arg2, android::net::Uri arg3, JObject arg4, jstring arg5)
+	jint IntentFilter::match(JString arg0, JString arg1, JString arg2, android::net::Uri arg3, JObject arg4, JString arg5)
 	{
 		return callMethod<jint>(
 			"match",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/net/Uri;Ljava/util/Set;Ljava/lang/String;)I",
-			arg0,
-			arg1,
-			arg2,
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2.object<jstring>(),
 			arg3.object(),
 			arg4.object(),
-			arg5
+			arg5.object<jstring>()
 		);
 	}
-	jboolean IntentFilter::matchAction(jstring arg0)
+	jboolean IntentFilter::matchAction(JString arg0)
 	{
 		return callMethod<jboolean>(
 			"matchAction",
 			"(Ljava/lang/String;)Z",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jstring IntentFilter::matchCategories(JObject arg0)
+	JString IntentFilter::matchCategories(JObject arg0)
 	{
 		return callObjectMethod(
 			"matchCategories",
 			"(Ljava/util/Set;)Ljava/lang/String;",
 			arg0.object()
-		).object<jstring>();
+		);
 	}
-	jint IntentFilter::matchData(jstring arg0, jstring arg1, android::net::Uri arg2)
+	jint IntentFilter::matchData(JString arg0, JString arg1, android::net::Uri arg2)
 	{
 		return callMethod<jint>(
 			"matchData",
 			"(Ljava/lang/String;Ljava/lang/String;Landroid/net/Uri;)I",
-			arg0,
-			arg1,
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
 			arg2.object()
 		);
 	}

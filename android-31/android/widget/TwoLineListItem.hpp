@@ -1,8 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../view/View.hpp"
-#include "../view/ViewGroup.hpp"
 #include "./RelativeLayout.hpp"
 
 namespace android::content
@@ -13,6 +10,7 @@ namespace android::widget
 {
 	class TextView;
 }
+class JString;
 
 namespace android::widget
 {
@@ -32,7 +30,7 @@ namespace android::widget
 		TwoLineListItem(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
-		jstring getAccessibilityClassName();
+		JString getAccessibilityClassName();
 		android::widget::TextView getText1();
 		android::widget::TextView getText2();
 	};

@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "./Reference.hpp"
 
+class JObject;
 namespace java::lang::ref
 {
 	class ReferenceQueue;
@@ -20,10 +20,10 @@ namespace java::lang::ref
 		PhantomReference(QJniObject obj);
 		
 		// Constructors
-		PhantomReference(jobject arg0, java::lang::ref::ReferenceQueue arg1);
+		PhantomReference(JObject arg0, java::lang::ref::ReferenceQueue arg1);
 		
 		// Methods
-		jobject get();
+		JObject get();
 	};
 } // namespace java::lang::ref
 

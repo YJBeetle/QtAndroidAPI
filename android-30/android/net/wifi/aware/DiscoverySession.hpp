@@ -2,6 +2,7 @@
 
 #include "../../../../JObject.hpp"
 
+class JByteArray;
 namespace android::net
 {
 	class NetworkSpecifier;
@@ -10,6 +11,7 @@ namespace android::net::wifi::aware
 {
 	class PeerHandle;
 }
+class JString;
 
 namespace android::net::wifi::aware
 {
@@ -27,8 +29,8 @@ namespace android::net::wifi::aware
 		// Methods
 		void close();
 		android::net::NetworkSpecifier createNetworkSpecifierOpen(android::net::wifi::aware::PeerHandle arg0);
-		android::net::NetworkSpecifier createNetworkSpecifierPassphrase(android::net::wifi::aware::PeerHandle arg0, jstring arg1);
-		void sendMessage(android::net::wifi::aware::PeerHandle arg0, jint arg1, jbyteArray arg2);
+		android::net::NetworkSpecifier createNetworkSpecifierPassphrase(android::net::wifi::aware::PeerHandle arg0, JString arg1);
+		void sendMessage(android::net::wifi::aware::PeerHandle arg0, jint arg1, JByteArray arg2);
 	};
 } // namespace android::net::wifi::aware
 

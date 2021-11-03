@@ -6,6 +6,7 @@ namespace android::drm
 {
 	class ProcessedData;
 }
+class JString;
 
 namespace android::drm
 {
@@ -17,7 +18,7 @@ namespace android::drm
 		static jint STATUS_OK();
 		android::drm::ProcessedData data();
 		jint infoType();
-		jstring mimeType();
+		JString mimeType();
 		jint statusCode();
 		
 		// QJniObject forward
@@ -25,7 +26,7 @@ namespace android::drm
 		DrmInfoStatus(QJniObject obj);
 		
 		// Constructors
-		DrmInfoStatus(jint arg0, jint arg1, android::drm::ProcessedData arg2, jstring arg3);
+		DrmInfoStatus(jint arg0, jint arg1, android::drm::ProcessedData arg2, JString arg3);
 		
 		// Methods
 	};

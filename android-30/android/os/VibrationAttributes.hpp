@@ -6,6 +6,8 @@ namespace android::os
 {
 	class Parcel;
 }
+class JObject;
+class JString;
 
 namespace android::os
 {
@@ -36,13 +38,13 @@ namespace android::os
 		
 		// Methods
 		jint describeContents();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint getFlags();
 		jint getUsage();
 		jint getUsageClass();
 		jint hashCode();
 		jboolean isFlagSet(jint arg0);
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::os

@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./IllegalAccessError.hpp"
 
 namespace java::lang
@@ -13,11 +14,11 @@ namespace java::lang
 			"java.lang.IllegalAccessError",
 			"()V"
 		) {}
-	IllegalAccessError::IllegalAccessError(jstring arg0)
+	IllegalAccessError::IllegalAccessError(JString arg0)
 		: java::lang::IncompatibleClassChangeError(
 			"java.lang.IllegalAccessError",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

@@ -1,13 +1,12 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../../java/lang/ClassLoader.hpp"
 #include "./BaseDexClassLoader.hpp"
 
 namespace java::lang
 {
 	class ClassLoader;
 }
+class JString;
 
 namespace dalvik::system
 {
@@ -21,7 +20,7 @@ namespace dalvik::system
 		DexClassLoader(QJniObject obj);
 		
 		// Constructors
-		DexClassLoader(jstring arg0, jstring arg1, jstring arg2, java::lang::ClassLoader arg3);
+		DexClassLoader(JString arg0, JString arg1, JString arg2, java::lang::ClassLoader arg3);
 		
 		// Methods
 	};

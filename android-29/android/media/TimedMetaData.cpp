@@ -1,3 +1,4 @@
+#include "../../JByteArray.hpp"
 #include "./TimedMetaData.hpp"
 
 namespace android::media
@@ -8,21 +9,21 @@ namespace android::media
 	TimedMetaData::TimedMetaData(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	TimedMetaData::TimedMetaData(jlong arg0, jbyteArray arg1)
+	TimedMetaData::TimedMetaData(jlong arg0, JByteArray arg1)
 		: JObject(
 			"android.media.TimedMetaData",
 			"(J[B)V",
 			arg0,
-			arg1
+			arg1.object<jbyteArray>()
 		) {}
 	
 	// Methods
-	jbyteArray TimedMetaData::getMetaData()
+	JByteArray TimedMetaData::getMetaData()
 	{
 		return callObjectMethod(
 			"getMetaData",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
 	jlong TimedMetaData::getTimestamp()
 	{

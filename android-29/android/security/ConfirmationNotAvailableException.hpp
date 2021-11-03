@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "../../java/lang/Exception.hpp"
 
+class JString;
 
 namespace android::security
 {
@@ -17,7 +17,7 @@ namespace android::security
 		
 		// Constructors
 		ConfirmationNotAvailableException();
-		ConfirmationNotAvailableException(jstring arg0);
+		ConfirmationNotAvailableException(JString arg0);
 		
 		// Methods
 	};

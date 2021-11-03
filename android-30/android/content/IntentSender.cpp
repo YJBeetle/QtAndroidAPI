@@ -3,6 +3,8 @@
 #include "../os/Handler.hpp"
 #include "../os/Parcel.hpp"
 #include "../os/UserHandle.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./IntentSender.hpp"
 
 namespace android::content
@@ -49,20 +51,20 @@ namespace android::content
 			"()I"
 		);
 	}
-	jboolean IntentSender::equals(jobject arg0)
+	jboolean IntentSender::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jstring IntentSender::getCreatorPackage()
+	JString IntentSender::getCreatorPackage()
 	{
 		return callObjectMethod(
 			"getCreatorPackage",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint IntentSender::getCreatorUid()
 	{
@@ -78,12 +80,12 @@ namespace android::content
 			"()Landroid/os/UserHandle;"
 		);
 	}
-	jstring IntentSender::getTargetPackage()
+	JString IntentSender::getTargetPackage()
 	{
 		return callObjectMethod(
 			"getTargetPackage",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint IntentSender::hashCode()
 	{
@@ -104,7 +106,7 @@ namespace android::content
 			arg4.object()
 		);
 	}
-	void IntentSender::sendIntent(android::content::Context arg0, jint arg1, android::content::Intent arg2, JObject arg3, android::os::Handler arg4, jstring arg5)
+	void IntentSender::sendIntent(android::content::Context arg0, jint arg1, android::content::Intent arg2, JObject arg3, android::os::Handler arg4, JString arg5)
 	{
 		callMethod<void>(
 			"sendIntent",
@@ -114,15 +116,15 @@ namespace android::content
 			arg2.object(),
 			arg3.object(),
 			arg4.object(),
-			arg5
+			arg5.object<jstring>()
 		);
 	}
-	jstring IntentSender::toString()
+	JString IntentSender::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void IntentSender::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

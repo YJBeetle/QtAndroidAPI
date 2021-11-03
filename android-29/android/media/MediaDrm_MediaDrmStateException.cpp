@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./MediaDrm_MediaDrmStateException.hpp"
 
 namespace android::media
@@ -10,12 +11,12 @@ namespace android::media
 	// Constructors
 	
 	// Methods
-	jstring MediaDrm_MediaDrmStateException::getDiagnosticInfo()
+	JString MediaDrm_MediaDrmStateException::getDiagnosticInfo()
 	{
 		return callObjectMethod(
 			"getDiagnosticInfo",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::media
 

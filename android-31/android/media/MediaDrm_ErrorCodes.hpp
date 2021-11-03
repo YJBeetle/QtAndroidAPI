@@ -2,7 +2,6 @@
 
 #include "../../JObject.hpp"
 
-
 namespace android::media
 {
 	class MediaDrm_ErrorCodes : public JObject

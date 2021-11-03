@@ -1,9 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "./Error.hpp"
 #include "./LinkageError.hpp"
 
+class JString;
 
 namespace java::lang
 {
@@ -18,7 +17,7 @@ namespace java::lang
 		
 		// Constructors
 		ClassFormatError();
-		ClassFormatError(jstring arg0);
+		ClassFormatError(JString arg0);
 		
 		// Methods
 	};

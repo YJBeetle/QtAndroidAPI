@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JString;
 
 namespace java::nio::channels
 {
@@ -20,7 +21,7 @@ namespace java::nio::channels
 		// Constructors
 		
 		// Methods
-		jstring toString();
+		JString toString();
 	};
 } // namespace java::nio::channels
 

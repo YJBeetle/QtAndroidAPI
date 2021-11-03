@@ -1,5 +1,6 @@
 #include "./TimeZone.hpp"
 #include "./ULocale.hpp"
+#include "../../../JString.hpp"
 #include "../../../java/util/Date.hpp"
 #include "../../../java/util/Locale.hpp"
 #include "./BuddhistCalendar.hpp"
@@ -83,12 +84,12 @@ namespace android::icu::util
 		) {}
 	
 	// Methods
-	jstring BuddhistCalendar::getType()
+	JString BuddhistCalendar::getType()
 	{
 		return callObjectMethod(
 			"getType",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::icu::util
 

@@ -1,6 +1,5 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "./Drawable.hpp"
 
 namespace android::graphics

@@ -1,8 +1,9 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./AbstractMap.hpp"
 
+class JArray;
+class JObjectArray;
 namespace java::io
 {
 	class ObjectInputStream;
@@ -11,10 +12,12 @@ namespace java::io
 {
 	class ObjectOutputStream;
 }
+class JClass;
 namespace java::lang
 {
 	class Enum;
 }
+class JObject;
 
 namespace java::util
 {
@@ -28,24 +31,24 @@ namespace java::util
 		EnumMap(QJniObject obj);
 		
 		// Constructors
-		EnumMap(jclass arg0);
+		EnumMap(JClass arg0);
 		EnumMap(java::util::EnumMap &arg0);
 		EnumMap(JObject arg0);
 		
 		// Methods
 		void clear();
 		java::util::EnumMap clone();
-		jboolean containsKey(jobject arg0);
-		jboolean containsValue(jobject arg0);
+		jboolean containsKey(JObject arg0);
+		jboolean containsValue(JObject arg0);
 		JObject entrySet();
-		jboolean equals(jobject arg0);
-		jobject get(jobject arg0);
+		jboolean equals(JObject arg0);
+		JObject get(JObject arg0);
 		jint hashCode();
 		JObject keySet();
-		jobject put(java::lang::Enum arg0, jobject arg1);
-		jobject put(jobject arg0, jobject arg1);
+		JObject put(java::lang::Enum arg0, JObject arg1);
+		JObject put(JObject arg0, JObject arg1);
 		void putAll(JObject arg0);
-		jobject remove(jobject arg0);
+		JObject remove(JObject arg0);
 		jint size();
 		JObject values();
 	};

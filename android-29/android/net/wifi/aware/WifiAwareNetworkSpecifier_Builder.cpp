@@ -1,6 +1,7 @@
 #include "./DiscoverySession.hpp"
 #include "./PeerHandle.hpp"
 #include "./WifiAwareNetworkSpecifier.hpp"
+#include "../../../../JString.hpp"
 #include "./WifiAwareNetworkSpecifier_Builder.hpp"
 
 namespace android::net::wifi::aware
@@ -35,12 +36,12 @@ namespace android::net::wifi::aware
 			arg0
 		);
 	}
-	android::net::wifi::aware::WifiAwareNetworkSpecifier_Builder WifiAwareNetworkSpecifier_Builder::setPskPassphrase(jstring arg0)
+	android::net::wifi::aware::WifiAwareNetworkSpecifier_Builder WifiAwareNetworkSpecifier_Builder::setPskPassphrase(JString arg0)
 	{
 		return callObjectMethod(
 			"setPskPassphrase",
 			"(Ljava/lang/String;)Landroid/net/wifi/aware/WifiAwareNetworkSpecifier$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::net::wifi::aware::WifiAwareNetworkSpecifier_Builder WifiAwareNetworkSpecifier_Builder::setTransportProtocol(jint arg0)

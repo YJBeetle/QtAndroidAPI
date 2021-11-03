@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JArray;
+class JArray;
 namespace java::net
 {
 	class SocketAddress;
@@ -13,9 +15,9 @@ namespace android::system
 	{
 	public:
 		// Fields
-		jarray msg_control();
+		JArray msg_control();
 		jint msg_flags();
-		jarray msg_iov();
+		JArray msg_iov();
 		java::net::SocketAddress msg_name();
 		
 		// QJniObject forward
@@ -23,7 +25,7 @@ namespace android::system
 		StructMsghdr(QJniObject obj);
 		
 		// Constructors
-		StructMsghdr(java::net::SocketAddress arg0, jarray arg1, jarray arg2, jint arg3);
+		StructMsghdr(java::net::SocketAddress arg0, JArray arg1, JArray arg2, jint arg3);
 		
 		// Methods
 	};

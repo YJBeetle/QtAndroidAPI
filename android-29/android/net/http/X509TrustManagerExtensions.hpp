@@ -2,6 +2,8 @@
 
 #include "../../../JObject.hpp"
 
+class JArray;
+class JString;
 namespace java::security::cert
 {
 	class X509Certificate;
@@ -22,8 +24,8 @@ namespace android::net::http
 		X509TrustManagerExtensions(JObject arg0);
 		
 		// Methods
-		JObject checkServerTrusted(jarray arg0, jstring arg1, jstring arg2);
-		jboolean isSameTrustConfiguration(jstring arg0, jstring arg1);
+		JObject checkServerTrusted(JArray arg0, JString arg1, JString arg2);
+		jboolean isSameTrustConfiguration(JString arg0, JString arg1);
 		jboolean isUserAddedCertificate(java::security::cert::X509Certificate arg0);
 	};
 } // namespace android::net::http

@@ -1,3 +1,4 @@
+#include "../../../../JObject.hpp"
 #include "../../../lang/Thread.hpp"
 #include "./AbstractInterruptibleChannel.hpp"
 

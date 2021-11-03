@@ -1,5 +1,6 @@
 #include "./MediaCas_Session.hpp"
 #include "./MediaCodec_CryptoInfo.hpp"
+#include "../../JString.hpp"
 #include "../../java/nio/ByteBuffer.hpp"
 #include "./MediaDescrambler.hpp"
 
@@ -71,12 +72,12 @@ namespace android::media
 			arg2.object()
 		);
 	}
-	jboolean MediaDescrambler::requiresSecureDecoderComponent(jstring arg0)
+	jboolean MediaDescrambler::requiresSecureDecoderComponent(JString arg0)
 	{
 		return callMethod<jboolean>(
 			"requiresSecureDecoderComponent",
 			"(Ljava/lang/String;)Z",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void MediaDescrambler::setMediaCasSession(android::media::MediaCas_Session arg0)

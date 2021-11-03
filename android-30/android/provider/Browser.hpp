@@ -6,6 +6,7 @@ namespace android::content
 {
 	class Context;
 }
+class JString;
 
 namespace android::provider
 {
@@ -13,10 +14,10 @@ namespace android::provider
 	{
 	public:
 		// Fields
-		static jstring EXTRA_APPLICATION_ID();
-		static jstring EXTRA_CREATE_NEW_TAB();
-		static jstring EXTRA_HEADERS();
-		static jstring INITIAL_ZOOM_LEVEL();
+		static JString EXTRA_APPLICATION_ID();
+		static JString EXTRA_CREATE_NEW_TAB();
+		static JString EXTRA_HEADERS();
+		static JString INITIAL_ZOOM_LEVEL();
 		
 		// QJniObject forward
 		template<typename ...Ts> explicit Browser(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
@@ -26,7 +27,7 @@ namespace android::provider
 		Browser();
 		
 		// Methods
-		static void sendString(android::content::Context arg0, jstring arg1);
+		static void sendString(android::content::Context arg0, JString arg1);
 	};
 } // namespace android::provider
 

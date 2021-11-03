@@ -1,4 +1,5 @@
 #include "../../os/Parcel.hpp"
+#include "../../../JString.hpp"
 #include "./ConfigurationInfo.hpp"
 
 namespace android::content::pm
@@ -88,19 +89,19 @@ namespace android::content::pm
 			"()I"
 		);
 	}
-	jstring ConfigurationInfo::getGlEsVersion()
+	JString ConfigurationInfo::getGlEsVersion()
 	{
 		return callObjectMethod(
 			"getGlEsVersion",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ConfigurationInfo::toString()
+	JString ConfigurationInfo::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void ConfigurationInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

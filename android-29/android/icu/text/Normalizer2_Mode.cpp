@@ -1,3 +1,5 @@
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
 #include "./Normalizer2_Mode.hpp"
 
 namespace android::icu::text
@@ -42,22 +44,22 @@ namespace android::icu::text
 	// Constructors
 	
 	// Methods
-	android::icu::text::Normalizer2_Mode Normalizer2_Mode::valueOf(jstring arg0)
+	android::icu::text::Normalizer2_Mode Normalizer2_Mode::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.icu.text.Normalizer2$Mode",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/icu/text/Normalizer2$Mode;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray Normalizer2_Mode::values()
+	JArray Normalizer2_Mode::values()
 	{
 		return callStaticObjectMethod(
 			"android.icu.text.Normalizer2$Mode",
 			"values",
 			"()[Landroid/icu/text/Normalizer2$Mode;"
-		).object<jarray>();
+		);
 	}
 } // namespace android::icu::text
 

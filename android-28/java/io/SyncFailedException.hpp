@@ -1,9 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../lang/Exception.hpp"
 #include "./IOException.hpp"
 
+class JString;
 
 namespace java::io
 {
@@ -17,7 +16,7 @@ namespace java::io
 		SyncFailedException(QJniObject obj);
 		
 		// Constructors
-		SyncFailedException(jstring arg0);
+		SyncFailedException(JString arg0);
 		
 		// Methods
 	};

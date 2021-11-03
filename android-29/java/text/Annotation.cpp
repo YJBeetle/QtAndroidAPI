@@ -1,3 +1,5 @@
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./Annotation.hpp"
 
 namespace java::text
@@ -8,27 +10,27 @@ namespace java::text
 	Annotation::Annotation(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	Annotation::Annotation(jobject arg0)
+	Annotation::Annotation(JObject arg0)
 		: JObject(
 			"java.text.Annotation",
 			"(Ljava/lang/Object;)V",
-			arg0
+			arg0.object<jobject>()
 		) {}
 	
 	// Methods
-	jobject Annotation::getValue()
+	JObject Annotation::getValue()
 	{
 		return callObjectMethod(
 			"getValue",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
-	jstring Annotation::toString()
+	JString Annotation::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::text
 

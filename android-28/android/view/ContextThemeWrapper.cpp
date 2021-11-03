@@ -3,6 +3,8 @@
 #include "../content/res/Configuration.hpp"
 #include "../content/res/Resources.hpp"
 #include "../content/res/Resources_Theme.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./ContextThemeWrapper.hpp"
 
 namespace android::view
@@ -56,13 +58,13 @@ namespace android::view
 			"()Landroid/content/res/Resources;"
 		);
 	}
-	jobject ContextThemeWrapper::getSystemService(jstring arg0)
+	JObject ContextThemeWrapper::getSystemService(JString arg0)
 	{
 		return callObjectMethod(
 			"getSystemService",
 			"(Ljava/lang/String;)Ljava/lang/Object;",
-			arg0
-		).object<jobject>();
+			arg0.object<jstring>()
+		);
 	}
 	android::content::res::Resources_Theme ContextThemeWrapper::getTheme()
 	{

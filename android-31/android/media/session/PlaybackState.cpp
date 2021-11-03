@@ -1,5 +1,7 @@
 #include "../../os/Bundle.hpp"
 #include "../../os/Parcel.hpp"
+#include "../../../JString.hpp"
+#include "../../../JString.hpp"
 #include "./PlaybackState.hpp"
 
 namespace android::media::session
@@ -279,12 +281,12 @@ namespace android::media::session
 			"()Ljava/util/List;"
 		);
 	}
-	jstring PlaybackState::getErrorMessage()
+	JString PlaybackState::getErrorMessage()
 	{
 		return callObjectMethod(
 			"getErrorMessage",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	android::os::Bundle PlaybackState::getExtras()
 	{
@@ -328,12 +330,12 @@ namespace android::media::session
 			"()Z"
 		);
 	}
-	jstring PlaybackState::toString()
+	JString PlaybackState::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void PlaybackState::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

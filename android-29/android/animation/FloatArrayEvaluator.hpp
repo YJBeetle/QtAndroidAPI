@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JFloatArray;
+class JObject;
 
 namespace android::animation
 {
@@ -16,11 +18,11 @@ namespace android::animation
 		
 		// Constructors
 		FloatArrayEvaluator();
-		FloatArrayEvaluator(jfloatArray arg0);
+		FloatArrayEvaluator(JFloatArray arg0);
 		
 		// Methods
-		jfloatArray evaluate(jfloat arg0, jfloatArray arg1, jfloatArray arg2);
-		jobject evaluate(jfloat arg0, jobject arg1, jobject arg2);
+		JFloatArray evaluate(jfloat arg0, JFloatArray arg1, JFloatArray arg2);
+		JObject evaluate(jfloat arg0, JObject arg1, JObject arg2);
 	};
 } // namespace android::animation
 

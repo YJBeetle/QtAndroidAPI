@@ -1,5 +1,8 @@
+#include "../../../JByteArray.hpp"
 #include "../../net/Uri.hpp"
 #include "../../os/Parcel.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./DownloadRequest.hpp"
 
 namespace android::telephony::mbms
@@ -43,12 +46,12 @@ namespace android::telephony::mbms
 			"()I"
 		);
 	}
-	jboolean DownloadRequest::equals(jobject arg0)
+	jboolean DownloadRequest::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	android::net::Uri DownloadRequest::getDestinationUri()
@@ -58,12 +61,12 @@ namespace android::telephony::mbms
 			"()Landroid/net/Uri;"
 		);
 	}
-	jstring DownloadRequest::getFileServiceId()
+	JString DownloadRequest::getFileServiceId()
 	{
 		return callObjectMethod(
 			"getFileServiceId",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::net::Uri DownloadRequest::getSourceUri()
 	{
@@ -86,12 +89,12 @@ namespace android::telephony::mbms
 			"()I"
 		);
 	}
-	jbyteArray DownloadRequest::toByteArray()
+	JByteArray DownloadRequest::toByteArray()
 	{
 		return callObjectMethod(
 			"toByteArray",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
 	void DownloadRequest::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

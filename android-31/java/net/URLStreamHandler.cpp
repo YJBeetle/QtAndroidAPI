@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./InetAddress.hpp"
 #include "./Proxy.hpp"
 #include "./URL.hpp"

@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JString;
 
 namespace android::media
 {
@@ -17,9 +18,9 @@ namespace android::media
 		// Constructors
 		
 		// Methods
-		jstring getName();
+		JString getName();
 		jint getSystemId();
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::media
 

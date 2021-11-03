@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "../graphics/Paint.hpp"
 
+class JIntArray;
 namespace android::graphics
 {
 	class Paint;
@@ -17,7 +17,7 @@ namespace android::text
 		jint baselineShift();
 		jint bgColor();
 		jfloat density();
-		jintArray drawableState();
+		JIntArray drawableState();
 		jint linkColor();
 		
 		// QJniObject forward

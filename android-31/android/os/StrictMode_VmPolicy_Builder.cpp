@@ -1,4 +1,5 @@
 #include "./StrictMode_VmPolicy.hpp"
+#include "../../JClass.hpp"
 #include "./StrictMode_VmPolicy_Builder.hpp"
 
 namespace android::os
@@ -185,12 +186,12 @@ namespace android::os
 			"()Landroid/os/StrictMode$VmPolicy$Builder;"
 		);
 	}
-	android::os::StrictMode_VmPolicy_Builder StrictMode_VmPolicy_Builder::setClassInstanceLimit(jclass arg0, jint arg1)
+	android::os::StrictMode_VmPolicy_Builder StrictMode_VmPolicy_Builder::setClassInstanceLimit(JClass arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"setClassInstanceLimit",
 			"(Ljava/lang/Class;I)Landroid/os/StrictMode$VmPolicy$Builder;",
-			arg0,
+			arg0.object<jclass>(),
 			arg1
 		);
 	}

@@ -1,3 +1,5 @@
+#include "../../JByteArray.hpp"
+#include "../../JString.hpp"
 #include "./Base64.hpp"
 
 namespace android::util
@@ -52,81 +54,81 @@ namespace android::util
 	// Constructors
 	
 	// Methods
-	jbyteArray Base64::decode(jbyteArray arg0, jint arg1)
+	JByteArray Base64::decode(JByteArray arg0, jint arg1)
 	{
 		return callStaticObjectMethod(
 			"android.util.Base64",
 			"decode",
 			"([BI)[B",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1
-		).object<jbyteArray>();
+		);
 	}
-	jbyteArray Base64::decode(jstring arg0, jint arg1)
+	JByteArray Base64::decode(JString arg0, jint arg1)
 	{
 		return callStaticObjectMethod(
 			"android.util.Base64",
 			"decode",
 			"(Ljava/lang/String;I)[B",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
-		).object<jbyteArray>();
+		);
 	}
-	jbyteArray Base64::decode(jbyteArray arg0, jint arg1, jint arg2, jint arg3)
+	JByteArray Base64::decode(JByteArray arg0, jint arg1, jint arg2, jint arg3)
 	{
 		return callStaticObjectMethod(
 			"android.util.Base64",
 			"decode",
 			"([BIII)[B",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1,
 			arg2,
 			arg3
-		).object<jbyteArray>();
+		);
 	}
-	jbyteArray Base64::encode(jbyteArray arg0, jint arg1)
+	JByteArray Base64::encode(JByteArray arg0, jint arg1)
 	{
 		return callStaticObjectMethod(
 			"android.util.Base64",
 			"encode",
 			"([BI)[B",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1
-		).object<jbyteArray>();
+		);
 	}
-	jbyteArray Base64::encode(jbyteArray arg0, jint arg1, jint arg2, jint arg3)
+	JByteArray Base64::encode(JByteArray arg0, jint arg1, jint arg2, jint arg3)
 	{
 		return callStaticObjectMethod(
 			"android.util.Base64",
 			"encode",
 			"([BIII)[B",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1,
 			arg2,
 			arg3
-		).object<jbyteArray>();
+		);
 	}
-	jstring Base64::encodeToString(jbyteArray arg0, jint arg1)
+	JString Base64::encodeToString(JByteArray arg0, jint arg1)
 	{
 		return callStaticObjectMethod(
 			"android.util.Base64",
 			"encodeToString",
 			"([BI)Ljava/lang/String;",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1
-		).object<jstring>();
+		);
 	}
-	jstring Base64::encodeToString(jbyteArray arg0, jint arg1, jint arg2, jint arg3)
+	JString Base64::encodeToString(JByteArray arg0, jint arg1, jint arg2, jint arg3)
 	{
 		return callStaticObjectMethod(
 			"android.util.Base64",
 			"encodeToString",
 			"([BIII)Ljava/lang/String;",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1,
 			arg2,
 			arg3
-		).object<jstring>();
+		);
 	}
 } // namespace android::util
 

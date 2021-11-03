@@ -1,4 +1,5 @@
 #include "./Notification_Builder.hpp"
+#include "../../JString.hpp"
 #include "./Notification_BigTextStyle.hpp"
 
 namespace android::app
@@ -22,28 +23,28 @@ namespace android::app
 		) {}
 	
 	// Methods
-	android::app::Notification_BigTextStyle Notification_BigTextStyle::bigText(jstring arg0)
+	android::app::Notification_BigTextStyle Notification_BigTextStyle::bigText(JString arg0)
 	{
 		return callObjectMethod(
 			"bigText",
 			"(Ljava/lang/CharSequence;)Landroid/app/Notification$BigTextStyle;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	android::app::Notification_BigTextStyle Notification_BigTextStyle::setBigContentTitle(jstring arg0)
+	android::app::Notification_BigTextStyle Notification_BigTextStyle::setBigContentTitle(JString arg0)
 	{
 		return callObjectMethod(
 			"setBigContentTitle",
 			"(Ljava/lang/CharSequence;)Landroid/app/Notification$BigTextStyle;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	android::app::Notification_BigTextStyle Notification_BigTextStyle::setSummaryText(jstring arg0)
+	android::app::Notification_BigTextStyle Notification_BigTextStyle::setSummaryText(JString arg0)
 	{
 		return callObjectMethod(
 			"setSummaryText",
 			"(Ljava/lang/CharSequence;)Landroid/app/Notification$BigTextStyle;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 } // namespace android::app

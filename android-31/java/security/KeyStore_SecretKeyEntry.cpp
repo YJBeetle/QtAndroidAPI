@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./KeyStore_SecretKeyEntry.hpp"
 
 namespace java::security
@@ -37,12 +38,12 @@ namespace java::security
 			"()Ljavax/crypto/SecretKey;"
 		);
 	}
-	jstring KeyStore_SecretKeyEntry::toString()
+	JString KeyStore_SecretKeyEntry::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::security
 

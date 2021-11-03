@@ -1,5 +1,9 @@
+#include "../../JObjectArray.hpp"
+#include "../../JArray.hpp"
 #include "../io/ObjectInputStream.hpp"
 #include "../io/ObjectOutputStream.hpp"
+#include "../../JClass.hpp"
+#include "../../JObject.hpp"
 #include "./HashMap.hpp"
 
 namespace java::util
@@ -43,54 +47,54 @@ namespace java::util
 			"()V"
 		);
 	}
-	jobject HashMap::clone()
+	JObject HashMap::clone()
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
-	jobject HashMap::compute(jobject arg0, JObject arg1)
+	JObject HashMap::compute(JObject arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"compute",
 			"(Ljava/lang/Object;Ljava/util/function/BiFunction;)Ljava/lang/Object;",
-			arg0,
+			arg0.object<jobject>(),
 			arg1.object()
-		).object<jobject>();
+		);
 	}
-	jobject HashMap::computeIfAbsent(jobject arg0, JObject arg1)
+	JObject HashMap::computeIfAbsent(JObject arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"computeIfAbsent",
 			"(Ljava/lang/Object;Ljava/util/function/Function;)Ljava/lang/Object;",
-			arg0,
+			arg0.object<jobject>(),
 			arg1.object()
-		).object<jobject>();
+		);
 	}
-	jobject HashMap::computeIfPresent(jobject arg0, JObject arg1)
+	JObject HashMap::computeIfPresent(JObject arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"computeIfPresent",
 			"(Ljava/lang/Object;Ljava/util/function/BiFunction;)Ljava/lang/Object;",
-			arg0,
+			arg0.object<jobject>(),
 			arg1.object()
-		).object<jobject>();
+		);
 	}
-	jboolean HashMap::containsKey(jobject arg0)
+	jboolean HashMap::containsKey(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"containsKey",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jboolean HashMap::containsValue(jobject arg0)
+	jboolean HashMap::containsValue(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"containsValue",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	JObject HashMap::entrySet()
@@ -108,22 +112,22 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	jobject HashMap::get(jobject arg0)
+	JObject HashMap::get(JObject arg0)
 	{
 		return callObjectMethod(
 			"get",
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0
-		).object<jobject>();
+			arg0.object<jobject>()
+		);
 	}
-	jobject HashMap::getOrDefault(jobject arg0, jobject arg1)
+	JObject HashMap::getOrDefault(JObject arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"getOrDefault",
 			"(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0,
-			arg1
-		).object<jobject>();
+			arg0.object<jobject>(),
+			arg1.object<jobject>()
+		);
 	}
 	jboolean HashMap::isEmpty()
 	{
@@ -139,24 +143,24 @@ namespace java::util
 			"()Ljava/util/Set;"
 		);
 	}
-	jobject HashMap::merge(jobject arg0, jobject arg1, JObject arg2)
+	JObject HashMap::merge(JObject arg0, JObject arg1, JObject arg2)
 	{
 		return callObjectMethod(
 			"merge",
 			"(Ljava/lang/Object;Ljava/lang/Object;Ljava/util/function/BiFunction;)Ljava/lang/Object;",
-			arg0,
-			arg1,
+			arg0.object<jobject>(),
+			arg1.object<jobject>(),
 			arg2.object()
-		).object<jobject>();
+		);
 	}
-	jobject HashMap::put(jobject arg0, jobject arg1)
+	JObject HashMap::put(JObject arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"put",
 			"(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0,
-			arg1
-		).object<jobject>();
+			arg0.object<jobject>(),
+			arg1.object<jobject>()
+		);
 	}
 	void HashMap::putAll(JObject arg0)
 	{
@@ -166,50 +170,50 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	jobject HashMap::putIfAbsent(jobject arg0, jobject arg1)
+	JObject HashMap::putIfAbsent(JObject arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"putIfAbsent",
 			"(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0,
-			arg1
-		).object<jobject>();
+			arg0.object<jobject>(),
+			arg1.object<jobject>()
+		);
 	}
-	jboolean HashMap::remove(jobject arg0, jobject arg1)
+	jboolean HashMap::remove(JObject arg0, JObject arg1)
 	{
 		return callMethod<jboolean>(
 			"remove",
 			"(Ljava/lang/Object;Ljava/lang/Object;)Z",
-			arg0,
-			arg1
+			arg0.object<jobject>(),
+			arg1.object<jobject>()
 		);
 	}
-	jobject HashMap::remove(jobject arg0)
+	JObject HashMap::remove(JObject arg0)
 	{
 		return callObjectMethod(
 			"remove",
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0
-		).object<jobject>();
+			arg0.object<jobject>()
+		);
 	}
-	jboolean HashMap::replace(jobject arg0, jobject arg1, jobject arg2)
+	jboolean HashMap::replace(JObject arg0, JObject arg1, JObject arg2)
 	{
 		return callMethod<jboolean>(
 			"replace",
 			"(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Z",
-			arg0,
-			arg1,
-			arg2
+			arg0.object<jobject>(),
+			arg1.object<jobject>(),
+			arg2.object<jobject>()
 		);
 	}
-	jobject HashMap::replace(jobject arg0, jobject arg1)
+	JObject HashMap::replace(JObject arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"replace",
 			"(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0,
-			arg1
-		).object<jobject>();
+			arg0.object<jobject>(),
+			arg1.object<jobject>()
+		);
 	}
 	void HashMap::replaceAll(JObject arg0)
 	{

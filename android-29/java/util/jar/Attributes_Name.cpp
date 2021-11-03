@@ -1,3 +1,5 @@
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./Attributes_Name.hpp"
 
 namespace java::util::jar
@@ -152,20 +154,20 @@ namespace java::util::jar
 	Attributes_Name::Attributes_Name(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	Attributes_Name::Attributes_Name(jstring arg0)
+	Attributes_Name::Attributes_Name(JString arg0)
 		: JObject(
 			"java.util.jar.Attributes$Name",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods
-	jboolean Attributes_Name::equals(jobject arg0)
+	jboolean Attributes_Name::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint Attributes_Name::hashCode()
@@ -175,12 +177,12 @@ namespace java::util::jar
 			"()I"
 		);
 	}
-	jstring Attributes_Name::toString()
+	JString Attributes_Name::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::util::jar
 

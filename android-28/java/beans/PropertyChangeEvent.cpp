@@ -1,3 +1,5 @@
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "../lang/StringBuilder.hpp"
 #include "./PropertyChangeEvent.hpp"
 
@@ -9,59 +11,59 @@ namespace java::beans
 	PropertyChangeEvent::PropertyChangeEvent(QJniObject obj) : java::util::EventObject(obj) {}
 	
 	// Constructors
-	PropertyChangeEvent::PropertyChangeEvent(jobject arg0, jstring arg1, jobject arg2, jobject arg3)
+	PropertyChangeEvent::PropertyChangeEvent(JObject arg0, JString arg1, JObject arg2, JObject arg3)
 		: java::util::EventObject(
 			"java.beans.PropertyChangeEvent",
 			"(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3
+			arg0.object<jobject>(),
+			arg1.object<jstring>(),
+			arg2.object<jobject>(),
+			arg3.object<jobject>()
 		) {}
 	
 	// Methods
-	jobject PropertyChangeEvent::getNewValue()
+	JObject PropertyChangeEvent::getNewValue()
 	{
 		return callObjectMethod(
 			"getNewValue",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
-	jobject PropertyChangeEvent::getOldValue()
+	JObject PropertyChangeEvent::getOldValue()
 	{
 		return callObjectMethod(
 			"getOldValue",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
-	jobject PropertyChangeEvent::getPropagationId()
+	JObject PropertyChangeEvent::getPropagationId()
 	{
 		return callObjectMethod(
 			"getPropagationId",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
-	jstring PropertyChangeEvent::getPropertyName()
+	JString PropertyChangeEvent::getPropertyName()
 	{
 		return callObjectMethod(
 			"getPropertyName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	void PropertyChangeEvent::setPropagationId(jobject arg0)
+	void PropertyChangeEvent::setPropagationId(JObject arg0)
 	{
 		callMethod<void>(
 			"setPropagationId",
 			"(Ljava/lang/Object;)V",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jstring PropertyChangeEvent::toString()
+	JString PropertyChangeEvent::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::beans
 

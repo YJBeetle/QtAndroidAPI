@@ -10,6 +10,8 @@ namespace android::icu::util
 {
 	class ULocale;
 }
+class JObject;
+class JString;
 namespace java::util
 {
 	class Locale;
@@ -31,17 +33,17 @@ namespace android::icu::text
 		DateIntervalInfo(java::util::Locale arg0);
 		
 		// Methods
-		jobject clone();
+		JObject clone();
 		android::icu::text::DateIntervalInfo cloneAsThawed();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		android::icu::text::DateIntervalInfo freeze();
 		jboolean getDefaultOrder();
-		jstring getFallbackIntervalPattern();
-		android::icu::text::DateIntervalInfo_PatternInfo getIntervalPattern(jstring arg0, jint arg1);
+		JString getFallbackIntervalPattern();
+		android::icu::text::DateIntervalInfo_PatternInfo getIntervalPattern(JString arg0, jint arg1);
 		jint hashCode();
 		jboolean isFrozen();
-		void setFallbackIntervalPattern(jstring arg0);
-		void setIntervalPattern(jstring arg0, jint arg1, jstring arg2);
+		void setFallbackIntervalPattern(JString arg0);
+		void setIntervalPattern(JString arg0, jint arg1, JString arg2);
 	};
 } // namespace android::icu::text
 

@@ -1,3 +1,4 @@
+#include "../../../../JString.hpp"
 #include "./UserPrincipalLookupService.hpp"
 
 namespace java::nio::file::attribute
@@ -10,20 +11,20 @@ namespace java::nio::file::attribute
 	// Constructors
 	
 	// Methods
-	JObject UserPrincipalLookupService::lookupPrincipalByGroupName(jstring arg0)
+	JObject UserPrincipalLookupService::lookupPrincipalByGroupName(JString arg0)
 	{
 		return callObjectMethod(
 			"lookupPrincipalByGroupName",
 			"(Ljava/lang/String;)Ljava/nio/file/attribute/GroupPrincipal;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	JObject UserPrincipalLookupService::lookupPrincipalByName(jstring arg0)
+	JObject UserPrincipalLookupService::lookupPrincipalByName(JString arg0)
 	{
 		return callObjectMethod(
 			"lookupPrincipalByName",
 			"(Ljava/lang/String;)Ljava/nio/file/attribute/UserPrincipal;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 } // namespace java::nio::file::attribute

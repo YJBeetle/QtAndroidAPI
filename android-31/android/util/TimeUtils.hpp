@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JString;
 namespace java::time
 {
 	class LocalTime;
@@ -25,9 +26,9 @@ namespace android::util
 		// Constructors
 		
 		// Methods
-		static java::util::TimeZone getTimeZone(jint arg0, jboolean arg1, jlong arg2, jstring arg3);
-		static jstring getTimeZoneDatabaseVersion();
-		static JObject getTimeZoneIdsForCountryCode(jstring arg0);
+		static java::util::TimeZone getTimeZone(jint arg0, jboolean arg1, jlong arg2, JString arg3);
+		static JString getTimeZoneDatabaseVersion();
+		static JObject getTimeZoneIdsForCountryCode(JString arg0);
 		static jboolean isTimeBetween(java::time::LocalTime arg0, java::time::LocalTime arg1, java::time::LocalTime arg2);
 	};
 } // namespace android::util

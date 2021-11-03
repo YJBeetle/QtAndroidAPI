@@ -1,4 +1,5 @@
 #include "./DynamicsProcessing_EqBand.hpp"
+#include "../../../JString.hpp"
 #include "./DynamicsProcessing_Eq.hpp"
 
 namespace android::media::audiofx
@@ -42,12 +43,12 @@ namespace android::media::audiofx
 			arg1.object()
 		);
 	}
-	jstring DynamicsProcessing_Eq::toString()
+	JString DynamicsProcessing_Eq::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::media::audiofx
 

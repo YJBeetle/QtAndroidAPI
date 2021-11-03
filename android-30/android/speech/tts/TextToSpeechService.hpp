@@ -1,10 +1,8 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "../../content/Context.hpp"
-#include "../../content/ContextWrapper.hpp"
 #include "../../app/Service.hpp"
 
+class JArray;
 namespace android::content
 {
 	class Intent;
@@ -13,6 +11,7 @@ namespace android::speech::tts
 {
 	class SynthesisRequest;
 }
+class JString;
 
 namespace android::speech::tts
 {
@@ -32,10 +31,10 @@ namespace android::speech::tts
 		JObject onBind(android::content::Intent arg0);
 		void onCreate();
 		void onDestroy();
-		jstring onGetDefaultVoiceNameFor(jstring arg0, jstring arg1, jstring arg2);
+		JString onGetDefaultVoiceNameFor(JString arg0, JString arg1, JString arg2);
 		JObject onGetVoices();
-		jint onIsValidVoiceName(jstring arg0);
-		jint onLoadVoice(jstring arg0);
+		jint onIsValidVoiceName(JString arg0);
+		jint onLoadVoice(JString arg0);
 	};
 } // namespace android::speech::tts
 

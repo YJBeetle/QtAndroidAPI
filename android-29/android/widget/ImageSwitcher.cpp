@@ -1,6 +1,7 @@
 #include "../content/Context.hpp"
 #include "../graphics/drawable/Drawable.hpp"
 #include "../net/Uri.hpp"
+#include "../../JString.hpp"
 #include "./ImageSwitcher.hpp"
 
 namespace android::widget
@@ -26,12 +27,12 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	jstring ImageSwitcher::getAccessibilityClassName()
+	JString ImageSwitcher::getAccessibilityClassName()
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	void ImageSwitcher::setImageDrawable(android::graphics::drawable::Drawable arg0)
 	{

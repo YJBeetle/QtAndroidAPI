@@ -1,9 +1,12 @@
+#include "../../../JArray.hpp"
 #include "../Paint.hpp"
 #include "../Paint_FontMetrics.hpp"
 #include "../RectF.hpp"
 #include "./FontStyle.hpp"
 #include "../../os/LocaleList.hpp"
 #include "../../../java/io/File.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "../../../java/nio/ByteBuffer.hpp"
 #include "./Font.hpp"
 
@@ -17,20 +20,20 @@ namespace android::graphics::fonts
 	// Constructors
 	
 	// Methods
-	jboolean Font::equals(jobject arg0)
+	jboolean Font::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jarray Font::getAxes()
+	JArray Font::getAxes()
 	{
 		return callObjectMethod(
 			"getAxes",
 			"()[Landroid/graphics/fonts/FontVariationAxis;"
-		).object<jarray>();
+		);
 	}
 	java::nio::ByteBuffer Font::getBuffer()
 	{
@@ -100,12 +103,12 @@ namespace android::graphics::fonts
 			"()I"
 		);
 	}
-	jstring Font::toString()
+	JString Font::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::graphics::fonts
 

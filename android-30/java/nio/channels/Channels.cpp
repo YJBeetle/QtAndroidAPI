@@ -2,6 +2,7 @@
 #include "../../io/OutputStream.hpp"
 #include "../../io/Reader.hpp"
 #include "../../io/Writer.hpp"
+#include "../../../JString.hpp"
 #include "../ByteBuffer.hpp"
 #include "../charset/Charset.hpp"
 #include "../charset/CharsetDecoder.hpp"
@@ -54,14 +55,14 @@ namespace java::nio::channels
 			arg0.object()
 		);
 	}
-	java::io::Reader Channels::newReader(JObject arg0, jstring arg1)
+	java::io::Reader Channels::newReader(JObject arg0, JString arg1)
 	{
 		return callStaticObjectMethod(
 			"java.nio.channels.Channels",
 			"newReader",
 			"(Ljava/nio/channels/ReadableByteChannel;Ljava/lang/String;)Ljava/io/Reader;",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
 	java::io::Reader Channels::newReader(JObject arg0, java::nio::charset::Charset arg1)
@@ -85,14 +86,14 @@ namespace java::nio::channels
 			arg2
 		);
 	}
-	java::io::Writer Channels::newWriter(JObject arg0, jstring arg1)
+	java::io::Writer Channels::newWriter(JObject arg0, JString arg1)
 	{
 		return callStaticObjectMethod(
 			"java.nio.channels.Channels",
 			"newWriter",
 			"(Ljava/nio/channels/WritableByteChannel;Ljava/lang/String;)Ljava/io/Writer;",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
 	java::io::Writer Channels::newWriter(JObject arg0, java::nio::charset::Charset arg1)

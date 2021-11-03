@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JObject;
+class JString;
 
 namespace android::util
 {
@@ -22,28 +24,28 @@ namespace android::util
 		// Methods
 		void clear();
 		jboolean containsAll(JObject arg0);
-		jboolean containsKey(jobject arg0);
-		jboolean containsValue(jobject arg0);
+		jboolean containsKey(JObject arg0);
+		jboolean containsValue(JObject arg0);
 		void ensureCapacity(jint arg0);
 		JObject entrySet();
-		jboolean equals(jobject arg0);
-		jobject get(jobject arg0);
+		jboolean equals(JObject arg0);
+		JObject get(JObject arg0);
 		jint hashCode();
-		jint indexOfKey(jobject arg0);
+		jint indexOfKey(JObject arg0);
 		jboolean isEmpty();
-		jobject keyAt(jint arg0);
+		JObject keyAt(jint arg0);
 		JObject keySet();
-		jobject put(jobject arg0, jobject arg1);
+		JObject put(JObject arg0, JObject arg1);
 		void putAll(android::util::ArrayMap arg0);
 		void putAll(JObject arg0);
-		jobject remove(jobject arg0);
+		JObject remove(JObject arg0);
 		jboolean removeAll(JObject arg0);
-		jobject removeAt(jint arg0);
+		JObject removeAt(jint arg0);
 		jboolean retainAll(JObject arg0);
-		jobject setValueAt(jint arg0, jobject arg1);
+		JObject setValueAt(jint arg0, JObject arg1);
 		jint size();
-		jstring toString();
-		jobject valueAt(jint arg0);
+		JString toString();
+		JObject valueAt(jint arg0);
 		JObject values();
 	};
 } // namespace android::util

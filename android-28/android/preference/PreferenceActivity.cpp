@@ -8,50 +8,52 @@
 #include "./PreferenceScreen.hpp"
 #include "../view/View.hpp"
 #include "../widget/ListView.hpp"
+#include "../../JString.hpp"
+#include "../../JString.hpp"
 #include "./PreferenceActivity.hpp"
 
 namespace android::preference
 {
 	// Fields
-	jstring PreferenceActivity::EXTRA_NO_HEADERS()
+	JString PreferenceActivity::EXTRA_NO_HEADERS()
 	{
 		return getStaticObjectField(
 			"android.preference.PreferenceActivity",
 			"EXTRA_NO_HEADERS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PreferenceActivity::EXTRA_SHOW_FRAGMENT()
+	JString PreferenceActivity::EXTRA_SHOW_FRAGMENT()
 	{
 		return getStaticObjectField(
 			"android.preference.PreferenceActivity",
 			"EXTRA_SHOW_FRAGMENT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PreferenceActivity::EXTRA_SHOW_FRAGMENT_ARGUMENTS()
+	JString PreferenceActivity::EXTRA_SHOW_FRAGMENT_ARGUMENTS()
 	{
 		return getStaticObjectField(
 			"android.preference.PreferenceActivity",
 			"EXTRA_SHOW_FRAGMENT_ARGUMENTS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PreferenceActivity::EXTRA_SHOW_FRAGMENT_SHORT_TITLE()
+	JString PreferenceActivity::EXTRA_SHOW_FRAGMENT_SHORT_TITLE()
 	{
 		return getStaticObjectField(
 			"android.preference.PreferenceActivity",
 			"EXTRA_SHOW_FRAGMENT_SHORT_TITLE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PreferenceActivity::EXTRA_SHOW_FRAGMENT_TITLE()
+	JString PreferenceActivity::EXTRA_SHOW_FRAGMENT_TITLE()
 	{
 		return getStaticObjectField(
 			"android.preference.PreferenceActivity",
 			"EXTRA_SHOW_FRAGMENT_TITLE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jlong PreferenceActivity::HEADER_ID_UNDEFINED()
 	{
@@ -88,12 +90,12 @@ namespace android::preference
 			arg0
 		);
 	}
-	android::preference::Preference PreferenceActivity::findPreference(jstring arg0)
+	android::preference::Preference PreferenceActivity::findPreference(JString arg0)
 	{
 		return callObjectMethod(
 			"findPreference",
 			"(Ljava/lang/CharSequence;)Landroid/preference/Preference;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void PreferenceActivity::finishPreferencePanel(android::app::Fragment arg0, jint arg1, android::content::Intent arg2)
@@ -165,12 +167,12 @@ namespace android::preference
 			arg0.object()
 		);
 	}
-	android::content::Intent PreferenceActivity::onBuildStartFragmentIntent(jstring arg0, android::os::Bundle arg1, jint arg2, jint arg3)
+	android::content::Intent PreferenceActivity::onBuildStartFragmentIntent(JString arg0, android::os::Bundle arg1, jint arg2, jint arg3)
 	{
 		return callObjectMethod(
 			"onBuildStartFragmentIntent",
 			"(Ljava/lang/String;Landroid/os/Bundle;II)Landroid/content/Intent;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
 			arg2,
 			arg3
@@ -254,13 +256,13 @@ namespace android::preference
 			arg0.object()
 		);
 	}
-	void PreferenceActivity::setParentTitle(jstring arg0, jstring arg1, JObject arg2)
+	void PreferenceActivity::setParentTitle(JString arg0, JString arg1, JObject arg2)
 	{
 		callMethod<void>(
 			"setParentTitle",
 			"(Ljava/lang/CharSequence;Ljava/lang/CharSequence;Landroid/view/View$OnClickListener;)V",
-			arg0,
-			arg1,
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
 			arg2.object()
 		);
 	}
@@ -272,13 +274,13 @@ namespace android::preference
 			arg0.object()
 		);
 	}
-	void PreferenceActivity::showBreadCrumbs(jstring arg0, jstring arg1)
+	void PreferenceActivity::showBreadCrumbs(JString arg0, JString arg1)
 	{
 		callMethod<void>(
 			"showBreadCrumbs",
 			"(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		);
 	}
 	void PreferenceActivity::startPreferenceFragment(android::app::Fragment arg0, jboolean arg1)
@@ -290,36 +292,36 @@ namespace android::preference
 			arg1
 		);
 	}
-	void PreferenceActivity::startPreferencePanel(jstring arg0, android::os::Bundle arg1, jint arg2, jstring arg3, android::app::Fragment arg4, jint arg5)
+	void PreferenceActivity::startPreferencePanel(JString arg0, android::os::Bundle arg1, jint arg2, JString arg3, android::app::Fragment arg4, jint arg5)
 	{
 		callMethod<void>(
 			"startPreferencePanel",
 			"(Ljava/lang/String;Landroid/os/Bundle;ILjava/lang/CharSequence;Landroid/app/Fragment;I)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
 			arg2,
-			arg3,
+			arg3.object<jstring>(),
 			arg4.object(),
 			arg5
 		);
 	}
-	void PreferenceActivity::startWithFragment(jstring arg0, android::os::Bundle arg1, android::app::Fragment arg2, jint arg3)
+	void PreferenceActivity::startWithFragment(JString arg0, android::os::Bundle arg1, android::app::Fragment arg2, jint arg3)
 	{
 		callMethod<void>(
 			"startWithFragment",
 			"(Ljava/lang/String;Landroid/os/Bundle;Landroid/app/Fragment;I)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
 			arg2.object(),
 			arg3
 		);
 	}
-	void PreferenceActivity::startWithFragment(jstring arg0, android::os::Bundle arg1, android::app::Fragment arg2, jint arg3, jint arg4, jint arg5)
+	void PreferenceActivity::startWithFragment(JString arg0, android::os::Bundle arg1, android::app::Fragment arg2, jint arg3, jint arg4, jint arg5)
 	{
 		callMethod<void>(
 			"startWithFragment",
 			"(Ljava/lang/String;Landroid/os/Bundle;Landroid/app/Fragment;III)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
 			arg2.object(),
 			arg3,
@@ -335,12 +337,12 @@ namespace android::preference
 			arg0.object()
 		);
 	}
-	void PreferenceActivity::switchToHeader(jstring arg0, android::os::Bundle arg1)
+	void PreferenceActivity::switchToHeader(JString arg0, android::os::Bundle arg1)
 	{
 		callMethod<void>(
 			"switchToHeader",
 			"(Ljava/lang/String;Landroid/os/Bundle;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}

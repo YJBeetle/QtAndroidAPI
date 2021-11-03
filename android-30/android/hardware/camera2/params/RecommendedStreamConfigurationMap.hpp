@@ -14,6 +14,7 @@ namespace android::view
 {
 	class Surface;
 }
+class JClass;
 
 namespace android::hardware::camera2::params
 {
@@ -45,11 +46,11 @@ namespace android::hardware::camera2::params
 		JObject getInputSizes(jint arg0);
 		JObject getOutputFormats();
 		jlong getOutputMinFrameDuration(jint arg0, android::util::Size arg1);
-		jlong getOutputMinFrameDuration(jclass arg0, android::util::Size arg1);
+		jlong getOutputMinFrameDuration(JClass arg0, android::util::Size arg1);
 		JObject getOutputSizes(jint arg0);
-		JObject getOutputSizes(jclass arg0);
+		JObject getOutputSizes(JClass arg0);
 		jlong getOutputStallDuration(jint arg0, android::util::Size arg1);
-		jlong getOutputStallDuration(jclass arg0, android::util::Size arg1);
+		jlong getOutputStallDuration(JClass arg0, android::util::Size arg1);
 		jint getRecommendedUseCase();
 		JObject getValidOutputFormatsForInput(jint arg0);
 		jboolean isOutputSupportedFor(android::view::Surface arg0);

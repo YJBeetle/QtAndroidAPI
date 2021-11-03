@@ -10,6 +10,8 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
+class JString;
 
 namespace android::media::session
 {
@@ -62,13 +64,13 @@ namespace android::media::session
 		jlong getActiveQueueItemId();
 		jlong getBufferedPosition();
 		JObject getCustomActions();
-		jstring getErrorMessage();
+		JString getErrorMessage();
 		android::os::Bundle getExtras();
 		jlong getLastPositionUpdateTime();
 		jfloat getPlaybackSpeed();
 		jlong getPosition();
 		jint getState();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::media::session

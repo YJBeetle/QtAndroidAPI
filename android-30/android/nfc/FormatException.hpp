@@ -1,8 +1,9 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "../../java/lang/Exception.hpp"
 
+class JString;
+class JThrowable;
 
 namespace android::nfc
 {
@@ -17,8 +18,8 @@ namespace android::nfc
 		
 		// Constructors
 		FormatException();
-		FormatException(jstring arg0);
-		FormatException(jstring arg0, jthrowable arg1);
+		FormatException(JString arg0);
+		FormatException(JString arg0, JThrowable arg1);
 		
 		// Methods
 	};

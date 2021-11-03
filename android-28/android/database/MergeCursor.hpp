@@ -1,8 +1,10 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./AbstractCursor.hpp"
 
+class JByteArray;
+class JArray;
+class JArray;
 namespace android::database
 {
 	class ContentObserver;
@@ -11,6 +13,7 @@ namespace android::database
 {
 	class DataSetObserver;
 }
+class JString;
 
 namespace android::database
 {
@@ -24,20 +27,20 @@ namespace android::database
 		MergeCursor(QJniObject obj);
 		
 		// Constructors
-		MergeCursor(jarray arg0);
+		MergeCursor(JArray arg0);
 		
 		// Methods
 		void close();
 		void deactivate();
-		jbyteArray getBlob(jint arg0);
-		jarray getColumnNames();
+		JByteArray getBlob(jint arg0);
+		JArray getColumnNames();
 		jint getCount();
 		jdouble getDouble(jint arg0);
 		jfloat getFloat(jint arg0);
 		jint getInt(jint arg0);
 		jlong getLong(jint arg0);
 		jshort getShort(jint arg0);
-		jstring getString(jint arg0);
+		JString getString(jint arg0);
 		jint getType(jint arg0);
 		jboolean isNull(jint arg0);
 		jboolean onMove(jint arg0, jint arg1);

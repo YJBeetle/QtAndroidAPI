@@ -1,3 +1,6 @@
+#include "../../JArray.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "../lang/StringBuffer.hpp"
 #include "./FieldPosition.hpp"
 #include "./NumberFormat.hpp"
@@ -179,13 +182,13 @@ namespace java::text
 	// Constructors
 	
 	// Methods
-	jarray DateFormat::getAvailableLocales()
+	JArray DateFormat::getAvailableLocales()
 	{
 		return callStaticObjectMethod(
 			"java.text.DateFormat",
 			"getAvailableLocales",
 			"()[Ljava/util/Locale;"
-		).object<jarray>();
+		);
 	}
 	java::text::DateFormat DateFormat::getDateInstance()
 	{
@@ -278,35 +281,35 @@ namespace java::text
 			arg1.object()
 		);
 	}
-	jobject DateFormat::clone()
+	JObject DateFormat::clone()
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
-	jboolean DateFormat::equals(jobject arg0)
+	jboolean DateFormat::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jstring DateFormat::format(java::util::Date arg0)
+	JString DateFormat::format(java::util::Date arg0)
 	{
 		return callObjectMethod(
 			"format",
 			"(Ljava/util/Date;)Ljava/lang/String;",
 			arg0.object()
-		).object<jstring>();
+		);
 	}
-	java::lang::StringBuffer DateFormat::format(jobject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
+	java::lang::StringBuffer DateFormat::format(JObject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
 	{
 		return callObjectMethod(
 			"format",
 			"(Ljava/lang/Object;Ljava/lang/StringBuffer;Ljava/text/FieldPosition;)Ljava/lang/StringBuffer;",
-			arg0,
+			arg0.object<jobject>(),
 			arg1.object(),
 			arg2.object()
 		);
@@ -356,31 +359,31 @@ namespace java::text
 			"()Z"
 		);
 	}
-	java::util::Date DateFormat::parse(jstring arg0)
+	java::util::Date DateFormat::parse(JString arg0)
 	{
 		return callObjectMethod(
 			"parse",
 			"(Ljava/lang/String;)Ljava/util/Date;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	java::util::Date DateFormat::parse(jstring arg0, java::text::ParsePosition arg1)
+	java::util::Date DateFormat::parse(JString arg0, java::text::ParsePosition arg1)
 	{
 		return callObjectMethod(
 			"parse",
 			"(Ljava/lang/String;Ljava/text/ParsePosition;)Ljava/util/Date;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
-	jobject DateFormat::parseObject(jstring arg0, java::text::ParsePosition arg1)
+	JObject DateFormat::parseObject(JString arg0, java::text::ParsePosition arg1)
 	{
 		return callObjectMethod(
 			"parseObject",
 			"(Ljava/lang/String;Ljava/text/ParsePosition;)Ljava/lang/Object;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
-		).object<jobject>();
+		);
 	}
 	void DateFormat::setCalendar(java::util::Calendar arg0)
 	{

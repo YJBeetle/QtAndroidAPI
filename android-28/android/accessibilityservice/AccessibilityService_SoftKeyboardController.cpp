@@ -1,5 +1,6 @@
 #include "./AccessibilityService.hpp"
 #include "../os/Handler.hpp"
+#include "../../JObject.hpp"
 #include "./AccessibilityService_SoftKeyboardController.hpp"
 
 namespace android::accessibilityservice

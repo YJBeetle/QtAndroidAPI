@@ -1,4 +1,5 @@
 #include "./WifiManager.hpp"
+#include "../../../JString.hpp"
 #include "./WifiManager_MulticastLock.hpp"
 
 namespace android::net::wifi
@@ -40,12 +41,12 @@ namespace android::net::wifi
 			arg0
 		);
 	}
-	jstring WifiManager_MulticastLock::toString()
+	JString WifiManager_MulticastLock::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::net::wifi
 

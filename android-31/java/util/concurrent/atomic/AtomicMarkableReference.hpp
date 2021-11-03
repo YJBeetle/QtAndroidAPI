@@ -2,6 +2,8 @@
 
 #include "../../../../JObject.hpp"
 
+class JBooleanArray;
+class JObject;
 
 namespace java::util::concurrent::atomic
 {
@@ -15,16 +17,16 @@ namespace java::util::concurrent::atomic
 		AtomicMarkableReference(QJniObject obj);
 		
 		// Constructors
-		AtomicMarkableReference(jobject arg0, jboolean arg1);
+		AtomicMarkableReference(JObject arg0, jboolean arg1);
 		
 		// Methods
-		jboolean attemptMark(jobject arg0, jboolean arg1);
-		jboolean compareAndSet(jobject arg0, jobject arg1, jboolean arg2, jboolean arg3);
-		jobject get(jbooleanArray arg0);
-		jobject getReference();
+		jboolean attemptMark(JObject arg0, jboolean arg1);
+		jboolean compareAndSet(JObject arg0, JObject arg1, jboolean arg2, jboolean arg3);
+		JObject get(JBooleanArray arg0);
+		JObject getReference();
 		jboolean isMarked();
-		void set(jobject arg0, jboolean arg1);
-		jboolean weakCompareAndSet(jobject arg0, jobject arg1, jboolean arg2, jboolean arg3);
+		void set(JObject arg0, jboolean arg1);
+		jboolean weakCompareAndSet(JObject arg0, JObject arg1, jboolean arg2, jboolean arg3);
 	};
 } // namespace java::util::concurrent::atomic
 

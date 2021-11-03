@@ -1,4 +1,6 @@
+#include "../../../JByteArray.hpp"
 #include "../../io/InputStream.hpp"
+#include "../../../JString.hpp"
 #include "../../nio/charset/Charset.hpp"
 #include "./CRC32.hpp"
 #include "./ZipEntry.hpp"
@@ -55,12 +57,12 @@ namespace java::util::zip
 			"()Ljava/util/zip/ZipEntry;"
 		);
 	}
-	jint ZipInputStream::read(jbyteArray arg0, jint arg1, jint arg2)
+	jint ZipInputStream::read(JByteArray arg0, jint arg1, jint arg2)
 	{
 		return callMethod<jint>(
 			"read",
 			"([BII)I",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1,
 			arg2
 		);

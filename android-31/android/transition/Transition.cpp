@@ -1,3 +1,5 @@
+#include "../../JIntArray.hpp"
+#include "../../JArray.hpp"
 #include "../animation/Animator.hpp"
 #include "../content/Context.hpp"
 #include "../graphics/Rect.hpp"
@@ -7,6 +9,9 @@
 #include "./TransitionValues.hpp"
 #include "../view/View.hpp"
 #include "../view/ViewGroup.hpp"
+#include "../../JClass.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./Transition.hpp"
 
 namespace android::transition
@@ -83,20 +88,20 @@ namespace android::transition
 			arg0
 		);
 	}
-	android::transition::Transition Transition::addTarget(jclass arg0)
+	android::transition::Transition Transition::addTarget(JClass arg0)
 	{
 		return callObjectMethod(
 			"addTarget",
 			"(Ljava/lang/Class;)Landroid/transition/Transition;",
-			arg0
+			arg0.object<jclass>()
 		);
 	}
-	android::transition::Transition Transition::addTarget(jstring arg0)
+	android::transition::Transition Transition::addTarget(JString arg0)
 	{
 		return callObjectMethod(
 			"addTarget",
 			"(Ljava/lang/String;)Landroid/transition/Transition;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	jboolean Transition::canRemoveViews()
@@ -157,12 +162,12 @@ namespace android::transition
 			arg1
 		);
 	}
-	android::transition::Transition Transition::excludeChildren(jclass arg0, jboolean arg1)
+	android::transition::Transition Transition::excludeChildren(JClass arg0, jboolean arg1)
 	{
 		return callObjectMethod(
 			"excludeChildren",
 			"(Ljava/lang/Class;Z)Landroid/transition/Transition;",
-			arg0,
+			arg0.object<jclass>(),
 			arg1
 		);
 	}
@@ -184,21 +189,21 @@ namespace android::transition
 			arg1
 		);
 	}
-	android::transition::Transition Transition::excludeTarget(jclass arg0, jboolean arg1)
+	android::transition::Transition Transition::excludeTarget(JClass arg0, jboolean arg1)
 	{
 		return callObjectMethod(
 			"excludeTarget",
 			"(Ljava/lang/Class;Z)Landroid/transition/Transition;",
-			arg0,
+			arg0.object<jclass>(),
 			arg1
 		);
 	}
-	android::transition::Transition Transition::excludeTarget(jstring arg0, jboolean arg1)
+	android::transition::Transition Transition::excludeTarget(JString arg0, jboolean arg1)
 	{
 		return callObjectMethod(
 			"excludeTarget",
 			"(Ljava/lang/String;Z)Landroid/transition/Transition;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
@@ -230,12 +235,12 @@ namespace android::transition
 			"()Landroid/animation/TimeInterpolator;"
 		);
 	}
-	jstring Transition::getName()
+	JString Transition::getName()
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::transition::PathMotion Transition::getPathMotion()
 	{
@@ -286,12 +291,12 @@ namespace android::transition
 			"()Ljava/util/List;"
 		);
 	}
-	jarray Transition::getTransitionProperties()
+	JArray Transition::getTransitionProperties()
 	{
 		return callObjectMethod(
 			"getTransitionProperties",
 			"()[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
 	android::transition::TransitionValues Transition::getTransitionValues(android::view::View arg0, jboolean arg1)
 	{
@@ -335,20 +340,20 @@ namespace android::transition
 			arg0
 		);
 	}
-	android::transition::Transition Transition::removeTarget(jclass arg0)
+	android::transition::Transition Transition::removeTarget(JClass arg0)
 	{
 		return callObjectMethod(
 			"removeTarget",
 			"(Ljava/lang/Class;)Landroid/transition/Transition;",
-			arg0
+			arg0.object<jclass>()
 		);
 	}
-	android::transition::Transition Transition::removeTarget(jstring arg0)
+	android::transition::Transition Transition::removeTarget(JString arg0)
 	{
 		return callObjectMethod(
 			"removeTarget",
 			"(Ljava/lang/String;)Landroid/transition/Transition;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::transition::Transition Transition::setDuration(jlong arg0)
@@ -375,12 +380,12 @@ namespace android::transition
 			arg0.object()
 		);
 	}
-	void Transition::setMatchOrder(jintArray arg0)
+	void Transition::setMatchOrder(JIntArray arg0)
 	{
 		callMethod<void>(
 			"setMatchOrder",
 			"([I)V",
-			arg0
+			arg0.object<jintArray>()
 		);
 	}
 	void Transition::setPathMotion(android::transition::PathMotion arg0)
@@ -407,12 +412,12 @@ namespace android::transition
 			arg0
 		);
 	}
-	jstring Transition::toString()
+	JString Transition::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::transition
 

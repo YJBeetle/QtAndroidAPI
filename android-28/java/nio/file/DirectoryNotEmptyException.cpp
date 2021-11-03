@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./DirectoryNotEmptyException.hpp"
 
 namespace java::nio::file
@@ -8,11 +9,11 @@ namespace java::nio::file
 	DirectoryNotEmptyException::DirectoryNotEmptyException(QJniObject obj) : java::nio::file::FileSystemException(obj) {}
 	
 	// Constructors
-	DirectoryNotEmptyException::DirectoryNotEmptyException(jstring arg0)
+	DirectoryNotEmptyException::DirectoryNotEmptyException(JString arg0)
 		: java::nio::file::FileSystemException(
 			"java.nio.file.DirectoryNotEmptyException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

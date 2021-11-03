@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JArray;
 namespace android::os
 {
 	class Parcel;
@@ -18,6 +19,7 @@ namespace java::io
 {
 	class PrintWriter;
 }
+class JString;
 
 namespace android::os
 {
@@ -32,7 +34,7 @@ namespace android::os
 		
 		// Constructors
 		Binder();
-		Binder(jstring arg0);
+		Binder(JString arg0);
 		
 		// Methods
 		static jlong clearCallingIdentity();
@@ -47,14 +49,14 @@ namespace android::os
 		static void restoreCallingIdentity(jlong arg0);
 		static void restoreCallingWorkSource(jlong arg0);
 		static jlong setCallingWorkSourceUid(jint arg0);
-		void attachInterface(JObject arg0, jstring arg1);
-		void dump(java::io::FileDescriptor arg0, jarray arg1);
-		void dumpAsync(java::io::FileDescriptor arg0, jarray arg1);
-		jstring getInterfaceDescriptor();
+		void attachInterface(JObject arg0, JString arg1);
+		void dump(java::io::FileDescriptor arg0, JArray arg1);
+		void dumpAsync(java::io::FileDescriptor arg0, JArray arg1);
+		JString getInterfaceDescriptor();
 		jboolean isBinderAlive();
 		void linkToDeath(JObject arg0, jint arg1);
 		jboolean pingBinder();
-		JObject queryLocalInterface(jstring arg0);
+		JObject queryLocalInterface(JString arg0);
 		jboolean transact(jint arg0, android::os::Parcel arg1, android::os::Parcel arg2, jint arg3);
 		jboolean unlinkToDeath(JObject arg0, jint arg1);
 	};

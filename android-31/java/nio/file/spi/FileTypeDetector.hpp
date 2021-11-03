@@ -2,6 +2,7 @@
 
 #include "../../../../JObject.hpp"
 
+class JString;
 namespace java::lang
 {
 	class Void;
@@ -21,7 +22,7 @@ namespace java::nio::file::spi
 		// Constructors
 		
 		// Methods
-		jstring probeContentType(JObject arg0);
+		JString probeContentType(JObject arg0);
 	};
 } // namespace java::nio::file::spi
 

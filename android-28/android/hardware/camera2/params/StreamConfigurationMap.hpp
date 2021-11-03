@@ -2,6 +2,9 @@
 
 #include "../../../../JObject.hpp"
 
+class JIntArray;
+class JArray;
+class JArray;
 namespace android::util
 {
 	class Range;
@@ -14,6 +17,9 @@ namespace android::view
 {
 	class Surface;
 }
+class JClass;
+class JObject;
+class JString;
 
 namespace android::hardware::camera2::params
 {
@@ -29,27 +35,27 @@ namespace android::hardware::camera2::params
 		// Constructors
 		
 		// Methods
-		static jboolean isOutputSupportedFor(jclass arg0);
-		jboolean equals(jobject arg0);
-		jarray getHighResolutionOutputSizes(jint arg0);
-		jarray getHighSpeedVideoFpsRanges();
-		jarray getHighSpeedVideoFpsRangesFor(android::util::Size arg0);
-		jarray getHighSpeedVideoSizes();
-		jarray getHighSpeedVideoSizesFor(android::util::Range arg0);
-		jintArray getInputFormats();
-		jarray getInputSizes(jint arg0);
-		jintArray getOutputFormats();
+		static jboolean isOutputSupportedFor(JClass arg0);
+		jboolean equals(JObject arg0);
+		JArray getHighResolutionOutputSizes(jint arg0);
+		JArray getHighSpeedVideoFpsRanges();
+		JArray getHighSpeedVideoFpsRangesFor(android::util::Size arg0);
+		JArray getHighSpeedVideoSizes();
+		JArray getHighSpeedVideoSizesFor(android::util::Range arg0);
+		JIntArray getInputFormats();
+		JArray getInputSizes(jint arg0);
+		JIntArray getOutputFormats();
 		jlong getOutputMinFrameDuration(jint arg0, android::util::Size arg1);
-		jlong getOutputMinFrameDuration(jclass arg0, android::util::Size arg1);
-		jarray getOutputSizes(jint arg0);
-		jarray getOutputSizes(jclass arg0);
+		jlong getOutputMinFrameDuration(JClass arg0, android::util::Size arg1);
+		JArray getOutputSizes(jint arg0);
+		JArray getOutputSizes(JClass arg0);
 		jlong getOutputStallDuration(jint arg0, android::util::Size arg1);
-		jlong getOutputStallDuration(jclass arg0, android::util::Size arg1);
-		jintArray getValidOutputFormatsForInput(jint arg0);
+		jlong getOutputStallDuration(JClass arg0, android::util::Size arg1);
+		JIntArray getValidOutputFormatsForInput(jint arg0);
 		jint hashCode();
 		jboolean isOutputSupportedFor(android::view::Surface arg0);
 		jboolean isOutputSupportedFor(jint arg0);
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::hardware::camera2::params
 

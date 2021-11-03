@@ -2,6 +2,7 @@
 
 #include "../../../../JObject.hpp"
 
+class JString;
 
 namespace org::xml::sax::helpers
 {
@@ -19,15 +20,15 @@ namespace org::xml::sax::helpers
 		AttributeListImpl(JObject arg0);
 		
 		// Methods
-		void addAttribute(jstring arg0, jstring arg1, jstring arg2);
+		void addAttribute(JString arg0, JString arg1, JString arg2);
 		void clear();
 		jint getLength();
-		jstring getName(jint arg0);
-		jstring getType(jint arg0);
-		jstring getType(jstring arg0);
-		jstring getValue(jint arg0);
-		jstring getValue(jstring arg0);
-		void removeAttribute(jstring arg0);
+		JString getName(jint arg0);
+		JString getType(jint arg0);
+		JString getType(JString arg0);
+		JString getValue(jint arg0);
+		JString getValue(JString arg0);
+		void removeAttribute(JString arg0);
 		void setAttributeList(JObject arg0);
 	};
 } // namespace org::xml::sax::helpers

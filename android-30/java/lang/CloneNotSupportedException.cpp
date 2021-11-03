@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./CloneNotSupportedException.hpp"
 
 namespace java::lang
@@ -13,11 +14,11 @@ namespace java::lang
 			"java.lang.CloneNotSupportedException",
 			"()V"
 		) {}
-	CloneNotSupportedException::CloneNotSupportedException(jstring arg0)
+	CloneNotSupportedException::CloneNotSupportedException(JString arg0)
 		: java::lang::Exception(
 			"java.lang.CloneNotSupportedException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

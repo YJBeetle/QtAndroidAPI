@@ -1,11 +1,8 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "../../../java/lang/Exception.hpp"
-#include "../../../java/lang/RuntimeException.hpp"
-#include "../SQLException.hpp"
 #include "./SQLiteException.hpp"
 
+class JString;
 
 namespace android::database::sqlite
 {
@@ -20,7 +17,7 @@ namespace android::database::sqlite
 		
 		// Constructors
 		SQLiteDiskIOException();
-		SQLiteDiskIOException(jstring arg0);
+		SQLiteDiskIOException(JString arg0);
 		
 		// Methods
 	};

@@ -1,3 +1,5 @@
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
 #include "./RoundingMode.hpp"
 
 namespace java::math
@@ -83,22 +85,22 @@ namespace java::math
 			arg0
 		);
 	}
-	java::math::RoundingMode RoundingMode::valueOf(jstring arg0)
+	java::math::RoundingMode RoundingMode::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"java.math.RoundingMode",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/math/RoundingMode;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray RoundingMode::values()
+	JArray RoundingMode::values()
 	{
 		return callStaticObjectMethod(
 			"java.math.RoundingMode",
 			"values",
 			"()[Ljava/math/RoundingMode;"
-		).object<jarray>();
+		);
 	}
 } // namespace java::math
 

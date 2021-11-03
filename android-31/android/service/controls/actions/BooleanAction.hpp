@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../../../JObject.hpp"
 #include "./ControlAction.hpp"
 
+class JString;
 
 namespace android::service::controls::actions
 {
@@ -16,8 +16,8 @@ namespace android::service::controls::actions
 		BooleanAction(QJniObject obj);
 		
 		// Constructors
-		BooleanAction(jstring arg0, jboolean arg1);
-		BooleanAction(jstring arg0, jboolean arg1, jstring arg2);
+		BooleanAction(JString arg0, jboolean arg1);
+		BooleanAction(JString arg0, jboolean arg1, JString arg2);
 		
 		// Methods
 		jint getActionType();

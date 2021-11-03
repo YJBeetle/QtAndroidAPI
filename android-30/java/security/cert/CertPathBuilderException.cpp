@@ -1,3 +1,5 @@
+#include "../../../JString.hpp"
+#include "../../../JThrowable.hpp"
 #include "./CertPathBuilderException.hpp"
 
 namespace java::security::cert
@@ -13,24 +15,24 @@ namespace java::security::cert
 			"java.security.cert.CertPathBuilderException",
 			"()V"
 		) {}
-	CertPathBuilderException::CertPathBuilderException(jstring arg0)
+	CertPathBuilderException::CertPathBuilderException(JString arg0)
 		: java::security::GeneralSecurityException(
 			"java.security.cert.CertPathBuilderException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	CertPathBuilderException::CertPathBuilderException(jthrowable arg0)
+	CertPathBuilderException::CertPathBuilderException(JThrowable arg0)
 		: java::security::GeneralSecurityException(
 			"java.security.cert.CertPathBuilderException",
 			"(Ljava/lang/Throwable;)V",
-			arg0
+			arg0.object<jthrowable>()
 		) {}
-	CertPathBuilderException::CertPathBuilderException(jstring arg0, jthrowable arg1)
+	CertPathBuilderException::CertPathBuilderException(JString arg0, JThrowable arg1)
 		: java::security::GeneralSecurityException(
 			"java.security.cert.CertPathBuilderException",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
 		) {}
 	
 	// Methods

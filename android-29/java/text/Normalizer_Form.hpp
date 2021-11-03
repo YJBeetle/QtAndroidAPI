@@ -1,8 +1,9 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "../lang/Enum.hpp"
 
+class JArray;
+class JString;
 
 namespace java::text
 {
@@ -22,8 +23,8 @@ namespace java::text
 		// Constructors
 		
 		// Methods
-		static java::text::Normalizer_Form valueOf(jstring arg0);
-		static jarray values();
+		static java::text::Normalizer_Form valueOf(JString arg0);
+		static JArray values();
 	};
 } // namespace java::text
 

@@ -6,6 +6,7 @@ namespace java::io
 {
 	class InputStream;
 }
+class JString;
 namespace java::security
 {
 	class Provider;
@@ -41,19 +42,19 @@ namespace java::security::cert
 		// Constructors
 		
 		// Methods
-		static java::security::cert::CertificateFactory getInstance(jstring arg0);
-		static java::security::cert::CertificateFactory getInstance(jstring arg0, jstring arg1);
-		static java::security::cert::CertificateFactory getInstance(jstring arg0, java::security::Provider arg1);
+		static java::security::cert::CertificateFactory getInstance(JString arg0);
+		static java::security::cert::CertificateFactory getInstance(JString arg0, JString arg1);
+		static java::security::cert::CertificateFactory getInstance(JString arg0, java::security::Provider arg1);
 		java::security::cert::CRL generateCRL(java::io::InputStream arg0);
 		JObject generateCRLs(java::io::InputStream arg0);
 		java::security::cert::CertPath generateCertPath(java::io::InputStream arg0);
 		java::security::cert::CertPath generateCertPath(JObject arg0);
-		java::security::cert::CertPath generateCertPath(java::io::InputStream arg0, jstring arg1);
+		java::security::cert::CertPath generateCertPath(java::io::InputStream arg0, JString arg1);
 		java::security::cert::Certificate generateCertificate(java::io::InputStream arg0);
 		JObject generateCertificates(java::io::InputStream arg0);
 		JObject getCertPathEncodings();
 		java::security::Provider getProvider();
-		jstring getType();
+		JString getType();
 	};
 } // namespace java::security::cert
 

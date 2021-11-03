@@ -2,50 +2,51 @@
 #include "./TvInputInfo.hpp"
 #include "./TvInputManager_TvInputCallback.hpp"
 #include "../../os/Handler.hpp"
+#include "../../../JString.hpp"
 #include "./TvInputManager.hpp"
 
 namespace android::media::tv
 {
 	// Fields
-	jstring TvInputManager::ACTION_BLOCKED_RATINGS_CHANGED()
+	JString TvInputManager::ACTION_BLOCKED_RATINGS_CHANGED()
 	{
 		return getStaticObjectField(
 			"android.media.tv.TvInputManager",
 			"ACTION_BLOCKED_RATINGS_CHANGED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TvInputManager::ACTION_PARENTAL_CONTROLS_ENABLED_CHANGED()
+	JString TvInputManager::ACTION_PARENTAL_CONTROLS_ENABLED_CHANGED()
 	{
 		return getStaticObjectField(
 			"android.media.tv.TvInputManager",
 			"ACTION_PARENTAL_CONTROLS_ENABLED_CHANGED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TvInputManager::ACTION_QUERY_CONTENT_RATING_SYSTEMS()
+	JString TvInputManager::ACTION_QUERY_CONTENT_RATING_SYSTEMS()
 	{
 		return getStaticObjectField(
 			"android.media.tv.TvInputManager",
 			"ACTION_QUERY_CONTENT_RATING_SYSTEMS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TvInputManager::ACTION_SETUP_INPUTS()
+	JString TvInputManager::ACTION_SETUP_INPUTS()
 	{
 		return getStaticObjectField(
 			"android.media.tv.TvInputManager",
 			"ACTION_SETUP_INPUTS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TvInputManager::ACTION_VIEW_RECORDING_SCHEDULES()
+	JString TvInputManager::ACTION_VIEW_RECORDING_SCHEDULES()
 	{
 		return getStaticObjectField(
 			"android.media.tv.TvInputManager",
 			"ACTION_VIEW_RECORDING_SCHEDULES",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint TvInputManager::INPUT_STATE_CONNECTED()
 	{
@@ -68,13 +69,13 @@ namespace android::media::tv
 			"INPUT_STATE_DISCONNECTED"
 		);
 	}
-	jstring TvInputManager::META_DATA_CONTENT_RATING_SYSTEMS()
+	JString TvInputManager::META_DATA_CONTENT_RATING_SYSTEMS()
 	{
 		return getStaticObjectField(
 			"android.media.tv.TvInputManager",
 			"META_DATA_CONTENT_RATING_SYSTEMS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint TvInputManager::RECORDING_ERROR_INSUFFICIENT_SPACE()
 	{
@@ -272,20 +273,20 @@ namespace android::media::tv
 			"()Ljava/util/List;"
 		);
 	}
-	jint TvInputManager::getInputState(jstring arg0)
+	jint TvInputManager::getInputState(JString arg0)
 	{
 		return callMethod<jint>(
 			"getInputState",
 			"(Ljava/lang/String;)I",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	android::media::tv::TvInputInfo TvInputManager::getTvInputInfo(jstring arg0)
+	android::media::tv::TvInputInfo TvInputManager::getTvInputInfo(JString arg0)
 	{
 		return callObjectMethod(
 			"getTvInputInfo",
 			"(Ljava/lang/String;)Landroid/media/tv/TvInputInfo;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	JObject TvInputManager::getTvInputList()

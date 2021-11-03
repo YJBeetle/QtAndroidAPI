@@ -1,4 +1,6 @@
+#include "../../JByteArray.hpp"
 #include "../os/Parcel.hpp"
+#include "../../JString.hpp"
 #include "./GnssNavigationMessage.hpp"
 
 namespace android::location
@@ -117,12 +119,12 @@ namespace android::location
 			"()I"
 		);
 	}
-	jbyteArray GnssNavigationMessage::getData()
+	JByteArray GnssNavigationMessage::getData()
 	{
 		return callObjectMethod(
 			"getData",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
 	jint GnssNavigationMessage::getMessageId()
 	{
@@ -159,12 +161,12 @@ namespace android::location
 			"()I"
 		);
 	}
-	jstring GnssNavigationMessage::toString()
+	JString GnssNavigationMessage::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void GnssNavigationMessage::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

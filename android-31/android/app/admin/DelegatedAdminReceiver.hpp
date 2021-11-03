@@ -1,6 +1,5 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "../../content/BroadcastReceiver.hpp"
 
 namespace android::content
@@ -15,6 +14,7 @@ namespace android::net
 {
 	class Uri;
 }
+class JString;
 
 namespace android::app::admin
 {
@@ -31,7 +31,7 @@ namespace android::app::admin
 		DelegatedAdminReceiver();
 		
 		// Methods
-		jstring onChoosePrivateKeyAlias(android::content::Context arg0, android::content::Intent arg1, jint arg2, android::net::Uri arg3, jstring arg4);
+		JString onChoosePrivateKeyAlias(android::content::Context arg0, android::content::Intent arg1, jint arg2, android::net::Uri arg3, JString arg4);
 		void onNetworkLogsAvailable(android::content::Context arg0, android::content::Intent arg1, jlong arg2, jint arg3);
 		void onReceive(android::content::Context arg0, android::content::Intent arg1);
 		void onSecurityLogsAvailable(android::content::Context arg0, android::content::Intent arg1);

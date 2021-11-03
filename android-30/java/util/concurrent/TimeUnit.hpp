@@ -1,8 +1,10 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "../../lang/Enum.hpp"
 
+class JArray;
+class JObject;
+class JString;
 namespace java::lang
 {
 	class Thread;
@@ -38,13 +40,13 @@ namespace java::util::concurrent
 		
 		// Methods
 		static java::util::concurrent::TimeUnit of(java::time::temporal::ChronoUnit arg0);
-		static java::util::concurrent::TimeUnit valueOf(jstring arg0);
-		static jarray values();
+		static java::util::concurrent::TimeUnit valueOf(JString arg0);
+		static JArray values();
 		jlong convert(java::time::Duration arg0);
 		jlong convert(jlong arg0, java::util::concurrent::TimeUnit arg1);
 		void sleep(jlong arg0);
 		void timedJoin(java::lang::Thread arg0, jlong arg1);
-		void timedWait(jobject arg0, jlong arg1);
+		void timedWait(JObject arg0, jlong arg1);
 		java::time::temporal::ChronoUnit toChronoUnit();
 		jlong toDays(jlong arg0);
 		jlong toHours(jlong arg0);

@@ -1,10 +1,8 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "../Error.hpp"
-#include "../LinkageError.hpp"
 #include "../ClassFormatError.hpp"
 
+class JString;
 
 namespace java::lang::reflect
 {
@@ -19,7 +17,7 @@ namespace java::lang::reflect
 		
 		// Constructors
 		GenericSignatureFormatError();
-		GenericSignatureFormatError(jstring arg0);
+		GenericSignatureFormatError(JString arg0);
 		
 		// Methods
 	};

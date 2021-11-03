@@ -1,3 +1,7 @@
+#include "../../../JIntArray.hpp"
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
+#include "../../../JString.hpp"
 #include "../../lang/StringBuffer.hpp"
 #include "../../lang/StringBuilder.hpp"
 #include "./Pattern.hpp"
@@ -13,31 +17,31 @@ namespace java::util::regex
 	// Constructors
 	
 	// Methods
-	jstring Matcher::quoteReplacement(jstring arg0)
+	JString Matcher::quoteReplacement(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"java.util.regex.Matcher",
 			"quoteReplacement",
 			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
+			arg0.object<jstring>()
+		);
 	}
-	java::util::regex::Matcher Matcher::appendReplacement(java::lang::StringBuffer arg0, jstring arg1)
+	java::util::regex::Matcher Matcher::appendReplacement(java::lang::StringBuffer arg0, JString arg1)
 	{
 		return callObjectMethod(
 			"appendReplacement",
 			"(Ljava/lang/StringBuffer;Ljava/lang/String;)Ljava/util/regex/Matcher;",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
-	java::util::regex::Matcher Matcher::appendReplacement(java::lang::StringBuilder arg0, jstring arg1)
+	java::util::regex::Matcher Matcher::appendReplacement(java::lang::StringBuilder arg0, JString arg1)
 	{
 		return callObjectMethod(
 			"appendReplacement",
 			"(Ljava/lang/StringBuilder;Ljava/lang/String;)Ljava/util/regex/Matcher;",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
 	java::lang::StringBuffer Matcher::appendTail(java::lang::StringBuffer arg0)
@@ -71,12 +75,12 @@ namespace java::util::regex
 			arg0
 		);
 	}
-	jint Matcher::end(jstring arg0)
+	jint Matcher::end(JString arg0)
 	{
 		return callMethod<jint>(
 			"end",
 			"(Ljava/lang/String;)I",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	jboolean Matcher::find()
@@ -94,28 +98,28 @@ namespace java::util::regex
 			arg0
 		);
 	}
-	jstring Matcher::group()
+	JString Matcher::group()
 	{
 		return callObjectMethod(
 			"group",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Matcher::group(jint arg0)
+	JString Matcher::group(jint arg0)
 	{
 		return callObjectMethod(
 			"group",
 			"(I)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
-	jstring Matcher::group(jstring arg0)
+	JString Matcher::group(JString arg0)
 	{
 		return callObjectMethod(
 			"group",
 			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
+			arg0.object<jstring>()
+		);
 	}
 	jint Matcher::groupCount()
 	{
@@ -189,37 +193,37 @@ namespace java::util::regex
 			"()I"
 		);
 	}
-	jstring Matcher::replaceAll(jstring arg0)
+	JString Matcher::replaceAll(JString arg0)
 	{
 		return callObjectMethod(
 			"replaceAll",
 			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
+			arg0.object<jstring>()
+		);
 	}
-	jstring Matcher::replaceAll(JObject arg0)
+	JString Matcher::replaceAll(JObject arg0)
 	{
 		return callObjectMethod(
 			"replaceAll",
 			"(Ljava/util/function/Function;)Ljava/lang/String;",
 			arg0.object()
-		).object<jstring>();
+		);
 	}
-	jstring Matcher::replaceFirst(jstring arg0)
+	JString Matcher::replaceFirst(JString arg0)
 	{
 		return callObjectMethod(
 			"replaceFirst",
 			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
+			arg0.object<jstring>()
+		);
 	}
-	jstring Matcher::replaceFirst(JObject arg0)
+	JString Matcher::replaceFirst(JObject arg0)
 	{
 		return callObjectMethod(
 			"replaceFirst",
 			"(Ljava/util/function/Function;)Ljava/lang/String;",
 			arg0.object()
-		).object<jstring>();
+		);
 	}
 	jboolean Matcher::requireEnd()
 	{
@@ -235,12 +239,12 @@ namespace java::util::regex
 			"()Ljava/util/regex/Matcher;"
 		);
 	}
-	java::util::regex::Matcher Matcher::reset(jstring arg0)
+	java::util::regex::Matcher Matcher::reset(JString arg0)
 	{
 		return callObjectMethod(
 			"reset",
 			"(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	JObject Matcher::results()
@@ -265,12 +269,12 @@ namespace java::util::regex
 			arg0
 		);
 	}
-	jint Matcher::start(jstring arg0)
+	jint Matcher::start(JString arg0)
 	{
 		return callMethod<jint>(
 			"start",
 			"(Ljava/lang/String;)I",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	JObject Matcher::toMatchResult()
@@ -280,12 +284,12 @@ namespace java::util::regex
 			"()Ljava/util/regex/MatchResult;"
 		);
 	}
-	jstring Matcher::toString()
+	JString Matcher::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	java::util::regex::Matcher Matcher::useAnchoringBounds(jboolean arg0)
 	{

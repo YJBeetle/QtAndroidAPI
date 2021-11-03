@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./View.hpp"
 
+class JIntArray;
 namespace android::animation
 {
 	class LayoutTransition;
@@ -115,6 +115,8 @@ namespace android::view::translation
 {
 	class TranslationCapability;
 }
+class JString;
+class JString;
 namespace java::util
 {
 	class ArrayList;
@@ -149,7 +151,7 @@ namespace android::view
 		// Methods
 		static jint getChildMeasureSpec(jint arg0, jint arg1, jint arg2);
 		void addChildrenForAccessibility(java::util::ArrayList arg0);
-		void addExtraDataToAccessibilityNodeInfo(android::view::accessibility::AccessibilityNodeInfo arg0, jstring arg1, android::os::Bundle arg2);
+		void addExtraDataToAccessibilityNodeInfo(android::view::accessibility::AccessibilityNodeInfo arg0, JString arg1, android::os::Bundle arg2);
 		void addFocusables(java::util::ArrayList arg0, jint arg1, jint arg2);
 		void addKeyboardNavigationClusters(JObject arg0, jint arg1);
 		jboolean addStatesFromChildren();
@@ -168,7 +170,7 @@ namespace android::view
 		android::view::WindowInsets dispatchApplyWindowInsets(android::view::WindowInsets arg0);
 		jboolean dispatchCapturedPointerEvent(android::view::MotionEvent arg0);
 		void dispatchConfigurationChanged(android::content::res::Configuration arg0);
-		void dispatchCreateViewTranslationRequest(JObject arg0, jintArray arg1, android::view::translation::TranslationCapability arg2, JObject arg3);
+		void dispatchCreateViewTranslationRequest(JObject arg0, JIntArray arg1, android::view::translation::TranslationCapability arg2, JObject arg3);
 		void dispatchDisplayHint(jint arg0);
 		jboolean dispatchDragEvent(android::view::DragEvent arg0);
 		void dispatchDrawableHotspotChanged(jfloat arg0, jfloat arg1);
@@ -196,12 +198,12 @@ namespace android::view
 		void dispatchWindowVisibilityChanged(jint arg0);
 		void endViewTransition(android::view::View arg0);
 		android::view::View findFocus();
-		void findViewsWithText(java::util::ArrayList arg0, jstring arg1, jint arg2);
+		void findViewsWithText(java::util::ArrayList arg0, JString arg1, jint arg2);
 		android::view::View focusSearch(android::view::View arg0, jint arg1);
 		void focusableViewAvailable(android::view::View arg0);
 		jboolean gatherTransparentRegion(android::graphics::Region arg0);
 		android::view::ViewGroup_LayoutParams generateLayoutParams(JObject arg0);
-		jstring getAccessibilityClassName();
+		JString getAccessibilityClassName();
 		android::view::View getChildAt(jint arg0);
 		jint getChildCount();
 		jint getChildDrawingOrder(jint arg0);
@@ -222,7 +224,7 @@ namespace android::view
 		jboolean hasTransientState();
 		jint indexOfChild(android::view::View arg0);
 		void invalidateChild(android::view::View arg0, android::graphics::Rect arg1);
-		JObject invalidateChildInParent(jintArray arg0, android::graphics::Rect arg1);
+		JObject invalidateChildInParent(JIntArray arg0, android::graphics::Rect arg1);
 		jboolean isAlwaysDrawnWithCacheEnabled();
 		jboolean isAnimationCacheEnabled();
 		jboolean isLayoutSuppressed();
@@ -239,7 +241,7 @@ namespace android::view
 		jboolean onNestedFling(android::view::View arg0, jfloat arg1, jfloat arg2, jboolean arg3);
 		jboolean onNestedPreFling(android::view::View arg0, jfloat arg1, jfloat arg2);
 		jboolean onNestedPrePerformAccessibilityAction(android::view::View arg0, jint arg1, android::os::Bundle arg2);
-		void onNestedPreScroll(android::view::View arg0, jint arg1, jint arg2, jintArray arg3);
+		void onNestedPreScroll(android::view::View arg0, jint arg1, jint arg2, JIntArray arg3);
 		void onNestedScroll(android::view::View arg0, jint arg1, jint arg2, jint arg3, jint arg4);
 		void onNestedScrollAccepted(android::view::View arg0, android::view::View arg1, jint arg2);
 		jboolean onRequestSendAccessibilityEvent(android::view::View arg0, android::view::accessibility::AccessibilityEvent arg1);

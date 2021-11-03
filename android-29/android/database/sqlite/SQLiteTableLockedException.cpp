@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./SQLiteTableLockedException.hpp"
 
 namespace android::database::sqlite
@@ -13,11 +14,11 @@ namespace android::database::sqlite
 			"android.database.sqlite.SQLiteTableLockedException",
 			"()V"
 		) {}
-	SQLiteTableLockedException::SQLiteTableLockedException(jstring arg0)
+	SQLiteTableLockedException::SQLiteTableLockedException(JString arg0)
 		: android::database::sqlite::SQLiteException(
 			"android.database.sqlite.SQLiteTableLockedException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

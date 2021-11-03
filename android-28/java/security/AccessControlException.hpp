@@ -1,10 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../lang/Exception.hpp"
-#include "../lang/RuntimeException.hpp"
 #include "../lang/SecurityException.hpp"
 
+class JString;
 namespace java::security
 {
 	class Permission;
@@ -22,8 +20,8 @@ namespace java::security
 		AccessControlException(QJniObject obj);
 		
 		// Constructors
-		AccessControlException(jstring arg0);
-		AccessControlException(jstring arg0, java::security::Permission arg1);
+		AccessControlException(JString arg0);
+		AccessControlException(JString arg0, java::security::Permission arg1);
 		
 		// Methods
 		java::security::Permission getPermission();

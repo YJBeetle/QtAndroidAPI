@@ -1,3 +1,5 @@
+#include "../../../../../JArray.hpp"
+#include "../../../../../JString.hpp"
 #include "./AllowAllHostnameVerifier.hpp"
 
 namespace org::apache::http::conn::ssl
@@ -15,21 +17,21 @@ namespace org::apache::http::conn::ssl
 		) {}
 	
 	// Methods
-	jstring AllowAllHostnameVerifier::toString()
+	JString AllowAllHostnameVerifier::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	void AllowAllHostnameVerifier::verify(jstring arg0, jarray arg1, jarray arg2)
+	void AllowAllHostnameVerifier::verify(JString arg0, JArray arg1, JArray arg2)
 	{
 		callMethod<void>(
 			"verify",
 			"(Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;)V",
-			arg0,
-			arg1,
-			arg2
+			arg0.object<jstring>(),
+			arg1.object<jarray>(),
+			arg2.object<jarray>()
 		);
 	}
 } // namespace org::apache::http::conn::ssl

@@ -1,5 +1,6 @@
 #include "./JsonToken.hpp"
 #include "../../java/io/Reader.hpp"
+#include "../../JString.hpp"
 #include "./JsonReader.hpp"
 
 namespace android::util
@@ -95,12 +96,12 @@ namespace android::util
 			"()J"
 		);
 	}
-	jstring JsonReader::nextName()
+	JString JsonReader::nextName()
 	{
 		return callObjectMethod(
 			"nextName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void JsonReader::nextNull()
 	{
@@ -109,12 +110,12 @@ namespace android::util
 			"()V"
 		);
 	}
-	jstring JsonReader::nextString()
+	JString JsonReader::nextString()
 	{
 		return callObjectMethod(
 			"nextString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::util::JsonToken JsonReader::peek()
 	{
@@ -138,12 +139,12 @@ namespace android::util
 			"()V"
 		);
 	}
-	jstring JsonReader::toString()
+	JString JsonReader::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::util
 

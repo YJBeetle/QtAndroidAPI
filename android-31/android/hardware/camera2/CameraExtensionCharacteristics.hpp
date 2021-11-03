@@ -10,6 +10,7 @@ namespace android::util
 {
 	class Size;
 }
+class JClass;
 
 namespace android::hardware::camera2
 {
@@ -32,7 +33,7 @@ namespace android::hardware::camera2
 		// Methods
 		android::util::Range getEstimatedCaptureLatencyRangeMillis(jint arg0, android::util::Size arg1, jint arg2);
 		JObject getExtensionSupportedSizes(jint arg0, jint arg1);
-		JObject getExtensionSupportedSizes(jint arg0, jclass arg1);
+		JObject getExtensionSupportedSizes(jint arg0, JClass arg1);
 		JObject getSupportedExtensions();
 	};
 } // namespace android::hardware::camera2

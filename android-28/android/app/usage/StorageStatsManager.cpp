@@ -1,6 +1,7 @@
 #include "./ExternalStorageStats.hpp"
 #include "./StorageStats.hpp"
 #include "../../os/UserHandle.hpp"
+#include "../../../JString.hpp"
 #include "../../../java/util/UUID.hpp"
 #include "./StorageStatsManager.hpp"
 
@@ -39,13 +40,13 @@ namespace android::app::usage
 			arg1.object()
 		);
 	}
-	android::app::usage::StorageStats StorageStatsManager::queryStatsForPackage(java::util::UUID arg0, jstring arg1, android::os::UserHandle arg2)
+	android::app::usage::StorageStats StorageStatsManager::queryStatsForPackage(java::util::UUID arg0, JString arg1, android::os::UserHandle arg2)
 	{
 		return callObjectMethod(
 			"queryStatsForPackage",
 			"(Ljava/util/UUID;Ljava/lang/String;Landroid/os/UserHandle;)Landroid/app/usage/StorageStats;",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2.object()
 		);
 	}

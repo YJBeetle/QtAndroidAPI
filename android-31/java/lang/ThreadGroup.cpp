@@ -1,5 +1,9 @@
+#include "../../JArray.hpp"
+#include "../../JArray.hpp"
 #include "../io/PrintStream.hpp"
+#include "../../JString.hpp"
 #include "./Thread.hpp"
+#include "../../JThrowable.hpp"
 #include "./Void.hpp"
 #include "./ThreadGroup.hpp"
 
@@ -11,18 +15,18 @@ namespace java::lang
 	ThreadGroup::ThreadGroup(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	ThreadGroup::ThreadGroup(jstring arg0)
+	ThreadGroup::ThreadGroup(JString arg0)
 		: JObject(
 			"java.lang.ThreadGroup",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	ThreadGroup::ThreadGroup(java::lang::ThreadGroup &arg0, jstring arg1)
+	ThreadGroup::ThreadGroup(java::lang::ThreadGroup &arg0, JString arg1)
 		: JObject(
 			"java.lang.ThreadGroup",
 			"(Ljava/lang/ThreadGroup;Ljava/lang/String;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		) {}
 	
 	// Methods
@@ -62,20 +66,20 @@ namespace java::lang
 			"()V"
 		);
 	}
-	jint ThreadGroup::enumerate(jarray arg0)
+	jint ThreadGroup::enumerate(JArray arg0)
 	{
 		return callMethod<jint>(
 			"enumerate",
 			"([Ljava/lang/Thread;)I",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
-	jint ThreadGroup::enumerate(jarray arg0, jboolean arg1)
+	jint ThreadGroup::enumerate(JArray arg0, jboolean arg1)
 	{
 		return callMethod<jint>(
 			"enumerate",
 			"([Ljava/lang/Thread;Z)I",
-			arg0,
+			arg0.object<jarray>(),
 			arg1
 		);
 	}
@@ -86,12 +90,12 @@ namespace java::lang
 			"()I"
 		);
 	}
-	jstring ThreadGroup::getName()
+	JString ThreadGroup::getName()
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	java::lang::ThreadGroup ThreadGroup::getParent()
 	{
@@ -173,20 +177,20 @@ namespace java::lang
 			"()V"
 		);
 	}
-	jstring ThreadGroup::toString()
+	JString ThreadGroup::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	void ThreadGroup::uncaughtException(java::lang::Thread arg0, jthrowable arg1)
+	void ThreadGroup::uncaughtException(java::lang::Thread arg0, JThrowable arg1)
 	{
 		callMethod<void>(
 			"uncaughtException",
 			"(Ljava/lang/Thread;Ljava/lang/Throwable;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jthrowable>()
 		);
 	}
 } // namespace java::lang

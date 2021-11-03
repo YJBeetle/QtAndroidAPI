@@ -1,5 +1,7 @@
 #include "./Looper.hpp"
 #include "./Message.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./Handler.hpp"
 
 namespace android::os
@@ -63,13 +65,13 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	void Handler::dump(JObject arg0, jstring arg1)
+	void Handler::dump(JObject arg0, JString arg1)
 	{
 		callMethod<void>(
 			"dump",
 			"(Landroid/util/Printer;Ljava/lang/String;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
 	android::os::Looper Handler::getLooper()
@@ -79,13 +81,13 @@ namespace android::os
 			"()Landroid/os/Looper;"
 		);
 	}
-	jstring Handler::getMessageName(android::os::Message arg0)
+	JString Handler::getMessageName(android::os::Message arg0)
 	{
 		return callObjectMethod(
 			"getMessageName",
 			"(Landroid/os/Message;)Ljava/lang/String;",
 			arg0.object()
-		).object<jstring>();
+		);
 	}
 	void Handler::handleMessage(android::os::Message arg0)
 	{
@@ -103,13 +105,13 @@ namespace android::os
 			arg0
 		);
 	}
-	jboolean Handler::hasMessages(jint arg0, jobject arg1)
+	jboolean Handler::hasMessages(jint arg0, JObject arg1)
 	{
 		return callMethod<jboolean>(
 			"hasMessages",
 			"(ILjava/lang/Object;)Z",
 			arg0,
-			arg1
+			arg1.object<jobject>()
 		);
 	}
 	android::os::Message Handler::obtainMessage()
@@ -127,13 +129,13 @@ namespace android::os
 			arg0
 		);
 	}
-	android::os::Message Handler::obtainMessage(jint arg0, jobject arg1)
+	android::os::Message Handler::obtainMessage(jint arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"obtainMessage",
 			"(ILjava/lang/Object;)Landroid/os/Message;",
 			arg0,
-			arg1
+			arg1.object<jobject>()
 		);
 	}
 	android::os::Message Handler::obtainMessage(jint arg0, jint arg1, jint arg2)
@@ -146,7 +148,7 @@ namespace android::os
 			arg2
 		);
 	}
-	android::os::Message Handler::obtainMessage(jint arg0, jint arg1, jint arg2, jobject arg3)
+	android::os::Message Handler::obtainMessage(jint arg0, jint arg1, jint arg2, JObject arg3)
 	{
 		return callObjectMethod(
 			"obtainMessage",
@@ -154,7 +156,7 @@ namespace android::os
 			arg0,
 			arg1,
 			arg2,
-			arg3
+			arg3.object<jobject>()
 		);
 	}
 	jboolean Handler::post(JObject arg0)
@@ -182,13 +184,13 @@ namespace android::os
 			arg1
 		);
 	}
-	jboolean Handler::postAtTime(JObject arg0, jobject arg1, jlong arg2)
+	jboolean Handler::postAtTime(JObject arg0, JObject arg1, jlong arg2)
 	{
 		return callMethod<jboolean>(
 			"postAtTime",
 			"(Ljava/lang/Runnable;Ljava/lang/Object;J)Z",
 			arg0.object(),
-			arg1,
+			arg1.object<jobject>(),
 			arg2
 		);
 	}
@@ -201,13 +203,13 @@ namespace android::os
 			arg1
 		);
 	}
-	jboolean Handler::postDelayed(JObject arg0, jobject arg1, jlong arg2)
+	jboolean Handler::postDelayed(JObject arg0, JObject arg1, jlong arg2)
 	{
 		return callMethod<jboolean>(
 			"postDelayed",
 			"(Ljava/lang/Runnable;Ljava/lang/Object;J)Z",
 			arg0.object(),
-			arg1,
+			arg1.object<jobject>(),
 			arg2
 		);
 	}
@@ -219,21 +221,21 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	void Handler::removeCallbacks(JObject arg0, jobject arg1)
+	void Handler::removeCallbacks(JObject arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"removeCallbacks",
 			"(Ljava/lang/Runnable;Ljava/lang/Object;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jobject>()
 		);
 	}
-	void Handler::removeCallbacksAndMessages(jobject arg0)
+	void Handler::removeCallbacksAndMessages(JObject arg0)
 	{
 		callMethod<void>(
 			"removeCallbacksAndMessages",
 			"(Ljava/lang/Object;)V",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	void Handler::removeMessages(jint arg0)
@@ -244,13 +246,13 @@ namespace android::os
 			arg0
 		);
 	}
-	void Handler::removeMessages(jint arg0, jobject arg1)
+	void Handler::removeMessages(jint arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"removeMessages",
 			"(ILjava/lang/Object;)V",
 			arg0,
-			arg1
+			arg1.object<jobject>()
 		);
 	}
 	jboolean Handler::sendEmptyMessage(jint arg0)
@@ -313,12 +315,12 @@ namespace android::os
 			arg1
 		);
 	}
-	jstring Handler::toString()
+	JString Handler::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::os
 

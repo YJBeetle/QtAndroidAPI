@@ -1,8 +1,12 @@
+#include "../../../JFloatArray.hpp"
+#include "../../../JIntArray.hpp"
+#include "../../../JArray.hpp"
 #include "../../icu/util/ULocale.hpp"
 #include "../../os/Bundle.hpp"
 #include "../../os/Parcel.hpp"
 #include "./TextClassificationContext.hpp"
 #include "./TextClassifierEvent_Builder.hpp"
+#include "../../../JString.hpp"
 #include "./TextClassifierEvent.hpp"
 
 namespace android::view::textclassifier
@@ -198,19 +202,19 @@ namespace android::view::textclassifier
 			"()I"
 		);
 	}
-	jintArray TextClassifierEvent::getActionIndices()
+	JIntArray TextClassifierEvent::getActionIndices()
 	{
 		return callObjectMethod(
 			"getActionIndices",
 			"()[I"
-		).object<jintArray>();
+		);
 	}
-	jarray TextClassifierEvent::getEntityTypes()
+	JArray TextClassifierEvent::getEntityTypes()
 	{
 		return callObjectMethod(
 			"getEntityTypes",
 			"()[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
 	jint TextClassifierEvent::getEventCategory()
 	{
@@ -254,33 +258,33 @@ namespace android::view::textclassifier
 			"()Landroid/icu/util/ULocale;"
 		);
 	}
-	jstring TextClassifierEvent::getModelName()
+	JString TextClassifierEvent::getModelName()
 	{
 		return callObjectMethod(
 			"getModelName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TextClassifierEvent::getResultId()
+	JString TextClassifierEvent::getResultId()
 	{
 		return callObjectMethod(
 			"getResultId",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jfloatArray TextClassifierEvent::getScores()
+	JFloatArray TextClassifierEvent::getScores()
 	{
 		return callObjectMethod(
 			"getScores",
 			"()[F"
-		).object<jfloatArray>();
+		);
 	}
-	jstring TextClassifierEvent::toString()
+	JString TextClassifierEvent::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void TextClassifierEvent::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

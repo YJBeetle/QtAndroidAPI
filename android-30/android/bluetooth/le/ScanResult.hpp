@@ -14,6 +14,8 @@ namespace android::os
 {
 	class Parcel;
 }
+class JObject;
+class JString;
 
 namespace android::bluetooth::le
 {
@@ -39,7 +41,7 @@ namespace android::bluetooth::le
 		
 		// Methods
 		jint describeContents();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint getAdvertisingSid();
 		jint getDataStatus();
 		android::bluetooth::BluetoothDevice getDevice();
@@ -53,7 +55,7 @@ namespace android::bluetooth::le
 		jint hashCode();
 		jboolean isConnectable();
 		jboolean isLegacy();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::bluetooth::le

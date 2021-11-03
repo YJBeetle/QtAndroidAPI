@@ -14,6 +14,8 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
+class JString;
 
 namespace android::view::textclassifier
 {
@@ -32,16 +34,16 @@ namespace android::view::textclassifier
 		// Methods
 		jint describeContents();
 		JObject getActions();
-		jfloat getConfidenceScore(jstring arg0);
-		jstring getEntity(jint arg0);
+		jfloat getConfidenceScore(JString arg0);
+		JString getEntity(jint arg0);
 		jint getEntityCount();
 		android::graphics::drawable::Drawable getIcon();
-		jstring getId();
+		JString getId();
 		android::content::Intent getIntent();
-		jstring getLabel();
+		JString getLabel();
 		JObject getOnClickListener();
-		jstring getText();
-		jstring toString();
+		JString getText();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::view::textclassifier

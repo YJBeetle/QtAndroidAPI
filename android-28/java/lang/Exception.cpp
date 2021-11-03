@@ -1,3 +1,5 @@
+#include "../../JString.hpp"
+#include "../../JThrowable.hpp"
 #include "./Exception.hpp"
 
 namespace java::lang
@@ -5,32 +7,32 @@ namespace java::lang
 	// Fields
 	
 	// QJniObject forward
-	Exception::Exception(QJniObject obj) : JObject(obj) {}
+	Exception::Exception(QJniObject obj) : JThrowable(obj) {}
 	
 	// Constructors
 	Exception::Exception()
-		: JObject(
+		: JThrowable(
 			"java.lang.Exception",
 			"()V"
 		) {}
-	Exception::Exception(jstring arg0)
-		: JObject(
+	Exception::Exception(JString arg0)
+		: JThrowable(
 			"java.lang.Exception",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	Exception::Exception(jthrowable arg0)
-		: JObject(
+	Exception::Exception(JThrowable arg0)
+		: JThrowable(
 			"java.lang.Exception",
 			"(Ljava/lang/Throwable;)V",
-			arg0
+			arg0.object<jthrowable>()
 		) {}
-	Exception::Exception(jstring arg0, jthrowable arg1)
-		: JObject(
+	Exception::Exception(JString arg0, JThrowable arg1)
+		: JThrowable(
 			"java.lang.Exception",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
 		) {}
 	
 	// Methods

@@ -1,6 +1,10 @@
+#include "../../JArray.hpp"
 #include "../app/AlertDialog_Builder.hpp"
 #include "../content/Context.hpp"
 #include "../content/res/TypedArray.hpp"
+#include "../../JString.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./ListPreference.hpp"
 
 namespace android::preference
@@ -43,55 +47,55 @@ namespace android::preference
 		) {}
 	
 	// Methods
-	jint ListPreference::findIndexOfValue(jstring arg0)
+	jint ListPreference::findIndexOfValue(JString arg0)
 	{
 		return callMethod<jint>(
 			"findIndexOfValue",
 			"(Ljava/lang/String;)I",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray ListPreference::getEntries()
+	JArray ListPreference::getEntries()
 	{
 		return callObjectMethod(
 			"getEntries",
 			"()[Ljava/lang/CharSequence;"
-		).object<jarray>();
+		);
 	}
-	jstring ListPreference::getEntry()
+	JString ListPreference::getEntry()
 	{
 		return callObjectMethod(
 			"getEntry",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
-	jarray ListPreference::getEntryValues()
+	JArray ListPreference::getEntryValues()
 	{
 		return callObjectMethod(
 			"getEntryValues",
 			"()[Ljava/lang/CharSequence;"
-		).object<jarray>();
+		);
 	}
-	jstring ListPreference::getSummary()
+	JString ListPreference::getSummary()
 	{
 		return callObjectMethod(
 			"getSummary",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
-	jstring ListPreference::getValue()
+	JString ListPreference::getValue()
 	{
 		return callObjectMethod(
 			"getValue",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	void ListPreference::setEntries(jarray arg0)
+	void ListPreference::setEntries(JArray arg0)
 	{
 		callMethod<void>(
 			"setEntries",
 			"([Ljava/lang/CharSequence;)V",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
 	void ListPreference::setEntries(jint arg0)
@@ -102,12 +106,12 @@ namespace android::preference
 			arg0
 		);
 	}
-	void ListPreference::setEntryValues(jarray arg0)
+	void ListPreference::setEntryValues(JArray arg0)
 	{
 		callMethod<void>(
 			"setEntryValues",
 			"([Ljava/lang/CharSequence;)V",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
 	void ListPreference::setEntryValues(jint arg0)
@@ -118,20 +122,20 @@ namespace android::preference
 			arg0
 		);
 	}
-	void ListPreference::setSummary(jstring arg0)
+	void ListPreference::setSummary(JString arg0)
 	{
 		callMethod<void>(
 			"setSummary",
 			"(Ljava/lang/CharSequence;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	void ListPreference::setValue(jstring arg0)
+	void ListPreference::setValue(JString arg0)
 	{
 		callMethod<void>(
 			"setValue",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void ListPreference::setValueIndex(jint arg0)

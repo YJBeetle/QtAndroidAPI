@@ -6,6 +6,8 @@ namespace android::graphics::fonts
 {
 	class Font;
 }
+class JObject;
+class JString;
 
 namespace android::graphics::text
 {
@@ -21,7 +23,7 @@ namespace android::graphics::text
 		// Constructors
 		
 		// Methods
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jfloat getAdvance();
 		jfloat getAscent();
 		jfloat getDescent();
@@ -33,7 +35,7 @@ namespace android::graphics::text
 		jfloat getOffsetY();
 		jint glyphCount();
 		jint hashCode();
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::graphics::text
 

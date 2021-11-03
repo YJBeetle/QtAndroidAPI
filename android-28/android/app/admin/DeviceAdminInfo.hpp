@@ -30,6 +30,8 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
+class JString;
 
 namespace android::app::admin
 {
@@ -57,18 +59,18 @@ namespace android::app::admin
 		
 		// Methods
 		jint describeContents();
-		void dump(JObject arg0, jstring arg1);
+		void dump(JObject arg0, JString arg1);
 		android::content::pm::ActivityInfo getActivityInfo();
 		android::content::ComponentName getComponent();
-		jstring getPackageName();
-		jstring getReceiverName();
-		jstring getTagForPolicy(jint arg0);
+		JString getPackageName();
+		JString getReceiverName();
+		JString getTagForPolicy(jint arg0);
 		jboolean isVisible();
-		jstring loadDescription(android::content::pm::PackageManager arg0);
+		JString loadDescription(android::content::pm::PackageManager arg0);
 		android::graphics::drawable::Drawable loadIcon(android::content::pm::PackageManager arg0);
-		jstring loadLabel(android::content::pm::PackageManager arg0);
+		JString loadLabel(android::content::pm::PackageManager arg0);
 		jboolean supportsTransferOwnership();
-		jstring toString();
+		JString toString();
 		jboolean usesPolicy(jint arg0);
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};

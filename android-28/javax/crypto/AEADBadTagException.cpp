@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./AEADBadTagException.hpp"
 
 namespace javax::crypto
@@ -13,11 +14,11 @@ namespace javax::crypto
 			"javax.crypto.AEADBadTagException",
 			"()V"
 		) {}
-	AEADBadTagException::AEADBadTagException(jstring arg0)
+	AEADBadTagException::AEADBadTagException(JString arg0)
 		: javax::crypto::BadPaddingException(
 			"javax.crypto.AEADBadTagException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

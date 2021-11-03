@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./Settings_SettingNotFoundException.hpp"
 
 namespace android::provider
@@ -8,11 +9,11 @@ namespace android::provider
 	Settings_SettingNotFoundException::Settings_SettingNotFoundException(QJniObject obj) : android::util::AndroidException(obj) {}
 	
 	// Constructors
-	Settings_SettingNotFoundException::Settings_SettingNotFoundException(jstring arg0)
+	Settings_SettingNotFoundException::Settings_SettingNotFoundException(JString arg0)
 		: android::util::AndroidException(
 			"android.provider.Settings$SettingNotFoundException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

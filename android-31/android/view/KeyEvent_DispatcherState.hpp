@@ -6,6 +6,7 @@ namespace android::view
 {
 	class KeyEvent;
 }
+class JObject;
 
 namespace android::view
 {
@@ -26,8 +27,8 @@ namespace android::view
 		jboolean isTracking(android::view::KeyEvent arg0);
 		void performedLongPress(android::view::KeyEvent arg0);
 		void reset();
-		void reset(jobject arg0);
-		void startTracking(android::view::KeyEvent arg0, jobject arg1);
+		void reset(JObject arg0);
+		void startTracking(android::view::KeyEvent arg0, JObject arg1);
 	};
 } // namespace android::view
 

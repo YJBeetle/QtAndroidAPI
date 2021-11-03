@@ -6,6 +6,9 @@ namespace java::io
 {
 	class ObjectInputStream;
 }
+class JString;
+class JObject;
+class JString;
 namespace java::time
 {
 	class Clock;
@@ -97,8 +100,8 @@ namespace java::time
 		static java::time::LocalDate ofEpochDay(jlong arg0);
 		static java::time::LocalDate ofInstant(java::time::Instant arg0, java::time::ZoneId arg1);
 		static java::time::LocalDate ofYearDay(jint arg0, jint arg1);
-		static java::time::LocalDate parse(jstring arg0);
-		static java::time::LocalDate parse(jstring arg0, java::time::format::DateTimeFormatter arg1);
+		static java::time::LocalDate parse(JString arg0);
+		static java::time::LocalDate parse(JString arg0, java::time::format::DateTimeFormatter arg1);
 		JObject adjustInto(JObject arg0);
 		java::time::LocalDateTime atStartOfDay();
 		java::time::ZonedDateTime atStartOfDay(java::time::ZoneId arg0);
@@ -107,12 +110,11 @@ namespace java::time
 		java::time::LocalDateTime atTime(jint arg0, jint arg1, jint arg2);
 		java::time::LocalDateTime atTime(jint arg0, jint arg1, jint arg2, jint arg3);
 		java::time::OffsetDateTime atTime(java::time::OffsetTime arg0);
-		jint compareTo(jobject arg0);
 		jint compareTo(JObject arg0);
 		JObject datesUntil(java::time::LocalDate arg0);
 		JObject datesUntil(java::time::LocalDate arg0, java::time::Period arg1);
-		jboolean equals(jobject arg0);
-		jstring format(java::time::format::DateTimeFormatter arg0);
+		jboolean equals(JObject arg0);
+		JString format(java::time::format::DateTimeFormatter arg0);
 		jint get(JObject arg0);
 		java::time::chrono::IsoChronology getChronology();
 		jint getDayOfMonth();
@@ -143,11 +145,11 @@ namespace java::time
 		java::time::LocalDate plusMonths(jlong arg0);
 		java::time::LocalDate plusWeeks(jlong arg0);
 		java::time::LocalDate plusYears(jlong arg0);
-		jobject query(JObject arg0);
+		JObject query(JObject arg0);
 		java::time::temporal::ValueRange range(JObject arg0);
 		jlong toEpochDay();
 		jlong toEpochSecond(java::time::LocalTime arg0, java::time::ZoneOffset arg1);
-		jstring toString();
+		JString toString();
 		java::time::Period until(JObject arg0);
 		jlong until(JObject arg0, JObject arg1);
 		java::time::LocalDate with(JObject arg0);

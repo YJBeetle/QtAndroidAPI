@@ -1,7 +1,10 @@
+#include "../../JIntArray.hpp"
+#include "../../JArray.hpp"
 #include "./MediaCodecInfo_AudioCapabilities.hpp"
 #include "./MediaCodecInfo_EncoderCapabilities.hpp"
 #include "./MediaCodecInfo_VideoCapabilities.hpp"
 #include "./MediaFormat.hpp"
+#include "../../JString.hpp"
 #include "./MediaCodecInfo_CodecCapabilities.hpp"
 
 namespace android::media
@@ -371,99 +374,99 @@ namespace android::media
 			"COLOR_TI_FormatYUV420PackedSemiPlanar"
 		);
 	}
-	jstring MediaCodecInfo_CodecCapabilities::FEATURE_AdaptivePlayback()
+	JString MediaCodecInfo_CodecCapabilities::FEATURE_AdaptivePlayback()
 	{
 		return getStaticObjectField(
 			"android.media.MediaCodecInfo$CodecCapabilities",
 			"FEATURE_AdaptivePlayback",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring MediaCodecInfo_CodecCapabilities::FEATURE_DynamicTimestamp()
+	JString MediaCodecInfo_CodecCapabilities::FEATURE_DynamicTimestamp()
 	{
 		return getStaticObjectField(
 			"android.media.MediaCodecInfo$CodecCapabilities",
 			"FEATURE_DynamicTimestamp",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring MediaCodecInfo_CodecCapabilities::FEATURE_FrameParsing()
+	JString MediaCodecInfo_CodecCapabilities::FEATURE_FrameParsing()
 	{
 		return getStaticObjectField(
 			"android.media.MediaCodecInfo$CodecCapabilities",
 			"FEATURE_FrameParsing",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring MediaCodecInfo_CodecCapabilities::FEATURE_IntraRefresh()
+	JString MediaCodecInfo_CodecCapabilities::FEATURE_IntraRefresh()
 	{
 		return getStaticObjectField(
 			"android.media.MediaCodecInfo$CodecCapabilities",
 			"FEATURE_IntraRefresh",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring MediaCodecInfo_CodecCapabilities::FEATURE_LowLatency()
+	JString MediaCodecInfo_CodecCapabilities::FEATURE_LowLatency()
 	{
 		return getStaticObjectField(
 			"android.media.MediaCodecInfo$CodecCapabilities",
 			"FEATURE_LowLatency",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring MediaCodecInfo_CodecCapabilities::FEATURE_MultipleFrames()
+	JString MediaCodecInfo_CodecCapabilities::FEATURE_MultipleFrames()
 	{
 		return getStaticObjectField(
 			"android.media.MediaCodecInfo$CodecCapabilities",
 			"FEATURE_MultipleFrames",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring MediaCodecInfo_CodecCapabilities::FEATURE_PartialFrame()
+	JString MediaCodecInfo_CodecCapabilities::FEATURE_PartialFrame()
 	{
 		return getStaticObjectField(
 			"android.media.MediaCodecInfo$CodecCapabilities",
 			"FEATURE_PartialFrame",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring MediaCodecInfo_CodecCapabilities::FEATURE_QpBounds()
+	JString MediaCodecInfo_CodecCapabilities::FEATURE_QpBounds()
 	{
 		return getStaticObjectField(
 			"android.media.MediaCodecInfo$CodecCapabilities",
 			"FEATURE_QpBounds",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring MediaCodecInfo_CodecCapabilities::FEATURE_SecurePlayback()
+	JString MediaCodecInfo_CodecCapabilities::FEATURE_SecurePlayback()
 	{
 		return getStaticObjectField(
 			"android.media.MediaCodecInfo$CodecCapabilities",
 			"FEATURE_SecurePlayback",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring MediaCodecInfo_CodecCapabilities::FEATURE_TunneledPlayback()
+	JString MediaCodecInfo_CodecCapabilities::FEATURE_TunneledPlayback()
 	{
 		return getStaticObjectField(
 			"android.media.MediaCodecInfo$CodecCapabilities",
 			"FEATURE_TunneledPlayback",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jintArray MediaCodecInfo_CodecCapabilities::colorFormats()
+	JIntArray MediaCodecInfo_CodecCapabilities::colorFormats()
 	{
 		return getObjectField(
 			"colorFormats",
 			"[I"
-		).object<jintArray>();
+		);
 	}
-	jarray MediaCodecInfo_CodecCapabilities::profileLevels()
+	JArray MediaCodecInfo_CodecCapabilities::profileLevels()
 	{
 		return getObjectField(
 			"profileLevels",
 			"[Landroid/media/MediaCodecInfo$CodecProfileLevel;"
-		).object<jarray>();
+		);
 	}
 	
 	// QJniObject forward
@@ -477,13 +480,13 @@ namespace android::media
 		) {}
 	
 	// Methods
-	android::media::MediaCodecInfo_CodecCapabilities MediaCodecInfo_CodecCapabilities::createFromProfileLevel(jstring arg0, jint arg1, jint arg2)
+	android::media::MediaCodecInfo_CodecCapabilities MediaCodecInfo_CodecCapabilities::createFromProfileLevel(JString arg0, jint arg1, jint arg2)
 	{
 		return callStaticObjectMethod(
 			"android.media.MediaCodecInfo$CodecCapabilities",
 			"createFromProfileLevel",
 			"(Ljava/lang/String;II)Landroid/media/MediaCodecInfo$CodecCapabilities;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
 			arg2
 		);
@@ -516,12 +519,12 @@ namespace android::media
 			"()I"
 		);
 	}
-	jstring MediaCodecInfo_CodecCapabilities::getMimeType()
+	JString MediaCodecInfo_CodecCapabilities::getMimeType()
 	{
 		return callObjectMethod(
 			"getMimeType",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::media::MediaCodecInfo_VideoCapabilities MediaCodecInfo_CodecCapabilities::getVideoCapabilities()
 	{
@@ -530,20 +533,20 @@ namespace android::media
 			"()Landroid/media/MediaCodecInfo$VideoCapabilities;"
 		);
 	}
-	jboolean MediaCodecInfo_CodecCapabilities::isFeatureRequired(jstring arg0)
+	jboolean MediaCodecInfo_CodecCapabilities::isFeatureRequired(JString arg0)
 	{
 		return callMethod<jboolean>(
 			"isFeatureRequired",
 			"(Ljava/lang/String;)Z",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jboolean MediaCodecInfo_CodecCapabilities::isFeatureSupported(jstring arg0)
+	jboolean MediaCodecInfo_CodecCapabilities::isFeatureSupported(JString arg0)
 	{
 		return callMethod<jboolean>(
 			"isFeatureSupported",
 			"(Ljava/lang/String;)Z",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	jboolean MediaCodecInfo_CodecCapabilities::isFormatSupported(android::media::MediaFormat arg0)

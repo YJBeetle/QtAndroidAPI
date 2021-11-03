@@ -2,7 +2,6 @@
 
 #include "../../../JObject.hpp"
 
-
 namespace android::icu::text
 {
 	class Normalizer_QuickCheckResult : public JObject

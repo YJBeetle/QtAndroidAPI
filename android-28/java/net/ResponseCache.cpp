@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./CacheRequest.hpp"
 #include "./CacheResponse.hpp"
 #include "./URI.hpp"
@@ -36,13 +37,13 @@ namespace java::net
 			arg0.object()
 		);
 	}
-	java::net::CacheResponse ResponseCache::get(java::net::URI arg0, jstring arg1, JObject arg2)
+	java::net::CacheResponse ResponseCache::get(java::net::URI arg0, JString arg1, JObject arg2)
 	{
 		return callObjectMethod(
 			"get",
 			"(Ljava/net/URI;Ljava/lang/String;Ljava/util/Map;)Ljava/net/CacheResponse;",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2.object()
 		);
 	}

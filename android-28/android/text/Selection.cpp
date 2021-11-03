@@ -1,24 +1,26 @@
 #include "./Layout.hpp"
+#include "../../JString.hpp"
+#include "../../JObject.hpp"
 #include "./Selection.hpp"
 
 namespace android::text
 {
 	// Fields
-	jobject Selection::SELECTION_END()
+	JObject Selection::SELECTION_END()
 	{
 		return getStaticObjectField(
 			"android.text.Selection",
 			"SELECTION_END",
 			"Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
-	jobject Selection::SELECTION_START()
+	JObject Selection::SELECTION_START()
 	{
 		return getStaticObjectField(
 			"android.text.Selection",
 			"SELECTION_START",
 			"Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
 	
 	// QJniObject forward
@@ -97,22 +99,22 @@ namespace android::text
 			arg1.object()
 		);
 	}
-	jint Selection::getSelectionEnd(jstring arg0)
+	jint Selection::getSelectionEnd(JString arg0)
 	{
 		return callStaticMethod<jint>(
 			"android.text.Selection",
 			"getSelectionEnd",
 			"(Ljava/lang/CharSequence;)I",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jint Selection::getSelectionStart(jstring arg0)
+	jint Selection::getSelectionStart(JString arg0)
 	{
 		return callStaticMethod<jint>(
 			"android.text.Selection",
 			"getSelectionStart",
 			"(Ljava/lang/CharSequence;)I",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	jboolean Selection::moveDown(JObject arg0, android::text::Layout arg1)

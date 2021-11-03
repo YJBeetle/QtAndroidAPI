@@ -1,5 +1,7 @@
+#include "../../JByteArray.hpp"
 #include "./CharArrayBuffer.hpp"
 #include "../os/Parcel.hpp"
+#include "../../JString.hpp"
 #include "./CursorWindow.hpp"
 
 namespace android::database
@@ -24,17 +26,17 @@ namespace android::database
 			"(Z)V",
 			arg0
 		) {}
-	CursorWindow::CursorWindow(jstring arg0)
+	CursorWindow::CursorWindow(JString arg0)
 		: android::database::sqlite::SQLiteClosable(
 			"android.database.CursorWindow",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	CursorWindow::CursorWindow(jstring arg0, jlong arg1)
+	CursorWindow::CursorWindow(JString arg0, jlong arg1)
 		: android::database::sqlite::SQLiteClosable(
 			"android.database.CursorWindow",
 			"(Ljava/lang/String;J)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		) {}
 	
@@ -86,14 +88,14 @@ namespace android::database
 			"()V"
 		);
 	}
-	jbyteArray CursorWindow::getBlob(jint arg0, jint arg1)
+	JByteArray CursorWindow::getBlob(jint arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"getBlob",
 			"(II)[B",
 			arg0,
 			arg1
-		).object<jbyteArray>();
+		);
 	}
 	jdouble CursorWindow::getDouble(jint arg0, jint arg1)
 	{
@@ -154,14 +156,14 @@ namespace android::database
 			"()I"
 		);
 	}
-	jstring CursorWindow::getString(jint arg0, jint arg1)
+	JString CursorWindow::getString(jint arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"getString",
 			"(II)Ljava/lang/String;",
 			arg0,
 			arg1
-		).object<jstring>();
+		);
 	}
 	jint CursorWindow::getType(jint arg0, jint arg1)
 	{
@@ -217,12 +219,12 @@ namespace android::database
 			arg1
 		);
 	}
-	jboolean CursorWindow::putBlob(jbyteArray arg0, jint arg1, jint arg2)
+	jboolean CursorWindow::putBlob(JByteArray arg0, jint arg1, jint arg2)
 	{
 		return callMethod<jboolean>(
 			"putBlob",
 			"([BII)Z",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1,
 			arg2
 		);
@@ -256,12 +258,12 @@ namespace android::database
 			arg1
 		);
 	}
-	jboolean CursorWindow::putString(jstring arg0, jint arg1, jint arg2)
+	jboolean CursorWindow::putString(JString arg0, jint arg1, jint arg2)
 	{
 		return callMethod<jboolean>(
 			"putString",
 			"(Ljava/lang/String;II)Z",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
 			arg2
 		);
@@ -282,12 +284,12 @@ namespace android::database
 			arg0
 		);
 	}
-	jstring CursorWindow::toString()
+	JString CursorWindow::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void CursorWindow::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

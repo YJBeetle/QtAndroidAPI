@@ -6,6 +6,7 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
 
 namespace android::app
 {
@@ -13,9 +14,9 @@ namespace android::app
 	{
 	public:
 		// Fields
-		jstring activity();
-		jstring cause();
-		jstring info();
+		JString activity();
+		JString cause();
+		JString info();
 		
 		// QJniObject forward
 		template<typename ...Ts> explicit ApplicationErrorReport_AnrInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
@@ -26,7 +27,7 @@ namespace android::app
 		ApplicationErrorReport_AnrInfo(android::os::Parcel arg0);
 		
 		// Methods
-		void dump(JObject arg0, jstring arg1);
+		void dump(JObject arg0, JString arg1);
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::app

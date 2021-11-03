@@ -1,6 +1,8 @@
 #include "../os/Parcel.hpp"
 #include "./PrinterCapabilitiesInfo.hpp"
 #include "./PrinterId.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./PrinterInfo.hpp"
 
 namespace android::print
@@ -49,12 +51,12 @@ namespace android::print
 			"()I"
 		);
 	}
-	jboolean PrinterInfo::equals(jobject arg0)
+	jboolean PrinterInfo::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	android::print::PrinterCapabilitiesInfo PrinterInfo::getCapabilities()
@@ -64,12 +66,12 @@ namespace android::print
 			"()Landroid/print/PrinterCapabilitiesInfo;"
 		);
 	}
-	jstring PrinterInfo::getDescription()
+	JString PrinterInfo::getDescription()
 	{
 		return callObjectMethod(
 			"getDescription",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::print::PrinterId PrinterInfo::getId()
 	{
@@ -78,12 +80,12 @@ namespace android::print
 			"()Landroid/print/PrinterId;"
 		);
 	}
-	jstring PrinterInfo::getName()
+	JString PrinterInfo::getName()
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint PrinterInfo::getStatus()
 	{
@@ -99,12 +101,12 @@ namespace android::print
 			"()I"
 		);
 	}
-	jstring PrinterInfo::toString()
+	JString PrinterInfo::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void PrinterInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

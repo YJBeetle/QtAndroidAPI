@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./TtsSpan_CardinalBuilder.hpp"
 
 namespace android::text::style
@@ -13,11 +14,11 @@ namespace android::text::style
 			"android.text.style.TtsSpan$CardinalBuilder",
 			"()V"
 		) {}
-	TtsSpan_CardinalBuilder::TtsSpan_CardinalBuilder(jstring arg0)
+	TtsSpan_CardinalBuilder::TtsSpan_CardinalBuilder(JString arg0)
 		: android::text::style::TtsSpan_SemioticClassBuilder(
 			"android.text.style.TtsSpan$CardinalBuilder",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	TtsSpan_CardinalBuilder::TtsSpan_CardinalBuilder(jlong arg0)
 		: android::text::style::TtsSpan_SemioticClassBuilder(
@@ -27,12 +28,12 @@ namespace android::text::style
 		) {}
 	
 	// Methods
-	android::text::style::TtsSpan_CardinalBuilder TtsSpan_CardinalBuilder::setNumber(jstring arg0)
+	android::text::style::TtsSpan_CardinalBuilder TtsSpan_CardinalBuilder::setNumber(JString arg0)
 	{
 		return callObjectMethod(
 			"setNumber",
 			"(Ljava/lang/String;)Landroid/text/style/TtsSpan$CardinalBuilder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::text::style::TtsSpan_CardinalBuilder TtsSpan_CardinalBuilder::setNumber(jlong arg0)

@@ -1,18 +1,19 @@
 #include "../../../../java/io/File.hpp"
 #include "../../../../java/io/OutputStream.hpp"
 #include "../../../../java/io/Writer.hpp"
+#include "../../../../JString.hpp"
 #include "./StreamResult.hpp"
 
 namespace javax::xml::transform::stream
 {
 	// Fields
-	jstring StreamResult::FEATURE()
+	JString StreamResult::FEATURE()
 	{
 		return getStaticObjectField(
 			"javax.xml.transform.stream.StreamResult",
 			"FEATURE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QJniObject forward
@@ -42,11 +43,11 @@ namespace javax::xml::transform::stream
 			"(Ljava/io/Writer;)V",
 			arg0.object()
 		) {}
-	StreamResult::StreamResult(jstring arg0)
+	StreamResult::StreamResult(JString arg0)
 		: JObject(
 			"javax.xml.transform.stream.StreamResult",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods
@@ -57,12 +58,12 @@ namespace javax::xml::transform::stream
 			"()Ljava/io/OutputStream;"
 		);
 	}
-	jstring StreamResult::getSystemId()
+	JString StreamResult::getSystemId()
 	{
 		return callObjectMethod(
 			"getSystemId",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	java::io::Writer StreamResult::getWriter()
 	{
@@ -87,12 +88,12 @@ namespace javax::xml::transform::stream
 			arg0.object()
 		);
 	}
-	void StreamResult::setSystemId(jstring arg0)
+	void StreamResult::setSystemId(JString arg0)
 	{
 		callMethod<void>(
 			"setSystemId",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void StreamResult::setWriter(java::io::Writer arg0)

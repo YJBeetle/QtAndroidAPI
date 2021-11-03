@@ -1,3 +1,5 @@
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
 #include "./TimeZoneFormat_Style.hpp"
 
 namespace android::icu::text
@@ -170,22 +172,22 @@ namespace android::icu::text
 	// Constructors
 	
 	// Methods
-	android::icu::text::TimeZoneFormat_Style TimeZoneFormat_Style::valueOf(jstring arg0)
+	android::icu::text::TimeZoneFormat_Style TimeZoneFormat_Style::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.icu.text.TimeZoneFormat$Style",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/icu/text/TimeZoneFormat$Style;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray TimeZoneFormat_Style::values()
+	JArray TimeZoneFormat_Style::values()
 	{
 		return callStaticObjectMethod(
 			"android.icu.text.TimeZoneFormat$Style",
 			"values",
 			"()[Landroid/icu/text/TimeZoneFormat$Style;"
-		).object<jarray>();
+		);
 	}
 } // namespace android::icu::text
 

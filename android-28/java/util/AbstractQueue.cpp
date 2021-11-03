@@ -1,3 +1,4 @@
+#include "../../JObject.hpp"
 #include "./AbstractQueue.hpp"
 
 namespace java::util
@@ -10,12 +11,12 @@ namespace java::util
 	// Constructors
 	
 	// Methods
-	jboolean AbstractQueue::add(jobject arg0)
+	jboolean AbstractQueue::add(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"add",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jboolean AbstractQueue::addAll(JObject arg0)
@@ -33,19 +34,19 @@ namespace java::util
 			"()V"
 		);
 	}
-	jobject AbstractQueue::element()
+	JObject AbstractQueue::element()
 	{
 		return callObjectMethod(
 			"element",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
-	jobject AbstractQueue::remove()
+	JObject AbstractQueue::remove()
 	{
 		return callObjectMethod(
 			"remove",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
 } // namespace java::util
 

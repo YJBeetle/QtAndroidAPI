@@ -2,18 +2,19 @@
 #include "./MediaSession2.hpp"
 #include "./MediaSession2_ControllerInfo.hpp"
 #include "./MediaSession2Service_MediaNotification.hpp"
+#include "../../JString.hpp"
 #include "./MediaSession2Service.hpp"
 
 namespace android::media
 {
 	// Fields
-	jstring MediaSession2Service::SERVICE_INTERFACE()
+	JString MediaSession2Service::SERVICE_INTERFACE()
 	{
 		return getStaticObjectField(
 			"android.media.MediaSession2Service",
 			"SERVICE_INTERFACE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QJniObject forward

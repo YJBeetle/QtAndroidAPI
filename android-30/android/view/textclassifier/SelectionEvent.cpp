@@ -2,6 +2,8 @@
 #include "./TextClassification.hpp"
 #include "./TextClassificationSessionId.hpp"
 #include "./TextSelection.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./SelectionEvent.hpp"
 
 namespace android::view::textclassifier
@@ -236,12 +238,12 @@ namespace android::view::textclassifier
 			"()I"
 		);
 	}
-	jboolean SelectionEvent::equals(jobject arg0)
+	jboolean SelectionEvent::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jlong SelectionEvent::getDurationSincePreviousEvent()
@@ -265,12 +267,12 @@ namespace android::view::textclassifier
 			"()I"
 		);
 	}
-	jstring SelectionEvent::getEntityType()
+	JString SelectionEvent::getEntityType()
 	{
 		return callObjectMethod(
 			"getEntityType",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint SelectionEvent::getEventIndex()
 	{
@@ -300,19 +302,19 @@ namespace android::view::textclassifier
 			"()I"
 		);
 	}
-	jstring SelectionEvent::getPackageName()
+	JString SelectionEvent::getPackageName()
 	{
 		return callObjectMethod(
 			"getPackageName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring SelectionEvent::getResultId()
+	JString SelectionEvent::getResultId()
 	{
 		return callObjectMethod(
 			"getResultId",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::view::textclassifier::TextClassificationSessionId SelectionEvent::getSessionId()
 	{
@@ -342,19 +344,19 @@ namespace android::view::textclassifier
 			"()I"
 		);
 	}
-	jstring SelectionEvent::getWidgetType()
+	JString SelectionEvent::getWidgetType()
 	{
 		return callObjectMethod(
 			"getWidgetType",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring SelectionEvent::getWidgetVersion()
+	JString SelectionEvent::getWidgetVersion()
 	{
 		return callObjectMethod(
 			"getWidgetVersion",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint SelectionEvent::hashCode()
 	{
@@ -363,12 +365,12 @@ namespace android::view::textclassifier
 			"()I"
 		);
 	}
-	jstring SelectionEvent::toString()
+	JString SelectionEvent::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void SelectionEvent::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

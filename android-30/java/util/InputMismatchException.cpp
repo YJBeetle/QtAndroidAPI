@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./InputMismatchException.hpp"
 
 namespace java::util
@@ -13,11 +14,11 @@ namespace java::util
 			"java.util.InputMismatchException",
 			"()V"
 		) {}
-	InputMismatchException::InputMismatchException(jstring arg0)
+	InputMismatchException::InputMismatchException(JString arg0)
 		: java::util::NoSuchElementException(
 			"java.util.InputMismatchException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

@@ -6,6 +6,7 @@ namespace android::net::wifi::hotspot2
 {
 	class PasspointConfiguration;
 }
+class JString;
 
 namespace android::net::wifi::hotspot2::omadm
 {
@@ -21,7 +22,7 @@ namespace android::net::wifi::hotspot2::omadm
 		// Constructors
 		
 		// Methods
-		static android::net::wifi::hotspot2::PasspointConfiguration parseMoText(jstring arg0);
+		static android::net::wifi::hotspot2::PasspointConfiguration parseMoText(JString arg0);
 	};
 } // namespace android::net::wifi::hotspot2::omadm
 

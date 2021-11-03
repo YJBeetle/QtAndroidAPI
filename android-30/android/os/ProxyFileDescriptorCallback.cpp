@@ -1,3 +1,4 @@
+#include "../../JByteArray.hpp"
 #include "./ProxyFileDescriptorCallback.hpp"
 
 namespace android::os
@@ -29,14 +30,14 @@ namespace android::os
 			"()J"
 		);
 	}
-	jint ProxyFileDescriptorCallback::onRead(jlong arg0, jint arg1, jbyteArray arg2)
+	jint ProxyFileDescriptorCallback::onRead(jlong arg0, jint arg1, JByteArray arg2)
 	{
 		return callMethod<jint>(
 			"onRead",
 			"(JI[B)I",
 			arg0,
 			arg1,
-			arg2
+			arg2.object<jbyteArray>()
 		);
 	}
 	void ProxyFileDescriptorCallback::onRelease()
@@ -46,14 +47,14 @@ namespace android::os
 			"()V"
 		);
 	}
-	jint ProxyFileDescriptorCallback::onWrite(jlong arg0, jint arg1, jbyteArray arg2)
+	jint ProxyFileDescriptorCallback::onWrite(jlong arg0, jint arg1, JByteArray arg2)
 	{
 		return callMethod<jint>(
 			"onWrite",
 			"(JI[B)I",
 			arg0,
 			arg1,
-			arg2
+			arg2.object<jbyteArray>()
 		);
 	}
 } // namespace android::os

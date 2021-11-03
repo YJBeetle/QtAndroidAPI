@@ -2,10 +2,13 @@
 
 #include "../../../JObject.hpp"
 
+class JByteArray;
+class JArray;
 namespace android::security::keystore
 {
 	class KeyGenParameterSpec;
 }
+class JString;
 namespace java::math
 {
 	class BigInteger;
@@ -31,21 +34,21 @@ namespace android::security::keystore
 		KeyGenParameterSpec_Builder(QJniObject obj);
 		
 		// Constructors
-		KeyGenParameterSpec_Builder(jstring arg0, jint arg1);
+		KeyGenParameterSpec_Builder(JString arg0, jint arg1);
 		
 		// Methods
 		android::security::keystore::KeyGenParameterSpec build();
 		android::security::keystore::KeyGenParameterSpec_Builder setAlgorithmParameterSpec(JObject arg0);
-		android::security::keystore::KeyGenParameterSpec_Builder setAttestKeyAlias(jstring arg0);
-		android::security::keystore::KeyGenParameterSpec_Builder setAttestationChallenge(jbyteArray arg0);
-		android::security::keystore::KeyGenParameterSpec_Builder setBlockModes(jarray arg0);
+		android::security::keystore::KeyGenParameterSpec_Builder setAttestKeyAlias(JString arg0);
+		android::security::keystore::KeyGenParameterSpec_Builder setAttestationChallenge(JByteArray arg0);
+		android::security::keystore::KeyGenParameterSpec_Builder setBlockModes(JArray arg0);
 		android::security::keystore::KeyGenParameterSpec_Builder setCertificateNotAfter(java::util::Date arg0);
 		android::security::keystore::KeyGenParameterSpec_Builder setCertificateNotBefore(java::util::Date arg0);
 		android::security::keystore::KeyGenParameterSpec_Builder setCertificateSerialNumber(java::math::BigInteger arg0);
 		android::security::keystore::KeyGenParameterSpec_Builder setCertificateSubject(javax::security::auth::x500::X500Principal arg0);
 		android::security::keystore::KeyGenParameterSpec_Builder setDevicePropertiesAttestationIncluded(jboolean arg0);
-		android::security::keystore::KeyGenParameterSpec_Builder setDigests(jarray arg0);
-		android::security::keystore::KeyGenParameterSpec_Builder setEncryptionPaddings(jarray arg0);
+		android::security::keystore::KeyGenParameterSpec_Builder setDigests(JArray arg0);
+		android::security::keystore::KeyGenParameterSpec_Builder setEncryptionPaddings(JArray arg0);
 		android::security::keystore::KeyGenParameterSpec_Builder setInvalidatedByBiometricEnrollment(jboolean arg0);
 		android::security::keystore::KeyGenParameterSpec_Builder setIsStrongBoxBacked(jboolean arg0);
 		android::security::keystore::KeyGenParameterSpec_Builder setKeySize(jint arg0);
@@ -55,7 +58,7 @@ namespace android::security::keystore
 		android::security::keystore::KeyGenParameterSpec_Builder setKeyValidityStart(java::util::Date arg0);
 		android::security::keystore::KeyGenParameterSpec_Builder setMaxUsageCount(jint arg0);
 		android::security::keystore::KeyGenParameterSpec_Builder setRandomizedEncryptionRequired(jboolean arg0);
-		android::security::keystore::KeyGenParameterSpec_Builder setSignaturePaddings(jarray arg0);
+		android::security::keystore::KeyGenParameterSpec_Builder setSignaturePaddings(JArray arg0);
 		android::security::keystore::KeyGenParameterSpec_Builder setUnlockedDeviceRequired(jboolean arg0);
 		android::security::keystore::KeyGenParameterSpec_Builder setUserAuthenticationParameters(jint arg0, jint arg1);
 		android::security::keystore::KeyGenParameterSpec_Builder setUserAuthenticationRequired(jboolean arg0);

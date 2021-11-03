@@ -1,18 +1,19 @@
 #include "./Xml_Encoding.hpp"
 #include "../../java/io/InputStream.hpp"
 #include "../../java/io/Reader.hpp"
+#include "../../JString.hpp"
 #include "./Xml.hpp"
 
 namespace android::util
 {
 	// Fields
-	jstring Xml::FEATURE_RELAXED()
+	JString Xml::FEATURE_RELAXED()
 	{
 		return getStaticObjectField(
 			"android.util.Xml",
 			"FEATURE_RELAXED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QJniObject forward
@@ -30,13 +31,13 @@ namespace android::util
 			arg0.object()
 		);
 	}
-	android::util::Xml_Encoding Xml::findEncodingByName(jstring arg0)
+	android::util::Xml_Encoding Xml::findEncodingByName(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.util.Xml",
 			"findEncodingByName",
 			"(Ljava/lang/String;)Landroid/util/Xml$Encoding;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	JObject Xml::newPullParser()
@@ -65,13 +66,13 @@ namespace android::util
 			arg1.object()
 		);
 	}
-	void Xml::parse(jstring arg0, JObject arg1)
+	void Xml::parse(JString arg0, JObject arg1)
 	{
 		callStaticMethod<void>(
 			"android.util.Xml",
 			"parse",
 			"(Ljava/lang/String;Lorg/xml/sax/ContentHandler;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}

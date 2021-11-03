@@ -1,8 +1,6 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "./AudioEffect.hpp"
-
 
 namespace android::media::audiofx
 {

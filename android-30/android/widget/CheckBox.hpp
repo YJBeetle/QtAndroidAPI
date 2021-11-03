@@ -1,15 +1,12 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../view/View.hpp"
-#include "./TextView.hpp"
-#include "./Button.hpp"
 #include "./CompoundButton.hpp"
 
 namespace android::content
 {
 	class Context;
 }
+class JString;
 
 namespace android::widget
 {
@@ -29,7 +26,7 @@ namespace android::widget
 		CheckBox(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
-		jstring getAccessibilityClassName();
+		JString getAccessibilityClassName();
 	};
 } // namespace android::widget
 

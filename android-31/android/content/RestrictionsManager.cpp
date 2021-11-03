@@ -1,186 +1,187 @@
 #include "./Intent.hpp"
 #include "../os/Bundle.hpp"
 #include "../os/PersistableBundle.hpp"
+#include "../../JString.hpp"
 #include "./RestrictionsManager.hpp"
 
 namespace android::content
 {
 	// Fields
-	jstring RestrictionsManager::ACTION_PERMISSION_RESPONSE_RECEIVED()
+	JString RestrictionsManager::ACTION_PERMISSION_RESPONSE_RECEIVED()
 	{
 		return getStaticObjectField(
 			"android.content.RestrictionsManager",
 			"ACTION_PERMISSION_RESPONSE_RECEIVED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring RestrictionsManager::ACTION_REQUEST_LOCAL_APPROVAL()
+	JString RestrictionsManager::ACTION_REQUEST_LOCAL_APPROVAL()
 	{
 		return getStaticObjectField(
 			"android.content.RestrictionsManager",
 			"ACTION_REQUEST_LOCAL_APPROVAL",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring RestrictionsManager::ACTION_REQUEST_PERMISSION()
+	JString RestrictionsManager::ACTION_REQUEST_PERMISSION()
 	{
 		return getStaticObjectField(
 			"android.content.RestrictionsManager",
 			"ACTION_REQUEST_PERMISSION",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring RestrictionsManager::EXTRA_PACKAGE_NAME()
+	JString RestrictionsManager::EXTRA_PACKAGE_NAME()
 	{
 		return getStaticObjectField(
 			"android.content.RestrictionsManager",
 			"EXTRA_PACKAGE_NAME",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring RestrictionsManager::EXTRA_REQUEST_BUNDLE()
+	JString RestrictionsManager::EXTRA_REQUEST_BUNDLE()
 	{
 		return getStaticObjectField(
 			"android.content.RestrictionsManager",
 			"EXTRA_REQUEST_BUNDLE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring RestrictionsManager::EXTRA_REQUEST_ID()
+	JString RestrictionsManager::EXTRA_REQUEST_ID()
 	{
 		return getStaticObjectField(
 			"android.content.RestrictionsManager",
 			"EXTRA_REQUEST_ID",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring RestrictionsManager::EXTRA_REQUEST_TYPE()
+	JString RestrictionsManager::EXTRA_REQUEST_TYPE()
 	{
 		return getStaticObjectField(
 			"android.content.RestrictionsManager",
 			"EXTRA_REQUEST_TYPE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring RestrictionsManager::EXTRA_RESPONSE_BUNDLE()
+	JString RestrictionsManager::EXTRA_RESPONSE_BUNDLE()
 	{
 		return getStaticObjectField(
 			"android.content.RestrictionsManager",
 			"EXTRA_RESPONSE_BUNDLE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring RestrictionsManager::META_DATA_APP_RESTRICTIONS()
+	JString RestrictionsManager::META_DATA_APP_RESTRICTIONS()
 	{
 		return getStaticObjectField(
 			"android.content.RestrictionsManager",
 			"META_DATA_APP_RESTRICTIONS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring RestrictionsManager::REQUEST_KEY_APPROVE_LABEL()
+	JString RestrictionsManager::REQUEST_KEY_APPROVE_LABEL()
 	{
 		return getStaticObjectField(
 			"android.content.RestrictionsManager",
 			"REQUEST_KEY_APPROVE_LABEL",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring RestrictionsManager::REQUEST_KEY_DATA()
+	JString RestrictionsManager::REQUEST_KEY_DATA()
 	{
 		return getStaticObjectField(
 			"android.content.RestrictionsManager",
 			"REQUEST_KEY_DATA",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring RestrictionsManager::REQUEST_KEY_DENY_LABEL()
+	JString RestrictionsManager::REQUEST_KEY_DENY_LABEL()
 	{
 		return getStaticObjectField(
 			"android.content.RestrictionsManager",
 			"REQUEST_KEY_DENY_LABEL",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring RestrictionsManager::REQUEST_KEY_ICON()
+	JString RestrictionsManager::REQUEST_KEY_ICON()
 	{
 		return getStaticObjectField(
 			"android.content.RestrictionsManager",
 			"REQUEST_KEY_ICON",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring RestrictionsManager::REQUEST_KEY_ID()
+	JString RestrictionsManager::REQUEST_KEY_ID()
 	{
 		return getStaticObjectField(
 			"android.content.RestrictionsManager",
 			"REQUEST_KEY_ID",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring RestrictionsManager::REQUEST_KEY_MESSAGE()
+	JString RestrictionsManager::REQUEST_KEY_MESSAGE()
 	{
 		return getStaticObjectField(
 			"android.content.RestrictionsManager",
 			"REQUEST_KEY_MESSAGE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring RestrictionsManager::REQUEST_KEY_NEW_REQUEST()
+	JString RestrictionsManager::REQUEST_KEY_NEW_REQUEST()
 	{
 		return getStaticObjectField(
 			"android.content.RestrictionsManager",
 			"REQUEST_KEY_NEW_REQUEST",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring RestrictionsManager::REQUEST_KEY_TITLE()
+	JString RestrictionsManager::REQUEST_KEY_TITLE()
 	{
 		return getStaticObjectField(
 			"android.content.RestrictionsManager",
 			"REQUEST_KEY_TITLE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring RestrictionsManager::REQUEST_TYPE_APPROVAL()
+	JString RestrictionsManager::REQUEST_TYPE_APPROVAL()
 	{
 		return getStaticObjectField(
 			"android.content.RestrictionsManager",
 			"REQUEST_TYPE_APPROVAL",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring RestrictionsManager::RESPONSE_KEY_ERROR_CODE()
+	JString RestrictionsManager::RESPONSE_KEY_ERROR_CODE()
 	{
 		return getStaticObjectField(
 			"android.content.RestrictionsManager",
 			"RESPONSE_KEY_ERROR_CODE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring RestrictionsManager::RESPONSE_KEY_MESSAGE()
+	JString RestrictionsManager::RESPONSE_KEY_MESSAGE()
 	{
 		return getStaticObjectField(
 			"android.content.RestrictionsManager",
 			"RESPONSE_KEY_MESSAGE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring RestrictionsManager::RESPONSE_KEY_RESPONSE_TIMESTAMP()
+	JString RestrictionsManager::RESPONSE_KEY_RESPONSE_TIMESTAMP()
 	{
 		return getStaticObjectField(
 			"android.content.RestrictionsManager",
 			"RESPONSE_KEY_RESPONSE_TIMESTAMP",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring RestrictionsManager::RESPONSE_KEY_RESULT()
+	JString RestrictionsManager::RESPONSE_KEY_RESULT()
 	{
 		return getStaticObjectField(
 			"android.content.RestrictionsManager",
 			"RESPONSE_KEY_RESULT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint RestrictionsManager::RESULT_APPROVED()
 	{
@@ -268,12 +269,12 @@ namespace android::content
 			"()Landroid/os/Bundle;"
 		);
 	}
-	JObject RestrictionsManager::getManifestRestrictions(jstring arg0)
+	JObject RestrictionsManager::getManifestRestrictions(JString arg0)
 	{
 		return callObjectMethod(
 			"getManifestRestrictions",
 			"(Ljava/lang/String;)Ljava/util/List;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	jboolean RestrictionsManager::hasRestrictionsProvider()
@@ -283,22 +284,22 @@ namespace android::content
 			"()Z"
 		);
 	}
-	void RestrictionsManager::notifyPermissionResponse(jstring arg0, android::os::PersistableBundle arg1)
+	void RestrictionsManager::notifyPermissionResponse(JString arg0, android::os::PersistableBundle arg1)
 	{
 		callMethod<void>(
 			"notifyPermissionResponse",
 			"(Ljava/lang/String;Landroid/os/PersistableBundle;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
-	void RestrictionsManager::requestPermission(jstring arg0, jstring arg1, android::os::PersistableBundle arg2)
+	void RestrictionsManager::requestPermission(JString arg0, JString arg1, android::os::PersistableBundle arg2)
 	{
 		callMethod<void>(
 			"requestPermission",
 			"(Ljava/lang/String;Ljava/lang/String;Landroid/os/PersistableBundle;)V",
-			arg0,
-			arg1,
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
 			arg2.object()
 		);
 	}

@@ -1,3 +1,4 @@
+#include "../../../JArray.hpp"
 #include "../../../java/net/InetAddress.hpp"
 #include "./SSLParameters.hpp"
 #include "./SSLServerSocket.hpp"
@@ -19,19 +20,19 @@ namespace javax::net::ssl
 			"()Z"
 		);
 	}
-	jarray SSLServerSocket::getEnabledCipherSuites()
+	JArray SSLServerSocket::getEnabledCipherSuites()
 	{
 		return callObjectMethod(
 			"getEnabledCipherSuites",
 			"()[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
-	jarray SSLServerSocket::getEnabledProtocols()
+	JArray SSLServerSocket::getEnabledProtocols()
 	{
 		return callObjectMethod(
 			"getEnabledProtocols",
 			"()[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
 	jboolean SSLServerSocket::getNeedClientAuth()
 	{
@@ -47,19 +48,19 @@ namespace javax::net::ssl
 			"()Ljavax/net/ssl/SSLParameters;"
 		);
 	}
-	jarray SSLServerSocket::getSupportedCipherSuites()
+	JArray SSLServerSocket::getSupportedCipherSuites()
 	{
 		return callObjectMethod(
 			"getSupportedCipherSuites",
 			"()[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
-	jarray SSLServerSocket::getSupportedProtocols()
+	JArray SSLServerSocket::getSupportedProtocols()
 	{
 		return callObjectMethod(
 			"getSupportedProtocols",
 			"()[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
 	jboolean SSLServerSocket::getUseClientMode()
 	{
@@ -83,20 +84,20 @@ namespace javax::net::ssl
 			arg0
 		);
 	}
-	void SSLServerSocket::setEnabledCipherSuites(jarray arg0)
+	void SSLServerSocket::setEnabledCipherSuites(JArray arg0)
 	{
 		callMethod<void>(
 			"setEnabledCipherSuites",
 			"([Ljava/lang/String;)V",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
-	void SSLServerSocket::setEnabledProtocols(jarray arg0)
+	void SSLServerSocket::setEnabledProtocols(JArray arg0)
 	{
 		callMethod<void>(
 			"setEnabledProtocols",
 			"([Ljava/lang/String;)V",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
 	void SSLServerSocket::setNeedClientAuth(jboolean arg0)

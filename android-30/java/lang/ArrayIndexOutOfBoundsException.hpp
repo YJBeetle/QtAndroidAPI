@@ -1,10 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "./Exception.hpp"
-#include "./RuntimeException.hpp"
 #include "./IndexOutOfBoundsException.hpp"
 
+class JString;
 
 namespace java::lang
 {
@@ -20,7 +18,7 @@ namespace java::lang
 		// Constructors
 		ArrayIndexOutOfBoundsException();
 		ArrayIndexOutOfBoundsException(jint arg0);
-		ArrayIndexOutOfBoundsException(jstring arg0);
+		ArrayIndexOutOfBoundsException(JString arg0);
 		
 		// Methods
 	};

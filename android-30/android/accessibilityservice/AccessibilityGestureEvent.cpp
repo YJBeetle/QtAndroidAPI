@@ -1,4 +1,5 @@
 #include "../os/Parcel.hpp"
+#include "../../JString.hpp"
 #include "./AccessibilityGestureEvent.hpp"
 
 namespace android::accessibilityservice
@@ -40,12 +41,12 @@ namespace android::accessibilityservice
 			"()I"
 		);
 	}
-	jstring AccessibilityGestureEvent::toString()
+	JString AccessibilityGestureEvent::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void AccessibilityGestureEvent::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

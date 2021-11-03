@@ -2,10 +2,12 @@
 
 #include "../../../../JObject.hpp"
 
+class JByteArray;
 namespace android::net::wifi::aware
 {
 	class SubscribeConfig;
 }
+class JString;
 
 namespace android::net::wifi::aware
 {
@@ -26,8 +28,8 @@ namespace android::net::wifi::aware
 		android::net::wifi::aware::SubscribeConfig_Builder setMatchFilter(JObject arg0);
 		android::net::wifi::aware::SubscribeConfig_Builder setMaxDistanceMm(jint arg0);
 		android::net::wifi::aware::SubscribeConfig_Builder setMinDistanceMm(jint arg0);
-		android::net::wifi::aware::SubscribeConfig_Builder setServiceName(jstring arg0);
-		android::net::wifi::aware::SubscribeConfig_Builder setServiceSpecificInfo(jbyteArray arg0);
+		android::net::wifi::aware::SubscribeConfig_Builder setServiceName(JString arg0);
+		android::net::wifi::aware::SubscribeConfig_Builder setServiceSpecificInfo(JByteArray arg0);
 		android::net::wifi::aware::SubscribeConfig_Builder setSubscribeType(jint arg0);
 		android::net::wifi::aware::SubscribeConfig_Builder setTerminateNotificationEnabled(jboolean arg0);
 		android::net::wifi::aware::SubscribeConfig_Builder setTtlSec(jint arg0);

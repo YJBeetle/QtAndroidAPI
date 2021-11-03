@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JString;
 
 namespace android::database::sqlite
 {
@@ -20,11 +21,11 @@ namespace android::database::sqlite
 		JObject getCursorFactory();
 		JObject getErrorHandler();
 		jlong getIdleConnectionTimeout();
-		jstring getJournalMode();
+		JString getJournalMode();
 		jint getLookasideSlotCount();
 		jint getLookasideSlotSize();
 		jint getOpenFlags();
-		jstring getSynchronousMode();
+		JString getSynchronousMode();
 	};
 } // namespace android::database::sqlite
 

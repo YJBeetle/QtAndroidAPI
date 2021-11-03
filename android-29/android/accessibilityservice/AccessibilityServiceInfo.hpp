@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JArray;
 namespace android::content::pm
 {
 	class PackageManager;
@@ -14,6 +15,9 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
+class JObject;
+class JString;
 
 namespace android::accessibilityservice
 {
@@ -51,7 +55,7 @@ namespace android::accessibilityservice
 		jint feedbackType();
 		jint flags();
 		jlong notificationTimeout();
-		jarray packageNames();
+		JArray packageNames();
 		
 		// QJniObject forward
 		template<typename ...Ts> explicit AccessibilityServiceInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
@@ -61,25 +65,25 @@ namespace android::accessibilityservice
 		AccessibilityServiceInfo();
 		
 		// Methods
-		static jstring capabilityToString(jint arg0);
-		static jstring feedbackTypeToString(jint arg0);
-		static jstring flagToString(jint arg0);
+		static JString capabilityToString(jint arg0);
+		static JString feedbackTypeToString(jint arg0);
+		static JString flagToString(jint arg0);
 		jint describeContents();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jboolean getCanRetrieveWindowContent();
 		jint getCapabilities();
-		jstring getDescription();
-		jstring getId();
+		JString getDescription();
+		JString getId();
 		jint getInteractiveUiTimeoutMillis();
 		jint getNonInteractiveUiTimeoutMillis();
 		android::content::pm::ResolveInfo getResolveInfo();
-		jstring getSettingsActivityName();
+		JString getSettingsActivityName();
 		jint hashCode();
-		jstring loadDescription(android::content::pm::PackageManager arg0);
-		jstring loadSummary(android::content::pm::PackageManager arg0);
+		JString loadDescription(android::content::pm::PackageManager arg0);
+		JString loadSummary(android::content::pm::PackageManager arg0);
 		void setInteractiveUiTimeoutMillis(jint arg0);
 		void setNonInteractiveUiTimeoutMillis(jint arg0);
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::accessibilityservice

@@ -1,6 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./CursorWrapper.hpp"
 
 namespace android::database

@@ -1,7 +1,7 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 
+class JObject;
 namespace java::util::concurrent
 {
 	class ConcurrentHashMap;
@@ -21,16 +21,16 @@ namespace java::util::concurrent
 		// Constructors
 		
 		// Methods
-		jboolean add(jobject arg0);
+		jboolean add(JObject arg0);
 		jboolean addAll(JObject arg0);
-		jboolean contains(jobject arg0);
-		jboolean equals(jobject arg0);
+		jboolean contains(JObject arg0);
+		jboolean equals(JObject arg0);
 		void forEach(JObject arg0);
 		java::util::concurrent::ConcurrentHashMap getMap();
-		jobject getMappedValue();
+		JObject getMappedValue();
 		jint hashCode();
 		JObject iterator();
-		jboolean remove(jobject arg0);
+		jboolean remove(JObject arg0);
 		jboolean removeAll(JObject arg0);
 		JObject spliterator();
 	};

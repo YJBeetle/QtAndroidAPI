@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JByteArray;
 namespace android::se::omapi
 {
 	class Channel;
@@ -27,13 +28,13 @@ namespace android::se::omapi
 		// Methods
 		void close();
 		void closeChannels();
-		jbyteArray getATR();
+		JByteArray getATR();
 		android::se::omapi::Reader getReader();
 		jboolean isClosed();
-		android::se::omapi::Channel openBasicChannel(jbyteArray arg0);
-		android::se::omapi::Channel openBasicChannel(jbyteArray arg0, jbyte arg1);
-		android::se::omapi::Channel openLogicalChannel(jbyteArray arg0);
-		android::se::omapi::Channel openLogicalChannel(jbyteArray arg0, jbyte arg1);
+		android::se::omapi::Channel openBasicChannel(JByteArray arg0);
+		android::se::omapi::Channel openBasicChannel(JByteArray arg0, jbyte arg1);
+		android::se::omapi::Channel openLogicalChannel(JByteArray arg0);
+		android::se::omapi::Channel openLogicalChannel(JByteArray arg0, jbyte arg1);
 	};
 } // namespace android::se::omapi
 

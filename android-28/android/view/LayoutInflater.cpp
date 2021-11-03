@@ -1,6 +1,7 @@
 #include "../content/Context.hpp"
 #include "./View.hpp"
 #include "./ViewGroup.hpp"
+#include "../../JString.hpp"
 #include "./LayoutInflater.hpp"
 
 namespace android::view
@@ -30,13 +31,13 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	android::view::View LayoutInflater::createView(jstring arg0, jstring arg1, JObject arg2)
+	android::view::View LayoutInflater::createView(JString arg0, JString arg1, JObject arg2)
 	{
 		return callObjectMethod(
 			"createView",
 			"(Ljava/lang/String;Ljava/lang/String;Landroid/util/AttributeSet;)Landroid/view/View;",
-			arg0,
-			arg1,
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
 			arg2.object()
 		);
 	}

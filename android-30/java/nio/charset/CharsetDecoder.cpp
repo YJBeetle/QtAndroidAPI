@@ -1,3 +1,5 @@
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
 #include "../ByteBuffer.hpp"
 #include "../CharBuffer.hpp"
 #include "./Charset.hpp"
@@ -106,20 +108,20 @@ namespace java::nio::charset
 			arg0.object()
 		);
 	}
-	java::nio::charset::CharsetDecoder CharsetDecoder::replaceWith(jstring arg0)
+	java::nio::charset::CharsetDecoder CharsetDecoder::replaceWith(JString arg0)
 	{
 		return callObjectMethod(
 			"replaceWith",
 			"(Ljava/lang/String;)Ljava/nio/charset/CharsetDecoder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jstring CharsetDecoder::replacement()
+	JString CharsetDecoder::replacement()
 	{
 		return callObjectMethod(
 			"replacement",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	java::nio::charset::CharsetDecoder CharsetDecoder::reset()
 	{

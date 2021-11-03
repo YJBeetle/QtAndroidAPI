@@ -1,8 +1,9 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "../lang/Enum.hpp"
 
+class JArray;
+class JString;
 
 namespace java::util
 {
@@ -20,8 +21,8 @@ namespace java::util
 		// Constructors
 		
 		// Methods
-		static java::util::Locale_Category valueOf(jstring arg0);
-		static jarray values();
+		static java::util::Locale_Category valueOf(JString arg0);
+		static JArray values();
 	};
 } // namespace java::util
 

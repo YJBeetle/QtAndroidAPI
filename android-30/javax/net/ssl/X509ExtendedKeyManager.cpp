@@ -1,3 +1,6 @@
+#include "../../../JArray.hpp"
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
 #include "./SSLEngine.hpp"
 #include "./X509ExtendedKeyManager.hpp"
 
@@ -11,25 +14,25 @@ namespace javax::net::ssl
 	// Constructors
 	
 	// Methods
-	jstring X509ExtendedKeyManager::chooseEngineClientAlias(jarray arg0, jarray arg1, javax::net::ssl::SSLEngine arg2)
+	JString X509ExtendedKeyManager::chooseEngineClientAlias(JArray arg0, JArray arg1, javax::net::ssl::SSLEngine arg2)
 	{
 		return callObjectMethod(
 			"chooseEngineClientAlias",
 			"([Ljava/lang/String;[Ljava/security/Principal;Ljavax/net/ssl/SSLEngine;)Ljava/lang/String;",
-			arg0,
-			arg1,
+			arg0.object<jarray>(),
+			arg1.object<jarray>(),
 			arg2.object()
-		).object<jstring>();
+		);
 	}
-	jstring X509ExtendedKeyManager::chooseEngineServerAlias(jstring arg0, jarray arg1, javax::net::ssl::SSLEngine arg2)
+	JString X509ExtendedKeyManager::chooseEngineServerAlias(JString arg0, JArray arg1, javax::net::ssl::SSLEngine arg2)
 	{
 		return callObjectMethod(
 			"chooseEngineServerAlias",
 			"(Ljava/lang/String;[Ljava/security/Principal;Ljavax/net/ssl/SSLEngine;)Ljava/lang/String;",
-			arg0,
-			arg1,
+			arg0.object<jstring>(),
+			arg1.object<jarray>(),
 			arg2.object()
-		).object<jstring>();
+		);
 	}
 } // namespace javax::net::ssl
 

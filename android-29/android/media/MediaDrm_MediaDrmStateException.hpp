@@ -1,10 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../../java/lang/Exception.hpp"
-#include "../../java/lang/RuntimeException.hpp"
 #include "../../java/lang/IllegalStateException.hpp"
 
+class JString;
 
 namespace android::media
 {
@@ -20,7 +18,7 @@ namespace android::media
 		// Constructors
 		
 		// Methods
-		jstring getDiagnosticInfo();
+		JString getDiagnosticInfo();
 	};
 } // namespace android::media
 

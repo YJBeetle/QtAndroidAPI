@@ -22,6 +22,7 @@ namespace android::view
 {
 	class View;
 }
+class JString;
 
 namespace android::app
 {
@@ -60,11 +61,11 @@ namespace android::app
 		jint getNavigationMode();
 		jint getSelectedNavigationIndex();
 		android::app::ActionBar_Tab getSelectedTab();
-		jstring getSubtitle();
+		JString getSubtitle();
 		android::app::ActionBar_Tab getTabAt(jint arg0);
 		jint getTabCount();
 		android::content::Context getThemedContext();
-		jstring getTitle();
+		JString getTitle();
 		void hide();
 		jboolean isHideOnContentScrollEnabled();
 		jboolean isShowing();
@@ -89,7 +90,7 @@ namespace android::app
 		void setHideOffset(jint arg0);
 		void setHideOnContentScrollEnabled(jboolean arg0);
 		void setHomeActionContentDescription(jint arg0);
-		void setHomeActionContentDescription(jstring arg0);
+		void setHomeActionContentDescription(JString arg0);
 		void setHomeAsUpIndicator(android::graphics::drawable::Drawable arg0);
 		void setHomeAsUpIndicator(jint arg0);
 		void setHomeButtonEnabled(jboolean arg0);
@@ -103,9 +104,9 @@ namespace android::app
 		void setSplitBackgroundDrawable(android::graphics::drawable::Drawable arg0);
 		void setStackedBackgroundDrawable(android::graphics::drawable::Drawable arg0);
 		void setSubtitle(jint arg0);
-		void setSubtitle(jstring arg0);
+		void setSubtitle(JString arg0);
 		void setTitle(jint arg0);
-		void setTitle(jstring arg0);
+		void setTitle(JString arg0);
 		void show();
 	};
 } // namespace android::app

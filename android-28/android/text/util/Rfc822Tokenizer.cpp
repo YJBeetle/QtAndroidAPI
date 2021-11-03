@@ -1,3 +1,5 @@
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
 #include "./Rfc822Tokenizer.hpp"
 
 namespace android::text::util
@@ -15,50 +17,50 @@ namespace android::text::util
 		) {}
 	
 	// Methods
-	jarray Rfc822Tokenizer::tokenize(jstring arg0)
+	JArray Rfc822Tokenizer::tokenize(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.text.util.Rfc822Tokenizer",
 			"tokenize",
 			"(Ljava/lang/CharSequence;)[Landroid/text/util/Rfc822Token;",
-			arg0
-		).object<jarray>();
+			arg0.object<jstring>()
+		);
 	}
-	void Rfc822Tokenizer::tokenize(jstring arg0, JObject arg1)
+	void Rfc822Tokenizer::tokenize(JString arg0, JObject arg1)
 	{
 		callStaticMethod<void>(
 			"android.text.util.Rfc822Tokenizer",
 			"tokenize",
 			"(Ljava/lang/CharSequence;Ljava/util/Collection;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
-	jint Rfc822Tokenizer::findTokenEnd(jstring arg0, jint arg1)
+	jint Rfc822Tokenizer::findTokenEnd(JString arg0, jint arg1)
 	{
 		return callMethod<jint>(
 			"findTokenEnd",
 			"(Ljava/lang/CharSequence;I)I",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
-	jint Rfc822Tokenizer::findTokenStart(jstring arg0, jint arg1)
+	jint Rfc822Tokenizer::findTokenStart(JString arg0, jint arg1)
 	{
 		return callMethod<jint>(
 			"findTokenStart",
 			"(Ljava/lang/CharSequence;I)I",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
-	jstring Rfc822Tokenizer::terminateToken(jstring arg0)
+	JString Rfc822Tokenizer::terminateToken(JString arg0)
 	{
 		return callObjectMethod(
 			"terminateToken",
 			"(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;",
-			arg0
-		).object<jstring>();
+			arg0.object<jstring>()
+		);
 	}
 } // namespace android::text::util
 

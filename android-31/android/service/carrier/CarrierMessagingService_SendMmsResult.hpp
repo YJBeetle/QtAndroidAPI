@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JByteArray;
 
 namespace android::service::carrier
 {
@@ -15,10 +16,10 @@ namespace android::service::carrier
 		CarrierMessagingService_SendMmsResult(QJniObject obj);
 		
 		// Constructors
-		CarrierMessagingService_SendMmsResult(jint arg0, jbyteArray arg1);
+		CarrierMessagingService_SendMmsResult(jint arg0, JByteArray arg1);
 		
 		// Methods
-		jbyteArray getSendConfPdu();
+		JByteArray getSendConfPdu();
 		jint getSendStatus();
 	};
 } // namespace android::service::carrier

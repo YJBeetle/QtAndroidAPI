@@ -1,6 +1,9 @@
 #include "../../content/Context.hpp"
 #include "../../content/pm/ApplicationInfo.hpp"
 #include "../../os/Parcel.hpp"
+#include "../../../JString.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./InputMethodSubtype.hpp"
 
 namespace android::view::inputmethod
@@ -19,39 +22,39 @@ namespace android::view::inputmethod
 	InputMethodSubtype::InputMethodSubtype(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	InputMethodSubtype::InputMethodSubtype(jint arg0, jint arg1, jstring arg2, jstring arg3, jstring arg4, jboolean arg5, jboolean arg6)
+	InputMethodSubtype::InputMethodSubtype(jint arg0, jint arg1, JString arg2, JString arg3, JString arg4, jboolean arg5, jboolean arg6)
 		: JObject(
 			"android.view.inputmethod.InputMethodSubtype",
 			"(IILjava/lang/String;Ljava/lang/String;Ljava/lang/String;ZZ)V",
 			arg0,
 			arg1,
-			arg2,
-			arg3,
-			arg4,
+			arg2.object<jstring>(),
+			arg3.object<jstring>(),
+			arg4.object<jstring>(),
 			arg5,
 			arg6
 		) {}
-	InputMethodSubtype::InputMethodSubtype(jint arg0, jint arg1, jstring arg2, jstring arg3, jstring arg4, jboolean arg5, jboolean arg6, jint arg7)
+	InputMethodSubtype::InputMethodSubtype(jint arg0, jint arg1, JString arg2, JString arg3, JString arg4, jboolean arg5, jboolean arg6, jint arg7)
 		: JObject(
 			"android.view.inputmethod.InputMethodSubtype",
 			"(IILjava/lang/String;Ljava/lang/String;Ljava/lang/String;ZZI)V",
 			arg0,
 			arg1,
-			arg2,
-			arg3,
-			arg4,
+			arg2.object<jstring>(),
+			arg3.object<jstring>(),
+			arg4.object<jstring>(),
 			arg5,
 			arg6,
 			arg7
 		) {}
 	
 	// Methods
-	jboolean InputMethodSubtype::containsExtraValueKey(jstring arg0)
+	jboolean InputMethodSubtype::containsExtraValueKey(JString arg0)
 	{
 		return callMethod<jboolean>(
 			"containsExtraValueKey",
 			"(Ljava/lang/String;)Z",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	jint InputMethodSubtype::describeContents()
@@ -61,38 +64,38 @@ namespace android::view::inputmethod
 			"()I"
 		);
 	}
-	jboolean InputMethodSubtype::equals(jobject arg0)
+	jboolean InputMethodSubtype::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jstring InputMethodSubtype::getDisplayName(android::content::Context arg0, jstring arg1, android::content::pm::ApplicationInfo arg2)
+	JString InputMethodSubtype::getDisplayName(android::content::Context arg0, JString arg1, android::content::pm::ApplicationInfo arg2)
 	{
 		return callObjectMethod(
 			"getDisplayName",
 			"(Landroid/content/Context;Ljava/lang/String;Landroid/content/pm/ApplicationInfo;)Ljava/lang/CharSequence;",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2.object()
-		).object<jstring>();
+		);
 	}
-	jstring InputMethodSubtype::getExtraValue()
+	JString InputMethodSubtype::getExtraValue()
 	{
 		return callObjectMethod(
 			"getExtraValue",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring InputMethodSubtype::getExtraValueOf(jstring arg0)
+	JString InputMethodSubtype::getExtraValueOf(JString arg0)
 	{
 		return callObjectMethod(
 			"getExtraValueOf",
 			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
+			arg0.object<jstring>()
+		);
 	}
 	jint InputMethodSubtype::getIconResId()
 	{
@@ -101,26 +104,26 @@ namespace android::view::inputmethod
 			"()I"
 		);
 	}
-	jstring InputMethodSubtype::getLanguageTag()
+	JString InputMethodSubtype::getLanguageTag()
 	{
 		return callObjectMethod(
 			"getLanguageTag",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring InputMethodSubtype::getLocale()
+	JString InputMethodSubtype::getLocale()
 	{
 		return callObjectMethod(
 			"getLocale",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring InputMethodSubtype::getMode()
+	JString InputMethodSubtype::getMode()
 	{
 		return callObjectMethod(
 			"getMode",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint InputMethodSubtype::getNameResId()
 	{

@@ -1,4 +1,6 @@
+#include "../../../JArray.hpp"
 #include "../../os/Parcel.hpp"
+#include "../../../JString.hpp"
 #include "./InstrumentationInfo.hpp"
 
 namespace android::content::pm
@@ -12,12 +14,12 @@ namespace android::content::pm
 			"Landroid/os/Parcelable$Creator;"
 		);
 	}
-	jstring InstrumentationInfo::dataDir()
+	JString InstrumentationInfo::dataDir()
 	{
 		return getObjectField(
 			"dataDir",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jboolean InstrumentationInfo::functionalTest()
 	{
@@ -31,54 +33,54 @@ namespace android::content::pm
 			"handleProfiling"
 		);
 	}
-	jstring InstrumentationInfo::publicSourceDir()
+	JString InstrumentationInfo::publicSourceDir()
 	{
 		return getObjectField(
 			"publicSourceDir",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring InstrumentationInfo::sourceDir()
+	JString InstrumentationInfo::sourceDir()
 	{
 		return getObjectField(
 			"sourceDir",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jarray InstrumentationInfo::splitNames()
+	JArray InstrumentationInfo::splitNames()
 	{
 		return getObjectField(
 			"splitNames",
 			"[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
-	jarray InstrumentationInfo::splitPublicSourceDirs()
+	JArray InstrumentationInfo::splitPublicSourceDirs()
 	{
 		return getObjectField(
 			"splitPublicSourceDirs",
 			"[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
-	jarray InstrumentationInfo::splitSourceDirs()
+	JArray InstrumentationInfo::splitSourceDirs()
 	{
 		return getObjectField(
 			"splitSourceDirs",
 			"[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
-	jstring InstrumentationInfo::targetPackage()
+	JString InstrumentationInfo::targetPackage()
 	{
 		return getObjectField(
 			"targetPackage",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring InstrumentationInfo::targetProcesses()
+	JString InstrumentationInfo::targetProcesses()
 	{
 		return getObjectField(
 			"targetProcesses",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QJniObject forward
@@ -105,12 +107,12 @@ namespace android::content::pm
 			"()I"
 		);
 	}
-	jstring InstrumentationInfo::toString()
+	JString InstrumentationInfo::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void InstrumentationInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

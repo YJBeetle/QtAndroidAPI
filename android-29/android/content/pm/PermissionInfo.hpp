@@ -1,6 +1,5 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "./PackageItemInfo.hpp"
 
 namespace android::content::pm
@@ -11,6 +10,8 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
+class JString;
 
 namespace android::content::pm
 {
@@ -43,8 +44,8 @@ namespace android::content::pm
 		static jint PROTECTION_SIGNATURE_OR_SYSTEM();
 		jint descriptionRes();
 		jint flags();
-		jstring group();
-		jstring nonLocalizedDescription();
+		JString group();
+		JString nonLocalizedDescription();
 		jint protectionLevel();
 		
 		// QJniObject forward
@@ -59,8 +60,8 @@ namespace android::content::pm
 		jint describeContents();
 		jint getProtection();
 		jint getProtectionFlags();
-		jstring loadDescription(android::content::pm::PackageManager arg0);
-		jstring toString();
+		JString loadDescription(android::content::pm::PackageManager arg0);
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::content::pm

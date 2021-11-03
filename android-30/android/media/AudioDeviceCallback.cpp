@@ -1,3 +1,4 @@
+#include "../../JArray.hpp"
 #include "./AudioDeviceCallback.hpp"
 
 namespace android::media
@@ -15,20 +16,20 @@ namespace android::media
 		) {}
 	
 	// Methods
-	void AudioDeviceCallback::onAudioDevicesAdded(jarray arg0)
+	void AudioDeviceCallback::onAudioDevicesAdded(JArray arg0)
 	{
 		callMethod<void>(
 			"onAudioDevicesAdded",
 			"([Landroid/media/AudioDeviceInfo;)V",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
-	void AudioDeviceCallback::onAudioDevicesRemoved(jarray arg0)
+	void AudioDeviceCallback::onAudioDevicesRemoved(JArray arg0)
 	{
 		callMethod<void>(
 			"onAudioDevicesRemoved",
 			"([Landroid/media/AudioDeviceInfo;)V",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
 } // namespace android::media

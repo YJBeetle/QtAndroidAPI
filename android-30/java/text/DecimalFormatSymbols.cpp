@@ -1,4 +1,7 @@
+#include "../../JArray.hpp"
 #include "../io/ObjectInputStream.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "../util/Currency.hpp"
 #include "../util/Locale.hpp"
 #include "./DecimalFormatSymbols.hpp"
@@ -24,13 +27,13 @@ namespace java::text
 		) {}
 	
 	// Methods
-	jarray DecimalFormatSymbols::getAvailableLocales()
+	JArray DecimalFormatSymbols::getAvailableLocales()
 	{
 		return callStaticObjectMethod(
 			"java.text.DecimalFormatSymbols",
 			"getAvailableLocales",
 			"()[Ljava/util/Locale;"
-		).object<jarray>();
+		);
 	}
 	java::text::DecimalFormatSymbols DecimalFormatSymbols::getInstance()
 	{
@@ -49,19 +52,19 @@ namespace java::text
 			arg0.object()
 		);
 	}
-	jobject DecimalFormatSymbols::clone()
+	JObject DecimalFormatSymbols::clone()
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
-	jboolean DecimalFormatSymbols::equals(jobject arg0)
+	jboolean DecimalFormatSymbols::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	java::util::Currency DecimalFormatSymbols::getCurrency()
@@ -71,12 +74,12 @@ namespace java::text
 			"()Ljava/util/Currency;"
 		);
 	}
-	jstring DecimalFormatSymbols::getCurrencySymbol()
+	JString DecimalFormatSymbols::getCurrencySymbol()
 	{
 		return callObjectMethod(
 			"getCurrencySymbol",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jchar DecimalFormatSymbols::getDecimalSeparator()
 	{
@@ -92,12 +95,12 @@ namespace java::text
 			"()C"
 		);
 	}
-	jstring DecimalFormatSymbols::getExponentSeparator()
+	JString DecimalFormatSymbols::getExponentSeparator()
 	{
 		return callObjectMethod(
 			"getExponentSeparator",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jchar DecimalFormatSymbols::getGroupingSeparator()
 	{
@@ -106,19 +109,19 @@ namespace java::text
 			"()C"
 		);
 	}
-	jstring DecimalFormatSymbols::getInfinity()
+	JString DecimalFormatSymbols::getInfinity()
 	{
 		return callObjectMethod(
 			"getInfinity",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DecimalFormatSymbols::getInternationalCurrencySymbol()
+	JString DecimalFormatSymbols::getInternationalCurrencySymbol()
 	{
 		return callObjectMethod(
 			"getInternationalCurrencySymbol",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jchar DecimalFormatSymbols::getMinusSign()
 	{
@@ -141,12 +144,12 @@ namespace java::text
 			"()C"
 		);
 	}
-	jstring DecimalFormatSymbols::getNaN()
+	JString DecimalFormatSymbols::getNaN()
 	{
 		return callObjectMethod(
 			"getNaN",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jchar DecimalFormatSymbols::getPatternSeparator()
 	{
@@ -191,12 +194,12 @@ namespace java::text
 			arg0.object()
 		);
 	}
-	void DecimalFormatSymbols::setCurrencySymbol(jstring arg0)
+	void DecimalFormatSymbols::setCurrencySymbol(JString arg0)
 	{
 		callMethod<void>(
 			"setCurrencySymbol",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void DecimalFormatSymbols::setDecimalSeparator(jchar arg0)
@@ -215,12 +218,12 @@ namespace java::text
 			arg0
 		);
 	}
-	void DecimalFormatSymbols::setExponentSeparator(jstring arg0)
+	void DecimalFormatSymbols::setExponentSeparator(JString arg0)
 	{
 		callMethod<void>(
 			"setExponentSeparator",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void DecimalFormatSymbols::setGroupingSeparator(jchar arg0)
@@ -231,20 +234,20 @@ namespace java::text
 			arg0
 		);
 	}
-	void DecimalFormatSymbols::setInfinity(jstring arg0)
+	void DecimalFormatSymbols::setInfinity(JString arg0)
 	{
 		callMethod<void>(
 			"setInfinity",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	void DecimalFormatSymbols::setInternationalCurrencySymbol(jstring arg0)
+	void DecimalFormatSymbols::setInternationalCurrencySymbol(JString arg0)
 	{
 		callMethod<void>(
 			"setInternationalCurrencySymbol",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void DecimalFormatSymbols::setMinusSign(jchar arg0)
@@ -271,12 +274,12 @@ namespace java::text
 			arg0
 		);
 	}
-	void DecimalFormatSymbols::setNaN(jstring arg0)
+	void DecimalFormatSymbols::setNaN(JString arg0)
 	{
 		callMethod<void>(
 			"setNaN",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void DecimalFormatSymbols::setPatternSeparator(jchar arg0)

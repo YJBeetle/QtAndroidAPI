@@ -1,4 +1,6 @@
 #include "../AppSearchResult.hpp"
+#include "../../../../JString.hpp"
+#include "../../../../JThrowable.hpp"
 #include "./AppSearchException.hpp"
 
 namespace android::app::appsearch::exceptions
@@ -15,20 +17,20 @@ namespace android::app::appsearch::exceptions
 			"(I)V",
 			arg0
 		) {}
-	AppSearchException::AppSearchException(jint arg0, jstring arg1)
+	AppSearchException::AppSearchException(jint arg0, JString arg1)
 		: java::lang::Exception(
 			"android.app.appsearch.exceptions.AppSearchException",
 			"(ILjava/lang/String;)V",
 			arg0,
-			arg1
+			arg1.object<jstring>()
 		) {}
-	AppSearchException::AppSearchException(jint arg0, jstring arg1, jthrowable arg2)
+	AppSearchException::AppSearchException(jint arg0, JString arg1, JThrowable arg2)
 		: java::lang::Exception(
 			"android.app.appsearch.exceptions.AppSearchException",
 			"(ILjava/lang/String;Ljava/lang/Throwable;)V",
 			arg0,
-			arg1,
-			arg2
+			arg1.object<jstring>(),
+			arg2.object<jthrowable>()
 		) {}
 	
 	// Methods

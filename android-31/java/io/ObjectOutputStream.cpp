@@ -1,9 +1,13 @@
+#include "../../JByteArray.hpp"
 #include "./IOException.hpp"
 #include "./ObjectOutputStream_PutField.hpp"
 #include "./ObjectStreamClass.hpp"
 #include "./OutputStream.hpp"
 #include "../lang/Boolean.hpp"
+#include "../../JClass.hpp"
 #include "../lang/Enum.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./ObjectOutputStream.hpp"
 
 namespace java::io
@@ -65,12 +69,12 @@ namespace java::io
 			arg0
 		);
 	}
-	void ObjectOutputStream::write(jbyteArray arg0)
+	void ObjectOutputStream::write(JByteArray arg0)
 	{
 		callMethod<void>(
 			"write",
 			"([B)V",
-			arg0
+			arg0.object<jbyteArray>()
 		);
 	}
 	void ObjectOutputStream::write(jint arg0)
@@ -81,12 +85,12 @@ namespace java::io
 			arg0
 		);
 	}
-	void ObjectOutputStream::write(jbyteArray arg0, jint arg1, jint arg2)
+	void ObjectOutputStream::write(JByteArray arg0, jint arg1, jint arg2)
 	{
 		callMethod<void>(
 			"write",
 			"([BII)V",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1,
 			arg2
 		);
@@ -107,12 +111,12 @@ namespace java::io
 			arg0
 		);
 	}
-	void ObjectOutputStream::writeBytes(jstring arg0)
+	void ObjectOutputStream::writeBytes(JString arg0)
 	{
 		callMethod<void>(
 			"writeBytes",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void ObjectOutputStream::writeChar(jint arg0)
@@ -123,12 +127,12 @@ namespace java::io
 			arg0
 		);
 	}
-	void ObjectOutputStream::writeChars(jstring arg0)
+	void ObjectOutputStream::writeChars(JString arg0)
 	{
 		callMethod<void>(
 			"writeChars",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void ObjectOutputStream::writeDouble(jdouble arg0)
@@ -170,12 +174,12 @@ namespace java::io
 			arg0
 		);
 	}
-	void ObjectOutputStream::writeObject(jobject arg0)
+	void ObjectOutputStream::writeObject(JObject arg0)
 	{
 		callMethod<void>(
 			"writeObject",
 			"(Ljava/lang/Object;)V",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	void ObjectOutputStream::writeShort(jint arg0)
@@ -186,20 +190,20 @@ namespace java::io
 			arg0
 		);
 	}
-	void ObjectOutputStream::writeUTF(jstring arg0)
+	void ObjectOutputStream::writeUTF(JString arg0)
 	{
 		callMethod<void>(
 			"writeUTF",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	void ObjectOutputStream::writeUnshared(jobject arg0)
+	void ObjectOutputStream::writeUnshared(JObject arg0)
 	{
 		callMethod<void>(
 			"writeUnshared",
 			"(Ljava/lang/Object;)V",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 } // namespace java::io

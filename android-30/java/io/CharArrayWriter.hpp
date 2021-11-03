@@ -1,12 +1,14 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./Writer.hpp"
 
+class JCharArray;
 namespace java::io
 {
 	class Writer;
 }
+class JString;
+class JString;
 
 namespace java::io
 {
@@ -25,17 +27,17 @@ namespace java::io
 		
 		// Methods
 		java::io::CharArrayWriter append(jchar arg0);
-		java::io::CharArrayWriter append(jstring arg0);
-		java::io::CharArrayWriter append(jstring arg0, jint arg1, jint arg2);
+		java::io::CharArrayWriter append(JString arg0);
+		java::io::CharArrayWriter append(JString arg0, jint arg1, jint arg2);
 		void close();
 		void flush();
 		void reset();
 		jint size();
-		jcharArray toCharArray();
-		jstring toString();
+		JCharArray toCharArray();
+		JString toString();
 		void write(jint arg0);
-		void write(jcharArray arg0, jint arg1, jint arg2);
-		void write(jstring arg0, jint arg1, jint arg2);
+		void write(JCharArray arg0, jint arg1, jint arg2);
+		void write(JString arg0, jint arg1, jint arg2);
 		void writeTo(java::io::Writer arg0);
 	};
 } // namespace java::io

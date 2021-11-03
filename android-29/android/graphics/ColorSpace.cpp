@@ -1,85 +1,88 @@
+#include "../../JFloatArray.hpp"
 #include "./ColorSpace_Adaptation.hpp"
 #include "./ColorSpace_Connector.hpp"
 #include "./ColorSpace_Model.hpp"
 #include "./ColorSpace_Named.hpp"
 #include "./ColorSpace_RenderIntent.hpp"
 #include "./ColorSpace_Rgb_TransferParameters.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./ColorSpace.hpp"
 
 namespace android::graphics
 {
 	// Fields
-	jfloatArray ColorSpace::ILLUMINANT_A()
+	JFloatArray ColorSpace::ILLUMINANT_A()
 	{
 		return getStaticObjectField(
 			"android.graphics.ColorSpace",
 			"ILLUMINANT_A",
 			"[F"
-		).object<jfloatArray>();
+		);
 	}
-	jfloatArray ColorSpace::ILLUMINANT_B()
+	JFloatArray ColorSpace::ILLUMINANT_B()
 	{
 		return getStaticObjectField(
 			"android.graphics.ColorSpace",
 			"ILLUMINANT_B",
 			"[F"
-		).object<jfloatArray>();
+		);
 	}
-	jfloatArray ColorSpace::ILLUMINANT_C()
+	JFloatArray ColorSpace::ILLUMINANT_C()
 	{
 		return getStaticObjectField(
 			"android.graphics.ColorSpace",
 			"ILLUMINANT_C",
 			"[F"
-		).object<jfloatArray>();
+		);
 	}
-	jfloatArray ColorSpace::ILLUMINANT_D50()
+	JFloatArray ColorSpace::ILLUMINANT_D50()
 	{
 		return getStaticObjectField(
 			"android.graphics.ColorSpace",
 			"ILLUMINANT_D50",
 			"[F"
-		).object<jfloatArray>();
+		);
 	}
-	jfloatArray ColorSpace::ILLUMINANT_D55()
+	JFloatArray ColorSpace::ILLUMINANT_D55()
 	{
 		return getStaticObjectField(
 			"android.graphics.ColorSpace",
 			"ILLUMINANT_D55",
 			"[F"
-		).object<jfloatArray>();
+		);
 	}
-	jfloatArray ColorSpace::ILLUMINANT_D60()
+	JFloatArray ColorSpace::ILLUMINANT_D60()
 	{
 		return getStaticObjectField(
 			"android.graphics.ColorSpace",
 			"ILLUMINANT_D60",
 			"[F"
-		).object<jfloatArray>();
+		);
 	}
-	jfloatArray ColorSpace::ILLUMINANT_D65()
+	JFloatArray ColorSpace::ILLUMINANT_D65()
 	{
 		return getStaticObjectField(
 			"android.graphics.ColorSpace",
 			"ILLUMINANT_D65",
 			"[F"
-		).object<jfloatArray>();
+		);
 	}
-	jfloatArray ColorSpace::ILLUMINANT_D75()
+	JFloatArray ColorSpace::ILLUMINANT_D75()
 	{
 		return getStaticObjectField(
 			"android.graphics.ColorSpace",
 			"ILLUMINANT_D75",
 			"[F"
-		).object<jfloatArray>();
+		);
 	}
-	jfloatArray ColorSpace::ILLUMINANT_E()
+	JFloatArray ColorSpace::ILLUMINANT_E()
 	{
 		return getStaticObjectField(
 			"android.graphics.ColorSpace",
 			"ILLUMINANT_E",
 			"[F"
-		).object<jfloatArray>();
+		);
 	}
 	jint ColorSpace::MAX_ID()
 	{
@@ -102,24 +105,24 @@ namespace android::graphics
 	// Constructors
 	
 	// Methods
-	android::graphics::ColorSpace ColorSpace::adapt(android::graphics::ColorSpace arg0, jfloatArray arg1)
+	android::graphics::ColorSpace ColorSpace::adapt(android::graphics::ColorSpace arg0, JFloatArray arg1)
 	{
 		return callStaticObjectMethod(
 			"android.graphics.ColorSpace",
 			"adapt",
 			"(Landroid/graphics/ColorSpace;[F)Landroid/graphics/ColorSpace;",
 			arg0.object(),
-			arg1
+			arg1.object<jfloatArray>()
 		);
 	}
-	android::graphics::ColorSpace ColorSpace::adapt(android::graphics::ColorSpace arg0, jfloatArray arg1, android::graphics::ColorSpace_Adaptation arg2)
+	android::graphics::ColorSpace ColorSpace::adapt(android::graphics::ColorSpace arg0, JFloatArray arg1, android::graphics::ColorSpace_Adaptation arg2)
 	{
 		return callStaticObjectMethod(
 			"android.graphics.ColorSpace",
 			"adapt",
 			"(Landroid/graphics/ColorSpace;[FLandroid/graphics/ColorSpace$Adaptation;)Landroid/graphics/ColorSpace;",
 			arg0.object(),
-			arg1,
+			arg1.object<jfloatArray>(),
 			arg2.object()
 		);
 	}
@@ -172,33 +175,33 @@ namespace android::graphics
 			arg0.object()
 		);
 	}
-	android::graphics::ColorSpace ColorSpace::match(jfloatArray arg0, android::graphics::ColorSpace_Rgb_TransferParameters arg1)
+	android::graphics::ColorSpace ColorSpace::match(JFloatArray arg0, android::graphics::ColorSpace_Rgb_TransferParameters arg1)
 	{
 		return callStaticObjectMethod(
 			"android.graphics.ColorSpace",
 			"match",
 			"([FLandroid/graphics/ColorSpace$Rgb$TransferParameters;)Landroid/graphics/ColorSpace;",
-			arg0,
+			arg0.object<jfloatArray>(),
 			arg1.object()
 		);
 	}
-	jboolean ColorSpace::equals(jobject arg0)
+	jboolean ColorSpace::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jfloatArray ColorSpace::fromXyz(jfloatArray arg0)
+	JFloatArray ColorSpace::fromXyz(JFloatArray arg0)
 	{
 		return callObjectMethod(
 			"fromXyz",
 			"([F)[F",
-			arg0
-		).object<jfloatArray>();
+			arg0.object<jfloatArray>()
+		);
 	}
-	jfloatArray ColorSpace::fromXyz(jfloat arg0, jfloat arg1, jfloat arg2)
+	JFloatArray ColorSpace::fromXyz(jfloat arg0, jfloat arg1, jfloat arg2)
 	{
 		return callObjectMethod(
 			"fromXyz",
@@ -206,7 +209,7 @@ namespace android::graphics
 			arg0,
 			arg1,
 			arg2
-		).object<jfloatArray>();
+		);
 	}
 	jint ColorSpace::getComponentCount()
 	{
@@ -245,12 +248,12 @@ namespace android::graphics
 			"()Landroid/graphics/ColorSpace$Model;"
 		);
 	}
-	jstring ColorSpace::getName()
+	JString ColorSpace::getName()
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint ColorSpace::hashCode()
 	{
@@ -273,22 +276,22 @@ namespace android::graphics
 			"()Z"
 		);
 	}
-	jstring ColorSpace::toString()
+	JString ColorSpace::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jfloatArray ColorSpace::toXyz(jfloatArray arg0)
+	JFloatArray ColorSpace::toXyz(JFloatArray arg0)
 	{
 		return callObjectMethod(
 			"toXyz",
 			"([F)[F",
-			arg0
-		).object<jfloatArray>();
+			arg0.object<jfloatArray>()
+		);
 	}
-	jfloatArray ColorSpace::toXyz(jfloat arg0, jfloat arg1, jfloat arg2)
+	JFloatArray ColorSpace::toXyz(jfloat arg0, jfloat arg1, jfloat arg2)
 	{
 		return callObjectMethod(
 			"toXyz",
@@ -296,7 +299,7 @@ namespace android::graphics
 			arg0,
 			arg1,
 			arg2
-		).object<jfloatArray>();
+		);
 	}
 } // namespace android::graphics
 

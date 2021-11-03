@@ -1,8 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../view/View.hpp"
-#include "../view/ViewGroup.hpp"
 #include "./RelativeLayout.hpp"
 
 namespace android::content
@@ -17,6 +14,8 @@ namespace android::view
 {
 	class KeyEvent;
 }
+class JString;
+class JString;
 
 namespace android::widget
 {
@@ -39,11 +38,11 @@ namespace android::widget
 		DialerFilter(android::content::Context arg0, JObject arg1);
 		
 		// Methods
-		void append(jstring arg0);
+		void append(JString arg0);
 		void clearText();
-		jstring getDigits();
-		jstring getFilterText();
-		jstring getLetters();
+		JString getDigits();
+		JString getFilterText();
+		JString getLetters();
 		jint getMode();
 		jboolean isQwertyKeyboard();
 		jboolean onKeyDown(jint arg0, android::view::KeyEvent arg1);

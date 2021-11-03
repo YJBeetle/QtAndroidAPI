@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./UrlQuerySanitizer_IllegalCharacterValueSanitizer.hpp"
 
 namespace android::net
@@ -170,13 +171,13 @@ namespace android::net
 		) {}
 	
 	// Methods
-	jstring UrlQuerySanitizer_IllegalCharacterValueSanitizer::sanitize(jstring arg0)
+	JString UrlQuerySanitizer_IllegalCharacterValueSanitizer::sanitize(JString arg0)
 	{
 		return callObjectMethod(
 			"sanitize",
 			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
+			arg0.object<jstring>()
+		);
 	}
 } // namespace android::net
 

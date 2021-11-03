@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./IllegalFormatPrecisionException.hpp"
 
 namespace java::util
@@ -16,12 +17,12 @@ namespace java::util
 		) {}
 	
 	// Methods
-	jstring IllegalFormatPrecisionException::getMessage()
+	JString IllegalFormatPrecisionException::getMessage()
 	{
 		return callObjectMethod(
 			"getMessage",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint IllegalFormatPrecisionException::getPrecision()
 	{

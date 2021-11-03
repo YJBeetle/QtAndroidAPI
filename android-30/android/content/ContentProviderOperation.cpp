@@ -1,3 +1,5 @@
+#include "../../JArray.hpp"
+#include "../../JArray.hpp"
 #include "./ContentProvider.hpp"
 #include "./ContentProviderOperation_Builder.hpp"
 #include "./ContentProviderResult.hpp"
@@ -5,6 +7,7 @@
 #include "../net/Uri.hpp"
 #include "../os/Bundle.hpp"
 #include "../os/Parcel.hpp"
+#include "../../JString.hpp"
 #include "./ContentProviderOperation.hpp"
 
 namespace android::content
@@ -34,15 +37,15 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	android::content::ContentProviderOperation_Builder ContentProviderOperation::newCall(android::net::Uri arg0, jstring arg1, jstring arg2)
+	android::content::ContentProviderOperation_Builder ContentProviderOperation::newCall(android::net::Uri arg0, JString arg1, JString arg2)
 	{
 		return callStaticObjectMethod(
 			"android.content.ContentProviderOperation",
 			"newCall",
 			"(Landroid/net/Uri;Ljava/lang/String;Ljava/lang/String;)Landroid/content/ContentProviderOperation$Builder;",
 			arg0.object(),
-			arg1,
-			arg2
+			arg1.object<jstring>(),
+			arg2.object<jstring>()
 		);
 	}
 	android::content::ContentProviderOperation_Builder ContentProviderOperation::newDelete(android::net::Uri arg0)
@@ -72,13 +75,13 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	android::content::ContentProviderResult ContentProviderOperation::apply(android::content::ContentProvider arg0, jarray arg1, jint arg2)
+	android::content::ContentProviderResult ContentProviderOperation::apply(android::content::ContentProvider arg0, JArray arg1, jint arg2)
 	{
 		return callObjectMethod(
 			"apply",
 			"(Landroid/content/ContentProvider;[Landroid/content/ContentProviderResult;I)Landroid/content/ContentProviderResult;",
 			arg0.object(),
-			arg1,
+			arg1.object<jarray>(),
 			arg2
 		);
 	}
@@ -159,39 +162,39 @@ namespace android::content
 			"()Z"
 		);
 	}
-	android::os::Bundle ContentProviderOperation::resolveExtrasBackReferences(jarray arg0, jint arg1)
+	android::os::Bundle ContentProviderOperation::resolveExtrasBackReferences(JArray arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"resolveExtrasBackReferences",
 			"([Landroid/content/ContentProviderResult;I)Landroid/os/Bundle;",
-			arg0,
+			arg0.object<jarray>(),
 			arg1
 		);
 	}
-	jarray ContentProviderOperation::resolveSelectionArgsBackReferences(jarray arg0, jint arg1)
+	JArray ContentProviderOperation::resolveSelectionArgsBackReferences(JArray arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"resolveSelectionArgsBackReferences",
 			"([Landroid/content/ContentProviderResult;I)[Ljava/lang/String;",
-			arg0,
+			arg0.object<jarray>(),
 			arg1
-		).object<jarray>();
+		);
 	}
-	android::content::ContentValues ContentProviderOperation::resolveValueBackReferences(jarray arg0, jint arg1)
+	android::content::ContentValues ContentProviderOperation::resolveValueBackReferences(JArray arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"resolveValueBackReferences",
 			"([Landroid/content/ContentProviderResult;I)Landroid/content/ContentValues;",
-			arg0,
+			arg0.object<jarray>(),
 			arg1
 		);
 	}
-	jstring ContentProviderOperation::toString()
+	JString ContentProviderOperation::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void ContentProviderOperation::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

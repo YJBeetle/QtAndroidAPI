@@ -6,6 +6,7 @@ namespace android::app::appsearch
 {
 	class AppSearchManager_SearchContext;
 }
+class JString;
 
 namespace android::app::appsearch
 {
@@ -19,7 +20,7 @@ namespace android::app::appsearch
 		AppSearchManager_SearchContext_Builder(QJniObject obj);
 		
 		// Constructors
-		AppSearchManager_SearchContext_Builder(jstring arg0);
+		AppSearchManager_SearchContext_Builder(JString arg0);
 		
 		// Methods
 		android::app::appsearch::AppSearchManager_SearchContext build();

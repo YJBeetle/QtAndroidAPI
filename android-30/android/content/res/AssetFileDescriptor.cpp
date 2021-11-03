@@ -4,6 +4,7 @@
 #include "../../../java/io/FileDescriptor.hpp"
 #include "../../../java/io/FileInputStream.hpp"
 #include "../../../java/io/FileOutputStream.hpp"
+#include "../../../JString.hpp"
 #include "./AssetFileDescriptor.hpp"
 
 namespace android::content::res
@@ -118,12 +119,12 @@ namespace android::content::res
 			"()J"
 		);
 	}
-	jstring AssetFileDescriptor::toString()
+	JString AssetFileDescriptor::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void AssetFileDescriptor::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

@@ -1,6 +1,5 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "./RSAPrivateKeySpec.hpp"
 
 namespace java::math

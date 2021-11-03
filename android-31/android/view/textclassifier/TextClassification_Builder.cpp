@@ -3,6 +3,7 @@
 #include "../../graphics/drawable/Drawable.hpp"
 #include "../../os/Bundle.hpp"
 #include "./TextClassification.hpp"
+#include "../../../JString.hpp"
 #include "./TextClassification_Builder.hpp"
 
 namespace android::view::textclassifier
@@ -35,12 +36,12 @@ namespace android::view::textclassifier
 			"()Landroid/view/textclassifier/TextClassification;"
 		);
 	}
-	android::view::textclassifier::TextClassification_Builder TextClassification_Builder::setEntityType(jstring arg0, jfloat arg1)
+	android::view::textclassifier::TextClassification_Builder TextClassification_Builder::setEntityType(JString arg0, jfloat arg1)
 	{
 		return callObjectMethod(
 			"setEntityType",
 			"(Ljava/lang/String;F)Landroid/view/textclassifier/TextClassification$Builder;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
@@ -60,12 +61,12 @@ namespace android::view::textclassifier
 			arg0.object()
 		);
 	}
-	android::view::textclassifier::TextClassification_Builder TextClassification_Builder::setId(jstring arg0)
+	android::view::textclassifier::TextClassification_Builder TextClassification_Builder::setId(JString arg0)
 	{
 		return callObjectMethod(
 			"setId",
 			"(Ljava/lang/String;)Landroid/view/textclassifier/TextClassification$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::view::textclassifier::TextClassification_Builder TextClassification_Builder::setIntent(android::content::Intent arg0)
@@ -76,12 +77,12 @@ namespace android::view::textclassifier
 			arg0.object()
 		);
 	}
-	android::view::textclassifier::TextClassification_Builder TextClassification_Builder::setLabel(jstring arg0)
+	android::view::textclassifier::TextClassification_Builder TextClassification_Builder::setLabel(JString arg0)
 	{
 		return callObjectMethod(
 			"setLabel",
 			"(Ljava/lang/String;)Landroid/view/textclassifier/TextClassification$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::view::textclassifier::TextClassification_Builder TextClassification_Builder::setOnClickListener(JObject arg0)
@@ -92,12 +93,12 @@ namespace android::view::textclassifier
 			arg0.object()
 		);
 	}
-	android::view::textclassifier::TextClassification_Builder TextClassification_Builder::setText(jstring arg0)
+	android::view::textclassifier::TextClassification_Builder TextClassification_Builder::setText(JString arg0)
 	{
 		return callObjectMethod(
 			"setText",
 			"(Ljava/lang/String;)Landroid/view/textclassifier/TextClassification$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 } // namespace android::view::textclassifier

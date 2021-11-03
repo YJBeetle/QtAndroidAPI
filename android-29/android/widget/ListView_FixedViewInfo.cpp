@@ -1,16 +1,17 @@
 #include "../view/View.hpp"
 #include "./ListView.hpp"
+#include "../../JObject.hpp"
 #include "./ListView_FixedViewInfo.hpp"
 
 namespace android::widget
 {
 	// Fields
-	jobject ListView_FixedViewInfo::data()
+	JObject ListView_FixedViewInfo::data()
 	{
 		return getObjectField(
 			"data",
 			"Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
 	jboolean ListView_FixedViewInfo::isSelectable()
 	{

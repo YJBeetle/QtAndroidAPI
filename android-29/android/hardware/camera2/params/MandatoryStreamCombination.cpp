@@ -1,3 +1,6 @@
+#include "../../../../JString.hpp"
+#include "../../../../JObject.hpp"
+#include "../../../../JString.hpp"
 #include "./MandatoryStreamCombination.hpp"
 
 namespace android::hardware::camera2::params
@@ -10,20 +13,20 @@ namespace android::hardware::camera2::params
 	// Constructors
 	
 	// Methods
-	jboolean MandatoryStreamCombination::equals(jobject arg0)
+	jboolean MandatoryStreamCombination::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jstring MandatoryStreamCombination::getDescription()
+	JString MandatoryStreamCombination::getDescription()
 	{
 		return callObjectMethod(
 			"getDescription",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	JObject MandatoryStreamCombination::getStreamsInformation()
 	{

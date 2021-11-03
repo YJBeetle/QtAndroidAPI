@@ -1,4 +1,6 @@
 #include "../fonts/Font.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./PositionedGlyphs.hpp"
 
 namespace android::graphics::text
@@ -11,12 +13,12 @@ namespace android::graphics::text
 	// Constructors
 	
 	// Methods
-	jboolean PositionedGlyphs::equals(jobject arg0)
+	jboolean PositionedGlyphs::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jfloat PositionedGlyphs::getAdvance()
@@ -100,12 +102,12 @@ namespace android::graphics::text
 			"()I"
 		);
 	}
-	jstring PositionedGlyphs::toString()
+	JString PositionedGlyphs::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::graphics::text
 

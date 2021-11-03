@@ -2,6 +2,7 @@
 
 #include "../../../../JObject.hpp"
 
+class JString;
 namespace java::lang
 {
 	class StringBuilder;
@@ -22,8 +23,8 @@ namespace java::nio::file::attribute
 		
 		// Methods
 		static JObject asFileAttribute(JObject arg0);
-		static JObject fromString(jstring arg0);
-		static jstring toString(JObject arg0);
+		static JObject fromString(JString arg0);
+		static JString toString(JObject arg0);
 	};
 } // namespace java::nio::file::attribute
 

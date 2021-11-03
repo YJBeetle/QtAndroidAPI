@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JObject;
+class JString;
 namespace java::net
 {
 	class Inet4Address;
@@ -25,12 +27,12 @@ namespace java::net
 		// Constructors
 		
 		// Methods
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		java::net::InetAddress getAddress();
 		java::net::InetAddress getBroadcast();
 		jshort getNetworkPrefixLength();
 		jint hashCode();
-		jstring toString();
+		JString toString();
 	};
 } // namespace java::net
 

@@ -2,7 +2,6 @@
 
 #include "../../../JObject.hpp"
 
-
 namespace android::icu::text
 {
 	class IDNA_Info : public JObject

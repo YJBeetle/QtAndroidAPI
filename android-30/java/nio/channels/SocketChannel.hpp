@@ -1,10 +1,9 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "./spi/AbstractInterruptibleChannel.hpp"
-#include "./SelectableChannel.hpp"
 #include "./spi/AbstractSelectableChannel.hpp"
 
+class JArray;
+class JObject;
 namespace java::net
 {
 	class Socket;
@@ -47,16 +46,16 @@ namespace java::nio::channels
 		jboolean isConnected();
 		jboolean isConnectionPending();
 		jint read(java::nio::ByteBuffer arg0);
-		jlong read(jarray arg0);
-		jlong read(jarray arg0, jint arg1, jint arg2);
-		java::nio::channels::SocketChannel setOption(JObject arg0, jobject arg1);
+		jlong read(JArray arg0);
+		jlong read(JArray arg0, jint arg1, jint arg2);
+		java::nio::channels::SocketChannel setOption(JObject arg0, JObject arg1);
 		java::nio::channels::SocketChannel shutdownInput();
 		java::nio::channels::SocketChannel shutdownOutput();
 		java::net::Socket socket();
 		jint validOps();
 		jint write(java::nio::ByteBuffer arg0);
-		jlong write(jarray arg0);
-		jlong write(jarray arg0, jint arg1, jint arg2);
+		jlong write(JArray arg0);
+		jlong write(JArray arg0, jint arg1, jint arg2);
 	};
 } // namespace java::nio::channels
 

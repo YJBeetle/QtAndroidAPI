@@ -10,6 +10,7 @@ namespace android::telephony::ims
 {
 	class ImsRcsManager;
 }
+class JString;
 
 namespace android::telephony::ims
 {
@@ -17,9 +18,9 @@ namespace android::telephony::ims
 	{
 	public:
 		// Fields
-		static jstring ACTION_WFC_IMS_REGISTRATION_ERROR();
-		static jstring EXTRA_WFC_REGISTRATION_FAILURE_MESSAGE();
-		static jstring EXTRA_WFC_REGISTRATION_FAILURE_TITLE();
+		static JString ACTION_WFC_IMS_REGISTRATION_ERROR();
+		static JString EXTRA_WFC_REGISTRATION_FAILURE_MESSAGE();
+		static JString EXTRA_WFC_REGISTRATION_FAILURE_TITLE();
 		
 		// QJniObject forward
 		template<typename ...Ts> explicit ImsManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}

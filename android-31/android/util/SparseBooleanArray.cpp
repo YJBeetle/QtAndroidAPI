@@ -1,3 +1,5 @@
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./SparseBooleanArray.hpp"
 
 namespace android::util
@@ -52,12 +54,12 @@ namespace android::util
 			arg0
 		);
 	}
-	jboolean SparseBooleanArray::equals(jobject arg0)
+	jboolean SparseBooleanArray::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jboolean SparseBooleanArray::get(jint arg0)
@@ -141,12 +143,12 @@ namespace android::util
 			"()I"
 		);
 	}
-	jstring SparseBooleanArray::toString()
+	JString SparseBooleanArray::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jboolean SparseBooleanArray::valueAt(jint arg0)
 	{

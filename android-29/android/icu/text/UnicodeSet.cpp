@@ -1,5 +1,10 @@
+#include "../../../JIntArray.hpp"
+#include "../../../JArray.hpp"
 #include "./UnicodeSet_ComparisonStyle.hpp"
 #include "./UnicodeSet_SpanCondition.hpp"
+#include "../../../JString.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "../../../java/lang/StringBuffer.hpp"
 #include "../../../java/text/ParsePosition.hpp"
 #include "./UnicodeSet.hpp"
@@ -75,11 +80,11 @@ namespace android::icu::text
 			"android.icu.text.UnicodeSet",
 			"()V"
 		) {}
-	UnicodeSet::UnicodeSet(jintArray arg0)
+	UnicodeSet::UnicodeSet(JIntArray arg0)
 		: android::icu::text::UnicodeFilter(
 			"android.icu.text.UnicodeSet",
 			"([I)V",
-			arg0
+			arg0.object<jintArray>()
 		) {}
 	UnicodeSet::UnicodeSet(android::icu::text::UnicodeSet &arg0)
 		: android::icu::text::UnicodeFilter(
@@ -87,11 +92,11 @@ namespace android::icu::text
 			"(Landroid/icu/text/UnicodeSet;)V",
 			arg0.object()
 		) {}
-	UnicodeSet::UnicodeSet(jstring arg0)
+	UnicodeSet::UnicodeSet(JString arg0)
 		: android::icu::text::UnicodeFilter(
 			"android.icu.text.UnicodeSet",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	UnicodeSet::UnicodeSet(jint arg0, jint arg1)
 		: android::icu::text::UnicodeFilter(
@@ -100,55 +105,55 @@ namespace android::icu::text
 			arg0,
 			arg1
 		) {}
-	UnicodeSet::UnicodeSet(jstring arg0, jboolean arg1)
+	UnicodeSet::UnicodeSet(JString arg0, jboolean arg1)
 		: android::icu::text::UnicodeFilter(
 			"android.icu.text.UnicodeSet",
 			"(Ljava/lang/String;Z)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		) {}
-	UnicodeSet::UnicodeSet(jstring arg0, jint arg1)
+	UnicodeSet::UnicodeSet(JString arg0, jint arg1)
 		: android::icu::text::UnicodeFilter(
 			"android.icu.text.UnicodeSet",
 			"(Ljava/lang/String;I)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		) {}
-	UnicodeSet::UnicodeSet(jstring arg0, java::text::ParsePosition arg1, JObject arg2)
+	UnicodeSet::UnicodeSet(JString arg0, java::text::ParsePosition arg1, JObject arg2)
 		: android::icu::text::UnicodeFilter(
 			"android.icu.text.UnicodeSet",
 			"(Ljava/lang/String;Ljava/text/ParsePosition;Landroid/icu/text/SymbolTable;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
 			arg2.object()
 		) {}
-	UnicodeSet::UnicodeSet(jstring arg0, java::text::ParsePosition arg1, JObject arg2, jint arg3)
+	UnicodeSet::UnicodeSet(JString arg0, java::text::ParsePosition arg1, JObject arg2, jint arg3)
 		: android::icu::text::UnicodeFilter(
 			"android.icu.text.UnicodeSet",
 			"(Ljava/lang/String;Ljava/text/ParsePosition;Landroid/icu/text/SymbolTable;I)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
 			arg2.object(),
 			arg3
 		) {}
 	
 	// Methods
-	android::icu::text::UnicodeSet UnicodeSet::from(jstring arg0)
+	android::icu::text::UnicodeSet UnicodeSet::from(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.icu.text.UnicodeSet",
 			"from",
 			"(Ljava/lang/CharSequence;)Landroid/icu/text/UnicodeSet;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	android::icu::text::UnicodeSet UnicodeSet::fromAll(jstring arg0)
+	android::icu::text::UnicodeSet UnicodeSet::fromAll(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.icu.text.UnicodeSet",
 			"fromAll",
 			"(Ljava/lang/CharSequence;)Landroid/icu/text/UnicodeSet;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	java::lang::StringBuffer UnicodeSet::_generatePattern(java::lang::StringBuffer arg0, jboolean arg1)
@@ -178,12 +183,12 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	android::icu::text::UnicodeSet UnicodeSet::add(jstring arg0)
+	android::icu::text::UnicodeSet UnicodeSet::add(JString arg0)
 	{
 		return callObjectMethod(
 			"add",
 			"(Ljava/lang/CharSequence;)Landroid/icu/text/UnicodeSet;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::icu::text::UnicodeSet UnicodeSet::add(JObject arg0)
@@ -203,12 +208,12 @@ namespace android::icu::text
 			arg1
 		);
 	}
-	android::icu::text::UnicodeSet UnicodeSet::addAll(jarray arg0)
+	android::icu::text::UnicodeSet UnicodeSet::addAll(JArray arg0)
 	{
 		return callObjectMethod(
 			"addAll",
 			"([Ljava/lang/CharSequence;)Landroid/icu/text/UnicodeSet;",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
 	android::icu::text::UnicodeSet UnicodeSet::addAll(android::icu::text::UnicodeSet arg0)
@@ -219,12 +224,12 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	android::icu::text::UnicodeSet UnicodeSet::addAll(jstring arg0)
+	android::icu::text::UnicodeSet UnicodeSet::addAll(JString arg0)
 	{
 		return callObjectMethod(
 			"addAll",
 			"(Ljava/lang/CharSequence;)Landroid/icu/text/UnicodeSet;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::icu::text::UnicodeSet UnicodeSet::addAll(JObject arg0)
@@ -269,48 +274,48 @@ namespace android::icu::text
 			arg1
 		);
 	}
-	android::icu::text::UnicodeSet UnicodeSet::applyPattern(jstring arg0)
+	android::icu::text::UnicodeSet UnicodeSet::applyPattern(JString arg0)
 	{
 		return callObjectMethod(
 			"applyPattern",
 			"(Ljava/lang/String;)Landroid/icu/text/UnicodeSet;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	android::icu::text::UnicodeSet UnicodeSet::applyPattern(jstring arg0, jboolean arg1)
+	android::icu::text::UnicodeSet UnicodeSet::applyPattern(JString arg0, jboolean arg1)
 	{
 		return callObjectMethod(
 			"applyPattern",
 			"(Ljava/lang/String;Z)Landroid/icu/text/UnicodeSet;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
-	android::icu::text::UnicodeSet UnicodeSet::applyPattern(jstring arg0, jint arg1)
+	android::icu::text::UnicodeSet UnicodeSet::applyPattern(JString arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"applyPattern",
 			"(Ljava/lang/String;I)Landroid/icu/text/UnicodeSet;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
-	android::icu::text::UnicodeSet UnicodeSet::applyPropertyAlias(jstring arg0, jstring arg1)
+	android::icu::text::UnicodeSet UnicodeSet::applyPropertyAlias(JString arg0, JString arg1)
 	{
 		return callObjectMethod(
 			"applyPropertyAlias",
 			"(Ljava/lang/String;Ljava/lang/String;)Landroid/icu/text/UnicodeSet;",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		);
 	}
-	android::icu::text::UnicodeSet UnicodeSet::applyPropertyAlias(jstring arg0, jstring arg1, JObject arg2)
+	android::icu::text::UnicodeSet UnicodeSet::applyPropertyAlias(JString arg0, JString arg1, JObject arg2)
 	{
 		return callObjectMethod(
 			"applyPropertyAlias",
 			"(Ljava/lang/String;Ljava/lang/String;Landroid/icu/text/SymbolTable;)Landroid/icu/text/UnicodeSet;",
-			arg0,
-			arg1,
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
 			arg2.object()
 		);
 	}
@@ -329,12 +334,12 @@ namespace android::icu::text
 			"()Landroid/icu/text/UnicodeSet;"
 		);
 	}
-	jobject UnicodeSet::clone()
+	JObject UnicodeSet::clone()
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
 	android::icu::text::UnicodeSet UnicodeSet::cloneAsThawed()
 	{
@@ -374,14 +379,6 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	jint UnicodeSet::compareTo(jobject arg0)
-	{
-		return callMethod<jint>(
-			"compareTo",
-			"(Ljava/lang/Object;)I",
-			arg0
-		);
-	}
 	jint UnicodeSet::compareTo(android::icu::text::UnicodeSet arg0, android::icu::text::UnicodeSet_ComparisonStyle arg1)
 	{
 		return callMethod<jint>(
@@ -406,12 +403,12 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	android::icu::text::UnicodeSet UnicodeSet::complement(jstring arg0)
+	android::icu::text::UnicodeSet UnicodeSet::complement(JString arg0)
 	{
 		return callObjectMethod(
 			"complement",
 			"(Ljava/lang/CharSequence;)Landroid/icu/text/UnicodeSet;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::icu::text::UnicodeSet UnicodeSet::complement(jint arg0, jint arg1)
@@ -431,12 +428,12 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	android::icu::text::UnicodeSet UnicodeSet::complementAll(jstring arg0)
+	android::icu::text::UnicodeSet UnicodeSet::complementAll(JString arg0)
 	{
 		return callObjectMethod(
 			"complementAll",
 			"(Ljava/lang/CharSequence;)Landroid/icu/text/UnicodeSet;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	jboolean UnicodeSet::contains(jint arg0)
@@ -447,12 +444,12 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	jboolean UnicodeSet::contains(jstring arg0)
+	jboolean UnicodeSet::contains(JString arg0)
 	{
 		return callMethod<jboolean>(
 			"contains",
 			"(Ljava/lang/CharSequence;)Z",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	jboolean UnicodeSet::contains(jint arg0, jint arg1)
@@ -480,12 +477,12 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	jboolean UnicodeSet::containsAll(jstring arg0)
+	jboolean UnicodeSet::containsAll(JString arg0)
 	{
 		return callMethod<jboolean>(
 			"containsAll",
 			"(Ljava/lang/String;)Z",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	jboolean UnicodeSet::containsNone(android::icu::text::UnicodeSet arg0)
@@ -496,12 +493,12 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	jboolean UnicodeSet::containsNone(jstring arg0)
+	jboolean UnicodeSet::containsNone(JString arg0)
 	{
 		return callMethod<jboolean>(
 			"containsNone",
 			"(Ljava/lang/CharSequence;)Z",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	jboolean UnicodeSet::containsNone(JObject arg0)
@@ -529,12 +526,12 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	jboolean UnicodeSet::containsSome(jstring arg0)
+	jboolean UnicodeSet::containsSome(JString arg0)
 	{
 		return callMethod<jboolean>(
 			"containsSome",
 			"(Ljava/lang/CharSequence;)Z",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	jboolean UnicodeSet::containsSome(JObject arg0)
@@ -554,12 +551,12 @@ namespace android::icu::text
 			arg1
 		);
 	}
-	jboolean UnicodeSet::equals(jobject arg0)
+	jboolean UnicodeSet::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	android::icu::text::UnicodeSet UnicodeSet::freeze()
@@ -628,13 +625,13 @@ namespace android::icu::text
 			"()Ljava/util/Iterator;"
 		);
 	}
-	jint UnicodeSet::matches(JObject arg0, jintArray arg1, jint arg2, jboolean arg3)
+	jint UnicodeSet::matches(JObject arg0, JIntArray arg1, jint arg2, jboolean arg3)
 	{
 		return callMethod<jint>(
 			"matches",
 			"(Landroid/icu/text/Replaceable;[IIZ)I",
 			arg0.object(),
-			arg1,
+			arg1.object<jintArray>(),
 			arg2,
 			arg3
 		);
@@ -662,12 +659,12 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	android::icu::text::UnicodeSet UnicodeSet::remove(jstring arg0)
+	android::icu::text::UnicodeSet UnicodeSet::remove(JString arg0)
 	{
 		return callObjectMethod(
 			"remove",
 			"(Ljava/lang/CharSequence;)Landroid/icu/text/UnicodeSet;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::icu::text::UnicodeSet UnicodeSet::remove(jint arg0, jint arg1)
@@ -687,12 +684,12 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	android::icu::text::UnicodeSet UnicodeSet::removeAll(jstring arg0)
+	android::icu::text::UnicodeSet UnicodeSet::removeAll(JString arg0)
 	{
 		return callObjectMethod(
 			"removeAll",
 			"(Ljava/lang/CharSequence;)Landroid/icu/text/UnicodeSet;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::icu::text::UnicodeSet UnicodeSet::removeAll(JObject arg0)
@@ -718,12 +715,12 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	android::icu::text::UnicodeSet UnicodeSet::retain(jstring arg0)
+	android::icu::text::UnicodeSet UnicodeSet::retain(JString arg0)
 	{
 		return callObjectMethod(
 			"retain",
 			"(Ljava/lang/CharSequence;)Landroid/icu/text/UnicodeSet;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::icu::text::UnicodeSet UnicodeSet::retain(jint arg0, jint arg1)
@@ -743,12 +740,12 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	android::icu::text::UnicodeSet UnicodeSet::retainAll(jstring arg0)
+	android::icu::text::UnicodeSet UnicodeSet::retainAll(JString arg0)
 	{
 		return callObjectMethod(
 			"retainAll",
 			"(Ljava/lang/CharSequence;)Landroid/icu/text/UnicodeSet;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::icu::text::UnicodeSet UnicodeSet::retainAll(JObject arg0)
@@ -783,40 +780,40 @@ namespace android::icu::text
 			"()I"
 		);
 	}
-	jint UnicodeSet::span(jstring arg0, android::icu::text::UnicodeSet_SpanCondition arg1)
+	jint UnicodeSet::span(JString arg0, android::icu::text::UnicodeSet_SpanCondition arg1)
 	{
 		return callMethod<jint>(
 			"span",
 			"(Ljava/lang/CharSequence;Landroid/icu/text/UnicodeSet$SpanCondition;)I",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
-	jint UnicodeSet::span(jstring arg0, jint arg1, android::icu::text::UnicodeSet_SpanCondition arg2)
+	jint UnicodeSet::span(JString arg0, jint arg1, android::icu::text::UnicodeSet_SpanCondition arg2)
 	{
 		return callMethod<jint>(
 			"span",
 			"(Ljava/lang/CharSequence;ILandroid/icu/text/UnicodeSet$SpanCondition;)I",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
 			arg2.object()
 		);
 	}
-	jint UnicodeSet::spanBack(jstring arg0, android::icu::text::UnicodeSet_SpanCondition arg1)
+	jint UnicodeSet::spanBack(JString arg0, android::icu::text::UnicodeSet_SpanCondition arg1)
 	{
 		return callMethod<jint>(
 			"spanBack",
 			"(Ljava/lang/CharSequence;Landroid/icu/text/UnicodeSet$SpanCondition;)I",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
-	jint UnicodeSet::spanBack(jstring arg0, jint arg1, android::icu::text::UnicodeSet_SpanCondition arg2)
+	jint UnicodeSet::spanBack(JString arg0, jint arg1, android::icu::text::UnicodeSet_SpanCondition arg2)
 	{
 		return callMethod<jint>(
 			"spanBack",
 			"(Ljava/lang/CharSequence;ILandroid/icu/text/UnicodeSet$SpanCondition;)I",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
 			arg2.object()
 		);
@@ -828,20 +825,20 @@ namespace android::icu::text
 			"()Ljava/util/Collection;"
 		);
 	}
-	jstring UnicodeSet::toPattern(jboolean arg0)
+	JString UnicodeSet::toPattern(jboolean arg0)
 	{
 		return callObjectMethod(
 			"toPattern",
 			"(Z)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
-	jstring UnicodeSet::toString()
+	JString UnicodeSet::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::icu::text
 

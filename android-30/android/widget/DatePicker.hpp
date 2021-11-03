@@ -1,8 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../view/View.hpp"
-#include "../view/ViewGroup.hpp"
 #include "./FrameLayout.hpp"
 
 namespace android::content
@@ -29,6 +26,7 @@ namespace android::widget
 {
 	class CalendarView;
 }
+class JString;
 
 namespace android::widget
 {
@@ -50,7 +48,7 @@ namespace android::widget
 		// Methods
 		void autofill(android::view::autofill::AutofillValue arg0);
 		void dispatchProvideAutofillStructure(android::view::ViewStructure arg0, jint arg1);
-		jstring getAccessibilityClassName();
+		JString getAccessibilityClassName();
 		jint getAutofillType();
 		android::view::autofill::AutofillValue getAutofillValue();
 		android::widget::CalendarView getCalendarView();

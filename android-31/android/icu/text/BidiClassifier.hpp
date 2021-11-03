@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JObject;
 
 namespace android::icu::text
 {
@@ -15,12 +16,12 @@ namespace android::icu::text
 		BidiClassifier(QJniObject obj);
 		
 		// Constructors
-		BidiClassifier(jobject arg0);
+		BidiClassifier(JObject arg0);
 		
 		// Methods
 		jint classify(jint arg0);
-		jobject getContext();
-		void setContext(jobject arg0);
+		JObject getContext();
+		void setContext(JObject arg0);
 	};
 } // namespace android::icu::text
 

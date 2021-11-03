@@ -14,6 +14,7 @@ namespace android::nfc
 {
 	class NfcAdapter;
 }
+class JString;
 
 namespace android::nfc::cardemulation
 {
@@ -21,11 +22,11 @@ namespace android::nfc::cardemulation
 	{
 	public:
 		// Fields
-		static jstring ACTION_CHANGE_DEFAULT();
-		static jstring CATEGORY_OTHER();
-		static jstring CATEGORY_PAYMENT();
-		static jstring EXTRA_CATEGORY();
-		static jstring EXTRA_SERVICE_COMPONENT();
+		static JString ACTION_CHANGE_DEFAULT();
+		static JString CATEGORY_OTHER();
+		static JString CATEGORY_PAYMENT();
+		static JString EXTRA_CATEGORY();
+		static JString EXTRA_SERVICE_COMPONENT();
 		static jint SELECTION_MODE_ALWAYS_ASK();
 		static jint SELECTION_MODE_ASK_IF_CONFLICT();
 		static jint SELECTION_MODE_PREFER_DEFAULT();
@@ -38,13 +39,13 @@ namespace android::nfc::cardemulation
 		
 		// Methods
 		static android::nfc::cardemulation::CardEmulation getInstance(android::nfc::NfcAdapter arg0);
-		jboolean categoryAllowsForegroundPreference(jstring arg0);
-		JObject getAidsForService(android::content::ComponentName arg0, jstring arg1);
-		jint getSelectionModeForCategory(jstring arg0);
-		jboolean isDefaultServiceForAid(android::content::ComponentName arg0, jstring arg1);
-		jboolean isDefaultServiceForCategory(android::content::ComponentName arg0, jstring arg1);
-		jboolean registerAidsForService(android::content::ComponentName arg0, jstring arg1, JObject arg2);
-		jboolean removeAidsForService(android::content::ComponentName arg0, jstring arg1);
+		jboolean categoryAllowsForegroundPreference(JString arg0);
+		JObject getAidsForService(android::content::ComponentName arg0, JString arg1);
+		jint getSelectionModeForCategory(JString arg0);
+		jboolean isDefaultServiceForAid(android::content::ComponentName arg0, JString arg1);
+		jboolean isDefaultServiceForCategory(android::content::ComponentName arg0, JString arg1);
+		jboolean registerAidsForService(android::content::ComponentName arg0, JString arg1, JObject arg2);
+		jboolean removeAidsForService(android::content::ComponentName arg0, JString arg1);
 		jboolean setPreferredService(android::app::Activity arg0, android::content::ComponentName arg1);
 		jboolean supportsAidPrefixRegistration();
 		jboolean unsetPreferredService(android::app::Activity arg0);

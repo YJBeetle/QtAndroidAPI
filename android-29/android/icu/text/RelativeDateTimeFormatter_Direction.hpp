@@ -1,8 +1,9 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "../../../java/lang/Enum.hpp"
 
+class JArray;
+class JString;
 
 namespace android::icu::text
 {
@@ -24,8 +25,8 @@ namespace android::icu::text
 		// Constructors
 		
 		// Methods
-		static android::icu::text::RelativeDateTimeFormatter_Direction valueOf(jstring arg0);
-		static jarray values();
+		static android::icu::text::RelativeDateTimeFormatter_Direction valueOf(JString arg0);
+		static JArray values();
 	};
 } // namespace android::icu::text
 

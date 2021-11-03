@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JString;
 
 namespace android::net::sip
 {
@@ -28,7 +29,7 @@ namespace android::net::sip
 		// Constructors
 		
 		// Methods
-		static jstring toString(jint arg0);
+		static JString toString(jint arg0);
 	};
 } // namespace android::net::sip
 

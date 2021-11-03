@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./SipErrorCode.hpp"
 
 namespace android::net::sip
@@ -101,14 +102,14 @@ namespace android::net::sip
 	// Constructors
 	
 	// Methods
-	jstring SipErrorCode::toString(jint arg0)
+	JString SipErrorCode::toString(jint arg0)
 	{
 		return callStaticObjectMethod(
 			"android.net.sip.SipErrorCode",
 			"toString",
 			"(I)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
 } // namespace android::net::sip
 

@@ -10,10 +10,13 @@ namespace java::io
 {
 	class PrintWriter;
 }
+class JClass;
 namespace java::lang
 {
 	class ClassLoader;
 }
+class JObject;
+class JString;
 namespace java::sql
 {
 	class SQLPermission;
@@ -43,15 +46,15 @@ namespace java::sql
 		// Methods
 		static void deregisterDriver(JObject arg0);
 		static JObject drivers();
-		static JObject getConnection(jstring arg0);
-		static JObject getConnection(jstring arg0, java::util::Properties arg1);
-		static JObject getConnection(jstring arg0, jstring arg1, jstring arg2);
-		static JObject getDriver(jstring arg0);
+		static JObject getConnection(JString arg0);
+		static JObject getConnection(JString arg0, java::util::Properties arg1);
+		static JObject getConnection(JString arg0, JString arg1, JString arg2);
+		static JObject getDriver(JString arg0);
 		static JObject getDrivers();
 		static java::io::PrintStream getLogStream();
 		static java::io::PrintWriter getLogWriter();
 		static jint getLoginTimeout();
-		static void println(jstring arg0);
+		static void println(JString arg0);
 		static void registerDriver(JObject arg0);
 		static void registerDriver(JObject arg0, JObject arg1);
 		static void setLogStream(java::io::PrintStream arg0);

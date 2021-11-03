@@ -1,5 +1,6 @@
 #include "../../os/Bundle.hpp"
 #include "./AccessibilityNodeInfo.hpp"
+#include "../../../JString.hpp"
 #include "./AccessibilityNodeProvider.hpp"
 
 namespace android::view::accessibility
@@ -24,14 +25,14 @@ namespace android::view::accessibility
 		) {}
 	
 	// Methods
-	void AccessibilityNodeProvider::addExtraDataToAccessibilityNodeInfo(jint arg0, android::view::accessibility::AccessibilityNodeInfo arg1, jstring arg2, android::os::Bundle arg3)
+	void AccessibilityNodeProvider::addExtraDataToAccessibilityNodeInfo(jint arg0, android::view::accessibility::AccessibilityNodeInfo arg1, JString arg2, android::os::Bundle arg3)
 	{
 		callMethod<void>(
 			"addExtraDataToAccessibilityNodeInfo",
 			"(ILandroid/view/accessibility/AccessibilityNodeInfo;Ljava/lang/String;Landroid/os/Bundle;)V",
 			arg0,
 			arg1.object(),
-			arg2,
+			arg2.object<jstring>(),
 			arg3.object()
 		);
 	}
@@ -43,12 +44,12 @@ namespace android::view::accessibility
 			arg0
 		);
 	}
-	JObject AccessibilityNodeProvider::findAccessibilityNodeInfosByText(jstring arg0, jint arg1)
+	JObject AccessibilityNodeProvider::findAccessibilityNodeInfosByText(JString arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"findAccessibilityNodeInfosByText",
 			"(Ljava/lang/String;I)Ljava/util/List;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}

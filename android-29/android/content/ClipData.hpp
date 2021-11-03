@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JArray;
 namespace android::content
 {
 	class ClipData_Item;
@@ -26,6 +27,8 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
+class JString;
 
 namespace android::content
 {
@@ -42,21 +45,21 @@ namespace android::content
 		// Constructors
 		ClipData(android::content::ClipData &arg0);
 		ClipData(android::content::ClipDescription arg0, android::content::ClipData_Item arg1);
-		ClipData(jstring arg0, jarray arg1, android::content::ClipData_Item arg2);
+		ClipData(JString arg0, JArray arg1, android::content::ClipData_Item arg2);
 		
 		// Methods
-		static android::content::ClipData newHtmlText(jstring arg0, jstring arg1, jstring arg2);
-		static android::content::ClipData newIntent(jstring arg0, android::content::Intent arg1);
-		static android::content::ClipData newPlainText(jstring arg0, jstring arg1);
-		static android::content::ClipData newRawUri(jstring arg0, android::net::Uri arg1);
-		static android::content::ClipData newUri(android::content::ContentResolver arg0, jstring arg1, android::net::Uri arg2);
+		static android::content::ClipData newHtmlText(JString arg0, JString arg1, JString arg2);
+		static android::content::ClipData newIntent(JString arg0, android::content::Intent arg1);
+		static android::content::ClipData newPlainText(JString arg0, JString arg1);
+		static android::content::ClipData newRawUri(JString arg0, android::net::Uri arg1);
+		static android::content::ClipData newUri(android::content::ContentResolver arg0, JString arg1, android::net::Uri arg2);
 		void addItem(android::content::ClipData_Item arg0);
 		void addItem(android::content::ContentResolver arg0, android::content::ClipData_Item arg1);
 		jint describeContents();
 		android::content::ClipDescription getDescription();
 		android::content::ClipData_Item getItemAt(jint arg0);
 		jint getItemCount();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::content

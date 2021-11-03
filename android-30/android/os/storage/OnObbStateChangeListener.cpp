@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./OnObbStateChangeListener.hpp"
 
 namespace android::os::storage
@@ -71,12 +72,12 @@ namespace android::os::storage
 		) {}
 	
 	// Methods
-	void OnObbStateChangeListener::onObbStateChange(jstring arg0, jint arg1)
+	void OnObbStateChangeListener::onObbStateChange(JString arg0, jint arg1)
 	{
 		callMethod<void>(
 			"onObbStateChange",
 			"(Ljava/lang/String;I)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}

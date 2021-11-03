@@ -1,6 +1,9 @@
 #include "../io/PrintStream.hpp"
 #include "../io/PrintWriter.hpp"
+#include "../../JClass.hpp"
 #include "../lang/ClassLoader.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./SQLPermission.hpp"
 #include "../util/Properties.hpp"
 #include "../util/concurrent/CopyOnWriteArrayList.hpp"
@@ -33,43 +36,43 @@ namespace java::sql
 			"()Ljava/util/stream/Stream;"
 		);
 	}
-	JObject DriverManager::getConnection(jstring arg0)
+	JObject DriverManager::getConnection(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"java.sql.DriverManager",
 			"getConnection",
 			"(Ljava/lang/String;)Ljava/sql/Connection;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	JObject DriverManager::getConnection(jstring arg0, java::util::Properties arg1)
+	JObject DriverManager::getConnection(JString arg0, java::util::Properties arg1)
 	{
 		return callStaticObjectMethod(
 			"java.sql.DriverManager",
 			"getConnection",
 			"(Ljava/lang/String;Ljava/util/Properties;)Ljava/sql/Connection;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
-	JObject DriverManager::getConnection(jstring arg0, jstring arg1, jstring arg2)
+	JObject DriverManager::getConnection(JString arg0, JString arg1, JString arg2)
 	{
 		return callStaticObjectMethod(
 			"java.sql.DriverManager",
 			"getConnection",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/sql/Connection;",
-			arg0,
-			arg1,
-			arg2
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2.object<jstring>()
 		);
 	}
-	JObject DriverManager::getDriver(jstring arg0)
+	JObject DriverManager::getDriver(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"java.sql.DriverManager",
 			"getDriver",
 			"(Ljava/lang/String;)Ljava/sql/Driver;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	JObject DriverManager::getDrivers()
@@ -104,13 +107,13 @@ namespace java::sql
 			"()I"
 		);
 	}
-	void DriverManager::println(jstring arg0)
+	void DriverManager::println(JString arg0)
 	{
 		callStaticMethod<void>(
 			"java.sql.DriverManager",
 			"println",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void DriverManager::registerDriver(JObject arg0)

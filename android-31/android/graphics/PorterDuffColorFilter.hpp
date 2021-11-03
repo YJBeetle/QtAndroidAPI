@@ -1,12 +1,12 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./ColorFilter.hpp"
 
 namespace android::graphics
 {
 	class PorterDuff_Mode;
 }
+class JObject;
 
 namespace android::graphics
 {
@@ -23,7 +23,7 @@ namespace android::graphics
 		PorterDuffColorFilter(jint arg0, android::graphics::PorterDuff_Mode arg1);
 		
 		// Methods
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint hashCode();
 	};
 } // namespace android::graphics

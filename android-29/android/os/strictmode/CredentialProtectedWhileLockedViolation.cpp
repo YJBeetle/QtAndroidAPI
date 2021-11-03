@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./CredentialProtectedWhileLockedViolation.hpp"
 
 namespace android::os::strictmode

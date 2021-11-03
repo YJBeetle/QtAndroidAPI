@@ -1,10 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../content/Context.hpp"
-#include "../content/ContextWrapper.hpp"
-#include "../view/ContextThemeWrapper.hpp"
-#include "./Activity.hpp"
 #include "./ActivityGroup.hpp"
 
 namespace android::app
@@ -23,6 +18,8 @@ namespace android::widget
 {
 	class TabWidget;
 }
+class JString;
+class JString;
 
 namespace android::app
 {
@@ -43,7 +40,7 @@ namespace android::app
 		android::widget::TabWidget getTabWidget();
 		void onContentChanged();
 		void setDefaultTab(jint arg0);
-		void setDefaultTab(jstring arg0);
+		void setDefaultTab(JString arg0);
 	};
 } // namespace android::app
 

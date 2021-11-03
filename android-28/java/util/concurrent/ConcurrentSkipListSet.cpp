@@ -1,3 +1,4 @@
+#include "../../../JObject.hpp"
 #include "../../lang/reflect/Field.hpp"
 #include "./ConcurrentSkipListSet.hpp"
 
@@ -22,21 +23,21 @@ namespace java::util::concurrent
 		) {}
 	
 	// Methods
-	jboolean ConcurrentSkipListSet::add(jobject arg0)
+	jboolean ConcurrentSkipListSet::add(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"add",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jobject ConcurrentSkipListSet::ceiling(jobject arg0)
+	JObject ConcurrentSkipListSet::ceiling(JObject arg0)
 	{
 		return callObjectMethod(
 			"ceiling",
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0
-		).object<jobject>();
+			arg0.object<jobject>()
+		);
 	}
 	void ConcurrentSkipListSet::clear()
 	{
@@ -59,12 +60,12 @@ namespace java::util::concurrent
 			"()Ljava/util/Comparator;"
 		);
 	}
-	jboolean ConcurrentSkipListSet::contains(jobject arg0)
+	jboolean ConcurrentSkipListSet::contains(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"contains",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	JObject ConcurrentSkipListSet::descendingIterator()
@@ -81,53 +82,53 @@ namespace java::util::concurrent
 			"()Ljava/util/NavigableSet;"
 		);
 	}
-	jboolean ConcurrentSkipListSet::equals(jobject arg0)
+	jboolean ConcurrentSkipListSet::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jobject ConcurrentSkipListSet::first()
+	JObject ConcurrentSkipListSet::first()
 	{
 		return callObjectMethod(
 			"first",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
-	jobject ConcurrentSkipListSet::floor(jobject arg0)
+	JObject ConcurrentSkipListSet::floor(JObject arg0)
 	{
 		return callObjectMethod(
 			"floor",
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0
-		).object<jobject>();
+			arg0.object<jobject>()
+		);
 	}
-	JObject ConcurrentSkipListSet::headSet(jobject arg0)
+	JObject ConcurrentSkipListSet::headSet(JObject arg0)
 	{
 		return callObjectMethod(
 			"headSet",
 			"(Ljava/lang/Object;)Ljava/util/NavigableSet;",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	JObject ConcurrentSkipListSet::headSet(jobject arg0, jboolean arg1)
+	JObject ConcurrentSkipListSet::headSet(JObject arg0, jboolean arg1)
 	{
 		return callObjectMethod(
 			"headSet",
 			"(Ljava/lang/Object;Z)Ljava/util/NavigableSet;",
-			arg0,
+			arg0.object<jobject>(),
 			arg1
 		);
 	}
-	jobject ConcurrentSkipListSet::higher(jobject arg0)
+	JObject ConcurrentSkipListSet::higher(JObject arg0)
 	{
 		return callObjectMethod(
 			"higher",
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0
-		).object<jobject>();
+			arg0.object<jobject>()
+		);
 	}
 	jboolean ConcurrentSkipListSet::isEmpty()
 	{
@@ -143,41 +144,41 @@ namespace java::util::concurrent
 			"()Ljava/util/Iterator;"
 		);
 	}
-	jobject ConcurrentSkipListSet::last()
+	JObject ConcurrentSkipListSet::last()
 	{
 		return callObjectMethod(
 			"last",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
-	jobject ConcurrentSkipListSet::lower(jobject arg0)
+	JObject ConcurrentSkipListSet::lower(JObject arg0)
 	{
 		return callObjectMethod(
 			"lower",
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0
-		).object<jobject>();
+			arg0.object<jobject>()
+		);
 	}
-	jobject ConcurrentSkipListSet::pollFirst()
+	JObject ConcurrentSkipListSet::pollFirst()
 	{
 		return callObjectMethod(
 			"pollFirst",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
-	jobject ConcurrentSkipListSet::pollLast()
+	JObject ConcurrentSkipListSet::pollLast()
 	{
 		return callObjectMethod(
 			"pollLast",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
-	jboolean ConcurrentSkipListSet::remove(jobject arg0)
+	jboolean ConcurrentSkipListSet::remove(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"remove",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jboolean ConcurrentSkipListSet::removeAll(JObject arg0)
@@ -202,40 +203,40 @@ namespace java::util::concurrent
 			"()Ljava/util/Spliterator;"
 		);
 	}
-	JObject ConcurrentSkipListSet::subSet(jobject arg0, jobject arg1)
+	JObject ConcurrentSkipListSet::subSet(JObject arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"subSet",
 			"(Ljava/lang/Object;Ljava/lang/Object;)Ljava/util/NavigableSet;",
-			arg0,
-			arg1
+			arg0.object<jobject>(),
+			arg1.object<jobject>()
 		);
 	}
-	JObject ConcurrentSkipListSet::subSet(jobject arg0, jboolean arg1, jobject arg2, jboolean arg3)
+	JObject ConcurrentSkipListSet::subSet(JObject arg0, jboolean arg1, JObject arg2, jboolean arg3)
 	{
 		return callObjectMethod(
 			"subSet",
 			"(Ljava/lang/Object;ZLjava/lang/Object;Z)Ljava/util/NavigableSet;",
-			arg0,
+			arg0.object<jobject>(),
 			arg1,
-			arg2,
+			arg2.object<jobject>(),
 			arg3
 		);
 	}
-	JObject ConcurrentSkipListSet::tailSet(jobject arg0)
+	JObject ConcurrentSkipListSet::tailSet(JObject arg0)
 	{
 		return callObjectMethod(
 			"tailSet",
 			"(Ljava/lang/Object;)Ljava/util/NavigableSet;",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	JObject ConcurrentSkipListSet::tailSet(jobject arg0, jboolean arg1)
+	JObject ConcurrentSkipListSet::tailSet(JObject arg0, jboolean arg1)
 	{
 		return callObjectMethod(
 			"tailSet",
 			"(Ljava/lang/Object;Z)Ljava/util/NavigableSet;",
-			arg0,
+			arg0.object<jobject>(),
 			arg1
 		);
 	}

@@ -1,3 +1,5 @@
+#include "../../../JString.hpp"
+#include "../../../JThrowable.hpp"
 #include "./CipherSuiteNotSupportedException.hpp"
 
 namespace android::security::identity
@@ -8,18 +10,18 @@ namespace android::security::identity
 	CipherSuiteNotSupportedException::CipherSuiteNotSupportedException(QJniObject obj) : android::security::identity::IdentityCredentialException(obj) {}
 	
 	// Constructors
-	CipherSuiteNotSupportedException::CipherSuiteNotSupportedException(jstring arg0)
+	CipherSuiteNotSupportedException::CipherSuiteNotSupportedException(JString arg0)
 		: android::security::identity::IdentityCredentialException(
 			"android.security.identity.CipherSuiteNotSupportedException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	CipherSuiteNotSupportedException::CipherSuiteNotSupportedException(jstring arg0, jthrowable arg1)
+	CipherSuiteNotSupportedException::CipherSuiteNotSupportedException(JString arg0, JThrowable arg1)
 		: android::security::identity::IdentityCredentialException(
 			"android.security.identity.CipherSuiteNotSupportedException",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
 		) {}
 	
 	// Methods

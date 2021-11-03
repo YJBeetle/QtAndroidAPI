@@ -1,5 +1,8 @@
+#include "../../../JObjectArray.hpp"
 #include "../../io/ObjectInputStream.hpp"
 #include "../../io/ObjectOutputStream.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./ConcurrentLinkedQueue.hpp"
 
 namespace java::util::concurrent
@@ -23,12 +26,12 @@ namespace java::util::concurrent
 		) {}
 	
 	// Methods
-	jboolean ConcurrentLinkedQueue::add(jobject arg0)
+	jboolean ConcurrentLinkedQueue::add(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"add",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jboolean ConcurrentLinkedQueue::addAll(JObject arg0)
@@ -46,12 +49,12 @@ namespace java::util::concurrent
 			"()V"
 		);
 	}
-	jboolean ConcurrentLinkedQueue::contains(jobject arg0)
+	jboolean ConcurrentLinkedQueue::contains(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"contains",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	void ConcurrentLinkedQueue::forEach(JObject arg0)
@@ -76,34 +79,34 @@ namespace java::util::concurrent
 			"()Ljava/util/Iterator;"
 		);
 	}
-	jboolean ConcurrentLinkedQueue::offer(jobject arg0)
+	jboolean ConcurrentLinkedQueue::offer(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"offer",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jobject ConcurrentLinkedQueue::peek()
+	JObject ConcurrentLinkedQueue::peek()
 	{
 		return callObjectMethod(
 			"peek",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
-	jobject ConcurrentLinkedQueue::poll()
+	JObject ConcurrentLinkedQueue::poll()
 	{
 		return callObjectMethod(
 			"poll",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
-	jboolean ConcurrentLinkedQueue::remove(jobject arg0)
+	jboolean ConcurrentLinkedQueue::remove(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"remove",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jboolean ConcurrentLinkedQueue::removeAll(JObject arg0)
@@ -144,27 +147,27 @@ namespace java::util::concurrent
 			"()Ljava/util/Spliterator;"
 		);
 	}
-	jobjectArray ConcurrentLinkedQueue::toArray()
+	JObjectArray ConcurrentLinkedQueue::toArray()
 	{
 		return callObjectMethod(
 			"toArray",
 			"()[Ljava/lang/Object;"
-		).object<jobjectArray>();
+		);
 	}
-	jobjectArray ConcurrentLinkedQueue::toArray(jobjectArray arg0)
+	JObjectArray ConcurrentLinkedQueue::toArray(JObjectArray arg0)
 	{
 		return callObjectMethod(
 			"toArray",
 			"([Ljava/lang/Object;)[Ljava/lang/Object;",
-			arg0
-		).object<jobjectArray>();
+			arg0.object<jobjectArray>()
+		);
 	}
-	jstring ConcurrentLinkedQueue::toString()
+	JString ConcurrentLinkedQueue::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::util::concurrent
 

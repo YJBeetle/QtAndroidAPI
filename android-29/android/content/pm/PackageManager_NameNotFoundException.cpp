@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./PackageManager_NameNotFoundException.hpp"
 
 namespace android::content::pm
@@ -13,11 +14,11 @@ namespace android::content::pm
 			"android.content.pm.PackageManager$NameNotFoundException",
 			"()V"
 		) {}
-	PackageManager_NameNotFoundException::PackageManager_NameNotFoundException(jstring arg0)
+	PackageManager_NameNotFoundException::PackageManager_NameNotFoundException(JString arg0)
 		: android::util::AndroidException(
 			"android.content.pm.PackageManager$NameNotFoundException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

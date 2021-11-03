@@ -1,3 +1,5 @@
+#include "../../../../JString.hpp"
+#include "../../../../JString.hpp"
 #include "./RangeTemplate.hpp"
 
 namespace android::service::controls::templates
@@ -8,16 +10,16 @@ namespace android::service::controls::templates
 	RangeTemplate::RangeTemplate(QJniObject obj) : android::service::controls::templates::ControlTemplate(obj) {}
 	
 	// Constructors
-	RangeTemplate::RangeTemplate(jstring arg0, jfloat arg1, jfloat arg2, jfloat arg3, jfloat arg4, jstring arg5)
+	RangeTemplate::RangeTemplate(JString arg0, jfloat arg1, jfloat arg2, jfloat arg3, jfloat arg4, JString arg5)
 		: android::service::controls::templates::ControlTemplate(
 			"android.service.controls.templates.RangeTemplate",
 			"(Ljava/lang/String;FFFFLjava/lang/CharSequence;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
 			arg2,
 			arg3,
 			arg4,
-			arg5
+			arg5.object<jstring>()
 		) {}
 	
 	// Methods
@@ -28,12 +30,12 @@ namespace android::service::controls::templates
 			"()F"
 		);
 	}
-	jstring RangeTemplate::getFormatString()
+	JString RangeTemplate::getFormatString()
 	{
 		return callObjectMethod(
 			"getFormatString",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	jfloat RangeTemplate::getMaxValue()
 	{

@@ -1,6 +1,7 @@
 #include "./MediaRoute2Info.hpp"
 #include "./MediaRouter2.hpp"
 #include "../os/Bundle.hpp"
+#include "../../JString.hpp"
 #include "./MediaRouter2_RoutingController.hpp"
 
 namespace android::media
@@ -35,12 +36,12 @@ namespace android::media
 			"()Ljava/util/List;"
 		);
 	}
-	jstring MediaRouter2_RoutingController::getId()
+	JString MediaRouter2_RoutingController::getId()
 	{
 		return callObjectMethod(
 			"getId",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	JObject MediaRouter2_RoutingController::getSelectableRoutes()
 	{
@@ -107,12 +108,12 @@ namespace android::media
 			arg0
 		);
 	}
-	jstring MediaRouter2_RoutingController::toString()
+	JString MediaRouter2_RoutingController::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::media
 

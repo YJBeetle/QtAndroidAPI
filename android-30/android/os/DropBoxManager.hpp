@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JByteArray;
 namespace android::os
 {
 	class DropBoxManager_Entry;
@@ -10,6 +11,7 @@ namespace java::io
 {
 	class File;
 }
+class JString;
 
 namespace android::os
 {
@@ -17,10 +19,10 @@ namespace android::os
 	{
 	public:
 		// Fields
-		static jstring ACTION_DROPBOX_ENTRY_ADDED();
-		static jstring EXTRA_DROPPED_COUNT();
-		static jstring EXTRA_TAG();
-		static jstring EXTRA_TIME();
+		static JString ACTION_DROPBOX_ENTRY_ADDED();
+		static JString EXTRA_DROPPED_COUNT();
+		static JString EXTRA_TAG();
+		static JString EXTRA_TIME();
 		static jint IS_EMPTY();
 		static jint IS_GZIPPED();
 		static jint IS_TEXT();
@@ -32,11 +34,11 @@ namespace android::os
 		// Constructors
 		
 		// Methods
-		void addData(jstring arg0, jbyteArray arg1, jint arg2);
-		void addFile(jstring arg0, java::io::File arg1, jint arg2);
-		void addText(jstring arg0, jstring arg1);
-		android::os::DropBoxManager_Entry getNextEntry(jstring arg0, jlong arg1);
-		jboolean isTagEnabled(jstring arg0);
+		void addData(JString arg0, JByteArray arg1, jint arg2);
+		void addFile(JString arg0, java::io::File arg1, jint arg2);
+		void addText(JString arg0, JString arg1);
+		android::os::DropBoxManager_Entry getNextEntry(JString arg0, jlong arg1);
+		jboolean isTagEnabled(JString arg0);
 	};
 } // namespace android::os
 

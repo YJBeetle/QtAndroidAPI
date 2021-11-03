@@ -1,3 +1,5 @@
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
 #include "./SSLEngineResult_Status.hpp"
 
 namespace javax::net::ssl
@@ -42,22 +44,22 @@ namespace javax::net::ssl
 	// Constructors
 	
 	// Methods
-	javax::net::ssl::SSLEngineResult_Status SSLEngineResult_Status::valueOf(jstring arg0)
+	javax::net::ssl::SSLEngineResult_Status SSLEngineResult_Status::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"javax.net.ssl.SSLEngineResult$Status",
 			"valueOf",
 			"(Ljava/lang/String;)Ljavax/net/ssl/SSLEngineResult$Status;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray SSLEngineResult_Status::values()
+	JArray SSLEngineResult_Status::values()
 	{
 		return callStaticObjectMethod(
 			"javax.net.ssl.SSLEngineResult$Status",
 			"values",
 			"()[Ljavax/net/ssl/SSLEngineResult$Status;"
-		).object<jarray>();
+		);
 	}
 } // namespace javax::net::ssl
 

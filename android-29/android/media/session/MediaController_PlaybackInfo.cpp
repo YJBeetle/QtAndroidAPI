@@ -1,5 +1,6 @@
 #include "../AudioAttributes.hpp"
 #include "../../os/Parcel.hpp"
+#include "../../../JString.hpp"
 #include "./MediaController_PlaybackInfo.hpp"
 
 namespace android::media::session
@@ -76,12 +77,12 @@ namespace android::media::session
 			"()I"
 		);
 	}
-	jstring MediaController_PlaybackInfo::toString()
+	JString MediaController_PlaybackInfo::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void MediaController_PlaybackInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

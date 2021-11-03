@@ -1,8 +1,9 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "./Violation.hpp"
 
+class JString;
+class JThrowable;
 
 namespace android::os::strictmode
 {
@@ -16,7 +17,7 @@ namespace android::os::strictmode
 		IncorrectContextUseViolation(QJniObject obj);
 		
 		// Constructors
-		IncorrectContextUseViolation(jstring arg0, jthrowable arg1);
+		IncorrectContextUseViolation(JString arg0, JThrowable arg1);
 		
 		// Methods
 	};

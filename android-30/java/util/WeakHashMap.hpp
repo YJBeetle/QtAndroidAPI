@@ -1,8 +1,9 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./AbstractMap.hpp"
 
+class JArray;
+class JObject;
 namespace java::lang::ref
 {
 	class ReferenceQueue;
@@ -27,16 +28,16 @@ namespace java::util
 		
 		// Methods
 		void clear();
-		jboolean containsKey(jobject arg0);
-		jboolean containsValue(jobject arg0);
+		jboolean containsKey(JObject arg0);
+		jboolean containsValue(JObject arg0);
 		JObject entrySet();
 		void forEach(JObject arg0);
-		jobject get(jobject arg0);
+		JObject get(JObject arg0);
 		jboolean isEmpty();
 		JObject keySet();
-		jobject put(jobject arg0, jobject arg1);
+		JObject put(JObject arg0, JObject arg1);
 		void putAll(JObject arg0);
-		jobject remove(jobject arg0);
+		JObject remove(JObject arg0);
 		void replaceAll(JObject arg0);
 		jint size();
 		JObject values();

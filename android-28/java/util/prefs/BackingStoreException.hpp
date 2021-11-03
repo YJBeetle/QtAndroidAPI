@@ -1,8 +1,9 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "../../lang/Exception.hpp"
 
+class JString;
+class JThrowable;
 
 namespace java::util::prefs
 {
@@ -16,8 +17,8 @@ namespace java::util::prefs
 		BackingStoreException(QJniObject obj);
 		
 		// Constructors
-		BackingStoreException(jstring arg0);
-		BackingStoreException(jthrowable arg0);
+		BackingStoreException(JString arg0);
+		BackingStoreException(JThrowable arg0);
 		
 		// Methods
 	};

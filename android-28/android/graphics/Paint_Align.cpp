@@ -1,3 +1,5 @@
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
 #include "./Paint_Align.hpp"
 
 namespace android::graphics
@@ -34,22 +36,22 @@ namespace android::graphics
 	// Constructors
 	
 	// Methods
-	android::graphics::Paint_Align Paint_Align::valueOf(jstring arg0)
+	android::graphics::Paint_Align Paint_Align::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.graphics.Paint$Align",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/graphics/Paint$Align;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray Paint_Align::values()
+	JArray Paint_Align::values()
 	{
 		return callStaticObjectMethod(
 			"android.graphics.Paint$Align",
 			"values",
 			"()[Landroid/graphics/Paint$Align;"
-		).object<jarray>();
+		);
 	}
 } // namespace android::graphics
 

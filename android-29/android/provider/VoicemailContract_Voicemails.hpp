@@ -6,6 +6,7 @@ namespace android::net
 {
 	class Uri;
 }
+class JString;
 
 namespace android::provider
 {
@@ -13,29 +14,29 @@ namespace android::provider
 	{
 	public:
 		// Fields
-		static jstring ARCHIVED();
-		static jstring BACKED_UP();
+		static JString ARCHIVED();
+		static JString BACKED_UP();
 		static android::net::Uri CONTENT_URI();
-		static jstring DATE();
-		static jstring DELETED();
-		static jstring DIRTY();
+		static JString DATE();
+		static JString DELETED();
+		static JString DIRTY();
 		static jint DIRTY_RETAIN();
-		static jstring DIR_TYPE();
-		static jstring DURATION();
-		static jstring HAS_CONTENT();
-		static jstring IS_OMTP_VOICEMAIL();
-		static jstring IS_READ();
-		static jstring ITEM_TYPE();
-		static jstring LAST_MODIFIED();
-		static jstring MIME_TYPE();
-		static jstring NEW();
-		static jstring NUMBER();
-		static jstring PHONE_ACCOUNT_COMPONENT_NAME();
-		static jstring PHONE_ACCOUNT_ID();
-		static jstring RESTORED();
-		static jstring SOURCE_DATA();
-		static jstring SOURCE_PACKAGE();
-		static jstring TRANSCRIPTION();
+		static JString DIR_TYPE();
+		static JString DURATION();
+		static JString HAS_CONTENT();
+		static JString IS_OMTP_VOICEMAIL();
+		static JString IS_READ();
+		static JString ITEM_TYPE();
+		static JString LAST_MODIFIED();
+		static JString MIME_TYPE();
+		static JString NEW();
+		static JString NUMBER();
+		static JString PHONE_ACCOUNT_COMPONENT_NAME();
+		static JString PHONE_ACCOUNT_ID();
+		static JString RESTORED();
+		static JString SOURCE_DATA();
+		static JString SOURCE_PACKAGE();
+		static JString TRANSCRIPTION();
 		
 		// QJniObject forward
 		template<typename ...Ts> explicit VoicemailContract_Voicemails(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
@@ -44,7 +45,7 @@ namespace android::provider
 		// Constructors
 		
 		// Methods
-		static android::net::Uri buildSourceUri(jstring arg0);
+		static android::net::Uri buildSourceUri(JString arg0);
 	};
 } // namespace android::provider
 

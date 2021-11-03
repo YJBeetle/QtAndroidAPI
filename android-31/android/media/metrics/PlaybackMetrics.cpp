@@ -1,5 +1,9 @@
+#include "../../../JByteArray.hpp"
+#include "../../../JLongArray.hpp"
 #include "../../os/Bundle.hpp"
 #include "../../os/Parcel.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./PlaybackMetrics.hpp"
 
 namespace android::media::metrics
@@ -202,12 +206,12 @@ namespace android::media::metrics
 			"()I"
 		);
 	}
-	jboolean PlaybackMetrics::equals(jobject arg0)
+	jboolean PlaybackMetrics::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint PlaybackMetrics::getAudioUnderrunCount()
@@ -224,12 +228,12 @@ namespace android::media::metrics
 			"()I"
 		);
 	}
-	jbyteArray PlaybackMetrics::getDrmSessionId()
+	JByteArray PlaybackMetrics::getDrmSessionId()
 	{
 		return callObjectMethod(
 			"getDrmSessionId",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
 	jint PlaybackMetrics::getDrmType()
 	{
@@ -238,12 +242,12 @@ namespace android::media::metrics
 			"()I"
 		);
 	}
-	jlongArray PlaybackMetrics::getExperimentIds()
+	JLongArray PlaybackMetrics::getExperimentIds()
 	{
 		return callObjectMethod(
 			"getExperimentIds",
 			"()[J"
-		).object<jlongArray>();
+		);
 	}
 	jlong PlaybackMetrics::getLocalBytesRead()
 	{
@@ -287,19 +291,19 @@ namespace android::media::metrics
 			"()I"
 		);
 	}
-	jstring PlaybackMetrics::getPlayerName()
+	JString PlaybackMetrics::getPlayerName()
 	{
 		return callObjectMethod(
 			"getPlayerName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PlaybackMetrics::getPlayerVersion()
+	JString PlaybackMetrics::getPlayerVersion()
 	{
 		return callObjectMethod(
 			"getPlayerVersion",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint PlaybackMetrics::getStreamSource()
 	{
@@ -336,12 +340,12 @@ namespace android::media::metrics
 			"()I"
 		);
 	}
-	jstring PlaybackMetrics::toString()
+	JString PlaybackMetrics::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void PlaybackMetrics::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

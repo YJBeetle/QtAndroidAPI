@@ -2,6 +2,7 @@
 #include "../os/CancellationSignal.hpp"
 #include "../util/Size.hpp"
 #include "../../java/io/File.hpp"
+#include "../../JString.hpp"
 #include "./ThumbnailUtils.hpp"
 
 namespace android::media
@@ -26,13 +27,13 @@ namespace android::media
 		) {}
 	
 	// Methods
-	android::graphics::Bitmap ThumbnailUtils::createAudioThumbnail(jstring arg0, jint arg1)
+	android::graphics::Bitmap ThumbnailUtils::createAudioThumbnail(JString arg0, jint arg1)
 	{
 		return callStaticObjectMethod(
 			"android.media.ThumbnailUtils",
 			"createAudioThumbnail",
 			"(Ljava/lang/String;I)Landroid/graphics/Bitmap;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
@@ -47,13 +48,13 @@ namespace android::media
 			arg2.object()
 		);
 	}
-	android::graphics::Bitmap ThumbnailUtils::createImageThumbnail(jstring arg0, jint arg1)
+	android::graphics::Bitmap ThumbnailUtils::createImageThumbnail(JString arg0, jint arg1)
 	{
 		return callStaticObjectMethod(
 			"android.media.ThumbnailUtils",
 			"createImageThumbnail",
 			"(Ljava/lang/String;I)Landroid/graphics/Bitmap;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
@@ -68,13 +69,13 @@ namespace android::media
 			arg2.object()
 		);
 	}
-	android::graphics::Bitmap ThumbnailUtils::createVideoThumbnail(jstring arg0, jint arg1)
+	android::graphics::Bitmap ThumbnailUtils::createVideoThumbnail(JString arg0, jint arg1)
 	{
 		return callStaticObjectMethod(
 			"android.media.ThumbnailUtils",
 			"createVideoThumbnail",
 			"(Ljava/lang/String;I)Landroid/graphics/Bitmap;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}

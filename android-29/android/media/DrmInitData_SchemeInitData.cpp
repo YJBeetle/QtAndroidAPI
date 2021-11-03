@@ -1,21 +1,24 @@
+#include "../../JByteArray.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./DrmInitData_SchemeInitData.hpp"
 
 namespace android::media
 {
 	// Fields
-	jbyteArray DrmInitData_SchemeInitData::data()
+	JByteArray DrmInitData_SchemeInitData::data()
 	{
 		return getObjectField(
 			"data",
 			"[B"
-		).object<jbyteArray>();
+		);
 	}
-	jstring DrmInitData_SchemeInitData::mimeType()
+	JString DrmInitData_SchemeInitData::mimeType()
 	{
 		return getObjectField(
 			"mimeType",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QJniObject forward
@@ -24,12 +27,12 @@ namespace android::media
 	// Constructors
 	
 	// Methods
-	jboolean DrmInitData_SchemeInitData::equals(jobject arg0)
+	jboolean DrmInitData_SchemeInitData::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint DrmInitData_SchemeInitData::hashCode()

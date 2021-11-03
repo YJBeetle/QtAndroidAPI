@@ -1,8 +1,6 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./Observable.hpp"
-
 
 namespace android::database
 {

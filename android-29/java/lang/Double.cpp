@@ -1,3 +1,6 @@
+#include "../../JClass.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./invoke/MethodHandles_Lookup.hpp"
 #include "../util/Optional.hpp"
 #include "./Double.hpp"
@@ -75,13 +78,13 @@ namespace java::lang
 			"SIZE"
 		);
 	}
-	jclass Double::TYPE()
+	JClass Double::TYPE()
 	{
 		return getStaticObjectField(
 			"java.lang.Double",
 			"TYPE",
 			"Ljava/lang/Class;"
-		).object<jclass>();
+		);
 	}
 	
 	// QJniObject forward
@@ -94,11 +97,11 @@ namespace java::lang
 			"(D)V",
 			arg0
 		) {}
-	Double::Double(jstring arg0)
+	Double::Double(JString arg0)
 		: java::lang::Number(
 			"java.lang.Double",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods
@@ -195,13 +198,13 @@ namespace java::lang
 			arg1
 		);
 	}
-	jdouble Double::parseDouble(jstring arg0)
+	jdouble Double::parseDouble(JString arg0)
 	{
 		return callStaticMethod<jdouble>(
 			"java.lang.Double",
 			"parseDouble",
 			"(Ljava/lang/String;)D",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	jdouble Double::sum(jdouble arg0, jdouble arg1)
@@ -214,23 +217,23 @@ namespace java::lang
 			arg1
 		);
 	}
-	jstring Double::toHexString(jdouble arg0)
+	JString Double::toHexString(jdouble arg0)
 	{
 		return callStaticObjectMethod(
 			"java.lang.Double",
 			"toHexString",
 			"(D)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
-	jstring Double::toString(jdouble arg0)
+	JString Double::toString(jdouble arg0)
 	{
 		return callStaticObjectMethod(
 			"java.lang.Double",
 			"toString",
 			"(D)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
 	java::lang::Double Double::valueOf(jdouble arg0)
 	{
@@ -241,13 +244,13 @@ namespace java::lang
 			arg0
 		);
 	}
-	java::lang::Double Double::valueOf(jstring arg0)
+	java::lang::Double Double::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"java.lang.Double",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/lang/Double;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	jbyte Double::byteValue()
@@ -265,12 +268,12 @@ namespace java::lang
 			arg0.object()
 		);
 	}
-	jint Double::compareTo(jobject arg0)
+	jint Double::compareTo(JObject arg0)
 	{
 		return callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Object;)I",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	java::util::Optional Double::describeConstable()
@@ -287,12 +290,12 @@ namespace java::lang
 			"()D"
 		);
 	}
-	jboolean Double::equals(jobject arg0)
+	jboolean Double::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jfloat Double::floatValue()
@@ -352,12 +355,12 @@ namespace java::lang
 			"()S"
 		);
 	}
-	jstring Double::toString()
+	JString Double::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::lang
 

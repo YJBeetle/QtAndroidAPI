@@ -1,3 +1,4 @@
+#include "../../JArray.hpp"
 #include "./Fragment.hpp"
 #include "./FragmentHostCallback.hpp"
 #include "./FragmentManager.hpp"
@@ -10,6 +11,7 @@
 #include "../view/View.hpp"
 #include "../../java/io/FileDescriptor.hpp"
 #include "../../java/io/PrintWriter.hpp"
+#include "../../JString.hpp"
 #include "./FragmentController.hpp"
 
 namespace android::app
@@ -215,15 +217,15 @@ namespace android::app
 			arg0
 		);
 	}
-	void FragmentController::dumpLoaders(jstring arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, jarray arg3)
+	void FragmentController::dumpLoaders(JString arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, JArray arg3)
 	{
 		callMethod<void>(
 			"dumpLoaders",
 			"(Ljava/lang/String;Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
 			arg2.object(),
-			arg3
+			arg3.object<jarray>()
 		);
 	}
 	jboolean FragmentController::execPendingActions()
@@ -233,12 +235,12 @@ namespace android::app
 			"()Z"
 		);
 	}
-	android::app::Fragment FragmentController::findFragmentByWho(jstring arg0)
+	android::app::Fragment FragmentController::findFragmentByWho(JString arg0)
 	{
 		return callObjectMethod(
 			"findFragmentByWho",
 			"(Ljava/lang/String;)Landroid/app/Fragment;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::app::FragmentManager FragmentController::getFragmentManager()
@@ -262,13 +264,13 @@ namespace android::app
 			"()V"
 		);
 	}
-	android::view::View FragmentController::onCreateView(android::view::View arg0, jstring arg1, android::content::Context arg2, JObject arg3)
+	android::view::View FragmentController::onCreateView(android::view::View arg0, JString arg1, android::content::Context arg2, JObject arg3)
 	{
 		return callObjectMethod(
 			"onCreateView",
 			"(Landroid/view/View;Ljava/lang/String;Landroid/content/Context;Landroid/util/AttributeSet;)Landroid/view/View;",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2.object(),
 			arg3.object()
 		);

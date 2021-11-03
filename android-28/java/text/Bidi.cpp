@@ -1,3 +1,7 @@
+#include "../../JByteArray.hpp"
+#include "../../JCharArray.hpp"
+#include "../../JObjectArray.hpp"
+#include "../../JString.hpp"
 #include "./Bidi.hpp"
 
 namespace java::text
@@ -42,46 +46,46 @@ namespace java::text
 			"(Ljava/text/AttributedCharacterIterator;)V",
 			arg0.object()
 		) {}
-	Bidi::Bidi(jstring arg0, jint arg1)
+	Bidi::Bidi(JString arg0, jint arg1)
 		: JObject(
 			"java.text.Bidi",
 			"(Ljava/lang/String;I)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		) {}
-	Bidi::Bidi(jcharArray arg0, jint arg1, jbyteArray arg2, jint arg3, jint arg4, jint arg5)
+	Bidi::Bidi(JCharArray arg0, jint arg1, JByteArray arg2, jint arg3, jint arg4, jint arg5)
 		: JObject(
 			"java.text.Bidi",
 			"([CI[BIII)V",
-			arg0,
+			arg0.object<jcharArray>(),
 			arg1,
-			arg2,
+			arg2.object<jbyteArray>(),
 			arg3,
 			arg4,
 			arg5
 		) {}
 	
 	// Methods
-	void Bidi::reorderVisually(jbyteArray arg0, jint arg1, jobjectArray arg2, jint arg3, jint arg4)
+	void Bidi::reorderVisually(JByteArray arg0, jint arg1, JObjectArray arg2, jint arg3, jint arg4)
 	{
 		callStaticMethod<void>(
 			"java.text.Bidi",
 			"reorderVisually",
 			"([BI[Ljava/lang/Object;II)V",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1,
-			arg2,
+			arg2.object<jobjectArray>(),
 			arg3,
 			arg4
 		);
 	}
-	jboolean Bidi::requiresBidi(jcharArray arg0, jint arg1, jint arg2)
+	jboolean Bidi::requiresBidi(JCharArray arg0, jint arg1, jint arg2)
 	{
 		return callStaticMethod<jboolean>(
 			"java.text.Bidi",
 			"requiresBidi",
 			"([CII)Z",
-			arg0,
+			arg0.object<jcharArray>(),
 			arg1,
 			arg2
 		);
@@ -176,12 +180,12 @@ namespace java::text
 			"()Z"
 		);
 	}
-	jstring Bidi::toString()
+	JString Bidi::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::text
 

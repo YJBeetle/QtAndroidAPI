@@ -1,7 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../../java/lang/Exception.hpp"
 #include "./TelephonyManager_NetworkSlicingException.hpp"
 
 namespace android::telephony

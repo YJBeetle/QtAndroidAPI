@@ -1,3 +1,5 @@
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
 #include "./AudioCodec.hpp"
 
 namespace android::net::rtp
@@ -43,19 +45,19 @@ namespace android::net::rtp
 			"Landroid/net/rtp/AudioCodec;"
 		);
 	}
-	jstring AudioCodec::fmtp()
+	JString AudioCodec::fmtp()
 	{
 		return getObjectField(
 			"fmtp",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring AudioCodec::rtpmap()
+	JString AudioCodec::rtpmap()
 	{
 		return getObjectField(
 			"rtpmap",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint AudioCodec::type()
 	{
@@ -70,24 +72,24 @@ namespace android::net::rtp
 	// Constructors
 	
 	// Methods
-	android::net::rtp::AudioCodec AudioCodec::getCodec(jint arg0, jstring arg1, jstring arg2)
+	android::net::rtp::AudioCodec AudioCodec::getCodec(jint arg0, JString arg1, JString arg2)
 	{
 		return callStaticObjectMethod(
 			"android.net.rtp.AudioCodec",
 			"getCodec",
 			"(ILjava/lang/String;Ljava/lang/String;)Landroid/net/rtp/AudioCodec;",
 			arg0,
-			arg1,
-			arg2
+			arg1.object<jstring>(),
+			arg2.object<jstring>()
 		);
 	}
-	jarray AudioCodec::getCodecs()
+	JArray AudioCodec::getCodecs()
 	{
 		return callStaticObjectMethod(
 			"android.net.rtp.AudioCodec",
 			"getCodecs",
 			"()[Landroid/net/rtp/AudioCodec;"
-		).object<jarray>();
+		);
 	}
 } // namespace android::net::rtp
 

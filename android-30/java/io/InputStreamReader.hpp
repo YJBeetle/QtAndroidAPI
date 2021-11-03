@@ -1,12 +1,13 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./Reader.hpp"
 
+class JCharArray;
 namespace java::io
 {
 	class InputStream;
 }
+class JString;
 namespace java::nio::charset
 {
 	class Charset;
@@ -29,15 +30,15 @@ namespace java::io
 		
 		// Constructors
 		InputStreamReader(java::io::InputStream arg0);
-		InputStreamReader(java::io::InputStream arg0, jstring arg1);
+		InputStreamReader(java::io::InputStream arg0, JString arg1);
 		InputStreamReader(java::io::InputStream arg0, java::nio::charset::Charset arg1);
 		InputStreamReader(java::io::InputStream arg0, java::nio::charset::CharsetDecoder arg1);
 		
 		// Methods
 		void close();
-		jstring getEncoding();
+		JString getEncoding();
 		jint read();
-		jint read(jcharArray arg0, jint arg1, jint arg2);
+		jint read(JCharArray arg0, jint arg1, jint arg2);
 		jboolean ready();
 	};
 } // namespace java::io

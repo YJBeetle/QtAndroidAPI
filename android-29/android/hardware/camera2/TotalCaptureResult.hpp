@@ -1,9 +1,6 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "./CameraMetadata.hpp"
 #include "./CaptureResult.hpp"
-
 
 namespace android::hardware::camera2
 {

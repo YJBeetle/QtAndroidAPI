@@ -1,8 +1,10 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./Error.hpp"
 
+class JObject;
+class JString;
+class JThrowable;
 
 namespace java::lang
 {
@@ -22,9 +24,9 @@ namespace java::lang
 		AssertionError(jdouble arg0);
 		AssertionError(jfloat arg0);
 		AssertionError(jint arg0);
-		AssertionError(jobject arg0);
+		AssertionError(JObject arg0);
 		AssertionError(jlong arg0);
-		AssertionError(jstring arg0, jthrowable arg1);
+		AssertionError(JString arg0, JThrowable arg1);
 		
 		// Methods
 	};

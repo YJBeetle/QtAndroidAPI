@@ -1,3 +1,4 @@
+#include "../../JLongArray.hpp"
 #include "./EGLConfig.hpp"
 #include "./EGLContext.hpp"
 #include "./EGLDisplay.hpp"
@@ -363,7 +364,7 @@ namespace android::opengl
 			arg3
 		);
 	}
-	android::opengl::EGLImage EGL15::eglCreateImage(android::opengl::EGLDisplay arg0, android::opengl::EGLContext arg1, jint arg2, jlong arg3, jlongArray arg4, jint arg5)
+	android::opengl::EGLImage EGL15::eglCreateImage(android::opengl::EGLDisplay arg0, android::opengl::EGLContext arg1, jint arg2, jlong arg3, JLongArray arg4, jint arg5)
 	{
 		return callStaticObjectMethod(
 			"android.opengl.EGL15",
@@ -373,11 +374,11 @@ namespace android::opengl
 			arg1.object(),
 			arg2,
 			arg3,
-			arg4,
+			arg4.object<jlongArray>(),
 			arg5
 		);
 	}
-	android::opengl::EGLSurface EGL15::eglCreatePlatformPixmapSurface(android::opengl::EGLDisplay arg0, android::opengl::EGLConfig arg1, java::nio::Buffer arg2, jlongArray arg3, jint arg4)
+	android::opengl::EGLSurface EGL15::eglCreatePlatformPixmapSurface(android::opengl::EGLDisplay arg0, android::opengl::EGLConfig arg1, java::nio::Buffer arg2, JLongArray arg3, jint arg4)
 	{
 		return callStaticObjectMethod(
 			"android.opengl.EGL15",
@@ -386,11 +387,11 @@ namespace android::opengl
 			arg0.object(),
 			arg1.object(),
 			arg2.object(),
-			arg3,
+			arg3.object<jlongArray>(),
 			arg4
 		);
 	}
-	android::opengl::EGLSurface EGL15::eglCreatePlatformWindowSurface(android::opengl::EGLDisplay arg0, android::opengl::EGLConfig arg1, java::nio::Buffer arg2, jlongArray arg3, jint arg4)
+	android::opengl::EGLSurface EGL15::eglCreatePlatformWindowSurface(android::opengl::EGLDisplay arg0, android::opengl::EGLConfig arg1, java::nio::Buffer arg2, JLongArray arg3, jint arg4)
 	{
 		return callStaticObjectMethod(
 			"android.opengl.EGL15",
@@ -399,11 +400,11 @@ namespace android::opengl
 			arg0.object(),
 			arg1.object(),
 			arg2.object(),
-			arg3,
+			arg3.object<jlongArray>(),
 			arg4
 		);
 	}
-	android::opengl::EGLSync EGL15::eglCreateSync(android::opengl::EGLDisplay arg0, jint arg1, jlongArray arg2, jint arg3)
+	android::opengl::EGLSync EGL15::eglCreateSync(android::opengl::EGLDisplay arg0, jint arg1, JLongArray arg2, jint arg3)
 	{
 		return callStaticObjectMethod(
 			"android.opengl.EGL15",
@@ -411,7 +412,7 @@ namespace android::opengl
 			"(Landroid/opengl/EGLDisplay;I[JI)Landroid/opengl/EGLSync;",
 			arg0.object(),
 			arg1,
-			arg2,
+			arg2.object<jlongArray>(),
 			arg3
 		);
 	}
@@ -435,7 +436,7 @@ namespace android::opengl
 			arg1.object()
 		);
 	}
-	android::opengl::EGLDisplay EGL15::eglGetPlatformDisplay(jint arg0, jlong arg1, jlongArray arg2, jint arg3)
+	android::opengl::EGLDisplay EGL15::eglGetPlatformDisplay(jint arg0, jlong arg1, JLongArray arg2, jint arg3)
 	{
 		return callStaticObjectMethod(
 			"android.opengl.EGL15",
@@ -443,11 +444,11 @@ namespace android::opengl
 			"(IJ[JI)Landroid/opengl/EGLDisplay;",
 			arg0,
 			arg1,
-			arg2,
+			arg2.object<jlongArray>(),
 			arg3
 		);
 	}
-	jboolean EGL15::eglGetSyncAttrib(android::opengl::EGLDisplay arg0, android::opengl::EGLSync arg1, jint arg2, jlongArray arg3, jint arg4)
+	jboolean EGL15::eglGetSyncAttrib(android::opengl::EGLDisplay arg0, android::opengl::EGLSync arg1, jint arg2, JLongArray arg3, jint arg4)
 	{
 		return callStaticMethod<jboolean>(
 			"android.opengl.EGL15",
@@ -456,7 +457,7 @@ namespace android::opengl
 			arg0.object(),
 			arg1.object(),
 			arg2,
-			arg3,
+			arg3.object<jlongArray>(),
 			arg4
 		);
 	}

@@ -6,6 +6,8 @@ namespace android::net
 {
 	class Uri;
 }
+class JObject;
+class JString;
 
 namespace android::content
 {
@@ -19,11 +21,11 @@ namespace android::content
 		IntentFilter_AuthorityEntry(QJniObject obj);
 		
 		// Constructors
-		IntentFilter_AuthorityEntry(jstring arg0, jstring arg1);
+		IntentFilter_AuthorityEntry(JString arg0, JString arg1);
 		
 		// Methods
-		jboolean equals(jobject arg0);
-		jstring getHost();
+		jboolean equals(JObject arg0);
+		JString getHost();
 		jint getPort();
 		jint match(android::net::Uri arg0);
 	};

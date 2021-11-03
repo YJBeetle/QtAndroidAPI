@@ -1,9 +1,9 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "../Exception.hpp"
 #include "../RuntimeException.hpp"
 
+class JString;
+class JThrowable;
 
 namespace java::lang::invoke
 {
@@ -18,7 +18,7 @@ namespace java::lang::invoke
 		
 		// Constructors
 		WrongMethodTypeException();
-		WrongMethodTypeException(jstring arg0);
+		WrongMethodTypeException(JString arg0);
 		
 		// Methods
 	};

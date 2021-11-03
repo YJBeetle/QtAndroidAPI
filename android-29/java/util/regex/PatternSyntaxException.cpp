@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./PatternSyntaxException.hpp"
 
 namespace java::util::regex
@@ -8,22 +9,22 @@ namespace java::util::regex
 	PatternSyntaxException::PatternSyntaxException(QJniObject obj) : java::lang::IllegalArgumentException(obj) {}
 	
 	// Constructors
-	PatternSyntaxException::PatternSyntaxException(jstring arg0, jstring arg1, jint arg2)
+	PatternSyntaxException::PatternSyntaxException(JString arg0, JString arg1, jint arg2)
 		: java::lang::IllegalArgumentException(
 			"java.util.regex.PatternSyntaxException",
 			"(Ljava/lang/String;Ljava/lang/String;I)V",
-			arg0,
-			arg1,
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
 			arg2
 		) {}
 	
 	// Methods
-	jstring PatternSyntaxException::getDescription()
+	JString PatternSyntaxException::getDescription()
 	{
 		return callObjectMethod(
 			"getDescription",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint PatternSyntaxException::getIndex()
 	{
@@ -32,19 +33,19 @@ namespace java::util::regex
 			"()I"
 		);
 	}
-	jstring PatternSyntaxException::getMessage()
+	JString PatternSyntaxException::getMessage()
 	{
 		return callObjectMethod(
 			"getMessage",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PatternSyntaxException::getPattern()
+	JString PatternSyntaxException::getPattern()
 	{
 		return callObjectMethod(
 			"getPattern",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::util::regex
 

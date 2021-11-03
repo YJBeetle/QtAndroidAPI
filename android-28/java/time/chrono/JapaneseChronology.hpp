@@ -1,12 +1,13 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "./AbstractChronology.hpp"
 
 namespace java::io
 {
 	class ObjectInputStream;
 }
+class JObject;
+class JString;
 namespace java::time
 {
 	class Clock;
@@ -70,8 +71,8 @@ namespace java::time::chrono
 		java::time::chrono::JapaneseDate dateYearDay(JObject arg0, jint arg1, jint arg2);
 		java::time::chrono::JapaneseEra eraOf(jint arg0);
 		JObject eras();
-		jstring getCalendarType();
-		jstring getId();
+		JString getCalendarType();
+		JString getId();
 		jboolean isLeapYear(jlong arg0);
 		JObject localDateTime(JObject arg0);
 		jint prolepticYear(JObject arg0, jint arg1);

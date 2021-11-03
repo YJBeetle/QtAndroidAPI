@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./ColorFilter.hpp"
 
+class JFloatArray;
 namespace android::graphics
 {
 	class ColorMatrix;
@@ -20,7 +20,7 @@ namespace android::graphics
 		ColorMatrixColorFilter(QJniObject obj);
 		
 		// Constructors
-		ColorMatrixColorFilter(jfloatArray arg0);
+		ColorMatrixColorFilter(JFloatArray arg0);
 		ColorMatrixColorFilter(android::graphics::ColorMatrix arg0);
 		
 		// Methods

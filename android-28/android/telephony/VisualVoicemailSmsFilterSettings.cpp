@@ -1,5 +1,6 @@
 #include "../os/Parcel.hpp"
 #include "./VisualVoicemailSmsFilterSettings_Builder.hpp"
+#include "../../JString.hpp"
 #include "./VisualVoicemailSmsFilterSettings.hpp"
 
 namespace android::telephony
@@ -27,12 +28,12 @@ namespace android::telephony
 			"DESTINATION_PORT_DATA_SMS"
 		);
 	}
-	jstring VisualVoicemailSmsFilterSettings::clientPrefix()
+	JString VisualVoicemailSmsFilterSettings::clientPrefix()
 	{
 		return getObjectField(
 			"clientPrefix",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint VisualVoicemailSmsFilterSettings::destinationPort()
 	{
@@ -61,12 +62,12 @@ namespace android::telephony
 			"()I"
 		);
 	}
-	jstring VisualVoicemailSmsFilterSettings::toString()
+	JString VisualVoicemailSmsFilterSettings::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void VisualVoicemailSmsFilterSettings::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./EGLObjectHandle.hpp"
 
+class JObject;
 
 namespace android::opengl
 {
@@ -18,7 +18,7 @@ namespace android::opengl
 		// Constructors
 		
 		// Methods
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 	};
 } // namespace android::opengl
 

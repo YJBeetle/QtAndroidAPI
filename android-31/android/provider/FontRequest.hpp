@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JString;
 
 namespace android::provider
 {
@@ -15,15 +16,15 @@ namespace android::provider
 		FontRequest(QJniObject obj);
 		
 		// Constructors
-		FontRequest(jstring arg0, jstring arg1, jstring arg2);
-		FontRequest(jstring arg0, jstring arg1, jstring arg2, JObject arg3);
+		FontRequest(JString arg0, JString arg1, JString arg2);
+		FontRequest(JString arg0, JString arg1, JString arg2, JObject arg3);
 		
 		// Methods
 		JObject getCertificates();
-		jstring getProviderAuthority();
-		jstring getProviderPackage();
-		jstring getQuery();
-		jstring toString();
+		JString getProviderAuthority();
+		JString getProviderPackage();
+		JString getQuery();
+		JString toString();
 	};
 } // namespace android::provider
 

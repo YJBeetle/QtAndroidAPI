@@ -1,3 +1,5 @@
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./ParsePosition.hpp"
 
 namespace java::text
@@ -16,12 +18,12 @@ namespace java::text
 		) {}
 	
 	// Methods
-	jboolean ParsePosition::equals(jobject arg0)
+	jboolean ParsePosition::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint ParsePosition::getErrorIndex()
@@ -61,12 +63,12 @@ namespace java::text
 			arg0
 		);
 	}
-	jstring ParsePosition::toString()
+	JString ParsePosition::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::text
 

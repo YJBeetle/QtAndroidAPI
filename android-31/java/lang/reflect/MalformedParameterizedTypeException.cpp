@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./MalformedParameterizedTypeException.hpp"
 
 namespace java::lang::reflect
@@ -13,11 +14,11 @@ namespace java::lang::reflect
 			"java.lang.reflect.MalformedParameterizedTypeException",
 			"()V"
 		) {}
-	MalformedParameterizedTypeException::MalformedParameterizedTypeException(jstring arg0)
+	MalformedParameterizedTypeException::MalformedParameterizedTypeException(JString arg0)
 		: java::lang::RuntimeException(
 			"java.lang.reflect.MalformedParameterizedTypeException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

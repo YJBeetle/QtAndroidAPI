@@ -1,3 +1,5 @@
+#include "../../../JByteArray.hpp"
+#include "../../../JIntArray.hpp"
 #include "./Visualizer_MeasurementPeakRms.hpp"
 #include "./Visualizer.hpp"
 
@@ -122,13 +124,13 @@ namespace android::media::audiofx
 		) {}
 	
 	// Methods
-	jintArray Visualizer::getCaptureSizeRange()
+	JIntArray Visualizer::getCaptureSizeRange()
 	{
 		return callStaticObjectMethod(
 			"android.media.audiofx.Visualizer",
 			"getCaptureSizeRange",
 			"()[I"
-		).object<jintArray>();
+		);
 	}
 	jint Visualizer::getMaxCaptureRate()
 	{
@@ -152,12 +154,12 @@ namespace android::media::audiofx
 			"()Z"
 		);
 	}
-	jint Visualizer::getFft(jbyteArray arg0)
+	jint Visualizer::getFft(JByteArray arg0)
 	{
 		return callMethod<jint>(
 			"getFft",
 			"([B)I",
-			arg0
+			arg0.object<jbyteArray>()
 		);
 	}
 	jint Visualizer::getMeasurementMode()
@@ -189,12 +191,12 @@ namespace android::media::audiofx
 			"()I"
 		);
 	}
-	jint Visualizer::getWaveForm(jbyteArray arg0)
+	jint Visualizer::getWaveForm(JByteArray arg0)
 	{
 		return callMethod<jint>(
 			"getWaveForm",
 			"([B)I",
-			arg0
+			arg0.object<jbyteArray>()
 		);
 	}
 	void Visualizer::release()

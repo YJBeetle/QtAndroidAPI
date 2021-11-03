@@ -6,6 +6,7 @@ namespace android::telephony
 {
 	class VisualVoicemailSmsFilterSettings;
 }
+class JString;
 
 namespace android::telephony
 {
@@ -23,7 +24,7 @@ namespace android::telephony
 		
 		// Methods
 		android::telephony::VisualVoicemailSmsFilterSettings build();
-		android::telephony::VisualVoicemailSmsFilterSettings_Builder setClientPrefix(jstring arg0);
+		android::telephony::VisualVoicemailSmsFilterSettings_Builder setClientPrefix(JString arg0);
 		android::telephony::VisualVoicemailSmsFilterSettings_Builder setDestinationPort(jint arg0);
 		android::telephony::VisualVoicemailSmsFilterSettings_Builder setOriginatingNumbers(JObject arg0);
 	};

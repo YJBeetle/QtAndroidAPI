@@ -1,7 +1,10 @@
+#include "../../JIntArray.hpp"
+#include "../../JBooleanArray.hpp"
 #include "../os/Parcel.hpp"
 #include "../os/Vibrator.hpp"
 #include "./InputDevice_MotionRange.hpp"
 #include "./KeyCharacterMap.hpp"
+#include "../../JString.hpp"
 #include "./InputDevice.hpp"
 
 namespace android::view
@@ -276,13 +279,13 @@ namespace android::view
 			arg0
 		);
 	}
-	jintArray InputDevice::getDeviceIds()
+	JIntArray InputDevice::getDeviceIds()
 	{
 		return callStaticObjectMethod(
 			"android.view.InputDevice",
 			"getDeviceIds",
 			"()[I"
-		).object<jintArray>();
+		);
 	}
 	jint InputDevice::describeContents()
 	{
@@ -298,12 +301,12 @@ namespace android::view
 			"()I"
 		);
 	}
-	jstring InputDevice::getDescriptor()
+	JString InputDevice::getDescriptor()
 	{
 		return callObjectMethod(
 			"getDescriptor",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint InputDevice::getId()
 	{
@@ -350,12 +353,12 @@ namespace android::view
 			"()Ljava/util/List;"
 		);
 	}
-	jstring InputDevice::getName()
+	JString InputDevice::getName()
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint InputDevice::getProductId()
 	{
@@ -385,13 +388,13 @@ namespace android::view
 			"()Landroid/os/Vibrator;"
 		);
 	}
-	jbooleanArray InputDevice::hasKeys(jintArray arg0)
+	JBooleanArray InputDevice::hasKeys(JIntArray arg0)
 	{
 		return callObjectMethod(
 			"hasKeys",
 			"([I)[Z",
-			arg0
-		).object<jbooleanArray>();
+			arg0.object<jintArray>()
+		);
 	}
 	jboolean InputDevice::hasMicrophone()
 	{
@@ -429,12 +432,12 @@ namespace android::view
 			arg0
 		);
 	}
-	jstring InputDevice::toString()
+	JString InputDevice::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void InputDevice::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

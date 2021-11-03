@@ -1,3 +1,5 @@
+#include "../../../JByteArray.hpp"
+#include "../../../JString.hpp"
 #include "../../../javax/net/ssl/SSLEngine.hpp"
 #include "./SSLEngines.hpp"
 
@@ -11,17 +13,17 @@ namespace android::net::ssl
 	// Constructors
 	
 	// Methods
-	jbyteArray SSLEngines::exportKeyingMaterial(javax::net::ssl::SSLEngine arg0, jstring arg1, jbyteArray arg2, jint arg3)
+	JByteArray SSLEngines::exportKeyingMaterial(javax::net::ssl::SSLEngine arg0, JString arg1, JByteArray arg2, jint arg3)
 	{
 		return callStaticObjectMethod(
 			"android.net.ssl.SSLEngines",
 			"exportKeyingMaterial",
 			"(Ljavax/net/ssl/SSLEngine;Ljava/lang/String;[BI)[B",
 			arg0.object(),
-			arg1,
-			arg2,
+			arg1.object<jstring>(),
+			arg2.object<jbyteArray>(),
 			arg3
-		).object<jbyteArray>();
+		);
 	}
 	jboolean SSLEngines::isSupportedEngine(javax::net::ssl::SSLEngine arg0)
 	{

@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./TtsSpan_FractionBuilder.hpp"
 
 namespace android::text::style
@@ -23,12 +24,12 @@ namespace android::text::style
 		) {}
 	
 	// Methods
-	android::text::style::TtsSpan_FractionBuilder TtsSpan_FractionBuilder::setDenominator(jstring arg0)
+	android::text::style::TtsSpan_FractionBuilder TtsSpan_FractionBuilder::setDenominator(JString arg0)
 	{
 		return callObjectMethod(
 			"setDenominator",
 			"(Ljava/lang/String;)Landroid/text/style/TtsSpan$FractionBuilder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::text::style::TtsSpan_FractionBuilder TtsSpan_FractionBuilder::setDenominator(jlong arg0)
@@ -39,12 +40,12 @@ namespace android::text::style
 			arg0
 		);
 	}
-	android::text::style::TtsSpan_FractionBuilder TtsSpan_FractionBuilder::setIntegerPart(jstring arg0)
+	android::text::style::TtsSpan_FractionBuilder TtsSpan_FractionBuilder::setIntegerPart(JString arg0)
 	{
 		return callObjectMethod(
 			"setIntegerPart",
 			"(Ljava/lang/String;)Landroid/text/style/TtsSpan$FractionBuilder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::text::style::TtsSpan_FractionBuilder TtsSpan_FractionBuilder::setIntegerPart(jlong arg0)
@@ -55,12 +56,12 @@ namespace android::text::style
 			arg0
 		);
 	}
-	android::text::style::TtsSpan_FractionBuilder TtsSpan_FractionBuilder::setNumerator(jstring arg0)
+	android::text::style::TtsSpan_FractionBuilder TtsSpan_FractionBuilder::setNumerator(JString arg0)
 	{
 		return callObjectMethod(
 			"setNumerator",
 			"(Ljava/lang/String;)Landroid/text/style/TtsSpan$FractionBuilder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::text::style::TtsSpan_FractionBuilder TtsSpan_FractionBuilder::setNumerator(jlong arg0)

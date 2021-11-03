@@ -1,4 +1,6 @@
 #include "./SearchResult_MatchRange.hpp"
+#include "../../../JString.hpp"
+#include "../../../JString.hpp"
 #include "./SearchResult_MatchInfo.hpp"
 
 namespace android::app::appsearch
@@ -11,12 +13,12 @@ namespace android::app::appsearch
 	// Constructors
 	
 	// Methods
-	jstring SearchResult_MatchInfo::getExactMatch()
+	JString SearchResult_MatchInfo::getExactMatch()
 	{
 		return callObjectMethod(
 			"getExactMatch",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	android::app::appsearch::SearchResult_MatchRange SearchResult_MatchInfo::getExactMatchRange()
 	{
@@ -25,26 +27,26 @@ namespace android::app::appsearch
 			"()Landroid/app/appsearch/SearchResult$MatchRange;"
 		);
 	}
-	jstring SearchResult_MatchInfo::getFullText()
+	JString SearchResult_MatchInfo::getFullText()
 	{
 		return callObjectMethod(
 			"getFullText",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring SearchResult_MatchInfo::getPropertyPath()
+	JString SearchResult_MatchInfo::getPropertyPath()
 	{
 		return callObjectMethod(
 			"getPropertyPath",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring SearchResult_MatchInfo::getSnippet()
+	JString SearchResult_MatchInfo::getSnippet()
 	{
 		return callObjectMethod(
 			"getSnippet",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	android::app::appsearch::SearchResult_MatchRange SearchResult_MatchInfo::getSnippetRange()
 	{

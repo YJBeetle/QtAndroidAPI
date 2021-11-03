@@ -1,8 +1,9 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./Enum.hpp"
 
+class JArray;
+class JString;
 
 namespace java::lang
 {
@@ -23,8 +24,8 @@ namespace java::lang
 		// Constructors
 		
 		// Methods
-		static java::lang::ProcessBuilder_Redirect_Type valueOf(jstring arg0);
-		static jarray values();
+		static java::lang::ProcessBuilder_Redirect_Type valueOf(JString arg0);
+		static JArray values();
 	};
 } // namespace java::lang
 

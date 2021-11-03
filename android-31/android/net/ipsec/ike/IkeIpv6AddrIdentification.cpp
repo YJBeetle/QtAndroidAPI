@@ -1,3 +1,4 @@
+#include "../../../../JObject.hpp"
 #include "../../../../java/net/Inet6Address.hpp"
 #include "./IkeIpv6AddrIdentification.hpp"
 
@@ -24,12 +25,12 @@ namespace android::net::ipsec::ike
 		) {}
 	
 	// Methods
-	jboolean IkeIpv6AddrIdentification::equals(jobject arg0)
+	jboolean IkeIpv6AddrIdentification::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint IkeIpv6AddrIdentification::hashCode()

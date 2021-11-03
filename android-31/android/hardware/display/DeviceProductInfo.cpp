@@ -1,4 +1,6 @@
 #include "../../os/Parcel.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./DeviceProductInfo.hpp"
 
 namespace android::hardware::display
@@ -45,13 +47,13 @@ namespace android::hardware::display
 	DeviceProductInfo::DeviceProductInfo(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	DeviceProductInfo::DeviceProductInfo(jstring arg0, jstring arg1, jstring arg2, jint arg3, jint arg4)
+	DeviceProductInfo::DeviceProductInfo(JString arg0, JString arg1, JString arg2, jint arg3, jint arg4)
 		: JObject(
 			"android.hardware.display.DeviceProductInfo",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;II)V",
-			arg0,
-			arg1,
-			arg2,
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2.object<jstring>(),
 			arg3,
 			arg4
 		) {}
@@ -64,12 +66,12 @@ namespace android::hardware::display
 			"()I"
 		);
 	}
-	jboolean DeviceProductInfo::equals(jobject arg0)
+	jboolean DeviceProductInfo::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint DeviceProductInfo::getConnectionToSinkType()
@@ -93,12 +95,12 @@ namespace android::hardware::display
 			"()I"
 		);
 	}
-	jstring DeviceProductInfo::getManufacturerPnpId()
+	JString DeviceProductInfo::getManufacturerPnpId()
 	{
 		return callObjectMethod(
 			"getManufacturerPnpId",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint DeviceProductInfo::getModelYear()
 	{
@@ -107,19 +109,19 @@ namespace android::hardware::display
 			"()I"
 		);
 	}
-	jstring DeviceProductInfo::getName()
+	JString DeviceProductInfo::getName()
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DeviceProductInfo::getProductId()
+	JString DeviceProductInfo::getProductId()
 	{
 		return callObjectMethod(
 			"getProductId",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint DeviceProductInfo::hashCode()
 	{
@@ -128,12 +130,12 @@ namespace android::hardware::display
 			"()I"
 		);
 	}
-	jstring DeviceProductInfo::toString()
+	JString DeviceProductInfo::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void DeviceProductInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

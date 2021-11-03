@@ -6,6 +6,7 @@ namespace android::app::people
 {
 	class ConversationStatus;
 }
+class JString;
 
 namespace android::app::people
 {
@@ -21,10 +22,10 @@ namespace android::app::people
 		// Constructors
 		
 		// Methods
-		void addOrUpdateStatus(jstring arg0, android::app::people::ConversationStatus arg1);
-		void clearStatus(jstring arg0, jstring arg1);
-		void clearStatuses(jstring arg0);
-		JObject getStatuses(jstring arg0);
+		void addOrUpdateStatus(JString arg0, android::app::people::ConversationStatus arg1);
+		void clearStatus(JString arg0, JString arg1);
+		void clearStatuses(JString arg0);
+		JObject getStatuses(JString arg0);
 	};
 } // namespace android::app::people
 

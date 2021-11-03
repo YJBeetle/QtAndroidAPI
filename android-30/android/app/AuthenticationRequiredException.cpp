@@ -1,5 +1,6 @@
 #include "./PendingIntent.hpp"
 #include "../os/Parcel.hpp"
+#include "../../JThrowable.hpp"
 #include "./AuthenticationRequiredException.hpp"
 
 namespace android::app
@@ -18,11 +19,11 @@ namespace android::app
 	AuthenticationRequiredException::AuthenticationRequiredException(QJniObject obj) : java::lang::SecurityException(obj) {}
 	
 	// Constructors
-	AuthenticationRequiredException::AuthenticationRequiredException(jthrowable arg0, android::app::PendingIntent arg1)
+	AuthenticationRequiredException::AuthenticationRequiredException(JThrowable arg0, android::app::PendingIntent arg1)
 		: java::lang::SecurityException(
 			"android.app.AuthenticationRequiredException",
 			"(Ljava/lang/Throwable;Landroid/app/PendingIntent;)V",
-			arg0,
+			arg0.object<jthrowable>(),
 			arg1.object()
 		) {}
 	

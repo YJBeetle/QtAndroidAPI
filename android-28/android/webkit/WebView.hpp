@@ -1,10 +1,10 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../view/View.hpp"
-#include "../view/ViewGroup.hpp"
 #include "../widget/AbsoluteLayout.hpp"
 
+class JByteArray;
+class JArray;
+class JArray;
 namespace android::content
 {
 	class Context;
@@ -129,10 +129,13 @@ namespace android::webkit
 {
 	class WebViewClient;
 }
+class JString;
 namespace java::lang
 {
 	class ClassLoader;
 }
+class JObject;
+class JString;
 
 namespace android::webkit
 {
@@ -143,9 +146,9 @@ namespace android::webkit
 		static jint RENDERER_PRIORITY_BOUND();
 		static jint RENDERER_PRIORITY_IMPORTANT();
 		static jint RENDERER_PRIORITY_WAIVED();
-		static jstring SCHEME_GEO();
-		static jstring SCHEME_MAILTO();
-		static jstring SCHEME_TEL();
+		static JString SCHEME_GEO();
+		static JString SCHEME_MAILTO();
+		static JString SCHEME_TEL();
 		
 		// QJniObject forward
 		template<typename ...Ts> explicit WebView(const char *className, const char *sig, Ts...agv) : android::widget::AbsoluteLayout(className, sig, std::forward<Ts>(agv)...) {}
@@ -162,15 +165,15 @@ namespace android::webkit
 		static void clearClientCertPreferences(JObject arg0);
 		static void disableWebView();
 		static void enableSlowWholeDocumentDraw();
-		static jstring findAddress(jstring arg0);
+		static JString findAddress(JString arg0);
 		static android::content::pm::PackageInfo getCurrentWebViewPackage();
 		static android::net::Uri getSafeBrowsingPrivacyPolicyUrl();
 		static java::lang::ClassLoader getWebViewClassLoader();
-		static void setDataDirectorySuffix(jstring arg0);
+		static void setDataDirectorySuffix(JString arg0);
 		static void setSafeBrowsingWhitelist(JObject arg0, JObject arg1);
 		static void setWebContentsDebuggingEnabled(jboolean arg0);
 		static void startSafeBrowsing(android::content::Context arg0, JObject arg1);
-		void addJavascriptInterface(jobject arg0, jstring arg1);
+		void addJavascriptInterface(JObject arg0, JString arg1);
 		void autofill(android::util::SparseArray arg0);
 		jboolean canGoBack();
 		jboolean canGoBackOrForward(jint arg0);
@@ -187,35 +190,35 @@ namespace android::webkit
 		void computeScroll();
 		android::webkit::WebBackForwardList copyBackForwardList();
 		android::print::PrintDocumentAdapter createPrintDocumentAdapter();
-		android::print::PrintDocumentAdapter createPrintDocumentAdapter(jstring arg0);
-		jarray createWebMessageChannel();
+		android::print::PrintDocumentAdapter createPrintDocumentAdapter(JString arg0);
+		JArray createWebMessageChannel();
 		void destroy();
 		jboolean dispatchKeyEvent(android::view::KeyEvent arg0);
 		void documentHasImages(android::os::Message arg0);
-		void evaluateJavascript(jstring arg0, JObject arg1);
-		jint findAll(jstring arg0);
-		void findAllAsync(jstring arg0);
+		void evaluateJavascript(JString arg0, JObject arg1);
+		jint findAll(JString arg0);
+		void findAllAsync(JString arg0);
 		android::view::View findFocus();
 		void findNext(jboolean arg0);
 		void flingScroll(jint arg0, jint arg1);
 		void freeMemory();
-		jstring getAccessibilityClassName();
+		JString getAccessibilityClassName();
 		android::view::accessibility::AccessibilityNodeProvider getAccessibilityNodeProvider();
 		android::net::http::SslCertificate getCertificate();
 		jint getContentHeight();
 		android::graphics::Bitmap getFavicon();
 		android::os::Handler getHandler();
 		android::webkit::WebView_HitTestResult getHitTestResult();
-		jarray getHttpAuthUsernamePassword(jstring arg0, jstring arg1);
-		jstring getOriginalUrl();
+		JArray getHttpAuthUsernamePassword(JString arg0, JString arg1);
+		JString getOriginalUrl();
 		jint getProgress();
 		jboolean getRendererPriorityWaivedWhenNotVisible();
 		jint getRendererRequestedPriority();
 		jfloat getScale();
 		android::webkit::WebSettings getSettings();
 		JObject getTextClassifier();
-		jstring getTitle();
-		jstring getUrl();
+		JString getTitle();
+		JString getUrl();
 		android::webkit::WebChromeClient getWebChromeClient();
 		android::webkit::WebViewClient getWebViewClient();
 		android::os::Looper getWebViewLooper();
@@ -225,10 +228,10 @@ namespace android::webkit
 		void invokeZoomPicker();
 		jboolean isPrivateBrowsingEnabled();
 		jboolean isVisibleToUserForAutofill(jint arg0);
-		void loadData(jstring arg0, jstring arg1, jstring arg2);
-		void loadDataWithBaseURL(jstring arg0, jstring arg1, jstring arg2, jstring arg3, jstring arg4);
-		void loadUrl(jstring arg0);
-		void loadUrl(jstring arg0, JObject arg1);
+		void loadData(JString arg0, JString arg1, JString arg2);
+		void loadDataWithBaseURL(JString arg0, JString arg1, JString arg2, JString arg3, JString arg4);
+		void loadUrl(JString arg0);
+		void loadUrl(JString arg0, JObject arg1);
 		jboolean onCheckIsTextEditor();
 		void onChildViewAdded(android::view::View arg0, android::view::View arg1);
 		void onChildViewRemoved(android::view::View arg0, android::view::View arg1);
@@ -255,27 +258,27 @@ namespace android::webkit
 		jboolean pageUp(jboolean arg0);
 		void pauseTimers();
 		jboolean performLongClick();
-		void postUrl(jstring arg0, jbyteArray arg1);
+		void postUrl(JString arg0, JByteArray arg1);
 		void postVisualStateCallback(jlong arg0, android::webkit::WebView_VisualStateCallback arg1);
 		void postWebMessage(android::webkit::WebMessage arg0, android::net::Uri arg1);
 		void reload();
-		void removeJavascriptInterface(jstring arg0);
+		void removeJavascriptInterface(JString arg0);
 		jboolean requestChildRectangleOnScreen(android::view::View arg0, android::graphics::Rect arg1, jboolean arg2);
 		jboolean requestFocus(jint arg0, android::graphics::Rect arg1);
 		void requestFocusNodeHref(android::os::Message arg0);
 		void requestImageRef(android::os::Message arg0);
 		android::webkit::WebBackForwardList restoreState(android::os::Bundle arg0);
 		void resumeTimers();
-		void savePassword(jstring arg0, jstring arg1, jstring arg2);
+		void savePassword(JString arg0, JString arg1, JString arg2);
 		android::webkit::WebBackForwardList saveState(android::os::Bundle arg0);
-		void saveWebArchive(jstring arg0);
-		void saveWebArchive(jstring arg0, jboolean arg1, JObject arg2);
+		void saveWebArchive(JString arg0);
+		void saveWebArchive(JString arg0, jboolean arg1, JObject arg2);
 		void setBackgroundColor(jint arg0);
 		void setCertificate(android::net::http::SslCertificate arg0);
 		void setDownloadListener(JObject arg0);
 		void setFindListener(JObject arg0);
 		void setHorizontalScrollbarOverlay(jboolean arg0);
-		void setHttpAuthUsernamePassword(jstring arg0, jstring arg1, jstring arg2, jstring arg3);
+		void setHttpAuthUsernamePassword(JString arg0, JString arg1, JString arg2, JString arg3);
 		void setInitialScale(jint arg0);
 		void setLayerType(jint arg0, android::graphics::Paint arg1);
 		void setLayoutParams(android::view::ViewGroup_LayoutParams arg0);
@@ -290,7 +293,7 @@ namespace android::webkit
 		void setWebChromeClient(android::webkit::WebChromeClient arg0);
 		void setWebViewClient(android::webkit::WebViewClient arg0);
 		jboolean shouldDelayChildPressedState();
-		jboolean showFindDialog(jstring arg0, jboolean arg1);
+		jboolean showFindDialog(JString arg0, jboolean arg1);
 		void stopLoading();
 		void zoomBy(jfloat arg0);
 		jboolean zoomIn();

@@ -1,3 +1,5 @@
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
 #include "./Paint_Cap.hpp"
 
 namespace android::graphics
@@ -34,22 +36,22 @@ namespace android::graphics
 	// Constructors
 	
 	// Methods
-	android::graphics::Paint_Cap Paint_Cap::valueOf(jstring arg0)
+	android::graphics::Paint_Cap Paint_Cap::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.graphics.Paint$Cap",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/graphics/Paint$Cap;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray Paint_Cap::values()
+	JArray Paint_Cap::values()
 	{
 		return callStaticObjectMethod(
 			"android.graphics.Paint$Cap",
 			"values",
 			"()[Landroid/graphics/Paint$Cap;"
-		).object<jarray>();
+		);
 	}
 } // namespace android::graphics
 

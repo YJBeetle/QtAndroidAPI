@@ -1,3 +1,4 @@
+#include "../../../JByteArray.hpp"
 #include "../Tag.hpp"
 #include "./MifareClassic.hpp"
 
@@ -11,29 +12,29 @@ namespace android::nfc::tech
 			"BLOCK_SIZE"
 		);
 	}
-	jbyteArray MifareClassic::KEY_DEFAULT()
+	JByteArray MifareClassic::KEY_DEFAULT()
 	{
 		return getStaticObjectField(
 			"android.nfc.tech.MifareClassic",
 			"KEY_DEFAULT",
 			"[B"
-		).object<jbyteArray>();
+		);
 	}
-	jbyteArray MifareClassic::KEY_MIFARE_APPLICATION_DIRECTORY()
+	JByteArray MifareClassic::KEY_MIFARE_APPLICATION_DIRECTORY()
 	{
 		return getStaticObjectField(
 			"android.nfc.tech.MifareClassic",
 			"KEY_MIFARE_APPLICATION_DIRECTORY",
 			"[B"
-		).object<jbyteArray>();
+		);
 	}
-	jbyteArray MifareClassic::KEY_NFC_FORUM()
+	JByteArray MifareClassic::KEY_NFC_FORUM()
 	{
 		return getStaticObjectField(
 			"android.nfc.tech.MifareClassic",
 			"KEY_NFC_FORUM",
 			"[B"
-		).object<jbyteArray>();
+		);
 	}
 	jint MifareClassic::SIZE_1K()
 	{
@@ -107,22 +108,22 @@ namespace android::nfc::tech
 			arg0.object()
 		);
 	}
-	jboolean MifareClassic::authenticateSectorWithKeyA(jint arg0, jbyteArray arg1)
+	jboolean MifareClassic::authenticateSectorWithKeyA(jint arg0, JByteArray arg1)
 	{
 		return callMethod<jboolean>(
 			"authenticateSectorWithKeyA",
 			"(I[B)Z",
 			arg0,
-			arg1
+			arg1.object<jbyteArray>()
 		);
 	}
-	jboolean MifareClassic::authenticateSectorWithKeyB(jint arg0, jbyteArray arg1)
+	jboolean MifareClassic::authenticateSectorWithKeyB(jint arg0, JByteArray arg1)
 	{
 		return callMethod<jboolean>(
 			"authenticateSectorWithKeyB",
 			"(I[B)Z",
 			arg0,
-			arg1
+			arg1.object<jbyteArray>()
 		);
 	}
 	jint MifareClassic::blockToSector(jint arg0)
@@ -229,13 +230,13 @@ namespace android::nfc::tech
 			"()Z"
 		);
 	}
-	jbyteArray MifareClassic::readBlock(jint arg0)
+	JByteArray MifareClassic::readBlock(jint arg0)
 	{
 		return callObjectMethod(
 			"readBlock",
 			"(I)[B",
 			arg0
-		).object<jbyteArray>();
+		);
 	}
 	void MifareClassic::restore(jint arg0)
 	{
@@ -261,13 +262,13 @@ namespace android::nfc::tech
 			arg0
 		);
 	}
-	jbyteArray MifareClassic::transceive(jbyteArray arg0)
+	JByteArray MifareClassic::transceive(JByteArray arg0)
 	{
 		return callObjectMethod(
 			"transceive",
 			"([B)[B",
-			arg0
-		).object<jbyteArray>();
+			arg0.object<jbyteArray>()
+		);
 	}
 	void MifareClassic::transfer(jint arg0)
 	{
@@ -277,13 +278,13 @@ namespace android::nfc::tech
 			arg0
 		);
 	}
-	void MifareClassic::writeBlock(jint arg0, jbyteArray arg1)
+	void MifareClassic::writeBlock(jint arg0, JByteArray arg1)
 	{
 		callMethod<void>(
 			"writeBlock",
 			"(I[B)V",
 			arg0,
-			arg1
+			arg1.object<jbyteArray>()
 		);
 	}
 } // namespace android::nfc::tech

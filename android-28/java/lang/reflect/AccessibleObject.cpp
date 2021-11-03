@@ -1,3 +1,8 @@
+#include "../../../JArray.hpp"
+#include "../../../JArray.hpp"
+#include "../../../JClass.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./AccessibleObject.hpp"
 
 namespace java::lang::reflect
@@ -10,69 +15,69 @@ namespace java::lang::reflect
 	// Constructors
 	
 	// Methods
-	void AccessibleObject::setAccessible(jarray arg0, jboolean arg1)
+	void AccessibleObject::setAccessible(JArray arg0, jboolean arg1)
 	{
 		callStaticMethod<void>(
 			"java.lang.reflect.AccessibleObject",
 			"setAccessible",
 			"([Ljava/lang/reflect/AccessibleObject;Z)V",
-			arg0,
+			arg0.object<jarray>(),
 			arg1
 		);
 	}
-	jboolean AccessibleObject::canAccess(jobject arg0)
+	jboolean AccessibleObject::canAccess(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"canAccess",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	JObject AccessibleObject::getAnnotation(jclass arg0)
+	JObject AccessibleObject::getAnnotation(JClass arg0)
 	{
 		return callObjectMethod(
 			"getAnnotation",
 			"(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;",
-			arg0
+			arg0.object<jclass>()
 		);
 	}
-	jarray AccessibleObject::getAnnotations()
+	JArray AccessibleObject::getAnnotations()
 	{
 		return callObjectMethod(
 			"getAnnotations",
 			"()[Ljava/lang/annotation/Annotation;"
-		).object<jarray>();
+		);
 	}
-	jarray AccessibleObject::getAnnotationsByType(jclass arg0)
+	JArray AccessibleObject::getAnnotationsByType(JClass arg0)
 	{
 		return callObjectMethod(
 			"getAnnotationsByType",
 			"(Ljava/lang/Class;)[Ljava/lang/annotation/Annotation;",
-			arg0
-		).object<jarray>();
+			arg0.object<jclass>()
+		);
 	}
-	JObject AccessibleObject::getDeclaredAnnotation(jclass arg0)
+	JObject AccessibleObject::getDeclaredAnnotation(JClass arg0)
 	{
 		return callObjectMethod(
 			"getDeclaredAnnotation",
 			"(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;",
-			arg0
+			arg0.object<jclass>()
 		);
 	}
-	jarray AccessibleObject::getDeclaredAnnotations()
+	JArray AccessibleObject::getDeclaredAnnotations()
 	{
 		return callObjectMethod(
 			"getDeclaredAnnotations",
 			"()[Ljava/lang/annotation/Annotation;"
-		).object<jarray>();
+		);
 	}
-	jarray AccessibleObject::getDeclaredAnnotationsByType(jclass arg0)
+	JArray AccessibleObject::getDeclaredAnnotationsByType(JClass arg0)
 	{
 		return callObjectMethod(
 			"getDeclaredAnnotationsByType",
 			"(Ljava/lang/Class;)[Ljava/lang/annotation/Annotation;",
-			arg0
-		).object<jarray>();
+			arg0.object<jclass>()
+		);
 	}
 	jboolean AccessibleObject::isAccessible()
 	{
@@ -81,12 +86,12 @@ namespace java::lang::reflect
 			"()Z"
 		);
 	}
-	jboolean AccessibleObject::isAnnotationPresent(jclass arg0)
+	jboolean AccessibleObject::isAnnotationPresent(JClass arg0)
 	{
 		return callMethod<jboolean>(
 			"isAnnotationPresent",
 			"(Ljava/lang/Class;)Z",
-			arg0
+			arg0.object<jclass>()
 		);
 	}
 	void AccessibleObject::setAccessible(jboolean arg0)

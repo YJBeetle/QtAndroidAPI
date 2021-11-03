@@ -6,6 +6,7 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
 
 namespace android::content::pm
 {
@@ -24,13 +25,13 @@ namespace android::content::pm
 		// Methods
 		jint describeContents();
 		jboolean getBoolean();
-		jstring getClassName();
+		JString getClassName();
 		jfloat getFloat();
 		jint getInteger();
-		jstring getName();
-		jstring getPackageName();
+		JString getName();
+		JString getPackageName();
 		jint getResourceId();
-		jstring getString();
+		JString getString();
 		jboolean isBoolean();
 		jboolean isFloat();
 		jboolean isInteger();

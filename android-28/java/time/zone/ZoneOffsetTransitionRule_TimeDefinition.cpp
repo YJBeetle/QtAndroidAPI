@@ -1,3 +1,5 @@
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
 #include "../LocalDateTime.hpp"
 #include "../ZoneOffset.hpp"
 #include "./ZoneOffsetTransitionRule_TimeDefinition.hpp"
@@ -36,22 +38,22 @@ namespace java::time::zone
 	// Constructors
 	
 	// Methods
-	java::time::zone::ZoneOffsetTransitionRule_TimeDefinition ZoneOffsetTransitionRule_TimeDefinition::valueOf(jstring arg0)
+	java::time::zone::ZoneOffsetTransitionRule_TimeDefinition ZoneOffsetTransitionRule_TimeDefinition::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"java.time.zone.ZoneOffsetTransitionRule$TimeDefinition",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/time/zone/ZoneOffsetTransitionRule$TimeDefinition;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray ZoneOffsetTransitionRule_TimeDefinition::values()
+	JArray ZoneOffsetTransitionRule_TimeDefinition::values()
 	{
 		return callStaticObjectMethod(
 			"java.time.zone.ZoneOffsetTransitionRule$TimeDefinition",
 			"values",
 			"()[Ljava/time/zone/ZoneOffsetTransitionRule$TimeDefinition;"
-		).object<jarray>();
+		);
 	}
 	java::time::LocalDateTime ZoneOffsetTransitionRule_TimeDefinition::createDateTime(java::time::LocalDateTime arg0, java::time::ZoneOffset arg1, java::time::ZoneOffset arg2)
 	{

@@ -1,14 +1,15 @@
+#include "../../JString.hpp"
 #include "./Prediction.hpp"
 
 namespace android::gesture
 {
 	// Fields
-	jstring Prediction::name()
+	JString Prediction::name()
 	{
 		return getObjectField(
 			"name",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jdouble Prediction::score()
 	{
@@ -23,12 +24,12 @@ namespace android::gesture
 	// Constructors
 	
 	// Methods
-	jstring Prediction::toString()
+	JString Prediction::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::gesture
 

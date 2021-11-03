@@ -1,4 +1,7 @@
+#include "../../JClass.hpp"
 #include "../lang/ClassLoader.hpp"
+#include "../../JString.hpp"
+#include "../../JThrowable.hpp"
 #include "../lang/Void.hpp"
 #include "../lang/reflect/Constructor.hpp"
 #include "../lang/reflect/Method.hpp"
@@ -17,42 +20,42 @@ namespace java::util
 	// Constructors
 	
 	// Methods
-	java::util::ServiceLoader ServiceLoader::load(jclass arg0)
+	java::util::ServiceLoader ServiceLoader::load(JClass arg0)
 	{
 		return callStaticObjectMethod(
 			"java.util.ServiceLoader",
 			"load",
 			"(Ljava/lang/Class;)Ljava/util/ServiceLoader;",
-			arg0
+			arg0.object<jclass>()
 		);
 	}
-	java::util::ServiceLoader ServiceLoader::load(jclass arg0, java::lang::ClassLoader arg1)
+	java::util::ServiceLoader ServiceLoader::load(JClass arg0, java::lang::ClassLoader arg1)
 	{
 		return callStaticObjectMethod(
 			"java.util.ServiceLoader",
 			"load",
 			"(Ljava/lang/Class;Ljava/lang/ClassLoader;)Ljava/util/ServiceLoader;",
-			arg0,
+			arg0.object<jclass>(),
 			arg1.object()
 		);
 	}
-	java::util::ServiceLoader ServiceLoader::load(JObject arg0, jclass arg1)
+	java::util::ServiceLoader ServiceLoader::load(JObject arg0, JClass arg1)
 	{
 		return callStaticObjectMethod(
 			"java.util.ServiceLoader",
 			"load",
 			"(Ljava/lang/ModuleLayer;Ljava/lang/Class;)Ljava/util/ServiceLoader;",
 			arg0.object(),
-			arg1
+			arg1.object<jclass>()
 		);
 	}
-	java::util::ServiceLoader ServiceLoader::loadInstalled(jclass arg0)
+	java::util::ServiceLoader ServiceLoader::loadInstalled(JClass arg0)
 	{
 		return callStaticObjectMethod(
 			"java.util.ServiceLoader",
 			"loadInstalled",
 			"(Ljava/lang/Class;)Ljava/util/ServiceLoader;",
-			arg0
+			arg0.object<jclass>()
 		);
 	}
 	java::util::Optional ServiceLoader::findFirst()
@@ -83,12 +86,12 @@ namespace java::util
 			"()Ljava/util/stream/Stream;"
 		);
 	}
-	jstring ServiceLoader::toString()
+	JString ServiceLoader::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::util
 

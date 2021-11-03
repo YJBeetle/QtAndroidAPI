@@ -1,3 +1,6 @@
+#include "../../../JByteArray.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./CertPath.hpp"
 
 namespace java::security::cert
@@ -10,12 +13,12 @@ namespace java::security::cert
 	// Constructors
 	
 	// Methods
-	jboolean CertPath::equals(jobject arg0)
+	jboolean CertPath::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	JObject CertPath::getCertificates()
@@ -25,20 +28,20 @@ namespace java::security::cert
 			"()Ljava/util/List;"
 		);
 	}
-	jbyteArray CertPath::getEncoded()
+	JByteArray CertPath::getEncoded()
 	{
 		return callObjectMethod(
 			"getEncoded",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
-	jbyteArray CertPath::getEncoded(jstring arg0)
+	JByteArray CertPath::getEncoded(JString arg0)
 	{
 		return callObjectMethod(
 			"getEncoded",
 			"(Ljava/lang/String;)[B",
-			arg0
-		).object<jbyteArray>();
+			arg0.object<jstring>()
+		);
 	}
 	JObject CertPath::getEncodings()
 	{
@@ -47,12 +50,12 @@ namespace java::security::cert
 			"()Ljava/util/Iterator;"
 		);
 	}
-	jstring CertPath::getType()
+	JString CertPath::getType()
 	{
 		return callObjectMethod(
 			"getType",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint CertPath::hashCode()
 	{
@@ -61,12 +64,12 @@ namespace java::security::cert
 			"()I"
 		);
 	}
-	jstring CertPath::toString()
+	JString CertPath::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::security::cert
 

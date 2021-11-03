@@ -1,5 +1,7 @@
 #include "../../net/Uri.hpp"
 #include "../../os/Parcel.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./FileInfo.hpp"
 
 namespace android::telephony::mbms
@@ -27,20 +29,20 @@ namespace android::telephony::mbms
 			"()I"
 		);
 	}
-	jboolean FileInfo::equals(jobject arg0)
+	jboolean FileInfo::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jstring FileInfo::getMimeType()
+	JString FileInfo::getMimeType()
 	{
 		return callObjectMethod(
 			"getMimeType",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::net::Uri FileInfo::getUri()
 	{

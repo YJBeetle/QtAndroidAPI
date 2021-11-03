@@ -2,10 +2,15 @@
 
 #include "../../../JObject.hpp"
 
+class JByteArray;
+class JCharArray;
+class JIntArray;
 namespace android::os
 {
 	class Parcel;
 }
+class JObject;
+class JString;
 
 namespace android::content::pm
 {
@@ -20,17 +25,17 @@ namespace android::content::pm
 		Signature(QJniObject obj);
 		
 		// Constructors
-		Signature(jbyteArray arg0);
-		Signature(jstring arg0);
+		Signature(JByteArray arg0);
+		Signature(JString arg0);
 		
 		// Methods
 		jint describeContents();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint hashCode();
-		jbyteArray toByteArray();
-		jcharArray toChars();
-		jcharArray toChars(jcharArray arg0, jintArray arg1);
-		jstring toCharsString();
+		JByteArray toByteArray();
+		JCharArray toChars();
+		JCharArray toChars(JCharArray arg0, JIntArray arg1);
+		JString toCharsString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::content::pm

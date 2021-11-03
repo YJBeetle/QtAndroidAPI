@@ -2,10 +2,14 @@
 
 #include "../../JObject.hpp"
 
+class JIntArray;
 namespace android::os
 {
 	class Parcel;
 }
+class JString;
+class JObject;
+class JString;
 
 namespace android::telephony
 {
@@ -31,16 +35,16 @@ namespace android::telephony
 		// Methods
 		JObject cycleIterator();
 		jint describeContents();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint getDataLimitBehavior();
 		jlong getDataLimitBytes();
 		jlong getDataUsageBytes();
 		jlong getDataUsageTime();
-		jintArray getNetworkTypes();
-		jstring getSummary();
-		jstring getTitle();
+		JIntArray getNetworkTypes();
+		JString getSummary();
+		JString getTitle();
 		jint hashCode();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::telephony

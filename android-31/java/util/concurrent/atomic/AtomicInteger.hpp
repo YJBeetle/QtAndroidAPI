@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../../../JObject.hpp"
 #include "../../../lang/Number.hpp"
 
+class JString;
 
 namespace java::util::concurrent::atomic
 {
@@ -47,7 +47,7 @@ namespace java::util::concurrent::atomic
 		void setOpaque(jint arg0);
 		void setPlain(jint arg0);
 		void setRelease(jint arg0);
-		jstring toString();
+		JString toString();
 		jint updateAndGet(JObject arg0);
 		jboolean weakCompareAndSet(jint arg0, jint arg1);
 		jboolean weakCompareAndSetAcquire(jint arg0, jint arg1);

@@ -1,3 +1,5 @@
+#include "../../../JString.hpp"
+#include "../../../JThrowable.hpp"
 #include "./CameraAccessException.hpp"
 
 namespace android::hardware::camera2
@@ -49,27 +51,27 @@ namespace android::hardware::camera2
 			"(I)V",
 			arg0
 		) {}
-	CameraAccessException::CameraAccessException(jint arg0, jstring arg1)
+	CameraAccessException::CameraAccessException(jint arg0, JString arg1)
 		: android::util::AndroidException(
 			"android.hardware.camera2.CameraAccessException",
 			"(ILjava/lang/String;)V",
 			arg0,
-			arg1
+			arg1.object<jstring>()
 		) {}
-	CameraAccessException::CameraAccessException(jint arg0, jthrowable arg1)
+	CameraAccessException::CameraAccessException(jint arg0, JThrowable arg1)
 		: android::util::AndroidException(
 			"android.hardware.camera2.CameraAccessException",
 			"(ILjava/lang/Throwable;)V",
 			arg0,
-			arg1
+			arg1.object<jthrowable>()
 		) {}
-	CameraAccessException::CameraAccessException(jint arg0, jstring arg1, jthrowable arg2)
+	CameraAccessException::CameraAccessException(jint arg0, JString arg1, JThrowable arg2)
 		: android::util::AndroidException(
 			"android.hardware.camera2.CameraAccessException",
 			"(ILjava/lang/String;Ljava/lang/Throwable;)V",
 			arg0,
-			arg1,
-			arg2
+			arg1.object<jstring>(),
+			arg2.object<jthrowable>()
 		) {}
 	
 	// Methods

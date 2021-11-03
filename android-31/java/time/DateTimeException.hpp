@@ -1,9 +1,9 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../lang/Exception.hpp"
 #include "../lang/RuntimeException.hpp"
 
+class JString;
+class JThrowable;
 
 namespace java::time
 {
@@ -17,8 +17,8 @@ namespace java::time
 		DateTimeException(QJniObject obj);
 		
 		// Constructors
-		DateTimeException(jstring arg0);
-		DateTimeException(jstring arg0, jthrowable arg1);
+		DateTimeException(JString arg0);
+		DateTimeException(JString arg0, JThrowable arg1);
 		
 		// Methods
 	};

@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JArray;
 namespace android::os
 {
 	class Parcel;
@@ -18,6 +19,7 @@ namespace android::print
 {
 	class PrinterId;
 }
+class JString;
 
 namespace android::print
 {
@@ -42,18 +44,18 @@ namespace android::print
 		
 		// Methods
 		jint describeContents();
-		jint getAdvancedIntOption(jstring arg0);
-		jstring getAdvancedStringOption(jstring arg0);
+		jint getAdvancedIntOption(JString arg0);
+		JString getAdvancedStringOption(JString arg0);
 		android::print::PrintAttributes getAttributes();
 		jint getCopies();
 		jlong getCreationTime();
 		android::print::PrintJobId getId();
-		jstring getLabel();
-		jarray getPages();
+		JString getLabel();
+		JArray getPages();
 		android::print::PrinterId getPrinterId();
 		jint getState();
-		jboolean hasAdvancedOption(jstring arg0);
-		jstring toString();
+		jboolean hasAdvancedOption(JString arg0);
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::print

@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./MalformedJsonException.hpp"
 
 namespace android::util
@@ -8,11 +9,11 @@ namespace android::util
 	MalformedJsonException::MalformedJsonException(QJniObject obj) : java::io::IOException(obj) {}
 	
 	// Constructors
-	MalformedJsonException::MalformedJsonException(jstring arg0)
+	MalformedJsonException::MalformedJsonException(JString arg0)
 		: java::io::IOException(
 			"android.util.MalformedJsonException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

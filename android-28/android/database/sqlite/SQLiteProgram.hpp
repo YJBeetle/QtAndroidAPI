@@ -1,8 +1,10 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "./SQLiteClosable.hpp"
 
+class JByteArray;
+class JObjectArray;
+class JArray;
 namespace android::database::sqlite
 {
 	class SQLiteDatabase;
@@ -11,6 +13,7 @@ namespace android::os
 {
 	class CancellationSignal;
 }
+class JString;
 
 namespace android::database::sqlite
 {
@@ -26,12 +29,12 @@ namespace android::database::sqlite
 		// Constructors
 		
 		// Methods
-		void bindAllArgsAsStrings(jarray arg0);
-		void bindBlob(jint arg0, jbyteArray arg1);
+		void bindAllArgsAsStrings(JArray arg0);
+		void bindBlob(jint arg0, JByteArray arg1);
 		void bindDouble(jint arg0, jdouble arg1);
 		void bindLong(jint arg0, jlong arg1);
 		void bindNull(jint arg0);
-		void bindString(jint arg0, jstring arg1);
+		void bindString(jint arg0, JString arg1);
 		void clearBindings();
 		jint getUniqueId();
 	};

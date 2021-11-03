@@ -1,4 +1,5 @@
 #include "../../os/Parcel.hpp"
+#include "../../../JString.hpp"
 #include "./UsbEndpoint.hpp"
 
 namespace android::hardware::usb
@@ -75,12 +76,12 @@ namespace android::hardware::usb
 			"()I"
 		);
 	}
-	jstring UsbEndpoint::toString()
+	JString UsbEndpoint::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void UsbEndpoint::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

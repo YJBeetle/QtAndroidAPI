@@ -1,9 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../security/Permission.hpp"
 #include "../security/BasicPermission.hpp"
 
+class JString;
 
 namespace java::net
 {
@@ -17,8 +16,8 @@ namespace java::net
 		NetPermission(QJniObject obj);
 		
 		// Constructors
-		NetPermission(jstring arg0);
-		NetPermission(jstring arg0, jstring arg1);
+		NetPermission(JString arg0);
+		NetPermission(JString arg0, JString arg1);
 		
 		// Methods
 	};

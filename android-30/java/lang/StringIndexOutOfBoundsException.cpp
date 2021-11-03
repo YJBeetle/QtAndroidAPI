@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./StringIndexOutOfBoundsException.hpp"
 
 namespace java::lang
@@ -19,11 +20,11 @@ namespace java::lang
 			"(I)V",
 			arg0
 		) {}
-	StringIndexOutOfBoundsException::StringIndexOutOfBoundsException(jstring arg0)
+	StringIndexOutOfBoundsException::StringIndexOutOfBoundsException(JString arg0)
 		: java::lang::IndexOutOfBoundsException(
 			"java.lang.StringIndexOutOfBoundsException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

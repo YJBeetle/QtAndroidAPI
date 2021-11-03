@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../../../JObject.hpp"
 #include "./SaProposal.hpp"
 
+class JObject;
 
 namespace android::net::ipsec::ike
 {
@@ -20,7 +20,7 @@ namespace android::net::ipsec::ike
 		// Methods
 		static JObject getSupportedEncryptionAlgorithms();
 		static JObject getSupportedIntegrityAlgorithms();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint hashCode();
 	};
 } // namespace android::net::ipsec::ike

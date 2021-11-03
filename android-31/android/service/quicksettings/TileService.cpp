@@ -3,42 +3,43 @@
 #include "../../content/Context.hpp"
 #include "../../content/Intent.hpp"
 #include "./Tile.hpp"
+#include "../../../JString.hpp"
 #include "./TileService.hpp"
 
 namespace android::service::quicksettings
 {
 	// Fields
-	jstring TileService::ACTION_QS_TILE()
+	JString TileService::ACTION_QS_TILE()
 	{
 		return getStaticObjectField(
 			"android.service.quicksettings.TileService",
 			"ACTION_QS_TILE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TileService::ACTION_QS_TILE_PREFERENCES()
+	JString TileService::ACTION_QS_TILE_PREFERENCES()
 	{
 		return getStaticObjectField(
 			"android.service.quicksettings.TileService",
 			"ACTION_QS_TILE_PREFERENCES",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TileService::META_DATA_ACTIVE_TILE()
+	JString TileService::META_DATA_ACTIVE_TILE()
 	{
 		return getStaticObjectField(
 			"android.service.quicksettings.TileService",
 			"META_DATA_ACTIVE_TILE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TileService::META_DATA_TOGGLEABLE_TILE()
+	JString TileService::META_DATA_TOGGLEABLE_TILE()
 	{
 		return getStaticObjectField(
 			"android.service.quicksettings.TileService",
 			"META_DATA_TOGGLEABLE_TILE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QJniObject forward

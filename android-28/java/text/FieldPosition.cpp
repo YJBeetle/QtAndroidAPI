@@ -1,3 +1,5 @@
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./Format_Field.hpp"
 #include "./FieldPosition.hpp"
 
@@ -30,12 +32,12 @@ namespace java::text
 		) {}
 	
 	// Methods
-	jboolean FieldPosition::equals(jobject arg0)
+	jboolean FieldPosition::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint FieldPosition::getBeginIndex()
@@ -89,12 +91,12 @@ namespace java::text
 			arg0
 		);
 	}
-	jstring FieldPosition::toString()
+	JString FieldPosition::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::text
 

@@ -1,9 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../content/Context.hpp"
-#include "../content/ContextWrapper.hpp"
-#include "../view/ContextThemeWrapper.hpp"
 #include "./Activity.hpp"
 
 namespace android::content::res
@@ -18,6 +14,7 @@ namespace android::view
 {
 	class InputQueue;
 }
+class JString;
 
 namespace android::app
 {
@@ -25,8 +22,8 @@ namespace android::app
 	{
 	public:
 		// Fields
-		static jstring META_DATA_FUNC_NAME();
-		static jstring META_DATA_LIB_NAME();
+		static JString META_DATA_FUNC_NAME();
+		static JString META_DATA_LIB_NAME();
 		
 		// QJniObject forward
 		template<typename ...Ts> explicit NativeActivity(const char *className, const char *sig, Ts...agv) : android::app::Activity(className, sig, std::forward<Ts>(agv)...) {}

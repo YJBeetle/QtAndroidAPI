@@ -10,6 +10,7 @@ namespace android::content
 {
 	class ContextParams;
 }
+class JString;
 
 namespace android::content
 {
@@ -28,7 +29,7 @@ namespace android::content
 		
 		// Methods
 		android::content::ContextParams build();
-		android::content::ContextParams_Builder setAttributionTag(jstring arg0);
+		android::content::ContextParams_Builder setAttributionTag(JString arg0);
 		android::content::ContextParams_Builder setNextAttributionSource(android::content::AttributionSource arg0);
 	};
 } // namespace android::content

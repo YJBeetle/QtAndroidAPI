@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JObject;
+class JString;
 namespace java::util
 {
 	class Date;
@@ -29,8 +31,8 @@ namespace java::util
 		// Constructors
 		Timer();
 		Timer(jboolean arg0);
-		Timer(jstring arg0);
-		Timer(jstring arg0, jboolean arg1);
+		Timer(JString arg0);
+		Timer(JString arg0, jboolean arg1);
 		
 		// Methods
 		void cancel();

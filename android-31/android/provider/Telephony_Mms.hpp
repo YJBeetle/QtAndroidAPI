@@ -6,6 +6,7 @@ namespace android::net
 {
 	class Uri;
 }
+class JString;
 
 namespace android::provider
 {
@@ -14,7 +15,7 @@ namespace android::provider
 	public:
 		// Fields
 		static android::net::Uri CONTENT_URI();
-		static jstring DEFAULT_SORT_ORDER();
+		static JString DEFAULT_SORT_ORDER();
 		static android::net::Uri REPORT_REQUEST_URI();
 		static android::net::Uri REPORT_STATUS_URI();
 		

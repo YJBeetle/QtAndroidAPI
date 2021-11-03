@@ -1,4 +1,7 @@
+#include "../../../JByteArray.hpp"
 #include "../../io/DataOutputStream.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./Attributes_Name.hpp"
 #include "./Attributes.hpp"
 
@@ -36,27 +39,27 @@ namespace java::util::jar
 			"()V"
 		);
 	}
-	jobject Attributes::clone()
+	JObject Attributes::clone()
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
-	jboolean Attributes::containsKey(jobject arg0)
+	jboolean Attributes::containsKey(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"containsKey",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jboolean Attributes::containsValue(jobject arg0)
+	jboolean Attributes::containsValue(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"containsValue",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	JObject Attributes::entrySet()
@@ -66,37 +69,37 @@ namespace java::util::jar
 			"()Ljava/util/Set;"
 		);
 	}
-	jboolean Attributes::equals(jobject arg0)
+	jboolean Attributes::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jobject Attributes::get(jobject arg0)
+	JObject Attributes::get(JObject arg0)
 	{
 		return callObjectMethod(
 			"get",
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0
-		).object<jobject>();
+			arg0.object<jobject>()
+		);
 	}
-	jstring Attributes::getValue(jstring arg0)
+	JString Attributes::getValue(JString arg0)
 	{
 		return callObjectMethod(
 			"getValue",
 			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
+			arg0.object<jstring>()
+		);
 	}
-	jstring Attributes::getValue(java::util::jar::Attributes_Name arg0)
+	JString Attributes::getValue(java::util::jar::Attributes_Name arg0)
 	{
 		return callObjectMethod(
 			"getValue",
 			"(Ljava/util/jar/Attributes$Name;)Ljava/lang/String;",
 			arg0.object()
-		).object<jstring>();
+		);
 	}
 	jint Attributes::hashCode()
 	{
@@ -119,14 +122,14 @@ namespace java::util::jar
 			"()Ljava/util/Set;"
 		);
 	}
-	jobject Attributes::put(jobject arg0, jobject arg1)
+	JObject Attributes::put(JObject arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"put",
 			"(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0,
-			arg1
-		).object<jobject>();
+			arg0.object<jobject>(),
+			arg1.object<jobject>()
+		);
 	}
 	void Attributes::putAll(JObject arg0)
 	{
@@ -136,22 +139,22 @@ namespace java::util::jar
 			arg0.object()
 		);
 	}
-	jstring Attributes::putValue(jstring arg0, jstring arg1)
+	JString Attributes::putValue(JString arg0, JString arg1)
 	{
 		return callObjectMethod(
 			"putValue",
 			"(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
-			arg0,
-			arg1
-		).object<jstring>();
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
+		);
 	}
-	jobject Attributes::remove(jobject arg0)
+	JObject Attributes::remove(JObject arg0)
 	{
 		return callObjectMethod(
 			"remove",
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0
-		).object<jobject>();
+			arg0.object<jobject>()
+		);
 	}
 	jint Attributes::size()
 	{

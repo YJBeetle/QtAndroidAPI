@@ -2,10 +2,13 @@
 
 #include "../../JObject.hpp"
 
+class JIntArray;
 namespace android::os
 {
 	class Parcel;
 }
+class JObject;
+class JString;
 
 namespace android::telephony
 {
@@ -34,26 +37,26 @@ namespace android::telephony
 		
 		// Methods
 		jint describeContents();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint getCdmaNetworkId();
 		jint getCdmaSystemId();
-		jintArray getCellBandwidths();
+		JIntArray getCellBandwidths();
 		jint getChannelNumber();
 		jint getDuplexMode();
 		jboolean getIsManualSelection();
-		jstring getOperatorAlphaLong();
-		jstring getOperatorAlphaShort();
-		jstring getOperatorNumeric();
+		JString getOperatorAlphaLong();
+		JString getOperatorAlphaShort();
+		JString getOperatorNumeric();
 		jboolean getRoaming();
 		jint getState();
 		jint hashCode();
 		void setIsManualSelection(jboolean arg0);
-		void setOperatorName(jstring arg0, jstring arg1, jstring arg2);
+		void setOperatorName(JString arg0, JString arg1, JString arg2);
 		void setRoaming(jboolean arg0);
 		void setState(jint arg0);
 		void setStateOff();
 		void setStateOutOfService();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::telephony

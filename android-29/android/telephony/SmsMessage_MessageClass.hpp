@@ -1,8 +1,9 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "../../java/lang/Enum.hpp"
 
+class JArray;
+class JString;
 
 namespace android::telephony
 {
@@ -23,8 +24,8 @@ namespace android::telephony
 		// Constructors
 		
 		// Methods
-		static android::telephony::SmsMessage_MessageClass valueOf(jstring arg0);
-		static jarray values();
+		static android::telephony::SmsMessage_MessageClass valueOf(JString arg0);
+		static JArray values();
 	};
 } // namespace android::telephony
 

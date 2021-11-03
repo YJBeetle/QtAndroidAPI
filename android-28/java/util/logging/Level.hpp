@@ -2,6 +2,9 @@
 
 #include "../../../JObject.hpp"
 
+class JArray;
+class JObject;
+class JString;
 namespace java::util
 {
 	class Locale;
@@ -30,14 +33,14 @@ namespace java::util::logging
 		// Constructors
 		
 		// Methods
-		static java::util::logging::Level parse(jstring arg0);
-		jboolean equals(jobject arg0);
-		jstring getLocalizedName();
-		jstring getName();
-		jstring getResourceBundleName();
+		static java::util::logging::Level parse(JString arg0);
+		jboolean equals(JObject arg0);
+		JString getLocalizedName();
+		JString getName();
+		JString getResourceBundleName();
 		jint hashCode();
 		jint intValue();
-		jstring toString();
+		JString toString();
 	};
 } // namespace java::util::logging
 

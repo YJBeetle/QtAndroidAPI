@@ -1,4 +1,7 @@
+#include "../../JIntArray.hpp"
 #include "../os/Parcel.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./SignalThresholdInfo.hpp"
 
 namespace android::telephony
@@ -105,12 +108,12 @@ namespace android::telephony
 			"()I"
 		);
 	}
-	jboolean SignalThresholdInfo::equals(jobject arg0)
+	jboolean SignalThresholdInfo::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint SignalThresholdInfo::getRadioAccessNetworkType()
@@ -127,12 +130,12 @@ namespace android::telephony
 			"()I"
 		);
 	}
-	jintArray SignalThresholdInfo::getThresholds()
+	JIntArray SignalThresholdInfo::getThresholds()
 	{
 		return callObjectMethod(
 			"getThresholds",
 			"()[I"
-		).object<jintArray>();
+		);
 	}
 	jint SignalThresholdInfo::hashCode()
 	{
@@ -141,12 +144,12 @@ namespace android::telephony
 			"()I"
 		);
 	}
-	jstring SignalThresholdInfo::toString()
+	JString SignalThresholdInfo::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void SignalThresholdInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

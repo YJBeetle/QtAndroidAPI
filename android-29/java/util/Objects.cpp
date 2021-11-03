@@ -1,3 +1,6 @@
+#include "../../JObjectArray.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./Objects.hpp"
 
 namespace java::util
@@ -74,140 +77,140 @@ namespace java::util
 			arg1
 		);
 	}
-	jint Objects::compare(jobject arg0, jobject arg1, JObject arg2)
+	jint Objects::compare(JObject arg0, JObject arg1, JObject arg2)
 	{
 		return callStaticMethod<jint>(
 			"java.util.Objects",
 			"compare",
 			"(Ljava/lang/Object;Ljava/lang/Object;Ljava/util/Comparator;)I",
-			arg0,
-			arg1,
+			arg0.object<jobject>(),
+			arg1.object<jobject>(),
 			arg2.object()
 		);
 	}
-	jboolean Objects::deepEquals(jobject arg0, jobject arg1)
+	jboolean Objects::deepEquals(JObject arg0, JObject arg1)
 	{
 		return callStaticMethod<jboolean>(
 			"java.util.Objects",
 			"deepEquals",
 			"(Ljava/lang/Object;Ljava/lang/Object;)Z",
-			arg0,
-			arg1
+			arg0.object<jobject>(),
+			arg1.object<jobject>()
 		);
 	}
-	jboolean Objects::equals(jobject arg0, jobject arg1)
+	jboolean Objects::equals(JObject arg0, JObject arg1)
 	{
 		return callStaticMethod<jboolean>(
 			"java.util.Objects",
 			"equals",
 			"(Ljava/lang/Object;Ljava/lang/Object;)Z",
-			arg0,
-			arg1
+			arg0.object<jobject>(),
+			arg1.object<jobject>()
 		);
 	}
-	jint Objects::hash(jobjectArray arg0)
+	jint Objects::hash(JObjectArray arg0)
 	{
 		return callStaticMethod<jint>(
 			"java.util.Objects",
 			"hash",
 			"([Ljava/lang/Object;)I",
-			arg0
+			arg0.object<jobjectArray>()
 		);
 	}
-	jint Objects::hashCode(jobject arg0)
+	jint Objects::hashCode(JObject arg0)
 	{
 		return callStaticMethod<jint>(
 			"java.util.Objects",
 			"hashCode",
 			"(Ljava/lang/Object;)I",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jboolean Objects::isNull(jobject arg0)
+	jboolean Objects::isNull(JObject arg0)
 	{
 		return callStaticMethod<jboolean>(
 			"java.util.Objects",
 			"isNull",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jboolean Objects::nonNull(jobject arg0)
+	jboolean Objects::nonNull(JObject arg0)
 	{
 		return callStaticMethod<jboolean>(
 			"java.util.Objects",
 			"nonNull",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jobject Objects::requireNonNull(jobject arg0)
+	JObject Objects::requireNonNull(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"java.util.Objects",
 			"requireNonNull",
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0
-		).object<jobject>();
+			arg0.object<jobject>()
+		);
 	}
-	jobject Objects::requireNonNull(jobject arg0, jstring arg1)
+	JObject Objects::requireNonNull(JObject arg0, JString arg1)
 	{
 		return callStaticObjectMethod(
 			"java.util.Objects",
 			"requireNonNull",
 			"(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;",
-			arg0,
-			arg1
-		).object<jobject>();
+			arg0.object<jobject>(),
+			arg1.object<jstring>()
+		);
 	}
-	jobject Objects::requireNonNull(jobject arg0, JObject arg1)
+	JObject Objects::requireNonNull(JObject arg0, JObject arg1)
 	{
 		return callStaticObjectMethod(
 			"java.util.Objects",
 			"requireNonNull",
 			"(Ljava/lang/Object;Ljava/util/function/Supplier;)Ljava/lang/Object;",
-			arg0,
+			arg0.object<jobject>(),
 			arg1.object()
-		).object<jobject>();
+		);
 	}
-	jobject Objects::requireNonNullElse(jobject arg0, jobject arg1)
+	JObject Objects::requireNonNullElse(JObject arg0, JObject arg1)
 	{
 		return callStaticObjectMethod(
 			"java.util.Objects",
 			"requireNonNullElse",
 			"(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0,
-			arg1
-		).object<jobject>();
+			arg0.object<jobject>(),
+			arg1.object<jobject>()
+		);
 	}
-	jobject Objects::requireNonNullElseGet(jobject arg0, JObject arg1)
+	JObject Objects::requireNonNullElseGet(JObject arg0, JObject arg1)
 	{
 		return callStaticObjectMethod(
 			"java.util.Objects",
 			"requireNonNullElseGet",
 			"(Ljava/lang/Object;Ljava/util/function/Supplier;)Ljava/lang/Object;",
-			arg0,
+			arg0.object<jobject>(),
 			arg1.object()
-		).object<jobject>();
+		);
 	}
-	jstring Objects::toString(jobject arg0)
+	JString Objects::toString(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"java.util.Objects",
 			"toString",
 			"(Ljava/lang/Object;)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
+			arg0.object<jobject>()
+		);
 	}
-	jstring Objects::toString(jobject arg0, jstring arg1)
+	JString Objects::toString(JObject arg0, JString arg1)
 	{
 		return callStaticObjectMethod(
 			"java.util.Objects",
 			"toString",
 			"(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/String;",
-			arg0,
-			arg1
-		).object<jstring>();
+			arg0.object<jobject>(),
+			arg1.object<jstring>()
+		);
 	}
 } // namespace java::util
 

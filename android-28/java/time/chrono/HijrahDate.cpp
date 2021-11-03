@@ -1,4 +1,6 @@
 #include "../../io/ObjectInputStream.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "../Clock.hpp"
 #include "../LocalTime.hpp"
 #include "../ZoneId.hpp"
@@ -71,12 +73,12 @@ namespace java::time::chrono
 			arg0.object()
 		);
 	}
-	jboolean HijrahDate::equals(jobject arg0)
+	jboolean HijrahDate::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	java::time::chrono::HijrahChronology HijrahDate::getChronology()
@@ -178,12 +180,12 @@ namespace java::time::chrono
 			"()J"
 		);
 	}
-	jstring HijrahDate::toString()
+	JString HijrahDate::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	JObject HijrahDate::until(JObject arg0)
 	{

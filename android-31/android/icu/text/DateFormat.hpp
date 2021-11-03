@@ -1,9 +1,8 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "../../../java/text/Format.hpp"
 #include "./UFormat.hpp"
 
+class JArray;
 namespace android::icu::text
 {
 	class DateFormat_BooleanAttribute;
@@ -32,6 +31,8 @@ namespace android::icu::util
 {
 	class ULocale;
 }
+class JObject;
+class JString;
 namespace java::lang
 {
 	class StringBuffer;
@@ -59,18 +60,18 @@ namespace android::icu::text
 	{
 	public:
 		// Fields
-		static jstring ABBR_GENERIC_TZ();
-		static jstring ABBR_MONTH();
-		static jstring ABBR_MONTH_DAY();
-		static jstring ABBR_MONTH_WEEKDAY_DAY();
-		static jstring ABBR_QUARTER();
-		static jstring ABBR_SPECIFIC_TZ();
-		static jstring ABBR_UTC_TZ();
-		static jstring ABBR_WEEKDAY();
+		static JString ABBR_GENERIC_TZ();
+		static JString ABBR_MONTH();
+		static JString ABBR_MONTH_DAY();
+		static JString ABBR_MONTH_WEEKDAY_DAY();
+		static JString ABBR_QUARTER();
+		static JString ABBR_SPECIFIC_TZ();
+		static JString ABBR_UTC_TZ();
+		static JString ABBR_WEEKDAY();
 		static jint AM_PM_FIELD();
 		static jint AM_PM_MIDNIGHT_NOON_FIELD();
 		static jint DATE_FIELD();
-		static jstring DAY();
+		static JString DAY();
 		static jint DAY_OF_WEEK_FIELD();
 		static jint DAY_OF_WEEK_IN_MONTH_FIELD();
 		static jint DAY_OF_YEAR_FIELD();
@@ -81,35 +82,35 @@ namespace android::icu::text
 		static jint FLEXIBLE_DAY_PERIOD_FIELD();
 		static jint FRACTIONAL_SECOND_FIELD();
 		static jint FULL();
-		static jstring GENERIC_TZ();
-		static jstring HOUR();
+		static JString GENERIC_TZ();
+		static JString HOUR();
 		static jint HOUR0_FIELD();
 		static jint HOUR1_FIELD();
-		static jstring HOUR24();
-		static jstring HOUR24_MINUTE();
-		static jstring HOUR24_MINUTE_SECOND();
-		static jstring HOUR_MINUTE();
-		static jstring HOUR_MINUTE_SECOND();
+		static JString HOUR24();
+		static JString HOUR24_MINUTE();
+		static JString HOUR24_MINUTE_SECOND();
+		static JString HOUR_MINUTE();
+		static JString HOUR_MINUTE_SECOND();
 		static jint HOUR_OF_DAY0_FIELD();
 		static jint HOUR_OF_DAY1_FIELD();
 		static jint JULIAN_DAY_FIELD();
-		static jstring LOCATION_TZ();
+		static JString LOCATION_TZ();
 		static jint LONG();
 		static jint MEDIUM();
 		static jint MILLISECONDS_IN_DAY_FIELD();
 		static jint MILLISECOND_FIELD();
-		static jstring MINUTE();
+		static JString MINUTE();
 		static jint MINUTE_FIELD();
-		static jstring MINUTE_SECOND();
-		static jstring MONTH();
-		static jstring MONTH_DAY();
+		static JString MINUTE_SECOND();
+		static JString MONTH();
+		static JString MONTH_DAY();
 		static jint MONTH_FIELD();
-		static jstring MONTH_WEEKDAY_DAY();
+		static JString MONTH_WEEKDAY_DAY();
 		static jint NONE();
-		static jstring NUM_MONTH();
-		static jstring NUM_MONTH_DAY();
-		static jstring NUM_MONTH_WEEKDAY_DAY();
-		static jstring QUARTER();
+		static JString NUM_MONTH();
+		static JString NUM_MONTH_DAY();
+		static JString NUM_MONTH_WEEKDAY_DAY();
+		static JString QUARTER();
 		static jint QUARTER_FIELD();
 		static jint RELATIVE();
 		static jint RELATIVE_DEFAULT();
@@ -117,10 +118,10 @@ namespace android::icu::text
 		static jint RELATIVE_LONG();
 		static jint RELATIVE_MEDIUM();
 		static jint RELATIVE_SHORT();
-		static jstring SECOND();
+		static JString SECOND();
 		static jint SECOND_FIELD();
 		static jint SHORT();
-		static jstring SPECIFIC_TZ();
+		static JString SPECIFIC_TZ();
 		static jint STANDALONE_DAY_FIELD();
 		static jint STANDALONE_MONTH_FIELD();
 		static jint STANDALONE_QUARTER_FIELD();
@@ -131,23 +132,23 @@ namespace android::icu::text
 		static jint TIMEZONE_LOCALIZED_GMT_OFFSET_FIELD();
 		static jint TIMEZONE_RFC_FIELD();
 		static jint TIMEZONE_SPECIAL_FIELD();
-		static jstring WEEKDAY();
+		static JString WEEKDAY();
 		static jint WEEK_OF_MONTH_FIELD();
 		static jint WEEK_OF_YEAR_FIELD();
-		static jstring YEAR();
-		static jstring YEAR_ABBR_MONTH();
-		static jstring YEAR_ABBR_MONTH_DAY();
-		static jstring YEAR_ABBR_MONTH_WEEKDAY_DAY();
-		static jstring YEAR_ABBR_QUARTER();
+		static JString YEAR();
+		static JString YEAR_ABBR_MONTH();
+		static JString YEAR_ABBR_MONTH_DAY();
+		static JString YEAR_ABBR_MONTH_WEEKDAY_DAY();
+		static JString YEAR_ABBR_QUARTER();
 		static jint YEAR_FIELD();
-		static jstring YEAR_MONTH();
-		static jstring YEAR_MONTH_DAY();
-		static jstring YEAR_MONTH_WEEKDAY_DAY();
+		static JString YEAR_MONTH();
+		static JString YEAR_MONTH_DAY();
+		static JString YEAR_MONTH_WEEKDAY_DAY();
 		static jint YEAR_NAME_FIELD();
-		static jstring YEAR_NUM_MONTH();
-		static jstring YEAR_NUM_MONTH_DAY();
-		static jstring YEAR_NUM_MONTH_WEEKDAY_DAY();
-		static jstring YEAR_QUARTER();
+		static JString YEAR_NUM_MONTH();
+		static JString YEAR_NUM_MONTH_DAY();
+		static JString YEAR_NUM_MONTH_WEEKDAY_DAY();
+		static JString YEAR_QUARTER();
 		static jint YEAR_WOY_FIELD();
 		
 		// QJniObject forward
@@ -157,7 +158,7 @@ namespace android::icu::text
 		// Constructors
 		
 		// Methods
-		static jarray getAvailableLocales();
+		static JArray getAvailableLocales();
 		static android::icu::text::DateFormat getDateInstance();
 		static android::icu::text::DateFormat getDateInstance(jint arg0);
 		static android::icu::text::DateFormat getDateInstance(android::icu::util::Calendar arg0, jint arg1);
@@ -175,16 +176,16 @@ namespace android::icu::text
 		static android::icu::text::DateFormat getInstance();
 		static android::icu::text::DateFormat getInstance(android::icu::util::Calendar arg0);
 		static android::icu::text::DateFormat getInstance(android::icu::util::Calendar arg0, java::util::Locale arg1);
-		static android::icu::text::DateFormat getInstanceForSkeleton(jstring arg0);
-		static android::icu::text::DateFormat getInstanceForSkeleton(jstring arg0, android::icu::util::ULocale arg1);
-		static android::icu::text::DateFormat getInstanceForSkeleton(jstring arg0, java::util::Locale arg1);
-		static android::icu::text::DateFormat getInstanceForSkeleton(android::icu::util::Calendar arg0, jstring arg1, android::icu::util::ULocale arg2);
-		static android::icu::text::DateFormat getInstanceForSkeleton(android::icu::util::Calendar arg0, jstring arg1, java::util::Locale arg2);
-		static android::icu::text::DateFormat getPatternInstance(jstring arg0);
-		static android::icu::text::DateFormat getPatternInstance(jstring arg0, android::icu::util::ULocale arg1);
-		static android::icu::text::DateFormat getPatternInstance(jstring arg0, java::util::Locale arg1);
-		static android::icu::text::DateFormat getPatternInstance(android::icu::util::Calendar arg0, jstring arg1, android::icu::util::ULocale arg2);
-		static android::icu::text::DateFormat getPatternInstance(android::icu::util::Calendar arg0, jstring arg1, java::util::Locale arg2);
+		static android::icu::text::DateFormat getInstanceForSkeleton(JString arg0);
+		static android::icu::text::DateFormat getInstanceForSkeleton(JString arg0, android::icu::util::ULocale arg1);
+		static android::icu::text::DateFormat getInstanceForSkeleton(JString arg0, java::util::Locale arg1);
+		static android::icu::text::DateFormat getInstanceForSkeleton(android::icu::util::Calendar arg0, JString arg1, android::icu::util::ULocale arg2);
+		static android::icu::text::DateFormat getInstanceForSkeleton(android::icu::util::Calendar arg0, JString arg1, java::util::Locale arg2);
+		static android::icu::text::DateFormat getPatternInstance(JString arg0);
+		static android::icu::text::DateFormat getPatternInstance(JString arg0, android::icu::util::ULocale arg1);
+		static android::icu::text::DateFormat getPatternInstance(JString arg0, java::util::Locale arg1);
+		static android::icu::text::DateFormat getPatternInstance(android::icu::util::Calendar arg0, JString arg1, android::icu::util::ULocale arg2);
+		static android::icu::text::DateFormat getPatternInstance(android::icu::util::Calendar arg0, JString arg1, java::util::Locale arg2);
 		static android::icu::text::DateFormat getTimeInstance();
 		static android::icu::text::DateFormat getTimeInstance(jint arg0);
 		static android::icu::text::DateFormat getTimeInstance(android::icu::util::Calendar arg0, jint arg1);
@@ -192,11 +193,11 @@ namespace android::icu::text
 		static android::icu::text::DateFormat getTimeInstance(jint arg0, java::util::Locale arg1);
 		static android::icu::text::DateFormat getTimeInstance(android::icu::util::Calendar arg0, jint arg1, android::icu::util::ULocale arg2);
 		static android::icu::text::DateFormat getTimeInstance(android::icu::util::Calendar arg0, jint arg1, java::util::Locale arg2);
-		jobject clone();
-		jboolean equals(jobject arg0);
-		jstring format(java::util::Date arg0);
+		JObject clone();
+		jboolean equals(JObject arg0);
+		JString format(java::util::Date arg0);
 		java::lang::StringBuffer format(android::icu::util::Calendar arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2);
-		java::lang::StringBuffer format(jobject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2);
+		java::lang::StringBuffer format(JObject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2);
 		java::lang::StringBuffer format(java::util::Date arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2);
 		jboolean getBooleanAttribute(android::icu::text::DateFormat_BooleanAttribute arg0);
 		android::icu::util::Calendar getCalendar();
@@ -206,10 +207,10 @@ namespace android::icu::text
 		jint hashCode();
 		jboolean isCalendarLenient();
 		jboolean isLenient();
-		java::util::Date parse(jstring arg0);
-		java::util::Date parse(jstring arg0, java::text::ParsePosition arg1);
-		void parse(jstring arg0, android::icu::util::Calendar arg1, java::text::ParsePosition arg2);
-		jobject parseObject(jstring arg0, java::text::ParsePosition arg1);
+		java::util::Date parse(JString arg0);
+		java::util::Date parse(JString arg0, java::text::ParsePosition arg1);
+		void parse(JString arg0, android::icu::util::Calendar arg1, java::text::ParsePosition arg2);
+		JObject parseObject(JString arg0, java::text::ParsePosition arg1);
 		android::icu::text::DateFormat setBooleanAttribute(android::icu::text::DateFormat_BooleanAttribute arg0, jboolean arg1);
 		void setCalendar(android::icu::util::Calendar arg0);
 		void setCalendarLenient(jboolean arg0);

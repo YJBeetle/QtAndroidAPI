@@ -1,8 +1,10 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "../lang/Enum.hpp"
 
+class JArray;
+class JObject;
+class JString;
 namespace java::time::format
 {
 	class TextStyle;
@@ -39,17 +41,17 @@ namespace java::time
 		// Methods
 		static java::time::DayOfWeek from(JObject arg0);
 		static java::time::DayOfWeek of(jint arg0);
-		static java::time::DayOfWeek valueOf(jstring arg0);
-		static jarray values();
+		static java::time::DayOfWeek valueOf(JString arg0);
+		static JArray values();
 		JObject adjustInto(JObject arg0);
 		jint get(JObject arg0);
-		jstring getDisplayName(java::time::format::TextStyle arg0, java::util::Locale arg1);
+		JString getDisplayName(java::time::format::TextStyle arg0, java::util::Locale arg1);
 		jlong getLong(JObject arg0);
 		jint getValue();
 		jboolean isSupported(JObject arg0);
 		java::time::DayOfWeek minus(jlong arg0);
 		java::time::DayOfWeek plus(jlong arg0);
-		jobject query(JObject arg0);
+		JObject query(JObject arg0);
 		java::time::temporal::ValueRange range(JObject arg0);
 	};
 } // namespace java::time

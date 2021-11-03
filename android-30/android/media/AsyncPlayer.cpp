@@ -1,6 +1,7 @@
 #include "../content/Context.hpp"
 #include "./AudioAttributes.hpp"
 #include "../net/Uri.hpp"
+#include "../../JString.hpp"
 #include "./AsyncPlayer.hpp"
 
 namespace android::media
@@ -11,11 +12,11 @@ namespace android::media
 	AsyncPlayer::AsyncPlayer(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	AsyncPlayer::AsyncPlayer(jstring arg0)
+	AsyncPlayer::AsyncPlayer(JString arg0)
 		: JObject(
 			"android.media.AsyncPlayer",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

@@ -1,10 +1,8 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "../../lang/Exception.hpp"
-#include "../../lang/RuntimeException.hpp"
 #include "../../lang/IllegalStateException.hpp"
 
+class JString;
 
 namespace java::util::concurrent
 {
@@ -19,7 +17,7 @@ namespace java::util::concurrent
 		
 		// Constructors
 		CancellationException();
-		CancellationException(jstring arg0);
+		CancellationException(JString arg0);
 		
 		// Methods
 	};

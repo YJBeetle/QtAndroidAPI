@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JIntArray;
+class JObject;
 
 namespace android::animation
 {
@@ -16,11 +18,11 @@ namespace android::animation
 		
 		// Constructors
 		IntArrayEvaluator();
-		IntArrayEvaluator(jintArray arg0);
+		IntArrayEvaluator(JIntArray arg0);
 		
 		// Methods
-		jintArray evaluate(jfloat arg0, jintArray arg1, jintArray arg2);
-		jobject evaluate(jfloat arg0, jobject arg1, jobject arg2);
+		JIntArray evaluate(jfloat arg0, JIntArray arg1, JIntArray arg2);
+		JObject evaluate(jfloat arg0, JObject arg1, JObject arg2);
 	};
 } // namespace android::animation
 

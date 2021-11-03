@@ -2,10 +2,12 @@
 
 #include "../../JObject.hpp"
 
+class JArray;
 namespace android::os
 {
 	class Parcel;
 }
+class JString;
 
 namespace android::location
 {
@@ -20,15 +22,15 @@ namespace android::location
 		GnssAntennaInfo_SphericalCorrections(QJniObject obj);
 		
 		// Constructors
-		GnssAntennaInfo_SphericalCorrections(jarray arg0, jarray arg1);
+		GnssAntennaInfo_SphericalCorrections(JArray arg0, JArray arg1);
 		
 		// Methods
 		jint describeContents();
-		jarray getCorrectionUncertaintiesArray();
-		jarray getCorrectionsArray();
+		JArray getCorrectionUncertaintiesArray();
+		JArray getCorrectionsArray();
 		jdouble getDeltaPhi();
 		jdouble getDeltaTheta();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::location

@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JArray;
 namespace android::app
 {
 	class Activity;
@@ -30,6 +31,7 @@ namespace android::view
 {
 	class View;
 }
+class JString;
 
 namespace android::app
 {
@@ -37,8 +39,8 @@ namespace android::app
 	{
 	public:
 		// Fields
-		static jstring EXTRA_USAGE_TIME_REPORT();
-		static jstring EXTRA_USAGE_TIME_REPORT_PACKAGES();
+		static JString EXTRA_USAGE_TIME_REPORT();
+		static JString EXTRA_USAGE_TIME_REPORT_PACKAGES();
 		
 		// QJniObject forward
 		template<typename ...Ts> explicit ActivityOptions(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
@@ -51,8 +53,8 @@ namespace android::app
 		static android::app::ActivityOptions makeClipRevealAnimation(android::view::View arg0, jint arg1, jint arg2, jint arg3, jint arg4);
 		static android::app::ActivityOptions makeCustomAnimation(android::content::Context arg0, jint arg1, jint arg2);
 		static android::app::ActivityOptions makeScaleUpAnimation(android::view::View arg0, jint arg1, jint arg2, jint arg3, jint arg4);
-		static android::app::ActivityOptions makeSceneTransitionAnimation(android::app::Activity arg0, jarray arg1);
-		static android::app::ActivityOptions makeSceneTransitionAnimation(android::app::Activity arg0, android::view::View arg1, jstring arg2);
+		static android::app::ActivityOptions makeSceneTransitionAnimation(android::app::Activity arg0, JArray arg1);
+		static android::app::ActivityOptions makeSceneTransitionAnimation(android::app::Activity arg0, android::view::View arg1, JString arg2);
 		static android::app::ActivityOptions makeTaskLaunchBehind();
 		static android::app::ActivityOptions makeThumbnailScaleUpAnimation(android::view::View arg0, android::graphics::Bitmap arg1, jint arg2, jint arg3);
 		android::graphics::Rect getLaunchBounds();
@@ -64,7 +66,7 @@ namespace android::app
 		android::app::ActivityOptions setLaunchDisplayId(jint arg0);
 		android::app::ActivityOptions setLockTaskEnabled(jboolean arg0);
 		android::os::Bundle toBundle();
-		jstring toString();
+		JString toString();
 		void update(android::app::ActivityOptions arg0);
 	};
 } // namespace android::app

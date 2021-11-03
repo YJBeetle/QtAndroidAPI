@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JArray;
 namespace android::content
 {
 	class IntentSender;
@@ -18,6 +19,7 @@ namespace android::view::autofill
 {
 	class AutofillId;
 }
+class JString;
 
 namespace android::service::autofill
 {
@@ -32,16 +34,16 @@ namespace android::service::autofill
 		
 		// Constructors
 		SaveInfo_Builder(jint arg0);
-		SaveInfo_Builder(jint arg0, jarray arg1);
+		SaveInfo_Builder(jint arg0, JArray arg1);
 		
 		// Methods
-		android::service::autofill::SaveInfo_Builder addSanitizer(JObject arg0, jarray arg1);
+		android::service::autofill::SaveInfo_Builder addSanitizer(JObject arg0, JArray arg1);
 		android::service::autofill::SaveInfo build();
 		android::service::autofill::SaveInfo_Builder setCustomDescription(android::service::autofill::CustomDescription arg0);
-		android::service::autofill::SaveInfo_Builder setDescription(jstring arg0);
+		android::service::autofill::SaveInfo_Builder setDescription(JString arg0);
 		android::service::autofill::SaveInfo_Builder setFlags(jint arg0);
 		android::service::autofill::SaveInfo_Builder setNegativeAction(jint arg0, android::content::IntentSender arg1);
-		android::service::autofill::SaveInfo_Builder setOptionalIds(jarray arg0);
+		android::service::autofill::SaveInfo_Builder setOptionalIds(JArray arg0);
 		android::service::autofill::SaveInfo_Builder setTriggerId(android::view::autofill::AutofillId arg0);
 		android::service::autofill::SaveInfo_Builder setValidator(JObject arg0);
 	};

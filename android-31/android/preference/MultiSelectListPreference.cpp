@@ -1,6 +1,9 @@
+#include "../../JArray.hpp"
 #include "../app/AlertDialog_Builder.hpp"
 #include "../content/Context.hpp"
 #include "../content/res/TypedArray.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./MultiSelectListPreference.hpp"
 
 namespace android::preference
@@ -43,27 +46,27 @@ namespace android::preference
 		) {}
 	
 	// Methods
-	jint MultiSelectListPreference::findIndexOfValue(jstring arg0)
+	jint MultiSelectListPreference::findIndexOfValue(JString arg0)
 	{
 		return callMethod<jint>(
 			"findIndexOfValue",
 			"(Ljava/lang/String;)I",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray MultiSelectListPreference::getEntries()
+	JArray MultiSelectListPreference::getEntries()
 	{
 		return callObjectMethod(
 			"getEntries",
 			"()[Ljava/lang/CharSequence;"
-		).object<jarray>();
+		);
 	}
-	jarray MultiSelectListPreference::getEntryValues()
+	JArray MultiSelectListPreference::getEntryValues()
 	{
 		return callObjectMethod(
 			"getEntryValues",
 			"()[Ljava/lang/CharSequence;"
-		).object<jarray>();
+		);
 	}
 	JObject MultiSelectListPreference::getValues()
 	{
@@ -72,12 +75,12 @@ namespace android::preference
 			"()Ljava/util/Set;"
 		);
 	}
-	void MultiSelectListPreference::setEntries(jarray arg0)
+	void MultiSelectListPreference::setEntries(JArray arg0)
 	{
 		callMethod<void>(
 			"setEntries",
 			"([Ljava/lang/CharSequence;)V",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
 	void MultiSelectListPreference::setEntries(jint arg0)
@@ -88,12 +91,12 @@ namespace android::preference
 			arg0
 		);
 	}
-	void MultiSelectListPreference::setEntryValues(jarray arg0)
+	void MultiSelectListPreference::setEntryValues(JArray arg0)
 	{
 		callMethod<void>(
 			"setEntryValues",
 			"([Ljava/lang/CharSequence;)V",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
 	void MultiSelectListPreference::setEntryValues(jint arg0)

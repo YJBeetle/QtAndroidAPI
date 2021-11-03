@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../../../JObject.hpp"
 #include "./ControlTemplate.hpp"
 
+class JString;
 
 namespace android::service::controls::templates
 {
@@ -16,7 +16,7 @@ namespace android::service::controls::templates
 		StatelessTemplate(QJniObject obj);
 		
 		// Constructors
-		StatelessTemplate(jstring arg0);
+		StatelessTemplate(JString arg0);
 		
 		// Methods
 		jint getTemplateType();

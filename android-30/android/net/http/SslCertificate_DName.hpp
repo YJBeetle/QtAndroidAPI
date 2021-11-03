@@ -6,6 +6,7 @@ namespace android::net::http
 {
 	class SslCertificate;
 }
+class JString;
 
 namespace android::net::http
 {
@@ -19,13 +20,13 @@ namespace android::net::http
 		SslCertificate_DName(QJniObject obj);
 		
 		// Constructors
-		SslCertificate_DName(android::net::http::SslCertificate arg0, jstring arg1);
+		SslCertificate_DName(android::net::http::SslCertificate arg0, JString arg1);
 		
 		// Methods
-		jstring getCName();
-		jstring getDName();
-		jstring getOName();
-		jstring getUName();
+		JString getCName();
+		JString getDName();
+		JString getOName();
+		JString getUName();
 	};
 } // namespace android::net::http
 

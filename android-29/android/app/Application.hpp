@@ -1,13 +1,12 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../content/Context.hpp"
 #include "../content/ContextWrapper.hpp"
 
 namespace android::content::res
 {
 	class Configuration;
 }
+class JString;
 
 namespace android::app
 {
@@ -24,7 +23,7 @@ namespace android::app
 		Application();
 		
 		// Methods
-		static jstring getProcessName();
+		static JString getProcessName();
 		void onConfigurationChanged(android::content::res::Configuration arg0);
 		void onCreate();
 		void onLowMemory();

@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JString;
 
 namespace android::webkit
 {
@@ -27,7 +28,7 @@ namespace android::webkit
 		// Constructors
 		
 		// Methods
-		jstring getExtra();
+		JString getExtra();
 		jint getType();
 	};
 } // namespace android::webkit

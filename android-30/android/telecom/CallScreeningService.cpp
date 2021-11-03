@@ -1,18 +1,19 @@
 #include "../content/Intent.hpp"
 #include "./Call_Details.hpp"
 #include "./CallScreeningService_CallResponse.hpp"
+#include "../../JString.hpp"
 #include "./CallScreeningService.hpp"
 
 namespace android::telecom
 {
 	// Fields
-	jstring CallScreeningService::SERVICE_INTERFACE()
+	JString CallScreeningService::SERVICE_INTERFACE()
 	{
 		return getStaticObjectField(
 			"android.telecom.CallScreeningService",
 			"SERVICE_INTERFACE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QJniObject forward

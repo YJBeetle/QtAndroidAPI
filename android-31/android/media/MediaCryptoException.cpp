@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./MediaCryptoException.hpp"
 
 namespace android::media
@@ -8,11 +9,11 @@ namespace android::media
 	MediaCryptoException::MediaCryptoException(QJniObject obj) : java::lang::Exception(obj) {}
 	
 	// Constructors
-	MediaCryptoException::MediaCryptoException(jstring arg0)
+	MediaCryptoException::MediaCryptoException(JString arg0)
 		: java::lang::Exception(
 			"android.media.MediaCryptoException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

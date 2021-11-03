@@ -2,6 +2,8 @@
 
 #include "../../../JObject.hpp"
 
+class JObject;
+class JString;
 namespace java::security::cert
 {
 	class TrustAnchor;
@@ -22,11 +24,11 @@ namespace java::security::cert
 		PKIXCertPathValidatorResult(java::security::cert::TrustAnchor arg0, JObject arg1, JObject arg2);
 		
 		// Methods
-		jobject clone();
+		JObject clone();
 		JObject getPolicyTree();
 		JObject getPublicKey();
 		java::security::cert::TrustAnchor getTrustAnchor();
-		jstring toString();
+		JString toString();
 	};
 } // namespace java::security::cert
 

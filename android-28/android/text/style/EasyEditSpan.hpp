@@ -10,6 +10,7 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
 
 namespace android::text::style
 {
@@ -17,7 +18,7 @@ namespace android::text::style
 	{
 	public:
 		// Fields
-		static jstring EXTRA_TEXT_CHANGED_TYPE();
+		static JString EXTRA_TEXT_CHANGED_TYPE();
 		static jint TEXT_DELETED();
 		static jint TEXT_MODIFIED();
 		

@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JString;
 
 namespace android::service::autofill
 {
@@ -17,9 +18,9 @@ namespace android::service::autofill
 		// Constructors
 		
 		// Methods
-		jstring getCategoryId();
+		JString getCategoryId();
 		jfloat getScore();
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::service::autofill
 

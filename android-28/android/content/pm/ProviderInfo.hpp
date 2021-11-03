@@ -1,13 +1,14 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "./PackageItemInfo.hpp"
 #include "./ComponentInfo.hpp"
 
+class JArray;
+class JArray;
 namespace android::os
 {
 	class Parcel;
 }
+class JString;
 
 namespace android::content::pm
 {
@@ -17,16 +18,16 @@ namespace android::content::pm
 		// Fields
 		static JObject CREATOR();
 		static jint FLAG_SINGLE_USER();
-		jstring authority();
+		JString authority();
 		jint flags();
 		jboolean grantUriPermissions();
 		jint initOrder();
 		jboolean isSyncable();
 		jboolean multiprocess();
-		jarray pathPermissions();
-		jstring readPermission();
-		jarray uriPermissionPatterns();
-		jstring writePermission();
+		JArray pathPermissions();
+		JString readPermission();
+		JArray uriPermissionPatterns();
+		JString writePermission();
 		
 		// QJniObject forward
 		template<typename ...Ts> explicit ProviderInfo(const char *className, const char *sig, Ts...agv) : android::content::pm::ComponentInfo(className, sig, std::forward<Ts>(agv)...) {}
@@ -38,8 +39,8 @@ namespace android::content::pm
 		
 		// Methods
 		jint describeContents();
-		void dump(JObject arg0, jstring arg1);
-		jstring toString();
+		void dump(JObject arg0, JString arg1);
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::content::pm

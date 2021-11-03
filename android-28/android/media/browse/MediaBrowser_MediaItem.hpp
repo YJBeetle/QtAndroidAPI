@@ -10,6 +10,7 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
 
 namespace android::media::browse
 {
@@ -32,10 +33,10 @@ namespace android::media::browse
 		jint describeContents();
 		android::media::MediaDescription getDescription();
 		jint getFlags();
-		jstring getMediaId();
+		JString getMediaId();
 		jboolean isBrowsable();
 		jboolean isPlayable();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::media::browse

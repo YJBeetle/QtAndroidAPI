@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "./Handler.hpp"
 
+class JArray;
 namespace java::util::logging
 {
 	class Handler;

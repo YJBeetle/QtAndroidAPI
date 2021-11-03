@@ -1,15 +1,16 @@
+#include "../../JString.hpp"
 #include "./SyncStateContract_Constants.hpp"
 
 namespace android::provider
 {
 	// Fields
-	jstring SyncStateContract_Constants::CONTENT_DIRECTORY()
+	JString SyncStateContract_Constants::CONTENT_DIRECTORY()
 	{
 		return getStaticObjectField(
 			"android.provider.SyncStateContract$Constants",
 			"CONTENT_DIRECTORY",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QJniObject forward

@@ -1,5 +1,6 @@
 #include "../../graphics/drawable/Icon.hpp"
 #include "../../os/Parcel.hpp"
+#include "../../../JString.hpp"
 #include "./GetWalletCardsError.hpp"
 
 namespace android::service::quickaccesswallet
@@ -18,12 +19,12 @@ namespace android::service::quickaccesswallet
 	GetWalletCardsError::GetWalletCardsError(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	GetWalletCardsError::GetWalletCardsError(android::graphics::drawable::Icon arg0, jstring arg1)
+	GetWalletCardsError::GetWalletCardsError(android::graphics::drawable::Icon arg0, JString arg1)
 		: JObject(
 			"android.service.quickaccesswallet.GetWalletCardsError",
 			"(Landroid/graphics/drawable/Icon;Ljava/lang/CharSequence;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		) {}
 	
 	// Methods
@@ -41,12 +42,12 @@ namespace android::service::quickaccesswallet
 			"()Landroid/graphics/drawable/Icon;"
 		);
 	}
-	jstring GetWalletCardsError::getMessage()
+	JString GetWalletCardsError::getMessage()
 	{
 		return callObjectMethod(
 			"getMessage",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	void GetWalletCardsError::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

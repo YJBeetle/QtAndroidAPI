@@ -1,3 +1,4 @@
+#include "../../JByteArray.hpp"
 #include "./MediaDrm_KeyStatus.hpp"
 
 namespace android::media
@@ -52,12 +53,12 @@ namespace android::media
 	// Constructors
 	
 	// Methods
-	jbyteArray MediaDrm_KeyStatus::getKeyId()
+	JByteArray MediaDrm_KeyStatus::getKeyId()
 	{
 		return callObjectMethod(
 			"getKeyId",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
 	jint MediaDrm_KeyStatus::getStatusCode()
 	{

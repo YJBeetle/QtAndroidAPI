@@ -1,3 +1,6 @@
+#include "../../JObjectArray.hpp"
+#include "../../JClass.hpp"
+#include "../../JObject.hpp"
 #include "./ArrayList.hpp"
 #include "./Random.hpp"
 #include "./Collections.hpp"
@@ -36,14 +39,14 @@ namespace java::util
 	// Constructors
 	
 	// Methods
-	jboolean Collections::addAll(JObject arg0, jobjectArray arg1)
+	jboolean Collections::addAll(JObject arg0, JObjectArray arg1)
 	{
 		return callStaticMethod<jboolean>(
 			"java.util.Collections",
 			"addAll",
 			"(Ljava/util/Collection;[Ljava/lang/Object;)Z",
 			arg0.object(),
-			arg1
+			arg1.object<jobjectArray>()
 		);
 	}
 	JObject Collections::asLifoQueue(JObject arg0)
@@ -55,118 +58,118 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	jint Collections::binarySearch(JObject arg0, jobject arg1)
+	jint Collections::binarySearch(JObject arg0, JObject arg1)
 	{
 		return callStaticMethod<jint>(
 			"java.util.Collections",
 			"binarySearch",
 			"(Ljava/util/List;Ljava/lang/Object;)I",
 			arg0.object(),
-			arg1
+			arg1.object<jobject>()
 		);
 	}
-	jint Collections::binarySearch(JObject arg0, jobject arg1, JObject arg2)
+	jint Collections::binarySearch(JObject arg0, JObject arg1, JObject arg2)
 	{
 		return callStaticMethod<jint>(
 			"java.util.Collections",
 			"binarySearch",
 			"(Ljava/util/List;Ljava/lang/Object;Ljava/util/Comparator;)I",
 			arg0.object(),
-			arg1,
+			arg1.object<jobject>(),
 			arg2.object()
 		);
 	}
-	JObject Collections::checkedCollection(JObject arg0, jclass arg1)
+	JObject Collections::checkedCollection(JObject arg0, JClass arg1)
 	{
 		return callStaticObjectMethod(
 			"java.util.Collections",
 			"checkedCollection",
 			"(Ljava/util/Collection;Ljava/lang/Class;)Ljava/util/Collection;",
 			arg0.object(),
-			arg1
+			arg1.object<jclass>()
 		);
 	}
-	JObject Collections::checkedList(JObject arg0, jclass arg1)
+	JObject Collections::checkedList(JObject arg0, JClass arg1)
 	{
 		return callStaticObjectMethod(
 			"java.util.Collections",
 			"checkedList",
 			"(Ljava/util/List;Ljava/lang/Class;)Ljava/util/List;",
 			arg0.object(),
-			arg1
+			arg1.object<jclass>()
 		);
 	}
-	JObject Collections::checkedMap(JObject arg0, jclass arg1, jclass arg2)
+	JObject Collections::checkedMap(JObject arg0, JClass arg1, JClass arg2)
 	{
 		return callStaticObjectMethod(
 			"java.util.Collections",
 			"checkedMap",
 			"(Ljava/util/Map;Ljava/lang/Class;Ljava/lang/Class;)Ljava/util/Map;",
 			arg0.object(),
-			arg1,
-			arg2
+			arg1.object<jclass>(),
+			arg2.object<jclass>()
 		);
 	}
-	JObject Collections::checkedNavigableMap(JObject arg0, jclass arg1, jclass arg2)
+	JObject Collections::checkedNavigableMap(JObject arg0, JClass arg1, JClass arg2)
 	{
 		return callStaticObjectMethod(
 			"java.util.Collections",
 			"checkedNavigableMap",
 			"(Ljava/util/NavigableMap;Ljava/lang/Class;Ljava/lang/Class;)Ljava/util/NavigableMap;",
 			arg0.object(),
-			arg1,
-			arg2
+			arg1.object<jclass>(),
+			arg2.object<jclass>()
 		);
 	}
-	JObject Collections::checkedNavigableSet(JObject arg0, jclass arg1)
+	JObject Collections::checkedNavigableSet(JObject arg0, JClass arg1)
 	{
 		return callStaticObjectMethod(
 			"java.util.Collections",
 			"checkedNavigableSet",
 			"(Ljava/util/NavigableSet;Ljava/lang/Class;)Ljava/util/NavigableSet;",
 			arg0.object(),
-			arg1
+			arg1.object<jclass>()
 		);
 	}
-	JObject Collections::checkedQueue(JObject arg0, jclass arg1)
+	JObject Collections::checkedQueue(JObject arg0, JClass arg1)
 	{
 		return callStaticObjectMethod(
 			"java.util.Collections",
 			"checkedQueue",
 			"(Ljava/util/Queue;Ljava/lang/Class;)Ljava/util/Queue;",
 			arg0.object(),
-			arg1
+			arg1.object<jclass>()
 		);
 	}
-	JObject Collections::checkedSet(JObject arg0, jclass arg1)
+	JObject Collections::checkedSet(JObject arg0, JClass arg1)
 	{
 		return callStaticObjectMethod(
 			"java.util.Collections",
 			"checkedSet",
 			"(Ljava/util/Set;Ljava/lang/Class;)Ljava/util/Set;",
 			arg0.object(),
-			arg1
+			arg1.object<jclass>()
 		);
 	}
-	JObject Collections::checkedSortedMap(JObject arg0, jclass arg1, jclass arg2)
+	JObject Collections::checkedSortedMap(JObject arg0, JClass arg1, JClass arg2)
 	{
 		return callStaticObjectMethod(
 			"java.util.Collections",
 			"checkedSortedMap",
 			"(Ljava/util/SortedMap;Ljava/lang/Class;Ljava/lang/Class;)Ljava/util/SortedMap;",
 			arg0.object(),
-			arg1,
-			arg2
+			arg1.object<jclass>(),
+			arg2.object<jclass>()
 		);
 	}
-	JObject Collections::checkedSortedSet(JObject arg0, jclass arg1)
+	JObject Collections::checkedSortedSet(JObject arg0, JClass arg1)
 	{
 		return callStaticObjectMethod(
 			"java.util.Collections",
 			"checkedSortedSet",
 			"(Ljava/util/SortedSet;Ljava/lang/Class;)Ljava/util/SortedSet;",
 			arg0.object(),
-			arg1
+			arg1.object<jclass>()
 		);
 	}
 	void Collections::copy(JObject arg0, JObject arg1)
@@ -278,24 +281,24 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	void Collections::fill(JObject arg0, jobject arg1)
+	void Collections::fill(JObject arg0, JObject arg1)
 	{
 		callStaticMethod<void>(
 			"java.util.Collections",
 			"fill",
 			"(Ljava/util/List;Ljava/lang/Object;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jobject>()
 		);
 	}
-	jint Collections::frequency(JObject arg0, jobject arg1)
+	jint Collections::frequency(JObject arg0, JObject arg1)
 	{
 		return callStaticMethod<jint>(
 			"java.util.Collections",
 			"frequency",
 			"(Ljava/util/Collection;Ljava/lang/Object;)I",
 			arg0.object(),
-			arg1
+			arg1.object<jobject>()
 		);
 	}
 	jint Collections::indexOfSubList(JObject arg0, JObject arg1)
@@ -327,16 +330,16 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	jobject Collections::max(JObject arg0)
+	JObject Collections::max(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"java.util.Collections",
 			"max",
 			"(Ljava/util/Collection;)Ljava/lang/Object;",
 			arg0.object()
-		).object<jobject>();
+		);
 	}
-	jobject Collections::max(JObject arg0, JObject arg1)
+	JObject Collections::max(JObject arg0, JObject arg1)
 	{
 		return callStaticObjectMethod(
 			"java.util.Collections",
@@ -344,18 +347,18 @@ namespace java::util
 			"(Ljava/util/Collection;Ljava/util/Comparator;)Ljava/lang/Object;",
 			arg0.object(),
 			arg1.object()
-		).object<jobject>();
+		);
 	}
-	jobject Collections::min(JObject arg0)
+	JObject Collections::min(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"java.util.Collections",
 			"min",
 			"(Ljava/util/Collection;)Ljava/lang/Object;",
 			arg0.object()
-		).object<jobject>();
+		);
 	}
-	jobject Collections::min(JObject arg0, JObject arg1)
+	JObject Collections::min(JObject arg0, JObject arg1)
 	{
 		return callStaticObjectMethod(
 			"java.util.Collections",
@@ -363,16 +366,16 @@ namespace java::util
 			"(Ljava/util/Collection;Ljava/util/Comparator;)Ljava/lang/Object;",
 			arg0.object(),
 			arg1.object()
-		).object<jobject>();
+		);
 	}
-	JObject Collections::nCopies(jint arg0, jobject arg1)
+	JObject Collections::nCopies(jint arg0, JObject arg1)
 	{
 		return callStaticObjectMethod(
 			"java.util.Collections",
 			"nCopies",
 			"(ILjava/lang/Object;)Ljava/util/List;",
 			arg0,
-			arg1
+			arg1.object<jobject>()
 		);
 	}
 	JObject Collections::newSetFromMap(JObject arg0)
@@ -384,15 +387,15 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	jboolean Collections::replaceAll(JObject arg0, jobject arg1, jobject arg2)
+	jboolean Collections::replaceAll(JObject arg0, JObject arg1, JObject arg2)
 	{
 		return callStaticMethod<jboolean>(
 			"java.util.Collections",
 			"replaceAll",
 			"(Ljava/util/List;Ljava/lang/Object;Ljava/lang/Object;)Z",
 			arg0.object(),
-			arg1,
-			arg2
+			arg1.object<jobject>(),
+			arg2.object<jobject>()
 		);
 	}
 	void Collections::reverse(JObject arg0)
@@ -450,32 +453,32 @@ namespace java::util
 			arg1.object()
 		);
 	}
-	JObject Collections::singleton(jobject arg0)
+	JObject Collections::singleton(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"java.util.Collections",
 			"singleton",
 			"(Ljava/lang/Object;)Ljava/util/Set;",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	JObject Collections::singletonList(jobject arg0)
+	JObject Collections::singletonList(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"java.util.Collections",
 			"singletonList",
 			"(Ljava/lang/Object;)Ljava/util/List;",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	JObject Collections::singletonMap(jobject arg0, jobject arg1)
+	JObject Collections::singletonMap(JObject arg0, JObject arg1)
 	{
 		return callStaticObjectMethod(
 			"java.util.Collections",
 			"singletonMap",
 			"(Ljava/lang/Object;Ljava/lang/Object;)Ljava/util/Map;",
-			arg0,
-			arg1
+			arg0.object<jobject>(),
+			arg1.object<jobject>()
 		);
 	}
 	void Collections::sort(JObject arg0)

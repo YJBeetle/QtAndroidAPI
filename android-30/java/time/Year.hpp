@@ -6,6 +6,9 @@ namespace java::io
 {
 	class ObjectInputStream;
 }
+class JString;
+class JObject;
+class JString;
 namespace java::time
 {
 	class Clock;
@@ -61,17 +64,17 @@ namespace java::time
 		static java::time::Year now(java::time::Clock arg0);
 		static java::time::Year now(java::time::ZoneId arg0);
 		static java::time::Year of(jint arg0);
-		static java::time::Year parse(jstring arg0);
-		static java::time::Year parse(jstring arg0, java::time::format::DateTimeFormatter arg1);
+		static java::time::Year parse(JString arg0);
+		static java::time::Year parse(JString arg0, java::time::format::DateTimeFormatter arg1);
 		JObject adjustInto(JObject arg0);
 		java::time::LocalDate atDay(jint arg0);
 		java::time::YearMonth atMonth(jint arg0);
 		java::time::YearMonth atMonth(java::time::Month arg0);
 		java::time::LocalDate atMonthDay(java::time::MonthDay arg0);
-		jint compareTo(jobject arg0);
+		jint compareTo(JObject arg0);
 		jint compareTo(java::time::Year arg0);
-		jboolean equals(jobject arg0);
-		jstring format(java::time::format::DateTimeFormatter arg0);
+		jboolean equals(JObject arg0);
+		JString format(java::time::format::DateTimeFormatter arg0);
 		jint get(JObject arg0);
 		jlong getLong(JObject arg0);
 		jint getValue();
@@ -88,9 +91,9 @@ namespace java::time
 		java::time::Year plus(JObject arg0);
 		java::time::Year plus(jlong arg0, JObject arg1);
 		java::time::Year plusYears(jlong arg0);
-		jobject query(JObject arg0);
+		JObject query(JObject arg0);
 		java::time::temporal::ValueRange range(JObject arg0);
-		jstring toString();
+		JString toString();
 		jlong until(JObject arg0, JObject arg1);
 		java::time::Year with(JObject arg0);
 		java::time::Year with(JObject arg0, jlong arg1);

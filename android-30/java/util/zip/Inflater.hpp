@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JByteArray;
 namespace java::nio
 {
 	class ByteBuffer;
@@ -31,18 +32,18 @@ namespace java::util::zip
 		jint getRemaining();
 		jint getTotalIn();
 		jint getTotalOut();
-		jint inflate(jbyteArray arg0);
+		jint inflate(JByteArray arg0);
 		jint inflate(java::nio::ByteBuffer arg0);
-		jint inflate(jbyteArray arg0, jint arg1, jint arg2);
+		jint inflate(JByteArray arg0, jint arg1, jint arg2);
 		jboolean needsDictionary();
 		jboolean needsInput();
 		void reset();
-		void setDictionary(jbyteArray arg0);
+		void setDictionary(JByteArray arg0);
 		void setDictionary(java::nio::ByteBuffer arg0);
-		void setDictionary(jbyteArray arg0, jint arg1, jint arg2);
-		void setInput(jbyteArray arg0);
+		void setDictionary(JByteArray arg0, jint arg1, jint arg2);
+		void setInput(JByteArray arg0);
 		void setInput(java::nio::ByteBuffer arg0);
-		void setInput(jbyteArray arg0, jint arg1, jint arg2);
+		void setInput(JByteArray arg0, jint arg1, jint arg2);
 	};
 } // namespace java::util::zip
 

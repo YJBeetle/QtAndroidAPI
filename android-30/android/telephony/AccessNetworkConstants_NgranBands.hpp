@@ -2,7 +2,6 @@
 
 #include "../../JObject.hpp"
 
-
 namespace android::telephony
 {
 	class AccessNetworkConstants_NgranBands : public JObject

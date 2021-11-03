@@ -1,5 +1,8 @@
+#include "../../JArray.hpp"
 #include "../os/Parcel.hpp"
 #include "../../java/io/FileDescriptor.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "../../java/net/DatagramSocket.hpp"
 #include "../../java/net/InetAddress.hpp"
 #include "../../java/net/Proxy.hpp"
@@ -67,28 +70,28 @@ namespace android::net
 			"()I"
 		);
 	}
-	jboolean Network::equals(jobject arg0)
+	jboolean Network::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jarray Network::getAllByName(jstring arg0)
+	JArray Network::getAllByName(JString arg0)
 	{
 		return callObjectMethod(
 			"getAllByName",
 			"(Ljava/lang/String;)[Ljava/net/InetAddress;",
-			arg0
-		).object<jarray>();
+			arg0.object<jstring>()
+		);
 	}
-	java::net::InetAddress Network::getByName(jstring arg0)
+	java::net::InetAddress Network::getByName(JString arg0)
 	{
 		return callObjectMethod(
 			"getByName",
 			"(Ljava/lang/String;)Ljava/net/InetAddress;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	jlong Network::getNetworkHandle()
@@ -129,12 +132,12 @@ namespace android::net
 			arg1.object()
 		);
 	}
-	jstring Network::toString()
+	JString Network::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void Network::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

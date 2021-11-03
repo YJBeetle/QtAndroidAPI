@@ -1,5 +1,8 @@
+#include "../../JByteArray.hpp"
+#include "../../JCharArray.hpp"
 #include "./InputStream.hpp"
 #include "./Reader.hpp"
+#include "../../JString.hpp"
 #include "./StreamTokenizer.hpp"
 
 namespace java::io
@@ -39,12 +42,12 @@ namespace java::io
 			"nval"
 		);
 	}
-	jstring StreamTokenizer::sval()
+	JString StreamTokenizer::sval()
 	{
 		return getObjectField(
 			"sval",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint StreamTokenizer::ttype()
 	{
@@ -171,12 +174,12 @@ namespace java::io
 			arg0
 		);
 	}
-	jstring StreamTokenizer::toString()
+	JString StreamTokenizer::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void StreamTokenizer::whitespaceChars(jint arg0, jint arg1)
 	{

@@ -2,6 +2,7 @@
 #include "../../Paint.hpp"
 #include "../../Path.hpp"
 #include "./Shape.hpp"
+#include "../../../../JObject.hpp"
 #include "./PathShape.hpp"
 
 namespace android::graphics::drawable::shapes

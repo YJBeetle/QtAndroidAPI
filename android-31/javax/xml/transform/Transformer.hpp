@@ -2,6 +2,8 @@
 
 #include "../../../JObject.hpp"
 
+class JObject;
+class JString;
 namespace java::util
 {
 	class Properties;
@@ -24,14 +26,14 @@ namespace javax::xml::transform
 		void clearParameters();
 		JObject getErrorListener();
 		java::util::Properties getOutputProperties();
-		jstring getOutputProperty(jstring arg0);
-		jobject getParameter(jstring arg0);
+		JString getOutputProperty(JString arg0);
+		JObject getParameter(JString arg0);
 		JObject getURIResolver();
 		void reset();
 		void setErrorListener(JObject arg0);
 		void setOutputProperties(java::util::Properties arg0);
-		void setOutputProperty(jstring arg0, jstring arg1);
-		void setParameter(jstring arg0, jobject arg1);
+		void setOutputProperty(JString arg0, JString arg1);
+		void setParameter(JString arg0, JObject arg1);
 		void setURIResolver(JObject arg0);
 		void transform(JObject arg0, JObject arg1);
 	};

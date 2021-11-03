@@ -1,5 +1,7 @@
+#include "../../../JByteArray.hpp"
 #include "../../graphics/Rect.hpp"
 #include "../../os/Parcel.hpp"
+#include "../../../JString.hpp"
 #include "./VerifiedDisplayHash.hpp"
 
 namespace android::view::displayhash
@@ -18,14 +20,14 @@ namespace android::view::displayhash
 	VerifiedDisplayHash::VerifiedDisplayHash(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	VerifiedDisplayHash::VerifiedDisplayHash(jlong arg0, android::graphics::Rect arg1, jstring arg2, jbyteArray arg3)
+	VerifiedDisplayHash::VerifiedDisplayHash(jlong arg0, android::graphics::Rect arg1, JString arg2, JByteArray arg3)
 		: JObject(
 			"android.view.displayhash.VerifiedDisplayHash",
 			"(JLandroid/graphics/Rect;Ljava/lang/String;[B)V",
 			arg0,
 			arg1.object(),
-			arg2,
-			arg3
+			arg2.object<jstring>(),
+			arg3.object<jbyteArray>()
 		) {}
 	
 	// Methods
@@ -43,19 +45,19 @@ namespace android::view::displayhash
 			"()Landroid/graphics/Rect;"
 		);
 	}
-	jstring VerifiedDisplayHash::getHashAlgorithm()
+	JString VerifiedDisplayHash::getHashAlgorithm()
 	{
 		return callObjectMethod(
 			"getHashAlgorithm",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jbyteArray VerifiedDisplayHash::getImageHash()
+	JByteArray VerifiedDisplayHash::getImageHash()
 	{
 		return callObjectMethod(
 			"getImageHash",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
 	jlong VerifiedDisplayHash::getTimeMillis()
 	{
@@ -64,12 +66,12 @@ namespace android::view::displayhash
 			"()J"
 		);
 	}
-	jstring VerifiedDisplayHash::toString()
+	JString VerifiedDisplayHash::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void VerifiedDisplayHash::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

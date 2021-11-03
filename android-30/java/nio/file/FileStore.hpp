@@ -2,6 +2,9 @@
 
 #include "../../../JObject.hpp"
 
+class JClass;
+class JObject;
+class JString;
 
 namespace java::nio::file
 {
@@ -17,17 +20,17 @@ namespace java::nio::file
 		// Constructors
 		
 		// Methods
-		jobject getAttribute(jstring arg0);
+		JObject getAttribute(JString arg0);
 		jlong getBlockSize();
-		JObject getFileStoreAttributeView(jclass arg0);
+		JObject getFileStoreAttributeView(JClass arg0);
 		jlong getTotalSpace();
 		jlong getUnallocatedSpace();
 		jlong getUsableSpace();
 		jboolean isReadOnly();
-		jstring name();
-		jboolean supportsFileAttributeView(jclass arg0);
-		jboolean supportsFileAttributeView(jstring arg0);
-		jstring type();
+		JString name();
+		jboolean supportsFileAttributeView(JClass arg0);
+		jboolean supportsFileAttributeView(JString arg0);
+		JString type();
 	};
 } // namespace java::nio::file
 

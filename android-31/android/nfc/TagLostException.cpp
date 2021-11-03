@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./TagLostException.hpp"
 
 namespace android::nfc
@@ -13,11 +14,11 @@ namespace android::nfc
 			"android.nfc.TagLostException",
 			"()V"
 		) {}
-	TagLostException::TagLostException(jstring arg0)
+	TagLostException::TagLostException(JString arg0)
 		: java::io::IOException(
 			"android.nfc.TagLostException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

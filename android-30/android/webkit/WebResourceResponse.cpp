@@ -1,4 +1,5 @@
 #include "../../java/io/InputStream.hpp"
+#include "../../JString.hpp"
 #include "./WebResourceResponse.hpp"
 
 namespace android::webkit
@@ -9,22 +10,22 @@ namespace android::webkit
 	WebResourceResponse::WebResourceResponse(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	WebResourceResponse::WebResourceResponse(jstring arg0, jstring arg1, java::io::InputStream arg2)
+	WebResourceResponse::WebResourceResponse(JString arg0, JString arg1, java::io::InputStream arg2)
 		: JObject(
 			"android.webkit.WebResourceResponse",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/io/InputStream;)V",
-			arg0,
-			arg1,
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
 			arg2.object()
 		) {}
-	WebResourceResponse::WebResourceResponse(jstring arg0, jstring arg1, jint arg2, jstring arg3, JObject arg4, java::io::InputStream arg5)
+	WebResourceResponse::WebResourceResponse(JString arg0, JString arg1, jint arg2, JString arg3, JObject arg4, java::io::InputStream arg5)
 		: JObject(
 			"android.webkit.WebResourceResponse",
 			"(Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;Ljava/util/Map;Ljava/io/InputStream;)V",
-			arg0,
-			arg1,
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
 			arg2,
-			arg3,
+			arg3.object<jstring>(),
 			arg4.object(),
 			arg5.object()
 		) {}
@@ -37,26 +38,26 @@ namespace android::webkit
 			"()Ljava/io/InputStream;"
 		);
 	}
-	jstring WebResourceResponse::getEncoding()
+	JString WebResourceResponse::getEncoding()
 	{
 		return callObjectMethod(
 			"getEncoding",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring WebResourceResponse::getMimeType()
+	JString WebResourceResponse::getMimeType()
 	{
 		return callObjectMethod(
 			"getMimeType",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring WebResourceResponse::getReasonPhrase()
+	JString WebResourceResponse::getReasonPhrase()
 	{
 		return callObjectMethod(
 			"getReasonPhrase",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	JObject WebResourceResponse::getResponseHeaders()
 	{
@@ -80,20 +81,20 @@ namespace android::webkit
 			arg0.object()
 		);
 	}
-	void WebResourceResponse::setEncoding(jstring arg0)
+	void WebResourceResponse::setEncoding(JString arg0)
 	{
 		callMethod<void>(
 			"setEncoding",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	void WebResourceResponse::setMimeType(jstring arg0)
+	void WebResourceResponse::setMimeType(JString arg0)
 	{
 		callMethod<void>(
 			"setMimeType",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void WebResourceResponse::setResponseHeaders(JObject arg0)
@@ -104,13 +105,13 @@ namespace android::webkit
 			arg0.object()
 		);
 	}
-	void WebResourceResponse::setStatusCodeAndReasonPhrase(jint arg0, jstring arg1)
+	void WebResourceResponse::setStatusCodeAndReasonPhrase(jint arg0, JString arg1)
 	{
 		callMethod<void>(
 			"setStatusCodeAndReasonPhrase",
 			"(ILjava/lang/String;)V",
 			arg0,
-			arg1
+			arg1.object<jstring>()
 		);
 	}
 } // namespace android::webkit

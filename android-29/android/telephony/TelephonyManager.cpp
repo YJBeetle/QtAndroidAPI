@@ -1,3 +1,5 @@
+#include "../../JByteArray.hpp"
+#include "../../JArray.hpp"
 #include "../app/PendingIntent.hpp"
 #include "../net/Uri.hpp"
 #include "../os/Handler.hpp"
@@ -14,82 +16,84 @@
 #include "./TelephonyManager_UssdResponseCallback.hpp"
 #include "./TelephonyScanManager_NetworkScanCallback.hpp"
 #include "./VisualVoicemailSmsFilterSettings.hpp"
+#include "../../JString.hpp"
+#include "../../JString.hpp"
 #include "./TelephonyManager.hpp"
 
 namespace android::telephony
 {
 	// Fields
-	jstring TelephonyManager::ACTION_CARRIER_MESSAGING_CLIENT_SERVICE()
+	JString TelephonyManager::ACTION_CARRIER_MESSAGING_CLIENT_SERVICE()
 	{
 		return getStaticObjectField(
 			"android.telephony.TelephonyManager",
 			"ACTION_CARRIER_MESSAGING_CLIENT_SERVICE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TelephonyManager::ACTION_CONFIGURE_VOICEMAIL()
+	JString TelephonyManager::ACTION_CONFIGURE_VOICEMAIL()
 	{
 		return getStaticObjectField(
 			"android.telephony.TelephonyManager",
 			"ACTION_CONFIGURE_VOICEMAIL",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TelephonyManager::ACTION_NETWORK_COUNTRY_CHANGED()
+	JString TelephonyManager::ACTION_NETWORK_COUNTRY_CHANGED()
 	{
 		return getStaticObjectField(
 			"android.telephony.TelephonyManager",
 			"ACTION_NETWORK_COUNTRY_CHANGED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TelephonyManager::ACTION_PHONE_STATE_CHANGED()
+	JString TelephonyManager::ACTION_PHONE_STATE_CHANGED()
 	{
 		return getStaticObjectField(
 			"android.telephony.TelephonyManager",
 			"ACTION_PHONE_STATE_CHANGED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TelephonyManager::ACTION_RESPOND_VIA_MESSAGE()
+	JString TelephonyManager::ACTION_RESPOND_VIA_MESSAGE()
 	{
 		return getStaticObjectField(
 			"android.telephony.TelephonyManager",
 			"ACTION_RESPOND_VIA_MESSAGE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TelephonyManager::ACTION_SECRET_CODE()
+	JString TelephonyManager::ACTION_SECRET_CODE()
 	{
 		return getStaticObjectField(
 			"android.telephony.TelephonyManager",
 			"ACTION_SECRET_CODE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TelephonyManager::ACTION_SHOW_VOICEMAIL_NOTIFICATION()
+	JString TelephonyManager::ACTION_SHOW_VOICEMAIL_NOTIFICATION()
 	{
 		return getStaticObjectField(
 			"android.telephony.TelephonyManager",
 			"ACTION_SHOW_VOICEMAIL_NOTIFICATION",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TelephonyManager::ACTION_SUBSCRIPTION_CARRIER_IDENTITY_CHANGED()
+	JString TelephonyManager::ACTION_SUBSCRIPTION_CARRIER_IDENTITY_CHANGED()
 	{
 		return getStaticObjectField(
 			"android.telephony.TelephonyManager",
 			"ACTION_SUBSCRIPTION_CARRIER_IDENTITY_CHANGED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TelephonyManager::ACTION_SUBSCRIPTION_SPECIFIC_CARRIER_IDENTITY_CHANGED()
+	JString TelephonyManager::ACTION_SUBSCRIPTION_SPECIFIC_CARRIER_IDENTITY_CHANGED()
 	{
 		return getStaticObjectField(
 			"android.telephony.TelephonyManager",
 			"ACTION_SUBSCRIPTION_SPECIFIC_CARRIER_IDENTITY_CHANGED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint TelephonyManager::APPTYPE_CSIM()
 	{
@@ -259,157 +263,157 @@ namespace android::telephony
 			"DATA_UNKNOWN"
 		);
 	}
-	jstring TelephonyManager::EXTRA_CALL_VOICEMAIL_INTENT()
+	JString TelephonyManager::EXTRA_CALL_VOICEMAIL_INTENT()
 	{
 		return getStaticObjectField(
 			"android.telephony.TelephonyManager",
 			"EXTRA_CALL_VOICEMAIL_INTENT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TelephonyManager::EXTRA_CARRIER_ID()
+	JString TelephonyManager::EXTRA_CARRIER_ID()
 	{
 		return getStaticObjectField(
 			"android.telephony.TelephonyManager",
 			"EXTRA_CARRIER_ID",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TelephonyManager::EXTRA_CARRIER_NAME()
+	JString TelephonyManager::EXTRA_CARRIER_NAME()
 	{
 		return getStaticObjectField(
 			"android.telephony.TelephonyManager",
 			"EXTRA_CARRIER_NAME",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TelephonyManager::EXTRA_HIDE_PUBLIC_SETTINGS()
+	JString TelephonyManager::EXTRA_HIDE_PUBLIC_SETTINGS()
 	{
 		return getStaticObjectField(
 			"android.telephony.TelephonyManager",
 			"EXTRA_HIDE_PUBLIC_SETTINGS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TelephonyManager::EXTRA_INCOMING_NUMBER()
+	JString TelephonyManager::EXTRA_INCOMING_NUMBER()
 	{
 		return getStaticObjectField(
 			"android.telephony.TelephonyManager",
 			"EXTRA_INCOMING_NUMBER",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TelephonyManager::EXTRA_IS_REFRESH()
+	JString TelephonyManager::EXTRA_IS_REFRESH()
 	{
 		return getStaticObjectField(
 			"android.telephony.TelephonyManager",
 			"EXTRA_IS_REFRESH",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TelephonyManager::EXTRA_LAUNCH_VOICEMAIL_SETTINGS_INTENT()
+	JString TelephonyManager::EXTRA_LAUNCH_VOICEMAIL_SETTINGS_INTENT()
 	{
 		return getStaticObjectField(
 			"android.telephony.TelephonyManager",
 			"EXTRA_LAUNCH_VOICEMAIL_SETTINGS_INTENT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TelephonyManager::EXTRA_NETWORK_COUNTRY()
+	JString TelephonyManager::EXTRA_NETWORK_COUNTRY()
 	{
 		return getStaticObjectField(
 			"android.telephony.TelephonyManager",
 			"EXTRA_NETWORK_COUNTRY",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TelephonyManager::EXTRA_NOTIFICATION_COUNT()
+	JString TelephonyManager::EXTRA_NOTIFICATION_COUNT()
 	{
 		return getStaticObjectField(
 			"android.telephony.TelephonyManager",
 			"EXTRA_NOTIFICATION_COUNT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TelephonyManager::EXTRA_PHONE_ACCOUNT_HANDLE()
+	JString TelephonyManager::EXTRA_PHONE_ACCOUNT_HANDLE()
 	{
 		return getStaticObjectField(
 			"android.telephony.TelephonyManager",
 			"EXTRA_PHONE_ACCOUNT_HANDLE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TelephonyManager::EXTRA_SPECIFIC_CARRIER_ID()
+	JString TelephonyManager::EXTRA_SPECIFIC_CARRIER_ID()
 	{
 		return getStaticObjectField(
 			"android.telephony.TelephonyManager",
 			"EXTRA_SPECIFIC_CARRIER_ID",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TelephonyManager::EXTRA_SPECIFIC_CARRIER_NAME()
+	JString TelephonyManager::EXTRA_SPECIFIC_CARRIER_NAME()
 	{
 		return getStaticObjectField(
 			"android.telephony.TelephonyManager",
 			"EXTRA_SPECIFIC_CARRIER_NAME",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TelephonyManager::EXTRA_STATE()
+	JString TelephonyManager::EXTRA_STATE()
 	{
 		return getStaticObjectField(
 			"android.telephony.TelephonyManager",
 			"EXTRA_STATE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TelephonyManager::EXTRA_STATE_IDLE()
+	JString TelephonyManager::EXTRA_STATE_IDLE()
 	{
 		return getStaticObjectField(
 			"android.telephony.TelephonyManager",
 			"EXTRA_STATE_IDLE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TelephonyManager::EXTRA_STATE_OFFHOOK()
+	JString TelephonyManager::EXTRA_STATE_OFFHOOK()
 	{
 		return getStaticObjectField(
 			"android.telephony.TelephonyManager",
 			"EXTRA_STATE_OFFHOOK",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TelephonyManager::EXTRA_STATE_RINGING()
+	JString TelephonyManager::EXTRA_STATE_RINGING()
 	{
 		return getStaticObjectField(
 			"android.telephony.TelephonyManager",
 			"EXTRA_STATE_RINGING",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TelephonyManager::EXTRA_SUBSCRIPTION_ID()
+	JString TelephonyManager::EXTRA_SUBSCRIPTION_ID()
 	{
 		return getStaticObjectField(
 			"android.telephony.TelephonyManager",
 			"EXTRA_SUBSCRIPTION_ID",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TelephonyManager::EXTRA_VOICEMAIL_NUMBER()
+	JString TelephonyManager::EXTRA_VOICEMAIL_NUMBER()
 	{
 		return getStaticObjectField(
 			"android.telephony.TelephonyManager",
 			"EXTRA_VOICEMAIL_NUMBER",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TelephonyManager::METADATA_HIDE_VOICEMAIL_SETTINGS_MENU()
+	JString TelephonyManager::METADATA_HIDE_VOICEMAIL_SETTINGS_MENU()
 	{
 		return getStaticObjectField(
 			"android.telephony.TelephonyManager",
 			"METADATA_HIDE_VOICEMAIL_SETTINGS_MENU",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint TelephonyManager::MULTISIM_ALLOWED()
 	{
@@ -761,21 +765,21 @@ namespace android::telephony
 			"USSD_RETURN_FAILURE"
 		);
 	}
-	jstring TelephonyManager::VVM_TYPE_CVVM()
+	JString TelephonyManager::VVM_TYPE_CVVM()
 	{
 		return getStaticObjectField(
 			"android.telephony.TelephonyManager",
 			"VVM_TYPE_CVVM",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TelephonyManager::VVM_TYPE_OMTP()
+	JString TelephonyManager::VVM_TYPE_OMTP()
 	{
 		return getStaticObjectField(
 			"android.telephony.TelephonyManager",
 			"VVM_TYPE_OMTP",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QJniObject forward
@@ -877,27 +881,27 @@ namespace android::telephony
 			"()I"
 		);
 	}
-	jstring TelephonyManager::getDeviceId()
+	JString TelephonyManager::getDeviceId()
 	{
 		return callObjectMethod(
 			"getDeviceId",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TelephonyManager::getDeviceId(jint arg0)
+	JString TelephonyManager::getDeviceId(jint arg0)
 	{
 		return callObjectMethod(
 			"getDeviceId",
 			"(I)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
-	jstring TelephonyManager::getDeviceSoftwareVersion()
+	JString TelephonyManager::getDeviceSoftwareVersion()
 	{
 		return callObjectMethod(
 			"getDeviceSoftwareVersion",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	JObject TelephonyManager::getEmergencyNumberList()
 	{
@@ -914,130 +918,130 @@ namespace android::telephony
 			arg0
 		);
 	}
-	jarray TelephonyManager::getForbiddenPlmns()
+	JArray TelephonyManager::getForbiddenPlmns()
 	{
 		return callObjectMethod(
 			"getForbiddenPlmns",
 			"()[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
-	jstring TelephonyManager::getGroupIdLevel1()
+	JString TelephonyManager::getGroupIdLevel1()
 	{
 		return callObjectMethod(
 			"getGroupIdLevel1",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TelephonyManager::getIccAuthentication(jint arg0, jint arg1, jstring arg2)
+	JString TelephonyManager::getIccAuthentication(jint arg0, jint arg1, JString arg2)
 	{
 		return callObjectMethod(
 			"getIccAuthentication",
 			"(IILjava/lang/String;)Ljava/lang/String;",
 			arg0,
 			arg1,
-			arg2
-		).object<jstring>();
+			arg2.object<jstring>()
+		);
 	}
-	jstring TelephonyManager::getImei()
+	JString TelephonyManager::getImei()
 	{
 		return callObjectMethod(
 			"getImei",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TelephonyManager::getImei(jint arg0)
+	JString TelephonyManager::getImei(jint arg0)
 	{
 		return callObjectMethod(
 			"getImei",
 			"(I)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
-	jstring TelephonyManager::getLine1Number()
+	JString TelephonyManager::getLine1Number()
 	{
 		return callObjectMethod(
 			"getLine1Number",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TelephonyManager::getManufacturerCode()
+	JString TelephonyManager::getManufacturerCode()
 	{
 		return callObjectMethod(
 			"getManufacturerCode",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TelephonyManager::getManufacturerCode(jint arg0)
+	JString TelephonyManager::getManufacturerCode(jint arg0)
 	{
 		return callObjectMethod(
 			"getManufacturerCode",
 			"(I)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
-	jstring TelephonyManager::getMeid()
+	JString TelephonyManager::getMeid()
 	{
 		return callObjectMethod(
 			"getMeid",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TelephonyManager::getMeid(jint arg0)
+	JString TelephonyManager::getMeid(jint arg0)
 	{
 		return callObjectMethod(
 			"getMeid",
 			"(I)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
-	jstring TelephonyManager::getMmsUAProfUrl()
+	JString TelephonyManager::getMmsUAProfUrl()
 	{
 		return callObjectMethod(
 			"getMmsUAProfUrl",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TelephonyManager::getMmsUserAgent()
+	JString TelephonyManager::getMmsUserAgent()
 	{
 		return callObjectMethod(
 			"getMmsUserAgent",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TelephonyManager::getNai()
+	JString TelephonyManager::getNai()
 	{
 		return callObjectMethod(
 			"getNai",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TelephonyManager::getNetworkCountryIso()
+	JString TelephonyManager::getNetworkCountryIso()
 	{
 		return callObjectMethod(
 			"getNetworkCountryIso",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TelephonyManager::getNetworkOperator()
+	JString TelephonyManager::getNetworkOperator()
 	{
 		return callObjectMethod(
 			"getNetworkOperator",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TelephonyManager::getNetworkOperatorName()
+	JString TelephonyManager::getNetworkOperatorName()
 	{
 		return callObjectMethod(
 			"getNetworkOperatorName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TelephonyManager::getNetworkSpecifier()
+	JString TelephonyManager::getNetworkSpecifier()
 	{
 		return callObjectMethod(
 			"getNetworkSpecifier",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint TelephonyManager::getNetworkType()
 	{
@@ -1088,40 +1092,40 @@ namespace android::telephony
 			"()I"
 		);
 	}
-	jstring TelephonyManager::getSimCarrierIdName()
+	JString TelephonyManager::getSimCarrierIdName()
 	{
 		return callObjectMethod(
 			"getSimCarrierIdName",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
-	jstring TelephonyManager::getSimCountryIso()
+	JString TelephonyManager::getSimCountryIso()
 	{
 		return callObjectMethod(
 			"getSimCountryIso",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TelephonyManager::getSimOperator()
+	JString TelephonyManager::getSimOperator()
 	{
 		return callObjectMethod(
 			"getSimOperator",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TelephonyManager::getSimOperatorName()
+	JString TelephonyManager::getSimOperatorName()
 	{
 		return callObjectMethod(
 			"getSimOperatorName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TelephonyManager::getSimSerialNumber()
+	JString TelephonyManager::getSimSerialNumber()
 	{
 		return callObjectMethod(
 			"getSimSerialNumber",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint TelephonyManager::getSimSpecificCarrierId()
 	{
@@ -1130,12 +1134,12 @@ namespace android::telephony
 			"()I"
 		);
 	}
-	jstring TelephonyManager::getSimSpecificCarrierIdName()
+	JString TelephonyManager::getSimSpecificCarrierIdName()
 	{
 		return callObjectMethod(
 			"getSimSpecificCarrierIdName",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	jint TelephonyManager::getSimState()
 	{
@@ -1152,27 +1156,27 @@ namespace android::telephony
 			arg0
 		);
 	}
-	jstring TelephonyManager::getSubscriberId()
+	JString TelephonyManager::getSubscriberId()
 	{
 		return callObjectMethod(
 			"getSubscriberId",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TelephonyManager::getTypeAllocationCode()
+	JString TelephonyManager::getTypeAllocationCode()
 	{
 		return callObjectMethod(
 			"getTypeAllocationCode",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TelephonyManager::getTypeAllocationCode(jint arg0)
+	JString TelephonyManager::getTypeAllocationCode(jint arg0)
 	{
 		return callObjectMethod(
 			"getTypeAllocationCode",
 			"(I)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
 	JObject TelephonyManager::getUiccCardsInfo()
 	{
@@ -1181,26 +1185,26 @@ namespace android::telephony
 			"()Ljava/util/List;"
 		);
 	}
-	jstring TelephonyManager::getVisualVoicemailPackageName()
+	JString TelephonyManager::getVisualVoicemailPackageName()
 	{
 		return callObjectMethod(
 			"getVisualVoicemailPackageName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TelephonyManager::getVoiceMailAlphaTag()
+	JString TelephonyManager::getVoiceMailAlphaTag()
 	{
 		return callObjectMethod(
 			"getVoiceMailAlphaTag",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TelephonyManager::getVoiceMailNumber()
+	JString TelephonyManager::getVoiceMailNumber()
 	{
 		return callObjectMethod(
 			"getVoiceMailNumber",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint TelephonyManager::getVoiceNetworkType()
 	{
@@ -1239,7 +1243,7 @@ namespace android::telephony
 			arg0
 		);
 	}
-	jbyteArray TelephonyManager::iccExchangeSimIO(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jstring arg5)
+	JByteArray TelephonyManager::iccExchangeSimIO(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, JString arg5)
 	{
 		return callObjectMethod(
 			"iccExchangeSimIO",
@@ -1249,27 +1253,27 @@ namespace android::telephony
 			arg2,
 			arg3,
 			arg4,
-			arg5
-		).object<jbyteArray>();
+			arg5.object<jstring>()
+		);
 	}
-	android::telephony::IccOpenLogicalChannelResponse TelephonyManager::iccOpenLogicalChannel(jstring arg0)
+	android::telephony::IccOpenLogicalChannelResponse TelephonyManager::iccOpenLogicalChannel(JString arg0)
 	{
 		return callObjectMethod(
 			"iccOpenLogicalChannel",
 			"(Ljava/lang/String;)Landroid/telephony/IccOpenLogicalChannelResponse;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	android::telephony::IccOpenLogicalChannelResponse TelephonyManager::iccOpenLogicalChannel(jstring arg0, jint arg1)
+	android::telephony::IccOpenLogicalChannelResponse TelephonyManager::iccOpenLogicalChannel(JString arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"iccOpenLogicalChannel",
 			"(Ljava/lang/String;I)Landroid/telephony/IccOpenLogicalChannelResponse;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
-	jstring TelephonyManager::iccTransmitApduBasicChannel(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jstring arg5)
+	JString TelephonyManager::iccTransmitApduBasicChannel(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, JString arg5)
 	{
 		return callObjectMethod(
 			"iccTransmitApduBasicChannel",
@@ -1279,10 +1283,10 @@ namespace android::telephony
 			arg2,
 			arg3,
 			arg4,
-			arg5
-		).object<jstring>();
+			arg5.object<jstring>()
+		);
 	}
-	jstring TelephonyManager::iccTransmitApduLogicalChannel(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jstring arg6)
+	JString TelephonyManager::iccTransmitApduLogicalChannel(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, JString arg6)
 	{
 		return callObjectMethod(
 			"iccTransmitApduLogicalChannel",
@@ -1293,8 +1297,8 @@ namespace android::telephony
 			arg3,
 			arg4,
 			arg5,
-			arg6
-		).object<jstring>();
+			arg6.object<jstring>()
+		);
 	}
 	jboolean TelephonyManager::isConcurrentVoiceAndDataSupported()
 	{
@@ -1317,12 +1321,12 @@ namespace android::telephony
 			"()Z"
 		);
 	}
-	jboolean TelephonyManager::isEmergencyNumber(jstring arg0)
+	jboolean TelephonyManager::isEmergencyNumber(JString arg0)
 	{
 		return callMethod<jboolean>(
 			"isEmergencyNumber",
 			"(Ljava/lang/String;)Z",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	jboolean TelephonyManager::isHearingAidCompatibilitySupported()
@@ -1417,40 +1421,40 @@ namespace android::telephony
 			arg2.object()
 		);
 	}
-	void TelephonyManager::sendDialerSpecialCode(jstring arg0)
+	void TelephonyManager::sendDialerSpecialCode(JString arg0)
 	{
 		callMethod<void>(
 			"sendDialerSpecialCode",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jstring TelephonyManager::sendEnvelopeWithStatus(jstring arg0)
+	JString TelephonyManager::sendEnvelopeWithStatus(JString arg0)
 	{
 		return callObjectMethod(
 			"sendEnvelopeWithStatus",
 			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
+			arg0.object<jstring>()
+		);
 	}
-	void TelephonyManager::sendUssdRequest(jstring arg0, android::telephony::TelephonyManager_UssdResponseCallback arg1, android::os::Handler arg2)
+	void TelephonyManager::sendUssdRequest(JString arg0, android::telephony::TelephonyManager_UssdResponseCallback arg1, android::os::Handler arg2)
 	{
 		callMethod<void>(
 			"sendUssdRequest",
 			"(Ljava/lang/String;Landroid/telephony/TelephonyManager$UssdResponseCallback;Landroid/os/Handler;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
 			arg2.object()
 		);
 	}
-	void TelephonyManager::sendVisualVoicemailSms(jstring arg0, jint arg1, jstring arg2, android::app::PendingIntent arg3)
+	void TelephonyManager::sendVisualVoicemailSms(JString arg0, jint arg1, JString arg2, android::app::PendingIntent arg3)
 	{
 		callMethod<void>(
 			"sendVisualVoicemailSms",
 			"(Ljava/lang/String;ILjava/lang/String;Landroid/app/PendingIntent;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
-			arg2,
+			arg2.object<jstring>(),
 			arg3.object()
 		);
 	}
@@ -1462,13 +1466,13 @@ namespace android::telephony
 			arg0
 		);
 	}
-	jboolean TelephonyManager::setLine1NumberForDisplay(jstring arg0, jstring arg1)
+	jboolean TelephonyManager::setLine1NumberForDisplay(JString arg0, JString arg1)
 	{
 		return callMethod<jboolean>(
 			"setLine1NumberForDisplay",
 			"(Ljava/lang/String;Ljava/lang/String;)Z",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		);
 	}
 	void TelephonyManager::setNetworkSelectionModeAutomatic()
@@ -1478,21 +1482,21 @@ namespace android::telephony
 			"()V"
 		);
 	}
-	jboolean TelephonyManager::setNetworkSelectionModeManual(jstring arg0, jboolean arg1)
+	jboolean TelephonyManager::setNetworkSelectionModeManual(JString arg0, jboolean arg1)
 	{
 		return callMethod<jboolean>(
 			"setNetworkSelectionModeManual",
 			"(Ljava/lang/String;Z)Z",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
-	jboolean TelephonyManager::setOperatorBrandOverride(jstring arg0)
+	jboolean TelephonyManager::setOperatorBrandOverride(JString arg0)
 	{
 		return callMethod<jboolean>(
 			"setOperatorBrandOverride",
 			"(Ljava/lang/String;)Z",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	jboolean TelephonyManager::setPreferredNetworkTypeToGlobal()
@@ -1521,13 +1525,13 @@ namespace android::telephony
 			arg0.object()
 		);
 	}
-	jboolean TelephonyManager::setVoiceMailNumber(jstring arg0, jstring arg1)
+	jboolean TelephonyManager::setVoiceMailNumber(JString arg0, JString arg1)
 	{
 		return callMethod<jboolean>(
 			"setVoiceMailNumber",
 			"(Ljava/lang/String;Ljava/lang/String;)Z",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		);
 	}
 	void TelephonyManager::setVoicemailRingtoneUri(android::telecom::PhoneAccountHandle arg0, android::net::Uri arg1)

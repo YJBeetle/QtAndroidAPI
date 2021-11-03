@@ -1,3 +1,5 @@
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
 #include "./UScript_ScriptUsage.hpp"
 
 namespace android::icu::lang
@@ -58,22 +60,22 @@ namespace android::icu::lang
 	// Constructors
 	
 	// Methods
-	android::icu::lang::UScript_ScriptUsage UScript_ScriptUsage::valueOf(jstring arg0)
+	android::icu::lang::UScript_ScriptUsage UScript_ScriptUsage::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.icu.lang.UScript$ScriptUsage",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/icu/lang/UScript$ScriptUsage;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray UScript_ScriptUsage::values()
+	JArray UScript_ScriptUsage::values()
 	{
 		return callStaticObjectMethod(
 			"android.icu.lang.UScript$ScriptUsage",
 			"values",
 			"()[Landroid/icu/lang/UScript$ScriptUsage;"
-		).object<jarray>();
+		);
 	}
 } // namespace android::icu::lang
 

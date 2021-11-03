@@ -6,6 +6,8 @@ namespace java::io
 {
 	class ObjectInputStream;
 }
+class JObject;
+class JString;
 
 namespace java::time::temporal
 {
@@ -26,7 +28,7 @@ namespace java::time::temporal
 		static java::time::temporal::ValueRange of(jlong arg0, jlong arg1, jlong arg2, jlong arg3);
 		jint checkValidIntValue(jlong arg0, JObject arg1);
 		jlong checkValidValue(jlong arg0, JObject arg1);
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jlong getLargestMinimum();
 		jlong getMaximum();
 		jlong getMinimum();
@@ -36,7 +38,7 @@ namespace java::time::temporal
 		jboolean isIntValue();
 		jboolean isValidIntValue(jlong arg0);
 		jboolean isValidValue(jlong arg0);
-		jstring toString();
+		JString toString();
 	};
 } // namespace java::time::temporal
 

@@ -6,6 +6,8 @@ namespace android::os
 {
 	class Parcel;
 }
+class JObject;
+class JString;
 
 namespace android::app
 {
@@ -23,11 +25,11 @@ namespace android::app
 		
 		// Methods
 		jint describeContents();
-		jboolean equals(jobject arg0);
-		jstring getAttributionTag();
-		jstring getMessage();
+		jboolean equals(JObject arg0);
+		JString getAttributionTag();
+		JString getMessage();
 		jint getNotingUid();
-		jstring getOp();
+		JString getOp();
 		jlong getTime();
 		jint hashCode();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);

@@ -1,6 +1,7 @@
 #include "../../graphics/Typeface.hpp"
 #include "../../os/Parcel.hpp"
 #include "../TextPaint.hpp"
+#include "../../../JString.hpp"
 #include "./TypefaceSpan.hpp"
 
 namespace android::text::style
@@ -23,11 +24,11 @@ namespace android::text::style
 			"(Landroid/os/Parcel;)V",
 			arg0.object()
 		) {}
-	TypefaceSpan::TypefaceSpan(jstring arg0)
+	TypefaceSpan::TypefaceSpan(JString arg0)
 		: android::text::style::MetricAffectingSpan(
 			"android.text.style.TypefaceSpan",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods
@@ -38,12 +39,12 @@ namespace android::text::style
 			"()I"
 		);
 	}
-	jstring TypefaceSpan::getFamily()
+	JString TypefaceSpan::getFamily()
 	{
 		return callObjectMethod(
 			"getFamily",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint TypefaceSpan::getSpanTypeId()
 	{

@@ -6,6 +6,9 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
+class JObject;
+class JString;
 
 namespace android::content::pm
 {
@@ -23,12 +26,12 @@ namespace android::content::pm
 		
 		// Methods
 		jint describeContents();
-		jboolean equals(jobject arg0);
-		jstring getName();
-		jstring getPackageName();
+		jboolean equals(JObject arg0);
+		JString getName();
+		JString getPackageName();
 		jint hashCode();
 		jboolean isHidden();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::content::pm

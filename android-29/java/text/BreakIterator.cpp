@@ -1,3 +1,7 @@
+#include "../../JArray.hpp"
+#include "../../JArray.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "../util/Locale.hpp"
 #include "./BreakIterator.hpp"
 
@@ -18,13 +22,13 @@ namespace java::text
 	// Constructors
 	
 	// Methods
-	jarray BreakIterator::getAvailableLocales()
+	JArray BreakIterator::getAvailableLocales()
 	{
 		return callStaticObjectMethod(
 			"java.text.BreakIterator",
 			"getAvailableLocales",
 			"()[Ljava/util/Locale;"
-		).object<jarray>();
+		);
 	}
 	java::text::BreakIterator BreakIterator::getCharacterInstance()
 	{
@@ -94,12 +98,12 @@ namespace java::text
 			arg0.object()
 		);
 	}
-	jobject BreakIterator::clone()
+	JObject BreakIterator::clone()
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
 	jint BreakIterator::current()
 	{
@@ -175,12 +179,12 @@ namespace java::text
 			"()I"
 		);
 	}
-	void BreakIterator::setText(jstring arg0)
+	void BreakIterator::setText(JString arg0)
 	{
 		callMethod<void>(
 			"setText",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void BreakIterator::setText(JObject arg0)

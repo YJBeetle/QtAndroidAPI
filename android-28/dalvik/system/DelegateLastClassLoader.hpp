@@ -1,14 +1,13 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../../java/lang/ClassLoader.hpp"
-#include "./BaseDexClassLoader.hpp"
 #include "./PathClassLoader.hpp"
 
+class JClass;
 namespace java::lang
 {
 	class ClassLoader;
 }
+class JString;
 namespace java::net
 {
 	class URL;
@@ -26,12 +25,12 @@ namespace dalvik::system
 		DelegateLastClassLoader(QJniObject obj);
 		
 		// Constructors
-		DelegateLastClassLoader(jstring arg0, java::lang::ClassLoader arg1);
-		DelegateLastClassLoader(jstring arg0, jstring arg1, java::lang::ClassLoader arg2);
+		DelegateLastClassLoader(JString arg0, java::lang::ClassLoader arg1);
+		DelegateLastClassLoader(JString arg0, JString arg1, java::lang::ClassLoader arg2);
 		
 		// Methods
-		java::net::URL getResource(jstring arg0);
-		JObject getResources(jstring arg0);
+		java::net::URL getResource(JString arg0);
+		JObject getResources(JString arg0);
 	};
 } // namespace dalvik::system
 

@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JArray;
 namespace java::io
 {
 	class File;
@@ -10,6 +11,8 @@ namespace java::lang
 {
 	class ClassLoader;
 }
+class JObject;
+class JString;
 namespace java::net
 {
 	class URL;
@@ -34,21 +37,21 @@ namespace javax::xml::validation
 		
 		// Methods
 		static javax::xml::validation::SchemaFactory newDefaultInstance();
-		static javax::xml::validation::SchemaFactory newInstance(jstring arg0);
-		static javax::xml::validation::SchemaFactory newInstance(jstring arg0, jstring arg1, java::lang::ClassLoader arg2);
+		static javax::xml::validation::SchemaFactory newInstance(JString arg0);
+		static javax::xml::validation::SchemaFactory newInstance(JString arg0, JString arg1, java::lang::ClassLoader arg2);
 		JObject getErrorHandler();
-		jboolean getFeature(jstring arg0);
-		jobject getProperty(jstring arg0);
+		jboolean getFeature(JString arg0);
+		JObject getProperty(JString arg0);
 		JObject getResourceResolver();
-		jboolean isSchemaLanguageSupported(jstring arg0);
+		jboolean isSchemaLanguageSupported(JString arg0);
 		javax::xml::validation::Schema newSchema();
-		javax::xml::validation::Schema newSchema(jarray arg0);
+		javax::xml::validation::Schema newSchema(JArray arg0);
 		javax::xml::validation::Schema newSchema(java::io::File arg0);
 		javax::xml::validation::Schema newSchema(java::net::URL arg0);
 		javax::xml::validation::Schema newSchema(JObject arg0);
 		void setErrorHandler(JObject arg0);
-		void setFeature(jstring arg0, jboolean arg1);
-		void setProperty(jstring arg0, jobject arg1);
+		void setFeature(JString arg0, jboolean arg1);
+		void setProperty(JString arg0, JObject arg1);
 		void setResourceResolver(JObject arg0);
 	};
 } // namespace javax::xml::validation

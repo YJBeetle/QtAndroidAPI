@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JByteArray;
 namespace android::bluetooth
 {
 	class BluetoothGattDescriptor;
@@ -22,6 +23,7 @@ namespace java::lang
 {
 	class Integer;
 }
+class JString;
 namespace java::util
 {
 	class UUID;
@@ -80,12 +82,12 @@ namespace android::bluetooth
 		jint getPermissions();
 		jint getProperties();
 		android::bluetooth::BluetoothGattService getService();
-		jstring getStringValue(jint arg0);
+		JString getStringValue(jint arg0);
 		java::util::UUID getUuid();
-		jbyteArray getValue();
+		JByteArray getValue();
 		jint getWriteType();
-		jboolean setValue(jbyteArray arg0);
-		jboolean setValue(jstring arg0);
+		jboolean setValue(JByteArray arg0);
+		jboolean setValue(JString arg0);
 		jboolean setValue(jint arg0, jint arg1, jint arg2);
 		jboolean setValue(jint arg0, jint arg1, jint arg2, jint arg3);
 		void setWriteType(jint arg0);

@@ -1,3 +1,4 @@
+#include "../../JObject.hpp"
 #include "./RemoteCallbackList.hpp"
 
 namespace android::os
@@ -29,13 +30,13 @@ namespace android::os
 			"()V"
 		);
 	}
-	jobject RemoteCallbackList::getBroadcastCookie(jint arg0)
+	JObject RemoteCallbackList::getBroadcastCookie(jint arg0)
 	{
 		return callObjectMethod(
 			"getBroadcastCookie",
 			"(I)Ljava/lang/Object;",
 			arg0
-		).object<jobject>();
+		);
 	}
 	JObject RemoteCallbackList::getBroadcastItem(jint arg0)
 	{
@@ -45,13 +46,13 @@ namespace android::os
 			arg0
 		);
 	}
-	jobject RemoteCallbackList::getRegisteredCallbackCookie(jint arg0)
+	JObject RemoteCallbackList::getRegisteredCallbackCookie(jint arg0)
 	{
 		return callObjectMethod(
 			"getRegisteredCallbackCookie",
 			"(I)Ljava/lang/Object;",
 			arg0
-		).object<jobject>();
+		);
 	}
 	jint RemoteCallbackList::getRegisteredCallbackCount()
 	{
@@ -83,13 +84,13 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	void RemoteCallbackList::onCallbackDied(JObject arg0, jobject arg1)
+	void RemoteCallbackList::onCallbackDied(JObject arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"onCallbackDied",
 			"(Landroid/os/IInterface;Ljava/lang/Object;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jobject>()
 		);
 	}
 	jboolean RemoteCallbackList::_register(JObject arg0)
@@ -100,13 +101,13 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	jboolean RemoteCallbackList::_register(JObject arg0, jobject arg1)
+	jboolean RemoteCallbackList::_register(JObject arg0, JObject arg1)
 	{
 		return callMethod<jboolean>(
 			"register",
 			"(Landroid/os/IInterface;Ljava/lang/Object;)Z",
 			arg0.object(),
-			arg1
+			arg1.object<jobject>()
 		);
 	}
 	jboolean RemoteCallbackList::unregister(JObject arg0)

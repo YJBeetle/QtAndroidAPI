@@ -1,9 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../../java/lang/Exception.hpp"
 #include "../../java/lang/RuntimeException.hpp"
 
+class JString;
 
 namespace android::database
 {
@@ -18,7 +17,7 @@ namespace android::database
 		
 		// Constructors
 		StaleDataException();
-		StaleDataException(jstring arg0);
+		StaleDataException(JString arg0);
 		
 		// Methods
 	};

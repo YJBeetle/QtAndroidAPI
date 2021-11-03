@@ -1,4 +1,5 @@
 #include "../../os/Parcel.hpp"
+#include "../../../JString.hpp"
 #include "./DnsEvent.hpp"
 
 namespace android::app::admin
@@ -26,12 +27,12 @@ namespace android::app::admin
 			"()I"
 		);
 	}
-	jstring DnsEvent::getHostname()
+	JString DnsEvent::getHostname()
 	{
 		return callObjectMethod(
 			"getHostname",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	JObject DnsEvent::getInetAddresses()
 	{
@@ -47,12 +48,12 @@ namespace android::app::admin
 			"()I"
 		);
 	}
-	jstring DnsEvent::toString()
+	JString DnsEvent::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void DnsEvent::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

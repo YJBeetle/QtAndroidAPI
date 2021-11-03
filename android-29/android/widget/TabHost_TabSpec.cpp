@@ -2,6 +2,8 @@
 #include "../graphics/drawable/Drawable.hpp"
 #include "../view/View.hpp"
 #include "./TabHost.hpp"
+#include "../../JString.hpp"
+#include "../../JString.hpp"
 #include "./TabHost_TabSpec.hpp"
 
 namespace android::widget
@@ -14,12 +16,12 @@ namespace android::widget
 	// Constructors
 	
 	// Methods
-	jstring TabHost_TabSpec::getTag()
+	JString TabHost_TabSpec::getTag()
 	{
 		return callObjectMethod(
 			"getTag",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::widget::TabHost_TabSpec TabHost_TabSpec::setContent(android::content::Intent arg0)
 	{
@@ -53,20 +55,20 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	android::widget::TabHost_TabSpec TabHost_TabSpec::setIndicator(jstring arg0)
+	android::widget::TabHost_TabSpec TabHost_TabSpec::setIndicator(JString arg0)
 	{
 		return callObjectMethod(
 			"setIndicator",
 			"(Ljava/lang/CharSequence;)Landroid/widget/TabHost$TabSpec;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	android::widget::TabHost_TabSpec TabHost_TabSpec::setIndicator(jstring arg0, android::graphics::drawable::Drawable arg1)
+	android::widget::TabHost_TabSpec TabHost_TabSpec::setIndicator(JString arg0, android::graphics::drawable::Drawable arg1)
 	{
 		return callObjectMethod(
 			"setIndicator",
 			"(Ljava/lang/CharSequence;Landroid/graphics/drawable/Drawable;)Landroid/widget/TabHost$TabSpec;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}

@@ -6,6 +6,7 @@ namespace android::net
 {
 	class UrlQuerySanitizer;
 }
+class JString;
 
 namespace android::net
 {
@@ -13,15 +14,15 @@ namespace android::net
 	{
 	public:
 		// Fields
-		jstring mParameter();
-		jstring mValue();
+		JString mParameter();
+		JString mValue();
 		
 		// QJniObject forward
 		template<typename ...Ts> explicit UrlQuerySanitizer_ParameterValuePair(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		UrlQuerySanitizer_ParameterValuePair(QJniObject obj);
 		
 		// Constructors
-		UrlQuerySanitizer_ParameterValuePair(android::net::UrlQuerySanitizer arg0, jstring arg1, jstring arg2);
+		UrlQuerySanitizer_ParameterValuePair(android::net::UrlQuerySanitizer arg0, JString arg1, JString arg2);
 		
 		// Methods
 	};

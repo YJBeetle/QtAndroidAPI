@@ -18,6 +18,7 @@ namespace android::os
 {
 	class Handler;
 }
+class JString;
 
 namespace android::companion
 {
@@ -25,7 +26,7 @@ namespace android::companion
 	{
 	public:
 		// Fields
-		static jstring EXTRA_DEVICE();
+		static JString EXTRA_DEVICE();
 		
 		// QJniObject forward
 		template<typename ...Ts> explicit CompanionDeviceManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
@@ -35,12 +36,12 @@ namespace android::companion
 		
 		// Methods
 		void associate(android::companion::AssociationRequest arg0, android::companion::CompanionDeviceManager_Callback arg1, android::os::Handler arg2);
-		void disassociate(jstring arg0);
+		void disassociate(JString arg0);
 		JObject getAssociations();
 		jboolean hasNotificationAccess(android::content::ComponentName arg0);
 		void requestNotificationAccess(android::content::ComponentName arg0);
-		void startObservingDevicePresence(jstring arg0);
-		void stopObservingDevicePresence(jstring arg0);
+		void startObservingDevicePresence(JString arg0);
+		void stopObservingDevicePresence(JString arg0);
 	};
 } // namespace android::companion
 

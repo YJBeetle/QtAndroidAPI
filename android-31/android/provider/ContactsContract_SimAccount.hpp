@@ -6,6 +6,8 @@ namespace android::os
 {
 	class Parcel;
 }
+class JObject;
+class JString;
 
 namespace android::provider
 {
@@ -27,9 +29,9 @@ namespace android::provider
 		
 		// Methods
 		jint describeContents();
-		jboolean equals(jobject arg0);
-		jstring getAccountName();
-		jstring getAccountType();
+		jboolean equals(JObject arg0);
+		JString getAccountName();
+		JString getAccountType();
 		jint getEfType();
 		jint getSimSlotIndex();
 		jint hashCode();

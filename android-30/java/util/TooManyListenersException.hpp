@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "../lang/Exception.hpp"
 
+class JString;
 
 namespace java::util
 {
@@ -17,7 +17,7 @@ namespace java::util
 		
 		// Constructors
 		TooManyListenersException();
-		TooManyListenersException(jstring arg0);
+		TooManyListenersException(JString arg0);
 		
 		// Methods
 	};

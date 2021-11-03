@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./DestroyFailedException.hpp"
 
 namespace javax::security::auth
@@ -13,11 +14,11 @@ namespace javax::security::auth
 			"javax.security.auth.DestroyFailedException",
 			"()V"
 		) {}
-	DestroyFailedException::DestroyFailedException(jstring arg0)
+	DestroyFailedException::DestroyFailedException(JString arg0)
 		: java::lang::Exception(
 			"javax.security.auth.DestroyFailedException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

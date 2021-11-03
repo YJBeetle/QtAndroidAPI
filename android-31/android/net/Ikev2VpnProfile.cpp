@@ -1,4 +1,7 @@
+#include "../../JByteArray.hpp"
 #include "./ProxyInfo.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "../../java/security/cert/X509Certificate.hpp"
 #include "./Ikev2VpnProfile.hpp"
 
@@ -12,12 +15,12 @@ namespace android::net
 	// Constructors
 	
 	// Methods
-	jboolean Ikev2VpnProfile::equals(jobject arg0)
+	jboolean Ikev2VpnProfile::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	JObject Ikev2VpnProfile::getAllowedAlgorithms()
@@ -34,19 +37,19 @@ namespace android::net
 			"()I"
 		);
 	}
-	jstring Ikev2VpnProfile::getPassword()
+	JString Ikev2VpnProfile::getPassword()
 	{
 		return callObjectMethod(
 			"getPassword",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jbyteArray Ikev2VpnProfile::getPresharedKey()
+	JByteArray Ikev2VpnProfile::getPresharedKey()
 	{
 		return callObjectMethod(
 			"getPresharedKey",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
 	android::net::ProxyInfo Ikev2VpnProfile::getProxyInfo()
 	{
@@ -62,12 +65,12 @@ namespace android::net
 			"()Ljava/security/PrivateKey;"
 		);
 	}
-	jstring Ikev2VpnProfile::getServerAddr()
+	JString Ikev2VpnProfile::getServerAddr()
 	{
 		return callObjectMethod(
 			"getServerAddr",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	java::security::cert::X509Certificate Ikev2VpnProfile::getServerRootCaCert()
 	{
@@ -83,19 +86,19 @@ namespace android::net
 			"()Ljava/security/cert/X509Certificate;"
 		);
 	}
-	jstring Ikev2VpnProfile::getUserIdentity()
+	JString Ikev2VpnProfile::getUserIdentity()
 	{
 		return callObjectMethod(
 			"getUserIdentity",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Ikev2VpnProfile::getUsername()
+	JString Ikev2VpnProfile::getUsername()
 	{
 		return callObjectMethod(
 			"getUsername",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint Ikev2VpnProfile::hashCode()
 	{

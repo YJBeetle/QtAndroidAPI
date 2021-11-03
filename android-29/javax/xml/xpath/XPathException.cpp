@@ -1,7 +1,10 @@
+#include "../../../JArray.hpp"
 #include "../../../java/io/ObjectInputStream.hpp"
 #include "../../../java/io/ObjectOutputStream.hpp"
 #include "../../../java/io/PrintStream.hpp"
 #include "../../../java/io/PrintWriter.hpp"
+#include "../../../JString.hpp"
+#include "../../../JThrowable.hpp"
 #include "./XPathException.hpp"
 
 namespace javax::xml::xpath
@@ -12,26 +15,26 @@ namespace javax::xml::xpath
 	XPathException::XPathException(QJniObject obj) : java::lang::Exception(obj) {}
 	
 	// Constructors
-	XPathException::XPathException(jstring arg0)
+	XPathException::XPathException(JString arg0)
 		: java::lang::Exception(
 			"javax.xml.xpath.XPathException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	XPathException::XPathException(jthrowable arg0)
+	XPathException::XPathException(JThrowable arg0)
 		: java::lang::Exception(
 			"javax.xml.xpath.XPathException",
 			"(Ljava/lang/Throwable;)V",
-			arg0
+			arg0.object<jthrowable>()
 		) {}
 	
 	// Methods
-	jthrowable XPathException::getCause()
+	JThrowable XPathException::getCause()
 	{
 		return callObjectMethod(
 			"getCause",
 			"()Ljava/lang/Throwable;"
-		).object<jthrowable>();
+		);
 	}
 	void XPathException::printStackTrace()
 	{

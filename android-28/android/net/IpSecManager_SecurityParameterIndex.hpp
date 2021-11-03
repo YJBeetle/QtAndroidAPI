@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JString;
 
 namespace android::net
 {
@@ -19,7 +20,7 @@ namespace android::net
 		// Methods
 		void close();
 		jint getSpi();
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::net
 

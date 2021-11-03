@@ -1,24 +1,26 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "../../JThrowable.hpp"
 
+class JString;
+class JThrowable;
 
 namespace java::lang
 {
-	class Exception : public JObject
+	class Exception : public JThrowable
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit Exception(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Exception(const char *className, const char *sig, Ts...agv) : JThrowable(className, sig, std::forward<Ts>(agv)...) {}
 		Exception(QJniObject obj);
 		
 		// Constructors
 		Exception();
-		Exception(jstring arg0);
-		Exception(jthrowable arg0);
-		Exception(jstring arg0, jthrowable arg1);
+		Exception(JString arg0);
+		Exception(JThrowable arg0);
+		Exception(JString arg0, JThrowable arg1);
 		
 		// Methods
 	};

@@ -1,4 +1,7 @@
+#include "../../JIntArray.hpp"
 #include "../os/Parcel.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./CellIdentityNr.hpp"
 
 namespace android::telephony
@@ -19,12 +22,12 @@ namespace android::telephony
 	// Constructors
 	
 	// Methods
-	jboolean CellIdentityNr::equals(jobject arg0)
+	jboolean CellIdentityNr::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	JObject CellIdentityNr::getAdditionalPlmns()
@@ -34,26 +37,26 @@ namespace android::telephony
 			"()Ljava/util/Set;"
 		);
 	}
-	jintArray CellIdentityNr::getBands()
+	JIntArray CellIdentityNr::getBands()
 	{
 		return callObjectMethod(
 			"getBands",
 			"()[I"
-		).object<jintArray>();
+		);
 	}
-	jstring CellIdentityNr::getMccString()
+	JString CellIdentityNr::getMccString()
 	{
 		return callObjectMethod(
 			"getMccString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring CellIdentityNr::getMncString()
+	JString CellIdentityNr::getMncString()
 	{
 		return callObjectMethod(
 			"getMncString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jlong CellIdentityNr::getNci()
 	{
@@ -90,12 +93,12 @@ namespace android::telephony
 			"()I"
 		);
 	}
-	jstring CellIdentityNr::toString()
+	JString CellIdentityNr::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void CellIdentityNr::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

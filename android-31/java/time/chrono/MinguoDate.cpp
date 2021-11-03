@@ -1,4 +1,6 @@
 #include "../../io/ObjectInputStream.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "../Clock.hpp"
 #include "../LocalDate.hpp"
 #include "../LocalTime.hpp"
@@ -72,12 +74,12 @@ namespace java::time::chrono
 			arg0.object()
 		);
 	}
-	jboolean MinguoDate::equals(jobject arg0)
+	jboolean MinguoDate::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	java::time::chrono::MinguoChronology MinguoDate::getChronology()
@@ -165,12 +167,12 @@ namespace java::time::chrono
 			"()J"
 		);
 	}
-	jstring MinguoDate::toString()
+	JString MinguoDate::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	JObject MinguoDate::until(JObject arg0)
 	{

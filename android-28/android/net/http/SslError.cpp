@@ -1,4 +1,5 @@
 #include "./SslCertificate.hpp"
+#include "../../../JString.hpp"
 #include "../../../java/security/cert/X509Certificate.hpp"
 #include "./SslError.hpp"
 
@@ -73,21 +74,21 @@ namespace android::net::http
 			arg0,
 			arg1.object()
 		) {}
-	SslError::SslError(jint arg0, android::net::http::SslCertificate arg1, jstring arg2)
+	SslError::SslError(jint arg0, android::net::http::SslCertificate arg1, JString arg2)
 		: JObject(
 			"android.net.http.SslError",
 			"(ILandroid/net/http/SslCertificate;Ljava/lang/String;)V",
 			arg0,
 			arg1.object(),
-			arg2
+			arg2.object<jstring>()
 		) {}
-	SslError::SslError(jint arg0, java::security::cert::X509Certificate arg1, jstring arg2)
+	SslError::SslError(jint arg0, java::security::cert::X509Certificate arg1, JString arg2)
 		: JObject(
 			"android.net.http.SslError",
 			"(ILjava/security/cert/X509Certificate;Ljava/lang/String;)V",
 			arg0,
 			arg1.object(),
-			arg2
+			arg2.object<jstring>()
 		) {}
 	
 	// Methods
@@ -113,12 +114,12 @@ namespace android::net::http
 			"()I"
 		);
 	}
-	jstring SslError::getUrl()
+	JString SslError::getUrl()
 	{
 		return callObjectMethod(
 			"getUrl",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jboolean SslError::hasError(jint arg0)
 	{
@@ -128,12 +129,12 @@ namespace android::net::http
 			arg0
 		);
 	}
-	jstring SslError::toString()
+	JString SslError::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::net::http
 

@@ -2,7 +2,6 @@
 
 #include "../../JObject.hpp"
 
-
 namespace android::hardware
 {
 	class SensorPrivacyManager : public JObject

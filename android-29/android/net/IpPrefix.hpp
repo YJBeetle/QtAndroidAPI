@@ -2,10 +2,13 @@
 
 #include "../../JObject.hpp"
 
+class JByteArray;
 namespace android::os
 {
 	class Parcel;
 }
+class JObject;
+class JString;
 namespace java::net
 {
 	class InetAddress;
@@ -28,12 +31,12 @@ namespace android::net
 		// Methods
 		jboolean contains(java::net::InetAddress arg0);
 		jint describeContents();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		java::net::InetAddress getAddress();
 		jint getPrefixLength();
-		jbyteArray getRawAddress();
+		JByteArray getRawAddress();
 		jint hashCode();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::net

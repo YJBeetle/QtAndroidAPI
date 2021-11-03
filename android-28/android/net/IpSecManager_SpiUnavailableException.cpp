@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./IpSecManager_SpiUnavailableException.hpp"
 
 namespace android::net

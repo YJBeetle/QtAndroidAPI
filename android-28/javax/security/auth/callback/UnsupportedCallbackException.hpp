@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../../../JObject.hpp"
 #include "../../../../java/lang/Exception.hpp"
 
+class JString;
 
 namespace javax::security::auth::callback
 {
@@ -17,7 +17,7 @@ namespace javax::security::auth::callback
 		
 		// Constructors
 		UnsupportedCallbackException(JObject arg0);
-		UnsupportedCallbackException(JObject arg0, jstring arg1);
+		UnsupportedCallbackException(JObject arg0, JString arg1);
 		
 		// Methods
 		JObject getCallback();

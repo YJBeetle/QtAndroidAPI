@@ -1,5 +1,8 @@
 #include "../../graphics/drawable/Icon.hpp"
 #include "../../os/Parcel.hpp"
+#include "../../../JString.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./ConversationStatus.hpp"
 
 namespace android::app::people
@@ -118,12 +121,12 @@ namespace android::app::people
 			"()I"
 		);
 	}
-	jboolean ConversationStatus::equals(jobject arg0)
+	jboolean ConversationStatus::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint ConversationStatus::getActivity()
@@ -140,12 +143,12 @@ namespace android::app::people
 			"()I"
 		);
 	}
-	jstring ConversationStatus::getDescription()
+	JString ConversationStatus::getDescription()
 	{
 		return callObjectMethod(
 			"getDescription",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	jlong ConversationStatus::getEndTimeMillis()
 	{
@@ -161,12 +164,12 @@ namespace android::app::people
 			"()Landroid/graphics/drawable/Icon;"
 		);
 	}
-	jstring ConversationStatus::getId()
+	JString ConversationStatus::getId()
 	{
 		return callObjectMethod(
 			"getId",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jlong ConversationStatus::getStartTimeMillis()
 	{
@@ -182,12 +185,12 @@ namespace android::app::people
 			"()I"
 		);
 	}
-	jstring ConversationStatus::toString()
+	JString ConversationStatus::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void ConversationStatus::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

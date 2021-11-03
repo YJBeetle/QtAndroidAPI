@@ -1,9 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../lang/Exception.hpp"
 #include "./GeneralSecurityException.hpp"
 
+class JString;
 
 namespace java::security
 {
@@ -18,7 +17,7 @@ namespace java::security
 		
 		// Constructors
 		UnrecoverableEntryException();
-		UnrecoverableEntryException(jstring arg0);
+		UnrecoverableEntryException(JString arg0);
 		
 		// Methods
 	};

@@ -1,8 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../view/View.hpp"
-#include "./TextView.hpp"
 #include "./EditText.hpp"
 
 namespace android::content
@@ -33,6 +30,8 @@ namespace android::widget
 {
 	class Filter;
 }
+class JString;
+class JObject;
 
 namespace android::widget
 {
@@ -56,9 +55,9 @@ namespace android::widget
 		void clearListSelection();
 		void dismissDropDown();
 		jboolean enoughToFilter();
-		jstring getAccessibilityClassName();
+		JString getAccessibilityClassName();
 		JObject getAdapter();
-		jstring getCompletionHint();
+		JString getCompletionHint();
 		jint getDropDownAnchor();
 		android::graphics::drawable::Drawable getDropDownBackground();
 		jint getDropDownHeight();
@@ -85,7 +84,7 @@ namespace android::widget
 		void performValidation();
 		void refreshAutoCompleteResults();
 		void setAdapter(JObject arg0);
-		void setCompletionHint(jstring arg0);
+		void setCompletionHint(JString arg0);
 		void setDropDownAnchor(jint arg0);
 		void setDropDownBackgroundDrawable(android::graphics::drawable::Drawable arg0);
 		void setDropDownBackgroundResource(jint arg0);
@@ -99,7 +98,7 @@ namespace android::widget
 		void setOnDismissListener(JObject arg0);
 		void setOnItemClickListener(JObject arg0);
 		void setOnItemSelectedListener(JObject arg0);
-		void setText(jstring arg0, jboolean arg1);
+		void setText(JString arg0, jboolean arg1);
 		void setThreshold(jint arg0);
 		void setValidator(JObject arg0);
 		void showDropDown();

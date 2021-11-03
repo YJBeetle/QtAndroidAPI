@@ -1,6 +1,7 @@
 #include "./GnssAntennaInfo_PhaseCenterOffset.hpp"
 #include "./GnssAntennaInfo_SphericalCorrections.hpp"
 #include "../os/Parcel.hpp"
+#include "../../JString.hpp"
 #include "./GnssAntennaInfo.hpp"
 
 namespace android::location
@@ -56,12 +57,12 @@ namespace android::location
 			"()Landroid/location/GnssAntennaInfo$SphericalCorrections;"
 		);
 	}
-	jstring GnssAntennaInfo::toString()
+	JString GnssAntennaInfo::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void GnssAntennaInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

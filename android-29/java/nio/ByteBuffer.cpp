@@ -1,3 +1,6 @@
+#include "../../JByteArray.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./Buffer.hpp"
 #include "./ByteOrder.hpp"
 #include "./CharBuffer.hpp"
@@ -36,22 +39,22 @@ namespace java::nio
 			arg0
 		);
 	}
-	java::nio::ByteBuffer ByteBuffer::wrap(jbyteArray arg0)
+	java::nio::ByteBuffer ByteBuffer::wrap(JByteArray arg0)
 	{
 		return callStaticObjectMethod(
 			"java.nio.ByteBuffer",
 			"wrap",
 			"([B)Ljava/nio/ByteBuffer;",
-			arg0
+			arg0.object<jbyteArray>()
 		);
 	}
-	java::nio::ByteBuffer ByteBuffer::wrap(jbyteArray arg0, jint arg1, jint arg2)
+	java::nio::ByteBuffer ByteBuffer::wrap(JByteArray arg0, jint arg1, jint arg2)
 	{
 		return callStaticObjectMethod(
 			"java.nio.ByteBuffer",
 			"wrap",
 			"([BII)Ljava/nio/ByteBuffer;",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1,
 			arg2
 		);
@@ -73,12 +76,12 @@ namespace java::nio
 			arg1
 		);
 	}
-	jbyteArray ByteBuffer::array()
+	JByteArray ByteBuffer::array()
 	{
 		return callObjectMethod(
 			"array",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
 	jint ByteBuffer::arrayOffset()
 	{
@@ -150,12 +153,12 @@ namespace java::nio
 			"()Ljava/nio/ByteBuffer;"
 		);
 	}
-	jint ByteBuffer::compareTo(jobject arg0)
+	jint ByteBuffer::compareTo(JObject arg0)
 	{
 		return callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Object;)I",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint ByteBuffer::compareTo(java::nio::ByteBuffer arg0)
@@ -173,12 +176,12 @@ namespace java::nio
 			"()Ljava/nio/ByteBuffer;"
 		);
 	}
-	jboolean ByteBuffer::equals(jobject arg0)
+	jboolean ByteBuffer::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	java::nio::ByteBuffer ByteBuffer::flip()
@@ -203,40 +206,40 @@ namespace java::nio
 			arg0
 		);
 	}
-	java::nio::ByteBuffer ByteBuffer::get(jbyteArray arg0)
+	java::nio::ByteBuffer ByteBuffer::get(JByteArray arg0)
 	{
 		return callObjectMethod(
 			"get",
 			"([B)Ljava/nio/ByteBuffer;",
-			arg0
+			arg0.object<jbyteArray>()
 		);
 	}
-	java::nio::ByteBuffer ByteBuffer::get(jint arg0, jbyteArray arg1)
+	java::nio::ByteBuffer ByteBuffer::get(jint arg0, JByteArray arg1)
 	{
 		return callObjectMethod(
 			"get",
 			"(I[B)Ljava/nio/ByteBuffer;",
 			arg0,
-			arg1
+			arg1.object<jbyteArray>()
 		);
 	}
-	java::nio::ByteBuffer ByteBuffer::get(jbyteArray arg0, jint arg1, jint arg2)
+	java::nio::ByteBuffer ByteBuffer::get(JByteArray arg0, jint arg1, jint arg2)
 	{
 		return callObjectMethod(
 			"get",
 			"([BII)Ljava/nio/ByteBuffer;",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1,
 			arg2
 		);
 	}
-	java::nio::ByteBuffer ByteBuffer::get(jint arg0, jbyteArray arg1, jint arg2, jint arg3)
+	java::nio::ByteBuffer ByteBuffer::get(jint arg0, JByteArray arg1, jint arg2, jint arg3)
 	{
 		return callObjectMethod(
 			"get",
 			"(I[BII)Ljava/nio/ByteBuffer;",
 			arg0,
-			arg1,
+			arg1.object<jbyteArray>(),
 			arg2,
 			arg3
 		);
@@ -398,12 +401,12 @@ namespace java::nio
 			arg0
 		);
 	}
-	java::nio::ByteBuffer ByteBuffer::put(jbyteArray arg0)
+	java::nio::ByteBuffer ByteBuffer::put(JByteArray arg0)
 	{
 		return callObjectMethod(
 			"put",
 			"([B)Ljava/nio/ByteBuffer;",
-			arg0
+			arg0.object<jbyteArray>()
 		);
 	}
 	java::nio::ByteBuffer ByteBuffer::put(jbyte arg0)
@@ -422,13 +425,13 @@ namespace java::nio
 			arg0.object()
 		);
 	}
-	java::nio::ByteBuffer ByteBuffer::put(jint arg0, jbyteArray arg1)
+	java::nio::ByteBuffer ByteBuffer::put(jint arg0, JByteArray arg1)
 	{
 		return callObjectMethod(
 			"put",
 			"(I[B)Ljava/nio/ByteBuffer;",
 			arg0,
-			arg1
+			arg1.object<jbyteArray>()
 		);
 	}
 	java::nio::ByteBuffer ByteBuffer::put(jint arg0, jbyte arg1)
@@ -440,23 +443,23 @@ namespace java::nio
 			arg1
 		);
 	}
-	java::nio::ByteBuffer ByteBuffer::put(jbyteArray arg0, jint arg1, jint arg2)
+	java::nio::ByteBuffer ByteBuffer::put(JByteArray arg0, jint arg1, jint arg2)
 	{
 		return callObjectMethod(
 			"put",
 			"([BII)Ljava/nio/ByteBuffer;",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1,
 			arg2
 		);
 	}
-	java::nio::ByteBuffer ByteBuffer::put(jint arg0, jbyteArray arg1, jint arg2, jint arg3)
+	java::nio::ByteBuffer ByteBuffer::put(jint arg0, JByteArray arg1, jint arg2, jint arg3)
 	{
 		return callObjectMethod(
 			"put",
 			"(I[BII)Ljava/nio/ByteBuffer;",
 			arg0,
-			arg1,
+			arg1.object<jbyteArray>(),
 			arg2,
 			arg3
 		);
@@ -604,12 +607,12 @@ namespace java::nio
 			arg1
 		);
 	}
-	jstring ByteBuffer::toString()
+	JString ByteBuffer::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::nio
 

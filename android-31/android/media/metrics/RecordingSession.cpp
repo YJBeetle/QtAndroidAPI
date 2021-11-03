@@ -1,4 +1,5 @@
 #include "./LogSessionId.hpp"
+#include "../../../JObject.hpp"
 #include "./RecordingSession.hpp"
 
 namespace android::media::metrics
@@ -18,12 +19,12 @@ namespace android::media::metrics
 			"()V"
 		);
 	}
-	jboolean RecordingSession::equals(jobject arg0)
+	jboolean RecordingSession::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	android::media::metrics::LogSessionId RecordingSession::getSessionId()

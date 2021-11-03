@@ -1,6 +1,7 @@
 #include "./AccessibilityService.hpp"
 #include "../graphics/Region.hpp"
 #include "../os/Handler.hpp"
+#include "../../JObject.hpp"
 #include "./AccessibilityService_MagnificationController.hpp"
 
 namespace android::accessibilityservice

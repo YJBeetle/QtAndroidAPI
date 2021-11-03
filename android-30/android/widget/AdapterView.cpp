@@ -3,6 +3,8 @@
 #include "../view/View.hpp"
 #include "../view/ViewGroup_LayoutParams.hpp"
 #include "../view/ViewStructure.hpp"
+#include "../../JString.hpp"
+#include "../../JObject.hpp"
 #include "./AdapterView.hpp"
 
 namespace android::widget
@@ -109,12 +111,12 @@ namespace android::widget
 			arg2.object()
 		);
 	}
-	jstring AdapterView::getAccessibilityClassName()
+	JString AdapterView::getAccessibilityClassName()
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	JObject AdapterView::getAdapter()
 	{
@@ -144,13 +146,13 @@ namespace android::widget
 			"()I"
 		);
 	}
-	jobject AdapterView::getItemAtPosition(jint arg0)
+	JObject AdapterView::getItemAtPosition(jint arg0)
 	{
 		return callObjectMethod(
 			"getItemAtPosition",
 			"(I)Ljava/lang/Object;",
 			arg0
-		).object<jobject>();
+		);
 	}
 	jlong AdapterView::getItemIdAtPosition(jint arg0)
 	{
@@ -196,12 +198,12 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	jobject AdapterView::getSelectedItem()
+	JObject AdapterView::getSelectedItem()
 	{
 		return callObjectMethod(
 			"getSelectedItem",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
 	jlong AdapterView::getSelectedItemId()
 	{

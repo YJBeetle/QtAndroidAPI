@@ -1,3 +1,7 @@
+#include "../../JArray.hpp"
+#include "../../JArray.hpp"
+#include "../../JArray.hpp"
+#include "../../JArray.hpp"
 #include "../accounts/Account.hpp"
 #include "./ContentProvider.hpp"
 #include "./ContentProviderClient.hpp"
@@ -16,67 +20,69 @@
 #include "../util/Size.hpp"
 #include "../../java/io/InputStream.hpp"
 #include "../../java/io/OutputStream.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "../../java/util/ArrayList.hpp"
 #include "./ContentResolver.hpp"
 
 namespace android::content
 {
 	// Fields
-	jstring ContentResolver::ANY_CURSOR_ITEM_TYPE()
+	JString ContentResolver::ANY_CURSOR_ITEM_TYPE()
 	{
 		return getStaticObjectField(
 			"android.content.ContentResolver",
 			"ANY_CURSOR_ITEM_TYPE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ContentResolver::CURSOR_DIR_BASE_TYPE()
+	JString ContentResolver::CURSOR_DIR_BASE_TYPE()
 	{
 		return getStaticObjectField(
 			"android.content.ContentResolver",
 			"CURSOR_DIR_BASE_TYPE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ContentResolver::CURSOR_ITEM_BASE_TYPE()
+	JString ContentResolver::CURSOR_ITEM_BASE_TYPE()
 	{
 		return getStaticObjectField(
 			"android.content.ContentResolver",
 			"CURSOR_ITEM_BASE_TYPE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ContentResolver::EXTRA_HONORED_ARGS()
+	JString ContentResolver::EXTRA_HONORED_ARGS()
 	{
 		return getStaticObjectField(
 			"android.content.ContentResolver",
 			"EXTRA_HONORED_ARGS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ContentResolver::EXTRA_REFRESH_SUPPORTED()
+	JString ContentResolver::EXTRA_REFRESH_SUPPORTED()
 	{
 		return getStaticObjectField(
 			"android.content.ContentResolver",
 			"EXTRA_REFRESH_SUPPORTED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ContentResolver::EXTRA_SIZE()
+	JString ContentResolver::EXTRA_SIZE()
 	{
 		return getStaticObjectField(
 			"android.content.ContentResolver",
 			"EXTRA_SIZE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ContentResolver::EXTRA_TOTAL_COUNT()
+	JString ContentResolver::EXTRA_TOTAL_COUNT()
 	{
 		return getStaticObjectField(
 			"android.content.ContentResolver",
 			"EXTRA_TOTAL_COUNT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint ContentResolver::NOTIFY_DELETE()
 	{
@@ -113,109 +119,109 @@ namespace android::content
 			"NOTIFY_UPDATE"
 		);
 	}
-	jstring ContentResolver::QUERY_ARG_GROUP_COLUMNS()
+	JString ContentResolver::QUERY_ARG_GROUP_COLUMNS()
 	{
 		return getStaticObjectField(
 			"android.content.ContentResolver",
 			"QUERY_ARG_GROUP_COLUMNS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ContentResolver::QUERY_ARG_LIMIT()
+	JString ContentResolver::QUERY_ARG_LIMIT()
 	{
 		return getStaticObjectField(
 			"android.content.ContentResolver",
 			"QUERY_ARG_LIMIT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ContentResolver::QUERY_ARG_OFFSET()
+	JString ContentResolver::QUERY_ARG_OFFSET()
 	{
 		return getStaticObjectField(
 			"android.content.ContentResolver",
 			"QUERY_ARG_OFFSET",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ContentResolver::QUERY_ARG_SORT_COLLATION()
+	JString ContentResolver::QUERY_ARG_SORT_COLLATION()
 	{
 		return getStaticObjectField(
 			"android.content.ContentResolver",
 			"QUERY_ARG_SORT_COLLATION",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ContentResolver::QUERY_ARG_SORT_COLUMNS()
+	JString ContentResolver::QUERY_ARG_SORT_COLUMNS()
 	{
 		return getStaticObjectField(
 			"android.content.ContentResolver",
 			"QUERY_ARG_SORT_COLUMNS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ContentResolver::QUERY_ARG_SORT_DIRECTION()
+	JString ContentResolver::QUERY_ARG_SORT_DIRECTION()
 	{
 		return getStaticObjectField(
 			"android.content.ContentResolver",
 			"QUERY_ARG_SORT_DIRECTION",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ContentResolver::QUERY_ARG_SORT_LOCALE()
+	JString ContentResolver::QUERY_ARG_SORT_LOCALE()
 	{
 		return getStaticObjectField(
 			"android.content.ContentResolver",
 			"QUERY_ARG_SORT_LOCALE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ContentResolver::QUERY_ARG_SQL_GROUP_BY()
+	JString ContentResolver::QUERY_ARG_SQL_GROUP_BY()
 	{
 		return getStaticObjectField(
 			"android.content.ContentResolver",
 			"QUERY_ARG_SQL_GROUP_BY",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ContentResolver::QUERY_ARG_SQL_HAVING()
+	JString ContentResolver::QUERY_ARG_SQL_HAVING()
 	{
 		return getStaticObjectField(
 			"android.content.ContentResolver",
 			"QUERY_ARG_SQL_HAVING",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ContentResolver::QUERY_ARG_SQL_LIMIT()
+	JString ContentResolver::QUERY_ARG_SQL_LIMIT()
 	{
 		return getStaticObjectField(
 			"android.content.ContentResolver",
 			"QUERY_ARG_SQL_LIMIT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ContentResolver::QUERY_ARG_SQL_SELECTION()
+	JString ContentResolver::QUERY_ARG_SQL_SELECTION()
 	{
 		return getStaticObjectField(
 			"android.content.ContentResolver",
 			"QUERY_ARG_SQL_SELECTION",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ContentResolver::QUERY_ARG_SQL_SELECTION_ARGS()
+	JString ContentResolver::QUERY_ARG_SQL_SELECTION_ARGS()
 	{
 		return getStaticObjectField(
 			"android.content.ContentResolver",
 			"QUERY_ARG_SQL_SELECTION_ARGS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ContentResolver::QUERY_ARG_SQL_SORT_ORDER()
+	JString ContentResolver::QUERY_ARG_SQL_SORT_ORDER()
 	{
 		return getStaticObjectField(
 			"android.content.ContentResolver",
 			"QUERY_ARG_SQL_SORT_ORDER",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint ContentResolver::QUERY_SORT_DIRECTION_ASCENDING()
 	{
@@ -231,125 +237,125 @@ namespace android::content
 			"QUERY_SORT_DIRECTION_DESCENDING"
 		);
 	}
-	jstring ContentResolver::SCHEME_ANDROID_RESOURCE()
+	JString ContentResolver::SCHEME_ANDROID_RESOURCE()
 	{
 		return getStaticObjectField(
 			"android.content.ContentResolver",
 			"SCHEME_ANDROID_RESOURCE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ContentResolver::SCHEME_CONTENT()
+	JString ContentResolver::SCHEME_CONTENT()
 	{
 		return getStaticObjectField(
 			"android.content.ContentResolver",
 			"SCHEME_CONTENT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ContentResolver::SCHEME_FILE()
+	JString ContentResolver::SCHEME_FILE()
 	{
 		return getStaticObjectField(
 			"android.content.ContentResolver",
 			"SCHEME_FILE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ContentResolver::SYNC_EXTRAS_ACCOUNT()
+	JString ContentResolver::SYNC_EXTRAS_ACCOUNT()
 	{
 		return getStaticObjectField(
 			"android.content.ContentResolver",
 			"SYNC_EXTRAS_ACCOUNT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ContentResolver::SYNC_EXTRAS_DISCARD_LOCAL_DELETIONS()
+	JString ContentResolver::SYNC_EXTRAS_DISCARD_LOCAL_DELETIONS()
 	{
 		return getStaticObjectField(
 			"android.content.ContentResolver",
 			"SYNC_EXTRAS_DISCARD_LOCAL_DELETIONS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ContentResolver::SYNC_EXTRAS_DO_NOT_RETRY()
+	JString ContentResolver::SYNC_EXTRAS_DO_NOT_RETRY()
 	{
 		return getStaticObjectField(
 			"android.content.ContentResolver",
 			"SYNC_EXTRAS_DO_NOT_RETRY",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ContentResolver::SYNC_EXTRAS_EXPEDITED()
+	JString ContentResolver::SYNC_EXTRAS_EXPEDITED()
 	{
 		return getStaticObjectField(
 			"android.content.ContentResolver",
 			"SYNC_EXTRAS_EXPEDITED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ContentResolver::SYNC_EXTRAS_FORCE()
+	JString ContentResolver::SYNC_EXTRAS_FORCE()
 	{
 		return getStaticObjectField(
 			"android.content.ContentResolver",
 			"SYNC_EXTRAS_FORCE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ContentResolver::SYNC_EXTRAS_IGNORE_BACKOFF()
+	JString ContentResolver::SYNC_EXTRAS_IGNORE_BACKOFF()
 	{
 		return getStaticObjectField(
 			"android.content.ContentResolver",
 			"SYNC_EXTRAS_IGNORE_BACKOFF",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ContentResolver::SYNC_EXTRAS_IGNORE_SETTINGS()
+	JString ContentResolver::SYNC_EXTRAS_IGNORE_SETTINGS()
 	{
 		return getStaticObjectField(
 			"android.content.ContentResolver",
 			"SYNC_EXTRAS_IGNORE_SETTINGS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ContentResolver::SYNC_EXTRAS_INITIALIZE()
+	JString ContentResolver::SYNC_EXTRAS_INITIALIZE()
 	{
 		return getStaticObjectField(
 			"android.content.ContentResolver",
 			"SYNC_EXTRAS_INITIALIZE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ContentResolver::SYNC_EXTRAS_MANUAL()
+	JString ContentResolver::SYNC_EXTRAS_MANUAL()
 	{
 		return getStaticObjectField(
 			"android.content.ContentResolver",
 			"SYNC_EXTRAS_MANUAL",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ContentResolver::SYNC_EXTRAS_OVERRIDE_TOO_MANY_DELETIONS()
+	JString ContentResolver::SYNC_EXTRAS_OVERRIDE_TOO_MANY_DELETIONS()
 	{
 		return getStaticObjectField(
 			"android.content.ContentResolver",
 			"SYNC_EXTRAS_OVERRIDE_TOO_MANY_DELETIONS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ContentResolver::SYNC_EXTRAS_REQUIRE_CHARGING()
+	JString ContentResolver::SYNC_EXTRAS_REQUIRE_CHARGING()
 	{
 		return getStaticObjectField(
 			"android.content.ContentResolver",
 			"SYNC_EXTRAS_REQUIRE_CHARGING",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ContentResolver::SYNC_EXTRAS_UPLOAD()
+	JString ContentResolver::SYNC_EXTRAS_UPLOAD()
 	{
 		return getStaticObjectField(
 			"android.content.ContentResolver",
 			"SYNC_EXTRAS_UPLOAD",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint ContentResolver::SYNC_OBSERVER_TYPE_ACTIVE()
 	{
@@ -385,19 +391,19 @@ namespace android::content
 		) {}
 	
 	// Methods
-	void ContentResolver::addPeriodicSync(android::accounts::Account arg0, jstring arg1, android::os::Bundle arg2, jlong arg3)
+	void ContentResolver::addPeriodicSync(android::accounts::Account arg0, JString arg1, android::os::Bundle arg2, jlong arg3)
 	{
 		callStaticMethod<void>(
 			"android.content.ContentResolver",
 			"addPeriodicSync",
 			"(Landroid/accounts/Account;Ljava/lang/String;Landroid/os/Bundle;J)V",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2.object(),
 			arg3
 		);
 	}
-	jobject ContentResolver::addStatusChangeListener(jint arg0, JObject arg1)
+	JObject ContentResolver::addStatusChangeListener(jint arg0, JObject arg1)
 	{
 		return callStaticObjectMethod(
 			"android.content.ContentResolver",
@@ -405,7 +411,7 @@ namespace android::content
 			"(ILandroid/content/SyncStatusObserver;)Ljava/lang/Object;",
 			arg0,
 			arg1.object()
-		).object<jobject>();
+		);
 	}
 	void ContentResolver::cancelSync(android::content::SyncRequest arg0)
 	{
@@ -416,14 +422,14 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	void ContentResolver::cancelSync(android::accounts::Account arg0, jstring arg1)
+	void ContentResolver::cancelSync(android::accounts::Account arg0, JString arg1)
 	{
 		callStaticMethod<void>(
 			"android.content.ContentResolver",
 			"cancelSync",
 			"(Landroid/accounts/Account;Ljava/lang/String;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
 	android::content::SyncInfo ContentResolver::getCurrentSync()
@@ -442,14 +448,14 @@ namespace android::content
 			"()Ljava/util/List;"
 		);
 	}
-	jint ContentResolver::getIsSyncable(android::accounts::Account arg0, jstring arg1)
+	jint ContentResolver::getIsSyncable(android::accounts::Account arg0, JString arg1)
 	{
 		return callStaticMethod<jint>(
 			"android.content.ContentResolver",
 			"getIsSyncable",
 			"(Landroid/accounts/Account;Ljava/lang/String;)I",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
 	jboolean ContentResolver::getMasterSyncAutomatically()
@@ -460,72 +466,72 @@ namespace android::content
 			"()Z"
 		);
 	}
-	JObject ContentResolver::getPeriodicSyncs(android::accounts::Account arg0, jstring arg1)
+	JObject ContentResolver::getPeriodicSyncs(android::accounts::Account arg0, JString arg1)
 	{
 		return callStaticObjectMethod(
 			"android.content.ContentResolver",
 			"getPeriodicSyncs",
 			"(Landroid/accounts/Account;Ljava/lang/String;)Ljava/util/List;",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
-	jarray ContentResolver::getSyncAdapterTypes()
+	JArray ContentResolver::getSyncAdapterTypes()
 	{
 		return callStaticObjectMethod(
 			"android.content.ContentResolver",
 			"getSyncAdapterTypes",
 			"()[Landroid/content/SyncAdapterType;"
-		).object<jarray>();
+		);
 	}
-	jboolean ContentResolver::getSyncAutomatically(android::accounts::Account arg0, jstring arg1)
+	jboolean ContentResolver::getSyncAutomatically(android::accounts::Account arg0, JString arg1)
 	{
 		return callStaticMethod<jboolean>(
 			"android.content.ContentResolver",
 			"getSyncAutomatically",
 			"(Landroid/accounts/Account;Ljava/lang/String;)Z",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
-	jboolean ContentResolver::isSyncActive(android::accounts::Account arg0, jstring arg1)
+	jboolean ContentResolver::isSyncActive(android::accounts::Account arg0, JString arg1)
 	{
 		return callStaticMethod<jboolean>(
 			"android.content.ContentResolver",
 			"isSyncActive",
 			"(Landroid/accounts/Account;Ljava/lang/String;)Z",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
-	jboolean ContentResolver::isSyncPending(android::accounts::Account arg0, jstring arg1)
+	jboolean ContentResolver::isSyncPending(android::accounts::Account arg0, JString arg1)
 	{
 		return callStaticMethod<jboolean>(
 			"android.content.ContentResolver",
 			"isSyncPending",
 			"(Landroid/accounts/Account;Ljava/lang/String;)Z",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
-	void ContentResolver::removePeriodicSync(android::accounts::Account arg0, jstring arg1, android::os::Bundle arg2)
+	void ContentResolver::removePeriodicSync(android::accounts::Account arg0, JString arg1, android::os::Bundle arg2)
 	{
 		callStaticMethod<void>(
 			"android.content.ContentResolver",
 			"removePeriodicSync",
 			"(Landroid/accounts/Account;Ljava/lang/String;Landroid/os/Bundle;)V",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2.object()
 		);
 	}
-	void ContentResolver::removeStatusChangeListener(jobject arg0)
+	void ContentResolver::removeStatusChangeListener(JObject arg0)
 	{
 		callStaticMethod<void>(
 			"android.content.ContentResolver",
 			"removeStatusChangeListener",
 			"(Ljava/lang/Object;)V",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	void ContentResolver::requestSync(android::content::SyncRequest arg0)
@@ -537,25 +543,25 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	void ContentResolver::requestSync(android::accounts::Account arg0, jstring arg1, android::os::Bundle arg2)
+	void ContentResolver::requestSync(android::accounts::Account arg0, JString arg1, android::os::Bundle arg2)
 	{
 		callStaticMethod<void>(
 			"android.content.ContentResolver",
 			"requestSync",
 			"(Landroid/accounts/Account;Ljava/lang/String;Landroid/os/Bundle;)V",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2.object()
 		);
 	}
-	void ContentResolver::setIsSyncable(android::accounts::Account arg0, jstring arg1, jint arg2)
+	void ContentResolver::setIsSyncable(android::accounts::Account arg0, JString arg1, jint arg2)
 	{
 		callStaticMethod<void>(
 			"android.content.ContentResolver",
 			"setIsSyncable",
 			"(Landroid/accounts/Account;Ljava/lang/String;I)V",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2
 		);
 	}
@@ -568,14 +574,14 @@ namespace android::content
 			arg0
 		);
 	}
-	void ContentResolver::setSyncAutomatically(android::accounts::Account arg0, jstring arg1, jboolean arg2)
+	void ContentResolver::setSyncAutomatically(android::accounts::Account arg0, JString arg1, jboolean arg2)
 	{
 		callStaticMethod<void>(
 			"android.content.ContentResolver",
 			"setSyncAutomatically",
 			"(Landroid/accounts/Account;Ljava/lang/String;Z)V",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2
 		);
 	}
@@ -614,12 +620,12 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	android::content::ContentProviderClient ContentResolver::acquireContentProviderClient(jstring arg0)
+	android::content::ContentProviderClient ContentResolver::acquireContentProviderClient(JString arg0)
 	{
 		return callObjectMethod(
 			"acquireContentProviderClient",
 			"(Ljava/lang/String;)Landroid/content/ContentProviderClient;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::content::ContentProviderClient ContentResolver::acquireUnstableContentProviderClient(android::net::Uri arg0)
@@ -630,51 +636,51 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	android::content::ContentProviderClient ContentResolver::acquireUnstableContentProviderClient(jstring arg0)
+	android::content::ContentProviderClient ContentResolver::acquireUnstableContentProviderClient(JString arg0)
 	{
 		return callObjectMethod(
 			"acquireUnstableContentProviderClient",
 			"(Ljava/lang/String;)Landroid/content/ContentProviderClient;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray ContentResolver::applyBatch(jstring arg0, java::util::ArrayList arg1)
+	JArray ContentResolver::applyBatch(JString arg0, java::util::ArrayList arg1)
 	{
 		return callObjectMethod(
 			"applyBatch",
 			"(Ljava/lang/String;Ljava/util/ArrayList;)[Landroid/content/ContentProviderResult;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
-		).object<jarray>();
+		);
 	}
-	jint ContentResolver::bulkInsert(android::net::Uri arg0, jarray arg1)
+	jint ContentResolver::bulkInsert(android::net::Uri arg0, JArray arg1)
 	{
 		return callMethod<jint>(
 			"bulkInsert",
 			"(Landroid/net/Uri;[Landroid/content/ContentValues;)I",
 			arg0.object(),
-			arg1
+			arg1.object<jarray>()
 		);
 	}
-	android::os::Bundle ContentResolver::call(android::net::Uri arg0, jstring arg1, jstring arg2, android::os::Bundle arg3)
+	android::os::Bundle ContentResolver::call(android::net::Uri arg0, JString arg1, JString arg2, android::os::Bundle arg3)
 	{
 		return callObjectMethod(
 			"call",
 			"(Landroid/net/Uri;Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;)Landroid/os/Bundle;",
 			arg0.object(),
-			arg1,
-			arg2,
+			arg1.object<jstring>(),
+			arg2.object<jstring>(),
 			arg3.object()
 		);
 	}
-	android::os::Bundle ContentResolver::call(jstring arg0, jstring arg1, jstring arg2, android::os::Bundle arg3)
+	android::os::Bundle ContentResolver::call(JString arg0, JString arg1, JString arg2, android::os::Bundle arg3)
 	{
 		return callObjectMethod(
 			"call",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;)Landroid/os/Bundle;",
-			arg0,
-			arg1,
-			arg2,
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2.object<jstring>(),
 			arg3.object()
 		);
 	}
@@ -703,14 +709,14 @@ namespace android::content
 			arg1.object()
 		);
 	}
-	jint ContentResolver::_delete(android::net::Uri arg0, jstring arg1, jarray arg2)
+	jint ContentResolver::_delete(android::net::Uri arg0, JString arg1, JArray arg2)
 	{
 		return callMethod<jint>(
 			"delete",
 			"(Landroid/net/Uri;Ljava/lang/String;[Ljava/lang/String;)I",
 			arg0.object(),
-			arg1,
-			arg2
+			arg1.object<jstring>(),
+			arg2.object<jarray>()
 		);
 	}
 	JObject ContentResolver::getOutgoingPersistedUriPermissions()
@@ -727,29 +733,29 @@ namespace android::content
 			"()Ljava/util/List;"
 		);
 	}
-	jarray ContentResolver::getStreamTypes(android::net::Uri arg0, jstring arg1)
+	JArray ContentResolver::getStreamTypes(android::net::Uri arg0, JString arg1)
 	{
 		return callObjectMethod(
 			"getStreamTypes",
 			"(Landroid/net/Uri;Ljava/lang/String;)[Ljava/lang/String;",
 			arg0.object(),
-			arg1
-		).object<jarray>();
+			arg1.object<jstring>()
+		);
 	}
-	jstring ContentResolver::getType(android::net::Uri arg0)
+	JString ContentResolver::getType(android::net::Uri arg0)
 	{
 		return callObjectMethod(
 			"getType",
 			"(Landroid/net/Uri;)Ljava/lang/String;",
 			arg0.object()
-		).object<jstring>();
+		);
 	}
-	android::content::ContentResolver_MimeTypeInfo ContentResolver::getTypeInfo(jstring arg0)
+	android::content::ContentResolver_MimeTypeInfo ContentResolver::getTypeInfo(JString arg0)
 	{
 		return callObjectMethod(
 			"getTypeInfo",
 			"(Ljava/lang/String;)Landroid/content/ContentResolver$MimeTypeInfo;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::net::Uri ContentResolver::insert(android::net::Uri arg0, android::content::ContentValues arg1)
@@ -820,61 +826,61 @@ namespace android::content
 			arg2
 		);
 	}
-	android::content::res::AssetFileDescriptor ContentResolver::openAssetFile(android::net::Uri arg0, jstring arg1, android::os::CancellationSignal arg2)
+	android::content::res::AssetFileDescriptor ContentResolver::openAssetFile(android::net::Uri arg0, JString arg1, android::os::CancellationSignal arg2)
 	{
 		return callObjectMethod(
 			"openAssetFile",
 			"(Landroid/net/Uri;Ljava/lang/String;Landroid/os/CancellationSignal;)Landroid/content/res/AssetFileDescriptor;",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2.object()
 		);
 	}
-	android::content::res::AssetFileDescriptor ContentResolver::openAssetFileDescriptor(android::net::Uri arg0, jstring arg1)
+	android::content::res::AssetFileDescriptor ContentResolver::openAssetFileDescriptor(android::net::Uri arg0, JString arg1)
 	{
 		return callObjectMethod(
 			"openAssetFileDescriptor",
 			"(Landroid/net/Uri;Ljava/lang/String;)Landroid/content/res/AssetFileDescriptor;",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
-	android::content::res::AssetFileDescriptor ContentResolver::openAssetFileDescriptor(android::net::Uri arg0, jstring arg1, android::os::CancellationSignal arg2)
+	android::content::res::AssetFileDescriptor ContentResolver::openAssetFileDescriptor(android::net::Uri arg0, JString arg1, android::os::CancellationSignal arg2)
 	{
 		return callObjectMethod(
 			"openAssetFileDescriptor",
 			"(Landroid/net/Uri;Ljava/lang/String;Landroid/os/CancellationSignal;)Landroid/content/res/AssetFileDescriptor;",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2.object()
 		);
 	}
-	android::os::ParcelFileDescriptor ContentResolver::openFile(android::net::Uri arg0, jstring arg1, android::os::CancellationSignal arg2)
+	android::os::ParcelFileDescriptor ContentResolver::openFile(android::net::Uri arg0, JString arg1, android::os::CancellationSignal arg2)
 	{
 		return callObjectMethod(
 			"openFile",
 			"(Landroid/net/Uri;Ljava/lang/String;Landroid/os/CancellationSignal;)Landroid/os/ParcelFileDescriptor;",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2.object()
 		);
 	}
-	android::os::ParcelFileDescriptor ContentResolver::openFileDescriptor(android::net::Uri arg0, jstring arg1)
+	android::os::ParcelFileDescriptor ContentResolver::openFileDescriptor(android::net::Uri arg0, JString arg1)
 	{
 		return callObjectMethod(
 			"openFileDescriptor",
 			"(Landroid/net/Uri;Ljava/lang/String;)Landroid/os/ParcelFileDescriptor;",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
-	android::os::ParcelFileDescriptor ContentResolver::openFileDescriptor(android::net::Uri arg0, jstring arg1, android::os::CancellationSignal arg2)
+	android::os::ParcelFileDescriptor ContentResolver::openFileDescriptor(android::net::Uri arg0, JString arg1, android::os::CancellationSignal arg2)
 	{
 		return callObjectMethod(
 			"openFileDescriptor",
 			"(Landroid/net/Uri;Ljava/lang/String;Landroid/os/CancellationSignal;)Landroid/os/ParcelFileDescriptor;",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2.object()
 		);
 	}
@@ -894,80 +900,80 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	java::io::OutputStream ContentResolver::openOutputStream(android::net::Uri arg0, jstring arg1)
+	java::io::OutputStream ContentResolver::openOutputStream(android::net::Uri arg0, JString arg1)
 	{
 		return callObjectMethod(
 			"openOutputStream",
 			"(Landroid/net/Uri;Ljava/lang/String;)Ljava/io/OutputStream;",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
-	android::content::res::AssetFileDescriptor ContentResolver::openTypedAssetFile(android::net::Uri arg0, jstring arg1, android::os::Bundle arg2, android::os::CancellationSignal arg3)
+	android::content::res::AssetFileDescriptor ContentResolver::openTypedAssetFile(android::net::Uri arg0, JString arg1, android::os::Bundle arg2, android::os::CancellationSignal arg3)
 	{
 		return callObjectMethod(
 			"openTypedAssetFile",
 			"(Landroid/net/Uri;Ljava/lang/String;Landroid/os/Bundle;Landroid/os/CancellationSignal;)Landroid/content/res/AssetFileDescriptor;",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2.object(),
 			arg3.object()
 		);
 	}
-	android::content::res::AssetFileDescriptor ContentResolver::openTypedAssetFileDescriptor(android::net::Uri arg0, jstring arg1, android::os::Bundle arg2)
+	android::content::res::AssetFileDescriptor ContentResolver::openTypedAssetFileDescriptor(android::net::Uri arg0, JString arg1, android::os::Bundle arg2)
 	{
 		return callObjectMethod(
 			"openTypedAssetFileDescriptor",
 			"(Landroid/net/Uri;Ljava/lang/String;Landroid/os/Bundle;)Landroid/content/res/AssetFileDescriptor;",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2.object()
 		);
 	}
-	android::content::res::AssetFileDescriptor ContentResolver::openTypedAssetFileDescriptor(android::net::Uri arg0, jstring arg1, android::os::Bundle arg2, android::os::CancellationSignal arg3)
+	android::content::res::AssetFileDescriptor ContentResolver::openTypedAssetFileDescriptor(android::net::Uri arg0, JString arg1, android::os::Bundle arg2, android::os::CancellationSignal arg3)
 	{
 		return callObjectMethod(
 			"openTypedAssetFileDescriptor",
 			"(Landroid/net/Uri;Ljava/lang/String;Landroid/os/Bundle;Landroid/os/CancellationSignal;)Landroid/content/res/AssetFileDescriptor;",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2.object(),
 			arg3.object()
 		);
 	}
-	JObject ContentResolver::query(android::net::Uri arg0, jarray arg1, android::os::Bundle arg2, android::os::CancellationSignal arg3)
+	JObject ContentResolver::query(android::net::Uri arg0, JArray arg1, android::os::Bundle arg2, android::os::CancellationSignal arg3)
 	{
 		return callObjectMethod(
 			"query",
 			"(Landroid/net/Uri;[Ljava/lang/String;Landroid/os/Bundle;Landroid/os/CancellationSignal;)Landroid/database/Cursor;",
 			arg0.object(),
-			arg1,
+			arg1.object<jarray>(),
 			arg2.object(),
 			arg3.object()
 		);
 	}
-	JObject ContentResolver::query(android::net::Uri arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4)
+	JObject ContentResolver::query(android::net::Uri arg0, JArray arg1, JString arg2, JArray arg3, JString arg4)
 	{
 		return callObjectMethod(
 			"query",
 			"(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;",
 			arg0.object(),
-			arg1,
-			arg2,
-			arg3,
-			arg4
+			arg1.object<jarray>(),
+			arg2.object<jstring>(),
+			arg3.object<jarray>(),
+			arg4.object<jstring>()
 		);
 	}
-	JObject ContentResolver::query(android::net::Uri arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4, android::os::CancellationSignal arg5)
+	JObject ContentResolver::query(android::net::Uri arg0, JArray arg1, JString arg2, JArray arg3, JString arg4, android::os::CancellationSignal arg5)
 	{
 		return callObjectMethod(
 			"query",
 			"(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;Landroid/os/CancellationSignal;)Landroid/database/Cursor;",
 			arg0.object(),
-			arg1,
-			arg2,
-			arg3,
-			arg4,
+			arg1.object<jarray>(),
+			arg2.object<jstring>(),
+			arg3.object<jarray>(),
+			arg4.object<jstring>(),
 			arg5.object()
 		);
 	}
@@ -1044,15 +1050,15 @@ namespace android::content
 			arg2.object()
 		);
 	}
-	jint ContentResolver::update(android::net::Uri arg0, android::content::ContentValues arg1, jstring arg2, jarray arg3)
+	jint ContentResolver::update(android::net::Uri arg0, android::content::ContentValues arg1, JString arg2, JArray arg3)
 	{
 		return callMethod<jint>(
 			"update",
 			"(Landroid/net/Uri;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I",
 			arg0.object(),
 			arg1.object(),
-			arg2,
-			arg3
+			arg2.object<jstring>(),
+			arg3.object<jarray>()
 		);
 	}
 } // namespace android::content

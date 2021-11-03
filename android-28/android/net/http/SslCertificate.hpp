@@ -10,6 +10,7 @@ namespace android::os
 {
 	class Bundle;
 }
+class JString;
 namespace java::security::cert
 {
 	class X509Certificate;
@@ -32,19 +33,19 @@ namespace android::net::http
 		
 		// Constructors
 		SslCertificate(java::security::cert::X509Certificate arg0);
-		SslCertificate(jstring arg0, jstring arg1, jstring arg2, jstring arg3);
-		SslCertificate(jstring arg0, jstring arg1, java::util::Date arg2, java::util::Date arg3);
+		SslCertificate(JString arg0, JString arg1, JString arg2, JString arg3);
+		SslCertificate(JString arg0, JString arg1, java::util::Date arg2, java::util::Date arg3);
 		
 		// Methods
 		static android::net::http::SslCertificate restoreState(android::os::Bundle arg0);
 		static android::os::Bundle saveState(android::net::http::SslCertificate arg0);
 		android::net::http::SslCertificate_DName getIssuedBy();
 		android::net::http::SslCertificate_DName getIssuedTo();
-		jstring getValidNotAfter();
+		JString getValidNotAfter();
 		java::util::Date getValidNotAfterDate();
-		jstring getValidNotBefore();
+		JString getValidNotBefore();
 		java::util::Date getValidNotBeforeDate();
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::net::http
 

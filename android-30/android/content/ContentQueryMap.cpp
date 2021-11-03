@@ -1,5 +1,6 @@
 #include "./ContentValues.hpp"
 #include "../os/Handler.hpp"
+#include "../../JString.hpp"
 #include "./ContentQueryMap.hpp"
 
 namespace android::content
@@ -10,12 +11,12 @@ namespace android::content
 	ContentQueryMap::ContentQueryMap(QJniObject obj) : java::util::Observable(obj) {}
 	
 	// Constructors
-	ContentQueryMap::ContentQueryMap(JObject arg0, jstring arg1, jboolean arg2, android::os::Handler arg3)
+	ContentQueryMap::ContentQueryMap(JObject arg0, JString arg1, jboolean arg2, android::os::Handler arg3)
 		: java::util::Observable(
 			"android.content.ContentQueryMap",
 			"(Landroid/database/Cursor;Ljava/lang/String;ZLandroid/os/Handler;)V",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2,
 			arg3.object()
 		) {}
@@ -35,12 +36,12 @@ namespace android::content
 			"()Ljava/util/Map;"
 		);
 	}
-	android::content::ContentValues ContentQueryMap::getValues(jstring arg0)
+	android::content::ContentValues ContentQueryMap::getValues(JString arg0)
 	{
 		return callObjectMethod(
 			"getValues",
 			"(Ljava/lang/String;)Landroid/content/ContentValues;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void ContentQueryMap::requery()

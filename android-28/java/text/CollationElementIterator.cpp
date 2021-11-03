@@ -1,3 +1,5 @@
+#include "../../JIntArray.hpp"
+#include "../../JString.hpp"
 #include "../lang/StringBuffer.hpp"
 #include "./RuleBasedCollator.hpp"
 #include "./CollationElementIterator.hpp"
@@ -90,12 +92,12 @@ namespace java::text
 			arg0
 		);
 	}
-	void CollationElementIterator::setText(jstring arg0)
+	void CollationElementIterator::setText(JString arg0)
 	{
 		callMethod<void>(
 			"setText",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void CollationElementIterator::setText(JObject arg0)

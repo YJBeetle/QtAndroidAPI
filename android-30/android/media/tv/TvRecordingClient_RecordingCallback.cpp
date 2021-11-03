@@ -1,4 +1,5 @@
 #include "../../net/Uri.hpp"
+#include "../../../JString.hpp"
 #include "./TvRecordingClient_RecordingCallback.hpp"
 
 namespace android::media::tv
@@ -16,20 +17,20 @@ namespace android::media::tv
 		) {}
 	
 	// Methods
-	void TvRecordingClient_RecordingCallback::onConnectionFailed(jstring arg0)
+	void TvRecordingClient_RecordingCallback::onConnectionFailed(JString arg0)
 	{
 		callMethod<void>(
 			"onConnectionFailed",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	void TvRecordingClient_RecordingCallback::onDisconnected(jstring arg0)
+	void TvRecordingClient_RecordingCallback::onDisconnected(JString arg0)
 	{
 		callMethod<void>(
 			"onDisconnected",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void TvRecordingClient_RecordingCallback::onError(jint arg0)

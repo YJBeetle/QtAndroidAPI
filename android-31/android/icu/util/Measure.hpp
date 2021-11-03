@@ -10,6 +10,8 @@ namespace java::lang
 {
 	class Number;
 }
+class JObject;
+class JString;
 
 namespace android::icu::util
 {
@@ -26,11 +28,11 @@ namespace android::icu::util
 		Measure(java::lang::Number arg0, android::icu::util::MeasureUnit arg1);
 		
 		// Methods
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		java::lang::Number getNumber();
 		android::icu::util::MeasureUnit getUnit();
 		jint hashCode();
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::icu::util
 

@@ -14,6 +14,7 @@ namespace android::nfc
 {
 	class NfcAdapter;
 }
+class JString;
 
 namespace android::nfc::cardemulation
 {
@@ -32,10 +33,10 @@ namespace android::nfc::cardemulation
 		static android::nfc::cardemulation::NfcFCardEmulation getInstance(android::nfc::NfcAdapter arg0);
 		jboolean disableService(android::app::Activity arg0);
 		jboolean enableService(android::app::Activity arg0, android::content::ComponentName arg1);
-		jstring getNfcid2ForService(android::content::ComponentName arg0);
-		jstring getSystemCodeForService(android::content::ComponentName arg0);
-		jboolean registerSystemCodeForService(android::content::ComponentName arg0, jstring arg1);
-		jboolean setNfcid2ForService(android::content::ComponentName arg0, jstring arg1);
+		JString getNfcid2ForService(android::content::ComponentName arg0);
+		JString getSystemCodeForService(android::content::ComponentName arg0);
+		jboolean registerSystemCodeForService(android::content::ComponentName arg0, JString arg1);
+		jboolean setNfcid2ForService(android::content::ComponentName arg0, JString arg1);
 		jboolean unregisterSystemCodeForService(android::content::ComponentName arg0);
 	};
 } // namespace android::nfc::cardemulation

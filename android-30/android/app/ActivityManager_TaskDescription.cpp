@@ -1,5 +1,7 @@
 #include "../graphics/Bitmap.hpp"
 #include "../os/Parcel.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./ActivityManager_TaskDescription.hpp"
 
 namespace android::app
@@ -29,39 +31,39 @@ namespace android::app
 			"(Landroid/app/ActivityManager$TaskDescription;)V",
 			arg0.object()
 		) {}
-	ActivityManager_TaskDescription::ActivityManager_TaskDescription(jstring arg0)
+	ActivityManager_TaskDescription::ActivityManager_TaskDescription(JString arg0)
 		: JObject(
 			"android.app.ActivityManager$TaskDescription",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	ActivityManager_TaskDescription::ActivityManager_TaskDescription(jstring arg0, android::graphics::Bitmap arg1)
+	ActivityManager_TaskDescription::ActivityManager_TaskDescription(JString arg0, android::graphics::Bitmap arg1)
 		: JObject(
 			"android.app.ActivityManager$TaskDescription",
 			"(Ljava/lang/String;Landroid/graphics/Bitmap;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		) {}
-	ActivityManager_TaskDescription::ActivityManager_TaskDescription(jstring arg0, jint arg1)
+	ActivityManager_TaskDescription::ActivityManager_TaskDescription(JString arg0, jint arg1)
 		: JObject(
 			"android.app.ActivityManager$TaskDescription",
 			"(Ljava/lang/String;I)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		) {}
-	ActivityManager_TaskDescription::ActivityManager_TaskDescription(jstring arg0, android::graphics::Bitmap arg1, jint arg2)
+	ActivityManager_TaskDescription::ActivityManager_TaskDescription(JString arg0, android::graphics::Bitmap arg1, jint arg2)
 		: JObject(
 			"android.app.ActivityManager$TaskDescription",
 			"(Ljava/lang/String;Landroid/graphics/Bitmap;I)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
 			arg2
 		) {}
-	ActivityManager_TaskDescription::ActivityManager_TaskDescription(jstring arg0, jint arg1, jint arg2)
+	ActivityManager_TaskDescription::ActivityManager_TaskDescription(JString arg0, jint arg1, jint arg2)
 		: JObject(
 			"android.app.ActivityManager$TaskDescription",
 			"(Ljava/lang/String;II)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
 			arg2
 		) {}
@@ -74,12 +76,12 @@ namespace android::app
 			"()I"
 		);
 	}
-	jboolean ActivityManager_TaskDescription::equals(jobject arg0)
+	jboolean ActivityManager_TaskDescription::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	android::graphics::Bitmap ActivityManager_TaskDescription::getIcon()
@@ -89,12 +91,12 @@ namespace android::app
 			"()Landroid/graphics/Bitmap;"
 		);
 	}
-	jstring ActivityManager_TaskDescription::getLabel()
+	JString ActivityManager_TaskDescription::getLabel()
 	{
 		return callObjectMethod(
 			"getLabel",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint ActivityManager_TaskDescription::getPrimaryColor()
 	{
@@ -111,12 +113,12 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	jstring ActivityManager_TaskDescription::toString()
+	JString ActivityManager_TaskDescription::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void ActivityManager_TaskDescription::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

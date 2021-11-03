@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./CertPath.hpp"
 #include "./TrustAnchor.hpp"
 #include "./PKIXCertPathBuilderResult.hpp"
@@ -28,12 +29,12 @@ namespace java::security::cert
 			"()Ljava/security/cert/CertPath;"
 		);
 	}
-	jstring PKIXCertPathBuilderResult::toString()
+	JString PKIXCertPathBuilderResult::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::security::cert
 

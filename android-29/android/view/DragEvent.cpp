@@ -1,6 +1,8 @@
 #include "../content/ClipData.hpp"
 #include "../content/ClipDescription.hpp"
 #include "../os/Parcel.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./DragEvent.hpp"
 
 namespace android::view
@@ -91,12 +93,12 @@ namespace android::view
 			"()Landroid/content/ClipDescription;"
 		);
 	}
-	jobject DragEvent::getLocalState()
+	JObject DragEvent::getLocalState()
 	{
 		return callObjectMethod(
 			"getLocalState",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
 	jboolean DragEvent::getResult()
 	{
@@ -119,12 +121,12 @@ namespace android::view
 			"()F"
 		);
 	}
-	jstring DragEvent::toString()
+	JString DragEvent::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void DragEvent::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

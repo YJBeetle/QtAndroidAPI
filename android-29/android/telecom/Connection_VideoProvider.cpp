@@ -2,6 +2,7 @@
 #include "./VideoProfile.hpp"
 #include "./VideoProfile_CameraCapabilities.hpp"
 #include "../view/Surface.hpp"
+#include "../../JString.hpp"
 #include "./Connection_VideoProvider.hpp"
 
 namespace android::telecom
@@ -167,12 +168,12 @@ namespace android::telecom
 			arg0.object()
 		);
 	}
-	void Connection_VideoProvider::onSetCamera(jstring arg0)
+	void Connection_VideoProvider::onSetCamera(JString arg0)
 	{
 		callMethod<void>(
 			"onSetCamera",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void Connection_VideoProvider::onSetDeviceOrientation(jint arg0)

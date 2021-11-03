@@ -4,6 +4,7 @@
 #include "./Session2Command_Result.hpp"
 #include "./Session2CommandGroup.hpp"
 #include "../os/Bundle.hpp"
+#include "../../JObject.hpp"
 #include "./MediaSession2_SessionCallback.hpp"
 
 namespace android::media
@@ -21,14 +22,14 @@ namespace android::media
 		) {}
 	
 	// Methods
-	void MediaSession2_SessionCallback::onCommandResult(android::media::MediaSession2 arg0, android::media::MediaSession2_ControllerInfo arg1, jobject arg2, android::media::Session2Command arg3, android::media::Session2Command_Result arg4)
+	void MediaSession2_SessionCallback::onCommandResult(android::media::MediaSession2 arg0, android::media::MediaSession2_ControllerInfo arg1, JObject arg2, android::media::Session2Command arg3, android::media::Session2Command_Result arg4)
 	{
 		callMethod<void>(
 			"onCommandResult",
 			"(Landroid/media/MediaSession2;Landroid/media/MediaSession2$ControllerInfo;Ljava/lang/Object;Landroid/media/Session2Command;Landroid/media/Session2Command$Result;)V",
 			arg0.object(),
 			arg1.object(),
-			arg2,
+			arg2.object<jobject>(),
 			arg3.object(),
 			arg4.object()
 		);

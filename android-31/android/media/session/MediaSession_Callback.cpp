@@ -3,6 +3,7 @@
 #include "../../net/Uri.hpp"
 #include "../../os/Bundle.hpp"
 #include "../../os/ResultReceiver.hpp"
+#include "../../../JString.hpp"
 #include "./MediaSession_Callback.hpp"
 
 namespace android::media::session
@@ -20,22 +21,22 @@ namespace android::media::session
 		) {}
 	
 	// Methods
-	void MediaSession_Callback::onCommand(jstring arg0, android::os::Bundle arg1, android::os::ResultReceiver arg2)
+	void MediaSession_Callback::onCommand(JString arg0, android::os::Bundle arg1, android::os::ResultReceiver arg2)
 	{
 		callMethod<void>(
 			"onCommand",
 			"(Ljava/lang/String;Landroid/os/Bundle;Landroid/os/ResultReceiver;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
 			arg2.object()
 		);
 	}
-	void MediaSession_Callback::onCustomAction(jstring arg0, android::os::Bundle arg1)
+	void MediaSession_Callback::onCustomAction(JString arg0, android::os::Bundle arg1)
 	{
 		callMethod<void>(
 			"onCustomAction",
 			"(Ljava/lang/String;Landroid/os/Bundle;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
@@ -68,21 +69,21 @@ namespace android::media::session
 			"()V"
 		);
 	}
-	void MediaSession_Callback::onPlayFromMediaId(jstring arg0, android::os::Bundle arg1)
+	void MediaSession_Callback::onPlayFromMediaId(JString arg0, android::os::Bundle arg1)
 	{
 		callMethod<void>(
 			"onPlayFromMediaId",
 			"(Ljava/lang/String;Landroid/os/Bundle;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
-	void MediaSession_Callback::onPlayFromSearch(jstring arg0, android::os::Bundle arg1)
+	void MediaSession_Callback::onPlayFromSearch(JString arg0, android::os::Bundle arg1)
 	{
 		callMethod<void>(
 			"onPlayFromSearch",
 			"(Ljava/lang/String;Landroid/os/Bundle;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
@@ -102,21 +103,21 @@ namespace android::media::session
 			"()V"
 		);
 	}
-	void MediaSession_Callback::onPrepareFromMediaId(jstring arg0, android::os::Bundle arg1)
+	void MediaSession_Callback::onPrepareFromMediaId(JString arg0, android::os::Bundle arg1)
 	{
 		callMethod<void>(
 			"onPrepareFromMediaId",
 			"(Ljava/lang/String;Landroid/os/Bundle;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
-	void MediaSession_Callback::onPrepareFromSearch(jstring arg0, android::os::Bundle arg1)
+	void MediaSession_Callback::onPrepareFromSearch(JString arg0, android::os::Bundle arg1)
 	{
 		callMethod<void>(
 			"onPrepareFromSearch",
 			"(Ljava/lang/String;Landroid/os/Bundle;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}

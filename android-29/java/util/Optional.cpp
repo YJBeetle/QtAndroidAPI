@@ -1,3 +1,5 @@
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./Optional.hpp"
 
 namespace java::util
@@ -18,30 +20,30 @@ namespace java::util
 			"()Ljava/util/Optional;"
 		);
 	}
-	java::util::Optional Optional::of(jobject arg0)
+	java::util::Optional Optional::of(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"java.util.Optional",
 			"of",
 			"(Ljava/lang/Object;)Ljava/util/Optional;",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	java::util::Optional Optional::ofNullable(jobject arg0)
+	java::util::Optional Optional::ofNullable(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"java.util.Optional",
 			"ofNullable",
 			"(Ljava/lang/Object;)Ljava/util/Optional;",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jboolean Optional::equals(jobject arg0)
+	jboolean Optional::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	java::util::Optional Optional::filter(JObject arg0)
@@ -60,12 +62,12 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	jobject Optional::get()
+	JObject Optional::get()
 	{
 		return callObjectMethod(
 			"get",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
 	jint Optional::hashCode()
 	{
@@ -121,36 +123,36 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	jobject Optional::orElse(jobject arg0)
+	JObject Optional::orElse(JObject arg0)
 	{
 		return callObjectMethod(
 			"orElse",
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0
-		).object<jobject>();
+			arg0.object<jobject>()
+		);
 	}
-	jobject Optional::orElseGet(JObject arg0)
+	JObject Optional::orElseGet(JObject arg0)
 	{
 		return callObjectMethod(
 			"orElseGet",
 			"(Ljava/util/function/Supplier;)Ljava/lang/Object;",
 			arg0.object()
-		).object<jobject>();
+		);
 	}
-	jobject Optional::orElseThrow()
+	JObject Optional::orElseThrow()
 	{
 		return callObjectMethod(
 			"orElseThrow",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
-	jobject Optional::orElseThrow(JObject arg0)
+	JObject Optional::orElseThrow(JObject arg0)
 	{
 		return callObjectMethod(
 			"orElseThrow",
 			"(Ljava/util/function/Supplier;)Ljava/lang/Object;",
 			arg0.object()
-		).object<jobject>();
+		);
 	}
 	JObject Optional::stream()
 	{
@@ -159,12 +161,12 @@ namespace java::util
 			"()Ljava/util/stream/Stream;"
 		);
 	}
-	jstring Optional::toString()
+	JString Optional::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::util
 

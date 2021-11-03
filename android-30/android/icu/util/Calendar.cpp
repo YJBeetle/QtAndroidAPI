@@ -1,7 +1,13 @@
+#include "../../../JIntArray.hpp"
+#include "../../../JArray.hpp"
+#include "../../../JArray.hpp"
+#include "../../../JArray.hpp"
 #include "../text/DateFormat.hpp"
 #include "./Calendar_WeekData.hpp"
 #include "./TimeZone.hpp"
 #include "./ULocale.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "../../../java/util/Date.hpp"
 #include "../../../java/util/Locale.hpp"
 #include "./Calendar.hpp"
@@ -359,13 +365,13 @@ namespace android::icu::util
 	// Constructors
 	
 	// Methods
-	jarray Calendar::getAvailableLocales()
+	JArray Calendar::getAvailableLocales()
 	{
 		return callStaticObjectMethod(
 			"android.icu.util.Calendar",
 			"getAvailableLocales",
 			"()[Ljava/util/Locale;"
-		).object<jarray>();
+		);
 	}
 	android::icu::util::Calendar Calendar::getInstance()
 	{
@@ -422,24 +428,24 @@ namespace android::icu::util
 			arg1.object()
 		);
 	}
-	jarray Calendar::getKeywordValuesForLocale(jstring arg0, android::icu::util::ULocale arg1, jboolean arg2)
+	JArray Calendar::getKeywordValuesForLocale(JString arg0, android::icu::util::ULocale arg1, jboolean arg2)
 	{
 		return callStaticObjectMethod(
 			"android.icu.util.Calendar",
 			"getKeywordValuesForLocale",
 			"(Ljava/lang/String;Landroid/icu/util/ULocale;Z)[Ljava/lang/String;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
 			arg2
-		).object<jarray>();
+		);
 	}
-	android::icu::util::Calendar_WeekData Calendar::getWeekDataForRegion(jstring arg0)
+	android::icu::util::Calendar_WeekData Calendar::getWeekDataForRegion(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.icu.util.Calendar",
 			"getWeekDataForRegion",
 			"(Ljava/lang/String;)Landroid/icu/util/Calendar$WeekData;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void Calendar::add(jint arg0, jint arg1)
@@ -451,20 +457,20 @@ namespace android::icu::util
 			arg1
 		);
 	}
-	jboolean Calendar::after(jobject arg0)
+	jboolean Calendar::after(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"after",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jboolean Calendar::before(jobject arg0)
+	jboolean Calendar::before(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"before",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	void Calendar::clear()
@@ -482,12 +488,12 @@ namespace android::icu::util
 			arg0
 		);
 	}
-	jobject Calendar::clone()
+	JObject Calendar::clone()
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
 	jint Calendar::compareTo(android::icu::util::Calendar arg0)
 	{
@@ -497,20 +503,20 @@ namespace android::icu::util
 			arg0.object()
 		);
 	}
-	jint Calendar::compareTo(jobject arg0)
+	jint Calendar::compareTo(JObject arg0)
 	{
 		return callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Object;)I",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jboolean Calendar::equals(jobject arg0)
+	jboolean Calendar::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint Calendar::fieldDifference(java::util::Date arg0, jint arg1)
@@ -566,21 +572,21 @@ namespace android::icu::util
 			arg2.object()
 		);
 	}
-	jstring Calendar::getDisplayName(android::icu::util::ULocale arg0)
+	JString Calendar::getDisplayName(android::icu::util::ULocale arg0)
 	{
 		return callObjectMethod(
 			"getDisplayName",
 			"(Landroid/icu/util/ULocale;)Ljava/lang/String;",
 			arg0.object()
-		).object<jstring>();
+		);
 	}
-	jstring Calendar::getDisplayName(java::util::Locale arg0)
+	JString Calendar::getDisplayName(java::util::Locale arg0)
 	{
 		return callObjectMethod(
 			"getDisplayName",
 			"(Ljava/util/Locale;)Ljava/lang/String;",
 			arg0.object()
-		).object<jstring>();
+		);
 	}
 	jint Calendar::getFieldCount()
 	{
@@ -670,12 +676,12 @@ namespace android::icu::util
 			"()Landroid/icu/util/TimeZone;"
 		);
 	}
-	jstring Calendar::getType()
+	JString Calendar::getType()
 	{
 		return callObjectMethod(
 			"getType",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::icu::util::Calendar_WeekData Calendar::getWeekData()
 	{
@@ -863,12 +869,12 @@ namespace android::icu::util
 			arg0.object()
 		);
 	}
-	jstring Calendar::toString()
+	JString Calendar::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::icu::util
 

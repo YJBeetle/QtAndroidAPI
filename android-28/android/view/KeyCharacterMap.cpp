@@ -1,3 +1,7 @@
+#include "../../JCharArray.hpp"
+#include "../../JIntArray.hpp"
+#include "../../JArray.hpp"
+#include "../../JBooleanArray.hpp"
 #include "../os/Parcel.hpp"
 #include "./KeyCharacterMap_KeyData.hpp"
 #include "./KeyCharacterMap.hpp"
@@ -120,14 +124,14 @@ namespace android::view
 			arg0
 		);
 	}
-	jbooleanArray KeyCharacterMap::deviceHasKeys(jintArray arg0)
+	JBooleanArray KeyCharacterMap::deviceHasKeys(JIntArray arg0)
 	{
 		return callStaticObjectMethod(
 			"android.view.KeyCharacterMap",
 			"deviceHasKeys",
 			"([I)[Z",
-			arg0
-		).object<jbooleanArray>();
+			arg0.object<jintArray>()
+		);
 	}
 	jint KeyCharacterMap::getDeadChar(jint arg0, jint arg1)
 	{
@@ -172,13 +176,13 @@ namespace android::view
 			arg0
 		);
 	}
-	jarray KeyCharacterMap::getEvents(jcharArray arg0)
+	JArray KeyCharacterMap::getEvents(JCharArray arg0)
 	{
 		return callObjectMethod(
 			"getEvents",
 			"([C)[Landroid/view/KeyEvent;",
-			arg0
-		).object<jarray>();
+			arg0.object<jcharArray>()
+		);
 	}
 	jboolean KeyCharacterMap::getKeyData(jint arg0, android::view::KeyCharacterMap_KeyData arg1)
 	{
@@ -196,22 +200,22 @@ namespace android::view
 			"()I"
 		);
 	}
-	jchar KeyCharacterMap::getMatch(jint arg0, jcharArray arg1)
+	jchar KeyCharacterMap::getMatch(jint arg0, JCharArray arg1)
 	{
 		return callMethod<jchar>(
 			"getMatch",
 			"(I[C)C",
 			arg0,
-			arg1
+			arg1.object<jcharArray>()
 		);
 	}
-	jchar KeyCharacterMap::getMatch(jint arg0, jcharArray arg1, jint arg2)
+	jchar KeyCharacterMap::getMatch(jint arg0, JCharArray arg1, jint arg2)
 	{
 		return callMethod<jchar>(
 			"getMatch",
 			"(I[CI)C",
 			arg0,
-			arg1,
+			arg1.object<jcharArray>(),
 			arg2
 		);
 	}

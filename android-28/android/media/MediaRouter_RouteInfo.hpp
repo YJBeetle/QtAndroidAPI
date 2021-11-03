@@ -22,6 +22,9 @@ namespace android::view
 {
 	class Display;
 }
+class JString;
+class JObject;
+class JString;
 
 namespace android::media
 {
@@ -46,18 +49,18 @@ namespace android::media
 		
 		// Methods
 		android::media::MediaRouter_RouteCategory getCategory();
-		jstring getDescription();
+		JString getDescription();
 		jint getDeviceType();
 		android::media::MediaRouter_RouteGroup getGroup();
 		android::graphics::drawable::Drawable getIconDrawable();
-		jstring getName();
-		jstring getName(android::content::Context arg0);
+		JString getName();
+		JString getName(android::content::Context arg0);
 		jint getPlaybackStream();
 		jint getPlaybackType();
 		android::view::Display getPresentationDisplay();
-		jstring getStatus();
+		JString getStatus();
 		jint getSupportedTypes();
-		jobject getTag();
+		JObject getTag();
 		jint getVolume();
 		jint getVolumeHandling();
 		jint getVolumeMax();
@@ -65,8 +68,8 @@ namespace android::media
 		jboolean isEnabled();
 		void requestSetVolume(jint arg0);
 		void requestUpdateVolume(jint arg0);
-		void setTag(jobject arg0);
-		jstring toString();
+		void setTag(JObject arg0);
+		JString toString();
 	};
 } // namespace android::media
 

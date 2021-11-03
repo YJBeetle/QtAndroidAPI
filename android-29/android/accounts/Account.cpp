@@ -1,4 +1,6 @@
 #include "../os/Parcel.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./Account.hpp"
 
 namespace android::accounts
@@ -12,19 +14,19 @@ namespace android::accounts
 			"Landroid/os/Parcelable$Creator;"
 		);
 	}
-	jstring Account::name()
+	JString Account::name()
 	{
 		return getObjectField(
 			"name",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Account::type()
+	JString Account::type()
 	{
 		return getObjectField(
 			"type",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QJniObject forward
@@ -37,12 +39,12 @@ namespace android::accounts
 			"(Landroid/os/Parcel;)V",
 			arg0.object()
 		) {}
-	Account::Account(jstring arg0, jstring arg1)
+	Account::Account(JString arg0, JString arg1)
 		: JObject(
 			"android.accounts.Account",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		) {}
 	
 	// Methods
@@ -53,12 +55,12 @@ namespace android::accounts
 			"()I"
 		);
 	}
-	jboolean Account::equals(jobject arg0)
+	jboolean Account::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint Account::hashCode()
@@ -68,12 +70,12 @@ namespace android::accounts
 			"()I"
 		);
 	}
-	jstring Account::toString()
+	JString Account::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void Account::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

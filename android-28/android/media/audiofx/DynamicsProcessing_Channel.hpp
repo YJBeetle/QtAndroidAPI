@@ -22,6 +22,7 @@ namespace android::media::audiofx
 {
 	class DynamicsProcessing_MbcBand;
 }
+class JString;
 
 namespace android::media::audiofx
 {
@@ -55,7 +56,7 @@ namespace android::media::audiofx
 		void setPostEqBand(jint arg0, android::media::audiofx::DynamicsProcessing_EqBand arg1);
 		void setPreEq(android::media::audiofx::DynamicsProcessing_Eq arg0);
 		void setPreEqBand(jint arg0, android::media::audiofx::DynamicsProcessing_EqBand arg1);
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::media::audiofx
 

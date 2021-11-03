@@ -1,6 +1,7 @@
 #include "../../os/Bundle.hpp"
 #include "../../os/Message.hpp"
 #include "../View.hpp"
+#include "../../../JString.hpp"
 #include "./AccessibilityRequestPreparer.hpp"
 
 namespace android::view::accessibility
@@ -34,13 +35,13 @@ namespace android::view::accessibility
 			"()Landroid/view/View;"
 		);
 	}
-	void AccessibilityRequestPreparer::onPrepareExtraData(jint arg0, jstring arg1, android::os::Bundle arg2, android::os::Message arg3)
+	void AccessibilityRequestPreparer::onPrepareExtraData(jint arg0, JString arg1, android::os::Bundle arg2, android::os::Message arg3)
 	{
 		callMethod<void>(
 			"onPrepareExtraData",
 			"(ILjava/lang/String;Landroid/os/Bundle;Landroid/os/Message;)V",
 			arg0,
-			arg1,
+			arg1.object<jstring>(),
 			arg2.object(),
 			arg3.object()
 		);

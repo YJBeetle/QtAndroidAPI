@@ -1,4 +1,10 @@
+#include "../../JObjectArray.hpp"
+#include "../../JArray.hpp"
+#include "../../JClass.hpp"
 #include "../lang/ClassLoader.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
+#include "../../JThrowable.hpp"
 #include "../lang/ref/ReferenceQueue.hpp"
 #include "./Locale.hpp"
 #include "./ResourceBundle_Control.hpp"
@@ -37,104 +43,104 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	java::util::ResourceBundle ResourceBundle::getBundle(jstring arg0)
+	java::util::ResourceBundle ResourceBundle::getBundle(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"java.util.ResourceBundle",
 			"getBundle",
 			"(Ljava/lang/String;)Ljava/util/ResourceBundle;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	java::util::ResourceBundle ResourceBundle::getBundle(jstring arg0, JObject arg1)
+	java::util::ResourceBundle ResourceBundle::getBundle(JString arg0, JObject arg1)
 	{
 		return callStaticObjectMethod(
 			"java.util.ResourceBundle",
 			"getBundle",
 			"(Ljava/lang/String;Ljava/lang/Module;)Ljava/util/ResourceBundle;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
-	java::util::ResourceBundle ResourceBundle::getBundle(jstring arg0, java::util::Locale arg1)
+	java::util::ResourceBundle ResourceBundle::getBundle(JString arg0, java::util::Locale arg1)
 	{
 		return callStaticObjectMethod(
 			"java.util.ResourceBundle",
 			"getBundle",
 			"(Ljava/lang/String;Ljava/util/Locale;)Ljava/util/ResourceBundle;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
-	java::util::ResourceBundle ResourceBundle::getBundle(jstring arg0, java::util::ResourceBundle_Control arg1)
+	java::util::ResourceBundle ResourceBundle::getBundle(JString arg0, java::util::ResourceBundle_Control arg1)
 	{
 		return callStaticObjectMethod(
 			"java.util.ResourceBundle",
 			"getBundle",
 			"(Ljava/lang/String;Ljava/util/ResourceBundle$Control;)Ljava/util/ResourceBundle;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
-	java::util::ResourceBundle ResourceBundle::getBundle(jstring arg0, java::util::Locale arg1, java::lang::ClassLoader arg2)
+	java::util::ResourceBundle ResourceBundle::getBundle(JString arg0, java::util::Locale arg1, java::lang::ClassLoader arg2)
 	{
 		return callStaticObjectMethod(
 			"java.util.ResourceBundle",
 			"getBundle",
 			"(Ljava/lang/String;Ljava/util/Locale;Ljava/lang/ClassLoader;)Ljava/util/ResourceBundle;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
 			arg2.object()
 		);
 	}
-	java::util::ResourceBundle ResourceBundle::getBundle(jstring arg0, java::util::Locale arg1, JObject arg2)
+	java::util::ResourceBundle ResourceBundle::getBundle(JString arg0, java::util::Locale arg1, JObject arg2)
 	{
 		return callStaticObjectMethod(
 			"java.util.ResourceBundle",
 			"getBundle",
 			"(Ljava/lang/String;Ljava/util/Locale;Ljava/lang/Module;)Ljava/util/ResourceBundle;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
 			arg2.object()
 		);
 	}
-	java::util::ResourceBundle ResourceBundle::getBundle(jstring arg0, java::util::Locale arg1, java::util::ResourceBundle_Control arg2)
+	java::util::ResourceBundle ResourceBundle::getBundle(JString arg0, java::util::Locale arg1, java::util::ResourceBundle_Control arg2)
 	{
 		return callStaticObjectMethod(
 			"java.util.ResourceBundle",
 			"getBundle",
 			"(Ljava/lang/String;Ljava/util/Locale;Ljava/util/ResourceBundle$Control;)Ljava/util/ResourceBundle;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
 			arg2.object()
 		);
 	}
-	java::util::ResourceBundle ResourceBundle::getBundle(jstring arg0, java::util::Locale arg1, java::lang::ClassLoader arg2, java::util::ResourceBundle_Control arg3)
+	java::util::ResourceBundle ResourceBundle::getBundle(JString arg0, java::util::Locale arg1, java::lang::ClassLoader arg2, java::util::ResourceBundle_Control arg3)
 	{
 		return callStaticObjectMethod(
 			"java.util.ResourceBundle",
 			"getBundle",
 			"(Ljava/lang/String;Ljava/util/Locale;Ljava/lang/ClassLoader;Ljava/util/ResourceBundle$Control;)Ljava/util/ResourceBundle;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
 			arg2.object(),
 			arg3.object()
 		);
 	}
-	jboolean ResourceBundle::containsKey(jstring arg0)
+	jboolean ResourceBundle::containsKey(JString arg0)
 	{
 		return callMethod<jboolean>(
 			"containsKey",
 			"(Ljava/lang/String;)Z",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jstring ResourceBundle::getBaseBundleName()
+	JString ResourceBundle::getBaseBundleName()
 	{
 		return callObjectMethod(
 			"getBaseBundleName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	JObject ResourceBundle::getKeys()
 	{
@@ -150,29 +156,29 @@ namespace java::util
 			"()Ljava/util/Locale;"
 		);
 	}
-	jobject ResourceBundle::getObject(jstring arg0)
+	JObject ResourceBundle::getObject(JString arg0)
 	{
 		return callObjectMethod(
 			"getObject",
 			"(Ljava/lang/String;)Ljava/lang/Object;",
-			arg0
-		).object<jobject>();
+			arg0.object<jstring>()
+		);
 	}
-	jstring ResourceBundle::getString(jstring arg0)
+	JString ResourceBundle::getString(JString arg0)
 	{
 		return callObjectMethod(
 			"getString",
 			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
+			arg0.object<jstring>()
+		);
 	}
-	jarray ResourceBundle::getStringArray(jstring arg0)
+	JArray ResourceBundle::getStringArray(JString arg0)
 	{
 		return callObjectMethod(
 			"getStringArray",
 			"(Ljava/lang/String;)[Ljava/lang/String;",
-			arg0
-		).object<jarray>();
+			arg0.object<jstring>()
+		);
 	}
 	JObject ResourceBundle::keySet()
 	{

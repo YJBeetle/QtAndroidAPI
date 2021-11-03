@@ -1,8 +1,10 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "../database/DataSetObserver.hpp"
 
+class JObjectArray;
+class JString;
+class JString;
 
 namespace android::widget
 {
@@ -16,12 +18,12 @@ namespace android::widget
 		AlphabetIndexer(QJniObject obj);
 		
 		// Constructors
-		AlphabetIndexer(JObject arg0, jint arg1, jstring arg2);
+		AlphabetIndexer(JObject arg0, jint arg1, JString arg2);
 		
 		// Methods
 		jint getPositionForSection(jint arg0);
 		jint getSectionForPosition(jint arg0);
-		jobjectArray getSections();
+		JObjectArray getSections();
 		void onChanged();
 		void onInvalidated();
 		void setCursor(JObject arg0);

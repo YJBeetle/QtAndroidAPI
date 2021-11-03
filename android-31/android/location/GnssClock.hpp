@@ -6,6 +6,7 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
 
 namespace android::location
 {
@@ -33,7 +34,7 @@ namespace android::location
 		jint getHardwareClockDiscontinuityCount();
 		jint getLeapSecond();
 		jdouble getReferenceCarrierFrequencyHzForIsb();
-		jstring getReferenceCodeTypeForIsb();
+		JString getReferenceCodeTypeForIsb();
 		jint getReferenceConstellationTypeForIsb();
 		jlong getTimeNanos();
 		jdouble getTimeUncertaintyNanos();
@@ -49,7 +50,7 @@ namespace android::location
 		jboolean hasReferenceCodeTypeForIsb();
 		jboolean hasReferenceConstellationTypeForIsb();
 		jboolean hasTimeUncertaintyNanos();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::location

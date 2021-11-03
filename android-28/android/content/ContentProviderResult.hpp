@@ -14,6 +14,7 @@ namespace java::lang
 {
 	class Integer;
 }
+class JString;
 
 namespace android::content
 {
@@ -36,7 +37,7 @@ namespace android::content
 		
 		// Methods
 		jint describeContents();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::content

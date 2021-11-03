@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JFloatArray;
 namespace android::graphics
 {
 	class Matrix;
@@ -49,11 +50,11 @@ namespace android::graphics
 		void addPath(android::graphics::Path arg0, jfloat arg1, jfloat arg2);
 		void addRect(android::graphics::RectF arg0, android::graphics::Path_Direction arg1);
 		void addRect(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, android::graphics::Path_Direction arg4);
-		void addRoundRect(android::graphics::RectF arg0, jfloatArray arg1, android::graphics::Path_Direction arg2);
+		void addRoundRect(android::graphics::RectF arg0, JFloatArray arg1, android::graphics::Path_Direction arg2);
 		void addRoundRect(android::graphics::RectF arg0, jfloat arg1, jfloat arg2, android::graphics::Path_Direction arg3);
-		void addRoundRect(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, jfloatArray arg4, android::graphics::Path_Direction arg5);
+		void addRoundRect(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, JFloatArray arg4, android::graphics::Path_Direction arg5);
 		void addRoundRect(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, jfloat arg4, jfloat arg5, android::graphics::Path_Direction arg6);
-		jfloatArray approximate(jfloat arg0);
+		JFloatArray approximate(jfloat arg0);
 		void arcTo(android::graphics::RectF arg0, jfloat arg1, jfloat arg2);
 		void arcTo(android::graphics::RectF arg0, jfloat arg1, jfloat arg2, jboolean arg3);
 		void arcTo(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, jfloat arg4, jfloat arg5, jboolean arg6);

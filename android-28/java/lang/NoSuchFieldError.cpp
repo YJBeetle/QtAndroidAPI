@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./NoSuchFieldError.hpp"
 
 namespace java::lang
@@ -13,11 +14,11 @@ namespace java::lang
 			"java.lang.NoSuchFieldError",
 			"()V"
 		) {}
-	NoSuchFieldError::NoSuchFieldError(jstring arg0)
+	NoSuchFieldError::NoSuchFieldError(JString arg0)
 		: java::lang::IncompatibleClassChangeError(
 			"java.lang.NoSuchFieldError",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

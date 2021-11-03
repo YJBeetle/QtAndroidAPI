@@ -1,9 +1,11 @@
+#include "../../JByteArray.hpp"
 #include "../content/Context.hpp"
 #include "../graphics/Bitmap.hpp"
 #include "./MediaDataSource.hpp"
 #include "./MediaMetadataRetriever_BitmapParams.hpp"
 #include "../net/Uri.hpp"
 #include "../../java/io/FileDescriptor.hpp"
+#include "../../JString.hpp"
 #include "./MediaMetadataRetriever.hpp"
 
 namespace android::media
@@ -266,20 +268,20 @@ namespace android::media
 		) {}
 	
 	// Methods
-	jstring MediaMetadataRetriever::extractMetadata(jint arg0)
+	JString MediaMetadataRetriever::extractMetadata(jint arg0)
 	{
 		return callObjectMethod(
 			"extractMetadata",
 			"(I)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
-	jbyteArray MediaMetadataRetriever::getEmbeddedPicture()
+	JByteArray MediaMetadataRetriever::getEmbeddedPicture()
 	{
 		return callObjectMethod(
 			"getEmbeddedPicture",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
 	android::graphics::Bitmap MediaMetadataRetriever::getFrameAtIndex(jint arg0)
 	{
@@ -407,12 +409,12 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void MediaMetadataRetriever::setDataSource(jstring arg0)
+	void MediaMetadataRetriever::setDataSource(JString arg0)
 	{
 		callMethod<void>(
 			"setDataSource",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void MediaMetadataRetriever::setDataSource(android::content::Context arg0, android::net::Uri arg1)
@@ -424,12 +426,12 @@ namespace android::media
 			arg1.object()
 		);
 	}
-	void MediaMetadataRetriever::setDataSource(jstring arg0, JObject arg1)
+	void MediaMetadataRetriever::setDataSource(JString arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"setDataSource",
 			"(Ljava/lang/String;Ljava/util/Map;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}

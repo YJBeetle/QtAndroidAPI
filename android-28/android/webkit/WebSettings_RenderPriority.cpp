@@ -1,3 +1,5 @@
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
 #include "./WebSettings_RenderPriority.hpp"
 
 namespace android::webkit
@@ -34,22 +36,22 @@ namespace android::webkit
 	// Constructors
 	
 	// Methods
-	android::webkit::WebSettings_RenderPriority WebSettings_RenderPriority::valueOf(jstring arg0)
+	android::webkit::WebSettings_RenderPriority WebSettings_RenderPriority::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.webkit.WebSettings$RenderPriority",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/webkit/WebSettings$RenderPriority;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray WebSettings_RenderPriority::values()
+	JArray WebSettings_RenderPriority::values()
 	{
 		return callStaticObjectMethod(
 			"android.webkit.WebSettings$RenderPriority",
 			"values",
 			"()[Landroid/webkit/WebSettings$RenderPriority;"
-		).object<jarray>();
+		);
 	}
 } // namespace android::webkit
 

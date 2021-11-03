@@ -1,4 +1,5 @@
 #include "../../content/IntentSender.hpp"
+#include "../../../JString.hpp"
 #include "./SaveCallback.hpp"
 
 namespace android::service::autofill
@@ -11,12 +12,12 @@ namespace android::service::autofill
 	// Constructors
 	
 	// Methods
-	void SaveCallback::onFailure(jstring arg0)
+	void SaveCallback::onFailure(JString arg0)
 	{
 		callMethod<void>(
 			"onFailure",
 			"(Ljava/lang/CharSequence;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void SaveCallback::onSuccess()

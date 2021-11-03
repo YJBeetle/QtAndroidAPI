@@ -14,6 +14,7 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
 
 namespace android::view::textclassifier
 {
@@ -33,10 +34,10 @@ namespace android::view::textclassifier
 		jint describeContents();
 		jfloat getConfidenceScore(android::icu::util::ULocale arg0);
 		android::os::Bundle getExtras();
-		jstring getId();
+		JString getId();
 		android::icu::util::ULocale getLocale(jint arg0);
 		jint getLocaleHypothesisCount();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::view::textclassifier

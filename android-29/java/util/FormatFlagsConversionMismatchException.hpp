@@ -1,11 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../lang/Exception.hpp"
-#include "../lang/RuntimeException.hpp"
-#include "../lang/IllegalArgumentException.hpp"
 #include "./IllegalFormatException.hpp"
 
+class JString;
 
 namespace java::util
 {
@@ -19,12 +16,12 @@ namespace java::util
 		FormatFlagsConversionMismatchException(QJniObject obj);
 		
 		// Constructors
-		FormatFlagsConversionMismatchException(jstring arg0, jchar arg1);
+		FormatFlagsConversionMismatchException(JString arg0, jchar arg1);
 		
 		// Methods
 		jchar getConversion();
-		jstring getFlags();
-		jstring getMessage();
+		JString getFlags();
+		JString getMessage();
 	};
 } // namespace java::util
 

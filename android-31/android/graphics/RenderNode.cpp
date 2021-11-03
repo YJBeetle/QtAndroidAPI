@@ -4,6 +4,7 @@
 #include "./RecordingCanvas.hpp"
 #include "./Rect.hpp"
 #include "./RenderEffect.hpp"
+#include "../../JString.hpp"
 #include "./RenderNode.hpp"
 
 namespace android::graphics
@@ -14,11 +15,11 @@ namespace android::graphics
 	RenderNode::RenderNode(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	RenderNode::RenderNode(jstring arg0)
+	RenderNode::RenderNode(JString arg0)
 		: JObject(
 			"android.graphics.RenderNode",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

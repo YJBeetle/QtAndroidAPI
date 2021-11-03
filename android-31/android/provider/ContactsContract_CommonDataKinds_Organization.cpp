@@ -1,104 +1,106 @@
 #include "../content/res/Resources.hpp"
+#include "../../JString.hpp"
+#include "../../JString.hpp"
 #include "./ContactsContract_CommonDataKinds_Organization.hpp"
 
 namespace android::provider
 {
 	// Fields
-	jstring ContactsContract_CommonDataKinds_Organization::COMPANY()
+	JString ContactsContract_CommonDataKinds_Organization::COMPANY()
 	{
 		return getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Organization",
 			"COMPANY",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ContactsContract_CommonDataKinds_Organization::CONTENT_ITEM_TYPE()
+	JString ContactsContract_CommonDataKinds_Organization::CONTENT_ITEM_TYPE()
 	{
 		return getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Organization",
 			"CONTENT_ITEM_TYPE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ContactsContract_CommonDataKinds_Organization::DEPARTMENT()
+	JString ContactsContract_CommonDataKinds_Organization::DEPARTMENT()
 	{
 		return getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Organization",
 			"DEPARTMENT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ContactsContract_CommonDataKinds_Organization::EXTRA_ADDRESS_BOOK_INDEX()
+	JString ContactsContract_CommonDataKinds_Organization::EXTRA_ADDRESS_BOOK_INDEX()
 	{
 		return getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Organization",
 			"EXTRA_ADDRESS_BOOK_INDEX",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ContactsContract_CommonDataKinds_Organization::EXTRA_ADDRESS_BOOK_INDEX_COUNTS()
+	JString ContactsContract_CommonDataKinds_Organization::EXTRA_ADDRESS_BOOK_INDEX_COUNTS()
 	{
 		return getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Organization",
 			"EXTRA_ADDRESS_BOOK_INDEX_COUNTS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ContactsContract_CommonDataKinds_Organization::EXTRA_ADDRESS_BOOK_INDEX_TITLES()
+	JString ContactsContract_CommonDataKinds_Organization::EXTRA_ADDRESS_BOOK_INDEX_TITLES()
 	{
 		return getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Organization",
 			"EXTRA_ADDRESS_BOOK_INDEX_TITLES",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ContactsContract_CommonDataKinds_Organization::JOB_DESCRIPTION()
+	JString ContactsContract_CommonDataKinds_Organization::JOB_DESCRIPTION()
 	{
 		return getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Organization",
 			"JOB_DESCRIPTION",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ContactsContract_CommonDataKinds_Organization::OFFICE_LOCATION()
+	JString ContactsContract_CommonDataKinds_Organization::OFFICE_LOCATION()
 	{
 		return getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Organization",
 			"OFFICE_LOCATION",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ContactsContract_CommonDataKinds_Organization::PHONETIC_NAME()
+	JString ContactsContract_CommonDataKinds_Organization::PHONETIC_NAME()
 	{
 		return getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Organization",
 			"PHONETIC_NAME",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ContactsContract_CommonDataKinds_Organization::PHONETIC_NAME_STYLE()
+	JString ContactsContract_CommonDataKinds_Organization::PHONETIC_NAME_STYLE()
 	{
 		return getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Organization",
 			"PHONETIC_NAME_STYLE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ContactsContract_CommonDataKinds_Organization::SYMBOL()
+	JString ContactsContract_CommonDataKinds_Organization::SYMBOL()
 	{
 		return getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Organization",
 			"SYMBOL",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ContactsContract_CommonDataKinds_Organization::TITLE()
+	JString ContactsContract_CommonDataKinds_Organization::TITLE()
 	{
 		return getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Organization",
 			"TITLE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint ContactsContract_CommonDataKinds_Organization::TYPE_OTHER()
 	{
@@ -121,7 +123,7 @@ namespace android::provider
 	// Constructors
 	
 	// Methods
-	jstring ContactsContract_CommonDataKinds_Organization::getTypeLabel(android::content::res::Resources arg0, jint arg1, jstring arg2)
+	JString ContactsContract_CommonDataKinds_Organization::getTypeLabel(android::content::res::Resources arg0, jint arg1, JString arg2)
 	{
 		return callStaticObjectMethod(
 			"android.provider.ContactsContract$CommonDataKinds$Organization",
@@ -129,8 +131,8 @@ namespace android::provider
 			"(Landroid/content/res/Resources;ILjava/lang/CharSequence;)Ljava/lang/CharSequence;",
 			arg0.object(),
 			arg1,
-			arg2
-		).object<jstring>();
+			arg2.object<jstring>()
+		);
 	}
 	jint ContactsContract_CommonDataKinds_Organization::getTypeLabelResource(jint arg0)
 	{

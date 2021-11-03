@@ -1,14 +1,15 @@
+#include "../../JString.hpp"
 #include "./ParseException.hpp"
 
 namespace android::net
 {
 	// Fields
-	jstring ParseException::response()
+	JString ParseException::response()
 	{
 		return getObjectField(
 			"response",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QJniObject forward

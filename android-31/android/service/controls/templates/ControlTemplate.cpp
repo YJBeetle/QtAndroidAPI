@@ -1,3 +1,4 @@
+#include "../../../../JString.hpp"
 #include "./ControlTemplate.hpp"
 
 namespace android::service::controls::templates
@@ -82,12 +83,12 @@ namespace android::service::controls::templates
 			"()Landroid/service/controls/templates/ControlTemplate;"
 		);
 	}
-	jstring ControlTemplate::getTemplateId()
+	JString ControlTemplate::getTemplateId()
 	{
 		return callObjectMethod(
 			"getTemplateId",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint ControlTemplate::getTemplateType()
 	{

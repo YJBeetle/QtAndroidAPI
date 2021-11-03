@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "./TtsSpan_Builder.hpp"
 
+class JString;
 
 namespace android::text::style
 {
@@ -16,13 +16,13 @@ namespace android::text::style
 		TtsSpan_SemioticClassBuilder(QJniObject obj);
 		
 		// Constructors
-		TtsSpan_SemioticClassBuilder(jstring arg0);
+		TtsSpan_SemioticClassBuilder(JString arg0);
 		
 		// Methods
-		android::text::style::TtsSpan_SemioticClassBuilder setAnimacy(jstring arg0);
-		android::text::style::TtsSpan_SemioticClassBuilder setCase(jstring arg0);
-		android::text::style::TtsSpan_SemioticClassBuilder setGender(jstring arg0);
-		android::text::style::TtsSpan_SemioticClassBuilder setMultiplicity(jstring arg0);
+		android::text::style::TtsSpan_SemioticClassBuilder setAnimacy(JString arg0);
+		android::text::style::TtsSpan_SemioticClassBuilder setCase(JString arg0);
+		android::text::style::TtsSpan_SemioticClassBuilder setGender(JString arg0);
+		android::text::style::TtsSpan_SemioticClassBuilder setMultiplicity(JString arg0);
 	};
 } // namespace android::text::style
 

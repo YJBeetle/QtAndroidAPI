@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./Identity.hpp"
 
+class JString;
 namespace java::security
 {
 	class Identity;
@@ -20,18 +20,18 @@ namespace java::security
 		IdentityScope(QJniObject obj);
 		
 		// Constructors
-		IdentityScope(jstring arg0);
-		IdentityScope(jstring arg0, java::security::IdentityScope &arg1);
+		IdentityScope(JString arg0);
+		IdentityScope(JString arg0, java::security::IdentityScope &arg1);
 		
 		// Methods
 		static java::security::IdentityScope getSystemScope();
 		void addIdentity(java::security::Identity arg0);
-		java::security::Identity getIdentity(jstring arg0);
+		java::security::Identity getIdentity(JString arg0);
 		java::security::Identity getIdentity(JObject arg0);
 		JObject identities();
 		void removeIdentity(java::security::Identity arg0);
 		jint size();
-		jstring toString();
+		JString toString();
 	};
 } // namespace java::security
 

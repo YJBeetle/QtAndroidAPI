@@ -1,4 +1,5 @@
 #include "./MediaBrowserService.hpp"
+#include "../../../JObject.hpp"
 #include "./MediaBrowserService_Result.hpp"
 
 namespace android::service::media
@@ -18,12 +19,12 @@ namespace android::service::media
 			"()V"
 		);
 	}
-	void MediaBrowserService_Result::sendResult(jobject arg0)
+	void MediaBrowserService_Result::sendResult(JObject arg0)
 	{
 		callMethod<void>(
 			"sendResult",
 			"(Ljava/lang/Object;)V",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 } // namespace android::service::media

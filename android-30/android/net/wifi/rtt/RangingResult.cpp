@@ -2,6 +2,8 @@
 #include "../aware/PeerHandle.hpp"
 #include "./ResponderLocation.hpp"
 #include "../../../os/Parcel.hpp"
+#include "../../../../JObject.hpp"
+#include "../../../../JString.hpp"
 #include "./RangingResult.hpp"
 
 namespace android::net::wifi::rtt
@@ -50,12 +52,12 @@ namespace android::net::wifi::rtt
 			"()I"
 		);
 	}
-	jboolean RangingResult::equals(jobject arg0)
+	jboolean RangingResult::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint RangingResult::getDistanceMm()
@@ -135,12 +137,12 @@ namespace android::net::wifi::rtt
 			"()I"
 		);
 	}
-	jstring RangingResult::toString()
+	JString RangingResult::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void RangingResult::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

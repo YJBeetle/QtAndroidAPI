@@ -1,3 +1,4 @@
+#include "../../../../JByteArray.hpp"
 #include "./IdentityChangedListener.hpp"
 
 namespace android::net::wifi::aware
@@ -15,12 +16,12 @@ namespace android::net::wifi::aware
 		) {}
 	
 	// Methods
-	void IdentityChangedListener::onIdentityChanged(jbyteArray arg0)
+	void IdentityChangedListener::onIdentityChanged(JByteArray arg0)
 	{
 		callMethod<void>(
 			"onIdentityChanged",
 			"([B)V",
-			arg0
+			arg0.object<jbyteArray>()
 		);
 	}
 } // namespace android::net::wifi::aware

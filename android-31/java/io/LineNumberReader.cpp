@@ -1,4 +1,6 @@
+#include "../../JCharArray.hpp"
 #include "./Reader.hpp"
+#include "../../JString.hpp"
 #include "./LineNumberReader.hpp"
 
 namespace java::io
@@ -46,22 +48,22 @@ namespace java::io
 			"()I"
 		);
 	}
-	jint LineNumberReader::read(jcharArray arg0, jint arg1, jint arg2)
+	jint LineNumberReader::read(JCharArray arg0, jint arg1, jint arg2)
 	{
 		return callMethod<jint>(
 			"read",
 			"([CII)I",
-			arg0,
+			arg0.object<jcharArray>(),
 			arg1,
 			arg2
 		);
 	}
-	jstring LineNumberReader::readLine()
+	JString LineNumberReader::readLine()
 	{
 		return callObjectMethod(
 			"readLine",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void LineNumberReader::reset()
 	{

@@ -1,4 +1,7 @@
+#include "../../JCharArray.hpp"
 #include "./Writer.hpp"
+#include "../../JString.hpp"
+#include "../../JString.hpp"
 #include "./CharArrayWriter.hpp"
 
 namespace java::io
@@ -30,20 +33,20 @@ namespace java::io
 			arg0
 		);
 	}
-	java::io::CharArrayWriter CharArrayWriter::append(jstring arg0)
+	java::io::CharArrayWriter CharArrayWriter::append(JString arg0)
 	{
 		return callObjectMethod(
 			"append",
 			"(Ljava/lang/CharSequence;)Ljava/io/CharArrayWriter;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	java::io::CharArrayWriter CharArrayWriter::append(jstring arg0, jint arg1, jint arg2)
+	java::io::CharArrayWriter CharArrayWriter::append(JString arg0, jint arg1, jint arg2)
 	{
 		return callObjectMethod(
 			"append",
 			"(Ljava/lang/CharSequence;II)Ljava/io/CharArrayWriter;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
 			arg2
 		);
@@ -76,19 +79,19 @@ namespace java::io
 			"()I"
 		);
 	}
-	jcharArray CharArrayWriter::toCharArray()
+	JCharArray CharArrayWriter::toCharArray()
 	{
 		return callObjectMethod(
 			"toCharArray",
 			"()[C"
-		).object<jcharArray>();
+		);
 	}
-	jstring CharArrayWriter::toString()
+	JString CharArrayWriter::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void CharArrayWriter::write(jint arg0)
 	{
@@ -98,22 +101,22 @@ namespace java::io
 			arg0
 		);
 	}
-	void CharArrayWriter::write(jcharArray arg0, jint arg1, jint arg2)
+	void CharArrayWriter::write(JCharArray arg0, jint arg1, jint arg2)
 	{
 		callMethod<void>(
 			"write",
 			"([CII)V",
-			arg0,
+			arg0.object<jcharArray>(),
 			arg1,
 			arg2
 		);
 	}
-	void CharArrayWriter::write(jstring arg0, jint arg1, jint arg2)
+	void CharArrayWriter::write(JString arg0, jint arg1, jint arg2)
 	{
 		callMethod<void>(
 			"write",
 			"(Ljava/lang/String;II)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
 			arg2
 		);

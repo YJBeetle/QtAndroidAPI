@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./OutputStream.hpp"
 
+class JByteArray;
 namespace java::io
 {
 	class IOException;
@@ -23,10 +23,13 @@ namespace java::lang
 {
 	class Boolean;
 }
+class JClass;
 namespace java::lang
 {
 	class Enum;
 }
+class JObject;
+class JString;
 
 namespace java::io
 {
@@ -49,23 +52,23 @@ namespace java::io
 		java::io::ObjectOutputStream_PutField putFields();
 		void reset();
 		void useProtocolVersion(jint arg0);
-		void write(jbyteArray arg0);
+		void write(JByteArray arg0);
 		void write(jint arg0);
-		void write(jbyteArray arg0, jint arg1, jint arg2);
+		void write(JByteArray arg0, jint arg1, jint arg2);
 		void writeBoolean(jboolean arg0);
 		void writeByte(jint arg0);
-		void writeBytes(jstring arg0);
+		void writeBytes(JString arg0);
 		void writeChar(jint arg0);
-		void writeChars(jstring arg0);
+		void writeChars(JString arg0);
 		void writeDouble(jdouble arg0);
 		void writeFields();
 		void writeFloat(jfloat arg0);
 		void writeInt(jint arg0);
 		void writeLong(jlong arg0);
-		void writeObject(jobject arg0);
+		void writeObject(JObject arg0);
 		void writeShort(jint arg0);
-		void writeUTF(jstring arg0);
-		void writeUnshared(jobject arg0);
+		void writeUTF(JString arg0);
+		void writeUnshared(JObject arg0);
 	};
 } // namespace java::io
 

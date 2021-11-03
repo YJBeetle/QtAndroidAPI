@@ -1,4 +1,5 @@
 #include "./StructTimespec.hpp"
+#include "../../JString.hpp"
 #include "./StructStat.hpp"
 
 namespace android::system
@@ -146,12 +147,12 @@ namespace android::system
 		) {}
 	
 	// Methods
-	jstring StructStat::toString()
+	JString StructStat::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::system
 

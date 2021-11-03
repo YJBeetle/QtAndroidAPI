@@ -2,10 +2,13 @@
 
 #include "../../JObject.hpp"
 
+class JByteArray;
 namespace java::io
 {
 	class ObjectInputStream;
 }
+class JObject;
+class JString;
 namespace java::security
 {
 	class Signature;
@@ -26,9 +29,9 @@ namespace java::security
 		SignedObject(JObject arg0, JObject arg1, java::security::Signature arg2);
 		
 		// Methods
-		jstring getAlgorithm();
-		jobject getObject();
-		jbyteArray getSignature();
+		JString getAlgorithm();
+		JObject getObject();
+		JByteArray getSignature();
 		jboolean verify(JObject arg0, java::security::Signature arg1);
 	};
 } // namespace java::security

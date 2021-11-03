@@ -1,26 +1,27 @@
 #include "../NetworkInfo_DetailedState.hpp"
 #include "./SupplicantState.hpp"
 #include "../../os/Parcel.hpp"
+#include "../../../JString.hpp"
 #include "./WifiInfo.hpp"
 
 namespace android::net::wifi
 {
 	// Fields
-	jstring WifiInfo::FREQUENCY_UNITS()
+	JString WifiInfo::FREQUENCY_UNITS()
 	{
 		return getStaticObjectField(
 			"android.net.wifi.WifiInfo",
 			"FREQUENCY_UNITS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring WifiInfo::LINK_SPEED_UNITS()
+	JString WifiInfo::LINK_SPEED_UNITS()
 	{
 		return getStaticObjectField(
 			"android.net.wifi.WifiInfo",
 			"LINK_SPEED_UNITS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QJniObject forward
@@ -45,12 +46,12 @@ namespace android::net::wifi
 			"()I"
 		);
 	}
-	jstring WifiInfo::getBSSID()
+	JString WifiInfo::getBSSID()
 	{
 		return callObjectMethod(
 			"getBSSID",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint WifiInfo::getFrequency()
 	{
@@ -80,12 +81,12 @@ namespace android::net::wifi
 			"()I"
 		);
 	}
-	jstring WifiInfo::getMacAddress()
+	JString WifiInfo::getMacAddress()
 	{
 		return callObjectMethod(
 			"getMacAddress",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint WifiInfo::getNetworkId()
 	{
@@ -101,12 +102,12 @@ namespace android::net::wifi
 			"()I"
 		);
 	}
-	jstring WifiInfo::getSSID()
+	JString WifiInfo::getSSID()
 	{
 		return callObjectMethod(
 			"getSSID",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::net::wifi::SupplicantState WifiInfo::getSupplicantState()
 	{
@@ -115,12 +116,12 @@ namespace android::net::wifi
 			"()Landroid/net/wifi/SupplicantState;"
 		);
 	}
-	jstring WifiInfo::toString()
+	JString WifiInfo::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void WifiInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

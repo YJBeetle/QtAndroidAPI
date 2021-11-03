@@ -10,6 +10,7 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
 
 namespace android::media::session
 {
@@ -34,8 +35,8 @@ namespace android::media::session
 		jint getMaxVolume();
 		jint getPlaybackType();
 		jint getVolumeControl();
-		jstring getVolumeControlId();
-		jstring toString();
+		JString getVolumeControlId();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::media::session

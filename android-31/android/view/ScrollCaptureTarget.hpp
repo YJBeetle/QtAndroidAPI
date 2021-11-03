@@ -14,6 +14,7 @@ namespace android::view
 {
 	class View;
 }
+class JString;
 
 namespace android::view
 {
@@ -37,7 +38,7 @@ namespace android::view
 		android::graphics::Point getPositionInWindow();
 		android::graphics::Rect getScrollBounds();
 		void setScrollBounds(android::graphics::Rect arg0);
-		jstring toString();
+		JString toString();
 		void updatePositionInWindow();
 	};
 } // namespace android::view

@@ -1,3 +1,5 @@
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
 #include "./UnicodeSet_ComparisonStyle.hpp"
 
 namespace android::icu::text
@@ -34,22 +36,22 @@ namespace android::icu::text
 	// Constructors
 	
 	// Methods
-	android::icu::text::UnicodeSet_ComparisonStyle UnicodeSet_ComparisonStyle::valueOf(jstring arg0)
+	android::icu::text::UnicodeSet_ComparisonStyle UnicodeSet_ComparisonStyle::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.icu.text.UnicodeSet$ComparisonStyle",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/icu/text/UnicodeSet$ComparisonStyle;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray UnicodeSet_ComparisonStyle::values()
+	JArray UnicodeSet_ComparisonStyle::values()
 	{
 		return callStaticObjectMethod(
 			"android.icu.text.UnicodeSet$ComparisonStyle",
 			"values",
 			"()[Landroid/icu/text/UnicodeSet$ComparisonStyle;"
-		).object<jarray>();
+		);
 	}
 } // namespace android::icu::text
 

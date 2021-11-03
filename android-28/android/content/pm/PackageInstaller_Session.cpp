@@ -1,6 +1,8 @@
+#include "../../../JArray.hpp"
 #include "../IntentSender.hpp"
 #include "../../../java/io/InputStream.hpp"
 #include "../../../java/io/OutputStream.hpp"
+#include "../../../JString.hpp"
 #include "./PackageInstaller_Session.hpp"
 
 namespace android::content::pm
@@ -43,37 +45,37 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	jarray PackageInstaller_Session::getNames()
+	JArray PackageInstaller_Session::getNames()
 	{
 		return callObjectMethod(
 			"getNames",
 			"()[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
-	java::io::InputStream PackageInstaller_Session::openRead(jstring arg0)
+	java::io::InputStream PackageInstaller_Session::openRead(JString arg0)
 	{
 		return callObjectMethod(
 			"openRead",
 			"(Ljava/lang/String;)Ljava/io/InputStream;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	java::io::OutputStream PackageInstaller_Session::openWrite(jstring arg0, jlong arg1, jlong arg2)
+	java::io::OutputStream PackageInstaller_Session::openWrite(JString arg0, jlong arg1, jlong arg2)
 	{
 		return callObjectMethod(
 			"openWrite",
 			"(Ljava/lang/String;JJ)Ljava/io/OutputStream;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
 			arg2
 		);
 	}
-	void PackageInstaller_Session::removeSplit(jstring arg0)
+	void PackageInstaller_Session::removeSplit(JString arg0)
 	{
 		callMethod<void>(
 			"removeSplit",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void PackageInstaller_Session::setStagingProgress(jfloat arg0)
@@ -84,12 +86,12 @@ namespace android::content::pm
 			arg0
 		);
 	}
-	void PackageInstaller_Session::transfer(jstring arg0)
+	void PackageInstaller_Session::transfer(JString arg0)
 	{
 		callMethod<void>(
 			"transfer",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 } // namespace android::content::pm

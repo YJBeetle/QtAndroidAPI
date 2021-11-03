@@ -1,5 +1,6 @@
 #include "../io/ObjectInputStream.hpp"
 #include "../io/ObjectOutputStream.hpp"
+#include "../../JObject.hpp"
 #include "./TreeMap.hpp"
 
 namespace java::util
@@ -23,21 +24,21 @@ namespace java::util
 		) {}
 	
 	// Methods
-	JObject TreeMap::ceilingEntry(jobject arg0)
+	JObject TreeMap::ceilingEntry(JObject arg0)
 	{
 		return callObjectMethod(
 			"ceilingEntry",
 			"(Ljava/lang/Object;)Ljava/util/Map$Entry;",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jobject TreeMap::ceilingKey(jobject arg0)
+	JObject TreeMap::ceilingKey(JObject arg0)
 	{
 		return callObjectMethod(
 			"ceilingKey",
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0
-		).object<jobject>();
+			arg0.object<jobject>()
+		);
 	}
 	void TreeMap::clear()
 	{
@@ -46,12 +47,12 @@ namespace java::util
 			"()V"
 		);
 	}
-	jobject TreeMap::clone()
+	JObject TreeMap::clone()
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
 	JObject TreeMap::comparator()
 	{
@@ -60,47 +61,47 @@ namespace java::util
 			"()Ljava/util/Comparator;"
 		);
 	}
-	jobject TreeMap::compute(jobject arg0, JObject arg1)
+	JObject TreeMap::compute(JObject arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"compute",
 			"(Ljava/lang/Object;Ljava/util/function/BiFunction;)Ljava/lang/Object;",
-			arg0,
+			arg0.object<jobject>(),
 			arg1.object()
-		).object<jobject>();
+		);
 	}
-	jobject TreeMap::computeIfAbsent(jobject arg0, JObject arg1)
+	JObject TreeMap::computeIfAbsent(JObject arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"computeIfAbsent",
 			"(Ljava/lang/Object;Ljava/util/function/Function;)Ljava/lang/Object;",
-			arg0,
+			arg0.object<jobject>(),
 			arg1.object()
-		).object<jobject>();
+		);
 	}
-	jobject TreeMap::computeIfPresent(jobject arg0, JObject arg1)
+	JObject TreeMap::computeIfPresent(JObject arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"computeIfPresent",
 			"(Ljava/lang/Object;Ljava/util/function/BiFunction;)Ljava/lang/Object;",
-			arg0,
+			arg0.object<jobject>(),
 			arg1.object()
-		).object<jobject>();
+		);
 	}
-	jboolean TreeMap::containsKey(jobject arg0)
+	jboolean TreeMap::containsKey(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"containsKey",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jboolean TreeMap::containsValue(jobject arg0)
+	jboolean TreeMap::containsValue(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"containsValue",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	JObject TreeMap::descendingKeySet()
@@ -131,28 +132,28 @@ namespace java::util
 			"()Ljava/util/Map$Entry;"
 		);
 	}
-	jobject TreeMap::firstKey()
+	JObject TreeMap::firstKey()
 	{
 		return callObjectMethod(
 			"firstKey",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
-	JObject TreeMap::floorEntry(jobject arg0)
+	JObject TreeMap::floorEntry(JObject arg0)
 	{
 		return callObjectMethod(
 			"floorEntry",
 			"(Ljava/lang/Object;)Ljava/util/Map$Entry;",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jobject TreeMap::floorKey(jobject arg0)
+	JObject TreeMap::floorKey(JObject arg0)
 	{
 		return callObjectMethod(
 			"floorKey",
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0
-		).object<jobject>();
+			arg0.object<jobject>()
+		);
 	}
 	void TreeMap::forEach(JObject arg0)
 	{
@@ -162,46 +163,46 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	jobject TreeMap::get(jobject arg0)
+	JObject TreeMap::get(JObject arg0)
 	{
 		return callObjectMethod(
 			"get",
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0
-		).object<jobject>();
+			arg0.object<jobject>()
+		);
 	}
-	JObject TreeMap::headMap(jobject arg0, jboolean arg1)
+	JObject TreeMap::headMap(JObject arg0, jboolean arg1)
 	{
 		return callObjectMethod(
 			"headMap",
 			"(Ljava/lang/Object;Z)Ljava/util/NavigableMap;",
-			arg0,
+			arg0.object<jobject>(),
 			arg1
 		);
 	}
-	JObject TreeMap::headMap(jobject arg0)
+	JObject TreeMap::headMap(JObject arg0)
 	{
 		return callObjectMethod(
 			"headMap",
 			"(Ljava/lang/Object;)Ljava/util/SortedMap;",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	JObject TreeMap::higherEntry(jobject arg0)
+	JObject TreeMap::higherEntry(JObject arg0)
 	{
 		return callObjectMethod(
 			"higherEntry",
 			"(Ljava/lang/Object;)Ljava/util/Map$Entry;",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jobject TreeMap::higherKey(jobject arg0)
+	JObject TreeMap::higherKey(JObject arg0)
 	{
 		return callObjectMethod(
 			"higherKey",
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0
-		).object<jobject>();
+			arg0.object<jobject>()
+		);
 	}
 	JObject TreeMap::keySet()
 	{
@@ -217,38 +218,38 @@ namespace java::util
 			"()Ljava/util/Map$Entry;"
 		);
 	}
-	jobject TreeMap::lastKey()
+	JObject TreeMap::lastKey()
 	{
 		return callObjectMethod(
 			"lastKey",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
-	JObject TreeMap::lowerEntry(jobject arg0)
+	JObject TreeMap::lowerEntry(JObject arg0)
 	{
 		return callObjectMethod(
 			"lowerEntry",
 			"(Ljava/lang/Object;)Ljava/util/Map$Entry;",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jobject TreeMap::lowerKey(jobject arg0)
+	JObject TreeMap::lowerKey(JObject arg0)
 	{
 		return callObjectMethod(
 			"lowerKey",
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0
-		).object<jobject>();
+			arg0.object<jobject>()
+		);
 	}
-	jobject TreeMap::merge(jobject arg0, jobject arg1, JObject arg2)
+	JObject TreeMap::merge(JObject arg0, JObject arg1, JObject arg2)
 	{
 		return callObjectMethod(
 			"merge",
 			"(Ljava/lang/Object;Ljava/lang/Object;Ljava/util/function/BiFunction;)Ljava/lang/Object;",
-			arg0,
-			arg1,
+			arg0.object<jobject>(),
+			arg1.object<jobject>(),
 			arg2.object()
-		).object<jobject>();
+		);
 	}
 	JObject TreeMap::navigableKeySet()
 	{
@@ -271,14 +272,14 @@ namespace java::util
 			"()Ljava/util/Map$Entry;"
 		);
 	}
-	jobject TreeMap::put(jobject arg0, jobject arg1)
+	JObject TreeMap::put(JObject arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"put",
 			"(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0,
-			arg1
-		).object<jobject>();
+			arg0.object<jobject>(),
+			arg1.object<jobject>()
+		);
 	}
 	void TreeMap::putAll(JObject arg0)
 	{
@@ -288,41 +289,41 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	jobject TreeMap::putIfAbsent(jobject arg0, jobject arg1)
+	JObject TreeMap::putIfAbsent(JObject arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"putIfAbsent",
 			"(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0,
-			arg1
-		).object<jobject>();
+			arg0.object<jobject>(),
+			arg1.object<jobject>()
+		);
 	}
-	jobject TreeMap::remove(jobject arg0)
+	JObject TreeMap::remove(JObject arg0)
 	{
 		return callObjectMethod(
 			"remove",
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0
-		).object<jobject>();
+			arg0.object<jobject>()
+		);
 	}
-	jboolean TreeMap::replace(jobject arg0, jobject arg1, jobject arg2)
+	jboolean TreeMap::replace(JObject arg0, JObject arg1, JObject arg2)
 	{
 		return callMethod<jboolean>(
 			"replace",
 			"(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Z",
-			arg0,
-			arg1,
-			arg2
+			arg0.object<jobject>(),
+			arg1.object<jobject>(),
+			arg2.object<jobject>()
 		);
 	}
-	jobject TreeMap::replace(jobject arg0, jobject arg1)
+	JObject TreeMap::replace(JObject arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"replace",
 			"(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0,
-			arg1
-		).object<jobject>();
+			arg0.object<jobject>(),
+			arg1.object<jobject>()
+		);
 	}
 	void TreeMap::replaceAll(JObject arg0)
 	{
@@ -339,41 +340,41 @@ namespace java::util
 			"()I"
 		);
 	}
-	JObject TreeMap::subMap(jobject arg0, jboolean arg1, jobject arg2, jboolean arg3)
+	JObject TreeMap::subMap(JObject arg0, jboolean arg1, JObject arg2, jboolean arg3)
 	{
 		return callObjectMethod(
 			"subMap",
 			"(Ljava/lang/Object;ZLjava/lang/Object;Z)Ljava/util/NavigableMap;",
-			arg0,
+			arg0.object<jobject>(),
 			arg1,
-			arg2,
+			arg2.object<jobject>(),
 			arg3
 		);
 	}
-	JObject TreeMap::subMap(jobject arg0, jobject arg1)
+	JObject TreeMap::subMap(JObject arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"subMap",
 			"(Ljava/lang/Object;Ljava/lang/Object;)Ljava/util/SortedMap;",
-			arg0,
-			arg1
+			arg0.object<jobject>(),
+			arg1.object<jobject>()
 		);
 	}
-	JObject TreeMap::tailMap(jobject arg0, jboolean arg1)
+	JObject TreeMap::tailMap(JObject arg0, jboolean arg1)
 	{
 		return callObjectMethod(
 			"tailMap",
 			"(Ljava/lang/Object;Z)Ljava/util/NavigableMap;",
-			arg0,
+			arg0.object<jobject>(),
 			arg1
 		);
 	}
-	JObject TreeMap::tailMap(jobject arg0)
+	JObject TreeMap::tailMap(JObject arg0)
 	{
 		return callObjectMethod(
 			"tailMap",
 			"(Ljava/lang/Object;)Ljava/util/SortedMap;",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	JObject TreeMap::values()

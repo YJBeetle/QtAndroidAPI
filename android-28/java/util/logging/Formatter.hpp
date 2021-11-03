@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JString;
 namespace java::util::logging
 {
 	class Handler;
@@ -25,10 +26,10 @@ namespace java::util::logging
 		// Constructors
 		
 		// Methods
-		jstring format(java::util::logging::LogRecord arg0);
-		jstring formatMessage(java::util::logging::LogRecord arg0);
-		jstring getHead(java::util::logging::Handler arg0);
-		jstring getTail(java::util::logging::Handler arg0);
+		JString format(java::util::logging::LogRecord arg0);
+		JString formatMessage(java::util::logging::LogRecord arg0);
+		JString getHead(java::util::logging::Handler arg0);
+		JString getTail(java::util::logging::Handler arg0);
 	};
 } // namespace java::util::logging
 

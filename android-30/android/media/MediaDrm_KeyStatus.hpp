@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JByteArray;
 
 namespace android::media
 {
@@ -23,7 +24,7 @@ namespace android::media
 		// Constructors
 		
 		// Methods
-		jbyteArray getKeyId();
+		JByteArray getKeyId();
 		jint getStatusCode();
 	};
 } // namespace android::media

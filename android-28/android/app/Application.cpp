@@ -1,4 +1,5 @@
 #include "../content/res/Configuration.hpp"
+#include "../../JString.hpp"
 #include "./Application.hpp"
 
 namespace android::app
@@ -16,13 +17,13 @@ namespace android::app
 		) {}
 	
 	// Methods
-	jstring Application::getProcessName()
+	JString Application::getProcessName()
 	{
 		return callStaticObjectMethod(
 			"android.app.Application",
 			"getProcessName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void Application::onConfigurationChanged(android::content::res::Configuration arg0)
 	{

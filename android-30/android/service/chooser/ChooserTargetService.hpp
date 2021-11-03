@@ -1,8 +1,5 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "../../content/Context.hpp"
-#include "../../content/ContextWrapper.hpp"
 #include "../../app/Service.hpp"
 
 namespace android::content
@@ -17,6 +14,7 @@ namespace android::content
 {
 	class IntentFilter;
 }
+class JString;
 
 namespace android::service::chooser
 {
@@ -24,9 +22,9 @@ namespace android::service::chooser
 	{
 	public:
 		// Fields
-		static jstring BIND_PERMISSION();
-		static jstring META_DATA_NAME();
-		static jstring SERVICE_INTERFACE();
+		static JString BIND_PERMISSION();
+		static JString META_DATA_NAME();
+		static JString SERVICE_INTERFACE();
 		
 		// QJniObject forward
 		template<typename ...Ts> explicit ChooserTargetService(const char *className, const char *sig, Ts...agv) : android::app::Service(className, sig, std::forward<Ts>(agv)...) {}

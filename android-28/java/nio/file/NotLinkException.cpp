@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./NotLinkException.hpp"
 
 namespace java::nio::file
@@ -8,19 +9,19 @@ namespace java::nio::file
 	NotLinkException::NotLinkException(QJniObject obj) : java::nio::file::FileSystemException(obj) {}
 	
 	// Constructors
-	NotLinkException::NotLinkException(jstring arg0)
+	NotLinkException::NotLinkException(JString arg0)
 		: java::nio::file::FileSystemException(
 			"java.nio.file.NotLinkException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	NotLinkException::NotLinkException(jstring arg0, jstring arg1, jstring arg2)
+	NotLinkException::NotLinkException(JString arg0, JString arg1, JString arg2)
 		: java::nio::file::FileSystemException(
 			"java.nio.file.NotLinkException",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1,
-			arg2
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2.object<jstring>()
 		) {}
 	
 	// Methods

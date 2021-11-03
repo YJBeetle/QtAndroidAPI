@@ -1,3 +1,4 @@
+#include "../../../../JString.hpp"
 #include "./UnsupportedCallbackException.hpp"
 
 namespace javax::security::auth::callback
@@ -14,12 +15,12 @@ namespace javax::security::auth::callback
 			"(Ljavax/security/auth/callback/Callback;)V",
 			arg0.object()
 		) {}
-	UnsupportedCallbackException::UnsupportedCallbackException(JObject arg0, jstring arg1)
+	UnsupportedCallbackException::UnsupportedCallbackException(JObject arg0, JString arg1)
 		: java::lang::Exception(
 			"javax.security.auth.callback.UnsupportedCallbackException",
 			"(Ljavax/security/auth/callback/Callback;Ljava/lang/String;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		) {}
 	
 	// Methods

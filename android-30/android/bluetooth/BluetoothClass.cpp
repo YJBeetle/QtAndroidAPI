@@ -1,4 +1,6 @@
 #include "../os/Parcel.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./BluetoothClass.hpp"
 
 namespace android::bluetooth
@@ -26,12 +28,12 @@ namespace android::bluetooth
 			"()I"
 		);
 	}
-	jboolean BluetoothClass::equals(jobject arg0)
+	jboolean BluetoothClass::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint BluetoothClass::getDeviceClass()
@@ -63,12 +65,12 @@ namespace android::bluetooth
 			"()I"
 		);
 	}
-	jstring BluetoothClass::toString()
+	JString BluetoothClass::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void BluetoothClass::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

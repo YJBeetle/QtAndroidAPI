@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JObject;
 namespace java::util
 {
 	class ArrayList;
@@ -44,7 +45,7 @@ namespace android::animation
 		android::animation::Animator setDuration(jlong arg0);
 		void setInterpolator(JObject arg0);
 		void setStartDelay(jlong arg0);
-		void setTarget(jobject arg0);
+		void setTarget(JObject arg0);
 		void setupEndValues();
 		void setupStartValues();
 		void start();

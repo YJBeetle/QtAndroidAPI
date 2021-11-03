@@ -2,6 +2,8 @@
 #include "../../os/Parcel.hpp"
 #include "../../os/PatternMatcher.hpp"
 #include "../../util/Pair.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./WifiNetworkSpecifier.hpp"
 
 namespace android::net::wifi
@@ -29,12 +31,12 @@ namespace android::net::wifi
 			"()I"
 		);
 	}
-	jboolean WifiNetworkSpecifier::equals(jobject arg0)
+	jboolean WifiNetworkSpecifier::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint WifiNetworkSpecifier::hashCode()
@@ -44,12 +46,12 @@ namespace android::net::wifi
 			"()I"
 		);
 	}
-	jstring WifiNetworkSpecifier::toString()
+	JString WifiNetworkSpecifier::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void WifiNetworkSpecifier::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

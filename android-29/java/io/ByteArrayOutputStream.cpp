@@ -1,4 +1,6 @@
+#include "../../JByteArray.hpp"
 #include "./OutputStream.hpp"
+#include "../../JString.hpp"
 #include "../nio/charset/Charset.hpp"
 #include "./ByteArrayOutputStream.hpp"
 
@@ -44,43 +46,43 @@ namespace java::io
 			"()I"
 		);
 	}
-	jbyteArray ByteArrayOutputStream::toByteArray()
+	JByteArray ByteArrayOutputStream::toByteArray()
 	{
 		return callObjectMethod(
 			"toByteArray",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
-	jstring ByteArrayOutputStream::toString()
+	JString ByteArrayOutputStream::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ByteArrayOutputStream::toString(jint arg0)
+	JString ByteArrayOutputStream::toString(jint arg0)
 	{
 		return callObjectMethod(
 			"toString",
 			"(I)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
-	jstring ByteArrayOutputStream::toString(jstring arg0)
+	JString ByteArrayOutputStream::toString(JString arg0)
 	{
 		return callObjectMethod(
 			"toString",
 			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
+			arg0.object<jstring>()
+		);
 	}
-	jstring ByteArrayOutputStream::toString(java::nio::charset::Charset arg0)
+	JString ByteArrayOutputStream::toString(java::nio::charset::Charset arg0)
 	{
 		return callObjectMethod(
 			"toString",
 			"(Ljava/nio/charset/Charset;)Ljava/lang/String;",
 			arg0.object()
-		).object<jstring>();
+		);
 	}
 	void ByteArrayOutputStream::write(jint arg0)
 	{
@@ -90,22 +92,22 @@ namespace java::io
 			arg0
 		);
 	}
-	void ByteArrayOutputStream::write(jbyteArray arg0, jint arg1, jint arg2)
+	void ByteArrayOutputStream::write(JByteArray arg0, jint arg1, jint arg2)
 	{
 		callMethod<void>(
 			"write",
 			"([BII)V",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1,
 			arg2
 		);
 	}
-	void ByteArrayOutputStream::writeBytes(jbyteArray arg0)
+	void ByteArrayOutputStream::writeBytes(JByteArray arg0)
 	{
 		callMethod<void>(
 			"writeBytes",
 			"([B)V",
-			arg0
+			arg0.object<jbyteArray>()
 		);
 	}
 	void ByteArrayOutputStream::writeTo(java::io::OutputStream arg0)

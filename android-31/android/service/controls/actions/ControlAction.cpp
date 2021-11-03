@@ -1,3 +1,4 @@
+#include "../../../../JString.hpp"
 #include "./ControlAction.hpp"
 
 namespace android::service::controls::actions
@@ -111,19 +112,19 @@ namespace android::service::controls::actions
 			"()I"
 		);
 	}
-	jstring ControlAction::getChallengeValue()
+	JString ControlAction::getChallengeValue()
 	{
 		return callObjectMethod(
 			"getChallengeValue",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ControlAction::getTemplateId()
+	JString ControlAction::getTemplateId()
 	{
 		return callObjectMethod(
 			"getTemplateId",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::service::controls::actions
 

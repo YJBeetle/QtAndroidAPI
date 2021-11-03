@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JObject;
+class JString;
 
 namespace java::util
 {
@@ -15,11 +17,11 @@ namespace java::util
 		EventObject(QJniObject obj);
 		
 		// Constructors
-		EventObject(jobject arg0);
+		EventObject(JObject arg0);
 		
 		// Methods
-		jobject getSource();
-		jstring toString();
+		JObject getSource();
+		JString toString();
 	};
 } // namespace java::util
 

@@ -1,8 +1,9 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "../../java/lang/Enum.hpp"
 
+class JArray;
+class JString;
 
 namespace android::os
 {
@@ -21,8 +22,8 @@ namespace android::os
 		// Constructors
 		
 		// Methods
-		static android::os::AsyncTask_Status valueOf(jstring arg0);
-		static jarray values();
+		static android::os::AsyncTask_Status valueOf(JString arg0);
+		static JArray values();
 	};
 } // namespace android::os
 

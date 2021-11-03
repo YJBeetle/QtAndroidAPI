@@ -6,6 +6,7 @@ namespace android::net
 {
 	class Uri;
 }
+class JString;
 
 namespace android::provider
 {
@@ -13,10 +14,10 @@ namespace android::provider
 	{
 	public:
 		// Fields
-		static jstring CONTENT_TYPE();
+		static JString CONTENT_TYPE();
 		static android::net::Uri CONTENT_URI();
-		static jstring DATABASE_CREATION_TIMESTAMP();
-		static jstring STATUS();
+		static JString DATABASE_CREATION_TIMESTAMP();
+		static JString STATUS();
 		static jint STATUS_BUSY();
 		static jint STATUS_EMPTY();
 		static jint STATUS_NORMAL();

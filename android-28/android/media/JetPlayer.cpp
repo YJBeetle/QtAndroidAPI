@@ -1,5 +1,8 @@
+#include "../../JBooleanArray.hpp"
 #include "../content/res/AssetFileDescriptor.hpp"
 #include "../os/Handler.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./JetPlayer.hpp"
 
 namespace android::media
@@ -35,12 +38,12 @@ namespace android::media
 			"()Z"
 		);
 	}
-	jobject JetPlayer::clone()
+	JObject JetPlayer::clone()
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
 	jboolean JetPlayer::closeJetFile()
 	{
@@ -57,12 +60,12 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	jboolean JetPlayer::loadJetFile(jstring arg0)
+	jboolean JetPlayer::loadJetFile(JString arg0)
 	{
 		return callMethod<jboolean>(
 			"loadJetFile",
 			"(Ljava/lang/String;)Z",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	jboolean JetPlayer::pause()
@@ -92,7 +95,7 @@ namespace android::media
 			arg5
 		);
 	}
-	jboolean JetPlayer::queueJetSegmentMuteArray(jint arg0, jint arg1, jint arg2, jint arg3, jbooleanArray arg4, jbyte arg5)
+	jboolean JetPlayer::queueJetSegmentMuteArray(jint arg0, jint arg1, jint arg2, jint arg3, JBooleanArray arg4, jbyte arg5)
 	{
 		return callMethod<jboolean>(
 			"queueJetSegmentMuteArray",
@@ -101,7 +104,7 @@ namespace android::media
 			arg1,
 			arg2,
 			arg3,
-			arg4,
+			arg4.object<jbooleanArray>(),
 			arg5
 		);
 	}
@@ -129,12 +132,12 @@ namespace android::media
 			arg1.object()
 		);
 	}
-	jboolean JetPlayer::setMuteArray(jbooleanArray arg0, jboolean arg1)
+	jboolean JetPlayer::setMuteArray(JBooleanArray arg0, jboolean arg1)
 	{
 		return callMethod<jboolean>(
 			"setMuteArray",
 			"([ZZ)Z",
-			arg0,
+			arg0.object<jbooleanArray>(),
 			arg1
 		);
 	}

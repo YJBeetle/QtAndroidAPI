@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JString;
 
 namespace android::graphics
 {
@@ -23,7 +24,7 @@ namespace android::graphics
 		Paint_FontMetricsInt();
 		
 		// Methods
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::graphics
 

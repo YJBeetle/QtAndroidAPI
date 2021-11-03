@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./MtpStorageInfo.hpp"
 
 namespace android::mtp
@@ -10,12 +11,12 @@ namespace android::mtp
 	// Constructors
 	
 	// Methods
-	jstring MtpStorageInfo::getDescription()
+	JString MtpStorageInfo::getDescription()
 	{
 		return callObjectMethod(
 			"getDescription",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jlong MtpStorageInfo::getFreeSpace()
 	{
@@ -38,12 +39,12 @@ namespace android::mtp
 			"()I"
 		);
 	}
-	jstring MtpStorageInfo::getVolumeIdentifier()
+	JString MtpStorageInfo::getVolumeIdentifier()
 	{
 		return callObjectMethod(
 			"getVolumeIdentifier",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::mtp
 

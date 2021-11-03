@@ -1,3 +1,4 @@
+#include "../../JIntArray.hpp"
 #include "./RenderScript_RSMessageHandler.hpp"
 
 namespace android::renderscript

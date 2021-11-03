@@ -6,6 +6,7 @@ namespace android::telephony::ims
 {
 	class RcsUceAdapter;
 }
+class JString;
 
 namespace android::telephony::ims
 {
@@ -13,7 +14,7 @@ namespace android::telephony::ims
 	{
 	public:
 		// Fields
-		static jstring ACTION_SHOW_CAPABILITY_DISCOVERY_OPT_IN();
+		static JString ACTION_SHOW_CAPABILITY_DISCOVERY_OPT_IN();
 		
 		// QJniObject forward
 		template<typename ...Ts> explicit ImsRcsManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}

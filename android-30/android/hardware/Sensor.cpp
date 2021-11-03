@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./Sensor.hpp"
 
 namespace android::hardware
@@ -31,229 +32,229 @@ namespace android::hardware
 			"REPORTING_MODE_SPECIAL_TRIGGER"
 		);
 	}
-	jstring Sensor::STRING_TYPE_ACCELEROMETER()
+	JString Sensor::STRING_TYPE_ACCELEROMETER()
 	{
 		return getStaticObjectField(
 			"android.hardware.Sensor",
 			"STRING_TYPE_ACCELEROMETER",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Sensor::STRING_TYPE_ACCELEROMETER_UNCALIBRATED()
+	JString Sensor::STRING_TYPE_ACCELEROMETER_UNCALIBRATED()
 	{
 		return getStaticObjectField(
 			"android.hardware.Sensor",
 			"STRING_TYPE_ACCELEROMETER_UNCALIBRATED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Sensor::STRING_TYPE_AMBIENT_TEMPERATURE()
+	JString Sensor::STRING_TYPE_AMBIENT_TEMPERATURE()
 	{
 		return getStaticObjectField(
 			"android.hardware.Sensor",
 			"STRING_TYPE_AMBIENT_TEMPERATURE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Sensor::STRING_TYPE_GAME_ROTATION_VECTOR()
+	JString Sensor::STRING_TYPE_GAME_ROTATION_VECTOR()
 	{
 		return getStaticObjectField(
 			"android.hardware.Sensor",
 			"STRING_TYPE_GAME_ROTATION_VECTOR",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Sensor::STRING_TYPE_GEOMAGNETIC_ROTATION_VECTOR()
+	JString Sensor::STRING_TYPE_GEOMAGNETIC_ROTATION_VECTOR()
 	{
 		return getStaticObjectField(
 			"android.hardware.Sensor",
 			"STRING_TYPE_GEOMAGNETIC_ROTATION_VECTOR",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Sensor::STRING_TYPE_GRAVITY()
+	JString Sensor::STRING_TYPE_GRAVITY()
 	{
 		return getStaticObjectField(
 			"android.hardware.Sensor",
 			"STRING_TYPE_GRAVITY",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Sensor::STRING_TYPE_GYROSCOPE()
+	JString Sensor::STRING_TYPE_GYROSCOPE()
 	{
 		return getStaticObjectField(
 			"android.hardware.Sensor",
 			"STRING_TYPE_GYROSCOPE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Sensor::STRING_TYPE_GYROSCOPE_UNCALIBRATED()
+	JString Sensor::STRING_TYPE_GYROSCOPE_UNCALIBRATED()
 	{
 		return getStaticObjectField(
 			"android.hardware.Sensor",
 			"STRING_TYPE_GYROSCOPE_UNCALIBRATED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Sensor::STRING_TYPE_HEART_BEAT()
+	JString Sensor::STRING_TYPE_HEART_BEAT()
 	{
 		return getStaticObjectField(
 			"android.hardware.Sensor",
 			"STRING_TYPE_HEART_BEAT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Sensor::STRING_TYPE_HEART_RATE()
+	JString Sensor::STRING_TYPE_HEART_RATE()
 	{
 		return getStaticObjectField(
 			"android.hardware.Sensor",
 			"STRING_TYPE_HEART_RATE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Sensor::STRING_TYPE_HINGE_ANGLE()
+	JString Sensor::STRING_TYPE_HINGE_ANGLE()
 	{
 		return getStaticObjectField(
 			"android.hardware.Sensor",
 			"STRING_TYPE_HINGE_ANGLE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Sensor::STRING_TYPE_LIGHT()
+	JString Sensor::STRING_TYPE_LIGHT()
 	{
 		return getStaticObjectField(
 			"android.hardware.Sensor",
 			"STRING_TYPE_LIGHT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Sensor::STRING_TYPE_LINEAR_ACCELERATION()
+	JString Sensor::STRING_TYPE_LINEAR_ACCELERATION()
 	{
 		return getStaticObjectField(
 			"android.hardware.Sensor",
 			"STRING_TYPE_LINEAR_ACCELERATION",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Sensor::STRING_TYPE_LOW_LATENCY_OFFBODY_DETECT()
+	JString Sensor::STRING_TYPE_LOW_LATENCY_OFFBODY_DETECT()
 	{
 		return getStaticObjectField(
 			"android.hardware.Sensor",
 			"STRING_TYPE_LOW_LATENCY_OFFBODY_DETECT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Sensor::STRING_TYPE_MAGNETIC_FIELD()
+	JString Sensor::STRING_TYPE_MAGNETIC_FIELD()
 	{
 		return getStaticObjectField(
 			"android.hardware.Sensor",
 			"STRING_TYPE_MAGNETIC_FIELD",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Sensor::STRING_TYPE_MAGNETIC_FIELD_UNCALIBRATED()
+	JString Sensor::STRING_TYPE_MAGNETIC_FIELD_UNCALIBRATED()
 	{
 		return getStaticObjectField(
 			"android.hardware.Sensor",
 			"STRING_TYPE_MAGNETIC_FIELD_UNCALIBRATED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Sensor::STRING_TYPE_MOTION_DETECT()
+	JString Sensor::STRING_TYPE_MOTION_DETECT()
 	{
 		return getStaticObjectField(
 			"android.hardware.Sensor",
 			"STRING_TYPE_MOTION_DETECT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Sensor::STRING_TYPE_ORIENTATION()
+	JString Sensor::STRING_TYPE_ORIENTATION()
 	{
 		return getStaticObjectField(
 			"android.hardware.Sensor",
 			"STRING_TYPE_ORIENTATION",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Sensor::STRING_TYPE_POSE_6DOF()
+	JString Sensor::STRING_TYPE_POSE_6DOF()
 	{
 		return getStaticObjectField(
 			"android.hardware.Sensor",
 			"STRING_TYPE_POSE_6DOF",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Sensor::STRING_TYPE_PRESSURE()
+	JString Sensor::STRING_TYPE_PRESSURE()
 	{
 		return getStaticObjectField(
 			"android.hardware.Sensor",
 			"STRING_TYPE_PRESSURE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Sensor::STRING_TYPE_PROXIMITY()
+	JString Sensor::STRING_TYPE_PROXIMITY()
 	{
 		return getStaticObjectField(
 			"android.hardware.Sensor",
 			"STRING_TYPE_PROXIMITY",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Sensor::STRING_TYPE_RELATIVE_HUMIDITY()
+	JString Sensor::STRING_TYPE_RELATIVE_HUMIDITY()
 	{
 		return getStaticObjectField(
 			"android.hardware.Sensor",
 			"STRING_TYPE_RELATIVE_HUMIDITY",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Sensor::STRING_TYPE_ROTATION_VECTOR()
+	JString Sensor::STRING_TYPE_ROTATION_VECTOR()
 	{
 		return getStaticObjectField(
 			"android.hardware.Sensor",
 			"STRING_TYPE_ROTATION_VECTOR",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Sensor::STRING_TYPE_SIGNIFICANT_MOTION()
+	JString Sensor::STRING_TYPE_SIGNIFICANT_MOTION()
 	{
 		return getStaticObjectField(
 			"android.hardware.Sensor",
 			"STRING_TYPE_SIGNIFICANT_MOTION",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Sensor::STRING_TYPE_STATIONARY_DETECT()
+	JString Sensor::STRING_TYPE_STATIONARY_DETECT()
 	{
 		return getStaticObjectField(
 			"android.hardware.Sensor",
 			"STRING_TYPE_STATIONARY_DETECT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Sensor::STRING_TYPE_STEP_COUNTER()
+	JString Sensor::STRING_TYPE_STEP_COUNTER()
 	{
 		return getStaticObjectField(
 			"android.hardware.Sensor",
 			"STRING_TYPE_STEP_COUNTER",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Sensor::STRING_TYPE_STEP_DETECTOR()
+	JString Sensor::STRING_TYPE_STEP_DETECTOR()
 	{
 		return getStaticObjectField(
 			"android.hardware.Sensor",
 			"STRING_TYPE_STEP_DETECTOR",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Sensor::STRING_TYPE_TEMPERATURE()
+	JString Sensor::STRING_TYPE_TEMPERATURE()
 	{
 		return getStaticObjectField(
 			"android.hardware.Sensor",
 			"STRING_TYPE_TEMPERATURE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint Sensor::TYPE_ACCELEROMETER()
 	{
@@ -521,12 +522,12 @@ namespace android::hardware
 			"()I"
 		);
 	}
-	jstring Sensor::getName()
+	JString Sensor::getName()
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jfloat Sensor::getPower()
 	{
@@ -549,12 +550,12 @@ namespace android::hardware
 			"()F"
 		);
 	}
-	jstring Sensor::getStringType()
+	JString Sensor::getStringType()
 	{
 		return callObjectMethod(
 			"getStringType",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint Sensor::getType()
 	{
@@ -563,12 +564,12 @@ namespace android::hardware
 			"()I"
 		);
 	}
-	jstring Sensor::getVendor()
+	JString Sensor::getVendor()
 	{
 		return callObjectMethod(
 			"getVendor",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint Sensor::getVersion()
 	{
@@ -606,12 +607,12 @@ namespace android::hardware
 			"()Z"
 		);
 	}
-	jstring Sensor::toString()
+	JString Sensor::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::hardware
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#include "../../../../../JObject.hpp"
-#include "../../../../../java/lang/Exception.hpp"
-#include "./IkeException.hpp"
 #include "./IkeNonProtocolException.hpp"
 
 namespace android::net

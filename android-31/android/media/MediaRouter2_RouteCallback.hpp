@@ -2,7 +2,6 @@
 
 #include "../../JObject.hpp"
 
-
 namespace android::media
 {
 	class MediaRouter2_RouteCallback : public JObject

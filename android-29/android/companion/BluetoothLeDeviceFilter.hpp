@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JByteArray;
 namespace android::bluetooth::le
 {
 	class ScanFilter;
@@ -10,6 +11,8 @@ namespace android::os
 {
 	class Parcel;
 }
+class JObject;
+class JString;
 namespace java::util::regex
 {
 	class Pattern;
@@ -32,9 +35,9 @@ namespace android::companion
 		// Methods
 		static jint getRenamePrefixLengthLimit();
 		jint describeContents();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint hashCode();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::companion

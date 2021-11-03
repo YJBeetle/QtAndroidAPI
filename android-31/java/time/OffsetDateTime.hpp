@@ -6,6 +6,9 @@ namespace java::io
 {
 	class ObjectInputStream;
 }
+class JString;
+class JObject;
+class JString;
 namespace java::time
 {
 	class Clock;
@@ -83,16 +86,16 @@ namespace java::time
 		static java::time::OffsetDateTime of(java::time::LocalDate arg0, java::time::LocalTime arg1, java::time::ZoneOffset arg2);
 		static java::time::OffsetDateTime of(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, java::time::ZoneOffset arg7);
 		static java::time::OffsetDateTime ofInstant(java::time::Instant arg0, java::time::ZoneId arg1);
-		static java::time::OffsetDateTime parse(jstring arg0);
-		static java::time::OffsetDateTime parse(jstring arg0, java::time::format::DateTimeFormatter arg1);
+		static java::time::OffsetDateTime parse(JString arg0);
+		static java::time::OffsetDateTime parse(JString arg0, java::time::format::DateTimeFormatter arg1);
 		static JObject timeLineOrder();
 		JObject adjustInto(JObject arg0);
 		java::time::ZonedDateTime atZoneSameInstant(java::time::ZoneId arg0);
 		java::time::ZonedDateTime atZoneSimilarLocal(java::time::ZoneId arg0);
-		jint compareTo(jobject arg0);
+		jint compareTo(JObject arg0);
 		jint compareTo(java::time::OffsetDateTime arg0);
-		jboolean equals(jobject arg0);
-		jstring format(java::time::format::DateTimeFormatter arg0);
+		jboolean equals(JObject arg0);
+		JString format(java::time::format::DateTimeFormatter arg0);
 		jint get(JObject arg0);
 		jint getDayOfMonth();
 		java::time::DayOfWeek getDayOfWeek();
@@ -131,7 +134,7 @@ namespace java::time
 		java::time::OffsetDateTime plusSeconds(jlong arg0);
 		java::time::OffsetDateTime plusWeeks(jlong arg0);
 		java::time::OffsetDateTime plusYears(jlong arg0);
-		jobject query(JObject arg0);
+		JObject query(JObject arg0);
 		java::time::temporal::ValueRange range(JObject arg0);
 		jlong toEpochSecond();
 		java::time::Instant toInstant();
@@ -139,7 +142,7 @@ namespace java::time
 		java::time::LocalDateTime toLocalDateTime();
 		java::time::LocalTime toLocalTime();
 		java::time::OffsetTime toOffsetTime();
-		jstring toString();
+		JString toString();
 		java::time::ZonedDateTime toZonedDateTime();
 		java::time::OffsetDateTime truncatedTo(JObject arg0);
 		jlong until(JObject arg0, JObject arg1);

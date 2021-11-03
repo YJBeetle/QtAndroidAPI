@@ -1,4 +1,5 @@
 #include "../../os/Parcel.hpp"
+#include "../../../JObject.hpp"
 #include "./MediaSession_Token.hpp"
 
 namespace android::media::session
@@ -26,12 +27,12 @@ namespace android::media::session
 			"()I"
 		);
 	}
-	jboolean MediaSession_Token::equals(jobject arg0)
+	jboolean MediaSession_Token::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint MediaSession_Token::hashCode()

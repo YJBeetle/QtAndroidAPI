@@ -1,3 +1,4 @@
+#include "../../JThrowable.hpp"
 #include "./DnsResolver_DnsException.hpp"
 
 namespace android::net

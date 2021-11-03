@@ -1,4 +1,7 @@
+#include "../../../JCharArray.hpp"
 #include "./Normalizer_QuickCheckResult.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./Normalizer.hpp"
 
 namespace android::icu::text
@@ -70,14 +73,14 @@ namespace android::icu::text
 	// Constructors
 	
 	// Methods
-	jint Normalizer::compare(jcharArray arg0, jcharArray arg1, jint arg2)
+	jint Normalizer::compare(JCharArray arg0, JCharArray arg1, jint arg2)
 	{
 		return callStaticMethod<jint>(
 			"android.icu.text.Normalizer",
 			"compare",
 			"([C[CI)I",
-			arg0,
-			arg1,
+			arg0.object<jcharArray>(),
+			arg1.object<jcharArray>(),
 			arg2
 		);
 	}
@@ -92,49 +95,49 @@ namespace android::icu::text
 			arg2
 		);
 	}
-	jint Normalizer::compare(jint arg0, jstring arg1, jint arg2)
+	jint Normalizer::compare(jint arg0, JString arg1, jint arg2)
 	{
 		return callStaticMethod<jint>(
 			"android.icu.text.Normalizer",
 			"compare",
 			"(ILjava/lang/String;I)I",
 			arg0,
-			arg1,
+			arg1.object<jstring>(),
 			arg2
 		);
 	}
-	jint Normalizer::compare(jstring arg0, jstring arg1, jint arg2)
+	jint Normalizer::compare(JString arg0, JString arg1, jint arg2)
 	{
 		return callStaticMethod<jint>(
 			"android.icu.text.Normalizer",
 			"compare",
 			"(Ljava/lang/String;Ljava/lang/String;I)I",
-			arg0,
-			arg1,
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
 			arg2
 		);
 	}
-	jint Normalizer::compare(jcharArray arg0, jint arg1, jint arg2, jcharArray arg3, jint arg4, jint arg5, jint arg6)
+	jint Normalizer::compare(JCharArray arg0, jint arg1, jint arg2, JCharArray arg3, jint arg4, jint arg5, jint arg6)
 	{
 		return callStaticMethod<jint>(
 			"android.icu.text.Normalizer",
 			"compare",
 			"([CII[CIII)I",
-			arg0,
+			arg0.object<jcharArray>(),
 			arg1,
 			arg2,
-			arg3,
+			arg3.object<jcharArray>(),
 			arg4,
 			arg5,
 			arg6
 		);
 	}
-	jobject Normalizer::clone()
+	JObject Normalizer::clone()
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
 } // namespace android::icu::text
 

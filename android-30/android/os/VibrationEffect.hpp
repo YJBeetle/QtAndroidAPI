@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JIntArray;
+class JLongArray;
 namespace android::os
 {
 	class VibrationEffect_Composition;
@@ -29,8 +31,8 @@ namespace android::os
 		// Methods
 		static android::os::VibrationEffect createOneShot(jlong arg0, jint arg1);
 		static android::os::VibrationEffect createPredefined(jint arg0);
-		static android::os::VibrationEffect createWaveform(jlongArray arg0, jint arg1);
-		static android::os::VibrationEffect createWaveform(jlongArray arg0, jintArray arg1, jint arg2);
+		static android::os::VibrationEffect createWaveform(JLongArray arg0, jint arg1);
+		static android::os::VibrationEffect createWaveform(JLongArray arg0, JIntArray arg1, jint arg2);
 		static android::os::VibrationEffect_Composition startComposition();
 		jint describeContents();
 	};

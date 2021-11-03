@@ -1,5 +1,7 @@
 #include "./Insets.hpp"
 #include "../os/Parcel.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./Rect.hpp"
 
 namespace android::graphics
@@ -74,13 +76,13 @@ namespace android::graphics
 			arg1.object()
 		);
 	}
-	android::graphics::Rect Rect::unflattenFromString(jstring arg0)
+	android::graphics::Rect Rect::unflattenFromString(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.graphics.Rect",
 			"unflattenFromString",
 			"(Ljava/lang/String;)Landroid/graphics/Rect;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	jint Rect::centerX()
@@ -132,12 +134,12 @@ namespace android::graphics
 			"()I"
 		);
 	}
-	jboolean Rect::equals(jobject arg0)
+	jboolean Rect::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jfloat Rect::exactCenterX()
@@ -154,12 +156,12 @@ namespace android::graphics
 			"()F"
 		);
 	}
-	jstring Rect::flattenToString()
+	JString Rect::flattenToString()
 	{
 		return callObjectMethod(
 			"flattenToString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint Rect::hashCode()
 	{
@@ -308,19 +310,19 @@ namespace android::graphics
 			"()V"
 		);
 	}
-	jstring Rect::toShortString()
+	JString Rect::toShortString()
 	{
 		return callObjectMethod(
 			"toShortString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Rect::toString()
+	JString Rect::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void Rect::_union(android::graphics::Rect arg0)
 	{

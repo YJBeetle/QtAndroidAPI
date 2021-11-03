@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JIntArray;
 namespace android::bluetooth
 {
 	class BluetoothDevice;
@@ -22,6 +23,7 @@ namespace android::os
 {
 	class ParcelFileDescriptor;
 }
+class JString;
 
 namespace android::bluetooth
 {
@@ -53,9 +55,9 @@ namespace android::bluetooth
 		jboolean disconnectChannel(android::bluetooth::BluetoothDevice arg0, android::bluetooth::BluetoothHealthAppConfiguration arg1, jint arg2);
 		JObject getConnectedDevices();
 		jint getConnectionState(android::bluetooth::BluetoothDevice arg0);
-		JObject getDevicesMatchingConnectionStates(jintArray arg0);
+		JObject getDevicesMatchingConnectionStates(JIntArray arg0);
 		android::os::ParcelFileDescriptor getMainChannelFd(android::bluetooth::BluetoothDevice arg0, android::bluetooth::BluetoothHealthAppConfiguration arg1);
-		jboolean registerSinkAppConfiguration(jstring arg0, jint arg1, android::bluetooth::BluetoothHealthCallback arg2);
+		jboolean registerSinkAppConfiguration(JString arg0, jint arg1, android::bluetooth::BluetoothHealthCallback arg2);
 		jboolean unregisterAppConfiguration(android::bluetooth::BluetoothHealthAppConfiguration arg0);
 	};
 } // namespace android::bluetooth

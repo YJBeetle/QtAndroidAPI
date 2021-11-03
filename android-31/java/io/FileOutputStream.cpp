@@ -1,5 +1,8 @@
+#include "../../JByteArray.hpp"
 #include "./File.hpp"
 #include "./FileDescriptor.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "../nio/channels/FileChannel.hpp"
 #include "./FileOutputStream.hpp"
 
@@ -23,11 +26,11 @@ namespace java::io
 			"(Ljava/io/FileDescriptor;)V",
 			arg0.object()
 		) {}
-	FileOutputStream::FileOutputStream(jstring arg0)
+	FileOutputStream::FileOutputStream(JString arg0)
 		: java::io::OutputStream(
 			"java.io.FileOutputStream",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	FileOutputStream::FileOutputStream(java::io::File arg0, jboolean arg1)
 		: java::io::OutputStream(
@@ -36,11 +39,11 @@ namespace java::io
 			arg0.object(),
 			arg1
 		) {}
-	FileOutputStream::FileOutputStream(jstring arg0, jboolean arg1)
+	FileOutputStream::FileOutputStream(JString arg0, jboolean arg1)
 		: java::io::OutputStream(
 			"java.io.FileOutputStream",
 			"(Ljava/lang/String;Z)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		) {}
 	
@@ -66,12 +69,12 @@ namespace java::io
 			"()Ljava/io/FileDescriptor;"
 		);
 	}
-	void FileOutputStream::write(jbyteArray arg0)
+	void FileOutputStream::write(JByteArray arg0)
 	{
 		callMethod<void>(
 			"write",
 			"([B)V",
-			arg0
+			arg0.object<jbyteArray>()
 		);
 	}
 	void FileOutputStream::write(jint arg0)
@@ -82,12 +85,12 @@ namespace java::io
 			arg0
 		);
 	}
-	void FileOutputStream::write(jbyteArray arg0, jint arg1, jint arg2)
+	void FileOutputStream::write(JByteArray arg0, jint arg1, jint arg2)
 	{
 		callMethod<void>(
 			"write",
 			"([BII)V",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1,
 			arg2
 		);

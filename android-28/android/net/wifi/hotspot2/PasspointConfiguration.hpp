@@ -14,6 +14,8 @@ namespace android::os
 {
 	class Parcel;
 }
+class JObject;
+class JString;
 
 namespace android::net::wifi::hotspot2
 {
@@ -33,13 +35,13 @@ namespace android::net::wifi::hotspot2
 		
 		// Methods
 		jint describeContents();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		android::net::wifi::hotspot2::pps::Credential getCredential();
 		android::net::wifi::hotspot2::pps::HomeSp getHomeSp();
 		jint hashCode();
 		void setCredential(android::net::wifi::hotspot2::pps::Credential arg0);
 		void setHomeSp(android::net::wifi::hotspot2::pps::HomeSp arg0);
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::net::wifi::hotspot2

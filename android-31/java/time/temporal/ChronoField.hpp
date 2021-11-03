@@ -1,8 +1,9 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "../../lang/Enum.hpp"
 
+class JArray;
+class JString;
 namespace java::time::temporal
 {
 	class ValueRange;
@@ -56,13 +57,13 @@ namespace java::time::temporal
 		// Constructors
 		
 		// Methods
-		static java::time::temporal::ChronoField valueOf(jstring arg0);
-		static jarray values();
+		static java::time::temporal::ChronoField valueOf(JString arg0);
+		static JArray values();
 		JObject adjustInto(JObject arg0, jlong arg1);
 		jint checkValidIntValue(jlong arg0);
 		jlong checkValidValue(jlong arg0);
 		JObject getBaseUnit();
-		jstring getDisplayName(java::util::Locale arg0);
+		JString getDisplayName(java::util::Locale arg0);
 		jlong getFrom(JObject arg0);
 		JObject getRangeUnit();
 		jboolean isDateBased();
@@ -70,7 +71,7 @@ namespace java::time::temporal
 		jboolean isTimeBased();
 		java::time::temporal::ValueRange range();
 		java::time::temporal::ValueRange rangeRefinedBy(JObject arg0);
-		jstring toString();
+		JString toString();
 	};
 } // namespace java::time::temporal
 

@@ -1,4 +1,5 @@
 #include "../../os/Parcel.hpp"
+#include "../../../JString.hpp"
 #include "./UserData.hpp"
 
 namespace android::service::autofill
@@ -66,34 +67,34 @@ namespace android::service::autofill
 			"()I"
 		);
 	}
-	jstring UserData::getFieldClassificationAlgorithm()
+	JString UserData::getFieldClassificationAlgorithm()
 	{
 		return callObjectMethod(
 			"getFieldClassificationAlgorithm",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring UserData::getFieldClassificationAlgorithmForCategory(jstring arg0)
+	JString UserData::getFieldClassificationAlgorithmForCategory(JString arg0)
 	{
 		return callObjectMethod(
 			"getFieldClassificationAlgorithmForCategory",
 			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
+			arg0.object<jstring>()
+		);
 	}
-	jstring UserData::getId()
+	JString UserData::getId()
 	{
 		return callObjectMethod(
 			"getId",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring UserData::toString()
+	JString UserData::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void UserData::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

@@ -1,3 +1,6 @@
+#include "../../JDoubleArray.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./Buffer.hpp"
 #include "./ByteOrder.hpp"
 #include "./DoubleBuffer.hpp"
@@ -21,32 +24,32 @@ namespace java::nio
 			arg0
 		);
 	}
-	java::nio::DoubleBuffer DoubleBuffer::wrap(jdoubleArray arg0)
+	java::nio::DoubleBuffer DoubleBuffer::wrap(JDoubleArray arg0)
 	{
 		return callStaticObjectMethod(
 			"java.nio.DoubleBuffer",
 			"wrap",
 			"([D)Ljava/nio/DoubleBuffer;",
-			arg0
+			arg0.object<jdoubleArray>()
 		);
 	}
-	java::nio::DoubleBuffer DoubleBuffer::wrap(jdoubleArray arg0, jint arg1, jint arg2)
+	java::nio::DoubleBuffer DoubleBuffer::wrap(JDoubleArray arg0, jint arg1, jint arg2)
 	{
 		return callStaticObjectMethod(
 			"java.nio.DoubleBuffer",
 			"wrap",
 			"([DII)Ljava/nio/DoubleBuffer;",
-			arg0,
+			arg0.object<jdoubleArray>(),
 			arg1,
 			arg2
 		);
 	}
-	jdoubleArray DoubleBuffer::array()
+	JDoubleArray DoubleBuffer::array()
 	{
 		return callObjectMethod(
 			"array",
 			"()[D"
-		).object<jdoubleArray>();
+		);
 	}
 	jint DoubleBuffer::arrayOffset()
 	{
@@ -76,12 +79,12 @@ namespace java::nio
 			"()Ljava/nio/DoubleBuffer;"
 		);
 	}
-	jint DoubleBuffer::compareTo(jobject arg0)
+	jint DoubleBuffer::compareTo(JObject arg0)
 	{
 		return callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Object;)I",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint DoubleBuffer::compareTo(java::nio::DoubleBuffer arg0)
@@ -99,12 +102,12 @@ namespace java::nio
 			"()Ljava/nio/DoubleBuffer;"
 		);
 	}
-	jboolean DoubleBuffer::equals(jobject arg0)
+	jboolean DoubleBuffer::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	java::nio::DoubleBuffer DoubleBuffer::flip()
@@ -129,40 +132,40 @@ namespace java::nio
 			arg0
 		);
 	}
-	java::nio::DoubleBuffer DoubleBuffer::get(jdoubleArray arg0)
+	java::nio::DoubleBuffer DoubleBuffer::get(JDoubleArray arg0)
 	{
 		return callObjectMethod(
 			"get",
 			"([D)Ljava/nio/DoubleBuffer;",
-			arg0
+			arg0.object<jdoubleArray>()
 		);
 	}
-	java::nio::DoubleBuffer DoubleBuffer::get(jint arg0, jdoubleArray arg1)
+	java::nio::DoubleBuffer DoubleBuffer::get(jint arg0, JDoubleArray arg1)
 	{
 		return callObjectMethod(
 			"get",
 			"(I[D)Ljava/nio/DoubleBuffer;",
 			arg0,
-			arg1
+			arg1.object<jdoubleArray>()
 		);
 	}
-	java::nio::DoubleBuffer DoubleBuffer::get(jdoubleArray arg0, jint arg1, jint arg2)
+	java::nio::DoubleBuffer DoubleBuffer::get(JDoubleArray arg0, jint arg1, jint arg2)
 	{
 		return callObjectMethod(
 			"get",
 			"([DII)Ljava/nio/DoubleBuffer;",
-			arg0,
+			arg0.object<jdoubleArray>(),
 			arg1,
 			arg2
 		);
 	}
-	java::nio::DoubleBuffer DoubleBuffer::get(jint arg0, jdoubleArray arg1, jint arg2, jint arg3)
+	java::nio::DoubleBuffer DoubleBuffer::get(jint arg0, JDoubleArray arg1, jint arg2, jint arg3)
 	{
 		return callObjectMethod(
 			"get",
 			"(I[DII)Ljava/nio/DoubleBuffer;",
 			arg0,
-			arg1,
+			arg1.object<jdoubleArray>(),
 			arg2,
 			arg3
 		);
@@ -226,12 +229,12 @@ namespace java::nio
 			arg0
 		);
 	}
-	java::nio::DoubleBuffer DoubleBuffer::put(jdoubleArray arg0)
+	java::nio::DoubleBuffer DoubleBuffer::put(JDoubleArray arg0)
 	{
 		return callObjectMethod(
 			"put",
 			"([D)Ljava/nio/DoubleBuffer;",
-			arg0
+			arg0.object<jdoubleArray>()
 		);
 	}
 	java::nio::DoubleBuffer DoubleBuffer::put(jdouble arg0)
@@ -250,13 +253,13 @@ namespace java::nio
 			arg0.object()
 		);
 	}
-	java::nio::DoubleBuffer DoubleBuffer::put(jint arg0, jdoubleArray arg1)
+	java::nio::DoubleBuffer DoubleBuffer::put(jint arg0, JDoubleArray arg1)
 	{
 		return callObjectMethod(
 			"put",
 			"(I[D)Ljava/nio/DoubleBuffer;",
 			arg0,
-			arg1
+			arg1.object<jdoubleArray>()
 		);
 	}
 	java::nio::DoubleBuffer DoubleBuffer::put(jint arg0, jdouble arg1)
@@ -268,23 +271,23 @@ namespace java::nio
 			arg1
 		);
 	}
-	java::nio::DoubleBuffer DoubleBuffer::put(jdoubleArray arg0, jint arg1, jint arg2)
+	java::nio::DoubleBuffer DoubleBuffer::put(JDoubleArray arg0, jint arg1, jint arg2)
 	{
 		return callObjectMethod(
 			"put",
 			"([DII)Ljava/nio/DoubleBuffer;",
-			arg0,
+			arg0.object<jdoubleArray>(),
 			arg1,
 			arg2
 		);
 	}
-	java::nio::DoubleBuffer DoubleBuffer::put(jint arg0, jdoubleArray arg1, jint arg2, jint arg3)
+	java::nio::DoubleBuffer DoubleBuffer::put(jint arg0, JDoubleArray arg1, jint arg2, jint arg3)
 	{
 		return callObjectMethod(
 			"put",
 			"(I[DII)Ljava/nio/DoubleBuffer;",
 			arg0,
-			arg1,
+			arg1.object<jdoubleArray>(),
 			arg2,
 			arg3
 		);
@@ -330,12 +333,12 @@ namespace java::nio
 			arg1
 		);
 	}
-	jstring DoubleBuffer::toString()
+	JString DoubleBuffer::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::nio
 

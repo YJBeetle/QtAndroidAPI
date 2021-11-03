@@ -6,6 +6,7 @@ namespace java::io
 {
 	class InputStream;
 }
+class JString;
 
 namespace android::webkit
 {
@@ -19,21 +20,21 @@ namespace android::webkit
 		WebResourceResponse(QJniObject obj);
 		
 		// Constructors
-		WebResourceResponse(jstring arg0, jstring arg1, java::io::InputStream arg2);
-		WebResourceResponse(jstring arg0, jstring arg1, jint arg2, jstring arg3, JObject arg4, java::io::InputStream arg5);
+		WebResourceResponse(JString arg0, JString arg1, java::io::InputStream arg2);
+		WebResourceResponse(JString arg0, JString arg1, jint arg2, JString arg3, JObject arg4, java::io::InputStream arg5);
 		
 		// Methods
 		java::io::InputStream getData();
-		jstring getEncoding();
-		jstring getMimeType();
-		jstring getReasonPhrase();
+		JString getEncoding();
+		JString getMimeType();
+		JString getReasonPhrase();
 		JObject getResponseHeaders();
 		jint getStatusCode();
 		void setData(java::io::InputStream arg0);
-		void setEncoding(jstring arg0);
-		void setMimeType(jstring arg0);
+		void setEncoding(JString arg0);
+		void setMimeType(JString arg0);
 		void setResponseHeaders(JObject arg0);
-		void setStatusCodeAndReasonPhrase(jint arg0, jstring arg1);
+		void setStatusCodeAndReasonPhrase(jint arg0, JString arg1);
 	};
 } // namespace android::webkit
 

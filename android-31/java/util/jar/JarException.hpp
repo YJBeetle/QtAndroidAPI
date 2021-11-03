@@ -1,10 +1,8 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "../../lang/Exception.hpp"
-#include "../../io/IOException.hpp"
 #include "../zip/ZipException.hpp"
 
+class JString;
 
 namespace java::util::jar
 {
@@ -19,7 +17,7 @@ namespace java::util::jar
 		
 		// Constructors
 		JarException();
-		JarException(jstring arg0);
+		JarException(JString arg0);
 		
 		// Methods
 	};

@@ -1,4 +1,6 @@
+#include "../../../../JByteArray.hpp"
 #include "./SubscribeConfig.hpp"
+#include "../../../../JString.hpp"
 #include "./SubscribeConfig_Builder.hpp"
 
 namespace android::net::wifi::aware
@@ -47,20 +49,20 @@ namespace android::net::wifi::aware
 			arg0
 		);
 	}
-	android::net::wifi::aware::SubscribeConfig_Builder SubscribeConfig_Builder::setServiceName(jstring arg0)
+	android::net::wifi::aware::SubscribeConfig_Builder SubscribeConfig_Builder::setServiceName(JString arg0)
 	{
 		return callObjectMethod(
 			"setServiceName",
 			"(Ljava/lang/String;)Landroid/net/wifi/aware/SubscribeConfig$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	android::net::wifi::aware::SubscribeConfig_Builder SubscribeConfig_Builder::setServiceSpecificInfo(jbyteArray arg0)
+	android::net::wifi::aware::SubscribeConfig_Builder SubscribeConfig_Builder::setServiceSpecificInfo(JByteArray arg0)
 	{
 		return callObjectMethod(
 			"setServiceSpecificInfo",
 			"([B)Landroid/net/wifi/aware/SubscribeConfig$Builder;",
-			arg0
+			arg0.object<jbyteArray>()
 		);
 	}
 	android::net::wifi::aware::SubscribeConfig_Builder SubscribeConfig_Builder::setSubscribeType(jint arg0)

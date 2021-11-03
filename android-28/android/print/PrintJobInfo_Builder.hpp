@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JArray;
 namespace android::print
 {
 	class PrintAttributes;
@@ -10,6 +11,7 @@ namespace android::print
 {
 	class PrintJobInfo;
 }
+class JString;
 
 namespace android::print
 {
@@ -27,11 +29,11 @@ namespace android::print
 		
 		// Methods
 		android::print::PrintJobInfo build();
-		void putAdvancedOption(jstring arg0, jint arg1);
-		void putAdvancedOption(jstring arg0, jstring arg1);
+		void putAdvancedOption(JString arg0, jint arg1);
+		void putAdvancedOption(JString arg0, JString arg1);
 		void setAttributes(android::print::PrintAttributes arg0);
 		void setCopies(jint arg0);
-		void setPages(jarray arg0);
+		void setPages(JArray arg0);
 	};
 } // namespace android::print
 

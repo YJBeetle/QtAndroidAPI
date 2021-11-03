@@ -1,3 +1,5 @@
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
 #include "./Xml_Encoding.hpp"
 
 namespace android::util
@@ -42,22 +44,22 @@ namespace android::util
 	// Constructors
 	
 	// Methods
-	android::util::Xml_Encoding Xml_Encoding::valueOf(jstring arg0)
+	android::util::Xml_Encoding Xml_Encoding::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.util.Xml$Encoding",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/util/Xml$Encoding;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray Xml_Encoding::values()
+	JArray Xml_Encoding::values()
 	{
 		return callStaticObjectMethod(
 			"android.util.Xml$Encoding",
 			"values",
 			"()[Landroid/util/Xml$Encoding;"
-		).object<jarray>();
+		);
 	}
 } // namespace android::util
 

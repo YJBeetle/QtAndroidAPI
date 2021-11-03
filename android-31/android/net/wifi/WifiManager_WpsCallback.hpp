@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JString;
 
 namespace android::net::wifi
 {
@@ -19,7 +20,7 @@ namespace android::net::wifi
 		
 		// Methods
 		void onFailed(jint arg0);
-		void onStarted(jstring arg0);
+		void onStarted(JString arg0);
 		void onSucceeded();
 	};
 } // namespace android::net::wifi

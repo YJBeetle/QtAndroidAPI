@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./ConfirmationNotAvailableException.hpp"
 
 namespace android::security
@@ -13,11 +14,11 @@ namespace android::security
 			"android.security.ConfirmationNotAvailableException",
 			"()V"
 		) {}
-	ConfirmationNotAvailableException::ConfirmationNotAvailableException(jstring arg0)
+	ConfirmationNotAvailableException::ConfirmationNotAvailableException(JString arg0)
 		: java::lang::Exception(
 			"android.security.ConfirmationNotAvailableException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

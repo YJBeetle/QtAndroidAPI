@@ -6,6 +6,8 @@ namespace android::os
 {
 	class Parcel;
 }
+class JObject;
+class JString;
 
 namespace android::util
 {
@@ -23,13 +25,13 @@ namespace android::util
 		SizeF(jfloat arg0, jfloat arg1);
 		
 		// Methods
-		static android::util::SizeF parseSizeF(jstring arg0);
+		static android::util::SizeF parseSizeF(JString arg0);
 		jint describeContents();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jfloat getHeight();
 		jfloat getWidth();
 		jint hashCode();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::util

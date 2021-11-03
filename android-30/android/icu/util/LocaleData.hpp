@@ -18,6 +18,7 @@ namespace android::icu::util
 {
 	class VersionInfo;
 }
+class JString;
 
 namespace android::icu::util
 {
@@ -42,7 +43,7 @@ namespace android::icu::util
 		static android::icu::util::LocaleData getInstance(android::icu::util::ULocale arg0);
 		static android::icu::util::LocaleData_MeasurementSystem getMeasurementSystem(android::icu::util::ULocale arg0);
 		static android::icu::util::LocaleData_PaperSize getPaperSize(android::icu::util::ULocale arg0);
-		jstring getDelimiter(jint arg0);
+		JString getDelimiter(jint arg0);
 		jboolean getNoSubstitute();
 		void setNoSubstitute(jboolean arg0);
 	};

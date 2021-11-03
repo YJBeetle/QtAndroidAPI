@@ -1,8 +1,10 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./Enum.hpp"
 
+class JIntArray;
+class JArray;
+class JString;
 namespace java::util
 {
 	class HashMap;
@@ -179,10 +181,10 @@ namespace java::lang
 		// Constructors
 		
 		// Methods
-		static java::lang::Character_UnicodeScript forName(jstring arg0);
+		static java::lang::Character_UnicodeScript forName(JString arg0);
 		static java::lang::Character_UnicodeScript of(jint arg0);
-		static java::lang::Character_UnicodeScript valueOf(jstring arg0);
-		static jarray values();
+		static java::lang::Character_UnicodeScript valueOf(JString arg0);
+		static JArray values();
 	};
 } // namespace java::lang
 

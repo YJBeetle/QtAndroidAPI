@@ -1,6 +1,7 @@
 #include "../../content/Context.hpp"
 #include "./SQLiteDatabase.hpp"
 #include "./SQLiteDatabase_OpenParams.hpp"
+#include "../../../JString.hpp"
 #include "./SQLiteOpenHelper.hpp"
 
 namespace android::database::sqlite
@@ -11,30 +12,30 @@ namespace android::database::sqlite
 	SQLiteOpenHelper::SQLiteOpenHelper(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	SQLiteOpenHelper::SQLiteOpenHelper(android::content::Context arg0, jstring arg1, JObject arg2, jint arg3)
+	SQLiteOpenHelper::SQLiteOpenHelper(android::content::Context arg0, JString arg1, JObject arg2, jint arg3)
 		: JObject(
 			"android.database.sqlite.SQLiteOpenHelper",
 			"(Landroid/content/Context;Ljava/lang/String;Landroid/database/sqlite/SQLiteDatabase$CursorFactory;I)V",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2.object(),
 			arg3
 		) {}
-	SQLiteOpenHelper::SQLiteOpenHelper(android::content::Context arg0, jstring arg1, jint arg2, android::database::sqlite::SQLiteDatabase_OpenParams arg3)
+	SQLiteOpenHelper::SQLiteOpenHelper(android::content::Context arg0, JString arg1, jint arg2, android::database::sqlite::SQLiteDatabase_OpenParams arg3)
 		: JObject(
 			"android.database.sqlite.SQLiteOpenHelper",
 			"(Landroid/content/Context;Ljava/lang/String;ILandroid/database/sqlite/SQLiteDatabase$OpenParams;)V",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2,
 			arg3.object()
 		) {}
-	SQLiteOpenHelper::SQLiteOpenHelper(android::content::Context arg0, jstring arg1, JObject arg2, jint arg3, JObject arg4)
+	SQLiteOpenHelper::SQLiteOpenHelper(android::content::Context arg0, JString arg1, JObject arg2, jint arg3, JObject arg4)
 		: JObject(
 			"android.database.sqlite.SQLiteOpenHelper",
 			"(Landroid/content/Context;Ljava/lang/String;Landroid/database/sqlite/SQLiteDatabase$CursorFactory;ILandroid/database/DatabaseErrorHandler;)V",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2.object(),
 			arg3,
 			arg4.object()
@@ -48,12 +49,12 @@ namespace android::database::sqlite
 			"()V"
 		);
 	}
-	jstring SQLiteOpenHelper::getDatabaseName()
+	JString SQLiteOpenHelper::getDatabaseName()
 	{
 		return callObjectMethod(
 			"getDatabaseName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::database::sqlite::SQLiteDatabase SQLiteOpenHelper::getReadableDatabase()
 	{

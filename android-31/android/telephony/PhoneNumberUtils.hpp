@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JByteArray;
 namespace android::content
 {
 	class Context;
@@ -14,6 +15,8 @@ namespace android::text::style
 {
 	class TtsSpan;
 }
+class JString;
+class JString;
 namespace java::util
 {
 	class Locale;
@@ -45,50 +48,50 @@ namespace android::telephony
 		
 		// Methods
 		static void addTtsSpan(JObject arg0, jint arg1, jint arg2);
-		static jboolean areSamePhoneNumber(jstring arg0, jstring arg1, jstring arg2);
-		static jstring calledPartyBCDFragmentToString(jbyteArray arg0, jint arg1, jint arg2);
-		static jstring calledPartyBCDFragmentToString(jbyteArray arg0, jint arg1, jint arg2, jint arg3);
-		static jstring calledPartyBCDToString(jbyteArray arg0, jint arg1, jint arg2);
-		static jstring calledPartyBCDToString(jbyteArray arg0, jint arg1, jint arg2, jint arg3);
-		static jboolean compare(jstring arg0, jstring arg1);
-		static jboolean compare(android::content::Context arg0, jstring arg1, jstring arg2);
-		static jstring convertKeypadLettersToDigits(jstring arg0);
-		static android::text::style::TtsSpan createTtsSpan(jstring arg0);
-		static jstring createTtsSpannable(jstring arg0);
-		static jstring extractNetworkPortion(jstring arg0);
-		static jstring extractPostDialPortion(jstring arg0);
+		static jboolean areSamePhoneNumber(JString arg0, JString arg1, JString arg2);
+		static JString calledPartyBCDFragmentToString(JByteArray arg0, jint arg1, jint arg2);
+		static JString calledPartyBCDFragmentToString(JByteArray arg0, jint arg1, jint arg2, jint arg3);
+		static JString calledPartyBCDToString(JByteArray arg0, jint arg1, jint arg2);
+		static JString calledPartyBCDToString(JByteArray arg0, jint arg1, jint arg2, jint arg3);
+		static jboolean compare(JString arg0, JString arg1);
+		static jboolean compare(android::content::Context arg0, JString arg1, JString arg2);
+		static JString convertKeypadLettersToDigits(JString arg0);
+		static android::text::style::TtsSpan createTtsSpan(JString arg0);
+		static JString createTtsSpannable(JString arg0);
+		static JString extractNetworkPortion(JString arg0);
+		static JString extractPostDialPortion(JString arg0);
 		static void formatJapaneseNumber(JObject arg0);
 		static void formatNanpNumber(JObject arg0);
-		static jstring formatNumber(jstring arg0);
-		static jstring formatNumber(jstring arg0, jstring arg1);
-		static jstring formatNumber(jstring arg0, jstring arg1, jstring arg2);
+		static JString formatNumber(JString arg0);
+		static JString formatNumber(JString arg0, JString arg1);
+		static JString formatNumber(JString arg0, JString arg1, JString arg2);
 		static void formatNumber(JObject arg0, jint arg1);
-		static jstring formatNumberToE164(jstring arg0, jstring arg1);
-		static jstring formatNumberToRFC3966(jstring arg0, jstring arg1);
+		static JString formatNumberToE164(JString arg0, JString arg1);
+		static JString formatNumberToRFC3966(JString arg0, JString arg1);
 		static jint getFormatTypeForLocale(java::util::Locale arg0);
-		static jstring getNumberFromIntent(android::content::Intent arg0, android::content::Context arg1);
-		static jstring getStrippedReversed(jstring arg0);
+		static JString getNumberFromIntent(android::content::Intent arg0, android::content::Context arg1);
+		static JString getStrippedReversed(JString arg0);
 		static jboolean is12Key(jchar arg0);
 		static jboolean isDialable(jchar arg0);
-		static jboolean isEmergencyNumber(jstring arg0);
-		static jboolean isGlobalPhoneNumber(jstring arg0);
+		static jboolean isEmergencyNumber(JString arg0);
+		static jboolean isGlobalPhoneNumber(JString arg0);
 		static jboolean isISODigit(jchar arg0);
-		static jboolean isLocalEmergencyNumber(android::content::Context arg0, jstring arg1);
+		static jboolean isLocalEmergencyNumber(android::content::Context arg0, JString arg1);
 		static jboolean isNonSeparator(jchar arg0);
 		static jboolean isReallyDialable(jchar arg0);
 		static jboolean isStartsPostDial(jchar arg0);
-		static jboolean isVoiceMailNumber(jstring arg0);
-		static jboolean isWellFormedSmsAddress(jstring arg0);
-		static jbyteArray networkPortionToCalledPartyBCD(jstring arg0);
-		static jbyteArray networkPortionToCalledPartyBCDWithLength(jstring arg0);
-		static jstring normalizeNumber(jstring arg0);
-		static jbyteArray numberToCalledPartyBCD(jstring arg0);
-		static jbyteArray numberToCalledPartyBCD(jstring arg0, jint arg1);
-		static jstring replaceUnicodeDigits(jstring arg0);
-		static jstring stringFromStringAndTOA(jstring arg0, jint arg1);
-		static jstring stripSeparators(jstring arg0);
-		static jstring toCallerIDMinMatch(jstring arg0);
-		static jint toaFromString(jstring arg0);
+		static jboolean isVoiceMailNumber(JString arg0);
+		static jboolean isWellFormedSmsAddress(JString arg0);
+		static JByteArray networkPortionToCalledPartyBCD(JString arg0);
+		static JByteArray networkPortionToCalledPartyBCDWithLength(JString arg0);
+		static JString normalizeNumber(JString arg0);
+		static JByteArray numberToCalledPartyBCD(JString arg0);
+		static JByteArray numberToCalledPartyBCD(JString arg0, jint arg1);
+		static JString replaceUnicodeDigits(JString arg0);
+		static JString stringFromStringAndTOA(JString arg0, jint arg1);
+		static JString stripSeparators(JString arg0);
+		static JString toCallerIDMinMatch(JString arg0);
+		static jint toaFromString(JString arg0);
 	};
 } // namespace android::telephony
 

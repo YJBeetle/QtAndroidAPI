@@ -1,4 +1,6 @@
 #include "../../../java/lang/Exception.hpp"
+#include "../../../JString.hpp"
+#include "../../../JThrowable.hpp"
 #include "./FactoryConfigurationError.hpp"
 
 namespace javax::xml::parsers
@@ -20,27 +22,27 @@ namespace javax::xml::parsers
 			"(Ljava/lang/Exception;)V",
 			arg0.object()
 		) {}
-	FactoryConfigurationError::FactoryConfigurationError(jstring arg0)
+	FactoryConfigurationError::FactoryConfigurationError(JString arg0)
 		: java::lang::Error(
 			"javax.xml.parsers.FactoryConfigurationError",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	FactoryConfigurationError::FactoryConfigurationError(java::lang::Exception arg0, jstring arg1)
+	FactoryConfigurationError::FactoryConfigurationError(java::lang::Exception arg0, JString arg1)
 		: java::lang::Error(
 			"javax.xml.parsers.FactoryConfigurationError",
 			"(Ljava/lang/Exception;Ljava/lang/String;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		) {}
 	
 	// Methods
-	jthrowable FactoryConfigurationError::getCause()
+	JThrowable FactoryConfigurationError::getCause()
 	{
 		return callObjectMethod(
 			"getCause",
 			"()Ljava/lang/Throwable;"
-		).object<jthrowable>();
+		);
 	}
 	java::lang::Exception FactoryConfigurationError::getException()
 	{
@@ -49,12 +51,12 @@ namespace javax::xml::parsers
 			"()Ljava/lang/Exception;"
 		);
 	}
-	jstring FactoryConfigurationError::getMessage()
+	JString FactoryConfigurationError::getMessage()
 	{
 		return callObjectMethod(
 			"getMessage",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace javax::xml::parsers
 

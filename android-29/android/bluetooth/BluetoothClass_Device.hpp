@@ -2,7 +2,6 @@
 
 #include "../../JObject.hpp"
 
-
 namespace android::bluetooth
 {
 	class BluetoothClass_Device : public JObject

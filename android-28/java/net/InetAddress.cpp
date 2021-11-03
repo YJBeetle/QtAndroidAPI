@@ -1,5 +1,10 @@
+#include "../../JByteArray.hpp"
+#include "../../JArray.hpp"
+#include "../../JArray.hpp"
 #include "../io/ObjectInputStream.hpp"
 #include "../io/ObjectOutputStream.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./NetworkInterface.hpp"
 #include "./InetAddress.hpp"
 
@@ -13,41 +18,41 @@ namespace java::net
 	// Constructors
 	
 	// Methods
-	jarray InetAddress::getAllByName(jstring arg0)
+	JArray InetAddress::getAllByName(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"java.net.InetAddress",
 			"getAllByName",
 			"(Ljava/lang/String;)[Ljava/net/InetAddress;",
-			arg0
-		).object<jarray>();
+			arg0.object<jstring>()
+		);
 	}
-	java::net::InetAddress InetAddress::getByAddress(jbyteArray arg0)
+	java::net::InetAddress InetAddress::getByAddress(JByteArray arg0)
 	{
 		return callStaticObjectMethod(
 			"java.net.InetAddress",
 			"getByAddress",
 			"([B)Ljava/net/InetAddress;",
-			arg0
+			arg0.object<jbyteArray>()
 		);
 	}
-	java::net::InetAddress InetAddress::getByAddress(jstring arg0, jbyteArray arg1)
+	java::net::InetAddress InetAddress::getByAddress(JString arg0, JByteArray arg1)
 	{
 		return callStaticObjectMethod(
 			"java.net.InetAddress",
 			"getByAddress",
 			"(Ljava/lang/String;[B)Ljava/net/InetAddress;",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jbyteArray>()
 		);
 	}
-	java::net::InetAddress InetAddress::getByName(jstring arg0)
+	java::net::InetAddress InetAddress::getByName(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"java.net.InetAddress",
 			"getByName",
 			"(Ljava/lang/String;)Ljava/net/InetAddress;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	java::net::InetAddress InetAddress::getLocalHost()
@@ -66,41 +71,41 @@ namespace java::net
 			"()Ljava/net/InetAddress;"
 		);
 	}
-	jboolean InetAddress::equals(jobject arg0)
+	jboolean InetAddress::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jbyteArray InetAddress::getAddress()
+	JByteArray InetAddress::getAddress()
 	{
 		return callObjectMethod(
 			"getAddress",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
-	jstring InetAddress::getCanonicalHostName()
+	JString InetAddress::getCanonicalHostName()
 	{
 		return callObjectMethod(
 			"getCanonicalHostName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring InetAddress::getHostAddress()
+	JString InetAddress::getHostAddress()
 	{
 		return callObjectMethod(
 			"getHostAddress",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring InetAddress::getHostName()
+	JString InetAddress::getHostName()
 	{
 		return callObjectMethod(
 			"getHostName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint InetAddress::hashCode()
 	{
@@ -197,12 +202,12 @@ namespace java::net
 			"()Z"
 		);
 	}
-	jstring InetAddress::toString()
+	JString InetAddress::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::net
 

@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JArray;
+class JObjectArray;
 namespace android::renderscript
 {
 	class RenderScript;
@@ -30,6 +32,7 @@ namespace android::renderscript
 {
 	class Type;
 }
+class JString;
 
 namespace android::renderscript
 {
@@ -47,9 +50,9 @@ namespace android::renderscript
 		
 		// Methods
 		android::renderscript::ScriptGroup_Input addInput();
-		android::renderscript::ScriptGroup_Closure addInvoke(android::renderscript::Script_InvokeID arg0, jobjectArray arg1);
-		android::renderscript::ScriptGroup_Closure addKernel(android::renderscript::Script_KernelID arg0, android::renderscript::Type arg1, jobjectArray arg2);
-		android::renderscript::ScriptGroup create(jstring arg0, jarray arg1);
+		android::renderscript::ScriptGroup_Closure addInvoke(android::renderscript::Script_InvokeID arg0, JObjectArray arg1);
+		android::renderscript::ScriptGroup_Closure addKernel(android::renderscript::Script_KernelID arg0, android::renderscript::Type arg1, JObjectArray arg2);
+		android::renderscript::ScriptGroup create(JString arg0, JArray arg1);
 	};
 } // namespace android::renderscript
 

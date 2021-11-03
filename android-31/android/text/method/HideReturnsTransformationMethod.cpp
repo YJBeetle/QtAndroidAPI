@@ -1,3 +1,4 @@
+#include "../../../JCharArray.hpp"
 #include "./HideReturnsTransformationMethod.hpp"
 
 namespace android::text::method

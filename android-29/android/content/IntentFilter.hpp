@@ -26,6 +26,7 @@ namespace android::os
 {
 	class PatternMatcher;
 }
+class JString;
 
 namespace android::content
 {
@@ -58,19 +59,19 @@ namespace android::content
 		// Constructors
 		IntentFilter();
 		IntentFilter(android::content::IntentFilter &arg0);
-		IntentFilter(jstring arg0);
-		IntentFilter(jstring arg0, jstring arg1);
+		IntentFilter(JString arg0);
+		IntentFilter(JString arg0, JString arg1);
 		
 		// Methods
-		static android::content::IntentFilter create(jstring arg0, jstring arg1);
+		static android::content::IntentFilter create(JString arg0, JString arg1);
 		JObject actionsIterator();
-		void addAction(jstring arg0);
-		void addCategory(jstring arg0);
-		void addDataAuthority(jstring arg0, jstring arg1);
-		void addDataPath(jstring arg0, jint arg1);
-		void addDataScheme(jstring arg0);
-		void addDataSchemeSpecificPart(jstring arg0, jint arg1);
-		void addDataType(jstring arg0);
+		void addAction(JString arg0);
+		void addCategory(JString arg0);
+		void addDataAuthority(JString arg0, JString arg1);
+		void addDataPath(JString arg0, jint arg1);
+		void addDataScheme(JString arg0);
+		void addDataSchemeSpecificPart(JString arg0, jint arg1);
+		void addDataType(JString arg0);
 		JObject authoritiesIterator();
 		JObject categoriesIterator();
 		jint countActions();
@@ -81,27 +82,27 @@ namespace android::content
 		jint countDataSchemes();
 		jint countDataTypes();
 		jint describeContents();
-		void dump(JObject arg0, jstring arg1);
-		jstring getAction(jint arg0);
-		jstring getCategory(jint arg0);
+		void dump(JObject arg0, JString arg1);
+		JString getAction(jint arg0);
+		JString getCategory(jint arg0);
 		android::content::IntentFilter_AuthorityEntry getDataAuthority(jint arg0);
 		android::os::PatternMatcher getDataPath(jint arg0);
-		jstring getDataScheme(jint arg0);
+		JString getDataScheme(jint arg0);
 		android::os::PatternMatcher getDataSchemeSpecificPart(jint arg0);
-		jstring getDataType(jint arg0);
+		JString getDataType(jint arg0);
 		jint getPriority();
-		jboolean hasAction(jstring arg0);
-		jboolean hasCategory(jstring arg0);
+		jboolean hasAction(JString arg0);
+		jboolean hasCategory(JString arg0);
 		jboolean hasDataAuthority(android::net::Uri arg0);
-		jboolean hasDataPath(jstring arg0);
-		jboolean hasDataScheme(jstring arg0);
-		jboolean hasDataSchemeSpecificPart(jstring arg0);
-		jboolean hasDataType(jstring arg0);
-		jint match(android::content::ContentResolver arg0, android::content::Intent arg1, jboolean arg2, jstring arg3);
-		jint match(jstring arg0, jstring arg1, jstring arg2, android::net::Uri arg3, JObject arg4, jstring arg5);
-		jboolean matchAction(jstring arg0);
-		jstring matchCategories(JObject arg0);
-		jint matchData(jstring arg0, jstring arg1, android::net::Uri arg2);
+		jboolean hasDataPath(JString arg0);
+		jboolean hasDataScheme(JString arg0);
+		jboolean hasDataSchemeSpecificPart(JString arg0);
+		jboolean hasDataType(JString arg0);
+		jint match(android::content::ContentResolver arg0, android::content::Intent arg1, jboolean arg2, JString arg3);
+		jint match(JString arg0, JString arg1, JString arg2, android::net::Uri arg3, JObject arg4, JString arg5);
+		jboolean matchAction(JString arg0);
+		JString matchCategories(JObject arg0);
+		jint matchData(JString arg0, JString arg1, android::net::Uri arg2);
 		jint matchDataAuthority(android::net::Uri arg0);
 		JObject pathsIterator();
 		void readFromXml(JObject arg0);

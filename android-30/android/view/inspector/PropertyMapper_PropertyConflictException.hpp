@@ -1,9 +1,8 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "../../../java/lang/Exception.hpp"
 #include "../../../java/lang/RuntimeException.hpp"
 
+class JString;
 
 namespace android::view::inspector
 {
@@ -17,7 +16,7 @@ namespace android::view::inspector
 		PropertyMapper_PropertyConflictException(QJniObject obj);
 		
 		// Constructors
-		PropertyMapper_PropertyConflictException(jstring arg0, jstring arg1, jstring arg2);
+		PropertyMapper_PropertyConflictException(JString arg0, JString arg1, JString arg2);
 		
 		// Methods
 	};

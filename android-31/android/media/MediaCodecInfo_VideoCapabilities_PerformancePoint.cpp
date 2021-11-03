@@ -1,4 +1,6 @@
 #include "./MediaFormat.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./MediaCodecInfo_VideoCapabilities_PerformancePoint.hpp"
 
 namespace android::media
@@ -299,12 +301,12 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	jboolean MediaCodecInfo_VideoCapabilities_PerformancePoint::equals(jobject arg0)
+	jboolean MediaCodecInfo_VideoCapabilities_PerformancePoint::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint MediaCodecInfo_VideoCapabilities_PerformancePoint::hashCode()
@@ -314,12 +316,12 @@ namespace android::media
 			"()I"
 		);
 	}
-	jstring MediaCodecInfo_VideoCapabilities_PerformancePoint::toString()
+	JString MediaCodecInfo_VideoCapabilities_PerformancePoint::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::media
 

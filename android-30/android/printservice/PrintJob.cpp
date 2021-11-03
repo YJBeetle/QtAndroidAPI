@@ -1,6 +1,9 @@
 #include "../print/PrintJobId.hpp"
 #include "../print/PrintJobInfo.hpp"
 #include "./PrintDocument.hpp"
+#include "../../JString.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./PrintJob.hpp"
 
 namespace android::printservice
@@ -13,12 +16,12 @@ namespace android::printservice
 	// Constructors
 	
 	// Methods
-	jboolean PrintJob::block(jstring arg0)
+	jboolean PrintJob::block(JString arg0)
 	{
 		return callMethod<jboolean>(
 			"block",
 			"(Ljava/lang/String;)Z",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	jboolean PrintJob::cancel()
@@ -35,37 +38,37 @@ namespace android::printservice
 			"()Z"
 		);
 	}
-	jboolean PrintJob::equals(jobject arg0)
+	jboolean PrintJob::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jboolean PrintJob::fail(jstring arg0)
+	jboolean PrintJob::fail(JString arg0)
 	{
 		return callMethod<jboolean>(
 			"fail",
 			"(Ljava/lang/String;)Z",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jint PrintJob::getAdvancedIntOption(jstring arg0)
+	jint PrintJob::getAdvancedIntOption(JString arg0)
 	{
 		return callMethod<jint>(
 			"getAdvancedIntOption",
 			"(Ljava/lang/String;)I",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jstring PrintJob::getAdvancedStringOption(jstring arg0)
+	JString PrintJob::getAdvancedStringOption(JString arg0)
 	{
 		return callObjectMethod(
 			"getAdvancedStringOption",
 			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
+			arg0.object<jstring>()
+		);
 	}
 	android::printservice::PrintDocument PrintJob::getDocument()
 	{
@@ -88,19 +91,19 @@ namespace android::printservice
 			"()Landroid/print/PrintJobInfo;"
 		);
 	}
-	jstring PrintJob::getTag()
+	JString PrintJob::getTag()
 	{
 		return callObjectMethod(
 			"getTag",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jboolean PrintJob::hasAdvancedOption(jstring arg0)
+	jboolean PrintJob::hasAdvancedOption(JString arg0)
 	{
 		return callMethod<jboolean>(
 			"hasAdvancedOption",
 			"(Ljava/lang/String;)Z",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	jint PrintJob::hashCode()
@@ -168,20 +171,20 @@ namespace android::printservice
 			arg0
 		);
 	}
-	void PrintJob::setStatus(jstring arg0)
+	void PrintJob::setStatus(JString arg0)
 	{
 		callMethod<void>(
 			"setStatus",
 			"(Ljava/lang/CharSequence;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jboolean PrintJob::setTag(jstring arg0)
+	jboolean PrintJob::setTag(JString arg0)
 	{
 		return callMethod<jboolean>(
 			"setTag",
 			"(Ljava/lang/String;)Z",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	jboolean PrintJob::start()

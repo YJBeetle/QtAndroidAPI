@@ -1,9 +1,8 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "../../lang/Exception.hpp"
 #include "../../io/IOException.hpp"
 
+class JString;
 
 namespace java::nio::file
 {
@@ -17,14 +16,14 @@ namespace java::nio::file
 		FileSystemException(QJniObject obj);
 		
 		// Constructors
-		FileSystemException(jstring arg0);
-		FileSystemException(jstring arg0, jstring arg1, jstring arg2);
+		FileSystemException(JString arg0);
+		FileSystemException(JString arg0, JString arg1, JString arg2);
 		
 		// Methods
-		jstring getFile();
-		jstring getMessage();
-		jstring getOtherFile();
-		jstring getReason();
+		JString getFile();
+		JString getMessage();
+		JString getOtherFile();
+		JString getReason();
 	};
 } // namespace java::nio::file
 

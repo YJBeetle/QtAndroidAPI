@@ -1,3 +1,4 @@
+#include "../../JArray.hpp"
 #include "../app/PendingIntent.hpp"
 #include "../content/ComponentName.hpp"
 #include "./AudioAttributes.hpp"
@@ -11,66 +12,67 @@
 #include "./RemoteController.hpp"
 #include "../os/Handler.hpp"
 #include "../view/KeyEvent.hpp"
+#include "../../JString.hpp"
 #include "./AudioManager.hpp"
 
 namespace android::media
 {
 	// Fields
-	jstring AudioManager::ACTION_AUDIO_BECOMING_NOISY()
+	JString AudioManager::ACTION_AUDIO_BECOMING_NOISY()
 	{
 		return getStaticObjectField(
 			"android.media.AudioManager",
 			"ACTION_AUDIO_BECOMING_NOISY",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring AudioManager::ACTION_HDMI_AUDIO_PLUG()
+	JString AudioManager::ACTION_HDMI_AUDIO_PLUG()
 	{
 		return getStaticObjectField(
 			"android.media.AudioManager",
 			"ACTION_HDMI_AUDIO_PLUG",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring AudioManager::ACTION_HEADSET_PLUG()
+	JString AudioManager::ACTION_HEADSET_PLUG()
 	{
 		return getStaticObjectField(
 			"android.media.AudioManager",
 			"ACTION_HEADSET_PLUG",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring AudioManager::ACTION_MICROPHONE_MUTE_CHANGED()
+	JString AudioManager::ACTION_MICROPHONE_MUTE_CHANGED()
 	{
 		return getStaticObjectField(
 			"android.media.AudioManager",
 			"ACTION_MICROPHONE_MUTE_CHANGED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring AudioManager::ACTION_SCO_AUDIO_STATE_CHANGED()
+	JString AudioManager::ACTION_SCO_AUDIO_STATE_CHANGED()
 	{
 		return getStaticObjectField(
 			"android.media.AudioManager",
 			"ACTION_SCO_AUDIO_STATE_CHANGED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring AudioManager::ACTION_SCO_AUDIO_STATE_UPDATED()
+	JString AudioManager::ACTION_SCO_AUDIO_STATE_UPDATED()
 	{
 		return getStaticObjectField(
 			"android.media.AudioManager",
 			"ACTION_SCO_AUDIO_STATE_UPDATED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring AudioManager::ACTION_SPEAKERPHONE_STATE_CHANGED()
+	JString AudioManager::ACTION_SPEAKERPHONE_STATE_CHANGED()
 	{
 		return getStaticObjectField(
 			"android.media.AudioManager",
 			"ACTION_SPEAKERPHONE_STATE_CHANGED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint AudioManager::ADJUST_LOWER()
 	{
@@ -247,69 +249,69 @@ namespace android::media
 			"ERROR_DEAD_OBJECT"
 		);
 	}
-	jstring AudioManager::EXTRA_AUDIO_PLUG_STATE()
+	JString AudioManager::EXTRA_AUDIO_PLUG_STATE()
 	{
 		return getStaticObjectField(
 			"android.media.AudioManager",
 			"EXTRA_AUDIO_PLUG_STATE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring AudioManager::EXTRA_ENCODINGS()
+	JString AudioManager::EXTRA_ENCODINGS()
 	{
 		return getStaticObjectField(
 			"android.media.AudioManager",
 			"EXTRA_ENCODINGS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring AudioManager::EXTRA_MAX_CHANNEL_COUNT()
+	JString AudioManager::EXTRA_MAX_CHANNEL_COUNT()
 	{
 		return getStaticObjectField(
 			"android.media.AudioManager",
 			"EXTRA_MAX_CHANNEL_COUNT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring AudioManager::EXTRA_RINGER_MODE()
+	JString AudioManager::EXTRA_RINGER_MODE()
 	{
 		return getStaticObjectField(
 			"android.media.AudioManager",
 			"EXTRA_RINGER_MODE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring AudioManager::EXTRA_SCO_AUDIO_PREVIOUS_STATE()
+	JString AudioManager::EXTRA_SCO_AUDIO_PREVIOUS_STATE()
 	{
 		return getStaticObjectField(
 			"android.media.AudioManager",
 			"EXTRA_SCO_AUDIO_PREVIOUS_STATE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring AudioManager::EXTRA_SCO_AUDIO_STATE()
+	JString AudioManager::EXTRA_SCO_AUDIO_STATE()
 	{
 		return getStaticObjectField(
 			"android.media.AudioManager",
 			"EXTRA_SCO_AUDIO_STATE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring AudioManager::EXTRA_VIBRATE_SETTING()
+	JString AudioManager::EXTRA_VIBRATE_SETTING()
 	{
 		return getStaticObjectField(
 			"android.media.AudioManager",
 			"EXTRA_VIBRATE_SETTING",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring AudioManager::EXTRA_VIBRATE_TYPE()
+	JString AudioManager::EXTRA_VIBRATE_TYPE()
 	{
 		return getStaticObjectField(
 			"android.media.AudioManager",
 			"EXTRA_VIBRATE_TYPE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint AudioManager::FLAG_ALLOW_RINGER_MODES()
 	{
@@ -521,53 +523,53 @@ namespace android::media
 			"PLAYBACK_OFFLOAD_SUPPORTED"
 		);
 	}
-	jstring AudioManager::PROPERTY_OUTPUT_FRAMES_PER_BUFFER()
+	JString AudioManager::PROPERTY_OUTPUT_FRAMES_PER_BUFFER()
 	{
 		return getStaticObjectField(
 			"android.media.AudioManager",
 			"PROPERTY_OUTPUT_FRAMES_PER_BUFFER",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring AudioManager::PROPERTY_OUTPUT_SAMPLE_RATE()
+	JString AudioManager::PROPERTY_OUTPUT_SAMPLE_RATE()
 	{
 		return getStaticObjectField(
 			"android.media.AudioManager",
 			"PROPERTY_OUTPUT_SAMPLE_RATE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring AudioManager::PROPERTY_SUPPORT_AUDIO_SOURCE_UNPROCESSED()
+	JString AudioManager::PROPERTY_SUPPORT_AUDIO_SOURCE_UNPROCESSED()
 	{
 		return getStaticObjectField(
 			"android.media.AudioManager",
 			"PROPERTY_SUPPORT_AUDIO_SOURCE_UNPROCESSED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring AudioManager::PROPERTY_SUPPORT_MIC_NEAR_ULTRASOUND()
+	JString AudioManager::PROPERTY_SUPPORT_MIC_NEAR_ULTRASOUND()
 	{
 		return getStaticObjectField(
 			"android.media.AudioManager",
 			"PROPERTY_SUPPORT_MIC_NEAR_ULTRASOUND",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring AudioManager::PROPERTY_SUPPORT_SPEAKER_NEAR_ULTRASOUND()
+	JString AudioManager::PROPERTY_SUPPORT_SPEAKER_NEAR_ULTRASOUND()
 	{
 		return getStaticObjectField(
 			"android.media.AudioManager",
 			"PROPERTY_SUPPORT_SPEAKER_NEAR_ULTRASOUND",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring AudioManager::RINGER_MODE_CHANGED_ACTION()
+	JString AudioManager::RINGER_MODE_CHANGED_ACTION()
 	{
 		return getStaticObjectField(
 			"android.media.AudioManager",
 			"RINGER_MODE_CHANGED_ACTION",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint AudioManager::RINGER_MODE_NORMAL()
 	{
@@ -730,13 +732,13 @@ namespace android::media
 			"USE_DEFAULT_STREAM_TYPE"
 		);
 	}
-	jstring AudioManager::VIBRATE_SETTING_CHANGED_ACTION()
+	JString AudioManager::VIBRATE_SETTING_CHANGED_ACTION()
 	{
 		return getStaticObjectField(
 			"android.media.AudioManager",
 			"VIBRATE_SETTING_CHANGED_ACTION",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint AudioManager::VIBRATE_SETTING_OFF()
 	{
@@ -936,13 +938,13 @@ namespace android::media
 			"()Landroid/media/AudioDeviceInfo;"
 		);
 	}
-	jarray AudioManager::getDevices(jint arg0)
+	JArray AudioManager::getDevices(jint arg0)
 	{
 		return callObjectMethod(
 			"getDevices",
 			"(I)[Landroid/media/AudioDeviceInfo;",
 			arg0
-		).object<jarray>();
+		);
 	}
 	jint AudioManager::getEncodedSurroundMode()
 	{
@@ -965,21 +967,21 @@ namespace android::media
 			"()I"
 		);
 	}
-	jstring AudioManager::getParameters(jstring arg0)
+	JString AudioManager::getParameters(JString arg0)
 	{
 		return callObjectMethod(
 			"getParameters",
 			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
+			arg0.object<jstring>()
+		);
 	}
-	jstring AudioManager::getProperty(jstring arg0)
+	JString AudioManager::getProperty(JString arg0)
 	{
 		return callObjectMethod(
 			"getProperty",
 			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
+			arg0.object<jstring>()
+		);
 	}
 	jint AudioManager::getRingerMode()
 	{
@@ -1290,12 +1292,12 @@ namespace android::media
 			arg0
 		);
 	}
-	void AudioManager::setParameters(jstring arg0)
+	void AudioManager::setParameters(JString arg0)
 	{
 		callMethod<void>(
 			"setParameters",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void AudioManager::setRingerMode(jint arg0)

@@ -14,6 +14,7 @@ namespace android::app::appsearch
 {
 	class SearchResult_MatchInfo;
 }
+class JString;
 
 namespace android::app::appsearch
 {
@@ -27,7 +28,7 @@ namespace android::app::appsearch
 		SearchResult_Builder(QJniObject obj);
 		
 		// Constructors
-		SearchResult_Builder(jstring arg0, jstring arg1);
+		SearchResult_Builder(JString arg0, JString arg1);
 		
 		// Methods
 		android::app::appsearch::SearchResult_Builder addMatchInfo(android::app::appsearch::SearchResult_MatchInfo arg0);

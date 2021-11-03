@@ -1,5 +1,6 @@
 #include "../../graphics/Matrix.hpp"
 #include "./CursorAnchorInfo.hpp"
+#include "../../../JString.hpp"
 #include "./CursorAnchorInfo_Builder.hpp"
 
 namespace android::view::inputmethod
@@ -44,13 +45,13 @@ namespace android::view::inputmethod
 			"()V"
 		);
 	}
-	android::view::inputmethod::CursorAnchorInfo_Builder CursorAnchorInfo_Builder::setComposingText(jint arg0, jstring arg1)
+	android::view::inputmethod::CursorAnchorInfo_Builder CursorAnchorInfo_Builder::setComposingText(jint arg0, JString arg1)
 	{
 		return callObjectMethod(
 			"setComposingText",
 			"(ILjava/lang/CharSequence;)Landroid/view/inputmethod/CursorAnchorInfo$Builder;",
 			arg0,
-			arg1
+			arg1.object<jstring>()
 		);
 	}
 	android::view::inputmethod::CursorAnchorInfo_Builder CursorAnchorInfo_Builder::setInsertionMarkerLocation(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, jint arg4)

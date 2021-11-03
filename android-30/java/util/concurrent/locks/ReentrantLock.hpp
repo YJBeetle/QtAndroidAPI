@@ -2,6 +2,7 @@
 
 #include "../../../../JObject.hpp"
 
+class JString;
 namespace java::lang
 {
 	class Thread;
@@ -39,7 +40,7 @@ namespace java::util::concurrent::locks
 		void lock();
 		void lockInterruptibly();
 		JObject newCondition();
-		jstring toString();
+		JString toString();
 		jboolean tryLock();
 		jboolean tryLock(jlong arg0, java::util::concurrent::TimeUnit arg1);
 		void unlock();

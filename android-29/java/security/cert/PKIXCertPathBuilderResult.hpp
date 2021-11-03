@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "./PKIXCertPathValidatorResult.hpp"
 
+class JString;
 namespace java::security::cert
 {
 	class CertPath;
@@ -28,7 +28,7 @@ namespace java::security::cert
 		
 		// Methods
 		java::security::cert::CertPath getCertPath();
-		jstring toString();
+		JString toString();
 	};
 } // namespace java::security::cert
 

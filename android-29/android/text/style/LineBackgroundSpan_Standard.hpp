@@ -14,6 +14,7 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
 
 namespace android::text::style
 {
@@ -32,7 +33,7 @@ namespace android::text::style
 		
 		// Methods
 		jint describeContents();
-		void drawBackground(android::graphics::Canvas arg0, android::graphics::Paint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jstring arg7, jint arg8, jint arg9, jint arg10);
+		void drawBackground(android::graphics::Canvas arg0, android::graphics::Paint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, JString arg7, jint arg8, jint arg9, jint arg10);
 		jint getColor();
 		jint getSpanTypeId();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);

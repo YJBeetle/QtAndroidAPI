@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./AbstractInputMethodService_AbstractInputMethodSessionImpl.hpp"
 
+class JArray;
 namespace android::graphics
 {
 	class Rect;
@@ -23,6 +23,7 @@ namespace android::view::inputmethod
 {
 	class ExtractedText;
 }
+class JString;
 
 namespace android::inputmethodservice
 {
@@ -39,8 +40,8 @@ namespace android::inputmethodservice
 		InputMethodService_InputMethodSessionImpl(android::inputmethodservice::InputMethodService arg0);
 		
 		// Methods
-		void appPrivateCommand(jstring arg0, android::os::Bundle arg1);
-		void displayCompletions(jarray arg0);
+		void appPrivateCommand(JString arg0, android::os::Bundle arg1);
+		void displayCompletions(JArray arg0);
 		void finishInput();
 		void toggleSoftInput(jint arg0, jint arg1);
 		void updateCursor(android::graphics::Rect arg0);

@@ -1,5 +1,6 @@
 #include "../content/ComponentName.hpp"
 #include "../os/Parcel.hpp"
+#include "../../JString.hpp"
 #include "./ActivityManager_RunningServiceInfo.hpp"
 
 namespace android::app
@@ -59,12 +60,12 @@ namespace android::app
 			"clientLabel"
 		);
 	}
-	jstring ActivityManager_RunningServiceInfo::clientPackage()
+	JString ActivityManager_RunningServiceInfo::clientPackage()
 	{
 		return getObjectField(
 			"clientPackage",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint ActivityManager_RunningServiceInfo::crashCount()
 	{
@@ -96,12 +97,12 @@ namespace android::app
 			"pid"
 		);
 	}
-	jstring ActivityManager_RunningServiceInfo::process()
+	JString ActivityManager_RunningServiceInfo::process()
 	{
 		return getObjectField(
 			"process",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jlong ActivityManager_RunningServiceInfo::restarting()
 	{

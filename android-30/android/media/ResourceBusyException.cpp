@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./ResourceBusyException.hpp"
 
 namespace android::media
@@ -8,11 +9,11 @@ namespace android::media
 	ResourceBusyException::ResourceBusyException(QJniObject obj) : android::media::MediaDrmException(obj) {}
 	
 	// Constructors
-	ResourceBusyException::ResourceBusyException(jstring arg0)
+	ResourceBusyException::ResourceBusyException(JString arg0)
 		: android::media::MediaDrmException(
 			"android.media.ResourceBusyException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./InputStream.hpp"
 
+class JByteArray;
 namespace java::io
 {
 	class File;
@@ -11,6 +11,8 @@ namespace java::io
 {
 	class FileDescriptor;
 }
+class JObject;
+class JString;
 namespace java::nio::channels
 {
 	class FileChannel;
@@ -30,7 +32,7 @@ namespace java::io
 		// Constructors
 		FileInputStream(java::io::File arg0);
 		FileInputStream(java::io::FileDescriptor arg0);
-		FileInputStream(jstring arg0);
+		FileInputStream(JString arg0);
 		
 		// Methods
 		jint available();
@@ -38,8 +40,8 @@ namespace java::io
 		java::nio::channels::FileChannel getChannel();
 		java::io::FileDescriptor getFD();
 		jint read();
-		jint read(jbyteArray arg0);
-		jint read(jbyteArray arg0, jint arg1, jint arg2);
+		jint read(JByteArray arg0);
+		jint read(JByteArray arg0, jint arg1, jint arg2);
 		jlong skip(jlong arg0);
 	};
 } // namespace java::io

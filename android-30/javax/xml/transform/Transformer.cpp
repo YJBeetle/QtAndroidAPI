@@ -1,3 +1,5 @@
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "../../../java/util/Properties.hpp"
 #include "./Transformer.hpp"
 
@@ -32,21 +34,21 @@ namespace javax::xml::transform
 			"()Ljava/util/Properties;"
 		);
 	}
-	jstring Transformer::getOutputProperty(jstring arg0)
+	JString Transformer::getOutputProperty(JString arg0)
 	{
 		return callObjectMethod(
 			"getOutputProperty",
 			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
+			arg0.object<jstring>()
+		);
 	}
-	jobject Transformer::getParameter(jstring arg0)
+	JObject Transformer::getParameter(JString arg0)
 	{
 		return callObjectMethod(
 			"getParameter",
 			"(Ljava/lang/String;)Ljava/lang/Object;",
-			arg0
-		).object<jobject>();
+			arg0.object<jstring>()
+		);
 	}
 	JObject Transformer::getURIResolver()
 	{
@@ -78,22 +80,22 @@ namespace javax::xml::transform
 			arg0.object()
 		);
 	}
-	void Transformer::setOutputProperty(jstring arg0, jstring arg1)
+	void Transformer::setOutputProperty(JString arg0, JString arg1)
 	{
 		callMethod<void>(
 			"setOutputProperty",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		);
 	}
-	void Transformer::setParameter(jstring arg0, jobject arg1)
+	void Transformer::setParameter(JString arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"setParameter",
 			"(Ljava/lang/String;Ljava/lang/Object;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jobject>()
 		);
 	}
 	void Transformer::setURIResolver(JObject arg0)

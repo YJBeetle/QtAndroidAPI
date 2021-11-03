@@ -1,6 +1,7 @@
 #include "../content/Context.hpp"
 #include "../view/MotionEvent.hpp"
 #include "../view/PointerIcon.hpp"
+#include "../../JString.hpp"
 #include "./Button.hpp"
 
 namespace android::widget
@@ -43,12 +44,12 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	jstring Button::getAccessibilityClassName()
+	JString Button::getAccessibilityClassName()
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	android::view::PointerIcon Button::onResolvePointerIcon(android::view::MotionEvent arg0, jint arg1)
 	{

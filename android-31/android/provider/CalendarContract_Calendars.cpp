@@ -1,16 +1,17 @@
 #include "../net/Uri.hpp"
+#include "../../JString.hpp"
 #include "./CalendarContract_Calendars.hpp"
 
 namespace android::provider
 {
 	// Fields
-	jstring CalendarContract_Calendars::CALENDAR_LOCATION()
+	JString CalendarContract_Calendars::CALENDAR_LOCATION()
 	{
 		return getStaticObjectField(
 			"android.provider.CalendarContract$Calendars",
 			"CALENDAR_LOCATION",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::net::Uri CalendarContract_Calendars::CONTENT_URI()
 	{
@@ -20,13 +21,13 @@ namespace android::provider
 			"Landroid/net/Uri;"
 		);
 	}
-	jstring CalendarContract_Calendars::DEFAULT_SORT_ORDER()
+	JString CalendarContract_Calendars::DEFAULT_SORT_ORDER()
 	{
 		return getStaticObjectField(
 			"android.provider.CalendarContract$Calendars",
 			"DEFAULT_SORT_ORDER",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::net::Uri CalendarContract_Calendars::ENTERPRISE_CONTENT_URI()
 	{
@@ -36,13 +37,13 @@ namespace android::provider
 			"Landroid/net/Uri;"
 		);
 	}
-	jstring CalendarContract_Calendars::NAME()
+	JString CalendarContract_Calendars::NAME()
 	{
 		return getStaticObjectField(
 			"android.provider.CalendarContract$Calendars",
 			"NAME",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QJniObject forward

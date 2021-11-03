@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./TimeFormatException.hpp"
 
 namespace android::util

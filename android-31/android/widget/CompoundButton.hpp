@@ -1,10 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../view/View.hpp"
-#include "./TextView.hpp"
 #include "./Button.hpp"
 
+class JIntArray;
 namespace android::content
 {
 	class Context;
@@ -37,6 +35,7 @@ namespace android::view::autofill
 {
 	class AutofillValue;
 }
+class JString;
 
 namespace android::widget
 {
@@ -58,7 +57,7 @@ namespace android::widget
 		// Methods
 		void autofill(android::view::autofill::AutofillValue arg0);
 		void drawableHotspotChanged(jfloat arg0, jfloat arg1);
-		jstring getAccessibilityClassName();
+		JString getAccessibilityClassName();
 		jint getAutofillType();
 		android::view::autofill::AutofillValue getAutofillValue();
 		android::graphics::drawable::Drawable getButtonDrawable();
@@ -80,7 +79,7 @@ namespace android::widget
 		void setButtonTintMode(android::graphics::PorterDuff_Mode arg0);
 		void setChecked(jboolean arg0);
 		void setOnCheckedChangeListener(JObject arg0);
-		void setStateDescription(jstring arg0);
+		void setStateDescription(JString arg0);
 		void toggle();
 	};
 } // namespace android::widget

@@ -1,4 +1,9 @@
+#include "../../../JIntArray.hpp"
+#include "../../../JArray.hpp"
+#include "../../../JArray.hpp"
 #include "../../io/ObjectInputStream.hpp"
+#include "../../../JString.hpp"
+#include "../../../JString.hpp"
 #include "../../lang/StringBuilder.hpp"
 #include "./Matcher.hpp"
 #include "./PatternSyntaxException.hpp"
@@ -77,43 +82,43 @@ namespace java::util::regex
 	// Constructors
 	
 	// Methods
-	java::util::regex::Pattern Pattern::compile(jstring arg0)
+	java::util::regex::Pattern Pattern::compile(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"java.util.regex.Pattern",
 			"compile",
 			"(Ljava/lang/String;)Ljava/util/regex/Pattern;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	java::util::regex::Pattern Pattern::compile(jstring arg0, jint arg1)
+	java::util::regex::Pattern Pattern::compile(JString arg0, jint arg1)
 	{
 		return callStaticObjectMethod(
 			"java.util.regex.Pattern",
 			"compile",
 			"(Ljava/lang/String;I)Ljava/util/regex/Pattern;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
-	jboolean Pattern::matches(jstring arg0, jstring arg1)
+	jboolean Pattern::matches(JString arg0, JString arg1)
 	{
 		return callStaticMethod<jboolean>(
 			"java.util.regex.Pattern",
 			"matches",
 			"(Ljava/lang/String;Ljava/lang/CharSequence;)Z",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		);
 	}
-	jstring Pattern::quote(jstring arg0)
+	JString Pattern::quote(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"java.util.regex.Pattern",
 			"quote",
 			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
+			arg0.object<jstring>()
+		);
 	}
 	JObject Pattern::asMatchPredicate()
 	{
@@ -136,52 +141,52 @@ namespace java::util::regex
 			"()I"
 		);
 	}
-	java::util::regex::Matcher Pattern::matcher(jstring arg0)
+	java::util::regex::Matcher Pattern::matcher(JString arg0)
 	{
 		return callObjectMethod(
 			"matcher",
 			"(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jstring Pattern::pattern()
+	JString Pattern::pattern()
 	{
 		return callObjectMethod(
 			"pattern",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jarray Pattern::split(jstring arg0)
+	JArray Pattern::split(JString arg0)
 	{
 		return callObjectMethod(
 			"split",
 			"(Ljava/lang/CharSequence;)[Ljava/lang/String;",
-			arg0
-		).object<jarray>();
+			arg0.object<jstring>()
+		);
 	}
-	jarray Pattern::split(jstring arg0, jint arg1)
+	JArray Pattern::split(JString arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"split",
 			"(Ljava/lang/CharSequence;I)[Ljava/lang/String;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
-		).object<jarray>();
+		);
 	}
-	JObject Pattern::splitAsStream(jstring arg0)
+	JObject Pattern::splitAsStream(JString arg0)
 	{
 		return callObjectMethod(
 			"splitAsStream",
 			"(Ljava/lang/CharSequence;)Ljava/util/stream/Stream;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jstring Pattern::toString()
+	JString Pattern::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::util::regex
 

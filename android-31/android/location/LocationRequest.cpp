@@ -1,4 +1,6 @@
 #include "../os/Parcel.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./LocationRequest.hpp"
 
 namespace android::location
@@ -54,12 +56,12 @@ namespace android::location
 			"()I"
 		);
 	}
-	jboolean LocationRequest::equals(jobject arg0)
+	jboolean LocationRequest::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jlong LocationRequest::getDurationMillis()
@@ -118,12 +120,12 @@ namespace android::location
 			"()I"
 		);
 	}
-	jstring LocationRequest::toString()
+	JString LocationRequest::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void LocationRequest::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

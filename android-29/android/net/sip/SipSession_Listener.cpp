@@ -1,5 +1,6 @@
 #include "./SipProfile.hpp"
 #include "./SipSession.hpp"
+#include "../../../JString.hpp"
 #include "./SipSession_Listener.hpp"
 
 namespace android::net::sip
@@ -25,14 +26,14 @@ namespace android::net::sip
 			arg0.object()
 		);
 	}
-	void SipSession_Listener::onCallChangeFailed(android::net::sip::SipSession arg0, jint arg1, jstring arg2)
+	void SipSession_Listener::onCallChangeFailed(android::net::sip::SipSession arg0, jint arg1, JString arg2)
 	{
 		callMethod<void>(
 			"onCallChangeFailed",
 			"(Landroid/net/sip/SipSession;ILjava/lang/String;)V",
 			arg0.object(),
 			arg1,
-			arg2
+			arg2.object<jstring>()
 		);
 	}
 	void SipSession_Listener::onCallEnded(android::net::sip::SipSession arg0)
@@ -43,13 +44,13 @@ namespace android::net::sip
 			arg0.object()
 		);
 	}
-	void SipSession_Listener::onCallEstablished(android::net::sip::SipSession arg0, jstring arg1)
+	void SipSession_Listener::onCallEstablished(android::net::sip::SipSession arg0, JString arg1)
 	{
 		callMethod<void>(
 			"onCallEstablished",
 			"(Landroid/net/sip/SipSession;Ljava/lang/String;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
 	void SipSession_Listener::onCalling(android::net::sip::SipSession arg0)
@@ -60,14 +61,14 @@ namespace android::net::sip
 			arg0.object()
 		);
 	}
-	void SipSession_Listener::onError(android::net::sip::SipSession arg0, jint arg1, jstring arg2)
+	void SipSession_Listener::onError(android::net::sip::SipSession arg0, jint arg1, JString arg2)
 	{
 		callMethod<void>(
 			"onError",
 			"(Landroid/net/sip/SipSession;ILjava/lang/String;)V",
 			arg0.object(),
 			arg1,
-			arg2
+			arg2.object<jstring>()
 		);
 	}
 	void SipSession_Listener::onRegistering(android::net::sip::SipSession arg0)
@@ -87,14 +88,14 @@ namespace android::net::sip
 			arg1
 		);
 	}
-	void SipSession_Listener::onRegistrationFailed(android::net::sip::SipSession arg0, jint arg1, jstring arg2)
+	void SipSession_Listener::onRegistrationFailed(android::net::sip::SipSession arg0, jint arg1, JString arg2)
 	{
 		callMethod<void>(
 			"onRegistrationFailed",
 			"(Landroid/net/sip/SipSession;ILjava/lang/String;)V",
 			arg0.object(),
 			arg1,
-			arg2
+			arg2.object<jstring>()
 		);
 	}
 	void SipSession_Listener::onRegistrationTimeout(android::net::sip::SipSession arg0)
@@ -105,14 +106,14 @@ namespace android::net::sip
 			arg0.object()
 		);
 	}
-	void SipSession_Listener::onRinging(android::net::sip::SipSession arg0, android::net::sip::SipProfile arg1, jstring arg2)
+	void SipSession_Listener::onRinging(android::net::sip::SipSession arg0, android::net::sip::SipProfile arg1, JString arg2)
 	{
 		callMethod<void>(
 			"onRinging",
 			"(Landroid/net/sip/SipSession;Landroid/net/sip/SipProfile;Ljava/lang/String;)V",
 			arg0.object(),
 			arg1.object(),
-			arg2
+			arg2.object<jstring>()
 		);
 	}
 	void SipSession_Listener::onRingingBack(android::net::sip::SipSession arg0)

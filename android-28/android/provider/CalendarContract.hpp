@@ -6,6 +6,7 @@ namespace android::net
 {
 	class Uri;
 }
+class JString;
 
 namespace android::provider
 {
@@ -13,16 +14,16 @@ namespace android::provider
 	{
 	public:
 		// Fields
-		static jstring ACCOUNT_TYPE_LOCAL();
-		static jstring ACTION_EVENT_REMINDER();
-		static jstring ACTION_HANDLE_CUSTOM_EVENT();
-		static jstring AUTHORITY();
-		static jstring CALLER_IS_SYNCADAPTER();
+		static JString ACCOUNT_TYPE_LOCAL();
+		static JString ACTION_EVENT_REMINDER();
+		static JString ACTION_HANDLE_CUSTOM_EVENT();
+		static JString AUTHORITY();
+		static JString CALLER_IS_SYNCADAPTER();
 		static android::net::Uri CONTENT_URI();
-		static jstring EXTRA_CUSTOM_APP_URI();
-		static jstring EXTRA_EVENT_ALL_DAY();
-		static jstring EXTRA_EVENT_BEGIN_TIME();
-		static jstring EXTRA_EVENT_END_TIME();
+		static JString EXTRA_CUSTOM_APP_URI();
+		static JString EXTRA_EVENT_ALL_DAY();
+		static JString EXTRA_EVENT_BEGIN_TIME();
+		static JString EXTRA_EVENT_END_TIME();
 		
 		// QJniObject forward
 		template<typename ...Ts> explicit CalendarContract(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}

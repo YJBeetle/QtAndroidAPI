@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JString;
 
 namespace android::media
 {
@@ -9,9 +10,9 @@ namespace android::media
 	{
 	public:
 		// Fields
-		static jstring FORMAT();
-		static jstring MIME_TYPE();
-		static jstring TRACKS();
+		static JString FORMAT();
+		static JString MIME_TYPE();
+		static JString TRACKS();
 		
 		// QJniObject forward
 		template<typename ...Ts> explicit MediaExtractor_MetricsConstants(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}

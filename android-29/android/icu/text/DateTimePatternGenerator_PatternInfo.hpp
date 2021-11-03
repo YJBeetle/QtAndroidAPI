@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JString;
 
 namespace android::icu::text
 {
@@ -12,7 +13,7 @@ namespace android::icu::text
 		static jint BASE_CONFLICT();
 		static jint CONFLICT();
 		static jint OK();
-		jstring conflictingPattern();
+		JString conflictingPattern();
 		jint status();
 		
 		// QJniObject forward

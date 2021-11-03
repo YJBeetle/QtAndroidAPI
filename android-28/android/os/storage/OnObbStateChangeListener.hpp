@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JString;
 
 namespace android::os::storage
 {
@@ -26,7 +27,7 @@ namespace android::os::storage
 		OnObbStateChangeListener();
 		
 		// Methods
-		void onObbStateChange(jstring arg0, jint arg1);
+		void onObbStateChange(JString arg0, jint arg1);
 	};
 } // namespace android::os::storage
 

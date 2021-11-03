@@ -1,14 +1,12 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../content/Context.hpp"
-#include "../content/ContextWrapper.hpp"
 #include "./Service.hpp"
 
 namespace android::content
 {
 	class Intent;
 }
+class JString;
 
 namespace android::app
 {
@@ -22,7 +20,7 @@ namespace android::app
 		IntentService(QJniObject obj);
 		
 		// Constructors
-		IntentService(jstring arg0);
+		IntentService(JString arg0);
 		
 		// Methods
 		JObject onBind(android::content::Intent arg0);

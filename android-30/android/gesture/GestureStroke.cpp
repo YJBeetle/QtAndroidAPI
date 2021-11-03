@@ -1,6 +1,8 @@
+#include "../../JFloatArray.hpp"
 #include "./OrientedBoundingBox.hpp"
 #include "../graphics/Path.hpp"
 #include "../graphics/RectF.hpp"
+#include "../../JObject.hpp"
 #include "../../java/util/ArrayList.hpp"
 #include "./GestureStroke.hpp"
 
@@ -20,12 +22,12 @@ namespace android::gesture
 			"length"
 		);
 	}
-	jfloatArray GestureStroke::points()
+	JFloatArray GestureStroke::points()
 	{
 		return getObjectField(
 			"points",
 			"[F"
-		).object<jfloatArray>();
+		);
 	}
 	
 	// QJniObject forward
@@ -47,12 +49,12 @@ namespace android::gesture
 			"()V"
 		);
 	}
-	jobject GestureStroke::clone()
+	JObject GestureStroke::clone()
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
 	android::gesture::OrientedBoundingBox GestureStroke::computeOrientedBoundingBox()
 	{

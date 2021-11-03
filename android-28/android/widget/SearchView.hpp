@@ -1,8 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../view/View.hpp"
-#include "../view/ViewGroup.hpp"
 #include "./LinearLayout.hpp"
 
 namespace android::app
@@ -25,6 +22,7 @@ namespace android::widget
 {
 	class CursorAdapter;
 }
+class JString;
 
 namespace android::widget
 {
@@ -45,12 +43,12 @@ namespace android::widget
 		
 		// Methods
 		void clearFocus();
-		jstring getAccessibilityClassName();
+		JString getAccessibilityClassName();
 		jint getImeOptions();
 		jint getInputType();
 		jint getMaxWidth();
-		jstring getQuery();
-		jstring getQueryHint();
+		JString getQuery();
+		JString getQueryHint();
 		android::widget::CursorAdapter getSuggestionsAdapter();
 		jboolean isIconfiedByDefault();
 		jboolean isIconified();
@@ -71,8 +69,8 @@ namespace android::widget
 		void setOnQueryTextListener(JObject arg0);
 		void setOnSearchClickListener(JObject arg0);
 		void setOnSuggestionListener(JObject arg0);
-		void setQuery(jstring arg0, jboolean arg1);
-		void setQueryHint(jstring arg0);
+		void setQuery(JString arg0, jboolean arg1);
+		void setQueryHint(JString arg0);
 		void setQueryRefinementEnabled(jboolean arg0);
 		void setSearchableInfo(android::app::SearchableInfo arg0);
 		void setSubmitButtonEnabled(jboolean arg0);

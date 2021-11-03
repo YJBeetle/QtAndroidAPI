@@ -1,3 +1,4 @@
+#include "../../JFloatArray.hpp"
 #include "./Matrix.hpp"
 #include "./Path.hpp"
 #include "./PathMeasure.hpp"
@@ -55,14 +56,14 @@ namespace android::graphics
 			arg2
 		);
 	}
-	jboolean PathMeasure::getPosTan(jfloat arg0, jfloatArray arg1, jfloatArray arg2)
+	jboolean PathMeasure::getPosTan(jfloat arg0, JFloatArray arg1, JFloatArray arg2)
 	{
 		return callMethod<jboolean>(
 			"getPosTan",
 			"(F[F[F)Z",
 			arg0,
-			arg1,
-			arg2
+			arg1.object<jfloatArray>(),
+			arg2.object<jfloatArray>()
 		);
 	}
 	jboolean PathMeasure::getSegment(jfloat arg0, jfloat arg1, android::graphics::Path arg2, jboolean arg3)

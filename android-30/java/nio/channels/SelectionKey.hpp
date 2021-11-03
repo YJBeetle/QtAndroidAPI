@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JObject;
 namespace java::nio::channels
 {
 	class SelectableChannel;
@@ -29,8 +30,8 @@ namespace java::nio::channels
 		// Constructors
 		
 		// Methods
-		jobject attach(jobject arg0);
-		jobject attachment();
+		JObject attach(JObject arg0);
+		JObject attachment();
 		void cancel();
 		java::nio::channels::SelectableChannel channel();
 		jint interestOps();

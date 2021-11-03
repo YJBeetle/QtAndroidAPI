@@ -1,3 +1,5 @@
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
 #include "./URL.hpp"
 #include "./URLConnection.hpp"
 #include "../util/jar/Attributes.hpp"
@@ -23,19 +25,19 @@ namespace java::net
 			"()Ljava/util/jar/Attributes;"
 		);
 	}
-	jarray JarURLConnection::getCertificates()
+	JArray JarURLConnection::getCertificates()
 	{
 		return callObjectMethod(
 			"getCertificates",
 			"()[Ljava/security/cert/Certificate;"
-		).object<jarray>();
+		);
 	}
-	jstring JarURLConnection::getEntryName()
+	JString JarURLConnection::getEntryName()
 	{
 		return callObjectMethod(
 			"getEntryName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	java::util::jar::JarEntry JarURLConnection::getJarEntry()
 	{

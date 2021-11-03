@@ -1,3 +1,6 @@
+#include "../../JByteArray.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "../../java/nio/ByteBuffer.hpp"
 #include "../../java/security/Provider.hpp"
 #include "../../java/security/Provider_Service.hpp"
@@ -14,72 +17,72 @@ namespace javax::crypto
 	// Constructors
 	
 	// Methods
-	javax::crypto::Mac Mac::getInstance(jstring arg0)
+	javax::crypto::Mac Mac::getInstance(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"javax.crypto.Mac",
 			"getInstance",
 			"(Ljava/lang/String;)Ljavax/crypto/Mac;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	javax::crypto::Mac Mac::getInstance(jstring arg0, jstring arg1)
+	javax::crypto::Mac Mac::getInstance(JString arg0, JString arg1)
 	{
 		return callStaticObjectMethod(
 			"javax.crypto.Mac",
 			"getInstance",
 			"(Ljava/lang/String;Ljava/lang/String;)Ljavax/crypto/Mac;",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		);
 	}
-	javax::crypto::Mac Mac::getInstance(jstring arg0, java::security::Provider arg1)
+	javax::crypto::Mac Mac::getInstance(JString arg0, java::security::Provider arg1)
 	{
 		return callStaticObjectMethod(
 			"javax.crypto.Mac",
 			"getInstance",
 			"(Ljava/lang/String;Ljava/security/Provider;)Ljavax/crypto/Mac;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
-	jobject Mac::clone()
+	JObject Mac::clone()
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
-	jbyteArray Mac::doFinal()
+	JByteArray Mac::doFinal()
 	{
 		return callObjectMethod(
 			"doFinal",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
-	jbyteArray Mac::doFinal(jbyteArray arg0)
+	JByteArray Mac::doFinal(JByteArray arg0)
 	{
 		return callObjectMethod(
 			"doFinal",
 			"([B)[B",
-			arg0
-		).object<jbyteArray>();
+			arg0.object<jbyteArray>()
+		);
 	}
-	void Mac::doFinal(jbyteArray arg0, jint arg1)
+	void Mac::doFinal(JByteArray arg0, jint arg1)
 	{
 		callMethod<void>(
 			"doFinal",
 			"([BI)V",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1
 		);
 	}
-	jstring Mac::getAlgorithm()
+	JString Mac::getAlgorithm()
 	{
 		return callObjectMethod(
 			"getAlgorithm",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint Mac::getMacLength()
 	{
@@ -119,12 +122,12 @@ namespace javax::crypto
 			"()V"
 		);
 	}
-	void Mac::update(jbyteArray arg0)
+	void Mac::update(JByteArray arg0)
 	{
 		callMethod<void>(
 			"update",
 			"([B)V",
-			arg0
+			arg0.object<jbyteArray>()
 		);
 	}
 	void Mac::update(jbyte arg0)
@@ -143,12 +146,12 @@ namespace javax::crypto
 			arg0.object()
 		);
 	}
-	void Mac::update(jbyteArray arg0, jint arg1, jint arg2)
+	void Mac::update(JByteArray arg0, jint arg1, jint arg2)
 	{
 		callMethod<void>(
 			"update",
 			"([BII)V",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1,
 			arg2
 		);

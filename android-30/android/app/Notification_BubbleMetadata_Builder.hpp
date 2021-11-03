@@ -14,6 +14,7 @@ namespace android::graphics::drawable
 {
 	class Icon;
 }
+class JString;
 
 namespace android::app
 {
@@ -28,7 +29,7 @@ namespace android::app
 		
 		// Constructors
 		Notification_BubbleMetadata_Builder();
-		Notification_BubbleMetadata_Builder(jstring arg0);
+		Notification_BubbleMetadata_Builder(JString arg0);
 		Notification_BubbleMetadata_Builder(android::app::PendingIntent arg0, android::graphics::drawable::Icon arg1);
 		
 		// Methods

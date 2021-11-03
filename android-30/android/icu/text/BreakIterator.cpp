@@ -1,4 +1,9 @@
+#include "../../../JIntArray.hpp"
+#include "../../../JArray.hpp"
 #include "../util/ULocale.hpp"
+#include "../../../JString.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "../../../java/util/Locale.hpp"
 #include "./BreakIterator.hpp"
 
@@ -124,13 +129,13 @@ namespace android::icu::text
 	// Constructors
 	
 	// Methods
-	jarray BreakIterator::getAvailableLocales()
+	JArray BreakIterator::getAvailableLocales()
 	{
 		return callStaticObjectMethod(
 			"android.icu.text.BreakIterator",
 			"getAvailableLocales",
 			"()[Ljava/util/Locale;"
-		).object<jarray>();
+		);
 	}
 	android::icu::text::BreakIterator BreakIterator::getCharacterInstance()
 	{
@@ -262,12 +267,12 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	jobject BreakIterator::clone()
+	JObject BreakIterator::clone()
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
 	jint BreakIterator::current()
 	{
@@ -298,12 +303,12 @@ namespace android::icu::text
 			"()I"
 		);
 	}
-	jint BreakIterator::getRuleStatusVec(jintArray arg0)
+	jint BreakIterator::getRuleStatusVec(JIntArray arg0)
 	{
 		return callMethod<jint>(
 			"getRuleStatusVec",
 			"([I)I",
-			arg0
+			arg0.object<jintArray>()
 		);
 	}
 	JObject BreakIterator::getText()
@@ -358,12 +363,12 @@ namespace android::icu::text
 			"()I"
 		);
 	}
-	void BreakIterator::setText(jstring arg0)
+	void BreakIterator::setText(JString arg0)
 	{
 		callMethod<void>(
 			"setText",
 			"(Ljava/lang/CharSequence;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void BreakIterator::setText(JObject arg0)

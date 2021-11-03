@@ -6,6 +6,7 @@ namespace java::io
 {
 	class IOException;
 }
+class JObject;
 namespace java::nio::file
 {
 	class FileVisitResult;
@@ -25,10 +26,10 @@ namespace java::nio::file
 		// Constructors
 		
 		// Methods
-		java::nio::file::FileVisitResult postVisitDirectory(jobject arg0, java::io::IOException arg1);
-		java::nio::file::FileVisitResult preVisitDirectory(jobject arg0, JObject arg1);
-		java::nio::file::FileVisitResult visitFile(jobject arg0, JObject arg1);
-		java::nio::file::FileVisitResult visitFileFailed(jobject arg0, java::io::IOException arg1);
+		java::nio::file::FileVisitResult postVisitDirectory(JObject arg0, java::io::IOException arg1);
+		java::nio::file::FileVisitResult preVisitDirectory(JObject arg0, JObject arg1);
+		java::nio::file::FileVisitResult visitFile(JObject arg0, JObject arg1);
+		java::nio::file::FileVisitResult visitFileFailed(JObject arg0, java::io::IOException arg1);
 	};
 } // namespace java::nio::file
 

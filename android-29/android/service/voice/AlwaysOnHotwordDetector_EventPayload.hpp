@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JByteArray;
 namespace android::media
 {
 	class AudioFormat;
@@ -22,7 +23,7 @@ namespace android::service::voice
 		
 		// Methods
 		android::media::AudioFormat getCaptureAudioFormat();
-		jbyteArray getTriggerAudio();
+		JByteArray getTriggerAudio();
 	};
 } // namespace android::service::voice
 

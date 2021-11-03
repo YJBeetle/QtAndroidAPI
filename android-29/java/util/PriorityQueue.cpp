@@ -1,5 +1,8 @@
+#include "../../JLongArray.hpp"
+#include "../../JObjectArray.hpp"
 #include "../io/ObjectInputStream.hpp"
 #include "../io/ObjectOutputStream.hpp"
+#include "../../JObject.hpp"
 #include "./PriorityQueue.hpp"
 
 namespace java::util
@@ -42,12 +45,12 @@ namespace java::util
 		) {}
 	
 	// Methods
-	jboolean PriorityQueue::add(jobject arg0)
+	jboolean PriorityQueue::add(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"add",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	void PriorityQueue::clear()
@@ -64,12 +67,12 @@ namespace java::util
 			"()Ljava/util/Comparator;"
 		);
 	}
-	jboolean PriorityQueue::contains(jobject arg0)
+	jboolean PriorityQueue::contains(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"contains",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	void PriorityQueue::forEach(JObject arg0)
@@ -87,34 +90,34 @@ namespace java::util
 			"()Ljava/util/Iterator;"
 		);
 	}
-	jboolean PriorityQueue::offer(jobject arg0)
+	jboolean PriorityQueue::offer(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"offer",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jobject PriorityQueue::peek()
+	JObject PriorityQueue::peek()
 	{
 		return callObjectMethod(
 			"peek",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
-	jobject PriorityQueue::poll()
+	JObject PriorityQueue::poll()
 	{
 		return callObjectMethod(
 			"poll",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
-	jboolean PriorityQueue::remove(jobject arg0)
+	jboolean PriorityQueue::remove(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"remove",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jboolean PriorityQueue::removeAll(JObject arg0)
@@ -155,20 +158,20 @@ namespace java::util
 			"()Ljava/util/Spliterator;"
 		);
 	}
-	jobjectArray PriorityQueue::toArray()
+	JObjectArray PriorityQueue::toArray()
 	{
 		return callObjectMethod(
 			"toArray",
 			"()[Ljava/lang/Object;"
-		).object<jobjectArray>();
+		);
 	}
-	jobjectArray PriorityQueue::toArray(jobjectArray arg0)
+	JObjectArray PriorityQueue::toArray(JObjectArray arg0)
 	{
 		return callObjectMethod(
 			"toArray",
 			"([Ljava/lang/Object;)[Ljava/lang/Object;",
-			arg0
-		).object<jobjectArray>();
+			arg0.object<jobjectArray>()
+		);
 	}
 } // namespace java::util
 

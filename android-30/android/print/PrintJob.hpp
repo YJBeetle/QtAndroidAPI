@@ -10,6 +10,7 @@ namespace android::print
 {
 	class PrintJobInfo;
 }
+class JObject;
 
 namespace android::print
 {
@@ -26,7 +27,7 @@ namespace android::print
 		
 		// Methods
 		void cancel();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		android::print::PrintJobId getId();
 		android::print::PrintJobInfo getInfo();
 		jint hashCode();

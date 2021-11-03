@@ -1,4 +1,7 @@
+#include "../../../../JByteArray.hpp"
 #include "../../../os/Parcel.hpp"
+#include "../../../../JObject.hpp"
+#include "../../../../JString.hpp"
 #include "./PublishConfig.hpp"
 
 namespace android::net::wifi::aware
@@ -40,12 +43,12 @@ namespace android::net::wifi::aware
 			"()I"
 		);
 	}
-	jboolean PublishConfig::equals(jobject arg0)
+	jboolean PublishConfig::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint PublishConfig::hashCode()
@@ -55,12 +58,12 @@ namespace android::net::wifi::aware
 			"()I"
 		);
 	}
-	jstring PublishConfig::toString()
+	JString PublishConfig::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void PublishConfig::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

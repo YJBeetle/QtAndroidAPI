@@ -1,3 +1,4 @@
+#include "../../../JArray.hpp"
 #include "./TimeUnit.hpp"
 
 namespace android::icu::util
@@ -10,13 +11,13 @@ namespace android::icu::util
 	// Constructors
 	
 	// Methods
-	jarray TimeUnit::values()
+	JArray TimeUnit::values()
 	{
 		return callStaticObjectMethod(
 			"android.icu.util.TimeUnit",
 			"values",
 			"()[Landroid/icu/util/TimeUnit;"
-		).object<jarray>();
+		);
 	}
 } // namespace android::icu::util
 

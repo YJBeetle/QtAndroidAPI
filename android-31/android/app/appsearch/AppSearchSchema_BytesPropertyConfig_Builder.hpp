@@ -6,6 +6,7 @@ namespace android::app::appsearch
 {
 	class AppSearchSchema_BytesPropertyConfig;
 }
+class JString;
 
 namespace android::app::appsearch
 {
@@ -19,7 +20,7 @@ namespace android::app::appsearch
 		AppSearchSchema_BytesPropertyConfig_Builder(QJniObject obj);
 		
 		// Constructors
-		AppSearchSchema_BytesPropertyConfig_Builder(jstring arg0);
+		AppSearchSchema_BytesPropertyConfig_Builder(JString arg0);
 		
 		// Methods
 		android::app::appsearch::AppSearchSchema_BytesPropertyConfig build();

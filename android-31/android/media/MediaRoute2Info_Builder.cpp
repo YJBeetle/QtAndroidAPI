@@ -1,6 +1,8 @@
 #include "./MediaRoute2Info.hpp"
 #include "../net/Uri.hpp"
 #include "../os/Bundle.hpp"
+#include "../../JString.hpp"
+#include "../../JString.hpp"
 #include "./MediaRoute2Info_Builder.hpp"
 
 namespace android::media
@@ -17,21 +19,21 @@ namespace android::media
 			"(Landroid/media/MediaRoute2Info;)V",
 			arg0.object()
 		) {}
-	MediaRoute2Info_Builder::MediaRoute2Info_Builder(jstring arg0, jstring arg1)
+	MediaRoute2Info_Builder::MediaRoute2Info_Builder(JString arg0, JString arg1)
 		: JObject(
 			"android.media.MediaRoute2Info$Builder",
 			"(Ljava/lang/String;Ljava/lang/CharSequence;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		) {}
 	
 	// Methods
-	android::media::MediaRoute2Info_Builder MediaRoute2Info_Builder::addFeature(jstring arg0)
+	android::media::MediaRoute2Info_Builder MediaRoute2Info_Builder::addFeature(JString arg0)
 	{
 		return callObjectMethod(
 			"addFeature",
 			"(Ljava/lang/String;)Landroid/media/MediaRoute2Info$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::media::MediaRoute2Info_Builder MediaRoute2Info_Builder::addFeatures(JObject arg0)
@@ -56,12 +58,12 @@ namespace android::media
 			"()Landroid/media/MediaRoute2Info$Builder;"
 		);
 	}
-	android::media::MediaRoute2Info_Builder MediaRoute2Info_Builder::setClientPackageName(jstring arg0)
+	android::media::MediaRoute2Info_Builder MediaRoute2Info_Builder::setClientPackageName(JString arg0)
 	{
 		return callObjectMethod(
 			"setClientPackageName",
 			"(Ljava/lang/String;)Landroid/media/MediaRoute2Info$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::media::MediaRoute2Info_Builder MediaRoute2Info_Builder::setConnectionState(jint arg0)
@@ -72,12 +74,12 @@ namespace android::media
 			arg0
 		);
 	}
-	android::media::MediaRoute2Info_Builder MediaRoute2Info_Builder::setDescription(jstring arg0)
+	android::media::MediaRoute2Info_Builder MediaRoute2Info_Builder::setDescription(JString arg0)
 	{
 		return callObjectMethod(
 			"setDescription",
 			"(Ljava/lang/CharSequence;)Landroid/media/MediaRoute2Info$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::media::MediaRoute2Info_Builder MediaRoute2Info_Builder::setExtras(android::os::Bundle arg0)

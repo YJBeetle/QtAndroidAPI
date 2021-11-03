@@ -1,3 +1,4 @@
+#include "../../JObject.hpp"
 #include "./AbstractSet.hpp"
 
 namespace java::util
@@ -10,12 +11,12 @@ namespace java::util
 	// Constructors
 	
 	// Methods
-	jboolean AbstractSet::equals(jobject arg0)
+	jboolean AbstractSet::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint AbstractSet::hashCode()

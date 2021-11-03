@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JByteArray;
 namespace android::nfc
 {
 	class Tag;
@@ -26,7 +27,7 @@ namespace android::nfc::tech
 		static android::nfc::tech::NfcBarcode get(android::nfc::Tag arg0);
 		void close();
 		void connect();
-		jbyteArray getBarcode();
+		JByteArray getBarcode();
 		android::nfc::Tag getTag();
 		jint getType();
 		jboolean isConnected();

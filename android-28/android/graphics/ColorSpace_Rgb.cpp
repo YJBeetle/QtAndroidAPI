@@ -1,4 +1,7 @@
+#include "../../JFloatArray.hpp"
 #include "./ColorSpace_Rgb_TransferParameters.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./ColorSpace_Rgb.hpp"
 
 namespace android::graphics
@@ -9,56 +12,56 @@ namespace android::graphics
 	ColorSpace_Rgb::ColorSpace_Rgb(QJniObject obj) : android::graphics::ColorSpace(obj) {}
 	
 	// Constructors
-	ColorSpace_Rgb::ColorSpace_Rgb(jstring arg0, jfloatArray arg1, android::graphics::ColorSpace_Rgb_TransferParameters arg2)
+	ColorSpace_Rgb::ColorSpace_Rgb(JString arg0, JFloatArray arg1, android::graphics::ColorSpace_Rgb_TransferParameters arg2)
 		: android::graphics::ColorSpace(
 			"android.graphics.ColorSpace$Rgb",
 			"(Ljava/lang/String;[FLandroid/graphics/ColorSpace$Rgb$TransferParameters;)V",
-			arg0,
-			arg1,
+			arg0.object<jstring>(),
+			arg1.object<jfloatArray>(),
 			arg2.object()
 		) {}
-	ColorSpace_Rgb::ColorSpace_Rgb(jstring arg0, jfloatArray arg1, jdouble arg2)
+	ColorSpace_Rgb::ColorSpace_Rgb(JString arg0, JFloatArray arg1, jdouble arg2)
 		: android::graphics::ColorSpace(
 			"android.graphics.ColorSpace$Rgb",
 			"(Ljava/lang/String;[FD)V",
-			arg0,
-			arg1,
+			arg0.object<jstring>(),
+			arg1.object<jfloatArray>(),
 			arg2
 		) {}
-	ColorSpace_Rgb::ColorSpace_Rgb(jstring arg0, jfloatArray arg1, jfloatArray arg2, android::graphics::ColorSpace_Rgb_TransferParameters arg3)
+	ColorSpace_Rgb::ColorSpace_Rgb(JString arg0, JFloatArray arg1, JFloatArray arg2, android::graphics::ColorSpace_Rgb_TransferParameters arg3)
 		: android::graphics::ColorSpace(
 			"android.graphics.ColorSpace$Rgb",
 			"(Ljava/lang/String;[F[FLandroid/graphics/ColorSpace$Rgb$TransferParameters;)V",
-			arg0,
-			arg1,
-			arg2,
+			arg0.object<jstring>(),
+			arg1.object<jfloatArray>(),
+			arg2.object<jfloatArray>(),
 			arg3.object()
 		) {}
-	ColorSpace_Rgb::ColorSpace_Rgb(jstring arg0, jfloatArray arg1, jfloatArray arg2, jdouble arg3)
+	ColorSpace_Rgb::ColorSpace_Rgb(JString arg0, JFloatArray arg1, JFloatArray arg2, jdouble arg3)
 		: android::graphics::ColorSpace(
 			"android.graphics.ColorSpace$Rgb",
 			"(Ljava/lang/String;[F[FD)V",
-			arg0,
-			arg1,
-			arg2,
+			arg0.object<jstring>(),
+			arg1.object<jfloatArray>(),
+			arg2.object<jfloatArray>(),
 			arg3
 		) {}
-	ColorSpace_Rgb::ColorSpace_Rgb(jstring arg0, jfloatArray arg1, JObject arg2, JObject arg3)
+	ColorSpace_Rgb::ColorSpace_Rgb(JString arg0, JFloatArray arg1, JObject arg2, JObject arg3)
 		: android::graphics::ColorSpace(
 			"android.graphics.ColorSpace$Rgb",
 			"(Ljava/lang/String;[FLjava/util/function/DoubleUnaryOperator;Ljava/util/function/DoubleUnaryOperator;)V",
-			arg0,
-			arg1,
+			arg0.object<jstring>(),
+			arg1.object<jfloatArray>(),
 			arg2.object(),
 			arg3.object()
 		) {}
-	ColorSpace_Rgb::ColorSpace_Rgb(jstring arg0, jfloatArray arg1, jfloatArray arg2, JObject arg3, JObject arg4, jfloat arg5, jfloat arg6)
+	ColorSpace_Rgb::ColorSpace_Rgb(JString arg0, JFloatArray arg1, JFloatArray arg2, JObject arg3, JObject arg4, jfloat arg5, jfloat arg6)
 		: android::graphics::ColorSpace(
 			"android.graphics.ColorSpace$Rgb",
 			"(Ljava/lang/String;[F[FLjava/util/function/DoubleUnaryOperator;Ljava/util/function/DoubleUnaryOperator;FF)V",
-			arg0,
-			arg1,
-			arg2,
+			arg0.object<jstring>(),
+			arg1.object<jfloatArray>(),
+			arg2.object<jfloatArray>(),
 			arg3.object(),
 			arg4.object(),
 			arg5,
@@ -66,23 +69,23 @@ namespace android::graphics
 		) {}
 	
 	// Methods
-	jboolean ColorSpace_Rgb::equals(jobject arg0)
+	jboolean ColorSpace_Rgb::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jfloatArray ColorSpace_Rgb::fromLinear(jfloatArray arg0)
+	JFloatArray ColorSpace_Rgb::fromLinear(JFloatArray arg0)
 	{
 		return callObjectMethod(
 			"fromLinear",
 			"([F)[F",
-			arg0
-		).object<jfloatArray>();
+			arg0.object<jfloatArray>()
+		);
 	}
-	jfloatArray ColorSpace_Rgb::fromLinear(jfloat arg0, jfloat arg1, jfloat arg2)
+	JFloatArray ColorSpace_Rgb::fromLinear(jfloat arg0, jfloat arg1, jfloat arg2)
 	{
 		return callObjectMethod(
 			"fromLinear",
@@ -90,15 +93,15 @@ namespace android::graphics
 			arg0,
 			arg1,
 			arg2
-		).object<jfloatArray>();
+		);
 	}
-	jfloatArray ColorSpace_Rgb::fromXyz(jfloatArray arg0)
+	JFloatArray ColorSpace_Rgb::fromXyz(JFloatArray arg0)
 	{
 		return callObjectMethod(
 			"fromXyz",
 			"([F)[F",
-			arg0
-		).object<jfloatArray>();
+			arg0.object<jfloatArray>()
+		);
 	}
 	JObject ColorSpace_Rgb::getEotf()
 	{
@@ -107,20 +110,20 @@ namespace android::graphics
 			"()Ljava/util/function/DoubleUnaryOperator;"
 		);
 	}
-	jfloatArray ColorSpace_Rgb::getInverseTransform()
+	JFloatArray ColorSpace_Rgb::getInverseTransform()
 	{
 		return callObjectMethod(
 			"getInverseTransform",
 			"()[F"
-		).object<jfloatArray>();
+		);
 	}
-	jfloatArray ColorSpace_Rgb::getInverseTransform(jfloatArray arg0)
+	JFloatArray ColorSpace_Rgb::getInverseTransform(JFloatArray arg0)
 	{
 		return callObjectMethod(
 			"getInverseTransform",
 			"([F)[F",
-			arg0
-		).object<jfloatArray>();
+			arg0.object<jfloatArray>()
+		);
 	}
 	jfloat ColorSpace_Rgb::getMaxValue(jint arg0)
 	{
@@ -145,20 +148,20 @@ namespace android::graphics
 			"()Ljava/util/function/DoubleUnaryOperator;"
 		);
 	}
-	jfloatArray ColorSpace_Rgb::getPrimaries()
+	JFloatArray ColorSpace_Rgb::getPrimaries()
 	{
 		return callObjectMethod(
 			"getPrimaries",
 			"()[F"
-		).object<jfloatArray>();
+		);
 	}
-	jfloatArray ColorSpace_Rgb::getPrimaries(jfloatArray arg0)
+	JFloatArray ColorSpace_Rgb::getPrimaries(JFloatArray arg0)
 	{
 		return callObjectMethod(
 			"getPrimaries",
 			"([F)[F",
-			arg0
-		).object<jfloatArray>();
+			arg0.object<jfloatArray>()
+		);
 	}
 	android::graphics::ColorSpace_Rgb_TransferParameters ColorSpace_Rgb::getTransferParameters()
 	{
@@ -167,35 +170,35 @@ namespace android::graphics
 			"()Landroid/graphics/ColorSpace$Rgb$TransferParameters;"
 		);
 	}
-	jfloatArray ColorSpace_Rgb::getTransform()
+	JFloatArray ColorSpace_Rgb::getTransform()
 	{
 		return callObjectMethod(
 			"getTransform",
 			"()[F"
-		).object<jfloatArray>();
+		);
 	}
-	jfloatArray ColorSpace_Rgb::getTransform(jfloatArray arg0)
+	JFloatArray ColorSpace_Rgb::getTransform(JFloatArray arg0)
 	{
 		return callObjectMethod(
 			"getTransform",
 			"([F)[F",
-			arg0
-		).object<jfloatArray>();
+			arg0.object<jfloatArray>()
+		);
 	}
-	jfloatArray ColorSpace_Rgb::getWhitePoint()
+	JFloatArray ColorSpace_Rgb::getWhitePoint()
 	{
 		return callObjectMethod(
 			"getWhitePoint",
 			"()[F"
-		).object<jfloatArray>();
+		);
 	}
-	jfloatArray ColorSpace_Rgb::getWhitePoint(jfloatArray arg0)
+	JFloatArray ColorSpace_Rgb::getWhitePoint(JFloatArray arg0)
 	{
 		return callObjectMethod(
 			"getWhitePoint",
 			"([F)[F",
-			arg0
-		).object<jfloatArray>();
+			arg0.object<jfloatArray>()
+		);
 	}
 	jint ColorSpace_Rgb::hashCode()
 	{
@@ -218,15 +221,15 @@ namespace android::graphics
 			"()Z"
 		);
 	}
-	jfloatArray ColorSpace_Rgb::toLinear(jfloatArray arg0)
+	JFloatArray ColorSpace_Rgb::toLinear(JFloatArray arg0)
 	{
 		return callObjectMethod(
 			"toLinear",
 			"([F)[F",
-			arg0
-		).object<jfloatArray>();
+			arg0.object<jfloatArray>()
+		);
 	}
-	jfloatArray ColorSpace_Rgb::toLinear(jfloat arg0, jfloat arg1, jfloat arg2)
+	JFloatArray ColorSpace_Rgb::toLinear(jfloat arg0, jfloat arg1, jfloat arg2)
 	{
 		return callObjectMethod(
 			"toLinear",
@@ -234,15 +237,15 @@ namespace android::graphics
 			arg0,
 			arg1,
 			arg2
-		).object<jfloatArray>();
+		);
 	}
-	jfloatArray ColorSpace_Rgb::toXyz(jfloatArray arg0)
+	JFloatArray ColorSpace_Rgb::toXyz(JFloatArray arg0)
 	{
 		return callObjectMethod(
 			"toXyz",
 			"([F)[F",
-			arg0
-		).object<jfloatArray>();
+			arg0.object<jfloatArray>()
+		);
 	}
 } // namespace android::graphics
 

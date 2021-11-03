@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./EOFException.hpp"
 
 namespace java::io
@@ -13,11 +14,11 @@ namespace java::io
 			"java.io.EOFException",
 			"()V"
 		) {}
-	EOFException::EOFException(jstring arg0)
+	EOFException::EOFException(JString arg0)
 		: java::io::IOException(
 			"java.io.EOFException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

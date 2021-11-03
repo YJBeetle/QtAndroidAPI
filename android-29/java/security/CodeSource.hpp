@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JArray;
+class JArray;
 namespace java::io
 {
 	class ObjectInputStream;
@@ -10,6 +12,8 @@ namespace java::io
 {
 	class ObjectOutputStream;
 }
+class JObject;
+class JString;
 namespace java::net
 {
 	class SocketPermission;
@@ -35,16 +39,16 @@ namespace java::security
 		CodeSource(QJniObject obj);
 		
 		// Constructors
-		CodeSource(java::net::URL arg0, jarray arg1);
+		CodeSource(java::net::URL arg0, JArray arg1);
 		
 		// Methods
-		jboolean equals(jobject arg0);
-		jarray getCertificates();
-		jarray getCodeSigners();
+		jboolean equals(JObject arg0);
+		JArray getCertificates();
+		JArray getCodeSigners();
 		java::net::URL getLocation();
 		jint hashCode();
 		jboolean implies(java::security::CodeSource arg0);
-		jstring toString();
+		JString toString();
 	};
 } // namespace java::security
 

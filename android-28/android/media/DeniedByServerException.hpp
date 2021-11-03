@@ -1,9 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../../java/lang/Exception.hpp"
 #include "./MediaDrmException.hpp"
 
+class JString;
 
 namespace android::media
 {
@@ -17,7 +16,7 @@ namespace android::media
 		DeniedByServerException(QJniObject obj);
 		
 		// Constructors
-		DeniedByServerException(jstring arg0);
+		DeniedByServerException(JString arg0);
 		
 		// Methods
 	};

@@ -2,6 +2,15 @@
 
 #include "../../../JObject.hpp"
 
+class JByteArray;
+class JDoubleArray;
+class JLongArray;
+class JArray;
+class JArray;
+class JBooleanArray;
+class JArray;
+class JObject;
+class JString;
 
 namespace android::app::appsearch
 {
@@ -18,29 +27,29 @@ namespace android::app::appsearch
 		
 		// Methods
 		static jint getMaxIndexedProperties();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jlong getCreationTimestampMillis();
-		jstring getId();
-		jstring getNamespace();
-		jobject getProperty(jstring arg0);
-		jboolean getPropertyBoolean(jstring arg0);
-		jbooleanArray getPropertyBooleanArray(jstring arg0);
-		jbyteArray getPropertyBytes(jstring arg0);
-		jarray getPropertyBytesArray(jstring arg0);
-		android::app::appsearch::GenericDocument getPropertyDocument(jstring arg0);
-		jarray getPropertyDocumentArray(jstring arg0);
-		jdouble getPropertyDouble(jstring arg0);
-		jdoubleArray getPropertyDoubleArray(jstring arg0);
-		jlong getPropertyLong(jstring arg0);
-		jlongArray getPropertyLongArray(jstring arg0);
+		JString getId();
+		JString getNamespace();
+		JObject getProperty(JString arg0);
+		jboolean getPropertyBoolean(JString arg0);
+		JBooleanArray getPropertyBooleanArray(JString arg0);
+		JByteArray getPropertyBytes(JString arg0);
+		JArray getPropertyBytesArray(JString arg0);
+		android::app::appsearch::GenericDocument getPropertyDocument(JString arg0);
+		JArray getPropertyDocumentArray(JString arg0);
+		jdouble getPropertyDouble(JString arg0);
+		JDoubleArray getPropertyDoubleArray(JString arg0);
+		jlong getPropertyLong(JString arg0);
+		JLongArray getPropertyLongArray(JString arg0);
 		JObject getPropertyNames();
-		jstring getPropertyString(jstring arg0);
-		jarray getPropertyStringArray(jstring arg0);
-		jstring getSchemaType();
+		JString getPropertyString(JString arg0);
+		JArray getPropertyStringArray(JString arg0);
+		JString getSchemaType();
 		jint getScore();
 		jlong getTtlMillis();
 		jint hashCode();
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::app::appsearch
 

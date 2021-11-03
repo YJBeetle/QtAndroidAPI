@@ -1,4 +1,5 @@
 #include "../../os/Parcel.hpp"
+#include "../../../JString.hpp"
 #include "./InputBinding.hpp"
 
 namespace android::view::inputmethod
@@ -70,12 +71,12 @@ namespace android::view::inputmethod
 			"()I"
 		);
 	}
-	jstring InputBinding::toString()
+	JString InputBinding::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void InputBinding::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

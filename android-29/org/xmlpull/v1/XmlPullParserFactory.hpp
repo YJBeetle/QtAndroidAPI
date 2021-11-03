@@ -2,6 +2,8 @@
 
 #include "../../../JObject.hpp"
 
+class JClass;
+class JString;
 namespace java::util
 {
 	class ArrayList;
@@ -17,7 +19,7 @@ namespace org::xmlpull::v1
 	{
 	public:
 		// Fields
-		static jstring PROPERTY_NAME();
+		static JString PROPERTY_NAME();
 		
 		// QJniObject forward
 		template<typename ...Ts> explicit XmlPullParserFactory(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
@@ -27,13 +29,13 @@ namespace org::xmlpull::v1
 		
 		// Methods
 		static org::xmlpull::v1::XmlPullParserFactory newInstance();
-		static org::xmlpull::v1::XmlPullParserFactory newInstance(jstring arg0, jclass arg1);
-		jboolean getFeature(jstring arg0);
+		static org::xmlpull::v1::XmlPullParserFactory newInstance(JString arg0, JClass arg1);
+		jboolean getFeature(JString arg0);
 		jboolean isNamespaceAware();
 		jboolean isValidating();
 		JObject newPullParser();
 		JObject newSerializer();
-		void setFeature(jstring arg0, jboolean arg1);
+		void setFeature(JString arg0, jboolean arg1);
 		void setNamespaceAware(jboolean arg0);
 		void setValidating(jboolean arg0);
 	};

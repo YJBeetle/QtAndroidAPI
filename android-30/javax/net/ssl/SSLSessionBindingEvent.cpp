@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./SSLSessionBindingEvent.hpp"
 
 namespace javax::net::ssl
@@ -8,21 +9,21 @@ namespace javax::net::ssl
 	SSLSessionBindingEvent::SSLSessionBindingEvent(QJniObject obj) : java::util::EventObject(obj) {}
 	
 	// Constructors
-	SSLSessionBindingEvent::SSLSessionBindingEvent(JObject arg0, jstring arg1)
+	SSLSessionBindingEvent::SSLSessionBindingEvent(JObject arg0, JString arg1)
 		: java::util::EventObject(
 			"javax.net.ssl.SSLSessionBindingEvent",
 			"(Ljavax/net/ssl/SSLSession;Ljava/lang/String;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		) {}
 	
 	// Methods
-	jstring SSLSessionBindingEvent::getName()
+	JString SSLSessionBindingEvent::getName()
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	JObject SSLSessionBindingEvent::getSession()
 	{

@@ -18,6 +18,8 @@ namespace android::view::textclassifier
 {
 	class TextSelection;
 }
+class JObject;
+class JString;
 
 namespace android::view::textclassifier
 {
@@ -61,25 +63,25 @@ namespace android::view::textclassifier
 		static android::view::textclassifier::SelectionEvent createSelectionStartedEvent(jint arg0, jint arg1);
 		static jboolean isTerminal(jint arg0);
 		jint describeContents();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jlong getDurationSincePreviousEvent();
 		jlong getDurationSinceSessionStart();
 		jint getEnd();
-		jstring getEntityType();
+		JString getEntityType();
 		jint getEventIndex();
 		jlong getEventTime();
 		jint getEventType();
 		jint getInvocationMethod();
-		jstring getPackageName();
-		jstring getResultId();
+		JString getPackageName();
+		JString getResultId();
 		android::view::textclassifier::TextClassificationSessionId getSessionId();
 		jint getSmartEnd();
 		jint getSmartStart();
 		jint getStart();
-		jstring getWidgetType();
-		jstring getWidgetVersion();
+		JString getWidgetType();
+		JString getWidgetVersion();
 		jint hashCode();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::view::textclassifier

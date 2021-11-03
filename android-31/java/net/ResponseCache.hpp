@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JString;
 namespace java::net
 {
 	class CacheRequest;
@@ -36,7 +37,7 @@ namespace java::net
 		// Methods
 		static java::net::ResponseCache getDefault();
 		static void setDefault(java::net::ResponseCache arg0);
-		java::net::CacheResponse get(java::net::URI arg0, jstring arg1, JObject arg2);
+		java::net::CacheResponse get(java::net::URI arg0, JString arg1, JObject arg2);
 		java::net::CacheRequest put(java::net::URI arg0, java::net::URLConnection arg1);
 	};
 } // namespace java::net

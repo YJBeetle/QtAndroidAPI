@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JByteArray;
 namespace android::hardware::usb
 {
 	class UsbConfiguration;
@@ -22,6 +23,7 @@ namespace android::hardware::usb
 {
 	class UsbRequest;
 }
+class JString;
 
 namespace android::hardware::usb
 {
@@ -37,15 +39,15 @@ namespace android::hardware::usb
 		// Constructors
 		
 		// Methods
-		jint bulkTransfer(android::hardware::usb::UsbEndpoint arg0, jbyteArray arg1, jint arg2, jint arg3);
-		jint bulkTransfer(android::hardware::usb::UsbEndpoint arg0, jbyteArray arg1, jint arg2, jint arg3, jint arg4);
+		jint bulkTransfer(android::hardware::usb::UsbEndpoint arg0, JByteArray arg1, jint arg2, jint arg3);
+		jint bulkTransfer(android::hardware::usb::UsbEndpoint arg0, JByteArray arg1, jint arg2, jint arg3, jint arg4);
 		jboolean claimInterface(android::hardware::usb::UsbInterface arg0, jboolean arg1);
 		void close();
-		jint controlTransfer(jint arg0, jint arg1, jint arg2, jint arg3, jbyteArray arg4, jint arg5, jint arg6);
-		jint controlTransfer(jint arg0, jint arg1, jint arg2, jint arg3, jbyteArray arg4, jint arg5, jint arg6, jint arg7);
+		jint controlTransfer(jint arg0, jint arg1, jint arg2, jint arg3, JByteArray arg4, jint arg5, jint arg6);
+		jint controlTransfer(jint arg0, jint arg1, jint arg2, jint arg3, JByteArray arg4, jint arg5, jint arg6, jint arg7);
 		jint getFileDescriptor();
-		jbyteArray getRawDescriptors();
-		jstring getSerial();
+		JByteArray getRawDescriptors();
+		JString getSerial();
 		jboolean releaseInterface(android::hardware::usb::UsbInterface arg0);
 		android::hardware::usb::UsbRequest requestWait();
 		android::hardware::usb::UsbRequest requestWait(jlong arg0);

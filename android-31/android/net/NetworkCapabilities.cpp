@@ -1,5 +1,8 @@
+#include "../../JIntArray.hpp"
 #include "./NetworkSpecifier.hpp"
 #include "../os/Parcel.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./NetworkCapabilities.hpp"
 
 namespace android::net
@@ -283,20 +286,20 @@ namespace android::net
 			"()I"
 		);
 	}
-	jboolean NetworkCapabilities::equals(jobject arg0)
+	jboolean NetworkCapabilities::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jintArray NetworkCapabilities::getCapabilities()
+	JIntArray NetworkCapabilities::getCapabilities()
 	{
 		return callObjectMethod(
 			"getCapabilities",
 			"()[I"
-		).object<jintArray>();
+		);
 	}
 	jint NetworkCapabilities::getLinkDownstreamBandwidthKbps()
 	{
@@ -363,12 +366,12 @@ namespace android::net
 			"()I"
 		);
 	}
-	jstring NetworkCapabilities::toString()
+	JString NetworkCapabilities::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void NetworkCapabilities::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

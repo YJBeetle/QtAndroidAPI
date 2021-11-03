@@ -1,9 +1,10 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "./Format.hpp"
 #include "./NumberFormat.hpp"
 
+class JDoubleArray;
+class JObjectArray;
+class JArray;
 namespace java::io
 {
 	class ObjectInputStream;
@@ -12,6 +13,8 @@ namespace java::lang
 {
 	class Number;
 }
+class JObject;
+class JString;
 namespace java::lang
 {
 	class StringBuffer;
@@ -37,24 +40,24 @@ namespace java::text
 		ChoiceFormat(QJniObject obj);
 		
 		// Constructors
-		ChoiceFormat(jstring arg0);
-		ChoiceFormat(jdoubleArray arg0, jarray arg1);
+		ChoiceFormat(JString arg0);
+		ChoiceFormat(JDoubleArray arg0, JArray arg1);
 		
 		// Methods
 		static jdouble nextDouble(jdouble arg0);
 		static jdouble nextDouble(jdouble arg0, jboolean arg1);
 		static jdouble previousDouble(jdouble arg0);
-		void applyPattern(jstring arg0);
-		jobject clone();
-		jboolean equals(jobject arg0);
+		void applyPattern(JString arg0);
+		JObject clone();
+		jboolean equals(JObject arg0);
 		java::lang::StringBuffer format(jdouble arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2);
 		java::lang::StringBuffer format(jlong arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2);
-		jobjectArray getFormats();
-		jdoubleArray getLimits();
+		JObjectArray getFormats();
+		JDoubleArray getLimits();
 		jint hashCode();
-		java::lang::Number parse(jstring arg0, java::text::ParsePosition arg1);
-		void setChoices(jdoubleArray arg0, jarray arg1);
-		jstring toPattern();
+		java::lang::Number parse(JString arg0, java::text::ParsePosition arg1);
+		void setChoices(JDoubleArray arg0, JArray arg1);
+		JString toPattern();
 	};
 } // namespace java::text
 

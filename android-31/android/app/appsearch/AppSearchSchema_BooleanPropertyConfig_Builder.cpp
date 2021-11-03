@@ -1,4 +1,5 @@
 #include "./AppSearchSchema_BooleanPropertyConfig.hpp"
+#include "../../../JString.hpp"
 #include "./AppSearchSchema_BooleanPropertyConfig_Builder.hpp"
 
 namespace android::app::appsearch
@@ -9,11 +10,11 @@ namespace android::app::appsearch
 	AppSearchSchema_BooleanPropertyConfig_Builder::AppSearchSchema_BooleanPropertyConfig_Builder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	AppSearchSchema_BooleanPropertyConfig_Builder::AppSearchSchema_BooleanPropertyConfig_Builder(jstring arg0)
+	AppSearchSchema_BooleanPropertyConfig_Builder::AppSearchSchema_BooleanPropertyConfig_Builder(JString arg0)
 		: JObject(
 			"android.app.appsearch.AppSearchSchema$BooleanPropertyConfig$Builder",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

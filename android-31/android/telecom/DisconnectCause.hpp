@@ -6,6 +6,9 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
+class JObject;
+class JString;
 
 namespace android::telecom
 {
@@ -23,10 +26,10 @@ namespace android::telecom
 		static jint LOCAL();
 		static jint MISSED();
 		static jint OTHER();
-		static jstring REASON_EMERGENCY_CALL_PLACED();
-		static jstring REASON_EMULATING_SINGLE_CALL();
-		static jstring REASON_IMS_ACCESS_BLOCKED();
-		static jstring REASON_WIFI_ON_BUT_WFC_OFF();
+		static JString REASON_EMERGENCY_CALL_PLACED();
+		static JString REASON_EMULATING_SINGLE_CALL();
+		static JString REASON_IMS_ACCESS_BLOCKED();
+		static JString REASON_WIFI_ON_BUT_WFC_OFF();
 		static jint REJECTED();
 		static jint REMOTE();
 		static jint RESTRICTED();
@@ -38,20 +41,20 @@ namespace android::telecom
 		
 		// Constructors
 		DisconnectCause(jint arg0);
-		DisconnectCause(jint arg0, jstring arg1);
-		DisconnectCause(jint arg0, jstring arg1, jstring arg2, jstring arg3);
-		DisconnectCause(jint arg0, jstring arg1, jstring arg2, jstring arg3, jint arg4);
+		DisconnectCause(jint arg0, JString arg1);
+		DisconnectCause(jint arg0, JString arg1, JString arg2, JString arg3);
+		DisconnectCause(jint arg0, JString arg1, JString arg2, JString arg3, jint arg4);
 		
 		// Methods
 		jint describeContents();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint getCode();
-		jstring getDescription();
-		jstring getLabel();
-		jstring getReason();
+		JString getDescription();
+		JString getLabel();
+		JString getReason();
 		jint getTone();
 		jint hashCode();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::telecom

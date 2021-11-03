@@ -1,10 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../lang/Exception.hpp"
-#include "./IOException.hpp"
 #include "./ObjectStreamException.hpp"
 
+class JString;
 
 namespace java::io
 {
@@ -18,7 +16,7 @@ namespace java::io
 		InvalidObjectException(QJniObject obj);
 		
 		// Constructors
-		InvalidObjectException(jstring arg0);
+		InvalidObjectException(JString arg0);
 		
 		// Methods
 	};

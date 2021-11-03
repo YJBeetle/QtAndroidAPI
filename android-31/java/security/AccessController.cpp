@@ -1,4 +1,7 @@
+#include "../../JArray.hpp"
+#include "../../JClass.hpp"
 #include "../lang/Exception.hpp"
+#include "../../JObject.hpp"
 #include "./AccessControlContext.hpp"
 #include "./Permission.hpp"
 #include "./PrivilegedActionException.hpp"
@@ -24,16 +27,16 @@ namespace java::security
 			arg0.object()
 		);
 	}
-	jobject AccessController::doPrivileged(JObject arg0)
+	JObject AccessController::doPrivileged(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"java.security.AccessController",
 			"doPrivileged",
 			"(Ljava/security/PrivilegedAction;)Ljava/lang/Object;",
 			arg0.object()
-		).object<jobject>();
+		);
 	}
-	jobject AccessController::doPrivileged(JObject arg0, java::security::AccessControlContext arg1)
+	JObject AccessController::doPrivileged(JObject arg0, java::security::AccessControlContext arg1)
 	{
 		return callStaticObjectMethod(
 			"java.security.AccessController",
@@ -41,9 +44,9 @@ namespace java::security
 			"(Ljava/security/PrivilegedAction;Ljava/security/AccessControlContext;)Ljava/lang/Object;",
 			arg0.object(),
 			arg1.object()
-		).object<jobject>();
+		);
 	}
-	jobject AccessController::doPrivileged(JObject arg0, java::security::AccessControlContext arg1, jarray arg2)
+	JObject AccessController::doPrivileged(JObject arg0, java::security::AccessControlContext arg1, JArray arg2)
 	{
 		return callStaticObjectMethod(
 			"java.security.AccessController",
@@ -51,19 +54,19 @@ namespace java::security
 			"(Ljava/security/PrivilegedAction;Ljava/security/AccessControlContext;[Ljava/security/Permission;)Ljava/lang/Object;",
 			arg0.object(),
 			arg1.object(),
-			arg2
-		).object<jobject>();
+			arg2.object<jarray>()
+		);
 	}
-	jobject AccessController::doPrivilegedWithCombiner(JObject arg0)
+	JObject AccessController::doPrivilegedWithCombiner(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"java.security.AccessController",
 			"doPrivilegedWithCombiner",
 			"(Ljava/security/PrivilegedAction;)Ljava/lang/Object;",
 			arg0.object()
-		).object<jobject>();
+		);
 	}
-	jobject AccessController::doPrivilegedWithCombiner(JObject arg0, java::security::AccessControlContext arg1, jarray arg2)
+	JObject AccessController::doPrivilegedWithCombiner(JObject arg0, java::security::AccessControlContext arg1, JArray arg2)
 	{
 		return callStaticObjectMethod(
 			"java.security.AccessController",
@@ -71,8 +74,8 @@ namespace java::security
 			"(Ljava/security/PrivilegedAction;Ljava/security/AccessControlContext;[Ljava/security/Permission;)Ljava/lang/Object;",
 			arg0.object(),
 			arg1.object(),
-			arg2
-		).object<jobject>();
+			arg2.object<jarray>()
+		);
 	}
 	java::security::AccessControlContext AccessController::getContext()
 	{

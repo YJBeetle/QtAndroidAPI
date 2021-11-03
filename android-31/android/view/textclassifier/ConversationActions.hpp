@@ -6,6 +6,7 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
 
 namespace android::view::textclassifier
 {
@@ -20,12 +21,12 @@ namespace android::view::textclassifier
 		ConversationActions(QJniObject obj);
 		
 		// Constructors
-		ConversationActions(JObject arg0, jstring arg1);
+		ConversationActions(JObject arg0, JString arg1);
 		
 		// Methods
 		jint describeContents();
 		JObject getConversationActions();
-		jstring getId();
+		JString getId();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::view::textclassifier

@@ -6,6 +6,7 @@ namespace android::app::assist
 {
 	class AssistStructure_ViewNode;
 }
+class JString;
 
 namespace android::app::assist
 {
@@ -25,7 +26,7 @@ namespace android::app::assist
 		jint getHeight();
 		jint getLeft();
 		android::app::assist::AssistStructure_ViewNode getRootViewNode();
-		jstring getTitle();
+		JString getTitle();
 		jint getTop();
 		jint getWidth();
 	};

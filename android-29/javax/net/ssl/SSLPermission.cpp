@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./SSLPermission.hpp"
 
 namespace javax::net::ssl
@@ -8,18 +9,18 @@ namespace javax::net::ssl
 	SSLPermission::SSLPermission(QJniObject obj) : java::security::BasicPermission(obj) {}
 	
 	// Constructors
-	SSLPermission::SSLPermission(jstring arg0)
+	SSLPermission::SSLPermission(JString arg0)
 		: java::security::BasicPermission(
 			"javax.net.ssl.SSLPermission",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	SSLPermission::SSLPermission(jstring arg0, jstring arg1)
+	SSLPermission::SSLPermission(JString arg0, JString arg1)
 		: java::security::BasicPermission(
 			"javax.net.ssl.SSLPermission",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		) {}
 	
 	// Methods

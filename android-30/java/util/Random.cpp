@@ -1,5 +1,8 @@
+#include "../../JByteArray.hpp"
+#include "../../JArray.hpp"
 #include "../io/ObjectInputStream.hpp"
 #include "../io/ObjectOutputStream.hpp"
+#include "../../JString.hpp"
 #include "./concurrent/atomic/AtomicLong.hpp"
 #include "./Random.hpp"
 
@@ -133,12 +136,12 @@ namespace java::util
 			"()Z"
 		);
 	}
-	void Random::nextBytes(jbyteArray arg0)
+	void Random::nextBytes(JByteArray arg0)
 	{
 		callMethod<void>(
 			"nextBytes",
 			"([B)V",
-			arg0
+			arg0.object<jbyteArray>()
 		);
 	}
 	jdouble Random::nextDouble()

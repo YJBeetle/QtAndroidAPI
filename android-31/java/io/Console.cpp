@@ -1,6 +1,10 @@
+#include "../../JCharArray.hpp"
+#include "../../JObjectArray.hpp"
 #include "./PrintWriter.hpp"
 #include "./Reader.hpp"
 #include "./Writer.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "../nio/charset/Charset.hpp"
 #include "../util/Formatter.hpp"
 #include "./Console.hpp"
@@ -22,55 +26,55 @@ namespace java::io
 			"()V"
 		);
 	}
-	java::io::Console Console::format(jstring arg0, jobjectArray arg1)
+	java::io::Console Console::format(JString arg0, JObjectArray arg1)
 	{
 		return callObjectMethod(
 			"format",
 			"(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/Console;",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jobjectArray>()
 		);
 	}
-	java::io::Console Console::printf(jstring arg0, jobjectArray arg1)
+	java::io::Console Console::printf(JString arg0, JObjectArray arg1)
 	{
 		return callObjectMethod(
 			"printf",
 			"(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/Console;",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jobjectArray>()
 		);
 	}
-	jstring Console::readLine()
+	JString Console::readLine()
 	{
 		return callObjectMethod(
 			"readLine",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Console::readLine(jstring arg0, jobjectArray arg1)
+	JString Console::readLine(JString arg0, JObjectArray arg1)
 	{
 		return callObjectMethod(
 			"readLine",
 			"(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;",
-			arg0,
-			arg1
-		).object<jstring>();
+			arg0.object<jstring>(),
+			arg1.object<jobjectArray>()
+		);
 	}
-	jcharArray Console::readPassword()
+	JCharArray Console::readPassword()
 	{
 		return callObjectMethod(
 			"readPassword",
 			"()[C"
-		).object<jcharArray>();
+		);
 	}
-	jcharArray Console::readPassword(jstring arg0, jobjectArray arg1)
+	JCharArray Console::readPassword(JString arg0, JObjectArray arg1)
 	{
 		return callObjectMethod(
 			"readPassword",
 			"(Ljava/lang/String;[Ljava/lang/Object;)[C",
-			arg0,
-			arg1
-		).object<jcharArray>();
+			arg0.object<jstring>(),
+			arg1.object<jobjectArray>()
+		);
 	}
 	java::io::Reader Console::reader()
 	{

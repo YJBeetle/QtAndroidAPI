@@ -2,6 +2,9 @@
 
 #include "../../JObject.hpp"
 
+class JByteArray;
+class JObject;
+class JString;
 namespace java::security
 {
 	class KeyRep_Type;
@@ -19,7 +22,7 @@ namespace java::security
 		KeyRep(QJniObject obj);
 		
 		// Constructors
-		KeyRep(java::security::KeyRep_Type arg0, jstring arg1, jstring arg2, jbyteArray arg3);
+		KeyRep(java::security::KeyRep_Type arg0, JString arg1, JString arg2, JByteArray arg3);
 		
 		// Methods
 	};

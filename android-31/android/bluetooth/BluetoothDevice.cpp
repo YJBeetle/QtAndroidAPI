@@ -1,3 +1,5 @@
+#include "../../JByteArray.hpp"
+#include "../../JArray.hpp"
 #include "./BluetoothClass.hpp"
 #include "./BluetoothGatt.hpp"
 #include "./BluetoothGattCallback.hpp"
@@ -5,91 +7,93 @@
 #include "../content/Context.hpp"
 #include "../os/Handler.hpp"
 #include "../os/Parcel.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "../../java/util/UUID.hpp"
 #include "./BluetoothDevice.hpp"
 
 namespace android::bluetooth
 {
 	// Fields
-	jstring BluetoothDevice::ACTION_ACL_CONNECTED()
+	JString BluetoothDevice::ACTION_ACL_CONNECTED()
 	{
 		return getStaticObjectField(
 			"android.bluetooth.BluetoothDevice",
 			"ACTION_ACL_CONNECTED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring BluetoothDevice::ACTION_ACL_DISCONNECTED()
+	JString BluetoothDevice::ACTION_ACL_DISCONNECTED()
 	{
 		return getStaticObjectField(
 			"android.bluetooth.BluetoothDevice",
 			"ACTION_ACL_DISCONNECTED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring BluetoothDevice::ACTION_ACL_DISCONNECT_REQUESTED()
+	JString BluetoothDevice::ACTION_ACL_DISCONNECT_REQUESTED()
 	{
 		return getStaticObjectField(
 			"android.bluetooth.BluetoothDevice",
 			"ACTION_ACL_DISCONNECT_REQUESTED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring BluetoothDevice::ACTION_ALIAS_CHANGED()
+	JString BluetoothDevice::ACTION_ALIAS_CHANGED()
 	{
 		return getStaticObjectField(
 			"android.bluetooth.BluetoothDevice",
 			"ACTION_ALIAS_CHANGED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring BluetoothDevice::ACTION_BOND_STATE_CHANGED()
+	JString BluetoothDevice::ACTION_BOND_STATE_CHANGED()
 	{
 		return getStaticObjectField(
 			"android.bluetooth.BluetoothDevice",
 			"ACTION_BOND_STATE_CHANGED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring BluetoothDevice::ACTION_CLASS_CHANGED()
+	JString BluetoothDevice::ACTION_CLASS_CHANGED()
 	{
 		return getStaticObjectField(
 			"android.bluetooth.BluetoothDevice",
 			"ACTION_CLASS_CHANGED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring BluetoothDevice::ACTION_FOUND()
+	JString BluetoothDevice::ACTION_FOUND()
 	{
 		return getStaticObjectField(
 			"android.bluetooth.BluetoothDevice",
 			"ACTION_FOUND",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring BluetoothDevice::ACTION_NAME_CHANGED()
+	JString BluetoothDevice::ACTION_NAME_CHANGED()
 	{
 		return getStaticObjectField(
 			"android.bluetooth.BluetoothDevice",
 			"ACTION_NAME_CHANGED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring BluetoothDevice::ACTION_PAIRING_REQUEST()
+	JString BluetoothDevice::ACTION_PAIRING_REQUEST()
 	{
 		return getStaticObjectField(
 			"android.bluetooth.BluetoothDevice",
 			"ACTION_PAIRING_REQUEST",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring BluetoothDevice::ACTION_UUID()
+	JString BluetoothDevice::ACTION_UUID()
 	{
 		return getStaticObjectField(
 			"android.bluetooth.BluetoothDevice",
 			"ACTION_UUID",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint BluetoothDevice::ADDRESS_TYPE_PUBLIC()
 	{
@@ -169,77 +173,77 @@ namespace android::bluetooth
 			"ERROR"
 		);
 	}
-	jstring BluetoothDevice::EXTRA_BOND_STATE()
+	JString BluetoothDevice::EXTRA_BOND_STATE()
 	{
 		return getStaticObjectField(
 			"android.bluetooth.BluetoothDevice",
 			"EXTRA_BOND_STATE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring BluetoothDevice::EXTRA_CLASS()
+	JString BluetoothDevice::EXTRA_CLASS()
 	{
 		return getStaticObjectField(
 			"android.bluetooth.BluetoothDevice",
 			"EXTRA_CLASS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring BluetoothDevice::EXTRA_DEVICE()
+	JString BluetoothDevice::EXTRA_DEVICE()
 	{
 		return getStaticObjectField(
 			"android.bluetooth.BluetoothDevice",
 			"EXTRA_DEVICE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring BluetoothDevice::EXTRA_NAME()
+	JString BluetoothDevice::EXTRA_NAME()
 	{
 		return getStaticObjectField(
 			"android.bluetooth.BluetoothDevice",
 			"EXTRA_NAME",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring BluetoothDevice::EXTRA_PAIRING_KEY()
+	JString BluetoothDevice::EXTRA_PAIRING_KEY()
 	{
 		return getStaticObjectField(
 			"android.bluetooth.BluetoothDevice",
 			"EXTRA_PAIRING_KEY",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring BluetoothDevice::EXTRA_PAIRING_VARIANT()
+	JString BluetoothDevice::EXTRA_PAIRING_VARIANT()
 	{
 		return getStaticObjectField(
 			"android.bluetooth.BluetoothDevice",
 			"EXTRA_PAIRING_VARIANT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring BluetoothDevice::EXTRA_PREVIOUS_BOND_STATE()
+	JString BluetoothDevice::EXTRA_PREVIOUS_BOND_STATE()
 	{
 		return getStaticObjectField(
 			"android.bluetooth.BluetoothDevice",
 			"EXTRA_PREVIOUS_BOND_STATE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring BluetoothDevice::EXTRA_RSSI()
+	JString BluetoothDevice::EXTRA_RSSI()
 	{
 		return getStaticObjectField(
 			"android.bluetooth.BluetoothDevice",
 			"EXTRA_RSSI",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring BluetoothDevice::EXTRA_UUID()
+	JString BluetoothDevice::EXTRA_UUID()
 	{
 		return getStaticObjectField(
 			"android.bluetooth.BluetoothDevice",
 			"EXTRA_UUID",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint BluetoothDevice::PAIRING_VARIANT_PASSKEY_CONFIRMATION()
 	{
@@ -438,12 +442,12 @@ namespace android::bluetooth
 			"()I"
 		);
 	}
-	jboolean BluetoothDevice::equals(jobject arg0)
+	jboolean BluetoothDevice::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jboolean BluetoothDevice::fetchUuidsWithSdp()
@@ -453,19 +457,19 @@ namespace android::bluetooth
 			"()Z"
 		);
 	}
-	jstring BluetoothDevice::getAddress()
+	JString BluetoothDevice::getAddress()
 	{
 		return callObjectMethod(
 			"getAddress",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring BluetoothDevice::getAlias()
+	JString BluetoothDevice::getAlias()
 	{
 		return callObjectMethod(
 			"getAlias",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::bluetooth::BluetoothClass BluetoothDevice::getBluetoothClass()
 	{
@@ -481,12 +485,12 @@ namespace android::bluetooth
 			"()I"
 		);
 	}
-	jstring BluetoothDevice::getName()
+	JString BluetoothDevice::getName()
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint BluetoothDevice::getType()
 	{
@@ -495,12 +499,12 @@ namespace android::bluetooth
 			"()I"
 		);
 	}
-	jarray BluetoothDevice::getUuids()
+	JArray BluetoothDevice::getUuids()
 	{
 		return callObjectMethod(
 			"getUuids",
 			"()[Landroid/os/ParcelUuid;"
-		).object<jarray>();
+		);
 	}
 	jint BluetoothDevice::hashCode()
 	{
@@ -509,12 +513,12 @@ namespace android::bluetooth
 			"()I"
 		);
 	}
-	jint BluetoothDevice::setAlias(jstring arg0)
+	jint BluetoothDevice::setAlias(JString arg0)
 	{
 		return callMethod<jint>(
 			"setAlias",
 			"(Ljava/lang/String;)I",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	jboolean BluetoothDevice::setPairingConfirmation(jboolean arg0)
@@ -525,20 +529,20 @@ namespace android::bluetooth
 			arg0
 		);
 	}
-	jboolean BluetoothDevice::setPin(jbyteArray arg0)
+	jboolean BluetoothDevice::setPin(JByteArray arg0)
 	{
 		return callMethod<jboolean>(
 			"setPin",
 			"([B)Z",
-			arg0
+			arg0.object<jbyteArray>()
 		);
 	}
-	jstring BluetoothDevice::toString()
+	JString BluetoothDevice::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void BluetoothDevice::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

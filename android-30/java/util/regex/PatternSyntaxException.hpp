@@ -1,10 +1,8 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "../../lang/Exception.hpp"
-#include "../../lang/RuntimeException.hpp"
 #include "../../lang/IllegalArgumentException.hpp"
 
+class JString;
 
 namespace java::util::regex
 {
@@ -18,13 +16,13 @@ namespace java::util::regex
 		PatternSyntaxException(QJniObject obj);
 		
 		// Constructors
-		PatternSyntaxException(jstring arg0, jstring arg1, jint arg2);
+		PatternSyntaxException(JString arg0, JString arg1, jint arg2);
 		
 		// Methods
-		jstring getDescription();
+		JString getDescription();
 		jint getIndex();
-		jstring getMessage();
-		jstring getPattern();
+		JString getMessage();
+		JString getPattern();
 	};
 } // namespace java::util::regex
 

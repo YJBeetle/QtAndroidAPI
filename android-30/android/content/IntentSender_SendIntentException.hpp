@@ -1,13 +1,12 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../../java/lang/Exception.hpp"
 #include "../util/AndroidException.hpp"
 
 namespace java::lang
 {
 	class Exception;
 }
+class JString;
 
 namespace android::content
 {
@@ -23,7 +22,7 @@ namespace android::content
 		// Constructors
 		IntentSender_SendIntentException();
 		IntentSender_SendIntentException(java::lang::Exception arg0);
-		IntentSender_SendIntentException(jstring arg0);
+		IntentSender_SendIntentException(JString arg0);
 		
 		// Methods
 	};

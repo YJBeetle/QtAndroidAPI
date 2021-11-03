@@ -1,4 +1,5 @@
 #include "./SQLiteDatabase_OpenParams.hpp"
+#include "../../../JString.hpp"
 #include "./SQLiteDatabase_OpenParams_Builder.hpp"
 
 namespace android::database::sqlite
@@ -69,12 +70,12 @@ namespace android::database::sqlite
 			arg0
 		);
 	}
-	android::database::sqlite::SQLiteDatabase_OpenParams_Builder SQLiteDatabase_OpenParams_Builder::setJournalMode(jstring arg0)
+	android::database::sqlite::SQLiteDatabase_OpenParams_Builder SQLiteDatabase_OpenParams_Builder::setJournalMode(JString arg0)
 	{
 		return callObjectMethod(
 			"setJournalMode",
 			"(Ljava/lang/String;)Landroid/database/sqlite/SQLiteDatabase$OpenParams$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::database::sqlite::SQLiteDatabase_OpenParams_Builder SQLiteDatabase_OpenParams_Builder::setLookasideConfig(jint arg0, jint arg1)
@@ -94,12 +95,12 @@ namespace android::database::sqlite
 			arg0
 		);
 	}
-	android::database::sqlite::SQLiteDatabase_OpenParams_Builder SQLiteDatabase_OpenParams_Builder::setSynchronousMode(jstring arg0)
+	android::database::sqlite::SQLiteDatabase_OpenParams_Builder SQLiteDatabase_OpenParams_Builder::setSynchronousMode(JString arg0)
 	{
 		return callObjectMethod(
 			"setSynchronousMode",
 			"(Ljava/lang/String;)Landroid/database/sqlite/SQLiteDatabase$OpenParams$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 } // namespace android::database::sqlite

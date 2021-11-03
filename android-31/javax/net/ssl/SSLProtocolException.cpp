@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./SSLProtocolException.hpp"
 
 namespace javax::net::ssl
@@ -8,11 +9,11 @@ namespace javax::net::ssl
 	SSLProtocolException::SSLProtocolException(QJniObject obj) : javax::net::ssl::SSLException(obj) {}
 	
 	// Constructors
-	SSLProtocolException::SSLProtocolException(jstring arg0)
+	SSLProtocolException::SSLProtocolException(JString arg0)
 		: javax::net::ssl::SSLException(
 			"javax.net.ssl.SSLProtocolException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

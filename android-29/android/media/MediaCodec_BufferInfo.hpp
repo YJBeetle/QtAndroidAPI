@@ -2,7 +2,6 @@
 
 #include "../../JObject.hpp"
 
-
 namespace android::media
 {
 	class MediaCodec_BufferInfo : public JObject

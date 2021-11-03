@@ -26,6 +26,8 @@ namespace android::os
 {
 	class UserHandle;
 }
+class JString;
+class JString;
 
 namespace android::content::pm
 {
@@ -33,7 +35,7 @@ namespace android::content::pm
 	{
 	public:
 		// Fields
-		static jstring ACTION_CAN_INTERACT_ACROSS_PROFILES_CHANGED();
+		static JString ACTION_CAN_INTERACT_ACROSS_PROFILES_CHANGED();
 		
 		// QJniObject forward
 		template<typename ...Ts> explicit CrossProfileApps(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
@@ -46,7 +48,7 @@ namespace android::content::pm
 		jboolean canRequestInteractAcrossProfiles();
 		android::content::Intent createRequestInteractAcrossProfilesIntent();
 		android::graphics::drawable::Drawable getProfileSwitchingIconDrawable(android::os::UserHandle arg0);
-		jstring getProfileSwitchingLabel(android::os::UserHandle arg0);
+		JString getProfileSwitchingLabel(android::os::UserHandle arg0);
 		JObject getTargetUserProfiles();
 		void startActivity(android::content::Intent arg0, android::os::UserHandle arg1, android::app::Activity arg2);
 		void startActivity(android::content::Intent arg0, android::os::UserHandle arg1, android::app::Activity arg2, android::os::Bundle arg3);

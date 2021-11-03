@@ -6,6 +6,7 @@ namespace java::io
 {
 	class File;
 }
+class JObject;
 namespace java::lang
 {
 	class ProcessBuilder_Redirect_Type;
@@ -31,7 +32,7 @@ namespace java::lang
 		static java::lang::ProcessBuilder_Redirect appendTo(java::io::File arg0);
 		static java::lang::ProcessBuilder_Redirect from(java::io::File arg0);
 		static java::lang::ProcessBuilder_Redirect to(java::io::File arg0);
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		java::io::File file();
 		jint hashCode();
 		java::lang::ProcessBuilder_Redirect_Type type();

@@ -1,4 +1,6 @@
 #include "../../os/Parcel.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./InlineSuggestionsResponse.hpp"
 
 namespace android::view::inputmethod
@@ -26,12 +28,12 @@ namespace android::view::inputmethod
 			"()I"
 		);
 	}
-	jboolean InlineSuggestionsResponse::equals(jobject arg0)
+	jboolean InlineSuggestionsResponse::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	JObject InlineSuggestionsResponse::getInlineSuggestions()
@@ -48,12 +50,12 @@ namespace android::view::inputmethod
 			"()I"
 		);
 	}
-	jstring InlineSuggestionsResponse::toString()
+	JString InlineSuggestionsResponse::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void InlineSuggestionsResponse::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

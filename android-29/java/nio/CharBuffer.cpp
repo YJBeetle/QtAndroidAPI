@@ -1,3 +1,7 @@
+#include "../../JCharArray.hpp"
+#include "../../JString.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./Buffer.hpp"
 #include "./ByteOrder.hpp"
 #include "./CharBuffer.hpp"
@@ -21,42 +25,42 @@ namespace java::nio
 			arg0
 		);
 	}
-	java::nio::CharBuffer CharBuffer::wrap(jcharArray arg0)
+	java::nio::CharBuffer CharBuffer::wrap(JCharArray arg0)
 	{
 		return callStaticObjectMethod(
 			"java.nio.CharBuffer",
 			"wrap",
 			"([C)Ljava/nio/CharBuffer;",
-			arg0
+			arg0.object<jcharArray>()
 		);
 	}
-	java::nio::CharBuffer CharBuffer::wrap(jstring arg0)
+	java::nio::CharBuffer CharBuffer::wrap(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"java.nio.CharBuffer",
 			"wrap",
 			"(Ljava/lang/CharSequence;)Ljava/nio/CharBuffer;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	java::nio::CharBuffer CharBuffer::wrap(jcharArray arg0, jint arg1, jint arg2)
+	java::nio::CharBuffer CharBuffer::wrap(JCharArray arg0, jint arg1, jint arg2)
 	{
 		return callStaticObjectMethod(
 			"java.nio.CharBuffer",
 			"wrap",
 			"([CII)Ljava/nio/CharBuffer;",
-			arg0,
+			arg0.object<jcharArray>(),
 			arg1,
 			arg2
 		);
 	}
-	java::nio::CharBuffer CharBuffer::wrap(jstring arg0, jint arg1, jint arg2)
+	java::nio::CharBuffer CharBuffer::wrap(JString arg0, jint arg1, jint arg2)
 	{
 		return callStaticObjectMethod(
 			"java.nio.CharBuffer",
 			"wrap",
 			"(Ljava/lang/CharSequence;II)Ljava/nio/CharBuffer;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
 			arg2
 		);
@@ -69,30 +73,30 @@ namespace java::nio
 			arg0
 		);
 	}
-	java::nio::CharBuffer CharBuffer::append(jstring arg0)
+	java::nio::CharBuffer CharBuffer::append(JString arg0)
 	{
 		return callObjectMethod(
 			"append",
 			"(Ljava/lang/CharSequence;)Ljava/nio/CharBuffer;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	java::nio::CharBuffer CharBuffer::append(jstring arg0, jint arg1, jint arg2)
+	java::nio::CharBuffer CharBuffer::append(JString arg0, jint arg1, jint arg2)
 	{
 		return callObjectMethod(
 			"append",
 			"(Ljava/lang/CharSequence;II)Ljava/nio/CharBuffer;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
 			arg2
 		);
 	}
-	jcharArray CharBuffer::array()
+	JCharArray CharBuffer::array()
 	{
 		return callObjectMethod(
 			"array",
 			"()[C"
-		).object<jcharArray>();
+		);
 	}
 	jint CharBuffer::arrayOffset()
 	{
@@ -137,12 +141,12 @@ namespace java::nio
 			"()Ljava/nio/CharBuffer;"
 		);
 	}
-	jint CharBuffer::compareTo(jobject arg0)
+	jint CharBuffer::compareTo(JObject arg0)
 	{
 		return callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Object;)I",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint CharBuffer::compareTo(java::nio::CharBuffer arg0)
@@ -160,12 +164,12 @@ namespace java::nio
 			"()Ljava/nio/CharBuffer;"
 		);
 	}
-	jboolean CharBuffer::equals(jobject arg0)
+	jboolean CharBuffer::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	java::nio::CharBuffer CharBuffer::flip()
@@ -190,40 +194,40 @@ namespace java::nio
 			arg0
 		);
 	}
-	java::nio::CharBuffer CharBuffer::get(jcharArray arg0)
+	java::nio::CharBuffer CharBuffer::get(JCharArray arg0)
 	{
 		return callObjectMethod(
 			"get",
 			"([C)Ljava/nio/CharBuffer;",
-			arg0
+			arg0.object<jcharArray>()
 		);
 	}
-	java::nio::CharBuffer CharBuffer::get(jint arg0, jcharArray arg1)
+	java::nio::CharBuffer CharBuffer::get(jint arg0, JCharArray arg1)
 	{
 		return callObjectMethod(
 			"get",
 			"(I[C)Ljava/nio/CharBuffer;",
 			arg0,
-			arg1
+			arg1.object<jcharArray>()
 		);
 	}
-	java::nio::CharBuffer CharBuffer::get(jcharArray arg0, jint arg1, jint arg2)
+	java::nio::CharBuffer CharBuffer::get(JCharArray arg0, jint arg1, jint arg2)
 	{
 		return callObjectMethod(
 			"get",
 			"([CII)Ljava/nio/CharBuffer;",
-			arg0,
+			arg0.object<jcharArray>(),
 			arg1,
 			arg2
 		);
 	}
-	java::nio::CharBuffer CharBuffer::get(jint arg0, jcharArray arg1, jint arg2, jint arg3)
+	java::nio::CharBuffer CharBuffer::get(jint arg0, JCharArray arg1, jint arg2, jint arg3)
 	{
 		return callObjectMethod(
 			"get",
 			"(I[CII)Ljava/nio/CharBuffer;",
 			arg0,
-			arg1,
+			arg1.object<jcharArray>(),
 			arg2,
 			arg3
 		);
@@ -301,12 +305,12 @@ namespace java::nio
 			arg0
 		);
 	}
-	java::nio::CharBuffer CharBuffer::put(jcharArray arg0)
+	java::nio::CharBuffer CharBuffer::put(JCharArray arg0)
 	{
 		return callObjectMethod(
 			"put",
 			"([C)Ljava/nio/CharBuffer;",
-			arg0
+			arg0.object<jcharArray>()
 		);
 	}
 	java::nio::CharBuffer CharBuffer::put(jchar arg0)
@@ -317,12 +321,12 @@ namespace java::nio
 			arg0
 		);
 	}
-	java::nio::CharBuffer CharBuffer::put(jstring arg0)
+	java::nio::CharBuffer CharBuffer::put(JString arg0)
 	{
 		return callObjectMethod(
 			"put",
 			"(Ljava/lang/String;)Ljava/nio/CharBuffer;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	java::nio::CharBuffer CharBuffer::put(java::nio::CharBuffer arg0)
@@ -333,13 +337,13 @@ namespace java::nio
 			arg0.object()
 		);
 	}
-	java::nio::CharBuffer CharBuffer::put(jint arg0, jcharArray arg1)
+	java::nio::CharBuffer CharBuffer::put(jint arg0, JCharArray arg1)
 	{
 		return callObjectMethod(
 			"put",
 			"(I[C)Ljava/nio/CharBuffer;",
 			arg0,
-			arg1
+			arg1.object<jcharArray>()
 		);
 	}
 	java::nio::CharBuffer CharBuffer::put(jint arg0, jchar arg1)
@@ -351,33 +355,33 @@ namespace java::nio
 			arg1
 		);
 	}
-	java::nio::CharBuffer CharBuffer::put(jcharArray arg0, jint arg1, jint arg2)
+	java::nio::CharBuffer CharBuffer::put(JCharArray arg0, jint arg1, jint arg2)
 	{
 		return callObjectMethod(
 			"put",
 			"([CII)Ljava/nio/CharBuffer;",
-			arg0,
+			arg0.object<jcharArray>(),
 			arg1,
 			arg2
 		);
 	}
-	java::nio::CharBuffer CharBuffer::put(jstring arg0, jint arg1, jint arg2)
+	java::nio::CharBuffer CharBuffer::put(JString arg0, jint arg1, jint arg2)
 	{
 		return callObjectMethod(
 			"put",
 			"(Ljava/lang/String;II)Ljava/nio/CharBuffer;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
 			arg2
 		);
 	}
-	java::nio::CharBuffer CharBuffer::put(jint arg0, jcharArray arg1, jint arg2, jint arg3)
+	java::nio::CharBuffer CharBuffer::put(jint arg0, JCharArray arg1, jint arg2, jint arg3)
 	{
 		return callObjectMethod(
 			"put",
 			"(I[CII)Ljava/nio/CharBuffer;",
 			arg0,
-			arg1,
+			arg1.object<jcharArray>(),
 			arg2,
 			arg3
 		);
@@ -440,12 +444,12 @@ namespace java::nio
 			arg1
 		);
 	}
-	jstring CharBuffer::toString()
+	JString CharBuffer::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::nio
 

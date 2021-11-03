@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JArray;
+class JArray;
 namespace android::content
 {
 	class ContentProvider;
@@ -30,6 +32,7 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
 
 namespace android::content
 {
@@ -47,11 +50,11 @@ namespace android::content
 		
 		// Methods
 		static android::content::ContentProviderOperation_Builder newAssertQuery(android::net::Uri arg0);
-		static android::content::ContentProviderOperation_Builder newCall(android::net::Uri arg0, jstring arg1, jstring arg2);
+		static android::content::ContentProviderOperation_Builder newCall(android::net::Uri arg0, JString arg1, JString arg2);
 		static android::content::ContentProviderOperation_Builder newDelete(android::net::Uri arg0);
 		static android::content::ContentProviderOperation_Builder newInsert(android::net::Uri arg0);
 		static android::content::ContentProviderOperation_Builder newUpdate(android::net::Uri arg0);
-		android::content::ContentProviderResult apply(android::content::ContentProvider arg0, jarray arg1, jint arg2);
+		android::content::ContentProviderResult apply(android::content::ContentProvider arg0, JArray arg1, jint arg2);
 		jint describeContents();
 		android::net::Uri getUri();
 		jboolean isAssertQuery();
@@ -63,10 +66,10 @@ namespace android::content
 		jboolean isUpdate();
 		jboolean isWriteOperation();
 		jboolean isYieldAllowed();
-		android::os::Bundle resolveExtrasBackReferences(jarray arg0, jint arg1);
-		jarray resolveSelectionArgsBackReferences(jarray arg0, jint arg1);
-		android::content::ContentValues resolveValueBackReferences(jarray arg0, jint arg1);
-		jstring toString();
+		android::os::Bundle resolveExtrasBackReferences(JArray arg0, jint arg1);
+		JArray resolveSelectionArgsBackReferences(JArray arg0, jint arg1);
+		android::content::ContentValues resolveValueBackReferences(JArray arg0, jint arg1);
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::content

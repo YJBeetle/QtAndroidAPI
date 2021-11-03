@@ -2,6 +2,7 @@
 #include "./LocaleData_PaperSize.hpp"
 #include "./ULocale.hpp"
 #include "./VersionInfo.hpp"
+#include "../../../JString.hpp"
 #include "./LocaleData.hpp"
 
 namespace android::icu::util
@@ -85,13 +86,13 @@ namespace android::icu::util
 			arg0.object()
 		);
 	}
-	jstring LocaleData::getDelimiter(jint arg0)
+	JString LocaleData::getDelimiter(jint arg0)
 	{
 		return callObjectMethod(
 			"getDelimiter",
 			"(I)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
 	jboolean LocaleData::getNoSubstitute()
 	{

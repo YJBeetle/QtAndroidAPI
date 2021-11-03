@@ -1,12 +1,14 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "../Random.hpp"
 
+class JArray;
 namespace java::io
 {
 	class ObjectOutputStream;
 }
+class JObject;
+class JString;
 namespace java::lang
 {
 	class Thread;

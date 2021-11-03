@@ -1,3 +1,5 @@
+#include "../../../JArray.hpp"
+#include "../../../JObject.hpp"
 #include "../../net/Socket.hpp"
 #include "../../net/SocketAddress.hpp"
 #include "../ByteBuffer.hpp"
@@ -99,31 +101,31 @@ namespace java::nio::channels
 			arg0.object()
 		);
 	}
-	jlong SocketChannel::read(jarray arg0)
+	jlong SocketChannel::read(JArray arg0)
 	{
 		return callMethod<jlong>(
 			"read",
 			"([Ljava/nio/ByteBuffer;)J",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
-	jlong SocketChannel::read(jarray arg0, jint arg1, jint arg2)
+	jlong SocketChannel::read(JArray arg0, jint arg1, jint arg2)
 	{
 		return callMethod<jlong>(
 			"read",
 			"([Ljava/nio/ByteBuffer;II)J",
-			arg0,
+			arg0.object<jarray>(),
 			arg1,
 			arg2
 		);
 	}
-	java::nio::channels::SocketChannel SocketChannel::setOption(JObject arg0, jobject arg1)
+	java::nio::channels::SocketChannel SocketChannel::setOption(JObject arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"setOption",
 			"(Ljava/net/SocketOption;Ljava/lang/Object;)Ljava/nio/channels/SocketChannel;",
 			arg0.object(),
-			arg1
+			arg1.object<jobject>()
 		);
 	}
 	java::nio::channels::SocketChannel SocketChannel::shutdownInput()
@@ -162,20 +164,20 @@ namespace java::nio::channels
 			arg0.object()
 		);
 	}
-	jlong SocketChannel::write(jarray arg0)
+	jlong SocketChannel::write(JArray arg0)
 	{
 		return callMethod<jlong>(
 			"write",
 			"([Ljava/nio/ByteBuffer;)J",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
-	jlong SocketChannel::write(jarray arg0, jint arg1, jint arg2)
+	jlong SocketChannel::write(JArray arg0, jint arg1, jint arg2)
 	{
 		return callMethod<jlong>(
 			"write",
 			"([Ljava/nio/ByteBuffer;II)J",
-			arg0,
+			arg0.object<jarray>(),
 			arg1,
 			arg2
 		);

@@ -1,3 +1,5 @@
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
 #include "./LocaleDisplayNames_DialectHandling.hpp"
 
 namespace android::icu::text
@@ -26,22 +28,22 @@ namespace android::icu::text
 	// Constructors
 	
 	// Methods
-	android::icu::text::LocaleDisplayNames_DialectHandling LocaleDisplayNames_DialectHandling::valueOf(jstring arg0)
+	android::icu::text::LocaleDisplayNames_DialectHandling LocaleDisplayNames_DialectHandling::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.icu.text.LocaleDisplayNames$DialectHandling",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/icu/text/LocaleDisplayNames$DialectHandling;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray LocaleDisplayNames_DialectHandling::values()
+	JArray LocaleDisplayNames_DialectHandling::values()
 	{
 		return callStaticObjectMethod(
 			"android.icu.text.LocaleDisplayNames$DialectHandling",
 			"values",
 			"()[Landroid/icu/text/LocaleDisplayNames$DialectHandling;"
-		).object<jarray>();
+		);
 	}
 } // namespace android::icu::text
 

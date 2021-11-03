@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JString;
 
 namespace android::service::autofill
 {
@@ -18,7 +19,7 @@ namespace android::service::autofill
 		
 		// Methods
 		JObject getMatches();
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::service::autofill
 

@@ -6,6 +6,7 @@ namespace android::text
 {
 	class TextPaint;
 }
+class JString;
 
 namespace android::text
 {
@@ -21,7 +22,7 @@ namespace android::text
 		// Constructors
 		
 		// Methods
-		static void shapeText(jstring arg0, jint arg1, jint arg2, JObject arg3, android::text::TextPaint arg4, JObject arg5);
+		static void shapeText(JString arg0, jint arg1, jint arg2, JObject arg3, android::text::TextPaint arg4, JObject arg5);
 	};
 } // namespace android::text
 

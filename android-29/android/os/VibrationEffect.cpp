@@ -1,3 +1,5 @@
+#include "../../JIntArray.hpp"
+#include "../../JLongArray.hpp"
 #include "./VibrationEffect.hpp"
 
 namespace android::os
@@ -72,24 +74,24 @@ namespace android::os
 			arg0
 		);
 	}
-	android::os::VibrationEffect VibrationEffect::createWaveform(jlongArray arg0, jint arg1)
+	android::os::VibrationEffect VibrationEffect::createWaveform(JLongArray arg0, jint arg1)
 	{
 		return callStaticObjectMethod(
 			"android.os.VibrationEffect",
 			"createWaveform",
 			"([JI)Landroid/os/VibrationEffect;",
-			arg0,
+			arg0.object<jlongArray>(),
 			arg1
 		);
 	}
-	android::os::VibrationEffect VibrationEffect::createWaveform(jlongArray arg0, jintArray arg1, jint arg2)
+	android::os::VibrationEffect VibrationEffect::createWaveform(JLongArray arg0, JIntArray arg1, jint arg2)
 	{
 		return callStaticObjectMethod(
 			"android.os.VibrationEffect",
 			"createWaveform",
 			"([J[II)Landroid/os/VibrationEffect;",
-			arg0,
-			arg1,
+			arg0.object<jlongArray>(),
+			arg1.object<jintArray>(),
 			arg2
 		);
 	}

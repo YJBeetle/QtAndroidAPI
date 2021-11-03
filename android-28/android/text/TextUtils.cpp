@@ -1,7 +1,14 @@
+#include "../../JCharArray.hpp"
+#include "../../JArray.hpp"
+#include "../../JObjectArray.hpp"
+#include "../../JArray.hpp"
 #include "../content/Context.hpp"
 #include "../os/Parcel.hpp"
 #include "./TextPaint.hpp"
 #include "./TextUtils_TruncateAt.hpp"
+#include "../../JString.hpp"
+#include "../../JClass.hpp"
+#include "../../JString.hpp"
 #include "../../java/util/Locale.hpp"
 #include "../../java/util/regex/Pattern.hpp"
 #include "./TextUtils.hpp"
@@ -45,29 +52,29 @@ namespace android::text
 	// Constructors
 	
 	// Methods
-	jstring TextUtils::commaEllipsize(jstring arg0, android::text::TextPaint arg1, jfloat arg2, jstring arg3, jstring arg4)
+	JString TextUtils::commaEllipsize(JString arg0, android::text::TextPaint arg1, jfloat arg2, JString arg3, JString arg4)
 	{
 		return callStaticObjectMethod(
 			"android.text.TextUtils",
 			"commaEllipsize",
 			"(Ljava/lang/CharSequence;Landroid/text/TextPaint;FLjava/lang/String;Ljava/lang/String;)Ljava/lang/CharSequence;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
 			arg2,
-			arg3,
-			arg4
-		).object<jstring>();
+			arg3.object<jstring>(),
+			arg4.object<jstring>()
+		);
 	}
-	jstring TextUtils::concat(jarray arg0)
+	JString TextUtils::concat(JArray arg0)
 	{
 		return callStaticObjectMethod(
 			"android.text.TextUtils",
 			"concat",
 			"([Ljava/lang/CharSequence;)Ljava/lang/CharSequence;",
-			arg0
-		).object<jstring>();
+			arg0.object<jarray>()
+		);
 	}
-	void TextUtils::copySpansFrom(JObject arg0, jint arg1, jint arg2, jclass arg3, JObject arg4, jint arg5)
+	void TextUtils::copySpansFrom(JObject arg0, jint arg1, jint arg2, JClass arg3, JObject arg4, jint arg5)
 	{
 		callStaticMethod<void>(
 			"android.text.TextUtils",
@@ -76,89 +83,89 @@ namespace android::text
 			arg0.object(),
 			arg1,
 			arg2,
-			arg3,
+			arg3.object<jclass>(),
 			arg4.object(),
 			arg5
 		);
 	}
-	void TextUtils::dumpSpans(jstring arg0, JObject arg1, jstring arg2)
+	void TextUtils::dumpSpans(JString arg0, JObject arg1, JString arg2)
 	{
 		callStaticMethod<void>(
 			"android.text.TextUtils",
 			"dumpSpans",
 			"(Ljava/lang/CharSequence;Landroid/util/Printer;Ljava/lang/String;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
-			arg2
+			arg2.object<jstring>()
 		);
 	}
-	jstring TextUtils::ellipsize(jstring arg0, android::text::TextPaint arg1, jfloat arg2, android::text::TextUtils_TruncateAt arg3)
+	JString TextUtils::ellipsize(JString arg0, android::text::TextPaint arg1, jfloat arg2, android::text::TextUtils_TruncateAt arg3)
 	{
 		return callStaticObjectMethod(
 			"android.text.TextUtils",
 			"ellipsize",
 			"(Ljava/lang/CharSequence;Landroid/text/TextPaint;FLandroid/text/TextUtils$TruncateAt;)Ljava/lang/CharSequence;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
 			arg2,
 			arg3.object()
-		).object<jstring>();
+		);
 	}
-	jstring TextUtils::ellipsize(jstring arg0, android::text::TextPaint arg1, jfloat arg2, android::text::TextUtils_TruncateAt arg3, jboolean arg4, JObject arg5)
+	JString TextUtils::ellipsize(JString arg0, android::text::TextPaint arg1, jfloat arg2, android::text::TextUtils_TruncateAt arg3, jboolean arg4, JObject arg5)
 	{
 		return callStaticObjectMethod(
 			"android.text.TextUtils",
 			"ellipsize",
 			"(Ljava/lang/CharSequence;Landroid/text/TextPaint;FLandroid/text/TextUtils$TruncateAt;ZLandroid/text/TextUtils$EllipsizeCallback;)Ljava/lang/CharSequence;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
 			arg2,
 			arg3.object(),
 			arg4,
 			arg5.object()
-		).object<jstring>();
+		);
 	}
-	jboolean TextUtils::equals(jstring arg0, jstring arg1)
+	jboolean TextUtils::equals(JString arg0, JString arg1)
 	{
 		return callStaticMethod<jboolean>(
 			"android.text.TextUtils",
 			"equals",
 			"(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		);
 	}
-	jstring TextUtils::expandTemplate(jstring arg0, jarray arg1)
+	JString TextUtils::expandTemplate(JString arg0, JArray arg1)
 	{
 		return callStaticObjectMethod(
 			"android.text.TextUtils",
 			"expandTemplate",
 			"(Ljava/lang/CharSequence;[Ljava/lang/CharSequence;)Ljava/lang/CharSequence;",
-			arg0,
-			arg1
-		).object<jstring>();
+			arg0.object<jstring>(),
+			arg1.object<jarray>()
+		);
 	}
-	jint TextUtils::getCapsMode(jstring arg0, jint arg1, jint arg2)
+	jint TextUtils::getCapsMode(JString arg0, jint arg1, jint arg2)
 	{
 		return callStaticMethod<jint>(
 			"android.text.TextUtils",
 			"getCapsMode",
 			"(Ljava/lang/CharSequence;II)I",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
 			arg2
 		);
 	}
-	void TextUtils::getChars(jstring arg0, jint arg1, jint arg2, jcharArray arg3, jint arg4)
+	void TextUtils::getChars(JString arg0, jint arg1, jint arg2, JCharArray arg3, jint arg4)
 	{
 		callStaticMethod<void>(
 			"android.text.TextUtils",
 			"getChars",
 			"(Ljava/lang/CharSequence;II[CI)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
 			arg2,
-			arg3,
+			arg3.object<jcharArray>(),
 			arg4
 		);
 	}
@@ -171,137 +178,137 @@ namespace android::text
 			arg0.object()
 		);
 	}
-	jint TextUtils::getOffsetAfter(jstring arg0, jint arg1)
+	jint TextUtils::getOffsetAfter(JString arg0, jint arg1)
 	{
 		return callStaticMethod<jint>(
 			"android.text.TextUtils",
 			"getOffsetAfter",
 			"(Ljava/lang/CharSequence;I)I",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
-	jint TextUtils::getOffsetBefore(jstring arg0, jint arg1)
+	jint TextUtils::getOffsetBefore(JString arg0, jint arg1)
 	{
 		return callStaticMethod<jint>(
 			"android.text.TextUtils",
 			"getOffsetBefore",
 			"(Ljava/lang/CharSequence;I)I",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
-	jstring TextUtils::getReverse(jstring arg0, jint arg1, jint arg2)
+	JString TextUtils::getReverse(JString arg0, jint arg1, jint arg2)
 	{
 		return callStaticObjectMethod(
 			"android.text.TextUtils",
 			"getReverse",
 			"(Ljava/lang/CharSequence;II)Ljava/lang/CharSequence;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
 			arg2
-		).object<jstring>();
+		);
 	}
-	jint TextUtils::getTrimmedLength(jstring arg0)
+	jint TextUtils::getTrimmedLength(JString arg0)
 	{
 		return callStaticMethod<jint>(
 			"android.text.TextUtils",
 			"getTrimmedLength",
 			"(Ljava/lang/CharSequence;)I",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jstring TextUtils::htmlEncode(jstring arg0)
+	JString TextUtils::htmlEncode(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.text.TextUtils",
 			"htmlEncode",
 			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
+			arg0.object<jstring>()
+		);
 	}
-	jint TextUtils::indexOf(jstring arg0, jchar arg1)
+	jint TextUtils::indexOf(JString arg0, jchar arg1)
 	{
 		return callStaticMethod<jint>(
 			"android.text.TextUtils",
 			"indexOf",
 			"(Ljava/lang/CharSequence;C)I",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
-	jint TextUtils::indexOf(jstring arg0, jstring arg1)
+	jint TextUtils::indexOf(JString arg0, JString arg1)
 	{
 		return callStaticMethod<jint>(
 			"android.text.TextUtils",
 			"indexOf",
 			"(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)I",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		);
 	}
-	jint TextUtils::indexOf(jstring arg0, jchar arg1, jint arg2)
+	jint TextUtils::indexOf(JString arg0, jchar arg1, jint arg2)
 	{
 		return callStaticMethod<jint>(
 			"android.text.TextUtils",
 			"indexOf",
 			"(Ljava/lang/CharSequence;CI)I",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
 			arg2
 		);
 	}
-	jint TextUtils::indexOf(jstring arg0, jstring arg1, jint arg2)
+	jint TextUtils::indexOf(JString arg0, JString arg1, jint arg2)
 	{
 		return callStaticMethod<jint>(
 			"android.text.TextUtils",
 			"indexOf",
 			"(Ljava/lang/CharSequence;Ljava/lang/CharSequence;I)I",
-			arg0,
-			arg1,
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
 			arg2
 		);
 	}
-	jint TextUtils::indexOf(jstring arg0, jchar arg1, jint arg2, jint arg3)
+	jint TextUtils::indexOf(JString arg0, jchar arg1, jint arg2, jint arg3)
 	{
 		return callStaticMethod<jint>(
 			"android.text.TextUtils",
 			"indexOf",
 			"(Ljava/lang/CharSequence;CII)I",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
 			arg2,
 			arg3
 		);
 	}
-	jint TextUtils::indexOf(jstring arg0, jstring arg1, jint arg2, jint arg3)
+	jint TextUtils::indexOf(JString arg0, JString arg1, jint arg2, jint arg3)
 	{
 		return callStaticMethod<jint>(
 			"android.text.TextUtils",
 			"indexOf",
 			"(Ljava/lang/CharSequence;Ljava/lang/CharSequence;II)I",
-			arg0,
-			arg1,
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
 			arg2,
 			arg3
 		);
 	}
-	jboolean TextUtils::isDigitsOnly(jstring arg0)
+	jboolean TextUtils::isDigitsOnly(JString arg0)
 	{
 		return callStaticMethod<jboolean>(
 			"android.text.TextUtils",
 			"isDigitsOnly",
 			"(Ljava/lang/CharSequence;)Z",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jboolean TextUtils::isEmpty(jstring arg0)
+	jboolean TextUtils::isEmpty(JString arg0)
 	{
 		return callStaticMethod<jboolean>(
 			"android.text.TextUtils",
 			"isEmpty",
 			"(Ljava/lang/CharSequence;)Z",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	jboolean TextUtils::isGraphic(jchar arg0)
@@ -313,69 +320,69 @@ namespace android::text
 			arg0
 		);
 	}
-	jboolean TextUtils::isGraphic(jstring arg0)
+	jboolean TextUtils::isGraphic(JString arg0)
 	{
 		return callStaticMethod<jboolean>(
 			"android.text.TextUtils",
 			"isGraphic",
 			"(Ljava/lang/CharSequence;)Z",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jstring TextUtils::join(jstring arg0, jobjectArray arg1)
+	JString TextUtils::join(JString arg0, JObjectArray arg1)
 	{
 		return callStaticObjectMethod(
 			"android.text.TextUtils",
 			"join",
 			"(Ljava/lang/CharSequence;[Ljava/lang/Object;)Ljava/lang/String;",
-			arg0,
-			arg1
-		).object<jstring>();
+			arg0.object<jstring>(),
+			arg1.object<jobjectArray>()
+		);
 	}
-	jstring TextUtils::join(jstring arg0, JObject arg1)
+	JString TextUtils::join(JString arg0, JObject arg1)
 	{
 		return callStaticObjectMethod(
 			"android.text.TextUtils",
 			"join",
 			"(Ljava/lang/CharSequence;Ljava/lang/Iterable;)Ljava/lang/String;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
-		).object<jstring>();
+		);
 	}
-	jint TextUtils::lastIndexOf(jstring arg0, jchar arg1)
+	jint TextUtils::lastIndexOf(JString arg0, jchar arg1)
 	{
 		return callStaticMethod<jint>(
 			"android.text.TextUtils",
 			"lastIndexOf",
 			"(Ljava/lang/CharSequence;C)I",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
-	jint TextUtils::lastIndexOf(jstring arg0, jchar arg1, jint arg2)
+	jint TextUtils::lastIndexOf(JString arg0, jchar arg1, jint arg2)
 	{
 		return callStaticMethod<jint>(
 			"android.text.TextUtils",
 			"lastIndexOf",
 			"(Ljava/lang/CharSequence;CI)I",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
 			arg2
 		);
 	}
-	jint TextUtils::lastIndexOf(jstring arg0, jchar arg1, jint arg2, jint arg3)
+	jint TextUtils::lastIndexOf(JString arg0, jchar arg1, jint arg2, jint arg3)
 	{
 		return callStaticMethod<jint>(
 			"android.text.TextUtils",
 			"lastIndexOf",
 			"(Ljava/lang/CharSequence;CII)I",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
 			arg2,
 			arg3
 		);
 	}
-	jstring TextUtils::listEllipsize(android::content::Context arg0, JObject arg1, jstring arg2, android::text::TextPaint arg3, jfloat arg4, jint arg5)
+	JString TextUtils::listEllipsize(android::content::Context arg0, JObject arg1, JString arg2, android::text::TextPaint arg3, jfloat arg4, jint arg5)
 	{
 		return callStaticObjectMethod(
 			"android.text.TextUtils",
@@ -383,83 +390,83 @@ namespace android::text
 			"(Landroid/content/Context;Ljava/util/List;Ljava/lang/String;Landroid/text/TextPaint;FI)Ljava/lang/CharSequence;",
 			arg0.object(),
 			arg1.object(),
-			arg2,
+			arg2.object<jstring>(),
 			arg3.object(),
 			arg4,
 			arg5
-		).object<jstring>();
+		);
 	}
-	jboolean TextUtils::regionMatches(jstring arg0, jint arg1, jstring arg2, jint arg3, jint arg4)
+	jboolean TextUtils::regionMatches(JString arg0, jint arg1, JString arg2, jint arg3, jint arg4)
 	{
 		return callStaticMethod<jboolean>(
 			"android.text.TextUtils",
 			"regionMatches",
 			"(Ljava/lang/CharSequence;ILjava/lang/CharSequence;II)Z",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
-			arg2,
+			arg2.object<jstring>(),
 			arg3,
 			arg4
 		);
 	}
-	jstring TextUtils::replace(jstring arg0, jarray arg1, jarray arg2)
+	JString TextUtils::replace(JString arg0, JArray arg1, JArray arg2)
 	{
 		return callStaticObjectMethod(
 			"android.text.TextUtils",
 			"replace",
 			"(Ljava/lang/CharSequence;[Ljava/lang/String;[Ljava/lang/CharSequence;)Ljava/lang/CharSequence;",
-			arg0,
-			arg1,
-			arg2
-		).object<jstring>();
+			arg0.object<jstring>(),
+			arg1.object<jarray>(),
+			arg2.object<jarray>()
+		);
 	}
-	jarray TextUtils::split(jstring arg0, jstring arg1)
+	JArray TextUtils::split(JString arg0, JString arg1)
 	{
 		return callStaticObjectMethod(
 			"android.text.TextUtils",
 			"split",
 			"(Ljava/lang/String;Ljava/lang/String;)[Ljava/lang/String;",
-			arg0,
-			arg1
-		).object<jarray>();
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
+		);
 	}
-	jarray TextUtils::split(jstring arg0, java::util::regex::Pattern arg1)
+	JArray TextUtils::split(JString arg0, java::util::regex::Pattern arg1)
 	{
 		return callStaticObjectMethod(
 			"android.text.TextUtils",
 			"split",
 			"(Ljava/lang/String;Ljava/util/regex/Pattern;)[Ljava/lang/String;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
-		).object<jarray>();
+		);
 	}
-	jstring TextUtils::stringOrSpannedString(jstring arg0)
+	JString TextUtils::stringOrSpannedString(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.text.TextUtils",
 			"stringOrSpannedString",
 			"(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;",
-			arg0
-		).object<jstring>();
+			arg0.object<jstring>()
+		);
 	}
-	jstring TextUtils::substring(jstring arg0, jint arg1, jint arg2)
+	JString TextUtils::substring(JString arg0, jint arg1, jint arg2)
 	{
 		return callStaticObjectMethod(
 			"android.text.TextUtils",
 			"substring",
 			"(Ljava/lang/CharSequence;II)Ljava/lang/String;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
 			arg2
-		).object<jstring>();
+		);
 	}
-	void TextUtils::writeToParcel(jstring arg0, android::os::Parcel arg1, jint arg2)
+	void TextUtils::writeToParcel(JString arg0, android::os::Parcel arg1, jint arg2)
 	{
 		callStaticMethod<void>(
 			"android.text.TextUtils",
 			"writeToParcel",
 			"(Ljava/lang/CharSequence;Landroid/os/Parcel;I)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
 			arg2
 		);

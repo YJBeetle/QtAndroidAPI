@@ -1,5 +1,6 @@
 #include "./VersionedPackage.hpp"
 #include "../../os/Parcel.hpp"
+#include "../../../JString.hpp"
 #include "./SharedLibraryInfo.hpp"
 
 namespace android::content::pm
@@ -76,12 +77,12 @@ namespace android::content::pm
 			"()J"
 		);
 	}
-	jstring SharedLibraryInfo::getName()
+	JString SharedLibraryInfo::getName()
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint SharedLibraryInfo::getType()
 	{
@@ -97,12 +98,12 @@ namespace android::content::pm
 			"()I"
 		);
 	}
-	jstring SharedLibraryInfo::toString()
+	JString SharedLibraryInfo::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void SharedLibraryInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

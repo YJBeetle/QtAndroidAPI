@@ -2,10 +2,13 @@
 
 #include "../../../JObject.hpp"
 
+class JObject;
+class JString;
 namespace java::lang
 {
 	class Thread;
 }
+class JThrowable;
 namespace java::util::concurrent
 {
 	class TimeUnit;
@@ -24,16 +27,16 @@ namespace java::util::concurrent
 		
 		// Constructors
 		FutureTask(JObject arg0);
-		FutureTask(JObject arg0, jobject arg1);
+		FutureTask(JObject arg0, JObject arg1);
 		
 		// Methods
 		jboolean cancel(jboolean arg0);
-		jobject get();
-		jobject get(jlong arg0, java::util::concurrent::TimeUnit arg1);
+		JObject get();
+		JObject get(jlong arg0, java::util::concurrent::TimeUnit arg1);
 		jboolean isCancelled();
 		jboolean isDone();
 		void run();
-		jstring toString();
+		JString toString();
 	};
 } // namespace java::util::concurrent
 

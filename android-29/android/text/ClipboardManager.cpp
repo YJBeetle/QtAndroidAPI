@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./ClipboardManager.hpp"
 
 namespace android::text
@@ -15,12 +16,12 @@ namespace android::text
 		) {}
 	
 	// Methods
-	jstring ClipboardManager::getText()
+	JString ClipboardManager::getText()
 	{
 		return callObjectMethod(
 			"getText",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	jboolean ClipboardManager::hasText()
 	{
@@ -29,12 +30,12 @@ namespace android::text
 			"()Z"
 		);
 	}
-	void ClipboardManager::setText(jstring arg0)
+	void ClipboardManager::setText(JString arg0)
 	{
 		callMethod<void>(
 			"setText",
 			"(Ljava/lang/CharSequence;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 } // namespace android::text

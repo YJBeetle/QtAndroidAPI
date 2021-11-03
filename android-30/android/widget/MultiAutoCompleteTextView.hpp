@@ -1,15 +1,12 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../view/View.hpp"
-#include "./TextView.hpp"
-#include "./EditText.hpp"
 #include "./AutoCompleteTextView.hpp"
 
 namespace android::content
 {
 	class Context;
 }
+class JString;
 
 namespace android::widget
 {
@@ -30,7 +27,7 @@ namespace android::widget
 		
 		// Methods
 		jboolean enoughToFilter();
-		jstring getAccessibilityClassName();
+		JString getAccessibilityClassName();
 		void performValidation();
 		void setTokenizer(JObject arg0);
 	};

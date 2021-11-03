@@ -1,8 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../view/View.hpp"
-#include "../view/ViewGroup.hpp"
 #include "./FrameLayout.hpp"
 
 namespace android::content
@@ -21,6 +18,7 @@ namespace java::lang
 {
 	class Boolean;
 }
+class JString;
 namespace java::lang
 {
 	class Integer;
@@ -46,7 +44,7 @@ namespace android::widget
 		// Methods
 		void autofill(android::view::autofill::AutofillValue arg0);
 		void dispatchProvideAutofillStructure(android::view::ViewStructure arg0, jint arg1);
-		jstring getAccessibilityClassName();
+		JString getAccessibilityClassName();
 		jint getAutofillType();
 		android::view::autofill::AutofillValue getAutofillValue();
 		jint getBaseline();

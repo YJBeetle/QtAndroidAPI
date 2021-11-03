@@ -1,5 +1,6 @@
 #include "../net/Uri.hpp"
 #include "../os/Parcel.hpp"
+#include "../../JString.hpp"
 #include "./GatewayInfo.hpp"
 
 namespace android::telecom
@@ -18,11 +19,11 @@ namespace android::telecom
 	GatewayInfo::GatewayInfo(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	GatewayInfo::GatewayInfo(jstring arg0, android::net::Uri arg1, android::net::Uri arg2)
+	GatewayInfo::GatewayInfo(JString arg0, android::net::Uri arg1, android::net::Uri arg2)
 		: JObject(
 			"android.telecom.GatewayInfo",
 			"(Ljava/lang/String;Landroid/net/Uri;Landroid/net/Uri;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
 			arg2.object()
 		) {}
@@ -42,12 +43,12 @@ namespace android::telecom
 			"()Landroid/net/Uri;"
 		);
 	}
-	jstring GatewayInfo::getGatewayProviderPackageName()
+	JString GatewayInfo::getGatewayProviderPackageName()
 	{
 		return callObjectMethod(
 			"getGatewayProviderPackageName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::net::Uri GatewayInfo::getOriginalAddress()
 	{

@@ -1,15 +1,16 @@
+#include "../../../../JString.hpp"
 #include "./DOMSource.hpp"
 
 namespace javax::xml::transform::dom
 {
 	// Fields
-	jstring DOMSource::FEATURE()
+	JString DOMSource::FEATURE()
 	{
 		return getStaticObjectField(
 			"javax.xml.transform.dom.DOMSource",
 			"FEATURE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QJniObject forward
@@ -27,12 +28,12 @@ namespace javax::xml::transform::dom
 			"(Lorg/w3c/dom/Node;)V",
 			arg0.object()
 		) {}
-	DOMSource::DOMSource(JObject arg0, jstring arg1)
+	DOMSource::DOMSource(JObject arg0, JString arg1)
 		: JObject(
 			"javax.xml.transform.dom.DOMSource",
 			"(Lorg/w3c/dom/Node;Ljava/lang/String;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		) {}
 	
 	// Methods
@@ -43,12 +44,12 @@ namespace javax::xml::transform::dom
 			"()Lorg/w3c/dom/Node;"
 		);
 	}
-	jstring DOMSource::getSystemId()
+	JString DOMSource::getSystemId()
 	{
 		return callObjectMethod(
 			"getSystemId",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jboolean DOMSource::isEmpty()
 	{
@@ -65,12 +66,12 @@ namespace javax::xml::transform::dom
 			arg0.object()
 		);
 	}
-	void DOMSource::setSystemId(jstring arg0)
+	void DOMSource::setSystemId(JString arg0)
 	{
 		callMethod<void>(
 			"setSystemId",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 } // namespace javax::xml::transform::dom

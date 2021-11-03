@@ -1,5 +1,7 @@
+#include "../../../JByteArray.hpp"
 #include "./PlaybackMetrics.hpp"
 #include "../../os/Bundle.hpp"
+#include "../../../JString.hpp"
 #include "./PlaybackMetrics_Builder.hpp"
 
 namespace android::media::metrics
@@ -48,12 +50,12 @@ namespace android::media::metrics
 			arg0
 		);
 	}
-	android::media::metrics::PlaybackMetrics_Builder PlaybackMetrics_Builder::setDrmSessionId(jbyteArray arg0)
+	android::media::metrics::PlaybackMetrics_Builder PlaybackMetrics_Builder::setDrmSessionId(JByteArray arg0)
 	{
 		return callObjectMethod(
 			"setDrmSessionId",
 			"([B)Landroid/media/metrics/PlaybackMetrics$Builder;",
-			arg0
+			arg0.object<jbyteArray>()
 		);
 	}
 	android::media::metrics::PlaybackMetrics_Builder PlaybackMetrics_Builder::setDrmType(jint arg0)
@@ -112,20 +114,20 @@ namespace android::media::metrics
 			arg0
 		);
 	}
-	android::media::metrics::PlaybackMetrics_Builder PlaybackMetrics_Builder::setPlayerName(jstring arg0)
+	android::media::metrics::PlaybackMetrics_Builder PlaybackMetrics_Builder::setPlayerName(JString arg0)
 	{
 		return callObjectMethod(
 			"setPlayerName",
 			"(Ljava/lang/String;)Landroid/media/metrics/PlaybackMetrics$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	android::media::metrics::PlaybackMetrics_Builder PlaybackMetrics_Builder::setPlayerVersion(jstring arg0)
+	android::media::metrics::PlaybackMetrics_Builder PlaybackMetrics_Builder::setPlayerVersion(JString arg0)
 	{
 		return callObjectMethod(
 			"setPlayerVersion",
 			"(Ljava/lang/String;)Landroid/media/metrics/PlaybackMetrics$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::media::metrics::PlaybackMetrics_Builder PlaybackMetrics_Builder::setStreamSource(jint arg0)

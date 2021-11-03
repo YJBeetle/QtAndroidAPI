@@ -1,3 +1,4 @@
+#include "../../JArray.hpp"
 #include "../content/Context.hpp"
 #include "../graphics/Canvas.hpp"
 #include "../view/KeyEvent.hpp"
@@ -83,12 +84,12 @@ namespace android::widget
 			"()Landroid/view/accessibility/AccessibilityNodeProvider;"
 		);
 	}
-	jarray NumberPicker::getDisplayedValues()
+	JArray NumberPicker::getDisplayedValues()
 	{
 		return callObjectMethod(
 			"getDisplayedValues",
 			"()[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
 	jint NumberPicker::getMaxValue()
 	{
@@ -192,12 +193,12 @@ namespace android::widget
 			arg1
 		);
 	}
-	void NumberPicker::setDisplayedValues(jarray arg0)
+	void NumberPicker::setDisplayedValues(JArray arg0)
 	{
 		callMethod<void>(
 			"setDisplayedValues",
 			"([Ljava/lang/String;)V",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
 	void NumberPicker::setEnabled(jboolean arg0)

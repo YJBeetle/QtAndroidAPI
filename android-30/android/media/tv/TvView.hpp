@@ -1,7 +1,5 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "../../view/View.hpp"
 #include "../../view/ViewGroup.hpp"
 
 namespace android::content
@@ -52,6 +50,7 @@ namespace android::view
 {
 	class View;
 }
+class JString;
 
 namespace android::media::tv
 {
@@ -78,12 +77,12 @@ namespace android::media::tv
 		void dispatchWindowFocusChanged(jboolean arg0);
 		void draw(android::graphics::Canvas arg0);
 		jboolean gatherTransparentRegion(android::graphics::Region arg0);
-		jstring getSelectedTrack(jint arg0);
+		JString getSelectedTrack(jint arg0);
 		JObject getTracks(jint arg0);
 		jboolean onUnhandledInputEvent(android::view::InputEvent arg0);
 		void reset();
-		void selectTrack(jint arg0, jstring arg1);
-		void sendAppPrivateCommand(jstring arg0, android::os::Bundle arg1);
+		void selectTrack(jint arg0, JString arg1);
+		void sendAppPrivateCommand(JString arg0, android::os::Bundle arg1);
 		void setCallback(android::media::tv::TvView_TvInputCallback arg0);
 		void setCaptionEnabled(jboolean arg0);
 		void setOnUnhandledInputEventListener(JObject arg0);
@@ -92,12 +91,12 @@ namespace android::media::tv
 		void setZOrderMediaOverlay(jboolean arg0);
 		void setZOrderOnTop(jboolean arg0);
 		void timeShiftPause();
-		void timeShiftPlay(jstring arg0, android::net::Uri arg1);
+		void timeShiftPlay(JString arg0, android::net::Uri arg1);
 		void timeShiftResume();
 		void timeShiftSeekTo(jlong arg0);
 		void timeShiftSetPlaybackParams(android::media::PlaybackParams arg0);
-		void tune(jstring arg0, android::net::Uri arg1);
-		void tune(jstring arg0, android::net::Uri arg1, android::os::Bundle arg2);
+		void tune(JString arg0, android::net::Uri arg1);
+		void tune(JString arg0, android::net::Uri arg1, android::os::Bundle arg2);
 	};
 } // namespace android::media::tv
 

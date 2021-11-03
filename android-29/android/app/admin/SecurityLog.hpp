@@ -2,7 +2,6 @@
 
 #include "../../../JObject.hpp"
 
-
 namespace android::app::admin
 {
 	class SecurityLog : public JObject

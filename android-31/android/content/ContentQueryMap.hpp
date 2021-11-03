@@ -1,6 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "../../java/util/Observable.hpp"
 
 namespace android::content
@@ -11,6 +10,7 @@ namespace android::os
 {
 	class Handler;
 }
+class JString;
 
 namespace android::content
 {
@@ -24,12 +24,12 @@ namespace android::content
 		ContentQueryMap(QJniObject obj);
 		
 		// Constructors
-		ContentQueryMap(JObject arg0, jstring arg1, jboolean arg2, android::os::Handler arg3);
+		ContentQueryMap(JObject arg0, JString arg1, jboolean arg2, android::os::Handler arg3);
 		
 		// Methods
 		void close();
 		JObject getRows();
-		android::content::ContentValues getValues(jstring arg0);
+		android::content::ContentValues getValues(JString arg0);
 		void requery();
 		void setKeepUpdated(jboolean arg0);
 	};

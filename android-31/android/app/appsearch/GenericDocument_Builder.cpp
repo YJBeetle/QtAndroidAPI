@@ -1,4 +1,11 @@
+#include "../../../JDoubleArray.hpp"
+#include "../../../JLongArray.hpp"
+#include "../../../JArray.hpp"
+#include "../../../JArray.hpp"
+#include "../../../JBooleanArray.hpp"
+#include "../../../JArray.hpp"
 #include "./GenericDocument.hpp"
+#include "../../../JString.hpp"
 #include "./GenericDocument_Builder.hpp"
 
 namespace android::app::appsearch
@@ -9,13 +16,13 @@ namespace android::app::appsearch
 	GenericDocument_Builder::GenericDocument_Builder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	GenericDocument_Builder::GenericDocument_Builder(jstring arg0, jstring arg1, jstring arg2)
+	GenericDocument_Builder::GenericDocument_Builder(JString arg0, JString arg1, JString arg2)
 		: JObject(
 			"android.app.appsearch.GenericDocument$Builder",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1,
-			arg2
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2.object<jstring>()
 		) {}
 	
 	// Methods
@@ -34,58 +41,58 @@ namespace android::app::appsearch
 			arg0
 		);
 	}
-	android::app::appsearch::GenericDocument_Builder GenericDocument_Builder::setPropertyBoolean(jstring arg0, jbooleanArray arg1)
+	android::app::appsearch::GenericDocument_Builder GenericDocument_Builder::setPropertyBoolean(JString arg0, JBooleanArray arg1)
 	{
 		return callObjectMethod(
 			"setPropertyBoolean",
 			"(Ljava/lang/String;[Z)Landroid/app/appsearch/GenericDocument$Builder;",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jbooleanArray>()
 		);
 	}
-	android::app::appsearch::GenericDocument_Builder GenericDocument_Builder::setPropertyBytes(jstring arg0, jarray arg1)
+	android::app::appsearch::GenericDocument_Builder GenericDocument_Builder::setPropertyBytes(JString arg0, JArray arg1)
 	{
 		return callObjectMethod(
 			"setPropertyBytes",
 			"(Ljava/lang/String;[[B)Landroid/app/appsearch/GenericDocument$Builder;",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jarray>()
 		);
 	}
-	android::app::appsearch::GenericDocument_Builder GenericDocument_Builder::setPropertyDocument(jstring arg0, jarray arg1)
+	android::app::appsearch::GenericDocument_Builder GenericDocument_Builder::setPropertyDocument(JString arg0, JArray arg1)
 	{
 		return callObjectMethod(
 			"setPropertyDocument",
 			"(Ljava/lang/String;[Landroid/app/appsearch/GenericDocument;)Landroid/app/appsearch/GenericDocument$Builder;",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jarray>()
 		);
 	}
-	android::app::appsearch::GenericDocument_Builder GenericDocument_Builder::setPropertyDouble(jstring arg0, jdoubleArray arg1)
+	android::app::appsearch::GenericDocument_Builder GenericDocument_Builder::setPropertyDouble(JString arg0, JDoubleArray arg1)
 	{
 		return callObjectMethod(
 			"setPropertyDouble",
 			"(Ljava/lang/String;[D)Landroid/app/appsearch/GenericDocument$Builder;",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jdoubleArray>()
 		);
 	}
-	android::app::appsearch::GenericDocument_Builder GenericDocument_Builder::setPropertyLong(jstring arg0, jlongArray arg1)
+	android::app::appsearch::GenericDocument_Builder GenericDocument_Builder::setPropertyLong(JString arg0, JLongArray arg1)
 	{
 		return callObjectMethod(
 			"setPropertyLong",
 			"(Ljava/lang/String;[J)Landroid/app/appsearch/GenericDocument$Builder;",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jlongArray>()
 		);
 	}
-	android::app::appsearch::GenericDocument_Builder GenericDocument_Builder::setPropertyString(jstring arg0, jarray arg1)
+	android::app::appsearch::GenericDocument_Builder GenericDocument_Builder::setPropertyString(JString arg0, JArray arg1)
 	{
 		return callObjectMethod(
 			"setPropertyString",
 			"(Ljava/lang/String;[Ljava/lang/String;)Landroid/app/appsearch/GenericDocument$Builder;",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jarray>()
 		);
 	}
 	android::app::appsearch::GenericDocument_Builder GenericDocument_Builder::setScore(jint arg0)

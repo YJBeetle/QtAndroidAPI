@@ -1,8 +1,5 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "../../lang/Exception.hpp"
-#include "../GeneralSecurityException.hpp"
 #include "./CertificateException.hpp"
 
 namespace java::io
@@ -13,6 +10,7 @@ namespace java::io
 {
 	class ObjectOutputStream;
 }
+class JString;
 namespace java::security::cert
 {
 	class CRLReason;
@@ -44,7 +42,7 @@ namespace java::security::cert
 		javax::security::auth::x500::X500Principal getAuthorityName();
 		JObject getExtensions();
 		java::util::Date getInvalidityDate();
-		jstring getMessage();
+		JString getMessage();
 		java::util::Date getRevocationDate();
 		java::security::cert::CRLReason getRevocationReason();
 	};

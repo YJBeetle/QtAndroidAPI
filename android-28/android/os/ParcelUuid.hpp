@@ -6,6 +6,8 @@ namespace android::os
 {
 	class Parcel;
 }
+class JObject;
+class JString;
 namespace java::util
 {
 	class UUID;
@@ -27,12 +29,12 @@ namespace android::os
 		ParcelUuid(java::util::UUID arg0);
 		
 		// Methods
-		static android::os::ParcelUuid fromString(jstring arg0);
+		static android::os::ParcelUuid fromString(JString arg0);
 		jint describeContents();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		java::util::UUID getUuid();
 		jint hashCode();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::os

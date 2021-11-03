@@ -1,5 +1,6 @@
 #include "../../os/LocaleList.hpp"
 #include "./TextSelection_Request.hpp"
+#include "../../../JString.hpp"
 #include "./TextSelection_Request_Builder.hpp"
 
 namespace android::view::textclassifier
@@ -10,11 +11,11 @@ namespace android::view::textclassifier
 	TextSelection_Request_Builder::TextSelection_Request_Builder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	TextSelection_Request_Builder::TextSelection_Request_Builder(jstring arg0, jint arg1, jint arg2)
+	TextSelection_Request_Builder::TextSelection_Request_Builder(JString arg0, jint arg1, jint arg2)
 		: JObject(
 			"android.view.textclassifier.TextSelection$Request$Builder",
 			"(Ljava/lang/CharSequence;II)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
 			arg2
 		) {}

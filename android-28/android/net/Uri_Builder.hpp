@@ -6,6 +6,7 @@ namespace android::net
 {
 	class Uri;
 }
+class JString;
 
 namespace android::net
 {
@@ -22,23 +23,23 @@ namespace android::net
 		Uri_Builder();
 		
 		// Methods
-		android::net::Uri_Builder appendEncodedPath(jstring arg0);
-		android::net::Uri_Builder appendPath(jstring arg0);
-		android::net::Uri_Builder appendQueryParameter(jstring arg0, jstring arg1);
-		android::net::Uri_Builder authority(jstring arg0);
+		android::net::Uri_Builder appendEncodedPath(JString arg0);
+		android::net::Uri_Builder appendPath(JString arg0);
+		android::net::Uri_Builder appendQueryParameter(JString arg0, JString arg1);
+		android::net::Uri_Builder authority(JString arg0);
 		android::net::Uri build();
 		android::net::Uri_Builder clearQuery();
-		android::net::Uri_Builder encodedAuthority(jstring arg0);
-		android::net::Uri_Builder encodedFragment(jstring arg0);
-		android::net::Uri_Builder encodedOpaquePart(jstring arg0);
-		android::net::Uri_Builder encodedPath(jstring arg0);
-		android::net::Uri_Builder encodedQuery(jstring arg0);
-		android::net::Uri_Builder fragment(jstring arg0);
-		android::net::Uri_Builder opaquePart(jstring arg0);
-		android::net::Uri_Builder path(jstring arg0);
-		android::net::Uri_Builder query(jstring arg0);
-		android::net::Uri_Builder scheme(jstring arg0);
-		jstring toString();
+		android::net::Uri_Builder encodedAuthority(JString arg0);
+		android::net::Uri_Builder encodedFragment(JString arg0);
+		android::net::Uri_Builder encodedOpaquePart(JString arg0);
+		android::net::Uri_Builder encodedPath(JString arg0);
+		android::net::Uri_Builder encodedQuery(JString arg0);
+		android::net::Uri_Builder fragment(JString arg0);
+		android::net::Uri_Builder opaquePart(JString arg0);
+		android::net::Uri_Builder path(JString arg0);
+		android::net::Uri_Builder query(JString arg0);
+		android::net::Uri_Builder scheme(JString arg0);
+		JString toString();
 	};
 } // namespace android::net
 

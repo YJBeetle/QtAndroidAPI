@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./TooManyListenersException.hpp"
 
 namespace java::util
@@ -13,11 +14,11 @@ namespace java::util
 			"java.util.TooManyListenersException",
 			"()V"
 		) {}
-	TooManyListenersException::TooManyListenersException(jstring arg0)
+	TooManyListenersException::TooManyListenersException(JString arg0)
 		: java::lang::Exception(
 			"java.util.TooManyListenersException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

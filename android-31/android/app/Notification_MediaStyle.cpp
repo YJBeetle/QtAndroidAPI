@@ -1,3 +1,4 @@
+#include "../../JIntArray.hpp"
 #include "./Notification_Builder.hpp"
 #include "../media/session/MediaSession_Token.hpp"
 #include "./Notification_MediaStyle.hpp"
@@ -31,12 +32,12 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	android::app::Notification_MediaStyle Notification_MediaStyle::setShowActionsInCompactView(jintArray arg0)
+	android::app::Notification_MediaStyle Notification_MediaStyle::setShowActionsInCompactView(JIntArray arg0)
 	{
 		return callObjectMethod(
 			"setShowActionsInCompactView",
 			"([I)Landroid/app/Notification$MediaStyle;",
-			arg0
+			arg0.object<jintArray>()
 		);
 	}
 } // namespace android::app

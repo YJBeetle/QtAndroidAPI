@@ -1,3 +1,5 @@
+#include "../../../JIntArray.hpp"
+#include "../../../JArray.hpp"
 #include "../../os/Parcel.hpp"
 #include "./SuggestionsInfo.hpp"
 #include "./SentenceSuggestionsInfo.hpp"
@@ -24,13 +26,13 @@ namespace android::view::textservice
 			"(Landroid/os/Parcel;)V",
 			arg0.object()
 		) {}
-	SentenceSuggestionsInfo::SentenceSuggestionsInfo(jarray arg0, jintArray arg1, jintArray arg2)
+	SentenceSuggestionsInfo::SentenceSuggestionsInfo(JArray arg0, JIntArray arg1, JIntArray arg2)
 		: JObject(
 			"android.view.textservice.SentenceSuggestionsInfo",
 			"([Landroid/view/textservice/SuggestionsInfo;[I[I)V",
-			arg0,
-			arg1,
-			arg2
+			arg0.object<jarray>(),
+			arg1.object<jintArray>(),
+			arg2.object<jintArray>()
 		) {}
 	
 	// Methods

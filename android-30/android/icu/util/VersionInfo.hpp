@@ -2,6 +2,8 @@
 
 #include "../../../JObject.hpp"
 
+class JObject;
+class JString;
 
 namespace android::icu::util
 {
@@ -53,19 +55,19 @@ namespace android::icu::util
 		
 		// Methods
 		static android::icu::util::VersionInfo getInstance(jint arg0);
-		static android::icu::util::VersionInfo getInstance(jstring arg0);
+		static android::icu::util::VersionInfo getInstance(JString arg0);
 		static android::icu::util::VersionInfo getInstance(jint arg0, jint arg1);
 		static android::icu::util::VersionInfo getInstance(jint arg0, jint arg1, jint arg2);
 		static android::icu::util::VersionInfo getInstance(jint arg0, jint arg1, jint arg2, jint arg3);
 		jint compareTo(android::icu::util::VersionInfo arg0);
-		jint compareTo(jobject arg0);
-		jboolean equals(jobject arg0);
+		jint compareTo(JObject arg0);
+		jboolean equals(JObject arg0);
 		jint getMajor();
 		jint getMicro();
 		jint getMilli();
 		jint getMinor();
 		jint hashCode();
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::icu::util
 

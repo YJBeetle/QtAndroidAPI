@@ -1,4 +1,6 @@
 #include "../../../io/ObjectInputStream.hpp"
+#include "../../../../JObject.hpp"
+#include "../../../../JString.hpp"
 #include "./LongAdder.hpp"
 
 namespace java::util::concurrent::atomic
@@ -87,12 +89,12 @@ namespace java::util::concurrent::atomic
 			"()J"
 		);
 	}
-	jstring LongAdder::toString()
+	JString LongAdder::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::util::concurrent::atomic
 

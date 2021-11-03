@@ -2,10 +2,12 @@
 
 #include "../../../JObject.hpp"
 
+class JArray;
 namespace android::os
 {
 	class Parcel;
 }
+class JString;
 
 namespace android::service::autofill
 {
@@ -20,11 +22,11 @@ namespace android::service::autofill
 		LuhnChecksumValidator(QJniObject obj);
 		
 		// Constructors
-		LuhnChecksumValidator(jarray arg0);
+		LuhnChecksumValidator(JArray arg0);
 		
 		// Methods
 		jint describeContents();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::service::autofill

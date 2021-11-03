@@ -6,6 +6,7 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
 
 namespace android::net::wifi::p2p
 {
@@ -64,7 +65,7 @@ namespace android::net::wifi::p2p
 		void setMaxThroughput(jint arg0);
 		jboolean setR2DeviceType(jint arg0);
 		void setSessionAvailable(jboolean arg0);
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::net::wifi::p2p

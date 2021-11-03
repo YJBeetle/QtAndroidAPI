@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JString;
 
 namespace android::system
 {
@@ -524,8 +525,8 @@ namespace android::system
 		static jboolean _WIFSTOPPED(jint arg0);
 		static jint _WSTOPSIG(jint arg0);
 		static jint _WTERMSIG(jint arg0);
-		static jstring errnoName(jint arg0);
-		static jstring gaiName(jint arg0);
+		static JString errnoName(jint arg0);
+		static JString gaiName(jint arg0);
 	};
 } // namespace android::system
 

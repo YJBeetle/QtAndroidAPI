@@ -1,4 +1,5 @@
 #include "../content/Context.hpp"
+#include "../../JString.hpp"
 #include "./DigitalClock.hpp"
 
 namespace android::widget
@@ -24,12 +25,12 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	jstring DigitalClock::getAccessibilityClassName()
+	JString DigitalClock::getAccessibilityClassName()
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::widget
 

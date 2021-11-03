@@ -2,6 +2,8 @@
 
 #include "../../../JObject.hpp"
 
+class JObject;
+class JString;
 
 namespace android::icu::text
 {
@@ -25,10 +27,10 @@ namespace android::icu::text
 		Transliterator_Position(jint arg0, jint arg1, jint arg2, jint arg3);
 		
 		// Methods
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint hashCode();
 		void set(android::icu::text::Transliterator_Position arg0);
-		jstring toString();
+		JString toString();
 		void validate(jint arg0);
 	};
 } // namespace android::icu::text

@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JString;
 
 namespace android::media::tv
 {
@@ -18,8 +19,8 @@ namespace android::media::tv
 		TvView_TimeShiftPositionCallback();
 		
 		// Methods
-		void onTimeShiftCurrentPositionChanged(jstring arg0, jlong arg1);
-		void onTimeShiftStartPositionChanged(jstring arg0, jlong arg1);
+		void onTimeShiftCurrentPositionChanged(JString arg0, jlong arg1);
+		void onTimeShiftStartPositionChanged(JString arg0, jlong arg1);
 	};
 } // namespace android::media::tv
 

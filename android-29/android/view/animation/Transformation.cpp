@@ -1,4 +1,5 @@
 #include "../../graphics/Matrix.hpp"
+#include "../../../JString.hpp"
 #include "./Transformation.hpp"
 
 namespace android::view::animation
@@ -104,19 +105,19 @@ namespace android::view::animation
 			arg0
 		);
 	}
-	jstring Transformation::toShortString()
+	JString Transformation::toShortString()
 	{
 		return callObjectMethod(
 			"toShortString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Transformation::toString()
+	JString Transformation::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::view::animation
 

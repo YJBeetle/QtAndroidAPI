@@ -6,10 +6,12 @@ namespace java::io
 {
 	class File;
 }
+class JClass;
 namespace java::lang
 {
 	class ClassLoader;
 }
+class JString;
 
 namespace dalvik::system
 {
@@ -24,16 +26,16 @@ namespace dalvik::system
 		
 		// Constructors
 		DexFile(java::io::File arg0);
-		DexFile(jstring arg0);
+		DexFile(JString arg0);
 		
 		// Methods
-		static jboolean isDexOptNeeded(jstring arg0);
-		static dalvik::system::DexFile loadDex(jstring arg0, jstring arg1, jint arg2);
+		static jboolean isDexOptNeeded(JString arg0);
+		static dalvik::system::DexFile loadDex(JString arg0, JString arg1, jint arg2);
 		void close();
 		JObject entries();
-		jstring getName();
-		jclass loadClass(jstring arg0, java::lang::ClassLoader arg1);
-		jstring toString();
+		JString getName();
+		JClass loadClass(JString arg0, java::lang::ClassLoader arg1);
+		JString toString();
 	};
 } // namespace dalvik::system
 

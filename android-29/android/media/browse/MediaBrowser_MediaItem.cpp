@@ -1,5 +1,6 @@
 #include "../MediaDescription.hpp"
 #include "../../os/Parcel.hpp"
+#include "../../../JString.hpp"
 #include "./MediaBrowser_MediaItem.hpp"
 
 namespace android::media::browse
@@ -62,12 +63,12 @@ namespace android::media::browse
 			"()I"
 		);
 	}
-	jstring MediaBrowser_MediaItem::getMediaId()
+	JString MediaBrowser_MediaItem::getMediaId()
 	{
 		return callObjectMethod(
 			"getMediaId",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jboolean MediaBrowser_MediaItem::isBrowsable()
 	{
@@ -83,12 +84,12 @@ namespace android::media::browse
 			"()Z"
 		);
 	}
-	jstring MediaBrowser_MediaItem::toString()
+	JString MediaBrowser_MediaItem::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void MediaBrowser_MediaItem::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

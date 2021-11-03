@@ -1,3 +1,4 @@
+#include "../../JIntArray.hpp"
 #include "./BluetoothAdapter.hpp"
 #include "./BluetoothDevice.hpp"
 #include "./BluetoothGattServer.hpp"
@@ -39,13 +40,13 @@ namespace android::bluetooth
 			arg1
 		);
 	}
-	JObject BluetoothManager::getDevicesMatchingConnectionStates(jint arg0, jintArray arg1)
+	JObject BluetoothManager::getDevicesMatchingConnectionStates(jint arg0, JIntArray arg1)
 	{
 		return callObjectMethod(
 			"getDevicesMatchingConnectionStates",
 			"(I[I)Ljava/util/List;",
 			arg0,
-			arg1
+			arg1.object<jintArray>()
 		);
 	}
 	android::bluetooth::BluetoothGattServer BluetoothManager::openGattServer(android::content::Context arg0, android::bluetooth::BluetoothGattServerCallback arg1)

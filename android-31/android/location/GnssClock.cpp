@@ -1,4 +1,5 @@
 #include "../os/Parcel.hpp"
+#include "../../JString.hpp"
 #include "./GnssClock.hpp"
 
 namespace android::location
@@ -96,12 +97,12 @@ namespace android::location
 			"()D"
 		);
 	}
-	jstring GnssClock::getReferenceCodeTypeForIsb()
+	JString GnssClock::getReferenceCodeTypeForIsb()
 	{
 		return callObjectMethod(
 			"getReferenceCodeTypeForIsb",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint GnssClock::getReferenceConstellationTypeForIsb()
 	{
@@ -208,12 +209,12 @@ namespace android::location
 			"()Z"
 		);
 	}
-	jstring GnssClock::toString()
+	JString GnssClock::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void GnssClock::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

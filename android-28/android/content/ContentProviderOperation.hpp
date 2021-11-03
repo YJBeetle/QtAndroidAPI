@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JArray;
+class JArray;
 namespace android::content
 {
 	class ContentProvider;
@@ -26,6 +28,7 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
 
 namespace android::content
 {
@@ -46,7 +49,7 @@ namespace android::content
 		static android::content::ContentProviderOperation_Builder newDelete(android::net::Uri arg0);
 		static android::content::ContentProviderOperation_Builder newInsert(android::net::Uri arg0);
 		static android::content::ContentProviderOperation_Builder newUpdate(android::net::Uri arg0);
-		android::content::ContentProviderResult apply(android::content::ContentProvider arg0, jarray arg1, jint arg2);
+		android::content::ContentProviderResult apply(android::content::ContentProvider arg0, JArray arg1, jint arg2);
 		jint describeContents();
 		android::net::Uri getUri();
 		jboolean isAssertQuery();
@@ -56,9 +59,9 @@ namespace android::content
 		jboolean isUpdate();
 		jboolean isWriteOperation();
 		jboolean isYieldAllowed();
-		jarray resolveSelectionArgsBackReferences(jarray arg0, jint arg1);
-		android::content::ContentValues resolveValueBackReferences(jarray arg0, jint arg1);
-		jstring toString();
+		JArray resolveSelectionArgsBackReferences(JArray arg0, jint arg1);
+		android::content::ContentValues resolveValueBackReferences(JArray arg0, jint arg1);
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::content

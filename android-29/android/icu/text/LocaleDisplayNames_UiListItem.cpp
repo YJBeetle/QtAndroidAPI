@@ -1,4 +1,6 @@
 #include "../util/ULocale.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./LocaleDisplayNames_UiListItem.hpp"
 
 namespace android::icu::text
@@ -18,33 +20,33 @@ namespace android::icu::text
 			"Landroid/icu/util/ULocale;"
 		);
 	}
-	jstring LocaleDisplayNames_UiListItem::nameInDisplayLocale()
+	JString LocaleDisplayNames_UiListItem::nameInDisplayLocale()
 	{
 		return getObjectField(
 			"nameInDisplayLocale",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring LocaleDisplayNames_UiListItem::nameInSelf()
+	JString LocaleDisplayNames_UiListItem::nameInSelf()
 	{
 		return getObjectField(
 			"nameInSelf",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QJniObject forward
 	LocaleDisplayNames_UiListItem::LocaleDisplayNames_UiListItem(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	LocaleDisplayNames_UiListItem::LocaleDisplayNames_UiListItem(android::icu::util::ULocale arg0, android::icu::util::ULocale arg1, jstring arg2, jstring arg3)
+	LocaleDisplayNames_UiListItem::LocaleDisplayNames_UiListItem(android::icu::util::ULocale arg0, android::icu::util::ULocale arg1, JString arg2, JString arg3)
 		: JObject(
 			"android.icu.text.LocaleDisplayNames$UiListItem",
 			"(Landroid/icu/util/ULocale;Landroid/icu/util/ULocale;Ljava/lang/String;Ljava/lang/String;)V",
 			arg0.object(),
 			arg1.object(),
-			arg2,
-			arg3
+			arg2.object<jstring>(),
+			arg3.object<jstring>()
 		) {}
 	
 	// Methods
@@ -58,12 +60,12 @@ namespace android::icu::text
 			arg1
 		);
 	}
-	jboolean LocaleDisplayNames_UiListItem::equals(jobject arg0)
+	jboolean LocaleDisplayNames_UiListItem::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint LocaleDisplayNames_UiListItem::hashCode()
@@ -73,12 +75,12 @@ namespace android::icu::text
 			"()I"
 		);
 	}
-	jstring LocaleDisplayNames_UiListItem::toString()
+	JString LocaleDisplayNames_UiListItem::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::icu::text
 

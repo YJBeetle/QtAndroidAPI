@@ -1,3 +1,4 @@
+#include "../../JCharArray.hpp"
 #include "./KeyCharacterMap_KeyData.hpp"
 
 namespace android::view
@@ -16,12 +17,12 @@ namespace android::view
 			"displayLabel"
 		);
 	}
-	jcharArray KeyCharacterMap_KeyData::meta()
+	JCharArray KeyCharacterMap_KeyData::meta()
 	{
 		return getObjectField(
 			"meta",
 			"[C"
-		).object<jcharArray>();
+		);
 	}
 	jchar KeyCharacterMap_KeyData::number()
 	{

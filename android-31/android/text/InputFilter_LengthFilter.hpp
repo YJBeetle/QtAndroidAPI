@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JString;
 
 namespace android::text
 {
@@ -18,7 +19,7 @@ namespace android::text
 		InputFilter_LengthFilter(jint arg0);
 		
 		// Methods
-		jstring filter(jstring arg0, jint arg1, jint arg2, JObject arg3, jint arg4, jint arg5);
+		JString filter(JString arg0, jint arg1, jint arg2, JObject arg3, jint arg4, jint arg5);
 		jint getMax();
 	};
 } // namespace android::text

@@ -1,3 +1,5 @@
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
 #include "./Path_Direction.hpp"
 
 namespace android::graphics
@@ -26,22 +28,22 @@ namespace android::graphics
 	// Constructors
 	
 	// Methods
-	android::graphics::Path_Direction Path_Direction::valueOf(jstring arg0)
+	android::graphics::Path_Direction Path_Direction::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.graphics.Path$Direction",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/graphics/Path$Direction;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray Path_Direction::values()
+	JArray Path_Direction::values()
 	{
 		return callStaticObjectMethod(
 			"android.graphics.Path$Direction",
 			"values",
 			"()[Landroid/graphics/Path$Direction;"
-		).object<jarray>();
+		);
 	}
 } // namespace android::graphics
 

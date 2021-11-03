@@ -2,7 +2,6 @@
 
 #include "../../../JObject.hpp"
 
-
 namespace android::view::inspector
 {
 	class WindowInspector : public JObject

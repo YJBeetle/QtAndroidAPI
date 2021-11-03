@@ -14,6 +14,7 @@ namespace android::content
 {
 	class Intent;
 }
+class JString;
 
 namespace android::app
 {
@@ -37,7 +38,7 @@ namespace android::app
 		// Constructors
 		
 		// Methods
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::app
 

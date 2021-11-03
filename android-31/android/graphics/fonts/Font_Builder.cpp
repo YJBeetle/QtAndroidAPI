@@ -1,8 +1,10 @@
+#include "../../../JArray.hpp"
 #include "../../content/res/AssetManager.hpp"
 #include "../../content/res/Resources.hpp"
 #include "./Font.hpp"
 #include "../../os/ParcelFileDescriptor.hpp"
 #include "../../../java/io/File.hpp"
+#include "../../../JString.hpp"
 #include "../../../java/nio/ByteBuffer.hpp"
 #include "./Font_Builder.hpp"
 
@@ -38,12 +40,12 @@ namespace android::graphics::fonts
 			"(Ljava/nio/ByteBuffer;)V",
 			arg0.object()
 		) {}
-	Font_Builder::Font_Builder(android::content::res::AssetManager arg0, jstring arg1)
+	Font_Builder::Font_Builder(android::content::res::AssetManager arg0, JString arg1)
 		: JObject(
 			"android.graphics.fonts.Font$Builder",
 			"(Landroid/content/res/AssetManager;Ljava/lang/String;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		) {}
 	Font_Builder::Font_Builder(android::content::res::Resources arg0, jint arg1)
 		: JObject(
@@ -69,20 +71,20 @@ namespace android::graphics::fonts
 			"()Landroid/graphics/fonts/Font;"
 		);
 	}
-	android::graphics::fonts::Font_Builder Font_Builder::setFontVariationSettings(jarray arg0)
+	android::graphics::fonts::Font_Builder Font_Builder::setFontVariationSettings(JArray arg0)
 	{
 		return callObjectMethod(
 			"setFontVariationSettings",
 			"([Landroid/graphics/fonts/FontVariationAxis;)Landroid/graphics/fonts/Font$Builder;",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
-	android::graphics::fonts::Font_Builder Font_Builder::setFontVariationSettings(jstring arg0)
+	android::graphics::fonts::Font_Builder Font_Builder::setFontVariationSettings(JString arg0)
 	{
 		return callObjectMethod(
 			"setFontVariationSettings",
 			"(Ljava/lang/String;)Landroid/graphics/fonts/Font$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::graphics::fonts::Font_Builder Font_Builder::setSlant(jint arg0)

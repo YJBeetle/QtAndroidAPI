@@ -1,5 +1,6 @@
 #include "../../graphics/Rect.hpp"
 #include "../../view/View.hpp"
+#include "../../../JString.hpp"
 #include "./PasswordTransformationMethod.hpp"
 
 namespace android::text::method
@@ -33,44 +34,44 @@ namespace android::text::method
 			arg0.object()
 		);
 	}
-	void PasswordTransformationMethod::beforeTextChanged(jstring arg0, jint arg1, jint arg2, jint arg3)
+	void PasswordTransformationMethod::beforeTextChanged(JString arg0, jint arg1, jint arg2, jint arg3)
 	{
 		callMethod<void>(
 			"beforeTextChanged",
 			"(Ljava/lang/CharSequence;III)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
 			arg2,
 			arg3
 		);
 	}
-	jstring PasswordTransformationMethod::getTransformation(jstring arg0, android::view::View arg1)
+	JString PasswordTransformationMethod::getTransformation(JString arg0, android::view::View arg1)
 	{
 		return callObjectMethod(
 			"getTransformation",
 			"(Ljava/lang/CharSequence;Landroid/view/View;)Ljava/lang/CharSequence;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
-		).object<jstring>();
+		);
 	}
-	void PasswordTransformationMethod::onFocusChanged(android::view::View arg0, jstring arg1, jboolean arg2, jint arg3, android::graphics::Rect arg4)
+	void PasswordTransformationMethod::onFocusChanged(android::view::View arg0, JString arg1, jboolean arg2, jint arg3, android::graphics::Rect arg4)
 	{
 		callMethod<void>(
 			"onFocusChanged",
 			"(Landroid/view/View;Ljava/lang/CharSequence;ZILandroid/graphics/Rect;)V",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2,
 			arg3,
 			arg4.object()
 		);
 	}
-	void PasswordTransformationMethod::onTextChanged(jstring arg0, jint arg1, jint arg2, jint arg3)
+	void PasswordTransformationMethod::onTextChanged(JString arg0, jint arg1, jint arg2, jint arg3)
 	{
 		callMethod<void>(
 			"onTextChanged",
 			"(Ljava/lang/CharSequence;III)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
 			arg2,
 			arg3

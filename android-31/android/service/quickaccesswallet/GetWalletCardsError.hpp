@@ -10,6 +10,7 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
 
 namespace android::service::quickaccesswallet
 {
@@ -24,12 +25,12 @@ namespace android::service::quickaccesswallet
 		GetWalletCardsError(QJniObject obj);
 		
 		// Constructors
-		GetWalletCardsError(android::graphics::drawable::Icon arg0, jstring arg1);
+		GetWalletCardsError(android::graphics::drawable::Icon arg0, JString arg1);
 		
 		// Methods
 		jint describeContents();
 		android::graphics::drawable::Icon getIcon();
-		jstring getMessage();
+		JString getMessage();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::service::quickaccesswallet

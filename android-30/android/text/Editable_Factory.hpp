@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JString;
 
 namespace android::text
 {
@@ -19,7 +20,7 @@ namespace android::text
 		
 		// Methods
 		static android::text::Editable_Factory getInstance();
-		JObject newEditable(jstring arg0);
+		JObject newEditable(JString arg0);
 	};
 } // namespace android::text
 

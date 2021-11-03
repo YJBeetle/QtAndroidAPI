@@ -4,6 +4,9 @@
 #include "../os/Parcel.hpp"
 #include "./PhoneAccount_Builder.hpp"
 #include "./PhoneAccountHandle.hpp"
+#include "../../JString.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./PhoneAccount.hpp"
 
 namespace android::telecom
@@ -87,45 +90,45 @@ namespace android::telecom
 			"Landroid/os/Parcelable$Creator;"
 		);
 	}
-	jstring PhoneAccount::EXTRA_CALL_SUBJECT_CHARACTER_ENCODING()
+	JString PhoneAccount::EXTRA_CALL_SUBJECT_CHARACTER_ENCODING()
 	{
 		return getStaticObjectField(
 			"android.telecom.PhoneAccount",
 			"EXTRA_CALL_SUBJECT_CHARACTER_ENCODING",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PhoneAccount::EXTRA_CALL_SUBJECT_MAX_LENGTH()
+	JString PhoneAccount::EXTRA_CALL_SUBJECT_MAX_LENGTH()
 	{
 		return getStaticObjectField(
 			"android.telecom.PhoneAccount",
 			"EXTRA_CALL_SUBJECT_MAX_LENGTH",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PhoneAccount::EXTRA_LOG_SELF_MANAGED_CALLS()
+	JString PhoneAccount::EXTRA_LOG_SELF_MANAGED_CALLS()
 	{
 		return getStaticObjectField(
 			"android.telecom.PhoneAccount",
 			"EXTRA_LOG_SELF_MANAGED_CALLS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PhoneAccount::EXTRA_SUPPORTS_HANDOVER_FROM()
+	JString PhoneAccount::EXTRA_SUPPORTS_HANDOVER_FROM()
 	{
 		return getStaticObjectField(
 			"android.telecom.PhoneAccount",
 			"EXTRA_SUPPORTS_HANDOVER_FROM",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PhoneAccount::EXTRA_SUPPORTS_HANDOVER_TO()
+	JString PhoneAccount::EXTRA_SUPPORTS_HANDOVER_TO()
 	{
 		return getStaticObjectField(
 			"android.telecom.PhoneAccount",
 			"EXTRA_SUPPORTS_HANDOVER_TO",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint PhoneAccount::NO_HIGHLIGHT_COLOR()
 	{
@@ -141,29 +144,29 @@ namespace android::telecom
 			"NO_RESOURCE_ID"
 		);
 	}
-	jstring PhoneAccount::SCHEME_SIP()
+	JString PhoneAccount::SCHEME_SIP()
 	{
 		return getStaticObjectField(
 			"android.telecom.PhoneAccount",
 			"SCHEME_SIP",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PhoneAccount::SCHEME_TEL()
+	JString PhoneAccount::SCHEME_TEL()
 	{
 		return getStaticObjectField(
 			"android.telecom.PhoneAccount",
 			"SCHEME_TEL",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PhoneAccount::SCHEME_VOICEMAIL()
+	JString PhoneAccount::SCHEME_VOICEMAIL()
 	{
 		return getStaticObjectField(
 			"android.telecom.PhoneAccount",
 			"SCHEME_VOICEMAIL",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QJniObject forward
@@ -172,14 +175,14 @@ namespace android::telecom
 	// Constructors
 	
 	// Methods
-	android::telecom::PhoneAccount_Builder PhoneAccount::builder(android::telecom::PhoneAccountHandle arg0, jstring arg1)
+	android::telecom::PhoneAccount_Builder PhoneAccount::builder(android::telecom::PhoneAccountHandle arg0, JString arg1)
 	{
 		return callStaticObjectMethod(
 			"android.telecom.PhoneAccount",
 			"builder",
 			"(Landroid/telecom/PhoneAccountHandle;Ljava/lang/CharSequence;)Landroid/telecom/PhoneAccount$Builder;",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
 	jint PhoneAccount::describeContents()
@@ -189,12 +192,12 @@ namespace android::telecom
 			"()I"
 		);
 	}
-	jboolean PhoneAccount::equals(jobject arg0)
+	jboolean PhoneAccount::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	android::telecom::PhoneAccountHandle PhoneAccount::getAccountHandle()
@@ -239,19 +242,19 @@ namespace android::telecom
 			"()Landroid/graphics/drawable/Icon;"
 		);
 	}
-	jstring PhoneAccount::getLabel()
+	JString PhoneAccount::getLabel()
 	{
 		return callObjectMethod(
 			"getLabel",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
-	jstring PhoneAccount::getShortDescription()
+	JString PhoneAccount::getShortDescription()
 	{
 		return callObjectMethod(
 			"getShortDescription",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	android::net::Uri PhoneAccount::getSubscriptionAddress()
 	{
@@ -289,12 +292,12 @@ namespace android::telecom
 			"()Z"
 		);
 	}
-	jboolean PhoneAccount::supportsUriScheme(jstring arg0)
+	jboolean PhoneAccount::supportsUriScheme(JString arg0)
 	{
 		return callMethod<jboolean>(
 			"supportsUriScheme",
 			"(Ljava/lang/String;)Z",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::telecom::PhoneAccount_Builder PhoneAccount::toBuilder()
@@ -304,12 +307,12 @@ namespace android::telecom
 			"()Landroid/telecom/PhoneAccount$Builder;"
 		);
 	}
-	jstring PhoneAccount::toString()
+	JString PhoneAccount::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void PhoneAccount::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

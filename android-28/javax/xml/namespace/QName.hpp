@@ -2,6 +2,8 @@
 
 #include "../../../JObject.hpp"
 
+class JObject;
+class JString;
 
 namespace javax::xml::_namespace
 {
@@ -15,18 +17,18 @@ namespace javax::xml::_namespace
 		QName(QJniObject obj);
 		
 		// Constructors
-		QName(jstring arg0);
-		QName(jstring arg0, jstring arg1);
-		QName(jstring arg0, jstring arg1, jstring arg2);
+		QName(JString arg0);
+		QName(JString arg0, JString arg1);
+		QName(JString arg0, JString arg1, JString arg2);
 		
 		// Methods
-		static javax::xml::_namespace::QName valueOf(jstring arg0);
-		jboolean equals(jobject arg0);
-		jstring getLocalPart();
-		jstring getNamespaceURI();
-		jstring getPrefix();
+		static javax::xml::_namespace::QName valueOf(JString arg0);
+		jboolean equals(JObject arg0);
+		JString getLocalPart();
+		JString getNamespaceURI();
+		JString getPrefix();
 		jint hashCode();
-		jstring toString();
+		JString toString();
 	};
 } // namespace javax::xml::_namespace
 

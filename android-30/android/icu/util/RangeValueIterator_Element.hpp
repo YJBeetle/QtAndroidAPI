@@ -2,7 +2,6 @@
 
 #include "../../../JObject.hpp"
 
-
 namespace android::icu::util
 {
 	class RangeValueIterator_Element : public JObject

@@ -6,6 +6,7 @@ namespace android::view
 {
 	class ViewStructure_HtmlInfo;
 }
+class JString;
 
 namespace android::view
 {
@@ -22,7 +23,7 @@ namespace android::view
 		ViewStructure_HtmlInfo_Builder();
 		
 		// Methods
-		android::view::ViewStructure_HtmlInfo_Builder addAttribute(jstring arg0, jstring arg1);
+		android::view::ViewStructure_HtmlInfo_Builder addAttribute(JString arg0, JString arg1);
 		android::view::ViewStructure_HtmlInfo build();
 	};
 } // namespace android::view

@@ -1,4 +1,5 @@
 #include "../../os/Parcel.hpp"
+#include "../../../JString.hpp"
 #include "./Dataset.hpp"
 
 namespace android::service::autofill
@@ -26,12 +27,12 @@ namespace android::service::autofill
 			"()I"
 		);
 	}
-	jstring Dataset::toString()
+	JString Dataset::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void Dataset::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

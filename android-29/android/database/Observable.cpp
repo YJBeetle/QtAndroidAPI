@@ -1,3 +1,4 @@
+#include "../../JObject.hpp"
 #include "../../java/util/ArrayList.hpp"
 #include "./Observable.hpp"
 
@@ -16,12 +17,12 @@ namespace android::database
 		) {}
 	
 	// Methods
-	void Observable::registerObserver(jobject arg0)
+	void Observable::registerObserver(JObject arg0)
 	{
 		callMethod<void>(
 			"registerObserver",
 			"(Ljava/lang/Object;)V",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	void Observable::unregisterAll()
@@ -31,12 +32,12 @@ namespace android::database
 			"()V"
 		);
 	}
-	void Observable::unregisterObserver(jobject arg0)
+	void Observable::unregisterObserver(JObject arg0)
 	{
 		callMethod<void>(
 			"unregisterObserver",
 			"(Ljava/lang/Object;)V",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 } // namespace android::database

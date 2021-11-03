@@ -3,26 +3,27 @@
 #include "../graphics/BitmapFactory_Options.hpp"
 #include "../net/Uri.hpp"
 #include "../util/Size.hpp"
+#include "../../JString.hpp"
 #include "./MediaStore_Video_Thumbnails.hpp"
 
 namespace android::provider
 {
 	// Fields
-	jstring MediaStore_Video_Thumbnails::DATA()
+	JString MediaStore_Video_Thumbnails::DATA()
 	{
 		return getStaticObjectField(
 			"android.provider.MediaStore$Video$Thumbnails",
 			"DATA",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring MediaStore_Video_Thumbnails::DEFAULT_SORT_ORDER()
+	JString MediaStore_Video_Thumbnails::DEFAULT_SORT_ORDER()
 	{
 		return getStaticObjectField(
 			"android.provider.MediaStore$Video$Thumbnails",
 			"DEFAULT_SORT_ORDER",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::net::Uri MediaStore_Video_Thumbnails::EXTERNAL_CONTENT_URI()
 	{
@@ -39,13 +40,13 @@ namespace android::provider
 			"FULL_SCREEN_KIND"
 		);
 	}
-	jstring MediaStore_Video_Thumbnails::HEIGHT()
+	JString MediaStore_Video_Thumbnails::HEIGHT()
 	{
 		return getStaticObjectField(
 			"android.provider.MediaStore$Video$Thumbnails",
 			"HEIGHT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::net::Uri MediaStore_Video_Thumbnails::INTERNAL_CONTENT_URI()
 	{
@@ -55,13 +56,13 @@ namespace android::provider
 			"Landroid/net/Uri;"
 		);
 	}
-	jstring MediaStore_Video_Thumbnails::KIND()
+	JString MediaStore_Video_Thumbnails::KIND()
 	{
 		return getStaticObjectField(
 			"android.provider.MediaStore$Video$Thumbnails",
 			"KIND",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint MediaStore_Video_Thumbnails::MICRO_KIND()
 	{
@@ -77,21 +78,21 @@ namespace android::provider
 			"MINI_KIND"
 		);
 	}
-	jstring MediaStore_Video_Thumbnails::VIDEO_ID()
+	JString MediaStore_Video_Thumbnails::VIDEO_ID()
 	{
 		return getStaticObjectField(
 			"android.provider.MediaStore$Video$Thumbnails",
 			"VIDEO_ID",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring MediaStore_Video_Thumbnails::WIDTH()
+	JString MediaStore_Video_Thumbnails::WIDTH()
 	{
 		return getStaticObjectField(
 			"android.provider.MediaStore$Video$Thumbnails",
 			"WIDTH",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QJniObject forward
@@ -126,13 +127,13 @@ namespace android::provider
 			arg2
 		);
 	}
-	android::net::Uri MediaStore_Video_Thumbnails::getContentUri(jstring arg0)
+	android::net::Uri MediaStore_Video_Thumbnails::getContentUri(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.provider.MediaStore$Video$Thumbnails",
 			"getContentUri",
 			"(Ljava/lang/String;)Landroid/net/Uri;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::util::Size MediaStore_Video_Thumbnails::getKindSize(jint arg0)

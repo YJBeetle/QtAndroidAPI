@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./IdentityScope.hpp"
 #include "./KeyPair.hpp"
 #include "./Signer.hpp"
@@ -10,17 +11,17 @@ namespace java::security
 	Signer::Signer(QJniObject obj) : java::security::Identity(obj) {}
 	
 	// Constructors
-	Signer::Signer(jstring arg0)
+	Signer::Signer(JString arg0)
 		: java::security::Identity(
 			"java.security.Signer",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	Signer::Signer(jstring arg0, java::security::IdentityScope arg1)
+	Signer::Signer(JString arg0, java::security::IdentityScope arg1)
 		: java::security::Identity(
 			"java.security.Signer",
 			"(Ljava/lang/String;Ljava/security/IdentityScope;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		) {}
 	
@@ -40,12 +41,12 @@ namespace java::security
 			arg0.object()
 		);
 	}
-	jstring Signer::toString()
+	JString Signer::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::security
 

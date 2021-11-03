@@ -3,6 +3,8 @@
 #include "./PluralRules_PluralType.hpp"
 #include "../util/ULocale.hpp"
 #include "../../../java/lang/Number.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "../../../java/lang/StringBuffer.hpp"
 #include "../../../java/text/FieldPosition.hpp"
 #include "../../../java/text/ParsePosition.hpp"
@@ -34,11 +36,11 @@ namespace android::icu::text
 			"(Landroid/icu/util/ULocale;)V",
 			arg0.object()
 		) {}
-	PluralFormat::PluralFormat(jstring arg0)
+	PluralFormat::PluralFormat(JString arg0)
 		: android::icu::text::UFormat(
 			"android.icu.text.PluralFormat",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	PluralFormat::PluralFormat(java::util::Locale arg0)
 		: android::icu::text::UFormat(
@@ -46,12 +48,12 @@ namespace android::icu::text
 			"(Ljava/util/Locale;)V",
 			arg0.object()
 		) {}
-	PluralFormat::PluralFormat(android::icu::text::PluralRules arg0, jstring arg1)
+	PluralFormat::PluralFormat(android::icu::text::PluralRules arg0, JString arg1)
 		: android::icu::text::UFormat(
 			"android.icu.text.PluralFormat",
 			"(Landroid/icu/text/PluralRules;Ljava/lang/String;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		) {}
 	PluralFormat::PluralFormat(android::icu::util::ULocale arg0, android::icu::text::PluralRules arg1)
 		: android::icu::text::UFormat(
@@ -67,12 +69,12 @@ namespace android::icu::text
 			arg0.object(),
 			arg1.object()
 		) {}
-	PluralFormat::PluralFormat(android::icu::util::ULocale arg0, jstring arg1)
+	PluralFormat::PluralFormat(android::icu::util::ULocale arg0, JString arg1)
 		: android::icu::text::UFormat(
 			"android.icu.text.PluralFormat",
 			"(Landroid/icu/util/ULocale;Ljava/lang/String;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		) {}
 	PluralFormat::PluralFormat(java::util::Locale arg0, android::icu::text::PluralRules arg1)
 		: android::icu::text::UFormat(
@@ -88,30 +90,30 @@ namespace android::icu::text
 			arg0.object(),
 			arg1.object()
 		) {}
-	PluralFormat::PluralFormat(android::icu::util::ULocale arg0, android::icu::text::PluralRules arg1, jstring arg2)
+	PluralFormat::PluralFormat(android::icu::util::ULocale arg0, android::icu::text::PluralRules arg1, JString arg2)
 		: android::icu::text::UFormat(
 			"android.icu.text.PluralFormat",
 			"(Landroid/icu/util/ULocale;Landroid/icu/text/PluralRules;Ljava/lang/String;)V",
 			arg0.object(),
 			arg1.object(),
-			arg2
+			arg2.object<jstring>()
 		) {}
-	PluralFormat::PluralFormat(android::icu::util::ULocale arg0, android::icu::text::PluralRules_PluralType arg1, jstring arg2)
+	PluralFormat::PluralFormat(android::icu::util::ULocale arg0, android::icu::text::PluralRules_PluralType arg1, JString arg2)
 		: android::icu::text::UFormat(
 			"android.icu.text.PluralFormat",
 			"(Landroid/icu/util/ULocale;Landroid/icu/text/PluralRules$PluralType;Ljava/lang/String;)V",
 			arg0.object(),
 			arg1.object(),
-			arg2
+			arg2.object<jstring>()
 		) {}
 	
 	// Methods
-	void PluralFormat::applyPattern(jstring arg0)
+	void PluralFormat::applyPattern(JString arg0)
 	{
 		callMethod<void>(
 			"applyPattern",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	jboolean PluralFormat::equals(android::icu::text::PluralFormat arg0)
@@ -122,28 +124,28 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	jboolean PluralFormat::equals(jobject arg0)
+	jboolean PluralFormat::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jstring PluralFormat::format(jdouble arg0)
+	JString PluralFormat::format(jdouble arg0)
 	{
 		return callObjectMethod(
 			"format",
 			"(D)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
-	java::lang::StringBuffer PluralFormat::format(jobject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
+	java::lang::StringBuffer PluralFormat::format(JObject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
 	{
 		return callObjectMethod(
 			"format",
 			"(Ljava/lang/Object;Ljava/lang/StringBuffer;Ljava/text/FieldPosition;)Ljava/lang/StringBuffer;",
-			arg0,
+			arg0.object<jobject>(),
 			arg1.object(),
 			arg2.object()
 		);
@@ -155,23 +157,23 @@ namespace android::icu::text
 			"()I"
 		);
 	}
-	java::lang::Number PluralFormat::parse(jstring arg0, java::text::ParsePosition arg1)
+	java::lang::Number PluralFormat::parse(JString arg0, java::text::ParsePosition arg1)
 	{
 		return callObjectMethod(
 			"parse",
 			"(Ljava/lang/String;Ljava/text/ParsePosition;)Ljava/lang/Number;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
-	jobject PluralFormat::parseObject(jstring arg0, java::text::ParsePosition arg1)
+	JObject PluralFormat::parseObject(JString arg0, java::text::ParsePosition arg1)
 	{
 		return callObjectMethod(
 			"parseObject",
 			"(Ljava/lang/String;Ljava/text/ParsePosition;)Ljava/lang/Object;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
-		).object<jobject>();
+		);
 	}
 	void PluralFormat::setNumberFormat(android::icu::text::NumberFormat arg0)
 	{
@@ -181,19 +183,19 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	jstring PluralFormat::toPattern()
+	JString PluralFormat::toPattern()
 	{
 		return callObjectMethod(
 			"toPattern",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PluralFormat::toString()
+	JString PluralFormat::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::icu::text
 

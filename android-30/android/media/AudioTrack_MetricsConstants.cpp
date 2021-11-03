@@ -1,47 +1,48 @@
+#include "../../JString.hpp"
 #include "./AudioTrack_MetricsConstants.hpp"
 
 namespace android::media
 {
 	// Fields
-	jstring AudioTrack_MetricsConstants::CHANNELMASK()
+	JString AudioTrack_MetricsConstants::CHANNELMASK()
 	{
 		return getStaticObjectField(
 			"android.media.AudioTrack$MetricsConstants",
 			"CHANNELMASK",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring AudioTrack_MetricsConstants::CONTENTTYPE()
+	JString AudioTrack_MetricsConstants::CONTENTTYPE()
 	{
 		return getStaticObjectField(
 			"android.media.AudioTrack$MetricsConstants",
 			"CONTENTTYPE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring AudioTrack_MetricsConstants::SAMPLERATE()
+	JString AudioTrack_MetricsConstants::SAMPLERATE()
 	{
 		return getStaticObjectField(
 			"android.media.AudioTrack$MetricsConstants",
 			"SAMPLERATE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring AudioTrack_MetricsConstants::STREAMTYPE()
+	JString AudioTrack_MetricsConstants::STREAMTYPE()
 	{
 		return getStaticObjectField(
 			"android.media.AudioTrack$MetricsConstants",
 			"STREAMTYPE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring AudioTrack_MetricsConstants::USAGE()
+	JString AudioTrack_MetricsConstants::USAGE()
 	{
 		return getStaticObjectField(
 			"android.media.AudioTrack$MetricsConstants",
 			"USAGE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QJniObject forward

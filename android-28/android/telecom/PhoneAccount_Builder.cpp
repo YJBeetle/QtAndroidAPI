@@ -3,6 +3,8 @@
 #include "../os/Bundle.hpp"
 #include "./PhoneAccount.hpp"
 #include "./PhoneAccountHandle.hpp"
+#include "../../JString.hpp"
+#include "../../JString.hpp"
 #include "./PhoneAccount_Builder.hpp"
 
 namespace android::telecom
@@ -19,21 +21,21 @@ namespace android::telecom
 			"(Landroid/telecom/PhoneAccount;)V",
 			arg0.object()
 		) {}
-	PhoneAccount_Builder::PhoneAccount_Builder(android::telecom::PhoneAccountHandle arg0, jstring arg1)
+	PhoneAccount_Builder::PhoneAccount_Builder(android::telecom::PhoneAccountHandle arg0, JString arg1)
 		: JObject(
 			"android.telecom.PhoneAccount$Builder",
 			"(Landroid/telecom/PhoneAccountHandle;Ljava/lang/CharSequence;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		) {}
 	
 	// Methods
-	android::telecom::PhoneAccount_Builder PhoneAccount_Builder::addSupportedUriScheme(jstring arg0)
+	android::telecom::PhoneAccount_Builder PhoneAccount_Builder::addSupportedUriScheme(JString arg0)
 	{
 		return callObjectMethod(
 			"addSupportedUriScheme",
 			"(Ljava/lang/String;)Landroid/telecom/PhoneAccount$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::telecom::PhoneAccount PhoneAccount_Builder::build()
@@ -83,12 +85,12 @@ namespace android::telecom
 			arg0.object()
 		);
 	}
-	android::telecom::PhoneAccount_Builder PhoneAccount_Builder::setShortDescription(jstring arg0)
+	android::telecom::PhoneAccount_Builder PhoneAccount_Builder::setShortDescription(JString arg0)
 	{
 		return callObjectMethod(
 			"setShortDescription",
 			"(Ljava/lang/CharSequence;)Landroid/telecom/PhoneAccount$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::telecom::PhoneAccount_Builder PhoneAccount_Builder::setSubscriptionAddress(android::net::Uri arg0)

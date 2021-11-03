@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JCharArray;
+class JString;
 
 namespace java::net
 {
@@ -15,11 +17,11 @@ namespace java::net
 		PasswordAuthentication(QJniObject obj);
 		
 		// Constructors
-		PasswordAuthentication(jstring arg0, jcharArray arg1);
+		PasswordAuthentication(JString arg0, JCharArray arg1);
 		
 		// Methods
-		jcharArray getPassword();
-		jstring getUserName();
+		JCharArray getPassword();
+		JString getUserName();
 	};
 } // namespace java::net
 

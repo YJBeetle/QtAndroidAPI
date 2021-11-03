@@ -6,6 +6,8 @@ namespace android::content::pm
 {
 	class PackageManager;
 }
+class JObject;
+class JString;
 
 namespace android::print
 {
@@ -102,19 +104,19 @@ namespace android::print
 		PrintAttributes_MediaSize(QJniObject obj);
 		
 		// Constructors
-		PrintAttributes_MediaSize(jstring arg0, jstring arg1, jint arg2, jint arg3);
+		PrintAttributes_MediaSize(JString arg0, JString arg1, jint arg2, jint arg3);
 		
 		// Methods
 		android::print::PrintAttributes_MediaSize asLandscape();
 		android::print::PrintAttributes_MediaSize asPortrait();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint getHeightMils();
-		jstring getId();
-		jstring getLabel(android::content::pm::PackageManager arg0);
+		JString getId();
+		JString getLabel(android::content::pm::PackageManager arg0);
 		jint getWidthMils();
 		jint hashCode();
 		jboolean isPortrait();
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::print
 

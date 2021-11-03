@@ -1,3 +1,5 @@
+#include "../../../JString.hpp"
+#include "../../../JThrowable.hpp"
 #include "./CertificateEncodingException.hpp"
 
 namespace java::security::cert
@@ -13,24 +15,24 @@ namespace java::security::cert
 			"java.security.cert.CertificateEncodingException",
 			"()V"
 		) {}
-	CertificateEncodingException::CertificateEncodingException(jstring arg0)
+	CertificateEncodingException::CertificateEncodingException(JString arg0)
 		: java::security::cert::CertificateException(
 			"java.security.cert.CertificateEncodingException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	CertificateEncodingException::CertificateEncodingException(jthrowable arg0)
+	CertificateEncodingException::CertificateEncodingException(JThrowable arg0)
 		: java::security::cert::CertificateException(
 			"java.security.cert.CertificateEncodingException",
 			"(Ljava/lang/Throwable;)V",
-			arg0
+			arg0.object<jthrowable>()
 		) {}
-	CertificateEncodingException::CertificateEncodingException(jstring arg0, jthrowable arg1)
+	CertificateEncodingException::CertificateEncodingException(JString arg0, JThrowable arg1)
 		: java::security::cert::CertificateException(
 			"java.security.cert.CertificateEncodingException",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
 		) {}
 	
 	// Methods

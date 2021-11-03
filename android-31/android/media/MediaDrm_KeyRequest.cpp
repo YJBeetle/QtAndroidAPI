@@ -1,3 +1,5 @@
+#include "../../JByteArray.hpp"
+#include "../../JString.hpp"
 #include "./MediaDrm_KeyRequest.hpp"
 
 namespace android::media
@@ -45,19 +47,19 @@ namespace android::media
 	// Constructors
 	
 	// Methods
-	jbyteArray MediaDrm_KeyRequest::getData()
+	JByteArray MediaDrm_KeyRequest::getData()
 	{
 		return callObjectMethod(
 			"getData",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
-	jstring MediaDrm_KeyRequest::getDefaultUrl()
+	JString MediaDrm_KeyRequest::getDefaultUrl()
 	{
 		return callObjectMethod(
 			"getDefaultUrl",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint MediaDrm_KeyRequest::getRequestType()
 	{

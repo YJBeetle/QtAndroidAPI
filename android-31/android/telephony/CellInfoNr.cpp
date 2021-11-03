@@ -1,6 +1,8 @@
 #include "../os/Parcel.hpp"
 #include "./CellIdentity.hpp"
 #include "./CellSignalStrength.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./CellInfoNr.hpp"
 
 namespace android::telephony
@@ -21,12 +23,12 @@ namespace android::telephony
 	// Constructors
 	
 	// Methods
-	jboolean CellInfoNr::equals(jobject arg0)
+	jboolean CellInfoNr::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	android::telephony::CellIdentity CellInfoNr::getCellIdentity()
@@ -50,12 +52,12 @@ namespace android::telephony
 			"()I"
 		);
 	}
-	jstring CellInfoNr::toString()
+	JString CellInfoNr::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void CellInfoNr::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

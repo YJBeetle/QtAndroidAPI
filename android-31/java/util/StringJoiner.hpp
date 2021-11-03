@@ -2,6 +2,10 @@
 
 #include "../../JObject.hpp"
 
+class JCharArray;
+class JArray;
+class JString;
+class JString;
 
 namespace java::util
 {
@@ -15,15 +19,15 @@ namespace java::util
 		StringJoiner(QJniObject obj);
 		
 		// Constructors
-		StringJoiner(jstring arg0);
-		StringJoiner(jstring arg0, jstring arg1, jstring arg2);
+		StringJoiner(JString arg0);
+		StringJoiner(JString arg0, JString arg1, JString arg2);
 		
 		// Methods
-		java::util::StringJoiner add(jstring arg0);
+		java::util::StringJoiner add(JString arg0);
 		jint length();
 		java::util::StringJoiner merge(java::util::StringJoiner arg0);
-		java::util::StringJoiner setEmptyValue(jstring arg0);
-		jstring toString();
+		java::util::StringJoiner setEmptyValue(JString arg0);
+		JString toString();
 	};
 } // namespace java::util
 

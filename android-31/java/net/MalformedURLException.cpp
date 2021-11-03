@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./MalformedURLException.hpp"
 
 namespace java::net
@@ -13,11 +14,11 @@ namespace java::net
 			"java.net.MalformedURLException",
 			"()V"
 		) {}
-	MalformedURLException::MalformedURLException(jstring arg0)
+	MalformedURLException::MalformedURLException(JString arg0)
 		: java::io::IOException(
 			"java.net.MalformedURLException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

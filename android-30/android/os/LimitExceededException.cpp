@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./LimitExceededException.hpp"
 
 namespace android::os
@@ -13,11 +14,11 @@ namespace android::os
 			"android.os.LimitExceededException",
 			"()V"
 		) {}
-	LimitExceededException::LimitExceededException(jstring arg0)
+	LimitExceededException::LimitExceededException(JString arg0)
 		: java::lang::IllegalStateException(
 			"android.os.LimitExceededException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

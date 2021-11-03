@@ -1,4 +1,5 @@
 #include "./FingerprintManager_AuthenticationResult.hpp"
+#include "../../../JString.hpp"
 #include "./FingerprintManager_AuthenticationCallback.hpp"
 
 namespace android::hardware::fingerprint
@@ -16,13 +17,13 @@ namespace android::hardware::fingerprint
 		) {}
 	
 	// Methods
-	void FingerprintManager_AuthenticationCallback::onAuthenticationError(jint arg0, jstring arg1)
+	void FingerprintManager_AuthenticationCallback::onAuthenticationError(jint arg0, JString arg1)
 	{
 		callMethod<void>(
 			"onAuthenticationError",
 			"(ILjava/lang/CharSequence;)V",
 			arg0,
-			arg1
+			arg1.object<jstring>()
 		);
 	}
 	void FingerprintManager_AuthenticationCallback::onAuthenticationFailed()
@@ -32,13 +33,13 @@ namespace android::hardware::fingerprint
 			"()V"
 		);
 	}
-	void FingerprintManager_AuthenticationCallback::onAuthenticationHelp(jint arg0, jstring arg1)
+	void FingerprintManager_AuthenticationCallback::onAuthenticationHelp(jint arg0, JString arg1)
 	{
 		callMethod<void>(
 			"onAuthenticationHelp",
 			"(ILjava/lang/CharSequence;)V",
 			arg0,
-			arg1
+			arg1.object<jstring>()
 		);
 	}
 	void FingerprintManager_AuthenticationCallback::onAuthenticationSucceeded(android::hardware::fingerprint::FingerprintManager_AuthenticationResult arg0)

@@ -1,6 +1,5 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "./Handler.hpp"
 
 namespace java::io
@@ -11,6 +10,7 @@ namespace java::io
 {
 	class Writer;
 }
+class JString;
 namespace java::util::logging
 {
 	class Formatter;
@@ -44,7 +44,7 @@ namespace java::util::logging
 		void flush();
 		jboolean isLoggable(java::util::logging::LogRecord arg0);
 		void publish(java::util::logging::LogRecord arg0);
-		void setEncoding(jstring arg0);
+		void setEncoding(JString arg0);
 	};
 } // namespace java::util::logging
 

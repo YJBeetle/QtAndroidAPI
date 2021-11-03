@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "../time/Instant.hpp"
 #include "../time/LocalTime.hpp"
 #include "./Time.hpp"
@@ -26,13 +27,13 @@ namespace java::sql
 		) {}
 	
 	// Methods
-	java::sql::Time Time::valueOf(jstring arg0)
+	java::sql::Time Time::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"java.sql.Time",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/sql/Time;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	java::sql::Time Time::valueOf(java::time::LocalTime arg0)
@@ -118,12 +119,12 @@ namespace java::sql
 			"()Ljava/time/LocalTime;"
 		);
 	}
-	jstring Time::toString()
+	JString Time::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::sql
 

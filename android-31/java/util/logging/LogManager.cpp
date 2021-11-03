@@ -1,4 +1,7 @@
+#include "../../../JArray.hpp"
 #include "../../io/InputStream.hpp"
+#include "../../../JClass.hpp"
+#include "../../../JString.hpp"
 #include "../../lang/Void.hpp"
 #include "../../lang/ref/ReferenceQueue.hpp"
 #include "../../security/AccessControlContext.hpp"
@@ -15,13 +18,13 @@
 namespace java::util::logging
 {
 	// Fields
-	jstring LogManager::LOGGING_MXBEAN_NAME()
+	JString LogManager::LOGGING_MXBEAN_NAME()
 	{
 		return getStaticObjectField(
 			"java.util.logging.LogManager",
 			"LOGGING_MXBEAN_NAME",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QJniObject forward
@@ -69,12 +72,12 @@ namespace java::util::logging
 			"()V"
 		);
 	}
-	java::util::logging::Logger LogManager::getLogger(jstring arg0)
+	java::util::logging::Logger LogManager::getLogger(JString arg0)
 	{
 		return callObjectMethod(
 			"getLogger",
 			"(Ljava/lang/String;)Ljava/util/logging/Logger;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	JObject LogManager::getLoggerNames()
@@ -84,13 +87,13 @@ namespace java::util::logging
 			"()Ljava/util/Enumeration;"
 		);
 	}
-	jstring LogManager::getProperty(jstring arg0)
+	JString LogManager::getProperty(JString arg0)
 	{
 		return callObjectMethod(
 			"getProperty",
 			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
+			arg0.object<jstring>()
+		);
 	}
 	void LogManager::readConfiguration()
 	{

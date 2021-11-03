@@ -9,6 +9,7 @@
 #include "../text/DecimalFormatSymbols.hpp"
 #include "../text/NumberingSystem.hpp"
 #include "../util/MeasureUnit.hpp"
+#include "../../../JObject.hpp"
 #include "../../../java/math/RoundingMode.hpp"
 #include "./NumberFormatterSettings.hpp"
 
@@ -30,12 +31,12 @@ namespace android::icu::number
 			arg0.object()
 		);
 	}
-	jboolean NumberFormatterSettings::equals(jobject arg0)
+	jboolean NumberFormatterSettings::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	android::icu::number::NumberFormatterSettings NumberFormatterSettings::grouping(android::icu::number::NumberFormatter_GroupingStrategy arg0)

@@ -10,6 +10,7 @@ namespace android::icu::util
 {
 	class ULocale;
 }
+class JString;
 namespace java::util
 {
 	class Locale;
@@ -33,13 +34,13 @@ namespace android::icu::text
 		static android::icu::text::TimeZoneNames getInstance(java::util::Locale arg0);
 		static android::icu::text::TimeZoneNames getTZDBInstance(android::icu::util::ULocale arg0);
 		JObject getAvailableMetaZoneIDs();
-		JObject getAvailableMetaZoneIDs(jstring arg0);
-		jstring getDisplayName(jstring arg0, android::icu::text::TimeZoneNames_NameType arg1, jlong arg2);
-		jstring getExemplarLocationName(jstring arg0);
-		jstring getMetaZoneDisplayName(jstring arg0, android::icu::text::TimeZoneNames_NameType arg1);
-		jstring getMetaZoneID(jstring arg0, jlong arg1);
-		jstring getReferenceZoneID(jstring arg0, jstring arg1);
-		jstring getTimeZoneDisplayName(jstring arg0, android::icu::text::TimeZoneNames_NameType arg1);
+		JObject getAvailableMetaZoneIDs(JString arg0);
+		JString getDisplayName(JString arg0, android::icu::text::TimeZoneNames_NameType arg1, jlong arg2);
+		JString getExemplarLocationName(JString arg0);
+		JString getMetaZoneDisplayName(JString arg0, android::icu::text::TimeZoneNames_NameType arg1);
+		JString getMetaZoneID(JString arg0, jlong arg1);
+		JString getReferenceZoneID(JString arg0, JString arg1);
+		JString getTimeZoneDisplayName(JString arg0, android::icu::text::TimeZoneNames_NameType arg1);
 	};
 } // namespace android::icu::text
 

@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./RestoreObserver.hpp"
 
 namespace android::app::backup
@@ -15,13 +16,13 @@ namespace android::app::backup
 		) {}
 	
 	// Methods
-	void RestoreObserver::onUpdate(jint arg0, jstring arg1)
+	void RestoreObserver::onUpdate(jint arg0, JString arg1)
 	{
 		callMethod<void>(
 			"onUpdate",
 			"(ILjava/lang/String;)V",
 			arg0,
-			arg1
+			arg1.object<jstring>()
 		);
 	}
 	void RestoreObserver::restoreFinished(jint arg0)

@@ -2,6 +2,8 @@
 
 #include "../../../JObject.hpp"
 
+class JLongArray;
+class JArray;
 namespace android::net
 {
 	class MacAddress;
@@ -18,6 +20,7 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
 namespace java::util
 {
 	class BitSet;
@@ -29,9 +32,9 @@ namespace android::net::wifi
 	{
 	public:
 		// Fields
-		jstring BSSID();
-		jstring FQDN();
-		jstring SSID();
+		JString BSSID();
+		JString FQDN();
+		JString SSID();
 		java::util::BitSet allowedAuthAlgorithms();
 		java::util::BitSet allowedGroupCiphers();
 		java::util::BitSet allowedGroupManagementCiphers();
@@ -43,12 +46,12 @@ namespace android::net::wifi
 		jboolean hiddenSSID();
 		jboolean isHomeProviderNetwork();
 		jint networkId();
-		jstring preSharedKey();
+		JString preSharedKey();
 		jint priority();
-		jstring providerFriendlyName();
-		jlongArray roamingConsortiumIds();
+		JString providerFriendlyName();
+		JLongArray roamingConsortiumIds();
 		jint status();
-		jarray wepKeys();
+		JArray wepKeys();
 		jint wepTxKeyIndex();
 		
 		// QJniObject forward
@@ -64,7 +67,7 @@ namespace android::net::wifi
 		android::net::MacAddress getRandomizedMacAddress();
 		jboolean isPasspoint();
 		void setHttpProxy(android::net::ProxyInfo arg0);
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::net::wifi

@@ -3,6 +3,7 @@
 #include "./Call_Details.hpp"
 #include "./Call_RttCall.hpp"
 #include "./InCallService_VideoCall.hpp"
+#include "../../JString.hpp"
 #include "./Call_Callback.hpp"
 
 namespace android::telecom
@@ -90,13 +91,13 @@ namespace android::telecom
 			arg1.object()
 		);
 	}
-	void Call_Callback::onConnectionEvent(android::telecom::Call arg0, jstring arg1, android::os::Bundle arg2)
+	void Call_Callback::onConnectionEvent(android::telecom::Call arg0, JString arg1, android::os::Bundle arg2)
 	{
 		callMethod<void>(
 			"onConnectionEvent",
 			"(Landroid/telecom/Call;Ljava/lang/String;Landroid/os/Bundle;)V",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2.object()
 		);
 	}
@@ -135,13 +136,13 @@ namespace android::telecom
 			arg1.object()
 		);
 	}
-	void Call_Callback::onPostDialWait(android::telecom::Call arg0, jstring arg1)
+	void Call_Callback::onPostDialWait(android::telecom::Call arg0, JString arg1)
 	{
 		callMethod<void>(
 			"onPostDialWait",
 			"(Landroid/telecom/Call;Ljava/lang/String;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
 	void Call_Callback::onRttInitiationFailure(android::telecom::Call arg0, jint arg1)

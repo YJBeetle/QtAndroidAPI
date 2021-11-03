@@ -1,3 +1,5 @@
+#include "../../../JObjectArray.hpp"
+#include "../../../JObject.hpp"
 #include "./CopyOnWriteArrayList.hpp"
 #include "./CopyOnWriteArraySet.hpp"
 
@@ -22,12 +24,12 @@ namespace java::util::concurrent
 		) {}
 	
 	// Methods
-	jboolean CopyOnWriteArraySet::add(jobject arg0)
+	jboolean CopyOnWriteArraySet::add(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"add",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jboolean CopyOnWriteArraySet::addAll(JObject arg0)
@@ -45,12 +47,12 @@ namespace java::util::concurrent
 			"()V"
 		);
 	}
-	jboolean CopyOnWriteArraySet::contains(jobject arg0)
+	jboolean CopyOnWriteArraySet::contains(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"contains",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jboolean CopyOnWriteArraySet::containsAll(JObject arg0)
@@ -61,12 +63,12 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	jboolean CopyOnWriteArraySet::equals(jobject arg0)
+	jboolean CopyOnWriteArraySet::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	void CopyOnWriteArraySet::forEach(JObject arg0)
@@ -91,12 +93,12 @@ namespace java::util::concurrent
 			"()Ljava/util/Iterator;"
 		);
 	}
-	jboolean CopyOnWriteArraySet::remove(jobject arg0)
+	jboolean CopyOnWriteArraySet::remove(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"remove",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jboolean CopyOnWriteArraySet::removeAll(JObject arg0)
@@ -137,20 +139,20 @@ namespace java::util::concurrent
 			"()Ljava/util/Spliterator;"
 		);
 	}
-	jobjectArray CopyOnWriteArraySet::toArray()
+	JObjectArray CopyOnWriteArraySet::toArray()
 	{
 		return callObjectMethod(
 			"toArray",
 			"()[Ljava/lang/Object;"
-		).object<jobjectArray>();
+		);
 	}
-	jobjectArray CopyOnWriteArraySet::toArray(jobjectArray arg0)
+	JObjectArray CopyOnWriteArraySet::toArray(JObjectArray arg0)
 	{
 		return callObjectMethod(
 			"toArray",
 			"([Ljava/lang/Object;)[Ljava/lang/Object;",
-			arg0
-		).object<jobjectArray>();
+			arg0.object<jobjectArray>()
+		);
 	}
 } // namespace java::util::concurrent
 

@@ -1,12 +1,15 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "../../../java/security/Permission.hpp"
 
+class JArray;
+class JArray;
 namespace java::io
 {
 	class ObjectInputStream;
 }
+class JObject;
+class JString;
 namespace java::security
 {
 	class Permission;
@@ -28,13 +31,13 @@ namespace javax::security::auth
 		PrivateCredentialPermission(QJniObject obj);
 		
 		// Constructors
-		PrivateCredentialPermission(jstring arg0, jstring arg1);
+		PrivateCredentialPermission(JString arg0, JString arg1);
 		
 		// Methods
-		jboolean equals(jobject arg0);
-		jstring getActions();
-		jstring getCredentialClass();
-		jarray getPrincipals();
+		jboolean equals(JObject arg0);
+		JString getActions();
+		JString getCredentialClass();
+		JArray getPrincipals();
 		jint hashCode();
 		jboolean implies(java::security::Permission arg0);
 		java::security::PermissionCollection newPermissionCollection();

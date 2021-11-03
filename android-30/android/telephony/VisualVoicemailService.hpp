@@ -1,8 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../content/Context.hpp"
-#include "../content/ContextWrapper.hpp"
 #include "../app/Service.hpp"
 
 namespace android::content
@@ -21,6 +18,7 @@ namespace android::telephony
 {
 	class VisualVoicemailSms;
 }
+class JString;
 
 namespace android::telephony
 {
@@ -28,7 +26,7 @@ namespace android::telephony
 	{
 	public:
 		// Fields
-		static jstring SERVICE_INTERFACE();
+		static JString SERVICE_INTERFACE();
 		
 		// QJniObject forward
 		template<typename ...Ts> explicit VisualVoicemailService(const char *className, const char *sig, Ts...agv) : android::app::Service(className, sig, std::forward<Ts>(agv)...) {}

@@ -6,6 +6,8 @@ namespace android::os
 {
 	class Parcel;
 }
+class JObject;
+class JString;
 
 namespace android::content
 {
@@ -14,8 +16,8 @@ namespace android::content
 	public:
 		// Fields
 		static JObject CREATOR();
-		jstring accountType();
-		jstring authority();
+		JString accountType();
+		JString authority();
 		jboolean isKey();
 		
 		// QJniObject forward
@@ -24,19 +26,19 @@ namespace android::content
 		
 		// Constructors
 		SyncAdapterType(android::os::Parcel arg0);
-		SyncAdapterType(jstring arg0, jstring arg1, jboolean arg2, jboolean arg3);
+		SyncAdapterType(JString arg0, JString arg1, jboolean arg2, jboolean arg3);
 		
 		// Methods
-		static android::content::SyncAdapterType newKey(jstring arg0, jstring arg1);
+		static android::content::SyncAdapterType newKey(JString arg0, JString arg1);
 		jboolean allowParallelSyncs();
 		jint describeContents();
-		jboolean equals(jobject arg0);
-		jstring getSettingsActivity();
+		jboolean equals(JObject arg0);
+		JString getSettingsActivity();
 		jint hashCode();
 		jboolean isAlwaysSyncable();
 		jboolean isUserVisible();
 		jboolean supportsUploading();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::content

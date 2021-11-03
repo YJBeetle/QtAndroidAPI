@@ -1,5 +1,7 @@
 #include "../graphics/Point.hpp"
 #include "../os/Parcel.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./RoundedCorner.hpp"
 
 namespace android::view
@@ -64,12 +66,12 @@ namespace android::view
 			"()I"
 		);
 	}
-	jboolean RoundedCorner::equals(jobject arg0)
+	jboolean RoundedCorner::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	android::graphics::Point RoundedCorner::getCenter()
@@ -100,12 +102,12 @@ namespace android::view
 			"()I"
 		);
 	}
-	jstring RoundedCorner::toString()
+	JString RoundedCorner::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void RoundedCorner::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

@@ -1,3 +1,5 @@
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "../time/Instant.hpp"
 #include "../time/LocalDateTime.hpp"
 #include "../util/Date.hpp"
@@ -40,13 +42,13 @@ namespace java::sql
 			arg0.object()
 		);
 	}
-	java::sql::Timestamp Timestamp::valueOf(jstring arg0)
+	java::sql::Timestamp Timestamp::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"java.sql.Timestamp",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/sql/Timestamp;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	java::sql::Timestamp Timestamp::valueOf(java::time::LocalDateTime arg0)
@@ -74,12 +76,12 @@ namespace java::sql
 			arg0.object()
 		);
 	}
-	jint Timestamp::compareTo(jobject arg0)
+	jint Timestamp::compareTo(JObject arg0)
 	{
 		return callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Object;)I",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint Timestamp::compareTo(java::sql::Timestamp arg0)
@@ -98,12 +100,12 @@ namespace java::sql
 			arg0.object()
 		);
 	}
-	jboolean Timestamp::equals(jobject arg0)
+	jboolean Timestamp::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jboolean Timestamp::equals(java::sql::Timestamp arg0)
@@ -165,12 +167,12 @@ namespace java::sql
 			"()Ljava/time/LocalDateTime;"
 		);
 	}
-	jstring Timestamp::toString()
+	JString Timestamp::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::sql
 

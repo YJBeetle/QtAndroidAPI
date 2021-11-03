@@ -1,3 +1,5 @@
+#include "../../JByteArray.hpp"
+#include "../../JString.hpp"
 #include "./ProcessedData.hpp"
 
 namespace android::drm
@@ -10,26 +12,26 @@ namespace android::drm
 	// Constructors
 	
 	// Methods
-	jstring ProcessedData::getAccountId()
+	JString ProcessedData::getAccountId()
 	{
 		return callObjectMethod(
 			"getAccountId",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jbyteArray ProcessedData::getData()
+	JByteArray ProcessedData::getData()
 	{
 		return callObjectMethod(
 			"getData",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
-	jstring ProcessedData::getSubscriptionId()
+	JString ProcessedData::getSubscriptionId()
 	{
 		return callObjectMethod(
 			"getSubscriptionId",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::drm
 

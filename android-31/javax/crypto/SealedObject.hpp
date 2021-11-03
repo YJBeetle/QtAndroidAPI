@@ -2,10 +2,13 @@
 
 #include "../../JObject.hpp"
 
+class JByteArray;
 namespace java::io
 {
 	class ObjectInputStream;
 }
+class JObject;
+class JString;
 namespace javax::crypto
 {
 	class Cipher;
@@ -26,10 +29,10 @@ namespace javax::crypto
 		SealedObject(JObject arg0, javax::crypto::Cipher arg1);
 		
 		// Methods
-		jstring getAlgorithm();
-		jobject getObject(JObject arg0);
-		jobject getObject(javax::crypto::Cipher arg0);
-		jobject getObject(JObject arg0, jstring arg1);
+		JString getAlgorithm();
+		JObject getObject(JObject arg0);
+		JObject getObject(javax::crypto::Cipher arg0);
+		JObject getObject(JObject arg0, JString arg1);
 	};
 } // namespace javax::crypto
 

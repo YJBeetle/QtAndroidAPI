@@ -1,3 +1,5 @@
+#include "../../JString.hpp"
+#include "../../JThrowable.hpp"
 #include "./GeneralSecurityException.hpp"
 
 namespace java::security
@@ -13,24 +15,24 @@ namespace java::security
 			"java.security.GeneralSecurityException",
 			"()V"
 		) {}
-	GeneralSecurityException::GeneralSecurityException(jstring arg0)
+	GeneralSecurityException::GeneralSecurityException(JString arg0)
 		: java::lang::Exception(
 			"java.security.GeneralSecurityException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	GeneralSecurityException::GeneralSecurityException(jthrowable arg0)
+	GeneralSecurityException::GeneralSecurityException(JThrowable arg0)
 		: java::lang::Exception(
 			"java.security.GeneralSecurityException",
 			"(Ljava/lang/Throwable;)V",
-			arg0
+			arg0.object<jthrowable>()
 		) {}
-	GeneralSecurityException::GeneralSecurityException(jstring arg0, jthrowable arg1)
+	GeneralSecurityException::GeneralSecurityException(JString arg0, JThrowable arg1)
 		: java::lang::Exception(
 			"java.security.GeneralSecurityException",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
 		) {}
 	
 	// Methods

@@ -1,5 +1,7 @@
 #include "../../os/Bundle.hpp"
 #include "../../os/Parcel.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./PlaybackErrorEvent.hpp"
 
 namespace android::media::metrics
@@ -279,12 +281,12 @@ namespace android::media::metrics
 			"()I"
 		);
 	}
-	jboolean PlaybackErrorEvent::equals(jobject arg0)
+	jboolean PlaybackErrorEvent::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint PlaybackErrorEvent::getErrorCode()
@@ -322,12 +324,12 @@ namespace android::media::metrics
 			"()I"
 		);
 	}
-	jstring PlaybackErrorEvent::toString()
+	JString PlaybackErrorEvent::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void PlaybackErrorEvent::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

@@ -1,8 +1,10 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "../lang/Enum.hpp"
 
+class JArray;
+class JObject;
+class JString;
 namespace java::time::format
 {
 	class TextStyle;
@@ -44,13 +46,13 @@ namespace java::time
 		// Methods
 		static java::time::Month from(JObject arg0);
 		static java::time::Month of(jint arg0);
-		static java::time::Month valueOf(jstring arg0);
-		static jarray values();
+		static java::time::Month valueOf(JString arg0);
+		static JArray values();
 		JObject adjustInto(JObject arg0);
 		jint firstDayOfYear(jboolean arg0);
 		java::time::Month firstMonthOfQuarter();
 		jint get(JObject arg0);
-		jstring getDisplayName(java::time::format::TextStyle arg0, java::util::Locale arg1);
+		JString getDisplayName(java::time::format::TextStyle arg0, java::util::Locale arg1);
 		jlong getLong(JObject arg0);
 		jint getValue();
 		jboolean isSupported(JObject arg0);
@@ -59,7 +61,7 @@ namespace java::time
 		jint minLength();
 		java::time::Month minus(jlong arg0);
 		java::time::Month plus(jlong arg0);
-		jobject query(JObject arg0);
+		JObject query(JObject arg0);
 		java::time::temporal::ValueRange range(JObject arg0);
 	};
 } // namespace java::time

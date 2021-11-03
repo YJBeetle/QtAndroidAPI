@@ -1,3 +1,5 @@
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "../../java/util/Locale.hpp"
 #include "./AudioPresentation.hpp"
 
@@ -109,12 +111,12 @@ namespace android::media
 	// Constructors
 	
 	// Methods
-	jboolean AudioPresentation::equals(jobject arg0)
+	jboolean AudioPresentation::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	JObject AudioPresentation::getLabels()
@@ -180,12 +182,12 @@ namespace android::media
 			"()I"
 		);
 	}
-	jstring AudioPresentation::toString()
+	JString AudioPresentation::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::media
 

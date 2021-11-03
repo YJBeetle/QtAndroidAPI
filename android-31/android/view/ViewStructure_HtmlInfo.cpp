@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./ViewStructure_HtmlInfo.hpp"
 
 namespace android::view
@@ -22,12 +23,12 @@ namespace android::view
 			"()Ljava/util/List;"
 		);
 	}
-	jstring ViewStructure_HtmlInfo::getTag()
+	JString ViewStructure_HtmlInfo::getTag()
 	{
 		return callObjectMethod(
 			"getTag",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::view
 

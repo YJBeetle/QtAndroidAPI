@@ -1,7 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../view/View.hpp"
 #include "../view/ViewGroup.hpp"
 
 namespace android::content
@@ -24,6 +22,7 @@ namespace android::widget
 {
 	class LinearLayout_LayoutParams;
 }
+class JString;
 
 namespace android::widget
 {
@@ -50,7 +49,7 @@ namespace android::widget
 		
 		// Methods
 		android::widget::LinearLayout_LayoutParams generateLayoutParams(JObject arg0);
-		jstring getAccessibilityClassName();
+		JString getAccessibilityClassName();
 		jint getBaseline();
 		jint getBaselineAlignedChildIndex();
 		android::graphics::drawable::Drawable getDividerDrawable();

@@ -1,9 +1,8 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "../AbstractCollection.hpp"
 #include "../AbstractQueue.hpp"
 
+class JObjectArray;
 namespace java::io
 {
 	class ObjectInputStream;
@@ -12,6 +11,8 @@ namespace java::io
 {
 	class ObjectOutputStream;
 }
+class JObject;
+class JString;
 namespace java::util::concurrent
 {
 	class TimeUnit;
@@ -38,58 +39,58 @@ namespace java::util::concurrent
 		LinkedBlockingDeque(JObject arg0);
 		
 		// Methods
-		jboolean add(jobject arg0);
+		jboolean add(JObject arg0);
 		jboolean addAll(JObject arg0);
-		void addFirst(jobject arg0);
-		void addLast(jobject arg0);
+		void addFirst(JObject arg0);
+		void addLast(JObject arg0);
 		void clear();
-		jboolean contains(jobject arg0);
+		jboolean contains(JObject arg0);
 		JObject descendingIterator();
 		jint drainTo(JObject arg0);
 		jint drainTo(JObject arg0, jint arg1);
-		jobject element();
+		JObject element();
 		void forEach(JObject arg0);
-		jobject getFirst();
-		jobject getLast();
+		JObject getFirst();
+		JObject getLast();
 		JObject iterator();
-		jboolean offer(jobject arg0);
-		jboolean offer(jobject arg0, jlong arg1, java::util::concurrent::TimeUnit arg2);
-		jboolean offerFirst(jobject arg0);
-		jboolean offerFirst(jobject arg0, jlong arg1, java::util::concurrent::TimeUnit arg2);
-		jboolean offerLast(jobject arg0);
-		jboolean offerLast(jobject arg0, jlong arg1, java::util::concurrent::TimeUnit arg2);
-		jobject peek();
-		jobject peekFirst();
-		jobject peekLast();
-		jobject poll();
-		jobject poll(jlong arg0, java::util::concurrent::TimeUnit arg1);
-		jobject pollFirst();
-		jobject pollFirst(jlong arg0, java::util::concurrent::TimeUnit arg1);
-		jobject pollLast();
-		jobject pollLast(jlong arg0, java::util::concurrent::TimeUnit arg1);
-		jobject pop();
-		void push(jobject arg0);
-		void put(jobject arg0);
-		void putFirst(jobject arg0);
-		void putLast(jobject arg0);
+		jboolean offer(JObject arg0);
+		jboolean offer(JObject arg0, jlong arg1, java::util::concurrent::TimeUnit arg2);
+		jboolean offerFirst(JObject arg0);
+		jboolean offerFirst(JObject arg0, jlong arg1, java::util::concurrent::TimeUnit arg2);
+		jboolean offerLast(JObject arg0);
+		jboolean offerLast(JObject arg0, jlong arg1, java::util::concurrent::TimeUnit arg2);
+		JObject peek();
+		JObject peekFirst();
+		JObject peekLast();
+		JObject poll();
+		JObject poll(jlong arg0, java::util::concurrent::TimeUnit arg1);
+		JObject pollFirst();
+		JObject pollFirst(jlong arg0, java::util::concurrent::TimeUnit arg1);
+		JObject pollLast();
+		JObject pollLast(jlong arg0, java::util::concurrent::TimeUnit arg1);
+		JObject pop();
+		void push(JObject arg0);
+		void put(JObject arg0);
+		void putFirst(JObject arg0);
+		void putLast(JObject arg0);
 		jint remainingCapacity();
-		jboolean remove(jobject arg0);
-		jobject remove();
+		jboolean remove(JObject arg0);
+		JObject remove();
 		jboolean removeAll(JObject arg0);
-		jobject removeFirst();
-		jboolean removeFirstOccurrence(jobject arg0);
+		JObject removeFirst();
+		jboolean removeFirstOccurrence(JObject arg0);
 		jboolean removeIf(JObject arg0);
-		jobject removeLast();
-		jboolean removeLastOccurrence(jobject arg0);
+		JObject removeLast();
+		jboolean removeLastOccurrence(JObject arg0);
 		jboolean retainAll(JObject arg0);
 		jint size();
 		JObject spliterator();
-		jobject take();
-		jobject takeFirst();
-		jobject takeLast();
-		jobjectArray toArray();
-		jobjectArray toArray(jobjectArray arg0);
-		jstring toString();
+		JObject take();
+		JObject takeFirst();
+		JObject takeLast();
+		JObjectArray toArray();
+		JObjectArray toArray(JObjectArray arg0);
+		JString toString();
 	};
 } // namespace java::util::concurrent
 

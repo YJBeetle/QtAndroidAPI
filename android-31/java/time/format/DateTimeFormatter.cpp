@@ -1,5 +1,10 @@
+#include "../../../JArray.hpp"
+#include "../../../JArray.hpp"
 #include "../../lang/Boolean.hpp"
+#include "../../../JString.hpp"
+#include "../../../JObject.hpp"
 #include "../../lang/RuntimeException.hpp"
+#include "../../../JString.hpp"
 #include "../../text/Format.hpp"
 #include "../../text/ParsePosition.hpp"
 #include "../Period.hpp"
@@ -178,22 +183,22 @@ namespace java::time::format
 			arg0.object()
 		);
 	}
-	java::time::format::DateTimeFormatter DateTimeFormatter::ofPattern(jstring arg0)
+	java::time::format::DateTimeFormatter DateTimeFormatter::ofPattern(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"java.time.format.DateTimeFormatter",
 			"ofPattern",
 			"(Ljava/lang/String;)Ljava/time/format/DateTimeFormatter;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	java::time::format::DateTimeFormatter DateTimeFormatter::ofPattern(jstring arg0, java::util::Locale arg1)
+	java::time::format::DateTimeFormatter DateTimeFormatter::ofPattern(JString arg0, java::util::Locale arg1)
 	{
 		return callStaticObjectMethod(
 			"java.time.format.DateTimeFormatter",
 			"ofPattern",
 			"(Ljava/lang/String;Ljava/util/Locale;)Ljava/time/format/DateTimeFormatter;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
@@ -213,13 +218,13 @@ namespace java::time::format
 			"()Ljava/time/temporal/TemporalQuery;"
 		);
 	}
-	jstring DateTimeFormatter::format(JObject arg0)
+	JString DateTimeFormatter::format(JObject arg0)
 	{
 		return callObjectMethod(
 			"format",
 			"(Ljava/time/temporal/TemporalAccessor;)Ljava/lang/String;",
 			arg0.object()
-		).object<jstring>();
+		);
 	}
 	void DateTimeFormatter::formatTo(JObject arg0, JObject arg1)
 	{
@@ -280,47 +285,47 @@ namespace java::time::format
 			arg0.object()
 		);
 	}
-	jobject DateTimeFormatter::parse(jstring arg0, JObject arg1)
+	JObject DateTimeFormatter::parse(JString arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"parse",
 			"(Ljava/lang/CharSequence;Ljava/time/temporal/TemporalQuery;)Ljava/lang/Object;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
-		).object<jobject>();
+		);
 	}
-	JObject DateTimeFormatter::parse(jstring arg0)
+	JObject DateTimeFormatter::parse(JString arg0)
 	{
 		return callObjectMethod(
 			"parse",
 			"(Ljava/lang/CharSequence;)Ljava/time/temporal/TemporalAccessor;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	JObject DateTimeFormatter::parse(jstring arg0, java::text::ParsePosition arg1)
+	JObject DateTimeFormatter::parse(JString arg0, java::text::ParsePosition arg1)
 	{
 		return callObjectMethod(
 			"parse",
 			"(Ljava/lang/CharSequence;Ljava/text/ParsePosition;)Ljava/time/temporal/TemporalAccessor;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
-	JObject DateTimeFormatter::parseBest(jstring arg0, jarray arg1)
+	JObject DateTimeFormatter::parseBest(JString arg0, JArray arg1)
 	{
 		return callObjectMethod(
 			"parseBest",
 			"(Ljava/lang/CharSequence;[Ljava/time/temporal/TemporalQuery;)Ljava/time/temporal/TemporalAccessor;",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jarray>()
 		);
 	}
-	JObject DateTimeFormatter::parseUnresolved(jstring arg0, java::text::ParsePosition arg1)
+	JObject DateTimeFormatter::parseUnresolved(JString arg0, java::text::ParsePosition arg1)
 	{
 		return callObjectMethod(
 			"parseUnresolved",
 			"(Ljava/lang/CharSequence;Ljava/text/ParsePosition;)Ljava/time/temporal/TemporalAccessor;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
@@ -339,12 +344,12 @@ namespace java::time::format
 			arg0.object()
 		);
 	}
-	jstring DateTimeFormatter::toString()
+	JString DateTimeFormatter::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	java::time::format::DateTimeFormatter DateTimeFormatter::withChronology(JObject arg0)
 	{
@@ -370,12 +375,12 @@ namespace java::time::format
 			arg0.object()
 		);
 	}
-	java::time::format::DateTimeFormatter DateTimeFormatter::withResolverFields(jarray arg0)
+	java::time::format::DateTimeFormatter DateTimeFormatter::withResolverFields(JArray arg0)
 	{
 		return callObjectMethod(
 			"withResolverFields",
 			"([Ljava/time/temporal/TemporalField;)Ljava/time/format/DateTimeFormatter;",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
 	java::time::format::DateTimeFormatter DateTimeFormatter::withResolverFields(JObject arg0)

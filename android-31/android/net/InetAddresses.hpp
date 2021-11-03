@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JString;
 namespace java::net
 {
 	class InetAddress;
@@ -21,8 +22,8 @@ namespace android::net
 		// Constructors
 		
 		// Methods
-		static jboolean isNumericAddress(jstring arg0);
-		static java::net::InetAddress parseNumericAddress(jstring arg0);
+		static jboolean isNumericAddress(JString arg0);
+		static java::net::InetAddress parseNumericAddress(JString arg0);
 	};
 } // namespace android::net
 

@@ -6,6 +6,7 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
 
 namespace android::app::admin
 {
@@ -24,7 +25,7 @@ namespace android::app::admin
 		// Methods
 		jint describeContents();
 		jlong getId();
-		jstring getPackageName();
+		JString getPackageName();
 		jlong getTimestamp();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};

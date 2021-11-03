@@ -1,4 +1,6 @@
 #include "../io/ObjectInputStream.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./Permission.hpp"
 #include "./PermissionCollection.hpp"
 #include "./BasicPermission.hpp"
@@ -11,35 +13,35 @@ namespace java::security
 	BasicPermission::BasicPermission(QJniObject obj) : java::security::Permission(obj) {}
 	
 	// Constructors
-	BasicPermission::BasicPermission(jstring arg0)
+	BasicPermission::BasicPermission(JString arg0)
 		: java::security::Permission(
 			"java.security.BasicPermission",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	BasicPermission::BasicPermission(jstring arg0, jstring arg1)
+	BasicPermission::BasicPermission(JString arg0, JString arg1)
 		: java::security::Permission(
 			"java.security.BasicPermission",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		) {}
 	
 	// Methods
-	jboolean BasicPermission::equals(jobject arg0)
+	jboolean BasicPermission::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jstring BasicPermission::getActions()
+	JString BasicPermission::getActions()
 	{
 		return callObjectMethod(
 			"getActions",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint BasicPermission::hashCode()
 	{

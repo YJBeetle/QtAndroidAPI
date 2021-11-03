@@ -6,6 +6,7 @@ namespace android::media::tv
 {
 	class TvInputInfo;
 }
+class JString;
 
 namespace android::media::tv
 {
@@ -22,10 +23,10 @@ namespace android::media::tv
 		TvInputManager_TvInputCallback();
 		
 		// Methods
-		void onInputAdded(jstring arg0);
-		void onInputRemoved(jstring arg0);
-		void onInputStateChanged(jstring arg0, jint arg1);
-		void onInputUpdated(jstring arg0);
+		void onInputAdded(JString arg0);
+		void onInputRemoved(JString arg0);
+		void onInputStateChanged(JString arg0, jint arg1);
+		void onInputUpdated(JString arg0);
 		void onTvInputInfoUpdated(android::media::tv::TvInputInfo arg0);
 	};
 } // namespace android::media::tv

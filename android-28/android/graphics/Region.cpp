@@ -2,6 +2,8 @@
 #include "./Rect.hpp"
 #include "./Region_Op.hpp"
 #include "../os/Parcel.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./Region.hpp"
 
 namespace android::graphics
@@ -64,12 +66,12 @@ namespace android::graphics
 			"()I"
 		);
 	}
-	jboolean Region::equals(jobject arg0)
+	jboolean Region::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	android::graphics::Path Region::getBoundaryPath()
@@ -262,12 +264,12 @@ namespace android::graphics
 			arg1.object()
 		);
 	}
-	jstring Region::toString()
+	JString Region::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void Region::translate(jint arg0, jint arg1)
 	{

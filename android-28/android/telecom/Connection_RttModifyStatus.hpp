@@ -2,7 +2,6 @@
 
 #include "../../JObject.hpp"
 
-
 namespace android::telecom
 {
 	class Connection_RttModifyStatus : public JObject

@@ -1,3 +1,6 @@
+#include "../../../JClass.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "../../../java/text/Format_Field.hpp"
 #include "./ConstrainedFieldPosition.hpp"
 
@@ -16,12 +19,12 @@ namespace android::icu::text
 		) {}
 	
 	// Methods
-	void ConstrainedFieldPosition::constrainClass(jclass arg0)
+	void ConstrainedFieldPosition::constrainClass(JClass arg0)
 	{
 		callMethod<void>(
 			"constrainClass",
 			"(Ljava/lang/Class;)V",
-			arg0
+			arg0.object<jclass>()
 		);
 	}
 	void ConstrainedFieldPosition::constrainField(java::text::Format_Field arg0)
@@ -39,12 +42,12 @@ namespace android::icu::text
 			"()Ljava/text/Format$Field;"
 		);
 	}
-	jobject ConstrainedFieldPosition::getFieldValue()
+	JObject ConstrainedFieldPosition::getFieldValue()
 	{
 		return callObjectMethod(
 			"getFieldValue",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
 	jlong ConstrainedFieldPosition::getInt64IterationContext()
 	{
@@ -67,13 +70,13 @@ namespace android::icu::text
 			"()I"
 		);
 	}
-	jboolean ConstrainedFieldPosition::matchesField(java::text::Format_Field arg0, jobject arg1)
+	jboolean ConstrainedFieldPosition::matchesField(java::text::Format_Field arg0, JObject arg1)
 	{
 		return callMethod<jboolean>(
 			"matchesField",
 			"(Ljava/text/Format$Field;Ljava/lang/Object;)Z",
 			arg0.object(),
-			arg1
+			arg1.object<jobject>()
 		);
 	}
 	void ConstrainedFieldPosition::reset()
@@ -91,23 +94,23 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	void ConstrainedFieldPosition::setState(java::text::Format_Field arg0, jobject arg1, jint arg2, jint arg3)
+	void ConstrainedFieldPosition::setState(java::text::Format_Field arg0, JObject arg1, jint arg2, jint arg3)
 	{
 		callMethod<void>(
 			"setState",
 			"(Ljava/text/Format$Field;Ljava/lang/Object;II)V",
 			arg0.object(),
-			arg1,
+			arg1.object<jobject>(),
 			arg2,
 			arg3
 		);
 	}
-	jstring ConstrainedFieldPosition::toString()
+	JString ConstrainedFieldPosition::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::icu::text
 

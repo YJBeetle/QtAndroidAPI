@@ -1,3 +1,4 @@
+#include "../../../JByteArray.hpp"
 #include "../Tag.hpp"
 #include "./NfcBarcode.hpp"
 
@@ -48,12 +49,12 @@ namespace android::nfc::tech
 			"()V"
 		);
 	}
-	jbyteArray NfcBarcode::getBarcode()
+	JByteArray NfcBarcode::getBarcode()
 	{
 		return callObjectMethod(
 			"getBarcode",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
 	android::nfc::Tag NfcBarcode::getTag()
 	{

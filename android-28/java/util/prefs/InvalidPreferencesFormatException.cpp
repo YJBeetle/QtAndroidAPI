@@ -1,3 +1,5 @@
+#include "../../../JString.hpp"
+#include "../../../JThrowable.hpp"
 #include "./InvalidPreferencesFormatException.hpp"
 
 namespace java::util::prefs
@@ -8,24 +10,24 @@ namespace java::util::prefs
 	InvalidPreferencesFormatException::InvalidPreferencesFormatException(QJniObject obj) : java::lang::Exception(obj) {}
 	
 	// Constructors
-	InvalidPreferencesFormatException::InvalidPreferencesFormatException(jstring arg0)
+	InvalidPreferencesFormatException::InvalidPreferencesFormatException(JString arg0)
 		: java::lang::Exception(
 			"java.util.prefs.InvalidPreferencesFormatException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	InvalidPreferencesFormatException::InvalidPreferencesFormatException(jthrowable arg0)
+	InvalidPreferencesFormatException::InvalidPreferencesFormatException(JThrowable arg0)
 		: java::lang::Exception(
 			"java.util.prefs.InvalidPreferencesFormatException",
 			"(Ljava/lang/Throwable;)V",
-			arg0
+			arg0.object<jthrowable>()
 		) {}
-	InvalidPreferencesFormatException::InvalidPreferencesFormatException(jstring arg0, jthrowable arg1)
+	InvalidPreferencesFormatException::InvalidPreferencesFormatException(JString arg0, JThrowable arg1)
 		: java::lang::Exception(
 			"java.util.prefs.InvalidPreferencesFormatException",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
 		) {}
 	
 	// Methods

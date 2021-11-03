@@ -1,3 +1,4 @@
+#include "../../JByteArray.hpp"
 #include "./OutputStream.hpp"
 #include "./ByteArrayInputStream.hpp"
 
@@ -9,17 +10,17 @@ namespace java::io
 	ByteArrayInputStream::ByteArrayInputStream(QJniObject obj) : java::io::InputStream(obj) {}
 	
 	// Constructors
-	ByteArrayInputStream::ByteArrayInputStream(jbyteArray arg0)
+	ByteArrayInputStream::ByteArrayInputStream(JByteArray arg0)
 		: java::io::InputStream(
 			"java.io.ByteArrayInputStream",
 			"([B)V",
-			arg0
+			arg0.object<jbyteArray>()
 		) {}
-	ByteArrayInputStream::ByteArrayInputStream(jbyteArray arg0, jint arg1, jint arg2)
+	ByteArrayInputStream::ByteArrayInputStream(JByteArray arg0, jint arg1, jint arg2)
 		: java::io::InputStream(
 			"java.io.ByteArrayInputStream",
 			"([BII)V",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1,
 			arg2
 		) {}
@@ -61,29 +62,29 @@ namespace java::io
 			"()I"
 		);
 	}
-	jint ByteArrayInputStream::read(jbyteArray arg0, jint arg1, jint arg2)
+	jint ByteArrayInputStream::read(JByteArray arg0, jint arg1, jint arg2)
 	{
 		return callMethod<jint>(
 			"read",
 			"([BII)I",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1,
 			arg2
 		);
 	}
-	jbyteArray ByteArrayInputStream::readAllBytes()
+	JByteArray ByteArrayInputStream::readAllBytes()
 	{
 		return callObjectMethod(
 			"readAllBytes",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
-	jint ByteArrayInputStream::readNBytes(jbyteArray arg0, jint arg1, jint arg2)
+	jint ByteArrayInputStream::readNBytes(JByteArray arg0, jint arg1, jint arg2)
 	{
 		return callMethod<jint>(
 			"readNBytes",
 			"([BII)I",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1,
 			arg2
 		);

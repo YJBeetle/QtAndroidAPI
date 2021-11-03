@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JString;
 
 namespace android::security
 {
@@ -19,7 +20,7 @@ namespace android::security
 		// Methods
 		static android::security::NetworkSecurityPolicy getInstance();
 		jboolean isCleartextTrafficPermitted();
-		jboolean isCleartextTrafficPermitted(jstring arg0);
+		jboolean isCleartextTrafficPermitted(JString arg0);
 	};
 } // namespace android::security
 

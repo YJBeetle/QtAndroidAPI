@@ -1,4 +1,5 @@
 #include "../content/Context.hpp"
+#include "../../JString.hpp"
 #include "./AdapterViewFlipper.hpp"
 
 namespace android::widget
@@ -48,12 +49,12 @@ namespace android::widget
 			"()V"
 		);
 	}
-	jstring AdapterViewFlipper::getAccessibilityClassName()
+	JString AdapterViewFlipper::getAccessibilityClassName()
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	jint AdapterViewFlipper::getFlipInterval()
 	{

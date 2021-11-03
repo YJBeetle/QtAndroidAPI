@@ -1,4 +1,5 @@
 #include "./PorterDuff_Mode.hpp"
+#include "../../JObject.hpp"
 #include "./PorterDuffColorFilter.hpp"
 
 namespace android::graphics
@@ -18,12 +19,12 @@ namespace android::graphics
 		) {}
 	
 	// Methods
-	jboolean PorterDuffColorFilter::equals(jobject arg0)
+	jboolean PorterDuffColorFilter::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint PorterDuffColorFilter::hashCode()

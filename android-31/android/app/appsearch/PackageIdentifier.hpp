@@ -2,6 +2,9 @@
 
 #include "../../../JObject.hpp"
 
+class JByteArray;
+class JObject;
+class JString;
 
 namespace android::app::appsearch
 {
@@ -15,12 +18,12 @@ namespace android::app::appsearch
 		PackageIdentifier(QJniObject obj);
 		
 		// Constructors
-		PackageIdentifier(jstring arg0, jbyteArray arg1);
+		PackageIdentifier(JString arg0, JByteArray arg1);
 		
 		// Methods
-		jboolean equals(jobject arg0);
-		jstring getPackageName();
-		jbyteArray getSha256Certificate();
+		jboolean equals(JObject arg0);
+		JString getPackageName();
+		JByteArray getSha256Certificate();
 		jint hashCode();
 	};
 } // namespace android::app::appsearch

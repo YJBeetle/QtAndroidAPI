@@ -1,6 +1,9 @@
 #include "../../graphics/Matrix.hpp"
 #include "../../graphics/RectF.hpp"
 #include "../../os/Parcel.hpp"
+#include "../../../JString.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./CursorAnchorInfo.hpp"
 
 namespace android::view::inputmethod
@@ -55,12 +58,12 @@ namespace android::view::inputmethod
 			"()I"
 		);
 	}
-	jboolean CursorAnchorInfo::equals(jobject arg0)
+	jboolean CursorAnchorInfo::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	android::graphics::RectF CursorAnchorInfo::getCharacterBounds(jint arg0)
@@ -79,12 +82,12 @@ namespace android::view::inputmethod
 			arg0
 		);
 	}
-	jstring CursorAnchorInfo::getComposingText()
+	JString CursorAnchorInfo::getComposingText()
 	{
 		return callObjectMethod(
 			"getComposingText",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	jint CursorAnchorInfo::getComposingTextStart()
 	{
@@ -156,12 +159,12 @@ namespace android::view::inputmethod
 			"()I"
 		);
 	}
-	jstring CursorAnchorInfo::toString()
+	JString CursorAnchorInfo::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void CursorAnchorInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./MediaDrm_SessionException.hpp"
 
 namespace android::media
@@ -22,12 +23,12 @@ namespace android::media
 	MediaDrm_SessionException::MediaDrm_SessionException(QJniObject obj) : java::lang::RuntimeException(obj) {}
 	
 	// Constructors
-	MediaDrm_SessionException::MediaDrm_SessionException(jint arg0, jstring arg1)
+	MediaDrm_SessionException::MediaDrm_SessionException(jint arg0, JString arg1)
 		: java::lang::RuntimeException(
 			"android.media.MediaDrm$SessionException",
 			"(ILjava/lang/String;)V",
 			arg0,
-			arg1
+			arg1.object<jstring>()
 		) {}
 	
 	// Methods

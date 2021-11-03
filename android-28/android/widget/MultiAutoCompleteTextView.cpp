@@ -1,4 +1,5 @@
 #include "../content/Context.hpp"
+#include "../../JString.hpp"
 #include "./MultiAutoCompleteTextView.hpp"
 
 namespace android::widget
@@ -48,12 +49,12 @@ namespace android::widget
 			"()Z"
 		);
 	}
-	jstring MultiAutoCompleteTextView::getAccessibilityClassName()
+	JString MultiAutoCompleteTextView::getAccessibilityClassName()
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	void MultiAutoCompleteTextView::performValidation()
 	{

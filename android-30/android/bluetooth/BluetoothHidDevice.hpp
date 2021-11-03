@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JByteArray;
+class JIntArray;
 namespace android::bluetooth
 {
 	class BluetoothDevice;
@@ -18,6 +20,7 @@ namespace android::bluetooth
 {
 	class BluetoothHidDeviceAppSdpSettings;
 }
+class JString;
 
 namespace android::bluetooth
 {
@@ -25,7 +28,7 @@ namespace android::bluetooth
 	{
 	public:
 		// Fields
-		static jstring ACTION_CONNECTION_STATE_CHANGED();
+		static JString ACTION_CONNECTION_STATE_CHANGED();
 		static jbyte ERROR_RSP_INVALID_PARAM();
 		static jbyte ERROR_RSP_INVALID_RPT_ID();
 		static jbyte ERROR_RSP_NOT_READY();
@@ -60,11 +63,11 @@ namespace android::bluetooth
 		jboolean disconnect(android::bluetooth::BluetoothDevice arg0);
 		JObject getConnectedDevices();
 		jint getConnectionState(android::bluetooth::BluetoothDevice arg0);
-		JObject getDevicesMatchingConnectionStates(jintArray arg0);
+		JObject getDevicesMatchingConnectionStates(JIntArray arg0);
 		jboolean registerApp(android::bluetooth::BluetoothHidDeviceAppSdpSettings arg0, android::bluetooth::BluetoothHidDeviceAppQosSettings arg1, android::bluetooth::BluetoothHidDeviceAppQosSettings arg2, JObject arg3, android::bluetooth::BluetoothHidDevice_Callback arg4);
-		jboolean replyReport(android::bluetooth::BluetoothDevice arg0, jbyte arg1, jbyte arg2, jbyteArray arg3);
+		jboolean replyReport(android::bluetooth::BluetoothDevice arg0, jbyte arg1, jbyte arg2, JByteArray arg3);
 		jboolean reportError(android::bluetooth::BluetoothDevice arg0, jbyte arg1);
-		jboolean sendReport(android::bluetooth::BluetoothDevice arg0, jint arg1, jbyteArray arg2);
+		jboolean sendReport(android::bluetooth::BluetoothDevice arg0, jint arg1, JByteArray arg2);
 		jboolean unregisterApp();
 	};
 } // namespace android::bluetooth

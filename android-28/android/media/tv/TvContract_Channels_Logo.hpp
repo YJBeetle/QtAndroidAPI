@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JString;
 
 namespace android::media::tv
 {
@@ -9,7 +10,7 @@ namespace android::media::tv
 	{
 	public:
 		// Fields
-		static jstring CONTENT_DIRECTORY();
+		static JString CONTENT_DIRECTORY();
 		
 		// QJniObject forward
 		template<typename ...Ts> explicit TvContract_Channels_Logo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}

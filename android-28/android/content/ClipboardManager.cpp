@@ -1,5 +1,6 @@
 #include "./ClipData.hpp"
 #include "./ClipDescription.hpp"
+#include "../../JString.hpp"
 #include "./ClipboardManager.hpp"
 
 namespace android::content
@@ -41,12 +42,12 @@ namespace android::content
 			"()Landroid/content/ClipDescription;"
 		);
 	}
-	jstring ClipboardManager::getText()
+	JString ClipboardManager::getText()
 	{
 		return callObjectMethod(
 			"getText",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	jboolean ClipboardManager::hasPrimaryClip()
 	{
@@ -78,12 +79,12 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	void ClipboardManager::setText(jstring arg0)
+	void ClipboardManager::setText(JString arg0)
 	{
 		callMethod<void>(
 			"setText",
 			"(Ljava/lang/CharSequence;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 } // namespace android::content

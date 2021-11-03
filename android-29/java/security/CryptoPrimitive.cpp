@@ -1,3 +1,5 @@
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
 #include "./CryptoPrimitive.hpp"
 
 namespace java::security
@@ -90,22 +92,22 @@ namespace java::security
 	// Constructors
 	
 	// Methods
-	java::security::CryptoPrimitive CryptoPrimitive::valueOf(jstring arg0)
+	java::security::CryptoPrimitive CryptoPrimitive::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"java.security.CryptoPrimitive",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/security/CryptoPrimitive;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray CryptoPrimitive::values()
+	JArray CryptoPrimitive::values()
 	{
 		return callStaticObjectMethod(
 			"java.security.CryptoPrimitive",
 			"values",
 			"()[Ljava/security/CryptoPrimitive;"
-		).object<jarray>();
+		);
 	}
 } // namespace java::security
 

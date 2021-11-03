@@ -1,5 +1,7 @@
+#include "../../../JIntArray.hpp"
 #include "./UScript_ScriptUsage.hpp"
 #include "../util/ULocale.hpp"
+#include "../../../JString.hpp"
 #include "../../../java/util/BitSet.hpp"
 #include "../../../java/util/Locale.hpp"
 #include "./UScript.hpp"
@@ -1416,59 +1418,59 @@ namespace android::icu::lang
 			arg0
 		);
 	}
-	jintArray UScript::getCode(android::icu::util::ULocale arg0)
+	JIntArray UScript::getCode(android::icu::util::ULocale arg0)
 	{
 		return callStaticObjectMethod(
 			"android.icu.lang.UScript",
 			"getCode",
 			"(Landroid/icu/util/ULocale;)[I",
 			arg0.object()
-		).object<jintArray>();
+		);
 	}
-	jintArray UScript::getCode(jstring arg0)
+	JIntArray UScript::getCode(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.icu.lang.UScript",
 			"getCode",
 			"(Ljava/lang/String;)[I",
-			arg0
-		).object<jintArray>();
+			arg0.object<jstring>()
+		);
 	}
-	jintArray UScript::getCode(java::util::Locale arg0)
+	JIntArray UScript::getCode(java::util::Locale arg0)
 	{
 		return callStaticObjectMethod(
 			"android.icu.lang.UScript",
 			"getCode",
 			"(Ljava/util/Locale;)[I",
 			arg0.object()
-		).object<jintArray>();
+		);
 	}
-	jint UScript::getCodeFromName(jstring arg0)
+	jint UScript::getCodeFromName(JString arg0)
 	{
 		return callStaticMethod<jint>(
 			"android.icu.lang.UScript",
 			"getCodeFromName",
 			"(Ljava/lang/String;)I",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jstring UScript::getName(jint arg0)
+	JString UScript::getName(jint arg0)
 	{
 		return callStaticObjectMethod(
 			"android.icu.lang.UScript",
 			"getName",
 			"(I)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
-	jstring UScript::getSampleString(jint arg0)
+	JString UScript::getSampleString(jint arg0)
 	{
 		return callStaticObjectMethod(
 			"android.icu.lang.UScript",
 			"getSampleString",
 			"(I)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
 	jint UScript::getScript(jint arg0)
 	{
@@ -1489,14 +1491,14 @@ namespace android::icu::lang
 			arg1.object()
 		);
 	}
-	jstring UScript::getShortName(jint arg0)
+	JString UScript::getShortName(jint arg0)
 	{
 		return callStaticObjectMethod(
 			"android.icu.lang.UScript",
 			"getShortName",
 			"(I)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
 	android::icu::lang::UScript_ScriptUsage UScript::getUsage(jint arg0)
 	{

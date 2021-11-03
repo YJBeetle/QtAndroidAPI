@@ -1,6 +1,8 @@
+#include "../../JArray.hpp"
 #include "./Debug_MemoryInfo.hpp"
 #include "../../java/io/FileDescriptor.hpp"
 #include "../../java/lang/ClassLoader.hpp"
+#include "../../JString.hpp"
 #include "./Debug.hpp"
 
 namespace android::os
@@ -41,14 +43,14 @@ namespace android::os
 	// Constructors
 	
 	// Methods
-	void Debug::attachJvmtiAgent(jstring arg0, jstring arg1, java::lang::ClassLoader arg2)
+	void Debug::attachJvmtiAgent(JString arg0, JString arg1, java::lang::ClassLoader arg2)
 	{
 		callStaticMethod<void>(
 			"android.os.Debug",
 			"attachJvmtiAgent",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/ClassLoader;)V",
-			arg0,
-			arg1,
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
 			arg2.object()
 		);
 	}
@@ -61,24 +63,24 @@ namespace android::os
 			arg0
 		);
 	}
-	void Debug::dumpHprofData(jstring arg0)
+	void Debug::dumpHprofData(JString arg0)
 	{
 		callStaticMethod<void>(
 			"android.os.Debug",
 			"dumpHprofData",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jboolean Debug::dumpService(jstring arg0, java::io::FileDescriptor arg1, jarray arg2)
+	jboolean Debug::dumpService(JString arg0, java::io::FileDescriptor arg1, JArray arg2)
 	{
 		return callStaticMethod<jboolean>(
 			"android.os.Debug",
 			"dumpService",
 			"(Ljava/lang/String;Ljava/io/FileDescriptor;[Ljava/lang/String;)Z",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
-			arg2
+			arg2.object<jarray>()
 		);
 	}
 	void Debug::enableEmulatorTraceOutput()
@@ -266,14 +268,14 @@ namespace android::os
 			"()J"
 		);
 	}
-	jstring Debug::getRuntimeStat(jstring arg0)
+	JString Debug::getRuntimeStat(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.os.Debug",
 			"getRuntimeStat",
 			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
+			arg0.object<jstring>()
+		);
 	}
 	JObject Debug::getRuntimeStats()
 	{
@@ -510,43 +512,43 @@ namespace android::os
 			"()V"
 		);
 	}
-	void Debug::startMethodTracing(jstring arg0)
+	void Debug::startMethodTracing(JString arg0)
 	{
 		callStaticMethod<void>(
 			"android.os.Debug",
 			"startMethodTracing",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	void Debug::startMethodTracing(jstring arg0, jint arg1)
+	void Debug::startMethodTracing(JString arg0, jint arg1)
 	{
 		callStaticMethod<void>(
 			"android.os.Debug",
 			"startMethodTracing",
 			"(Ljava/lang/String;I)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
-	void Debug::startMethodTracing(jstring arg0, jint arg1, jint arg2)
+	void Debug::startMethodTracing(JString arg0, jint arg1, jint arg2)
 	{
 		callStaticMethod<void>(
 			"android.os.Debug",
 			"startMethodTracing",
 			"(Ljava/lang/String;II)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
 			arg2
 		);
 	}
-	void Debug::startMethodTracingSampling(jstring arg0, jint arg1, jint arg2)
+	void Debug::startMethodTracingSampling(JString arg0, jint arg1, jint arg2)
 	{
 		callStaticMethod<void>(
 			"android.os.Debug",
 			"startMethodTracingSampling",
 			"(Ljava/lang/String;II)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
 			arg2
 		);

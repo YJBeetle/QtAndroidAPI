@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JByteArray;
+class JArray;
 namespace android::app
 {
 	class PendingIntent;
@@ -62,6 +64,8 @@ namespace android::telephony
 {
 	class VisualVoicemailSmsFilterSettings;
 }
+class JString;
+class JString;
 
 namespace android::telephony
 {
@@ -69,11 +73,11 @@ namespace android::telephony
 	{
 	public:
 		// Fields
-		static jstring ACTION_CONFIGURE_VOICEMAIL();
-		static jstring ACTION_PHONE_STATE_CHANGED();
-		static jstring ACTION_RESPOND_VIA_MESSAGE();
-		static jstring ACTION_SHOW_VOICEMAIL_NOTIFICATION();
-		static jstring ACTION_SUBSCRIPTION_CARRIER_IDENTITY_CHANGED();
+		static JString ACTION_CONFIGURE_VOICEMAIL();
+		static JString ACTION_PHONE_STATE_CHANGED();
+		static JString ACTION_RESPOND_VIA_MESSAGE();
+		static JString ACTION_SHOW_VOICEMAIL_NOTIFICATION();
+		static JString ACTION_SUBSCRIPTION_CARRIER_IDENTITY_CHANGED();
 		static jint APPTYPE_CSIM();
 		static jint APPTYPE_ISIM();
 		static jint APPTYPE_RUIM();
@@ -97,22 +101,22 @@ namespace android::telephony
 		static jint DATA_CONNECTING();
 		static jint DATA_DISCONNECTED();
 		static jint DATA_SUSPENDED();
-		static jstring EXTRA_CALL_VOICEMAIL_INTENT();
-		static jstring EXTRA_CARRIER_ID();
-		static jstring EXTRA_CARRIER_NAME();
-		static jstring EXTRA_HIDE_PUBLIC_SETTINGS();
-		static jstring EXTRA_INCOMING_NUMBER();
-		static jstring EXTRA_IS_REFRESH();
-		static jstring EXTRA_LAUNCH_VOICEMAIL_SETTINGS_INTENT();
-		static jstring EXTRA_NOTIFICATION_COUNT();
-		static jstring EXTRA_PHONE_ACCOUNT_HANDLE();
-		static jstring EXTRA_STATE();
-		static jstring EXTRA_STATE_IDLE();
-		static jstring EXTRA_STATE_OFFHOOK();
-		static jstring EXTRA_STATE_RINGING();
-		static jstring EXTRA_SUBSCRIPTION_ID();
-		static jstring EXTRA_VOICEMAIL_NUMBER();
-		static jstring METADATA_HIDE_VOICEMAIL_SETTINGS_MENU();
+		static JString EXTRA_CALL_VOICEMAIL_INTENT();
+		static JString EXTRA_CARRIER_ID();
+		static JString EXTRA_CARRIER_NAME();
+		static JString EXTRA_HIDE_PUBLIC_SETTINGS();
+		static JString EXTRA_INCOMING_NUMBER();
+		static JString EXTRA_IS_REFRESH();
+		static JString EXTRA_LAUNCH_VOICEMAIL_SETTINGS_INTENT();
+		static JString EXTRA_NOTIFICATION_COUNT();
+		static JString EXTRA_PHONE_ACCOUNT_HANDLE();
+		static JString EXTRA_STATE();
+		static JString EXTRA_STATE_IDLE();
+		static JString EXTRA_STATE_OFFHOOK();
+		static JString EXTRA_STATE_RINGING();
+		static JString EXTRA_SUBSCRIPTION_ID();
+		static JString EXTRA_VOICEMAIL_NUMBER();
+		static JString METADATA_HIDE_VOICEMAIL_SETTINGS_MENU();
 		static jint NETWORK_TYPE_1xRTT();
 		static jint NETWORK_TYPE_CDMA();
 		static jint NETWORK_TYPE_EDGE();
@@ -149,8 +153,8 @@ namespace android::telephony
 		static jint UNKNOWN_CARRIER_ID();
 		static jint USSD_ERROR_SERVICE_UNAVAIL();
 		static jint USSD_RETURN_FAILURE();
-		static jstring VVM_TYPE_CVVM();
-		static jstring VVM_TYPE_OMTP();
+		static JString VVM_TYPE_CVVM();
+		static JString VVM_TYPE_OMTP();
 		
 		// QJniObject forward
 		template<typename ...Ts> explicit TelephonyManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
@@ -169,52 +173,52 @@ namespace android::telephony
 		jint getDataActivity();
 		jint getDataNetworkType();
 		jint getDataState();
-		jstring getDeviceId();
-		jstring getDeviceId(jint arg0);
-		jstring getDeviceSoftwareVersion();
-		jarray getForbiddenPlmns();
-		jstring getGroupIdLevel1();
-		jstring getIccAuthentication(jint arg0, jint arg1, jstring arg2);
-		jstring getImei();
-		jstring getImei(jint arg0);
-		jstring getLine1Number();
-		jstring getMeid();
-		jstring getMeid(jint arg0);
-		jstring getMmsUAProfUrl();
-		jstring getMmsUserAgent();
-		jstring getNai();
+		JString getDeviceId();
+		JString getDeviceId(jint arg0);
+		JString getDeviceSoftwareVersion();
+		JArray getForbiddenPlmns();
+		JString getGroupIdLevel1();
+		JString getIccAuthentication(jint arg0, jint arg1, JString arg2);
+		JString getImei();
+		JString getImei(jint arg0);
+		JString getLine1Number();
+		JString getMeid();
+		JString getMeid(jint arg0);
+		JString getMmsUAProfUrl();
+		JString getMmsUserAgent();
+		JString getNai();
 		JObject getNeighboringCellInfo();
-		jstring getNetworkCountryIso();
-		jstring getNetworkOperator();
-		jstring getNetworkOperatorName();
-		jstring getNetworkSpecifier();
+		JString getNetworkCountryIso();
+		JString getNetworkOperator();
+		JString getNetworkOperatorName();
+		JString getNetworkSpecifier();
 		jint getNetworkType();
 		jint getPhoneCount();
 		jint getPhoneType();
 		android::telephony::ServiceState getServiceState();
 		android::telephony::SignalStrength getSignalStrength();
 		jint getSimCarrierId();
-		jstring getSimCarrierIdName();
-		jstring getSimCountryIso();
-		jstring getSimOperator();
-		jstring getSimOperatorName();
-		jstring getSimSerialNumber();
+		JString getSimCarrierIdName();
+		JString getSimCountryIso();
+		JString getSimOperator();
+		JString getSimOperatorName();
+		JString getSimSerialNumber();
 		jint getSimState();
 		jint getSimState(jint arg0);
-		jstring getSubscriberId();
-		jstring getVisualVoicemailPackageName();
-		jstring getVoiceMailAlphaTag();
-		jstring getVoiceMailNumber();
+		JString getSubscriberId();
+		JString getVisualVoicemailPackageName();
+		JString getVoiceMailAlphaTag();
+		JString getVoiceMailNumber();
 		jint getVoiceNetworkType();
 		android::net::Uri getVoicemailRingtoneUri(android::telecom::PhoneAccountHandle arg0);
 		jboolean hasCarrierPrivileges();
 		jboolean hasIccCard();
 		jboolean iccCloseLogicalChannel(jint arg0);
-		jbyteArray iccExchangeSimIO(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jstring arg5);
-		android::telephony::IccOpenLogicalChannelResponse iccOpenLogicalChannel(jstring arg0);
-		android::telephony::IccOpenLogicalChannelResponse iccOpenLogicalChannel(jstring arg0, jint arg1);
-		jstring iccTransmitApduBasicChannel(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jstring arg5);
-		jstring iccTransmitApduLogicalChannel(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jstring arg6);
+		JByteArray iccExchangeSimIO(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, JString arg5);
+		android::telephony::IccOpenLogicalChannelResponse iccOpenLogicalChannel(JString arg0);
+		android::telephony::IccOpenLogicalChannelResponse iccOpenLogicalChannel(JString arg0, jint arg1);
+		JString iccTransmitApduBasicChannel(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, JString arg5);
+		JString iccTransmitApduLogicalChannel(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, JString arg6);
 		jboolean isConcurrentVoiceAndDataSupported();
 		jboolean isDataEnabled();
 		jboolean isHearingAidCompatibilitySupported();
@@ -226,18 +230,18 @@ namespace android::telephony
 		jboolean isWorldPhone();
 		void listen(android::telephony::PhoneStateListener arg0, jint arg1);
 		android::telephony::NetworkScan requestNetworkScan(android::telephony::NetworkScanRequest arg0, JObject arg1, android::telephony::TelephonyScanManager_NetworkScanCallback arg2);
-		void sendDialerSpecialCode(jstring arg0);
-		jstring sendEnvelopeWithStatus(jstring arg0);
-		void sendUssdRequest(jstring arg0, android::telephony::TelephonyManager_UssdResponseCallback arg1, android::os::Handler arg2);
-		void sendVisualVoicemailSms(jstring arg0, jint arg1, jstring arg2, android::app::PendingIntent arg3);
+		void sendDialerSpecialCode(JString arg0);
+		JString sendEnvelopeWithStatus(JString arg0);
+		void sendUssdRequest(JString arg0, android::telephony::TelephonyManager_UssdResponseCallback arg1, android::os::Handler arg2);
+		void sendVisualVoicemailSms(JString arg0, jint arg1, JString arg2, android::app::PendingIntent arg3);
 		void setDataEnabled(jboolean arg0);
-		jboolean setLine1NumberForDisplay(jstring arg0, jstring arg1);
+		jboolean setLine1NumberForDisplay(JString arg0, JString arg1);
 		void setNetworkSelectionModeAutomatic();
-		jboolean setNetworkSelectionModeManual(jstring arg0, jboolean arg1);
-		jboolean setOperatorBrandOverride(jstring arg0);
+		jboolean setNetworkSelectionModeManual(JString arg0, jboolean arg1);
+		jboolean setOperatorBrandOverride(JString arg0);
 		jboolean setPreferredNetworkTypeToGlobal();
 		void setVisualVoicemailSmsFilterSettings(android::telephony::VisualVoicemailSmsFilterSettings arg0);
-		jboolean setVoiceMailNumber(jstring arg0, jstring arg1);
+		jboolean setVoiceMailNumber(JString arg0, JString arg1);
 		void setVoicemailRingtoneUri(android::telecom::PhoneAccountHandle arg0, android::net::Uri arg1);
 		void setVoicemailVibrationEnabled(android::telecom::PhoneAccountHandle arg0, jboolean arg1);
 	};

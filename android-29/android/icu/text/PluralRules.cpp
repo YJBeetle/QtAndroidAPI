@@ -1,5 +1,7 @@
 #include "./PluralRules_PluralType.hpp"
 #include "../util/ULocale.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "../../../java/util/Locale.hpp"
 #include "./PluralRules.hpp"
 
@@ -14,53 +16,53 @@ namespace android::icu::text
 			"Landroid/icu/text/PluralRules;"
 		);
 	}
-	jstring PluralRules::KEYWORD_FEW()
+	JString PluralRules::KEYWORD_FEW()
 	{
 		return getStaticObjectField(
 			"android.icu.text.PluralRules",
 			"KEYWORD_FEW",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PluralRules::KEYWORD_MANY()
+	JString PluralRules::KEYWORD_MANY()
 	{
 		return getStaticObjectField(
 			"android.icu.text.PluralRules",
 			"KEYWORD_MANY",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PluralRules::KEYWORD_ONE()
+	JString PluralRules::KEYWORD_ONE()
 	{
 		return getStaticObjectField(
 			"android.icu.text.PluralRules",
 			"KEYWORD_ONE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PluralRules::KEYWORD_OTHER()
+	JString PluralRules::KEYWORD_OTHER()
 	{
 		return getStaticObjectField(
 			"android.icu.text.PluralRules",
 			"KEYWORD_OTHER",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PluralRules::KEYWORD_TWO()
+	JString PluralRules::KEYWORD_TWO()
 	{
 		return getStaticObjectField(
 			"android.icu.text.PluralRules",
 			"KEYWORD_TWO",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PluralRules::KEYWORD_ZERO()
+	JString PluralRules::KEYWORD_ZERO()
 	{
 		return getStaticObjectField(
 			"android.icu.text.PluralRules",
 			"KEYWORD_ZERO",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jdouble PluralRules::NO_UNIQUE_VALUE()
 	{
@@ -76,13 +78,13 @@ namespace android::icu::text
 	// Constructors
 	
 	// Methods
-	android::icu::text::PluralRules PluralRules::createRules(jstring arg0)
+	android::icu::text::PluralRules PluralRules::createRules(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.icu.text.PluralRules",
 			"createRules",
 			"(Ljava/lang/String;)Landroid/icu/text/PluralRules;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::icu::text::PluralRules PluralRules::forLocale(android::icu::util::ULocale arg0)
@@ -123,13 +125,13 @@ namespace android::icu::text
 			arg1.object()
 		);
 	}
-	android::icu::text::PluralRules PluralRules::parseDescription(jstring arg0)
+	android::icu::text::PluralRules PluralRules::parseDescription(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.icu.text.PluralRules",
 			"parseDescription",
 			"(Ljava/lang/String;)Landroid/icu/text/PluralRules;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	jboolean PluralRules::equals(android::icu::text::PluralRules arg0)
@@ -140,20 +142,20 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	jboolean PluralRules::equals(jobject arg0)
+	jboolean PluralRules::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	JObject PluralRules::getAllKeywordValues(jstring arg0)
+	JObject PluralRules::getAllKeywordValues(JString arg0)
 	{
 		return callObjectMethod(
 			"getAllKeywordValues",
 			"(Ljava/lang/String;)Ljava/util/Collection;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	JObject PluralRules::getKeywords()
@@ -163,20 +165,20 @@ namespace android::icu::text
 			"()Ljava/util/Set;"
 		);
 	}
-	JObject PluralRules::getSamples(jstring arg0)
+	JObject PluralRules::getSamples(JString arg0)
 	{
 		return callObjectMethod(
 			"getSamples",
 			"(Ljava/lang/String;)Ljava/util/Collection;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jdouble PluralRules::getUniqueKeywordValue(jstring arg0)
+	jdouble PluralRules::getUniqueKeywordValue(JString arg0)
 	{
 		return callMethod<jdouble>(
 			"getUniqueKeywordValue",
 			"(Ljava/lang/String;)D",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	jint PluralRules::hashCode()
@@ -186,20 +188,20 @@ namespace android::icu::text
 			"()I"
 		);
 	}
-	jstring PluralRules::select(jdouble arg0)
+	JString PluralRules::select(jdouble arg0)
 	{
 		return callObjectMethod(
 			"select",
 			"(D)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
-	jstring PluralRules::toString()
+	JString PluralRules::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::icu::text
 

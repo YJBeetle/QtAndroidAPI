@@ -1,5 +1,6 @@
 #include "./ActivityInfo_WindowLayout.hpp"
 #include "../../os/Parcel.hpp"
+#include "../../../JString.hpp"
 #include "./ActivityInfo.hpp"
 
 namespace android::content::pm
@@ -511,19 +512,19 @@ namespace android::content::pm
 			"maxRecents"
 		);
 	}
-	jstring ActivityInfo::parentActivityName()
+	JString ActivityInfo::parentActivityName()
 	{
 		return getObjectField(
 			"parentActivityName",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ActivityInfo::permission()
+	JString ActivityInfo::permission()
 	{
 		return getObjectField(
 			"permission",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint ActivityInfo::persistableMode()
 	{
@@ -543,19 +544,19 @@ namespace android::content::pm
 			"softInputMode"
 		);
 	}
-	jstring ActivityInfo::targetActivity()
+	JString ActivityInfo::targetActivity()
 	{
 		return getObjectField(
 			"targetActivity",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ActivityInfo::taskAffinity()
+	JString ActivityInfo::taskAffinity()
 	{
 		return getObjectField(
 			"taskAffinity",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint ActivityInfo::theme()
 	{
@@ -601,13 +602,13 @@ namespace android::content::pm
 			"()I"
 		);
 	}
-	void ActivityInfo::dump(JObject arg0, jstring arg1)
+	void ActivityInfo::dump(JObject arg0, JString arg1)
 	{
 		callMethod<void>(
 			"dump",
 			"(Landroid/util/Printer;Ljava/lang/String;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
 	jint ActivityInfo::getThemeResource()
@@ -617,12 +618,12 @@ namespace android::content::pm
 			"()I"
 		);
 	}
-	jstring ActivityInfo::toString()
+	JString ActivityInfo::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void ActivityInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

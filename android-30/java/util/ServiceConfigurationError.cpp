@@ -1,3 +1,5 @@
+#include "../../JString.hpp"
+#include "../../JThrowable.hpp"
 #include "./ServiceConfigurationError.hpp"
 
 namespace java::util
@@ -8,18 +10,18 @@ namespace java::util
 	ServiceConfigurationError::ServiceConfigurationError(QJniObject obj) : java::lang::Error(obj) {}
 	
 	// Constructors
-	ServiceConfigurationError::ServiceConfigurationError(jstring arg0)
+	ServiceConfigurationError::ServiceConfigurationError(JString arg0)
 		: java::lang::Error(
 			"java.util.ServiceConfigurationError",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	ServiceConfigurationError::ServiceConfigurationError(jstring arg0, jthrowable arg1)
+	ServiceConfigurationError::ServiceConfigurationError(JString arg0, JThrowable arg1)
 		: java::lang::Error(
 			"java.util.ServiceConfigurationError",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
 		) {}
 	
 	// Methods

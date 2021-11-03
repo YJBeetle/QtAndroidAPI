@@ -1,4 +1,6 @@
 #include "../os/Parcel.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./AudioAttributes.hpp"
 
 namespace android::media
@@ -194,12 +196,12 @@ namespace android::media
 			"()I"
 		);
 	}
-	jboolean AudioAttributes::equals(jobject arg0)
+	jboolean AudioAttributes::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint AudioAttributes::getContentType()
@@ -237,12 +239,12 @@ namespace android::media
 			"()I"
 		);
 	}
-	jstring AudioAttributes::toString()
+	JString AudioAttributes::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void AudioAttributes::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

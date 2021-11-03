@@ -1,3 +1,6 @@
+#include "../../../JArray.hpp"
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
 #include "../../../java/security/ProtectionDomain.hpp"
 #include "./Subject.hpp"
 #include "./SubjectDomainCombiner.hpp"
@@ -18,14 +21,14 @@ namespace javax::security::auth
 		) {}
 	
 	// Methods
-	jarray SubjectDomainCombiner::combine(jarray arg0, jarray arg1)
+	JArray SubjectDomainCombiner::combine(JArray arg0, JArray arg1)
 	{
 		return callObjectMethod(
 			"combine",
 			"([Ljava/security/ProtectionDomain;[Ljava/security/ProtectionDomain;)[Ljava/security/ProtectionDomain;",
-			arg0,
-			arg1
-		).object<jarray>();
+			arg0.object<jarray>(),
+			arg1.object<jarray>()
+		);
 	}
 	javax::security::auth::Subject SubjectDomainCombiner::getSubject()
 	{

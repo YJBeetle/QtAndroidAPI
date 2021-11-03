@@ -14,6 +14,8 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
+class JString;
 
 namespace android::telephony
 {
@@ -32,19 +34,19 @@ namespace android::telephony
 		// Methods
 		android::graphics::Bitmap createIconBitmap(android::content::Context arg0);
 		jint describeContents();
-		jstring getCarrierName();
-		jstring getCountryIso();
+		JString getCarrierName();
+		JString getCountryIso();
 		jint getDataRoaming();
-		jstring getDisplayName();
-		jstring getIccId();
+		JString getDisplayName();
+		JString getIccId();
 		jint getIconTint();
 		jint getMcc();
 		jint getMnc();
-		jstring getNumber();
+		JString getNumber();
 		jint getSimSlotIndex();
 		jint getSubscriptionId();
 		jboolean isEmbedded();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::telephony

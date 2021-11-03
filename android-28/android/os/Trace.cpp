@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./Trace.hpp"
 
 namespace android::os
@@ -10,13 +11,13 @@ namespace android::os
 	// Constructors
 	
 	// Methods
-	void Trace::beginSection(jstring arg0)
+	void Trace::beginSection(JString arg0)
 	{
 		callStaticMethod<void>(
 			"android.os.Trace",
 			"beginSection",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void Trace::endSection()

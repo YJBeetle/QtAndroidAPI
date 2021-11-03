@@ -1,4 +1,5 @@
 #include "../../java/io/PrintWriter.hpp"
+#include "../../JString.hpp"
 #include "./PrintWriterPrinter.hpp"
 
 namespace android::util
@@ -17,12 +18,12 @@ namespace android::util
 		) {}
 	
 	// Methods
-	void PrintWriterPrinter::println(jstring arg0)
+	void PrintWriterPrinter::println(JString arg0)
 	{
 		callMethod<void>(
 			"println",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 } // namespace android::util

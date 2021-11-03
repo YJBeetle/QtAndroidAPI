@@ -1,3 +1,5 @@
+#include "../../JByteArray.hpp"
+#include "../../JCharArray.hpp"
 #include "./AndroidCharacter.hpp"
 
 namespace android::text
@@ -57,14 +59,14 @@ namespace android::text
 		) {}
 	
 	// Methods
-	void AndroidCharacter::getDirectionalities(jcharArray arg0, jbyteArray arg1, jint arg2)
+	void AndroidCharacter::getDirectionalities(JCharArray arg0, JByteArray arg1, jint arg2)
 	{
 		callStaticMethod<void>(
 			"android.text.AndroidCharacter",
 			"getDirectionalities",
 			"([C[BI)V",
-			arg0,
-			arg1,
+			arg0.object<jcharArray>(),
+			arg1.object<jbyteArray>(),
 			arg2
 		);
 	}
@@ -77,16 +79,16 @@ namespace android::text
 			arg0
 		);
 	}
-	void AndroidCharacter::getEastAsianWidths(jcharArray arg0, jint arg1, jint arg2, jbyteArray arg3)
+	void AndroidCharacter::getEastAsianWidths(JCharArray arg0, jint arg1, jint arg2, JByteArray arg3)
 	{
 		callStaticMethod<void>(
 			"android.text.AndroidCharacter",
 			"getEastAsianWidths",
 			"([CII[B)V",
-			arg0,
+			arg0.object<jcharArray>(),
 			arg1,
 			arg2,
-			arg3
+			arg3.object<jbyteArray>()
 		);
 	}
 	jchar AndroidCharacter::getMirror(jchar arg0)
@@ -98,13 +100,13 @@ namespace android::text
 			arg0
 		);
 	}
-	jboolean AndroidCharacter::mirror(jcharArray arg0, jint arg1, jint arg2)
+	jboolean AndroidCharacter::mirror(JCharArray arg0, jint arg1, jint arg2)
 	{
 		return callStaticMethod<jboolean>(
 			"android.text.AndroidCharacter",
 			"mirror",
 			"([CII)Z",
-			arg0,
+			arg0.object<jcharArray>(),
 			arg1,
 			arg2
 		);

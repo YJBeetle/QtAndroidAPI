@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./IpSecManager_SecurityParameterIndex.hpp"
 
 namespace android::net
@@ -24,12 +25,12 @@ namespace android::net
 			"()I"
 		);
 	}
-	jstring IpSecManager_SecurityParameterIndex::toString()
+	JString IpSecManager_SecurityParameterIndex::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::net
 

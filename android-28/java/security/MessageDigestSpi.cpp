@@ -1,3 +1,5 @@
+#include "../../JByteArray.hpp"
+#include "../../JObject.hpp"
 #include "../nio/ByteBuffer.hpp"
 #include "./MessageDigestSpi.hpp"
 
@@ -16,12 +18,12 @@ namespace java::security
 		) {}
 	
 	// Methods
-	jobject MessageDigestSpi::clone()
+	JObject MessageDigestSpi::clone()
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
 } // namespace java::security
 

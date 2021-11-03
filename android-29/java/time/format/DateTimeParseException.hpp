@@ -1,10 +1,10 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "../../lang/Exception.hpp"
-#include "../../lang/RuntimeException.hpp"
 #include "../DateTimeException.hpp"
 
+class JString;
+class JString;
+class JThrowable;
 
 namespace java::time::format
 {
@@ -18,12 +18,12 @@ namespace java::time::format
 		DateTimeParseException(QJniObject obj);
 		
 		// Constructors
-		DateTimeParseException(jstring arg0, jstring arg1, jint arg2);
-		DateTimeParseException(jstring arg0, jstring arg1, jint arg2, jthrowable arg3);
+		DateTimeParseException(JString arg0, JString arg1, jint arg2);
+		DateTimeParseException(JString arg0, JString arg1, jint arg2, JThrowable arg3);
 		
 		// Methods
 		jint getErrorIndex();
-		jstring getParsedString();
+		JString getParsedString();
 	};
 } // namespace java::time::format
 

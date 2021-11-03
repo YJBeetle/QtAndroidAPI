@@ -2,6 +2,7 @@
 #include "./MediaRouter_RouteCategory.hpp"
 #include "./MediaRouter_VolumeCallback.hpp"
 #include "./RemoteControlClient.hpp"
+#include "../../JString.hpp"
 #include "./MediaRouter_UserRouteInfo.hpp"
 
 namespace android::media
@@ -37,12 +38,12 @@ namespace android::media
 			arg0
 		);
 	}
-	void MediaRouter_UserRouteInfo::setDescription(jstring arg0)
+	void MediaRouter_UserRouteInfo::setDescription(JString arg0)
 	{
 		callMethod<void>(
 			"setDescription",
 			"(Ljava/lang/CharSequence;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void MediaRouter_UserRouteInfo::setIconDrawable(android::graphics::drawable::Drawable arg0)
@@ -69,12 +70,12 @@ namespace android::media
 			arg0
 		);
 	}
-	void MediaRouter_UserRouteInfo::setName(jstring arg0)
+	void MediaRouter_UserRouteInfo::setName(JString arg0)
 	{
 		callMethod<void>(
 			"setName",
 			"(Ljava/lang/CharSequence;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void MediaRouter_UserRouteInfo::setPlaybackStream(jint arg0)
@@ -101,12 +102,12 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void MediaRouter_UserRouteInfo::setStatus(jstring arg0)
+	void MediaRouter_UserRouteInfo::setStatus(JString arg0)
 	{
 		callMethod<void>(
 			"setStatus",
 			"(Ljava/lang/CharSequence;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void MediaRouter_UserRouteInfo::setVolume(jint arg0)

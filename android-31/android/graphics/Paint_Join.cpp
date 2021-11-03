@@ -1,3 +1,5 @@
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
 #include "./Paint_Join.hpp"
 
 namespace android::graphics
@@ -34,22 +36,22 @@ namespace android::graphics
 	// Constructors
 	
 	// Methods
-	android::graphics::Paint_Join Paint_Join::valueOf(jstring arg0)
+	android::graphics::Paint_Join Paint_Join::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.graphics.Paint$Join",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/graphics/Paint$Join;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray Paint_Join::values()
+	JArray Paint_Join::values()
 	{
 		return callStaticObjectMethod(
 			"android.graphics.Paint$Join",
 			"values",
 			"()[Landroid/graphics/Paint$Join;"
-		).object<jarray>();
+		);
 	}
 } // namespace android::graphics
 

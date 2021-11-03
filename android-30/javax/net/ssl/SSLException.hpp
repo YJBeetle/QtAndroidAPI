@@ -1,9 +1,9 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "../../../java/lang/Exception.hpp"
 #include "../../../java/io/IOException.hpp"
 
+class JString;
+class JThrowable;
 
 namespace javax::net::ssl
 {
@@ -17,9 +17,9 @@ namespace javax::net::ssl
 		SSLException(QJniObject obj);
 		
 		// Constructors
-		SSLException(jstring arg0);
-		SSLException(jthrowable arg0);
-		SSLException(jstring arg0, jthrowable arg1);
+		SSLException(JString arg0);
+		SSLException(JThrowable arg0);
+		SSLException(JString arg0, JThrowable arg1);
 		
 		// Methods
 	};

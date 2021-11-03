@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "../../../java/time/MonthDay.hpp"
 #include "./FreezePeriod.hpp"
 
@@ -32,12 +33,12 @@ namespace android::app::admin
 			"()Ljava/time/MonthDay;"
 		);
 	}
-	jstring FreezePeriod::toString()
+	JString FreezePeriod::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::app::admin
 

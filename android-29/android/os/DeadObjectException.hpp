@@ -1,10 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../../java/lang/Exception.hpp"
-#include "../util/AndroidException.hpp"
 #include "./RemoteException.hpp"
 
+class JString;
 
 namespace android::os
 {
@@ -19,7 +17,7 @@ namespace android::os
 		
 		// Constructors
 		DeadObjectException();
-		DeadObjectException(jstring arg0);
+		DeadObjectException(JString arg0);
 		
 		// Methods
 	};

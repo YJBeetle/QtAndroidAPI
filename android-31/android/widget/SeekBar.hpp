@@ -1,14 +1,12 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../view/View.hpp"
-#include "./ProgressBar.hpp"
 #include "./AbsSeekBar.hpp"
 
 namespace android::content
 {
 	class Context;
 }
+class JString;
 
 namespace android::widget
 {
@@ -28,7 +26,7 @@ namespace android::widget
 		SeekBar(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
-		jstring getAccessibilityClassName();
+		JString getAccessibilityClassName();
 		void setOnSeekBarChangeListener(JObject arg0);
 	};
 } // namespace android::widget

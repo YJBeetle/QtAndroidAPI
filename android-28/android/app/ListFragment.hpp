@@ -1,6 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./Fragment.hpp"
 
 namespace android::os
@@ -23,6 +22,7 @@ namespace android::widget
 {
 	class ListView;
 }
+class JString;
 
 namespace android::app
 {
@@ -47,7 +47,7 @@ namespace android::app
 		void onDestroyView();
 		void onListItemClick(android::widget::ListView arg0, android::view::View arg1, jint arg2, jlong arg3);
 		void onViewCreated(android::view::View arg0, android::os::Bundle arg1);
-		void setEmptyText(jstring arg0);
+		void setEmptyText(JString arg0);
 		void setListAdapter(JObject arg0);
 		void setListShown(jboolean arg0);
 		void setListShownNoAnimation(jboolean arg0);

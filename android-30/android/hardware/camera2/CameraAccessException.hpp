@@ -1,9 +1,9 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "../../../java/lang/Exception.hpp"
 #include "../../util/AndroidException.hpp"
 
+class JString;
+class JThrowable;
 
 namespace android::hardware::camera2
 {
@@ -23,9 +23,9 @@ namespace android::hardware::camera2
 		
 		// Constructors
 		CameraAccessException(jint arg0);
-		CameraAccessException(jint arg0, jstring arg1);
-		CameraAccessException(jint arg0, jthrowable arg1);
-		CameraAccessException(jint arg0, jstring arg1, jthrowable arg2);
+		CameraAccessException(jint arg0, JString arg1);
+		CameraAccessException(jint arg0, JThrowable arg1);
+		CameraAccessException(jint arg0, JString arg1, JThrowable arg2);
 		
 		// Methods
 		jint getReason();

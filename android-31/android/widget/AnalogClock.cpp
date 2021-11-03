@@ -3,6 +3,7 @@
 #include "../graphics/BlendMode.hpp"
 #include "../graphics/Canvas.hpp"
 #include "../graphics/drawable/Icon.hpp"
+#include "../../JString.hpp"
 #include "./AnalogClock.hpp"
 
 namespace android::widget
@@ -101,12 +102,12 @@ namespace android::widget
 			"()Landroid/content/res/ColorStateList;"
 		);
 	}
-	jstring AnalogClock::getTimeZone()
+	JString AnalogClock::getTimeZone()
 	{
 		return callObjectMethod(
 			"getTimeZone",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void AnalogClock::onVisibilityAggregated(jboolean arg0)
 	{
@@ -212,12 +213,12 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void AnalogClock::setTimeZone(jstring arg0)
+	void AnalogClock::setTimeZone(JString arg0)
 	{
 		callMethod<void>(
 			"setTimeZone",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 } // namespace android::widget

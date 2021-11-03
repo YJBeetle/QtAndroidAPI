@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./SQLiteAccessPermException.hpp"
 
 namespace android::database::sqlite
@@ -13,11 +14,11 @@ namespace android::database::sqlite
 			"android.database.sqlite.SQLiteAccessPermException",
 			"()V"
 		) {}
-	SQLiteAccessPermException::SQLiteAccessPermException(jstring arg0)
+	SQLiteAccessPermException::SQLiteAccessPermException(JString arg0)
 		: android::database::sqlite::SQLiteException(
 			"android.database.sqlite.SQLiteAccessPermException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

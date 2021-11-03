@@ -1,3 +1,5 @@
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
 #include "./TextKeyListener_Capitalize.hpp"
 
 namespace android::text::method
@@ -42,22 +44,22 @@ namespace android::text::method
 	// Constructors
 	
 	// Methods
-	android::text::method::TextKeyListener_Capitalize TextKeyListener_Capitalize::valueOf(jstring arg0)
+	android::text::method::TextKeyListener_Capitalize TextKeyListener_Capitalize::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.text.method.TextKeyListener$Capitalize",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/text/method/TextKeyListener$Capitalize;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray TextKeyListener_Capitalize::values()
+	JArray TextKeyListener_Capitalize::values()
 	{
 		return callStaticObjectMethod(
 			"android.text.method.TextKeyListener$Capitalize",
 			"values",
 			"()[Landroid/text/method/TextKeyListener$Capitalize;"
-		).object<jarray>();
+		);
 	}
 } // namespace android::text::method
 

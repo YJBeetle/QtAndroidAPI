@@ -1,3 +1,5 @@
+#include "../../JString.hpp"
+#include "../../JThrowable.hpp"
 #include "./OperationApplicationException.hpp"
 
 namespace android::content
@@ -19,31 +21,31 @@ namespace android::content
 			"(I)V",
 			arg0
 		) {}
-	OperationApplicationException::OperationApplicationException(jstring arg0)
+	OperationApplicationException::OperationApplicationException(JString arg0)
 		: java::lang::Exception(
 			"android.content.OperationApplicationException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	OperationApplicationException::OperationApplicationException(jthrowable arg0)
+	OperationApplicationException::OperationApplicationException(JThrowable arg0)
 		: java::lang::Exception(
 			"android.content.OperationApplicationException",
 			"(Ljava/lang/Throwable;)V",
-			arg0
+			arg0.object<jthrowable>()
 		) {}
-	OperationApplicationException::OperationApplicationException(jstring arg0, jint arg1)
+	OperationApplicationException::OperationApplicationException(JString arg0, jint arg1)
 		: java::lang::Exception(
 			"android.content.OperationApplicationException",
 			"(Ljava/lang/String;I)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		) {}
-	OperationApplicationException::OperationApplicationException(jstring arg0, jthrowable arg1)
+	OperationApplicationException::OperationApplicationException(JString arg0, JThrowable arg1)
 		: java::lang::Exception(
 			"android.content.OperationApplicationException",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
 		) {}
 	
 	// Methods

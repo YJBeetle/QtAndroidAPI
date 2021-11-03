@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./Int64Ref.hpp"
 
 namespace android::system
@@ -22,12 +23,12 @@ namespace android::system
 		) {}
 	
 	// Methods
-	jstring Int64Ref::toString()
+	JString Int64Ref::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::system
 

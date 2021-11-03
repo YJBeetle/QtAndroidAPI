@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JByteArray;
 namespace android::drm
 {
 	class ProcessedData;
@@ -10,6 +11,7 @@ namespace java::io
 {
 	class File;
 }
+class JString;
 
 namespace android::drm
 {
@@ -23,17 +25,17 @@ namespace android::drm
 		DrmRights(QJniObject obj);
 		
 		// Constructors
-		DrmRights(android::drm::ProcessedData arg0, jstring arg1);
-		DrmRights(java::io::File arg0, jstring arg1);
-		DrmRights(jstring arg0, jstring arg1);
-		DrmRights(jstring arg0, jstring arg1, jstring arg2);
-		DrmRights(jstring arg0, jstring arg1, jstring arg2, jstring arg3);
+		DrmRights(android::drm::ProcessedData arg0, JString arg1);
+		DrmRights(java::io::File arg0, JString arg1);
+		DrmRights(JString arg0, JString arg1);
+		DrmRights(JString arg0, JString arg1, JString arg2);
+		DrmRights(JString arg0, JString arg1, JString arg2, JString arg3);
 		
 		// Methods
-		jstring getAccountId();
-		jbyteArray getData();
-		jstring getMimeType();
-		jstring getSubscriptionId();
+		JString getAccountId();
+		JByteArray getData();
+		JString getMimeType();
+		JString getSubscriptionId();
 	};
 } // namespace android::drm
 

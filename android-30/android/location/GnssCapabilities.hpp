@@ -2,7 +2,6 @@
 
 #include "../../JObject.hpp"
 
-
 namespace android::location
 {
 	class GnssCapabilities : public JObject

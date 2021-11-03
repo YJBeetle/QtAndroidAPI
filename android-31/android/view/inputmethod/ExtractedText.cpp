@@ -1,4 +1,5 @@
 #include "../../os/Parcel.hpp"
+#include "../../../JString.hpp"
 #include "./ExtractedText.hpp"
 
 namespace android::view::inputmethod
@@ -32,12 +33,12 @@ namespace android::view::inputmethod
 			"flags"
 		);
 	}
-	jstring ExtractedText::hint()
+	JString ExtractedText::hint()
 	{
 		return getObjectField(
 			"hint",
 			"Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	jint ExtractedText::partialEndOffset()
 	{
@@ -69,12 +70,12 @@ namespace android::view::inputmethod
 			"startOffset"
 		);
 	}
-	jstring ExtractedText::text()
+	JString ExtractedText::text()
 	{
 		return getObjectField(
 			"text",
 			"Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	
 	// QJniObject forward

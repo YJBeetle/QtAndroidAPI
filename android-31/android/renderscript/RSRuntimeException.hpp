@@ -1,9 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../../java/lang/Exception.hpp"
 #include "../../java/lang/RuntimeException.hpp"
 
+class JString;
 
 namespace android::renderscript
 {
@@ -17,7 +16,7 @@ namespace android::renderscript
 		RSRuntimeException(QJniObject obj);
 		
 		// Constructors
-		RSRuntimeException(jstring arg0);
+		RSRuntimeException(JString arg0);
 		
 		// Methods
 	};

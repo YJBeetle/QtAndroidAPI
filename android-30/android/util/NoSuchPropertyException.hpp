@@ -1,9 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../../java/lang/Exception.hpp"
 #include "../../java/lang/RuntimeException.hpp"
 
+class JString;
 
 namespace android::util
 {
@@ -17,7 +16,7 @@ namespace android::util
 		NoSuchPropertyException(QJniObject obj);
 		
 		// Constructors
-		NoSuchPropertyException(jstring arg0);
+		NoSuchPropertyException(JString arg0);
 		
 		// Methods
 	};

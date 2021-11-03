@@ -1,9 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../view/View.hpp"
 #include "./ImageView.hpp"
 
+class JArray;
 namespace android::content
 {
 	class Context;
@@ -28,6 +27,8 @@ namespace android::view
 {
 	class View;
 }
+class JString;
+class JString;
 
 namespace android::widget
 {
@@ -47,19 +48,19 @@ namespace android::widget
 		QuickContactBadge(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
-		void assignContactFromEmail(jstring arg0, jboolean arg1);
-		void assignContactFromEmail(jstring arg0, jboolean arg1, android::os::Bundle arg2);
-		void assignContactFromPhone(jstring arg0, jboolean arg1);
-		void assignContactFromPhone(jstring arg0, jboolean arg1, android::os::Bundle arg2);
+		void assignContactFromEmail(JString arg0, jboolean arg1);
+		void assignContactFromEmail(JString arg0, jboolean arg1, android::os::Bundle arg2);
+		void assignContactFromPhone(JString arg0, jboolean arg1);
+		void assignContactFromPhone(JString arg0, jboolean arg1, android::os::Bundle arg2);
 		void assignContactUri(android::net::Uri arg0);
 		void drawableHotspotChanged(jfloat arg0, jfloat arg1);
-		jstring getAccessibilityClassName();
+		JString getAccessibilityClassName();
 		void onClick(android::view::View arg0);
-		void setExcludeMimes(jarray arg0);
+		void setExcludeMimes(JArray arg0);
 		void setImageToDefault();
 		void setMode(jint arg0);
 		void setOverlay(android::graphics::drawable::Drawable arg0);
-		void setPrioritizedMimeType(jstring arg0);
+		void setPrioritizedMimeType(JString arg0);
 	};
 } // namespace android::widget
 

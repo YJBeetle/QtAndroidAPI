@@ -1,3 +1,4 @@
+#include "../../JObject.hpp"
 #include "../../java/util/ArrayList.hpp"
 #include "./Animator.hpp"
 
@@ -177,12 +178,12 @@ namespace android::animation
 			arg0
 		);
 	}
-	void Animator::setTarget(jobject arg0)
+	void Animator::setTarget(JObject arg0)
 	{
 		callMethod<void>(
 			"setTarget",
 			"(Ljava/lang/Object;)V",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	void Animator::setupEndValues()

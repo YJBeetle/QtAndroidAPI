@@ -1,3 +1,5 @@
+#include "../../JString.hpp"
+#include "../../JThrowable.hpp"
 #include "./ReflectiveOperationException.hpp"
 
 namespace java::lang
@@ -13,24 +15,24 @@ namespace java::lang
 			"java.lang.ReflectiveOperationException",
 			"()V"
 		) {}
-	ReflectiveOperationException::ReflectiveOperationException(jstring arg0)
+	ReflectiveOperationException::ReflectiveOperationException(JString arg0)
 		: java::lang::Exception(
 			"java.lang.ReflectiveOperationException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	ReflectiveOperationException::ReflectiveOperationException(jthrowable arg0)
+	ReflectiveOperationException::ReflectiveOperationException(JThrowable arg0)
 		: java::lang::Exception(
 			"java.lang.ReflectiveOperationException",
 			"(Ljava/lang/Throwable;)V",
-			arg0
+			arg0.object<jthrowable>()
 		) {}
-	ReflectiveOperationException::ReflectiveOperationException(jstring arg0, jthrowable arg1)
+	ReflectiveOperationException::ReflectiveOperationException(JString arg0, JThrowable arg1)
 		: java::lang::Exception(
 			"java.lang.ReflectiveOperationException",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
 		) {}
 	
 	// Methods

@@ -1,3 +1,6 @@
+#include "../../../JArray.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "../Locale.hpp"
 #include "./Level.hpp"
 
@@ -83,43 +86,43 @@ namespace java::util::logging
 	// Constructors
 	
 	// Methods
-	java::util::logging::Level Level::parse(jstring arg0)
+	java::util::logging::Level Level::parse(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"java.util.logging.Level",
 			"parse",
 			"(Ljava/lang/String;)Ljava/util/logging/Level;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jboolean Level::equals(jobject arg0)
+	jboolean Level::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jstring Level::getLocalizedName()
+	JString Level::getLocalizedName()
 	{
 		return callObjectMethod(
 			"getLocalizedName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Level::getName()
+	JString Level::getName()
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Level::getResourceBundleName()
+	JString Level::getResourceBundleName()
 	{
 		return callObjectMethod(
 			"getResourceBundleName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint Level::hashCode()
 	{
@@ -135,12 +138,12 @@ namespace java::util::logging
 			"()I"
 		);
 	}
-	jstring Level::toString()
+	JString Level::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::util::logging
 

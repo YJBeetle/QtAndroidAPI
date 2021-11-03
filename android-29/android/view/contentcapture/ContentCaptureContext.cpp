@@ -2,6 +2,7 @@
 #include "../../os/Bundle.hpp"
 #include "../../os/Parcel.hpp"
 #include "./ContentCaptureContext_Builder.hpp"
+#include "../../../JString.hpp"
 #include "./ContentCaptureContext.hpp"
 
 namespace android::view::contentcapture
@@ -22,13 +23,13 @@ namespace android::view::contentcapture
 	// Constructors
 	
 	// Methods
-	android::view::contentcapture::ContentCaptureContext ContentCaptureContext::forLocusId(jstring arg0)
+	android::view::contentcapture::ContentCaptureContext ContentCaptureContext::forLocusId(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.view.contentcapture.ContentCaptureContext",
 			"forLocusId",
 			"(Ljava/lang/String;)Landroid/view/contentcapture/ContentCaptureContext;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	jint ContentCaptureContext::describeContents()
@@ -52,12 +53,12 @@ namespace android::view::contentcapture
 			"()Landroid/content/LocusId;"
 		);
 	}
-	jstring ContentCaptureContext::toString()
+	JString ContentCaptureContext::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void ContentCaptureContext::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

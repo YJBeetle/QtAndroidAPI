@@ -1,4 +1,5 @@
 #include "../../lang/Exception.hpp"
+#include "../../../JString.hpp"
 #include "./ErrorManager.hpp"
 #include "./Formatter.hpp"
 #include "./Level.hpp"
@@ -30,12 +31,12 @@ namespace java::util::logging
 			"()V"
 		);
 	}
-	jstring Handler::getEncoding()
+	JString Handler::getEncoding()
 	{
 		return callObjectMethod(
 			"getEncoding",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	java::util::logging::ErrorManager Handler::getErrorManager()
 	{
@@ -81,12 +82,12 @@ namespace java::util::logging
 			arg0.object()
 		);
 	}
-	void Handler::setEncoding(jstring arg0)
+	void Handler::setEncoding(JString arg0)
 	{
 		callMethod<void>(
 			"setEncoding",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void Handler::setErrorManager(java::util::logging::ErrorManager arg0)

@@ -6,6 +6,7 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
 
 namespace android::os
 {
@@ -25,14 +26,14 @@ namespace android::os
 		
 		// Constructors
 		PatternMatcher(android::os::Parcel arg0);
-		PatternMatcher(jstring arg0, jint arg1);
+		PatternMatcher(JString arg0, jint arg1);
 		
 		// Methods
 		jint describeContents();
-		jstring getPath();
+		JString getPath();
 		jint getType();
-		jboolean match(jstring arg0);
-		jstring toString();
+		jboolean match(JString arg0);
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::os

@@ -10,6 +10,7 @@ namespace android::hardware::usb
 {
 	class UsbEndpoint;
 }
+class JObject;
 namespace java::nio
 {
 	class ByteBuffer;
@@ -32,12 +33,12 @@ namespace android::hardware::usb
 		// Methods
 		jboolean cancel();
 		void close();
-		jobject getClientData();
+		JObject getClientData();
 		android::hardware::usb::UsbEndpoint getEndpoint();
 		jboolean initialize(android::hardware::usb::UsbDeviceConnection arg0, android::hardware::usb::UsbEndpoint arg1);
 		jboolean queue(java::nio::ByteBuffer arg0);
 		jboolean queue(java::nio::ByteBuffer arg0, jint arg1);
-		void setClientData(jobject arg0);
+		void setClientData(JObject arg0);
 	};
 } // namespace android::hardware::usb
 

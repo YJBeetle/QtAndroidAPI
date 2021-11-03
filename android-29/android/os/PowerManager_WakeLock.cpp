@@ -1,5 +1,6 @@
 #include "./PowerManager.hpp"
 #include "./WorkSource.hpp"
+#include "../../JString.hpp"
 #include "./PowerManager_WakeLock.hpp"
 
 namespace android::os
@@ -65,12 +66,12 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	jstring PowerManager_WakeLock::toString()
+	JString PowerManager_WakeLock::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::os
 

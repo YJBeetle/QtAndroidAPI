@@ -1,24 +1,25 @@
 #include "../net/Uri.hpp"
+#include "../../JString.hpp"
 #include "./VoicemailContract_Voicemails.hpp"
 
 namespace android::provider
 {
 	// Fields
-	jstring VoicemailContract_Voicemails::ARCHIVED()
+	JString VoicemailContract_Voicemails::ARCHIVED()
 	{
 		return getStaticObjectField(
 			"android.provider.VoicemailContract$Voicemails",
 			"ARCHIVED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring VoicemailContract_Voicemails::BACKED_UP()
+	JString VoicemailContract_Voicemails::BACKED_UP()
 	{
 		return getStaticObjectField(
 			"android.provider.VoicemailContract$Voicemails",
 			"BACKED_UP",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::net::Uri VoicemailContract_Voicemails::CONTENT_URI()
 	{
@@ -28,29 +29,29 @@ namespace android::provider
 			"Landroid/net/Uri;"
 		);
 	}
-	jstring VoicemailContract_Voicemails::DATE()
+	JString VoicemailContract_Voicemails::DATE()
 	{
 		return getStaticObjectField(
 			"android.provider.VoicemailContract$Voicemails",
 			"DATE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring VoicemailContract_Voicemails::DELETED()
+	JString VoicemailContract_Voicemails::DELETED()
 	{
 		return getStaticObjectField(
 			"android.provider.VoicemailContract$Voicemails",
 			"DELETED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring VoicemailContract_Voicemails::DIRTY()
+	JString VoicemailContract_Voicemails::DIRTY()
 	{
 		return getStaticObjectField(
 			"android.provider.VoicemailContract$Voicemails",
 			"DIRTY",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint VoicemailContract_Voicemails::DIRTY_RETAIN()
 	{
@@ -59,133 +60,133 @@ namespace android::provider
 			"DIRTY_RETAIN"
 		);
 	}
-	jstring VoicemailContract_Voicemails::DIR_TYPE()
+	JString VoicemailContract_Voicemails::DIR_TYPE()
 	{
 		return getStaticObjectField(
 			"android.provider.VoicemailContract$Voicemails",
 			"DIR_TYPE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring VoicemailContract_Voicemails::DURATION()
+	JString VoicemailContract_Voicemails::DURATION()
 	{
 		return getStaticObjectField(
 			"android.provider.VoicemailContract$Voicemails",
 			"DURATION",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring VoicemailContract_Voicemails::HAS_CONTENT()
+	JString VoicemailContract_Voicemails::HAS_CONTENT()
 	{
 		return getStaticObjectField(
 			"android.provider.VoicemailContract$Voicemails",
 			"HAS_CONTENT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring VoicemailContract_Voicemails::IS_OMTP_VOICEMAIL()
+	JString VoicemailContract_Voicemails::IS_OMTP_VOICEMAIL()
 	{
 		return getStaticObjectField(
 			"android.provider.VoicemailContract$Voicemails",
 			"IS_OMTP_VOICEMAIL",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring VoicemailContract_Voicemails::IS_READ()
+	JString VoicemailContract_Voicemails::IS_READ()
 	{
 		return getStaticObjectField(
 			"android.provider.VoicemailContract$Voicemails",
 			"IS_READ",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring VoicemailContract_Voicemails::ITEM_TYPE()
+	JString VoicemailContract_Voicemails::ITEM_TYPE()
 	{
 		return getStaticObjectField(
 			"android.provider.VoicemailContract$Voicemails",
 			"ITEM_TYPE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring VoicemailContract_Voicemails::LAST_MODIFIED()
+	JString VoicemailContract_Voicemails::LAST_MODIFIED()
 	{
 		return getStaticObjectField(
 			"android.provider.VoicemailContract$Voicemails",
 			"LAST_MODIFIED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring VoicemailContract_Voicemails::MIME_TYPE()
+	JString VoicemailContract_Voicemails::MIME_TYPE()
 	{
 		return getStaticObjectField(
 			"android.provider.VoicemailContract$Voicemails",
 			"MIME_TYPE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring VoicemailContract_Voicemails::NEW()
+	JString VoicemailContract_Voicemails::NEW()
 	{
 		return getStaticObjectField(
 			"android.provider.VoicemailContract$Voicemails",
 			"NEW",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring VoicemailContract_Voicemails::NUMBER()
+	JString VoicemailContract_Voicemails::NUMBER()
 	{
 		return getStaticObjectField(
 			"android.provider.VoicemailContract$Voicemails",
 			"NUMBER",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring VoicemailContract_Voicemails::PHONE_ACCOUNT_COMPONENT_NAME()
+	JString VoicemailContract_Voicemails::PHONE_ACCOUNT_COMPONENT_NAME()
 	{
 		return getStaticObjectField(
 			"android.provider.VoicemailContract$Voicemails",
 			"PHONE_ACCOUNT_COMPONENT_NAME",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring VoicemailContract_Voicemails::PHONE_ACCOUNT_ID()
+	JString VoicemailContract_Voicemails::PHONE_ACCOUNT_ID()
 	{
 		return getStaticObjectField(
 			"android.provider.VoicemailContract$Voicemails",
 			"PHONE_ACCOUNT_ID",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring VoicemailContract_Voicemails::RESTORED()
+	JString VoicemailContract_Voicemails::RESTORED()
 	{
 		return getStaticObjectField(
 			"android.provider.VoicemailContract$Voicemails",
 			"RESTORED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring VoicemailContract_Voicemails::SOURCE_DATA()
+	JString VoicemailContract_Voicemails::SOURCE_DATA()
 	{
 		return getStaticObjectField(
 			"android.provider.VoicemailContract$Voicemails",
 			"SOURCE_DATA",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring VoicemailContract_Voicemails::SOURCE_PACKAGE()
+	JString VoicemailContract_Voicemails::SOURCE_PACKAGE()
 	{
 		return getStaticObjectField(
 			"android.provider.VoicemailContract$Voicemails",
 			"SOURCE_PACKAGE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring VoicemailContract_Voicemails::TRANSCRIPTION()
+	JString VoicemailContract_Voicemails::TRANSCRIPTION()
 	{
 		return getStaticObjectField(
 			"android.provider.VoicemailContract$Voicemails",
 			"TRANSCRIPTION",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QJniObject forward
@@ -194,13 +195,13 @@ namespace android::provider
 	// Constructors
 	
 	// Methods
-	android::net::Uri VoicemailContract_Voicemails::buildSourceUri(jstring arg0)
+	android::net::Uri VoicemailContract_Voicemails::buildSourceUri(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.provider.VoicemailContract$Voicemails",
 			"buildSourceUri",
 			"(Ljava/lang/String;)Landroid/net/Uri;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 } // namespace android::provider

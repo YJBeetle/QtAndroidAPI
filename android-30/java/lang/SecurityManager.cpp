@@ -1,4 +1,8 @@
+#include "../../JArray.hpp"
+#include "../../JArray.hpp"
 #include "../io/FileDescriptor.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./Thread.hpp"
 #include "./ThreadGroup.hpp"
 #include "../net/InetAddress.hpp"
@@ -20,12 +24,12 @@ namespace java::lang
 		) {}
 	
 	// Methods
-	void SecurityManager::checkAccept(jstring arg0, jint arg1)
+	void SecurityManager::checkAccept(JString arg0, jint arg1)
 	{
 		callMethod<void>(
 			"checkAccept",
 			"(Ljava/lang/String;I)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
@@ -45,23 +49,23 @@ namespace java::lang
 			arg0.object()
 		);
 	}
-	void SecurityManager::checkConnect(jstring arg0, jint arg1)
+	void SecurityManager::checkConnect(JString arg0, jint arg1)
 	{
 		callMethod<void>(
 			"checkConnect",
 			"(Ljava/lang/String;I)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
-	void SecurityManager::checkConnect(jstring arg0, jint arg1, jobject arg2)
+	void SecurityManager::checkConnect(JString arg0, jint arg1, JObject arg2)
 	{
 		callMethod<void>(
 			"checkConnect",
 			"(Ljava/lang/String;ILjava/lang/Object;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
-			arg2
+			arg2.object<jobject>()
 		);
 	}
 	void SecurityManager::checkCreateClassLoader()
@@ -71,20 +75,20 @@ namespace java::lang
 			"()V"
 		);
 	}
-	void SecurityManager::checkDelete(jstring arg0)
+	void SecurityManager::checkDelete(JString arg0)
 	{
 		callMethod<void>(
 			"checkDelete",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	void SecurityManager::checkExec(jstring arg0)
+	void SecurityManager::checkExec(JString arg0)
 	{
 		callMethod<void>(
 			"checkExec",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void SecurityManager::checkExit(jint arg0)
@@ -95,12 +99,12 @@ namespace java::lang
 			arg0
 		);
 	}
-	void SecurityManager::checkLink(jstring arg0)
+	void SecurityManager::checkLink(JString arg0)
 	{
 		callMethod<void>(
 			"checkLink",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void SecurityManager::checkListen(jint arg0)
@@ -128,20 +132,20 @@ namespace java::lang
 			arg1
 		);
 	}
-	void SecurityManager::checkPackageAccess(jstring arg0)
+	void SecurityManager::checkPackageAccess(JString arg0)
 	{
 		callMethod<void>(
 			"checkPackageAccess",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	void SecurityManager::checkPackageDefinition(jstring arg0)
+	void SecurityManager::checkPackageDefinition(JString arg0)
 	{
 		callMethod<void>(
 			"checkPackageDefinition",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void SecurityManager::checkPermission(java::security::Permission arg0)
@@ -152,13 +156,13 @@ namespace java::lang
 			arg0.object()
 		);
 	}
-	void SecurityManager::checkPermission(java::security::Permission arg0, jobject arg1)
+	void SecurityManager::checkPermission(java::security::Permission arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"checkPermission",
 			"(Ljava/security/Permission;Ljava/lang/Object;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jobject>()
 		);
 	}
 	void SecurityManager::checkPrintJobAccess()
@@ -175,12 +179,12 @@ namespace java::lang
 			"()V"
 		);
 	}
-	void SecurityManager::checkPropertyAccess(jstring arg0)
+	void SecurityManager::checkPropertyAccess(JString arg0)
 	{
 		callMethod<void>(
 			"checkPropertyAccess",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void SecurityManager::checkRead(java::io::FileDescriptor arg0)
@@ -191,29 +195,29 @@ namespace java::lang
 			arg0.object()
 		);
 	}
-	void SecurityManager::checkRead(jstring arg0)
+	void SecurityManager::checkRead(JString arg0)
 	{
 		callMethod<void>(
 			"checkRead",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	void SecurityManager::checkRead(jstring arg0, jobject arg1)
+	void SecurityManager::checkRead(JString arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"checkRead",
 			"(Ljava/lang/String;Ljava/lang/Object;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jobject>()
 		);
 	}
-	void SecurityManager::checkSecurityAccess(jstring arg0)
+	void SecurityManager::checkSecurityAccess(JString arg0)
 	{
 		callMethod<void>(
 			"checkSecurityAccess",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void SecurityManager::checkSetFactory()
@@ -231,20 +235,20 @@ namespace java::lang
 			arg0.object()
 		);
 	}
-	void SecurityManager::checkWrite(jstring arg0)
+	void SecurityManager::checkWrite(JString arg0)
 	{
 		callMethod<void>(
 			"checkWrite",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jobject SecurityManager::getSecurityContext()
+	JObject SecurityManager::getSecurityContext()
 	{
 		return callObjectMethod(
 			"getSecurityContext",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
 	java::lang::ThreadGroup SecurityManager::getThreadGroup()
 	{

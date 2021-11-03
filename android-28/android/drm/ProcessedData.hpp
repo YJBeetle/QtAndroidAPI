@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JByteArray;
+class JString;
 
 namespace android::drm
 {
@@ -17,9 +19,9 @@ namespace android::drm
 		// Constructors
 		
 		// Methods
-		jstring getAccountId();
-		jbyteArray getData();
-		jstring getSubscriptionId();
+		JString getAccountId();
+		JByteArray getData();
+		JString getSubscriptionId();
 	};
 } // namespace android::drm
 

@@ -1,16 +1,17 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "./AbstractExecutorService.hpp"
 
 namespace java::lang
 {
 	class RuntimePermission;
 }
+class JString;
 namespace java::lang
 {
 	class Thread;
 }
+class JThrowable;
 namespace java::util
 {
 	class HashSet;
@@ -74,7 +75,7 @@ namespace java::util::concurrent
 		void setThreadFactory(JObject arg0);
 		void shutdown();
 		JObject shutdownNow();
-		jstring toString();
+		JString toString();
 	};
 } // namespace java::util::concurrent
 

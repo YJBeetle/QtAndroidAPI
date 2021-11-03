@@ -34,6 +34,9 @@ namespace android::view::inputmethod
 {
 	class InputMethodSubtype;
 }
+class JString;
+class JObject;
+class JString;
 
 namespace android::view::inputmethod
 {
@@ -49,25 +52,25 @@ namespace android::view::inputmethod
 		
 		// Constructors
 		InputMethodInfo(android::content::Context arg0, android::content::pm::ResolveInfo arg1);
-		InputMethodInfo(jstring arg0, jstring arg1, jstring arg2, jstring arg3);
+		InputMethodInfo(JString arg0, JString arg1, JString arg2, JString arg3);
 		
 		// Methods
 		jint describeContents();
-		void dump(JObject arg0, jstring arg1);
-		jboolean equals(jobject arg0);
+		void dump(JObject arg0, JString arg1);
+		jboolean equals(JObject arg0);
 		android::content::ComponentName getComponent();
-		jstring getId();
+		JString getId();
 		jint getIsDefaultResourceId();
-		jstring getPackageName();
+		JString getPackageName();
 		android::content::pm::ServiceInfo getServiceInfo();
-		jstring getServiceName();
-		jstring getSettingsActivity();
+		JString getServiceName();
+		JString getSettingsActivity();
 		android::view::inputmethod::InputMethodSubtype getSubtypeAt(jint arg0);
 		jint getSubtypeCount();
 		jint hashCode();
 		android::graphics::drawable::Drawable loadIcon(android::content::pm::PackageManager arg0);
-		jstring loadLabel(android::content::pm::PackageManager arg0);
-		jstring toString();
+		JString loadLabel(android::content::pm::PackageManager arg0);
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::view::inputmethod

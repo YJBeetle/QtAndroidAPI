@@ -2,6 +2,7 @@
 #include "../../os/Bundle.hpp"
 #include "../../view/View.hpp"
 #include "../../widget/AdapterView.hpp"
+#include "../../../JString.hpp"
 #include "./CharacterPickerDialog.hpp"
 
 namespace android::text::method
@@ -12,14 +13,14 @@ namespace android::text::method
 	CharacterPickerDialog::CharacterPickerDialog(QJniObject obj) : android::app::Dialog(obj) {}
 	
 	// Constructors
-	CharacterPickerDialog::CharacterPickerDialog(android::content::Context arg0, android::view::View arg1, JObject arg2, jstring arg3, jboolean arg4)
+	CharacterPickerDialog::CharacterPickerDialog(android::content::Context arg0, android::view::View arg1, JObject arg2, JString arg3, jboolean arg4)
 		: android::app::Dialog(
 			"android.text.method.CharacterPickerDialog",
 			"(Landroid/content/Context;Landroid/view/View;Landroid/text/Editable;Ljava/lang/String;Z)V",
 			arg0.object(),
 			arg1.object(),
 			arg2.object(),
-			arg3,
+			arg3.object<jstring>(),
 			arg4
 		) {}
 	

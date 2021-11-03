@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JIntArray;
+class JArray;
 namespace android::animation
 {
 	class Animator;
@@ -38,6 +40,9 @@ namespace android::view
 {
 	class ViewGroup;
 }
+class JClass;
+class JObject;
+class JString;
 
 namespace android::transition
 {
@@ -62,8 +67,8 @@ namespace android::transition
 		android::transition::Transition addListener(JObject arg0);
 		android::transition::Transition addTarget(android::view::View arg0);
 		android::transition::Transition addTarget(jint arg0);
-		android::transition::Transition addTarget(jclass arg0);
-		android::transition::Transition addTarget(jstring arg0);
+		android::transition::Transition addTarget(JClass arg0);
+		android::transition::Transition addTarget(JString arg0);
 		jboolean canRemoveViews();
 		void captureEndValues(android::transition::TransitionValues arg0);
 		void captureStartValues(android::transition::TransitionValues arg0);
@@ -71,16 +76,16 @@ namespace android::transition
 		android::animation::Animator createAnimator(android::view::ViewGroup arg0, android::transition::TransitionValues arg1, android::transition::TransitionValues arg2);
 		android::transition::Transition excludeChildren(android::view::View arg0, jboolean arg1);
 		android::transition::Transition excludeChildren(jint arg0, jboolean arg1);
-		android::transition::Transition excludeChildren(jclass arg0, jboolean arg1);
+		android::transition::Transition excludeChildren(JClass arg0, jboolean arg1);
 		android::transition::Transition excludeTarget(android::view::View arg0, jboolean arg1);
 		android::transition::Transition excludeTarget(jint arg0, jboolean arg1);
-		android::transition::Transition excludeTarget(jclass arg0, jboolean arg1);
-		android::transition::Transition excludeTarget(jstring arg0, jboolean arg1);
+		android::transition::Transition excludeTarget(JClass arg0, jboolean arg1);
+		android::transition::Transition excludeTarget(JString arg0, jboolean arg1);
 		jlong getDuration();
 		android::graphics::Rect getEpicenter();
 		android::transition::Transition_EpicenterCallback getEpicenterCallback();
 		JObject getInterpolator();
-		jstring getName();
+		JString getName();
 		android::transition::PathMotion getPathMotion();
 		android::transition::TransitionPropagation getPropagation();
 		jlong getStartDelay();
@@ -88,22 +93,22 @@ namespace android::transition
 		JObject getTargetNames();
 		JObject getTargetTypes();
 		JObject getTargets();
-		jarray getTransitionProperties();
+		JArray getTransitionProperties();
 		android::transition::TransitionValues getTransitionValues(android::view::View arg0, jboolean arg1);
 		jboolean isTransitionRequired(android::transition::TransitionValues arg0, android::transition::TransitionValues arg1);
 		android::transition::Transition removeListener(JObject arg0);
 		android::transition::Transition removeTarget(android::view::View arg0);
 		android::transition::Transition removeTarget(jint arg0);
-		android::transition::Transition removeTarget(jclass arg0);
-		android::transition::Transition removeTarget(jstring arg0);
+		android::transition::Transition removeTarget(JClass arg0);
+		android::transition::Transition removeTarget(JString arg0);
 		android::transition::Transition setDuration(jlong arg0);
 		void setEpicenterCallback(android::transition::Transition_EpicenterCallback arg0);
 		android::transition::Transition setInterpolator(JObject arg0);
-		void setMatchOrder(jintArray arg0);
+		void setMatchOrder(JIntArray arg0);
 		void setPathMotion(android::transition::PathMotion arg0);
 		void setPropagation(android::transition::TransitionPropagation arg0);
 		android::transition::Transition setStartDelay(jlong arg0);
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::transition
 

@@ -1,8 +1,9 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "../../lang/Exception.hpp"
 
+class JString;
+class JThrowable;
 
 namespace java::util::prefs
 {
@@ -16,9 +17,9 @@ namespace java::util::prefs
 		InvalidPreferencesFormatException(QJniObject obj);
 		
 		// Constructors
-		InvalidPreferencesFormatException(jstring arg0);
-		InvalidPreferencesFormatException(jthrowable arg0);
-		InvalidPreferencesFormatException(jstring arg0, jthrowable arg1);
+		InvalidPreferencesFormatException(JString arg0);
+		InvalidPreferencesFormatException(JThrowable arg0);
+		InvalidPreferencesFormatException(JString arg0, JThrowable arg1);
 		
 		// Methods
 	};

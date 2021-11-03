@@ -1,9 +1,8 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "../Exception.hpp"
 #include "../RuntimeException.hpp"
 
+class JString;
 namespace java::lang::reflect
 {
 	class Method;
@@ -21,11 +20,11 @@ namespace java::lang::annotation
 		AnnotationTypeMismatchException(QJniObject obj);
 		
 		// Constructors
-		AnnotationTypeMismatchException(java::lang::reflect::Method arg0, jstring arg1);
+		AnnotationTypeMismatchException(java::lang::reflect::Method arg0, JString arg1);
 		
 		// Methods
 		java::lang::reflect::Method element();
-		jstring foundType();
+		JString foundType();
 	};
 } // namespace java::lang::annotation
 

@@ -1,3 +1,4 @@
+#include "../../../JArray.hpp"
 #include "./Validators.hpp"
 
 namespace android::service::autofill
@@ -10,13 +11,13 @@ namespace android::service::autofill
 	// Constructors
 	
 	// Methods
-	JObject Validators::_and(jarray arg0)
+	JObject Validators::_and(JArray arg0)
 	{
 		return callStaticObjectMethod(
 			"android.service.autofill.Validators",
 			"and",
 			"([Landroid/service/autofill/Validator;)Landroid/service/autofill/Validator;",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
 	JObject Validators::_not(JObject arg0)
@@ -28,13 +29,13 @@ namespace android::service::autofill
 			arg0.object()
 		);
 	}
-	JObject Validators::_or(jarray arg0)
+	JObject Validators::_or(JArray arg0)
 	{
 		return callStaticObjectMethod(
 			"android.service.autofill.Validators",
 			"or",
 			"([Landroid/service/autofill/Validator;)Landroid/service/autofill/Validator;",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
 } // namespace android::service::autofill

@@ -1,3 +1,5 @@
+#include "../../../JString.hpp"
+#include "../../../JThrowable.hpp"
 #include "./CertificateParsingException.hpp"
 
 namespace java::security::cert
@@ -13,24 +15,24 @@ namespace java::security::cert
 			"java.security.cert.CertificateParsingException",
 			"()V"
 		) {}
-	CertificateParsingException::CertificateParsingException(jstring arg0)
+	CertificateParsingException::CertificateParsingException(JString arg0)
 		: java::security::cert::CertificateException(
 			"java.security.cert.CertificateParsingException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	CertificateParsingException::CertificateParsingException(jthrowable arg0)
+	CertificateParsingException::CertificateParsingException(JThrowable arg0)
 		: java::security::cert::CertificateException(
 			"java.security.cert.CertificateParsingException",
 			"(Ljava/lang/Throwable;)V",
-			arg0
+			arg0.object<jthrowable>()
 		) {}
-	CertificateParsingException::CertificateParsingException(jstring arg0, jthrowable arg1)
+	CertificateParsingException::CertificateParsingException(JString arg0, JThrowable arg1)
 		: java::security::cert::CertificateException(
 			"java.security.cert.CertificateParsingException",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
 		) {}
 	
 	// Methods

@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./ActivityNotFoundException.hpp"
 
 namespace android::content
@@ -13,11 +14,11 @@ namespace android::content
 			"android.content.ActivityNotFoundException",
 			"()V"
 		) {}
-	ActivityNotFoundException::ActivityNotFoundException(jstring arg0)
+	ActivityNotFoundException::ActivityNotFoundException(JString arg0)
 		: java::lang::RuntimeException(
 			"android.content.ActivityNotFoundException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

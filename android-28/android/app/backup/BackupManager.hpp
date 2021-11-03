@@ -10,6 +10,7 @@ namespace android::content
 {
 	class Context;
 }
+class JString;
 
 namespace android::app::backup
 {
@@ -26,7 +27,7 @@ namespace android::app::backup
 		BackupManager(android::content::Context arg0);
 		
 		// Methods
-		static void dataChanged(jstring arg0);
+		static void dataChanged(JString arg0);
 		void dataChanged();
 		jint requestRestore(android::app::backup::RestoreObserver arg0);
 	};

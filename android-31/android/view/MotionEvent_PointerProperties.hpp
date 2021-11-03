@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JObject;
 
 namespace android::view
 {
@@ -23,7 +24,7 @@ namespace android::view
 		// Methods
 		void clear();
 		void copyFrom(android::view::MotionEvent_PointerProperties arg0);
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint hashCode();
 	};
 } // namespace android::view

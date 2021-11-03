@@ -2,6 +2,9 @@
 
 #include "../../../JObject.hpp"
 
+class JByteArray;
+class JObject;
+class JString;
 
 namespace android::icu::text
 {
@@ -15,18 +18,18 @@ namespace android::icu::text
 		CollationKey(QJniObject obj);
 		
 		// Constructors
-		CollationKey(jstring arg0, jbyteArray arg1);
+		CollationKey(JString arg0, JByteArray arg1);
 		
 		// Methods
 		jint compareTo(android::icu::text::CollationKey arg0);
-		jint compareTo(jobject arg0);
+		jint compareTo(JObject arg0);
 		jboolean equals(android::icu::text::CollationKey arg0);
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		android::icu::text::CollationKey getBound(jint arg0, jint arg1);
-		jstring getSourceString();
+		JString getSourceString();
 		jint hashCode();
 		android::icu::text::CollationKey merge(android::icu::text::CollationKey arg0);
-		jbyteArray toByteArray();
+		JByteArray toByteArray();
 	};
 } // namespace android::icu::text
 
